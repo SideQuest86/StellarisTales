@@ -1,6 +1,7 @@
 # Draft verification
 
 - `browser-results.json`: headless installed Chrome, desktop 1440×1000 and mobile-sized viewport 390×844. Covers bilingual reading, original options, event → project → event navigation, path backtracking, search and empty state, category filtering, pagination, reduced motion, deep links and Escape.
+- `online-results.json`: successful GitHub Pages HTTP 200, subpath asset loading, and the Horizon Signal event → project → follow-up journey on the actual deployed URL; no browser exceptions.
 - Screenshots inspected locally: `desktop.png`, `reader.png`, `mobile.png`, `mobile-reader.png`. PNG files are excluded from Git to avoid confusing QA captures with game art.
 - `performance.json`: actual requestAnimationFrame measurements during 20 rapid selections, plus idle DOM mutation check. Desktop headless local-server measurements do not certify performance on physical iPhone/Android hardware.
 - `npm test`: data integrity, zero duplicate IDs, zero parser/inline errors, static branch target resolution, representative bilingual originals/conditional text, image existence and provenance hashes.

@@ -24,7 +24,7 @@
 - [x] M2：档案浏览、分类检索、双语阅读及可回溯分支。
 - [x] M3：参考动效、响应式、减少动态效果与性能预算。
 - [x] M4：自动化及桌面/移动可视化验证。
-- [ ] M5：GitHub 提交/推送、部署及线上检查。
+- [x] M5：GitHub 提交/推送、部署及线上检查。
 
 ## 当前发现
 - 基础 `events/` 有 170 个文件；必须扫描 DLC ZIP，不能只计基础目录。
@@ -45,8 +45,16 @@
 - 完整原脚本（或内联展开脚本）始终可读；尚不展开所有 scripted effect/on_action 的间接图，不模拟随机或存档状态。
 - 性能预算：7 张活动档案卡、每页最多 24 张结果卡；按来源懒加载，最多 8 份分片缓存；阻尼动画结束/页面隐藏时停止渲染；遵循系统与手动减少动态效果设置。
 - 校验证据见 `verification/README.md`、`browser-results.json`、`performance.json`。手机尺寸验证不等同于真实移动硬件性能认证。
-- GitHub 仓库 `SideQuest86/StellarisTales` 当前为 private；已验证现有登录可访问，发布不得擅自改变仓库可见性。
+- GitHub 仓库 `SideQuest86/StellarisTales` 已由用户主动改为 public；代理不擅自改变仓库可见性。
 - 用户额外授权：仅账户剩余额度低于 3% 时可自动使用一次重置，本任务最多一次。已检查剩余 36%，未使用重置。
 - GitHub 已成功推送初稿 `2add421`。Pages API 返回 422：当前套餐不支持此私有仓库的 Pages。采用 Sites 托管；不修改 GitHub 可见性。工作流默认只测试/构建，将来开通 Pages 后设置 Actions 变量 `ENABLE_GITHUB_PAGES=true`。
 - 上条为发布过程记录：用户随后主动将仓库改为 public。现已成功启用 GitHub Pages（workflow 模式），并设置 `ENABLE_GITHUB_PAGES=true`。实际发布目标恢复为 `https://sidequest86.github.io/StellarisTales/`。
 - Sites 曾作为备用方案完成注册；`.openai/hosting.json` 保留该唯一 ID，尚未推送源或部署。不要重复创建 Sites，也不要把未部署的备用站当作在线地址。
+
+## Draft 1 发布完成
+- 在线地址：<https://sidequest86.github.io/StellarisTales/>
+- 部署源提交：`02575eb8cee03ca507bbd4c12f25543e16be3344`。
+- GitHub Actions 成功运行：<https://github.com/SideQuest86/StellarisTales/actions/runs/34518086926>。
+- 线上检查时间：2026-09-10T19:04:40Z；HTTP 200、子路径资源加载正常、跨分片的视界信号 → 特殊项目 → 引力即欲望可正常访问，两个原版选项保留，浏览器异常为 0。
+- 证据：`verification/online-results.json`。此后的文档归档提交不改变已部署的应用代码。
+- 后续优先方向：按具体事件链精修分类与导读；补充可追溯 Wiki 解读；解析 scripted_effect/on_action 间接连接；真实移动设备验证。原始内容已经全量收录，不以人工精选取代底层索引。
