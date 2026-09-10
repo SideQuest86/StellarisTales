@@ -48,3 +48,5 @@
 - GitHub 仓库 `SideQuest86/StellarisTales` 当前为 private；已验证现有登录可访问，发布不得擅自改变仓库可见性。
 - 用户额外授权：仅账户剩余额度低于 3% 时可自动使用一次重置，本任务最多一次。已检查剩余 36%，未使用重置。
 - GitHub 已成功推送初稿 `2add421`。Pages API 返回 422：当前套餐不支持此私有仓库的 Pages。采用 Sites 托管；不修改 GitHub 可见性。工作流默认只测试/构建，将来开通 Pages 后设置 Actions 变量 `ENABLE_GITHUB_PAGES=true`。
+- 上条为发布过程记录：用户随后主动将仓库改为 public。现已成功启用 GitHub Pages（workflow 模式），并设置 `ENABLE_GITHUB_PAGES=true`。实际发布目标恢复为 `https://sidequest86.github.io/StellarisTales/`。
+- Sites 曾作为备用方案完成注册；`.openai/hosting.json` 保留该唯一 ID，尚未推送源或部署。不要重复创建 Sites，也不要把未部署的备用站当作在线地址。

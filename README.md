@@ -36,9 +36,9 @@ npm run build
 
 ## 发布
 
-推送 `main` 自动运行测试和构建。目前 GitHub 套餐不支持此私有仓库启用 Pages，因此网页通过 Sites 托管，源码保存在本仓库。
+网页使用 GitHub Pages：[在线浏览](https://sidequest86.github.io/StellarisTales/)。推送 `main` 自动运行测试、构建和发布。
 
-以后使用 GitHub Pages 时，先确保套餐允许该仓库使用 Pages，将 Settings → Pages 的 Source 设为 GitHub Actions，再添加仓库 Actions 变量 `ENABLE_GITHUB_PAGES=true`。随后的 `main` 推送会自动发布。
+仓库 Pages Source 已设为 GitHub Actions，Actions 变量 `ENABLE_GITHUB_PAGES=true`。迁移或复用仓库时保留这两项设置。
 
 ## 来源与版权
 
