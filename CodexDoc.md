@@ -47,3 +47,4 @@
 - 校验证据见 `verification/README.md`、`browser-results.json`、`performance.json`。手机尺寸验证不等同于真实移动硬件性能认证。
 - GitHub 仓库 `SideQuest86/StellarisTales` 当前为 private；已验证现有登录可访问，发布不得擅自改变仓库可见性。
 - 用户额外授权：仅账户剩余额度低于 3% 时可自动使用一次重置，本任务最多一次。已检查剩余 36%，未使用重置。
+- GitHub 已成功推送初稿 `2add421`。Pages API 返回 422：当前套餐不支持此私有仓库的 Pages。采用 Sites 托管；不修改 GitHub 可见性。工作流默认只测试/构建，将来开通 Pages 后设置 Actions 变量 `ENABLE_GITHUB_PAGES=true`。

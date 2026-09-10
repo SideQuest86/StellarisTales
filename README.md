@@ -36,7 +36,9 @@ npm run build
 
 ## 发布
 
-仓库带 GitHub Pages Actions 工作流；仓库 Settings → Pages 的 Source 需设为 GitHub Actions，且账户套餐须允许当前仓库可见性使用 Pages。推送 `main` 后测试、构建与发布自动运行。
+推送 `main` 自动运行测试和构建。目前 GitHub 套餐不支持此私有仓库启用 Pages，因此网页通过 Sites 托管，源码保存在本仓库。
+
+以后使用 GitHub Pages 时，先确保套餐允许该仓库使用 Pages，将 Settings → Pages 的 Source 设为 GitHub Actions，再添加仓库 Actions 变量 `ENABLE_GITHUB_PAGES=true`。随后的 `main` 推送会自动发布。
 
 ## 来源与版权
 

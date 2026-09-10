@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0b1519" />
-    <meta name="description" content="群星叙事档案馆：原版中英故事、事件选项与分支，来自本地游戏的可追溯交互档案。" />
+    <meta
+      name="description"
+      content="群星叙事档案馆：原版中英故事、事件选项与分支，来自本地游戏的可追溯交互档案。"
+    />
     <title>群星 · 叙事档案馆 | Stellaris Tales</title>
     <link rel="icon" type="image/svg+xml" href="./public/mark.svg" />
     <link rel="stylesheet" href="./src/style.css" />
@@ -12,25 +15,128 @@
   <body>
     <a class="skip" href="#catalogue">跳至档案目录</a>
     <header class="masthead">
-      <a class="brand" href="#" aria-label="群星档案馆首页"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 36 30H4Z M20 12v26 M7 25h26 M13 10l14 25"/></svg><span>STELLARIS<span class="brand-sub">TALES / 群星叙事档案馆</span></span></a>
-      <div class="system-status"><i></i> GALACTIC ARCHIVE <span>／</span> <span id="version">接入档案库</span></div>
-      <div class="top-actions"><button id="language" title="切换阅读语言">中 / EN</button><button id="motion" aria-pressed="false">动效：开启</button><button id="about">收录说明 ↗</button></div>
+      <a class="brand" href="#" aria-label="群星档案馆首页"
+        ><svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 2 36 30H4Z M20 12v26 M7 25h26 M13 10l14 25" /></svg
+        ><span
+          >STELLARIS<span class="brand-sub">TALES / 群星叙事档案馆</span></span
+        ></a
+      >
+      <div class="system-status">
+        <i></i> GALACTIC ARCHIVE <span>／</span>
+        <span id="version">接入档案库</span>
+      </div>
+      <div class="top-actions">
+        <button id="language" title="切换阅读语言">中 / EN</button
+        ><button id="motion" aria-pressed="false">动效：开启</button
+        ><button id="about">收录说明 ↗</button>
+      </div>
     </header>
     <main id="app">
       <section class="observatory" aria-label="精选故事档案">
-        <div class="coordinates" aria-hidden="true"><span>ST / NARRATIVE DIVISION</span><span>2200.01.01</span><span>◈ LIVE ARCHIVE</span></div>
-        <div class="orbital-scene" id="scene"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="axis axis-x"></div><div class="axis axis-y"></div><span class="sector-label">银河记忆 / MEMORY SECTOR</span><div id="deck" class="deck" aria-label="精选档案阵列"></div><div class="deck-controls"><button id="prev-feature" aria-label="上一份精选档案">←</button><span id="feature-number">01 / 06</span><button id="next-feature" aria-label="下一份精选档案">→</button></div></div>
-        <div class="featured" id="featured"><span class="eyebrow">正在连接本地银河档案</span><h1>群星之间，<br>故事从未消失。</h1><p>正在载入故事索引…</p></div>
-        <div class="observatory-bottom"><span>THE GALAXY REMEMBERS.</span><span id="archive-total">原版文本 / 原版美术 / 分支阅读</span><a href="#catalogue">探索全部档案 ↓</a></div>
+        <div class="coordinates" aria-hidden="true">
+          <span>ST / NARRATIVE DIVISION</span><span>2200.01.01</span
+          ><span>◈ LIVE ARCHIVE</span>
+        </div>
+        <div class="orbital-scene" id="scene">
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="axis axis-x"></div>
+          <div class="axis axis-y"></div>
+          <span class="sector-label">银河记忆 / MEMORY SECTOR</span>
+          <div id="deck" class="deck" aria-label="精选档案阵列"></div>
+          <div class="deck-controls">
+            <button id="prev-feature" aria-label="上一份精选档案">←</button
+            ><span id="feature-number">01 / 06</span
+            ><button id="next-feature" aria-label="下一份精选档案">→</button>
+          </div>
+        </div>
+        <div class="featured" id="featured">
+          <span class="eyebrow">正在连接本地银河档案</span>
+          <h1>群星之间，<br />故事从未消失。</h1>
+          <p>正在载入故事索引…</p>
+        </div>
+        <div class="observatory-bottom">
+          <span>THE GALAXY REMEMBERS.</span
+          ><span id="archive-total">原版文本 / 原版美术 / 分支阅读</span
+          ><a href="#catalogue">探索全部档案 ↓</a>
+        </div>
       </section>
-      <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
-        <div class="catalogue-heading"><div><span class="eyebrow">01 / THE COLLECTION</span><h2 id="catalogue-title">银河档案</h2></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索故事、英文名或事件 ID" aria-label="搜索档案"/><kbd>/</kbd></label></div>
-        <div class="collection-layout"><nav id="categories" aria-label="故事分类"></nav><div class="results"><div class="results-bar"><span id="result-count" role="status">索引载入中</span><label><input type="checkbox" id="technical"/> 包含后台事件与定义</label></div><div class="story-grid" id="story-grid"></div><div class="pagination"><button id="prev-page">← 上一页</button><span id="page-status"></span><button id="next-page">下一页 →</button></div></div></div>
+      <section
+        class="catalogue"
+        id="catalogue"
+        aria-labelledby="catalogue-title"
+      >
+        <div class="catalogue-heading">
+          <div>
+            <span class="eyebrow">01 / THE COLLECTION</span>
+            <h2 id="catalogue-title">银河档案</h2>
+          </div>
+          <label class="search"
+            ><span aria-hidden="true">⌕</span
+            ><input
+              id="search"
+              type="search"
+              placeholder="搜索故事、英文名或事件 ID"
+              aria-label="搜索档案"
+            /><kbd>/</kbd></label
+          >
+        </div>
+        <div class="collection-layout">
+          <nav id="categories" aria-label="故事分类"></nav>
+          <div class="results">
+            <div class="results-bar">
+              <span id="result-count" role="status">索引载入中</span
+              ><label
+                ><input type="checkbox" id="technical" />
+                包含后台事件与定义</label
+              >
+            </div>
+            <div class="story-grid" id="story-grid"></div>
+            <div class="pagination">
+              <button id="prev-page">← 上一页</button
+              ><span id="page-status"></span
+              ><button id="next-page">下一页 →</button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
-    <footer><span>STELLARIS TALES <b>／</b> 非官方群星剧情档案</span><span>原文与美术 © Paradox Interactive · <a href="https://qunxing.huijiwiki.com/wiki/首页" target="_blank" rel="noreferrer">群星中文 Wiki ↗</a></span></footer>
-    <dialog id="reader" aria-labelledby="reader-title"><div id="reader-content"></div></dialog>
-    <dialog id="info" aria-labelledby="info-title"><button class="close-info" aria-label="关闭收录说明">×</button><span class="eyebrow">ARCHIVE MANIFEST</span><h2 id="info-title">关于这座档案馆</h2><p>这里保存本地《群星》安装中的原版故事、中英文本和事件美术。你可以选择选项、追踪后续事件，也可以回到此前的阅读节点。</p><p>这是交互文档，不会模拟游戏中的帝国状态。条件、随机结果、隐藏事件与动态名称会保留标记，所有条件分支均可查阅。</p><p>分类由脚本来源初步归类。DLC 文件存在不代表当前存档已启用该 DLC；工坊模组不在本次安装目录的范围内。Wiki 补充与原文分开，尚未添加无法核实的解读。</p><div id="coverage-summary"></div><a href="./public/data/coverage.json" target="_blank" id="coverage-link">查看完整覆盖报告 ↗</a></dialog>
+    <footer>
+      <span>STELLARIS TALES <b>／</b> 非官方群星剧情档案</span
+      ><span
+        >原文与美术 © Paradox Interactive ·
+        <a
+          href="https://qunxing.huijiwiki.com/wiki/首页"
+          target="_blank"
+          rel="noreferrer"
+          >群星中文 Wiki ↗</a
+        ></span
+      >
+    </footer>
+    <dialog id="reader" aria-labelledby="reader-title">
+      <div id="reader-content"></div>
+    </dialog>
+    <dialog id="info" aria-labelledby="info-title">
+      <button class="close-info" aria-label="关闭收录说明">×</button
+      ><span class="eyebrow">ARCHIVE MANIFEST</span>
+      <h2 id="info-title">关于这座档案馆</h2>
+      <p>
+        这里保存本地《群星》安装中的原版故事、中英文本和事件美术。你可以选择选项、追踪后续事件，也可以回到此前的阅读节点。
+      </p>
+      <p>
+        这是交互文档，不会模拟游戏中的帝国状态。条件、随机结果、隐藏事件与动态名称会保留标记，所有条件分支均可查阅。
+      </p>
+      <p>
+        分类由脚本来源初步归类。DLC 文件存在不代表当前存档已启用该
+        DLC；工坊模组不在本次安装目录的范围内。Wiki
+        补充与原文分开，尚未添加无法核实的解读。
+      </p>
+      <div id="coverage-summary"></div>
+      <a href="./public/data/coverage.json" target="_blank" id="coverage-link"
+        >查看完整覆盖报告 ↗</a
+      >
+    </dialog>
     <div id="toast" role="status"></div>
     <script type="module" src="./src/app.js"></script>
   </body>
