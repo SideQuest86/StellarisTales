@@ -1,4 +1,5 @@
 import * as THREE from "../vendor/three.module.js";
+import { CoverAtlas } from "./cover-atlas.js";
 import {
   wrap,
   damp,
@@ -134,6 +135,20 @@ export class ArchiveScene {
       }),
       LANES * ROWS,
     );
+    this.coverAtlas = new CoverAtlas(this.asset, () => this.wake());
+    this.faces.material.map = this.coverAtlas.texture;
+    this.coverUV = new THREE.InstancedBufferAttribute(
+      new Float32Array(LANES * ROWS * 4),
+      4,
+    );
+    this.faces.geometry.setAttribute("coverUV", this.coverUV);
+    this.faces.material.onBeforeCompile = (shader) => {
+      shader.vertexShader = "attribute vec4 coverUV;\n" + shader.vertexShader;
+      shader.vertexShader = shader.vertexShader.replace(
+        "#include <uv_vertex>",
+        "#include <uv_vertex>\nvMapUv = coverUV.xy + vMapUv * coverUV.zw;",
+      );
+    };
     this.body.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
     this.faces.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
     this.body.frustumCulled = false;
@@ -222,8 +237,7 @@ export class ArchiveScene {
         softImage += texture2D(map, uv + vec2(radius.x, -radius.y)) * 0.08;
         softImage += texture2D(map, uv + vec2(-radius.x, radius.y)) * 0.08;
         float grain = fract(sin(dot(floor(uv * 900.0), vec2(12.9898,78.233))) * 43758.5453);
-        vec3 matte = vec3(0.075, 0.12, 0.125) + (grain - 0.5) * 0.016;
-        vec3 frosted = mix(matte, softImage.rgb, 0.18 + clearArea * 0.82);
+        vec3 frosted = softImage.rgb + (grain - 0.5) * 0.008 * (1.0 - clearArea);
         diffuseColor *= vec4(mix(frosted, texture2D(map, uv).rgb, clearArea), 1.0);
         `,
       );
@@ -287,17 +301,22 @@ export class ArchiveScene {
     if (image) {
       c.save();
       c.beginPath();
-      c.rect(38, 91, 948, 312);
+      c.rect(0, 0, 1024, 700);
       c.clip();
-      const scale = Math.max(948 / image.width, 312 / image.height);
+      const scale = Math.max(1024 / image.width, 700 / image.height);
       c.drawImage(
         image,
-        38 + (948 - image.width * scale) / 2,
-        91 + (312 - image.height * scale) / 2,
+        (1024 - image.width * scale) / 2,
+        (700 - image.height * scale) / 2,
         image.width * scale,
         image.height * scale,
       );
       c.restore();
+      const shade = c.createLinearGradient(0, 340, 0, 700);
+      shade.addColorStop(0, "#06151b00");
+      shade.addColorStop(1, "#06151bdd");
+      c.fillStyle = shade;
+      c.fillRect(0, 340, 1024, 360);
     } else {
       c.strokeStyle = "#34524e";
       for (let i = 0; i < 3; i++) {
@@ -331,7 +350,15 @@ export class ArchiveScene {
   }
   async updateFace(override) {
     const token = ++this.imageToken,
-      story = override || this.current,
+      source = override || this.current,
+      story = {
+        ...source,
+        image:
+          source.image ||
+          this.columns[
+            wrap(this.selection.lane, this.columns.length)
+          ].stories.find((card) => card.image)?.image,
+      },
       lane = this.selection.lane;
     const apply = (image) => {
       if (token !== this.imageToken) return;
@@ -339,7 +366,10 @@ export class ArchiveScene {
       if (!this.eventTexture) {
         this.eventTexture = new THREE.CanvasTexture(canvas);
         this.eventTexture.colorSpace = THREE.SRGBColorSpace;
-        this.eventTexture.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
+        this.eventTexture.anisotropy = Math.min(
+          4,
+          this.renderer.capabilities.getMaxAnisotropy(),
+        );
         this.artFace.material.map = this.eventTexture;
         this.artFace.material.needsUpdate = true;
       } else {
@@ -348,8 +378,10 @@ export class ArchiveScene {
       }
       this.wake();
     };
-    apply(null);
-    if (!story?.image) return;
+    if (!story?.image) {
+      apply(null);
+      return;
+    }
     let image = this.textures.get(story.image);
     if (!image) {
       image = new Image();
@@ -380,7 +412,14 @@ export class ArchiveScene {
       const mesh = new THREE.Group();
       for (const child of this.active.children) {
         if (child === this.artFace) continue;
-        mesh.add(child.clone());
+        const copy = child.clone();
+        if (child === this.activeFace && this.eventTexture) {
+          copy.material = child.material.clone();
+          copy.material.map = new THREE.CanvasTexture(this.eventTexture.image);
+          copy.material.map.colorSpace = THREE.SRGBColorSpace;
+          mesh.userData.coverMaterial = copy.material;
+        }
+        mesh.add(copy);
       }
       this.scene.add(mesh);
       this.outgoing.push({
@@ -390,7 +429,7 @@ export class ArchiveScene {
         lift: { value: this.lift.value, velocity: this.lift.velocity },
       });
       if (this.outgoing.length > 4)
-        this.scene.remove(this.outgoing.shift().mesh);
+        this.removeOutgoing(this.outgoing.shift().mesh);
     }
     const returning = this.outgoing.find(
       (old) => old.lane === lane && old.row === row,
@@ -398,7 +437,7 @@ export class ArchiveScene {
     this.lift.value = returning?.lift.value ?? 0;
     this.lift.velocity = returning?.lift.velocity ?? 0;
     if (returning) {
-      this.scene.remove(returning.mesh);
+      this.removeOutgoing(returning.mesh);
       this.outgoing = this.outgoing.filter((old) => old !== returning);
     }
     this.selection = { lane, row };
@@ -423,6 +462,11 @@ export class ArchiveScene {
     } else this.targetRow = Math.round(this.targetRow) + direction;
     this.setSelection(Math.round(this.targetLane), Math.round(this.targetRow));
     this.wake();
+  }
+  removeOutgoing(mesh) {
+    this.scene.remove(mesh);
+    mesh.userData.coverMaterial?.map.dispose();
+    mesh.userData.coverMaterial?.dispose();
   }
   selectCategory(index) {
     const distance =
@@ -649,7 +693,7 @@ export class ArchiveScene {
     }
     this.outgoing = this.outgoing.filter((old) => {
       if (old.lift.value < 0.002) {
-        this.scene.remove(old.mesh);
+        this.removeOutgoing(old.mesh);
         return false;
       }
       return true;
@@ -693,6 +737,7 @@ export class ArchiveScene {
       centerRow = Math.round(this.row.value);
     this.pulses = this.pulses.filter((p) => time - p.time < 3);
     let index = 0;
+    this.coverAtlas.frame++;
     const height = (row, lane) =>
       0.95 *
         Math.exp(-Math.pow(row - this.row.value, 2) / 15) *
@@ -714,6 +759,11 @@ export class ArchiveScene {
         const lane = centerLane + l,
           row = centerRow + r;
         this.cells[index] = { lane, row };
+        const column = this.columns[wrap(lane, this.columns.length)];
+        const card = column.stories[wrap(row, column.stories.length)];
+        const cover =
+          card.image || column.stories.find((story) => story.image)?.image;
+        this.coverUV.setXYZW(index, ...this.coverAtlas.get(cover));
         const selected =
           (lane === this.selection.lane && row === this.selection.row) ||
           this.outgoing.some((old) => old.lane === lane && old.row === row);
@@ -751,6 +801,7 @@ export class ArchiveScene {
     this.fasteners.instanceMatrix.needsUpdate = true;
     this.body.instanceMatrix.needsUpdate = true;
     this.faces.instanceMatrix.needsUpdate = true;
+    this.coverUV.needsUpdate = true;
     this.active.position.set(
       (this.selection.lane - this.lane.value) * SPACING,
       this.lift.value +
@@ -764,11 +815,8 @@ export class ArchiveScene {
         height(old.row, old.lane) + old.lift.value,
         (old.row - this.row.value) * DEPTH,
       );
-    this.coverReveal.value = Math.max(
-      0,
-      Math.min(1, (this.detail.value - 0.25) / 0.55, this.artTransition.value),
-    );
-    this.artFace.visible = this.detail.value > 0.05;
+    this.coverReveal.value = Math.max(0, Math.min(1, this.artTransition.value));
+    this.artFace.visible = true;
     const mobile = this.width < 700,
       d = this.detail.value;
     const direction = new THREE.Vector3(-0.76, 0.44, 0.53).normalize(),
@@ -807,6 +855,7 @@ export class ArchiveScene {
       detail: this.detail.value,
       selectedY: this.active.position.y,
       coverReveal: this.coverReveal.value,
+      imageCovers: this.coverAtlas.loaded,
       artTransition: this.artTransition.value,
       closeup: this.detail.value > 0.95,
       outgoing: this.outgoing.length,

@@ -20,7 +20,10 @@ await p.waitForFunction(
 );
 await p.waitForTimeout(500);
 const initial = await p.evaluate(() => window.__archiveDiagnostics());
-check(initial.coverReveal === 0, "Closed archives use uniform covers");
+check(
+  initial.coverReveal > 0.99 && initial.imageCovers > 0,
+  "Closed archives show original image covers",
+);
 check(initial.story === "horizon-signal", "Initial complete story");
 const idleY = initial.selectedY;
 await p.waitForTimeout(420);
@@ -110,8 +113,13 @@ await p
   )
   .click();
 await p.waitForTimeout(200);
-check((await p.evaluate(() => window.__archiveDiagnostics())).artTransition < 0.7, "Chapter changes refrost the closeup");
-await p.waitForFunction(() => window.__archiveDiagnostics().artTransition > 0.99);
+check(
+  (await p.evaluate(() => window.__archiveDiagnostics())).artTransition < 0.7,
+  "Chapter changes refrost the closeup",
+);
+await p.waitForFunction(
+  () => window.__archiveDiagnostics().artTransition > 0.99,
+);
 await p.locator('.continuation [data-chapter="akx.9001"]').click();
 await p.waitForFunction(() =>
   document.querySelector("#reader-title").textContent.includes("引力"),
@@ -331,7 +339,7 @@ const report = {
     "per-category position memory",
     "physical extraction",
     "full left-side closeup",
-    "uniform cover to geometric frosted reveal",
+    "original image covers retain color through frosted reveal",
     "chapter change refrosts and reveals next artwork",
     "whole-story directory",
     "event-project-event inside same dossier",
