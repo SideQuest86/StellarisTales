@@ -88,6 +88,7 @@ const frames = await p.evaluate(async () => {
 await p.locator("#open-story").click();
 await p.locator("#reader-title").waitFor();
 await p.waitForTimeout(1200);
+await p.waitForFunction(() => window.__archiveDiagnostics().coverReveal > 0.99);
 check(
   (await p.evaluate(() => window.__archiveDiagnostics())).coverReveal > 0.99,
   "Opening reveals event artwork",
@@ -108,7 +109,9 @@ await p
     '.choice-response [data-chapter="special_projects:HORIZON_SIGNAL_PROJECT"]',
   )
   .click();
-await p.waitForTimeout(250);
+await p.waitForTimeout(200);
+check((await p.evaluate(() => window.__archiveDiagnostics())).artTransition < 0.7, "Chapter changes refrost the closeup");
+await p.waitForFunction(() => window.__archiveDiagnostics().artTransition > 0.99);
 await p.locator('.continuation [data-chapter="akx.9001"]').click();
 await p.waitForFunction(() =>
   document.querySelector("#reader-title").textContent.includes("引力"),
@@ -327,6 +330,9 @@ const report = {
     "in-category navigation",
     "per-category position memory",
     "physical extraction",
+    "full left-side closeup",
+    "uniform cover to geometric frosted reveal",
+    "chapter change refrosts and reveals next artwork",
     "whole-story directory",
     "event-project-event inside same dossier",
     "original choices",

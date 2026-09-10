@@ -184,6 +184,8 @@ export class ArchiveScene {
     this.activeFace.position.z = 0.156;
     this.active.add(this.activeFace);
     this.coverReveal = { value: 0 };
+    this.artTransition = { value: 1, velocity: 0 };
+    this.artTarget = 1;
     this.outgoing = [];
     this.artFace = new THREE.Mesh(
       this.activeFace.geometry,
@@ -202,7 +204,28 @@ export class ArchiveScene {
         "uniform float coverReveal;\n" + shader.fragmentShader;
       shader.fragmentShader = shader.fragmentShader.replace(
         "#include <map_fragment>",
-        "#include <map_fragment>\ndiffuseColor.a *= smoothstep(1.0-coverReveal-0.035,1.0-coverReveal+0.035,vMapUv.y);",
+        `
+        vec2 uv = vMapUv;
+        float p = clamp(coverReveal, 0.0, 1.0);
+        float diamond = abs(uv.x - 0.5) * 0.7 + abs(uv.y - 0.5) * 0.9;
+        float facet = floor((uv.x + uv.y) * 9.0) / 9.0;
+        float threshold = diamond * 0.75 + facet * 0.12;
+        float clearArea = smoothstep(threshold, threshold + 0.28, p * 1.15);
+        vec2 radius = vec2(0.008, 0.012) * (1.0 - clearArea);
+        vec4 softImage = texture2D(map, uv) * 0.2;
+        softImage += texture2D(map, uv + vec2(radius.x, 0.0)) * 0.12;
+        softImage += texture2D(map, uv - vec2(radius.x, 0.0)) * 0.12;
+        softImage += texture2D(map, uv + vec2(0.0, radius.y)) * 0.12;
+        softImage += texture2D(map, uv - vec2(0.0, radius.y)) * 0.12;
+        softImage += texture2D(map, uv + radius) * 0.08;
+        softImage += texture2D(map, uv - radius) * 0.08;
+        softImage += texture2D(map, uv + vec2(radius.x, -radius.y)) * 0.08;
+        softImage += texture2D(map, uv + vec2(-radius.x, radius.y)) * 0.08;
+        float grain = fract(sin(dot(floor(uv * 900.0), vec2(12.9898,78.233))) * 43758.5453);
+        vec3 matte = vec3(0.075, 0.12, 0.125) + (grain - 0.5) * 0.016;
+        vec3 frosted = mix(matte, softImage.rgb, 0.18 + clearArea * 0.82);
+        diffuseColor *= vec4(mix(frosted, texture2D(map, uv).rgb, clearArea), 1.0);
+        `,
       );
     };
     this.active.add(this.artFace);
@@ -428,11 +451,13 @@ export class ArchiveScene {
     const key = image + JSON.stringify(title);
     if (this.chapterArtKey === key) return;
     this.chapterArtKey = key;
-    this.updateFace({
+    this.pendingArt = {
       ...this.current,
       image: image || this.current.image,
       title,
-    });
+    };
+    this.artTarget = 0;
+    this.wake();
   }
   setDetail(open) {
     this.detailTarget = open ? 1 : 0;
@@ -630,6 +655,17 @@ export class ArchiveScene {
       return true;
     });
     damp(this.detail, this.detailTarget, 5.5, dt);
+    damp(this.artTransition, this.artTarget, this.artTarget ? 5 : 11, dt);
+    if (this.reduced()) this.artTransition.value = this.artTarget;
+    if (this.pendingArt && this.artTransition.value < 0.025) {
+      const next = this.pendingArt;
+      this.pendingArt = null;
+      const key = this.chapterArtKey;
+      this.updateFace(next).then(() => {
+        if (key === this.chapterArtKey) this.artTarget = 1;
+        this.wake();
+      });
+    }
     damp(this.lift, this.detailTarget ? 4.1 : 1.15, 5, dt);
     if (this.reduced()) {
       this.lane.value = this.targetLane;
@@ -641,6 +677,7 @@ export class ArchiveScene {
       Math.abs(this.lane.value - this.targetLane) > 0.001 ||
       Math.abs(this.row.value - this.targetRow) > 0.001 ||
       Math.abs(this.detail.value - this.detailTarget) > 0.001 ||
+      Math.abs(this.artTransition.value - this.artTarget) > 0.001 ||
       !!this.drag ||
       !!this.momentum;
     if (this.dirty || moving || now - this.lastDraw >= 32) {
@@ -729,9 +766,9 @@ export class ArchiveScene {
       );
     this.coverReveal.value = Math.max(
       0,
-      Math.min(1, (this.detail.value - 0.25) / 0.55),
+      Math.min(1, (this.detail.value - 0.25) / 0.55, this.artTransition.value),
     );
-    this.artFace.visible = this.coverReveal.value > 0.001;
+    this.artFace.visible = this.detail.value > 0.05;
     const mobile = this.width < 700,
       d = this.detail.value;
     const direction = new THREE.Vector3(-0.76, 0.44, 0.53).normalize(),
@@ -744,7 +781,7 @@ export class ArchiveScene {
         .normalize(),
       up = new THREE.Vector3().crossVectors(direction, right).normalize();
     const anchor = new THREE.Vector3(0, 0.8 + this.detail.value * 3.1, 0),
-      px = mobile ? 0.5 : 0.29,
+      px = mobile ? 0.5 : 0.29 - 0.04 * d,
       py = mobile ? 0.36 : 0.46;
     const aim = anchor
       .addScaledVector(right, (0.5 - px) * span * this.camera.aspect)
@@ -756,6 +793,10 @@ export class ArchiveScene {
     );
     this.camera.updateProjectionMatrix();
     this.camera.updateMatrixWorld();
+    const pose = THREE.MathUtils.smoothstep(d, 0.2, 0.95);
+    this.active.quaternion.identity().slerp(this.camera.quaternion, pose);
+    this.active.scale.setScalar(1 + 0.12 * pose);
+    this.active.position.addScaledVector(direction, 2.5 * pose);
     this.renderer.render(this.scene, this.camera);
   }
   diagnostics() {
@@ -766,6 +807,8 @@ export class ArchiveScene {
       detail: this.detail.value,
       selectedY: this.active.position.y,
       coverReveal: this.coverReveal.value,
+      artTransition: this.artTransition.value,
+      closeup: this.detail.value > 0.95,
       outgoing: this.outgoing.length,
       breathing: !this.reduced(),
       instances: LANES * ROWS,

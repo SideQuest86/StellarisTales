@@ -1,0 +1,90 @@
+[
+  {
+    "id": "horizon-signal",
+    "title": { "zh": "视界信号", "en": "The Horizon Signal" },
+    "category": "exploration",
+    "sources": ["events/horizonsignal_events.txt"],
+    "start": "akx.9000"
+  },
+  {
+    "id": "war-in-heaven",
+    "title": { "zh": "天堂之战", "en": "War in Heaven" },
+    "category": "crisis",
+    "sources": ["events/war_in_heaven_events.txt"]
+  },
+  {
+    "id": "gray-tempest",
+    "title": { "zh": "L 星团的秘密", "en": "Secrets of the L-Cluster" },
+    "category": "crisis",
+    "sources": ["events/gray_goo_events.txt"]
+  },
+  {
+    "id": "the-shroud",
+    "title": { "zh": "虚境的低语", "en": "Whispers of the Shroud" },
+    "category": "stories",
+    "sources": ["events/utopia_shroud_events.txt"]
+  },
+  {
+    "id": "prethoryn-scourge",
+    "title": { "zh": "索林原虫：银河之外", "en": "The Prethoryn Scourge" },
+    "category": "crisis",
+    "sources": ["events/crisis_events_1.txt"],
+    "start": "crisis.11"
+  },
+  {
+    "id": "unbidden",
+    "title": { "zh": "破界者：异次元入侵", "en": "The Unbidden" },
+    "category": "crisis",
+    "sources": ["events/crisis_events_2.txt"],
+    "start": "crisis.1007"
+  },
+  {
+    "id": "contingency",
+    "title": { "zh": "肃正协议", "en": "The Contingency" },
+    "category": "crisis",
+    "sources": ["events/crisis_events_3.txt"],
+    "start": "crisis.2010"
+  },
+  {
+    "id": "cosmogenesis",
+    "title": { "zh": "宇宙创生", "en": "Cosmogenesis" },
+    "category": "crisis",
+    "sources": ["events/machine_age_crisis_events.txt"]
+  },
+  {
+    "id": "vultaum",
+    "title": { "zh": "沃陶姆恒星议会", "en": "The Vultaum Star Assembly" },
+    "category": "precursors",
+    "ranges": [{ "namespace": "precursor", "min": 1, "max": 499 }],
+    "start": "precursor.1"
+  },
+  {
+    "id": "yuht",
+    "title": { "zh": "尤特帝国", "en": "The Yuht Empire" },
+    "category": "precursors",
+    "ranges": [{ "namespace": "precursor", "min": 500, "max": 999 }],
+    "start": "precursor.500"
+  },
+  {
+    "id": "first-league",
+    "title": { "zh": "第一联盟", "en": "The First League" },
+    "category": "precursors",
+    "ranges": [{ "namespace": "precursor", "min": 1000, "max": 1499 }],
+    "start": "precursor.1000"
+  },
+  {
+    "id": "irassian",
+    "title": { "zh": "伊瑞森协约国", "en": "The Irassian Concordat" },
+    "category": "precursors",
+    "ranges": [{ "namespace": "precursor", "min": 1500, "max": 1999 }],
+    "start": "precursor.1500"
+  },
+  {
+    "id": "cybrex",
+    "title": { "zh": "赛博勒克斯", "en": "The Cybrex" },
+    "category": "precursors",
+    "members": ["ancrel.10250"],
+    "ranges": [{ "namespace": "precursor", "min": 2000, "max": 2499 }],
+    "start": "precursor.2000"
+  }
+]

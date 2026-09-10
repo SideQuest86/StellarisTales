@@ -1,0 +1,191 @@
+{
+  "aliases": {
+    "origin_legendary_leader_death": "origin_legendary_leader",
+    "origin_legendary_leader_imperial": "origin_legendary_leader",
+    "origin_legendary_leader_dictatorial": "origin_legendary_leader",
+    "origin_imperial_vassal_overlord": "origin_imperial_vassal",
+    "origin_common_ground_npc": "origin_common_ground",
+    "origin_hegemon_npc": "origin_hegemon",
+    "origin_life_seeded_ai_only": "origin_life_seeded"
+  },
+  "sources": {
+    "origin_shroud_forged": ["events/shroud_forged_events.txt"],
+    "origin_unplugged": [
+      "events/unplugged_events.txt",
+      "common/archaeological_site_types/12_unplugged_arc_sites.txt",
+      "common/event_chains/00_event_chains_unplugged.txt",
+      "common/situations/12_unplugged_situations.txt",
+      "common/special_projects/04_projects_unplugged.txt"
+    ],
+    "origin_clone_army": ["events/clone_army_events.txt"],
+    "origin_legendary_leader": ["events/origin_events_paragon.txt"],
+    "origin_broken_shackles": ["events/origin_events_broken_shackles.txt"],
+    "origin_payback": ["events/origin_events_4.txt"],
+    "origin_fruitful": ["events/origin_events_5.txt"],
+    "origin_riftworld": ["events/origin_events_astral_planes.txt"],
+    "origin_storm_chasers": ["events/origin_events_cosmic_storms.txt"],
+    "origin_sacred_path": ["events/nomads_origin_events.txt"],
+    "origin_red_giant": ["events/origin_events_infernal.txt"],
+    "origin_wilderness": ["events/origin_events_wilderness.txt"]
+  },
+  "ranges": [
+    [
+      "origin_evolutionary_predators",
+      "bio",
+      1000,
+      1999,
+      "events/biogenesis_origin_events.txt"
+    ],
+    [
+      "origin_starlit_citadel",
+      "bio",
+      2000,
+      2500,
+      "events/biogenesis_origin_events.txt"
+    ],
+    [
+      "origin_primal_calling",
+      "grand_archive",
+      1000,
+      1999,
+      "events/origin_events_grand_archive.txt"
+    ],
+    [
+      "origin_treasure_hunters",
+      "grand_archive",
+      2000,
+      8999,
+      "events/origin_events_grand_archive.txt"
+    ],
+    [
+      "origin_mindwardens",
+      "shroud",
+      6000,
+      6899,
+      "events/origin_events_shadows_shroud.txt"
+    ],
+    [
+      "origin_endbringers",
+      "shroud",
+      8000,
+      8999,
+      "events/origin_events_shadows_shroud.txt"
+    ],
+    ["origin_tree_of_life", "origin", 3000, 3099, "events/origin_events_3.txt"],
+    ["origin_remnants", "origin", 3100, 3149, "events/origin_events_3.txt"],
+    [
+      "origin_shattered_ring",
+      "origin",
+      3150,
+      3199,
+      "events/origin_events_3.txt"
+    ],
+    [
+      "origin_progenitor_hive",
+      "origin",
+      3200,
+      3299,
+      "events/origin_events_3.txt"
+    ],
+    [
+      "origin_star_slingshot",
+      "origin",
+      3500,
+      3599,
+      "events/origin_events_3.txt"
+    ],
+    [
+      "origin_shroudwalker_apprentice",
+      "origin",
+      5600,
+      5699,
+      "events/origin_events_3.txt"
+    ],
+    [
+      "origin_imperial_vassal",
+      "origin",
+      5700,
+      5799,
+      "events/origin_events_3.txt"
+    ],
+    [
+      "origin_fear_of_the_dark",
+      "origin",
+      6000,
+      6999,
+      "events/origin_events_3.txt"
+    ],
+    [
+      "origin_galactic_doorstep",
+      "origin",
+      1000,
+      1099,
+      "events/origin_events_2.txt"
+    ],
+    [
+      "origin_shoulders_of_giants",
+      "origin",
+      1100,
+      2999,
+      "events/origin_events_2.txt"
+    ],
+    [
+      "origin_cybernetic_creed",
+      "machine_age",
+      0,
+      2999,
+      "events/origin_events_machine_age.txt"
+    ],
+    [
+      "origin_synthetic_fertility",
+      "machine_age",
+      3000,
+      3399,
+      "events/origin_events_machine_age.txt"
+    ],
+    [
+      "origin_arc_welders",
+      "machine_age",
+      3400,
+      3499,
+      "events/origin_events_machine_age.txt"
+    ],
+    [
+      "origin_here_be_dragons",
+      "aquatics",
+      0,
+      999,
+      "events/aquatics_events.txt"
+    ],
+    [
+      "origin_toxic_knights",
+      "toxoids",
+      7000,
+      8999,
+      "events/toxoids_events.txt"
+    ],
+    ["origin_scion", "origin", 0, 54, "events/origin_events_1.txt"],
+    ["origin_scion", "origin", 200, 250, "events/origin_events_1.txt"],
+    ["origin_common_ground", "origin", 55, 59, "events/origin_events_1.txt"],
+    ["origin_doomsday", "origin", 60, 99, "events/origin_events_1.txt"],
+    ["origin_lost_colony", "origin", 100, 109, "events/origin_events_1.txt"],
+    [
+      "origin_broken_shackles",
+      "origin",
+      110,
+      111,
+      "events/origin_events_1.txt"
+    ],
+    ["origin_payback", "origin", 112, 150, "events/origin_events_1.txt"]
+  ],
+  "shared": {
+    "origin_hegemon": ["origin.57"],
+    "origin_broken_shackles": [
+      "origin.4109",
+      "origin.4120",
+      "origin.4130",
+      "origin.4140",
+      "origin.4141"
+    ]
+  }
+}
