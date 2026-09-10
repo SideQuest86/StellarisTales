@@ -48,7 +48,7 @@ def dump(path,obj):
 
 NARRATIVE=('events/','common/archaeological_site_types/','common/astral_rifts/','common/situations/','common/special_projects/','common/event_chains/')
 def relevant(p):
-    return (p.startswith(NARRATIVE+('common/inline_scripts/',)) and p.endswith('.txt')) or (p.startswith('interface/') and p.endswith('.gfx')) or (p.startswith(('localisation/english/','localisation/simp_chinese/','localisation_synced/')) and p.endswith('.yml'))
+    return (p.startswith(NARRATIVE+('common/inline_scripts/','common/scripted_effects/','common/governments/civics/','common/start_screen_messages/')) and p.endswith('.txt')) or (p.startswith('interface/') and p.endswith('.gfx')) or (p.startswith(('localisation/english/','localisation/simp_chinese/','localisation_synced/')) and p.endswith('.yml'))
 
 def import_game(game):
     files={}; assets={}; sources=[]; archives=[]; overrides=[]
@@ -175,6 +175,25 @@ def import_game(game):
                 visit(v,context)
         visit(nodes,[])
         return out
+    origins=[]
+    for name,(nodes,text,origin) in parsed.items():
+        if not name.startswith('common/governments/civics/'): continue
+        for n in nodes:
+            if not isinstance(n['v'],list) or first(n['v'],'is_origin')!='yes': continue
+            origins.append({'id':n['k'],'title':localized(n['k']),'description':localized(n['k']+'_desc'),'picture':picture(first(n['v'],'picture')),'source':origin,'script':raw(n,text),'introductions':[]})
+    for name,(nodes,text,origin) in parsed.items():
+        if not name.startswith('common/start_screen_messages/'): continue
+        for n in nodes:
+            if not isinstance(n['v'],list): continue
+            keys={x['v'] for x in walk(n['v']) if x['k']=='has_origin' and isinstance(x['v'],str)}
+            if len(keys)!=1: continue
+            for o in origins:
+                if o['id'] in keys:
+                    for t in texts(n['v'],'localization',text):
+                        if t['zh'] or t['en']: o['introductions'].append(t)
+    dump(ROOT/'public/data/origins.json',origins)
+    label_keys=set(k for language in loc.values() for k in language if k.startswith(('origin_','ethic_','civic_','auth_','trait_','policy_','tech_')) and not k.endswith(('_desc','_effects','_tooltip')))
+    dump(ROOT/'public/data/reaction-labels.json',{k:{l:localized(k)[l] for l in loc} for k in sorted(label_keys)})
     records=[]; groups=[]; duplicate_ids=[]; ids=set()
     for name,(nodes,text,origin) in parsed.items():
         if not name.startswith(NARRATIVE): continue
@@ -220,6 +239,35 @@ def import_game(game):
         if group_records:
             dump(ROOT/'public/data/groups'/f'{group}.json',group_records)
             groups.append({'id':group,'source':origin,'count':len(group_records)})
+    # Follow literal and parameterized scripted-effect calls into event/project
+    # references. Keep the original caller and effect provenance in raw data.
+    effects={n['k']:(n['v'],text,origin) for name,(nodes,text,origin) in parsed.items() if name.startswith('common/scripted_effects/') for n in nodes if isinstance(n['v'],list)}
+    indirect_cache={};indirect_count=0
+    def effect_links(script,stack=()):
+        found=[]
+        if len(stack)>10:return found
+        for call in walk(parse(script)):
+            if call['k'] not in effects or call['k'] in stack:continue
+            v,source,effect_origin=effects[call['k']]
+            body='\n'.join(raw(n,source) for n in v)
+            if isinstance(call['v'],list):
+                for param in call['v']:
+                    if isinstance(param['v'],str):body=body.replace('$'+param['k']+'$',param['v'])
+            cachekey=(call['k'],body,stack)
+            if cachekey not in indirect_cache:
+                try:
+                    nested=links(parse(body),body)+effect_links(body,stack+(call['k'],))
+                    indirect_cache[cachekey]=[{**edge,'via':effect_origin,'kind':'scripted_effect'} for edge in nested if edge['target'] in ids]
+                except ValueError:indirect_cache[cachekey]=[]
+            found.extend(indirect_cache[cachekey])
+        return found
+    for r in records:
+        for item in [r]+r['options']:
+            existing={e['target'] for e in item['links']}
+            for edge in effect_links(item['script']):
+                if edge['target'] not in existing:
+                    item['links'].append(edge);existing.add(edge['target']);indirect_count+=1
+    for g in groups:dump(ROOT/'public/data/groups'/f"{g['id']}.json",[r for r in records if r['group']==g['id']])
     def category(r):
         s=(r['source']+' '+r['id']).lower()
         for cat,patterns in [('crisis',['crisis','gray_goo','war_in_heaven','storm']),('origins',['origin','gateway']),('precursors',['precursor','ancient_relic','archaeolog']),('rifts',['astral','rifts']),('leviathans',['leviathan','guardian','enclave']),('exploration',['anomaly','distant','horizon','special_project']),('society',['situation','colony','faction','diplom','first_contact'])]:
@@ -234,6 +282,7 @@ def import_game(game):
     missing={lang:sorted({t['key'] for r in records for t in r['titles']+r['descriptions']+[o['label'] for o in r['options']] if t['key'] and not t[lang] and not t['sources'][lang]}) for lang in loc}
     version=json.loads((game/'launcher-settings.json').read_text(encoding='utf-8-sig'))['version']
     report={'version':version,'records':len(records),'events':sum(r['kind']=='event' or r['kind'].endswith('_event') for r in records),'readable':sum(i['hasText'] and not i['hidden'] for i in index),'groups':len(groups),'sources':len(sources),'localizationKeys':{k:len(v) for k,v in loc.items()},'archives':archives,'parseErrors':errors,'inlineErrors':inline_errors,'overrides':overrides,'duplicateIds':duplicate_ids,'unresolvedLinks':unresolved,'missingLocalization':missing,'imageCount':sum(v is not None for v in images.values()),'imageErrors':image_errors,'scope':'Installed base game and every local DLC ZIP; Workshop mods and save-state are not included.'}
+    report['scriptedEffectLinks']=indirect_count
     dump(ROOT/'public/data/index.json',{'version':version,'records':index,'groups':groups,'counts':dict(collections.Counter(i['category'] for i in index))})
     dump(ROOT/'public/data/coverage.json',report); dump(ROOT/'public/data/sources.json',sources); dump(ROOT/'public/data/art-sources.json',images)
     print(json.dumps({k:v for k,v in report.items() if k not in ('archives','overrides','unresolvedLinks','missingLocalization','imageErrors','duplicateIds')},ensure_ascii=False,indent=2))

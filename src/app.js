@@ -1,411 +1,514 @@
-import { createDeckMotion } from "./motion.js";
-const $ = (q, r = document) => r.querySelector(q);
-const isDev =
-  location.pathname === "/" &&
-  !document
-    .querySelector("link[rel=icon]")
-    .getAttribute("href")
-    .startsWith("./mark");
-const base = isDev ? "./public/" : "./";
-const esc = (s) =>
-  String(s ?? "").replace(
-    /[&<>"']/g,
-    (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-        c
-      ],
-  );
-const clean = (s) =>
-  String(s ?? "")
-    .replace(/§./g, "")
-    .replace(/£([^£]+)£/g, "[$1]")
-    .replace(/<[^>]*>/g, "");
-const fmt = (s) =>
-  esc(clean(s))
-    .replace(/\n/g, "<br>")
-    .replace(/(\[[^\]\n]+\]|\$[^$\n]+\$)/g, '<span class="variable">$1</span>');
+import { nextUnread, storyMap } from "./story-map.js";
+import { ArchiveScene } from "./archive-scene.js";
+import { SoundtrackPlayer } from "./audio-player.js";
+const $ = (q) => document.querySelector(q),
+  esc = (s) =>
+    String(s ?? "").replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[c],
+    );
+const base = $("link[rel=icon]").getAttribute("href").includes("/public/")
+  ? "./public/"
+  : "./";
+const asset = (p) => base + p;
+const CATEGORIES = [
+  ["origins", "起源故事", "ORIGINS"],
+  ["precursors", "先驱者与遗迹", "PRECURSORS"],
+  ["exploration", "深空异闻", "EXPLORATION"],
+  ["rifts", "星界裂隙", "ASTRAL RIFTS"],
+  ["crisis", "银河天灾", "CRISES"],
+  ["leviathans", "星神与巨兽", "LEVIATHANS"],
+  ["society", "文明纪事", "CIVILIZATIONS"],
+  ["stories", "银河轶事", "CHRONICLES"],
+];
 let lang = "zh",
-  category = "all",
-  page = 0,
-  query = "",
-  all = [],
-  byId = new Map(),
-  groups = [],
-  featured = [],
-  feature = 0,
-  current = null,
+  reducedPreference = false,
+  scene,
+  stories = [],
+  columns = [],
+  selected,
+  selectedColumn = 2,
+  dossier = null,
+  chapter = null,
   trail = [],
-  request = 0;
-let motionPref = false;
+  readerTicket = 0,
+  searchPage = 0,
+  searchText = "",
+  storyById = new Map(),
+  recordToStory = {};
 try {
   lang = localStorage.getItem("st-language") || "zh";
-  motionPref = localStorage.getItem("st-motion") === "reduced";
+  reducedPreference = localStorage.getItem("st-motion") === "reduced";
 } catch {}
-const media = matchMedia("(prefers-reduced-motion: reduce)");
-const reduced = () => motionPref || media.matches;
-const remember = (k, v) => {
+const media = matchMedia("(prefers-reduced-motion: reduce)"),
+  reduced = () => reducedPreference || media.matches;
+function remember(k, v) {
   try {
     localStorage.setItem(k, v);
   } catch {}
-};
-const categories = [
-  ["all", "全部档案", "ALL RECORDS"],
-  ["origins", "起源故事", "ORIGINS"],
-  ["crisis", "银河天灾", "CRISES"],
-  ["precursors", "先驱者与考古", "PRECURSORS"],
-  ["rifts", "星界裂隙", "ASTRAL RIFTS"],
-  ["leviathans", "星神与巨兽", "LEVIATHANS"],
-  ["exploration", "深空探索", "EXPLORATION"],
-  ["society", "文明与社会", "CIVILIZATIONS"],
-  ["stories", "其他事件链", "STORY CHAINS"],
-];
-const categoryName = (id) => categories.find((c) => c[0] === id)?.[1] || id;
-const title = (r) => clean(r?.[lang] || r?.zh || r?.en || r?.id || "");
-const local = (t) =>
-  t?.sources?.[lang]
-    ? t[lang]
-    : t?.[lang] || t?.[lang === "zh" ? "en" : "zh"] || t?.key || "";
-const cache = new Map();
-async function json(url) {
-  const r = await fetch(base + url);
-  if (!r.ok) throw new Error(`档案读取失败 (${r.status})`);
+}
+function local(value) {
+  return value?.[lang] || value?.zh || value?.en || "";
+}
+// Resolve game-state placeholders to prose without exposing scripting syntax.
+function prose(s) {
+  return String(s || "")
+    .replace(/§./g, "")
+    .replace(/£([^£]+)£/g, lang === "zh" ? "资源" : "resources")
+    .replace(/\[([^\]]+)\]/g, (_, key) => {
+      if (/Species|Pop/.test(key))
+        return lang === "zh" ? "这个物种" : "this species";
+      if (/Leader|Scientist|Name.*leader/i.test(key))
+        return lang === "zh" ? "这位领袖" : "the leader";
+      if (/Ship|Fleet/i.test(key))
+        return lang === "zh" ? "这支舰队" : "the fleet";
+      if (/Planet|From.*Name|Capital/i.test(key))
+        return lang === "zh" ? "这颗星球" : "the planet";
+      if (/Name/.test(key))
+        return lang === "zh" ? "我们的文明" : "our civilization";
+      return lang === "zh" ? "此刻" : "at this moment";
+    })
+    .replace(/\$[^$]+\$/g, lang === "zh" ? "未知" : "unknown")
+    .replace(/<[^>]*>/g, "");
+}
+const paragraph = (s) => esc(prose(s)).replace(/\n/g, "<br>");
+function toast(s) {
+  $("#toast").textContent = s;
+  $("#toast").classList.add("show");
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => $("#toast").classList.remove("show"), 3500);
+}
+async function json(path) {
+  const r = await fetch(asset(path));
+  if (!r.ok) throw new Error("这份记忆暂时未能抵达，请稍后重试。");
   return r.json();
 }
-async function getRecord(id) {
-  const meta = byId.get(id);
-  if (!meta) return null;
-  if (!cache.has(meta.group)) {
+const cache = new Map();
+async function loadStory(id) {
+  if (!cache.has(id)) {
     cache.set(
-      meta.group,
-      json(`data/groups/${meta.group}.json`).catch((e) => {
-        cache.delete(meta.group);
+      id,
+      json(`stories/${id}.json`).catch((e) => {
+        cache.delete(id);
         throw e;
       }),
     );
     if (cache.size > 8) cache.delete(cache.keys().next().value);
   }
-  return (await cache.get(meta.group)).find((r) => r.id === id);
-}
-function toast(s) {
-  $("#toast").textContent = s;
-  $("#toast").classList.add("show");
-  clearTimeout(toast.timer);
-  toast.timer = setTimeout(() => $("#toast").classList.remove("show"), 3000);
+  return cache.get(id);
 }
 function applyMotion() {
   document.documentElement.classList.toggle("reduced-motion", reduced());
-  $("#motion").textContent = reduced() ? "动效：减少" : "动效：开启";
   $("#motion").setAttribute("aria-pressed", String(reduced()));
-  deckMotion.refresh();
+  $("#motion").textContent = reduced() ? "动态已减少" : "减少动态";
+  scene?.wake();
 }
-const deckMotion = createDeckMotion($("#deck"), reduced);
 $("#motion").onclick = () => {
-  motionPref = !motionPref;
-  remember("st-motion", motionPref ? "reduced" : "full");
+  reducedPreference = !reducedPreference;
+  remember("st-motion", reducedPreference ? "reduced" : "full");
   applyMotion();
 };
 media.addEventListener("change", applyMotion);
 applyMotion();
-function renderFeatured() {
-  const r = featured[feature];
-  if (!r) return;
-  $("#featured").innerHTML =
-    `<span class="eyebrow">精选档案 / ${esc(categoryName(r.category))}</span><div class="record-code">${esc(r.id)} <span>● 已归档</span></div><h1>${esc(title(r))}</h1><p>${fmt(r.excerpt[lang] || r.excerpt.zh || r.excerpt.en).slice(0, 700)}</p><button class="access" data-open="${esc(r.id)}">调阅档案 <span>ACCESS RECORD ↗</span></button><div class="featured-meta"><span>${String(r.options).padStart(2, "0")} 个原版选项</span><span>中文 / ENGLISH</span><span>原版事件图像</span></div>`;
-  if (!reduced())
-    $("#featured").animate(
-      [
-        { opacity: 0.3, transform: "translateY(12px)" },
-        { opacity: 1, transform: "translateY(0)" },
-      ],
-      { duration: 380, easing: "cubic-bezier(.2,.8,.2,1)" },
+function showSelection(story, column, index) {
+  selected = story;
+  selectedColumn = column;
+  $("#category-label").textContent = CATEGORIES[column][1];
+  $("#chapter-count").textContent = `${story.chapters} 篇`;
+  $("#selected-title").textContent = prose(local(story.title));
+  $("#selected-excerpt").textContent = prose(local(story.excerpt));
+  $("#story-number").textContent = String(index + 1).padStart(2, "0");
+  $("#story-total").textContent = `/ ${columns[column].stories.length}`;
+  for (const b of $("#categories").children) {
+    b.classList.toggle("active", Number(b.dataset.category) === column);
+    b.setAttribute(
+      "aria-pressed",
+      String(Number(b.dataset.category) === column),
     );
-  $("#feature-number").textContent =
-    `${String(feature + 1).padStart(2, "0")} / ${String(featured.length).padStart(2, "0")}`;
-  deckMotion.select(feature);
-}
-function renderDeck() {
-  $("#deck").innerHTML = featured
-    .map(
-      (r, i) =>
-        `<button class="archive-slab" data-feature="${i}" aria-label="选择 ${esc(title(r))}" aria-pressed="false"><span class="slab-top">ST / ${String(i + 1).padStart(3, "0")} <b>✦</b></span><img src="${base + r.image}" alt=""/><span class="slab-diagram" aria-hidden="true">◎<i></i></span><span class="slab-title">${esc(title(r))}</span><span class="slab-foot">${esc(r.id)} <b>↗</b></span></button>`,
-    )
-    .join("");
-  deckMotion.reset();
-  renderFeatured();
-}
-$("#prev-feature").onclick = () => {
-  feature = (feature - 1 + featured.length) % featured.length;
-  renderFeatured();
-};
-$("#next-feature").onclick = () => {
-  feature = (feature + 1) % featured.length;
-  renderFeatured();
-};
-function renderCategories() {
-  $("#categories").innerHTML = categories
-    .map(
-      ([id, zh, en], i) =>
-        `<button data-category="${id}" class="${category === id ? "active" : ""}" aria-pressed="${category === id}"><span class="category-num">${String(i).padStart(2, "0")}</span><span>${zh}<small>${en}</small></span><span class="category-count">${all.filter((r) => (id === "all" || r.category === id) && r.hasText && !r.hidden).length}</span></button>`,
-    )
-    .join("");
-}
-function renderResults() {
-  const technical = $("#technical").checked;
-  const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  const filtered = all.filter(
-    (r) =>
-      (technical || (r.hasText && !r.hidden)) &&
-      (category === "all" || r.category === category) &&
-      words.every((w) =>
-        `${r.zh} ${r.en} ${r.id} ${r.excerpt.zh} ${r.excerpt.en}`
-          .toLowerCase()
-          .includes(w),
-      ),
-  );
-  const pages = Math.max(1, Math.ceil(filtered.length / 24));
-  page = Math.min(page, pages - 1);
-  $("#result-count").textContent =
-    `${filtered.length.toLocaleString()} 份档案${query ? " / 检索结果" : " / " + categoryName(category)}`;
-  $("#story-grid").innerHTML =
-    filtered
-      .slice(page * 24, page * 24 + 24)
-      .map(
-        (r, i) =>
-          `<button class="story-card" data-open="${esc(r.id)}" style="--order:${i % 6}"><div class="card-image">${r.image ? `<img src="${base + r.image}" alt="" loading="lazy" decoding="async"/>` : '<div class="no-art" aria-hidden="true">✧</div>'}<span>${esc(categoryName(r.category))}</span><b>↗</b></div><div class="card-body"><span class="card-code">${esc(r.id)}</span><h3>${esc(title(r))}</h3><p>${esc(clean(r.excerpt[lang] || r.excerpt.zh || r.excerpt.en))}</p><div class="card-meta"><span>${r.options} 个选项</span><span>${r.hidden ? "后台事件" : r.kind.endsWith("_event") ? "事件档案" : "剧情定义"} · ZH / EN</span></div></div></button>`,
-      )
-      .join("") ||
-    '<div class="empty"><span>⌕</span><h3>未找到匹配的档案</h3><p>试试英文关键词、事件 ID，或启用后台事件与定义。</p><button id="clear-search">清除检索</button></div>';
-  $("#page-status").textContent = `${page + 1} / ${pages}`;
-  $("#prev-page").disabled = page === 0;
-  $("#next-page").disabled = page >= pages - 1;
-}
-$("#search").addEventListener("input", (e) => {
-  query = e.target.value;
-  page = 0;
-  clearTimeout(renderResults.timer);
-  renderResults.timer = setTimeout(renderResults, 130);
-});
-$("#technical").onchange = () => {
-  page = 0;
-  renderResults();
-};
-for (const [id, step] of [
-  ["prev-page", -1],
-  ["next-page", 1],
-])
-  $("#" + id).onclick = () => {
-    page += step;
-    renderResults();
-    $("#catalogue").scrollIntoView({
-      behavior: reduced() ? "instant" : "smooth",
-    });
-  };
-function linkButtons(links) {
-  return links
-    .map((l) => {
-      const m = byId.get(l.target);
-      return `<div class="branch-edge">${m ? `<button data-open="${esc(l.target)}"><span>${esc(title(m))}</span><small>${esc(l.target)} ${l.days ? ` / 延迟 ${esc(l.days)} 天` : ""}</small><b>→</b></button>` : `<p class="unresolved">未解析的运行时目标：${esc(l.target)}</p>`}${l.condition ? `<details><summary>条件 / 随机分支</summary><pre>${esc(l.condition)}</pre></details>` : ""}</div>`;
-    })
-    .join("");
-}
-function localizedBlock(t, heading) {
-  if (!local(t)) return "";
-  return `<section class="text-variant">${heading ? `<span class="variant-label">${esc(heading)}</span>` : ""}<p>${fmt(local(t))}</p>${!t.sources?.[lang] && t.key ? '<small class="fallback">此语言无对应条目，显示另一语言或原始键。</small>' : ""}${t.condition ? `<details><summary>此段文本的显示条件</summary><pre>${esc(t.condition)}</pre></details>` : ""}</section>`;
-}
-function renderReader(r) {
-  current = r;
-  const m = byId.get(r.id);
-  document.title = `${title(m)} · 群星叙事档案馆`;
-  const siblings = all.filter((s) => s.group === r.group);
-  const name = local(r.titles[0]) || r.id;
-  const optionTargets = new Set(
-    r.options.flatMap((o) => o.links.map((l) => l.target)),
-  );
-  const otherLinks = r.links.filter((l) => !optionTargets.has(l.target));
-  $("#reader-content").innerHTML =
-    `<div class="reader-toolbar"><button id="close-reader">← 返回档案馆</button><span>${esc(r.id)}</span><div><button id="reader-language">${lang === "zh" ? "ENGLISH" : "中文"}</button><button id="reader-back" ${trail.length < 2 ? "disabled" : ""}>上一步</button></div></div><div class="reader-layout"><aside class="reader-art"><div class="reader-art-image">${r.picture ? `<img src="${base + r.picture.url}" alt="${esc(title(m))}的原版事件插图"/>` : '<div class="no-art">✧</div>'}<div class="image-crosshair" aria-hidden="true"></div></div><div class="art-caption"><span>VISUAL RECORD / 原版事件图像</span><small>${esc(r.picture?.source || "此档案没有独立插图")}</small></div><div class="reading-route"><span class="eyebrow">阅读路径 / ${trail.length} 个节点</span><div>${trail.map((id, i) => `<button data-trail="${i}" class="${i === trail.length - 1 ? "active" : ""}"><span>${String(i + 1).padStart(2, "0")}</span>${esc(title(byId.get(id)))}</button>`).join("")}</div></div><details class="related"><summary>同源档案 · ${siblings.length}</summary><div>${siblings.map((s) => `<button data-open="${esc(s.id)}" ${s.id === r.id ? 'aria-current="true"' : ""}>${esc(title(s))}<small>${esc(s.id)}</small></button>`).join("")}</div></details></aside><article class="reader-document"><span class="eyebrow">${esc(categoryName(m.category))} / ${r.hidden ? "后台事件" : "已解密档案"}</span><h1 id="reader-title" tabindex="-1">${esc(clean(name))}</h1><div class="document-meta"><span>${esc(r.id)}</span><span>原版${lang === "zh" ? "中文" : "英文"}文本</span><span>${r.options.length} 个选项</span></div>${r.hidden ? '<p class="notice">这是后台事件；游戏中不会弹出独立窗口。可查看脚本与后续连接。</p>' : ""}<div class="narrative">${r.descriptions.map((t, i) => localizedBlock(t, r.descriptions.length > 1 ? `文本变体 ${i + 1} / ${r.descriptions.length}` : "")).join("") || '<p class="notice">此事件未定义独立正文。请查看关联节点或原始脚本。</p>'}${r.sections.map((t) => localizedBlock(t, t.key)).join("")}</div>${
-      r.titles.length > 1
-        ? `<details><summary>其他条件标题 (${r.titles.length - 1})</summary>${r.titles
-            .slice(1)
-            .map((t) => localizedBlock(t))
-            .join("")}</details>`
-        : ""
-    }<section class="choices"><div class="section-label"><span>作出选择</span><small>原版事件选项 / ALL BRANCHES</small></div>${r.options.map((o, i) => `<details class="choice"><summary><span class="choice-index">${String(i + 1).padStart(2, "0")}</span><span>${fmt(local(o.label))}</span><b>＋</b></summary><div class="choice-content">${o.conditions ? `<details><summary>可用条件</summary><pre>${esc(o.conditions)}</pre></details>` : ""}${o.tooltips.map((t) => localizedBlock(t)).join("")}${o.links.length ? linkButtons(o.links) : '<p class="notice">此选项没有直接事件跳转；可能改变状态、结算奖励或结束当前事件。</p>'}<details><summary>查看选项效果脚本</summary><pre>${esc(o.script)}</pre></details></div></details>`).join("") || '<p class="notice">此节点没有玩家选项。</p>'}</section>${otherLinks.length ? `<section class="continuations"><div class="section-label"><span>关联后续</span><small>触发 / 阶段 / 后台连接</small></div>${linkButtons(otherLinks)}</section>` : ""}<details class="source"><summary>来源与原始脚本</summary><p>${esc(r.source)} : ${r.line}${r.lineSpace === "expanded" ? "（内联模板展开后行号）" : ""}</p><p>动态名称以方括号保留。条件与延迟按脚本展示，不推测当前游戏状态。</p>${r.trigger ? `<pre>${esc(r.trigger)}</pre>` : ""}<pre>${esc(r.script)}</pre></details><p class="document-end">END OF RECORD <span>✦</span> 银河仍在继续</p></article></div>`;
-  $("#reader").scrollTop = 0;
-  if (!reduced())
-    $(".reader-document").animate(
+  }
+  if (!reduced()) {
+    $("#selected-title")
+      .getAnimations()
+      .forEach((a) => a.cancel());
+    $("#selected-title").animate(
       [
-        { opacity: 0.2, transform: "translateY(14px)" },
+        { opacity: 0.25, transform: "translateY(12px)" },
         { opacity: 1, transform: "none" },
       ],
-      { duration: 420, easing: "cubic-bezier(.2,.8,.2,1)" },
+      { duration: 320, easing: "cubic-bezier(.2,.8,.2,1)" },
     );
-  $("#reader-title").focus({ preventScroll: true });
+  }
 }
-async function openRecord(id, { push = true } = {}) {
-  const ticket = ++request;
+function navigate(axis, direction) {
+  if (scene) scene.navigate(axis, direction);
+  else {
+    if (axis === "lane")
+      selectedColumn =
+        (selectedColumn + direction + columns.length) % columns.length;
+    const col = columns[selectedColumn],
+      i = Math.max(0, col.stories.indexOf(selected));
+    showSelection(
+      col.stories[
+        (i + (axis === "row" ? direction : 0) + col.stories.length) %
+          col.stories.length
+      ],
+      selectedColumn,
+      (i + (axis === "row" ? direction : 0) + col.stories.length) %
+        col.stories.length,
+    );
+  }
+}
+$("#previous-story").onclick = () => navigate("row", -1);
+$("#next-story").onclick = () => navigate("row", 1);
+$("#previous-category").onclick = () => navigate("lane", -1);
+$("#next-category").onclick = () => navigate("lane", 1);
+$("#open-story").onclick = () => openStory(selected.id);
+function setReader(open) {
+  document.body.classList.toggle("reader-open", open);
+  $("#reader").hidden = !open;
+  $("#archive-hud").inert = open;
+  $("#archive-hud").classList.toggle("concealed", open);
+  $("#categories").inert = open;
+  $("#categories").classList.toggle("concealed", open);
+  scene?.setDetail(open);
+  if (scene) scene.canvas.tabIndex = open ? -1 : 0;
+}
+async function openStory(id, start) {
+  const ticket = ++readerTicket;
   try {
-    const r = await getRecord(id);
-    if (ticket !== request) return;
-    if (!r) {
-      toast("索引中没有该事件");
-      return;
-    }
-    if (push && trail.at(-1) !== id) trail.push(id);
-    if (!$("#reader").open) $("#reader").showModal();
-    renderReader(r);
-    history.replaceState(null, "", `#record=${encodeURIComponent(id)}`);
+    const data = await loadStory(id);
+    if (ticket !== readerTicket) return;
+    visitedChapters.clear();
+    dossier = data;
+    chapter =
+      data.chapters.find((c) => c.id === (start || data.story.start)) ||
+      data.chapters[0];
+    trail = [{ story: id, chapter: chapter.id }];
+    scene?.selectStory(id);
+    setReader(true);
+    renderChapter();
   } catch (e) {
     toast(e.message);
   }
 }
 function closeReader() {
-  request++;
-  $("#reader").close();
+  readerTicket++;
+  setReader(false);
+  dossier = null;
+  chapter = null;
   trail = [];
-  current = null;
-  history.replaceState(null, "", "#catalogue");
-  document.title = "群星 · 叙事档案馆 | Stellaris Tales";
+  history.replaceState(null, "", "#");
+  document.title = "群星 · 银河记忆 | Stellaris Tales";
+  $("#open-story").focus();
 }
-$("#reader").addEventListener("cancel", (e) => {
-  e.preventDefault();
-  closeReader();
-});
+$("#close-reader").onclick = closeReader;
+async function goChapter(id, storyId, back = false) {
+  const ticket = ++readerTicket;
+  try {
+    let data = dossier;
+    if (!data.chapters.some((c) => c.id === id))
+      data = await loadStory(storyId || recordToStory[id]);
+    if (ticket !== readerTicket) return;
+    const target = data.chapters.find((c) => c.id === id);
+    if (!target) return;
+    if (!back) trail.push({ story: data.story.id, chapter: id });
+    chapter = target;
+    // Referenced interludes stay inside the open story, without closing its file.
+    if (data !== dossier && !dossier.chapters.some((c) => c.id === id))
+      dossier = { ...dossier, chapters: [...dossier.chapters, target] };
+    renderChapter();
+  } catch (e) {
+    toast(e.message);
+  }
+}
+function titleFor(id) {
+  const c = dossier?.chapters.find((c) => c.id === id);
+  return c ? prose(local(c.title)) || "篇章" : "继续";
+}
+function visibleEdges(edges) {
+  const seen = new Set();
+  return edges.filter((e) => {
+    if (seen.has(e.target)) return false;
+    seen.add(e.target);
+    return true;
+  });
+}
+function edgeButtons(edges) {
+  return visibleEdges(edges)
+    .map(
+      (e) =>
+        `<button class="next-chapter" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"><span>${esc(titleFor(e.target))}</span><small>${e.conditional ? "另一种可能" : e.delayed ? "时间流逝之后" : "继续阅读"} →</small></button>`,
+    )
+    .join("");
+}
+const visitedChapters = new Set();
+let readingIndex = 0,
+  readingChapterId = null;
+function renderChapter(preservePosition = false) {
+  visitedChapters.add(chapter.id);
+  if (readingChapterId !== chapter.id) {
+    readingIndex = 0;
+    readingChapterId = chapter.id;
+  }
+  const selectedReading = chapter.readings?.[readingIndex];
+  const r = {
+    ...chapter,
+    texts: selectedReading
+      ? selectedReading.textIndices.map((i) => chapter.texts[i]).filter(Boolean)
+      : chapter.texts,
+    choices: selectedReading
+      ? selectedReading.choiceIndices.map((i) => chapter.choices[i])
+      : chapter.choices,
+  };
+  scene?.setChapterArt(chapter.image, chapter.title);
+  const scrollPosition = $(".reader-panel").scrollTop;
+  r.choices = r.choices.filter(
+    (c, i, a) =>
+      a.findIndex(
+        (x) =>
+          local(x.label) === local(c.label) &&
+          JSON.stringify(x.next) === JSON.stringify(c.next),
+      ) === i,
+  );
+
+  $("#dossier-title").textContent = prose(local(dossier.story.title));
+  $("#dossier-size").textContent = `${dossier.story.chapters} 篇`;
+  const readable = [
+      ...dossier.chapters.filter((c) => !c.hidden),
+      ...(dossier.story.related || []).filter(
+        (c) => !dossier.chapters.some((x) => x.id === c.id),
+      ),
+    ],
+    number =
+      (dossier.story.navigation?.order || readable.map((c) => c.id)).indexOf(
+        r.id,
+      ) + 1;
+  const order = dossier.story.navigation?.order || readable.map((c) => c.id);
+  const nextId = nextUnread(order, r.id, visitedChapters);
+  const nextTitle = readable.find((c) => c.id === nextId)?.title;
+  const nextReading = nextId
+    ? `<button class="reading-next" data-chapter="${esc(nextId)}"><small>下一篇</small><span>${esc(prose(local(nextTitle)) || "继续阅读")}</span><b>→</b></button>`
+    : '<span class="reading-complete">已读完</span>';
+  const texts = [...r.texts, ...r.sections].filter(
+    (t, i, a) => local(t) && a.findIndex((v) => local(v) === local(t)) === i,
+  );
+  $("#reading-content").innerHTML =
+    `${r.image ? `<div class="chapter-art"><img src="${asset(r.image)}" alt=""/><span>STELLARIS / ${esc(local(dossier.story.title))}</span></div>` : ""}<article class="chapter-document"><div class="chapter-eyebrow"><span>${number > 0 ? `第 ${String(number).padStart(2, "0")} 篇` : "故事的间奏"}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>← 回到上一步</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || "故事的间奏")}</h1>${chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="文明视角">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>视角</span><select id="reading-select" aria-label="文明视角">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : ""}<div class="narrative">${texts.map((t, i) => `<section><p>${paragraph(local(t))}</p></section>`).join("") || ""}</div><section class="choices">${r.choices.length ? '<div class="section-heading"><span>你的选择</span><i></i></div>' : ""}${r.choices.map((c, i) => `<div class="choice"><button class="choice-button" data-choice="${i}" aria-expanded="false"><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || "继续")}</span><b>→</b></button><div class="choice-response" hidden>${c.next.length ? edgeButtons(c.next) : nextReading}</div></div>`).join("")}</section>${r.next.length ? `<section class="continuation"><div class="section-heading"><span>故事继续</span><i></i></div>${edgeButtons(r.next)}</section>` : ""}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">剧情脉络</button></div></article>`;
+  $("#chapter-list").innerHTML =
+    `<div class="contents-title"><span>剧情脉络</span><button id="contents-close" aria-label="关闭剧情脉络">×</button></div>` +
+    storyMap(dossier.story, readable, r.id, visitedChapters, lang, prose);
+  $("#chapter-list").hidden = true;
+  $("#chapter-toggle").setAttribute("aria-expanded", "false");
+  $(".reader-panel").scrollTop = preservePosition ? scrollPosition : 0;
+  for (const button of document.querySelectorAll("[data-reading]"))
+    button.onclick = () => {
+      readingIndex = Number(button.dataset.reading);
+      renderChapter(true);
+      document
+        .querySelector(`[data-reading="${readingIndex}"]`)
+        ?.focus({ preventScroll: true });
+    };
+  if ($("#reading-select"))
+    $("#reading-select").onchange = (e) => {
+      readingIndex = Number(e.target.value);
+      renderChapter(true);
+      $("#reading-select")?.focus({ preventScroll: true });
+    };
+  $("#reader-title").focus({ preventScroll: true });
+  history.replaceState(
+    null,
+    "",
+    `#story=${encodeURIComponent(dossier.story.id)}&chapter=${encodeURIComponent(r.id)}`,
+  );
+  document.title = prose(local(dossier.story.title)) + " · 群星";
+  if (!reduced())
+    $(".chapter-document").animate(
+      [
+        { opacity: 0, transform: "translateY(16px)" },
+        { opacity: 1, transform: "none" },
+      ],
+      { duration: 600, easing: "cubic-bezier(.2,.8,.2,1)" },
+    );
+}
+function toggleContents(force) {
+  const open = force ?? $("#chapter-list").hidden;
+  $("#chapter-list").hidden = !open;
+  $("#chapter-toggle").setAttribute("aria-expanded", String(open));
+  if (open) $("#chapter-list .active")?.scrollIntoView({ block: "nearest" });
+}
+$("#chapter-toggle").onclick = () => toggleContents();
 function switchLanguage() {
   lang = lang === "zh" ? "en" : "zh";
   remember("st-language", lang);
-  renderDeck();
-  renderResults();
-  if (current) renderReader(current);
+  if (selected)
+    showSelection(
+      selected,
+      selectedColumn,
+      columns[selectedColumn].stories.indexOf(selected),
+    );
+  if (chapter) renderChapter();
+  renderSearch();
 }
 $("#language").onclick = switchLanguage;
+$("#reader-language").onclick = switchLanguage;
+function renderSearch() {
+  if (!stories.length) return;
+  const words = searchText.toLowerCase().trim().split(/\s+/).filter(Boolean),
+    filtered = stories.filter(
+      (s) =>
+        s.visible &&
+        words.every((w) =>
+          `${s.title.zh} ${s.title.en} ${s.excerpt.zh} ${s.excerpt.en}`
+            .toLowerCase()
+            .includes(w),
+        ),
+    );
+  const pages = Math.max(1, Math.ceil(filtered.length / 20));
+  searchPage = Math.min(searchPage, pages - 1);
+  $("#search-count").textContent = `${filtered.length} 份档案`;
+  $("#search-results").innerHTML =
+    filtered
+      .slice(searchPage * 20, searchPage * 20 + 20)
+      .map(
+        (s) =>
+          `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${s.chapters} 篇章 · ${CATEGORIES.find((c) => c[0] === s.category)?.[1] || "银河故事"}</small></span><i>↗</i></button>`,
+      )
+      .join("") || '<p class="empty">没有匹配结果。</p>';
+  $("#search-page").textContent = `${searchPage + 1} / ${pages}`;
+  $("#search-previous").disabled = searchPage === 0;
+  $("#search-next").disabled = searchPage === pages - 1;
+}
+$("#search-open").onclick = () => {
+  renderSearch();
+  $("#search-dialog").showModal();
+  $("#search-input").focus();
+};
+$("#search-close").onclick = () => $("#search-dialog").close();
+$("#search-input").oninput = (e) => {
+  searchText = e.target.value;
+  searchPage = 0;
+  clearTimeout(renderSearch.timer);
+  renderSearch.timer = setTimeout(renderSearch, 100);
+};
+$("#search-previous").onclick = () => {
+  searchPage--;
+  renderSearch();
+};
+$("#search-next").onclick = () => {
+  searchPage++;
+  renderSearch();
+};
 document.addEventListener("click", (e) => {
+  const category = e.target.closest("[data-category]");
+  if (category) {
+    const n = Number(category.dataset.category);
+    if (scene) scene.selectCategory(n);
+    else showSelection(columns[n].stories[0], n, 0);
+    return;
+  }
   const open = e.target.closest("[data-open]");
   if (open) {
-    if (!$("#reader").open) trail = [];
-    openRecord(open.dataset.open);
+    $("#search-dialog").close();
+    openStory(open.dataset.open);
     return;
   }
-  const cat = e.target.closest("[data-category]");
-  if (cat) {
-    category = cat.dataset.category;
-    page = 0;
-    renderCategories();
-    renderResults();
+  const next = e.target.closest("[data-chapter]");
+  if (next) {
+    goChapter(next.dataset.chapter, next.dataset.story);
     return;
   }
-  const feat = e.target.closest("[data-feature]");
-  if (feat) {
-    const i = Number(feat.dataset.feature);
-    if (i === feature) openRecord(featured[i].id);
-    else {
-      feature = i;
-      renderFeatured();
-    }
+  const choice = e.target.closest("[data-choice]");
+  if (choice) {
+    const panel = choice.nextElementSibling,
+      open = panel.hidden;
+    panel.hidden = !open;
+    choice.setAttribute("aria-expanded", String(open));
+    choice.closest(".choice").classList.toggle("chosen", open);
     return;
   }
-  const step = e.target.closest("[data-trail]");
-  if (step) {
-    trail = trail.slice(0, Number(step.dataset.trail) + 1);
-    openRecord(trail.at(-1), { push: false });
-    return;
-  }
-  if (e.target.closest("#close-reader")) closeReader();
-  if (e.target.closest("#reader-language")) switchLanguage();
-  if (e.target.closest("#reader-back") && trail.length > 1) {
+  if (e.target.closest("#reading-back") && trail.length > 1) {
     trail.pop();
-    openRecord(trail.at(-1), { push: false });
+    const step = trail.at(-1);
+    goChapter(step.chapter, step.story, true);
   }
-  if (e.target.closest("#clear-search")) {
-    query = "";
-    $("#search").value = "";
-    renderResults();
-  }
+  if (e.target.closest(".chapter-directory-link")) toggleContents(true);
+  if (e.target.closest("#contents-close")) toggleContents(false);
 });
-$("#about").onclick = () => $("#info").showModal();
-$(".close-info").onclick = () => $("#info").close();
 document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    if (!$("#playlist").hidden) {
+      $("#playlist").hidden = true;
+      $("#playlist-toggle").setAttribute("aria-expanded", "false");
+    } else if (!$("#reader").hidden && !$("#search-dialog").open) closeReader();
+  }
   if (
     e.key === "/" &&
-    !$("#reader").open &&
-    !$("#info").open &&
     !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)
   ) {
     e.preventDefault();
-    $("#search").focus();
-    $("#catalogue").scrollIntoView();
+    $("#search-open").click();
   }
 });
-window.addEventListener("hashchange", () => {
-  if (location.hash.startsWith("#record="))
-    openRecord(decodeURIComponent(location.hash.slice(8)));
-  else if ($("#reader").open) closeReader();
-});
+function parseHash() {
+  const q = new URLSearchParams(location.hash.slice(1));
+  if (q.has("story")) openStory(q.get("story"), q.get("chapter"));
+  else if (location.hash.startsWith("#record=")) {
+    const id = decodeURIComponent(location.hash.slice(8));
+    if (recordToStory[id]) openStory(recordToStory[id], id);
+  } else if (dossier) closeReader();
+}
+window.addEventListener("hashchange", parseHash);
 try {
-  const data = await json("data/index.json");
-  all = data.records.sort(
-    (a, b) =>
-      Number(!!b.image && b.kind.endsWith("_event") && !b.hidden) -
-      Number(!!a.image && a.kind.endsWith("_event") && !a.hidden),
-  );
-  groups = data.groups;
-  byId = new Map(all.map((r) => [r.id, r]));
-  $("#version").textContent = data.version;
-  $("#archive-total").textContent =
-    `${all.length.toLocaleString()} 份原版记录 / ${groups.length} 组来源`;
-  const desired = [
-    "akx.9000",
-    "horizonsignal.1",
-    "horizon_signal.1",
-    "crisis.10",
-    "crisis.1000",
-    "anomaly.6660",
-    "anomaly.1",
-    "astral_rift.1",
-  ];
-  featured = desired
-    .map((id) => byId.get(id))
-    .filter((r) => r?.image && r.hasText);
-  const used = new Set(featured.map((r) => r.id));
-  for (const cat of [
-    "origins",
-    "precursors",
-    "leviathans",
-    "rifts",
-    "exploration",
-    "crisis",
-  ]) {
-    const r = all.find(
-      (r) =>
-        r.category === cat &&
-        r.image &&
-        r.hasText &&
-        !r.hidden &&
-        r.options > 1 &&
-        !used.has(r.id),
-    );
-    if (r) {
-      featured.push(r);
-      used.add(r.id);
-    }
+  const data = await json("stories/index.json");
+  stories = data.stories;
+  recordToStory = data.recordToStory;
+  storyById = new Map(stories.map((s) => [s.id, s]));
+  columns = CATEGORIES.map(([id, title, en]) => ({
+    id,
+    title,
+    en,
+    stories: stories.filter((s) => s.visible && s.category === id),
+  }));
+  $("#categories").innerHTML = CATEGORIES.map(
+    ([id, title, en], i) =>
+      `<button data-category="${i}" aria-pressed="${i === 2}"><small>${String(i + 1).padStart(2, "0")}</small><span>${title}<em>${en}</em></span></button>`,
+  ).join("");
+  $("#archive-count").textContent = "";
+  try {
+    scene = new ArchiveScene($("#scene"), {
+      columns,
+      onSelect: showSelection,
+      onOpen: (s) => openStory(s.id),
+      reduced,
+      asset,
+    });
+    window.__archiveDiagnostics = () => scene.diagnostics();
+  } catch (e) {
+    $("#scene-fallback").hidden = false;
+    console.warn("3D archive unavailable; using accessible navigation.");
   }
-  featured = featured.slice(0, 7);
-  if (!featured.length)
-    featured = all.filter((r) => r.image && r.hasText).slice(0, 7);
-  renderCategories();
-  renderDeck();
-  renderResults();
-  $("#coverage-link").href = base + "data/coverage.json";
-  json("data/coverage.json")
-    .then((r) => {
-      $("#coverage-summary").innerHTML =
-        `<div class="manifest-grid"><span><b>${r.events.toLocaleString()}</b>事件节点</span><span><b>${r.records.toLocaleString()}</b>全部记录</span><span><b>${r.imageCount.toLocaleString()}</b>图片映射</span></div><p>安装版本：${esc(r.version)}<br>解析失败：${r.parseErrors.length}；未解析跳转：${r.unresolvedLinks.length}。完整缺失本地化与美术条目见覆盖报告。</p>`;
-    })
-    .catch(() => {});
-  if (location.hash.startsWith("#record="))
-    await openRecord(decodeURIComponent(location.hash.slice(8)));
+  $("#scene").addEventListener("scene-lost", () => {
+    $("#scene-fallback").hidden = false;
+    toast("画面暂时休息了，仍可通过分类和搜索继续阅读。");
+  });
+  showSelection(columns[2].stories[0], 2, 0);
+  parseHash();
 } catch (e) {
-  $("#featured").innerHTML =
-    `<h1>档案连接中断</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新连接</button>`;
-  $("#result-count").textContent = "未能载入索引，请重试。";
+  $("#selected-title").textContent = "记忆暂时失联";
+  $("#selected-excerpt").textContent = e.message;
+  $("#open-story").textContent = "重新连接";
+  $("#open-story").onclick = () => location.reload();
+}
+try {
+  new SoundtrackPlayer(await json("music/playlist.json"), asset, toast);
+} catch (e) {
+  $("#track-title").textContent = "原声音乐暂时未能加载";
+  toast(e.message);
 }
