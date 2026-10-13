@@ -1,0 +1,28 @@
+{
+ "id": "site-from-the-ashes-site",
+ "notes": [
+  {
+   "doc": "archaeological_site_types:from_the_ashes_site",
+   "kind": "review",
+   "zh": "随机遗址：权重+100，出现在熔岩星球（pc_molten）上；没有 has_infernals 时权重为0；全银河最多一处（common/archaeological_site_types/14_infernals_arc_sites.txt:2）。",
+   "en": "A random site: +100 on molten planets (pc_molten), weight 0 without has_infernals; at most one per galaxy (common/archaeological_site_types/14_infernals_arc_sites.txt:2)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/14_infernals_arc_sites.txt",
+   "events/infernals_1_events.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-from-the-ashes-site.md"
+ }
+}

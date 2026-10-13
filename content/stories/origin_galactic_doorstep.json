@@ -43,12 +43,96 @@
   "evidence": "1001 setup schedules1000 at300-330days;1100-1115 are its From Gateway Sent archaeology"
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review (V3 bridges re-verified)",
+  "sources": [
+   "events/origin_events_2.txt",
+   "common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt",
+   "common/megastructures/05_gateways.txt",
+   "common/special_projects"
+  ],
+  "uncertain": [
+   "The origin.1050 reward is shared with other Galactic Paragons gateway events (condition recorded in the V3 bridge)."
+  ],
+  "guide": "public/summaries/origin_galactic_doorstep.md"
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.1025",
+    "origin.1035",
+    "origin.1040"
+   ],
+   "label": {
+    "zh": "星门的反噬（随机）",
+    "en": "The gateway's backlash (random)"
+   },
+   "note": {
+    "zh": "隐藏事件1021在360±180天后随机：蝗虫群40、不断轰击30、宇宙过载30。",
+    "en": "Hidden 1021, 360+0-180 days after 1020: Gateway Locust 40, Relentless Barrage 30, Cosmic Overload 30 (events/origin_events_2.txt:487-507)."
+   }
   }
- }
+ ],
+ "endings": {
+  "origin.1030": {
+   "label": {
+    "zh": "虫群被击败",
+    "en": "The swarm is defeated"
+   },
+   "note": {
+    "zh": "击败从星门涌出的虫群后的报告。",
+    "en": "Report after destroying the swarm that came out of the gateway."
+   },
+   "evidence": "events/origin_events_2.txt:575-610"
+  },
+  "origin.1050": {
+   "label": {
+    "zh": "黑冠交出秘密",
+    "en": "The Black Crown yields its secrets"
+   },
+   "note": {
+    "zh": "修复星门后（需银河典范）。",
+    "en": "After the home gateway is restored (needs Galactic Paragons)."
+   },
+   "evidence": "events/origin_events_2.txt:723-783"
+  },
+  "origin.1040": {
+   "label": {
+    "zh": "宇宙过载",
+    "en": "Cosmic Overload"
+   },
+   "note": {
+    "zh": "随机结局之一。",
+    "en": "One of the random outcomes."
+   },
+   "evidence": "events/origin_events_2.txt:685-722"
+  },
+  "origin.1035": {
+   "label": {
+    "zh": "不断轰击",
+    "en": "Relentless Barrage"
+   },
+   "note": {
+    "zh": "随机结局之一。",
+    "en": "One of the random outcomes."
+   },
+   "evidence": "events/origin_events_2.txt:612-683"
+  }
+ },
+ "notes": [
+  {
+   "doc": "origin.1000",
+   "kind": "review",
+   "zh": "开局隐藏事件1001在母星系放置废弃星门，并在300±30天后触发1000“有人敲门”；1000 → 500±60天后 1005（星门虫群）→ 1000±200天后 1010（探测器）。",
+   "en": "Hidden 1001 places the ruined gateway at game start and fires 1000 after 300+0-30 days; 1000 -> 1005 (500+0-60 days) -> 1010 (1000+0-200 days) (events/origin_events_2.txt:142-343)."
+  },
+  {
+   "doc": "origin.1013",
+   "kind": "review",
+   "zh": "由遗址“星门所遣”的最后阶段触发（10天后）；开启“星门炮”项目，完成后 1015 → 700±50天后 1020（给予星门启动科技）→ 随机反噬。",
+   "en": "Fired 10 days after the last stage of the From Gateway Sent site; enables the Gateway Cannon project -> 1015 -> 1020 (700+0-50 days, grants tech_gateway_activation) -> random backlash."
+  }
+ ]
 }

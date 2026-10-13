@@ -100,25 +100,127 @@
     "en": "Complete first-contact research"
    },
    "evidence": "260 sets origin_dragon_finish;02_first_contact_unique_stories.txt event265"
+  },
+  {
+   "from": "aquatics.265",
+   "to": "aquatics.270",
+   "conditional": false,
+   "label": {
+    "zh": "首次接触研究完成",
+    "en": "First-contact research is complete"
+   },
+   "annotate": true,
+   "evidence": "events/aquatics_events.txt:1572 265.A fires 270 (annotation; already a compiled option edge)"
   }
  ],
  "opening": {
   "targets": [
-   "aquatics.150"
+   "aquatics.150",
+   "aquatics.105",
+   "aquatics.180",
+   "aquatics.305",
+   "aquatics.280"
   ],
   "label": {
-   "zh": "数年后，天龙开始进食",
-   "en": "Years later, the dragon grows hungry"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "aquatics.100 initial setup schedules150 at3300-4300days; aquatics1/4/5 are Hydrocentric ascension content, not this origin"
+  "labels": {
+   "aquatics.150": {
+    "zh": "数年后，天龙开始进食",
+    "en": "Years later, the dragon grows hungry"
+   },
+   "aquatics.105": {
+    "zh": "击毁天空之龙时",
+    "en": "When the Sky Dragon is destroyed"
+   },
+   "aquatics.180": {
+    "zh": "舰队进入有龙的星系时：守护之龙",
+    "en": "When a fleet enters a dragon system: Guardian Dragon"
+   },
+   "aquatics.305": {
+    "zh": "舰船首次进入有龙的星系时：守护之龙",
+    "en": "When a ship first enters a dragon system: Guardian Dragon"
+   },
+   "aquatics.280": {
+    "zh": "与龙的首次接触失败时的随机事件：被激怒的龙",
+    "en": "A random failure result of the dragon first contact: an irritated dragon"
+   }
+  },
+  "evidence": "events/game_start.txt:385 fires hidden aquatics.100 (events/aquatics_events.txt:128-180: spawns the dragon, schedules aquatics.150 after 3300+0-1000 days). Others: on_fleet_destroyed_perp common/on_actions/00_on_actions.txt:1661 (105), on_entering_system_fleet :1042 (180), on_entering_system_first_time :928 (305), first_contact/origin_dragon random failures (280)."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review (V3 bridges re-verified)",
+  "sources": [
+   "events/aquatics_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/first_contact/02_first_contact_unique_stories.txt",
+   "common/special_projects"
+  ],
+  "uncertain": [
+   "The reanimation branch (105 -> project -> 115) and the Sky Dragon celebration situation belong partly to the generic leviathan stories (C6)."
+  ],
+  "guide": "public/summaries/origin_here_be_dragons.md"
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "aquatics.200",
+    "aquatics.205",
+    "aquatics.210",
+    "aquatics.215"
+   ],
+   "label": {
+    "zh": "龙鳞研究的结果",
+    "en": "Result of the dragon-material study"
+   },
+   "note": {
+    "zh": "项目完成时随机：科学船被吞（20）、被击退（40）、龙之怒（30）、研究成功（10），数值含修正。",
+    "en": "Random on project success: vessel devoured 20, rebuffed 40, wrath 30, success 10 (modified weights shown by the compiler)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "aquatics.155",
+    "aquatics.160",
+    "aquatics.165"
+   ],
+   "label": {
+    "zh": "饥饿之龙的三种应对",
+    "en": "Three responses to the hungry dragon"
+   },
+   "note": {
+    "zh": "由150的选项决定；降落（160/165）之后可得天龙起飞（170）。",
+    "en": "Chosen by the options of 150; after landing (160 / 165) the dragon takes flight (170)."
+   }
+  }
+ ],
+ "endings": {
+  "aquatics.120": {
+   "label": {
+    "zh": "龙语传来",
+    "en": "Incoming Dragonspeak"
+   },
+   "note": {
+    "zh": "接触研究完成2400天后的龙语。也可由飞升天赋触发。",
+    "en": "Dragonspeak 2400 days after the contact research; also fired by an ascension perk."
+   },
+   "evidence": "events/aquatics_events.txt:493, :1608; common/on_actions/00_on_actions.txt:4749"
+  },
+  "aquatics.115": {
+   "label": {
+    "zh": "天空之龙复苏",
+    "en": "The Sky Dragon is reanimated"
+   },
+   "note": {
+    "zh": "项目完成。",
+    "en": "Project completed."
+   },
+   "evidence": "events/aquatics_events.txt:418; common/special_projects/00_projects_leviathans.txt:499"
   }
  }
 }

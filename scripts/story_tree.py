@@ -272,6 +272,8 @@ class Compiler:
         r = self.byid[rid]
         if any(s in r['source'] for s in NON_STORY_SOURCES):
             return False
+        if 'is_test_event = yes' in r.get('trigger', '') or re.search(r'\bis_test_event\s*=\s*yes', r.get('script', '')[:400]):
+            return False  # developer test events (never fire in a normal game)
         return bool(self.meta.get(rid, {}).get('hasText')) and not r['hidden']
 
     # -------------------------------------------------------------------- edges ---
@@ -284,7 +286,8 @@ class Compiler:
             if c['via'] == 'scripted_effect' or c['to'] not in self.byid or c['from'] == c['to']:
                 continue
             if c['from'] in self.byid:
-                if any(s in self.byid[c['from']]['source'] for s in NON_STORY_SOURCES):
+                # Spawning an anomaly starts that anomaly's own story: trigger information, never a continuation.
+                if c['via'] == 'add_anomaly' or any(s in self.byid[c['from']]['source'] for s in NON_STORY_SOURCES):
                     self.triggers[c['to']].append(c)
                     continue
                 self.out[c['from']].append(c)
@@ -340,6 +343,8 @@ class Compiler:
                 info['option'] = bridge['choice']
             if 'requiresVisited' in bridge:
                 info['requiresVisited'] = bridge['requiresVisited']
+            if bridge.get('external'):  # a link into another story; never absorbs the target root
+                info['external'] = True
             extra[bridge['from']].append((bridge['to'], info))
         self.openings_start = {'origin-intro:' + sid for sid in self.openings}
         for sid, opening in self.openings.items():
@@ -387,8 +392,9 @@ class Compiler:
                 if c['to'] not in self.hubs:  # a hub's own outcomes belong to the hub's story
                     adj[src].add(c['to'])
         for src, edges in self.extra_edges.items():
-            for target, _ in edges:
-                adj[src].add(target)
+            for target, info in edges:
+                if not info.get('external'):
+                    adj[src].add(target)
         nodes = [r['id'] for r in self.records]
         comp = strongly_connected(nodes, adj)
         external = set()
@@ -723,7 +729,9 @@ class Compiler:
             labels.append({'zh': '由游戏机制触发（脚本中无直接调用）', 'en': 'Fired by the game engine (no script call found)'})
         for call in self.triggers.get(rid, []):
             folder, _, key = call['from'].partition(':')
-            if folder == 'on_actions':
+            if call['via'] == 'add_anomaly':
+                zh, en = ('由事件在星球上生成', 'Placed on a planet by an event')
+            elif folder == 'on_actions':
                 zh, en = TRIGGER_LABELS.get(key, ('由游戏状态触发', 'Triggered by game state'))
             elif folder in DEF_TRIGGERS:
                 zh, en = DEF_TRIGGERS[folder]
@@ -828,7 +836,7 @@ class Compiler:
                         chapter['choices'][index]['next'].append(edge)
                     elif not any(e['target'] == target for e in chapter['next']):
                         chapter['next'].append(edge)
-                    if not allowed(target):
+                    if not allowed(target) or (info.get('external') and target not in placed and target not in own):
                         continue
                     if target in placed:
                         tree['nodes'][nid]['children'].append(new_node({'ref': placed[target], 'doc': target, 'parent': nid, 'via': info}))

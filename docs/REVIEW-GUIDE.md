@@ -67,7 +67,8 @@ File name = story id. Only the reviewer owning a story edits its fragment. All f
   "titleFrom": "<record id>",          // use that record's original title as the story title
   "hubs": ["<record id>"], "notHubs": ["<record id>"],
   "bridges": [{ "from": "<doc>", "choice": "<option key>", "to": "<doc>", "conditional": true,
-                "label": {"zh": "…", "en": "…"}, "evidence": "events/x.txt:123 …" }],
+                "label": {"zh": "…", "en": "…"}, "evidence": "events/x.txt:123 …",
+                "external": true }],   // optional: link into ANOTHER story without absorbing its root
   "suppress": [{ "from": "<doc>", "to": "<doc>", "option": "<option key>", "evidence": "…" }],
   "groups": [{ "kind": "parallel" | "exclusive", "members": ["<doc>"], "required": 6, "gate": "<doc>",
                "label": {"zh": "…", "en": "…"}, "note": {"zh": "…", "en": "…"} }],

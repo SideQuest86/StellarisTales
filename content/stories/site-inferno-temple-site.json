@@ -1,0 +1,28 @@
+{
+ "id": "site-inferno-temple-site",
+ "notes": [
+  {
+   "doc": "archaeological_site_types:inferno_temple_site",
+   "kind": "review",
+   "zh": "随机遗址：权重+250，出现在火山星球（pc_volcanic）上且所有者为前FTL文明；没有 has_infernals 时权重为0；全银河最多一处（common/archaeological_site_types/14_infernals_arc_sites.txt:53）。",
+   "en": "A random site: +250 on volcanic planets (pc_volcanic) owned by a pre-FTL species; weight 0 without has_infernals; at most one per galaxy (common/archaeological_site_types/14_infernals_arc_sites.txt:53)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/14_infernals_arc_sites.txt",
+   "events/infernals_1_events.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-inferno-temple-site.md"
+ }
+}

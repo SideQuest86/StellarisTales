@@ -1,0 +1,170 @@
+{
+ "id": "event-distar-5054",
+ "family": {
+  "title": {
+   "zh": "神秘货舱",
+   "en": "The Enigmatic Cache"
+  },
+  "category": "exploration",
+  "start": "distar.5057",
+  "members": [
+   "distar.5057",
+   "special_projects:ENIGMATIC_CACHE_PROJECT",
+   "distar.5058",
+   "distar.5059",
+   "distar.5062",
+   "distar.5064",
+   "special_projects:ENIGMATIC_UPLIFTING",
+   "distar.5070",
+   "distar.5078"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.5057",
+   "to": "distar.5059",
+   "conditional": true,
+   "label": {
+    "zh": "货舱驶往下一颗行星",
+    "en": "The cache moves on to another planet"
+   },
+   "evidence": "events/distant_stars_events_2.txt:5083 distar.5052 (hidden loop) picks the next unscanned colony of a non-hostile country and sends the cache fleet there; carrier distar.5056 (events/distant_stars_events_2.txt:5286) removes enigmatic_cache_in_orbit and, 1 day later, distar.5059 tells the planet's owner once (flag cache_has_changed_location)."
+  },
+  {
+   "from": "distar.5059",
+   "to": "distar.5062",
+   "conditional": true,
+   "label": {
+    "zh": "货舱被召回，回到某国首都",
+    "en": "The cache is called back to a country's capital"
+   },
+   "evidence": "events/distant_stars_events_2.txt:5726 distar.5060 (hidden monthly): once every non-hostile country at peace has a scanned colony (or at least one human player's species colony has been scanned), a player country (flag enigmatic_caches_choice, preferring one not outclassed in technology) is chosen, global flag cache_returned is set and the fleet flies to its homeworld; common/on_actions/00_on_actions.txt:1807 on_fleet_auto_move_arrival → distar.5061 (hidden, events/distant_stars_events_2.txt:5913) → distar.5062 (events/distant_stars_events_2.txt:5942)."
+  },
+  {
+   "from": "special_projects:ENIGMATIC_UPLIFTING",
+   "to": "distar.5070",
+   "conditional": true,
+   "label": {
+    "zh": "货舱被他人击毁（20天后）",
+    "en": "The cache is disabled by someone else (20 days later)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:2048 on_ship_disabled → distar.5053 (hidden, events/distant_stars_events_2.txt:5381): a player country researching ENIGMATIC_UPLIFTING that is not the aggressor gets distar.5070 after 20 days; the cache respawns elsewhere, but if its own uplifting was running the cache is gone for good."
+  },
+  {
+   "from": "special_projects:ENIGMATIC_UPLIFTING",
+   "to": "distar.5078",
+   "conditional": true,
+   "label": {
+    "zh": "首都被攻陷时货舱在轨（10天后）",
+    "en": "Capital invaded while the cache is in orbit (10 days later)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:838 on_colony_attackers_win → distar.5077 (hidden, events/distant_stars_events_2.txt:6725): the country researching ENIGMATIC_UPLIFTING is invaded on its capital while the cache fleet is in orbit; the project is aborted and distar.5078 follows after 10 days."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.5068",
+    "distar.5063",
+    "distar.5074"
+   ],
+   "label": {
+    "zh": "项目完成的结果（取决于货舱是否损坏）",
+    "en": "Project result (depends on whether the cache broke)"
+   },
+   "note": {
+    "zh": "权重 60/20/100：未损坏（没有 enigmatic_cache_broken）时 5074 为0，即 5068:5063 = 75%:25%；损坏时 5063 为0，5068 与 5074 为 37.5%:62.5%，而种族本就聪明/学习快（intelligent、quick_learners）时 5068 也为0，全部是 5074。损坏标志由 distar.5071“警报”设置，由 distar.5073（修复完成）或 distar.5069（中止）清除（common/special_projects/00_projects_distant_stars.txt ENIGMATIC_UPLIFTING on_success）。编译树显示的 33/11/56% 是以上情况的平均值，并不真实。",
+    "en": "Weights 60/20/100: while the cache is intact (no enigmatic_cache_broken) 5074 is 0, so 5068:5063 = 75%:25%; once broken 5063 is 0 and 5068:5074 = 37.5%:62.5%, and for an already intelligent / quick-learning species 5068 is 0 too, leaving only 5074. The broken flag is set by distar.5071 \"Alert\" and cleared by distar.5073 (repair complete) or distar.5069 (aborted) (ENIGMATIC_UPLIFTING on_success in common/special_projects/00_projects_distant_stars.txt). The 33/11/56% shown by the compiled tree is an average of these cases and is not real."
+   }
+  }
+ ],
+ "endings": {
+  "distar.5063": {
+   "label": {
+    "zh": "成功提升",
+    "en": "A successful uplift"
+   },
+   "note": {
+    "zh": "物种获得 trait_enigmatic_intelligence。",
+    "en": "The species gains trait_enigmatic_intelligence."
+   },
+   "evidence": "events/distant_stars_events_2.txt:6349"
+  },
+  "distar.5068": {
+   "label": {
+    "zh": "无知是福",
+    "en": "Ignorance is Bliss"
+   },
+   "note": {
+    "zh": "提升成功但伴随悲伤修正（enigmatic_sadness，3600天）。",
+    "en": "The uplift works but with a sadness modifier (enigmatic_sadness, 3600 days)."
+   },
+   "evidence": "events/distant_stars_events_2.txt:6415"
+  },
+  "distar.5074": {
+   "label": {
+    "zh": "勉强提升",
+    "en": "Somewhat Uplifted"
+   },
+   "note": {
+    "zh": "货舱损坏后的结果：较差的智力特质与疯狂修正。",
+    "en": "The result after the cache broke: a poorer intelligence trait and a madness modifier."
+   },
+   "evidence": "events/distant_stars_events_2.txt:6496"
+  },
+  "distar.5069": {
+   "label": {
+    "zh": "提升中止",
+    "en": "Uplifting aborted"
+   },
+   "note": {
+    "zh": "货舱被删除并留下恐怖生物的残影。",
+    "en": "The cache fleet is deleted and leaves a horror-spawn ambient object."
+   },
+   "evidence": "events/distant_stars_events_2.txt:6284"
+  }
+ },
+ "notes": [
+  {
+   "doc": "distar.5058",
+   "zh": "选项会设置 lcluster_clue_desc_1 并调用 pop_lcluster_event，即有机会产生 L-星团线索（参见“L-星团”故事 event-distar-13080）。",
+   "en": "The option sets lcluster_clue_desc_1 and calls pop_lcluster_event, so it can yield an L-Cluster clue (see the L-Cluster story event-distar-13080).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "events/distant_stars_events_2.txt:4776-4960 (distar.2050, 20501 setup)",
+   "events/distant_stars_events_2.txt:4960 (distar.5054)",
+   "common/on_actions/00_on_actions.txt:1805 (on_fleet_auto_move_arrival → 5054, 5061)",
+   "events/distant_stars_events_2.txt:4998 (distar.5057)",
+   "common/special_projects/00_projects_distant_stars.txt (ENIGMATIC_CACHE_PROJECT)",
+   "events/distant_stars_events_2.txt:5054 (distar.5058)",
+   "events/distant_stars_events_2.txt:5083 (distar.5052)",
+   "events/distant_stars_events_2.txt:5286 (distar.5056)",
+   "events/distant_stars_events_2.txt:5333 (distar.5059)",
+   "events/distant_stars_events_2.txt:5381 (distar.5053)",
+   "events/distant_stars_events_2.txt:5726 (distar.5060)",
+   "events/distant_stars_events_2.txt:5913-5942 (distar.5061, 5062)",
+   "events/distant_stars_events_2.txt:5963 (distar.5064)",
+   "common/special_projects/00_projects_distant_stars.txt (ENIGMATIC_UPLIFTING, ENIGMATIC_REPAIR)",
+   "events/distant_stars_events_2.txt:6017-6600 (distar.5066-5074)",
+   "events/distant_stars_events_2.txt:6601 (distar.5070)",
+   "events/distant_stars_events_2.txt:6725 (distar.5077)",
+   "events/distant_stars_events_2.txt:6764 (distar.5078)"
+  ],
+  "uncertain": [
+   "The exact 5060 selection rule (which player country is chosen, 'not outclassed in technology') was read but its in-game effect on the chosen country was not simulated.",
+   "The text of the four dialogue options in distar.5064/5072 was not read line by line; only the options and the project/abort effects were checked."
+  ],
+  "guide": "public/summaries/event-distar-5054.md"
+ }
+}

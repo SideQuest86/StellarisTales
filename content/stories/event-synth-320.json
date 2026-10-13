@@ -1,0 +1,17 @@
+{
+ "id": "event-synth-320",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "单个池事件：来源池、触发条件、选项分支与去向已对照脚本核实。",
+   "en": "Pool event: source pool, trigger conditions, option branches and destinations checked against the script."
+  },
+  "sources": [
+   "events/machine_age_situation_events_2.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-synth-320.md"
+ }
+}

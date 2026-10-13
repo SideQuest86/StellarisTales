@@ -1,0 +1,30 @@
+{
+ "id": "event-cyber-855",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cyber.860",
+    "cyber.865"
+   ],
+   "label": {
+    "zh": "政府控制 → 865；企业/独立 → 860",
+    "en": "Government control -> 865; corporate / independent -> 860"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "升学考试：按控制权标志分成两条后续。",
+   "en": "Making the Grade: two follow-ups by the control flag."
+  },
+  "sources": [
+   "events/machine_age_situation_events_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-cyber-855.md"
+ }
+}

@@ -170,3 +170,22 @@ inline `shroud_touched_patron_contact.txt` and shroud.5305). Major end events (i
 offer embrace / neutral / reject (attunement); minor ones one option (4055, 4065, 4105, 4125 add monthly Zro).
 The `-hive` / `-robot` story ids no longer exist (intended, absorbed); only the base id keeps a fragment.
 Note: shroud.4000/4010/... also appear as docs inside the enclave stories event-enclave-300/304/400/404 (via shroud.5305); not mine.
+
+### Resumed session, later batches (2026-10-13)
+- Cosmic storms (11 anomalies + terrestrial telescope): all spawned by hidden cstorms.5 (5%) / cstorms.10 (20%) from `on_storm_left_system`
+  (`00_on_actions.txt:5421`); cute/crimson crawlers have their own spawn blocks (`102_*.txt:52-95, 155-178`). Reviewed.
+- Baldarak / Dathnak: 11 root stories (events 5007-5026, mtth flag chain) merged into family **event-anomaly-5007** "Dathnak Colony"
+  (25 docs, 12 flag/mean-time bridges, evidence `anomaly_events_4.txt`). Its predecessor 5006 sets baldarak_settled and lives in c3a's
+  anomaly-signal-gasgiant-category (not bridged).
+- event-anomaly-6660 (+6661 merged, machine/non-machine variants); event-anomaly-6880 (+6885 merged; bridges for the second mining station);
+  6725, 6830, 4171 reviewed as tails of anomalies owned elsewhere.
+- Infernals (8 anomalies + 3 Cosmic Dawn sleepers + oasis), ancient relics (mechano, rubricator, arc), astral planes (greatest show,
+  astral scar, black hole instability, spontaneous explosions), federations (wenkwort, sea crystal, strange signal) reviewed.
+- Projects with no script enabler found (GAS_GIANT_BODIES, ESTABLISH_COMMUNICATIONS, retaliatory_genome_mapping, woodwind, ROBOT_CLEANERS
+  [only a commented-out enable]): reviewed with uncertainty "enabler not found".
+- Still **partial**: anomaly-solarpunk-cat, anomaly-storms-prec-wm-one (reasons above, unchanged).
+
+### Requests (additions)
+11. event-distar-1999 (retry/gatekeeper tail of STUDY_LIVING_SEA) duplicates the tail of c3a's anomaly-distar-living-cat.
+12. project-endbringers-commune-with-the-voice: needs a link from shroud.2840 (Endbringers breach situation); a bridge would absorb it into the origin story (see request 7, external-link flag).
+13. shroud.4000/4010/... patron first-contact start events are also docs in event-enclave-300/304/400/404 (via shroud.5305); consider hubs.

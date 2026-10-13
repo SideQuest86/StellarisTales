@@ -1,0 +1,19 @@
+{
+ "id": "event-distar-13070",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:1239 (on_system_survey → distar.13070)",
+   "events/distant_stars_events_3.txt:2323 (distar.13070)",
+   "events/apocalypse_events.txt (apoc.1, the ship-survey version)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-distar-13070.md"
+ }
+}

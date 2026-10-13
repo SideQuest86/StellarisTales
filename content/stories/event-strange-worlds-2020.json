@@ -1,0 +1,18 @@
+{
+ "id": "event-strange-worlds-2020",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/strange_worlds_events.txt:2883-3023",
+   "common/on_actions/00_on_actions.txt:2739 on_tech_increased"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-strange-worlds-2020.md"
+ }
+}

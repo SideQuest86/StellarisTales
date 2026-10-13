@@ -1,0 +1,58 @@
+{
+ "id": "site-site-chronicles-of-dendrus",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:DENDRITIAN_CHRONICLES_PROJECT_MACHINE",
+    "special_projects:DENDRITIAN_CHRONICLES_PROJECT_DEFAULT"
+   ],
+   "label": {
+    "zh": "研究历代志：按主种族择一",
+    "en": "Study the Chronicles: one project by main species"
+   },
+   "labels": [
+    {
+     "zh": "主种族为机器人",
+     "en": "main species robotic"
+    },
+    {
+     "zh": "其他",
+     "en": "otherwise"
+    }
+   ],
+   "note": {
+    "zh": "extreme_frontiers.1415 按 owner_main_species 是否为机器人启用其中一个项目，两者结果相同（extreme_frontiers.1420）。",
+    "en": "extreme_frontiers.1415 enables one by whether the main species is robotic; both end in extreme_frontiers.1420."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_chronicles_of_dendrus",
+   "kind": "review",
+   "zh": "勘察天体时，隐藏事件 ancrel.9999（on_survey_planet）以 5/405 的机会生成一个随机考古遗址（AI帝国或5年内刚发现过遗址者机会×0.2），再按各遗址的权重抽取；本遗址要求 has_shroud_dlc，权重+50，出现在贫瘠、寒冷贫瘠、有毒或冰冻星球，且恒星系中有黑洞上。",
+   "en": "When a body is surveyed, hidden ancrel.9999 (on_survey_planet) has a 5/405 chance to create a random dig site (×0.2 for AI empires or if a site was found in the last 5 years), then picks a site type by weight; this site needs has_shroud_dlc and has weight +50 on barren, cold barren, toxic or frozen planets in a system with a black hole."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt",
+   "events/extreme_frontiers_events.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "common/special_projects/05_projects_extreme_frontiers.txt",
+   "common/on_actions/00_on_actions.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-chronicles-of-dendrus.md"
+ }
+}

@@ -242,3 +242,17 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **event-distar-9000** — merged into event-distar-13080. L-Gate Insights (clue follow-up distar.9000) belongs to the L-Cluster story.
 - **event-distar-13020** — merged into event-distar-13080. Slayed (killing an L-Drake) belongs to the L-Cluster dragon-season branch.
 - **event-distar-13030** — merged into event-distar-13080. L-Drake Observed (+ TAME_LDRAGON_PROJECT, 13035) belongs to the L-Cluster dragon-season branch.
+
+### Batch b_17_gateways
+
+- **event-distar-13060** — reviewed. Single event distar.13060 = apoc.5 duplicate for systems not surveyed by a ship (on_system_survey); kept as its own small story; request to coordinator to consider linking with event-apoc-5.
+- **event-distar-13070** — reviewed. Single event distar.13070 = apoc.1 duplicate for systems not surveyed by a ship; kept as its own small story.
+
+### Batch b_18_enigmatic_cache
+
+- **event-distar-5054** — reviewed. Family created (start distar.5057; members project/5058/5059/5062/5064/uplifting/5070/5078). Bridges 5057->5059, 5059->5062, UPLIFTING->5070, UPLIFTING->5078; exclusive result group with real weights (75/25 intact; 37.5/62.5 or 100% 5074 broken); draft p corrected. Merged event-distar-5053, 5061, 5077.
+  - uncertain: The exact 5060 selection rule (which player country is chosen, 'not outclassed in technology') was read but its in-game effect on the chosen country was not simulated.
+  - uncertain: The text of the four dialogue options in distar.5064/5072 was not read line by line; only the options and the project/abort effects were checked.
+- **event-distar-5053** — merged into event-distar-5054. Ascension Terminated (distar.5070, via hidden distar.5053 on_ship_disabled) belongs to the Enigmatic Cache story.
+- **event-distar-5061** — merged into event-distar-5054. The Enigmatic Cache Returns (distar.5062 ... uplifting project and results) belongs to the Enigmatic Cache story.
+- **event-distar-5077** — merged into event-distar-5054. Enigmatic Ascension Terminated (distar.5078, via hidden distar.5077 on_colony_attackers_win) belongs to the Enigmatic Cache story.

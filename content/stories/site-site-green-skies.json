@@ -1,0 +1,55 @@
+{
+ "id": "site-site-green-skies",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.1425",
+    "cstorms.1416"
+   ],
+   "label": {
+    "zh": "对海盗的回应",
+    "en": "Answer to the pirates"
+   },
+   "labels": [
+    {
+     "zh": "付钱",
+     "en": "Pay"
+    },
+    {
+     "zh": "拒绝",
+     "en": "Refuse"
+    }
+   ],
+   "note": {
+    "zh": "cstorms.1415 的两个选项各在15天后触发其中之一。",
+    "en": "The two options of cstorms.1415 fire one of them 15 days later."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_green_skies",
+   "kind": "review",
+   "zh": "随机遗址：权重+15，出现在可居住星球上；没有《宇宙风暴》或所有者为格式塔时权重为0；全银河最多一处（common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:5）。",
+   "en": "A random site: +15 on habitable planets, weight 0 without Cosmic Storms or for a gestalt owner; at most one per galaxy (common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:5)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/10_cosmic_storms_arc_sites.txt",
+   "events/cosmic_storms_events_1.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-green-skies.md"
+ }
+}

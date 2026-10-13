@@ -1,0 +1,48 @@
+{
+ "id": "event-strange-worlds-1045",
+ "family": {
+  "title": {
+   "zh": "轨道残骸",
+   "en": "Orbital Debris"
+  },
+  "category": "stories",
+  "start": "strange_worlds.1050",
+  "members": [
+   "strange_worlds.1045",
+   "strange_worlds.1050",
+   "strange_worlds.1055",
+   "strange_worlds.1060"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "strange_worlds.1050",
+   "choice": "strange_worlds.1050.a",
+   "to": "strange_worlds.1060",
+   "conditional": true,
+   "label": {
+    "zh": "环境改造完成：生成垃圾之月",
+    "en": "Terraforming completes: the junk moon spawns"
+   },
+   "evidence": "events/strange_worlds_terraforming_events.txt:632-635,654-672 option a sets spawn_junk_moon and +25% terraform time; strange_worlds.1055 (on_terraforming_complete) fires strange_worlds.1060"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/strange_worlds_terraforming_events.txt:573-723",
+   "common/on_actions/00_on_actions.txt:2105,2125 on_terraforming_progress_25 / on_terraforming_complete"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-strange-worlds-1045.md",
+  "merged": [
+   "event-strange-worlds-1055"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "id": "site-site-anomalous-cube",
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_anomalous_cube",
+   "kind": "review",
+   "zh": "随机遗址：基础权重1000，出现在非恒星、非小行星的天体上；全银河最多一处（common/archaeological_site_types/12_strange_worlds_arc_sites.txt:58）。",
+   "en": "A random site with base weight 1000 on bodies that are neither stars nor asteroids; at most one per galaxy (common/archaeological_site_types/12_strange_worlds_arc_sites.txt:58)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/12_strange_worlds_arc_sites.txt",
+   "events/strange_worlds_events.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-anomalous-cube.md"
+ }
+}

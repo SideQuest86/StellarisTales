@@ -1,0 +1,29 @@
+{
+ "id": "site-last-thought-site",
+ "notes": [
+  {
+   "doc": "archaeological_site_types:last_thought_site",
+   "kind": "review",
+   "zh": "遗址权重为0，由堕落蜂巢初始化器 fallen_hive_last_thought 创建（common/solar_system_initializers/fallen_empire_initializers.txt:3903）；全银河最多一处。",
+   "en": "Weight 0: created by the system initializer fallen_hive_last_thought (common/solar_system_initializers/fallen_empire_initializers.txt:3903); at most one per galaxy."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/13_biogenesis_arc_sites.txt",
+   "events/biogenesis_events.txt",
+   "common/solar_system_initializers/fallen_empire_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-last-thought-site.md"
+ }
+}

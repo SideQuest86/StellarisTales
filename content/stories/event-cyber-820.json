@@ -1,0 +1,34 @@
+{
+ "id": "event-cyber-820",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cyber.821",
+    "cyber.822"
+   ],
+   "label": {
+    "zh": "选项a/b引出的后续",
+    "en": "Follow-ups of options a and b"
+   },
+   "note": {
+    "zh": "a：50%概率20+随机20天后 821「激进抗议」；b：25%概率40+随机30天后 822「激进体质」；c 直接进入休闲池。",
+    "en": "a: 50% chance of 821 \"Radical Protests\" after 20 days (+ random 20); b: 25% chance of 822 \"Radical Physiology\" after 40 days (+ random 30); c goes straight to the leisure pool."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "激进形象：三个选项、抗议或身体改造的后续。",
+   "en": "Radical Image: three options and the protest / physiology follow-ups."
+  },
+  "sources": [
+   "events/machine_age_situation_events_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-cyber-820.md"
+ }
+}

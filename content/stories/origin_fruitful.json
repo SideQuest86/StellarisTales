@@ -1,0 +1,142 @@
+{
+ "id": "origin_fruitful",
+ "opening": {
+  "targets": [
+   "origin.7000",
+   "origin.7201",
+   "origin.7100",
+   "origin.7304",
+   "origin.7327",
+   "special_projects:OPEN_SEED_PODS_PROJECT",
+   "origin.7326",
+   "origin.7328",
+   "origin.7400",
+   "origin.7500",
+   "origin.7510",
+   "origin.7600"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "origin.7000": {
+    "zh": "开局后1800–3600天：研究天基生物",
+    "en": "Between 1800 and 3600 days after start: studying the Tiyanki"
+   },
+   "origin.7201": {
+    "zh": "首次对星球实施播种轰炸（教程）",
+    "en": "First seed bombing of a planet (tutorial)"
+   },
+   "origin.7100": {
+    "zh": "首次有被引诱的生物在喂食站吃下果实（教程）",
+    "en": "First time a lured critter eats at your feeding station (tutorial)"
+   },
+   "origin.7304": {
+    "zh": "首次有生物携带种子（教程）",
+    "en": "First time a critter carries a seed (tutorial)"
+   },
+   "origin.7327": {
+    "zh": "种子落在已有人定居的星球上",
+    "en": "Seeds fall on an already colonised planet"
+   },
+   "special_projects:OPEN_SEED_PODS_PROJECT": {
+    "zh": "种子落在已有人定居的星球上（项目）",
+    "en": "Seeds fall on an already colonised planet (project)"
+   },
+   "origin.7326": {
+    "zh": "他国在种有种子的星球上开始殖民",
+    "en": "Another empire starts colonising a seeded planet"
+   },
+   "origin.7328": {
+    "zh": "我方在自己种下的星球上开始殖民",
+    "en": "We start colonising a planet we seeded"
+   },
+   "origin.7400": {
+    "zh": "种荚殖民的前哨站部署完成",
+    "en": "A seed-pod outpost is deployed"
+   },
+   "origin.7500": {
+    "zh": "星海共同体通过保护法案",
+    "en": "The Galactic Community passes a protection act"
+   },
+   "origin.7510": {
+    "zh": "星海共同体通过害虫防治法案",
+    "en": "The Galactic Community passes a pest-control act"
+   },
+   "origin.7600": {
+    "zh": "战争开始：野草军队",
+    "en": "A war begins: invasive armies"
+   }
+  },
+  "evidence": "game_start fruitful_start_effect (common/scripted_effects/01_start_of_game_effects.txt:7) fires origin.7000 after 1800+0-1800 days (events/origin_events_5.txt:14-54), which enables TIYANKIS_PROJECT (common/special_projects/00_projects_plantoids.txt:106 -> 7005). Mechanics hooks: on_planet_bombarded (7200/7201), on_monthly_pulse_country (7300 lures critters), on_fleet_enter_orbit (7303), on_entering_system_fleet (7302/7310), on_colonization_started common/on_actions/00_on_actions.txt:1277-1278 (7326/7328), on_resolution_passed :4361-4362, on_war_beginning :2617."
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.7500",
+    "origin.7510"
+   ],
+   "label": {
+    "zh": "星海共同体议案",
+    "en": "Galactic Community resolution"
+   },
+   "note": {
+    "zh": "保护法案（7500）或害虫防治法案（7510）。",
+    "en": "Protection act (7500) or pest-control act (7510) (common/on_actions/00_on_actions.txt:4361-4362)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.7326",
+    "origin.7328"
+   ],
+   "label": {
+    "zh": "殖民带种子的星球",
+    "en": "Colonising a seeded planet"
+   },
+   "note": {
+    "zh": "种子的主人不同：他国殖民（7326）或自己殖民（7328）。",
+    "en": "Depends on who colonises: another empire (7326) or the seed owner (7328)."
+   }
+  }
+ ],
+ "endings": {
+  "origin.7005": {
+   "label": {
+    "zh": "天基生物研究完成",
+    "en": "Tiyanki study complete"
+   },
+   "note": {
+    "zh": "项目完成后的收束。",
+    "en": "Closes the study project."
+   },
+   "evidence": "events/origin_events_5.txt:55-93"
+  }
+ },
+ "notes": [
+  {
+   "doc": "origin.7000",
+   "kind": "review",
+   "zh": "本起源的主线很短（天基生物观察）；其余内容是由玩法状态（喂食、种子、战争、议案）触发的独立事件。",
+   "en": "The scripted story is short (the Tiyanki study); the rest are independent events fired by gameplay state (feeding, seeds, war, resolutions)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_5.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_plantoids.txt",
+   "common/scripted_effects/01_start_of_game_effects.txt"
+  ],
+  "uncertain": [
+   "The seed mechanics events (7200-7325, mostly hidden) were read for their hooks only; 7311 fires garden.critters events of the Plantoid garden content, not part of this origin."
+  ],
+  "guide": "public/summaries/origin_fruitful.md"
+ }
+}

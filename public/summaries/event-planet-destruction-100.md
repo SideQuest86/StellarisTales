@@ -1,12 +1,12 @@
 # 炸个球助兴 / Cracking Open a Cold One
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/planet_destruction_events.txt:20-440; common/on_actions/01_planet_destruction.txt:14-21,194-198 · 审阅 Reviewed 2026-10-13
+- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/planet_destruction_events.txt:20-440; common/on_actions/01_planet_destruction.txt:14-25 · 审阅 Reviewed 2026-10-13
 
 ## 如何开始 How it starts
 
-玩家用巨像的“世界粉碎者（World Cracker）/冶炼者”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:14-21,194-198），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.101 / .102。冰冻星球触发 planet_destruction.102（“炸个球助兴”），其余非机械世界触发 .101（“星球被击碎”）。
+玩家用巨像的“世界粉碎者（World Cracker）及方舟的重塑行星/恒星点燃”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:14-25），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.101 / .102。冰冻星球触发 planet_destruction.102（“炸个球助兴”），其余非机械世界触发 .101（“星球被击碎”）。
 
-When the player's Colossus fires "World Cracker / Smelter / Arkship planet reprocess" at a planet (common/on_actions/01_planet_destruction.txt:14-21,194-198) the hidden dispatcher fires; if the planet has an owner that is not the firing country, a narrative window planet_destruction.101 / .102 is shown to the firing player. Frozen planets show planet_destruction.102 ("Cracking Open a Cold One"), other non-machine worlds planet_destruction.101 ("World Cracked").
+When the player's Colossus fires "World Cracker (and the arkship planet reprocess / stellar ignition)" at a planet (common/on_actions/01_planet_destruction.txt:14-25) the hidden dispatcher fires; if the planet has an owner that is not the firing country, a narrative window planet_destruction.101 / .102 is shown to the firing player. Frozen planets show planet_destruction.102 ("Cracking Open a Cold One"), other non-machine worlds planet_destruction.101 ("World Cracked").
 
 ## 剧情脉络 Story outline
 

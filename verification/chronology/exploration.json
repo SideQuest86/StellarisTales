@@ -2,15 +2,15 @@
   "category": "exploration",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 322,
-  "docs": 1469,
-  "nodes": 1649,
-  "refs": 180,
+  "stories": 319,
+  "docs": 1468,
+  "nodes": 1647,
+  "refs": 179,
   "crossLinks": 271,
   "review": {
-    "reviewed": 283,
-    "partial": 3,
-    "unreviewed": 36
+    "reviewed": 287,
+    "partial": 2,
+    "unreviewed": 30
   },
   "failures": [],
   "items": [
@@ -18,8 +18,8 @@
       "id": "horizon-signal",
       "title": "视界信号",
       "kind": "family",
-      "docs": 75,
-      "refs": 41,
+      "docs": 74,
+      "refs": 40,
       "crossLinks": 1,
       "review": "reviewed"
     },
@@ -49,6 +49,15 @@
       "refs": 5,
       "crossLinks": 0,
       "review": "partial"
+    },
+    {
+      "id": "event-distar-5054",
+      "title": "神秘货舱",
+      "kind": "family",
+      "docs": 18,
+      "refs": 2,
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "anomaly-debris-gasgiant-category-temp",
@@ -409,15 +418,6 @@
       "refs": 3,
       "crossLinks": 1,
       "review": "reviewed"
-    },
-    {
-      "id": "event-distar-5061",
-      "title": "神秘容器回归",
-      "kind": "event",
-      "docs": 12,
-      "refs": 2,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "anomaly-mountain-uninhabitable-category",
@@ -1344,15 +1344,6 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-5054",
-      "title": "发现外星个体",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
@@ -2514,7 +2505,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-subglacial-vibrations-cat",
@@ -2829,7 +2820,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-distar-13070",
@@ -2838,25 +2829,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-5053",
-      "title": "飞升已终止",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-5077",
-      "title": "神秘提升已终止",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "project-arkship-eternal-chorus-project",

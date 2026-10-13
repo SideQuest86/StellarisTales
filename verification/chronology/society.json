@@ -2,15 +2,15 @@
   "category": "society",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 397,
-  "docs": 1708,
-  "nodes": 2075,
-  "refs": 367,
-  "crossLinks": 695,
+  "stories": 406,
+  "docs": 1667,
+  "nodes": 2019,
+  "refs": 352,
+  "crossLinks": 760,
   "review": {
-    "reviewed": 145,
+    "reviewed": 189,
     "partial": 3,
-    "unreviewed": 249
+    "unreviewed": 214
   },
   "failures": [],
   "items": [
@@ -690,15 +690,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-cyber-1255",
-      "title": "义体安全漏洞",
-      "kind": "event",
-      "docs": 10,
-      "refs": 6,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-federations2-8",
       "title": "起舞的原因？",
       "kind": "event",
@@ -861,15 +852,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-cyber-1010",
-      "title": "售卖天空",
-      "kind": "event",
-      "docs": 7,
-      "refs": 11,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-federations3-2001",
       "title": "谜题一角，转瞬即逝",
       "kind": "event",
@@ -996,51 +978,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-cyber-1005",
-      "title": "再创新高",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cyber-1030",
-      "title": "病态记忆",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cyber-1055",
-      "title": "间谍游戏",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cyber-1205",
-      "title": "感官审查",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cyber-1210",
-      "title": "潜意识骇入传讯",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-espionage-1",
       "title": "间谍网已建立",
       "kind": "event",
@@ -1086,39 +1023,21 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-synth-1010",
-      "title": "无限可能性矩阵",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-synth-1020",
-      "title": "合成医疗",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-synth-1030",
-      "title": "再生",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-colony-2005",
       "title": "波涛之下",
       "kind": "event",
       "docs": 5,
       "refs": 3,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cyber-1255",
+      "title": "义体安全漏洞",
+      "kind": "event",
+      "docs": 5,
+      "refs": 1,
+      "crossLinks": 10,
       "review": "reviewed"
     },
     {
@@ -1497,7 +1416,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-830",
@@ -1506,7 +1425,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-855",
@@ -1515,7 +1434,7 @@
       "docs": 3,
       "refs": 2,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-factions-3000",
@@ -1725,13 +1644,22 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-cyber-1010",
+      "title": "售卖天空",
+      "kind": "event",
+      "docs": 2,
+      "refs": 1,
+      "crossLinks": 15,
+      "review": "reviewed"
+    },
+    {
       "id": "event-cyber-2010",
       "title": "彰显意图",
       "kind": "event",
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-655",
@@ -1740,7 +1668,7 @@
       "docs": 2,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fedel-1500",
@@ -2085,8 +2013,98 @@
       "review": "reviewed"
     },
     {
+      "id": "event-cyber-1005",
+      "title": "再创新高",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cyber-1030",
+      "title": "病态记忆",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cyber-1055",
+      "title": "间谍游戏",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
       "id": "event-cyber-120",
       "title": "精神减负",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cyber-1205",
+      "title": "感官审查",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cyber-1210",
+      "title": "潜意识骇入传讯",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cyber-1505",
+      "title": "社会2.0",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-cyber-1510",
+      "title": "权力结构重构",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-cyber-1515",
+      "title": "人群控制",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-cyber-1520",
+      "title": "帝国万岁",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-cyber-1525",
+      "title": "植入体入股",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -2100,7 +2118,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-210",
@@ -2109,7 +2127,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-220",
@@ -2118,7 +2136,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-2220",
@@ -2127,7 +2145,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-2260",
@@ -2136,7 +2154,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-2320",
@@ -2145,7 +2163,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-2360",
@@ -2154,7 +2172,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-2420",
@@ -2163,7 +2181,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-2460",
@@ -2172,7 +2190,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-260",
@@ -2181,7 +2199,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-320",
@@ -2190,7 +2208,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-360",
@@ -2199,7 +2217,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-610",
@@ -2208,7 +2226,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-615",
@@ -2217,7 +2235,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-625",
@@ -2226,7 +2244,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-805",
@@ -2235,7 +2253,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-810",
@@ -2244,7 +2262,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-815",
@@ -2253,7 +2271,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-840",
@@ -2262,7 +2280,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-factions-0",
@@ -2375,15 +2393,6 @@
     {
       "id": "event-federations-10400",
       "title": "措辞强烈的来信",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-federations-type",
-      "title": "Change federation type",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -3498,8 +3507,80 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-synth-1010",
+      "title": "无限可能性矩阵",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-synth-1020",
+      "title": "合成医疗",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-synth-1030",
+      "title": "再生",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
       "id": "event-synth-120",
       "title": "动觉微聚变堆",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-synth-1505",
+      "title": "合成化社会",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-synth-1510",
+      "title": "合成化社会",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-synth-1515",
+      "title": "合成化社会",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-synth-1520",
+      "title": "合成化社会",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-synth-1525",
+      "title": "合成化社会",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -3513,7 +3594,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-synth-220",
@@ -3522,7 +3603,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-synth-260",
@@ -3531,7 +3612,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-synth-320",
@@ -3540,7 +3621,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-synth-360",
@@ -3549,7 +3630,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-synth-610",
@@ -3558,7 +3639,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-synth-620",
@@ -3567,7 +3648,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-synth-630",
@@ -3576,7 +3657,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "situation-situation-nanotech-consume-planet",

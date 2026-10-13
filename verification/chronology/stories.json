@@ -2,15 +2,15 @@
   "category": "stories",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 611,
-  "docs": 2189,
-  "nodes": 3416,
-  "refs": 1227,
+  "stories": 596,
+  "docs": 2172,
+  "nodes": 3402,
+  "refs": 1230,
   "crossLinks": 255,
   "review": {
-    "reviewed": 325,
+    "reviewed": 339,
     "partial": 2,
-    "unreviewed": 284
+    "unreviewed": 255
   },
   "failures": [],
   "items": [
@@ -21,6 +21,24 @@
       "docs": 111,
       "refs": 846,
       "crossLinks": 4,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-paragon-3901",
+      "title": "斯克兰德·夏普比克",
+      "kind": "family",
+      "docs": 56,
+      "refs": 4,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-paragon-3100",
+      "title": "艾克萨凯德斯",
+      "kind": "family",
+      "docs": 35,
+      "refs": 4,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -627,6 +645,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-strange-worlds-1045",
+      "title": "轨道残骸",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-paragon-100",
       "title": "失去金字塔",
       "kind": "family",
@@ -762,15 +789,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-apoc-10",
-      "title": "重新激活星门",
-      "kind": "event",
-      "docs": 13,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-game-start-1-x",
       "title": "[Root.Capital.GetName]上的升格仪式",
       "kind": "event",
@@ -785,15 +803,6 @@
       "kind": "event",
       "docs": 12,
       "refs": 14,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3100",
-      "title": "求救信号",
-      "kind": "event",
-      "docs": 12,
-      "refs": 2,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -906,15 +915,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-paragon-3901",
-      "title": "巨大舰船",
-      "kind": "event",
-      "docs": 10,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-shroud-4500",
       "title": "世界之喰煞",
       "kind": "event",
@@ -992,51 +992,6 @@
       "kind": "event",
       "docs": 8,
       "refs": 5,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3010",
-      "title": "坏羽病",
-      "kind": "event",
-      "docs": 8,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3030",
-      "title": "指挥问题",
-      "kind": "event",
-      "docs": 8,
-      "refs": 2,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3120",
-      "title": "幻视成真",
-      "kind": "event",
-      "docs": 8,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3125",
-      "title": "幻视成真",
-      "kind": "event",
-      "docs": 8,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3130",
-      "title": "幻视成真",
-      "kind": "event",
-      "docs": 8,
-      "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -1221,24 +1176,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-paragon-3090",
-      "title": "历史研究",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3144",
-      "title": "敌对舰船！",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-shroud-20",
       "title": "灵能响应",
       "kind": "event",
@@ -1329,33 +1266,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-paragon-3040",
-      "title": "潜在升级",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3050",
-      "title": "最终飞航",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3080",
-      "title": "新希望",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-pirate-4",
       "title": "太空海盗的诞生",
       "kind": "event",
@@ -1380,7 +1290,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-strange-worlds-70",
@@ -1389,7 +1299,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-105",
@@ -1668,7 +1578,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-strange-worlds-125",
@@ -1677,7 +1587,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-strange-worlds-150",
@@ -1686,7 +1596,7 @@
       "docs": 4,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-strange-worlds-175",
@@ -1695,7 +1605,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-strange-worlds-30",
@@ -1704,7 +1614,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-941",
@@ -1878,24 +1788,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-paragon-3060",
-      "title": "利爪号研究",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3070",
-      "title": "失而复得的利爪",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-planet-destruction-100",
       "title": "炸个球助兴",
       "kind": "event",
@@ -2028,7 +1920,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-81",
@@ -2047,6 +1939,15 @@
       "refs": 0,
       "crossLinks": 1,
       "review": "reviewed"
+    },
+    {
+      "id": "event-apoc-10",
+      "title": "重新激活星门",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
     },
     {
       "id": "event-apoc-11",
@@ -4611,7 +4512,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-marauder-511",
@@ -4854,25 +4755,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3020",
-      "title": "表示感激",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-3149",
-      "title": "摧毁无人机",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-pirate-10",
@@ -5379,31 +5262,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-strange-worlds-1045",
-      "title": "轨道残骸",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-strange-worlds-1055",
-      "title": "垃圾之月",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-strange-worlds-2020",
       "title": "致命变异",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-syndaw-1205",

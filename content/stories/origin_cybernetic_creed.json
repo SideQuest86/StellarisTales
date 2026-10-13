@@ -1,0 +1,165 @@
+{
+ "id": "origin_cybernetic_creed",
+ "opening": {
+  "targets": [
+   "machine_age.2150",
+   "machine_age.90",
+   "machine_age.100",
+   "machine_age.2205",
+   "machine_age.2210",
+   "machine_age.2215",
+   "machine_age.2221",
+   "machine_age.2225",
+   "machine_age.2230"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "machine_age.2150": {
+    "zh": "开局约30天后：教派成形",
+    "en": "About 30 days after start: the Creeds are formed"
+   },
+   "machine_age.90": {
+    "zh": "研发义体相关科技后：神圣植入物",
+    "en": "After a cybernetics-related technology: Divine Implants"
+   },
+   "machine_age.100": {
+    "zh": "采用义体传统时：融合会议开始（局势）",
+    "en": "On adopting the Cybernetics tradition: the Conclave of Fusion (situation) begins"
+   },
+   "machine_age.2205": {
+    "zh": "两年脉冲（随机）：圣殿骑士不愿谈败绩",
+    "en": "Two-year pulse (random): the Templars will not discuss defeat"
+   },
+   "machine_age.2210": {
+    "zh": "两年脉冲（随机）：团契领袖逝世",
+    "en": "Two-year pulse (random): the Fellowship leader dies"
+   },
+   "machine_age.2215": {
+    "zh": "两年脉冲（随机）：有争议的圣物",
+    "en": "Two-year pulse (random): a controversial relic"
+   },
+   "machine_age.2221": {
+    "zh": "两年脉冲（随机）：教派卧底领袖",
+    "en": "Two-year pulse (random): a leader is a Creed agent"
+   },
+   "machine_age.2225": {
+    "zh": "两年脉冲（随机）：团契朝圣",
+    "en": "Two-year pulse (random): the Fellowship on pilgrimage"
+   },
+   "machine_age.2230": {
+    "zh": "两年脉冲（随机）：唱诗班长要求更多科研",
+    "en": "Two-year pulse (random): the Choirmaster demands more science"
+   }
+  },
+  "evidence": "machine_age.2150 is fired 30 days after the start-building setup (common/scripted_effects/01_start_of_game_effects.txt generate_start_buildings_and_districts); 90 by on_tech_increased common/on_actions/00_on_actions.txt:2728; 100 by tr_cybernetics_adopt on_enabled (common/traditions/01_cybernetics.txt:75) for origin_cybernetic_creed (events/origin_events_machine_age.txt:38-60); bi-yearly pulse common/on_actions/00_on_actions.txt:274 fires hidden 2200 -> 2201 which draws 2205 / 2210 / 2215 / 2220 (-> 2221) / 2225 / 2230 (10 of 80 each, modified) after 90+0-90 days (events/origin_events_machine_age.txt:1112-1230)."
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "machine_age.2205",
+    "machine_age.2210",
+    "machine_age.2215",
+    "machine_age.2221",
+    "machine_age.2225",
+    "machine_age.2230"
+   ],
+   "label": {
+    "zh": "两年脉冲抽取的小事件",
+    "en": "Small event drawn by the two-year pulse"
+   },
+   "note": {
+    "zh": "隐藏事件2201的随机列表：六选一，各10/80（有修正），90±90天后出现；2221由隐藏2220在1天后引出，且只触发一次。",
+    "en": "Random list of hidden 2201: one of six, 10 of 80 each (modified), after 90+0-90 days; 2221 comes from fire-once hidden 2220 one day later (events/origin_events_machine_age.txt:1164-1226)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "machine_age.1090",
+    "machine_age.1100"
+   ],
+   "label": {
+    "zh": "融合会议的结局",
+    "en": "Conclusion of the Conclave of Fusion"
+   },
+   "note": {
+    "zh": "局势进度完成时：未选择军事教派为将军→1090；已选择→1100（旗标 cybernetic_creed_general）。",
+    "en": "On completion: without flag cybernetic_creed_general -> 1090, with it -> 1100 (common/situations/08_machine_age_situations.txt:17-27)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "machine_age.1030",
+    "machine_age.1040",
+    "machine_age.1050",
+    "machine_age.1060"
+   ],
+   "label": {
+    "zh": "如何对待其余教派",
+    "en": "Dealing with the unchosen creeds"
+   },
+   "note": {
+    "zh": "1020的选项a：1030（60）或1040（40）；选项b：1040（20）、1050（40）、1060（40）；90天后。",
+    "en": "Option a of 1020: 1030 (60) or 1040 (40); option b: 1040 (20), 1050 (40), 1060 (40); after 90 days (events/origin_events_machine_age.txt:264-345)."
+   }
+  }
+ ],
+ "endings": {
+  "machine_age.1090": {
+   "label": {
+    "zh": "肉身的未来",
+    "en": "The Future of Flesh"
+   },
+   "note": {
+    "zh": "局势完成（未选军事教派）。",
+    "en": "Situation complete, no creed general."
+   },
+   "evidence": "events/origin_events_machine_age.txt:759-944"
+  },
+  "machine_age.1100": {
+   "label": {
+    "zh": "信仰的未来",
+    "en": "The Future of Faith"
+   },
+   "note": {
+    "zh": "局势完成（已选军事教派为将军）。",
+    "en": "Situation complete, creed general chosen."
+   },
+   "evidence": "events/origin_events_machine_age.txt:945-1035"
+  }
+ },
+ "notes": [
+  {
+   "doc": "situations:situation_cybernetic_creed_cyberization",
+   "kind": "review",
+   "zh": "阶段2至6进入时依次触发 1000 / 1010 / 1020 / 1070 / 1075；每月事件2000在义体化标志下改造人口（隐藏）。",
+   "en": "Entering stages 2-6 fires 1000 / 1010 / 1020 / 1070 / 1075; monthly hidden event 2000 cyberizes pops while the flag is set (common/situations/08_machine_age_situations.txt:2-163)."
+  },
+  {
+   "doc": "machine_age.2150",
+   "kind": "review",
+   "zh": "“教派”：创建若干教派国家（隐藏），玩家获得说明窗口；此后教派事件均围绕这些国家。",
+   "en": "The Creeds: forms the creed states; later creed events revolve around them (events/origin_events_machine_age.txt:1142-1163)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_machine_age.txt",
+   "common/situations/08_machine_age_situations.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/traditions/01_cybernetics.txt"
+  ],
+  "uncertain": [
+   "Option details of the creed choice 1010 were read through the compiled tree only; the compiler chains stage events 1000-1075 (R5)."
+  ],
+  "guide": "public/summaries/origin_cybernetic_creed.md"
+ }
+}

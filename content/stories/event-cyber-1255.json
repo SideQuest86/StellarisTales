@@ -1,0 +1,37 @@
+{
+ "id": "event-cyber-1255",
+ "hubs": [
+  "cyber.1505",
+  "cyber.1510",
+  "cyber.1515",
+  "cyber.1520",
+  "cyber.1525"
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cyber.1270",
+    "cyber.1275"
+   ],
+   "label": {
+    "zh": "1265 的选项：重启（1270）或建防火墙（1275）",
+    "en": "1265 options: reboot (1270) or firewalls (1275)"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "网络安全入侵：入侵、神经学防火墙或重启的小支线。",
+   "en": "Cyber Security Breach: the small branch of intrusion, neurological firewalls or reboot."
+  },
+  "sources": [
+   "events/machine_age_situation_events_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-cyber-1255.md"
+ }
+}

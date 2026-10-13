@@ -22,6 +22,7 @@ REFERENCES = {  # effect -> (target namespace, field holding the key when the va
     'begin_event_chain': ('event_chains', 'event_chain'),
     'create_astral_rift': ('astral_rifts', 'type'),
     'fire_on_action': ('on_actions', 'on_action'),
+    'add_anomaly': ('anomalies', 'category'),
 }
 HOOKS = {'immediate', 'after', 'on_success', 'on_fail', 'on_start', 'on_abort', 'on_spawn', 'on_first_enter',
          'on_enter', 'on_exit', 'on_progress_complete', 'on_fail_complete', 'on_monthly', 'on_select', 'on_complete',

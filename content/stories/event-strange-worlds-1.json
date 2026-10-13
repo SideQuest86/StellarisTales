@@ -1,0 +1,31 @@
+{
+ "id": "event-strange-worlds-1",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "strange_worlds.20",
+    "strange_worlds.15"
+   ],
+   "label": {
+    "zh": "治疗 / 继续建造",
+    "en": "Treat / keep building"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/strange_worlds_events.txt:7-250",
+   "common/on_actions/00_on_actions.txt:3838 on_colony_3_years_old (random 20/739)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-strange-worlds-1.md"
+ }
+}

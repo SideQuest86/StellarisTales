@@ -1,0 +1,272 @@
+{
+ "id": "event-paragon-3901",
+ "family": {
+  "title": {
+   "zh": "斯克兰德·夏普比克",
+   "en": "Skrand Sharpbeak"
+  },
+  "category": "stories",
+  "start": "paragon.3000",
+  "members": [
+   "paragon.3000",
+   "paragon.3001",
+   "paragon.3002",
+   "paragon.3003",
+   "paragon.3004",
+   "paragon.3005",
+   "paragon.3006",
+   "paragon.3007",
+   "paragon.3021",
+   "paragon.3901",
+   "paragon.3902",
+   "paragon.3095",
+   "paragon.3070",
+   "special_projects:PARAGON_GATEWAY_DUDE_PROJECT",
+   "special_projects:PARAGON_GATEWAY_DUDE_REPAIR_PROJECT",
+   "paragon.3010",
+   "paragon.3011",
+   "paragon.3012",
+   "paragon.3013",
+   "paragon.3014",
+   "paragon.3015",
+   "situations:situation_paragon_skrand_sickness",
+   "situations:situation_paragon_skrand_cure",
+   "paragon.3020",
+   "paragon.3030",
+   "paragon.3031",
+   "paragon.3032",
+   "paragon.3033",
+   "paragon.3034",
+   "paragon.3035",
+   "paragon.3036",
+   "situations:situation_paragon_skrand_integration",
+   "paragon.3040",
+   "paragon.3041",
+   "paragon.3042",
+   "paragon.3043",
+   "situations:situation_paragon_skrand_upgrade",
+   "paragon.3050",
+   "paragon.3051",
+   "paragon.3052",
+   "paragon.3053",
+   "situations:situation_paragon_skrand_crisis",
+   "paragon.3060",
+   "paragon.3061",
+   "situations:situation_paragon_skrand_study",
+   "paragon.3071",
+   "paragon.3072",
+   "situations:situation_paragon_skrand_rebuild",
+   "paragon.3080",
+   "paragon.3081",
+   "paragon.3082",
+   "paragon.3083",
+   "situations:situation_paragon_skrand_species",
+   "paragon.3090",
+   "paragon.3091",
+   "paragon.3092",
+   "paragon.3093",
+   "paragon.3094",
+   "situations:situation_paragon_skrand_story"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "paragon.3005",
+   "choice": "paragon.3005.c",
+   "to": "paragon.3010",
+   "conditional": true,
+   "label": {
+    "zh": "招募后每约10–25年一次的“斯克兰德事件”轮抽（等权）：羽腐病",
+    "en": "After hiring, the pulse of Skrand events (every ~10–25 years, one eligible event per pulse): Feather Rot"
+   },
+   "evidence": "events/paragon_events_3.txt:1691-1707 (hidden launcher paragon.3095: skrand_recruited → fire_on_action on_decade_pulse_skrand_country, repeated every 3600+rand 5400 days; first run 3600 days after hiring, 494-496); common/on_actions/00_on_actions.txt:637-648; paragon.3010 weight 1, fire_only_once, needs skrand_recruited (584-609)"
+  },
+  {
+   "from": "paragon.3005",
+   "choice": "paragon.3005.c",
+   "to": "paragon.3030",
+   "conditional": true,
+   "label": {
+    "zh": "同一轮抽：需要另一位非统治者的指挥官",
+    "en": "Same pulse: needs another non-ruler commander"
+   },
+   "evidence": "events/paragon_events_3.txt:1691-1707 (hidden launcher paragon.3095: skrand_recruited → fire_on_action on_decade_pulse_skrand_country, repeated every 3600+rand 5400 days; first run 3600 days after hiring, 494-496); common/on_actions/00_on_actions.txt:637-648; paragon.3030 weight 1, trigger 786-796"
+  },
+  {
+   "from": "paragon.3005",
+   "choice": "paragon.3005.c",
+   "to": "paragon.3050",
+   "conditional": true,
+   "label": {
+    "zh": "同一轮抽：仅在出现危机时",
+    "en": "Same pulse: only while a crisis exists"
+   },
+   "evidence": "events/paragon_events_3.txt:1691-1707 (hidden launcher paragon.3095: skrand_recruited → fire_on_action on_decade_pulse_skrand_country, repeated every 3600+rand 5400 days; first run 3600 days after hiring, 494-496); common/on_actions/00_on_actions.txt:637-648; paragon.3050 weight 1, has_crisis = yes (1187-1190)"
+  },
+  {
+   "from": "paragon.3005",
+   "choice": "paragon.3005.c",
+   "to": "paragon.3060",
+   "conditional": true,
+   "label": {
+    "zh": "同一轮抽：最后的利爪号仍然存在",
+    "en": "Same pulse: the Last Talon still exists"
+   },
+   "evidence": "events/paragon_events_3.txt:1691-1707 (hidden launcher paragon.3095: skrand_recruited → fire_on_action on_decade_pulse_skrand_country, repeated every 3600+rand 5400 days; first run 3600 days after hiring, 494-496); common/on_actions/00_on_actions.txt:637-648; paragon.3060 weight 1, trigger 1293-1296"
+  },
+  {
+   "from": "paragon.3005",
+   "choice": "paragon.3005.c",
+   "to": "paragon.3080",
+   "conditional": true,
+   "label": {
+    "zh": "同一轮抽：需要“基因工程”飞升天赋，且政策禁止清洗与奴隶制",
+    "en": "Same pulse: needs the Engineered Evolution perk and policies forbidding purging and slavery"
+   },
+   "evidence": "events/paragon_events_3.txt:1691-1707 (hidden launcher paragon.3095: skrand_recruited → fire_on_action on_decade_pulse_skrand_country, repeated every 3600+rand 5400 days; first run 3600 days after hiring, 494-496); common/on_actions/00_on_actions.txt:637-648; paragon.3080 weight 1, trigger 1473-1480"
+  },
+  {
+   "from": "paragon.3005",
+   "choice": "paragon.3005.c",
+   "to": "paragon.3090",
+   "conditional": true,
+   "label": {
+    "zh": "同一轮抽：无额外条件",
+    "en": "Same pulse: no further condition"
+   },
+   "evidence": "events/paragon_events_3.txt:1691-1707 (hidden launcher paragon.3095: skrand_recruited → fire_on_action on_decade_pulse_skrand_country, repeated every 3600+rand 5400 days; first run 3600 days after hiring, 494-496); common/on_actions/00_on_actions.txt:637-648; paragon.3090 weight 1, trigger 1596-1598"
+  },
+  {
+   "from": "paragon.3061",
+   "to": "paragon.3040",
+   "conditional": true,
+   "label": {
+    "zh": "利爪号研究完成后（studied_talon）才会进入同一轮抽",
+    "en": "Only enters the pulse after the Talon study is finished (studied_talon)"
+   },
+   "evidence": "paragon.3061 sets studied_talon (events/paragon_events_3.txt:1325); paragon.3040 trigger 1089-1093, weight 1 (common/on_actions/00_on_actions.txt:642)"
+  },
+  {
+   "from": "paragon.3061",
+   "to": "paragon.3020",
+   "conditional": true,
+   "label": {
+    "zh": "需要“整合指挥”与“利爪船体”两项修正都已获得；轮抽权重3",
+    "en": "Needs both the integrated_command and talon_hull modifiers; pulse weight 3"
+   },
+   "evidence": "paragon.3020 trigger 734-739 (integrated_command from command integration, 906; talon_hull from the Talon study, 1333); weight 3 (00_on_actions.txt:640)"
+  },
+  {
+   "from": "paragon.3061",
+   "to": "paragon.3072",
+   "conditional": true,
+   "label": {
+    "zh": "利爪号被击毁后（80%）：研究完成后才会找回",
+    "en": "After the Talon is destroyed (80%) — only once the Talon study is finished"
+   },
+   "evidence": "paragon.3070 fires from on_ship_destroyed_victim (00_on_actions.txt:1428), trigger studied_talon + last_talon ship flag (1346-1352), 80% → paragon.3072 after 10–30 days (1355-1359)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "paragon.3010",
+    "paragon.3030",
+    "paragon.3050",
+    "paragon.3060",
+    "paragon.3080",
+    "paragon.3090"
+   ],
+   "label": {
+    "zh": "斯克兰德的后续事件",
+    "en": "Skrand follow-up events"
+   },
+   "note": {
+    "zh": "招募后不按固定顺序：每10–25年的一次脉冲抽取一个当前满足条件的事件，每个只会发生一次。",
+    "en": "No fixed order after hiring: each pulse (every 10–25 years) draws one currently eligible event, and each happens only once."
+   }
+  }
+ ],
+ "endings": {
+  "paragon.3011": {
+   "label": {
+    "zh": "斯克兰德病逝",
+    "en": "Skrand dies of Feather Rot"
+   },
+   "note": {
+    "zh": "羽腐病情况恶化到进度走满而未找到解药。",
+    "en": "The illness progression completes before a cure is found."
+   },
+   "evidence": "events/paragon_events_3.txt:611-650; situations situation_paragon_skrand_sickness / _cure"
+  },
+  "paragon.3094": {
+   "label": {
+    "zh": "历史研究完成",
+    "en": "History study complete"
+   },
+   "note": {
+    "zh": "获得 skrand_story 修正，永久生效。",
+    "en": "Grants the permanent skrand_story modifier."
+   },
+   "evidence": "events/paragon_events_3.txt:1667-1690"
+  }
+ },
+ "nodeLabels": {
+  "paragon.3000": {
+   "zh": "星门中的巨舰",
+   "en": "Giant ship in the gateway"
+  },
+  "paragon.3902": {
+   "zh": "与他国舰队相遇",
+   "en": "Met by another empire's fleet"
+  },
+  "paragon.3005": {
+   "zh": "招募斯克兰德",
+   "en": "Recruit Skrand"
+  }
+ },
+ "notes": [
+  {
+   "doc": "paragon.3000",
+   "zh": "评注：仅当玩家（非AI）修复远古星门（gateway_restored）、尚无人找到过这位客人、并通过20%的抽签时才出现（若曾激活或建造过星门，权重×4；银河门前起源×2），5天后弹出本窗口（common/megastructures/05_gateways.txt:433-476）。此时同时设下全局旗标 sharpbeak_recruit_phase，直到有人招募为止。",
+   "en": "Commentary: only when a player (not an AI) restores an ancient gateway (gateway_restored), no one has found this guest yet and a 20% draw succeeds (x4 weight if a gateway was reactivated or built before, x2 for the Galactic Doorstep origin); the window pops 5 days later (common/megastructures/05_gateways.txt:433-476). It also sets the global flag sharpbeak_recruit_phase, which stays until someone recruits him.",
+   "kind": "review"
+  },
+  {
+   "doc": "paragon.3902",
+   "zh": "评注：另一条入口——其他帝国（玩家或非集群）的舰队首次进入这座星门所在系统时触发隐藏事件 paragon.3901，15–30天后弹出；之后同样走向 paragon.3002（events/paragon_events_3.txt:3332-3401）。",
+   "en": "Commentary: the other entrance — when a fleet of another empire (player or non-gestalt) first enters the gateway system, hidden event paragon.3901 fires and this window pops 15–30 days later; it then leads to paragon.3002 as well (events/paragon_events_3.txt:3332-3401).",
+   "kind": "review"
+  },
+  {
+   "doc": "paragon.3005",
+   "zh": "评注：选项“招募”设下 skrand_recruited，清除招募阶段旗标，并在3600天后启动斯克兰德事件脉冲（paragon.3095）；“解散”则重新打开招募阶段，让别的帝国有机会（events/paragon_events_3.txt:425-520）。",
+   "en": "Commentary: the hire option sets skrand_recruited, clears the recruit-phase flag and starts the Skrand pulse (paragon.3095) after 3600 days; dismissing re-opens the recruit phase so another empire may take him (events/paragon_events_3.txt:425-520).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "入口（星门/相遇）、事件脉冲、全部后续事件的触发条件与各情势都已核对。",
+   "en": "The entrances (gateway / encounter), the event pulse, every follow-up event's trigger and all situations were checked."
+  },
+  "sources": [
+   "common/megastructures/05_gateways.txt:433-476",
+   "events/paragon_events_3.txt:28-520",
+   "events/paragon_events_3.txt:584-1707",
+   "events/paragon_events_3.txt:3305-3420",
+   "common/on_actions/00_on_actions.txt:637-648",
+   "common/static_modifiers/19_static_modifiers_paragon.txt",
+   "common/situations/05_paragon_situations.txt"
+  ],
+  "guide": "public/summaries/event-paragon-3901.md",
+  "uncertain": [
+   "Whether the engine redraws the pulse when the drawn event's trigger fails (not visible in script).",
+   "The exact winning/losing conditions inside the Feather Rot sickness and cure situations (situation progress rates) were not simulated."
+  ]
+ }
+}

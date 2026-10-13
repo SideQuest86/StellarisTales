@@ -1,0 +1,192 @@
+{
+ "id": "event-paragon-3100",
+ "family": {
+  "title": {
+   "zh": "艾克萨凯德斯",
+   "en": "Exakeides"
+  },
+  "category": "stories",
+  "start": "paragon.3100",
+  "members": [
+   "paragon.3100",
+   "special_projects:LEGENDARY_LEADER_FIRST_PROJECT",
+   "paragon.3104",
+   "special_projects:LEGENDARY_LEADER_RESUSCITATION",
+   "paragon.3105",
+   "special_projects:LEGENDARY_LEADER_STUDY_RELIC_PROJECT",
+   "paragon.3110",
+   "paragon.3114",
+   "paragon.3115",
+   "paragon.3116",
+   "paragon.3117",
+   "event_chains:paragon_legendary_leader_chain",
+   "paragon.3120",
+   "special_projects:LEGENDARY_LEADER_VOLCANO_PLANET_PROJECT",
+   "paragon.3121",
+   "paragon.3122",
+   "paragon.3125",
+   "special_projects:LEGENDARY_LEADER_HOSTILE_PLANET_PROJECT",
+   "paragon.3126",
+   "paragon.3127",
+   "paragon.3130",
+   "special_projects:LEGENDARY_LEADER_SHIP_PLANET_PROJECT",
+   "paragon.3131",
+   "paragon.3132",
+   "paragon.3135",
+   "special_projects:LEGENDARY_LEADER_OPEN_WORMHOLE_PROJECT",
+   "paragon.3140",
+   "paragon.3141",
+   "paragon.3144",
+   "paragon.3145",
+   "paragon.3146",
+   "paragon.3147",
+   "paragon.3148",
+   "special_projects:LEGENDARY_LEADER_SABOTAGE_FLEET_PROJECT",
+   "paragon.3149"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "event_chains:paragon_legendary_leader_chain",
+   "to": "paragon.3120",
+   "conditional": true,
+   "label": {
+    "zh": "带着凯德斯进入第一个地点系统（火山行星），先后顺序不限",
+    "en": "Enter the first location system (volcanic planet) with Keides aboard; any order"
+   },
+   "evidence": "events/paragon_events_3.txt:2264-2290 / 2386-2412 / 2504-2530: ship_event fired by on_entering_system (common/on_actions/00_on_actions.txt:960-962) when a fleet carrying a leader with leader_trait_legendary_far_from_home enters the flagged system for the first time; flag legendary_leader_1st_system, country flag leader_visited_1st_system"
+  },
+  {
+   "from": "event_chains:paragon_legendary_leader_chain",
+   "to": "paragon.3130",
+   "conditional": true,
+   "label": {
+    "zh": "带着凯德斯进入第二个地点系统（舰船坟场），先后顺序不限",
+    "en": "Enter the second location system (ship graveyard) with Keides aboard; any order"
+   },
+   "evidence": "events/paragon_events_3.txt:2264-2290 / 2386-2412 / 2504-2530: ship_event fired by on_entering_system (common/on_actions/00_on_actions.txt:960-962) when a fleet carrying a leader with leader_trait_legendary_far_from_home enters the flagged system for the first time; flag legendary_leader_2nd_system, leader_visited_2nd_system"
+  },
+  {
+   "from": "event_chains:paragon_legendary_leader_chain",
+   "to": "paragon.3125",
+   "conditional": true,
+   "label": {
+    "zh": "带着凯德斯进入第三个地点系统（丛林敌对行星），先后顺序不限",
+    "en": "Enter the third location system (hostile jungle planet) with Keides aboard; any order"
+   },
+   "evidence": "events/paragon_events_3.txt:2264-2290 / 2386-2412 / 2504-2530: ship_event fired by on_entering_system (common/on_actions/00_on_actions.txt:960-962) when a fleet carrying a leader with leader_trait_legendary_far_from_home enters the flagged system for the first time; flag legendary_leader_3rd_system, leader_visited_3rd_system"
+  },
+  {
+   "from": "paragon.3141",
+   "choice": "paragon.3141.a",
+   "to": "paragon.3144",
+   "conditional": true,
+   "label": {
+    "zh": "通过虫洞抵达终点系统（苏尔瑟克特）时",
+    "en": "On arriving through the wormhole at the final system (Sursect)"
+   },
+   "evidence": "paragon.3141 spawns natural wormholes linked to the legendary_leader_final_system (events/paragon_events_3.txt:2736-2805); paragon.3144 is a ship_event from on_entering_system_first_time (common/on_actions/00_on_actions.txt:935) requiring FROM has_star_flag legendary_leader_final_system and a leader with leader_trait_legendary_far_from_home (2827-2845)"
+  },
+  {
+   "from": "paragon.3145",
+   "to": "paragon.3149",
+   "conditional": true,
+   "label": {
+    "zh": "或者以武力击毁无人机舰队",
+    "en": "Or destroy the drone fleet by force"
+   },
+   "evidence": "paragon.3149 fires from on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1670) when the destroyed fleet carries overlord_enforcers_automated_fleet (events/paragon_events_3.txt:2972-2996); it aborts the sabotage project; the fleet is created by common/solar_system_initializers/paragon_initializers.txt:796"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "paragon.3120",
+    "paragon.3125",
+    "paragon.3130"
+   ],
+   "required": 3,
+   "gate": "paragon.3135",
+   "label": {
+    "zh": "三处幻视地点",
+    "en": "The three vision sites"
+   },
+   "note": {
+    "zh": "三处地点没有固定先后；每处各做一次专项并看到幻视，三处都完成（事件链计数 planets_studied）后触发“复原遗物”。",
+    "en": "The three sites have no fixed order; each is studied once with its project and vision, and when all three are done (event-chain counter planets_studied) the relic is restored."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "paragon.3148",
+    "paragon.3147",
+    "paragon.3149"
+   ],
+   "label": {
+    "zh": "对付无人机的三种方式",
+    "en": "Three ways to deal with the drones"
+   },
+   "note": {
+    "zh": "电磁脉冲（保留钥匙）/ 交出钥匙（遗物失去）/ 武力击毁，三者互相替代。",
+    "en": "Electromagnetic pulse (keep the Key) / hand over the Key (relic lost) / destroy them by force; these are alternatives."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "paragon.3100": {
+   "zh": "求救信号",
+   "en": "Distress signal"
+  },
+  "paragon.3116": {
+   "zh": "招募凯德斯",
+   "en": "Recruit Keides"
+  },
+  "paragon.3144": {
+   "zh": "苏尔瑟克特系统",
+   "en": "Sursect system"
+  }
+ },
+ "notes": [
+  {
+   "doc": "paragon.3144",
+   "zh": "评注：故事的最后一站——终点星系里的星球是考古遗址“传奇领袖故乡”，由 site-paragon-legendary-leader-homeworld（C2）收录。",
+   "en": "Commentary: the last stop — the planet in the final system is the archaeological site \"Legendary Leader homeworld\", covered by site-paragon-legendary-leader-homeworld (C2).",
+   "kind": "review"
+  },
+  {
+   "doc": "paragon.3100",
+   "zh": "评注：触发地点是银河生成时标记了 legendary_leader_spawn_system 的星系；任一舰队首次进入且尚无人找到冷冻舱（全局旗标 frozen_legendary_leader_found）时触发。",
+   "en": "Commentary: the location is the system flagged legendary_leader_spawn_system at galaxy generation; the first fleet to enter it while nobody has found the capsule (global flag frozen_legendary_leader_found) triggers it.",
+   "kind": "review"
+  },
+  {
+   "doc": "paragon.3114",
+   "zh": "评注：养育选项按帝国伦理出现，选择会设下全局旗标 leader_raised_*，影响之后凯德斯的特质（events/paragon_events_3.txt:1906-1961）。",
+   "en": "Commentary: the upbringing options appear by empire ethic and set global flags leader_raised_* that shape Keides' traits later (events/paragon_events_3.txt:1906-1961).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "从求救信号到终点星系的整条线、三个幻视地点的并行关系、无人机三种对策都已核对；终点遗址属 C2。",
+   "en": "The whole line from the distress signal to the final system, the parallel vision sites and the three answers to the drones were checked; the final site belongs to C2."
+  },
+  "sources": [
+   "events/paragon_events_3.txt:1713-3000",
+   "common/event_chains/00_event_chains_paragon.txt:11",
+   "common/solar_system_initializers/paragon_initializers.txt:466,796",
+   "common/on_actions/00_on_actions.txt:935,960-962,1670",
+   "common/special_projects/01_projects_paragon.txt"
+  ],
+  "guide": "public/summaries/event-paragon-3100.md",
+  "uncertain": [
+   "Which of the three vision systems is assigned to which flag (1st/2nd/3rd) is set at galaxy generation by the initializers; their placement was not traced.",
+   "Option-level text variants of 3105/3114 are shown by the reader's generic condition model."
+  ]
+ }
+}
