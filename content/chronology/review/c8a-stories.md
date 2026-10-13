@@ -326,3 +326,8 @@ Shared mechanism: the five-year random pulse (action.2211 from on_five_year_rand
 - **`event-envoy-events-230`** — [Root.GetName]被捕 / [Root.GetName] Arrested — **reviewed**. envoy_events.230 from on_leader_assigned (OA:2457): arrested envoy.
 - **`event-envoy-events-16`** — 盟友间的争端 / Disputes Among Allies — **reviewed**. Federation centralisation flavour (hidden 16 → 17 (50%) → 18/19; events 1426-1700).
 - **`event-envoy-events-1001`** — 无礼的[envoy_source.GetAdj]特使 / Insulting [envoy_source.GetAdj] Envoy — **reviewed**. Pool event envoy_events.1001 → 1 → 2 (10/180; also used by operation_diplomatic_incident).
+
+## Batch `b11_syndaw` — Synthetic Dawn (events/synthetic_dawn_events.txt)
+
+- **`event-syndaw-400`** — 计算超频 / Computational Overclocking — **reviewed**. Family: merged story ids `event-syndaw-1200`, `event-syndaw-1205`; nomad branch (situation_nomad_economy / star journal) suppressed. syndaw.400 (on_decade_pulse) → 401 (30%) → 500 (2/3) / 545 (1/3); situation_machine_uprising (02_strategic_situations.txt:578-710) with events 505-540 monthly and projects PATCH/WIPE; completion → 1000 → 1020 → hidden 1022 → 1025; war end → 1200/1030 or 1205.
+- **`event-syndaw-21`** — 失去单位 / Unit Lost — **reviewed**. Family: merged story ids `event-syndaw-25`, `event-syndaw-26`. All three are draws of on_machine_leader_malfunction (00_on_actions.txt:5154-5158) whose only firer syndaw.10/11 is commented out (synthetic_dawn_events.txt:12-76): flagged unreachable.

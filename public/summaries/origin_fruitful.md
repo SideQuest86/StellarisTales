@@ -15,7 +15,7 @@ After game start origin.7000 appears 1800-3600 days later: it enables the Tiyank
 主线很短；起源玩法由状态触发的独立事件组成：
 The scripted story is short; the rest are independent events fired by gameplay state.
 
-1. **天基生物观察**：7000 → 项目 → 7005。 Tiyanki study: 7000 -> project -> 7005.
+1. **缇扬奇观察**：7000 → 项目 → 7005。 Tiyanki study: 7000 -> project -> 7005.
 2. **种子与喂食**：首次播种轰炸（7201）、被引诱的生物吃种（7100）、生物携带种子（7304）、种子落在已有人的星球（7327 / 项目“打开种荚”→ 7321）、他国或己方在带种子星球殖民（7326 / 7328）、种荚前哨站（7400）。 Seeds and feeding tutorials and outcomes.
 3. **外交与战争**：星海共同体保护法案（7500）或害虫防治法案（7510）；战争开始时 7600 → 事件链“战争之种”与项目“培育军队” → 7710。 Galactic Community acts (7500 / 7510); on war 7600 -> chain and the Grow Armies project -> 7710.
 

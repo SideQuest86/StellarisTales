@@ -1,0 +1,65 @@
+{
+ "id": "event-syndaw-21",
+ "family": {
+  "title": {
+   "zh": "失去单位",
+   "en": "Unit Lost"
+  },
+  "category": "stories",
+  "start": "syndaw.21",
+  "members": [
+   "syndaw.21",
+   "syndaw.25",
+   "syndaw.26"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "syndaw.21",
+    "syndaw.25",
+    "syndaw.26"
+   ],
+   "label": {
+    "zh": "三种失效的单位",
+    "en": "Three kinds of lost unit"
+   },
+   "note": {
+    "zh": "本应由 on_machine_leader_malfunction 每次等权抽一个：科研船单位 / 舰队指挥单位 / 区域管理单位。",
+    "en": "Meant to be drawn one at a time with equal weight from on_machine_leader_malfunction: survey unit / fleet command unit / sector governing unit."
+   }
+  }
+ ],
+ "unreachable": {
+  "syndaw.21": {
+   "zh": "唯一的触发者 on_machine_leader_malfunction 从未被点燃：十年脉冲 syndaw.10 / 11 在 synthetic_dawn_events.txt:12-76 被整块注释掉，其余脚本里没有再 fire_on_action 它。",
+   "en": "Its only trigger, the on_action on_machine_leader_malfunction, is never fired: the decade pulse syndaw.10 / 11 is commented out in synthetic_dawn_events.txt:12-76 and no other script fires the on_action.",
+   "evidence": "events/synthetic_dawn_events.txt:12-76; common/on_actions/00_on_actions.txt:5153-5159"
+  },
+  "syndaw.25": {
+   "zh": "唯一的触发者 on_machine_leader_malfunction 从未被点燃：十年脉冲 syndaw.10 / 11 在 synthetic_dawn_events.txt:12-76 被整块注释掉，其余脚本里没有再 fire_on_action 它。",
+   "en": "Its only trigger, the on_action on_machine_leader_malfunction, is never fired: the decade pulse syndaw.10 / 11 is commented out in synthetic_dawn_events.txt:12-76 and no other script fires the on_action.",
+   "evidence": "events/synthetic_dawn_events.txt:12-76; common/on_actions/00_on_actions.txt:5153-5159"
+  },
+  "syndaw.26": {
+   "zh": "唯一的触发者 on_machine_leader_malfunction 从未被点燃：十年脉冲 syndaw.10 / 11 在 synthetic_dawn_events.txt:12-76 被整块注释掉，其余脚本里没有再 fire_on_action 它。",
+   "en": "Its only trigger, the on_action on_machine_leader_malfunction, is never fired: the decade pulse syndaw.10 / 11 is commented out in synthetic_dawn_events.txt:12-76 and no other script fires the on_action.",
+   "evidence": "events/synthetic_dawn_events.txt:12-76; common/on_actions/00_on_actions.txt:5153-5159"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "三个设备失效事件的内容和被注释掉的触发器已核对；它们在已安装的游戏里不会自然出现。",
+   "en": "The three unit-lost events and their commented-out trigger were checked; they do not appear naturally in the installed game."
+  },
+  "sources": [
+   "events/synthetic_dawn_events.txt:12-218",
+   "common/on_actions/00_on_actions.txt:5153-5159"
+  ],
+  "guide": "public/summaries/event-syndaw-21.md"
+ }
+}

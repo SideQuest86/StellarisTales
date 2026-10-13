@@ -7,7 +7,7 @@
 
 ## 如何开始 How it starts
 
-没有固定的开局事件：隐藏事件 nomads.500 每约 200 天掷骰一次——派出可汗猎手（506）、生成委托、或什么也不发生；同时掠夺者事件 marauder.500 可能生成“野心可汗”舰队并开启事件链“可汗候选人”（nomads.600）。
+没有固定的开局事件：隐藏事件 nomads.500 每约 200 天掷骰一次——派出可汗猎手（506）、生成委托、或什么也不发生；同时掠夺者事件 marauder.500 可能生成“野心可汗”舰队并开启事件链“战鼓”（nomads.600）。
 No fixed opening: hidden nomads.500 rolls roughly every 200 days (hunters 506, a contract, or nothing); meanwhile marauder.500 may spawn an aspiring Khan fleet and start the *Khan candidate* chain (nomads.600).
 
 ## 剧情脉络 Story outline

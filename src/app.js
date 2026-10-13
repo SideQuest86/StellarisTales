@@ -5,6 +5,7 @@ import { SoundtrackPlayer } from "./audio-player.js";
 // [UI] chrome dictionary + reader enter/exit (src/i18n.js, src/reader-motion.js)
 import { t, setLanguage, applyStaticText } from "./i18n.js";
 import { revealReader } from "./reader-motion.js";
+import { warmGlyphs } from "./glyph-warmup.js";
 import {
   evaluate, resolveBody, resolveChoices, resolveEdges, pathFlags, storyFlags,
   impliedFacts, applyFacts, describe,
@@ -224,6 +225,7 @@ function setReader(open) {
   revealReader($("#reader"), open, reduced());
   if (!open) {
     $("#flow-surface").classList.remove('mobile-open');
+    panelScroll = -1;
   }
   $("#archive-hud").inert = open;
   $("#archive-hud").classList.toggle("concealed", open);
@@ -265,6 +267,9 @@ function closeReader() {
   $("#open-story").focus();
 }
 $("#close-reader").onclick = closeReader;
+// Last known scroll offset of the reader text; -1 when unknown (after the reader was hidden).
+let panelScroll = -1;
+$(".reader-panel").addEventListener("scroll", (e) => (panelScroll = e.currentTarget.scrollTop), { passive: true });
 let recordsLoading = null;
 function loadRecords() {
   // The record → story map is only needed for #record= links and edges without a story id.
@@ -518,7 +523,9 @@ function renderChapter(preservePosition = false) {
     if (dialogueStep<steps.length-1) r.next=[];
   }
   scene?.setChapterArt(chapter.image, chapter.title);
-  const scrollPosition = $(".reader-panel").scrollTop;
+  // Scroll offsets come from the passive scroll listener: reading or writing scrollTop here would force a
+  // synchronous layout of the half-built reader (a second full layout in the opening frame).
+  const scrollPosition = panelScroll;
   r.choices = r.choices.filter(
     (c, i, a) =>
       a.findIndex(
@@ -580,7 +587,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt=""/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt="" decoding="async"/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   const remembered=trail.at(-1);
   if(remembered?.chapter===chapter.id && remembered.reading===readingIndex && remembered.choice!==undefined){
     const index=r.choices.findIndex(option=>option.key===remembered.choice);
@@ -640,7 +647,11 @@ function renderChapter(preservePosition = false) {
     picker.querySelector('select').onchange=event=>{dialogueTextProfile=Number(event.target.value);renderChapter(true);};
   }
   $("#chapter-toggle").setAttribute("aria-expanded", String(Boolean(story.tree && $("#flow-surface").classList.contains('mobile-open'))));
-  $(".reader-panel").scrollTop = preservePosition ? scrollPosition : 0;
+  const targetScroll = preservePosition ? Math.max(0, scrollPosition) : 0;
+  if (targetScroll !== panelScroll || preservePosition)
+    requestAnimationFrame(() => {
+      $(".reader-panel").scrollTop = targetScroll;
+    });
   for (const button of document.querySelectorAll("[data-reading]"))
     button.onclick = () => {
       readingIndex = Number(button.dataset.reading);
@@ -921,6 +932,8 @@ try {
   });
   showSelection(columns[2].stories[0], 2, 0);
   parseHash();
+  // After the archive has settled, prepare Chinese glyphs so the first story opens without a long layout frame.
+  setTimeout(() => warmGlyphs(json), 2500);
 } catch (e) {
   $("#selected-title").textContent = T("记忆暂时失联", "The archive is unreachable");
   $("#selected-excerpt").textContent = e.message;

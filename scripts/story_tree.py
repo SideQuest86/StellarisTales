@@ -1080,6 +1080,24 @@ class Compiler:
             chapter['readings'].append(reading)
 
     # ------------------------------------------------------------------- output ---
+    @staticmethod
+    def common_glyphs(details, limit=3000):
+        """The most frequent non-ASCII characters of the Chinese text, most frequent first. The reader lays them out
+        during idle time so a story's first open does not pay Chrome's first-use cost per CJK glyph (≈0.04 ms each)."""
+        counts = collections.Counter()
+        def walk(node):
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    if k == 'zh' and isinstance(v, str):
+                        counts.update(ch for ch in v if ord(ch) > 0x2000 and not ch.isspace())
+                    else:
+                        walk(v)
+            elif isinstance(node, list):
+                for v in node:
+                    walk(v)
+        walk(details)
+        return ''.join(ch for ch, _ in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))[:limit])
+
     def write(self, stories, details, mapping):
         out = ROOT / 'public/stories'
         for sid, d in details.items():
@@ -1095,7 +1113,8 @@ class Compiler:
         dump(out / 'records.json', mapping)
         dump(out / 'names.json', self.compile_names())
         dump(out / 'profile.json', self.profile_options())
-        keep = {s['id'] + '.json' for s in stories} | {'index.json', 'excerpts.json', 'records.json', 'names.json', 'profile.json'}
+        dump(out / 'glyphs.json', {'zh': self.common_glyphs(details)})
+        keep = {s['id'] + '.json' for s in stories} | {'index.json', 'excerpts.json', 'records.json', 'names.json', 'profile.json', 'glyphs.json'}
         for p in out.glob('*.json'):
             if p.name not in keep and p.resolve().parent == out.resolve():
                 p.unlink()

@@ -12,7 +12,7 @@ At game start hidden origin.1001 places a ruined gateway in the home system and 
 
 ## 剧情脉络 Story outline
 
-1. **星门来客**：1000（资源奖励，随机四选一）→ 500 天后 1005（星门虫群出现）→ 约 1000 天后 1010（探测器坠落）→ 项目“细致考察”。
+1. **星门来客**：1000（资源奖励，随机四选一）→ 500 天后 1005（星门寄生虫出现）→ 约 1000 天后 1010（探测器坠落）→ 项目“细致考察”。
    **Visitors**: 1000 (random resource reward) -> 1005 -> 1010 -> project A Closer Look.
 2. **遗址“星门发射之物”**：项目完成后 1011 创建遗址并通知 1012；阶段 1100 → 1105 → 1110 → 1115 → 10 天后 1013“打开大门”。
    **Site From Gateway Sent**: stages 1100-1115 -> 1013 ten days later.
@@ -21,7 +21,7 @@ At game start hidden origin.1001 places a ruined gateway in the home system and 
 
 ## 分支与结局 Branches and outcomes
 
-- 反噬三选一：蝗虫群（40）、不断轰击（30）、宇宙过载（30）；击败蝗虫群后 1030。 Backlash: Gateway Locust 40 / Relentless Barrage 30 / Cosmic Overload 30; the locust swarm is reported by 1030 when destroyed.
+- 反噬三选一：星门蝗灾（40）、不断轰击（30）、宇宙过载（30）；击败星门蝗灾后 1030。 Backlash: Gateway Locust 40 / Relentless Barrage 30 / Cosmic Overload 30; the locust swarm is reported by 1030 when destroyed.
 - 修复母星星门（需银河典范）→ 1050。 Restoring the home gateway (Galactic Paragons) -> 1050.
 
 ## 条件与文明差异 Conditions and variants

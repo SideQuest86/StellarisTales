@@ -14,7 +14,7 @@
   },
   "labels": {
    "situations:situation_toxic_knights": {
-    "zh": "开局：毒神之旅局势开始",
+    "zh": "开局：毒圣之旅局势开始",
     "en": "Game start: the Quest for the Toxic God situation begins"
    },
    "toxoids.8015": {
@@ -42,7 +42,7 @@
    "to": "toxoids.7310",
    "conditional": true,
    "label": {
-    "zh": "骑士团舰队进入毒神星系且毒神仍在",
+    "zh": "骑士团舰队进入毒圣星系且毒圣仍在",
     "en": "A knights fleet enters the Toxic God system while the entity is still there"
    },
    "evidence": "events/toxoids_events.txt:2735-2759 7310 fires from on_entering_system_fleet (common/on_actions/00_on_actions.txt:1044) when the system has star flag guardian_toxic_god_system, the controller has the origin and the original entity fleet is present."
@@ -52,7 +52,7 @@
    "to": "toxoids.7311",
    "conditional": true,
    "label": {
-    "zh": "非骑士团帝国的舰队进入毒神星系",
+    "zh": "非骑士团帝国的舰队进入毒圣星系",
     "en": "A fleet of another empire enters the Toxic God system"
    },
    "evidence": "events/toxoids_events.txt:2789-2812 7311 (controller without the origin, entity present)."
@@ -62,7 +62,7 @@
    "to": "toxoids.7312",
    "conditional": true,
    "label": {
-    "zh": "骑士团舰队进入毒神星系，但毒神已被消灭或离开",
+    "zh": "骑士团舰队进入毒圣星系，但毒圣已被消灭或离开",
     "en": "A knights fleet enters the system but the entity is gone or killed"
    },
    "evidence": "events/toxoids_events.txt:2827-2853 7312 (global flag toxic_god_killed or no toxic_god_original_fleet)."
@@ -72,7 +72,7 @@
    "to": "toxoids.7315",
    "conditional": true,
    "label": {
-    "zh": "击败毒神",
+    "zh": "击败毒圣",
     "en": "The Toxic God is defeated"
    },
    "evidence": "events/toxoids_events.txt:2891-2905 7315 fires from on_ship_destroyed_perp (common/on_actions/00_on_actions.txt:1468) when the destroyed ship belongs to country type guardian_toxic_god and the killer has the origin."
@@ -82,7 +82,7 @@
    "to": "toxoids.7515",
    "conditional": true,
    "label": {
-    "zh": "他国舰队击毁毒神",
+    "zh": "他国舰队击毁毒圣",
     "en": "The Toxic God is destroyed by another empire"
    },
    "evidence": "events/toxoids_events.txt:3075-3109 7515 fires from on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1662); sets global flag toxic_god_killed."
@@ -101,7 +101,7 @@
     "en": "What awaits in the sealed system"
    },
    "note": {
-    "zh": "取决于进入者是否为骑士团起源、毒神是否仍在。",
+    "zh": "取决于进入者是否为骑士团起源、毒圣是否仍在。",
     "en": "Depends on whether the visitor has the origin and whether the entity is still present."
    }
   },
@@ -112,7 +112,7 @@
     "toxoids.7515"
    ],
    "label": {
-    "zh": "击败毒神",
+    "zh": "击败毒圣",
     "en": "Defeating the Toxic God"
    },
    "note": {
@@ -143,14 +143,14 @@
     "en": "Fate of the Order: disbanded"
    },
    "note": {
-    "zh": "驯服毒神后900天。",
+    "zh": "驯服毒圣后900天。",
     "en": "900 days after taming the entity."
    },
    "evidence": "events/toxoids_events.txt:2960-2985"
   },
   "toxoids.7510": {
    "label": {
-    "zh": "毒神被终结",
+    "zh": "毒圣被终结",
     "en": "The Toxic God is slain"
    },
    "note": {
@@ -186,7 +186,7 @@
   {
    "doc": "toxoids.7300",
    "kind": "review",
-   "zh": "与诡计之神的对决：若第四传说中选择了沙卢骑士路线（旗标 toxoids_7095_b），骑士力挽狂澜；否则传奇骑士身亡，帝国受诅咒900天。",
+   "zh": "与骗术师的对决：若第四传说中选择了黑骑士路线（旗标 toxoids_7095_b），骑士力挽狂澜；否则传奇骑士身亡，帝国受诅咒900天。",
    "en": "Fight with the Trickster: with the Sable Knights choice of 7095.b the knights save the day, otherwise a legend dies and the empire is cursed for 900 days (events/toxoids_events.txt:2619-2658)."
   },
   {
@@ -198,7 +198,7 @@
   {
    "doc": "toxoids.7305",
    "kind": "review",
-   "zh": "打开通往封印星系的超空间航道：生成毒神星系（隐藏 7500）、开启“毒神：位置”事件链与兴趣点，并销毁局势。",
+   "zh": "打开通往封印星系的超空间航道：生成毒圣星系（隐藏 7500）、开启“毒圣：位置”事件链与兴趣点，并销毁局势。",
    "en": "Opens the hyperlane to the sealed system: hidden 7500 spawns the Toxic God system, the finisher event chain and POI start, and the situation is destroyed (events/toxoids_events.txt:2660-2731)."
   },
   {

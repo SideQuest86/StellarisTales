@@ -12,7 +12,7 @@ Hidden origin.55 creates two partners and sets up a hegemony federation directly
 
 ## 剧情脉络 Story outline
 
-没有玩家窗口（联邦类型选择窗口 origin.57 只属于“共同点”起源）。
+没有玩家窗口（联邦类型选择窗口 origin.57 只属于“共同命运”起源）。
 No player window (the federation-type window origin.57 belongs to Common Ground only).
 
 ## 分支与结局 Branches and outcomes

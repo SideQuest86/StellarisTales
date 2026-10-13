@@ -1,6 +1,6 @@
 # 科学家失踪 / Missing Scientist
 - 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:579-1383` · `events/observation_events.txt:3205-3215 (see 999-1069)` · `common/special_projects/00_projects_1.txt:736-760` · `common/on_actions/00_on_actions.txt:140-200`
+- 来源 Sources：`events/observation_events.txt:579-1383` · `events/observation_events.txt:999-1069` · `common/special_projects/00_projects_1.txt:736-760` · `common/on_actions/00_on_actions.txt:140-200`
 - 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts

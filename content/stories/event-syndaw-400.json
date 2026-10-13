@@ -1,0 +1,138 @@
+{
+ "id": "event-syndaw-400",
+ "family": {
+  "title": {
+   "zh": "计算超频",
+   "en": "Computational Overclocking"
+  },
+  "category": "stories",
+  "start": "syndaw.500",
+  "members": [
+   "syndaw.500",
+   "syndaw.545",
+   "situations:situation_machine_uprising",
+   "event_chains:machine_uprising_chain",
+   "special_projects:PROJECT_MACHINE_UPRISING_PATCH",
+   "syndaw.550",
+   "special_projects:PROJECT_MACHINE_UPRISING_WIPE",
+   "syndaw.555",
+   "syndaw.505",
+   "syndaw.510",
+   "syndaw.511",
+   "syndaw.515",
+   "syndaw.520",
+   "syndaw.521",
+   "syndaw.522",
+   "syndaw.525",
+   "syndaw.526",
+   "syndaw.530",
+   "syndaw.535",
+   "syndaw.540",
+   "syndaw.1020",
+   "syndaw.1025",
+   "syndaw.501",
+   "syndaw.502",
+   "syndaw.1200",
+   "syndaw.1030",
+   "syndaw.1205"
+  ]
+ },
+ "suppress": [
+  {
+   "from": "syndaw.1020",
+   "to": "situations:situation_nomad_economy",
+   "evidence": "Reached only through hidden syndaw.1022 → nomads.20 when the uprising's originator is a nomadic country (events/synthetic_dawn_events.txt:2176-2177); that starts the Nomads economy situation for the new machine country and is not part of this story."
+  },
+  {
+   "from": "syndaw.1020",
+   "to": "event_chains:nomad_star_journal_chain",
+   "evidence": "Same nomadic-originator branch (nomads.20, events/nomads_events_1.txt:953-960); belongs to the Nomads start story."
+  }
+ ],
+ "bridges": [
+  {
+   "from": "syndaw.1020",
+   "to": "syndaw.1200",
+   "conditional": true,
+   "label": {
+    "zh": "起义战争结束：机器起义者获胜，征服了前主人",
+    "en": "The uprising war ends: the machine uprising wins and conquers its former masters"
+   },
+   "evidence": "on_war_won (common/on_actions/00_on_actions.txt:3132) fires syndaw.1200 for the winning machine country that has the flag machine_uprising_country and the relation flag towards its former master (events/synthetic_dawn_events.txt:2538-2600); it sends syndaw.1030 to the world"
+  },
+  {
+   "from": "syndaw.1020",
+   "to": "syndaw.1205",
+   "conditional": true,
+   "label": {
+    "zh": "起义战争结束：起义被镇压",
+    "en": "The uprising war ends: the uprising is crushed"
+   },
+   "evidence": "on_war_won (common/on_actions/00_on_actions.txt:3133) fires syndaw.1205 for the master who wins against the uprising (events/synthetic_dawn_events.txt:2635-2720)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "syndaw.505",
+    "syndaw.510",
+    "syndaw.515",
+    "syndaw.520",
+    "syndaw.525",
+    "syndaw.530",
+    "syndaw.535",
+    "syndaw.540"
+   ],
+   "label": {
+    "zh": "“AI相关事件”情势期间的每月事件",
+    "en": "Monthly events during the \"AI-Related Incidents\" situation"
+   },
+   "note": {
+    "zh": "情势期间每月最多抽出其中一个（random_events，common/situations/02_strategic_situations.txt:627-634）；每个事件各自有触发条件。",
+    "en": "While the situation runs, at most one of these is drawn each month (random_events, common/situations/02_strategic_situations.txt:627-634); each has its own trigger."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "syndaw.1200",
+    "syndaw.1205"
+   ],
+   "label": {
+    "zh": "起义战争的结局",
+    "en": "Outcome of the uprising war"
+   },
+   "note": {
+    "zh": "机器起义者获胜（1200 → 1030）或被镇压（1205），互相替代。",
+    "en": "The machine uprising wins (1200 -> 1030) or is crushed (1205); alternatives."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "syndaw.500",
+   "zh": "评注：每十年（on_decade_pulse → syndaw.400）有30%（＋随机推迟至多500天）的概率检查 syndaw.401：机器人人口超过75或超过25%时，以2:1在“超频”窗口 syndaw.500 与直接开始情势 syndaw.545 之间选择。500 本身经 45/90 天的 501、502 逐步揭示原因，选项决定是否引向 545 的“一个问题”。",
+   "en": "Commentary: every decade (on_decade_pulse -> syndaw.400) there is a 30% chance (delayed by up to 500 days) to check syndaw.401: with more than 75 robot pops or more than 25% robot pops it picks 2:1 between the \"Overclocking\" window syndaw.500 and starting the situation directly via syndaw.545. The 500 line reveals the cause step by step through 501 and 502 (45/90 days); its options decide whether it leads to 545 \"A Question\".",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "触发（十年脉冲与机器人人口门槛）、“一个问题”与情势、八个每月事件、两个专项、起义与战争结局均已核对。",
+   "en": "The trigger (decade pulse and robot-pop thresholds), \"A Question\" and the situation, the eight monthly events, the two projects, the uprising and the war outcomes were checked."
+  },
+  "sources": [
+   "events/synthetic_dawn_events.txt:320-440,1307-1480,1485-2540",
+   "common/situations/02_strategic_situations.txt:578-710",
+   "common/on_actions/00_on_actions.txt:298,3132-3133"
+  ],
+  "guide": "public/summaries/event-syndaw-400.md",
+  "uncertain": [
+   "The situation's progress rate, approach effects and the project costs were not simulated."
+  ]
+ }
+}

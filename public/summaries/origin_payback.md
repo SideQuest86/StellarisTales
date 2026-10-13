@@ -16,7 +16,7 @@ At game start hidden origin.4000 creates the dig site and debris at the capital;
    **Warship line**: 4900 -> debris project (4930 half, 4931 done) -> the site becomes surveyable -> stages 4905 -> 4910 (dissect / parade / burial) -> 4920 -> 4925 -> projects Flagship Restoration (4934) and Habitat Restoration (4935). Starbase tech 3-5 later allows an upgrade (4936).
 2. **债务线**：4010 → 1800天后 4015：付款（4016）、拒绝（4019）。付款可用能量/消费品/合金/人口，之后每5400天回访（4029 → 4030）；拒绝则战斗，赢（4020）或输被轰炸（4025）。第二次交涉后 15 天 4040：选择武力或言辞。击败3次后 4021 奴隶贩子大怒。
    **Debt line**: 4010 -> 1800 days later 4015: pay (4016) or refuse (4019). Paying (energy / consumer goods / alloys / pops) is followed by visits every 5400 days; refusing means a fight, won (4020) or lost with bombardment (4025). After the second meeting 4040: force or words. Three defeats lead to 4021.
-3. **复仇**：武力（4041 → 复仇战争事件链，胜利 4060/4061，或被他人抢先 4070/4071）；言辞（4042 → 加入银河议会 4050 选“平等地位”或“不干涉”两条线 → 决议里程碑 4052、全部通过 4055）。
+3. **复仇**：武力（4041 → 复仇战争事件链，胜利 4060/4061，或被他人抢先 4070/4071）；言辞（4042 → 加入银河议会 4050 选“平等相待法案”或“不予干涉法案”两条线 → 决议里程碑 4052、全部通过 4055）。
    **Revenge**: by force (4041 -> chain, won 4060/4061, or stolen by others 4070/4071) or by words (4042 -> Galactic Community 4050, Equal Standing or Non-interference -> resolution milestones 4052, all passed 4055).
 
 ## 分支与结局 Branches and outcomes

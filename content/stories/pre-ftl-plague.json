@@ -1,5 +1,360 @@
 {
  "id": "pre-ftl-plague",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "preftl.2006",
+   "to": "preftl.2025",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（进度70）：宗教狂热的延续",
+    "en": "Stage 3 (progress 70): religious mania continues"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3220-3272 preftl.2003 (progress 70) switch on country flags; flag religious_mania set by 2006.UNDERSTOOD (:3340-3393)",
+   "choice": "UNDERSTOOD"
+  },
+  {
+   "from": "preftl.2007",
+   "to": "preftl.2030",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（进度70）：军阀崛起的延续",
+    "en": "Stage 3 (progress 70): the warlords’ rise continues"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3220-3272 preftl.2003 (progress 70) switch on country flags; flag rise_of_warlords",
+   "choice": "UNDERSTOOD"
+  },
+  {
+   "from": "preftl.2008",
+   "to": "preftl.2020",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（进度70）：慈悲天使的延续",
+    "en": "Stage 3 (progress 70): the angels of mercy continue"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3220-3272 preftl.2003 (progress 70) switch on country flags; flag angels_of_mercy",
+   "choice": "preftl.2008.a"
+  },
+  {
+   "from": "preftl.2009",
+   "to": "preftl.2021",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（进度70）：恶魔入侵的延续",
+    "en": "Stage 3 (progress 70): the demonic invaders continue"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3220-3272 preftl.2003 (progress 70) switch on country flags; flag demonic_invaders",
+   "choice": "preftl.2008.a"
+  },
+  {
+   "from": "preftl.2010",
+   "to": "preftl.2035",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（进度70）：瘟疫肆虐 → 末日",
+    "en": "Stage 3 (progress 70): rampant contagion → apocalypse"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3220-3272 preftl.2003 (progress 70) switch on country flags; flag rampant_contagion",
+   "choice": "UNDERSTOOD"
+  },
+  {
+   "from": "preftl.2010",
+   "to": "preftl.2065",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（进度70）：选择“结束苦难”（眼界大开标志）",
+    "en": "Stage 3 (progress 70): “Enough” sets eyes_wide_open"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3220-3272 preftl.2003 (progress 70) switch on country flags; 2010.a sets eyes_wide_open",
+   "choice": "preftl.2010.a"
+  },
+  {
+   "from": "preftl.2011",
+   "to": "preftl.2040",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（进度70）：适者生存 → 增强免疫",
+    "en": "Stage 3 (progress 70): survival of the fittest → enhanced immunity"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3220-3272 preftl.2003 (progress 70) switch on country flags; flag survival_fittest",
+   "choice": "preftl.2011.a"
+  },
+  {
+   "from": "preftl.2025",
+   "to": "preftl.2070",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：狂热信仰",
+    "en": "Completion (progress 100): fervent belief"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; flag fervent_belief",
+   "choice": "UNDERSTOOD"
+  },
+  {
+   "from": "preftl.2006",
+   "to": "preftl.2026",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：灵性者“引导真信仰”→ 真先知（跳过阶段三）",
+    "en": "Completion (progress 100): the spiritualist choice → True Prophet (skips stage 3)"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; 2006.a sets true_prophet",
+   "choice": "preftl.2006.a"
+  },
+  {
+   "from": "preftl.2030",
+   "to": "preftl.2075",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：战场之王",
+    "en": "Completion (progress 100): lords of the battlefield"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; flag lords_of_the_battlefield",
+   "choice": "UNFORTUNATE"
+  },
+  {
+   "from": "preftl.2007",
+   "to": "preftl.2031",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：“扶持最强者”→ 辉煌旗帜（跳过阶段三）",
+    "en": "Completion (progress 100): “Bolster the strongest” → Brilliant Banner (skips stage 3)"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; 2007.a sets brilliant_banner",
+   "choice": "preftl.2007.a"
+  },
+  {
+   "from": "preftl.2020",
+   "to": "preftl.2080",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：保密 → 感恩的民众",
+    "en": "Completion (progress 100): secrecy → grateful populace"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; flag overwhelming_demand set by 2020.a",
+   "choice": "preftl.2020.a"
+  },
+  {
+   "from": "preftl.2020",
+   "to": "preftl.2065",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：坦白 → 眼界大开",
+    "en": "Completion (progress 100): truth → minds wide open"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; 2020.b sets eyes_wide_open",
+   "choice": "preftl.2020.b"
+  },
+  {
+   "from": "preftl.2021",
+   "to": "preftl.2085",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：保密 → 大规模驱魔",
+    "en": "Completion (progress 100): secrecy → mass exorcism"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; flag power_of_faith",
+   "choice": "preftl.2020.a"
+  },
+  {
+   "from": "preftl.2021",
+   "to": "preftl.2065",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：坦白 → 眼界大开",
+    "en": "Completion (progress 100): truth → minds wide open"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; 2021.b sets eyes_wide_open",
+   "choice": "preftl.2020.b"
+  },
+  {
+   "from": "preftl.2035",
+   "to": "preftl.2051",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：末日 → 死亡世界",
+    "en": "Completion (progress 100): apocalypse → dead world"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; flag apocalypse_now",
+   "choice": "EXCELLENT"
+  },
+  {
+   "from": "preftl.2040",
+   "to": "preftl.2090",
+   "conditional": true,
+   "label": {
+    "zh": "完成（进度100）：增强免疫 → 青春之泉",
+    "en": "Completion (progress 100): enhanced immunity → fountain of youth"
+   },
+   "evidence": "events/first_contact_dlc_situation_events.txt:3275-3337 preftl.2005 (progress 100) switch on country flags; flag enhanced_immunity",
+   "choice": "EXCELLENT"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2020",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2021",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2025",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2026",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2030",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2031",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2035",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2040",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2051",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2065",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2070",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2075",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2080",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2085",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  },
+  {
+   "from": "situations:situation_pre_ftl_plague",
+   "to": "preftl.2090",
+   "evidence": "The situation only dispatches them through the hidden stage events 2003 / 2005 (switch on country flags set by the previous event); the real order is shown by the reviewed bridges."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl.2006",
+    "preftl.2007"
+   ],
+   "label": {
+    "zh": "观望路线（阶段二）",
+    "en": "Watch & learn (stage 2)"
+   },
+   "note": {
+    "zh": "进度 35 时 50:50。",
+    "en": "At progress 35, 50:50."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl.2008",
+    "preftl.2009"
+   ],
+   "label": {
+    "zh": "提供援助路线（阶段二）",
+    "en": "Provide aid (stage 2)"
+   },
+   "note": {
+    "zh": "进度 35 时 50:50。",
+    "en": "At progress 35, 50:50."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl.2010",
+    "preftl.2011"
+   ],
+   "label": {
+    "zh": "促成疾病路线（阶段二）",
+    "en": "Promote disease (stage 2)"
+   },
+   "note": {
+    "zh": "进度 35 时 70:30。",
+    "en": "At progress 35, 70:30."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl.2062",
+    "preftl.2063"
+   ],
+   "label": {
+    "zh": "每月随机插曲",
+    "en": "Monthly random interlude"
+   },
+   "note": {
+    "zh": "每月各 15% 概率（隐藏分发）。",
+    "en": "15% each per month (hidden dispatch)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "situations:situation_pre_ftl_plague",
+   "kind": "review",
+   "zh": "审阅注：情境“人畜共患瘟疫”三个阶段分别在进度 0–35、35–70、70–100；路线：观望并学习 / 提供援助（不可用于“禁止干涉”政策）/ 促成疾病；后两种每月进度 −1 / +1。进度 35 时（preftl.2002，一次）按路线抽阶段二事件；进度 70 时（preftl.2003）按前一事件设的国家标志分派阶段三事件；进度 100 时（preftl.2005）再按标志分派结局。",
+   "en": "Review note: the three stages cover progress 0–35, 35–70 and 70–100; approaches are watch & learn, provide aid (not under the non-interference policy) or promote disease (−1 / +1 monthly progress). At 35 (preftl.2002, once) the stage-2 event is drawn by approach; at 70 (preftl.2003) the stage-3 event by the country flag set before; at 100 (preftl.2005) the ending by flag."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "人畜共患瘟疫情境：26个文档，阶段二抽取、阶段三/结局的标志分派已用桥连接。",
+   "en": "Zoonotic Plague situation: 26 docs; the stage-2 draws and the flag-based stage-3 / ending dispatch are linked by bridges."
+  },
+  "sources": [
+   "events/first_contact_dlc_situation_events.txt:3010-4970",
+   "common/situations/04_first_contact_dlc_situations.txt:370-582",
+   "common/on_actions/00_on_actions.txt:140-200"
+  ],
+  "uncertain": [
+   "2025.a、2026.a 等灵性者选项在后续标志上的细节只按名称读取。 / The spiritualist options of 2025 / 2026 etc. were read by name only."
+  ],
+  "guide": "public/summaries/pre-ftl-plague.md"
+ },
  "legacy": {
   "situationConfig": {
    "id": "pre-ftl-plague",
@@ -25,15 +380,6 @@
      "progress": 100
     }
    ]
-  }
- },
- "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
   }
  }
 }

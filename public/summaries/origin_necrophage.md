@@ -7,7 +7,7 @@
 
 ## 如何开始 How it starts
 
-开局时没有窗口；起源卡添加嗜尸特质、一个副物种，并使难民吸引力 -25%。开局约 3420 天后（非净化者的帝国）出现 necroids.2“升华仪式”，提前约 180 天告知玩家嗜尸机制。
+开局时没有窗口；起源卡添加嗜尸特质、一个副物种，并使难民吸引力 -25%。开局约 3420 天后（非净化者的帝国）出现 necroids.2“升格仪式”，提前约 180 天告知玩家嗜尸机制。
 No window at start. After about 3420 days a non-purifier empire sees necroids.2 *Elevation Ceremony*, which tells the player about the mechanic roughly 180 days before it happens.
 
 ## 剧情脉络 Story outline
@@ -25,4 +25,4 @@ No window at start. After about 3420 days a non-purifier empire sees necroids.2 
 ## 审阅记录 Review notes
 
 - 已核对 Checked：necroids.1–25 与 game_start 钩子。 Events necroids.1-25 and the start hook.
-- 更正 Corrections：该窗口原被误并入“共同点”，现归属食尸文化。 The window had been absorbed into Common Ground; now attached here.
+- 更正 Corrections：该窗口原被误并入“共同命运”，现归属食尸文化。 The window had been absorbed into Common Ground; now attached here.
