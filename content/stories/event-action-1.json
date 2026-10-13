@@ -1,0 +1,39 @@
+{
+ "id": "event-action-1",
+ "family": {
+  "title": {
+   "zh": "第一次接触",
+   "en": "First Contact"
+  },
+  "category": "stories",
+  "start": "action.11",
+  "members": [
+   "action.11",
+   "action.13",
+   "action.1",
+   "progress.4",
+   "progress.5",
+   "progress.6",
+   "anomaly.4017"
+  ]
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/on_action_events_1.txt:10-3437,3985-4141,4265-4340",
+   "common/on_actions/00_on_actions.txt:2265-2271 on_post_communications_established",
+   "events/first_contact_events.txt:10373-10377"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-action-1.md",
+  "merged": [
+   "event-action-11"
+  ]
+ }
+}

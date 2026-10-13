@@ -1,0 +1,31 @@
+{
+ "id": "event-astral-planes-6095",
+ "category": "rifts",
+ "endings": {
+  "astral_planes.6100": {
+   "label": {"zh": "无视或拿来练靶", "en": "Ignore it, or use it for target practice"},
+   "note": {"zh": "“这与我们无关”或（仅狂暴灭绝者）“拿来练靶”（凝聚力收入）：逃生舱被放弃，不会再有第二次机会（全局标记 mercedes_spawned 已设置）。", "en": "“This does not concern us” or (homicidal empires only) “Use it as target practice” (a unity income): the pod is abandoned and there is no second chance (global flag mercedes_spawned is already set)."},
+   "evidence": "events/astral_planes_events.txt:5245-5274"},
+  "astral_planes.6105": {
+   "label": {"zh": "梅赛德斯·罗梅罗：招募窗口", "en": "Mercedes Romero: the recruitment window"},
+   "note": {"zh": "接上屏幕：Blorg 共同体的探险家兼外交官出现。三次对话（你记得什么 / 为何迷恋人类 / 你能为我们做什么）只是对话，最后可聘用（获得一位不朽、206 岁、杰出级的外交官员，特质为 Blorg 洞察等）或遣散。", "en": "Taking the call: an explorer and diplomat of the Blorg Commonality appears. The three questions (what do you remember / why humans / what can you do) are dialogue only; in the end she can be hired (an immortal, 206-year-old renowned official with Blorg Insight and diplomacy traits) or dismissed."},
+   "evidence": "events/astral_planes_events.txt:5276-5393"}
+ },
+ "notes": [
+  {"doc": "astral_planes.6100", "kind": "review",
+   "zh": "起点：每次裂隙探索完成时 on_astral_rift_exploration_complete 的 random_events（权重 1 对 49 个空位，即 1/50；00_on_actions.txt:5023-5026）触发隐藏事件 6095。条件：本国物种不是 Blorg 肖像（fun12），没有预设的 Blorg 国家，全局标记 mercedes_spawned 未设。玩家必定得到；AI 只有 1/21 的二次随机。全局只会出现一次。",
+   "en": "Start: each time a rift exploration completes, the random_events of on_astral_rift_exploration_complete (weight 1 against 49 empty, i.e. 1 in 50; 00_on_actions.txt:5023-5026) fires hidden event 6095. Conditions: the species is not the Blorg portrait (fun12), no prescripted Blorg country exists, and global flag mercedes_spawned is not set. A player always gets it; an AI passes an extra 1-in-21 roll. It can happen only once per game."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对 6095 / 6100 / 6105 与 on_astral_rift_exploration_complete 的随机事件项。",
+   "en": "Checked 6095 / 6100 / 6105 and the random_events entry of on_astral_rift_exploration_complete."
+  },
+  "sources": ["events/astral_planes_events.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/event-astral-planes-6095.md"
+ }
+}

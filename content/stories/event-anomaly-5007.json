@@ -1,0 +1,212 @@
+{
+ "id": "event-anomaly-5007",
+ "family": {
+  "title": {
+   "zh": "达斯纳克殖民地",
+   "en": "Dathnak Colony"
+  },
+  "category": "exploration",
+  "start": "anomaly.5007",
+  "members": [
+   "anomaly.5007",
+   "special_projects:GAS_GIANT_COLONY",
+   "anomaly.5008",
+   "anomaly.5009",
+   "special_projects:GAS_GIANT_LOST_CHABKY",
+   "anomaly.5010",
+   "anomaly.5011",
+   "special_projects:GAS_GIANT_LOST_CONTACT",
+   "anomaly.5012",
+   "anomaly.5013",
+   "special_projects:GAS_GIANT_REVOLT",
+   "anomaly.5014",
+   "special_projects:GAS_GIANT_OCCUPATION",
+   "anomaly.5015",
+   "anomaly.5016",
+   "anomaly.5017",
+   "anomaly.5018",
+   "anomaly.5019",
+   "anomaly.5020",
+   "anomaly.5021",
+   "anomaly.5022",
+   "anomaly.5023",
+   "anomaly.5024",
+   "anomaly.5025",
+   "anomaly.5026"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "anomaly.5008",
+   "choice": "anomaly.5008.a",
+   "to": "anomaly.5009",
+   "conditional": true,
+   "label": {
+    "zh": "约220个月后（需已定居新殖民地）",
+    "en": "~220 months later (needs the new colony settled)"
+   },
+   "evidence": "events/anomaly_events_4.txt:389-413 trigger new_baldarak_settled, mean_time_to_happen 220 months"
+  },
+  {
+   "from": "anomaly.5008",
+   "choice": "anomaly.5008.a",
+   "to": "anomaly.5025",
+   "conditional": true,
+   "label": {
+    "zh": "约320个月后（未失联时）",
+    "en": "~320 months later (while contact is not lost)"
+   },
+   "evidence": "events/anomaly_events_4.txt:930-955 trigger new_baldarak_settled and not contact lost, mtth 320 months"
+  },
+  {
+   "from": "anomaly.5008",
+   "choice": "anomaly.5008.a",
+   "to": "anomaly.5026",
+   "conditional": true,
+   "label": {
+    "zh": "约320个月后（未失联时）",
+    "en": "~320 months later (while contact is not lost)"
+   },
+   "evidence": "events/anomaly_events_4.txt:969-993 trigger new_baldarak_settled and not contact lost, mtth 320 months"
+  },
+  {
+   "from": "anomaly.5010",
+   "choice": "anomaly.5010.a",
+   "to": "anomaly.5011",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后（切布基已送回）",
+    "en": "~120 months later (Chabky returned home)"
+   },
+   "evidence": "events/anomaly_events_4.txt:458-483 trigger chabky_raddh_done (set by 5010), mtth 120 months"
+  },
+  {
+   "from": "anomaly.5016",
+   "choice": "anomaly.5016.a",
+   "to": "anomaly.5017",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后（革命议会成立）",
+    "en": "~120 months later (revolutionary council set up)"
+   },
+   "evidence": "events/anomaly_events_4.txt:666-685 trigger baldarak_revolution_1 (set by 5016), mtth 120 months"
+  },
+  {
+   "from": "anomaly.5017",
+   "choice": "INTERESTING",
+   "to": "anomaly.5018",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后（未屏蔽广播）",
+    "en": "~120 months later (transmissions not blocked)"
+   },
+   "evidence": "events/anomaly_events_4.txt:709-731 trigger baldarak_revolution_2, not dathnak_blocked, mtth 120 months"
+  },
+  {
+   "from": "anomaly.5018",
+   "choice": "INTERESTING",
+   "to": "anomaly.5019",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后（未屏蔽广播）",
+    "en": "~120 months later (transmissions not blocked)"
+   },
+   "evidence": "events/anomaly_events_4.txt:748-770 trigger baldarak_revolution_3, not dathnak_blocked, mtth 120 months"
+  },
+  {
+   "from": "anomaly.5021",
+   "choice": "anomaly.5021.a",
+   "to": "anomaly.5022",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后（占领开始）",
+    "en": "~120 months later (occupation under way)"
+   },
+   "evidence": "events/anomaly_events_4.txt:834-851 trigger new_baldarak_occupation_1 (set by 5021), mtth 120 months"
+  },
+  {
+   "from": "anomaly.5022",
+   "choice": "INTERESTING",
+   "to": "anomaly.5023",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后",
+    "en": "~120 months later"
+   },
+   "evidence": "events/anomaly_events_4.txt:867-885 trigger new_baldarak_occupation_2, mtth 120 months"
+  },
+  {
+   "from": "anomaly.5022",
+   "choice": "anomaly.5017.b",
+   "to": "anomaly.5023",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后（拒绝广播在此线上无效）",
+    "en": "~120 months later (blocking has no effect on this line)"
+   },
+   "evidence": "events/anomaly_events_4.txt:861-863 option b has no effect; 878-884 trigger occupation_2"
+  },
+  {
+   "from": "anomaly.5023",
+   "choice": "INTERESTING",
+   "to": "anomaly.5024",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后",
+    "en": "~120 months later"
+   },
+   "evidence": "events/anomaly_events_4.txt:900-918 trigger new_baldarak_occupation_3, mtth 120 months"
+  },
+  {
+   "from": "anomaly.5023",
+   "choice": "anomaly.5017.b",
+   "to": "anomaly.5024",
+   "conditional": true,
+   "label": {
+    "zh": "约120个月后",
+    "en": "~120 months later"
+   },
+   "evidence": "events/anomaly_events_4.txt:900-918 trigger new_baldarak_occupation_3, mtth 120 months"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "anomaly.5025",
+    "anomaly.5026"
+   ],
+   "label": {
+    "zh": "可选的小事件（互相独立）",
+    "en": "Optional small events (independent)"
+   },
+   "note": {
+    "zh": "各约320个月触发一次；一旦失联(new_baldarak_contact_lost)就不再出现。",
+    "en": "Each fires about once per 320 months; they stop once contact is lost (new_baldarak_contact_lost)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "anomaly.5007",
+   "zh": "审阅注：本故事承接“气态巨行星信号”（anomaly-signal-gasgiant-category，c3a）：其5006“移居”选项设旗标baldarak_settled，之后本事件以平均240个月的随机间隔触发（events/anomaly_events_4.txt:265-285）。",
+   "en": "Review note: this story continues \"Gas Giant Signal\" (anomaly-signal-gasgiant-category, c3a): its 5006 relocation sets baldarak_settled and this event then fires after an average of 240 months (events/anomaly_events_4.txt:265-285).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (resumed)",
+  "scope": {
+   "zh": "全部25个文档。",
+   "en": "All 25 docs."
+  },
+  "sources": [
+   "events/anomaly_events_4.txt",
+   "common/special_projects/00_projects_1.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-anomaly-5007.md"
+ }
+}

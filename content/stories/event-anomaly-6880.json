@@ -1,0 +1,57 @@
+{
+ "id": "event-anomaly-6880",
+ "family": {
+  "title": {
+   "zh": "沉睡的水晶",
+   "en": "Sleeping Crystal"
+  },
+  "category": "exploration",
+  "start": "anomaly.6880",
+  "members": [
+   "anomaly.6880",
+   "special_projects:STUDY_SLEEPING_CRYSTAL",
+   "anomaly.6890",
+   "anomaly.6885"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "anomaly.6880",
+   "choice": "anomaly.6880.a",
+   "to": "anomaly.6885",
+   "conditional": true,
+   "label": {
+    "zh": "再次建采矿站时",
+    "en": "When a mining station is built again"
+   },
+   "evidence": "events/anomaly_events_4.txt:3234-3247 trigger annoyed_crystal, set in the after block 3226-3230"
+  },
+  {
+   "from": "anomaly.6890",
+   "choice": "anomaly.6890.a",
+   "to": "anomaly.6885",
+   "conditional": true,
+   "label": {
+    "zh": "再次建采矿站时",
+    "en": "When a mining station is built again"
+   },
+   "evidence": "events/anomaly_events_4.txt:3234-3247 trigger annoyed_crystal"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (resumed)",
+  "scope": {
+   "zh": "全部4个文档。",
+   "en": "All 4 docs."
+  },
+  "sources": [
+   "events/anomaly_events_4.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_3.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-anomaly-6880.md"
+ }
+}

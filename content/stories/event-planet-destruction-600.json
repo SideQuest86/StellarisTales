@@ -1,0 +1,43 @@
+{
+ "id": "event-planet-destruction-600",
+ "family": {
+  "title": {
+   "zh": "圣地",
+   "en": "Holy World"
+  },
+  "category": "stories",
+  "start": "planet_destruction.610",
+  "members": [
+   "planet_destruction.600",
+   "planet_destruction.605",
+   "planet_destruction.607",
+   "planet_destruction.610",
+   "planet_destruction.611",
+   "planet_destruction.615",
+   "toxoids.50"
+  ]
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/planet_destruction_events.txt:1635-1873",
+   "common/on_actions/01_planet_destruction.txt:20,41,126,149,198",
+   "events/toxoids_events.txt:380-413",
+   "events/colony_events_1.txt:4598",
+   "events/fallen_empire_awakening_events.txt:143"
+  ],
+  "uncertain": [
+   "Windows 610/615 have a dynamic title ([outraged_FE.GetName]); the family title is the name of the holy_planet modifier."
+  ],
+  "guide": "public/summaries/event-planet-destruction-600.md",
+  "merged": [
+   "event-toxoids-50"
+  ]
+ }
+}

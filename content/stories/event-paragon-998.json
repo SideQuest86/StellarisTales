@@ -1,0 +1,39 @@
+{
+ "id": "event-paragon-998",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "paragon.1000",
+    "paragon.1005",
+    "paragon.1010",
+    "paragon.1015",
+    "paragon.1020",
+    "paragon.1025",
+    "paragon.1030",
+    "paragon.1035",
+    "paragon.1040",
+    "paragon.1050"
+   ],
+   "label": {
+    "zh": "非集群帝国：十选一",
+    "en": "Non-gestalt: one of ten"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/paragon_events.txt:4165-4800",
+   "common/on_actions/00_on_actions.txt (on_decade_pulse_country)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-paragon-998.md"
+ }
+}

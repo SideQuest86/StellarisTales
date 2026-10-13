@@ -1,0 +1,27 @@
+{
+ "id": "event-astral-planes-110",
+ "category": "rifts",
+ "endings": {
+  "astral_planes.110": {
+   "label": {"zh": "星界行动：科技说明", "en": "Astral Actions: technology notice"},
+   "note": {"zh": "单事件通知：说明刚解锁的星界丝缕采集与星界行动。无选择，无后续。", "en": "A single notice explaining the astral thread gathering and astral actions just unlocked. No choice, no follow-up."},
+   "evidence": "events/astral_planes_events.txt:1242-1262"}
+ },
+ "notes": [
+  {"doc": "astral_planes.110", "kind": "review",
+   "zh": "触发：任何科技增长时（on_tech_increased，00_on_actions.txt:2717），事件自身条件 last_increased_tech = tech_astral_harvesting，且不是裂隙世界起源，也不是已赢得宇宙创生危机的国家（cosmogenesis_empire_has_won）。",
+   "en": "Trigger: any tech increase (on_tech_increased, 00_on_actions.txt:2717); the event's own conditions are last_increased_tech = tech_astral_harvesting, not the Riftworld origin and not a country that has won the Cosmogenesis crisis (cosmogenesis_empire_has_won)."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对 astral_planes.110 及其 on_action 条目。",
+   "en": "Checked astral_planes.110 and its on_action entry."
+  },
+  "sources": ["events/astral_planes_events.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/event-astral-planes-110.md"
+ }
+}

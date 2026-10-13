@@ -7,6 +7,11 @@
   "members": ["astral_rifts:crystal"]
  },
  "category": "rifts",
+ "bridges": [
+  {"from": "astral_planes.45", "choice": "INTERESTING", "to": "astral_planes.3000", "conditional": true,
+   "label": {"zh": "舰队穿过奇异虫洞进入“无形异使”星系时", "en": "When a fleet passes through the strange wormhole into the Formless system"},
+   "evidence": "common/on_actions/00_on_actions.txt:4144-4148 on_entering_strange_wormhole -> astral_planes.3000 (events/astral_planes_events.txt:1875-1906: from has star flag formless_system, fromfrom has crystal_sphere_system; fire_only_once)"}
+ ],
  "groups": [
   {"kind": "exclusive", "members": ["astral_rift.1005", "astral_rift.1010"],
    "label": {"zh": "用人工智能解读或用电磁脉冲夺回控制", "en": "Decode with A.I. or take control with an E.M.P."},

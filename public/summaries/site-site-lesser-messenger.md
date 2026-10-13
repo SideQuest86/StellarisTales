@@ -1,6 +1,6 @@
 # 尘中之信 / Message in the Dust
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1452；events/federations_events_1.txt:2459 · DLC：《远古遗物》Ancient Relics；事件属《联邦》Federations 文件 · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1452；events/federations_events_1.txt:2459 · DLC：《远古遗物》Ancient Relics；事件属《联邦》Federations 文件 · 审阅 Reviewed 2026-10-13
 
 ## 如何开始 How it starts
 

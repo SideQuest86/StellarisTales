@@ -1,0 +1,103 @@
+{
+ "id": "site-site-polaris-seed-vault",
+ "family": {
+  "title": {
+   "zh": "最后的希望",
+   "en": "One Last Hope"
+  },
+  "category": "precursors",
+  "start": "ancrel.13000",
+  "members": [
+   "archaeological_site_types:site_polaris_seed_vault",
+   "ancrel.13005",
+   "ancrel.13010",
+   "ancrel.13015",
+   "ancrel.13006",
+   "ancrel.13020",
+   "ancrel.13025",
+   "ancrel.13000"
+  ],
+  "sources": []
+ },
+ "titleFrom": "archaeological_site_types:site_polaris_seed_vault",
+ "hubs": [
+  "ancrel.13006"
+ ],
+ "bridges": [
+  {
+   "from": "ancrel.13015",
+   "to": "ancrel.13020",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：随机结果之一（50%）",
+    "en": "Final stage completed: one random outcome (50%)"
+   },
+   "evidence": "common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2385 last stage event ancrel.13006 is hidden (events/ancient_relics_arcsite_events_2.txt:9225) and fires one of ancrel.13020, ancrel.13025 by random_list (50/50); hub marking keeps the compiler from chaining them as consecutive stages"
+  },
+  {
+   "from": "ancrel.13015",
+   "to": "ancrel.13025",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：随机结果之一（50%）",
+    "en": "Final stage completed: one random outcome (50%)"
+   },
+   "evidence": "common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2385 last stage event ancrel.13006 is hidden (events/ancient_relics_arcsite_events_2.txt:9225) and fires one of ancrel.13020, ancrel.13025 by random_list (50/50); hub marking keeps the compiler from chaining them as consecutive stages"
+  },
+  {
+   "from": "ancrel.13000",
+   "choice": "CURIOUS",
+   "to": "archaeological_site_types:site_polaris_seed_vault",
+   "conditional": true,
+   "label": {
+    "zh": "设置 polaris_seen 后遗址可见",
+    "en": "With polaris_seen set the site becomes visible"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:9169 ancrel.13000 immediate set_global_flag polaris_seen (trigger: from has country flag polaris_country, on_fleet_destroyed_perp, common/on_actions/00_on_actions.txt:1667); common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2395 visible requires has_global_flag polaris_seen"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.13020",
+    "ancrel.13025"
+   ],
+   "label": {
+    "zh": "最后阶段的随机结局",
+    "en": "Random final outcomes"
+   },
+   "note": {
+    "zh": "最后阶段完成时只抽取其中一个，不会依次发生。",
+    "en": "Only one is drawn when the last stage completes; they never follow each other."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_polaris_seed_vault",
+   "kind": "review",
+   "zh": "遗址权重为0，由星系初始化器 polaris_civilization 创建（common/solar_system_initializers/special_system_initializers.txt:1370），且要求全局标志 polaris_seen 才可见（遗址定义 visible）。该标志由“冷酷的招待会”ancrel.13000 设置：玩家击毁北极星（Polaris）国家的最后一支舰队时触发（common/on_actions/00_on_actions.txt:1667，on_fleet_destroyed_perp）。",
+   "en": "Weight 0: created by the system initializer polaris_civilization (common/solar_system_initializers/special_system_initializers.txt:1370) and only visible once the global flag polaris_seen is set (site definition \"visible\"). The flag is set by \"A Cool Reception\" ancrel.13000, fired when the player destroys a fleet of the Polaris country (common/on_actions/00_on_actions.txt:1667, on_fleet_destroyed_perp)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/solar_system_initializers/special_system_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-polaris-seed-vault.md"
+ }
+}

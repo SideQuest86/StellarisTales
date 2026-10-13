@@ -1,0 +1,36 @@
+{
+ "id": "site-site-percussive-maintenance",
+ "hubs": [
+  "ancrel.8200",
+  "ancrel.8201",
+  "ancrel.8202",
+  "ancrel.8203",
+  "ancrel.8215"
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_percussive_maintenance",
+   "kind": "review",
+   "zh": "勘察天体时，隐藏事件 ancrel.9999（on_survey_planet）以 5/405 的机会生成一个随机考古遗址（AI帝国或5年内刚发现过遗址者机会×0.2），再按各遗址的权重抽取；本遗址要求拥有《远古遗物》，权重30，出现在中子星或脉冲星天体上。创建时在星球旁生成一座“废弃的武器空间站”。",
+   "en": "When a body is surveyed, hidden ancrel.9999 (on_survey_planet) has a 5/405 chance to create a random dig site (×0.2 for AI empires or if a site was found in the last 5 years), then picks a site type by weight; this site needs Ancient Relics and has weight 30 on neutron-star or pulsar bodies. On creation an \"abandoned weapon station\" ambient object is placed at the planet."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "events/ancient_relics_arcsite_events_1.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-percussive-maintenance.md"
+ }
+}

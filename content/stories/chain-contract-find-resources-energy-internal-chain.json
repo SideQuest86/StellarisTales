@@ -1,0 +1,30 @@
+{
+ "id": "chain-contract-find-resources-energy-internal-chain",
+ "unreachable": {
+  "event_chains:contract_find_resources_energy_internal_chain": {
+   "zh": "发布此契约的事件 nomads.3010 的触发条件为 always = no（注释 DISABLED FOR NOW），正常游戏不会出现。",
+   "en": "The issuing event nomads.3010 has trigger always = no (commented DISABLED FOR NOW); the contract does not occur in normal play.",
+   "evidence": "events/nomads_events_1.txt:11375-11387"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "契约定义、发布与接受条件、完成机制（专项/钩子事件/方舟动作）、奖励缩放与失败处理均已核对。",
+   "en": "Mission definition, issue/accept conditions, completion mechanism (special project / hook event / arkship action), reward scaling and failure handling were checked."
+  },
+  "sources": [
+   "common/missions/missions/02_contracts.txt:3706-3713",
+   "common/event_chains/00_event_chains_nomads.txt:166",
+   "common/inline_scripts/contracts/FindResourceInternal.txt",
+   "common/inline_scripts/events/nomads_find_resource_internal_event.txt",
+   "events/nomads_events_1.txt:11375-11440"
+  ],
+  "guide": "public/summaries/chain-contract-find-resources-energy-internal-chain.md",
+  "uncertain": [
+   "The currency of the contract `cost` and the player-side contract UI are engine-side; the amounts quoted are the script values."
+  ]
+ }
+}

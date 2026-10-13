@@ -1,0 +1,124 @@
+{
+ "id": "event-grand-archive-500",
+ "family": {
+  "title": {
+   "zh": "策展人",
+   "en": "Curators"
+  },
+  "category": "stories",
+  "start": "grand_archive.4121",
+  "members": [
+   "grand_archive.4121",
+   "grand_archive.4105",
+   "grand_archive.4106",
+   "grand_archive.4107"
+  ]
+ },
+ "suppress": [
+  {
+   "from": "grand_archive.4121",
+   "to": "grand_archive.4106",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  },
+  {
+   "from": "grand_archive.4121",
+   "to": "grand_archive.4107",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  },
+  {
+   "from": "grand_archive.4105",
+   "to": "grand_archive.4121",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  },
+  {
+   "from": "grand_archive.4105",
+   "to": "grand_archive.4107",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  },
+  {
+   "from": "grand_archive.4106",
+   "to": "grand_archive.4121",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  },
+  {
+   "from": "grand_archive.4106",
+   "to": "grand_archive.4105",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  },
+  {
+   "from": "grand_archive.4107",
+   "to": "grand_archive.4121",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  },
+  {
+   "from": "grand_archive.4107",
+   "to": "grand_archive.4105",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  },
+  {
+   "from": "grand_archive.4107",
+   "to": "grand_archive.4106",
+   "evidence": "the follow-up is not a direct continuation (hidden dispatcher/loop or alternative variant); removed so the tree shows the reviewed order only"
+  }
+ ],
+ "bridges": [
+  {
+   "from": "grand_archive.4121",
+   "to": "grand_archive.4105",
+   "conditional": true,
+   "label": {
+    "zh": "约30天后检查，再过360–540天：有类别达到第1阶段收藏条件（且未跳过）",
+    "en": "After a 30-day check and then 360-540 days: a category has reached collection stage 1 (not skipped)"
+   },
+   "evidence": "events/grand_archive_events.txt:4344-4431 hidden 4100/4101 (4100 delay 360+180 random) choose stage 1 if eligible, else 2, else 3; 4121 after: 4100 in 30 days"
+  },
+  {
+   "from": "grand_archive.4105",
+   "to": "grand_archive.4106",
+   "conditional": true,
+   "label": {
+    "zh": "下一轮（4100，360–540天后）：达到第2阶段条件",
+    "en": "Next cycle (4100, 360-540 days later): stage 2 reached"
+   },
+   "evidence": "events/grand_archive_events.txt:4389-4423 4101 else_if chain; each reward event ends with country_event 4100 (after, lines 4586-4593)"
+  },
+  {
+   "from": "grand_archive.4106",
+   "to": "grand_archive.4107",
+   "conditional": true,
+   "label": {
+    "zh": "下一轮：达到第3阶段条件（可选遗物）",
+    "en": "Next cycle: stage 3 reached (relic choice)"
+   },
+   "evidence": "events/grand_archive_events.txt:4409-4422 4101 else_if; 4107 offers relics, lines 4693-4857"
+  }
+ ],
+ "nodeLabels": {
+  "grand_archive.4105": {
+   "zh": "第1阶段奖励",
+   "en": "Stage 1 reward"
+  },
+  "grand_archive.4106": {
+   "zh": "第2阶段奖励",
+   "en": "Stage 2 reward"
+  },
+  "grand_archive.4107": {
+   "zh": "第3阶段奖励（遗物）",
+   "en": "Stage 3 reward (relics)"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "大档案馆的展品收藏阶段奖励：与策展人联络、三个阶段（及遗物选择）和灭绝者以外帝国的循环。",
+   "en": "The Grand Archive collection rewards: first contact with the Curators, the three reward stages (with relic choice) and their loop for non-homicidal empires."
+  },
+  "sources": [
+   "events/grand_archive_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-grand-archive-500.md"
+ }
+}

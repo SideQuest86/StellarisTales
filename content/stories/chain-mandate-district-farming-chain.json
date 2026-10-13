@@ -1,0 +1,28 @@
+{
+ "id": "chain-mandate-district-farming-chain",
+ "unreachable": {
+  "event_chains:mandate_district_farming_chain": {
+   "zh": "全游戏脚本中无任何 begin_event_chain / 任务 / 决议 / 事件启动此承诺链，也无推进其计数器的脚本。",
+   "en": "No begin_event_chain, mission, decision or event anywhere in the game starts this mandate chain, and no script advances its counter.",
+   "evidence": "common/event_chains/00_mandate_chains.txt:199 (definition only; full-text search of common/, events/, interface/, localisation/)"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "事件链定义、计数器、本地化承诺文本与全库引用检索均已核对。",
+   "en": "The chain definition, counter, localised promise and a full-install reference search were checked."
+  },
+  "sources": [
+   "common/event_chains/00_mandate_chains.txt:199",
+   "localisation/english/mandates_l_english.yml",
+   "common/static_modifiers/01_static_modifiers.txt:237"
+  ],
+  "guide": "public/summaries/chain-mandate-district-farming-chain.md",
+  "uncertain": [
+   "Whether the engine starts election mandates from code (not visible in script)."
+  ]
+ }
+}

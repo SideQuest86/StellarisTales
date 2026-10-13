@@ -1,0 +1,37 @@
+{
+ "id": "event-espionage-1",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "espionage.18",
+    "espionage.10",
+    "espionage.11",
+    "espionage.16",
+    "espionage.17",
+    "espionage.15"
+   ],
+   "label": {
+    "zh": "if / else-if 链，按此顺序",
+    "en": "if / else-if chain in this order"
+   },
+   "note": {
+    "zh": "同族目标 → 18；蜂巢 → 10；机器 → 11；排外 → 16；威权 → 17；其余 → 15。",
+    "en": "Same species as target -> 18; hive -> 10; machine -> 11; xenophobe -> 16; authoritarian -> 17; otherwise 15."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "第一个间谍网络建立：六个按帝国类型选择的互斥窗口。",
+   "en": "First spy network: six exclusive windows chosen by empire type."
+  },
+  "sources": [
+   "events/nemesis_espionage_events.txt"
+  ],
+  "guide": "public/summaries/event-espionage-1.md"
+ }
+}

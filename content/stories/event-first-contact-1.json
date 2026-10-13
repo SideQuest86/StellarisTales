@@ -1,0 +1,611 @@
+{
+ "id": "event-first-contact-1",
+ "family": {
+  "title": {
+   "zh": "在[This.System.GetName]的遭遇",
+   "en": "Encounter in [This.System.GetName]"
+  },
+  "category": "society",
+  "start": "first_contact.1",
+  "members": [
+   "first_contact.1",
+   "first_contact.5",
+   "first_contact.10",
+   "first_contact.15",
+   "first_contact.20",
+   "first_contact.25",
+   "first_contact.50",
+   "first_contact.60",
+   "first_contact.101",
+   "first_contact.102",
+   "first_contact.1020",
+   "first_contact.105",
+   "first_contact.2000",
+   "first_contact.3000",
+   "first_contact.4000",
+   "grand_archive.2800"
+  ]
+ },
+ "titleFrom": "first_contact.1",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact.5",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "en": "Stage: hostile same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:200 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
+   "choice": "first_contact.15.B"
+  },
+  {
+   "from": "first_contact.5",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "en": "Stage: same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:237 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
+   "choice": "first_contact.5.A"
+  },
+  {
+   "from": "first_contact.5",
+   "to": "first_contact.102",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:245 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
+   "choice": "first_contact.5.A"
+  },
+  {
+   "from": "first_contact.5",
+   "to": "first_contact.1020",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:245 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
+   "choice": "first_contact.5.A"
+  },
+  {
+   "from": "first_contact.5",
+   "to": "first_contact.105",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "en": "Stage: both-hive-minds end stage (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:258 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
+   "choice": "first_contact.5.A"
+  },
+  {
+   "from": "first_contact.5",
+   "to": "first_contact.50",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:261 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
+   "choice": "first_contact.5.A"
+  },
+  {
+   "from": "first_contact.5",
+   "to": "first_contact.60",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:261 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
+   "choice": "first_contact.5.A"
+  },
+  {
+   "from": "first_contact.10",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "en": "Stage: hostile same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:544 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
+   "choice": "first_contact.10.B"
+  },
+  {
+   "from": "first_contact.10",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "en": "Stage: same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:584 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
+   "choice": "first_contact.10.A"
+  },
+  {
+   "from": "first_contact.10",
+   "to": "first_contact.102",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:592 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
+   "choice": "first_contact.10.A"
+  },
+  {
+   "from": "first_contact.10",
+   "to": "first_contact.1020",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:592 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
+   "choice": "first_contact.10.A"
+  },
+  {
+   "from": "first_contact.10",
+   "to": "first_contact.105",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "en": "Stage: both-hive-minds end stage (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:605 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
+   "choice": "first_contact.10.A"
+  },
+  {
+   "from": "first_contact.10",
+   "to": "first_contact.50",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:608 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
+   "choice": "first_contact.10.A"
+  },
+  {
+   "from": "first_contact.10",
+   "to": "first_contact.60",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:608 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
+   "choice": "first_contact.10.A"
+  },
+  {
+   "from": "first_contact.15",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "en": "Stage: hostile same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:836 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
+   "choice": "first_contact.15.B"
+  },
+  {
+   "from": "first_contact.15",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "en": "Stage: same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:896 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
+   "choice": "FASCINATING"
+  },
+  {
+   "from": "first_contact.15",
+   "to": "first_contact.102",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:904 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
+   "choice": "FASCINATING"
+  },
+  {
+   "from": "first_contact.15",
+   "to": "first_contact.1020",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:904 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
+   "choice": "FASCINATING"
+  },
+  {
+   "from": "first_contact.15",
+   "to": "first_contact.105",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "en": "Stage: both-hive-minds end stage (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:917 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
+   "choice": "FASCINATING"
+  },
+  {
+   "from": "first_contact.15",
+   "to": "first_contact.50",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:920 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
+   "choice": "FASCINATING"
+  },
+  {
+   "from": "first_contact.15",
+   "to": "first_contact.60",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:920 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
+   "choice": "FASCINATING"
+  },
+  {
+   "from": "first_contact.20",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "en": "Stage: hostile same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:993 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
+   "choice": "first_contact.10.B"
+  },
+  {
+   "from": "first_contact.20",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "en": "Stage: same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:1029 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
+   "choice": "first_contact.20.A"
+  },
+  {
+   "from": "first_contact.20",
+   "to": "first_contact.102",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:1036 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
+   "choice": "first_contact.20.A"
+  },
+  {
+   "from": "first_contact.20",
+   "to": "first_contact.1020",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:1036 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
+   "choice": "first_contact.20.A"
+  },
+  {
+   "from": "first_contact.20",
+   "to": "first_contact.105",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "en": "Stage: both-hive-minds end stage (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:1047 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
+   "choice": "first_contact.20.A"
+  },
+  {
+   "from": "first_contact.20",
+   "to": "first_contact.50",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:1050 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
+   "choice": "first_contact.20.A"
+  },
+  {
+   "from": "first_contact.20",
+   "to": "first_contact.60",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:1050 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
+   "choice": "first_contact.20.A"
+  },
+  {
+   "from": "first_contact.25",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "en": "Stage: hostile same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:1123 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
+   "choice": "first_contact.10.B"
+  },
+  {
+   "from": "first_contact.25",
+   "to": "first_contact.101",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "en": "Stage: same-species end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:1159 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
+   "choice": "first_contact.25.A"
+  },
+  {
+   "from": "first_contact.25",
+   "to": "first_contact.102",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:1166 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
+   "choice": "first_contact.25.A"
+  },
+  {
+   "from": "first_contact.25",
+   "to": "first_contact.1020",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "en": "Stage: both-machines end stage (difficulty 6)"
+   },
+   "evidence": "first_contact_events.txt:1166 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
+   "choice": "first_contact.25.A"
+  },
+  {
+   "from": "first_contact.25",
+   "to": "first_contact.105",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "en": "Stage: both-hive-minds end stage (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:1178 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
+   "choice": "first_contact.25.A"
+  },
+  {
+   "from": "first_contact.25",
+   "to": "first_contact.50",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:1181 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
+   "choice": "first_contact.25.A"
+  },
+  {
+   "from": "first_contact.25",
+   "to": "first_contact.60",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:1181 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
+   "choice": "first_contact.25.A"
+  },
+  {
+   "from": "first_contact.1",
+   "choice": "INTERESTING",
+   "to": "first_contact.5",
+   "conditional": true,
+   "label": {
+    "zh": "进入第一阶段：没有已知的有人居住星系，对方舰船也不在我方境内（权重10）",
+    "en": "Stage 1 draw: No inhabited system of theirs known and none of their fleets inside our borders (weight 10)"
+   },
+   "evidence": "events/first_contact_events.txt:107 set_first_contact_starting_stage = yes (default empires start in default_stage_1, 99_README_FIRST_CONTACT.txt); common/first_contact/00_first_contact.txt:156 stage_event -> first_contact.5"
+  },
+  {
+   "from": "first_contact.1",
+   "choice": "INTERESTING",
+   "to": "first_contact.10",
+   "conditional": true,
+   "label": {
+    "zh": "进入第一阶段：没有已知的有人居住星系，但对方舰船在我方境内“扫描我们”（权重10）",
+    "en": "Stage 1 draw: No inhabited system known, but their fleet is inside our borders scanning us (weight 10)"
+   },
+   "evidence": "events/first_contact_events.txt:107 set_first_contact_starting_stage = yes (default empires start in default_stage_1, 99_README_FIRST_CONTACT.txt); common/first_contact/00_first_contact.txt:202 stage_event -> first_contact.10"
+  },
+  {
+   "from": "first_contact.1",
+   "choice": "INTERESTING",
+   "to": "first_contact.15",
+   "conditional": true,
+   "label": {
+    "zh": "进入第一阶段：已知对方的有人居住星系（权重10）",
+    "en": "Stage 1 draw: An inhabited system of theirs is known (weight 10)"
+   },
+   "evidence": "events/first_contact_events.txt:107 set_first_contact_starting_stage = yes (default empires start in default_stage_1, 99_README_FIRST_CONTACT.txt); common/first_contact/00_first_contact.txt:250 stage_event -> first_contact.15"
+  },
+  {
+   "from": "first_contact.1",
+   "choice": "INTERESTING",
+   "to": "first_contact.20",
+   "conditional": true,
+   "label": {
+    "zh": "进入第一阶段：双方都是游牧，且对方方舟在我方传感器范围内（权重15）",
+    "en": "Stage 1 draw: Both nomadic, their arkship within our sensor coverage (weight 15)"
+   },
+   "evidence": "events/first_contact_events.txt:107 set_first_contact_starting_stage = yes (default empires start in default_stage_1, 99_README_FIRST_CONTACT.txt); common/first_contact/00_first_contact.txt:273 stage_event -> first_contact.20"
+  },
+  {
+   "from": "first_contact.1",
+   "choice": "INTERESTING",
+   "to": "first_contact.25",
+   "conditional": true,
+   "label": {
+    "zh": "进入第一阶段：我方非游牧、对方游牧，方舟在传感器范围内（权重15）",
+    "en": "Stage 1 draw: We are not nomadic, they are, arkship in sensor range (weight 15)"
+   },
+   "evidence": "events/first_contact_events.txt:107 set_first_contact_starting_stage = yes (default empires start in default_stage_1, 99_README_FIRST_CONTACT.txt); common/first_contact/00_first_contact.txt:307 stage_event -> first_contact.25"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.5",
+    "first_contact.10",
+    "first_contact.15",
+    "first_contact.20",
+    "first_contact.25"
+   ],
+   "label": {
+    "zh": "第一阶段：五种遭遇方式（按权重抽取）",
+    "en": "Stage 1: five ways the encounter unfolds (weighted draw)"
+   },
+   "note": {
+    "zh": "默认第一阶段（难度5）按条件加权抽取其中一个；条件见各分支标签。",
+    "en": "The default stage 1 (difficulty 5) draws one by weight; conditions are on the branch labels."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.50",
+    "first_contact.60"
+   ],
+   "label": {
+    "zh": "第二阶段的“标准”开场（按对方政策）",
+    "en": "The “standard” stage-2 openers (by the contact’s policy)"
+   },
+   "note": {
+    "zh": "权重 80 对 0：对方不是主动政策 → 50；对方是主动政策 → 60。第二阶段同时还抽取下面列出的各特殊故事线。",
+    "en": "Weight 80 vs 0: contact not proactive → 50; proactive → 60. Stage 2 also draws the special storylines listed in the guide."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.2000",
+    "first_contact.3000",
+    "first_contact.4000",
+    "grand_archive.2800"
+   ],
+   "label": {
+    "zh": "特殊对象的专属首次接触（替代 first_contact.1）",
+    "en": "Special-contact replacements for first_contact.1"
+   },
+   "note": {
+    "zh": "base_contact_set 对龙（Here Be Dragons）、跳跃旅者、奴隶主、Cutholoid 等特殊国家类型改发这些事件，权重 1000，而不是 first_contact.1。",
+    "en": "base_contact_set fires these instead of first_contact.1 (weight 1000) for the dragon, jaunting traveler, slaver and cutholoid country types."
+   }
+  }
+ ],
+ "endings": {
+  "first_contact.101": {
+   "label": {
+    "zh": "结局：同族相认",
+    "en": "Ending: they are our own species"
+   },
+   "note": {
+    "zh": "发现对方说着我方语言的方言；可欢庆、保持友好，或（曾试图攻击时）仍然攻击。",
+    "en": "They speak a dialect of our language; celebrate, stay friendly, or (after an attack attempt) still attack."
+   },
+   "evidence": "events/first_contact_events.txt:1557-1616"
+  },
+  "first_contact.102": {
+   "label": {
+    "zh": "结局：机械智能相认",
+    "en": "Ending: a fellow machine intelligence"
+   },
+   "note": {
+    "zh": "双方都是机械智能，建立通讯。",
+    "en": "Both sides are machine intelligences; communications open."
+   },
+   "evidence": "events/first_contact_events.txt:1617-1657"
+  },
+  "first_contact.1020": {
+   "label": {
+    "zh": "结局：失落殖民地的机械后裔",
+    "en": "Ending: the lost colony’s machine descendants"
+   },
+   "note": {
+    "zh": "失落殖民地起源的机械版本。",
+    "en": "Variant for the lost-colony machine relationship."
+   },
+   "evidence": "events/first_contact_events.txt:1658-1699"
+  },
+  "first_contact.105": {
+   "label": {
+    "zh": "结局：双方蜂巢",
+    "en": "Ending: two hive minds"
+   },
+   "note": {
+    "zh": "双方蜂巢，顺利译码并建立通讯。",
+    "en": "Two hive minds understand each other and open communications."
+   },
+   "evidence": "events/first_contact_events.txt:1955-1983"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact.1",
+   "kind": "review",
+   "zh": "审阅注：first_contact.1 是 base_contact_set 对普通国家发出的“遭遇”事件；唯一选项调用 set_first_contact_starting_stage，对普通国家进入 default_stage_1。",
+   "en": "Review note: first_contact.1 is what base_contact_set fires for ordinary countries; its only option calls set_first_contact_starting_stage, which puts default empires in default_stage_1."
+  },
+  {
+   "doc": "first_contact.5",
+   "kind": "review",
+   "zh": "审阅注：第一阶段的每个事件有两类选项：攻击（需“允许攻击”政策且能看到对方飞船，进入敌对阶段，见 event-first-contact-250）；平和选项按双方关系分流——同族 → 101；双方机械 → 102（失落殖民地则 1020）；双方蜂巢 → 105；否则进入第二阶段。",
+   "en": "Review note: every stage-1 event offers an attack option (needs the attack-allowed policy and sight of their ship; enters the hostile stage, see event-first-contact-250) and a peaceful option routed by relationship — same species → 101, two machines → 102 (1020 for a lost colony), two hives → 105, otherwise stage 2."
+  },
+  {
+   "doc": "first_contact.50",
+   "kind": "review",
+   "zh": "审阅注：50 的选项A/B都进入通用谨慎收尾阶段（→100/103/104）；选项C（仅非主动政策）进入入侵阶段（见 event-first-contact-200）。60 只有一个选项，进入通用主动收尾阶段。",
+   "en": "Review note: options A and B of 50 both enter the generic cautious end stage (→ 100/103/104); option C (non-proactive only) enters the hacking stage (see event-first-contact-200). 60 has one option, to the generic proactive end stage."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "首次接触主线：遭遇(1)、第一阶段五种开场、第二阶段标准开场(50/60)、同族/机械/蜂巢提前收尾，以及基础集合的特殊替代入口。",
+   "en": "The main first-contact line: the encounter (1), the five stage-1 openers, the standard stage-2 openers (50/60), the same-species / machine / hive early endings and the special replacement entries of base_contact_set."
+  },
+  "sources": [
+   "events/first_contact_events.txt:11-1313",
+   "events/first_contact_events.txt:1557-1699",
+   "events/first_contact_events.txt:1955-1983",
+   "common/first_contact/00_first_contact.txt:1-768",
+   "common/first_contact/00_first_contact.txt:937-1038"
+  ],
+  "uncertain": [
+   "first_contact.1 到 leviathans.98 的延迟链（龙等特殊接触）属于利维坦篇，保持原样。 / The delayed leviathans.98 follow-up of the special contacts belongs to the leviathan stories and is left as compiled."
+  ],
+  "guide": "public/summaries/event-first-contact-1.md"
+ }
+}

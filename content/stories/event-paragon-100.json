@@ -1,0 +1,33 @@
+{
+ "id": "event-paragon-100",
+ "family": {
+  "title": {
+   "zh": "失去金字塔",
+   "en": "Monolith Lost"
+  },
+  "category": "stories",
+  "start": "paragon.102",
+  "members": [
+   "paragon.100",
+   "paragon.101",
+   "paragon.102"
+  ]
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/paragon_events.txt:3-100"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-paragon-100.md",
+  "merged": [
+   "event-paragon-101"
+  ]
+ }
+}

@@ -1,0 +1,323 @@
+{
+ "id": "event-first-contact-250",
+ "family": {
+  "title": {
+   "zh": "外星舰船被俘！",
+   "en": "Alien Ship Captured!"
+  },
+  "category": "society",
+  "start": "first_contact.250",
+  "members": [
+   "first_contact.250",
+   "first_contact.252",
+   "first_contact.253",
+   "first_contact.254",
+   "first_contact.260",
+   "first_contact.262",
+   "first_contact.270",
+   "first_contact.272",
+   "first_contact.280",
+   "first_contact.282",
+   "first_contact.285",
+   "first_contact.290",
+   "first_contact.295",
+   "first_contact.320",
+   "first_contact.321",
+   "first_contact.322",
+   "first_contact.330",
+   "first_contact.332"
+  ]
+ },
+ "titleFrom": "first_contact.250",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact.250",
+   "to": "first_contact.285",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：俘获船员（困难）(难度5) / 敌对收尾：俘获船员（容易）(难度0) / 敌对收尾：俘获船员(难度2)",
+    "en": "Stage: hostile end: crew captured (hard) (difficulty 5) / hostile end: crew captured (easy) (difficulty 0) / hostile end: crew captured (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:2494 set_first_contact_stage = default_end_stage_hostile_with_crew_hard; common/first_contact/00_*.txt:1376 fires first_contact.285; first_contact_events.txt:2506 set_first_contact_stage = default_end_stage_hostile_with_crew_easy; common/first_contact/00_*.txt:1356 fires first_contact.285; first_contact_events.txt:2518 set_first_contact_stage = default_end_stage_hostile_with_crew_hard; common/first_contact/00_*.txt:1376 fires first_contact.285; first_contact_events.txt:2521 set_first_contact_stage = default_end_stage_hostile_with_crew; common/first_contact/00_*.txt:1336 fires first_contact.285",
+   "choice": "first_contact.250.A"
+  },
+  {
+   "from": "first_contact.250",
+   "to": "first_contact.290",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：活体解剖(难度3)",
+    "en": "Stage: hostile end: vivisection (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:2577 set_first_contact_stage = default_end_stage_hostile_with_vivisection; common/first_contact/00_*.txt:1396 fires first_contact.290",
+   "choice": "first_contact.250.B"
+  },
+  {
+   "from": "first_contact.250",
+   "to": "first_contact.295",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：无船员(难度5)",
+    "en": "Stage: hostile end: no crew (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:2619 set_first_contact_stage = default_end_stage_hostile_no_crew; common/first_contact/00_*.txt:1416 fires first_contact.295",
+   "choice": "first_contact.250.C"
+  },
+  {
+   "from": "first_contact.250",
+   "to": "first_contact.295",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：无船员(难度5)",
+    "en": "Stage: hostile end: no crew (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:2701 set_first_contact_stage = default_end_stage_hostile_no_crew; common/first_contact/00_*.txt:1416 fires first_contact.295",
+   "choice": "first_contact.250.C.devourers"
+  },
+  {
+   "from": "first_contact.260",
+   "to": "first_contact.295",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：无船员(难度5)",
+    "en": "Stage: hostile end: no crew (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:3280 set_first_contact_stage = default_end_stage_hostile_no_crew; common/first_contact/00_*.txt:1416 fires first_contact.295",
+   "choice": "first_contact.260.A"
+  },
+  {
+   "from": "first_contact.270",
+   "to": "first_contact.321",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对阶段：绑架居民(难度2)",
+    "en": "Stage: hostile stage: abduction (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:3504 set_first_contact_stage = default_hostile_systems_stage; common/first_contact/00_*.txt:1478 fires first_contact.321",
+   "choice": "first_contact.270.B"
+  },
+  {
+   "from": "first_contact.270",
+   "to": "first_contact.320",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对阶段：绑架居民(难度2)",
+    "en": "Stage: hostile stage: abduction (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:3504 set_first_contact_stage = default_hostile_systems_stage; common/first_contact/00_*.txt:1503 fires first_contact.320",
+   "choice": "first_contact.270.B"
+  },
+  {
+   "from": "first_contact.270",
+   "to": "first_contact.330",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对阶段：绑架居民(难度2)",
+    "en": "Stage: hostile stage: abduction (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:3504 set_first_contact_stage = default_hostile_systems_stage; common/first_contact/00_*.txt:1532 fires first_contact.330",
+   "choice": "first_contact.270.B"
+  },
+  {
+   "from": "first_contact.280",
+   "to": "first_contact.321",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对阶段：绑架居民(难度2)",
+    "en": "Stage: hostile stage: abduction (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:3664 set_first_contact_stage = default_hostile_systems_stage; common/first_contact/00_*.txt:1478 fires first_contact.321",
+   "choice": "first_contact.280.B"
+  },
+  {
+   "from": "first_contact.280",
+   "to": "first_contact.320",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对阶段：绑架居民(难度2)",
+    "en": "Stage: hostile stage: abduction (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:3664 set_first_contact_stage = default_hostile_systems_stage; common/first_contact/00_*.txt:1503 fires first_contact.320",
+   "choice": "first_contact.280.B"
+  },
+  {
+   "from": "first_contact.280",
+   "to": "first_contact.330",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对阶段：绑架居民(难度2)",
+    "en": "Stage: hostile stage: abduction (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:3664 set_first_contact_stage = default_hostile_systems_stage; common/first_contact/00_*.txt:1532 fires first_contact.330",
+   "choice": "first_contact.280.B"
+  },
+  {
+   "from": "first_contact.320",
+   "to": "first_contact.285",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：俘获船员（困难）(难度5) / 敌对收尾：俘获船员（容易）(难度0) / 敌对收尾：俘获船员(难度2)",
+    "en": "Stage: hostile end: crew captured (hard) (difficulty 5) / hostile end: crew captured (easy) (difficulty 0) / hostile end: crew captured (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:4308 set_first_contact_stage = default_end_stage_hostile_with_crew_hard; common/first_contact/00_*.txt:1376 fires first_contact.285; first_contact_events.txt:4320 set_first_contact_stage = default_end_stage_hostile_with_crew_easy; common/first_contact/00_*.txt:1356 fires first_contact.285; first_contact_events.txt:4332 set_first_contact_stage = default_end_stage_hostile_with_crew_hard; common/first_contact/00_*.txt:1376 fires first_contact.285; first_contact_events.txt:4335 set_first_contact_stage = default_end_stage_hostile_with_crew; common/first_contact/00_*.txt:1336 fires first_contact.285",
+   "choice": "first_contact.320.A"
+  },
+  {
+   "from": "first_contact.320",
+   "to": "first_contact.290",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：活体解剖(难度3)",
+    "en": "Stage: hostile end: vivisection (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:4377 set_first_contact_stage = default_end_stage_hostile_with_vivisection; common/first_contact/00_*.txt:1396 fires first_contact.290",
+   "choice": "first_contact.250.B"
+  },
+  {
+   "from": "first_contact.320",
+   "to": "first_contact.295",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：无船员(难度5)",
+    "en": "Stage: hostile end: no crew (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:4410 set_first_contact_stage = default_end_stage_hostile_no_crew; common/first_contact/00_*.txt:1416 fires first_contact.295",
+   "choice": "first_contact.250.C"
+  },
+  {
+   "from": "first_contact.320",
+   "to": "first_contact.295",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：敌对收尾：无船员(难度5)",
+    "en": "Stage: hostile end: no crew (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:4477 set_first_contact_stage = default_end_stage_hostile_no_crew; common/first_contact/00_*.txt:1416 fires first_contact.295",
+   "choice": "first_contact.250.C.devourers"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.250",
+    "first_contact.260",
+    "first_contact.270",
+    "first_contact.280"
+   ],
+   "label": {
+    "zh": "夺船行动的结果（按权重）",
+    "en": "Outcome of the ship-capture attempt (by weight)"
+   },
+   "note": {
+    "zh": "敌对飞船阶段：250 带船员俘获（权重2）、260 俘获但无幸存者（1）、270 飞船被毁（1）、280 对方逃脱（1）；无法俘获时前三者为 0；对方主动政策 250 ×1.5、260 ×1.25；对方谨慎 280 ×1.33。",
+    "en": "Hostile-ship stage: 250 captured with crew (weight 2), 260 captured, none alive (1), 270 ship destroyed (1), 280 they escape (1); the first three are 0 if capture is impossible; proactive contacts ×1.5 on 250 and ×1.25 on 260; cautious contacts ×1.33 on 280."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.321",
+    "first_contact.320",
+    "first_contact.330"
+   ],
+   "label": {
+    "zh": "绑架行动的结果（按权重）",
+    "en": "Outcome of the abduction attempt (by weight)"
+   },
+   "note": {
+    "zh": "敌对系统阶段：320 成功（权重20）、330 失败（10，之前失败过 ×2）、321 小事故（1，仅在满足严格条件时）。",
+    "en": "Hostile-systems stage: 320 success (weight 20), 330 failure (10, ×2 after an earlier failed attempt), 321 mishap (1, only under strict conditions)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.285",
+    "first_contact.290",
+    "first_contact.295"
+   ],
+   "label": {
+    "zh": "处置俘虏",
+    "en": "What is done with the captives"
+   },
+   "note": {
+    "zh": "250/320 的选项决定收尾阶段：审问 → 285（虚弱容易/强壮困难）；活体解剖 → 290；不留活口/吞食 → 295。",
+    "en": "The 250/320 option picks the end stage: interrogate → 285 (weak easy / strong hard), vivisect → 290, no survivors / devour → 295."
+   }
+  }
+ ],
+ "endings": {
+  "first_contact.285": {
+   "label": {
+    "zh": "结局：审讯完成",
+    "en": "Ending: interrogations complete"
+   },
+   "note": {
+    "zh": "按俘虏强弱获得 5–15 点情报和科技进度；格式塔固定 5 情报，结束首次接触。",
+    "en": "Intel 15/10/5 and tech progress 0.3/0.2/0.1 by the captives’ strength (gestalt: fixed 5); first contact ends."
+   },
+   "evidence": "events/first_contact_events.txt:3709-3823"
+  },
+  "first_contact.290": {
+   "label": {
+    "zh": "结局：外星研究完成",
+    "en": "Ending: alien study complete"
+   },
+   "note": {
+    "zh": "活体解剖研究；进化掠食者起源另得 DNA 与情境进度（按物种类别）。",
+    "en": "Dissection study; the Evolutionary Predators origin additionally gains DNA and situation progress by species class."
+   },
+   "evidence": "events/first_contact_events.txt:3824-4019"
+  },
+  "first_contact.295": {
+   "label": {
+    "zh": "结局：外星材料研究",
+    "en": "Ending: alien materials studied"
+   },
+   "note": {
+    "zh": "获得 5 点情报与少量科技进度，结束首次接触。",
+    "en": "5 intel and a little tech progress; first contact ends."
+   },
+   "evidence": "events/first_contact_events.txt:4020-4064"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact.250",
+   "kind": "review",
+   "zh": "审阅注：250 是我方视角（俘获成功）。选项：A审问→对方收到 252；B活体解剖→253；C灭口（灭绝倾向）/ C吞食（吞噬蜂群）→254。各选项还会毁掉被扣飞船并让对方舰队“失踪”。",
+   "en": "Review note: 250 is the captor’s view. A interrogate → the other side gets 252; B vivisect → 253; C no survivors (homicidal) / devour (devouring swarm) → 254. Each option also destroys the captured ship and sends their fleets missing."
+  },
+  {
+   "doc": "first_contact.252",
+   "kind": "review",
+   "zh": "审阅注：252/253/254/262/272/282/322/332 是被攻击方视角的通知事件（From.Owner 是攻击方）。",
+   "en": "Review note: 252, 253, 254, 262, 272, 282, 322 and 332 are notifications for the victim (From.Owner is the aggressor)."
+  },
+  {
+   "doc": "first_contact.270",
+   "kind": "review",
+   "zh": "审阅注：270/280（失败）可选“再试一次”（若能看到其星系）→ 转入绑架阶段；或回到通用收尾阶段。",
+   "en": "Review note: after the failures 270/280, “try again” (needs sight of their system) goes to the abduction stage; the other option falls back to the generic end stage."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "敌对首次接触：夺船与绑架两条线共18个事件及阶段衔接。",
+   "en": "Hostile first contact: the ship-capture and abduction routes — 18 events and stage hand-offs."
+  },
+  "sources": [
+   "events/first_contact_events.txt:2379-4800",
+   "common/first_contact/00_first_contact.txt:1134-1545"
+  ],
+  "uncertain": [
+   "first_contact_can_capture_ship 等条件的内部定义在引擎/脚本触发器中，未展开。 / Internal definitions of triggers such as first_contact_can_capture_ship were not expanded."
+  ],
+  "guide": "public/summaries/event-first-contact-250.md"
+ }
+}

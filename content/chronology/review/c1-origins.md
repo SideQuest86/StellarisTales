@@ -77,3 +77,22 @@ Conventions used in fragments:
 - Bridges: 4019/4037 fight -> 4020 (win) / 4025 (bombardment); chains -> 4052/4055 (resolutions), 4060/4061/4070 (war outcomes), 4070.c -> 4071; Out-of-Warranty chain -> 4301/4302/4303 (medical building `07_amenity_buildings.txt:1159-1185`) and 4300 -> 4306.
 - Endings: 4055, 4060, 4061, 4070, 4071.
 - Request R6 (compiler/origin-families): `positive()` in `scripts/origin_families.py` treats `has_origin` inside `if = { limit = ... }` of another event as exclusivity (cstorms.1270). Worked around with `exclude`.
+
+### origin_toxic_knights — reviewed (75 docs)
+
+- Opening: hidden 7000 (`00_on_actions.txt:41`, `toxoids_events.txt:576-633`) starts `situation_toxic_knights` (`01_toxoid_situations.txt:192-365`: progress 0-1000 in 8 stages of 125, base +0.4/month; stages 2-8 fire hidden 7005/7020/7050/7075/7110/7140/7195, each opens one knight tale; completion -> 7250 -> 7255). Keep branches 8015/8017/8025/8030 labelled as state entries.
+- Bridges: 7305 (opens the sealed system, `:2660-2731`) -> 7310/7311/7312 (fleet enters the system, `on_entering_system_fleet` `00_on_actions.txt:1044`) ; 7310 -> 7315 (`on_ship_destroyed_perp :1468`); 7311 -> 7515 (`on_fleet_destroyed_perp :1662`). Groups: system entry (7310/7311/7312), defeat (7315/7515), monthly random (8000/8005 weights 10/10/1200).
+- Endings: 7320, 7510, 8020, 8017. Uncertain: middle tales 7055-7225 read from the compiled tree; stage events are chained by the compiler (R5).
+
+### origin_broken_shackles — reviewed (73 docs)
+
+- Opening (39 entries, all labelled): digsite (visible after hidden 5060 sets `built_first_science_ship`), 5041, yearly/mid-game/monthly pulses (`00_on_actions.txt:316-349,410-413`), first contact with MSI (5065/5070/5075), Galactic Community slavery resolutions (5094-5131, `00_resolutions.txt:3551-13619`), war with MSI (hidden 5148 -> 5135/5146/5147 together; outcomes 5140/5142/5145), federation 5150/5151 -> 5276, tech/colony/observation hooks 5500-5525.
+- Correction: home world windows 5000/5001/5009 are fired by survey gatekeepers 4997/4998/4999 (`origin_events_broken_shackles.txt:12-156`) only after 5040 started `homeworlds_chain`; now bridged from the chain; group "parallel, 3 required" with 5270 as the gate.
+- Mutual-support events with Payback live in Payback's file (see origin_payback).
+
+### origin_fear_of_the_dark — reviewed (67 docs)
+
+- No fixed opening: yearly hidden 6000 draws 6005/6006 (1 each), 6015/6020 (2 each), 6025 (20) of 46 (`origin_events_3.txt:2556-2620`); mid-game 6140 -> 6145. V3's reviewed hunters / Last Gift / countermeasure bridges re-verified and kept.
+- Many state entries now labelled (first contact 6044, federation 6050, subject 6064/6070, war 6080, traditions/ascension 6095-6120, crisis 6125-6135, migration 6200, terraforming 6225, vigil 6250). Terraforming situation `04_first_contact_dlc_situations.txt:82-194` is documented as not player-visible.
+- Generic parents story.1-8 (contact reports), bio.170/175/180 and utopia.2700/2703 are absorbed into this story by the compiler (every outcome of those roots belongs to the origin). `exclude`/`hubs` do not stop that (see R7); they are marked with a review note as generic.
+- Request R7 (compiler): `find_roots` re-absorbs excluded hubs whose only family outcome is the origin; suggest honouring `exclude` for roots or allowing a fragment flag `keepOut`.

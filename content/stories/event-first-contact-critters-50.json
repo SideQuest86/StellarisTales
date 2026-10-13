@@ -1,0 +1,58 @@
+{
+ "id": "event-first-contact-critters-50",
+ "family": {
+  "title": {
+   "zh": "野蛮迹象",
+   "en": "Signs of Barbarism"
+  },
+  "category": "society",
+  "start": "first_contact_critters.50",
+  "members": [
+   "first_contact_critters.50",
+   "first_contact_critters.55"
+  ]
+ },
+ "titleFrom": "first_contact_critters.50",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact_critters.50",
+   "to": "first_contact_critters.55",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：marauders_stage_2(难度5)",
+    "en": "Stage: marauders_stage_2 (difficulty 5)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:762 set_first_contact_stage = marauders_stage_2; common/first_contact/01_*.txt:241 fires first_contact_critters.55",
+   "choice": "first_contact_critters.50.A"
+  }
+ ],
+ "endings": {
+  "first_contact_critters.55": {
+   "label": {
+    "zh": "结局：确认为掠夺者",
+    "en": "Ending: marauders identified"
+   },
+   "note": {
+    "zh": "结束首次接触，后续见掠夺者篇（marauder.1）。",
+    "en": "First contact ends; continues in the marauder story (marauder.1)."
+   },
+   "evidence": "events/first_contact_NPC_country_types_events.txt:767-839"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "掠夺者首次接触：2个事件及阶段衔接。",
+   "en": "掠夺者 first contact: 2 events and the stage hand-off."
+  },
+  "sources": [
+   "events/first_contact_NPC_country_types_events.txt:743-839",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:209-247"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-50.md"
+ }
+}

@@ -214,3 +214,31 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-subglacial-vibrations-cat** — reviewed. Single result 190 (options a/b); AI/robotic factor 0; max_once_global; tree correct.
 - **anomaly-supermassive-giant-cat** — reviewed. Single result 330 (options a/b); weight x num_moons; on_spawn extensive_moon_system; tree correct.
 - **anomaly-vapor-plumes-cat** — reviewed. Single result 400; tree correct.
+
+### Batch b_14_guardians
+
+- **event-distar-135** — reviewed. Family created (start distar.135, member distar.137); bridge 135 -> 137 (on_ship_destroyed_perp); merged event-distar-137.
+- **event-distar-137** — merged into event-distar-135. Death of the Scavenger Bot (distar.137, on_ship_destroyed_perp) is the second chapter of the Scavenger story.
+- **event-distar-211** — reviewed. Family created (start distar.211, member distar.212 chain incl. galcom.110, REANIMATE_TIYANKI_MATRIARCH); bridge 211 -> 212 (on_ship_destroyed_perp); merged event-distar-212.
+- **event-distar-212** — merged into event-distar-211. Death of the Matriarch (distar.212, on_ship_destroyed_perp) and its 213-218 chain are the second chapter of the Matriarch story.
+
+### Batch b_15_voidspawn
+
+- **event-distar-5000** — reviewed. Family created (start distar.5010; members 5003/5013/5005/5007/5011/5009/5015); suppress 5010 -> 5005/5007/5013; bridges 5003->5005 (60%), 5003->5013 (40%), 5005->5007, 5007->5011, 5011->5009, 5013->5015; exclusive 5005/5013. Merged event-distar-5001, 5009, 5011, 5014.
+  - uncertain: distar.5001 (monthly) also starts stage 1 for an owned-but-uncolonised egg without going through distar.5010; the compiled tree shows only the colonisation entry.
+- **event-distar-5001** — merged into event-distar-5000. Monthly check distar.5001 (owned-system entry to the egg stages) belongs to the Voidspawn story.
+- **event-distar-5009** — merged into event-distar-5000. Voidspawn Defeated (+ SHATTERED_EGG / REANIMATE_VOIDSPAWN projects) belongs to the Voidspawn story.
+- **event-distar-5011** — merged into event-distar-5000. Voidspawn encounter belongs to the Voidspawn story.
+- **event-distar-5014** — merged into event-distar-5000. As Good as New (distar.5014/5015) belongs to the Voidspawn story.
+
+### Batch b_16_lcluster
+
+- **event-distar-13080** — partial. Family created (start distar.13080; chain, clues 9000/10904, 10901/10905 + LCLUSTER_PROJECT, outcomes, dragons 13010/13011/13030/13020, warning 10956). Bridges chain->9000 (clue 30%), chain->10904 (7 clues), 10904->10905 / 10901 (tech), chain->10956, 13010->13030 / 13020. Exclusive outcome group (distar.8000 weights). Partial: clue-source anomalies not listed individually. Merged event-distar-10903, 10904, 10955, 9000, 13020, 13030.
+  - uncertain: The roughly 20 events that call generate_lcluster_clue / pop_lcluster_event (anomalies, distar.12000 tech, artifact action, crisis.8060 etc.) are summarised as one bridge from the chain, not listed individually; their gates (e.g. crisis.8060 requires has_event_chain = l_cluster_chain) were not each verified.
+  - uncertain: apoc.3 (surveyed L-Gate) starts the same chain in another story (event-apoc-3); the two entries are described together in the guide but only distar.13080 is in this story.
+- **event-distar-10903** — merged into event-distar-13080. Opening the L-Cluster (10905/10901 + LCLUSTER_PROJECT + outcomes) is the middle of the L-Cluster story.
+- **event-distar-10904** — merged into event-distar-13080. L-Gate Insights Gathered (7 clues complete) belongs to the L-Cluster story.
+- **event-distar-10955** — merged into event-distar-13080. The L-Cluster Beckons (neighbour warning, distar.10955/10956) belongs to the L-Cluster story.
+- **event-distar-9000** — merged into event-distar-13080. L-Gate Insights (clue follow-up distar.9000) belongs to the L-Cluster story.
+- **event-distar-13020** — merged into event-distar-13080. Slayed (killing an L-Drake) belongs to the L-Cluster dragon-season branch.
+- **event-distar-13030** — merged into event-distar-13080. L-Drake Observed (+ TAME_LDRAGON_PROJECT, 13035) belongs to the L-Cluster dragon-season branch.

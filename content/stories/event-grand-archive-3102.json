@@ -1,0 +1,47 @@
+{
+ "id": "event-grand-archive-3102",
+ "family": {
+  "title": {
+   "zh": "岩居兽灭绝",
+   "en": "Cutholoid Eradication"
+  },
+  "category": "stories",
+  "start": "grand_archive.3103",
+  "members": [
+   "grand_archive.3103",
+   "grand_archive.3105",
+   "grand_archive.3107"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "grand_archive.3103",
+    "grand_archive.3105",
+    "grand_archive.3107"
+   ],
+   "label": {
+    "zh": "三种通知场景",
+    "en": "Three notice scenarios"
+   },
+   "note": {
+    "zh": "触发各不相同：决议生效时、舰队进入时、每月检查。",
+    "en": "Different triggers: enactment, a fleet entering, the monthly check."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "银河共同体“岩居兽灭绝”决议生效后的三条通知：决议生效、舰队进入境内、持续违规。",
+   "en": "The three notices under the Cutholoid Eradication resolution: enactment, a fleet entering, continued breach."
+  },
+  "sources": [
+   "events/grand_archive_events.txt"
+  ],
+  "guide": "public/summaries/event-grand-archive-3102.md"
+ }
+}

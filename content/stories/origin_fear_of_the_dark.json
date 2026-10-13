@@ -80,13 +80,166 @@
    "origin.6005",
    "origin.6006",
    "origin.6015",
-   "origin.6020"
+   "origin.6020",
+   "origin.6025",
+   "origin.6030",
+   "origin.6040",
+   "origin.6060",
+   "origin.6045",
+   "origin.6055",
+   "origin.6065",
+   "origin.6075",
+   "origin.6085",
+   "origin.6090",
+   "origin.6220",
+   "origin.6095",
+   "origin.6096",
+   "origin.6099",
+   "origin.6100",
+   "origin.6105",
+   "origin.6110",
+   "origin.6115",
+   "origin.6120",
+   "origin.6125",
+   "origin.6130",
+   "origin.6135",
+   "origin.6205",
+   "origin.6230",
+   "origin.6235",
+   "origin.6240",
+   "origin.6260"
   ],
   "label": {
-   "zh": "年度随机遭遇之一：分离主义者仍存在且未被激怒",
-   "en": "One possible annual encounter while the separatists remain and are not angered"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "game_start initializes the separatist planet, not a fixed narrative event. on_yearly_pulse_country invokes6000; its weighted table permits6005/6006 (leader cooldown),6015,6020 (aid cooldown), or no event.6025 requires previous aid/exploitation and a player deficit.6140->6145 is midgame, not an opening."
+  "labels": {
+   "origin.6005": {
+    "zh": "每年随机遭遇之一：移交请求（分离主义者仍在）",
+    "en": "Yearly random encounter: transfer request (separatists remain)"
+   },
+   "origin.6006": {
+    "zh": "每年随机遭遇之一：移交请求（分离主义者仍在）",
+    "en": "Yearly random encounter: transfer request (separatists remain)"
+   },
+   "origin.6015": {
+    "zh": "每年随机遭遇之一：星系间洞察",
+    "en": "Yearly random encounter: inter-system insight"
+   },
+   "origin.6020": {
+    "zh": "每年随机遭遇之一：援助请求",
+    "en": "Yearly random encounter: request for aid"
+   },
+   "origin.6025": {
+    "zh": "每年随机遭遇之一：援助提议（需要先前的援助且玩家赤字）",
+    "en": "Yearly random encounter: offer of aid (after earlier aid, during a deficit)"
+   },
+   "origin.6030": {
+    "zh": "读取接触报告：简单生命/深空生物/行星动物/前智慧生物（故事1–5）",
+    "en": "After a contact report on simple life, space fauna, animals or pre-sapients (story 1-5)"
+   },
+   "origin.6040": {
+    "zh": "读取接触报告：前FTL文明/神秘航天者（故事6–7）",
+    "en": "After a contact report on a pre-FTL civilisation or enigmatic spacefarers (story 6-7)"
+   },
+   "origin.6060": {
+    "zh": "读取接触报告：巨兽（故事8）",
+    "en": "After a contact report on a leviathan (story 8)"
+   },
+   "origin.6045": {
+    "zh": "首次接触智慧文明结束时",
+    "en": "When the first contact with a sapient civilisation finishes"
+   },
+   "origin.6055": {
+    "zh": "加入联邦后",
+    "en": "After joining a federation"
+   },
+   "origin.6065": {
+    "zh": "成为附庸后",
+    "en": "After becoming a subject"
+   },
+   "origin.6075": {
+    "zh": "成为附庸后（另一条）",
+    "en": "After becoming a subject (second variant)"
+   },
+   "origin.6085": {
+    "zh": "战争开始：己方先发制人",
+    "en": "A war begins: you attacked first"
+   },
+   "origin.6090": {
+    "zh": "战争开始：对方宣战（非全面战争）",
+    "en": "A war begins: declared on you (not total war)"
+   },
+   "origin.6220": {
+    "zh": "战争开始：对方宣战（全面战争）",
+    "en": "A war begins: declared on you (total war)"
+   },
+   "origin.6095": {
+    "zh": "完成项目“血肉脆弱”（赛博飞升）时",
+    "en": "On finishing the Flesh is Weak project"
+   },
+   "origin.6096": {
+    "zh": "采用模块化义体传统时",
+    "en": "On adopting the Modular Cybernetics tradition"
+   },
+   "origin.6099": {
+    "zh": "采用合成传统时",
+    "en": "On adopting the Synthetics tradition"
+   },
+   "origin.6100": {
+    "zh": "完成合成演化项目时",
+    "en": "On finishing the Synthetic Evolution project"
+   },
+   "origin.6105": {
+    "zh": "灵能飞升（精神胜物质）时",
+    "en": "On the psionic ascension (mind over matter)"
+   },
+   "origin.6110": {
+    "zh": "完成灵能传统时",
+    "en": "On finishing a psionics tradition"
+   },
+   "origin.6115": {
+    "zh": "采用基因传统/生物形态变化时",
+    "en": "On the genetic tradition or biomorphosis"
+   },
+   "origin.6120": {
+    "zh": "纯化/克隆/变异等传统：政府改制",
+    "en": "Purity / Cloning / Mutation traditions: government reformation"
+   },
+   "origin.6125": {
+    "zh": "危机事件中：来自林外的猎手",
+    "en": "During a crisis: hunters from beyond the forest"
+   },
+   "origin.6130": {
+    "zh": "危机事件中：来自林外的猎手",
+    "en": "During a crisis: hunters from beyond the forest"
+   },
+   "origin.6135": {
+    "zh": "危机事件中：来自林外的猎手",
+    "en": "During a crisis: hunters from beyond the forest"
+   },
+   "origin.6205": {
+    "zh": "签订迁徙协议后：母星受污染",
+    "en": "After a migration pact: the homeworld is tainted"
+   },
+   "origin.6230": {
+    "zh": "分离主义星球地貌改造：启动",
+    "en": "Separatist planet terraforming: initiative"
+   },
+   "origin.6235": {
+    "zh": "分离主义星球地貌改造：卓越",
+    "en": "Separatist planet terraforming: excellence"
+   },
+   "origin.6240": {
+    "zh": "分离主义星球地貌改造：完美",
+    "en": "Separatist planet terraforming: perfection"
+   },
+   "origin.6260": {
+    "zh": "分离主义舰队警戒后：守夜",
+    "en": "After separatist fleet activity: vigil"
+   }
+  },
+  "evidence": "No fixed start event: game start (events/game_start.txt) only builds the separatist planet (fotd_seperatist_planet). Yearly pulse common/on_actions/00_on_actions.txt:410 fires hidden origin.6000 (events/origin_events_3.txt:2556-2620; weights 6005 1, 6006 1, 6015 2, 6020 2, 6025 20 of 46, otherwise nothing). Other branches are state hooks: contact reports (events/story_events.txt story.1-8 if has_origin), first_contact_finished common/on_actions/00_on_actions.txt:775 (6044), on_join_federation :3507 (6050), on_becoming_subject :4505-4506, on_war_beginning :2609 (6080), traditions/ascension projects (common/traditions, common/special_projects/00_projects_utopia.txt:26/58), crises (events/crisis*), on_sign_migration_pact :4470 (6200), situation_fotd_terraforming (common/situations/04_first_contact_dlc_situations.txt:82-194)."
  },
  "groups": [
   {
@@ -106,6 +259,56 @@
    "note": {
     "zh": "四项措施全部完成且仍拥有母星；月度检查成功",
     "en": "All four countermeasures complete and homeworld retained; monthly success check"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.6005",
+    "origin.6006",
+    "origin.6015",
+    "origin.6020",
+    "origin.6025"
+   ],
+   "label": {
+    "zh": "每年脉冲抽取的一种遭遇",
+    "en": "One encounter drawn by the yearly pulse"
+   },
+   "note": {
+    "zh": "隐藏事件6000的随机列表：6005与6006各1、6015与6020各2、6025为20（总计46，其余无事）。",
+    "en": "Random list of hidden 6000: 6005 and 6006 weight 1 each, 6015 and 6020 weight 2 each, 6025 weight 20 of 46, otherwise nothing (events/origin_events_3.txt:2556-2620)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.6085",
+    "origin.6090",
+    "origin.6220"
+   ],
+   "label": {
+    "zh": "开战时的三种反应",
+    "en": "Three reactions when a war begins"
+   },
+   "note": {
+    "zh": "隐藏事件6080按攻守方与是否全面战争选择其一。",
+    "en": "Hidden 6080 picks one by side and whether the war is total."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.6125",
+    "origin.6130",
+    "origin.6135"
+   ],
+   "label": {
+    "zh": "危机下猎手来袭的三个版本",
+    "en": "Three versions of the hunters arriving during a crisis"
+   },
+   "note": {
+    "zh": "分别由不同的危机事件触发（crisis.18、crisis.1007/1009、crisis.2022）。",
+    "en": "Each fired by a different crisis event (crisis.18, crisis.1007/1009, crisis.2022)."
    }
   }
  ],
@@ -143,12 +346,147 @@
   }
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review (V3 bridges for the hunters, Last Gift and countermeasures re-verified)",
+  "sources": [
+   "events/origin_events_3.txt",
+   "common/situations/04_first_contact_dlc_situations.txt",
+   "common/special_projects/00_projects_first_contact_dlc.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/scripted_effects/first_contact_dlc_effects.txt"
+  ],
+  "uncertain": [
+   "Which crisis each of 6125/6130/6135 follows (crisis.18, 1007/1009, 2022) was identified by id only.",
+   "Tradition/ascension parent events are generic and no longer part of this story; the opening labels describe their trigger."
+  ],
+  "guide": "public/summaries/origin_fear_of_the_dark.md"
+ },
+ "endings": {
+  "origin.6180": {
+   "label": {
+    "zh": "弹道清晰",
+    "en": "Trajectories clear"
+   },
+   "note": {
+    "zh": "四项措施完成且母星仍在，局势解除。",
+    "en": "All four countermeasures done and the homeworld kept; the situation is defused."
+   },
+   "evidence": "events/origin_events_3.txt 6180 monthly check"
+  },
+  "origin.6175": {
+   "label": {
+    "zh": "被猎杀",
+    "en": "Hunted"
+   },
+   "note": {
+    "zh": "倒计时满，母星遭毁灭。",
+    "en": "The countdown completes and the homeworld is destroyed."
+   },
+   "evidence": "common/situations/04_first_contact_dlc_situations.txt:6-11"
+  },
+  "origin.6012": {
+   "label": {
+    "zh": "回乡",
+    "en": "Gone Home"
+   },
+   "note": {
+    "zh": "移交请求线的结局。",
+    "en": "End of the transfer-request line."
+   },
+   "evidence": "events/origin_events_3.txt:2978"
   }
- }
+ },
+ "notes": [
+  {
+   "doc": "story.1",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "story.2",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "story.3",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "story.4",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "story.5",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "story.6",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "story.7",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "story.8",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "bio.170",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "bio.175",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "bio.180",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "utopia.2700",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "utopia.2703",
+   "kind": "review",
+   "zh": "通用事件，并非起源内容：因其中有一支（若帝国为黑暗恐惧起源）通向本起源的专属事件而显示在此。",
+   "en": "Generic event, not origin content: shown here only because one of its branches (for a Fear of the Dark empire) leads to an origin-specific event."
+  },
+  {
+   "doc": "origin.6230",
+   "kind": "review",
+   "zh": "“分离主义星球地貌改造”局势对玩家不可见（文件注释），其阶段2、3和完成时经隐藏事件6225依次触发6230/6235/6240；进度随分离主义国家的地貌科技增长。",
+   "en": "The terraforming situation is not player-visible (file comment, 04_first_contact_dlc_situations.txt:82-83); stages 2, 3 and completion fire 6230 / 6235 / 6240 through hidden 6225; progress grows with the separatist country's terraforming techs."
+  },
+  {
+   "doc": "origin.6145",
+   "kind": "review",
+   "zh": "中期脉冲（on_mid_game_pulse → 6140）25天后；若分离主义星球仍在境内，则提供项目“确认发现”。",
+   "en": "Mid-game pulse (common/on_actions/00_on_actions.txt:316 -> 6140) 25 days later; offers the Confirm Findings project if the separatist planet is still within borders."
+  }
+ ]
 }

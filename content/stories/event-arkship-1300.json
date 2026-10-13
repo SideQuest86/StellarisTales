@@ -1,0 +1,241 @@
+{
+ "id": "event-arkship-1300",
+ "bridges": [
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1305",
+   "conditional": true,
+   "label": {
+    "zh": "进度 ≥ 50：阶段二（农业区改造）",
+    "en": "Progress 50: stage 2 (agricultural systems)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1328-1345 stage_refurbishment_farming end = 100, on_first_enter fires arkship.1305"
+  },
+  {
+   "from": "arkship.1305",
+   "to": "arkship.1310",
+   "conditional": true,
+   "label": {
+    "zh": "进度 ≥ 100：阶段三（防御区改造）",
+    "en": "Progress 100: stage 3 (defense section)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1347-1363 stage_refurbishment_military end = 150, on_first_enter fires arkship.1310"
+  },
+  {
+   "from": "arkship.1310",
+   "to": "arkship.1315",
+   "conditional": true,
+   "label": {
+    "zh": "进度 ≥ 150：阶段四（居住区改造）",
+    "en": "Progress 150: stage 4 (residential district)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1365-1384 stage_refurbishment_city end = 200, on_first_enter fires arkship.1315"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1380",
+   "conditional": true,
+   "label": {
+    "zh": "进度满 200：翻修完成",
+    "en": "Progress reaches 200: refurbishment complete"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1387-1403 on_progress_complete fires arkship.1380"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1320",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一（发电机）内每月 1/17 的几率（进度 ≥ 15；每阶段至多一件）",
+    "en": "In stage 1 (generators): 1/17 chance per month once progress >= 15; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_generator, situation_progress >= 15"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1325",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一（发电机）内每月 1/17 的几率（进度 ≥ 15；每阶段至多一件）",
+    "en": "In stage 1 (generators): 1/17 chance per month once progress >= 15; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_generator, situation_progress >= 15"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1330",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一（发电机）内每月 1/17 的几率（进度 ≥ 15；每阶段至多一件）",
+    "en": "In stage 1 (generators): 1/17 chance per month once progress >= 15; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_generator, situation_progress >= 15"
+  },
+  {
+   "from": "arkship.1305",
+   "to": "arkship.1335",
+   "conditional": true,
+   "label": {
+    "zh": "阶段二（农业区）内每月 1/17 的几率（进度 ≥ 65；每阶段至多一件）",
+    "en": "In stage 2 (farming): 1/17 chance per month once progress >= 65; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_farming, situation_progress >= 65"
+  },
+  {
+   "from": "arkship.1305",
+   "to": "arkship.1340",
+   "conditional": true,
+   "label": {
+    "zh": "阶段二（农业区）内每月 1/17 的几率（进度 ≥ 65；每阶段至多一件）",
+    "en": "In stage 2 (farming): 1/17 chance per month once progress >= 65; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_farming, situation_progress >= 65"
+  },
+  {
+   "from": "arkship.1305",
+   "to": "arkship.1345",
+   "conditional": true,
+   "label": {
+    "zh": "阶段二（农业区）内每月 1/17 的几率（进度 ≥ 65；每阶段至多一件）",
+    "en": "In stage 2 (farming): 1/17 chance per month once progress >= 65; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_farming, situation_progress >= 65"
+  },
+  {
+   "from": "arkship.1310",
+   "to": "arkship.1350",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（防御区）内每月 1/17 的几率（进度 ≥ 115；每阶段至多一件）",
+    "en": "In stage 3 (defense): 1/17 chance per month once progress >= 115; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_military, situation_progress >= 115"
+  },
+  {
+   "from": "arkship.1310",
+   "to": "arkship.1355",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（防御区）内每月 1/17 的几率（进度 ≥ 115；每阶段至多一件）",
+    "en": "In stage 3 (defense): 1/17 chance per month once progress >= 115; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_military, situation_progress >= 115"
+  },
+  {
+   "from": "arkship.1310",
+   "to": "arkship.1360",
+   "conditional": true,
+   "label": {
+    "zh": "阶段三（防御区）内每月 1/17 的几率（进度 ≥ 115；每阶段至多一件）",
+    "en": "In stage 3 (defense): 1/17 chance per month once progress >= 115; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_military, situation_progress >= 115"
+  },
+  {
+   "from": "arkship.1315",
+   "to": "arkship.1365",
+   "conditional": true,
+   "label": {
+    "zh": "阶段四（居住区）内每月 1/17 的几率（进度 ≥ 165；每阶段至多一件）",
+    "en": "In stage 4 (residential): 1/17 chance per month once progress >= 165; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_city, situation_progress >= 165"
+  },
+  {
+   "from": "arkship.1315",
+   "to": "arkship.1370",
+   "conditional": true,
+   "label": {
+    "zh": "阶段四（居住区）内每月 1/17 的几率（进度 ≥ 165；每阶段至多一件）",
+    "en": "In stage 4 (residential): 1/17 chance per month once progress >= 165; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_city, situation_progress >= 165"
+  },
+  {
+   "from": "arkship.1315",
+   "to": "arkship.1375",
+   "conditional": true,
+   "label": {
+    "zh": "阶段四（居住区）内每月 1/17 的几率（进度 ≥ 165；每阶段至多一件）",
+    "en": "In stage 4 (residential): 1/17 chance per month once progress >= 165; at most one per stage"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_city, situation_progress >= 165"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1335",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_farming; re-parented under that stage by a bridge"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1340",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_farming; re-parented under that stage by a bridge"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1345",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_farming; re-parented under that stage by a bridge"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1350",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_military; re-parented under that stage by a bridge"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1355",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_military; re-parented under that stage by a bridge"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1360",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_military; re-parented under that stage by a bridge"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1365",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_city; re-parented under that stage by a bridge"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1370",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_city; re-parented under that stage by a bridge"
+  },
+  {
+   "from": "situations:situation_grand_refurbishment",
+   "to": "arkship.1375",
+   "evidence": "events/nomads_arkship_events.txt: event is limited to stage_refurbishment_city; re-parented under that stage by a bridge"
+  }
+ ],
+ "nodeLabels": {
+  "arkship.1305": {
+   "zh": "阶段二：农业区",
+   "en": "Stage 2: farming"
+  },
+  "arkship.1310": {
+   "zh": "阶段三：防御区",
+   "en": "Stage 3: defense"
+  },
+  "arkship.1315": {
+   "zh": "阶段四：居住区",
+   "en": "Stage 4: residential"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "方舟随机事件“必要的清算”及情境“大翻修”：四个阶段、每阶段至多一件随机插曲、完工。",
+   "en": "The arkship random episode A Necessary Reckoning and the situation The Grand Refurbishment: four stages, one random interlude per stage, completion."
+  },
+  "sources": [
+   "events/nomads_arkship_events.txt",
+   "common/situations/14_nomads_situations.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-arkship-1300.md"
+ }
+}

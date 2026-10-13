@@ -1,0 +1,27 @@
+{
+ "id": "event-astral-planes-1030",
+ "category": "rifts",
+ "endings": {
+  "astral_planes.1030": {
+   "label": {"zh": "维度锁即将失稳：续期或放手", "en": "Dimensional Lock destabilizing: renew or let go"},
+   "note": {"zh": "单事件通知：花 1000 星界丝缕延长锁定（要求锁可续期），或“由它去吧”——锁到期后只能由科研船重新建立。", "en": "A single-event notice: spend 1000 astral threads to renew the lock (it must be renewable), or “Let it go” — after expiry it must be re-established with a Science Ship."},
+   "evidence": "events/astral_planes_events.txt:1697-1733; common/scripted_variables/06_scripted_variables_astral_planes.txt:28"}
+ },
+ "notes": [
+  {"doc": "astral_planes.1030", "kind": "review",
+   "zh": "这是“维度锁”星界行动（action_dimensional_lock，astral_planes_actions.txt:578，花费 1000 星界丝缕，锁定时长 3600 天，到期前 30 天提醒，common/defines/00_defines.txt:588-592）的到期通知事件，由 on_action on_dimensional_lock_expired 触发（“Fired when a bypass Dimensional Lock expires”，00_on_actions.txt:5129-5135），事件上下文是那个旁路。它不是裂隙探索的一部分，也没有后续事件。事件文字写的是“正在失稳”，选项 b 说“将会过期”，与 on_action 的注释措辞略有出入；脚本没有给出更多信息。",
+   "en": "This is the expiry notice of the “Dimensional Lock” astral action (action_dimensional_lock, astral_planes_actions.txt:578, cost 1000 astral threads, duration 3600 days, warning 30 days before; common/defines/00_defines.txt:588-592). It is fired by the on_action on_dimensional_lock_expired (“Fired when a bypass Dimensional Lock expires”, 00_on_actions.txt:5129-5135), with the bypass as scope. It is not part of a rift exploration and has no follow-up event. The event text says “destabilizing” and option b says “will expire”, slightly different from the on_action comment; the script gives no more detail."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对 astral_planes.1030、维度锁行动定义与相关 defines。",
+   "en": "Checked astral_planes.1030, the Dimensional Lock action definition and the related defines."
+  },
+  "sources": ["events/astral_planes_events.txt", "common/astral_actions/astral_planes_actions.txt", "common/defines/00_defines.txt"],
+  "uncertain": ["到期前 30 天提醒与 on_dimensional_lock_expired 的确切先后在脚本中不可见。 / The exact order of the 30-day warning and on_dimensional_lock_expired is not visible in script."],
+  "guide": "public/summaries/event-astral-planes-1030.md"
+ }
+}

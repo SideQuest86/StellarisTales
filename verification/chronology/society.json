@@ -2,15 +2,15 @@
   "category": "society",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 431,
-  "docs": 1734,
-  "nodes": 2060,
-  "refs": 326,
-  "crossLinks": 697,
+  "stories": 397,
+  "docs": 1708,
+  "nodes": 2075,
+  "refs": 367,
+  "crossLinks": 695,
   "review": {
-    "reviewed": 103,
+    "reviewed": 145,
     "partial": 3,
-    "unreviewed": 325
+    "unreviewed": 249
   },
   "failures": [],
   "items": [
@@ -51,21 +51,39 @@
       "review": "partial"
     },
     {
-      "id": "pre-ftl-ages",
-      "title": "文明的年代",
-      "kind": "family",
-      "docs": 23,
-      "refs": 4,
-      "crossLinks": 16,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-colony-100",
       "title": "废弃地形改造设备",
       "kind": "family",
       "docs": 19,
       "refs": 1,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-250",
+      "title": "外星舰船被俘！",
+      "kind": "family",
+      "docs": 18,
+      "refs": 10,
+      "crossLinks": 36,
+      "review": "reviewed"
+    },
+    {
+      "id": "pre-ftl-ages",
+      "title": "文明的年代",
+      "kind": "family",
+      "docs": 18,
+      "refs": 4,
+      "crossLinks": 15,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-first-contact-1",
+      "title": "在[This.System.GetName]的遭遇",
+      "kind": "family",
+      "docs": 16,
+      "refs": 29,
+      "crossLinks": 56,
       "review": "reviewed"
     },
     {
@@ -94,6 +112,15 @@
       "refs": 13,
       "crossLinks": 0,
       "review": "partial"
+    },
+    {
+      "id": "event-fircon-1210",
+      "title": "万爪之母",
+      "kind": "family",
+      "docs": 14,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-6000",
@@ -159,12 +186,30 @@
       "review": "reviewed"
     },
     {
+      "id": "event-fircon-5000",
+      "title": "哈宾特统一星球国",
+      "kind": "family",
+      "docs": 8,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-colony-150",
       "title": "地下避难所",
       "kind": "family",
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-200",
+      "title": "深掘数据成功",
+      "kind": "family",
+      "docs": 7,
+      "refs": 1,
+      "crossLinks": 9,
       "review": "reviewed"
     },
     {
@@ -183,6 +228,24 @@
       "docs": 6,
       "refs": 5,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-25",
+      "title": "大而美味",
+      "kind": "family",
+      "docs": 6,
+      "refs": 1,
+      "crossLinks": 36,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-35",
+      "title": "活着的晶体？",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 9,
       "review": "reviewed"
     },
     {
@@ -294,12 +357,48 @@
       "review": "reviewed"
     },
     {
+      "id": "event-first-contact-critters-45",
+      "title": "太空自动设施",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-85",
+      "title": "活的星际碎片？",
+      "kind": "family",
+      "docs": 4,
+      "refs": 1,
+      "crossLinks": 18,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-awareness-125",
+      "title": "首次接触（前超光速）",
+      "kind": "family",
+      "docs": 3,
+      "refs": 1,
+      "crossLinks": 4,
+      "review": "reviewed"
+    },
+    {
       "id": "event-first-contact-395",
       "title": "遭遇非机器人",
       "kind": "family",
       "docs": 3,
       "refs": 0,
       "crossLinks": 18,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-fircon-3505",
+      "title": "天选民",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -312,8 +411,71 @@
       "review": "reviewed"
     },
     {
+      "id": "event-first-contact-critters-1",
+      "title": "有规律的信号",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-100",
+      "title": "未知舰船",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-50",
+      "title": "野蛮迹象",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-60",
+      "title": "敌对舰船",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-70",
+      "title": "未知舰船",
+      "kind": "family",
+      "docs": 2,
+      "refs": 1,
+      "crossLinks": 18,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-90",
+      "title": "未知舰船",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
       "id": "event-colony-mod-4",
       "title": "观测到彗星经过行星环带",
+      "kind": "family",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-first-contact-critters-10",
+      "title": "怪异热源",
       "kind": "family",
       "docs": 1,
       "refs": 0,
@@ -417,7 +579,7 @@
       "docs": 17,
       "refs": 8,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-machine-age-4000",
@@ -564,24 +726,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-fircon-1212",
-      "title": "迷失旅行者",
-      "kind": "event",
-      "docs": 10,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-250",
-      "title": "外星舰船被俘！",
-      "kind": "event",
-      "docs": 10,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-situation-1125",
       "title": "吞噬恒星",
       "kind": "event",
@@ -705,15 +849,6 @@
       "docs": 8,
       "refs": 2,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-preftl-operation-1025",
-      "title": "[this.GetName]：准备现身",
-      "kind": "event",
-      "docs": 8,
-      "refs": 1,
-      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
@@ -912,7 +1047,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-espionage-20",
@@ -921,25 +1056,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-30",
-      "title": "谁在盯着观察者？",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-200",
-      "title": "深掘数据成功",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-specialist-500",
@@ -996,24 +1113,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "situation-situation-terravore-consume-planet",
-      "title": "吞噬[Target.GetName]",
-      "kind": "situation",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-awareness-900",
-      "title": "暴露！",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-colony-2005",
       "title": "波涛之下",
       "kind": "event",
@@ -1057,51 +1156,6 @@
       "refs": 2,
       "crossLinks": 4,
       "review": "reviewed"
-    },
-    {
-      "id": "event-first-contact-1",
-      "title": "在[This.System.GetName]的遭遇",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 20,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-320",
-      "title": "外星人已捕获",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-5",
-      "title": "神秘的太空旅人",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-25",
-      "title": "太空变形虫",
-      "kind": "event",
-      "docs": 5,
-      "refs": 1,
-      "crossLinks": 36,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-35",
-      "title": "晶态实体",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
     },
     {
       "id": "event-galcom-1",
@@ -1155,15 +1209,6 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-awareness-125",
-      "title": "第一次接触",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
@@ -1281,6 +1326,15 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-preftl-operation-1025",
+      "title": "[this.GetName]：准备现身",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 2,
       "review": "unreviewed"
     },
     {
@@ -1554,24 +1608,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-first-contact-critters-45",
-      "title": "古代采矿无人机",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-85",
-      "title": "虚空之云",
-      "kind": "event",
-      "docs": 3,
-      "refs": 1,
-      "crossLinks": 18,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-observation-1500",
       "title": "研究提议",
       "kind": "event",
@@ -1752,33 +1788,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-fircon-5050",
-      "title": "礼貌请求",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-102",
-      "title": "[This.ContactCountry.GetName]被解密",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 18,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-50",
-      "title": "难以捉摸的外星人",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-galcom-60",
       "title": "异次元体实验方法",
       "kind": "event",
@@ -1813,6 +1822,15 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
+    },
+    {
+      "id": "situation-situation-terravore-consume-planet",
+      "title": "吞噬[Target.GetName]",
+      "kind": "situation",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
     },
     {
       "id": "situation-situation-toxify-world",
@@ -2415,43 +2433,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-1210",
-      "title": "建立联络",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-1211",
-      "title": "万爪之母",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-1220",
-      "title": "食物中毒",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-1221",
-      "title": "外交事故",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1270",
@@ -2542,78 +2524,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-fircon-3505",
-      "title": "天选民",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-3515",
-      "title": "天选民",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-5000",
-      "title": "缺失轨道",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-5005",
-      "title": "缺失轨道",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-5015",
-      "title": "丰饶诸星",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-5020",
-      "title": "遭遇哈宾特统一星球国",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-5034",
-      "title": "温和种族之怒",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-5040",
-      "title": "外交无用",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-fircon-7500",
@@ -2712,16 +2622,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-101",
-      "title": "他们是[This.Owner.GetSpeciesNamePlural]！",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-103",
@@ -2730,7 +2631,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 9,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-104",
@@ -2739,25 +2640,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-105",
-      "title": "[This.ContactCountry.GetName]已被了解",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-1050",
-      "title": "通讯已建立",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-1100",
@@ -2766,7 +2649,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-1105",
@@ -2775,7 +2658,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-1110",
@@ -2784,43 +2667,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-220",
-      "title": "通讯建立",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-285",
-      "title": "审讯完毕",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 18,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-290",
-      "title": "外星研究完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-295",
-      "title": "研究外星材料",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5000",
@@ -2829,7 +2676,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5005",
@@ -2838,7 +2685,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5010",
@@ -2847,7 +2694,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5015",
@@ -2856,7 +2703,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5020",
@@ -2865,7 +2712,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5025",
@@ -2874,7 +2721,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5030",
@@ -2883,7 +2730,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5035",
@@ -2892,7 +2739,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5040",
@@ -2901,7 +2748,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5045",
@@ -2910,7 +2757,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5050",
@@ -2919,7 +2766,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5055",
@@ -2928,7 +2775,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5065",
@@ -2937,7 +2784,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-5075",
@@ -2946,164 +2793,11 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-1",
-      "title": "有规律的信号",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-10",
-      "title": "怪异热源",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-100",
-      "title": "未知舰船",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-105",
-      "title": "中立舰队",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-critters-15",
       "title": "缇扬奇",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-20",
-      "title": "大而美味",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-30",
-      "title": "活着的晶体？",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-40",
-      "title": "太空自动设施",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-5",
-      "title": "通讯已建立",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-50",
-      "title": "野蛮迹象",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-55",
-      "title": "遭遇[encountered_marauder.GetRealName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-60",
-      "title": "敌对舰船",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-65",
-      "title": "遭遇掠夺者",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-70",
-      "title": "未知舰船",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-75",
-      "title": "行商",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 18,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-80",
-      "title": "活的星际碎片？",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-90",
-      "title": "未知舰船",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-95",
-      "title": "游牧民",
       "kind": "event",
       "docs": 1,
       "refs": 0,

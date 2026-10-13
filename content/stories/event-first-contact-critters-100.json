@@ -1,0 +1,58 @@
+{
+ "id": "event-first-contact-critters-100",
+ "family": {
+  "title": {
+   "zh": "未知舰船",
+   "en": "Unknown Vessels"
+  },
+  "category": "society",
+  "start": "first_contact_critters.100",
+  "members": [
+   "first_contact_critters.100",
+   "first_contact_critters.105"
+  ]
+ },
+ "titleFrom": "first_contact_critters.100",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact_critters.100",
+   "to": "first_contact_critters.105",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：neutrals_stage_2(难度4)",
+    "en": "Stage: neutrals_stage_2 (difficulty 4)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:1271 set_first_contact_stage = neutrals_stage_2; common/first_contact/01_*.txt:323 fires first_contact_critters.105",
+   "choice": "first_contact_critters.100.a"
+  }
+ ],
+ "endings": {
+  "first_contact_critters.105": {
+   "label": {
+    "zh": "结局：中立舰队",
+    "en": "Ending: the neutral fleet"
+   },
+   "note": {
+    "zh": "结束首次接触。",
+    "en": "First contact ends."
+   },
+   "evidence": "events/first_contact_NPC_country_types_events.txt:1276-1307"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "中立势力首次接触：2个事件及阶段衔接。",
+   "en": "中立势力 first contact: 2 events and the stage hand-off."
+  },
+  "sources": [
+   "events/first_contact_NPC_country_types_events.txt:1252-1307",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:291-329"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-100.md"
+ }
+}

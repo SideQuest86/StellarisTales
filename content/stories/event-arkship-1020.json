@@ -1,0 +1,40 @@
+{
+ "id": "event-arkship-1020",
+ "bridges": [
+  {
+   "from": "arkship.1015",
+   "to": "special_projects:ARKSHIP_DEBRIS",
+   "conditional": true,
+   "label": {
+    "zh": "同一次击毁：攻击方（常规国家，灭绝者）得到残骸回收项目",
+    "en": "Same destruction: a homicidal regular-empire attacker receives the wreck salvage project"
+   },
+   "evidence": "events/nomads_arkship_events.txt:4998-5054 arkship.1020 else_if homicidal: ARKSHIP_DEBRIS enabled for from.owner"
+  },
+  {
+   "from": "arkship.1015",
+   "to": "arkship.1005",
+   "conditional": true,
+   "label": {
+    "zh": "同一次击毁：攻击方收到一次性通知",
+    "en": "Same destruction: the attacker gets a once-only notice"
+   },
+   "evidence": "events/nomads_arkship_events.txt:4712-4749 arkship.1000 fires arkship.1005 once (enemy_arkship_destroyed)"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "游牧方舟被击毁时的受害方通知、攻击方通知与残骸项目；被禁用后的劫掠与逃离分支只作概述。",
+   "en": "Victim and attacker notices and the wreck salvage project when an arkship is destroyed; the disable, raid and escape branches only in outline."
+  },
+  "sources": [
+   "events/nomads_arkship_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/06_projects_nomads.txt"
+  ],
+  "guide": "public/summaries/event-arkship-1020.md"
+ }
+}

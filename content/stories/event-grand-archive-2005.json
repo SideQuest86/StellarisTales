@@ -1,0 +1,43 @@
+{
+ "id": "event-grand-archive-2005",
+ "family": {
+  "title": {
+   "zh": "虚空虫",
+   "en": "Voidworms"
+  },
+  "category": "stories",
+  "start": "grand_archive.2000",
+  "members": [
+   "grand_archive.2000",
+   "grand_archive.2005",
+   "special_projects:VOIDWORMS_PROJECT",
+   "grand_archive.2015"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "grand_archive.2000",
+   "to": "grand_archive.2005",
+   "conditional": false,
+   "label": {
+    "zh": "选择“进一步了解”：首次接触进入阶段二",
+    "en": "Choosing \"find out more\": first contact moves to stage two"
+   },
+   "evidence": "events/grand_archive_events.txt:311-314 option fires set_first_contact_stage = voidworms_stage_2; common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:479-491 voidworms_stage_2 event = grand_archive.2005"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "虚空虫的两步首次接触（众声喧哗 → 虚空虫），猎杀奖励与研究项目 → 虚空虫酶。",
+   "en": "The two-step first contact with the Voidworms, the hunting buff and the research project to Voidworm Enzymes."
+  },
+  "sources": [
+   "events/grand_archive_events.txt",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt"
+  ],
+  "guide": "public/summaries/event-grand-archive-2005.md"
+ }
+}

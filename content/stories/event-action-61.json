@@ -1,0 +1,46 @@
+{
+ "id": "event-action-61",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "action.62",
+    "syndaw.1030",
+    "syndaw.1035",
+    "action.63"
+   ],
+   "label": {
+    "zh": "被毁国家的类型",
+    "en": "Type of destroyed country"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "syndaw.1201",
+    "syndaw.1206"
+   ],
+   "label": {
+    "zh": "毁灭者的类型",
+    "en": "Type of destroyer"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/on_action_events_1.txt:6640-6840",
+   "common/on_actions/00_on_actions.txt:3603-3609 on_country_destroyed",
+   "events/observer_events.txt:26-55",
+   "events/synthetic_dawn_events.txt:2455-2890"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-action-61.md"
+ }
+}

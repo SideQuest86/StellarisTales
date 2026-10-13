@@ -1,0 +1,108 @@
+{
+ "id": "event-grand-archive-4500",
+ "family": {
+  "title": {
+   "zh": "失去博物天枢",
+   "en": "Grand Archive Lost"
+  },
+  "category": "stories",
+  "start": "grand_archive.4515",
+  "members": [
+   "grand_archive.4515",
+   "grand_archive.4510",
+   "grand_archive.4520",
+   "grand_archive.4555",
+   "grand_archive.4560",
+   "grand_archive.4580"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "grand_archive.4515",
+   "to": "grand_archive.4510",
+   "conditional": true,
+   "label": {
+    "zh": "同一次摧毁：另一方（摧毁者）收到的通知",
+    "en": "Same destruction: the destroyer's notice"
+   },
+   "evidence": "events/grand_archive_events.txt:5502-5556 hidden 4505 fires 4515 (victim) and 4510 (destroyer); the destroyer steals 1 specimen (2 with Barbaric Despoilers) first"
+  },
+  {
+   "from": "grand_archive.4560",
+   "to": "grand_archive.4555",
+   "conditional": true,
+   "label": {
+    "zh": "同一次拆除：新控制者收到的通知",
+    "en": "Same dismantling: the new controller's notice"
+   },
+   "evidence": "events/grand_archive_events.txt:5973-5991 hidden 4550 fires 4555 (new controller) and 4560 (old owner)"
+  },
+  {
+   "from": "grand_archive.4515",
+   "to": "grand_archive.4580",
+   "conditional": true,
+   "label": {
+    "zh": "之后重建大档案馆",
+    "en": "Later, the Grand Archive is rebuilt"
+   },
+   "evidence": "common/megastructures/20_grand_archive.txt:195 on_build_complete fires 4580 if grand_archive_destroyed is set"
+  },
+  {
+   "from": "grand_archive.4520",
+   "to": "grand_archive.4580",
+   "conditional": true,
+   "label": {
+    "zh": "之后重建大档案馆",
+    "en": "Later, the Grand Archive is rebuilt"
+   },
+   "evidence": "common/megastructures/20_grand_archive.txt:195"
+  },
+  {
+   "from": "grand_archive.4560",
+   "to": "grand_archive.4580",
+   "conditional": true,
+   "label": {
+    "zh": "之后重建大档案馆",
+    "en": "Later, the Grand Archive is rebuilt"
+   },
+   "evidence": "common/megastructures/20_grand_archive.txt:195"
+  }
+ ],
+ "nodeLabels": {
+  "grand_archive.4510": {
+   "zh": "摧毁者的通知",
+   "en": "Destroyer's notice"
+  },
+  "grand_archive.4520": {
+   "zh": "无敌方掠夺的损失",
+   "en": "Loss without an enemy looter"
+  },
+  "grand_archive.4555": {
+   "zh": "新控制者的通知",
+   "en": "New controller's notice"
+  },
+  "grand_archive.4560": {
+   "zh": "原主：拆除",
+   "en": "Old owner: dismantled"
+  },
+  "grand_archive.4580": {
+   "zh": "重建",
+   "en": "Rebuilt"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "大档案馆被摧毁、被星系毁灭、被失去承载结构或被转手拆除时的各类通知，以及之后的重建。",
+   "en": "All the ways the Grand Archive is lost (destroyed by an enemy, with its system, with its hosting waystation or arkship, or dismantled on a change of control) with notices, and its rebuilding."
+  },
+  "sources": [
+   "events/grand_archive_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/megastructures/20_grand_archive.txt"
+  ],
+  "guide": "public/summaries/event-grand-archive-4500.md"
+ }
+}

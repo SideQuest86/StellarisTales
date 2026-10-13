@@ -1,0 +1,69 @@
+{
+ "id": "event-arkship-140",
+ "family": {
+  "title": {
+   "zh": "永恒合唱",
+   "en": "The Eternal Chorus"
+  },
+  "category": "stories",
+  "start": "arkship.140",
+  "members": [
+   "arkship.140",
+   "event_chains:arkship_eternal_chorus_chain",
+   "arkship.141",
+   "arkship.142",
+   "arkship.150"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "arkship.140",
+   "to": "arkship.141",
+   "conditional": true,
+   "label": {
+    "zh": "接受合同后，方舟抵达目标黑洞星系",
+    "en": "After accepting the contract, the arkship reaches the target black-hole system"
+   },
+   "evidence": "events/nomads_arkship_events.txt:1974-2024 arkship.141 trigger solar_system has_star_flag eternal_chorus_system; common/on_actions/00_on_actions.txt:964 on_entering_system; common/missions/missions/02_contracts.txt:4938-4985 contract_eternal_chorus"
+  },
+  {
+   "from": "arkship.141",
+   "to": "arkship.150",
+   "conditional": true,
+   "label": {
+    "zh": "完成项目与合同后，方舟首次进入另一个黑洞星系",
+    "en": "After the project and contract are completed, on the arkship's first entry into another black-hole system"
+   },
+   "evidence": "events/nomads_arkship_events.txt:2170-2229 arkship.150 trigger arkship_eternal_chorus_completed and a black hole in the system; flag set by common/missions/missions/02_contracts.txt:5000; common/special_projects/06_projects_nomads.txt:1811-1813 project success fires arkship.145"
+  },
+  {
+   "from": "arkship.140",
+   "to": "arkship.142",
+   "conditional": true,
+   "label": {
+    "zh": "监督科学家被解雇或死亡时（链进行中）",
+    "en": "When the lead scientist is fired or dies while the chain runs"
+   },
+   "evidence": "events/nomads_arkship_events.txt:2026-2095 arkship.142 trigger FROM has_leader_flag eternal_chorus_researcher; common/on_actions/00_on_actions.txt:2403,2430"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "方舟随机事件“遥远的信号”引出的合同链：合同、抵达黑洞星系、监督科学家被替换、最后的回复。",
+   "en": "The contract chain started by the arkship episode A Distant Signal: contract, arrival at the black hole, replacement of the lead scientist, and the final reply."
+  },
+  "sources": [
+   "events/nomads_arkship_events.txt",
+   "common/missions/missions/02_contracts.txt",
+   "common/special_projects/06_projects_nomads.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-arkship-140.md",
+  "uncertain": [
+   "arkship.145 (project completion choice) belongs to project-arkship-eternal-chorus-project, owned by another reviewer."
+  ]
+ }
+}

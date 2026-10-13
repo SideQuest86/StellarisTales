@@ -1,0 +1,37 @@
+{
+ "id": "site-site-the-chosen-backstory",
+ "hubs": [
+  "ancrel.8200",
+  "ancrel.8201",
+  "ancrel.8202",
+  "ancrel.8203",
+  "ancrel.8215"
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_the_chosen_backstory",
+   "kind": "review",
+   "zh": "由星系初始化器 the_chosen_escapee_initializer 创建（common/solar_system_initializers/special_system_initializers.txt:3353）：夏瑞诺伊（Charynoi）前FTL星球的卫星轨道上有一座废弃观测站。",
+   "en": "Created by the system initializer the_chosen_escapee_initializer (common/solar_system_initializers/special_system_initializers.txt:3353): an abandoned observation outpost orbits the pre-FTL Charynoi world."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt",
+   "events/arcsite_events.txt",
+   "common/special_projects/00_projects_first_contact_dlc.txt",
+   "common/solar_system_initializers/special_system_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-the-chosen-backstory.md"
+ }
+}

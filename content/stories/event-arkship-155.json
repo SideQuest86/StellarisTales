@@ -1,0 +1,56 @@
+{
+ "id": "event-arkship-155",
+ "family": {
+  "title": {
+   "zh": "外交使节",
+   "en": "A Diplomatic Overture"
+  },
+  "category": "stories",
+  "start": "arkship.155",
+  "members": [
+   "arkship.155",
+   "arkship.156",
+   "arkship.160",
+   "arkship.165",
+   "arkship.170",
+   "arkship.175"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "arkship.155",
+   "to": "arkship.160",
+   "conditional": true,
+   "label": {
+    "zh": "接受合同后，方舟抵达目标国首都星系",
+    "en": "After accepting the contract, the arkship reaches the target capital system"
+   },
+   "evidence": "common/missions/missions/02_contracts.txt:5437-5463 contract on_accept fires arkship.160 for arkships already in the target system; common/on_actions/00_on_actions.txt:966 on_entering_system; events/nomads_arkship_events.txt:2474-2486 trigger"
+  },
+  {
+   "from": "arkship.155",
+   "to": "arkship.156",
+   "conditional": true,
+   "label": {
+    "zh": "外交官被解雇或死亡时（链进行中）",
+    "en": "When the envoy is fired or dies while the chain runs"
+   },
+   "evidence": "events/nomads_arkship_events.txt:2365-2436 arkship.156 trigger FROM has_leader_flag diplomatic_envoy_official; common/on_actions/00_on_actions.txt:2404,2431"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "方舟随机事件“外交示好”：合同、抵达对方首都星系，三种会面结果，以及外交官被替换。",
+   "en": "The arkship episode A Diplomatic Overture: contract, arrival at the target capital system, three outcomes, replacement of the envoy."
+  },
+  "sources": [
+   "events/nomads_arkship_events.txt",
+   "common/missions/missions/02_contracts.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-arkship-155.md"
+ }
+}

@@ -1,0 +1,163 @@
+{
+ "id": "event-fircon-1210",
+ "family": {
+  "title": {
+   "zh": "万爪之母",
+   "en": "The Many-Tentacled One"
+  },
+  "category": "society",
+  "start": "fircon.1210",
+  "members": [
+   "fircon.1210",
+   "fircon.1211",
+   "fircon.1212",
+   "fircon.1220",
+   "fircon.1221",
+   "fircon.1230",
+   "fircon.1231",
+   "fircon.1232",
+   "fircon.1233",
+   "fircon.1240",
+   "fircon.1241",
+   "fircon.1242",
+   "fircon.1243",
+   "special_projects:THE_JAUNT_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "fircon.1210",
+   "to": "fircon.1211",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段（难度2）",
+    "en": "Stage 2 (difficulty 2)"
+   },
+   "evidence": "1210.INTERESTING set_first_contact_stage jaunting_traveler_stage_2 (events/first_contact_dlc_events.txt:575-578); stage_2 stage_event = fircon.1211 (common/first_contact/02_first_contact_unique_stories.txt:197-213)"
+  },
+  {
+   "from": "fircon.1211",
+   "to": "fircon.1212",
+   "conditional": true,
+   "label": {
+    "zh": "最终阶段（难度3）",
+    "en": "Final stage (difficulty 3)"
+   },
+   "evidence": "1211.INTERESTING set_first_contact_stage jaunting_traveler_finish (first_contact_dlc_events.txt:598-601); finish stage_event = fircon.1212 (02_first_contact_unique_stories.txt:216-232)"
+  },
+  {
+   "from": "fircon.1210",
+   "to": "fircon.1220",
+   "conditional": true,
+   "label": {
+    "zh": "阶段检定失败时随机：食物中毒",
+    "en": "On a failed stage roll, random: food poisoning"
+   },
+   "evidence": "on_roll_failed = standard_first_contact_on_roll_failed with RANDOM_EVENTS = jaunting_traveler_fc_random_events (02_first_contact_unique_stories.txt:189-194, 208-213, 227-232); that list holds 1220 and 1221, weight 1 each, each at most once (common/scripted_effects/first_contact_effects.txt:1818-1836)"
+  },
+  {
+   "from": "fircon.1210",
+   "to": "fircon.1221",
+   "conditional": true,
+   "label": {
+    "zh": "阶段检定失败时随机：冒犯了生物",
+    "en": "On a failed stage roll, random: the creature is offended"
+   },
+   "evidence": "as above"
+  },
+  {
+   "from": "fircon.1212",
+   "to": "fircon.1230",
+   "choice": "fircon.1212.a",
+   "conditional": true,
+   "label": {
+    "zh": "和平结局：加入为科学家（60+随机30天）",
+    "en": "Pacific ending: she joins as a scientist (60 days + random 30)"
+   },
+   "evidence": "first_contact_dlc_events.txt:619-656 (creates a psionic scientist leader, schedules 1231 and 1230)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.1220",
+    "fircon.1221"
+   ],
+   "label": {
+    "zh": "检定失败的随机事件",
+    "en": "Random event on a failed roll"
+   },
+   "note": {
+    "zh": "各权重1，各至多发生一次（first-contact 标志）。",
+    "en": "Weight 1 each, each at most once (first-contact flags)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.1243",
+    "fircon.1242"
+   ],
+   "label": {
+    "zh": "跃迁项目：10%成功 / 90%失败",
+    "en": "Jaunt project: 10% success / 90% failure"
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "fircon.1230",
+    "fircon.1231"
+   ],
+   "label": {
+    "zh": "和平结局的两条后续",
+    "en": "Two follow-ups of the pacific ending"
+   },
+   "note": {
+    "zh": "1230 仅限非排外且主种族具通灵特质的帝国；1231 思乡事件总是出现。",
+    "en": "1230 only for non-xenophobe empires whose main species is psionic; 1231 always fires."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "fircon.1212",
+   "kind": "review",
+   "zh": "三个结局：和平（创造通灵科学家领袖）、实验室（研究点）、牺牲（团结点，仅排外/军国/死亡崇拜者）；实验室需唯物主义或非亲外或技术官僚。",
+   "en": "Three endings: pacific (a psionic scientist leader), lab (research), sacrifice (unity; only xenophobe/militarist/death-cult empires); the lab option needs materialist, non-xenophile or technocracy."
+  },
+  {
+   "doc": "fircon.1210",
+   "kind": "review",
+   "zh": "起点：fircon.1200（隐藏，五年脉冲池权重5，每局一次，需First Contact DLC）创建“万爪之母”虚拟国家并启动首次接触。",
+   "en": "Start: fircon.1200 (hidden; five-year pulse pool weight 5, once per country, needs the First Contact DLC) creates the Many-Tentacled One dummy country and starts the first-contact procedure."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "万爪之母（Jaunting Traveler）完整首次接触：生成、三阶段、三种结局、思乡、跃迁项目与两种失败。",
+   "en": "Whole Many-Tentacled One (Jaunting Traveler) first-contact story: spawn, three stages, three endings, homesickness, the Jaunt project and the two failure events."
+  },
+  "sources": [
+   "events/first_contact_dlc_events.txt",
+   "common/first_contact/02_first_contact_unique_stories.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/scripted_effects/first_contact_effects.txt",
+   "common/special_projects/00_projects_first_contact_dlc.txt"
+  ],
+  "uncertain": [
+   "The project script comments label the 10%/90% branches \"Failure/Success\", the reverse of the events (1243 is the success, 1242 the failure); this review follows the events and weights (10 -> 1243, 90 -> 1242)."
+  ],
+  "merged": [
+   "event-fircon-1211",
+   "event-fircon-1212",
+   "event-fircon-1220",
+   "event-fircon-1221"
+  ],
+  "guide": "public/summaries/event-fircon-1210.md"
+ }
+}

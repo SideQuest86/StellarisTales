@@ -1,0 +1,59 @@
+{
+ "id": "event-grand-archive-10000",
+ "family": {
+  "title": {
+   "zh": "先进可控变异",
+   "en": "Advanced Controlled Mutations"
+  },
+  "category": "stories",
+  "start": "grand_archive.10005",
+  "members": [
+   "grand_archive.10005",
+   "special_projects:space_amoeba_UNIQUE_MUTATION_PROJECT",
+   "grand_archive.10010",
+   "grand_archive.10006",
+   "special_projects:tiyanki_UNIQUE_MUTATION_PROJECT",
+   "grand_archive.10015",
+   "grand_archive.10007",
+   "special_projects:voidworm_UNIQUE_MUTATION_PROJECT",
+   "grand_archive.10020",
+   "grand_archive.10008",
+   "special_projects:cutholoid_UNIQUE_MUTATION_PROJECT",
+   "grand_archive.10025",
+   "grand_archive.10009",
+   "special_projects:crystalline_entity_UNIQUE_MUTATION_PROJECT",
+   "grand_archive.10030",
+   "grand_archive.10055",
+   "special_projects:tiyanki_matriarch_UNIQUE_MUTATION_PROJECT",
+   "grand_archive.10060",
+   "grand_archive.10075",
+   "special_projects:voidspawn_UNIQUE_MUTATION_PROJECT",
+   "grand_archive.10080"
+  ]
+ },
+ "nodeLabels": {
+  "grand_archive.10055": {
+   "zh": "击毁长者缇扬奇",
+   "en": "Elder Tiyanki destroyed"
+  },
+  "grand_archive.10075": {
+   "zh": "击毁虚空之子",
+   "en": "Voidspawn destroyed"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "七条独特变异计划：五种太空生物的克隆量阈值，以及长者缇扬奇与虚空之子的击杀奖励；各自的研究项目与完成奖励。",
+   "en": "Seven unique-mutation projects: the clone threshold for five space-fauna kinds and the kill rewards for the Elder Tiyanki and the Voidspawn, each with its project and result."
+  },
+  "sources": [
+   "events/grand_archive_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/inline_scripts/grand_archive/mutations/unique_mutation_trigger_check_case.txt"
+  ],
+  "guide": "public/summaries/event-grand-archive-10000.md"
+ }
+}

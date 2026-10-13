@@ -3,26 +3,17 @@
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 61,
-  "docs": 1213,
-  "nodes": 1450,
-  "refs": 237,
-  "crossLinks": 185,
+  "docs": 1196,
+  "nodes": 1436,
+  "refs": 240,
+  "crossLinks": 186,
   "review": {
-    "reviewed": 12,
-    "partial": 10,
-    "unreviewed": 39
+    "reviewed": 17,
+    "partial": 6,
+    "unreviewed": 38
   },
   "failures": [],
   "items": [
-    {
-      "id": "origin_treasure_hunters",
-      "title": "寻宝猎人",
-      "kind": "origin",
-      "docs": 98,
-      "refs": 46,
-      "crossLinks": 1,
-      "review": "reviewed"
-    },
     {
       "id": "origin_unplugged",
       "title": "强制重置",
@@ -30,6 +21,15 @@
       "docs": 93,
       "refs": 23,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "origin_treasure_hunters",
+      "title": "寻宝猎人",
+      "kind": "origin",
+      "docs": 91,
+      "refs": 43,
+      "crossLinks": 4,
       "review": "reviewed"
     },
     {
@@ -91,27 +91,27 @@
       "title": "黑暗之怖",
       "kind": "origin",
       "docs": 67,
-      "refs": 16,
+      "refs": 18,
       "crossLinks": 3,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "origin_shoulders_of_giants",
       "title": "屹于巨人之肩",
       "kind": "origin",
       "docs": 62,
-      "refs": 3,
+      "refs": 11,
       "crossLinks": 62,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "origin_endbringers",
       "title": "终末使者",
       "kind": "origin",
-      "docs": 55,
-      "refs": 4,
-      "crossLinks": 8,
-      "review": "partial"
+      "docs": 45,
+      "refs": 0,
+      "crossLinks": 6,
+      "review": "reviewed"
     },
     {
       "id": "origin_sacred_path",
@@ -120,7 +120,7 @@
       "docs": 34,
       "refs": 8,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "origin_storm_chasers",
@@ -129,7 +129,7 @@
       "docs": 34,
       "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_here_be_dragons",

@@ -1,0 +1,32 @@
+{
+ "id": "event-action-941",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "action.942",
+    "action.943",
+    "action.94"
+   ],
+   "label": {
+    "zh": "按起源",
+    "en": "By origin"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/on_action_events_1.txt:7975-8250",
+   "common/on_actions/00_on_actions.txt:1151 on_survey_planet"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-action-941.md"
+ }
+}

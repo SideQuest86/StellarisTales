@@ -1,0 +1,56 @@
+{
+ "id": "event-action-71",
+ "family": {
+  "title": {
+   "zh": "合成领袖已损坏",
+   "en": "Synth Leader Out of Commission"
+  },
+  "category": "stories",
+  "start": "action.71",
+  "members": [
+   "action.71",
+   "action.72",
+   "action.75",
+   "action.76"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "action.71",
+    "action.72",
+    "action.75",
+    "action.76"
+   ],
+   "label": {
+    "zh": "随机四选一",
+    "en": "Random one of four"
+   },
+   "note": {
+    "zh": "每个1/4（random_events）。",
+    "en": "1/4 each (random_events)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/on_action_events_1.txt:7064-7236",
+   "common/on_actions/00_on_actions.txt:5165-5168 on_synth_leader_malfunction"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-action-71.md",
+  "merged": [
+   "event-action-72",
+   "event-action-75",
+   "event-action-76"
+  ]
+ }
+}

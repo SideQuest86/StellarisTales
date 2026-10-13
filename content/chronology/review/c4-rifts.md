@@ -1,4 +1,4 @@
-# C4 星界裂隙 Astral rifts — review ledger (c4-rifts)
+﻿# C4 星界裂隙 Astral rifts — review ledger (c4-rifts)
 
 Reviewer: Opus 5.5 (C4 rifts review), working copy `st-agents/c4-rifts`. Started 2026-10-12.
 Authority: `D:/Living/Steam/steamapps/common/Stellaris` (read-only). File:line citations below are **real game-file
@@ -156,6 +156,104 @@ larger (see Requests R2).
   colony. 2300 → 2305/2310/2315(EMP end) → 2320/2325 → 2330 (new species pop on nearest colony). Groups, endings,
   nodeLabels for the two "To the Stars".
 
+### rift-entangled-dark-matter — reviewed (previous session; ledger entry added in session 2)
+- Fragment and guide exist from session 1: 2400 → 2405 … 2415.a (first same-named option) on_roll_failed → 2435 bridge,
+  groups 2410/2411 and 2430/2435, endings 2425/2426/2427 …; the duplicate option key astral_rift.2415.a binds to the
+  first instance (see fragment evidence). Not re-checked in session 2 beyond a compile.
+
+## Session 2 (resumed) — 2026-10-13
+
+Helper note: a rift event's real file lines are used below (not the inflated compiled line numbers).
+
+### rift-cleaning-drones — reviewed
+- 2600 → 2605/2610; robot route 2605 → 2615 (Clean Shot, sets clean_shot, difficulty −3) / 2620 → 2635 → 2645 → 2650
+  (organic non-Wilderness) / 2655; 2620.b → 2660. Cave route 2610 → 2625 (Avian Autopsy) and 2630 (Drone Repaired) are a
+  2-of-2 parallel pair (flags avian_autopsy / drone_reactivated, `astral_rifts_2_events.txt:2673-2783`) → 2640 → 2665/2670/2675.
+  Compiled tree already right; added parallel group, exclusive group, six endings, notes. Hidden 2698 (colonization
+  blockers from the 2665 modifier, `00_on_actions.txt:1279`) deliberately not merged (side effect).
+
+### rift-windswept-planet — reviewed
+- Two lines (wind 2705→2715→2725; cave 2710→2720→2730) converge on 2755 wind / 2760 fungus / 2765 compromise (+2790 leader
+  coda, 2 d) / 2770 eradication, chosen in 2745/2750 (25 alloys / 50 minerals gates; homicidal → 2770). Draft correct.
+
+### rift-tiny-planet — reviewed
+- 2800 → 2805 → 2810 → 2815/2830 → 2820 → 2835 or 2825 → 2840/2845 (+3600 d 2890). Option gates by is_unfriendly,
+  civic_barbaric_despoilers, is_homicidal. Flags tidal_lock_knowledge / can_build_microplanet_memorial feed decisions
+  (`09_astral_planes_decisions.txt:124,165`). Draft correct; groups/endings added.
+
+### rift-interdimensional-circus — reviewed
+- Straight line 2900–2920, then 2925 picks one of three performers; each has a sample (free) / paid (1000 energy or food)
+  ending. Weight ×0 if greatest_show_anomaly_found. Draft correct.
+
+### rift-bleached-planet — reviewed
+- 2500 → 2505 → 2510/2515 → … → 2535 (spark of genius II + black light blinded) or 2540 (d_physics_10). Draft correct.
+
+### rift-tropical-habitat — reviewed (absorbs event-astral-rift-3140)
+- Missing on_roll_failed bridge 3130.a (non-toxoid, first same-named option) → 3140 (maimed unless robotic) → 3155;
+  `astral_rifts_3_events.txt:1893-1902`. Groups, endings; hidden 3190 (post-contact opinion, `00_on_actions.txt:2273`)
+  noted, not merged.
+
+### rift-psionic-stranger — reviewed
+- 3200 → 3205 → 3210 with option gates by the Zroni storyline flags (update_zrony_storyline_flags sets exactly one of
+  completed/started/not_started) → 3215/3220/3225 → 3235 (→ 3280 after 1080+≤720 d) / 3240 (→ 3285, zroni_insight_modifier)
+  or 3230 → 3245. Draft correct; the Zroni storyline itself is another category.
+
+### rift-crystal — reviewed (family)
+- randomized = no; spawned only by astral_situation.5 (crystal sphere study complete). Made a family (member: the rift
+  card) so the cross-link from the sphere story stays a link. 1020.a → hidden 1095 (+2 d: Formless system + natural
+  wormhole, rift destroyed) → astral_planes.45 (+1 d); 1020.b needs tech_wormhole_stabilization + 500 threads → 1030.
+
+### astral-rift-in-space — reviewed (new family; absorbs event-astral-planes-7, -118, -119, -5055, -5060, -2005)
+- The compiler had one story per hidden trigger (7, 118, 119, 5055, 5060). One narrative: first rift → situation
+  situation_a_rift_in_space → hidden 25/30/35 → one of 55/60/65 (50/50/50 + "nothing" weight max(0, 80 − progress)) →
+  astral_situation.20 (Rift Sphere +25 %) → 2005 on tech. 119/120 lock the situation when the rift's system is lost.
+  Bridges to 2005 and 120. Uncertain: situation_progress unit in rift_in_space_event_probability.
+
+### astral-crystal-sphere — reviewed (new family; absorbs event-astral-planes-10, -25, -35)
+- 10 (yearly, chooses recipient) → 15 → study (→ astral_situation.5 → crystal rift) / destroy (→ astral_situation.1);
+  20 lost, 25 gained, 30 + 35 delayed until the Rift Sphere is researched. Bridges 30 → 15 and 5 → rift-crystal.
+
+### event-astral-planes-6029 — reviewed (Astralnomical Marvel)
+- Hidden 6029 random event at colony age 3/4/5 (weight 20) → 6030 → 6035 → 6040 → 6050 (either vision) / 6045 → 6055.
+  6059 hidden follow-up grants unity after each exploration while astral_zeal_modifier. Uncertain: widening_divide_N
+  removal.
+
+### event-astral-planes-6095 — reviewed (Final Escapee)
+- 1/50 per completed exploration (`00_on_actions.txt:5023-5026`); AI extra 1/21; once per game; 6100 → 6105 hire/dismiss.
+
+### event-astral-planes-110, -210, -1030 — reviewed (one-event stories)
+- 110 Astral Actions (tech_astral_harvesting); 210 Scientist Returns (end_of_the_cycle_reckoning); 1030 Dimensional Lock
+  expiry (on_dimensional_lock_expired, `00_on_actions.txt:5129-5135`; the compiler showed it as "Triggered by game
+  state" — see Requests R2).
+
+### astral-formless — reviewed (new family; absorbs event-astral-planes-3000, -3010, -3050, -3065, -3110, -3120, -3170)
+- One narrative: strange wormhole → 3000 → 3005 → (8 scout fleets destroyed, hidden 3010) → 3015 → 3020 → situation_the_seal
+  (100 progress; astral_situation.10 waves, hidden 3025/3030) → astral_situation.15 → 3099 → 3100 (submit 75/25 → 3101 /
+  3102; demand → 3102; ally → 3110 rewards every 3600 d, 3114-3116, 3121-3123) ; war via hidden 3150/3151 → 3155, 3165;
+  3065 anchor destroyed during the Seal → 3070. 7 bridges, 3 exclusive groups, nodeLabels for the many "The Formless"
+  titles. rift-crystal now bridges 45 → 3000 (cross-story link).
+
+### Session 2 totals
+- All 41 rift-category stories are reviewed. Of the 70 assigned ids: 38 still exist as stories (all reviewed), the other
+  32 were absorbed into families (event-astral-rift-* into their rift stories; event-astral-planes-* into
+  astral-rift-in-space, astral-crystal-sphere, astral-formless).
+
 ## Requests
 
-(see bottom of file; maintained as work proceeds)
+- R1 (compiler, low): the compiled line numbers of records are post-inline-script and larger than the real file lines
+  (e.g. astral_rift.2698 shows `:4022`, real `astral_rifts_2_events.txt:3155`). Ledger/fragments use real lines.
+- R2 (compiler, medium): on_action `on_dimensional_lock_expired` → astral_planes.1030 (`00_on_actions.txt:5131`) is not
+  recognised as the trigger (tree shows "Triggered by game state"); the same may hold for other less common on_action names.
+- R3 (compiler, medium): random_list with a computed `0 = { modifier = { add = value:… } }` entry (astral_situation.35)
+  is shown as p=0.33 for the three real branches; the "nothing" weight is invisible in the graph (documented in a group note).
+- R4 (compiler, low): duplicated option keys inside one event (astral_rift.2205.a, 2415.a, 3130.a, 2745.d/2750 …) bind
+  bridges to the first instance only; works for all current cases (on_roll_failed is always on the first instance except
+  2205 where the choice-less bridge was used), but a way to address "second instance" would be cleaner.
+- R5 (cross-agent, origins/crises owner): `astral_planes.2104`/`2105` (Riftworld "Formless contact", fired from
+  on_astral_rift_exploration_complete, `00_on_actions.txt:5014`) are not part of any story and not in my scope; the Zroni
+  storyline flags (zroni_intro / zroni_completed) used by rift-psionic-stranger belong to the zroni story (not mine).
+- R6 (cross-agent): `end_of_the_cycle_reckoning` (flag required by astral_planes.210) is set by the End of the Cycle crisis
+  events; a bridge from that crisis story to event-astral-planes-210 would be correct but is not mine to add.
+- R7 (cross-agent): the astral_situation.5 → crystal rift and rift-crystal → Formless links now exist as cross-story links
+  (families astral-crystal-sphere, rift-crystal, astral-formless); the Riftworld origin story could link to rift-riftworld.
+

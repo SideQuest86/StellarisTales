@@ -6,11 +6,11 @@ Each entry: story id (status), title, category change, merged ids, and the struc
 ## Counts
 
 - Assigned story ids: 287
-- Reviewed (own fragment + guide): 46
-- Merged into a reviewed family (reviewed as part of it): 90
+- Reviewed (own fragment + guide): 81
+- Merged into a reviewed family (story id no longer exists): 132
 - Partial: 1 event-fallen-empires-awakening-4
-- Untouched: 150 (event-game-start-1, event-country-53, event-country-2, event-country-254, event-country-216, event-country-6, event-country-201, event-country-212, event-country-217, event-country-11, event-country-14, event-country-16, event-country-18, event-country-20, event-country-215, event-country-220, event-country-250, event-country-50, event-country-9, event-country-204, event-country-205, event-country-206, event-country-211, event-country-222, event-country-251, event-country-252, event-country-253, event-country-259, event-country-52, event-cstorms-1200, event-cstorms-1800, event-cstorms-1810, event-cstorms-1317, event-cstorms-1760, event-cstorms-8500, event-cstorms-1310, event-cstorms-1313, event-cstorms-1316, event-cstorms-1417, event-cstorms-1700, event-cstorms-1710, event-cstorms-1720, event-cstorms-1730, event-cstorms-1740, event-cstorms-1750, event-cstorms-1770, event-cstorms-1775, event-cstorms-1830, event-cstorms-500, event-cstorms-8000, event-action-61, event-action-1, event-action-12, event-action-941, event-action-11, event-action-81, event-action-85, event-action-14, event-action-37, event-action-38, event-action-39, event-action-41, event-action-48, event-action-71, event-action-72, event-action-75, event-action-76, event-action-90, event-country-1102, event-country-1030, event-country-1002, event-country-1050, event-country-1060, event-country-1020, event-country-1021, event-country-1043, event-country-999, event-paragon-200, event-paragon-549, event-paragon-250, event-paragon-998, event-paragon-100, event-paragon-101, event-planet-destruction-600, event-toxoids-50, event-planet-destruction-100, event-planet-destruction-200, event-planet-destruction-300, event-planet-destruction-700, event-planet-destruction-800, event-infernals-36, event-planet-destruction-1005, event-planet-destruction-110, event-planet-destruction-400, event-planet-destruction-500, event-planet-destruction-900, event-strange-worlds-1, event-strange-worlds-70, event-strange-worlds-100, event-strange-worlds-125, event-strange-worlds-150, event-strange-worlds-175, event-strange-worlds-30, event-strange-worlds-50, event-strange-worlds-2020, event-fallen-empires-tasks-14, event-fallen-empires-tasks-7, event-fallen-empires-tasks-1, event-fallen-empires-tasks-10, event-fallen-empires-tasks-11, event-fallen-empires-tasks-13, event-fallen-empires-tasks-17, event-fallen-empires-tasks-18, event-fallen-empires-tasks-20, event-fallen-empires-tasks-21, event-fallen-empires-tasks-23, event-fallen-empires-tasks-3, event-crime-50, event-crime-1000, event-crime-1, event-crime-40, event-crime-41, chain-amoebas-1-chain, chain-amoebas-2-chain, chain-cloud-chain, chain-clouds-1-chain, chain-crystals-1-chain, chain-crystals-2-chain, chain-drones-1-chain, chain-holy-war, chain-mineral-planet-chain, event-unrest-50, event-story-220, event-story-222, event-story-330, event-story-332, event-story-335, event-grand-archive-3010, chain-survey-home-system, chain-test-chain, chain-test-chain-2, event-communications-spread-1, event-communications-spread-3, event-plant-105, event-plant-100, event-fallen-empires-100, event-fallen-empires-2, event-strange-worlds-1045, event-strange-worlds-1055, event-cybernetics-5048)
-- New family ids created: great-khan
+- Untouched: 73 (event-paragon-200, event-paragon-549, event-paragon-250, event-paragon-998, event-paragon-100, event-paragon-101, event-planet-destruction-600, event-toxoids-50, event-planet-destruction-100, event-planet-destruction-200, event-planet-destruction-300, event-planet-destruction-700, event-planet-destruction-800, event-infernals-36, event-planet-destruction-1005, event-planet-destruction-110, event-planet-destruction-400, event-planet-destruction-500, event-planet-destruction-900, event-strange-worlds-1, event-strange-worlds-70, event-strange-worlds-100, event-strange-worlds-125, event-strange-worlds-150, event-strange-worlds-175, event-strange-worlds-30, event-strange-worlds-50, event-strange-worlds-2020, event-fallen-empires-tasks-14, event-fallen-empires-tasks-7, event-fallen-empires-tasks-1, event-fallen-empires-tasks-10, event-fallen-empires-tasks-11, event-fallen-empires-tasks-13, event-fallen-empires-tasks-17, event-fallen-empires-tasks-18, event-fallen-empires-tasks-20, event-fallen-empires-tasks-21, event-fallen-empires-tasks-23, event-fallen-empires-tasks-3, event-crime-50, event-crime-1000, event-crime-1, event-crime-40, event-crime-41, chain-amoebas-1-chain, chain-amoebas-2-chain, chain-cloud-chain, chain-clouds-1-chain, chain-crystals-1-chain, chain-crystals-2-chain, chain-drones-1-chain, chain-holy-war, chain-mineral-planet-chain, event-unrest-50, event-story-220, event-story-222, event-story-330, event-story-332, event-story-335, event-grand-archive-3010, chain-survey-home-system, chain-test-chain, chain-test-chain-2, event-communications-spread-1, event-communications-spread-3, event-plant-105, event-plant-100, event-fallen-empires-100, event-fallen-empires-2, event-strange-worlds-1045, event-strange-worlds-1055, event-cybernetics-5048)
+- New family ids created: great-khan, event-country-200, event-country-1000, event-country-1100
 
 ## Per-story results
 
@@ -71,6 +71,49 @@ Each entry: story id (status), title, category change, merged ids, and the struc
 - **event-marauder-4** (reviewed) The End of the [From.GetName] / [From.GetName]的末日. Reviewed as drafted; perspective nodeLabels.
 - **event-marauder-699** (reviewed) [marauder_neighbor_species.GetName] Refugees / [marauder_neighbor_species.GetName]难民. Random pool of 7 one-offs (yearly 20%), exclusive group per draw.
 
+<!-- resume-2026-10-13 begin -->
+### Resume session (2026-10-13)
+
+- **event-game-start-1** (reviewed) Sublight Exploration Probes / 亚光速探测器. Merged story ids: event-country-2, event-country-6, event-country-9, event-country-11, event-country-14, event-country-16, event-country-18, event-country-20. Rebuilt as family over country.1 (+4 encounter types, 3 hostile ends with own/other-kill alternatives, final country.15); old story was a catch-all of every on_game_start root (necroids.2, sites, situations: not mine, see Requests). Gate country.900 documented (game_start.txt:15; country_events_2.txt:17-66).
+- **event-country-50** (reviewed) Habitable Worlds Survey / 宜居星球调查. Merged story ids: event-country-52, event-country-53. Family joins Habitable Worlds Survey (country.50/51/52) with Specimen Procurement (country.53-61, 7 parallel projects) via flag museum_of_exobiology.
+- **event-country-200** (reviewed) Radical Cult / 激进信徒. Merged story ids: event-country-201, event-country-204, event-country-205, event-country-206, event-country-211, event-country-212, event-country-215, event-country-216, event-country-217, event-country-220, event-country-222. New family event-country-200 (old pieces: 201,204,205,206,211,212,215,216,217,220,222 were separate one/two-doc stories; chain now ordered: hijack -> disable -> boarding -> 3 search systems -> debris -> shipyard -> flagship).
+- **event-country-250** (reviewed) The Hunt for the Hyacinth / 追寻风信子号. Merged story ids: event-country-251, event-country-252, event-country-253, event-country-254, event-country-259. New ordering: 250 -> three charted systems (parallel; third spawns the Hyacinth system) -> 254 -> project -> 255 -> 256 dialogues -> 257.
+- **event-country-1000** (reviewed) Wanderlust / 浪迹星涯. Merged story ids: event-country-1002, event-country-1020, event-country-1021, event-country-1030, event-country-1043, event-country-1050, event-country-1060. Family over the three rogue_scientist chains (country.1000-1061) with bridges for system entry and kill/other-kill alternatives; weight-1 starting event.
+- **event-country-1100** (reviewed) Mass Extinction / 大灭绝. Merged story ids: event-country-1102. Family over mass_extinction_chain: five parallel planet classes -> 5 projects -> country.1155 (counter max 5).
+- **event-country-999** (reviewed) Comet Sighted / 发现彗星. Single random-over-time window with ethic-dependent exclusive options (mtth 600 months; once per country).
+- **event-cstorms-1200** (reviewed) A Tale of Two Planets / 双星往事. Checked chain, projects (95/5 and 33/63/4), 50-year collapse timer; groups added.
+- **event-cstorms-1800** (reviewed) Eye of the Storm / 风暴之眼. Eye of the storm: on_storm_entered_system 10%, 8 exclusive per-storm projects, 1805 payoff.
+- **event-cstorms-1810** (reviewed) Drifting Capsule / 漂泊胶囊. Storm in a Box: 1815 location split (1816/1817 exclusive), 1820 a/b, trap project -> 1825 -> 1826. Flag oddity noted (uncertain).
+- **event-cstorms-1310** (reviewed) Stormbound / 困于风暴的舰船. Merged story ids: event-cstorms-1313, event-cstorms-1316, event-cstorms-1317. Family: 1310 -> (800d) 1313 -> 1316 -> 1317 -> project -> 1320 -> 1321; state-triggered on_action links bridged.
+- **event-cstorms-1760** (reviewed) Cosmic Clogging / 宇宙阻塞. Dusty Drink: lithoid / non-lithoid exclusive options; project -> 1765.
+- **event-cstorms-8500** (reviewed) Psionic Switch / 灵能切换. Hidden gatekeeper 8500 (shroud storm, 20%): three exclusive notifications by target type.
+- **event-cstorms-500** (reviewed) Face the Tempest / 直面风暴. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-1700** (reviewed) Hyper-Magnetized Planetary Core / 超磁化行星核心. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-1710** (reviewed) Electrified Oceans / 带电海洋. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-1720** (reviewed) Ghostly Apparitions / 鬼影重重. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-1730** (reviewed) Volcanic Inactivity / 死火山. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-1740** (reviewed) Mountains in the Sky / 天空之山. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-1750** (reviewed) Melting Glaciers / 融化冰川. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-1770** (reviewed) Flightless Fauna / 不飞之羽. Merged story ids: event-cstorms-1775. Family joins 1770/1771 with 1775/1776 via flag set by option c.
+- **event-cstorms-1830** (reviewed) Caravan Fleet: The Racket Industrial Enterprise / 行商舰队：拉奇工业公司. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-8000** (reviewed) Cosmic Alteration / 宇宙调整. Single storm aftermath event (on_storm_left_system); trigger and options checked.
+- **event-cstorms-1417** (reviewed) Won't Get Fooled Again / 错不二犯. Single follow-up to site-site-green-skies (cstorms.1415.b -> 1416 -> fleet destroyed -> 1417 -> 1420). Request for c2: bridge 1416 -> 1420 in site-site-green-skies.
+- **event-action-61** (reviewed) End of the [LastKilledCountryName] / [LastKilledCountryName]的末日. Hub of exclusive country-destroyed notices (ordinary / machine uprising / fallen empire); external links to origin_payback.
+- **event-action-1** (reviewed) First Contact / 第一次接触. Merged story ids: event-action-11. Family over the communications -> first-contact chain; action.1 is also reached from many story events (hub), see callers.
+- **event-action-12** (reviewed) [primitive_civ.GetName] Encountered / 遭遇[primitive_civ.GetName]. Hub: pre-FTL survey classifier (5 exclusive windows by tech age).
+- **event-action-941** (reviewed) Zro Deposit Discovered / 发现泽珞矿藏. Hub: first strategic resource, three exclusive windows by origin.
+- **event-action-81** (reviewed) [From.GetName] Bombarded / [From.GetName]被轰炸. Two perspective windows (former owner / bomber); external link origin.3265.
+- **event-action-85** (reviewed) Colony Lost! / 失去殖民地！. Two perspective notices of a starbase-flip; external link shroud.6700 (origin_mindwardens).
+- **event-action-14** (reviewed) Subjugating [GetPreFTLUpperPlural] / 征服[GetPreFTLUpperPlural]文明. Single window with variant texts.
+- **event-action-37** (reviewed) Victory against the [From.GetName] / 战胜[From.GetName]. Single victory window; sibling of action.48 (all systems claimed).
+- **event-action-38** (reviewed) Defeated by the [From.GetName] / 败给[From.GetName]. Single defeat window.
+- **event-action-39** (reviewed) Status Quo Peace with the [From.GetName] / 与[From.GetName]通过维持现状结束战争. Single status-quo window.
+- **event-action-41** (reviewed) Regroup / 重整队伍. Single notice.
+- **event-action-48** (reviewed) Victory against the [From.GetName] / 战胜[From.GetName]. Single victory-over-destroyed-country window.
+- **event-action-71** (reviewed) Synth Leader Out of Commission / 合成领袖已损坏. Merged story ids: event-action-72, event-action-75, event-action-76. Family of 4 exclusive random leader-death notices.
+- **event-action-90** (reviewed) Outpost Rebuilt! / 哨站已重建！. Single notice; external link origin.7400.
+<!-- resume-2026-10-13 end -->
+
 ## Requests
 
 ### Compiler features (scripts/story_tree.py — not edited)
@@ -105,3 +148,12 @@ Each entry: story id (status), title, category change, merged ids, and the struc
 - **c1-origins / origin_heirs_of_the_khan:** `nomads.600` "The Claimant" (sent to Heirs players when the aspiring Khan spawns,
   marauder_events.txt:7270-7369) and the clan dialogues `marauder.750/755/760/765` (marauder.1 L30-196) are Heirs-of-the-Khan
   content. They are kept as conditional branches in `great-khan` / `event-marauder-1`; the origin guide may want to link them.
+
+<!-- resume-requests begin -->
+### Requests from the 2026-10-13 resume session
+
+- **Residual catch-all `event-game-start-1-x` (unowned):** after the sublight-probe family took `event-game-start-1`, the compiler keeps a residual story of every other on_game_start root (necroids.2, situation_shroud_forged, archaeological sites slingshot_digsite / site_ex_gravitas / broken_shackles_digsite / payback_digsite, fruitful_partnership_chain, nomads.50, situation_fotd_terraforming, evolutionary_predators_situation, shroud.5105). Its owners (c1 origins, c2 sites, c7 situations) should give each root its own story; the compiler should not group unrelated roots that merely share the `on_game_start` caller. The three starting stories that belong to C8b (country.1000 Wanderlust, country.1100 Mass Extinction, country.200 Radical Cult) are now own families.
+- **c2-precursors / site-site-green-skies:** `cstorms.1416` (BATTLESTATIONS) creates a pirate fleet flagged green_skies_pirate_fleet; when it is destroyed on_fleet_destroyed_victim (00_on_actions.txt:1594) fires hidden `cstorms.1417` -> `cstorms.1420` "Won't Get Fooled Again" (cosmic_storms_events_1.txt:2606-2676). Suggest a bridge `cstorms.1416 -> cstorms.1420` in the site story. C8b keeps `event-cstorms-1417` as a one-window story with a note.
+- **Compiler idea:** `on_action` dispatcher events (action.61, action.85, action.941 ...) are treated as entries of many tiny stories; a "notification hub" kind (exclusive windows sent to different perspectives) would help.
+
+<!-- resume-requests end -->

@@ -1,0 +1,75 @@
+{
+ "id": "event-grand-archive-6005",
+ "family": {
+  "title": {
+   "zh": "珍宝藏库",
+   "en": "Treasure Troves"
+  },
+  "category": "stories",
+  "start": "grand_archive.6010",
+  "members": [
+   "grand_archive.6010",
+   "grand_archive.6011",
+   "event_chains:treasure_troves_chain",
+   "special_projects:TREASURE_TROVE",
+   "grand_archive.6015",
+   "grand_archive.6025",
+   "special_projects:TREASURE_TROVE_PIRATES",
+   "grand_archive.6031",
+   "grand_archive.6035"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "special_projects:TREASURE_TROVE",
+   "to": "grand_archive.6025",
+   "conditional": true,
+   "label": {
+    "zh": "科考船在藏库星系采集数据：15% 几率招来海盗",
+    "en": "A science ship collecting data in the trove system: 15% chance of pirates"
+   },
+   "evidence": "events/grand_archive_events.txt:6674-6724 fleet event 6020 (on_entering_system_fleet common/on_actions/00_on_actions.txt:1066) rolls <= 15 once per system, then fires 6025"
+  },
+  {
+   "from": "special_projects:TREASURE_TROVE_PIRATES",
+   "to": "grand_archive.6031",
+   "conditional": true,
+   "label": {
+    "zh": "击毁海盗舰队（成功）",
+    "en": "The pirate fleet is destroyed (success)"
+   },
+   "evidence": "events/grand_archive_events.txt:6769-6819 hidden 6030 (on_fleet_destroyed_perp common/on_actions/00_on_actions.txt:1680) -> 6031 completes the TREASURE_TROVE_PIRATES project"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "grand_archive.6031",
+    "grand_archive.6035"
+   ],
+   "label": {
+    "zh": "海盗伏击的结局",
+    "en": "Pirate ambush outcome"
+   },
+   "note": {
+    "zh": "击毁海盗舰队则成功；项目失败则失去藏库。",
+    "en": "Destroy the fleet to win; fail the project and the trove is lost."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "随机发现珍宝藏库、探索项目、海盗伏击及其胜败。",
+   "en": "Random discovery of treasure troves, the project, the pirate ambush and its outcomes."
+  },
+  "sources": [
+   "events/grand_archive_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-grand-archive-6005.md"
+ }
+}

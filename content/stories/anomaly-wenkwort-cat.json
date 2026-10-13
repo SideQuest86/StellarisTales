@@ -1,0 +1,22 @@
+{
+ "id": "anomaly-wenkwort-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (resumed)",
+  "scope": {
+   "zh": "全部5个文档。",
+   "en": "All 5 docs."
+  },
+  "sources": [
+   "common/anomalies/92_anomaly_categories_federations.txt",
+   "events/federations_events_3.txt",
+   "common/special_projects/00_projects_federations.txt",
+   "common/event_chains/"
+  ],
+  "uncertain": [
+   "生成权重段未完整读取。 / The spawn_chance block was not fully read."
+  ],
+  "guide": "public/summaries/anomaly-wenkwort-cat.md"
+ }
+}

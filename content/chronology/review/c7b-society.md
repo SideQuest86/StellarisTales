@@ -141,3 +141,36 @@ All colony stories in the assignment are done: 10000, 9200, mod-161 (+5 new spli
    9815→9820, 3009(mirror trade options)→3031/3032, 3050→3051.
 3. (cross-link) anomaly.2580 (anomaly-the-lonely-bot-category) places d_hab_lonely_bot_deposit; event-colony-5000
    is its colony sequel. Suggest a cross-story bridge anomaly.2580 → colony.5000 (owner of the anomaly story).
+
+## First contact (resumed session 2026-10-13)
+
+Mechanism (verified in common/first_contact/00_first_contact.txt, 01_..., 99_README, scripted_effects/first_contact_effects.txt):
+first contact is a stage machine. base_contact_set (difficulty 2) fires first_contact.1 (or a special opener by country type);
+its option calls set_first_contact_starting_stage -> default_stage_1 for default empires. Event options call
+set_first_contact_stage <stage>; the stage fires one of its stage_events (weights/conditions in the stage file) when its
+progress roll succeeds; failed rolls draw (1/20, once per 125 days) from early/late/octopodes/enigmatic random pools
+(events/first_contact_random_events.txt = first_contact.5000-5075). The call graph cannot see stage hand-offs, so every
+chain now uses generated bridges (one per set_first_contact_stage call, file:line evidence, difficulty in the label).
+NOTE: record `line` numbers in public/data are "expanded" (inline scripts inserted) and do NOT match the file for
+first_contact_events.txt; all file:line evidence in these guides uses real file lines.
+
+Families (story id = file; absorbed list ids in brackets):
+- event-first-contact-1: encounter + stage 1 (5/10/15/20/25) + stage-2 standard openers 50/60 + early endings 101/102/1020/105
+  + base_contact_set special openers 2000/3000/4000/grand_archive.2800. [absorbs -5, -50, -101, -102, -105]. Bridges: 1 -> 5..25
+  (weights/conditions), every stage-1 option via generated stage bridges.
+- event-first-contact-355 Speaking in Riddles (350,355-358). event-first-contact-375 Monstrous Noises (365,370,375-379,500,505)
+  [absorbs -370,-378,-379]. event-first-contact-405 Apparent Hostility (400,405,406,410,411) [-410,-411].
+  event-first-contact-420 Hummers (415,420,project,422,425) [-425]. event-first-contact-435 Octopodes (430,435,project,437,440) [-440].
+  event-first-contact-480 Poetry (450..490, 12 docs) [-475,-485,-490]. event-first-contact-5071 Colorful Linguistics (5070-5073).
+  event-first-contact-1120 Xeno Dinner Party (1120-1165, 10 docs) [-1125..-1165]. event-first-contact-5085 The Trial (5080,5085,5090,5095)
+  [-5090,-5095]. event-first-contact-385 hive meets regular (380,385). event-first-contact-395 machine meets organics (390,395,397) [-397].
+  event-first-contact-200 hacking route (200,205,206,210,215,216,220) [-220]. event-first-contact-250 hostile first contact:
+  ship capture + abduction + shared ends 285/290/295 (18 docs) [-285,-290,-295,-320] (270/280 "try again" lead into the abduction stage).
+- Critters/NPC chains: -critters-1 (1,5), -10 (single; stage 2 = first_contact_critters.15 lives in origin_primal_calling), -25 (20,25,
+  2 projects,105,107), -35 (30,35,2 projects,205,207), -45 (40,45,project,305), -85 (80,85,project,405), -50 (50,55), -60 (60,65),
+  -70 (70,75), -90 (90,95), -100 (100,105). [absorb -5,-20,-30,-40,-55,-65,-75,-80,-95,-105].
+- Singles: -100, -103, -104 (shared generic closing pages, stage end_stage_proactive/cautious), -1100/-1105/-1110 (reverse-contact
+  notices to the aggressor, 30-35 days after the victim finishes first contact, first_contact_effects.txt:167-215),
+  -5000..-5075 (14 random roll-failure interludes, pool/weight/exclusions documented from first_contact_effects.txt:1295-1795).
+Open: leviathans.98 (delayed follow-up of the special openers via hidden leviathans.97) stays in event-first-contact-1 as compiled
+(c6 owns the leviathan story). 437 Hyperlane Insights also has an on_post_communications_established entry (00_on_actions.txt:2268) not expanded.

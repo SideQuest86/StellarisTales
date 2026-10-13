@@ -78,3 +78,51 @@ Legend: **reviewed** = root/trigger, membership, order, exclusivity, variants an
    the graph drops on_action targets, so their events (cyber.120/160/210/220/260/320/360, cyber.22xx, synth.120…360, owned by
    c7a) are separate one-doc roots. They belong inside my situation stories event-utopia-2500 / event-utopia-2550; I did not
    bridge them (a bridge would silently move another reviewer's roots). Coordinator: decide the owner and merge.
+### Megastructure stage notices — reviewed (10 families; merged 48 one-card stories)
+Pattern: each megastructure fires one country event per completed build stage (`on_build_complete` in common/megastructures/*.txt, or
+on_megastructure_built/_upgraded in 00_on_actions.txt:3658-3716), hidden routers (81, 2001, 4001, 4101) notify other empires, and a map ruin
+(on_entering_system_first_time, 00_on_actions.txt:915-929, star flag ruined_*_system) has its own restoration event. Fixed: the one-card stories are now one story
+per megastructure with stages in build order, neighbour notices and the ruin/restoration thread.
+- event-utopia-2000 Ring World (2000→2003→2004→2005; 2002 from hidden 2001; ruin 2016→2017) · event-utopia-4000 Dyson Sphere (4000→4003→4004→4005; 4002 from hidden 4001; ruin 2010→2011) ·
+  event-utopia-4100 Sentry Array (4100→4103→4104→4110; 4102; ruin 2014→2015) · event-utopia-80 Science Nexus (80→83→85→84→86; 82; ruin 2012→2013) ·
+  event-feda-1 Mega Shipyard (feda.1→2→3; ruin 5→6) · event-mega-9000 Mega Art Installation (9000→9001→9002; ruin 9120→9121) ·
+  event-mega-9003 Strategic Coordination Center (9003→9004→9005; ruin 9110→9111) · event-mega-9006 Interstellar Assembly (9006→9009; ruin 9130→9131) ·
+  event-mega-9010 Matter Decompressor (9010→9013; ruin 9100→9101) · event-over-1 Quantum Catapult (over.1→5→10; ruin over.20→25).
+- Merged ids (no longer stories): event-utopia-2001/2003/2004/2010-2017/4001/4003/4004/4005/4101/4103/4104/81/83/84/85, event-feda-2/3/5/6, event-mega-9001/9002/9004/9005/9007-9009/9011-9013/9100/9101/9110/9111/9120/9121/9130/9131, event-over-5/10/20/25.
+- Uncertain: how ruins are placed (star flags set by system initializers) was not traced; story.5 (generic follow-up of the "fascinating" ruin options) appears as an external link.
+
+### event-utopia-1 / event-utopia-20 / event-utopia-29 / event-utopia-50 / event-over-100 — reviewed
+- utopia.1 (ring-world builder request, MTTH 3600d, megastructure_events_1.txt:13-414): tree correct; builder options 2.a/2.c exclusive by requester ethic.
+- utopia.20 (ring-world construction incident, hidden, :417-640): random 30/30/30, machines excluded from 27; chain 27→28→23→26|25.
+- utopia.29 (Dyson Sphere diplomacy, :645-1352): 35% to fire utopia.30 after 10-17 days; full 30→40 exchange verified.
+- utopia.50 (Science Nexus decade pulse, :1356-2384): 51 Fountain of Youth chain with project chain 100-108, 62 Abducted Leader, 64 Neural Bank;
+  utopia.62's weight modifier (0 when a scientist councillor exists) contradicts its own trigger (requires one) — practically unreachable (uncertain).
+- over.100 (capitals connected via hyper relay, on_capitals_connected 00_on_actions.txt:4913): single notice.
+
+### Arkship (Nomads) — reviewed (26 pool episodes + notices; 4 families)
+Pool: hidden arkship.1 director (nomads_arkship_events.txt:7-49) → generate_arkship_event (nomads_effects.txt:96-117) → on_action mobile_arkship_random_events
+(00_on_actions.txt:3979-4006). Reviewed single episodes: 5, 60, 65 (can happen twice), 95, 105, 125, 1030, 1070, 1075, 1090, 1100, 1120, 1160, 1165, 1170, 1185, 1205,
+1215, 1240, 1385; border/waystation notices 860/870/880/890/900/910.
+- event-arkship-700 A Core Conspiracy: situation_core_conspiracy is a bidirectional tug-of-war (start 50; Steris falls, Caeli rises); the compiler chained the
+  stages in file order (716→705→710→721); fixed by suppress+bridges (705→716 Steris, 710→721 Caeli), threshold events attached with progress labels, endings exclusive (725/730).
+- event-arkship-1300 The Grand Refurbishment: stage chain was right; the 12 monthly pool events were under the situation, now under their stages (one per stage).
+- event-arkship-140 The Eternal Chorus (family: 140, chain page, 141, 142, 150; the project/choice event arkship.145 is in c3b's project story — Request).
+- event-arkship-155 A Diplomatic Overture (family: 155, 156, 160, 165, 170, 175; weights per arkship.160:2507-2576).
+- event-arkship-1020 A Grievous Loss: arkship destroyed/disabled notices 1015/1005 and the wreck project, raid branches only outlined.
+
+### Grand Archive (events/grand_archive_events.txt) — reviewed (35 stories -> 17 stories/families)
+- event-grand-archive-10000 → family "Advanced Controlled Mutations" (10005-10010, 10015, 10020, 10025, 10030 + 10055/10060 Elder Tiyanki, 10075/10080 Voidspawn; trigger on_ship_built
+  250-ship threshold, 00_on_actions.txt:2559 / on_ship_destroyed_perp). Merged: event-grand-archive-10055, -10075.
+- event-grand-archive-4135 Trinkets from our Lessers: homicidal reward events (9 inline_script variants, 3 civics x 3 stages). The compiler wired all nine into a ring
+  because every event re-fires hidden 4130; fixed with suppress of all cross pairs + bridges 4135→4140→4145 per civic + exclusive groups.
+- event-grand-archive-500 Curators: collection reward loop 4120→4121 intro, 4100/4101 loop → 4105/4106/4107 (stage rewards, relics at stage 3); same ring problem fixed (4121→4105→4106→4107).
+- event-grand-archive-4500 Grand Archive Lost (family: 4515, 4510, 4520, 4555, 4560, 4580): merged seven router-only stories (4500, 4501, 4540, 4545, 4550, 4570, 4580);
+  causes: starbase destroyed (loot via 4505), system destroyed, arkship module/waystation lost, system given away, subject integrated; rebuilt via 20_grand_archive.txt:195.
+- event-grand-archive-6005 Treasure Troves (family 6010/6011/chain/TREASURE_TROVE/6015 + pirates 6025/TREASURE_TROVE_PIRATES/6031/6035). Merged: -6020, -6030.
+- event-grand-archive-2005 Voidworms (family 2000→2005→VOIDWORMS_PROJECT→2015); -2000 merged. 2006/2015 are shared with origin_treasure_hunters (C1).
+- event-grand-archive-2051 Voidworms Eradicated (family 2054|2053 exclusive); -2050 merged.
+- event-grand-archive-2102 Voidworm Eradication resolution (2103, 2105, 2107 parallel notices); -2101, -2106 merged. event-grand-archive-3102 Cutholoid resolution (3103, 3105, 3107); -3101, -3106 merged.
+- event-grand-archive-3014 An Unpleasant Surprise (3016): 3014 (cutholoid ambusher destroyed) and 3035 (captured) both end in 3016; -3035 merged. 3016 → 2900 continues in event-grand-archive-3010 (c8b).
+- Single: 2190 Galactic Parasites, 2901 Cutholoids first contact + project, 105 Gravity Snares, 7015 Whalesong, 9000 Captured leaders, 9955 Artificial Breeding.
+- Compile quirk: finish_first_contact_effect in 2005 fans out to unrelated first-contact events (external links cara.1020 ... marauder.15); harmless but noisy (Request 5).
+

@@ -1,0 +1,20 @@
+{
+ "id": "anomaly-strange-signal-category",
+ "review": {
+  "status": "partial",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (resumed)",
+  "scope": {
+   "zh": "事件结构已核对，类别生成条件未核对。",
+   "en": "Event structure checked; category spawn conditions not verified."
+  },
+  "sources": [
+   "events/federations_events_2.txt",
+   "common/anomalies/"
+  ],
+  "uncertain": [
+   "生成条件未核对。 / Spawn conditions not verified."
+  ],
+  "guide": "public/summaries/anomaly-strange-signal-category.md"
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "id": "event-grand-archive-2051",
+ "family": {
+  "title": {
+   "zh": "虚空虫被肃清",
+   "en": "Voidworms Eradicated"
+  },
+  "category": "stories",
+  "start": "grand_archive.2054",
+  "members": [
+   "grand_archive.2054",
+   "grand_archive.2053"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "grand_archive.2054",
+    "grand_archive.2053"
+   ],
+   "label": {
+    "zh": "母巢被毁后的结果",
+    "en": "Result of a nest falling"
+   },
+   "note": {
+    "zh": "仍有其它母巢 → 虚空虫巢穴被毁；最后一个被毁 → 虚空虫被肃清。",
+    "en": "More nests left -> burrow destroyed; the last nest -> eradicated."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "击毁虚空虫母巢系统时的通知：普通母巢被毁与最后一个被毁（虚空虫灭绝）。",
+   "en": "The notices when a Voidworm nest system is destroyed: a single burrow, or the last one (extinction)."
+  },
+  "sources": [
+   "events/grand_archive_events.txt"
+  ],
+  "guide": "public/summaries/event-grand-archive-2051.md"
+ }
+}

@@ -2,25 +2,32 @@
   "category": "rifts",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 47,
-  "docs": 428,
-  "nodes": 601,
-  "refs": 173,
-  "crossLinks": 2,
+  "stories": 41,
+  "docs": 427,
+  "nodes": 602,
+  "refs": 175,
+  "crossLinks": 4,
   "review": {
-    "reviewed": 34,
-    "partial": 1,
-    "unreviewed": 12
+    "reviewed": 41
   },
   "failures": [],
   "items": [
+    {
+      "id": "astral-formless",
+      "title": "无形异使",
+      "kind": "family",
+      "docs": 21,
+      "refs": 7,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
     {
       "id": "rift-crystal",
       "title": "晶体裂隙",
       "kind": "family",
       "docs": 10,
       "refs": 4,
-      "crossLinks": 0,
+      "crossLinks": 1,
       "review": "reviewed"
     },
     {
@@ -55,9 +62,9 @@
       "title": "水晶球体",
       "kind": "family",
       "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "partial"
+      "refs": 1,
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "rift-siege-on-paradise",
@@ -258,15 +265,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-astral-planes-3010",
-      "title": "使者",
-      "kind": "event",
-      "docs": 8,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "rift-dimensional-dump",
       "title": "维度垃圾场",
       "kind": "rift",
@@ -336,16 +334,7 @@
       "docs": 6,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-3110",
-      "title": "无形异使",
-      "kind": "event",
-      "docs": 5,
-      "refs": 5,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-astral-planes-6005",
@@ -357,40 +346,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-astral-planes-3120",
-      "title": "无形异使",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-3000",
-      "title": "我们在哪？",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-3065",
-      "title": "信号传输接入",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-astral-planes-6095",
       "title": "最后的逃亡者",
       "kind": "event",
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-astral-planes-1030",
@@ -399,7 +361,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-astral-planes-110",
@@ -408,7 +370,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-astral-planes-210",
@@ -417,25 +379,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-3050",
-      "title": "无形异使",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-3170",
-      "title": "无形异使",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     }
   ]
 }

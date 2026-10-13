@@ -1,0 +1,163 @@
+{
+ "id": "event-fircon-5000",
+ "family": {
+  "title": {
+   "zh": "哈宾特统一星球国",
+   "en": "Habinte Unified Worlds"
+  },
+  "category": "society",
+  "start": "fircon.5000",
+  "members": [
+   "fircon.5000",
+   "fircon.5005",
+   "fircon.5015",
+   "fircon.5020",
+   "fircon.5026",
+   "fircon.5036",
+   "fircon.5040",
+   "fircon.5050"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "fircon.5000",
+   "to": "fircon.5015",
+   "conditional": true,
+   "label": {
+    "zh": "异常揭示后，进入哈宾特母星系",
+    "en": "After the anomaly reveals them, enter the Habinte home system"
+   },
+   "evidence": "5000.FASCINATING adds anomaly SOLARPUNK_CAT to the border system (events/first_contact_dlc_events.txt:6691-6698); fircon.5010 (anomaly success) sets solarpunk_discovered and star flag solarpunk_system_revealed and creates the Habinte country (6761-6875); 5015 triggers on solarpunk_system_02 without solarpunk_mad (6889-6916); on_entering_system_fleet (common/on_actions/00_on_actions.txt:1050-1052)"
+  },
+  {
+   "from": "fircon.5015",
+   "to": "fircon.5020",
+   "conditional": true,
+   "label": {
+    "zh": "勘测其行星",
+    "en": "Survey one of their planets"
+   },
+   "evidence": "on_survey_planet -> fircon.5020 (00_on_actions.txt:1163), trigger first_contact_dlc_events.txt:7000-7016 (survey of a planet owned by the solarpunk_country, once per empire)"
+  },
+  {
+   "from": "fircon.5015",
+   "to": "fircon.5026",
+   "conditional": true,
+   "label": {
+    "zh": "建造观测站（隐藏5025，60天后）",
+    "en": "Build an observation station (hidden 5025, 60 days later)"
+   },
+   "evidence": "on_building_observation_station -> fircon.5025 (00_on_actions.txt:1956), also via fircon.30 (first_contact_dlc_events.txt:504); 5025 sets observed_solarpunk and fires 5026 after 60 days (7025-7056)"
+  },
+  {
+   "from": "fircon.5015",
+   "to": "fircon.5036",
+   "conditional": true,
+   "label": {
+    "zh": "若入侵或轰炸他们（隐藏5034/5035）",
+    "en": "If they are invaded or bombarded (hidden 5034/5035)"
+   },
+   "evidence": "on_ground_combat_started -> fircon.5034 (00_on_actions.txt:801), on_planet_bombarded -> 5034 (2174), planet-killer queues -> 5035 (common/on_actions/01_planet_destruction.txt:29-206); 5034 sets up 5035 and the upgrade event 5045 (first_contact_dlc_events.txt:7123-7140); 5035 fires 5036 (7142-7214)"
+  },
+  {
+   "from": "fircon.5036",
+   "to": "fircon.5040",
+   "conditional": true,
+   "label": {
+    "zh": "再次进入已愤怒的哈宾特星系",
+    "en": "Enter the angered Habinte system again"
+   },
+   "evidence": "on_entering_system_fleet -> fircon.5040 (00_on_actions.txt:1053), trigger first_contact_dlc_events.txt:7271-7305 (solarpunk_system_02 with solarpunk_mad, first time)"
+  },
+  {
+   "from": "fircon.5026",
+   "to": "fircon.5050",
+   "conditional": true,
+   "label": {
+    "zh": "观测已久且发现已久：礼貌的请求（五年脉冲）",
+    "en": "Long observed and not newly discovered: the polite request (five-year pulse)"
+   },
+   "evidence": "on_five_year_pulse_country -> fircon.5050 (00_on_actions.txt:474), trigger first_contact_dlc_events.txt:7433-7446 (observed_solarpunk, not recently_discovered_solarpunk, not polite_request_fired)"
+  },
+  {
+   "from": "fircon.5050",
+   "to": "fircon.5036",
+   "choice": "fircon.5050.c",
+   "conditional": true,
+   "label": {
+    "zh": "拒绝请求：触发入侵后果",
+    "en": "Refuse: the invasion aftermath fires"
+   },
+   "evidence": "5050.c fires colony_event 5035 on the capital and the upgrade event 5045 (first_contact_dlc_events.txt:7502-7512)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.5000",
+    "fircon.5005"
+   ],
+   "label": {
+    "zh": "边境系统：尚未揭示用5000，已揭示用5005",
+    "en": "Border system: 5000 until revealed, 5005 afterwards"
+   },
+   "note": {
+    "zh": "5000 给系统添加“失踪的星球”异常；5005 仅提示。",
+    "en": "5000 adds the \"Missing Planets\" anomaly to the system; 5005 is informational."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.5036",
+    "fircon.5050"
+   ],
+   "label": {
+    "zh": "愤怒与礼貌两条结局线",
+    "en": "Anger and polite-request lines"
+   }
+  }
+ ],
+ "endings": {
+  "fircon.5036": {
+   "label": {
+    "zh": "温和种族的愤怒",
+    "en": "Anger of a Gentle Race"
+   },
+   "note": {
+    "zh": "入侵/轰炸使哈宾特升级为真正的帝国并敌视你；星系封锁（solarpunk_mad）。",
+    "en": "Invasion/bombardment turns Habinte into a real empire hostile to you; the system closes (solarpunk_mad)."
+   },
+   "evidence": "events/first_contact_dlc_events.txt:7142-7256, 7327-7424"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "哈宾特统一星球国（太阳朋克社会）：接近、发现、观测、愤怒与礼貌的请求。",
+   "en": "Habinte Unified Worlds (Solarpunk Society): approach, discovery, observation, anger and the polite request."
+  },
+  "sources": [
+   "events/first_contact_dlc_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/solar_system_initializers"
+  ],
+  "uncertain": [
+   "The anomaly category anomaly-solarpunk-cat and fircon.5010 \"Grand Theft Planet\" are the middle of this story but belong to an exploration story owned by another reviewer; referenced in text only.",
+   "The \"planet X\" swap that follows 5050.a lives in hidden event 5051 and was not traced line by line."
+  ],
+  "merged": [
+   "event-fircon-5005",
+   "event-fircon-5015",
+   "event-fircon-5020",
+   "event-fircon-5034",
+   "event-fircon-5040",
+   "event-fircon-5050"
+  ],
+  "guide": "public/summaries/event-fircon-5000.md"
+ }
+}

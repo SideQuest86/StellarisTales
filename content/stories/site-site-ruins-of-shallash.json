@@ -1,0 +1,91 @@
+{
+ "id": "site-site-ruins-of-shallash",
+ "family": {
+  "title": {
+   "zh": "被毁灭的恒星系",
+   "en": "Ruined Star System"
+  },
+  "category": "precursors",
+  "start": "archaeological_site_types:site_ruins_of_shallash",
+  "members": [
+   "archaeological_site_types:site_ruins_of_shallash",
+   "federations2.2",
+   "federations2.3",
+   "federations2.4",
+   "federations2.5",
+   "federations2.7",
+   "federations2.6"
+  ],
+  "sources": []
+ },
+ "titleFrom": "archaeological_site_types:site_ruins_of_shallash",
+ "hubs": [
+  "federations2.5"
+ ],
+ "bridges": [
+  {
+   "from": "federations2.4",
+   "to": "federations2.7",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：自毁（有排外堕落帝国时占1/5，否则必然）",
+    "en": "Final stage completed: self-destruction (1 in 5 when a xenophobe Fallen Empire is in contact, otherwise always)"
+   },
+   "evidence": "common/archaeological_site_types/00_base_game_arc_sites.txt:14 last stage event federations2.5 is hidden (events/federations_events_2.txt:262) and fires one of federations2.7, federations2.6 by random_list (1/4); hub marking keeps the compiler from chaining them as consecutive stages"
+  },
+  {
+   "from": "federations2.4",
+   "to": "federations2.6",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：被堕落帝国攻灭（仅当有已通信的狂热排外堕落帝国时，占4/5）",
+    "en": "Final stage completed: conquered by the Fallen Empire (only if a fanatic-xenophobe Fallen Empire is in contact; 4 in 5)"
+   },
+   "evidence": "common/archaeological_site_types/00_base_game_arc_sites.txt:14 last stage event federations2.5 is hidden (events/federations_events_2.txt:262) and fires one of federations2.7, federations2.6 by random_list (1/4); hub marking keeps the compiler from chaining them as consecutive stages"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations2.7",
+    "federations2.6"
+   ],
+   "label": {
+    "zh": "最后阶段的随机结局",
+    "en": "Random final outcomes"
+   },
+   "note": {
+    "zh": "最后阶段完成时只抽取其中一个，不会依次发生。",
+    "en": "Only one is drawn when the last stage completes; they never follow each other."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_ruins_of_shallash",
+   "kind": "review",
+   "zh": "遗址权重为0，由星系初始化器 planet_with_too_many_moons_system 创建（common/solar_system_initializers/federations_initializers.txt:2346）：一颗拥有六颗等距卫星的行星。",
+   "en": "Weight 0: created by the system initializer planet_with_too_many_moons_system (common/solar_system_initializers/federations_initializers.txt:2346), a planet with six equidistant moons."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/00_base_game_arc_sites.txt",
+   "events/federations_events_2.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "common/solar_system_initializers/federations_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-ruins-of-shallash.md"
+ }
+}

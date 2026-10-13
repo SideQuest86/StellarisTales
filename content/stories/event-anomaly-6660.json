@@ -1,0 +1,42 @@
+{
+ "id": "event-anomaly-6660",
+ "family": {
+  "title": {
+   "zh": "异常状况",
+   "en": "Abnormal Conditions"
+  },
+  "category": "exploration",
+  "members": [
+   "anomaly.6660",
+   "anomaly.6661"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.6660",
+    "anomaly.6661"
+   ],
+   "label": {
+    "zh": "按是否机械帝国",
+    "en": "By machine / non-machine empire"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (resumed)",
+  "scope": {
+   "zh": "全部2个文档。",
+   "en": "All 2 docs."
+  },
+  "sources": [
+   "events/anomaly_events_4.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-anomaly-6660.md"
+ }
+}

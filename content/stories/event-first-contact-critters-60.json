@@ -1,0 +1,58 @@
+{
+ "id": "event-first-contact-critters-60",
+ "family": {
+  "title": {
+   "zh": "敌对舰船",
+   "en": "Hostile Vessels"
+  },
+  "category": "society",
+  "start": "first_contact_critters.60",
+  "members": [
+   "first_contact_critters.60",
+   "first_contact_critters.65"
+  ]
+ },
+ "titleFrom": "first_contact_critters.60",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact_critters.60",
+   "to": "first_contact_critters.65",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：pirates_stage_2(难度5)",
+    "en": "Stage: pirates_stage_2 (difficulty 5)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:859 set_first_contact_stage = pirates_stage_2; common/first_contact/01_*.txt:282 fires first_contact_critters.65",
+   "choice": "WORRYING"
+  }
+ ],
+ "endings": {
+  "first_contact_critters.65": {
+   "label": {
+    "zh": "结局：确认为海盗",
+    "en": "Ending: pirates identified"
+   },
+   "note": {
+    "zh": "结束首次接触，后续见海盗篇（pirate.5）。",
+    "en": "First contact ends; continues in the pirate story (pirate.5)."
+   },
+   "evidence": "events/first_contact_NPC_country_types_events.txt:864-889"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "海盗首次接触：2个事件及阶段衔接。",
+   "en": "海盗 first contact: 2 events and the stage hand-off."
+  },
+  "sources": [
+   "events/first_contact_NPC_country_types_events.txt:840-889",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:250-288"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-60.md"
+ }
+}

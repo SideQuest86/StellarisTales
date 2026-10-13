@@ -2,15 +2,15 @@
   "category": "stories",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 641,
-  "docs": 2216,
-  "nodes": 3510,
-  "refs": 1294,
-  "crossLinks": 261,
+  "stories": 611,
+  "docs": 2189,
+  "nodes": 3416,
+  "refs": 1227,
+  "crossLinks": 255,
   "review": {
-    "reviewed": 203,
+    "reviewed": 325,
     "partial": 2,
-    "unreviewed": 436
+    "unreviewed": 284
   },
   "failures": [],
   "items": [
@@ -21,6 +21,15 @@
       "docs": 111,
       "refs": 846,
       "crossLinks": 4,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-paragon-200",
+      "title": "太空创生家艾莎琳",
+      "kind": "family",
+      "docs": 31,
+      "refs": 1,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -46,7 +55,7 @@
       "title": "虚境住民",
       "kind": "family",
       "docs": 25,
-      "refs": 4,
+      "refs": 0,
       "crossLinks": 7,
       "review": "reviewed"
     },
@@ -56,6 +65,15 @@
       "kind": "family",
       "docs": 22,
       "refs": 8,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-grand-archive-10000",
+      "title": "先进可控变异",
+      "kind": "family",
+      "docs": 21,
+      "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -123,6 +141,24 @@
       "review": "reviewed"
     },
     {
+      "id": "event-grand-archive-4135",
+      "title": "次等者的饰品",
+      "kind": "family",
+      "docs": 9,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-grand-archive-6005",
+      "title": "珍宝藏库",
+      "kind": "family",
+      "docs": 9,
+      "refs": 2,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
       "id": "event-cstorms-1310",
       "title": "困于风暴的舰船",
       "kind": "family",
@@ -155,6 +191,15 @@
       "kind": "family",
       "docs": 8,
       "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-action-1",
+      "title": "第一次接触",
+      "kind": "family",
+      "docs": 7,
+      "refs": 5,
       "crossLinks": 1,
       "review": "reviewed"
     },
@@ -195,6 +240,24 @@
       "review": "reviewed"
     },
     {
+      "id": "event-arkship-155",
+      "title": "外交使节",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-grand-archive-4500",
+      "title": "失去博物天枢",
+      "kind": "family",
+      "docs": 6,
+      "refs": 3,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-mega-9006",
       "title": "星际集会",
       "kind": "family",
@@ -208,6 +271,15 @@
       "title": "物质解压器",
       "kind": "family",
       "docs": 6,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-arkship-140",
+      "title": "永恒合唱",
+      "kind": "family",
+      "docs": 5,
       "refs": 0,
       "crossLinks": 1,
       "review": "reviewed"
@@ -285,6 +357,51 @@
       "review": "reviewed"
     },
     {
+      "id": "event-action-71",
+      "title": "合成领袖已损坏",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-grand-archive-2005",
+      "title": "虚空虫",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-grand-archive-3014",
+      "title": "令人不快的意外",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-grand-archive-500",
+      "title": "策展人",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-planet-destruction-600",
+      "title": "圣地",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
       "id": "event-bio-3100",
       "title": "强者生存",
       "kind": "family",
@@ -310,6 +427,24 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "partial"
+    },
+    {
+      "id": "event-grand-archive-2102",
+      "title": "虚空虫灭绝",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-grand-archive-3102",
+      "title": "岩居兽灭绝",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-3050",
@@ -447,6 +582,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-grand-archive-2051",
+      "title": "虚空虫被肃清",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-nomads-3036",
       "title": "搭载代表团",
       "kind": "family",
@@ -478,6 +622,15 @@
       "title": "灵能压制已被拆解",
       "kind": "family",
       "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-paragon-100",
+      "title": "失去金字塔",
+      "kind": "family",
+      "docs": 1,
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
@@ -543,7 +696,7 @@
       "docs": 24,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-utopia-2550",
@@ -570,16 +723,7 @@
       "docs": 18,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-200",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 18,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-namarian-3",
@@ -606,7 +750,7 @@
       "docs": 16,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1385",
@@ -616,15 +760,6 @@
       "refs": 7,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-grand-archive-10000",
-      "title": "太空变形虫变异计划",
-      "kind": "event",
-      "docs": 15,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-apoc-10",
@@ -642,15 +777,6 @@
       "docs": 13,
       "refs": 1,
       "crossLinks": 107,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-250",
-      "title": "最后的花蕾",
-      "kind": "event",
-      "docs": 13,
-      "refs": 0,
-      "crossLinks": 0,
       "review": "unreviewed"
     },
     {
@@ -699,15 +825,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-grand-archive-3010",
-      "title": "救回[this.GetName]",
-      "kind": "event",
-      "docs": 11,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-operation-6100",
       "title": "接头",
       "kind": "event",
@@ -723,7 +840,7 @@
       "docs": 11,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-4650",
@@ -823,15 +940,6 @@
       "refs": 8,
       "crossLinks": 2,
       "review": "reviewed"
-    },
-    {
-      "id": "event-grand-archive-4135",
-      "title": "次等者的饰品",
-      "kind": "event",
-      "docs": 9,
-      "refs": 64,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-operation-5010",
@@ -987,6 +1095,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-grand-archive-3010",
+      "title": "救回[this.GetName]",
+      "kind": "event",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-marauder-699",
       "title": "[marauder_neighbor_species.GetName]难民",
       "kind": "event",
@@ -1056,7 +1173,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1810",
@@ -1140,22 +1257,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-action-1",
-      "title": "第一次接触",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-action-12",
       "title": "遭遇[primitive_civ.GetName]",
       "kind": "event",
       "docs": 5,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-apoc-100",
@@ -1174,24 +1282,6 @@
       "refs": 84,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-grand-archive-6005",
-      "title": "发现珍宝藏库",
-      "kind": "event",
-      "docs": 5,
-      "refs": 2,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-4750",
-      "title": "吞食[Target.GetName]",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
     },
     {
       "id": "event-nomads-8010",
@@ -1347,15 +1437,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-arkship-160",
-      "title": "迈过门槛",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-bio-900",
       "title": "走私人口",
       "kind": "event",
@@ -1455,42 +1536,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-grand-archive-3014",
-      "title": "令人不快的意外",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-3035",
-      "title": "令人不快的意外",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-4550",
-      "title": "失去博物天枢",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-500",
-      "title": "策展人",
-      "kind": "event",
-      "docs": 4,
-      "refs": 7,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-infernals-3030",
       "title": "熔岩运动",
       "kind": "event",
@@ -1560,15 +1605,6 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-planet-destruction-600",
-      "title": "[outraged_FE.GetName]",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
@@ -1671,22 +1707,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-toxoids-50",
-      "title": "[outraged_FE.GetName]",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-action-941",
       "title": "发现泽珞矿藏",
       "kind": "event",
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1020",
@@ -1695,7 +1722,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1075",
@@ -1779,58 +1806,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-grand-archive-10055",
-      "title": "[FromFromFrom.GetShipSizeName]变异计划",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-10075",
-      "title": "[FromFromFrom.GetShipSizeName]变异计划",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-2005",
-      "title": "虚空虫",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-grand-archive-2901",
       "title": "岩居兽",
       "kind": "event",
       "docs": 3,
       "refs": 0,
       "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-4500",
-      "title": "失去博物天枢",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-6020",
-      "title": "海盗伏击",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-marauder-505",
@@ -1920,7 +1902,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3005",
@@ -2049,22 +2031,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-action-11",
-      "title": "通讯已建立",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 6,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-action-81",
       "title": "[From.GetName]被轰炸",
       "kind": "event",
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-85",
@@ -2073,20 +2046,11 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-apoc-11",
       "title": "星门建设完成",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-apoc-3",
-      "title": "遗弃星门",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2110,15 +2074,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-arkship-140",
-      "title": "遥远回声",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
     },
     {
       "id": "event-bio-3000",
@@ -2433,29 +2388,11 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-2040",
       "title": "虚空三头虫尸骸",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-2051",
-      "title": "虚空虫被肃清",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-4540",
-      "title": "失去博物天枢",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2469,7 +2406,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-infernals-2120",
@@ -2514,7 +2451,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-300",
@@ -2523,7 +2460,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-700",
@@ -2532,7 +2469,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-800",
@@ -2541,7 +2478,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-plant-105",
@@ -2685,7 +2622,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-clear-blockers-chain",
@@ -2694,7 +2631,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-deep-scan-chain",
@@ -2703,7 +2640,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-destroy-station-heirs-chain",
@@ -2712,7 +2649,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-find-resources-alloys-internal-chain",
@@ -2721,7 +2658,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-find-resources-energy-internal-chain",
@@ -2730,7 +2667,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-find-resources-minerals-internal-chain",
@@ -2739,7 +2676,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-alloys-chain",
@@ -2748,7 +2685,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-consumer-goods-chain",
@@ -2757,7 +2694,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-energy-chain",
@@ -2766,7 +2703,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-exotic-gases-chain",
@@ -2775,7 +2712,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-minerals-chain",
@@ -2784,7 +2721,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-nanites-chain",
@@ -2793,7 +2730,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-rare-crystals-chain",
@@ -2802,7 +2739,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-sr-living-metal-chain",
@@ -2811,7 +2748,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-harvest-volatile-motes-chain",
@@ -2820,7 +2757,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-host-cfl-tournament-chain",
@@ -2829,7 +2766,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-intercept-raid-heirs-chain",
@@ -2838,7 +2775,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-join-war-chain",
@@ -2847,7 +2784,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-megastructure-support-chain",
@@ -2856,7 +2793,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-onboard-energy-resource-chain",
@@ -2865,7 +2802,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-onboard-engineering-research-chain",
@@ -2874,7 +2811,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-onboard-food-resource-chain",
@@ -2883,7 +2820,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-onboard-minerals-resource-chain",
@@ -2892,7 +2829,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-onboard-physics-research-chain",
@@ -2901,7 +2838,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-onboard-society-research-chain",
@@ -2910,7 +2847,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-pest-control-chain",
@@ -2919,7 +2856,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-prisoner-disposal-chain",
@@ -2928,7 +2865,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-raid-planet-chain",
@@ -2937,7 +2874,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-scan-debris-chain",
@@ -2946,7 +2883,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-crew-1-chain",
@@ -2955,7 +2892,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-crew-2-chain",
@@ -2964,7 +2901,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-crew-3-chain",
@@ -2973,7 +2910,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-crew-4-chain",
@@ -2982,7 +2919,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-crew-5-chain",
@@ -2991,7 +2928,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-passenger-1-chain",
@@ -3000,7 +2937,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-passenger-2-chain",
@@ -3009,7 +2946,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-passenger-3-chain",
@@ -3018,7 +2955,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-passenger-4-chain",
@@ -3027,7 +2964,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-shoreleave-passenger-5-chain",
@@ -3036,7 +2973,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-sightseeing-tour-chain",
@@ -3045,7 +2982,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-stellar-ignition-chain",
@@ -3054,7 +2991,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-crew-1-chain",
@@ -3063,7 +3000,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-crew-2-chain",
@@ -3072,7 +3009,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-crew-3-chain",
@@ -3081,7 +3018,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-crew-4-chain",
@@ -3090,7 +3027,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-crew-5-chain",
@@ -3099,7 +3036,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-passenger-1-chain",
@@ -3108,7 +3045,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-passenger-2-chain",
@@ -3117,7 +3054,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-passenger-3-chain",
@@ -3126,7 +3063,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-passenger-4-chain",
@@ -3135,7 +3072,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-suntrip-passenger-5-chain",
@@ -3144,7 +3081,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-crystals-1-chain",
@@ -3207,7 +3144,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-district-farming-chain",
@@ -3216,7 +3153,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-district-generator-chain",
@@ -3225,7 +3162,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-district-mining-chain",
@@ -3234,7 +3171,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-emancipation-chain",
@@ -3243,7 +3180,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-emancipation2-chain",
@@ -3252,7 +3189,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-fiscal-reserve-chain",
@@ -3261,7 +3198,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-miner-chain",
@@ -3270,7 +3207,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-monthly-alloys-chain",
@@ -3279,7 +3216,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-monthly-consumer-goods-chain",
@@ -3288,7 +3225,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-monthly-energy-chain",
@@ -3297,7 +3234,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-monthly-food-chain",
@@ -3306,7 +3243,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-monthly-minerals-chain",
@@ -3315,7 +3252,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-nationalist-chain",
@@ -3324,7 +3261,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-orbresearch-chain",
@@ -3333,7 +3270,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-peacemaker-chain",
@@ -3342,7 +3279,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-separatist-chain",
@@ -3351,7 +3288,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-shipwright-chain",
@@ -3360,7 +3297,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-slaver-chain",
@@ -3369,7 +3306,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-xenopurge-chain",
@@ -3378,7 +3315,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mineral-planet-chain",
@@ -3486,7 +3423,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-150",
@@ -3558,7 +3495,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-38",
@@ -3567,7 +3504,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-39",
@@ -3576,7 +3513,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-41",
@@ -3585,7 +3522,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-48",
@@ -3594,47 +3531,11 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-601",
       "title": "死亡当空",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-71",
-      "title": "合成领袖已损坏",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-72",
-      "title": "合成领袖已损坏",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-75",
-      "title": "合成领袖已损坏",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-76",
-      "title": "合成领袖已损坏",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -3648,7 +3549,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-apoc-1",
@@ -3739,51 +3640,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-arkship-141",
-      "title": "晶态栅格",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-arkship-142",
-      "title": "任职变更",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-arkship-150",
-      "title": "一份回应",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-arkship-155",
-      "title": "外交示好",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-arkship-156",
-      "title": "代表变更",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-arkship-60",
@@ -4695,134 +4551,17 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-grand-archive-2000",
-      "title": "众声喧哗",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-2050",
-      "title": "虚空虫被肃清",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-2101",
-      "title": "[this.GetSpeciesName]境内的虚空虫",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-2102",
-      "title": "虚空虫灭绝",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-2106",
-      "title": "[this.GetSpeciesName]境内的虚空虫",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-grand-archive-2190",
       "title": "星际寄生虫",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-3025",
       "title": "岩居兽残骸",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-3101",
-      "title": "[this.GetSpeciesName]宇域内的岩居兽",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-3102",
-      "title": "岩居兽灭绝",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-3106",
-      "title": "[this.GetSpeciesName]宇域内的岩居兽",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-4501",
-      "title": "失去博物天枢",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-4545",
-      "title": "失去博物天枢",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-4570",
-      "title": "博物天枢已拆除",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-4580",
-      "title": "生态园重引种计划",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-6030",
-      "title": "击败海盗",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -4836,7 +4575,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-9955",
@@ -4845,7 +4584,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-infernals-30",
@@ -5001,6 +4740,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-nomads-4750",
+      "title": "吞食[Target.GetName]",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-nomads-4800",
       "title": "侵蚀[Target.GetName]",
       "kind": "event",
@@ -5100,24 +4848,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-paragon-100",
-      "title": "失去金字塔",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-paragon-101",
-      "title": "失去金字塔",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-paragon-2-2105",
       "title": "卓越个体",
       "kind": "event",
@@ -5178,7 +4908,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-110",
@@ -5187,7 +4917,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-400",
@@ -5196,7 +4926,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-500",
@@ -5205,7 +4935,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-900",
@@ -5214,7 +4944,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-plant-100",

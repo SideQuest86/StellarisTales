@@ -144,8 +144,10 @@ class Graph:
                 gid = self.group()
                 weights = [x for x in v if x['k'].replace('.', '', 1).isdigit()]
                 total = sum(float(x['k']) for x in weights)
+                # A modifier on any branch (even an empty "nothing" branch) changes every sibling's real chance.
+                any_modified = any(isinstance(b['v'], list) and any(x['k'] in ('modifier', 'weight') for x in b['v']) for b in weights)
                 for branch in weights:
-                    modified = isinstance(branch['v'], list) and any(x['k'] in ('modifier', 'weight') for x in branch['v'])
+                    modified = any_modified
                     e = {'k': 'random_list', 'group': gid, 'weight': float(branch['k']), 'total': total,
                          'branches': len(weights), **({'modified': True} if modified else {})}
                     if isinstance(branch['v'], list):

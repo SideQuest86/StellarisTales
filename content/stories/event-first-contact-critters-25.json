@@ -1,0 +1,91 @@
+{
+ "id": "event-first-contact-critters-25",
+ "family": {
+  "title": {
+   "zh": "大而美味",
+   "en": "Big and Testy"
+  },
+  "category": "society",
+  "start": "first_contact_critters.20",
+  "members": [
+   "first_contact_critters.20",
+   "first_contact_critters.25",
+   "special_projects:AMOEBAS_PROJECT",
+   "story.105",
+   "special_projects:AMOEBAS_PACIFICATION_PROJECT",
+   "story.107"
+  ]
+ },
+ "titleFrom": "first_contact_critters.20",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact_critters.20",
+   "to": "first_contact_critters.25",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：amoeba_stage_2(难度3)",
+    "en": "Stage: amoeba_stage_2 (difficulty 3)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:363 set_first_contact_stage = amoeba_stage_2; common/first_contact/01_*.txt:118 fires first_contact_critters.25",
+   "choice": "first_contact_critters.20.A"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:AMOEBAS_PROJECT",
+    "special_projects:AMOEBAS_PACIFICATION_PROJECT"
+   ],
+   "label": {
+    "zh": "对待变形虫的三条路",
+    "en": "Three ways to treat the amoebas"
+   },
+   "note": {
+    "zh": "25 的选项：A 当作猎物（仅排外/军国/灭绝倾向）→ 永久狩猎加成；B 研究（所有人，终结者另有措辞）→ 研究项目；C 共存（重视他者/和平主义）→ 安抚项目。",
+    "en": "Options of 25: A prey (xenophobe / militarist / homicidal) → permanent hunting bonus; B study (everyone; separate wording for terminator machines) → study project; C coexist (values others / pacifist) → pacification project."
+   }
+  }
+ ],
+ "endings": {
+  "story.105": {
+   "label": {
+    "zh": "结局：永远的太空变形虫",
+    "en": "Ending: space amoebas forever"
+   },
+   "note": {
+    "zh": "研究项目完成：永久“鞭毛运动”（+5%闪避）并给予再生船体组织科技选项与进度。",
+    "en": "Study project: permanent flagellating-movement modifier (+5% evasion) and a regenerative hull tissue research option with progress."
+   },
+   "evidence": "events/story_events.txt:2380-2423"
+  },
+  "story.107": {
+   "label": {
+    "zh": "结局：变形虫被安抚",
+    "en": "Ending: amoebas pacified"
+   },
+   "note": {
+    "zh": "安抚项目完成：永久“被安抚的变形虫”修正，并给予变形虫突击机科技选项。",
+    "en": "Pacification project: permanent pacified-amoebas modifier and the amoeba strike-craft tech option."
+   },
+   "evidence": "events/story_events.txt:2424-2470"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "变形虫首次接触：2个事件、2个项目与两个项目结果事件。",
+   "en": "Amoeba first contact: 2 events, 2 projects and their 2 result events."
+  },
+  "sources": [
+   "events/first_contact_NPC_country_types_events.txt:344-415",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:86-124",
+   "common/special_projects/00_projects_2.txt:498-528"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-25.md"
+ }
+}

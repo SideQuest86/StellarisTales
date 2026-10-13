@@ -1,0 +1,37 @@
+{
+ "id": "event-espionage-20",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "espionage.21",
+    "espionage.22",
+    "espionage.23",
+    "espionage.24",
+    "espionage.25",
+    "espionage.26"
+   ],
+   "label": {
+    "zh": "if / else-if 链，按此顺序",
+    "en": "if / else-if chain in this order"
+   },
+   "note": {
+    "zh": "同族 → 21；蜂巢 → 22；机器 → 23；排外 → 24；亲外 → 25；其余 → 26。",
+    "en": "Same species -> 21; hive -> 22; machine -> 23; xenophobe -> 24; xenophile -> 25; otherwise 26."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "第一个间谍网络建立于前超光速文明：六个按帝国类型选择的互斥窗口。",
+   "en": "First spy network on a pre-FTL civilization: six exclusive windows chosen by empire type."
+  },
+  "sources": [
+   "events/nemesis_espionage_events.txt"
+  ],
+  "guide": "public/summaries/event-espionage-20.md"
+ }
+}

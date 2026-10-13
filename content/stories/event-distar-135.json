@@ -1,0 +1,58 @@
+{
+ "id": "event-distar-135",
+ "family": {
+  "title": {
+   "zh": "拾荒者",
+   "en": "The Scavenger"
+  },
+  "category": "exploration",
+  "start": "distar.135",
+  "members": [
+   "distar.135",
+   "distar.137"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.135",
+   "to": "distar.137",
+   "conditional": true,
+   "label": {
+    "zh": "击毁拾荒机器人",
+    "en": "Destroy the Scavenger Bot"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1460 on_ship_destroyed_perp → distar.137 (events/distant_stars_events_1.txt:4208): the destroyed fleet must be event_target:scavenger_bot_fleet, created by the scavenger_system initializer (common/solar_system_initializers/distant_stars_initializers.txt:2488-2535)."
+  }
+ ],
+ "endings": {
+  "distar.137": {
+   "label": {
+    "zh": "拾荒者被击毁",
+    "en": "The Scavenger is destroyed"
+   },
+   "note": {
+    "zh": "守卫舰队被毁后的奖励与庆典；与实体的相遇到此结束。",
+    "en": "Rewards and celebration after the guardian fleet is destroyed; the encounter ends here."
+   },
+   "evidence": "events/distant_stars_events_1.txt:4208"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:2066 (scavenger_system)",
+   "events/distant_stars_events_1.txt:4138 (distar.135)",
+   "common/on_actions/00_on_actions.txt:1004",
+   "events/distant_stars_events_1.txt:4208 (distar.137)",
+   "common/on_actions/00_on_actions.txt:1460"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-distar-135.md"
+ }
+}

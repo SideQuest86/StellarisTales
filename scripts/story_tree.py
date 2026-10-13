@@ -240,6 +240,7 @@ class Compiler:
         self.container_of = {}
         self.hook_cache = {}
         self.excluded = collections.defaultdict(set)
+        self.warnings = []
         self.defined = read(ROOT / 'public/data/scripted-loc.json')
         self.used_names = set()
 
@@ -933,7 +934,11 @@ class Compiler:
                     self.report['group_members_not_stories'] += len(dropped)
                 missing = [m for m in group.get('members', []) + ([group['gate']] if group.get('gate') else []) if m not in chapters]
                 if missing:
-                    raise ValueError(f'{sid}: reviewed group references docs outside the story: {missing}')
+                    # Usually another reviewer's change moved these docs; keep the rest and report for follow-up.
+                    group['members'] = [m for m in group.get('members', []) if m in chapters]
+                    if group.get('gate') not in chapters:
+                        group.pop('gate', None)
+                    self.warnings.append(f'{sid}: group references docs outside the story: {missing}')
             for rid in ordered_docs:
                 if rid in self.notes:
                     chapters[rid]['notes'] = self.notes[rid]
@@ -1086,7 +1091,8 @@ class Compiler:
                     'unassignedDocs': sorted(r for r in readable if r not in mapping)[:50],
                     'sharedDocs': sum(1 for v in self.appearances.values() if len(v) > 1),
                     'stories': len(stories), 'byCategory': dict(by_category), 'sizes': dict(sizes), 'hubs': len(self.hubs),
-                    'review': {k: dict(v) for k, v in review.items()}, 'orphanFragments': orphans, 'report': dict(self.report)}
+                    'review': {k: dict(v) for k, v in review.items()}, 'orphanFragments': orphans, 'warnings': self.warnings,
+                    'report': dict(self.report)}
         dump(ROOT / 'public/data/story-coverage.json', coverage)
         print(json.dumps(coverage, ensure_ascii=False, indent=1))
 

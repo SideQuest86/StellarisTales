@@ -1,0 +1,53 @@
+{
+ "id": "event-paragon-549",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "paragon.570",
+    "paragon.571"
+   ],
+   "label": {
+    "zh": "机械 / 蜂巢",
+    "en": "Machine / hive"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "paragon.551",
+    "paragon.552",
+    "paragon.553",
+    "paragon.554",
+    "paragon.555",
+    "paragon.556",
+    "paragon.557",
+    "paragon.558",
+    "paragon.559",
+    "paragon.560",
+    "paragon.561",
+    "paragon.562",
+    "paragon.563"
+   ],
+   "label": {
+    "zh": "葬礼选择",
+    "en": "Funeral choices"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/paragon_events.txt:2792-3990",
+   "common/on_actions/00_on_actions.txt (on_leader_death)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-paragon-549.md"
+ }
+}

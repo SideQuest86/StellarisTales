@@ -1,0 +1,99 @@
+{
+ "id": "event-first-contact-critters-35",
+ "family": {
+  "title": {
+   "zh": "活着的晶体？",
+   "en": "Living Crystals?"
+  },
+  "category": "society",
+  "start": "first_contact_critters.30",
+  "members": [
+   "first_contact_critters.30",
+   "first_contact_critters.35",
+   "special_projects:CRYSTALS_PROJECT",
+   "story.205",
+   "special_projects:CRYSTALS_PACIFICATION_PROJECT",
+   "story.207"
+  ]
+ },
+ "titleFrom": "first_contact_critters.30",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact_critters.30",
+   "to": "first_contact_critters.35",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：crystals_stage_2(难度3)",
+    "en": "Stage: crystals_stage_2 (difficulty 3)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:535 set_first_contact_stage = crystals_stage_2; common/first_contact/01_*.txt:159 fires first_contact_critters.35",
+   "choice": "first_contact_critters.30.A"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:CRYSTALS_PROJECT",
+    "special_projects:CRYSTALS_PACIFICATION_PROJECT"
+   ],
+   "label": {
+    "zh": "对待晶体的路线",
+    "en": "Ways to treat the crystals"
+   },
+   "note": {
+    "zh": "35 的选项：A 易猎物（排外/军国/灭绝倾向）→ 永久狩猎加成；B 研究 → 研究项目；C 共存（重视他者/和平/驯兽师）→ 安抚项目。",
+    "en": "Options of 35: A prey → permanent hunting bonus; B study → study project; C coexist → pacification project."
+   }
+  }
+ ],
+ "endings": {
+  "story.205": {
+   "label": {
+    "zh": "结局：晶体不可摧毁",
+    "en": "Ending: crystalline entities are unbreakable"
+   },
+   "note": {
+    "zh": "研究项目完成：永久“晶体专注”（+5%能量）并给予晶体装甲科技选项与进度。",
+    "en": "Study project: permanent crystal-focus modifier (+5% energy) and the crystal-armor research option with progress."
+   },
+   "evidence": "events/story_events.txt:2509-2572"
+  },
+  "story.207": {
+   "label": {
+    "zh": "结局：晶体被安抚",
+    "en": "Ending: crystals pacified"
+   },
+   "note": {
+    "zh": "安抚项目完成：永久“被安抚的晶体”修正，并给予晶体装甲科技选项。",
+    "en": "Pacification project: permanent pacified-crystals modifier and the crystal-armor option."
+   },
+   "evidence": "events/story_events.txt:2573-2620"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact_critters.35",
+   "kind": "review",
+   "zh": "审阅注：35 的 after 块在结束首次接触后，会向本方发出 grand_archive.200（水晶国家 FromFrom=本星系），属大档案（Grand Archive）篇章。",
+   "en": "Review note: the after block of 35 also fires grand_archive.200 for the owner (crystal country, current system) — a Grand Archive follow-up."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "晶体首次接触：2个事件、2个项目与两个项目结果事件。",
+   "en": "Crystal first contact: 2 events, 2 projects and their 2 result events."
+  },
+  "sources": [
+   "events/first_contact_NPC_country_types_events.txt:516-654",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:127-165",
+   "common/special_projects/00_projects_2.txt:530-560"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-35.md"
+ }
+}

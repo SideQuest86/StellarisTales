@@ -1,0 +1,47 @@
+{
+ "id": "event-distar-211",
+ "family": {
+  "title": {
+   "zh": "族母",
+   "en": "The Matriarch"
+  },
+  "category": "exploration",
+  "start": "distar.211",
+  "members": [
+   "distar.211",
+   "distar.212"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.211",
+   "to": "distar.212",
+   "conditional": true,
+   "label": {
+    "zh": "击杀缇扬奇族母",
+    "en": "Kill the Tiyanki Matriarch"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1461 on_ship_destroyed_perp → distar.212 (events/distant_stars_events_1.txt:6600): the destroyed fleet must be event_target:elderly_tiyanki_fleet, created by the elderly_tiyanki_system initializer (common/solar_system_initializers/distant_stars_initializers.txt:2862-2911)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:2702 (elderly_tiyanki_system)",
+   "events/distant_stars_events_1.txt:6536 (distar.211)",
+   "common/on_actions/00_on_actions.txt:1005",
+   "events/distant_stars_events_1.txt:6600 (distar.212)",
+   "common/on_actions/00_on_actions.txt:1461",
+   "common/special_projects/00_projects_distant_stars.txt:1500 (REANIMATE_TIYANKI_MATRIARCH)",
+   "events/galactic_community_events.txt:1161 (galcom.110)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-distar-211.md"
+ }
+}

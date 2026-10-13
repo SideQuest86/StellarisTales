@@ -1,0 +1,113 @@
+{
+ "id": "event-first-contact-200",
+ "family": {
+  "title": {
+   "zh": "深掘数据成功",
+   "en": "Data Delve Successful"
+  },
+  "category": "society",
+  "start": "first_contact.200",
+  "members": [
+   "first_contact.200",
+   "first_contact.205",
+   "first_contact.206",
+   "first_contact.210",
+   "first_contact.215",
+   "first_contact.216",
+   "first_contact.220"
+  ]
+ },
+ "titleFrom": "first_contact.200",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact.200",
+   "to": "first_contact.220",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：入侵收尾阶段(难度1)",
+    "en": "Stage: hacking end stage (difficulty 1)"
+   },
+   "evidence": "first_contact_events.txt:2005 set_first_contact_stage = default_end_stage_hacking; common/first_contact/00_*.txt:927 fires first_contact.220",
+   "choice": "EXCELLENT"
+  },
+  {
+   "from": "first_contact.205",
+   "to": "first_contact.220",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：入侵收尾阶段(难度1)",
+    "en": "Stage: hacking end stage (difficulty 1)"
+   },
+   "evidence": "first_contact_events.txt:2041 set_first_contact_stage = default_end_stage_hacking; common/first_contact/00_*.txt:927 fires first_contact.220",
+   "choice": "first_contact.205.A"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.200",
+    "first_contact.205",
+    "first_contact.210",
+    "first_contact.215"
+   ],
+   "label": {
+    "zh": "入侵结果（四选一，按权重）",
+    "en": "Hack result (one of four, by weight)"
+   },
+   "note": {
+    "zh": "入侵阶段按权重抽取：成功未被发现 200、成功但被发现 205、失败未被发现 210、失败被发现 215（基础权重各1；对方主动政策使成功类 ×1.33，科技领先 ×1.5；对方谨慎使失败类 ×1.2，科技落后 ×1.5；首次接触技能 2/3/4 使失败类 ×0.9/0.8/0.6）。",
+    "en": "The hacking stage draws by weight (base 1 each): clean success 200, detected success 205, clean failure 210, detected failure 215. A proactive contact multiplies the successes by 1.33, a tech lead by 1.5; a cautious contact multiplies the failures by 1.2, a tech deficit by 1.5; first_contact_skill_2/3/4 scale failures by 0.9/0.8/0.6."
+   }
+  }
+ ],
+ "endings": {
+  "first_contact.220": {
+   "label": {
+    "zh": "结局：通讯建立（入侵所得）",
+    "en": "Ending: communications established through hacking"
+   },
+   "note": {
+    "zh": "建立通讯；按已设置的偷取标记复制对方一项物理/社会/工程科技（进度10%）。",
+    "en": "Communications open; copies a random physics / society / engineering technology (10% progress) depending on the flag set."
+   },
+   "evidence": "events/first_contact_events.txt:2170-2378"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact.200",
+   "kind": "review",
+   "zh": "审阅注：入口为 first_contact.50 的选项C（仅非主动政策可选，AI 偏好系数2）；见 event-first-contact-1 篇。",
+   "en": "Review note: entered from option C of first_contact.50 (only for non-proactive policy, AI factor 2); see the event-first-contact-1 story."
+  },
+  {
+   "doc": "first_contact.205",
+   "kind": "review",
+   "zh": "审阅注：205 成功但被发现：随后对方收到 206（入侵被发现）；215 失败被发现：对方收到 216（入侵被挫败）。",
+   "en": "Review note: after a detected success (205) the other side gets 206; after a detected failure (215) it gets 216."
+  },
+  {
+   "doc": "first_contact.210",
+   "kind": "review",
+   "zh": "审阅注：入侵失败但未被发现后，按对方政策回到通用收尾阶段（主动 → proactive，否则 cautious）。",
+   "en": "Review note: after an undetected failure the stage falls back to the generic end stage (proactive or cautious by the contact’s policy)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "入侵路线全部7个事件及阶段衔接。",
+   "en": "The whole hacking route: 7 events and stage hand-offs."
+  },
+  "sources": [
+   "events/first_contact_events.txt:1984-2378",
+   "common/first_contact/00_first_contact.txt:771-935"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-200.md"
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "id": "event-first-contact-critters-45",
+ "family": {
+  "title": {
+   "zh": "太空自动设施",
+   "en": "Space Automata"
+  },
+  "category": "society",
+  "start": "first_contact_critters.40",
+  "members": [
+   "first_contact_critters.40",
+   "first_contact_critters.45",
+   "special_projects:DRONES_PROJECT",
+   "story.305"
+  ]
+ },
+ "titleFrom": "first_contact_critters.40",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact_critters.40",
+   "to": "first_contact_critters.45",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：drones_stage_2(难度5)",
+    "en": "Stage: drones_stage_2 (difficulty 5)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:674 set_first_contact_stage = drones_stage_2; common/first_contact/01_*.txt:200 fires first_contact_critters.45",
+   "choice": "first_contact_critters.40.A"
+  }
+ ],
+ "endings": {
+  "story.305": {
+   "label": {
+    "zh": "结局：采矿无人机的职业道德",
+    "en": "Ending: mining drone work ethic"
+   },
+   "note": {
+    "zh": "项目完成：永久“无人机狩猎加成”和“无人机采矿技术”（+5%矿物；游牧另有版本）。",
+    "en": "Project: permanent drone-hunting buff and drone mining techniques (+5% minerals; a nomad variant)."
+   },
+   "evidence": "events/story_events.txt:2746-2790"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "采矿无人机首次接触：2个事件、1个项目与结果事件。",
+   "en": "Mining-drone first contact: 2 events, 1 project and its result."
+  },
+  "sources": [
+   "events/first_contact_NPC_country_types_events.txt:655-742",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:168-206",
+   "common/special_projects/00_projects_2.txt:562-576"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-45.md"
+ }
+}

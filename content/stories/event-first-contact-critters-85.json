@@ -1,0 +1,69 @@
+{
+ "id": "event-first-contact-critters-85",
+ "family": {
+  "title": {
+   "zh": "活的星际碎片？",
+   "en": "Living Space Debris?"
+  },
+  "category": "society",
+  "start": "first_contact_critters.80",
+  "members": [
+   "first_contact_critters.80",
+   "first_contact_critters.85",
+   "special_projects:CLOUDS_PROJECT",
+   "story.405"
+  ]
+ },
+ "titleFrom": "first_contact_critters.80",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact_critters.80",
+   "to": "first_contact_critters.85",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：void_clouds_stage_2(难度3)",
+    "en": "Stage: void_clouds_stage_2 (difficulty 3)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:1089 set_first_contact_stage = void_clouds_stage_2; common/first_contact/01_*.txt:405 fires first_contact_critters.85",
+   "choice": "first_contact_critters.80.A"
+  }
+ ],
+ "endings": {
+  "story.405": {
+   "label": {
+    "zh": "结局：虚空云散",
+    "en": "Ending: void unclouded"
+   },
+   "note": {
+    "zh": "项目完成：永久“云狩猎加成”和“虚空回路”修正。",
+    "en": "Project: permanent cloud-hunting buff and void-loops modifier."
+   },
+   "evidence": "events/story_events.txt:3201-3240"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact_critters.85",
+   "kind": "review",
+   "zh": "审阅注：两个选项（灵性者 / 其他）都启用同一个研究项目 CLOUDS_PROJECT 并结束首次接触，仅措辞不同。",
+   "en": "Review note: both options (spiritualist / others) enable the same CLOUDS_PROJECT and finish first contact; only the wording differs."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "虚空云首次接触：2个事件、1个项目与结果事件。",
+   "en": "Void-cloud first contact: 2 events, 1 project and its result."
+  },
+  "sources": [
+   "events/first_contact_NPC_country_types_events.txt:1070-1163",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:373-411",
+   "common/special_projects/00_projects_2.txt:578-594"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-85.md"
+ }
+}

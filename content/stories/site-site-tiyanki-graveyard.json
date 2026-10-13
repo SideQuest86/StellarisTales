@@ -1,0 +1,92 @@
+{
+ "id": "site-site-tiyanki-graveyard",
+ "family": {
+  "title": {
+   "zh": "缇扬奇乱坟岗",
+   "en": "Tiyanki Grave Mound"
+  },
+  "category": "precursors",
+  "start": "archaeological_site_types:site_tiyanki_graveyard",
+  "members": [
+   "archaeological_site_types:site_tiyanki_graveyard",
+   "ancrel.14100",
+   "ancrel.14200",
+   "ancrel.14300",
+   "ancrel.14400",
+   "ancrel.14500",
+   "ancrel.14510",
+   "ancrel.14520"
+  ],
+  "sources": []
+ },
+ "titleFrom": "archaeological_site_types:site_tiyanki_graveyard",
+ "hubs": [
+  "ancrel.14500"
+ ],
+ "bridges": [
+  {
+   "from": "ancrel.14400",
+   "to": "ancrel.14510",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：主脑完好（权重5）",
+    "en": "Final stage completed: the core is intact (weight 5)"
+   },
+   "evidence": "common/archaeological_site_types/00_base_game_arc_sites.txt:304 last stage event ancrel.14500 is hidden (events/ancient_relics_arcsite_events_2.txt:10090) and fires one of ancrel.14510, ancrel.14520 by random_list (5/2); hub marking keeps the compiler from chaining them as consecutive stages"
+  },
+  {
+   "from": "ancrel.14400",
+   "to": "ancrel.14520",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：主脑被毁（权重2；排外、尚武或好战灭绝者×2）",
+    "en": "Final stage completed: the core is destroyed (weight 2; x2 for militarist, homicidal or xenophobe owners)"
+   },
+   "evidence": "common/archaeological_site_types/00_base_game_arc_sites.txt:304 last stage event ancrel.14500 is hidden (events/ancient_relics_arcsite_events_2.txt:10090) and fires one of ancrel.14510, ancrel.14520 by random_list (5/2); hub marking keeps the compiler from chaining them as consecutive stages"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.14510",
+    "ancrel.14520"
+   ],
+   "label": {
+    "zh": "最后阶段的随机结局",
+    "en": "Random final outcomes"
+   },
+   "note": {
+    "zh": "最后阶段完成时只抽取其中一个，不会依次发生。",
+    "en": "Only one is drawn when the last stage completes; they never follow each other."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_tiyanki_graveyard",
+   "kind": "review",
+   "zh": "遗址权重为0，由敌对星系初始化器 hostile_init_21 在“缇扬奇坟场星系”生成时创建（common/solar_system_initializers/hostile_system_initializers.txt:3381），全银河最多一处。",
+   "en": "Weight 0: created by the hostile system initializer hostile_init_21 together with the Tiyanki graveyard system (common/solar_system_initializers/hostile_system_initializers.txt:3381); at most one per galaxy."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/00_base_game_arc_sites.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "common/solar_system_initializers/hostile_system_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-tiyanki-graveyard.md"
+ }
+}

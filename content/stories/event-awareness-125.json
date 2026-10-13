@@ -1,0 +1,83 @@
+{
+ "id": "event-awareness-125",
+ "family": {
+  "title": {
+   "zh": "首次接触（前超光速）",
+   "en": "First Contact (pre-FTL)"
+  },
+  "category": "society",
+  "start": "awareness.910",
+  "members": [
+   "awareness.910",
+   "awareness.920",
+   "action.2",
+   "progress.4",
+   "progress.5",
+   "progress.6"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "awareness.910",
+    "awareness.920"
+   ],
+   "label": {
+    "zh": "两个满觉察度入口（另有隐藏的入侵/轰炸入口 awareness.125）",
+    "en": "Two full-awareness entries (plus the hidden invade/bombard entry awareness.125)"
+   },
+   "note": {
+    "zh": "910：觉察度升到“完全”时（on_awareness_level_increase → 900）建立通信；920：由前超光速科技进步局势（preftl.41）在已达完全觉察后触发的“监视者”事件。125：对前超光速行星轰炸或入侵时把觉察度设为100并立即建立联系。",
+    "en": "910: when awareness rises to full (on_awareness_level_increase -> 900) comms are established; 920: fired by the pre-FTL tech-progress situation (preftl.41) once full awareness was reached. 125: bombarding or invading a pre-FTL planet sets awareness to 100 and contacts them at once."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "progress.4",
+    "progress.5",
+    "progress.6"
+   ],
+   "label": {
+    "zh": "按帝国首次接触的情形选择通知",
+    "en": "Notification chosen by the empire's contact situation"
+   },
+   "note": {
+    "zh": "由 action.2 的 after 块按条件选择（progress.9 另有分支，见起源 Payback）。",
+    "en": "Selected by the after block of action.2 (progress.9 branches elsewhere, see the Payback origin)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "action.2",
+   "kind": "review",
+   "zh": "窗口文字取决于被接触文明的觉察度等级（无/低/中/高/完全）与其是否被入侵。",
+   "en": "The window text depends on the contacted civilization's awareness level (none/low/medium/high/full) and whether it is being invaded."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "前超光速文明因完全觉察而首次接触：入侵/轰炸、满觉察度或“监视者”三个入口汇入同一“首次接触”窗口。",
+   "en": "Pre-FTL first contact through awareness: invasion/bombardment, full awareness or \"Who Watches the Watchers\" all converge on one First Contact window."
+  },
+  "sources": [
+   "events/pre_ftl_awareness_events.txt",
+   "events/on_action_events_1.txt",
+   "events/first_contact_dlc_situation_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "action.2 and progress.4/5/6 are also used by ordinary first contact (first_contact.6000), so these windows are shared across stories; here they are only this story's convergence point."
+  ],
+  "merged": [
+   "event-awareness-900",
+   "event-fircon-30"
+  ],
+  "guide": "public/summaries/event-awareness-125.md"
+ }
+}

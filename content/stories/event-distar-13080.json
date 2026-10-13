@@ -1,0 +1,172 @@
+{
+ "id": "event-distar-13080",
+ "family": {
+  "title": {
+   "zh": "L-星团",
+   "en": "The L-Cluster"
+  },
+  "category": "exploration",
+  "start": "distar.13080",
+  "members": [
+   "distar.13080",
+   "event_chains:l_cluster_chain",
+   "distar.9000",
+   "distar.10904",
+   "distar.10901",
+   "distar.10905",
+   "special_projects:LCLUSTER_PROJECT",
+   "distar.10951",
+   "distar.10952",
+   "distar.10953",
+   "distar.10954",
+   "distar.10956",
+   "distar.13010",
+   "distar.13011",
+   "distar.13030",
+   "distar.13020"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "event_chains:l_cluster_chain",
+   "to": "distar.9000",
+   "conditional": true,
+   "label": {
+    "zh": "异常调查后约30%概率得到线索",
+    "en": "About 30% of anomaly follow-ups yield a clue"
+   },
+   "evidence": "common/scripted_effects/00_scripted_effects.txt:3291 pop_lcluster_event (random 7 nothing / 3 → country_event distar.9000 days 10) is called by many anomaly outcomes; it needs has_distar, encountered_first_lgate and a chain whose 7 clues are not complete (events/distant_stars_events_3.txt:1140)."
+  },
+  {
+   "from": "event_chains:l_cluster_chain",
+   "to": "distar.10904",
+   "conditional": true,
+   "label": {
+    "zh": "收集满7条线索",
+    "en": "All 7 clues collected"
+   },
+   "evidence": "common/scripted_effects/00_scripted_effects.txt:3243 generate_lcluster_clue: each clue adds to the l_cluster_chain counter 'clues' (max 7, common/event_chains/00_event_chains_distant_stars.txt:27) and when it is complete fires distar.10904 (events/distant_stars_events_3.txt:1280). Clues also come from the repeatable tech tech_repeatable_lcluster_clue (distar.12000) and many anomaly/event options."
+  },
+  {
+   "from": "distar.10904",
+   "to": "distar.10905",
+   "conditional": true,
+   "label": {
+    "zh": "研究“星门激活”科技且拥有L-星门",
+    "en": "Research the L-Gate activation tech while owning an L-Gate"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:2698 on_tech_increased → distar.10903 (hidden: last_increased_tech = tech_lgate_activation, l_cluster not opened) → distar.10900 (hidden): owns_lgate_megastructure → enable_lgate_project_on_owned_gateway → distar.10905 (events/distant_stars_events_3.txt:1196-1213, common/scripted_effects/00_scripted_effects.txt:3468)."
+  },
+  {
+   "from": "distar.10904",
+   "to": "distar.10901",
+   "conditional": true,
+   "label": {
+    "zh": "研究该科技但没有L-星门",
+    "en": "Research the tech without owning an L-Gate"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1207-1212 distar.10900 else → distar.10901 \"L-Gate Needed\"; option a re-checks every 60 days through hidden distar.10902 until a gate is owned, option b liquidates the clues for resources."
+  },
+  {
+   "from": "event_chains:l_cluster_chain",
+   "to": "distar.10956",
+   "conditional": true,
+   "label": {
+    "zh": "邻国已收集超过5条线索并拥有L-星门",
+    "en": "A neighbour has more than 5 clues and owns an L-Gate"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:107 on_monthly_pulse → distar.10955 (hidden, events/distant_stars_events_3.txt:1498-1566): a human player with the chain or project has communications with a country with chain, num_lcluster_clues > 5 and an lgate_base; that player then gets distar.10956 once per warned country."
+  },
+  {
+   "from": "distar.13010",
+   "to": "distar.13030",
+   "conditional": true,
+   "label": {
+    "zh": "科学船抵达幼龙所在恒星",
+    "en": "A science ship reaches the star where a young L-Drake waits"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1026 on_entering_system_fleet → distar.13030 (events/distant_stars_events_3.txt:2082): a science ship enters a dragon_point system holding a baby nanite space dragon the owner has not visited; option a (not homicidal, not fanatic xenophobe) starts TAME_LDRAGON_PROJECT."
+  },
+  {
+   "from": "distar.13010",
+   "to": "distar.13020",
+   "conditional": true,
+   "label": {
+    "zh": "击杀L-星龙",
+    "en": "Kill an L-Drake"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1463 on_ship_destroyed_perp → distar.13020 (events/distant_stars_events_3.txt:2009): the destroyed ship belongs to a country of type ldragon_country; the reward is larger if the L-Drake was already known (ldragon_known)."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.13010",
+    "distar.10951"
+   ],
+   "label": {
+    "zh": "开启后的结局（开局已决定）",
+    "en": "Outcome after opening (decided at game start)"
+   },
+   "note": {
+    "zh": "开局事件 distar.8000 在启用L-星门时随机：50（若禁用破坏性玩法则为0）灰色风暴危机、30无事、30龙之季、30灰雾帝国（events/distant_stars_events_3.txt:1109-1129）；distar.10950 按全局标志选择 graygoo.1 / distar.13000 / graygoo.100 / distar.10951。",
+    "en": "The game-start event distar.8000 rolls when L-Gates are enabled: 50 gray goo crisis (0 if disruptive gameplay is blocked), 30 nothing, 30 dragon season, 30 gray goo empire (events/distant_stars_events_3.txt:1109-1129); distar.10950 then picks graygoo.1 / distar.13000 / graygoo.100 / distar.10951 by the global flag."
+   }
+  }
+ ],
+ "endings": {
+  "distar.10951": {
+   "label": {
+    "zh": "发现被遗弃的星团",
+    "en": "An abandoned cluster is found"
+   },
+   "note": {
+    "zh": "无危机的结局：L-星团开放，其他L-星门之后每200-700天陆续启用（distar.10960）。",
+    "en": "The quiet ending: the cluster is open and other L-Gates activate one by one every 200-700 days (distar.10960)."
+   },
+   "evidence": "events/distant_stars_events_3.txt:1429"
+  },
+  "distar.13035": {
+   "label": {
+    "zh": "幼龙被驯服",
+    "en": "A young L-Drake is tamed"
+   },
+   "note": {
+    "zh": "项目完成后，该恒星系归你所有。",
+    "en": "After the project the system is yours."
+   },
+   "evidence": "events/distant_stars_events_3.txt:2142"
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "L-星团主线（发现、线索、研究、项目、四种结局入口、龙之季后续）已核对；各线索来源的具体异常逐一列出（约20处）未逐条验证，灰色风暴与灰雾帝国分支属其他故事。",
+   "en": "The main L-Cluster line (discovery, clues, research, project, entries of the four outcomes, dragon-season follow-up) is checked; the individual clue-giving anomalies (about 20) were not verified one by one, and the Gray Tempest / gray goo empire branches belong to other stories."
+  },
+  "sources": [
+   "events/distant_stars_events_3.txt:2366-2410 (distar.13080)",
+   "events/apocalypse_events.txt:80-98 (apoc.3, same chain start)",
+   "common/event_chains/00_event_chains_distant_stars.txt:25 (l_cluster_chain, max 7 clues)",
+   "common/scripted_effects/00_scripted_effects.txt:3243 (generate_lcluster_clue)",
+   "common/scripted_effects/00_scripted_effects.txt:3291 (pop_lcluster_event)",
+   "events/distant_stars_events_3.txt:1141 (distar.9000)",
+   "events/distant_stars_events_3.txt:1280 (distar.10904)",
+   "common/on_actions/00_on_actions.txt:2698 (distar.10903)",
+   "events/distant_stars_events_3.txt:1196-1303 (distar.10900-10905)",
+   "common/special_projects/00_projects_distant_stars.txt:650 (LCLUSTER_PROJECT)",
+   "events/distant_stars_events_3.txt:1331-1428 (distar.10950)",
+   "events/distant_stars_events_3.txt:1109-1129 (distar.8000)",
+   "events/distant_stars_events_3.txt:1812-2142 (distar.13000-13035)",
+   "events/distant_stars_events_3.txt:1498-1566 (distar.10955/10956)"
+  ],
+  "uncertain": [
+   "The roughly 20 events that call generate_lcluster_clue / pop_lcluster_event (anomalies, distar.12000 tech, artifact action, crisis.8060 etc.) are summarised as one bridge from the chain, not listed individually; their gates (e.g. crisis.8060 requires has_event_chain = l_cluster_chain) were not each verified.",
+   "apoc.3 (surveyed L-Gate) starts the same chain in another story (event-apoc-3); the two entries are described together in the guide but only distar.13080 is in this story."
+  ],
+  "guide": "public/summaries/event-distar-13080.md"
+ }
+}

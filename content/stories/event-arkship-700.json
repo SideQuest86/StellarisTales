@@ -1,0 +1,242 @@
+{
+ "id": "event-arkship-700",
+ "bridges": [
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.705",
+   "conditional": true,
+   "label": {
+    "zh": "偏向 S.T.E.R.I.S.：进度降到 40 以下（阶段二）",
+    "en": "Steris side: progress falls to 40 or below (stage 2)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:867-876 stage_2 end = 40, on_first_enter fires arkship.705 (progress starts at 50, falls 1 per month under approach_steris, lines 786-796)"
+  },
+  {
+   "from": "arkship.705",
+   "to": "arkship.716",
+   "conditional": true,
+   "label": {
+    "zh": "继续降到 20 以下（阶段三）",
+    "en": "Progress falls to 20 or below (stage 3)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:857-865 stage_3 end = 20, on_first_enter fires arkship.716"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.710",
+   "conditional": true,
+   "label": {
+    "zh": "偏向 C.A.E.L.I.：进度升到 60 以上（阶段二）",
+    "en": "Caeli side: progress rises to 60 or more (stage 2)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:884-892 stage_2_alt end = 80, on_first_enter fires arkship.710"
+  },
+  {
+   "from": "arkship.710",
+   "to": "arkship.721",
+   "conditional": true,
+   "label": {
+    "zh": "继续升到 80 以上（阶段三）",
+    "en": "Progress rises to 80 or more (stage 3)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:894-902 stage_3_alt end = 100, on_first_enter fires arkship.721"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.715",
+   "conditional": true,
+   "label": {
+    "zh": "每月检查：进度 ≤ 30 且未发生过",
+    "en": "Monthly check: progress at most 30, once"
+   },
+   "evidence": "events/nomads_arkship_events.txt:3148-3151 arkship.715 trigger situation_progress <= 30; common/situations/14_nomads_situations.txt:913-919 on_monthly events"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.717",
+   "conditional": true,
+   "label": {
+    "zh": "每月检查：进度 ≤ 2 且未发生过",
+    "en": "Monthly check: progress at most 2, once"
+   },
+   "evidence": "events/nomads_arkship_events.txt:3267-3270 trigger situation_progress <= 2"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.720",
+   "conditional": true,
+   "label": {
+    "zh": "每月检查：进度 ≥ 70 且未发生过",
+    "en": "Monthly check: progress at least 70, once"
+   },
+   "evidence": "events/nomads_arkship_events.txt:3332-3335 trigger situation_progress >= 70"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.722",
+   "conditional": true,
+   "label": {
+    "zh": "每月检查：进度 ≥ 98 且未发生过",
+    "en": "Monthly check: progress at least 98, once"
+   },
+   "evidence": "events/nomads_arkship_events.txt:3451-3454 trigger situation_progress >= 98"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.725",
+   "conditional": true,
+   "label": {
+    "zh": "进度降到 0：主逻辑覆写（S.T.E.R.I.S. 获胜）",
+    "en": "Progress reaches 0: Primary Logic Override (Steris wins)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:849-854 on_fail fires arkship.725 (progress_direction = bidirectional, line 775)"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.730",
+   "conditional": true,
+   "label": {
+    "zh": "进度升到 100：主情感覆写（C.A.E.L.I. 获胜）",
+    "en": "Progress reaches 100: Primary Emotional Override (Caeli wins)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:905-910 on_progress_complete fires arkship.730"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.750",
+   "conditional": true,
+   "label": {
+    "zh": "每月 1/37 的几率（进度 ≥ 90，C.A.E.L.I. 一侧的插曲）",
+    "en": "Monthly 1/37 chance once progress >= 90 (Caeli-side interlude)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:920-929 on_monthly random_events 30 none + 1 each; events/nomads_arkship_events.txt:3628 trigger on situation_progress"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.755",
+   "conditional": true,
+   "label": {
+    "zh": "每月 1/37 的几率（进度 ≥ 90，C.A.E.L.I. 一侧的插曲）",
+    "en": "Monthly 1/37 chance once progress >= 90 (Caeli-side interlude)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:920-929 on_monthly random_events 30 none + 1 each; events/nomads_arkship_events.txt:3683 trigger on situation_progress"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.770",
+   "conditional": true,
+   "label": {
+    "zh": "每月 1/37 的几率（进度 ≥ 90，C.A.E.L.I. 一侧的插曲）",
+    "en": "Monthly 1/37 chance once progress >= 90 (Caeli-side interlude)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:920-929 on_monthly random_events 30 none + 1 each; events/nomads_arkship_events.txt:3855 trigger on situation_progress"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.760",
+   "conditional": true,
+   "label": {
+    "zh": "每月 1/37 的几率（进度 ≤ 10，S.T.E.R.I.S. 一侧的插曲）",
+    "en": "Monthly 1/37 chance once progress <= 10 (Steris-side interlude)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:920-929 on_monthly random_events 30 none + 1 each; events/nomads_arkship_events.txt:3738 trigger on situation_progress"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.765",
+   "conditional": true,
+   "label": {
+    "zh": "每月 1/37 的几率（进度 ≤ 10，S.T.E.R.I.S. 一侧的插曲）",
+    "en": "Monthly 1/37 chance once progress <= 10 (Steris-side interlude)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:920-929 on_monthly random_events 30 none + 1 each; events/nomads_arkship_events.txt:3797 trigger on situation_progress"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.775",
+   "conditional": true,
+   "label": {
+    "zh": "每月 1/37 的几率（进度 ≤ 10，S.T.E.R.I.S. 一侧的插曲）",
+    "en": "Monthly 1/37 chance once progress <= 10 (Steris-side interlude)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:920-929 on_monthly random_events 30 none + 1 each; events/nomads_arkship_events.txt:3913 trigger on situation_progress"
+  },
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.780",
+   "conditional": true,
+   "label": {
+    "zh": "每月 1/37 的几率（进度 ≤ 10，S.T.E.R.I.S. 一侧的插曲）",
+    "en": "Monthly 1/37 chance once progress <= 10 (Steris-side interlude)"
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:920-929 on_monthly random_events 30 none + 1 each; events/nomads_arkship_events.txt:3968 trigger on situation_progress"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "situations:situation_core_conspiracy",
+   "to": "arkship.716",
+   "evidence": "common/situations/14_nomads_situations.txt:857-902 stages are two opposed sides of one tug-of-war, not a sequence 716 -> 705 -> 710 -> 721; re-parented by bridges"
+  },
+  {
+   "from": "arkship.716",
+   "to": "arkship.705",
+   "evidence": "common/situations/14_nomads_situations.txt:857-875 stage_3 (progress <= 20) and stage_2 (<= 40) are Steris-side bands reached in the order 705 then 716"
+  },
+  {
+   "from": "arkship.705",
+   "to": "arkship.710",
+   "evidence": "common/situations/14_nomads_situations.txt:867-892 stage_2 (Steris) and stage_2_alt (Caeli) are opposite sides; no stage sequence between them"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "arkship.725",
+    "arkship.730"
+   ],
+   "label": {
+    "zh": "两种结局",
+    "en": "Two endings"
+   },
+   "note": {
+    "zh": "进度降到 0 或升到 100，二者只会出现其一。",
+    "en": "Progress reaches 0 or 100; only one ending happens."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "arkship.705": {
+   "zh": "S.T.E.R.I.S.：阶段二",
+   "en": "Steris stage 2"
+  },
+  "arkship.716": {
+   "zh": "S.T.E.R.I.S.：阶段三",
+   "en": "Steris stage 3"
+  },
+  "arkship.710": {
+   "zh": "C.A.E.L.I.：阶段二",
+   "en": "Caeli stage 2"
+  },
+  "arkship.721": {
+   "zh": "C.A.E.L.I.：阶段三",
+   "en": "Caeli stage 3"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "方舟随机事件“核心阴谋”：退出事件、选边、情境“核心阴谋”的双向拉锯、各进度阈值事件、随机插曲与两种结局。",
+   "en": "The arkship random episode A Core Conspiracy: opt-out event, siding, the tug-of-war situation with its progress-threshold events, random interludes and two endings."
+  },
+  "sources": [
+   "events/nomads_arkship_events.txt",
+   "common/situations/14_nomads_situations.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-arkship-700.md"
+ }
+}

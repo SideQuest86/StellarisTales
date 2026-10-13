@@ -1,0 +1,69 @@
+{
+ "id": "event-first-contact-critters-70",
+ "family": {
+  "title": {
+   "zh": "未知舰船",
+   "en": "Unknown Vessels"
+  },
+  "category": "society",
+  "start": "first_contact_critters.70",
+  "members": [
+   "first_contact_critters.70",
+   "first_contact_critters.75"
+  ]
+ },
+ "titleFrom": "first_contact_critters.70",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact_critters.70",
+   "to": "first_contact_critters.75",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：caravaneers_stage_2(难度5)",
+    "en": "Stage: caravaneers_stage_2 (difficulty 5)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:994 set_first_contact_stage = caravaneers_stage_2; common/first_contact/01_*.txt:364 fires first_contact_critters.75",
+   "choice": "first_contact_critters.70.A"
+  },
+  {
+   "from": "first_contact_critters.70",
+   "to": "first_contact_critters.75",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：caravaneers_stage_2(难度5)",
+    "en": "Stage: caravaneers_stage_2 (difficulty 5)"
+   },
+   "evidence": "first_contact_NPC_country_types_events.txt:1001 set_first_contact_stage = caravaneers_stage_2; common/first_contact/01_*.txt:364 fires first_contact_critters.75",
+   "choice": "first_contact_critters.70.E"
+  }
+ ],
+ "endings": {
+  "first_contact_critters.75": {
+   "label": {
+    "zh": "结局：商队",
+    "en": "Ending: the caravaneers"
+   },
+   "note": {
+    "zh": "结束首次接触；商队后续见 cara 篇。",
+    "en": "First contact ends; caravaneer follow-ups are in the cara stories."
+   },
+   "evidence": "events/first_contact_NPC_country_types_events.txt:1006-1069"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "商队首次接触：2个事件及阶段衔接。",
+   "en": "商队 first contact: 2 events and the stage hand-off."
+  },
+  "sources": [
+   "events/first_contact_NPC_country_types_events.txt:890-1069",
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:332-370"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-70.md"
+ }
+}

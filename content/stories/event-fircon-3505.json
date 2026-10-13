@@ -1,0 +1,61 @@
+{
+ "id": "event-fircon-3505",
+ "family": {
+  "title": {
+   "zh": "天选民",
+   "en": "The Chosen"
+  },
+  "category": "society",
+  "start": "fircon.3510",
+  "members": [
+   "fircon.3510",
+   "fircon.3515"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.3510",
+    "fircon.3515"
+   ],
+   "label": {
+    "zh": "通过虫洞现身 / 一般首次接触",
+    "en": "Wormhole emergence / ordinary first contact"
+   },
+   "note": {
+    "zh": "3505：天选民舰队通过虫洞进入尚未建立联络的帝国领地；3515：在天选民系统发生首次接触。二者都以灭绝战争收场。",
+    "en": "3505: the Chosen's fleet jumps through a wormhole into an empire without comms; 3515: ordinary first contact in the chosen system. Both end in a cleansing war."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "fircon.3510",
+   "kind": "review",
+   "zh": "入口隐藏事件 fircon.3500 生成天选民家园系统（距离30–75，向边缘方向，无超空间航道）；3505 为虫洞触发（隐藏），向所有有情报的玩家国家发出本事件。",
+   "en": "Hidden entry fircon.3500 spawns the Chosen home system (distance 30-75, rimwards, no hyperlane); hidden 3505 (on_entering_wormhole) sends this event to every empire with intel."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "天选民：被隐藏的帝国从虫洞现身，邻国得知并被宣战；或首次接触时被宣战。",
+   "en": "The Chosen: a hidden empire emerges through a wormhole and declares cleansing war on contact."
+  },
+  "sources": [
+   "events/first_contact_dlc_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "events/ancient_relics_arcsite_events_2.txt"
+  ],
+  "uncertain": [
+   "fircon.3500 is fired by a random branch of ancrel.12050 (an ancient-relics story owned by another reviewer); recorded here only as the entry."
+  ],
+  "merged": [
+   "event-fircon-3515"
+  ],
+  "guide": "public/summaries/event-fircon-3505.md"
+ }
+}

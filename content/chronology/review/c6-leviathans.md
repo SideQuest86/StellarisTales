@@ -70,3 +70,34 @@ Assignment: `content/chronology/review/assignments/c6-leviathans.txt` (69 story 
    already a root, or add a `crossLink: true` bridge flag).
 5. C7 (fircon.1212, first_contact_dlc_events.txt:711) sets `knows_jaunting_traveler_story`, which unlocks the
    "Veilfarer" question at the Salvager/Shroudwalker menus (enclave.7110). A cross-link from fircon.1212 would help.
+
+### Batch 2 — carried over from the first session (reviewed 2026-10-12, recorded here on resume 2026-10-13)
+| Story | Status | Notes |
+| --- | --- | --- |
+| trader-enclaves | reviewed | family: XuraCorp / Riggan / Muutagan menus (105/106/107), deals 130-135/150-152, hidden routers 100/101 folded; 98 greeting hub. Assigned ids 100, 101, 155, 157, 160, 163, 170 map here. |
+| artisan-troupe | reviewed | assigned ids 285, 290, 351, 354 map here. |
+| curators | reviewed | assigned ids incl. 500-600 range via family. |
+| infinity-machine | reviewed | |
+| event-leviathans-98 | reviewed | first-contact greeting router hub. |
+
+### Batch 3 — guardians (reviewed 2026-10-13, resume session)
+| Story (new family id) | Absorbs assigned ids | Verdict / key evidence / corrections |
+| --- | --- | --- |
+| enigmatic-fortress | event-leviathans-2099, -2100 | family start 2105 (approach), entries 2101 (on_ship_disabled -> hidden 2100) and 2099 (on_ship_destroyed_perp). Projects 1A/1B and 5A-5D are exclusive via same_option_group_as (00_projects_leviathans.txt:191,243,269,295). Tower puzzle 2131: only option c continues; 2113.a/2114 and 2152 a/c are failures; failures all restart the fortress. Ending 2157 (force) wrecks the system. Gestalt shortcut at 2099.c.gesta. |
+| situation-leviathan-celebration-opportunity | (itself) | **Correction:** compiler chained the eleven stage_2 events (1045..1120) as a sequence; they are fired together by on_first_enter but each gates on its celebration_* trophy flag, so they are exclusive alternatives. Fixed with 10 suppress + 10 bridges + exclusive group. 1000/1005 gestalt split; 1085 -> 1090 -> 1095 only for the Horrific Inverse Mass trophies (set_celebration_modifier, 00_scripted_effects.txt:5897+). 16 start_situation callers listed in notes. |
+| stellar-devourer | event-leviathans-999, -1001, -1016 | 999 (7 d) -> 1000 spawn; 1001 alt notice; 1016 on kill (bridge); 1016.a project vs .c celebration; 1017.a/b; 1018 70:30. Hidden combat events 1005-1015 not modelled. |
+| ether-drake | event-leviathans-610, -648, -650, -670 | 610 encounter; 649/650 retaliation notices (bridges with HP 15-80% condition); 670 kill (3 options by can_harvest_dna / is_reanimator) -> REANIMATE project -> 675. |
+| dragons-hoard | event-leviathans-660, -662 | hidden 660 (mining station) / 662 (system gained) schedule 661 bones and 663 egg independently (1 d + 0-18000 d); incubation project 50000, 1800 d; 664/665. |
+| spectral-wraith | event-leviathans-2010, -2011, -2014, -2061 | survey 2010 -> mid-game pulse 2011 spawn -> 2012 / 2013 (exclusive via guardians_wraith_encountered) -> 2014. 20101 removes the pulsar flag if not surveyed in time. |
+| dimensional-horror | event-leviathans-3000, -3002 | 3000 hidden spawn (disabled 8 d, 3220), 3001 notice, 3002 hidden kill -> 3003 (6 d) -> project -> 3004. |
+| automated-dreadnought | event-leviathans-3100, -3101 | 3100 -> hidden 3101 -> 3102 (a project / b salvage / c harvest) -> 3103. |
+| hive-asteroids | event-leviathans-3202, -3203, -3210 | 3202 entry; mining -> hidden 3200/3210 (MTTH 100 y, x0.3 per hive asteroid) -> 3201 attack (sets provoked_hivers) -> hidden 3203 -> 3204 -> project -> 3205; Void Hive coexistence: 3202.b EXPLOIT_HIVERS -> 3230. |
+| event-leviathans-4 | (itself) | shared "Leviathan Defeated" notices: hidden 4 -> 6 (2 d) -> 5 / observer.1. |
+| shroudwalkers-depart | event-enclave-4239, -4244 | gatekeepers 4239 (external crisis) / 4244 (player crisis level 5) -> 4240 / 4245; exclusive via global flag shroudwalkers_departed. Warning enclave.4243 belongs to origin_shroudwalker_apprentice (C1). |
+
+Assignment coverage: all 69 ids are covered (reviewed fragments or merged into reviewed families); no `partial` stories.
+
+### Requests (added on resume)
+7. **Compiler: situation stage lists.** `stage_sequence()` (scripts/story_tree.py:555) chains every event fired from a situation's `stages` in definition order. For situations where one stage fires several mutually exclusive events (leviathan_celebration_opportunity stage_2), this is wrong; C6 worked around it with suppress+bridges. A reviewed per-situation switch (e.g. `stageMode: "parallel"`) would be cleaner.
+8. **Owner decision:** `enclave.4243` (Teachers' Warning) lives in `origin_shroudwalker_apprentice`; C1 may want a cross-link to the new `shroudwalkers-depart` family.
+9. New C6 family ids (potential name clashes with other agents): enigmatic-fortress, stellar-devourer, ether-drake, dragons-hoard, spectral-wraith, dimensional-horror, automated-dreadnought, hive-asteroids, shroudwalkers-depart.

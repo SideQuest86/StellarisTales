@@ -153,7 +153,10 @@ def import_game(game):
                     template=template.replace('$'+param['k']+'$',value)
             inline_uses[origin].add(files[path][1])
             template=expand_inline(template,origin,stack+(path,))
-            replacements.append((n['s'],n['e'],template))
+            # Keep the caller's line numbering: the template is flattened (comments removed) onto the call's own
+            # line, padded with as many newlines as the original call spanned. Parsing ignores line breaks.
+            flat=' '.join(re.sub(r'("(?:\\.|[^"\\])*")|#[^\n]*',lambda m:m.group(1) or '',line) for line in template.splitlines())
+            replacements.append((n['s'],n['e'],flat+'\n'*text.count('\n',n['s'],n['e'])))
         for start,end,replacement in reversed(replacements): text=text[:start]+replacement+text[end:]
         return text
     for name,(data,origin) in files.items():

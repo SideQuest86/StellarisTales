@@ -1,0 +1,106 @@
+{
+ "id": "site-site-engineered-species",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "arcsite.2001",
+    "arcsite.2002"
+   ],
+   "label": {
+    "zh": "第一阶段：研究或展览",
+    "en": "Stage 1: study or exhibit"
+   },
+   "labels": [
+    {
+     "zh": "研究化石（计1次研究）",
+     "en": "Study the fossils (counts as a study)"
+    },
+    {
+     "zh": "行星际展览",
+     "en": "Interplanetary exhibition"
+    }
+   ],
+   "note": {
+    "zh": "由 arcsite.2000 的选项决定，30天后触发；选“研究”使变量 studied_engineered_species +1。",
+    "en": "Decided by the option of arcsite.2000 and fired 30 days later; \"study\" adds 1 to studied_engineered_species."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "arcsite.2011",
+    "arcsite.2012"
+   ],
+   "label": {
+    "zh": "第二阶段：历史或日常",
+    "en": "Stage 2: history or daily life"
+   },
+   "labels": [
+    {
+     "zh": "保存历史（计1次研究）",
+     "en": "Preserve the history (counts as a study)"
+    },
+    {
+     "zh": "保存日常生活",
+     "en": "Preserve the daily life"
+    }
+   ],
+   "note": {
+    "zh": "由 arcsite.2010 的选项决定。",
+    "en": "Decided by the option of arcsite.2010."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "arcsite.2021",
+    "arcsite.2022"
+   ],
+   "label": {
+    "zh": "第三阶段：建筑或内部",
+    "en": "Stage 3: building or interior"
+   },
+   "labels": [
+    {
+     "zh": "研究建筑（计1次研究）",
+     "en": "Study the building (counts as a study)"
+    },
+    {
+     "zh": "研究内部",
+     "en": "Study the interior"
+    }
+   ],
+   "note": {
+    "zh": "由 arcsite.2020 的选项决定。",
+    "en": "Decided by the option of arcsite.2020."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_engineered_species",
+   "kind": "review",
+   "zh": "随机遗址：勘察时按权重抽取，权重+25，出现在可居住星球上；全银河最多一处（common/archaeological_site_types/00_base_game_arc_sites.txt:429）。",
+   "en": "A random site: drawn by weight on survey, +25 on habitable planets, at most one per galaxy (common/archaeological_site_types/00_base_game_arc_sites.txt:429)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/00_base_game_arc_sites.txt",
+   "events/arcsite_events.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-engineered-species.md"
+ }
+}

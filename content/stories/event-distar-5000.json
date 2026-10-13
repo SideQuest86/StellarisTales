@@ -1,0 +1,158 @@
+{
+ "id": "event-distar-5000",
+ "family": {
+  "title": {
+   "zh": "有脉搏的星球",
+   "en": "A Planet with a Pulse"
+  },
+  "category": "exploration",
+  "start": "distar.5010",
+  "members": [
+   "distar.5010",
+   "distar.5003",
+   "distar.5013",
+   "distar.5005",
+   "distar.5007",
+   "distar.5011",
+   "distar.5009",
+   "distar.5015"
+  ]
+ },
+ "suppress": [
+  {
+   "from": "distar.5010",
+   "to": "distar.5005",
+   "evidence": "The draft attaches the later stages to distar.5010 through hidden carrier events; the real order is 5010 → (5002) 5003 → (5004) 5005 → (5006) 5007 (events/distant_stars_events_3.txt:113-553)."
+  },
+  {
+   "from": "distar.5010",
+   "to": "distar.5007",
+   "evidence": "Same: the hatching (5007) comes only after 5003 and 5005 (events/distant_stars_events_3.txt:288-553)."
+  },
+  {
+   "from": "distar.5010",
+   "to": "distar.5013",
+   "evidence": "5013 is the alternative to 5004/5005 after the tremors 5003 (events/distant_stars_events_3.txt:153-176)."
+  }
+ ],
+ "bridges": [
+  {
+   "from": "distar.5003",
+   "to": "distar.5005",
+   "conditional": true,
+   "label": {
+    "zh": "蛋继续裂开（约60%）：60-160天后进入第二阶段",
+    "en": "The egg keeps cracking (about 60%): stage 2 after 60-160 days"
+   },
+   "evidence": "events/distant_stars_events_3.txt:155 has_carrier_flag = hatchling_will_trigger → carrier_event distar.5004 days 60 random 100 → owner gets distar.5005 (events/distant_stars_events_3.txt:235-288); the flag is set on the egg planet with 60% (common/solar_system_initializers/distant_stars_initializers.txt:1237)."
+  },
+  {
+   "from": "distar.5003",
+   "to": "distar.5013",
+   "conditional": true,
+   "label": {
+    "zh": "地震停止（约40%）：30-90天后",
+    "en": "The quakes stop (about 40%): after 30-90 days"
+   },
+   "evidence": "events/distant_stars_events_3.txt:164-176 otherwise → distar.5013 days 30 random 60; initializer 40% branch without hatchling_will_trigger (common/solar_system_initializers/distant_stars_initializers.txt:1237)."
+  },
+  {
+   "from": "distar.5005",
+   "to": "distar.5007",
+   "conditional": true,
+   "label": {
+    "zh": "60-150天后蛋壳破裂，虚空孳孽孵出",
+    "en": "After 60-150 days the egg cracks and the Voidspawn hatches"
+   },
+   "evidence": "events/distant_stars_events_3.txt:288-300 carrier_event distar.5006 days 60 random 90; distar.5006 (hidden) destroys the colony, turns the planet into pc_egg_cracked and notifies the owner with distar.5007 (events/distant_stars_events_3.txt:339-491); 70 days later distar.50061 creates the Voidspawn country and boss fleet."
+  },
+  {
+   "from": "distar.5007",
+   "to": "distar.5011",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入虚空孳孽所在的星系",
+    "en": "A fleet enters the system where the Voidspawn lives"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1006 on_entering_system_fleet → distar.5011 (events/distant_stars_events_3.txt:775): a fleet of a guardian_hatchling country is in the system and the owner has not yet encountered the hatchling."
+  },
+  {
+   "from": "distar.5011",
+   "to": "distar.5009",
+   "conditional": true,
+   "label": {
+    "zh": "击毁虚空孳孽舰队",
+    "en": "Destroy the Voidspawn fleet"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1655 on_fleet_destroyed_perp → distar.5009 (events/distant_stars_events_3.txt:815): the destroyed fleet's country has flag hatchling_country."
+  },
+  {
+   "from": "distar.5013",
+   "to": "distar.5015",
+   "conditional": true,
+   "label": {
+    "zh": "清空蛋裂缝矿藏后，行星复原",
+    "en": "Once the egg-crack deposits are cleared the planet is restored"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:102 on_monthly_pulse → distar.5014 (hidden, events/distant_stars_events_3.txt:685): planet flag egg_interrupted and no d_egg_cracking deposit left → entity restored and distar.5015 shown."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.5005",
+    "distar.5013"
+   ],
+   "label": {
+    "zh": "蛋继续裂开或停止",
+    "en": "The egg keeps cracking or stops"
+   },
+   "note": {
+    "zh": "蛋行星初始化时60%带 hatchling_will_trigger（继续裂开→大灾变→孵化），40%没有（地震停止→5013）。",
+    "en": "At spawn the egg planet gets hatchling_will_trigger with 60% (keeps cracking → Cataclysm → hatching) or not with 40% (quakes stop → 5013)."
+   }
+  }
+ ],
+ "endings": {
+  "distar.5013": {
+   "label": {
+    "zh": "蛋被打断",
+    "en": "The egg is interrupted"
+   },
+   "note": {
+    "zh": "没有孵化；清除裂缝后行星复原。",
+    "en": "No hatching; the planet is restored once the cracks are cleared."
+   },
+   "evidence": "events/distant_stars_events_3.txt:553"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:1178 (guardians_init_hatchling; egg planet 1230-1238)",
+   "common/on_actions/00_on_actions.txt:1306 (on_colonized → distar.5000)",
+   "common/on_actions/00_on_actions.txt:103 (on_monthly_pulse → distar.5001)",
+   "events/distant_stars_events_3.txt:15-340 (distar.5000-5006)",
+   "events/distant_stars_events_3.txt:491 (distar.5007)",
+   "events/distant_stars_events_3.txt:553 (distar.5013)",
+   "events/distant_stars_events_3.txt:685 (distar.5014, 5015)",
+   "events/distant_stars_events_3.txt:775 (distar.5011)",
+   "common/on_actions/00_on_actions.txt:1006",
+   "events/distant_stars_events_3.txt:815 (distar.5009)",
+   "common/on_actions/00_on_actions.txt:1655",
+   "events/distant_stars_events_3.txt:971 (distar.5016)",
+   "events/distant_stars_events_3.txt:1045 (distar.5012)"
+  ],
+  "uncertain": [
+   "distar.5001 (monthly) also starts stage 1 for an owned-but-uncolonised egg without going through distar.5010; the compiled tree shows only the colonisation entry."
+  ],
+  "guide": "public/summaries/event-distar-5000.md"
+ }
+}

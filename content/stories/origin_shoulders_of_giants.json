@@ -30,6 +30,156 @@
     "en": "Alternative history: new traces after midgame"
    },
    "evidence": "1330 without godspeed_outcome sets intercepting_history;1334 ->1335"
+  },
+  {
+   "from": "origin.1295",
+   "to": "origin.1300",
+   "conditional": true,
+   "label": {
+    "zh": "第三阶段随机结果之一（各1/5）",
+    "en": "One of five random stage-3 outcomes (1/5 each)"
+   },
+   "evidence": "events/origin_events_2.txt:1618-1649 hidden 1296 random_list, 20 each"
+  },
+  {
+   "from": "origin.1295",
+   "to": "origin.1305",
+   "conditional": true,
+   "label": {
+    "zh": "第三阶段随机结果之一（各1/5）",
+    "en": "One of five random stage-3 outcomes (1/5 each)"
+   },
+   "evidence": "events/origin_events_2.txt:1618-1649 hidden 1296 random_list, 20 each"
+  },
+  {
+   "from": "origin.1295",
+   "to": "origin.1315",
+   "conditional": true,
+   "label": {
+    "zh": "第三阶段随机结果之一（各1/5）",
+    "en": "One of five random stage-3 outcomes (1/5 each)"
+   },
+   "evidence": "events/origin_events_2.txt:1618-1649 hidden 1296 random_list, 20 each"
+  },
+  {
+   "from": "origin.1295",
+   "to": "origin.1320",
+   "conditional": true,
+   "label": {
+    "zh": "第三阶段随机结果之一（各1/5）",
+    "en": "One of five random stage-3 outcomes (1/5 each)"
+   },
+   "evidence": "events/origin_events_2.txt:1618-1649 hidden 1296 random_list, 20 each"
+  },
+  {
+   "from": "origin.1295",
+   "to": "origin.1325",
+   "conditional": true,
+   "label": {
+    "zh": "第三阶段随机结果之一（各1/5）",
+    "en": "One of five random stage-3 outcomes (1/5 each)"
+   },
+   "evidence": "events/origin_events_2.txt:1618-1649 hidden 1296 random_list, 20 each"
+  },
+  {
+   "from": "origin.1305",
+   "to": "origin.1310",
+   "conditional": true,
+   "label": {
+    "zh": "暴君的悔恨：第四阶段接续（第二部分）",
+    "en": "Tyrant's Remorse: stage 4 continues (part II)"
+   },
+   "evidence": "events/origin_events_2.txt:1651-1674 hidden 1297 fires 1310 when 1305 set dark_secret_tyrant (:1714)"
+  },
+  {
+   "from": "origin.1300",
+   "to": "origin.1330",
+   "conditional": true,
+   "label": {
+    "zh": "第四阶段：通用结局文本",
+    "en": "Stage 4: the generic ending text"
+   },
+   "evidence": "events/origin_events_2.txt:1651-1674 hidden 1297 fires 1330 when dark_secret_tyrant is not set"
+  },
+  {
+   "from": "origin.1315",
+   "to": "origin.1330",
+   "conditional": true,
+   "label": {
+    "zh": "第四阶段：通用结局文本",
+    "en": "Stage 4: the generic ending text"
+   },
+   "evidence": "events/origin_events_2.txt:1651-1674 hidden 1297 fires 1330 when dark_secret_tyrant is not set"
+  },
+  {
+   "from": "origin.1320",
+   "to": "origin.1330",
+   "conditional": true,
+   "label": {
+    "zh": "第四阶段：通用结局文本",
+    "en": "Stage 4: the generic ending text"
+   },
+   "evidence": "events/origin_events_2.txt:1651-1674 hidden 1297 fires 1330 when dark_secret_tyrant is not set"
+  },
+  {
+   "from": "origin.1325",
+   "to": "origin.1330",
+   "conditional": true,
+   "label": {
+    "zh": "第四阶段：通用结局文本",
+    "en": "Stage 4: the generic ending text"
+   },
+   "evidence": "events/origin_events_2.txt:1651-1674 hidden 1297 fires 1330 when dark_secret_tyrant is not set"
+  },
+  {
+   "from": "origin.1340",
+   "to": "origin.1345",
+   "conditional": true,
+   "label": {
+    "zh": "舰队抵达本杰明（恩人）航迹终点的星系",
+    "en": "A fleet reaches the Benefactors' trail end system"
+   },
+   "evidence": "events/origin_events_2.txt:2480-2525 1345 fires from on_entering_system_fleet (common/on_actions/00_on_actions.txt:1029) at POI benefactors_end_poi.1 created by 1340."
+  },
+  {
+   "from": "origin.1350",
+   "to": "origin.1351",
+   "conditional": true,
+   "label": {
+    "zh": "舰队抵达恩人的家园星系",
+    "en": "A fleet reaches the Benefactors' home system"
+   },
+   "evidence": "events/origin_events_2.txt:2570-2623 1351 fires from on_entering_system_fleet (common/on_actions/00_on_actions.txt:1030) at POI benefactors_home_poi.1 created by 1350."
+  },
+  {
+   "from": "origin.1351",
+   "to": "origin.1355",
+   "conditional": true,
+   "label": {
+    "zh": "与恩人原始文明建立接触",
+    "en": "Contact is made with the Benefactors civilisation"
+   },
+   "evidence": "events/origin_events_2.txt:2625-2652 1355 fires from action.12 (first contact with a primitive civ flagged benefactor_empire, events/on_action_events_1.txt) and enables Project Ouroboros."
+  },
+  {
+   "from": "origin.1385",
+   "to": "origin.1390",
+   "conditional": true,
+   "label": {
+    "zh": "舰队抵达与货船会合的星系",
+    "en": "A fleet reaches the freighter rendezvous system"
+   },
+   "evidence": "events/origin_events_2.txt:2808-2858 1390 fires from on_entering_system_fleet (common/on_actions/00_on_actions.txt:1031) at rendezvous_with_freighter_poi.1."
+  },
+  {
+   "from": "origin.1395",
+   "to": "origin.1400",
+   "conditional": true,
+   "label": {
+    "zh": "舰队抵达暴君安息之地",
+    "en": "A fleet reaches the Tyrant's resting place"
+   },
+   "evidence": "events/origin_events_2.txt:2903-2946 1400 fires from on_entering_system_fleet (common/on_actions/00_on_actions.txt:1032) at relentless_home_poi.1."
   }
  ],
  "opening": {
@@ -40,15 +190,141 @@
    "zh": "调查母星附近的遗迹",
    "en": "Investigate the ruins near the homeworld"
   },
-  "evidence": "1199 setup creates site_ex_gravitas;stage1 is1200"
+  "evidence": "events/game_start.txt:379 game_start fires hidden origin.1199 (events/origin_events_2.txt:1955-2160): creates site_ex_gravitas on a moon or a non-colonisable planet of the home system and may spawn extra planets so that at least 6 sites fit. The site also fires story.5 30 days after becoming visible (common/archaeological_site_types/03_federations_arc_sites.txt:93-95)."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review (V3 relentless-pursuit/intercepting bridges re-verified)",
+  "sources": [
+   "events/origin_events_2.txt",
+   "common/archaeological_site_types/03_federations_arc_sites.txt",
+   "common/special_projects/00_projects_federations.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "The FotD story reuses story.5 (Remnants contact report) 30 days after Ex Gravitas becomes visible; story.5 is generic and owned elsewhere.",
+   "Options/weights of the mid-chain projects (common/special_projects/00_projects_federations.txt) were read through their on_success hooks only."
+  ],
+  "guide": "public/summaries/origin_shoulders_of_giants.md"
+ },
+ "suppress": [
+  {
+   "from": "origin.1295",
+   "to": "origin.1300",
+   "evidence": "Compiler stage chain: the five alternatives of stage 3 are chained in definition order; events/origin_events_2.txt:1618-1649 hidden 1296 draws exactly one of 1300/1305/1315/1320/1325 (20 each); events/origin_events_2.txt:1651-1674 hidden 1297 picks 1310 (flag dark_secret_tyrant, set only by 1305) or 1330."
+  },
+  {
+   "from": "origin.1300",
+   "to": "origin.1305",
+   "evidence": "Compiler stage chain: the five alternatives of stage 3 are chained in definition order; events/origin_events_2.txt:1618-1649 hidden 1296 draws exactly one of 1300/1305/1315/1320/1325 (20 each); events/origin_events_2.txt:1651-1674 hidden 1297 picks 1310 (flag dark_secret_tyrant, set only by 1305) or 1330."
+  },
+  {
+   "from": "origin.1305",
+   "to": "origin.1315",
+   "evidence": "Compiler stage chain: the five alternatives of stage 3 are chained in definition order; events/origin_events_2.txt:1618-1649 hidden 1296 draws exactly one of 1300/1305/1315/1320/1325 (20 each); events/origin_events_2.txt:1651-1674 hidden 1297 picks 1310 (flag dark_secret_tyrant, set only by 1305) or 1330."
+  },
+  {
+   "from": "origin.1315",
+   "to": "origin.1320",
+   "evidence": "Compiler stage chain: the five alternatives of stage 3 are chained in definition order; events/origin_events_2.txt:1618-1649 hidden 1296 draws exactly one of 1300/1305/1315/1320/1325 (20 each); events/origin_events_2.txt:1651-1674 hidden 1297 picks 1310 (flag dark_secret_tyrant, set only by 1305) or 1330."
+  },
+  {
+   "from": "origin.1320",
+   "to": "origin.1325",
+   "evidence": "Compiler stage chain: the five alternatives of stage 3 are chained in definition order; events/origin_events_2.txt:1618-1649 hidden 1296 draws exactly one of 1300/1305/1315/1320/1325 (20 each); events/origin_events_2.txt:1651-1674 hidden 1297 picks 1310 (flag dark_secret_tyrant, set only by 1305) or 1330."
+  },
+  {
+   "from": "origin.1325",
+   "to": "origin.1310",
+   "evidence": "Compiler stage chain: the five alternatives of stage 3 are chained in definition order; events/origin_events_2.txt:1618-1649 hidden 1296 draws exactly one of 1300/1305/1315/1320/1325 (20 each); events/origin_events_2.txt:1651-1674 hidden 1297 picks 1310 (flag dark_secret_tyrant, set only by 1305) or 1330."
+  },
+  {
+   "from": "origin.1310",
+   "to": "origin.1330",
+   "evidence": "Compiler stage chain: the five alternatives of stage 3 are chained in definition order; events/origin_events_2.txt:1618-1649 hidden 1296 draws exactly one of 1300/1305/1315/1320/1325 (20 each); events/origin_events_2.txt:1651-1674 hidden 1297 picks 1310 (flag dark_secret_tyrant, set only by 1305) or 1330."
   }
- }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.1300",
+    "origin.1305",
+    "origin.1315",
+    "origin.1320",
+    "origin.1325"
+   ],
+   "label": {
+    "zh": "黑暗秘密第三阶段的随机结果",
+    "en": "Random outcome of Dark Secret stage 3"
+   },
+   "note": {
+    "zh": "隐藏事件1296五选一，各20%。只有暴君的悔恨（1305）会接续第二部分（1310）。",
+    "en": "Hidden 1296 draws one of five, 20% each; only Tyrant's Remorse (1305) continues with part II (1310)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.1310",
+    "origin.1330"
+   ],
+   "label": {
+    "zh": "黑暗秘密第四阶段",
+    "en": "Dark Secret stage 4"
+   },
+   "note": {
+    "zh": "1305后为1310（设置“不懈追寻”）；其余为1330（“一路顺风”则不懈追寻，否则拦截历史）。",
+    "en": "After 1305: 1310 (sets relentless pursuit); otherwise 1330 (relentless pursuit after Godspeed, else intercepting history)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.1380",
+    "origin.1335"
+   ],
+   "label": {
+    "zh": "中期后的两条延续线",
+    "en": "The two mid-game continuations"
+   },
+   "note": {
+    "zh": "隐藏事件1334（五年脉冲，游戏进入中期超过1年）按旗标选择：不懈追寻→1380；拦截历史→1335。",
+    "en": "Hidden 1334 (five-year pulse, more than 1 year after mid-game) picks by flag: relentless pursuit -> 1380; intercepting history -> 1335 (events/origin_events_2.txt:2332-2400)."
+   }
+  }
+ ],
+ "endings": {
+  "origin.1360": {
+   "label": {
+    "zh": "拦截历史的终章：了结",
+    "en": "Intercepting History ending: Closure"
+   },
+   "note": {
+    "zh": "末次遗址完成。",
+    "en": "The last site is finished."
+   },
+   "evidence": "events/origin_events_2.txt:2674-2728"
+  },
+  "origin.1420": {
+   "label": {
+    "zh": "不懈追寻的终章：并非敌人",
+    "en": "Relentless Pursuit ending: Not the Enemy"
+   },
+   "note": {
+    "zh": "末次遗址完成。",
+    "en": "The last site is finished."
+   },
+   "evidence": "events/origin_events_2.txt:2981-3009"
+  }
+ },
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_ex_gravitas",
+   "kind": "review",
+   "zh": "五处遗址依次连锁：每处最后一个阶段的选项3天后（±1）经隐藏事件1219/1239/1249/1269/1289生成下一处；第五处“最后一战”之后是“黑暗秘密”。",
+   "en": "The sites are chained: the last stage of each fires, 3 days (+-1) later, a hidden setup event (1219 / 1239 / 1249 / 1269 / 1289) that creates the next site; Dark Secret follows The Last Stand (common/archaeological_site_types/03_federations_arc_sites.txt:68-399)."
+  }
+ ]
 }

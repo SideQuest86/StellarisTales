@@ -1,6 +1,6 @@
 # 奇异流体 / Strange Flows
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1350；events/ancient_relics_arcsite_events_2.txt:5788 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1350；events/ancient_relics_arcsite_events_2.txt:5788 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
 
 ## 如何开始 How it starts
 

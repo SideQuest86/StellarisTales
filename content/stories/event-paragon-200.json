@@ -1,0 +1,125 @@
+{
+ "id": "event-paragon-200",
+ "family": {
+  "title": {
+   "zh": "太空创生家艾莎琳",
+   "en": "Astrocreator Azaryn"
+  },
+  "category": "stories",
+  "start": "paragon.202",
+  "members": [
+   "paragon.200",
+   "paragon.202",
+   "paragon.204",
+   "paragon.206",
+   "paragon.208",
+   "paragon.210",
+   "paragon.212",
+   "paragon.214",
+   "paragon.216",
+   "paragon.218",
+   "paragon.220",
+   "paragon.222",
+   "paragon.224",
+   "paragon.226",
+   "paragon.228",
+   "paragon.230",
+   "paragon.232",
+   "paragon.235",
+   "paragon.240",
+   "paragon.241",
+   "paragon.250",
+   "paragon.251",
+   "paragon.252",
+   "paragon.253",
+   "paragon.260",
+   "paragon.261",
+   "paragon.265",
+   "paragon.270",
+   "paragon.272",
+   "paragon.273",
+   "paragon.275",
+   "paragon.280",
+   "paragon.285",
+   "paragon.290",
+   "paragon.295",
+   "special_projects:UNKNOWN_COMMS_PROJECT",
+   "special_projects:AZARYNS_BACTERIA_PROJECT",
+   "special_projects:AZARYNS_RAFFLESIA_PROJECT",
+   "special_projects:NUCLEUS_SAMPLE_STOLEN"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "paragon.230",
+   "choice": "EXCELLENT",
+   "to": "paragon.232",
+   "conditional": true,
+   "label": {
+    "zh": "艾莎琳第一次环境改造（耗用一个核）",
+    "en": "Azaryn's first terraformation (uses a nucleus)"
+   },
+   "evidence": "events/paragon_events.txt:2103-2131,1817-1842 paragon.252 removes the 3-bud trait, adds the 2-bud trait and schedules leader_event paragon.232 after 60-90 days"
+  },
+  {
+   "from": "paragon.232",
+   "choice": "paragon.232.a",
+   "to": "paragon.235",
+   "conditional": true,
+   "label": {
+    "zh": "第二次环境改造",
+    "en": "Second terraformation"
+   },
+   "evidence": "events/paragon_events.txt:2116-2123,1844-1869 2-bud trait -> 1-bud trait and paragon.235 after 90-120 days"
+  },
+  {
+   "from": "paragon.235",
+   "choice": "paragon.235.a",
+   "to": "paragon.240",
+   "conditional": true,
+   "label": {
+    "zh": "第三次（最后一次）环境改造",
+    "en": "Third and last terraformation"
+   },
+   "evidence": "events/paragon_events.txt:2111-2115,1871-1918 1-bud trait removed and paragon.240 fires: Azaryn dies, dome ship withered"
+  },
+  {
+   "from": "paragon.230",
+   "choice": "EXCELLENT",
+   "to": "paragon.260",
+   "conditional": true,
+   "label": {
+    "zh": "每次改造后仍有改造核：25%，约1年后",
+    "en": "After each terraformation with nuclei left: 25%, about a year later"
+   },
+   "evidence": "events/paragon_events.txt:2159-2176 paragon.252 after block: azaryn_nuclei_variable >= 1 -> 25% paragon.260 after 360+-360 days; paragon.260 is fire_only_once (L2222)"
+  }
+ ],
+ "notes": [
+  {
+   "doc": "paragon.230",
+   "kind": "review",
+   "zh": "艾莎琳作为传奇领袖被招募（paragon.228 的 leader_recruit 窗口创建圆顶船与领袖，L1476-1712）；玩家随后在受控星球轨道上下令改造，由隐藏事件 paragon.250/252/253 处理（L1955-2211）。",
+   "en": "Azaryn is recruited as a legendary leader (the leader_recruit window of paragon.228 creates the dome ship and leader, L1476-1712); the player then orders terraforming in orbit, handled by hidden paragon.250/252/253 (L1955-2211)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/paragon_events.txt:920-2560",
+   "common/special_projects (UNKNOWN_COMMS_PROJECT, AZARYNS_BACTERIA_PROJECT, AZARYNS_RAFFLESIA_PROJECT, NUCLEUS_SAMPLE_STOLEN)",
+   "common/on_actions/00_on_actions.txt (on_five_year_pulse_country, on_terraforming_complete)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-paragon-200.md",
+  "merged": [
+   "event-paragon-250"
+  ]
+ }
+}

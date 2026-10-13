@@ -2,21 +2,190 @@
  "id": "origin_endbringers",
  "opening": {
   "targets": [
-   "shroud.8010"
+   "shroud.8010",
+   "shroud.8480",
+   "shroud.8481",
+   "shroud.8600",
+   "shroud.8710"
   ],
   "label": {
-   "zh": "一个月后的任务",
-   "en": "A mission one month later"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "game_start ->shroud8000 schedules8010 days30"
+  "labels": {
+   "shroud.8010": {
+    "zh": "开局一个月后：前往被虚境笼罩的星球",
+    "en": "A month after start: the mission to the shrouded planet"
+   },
+   "shroud.8480": {
+    "zh": "星海共同体废止“恶意光环”危机议程",
+    "en": "The Galactic Community repeals the Malevolent Aura crisis focus"
+   },
+   "shroud.8481": {
+    "zh": "“恶意光环”危机议程被废止（原危机）",
+    "en": "The Malevolent Aura focus is repealed (former crisis)"
+   },
+   "shroud.8600": {
+    "zh": "终末之环获胜条件满足时",
+    "en": "When the End of the Cycle win condition is met"
+   },
+   "shroud.8710": {
+    "zh": "终结者被摧毁后（舰队被毁）",
+    "en": "After the Reckoning is destroyed (a fleet is destroyed)"
+   }
+  },
+  "evidence": "events/game_start.txt:448 fires hidden shroud.8000 (events/origin_events_shadows_shroud.txt:3532-3588: spawns the shrouded world, schedules 8010 after 30 days). 8480/8481: common/resolutions/05_resolutions_shroud.txt:189/197. 8600: end_aura on_start via check_end_aura_win_condition for origin_endbringers; 8700 on_fleet_destroyed_perp common/on_actions/00_on_actions.txt:1693 -> 8710."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_shadows_shroud.txt",
+   "common/situations/13_shroud_situations.txt",
+   "common/scripted_effects/shroud_shadows_scripted_effects.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/traditions/01_psionics_shroud.txt",
+   "common/archaeological_site_types/14_shroud_arc_sites.txt"
+  ],
+  "uncertain": [
+   "Which delve actually triggers on_shroud_delve (common/on_actions/00_on_actions.txt:5806) was not traced to the delve decision itself.",
+   "The generic End of the Cycle situation and the Reckoning chains are cut from this tree; they belong to the Shroud stories (C8c)."
+  ],
+  "guide": "public/summaries/origin_endbringers.md"
+ },
+ "suppress": [
+  {
+   "from": "shroud.8450",
+   "to": "situations:end_of_the_cycle",
+   "evidence": "Shared with the generic End of the Cycle covenant (shroud.4135 and the Shroud patron story): common/scripted_effects/shroud_shadows_scripted_effects.txt:1-12 accept_end_of_the_cycle starts end_of_the_cycle_endbringers for the origin and the generic end_of_the_cycle for everyone else; common/situations/13_shroud_situations.txt:559-728 vs :1018-1196."
+  },
+  {
+   "from": "shroud.8450",
+   "to": "event_chains:chain_aura_suppressors",
+   "evidence": "try_start_chain_aura_suppressors in accept_end_of_the_cycle is a generic side effect shared by every covenant (common/scripted_effects/shroud_shadows_scripted_effects.txt:1-40)."
+  },
+  {
+   "from": "situations:end_of_the_cycle_endbringers",
+   "to": "event_chains:the_reckoning_chain",
+   "evidence": "Reckoning chains are shared with the generic covenant situation (common/situations/13_shroud_situations.txt:578 / :1037)."
+  },
+  {
+   "from": "situations:end_of_the_cycle_endbringers",
+   "to": "event_chains:the_reckoning_observer_chain",
+   "evidence": "Shared with the generic covenant situation (common/situations/13_shroud_situations.txt:1037-1068)."
+  },
+  {
+   "from": "situations:end_of_the_cycle_endbringers",
+   "to": "event_chains:multiple_reckoning_observer_chain",
+   "evidence": "Shared with the generic covenant situation (common/situations/13_shroud_situations.txt:1037-1068)."
+  },
+  {
+   "from": "situations:end_of_the_cycle_endbringers",
+   "to": "shroud.4955",
+   "evidence": "shroud.4954/4955 monthly dread events are generic to both covenant situations (common/situations/13_shroud_situations.txt:1192-1193 and :723-724)."
+  },
+  {
+   "from": "shroud.8310",
+   "to": "utopia.2602",
+   "evidence": "utopia.2602 comes from the generic mind_over_matter_immediate effect (common/scripted_effects/shroud_shadows_scripted_effects.txt:56-63), shared with the other psionic ascension variants."
   }
- }
+ ],
+ "bridges": [
+  {
+   "from": "special_projects:ENDBRINGERS_ADOPT_PSIONICS_TRADITION",
+   "to": "shroud.8310",
+   "conditional": true,
+   "label": {
+    "zh": "采用灵能传统（虚境）时",
+    "en": "On adopting the (Shroud) Psionics tradition"
+   },
+   "evidence": "common/traditions/01_psionics_shroud.txt:33 tr_psionics_shroud_adopt on_enabled fires 8310 for origin_endbringers (events/origin_events_shadows_shroud.txt:3982-4080); the project only enables the tradition option."
+  },
+  {
+   "from": "shroud.2840",
+   "to": "shroud.8420",
+   "conditional": true,
+   "label": {
+    "zh": "突破虚境后第一次深入虚境",
+    "en": "First delve into the Shroud after the breach"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:5806-5812 on_shroud_delve -> hidden 8400 (delve count) and 8410 (events/origin_events_shadows_shroud.txt:4624-4668) which fires 8420 when endbringers_delve_count_variable = 1."
+  },
+  {
+   "from": "shroud.2840",
+   "to": "shroud.8430",
+   "conditional": true,
+   "label": {
+    "zh": "第二次深入虚境",
+    "en": "Second delve into the Shroud"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:4624-4668 hidden 8410 fires 8430 at delve count 2."
+  },
+  {
+   "from": "shroud.2840",
+   "to": "shroud.8440",
+   "conditional": true,
+   "label": {
+    "zh": "第三次深入虚境",
+    "en": "Third delve into the Shroud"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:4624-4668 hidden 8410 fires 8440 at delve count 3."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "shroud.8320",
+    "shroud.8330"
+   ],
+   "label": {
+    "zh": "局势方针引发的事件",
+    "en": "Events started by the situation approaches"
+   },
+   "note": {
+    "zh": "选择“目盲”或“弃绝”方针时各触发一次（旗标防止重复）。",
+    "en": "Selecting the blind or forsake approach fires one event each (flags prevent repeats) (common/situations/13_shroud_situations.txt:846 / :884)."
+   }
+  }
+ ],
+ "endings": {
+  "shroud.4971": {
+   "label": {
+    "zh": "终结降临",
+    "en": "The End Has Come"
+   },
+   "note": {
+    "zh": "终末之环获胜，经8600/4972一天后。",
+    "en": "End of the Cycle victory, one day after 8600 / 4972."
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:5104-5140"
+  },
+  "shroud.11235": {
+   "label": {
+    "zh": "直面终结者",
+    "en": "Facing the Reckoning"
+   },
+   "note": {
+    "zh": "项目完成。",
+    "en": "Project completed."
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:5146-5200"
+  }
+ },
+ "notes": [
+  {
+   "doc": "shroud.8450",
+   "kind": "review",
+   "zh": "与终末之环缔结盟约；对本起源开始专属局势“终末之环（终焉者）”，其他帝国则开始通用的“终末之环”局势（在“虚境”故事中）。",
+   "en": "Covenant with the End of the Cycle: starts the origin-specific end_of_the_cycle_endbringers situation; other empires start the generic situation, which belongs to the Shroud stories."
+  },
+  {
+   "doc": "shroud.8010",
+   "kind": "review",
+   "zh": "结局依赖“虚境”调查：遗址五个阶段（8100–8120）→ 项目“灵能理论” → 8200 → 采用灵能传统项目。",
+   "en": "Shrouded World site stages 8100-8120 -> project Psionic Theory -> 8200 -> adopt the Psionics tradition project."
+  }
+ ]
 }

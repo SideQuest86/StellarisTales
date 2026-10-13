@@ -1,0 +1,30 @@
+{
+ "id": "site-site-lost-moments",
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_lost_moments",
+   "kind": "review",
+   "zh": "既可作为随机遗址出现（《远古遗物》，权重100，不宜居的常规星球），也由星系初始化器 hauer_system_initializer 在拥有《远古遗物》时创建（common/solar_system_initializers/federations_initializers.txt:180）。",
+   "en": "It can appear as a random site (Ancient Relics, weight 100 on uninhabitable regular planets) and is also created by the system initializer hauer_system_initializer when Ancient Relics is present (common/solar_system_initializers/federations_initializers.txt:180)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "events/federations_events_1.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "common/solar_system_initializers/federations_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-lost-moments.md"
+ }
+}

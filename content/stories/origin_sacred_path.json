@@ -8,15 +8,140 @@
    "zh": "圣道的起点",
    "en": "The beginning of the Sacred Path"
   },
-  "evidence": "game_start calls hidden nomads.2000, which schedules 2005 after 5 days; 2005 enables SACRED_SITE_ONE_PROJECT and separately schedules 2015 after 3600 days"
+  "evidence": "game_start fires hidden nomads.2000 (events/nomads_origin_events.txt:12-18) which schedules nomads.2005 after 5 days; 2005 sets sacred_sites_survey, enables SACRED_SITE_ONE_PROJECT (:61) and separately schedules 2015 after 3600 days (:91)."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/nomads_origin_events.txt",
+   "common/special_projects",
+   "common/event_chains"
+  ],
+  "uncertain": [
+   "Option-level conditions of 2120/2125 were read through the compiled tree only."
+  ],
+  "guide": "public/summaries/origin_sacred_path.md"
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "nomads.2055",
+    "nomads.2060",
+    "nomads.2065",
+    "nomads.2070",
+    "nomads.2075",
+    "nomads.2080",
+    "nomads.2085"
+   ],
+   "required": 7,
+   "gate": "nomads.2100",
+   "label": {
+    "zh": "七处圣地",
+    "en": "The seven sacred sites"
+   },
+   "note": {
+    "zh": "2050（显化之地）完成后七个项目同时开放（眼、修道院、摇篮、智慧体、安息宝库、鸿沟、镜子），可按任意顺序完成；每个遗址完成后30–60天尝试触发2100，只有七个旗标齐备且尚未完成时才会出现。",
+    "en": "After Emergence (2050) all seven projects open at once and can be finished in any order. Each site tries to fire 2100 30-60 days later, which only appears once all seven flags are set and the path is not yet complete (events/nomads_origin_events.txt:1313-1377)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.2071",
+    "nomads.2072"
+   ],
+   "label": {
+    "zh": "智慧体的结果",
+    "en": "The Intelligence's result"
+   },
+   "note": {
+    "zh": "随机，各50%。",
+    "en": "Random, 50% each (events/nomads_origin_events.txt:827-830)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.2020",
+    "nomads.2025",
+    "nomads.2030"
+   ],
+   "label": {
+    "zh": "“分裂的信仰”的回应",
+    "en": "Responses to Divided Faith"
+   },
+   "note": {
+    "zh": "由2015的选项决定（朝圣/虔诚/信徒），1800天后。",
+    "en": "Chosen by the options of 2015 (pilgrims / devout / faithful), 1800 days later (events/nomads_origin_events.txt:99-184)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.2130",
+    "nomads.2135",
+    "nomads.2140"
+   ],
+   "label": {
+    "zh": "圣道的三种收束",
+    "en": "The three conclusions of the Sacred Path"
+   },
+   "note": {
+    "zh": "由2115与2120/2125的选择决定：欢乐启蒙、中庸之道或接纳混乱。",
+    "en": "Decided by the choices at 2115 and 2120/2125: Joyous Enlightenment, The Middle Path or Embracing the Chaos."
+   }
   }
- }
+ ],
+ "endings": {
+  "nomads.2130": {
+   "label": {
+    "zh": "欢乐启蒙",
+    "en": "Joyous Enlightenment"
+   },
+   "note": {
+    "zh": "设置旗标并触发时间线事件。",
+    "en": "Sets a flag and fires a timeline event."
+   },
+   "evidence": "events/nomads_origin_events.txt:1574-1599"
+  },
+  "nomads.2135": {
+   "label": {
+    "zh": "中庸之道",
+    "en": "The Middle Path"
+   },
+   "note": {
+    "zh": "设置旗标并触发时间线事件。",
+    "en": "Sets a flag and fires a timeline event."
+   },
+   "evidence": "events/nomads_origin_events.txt:1601-1626"
+  },
+  "nomads.2140": {
+   "label": {
+    "zh": "接纳混乱",
+    "en": "Embracing the Chaos"
+   },
+   "note": {
+    "zh": "设置旗标并触发时间线事件。",
+    "en": "Sets a flag and fires a timeline event."
+   },
+   "evidence": "events/nomads_origin_events.txt:1628-1650"
+  }
+ },
+ "notes": [
+  {
+   "doc": "nomads.2015",
+   "kind": "review",
+   "zh": "“分裂的信仰”在2005之后3600天独立出现，与圣地进度无关。",
+   "en": "Divided Faith comes 3600 days after 2005, independent of the sacred-site progress."
+  },
+  {
+   "doc": "nomads.2100",
+   "kind": "review",
+   "zh": "七处圣地全部完成后的汇总事件；之后300天出现2105，再过1800天出现2115。",
+   "en": "The summary event once all seven sites are done; 2105 follows 300 days later, then 2115 after another 1800 days."
+  }
+ ]
 }

@@ -1,0 +1,35 @@
+{
+ "id": "event-action-12",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "action.5",
+    "action.6",
+    "galactic_features.101",
+    "galactic_features.102",
+    "galactic_features.103"
+   ],
+   "label": {
+    "zh": "按科技阶段",
+    "en": "By tech age"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/on_action_events_1.txt:3682-3910,4143-4250",
+   "events/galactic_features_events.txt:64-110",
+   "common/on_actions/00_on_actions.txt:1146"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-action-12.md"
+ }
+}

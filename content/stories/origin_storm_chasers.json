@@ -1,0 +1,194 @@
+{
+ "id": "origin_storm_chasers",
+ "bridges": [
+  {
+   "from": "event_chains:cs_stormfever_chain",
+   "to": "cstorms.305",
+   "conditional": true,
+   "label": {
+    "zh": "挑战一：在风暴中击败一支舰队",
+    "en": "Challenge: defeat a fleet inside a storm"
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1604-1637 hidden 300 starts cs_stormfever_chain and enables six missions; common/on_actions/00_on_actions.txt:1679 on_fleet_destroyed_perp."
+  },
+  {
+   "from": "event_chains:cs_stormfever_chain",
+   "to": "cstorms.310",
+   "conditional": true,
+   "label": {
+    "zh": "挑战二：探索银河边缘",
+    "en": "Challenge: explore the edge of the galaxy"
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1604-1637 hidden 300 starts cs_stormfever_chain and enables six missions; common/on_actions/00_on_actions.txt:1060 on_entering_system_fleet."
+  },
+  {
+   "from": "event_chains:cs_stormfever_chain",
+   "to": "cstorms.315",
+   "conditional": true,
+   "label": {
+    "zh": "挑战三：驾驭风暴",
+    "en": "Challenge: ride the storms"
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1604-1637 hidden 300 starts cs_stormfever_chain and enables six missions; common/missions/missions/00_missions_cosmic_storms.txt:142 MISSION_CS_STORM_FEVER_CHALLENGE_3 on_success."
+  },
+  {
+   "from": "event_chains:cs_stormfever_chain",
+   "to": "cstorms.320",
+   "conditional": true,
+   "label": {
+    "zh": "挑战四：调查风暴留下的异常/遗址",
+    "en": "Challenge: investigate an anomaly or site left by a storm"
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1604-1637 hidden 300 starts cs_stormfever_chain and enables six missions; events/anomaly_events_cosmic_storms.txt cstorms.5020-5050 after."
+  },
+  {
+   "from": "event_chains:cs_stormfever_chain",
+   "to": "cstorms.325",
+   "conditional": true,
+   "label": {
+    "zh": "挑战五：把风暴送给他国（传播欢乐）",
+    "en": "Challenge: send a storm to another empire (spread the joy)"
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1604-1637 hidden 300 starts cs_stormfever_chain and enables six missions; common/missions/missions/00_missions_cosmic_storms.txt:192/220 on_monthly."
+  },
+  {
+   "from": "event_chains:cs_stormfever_chain",
+   "to": "cstorms.330",
+   "conditional": true,
+   "label": {
+    "zh": "挑战六：风暴骑手死于风暴之中",
+    "en": "Challenge: a Storm Rider dies inside a storm"
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1604-1637 hidden 300 starts cs_stormfever_chain and enables six missions; common/on_actions/00_on_actions.txt:2399 on_leader_death."
+  },
+  {
+   "from": "event_chains:cs_stormfever_chain",
+   "to": "cstorms.331",
+   "conditional": true,
+   "label": {
+    "zh": "挑战六：风暴骑手在风暴中失踪",
+    "en": "Challenge: a Storm Rider goes missing inside a storm"
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1604-1637 hidden 300 starts cs_stormfever_chain and enables six missions; common/on_actions/00_on_actions.txt:2896 on_emergency_ftl."
+  },
+  {
+   "from": "event_chains:cs_stormfever_chain",
+   "to": "cstorms.3215",
+   "conditional": true,
+   "label": {
+    "zh": "六项挑战全部完成",
+    "en": "All six challenges are completed"
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1101-1123 3215 fires from the success of the missions (add_challenge_completed, chain counter challenges_completed) and ends the chain; 3220 follows after 1800+0-360 days."
+  }
+ ],
+ "opening": {
+  "targets": [
+   "situations:situation_stormfall",
+   "cstorms.3205"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "situations:situation_stormfall": {
+    "zh": "开局：风暴降临局势开始",
+    "en": "Game start: the Stormfall situation begins"
+   },
+   "cstorms.3205": {
+    "zh": "中期脉冲（风暴降临结束后15天）：风暴热",
+    "en": "Mid-game pulse (15 days after Stormfall is over): Storm Fever"
+   }
+  },
+  "evidence": "common/on_actions/00_on_actions.txt:58 on_game_start_country fires hidden cstorms.3101 (events/origin_events_cosmic_storms.txt:9-70, start_situation situation_stormfall). common/on_actions/00_on_actions.txt:662 on_mid_game_pulse_country fires hidden 3200 (events/origin_events_cosmic_storms.txt:1039-1057): while Stormfall still runs it re-checks every 1800 days, otherwise fires 3205 after 15 days."
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "cstorms.305",
+    "cstorms.310",
+    "cstorms.315",
+    "cstorms.320",
+    "cstorms.325",
+    "cstorms.330",
+    "cstorms.331"
+   ],
+   "required": 6,
+   "gate": "cstorms.3215",
+   "label": {
+    "zh": "风暴热的六项挑战",
+    "en": "The six Storm Fever challenges"
+   },
+   "note": {
+    "zh": "六项任务可按任意顺序完成（挑战六有死亡/失踪两种事件）；全部完成后出现3215，再过1800±360天进入风暴狂热。",
+    "en": "Six missions in any order (challenge six has a death and a missing-in-action event); when all are done 3215 fires, and 1800+0-360 days later Storm Frenzy begins (events/origin_events_cosmic_storms.txt:1101-1123)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.3230",
+    "cstorms.3235"
+   ],
+   "label": {
+    "zh": "“大风暴”的结局",
+    "en": "Outcome of the Big One"
+   },
+   "note": {
+    "zh": "3227的选项a/b：诞生（3230）或风暴尾声（3235），40天后。",
+    "en": "Options a / b of 3227: Genesis (3230) or Coda (3235), 40 days later (events/origin_events_cosmic_storms.txt:1403-1565)."
+   }
+  }
+ ],
+ "endings": {
+  "cstorms.3230": {
+   "label": {
+    "zh": "大风暴的诞生",
+    "en": "Genesis of the Big One"
+   },
+   "note": {
+    "zh": "生成大风暴并结束事件链。",
+    "en": "Spawns the Big One and ends the chain."
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1469-1536"
+  },
+  "cstorms.3235": {
+   "label": {
+    "zh": "风暴尾声",
+    "en": "Storm Coda"
+   },
+   "note": {
+    "zh": "结束风暴狂热事件链。",
+    "en": "Ends the Storm Frenzy chain."
+   },
+   "evidence": "events/origin_events_cosmic_storms.txt:1538-1600"
+  }
+ },
+ "notes": [
+  {
+   "doc": "situations:situation_stormfall",
+   "kind": "review",
+   "zh": "进度0–750分三个阶段，基础每月+10；方针需先完成“酝酿风暴”项目（3105）才能选择。阶段1进入1天后3100，阶段2进入时3140，阶段3进入时3170；每月故事事件3110/3130（阶段1）与3160（阶段2）；完成时3190。",
+   "en": "Progress 0-750 in three stages, base +10 a month; the approaches unlock only after the Tempest Brewing project (3105). Stage 1 -> 3100 after 1 day, stage 2 -> 3140, stage 3 -> 3170; monthly story events 3110 / 3130 (stage 1) and 3160 (stage 2); completion fires 3190 (common/situations/07_cosmic_storms_situations.txt:431-600)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_cosmic_storms.txt",
+   "common/situations/07_cosmic_storms_situations.txt",
+   "common/missions/missions/00_missions_cosmic_storms.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/03_projects_cosmic_storms.txt"
+  ],
+  "uncertain": [
+   "Mission definitions (common/missions) were read only for their event hooks; which mission fires 325 (challenge five vs six) is listed from the callers index.",
+   "Storm site anomalies (cstorms.5020-5050) belong to the generic cosmic-storm anomaly stories; only their link to 320 is recorded here."
+  ],
+  "guide": "public/summaries/origin_storm_chasers.md"
+ }
+}
