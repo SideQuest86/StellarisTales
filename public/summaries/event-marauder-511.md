@@ -30,3 +30,5 @@ Three entries lead to the same notice 513:
 - 已核对 Checked：511、512、513、514、600、711、712 的触发与分派。
 - 更正 Corrections：marauder.711（领袖死亡补漏）原是独立故事，其后果与 511 相同，现并入。
   The 711 failsafe story is merged because it ends in the same 513.
+- r3-integrate（2026-10-13）：并入原 event-marauder-711（补漏路径）：on_leader_death（00_on_actions.txt:2386）触发隐藏 marauder.711（events/marauder_events.txt:10254-10281），死者带 great_khan 领袖标记时补设全局标记 great_khan_dead、清理可汗领袖，10天后 marauder.712（若尚未处理死亡：按年老死亡处理）→ 玩家通知 marauder.513，200–300天后 marauder.600 决定部落未来；与 511/514 的自然死亡路径互斥（khan_dead_event_fine 标记）。
+  r3-integrate (2026-10-13): Folded in the former event-marauder-711 (failsafe path): on_leader_death (00_on_actions.txt:2386) fires hidden marauder.711 (events/marauder_events.txt:10254-10281); for a great_khan leader it sets the global flag great_khan_dead and clears the Khan leader, 10 days later marauder.712 (treats the death as old age if not yet handled) -> player notice marauder.513, 200-300 days later marauder.600 decides the horde's future; exclusive with the natural-death path of 511/514 (khan_dead_event_fine flag).

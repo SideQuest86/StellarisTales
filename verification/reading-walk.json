@@ -1,0 +1,637 @@
+{
+ "date": "2026-10-13T23:04:06.749Z",
+ "base": "http://127.0.0.1:4173/",
+ "results": [
+  {
+   "category": "crisis",
+   "story": "cetana",
+   "chapters": 120,
+   "mapNodes": 13,
+   "visited": [
+    "crisis.8035",
+    "crisis.8039",
+    "crisis.8040",
+    "crisis.8070",
+    "crisis.8075"
+   ],
+   "reversedTo": "crisis.8070"
+  },
+  {
+   "category": "crisis",
+   "story": "contingency",
+   "chapters": 66,
+   "mapNodes": 75,
+   "visited": [
+    "crisis.2010",
+    "crisis.2011",
+    "crisis.2016",
+    "crisis.2020",
+    "crisis.2021",
+    "crisis.2022",
+    "crisis.2099"
+   ],
+   "reversedTo": "crisis.2022"
+  },
+  {
+   "category": "crisis",
+   "story": "galactic-nemesis",
+   "chapters": 55,
+   "mapNodes": 80,
+   "visited": [
+    "crisis.4140",
+    "event_chains:become_the_crisis_chain"
+   ],
+   "reversedTo": "crisis.4140"
+  },
+  {
+   "category": "crisis",
+   "story": "war-in-heaven",
+   "chapters": 15,
+   "mapNodes": 15,
+   "visited": [
+    "war_in_heaven.2",
+    "war_in_heaven.4",
+    "war_in_heaven.11"
+   ],
+   "reversedTo": "war_in_heaven.4"
+  },
+  {
+   "category": "crisis",
+   "story": "defenders-of-the-galaxy",
+   "chapters": 24,
+   "mapNodes": 24,
+   "visited": [
+    "ambition.100",
+    "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_1",
+    "ambition.125",
+    "ambition.105",
+    "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_2",
+    "ambition.130",
+    "ambition.110"
+   ],
+   "reversedTo": "ambition.130"
+  },
+  {
+   "category": "crisis",
+   "story": "unbidden",
+   "chapters": 28,
+   "mapNodes": 33,
+   "visited": [
+    "crisis.1007",
+    "origin.6130"
+   ],
+   "reversedTo": "crisis.1007"
+  },
+  {
+   "category": "stories",
+   "story": "the-shroud",
+   "chapters": 111,
+   "mapNodes": 10,
+   "visited": [
+    "utopia.2655",
+    "special_projects:BREACHING_SHROUD_PROJECT",
+    "utopia.2656",
+    "utopia.3000",
+    "utopia.2657",
+    "utopia.2659",
+    "utopia.3140"
+   ],
+   "reversedTo": "utopia.2659"
+  },
+  {
+   "category": "stories",
+   "story": "event-paragon-3901",
+   "chapters": 56,
+   "mapNodes": 31,
+   "visited": [
+    "utopia.2659",
+    "utopia.3170",
+    "utopia.3172",
+    "utopia.3024",
+    "utopia.3026"
+   ],
+   "reversedTo": "utopia.3024"
+  },
+  {
+   "category": "stories",
+   "story": "event-paragon-3100",
+   "chapters": 35,
+   "mapNodes": 42,
+   "visited": [
+    "utopia.3024",
+    "special_projects:LEGENDARY_LEADER_FIRST_PROJECT",
+    "paragon.3104",
+    "special_projects:LEGENDARY_LEADER_RESUSCITATION",
+    "paragon.3105",
+    "special_projects:LEGENDARY_LEADER_STUDY_RELIC_PROJECT",
+    "paragon.3110"
+   ],
+   "reversedTo": "special_projects:LEGENDARY_LEADER_STUDY_RELIC_PROJECT"
+  },
+  {
+   "category": "stories",
+   "story": "event-bio-900",
+   "chapters": 4,
+   "mapNodes": 4,
+   "visited": [
+    "special_projects:LEGENDARY_LEADER_STUDY_RELIC_PROJECT",
+    "bio.905",
+    "bio.910",
+    "bio.915"
+   ],
+   "reversedTo": "bio.910"
+  },
+  {
+   "category": "stories",
+   "story": "event-cara-4020",
+   "chapters": 3,
+   "mapNodes": 3,
+   "visited": [
+    "cara.4020",
+    "special_projects:CARAVAN_HULK_PROJECT",
+    "cara.4025"
+   ],
+   "reversedTo": "special_projects:CARAVAN_HULK_PROJECT"
+  },
+  {
+   "category": "stories",
+   "story": "event-crime-50",
+   "chapters": 30,
+   "mapNodes": 30,
+   "visited": [
+    "crime.40",
+    "crime.6"
+   ],
+   "reversedTo": "crime.40"
+  },
+  {
+   "category": "origins",
+   "story": "origin_unplugged",
+   "chapters": 93,
+   "mapNodes": 30,
+   "visited": [
+    "crime.40",
+    "unplugged.4005"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "origins",
+   "story": "origin_treasure_hunters",
+   "chapters": 91,
+   "mapNodes": 15,
+   "visited": [
+    "origin-intro:origin_unplugged",
+    "grand_archive.8000",
+    "special_projects:TREASURE_HUNTERS_ANCIENT_CAPSULE_PROJECT",
+    "grand_archive.8005",
+    "grand_archive.8015",
+    "grand_archive.8020",
+    "grand_archive.8025"
+   ],
+   "reversedTo": "grand_archive.8020"
+  },
+  {
+   "category": "origins",
+   "story": "origin_legendary_leader",
+   "chapters": 87,
+   "mapNodes": 10,
+   "visited": [
+    "grand_archive.8020",
+    "paragon.5027",
+    "paragon.5025",
+    "paragon.5033",
+    "paragon.5038",
+    "paragon.5033",
+    "paragon.5029"
+   ],
+   "reversedTo": "paragon.5033"
+  },
+  {
+   "category": "origins",
+   "story": "origin_cybernetic_creed",
+   "chapters": 22,
+   "mapNodes": 14,
+   "visited": [
+    "paragon.5033",
+    "paragon.5027",
+    "paragon.5023",
+    "paragon.5027",
+    "paragon.5033",
+    "paragon.5029",
+    "paragon.5038"
+   ],
+   "reversedTo": "paragon.5029"
+  },
+  {
+   "category": "origins",
+   "story": "event-nomads-1030",
+   "chapters": 1,
+   "mapNodes": 14,
+   "visited": [
+    "paragon.5029",
+    "paragon.5023",
+    "paragon.5033",
+    "paragon.5038",
+    "paragon.5033",
+    "paragon.5025",
+    "paragon.5027"
+   ],
+   "reversedTo": "paragon.5025"
+  },
+  {
+   "category": "origins",
+   "story": "origin_necrophage",
+   "chapters": 2,
+   "mapNodes": 2,
+   "visited": [
+    "paragon.5025",
+    "necroids.2"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "leviathans",
+   "story": "shroudwalker-divination",
+   "chapters": 79,
+   "mapNodes": 56,
+   "visited": [
+    "origin-intro:origin_necrophage",
+    "situations:divination_locus",
+    "enclave.5500",
+    "special_projects:SHATTERED_FRONTIER_ANOMALY",
+    "enclave.5504"
+   ],
+   "reversedTo": "special_projects:SHATTERED_FRONTIER_ANOMALY"
+  },
+  {
+   "category": "leviathans",
+   "story": "event-shroud-4199",
+   "chapters": 42,
+   "mapNodes": 141,
+   "visited": [
+    "shroud.4286"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "leviathans",
+   "story": "curators",
+   "chapters": 41,
+   "mapNodes": 141,
+   "visited": [
+    "shroud.4286",
+    "leviathans.597"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "leviathans",
+   "story": "situation-leviathan-celebration-opportunity",
+   "chapters": 19,
+   "mapNodes": 110,
+   "visited": [
+    "leviathans.502",
+    "situation.1005"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "leviathans",
+   "story": "spectral-wraith",
+   "chapters": 4,
+   "mapNodes": 28,
+   "visited": [
+    "situations:leviathan_celebration_opportunity",
+    "situation.1080"
+   ],
+   "reversedTo": "situations:leviathan_celebration_opportunity"
+  },
+  {
+   "category": "leviathans",
+   "story": "event-enclave-430",
+   "chapters": 2,
+   "mapNodes": 2,
+   "visited": [
+    "enclave.435"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "exploration",
+   "story": "horizon-signal",
+   "chapters": 74,
+   "mapNodes": 6,
+   "visited": [
+    "enclave.435",
+    "special_projects:HORIZON_SIGNAL_PROJECT",
+    "akx.9001",
+    "event_chains:WORM_CHAIN_1"
+   ],
+   "reversedTo": "akx.9001"
+  },
+  {
+   "category": "exploration",
+   "story": "event-anomaly-5007",
+   "chapters": 25,
+   "mapNodes": 28,
+   "visited": [
+    "anomaly.5007",
+    "special_projects:GAS_GIANT_COLONY",
+    "anomaly.5008",
+    "anomaly.5025",
+    "anomaly.5026"
+   ],
+   "reversedTo": "anomaly.5025"
+  },
+  {
+   "category": "exploration",
+   "story": "dessanu-consonance",
+   "chapters": 23,
+   "mapNodes": 28,
+   "visited": [
+    "anomaly.5025",
+    "anomaly.5026",
+    "anomaly.5025",
+    "anomaly.5026",
+    "anomaly.5025",
+    "anomaly.5026",
+    "anomaly.5025"
+   ],
+   "reversedTo": "anomaly.5026"
+  },
+  {
+   "category": "exploration",
+   "story": "anomaly-on-crashed-ship-cat",
+   "chapters": 9,
+   "mapNodes": 28,
+   "visited": [
+    "anomaly.5026",
+    "anomaly.7030",
+    "archaeological_site_types:site_rage_sage_dig",
+    "ancrel.14001",
+    "ancrel.14002",
+    "ancrel.14003",
+    "ancrel.14006"
+   ],
+   "reversedTo": "ancrel.14003"
+  },
+  {
+   "category": "exploration",
+   "story": "anomaly-geocentric-experiment-cat",
+   "chapters": 2,
+   "mapNodes": 2,
+   "visited": [
+    "ancrel.14003",
+    "anomaly.8000"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "exploration",
+   "story": "event-anomaly-4171",
+   "chapters": 2,
+   "mapNodes": 3,
+   "visited": [
+    "anomaly_failure.4170"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "society",
+   "story": "event-bio-1",
+   "chapters": 67,
+   "mapNodes": 3,
+   "visited": [
+    "anomaly_failure.4170",
+    "bio.200",
+    "bio.215",
+    "bio.65",
+    "bio.225",
+    "bio.60",
+    "bio.210"
+   ],
+   "reversedTo": "bio.60"
+  },
+  {
+   "category": "society",
+   "story": "event-shroud-2750",
+   "chapters": 37,
+   "mapNodes": 37,
+   "visited": [
+    "bio.60",
+    "situations:situation_breach_shroud",
+    "shroud.2325"
+   ],
+   "reversedTo": "situations:situation_breach_shroud"
+  },
+  {
+   "category": "society",
+   "story": "event-colony-10000",
+   "chapters": 32,
+   "mapNodes": 37,
+   "visited": [
+    "situations:situation_breach_shroud",
+    "shroud.2520"
+   ],
+   "reversedTo": "situations:situation_breach_shroud"
+  },
+  {
+   "category": "society",
+   "story": "event-first-contact-critters-50",
+   "chapters": 2,
+   "mapNodes": 37,
+   "visited": [
+    "situations:situation_breach_shroud",
+    "shroud.2510"
+   ],
+   "reversedTo": "situations:situation_breach_shroud"
+  },
+  {
+   "category": "society",
+   "story": "event-cyber-1210",
+   "chapters": 1,
+   "mapNodes": 1,
+   "visited": [
+    "cyber.1210",
+    "cyber.1510"
+   ],
+   "reversedTo": "cyber.1210"
+  },
+  {
+   "category": "society",
+   "story": "event-cyber-360",
+   "chapters": 1,
+   "mapNodes": 1,
+   "visited": [
+    "cyber.1210"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "precursors",
+   "story": "first-league",
+   "chapters": 66,
+   "mapNodes": 1,
+   "visited": [
+    "cyber.360",
+    "anomalies:league_5_cat",
+    "anomalies:league_14_cat",
+    "anomalies:league_10_cat",
+    "anomalies:league_13_cat",
+    "anomalies:league_12_cat",
+    "anomalies:league_5_cat"
+   ],
+   "reversedTo": "anomalies:league_12_cat"
+  },
+  {
+   "category": "precursors",
+   "story": "vultaum",
+   "chapters": 60,
+   "mapNodes": 79,
+   "visited": [
+    "anomalies:league_12_cat",
+    "anomalies:vultaum_4_cat",
+    "anomalies:vultaum_6_cat",
+    "anomalies:vultaum_5_cat",
+    "anomalies:vultaum_3_cat",
+    "anomalies:vultaum_10_cat",
+    "anomalies:vultaum_4_cat"
+   ],
+   "reversedTo": "anomalies:vultaum_10_cat"
+  },
+  {
+   "category": "precursors",
+   "story": "anomaly-storms-prec-one",
+   "chapters": 56,
+   "mapNodes": 59,
+   "visited": [
+    "anomalies:vultaum_10_cat",
+    "cstorms.205",
+    "event_chains:cs_adAkkaria_chain"
+   ],
+   "reversedTo": "cstorms.205"
+  },
+  {
+   "category": "precursors",
+   "story": "site-site-warmer-climates",
+   "chapters": 6,
+   "mapNodes": 59,
+   "visited": [
+    "cstorms.205",
+    "ancrel.8101"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "precursors",
+   "story": "event-ancrel-2068",
+   "chapters": 1,
+   "mapNodes": 6,
+   "visited": [
+    "archaeological_site_types:site_warmer_climates"
+   ],
+   "reversedTo": null
+  },
+  {
+   "category": "precursors",
+   "story": "event-ancrel-15010",
+   "chapters": 11,
+   "mapNodes": 1,
+   "visited": [
+    "ancrel.2068",
+    "archaeological_site_types:site_transformation_dig",
+    "ancrel.15006"
+   ],
+   "reversedTo": "archaeological_site_types:site_transformation_dig"
+  },
+  {
+   "category": "rifts",
+   "story": "rift-siege-on-paradise",
+   "chapters": 29,
+   "mapNodes": 12,
+   "visited": [
+    "archaeological_site_types:site_transformation_dig",
+    "ancrel.15007"
+   ],
+   "reversedTo": "archaeological_site_types:site_transformation_dig"
+  },
+  {
+   "category": "rifts",
+   "story": "astral-formless",
+   "chapters": 21,
+   "mapNodes": 30,
+   "visited": [
+    "archaeological_site_types:site_transformation_dig",
+    "astral_planes.3005",
+    "astral_planes.3015",
+    "astral_planes.3020",
+    "situations:situation_the_seal",
+    "astral_planes.50"
+   ],
+   "reversedTo": "situations:situation_the_seal"
+  },
+  {
+   "category": "rifts",
+   "story": "rift-cleaning-drones",
+   "chapters": 17,
+   "mapNodes": 30,
+   "visited": [
+    "situations:situation_the_seal",
+    "astral_planes.3070",
+    "crisis.2037",
+    "crisis.2036",
+    "crisis.2039",
+    "crisis.2038",
+    "crisis.2474"
+   ],
+   "reversedTo": "crisis.2038"
+  },
+  {
+   "category": "rifts",
+   "story": "rift-lonely-planet",
+   "chapters": 7,
+   "mapNodes": 10,
+   "visited": [
+    "crisis.2038",
+    "astral_rift.1100",
+    "astral_rift.1105",
+    "astral_rift.1110",
+    "astral_rift.1125"
+   ],
+   "reversedTo": "astral_rift.1110"
+  },
+  {
+   "category": "rifts",
+   "story": "rift-vortex",
+   "chapters": 10,
+   "mapNodes": 10,
+   "visited": [
+    "astral_rift.1110",
+    "astral_rift.1125"
+   ],
+   "reversedTo": "astral_rift.1110"
+  },
+  {
+   "category": "rifts",
+   "story": "event-astral-planes-6095",
+   "chapters": 2,
+   "mapNodes": 10,
+   "visited": [
+    "astral_rift.1110",
+    "astral_planes.6105"
+   ],
+   "reversedTo": null
+  }
+ ],
+ "failures": [
+  "origin_unplugged: back from unplugged.4005 expected crime.40, got origin-intro:origin_unplugged (http://127.0.0.1:4173/#story=origin_unplugged&chapter=origin-intro%3Aorigin_unplugged)",
+  "origin_necrophage: back from necroids.2 expected paragon.5025, got origin-intro:origin_necrophage (http://127.0.0.1:4173/#story=origin_necrophage&chapter=origin-intro%3Aorigin_necrophage)",
+  "curators: back from leviathans.597 expected shroud.4286, got leviathans.502 (http://127.0.0.1:4173/#story=curators&chapter=leviathans.502)",
+  "situation-leviathan-celebration-opportunity: back from situation.1005 expected leviathans.502, got situations:leviathan_celebration_opportunity (http://127.0.0.1:4173/#story=situation-leviathan-celebration-opportunity&chapter=situations%3Aleviathan_celebration_opportunity)",
+  "anomaly-geocentric-experiment-cat: back from anomaly.8000 expected ancrel.14003, got anomalies:GEOCENTRIC_EXPERIMENT_CAT (http://127.0.0.1:4173/#story=anomaly-geocentric-experiment-cat&chapter=anomalies%3AGEOCENTRIC_EXPERIMENT_CAT)",
+  "site-site-warmer-climates: back from ancrel.8101 expected cstorms.205, got archaeological_site_types:site_warmer_climates (http://127.0.0.1:4173/#story=site-site-warmer-climates&chapter=archaeological_site_types%3Asite_warmer_climates)",
+  "event-astral-planes-6095: back from astral_planes.6105 expected astral_rift.1110, got astral_planes.6100 (http://127.0.0.1:4173/#story=event-astral-planes-6095&chapter=astral_planes.6100)"
+ ],
+ "errors": []
+}

@@ -26,3 +26,5 @@ The after block of action.62: with the payback_stolen_revenge flag origin.4070 f
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）
   (Commentary written by the reviewer, not game text; the original text is in the reader.)
+- r3-integrate（2026-10-13）：从互斥组中移除 syndaw.1030（属于 event-syndaw-400）。
+  r3-integrate (2026-10-13): Removed syndaw.1030 from the exclusive group (it belongs to event-syndaw-400).

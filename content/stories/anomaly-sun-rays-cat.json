@@ -4,24 +4,14 @@
   {
    "from": "anomaly.4035",
    "choice": "anomaly.4035.a",
-   "to": "anomaly.4037",
+   "to": "event_chains:star_power_chain",
    "conditional": true,
    "label": {
-    "zh": "舰队进入标记星系：40%，或第二个星系必中",
-    "en": "A fleet enters a marked system: 40%, or certain at the second"
+    "zh": "开始事件链“恒星异常现象”：舰队进入标记星系时找到恒星（另一故事）",
+    "en": "Starts the chain Unusual Star Stuff: a fleet entering a marked system finds the star (another story)"
    },
-   "evidence": "events/anomaly_events_3.txt:923-1059 hidden 4036 (on_entering_system_fleet common/on_actions/00_on_actions.txt:1023) requires star_power_chain and a marked system: random_list 40 → 4037, 60 → counter +1 and anomaly_failure.4037 unless both systems visited, then 4037"
-  },
-  {
-   "from": "anomaly.4035",
-   "choice": "anomaly.4035.a",
-   "to": "anomaly_failure.4037",
-   "conditional": true,
-   "label": {
-    "zh": "第一个标记星系：60%不是这里",
-    "en": "First marked system: 60% not here"
-   },
-   "evidence": "events/anomaly_events_3.txt:962-979 / 1020-1037 60% branch fires anomaly_failure.4037 while the visit counter (max 2) is incomplete"
+   "evidence": "events/anomaly_events_3.txt:832,843 anomaly.4035 begin_event_chain star_power_chain; hidden 4036 (on_entering_system_fleet common/on_actions/00_on_actions.txt:1023) continues in event-anomaly-4036 (40% anomaly.4037, 60% anomaly_failure.4037 until both systems are visited)",
+   "external": true
   }
  ],
  "groups": [
@@ -49,46 +39,16 @@
     "zh": "研究完成时按权重随机选出一个结果；每个结果对同一帝国默认只出现一次。",
     "en": "One outcome is drawn by weight when the research completes; each outcome is max_once per empire by default."
    }
-  },
-  {
-   "kind": "exclusive",
-   "members": [
-    "anomaly.4037",
-    "anomaly_failure.4037"
-   ],
-   "labels": [
-    {
-     "zh": "40%（第二个星系必中）",
-     "en": "40% (certain at the second)"
-    },
-    {
-     "zh": "60%",
-     "en": "60%"
-    }
-   ]
   }
  ],
- "nodeLabels": {
-  "anomaly.4037": {
-   "zh": "找到那颗恒星",
-   "en": "The star found"
-  },
-  "anomaly_failure.4037": {
-   "zh": "不是这个星系",
-   "en": "Not this system"
-  },
-  "anomaly.4038": {
-   "zh": "虫洞之星",
-   "en": "A wormhole star"
-  }
- },
+ "nodeLabels": {},
  "review": {
   "status": "reviewed",
-  "date": "2026-10-12",
-  "reviewer": "c3b-exploration (Opus 5.5)",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (Opus 5.5); r3-integrate",
   "scope": {
-   "zh": "全部8个文档（含寻星结果）。",
-   "en": "All 8 docs including the search results."
+   "zh": "异常类别、结果 4035/4040；4035 之后的寻星部分在 event-anomaly-4036（外链）。",
+   "en": "The anomaly category and outcomes 4035/4040; the star search after 4035 lives in event-anomaly-4036 (external link)."
   },
   "sources": [
    "common/anomalies/02_anomaly_categories.txt",

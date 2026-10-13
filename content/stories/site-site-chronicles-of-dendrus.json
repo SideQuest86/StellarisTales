@@ -38,7 +38,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "C2 precursor review (resumed, Claude)",
+  "reviewer": "C2 precursor review (resumed, Claude); r3-integrate",
   "scope": {
    "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
    "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
@@ -53,6 +53,21 @@
    "localisation/english"
   ],
   "uncertain": [],
-  "guide": "public/summaries/site-site-chronicles-of-dendrus.md"
- }
+  "guide": "public/summaries/site-site-chronicles-of-dendrus.md",
+  "merged": [
+   "event-extreme-frontiers-1430"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "extreme_frontiers.1425",
+   "to": "extreme_frontiers.1430",
+   "conditional": true,
+   "label": {
+    "zh": "勘测新布拉图雅星球时",
+    "en": "When the New Bratulla planet is surveyed"
+   },
+   "evidence": "events/extreme_frontiers_events.txt:4226-4239 hidden 1426 spawn_new_bratulla_system then 1425 after 1 day; events/extreme_frontiers_events.txt:4267 1430 fired by on_survey_planet (common/on_actions/00_on_actions.txt:1175)"
+  }
+ ]
 }

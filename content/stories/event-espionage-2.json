@@ -6,7 +6,6 @@
    "members": [
     "espionage.1001",
     "espionage.1030",
-    "espionage.1040",
     "espionage.1050",
     "espionage.1060",
     "espionage.1081",
@@ -17,8 +16,8 @@
     "en": "espionage.2 draws at most one per pulse"
    },
    "note": {
-    "zh": "权重：无事80，被弃特工2（有被弃特工标志时×3），隐形2（仅格式塔），意外收获2（需有宿敌），截获1、1，阴谋曝光1（有高级加密、守护者/皇帝/危机派系则减半，无加密2则×2）。1081占90%、1082占10%。",
-    "en": "Weights: nothing 80, disavowed operative 2 (x3 with the disavowed flag), vivid sight 2 (gestalt only), surprise catch 2 (needs a nemesis), intercepts 1 and 1, plot exposed 1 (halved with advanced encryption or galactic office/crisis faction, doubled without encryption 2). 1081 takes 90%, 1082 10%."
+    "zh": "权重：无事80，被弃特工2（有被弃特工标志时×3），隐形2（仅格式塔），意外收获2（需有宿敌），截获1、1，阴谋曝光1（有高级加密、守护者/皇帝/危机派系则减半，无加密2则×2）。1081占90%、1082占10%。 （espionage.1040 “意外收获”也由行动事件触发，已归入行动类故事，此处不列。）",
+    "en": "Weights: nothing 80, disavowed operative 2 (x3 with the disavowed flag), vivid sight 2 (gestalt only), surprise catch 2 (needs a nemesis), intercepts 1 and 1, plot exposed 1 (halved with advanced encryption or galactic office/crisis faction, doubled without encryption 2). 1081 takes 90%, 1082 10%. (espionage.1040, the surprise catch, is also fired by operation events and lives in the operation stories, so it is not listed here.)"
    }
   }
  ],
@@ -33,7 +32,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "reviewer": "Fable 5.5 (c7a-society, resumed); r3-integrate",
   "scope": {
    "zh": "间谍活动的随机事件池：被弃特工重现、隐形、意外收获、截获、阴谋曝光。",
    "en": "Espionage random event pool: disavowed operative resurfaces, vivid sight, surprise catch, intercepts, exposed plots."

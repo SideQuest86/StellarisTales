@@ -16,6 +16,10 @@
    “无所事事”没有事件。 / Stages 2 and 3 each draw one random event from the pool of the current approach (none for 'do nothing').
 5. **完成**：进度满，局势销毁并触发 **2500 发现治疗方法**；该国之后不再受虫群轰炸。所有玩家国都治愈后整个危机结束。 / At completion the situation is destroyed and **2500 Cure Discovered** shows; once all playable empires are cured the crisis ends.
 
+（并入自 event-grand-archive-2040，评注）“寻找治疗方法”的 2450 第二选项启动 VOIDWORM_GLANDS_PROJECT；项目进行中若击毁一只正在轰炸的敌对虚空三头虫（on_fleet_destroyed_perp），隐藏事件 2040 中止该项目、创建尸骸并启用 VOIDWORM_TITAN_DEBRIS_PROJECT（40天）→ 2455“取回腺体”：团结月度加成，并给虚空虫疫局势加100进度。
+
+(Merged from event-grand-archive-2040; commentary.) The second option of 2450 (Search for a Cure) starts VOIDWORM_GLANDS_PROJECT; if, while it runs, a bombarding hostile Voidworm Troika is destroyed (on_fleet_destroyed_perp), hidden 2040 aborts the project, creates a carcass and enables VOIDWORM_TITAN_DEBRIS_PROJECT (40 days) -> 2455 "Glands Recovered": a monthly unity bonus and +100 progress to the Voidworm Plague situation.
+
 ## 分支与结局 Branches and outcomes
 - 治愈结局：2500（见上）。 / Cure: 2500.
 - 另一种终结：摧毁最后一个虚空虫巢穴（`grand_archive.2051`）会给局势进度直接加1000并结束危机与事件链，随后出现 2053/2052（故事 event-grand-archive-2051）。 / Alternative end: destroying the last nest adds 1000 progress, ends the crisis and chain, then shows 2053/2052 (separate story).
@@ -28,3 +32,5 @@
 - 已核对 Checked: the situation definitions (6-312), the inline random-event script, 2055/2065/2300/2305/2310/2460/2500 and the 24xx events, create/end crisis effects, and the nest-destruction event 2051; callers via callers.py.
 - 更正 Corrections: grouped the 9 random stage events into three approach pools (the compiler listed them as one flat set); added the cross-story bridge to the 2051 eradication story.
 - 不确定 Uncertain: the numeric start chance (script values) and the reward details of each 24xx option were not evaluated. 冻结虫 (situation_frenzied_voidworms) and 破坏 (situation_sabotage) belong to the origin story, not here.
+- r3-integrate（2026-10-13）：合并了 event-grand-archive-2040（events/grand_archive_events.txt:509-560、2597-2615；project 04_projects_grand_archive.txt:739-757），增加 GLANDS → TITAN_DEBRIS 条件桥接。
+  r3-integrate (2026-10-13): Merged event-grand-archive-2040 (events/grand_archive_events.txt:509-560, 2597-2615; project 04_projects_grand_archive.txt:739-757) with a GLANDS -> TITAN_DEBRIS conditional bridge.

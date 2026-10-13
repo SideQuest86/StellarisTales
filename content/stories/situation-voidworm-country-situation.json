@@ -3,41 +3,168 @@
  "category": "society",
  "titleFrom": "situations:voidworm_country_situation",
  "bridges": [
-  {"from": "situations:situation_voidworm_plague", "to": "grand_archive.2053", "conditional": true, "external": true,
-   "label": {"zh": "另一种终结：摧毁最后一个虚空虫巢穴，局势进度直接加满", "en": "Alternative end: destroying the last Voidworm nest finishes the situation at once"},
-   "evidence": "events/grand_archive_events.txt:609-659 (grand_archive.2051) when no voidworms_system is left: end_event_chain voidworm_crisis_eradicate_chain, add_situation_progress = 1000 to situation_voidworm_plague, end_voidworms_crisis, then 2052/2053 (story event-grand-archive-2051)."}
+  {
+   "from": "situations:situation_voidworm_plague",
+   "to": "grand_archive.2053",
+   "conditional": true,
+   "external": true,
+   "label": {
+    "zh": "另一种终结：摧毁最后一个虚空虫巢穴，局势进度直接加满",
+    "en": "Alternative end: destroying the last Voidworm nest finishes the situation at once"
+   },
+   "evidence": "events/grand_archive_events.txt:609-659 (grand_archive.2051) when no voidworms_system is left: end_event_chain voidworm_crisis_eradicate_chain, add_situation_progress = 1000 to situation_voidworm_plague, end_voidworms_crisis, then 2052/2053 (story event-grand-archive-2051)."
+  },
+  {
+   "from": "special_projects:VOIDWORM_GLANDS_PROJECT",
+   "to": "special_projects:VOIDWORM_TITAN_DEBRIS_PROJECT",
+   "conditional": true,
+   "label": {
+    "zh": "项目进行中击毁正在轰炸的虚空三头虫时",
+    "en": "If a bombarding Voidworm Troika is destroyed while the glands project runs"
+   },
+   "evidence": "events/grand_archive_events.txt:509-560 hidden grand_archive.2040 (on_fleet_destroyed_perp, common/on_actions/00_on_actions.txt:1674) needs the killer on VOIDWORM_GLANDS_PROJECT; it aborts that project and enables VOIDWORM_TITAN_DEBRIS_PROJECT (:540)"
+  },
+  {
+   "from": "special_projects:VOIDWORM_GLANDS_PROJECT",
+   "to": "grand_archive.2040",
+   "conditional": true,
+   "label": {
+    "zh": "项目进行中击毁正在轰炸的虚空三头虫时",
+    "en": "If a bombarding Voidworm Troika is destroyed while the glands project runs"
+   },
+   "evidence": "events/grand_archive_events.txt:509-560 hidden grand_archive.2040 (on_fleet_destroyed_perp, common/on_actions/00_on_actions.txt:1674) needs the killer on VOIDWORM_GLANDS_PROJECT; it aborts that project and enables VOIDWORM_TITAN_DEBRIS_PROJECT (:540)"
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["grand_archive.2400", "grand_archive.2405", "grand_archive.2410"],
-   "label": {"zh": "“支援舰队”方式的随机事件", "en": "Random events of the 'Support Fleets' approach"},
-   "note": {"zh": "局势进入第二阶段、第三阶段时各抽一次（等权），已发生过的不再抽（ga_event_24xx_executed），因此最多出现两件。抽取按进入阶段时当前的方式决定。", "en": "One is drawn (equal weights) on first entering stage 2 and again on stage 3; events already seen are excluded (ga_event_24xx_executed flags), so at most two occur. The pool is chosen by the approach active at that moment."}},
-  {"kind": "exclusive", "members": ["grand_archive.2420", "grand_archive.2425", "grand_archive.2430"],
-   "label": {"zh": "“清除感染人口”方式的随机事件", "en": "Random events of the 'Purge Infected Pops' approach"},
-   "note": {"zh": "同上规则。2420 需要有可感染的有机科学家；2425 需要有被感染的殖民地；2430 对格式塔、机械物种与杀戮帝国不出现。", "en": "Same rule. 2420 needs an eligible organic scientist, 2425 an infected colony, 2430 is skipped for gestalts, mechanical species and homicidal empires."}},
-  {"kind": "exclusive", "members": ["grand_archive.2440", "grand_archive.2445", "grand_archive.2450"],
-   "label": {"zh": "“寻找治疗方法”方式的随机事件", "en": "Random events of the 'Search for a Cure' approach"},
-   "note": {"zh": "同上规则。2445（早期测试）对机械物种不出现；2450 的第二个选项启动特殊项目 VOIDWORM_GLANDS_PROJECT。", "en": "Same rule. 2445 (early testing) is skipped for mechanical species; 2450's second option starts VOIDWORM_GLANDS_PROJECT."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "grand_archive.2400",
+    "grand_archive.2405",
+    "grand_archive.2410"
+   ],
+   "label": {
+    "zh": "“支援舰队”方式的随机事件",
+    "en": "Random events of the 'Support Fleets' approach"
+   },
+   "note": {
+    "zh": "局势进入第二阶段、第三阶段时各抽一次（等权），已发生过的不再抽（ga_event_24xx_executed），因此最多出现两件。抽取按进入阶段时当前的方式决定。",
+    "en": "One is drawn (equal weights) on first entering stage 2 and again on stage 3; events already seen are excluded (ga_event_24xx_executed flags), so at most two occur. The pool is chosen by the approach active at that moment."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "grand_archive.2420",
+    "grand_archive.2425",
+    "grand_archive.2430"
+   ],
+   "label": {
+    "zh": "“清除感染人口”方式的随机事件",
+    "en": "Random events of the 'Purge Infected Pops' approach"
+   },
+   "note": {
+    "zh": "同上规则。2420 需要有可感染的有机科学家；2425 需要有被感染的殖民地；2430 对格式塔、机械物种与杀戮帝国不出现。",
+    "en": "Same rule. 2420 needs an eligible organic scientist, 2425 an infected colony, 2430 is skipped for gestalts, mechanical species and homicidal empires."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "grand_archive.2440",
+    "grand_archive.2445",
+    "grand_archive.2450"
+   ],
+   "label": {
+    "zh": "“寻找治疗方法”方式的随机事件",
+    "en": "Random events of the 'Search for a Cure' approach"
+   },
+   "note": {
+    "zh": "同上规则。2445（早期测试）对机械物种不出现；2450 的第二个选项启动特殊项目 VOIDWORM_GLANDS_PROJECT。",
+    "en": "Same rule. 2445 (early testing) is skipped for mechanical species; 2450's second option starts VOIDWORM_GLANDS_PROJECT."
+   }
+  }
  ],
  "nodeLabels": {
-  "situations:voidworm_country_situation": {"zh": "虚空虫行为（国家局势）", "en": "Voidworms Behavior (country situation)"},
-  "grand_archive.2310": {"zh": "虚空虫疫开始", "en": "The plague begins"},
-  "situations:situation_voidworm_plague": {"zh": "虚空虫疫（0→600）", "en": "Voidworm Plague (0 to 600)"}
+  "situations:voidworm_country_situation": {
+   "zh": "虚空虫行为（国家局势）",
+   "en": "Voidworms Behavior (country situation)"
+  },
+  "grand_archive.2310": {
+   "zh": "虚空虫疫开始",
+   "en": "The plague begins"
+  },
+  "situations:situation_voidworm_plague": {
+   "zh": "虚空虫疫（0→600）",
+   "en": "Voidworm Plague (0 to 600)"
+  }
  },
  "endings": {
-  "grand_archive.2500": {"label": {"zh": "治疗方法完成", "en": "Cure completed"}, "note": {"zh": "局势进度满600：销毁局势，该国关闭虚空虫轰炸；所有玩家国都治愈后整个危机结束。", "en": "Progress reaches the end: the situation is destroyed, the empire's bombardment is disabled; when every playable empire is cured the whole crisis ends."}, "evidence": "common/situations/11_grand_archive_situations.txt:64-107; events/grand_archive_events.txt:2649."}
+  "grand_archive.2500": {
+   "label": {
+    "zh": "治疗方法完成",
+    "en": "Cure completed"
+   },
+   "note": {
+    "zh": "局势进度满600：销毁局势，该国关闭虚空虫轰炸；所有玩家国都治愈后整个危机结束。",
+    "en": "Progress reaches the end: the situation is destroyed, the empire's bombardment is disabled; when every playable empire is cured the whole crisis ends."
+   },
+   "evidence": "common/situations/11_grand_archive_situations.txt:64-107; events/grand_archive_events.txt:2649."
+  },
+  "grand_archive.2455": {
+   "label": {
+    "zh": "取回腺体：局势+100进度",
+    "en": "Glands recovered: +100 situation progress"
+   },
+   "note": {
+    "zh": "尸骸项目完成后给团结加成，并给虚空虫疫局势加100进度。",
+    "en": "Gives a unity bonus and adds 100 progress to the Voidworm Plague situation."
+   },
+   "evidence": "events/grand_archive_events.txt:2597-2615"
+  }
  },
  "notes": [
-  {"doc": "situations:voidworm_country_situation", "kind": "review", "zh": "这是虚空虫国家自己的“行为”局势（只有一个阶段、一种方式、进度恒为0），每月运行隐藏事件 2055：每月 2065（若虫巢存在且舰船少，5/155 概率补充一批舰队）；每满12个月触发 2300（危机开始检定）；有虫巢时按重生间隔触发 2460。它由 create_voidworms_country 启动（银河生成时的虚空虫星系初始化、五年脉冲 1005、8310 等）。", "en": "This is the Voidworms' own 'behavior' situation (one stage, one approach, progress stays 0). Each month it runs the hidden event 2055: 2065 (a 5/155 chance of a fleet top-up when nests exist and ships are few); every 12th month 2300 (the crisis-start check); 2460 on the nest respawn interval. It is started by create_voidworms_country (galaxy-generation voidworm systems, 1005, 8310)."},
-  {"doc": "grand_archive.2310", "kind": "review", "zh": "危机在游戏进行至少3年后、尚未进入终局时，每年按“危机起始概率”检定（该值由规模变量加上虫群盈余，最高50）一次；成功则虚空虫国家变为危机类型并给所有玩家国发出 2310。2310 启动事件链“根除虚空虫”并开始虚空虫疫局势；若玩家已拥有虚空虫免疫科技，局势开局即加100进度，等于立即完成。", "en": "Once at least 3 mid-game years have passed (and the end game has not begun), each year 2300 rolls against the crisis start chance (a scaling value plus the voidworm surplus, capped at 50). On success the voidworm country becomes the crisis type and every playable empire gets 2310. 2310 begins the 'Eradicate the Voidworms' event chain and starts the plague situation; an empire that already has the immunity technology starts with +100 progress, which finishes it at once."},
-  {"doc": "situations:situation_voidworm_plague", "kind": "review", "zh": "进度从0到600，阶段边界200/400/600；每月基础+0.5，“支援舰队”+0.5、“清除感染人口”+0.7、“寻找治疗方法”+1.0；被杀死的虚空虫与被清除的人口也推进进度（每个人口+3）。阶段二、三首次进入时按当前方式随机一件事件（见分组）。", "en": "Progress runs 0 to 600 with stage ends at 200/400/600; monthly base +0.5, +0.5 for Support Fleets, +0.7 for Purge Infected Pops, +1.0 for Search for a Cure; destroyed voidworms and purged pops also add progress (+3 per pop). Stages 2 and 3 each draw one random event of the current approach on first entry (see groups)."}
+  {
+   "doc": "situations:voidworm_country_situation",
+   "kind": "review",
+   "zh": "这是虚空虫国家自己的“行为”局势（只有一个阶段、一种方式、进度恒为0），每月运行隐藏事件 2055：每月 2065（若虫巢存在且舰船少，5/155 概率补充一批舰队）；每满12个月触发 2300（危机开始检定）；有虫巢时按重生间隔触发 2460。它由 create_voidworms_country 启动（银河生成时的虚空虫星系初始化、五年脉冲 1005、8310 等）。",
+   "en": "This is the Voidworms' own 'behavior' situation (one stage, one approach, progress stays 0). Each month it runs the hidden event 2055: 2065 (a 5/155 chance of a fleet top-up when nests exist and ships are few); every 12th month 2300 (the crisis-start check); 2460 on the nest respawn interval. It is started by create_voidworms_country (galaxy-generation voidworm systems, 1005, 8310)."
+  },
+  {
+   "doc": "grand_archive.2310",
+   "kind": "review",
+   "zh": "危机在游戏进行至少3年后、尚未进入终局时，每年按“危机起始概率”检定（该值由规模变量加上虫群盈余，最高50）一次；成功则虚空虫国家变为危机类型并给所有玩家国发出 2310。2310 启动事件链“根除虚空虫”并开始虚空虫疫局势；若玩家已拥有虚空虫免疫科技，局势开局即加100进度，等于立即完成。",
+   "en": "Once at least 3 mid-game years have passed (and the end game has not begun), each year 2300 rolls against the crisis start chance (a scaling value plus the voidworm surplus, capped at 50). On success the voidworm country becomes the crisis type and every playable empire gets 2310. 2310 begins the 'Eradicate the Voidworms' event chain and starts the plague situation; an empire that already has the immunity technology starts with +100 progress, which finishes it at once."
+  },
+  {
+   "doc": "situations:situation_voidworm_plague",
+   "kind": "review",
+   "zh": "进度从0到600，阶段边界200/400/600；每月基础+0.5，“支援舰队”+0.5、“清除感染人口”+0.7、“寻找治疗方法”+1.0；被杀死的虚空虫与被清除的人口也推进进度（每个人口+3）。阶段二、三首次进入时按当前方式随机一件事件（见分组）。",
+   "en": "Progress runs 0 to 600 with stage ends at 200/400/600; monthly base +0.5, +0.5 for Support Fleets, +0.7 for Purge Infected Pops, +1.0 for Search for a Cure; destroyed voidworms and purged pops also add progress (+3 per pop). Stages 2 and 3 each draw one random event of the current approach on first entry (see groups)."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "r2-society",
-  "scope": {"zh": "虚空虫国家行为局势、危机开始（2300/2310）、虚空虫疫局势（方式、阶段随机事件、完成 2500）及与“虚空虫被肃清”的联系。冻结虫（situation_frenzied_voidworms）、破坏者（situation_sabotage）、origin 相关事件在别处审阅。", "en": "The Voidworms' behavior situation, the crisis start (2300/2310), the plague situation (approaches, stage random events, completion 2500) and its tie to 'Voidworms Eradicated'. The frenzied-voidworms and sabotage situations and the origin events are reviewed elsewhere."},
-  "sources": ["common/situations/11_grand_archive_situations.txt:6-312", "common/inline_scripts/grand_archive/voidworm_crisis_random_events.txt", "events/grand_archive_events.txt:609-659, 732-847, 1535-1710, 1808-2600, 2621-2650", "common/scripted_effects/grand_archive_effects.txt:25-57, 160, 251", "common/scripted_variables/07_scripted_variables_grand_archive.txt:82, 164, 168"],
-  "uncertain": ["Exact numeric value of voidworm_crisis_start_chance (scaling + surplus script values) not evaluated.", "Effects of each stage event option (rewards/penalties) were read for gist only."],
-  "guide": "public/summaries/situation-voidworm-country-situation.md"
+  "reviewer": "r2-society; r3-integrate",
+  "scope": {
+   "zh": "虚空虫国家行为局势、危机开始（2300/2310）、虚空虫疫局势（方式、阶段随机事件、完成 2500）及与“虚空虫被肃清”的联系。冻结虫（situation_frenzied_voidworms）、破坏者（situation_sabotage）、origin 相关事件在别处审阅。",
+   "en": "The Voidworms' behavior situation, the crisis start (2300/2310), the plague situation (approaches, stage random events, completion 2500) and its tie to 'Voidworms Eradicated'. The frenzied-voidworms and sabotage situations and the origin events are reviewed elsewhere."
+  },
+  "sources": [
+   "common/situations/11_grand_archive_situations.txt:6-312",
+   "common/inline_scripts/grand_archive/voidworm_crisis_random_events.txt",
+   "events/grand_archive_events.txt:609-659, 732-847, 1535-1710, 1808-2600, 2621-2650",
+   "common/scripted_effects/grand_archive_effects.txt:25-57, 160, 251",
+   "common/scripted_variables/07_scripted_variables_grand_archive.txt:82, 164, 168"
+  ],
+  "uncertain": [
+   "Exact numeric value of voidworm_crisis_start_chance (scaling + surplus script values) not evaluated.",
+   "Effects of each stage event option (rewards/penalties) were read for gist only."
+  ],
+  "guide": "public/summaries/situation-voidworm-country-situation.md",
+  "merged": [
+   "event-grand-archive-2040"
+  ]
  }
 }

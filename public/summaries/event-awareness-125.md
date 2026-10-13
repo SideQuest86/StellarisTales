@@ -29,3 +29,5 @@
   Checked: triggers of awareness.125/900/910/920 and the description variants and after branches of action.2.
 - 更正：原三个故事（125 / 900 / fircon-30）各自挂同一个 action.2；合并后 fircon.5026 归入哈宾特故事。
   Correction: the three draft stories (125 / 900 / fircon-30) each hung the same action.2; merged now, and fircon.5026 moved to the Habinte story.
+- r3-integrate（2026-10-13）：把 progress.4/5/6 从家族成员与互斥组中移除（它们属于 event-action-1），消除“组引用故事外文档”警告。
+  r3-integrate (2026-10-13): Removed progress.4/5/6 from the family members and the exclusive group (they belong to event-action-1), clearing the group warning.

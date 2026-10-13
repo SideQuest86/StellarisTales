@@ -32,3 +32,5 @@ action.11 needs both sides not day_0, the other a default or enclave country, an
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）
   (Commentary written by the reviewer, not game text; the original text is in the reader.)
+- r3-integrate（2026-10-13）：并入原 event-first-contact-1050：on_post_communications_established 触发隐藏 first_contact.1050（events/first_contact_events.txt:8045-8063），立即触发 action.13 与 action.1，并在1天后触发 distar.238；一方不是“第0天”国家。“通信已建立”窗口的三个选项（常规、对被遗弃难民的担忧、排外者的不满）只触发隐藏的 action.1 外交消息，无其它效果。
+  r3-integrate (2026-10-13): Folded in the former event-first-contact-1050: on_post_communications_established fires hidden first_contact.1050 (events/first_contact_events.txt:8045-8063), which fires action.13 and action.1 at once and distar.238 a day later; neither side may be a day-0 country. The three options of the "Communications Established" window (regular, worry over abandoned refugees, xenophobe displeasure) only fire the hidden action.1 diplomatic message, with no other effect.

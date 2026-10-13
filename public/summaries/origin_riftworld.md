@@ -29,3 +29,5 @@ Hidden astral_planes.2100 creates the Ancient Crater site (2120) and schedules 1
 - 已核对 Checked：astral_planes.2100–2155 与局势、遗址定义。 Events 2100-2155, the situation and the site.
 - 更正 Corrections：入口加标签，补充随机组与结局标注。 Entries labelled; random group and endings marked.
 - 不确定 Uncertain：局势与通用星界故事共用。 The situation is shared with the generic Astral Planes content.
+- r3-integrate（2026-10-13）：移除了指向其他故事的“不稳定的时空”分组（astral_situation.55/60/65）与 astral_situation.20 的结局：这些文档属于 astral-rift-in-space，已在该故事中标注（groups、endings），此处不再重复。
+  r3-integrate (2026-10-13): Removed the Unstable Spacetime group (astral_situation.55/60/65) and the astral_situation.20 ending: those docs belong to astral-rift-in-space, where both are already annotated, so they are not duplicated here.

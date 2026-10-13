@@ -24,7 +24,8 @@
    "event_chains:cutholoid_discovered_chain",
    "special_projects:HIDDEN_CUTHOLOID_ATTACK_PROJECT",
    "special_projects:HIDDEN_CUTHOLOID_CAPTURE_PROJECT",
-   "special_projects:RESEARCH_CUTHOLOIDS_PROJECT"
+   "special_projects:RESEARCH_CUTHOLOIDS_PROJECT",
+   "special_projects:CUTHOLOID_DEBRIS_PROJECT"
   ]
  },
  "bridges": [
@@ -88,7 +89,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "C8b reviewer (Claude resume)",
+  "reviewer": "C8b reviewer (Claude resume); r3-integrate",
   "scope": {
    "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
    "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
@@ -101,6 +102,17 @@
   "uncertain": [
    "Family title taken from grand_archive.2900 \"Cutholoids\"; the chain title has a ship-name variable."
   ],
-  "guide": "public/summaries/event-grand-archive-3010.md"
+  "guide": "public/summaries/event-grand-archive-3010.md",
+  "merged": [
+   "event-grand-archive-3025",
+   "event-grand-archive-2901",
+   "event-grand-archive-3014"
+  ]
+ },
+ "nodeLabels": {
+  "special_projects:CUTHOLOID_DEBRIS_PROJECT": {
+   "zh": "击毁岩居兽舰船后的残骸项目",
+   "en": "Debris project after a Cutholoid ship is destroyed"
+  }
  }
 }

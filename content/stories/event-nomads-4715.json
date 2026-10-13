@@ -2,17 +2,42 @@
  "id": "event-nomads-4715",
  "review": {
   "status": "reviewed",
-  "date": "2026-10-12",
-  "reviewer": "C8b reviewer (Opus 5.5)",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Opus 5.5); r3-integrate",
   "scope": {
    "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
    "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
   },
   "sources": [
    "events/nomads_events_1.txt:14821-14850",
-   "common/ascension_perks/00_ascension_perks.txt:671"
+   "common/ascension_perks/00_ascension_perks.txt:671",
+   "events/nomads_events_1.txt:14250-14820",
+   "common/on_actions/00_on_actions.txt:967",
+   "common/event_chains/00_event_chains_nomads.txt:534-543"
   ],
   "uncertain": [],
-  "guide": "public/summaries/event-nomads-4715.md"
+  "guide": "public/summaries/event-nomads-4715.md",
+  "merged": [
+   "event-nomads-4720"
+  ]
+ },
+ "family": {
+  "title": {
+   "zh": "游牧浪子",
+   "en": "Nomadic Wanderlust"
+  },
+  "category": "stories",
+  "start": "nomads.4715",
+  "members": [
+   "nomads.4715",
+   "nomads.4720",
+   "event_chains:nomad_exploration_chain"
+  ]
+ },
+ "nodeLabels": {
+  "event_chains:nomad_exploration_chain": {
+   "zh": "探索链（8类各1次）",
+   "en": "Exploration chain (8 categories)"
+  }
  }
 }

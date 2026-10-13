@@ -24,6 +24,10 @@ In a black-hole system lies the wrecked Dendritian arkship Dendrus I: its sleepe
 3. Homeworld Shrine: a shrine to the homeworld Bratulla and crew recordings
 4. Command Deck: the emergency log; the "Chronicles" are extracted and the chain chronicles_of_dendrus_chain begins
 
+（并入自 event-extreme-frontiers-1430，评注）修复航道后生成新布拉图雅星系（spawn_new_bratulla_system）；勘测该行星时（on_survey_planet）触发 1430“新布拉图雅”：选项a（500食物，需非杀戮型与基因科技）1天后引出 1435“称臣请求”复活德纳斯人，选项b只得科研加成并结束事件链；1435 的三个选项互斥。
+
+(Merged from event-extreme-frontiers-1430; commentary.) After the hyperlane is restored the New Bratulla system is spawned (spawn_new_bratulla_system); surveying its planet (on_survey_planet) fires 1430 "New Bratulla": option a (500 food; needs non-homicidal and gene tech) leads 1 day later to 1435 "Vassalage Offer" reviving the Dendritians, option b only gives the research bonus and ends the chain; the three options of 1435 are exclusive. Text varies by phototrophic species, homicidal status and gene tech.
+
 ## 分支与结局 Branches and outcomes
 
 - 研究邓德里历代志 / Study the Dendritian Chronicles：研究历代志（项目，主种族为机器人时使用） / study the Chronicles (project; used when the main species is robotic)
@@ -40,3 +44,5 @@ In a black-hole system lies the wrecked Dendritian arkship Dendrus I: its sleepe
 
 - 已核对：遗址定义（common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:237）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:237) with its stage order and conditions, every stage event script, and how the site appears; both languages read.
+- r3-integrate（2026-10-13）：合并了 event-extreme-frontiers-1430 并增加 1425 → 1430 条件桥接（extreme_frontiers_events.txt:4226-4239、4267；on_actions:1175）。
+  r3-integrate (2026-10-13): Merged event-extreme-frontiers-1430 and added the 1425 -> 1430 conditional bridge (extreme_frontiers_events.txt:4226-4239, 4267; on_actions:1175).

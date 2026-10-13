@@ -32,3 +32,5 @@ The scripted story is short; the rest are independent events fired by gameplay s
 - 已核对 Checked：origin.7000–7710 窗口与钩子。 Windows 7000-7710 and hooks.
 - 更正 Corrections：所有状态入口加标签，互斥组标注。 Entries labelled, exclusive groups marked.
 - 不确定 Uncertain：隐藏的种子机制事件仅读取了触发钩子。 Hidden seed mechanics read for hooks only.
+- r3-integrate（2026-10-13）：并入事件链概览卡“散布种子”（无可读窗口，仅名称与图片；见 common/event_chains/00_event_chains_3.txt:125-129，由 fruitful_start_effect 于开局开启 01_start_of_game_effects.txt:4192）。
+  r3-integrate (2026-10-13): Absorbed the event-chain overview card Seed Dispersal (no readable window, name and picture only; common/event_chains/00_event_chains_3.txt:125-129, begun at game start by fruitful_start_effect 01_start_of_game_effects.txt:4192).

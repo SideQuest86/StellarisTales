@@ -30,7 +30,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "C2 precursor review (resumed, Claude)",
+  "reviewer": "C2 precursor review (resumed, Claude); r3-integrate",
   "scope": {
    "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
    "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
@@ -44,6 +44,77 @@
    "localisation/english"
   ],
   "uncertain": [],
-  "guide": "public/summaries/site-site-georadiation-terraforming.md"
- }
+  "guide": "public/summaries/site-site-georadiation-terraforming.md",
+  "merged": [
+   "event-extreme-frontiers-1533"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "extreme_frontiers.1530",
+   "choice": "extreme_frontiers.1530.b",
+   "to": "extreme_frontiers.1534",
+   "conditional": true,
+   "label": {
+    "zh": "GeoCorp 舰队被歼灭后（1天后）",
+    "en": "After the GeoCorp fleet is destroyed (1 day later)"
+   },
+   "evidence": "events/extreme_frontiers_events.txt:5101 option fires hidden extreme_frontiers.1532 (create_geocorp_fleet, :5297-5312); on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1692) fires hidden 1533 (:5319-5346) which sends 1534 after 1 day"
+  },
+  {
+   "from": "extreme_frontiers.1531",
+   "choice": "extreme_frontiers.1531.g",
+   "to": "extreme_frontiers.1534",
+   "conditional": true,
+   "label": {
+    "zh": "GeoCorp 舰队被歼灭后（1天后）",
+    "en": "After the GeoCorp fleet is destroyed (1 day later)"
+   },
+   "evidence": "events/extreme_frontiers_events.txt:5244 option fires hidden extreme_frontiers.1532 (create_geocorp_fleet, :5297-5312); on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1692) fires hidden 1533 (:5319-5346) which sends 1534 after 1 day"
+  },
+  {
+   "from": "extreme_frontiers.1531",
+   "choice": "extreme_frontiers.1531.i",
+   "to": "extreme_frontiers.1534",
+   "conditional": true,
+   "label": {
+    "zh": "GeoCorp 舰队被歼灭后（1天后）",
+    "en": "After the GeoCorp fleet is destroyed (1 day later)"
+   },
+   "evidence": "events/extreme_frontiers_events.txt:5275 option fires hidden extreme_frontiers.1532 (create_geocorp_fleet, :5297-5312); on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1692) fires hidden 1533 (:5319-5346) which sends 1534 after 1 day"
+  },
+  {
+   "from": "extreme_frontiers.1530",
+   "choice": "extreme_frontiers.1530.b",
+   "to": "extreme_frontiers.1533",
+   "conditional": true,
+   "label": {
+    "zh": "GeoCorp 舰队被歼灭后（1天后）",
+    "en": "After the GeoCorp fleet is destroyed (1 day later)"
+   },
+   "evidence": "events/extreme_frontiers_events.txt:5101 option fires hidden extreme_frontiers.1532 (create_geocorp_fleet, :5297-5312); on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1692) fires hidden 1533 (:5319-5346) which sends 1534 after 1 day"
+  },
+  {
+   "from": "extreme_frontiers.1531",
+   "choice": "extreme_frontiers.1531.g",
+   "to": "extreme_frontiers.1533",
+   "conditional": true,
+   "label": {
+    "zh": "GeoCorp 舰队被歼灭后（1天后）",
+    "en": "After the GeoCorp fleet is destroyed (1 day later)"
+   },
+   "evidence": "events/extreme_frontiers_events.txt:5244 option fires hidden extreme_frontiers.1532 (create_geocorp_fleet, :5297-5312); on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1692) fires hidden 1533 (:5319-5346) which sends 1534 after 1 day"
+  },
+  {
+   "from": "extreme_frontiers.1531",
+   "choice": "extreme_frontiers.1531.i",
+   "to": "extreme_frontiers.1533",
+   "conditional": true,
+   "label": {
+    "zh": "GeoCorp 舰队被歼灭后（1天后）",
+    "en": "After the GeoCorp fleet is destroyed (1 day later)"
+   },
+   "evidence": "events/extreme_frontiers_events.txt:5275 option fires hidden extreme_frontiers.1532 (create_geocorp_fleet, :5297-5312); on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1692) fires hidden 1533 (:5319-5346) which sends 1534 after 1 day"
+  }
+ ]
 }

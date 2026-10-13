@@ -240,7 +240,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "r2-mixed",
+  "reviewer": "r2-mixed; r3-integrate",
   "scope": {
    "zh": "整条L-星团故事：入口、线索来源（逐一定位约33个调用事件并核对统一门槛）、线索满七、研究、项目、完成后的结局与他国通知、龙之季后续、邻国预警。",
    "en": "Whole L-Cluster story: entry, clue sources (about 33 calling events located and the central gate checked), seven clues, research, project, outcomes and notices to other countries after opening, dragon-season follow-ups, neighbour warning."
@@ -268,7 +268,10 @@
    "apoc.3 (surveyed L-Gate) starts the same chain in event-apoc-3; both entries are shown/described but only distar.13080 owns this story.",
    "The clue-giving events (about 33) are listed in a note and the guide, not as nodes; their own gates belong to their stories."
   ],
-  "guide": "public/summaries/event-distar-13080.md"
+  "guide": "public/summaries/event-distar-13080.md",
+  "merged": [
+   "event-apoc-3"
+  ]
  },
  "notes": [
   {

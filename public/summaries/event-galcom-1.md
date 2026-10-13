@@ -33,3 +33,5 @@
   Checked: conditions of galcom.1/3/20, the tally logic, the retry period and sources of 16.
 - 更正：galcom.14（十年脉冲）和 galcom.50（议会成立）原为单独故事，现并入。
   Correction: galcom.14 (decade pulse) and galcom.50 (council formed) were separate stories; merged.
+- r3-integrate（2026-10-13）：并入原 event-action-110：on_post_communications_established（00_on_actions.txt:2272）触发隐藏 action.110（events/on_action_events_2.txt:671-715）：双方均为普通国家，一方是银河共同体成员而另一方不是（且未设 galcom_form_nay）时，15天后向非成员方发出 galcom.16；拒绝会设 galcom_form_nay，之后不再被邀请。选项按帝国类型限定（排外、灭绝、部落、机械各有专属回答）。
+  r3-integrate (2026-10-13): Folded in the former event-action-110: on_post_communications_established (00_on_actions.txt:2272) fires hidden action.110 (events/on_action_events_2.txt:671-715); when both are normal countries and exactly one is a Galactic Community member (and galcom_form_nay is unset) galcom.16 reaches the non-member 15 days later; declining sets galcom_form_nay so no further invitation. Options are exclusive by empire type (xenophobe, exterminator, khanate, machine answers).

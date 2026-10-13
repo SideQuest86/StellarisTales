@@ -29,3 +29,5 @@
 - 已对照类别脚本、1255/1260。  
   Compared the category script and 1255/1260.
 - 覆盖 Coverage：全部4个文档。 / All 4 docs.
+- r3-integrate（2026-10-13）：并入事件链“红色爬虫”概览卡（无可读窗口；链由项目 project_cosmic_storms_crimson_crawlers 的 event_chain 字段携带，03_projects_cosmic_storms.txt:437）。
+  r3-integrate (2026-10-13): Absorbed the event-chain overview card Crimson Crawlers (no readable window; carried by the event_chain field of project_cosmic_storms_crimson_crawlers, 03_projects_cosmic_storms.txt:437).

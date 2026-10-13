@@ -14,7 +14,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "c8c-stories (Opus 5.5)",
+  "reviewer": "c8c-stories (Opus 5.5); r3-integrate",
   "scope": {
    "zh": "大可汗因第二次战败以外的原因死亡（中毒、疾病、暗杀、情人、年老，或领袖死亡的补漏）及之后的部落未来。",
    "en": "The Great Khan dies of causes other than a second defeat (poison, disease, assassination, a concubine, old age, or the leader-death failsafe) and the Horde's fate afterwards."
@@ -24,6 +24,9 @@
    "common/on_actions/00_on_actions.txt",
    "common/scripted_effects/marauder_scripted_effects.txt"
   ],
-  "guide": "public/summaries/event-marauder-511.md"
+  "guide": "public/summaries/event-marauder-511.md",
+  "merged": [
+   "event-marauder-711"
+  ]
  }
 }

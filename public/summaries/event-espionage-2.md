@@ -31,3 +31,5 @@
   Checked: espionage.2 weights and modifiers, 1000 trigger, 1001 options and delays, sources of 1081/1082.
 - 未逐条核对：1005–1022 内部选项的数值效果。
   Not checked line by line: the numeric effects inside the options of 1005-1022.
+- r3-integrate（2026-10-13）：从抽取组中移除 espionage.1040（该文档位于 event-operation-2000/5000/5015 等行动故事中），权重说明保留在组注释里。
+  r3-integrate (2026-10-13): Removed espionage.1040 from the draw group (that doc lives in the operation stories event-operation-2000/5000/5015); its weight is kept in the group note.

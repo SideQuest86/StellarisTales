@@ -2,13 +2,13 @@
   "category": "exploration",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 308,
-  "docs": 1451,
-  "nodes": 1625,
+  "stories": 307,
+  "docs": 1450,
+  "nodes": 1624,
   "refs": 174,
-  "crossLinks": 282,
+  "crossLinks": 280,
   "review": {
-    "reviewed": 308
+    "reviewed": 307
   },
   "failures": [],
   "items": [
@@ -841,6 +841,15 @@
       "review": "reviewed"
     },
     {
+      "id": "anomaly-crimson-crawlers-category",
+      "title": "猩红地表",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "anomaly-data-diamond-cat",
       "title": "薄冰",
       "kind": "anomaly",
@@ -1104,15 +1113,6 @@
     {
       "id": "anomaly-chthonian-preservation-cat",
       "title": "冥界生物",
-      "kind": "anomaly",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "anomaly-crimson-crawlers-category",
-      "title": "猩红地表",
       "kind": "anomaly",
       "docs": 4,
       "refs": 0,
@@ -1530,7 +1530,7 @@
       "kind": "anomaly",
       "docs": 3,
       "refs": 0,
-      "crossLinks": 4,
+      "crossLinks": 2,
       "review": "reviewed"
     },
     {
@@ -2607,15 +2607,6 @@
     {
       "id": "project-gas-giant-bodies-project",
       "title": "分析死亡的太空生物",
-      "kind": "project",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "project-inetian-projects-04",
-      "title": "探究因内特贸易体的秘密",
       "kind": "project",
       "docs": 2,
       "refs": 0,

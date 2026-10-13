@@ -10,10 +10,7 @@
   "members": [
    "awareness.910",
    "awareness.920",
-   "action.2",
-   "progress.4",
-   "progress.5",
-   "progress.6"
+   "action.2"
   ]
  },
  "groups": [
@@ -31,22 +28,6 @@
     "zh": "910：觉察度升到“完全”时（on_awareness_level_increase → 900）建立通信；920：由前超光速科技进步局势（preftl.41）在已达完全觉察后触发的“监视者”事件。125：对前超光速行星轰炸或入侵时把觉察度设为100并立即建立联系。",
     "en": "910: when awareness rises to full (on_awareness_level_increase -> 900) comms are established; 920: fired by the pre-FTL tech-progress situation (preftl.41) once full awareness was reached. 125: bombarding or invading a pre-FTL planet sets awareness to 100 and contacts them at once."
    }
-  },
-  {
-   "kind": "exclusive",
-   "members": [
-    "progress.4",
-    "progress.5",
-    "progress.6"
-   ],
-   "label": {
-    "zh": "按帝国首次接触的情形选择通知",
-    "en": "Notification chosen by the empire's contact situation"
-   },
-   "note": {
-    "zh": "由 action.2 的 after 块按条件选择（progress.9 另有分支，见起源 Payback）。",
-    "en": "Selected by the after block of action.2 (progress.9 branches elsewhere, see the Payback origin)."
-   }
   }
  ],
  "notes": [
@@ -55,12 +36,18 @@
    "kind": "review",
    "zh": "窗口文字取决于被接触文明的觉察度等级（无/低/中/高/完全）与其是否被入侵。",
    "en": "The window text depends on the contacted civilization's awareness level (none/low/medium/high/full) and whether it is being invaded."
+  },
+  {
+   "doc": "action.2",
+   "kind": "review",
+   "zh": "action.2 的 after 块按条件在 progress.4/5/6 中择一；这三个窗口属于故事 event-action-1（首次接触），此处只作外链，不复制。",
+   "en": "The after block of action.2 picks one of progress.4/5/6 by condition; those windows belong to the story event-action-1 (First Contact) and are only linked externally here, not copied."
   }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "reviewer": "Fable 5.5 (c7a-society, resumed); r3-integrate",
   "scope": {
    "zh": "前超光速文明因完全觉察而首次接触：入侵/轰炸、满觉察度或“监视者”三个入口汇入同一“首次接触”窗口。",
    "en": "Pre-FTL first contact through awareness: invasion/bombardment, full awareness or \"Who Watches the Watchers\" all converge on one First Contact window."

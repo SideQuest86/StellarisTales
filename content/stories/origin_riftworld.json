@@ -26,36 +26,7 @@
   },
   "evidence": "common/on_actions/00_on_actions.txt:50 on_game_start_country fires hidden astral_planes.2100 (events/origin_events_astral_planes.txt:12-60): schedules astral_planes.101 after 10080+0-1440 days and colony event 2120 (creates riftworld_digsite). Hidden 2104 (on_astral_rift_exploration_complete common/on_actions/00_on_actions.txt:5014) fires 2105 after 30 days to non-Riftworld empires that completed three rifts (events/origin_events_astral_planes.txt:67-130)."
  },
- "groups": [
-  {
-   "kind": "exclusive",
-   "members": [
-    "astral_situation.55",
-    "astral_situation.60",
-    "astral_situation.65"
-   ],
-   "label": {
-    "zh": "不稳定的时空",
-    "en": "Unstable Spacetime"
-   },
-   "note": {
-    "zh": "局势的月度钩子（astral_situation.35）随机抽取其一。",
-    "en": "Drawn at random by the situation's monthly hook (astral_situation.35)."
-   }
-  }
- ],
  "endings": {
-  "astral_situation.20": {
-   "label": {
-    "zh": "摩擦才是问题",
-    "en": "Friction Is the Problem"
-   },
-   "note": {
-    "zh": "局势“空间裂隙”完成。",
-    "en": "The situation A Rift in Space completes."
-   },
-   "evidence": "common/situations/06_astral_planes_situations.txt:65"
-  },
   "astral_planes.2140": {
    "label": {
     "zh": "祖先",
@@ -85,7 +56,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "reviewer": "c1-origins (Sonnet), V4 source review; r3-integrate",
   "sources": [
    "events/origin_events_astral_planes.txt",
    "common/on_actions/00_on_actions.txt",

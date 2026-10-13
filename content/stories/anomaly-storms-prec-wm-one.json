@@ -1,6 +1,99 @@
 {
  "id": "anomaly-storms-prec-wm-one",
+ "family": {
+  "title": {
+   "zh": "因内特贸易体",
+   "en": "Inetian Traders"
+  },
+  "category": "precursors",
+  "start": "anomalies:STORMS_PREC_WM_ONE",
+  "members": [
+   "anomalies:STORMS_PREC_WM_ONE",
+   "cstorms.105",
+   "cstorms.110",
+   "cstorms.115",
+   "cstorms.120",
+   "cstorms.125",
+   "cstorms.130",
+   "cstorms.135",
+   "event_chains:cs_inetian_chain",
+   "archaeological_site_types:site_weathermanipulators_the_ancient_storm_shelters",
+   "special_projects:INETIAN_PROJECTS_01",
+   "special_projects:INETIAN_PROJECTS_04",
+   "cstorms.195",
+   "archaeological_site_types:site_weathermanipulators_CoordinatesA_Residential_Planet",
+   "archaeological_site_types:site_weathermanipulators_CoordinatesB_Industrial_Planet",
+   "archaeological_site_types:site_weathermanipulators_CoordinatesC_Barren_Planet",
+   "archaeological_site_types:site_weathermanipulators_storm_formation",
+   "archaeological_site_types:site_weathermanipulators_last_shelter",
+   "cstorms.140",
+   "cstorms.145",
+   "cstorms.150",
+   "cstorms.155",
+   "cstorms.160",
+   "cstorms.165",
+   "cstorms.170",
+   "cstorms.171",
+   "cstorms.172",
+   "special_projects:INETIAN_PROJECTS_02",
+   "cstorms.176",
+   "cstorms.180",
+   "cstorms.181",
+   "cstorms.182",
+   "cstorms.183",
+   "cstorms.184",
+   "special_projects:INETIAN_PROJECTS_03",
+   "cstorms.186",
+   "cstorms.190",
+   "cstorms.191",
+   "cstorms.192",
+   "cstorms.193"
+  ],
+  "sources": []
+ },
  "category": "precursors",
+ "bridges": [
+  {
+   "from": "cstorms.135",
+   "to": "archaeological_site_types:site_weathermanipulators_CoordinatesA_Residential_Planet",
+   "conditional": true,
+   "label": {
+    "zh": "解析坐标后：新星系中的坐标A/B/C遗址",
+    "en": "After the coordinates are solved: the Coordinates A/B/C dig sites in the new system"
+   },
+   "evidence": "common/special_projects/03_projects_cosmic_storms.txt:25-37 INETIAN_PROJECTS_01 on_success spawns system weathermanipulators_home_system; common/solar_system_initializers/cosmic_storm_initializers.txt:3-60 creates sites CoordinatesA/B/C; events/precursor_events_cosmic_storms.txt:439-461 cstorms.135 marks the system"
+  },
+  {
+   "from": "cstorms.193",
+   "to": "special_projects:INETIAN_PROJECTS_04",
+   "conditional": true,
+   "label": {
+    "zh": "之后：以神器行动“因内特研究”启动（需 completed_inetian_traders_precursor）",
+    "en": "Afterwards: started by the artifact action Inetian research (needs completed_inetian_traders_precursor)"
+   },
+   "evidence": "common/artifact_actions/artifact_actions.txt:618-648 artifact_inetian_research needs has_country_flag completed_inetian_traders_precursor (set by cstorms.193.a, events/precursor_events_cosmic_storms.txt:1700) and enables INETIAN_PROJECTS_04 at wm_last_storm_shelter"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "archaeological_site_types:site_weathermanipulators_CoordinatesA_Residential_Planet",
+    "archaeological_site_types:site_weathermanipulators_CoordinatesB_Industrial_Planet",
+    "archaeological_site_types:site_weathermanipulators_CoordinatesC_Barren_Planet"
+   ],
+   "required": 3,
+   "gate": "special_projects:INETIAN_PROJECTS_02",
+   "label": {
+    "zh": "三处坐标遗址（顺序不限）",
+    "en": "Three Coordinates sites (any order)"
+   },
+   "note": {
+    "zh": "每个遗址的最后阶段触发隐藏事件 cstorms.175；只有 pc_arcsite_A、B、C_completed 三个国家标志全部存在时，它才启用项目“机械的用途”。",
+    "en": "The last stage of each site fires hidden cstorms.175; it enables the project only when all three country flags pc_arcsite_A/B/C_completed exist."
+   }
+  }
+ ],
  "notes": [
   {
    "doc": "anomalies:STORMS_PREC_WM_ONE",
@@ -11,17 +104,29 @@
   {
    "doc": "cstorms.135",
    "kind": "review",
-   "zh": "故事在此并未结束：“解析坐标”项目通过星系初始化器 weathermanipulators_home_system 生成三处考古遗址（坐标A/B/C），后续调查在故事“因内特贸易体”（坐标A…，C2）中，已用外链连接；“因内特秘密”研究（INETIAN_PROJECTS_04，稀有文物行动触发）是另一个独立故事。",
-   "en": "The story does not end here: the project spawns the weathermanipulators_home_system initializer with dig sites Coordinates A/B/C; the continuation lives in the C2 story \"The Inetian Traders\" (linked externally). The Inetian secrets research (INETIAN_PROJECTS_04, triggered by an artifact action) is a separate story."
+   "zh": "“解析坐标”项目通过星系初始化器 weathermanipulators_home_system 生成三处考古遗址（坐标A/B/C），后续调查在同一故事的坐标遗址部分（已合并）。",
+   "en": "The coordinates project spawns the weathermanipulators_home_system initializer with dig sites Coordinates A/B/C; the continuation is in the Coordinates part of this same story (merged)."
+  },
+  {
+   "doc": "archaeological_site_types:site_weathermanipulators_CoordinatesA_Residential_Planet",
+   "kind": "review",
+   "zh": "三处“坐标”遗址（A 殖民星球、B 工业星球、C 荒芜星球）由星系初始化器 weathermanipulators_home_system 一次创建（common/solar_system_initializers/cosmic_storm_initializers.txt:31；该初始化器注明“由事件生成，不用于银河生成”）。前一步是本故事开头的古老风暴庇护所：项目“解读坐标”（INETIAN_PROJECTS_01）成功后，cstorms.135 在地图上标出这个星系。",
+   "en": "The three \"Coordinates\" sites (A colonised planet, B industrial planet, C barren planet) are created together by the system initializer weathermanipulators_home_system (common/solar_system_initializers/cosmic_storm_initializers.txt:31, which says it is spawned by event, not at galaxy generation). The preceding step is the opening of this story: after the ancient storm shelter (cstorms.130) project \"Unscramble the Coordinates\" (INETIAN_PROJECTS_01), cstorms.135 marks this system on the map."
+  },
+  {
+   "doc": "special_projects:INETIAN_PROJECTS_04",
+   "kind": "review",
+   "zh": "由神器行动 artifact_inetian_research 启用，要求已完成因内特先驱者（cstorms.193 设置 completed_inetian_traders_precursor）。",
+   "en": "Enabled by the artifact action artifact_inetian_research, which requires the finished Inetian precursor (cstorms.193 sets completed_inetian_traders_precursor)."
   }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "r2-mixed",
+  "reviewer": "r2-mixed; C2 precursor review (resumed, Claude); c3a-exploration (resumed reviewer); r3-integrate",
   "scope": {
-   "zh": "整个开场故事：触发（cstorms.100）、异常、五个遗址阶段、解析坐标项目、135 与指向后续遗址故事的外链；后续故事由其所有者审阅。",
-   "en": "The whole opening story: trigger (cstorms.100), anomaly, five site stages, coordinates project, 135 and the external link to the continuation story (reviewed by its owner)."
+   "zh": "整条因内特贸易体故事：开场（cstorms.100–135）、坐标A/B/C遗址、机械项目、风暴成因与最后庇护所、因内特秘密研究（INETIAN_PROJECTS_04）。",
+   "en": "The whole Inetian Traders story: opening (cstorms.100-135), Coordinates A/B/C sites, machine project, storm origin and last shelter, and the Inetian secrets research (INETIAN_PROJECTS_04)."
   },
   "sources": [
    "common/anomalies/102_anomaly_categories_cosmic_storms.txt",
@@ -30,24 +135,20 @@
    "common/special_projects/03_projects_cosmic_storms.txt",
    "common/event_chains/00_event_chains_cosmic_storms.txt",
    "common/solar_system_initializers/cosmic_storm_initializers.txt",
-   "common/on_actions/00_on_actions.txt"
+   "common/on_actions/00_on_actions.txt",
+   "localisation/simp_chinese",
+   "localisation/english",
+   "common/special_projects/03_projects_cosmic_storms.txt:98 (INETIAN_PROJECTS_04)",
+   "events/precursor_events_cosmic_storms.txt (cstorms.195)",
+   "common/artifact_actions/artifact_actions.txt:637 (artifact_inetian_research)"
   ],
   "uncertain": [
-   "The Inetian narrative stays split in three stories by design: this opening, C2's site story (linked externally) and project-inetian-projects-04 (artifact action). A single merged family would need the C2 owner."
+   "When the system is spawned: the initializer comment says it is spawned by event; that event belongs to the earlier Inetian story (from cstorms.100), now the opening of this same story."
   ],
-  "guide": "public/summaries/anomaly-storms-prec-wm-one.md"
- },
- "bridges": [
-  {
-   "from": "cstorms.135",
-   "to": "archaeological_site_types:site_weathermanipulators_CoordinatesA_Residential_Planet",
-   "conditional": true,
-   "external": true,
-   "label": {
-    "zh": "继续：新星系中的坐标A/B/C遗址（另一故事）",
-    "en": "Continues: the Coordinates A/B/C dig sites in the new system (another story)"
-   },
-   "evidence": "common/special_projects/03_projects_cosmic_storms.txt:25-37 INETIAN_PROJECTS_01 on_success spawns system weathermanipulators_home_system; common/solar_system_initializers/cosmic_storm_initializers.txt:3-60 init_effect creates sites CoordinatesA/B/C; events/precursor_events_cosmic_storms.txt:439-461 cstorms.135 marks the system"
-  }
- ]
+  "guide": "public/summaries/anomaly-storms-prec-wm-one.md",
+  "merged": [
+   "site-site-weathermanipulators-coordinatesa-residential-planet",
+   "project-inetian-projects-04"
+  ]
+ }
 }

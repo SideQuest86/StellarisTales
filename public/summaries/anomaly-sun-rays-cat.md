@@ -37,3 +37,5 @@
 - 更正 Corrections：补上从4035到寻星结果的状态连接；这些文档同时出现在由4036触发的故事 event-anomaly-4036（C3a）中。  
   Added the state-triggered links from 4035 to the search results; these docs also appear in the 4036-rooted story event-anomaly-4036 (C3a).
 - 覆盖 Coverage：8 个文档全部核对 / all 8 docs checked.
+- r3-integrate（2026-10-13）：把指向 4037/anomaly_failure.4037 的内部桥接与分组改为一个外链（4035.a → 事件链 star_power_chain，故事 event-anomaly-4036）；这些文档不在本故事内，覆盖现为本故事的3个文档。
+  r3-integrate (2026-10-13): Replaced the internal bridges and the group naming 4037/anomaly_failure.4037 with one external link (4035.a -> chain star_power_chain, story event-anomaly-4036); those docs are not in this story, coverage is now this story's 3 docs.

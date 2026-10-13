@@ -13,7 +13,8 @@
    "origin.7400",
    "origin.7500",
    "origin.7510",
-   "origin.7600"
+   "origin.7600",
+   "event_chains:fruitful_partnership_chain"
   ],
   "label": {
    "zh": "起源触发的独立支线",
@@ -67,6 +68,10 @@
    "origin.7600": {
     "zh": "战争开始：野草军队",
     "en": "A war begins: invasive armies"
+   },
+   "event_chains:fruitful_partnership_chain": {
+    "zh": "开局开启的事件链概览卡",
+    "en": "Event-chain overview card begun at game start"
    }
   },
   "evidence": "game_start fruitful_start_effect (common/scripted_effects/01_start_of_game_effects.txt:7) fires origin.7000 after 1800+0-1800 days (events/origin_events_5.txt:14-54), which enables TIYANKIS_PROJECT (common/special_projects/00_projects_plantoids.txt:106 -> 7005). Mechanics hooks: on_planet_bombarded (7200/7201), on_monthly_pulse_country (7300 lures critters), on_fleet_enter_orbit (7303), on_entering_system_fleet (7302/7310), on_colonization_started common/on_actions/00_on_actions.txt:1277-1278 (7326/7328), on_resolution_passed :4361-4362, on_war_beginning :2617."
@@ -127,7 +132,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "reviewer": "c1-origins (Sonnet), V4 source review; r3-integrate",
   "sources": [
    "events/origin_events_5.txt",
    "common/on_actions/00_on_actions.txt",
@@ -137,6 +142,9 @@
   "uncertain": [
    "The seed mechanics events (7200-7325, mostly hidden) were read for their hooks only; 7311 fires garden.critters events of the Plantoid garden content, not part of this origin."
   ],
-  "guide": "public/summaries/origin_fruitful.md"
+  "guide": "public/summaries/origin_fruitful.md",
+  "merged": [
+   "chain-fruitful-partnership-chain"
+  ]
  }
 }

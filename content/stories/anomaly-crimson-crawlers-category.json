@@ -3,7 +3,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "c3b-exploration (resumed)",
+  "reviewer": "c3b-exploration (resumed); r3-integrate",
   "scope": {
    "zh": "全部4个文档。",
    "en": "All 4 docs."
@@ -14,6 +14,20 @@
    "common/special_projects/03_projects_cosmic_storms.txt"
   ],
   "uncertain": [],
-  "guide": "public/summaries/anomaly-crimson-crawlers-category.md"
- }
+  "guide": "public/summaries/anomaly-crimson-crawlers-category.md",
+  "merged": [
+   "chain-cs-crimson-crawlers-chain"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "special_projects:project_cosmic_storms_crimson_crawlers",
+   "to": "event_chains:cs_crimson_crawlers_chain",
+   "label": {
+    "zh": "项目携带的事件链概览卡",
+    "en": "Event-chain overview card carried by the project"
+   },
+   "evidence": "common/special_projects/03_projects_cosmic_storms.txt:437 event_chain = cs_crimson_crawlers_chain; chain defined common/event_chains/00_event_chains_cosmic_storms.txt:53-57"
+  }
+ ]
 }

@@ -22,6 +22,10 @@ Under the crater lies a destructive "georadiation" terraforming device still sig
 2. Corroded Device: a corroded device deep in the crust; sets planet and star flags
 3. Deconstructive Terraforming: starts the chain and enables both Signal Trace projects (terrestrial sculpting tech progress 25%)
 
+（并入自 event-extreme-frontiers-1533，评注）拒绝订阅（1530.b、1531.g）或选择战斗（1531.i）会让隐藏事件 1532 创建一支 GeoCorp 舰队；舰队被击毁时（on_fleet_destroyed_perp）隐藏事件 1533 在击杀者国家触发，1天后发出 1534“科伯恩公司无人机”（告别）→ 1535“条款变更”（与付款结局 1531.h 到达同一个 1535）→ 后续分析项目 → 1540。该分支依赖玩家真的击毁舰队。
+
+(Merged from event-extreme-frontiers-1533; commentary.) Declining the subscription (1530.b, 1531.g) or choosing battle (1531.i) makes hidden extreme_frontiers.1532 create a GeoCorp fleet; when it is destroyed (on_fleet_destroyed_perp) hidden 1533 fires on the killer and sends 1534 "Drone of CoburnCorp" after 1 day -> 1535 "Terms Modified" (the same 1535 reached by the paid ending 1531.h) -> follow-up analysis project -> 1540. This branch needs the player to actually destroy the fleet.
+
 ## 分支与结局 Branches and outcomes
 
 - 信号踪迹：[planet.GetName] / Signal Trace: [planet.GetName]：信号追踪一 → extreme_frontiers.1515“重力燃料”：找到暗物质驱动的装置（暗物质资源点），设置 georadiation_signal_1_project_done / Signal Trace 1 → 1515 Gravitational Fuel: a dark-matter-driven device (dark matter deposit), sets georadiation_signal_1_project_done
@@ -42,3 +46,5 @@ Under the crater lies a destructive "georadiation" terraforming device still sig
 
 - 已核对：遗址定义（common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:302）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:302) with its stage order and conditions, every stage event script, and how the site appears; both languages read.
+- r3-integrate（2026-10-13）：合并了 event-extreme-frontiers-1533（1532/1533 为隐藏路由，见 events/extreme_frontiers_events.txt:5297-5346）；增加三条条件桥接到 1534。
+  r3-integrate (2026-10-13): Merged event-extreme-frontiers-1533 (1532/1533 are hidden routers, events/extreme_frontiers_events.txt:5297-5346); added three conditional bridges to 1534.
