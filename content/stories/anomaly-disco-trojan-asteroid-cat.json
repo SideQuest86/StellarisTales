@@ -1,0 +1,22 @@
+{
+ "id": "anomaly-disco-trojan-asteroid-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1535-1555",
+   "events/distant_stars_events_2.txt:6933 (distar.3000)",
+   "events/distant_stars_events_2.txt:6968/6987 (distar.3001/3002)",
+   "events/distant_stars_events_2.txt:7027-7114 (distar.3003, 3004)",
+   "common/special_projects/00_projects_distant_stars.txt:693 (trojan_asteroid_project)",
+   "events/distant_stars_events_2.txt:7117 (distar.3005)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-disco-trojan-asteroid-cat.md"
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "id": "event-leviathans-140",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.141",
+    "leviathans.142",
+    "leviathans.143",
+    "leviathans.144",
+    "observer.8",
+    "observer.9",
+    "observer.10"
+   ],
+   "label": {
+    "zh": "按视角与城邦收到一种通知",
+    "en": "One notice per viewpoint and enclave"
+   },
+   "note": {
+    "zh": "leviathans.140（on_ship_destroyed_victim，00_on_actions.txt:1400）：摧毁者141；其他有通讯的帝国按被毁城邦收到142雪拉/143里甘/144穆塔甘；观察者observer.8–10。",
+    "en": "leviathans.140: destroyer 141; others in contact get 142/143/144 by enclave; observers observer.8-10."
+   }
+  }
+ ],
+ "endings": {
+  "leviathans.141": {
+   "label": {
+    "zh": "我们摧毁了商人城邦总部",
+    "en": "We destroyed a trader headquarters"
+   },
+   "note": {
+    "zh": "获得大量资源。",
+    "en": "Large resource haul."
+   },
+   "evidence": "events/leviathans_events_1.txt:2052-2122"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/leviathans_events_1.txt",
+   "events/observer_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-leviathans-140.md"
+ }
+}

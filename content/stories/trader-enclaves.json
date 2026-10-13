@@ -1,0 +1,226 @@
+{
+ "id": "trader-enclaves",
+ "family": {
+  "title": {
+   "zh": "商人城邦",
+   "en": "Trader Enclave"
+  },
+  "category": "leviathans",
+  "start": "leviathans.100",
+  "members": [
+   "leviathans.100",
+   "leviathans.101",
+   "leviathans.102",
+   "leviathans.105",
+   "leviathans.106",
+   "leviathans.107",
+   "leviathans.121",
+   "leviathans.122",
+   "leviathans.123",
+   "leviathans.124",
+   "leviathans.125",
+   "leviathans.126",
+   "leviathans.127",
+   "leviathans.128",
+   "leviathans.130",
+   "leviathans.131",
+   "leviathans.132",
+   "leviathans.133",
+   "leviathans.134",
+   "leviathans.135",
+   "leviathans.150",
+   "leviathans.151",
+   "leviathans.152",
+   "leviathans.155",
+   "leviathans.156",
+   "leviathans.159",
+   "leviathans.162",
+   "leviathans.157",
+   "leviathans.160",
+   "leviathans.163",
+   "leviathans.170",
+   "leviathans.171"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "leviathans.102",
+   "to": "leviathans.105",
+   "conditional": true,
+   "label": {
+    "zh": "此后外交联络：雪拉企业菜单",
+    "en": "Later contact: XuraCorp menu"
+   },
+   "evidence": "on_custom_diplomacy (00_on_actions.txt:715) -> leviathans.100 (leviathans_events_1.txt:377-420) routes trader_enclave_country_1 to 105"
+  },
+  {
+   "from": "leviathans.102",
+   "to": "leviathans.106",
+   "conditional": true,
+   "label": {
+    "zh": "此后外交联络：里甘商业交易所菜单",
+    "en": "Later contact: Riggan menu"
+   },
+   "evidence": "leviathans.100 routes trader_enclave_country_2 to 106"
+  },
+  {
+   "from": "leviathans.102",
+   "to": "leviathans.107",
+   "conditional": true,
+   "label": {
+    "zh": "此后外交联络：穆塔根商人公会菜单",
+    "en": "Later contact: Muutagan menu"
+   },
+   "evidence": "leviathans.100 routes trader_enclave_country_3 to 107"
+  },
+  {
+   "from": "leviathans.123",
+   "choice": "leviathans.125.z1",
+   "to": "enclave.8000",
+   "conditional": true,
+   "label": {
+    "zh": "若日后攻击该城邦，顾问将离去",
+    "en": "If we later attack them, the consultant leaves"
+   },
+   "evidence": "on_entering_battle -> leviathans.155 -> 156 option a -> enclave.8000 after 5 days when a liaison leader exists (leviathans_events_1.txt:2590-2605)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "leviathans.105",
+    "leviathans.106",
+    "leviathans.107"
+   ],
+   "label": {
+    "zh": "三家商人城邦，各有一个菜单",
+    "en": "Three trader enclaves, one menu each"
+   },
+   "note": {
+    "zh": "联络哪一家就打开哪一家的菜单；同一星系可能存在多家。",
+    "en": "Whichever enclave is contacted opens its own menu; several may exist in a galaxy."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.156",
+    "leviathans.159",
+    "leviathans.162"
+   ],
+   "label": {
+    "zh": "被攻击的城邦作出反应",
+    "en": "The attacked enclave reacts"
+   },
+   "note": {
+    "zh": "leviathans.155（on_entering_battle，00_on_actions.txt:1371）按被攻击者分派。",
+    "en": "leviathans.155 (on_entering_battle) picks by the enclave attacked."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "leviathans.102": {
+   "zh": "首次接触商人城邦",
+   "en": "First contact"
+  },
+  "leviathans.105": {
+   "zh": "雪拉企业菜单",
+   "en": "XuraCorp menu"
+  },
+  "leviathans.106": {
+   "zh": "里甘菜单",
+   "en": "Riggan menu"
+  },
+  "leviathans.107": {
+   "zh": "穆塔根菜单",
+   "en": "Muutagan menu"
+  },
+  "leviathans.130": {
+   "zh": "战略资源：异星天然气",
+   "en": "Exotic gas deal"
+  },
+  "leviathans.131": {
+   "zh": "战略资源：易爆微粒",
+   "en": "Volatile mote deal"
+  },
+  "leviathans.132": {
+   "zh": "战略资源：稀有水晶",
+   "en": "Rare crystal deal"
+  },
+  "leviathans.123": {
+   "zh": "雇佣顾问",
+   "en": "Hire a consultant"
+  },
+  "leviathans.124": {
+   "zh": "雇佣顾问",
+   "en": "Hire a consultant"
+  },
+  "leviathans.125": {
+   "zh": "雇佣顾问",
+   "en": "Hire a consultant"
+  },
+  "leviathans.150": {
+   "zh": "协议到期：续约？",
+   "en": "Deal expired: renew?"
+  },
+  "leviathans.151": {
+   "zh": "协议到期：续约？",
+   "en": "Deal expired: renew?"
+  },
+  "leviathans.152": {
+   "zh": "协议到期：续约？",
+   "en": "Deal expired: renew?"
+  },
+  "leviathans.157": {
+   "zh": "雪拉企业拒绝往来",
+   "en": "XuraCorp refuses"
+  },
+  "leviathans.160": {
+   "zh": "里甘拒绝往来",
+   "en": "Riggan refuses"
+  },
+  "leviathans.163": {
+   "zh": "穆塔根拒绝往来",
+   "en": "Muutagan refuses"
+  },
+  "leviathans.171": {
+   "zh": "能量耗尽，交易取消",
+   "en": "Energy ran out; deals cancelled"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.102",
+   "kind": "review",
+   "zh": "审阅注：首次接触完成或“通讯已建立”后经leviathans.101显示，正文按三家城邦之一变化；之后的外交联络经leviathans.100打开对应菜单（未被我们攻击过时）。",
+   "en": "Review note: shown via leviathans.101 after first contact or 'Communications Established', worded for one of the three enclaves; later contacts open that enclave's menu through leviathans.100 (unless we attacked it)."
+  },
+  {
+   "doc": "leviathans.157",
+   "kind": "review",
+   "zh": "审阅注：攻击过某商人城邦后，再联络它只会得到拒绝（157雪拉、160里甘、163穆塔根，各需对应的attacked标记）。",
+   "en": "Review note: after attacking a trader enclave, contacting it only brings refusal (157 XuraCorp, 160 Riggan, 163 Muutagan, each gated by its attacked flag)."
+  },
+  {
+   "doc": "leviathans.171",
+   "kind": "review",
+   "zh": "审阅注：每月检查（leviathans.170，00_on_actions.txt:93）：仍有贸易协定而能量储备耗尽时，取消所有以能量支付的协定。",
+   "en": "Review note: monthly check (leviathans.170): with an active deal and no energy left, all energy-paid deals are cancelled."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整：首次接触、三家菜单、战略资源协定与续约、顾问、攻击反应与拒绝、能量不足取消。城邦被毁见event-leviathans-140。",
+   "en": "Complete: first contact, three menus, resource deals and renewal, consultants, attack reaction and refusal, energy cancellation. Destruction is event-leviathans-140."
+  },
+  "sources": [
+   "events/leviathans_events_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/trader-enclaves.md"
+ }
+}

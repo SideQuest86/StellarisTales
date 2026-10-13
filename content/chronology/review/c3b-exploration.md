@@ -75,6 +75,39 @@ outcome already seen by that empire is not picked again; modifiers are evaluated
 - Master's Writings (4135/4140/4150/4165 → edicts in `common/edicts/01_campaigns.txt:1307-1418`) are four independent
   anomalies with a shared failure event; not merged (no order, no shared gate), cross-referenced in each guide.
 
+### Batch 02b — `02_anomaly_categories.txt` (part 2) — all reviewed
+- anomaly-nano-swarm-cat (initializer parvus_system): **correction** 6705 `after` schedules 6710 for every choice but
+  6710's trigger needs `studied_nanite_swarm`, set only by 6705.b → suppressed the generic edge, bridged from 6705.b.
+  6705 options call `generate_lcluster_clue` (distar.10904 hub link).
+- anomaly-wat-planet-cat, anomaly-gen-derelict-ship-cat (20/50/30 with the 20 gated on an uncontacted empire),
+  anomaly-arid-sensor-cat (80/20), anomaly-ast-gear-cat, anomaly-data-diamond-cat (gestalt-only: ×0 for non-gestalt,
+  max_once_global), anomaly-icy-flowers-cat (50/50), anomaly-intemporal-orb-cat (7120 after 36000 d),
+  anomaly-mysterious-rock-cat (60/40), anomaly-sun-teapot-cat (60/40 vs spiritualist 20/80; enclave.5160 related),
+  anomaly-gen-mystical-cat, anomaly-the-judge-cat (1:3; 9001 dialogue config).
+- anomaly-gen-lost-cargo-cat: **added bridges** 4015.{b,phile,b.evopred} → 4017 (hidden 4018 sets DefiledCorpseTrue on
+  an uncontacted empire 1–8 jumps away; 4016 on_post_communications_established fires 4017). 4017 is not a root
+  (called by 4016), so the bridge does not absorb another story; it also stays in event-action-1.
+- anomaly-ubume-baby-cat: **merged** my own former story event-anomaly-6793 via bridge 6792.a → 6793 (yearly check;
+  needs met_ubume + later is_psionic). event-anomaly-6793 no longer exists as a separate story (intended).
+- anomaly-sun-rays-cat: **added bridges** 4035.a → 4037 / anomaly_failure.4037 (hidden 4036 on_entering_system_fleet,
+  40/60 with visit counter). These docs remain also in c3a's event-anomaly-4036 (root = hidden 4036); see Requests.
+- Rule learned: a bridge to a doc that is the root of another story makes it non-root and absorbs that story; a bridge
+  to a doc reached through a hidden router is safe (the doc then appears in both stories).
+
+### Batch 02c — remaining `02_anomaly_categories.txt` stories — reviewed (solarpunk partial)
+- Initializer-only categories verified at their `add_anomaly` sites: ALPHA_CENTAURI (5 Sol-neighbour initializers in
+  `sol_initializers.txt`), UBUME_BABY (ghost_ship_system_initializer_01), UNIQUE_SYSTEM_BATTLE (unique 04/05/06),
+  NANO_SWARM (parvus_system), BREACHSEALER (breachsealer_system), GEOCENTRIC (init_sol_geocentric), TIYANKI_ASTEROID
+  (hostile_init_21); SOLARPUNK via `fircon.5000` option (`first_contact_dlc_events.txt:6661-6699`).
+- anomaly-geocentric-experiment-cat: **suppressed** 8000.b → crisis.2037 / observer.50 (generic destroy_star_system
+  machine-world bookkeeping for the Contingency, not a continuation).
+- anomaly-solarpunk-cat: **partial** — middle chapter of C7's Habinte chain (event-fircon-5000 adds the anomaly;
+  fircon.5020 etc. continue). See Requests.
+- One-outcome stories reviewed with trigger, spawn modifiers and effects: des-planet, radioactive-planet (sets
+  nuked_planet_anomalies_disabled), singing-planet, star-resonance (colorscience flag → enclave.5180 related),
+  temporal-prism, tiyanki-asteroid, tox-planet, trop-biology, trop-conditions, unique-system-battle, arid-planet,
+  ast-mining, breachsealer, frozen-springs, vending-machine (10/60/30 contents), alpha-centauri (Earth vs other).
+
 ## Requests
 
 1. **Observer events (compiler).** `observer_event`s in `events/observer_events.txt` are spectator-mode notifications.
@@ -95,3 +128,13 @@ outcome already seen by that empire is not picked again; modifiers are evaluated
 7. **Cross-story link without absorption (compiler).** A bridge to another story's root makes that root non-root and
    absorbs it. Needed: a bridge flag (e.g. `"external": true`) that adds the reader link but is ignored by
    `find_roots`, for optional epilogues such as the adAkkaria secrets (artifact action) and the Inetian continuation.
+8. **Star-power chain duplicate (C3a).** anomaly-sun-rays-cat now contains the full chain (4035 → hidden 4036 → 4037 /
+   anomaly_failure.4037 → ODD_STAR_PROJECT → 4038) via reviewed bridges. c3a's event-anomaly-4036 (root = hidden 4036)
+   is the same tail; consider treating it as covered by anomaly-sun-rays-cat.
+9. **Habinte / Solarpunk merge (C7a).** anomaly-solarpunk-cat (c3b) is spawned by fircon.5000 (event-fircon-5000, c7a)
+   and continues in fircon.5020+ (c7a). `add_anomaly` is not in the call graph, so the anomaly is a separate root.
+   Proposal: one Habinte family owned by c7a including SOLARPUNK_CAT and fircon.5010.
+10. **add_anomaly calls missing from the call graph (extractor).** cstorms.100/200 → STORMS_PREC_*, fircon.5000 →
+    SOLARPUNK_CAT and the system initializers' `add_anomaly` are not edges, so the real spawners never appear as
+    triggers of the anomaly roots. An `add_anomaly` edge kind (trigger only, not a tree edge) would let the compiler
+    show "spawned by X".

@@ -1,0 +1,22 @@
+{
+ "id": "anomaly-star-lifting-category",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:5-72 (star_lifting_system)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1087-1099",
+   "events/distant_stars_events_2.txt:1744 (distar.1020)",
+   "common/special_projects/00_projects_distant_stars.txt:1016/1046 (STAR_LIFTING, STAR_LIFTING_WEAPONS)",
+   "events/distant_stars_events_2.txt:1808 (distar.1021)",
+   "events/distant_stars_events_2.txt:1857 (distar.1022)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-star-lifting-category.md"
+ }
+}

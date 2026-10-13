@@ -1,0 +1,39 @@
+{
+ "id": "event-nomads-6020",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.6025",
+    "nomads.6030",
+    "nomads.6035",
+    "nomads.6040",
+    "nomads.6045",
+    "nomads.6050"
+   ],
+   "label": {
+    "zh": "货舱里的东西（随机）",
+    "en": "What is in the hold (random)"
+   },
+   "note": {
+    "zh": "调查后10–30天随机揭晓其一；机械体只在合约方为机械/机器人帝国时，未经授权的生物货物对部分好战或排外帝国不出现。",
+    "en": "Investigating reveals one at random after 10-30 days; the mechanoid needs a machine/robot issuer, and the unauthorized biological cargo is excluded for some militarist or xenophobic empires."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/nomads_events_1.txt:16297-16734",
+   "events/nomads_events_1.txt:15716-15763"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-nomads-6020.md"
+ }
+}

@@ -2,15 +2,15 @@
   "category": "society",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 486,
-  "docs": 1742,
+  "stories": 484,
+  "docs": 1741,
   "nodes": 2056,
-  "refs": 314,
+  "refs": 315,
   "crossLinks": 694,
   "review": {
-    "reviewed": 54,
+    "reviewed": 71,
     "partial": 3,
-    "unreviewed": 429
+    "unreviewed": 410
   },
   "failures": [],
   "items": [
@@ -67,6 +67,15 @@
       "refs": 16,
       "crossLinks": 0,
       "review": "partial"
+    },
+    {
+      "id": "event-fircon-6000",
+      "title": "那里有生命存在吗？",
+      "kind": "family",
+      "docs": 12,
+      "refs": 7,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "event-situation-150",
@@ -429,15 +438,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-fircon-6000",
-      "title": "那里有生命存在吗？",
-      "kind": "event",
-      "docs": 10,
-      "refs": 6,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-first-contact-250",
       "title": "外星舰船被俘！",
       "kind": "event",
@@ -651,7 +651,7 @@
       "docs": 7,
       "refs": 9,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-galcom-62",
@@ -1146,7 +1146,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8060",
@@ -1155,7 +1155,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-355",
@@ -1470,7 +1470,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8515",
@@ -1479,7 +1479,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8565",
@@ -1488,7 +1488,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-375",
@@ -1736,15 +1736,6 @@
     {
       "id": "event-fircon-5050",
       "title": "礼貌请求",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-6034",
-      "title": "滚回地下！",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2859,22 +2850,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-fircon-6036",
-      "title": "曾为天人，今为尘土",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-fircon-7500",
       "title": "填充[Root.GetSpeciesNamePlural]玩具",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-7505",
@@ -2883,7 +2865,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-7510",
@@ -2892,7 +2874,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8025",
@@ -2901,7 +2883,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8030",
@@ -2910,7 +2892,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8035",
@@ -2919,7 +2901,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8040",
@@ -2928,7 +2910,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8045",
@@ -2937,7 +2919,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8050",
@@ -2946,7 +2928,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8055",
@@ -2955,7 +2937,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-100",

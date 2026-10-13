@@ -1,0 +1,202 @@
+{
+ "id": "artisan-troupe",
+ "family": {
+  "title": {
+   "zh": "太空城邦：艺术家联盟",
+   "en": "Enclave: The Artisan Troupe"
+  },
+  "category": "leviathans",
+  "start": "leviathans.290",
+  "members": [
+   "leviathans.285",
+   "leviathans.290",
+   "leviathans.295",
+   "leviathans.300",
+   "leviathans.301",
+   "leviathans.304",
+   "leviathans.305",
+   "leviathans.310",
+   "leviathans.311",
+   "leviathans.313",
+   "leviathans.315",
+   "leviathans.321",
+   "leviathans.322",
+   "leviathans.323",
+   "leviathans.324",
+   "leviathans.325",
+   "leviathans.330",
+   "leviathans.331",
+   "leviathans.332",
+   "leviathans.335",
+   "leviathans.336",
+   "leviathans.337",
+   "leviathans.340",
+   "leviathans.345",
+   "leviathans.350",
+   "leviathans.351",
+   "leviathans.352",
+   "leviathans.353",
+   "observer.11",
+   "observer.12",
+   "leviathans.354"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "leviathans.295",
+   "to": "leviathans.300",
+   "conditional": true,
+   "label": {
+    "zh": "此后外交联络打开艺术家联盟菜单",
+    "en": "Later contacts open the Troupe's menu"
+   },
+   "evidence": "on_custom_diplomacy (00_on_actions.txt:719) -> hidden leviathans.285 (leviathans_events_1.txt:3051-3078) -> leviathans.300"
+  },
+  {
+   "from": "leviathans.300",
+   "to": "leviathans.301",
+   "conditional": true,
+   "label": {
+    "zh": "若曾攻击艺术家联盟，此后联络不再回应",
+    "en": "After an attack, later hails go unanswered"
+   },
+   "evidence": "leviathans.350 (on_entering_battle, 00_on_actions.txt:1372) sets enclave_artist_ignores and removes patron/festival modifiers; on_custom_diplomacy (:720) then shows leviathans.301"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.321",
+    "leviathans.322",
+    "leviathans.323",
+    "leviathans.324"
+   ],
+   "label": {
+    "zh": "赞助期间的随机来信",
+    "en": "Random letters during patronage"
+   },
+   "note": {
+    "zh": "leviathans.311每隔500–1500天按20/20/20/20（另20为再等待）抽一封，按已发生情况修正权重；每封信之后再次安排（leviathans_events_1.txt:3650-3750）。",
+    "en": "leviathans.311 draws one every 500-1500 days at 20/20/20/20 (20 = wait again), weights modified by what already happened; each letter schedules the next (leviathans_events_1.txt:3650-3750)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.335",
+    "leviathans.336",
+    "leviathans.337"
+   ],
+   "label": {
+    "zh": "星球盛典的余波（多数情况下无事）",
+    "en": "Festival aftermath (usually nothing)"
+   },
+   "note": {
+    "zh": "leviathans.331：乐极生悲10、交织的喜悦10、背叛5、无事75。",
+    "en": "leviathans.331: Outrage 10, Joy 10, Betrayal 5, nothing 75."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.352",
+    "leviathans.353",
+    "observer.11",
+    "observer.12",
+    "leviathans.354"
+   ],
+   "label": {
+    "zh": "空间站被毁：按视角与剩余空间站收到一种通知",
+    "en": "Station destroyed: one notice per viewpoint"
+   },
+   "note": {
+    "zh": "leviathans.351：仍有空间站时352（其一被毁），最后一座被毁时353；观察者observer.11/12；摧毁者354（on_fleet_destroyed_perp）。",
+    "en": "leviathans.351: 352 while stations remain, 353 when the last one falls; observers 11/12; the destroyer gets 354."
+   }
+  }
+ ],
+ "endings": {
+  "leviathans.353": {
+   "label": {
+    "zh": "艺术家联盟不复存在",
+    "en": "The Troupe is no more"
+   },
+   "note": {
+    "zh": "最后一座空间站被毁。",
+    "en": "Last station destroyed."
+   },
+   "evidence": "events/leviathans_events_1.txt:4559-4640"
+  },
+  "leviathans.354": {
+   "label": {
+    "zh": "我们摧毁了其空间站",
+    "en": "We destroyed their station"
+   },
+   "note": {
+    "zh": "获得残骸中的资源。",
+    "en": "Salvaged resources."
+   },
+   "evidence": "events/leviathans_events_1.txt:4710; 00_on_actions.txt:1644"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.295": {
+   "zh": "首次接触",
+   "en": "First contact"
+  },
+  "leviathans.301": {
+   "zh": "拒不回应",
+   "en": "No answer"
+  },
+  "leviathans.300": {
+   "zh": "艺术家联盟菜单",
+   "en": "Troupe menu"
+  },
+  "leviathans.305": {
+   "zh": "委托艺术品",
+   "en": "Commission art"
+  },
+  "leviathans.310": {
+   "zh": "成为赞助者（10年）",
+   "en": "Become a patron (10 years)"
+  },
+  "leviathans.330": {
+   "zh": "星球盛典",
+   "en": "Festival of Worlds"
+  },
+  "leviathans.315": {
+   "zh": "赞助到期：续约？",
+   "en": "Patronage ends: renew?"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.295",
+   "kind": "review",
+   "zh": "审阅注：首次接触完成或“通讯已建立”后经隐藏事件leviathans.290显示；若此前已攻击过他们（enclave_artist_ignores），改为“拒不回应”（301）。",
+   "en": "Review note: shown via hidden leviathans.290 after first contact or 'Communications Established'; if we had attacked them (enclave_artist_ignores) it is 'no answer' (301) instead."
+  },
+  {
+   "doc": "leviathans.311",
+   "kind": "review",
+   "zh": "审阅注：赞助者来信循环；三类来信都已出现后停止。",
+   "en": "Review note: the patron-letter loop stops once all three letter types have occurred."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整：首次接触、菜单五项服务、赞助来信循环与续约、盛典随机余波、攻击后果、空间站被毁。",
+   "en": "Complete: first contact, five menu services, patron-letter loop and renewal, festival aftermath, attack consequences, station destruction."
+  },
+  "sources": [
+   "events/leviathans_events_1.txt",
+   "events/observer_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/artisan-troupe.md"
+ }
+}

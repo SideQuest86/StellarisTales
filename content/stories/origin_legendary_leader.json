@@ -2,21 +2,433 @@
  "id": "origin_legendary_leader",
  "opening": {
   "targets": [
-   "paragon.5004"
+   "paragon.5004",
+   "paragon.5005",
+   "paragon.5023",
+   "paragon.5025",
+   "paragon.5027",
+   "paragon.5029",
+   "paragon.5033",
+   "paragon.5039",
+   "paragon.5038",
+   "paragon.5201",
+   "paragon.5900"
   ],
   "label": {
-   "zh": "启明者的允诺",
-   "en": "The Luminary's promise"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "game_start ->paragon5000 schedules5004 days180 random360"
+  "labels": {
+   "paragon.5004": {
+    "zh": "开局180–540天后：光耀者的承诺",
+    "en": "180-540 days after game start: the Luminary's promise"
+   },
+   "paragon.5005": {
+    "zh": "光耀者在位时开始建立第一个殖民地",
+    "en": "Starting the first colony under the Luminary"
+   },
+   "paragon.5023": {
+    "zh": "外交里程碑：组建联邦",
+    "en": "Diplomatic milestone: forming a federation"
+   },
+   "paragon.5025": {
+    "zh": "外交里程碑：成为宗主",
+    "en": "Diplomatic milestone: becoming an overlord"
+   },
+   "paragon.5027": {
+    "zh": "外交里程碑：赢得战争",
+    "en": "Diplomatic milestone: winning a war"
+   },
+   "paragon.5029": {
+    "zh": "外交里程碑：输掉战争",
+    "en": "Diplomatic milestone: losing a war"
+   },
+   "paragon.5033": {
+    "zh": "外交里程碑：沦为附庸",
+    "en": "Diplomatic milestone: becoming a subject"
+   },
+   "paragon.5039": {
+    "zh": "外交里程碑：成为银河皇帝",
+    "en": "Diplomatic milestone: becoming Galactic Emperor"
+   },
+   "paragon.5038": {
+    "zh": "外交里程碑：成为银河守护者",
+    "en": "Diplomatic milestone: becoming Galactic Custodian"
+   },
+   "paragon.5201": {
+    "zh": "光耀者超过寿命，或完成飞升类传统后（独裁或改革派已消失的帝制）",
+    "en": "The Luminary outlives a normal lifespan, or an ascension tradition is finished (dictatorship, or empire once the reformists are gone)"
+   },
+   "paragon.5900": {
+    "zh": "若光耀者去世",
+    "en": "If the Luminary dies"
+   }
+  },
+  "evidence": "events/game_start.txt:522-526 -> hidden 5000 (events/origin_events_paragon.txt:15-63, sets origin_legendary_leader_dictatorial, schedules 5004 after 180+360 days). common/council_agendas/00_council_agendas.txt:167-212 origin agenda -> random 5325/5330/5335/5360 and sets origin_upgrade_agendas_situation. common/on_actions/00_on_actions.txt:1271 on_colonization_started -> 5005. Milestones: federations_events_1.txt fedev.499 -> 5023; common/on_actions/00_on_actions.txt:4507-4508 on_becoming_subject -> hidden 5024 / 5032; common/on_actions/00_on_actions.txt:3137 on_war_won -> 5026; common/on_actions/00_on_actions.txt:3165 on_war_lost -> 5028; common/on_actions/00_on_actions.txt:350-351 on_monthly_pulse_country -> 5034 / 5037 (each hidden router fires its window once, events/origin_events_paragon.txt:1272-1700). common/on_actions/00_on_actions.txt:415-416 on_yearly_pulse_country -> hidden 5955 (age) / 5960 (traditions), and luminary_speech_effect (common/scripted_effects/paragon_effects.txt:14) on tradition completion -> 5201. common/on_actions/00_on_actions.txt:2390 on_leader_death -> 5900."
  },
- "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+ "bridges": [
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5360",
+   "conditional": true,
+   "label": {
+    "zh": "统一承诺期间完成起源议程“君临天下”（四选一随机）",
+    "en": "Completing the origin agenda \"Under One Rule\" during the promise (one of four at random)"
+   },
+   "evidence": "common/council_agendas/00_council_agendas.txt:167-212 origin agenda origin_legendary_leader (only while paragon_origin_promise runs) fires one of 5325/5330/5335/5360 at random (random_list 1:1:1:1) and sets origin_upgrade_agendas_situation."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5335",
+   "conditional": true,
+   "label": {
+    "zh": "统一承诺期间完成起源议程“君临天下”（四选一随机）",
+    "en": "Completing the origin agenda \"Under One Rule\" during the promise (one of four at random)"
+   },
+   "evidence": "common/council_agendas/00_council_agendas.txt:167-212 origin agenda origin_legendary_leader (only while paragon_origin_promise runs) fires one of 5325/5330/5335/5360 at random (random_list 1:1:1:1) and sets origin_upgrade_agendas_situation."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5330",
+   "conditional": true,
+   "label": {
+    "zh": "统一承诺期间完成起源议程“君临天下”（四选一随机）",
+    "en": "Completing the origin agenda \"Under One Rule\" during the promise (one of four at random)"
+   },
+   "evidence": "common/council_agendas/00_council_agendas.txt:167-212 origin agenda origin_legendary_leader (only while paragon_origin_promise runs) fires one of 5325/5330/5335/5360 at random (random_list 1:1:1:1) and sets origin_upgrade_agendas_situation."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5325",
+   "conditional": true,
+   "label": {
+    "zh": "统一承诺期间完成起源议程“君临天下”（四选一随机）",
+    "en": "Completing the origin agenda \"Under One Rule\" during the promise (one of four at random)"
+   },
+   "evidence": "common/council_agendas/00_council_agendas.txt:167-212 origin agenda origin_legendary_leader (only while paragon_origin_promise runs) fires one of 5325/5330/5335/5360 at random (random_list 1:1:1:1) and sets origin_upgrade_agendas_situation."
+  },
+  {
+   "from": "paragon.5005",
+   "to": "paragon.5010",
+   "conditional": true,
+   "label": {
+    "zh": "殖民地建成",
+    "en": "The colony is established"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1313 on_colonized -> 5010 (events/origin_events_paragon.txt:296-355) requires first_colonized_planet, set by 5005 (events/origin_events_paragon.txt:129-134)."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5014",
+   "conditional": true,
+   "label": {
+    "zh": "承诺期间完成思潮议程：理事会不堪重负（180–540天后）",
+    "en": "An ethics agenda completed during the promise: the overworked council (180-540 days later)"
+   },
+   "evidence": "common/council_agendas/00_council_agendas_ethics.txt:49-465 several ethics agendas fire 5014 after 180+360 days while paragon_origin_promise runs and origin_upgrade_agendas_situation is set; 5014 sets paragon_origin_small_problems (events/origin_events_paragon.txt:488-517), which enables the monthly problems 5110-5150."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5305",
+   "conditional": true,
+   "label": {
+    "zh": "承诺期间完成相应议程：扩张类议程：地形改造洞见",
+    "en": "Agenda completed during the promise: Strong on our own: terraforming insight"
+   },
+   "evidence": "common/council_agendas/00_council_agendas_ethics.txt:298 the agenda fires paragon.5305 if paragon_origin_promise runs and origin_upgrade_agendas_situation (set by the origin agenda, common/council_agendas/00_council_agendas.txt:185) is present."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5310",
+   "conditional": true,
+   "label": {
+    "zh": "承诺期间完成相应议程：武力展示议程：造船洞见",
+    "en": "Agenda completed during the promise: Display of power: shipwright insight"
+   },
+   "evidence": "common/council_agendas/00_council_agendas_ethics.txt:179-183 the agenda fires paragon.5310 if paragon_origin_promise runs and origin_upgrade_agendas_situation (set by the origin agenda, common/council_agendas/00_council_agendas.txt:185) is present."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5315",
+   "conditional": true,
+   "label": {
+    "zh": "承诺期间完成相应议程：进步增长议程：科研突破",
+    "en": "Agenda completed during the promise: Progressive growth: research breakthrough"
+   },
+   "evidence": "common/council_agendas/00_council_agendas_ethics.txt:461-465 the agenda fires paragon.5315 if paragon_origin_promise runs and origin_upgrade_agendas_situation (set by the origin agenda, common/council_agendas/00_council_agendas.txt:185) is present."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5320",
+   "conditional": true,
+   "label": {
+    "zh": "承诺期间完成相应议程：和平/秩序议程：以身作则",
+    "en": "Agenda completed during the promise: We come in peace / preserve the order: lead by example"
+   },
+   "evidence": "common/council_agendas/00_council_agendas_ethics.txt:49-68, 355-359 the agenda fires paragon.5320 if paragon_origin_promise runs and origin_upgrade_agendas_situation (set by the origin agenda, common/council_agendas/00_council_agendas.txt:185) is present."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5340",
+   "conditional": true,
+   "label": {
+    "zh": "承诺期间完成相应议程：崇高目标议程：例外的统治",
+    "en": "Agenda completed during the promise: A higher purpose: exceptional rule"
+   },
+   "evidence": "common/council_agendas/00_council_agendas_ethics.txt:399 the agenda fires paragon.5340 if paragon_origin_promise runs and origin_upgrade_agendas_situation (set by the origin agenda, common/council_agendas/00_council_agendas.txt:185) is present."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5345",
+   "conditional": true,
+   "label": {
+    "zh": "承诺期间完成相应议程：开放怀抱议程：发明天才",
+    "en": "Agenda completed during the promise: Open arms: inventor genius"
+   },
+   "evidence": "common/council_agendas/00_council_agendas_ethics.txt:219-263 the agenda fires paragon.5345 if paragon_origin_promise runs and origin_upgrade_agendas_situation (set by the origin agenda, common/council_agendas/00_council_agendas.txt:185) is present."
+  },
+  {
+   "from": "situations:paragon_origin_promise",
+   "to": "paragon.5370",
+   "conditional": true,
+   "label": {
+    "zh": "承诺期间完成相应议程：和平到来议程：轨道环洞见",
+    "en": "Agenda completed during the promise: We come in peace: orbital rings insight"
+   },
+   "evidence": "common/council_agendas/00_council_agendas_ethics.txt:45-125 the agenda fires paragon.5370 if paragon_origin_promise runs and origin_upgrade_agendas_situation (set by the origin agenda, common/council_agendas/00_council_agendas.txt:185) is present."
+  },
+  {
+   "from": "situations:paragon_origin_reformists_struggle",
+   "to": "paragon.5095",
+   "conditional": true,
+   "label": {
+    "zh": "严厉对待改革派并完成议程“妄想暴君”",
+    "en": "Harsh approach and the agenda \"Delusional Tyrant\" completed"
+   },
+   "evidence": "common/council_agendas/00_council_agendas.txt:143-164 origin_delusional_tyrant (requires the harsh approach) fires 5095 (events/origin_events_paragon.txt:2798-2827), which schedules 5200 after 15-30 days."
+  },
+  {
+   "from": "paragon.5211",
+   "to": "paragon.5213",
+   "conditional": true,
+   "label": {
+    "zh": "改革派一方赢得内战",
+    "en": "The reformist side wins the civil war"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:2635 on_war_ended / :3138 on_war_won and hidden 5950 (events/origin_events_paragon.txt:4567-4607) fire 5213 (events/origin_events_paragon.txt:3181-3282), which requires paragon_origin_rebel_player set by 5210.d/e."
+  },
+  {
+   "from": "paragon.6015",
+   "to": "paragon.6030",
+   "conditional": true,
+   "label": {
+    "zh": "灵能光耀者：每月检查泽珞储备",
+    "en": "Psionic Luminary: monthly check of Zro reserves"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:360 on_monthly_pulse_country -> 6030 (events/origin_events_paragon.txt:5142-5198) when the ruler has the psionic Luminary trait and no Zro; paying 3 Zro keeps the ruler alive, otherwise the ruler dies."
   }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "paragon.5008",
+    "paragon.5009"
+   ],
+   "label": {
+    "zh": "统一承诺的结果",
+    "en": "Outcome of the Unifying Promise"
+   },
+   "note": {
+    "zh": "按兑现的承诺数（每15点为1级）判定：至少1级为兑现，否则为空头承诺。",
+    "en": "Judged by promises delivered (every 15 points is one tier): at least one tier is a success, otherwise false promises."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "paragon.5220",
+    "paragon.5221",
+    "paragon.5222",
+    "paragon.5211"
+   ],
+   "label": {
+    "zh": "十字路口：如何对待改革派",
+    "en": "Crossroads: dealing with the reformists"
+   },
+   "note": {
+    "zh": "谈判、开战、处决（妄想程度≥10）或倒向改革派（光耀者死去，帝国改制）。",
+    "en": "Negotiate, go to war, execute (delusion tier >= 10) or side with the reformists (the Luminary dies and the state is reformed)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "paragon.6005",
+    "paragon.6010",
+    "paragon.6015",
+    "paragon.6020",
+    "paragon.6025"
+   ],
+   "label": {
+    "zh": "第二次机会：延续光耀者的方式",
+    "en": "The Second Chance: how the Luminary lives on"
+   },
+   "note": {
+    "zh": "维生装置、义体、灵能、合成或基因；部分选项需相应传统或合成帝国。",
+    "en": "Apparatus, cybernetic, psionic, synthetic or genetic; some require the matching tradition or a synthetic empire."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "paragon.5023",
+    "paragon.5025",
+    "paragon.5027",
+    "paragon.5029",
+    "paragon.5033",
+    "paragon.5039",
+    "paragon.5038"
+   ],
+   "label": {
+    "zh": "外交里程碑",
+    "en": "Diplomatic milestones"
+   },
+   "note": {
+    "zh": "光耀者在位期间各触发一次，顺序不定。",
+    "en": "Each fires once while the Luminary rules, in any order."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "paragon.5325",
+    "paragon.5330",
+    "paragon.5335",
+    "paragon.5360"
+   ],
+   "label": {
+    "zh": "起源议程的随机洞见（四选一）",
+    "en": "Random insight of the origin agenda (one of four)"
+   }
+  }
+ ],
+ "endings": {
+  "paragon.6035": {
+   "label": {
+    "zh": "天命已成",
+    "en": "Destiny fulfilled"
+   },
+   "note": {
+    "zh": "可维持现状或改行民主/寡头制（起源改为默认）。",
+    "en": "Keep things as they are, or move to democracy/oligarchy (origin becomes the default)."
+   },
+   "evidence": "events/origin_events_paragon.txt:5200-5277"
+  },
+  "paragon.5900": {
+   "label": {
+    "zh": "光耀者逝去",
+    "en": "The Luminary is gone"
+   },
+   "note": {
+    "zh": "起源转为“光耀者已逝”状态。",
+    "en": "The origin switches to its post-Luminary form."
+   },
+   "evidence": "events/origin_events_paragon.txt:4268-4370 set_origin = origin_legendary_leader_death"
+  },
+  "paragon.5213": {
+   "label": {
+    "zh": "改革派赢得内战",
+    "en": "The reformists win the civil war"
+   },
+   "note": {
+    "zh": "玩家倒向改革派后取胜。",
+    "en": "After siding with the reformists."
+   },
+   "evidence": "events/origin_events_paragon.txt:3181-3282"
+  },
+  "paragon.5223": {
+   "label": {
+    "zh": "一统天下",
+    "en": "One Rule"
+   },
+   "note": {
+    "zh": "镇压改革派叛乱后。",
+    "en": "After crushing the reformist revolt."
+   },
+   "evidence": "events/origin_events_paragon.txt:3460-3553"
+  },
+  "paragon.5220": {
+   "label": {
+    "zh": "谈判达成和平",
+    "en": "Peace by negotiation"
+   },
+   "note": {
+    "zh": "与改革派和解。",
+    "en": "Reconciled with the reformists."
+   },
+   "evidence": "events/origin_events_paragon.txt:3284-3352"
+  }
+ },
+ "nodeLabels": {
+  "paragon.5025": {
+   "zh": "里程碑：宗主",
+   "en": "Milestone: overlord"
+  },
+  "paragon.5027": {
+   "zh": "里程碑：胜战",
+   "en": "Milestone: war won"
+  },
+  "paragon.5029": {
+   "zh": "里程碑：败战",
+   "en": "Milestone: war lost"
+  },
+  "paragon.5033": {
+   "zh": "里程碑：附庸",
+   "en": "Milestone: subject"
+  },
+  "paragon.5038": {
+   "zh": "里程碑：守护者",
+   "en": "Milestone: Custodian"
+  },
+  "paragon.5039": {
+   "zh": "里程碑：皇帝",
+   "en": "Milestone: Emperor"
+  },
+  "paragon.5023": {
+   "zh": "里程碑：联邦",
+   "en": "Milestone: federation"
+  }
+ },
+ "notes": [
+  {
+   "doc": "paragon.5020",
+   "kind": "review",
+   "zh": "审阅注：选择帝制（a）进入加冕与“异见崛起”“改革派诉求”两段局势；维持独裁（b）则在10–20年与20–30年后分别出现正面与负面特质事件。",
+   "en": "Review note: choosing the empire (a) leads to the coronation and the Dissidence and Reformist situations; staying a dictatorship (b) brings a positive and a negative trait event 10-20 and 20-30 years later."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c1-origins (Opus 5.5), V4 source review",
+  "scope": {
+   "zh": "核对开局、统一承诺局势及其随机问题、议程洞见、首个殖民地、外交里程碑、帝制路线（加冕、异见、改革派、十字路口与四种结局）、独裁路线、飞升演说与第二次机会、光耀者去世。",
+   "en": "Checked the opening, the Unifying Promise and its random problems, agenda insights, the first colony, diplomatic milestones, the imperial line (coronation, dissidence, reformists, crossroads and outcomes), the dictatorship line, the ascension speech and Second Chance, and the Luminary's death."
+  },
+  "sources": [
+   "events/origin_events_paragon.txt",
+   "common/situations/05_paragon_situations.txt",
+   "common/council_agendas/00_council_agendas.txt",
+   "common/council_agendas/00_council_agendas_ethics.txt",
+   "common/on_actions/00_on_actions.txt",
+   "events/game_start.txt",
+   "common/scripted_effects/paragon_effects.txt",
+   "events/federations_events_1.txt"
+  ],
+  "uncertain": [
+   "The reformist civil war ending depends on war outcomes and the hidden failsafe 5950; the archive shows the routes only."
+  ],
+  "guide": "public/summaries/origin_legendary_leader.md"
  }
 }

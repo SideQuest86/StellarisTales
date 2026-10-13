@@ -1,4 +1,4 @@
-# 云中的动静 / Movement in the Clouds
+# 迷路的变形虫 / Lost Amoeba
 
 - 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 - 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:148-173; events/distant_stars_events_1.txt:1290 (distar.50); events/distant_stars_events_1.txt:1483 (distar.51); events/distant_stars_events_1.txt:1746/1864 (distar.55/56); events/distant_stars_events_1.txt:1979 (distar.52); common/special_projects/00_projects_distant_stars.txt:116 (DISSECTION_PROJECT); events/distant_stars_events_1.txt:2042/2116 (distar.53/54); events/distant_stars_events_1.txt:2330 (distar.304); common/special_projects/00_projects_2.txt:498/514 (AMOEBAS_PROJECT, AMOEBAS_PACIFICATION_PROJECT); events/story_events.txt:2380/2424 (story.105/107); common/on_actions/00_on_actions.txt:2046; events/distant_stars_events_1.txt:2180 (distar.58); events/distant_stars_events_1.txt:2214 (distar.340); common/special_projects/00_projects_distant_stars.txt:1559 (REANIMATE_LOST_AMOEBA); events/distant_stars_events_1.txt:2277 (distar.59); events/distant_stars_events_1.txt:2150 (distar.57)

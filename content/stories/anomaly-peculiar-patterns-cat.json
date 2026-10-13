@@ -1,0 +1,38 @@
+{
+ "id": "anomaly-peculiar-patterns-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.1090",
+    "distar.1095",
+    "distar.2010"
+   ],
+   "label": {
+    "zh": "按星球类型",
+    "en": "By planet class"
+   },
+   "note": {
+    "zh": "基础权重0：盖亚/大陆/草原/热带时1090与1095各+1（各50%），海洋时2010 +1（95_anomaly_categories_distant_stars.txt:1310-1350）。",
+    "en": "Base 0: Gaia/continental/savannah/tropical give 1090 and 1095 +1 each (50% each); ocean gives 2010 +1 (95_anomaly_categories_distant_stars.txt:1310-1350)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1293-1351",
+   "events/distant_stars_events_2.txt:3238 (distar.1090)",
+   "events/distant_stars_events_2.txt:3294 (distar.1095)",
+   "events/distant_stars_events_2.txt:3552 (distar.2010)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-peculiar-patterns-cat.md"
+ }
+}

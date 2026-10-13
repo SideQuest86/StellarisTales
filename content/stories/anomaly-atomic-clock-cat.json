@@ -1,0 +1,62 @@
+{
+ "id": "anomaly-atomic-clock-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.311",
+    "distar.315",
+    "distar.320",
+    "distar.330",
+    "distar.335"
+   ],
+   "label": {
+    "zh": "42年后的五种结果",
+    "en": "Five outcomes after 42 years"
+   },
+   "note": {
+    "zh": "各基础权重0，满足条件+1：可改造的不宜居星球(311)、我方舰队可进入(315)、有无异常的不宜居天体(320)、前超光速星球(330)、未殖民宜居星球(335)（distant_stars_events_2.txt:235-308）。",
+    "en": "Each base 0, +1 if: terraformable uninhabitable planet (311), our fleets can access (315), uninhabitable body without anomaly (320), primitive planet (330), uncolonised habitable planet (335) (distant_stars_events_2.txt:235-308)."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.311": {
+   "zh": "纳米机器人飞向星球",
+   "en": "Nanites stream to a planet"
+  },
+  "distar.315": {
+   "zh": "纳米战舰",
+   "en": "Nanite warship"
+  },
+  "distar.320": {
+   "zh": "计算网络",
+   "en": "Computational network"
+  },
+  "distar.330": {
+   "zh": "前超光速星球被核平",
+   "en": "Primitive world nuked"
+  },
+  "distar.335": {
+   "zh": "宜居星球被核平",
+   "en": "Habitable world nuked"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1179-1219",
+   "events/distant_stars_events_2.txt:2129 (distar.1045)",
+   "events/distant_stars_events_2.txt:225-310 (distar.310)",
+   "events/distant_stars_events_2.txt:313-640 (distar.311-335)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-atomic-clock-cat.md"
+ }
+}

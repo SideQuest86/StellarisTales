@@ -1,0 +1,46 @@
+{
+ "id": "event-nomads-3060",
+ "family": {
+  "title": {
+   "zh": "游客登船",
+   "en": "Tourists Boarding"
+  },
+  "category": "stories",
+  "start": "nomads.3060",
+  "members": [
+   "nomads.3060",
+   "nomads.3065"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "nomads.3060",
+   "to": "nomads.3065",
+   "conditional": true,
+   "label": {
+    "zh": "合约的下一站",
+    "en": "Next leg of the contract"
+   },
+   "evidence": "contract_sightseeing_tour: arkship arrives at the next flagged system (on_entering_system_fleet / drop-off on_action), events/nomads_events_1.txt:12284-12480"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/nomads_events_1.txt:12284-12480",
+   "common/missions/missions/02_contracts.txt",
+   "common/on_actions/00_on_actions.txt:1086-1092"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-nomads-3060.md",
+  "merged": [
+   "event-nomads-3065"
+  ]
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "id": "anomaly-disco-speed-demon-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1664-1688",
+   "events/distant_stars_events_2.txt:8492 (distar.3050)",
+   "events/distant_stars_events_2.txt:8532 (distar.3051)",
+   "common/special_projects/00_projects_distant_stars.txt:847/867 (speed_demon_open_box_project, speed_demon_learn_more_project)",
+   "events/distant_stars_events_2.txt:8585 (distar.3055)",
+   "events/distant_stars_events_2.txt:8700 (distar.3056)",
+   "events/distant_stars_events_2.txt:8769 (distar.3057)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-disco-speed-demon-cat.md"
+ }
+}

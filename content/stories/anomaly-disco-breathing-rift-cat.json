@@ -1,0 +1,34 @@
+{
+ "id": "anomaly-disco-breathing-rift-cat",
+ "endings": {
+  "distar.3064": {
+   "label": {
+    "zh": "裂隙关闭",
+    "en": "The rift closes"
+   },
+   "note": {
+    "zh": "每次收集后有50%几率关闭。",
+    "en": "50% chance after each collection."
+   },
+   "evidence": "events/distant_stars_events_2.txt:9082"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1690-1709",
+   "events/distant_stars_events_2.txt:8959 (distar.3060)",
+   "common/special_projects/00_projects_distant_stars.txt:888 (breathing_rift_project)",
+   "events/distant_stars_events_2.txt:8998/9037 (distar.3061/3062)",
+   "events/distant_stars_events_2.txt:9082 (distar.3064)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-disco-breathing-rift-cat.md"
+ }
+}

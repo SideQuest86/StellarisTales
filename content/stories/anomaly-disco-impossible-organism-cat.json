@@ -1,0 +1,58 @@
+{
+ "id": "anomaly-disco-impossible-organism-cat",
+ "endings": {
+  "distar.3014": {
+   "label": {
+    "zh": "敌视我们的尼瓦拉克",
+    "en": "The resentful Nivlac"
+   },
+   "note": {
+    "zh": "被丢弃的有机体发展成记仇的航天种族。",
+    "en": "The discarded organism becomes a spacefaring species that remembers."
+   },
+   "evidence": "events/distant_stars_events_2.txt:7475"
+  },
+  "distar.3016": {
+   "label": {
+    "zh": "尼瓦拉克的新家园",
+    "en": "The Nivlac homeworld"
+   },
+   "note": {
+    "zh": "安置后的真菌发展出超光速技术。",
+    "en": "The relocated fungoids develop FTL."
+   },
+   "evidence": "events/distant_stars_events_2.txt:7637"
+  },
+  "distar.3017": {
+   "label": {
+    "zh": "尼瓦拉克加入社会",
+    "en": "The Nivlac join our society"
+   },
+   "note": {
+    "zh": "成为人口（或被同化）。",
+    "en": "They become pops (or are assimilated)."
+   },
+   "evidence": "events/distant_stars_events_2.txt:7798"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1557-1584",
+   "events/distant_stars_events_2.txt:7136 (distar.3010)",
+   "common/special_projects/00_projects_distant_stars.txt:728/748 (impossible_organism_project_1/2)",
+   "events/distant_stars_events_2.txt:7180-7252 (distar.3011-3013)",
+   "events/distant_stars_events_2.txt:7475 (distar.3014)",
+   "events/distant_stars_events_2.txt:7637 (distar.3016)",
+   "events/distant_stars_events_2.txt:7798 (distar.3017)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-disco-impossible-organism-cat.md"
+ }
+}

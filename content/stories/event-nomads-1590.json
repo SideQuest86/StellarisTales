@@ -1,0 +1,162 @@
+{
+ "id": "event-nomads-1590",
+ "family": {
+  "title": {
+   "zh": "过去的碎片",
+   "en": "Fragments of the Past"
+  },
+  "category": "stories",
+  "start": "nomads.1585",
+  "members": [
+   "nomads.1585",
+   "nomads.1590",
+   "nomads.1595",
+   "nomads.1600",
+   "nomads.1605",
+   "nomads.1610",
+   "nomads.1620",
+   "nomads.1625",
+   "nomads.1630",
+   "special_projects:NOMADIC_PRINCESS_SPECIAL_PROJECT",
+   "special_projects:NOMADIC_PRINCESS_SPECIAL_PROJECT_2",
+   "event_chains:nomadic_princess_chain"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "nomads.1585",
+   "to": "nomads.1595",
+   "conditional": true,
+   "label": {
+    "zh": "首次率塞拉伦涅进入线索星系（75%）",
+    "en": "First entry of the clue system with Seralune (75%)"
+   },
+   "evidence": "on_entering_system_fleet -> nomads.1590 random_list 75/25 when not yet forgetting (L9468-9500)"
+  },
+  {
+   "from": "nomads.1585",
+   "to": "nomads.1600",
+   "conditional": true,
+   "label": {
+    "zh": "首次进入线索星系（25%）",
+    "en": "First entry of the clue system (25%)"
+   },
+   "evidence": "nomads.1590 random_list 25 (L9468-9500)"
+  },
+  {
+   "from": "nomads.1595",
+   "to": "nomads.1600",
+   "conditional": true,
+   "label": {
+    "zh": "下次进入该星系",
+    "en": "Next entry of the system"
+   },
+   "evidence": "nomads.1590 else branch: after 1595 (princess_poi_still_forgets) the next entry gives 1600 (L9468-9500)"
+  },
+  {
+   "from": "nomads.1600",
+   "to": "nomads.1605",
+   "conditional": true,
+   "label": {
+    "zh": "下次进入（未曾遗忘）",
+    "en": "Next entry (had not forgotten)"
+   },
+   "evidence": "nomads.1605 trigger: first memory, neither still_forgets nor second memory (L9662-9678)",
+   "choice": "nomads.1600.a"
+  },
+  {
+   "from": "nomads.1600",
+   "to": "nomads.1610",
+   "conditional": true,
+   "label": {
+    "zh": "下次进入（曾遗忘）",
+    "en": "Next entry (after forgetting)"
+   },
+   "evidence": "nomads.1610 trigger: still_forgets + first memory, or second memory (L9734-9770)",
+   "choice": "nomads.1600.a"
+  },
+  {
+   "from": "nomads.1605",
+   "to": "nomads.1610",
+   "conditional": true,
+   "label": {
+    "zh": "再次进入",
+    "en": "Entering again"
+   },
+   "evidence": "nomads.1610 trigger second memory (L9734-9770)"
+  },
+  {
+   "from": "nomads.1585",
+   "to": "nomads.1630",
+   "conditional": true,
+   "label": {
+    "zh": "修复完成前塞拉伦涅死亡",
+    "en": "Seralune dies before the restoration"
+   },
+   "evidence": "on_leader_death -> nomads.1630 unless princess_can_die (00_on_actions.txt:2402; L9932-9955)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.1595",
+    "nomads.1600"
+   ],
+   "label": {
+    "zh": "第一次到访",
+    "en": "First visit"
+   },
+   "note": {
+    "zh": "首次到访随机75:25：仍想不起来，或看见家园。",
+    "en": "The first visit is random 75:25: she still cannot remember, or she sees home."
+   }
+  }
+ ],
+ "endings": {
+  "nomads.1625": {
+   "label": {
+    "zh": "重返过去",
+    "en": "Past reclaimed"
+   },
+   "note": {
+    "zh": "方舟舰修复完成，塞拉伦涅获得专属舰船。",
+    "en": "The arkship is restored and Seralune gets her ship."
+   },
+   "evidence": "L9869-9930"
+  },
+  "nomads.1630": {
+   "label": {
+    "zh": "残片丢失",
+    "en": "Fragments lost"
+   },
+   "note": {
+    "zh": "她在完成前去世，事件链结束。",
+    "en": "She dies before completion; the chain ends."
+   },
+   "evidence": "L9932-9955"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/nomads_events_1.txt:9311-9960",
+   "common/special_projects/06_projects_nomads.txt:2933-3000",
+   "common/event_chains/00_event_chains_nomads.txt:430",
+   "common/on_actions/00_on_actions.txt:1084-1085,2402"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-nomads-1590.md",
+  "merged": [
+   "event-nomads-1610",
+   "event-nomads-1605",
+   "event-nomads-1630"
+  ]
+ }
+}

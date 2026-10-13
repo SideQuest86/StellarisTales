@@ -1,0 +1,18 @@
+{
+ "id": "event-shroud-3045",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "触发条件、各选项后续窗口及其奖励/契合度变化均已核对。",
+   "en": "Trigger conditions, every follow-up window and its rewards/attunement changes were checked."
+  },
+  "sources": [
+   "events/shroud_events.txt:5536-5668",
+   "common/on_actions/00_on_actions.txt:5819-5854 (on_patron_delve_failed: 28 events × 100, utopia.3002 × 1)",
+   "common/scripted_variables/09_scripted_variables_shroud.txt:8,109-114 (attunement ±50/100/200; 30-year retrigger 10800 days)"
+  ],
+  "guide": "public/summaries/event-shroud-3045.md"
+ }
+}

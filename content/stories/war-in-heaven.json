@@ -1,0 +1,305 @@
+{
+ "id": "war-in-heaven",
+ "family": {
+  "title": {
+   "zh": "天堂之战",
+   "en": "War in Heaven"
+  },
+  "category": "crisis",
+  "start": "war_in_heaven.2",
+  "sources": [
+   "events/war_in_heaven_events.txt"
+  ],
+  "members": [
+   "observer.75",
+   "observer.76",
+   "observer.79",
+   "observer.80"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "war_in_heaven.2",
+   "to": "observer.75",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
+   "evidence": "events/war_in_heaven_events.txt:235 war_in_heaven.1 fires observer.75; events/observer_events.txt:1311 reuses war_in_heaven.2 text"
+  },
+  {
+   "from": "war_in_heaven.2",
+   "to": "bio.3400",
+   "conditional": true,
+   "label": {
+    "zh": "若苏醒的宿敌是“控制”蜂巢堕落帝国：1天后人类玩家收到",
+    "en": "If the awakened rival is the hive Fallen Empire of Control: human players receive this 1 day later"
+   },
+   "evidence": "events/war_in_heaven_events.txt:173-188 war_in_heaven.1 (fallen_empire_hive_control) sends bio.3400 days=1 to every human player"
+  },
+  {
+   "from": "war_in_heaven.2",
+   "to": "war_in_heaven.4",
+   "conditional": true,
+   "label": {
+    "zh": "宿敌苏醒720天后起（隐藏事件3，平均1年）：宣战，选择阵营",
+    "en": "From 720 days after the rival awakens (hidden event 3, MTTH 1 year): war is declared, choose a side"
+   },
+   "evidence": "events/war_in_heaven_events.txt:271-363 war_in_heaven.3 (awakened rival, fleet power > 60000, war_in_heaven_timer of 720 days expired, MTTH 1 year) declares the war and sends war_in_heaven.4 to default empires"
+  },
+  {
+   "from": "war_in_heaven.2",
+   "to": "war_in_heaven.7",
+   "conditional": true,
+   "label": {
+    "zh": "若存在银河帝国（且帝皇不是觉醒帝国）：帝国成员收到此版本",
+    "en": "If there is a Galactic Imperium (not led by an Awakened Empire): Imperium members get this version"
+   },
+   "evidence": "events/war_in_heaven_events.txt:326-359 else branch sends war_in_heaven.7 to Community members and war_in_heaven.4 to non-members; L1012-1088"
+  },
+  {
+   "from": "war_in_heaven.4",
+   "to": "observer.76",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
+   "evidence": "events/war_in_heaven_events.txt:361 war_in_heaven.3 fires observer.76; events/observer_events.txt:1343"
+  },
+  {
+   "from": "war_in_heaven.4",
+   "to": "war_in_heaven.13",
+   "conditional": true,
+   "label": {
+    "zh": "若无银河帝国：监管人、联邦领袖或最强中立国被邀请领导不结盟联盟（隐藏事件12，平均1个月）",
+    "en": "Without a Galactic Imperium: the Custodian, a federation leader or the strongest neutral is asked to lead the Non-Aligned League (hidden event 12, MTTH 1 month)"
+   },
+   "evidence": "events/war_in_heaven_events.txt:1245-1470 war_in_heaven.12 (first sleeper, war ongoing, has_galactic_emperor = no) sends war_in_heaven.13 to the Custodian, else a federation leader, else the strongest neutral"
+  },
+  {
+   "from": "war_in_heaven.13",
+   "choice": "war_in_heaven.13.a",
+   "to": "war_in_heaven.16",
+   "conditional": true,
+   "label": {
+    "zh": "作为联盟领袖：两大觉醒帝国转而向联盟宣战（平均3个月）",
+    "en": "As League leader: both Awakened Empires turn on the League (MTTH 3 months)"
+   },
+   "evidence": "events/war_in_heaven_events.txt:1869-1953 war_in_heaven.16 (non_aligned_league federation leader, MTTH 3 months) has both Awakened Empires declare war on the League"
+  },
+  {
+   "from": "war_in_heaven.4",
+   "to": "war_in_heaven.5",
+   "conditional": true,
+   "label": {
+    "zh": "战争以一方获胜告终",
+    "en": "The war ends with victory for one side"
+   },
+   "evidence": "common/war_goals/02_event_war_goals.txt:50-62 wg_war_in_heaven on_accept (winner is an Awakened Empire) sends war_in_heaven.5 to every playable country"
+  },
+  {
+   "from": "war_in_heaven.4",
+   "to": "war_in_heaven.6",
+   "conditional": true,
+   "label": {
+    "zh": "战争以维持现状告终",
+    "en": "The war ends in a status quo"
+   },
+   "evidence": "common/war_goals/02_event_war_goals.txt:98-104 on_status_quo sends war_in_heaven.6"
+  },
+  {
+   "from": "war_in_heaven.4",
+   "to": "war_in_heaven.11",
+   "conditional": true,
+   "label": {
+    "zh": "一个觉醒帝国被消灭：战争结束",
+    "en": "One Awakened Empire is destroyed: the war ends"
+   },
+   "evidence": "events/war_in_heaven_events.txt:1093-1207 war_in_heaven.10 (on_country_destroyed, 00_on_actions.txt:3612) ends the war and sends war_in_heaven.11 to human players"
+  },
+  {
+   "from": "war_in_heaven.4",
+   "to": "war_in_heaven.18",
+   "conditional": true,
+   "label": {
+    "zh": "两个觉醒帝国都已覆灭",
+    "en": "Both Awakened Empires are gone"
+   },
+   "evidence": "events/war_in_heaven_events.txt:1956-2032 war_in_heaven.17 (on_country_destroyed, 00_on_actions.txt:3611) sends war_in_heaven.18 if the war has not ended otherwise"
+  },
+  {
+   "from": "war_in_heaven.11",
+   "to": "observer.79",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
+   "evidence": "events/war_in_heaven_events.txt:1205; events/observer_events.txt:1451"
+  },
+  {
+   "from": "war_in_heaven.18",
+   "to": "observer.80",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
+   "evidence": "events/war_in_heaven_events.txt:2029; events/observer_events.txt:1487"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "war_in_heaven.4",
+    "war_in_heaven.7"
+   ],
+   "label": {
+    "zh": "宣战通知：两种局面",
+    "en": "The declaration: two situations"
+   },
+   "note": {
+    "zh": "一般情况下各帝国自行选边；若存在银河帝国，帝国成员由帝皇统一应对。",
+    "en": "Normally each empire picks a side; with a Galactic Imperium, its members follow the Emperor."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "war_in_heaven.5",
+    "war_in_heaven.6",
+    "war_in_heaven.11",
+    "war_in_heaven.18"
+   ],
+   "label": {
+    "zh": "天堂之战的结局",
+    "en": "How the War in Heaven ends"
+   },
+   "note": {
+    "zh": "战争目标达成（一方获胜）、维持现状、一方被消灭或双方都覆灭，择一。",
+    "en": "One of: a side wins the war goal, status quo, one Awakened Empire destroyed, or both gone."
+   }
+  }
+ ],
+ "endings": {
+  "war_in_heaven.5": {
+   "label": {
+    "zh": "结局：一方获胜",
+    "en": "Ending: one side wins"
+   },
+   "note": {
+    "zh": "胜方觉醒帝国的附庸归属随之确定。",
+    "en": "The victorious Awakened Empire keeps its side's subjects."
+   },
+   "evidence": "common/war_goals/02_event_war_goals.txt:50-62"
+  },
+  "war_in_heaven.6": {
+   "label": {
+    "zh": "结局：维持现状",
+    "en": "Ending: status quo"
+   },
+   "note": {
+    "zh": "两大觉醒帝国停战。",
+    "en": "The two Awakened Empires make peace."
+   },
+   "evidence": "common/war_goals/02_event_war_goals.txt:98-104"
+  },
+  "war_in_heaven.11": {
+   "label": {
+    "zh": "结局：觉醒帝国战败",
+    "en": "Ending: an Awakened Empire defeated"
+   },
+   "note": {
+    "zh": "一个觉醒帝国被消灭，战争结束。",
+    "en": "One Awakened Empire is destroyed and the war ends."
+   },
+   "evidence": "events/war_in_heaven_events.txt:1093-1207"
+  },
+  "war_in_heaven.18": {
+   "label": {
+    "zh": "结局：觉醒者的陨落",
+    "en": "Ending: the Fall of the Awakened"
+   },
+   "note": {
+    "zh": "两大觉醒帝国皆亡；不结盟联盟领袖获得“最后的希望”。",
+    "en": "Both Awakened Empires are gone; the Non-Aligned League leader gains 'Last Best Hope'."
+   },
+   "evidence": "events/war_in_heaven_events.txt:1956-2032"
+  }
+ },
+ "nodeLabels": {
+  "war_in_heaven.2": {
+   "zh": "宿敌苏醒",
+   "en": "The ancient rival awakens"
+  },
+  "war_in_heaven.4": {
+   "zh": "宣战：选择阵营",
+   "en": "War: choose a side"
+  },
+  "war_in_heaven.13": {
+   "zh": "不结盟联盟",
+   "en": "The Non-Aligned League"
+  },
+  "observer.75": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.76": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.79": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.80": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "fallen_empires_awakening.11": {
+   "zh": "仅测试事件可达",
+   "en": "Reachable only via a test event"
+  }
+ },
+ "notes": [
+  {
+   "doc": "war_in_heaven.2",
+   "kind": "review",
+   "zh": "前提是另一篇“沉睡者苏醒”：第一个堕落帝国苏醒（fallen_empire_awakening_events.txt:113）并把另一堕落帝国标为宿敌（L198/219）。宿敌在约10年计时内平均5年苏醒（war_in_heaven.1，隐藏）。",
+   "en": "It requires Sleepers Awake: a first Fallen Empire awakens (fallen_empire_awakening_events.txt:113) and marks another as its ancient rival (L198/219). The rival awakens with MTTH 5 years within a 10-year timer (hidden war_in_heaven.1)."
+  },
+  {
+   "doc": "war_in_heaven.4",
+   "kind": "review",
+   "zh": "选项取决于思潮与邻接关系：投靠先苏醒者、投靠宿敌（会成为其附庸）、保持中立，或已是附庸者随宗主参战。",
+   "en": "Options depend on ethics and borders: side with the first sleeper, side with the rival (becoming its subject), stay neutral, or follow your overlord if already a subject."
+  },
+  {
+   "doc": "fallen_empires_awakening.11",
+   "kind": "review",
+   "zh": "此篇在本故事中只能经测试事件 war_in_heaven.1000（is_test_event，触发条件 always = no）到达，实际游戏中不属于天堂之战，而属于蜂巢堕落帝国苏醒。",
+   "en": "Within this story it is reachable only through the test event war_in_heaven.1000 (is_test_event, trigger always = no); in play it belongs to the hive Fallen Empire awakening, not to the War in Heaven."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c5b-crisis (Opus 5.5)",
+  "scope": {
+   "zh": "完整核对 war_in_heaven_events.txt 全部事件、战争目标结局与观察者副本；前置的“沉睡者苏醒”属另一篇故事。",
+   "en": "Checked every event in war_in_heaven_events.txt, the war-goal endings and observer copies; the preceding Sleepers Awake is a separate story."
+  },
+  "sources": [
+   "events/war_in_heaven_events.txt",
+   "common/war_goals/02_event_war_goals.txt",
+   "events/observer_events.txt",
+   "events/fallen_empire_awakening_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "observer.77/78 (observer copies of war_in_heaven.5/6) form another reviewer's story (event-observer-77, fired by the war goal container) and are not linked here.",
+   "League membership exchanges (14/15/19/20/21/22) follow from accepting leadership; their AI-driven timing is not modelled.",
+   "fallen_empires_awakening.11 remains a secondary entry only because test event war_in_heaven.1000 (L11-72) calls fallen_empires_awakening.10; requested a compiler rule to ignore is_test_event records."
+  ],
+  "guide": "public/summaries/war-in-heaven.md"
+ }
+}

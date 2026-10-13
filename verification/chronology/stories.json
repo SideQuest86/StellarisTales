@@ -2,15 +2,15 @@
   "category": "stories",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 760,
-  "docs": 2329,
-  "nodes": 3612,
-  "refs": 1283,
+  "stories": 737,
+  "docs": 2289,
+  "nodes": 3568,
+  "refs": 1279,
   "crossLinks": 242,
   "review": {
-    "reviewed": 53,
+    "reviewed": 102,
     "partial": 2,
-    "unreviewed": 705
+    "unreviewed": 633
   },
   "failures": [],
   "items": [
@@ -60,12 +60,30 @@
       "review": "reviewed"
     },
     {
+      "id": "event-nomads-1590",
+      "title": "过去的碎片",
+      "kind": "family",
+      "docs": 11,
+      "refs": 4,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-utopia-2600",
       "title": "心胜于物",
       "kind": "family",
       "docs": 9,
       "refs": 0,
       "crossLinks": 2,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-nomads-9010",
+      "title": "秋菊号的线索",
+      "kind": "family",
+      "docs": 8,
+      "refs": 1,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -137,6 +155,15 @@
       "kind": "family",
       "docs": 3,
       "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-nomads-3050",
+      "title": "囚犯登舰",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -258,6 +285,24 @@
       "review": "reviewed"
     },
     {
+      "id": "event-nomads-3036",
+      "title": "搭载代表团",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-nomads-3060",
+      "title": "游客登船",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-shroud-4190",
       "title": "灵能光环逼近",
       "kind": "family",
@@ -330,15 +375,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-game-start-1",
-      "title": "亚光速探测器",
-      "kind": "event",
-      "docs": 25,
-      "refs": 4,
-      "crossLinks": 90,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-arkship-700",
       "title": "核心阴谋",
       "kind": "event",
@@ -355,6 +391,15 @@
       "refs": 9,
       "crossLinks": 2,
       "review": "reviewed"
+    },
+    {
+      "id": "event-game-start-1",
+      "title": "亚光速探测器",
+      "kind": "event",
+      "docs": 23,
+      "refs": 3,
+      "crossLinks": 90,
+      "review": "unreviewed"
     },
     {
       "id": "event-utopia-50",
@@ -452,15 +497,6 @@
       "kind": "event",
       "docs": 13,
       "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-150",
-      "title": "太空城邦：冠军之铸现场秀！",
-      "kind": "event",
-      "docs": 13,
-      "refs": 8,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -849,7 +885,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-2000",
@@ -944,15 +980,6 @@
     {
       "id": "event-marauder-85",
       "title": "[marauder_mercenary_country.GetSpeciesName]雇佣兵",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-1590",
-      "title": "缅怀的边缘",
       "kind": "event",
       "docs": 6,
       "refs": 0,
@@ -1095,40 +1122,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-nomads-1610",
-      "title": "回收的碎片",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-250",
-      "title": "冠铸秀：重燃铸火",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-nomads-8010",
-      "title": "接近目标",
+      "title": "夺取驿站",
       "kind": "event",
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-9010",
-      "title": "合一",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-4000",
@@ -1509,22 +1509,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-nomads-275",
-      "title": "冠军之铸落幕",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-nomads-8000",
       "title": "火控改写",
       "kind": "event",
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-1000",
@@ -1578,7 +1569,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3015",
@@ -1587,7 +1578,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3020",
@@ -1596,7 +1587,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3030",
@@ -1605,7 +1596,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3040",
@@ -1614,7 +1605,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3060",
@@ -1623,7 +1614,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-strange-worlds-100",
@@ -1851,22 +1842,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-nomads-400",
-      "title": "太空城邦：冠军之铸现场秀！",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-nomads-4700",
       "title": "定居完成",
       "kind": "event",
       "docs": 3,
       "refs": 0,
       "crossLinks": 4,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-5015",
@@ -1938,7 +1920,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3010",
@@ -1947,7 +1929,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3025",
@@ -1956,7 +1938,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3035",
@@ -1965,7 +1947,7 @@
       "docs": 3,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3045",
@@ -1974,7 +1956,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3050",
@@ -1983,7 +1965,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3055",
@@ -1992,7 +1974,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3065",
@@ -2001,7 +1983,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3070",
@@ -2010,7 +1992,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3100",
@@ -2019,7 +2001,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3105",
@@ -2028,7 +2010,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3110",
@@ -2037,7 +2019,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3115",
@@ -2046,7 +2028,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-strange-worlds-50",
@@ -2625,31 +2607,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-nomads-155",
-      "title": "[from.GetName]",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-3051",
-      "title": "囚犯离舰",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-nomads-4715",
       "title": "值得观赏的景色",
       "kind": "event",
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-observer-77",
@@ -2721,7 +2685,7 @@
       "docs": 2,
       "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-505",
@@ -3891,7 +3855,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1027",
@@ -3900,7 +3864,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1070",
@@ -5514,130 +5478,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-nomads-1030",
-      "title": "新的道路",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-1510",
-      "title": "履行誓言",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-1524",
-      "title": "编目未开智体",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-1556",
-      "title": "值得收藏的战利品",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-1605",
-      "title": "童年的回声",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-1630",
-      "title": "残片丢失",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-3002",
-      "title": "合约学习",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-3036",
-      "title": "搭载代表团",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-3045",
-      "title": "代表团已到达",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-3050",
-      "title": "囚犯登舰",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-3060",
-      "title": "游客登船",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-3065",
-      "title": "观光旅行",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-nomads-3095",
       "title": "游牧合约",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-4000",
-      "title": "编目未开智体",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-4105",
@@ -5646,16 +5493,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-4300",
-      "title": "编目未开智体",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-4720",
@@ -5676,40 +5514,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-nomads-505",
-      "title": "熟悉的猎兵",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-550",
-      "title": "聆听请求",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-565",
-      "title": "讨价还价",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-nomads-6005",
       "title": "发现机遇",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-6015",
@@ -5718,7 +5529,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-6055",
@@ -5727,7 +5538,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-6060",
@@ -5736,7 +5547,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-6065",
@@ -5745,7 +5556,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-6070",
@@ -5754,7 +5565,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-6075",
@@ -5763,25 +5574,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-635",
-      "title": "可汗之死",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-9005",
-      "title": "发现信号",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-observer-100",
@@ -6087,7 +5880,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3210",
@@ -6096,7 +5889,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3220",
@@ -6105,7 +5898,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3230",
@@ -6114,7 +5907,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3240",
@@ -6123,7 +5916,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3250",
@@ -6132,7 +5925,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3260",
@@ -6141,7 +5934,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3270",
@@ -6150,7 +5943,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3520",

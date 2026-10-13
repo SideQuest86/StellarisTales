@@ -1,0 +1,146 @@
+{
+ "id": "anomaly-debris-gasgiant-category-temp",
+ "family": {
+  "title": {
+   "zh": "维克塔·泽沃尼亚号",
+   "en": "The Vechtar Zavonia"
+  },
+  "category": "exploration",
+  "start": "anomalies:debris_gasgiant_category_temp",
+  "members": [
+   "anomalies:debris_gasgiant_category_temp",
+   "distar.1002",
+   "distar.1007",
+   "distar.1014",
+   "distar.1015"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.1001",
+   "choice": "distar.1001.a",
+   "to": "distar.1002",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入新发现的星系",
+    "en": "A fleet enters the revealed system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1007 on_entering_system_fleet → distar.1002 (events/distant_stars_events_2.txt:813-840): owner has generation_ship_chain (begun by distar.1001.a, events/distant_stars_events_2.txt:785) and the system holds event_target:utopian_planet."
+  },
+  {
+   "from": "distar.1011",
+   "to": "distar.1016",
+   "conditional": true,
+   "label": {
+    "zh": "沃尔舰队把星球轰炸到零人口",
+    "en": "The Vol fleet bombs the planet to zero pops"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:2199 on_colony_zero_pops → hidden distar.1015 (events/distant_stars_events_2.txt:1575-1645) on the utopian planet → distar.1016 days=1 for the system owner."
+  },
+  {
+   "from": "distar.1003",
+   "to": "distar.1014",
+   "conditional": true,
+   "label": {
+    "zh": "发现者殖民 Paridayda",
+    "en": "The discoverer colonises Paridayda"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1303 on_colonized → distar.1014 (events/distant_stars_events_2.txt:1692) requires the utopian planet and owner = country_that_discovered_mardak_vol."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.1008",
+    "distar.1009"
+   ],
+   "label": {
+    "zh": "答应或拒绝沃尔",
+    "en": "Agree with or refuse the Vol"
+   },
+   "note": {
+    "zh": "1006.a → 1008；1006.b/c → 1009，并在60–80天后 1011。",
+    "en": "1006.a → 1008; 1006.b/c → 1009 and 1011 60–80 days later."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.1005": {
+   "zh": "沃尔来电",
+   "en": "The Vol hail us"
+  },
+  "distar.1006": {
+   "zh": "马达克是寄生真菌？",
+   "en": "The Mardak are a parasite?"
+  },
+  "distar.1008": {
+   "zh": "星上马达克被灭绝",
+   "en": "The Mardak exterminated"
+  },
+  "distar.1013": {
+   "zh": "通讯中断",
+   "en": "Line goes dead"
+  }
+ },
+ "endings": {
+  "distar.1016": {
+   "label": {
+    "zh": "Paridayda 被焚毁",
+    "en": "Paridayda burned"
+   },
+   "note": {
+    "zh": "沃尔核平并毒化星球。",
+    "en": "The Vol nuke and poison the planet."
+   },
+   "evidence": "events/distant_stars_events_2.txt:1649"
+  },
+  "distar.1014": {
+   "label": {
+    "zh": "定居乐园",
+    "en": "Settling paradise"
+   },
+   "note": {
+    "zh": "10年 in_paradise 修正。",
+    "en": "in_paradise for 10 years."
+   },
+   "evidence": "events/distant_stars_events_2.txt:1692"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1056-1085",
+   "events/distant_stars_events_2.txt:685 (distar.1000)",
+   "common/special_projects/00_projects_distant_stars.txt:963 (GENERATION_SHIP)",
+   "events/distant_stars_events_2.txt:734 (distar.1001)",
+   "common/solar_system_initializers/distant_stars_initializers.txt:73 (vechtar_zavonia_system)",
+   "common/event_chains/00_event_chains_distant_stars.txt:36-45",
+   "common/on_actions/00_on_actions.txt:1007",
+   "events/distant_stars_events_2.txt:814 (distar.1002)",
+   "common/special_projects/00_projects_distant_stars.txt:988 (HIDDEN_PLANET)",
+   "events/distant_stars_events_2.txt:875 (distar.1003)",
+   "events/distant_stars_events_2.txt:1024 (distar.1004)",
+   "events/distant_stars_events_2.txt:1045-1100 (distar.1007, 1010)",
+   "events/distant_stars_events_2.txt:1105-1369 (distar.1005-1013)",
+   "common/on_actions/00_on_actions.txt:2199",
+   "events/distant_stars_events_2.txt:1575-1661 (distar.1015, 1016)",
+   "common/on_actions/00_on_actions.txt:1303",
+   "events/distant_stars_events_2.txt:1692 (distar.1014)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-debris-gasgiant-category-temp.md",
+  "mergedStories": [
+   "event-distar-1002",
+   "event-distar-1007",
+   "event-distar-1014",
+   "event-distar-1015"
+  ]
+ }
+}

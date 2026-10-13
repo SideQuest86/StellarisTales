@@ -1,0 +1,51 @@
+{
+ "id": "event-fircon-8530",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.8531",
+    "fircon.8535",
+    "fircon.8540",
+    "fircon.8545"
+   ],
+   "label": {
+    "zh": "按我们的政体（民主/帝制/独裁/寡头）",
+    "en": "By our authority (democratic / imperial / dictatorial / oligarchic)"
+   }
+  }
+ ],
+ "nodeLabels": {
+  "fircon.8531": {
+   "zh": "政府的特色（民主）",
+   "en": "Flavors (democratic)"
+  },
+  "fircon.8535": {
+   "zh": "政府的特色（帝制）",
+   "en": "Flavors (imperial)"
+  },
+  "fircon.8540": {
+   "zh": "政府的特色（独裁）",
+   "en": "Flavors (dictatorial)"
+  },
+  "fircon.8545": {
+   "zh": "政府的特色（寡头）",
+   "en": "Flavors (oligarchic)"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c7a-society)",
+  "scope": {
+   "zh": "隐藏分派8530、四个按政体区分的“政府的特色”与三种后续。",
+   "en": "Hidden dispatcher 8530, the four authority-specific \"Flavors of Government\" events and three follow-ups."
+  },
+  "sources": [
+   "events/first_contact_dlc_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "events/on_action_events_2.txt"
+  ],
+  "guide": "public/summaries/event-fircon-8530.md"
+ }
+}

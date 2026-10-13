@@ -2,14 +2,15 @@
   "category": "exploration",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 378,
-  "docs": 1480,
-  "nodes": 1635,
+  "stories": 371,
+  "docs": 1472,
+  "nodes": 1627,
   "refs": 155,
-  "crossLinks": 273,
+  "crossLinks": 271,
   "review": {
-    "reviewed": 63,
-    "unreviewed": 315
+    "reviewed": 103,
+    "unreviewed": 267,
+    "partial": 1
   },
   "failures": [],
   "items": [
@@ -32,6 +33,15 @@
       "review": "reviewed"
     },
     {
+      "id": "anomaly-debris-gasgiant-category-temp",
+      "title": "维克塔·泽沃尼亚号",
+      "kind": "family",
+      "docs": 17,
+      "refs": 2,
+      "crossLinks": 2,
+      "review": "reviewed"
+    },
+    {
       "id": "anomaly-distar-robo-cat",
       "title": "原始机器人",
       "kind": "family",
@@ -46,6 +56,24 @@
       "kind": "family",
       "docs": 14,
       "refs": 12,
+      "crossLinks": 3,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-time-loop-world",
+      "title": "屏障星球",
+      "kind": "family",
+      "docs": 10,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-ast-debris-field-1-cat-2",
+      "title": "残骸场",
+      "kind": "family",
+      "docs": 9,
+      "refs": 2,
       "crossLinks": 3,
       "review": "reviewed"
     },
@@ -236,7 +264,7 @@
       "docs": 10,
       "refs": 5,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-living-cat",
@@ -284,15 +312,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-distar-1002",
-      "title": "失乐园",
-      "kind": "event",
-      "docs": 10,
-      "refs": 2,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "project-whisperers-in-the-void-fc-project",
       "title": "与[Root.Patron:whisperers_in_the_void.GetPreCommunicationName]通灵",
       "kind": "project",
@@ -326,7 +345,7 @@
       "docs": 9,
       "refs": 0,
       "crossLinks": 5,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-des-buried-cat",
@@ -344,15 +363,6 @@
       "docs": 9,
       "refs": 2,
       "crossLinks": 16,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-time-loop-world",
-      "title": "屏障星球",
-      "kind": "anomaly",
-      "docs": 9,
-      "refs": 0,
-      "crossLinks": 0,
       "review": "unreviewed"
     },
     {
@@ -407,7 +417,7 @@
       "docs": 8,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-disco-speed-demon-cat",
@@ -416,7 +426,7 @@
       "docs": 8,
       "refs": 5,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-gen-desert-cat",
@@ -479,7 +489,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-gaia-record-cat",
@@ -545,15 +555,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "anomaly-ast-debris-field-1-cat-2",
-      "title": "残骸场",
-      "kind": "anomaly",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 3,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-cont-signs-cat",
       "title": "行星伤痕",
       "kind": "anomaly",
@@ -569,7 +570,7 @@
       "docs": 6,
       "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-frbr-grimacing-cat",
@@ -596,7 +597,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-life-frozen-category",
@@ -614,16 +615,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-1007",
-      "title": "信息传输",
-      "kind": "event",
-      "docs": 6,
-      "refs": 2,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-ancrel-rubricator-cat",
@@ -689,22 +681,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "anomaly-debris-gasgiant-category-temp",
-      "title": "远古船壳",
-      "kind": "anomaly",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-disco-alien-machine-cat",
       "title": "外星机器",
       "kind": "anomaly",
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-brainslug-cat",
@@ -866,7 +849,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-trop-woods-cat",
@@ -920,7 +903,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-aianom-researchdepo-cat",
@@ -1109,7 +1092,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-planet-thrusters-cat",
@@ -1145,7 +1128,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-storms-displaced-tiyanki",
@@ -1199,7 +1182,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-anomaly-142",
@@ -1280,7 +1263,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-ast-shrine-1-cat",
@@ -1343,7 +1326,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-emissions-asteroid-category",
@@ -1361,7 +1344,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-hatch-asteroid-category",
@@ -1496,7 +1479,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-anomaly-3097",
@@ -1544,15 +1527,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-distar-1085",
-      "title": "冰层中的外星生命体",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-distar-13030",
       "title": "观察到L-星龙",
       "kind": "event",
@@ -1586,7 +1560,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-ancrel-arc-cat",
@@ -1604,7 +1578,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-ast-illicit-dark-cat",
@@ -1622,7 +1596,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-atm-anomaly-cat",
@@ -1676,7 +1650,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-carbon-allotropes-cat",
@@ -1694,7 +1668,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-cosmic-dawn-sleepers-category",
@@ -1739,7 +1713,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-collapse-cat",
@@ -2045,7 +2019,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-gas-cloudy-cat",
@@ -2089,8 +2063,8 @@
       "kind": "anomaly",
       "docs": 2,
       "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "anomaly-great-blue-spots-cat",
@@ -2216,7 +2190,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-mysterious-ringing-category",
@@ -2288,7 +2262,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-rainbow-rivers-cat",
@@ -2333,7 +2307,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-sol-wasteland-category",
@@ -2360,7 +2334,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "partial"
     },
     {
       "id": "anomaly-spires-of-light-category",
@@ -2378,7 +2352,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-storms-anom-ants",
@@ -2495,7 +2469,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-terrestial-telescope-category",
@@ -2522,7 +2496,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-tox-planet-cat",
@@ -2531,7 +2505,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-tox-purple-rain-cat",
@@ -2558,7 +2532,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-trop-conditions-cat",
@@ -2567,7 +2541,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-trop-pets-cat",
@@ -2585,7 +2559,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-vapor-plumes-cat",
@@ -2617,15 +2591,6 @@
     {
       "id": "event-anomaly-4171",
       "title": "失败",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-1082",
-      "title": "阿兹詹虫逃跑了！",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -3062,7 +3027,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-anomaly-106",
@@ -3227,24 +3192,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-distar-1014",
-      "title": "身处乐园",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-1015",
-      "title": "失乐园",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-distar-10955",
       "title": "L-星团的召唤",
       "kind": "event",
@@ -3296,15 +3243,6 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-2036",
-      "title": "[time_loop_world.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
       "review": "unreviewed"
     },
     {

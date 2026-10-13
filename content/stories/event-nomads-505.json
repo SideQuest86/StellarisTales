@@ -1,0 +1,78 @@
+{
+ "id": "event-nomads-505",
+ "family": {
+  "title": {
+   "zh": "熟悉的猎兵",
+   "en": "Familiar Hunters"
+  },
+  "category": "origins",
+  "start": "nomads.500",
+  "members": [
+   "nomads.500",
+   "nomads.505",
+   "nomads.506",
+   "nomads.550",
+   "nomads.555",
+   "nomads.565",
+   "nomads.570"
+  ]
+ },
+ "category": "origins",
+ "bridges": [
+  {
+   "from": "nomads.506",
+   "to": "nomads.570",
+   "conditional": true,
+   "label": {
+    "zh": "猎兵在星系中截住我方（已约定谈判）",
+    "en": "The hunters catch us in a system (negotiation agreed)"
+   },
+   "evidence": "fleet_event nomads.565 when a hunter fleet shares a system with our hunted fleet and negotiate_on_encounter is set (L4828-4850) -> 570"
+  },
+  {
+   "from": "nomads.506",
+   "to": "nomads.555",
+   "conditional": true,
+   "label": {
+    "zh": "击溃猎兵舰队",
+    "en": "The hunter fleet is defeated"
+   },
+   "evidence": "ship_event nomads.550 when the marauder hunter fleet has no working ships (L4481-4500) -> 555"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.570",
+    "nomads.555"
+   ],
+   "label": {
+    "zh": "谈判 / 击败",
+    "en": "Bargain / defeat"
+   },
+   "note": {
+    "zh": "同一批猎兵要么在交战前谈判，要么被击败后求饶。",
+    "en": "A hunter band either bargains before the fight or pleads after being beaten."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/nomads_events_1.txt:3701-5100"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-nomads-505.md",
+  "merged": [
+   "event-nomads-550",
+   "event-nomads-565"
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "id": "anomaly-geocentric-experiment-cat",
+ "suppress": [
+  {
+   "from": "anomaly.8000",
+   "to": "crisis.2037",
+   "option": "anomaly.8000.b",
+   "evidence": "events/anomaly_events_4.txt:4984-5014 8000.b calls destroy_star_system; common/scripted_effects/00_scripted_effects.txt destroy_star_system/destroy_machine_world only fire these for Contingency machine worlds (machine_worlds_destroyed variable / crisis_country), not for this system"
+  },
+  {
+   "from": "anomaly.8000",
+   "to": "observer.50",
+   "option": "anomaly.8000.b",
+   "evidence": "events/anomaly_events_4.txt:4984-5014 8000.b calls destroy_star_system; common/scripted_effects/00_scripted_effects.txt destroy_star_system/destroy_machine_world only fire these for Contingency machine worlds (machine_worlds_destroyed variable / crisis_country), not for this system"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部2个文档。",
+   "en": "All 2 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/solar_system_initializers/sol_initializers.txt",
+   "events/anomaly_events_4.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-geocentric-experiment-cat.md"
+ }
+}

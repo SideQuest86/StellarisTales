@@ -80,6 +80,20 @@ is the real line in the installed file (these crisis files use no inline scripts
 - Cross-story: L5 declare_crisis_effect → crisis.4105 (galactic-nemesis); 191.c requires learned_about_redacted from
   Prethoryn crisis.30.h/j.
 
+### defenders-of-the-galaxy — reviewed (2026-10-12)
+- Levels 00_crisis_levels.txt:225-372 bridged (project 1 / council / Custodian / active crisis). Projects 4/5
+  (06_projects_nomads.txt:378-709) summon a not-yet-happened endgame crisis: bridged to crisis.11, crisis.1007,
+  crisis.2010, crisis.8035 as cross-story links. **Corrected**: the draft expanded the summoning through hidden routers
+  into ~24 observer/Custodian refs; removed via the crisis-starter hubs + suppress of Cetana 8020/8039.
+- Paladin Initiative (resolution, L4 perk + Custodian) 200 → 205 → 210 → 216; 225/230/235 resolutions.
+- Victory ambition.325 via custodian.10/custodian.14 (+5 d) with 2+ crises defeated.
+
+### war-in-heaven — reviewed (2026-10-12)
+- Fragment defines `family` (start war_in_heaven.2, + observer.75/76/79/80). Rival awakens (hidden .1, MTTH 5 y) →
+  2 → (hidden .3, after 720 d, MTTH 1 y) 4 | 7 → League 13 → 19/22/15/20/21, 16 → endings 5 | 6 | 11 | 18
+  (war goal on_accept / on_status_quo, on_country_destroyed). All were secondary entries before.
+- Remaining secondary entry fallen_empires_awakening.11: reachable only via test event war_in_heaven.1000.
+
 ### chain-behemoth-crisis-chain — merged into behemoth-fury
 - The event-chain overview is begun by crisis_behemoth_level_1 on_unlock (00_crisis_levels.txt:548); now a member of
   behemoth-fury, attached under biocrisis.50.

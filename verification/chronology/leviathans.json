@@ -2,14 +2,14 @@
   "category": "leviathans",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 57,
-  "docs": 468,
-  "nodes": 717,
-  "refs": 249,
-  "crossLinks": 78,
+  "stories": 49,
+  "docs": 497,
+  "nodes": 757,
+  "refs": 260,
+  "crossLinks": 86,
   "review": {
-    "reviewed": 17,
-    "unreviewed": 40
+    "reviewed": 22,
+    "unreviewed": 27
   },
   "failures": [],
   "items": [
@@ -50,11 +50,38 @@
       "review": "reviewed"
     },
     {
+      "id": "event-nomads-150",
+      "title": "太空城邦：冠军之铸现场秀！",
+      "kind": "family",
+      "docs": 29,
+      "refs": 7,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
       "id": "mercenary-enclave",
       "title": "佣兵城邦",
       "kind": "family",
       "docs": 27,
       "refs": 39,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "trader-enclaves",
+      "title": "商人城邦",
+      "kind": "family",
+      "docs": 26,
+      "refs": 39,
+      "crossLinks": 4,
+      "review": "reviewed"
+    },
+    {
+      "id": "artisan-troupe",
+      "title": "太空城邦：艺术家联盟",
+      "kind": "family",
+      "docs": 25,
+      "refs": 24,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -122,24 +149,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-leviathans-100",
-      "title": "雪拉企业",
-      "kind": "event",
-      "docs": 18,
-      "refs": 36,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-leviathans-285",
-      "title": "太空城邦：艺术家联盟",
-      "kind": "event",
-      "docs": 18,
-      "refs": 23,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-enclave-2",
       "title": "佣兵城邦基金会",
       "kind": "event",
@@ -155,7 +164,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-leviathans-1016",
@@ -185,15 +194,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-leviathans-351",
-      "title": "太空城邦：艺术家联盟",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-enclave-370",
       "title": "打捞者城邦被毁",
       "kind": "event",
@@ -210,15 +210,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-leviathans-155",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 3,
-      "review": "unreviewed"
     },
     {
       "id": "event-leviathans-3002",
@@ -284,15 +275,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-leviathans-290",
-      "title": "[from.GetName]",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-leviathans-4",
       "title": "星神兽被击败",
       "kind": "event",
@@ -353,51 +335,6 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-leviathans-101",
-      "title": "与[From.GetName]的第一次接触",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-leviathans-157",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-leviathans-160",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-leviathans-163",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-leviathans-170",
-      "title": "能量贸易已取消",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
       "review": "unreviewed"
     },
     {
@@ -473,15 +410,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-leviathans-354",
-      "title": "太空城邦：艺术家联盟",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-leviathans-610",
       "title": "遭遇以太巨龙",
       "kind": "event",
@@ -514,8 +442,8 @@
       "kind": "event",
       "docs": 1,
       "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "crossLinks": 6,
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-5375",

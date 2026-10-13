@@ -1,0 +1,65 @@
+{
+ "id": "event-nomads-9010",
+ "family": {
+  "title": {
+   "zh": "秋菊号的线索",
+   "en": "Clues of the Chrysanthemum"
+  },
+  "category": "stories",
+  "start": "nomads.9000",
+  "members": [
+   "nomads.9000",
+   "nomads.9005",
+   "nomads.9010",
+   "nomads.9015",
+   "nomads.9020",
+   "nomads.9025",
+   "archaeological_site_types:site_chrysanthemum_colony"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "nomads.9000",
+   "to": "nomads.9005",
+   "conditional": true,
+   "label": {
+    "zh": "风信子号舰队抵达中继星系",
+    "en": "The Hyacinth fleet reaches the relay system"
+   },
+   "evidence": "on_entering_system_fleet -> nomads.9005 requires the clues_chrysanthemum chain, hyacinth_fleet and chrysanthemum_relay_system (L17987-18010)",
+   "choice": "nomads.9000.a"
+  },
+  {
+   "from": "nomads.9005",
+   "to": "nomads.9010",
+   "conditional": true,
+   "label": {
+    "zh": "前往天津四（墓穴星系）",
+    "en": "On to Deneb (the tomb system)"
+   },
+   "evidence": "on_entering_system_fleet -> nomads.9010 requires chrysanthemum_tomb_system (L18046-18083)"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/nomads_events_1.txt:17902-18195",
+   "events/game_start.txt:689",
+   "common/archaeological_site_types/15_nomads_arc_sites.txt:4",
+   "common/on_actions/00_on_actions.txt:1093-1094"
+  ],
+  "uncertain": [
+   "Which starting empire carries the human_3 flag was not verified here."
+  ],
+  "guide": "public/summaries/event-nomads-9010.md",
+  "merged": [
+   "event-nomads-9005"
+  ]
+ }
+}

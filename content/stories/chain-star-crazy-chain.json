@@ -1,0 +1,19 @@
+{
+ "id": "chain-star-crazy-chain",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/event_chains/00_event_chains_distant_stars.txt:47-55"
+  ],
+  "uncertain": [
+   "Whether the archive should show unused definitions at all is a product decision for the coordinator."
+  ],
+  "guide": "public/summaries/chain-star-crazy-chain.md"
+ }
+}

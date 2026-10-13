@@ -1,0 +1,116 @@
+{
+ "id": "event-fircon-6000",
+ "family": {
+  "title": {
+   "zh": "那里有生命存在吗？",
+   "en": "Is There Life In There?"
+  },
+  "category": "society",
+  "start": "fircon.6000",
+  "members": [
+   "fircon.6000",
+   "fircon.6005",
+   "fircon.6015",
+   "fircon.6020",
+   "fircon.6025",
+   "special_projects:NON_BELIEVERS_PROJECT",
+   "fircon.6030",
+   "fircon.6032",
+   "fircon.6033",
+   "fircon.6034",
+   "fircon.6035",
+   "fircon.6036",
+   "fircon.6037",
+   "fircon.6038"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "fircon.6030",
+   "to": "fircon.6038",
+   "conditional": true,
+   "label": {
+    "zh": "若守军击退地底入侵者",
+    "en": "If the defenders repel the subterranean invaders"
+   },
+   "evidence": "6030 sets pre_ftl_subterranean_invasion_started and creates the subterranean nation and 3 armies (events/first_contact_dlc_events.txt:7855); on_colony_defenders_win -> hidden fircon.6034 checks that flag and sends 6038 to the system owner (7968-7994)"
+  },
+  {
+   "from": "fircon.6030",
+   "to": "fircon.6037",
+   "conditional": true,
+   "label": {
+    "zh": "若入侵者攻陷星球",
+    "en": "If the invaders take the planet"
+   },
+   "evidence": "on_colony_defenders_lose -> hidden fircon.6036 checks the same flag and sends 6037 to the system owner (events/first_contact_dlc_events.txt:8056-8083); 6037 destroys both countries and generates new subterranean pre-FTLs (8099)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.6030",
+    "fircon.6032",
+    "fircon.6033"
+   ],
+   "label": {
+    "zh": "防御部队之后的随机结果",
+    "en": "Random result after the defense force"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.6038",
+    "fircon.6037"
+   ],
+   "label": {
+    "zh": "地底入侵战争的胜负",
+    "en": "Outcome of the subterranean war"
+   }
+  }
+ ],
+ "endings": {
+  "fircon.6037": {
+   "label": {
+    "zh": "原文明覆灭",
+    "en": "The old civilization falls"
+   },
+   "note": {
+    "zh": "新的地底前超光速文明取而代之。",
+    "en": "A new subterranean pre-FTL civilization replaces it."
+   }
+  },
+  "fircon.6035": {
+   "label": {
+    "zh": "他们终于信任我们",
+    "en": "They finally trust us"
+   },
+   "note": {
+    "zh": "移除他们的不信任修正。",
+    "en": "Removes their distrust modifier."
+   }
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c7a-society)",
+  "scope": {
+   "zh": "“空心星球”怀疑论者故事全程：三种说服方式、防御部队、三种随机结果、地底入侵战争的两种结局（含原独立卡片6034/6036）。",
+   "en": "The whole hollow-world skeptics story: three persuasion attempts, the defense force, three random results and both outcomes of the subterranean invasion war (including the former separate 6034/6036 cards)."
+  },
+  "sources": [
+   "events/first_contact_dlc_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "events/on_action_events_2.txt",
+   "common/special_projects/00_projects_first_contact_dlc.txt"
+  ],
+  "merged": [
+   "event-fircon-6034",
+   "event-fircon-6036"
+  ],
+  "guide": "public/summaries/event-fircon-6000.md"
+ }
+}

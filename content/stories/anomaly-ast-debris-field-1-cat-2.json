@@ -1,0 +1,114 @@
+{
+ "id": "anomaly-ast-debris-field-1-cat-2",
+ "family": {
+  "title": {
+   "zh": "残骸场",
+   "en": "Debris Field"
+  },
+  "category": "exploration",
+  "start": "anomalies:ast_debris_field_1_cat_2",
+  "members": [
+   "anomalies:ast_debris_field_1_cat_2",
+   "distar.1085",
+   "distar.1082"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.1080",
+   "choice": "distar.1080.d",
+   "to": "distar.1085",
+   "conditional": true,
+   "label": {
+    "zh": "研究出克隆技术后",
+    "en": "After researching Cloning"
+   },
+   "evidence": "distar.1080.d sets stored_azizian_dna (events/distant_stars_events_2.txt:2915); common/on_actions/00_on_actions.txt:2697 on_tech_increased → distar.1085 (events/distant_stars_events_2.txt:3208) requires that flag and last_increased_tech = tech_cloning."
+  },
+  {
+   "from": "distar.1080",
+   "choice": "distar.1080.d.evopred",
+   "to": "distar.1085",
+   "conditional": true,
+   "label": {
+    "zh": "研究出克隆技术后",
+    "en": "After researching Cloning"
+   },
+   "evidence": "distar.1080.d.evopred also sets stored_azizian_dna (events/distant_stars_events_2.txt:2930)."
+  },
+  {
+   "from": "distar.1081",
+   "choice": "distar.1081.a",
+   "to": "distar.1084",
+   "conditional": true,
+   "label": {
+    "zh": "每月20%几率：劳工变得完全智慧",
+    "en": "Monthly 20% chance: the laborers become sapient"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:101 on_monthly_pulse → hidden distar.1082 (events/distant_stars_events_2.txt:3050-3131) random_list 20/80 on a planet with azizian_pops_planet (set by 1081.a) → distar.1084."
+  },
+  {
+   "from": "distar.1081",
+   "choice": "distar.1081.b",
+   "to": "distar.1083",
+   "conditional": true,
+   "label": {
+    "zh": "每月20%几率：动物园里的阿兹詹虫暴走",
+    "en": "Monthly 20% chance: the zoo Azizians break out"
+   },
+   "evidence": "Same distar.1082: planet with azizian_pet_planet and the pets deposit (set by 1081.b) → distar.1083."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.1080",
+    "distar.1050",
+    "distar.2000"
+   ],
+   "label": {
+    "zh": "三选一的异常结果",
+    "en": "One of three anomaly results"
+   },
+   "note": {
+    "zh": "各基础权重1：1080 有克隆科技×3、格式塔或 mol8 头像×0；1050 机械/合成/机械特质物种×0；2000 星球有研究或采矿站矿藏×0（95_anomaly_categories_distant_stars.txt:1129-1176）。",
+    "en": "Base 1 each: 1080 ×3 with Cloning, ×0 for gestalts or portrait mol8; 1050 ×0 for machine/synthetic/mechanical-trait empires; 2000 ×0 if the body has research or mining deposits (95_anomaly_categories_distant_stars.txt:1129-1176)."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.1085": {
+   "zh": "复活储存的DNA",
+   "en": "Reviving the stored DNA"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1115-1177",
+   "events/distant_stars_events_2.txt:2851 (distar.1080)",
+   "common/special_projects/00_projects_distant_stars.txt:1177 (ICE_ALIEN)",
+   "events/distant_stars_events_2.txt:2937 (distar.1081)",
+   "common/on_actions/00_on_actions.txt:101",
+   "events/distant_stars_events_2.txt:3050-3131 (distar.1082)",
+   "events/distant_stars_events_2.txt:3134/3163 (distar.1083/1084)",
+   "common/on_actions/00_on_actions.txt:2697",
+   "events/distant_stars_events_2.txt:3208 (distar.1085)",
+   "events/distant_stars_events_2.txt:2176 (distar.1050)",
+   "events/distant_stars_events_2.txt:3326 (distar.2000)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-ast-debris-field-1-cat-2.md",
+  "mergedStories": [
+   "event-distar-1085",
+   "event-distar-1082"
+  ]
+ }
+}

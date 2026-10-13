@@ -1,0 +1,37 @@
+{
+ "id": "anomaly-disco-alien-machine-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.3041",
+    "distar.3042"
+   ],
+   "label": {
+    "zh": "拉杆的结果",
+    "en": "Result of the lever"
+   },
+   "note": {
+    "zh": "2–8跳内有已勘察且无天然虫洞的星系 → 3042（开虫洞），否则 3041。",
+    "en": "A surveyed system without a natural wormhole 2–8 jumps away → 3042 (wormhole), else 3041."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1645-1662",
+   "events/distant_stars_events_2.txt:8256 (distar.3040)",
+   "events/distant_stars_events_2.txt:8344/8386 (distar.3041/3042)",
+   "events/distant_stars_events_2.txt:8461 (distar.3043)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-disco-alien-machine-cat.md"
+ }
+}

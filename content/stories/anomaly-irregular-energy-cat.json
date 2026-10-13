@@ -1,0 +1,38 @@
+{
+ "id": "anomaly-irregular-energy-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.1072",
+    "distar.1073"
+   ],
+   "label": {
+    "zh": "故障还是发疯",
+    "en": "Malfunction or madness"
+   },
+   "note": {
+    "zh": "原科学官主持时50/50；换人主持只会是1072（00_projects_distant_stars.txt:1141-1167）。",
+    "en": "50/50 if the original officer leads; otherwise always 1072 (00_projects_distant_stars.txt:1141-1167)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1265-1291",
+   "events/distant_stars_events_2.txt:2598 (distar.1070)",
+   "common/solar_system_initializers/distant_stars_initializers.txt:4955 (star_crazy_fallback_system)",
+   "common/special_projects/00_projects_distant_stars.txt:1127-1172 (STAR_CRAZY)",
+   "events/distant_stars_events_2.txt:2727/2755/2800 (distar.1071-1073)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-irregular-energy-cat.md"
+ }
+}

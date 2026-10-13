@@ -1,0 +1,44 @@
+{
+ "id": "event-nomads-8010",
+ "title": {
+  "zh": "夺取驿站",
+  "en": "Seize Waystation"
+ },
+ "bridges": [
+  {
+   "from": "nomads.8010",
+   "to": "nomads.8015",
+   "conditional": false,
+   "label": {
+    "zh": "行动第二阶段",
+    "en": "Operation stage 2"
+   },
+   "evidence": "operations.txt:1428-1438 operation_seize_waystation stages 8010 -> 8015 -> 8020"
+  },
+  {
+   "from": "nomads.8015",
+   "to": "nomads.8020",
+   "conditional": false,
+   "label": {
+    "zh": "行动第三阶段",
+    "en": "Operation stage 3"
+   },
+   "evidence": "operations.txt:1433-1438"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/espionage_operation_types/operations.txt:1370-1450",
+   "events/nomads_events_1.txt:17555-17855"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-nomads-8010.md"
+ }
+}

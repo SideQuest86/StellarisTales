@@ -1,0 +1,38 @@
+{
+ "id": "anomaly-tomb-world-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.2005",
+    "distar.2015"
+   ],
+   "label": {
+    "zh": "按星球类型",
+    "en": "By planet class"
+   },
+   "note": {
+    "zh": "有毒/核爆 → 2005；荒芜/冷荒芜（无站点矿藏）→ 2015（95_anomaly_categories_distant_stars.txt:1369-1403）。",
+    "en": "Toxic/nuked → 2005; barren/cold barren without station deposits → 2015 (95_anomaly_categories_distant_stars.txt:1369-1403)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1353-1404",
+   "events/distant_stars_events_2.txt:3349 (distar.2005)",
+   "common/special_projects/00_projects_distant_stars.txt:1204 (WEAPONS_TESTING)",
+   "events/distant_stars_events_2.txt:3381 (distar.2006)",
+   "events/distant_stars_events_2.txt:3575 (distar.2015)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-tomb-world-cat.md"
+ }
+}

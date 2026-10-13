@@ -2,14 +2,14 @@
   "category": "origins",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 58,
-  "docs": 1226,
-  "nodes": 1453,
+  "stories": 61,
+  "docs": 1230,
+  "nodes": 1457,
   "refs": 227,
   "crossLinks": 192,
   "review": {
-    "reviewed": 4,
-    "partial": 14,
+    "reviewed": 8,
+    "partial": 13,
     "unreviewed": 40
   },
   "failures": [],
@@ -39,7 +39,7 @@
       "docs": 87,
       "refs": 10,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "origin_shroud_forged",
@@ -234,7 +234,7 @@
       "id": "origin_heirs_of_the_khan",
       "title": "可汗后裔",
       "kind": "origin",
-      "docs": 14,
+      "docs": 13,
       "refs": 4,
       "crossLinks": 4,
       "review": "unreviewed"
@@ -310,6 +310,15 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
+    },
+    {
+      "id": "event-nomads-505",
+      "title": "熟悉的猎兵",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "origin_common_ground",
@@ -535,6 +544,24 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
+    },
+    {
+      "id": "event-nomads-1030",
+      "title": "新的道路",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-nomads-635",
+      "title": "可汗之死",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     }
   ]
 }

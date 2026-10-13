@@ -1,0 +1,53 @@
+{
+ "id": "rift-research-lab",
+ "category": "rifts",
+ "bridges": [
+  {"from": "astral_rift.2020", "choice": "astral_rift.2020.b", "to": "astral_rift.2030", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_2_events.txt:139-143 set_next_astral_rift_event { id = astral_rift.2035 on_roll_failed = astral_rift.2030 fail_probability = @default_failure_probability }"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.2035", "astral_rift.2030"],
+   "label": {"zh": "注入星界丝缕：成功或胚胎解体", "en": "Injecting thread: success or disintegration"},
+   "note": {"zh": "花 10 星界丝缕稳定胚胎后，本阶段要么突破孵出“曲跃雏”（2035），要么在某次掷骰时以每次 1.5% 的基础概率失败，胚胎解体（2030）；选择“不要干预”则直接进入 2030。", "en": "After spending 10 astral threads to stabilise the embryo the stage either breaks through and the Warpling hatches (2035) or fails on a roll, base 1.5% per roll, and the embryo disintegrates (2030); “Do not intervene” leads straight to 2030."}}
+ ],
+ "endings": {
+  "astral_rift.2025": {
+   "label": {"zh": "安乐死：阻止寄生虫外传", "en": "Euthanized: parasites contained"},
+   "note": {"zh": "按防污染流程用盐酸处死全部标本；获得物理研究与大量星界丝缕，探索结束。", "en": "All specimens are destroyed with acid under anti-contamination protocol; physics research and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:162-202"},
+  "astral_rift.2035": {
+   "label": {"zh": "生物武器：曲跃雏", "en": "Biological Weapon: Warplings"},
+   "note": {"zh": "孵出能短距跃迁的战斗生物；可建造新型进攻部队“曲跃雏”，获得大量星界丝缕，探索结束。", "en": "A combat creature able to warp short distances hatches; the Warpling assault army becomes buildable and a large astral thread reward is granted; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:259-298"},
+  "astral_rift.2040": {
+   "label": {"zh": "带回看护者遗骸", "en": "The caretakers' remains"},
+   "note": {"zh": "带回满是量子寄生虫的研究人员尸体（已用酸消毒）；获得大量星界丝缕，探索结束。", "en": "The researchers' parasite-ridden corpses are brought back (after acid decontamination); a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:300-318"},
+  "astral_rift.2045": {
+   "label": {"zh": "致命暴露：科学家死亡", "en": "Lethal Exposure: the scientist dies"},
+   "note": {"zh": "胚胎解体（2030）的探索结束后 30 天，科学家因接触寄生虫“自爆”身亡。", "en": "30 days after the embryo disintegrates (2030) and the exploration ends, the scientist dies — “spontaneously exploded” — from parasite exposure."},
+   "evidence": "events/astral_rifts_2_events.txt:238-256 (country_event 2045 days=30, finish_astral_rift); 320-341"}
+ },
+ "nodeLabels": {
+  "astral_rift.2040": {"zh": "量子寄生虫：带回遗骸", "en": "Quantum Parasites: the remains"},
+  "astral_rift.2045": {"zh": "致命暴露", "en": "Lethal Exposure"}
+ },
+ "notes": [
+  {"doc": "astral_rift.2030", "kind": "review",
+   "zh": "无论是主动“不要干预”还是注入星界丝缕失败，进入 2030 后都会在 30 天后失去科学家（2045）；本篇先给物理研究与大量星界丝缕。",
+   "en": "Whether reached by “Do not intervene” or by a failed injection, 2030 costs the scientist 30 days later (2045); this event itself first grants physics research and a large astral thread reward."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 2000–2045 全部事件，补上 2020.b 的失败分支 2030，并核对 2030 在 30 天后触发的科学家死亡。",
+   "en": "Checked the rift definition and every event 2000–2045; added the failure fallback 2030 of 2020.b and verified the scientist's death 30 days after 2030."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-research-lab.md"
+ }
+}

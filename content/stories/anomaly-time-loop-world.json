@@ -1,0 +1,87 @@
+{
+ "id": "anomaly-time-loop-world",
+ "family": {
+  "title": {
+   "zh": "屏障星球",
+   "en": "Shielded World"
+  },
+  "category": "exploration",
+  "start": "anomalies:time_loop_world",
+  "members": [
+   "anomalies:time_loop_world",
+   "distar.2036"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.2031",
+   "to": "distar.2036",
+   "conditional": true,
+   "label": {
+    "zh": "其他帝国之后在该星系建成前哨",
+    "en": "Another empire later builds an outpost in the system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1936 on_building_starbase_outpost → distar.2036 (events/distant_stars_events_2.txt:3873): the time-loop world has repaired_time_loop_shield (from MEND_SHIELD), lizards not dead, owner has not researched the anomaly."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.2032",
+    "distar.2033"
+   ],
+   "label": {
+    "zh": "打断循环的结果",
+    "en": "Result of interrupting the loop"
+   },
+   "note": {
+    "zh": "50/50；若星系已有主，2033 因子0（00_projects_distant_stars.txt:1271-1290）。",
+    "en": "50/50; 2033 is factor 0 if the system is owned (00_projects_distant_stars.txt:1271-1290)."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.2035": {
+   "zh": "20–60年后：蜥蜴死于高温",
+   "en": "20–60 years later: the lizards burn"
+  },
+  "distar.2033": {
+   "zh": "蜥蜴挣脱并敌视我们",
+   "en": "The lizards break free, hostile"
+  },
+  "distar.2038": {
+   "zh": "5–15年后：它们自行脱困",
+   "en": "5–15 years later: they free themselves"
+  },
+  "distar.2036": {
+   "zh": "后来者的观察",
+   "en": "A later visitor's view"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:199-292 (time_loop_world_system)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1457-1468",
+   "events/distant_stars_events_2.txt:3730 (distar.2030)",
+   "common/special_projects/00_projects_distant_stars.txt:1232/1257 (MEND_SHIELD, STOP_TIME_LOOP)",
+   "events/distant_stars_events_2.txt:3801-3872 (distar.2031, 2034, 2035)",
+   "events/distant_stars_events_2.txt:3917/3946 (distar.2032/2033)",
+   "events/distant_stars_events_2.txt:4380 (distar.2038)",
+   "common/on_actions/00_on_actions.txt:1936",
+   "events/distant_stars_events_2.txt:3873 (distar.2036)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-time-loop-world.md",
+  "mergedStories": [
+   "event-distar-2036"
+  ]
+ }
+}

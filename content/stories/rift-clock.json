@@ -1,0 +1,45 @@
+{
+ "id": "rift-clock",
+ "category": "rifts",
+ "bridges": [
+  {"from": "astral_rift.2115", "choice": "astral_rift.2115.a", "to": "astral_rift.2120", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_2_events.txt:445-452 set_next_astral_rift_event { id = astral_rift.2125 on_roll_failed = astral_rift.2120 fail_probability = @default_failure_probability }"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.2125", "astral_rift.2120"],
+   "label": {"zh": "取出核心：成功或破碎", "en": "Extracting the core: success or shatter"},
+   "note": {"zh": "卡住齿轮后，本阶段要么突破取出金色核心（2125，遗珍“连续体”），要么在某次掷骰时以每次 1.5% 的基础概率失败，核心爆裂（2120）。", "en": "With the gears jammed the stage either breaks through and the golden core is taken (2125, relic The Continuum) or fails on a roll, base 1.5% per roll, and the core shatters (2120)."}}
+ ],
+ "endings": {
+  "astral_rift.2110": {
+   "label": {"zh": "如果没有坏……：不加干涉", "en": "If It Ain't Broke…"},
+   "note": {"zh": "不干涉机器，只观察；获得大量工程研究与大量星界丝缕，探索结束。", "en": "The machine is left alone and only studied; major engineering research and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:408-432"},
+  "astral_rift.2120": {
+   "label": {"zh": "破碎：科学家老去 20 岁", "en": "Shatter: the scientist ages 20 years"},
+   "note": {"zh": "失败分支：核心爆裂，齿轮狂转，紧急撤离；获得大量工程研究与星界丝缕，科学家年龄 +20，探索结束。", "en": "Failure branch: the core explodes, the gears spin wildly and the Sphere escapes; major engineering research and astral threads, the scientist ages 20 years; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:461-486"},
+  "astral_rift.2125": {
+   "label": {"zh": "成功：连续体", "en": "Success: The Continuum"},
+   "note": {"zh": "取出金色核心，相连的裂隙网络仿佛时间静止；获得遗珍“连续体”，探索结束。", "en": "The golden core is recovered and the connected rift network falls still as if time stopped; the relic The Continuum; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:488-506"}
+ },
+ "notes": [
+  {"doc": "astral_rifts:clock", "kind": "review",
+   "zh": "抽取权重 1。它可能奖励遗珍，因此任一帝国正在探索时其他帝国抽到它的权重为 0；探索者未得到遗珍时解除锁定。",
+   "en": "Draw weight 1. Because it can award a relic, its weight is 0 for others while any empire explores it; the lock is lifted if the explorer did not obtain the relic."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 2100–2125 全部事件，补上 2115.a 的失败分支 2120（原为独立故事）。",
+   "en": "Checked the rift definition and every event 2100–2125; added the failure branch 2120 of 2115.a (formerly a separate story)."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-clock.md"
+ }
+}

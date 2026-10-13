@@ -2,14 +2,14 @@
   "category": "rifts",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 58,
+  "stories": 55,
   "docs": 458,
-  "nodes": 630,
-  "refs": 172,
+  "nodes": 631,
+  "refs": 173,
   "crossLinks": 3,
   "review": {
-    "reviewed": 20,
-    "unreviewed": 38
+    "reviewed": 25,
+    "unreviewed": 30
   },
   "failures": [],
   "items": [
@@ -68,6 +68,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "rift-entangled-dark-matter",
+      "title": "纠缠的暗物质",
+      "kind": "rift",
+      "docs": 16,
+      "refs": 8,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "rift-interdimensional-circus",
       "title": "娱乐中枢",
       "kind": "rift",
@@ -84,15 +93,6 @@
       "refs": 5,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "rift-entangled-dark-matter",
-      "title": "纠缠的暗物质",
-      "kind": "rift",
-      "docs": 15,
-      "refs": 8,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "rift-riftworld",
@@ -198,9 +198,9 @@
       "title": "废弃设施",
       "kind": "rift",
       "docs": 10,
-      "refs": 1,
+      "refs": 2,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-vortex",
@@ -248,13 +248,22 @@
       "review": "unreviewed"
     },
     {
+      "id": "rift-dimensional-dump",
+      "title": "维度垃圾场",
+      "kind": "rift",
+      "docs": 8,
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "rift-genesis",
       "title": "创世",
       "kind": "rift",
       "docs": 8,
       "refs": 5,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-whiteout",
@@ -293,13 +302,13 @@
       "review": "reviewed"
     },
     {
-      "id": "rift-dimensional-dump",
-      "title": "维度垃圾场",
+      "id": "rift-clock",
+      "title": "机械结构",
       "kind": "rift",
       "docs": 7,
-      "refs": 2,
+      "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-lonely-planet",
@@ -352,15 +361,6 @@
       "kind": "event",
       "docs": 6,
       "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "rift-clock",
-      "title": "机械结构",
-      "kind": "rift",
-      "docs": 6,
-      "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -502,33 +502,6 @@
     {
       "id": "event-astral-planes-3170",
       "title": "无形异使",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-rift-2120",
-      "title": "破碎",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-rift-2220",
-      "title": "遭受伤亡",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-rift-2435",
-      "title": "不幸的难题",
       "kind": "event",
       "docs": 1,
       "refs": 0,

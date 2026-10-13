@@ -1,0 +1,23 @@
+{
+ "id": "anomaly-disco-molluscoid-miners-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:1614-1643",
+   "events/distant_stars_events_2.txt:8052 (distar.3030)",
+   "common/special_projects/00_projects_distant_stars.txt:770/806/826 (molluscoid_miners_project_1-3)",
+   "events/distant_stars_events_2.txt:8102 (distar.3031)",
+   "events/distant_stars_events_2.txt:8166/8236 (distar.3032/3033)"
+  ],
+  "uncertain": [
+   "disco_molluscoid_miners_cat spawn modifier `factor = 0` with `from.owner = { NOR = { is_gestalt fanatic_xenophobe mol6 } }` blocks every other empire; whether this is intended cannot be verified from the files."
+  ],
+  "guide": "public/summaries/anomaly-disco-molluscoid-miners-cat.md"
+ }
+}

@@ -1,0 +1,262 @@
+{
+ "id": "event-nomads-150",
+ "family": {
+  "title": {
+   "zh": "太空城邦：冠军之铸现场秀！",
+   "en": "Enclave: Champion's Forge Live!"
+  },
+  "category": "leviathans",
+  "start": "nomads.150",
+  "members": [
+   "nomads.150",
+   "nomads.155",
+   "nomads.100",
+   "nomads.105",
+   "nomads.110",
+   "nomads.115",
+   "nomads.120",
+   "nomads.125",
+   "nomads.160",
+   "nomads.250",
+   "nomads.255",
+   "nomads.260",
+   "nomads.265",
+   "nomads.266",
+   "nomads.270",
+   "nomads.275",
+   "nomads.280",
+   "nomads.281",
+   "nomads.285",
+   "nomads.290",
+   "nomads.295",
+   "nomads.305",
+   "nomads.306",
+   "nomads.310",
+   "nomads.400",
+   "nomads.405",
+   "nomads.410",
+   "observer.105",
+   "nomads.1500",
+   "nomads.1505",
+   "nomads.1510",
+   "nomads.1511",
+   "nomads.1512",
+   "nomads.1515",
+   "nomads.1520",
+   "nomads.1522",
+   "nomads.1523",
+   "nomads.1524",
+   "nomads.1525",
+   "nomads.1526",
+   "nomads.1530",
+   "nomads.1535",
+   "nomads.1545",
+   "nomads.1550",
+   "nomads.1555",
+   "nomads.1556",
+   "nomads.1560",
+   "nomads.1565",
+   "nomads.1570",
+   "nomads.1580",
+   "nomads.3002",
+   "nomads.4000",
+   "nomads.4300"
+  ]
+ },
+ "category": "leviathans",
+ "bridges": [
+  {
+   "from": "nomads.255",
+   "to": "nomads.270",
+   "conditional": true,
+   "label": {
+    "zh": "12个月后比武开幕（至少两支参赛舰队）",
+    "en": "12 months later the tournament opens (two or more contestants)"
+   },
+   "evidence": "nomads.250 schedules system_event nomads.260 months = 12 (L2757-2790); 260 sends nomads.270 when enough contestant fleets are present (L2950-2975)"
+  },
+  {
+   "from": "nomads.255",
+   "to": "nomads.306",
+   "conditional": true,
+   "label": {
+    "zh": "3年后仍未决出胜者：歇战",
+    "en": "No winner after 3 years: abandoned"
+   },
+   "evidence": "nomads.260 schedules nomads.281 years = 3; 281 fires nomads.306 if the tournament is still ongoing (L3315-3330)"
+  },
+  {
+   "from": "nomads.270",
+   "to": "nomads.295",
+   "conditional": true,
+   "label": {
+    "zh": "决出名次：冠军",
+    "en": "Placings decided: first place"
+   },
+   "evidence": "on_space_battle_over -> nomads.275 -> nomads.280 after 30 days (00_on_actions.txt:1754; L3188-3252); 280 notifies each contestant parent by fleet flag (L3252-3305)"
+  },
+  {
+   "from": "nomads.270",
+   "to": "nomads.290",
+   "conditional": true,
+   "label": {
+    "zh": "决出名次：亚军",
+    "en": "Placings decided: second place"
+   },
+   "evidence": "nomads.280 L3286-3289"
+  },
+  {
+   "from": "nomads.270",
+   "to": "nomads.285",
+   "conditional": true,
+   "label": {
+    "zh": "决出名次：季军",
+    "en": "Placings decided: third place"
+   },
+   "evidence": "nomads.280 L3280-3283"
+  },
+  {
+   "from": "nomads.270",
+   "to": "nomads.305",
+   "conditional": true,
+   "label": {
+    "zh": "决出名次：其他参赛者",
+    "en": "Placings decided: other contestants"
+   },
+   "evidence": "nomads.280 L3298-3304 (fleets still flagged as contestants)"
+  },
+  {
+   "from": "nomads.1505",
+   "to": "nomads.1511",
+   "conditional": true,
+   "label": {
+    "zh": "奥伦·维斯首次击毁“清洗过人口”之国的舰队",
+    "en": "Orun Veyth first destroys a fleet of an empire that purged pops"
+   },
+   "evidence": "on_fleet_destroyed_perp -> nomads.1510 (00_on_actions.txt:1697; L8293-8320): hired_nomadic_revenant, leader flag nomadic_revenant, victim has first_pop_purged",
+   "choice": "HIRE"
+  },
+  {
+   "from": "nomads.1520",
+   "to": "nomads.1525",
+   "conditional": true,
+   "label": {
+    "zh": "塞罗首次发现未开智生物",
+    "en": "Sero first finds pre-sapients"
+   },
+   "evidence": "on_survey_planet -> nomads.1524 (00_on_actions.txt:1176; L8683-8705), or arkship deep scan / subspace image -> nomads.1523 (nomads.4000 / 4300) with the naturalist leader",
+   "choice": "HIRE"
+  },
+  {
+   "from": "nomads.1530",
+   "to": "nomads.1545",
+   "conditional": true,
+   "label": {
+    "zh": "索拉斯单元在任时首次完成合约",
+    "en": "First contract completed with Unit Solace"
+   },
+   "evidence": "any contract on_success -> nomads.3002 (1 day) -> nomads.1535 after 15 days if a leader has leader_trait_nomadic_caregiver (L11299-11304, L8920-8935)",
+   "choice": "HIRE"
+  },
+  {
+   "from": "nomads.1555",
+   "to": "nomads.1565",
+   "conditional": true,
+   "label": {
+    "zh": "萨尔首次率军攻占星球",
+    "en": "Th'aal first wins a planetary invasion"
+   },
+   "evidence": "on_colony_attackers_win -> nomads.1556 (00_on_actions.txt:843; L9185-9210) -> nomads.1560 after 2 days (random 1/4 while fewer than 7 trophies) -> 1565 the first time",
+   "choice": "HIRE"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.1505",
+    "nomads.1515",
+    "nomads.1520",
+    "nomads.1530",
+    "nomads.1555",
+    "nomads.1580"
+   ],
+   "label": {
+    "zh": "每次招募随机出现一位英杰",
+    "en": "One paragon offered per recruitment"
+   },
+   "note": {
+    "zh": "城邦的招募选项每次随机给出六位之一（已被雇佣者不再出现）。",
+    "en": "Each recruitment offers one of the six at random (paragons already hired are excluded)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.295",
+    "nomads.290",
+    "nomads.285",
+    "nomads.305"
+   ],
+   "label": {
+    "zh": "比武名次",
+    "en": "Tournament placings"
+   },
+   "note": {
+    "zh": "每个参赛帝国按自己舰队的名次只收到其中一份。",
+    "en": "Each participating empire receives only the one matching its fleet's placing."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "nomads.100": {
+   "zh": "城邦联络菜单",
+   "en": "Enclave contact menu"
+  },
+  "nomads.120": {
+   "zh": "招募英杰",
+   "en": "Recruit a paragon"
+  },
+  "nomads.255": {
+   "zh": "比武大会召开",
+   "en": "Tournament announced"
+  },
+  "nomads.405": {
+   "zh": "城邦被毁（击毁者）",
+   "en": "Enclave destroyed (destroyer)"
+  },
+  "nomads.410": {
+   "zh": "城邦被毁（他国）",
+   "en": "Enclave destroyed (others)"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/nomads_events_1.txt:2382-3700",
+   "events/nomads_events_1.txt:8108-9310",
+   "common/on_actions/00_on_actions.txt:724,4010-4014,1754,1697,843,1176",
+   "common/scripted_effects/nomads_effects.txt:592,647"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-nomads-150.md",
+  "merged": [
+   "event-nomads-250",
+   "event-nomads-275",
+   "event-nomads-400",
+   "event-nomads-155",
+   "event-nomads-1510",
+   "event-nomads-1524",
+   "event-nomads-1556",
+   "event-nomads-3002",
+   "event-nomads-4000",
+   "event-nomads-4300"
+  ]
+ }
+}

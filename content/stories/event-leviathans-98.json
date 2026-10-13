@@ -1,0 +1,91 @@
+{
+ "id": "event-leviathans-98",
+ "bridges": [
+  {
+   "from": "leviathans.98",
+   "to": "leviathans.102",
+   "conditional": true,
+   "label": {
+    "zh": "若对方是商人城邦：其问候",
+    "en": "If it is a Trader Enclave: its greeting"
+   },
+   "evidence": "events/leviathans_events_1.txt:257-273 after-switch on the enclave's flag (line 262)"
+  },
+  {
+   "from": "leviathans.98",
+   "to": "leviathans.295",
+   "conditional": true,
+   "label": {
+    "zh": "若对方是艺术家联盟：其问候",
+    "en": "If it is the Artisan Troupe: its greeting"
+   },
+   "evidence": "events/leviathans_events_1.txt:257-273 after-switch on the enclave's flag (line 263)"
+  },
+  {
+   "from": "leviathans.98",
+   "to": "leviathans.502",
+   "conditional": true,
+   "label": {
+    "zh": "若对方是策展人：其问候",
+    "en": "If it is the Curators: its greeting"
+   },
+   "evidence": "events/leviathans_events_1.txt:257-273 after-switch on the enclave's flag (line 264)"
+  },
+  {
+   "from": "leviathans.98",
+   "to": "enclave.205",
+   "conditional": true,
+   "label": {
+    "zh": "若对方是佣兵城邦：其问候",
+    "en": "If it is a Mercenary Enclave: its greeting"
+   },
+   "evidence": "events/leviathans_events_1.txt:257-273 after-switch on the enclave's flag (line 265)"
+  },
+  {
+   "from": "leviathans.98",
+   "to": "enclave.305",
+   "conditional": true,
+   "label": {
+    "zh": "若对方是打捞者城邦：其问候",
+    "en": "If it is the Salvager Enclave: its greeting"
+   },
+   "evidence": "events/leviathans_events_1.txt:257-273 after-switch on the enclave's flag (line 266)"
+  },
+  {
+   "from": "leviathans.98",
+   "to": "enclave.405",
+   "conditional": true,
+   "label": {
+    "zh": "若对方是虚境行者城邦：其问候",
+    "en": "If it is the Shroudwalker Enclave: its greeting"
+   },
+   "evidence": "events/leviathans_events_1.txt:257-273 after-switch on the enclave's flag (line 267)"
+  }
+ ],
+ "notes": [
+  {
+   "doc": "leviathans.98",
+   "kind": "review",
+   "zh": "审阅注：通用的城邦通讯通知。来源有二：首次接触系统在720–1080天后由城邦主动建立通讯（leviathans.97，first_contact_effects.txt:63–71），以及每十年的“城邦通讯扩散”（leviathans.560，on_decade_pulse_country）。读完后按城邦类型打开其问候；灵督城邦（shroud.4199）与冠军熔炉（nomads.155）的问候属于其他故事，此处未连接。",
+   "en": "Review note: generic enclave contact notice. Two sources: the first-contact system lets an enclave establish communications 720-1080 days later (leviathans.97, first_contact_effects.txt:63-71), and the decade 'communication spread' (leviathans.560, on_decade_pulse_country). Afterwards the enclave's own greeting opens; the Mindwarden (shroud.4199) and Champion's Forge (nomads.155) greetings belong to other stories and are not linked here."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整：两种来源与按城邦类型的问候分派。",
+   "en": "Complete: both sources and the per-enclave greeting hand-off."
+  },
+  "uncertain": [
+   "New story created by declaring leviathans.98 a hub (it was wrongly inside the Curators range and also embedded in C7 event-first-contact-1 and C1 origin_mindwardens)."
+  ],
+  "sources": [
+   "events/leviathans_events_1.txt",
+   "common/scripted_effects/first_contact_effects.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-leviathans-98.md"
+ }
+}

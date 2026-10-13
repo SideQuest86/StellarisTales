@@ -23,6 +23,11 @@
 - V3 人工审阅事实（189 条桥接、对白状态机、读法、结局、起源开场、先驱者分组、局势阶段）已迁移到每故事片段 `content/stories/<id>.json`，状态为 partial；原单体配置存档于 `content/chronology/v3/`。
 - 审阅流程与片段格式见 [docs/REVIEW-GUIDE.md](../../docs/REVIEW-GUIDE.md)；13 个审阅代理按类别/来源文件分工逐一审阅全部故事，分配表在 `review/assignments/`，各自账本在 `review/<agent>.md`。C1–C8 仍全部未验收，直至每个故事都有证据充分的 reviewed 状态与导读。
 
+### 2026-10-12 塞塔娜整链审阅完成（V4，c5a 代理；详见 review/c5a-cetana.md 与 public/summaries/cetana.md）
+- 状态 reviewed：120 文档，根为 8035；106 条桥接、22 条压制、12 个分组、4 个结局、25 个对白状态机（V3 的 14 个复核保留，新增 11 个）。第二次演说时机更正：存在堕落/觉醒帝国时为最后一个被消灭后的首个年度检查，否则为下一次年度检查或 360 天，取先到者（V3 仅写 360 天）。
+- 8295 / gifted_system：全安装（common、events、localisation 及所有脚本）中唯一设置该目标的是 8295 自身 immediate（machine_age_crisis_events.txt:10485），而其 trigger（L10457–10464）已要求该目标；调用链无作用域传递。按标准引擎顺序（先 trigger 后 immediate）该事件在原版脚本中无法自然触发，连带 8320 报告与 8060.g 话题不可达；8060.5.b 自身条件矛盾。未做运行时验证，网站以“审阅结论 · 原版脚本中无法自然触发”标注。
+- 数据库项目 1800 天与 900/540 天期限：common/special_projects/documentation.txt 说明 cost=0 为按天项目、期限到期进入 on_fail；00_defines.txt:932 给出 x=(k·i)/(i+Σ(yn−zn)) 但未定义各项。全游戏仅这两个项目与 military_joint_project 的天数超过期限。未削减时必然失败；实际削减项无法从文件证明，网站不宣称必败或必成。
+- 跨章节依赖 48 条已列于账本：树内旗标由路径状态自动解析；虚境突破、泽克兰遗珍/翻译、信任阈值、纳米传统、是否拥有合适星系、堕落帝国存续等由树外状态决定的条件以标签显示。
 ## 先驱者：已确认的问题与依据
 
 人工逐段阅读 `events/precursor_events.txt` 的赛博勒克斯 2000–2103、其他四族的发现/项目/完成/母星记录，并交叉阅读 `common/special_projects/00_projects_1.txt`、`00_projects_ancient_relics.txt`、`common/event_chains/00_event_chains.txt` 与 `common/artifact_actions/artifact_actions.txt`。

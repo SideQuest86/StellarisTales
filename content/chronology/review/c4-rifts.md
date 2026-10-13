@@ -112,6 +112,50 @@ larger (see Requests R2).
   1456.a→1435), exclusive groups, endings 1415/1420/1450/1457/1465, nodeLabels for the three "A Creature" docs, zh title
   mistranslation note on 1445 ("行星物质"). 1445 → +1800 d 1465 (plantoid scientist returns).
 
+### rift-desert-ruins — reviewed
+- Relic lock (r_time_crystal). Time-loop puzzle with variable time_passed (@timeToSolve = 3, set in 1510, +1 in
+  1535/1545/1560): 1500 → 1515 → 1510 → 1520 → 1530/1535→1525→1530 → 1545→1540/1550 → 1560 → 1555 or 1505 (if
+  time_passed ≥ 3, `astral_rifts_1_events.txt:3166-3177`) / 1565. No on_roll_failed. Group 1555/1505, endings 1565/1505,
+  nodeLabels for the repeated chamber docs.
+
+### rift-station — reviewed
+- Weight 1, ×0 if a mirrored empire exists or Riftworld origin. on_astral_rift_exploration_start → hidden 1699 creates
+  the mirrored country and writes explorer_is_* flags (text variants); 1600 → 1605/1610 (1611 gestalt) → 1615 (or 1616
+  for is_homicidal) → 1620 / 1625; 1620 → hidden astral_planes.1690; cleanup 1698. Group 1615/1616, endings.
+
+### rift-tomb — reviewed (absorbs event-astral-rift-1725)
+- 1700 → 1705/1710 → 1715; blasting options 1705.b/1710.b/1715.b → 1720 / failure 1725 (Grave Guardians hostile fleet,
+  `astral_rifts_1_events.txt:4051-4148`). Three bridges, group, endings, note on 1715.a early finish.
+
+### rift-rockworms — reviewed (absorbs event-astral-rift-1830)
+- 1800 → 1805/1810 → 1815/1816/1820; 1815.a/1816.a → 1835 / failure 1830 (+360 d 1890 toxoid return); .b → 1825; 1820.b
+  finishes. Two bridges, groups, endings, zh/en "a year"/"许多年" note on 1890.
+
+### rift-volcano — reviewed (absorbs event-astral-rift-1935)
+- 1900 → 1905/1910 → 1915 → 1925; destroy options 1915.b/1925.b → 1930 / failure 1935 (`astral_rifts_1_events.txt:
+  5054-5058, 5123-5127`); 1930 → +2160 d 1940 → 1941 (→ yearly hidden 1945); 1935 → +360 d 1950 → +360 d 1955 (curse
+  trait → yearly 1960, `common/traits/12_astral_planes_traits.txt:46-72`). Uncertain: 1935 trigger excludes Wilderness
+  explorers.
+
+### rift-research-lab — reviewed
+- 2000 → 2015/2010; 2015 → 2010 / 2040; 2010 → 2020 / 2025; 2020.a → 2030, 2020.b → 2035 / failure 2030
+  (`astral_rifts_2_events.txt:139-143`); 2030 → +30 d 2045 (scientist dies). Bridge 2020.b → 2030, group, endings
+  2025/2035/2040/2045, nodeLabels (2040 duplicates 2010's title).
+
+### rift-clock — reviewed (absorbs event-astral-rift-2120)
+- Relic lock (r_continuum). 2100 → 2105 → 2110 / 2115 → 2125 (relic) / failure 2120 (`astral_rifts_2_events.txt:447-451`,
+  scientist ages +20). Bridge, group, endings.
+
+### rift-dimensional-dump — reviewed (absorbs event-astral-rift-2220)
+- 2200 (help / recover gear) → 2205 → 2210 / 2215 → 2225 → +360 d 2230 (junker joins as commander). Only the
+  rescue-route instance of the duplicated option key astral_rift.2205.a has on_roll_failed 2220 (`:596-610`); bridge added
+  without `choice` (duplicate keys bind to the first instance — Request R6). zh/en mismatch noted on 2205.
+
+### rift-genesis — reviewed
+- Weight ×0 while any Genesis is explored (global flag via 2398/2399 on exploration start/complete) or without habitable
+  colony. 2300 → 2305/2310/2315(EMP end) → 2320/2325 → 2330 (new species pop on nearest colony). Groups, endings,
+  nodeLabels for the two "To the Stars".
+
 ## Requests
 
 (see bottom of file; maintained as work proceeds)

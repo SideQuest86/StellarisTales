@@ -46,6 +46,13 @@ Conventions used in fragments:
 - Groups: stage-3 alternatives 2021/2022, 2121/2125, 2321/2325; Makers fleet 2036/2037/2038; finale 2450/2455. Endings 2450, 2455, 3090.
 - Uncertain: compiler stage chaining of dig gatekeeper outcomes (R5).
 
+﻿### origin_legendary_leader — reviewed (87 docs)
+
+- Opening (11): 5004 (game_start.1 `game_start.txt:522-526` → hidden 5000 `origin_events_paragon.txt:15-63`, +180-540 d), 5005 (on_colonization_started `00_on_actions.txt:1271`), seven diplomatic milestones 5023/5025/5027/5029/5033/5039/5038 (fedev.499; hidden routers 5024/5026/5028/5032/5034/5037 on on_becoming_subject `:4507-4508`, on_war_won `:3137`, on_war_lost `:3165`, monthly `:350-351`), 5201 (yearly 5955/5960 `:415-416` and luminary_speech_effect `paragon_effects.txt:14`), 5900 (on_leader_death `:2390`).
+- Bridges (19): 5005 → 5010 (on_colonized `:1313`); promise situation → 5014 and insights 5305/5310/5315/5320/5340/5345/5370 (`00_council_agendas_ethics.txt`), → 5325/5330/5335/5360 (origin agenda `00_council_agendas.txt:167-212`, random 1:1:1:1); reformists situation → 5095 (`:143-164`); 5211 → 5213 (on_war_ended/won, 5950); 6015 → 6030 (monthly `:360`).
+- Groups: 5008/5009; crossroads 5220/5221/5222/5211; immortality 6005-6025; origin-agenda insight 4-way; milestones (parallel). Endings: 6035, 5900, 5213, 5223, 5220.
+- Correction: V3 opening label used 启明者; the game's term is 光耀者 (leader_trait_legendary_leader).
+
 ## Requests
 ﻿- R1 (new unowned stories created by C1 corrections; please assign): `situation-voidworm-country-situation` (generic Voidworms Behavior situation + voidworm plague, hub declared in origin_treasure_hunters), `event-first-contact-critters-15` (generic Tiyanki first contact, freed by hub grand_archive.200 in origin_primal_calling), `event-shroud-4201` (Mindwarden enclave service menu, hub declared in origin_mindwardens; suggested C6 enclaves). Title of event-shroud-4201 is empty (all entries inherit titles via `base =`).
 - R2 (compiler/extractor): record and call-graph line numbers are wrong for files that use `inline_script` (e.g. events/grand_archive_events.txt is ~1600 lines too high, first_contact_NPC_country_types_events.txt and shroud_events.txt too); ledger/fragment evidence in C1 cites real file lines. scripts/callers.py crashes on path entries of kind `effect` without `name` (KeyError) — a tolerant copy was used.

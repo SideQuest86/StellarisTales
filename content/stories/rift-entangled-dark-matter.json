@@ -1,0 +1,72 @@
+{
+ "id": "rift-entangled-dark-matter",
+ "category": "rifts",
+ "bridges": [
+  {"from": "astral_rift.2415", "choice": "astral_rift.2415.a", "to": "astral_rift.2435", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_2_events.txt:1721-1740: the first option named astral_rift.2415.a (non-gestalt, non-psionic scientist; not egalitarian) sets set_next_astral_rift_event { id = astral_rift.2430 on_roll_failed = astral_rift.2435 }; the second same-named option (psionic, :1741-1748) leads to 2431 without fallback. The `choice` key binds to the first instance, which is the correct one."}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.2410", "astral_rift.2411"],
+   "label": {"zh": "有机或机械科学家", "en": "Organic or robotic scientist"},
+   "note": {"zh": "接近暗物质团块时，有机科学家进入 2410“心灵感应通讯”，机械科学家进入 2411“通讯已建立”。", "en": "Approaching the dark-matter mass leads an organic scientist to 2410 “Telepathic Communication” and a robotic one to 2411 “Communications Established”."}},
+  {"kind": "exclusive", "members": ["astral_rift.2430", "astral_rift.2435"],
+   "label": {"zh": "献出科学家：融合或悲剧", "en": "Offering the scientist: merge or tragedy"},
+   "note": {"zh": "把科学家献作容器后，本阶段要么突破完成融合（2430），要么在某次掷骰时以每次 1.5% 的基础概率失败（2435）。灵能科学家走另一条无失败后备的路线（2431），格式塔帝国则可同化该实体（2440）。", "en": "After offering the scientist as a vessel the stage either breaks through and the merge succeeds (2430) or fails on a roll, base 1.5% per roll (2435). A psionic scientist takes a separate route without fallback (2431); gestalt empires may assimilate the entity instead (2440)."}}
+ ],
+ "endings": {
+  "astral_rift.2425": {
+   "label": {"zh": "无限电流：拆除装置", "en": "Unlimited Current: device removed"},
+   "note": {"zh": "拆除中央装置，能量灌满网格，暗物质团块被压缩成晶体；获得大量星界丝缕与暗物质，探索结束。", "en": "The central device is removed, energy floods the mesh and the dark-matter mass is compressed into a crystal; a large astral thread reward and dark matter; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:1836-1867"},
+  "astral_rift.2426": {
+   "label": {"zh": "仁慈解脱", "en": "A Merciful Release"},
+   "note": {"zh": "应囚徒请求让其安息；获得大量星界丝缕与暗物质，探索结束。", "en": "At the prisoner's request it is given release; a large astral thread reward and dark matter; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:1869-1900"},
+  "astral_rift.2427": {
+   "label": {"zh": "处决", "en": "Extermination"},
+   "note": {"zh": "非友好帝国直接杀死它；获得大量星界丝缕与暗物质，探索结束。", "en": "Unfriendly empires simply kill it; a large astral thread reward and dark matter; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:1902-1940"},
+  "astral_rift.2430": {
+   "label": {"zh": "吸收意识：科学家重塑", "en": "Absorbed Consciousness: the scientist remade"},
+   "note": {"zh": "实体融入科学家：其原有特质全部被替换（技能 5，学者、坚韧、位面理论家、灵能、裂隙行者、外来意识）；大量星界丝缕，探索结束。", "en": "The entity merges into the scientist: all previous traits are replaced (skill 5; scholar, Resilient, Planar Theorist, Psionic, Riftwalker, Foreign Consciousness); a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:1942-1990"},
+  "astral_rift.2431": {
+   "label": {"zh": "吸收意识（灵能者）", "en": "Absorbed Consciousness (psionic)"},
+   "note": {"zh": "灵能科学家接纳实体，保留原有特质并获得坚韧、位面理论家（或二级）与外来意识；大量星界丝缕，探索结束。", "en": "A psionic scientist hosts the entity, keeping their traits and gaining Resilient, Planar Theorist (or its tier II) and Foreign Consciousness; a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:1992-2039"},
+  "astral_rift.2435": {
+   "label": {"zh": "不幸的难题", "en": "Unfortunate Complications"},
+   "note": {"zh": "失败分支：正文写科学家挣脱束缚后自尽，与实体同归于尽；获得大量星界丝缕与暗物质，探索结束。（评注：脚本中没有杀死领袖的效果。）", "en": "Failure branch: the text says the scientist broke free and took their own life, killing the entity too; a large astral thread reward and dark matter; the exploration ends. (Commentary: the script contains no leader-killing effect.)"},
+   "evidence": "events/astral_rifts_2_events.txt:2041-2065"},
+  "astral_rift.2440": {
+   "label": {"zh": "同化：外来意识", "en": "Assimilated: Foreign Consciousness"},
+   "note": {"zh": "格式塔帝国把实体同化进集体意识；获得永久“外来意识”修正与大量星界丝缕，探索结束。", "en": "A gestalt empire assimilates the entity into its collective; the permanent Foreign Consciousness modifier and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:2067-2096"},
+  "astral_rift.2450": {
+   "label": {"zh": "研究客体被处置", "en": "Research Subject Euthanized"},
+   "note": {"zh": "保留囚徒研究（2445）时裂隙留下物理与工程研究矿藏；约 3600–3960 天后，实体被其所在维度中的未知者消灭，矿藏移除。", "en": "Keeping the prisoner for study (2445) leaves physics and engineering research deposits at the rift; about 3600–3960 days later the entity is neutralised by an unknown actor in its own dimension and the deposits are removed."},
+   "evidence": "events/astral_rifts_2_events.txt:2098-2136 (country_event 2450 days=3600 random=360); 2138-2154"}
+ },
+ "nodeLabels": {
+  "astral_rift.2431": {"zh": "吸收意识（灵能者）", "en": "Absorbed Consciousness (psionic)"},
+  "astral_rift.2440": {"zh": "吸收意识（格式塔）", "en": "Absorbed Consciousness (gestalt)"}
+ },
+ "notes": [
+  {"doc": "astral_rift.2415", "kind": "review",
+   "zh": "选项按帝国与科学家而定：非格式塔、非灵能科学家可“献出科学家作为容器”（平等主义帝国不可选，且有失败后备），灵能科学家走 2431；非格式塔帝国可拒绝（→ 2420）；格式塔帝国改为“同化该实体”（→ 2440）或“拒绝同化”（→ 2420）。",
+   "en": "Options depend on empire and scientist: a non-gestalt, non-psionic scientist may be “offered as a vessel” (not allowed for egalitarian empires; has a failure fallback), a psionic scientist goes to 2431; non-gestalt empires may deny (→ 2420); gestalt empires instead “assimilate” (→ 2440) or “deny assimilation” (→ 2420)."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 2400–2450 全部事件，补上 2415.a 的失败分支 2435（原为独立故事），核对 2445 → 2450 的长延时后续。",
+   "en": "Checked the rift definition and every event 2400–2450; added the failure branch 2435 of 2415.a (formerly a separate story) and verified the long-delayed 2445 → 2450 follow-up."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt"],
+  "uncertain": ["2435's text describes the scientist's suicide but its option has no kill_leader effect; recorded as observed in the script."],
+  "guide": "public/summaries/rift-entangled-dark-matter.md"
+ }
+}
