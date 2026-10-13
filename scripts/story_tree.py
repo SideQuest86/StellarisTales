@@ -660,7 +660,7 @@ class Compiler:
         keys = {m for s in strings for lang in ('zh', 'en') for m in PLACEHOLDER.findall(s.get(lang, '') or '')}
         root_scope = EVENT_SCOPE.get(r['kind'], None)
         out = {}
-        for key in keys:
+        for key in sorted(keys):  # deterministic output (set order varies per Python process)
             parts = key.split('|')[0].split('.')
             tail = parts[-1]
             if tail in self.defined:
@@ -701,7 +701,7 @@ class Compiler:
 
     def compile_names(self):
         """Scripted localisation used by the docs, with typed conditions, for the reader (public/stories/names.json)."""
-        pending, out = list(self.used_names), {}
+        pending, out = sorted(self.used_names, reverse=True), {}
         while pending:
             name = pending.pop()
             if name in out or name not in self.defined:
@@ -716,7 +716,7 @@ class Compiler:
                     entry['when'] = when
                 variants.append(entry)
                 for lang in ('zh', 'en'):
-                    pending += [m.split('|')[0].split('.')[-1] for m in PLACEHOLDER.findall(text[lang])]
+                    pending += sorted({m.split('|')[0].split('.')[-1] for m in PLACEHOLDER.findall(text[lang])}, reverse=True)
             out[name] = {'variants': variants}
             if d.get('random'):
                 out[name]['random'] = True
