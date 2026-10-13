@@ -1,0 +1,30 @@
+{
+ "id": "event-bio-3000",
+ "bridges": [
+  {
+   "from": "bio.3005",
+   "to": "bio.3005",
+   "conditional": true,
+   "label": {
+    "zh": "日后再次进入该星系（间隔至少180天）",
+    "en": "Entering the system again later (at least 180 days apart)"
+   },
+   "evidence": "on_entering_system_fleet -> bio.3005 (00_on_actions.txt:1068); trigger needs warned_about_last_thought and no recent_entered_last_thought (180-day timed flag set in immediate, biogenesis_events.txt:7149-7182)"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:1068-1069",
+   "events/biogenesis_events.txt:7071-7210"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-bio-3000.md"
+ }
+}

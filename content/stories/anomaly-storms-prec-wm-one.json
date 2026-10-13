@@ -1,0 +1,40 @@
+{
+ "id": "anomaly-storms-prec-wm-one",
+ "category": "precursors",
+ "notes": [
+  {
+   "doc": "anomalies:STORMS_PREC_WM_ONE",
+   "kind": "review",
+   "zh": "此异常不会自然生成（spawn_chance base 0）。银河生成时选中因内特贸易体先驱者（需“宇宙风暴”DLC）后，人类玩家在带有该标记、尚未用作先驱者星系的贫瘠/寒冷贫瘠行星上勘察时，on_survey_planet 的随机事件（权重25）可能触发隐藏事件cstorms.100生成本异常，并在30天后发送通用联络报告。",
+   "en": "Never spawns naturally (spawn_chance base 0). With the Inetian precursor in the galaxy (Cosmic Storms DLC), surveying a barren or cold barren planet in a system flagged for it can roll hidden event cstorms.100 (on_survey_planet random_events weight 25), which adds this anomaly for a player empire with no precursor intro and sends a generic contact report 30 days later."
+  },
+  {
+   "doc": "cstorms.135",
+   "kind": "review",
+   "zh": "故事在此并未结束：“解析坐标”项目通过星系初始化器weathermanipulators_home_system生成三处考古遗址（坐标A/B/C），后续调查目前归档在另一个故事“坐标A：殖民星球”中。",
+   "en": "The story does not end here: the \"Unscramble the Coordinates\" project spawns the weathermanipulators_home_system initializer, which creates dig sites Coordinates A/B/C; that continuation is currently archived as the separate story \"Coordinates A: Colonized Planet\"."
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "已完整审阅因内特链条的开场部分（异常、远古庇护所五个阶段、解析坐标项目、富饶星系）。后续三处坐标遗址、风暴成因、最后庇护所及秘密研究分属其他故事（C2/C3a），需要合并为同一先驱者故事，已提出请求。",
+   "en": "The opening of the Inetian chain is fully reviewed (anomaly, the five Ancient Shelters stages, the coordinates project, Bountiful System). The three coordinate sites, storm formation, last shelter and secrets research live in other stories (C2/C3a) and should be one precursor story; merge requested."
+  },
+  "sources": [
+   "common/anomalies/102_anomaly_categories_cosmic_storms.txt",
+   "events/precursor_events_cosmic_storms.txt",
+   "common/archaeological_site_types/10_cosmic_storms_arc_sites.txt",
+   "common/special_projects/03_projects_cosmic_storms.txt",
+   "common/event_chains/00_event_chains_cosmic_storms.txt",
+   "common/solar_system_initializers/cosmic_storm_initializers.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "Narrative continuation (site-site-weathermanipulators-coordinatesa-residential-planet, project-inetian-projects-04) is outside this story; see ledger request."
+  ],
+  "guide": "public/summaries/anomaly-storms-prec-wm-one.md"
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "id": "anomaly-distar-dead-god-cat",
+ "family": {
+  "title": {
+   "zh": "沉默巨兽",
+   "en": "Silent Behemoth"
+  },
+  "category": "exploration",
+  "start": "anomalies:DISTAR_DEAD_GOD_CAT",
+  "members": [
+   "anomalies:DISTAR_DEAD_GOD_CAT",
+   "distar.81"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.80",
+   "to": "distar.82",
+   "conditional": true,
+   "label": {
+    "zh": "入侵这颗卫星所环绕的前超光速星球后（2天）",
+    "en": "After invading the primitive planet this moon orbits (2 days)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:836 on_colony_attackers_win → distar.81 (events/distant_stars_events_1.txt:3562-3587, comments 3558-3561 give This=attacker, From=planet owner, FromFrom=planet): planet has dead_god_planet (set by distar.80) or dead_god_planet_hidden (set on anomaly spawn, common/anomalies/95_anomaly_categories_distant_stars.txt:264-278) and the defender is primitive → distar.82 days=2."
+  }
+ ],
+ "nodeLabels": {
+  "distar.82": {
+   "zh": "原住民的死亡之神",
+   "en": "The natives' god of death"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常与入侵前超光速星球后的“死亡之神”全部核对。",
+   "en": "Anomaly and the God of Death event after invading the primitive planet fully checked."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:238-281",
+   "events/distant_stars_events_1.txt:3494 (distar.80)",
+   "events/distant_stars_events_1.txt:3562-3633 (distar.81-82)",
+   "common/on_actions/00_on_actions.txt:836"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-dead-god-cat.md",
+  "mergedStories": [
+   "event-distar-81"
+  ]
+ }
+}

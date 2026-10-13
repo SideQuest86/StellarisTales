@@ -1,0 +1,49 @@
+{
+ "id": "shroudwalker-divination",
+ "family": {
+  "title": {"zh": "预知", "en": "Divination"},
+  "category": "leviathans",
+  "start": "enclave.415",
+  "members": [
+   "enclave.415", "enclave.4100", "situations:divination_locus", "situations:divination_visitors",
+   "enclave.416", "enclave.4150", "enclave.4151"
+  ],
+  "ranges": [{"namespace": "enclave", "min": 5000, "max": 5999, "source": "events/overlord_enclaves_events.txt"}]
+ },
+ "hubs": ["colony.3005", "envoy_events.5", "federations3.2001"],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": ["situations:divination_locus", "situations:divination_visitors"],
+   "label": {"zh": "仪式随机显现两种征兆之一", "en": "The rite reveals one of two signs"},
+   "note": {"zh": "10天后enclave.4100以5:5随机开启“轨迹的征兆”或“来访者的征兆”；20年内出现过的征兆权重×0.2（overlord_enclaves_events.txt:7585-7625）。", "en": "10 days later enclave.4100 starts Sign of the Locus or Sign of the Visitor at 5:5; a sign seen in the last 20 years has its weight x0.2 (overlord_enclaves_events.txt:7585-7625)."}
+  },
+  {
+   "kind": "exclusive",
+   "members": ["enclave.416", "enclave.5557"],
+   "label": {"zh": "局势完成时的两种收尾", "en": "Two closings when the sign completes"},
+   "note": {"zh": "若期间发生过一则预言（divination_occurring）则为“征兆消退”，否则为“不透明的帷幕”并补偿1000能量（01_overlord_situations.txt:87-100, 197-210）。", "en": "'The Sign Fades' if a prophecy took place (divination_occurring), otherwise 'Opaque Veil' with 1000 energy (01_overlord_situations.txt:87-100, 197-210)."}
+  }
+ ],
+ "endings": {
+  "enclave.416": {"label": {"zh": "征兆消退", "en": "The Sign Fades"}, "note": {"zh": "预言已应验，局势结束。", "en": "The foretold change has happened; the situation ends."}, "evidence": "01_overlord_situations.txt:87-95 on_progress_complete with divination_occurring -> enclave.416 (destroys the situation)"},
+  "enclave.5557": {"label": {"zh": "无果而终", "en": "No prophecy"}, "note": {"zh": "整个征兆期间没有预言发生，城邦以能量补偿。", "en": "No prophecy occurred during the sign; the enclave pays energy instead."}, "evidence": "01_overlord_situations.txt:96-98 else -> enclave.5557 (+1000 energy)"}
+ },
+ "nodeLabels": {
+  "enclave.415": {"zh": "预知仪式开始", "en": "The rite begins"},
+  "situations:divination_locus": {"zh": "轨迹的征兆", "en": "Sign of the Locus"},
+  "situations:divination_visitors": {"zh": "来访者的征兆", "en": "Sign of the Visitor"}
+ },
+ "notes": [
+  {"doc": "situations:divination_locus", "kind": "review", "zh": "审阅注：每月按10（无事）:1:1…抽取九则预言之一；每则预言的隐藏前置会设置divination_occurring，因此一次征兆最多应验一则。进度达90%仍无预言时，每月强制从同一组九则中抽一（enclave.5556，00_on_actions.txt:4946-4958）。", "en": "Review note: each month the sign draws 10 (nothing) : 1 : 1 ... among nine prophecies; each prophecy's hidden gate sets divination_occurring, so a sign fulfils at most one. At 90% progress without a prophecy, one of the same nine is forced each month (enclave.5556, 00_on_actions.txt:4946-4958)."},
+  {"doc": "situations:divination_visitors", "kind": "review", "zh": "审阅注：每月按10（无事）:1:1…抽取九则预言之一，最多应验一则；进度达90%仍无预言时强制抽取（enclave.5555，00_on_actions.txt:4932-4944）。其中“裂解的云群”“烦人的使节”“门扉”是借用其他故事的事件，以跨故事链接表示。", "en": "Review note: each month draws 10 (nothing) : 1 : 1 ... among nine prophecies; at most one is fulfilled; at 90% progress one is forced (enclave.5555, 00_on_actions.txt:4932-4944). 'Dismembered Cloud', 'A Most Irritating Envoy' and 'The Doorway' reuse other stories' events and are shown as cross-story links."}
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {"zh": "进行中", "en": "in progress"},
+  "sources": ["events/overlord_enclaves_events.txt", "common/situations/01_overlord_situations.txt", "common/on_actions/00_on_actions.txt", "common/special_projects/00_projects_overlord.txt"],
+  "guide": "public/summaries/shroudwalker-divination.md"
+ }
+}

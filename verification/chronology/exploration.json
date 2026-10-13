@@ -2,14 +2,14 @@
   "category": "exploration",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 396,
-  "docs": 1560,
-  "nodes": 1721,
-  "refs": 161,
-  "crossLinks": 284,
+  "stories": 382,
+  "docs": 1475,
+  "nodes": 1627,
+  "refs": 152,
+  "crossLinks": 273,
   "review": {
-    "partial": 1,
-    "unreviewed": 395
+    "reviewed": 32,
+    "unreviewed": 350
   },
   "failures": [],
   "items": [
@@ -17,19 +17,73 @@
       "id": "horizon-signal",
       "title": "视界信号",
       "kind": "family",
-      "docs": 78,
-      "refs": 38,
+      "docs": 75,
+      "refs": 41,
       "crossLinks": 1,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
-      "id": "anomaly-storms-prec-one",
-      "title": "远古信号",
-      "kind": "anomaly",
-      "docs": 61,
+      "id": "anomaly-distar-robo-cat",
+      "title": "原始机器人",
+      "kind": "family",
+      "docs": 16,
+      "refs": 1,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-distar-230",
+      "title": "鼠人族起源",
+      "kind": "family",
+      "docs": 14,
       "refs": 12,
-      "crossLinks": 17,
-      "review": "unreviewed"
+      "crossLinks": 3,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-distar-flare-cat",
+      "title": "超强耀斑",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-distar-clone-cat",
+      "title": "可疑的舱体",
+      "kind": "family",
+      "docs": 5,
+      "refs": 1,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-distar-240",
+      "title": "未知信号",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-distar-dead-god-cat",
+      "title": "沉默巨兽",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-distar-soy-cat",
+      "title": "杂草丛生的遗迹",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "anomaly-ancrel-mechano-cat",
@@ -86,24 +140,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "anomaly-on-crashed-ship-cat",
-      "title": "失事地点",
-      "kind": "anomaly",
-      "docs": 14,
-      "refs": 2,
-      "crossLinks": 11,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-on-solar-sails-cat",
-      "title": "在恒星帆上",
-      "kind": "anomaly",
-      "docs": 13,
-      "refs": 0,
-      "crossLinks": 11,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-rapid-desertification-cat",
       "title": "迅速荒漠化",
       "kind": "anomaly",
@@ -149,15 +185,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-distar-2599",
-      "title": "原始机器人",
-      "kind": "event",
-      "docs": 12,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-distar-5061",
       "title": "神秘容器回归",
       "kind": "event",
@@ -176,30 +203,12 @@
       "review": "unreviewed"
     },
     {
-      "id": "anomaly-storms-prec-wm-one",
-      "title": "远古庇护所",
-      "kind": "anomaly",
-      "docs": 11,
-      "refs": 1,
-      "crossLinks": 4,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-anomaly-5011",
       "title": "失去联络",
       "kind": "event",
       "docs": 11,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-230",
-      "title": "毁灭的世界",
-      "kind": "event",
-      "docs": 11,
-      "refs": 12,
-      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
@@ -320,6 +329,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "anomaly-on-crashed-ship-cat",
+      "title": "失事地点",
+      "kind": "anomaly",
+      "docs": 9,
+      "refs": 2,
+      "crossLinks": 16,
+      "review": "unreviewed"
+    },
+    {
       "id": "anomaly-time-loop-world",
       "title": "屏障星球",
       "kind": "anomaly",
@@ -398,6 +416,15 @@
       "docs": 8,
       "refs": 1,
       "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-on-solar-sails-cat",
+      "title": "在恒星帆上",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 16,
       "review": "unreviewed"
     },
     {
@@ -968,15 +995,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "anomaly-distar-clone-cat",
-      "title": "可疑的舱体",
-      "kind": "anomaly",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 5,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-distar-flow-cat",
       "title": "异常的读数",
       "kind": "anomaly",
@@ -1213,15 +1231,6 @@
     {
       "id": "event-anomaly-4036",
       "title": "炉中之火",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-5",
-      "title": "超强耀斑",
       "kind": "event",
       "docs": 4,
       "refs": 0,
@@ -1766,16 +1775,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-distar-dead-god-cat",
-      "title": "沉默巨兽",
-      "kind": "anomaly",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-diamond-cat",
@@ -1784,7 +1784,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-electro-cat",
@@ -1793,7 +1793,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-exo-cat",
@@ -1802,16 +1802,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-distar-flare-cat",
-      "title": "文明的遗踪",
-      "kind": "anomaly",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-flytrap-cat",
@@ -1820,7 +1811,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-foes-cat",
@@ -1829,7 +1820,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-geode-cat",
@@ -1838,7 +1829,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-holo-cat",
@@ -1847,7 +1838,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-ice-cat",
@@ -1856,16 +1847,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-distar-med-cat",
-      "title": "神秘箱体",
-      "kind": "anomaly",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-medgas-cat",
@@ -1874,7 +1856,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-mercury-cat",
@@ -1883,7 +1865,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-metal-cat",
@@ -1892,7 +1874,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-molten-cat",
@@ -1901,7 +1883,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-nano-cat",
@@ -1910,7 +1892,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-nanocity-cat",
@@ -1919,7 +1901,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-nanosand-cat",
@@ -1928,7 +1910,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-ocean-cat",
@@ -1937,7 +1919,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-puzzle-cat",
@@ -1946,7 +1928,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-rainbow-cat",
@@ -1955,25 +1937,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-distar-rat-cat",
-      "title": "残毁首都",
-      "kind": "anomaly",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-distar-robo-cat",
-      "title": "对称结构",
-      "kind": "anomaly",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-signal-cat",
@@ -1982,7 +1946,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-soothe-cat",
@@ -1991,7 +1955,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-soothe-gc-cat",
@@ -2000,16 +1964,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-distar-soy-cat",
-      "title": "杂草丛生的遗迹",
-      "kind": "anomaly",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-thirsty-cat",
@@ -2018,7 +1973,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-zone-cat",
@@ -2027,7 +1982,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-electric-waters-cat",
@@ -3389,71 +3344,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-distar-235",
-      "title": "鼠人已割让行星",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-240",
-      "title": "未知信号",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-242",
-      "title": "灵能实体",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-243",
-      "title": "实体沉默",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-distar-256",
       "title": "相变星球",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-262",
-      "title": "美味的真核生物",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-34",
-      "title": "全球暴乱已平定",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-37",
-      "title": "全球暴乱已平定",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -3490,24 +3382,6 @@
     {
       "id": "event-distar-5077",
       "title": "神秘提升已终止",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-72",
-      "title": "冷冻克隆体已复苏",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-81",
-      "title": "死亡之神",
       "kind": "event",
       "docs": 1,
       "refs": 0,

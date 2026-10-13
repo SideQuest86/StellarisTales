@@ -1,0 +1,160 @@
+{
+ "id": "origin_primal_calling",
+ "hubs": ["grand_archive.200"],
+ "opening": {
+  "targets": [
+   "grand_archive.7010",
+   "grand_archive.1002",
+   "grand_archive.1060",
+   "grand_archive.1069",
+   "grand_archive.1070",
+   "grand_archive.1080",
+   "grand_archive.9970",
+   "grand_archive.1010",
+   "grand_archive.1100"
+  ],
+  "label": {"zh": "起源触发的独立支线", "en": "Independent branches started by the origin"},
+  "labels": {
+   "grand_archive.7010": {"zh": "开局30天后：虚空诱饵", "en": "30 days after game start: voidlures"},
+   "grand_archive.1002": {"zh": "与第一种太空生物完成首次接触，30天后", "en": "30 days after first contact with the first space fauna species"},
+   "grand_archive.1060": {"zh": "与第三种太空生物完成首次接触，1天后", "en": "1 day after first contact with the third space fauna species"},
+   "grand_archive.1069": {"zh": "遇见全部太空生物180天后（嗜杀帝国：猎手）", "en": "180 days after meeting every fauna species (homicidal empire: the hunter)"},
+   "grand_archive.1070": {"zh": "遇见全部太空生物180天后（猎杀较多：猎手）", "en": "180 days after meeting every fauna species (many hunted: the hunter)"},
+   "grand_archive.1080": {"zh": "遇见全部太空生物180天后（猎杀较少：研究者）", "en": "180 days after meeting every fauna species (few hunted: the researcher)"},
+   "grand_archive.9970": {"zh": "首次建成克隆太空生物舰船时", "en": "When the first cloned space fauna ship is built"},
+   "grand_archive.1010": {"zh": "带有“泰坦巨兽”修正的殖民地建立一年后再过30–120天", "en": "A colony with the Titanic Life modifier, 30-120 days after its first anniversary"},
+   "grand_archive.1100": {"zh": "游戏中期后的年度检查：已遇见全部太空生物", "en": "Yearly check after mid-game, once every fauna species has been met"}
+  },
+  "evidence": "common/on_actions/00_on_actions.txt:59 on_game_start_country -> grand_archive.1000 (events/origin_events_grand_archive.txt:8-110) sets up the home system and fires 7010 after 30 days (:108). events/first_contact_NPC_country_types_events.txt:190/416/641 and events/grand_archive_events.txt:383/444/2775/2882: every capturable-fauna first contact ends in hidden grand_archive.200 (events/grand_archive_events.txt:173-211), which only for this origin calls hidden 1001 (events/origin_events_grand_archive.txt:114-213): first species -> 1002 after 30 days, third species -> 1060 after 1 day, all species -> random_list hunter (1069 if homicidal else 1070) or researcher (1080) after 180 days; weights zeroed by is_homicidal and hunted_space_fauna (<2 / >2). 00_on_actions.txt:2560 on_ship_built -> 9970 (events/grand_archive_events.txt, trigger has_origin). 00_on_actions.txt:3721 on_colony_1_year_old -> colony_mod.161, which for this origin fires 1010 instead of the generic colony_mod.2 (events/colony_events_3.txt:989); Titanic Life comes from 1015 on_survey_planet (00_on_actions.txt:1168, origin_events_grand_archive.txt:580-616). 00_on_actions.txt:419 on_yearly_pulse_country -> 1100 (origin_events_grand_archive.txt:1228-1255: mid_game_years_passed > 0, every fauna encountered, once). Hidden 1005 on the five-year pulse (00_on_actions.txt:478, :363-537) only spawns a not-yet-contacted fauna near the border; it has no window."
+ },
+ "bridges": [
+  {
+   "from": "situations:situation_frenzied_voidworms",
+   "to": "grand_archive.1165",
+   "conditional": true,
+   "label": {"zh": "局势进行中摧毁狂暴虚空虫巢穴", "en": "Destroy the frenzied voidworm nest while the situation runs"},
+   "evidence": "common/on_actions/00_on_actions.txt:1436 on_ship_destroyed_victim -> hidden grand_archive.1160 (events/origin_events_grand_archive.txt:1543-1610): nest starbase destroyed by the empire that spawned it; with situation_frenzied_voidworms active it fires 1165 (:1584-1588), which aborts the situation (:1613-1647)."
+  },
+  {
+   "from": "situations:situation_frenzied_voidworms",
+   "to": "grand_archive.1185",
+   "conditional": true,
+   "label": {"zh": "另一帝国摧毁了巢穴（本帝国视角）", "en": "Another empire destroys the nest (your view)"},
+   "evidence": "events/origin_events_grand_archive.txt:1565-1580 1160: if the killer did not spawn the nest, the killer gets 1180 and the origin empire gets 1185, which aborts an active situation (:1704-1729)."
+  },
+  {
+   "from": "situations:situation_frenzied_voidworms",
+   "to": "grand_archive.1180",
+   "conditional": true,
+   "label": {"zh": "（摧毁巢穴的另一帝国所见）", "en": "(What the other empire that destroyed the nest sees)"},
+   "evidence": "events/origin_events_grand_archive.txt:1565-1571 1160 fires 1180 for a third-party killer (:1688-1702, grants the Mutated Voidworm Nest relic)."
+  },
+  {
+   "from": "grand_archive.1200",
+   "to": "grand_archive.1205",
+   "conditional": true,
+   "label": {"zh": "虚空虫轰炸使一颗行星彻底毁灭", "en": "The voidworms' bombardment shatters a planet"},
+   "evidence": "events/origin_events_grand_archive.txt:1755-1790 1200 sets tormented_by_frenzied_voidworms and lets the voidworms bombard; common/on_actions/00_on_actions.txt:2178 on_planet_bombarded -> 1205 (:1795-1867) at devastation >= 100, turning the planet into a shattered world and setting destroyed_by_frenzied_voidworms."
+  },
+  {
+   "from": "grand_archive.1200",
+   "to": "grand_archive.1170",
+   "conditional": true,
+   "label": {"zh": "此后摧毁巢穴", "en": "Destroy the nest afterwards"},
+   "evidence": "events/origin_events_grand_archive.txt:1589-1597 1160: no situation and tormented_by_frenzied_voidworms -> 1170 (:1650-1686)."
+  },
+  {
+   "from": "grand_archive.1205",
+   "to": "grand_archive.1210",
+   "conditional": true,
+   "label": {"zh": "摧毁巢穴，为被毁的星球复仇", "en": "Destroy the nest to avenge the shattered world"},
+   "evidence": "events/origin_events_grand_archive.txt:1598-1606 1160: destroyed_by_frenzied_voidworms -> 1210 (:1870-1895)."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": ["grand_archive.1069", "grand_archive.1070", "grand_archive.1080"],
+   "label": {"zh": "遇见全部太空生物后的传奇人物（三者择一）", "en": "The paragon after meeting every fauna (one of three)"},
+   "note": {"zh": "嗜杀帝国必为猎手（1069）；否则猎杀少于2种得研究者，多于2种得猎手，恰为2种时各半。", "en": "Homicidal empires always get the hunter (1069); otherwise fewer than 2 hunted species give the researcher, more than 2 the hunter, exactly 2 is 50/50."}
+  },
+  {
+   "kind": "exclusive",
+   "members": ["grand_archive.1200", "grand_archive.1220", "grand_archive.1165", "grand_archive.1185"],
+   "label": {"zh": "狂暴虚空虫局势的结局", "en": "How the frenzied voidworm situation ends"},
+   "note": {"zh": "进度满300时按累积敌意分为攻击（1200）或安抚（1220）；在此之前巢穴被本帝国或他国摧毁则局势中止。", "en": "At progress 300 accumulated hostility decides attack (1200) or pacification (1220); destroying the nest earlier (by you or another empire) aborts it."}
+  }
+ ],
+ "endings": {
+  "grand_archive.1220": {
+   "label": {"zh": "虚空虫被安抚", "en": "The voidworms are pacified"},
+   "note": {"zh": "巢穴舰队转归本帝国，获得变异虚空虫巢穴遗珍。", "en": "The voidworm fleets join your empire and you gain the Mutated Voidworm Nest relic."},
+   "evidence": "events/origin_events_grand_archive.txt:1898-1962"
+  },
+  "grand_archive.1165": {
+   "label": {"zh": "巢穴在局势中被摧毁", "en": "Nest destroyed during the situation"},
+   "note": {"zh": "局势中止，获得变异虚空虫巢穴遗珍。", "en": "The situation is aborted; you gain the Mutated Voidworm Nest relic."},
+   "evidence": "events/origin_events_grand_archive.txt:1613-1647"
+  },
+  "grand_archive.1170": {
+   "label": {"zh": "攻击之后摧毁巢穴", "en": "Nest destroyed after the attack began"},
+   "note": {"zh": "获得变异虚空虫巢穴遗珍。", "en": "You gain the Mutated Voidworm Nest relic."},
+   "evidence": "events/origin_events_grand_archive.txt:1650-1686"
+  },
+  "grand_archive.1210": {
+   "label": {"zh": "为被毁星球复仇", "en": "The shattered world avenged"},
+   "note": {"zh": "获得变异虚空虫巢穴遗珍。", "en": "You gain the Mutated Voidworm Nest relic."},
+   "evidence": "events/origin_events_grand_archive.txt:1870-1895"
+  },
+  "grand_archive.1185": {
+   "label": {"zh": "巢穴被他国摧毁", "en": "Nest destroyed by another empire"},
+   "note": {"zh": "遗珍归摧毁者所有。", "en": "The relic goes to the empire that destroyed it."},
+   "evidence": "events/origin_events_grand_archive.txt:1565-1580, 1688-1729"
+  }
+ },
+ "nodeLabels": {
+  "grand_archive.1069": {"zh": "骨船：猎手（嗜杀）", "en": "Bone Ship: hunter (homicidal)"},
+  "grand_archive.1070": {"zh": "骨船：猎手", "en": "Bone Ship: hunter"},
+  "grand_archive.1075": {"zh": "瑟里兹·柯哈尔", "en": "The primal hunter"},
+  "grand_archive.1085": {"zh": "茹克·恰卜鲁克", "en": "The primal rancher"},
+  "grand_archive.1170": {"zh": "巢穴被摧毁（攻击后）", "en": "Nest destroyed (after attack)"},
+  "grand_archive.1210": {"zh": "巢穴被摧毁（复仇）", "en": "Nest destroyed (revenge)"}
+ },
+ "notes": [
+  {"doc": "grand_archive.7010", "kind": "review",
+   "zh": "审阅注：此窗口为博物天枢通用事件；本起源在开局30天后收到专用文本，其他帝国在完成“驯化”传统后收到。",
+   "en": "Review note: a shared Grand Archive window; this origin gets its own text 30 days after game start, other empires get it after completing the Domestication traditions."},
+  {"doc": "grand_archive.1010", "kind": "review",
+   "zh": "审阅注：殖民地满一年的通用检查中，本起源的“泰坦巨兽”殖民地以此事件取代通用的同名殖民地事件（colony_mod.2）。",
+   "en": "Review note: in the generic one-year colony check, Titanic Life colonies of this origin get this event instead of the generic colony_mod.2."},
+  {"doc": "grand_archive.1002", "kind": "review",
+   "zh": "审阅注：选择决定长期立场（观赏、牧养、庇护、狩猎；格式塔为同化、共生、进食），部分选项需要排外/尚武或亲外/和平思潮。",
+   "en": "Review note: the choice sets a lasting stance (exhibit, exploit, shelter, hunt; gestalts assimilate, symbiosis, feed); some options require xenophobe/militarist or xenophile/pacifist ethics."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c1-origins (Opus 5.5), V4 source review",
+  "scope": {
+   "zh": "核对开局设置、各次太空生物接触后的三段进展与传奇人物、首次克隆、泰坦巨兽殖民地、中期狂暴虚空虫局势及全部结局分支；通用的太空生物首次接触与“虚空虫行为”局势只作链接。",
+   "en": "Checked the start setup, the three fauna-contact milestones and paragons, first cloning, Titanic Life colonies, the mid-game frenzied voidworm situation and all its outcomes; generic fauna first contacts and the Voidworms Behavior situation are linked, not merged."
+  },
+  "sources": [
+   "events/origin_events_grand_archive.txt",
+   "events/grand_archive_events.txt",
+   "events/first_contact_NPC_country_types_events.txt",
+   "events/colony_events_3.txt",
+   "common/situations/11_grand_archive_situations.txt",
+   "common/special_projects/04_projects_grand_archive.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/governments/civics/00_origins.txt",
+   "localisation/english/grand_archive_l_english.yml",
+   "localisation/simp_chinese/grand_archive_l_simp_chinese.yml"
+  ],
+  "uncertain": [
+   "Frenzied voidworm hostility thresholds are script constants (@frenzied_hostility_*); the archive does not simulate the monthly hostility race.",
+   "grand_archive.1180 is shown to a different empire (the third-party killer); it is kept here as the other side of 1185."
+  ],
+  "guide": "public/summaries/origin_primal_calling.md"
+ }
+}

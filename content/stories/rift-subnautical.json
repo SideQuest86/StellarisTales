@@ -1,0 +1,55 @@
+{
+ "id": "rift-subnautical",
+ "category": "rifts",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": ["astral_rift.515", "astral_rift.516"],
+   "label": {"zh": "按是否水生二选一", "en": "Aquatic or not"},
+   "note": {"zh": "505 的“我们游上去”有两个版本：帝国拥有水生特质时通向 516（难度 2，非格式塔帝国有专属文字），否则通向 515（难度 5）。", "en": "“Don pressure suits. We swim.” in 505 has two versions: with the aquatic trait it leads to 516 (difficulty 2, special text for non-gestalt empires), otherwise to 515 (difficulty 5)."}
+  }
+ ],
+ "endings": {
+  "astral_rift.535": {
+   "label": {"zh": "苏醒：天空之泪", "en": "Awakening: Celestial Tear"},
+   "note": {"zh": "物体苏醒，探球紧急撤回。探索结束，获得遗珍“天空之泪”与社会学研究。", "en": "The object awakens and the Sphere is pulled back. The exploration ends with the relic Celestial Tear and society research."},
+   "evidence": "events/astral_rifts_0_events.txt:2258-2271"
+  },
+  "astral_rift.536": {
+   "label": {"zh": "苏醒：“悲痛。走开。”", "en": "Awakening: “Grief. Go away.”"},
+   "note": {"zh": "询问“你是谁？”后的版本：同样获得天空之泪，社会学研究奖励更高。", "en": "The version after asking “What are you?”: also the Celestial Tear, with a larger society research reward."},
+   "evidence": "events/astral_rifts_0_events.txt:2285-2298"
+  },
+  "astral_rift.537": {
+   "label": {"zh": "苏醒：“绝望。我哀嚎。”", "en": "Awakening: “Despair. I wail.”"},
+   "note": {"zh": "询问“你怎么了？”后的版本（难度 6）：同样获得天空之泪，社会学研究奖励最高。", "en": "The version after asking “Do you need help?” (difficulty 6): also the Celestial Tear, with the largest society research reward."},
+   "evidence": "events/astral_rifts_0_events.txt:2312-2325"
+  }
+ },
+ "notes": [
+  {
+   "doc": "astral_rifts:subnautical",
+   "kind": "review",
+   "zh": "抽取权重 1。它可能奖励遗珍，因此任一帝国正在探索时其他帝国抽到它的权重为 0；探索者未得到遗珍时解除锁定。",
+   "en": "Draw weight 1. Because it can award a relic, its weight is 0 for others while any empire explores it; the lock is lifted if the explorer did not obtain the relic."
+  },
+  {
+   "doc": "astral_rift.525",
+   "kind": "review",
+   "zh": "非友好帝国只能选择“你是谁？”；“你好”使下一章难度 −2。",
+   "en": "Unfriendly empires can only ask “What are you?”; “Greetings.” lowers the next chapter's difficulty by 2."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 500–537 全部事件；编译结构无误，补充互斥说明与三个结局。",
+   "en": "Checked the rift definition and every event 500–537; the compiled structure is correct; exclusive group and three endings added."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt"],
+  "uncertain": ["505.b checks `explorer = { has_aquatic_trait = yes }` at country scope; the exact species it evaluates (main species) is engine-defined and was not verified further."],
+  "guide": "public/summaries/rift-subnautical.md"
+ }
+}

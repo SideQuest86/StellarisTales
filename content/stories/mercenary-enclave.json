@@ -1,0 +1,41 @@
+{
+ "id": "mercenary-enclave",
+ "family": {
+  "title": {"zh": "佣兵城邦", "en": "Mercenary Enclave"},
+  "category": "leviathans",
+  "start": "enclave.200",
+  "members": [
+   "enclave.200", "enclave.204", "enclave.205", "enclave.210", "enclave.211", "enclave.215", "enclave.220",
+   "enclave.225", "enclave.235", "enclave.240", "enclave.245", "enclave.250", "enclave.255", "enclave.260",
+   "enclave.265", "enclave.266", "enclave.270", "enclave.280", "enclave.285", "enclave.289", "enclave.290",
+   "enclave.294", "enclave.295", "enclave.296", "enclave.297", "enclave.298", "enclave.299",
+   "enclave.2030", "enclave.2035", "enclave.2040"
+  ]
+ },
+ "nodeLabels": {
+  "enclave.205": {"zh": "佣兵联络菜单", "en": "Mercenary contact menu"},
+  "enclave.210": {"zh": "租用舰队", "en": "Rent a fleet"},
+  "enclave.215": {"zh": "管理租用舰队", "en": "Manage the rented fleet"},
+  "enclave.220": {"zh": "佣兵驻军", "en": "Mercenary Garrisons"},
+  "enclave.240": {"zh": "战术评估", "en": "Tactical appraisal"},
+  "enclave.270": {"zh": "雇佣地面部队", "en": "Hire ground troops"},
+  "enclave.2030": {"zh": "后勤支援", "en": "Logistic support"},
+  "enclave.280": {"zh": "资助者事务", "en": "Patron panel"},
+  "enclave.235": {"zh": "扩充舰队", "en": "Expand their fleet"},
+  "enclave.285": {"zh": "召回舰队", "en": "Recall the fleet"},
+  "enclave.2040": {"zh": "共享科技", "en": "Share technology"}
+ },
+ "notes": [
+  {"doc": "enclave.205", "kind": "review", "zh": "审阅注：首次接触完成或“通讯已建立”后经enclave.204打开，之后每次外交联络经enclave.200打开；玩家亲手建立佣兵城邦后也会立即打开（enclave.21）。各项服务返回本菜单，是可重复的服务枢纽。处于敌对时只显示“花2500能量和解”。", "en": "Review note: opened via enclave.204 after first contact or 'Communications Established', via enclave.200 on every later diplomatic contact, and right after the player founds a mercenary enclave (enclave.21). Services return here: a repeatable hub. While hostile only the 2500-energy truce option is shown."},
+  {"doc": "enclave.285", "kind": "review", "zh": "审阅注：资助者召回已出租的舰队：当前租用方立即收到“终止通知”（按城邦扩建等级分为294–299六个版本），资助者在90或180天后经隐藏事件enclave.289、再过90天收到“征用舰队抵达”（enclave.290）。", "en": "Review note: the patron recalls a fleet already on hire: the current client immediately receives a 'Termination Notice' (six versions 294-299 by the enclave's upgrade tier); the patron receives 'Commandeered Fleet Arrives' (enclave.290) via hidden enclave.289 after 90 or 180 days plus 90 more."},
+  {"doc": "enclave.210", "kind": "review", "zh": "审阅注：租约10年。到期时由独立故事“舰队合约到期”通知；若城邦遭受攻击，租用方会收到“舰队紧急召回”。", "en": "Review note: the lease runs 10 years. Expiry is announced by the separate story 'Fleet Contract Ended'; if the enclave is attacked, the client receives 'Emergency Fleet Recall'."}
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {"zh": "进行中", "en": "in progress"},
+  "sources": ["events/overlord_enclaves_events.txt"],
+  "guide": "public/summaries/mercenary-enclave.md"
+ }
+}

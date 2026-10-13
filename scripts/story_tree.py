@@ -370,7 +370,11 @@ class Compiler:
         """Root components: strongly connected components of the narrative graph with no outside caller."""
         adj = collections.defaultdict(set)
         for src, calls in self.out.items():
+            rules = self.suppressed.get(src, [])
             for c in calls:
+                option = next((p.get('key') for p in c['path'] if p['k'] == 'option'), None)
+                if any(s['to'] == c['to'] and s.get('option') in (None, option) for s in rules):
+                    continue  # reviewed false continuation
                 if c['to'] not in self.hubs:  # a hub's own outcomes belong to the hub's story
                     adj[src].add(c['to'])
         for src, edges in self.extra_edges.items():

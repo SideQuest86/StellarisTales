@@ -1,0 +1,55 @@
+{
+ "id": "event-bio-900",
+ "title": {
+  "zh": "走私人口",
+  "en": "Smuggle Population"
+ },
+ "bridges": [
+  {
+   "from": "bio.900",
+   "to": "bio.905",
+   "label": {
+    "zh": "行动第二阶段",
+    "en": "Operation stage 2"
+   },
+   "evidence": "operations.txt:747-762 operation_smuggle_pops stages: bio.900 -> bio.905 -> bio.910"
+  },
+  {
+   "from": "bio.905",
+   "to": "bio.910",
+   "label": {
+    "zh": "行动第三阶段",
+    "en": "Operation stage 3"
+   },
+   "evidence": "operations.txt:757-762 third stage event bio.910"
+  }
+ ],
+ "endings": {
+  "bio.915": {
+   "label": {
+    "zh": "人口偷运完成",
+    "en": "Population smuggled out"
+   },
+   "note": {
+    "zh": "行动结束；各选项决定偷运的人口范围与暴露程度。",
+    "en": "The operation ends; options decide whom to extract and how exposed the operation becomes."
+   },
+   "evidence": "biogenesis_events.txt:6469-7020"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/espionage_operation_types/operations.txt:690-768",
+   "events/biogenesis_events.txt:6419-7020"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-bio-900.md"
+ }
+}

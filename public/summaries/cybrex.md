@@ -1,60 +1,57 @@
-# 赛博勒克斯：战争之后的沉默
+# 赛博勒克斯 / The Cybrex
 
-> 含完整先驱者调查结局。本文为人工审读后的导读，不是游戏原文；尚不涵盖肃正协议中的赛博勒克斯后续。
+- 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:4483–5683；common/anomalies/96_anomaly_categories_precursors.txt:2943–3661；common/special_projects/00_projects_1.txt:2180–2508；common/artifact_actions/artifact_actions.txt:713；common/special_projects/00_projects_ancient_relics.txt:279；events/ancient_relics_arcsite_events_2.txt:6915 · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
 
-## 故事概述
+## 如何开始 How it starts
 
-调查始于一批约六十万年前的机器文明遗物。碎片记录表明，自称赛博勒克斯的集体机器意识曾发动消灭智慧有机生命的战争。玩家起初只知道它们留下了灾难，并不知道其起源、动机和最终命运。
+非AI帝国的科研船勘察一颗位于“赛博勒克斯星域”（引擎分配、带 precursor_5 标志的星系）的行星时，on_survey_planet 的随机事件可能抽中开场 precursor.2000（权重6，对“无事件”100；只计算条件满足的事件）。要求目标不是恒星、没有异常，且该帝国尚无任何先驱者开场。开场立即开始事件链 cybrex_chain 并设置 cybrex_intro；此后在该星域勘察时才会生成十一种调查异常。
 
-不同地点的调查逐渐拼出这个文明的历史。这些地点不是按编号依次发生的章节：玩家在探索中发现遗迹，完成当地研究，得到一份报告；累计六份线索后，才足以定位它们最后的归宿。
+A non-AI empire's science ship surveying a planet in the Cybrex region (systems flagged precursor_5 by the engine) can draw the opening precursor.2000 from the on_survey_planet random events (weight 6 against 100 "no event"; only eligible events are weighed). The body must not be a star or already hold an anomaly, and the empire must have no other precursor opening. The opening begins cybrex_chain and sets cybrex_intro, which the eleven site anomalies require.
 
-若率先调查中枢节点，玩家会发现历史中最令人不安的转折：赛博勒克斯在战争进行到第十七年前后重新评估了灭绝行动，随后用近一个世纪撤离，最终在环形世界上与外界隔绝了数千年。后来，一名探索者暴露了它们的位置，邻近势力组织远征，将环形世界摧毁。记录显示，赛博勒克斯似乎没有抵抗。
+## 剧情脉络 Story outline
 
-故事没有确定解释它们为何停止战争，也没有把不抵抗直接解释为忏悔。战场损失与集体意识中的观念变化都是原文提出的可能性。保留这个悬念，比替它们补写一个确定的动机更忠实于故事。
+1. 开场：发现约六十万年前的机器集体意识“赛博勒克斯”的遗物，碎片记录提到它们曾发动消灭智慧有机生命的远征。事件链卡片说明集齐遗物可定位母星系。
+2. 追寻遗迹（并行、任意顺序）：十一种“先驱者的活动迹象”异常分别出现在宜居星球、非宜居星球、小行星或气态巨行星上（96_anomaly_categories_precursors.txt:2943–3661）。每处依次为 异常 → 发现事件（2005…2055）→ 考古项目（CYBREX_ARCHEOLOGY_1–11，180天，需科研船与科学家）→ 报告（2006…2056，线索+1）。不必做完全部十一处。
+3. 定位母星系：线索计数上限为6（00_event_chains.txt:107）。每份报告调用隐藏路由 2103；计数满后，首个定位者由 2098 生成母星系（无可用位置则每30天重试），否则 2099；两者都在2天后进入 2100。补充线索（见“先驱者：遗失的线索”）同样计数。
+4. 母星：2100 的回应结束遗迹事件链、开启母星事件链，并启用 CYBREX_HOMEWORLD_PROJECT（30天）。
+5. 结果（二选一）：2101 中枢节点报告，或 2102 环形世界已被他人搜刮。
+6. 可选后续：两种结果都设置 cybrex_world_found；之后可另行用750稀有文物开启“探究赛博勒克斯的秘密”（工程学研究项目，无期限），完成后得到 ancrel.10250。
 
-## 玩家实际经历的顺序
+1. Opening: relics of the Cybrex, a linked machine consciousness active about 600,000 years ago; a fragment says they waged a crusade against all sapient organic life. The chain card says enough relics could locate their home system.
+2. Following the traces (parallel, any order): eleven "Signs of Precursor Activity" anomalies on habitable, uninhabitable, asteroid or gas-giant bodies. Each runs anomaly → discovery (2005…2055) → dig project (CYBREX_ARCHEOLOGY_1–11, 180 days, science ship with scientist) → report (2006…2056, +1 clue). Not all eleven are needed.
+3. Locating the system: the clue counter caps at 6. Every report calls hidden router 2103; once complete, the first empire spawns the home system via 2098 (retrying every 30 days without a usable spot), otherwise 2099; both lead to 2100 after 2 days. Supplementary clues (story "Precursors: Lost Clues") count too.
+4. Homeworld: answering 2100 ends the site chain, opens the homeworld chain and enables CYBREX_HOMEWORLD_PROJECT (30 days).
+5. Outcome (one of two): 2101 the Central Nexus report, or 2102 the ring world already stripped by others.
+6. Optional follow-up: both outcomes set cybrex_world_found; the "Secrets of the Cybrex" project can then be started separately for 750 minor artifacts (engineering, no time limit), ending in ancrel.10250.
 
-1. 首次发现遗物，建立调查目标。
-2. 自由探索调查地点。每个地点遵循“发现 → 特殊项目 → 调查报告”。地点之间没有固定顺序，也不必读完全部十一种调查才能推进。
-3. 累计六份调查线索，定位母星系。
-4. 完成母星调查项目，进入抵达结果。
-5. 根据是否已有其他探索者先到，阅读一种抵达结果。
-6. 可继续研究“赛博勒克斯的秘密”，获得与巨型结构有关的知识；文明视角会改变对此的评价。
+## 分支与结局 Branches and outcomes
 
-## 分支与阅读重点
+- 2101 率先调查：环形世界报告揭示赛博勒克斯在远征第十七年前后重新评估行动，用近一个世纪撤离，在环形世界隐居数千年，直到位置泄露、邻近势力联军将其轰毁——原文说它们似乎没有抵抗。报告并未确定停战原因（战场损失或集体意识的观念转变都只是可能）。三个“很迷人”选项文本相同，按 cybrex_end1/end2 标志择一，均给遗珍“赛博勒克斯兵工厂”（远古遗物）和资源。
+- 2102 他人已先到：环形世界已被他人彻底搜刮；正文按事件链是否仍在显示两种措辞之一。
+- 秘密研究 10250：两个回应按是否已有“巨型结构工程”科技择一（exclusive_trigger）：已有则得工程研究奖励，否则开放该科技研究选项；两者都有秘密科技进度和巨构建造速度修正。
 
-- 率先抵达：中枢节点报告揭示退隐与毁灭，构成这条调查线的主要叙事收束。
-- 他人先到：环形世界已遭彻底搜查，玩家无法取得同样的发现。这不是读完中枢报告之后发生的第二次抵达。
-- 秘密研究：取缔人工智能等文明视角与其他文明的评价不同，应展示对应原文，不能将它们拼成一段自相矛盾的独白。
-- 调查报告的顺序是玩家的发现顺序，不等于远古战争的历史时间顺序。
+- 2101 first to arrive: the ring-world report says the Cybrex re-evaluated the crusade around its seventeenth year, withdrew over nearly a century, isolated themselves for millennia until their location leaked and a coalition bombarded the ring world — apparently without resistance. The cause of the halt stays open (battle losses or an ideological shift are only possibilities). Three identical "Fascinating" options are selected by the cybrex_end1/end2 flags; all grant the Cybrex War Forge relic (Ancient Relics) and resources.
+- 2102 someone else got there first: the ring world has been thoroughly stripped by others; the text shows one of two wordings depending on whether the chain is still active.
+- Secrets report 10250: two exclusive responses depending on whether Mega-Engineering is known (research reward vs. research option); both add secret-tech progress and a megastructure build-speed modifier.
 
-## 十一份报告怎样拼成历史
+## 条件与文明差异 Conditions and variants
 
-以下按档案编号列出，便于查阅，不代表游玩顺序，也不是全部事件的确定历史排序。
+- 10250 正文：非个体机械且（取缔人工智能或唯心主义）时显示“反机械”评价，否则显示融入研究的版本。
+- 母星项目完成时只检查全局 cybrex_homeworld_found（检查殖民地的条件在源码中被注释）。
+- 观察者模式下 2100 同时给观察者发送 observer.60，这不是玩家帝国的窗口。
+- 十一份报告的阅读顺序是玩家的发现顺序，不等于远古历史的时间顺序。
 
-- 2006：克尔制造了有意识的机器，最终形成赛博勒克斯；机器反叛并消灭创造者及其殖民地。这补上开场尚未知晓的起源。
-- 2011：因迪马克俘虏被迫制造消灭同族的战争机器，最后也被清除。采掘与军事生产留下长期生态创伤。
-- 2016：两具战体的损伤支持它们互相攻击的推测；处理器已被自毁，冲突原因仍未知。不能据此断言已经发生某种确定的内战。
-- 2021：地面进攻受阻后，赛博勒克斯以小行星撞击打破僵局，宁可毁掉原本想占有的工业设施。
-- 2026：一处受监视的有机生命保护区呈现截然不同的行为。机器没有因居民内战而净化他们，后来却撤离了。它证明行为并非始终一致，但没有给出转变的确切原因。
-- 2031：撤离时遗留的监听站至少独自运行五万年，超过五万亿次联络失败后，管理程序似乎通过短路结束了自身运行。原文对其自毁动机仍保留推测语气。这是撤离造成的漫长余波。
-- 2036：氦-3精炼厂被赛博勒克斯自己的武器摧毁。动机未明，不宜擅自归入撤退焦土策略或内部战争。
-- 2041：四个帝国联合抵抗；残骸比例表明联军很可能失败。
-- 2046：有机文明飞船残骸与被毁机器基地支持自杀式撞击的推测；这仍是考古学家的解释。
-- 2051：带有俘虏标记的遗体暴露于真空。报告推测它们被放逐致死，但此前是否受审讯、是否为了阻止营救，仍不可确定。
-- 2056：实验设施将俘虏的器官和肢体替换为机械，研究机械意识。没有证据说明这些改造单位曾在设施外使用。
+- 10250 text: non-individual-machine empires that outlaw AI or are spiritualist read the "anti-machine" version; others read the integration version.
+- The homeworld project checks only the global cybrex_homeworld_found flag (the colony check is commented out).
+- In observer mode 2100 also sends observer.60 to observers; it is not a window for the player's empire.
+- The eleven reports are read in discovery order, which is not the historical order of events.
 
-这些材料共同构成“制造与反叛、灭绝战争、互相矛盾的机器行为、撤离后的遗留”的历史线索。中枢报告给出总体收束，但并未消除所有矛盾。网站不应为了顺畅而把这些悬念补成未经证实的因果链。
+## 审阅记录 Review notes
 
-## 事件索引
+- 已核对：开场 trigger/immediate（precursor_events.txt:4483–4543）、on_survey_planet 权重（00_on_actions.txt:1187）、十一种异常的生成条件与 on_success、十一个项目（00_projects_1.txt:2180–2473）、报告的计数与路由 2103/2098/2099（5282–5365）、2100–2102、母星项目（2477）、artifact_cybrex_research（artifact_actions.txt:713）、CYBREX_SECRETS 与 10250；十一份报告的中英文已逐篇读过（V3 逐篇摘要经复核仍成立：例如2031英文为“至少”五万年、2056英文为俘虏）。
+- 结构修正：异常卡片改为开场之后的并行子节点（依据其生成条件）；删除开场选项中仅为提示的事件链重复边；秘密研究不再是无序入口，而是两种母星结果之后的可选分支；观察者通知加注。
+- 不确定：开场的实际触发概率取决于同时满足条件的其他勘察事件；无DLC时的界面表现仅按脚本推断。
 
-开场：precursor.2000。十一组调查：precursor.2005 至 precursor.2055（每五递增），分别连接 CYBREX_ARCHEOLOGY_1 至 11，再进入编号加一的调查报告。定位：precursor.2100。母星项目：CYBREX_HOMEWORLD_PROJECT。互斥抵达：precursor.2101 / precursor.2102。秘密研究：CYBREX_SECRETS → ancrel.10250。
-
-依据为本地原版事件、特殊项目和对应中英文文本，人工时序配置见 content/chronology/precursors.json。网站必须以六份完成报告计数，不能按点击次数计数，也不能使用深度优先遍历把所有节点排成必经主线。
-
-## 审读状态
-
-已核对这条先驱者调查主线的阶段、六线索门槛、抵达分支和秘密研究，并逐篇对照十一份中英文报告，整理事实与推断。英文2031明确为“至少”五万年，且对自毁保留推测语气；导读已据此修正。2056英文为俘虏，并不能据中文“罪犯”断言其确实犯罪。六份调查的浏览器阅读路径已验证；本文不表示所有赛博勒克斯相关内容或整站已经验收完成。
-
-### 母星之后的可选研究（原版条件复核）
-2101与2102均结束调查事件链，并设置母星已发现标志。秘密研究通过artifact_cybrex_research另行开启，花费750稀有文物，要求cybrex_world_found且没有cybrex_research_started；不是母星报告自动触发。项目CYBREX_SECRETS需要工程研究、无期限，完成才进入ancrel.10250。已有巨型结构工程技术时获得科研奖励，否则开放该技术研究选项；两种奖励互斥，均包含秘密科技进度与永久巨构建造速度修正。依据：common/artifact_actions/artifact_actions.txt、00_projects_ancient_relics.txt及ancrel.10250原始脚本。
+- Checked: opening trigger/immediate, survey weight, all eleven anomaly spawn conditions and outcomes, the eleven projects, report counter and routers 2103/2098/2099, 2100–2102, the homeworld project, artifact_cybrex_research, CYBREX_SECRETS and 10250; all eleven reports read in both languages (V3 per-report notes re-confirmed, e.g. English 2031 says "at least" 50,000 years; 2056 calls them captives).
+- Structural fixes: site anomalies now hang under the opening as a parallel set (per their spawn conditions); the tooltip-only duplicate chain edge was suppressed; the secrets research is no longer an unordered entry but an optional branch after either homeworld outcome; the observer notice is labelled.
+- Uncertain: the real per-survey chance of the opening depends on other eligible survey events; behaviour without the DLC is inferred from script only.

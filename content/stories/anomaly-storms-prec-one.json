@@ -1,0 +1,233 @@
+{
+ "id": "anomaly-storms-prec-one",
+ "category": "precursors",
+ "hubs": [
+  "ancrel.8200",
+  "ancrel.8201",
+  "ancrel.8202",
+  "ancrel.8203",
+  "ancrel.8215"
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.2245",
+    "cstorms.2240"
+   ],
+   "labels": [
+    {
+     "zh": "调查协会的科学家有灵能特质",
+     "en": "The institute scientist is psionic"
+    },
+    {
+     "zh": "否则",
+     "en": "Otherwise"
+    }
+   ],
+   "note": {
+    "zh": "隐藏事件cstorms.2230生成阿达苏星系后二选一；两条路都通向与风暴的对话。",
+    "en": "Hidden cstorms.2230 spawns the adSul system and picks one; both lead to the conversation with the Storm."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.2340",
+    "cstorms.2345"
+   ],
+   "labels": [
+    {
+     "zh": "释放风暴",
+     "en": "Free the Storm"
+    },
+    {
+     "zh": "夺取风暴召唤器",
+     "en": "Claim the Tempest Invocator"
+    }
+   ],
+   "note": {
+    "zh": "最终抉择，两个结局互斥。",
+    "en": "The final choice; the two endings exclude each other."
+   }
+  }
+ ],
+ "endings": {
+  "cstorms.2350": {
+   "label": {
+    "zh": "结局：风暴不再",
+    "en": "Ending: A Storm Nevermore"
+   },
+   "note": {
+    "zh": "摧毁召唤器，阿达苏首都恢复为大陆星球并带有爱国研究所；设置adakkaria_world_found，可另行花费750稀有文物开启“阿达卡利亚的秘密”研究（另一故事）。",
+    "en": "The Invocator is destroyed and the adSul capital becomes a continental world with the Patriotic Institute; sets adakkaria_world_found, which allows the separate 750-artifact \"Secrets\" research (another story)."
+   },
+   "evidence": "events/precursor_events_cosmic_storms.txt:4620-4671; common/artifact_actions/artifact_actions.txt:650-680"
+  },
+  "cstorms.2355": {
+   "label": {
+    "zh": "结局：痛、怒、悲、惧",
+    "en": "Ending: Pain Rage Grief Fear"
+   },
+   "note": {
+    "zh": "获得遗珍“风暴召唤器”，事件链结束；阿达卡利亚母星从此无法抵达。",
+    "en": "Gain the Tempest Invocator relic and the chain ends; the adAkkaria homeworld stays unreachable."
+   },
+   "evidence": "events/precursor_events_cosmic_storms.txt:4698-4717"
+  }
+ },
+ "nodeLabels": {
+  "cstorms.2260": {
+   "zh": "风暴之语（一）",
+   "en": "The Storm speaks (1/3)"
+  },
+  "cstorms.2265": {
+   "zh": "风暴之语（二）",
+   "en": "The Storm speaks (2/3)"
+  },
+  "cstorms.2270": {
+   "zh": "风暴之语（三）",
+   "en": "The Storm speaks (3/3)"
+  },
+  "cstorms.2320": {
+   "zh": "风暴绝唱：说出名字",
+   "en": "Swansong: we have your names"
+  },
+  "cstorms.2325": {
+   "zh": "风暴绝唱：现在就说",
+   "en": "Swansong: speak them now"
+  },
+  "cstorms.2330": {
+   "zh": "念出所有名字",
+   "en": "The names are recited"
+  },
+  "cstorms.2335": {
+   "zh": "恢复神智：释放或驱使",
+   "en": "Sanity restored: free or command"
+  },
+  "cstorms.2340": {
+   "zh": "决定释放风暴",
+   "en": "Choosing to free the Storm"
+  },
+  "cstorms.2345": {
+   "zh": "决定驱使风暴",
+   "en": "Choosing to command the Storm"
+  }
+ },
+ "notes": [
+  {
+   "doc": "anomalies:STORMS_PREC_ONE",
+   "kind": "review",
+   "zh": "此异常不会自然生成（spawn_chance base 0）。银河生成时选中阿达卡利亚先驱者（需“宇宙风暴”DLC）后，人类玩家在带有该先驱者标记的星系勘察行星时，on_survey_planet 的随机事件（权重25，另有“无事发生”100等）可能触发隐藏事件cstorms.200，为尚无先驱者开场的帝国生成本异常，并在30天后发送通用联络报告。",
+   "en": "This anomaly never spawns naturally (spawn_chance base 0). When the galaxy has the adAkkaria precursor (Cosmic Storms DLC), surveying a planet in a system flagged for it can roll hidden event cstorms.200 (on_survey_planet random_events weight 25, against 100 for nothing and the other precursors); for a player empire with no precursor intro yet it adds this anomaly and sends a generic contact report 30 days later."
+  },
+  {
+   "doc": "cstorms.2350",
+   "kind": "review",
+   "zh": "可选后续：拥有远古遗物DLC时，可花费750稀有文物开启研究“阿达卡利亚的秘密”（project_adakkaria_secrets_of → cstorms.2365），在另一个故事中。",
+   "en": "Optional epilogue: with Ancient Relics, spending 750 minor artifacts starts \"Secrets of the adAkkaria Convention\" (project_adakkaria_secrets_of → cstorms.2365), archived as a separate story."
+  }
+ ],
+ "dialogues": {
+  "cstorms.2260": {
+   "states": {
+    "start": [
+     "cstorms.2260.a",
+     "cstorms.2260.b",
+     "cstorms.2260.c"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "cstorms.2260.c"
+   ],
+   "evidence": "events/precursor_events_cosmic_storms.txt:3771-3808 a/b are is_dialog_only; c fires 2265"
+  },
+  "cstorms.2265": {
+   "states": {
+    "start": [
+     "cstorms.2260.a",
+     "cstorms.2260.b",
+     "cstorms.2260.c",
+     "cstorms.2265.d"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "cstorms.2265.d"
+   ],
+   "evidence": "events/precursor_events_cosmic_storms.txt:3810-3848 a/b/c are is_dialog_only; d fires 2270"
+  },
+  "cstorms.2270": {
+   "states": {
+    "start": [
+     "cstorms.2260.a",
+     "cstorms.2260.b",
+     "cstorms.2260.c",
+     "cstorms.2265.e"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "cstorms.2265.e"
+   ],
+   "evidence": "events/precursor_events_cosmic_storms.txt:3850-3886 a/b/c are is_dialog_only; e creates site_adakkaria_celebration"
+  },
+  "cstorms.2320": {
+   "states": {
+    "start": [
+     "cstorms.2320.a",
+     "cstorms.2320.b",
+     "cstorms.2320.c",
+     "cstorms.2320.d"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "cstorms.2320.d"
+   ],
+   "evidence": "events/precursor_events_cosmic_storms.txt:4428-4466 a/b/c are is_dialog_only; d fires 2325"
+  },
+  "cstorms.2325": {
+   "states": {
+    "start": [
+     "cstorms.2320.a",
+     "cstorms.2320.b",
+     "cstorms.2320.c",
+     "cstorms.2325.d"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "cstorms.2325.d"
+   ],
+   "evidence": "events/precursor_events_cosmic_storms.txt:4468-4507 a/b/c are is_dialog_only; d fires 2330"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "阿达卡利亚先驱者整条主线：开场异常、宣传中心、风扫命运、三咒舰队、崇高仁善协会、庆典学院与风暴对话的两个结局；秘密研究是另一个由稀有文物行动开启的故事。",
+   "en": "The whole adAkkaria precursor chain: opening anomaly, Propaganda Station, Windswept Fates, Fleets of the Thrice Damned, Institute of Exalted Benevolence, Celebration and both Storm endings. The Secrets research is a separate story started by an artifact action."
+  },
+  "sources": [
+   "common/anomalies/102_anomaly_categories_cosmic_storms.txt",
+   "events/precursor_events_cosmic_storms.txt",
+   "common/archaeological_site_types/10_cosmic_storms_arc_sites.txt",
+   "common/special_projects/03_projects_cosmic_storms.txt",
+   "common/event_chains/00_event_chains_cosmic_storms.txt",
+   "common/solar_system_initializers/cosmic_storm_initializers.txt",
+   "common/precursor_civilizations/01_precursor_civilizations_cosmic_storms.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/artifact_actions/artifact_actions.txt"
+  ],
+  "uncertain": [
+   "Whether on_survey_planet random_events re-rolls when the chosen precursor intro event fails its trigger is engine behaviour; the guide only states the listed weights.",
+   "The Secrets epilogue (project-project-adakkaria-secrets-of, c3a) is linked only in notes; a bridge would absorb that separate root story."
+  ],
+  "guide": "public/summaries/anomaly-storms-prec-one.md"
+ }
+}

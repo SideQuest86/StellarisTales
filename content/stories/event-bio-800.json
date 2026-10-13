@@ -1,0 +1,83 @@
+{
+ "id": "event-bio-800",
+ "family": {
+  "title": {
+   "zh": "准备入侵",
+   "en": "Prepare Invasion"
+  },
+  "category": "stories",
+  "start": "bio.800",
+  "members": [
+   "bio.800",
+   "bio.805",
+   "bio.810",
+   "bio.815",
+   "bio.819",
+   "bio.820",
+   "bio.825"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "bio.800",
+   "to": "bio.805",
+   "label": {
+    "zh": "行动第二阶段",
+    "en": "Operation stage 2"
+   },
+   "evidence": "operations.txt:1355-1366 operation_bodysnatcher_prepare_invasion stages: bio.800 -> bio.805 -> bio.810 (each after its difficulty roll)"
+  },
+  {
+   "from": "bio.805",
+   "to": "bio.810",
+   "label": {
+    "zh": "行动第三阶段",
+    "en": "Operation stage 3"
+   },
+   "evidence": "operations.txt:1360-1366 third stage event bio.810"
+  },
+  {
+   "from": "bio.815",
+   "to": "bio.825",
+   "conditional": true,
+   "label": {
+    "zh": "十年内双方开战（目标方看到）",
+    "en": "War between the two within 10 years (seen by the target)"
+   },
+   "evidence": "bio.815 options set timed flags infiltrated_bodysnatcher_N (10 years, L6009-6150); on_war_beginning -> bio.819 (00_on_actions.txt:2620, biogenesis_events.txt:6177-6244) -> bio.820 -> bio.825 to the snatched country after 2 days (L6246-6380)"
+  }
+ ],
+ "endings": {
+  "bio.825": {
+   "label": {
+    "zh": "入侵开始",
+    "en": "The invasion begins"
+   },
+   "note": {
+    "zh": "目标方视角：被渗透的星系和殖民地被夺取，渗透标记随后清除。",
+    "en": "Seen by the target: infiltrated systems and colonies are seized; the infiltration flags are then cleared."
+   },
+   "evidence": "biogenesis_events.txt:6324-6416"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/espionage_operation_types/operations.txt:1300-1368",
+   "events/biogenesis_events.txt:5951-6172",
+   "events/biogenesis_events.txt:6174-6417",
+   "common/on_actions/00_on_actions.txt:2620"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-bio-800.md",
+  "merged": [
+   "event-bio-819"
+  ]
+ }
+}

@@ -2,17 +2,36 @@
   "category": "society",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 483,
-  "docs": 1664,
-  "nodes": 1957,
-  "refs": 293,
-  "crossLinks": 697,
+  "stories": 487,
+  "docs": 1740,
+  "nodes": 2056,
+  "refs": 316,
+  "crossLinks": 694,
   "review": {
-    "partial": 1,
-    "unreviewed": 482
+    "reviewed": 19,
+    "partial": 3,
+    "unreviewed": 465
   },
   "failures": [],
   "items": [
+    {
+      "id": "event-bio-1",
+      "title": "基因重塑",
+      "kind": "family",
+      "docs": 67,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-situation-2000",
+      "title": "万华镜",
+      "kind": "family",
+      "docs": 26,
+      "refs": 3,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
     {
       "id": "pre-ftl-plague",
       "title": "动物传染病",
@@ -41,6 +60,24 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-colony-9820",
+      "title": "旧版编码",
+      "kind": "family",
+      "docs": 14,
+      "refs": 16,
+      "crossLinks": 0,
+      "review": "partial"
+    },
+    {
+      "id": "event-situation-150",
+      "title": "白雪异变",
+      "kind": "family",
+      "docs": 11,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "pre-ftl-new-world-order",
       "title": "新世界秩序",
       "kind": "family",
@@ -50,11 +87,74 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-colony-mod-2",
+      "title": "泰坦巨兽",
+      "kind": "family",
+      "docs": 6,
+      "refs": 4,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-colony-mod-1",
+      "title": "这里发生了什么事？",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-colony-mod-161",
+      "title": "磁力奇迹",
+      "kind": "family",
+      "docs": 4,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-colony-mod-3",
+      "title": "地震！",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-colony-mod-5",
+      "title": "清除",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-colony-mod-4",
+      "title": "观测到彗星经过行星环带",
+      "kind": "family",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-colony-10000",
-      "title": "怪异脚印",
+      "title": "鲜花之庭",
       "kind": "event",
       "docs": 32,
       "refs": 15,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-colony-3005",
+      "title": "传送门",
+      "kind": "event",
+      "docs": 29,
+      "refs": 8,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -65,43 +165,7 @@
       "docs": 27,
       "refs": 26,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-colony-mod-161",
-      "title": "磁力奇迹",
-      "kind": "event",
-      "docs": 24,
-      "refs": 5,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-situation-2020",
-      "title": "渗入能量电网",
-      "kind": "event",
-      "docs": 24,
-      "refs": 2,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-situation-2000",
-      "title": "太空之彩",
-      "kind": "event",
-      "docs": 22,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-situation-2060",
-      "title": "太空之彩",
-      "kind": "event",
-      "docs": 22,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-first-contact-50",
@@ -162,9 +226,9 @@
       "title": "恒星耀斑",
       "kind": "event",
       "docs": 18,
-      "refs": 6,
+      "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-diplomatic-1000",
@@ -213,12 +277,12 @@
     },
     {
       "id": "event-colony-9000",
-      "title": "不稳地面",
+      "title": "尼玛星球",
       "kind": "event",
       "docs": 16,
       "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-situation-500",
@@ -226,6 +290,15 @@
       "kind": "event",
       "docs": 16,
       "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "situation-voidworm-country-situation",
+      "title": "虚空虫行为",
+      "kind": "situation",
+      "docs": 15,
+      "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -257,22 +330,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-colony-9820",
-      "title": "旧版编码",
-      "kind": "event",
-      "docs": 12,
-      "refs": 7,
-      "crossLinks": 3,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-colony-7229",
       "title": "冰川危机",
       "kind": "event",
       "docs": 11,
       "refs": 2,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-observation-200",
@@ -288,18 +352,18 @@
       "title": "神秘迷宫",
       "kind": "event",
       "docs": 11,
-      "refs": 0,
+      "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "partial"
     },
     {
       "id": "event-colony-8001",
-      "title": "返祖现象",
+      "title": "野性过载",
       "kind": "event",
       "docs": 10,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cyber-1255",
@@ -375,12 +439,12 @@
     },
     {
       "id": "event-situation-1125",
-      "title": "飞梭扑火",
+      "title": "吞噬恒星",
       "kind": "event",
       "docs": 10,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-subject-2100",
@@ -425,16 +489,16 @@
       "docs": 9,
       "refs": 8,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-fed-100",
-      "title": "不可能的凹地",
+      "title": "蓝荷计划",
       "kind": "event",
       "docs": 9,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fedev-600",
@@ -448,15 +512,6 @@
     {
       "id": "event-preftl-operation-3060",
       "title": "负伤",
-      "kind": "event",
-      "docs": 9,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-situation-150",
-      "title": "白雪异变",
       "kind": "event",
       "docs": 9,
       "refs": 0,
@@ -559,6 +614,15 @@
       "kind": "event",
       "docs": 7,
       "refs": 11,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-federations3-2001",
+      "title": "谜题一角，转瞬即逝",
+      "kind": "event",
+      "docs": 7,
+      "refs": 6,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -928,7 +992,7 @@
       "kind": "event",
       "docs": 5,
       "refs": 1,
-      "crossLinks": 41,
+      "crossLinks": 36,
       "review": "unreviewed"
     },
     {
@@ -937,7 +1001,7 @@
       "kind": "event",
       "docs": 5,
       "refs": 0,
-      "crossLinks": 14,
+      "crossLinks": 9,
       "review": "unreviewed"
     },
     {
@@ -1733,15 +1797,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-situation-190",
-      "title": "殖民地丢失！",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "situation-situation-toxify-world",
       "title": "毒化[target.GetName]",
       "kind": "situation",
@@ -2248,24 +2303,6 @@
     {
       "id": "event-colony-9080",
       "title": "击败晶态实体",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-colony-9885",
-      "title": "跨次元呼叫",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-colony-9889",
-      "title": "要求",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -3452,6 +3489,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-first-contact-critters-15",
+      "title": "缇扬奇",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-first-contact-critters-20",
       "title": "大而美味",
       "kind": "event",
@@ -4246,15 +4292,6 @@
     {
       "id": "event-shroud-2640",
       "title": "反常灵能",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-situation-2049",
-      "title": "奇迹球",
       "kind": "event",
       "docs": 1,
       "refs": 0,

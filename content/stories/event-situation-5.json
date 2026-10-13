@@ -1,0 +1,88 @@
+{
+ "id": "event-situation-5",
+ "suppress": [
+  {"from": "situations:situation_mysterious_labyrinth", "to": "situation.20", "evidence": "Re-anchored after 15: 20 is an on_fail outcome at 0%, reached only by falling through stage_3 (0-20) whose on_first_enter is 15 (common/situations/01_narrative_situations.txt:249-286)."},
+  {"from": "situations:situation_mysterious_labyrinth", "to": "situation.30", "evidence": "Re-anchored after 15, see the 20 entry."},
+  {"from": "situations:situation_mysterious_labyrinth", "to": "situation.50", "evidence": "Re-anchored after 45: 50 is on_progress_complete at 100%, reached only through stage_3_alt (80-100) whose on_first_enter is 45 (01_narrative_situations.txt:311-338)."},
+  {"from": "situations:situation_mysterious_labyrinth", "to": "situation.55", "evidence": "Re-anchored after 45, see the 50 entry."}
+ ],
+ "bridges": [
+  {
+   "from": "situations:situation_mysterious_labyrinth", "to": "situation.40", "conditional": true,
+   "label": {"zh": "探索其内部：进度升过60%", "en": "Exploring it: progress rises past 60%"},
+   "evidence": "initial_progress 50, bidirectional (common/situations/01_narrative_situations.txt:149-152); approach_investigate +2.5/month (161-166); stage_2_alt (60-80) on_first_enter -> situation.40 (302-310)"
+  },
+  {
+   "from": "situations:situation_mysterious_labyrinth", "to": "situation.10", "conditional": true,
+   "label": {"zh": "监测、隔离或摧毁：进度降到40%以下", "en": "Monitoring, quarantining or destroying: progress falls below 40%"},
+   "evidence": "approach_observe / approach_cordon_off -2.5, approach_destroy -5 per month (01_narrative_situations.txt:167-179); stage_2 (20-40) on_first_enter -> situation.10 (288-296)"
+  },
+  {
+   "from": "situations:situation_mysterious_labyrinth", "to": "situation.25", "conditional": true,
+   "label": {"zh": "以“摧毁它”方式：进度降到20%（或0%）", "en": "With 'Destroy it': progress falls to 20% (or 0%)"},
+   "evidence": "stage_3 on_first_enter: if approach_destroy -> situation.25 (01_narrative_situations.txt:277-281); on_fail: if approach_destroy -> situation.25 (252-255); 25 destroys the situation"
+  },
+  {
+   "from": "situation.10", "to": "situation.15", "conditional": true,
+   "label": {"zh": "未选择摧毁：进度降到20%以下", "en": "Not destroying: progress falls below 20%"},
+   "evidence": "stage_3 (0-20) on_first_enter else -> situation.15 (common/situations/01_narrative_situations.txt:277-285)"
+  },
+  {
+   "from": "situation.15", "to": "situation.20", "conditional": true,
+   "label": {"zh": "进度归零：发现后21个月内必得；之后50%", "en": "Progress reaches 0: certain within 21 months of discovery, else 50%"},
+   "evidence": "on_fail else_if has_situation_flag labyrinth_timer -> situation.20; else random_list 1/1 -> 20 or 30 (01_narrative_situations.txt:256-268); situation.5 after sets labyrinth_timer for 21 months (events/situation_events.txt:75-85)"
+  },
+  {
+   "from": "situation.15", "to": "situation.30", "conditional": true,
+   "label": {"zh": "进度归零（发现21个月后，50%）", "en": "Progress reaches 0 (after 21 months, 50%)"},
+   "evidence": "on_fail else random_list 1 = situation.20, 1 = situation.30 (01_narrative_situations.txt:260-268)"
+  },
+  {
+   "from": "situation.45", "to": "situation.50", "conditional": true,
+   "label": {"zh": "进度满100%：21个月后必得；21个月内50%", "en": "Progress reaches 100%: certain after 21 months, else 50%"},
+   "evidence": "on_progress_complete: if labyrinth_timer -> random_list 1 = situation.50, 1 = situation.55; else situation.50 (01_narrative_situations.txt:321-338)"
+  },
+  {
+   "from": "situation.45", "to": "situation.55", "conditional": true,
+   "label": {"zh": "进度满100%（发现后21个月内，50%）", "en": "Progress reaches 100% (within 21 months of discovery, 50%)"},
+   "evidence": "on_progress_complete if labyrinth_timer random_list (01_narrative_situations.txt:324-334)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive", "members": ["situation.10", "situation.40"],
+   "label": {"zh": "进度从50%向哪边移动", "en": "Which way progress moves from 50%"},
+   "note": {"zh": "双向局势：方式可随时切换（10之后“从远处监测”不再可选），两边的阶段事件各只在首次进入时触发一次。", "en": "A bidirectional situation: approaches can be switched (after 10 'Monitor it from Afar' is no longer offered); each stage event fires only the first time its stage is entered."}
+  },
+  {
+   "kind": "exclusive", "members": ["situation.20", "situation.25", "situation.30", "situation.50", "situation.55"],
+   "label": {"zh": "迷宫的五种结局", "en": "The labyrinth's five endings"}
+  }
+ ],
+ "endings": {
+  "situation.20": {"label": {"zh": "禁欲的奖励：时空异常矿藏", "en": "Obstinance rewarded: space-time anomaly deposit"}, "note": {"zh": "迷宫消失并留言，星球获得时空异常矿藏。", "en": "The labyrinth vanishes leaving a message; the planet gains a space-time anomaly deposit."}, "evidence": "events/situation_events.txt:206-227"},
+  "situation.25": {"label": {"zh": "摧毁：稀有资源", "en": "Destroyed: rare resources"}, "note": {"zh": "获得暗物质与稀有资源。", "en": "Grants dark matter and rare resources."}, "evidence": "events/situation_events.txt:229-255"},
+  "situation.30": {"label": {"zh": "消失：凝聚力加成", "en": "Disappeared: unity"}, "note": {"zh": "迷宫无痕消失，获得凝聚力。", "en": "It vanishes without a trace; grants unity."}, "evidence": "events/situation_events.txt:257-284"},
+  "situation.50": {"label": {"zh": "消失：时空异常矿藏", "en": "Departure: space-time anomaly deposit"}, "note": {"zh": "平静离去，留下时空异常矿藏。", "en": "A quiet departure that leaves a space-time anomaly deposit."}, "evidence": "events/situation_events.txt:341-363"},
+  "situation.55": {"label": {"zh": "轰轰烈烈的退场", "en": "Turbulent departure"}, "note": {"zh": "同样留下时空异常矿藏，但星球多出火山、废墟与深坑障碍。", "en": "Also leaves the deposit, but adds volcano, ruin and sinkhole blockers."}, "evidence": "events/situation_events.txt:365-393"}
+ },
+ "nodeLabels": {
+  "situation.10": {"zh": "惊奇的活动（下降）", "en": "It moves (falling)"},
+  "situation.15": {"zh": "吸引关注（20%）", "en": "Attention seeking (20%)"},
+  "situation.40": {"zh": "探险队报告（60%）", "en": "Expedition report (60%)"},
+  "situation.45": {"zh": "持续的困惑（80%）", "en": "Continued perplexity (80%)"}
+ },
+ "notes": [
+  {"doc": "situation.5", "kind": "review", "zh": "殖民地满4或5年时的随机殖民地事件（权重3/189、3/194），限非AI帝国的非首都、非人造星球；每局一次。选择“派队调查”设为“探索其内部”，“没有时间”设为“从远处监测”。", "en": "Random colony event when a colony turns 4 or 5 (weights 3/189, 3/194), non-AI empires, non-capital non-artificial planets; once per game. 'Send a team' sets 'Explore its Interior', 'No time' sets 'Monitor it from Afar'."},
+  {"doc": "situations:situation_mysterious_labyrinth", "kind": "review", "zh": "（评注）编译器按定义顺序把阶段事件串成25→15→10→40→45；其中25→15、15→10、10→40三条为假连接（双向局势），待编译器支持阶段顺序覆盖后移除。", "en": "(Commentary) The compiler chains stage events in definition order 25→15→10→40→45; the links 25→15, 15→10 and 10→40 are false for this bidirectional situation and await a compiler stage-order override."}
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c7a-society)",
+  "scope": {"zh": "源码与结构已全部审阅，指南完成；树中仍残留编译器按定义顺序生成的三条假阶段连接（25→15、15→10、10→40），需编译器支持阶段顺序覆盖（见台账请求1）。", "en": "Source and structure fully reviewed and the guide is complete; the tree still carries three false definition-order stage links (25→15, 15→10, 10→40) generated by the compiler, pending a stage-order override (ledger request 1)."},
+  "sources": ["events/situation_events.txt", "common/situations/01_narrative_situations.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": ["False compiler stage links remain until stage-order override is supported."],
+  "guide": "public/summaries/event-situation-5.md"
+ }
+}

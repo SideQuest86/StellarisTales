@@ -2,14 +2,15 @@
   "category": "precursors",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 136,
-  "docs": 974,
-  "nodes": 1080,
-  "refs": 106,
-  "crossLinks": 1939,
+  "stories": 143,
+  "docs": 1031,
+  "nodes": 1140,
+  "refs": 109,
+  "crossLinks": 1990,
   "review": {
-    "partial": 8,
-    "unreviewed": 128
+    "reviewed": 7,
+    "partial": 4,
+    "unreviewed": 132
   },
   "failures": [],
   "items": [
@@ -20,7 +21,7 @@
       "docs": 67,
       "refs": 15,
       "crossLinks": 1,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "vultaum",
@@ -29,16 +30,16 @@
       "docs": 61,
       "refs": 14,
       "crossLinks": 1,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "irassian",
-      "title": "伊瑞森协约国",
+      "title": "伊拉斯协约国",
       "kind": "family",
       "docs": 55,
       "refs": 12,
       "crossLinks": 1,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "cybrex",
@@ -47,7 +48,7 @@
       "docs": 54,
       "refs": 11,
       "crossLinks": 1,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "yuht",
@@ -56,7 +57,7 @@
       "docs": 50,
       "refs": 10,
       "crossLinks": 2,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "baol",
@@ -87,12 +88,12 @@
     },
     {
       "id": "precursor-assistance",
-      "title": "先驱者：遗失的线索",
+      "title": "发现先驱",
       "kind": "family",
       "docs": 17,
       "refs": 5,
       "crossLinks": 35,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "the-oracle",
@@ -102,6 +103,15 @@
       "refs": 0,
       "crossLinks": 40,
       "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-prec-one",
+      "title": "远古信号",
+      "kind": "anomaly",
+      "docs": 56,
+      "refs": 2,
+      "crossLinks": 32,
+      "review": "reviewed"
     },
     {
       "id": "site-site-weathermanipulators-coordinatesa-residential-planet",
@@ -149,13 +159,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "site-site-the-chosen-backstory",
-      "title": "废弃观测站",
-      "kind": "site",
-      "docs": 12,
-      "refs": 0,
-      "crossLinks": 3,
-      "review": "unreviewed"
+      "id": "anomaly-storms-prec-wm-one",
+      "title": "远古庇护所",
+      "kind": "anomaly",
+      "docs": 11,
+      "refs": 1,
+      "crossLinks": 4,
+      "review": "partial"
     },
     {
       "id": "event-ancrel-15010",
@@ -230,30 +240,12 @@
       "review": "unreviewed"
     },
     {
-      "id": "site-site-debris-belt",
-      "title": "碎片环带",
-      "kind": "site",
-      "docs": 10,
-      "refs": 0,
-      "crossLinks": 4,
-      "review": "unreviewed"
-    },
-    {
       "id": "site-site-grand-herald",
       "title": "伟大先驱",
       "kind": "site",
       "docs": 10,
       "refs": 2,
       "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-percussive-maintenance",
-      "title": "被毁的空间站",
-      "kind": "site",
-      "docs": 10,
-      "refs": 0,
-      "crossLinks": 4,
       "review": "unreviewed"
     },
     {
@@ -389,6 +381,15 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 13,
+      "review": "unreviewed"
+    },
+    {
+      "id": "site-site-the-chosen-backstory",
+      "title": "废弃观测站",
+      "kind": "site",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 8,
       "review": "unreviewed"
     },
     {
@@ -590,6 +591,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "site-site-debris-belt",
+      "title": "碎片环带",
+      "kind": "site",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "unreviewed"
+    },
+    {
       "id": "site-site-echoes-inside",
       "title": "内部回响",
       "kind": "site",
@@ -614,6 +624,15 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 8,
+      "review": "unreviewed"
+    },
+    {
+      "id": "site-site-percussive-maintenance",
+      "title": "被毁的空间站",
+      "kind": "site",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 9,
       "review": "unreviewed"
     },
     {
@@ -1229,8 +1248,53 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-ancrel-8200",
+      "title": "爆炸性减压",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-ancrel-8201",
+      "title": "爆炸性减压",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-ancrel-8202",
+      "title": "爆炸性减压",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-ancrel-8203",
+      "title": "爆炸性减压",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-ancrel-8210",
       "title": "稀有文物已发现",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-ancrel-8215",
+      "title": "系统关闭",
       "kind": "event",
       "docs": 1,
       "refs": 0,

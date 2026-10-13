@@ -1,0 +1,953 @@
+{
+ "id": "event-bio-1",
+ "family": {
+  "title": {
+   "zh": "基因重塑",
+   "en": "Biomorphosis"
+  },
+  "category": "society",
+  "start": "bio.1",
+  "members": [
+   "bio.1",
+   "bio.2",
+   "bio.3",
+   "situations:genetic_ascension_situation",
+   "situations:genetic_ascension_situation_hive",
+   "bio.5",
+   "bio.10",
+   "bio.15",
+   "bio.20",
+   "bio.25",
+   "bio.30",
+   "bio.35",
+   "bio.40",
+   "bio.66",
+   "bio.67",
+   "bio.68",
+   "bio.86",
+   "bio.151",
+   "bio.50",
+   "bio.55",
+   "bio.60",
+   "bio.65",
+   "bio.200",
+   "bio.210",
+   "bio.215",
+   "bio.220",
+   "bio.225",
+   "bio.70",
+   "bio.75",
+   "bio.80",
+   "bio.85",
+   "bio.230",
+   "bio.235",
+   "bio.240",
+   "bio.250",
+   "bio.90",
+   "bio.95",
+   "bio.100",
+   "bio.105",
+   "bio.260",
+   "bio.265",
+   "bio.270",
+   "bio.280",
+   "bio.295",
+   "bio.300",
+   "bio.110",
+   "bio.115",
+   "bio.120",
+   "bio.125",
+   "bio.310",
+   "bio.315",
+   "bio.325",
+   "bio.330",
+   "bio.335",
+   "bio.130",
+   "bio.135",
+   "bio.140",
+   "bio.145",
+   "bio.340",
+   "bio.350",
+   "bio.365",
+   "bio.150",
+   "bio.155",
+   "bio.160",
+   "bio.165",
+   "bio.375",
+   "bio.380",
+   "bio.385",
+   "bio.390",
+   "bio.405",
+   "bio.410"
+  ],
+  "sources": []
+ },
+ "category": "society",
+ "bridges": [
+  {
+   "from": "bio.15",
+   "to": "bio.20",
+   "label": {
+    "zh": "第三阶段进度完成",
+    "en": "Third stage completes"
+   },
+   "evidence": "12_biogenesis_situations.txt:16-21 on_progress_complete -> bio.20; stage_3 (L42-50) is the last stage"
+  },
+  {
+   "from": "bio.35",
+   "to": "bio.40",
+   "label": {
+    "zh": "第三阶段进度完成",
+    "en": "Third stage completes"
+   },
+   "evidence": "12_biogenesis_situations.txt hive situation on_progress_complete -> bio.40 after stage_3"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.50",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（进度≥20起）",
+    "en": "Random interlude · Purity (from progress 20)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:962 trigger requires the current Purity approach flag, from progress 20; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.55",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（第二或第三阶段）",
+    "en": "Random interlude · Purity (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1041 trigger requires the current Purity approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.60",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（第二或第三阶段）",
+    "en": "Random interlude · Purity (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1101 trigger requires the current Purity approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.65",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（仅第三阶段）",
+    "en": "Random interlude · Purity (stage 3 only)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1161 trigger requires the current Purity approach flag, stage 3 only; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.200",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:3516 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.210",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:3579 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.215",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:3630 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.220",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:3692 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.225",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:3795 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.70",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（进度≥20起）",
+    "en": "Random interlude · Cloning (from progress 20)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1358 trigger requires the current Cloning approach flag, from progress 20; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.75",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（第二或第三阶段）",
+    "en": "Random interlude · Cloning (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1446 trigger requires the current Cloning approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.80",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（第二或第三阶段）",
+    "en": "Random interlude · Cloning (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1511 trigger requires the current Cloning approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.85",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（第二或第三阶段）",
+    "en": "Random interlude · Cloning (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1609 trigger requires the current Cloning approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.230",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（任意阶段）",
+    "en": "Random interlude · Cloning (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:3862 trigger requires the current Cloning approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.235",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（任意阶段）",
+    "en": "Random interlude · Cloning (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:3917 trigger requires the current Cloning approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.240",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（任意阶段）",
+    "en": "Random interlude · Cloning (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:3968 trigger requires the current Cloning approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.250",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（任意阶段）",
+    "en": "Random interlude · Cloning (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:4034 trigger requires the current Cloning approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.90",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（第二或第三阶段）",
+    "en": "Random interlude · Mutation (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1775 trigger requires the current Mutation approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.95",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（第二或第三阶段）",
+    "en": "Random interlude · Mutation (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1843 trigger requires the current Mutation approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.100",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（第二或第三阶段）",
+    "en": "Random interlude · Mutation (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:1910 trigger requires the current Mutation approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.105",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（仅第三阶段）",
+    "en": "Random interlude · Mutation (stage 3 only)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:2092 trigger requires the current Mutation approach flag, stage 3 only; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.260",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（任意阶段）",
+    "en": "Random interlude · Mutation (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:4094 trigger requires the current Mutation approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.265",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（任意阶段）",
+    "en": "Random interlude · Mutation (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:4173 trigger requires the current Mutation approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.270",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（任意阶段）",
+    "en": "Random interlude · Mutation (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:4255 trigger requires the current Mutation approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.280",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（任意阶段）",
+    "en": "Random interlude · Mutation (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:4306 trigger requires the current Mutation approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.295",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·任意路线（进度≥5起）",
+    "en": "Random interlude · any approach (from progress 5)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:4390 trigger requires no approach, from progress 5; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.300",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·任意路线（进度≥5起）",
+    "en": "Random interlude · any approach (from progress 5)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5544-5630); events/biogenesis_events.txt:4447 trigger requires no approach, from progress 5; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.110",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（进度≥20起）",
+    "en": "Random interlude · Purity (from progress 20)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2184 trigger requires the current Purity approach flag, from progress 20; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.115",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（第二或第三阶段）",
+    "en": "Random interlude · Purity (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2241 trigger requires the current Purity approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.120",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（第二或第三阶段）",
+    "en": "Random interlude · Purity (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2332 trigger requires the current Purity approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.125",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（仅第三阶段）",
+    "en": "Random interlude · Purity (stage 3 only)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2403 trigger requires the current Purity approach flag, stage 3 only; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.310",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:4556 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.315",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:4633 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.325",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:4683 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.330",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:4753 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.335",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·纯净（任意阶段）",
+    "en": "Random interlude · Purity (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:4812 trigger requires the current Purity approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.130",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（进度≥20起）",
+    "en": "Random interlude · Cloning (from progress 20)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2460 trigger requires the current Cloning approach flag, from progress 20; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.135",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（第二或第三阶段）",
+    "en": "Random interlude · Cloning (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2551 trigger requires the current Cloning approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.140",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（第二或第三阶段）",
+    "en": "Random interlude · Cloning (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2617 trigger requires the current Cloning approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.145",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（仅第三阶段）",
+    "en": "Random interlude · Cloning (stage 3 only)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2689 trigger requires the current Cloning approach flag, stage 3 only; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.340",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（任意阶段）",
+    "en": "Random interlude · Cloning (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:4896 trigger requires the current Cloning approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.350",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（任意阶段）",
+    "en": "Random interlude · Cloning (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:4946 trigger requires the current Cloning approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.365",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·克隆（任意阶段）",
+    "en": "Random interlude · Cloning (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:5018 trigger requires the current Cloning approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.150",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（进度≥20起）",
+    "en": "Random interlude · Mutation (from progress 20)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2746 trigger requires the current Mutation approach flag, from progress 20; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.155",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（第二或第三阶段）",
+    "en": "Random interlude · Mutation (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2845 trigger requires the current Mutation approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.160",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（第二或第三阶段）",
+    "en": "Random interlude · Mutation (stage 2 or 3)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2899 trigger requires the current Mutation approach flag, stage 2 or 3; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.165",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（仅第三阶段）",
+    "en": "Random interlude · Mutation (stage 3 only)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:2993 trigger requires the current Mutation approach flag, stage 3 only; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.375",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（任意阶段）",
+    "en": "Random interlude · Mutation (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:5072 trigger requires the current Mutation approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.380",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（任意阶段）",
+    "en": "Random interlude · Mutation (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:5149 trigger requires the current Mutation approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.385",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（任意阶段）",
+    "en": "Random interlude · Mutation (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:5199 trigger requires the current Mutation approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.390",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·变异（任意阶段）",
+    "en": "Random interlude · Mutation (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:5250 trigger requires the current Mutation approach flag, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.405",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·任意路线（任意阶段）",
+    "en": "Random interlude · any approach (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:5304 trigger requires no approach, any stage; fires at most once (biogenesis_*_fire flag)"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.410",
+   "conditional": true,
+   "label": {
+    "zh": "随机插曲·任意路线（任意阶段）",
+    "en": "Random interlude · any approach (any stage)"
+   },
+   "evidence": "12_biogenesis_situations.txt on_monthly bio.2/bio.3 -> fire_on_action on_genetic_ascension_*_events_list (00_on_actions.txt:5632-5716); events/biogenesis_events.txt:5375 trigger requires no approach, any stage; fires at most once (biogenesis_*_fire flag)"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "situations:genetic_ascension_situation",
+   "to": "bio.20",
+   "evidence": "12_biogenesis_situations.txt:16-21 on_progress_complete fires bio.20 only after the third stage ends; re-attached after bio.15"
+  },
+  {
+   "from": "situations:genetic_ascension_situation_hive",
+   "to": "bio.40",
+   "evidence": "12_biogenesis_situations.txt (hive) on_progress_complete fires bio.40 after the third stage; re-attached after bio.35"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "situations:genetic_ascension_situation",
+    "situations:genetic_ascension_situation_hive"
+   ],
+   "label": {
+    "zh": "普通帝国 / 蜂巢意识",
+    "en": "Regular empire / hive mind"
+   },
+   "note": {
+    "zh": "bio.1 按是否为蜂巢意识只开启其中一种情势。",
+    "en": "bio.1 starts exactly one of the two situations, depending on whether the empire is a hive mind."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "bio.50",
+    "bio.55",
+    "bio.60",
+    "bio.65",
+    "bio.200",
+    "bio.210",
+    "bio.215",
+    "bio.220",
+    "bio.225"
+   ],
+   "label": {
+    "zh": "纯净路线随机插曲",
+    "en": "Purity random interludes"
+   },
+   "note": {
+    "zh": "情势进行中随机抽取，无固定顺序；每阶段最多抽取两次，每个事件至多发生一次，不会全部发生。",
+    "en": "Drawn at random while the situation runs, in no fixed order; at most two draws per stage, each event at most once, so not all of them occur."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "bio.70",
+    "bio.75",
+    "bio.80",
+    "bio.85",
+    "bio.230",
+    "bio.235",
+    "bio.240",
+    "bio.250"
+   ],
+   "label": {
+    "zh": "克隆路线随机插曲",
+    "en": "Cloning random interludes"
+   },
+   "note": {
+    "zh": "情势进行中随机抽取，无固定顺序；每阶段最多抽取两次，每个事件至多发生一次，不会全部发生。",
+    "en": "Drawn at random while the situation runs, in no fixed order; at most two draws per stage, each event at most once, so not all of them occur."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "bio.90",
+    "bio.95",
+    "bio.100",
+    "bio.105",
+    "bio.260",
+    "bio.265",
+    "bio.270",
+    "bio.280"
+   ],
+   "label": {
+    "zh": "变异路线随机插曲",
+    "en": "Mutation random interludes"
+   },
+   "note": {
+    "zh": "情势进行中随机抽取，无固定顺序；每阶段最多抽取两次，每个事件至多发生一次，不会全部发生。",
+    "en": "Drawn at random while the situation runs, in no fixed order; at most two draws per stage, each event at most once, so not all of them occur."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "bio.295",
+    "bio.300"
+   ],
+   "label": {
+    "zh": "任意路线路线随机插曲",
+    "en": "any approach random interludes"
+   },
+   "note": {
+    "zh": "情势进行中随机抽取，无固定顺序；每阶段最多抽取两次，每个事件至多发生一次，不会全部发生。",
+    "en": "Drawn at random while the situation runs, in no fixed order; at most two draws per stage, each event at most once, so not all of them occur."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "bio.110",
+    "bio.115",
+    "bio.120",
+    "bio.125",
+    "bio.310",
+    "bio.315",
+    "bio.325",
+    "bio.330",
+    "bio.335"
+   ],
+   "label": {
+    "zh": "纯净路线随机插曲（蜂巢）",
+    "en": "Purity random interludes (hive)"
+   },
+   "note": {
+    "zh": "情势进行中随机抽取，无固定顺序；每阶段最多抽取两次，每个事件至多发生一次，不会全部发生。",
+    "en": "Drawn at random while the situation runs, in no fixed order; at most two draws per stage, each event at most once, so not all of them occur."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "bio.130",
+    "bio.135",
+    "bio.140",
+    "bio.145",
+    "bio.340",
+    "bio.350",
+    "bio.365"
+   ],
+   "label": {
+    "zh": "克隆路线随机插曲（蜂巢）",
+    "en": "Cloning random interludes (hive)"
+   },
+   "note": {
+    "zh": "情势进行中随机抽取，无固定顺序；每阶段最多抽取两次，每个事件至多发生一次，不会全部发生。",
+    "en": "Drawn at random while the situation runs, in no fixed order; at most two draws per stage, each event at most once, so not all of them occur."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "bio.150",
+    "bio.155",
+    "bio.160",
+    "bio.165",
+    "bio.375",
+    "bio.380",
+    "bio.385",
+    "bio.390"
+   ],
+   "label": {
+    "zh": "变异路线随机插曲（蜂巢）",
+    "en": "Mutation random interludes (hive)"
+   },
+   "note": {
+    "zh": "情势进行中随机抽取，无固定顺序；每阶段最多抽取两次，每个事件至多发生一次，不会全部发生。",
+    "en": "Drawn at random while the situation runs, in no fixed order; at most two draws per stage, each event at most once, so not all of them occur."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "bio.405",
+    "bio.410"
+   ],
+   "label": {
+    "zh": "任意路线路线随机插曲（蜂巢）",
+    "en": "any approach random interludes (hive)"
+   },
+   "note": {
+    "zh": "情势进行中随机抽取，无固定顺序；每阶段最多抽取两次，每个事件至多发生一次，不会全部发生。",
+    "en": "Drawn at random while the situation runs, in no fixed order; at most two draws per stage, each event at most once, so not all of them occur."
+   }
+  }
+ ],
+ "endings": {
+  "bio.20": {
+   "label": {
+    "zh": "情势完成：采纳传统",
+    "en": "Situation complete: adopt a tradition tree"
+   },
+   "note": {
+    "zh": "选项需曾选择对应路线（获得该路线一级解锁）；完成后情势被销毁。",
+    "en": "Each option needs the matching approach to have been chosen at least once (level-1 unlock); the situation is then destroyed."
+   },
+   "evidence": "biogenesis_events.txt:437-546"
+  },
+  "bio.40": {
+   "label": {
+    "zh": "情势完成：采纳传统",
+    "en": "Situation complete: adopt a tradition tree"
+   },
+   "note": {
+    "zh": "蜂巢版本；荒野起源只能采纳纯净传统。",
+    "en": "Hive version; Wilderness empires can only take Purity."
+   },
+   "evidence": "biogenesis_events.txt:843-958"
+  }
+ },
+ "nodeLabels": {
+  "bio.5": {
+   "zh": "阶段一：选择路线",
+   "en": "Stage 1: choose an approach"
+  },
+  "bio.10": {
+   "zh": "阶段二：可改换路线",
+   "en": "Stage 2: approach may change"
+  },
+  "bio.15": {
+   "zh": "阶段三：最后一次选择",
+   "en": "Stage 3: final choice"
+  },
+  "bio.20": {
+   "zh": "完成：采纳传统",
+   "en": "Complete: tradition tree"
+  },
+  "bio.25": {
+   "zh": "阶段一：选择路线",
+   "en": "Stage 1: choose an approach"
+  },
+  "bio.30": {
+   "zh": "阶段二：可改换路线",
+   "en": "Stage 2: approach may change"
+  },
+  "bio.35": {
+   "zh": "阶段三：最后一次选择",
+   "en": "Stage 3: final choice"
+  },
+  "bio.40": {
+   "zh": "完成：采纳传统",
+   "en": "Complete: tradition tree"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/ascension_perks/00_ascension_paths.txt:11-35",
+   "events/biogenesis_events.txt:8-958",
+   "common/situations/12_biogenesis_situations.txt:8-322 (hive version from L326)",
+   "common/on_actions/00_on_actions.txt:5544-5716",
+   "events/biogenesis_events.txt:960-5430 (random events)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-bio-1.md",
+  "merged": [
+   "event-bio-50",
+   "event-bio-55",
+   "event-bio-60",
+   "event-bio-65",
+   "event-bio-200",
+   "event-bio-210",
+   "event-bio-215",
+   "event-bio-220",
+   "event-bio-225",
+   "event-bio-70",
+   "event-bio-75",
+   "event-bio-80",
+   "event-bio-85",
+   "event-bio-230",
+   "event-bio-235",
+   "event-bio-240",
+   "event-bio-250",
+   "event-bio-90",
+   "event-bio-95",
+   "event-bio-100",
+   "event-bio-105",
+   "event-bio-260",
+   "event-bio-265",
+   "event-bio-270",
+   "event-bio-280",
+   "event-bio-295",
+   "event-bio-300",
+   "event-bio-110",
+   "event-bio-115",
+   "event-bio-120",
+   "event-bio-125",
+   "event-bio-310",
+   "event-bio-315",
+   "event-bio-325",
+   "event-bio-330",
+   "event-bio-335",
+   "event-bio-130",
+   "event-bio-135",
+   "event-bio-140",
+   "event-bio-145",
+   "event-bio-340",
+   "event-bio-350",
+   "event-bio-365",
+   "event-bio-150",
+   "event-bio-155",
+   "event-bio-160",
+   "event-bio-165",
+   "event-bio-375",
+   "event-bio-380",
+   "event-bio-385",
+   "event-bio-390",
+   "event-bio-405",
+   "event-bio-410"
+  ]
+ }
+}

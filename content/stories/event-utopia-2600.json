@@ -1,0 +1,46 @@
+{
+ "id": "event-utopia-2600",
+ "family": {
+  "title": {"zh": "心胜于物", "en": "Mind Over Matter"},
+  "category": "stories",
+  "start": "utopia.2600",
+  "members": ["utopia.2600", "utopia.2605", "utopia.2606", "utopia.2607", "utopia.2608", "utopia.2650"]
+ },
+ "bridges": [
+  {"from": "utopia.2600", "to": "utopia.2606", "conditional": true,
+   "label": {"zh": "物种带有“灵能潜势”时随机发生（平均220个月）：非格式塔有机帝国", "en": "While the species is Latent Psionic, at random (MTTH 220 months): organic non-gestalt empire"},
+   "evidence": "events/utopia_on_action_events.txt:1568-1628 utopia.2605 hidden, mean_time_to_happen months = 220, requires owner_species is_latent_psionic_species and a same-species leader without psionic/chosen trait; immediate: is_robot_empire = no and is_gestalt = no -> 2606. 2600's option grants the latent psionic trait (1371-1373 tooltip add_latent_psionic_trait)"},
+  {"from": "utopia.2600", "to": "utopia.2607", "conditional": true,
+   "label": {"zh": "带有“灵能潜势”时随机发生：非格式塔机械帝国", "en": "While latent psionic, at random: machine non-gestalt empire"},
+   "evidence": "events/utopia_on_action_events.txt:1617-1622 utopia.2605 else_if is_robot_empire = yes, is_gestalt = no -> 2607"},
+  {"from": "utopia.2600", "to": "utopia.2608", "conditional": true,
+   "label": {"zh": "带有“灵能潜势”时随机发生：格式塔帝国（统治者）", "en": "While latent psionic, at random: gestalt empire (the ruler)"},
+   "evidence": "events/utopia_on_action_events.txt:1624-1626 utopia.2605 else -> 2608; 1764-1766 2608 targets the ruler"},
+  {"from": "utopia.2600", "to": "utopia.2650", "conditional": true,
+   "label": {"zh": "采纳“大觉醒”传统（需先有“灵能军团”与“读心术”）", "en": "Adopt the Great Awakening tradition (requires Psi Corps and Mind Readers)"},
+   "evidence": "common/traditions/01_psionics.txt:103-118 tr_psionics_psionic_assimilation possible = tr_psionics_psi_corps + tr_psionics_mind_readers; on_enabled fires utopia.2650; 1-23 tr_psionics_adopt fires utopia.2600"},
+  {"from": "utopia.2650", "to": "utopia.2655", "conditional": true,
+   "label": {"zh": "采纳突入虚境传统（见“虚境”）", "en": "Adopt Breach the Shroud (see 'The Shroud')"},
+   "evidence": "common/traditions/01_psionics.txt:123-135 tr_psionics_breach_shroud possible = tr_psionics_psionic_assimilation; on_enabled fires utopia.2655"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["utopia.2606", "utopia.2607", "utopia.2608"],
+   "label": {"zh": "按帝国类型三选一", "en": "One version by empire type"},
+   "note": {"zh": "同一隐藏事件2605按帝国类型选择其一；只要仍有“灵能潜势”物种且有合格领袖，可多次发生。", "en": "The same hidden event 2605 picks one by empire type; it can repeat while a latent psionic species has an eligible leader."}}
+ ],
+ "nodeLabels": {
+  "utopia.2602": {"zh": "其他帝国收到的通知", "en": "Notice to other empires"},
+  "utopia.2652": {"zh": "其他帝国收到的通知", "en": "Notice to other empires"},
+  "observer.5": {"zh": "观察者视角", "en": "Observer view"},
+  "observer.6": {"zh": "观察者视角", "en": "Observer view"}
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {"zh": "灵能传统线前两段：采纳灵能传统（心胜于物）、“灵能潜势”期间的随机灵能者、“大觉醒”传统及其对其他帝国的通知；“突入虚境”之后见“虚境”故事。", "en": "The first two steps of the Psionics traditions: adopting them (Mind Over Matter), random psychics while latent psionic, the Great Awakening tradition and the notices to other empires; Breach the Shroud onwards is the story 'The Shroud'."},
+  "sources": ["events/utopia_on_action_events.txt", "common/traditions/01_psionics.txt", "common/scripted_effects/shroud_shadows_scripted_effects.txt", "events/observer_events.txt"],
+  "uncertain": ["utopia.2602 / 2652 and observer.5 / 6 are also fired by Shadows of the Shroud content (shroud.2750, shroud.8310, shroud.2780, shroud.2830) and appear in those stories as well."],
+  "guide": "public/summaries/event-utopia-2600.md"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "id": "event-colony-8001",
+ "titleFrom": "event_chains:feral_overload_chain",
+ "category": "society",
+ "endings": {
+  "colony.8005": {"label": {"zh": "结局：利用孢子", "en": "Ending: harnessing the spores"}, "note": {"zh": "获得孢子喷口矿藏与永久修正，事件链结束。", "en": "Adds the spore vents deposit and a permanent modifier; the chain ends."}, "evidence": "events/colony_events_3.txt:3326-3354."},
+  "colony.8006": {"label": {"zh": "结局：焚尽洞穴蘑菇", "en": "Ending: the cave mushrooms burned"}, "note": {"zh": "获得洞穴蘑菇矿脉矿藏，事件链结束。", "en": "Adds the cave shroom veins deposit; the chain ends."}, "evidence": "events/colony_events_3.txt:3356-3380."}
+ },
+ "nodeLabels": {"event_chains:feral_overload_chain": {"zh": "事件链概览", "en": "Event chain overview"}},
+ "notes": [
+  {"doc": "colony.8003", "kind": "review", "zh": "审阅注：本事件开启“野性过载”事件链，按星球人口杀死0–10个人口，并增加50荒废度。", "en": "Review note: this event starts the Feral Overload event chain, kills 0–10 pops depending on population, and adds 50 devastation."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "野性过载全部6个事件、3个项目与事件链概览。", "en": "All 6 Feral Overload events, 3 projects and the chain overview."},
+  "sources": ["events/colony_events_3.txt:3128-3380", "common/special_projects/00_projects_federations.txt:8-59", "common/event_chains/00_event_chains.txt:335", "common/on_actions/00_on_actions.txt:3808"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-8001.md"
+ }
+}

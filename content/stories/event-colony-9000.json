@@ -1,0 +1,36 @@
+{
+ "id": "event-colony-9000",
+ "titleFrom": "event_chains:nemma_world_chain",
+ "category": "society",
+ "endings": {
+  "colony.9040": {
+   "label": {"zh": "结局：开采外壳", "en": "Ending: mining the shells"},
+   "note": {"zh": "获得尼玛矿业矿藏，事件链结束。", "en": "Adds the Nemma mining deposit; the event chain ends."},
+   "evidence": "events/colony_events_3.txt:4168-4187 end_event_chain, add_deposit d_turtle_miner."
+  },
+  "colony.9045": {
+   "label": {"zh": "结局：宰杀尼玛", "en": "Ending: the Nemmas slaughtered"},
+   "note": {"zh": "仅灭绝主义帝国可走此路：获得3000矿物与3000食物。", "en": "Homicidal empires only: grants 3000 minerals and 3000 food."},
+   "evidence": "events/colony_events_3.txt:3913-3923 (9010.d requires is_homicidal), 4190-4235 immediate minerals 3000, food 3000."
+  }
+ },
+ "notes": [
+  {"doc": "colony.9005", "kind": "review", "zh": "审阅注：选择“让这些年轻人玩儿去吧”会结束事件链，并把星球修正换成永久的“不受打扰”版本（colony_events_3.txt:3822-3839）。", "en": "Review note: \"Allow the youths their fun\" ends the chain and swaps the planet modifier for its permanent left-alone version (colony_events_3.txt:3822-3839)."},
+  {"doc": "colony.9020", "kind": "review", "zh": "审阅注：繁育是循环：每次“生命的奇迹”增加一只尼玛（矿藏）。少于6只时可继续，约3600天后再次随机得到成功（权重2）或失败（权重1×当前数量）；“环境过载”后重试同样按3:1×数量随机。达到6只后只能选择结束。", "en": "Review note: breeding loops. Each Miracle of Life adds one Nemma deposit. Below six you may continue; ~3600 days later the next result is success (weight 2) or failure (weight 1×current count); after Overpopulation the retry is 3 : 1×count. At six Nemmas only the closing option remains."},
+  {"doc": "colony.9035", "kind": "review", "zh": "审阅注：只有非格式塔、非威权帝国会在奴役后1000–1050天遇到抗议；镇压抗议会永久保留奴役并结束事件链。", "en": "Review note: only non-gestalt, non-authoritarian empires get the protest 1000–1050 days after enslavement; suppressing it keeps the enslavement permanently and ends the chain."}
+ ],
+ "nodeLabels": {
+  "event_chains:nemma_world_chain": {"zh": "事件链概览", "en": "Event chain overview"},
+  "colony.9010": {"zh": "四种方案", "en": "Four proposals"},
+  "colony.9020": {"zh": "繁育循环", "en": "Breeding cycle"}
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "尼玛星球事件链全部10个事件、5个特殊项目与事件链概览。", "en": "All 10 events, 5 special projects and the overview card of the Nemma World chain."},
+  "sources": ["events/colony_events_3.txt:3704-4235", "common/special_projects/00_projects_3.txt:1103-1171", "common/event_chains/00_event_chains.txt:366", "common/on_actions/00_on_actions.txt:3768"],
+  "uncertain": ["Self-repeating edges (9020 -> 9020, 9025 -> 9025) are not drawn by the compiler; they are described in the note and guide."],
+  "guide": "public/summaries/event-colony-9000.md"
+ }
+}

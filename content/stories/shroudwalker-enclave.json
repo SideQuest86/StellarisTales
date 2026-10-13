@@ -1,0 +1,107 @@
+{
+ "id": "shroudwalker-enclave",
+ "family": {
+  "title": {"zh": "虚境行者城邦", "en": "Shroudwalker Enclave"},
+  "category": "leviathans",
+  "start": "enclave.400",
+  "members": [
+   "enclave.400", "enclave.404", "enclave.405", "enclave.410", "enclave.420", "enclave.425",
+   "enclave.7000", "enclave.7050", "enclave.7055", "situations:shroudwalker_spy_network",
+   "enclave.7060", "enclave.7065", "enclave.7070", "enclave.7075",
+   "enclave.7100", "enclave.7105", "enclave.7110", "enclave.7250", "enclave.7255",
+   "shroud.5300", "shroud.5305", "shroud.5310", "shroud.5315", "shroud.5317", "shroud.5318",
+   "shroud.5320", "shroud.5325", "shroud.5326", "shroud.5327", "shroud.5330", "shroud.5350", "shroud.5355",
+   "special_projects:DELVING_RITUAL"
+  ],
+  "sources": []
+ },
+ "hubs": [
+  "shroud.4000", "shroud.4010", "shroud.4020", "shroud.4030", "shroud.4050", "shroud.4060",
+  "shroud.4070", "shroud.4080", "shroud.4090", "shroud.4100", "shroud.4110", "shroud.4120"
+ ],
+ "bridges": [
+  {
+   "from": "situations:shroudwalker_spy_network", "to": "enclave.7060", "conditional": true,
+   "label": {"zh": "洞见完成：策反一名线人（权重40/100）", "en": "Insight complete: an asset (weight 40/100)"},
+   "evidence": "common/situations/01_overlord_situations.txt:254-263 on_progress_complete fires on_shroudwalker_insight_situation_finish; common/on_actions/00_on_actions.txt:4960-4966 random_events 40 = enclave.7060"
+  },
+  {
+   "from": "situations:shroudwalker_spy_network", "to": "enclave.7065", "conditional": true,
+   "label": {"zh": "洞见完成：间谍网络提升（权重25/100）", "en": "Insight complete: spy network boost (weight 25/100)"},
+   "evidence": "common/on_actions/00_on_actions.txt:4963 random_events 25 = enclave.7065 (on_shroudwalker_insight_situation_finish)"
+  },
+  {
+   "from": "situations:shroudwalker_spy_network", "to": "enclave.7070", "conditional": true,
+   "label": {"zh": "洞见完成：获得情报（权重25/100）", "en": "Insight complete: intel (weight 25/100)"},
+   "evidence": "common/on_actions/00_on_actions.txt:4964 random_events 25 = enclave.7070 (on_shroudwalker_insight_situation_finish)"
+  },
+  {
+   "from": "situations:shroudwalker_spy_network", "to": "enclave.7075", "conditional": true,
+   "label": {"zh": "洞见完成：一无所获（权重10/100）", "en": "Insight complete: nothing (weight 10/100)"},
+   "evidence": "common/on_actions/00_on_actions.txt:4965 random_events 10 = enclave.7075 (on_shroudwalker_insight_situation_finish)"
+  },
+  {
+   "from": "enclave.420", "choice": "enclave.420.b", "to": "enclave.4200", "conditional": true,
+   "label": {"zh": "在恒星基地建成虚境信标后", "en": "Once the Shroud Beacon is built on a starbase"},
+   "evidence": "enclave.420.b grants the Shroud Beacon licence (overlord_enclaves_events.txt:7422-7484); common/starbase_buildings/00_starbase_buildings.txt:1185 shroud_beacon fires enclave.4200 on completion"
+  },
+  {
+   "from": "enclave.7100", "choice": "enclave.7100.a", "to": "enclave.8000", "conditional": true,
+   "label": {"zh": "若日后攻击虚境行者，导师将离去", "en": "If we later attack the Shroudwalkers, the teacher leaves"},
+   "evidence": "on_entering_battle -> enclave.7200 (overlord_enclaves_events.txt:13203-13234) requires a shroudwalker_teacher leader, then enclave.8000 after 5 days"
+  }
+ ],
+ "suppress": [
+  {"from": "shroud.5325", "to": "shroud.5305", "evidence": "shroud.5325.zro/.thread -> shroud.5326 (shroud_events.txt:18129-18146) re-opens the Shroud-mastery submenu shroud.5300, which the compiler folds; its sub-services are not results of the payment"},
+  {"from": "shroud.5325", "to": "shroud.5310", "evidence": "as above: folded submenu shroud.5300 re-opened by shroud.5326"},
+  {"from": "shroud.5325", "to": "shroud.5315", "evidence": "as above: folded submenu shroud.5300 re-opened by shroud.5326"},
+  {"from": "shroud.5325", "to": "shroud.5320", "evidence": "as above: folded submenu shroud.5300 re-opened by shroud.5326"},
+  {"from": "shroud.5325", "to": "shroud.5330", "evidence": "as above: folded submenu shroud.5300 re-opened by shroud.5326"},
+  {"from": "shroud.5330", "to": "shroud.5305", "evidence": "shroud.5330.zro/.thread re-open the Shroud-mastery submenu shroud.5300 (shroud_events.txt:18249,18264); folded by the compiler"},
+  {"from": "shroud.5330", "to": "shroud.5310", "evidence": "as above: folded submenu shroud.5300"},
+  {"from": "shroud.5330", "to": "shroud.5315", "evidence": "as above: folded submenu shroud.5300"},
+  {"from": "shroud.5330", "to": "shroud.5320", "evidence": "as above: folded submenu shroud.5300"},
+  {"from": "shroud.5330", "to": "shroud.5325", "evidence": "as above: folded submenu shroud.5300"}
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": ["enclave.7060", "enclave.7065", "enclave.7070", "enclave.7075"],
+   "label": {"zh": "洞见局势完成时随机给出一种结果", "en": "One random result when the Insight situation completes"},
+   "note": {"zh": "权重40/25/25/10（00_on_actions.txt:4960-4966）。", "en": "Weights 40/25/25/10 (00_on_actions.txt:4960-4966)."}
+  }
+ ],
+ "nodeLabels": {
+  "enclave.405": {"zh": "虚境行者联络菜单", "en": "Shroudwalker contact menu"},
+  "enclave.410": {"zh": "预知：询问命运", "en": "Divination: ask our fate"},
+  "enclave.420": {"zh": "虚境信标", "en": "Shroud Beacon"},
+  "enclave.7050": {"zh": "洞见他国", "en": "Insight on an empire"},
+  "enclave.7100": {"zh": "延请导师", "en": "Request a teacher"},
+  "enclave.7250": {"zh": "泽珞开采", "en": "Zro harvesting"},
+  "enclave.7110": {"zh": "面纱旅人", "en": "The Veilfarer"},
+  "shroud.5305": {"zh": "与虚境存在交流", "en": "Commune with Shroud entities"},
+  "shroud.5310": {"zh": "加深庇护者调谐", "en": "Deepen patron attunement"},
+  "shroud.5315": {"zh": "探求虚境秘密", "en": "Seek secrets of the Shroud"},
+  "shroud.5320": {"zh": "灵能光环说明", "en": "About Psionic Auras"},
+  "shroud.5325": {"zh": "增强灵能光环", "en": "Amplify our Psionic Aura"},
+  "shroud.5330": {"zh": "扩展庇护者领域", "en": "Expand the patron's domain"},
+  "shroud.5350": {"zh": "开启心灵", "en": "Open our minds"},
+  "shroud.5355": {"zh": "开启星界裂隙", "en": "Open an Astral Rift"},
+  "enclave.7000": {"zh": "灵能帝国的引见", "en": "Introduction to psionic empires"}
+ },
+ "notes": [
+  {"doc": "enclave.405", "kind": "review", "zh": "审阅注：此菜单在三种情况下打开——首次接触完成或“通讯已建立”后（enclave.404），以及之后每次外交联络（enclave.400，on_custom_diplomacy）。服务选项返回本菜单，是可重复使用的服务枢纽，而非线性剧情。", "en": "Review note: this menu opens after first contact or 'Communications Established' (enclave.404) and on every later diplomatic contact (enclave.400, on_custom_diplomacy). Service options return here: it is a repeatable service hub, not a linear chain."},
+  {"doc": "shroud.5305", "kind": "review", "zh": "审阅注：“寻求虚境掌控”先打开一个继承本菜单文本的子菜单（shroud.5300，shroud_events.txt:17388），编译器将其折叠，因此六项子服务直接挂在本选项下。", "en": "Review note: 'We seek mastery of the Shroud' first opens a submenu that inherits this window's text (shroud.5300, shroud_events.txt:17388); the compiler folds it, so its six sub-services hang directly under that option."},
+  {"doc": "shroud.5325", "kind": "review", "zh": "审阅注：支付后回到“虚境掌控”子菜单，并在10年后询问是否续约（shroud.5327）。", "en": "Review note: after paying, the Shroud-mastery submenu re-opens, and a renewal request follows 10 years later (shroud.5327)."},
+  {"doc": "enclave.7110", "kind": "review", "zh": "审阅注：仅当曾在首次接触事件fircon.1212中听过“面纱旅人”的故事（first_contact_dlc_events.txt:711设置标记）且尚未揭秘时出现；打捞者城邦菜单也有同一询问，同样转到本窗口。", "en": "Review note: only offered after hearing the Veilfarer's story in first-contact event fircon.1212 (flag set at first_contact_dlc_events.txt:711) and before the secret is revealed; the Salvager menu offers the same question and opens this same window."},
+  {"doc": "enclave.7000", "kind": "review", "zh": "审阅注：采纳灵能传统“灵能同化”或“大觉醒”后360–1080天，若尚未联络虚境行者，则由其主动问候并建立通讯（01_psionics.txt:112；01_psionics_shroud.txt:166/201）。", "en": "Review note: 360-1080 days after adopting the psionic traditions 'Psionic Assimilation' or 'Great Awakening', the Shroudwalkers greet an empire they have no contact with yet and establish communications (01_psionics.txt:112; 01_psionics_shroud.txt:166/201)."}
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {"zh": "进行中", "en": "in progress"},
+  "sources": ["events/overlord_enclaves_events.txt", "events/shroud_events.txt", "common/situations/01_overlord_situations.txt", "common/on_actions/00_on_actions.txt"],
+  "guide": "public/summaries/shroudwalker-enclave.md"
+ }
+}

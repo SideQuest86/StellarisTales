@@ -2,13 +2,14 @@
   "category": "rifts",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 70,
-  "docs": 479,
-  "nodes": 632,
-  "refs": 153,
+  "stories": 68,
+  "docs": 474,
+  "nodes": 631,
+  "refs": 157,
   "crossLinks": 2,
   "review": {
-    "unreviewed": 69,
+    "reviewed": 6,
+    "unreviewed": 61,
     "partial": 1
   },
   "failures": [],
@@ -20,7 +21,7 @@
       "docs": 29,
       "refs": 29,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-cleaning-drones",
@@ -71,10 +72,10 @@
       "id": "rift-riftworld",
       "title": "残毁行星",
       "kind": "rift",
-      "docs": 14,
-      "refs": 12,
+      "docs": 15,
+      "refs": 16,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-garden",
@@ -119,7 +120,7 @@
       "docs": 12,
       "refs": 4,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-tiny-planet",
@@ -185,6 +186,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "rift-corridors",
+      "title": "无尽长廊",
+      "kind": "rift",
+      "docs": 9,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "rift-fluid",
       "title": "流体",
       "kind": "rift",
@@ -200,7 +210,7 @@
       "docs": 9,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-microverse",
@@ -290,16 +300,7 @@
       "docs": 7,
       "refs": 2,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "rift-corridors",
-      "title": "无尽长廊",
-      "kind": "rift",
-      "docs": 7,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-dimensional-dump",
@@ -352,15 +353,6 @@
       "kind": "event",
       "docs": 6,
       "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-rift-30",
-      "title": "荒废度",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -475,15 +467,6 @@
     {
       "id": "event-astral-planes-6095",
       "title": "最后的逃亡者",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-rift-120",
-      "title": "活埋",
       "kind": "event",
       "docs": 2,
       "refs": 0,

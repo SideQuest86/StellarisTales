@@ -1,0 +1,110 @@
+{
+ "id": "event-colony-9820",
+ "family": {
+  "title": {"zh": "旧版编码", "en": "An Old Code"},
+  "category": "society",
+  "start": "colony.9820",
+  "members": ["colony.9820", "colony.9821", "colony.9822", "colony.9840", "situations:situation_negative_mass", "colony.9850", "colony.9851",
+              "colony.9855", "colony.9860", "colony.9865", "colony.9866", "colony.9870", "colony.9875", "colony.9880", "colony.9885", "colony.9889", "colony.9890"]
+ },
+ "titleFrom": "colony.9820",
+ "category": "society",
+ "stageSequence": {"situations:situation_negative_mass": false},
+ "bridges": [
+  {"from": "colony.9880", "to": "colony.9885", "conditional": true,
+   "label": {"zh": "地面战：我方守住星球", "en": "Ground battle: our defenders hold the planet"},
+   "evidence": "common/on_actions/00_on_actions.txt:860-870 on_colony_defenders_win -> colony.9885 (# Negative mass, defended against rebels); colony_events_3.txt:8932-8937 requires the b_world_invasion country flag set by 9880 (8703-8704) and the attacker to be the dominated_drones country."},
+  {"from": "colony.9880", "to": "colony.9890", "conditional": true,
+   "label": {"zh": "地面战：被支配的子个体夺取星球", "en": "Ground battle: the dominated drones take the planet"},
+   "evidence": "common/on_actions/00_on_actions.txt:834 on_colony_attackers_win -> colony.9889 (# (Hidden) Negative Mass: lost to rebels); 9889 (colony_events_3.txt:8983-9007) fires colony.9890 for the defender with the b_world_invasion flag."},
+  {"from": "situations:situation_negative_mass", "to": "colony.9855", "conditional": true,
+   "label": {"zh": "拯救方案（非格式塔）：进度降到74以下（第二阶段）33天后", "en": "Rescue approach, non-gestalt: 33 days after progress falls below 74 (stage 2)"},
+   "evidence": "common/situations/01_narrative_situations.txt:1663 initial_progress 75 (stage 3); :1703-1707 rescue approach subtracts 7/month; :1788-1795 stage_2 end 74 on_first_enter colony.9855 days 33; events/colony_events_3.txt:8475-8478 9855 requires approach_save_b_world and a non-gestalt owner."},
+  {"from": "situations:situation_negative_mass", "to": "colony.9875", "conditional": true,
+   "label": {"zh": "拯救方案（格式塔）：进度降到74以下（第二阶段）33天后", "en": "Rescue approach, gestalt: 33 days after progress falls below 74 (stage 2)"},
+   "evidence": "01_narrative_situations.txt:1788-1795 stage_2 on_first_enter colony.9875 days 33; colony_events_3.txt:8650-8653 9875 requires approach_save_b_world and a gestalt owner."},
+  {"from": "colony.9855", "to": "colony.9860", "conditional": true,
+   "label": {"zh": "进度继续下降到30以下（第一阶段）12天后", "en": "12 days after progress falls to 30 or below (stage 1)"},
+   "evidence": "01_narrative_situations.txt:1779-1786 stage_1 end 30 on_first_enter colony.9860 days 12; colony_events_3.txt:8506-8509 9860 requires the rescue approach and a non-gestalt owner."},
+  {"from": "colony.9875", "to": "colony.9880", "conditional": true,
+   "label": {"zh": "进度继续下降到30以下（第一阶段）12天后", "en": "12 days after progress falls to 30 or below (stage 1)"},
+   "evidence": "01_narrative_situations.txt:1779-1786 stage_1 on_first_enter colony.9880 days 12; colony_events_3.txt:8699-8702 9880 requires the rescue approach and a gestalt owner."},
+  {"from": "colony.9860", "to": "colony.9850", "conditional": true,
+   "label": {"zh": "进度降到0：成功把贝塔世界带过来", "en": "Progress reaches 0: the Beta-world is brought over"},
+   "evidence": "01_narrative_situations.txt:1677-1680 on_fail (#Save the world) -> colony.9850."},
+  {"from": "colony.9880", "to": "colony.9850", "conditional": true,
+   "label": {"zh": "进度降到0：成功把贝塔世界带过来", "en": "Progress reaches 0: the Beta-world is brought over"},
+   "evidence": "01_narrative_situations.txt:1677-1680 on_fail (#Save the world) -> colony.9850."},
+  {"from": "situations:situation_negative_mass", "to": "colony.9870", "conditional": true,
+   "label": {"zh": "进度升到95（第四阶段）：观测或掠夺，或救援跟不上", "en": "Progress climbs to 95 (stage 4): observing or plundering, or a rescue that falls behind"},
+   "evidence": "01_narrative_situations.txt:1681-1702 monthly progress base 3 plus 1 per year of age (10 after five years); :1802-1808 stage_4 on_first_enter colony.9870; colony_events_3.txt:8601-8605 9870 only if progress is still below 100."},
+  {"from": "colony.9870", "to": "colony.9851", "conditional": true,
+   "label": {"zh": "进度达到100：贝塔宇宙毁灭", "en": "Progress reaches 100: the Beta-Universe is lost"},
+   "evidence": "01_narrative_situations.txt:1673-1676 on_progress_complete (#Lose the world) -> colony.9851."},
+  {"from": "colony.9870", "choice": "colony.9870.c", "to": "colony.9855", "conditional": true,
+   "label": {"zh": "改为拯救后，进度回落到74以下（非格式塔）", "en": "After switching to the rescue, progress falls below 74 (non-gestalt)"},
+   "evidence": "colony_events_3.txt:8618-8627 9870.c sets willing_to_help, approach_save_b_world and redoubled_efforts (-10/month); stage_2 has not been entered yet on this route, so its on_first_enter fires when progress drops below 74."},
+  {"from": "colony.9870", "choice": "colony.9870.c", "to": "colony.9875", "conditional": true,
+   "label": {"zh": "改为拯救后，进度回落到74以下（格式塔）", "en": "After switching to the rescue, progress falls below 74 (gestalt)"},
+   "evidence": "colony_events_3.txt:8618-8627 as above; 9875 is the gestalt stage-2 event."}
+ ],
+ "suppress": [
+  {"from": "situations:situation_negative_mass", "to": "colony.9860", "evidence": "Stage 1 (progress <= 30) is reached only after stage 2 on the rescue route (initial_progress 75); placed under 9855 by a reviewed bridge instead (01_narrative_situations.txt:1663, 1779-1796)."},
+  {"from": "colony.9850", "to": "event_chains:cybernetic_creed_chain", "evidence": "Side call of the generic scripted effect generate_start_buildings_and_districts (common/scripted_effects/01_start_of_game_effects.txt:916) used when 9850 spawns the Beta-world; not a story continuation."},
+  {"from": "colony.9850", "to": "machine_age.2150", "evidence": "Same generic start-of-game effect (01_start_of_game_effects.txt:920); not a story continuation."},
+  {"from": "colony.9850", "to": "clones.10", "evidence": "Same generic start-of-game effect (01_start_of_game_effects.txt:1466); not a story continuation."}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["colony.9855", "colony.9875"], "label": {"zh": "第二阶段：非格式塔 / 格式塔", "en": "Stage 2: non-gestalt / gestalt"}, "note": {"zh": "两者都只在拯救方案下发生，按帝国是否为格式塔二选一。", "en": "Both require the rescue approach; which one fires depends on whether the empire is gestalt."}},
+  {"kind": "exclusive", "members": ["colony.9860", "colony.9880"], "label": {"zh": "第一阶段：非格式塔 / 格式塔", "en": "Stage 1: non-gestalt / gestalt"}, "note": {"zh": "同上，进度降到30以下时发生。", "en": "As above, when progress falls to 30 or below."}},
+  {"kind": "exclusive", "members": ["colony.9850", "colony.9851"], "label": {"zh": "局势结局", "en": "Situation outcomes"}, "note": {"zh": "进度降到0为成功（9850），达到100为失败（9851）。", "en": "Progress 0 = rescue (9850); progress 100 = loss (9851)."}},
+  {"kind": "exclusive", "members": ["colony.9885", "colony.9890"], "label": {"zh": "地面战结果", "en": "Ground battle result"}, "note": {"zh": "绝望子个体（9880）派陆军夺取星球后，二者择一：守住（9885，若曾安抚可再降15进度）或失守（9890，进度+15，方案锁定为拯救）。", "en": "After Desperate Drones (9880) lands its armies, one of the two follows: the planet holds (9885; −15 progress if you had calmed them) or falls (9890; +15 progress, approach locked to the rescue)."}}
+ ],
+ "dialogues": {
+  "colony.9821": {
+   "states": {"start": ["colony.9821.a", "colony.9821.a.robot", "colony.9821.b", "colony.9821.b.robot", "colony.9821.c", "colony.9821.c.robot"]},
+   "transitions": {},
+   "exits": ["colony.9821.c", "colony.9821.c.robot"],
+   "responseProfiles": [
+    {"label": {"zh": "常规帝国", "en": "Regular empire"}, "occurrences": {"colony.9821.a": 0, "colony.9821.b": 0}, "excludedKeys": ["colony.9821.a.robot", "colony.9821.b.robot", "colony.9821.c.robot"]},
+    {"label": {"zh": "蜂巢意识", "en": "Hive mind"}, "occurrences": {"colony.9821.a": 1, "colony.9821.b": 1}, "excludedKeys": ["colony.9821.a.robot", "colony.9821.b.robot", "colony.9821.c.robot"]},
+    {"label": {"zh": "机械智能", "en": "Machine intelligence"}, "occurrences": {}, "excludedKeys": ["colony.9821.a", "colony.9821.b", "colony.9821.c"]}
+   ],
+   "evidence": "events/colony_events_3.txt:7914-7963: a/b questions are is_dialog_only with separate regular (is_regular_empire), machine (.robot) and hive instances (same key, different response_text); c / c.robot call 9822."
+  },
+  "colony.9840": {
+   "states": {"start": ["colony.9840.a", "colony.9840.b", "colony.9840.c.exterminator", "colony.9840.d"]},
+   "transitions": {},
+   "exits": ["colony.9840.a", "colony.9840.b", "colony.9840.c.exterminator", "colony.9840.d"],
+   "labelProfiles": {
+    "colony.9840.b": {"zh": "常规（非排外、非吞噬虫群、非终结者）", "en": "Default (not xenophobe, Devouring Swarm or Terminator)"},
+    "colony.9840.b.phobe": {"zh": "排外", "en": "Xenophobe"},
+    "colony.9840.b.swarm": {"zh": "吞噬虫群", "en": "Devouring Swarm"},
+    "colony.9840.b.exterminator": {"zh": "终结者", "en": "Determined Exterminator"},
+    "colony.9840.c": {"zh": "常规（非排外、非格式塔）", "en": "Default (not xenophobe, not gestalt)"},
+    "colony.9840.c.phobe": {"zh": "排外", "en": "Xenophobe"},
+    "colony.9840.c.swarm": {"zh": "蜂巢意识", "en": "Hive mind"},
+    "colony.9840.c.exterminator": {"zh": "机械智能", "en": "Machine intelligence"}
+   },
+   "evidence": "events/colony_events_3.txt:8060-8188: option b and option c have empire-dependent name blocks; all four options start situation_negative_mass with different approaches (a observe, b plunder, c/d rescue)."
+  }
+ },
+ "endings": {
+  "colony.9850": {"label": {"zh": "拯救成功：贝塔世界来到我们的宇宙", "en": "Rescue: the Beta-world crosses into our universe"}, "note": {"zh": "在母星系生成贝塔世界（随起源不同为海洋、盖亚或核爆星球），带18人口与“被拯救”修正；事件链结束。", "en": "Spawns the Beta-world in the home system (ocean, gaia or nuked depending on origin) with 18 pops and the Saved modifier; the chain ends."}, "evidence": "events/colony_events_3.txt:8206-8437."},
+  "colony.9851": {"label": {"zh": "失败：虚无吞没贝塔宇宙", "en": "Loss: static consumes the Beta-Universe"}, "note": {"zh": "传送门消失，事件链结束。", "en": "The portal is destroyed; the chain ends."}, "evidence": "events/colony_events_3.txt:8440-8465."}
+ },
+ "notes": [
+  {"doc": "situations:situation_negative_mass", "kind": "review", "zh": "审阅注：局势从75%开始（第三阶段）。拯救方案每月-7（加倍努力再-3），进度向下，依次进入第二、第一阶段并在0时成功；观测/掠夺方案每月+3（每年再+1，五年后+10），进度向上进入第四阶段并在100时失败。图中由编译器自动生成的“阶段”顺延连接（9855→9875、9875→9870、9860→9880、9880→9855）不是实际顺序，以审阅连接为准。", "en": "Review note: the situation starts at 75% (stage 3). The rescue approach subtracts 7/month (3 more when redoubled), so progress falls through stages 2 and 1 to success at 0; observing or plundering adds 3/month (+1 per year, +10 after five years), rising through stage 4 to loss at 100. The compiler's automatic 'next stage' links (9855→9875, 9875→9870, 9860→9880, 9880→9855) are not the real order; follow the reviewed links."},
+  {"doc": "colony.9820", "kind": "review", "zh": "审阅注：这是“负相物质”事件链的后半段。前半段（传送门 colony.3005 → 研究项目 → 9800 虚无次元 → 9805 → 9810 负质量 → 9815 传送门出现并派出舰队）目前在另一个故事中；击败那支熟悉的舰队（on_fleet_destroyed_perp，舰队方带 B_world_relation 关系标记）即触发本篇。", "en": "Review note: this is the second half of the Negative Mass chain. The first half (The Doorway colony.3005 → portal project → 9800 → 9805 → 9810 Negative Mass → 9815 the portal and its fleet) currently sits in another story; destroying that familiar fleet (on_fleet_destroyed_perp, attacker flagged B_world_relation) starts this story."},
+  {"doc": "colony.9860", "kind": "review", "zh": "审阅注：选择“多一朵镜中花”会在120天后再次触发本事件。", "en": "Review note: \"Two is better than one\" schedules this event again 120 days later."}
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "已完整核对源文件（9820–9890、局势定义、阶段与方案）；原独立的 event-colony-9885 与 event-colony-9889（地面战两种结果）已并入本篇。未完成：编译器的局势阶段自动顺延仍生成4条错误的“下一阶段”引用，需编译器支持 stageSequence:false（见台账请求）；故事前半段在 event-enclave-300 中。", "en": "Source fully checked (9820–9890, the situation definition, stages and approaches); the former stories event-colony-9885 and event-colony-9889 (the two ground-battle results) are merged here. Not done: the compiler's automatic stage chaining still adds 4 wrong 'next stage' refs until it honours stageSequence:false (see ledger request); the chain's first half sits in event-enclave-300."},
+  "sources": ["events/colony_events_3.txt:7579-9053", "common/situations/01_narrative_situations.txt:1661-1817", "common/on_actions/00_on_actions.txt:834, 860-870, 1668", "common/special_projects/00_projects_3.txt:803-845"],
+  "uncertain": ["9851 can also follow a jump from below 95 straight past 100 (9870's trigger then fails); the tree shows 9851 both directly under the situation and after 9870."],
+  "guide": "public/summaries/event-colony-9820.md"
+ }
+}

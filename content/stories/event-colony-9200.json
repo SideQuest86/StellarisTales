@@ -1,0 +1,38 @@
+{
+ "id": "event-colony-9200",
+ "category": "society",
+ "endings": {
+  "colony.9202": {
+   "label": {"zh": "结局：炸毁舱室", "en": "Ending: the vault is blown up"},
+   "note": {"zh": "选择安放炸药后，星球获得“被毁的舱室”矿藏，事件链结束。", "en": "After choosing explosives the planet gets the \"Destroyed Vault\" deposit and the chain ends."},
+   "evidence": "events/colony_events_3.txt:5242-5253 (9201.b -> 9202 days 60 random 60), 5279-5282 add_deposit d_ancient_manufactorium_crater."
+  },
+  "colony.9290": {
+   "label": {"zh": "结局：工厂隆重开业", "en": "Ending: the foundry's grand opening"},
+   "note": {"zh": "所有选项都把“山体地下舱室”替换为“运转中的工厂”；按国民理念/公民性另加岗位或修正。", "en": "Every option replaces the Mountainous Vault with the Operational Manufactorium deposit; civic-specific options add jobs or a modifier."},
+   "evidence": "events/colony_events_3.txt:6563-6653: each option remove_deposit d_ancient_manufactorium_vaultexploration, add_deposit d_ancient_manufactorium_working."
+  }
+ },
+ "notes": [
+  {"doc": "colony.9250", "kind": "review", "zh": "审阅注：选项“拆解它”不开启项目，而是把舱室换成“工厂回收厂”矿藏，事件链就此结束（colony_events_3.txt:6229-6234）。", "en": "Review note: \"Dismantle\" opens no project; it swaps the vault for the Manufactorium Scrapyard deposit and ends the chain (colony_events_3.txt:6229-6234)."},
+  {"doc": "colony.9200", "kind": "review", "zh": "审阅注：链中每个事件都重复检查殖民地仍由原主人持有、非首都、无地面战斗、未被占领；若延时到达时条件不满足，后续不会发生。", "en": "Review note: every event in the chain re-checks that the colony is still held by its original owner, not the capital, without ground combat and not occupied; if that fails when a delayed event is due, the chain stops."}
+ ],
+ "nodeLabels": {
+  "colony.9201": {"zh": "打开大门", "en": "The door opens"},
+  "colony.9210": {"zh": "工人失踪", "en": "Workers missing"},
+  "colony.9230": {"zh": "地震", "en": "Earthquake"},
+  "colony.9240": {"zh": "锻造厂大门", "en": "The foundry doors"},
+  "colony.9250": {"zh": "修复或拆解", "en": "Repair or dismantle"},
+  "colony.9260": {"zh": "有毒气体", "en": "Toxic gases"},
+  "colony.9280": {"zh": "提高产量？", "en": "More output?"}
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "colony.9200–9290 全部26个事件与工厂项目：入口、每个按理念/公民性限定的选项、延时与两种结局。", "en": "All 26 events colony.9200–9290 and the foundry project: entry, every ethic/civic-gated option, delays and both endings."},
+  "sources": ["events/colony_events_3.txt:5152-6653", "common/special_projects/00_projects_3.txt:1753-1765", "common/on_actions/00_on_actions.txt:3849-3867"],
+  "uncertain": ["The concrete yields of the final deposits depend on carrier flags set along the path (manufactorium_*); the deposit definitions were not traced in detail."],
+  "guide": "public/summaries/event-colony-9200.md"
+ }
+}

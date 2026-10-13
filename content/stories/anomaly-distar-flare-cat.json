@@ -1,0 +1,99 @@
+{
+ "id": "anomaly-distar-flare-cat",
+ "family": {
+  "title": {
+   "zh": "超强耀斑",
+   "en": "Superflare"
+  },
+  "category": "exploration",
+  "start": "anomalies:DISTAR_FLARE_CAT",
+  "members": [
+   "anomalies:DISTAR_FLARE_CAT",
+   "distar.5"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.6",
+   "to": "distar.7",
+   "conditional": true,
+   "label": {
+    "zh": "殖民星系内受辐照的卫星后（360–410天）",
+    "en": "After colonising the irradiated moon in this system (360–410 days)"
+   },
+   "evidence": "common/solar_system_initializers/distant_stars_initializers.txt:1817-1824 the nuked moon has superflare_planet; common/on_actions/00_on_actions.txt:1301 on_colonized → distar.5 (events/distant_stars_events_1.txt:213-229) → distar.7 days=360 random=50 (events/distant_stars_events_1.txt:225). distar.7 names the frozen-in-time planet of this anomaly (events/distant_stars_events_1.txt:288-293). Not gated on researching the anomaly."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.9",
+    "distar.10"
+   ],
+   "label": {
+    "zh": "项目成功或超时",
+    "en": "Project success or time-out"
+   },
+   "note": {
+    "zh": "SUPERFLARE_PROJECT 限时150天：完成为 distar.9，失败为 distar.10。",
+    "en": "SUPERFLARE_PROJECT has a 150-day time limit: success distar.9, failure distar.10."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.6": {
+   "zh": "冻结的城市",
+   "en": "Frozen cities"
+  },
+  "distar.7": {
+   "zh": "耀斑将至",
+   "en": "Flare imminent"
+  }
+ },
+ "endings": {
+  "distar.9": {
+   "label": {
+    "zh": "防护成功",
+    "en": "Shielding succeeds"
+   },
+   "note": {
+    "zh": "殖民地获得 superflare_avoided，科学家获得经验与专长。",
+    "en": "Colony gains superflare_avoided; the scientist gains experience and an expertise."
+   },
+   "evidence": "events/distant_stars_events_1.txt:347-370"
+  },
+  "distar.10": {
+   "label": {
+    "zh": "耀斑袭击殖民地",
+    "en": "The flare strikes"
+   },
+   "note": {
+    "zh": "20年 superflare_struck，并杀死一个人口。",
+    "en": "20 years of superflare_struck and one pop killed."
+   },
+   "evidence": "events/distant_stars_events_1.txt:372-390"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常与同星系卫星殖民后的超级耀斑链全部核对。",
+   "en": "Anomaly and the superflare chain after colonising the moon in the same system fully checked."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:1740-1827 (superflare_system)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:30-42",
+   "events/distant_stars_events_1.txt:213-390 (distar.5-10)",
+   "common/special_projects/00_projects_distant_stars.txt:4-31 (SUPERFLARE_PROJECT)",
+   "common/on_actions/00_on_actions.txt:1301"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-flare-cat.md",
+  "mergedStories": [
+   "event-distar-5"
+  ]
+ }
+}

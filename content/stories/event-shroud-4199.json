@@ -1,0 +1,670 @@
+{
+ "id": "event-shroud-4199",
+ "family": {
+  "title": {
+   "zh": "灵督城邦",
+   "en": "Mindwarden Enclave"
+  },
+  "category": "leviathans",
+  "start": "shroud.4200",
+  "members": [
+   "shroud.4199",
+   "shroud.4200",
+   "shroud.4201",
+   "shroud.6850",
+   "shroud.4241",
+   "shroud.4242",
+   "shroud.4205",
+   "shroud.4230",
+   "shroud.4231",
+   "shroud.4240",
+   "shroud.4245",
+   "shroud.4246",
+   "shroud.4247",
+   "shroud.4250",
+   "shroud.4255",
+   "shroud.4260",
+   "shroud.4262",
+   "shroud.4265",
+   "shroud.4266",
+   "shroud.4267",
+   "shroud.4270",
+   "shroud.4271",
+   "shroud.4280",
+   "shroud.4281",
+   "shroud.4290",
+   "shroud.4291",
+   "shroud.4292",
+   "shroud.4300",
+   "shroud.4310",
+   "shroud.4320",
+   "shroud.4340",
+   "shroud.4350",
+   "shroud.6851",
+   "shroud.6852",
+   "shroud.6853",
+   "shroud.6855",
+   "shroud.6860",
+   "shroud.6861",
+   "shroud.6865",
+   "shroud.6870",
+   "shroud.6875",
+   "shroud.6876",
+   "shroud.6880",
+   "shroud.6881",
+   "shroud.4285",
+   "shroud.4286",
+   "shroud.4400",
+   "shroud.4405",
+   "shroud.4406",
+   "shroud.4295"
+  ],
+  "sources": []
+ },
+ "category": "leviathans",
+ "suppress": [
+  {
+   "from": "shroud.4230",
+   "option": "shroud.4230.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4230",
+   "option": "shroud.4230.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4230",
+   "option": "shroud.4230.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4230",
+   "option": "shroud.4230.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4230",
+   "option": "shroud.4230.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4230",
+   "option": "shroud.4230.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4240",
+   "option": "shroud.4240.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4240",
+   "option": "shroud.4240.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4240",
+   "option": "shroud.4240.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4240",
+   "option": "shroud.4240.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4240",
+   "option": "shroud.4240.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4240",
+   "option": "shroud.4240.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4250",
+   "option": "shroud.4250.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4250",
+   "option": "shroud.4250.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4250",
+   "option": "shroud.4250.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4250",
+   "option": "shroud.4250.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4250",
+   "option": "shroud.4250.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4250",
+   "option": "shroud.4250.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4260",
+   "option": "shroud.4260.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4260",
+   "option": "shroud.4260.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4260",
+   "option": "shroud.4260.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4260",
+   "option": "shroud.4260.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4260",
+   "option": "shroud.4260.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4260",
+   "option": "shroud.4260.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4265",
+   "option": "shroud.4265.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4265",
+   "option": "shroud.4265.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4265",
+   "option": "shroud.4265.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4265",
+   "option": "shroud.4265.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4265",
+   "option": "shroud.4265.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4265",
+   "option": "shroud.4265.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4270",
+   "option": "shroud.4270.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4270",
+   "option": "shroud.4270.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4270",
+   "option": "shroud.4270.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4270",
+   "option": "shroud.4270.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4270",
+   "option": "shroud.4270.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4270",
+   "option": "shroud.4270.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4280",
+   "option": "shroud.4280.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4280",
+   "option": "shroud.4280.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4280",
+   "option": "shroud.4280.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4280",
+   "option": "shroud.4280.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4280",
+   "option": "shroud.4280.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4280",
+   "option": "shroud.4280.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4290",
+   "option": "shroud.4290.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4290",
+   "option": "shroud.4290.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4290",
+   "option": "shroud.4290.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4290",
+   "option": "shroud.4290.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4290",
+   "option": "shroud.4290.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.4290",
+   "option": "shroud.4290.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:9255-9380 shroud.4199/4200/4201: every sub-page \"back\" option sets mindwarden_return_beginning and re-runs dispatcher 4201; its if/else_if conditions (mercenary enclave created by us; enclave_destroyed; attacked_mindwardens; Shroudwalker trust >= 100; has_breached_shroud) cannot change during one conversation, so \"back\" returns to the page the conversation started from (4205, or 6851 for the founding patron)."
+  },
+  {
+   "from": "shroud.6855",
+   "option": "shroud.4230.a",
+   "to": "shroud.6853",
+   "evidence": "events/shroud_events.txt:15040-15048 6855 is only reachable by the founding patron (4205.i trigger: is_mercenary_mindwarden_enclave + created_by@prev, lines 9568-9584); its back option re-runs 4201 whose first branch (lines 9339-9347) sends the patron to 6850 -> 6851 (6852/6853 already removed mindwarden_enclave_founded, lines 14970-14996)."
+  },
+  {
+   "from": "shroud.6855",
+   "option": "shroud.4230.a",
+   "to": "shroud.6852",
+   "evidence": "events/shroud_events.txt:15040-15048 6855 is only reachable by the founding patron (4205.i trigger: is_mercenary_mindwarden_enclave + created_by@prev, lines 9568-9584); its back option re-runs 4201 whose first branch (lines 9339-9347) sends the patron to 6850 -> 6851 (6852/6853 already removed mindwarden_enclave_founded, lines 14970-14996)."
+  },
+  {
+   "from": "shroud.6855",
+   "option": "shroud.4230.a",
+   "to": "shroud.4350",
+   "evidence": "events/shroud_events.txt:15040-15048 6855 is only reachable by the founding patron (4205.i trigger: is_mercenary_mindwarden_enclave + created_by@prev, lines 9568-9584); its back option re-runs 4201 whose first branch (lines 9339-9347) sends the patron to 6850 -> 6851 (6852/6853 already removed mindwarden_enclave_founded, lines 14970-14996)."
+  },
+  {
+   "from": "shroud.6855",
+   "option": "shroud.4230.a",
+   "to": "shroud.4320",
+   "evidence": "events/shroud_events.txt:15040-15048 6855 is only reachable by the founding patron (4205.i trigger: is_mercenary_mindwarden_enclave + created_by@prev, lines 9568-9584); its back option re-runs 4201 whose first branch (lines 9339-9347) sends the patron to 6850 -> 6851 (6852/6853 already removed mindwarden_enclave_founded, lines 14970-14996)."
+  },
+  {
+   "from": "shroud.6855",
+   "option": "shroud.4230.a",
+   "to": "shroud.4340",
+   "evidence": "events/shroud_events.txt:15040-15048 6855 is only reachable by the founding patron (4205.i trigger: is_mercenary_mindwarden_enclave + created_by@prev, lines 9568-9584); its back option re-runs 4201 whose first branch (lines 9339-9347) sends the patron to 6850 -> 6851 (6852/6853 already removed mindwarden_enclave_founded, lines 14970-14996)."
+  },
+  {
+   "from": "shroud.6855",
+   "option": "shroud.4230.a",
+   "to": "shroud.4300",
+   "evidence": "events/shroud_events.txt:15040-15048 6855 is only reachable by the founding patron (4205.i trigger: is_mercenary_mindwarden_enclave + created_by@prev, lines 9568-9584); its back option re-runs 4201 whose first branch (lines 9339-9347) sends the patron to 6850 -> 6851 (6852/6853 already removed mindwarden_enclave_founded, lines 14970-14996)."
+  },
+  {
+   "from": "shroud.6855",
+   "option": "shroud.4230.a",
+   "to": "shroud.4205",
+   "evidence": "events/shroud_events.txt:15040-15048 6855 is only reachable by the founding patron (4205.i trigger: is_mercenary_mindwarden_enclave + created_by@prev, lines 9568-9584); its back option re-runs 4201 whose first branch (lines 9339-9347) sends the patron to 6850 -> 6851 (6852/6853 already removed mindwarden_enclave_founded, lines 14970-14996)."
+  }
+ ],
+ "bridges": [
+  {
+   "from": "shroud.6851",
+   "to": "shroud.6855",
+   "conditional": true,
+   "label": {
+    "zh": "赞助方提案（沿用主菜单选项 i）",
+    "en": "Patron proposals (inherited menu option i)"
+   },
+   "evidence": "events/shroud_events.txt:14948-14968 shroud.6851 uses base = shroud.4205 without option_clear, so it shows the options of 4205; option 4205.i (lines 9568-9584) is shown only to the patron who created the enclave and calls 6855"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.6853",
+    "shroud.6852",
+    "shroud.6851",
+    "shroud.4350",
+    "shroud.4320",
+    "shroud.4340",
+    "shroud.4300",
+    "shroud.4205"
+   ],
+   "label": {
+    "zh": "按当前状态选择一种问候",
+    "en": "One greeting, chosen by current state"
+   },
+   "note": {
+    "zh": "4201依次检查：本国创建的雇佣城邦→城邦已毁→曾攻击城邦→行虚者信任≥100→已突破虚境→普通主菜单。",
+    "en": "Dispatcher 4201 checks in order: our own mercenary enclave → enclave destroyed → we attacked it → Shroudwalker trust ≥ 100 → we breached the Shroud → normal menu."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "shroud.4205": {
+   "zh": "城邦主菜单",
+   "en": "Enclave menu"
+  },
+  "shroud.6851": {
+   "zh": "赞助方回访",
+   "en": "Patron returns"
+  },
+  "shroud.6852": {
+   "zh": "首个城邦成立",
+   "en": "First enclave founded"
+  },
+  "shroud.6853": {
+   "zh": "又一城邦成立",
+   "en": "Another enclave founded"
+  },
+  "shroud.4350": {
+   "zh": "城邦已毁",
+   "en": "Enclave destroyed"
+  },
+  "shroud.4320": {
+   "zh": "曾攻击城邦",
+   "en": "After attacking them"
+  },
+  "shroud.4340": {
+   "zh": "行虚者的合作者",
+   "en": "Shroudwalker collaborator"
+  },
+  "shroud.4300": {
+   "zh": "已突破虚境",
+   "en": "Shroud-breached empire"
+  },
+  "shroud.4310": {
+   "zh": "为何惧怕虚境",
+   "en": "Why fear the Shroud"
+  },
+  "shroud.4230": {
+   "zh": "灵能光环",
+   "en": "Psionic auras"
+  },
+  "shroud.4231": {
+   "zh": "传授灵能压制",
+   "en": "Suppression taught"
+  },
+  "shroud.4240": {
+   "zh": "袭击灵能帝国",
+   "en": "Raid a psionic empire"
+  },
+  "shroud.4245": {
+   "zh": "袭击已安排",
+   "en": "Raid arranged"
+  },
+  "shroud.4246": {
+   "zh": "遭袭警报（目标方）",
+   "en": "Raid warning (target)"
+  },
+  "shroud.4247": {
+   "zh": "遭袭警报（未接触）",
+   "en": "Raid warning (unknown)"
+  },
+  "shroud.4250": {
+   "zh": "泽珞",
+   "en": "Zro"
+  },
+  "shroud.4255": {
+   "zh": "捐出泽珞",
+   "en": "Zro donated"
+  },
+  "shroud.4260": {
+   "zh": "犯罪问题",
+   "en": "Crime"
+  },
+  "shroud.4262": {
+   "zh": "思想警察",
+   "en": "Thought Police"
+  },
+  "shroud.4265": {
+   "zh": "后勤援助",
+   "en": "Logistics"
+  },
+  "shroud.4266": {
+   "zh": "后勤开始",
+   "en": "Logistics begins"
+  },
+  "shroud.4267": {
+   "zh": "后勤到期",
+   "en": "Logistics expired"
+  },
+  "shroud.4270": {
+   "zh": "借用士兵",
+   "en": "Soldiers"
+  },
+  "shroud.4271": {
+   "zh": "突击队受雇",
+   "en": "Assault Wardens hired"
+  },
+  "shroud.4280": {
+   "zh": "督管专员",
+   "en": "Commissioner"
+  },
+  "shroud.4281": {
+   "zh": "专员受雇",
+   "en": "Commissioner hired"
+  },
+  "shroud.4290": {
+   "zh": "轮回之终末",
+   "en": "End of the Cycle"
+  },
+  "shroud.4291": {
+   "zh": "灵督战术",
+   "en": "Tactics bought"
+  },
+  "shroud.4292": {
+   "zh": "对抗清算",
+   "en": "Against the Reckoning"
+  },
+  "shroud.6855": {
+   "zh": "赞助方提案",
+   "en": "Patron proposals"
+  },
+  "shroud.6860": {
+   "zh": "升级城邦",
+   "en": "Upgrade enclave"
+  },
+  "shroud.6861": {
+   "zh": "交易完成",
+   "en": "Deal done"
+  },
+  "shroud.6865": {
+   "zh": "城邦容量",
+   "en": "Enclave capacity"
+  },
+  "shroud.6870": {
+   "zh": "共享科技",
+   "en": "Share technology"
+  },
+  "shroud.6875": {
+   "zh": "雇佣舰队",
+   "en": "Hire a fleet"
+  },
+  "shroud.6876": {
+   "zh": "舰队受雇",
+   "en": "Fleet hired"
+  },
+  "shroud.6880": {
+   "zh": "管理合约",
+   "en": "Manage contract"
+  },
+  "shroud.6881": {
+   "zh": "合约终止",
+   "en": "Contract ended"
+  },
+  "shroud.4286": {
+   "zh": "专员离去",
+   "en": "Commissioner leaves"
+  },
+  "shroud.4405": {
+   "zh": "摧毁城邦（攻击方）",
+   "en": "Enclave destroyed (attacker)"
+  },
+  "shroud.4406": {
+   "zh": "城邦被毁（他国）",
+   "en": "Enclave destroyed (others)"
+  },
+  "shroud.4295": {
+   "zh": "物现引擎",
+   "en": "Materiality Engine"
+  }
+ },
+ "notes": [
+  {
+   "doc": "shroud.6851",
+   "kind": "review",
+   "zh": "此问候窗口沿用主菜单 shroud.4205 的全部选项（泽珞、袭击、后勤……以及赞助方提案 i），见主菜单分支。",
+   "en": "This greeting window reuses every option of main menu shroud.4205 (zro, raids, logistics… and patron proposals via option i); see the main-menu branch."
+  },
+  {
+   "doc": "shroud.6852",
+   "kind": "review",
+   "zh": "此问候窗口沿用主菜单 shroud.4205 的全部选项（泽珞、袭击、后勤……以及赞助方提案 i），见主菜单分支。",
+   "en": "This greeting window reuses every option of main menu shroud.4205 (zro, raids, logistics… and patron proposals via option i); see the main-menu branch."
+  },
+  {
+   "doc": "shroud.6853",
+   "kind": "review",
+   "zh": "此问候窗口沿用主菜单 shroud.4205 的全部选项（泽珞、袭击、后勤……以及赞助方提案 i），见主菜单分支。",
+   "en": "This greeting window reuses every option of main menu shroud.4205 (zro, raids, logistics… and patron proposals via option i); see the main-menu branch."
+  },
+  {
+   "doc": "shroud.4246",
+   "kind": "review",
+   "zh": "此窗口由被袭击的帝国看到，而不是出钱雇佣袭击的帝国。",
+   "en": "This window is shown to the raided empire, not to the empire that paid for the raid."
+  },
+  {
+   "doc": "shroud.4247",
+   "kind": "review",
+   "zh": "被袭击的帝国此前未与灵督城邦建立通讯时显示此版本。",
+   "en": "Variant shown to a raided empire that had no communications with the enclave."
+  },
+  {
+   "doc": "shroud.4267",
+   "kind": "review",
+   "zh": "后勤协议在3600天后到期时由城邦主动来信，可续约。",
+   "en": "Sent by the enclave when the 3600-day logistics contract expires; it can be renewed."
+  },
+  {
+   "doc": "shroud.4286",
+   "kind": "review",
+   "zh": "仅当本国雇有灵督督管专员并首次与城邦交战时，五天后发生。",
+   "en": "Only if we employ a Mindwarden Commissioner; fires 5 days after our first battle against the enclave."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "灵督城邦的接触入口、主菜单与全部服务子页、赞助方（灵督起源）专用菜单、袭击/攻击/摧毁/物现引擎相关后果均已对照源文件。",
+   "en": "Contact entry, main menu with all service pages, the founding patron menu (Mindwardens origin), and the raid / attack / destruction / Materiality Engine consequences were all checked against the source."
+  },
+  "sources": [
+   "events/shroud_events.txt:9235-10840 (shroud.4195-4350)",
+   "events/shroud_events.txt:10656-10752 (4285/4286/4295)",
+   "events/shroud_events.txt:10842-11062 (4400-4410)",
+   "events/shroud_events.txt:14897-15805 (6850-6881)",
+   "common/solar_system_initializers/mindwarden_initializers.txt:8-150",
+   "common/scripted_effects/first_contact_effects.txt:702-718",
+   "common/on_actions/00_on_actions.txt:744",
+   "common/scripted_effects/shroud_shadows_scripted_effects.txt:4482-4508",
+   "events/origin_events_shadows_shroud.txt:3046-3079 (6827)"
+  ],
+  "guide": "public/summaries/event-shroud-4199.md",
+  "uncertain": [
+   "4205 has five conditional greeting texts (first contact / return / return-to-menu / End of the Cycle variants); the reader shows them by its generic condition model, not by conversation state."
+  ]
+ }
+}

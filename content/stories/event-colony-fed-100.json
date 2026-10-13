@@ -1,0 +1,23 @@
+{
+ "id": "event-colony-fed-100",
+ "category": "society",
+ "titleFrom": "colony_fed.105",
+ "endings": {
+  "colony_fed.106": {"label": {"zh": "结局：停止实验", "en": "Ending: experiments halted"}, "note": {"zh": "非格式塔帝国叫停实验；移除蓝荷矿藏，只得少量合金。", "en": "A non-gestalt empire halts the work; the Blue Lotus deposit is removed, leaving some alloys."}, "evidence": "events/colony_events_3.txt:3498-3509, 3533-3556."},
+  "colony_fed.107": {"label": {"zh": "结局：清除离群无人机", "en": "Ending: the rogue drone purged"}, "note": {"zh": "格式塔帝国清除无人机；移除蓝荷矿藏，只得少量合金。", "en": "A gestalt empire purges the drone; the deposit is removed, leaving some alloys."}, "evidence": "events/colony_events_3.txt:3511-3530, 3558-3581."},
+  "colony_fed.111": {"label": {"zh": "结局：蓝荷崩溃", "en": "Ending: Lotus Collapse"}, "note": {"zh": "项目1080天内未完成：设施废墟矿藏，部分铸造岗位人口死亡。", "en": "The project was not finished within 1080 days: a ruined facility deposit and some foundry pops die."}, "evidence": "common/special_projects/00_projects_federations.txt:374-394 (timelimit 1080, on_fail); events/colony_events_3.txt:3615-3641."},
+  "colony_fed.120": {"label": {"zh": "结局：蓝荷自噬", "en": "Ending: the Lotus eats itself"}, "note": {"zh": "设施升级后有50%几率在1800–2160天后灾难性失败，留下弹坑矿藏。", "en": "After the upgrade there is a 50% chance of catastrophic failure 1800–2160 days later, leaving a crater deposit."}, "evidence": "events/colony_events_3.txt:3654-3668 random chance 50, 3671-3702."}
+ },
+ "notes": [
+  {"doc": "colony_fed.115", "kind": "review", "zh": "审阅注：项目成功后蓝荷设施升级（矿藏换为第二级）。若50%的隐患没有触发，故事在此结束。", "en": "Review note: on success the facility is upgraded (second-tier deposit). If the 50% hazard does not fire, the story ends here."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "蓝荷计划全部8个事件与扩产项目。", "en": "All 8 Project Blue Lotus events and the scale-up project."},
+  "sources": ["events/colony_events_3.txt:3382-3702", "common/special_projects/00_projects_federations.txt:373-394", "common/on_actions/00_on_actions.txt:3793, 3842"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-fed-100.md"
+ }
+}

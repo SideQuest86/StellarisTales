@@ -1,0 +1,25 @@
+{
+ "id": "event-colony-mod-1",
+ "family": {
+  "title": {"zh": "这里发生了什么事？", "en": "What Happened Here?"},
+  "category": "society",
+  "start": "colony_mod.161",
+  "members": ["colony_mod.1", "colony_mod.6", "colony_mod.7", "colony_mod.8", "colony_mod.9"]
+ },
+ "titleFrom": "colony_mod.1",
+ "endings": {
+  "colony_mod.6": {"label": {"zh": "真相：远古轰炸", "en": "Answer: an ancient bombardment"}, "note": {"zh": "获得“远古轰炸弹坑”矿藏。", "en": "Adds the Ancient Bombardment Craters deposit."}, "evidence": "events/colony_events_3.txt:62-76"},
+  "colony_mod.7": {"label": {"zh": "真相：星际战争", "en": "Answer: an interstellar war"}, "note": {"zh": "获得“古战场”矿藏。", "en": "Adds the Ancient Battlefield deposit."}, "evidence": "events/colony_events_3.txt:78-92"},
+  "colony_mod.8": {"label": {"zh": "真相：种族自灭", "en": "Answer: racial suicide"}, "note": {"zh": "获得“辐射废墟”矿藏。", "en": "Adds the Irradiated Ruins deposit."}, "evidence": "events/colony_events_3.txt:94-129"},
+  "colony_mod.9": {"label": {"zh": "没有答案", "en": "No answer"}, "note": {"zh": "获得永久的“模糊的过往”修正。", "en": "Adds the permanent Uncertain History modifier."}, "evidence": "events/colony_events_3.txt:131-148"}
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "辐照星球殖民地事件（1及其四个随机结果），从合并的修正事件故事中拆出。", "en": "The irradiated-planet colony event (1 and its four random results), split out of the merged modifier-event story."},
+  "sources": ["events/colony_events_3.txt:9-148", "events/colony_events_3.txt:919-1034"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-mod-1.md"
+ }
+}

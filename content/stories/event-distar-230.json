@@ -1,0 +1,108 @@
+{
+ "id": "event-distar-230",
+ "family": {
+  "title": {
+   "zh": "鼠人族起源",
+   "en": "Ketling Origins"
+  },
+  "category": "exploration",
+  "start": "distar.230",
+  "members": [
+   "distar.230",
+   "anomalies:DISTAR_RAT_CAT",
+   "distar.235"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.230",
+   "to": "anomalies:DISTAR_RAT_CAT",
+   "conditional": false,
+   "label": {
+    "zh": "残毁首都出现异常（本帝国可调查）",
+    "en": "Anomaly appears on the ruined capital (for this empire)"
+   },
+   "evidence": "events/distant_stars_events_1.txt:7368-7375 distar.230 after: event_target:ratling_capital add_anomaly category = DISTAR_RAT_CAT target = root.owner."
+  },
+  {
+   "from": "distar.233",
+   "to": "distar.235",
+   "conditional": true,
+   "label": {
+    "zh": "地面入侵前航天鼠人的星球并获胜",
+    "en": "Win a ground invasion of a pre-space Ketling planet"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:837 on_colony_attackers_win → distar.235 (events/distant_stars_events_1.txt:7917): From is the ratlings country (created by distar.232) and the planet has ratling_planet."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:KETLING_PROJECT_1",
+    "special_projects:KETLING_PROJECT_2",
+    "special_projects:KETLING_PROJECT_3",
+    "special_projects:KETLING_PROJECT_4",
+    "special_projects:KETLING_PROJECT_5",
+    "special_projects:KETLING_PROJECT_6"
+   ],
+   "label": {
+    "zh": "任选一颗鼠人星球研究",
+    "en": "Study any one Ketling planet"
+   },
+   "note": {
+    "zh": "项目2–6声明 same_option_group_as KETLING_PROJECT_1，完成其一即可；结果都是 distar.234。",
+    "en": "Projects 2–6 declare same_option_group_as KETLING_PROJECT_1; finishing one is enough, all lead to distar.234."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "anomalies:DISTAR_RAT_CAT": {
+   "zh": "首都异常",
+   "en": "Capital anomaly"
+  },
+  "distar.233": {
+   "zh": "鼠人现身（25–35年后）",
+   "en": "Ketlings emerge (25–35 years later)"
+  },
+  "distar.237": {
+   "zh": "鼠人帝国成立（再25–35年）",
+   "en": "Ketling empire forms (another 25–35 years)"
+  },
+  "distar.235": {
+   "zh": "入侵鼠人星球",
+   "en": "Invading a Ketling planet"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:2938-3590 (ratling_1_1/1_2/1_3)",
+   "common/on_actions/00_on_actions.txt:1008",
+   "events/distant_stars_events_1.txt:7297 (distar.230)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:741-765",
+   "events/distant_stars_events_1.txt:7380 (distar.231)",
+   "events/distant_stars_events_1.txt:7425 (distar.232)",
+   "events/distant_stars_events_1.txt:7560 (distar.233)",
+   "common/special_projects/00_projects_distant_stars.txt:240-610 (KETLING_PROJECT_1-6)",
+   "events/distant_stars_events_1.txt:7838 (distar.234)",
+   "events/distant_stars_events_1.txt:7917 (distar.235)",
+   "common/on_actions/00_on_actions.txt:837",
+   "events/distant_stars_events_1.txt:8074-8165 (distar.325, 236)",
+   "events/distant_stars_events_1.txt:8543 (distar.237)",
+   "common/event_chains/00_event_chains_distant_stars.txt:19"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-distar-230.md",
+  "mergedStories": [
+   "anomaly-distar-rat-cat",
+   "event-distar-235"
+  ]
+ }
+}

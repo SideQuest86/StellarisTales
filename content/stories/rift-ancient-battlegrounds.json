@@ -1,0 +1,42 @@
+{
+ "id": "rift-ancient-battlegrounds",
+ "category": "rifts",
+ "endings": {
+  "astral_rift.220": {
+   "label": {"zh": "激活十二面体：代达罗斯封印", "en": "Dodecahedron activated: Daedalus Seal"},
+   "note": {"zh": "探索结束，获得遗珍“代达罗斯封印”。", "en": "The exploration ends with the relic Daedalus Seal."},
+   "evidence": "events/astral_rifts_0_events.txt:1702-1708"
+  },
+  "astral_rift.225": {
+   "label": {"zh": "拆解十二面体：暗物质", "en": "Dodecahedron dismantled: dark matter"},
+   "note": {"zh": "探索结束，获得暗物质与大量星界丝缕。", "en": "The exploration ends with dark matter and a large astral thread reward."},
+   "evidence": "events/astral_rifts_0_events.txt:1722-1734"
+  }
+ },
+ "notes": [
+  {
+   "doc": "astral_rifts:ancient_battlegrounds",
+   "kind": "review",
+   "zh": "抽取权重 1；游牧帝国为 0。它可能奖励遗珍，因此当任一帝国正在探索它时，其他帝国抽到它的权重为 0；若探索者没有拿到遗珍，探索结束后解除锁定。",
+   "en": "Draw weight 1, 0 for nomadic empires. Because it can award a relic, its weight is 0 for everyone while any empire is exploring it; if the explorer did not obtain the relic the lock is lifted when the exploration ends."
+  },
+  {
+   "doc": "astral_rift.210",
+   "kind": "review",
+   "zh": "“演化猎手”起源的帝国在此看到专属选项（exclusive_trigger），额外获得该起源局势进度与 DNA。",
+   "en": "Evolutionary Predators empires see an exclusive option here (exclusive_trigger) that also grants progress and DNA for the origin's situation."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义（游牧限制、遗珍锁定）与 200–225 全部事件；编译结构无误，补充结局与条件说明。",
+   "en": "Checked the rift definition (nomad exclusion, relic lock) and every event 200–225; the compiled structure is correct; endings and condition notes added."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt", "events/astral_planes_events.txt", "common/inline_scripts/astral_rift/relic_weight_modifier.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-ancient-battlegrounds.md"
+ }
+}

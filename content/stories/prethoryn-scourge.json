@@ -1,84 +1,222 @@
 {
  "id": "prethoryn-scourge",
+ "include": ["observer.27", "observer.28", "observer.29", "observer.30", "observer.31", "observer.32", "observer.33"],
+ "hubs": ["crisis.10"],
  "bridges": [
   {
-   "from": "crisis.11",
-   "to": "crisis.13",
-   "conditional": true,
-   "label": {
-    "zh": "回声逐渐接近银河外缘",
-    "en": "The echoes approach the rim"
-   },
-   "evidence": "hidden10 sets prethoryn_subspace_echoes;12 MTTH600 months ->13"
+   "from": "crisis.11", "to": "observer.27",
+   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "evidence": "events/crisis_events_1.txt:59-62 hidden crisis.10 fires observer.27 together with crisis.11; events/observer_events.txt:510-522 reuses crisis.11.name/desc with a single OK option"
   },
   {
-   "from": "crisis.13",
-   "to": "crisis.15",
-   "conditional": true,
-   "label": {
-    "zh": "传来新的亚空间信号",
-    "en": "A new subspace transmission"
-   },
-   "evidence": "12 sets prethoryn_approaching_rim;14 MTTH120 months ->15"
+   "from": "crisis.11", "to": "crisis.13", "conditional": true,
+   "label": {"zh": "随机延时后（隐藏事件12，平均600个月）：回声接近外缘", "en": "After a random delay (hidden crisis.12, MTTH 600 months): the echoes near the rim"},
+   "evidence": "events/crisis_events_1.txt:87-147 crisis.12 is hidden, fire_only_once, MTTH 600 months, requires global flag prethoryn_subspace_echoes (set by crisis.10 at L56) and fires crisis.13 for every default empire (L142-145)"
   },
   {
-   "from": "crisis.16",
-   "to": "crisis.18",
-   "conditional": true,
-   "label": {
-    "zh": "索林先锋抵达",
-    "en": "The Prethoryn vanguard arrives"
-   },
-   "evidence": "14 sets prethoryn_transmission;17 MTTH30 months ->18"
+   "from": "crisis.13", "to": "observer.28",
+   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "evidence": "events/crisis_events_1.txt:141 crisis.12 fires observer.28 with crisis.13; events/observer_events.txt:525-537 reuses crisis.13 text"
   },
   {
-   "from": "crisis.18",
-   "to": "crisis.20",
-   "conditional": true,
-   "label": {
-    "zh": "主力舰队随后抵达",
-    "en": "The main invasion follows"
-   },
-   "evidence": "17 schedules19 after400-600days;19 announces20"
+   "from": "crisis.13", "to": "crisis.15", "conditional": true,
+   "label": {"zh": "随机延时后（隐藏事件14，平均120个月）：亚空间信号", "en": "After a random delay (hidden crisis.14, MTTH 120 months): the subspace signal"},
+   "evidence": "events/crisis_events_1.txt:273-294 crisis.14 hidden, fire_only_once, MTTH 120 months, requires prethoryn_approaching_rim (set by crisis.12 at L103), fires crisis.15 for every default empire"
   },
   {
-   "from": "crisis.20",
-   "to": "crisis.51",
-   "conditional": true,
-   "label": {
-    "zh": "虫群势力大幅扩张后",
-    "en": "After the swarm expands sufficiently"
-   },
-   "evidence": "50 requires prethoryn_main_invasion and endgame_crisis_large_size_trigger ->51"
+   "from": "crisis.16", "to": "crisis.18", "conditional": true,
+   "label": {"zh": "随机延时后（隐藏事件17，平均30个月）：先锋抵达银河边缘", "en": "After a random delay (hidden crisis.17, MTTH 30 months): the vanguard reaches the rim"},
+   "evidence": "events/crisis_events_1.txt:364-388 crisis.17 hidden, fire_only_once, MTTH 30 months, requires prethoryn_transmission (set by crisis.14 at L288); spawns the Prethoryn country and fires crisis.18"
   },
   {
-   "from": "crisis.20",
-   "to": "crisis.101",
-   "conditional": true,
-   "label": {
-    "zh": "战争中发现受伤的虫后",
-    "en": "An injured queen is found during the war"
-   },
-   "evidence": "100 requires main invasion and a swarm-owned system; MTTH820months ->101"
+   "from": "crisis.18", "to": "observer.29",
+   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "evidence": "events/crisis_events_1.txt:384 crisis.17 fires observer.29 with crisis.18; events/observer_events.txt:540-553"
   },
   {
-   "from": "crisis.20",
-   "to": "crisis.211",
-   "conditional": true,
-   "label": {
-    "zh": "清除虫群的殖民地与舰队",
-    "en": "Eliminate the swarm colonies and fleets"
-   },
-   "evidence": "208 annual callback removes swarm with <20ships and no owned/controlled planets;210 country destruction ->211"
+   "from": "crisis.18", "to": "grand_archive.7220", "conditional": true,
+   "label": {"zh": "30天后，若已研究“重力陷阱”", "en": "30 days later, if Gravity Snares are researched"},
+   "evidence": "events/crisis_events_1.txt:490-496 crisis.17 sends grand_archive.7220 after 30 days to empires with tech_gravity_wells (repeated at L1038-1044 if the vanguard had been destroyed); also fired by grand_archive.105 (events/grand_archive_events.txt:98-107)"
+  },
+  {
+   "from": "crisis.18", "to": "crisis.30", "conditional": true,
+   "label": {"zh": "此后可随时联络虫群（可重复的通讯，非剧情进程）", "en": "From now on you may contact the swarm (repeatable communication, not a story step)"},
+   "evidence": "events/crisis_events_1.txt:479 crisis.17 establishes communications with the Prethoryn; crisis.30 (L1467-1624) is fired by on_custom_diplomacy (common/on_actions/00_on_actions.txt:709) whenever FROM is the swarm"
+  },
+  {
+   "from": "crisis.18", "to": "crisis.20", "conditional": true,
+   "label": {"zh": "400–600天后主力抵达（隐藏事件19）", "en": "400–600 days later the main swarm arrives (hidden crisis.19)"},
+   "evidence": "events/crisis_events_1.txt:718-721 crisis.17 schedules crisis.19 days=400 random=200; crisis.19 (L937-953) sets prethoryn_main_invasion and fires crisis.20 for every default empire"
+  },
+  {
+   "from": "crisis.20", "to": "observer.30",
+   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "evidence": "events/crisis_events_1.txt:949 crisis.19 fires observer.30 with crisis.20; events/observer_events.txt:556-569"
+  },
+  {
+   "from": "crisis.20", "to": "custodian.51", "conditional": true,
+   "label": {"zh": "若有银河监管人：30天后其向共同体成员发表宣告", "en": "If there is a Galactic Custodian: its address to Community members 30 days later"},
+   "evidence": "events/crisis_events_1.txt:956-963 crisis.19 sends custodian.50 to the Custodian after 30 days; events/nemesis_custodian_events.txt:654-668 custodian.50 sends custodian.51 to every human Community member except the Custodian"
+  },
+  {
+   "from": "crisis.20", "to": "custodian.53", "conditional": true,
+   "label": {"zh": "若你是银河监管人：受威胁的成员国求援", "en": "If you are the Galactic Custodian: a threatened member pleads for help"},
+   "evidence": "events/nemesis_custodian_events.txt:669-688 custodian.50 sends custodian.53 to the Custodian itself when an AI Community member borders the crisis country"
+  },
+  {
+   "from": "crisis.20", "to": "emperor.91", "conditional": true,
+   "label": {"zh": "若有银河帝皇：30天后帝皇的宣告", "en": "If there is a Galactic Emperor: the Emperor's address 30 days later"},
+   "evidence": "events/crisis_events_1.txt:964-969 crisis.19 sends emperor.90 to the Emperor after 30 days; events/nemesis_emperor_events.txt:990-1004 emperor.90 sends emperor.91 to every other human Community member"
+  },
+  {
+   "from": "crisis.20", "to": "emperor.93", "conditional": true,
+   "label": {"zh": "若你是银河帝皇：成员国求援", "en": "If you are the Galactic Emperor: a member pleads for help"},
+   "evidence": "events/nemesis_emperor_events.txt:1005-1024 emperor.90 sends emperor.93 to the Emperor when another AI Community member exists"
+  },
+  {
+   "from": "crisis.20", "to": "crisis.51", "conditional": true,
+   "label": {"zh": "虫群占据银河15%或超过90个星系后（隐藏事件50，平均12个月）", "en": "Once the swarm holds 15% of the galaxy or over 90 systems (hidden crisis.50, MTTH 12 months)"},
+   "evidence": "events/crisis_events_1.txt:1628-1701 crisis.50 (swarm country, MTTH 12 months) requires prethoryn_main_invasion and endgame_crisis_large_size_trigger (common/scripted_triggers/00_scripted_triggers.txt:1270-1275), spawns the Sentinel system and fires crisis.51 after 1 day"
+  },
+  {
+   "from": "crisis.51", "to": "observer.31",
+   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "evidence": "events/crisis_events_1.txt:1691 crisis.50 fires observer.31; events/observer_events.txt:572-585 reuses crisis.51 text"
+  },
+  {
+   "from": "crisis.51", "to": "crisis.55", "conditional": true,
+   "label": {"zh": "此后可随时联络哨兵组织（可重复的通讯）", "en": "From now on you may contact the Sentinels (repeatable communication)"},
+   "evidence": "events/crisis_events_1.txt:1776-1817 crisis.55 is fired by on_custom_diplomacy (common/on_actions/00_on_actions.txt:710) when FROM is the Sentinels country"
+  },
+  {
+   "from": "crisis.51", "to": "crisis.71", "conditional": true,
+   "label": {"zh": "击毁7支以上虫群舰队且哨兵舰船多于30艘：赠舰提议（平均100个月）", "en": "After destroying 7+ swarm fleets, while the Sentinels have 30+ ships: a fleet offer (MTTH 100 months)"},
+   "evidence": "events/crisis_events_1.txt:1949-1986 crisis.71 MTTH 100 months requires sentinels_founded, swarm_fleet_kills > 6 (counted by crisis.70 on on_fleet_destroyed_perp, common/on_actions/00_on_actions.txt:1635), Sentinels with > 30 ships and not at war with you; once per empire"
+  },
+  {
+   "from": "crisis.51", "to": "crisis.78", "conditional": true,
+   "label": {"zh": "虫群占据银河过半时：哨兵公开解剖资料（隐藏事件77，平均12个月）", "en": "When the swarm holds over half the galaxy: the Sentinels share anatomy files (hidden crisis.77, MTTH 12 months)"},
+   "evidence": "events/crisis_events_1.txt:2107-2139 crisis.77 (Sentinels country, MTTH 12 months) requires ongoing invasion, Sentinel Alpha alive and a swarm with galaxy_percentage > 0.50; sends crisis.78 to all empires"
+  },
+  {
+   "from": "crisis.51", "to": "crisis.81", "conditional": true,
+   "label": {"zh": "若虫群摧毁哨兵阿尔法空间站", "en": "If the swarm destroys Sentinel Alpha"},
+   "evidence": "events/crisis_events_1.txt:2166-2185 crisis.80 (on_ship_destroyed_victim, common/on_actions/00_on_actions.txt:1411) checks the Sentinels' station destroyed by the swarm and sends crisis.81 to human players"
+  },
+  {
+   "from": "crisis.81", "to": "observer.32",
+   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "evidence": "events/crisis_events_1.txt:2179 crisis.80 fires observer.32; events/observer_events.txt:588-601"
+  },
+  {
+   "from": "crisis.20", "to": "crisis.101", "conditional": true,
+   "label": {"zh": "可能发生：隐藏事件100（由虫群国家判定，平均820个月）发现受伤虫后", "en": "May happen: hidden crisis.100 (checked by the swarm, MTTH 820 months) reveals a wounded Queen"},
+   "evidence": "events/crisis_events_1.txt:2226-2343 crisis.100 fire_only_once, MTTH 820 months, swarm country with prethoryn_main_invasion and an owned system; fires crisis.101 for every default empire"
+  },
+  {
+   "from": "special_projects:CAPTURE_QUEEN", "to": "crisis.107", "conditional": true,
+   "label": {"zh": "另一帝国先完成捕获，你的项目中止", "en": "Another empire completes the capture first; your project is aborted"},
+   "evidence": "events/crisis_events_1.txt:2388-2399 crisis.105 (fired for the capturer) aborts CAPTURE_QUEEN for every other default empire holding it and sends them crisis.107; common/special_projects/00_projects_1.txt:3250-3252 abort_trigger queen_snatched"
+  },
+  {
+   "from": "crisis.105", "to": "crisis.234", "conditional": true,
+   "label": {"zh": "灵能物种帝国：被俘虫后躁动（平均100年）", "en": "Psionic species: the captured Queen grows restless (MTTH 100 years)"},
+   "evidence": "events/crisis_events_1.txt:3887-3947 crisis.234 MTTH 100 years requires prethoryn_main_invasion, has_crisis = no, a psionic main species and a leader with captured_queen (set by crisis.105.a at L2415); once per empire"
+  },
+  {
+   "from": "crisis.20", "to": "crisis.252", "conditional": true,
+   "label": {"zh": "人类玩家击毁一艘虫后：5/105的机会夺得虫卵（全局仅一次）", "en": "A human player destroys a Prethoryn Queen: 5/105 chance to seize an egg (once per game)"},
+   "evidence": "events/crisis_events_1.txt:4075-4102 crisis.251 (on_ship_destroyed_victim, common/on_actions/00_on_actions.txt:1418) requires prethoryn_main_invasion, a queen_swarm ship and a non-AI killer; random_list 100/5 sets brood_queen_captured and sends crisis.252"
+  },
+  {
+   "from": "crisis.252", "to": "crisis.250", "conditional": true,
+   "label": {"zh": "激活遗珍“索林原虫虫后”（10000食物，可重复）", "en": "Activate the Prethoryn Brood-Queen relic (10,000 food; repeatable)"},
+   "evidence": "events/crisis_events_1.txt:4118-4121 crisis.252 grants r_prethoryn_queen; common/relics/relics.txt:785-828 its active_effect (cost food 10000) fires crisis.250"
+  },
+  {
+   "from": "crisis.20", "to": "crisis.211", "conditional": true,
+   "label": {"zh": "消灭虫群：无行星且舰船少于20艘时于年度检查中被移除", "en": "Destroy the swarm: once it has no planets and under 20 ships the yearly check removes it"},
+   "evidence": "events/crisis_events_1.txt:3378-3422 crisis.208 (on_yearly_pulse, 00_on_actions.txt:233) destroys the swarm country with < 20 ships and no planets; crisis.210 (on_country_destroyed, 00_on_actions.txt:3607; L3425-3490) ends the crisis and sends crisis.211 to all default and fallen empires"
+  },
+  {
+   "from": "crisis.211", "to": "observer.33",
+   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "evidence": "events/crisis_events_1.txt:3466 crisis.210 fires observer.33; events/observer_events.txt:604-616"
+  },
+  {
+   "from": "crisis.211", "to": "crisis.76", "conditional": true,
+   "label": {"zh": "若哨兵组织仍存在：15–25天后宣布解散", "en": "If the Sentinels still exist: they disband 15–25 days later"},
+   "evidence": "events/crisis_events_1.txt:3483-3488 crisis.210 sends crisis.75 to the Sentinels after 15+10 days; crisis.75 (L2070-2084) messages human players with crisis.76 and destroys the Sentinels country"
+  },
+  {
+   "from": "crisis.211", "to": "crisis.121", "conditional": true,
+   "label": {"zh": "360天后起：野生索林原虫可能在曾被侵扰的无主星系筑巢（首次出现时通知）", "en": "From 360 days later: feral Prethoryn may nest in unowned, once-infested systems (notice on first appearance)"},
+   "evidence": "events/crisis_events_1.txt:3479-3482 crisis.210 schedules crisis.119 after 360 days; crisis.119 (L2532-2545) sets feral_prethoryn_can_spawn for 5400 days; crisis.120 (on_monthly_pulse, 00_on_actions.txt:90; L2548-2692) 10/100 per month spawns a nest and sends crisis.121 the first time"
   }
  ],
- "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+ "suppress": [
+  {"from": "crisis.105", "to": "crisis.107", "evidence": "events/crisis_events_1.txt:2388-2399 crisis.107 is sent to the OTHER empires that were also running CAPTURE_QUEEN, not to the capturer; modelled as the exclusive alternative from the project"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["crisis.105", "crisis.107"],
+   "label": {"zh": "谁先捕获虫后", "en": "Who captures the Queen first"},
+   "note": {"zh": "首个完成“俘获虫后”项目的帝国得到虫后；其他进行同一项目的帝国收到“虫后被抢走”，项目中止。", "en": "The first empire to finish Capture the Queen gets her; every other empire running the project receives 'Someone Else Got The Queen' and its project is aborted."}},
+  {"kind": "parallel", "members": ["crisis.51", "crisis.101", "crisis.252"],
+   "label": {"zh": "主力入侵期间的可能发展", "en": "Possible developments during the main invasion"},
+   "note": {"zh": "哨兵组织、受伤的虫后与育母虫后各有独立条件，没有固定先后，也都不是击败虫群的必经步骤。", "en": "The Sentinels, the wounded Queen and the Brood-Queen each have their own conditions, occur in no fixed order, and none is required to defeat the swarm."}}
+ ],
+ "endings": {
+  "crisis.211": {
+   "label": {"zh": "胜利：虫灾终平", "en": "Victory: the end of the Scourge"},
+   "note": {"zh": "虫群国家被消灭后，所有帝国收到此报告；之后可能有哨兵解散与野生索林原虫的余波。脚本中没有虫群获胜的结局事件。", "en": "When the swarm country is destroyed every empire receives this report; the Sentinels' farewell and feral Prethoryn may follow as aftermath. The scripts contain no ending event for a swarm victory."},
+   "evidence": "events/crisis_events_1.txt:3425-3490 crisis.210 end_crisis, sets prethoryn_invasion_defeated, sends crisis.211"
   }
+ },
+ "nodeLabels": {
+  "crisis.11": {"zh": "预兆一：亚空间回声", "en": "Omen 1: subspace echoes"},
+  "crisis.13": {"zh": "预兆二：接近外缘", "en": "Omen 2: nearing the rim"},
+  "crisis.15": {"zh": "预兆三：亚空间信号", "en": "Omen 3: subspace signal"},
+  "crisis.16": {"zh": "虫群的讯息", "en": "The swarm's message"},
+  "crisis.18": {"zh": "先锋入侵", "en": "The vanguard invades"},
+  "crisis.20": {"zh": "主力入侵", "en": "The main swarm arrives"},
+  "crisis.30": {"zh": "联络虫群（可重复）", "en": "Contact the swarm (repeatable)"},
+  "crisis.51": {"zh": "哨兵组织崛起", "en": "The Sentinels rise"},
+  "crisis.55": {"zh": "联络哨兵（可重复）", "en": "Contact the Sentinels (repeatable)"},
+  "crisis.81": {"zh": "哨兵覆灭", "en": "The Sentinels fall"},
+  "crisis.101": {"zh": "受伤的虫后", "en": "The wounded Queen"},
+  "crisis.252": {"zh": "夺得育母虫后", "en": "The Brood-Queen seized"},
+  "crisis.211": {"zh": "胜利", "en": "Victory"},
+  "crisis.76": {"zh": "余波：哨兵解散", "en": "Aftermath: the Sentinels disband"},
+  "crisis.121": {"zh": "余波：野生索林原虫", "en": "Aftermath: feral Prethoryn"},
+  "observer.27": {"zh": "观察者副本", "en": "Observer copy"},
+  "observer.28": {"zh": "观察者副本", "en": "Observer copy"},
+  "observer.29": {"zh": "观察者副本", "en": "Observer copy"},
+  "observer.30": {"zh": "观察者副本", "en": "Observer copy"},
+  "observer.31": {"zh": "观察者副本", "en": "Observer copy"},
+  "observer.32": {"zh": "观察者副本", "en": "Observer copy"},
+  "observer.33": {"zh": "观察者副本", "en": "Observer copy"}
+ },
+ "notes": [
+  {"doc": "crisis.16", "kind": "review",
+   "zh": "正文按能否理解索林原虫而不同：一般帝国只收到无法翻译的信号；灵能物种或蜂巢思维物种可读出内容。",
+   "en": "The text depends on whether the empire can understand the Prethoryn: most empires receive an untranslatable signal; psionic or hive-minded species can read it."},
+  {"doc": "crisis.30", "kind": "review",
+   "zh": "这是外交界面中的可重复通讯，不是剧情的下一步。能否理解虫群取决于 can_talk_to_prethoryn：灵能物种、蜂巢思维物种，或拥有巨兽之怒威胁特质“心灵融合”。",
+   "en": "A repeatable diplomacy screen, not the next story step. Understanding the swarm depends on can_talk_to_prethoryn: a psionic or hive-minded species, or the Behemoth Fury menace perk Mind Meld."},
+  {"doc": "crisis.18", "kind": "review",
+   "zh": "各选项只按政府主导思潮与狂热思潮区分，内容都是开启“虚空之鞭”事件链。",
+   "en": "The options differ only by governing and fanatic ethics; every option starts the Scourge of the Void event chain."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c5b-crisis (Opus 5.5)",
+  "scope": {"zh": "完整核对 crisis_events_1.txt 全部可见事件、触发器、隐藏路由与延时，及相关观察者副本、监管人/帝皇宣告、遗珍与项目。", "en": "Checked every visible event of crisis_events_1.txt with its triggers, hidden routers and delays, plus the observer copies, Custodian/Emperor announcements, relic and project."},
+  "sources": ["events/crisis_events_1.txt", "events/crisis_trigger_events.txt", "events/observer_events.txt", "events/nemesis_custodian_events.txt", "events/nemesis_emperor_events.txt", "events/grand_archive_events.txt", "common/special_projects/00_projects_1.txt", "common/relics/relics.txt", "common/on_actions/00_on_actions.txt", "common/scripted_triggers/00_scripted_triggers.txt", "common/special_projects/06_projects_nomads.txt"],
+  "uncertain": [
+   "MTTH values are engine means evaluated per qualifying country per month; real waiting times vary and are shown only as the script values.",
+   "crisis.16: an empire that can talk to the Prethoryn only through the Mind Meld perk matches none of the three desc triggers (L320-337); what the game then displays was not verified in play."
+  ],
+  "guide": "public/summaries/prethoryn-scourge.md"
  }
 }

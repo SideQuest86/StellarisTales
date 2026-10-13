@@ -1,6 +1,289 @@
 {
  "id": "yuht",
+ "family": {
+  "title": {
+   "zh": "尤特帝国",
+   "en": "The Yuht Empire"
+  },
+  "category": "precursors",
+  "start": "precursor.500",
+  "members": [
+   "precursor.500",
+   "event_chains:yuht_chain",
+   "anomalies:yuht_1_cat",
+   "anomalies:yuht_2_cat",
+   "anomalies:yuht_3_cat",
+   "anomalies:yuht_4_cat",
+   "anomalies:yuht_5_cat",
+   "anomalies:yuht_6_cat",
+   "anomalies:yuht_7_cat",
+   "anomalies:yuht_8_cat",
+   "anomalies:yuht_9_cat",
+   "precursor.505",
+   "precursor.510",
+   "precursor.515",
+   "precursor.520",
+   "precursor.525",
+   "precursor.530",
+   "precursor.535",
+   "precursor.540",
+   "precursor.545",
+   "special_projects:YUHT_ARCHEOLOGY_1",
+   "special_projects:YUHT_ARCHEOLOGY_2",
+   "special_projects:YUHT_ARCHEOLOGY_3",
+   "special_projects:YUHT_ARCHEOLOGY_4",
+   "special_projects:YUHT_ARCHEOLOGY_5",
+   "special_projects:YUHT_ARCHEOLOGY_6",
+   "special_projects:YUHT_ARCHEOLOGY_7",
+   "special_projects:YUHT_ARCHEOLOGY_8",
+   "special_projects:YUHT_ARCHEOLOGY_9",
+   "precursor.506",
+   "precursor.511",
+   "precursor.516",
+   "precursor.521",
+   "precursor.526",
+   "precursor.531",
+   "precursor.536",
+   "precursor.541",
+   "precursor.546",
+   "precursor.597",
+   "precursor.598",
+   "precursor.599",
+   "precursor.600",
+   "event_chains:yuht_homeworld_chain",
+   "special_projects:YUHT_HOMEWORLD_PROJECT",
+   "precursor.601",
+   "precursor.602",
+   "special_projects:YUHT_SECRETS",
+   "ancrel.10050",
+   "anomalies:YUHTAAN",
+   "over.50",
+   "special_projects:YUHT_JABBARDEENI_CACHE",
+   "over.60"
+  ],
+  "sources": []
+ },
+ "titleFrom": "precursor.500",
+ "category": "precursors",
  "bridges": [
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_1_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:704 yuht_1_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_2_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:772 yuht_2_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_3_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:840 yuht_3_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_4_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:908 yuht_4_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_5_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:975 yuht_5_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_6_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1043 yuht_6_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_7_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1105 yuht_7_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_8_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1173 yuht_8_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.500",
+   "to": "anomalies:yuht_9_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1239 yuht_9_cat spawn_chance needs star flag precursor_2, the planet type, no precursor_world flag, and owner flags yuht_intro + event chain yuht_chain, both set in precursor.500 immediate (events/precursor_events.txt:1209)"
+  },
+  {
+   "from": "precursor.506",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1304 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.511",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1370 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.516",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1436 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.521",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1500 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.526",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1564 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.531",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1628 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.536",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1692 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.541",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1758 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.546",
+   "choice": "precursor.completed.a",
+   "to": "precursor.600",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:1822 option adds 1 to yuht_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.597 (events/precursor_events.txt:1856); only a completed counter leads on: precursor.598 spawns the home system (retry every 30 days if no usable system) or precursor.599; both schedule precursor.600 days = 2"
+  },
+  {
+   "from": "precursor.601",
+   "to": "special_projects:YUHT_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "可选：另行花费750稀有文物开启（远古遗物）",
+    "en": "Optional: started separately for 750 minor artifacts (Ancient Relics)"
+   },
+   "evidence": "events/precursor_events.txt:1982 immediate sets yuht_world_found; common/artifact_actions/artifact_actions.txt:587 artifact_yuht_research (cost 750 minor_artifacts) requires it and no previous start, then enables YUHT_SECRETS and fires ancrel.10040"
+  },
+  {
+   "from": "precursor.602",
+   "to": "special_projects:YUHT_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "可选：另行花费750稀有文物开启（远古遗物）",
+    "en": "Optional: started separately for 750 minor artifacts (Ancient Relics)"
+   },
+   "evidence": "events/precursor_events.txt:2054 immediate sets yuht_world_found; common/artifact_actions/artifact_actions.txt:587 artifact_yuht_research (cost 750 minor_artifacts) requires it and no previous start, then enables YUHT_SECRETS and fires ancrel.10040"
+  },
   {
    "from": "precursor.601",
    "to": "over.50",
@@ -24,6 +307,209 @@
    "evidence": "00_projects_overlord.txt YUHT_JABBARDEENI_CACHE requirements, days_to_research=360 and timelimit=-1; on_success over.60."
   }
  ],
+ "suppress": [
+  {
+   "from": "precursor.500",
+   "to": "event_chains:yuht_chain",
+   "option": "INTERESTING",
+   "evidence": "events/precursor_events.txt:1209: the option's begin_event_chain is inside tooltip = {} (display only); the chain really begins in immediate, which stays as the edge"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "anomalies:yuht_1_cat",
+    "anomalies:yuht_2_cat",
+    "anomalies:yuht_3_cat",
+    "anomalies:yuht_4_cat",
+    "anomalies:yuht_5_cat",
+    "anomalies:yuht_6_cat",
+    "anomalies:yuht_7_cat",
+    "anomalies:yuht_8_cat",
+    "anomalies:yuht_9_cat"
+   ],
+   "required": 6,
+   "gate": "precursor.600",
+   "label": {
+    "zh": "追寻遗迹",
+    "en": "Following the traces"
+   },
+   "note": {
+    "zh": "9处调查地点没有固定先后，也不必全部完成；每处为“异常→发现→考古项目→报告”。累计六份线索（含先驱者补充线索）后定位母星系。",
+    "en": "The 9 sites have no fixed order and need not all be done; each runs anomaly → discovery → dig project → report. Six clues (supplementary precursor clues count too) locate the home system."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "precursor.601",
+    "precursor.602"
+   ],
+   "label": {
+    "zh": "母星调查的两种结果",
+    "en": "Two outcomes of the homeworld survey"
+   },
+   "labels": [
+    {
+     "zh": "率先调查母星",
+     "en": "First to survey the homeworld"
+    },
+    {
+     "zh": "他人已先到",
+     "en": "Someone else got there first"
+    }
+   ],
+   "note": {
+    "zh": "母星项目完成时只进入其中一种，不会先后发生。",
+    "en": "Completing the homeworld project leads to exactly one of these; they never follow each other."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "precursor.506": {
+   "zh": "独自成长的孵化世界",
+   "en": "Hatchlings growing alone"
+  },
+  "precursor.511": {
+   "zh": "寻找同伴的监听阵列",
+   "en": "Listening for other minds"
+  },
+  "precursor.516": {
+   "zh": "被误认的外星文物",
+   "en": "The misidentified alien artifact"
+  },
+  "precursor.521": {
+   "zh": "墓地中的尤特玩偶",
+   "en": "A doll among the graves"
+  },
+  "precursor.526": {
+   "zh": "移动堡垒般的战士",
+   "en": "Warriors as mobile fortresses"
+  },
+  "precursor.531": {
+   "zh": "首次接触的图像",
+   "en": "An image of first contact"
+  },
+  "precursor.536": {
+   "zh": "双人冷冻室与医疗日志",
+   "en": "Two cryo chambers and medical logs"
+  },
+  "precursor.541": {
+   "zh": "未突破光速的殖民船",
+   "en": "A sublight colony ship"
+  },
+  "precursor.546": {
+   "zh": "等待补给的隐士",
+   "en": "The hermit awaiting supplies"
+  },
+  "anomalies:yuht_1_cat": {
+   "zh": "遗迹迹象：尤特人居住站",
+   "en": "Signs: Yuht Hatchery World"
+  },
+  "anomalies:yuht_2_cat": {
+   "zh": "遗迹迹象：尤特监听哨站",
+   "en": "Signs: Yuht Listening Post"
+  },
+  "anomalies:yuht_3_cat": {
+   "zh": "遗迹迹象：尤特殖民地",
+   "en": "Signs: Yuht Colony"
+  },
+  "anomalies:yuht_4_cat": {
+   "zh": "遗迹迹象：尤特殖民地",
+   "en": "Signs: Yuht Colony"
+  },
+  "anomalies:yuht_5_cat": {
+   "zh": "遗迹迹象：尤特殖民地",
+   "en": "Signs: Yuht Colony"
+  },
+  "anomalies:yuht_6_cat": {
+   "zh": "遗迹迹象：尤特卫星",
+   "en": "Signs: Yuht Satellite"
+  },
+  "anomalies:yuht_7_cat": {
+   "zh": "遗迹迹象：尤特巡洋舰",
+   "en": "Signs: Yuht Cruiser"
+  },
+  "anomalies:yuht_8_cat": {
+   "zh": "遗迹迹象：尤特殖民船",
+   "en": "Signs: Yuht Colony Ship"
+  },
+  "anomalies:yuht_9_cat": {
+   "zh": "遗迹迹象：尤特小行星居所",
+   "en": "Signs: Yuht Asteroid Dwelling"
+  },
+  "observer.57": {
+   "zh": "观察者模式通知",
+   "en": "Observer-mode notice"
+  },
+  "anomalies:YUHTAAN": {
+   "zh": "未使用的母星异常定义",
+   "en": "Unused homeworld anomaly definition"
+  }
+ },
+ "notes": [
+  {
+   "doc": "precursor.500",
+   "kind": "review",
+   "zh": "开场：非AI帝国的科研船勘察一颗位于尤特星域（引擎分配的precursor_2星系）的行星（非恒星、无异常）时，on_survey_planet随机事件以权重6抽中；要求尚无任何先驱者开场。立即开始事件链并设置开场标志，此后调查异常才会生成。",
+   "en": "Opening: drawn (weight 6) from on_survey_planet random events when a non-AI empire's science ship surveys a planet (not a star, no anomaly) in a precursor_2 system allocated to the Yuht; the empire must have no other precursor intro. It begins the chain and sets the intro flag that the site anomalies need."
+  },
+  {
+   "doc": "precursor.600",
+   "kind": "review",
+   "zh": "每份报告给线索计数+1；满六份后，首个定位者生成母星系（无可用位置则每30天重试）并在2天后收到此通知；若他国已生成该星系，也在2天后收到。回应结束遗迹事件链，开启母星事件链和母星项目。",
+   "en": "Each report adds one clue; at six, the first empire to finish spawns the home system (retrying every 30 days if no spot is usable) and gets this notice 2 days later; if the system already exists, the notice also comes after 2 days. The response ends the site chain and opens the homeworld chain and project."
+  },
+  {
+   "doc": "special_projects:YUHT_HOMEWORLD_PROJECT",
+   "kind": "review",
+   "zh": "基础30天，需要带科学家的科研船。完成时若全局母星发现标志尚未设置且目标不是殖民地，进入首次调查报告，否则进入“他人已先到”。",
+   "en": "Base 30 days, needs a science ship with a scientist. On completion: no global homeworld-found flag and an uncolonised target → first survey report; otherwise → someone else got there first."
+  },
+  {
+   "doc": "observer.57",
+   "kind": "review",
+   "zh": "仅向观察者显示的通知（observer_event），不是玩家帝国的事件窗口。",
+   "en": "Shown only to observers (observer_event); not a window for the player's empire."
+  },
+  {
+   "doc": "anomalies:YUHTAAN",
+   "kind": "review",
+   "zh": "此异常类别生成权重为0，没有脚本放置它；母星系初始化器对母星设置prevent_anomaly。当前版本中不会出现，这条研究路线不会实际发生。",
+   "en": "Spawn weight 0 and no script places it; the home-system initializer sets prevent_anomaly on the homeworld. It does not occur in the current game."
+  },
+  {
+   "doc": "special_projects:YUHT_SECRETS",
+   "zh": "另行花费750稀有文物开启，要求已发现尤特母星且尚未开始该研究。社会学项目无期限；完成报告按思潮与科技资格显示互斥正文和奖励回应。",
+   "en": "Spend 750 minor artifacts separately after finding the Yuht homeworld, provided this research has not already been started. The society project has no expiration. Its report and reward depend on ethics and technology eligibility.",
+   "kind": "review"
+  }
+ ],
+ "endings": {
+  "precursor.601": {
+   "label": {
+    "zh": "主线结局：率先调查母星",
+    "en": "Main ending: first to survey the homeworld"
+   },
+   "note": {
+    "zh": "结束调查事件链，获得奖励与遗珍（远古遗物），并解锁可选的秘密研究。",
+    "en": "Ends the investigation chain with rewards and a relic (Ancient Relics), unlocking the optional secrets research."
+   },
+   "evidence": "events/precursor_events.txt:1982"
+  },
+  "precursor.602": {
+   "label": {
+    "zh": "主线结局：他人已先到",
+    "en": "Main ending: someone else got there first"
+   },
+   "note": {
+    "zh": "母星已被他人调查；仍会解锁可选的秘密研究。",
+    "en": "The homeworld was already surveyed by others; the optional secrets research is still unlocked."
+   },
+   "evidence": "events/precursor_events.txt:2054"
+  }
+ },
  "readings": {
   "ancrel.10050": {
    "evidence": "10050 descriptions split is_xenophobe yes/no. First INTERESTING requires can_research tech_colonization_3 and not owned; second requires owned or cannot research. Source order verified; identical localization key needs occurrence selection.",
@@ -95,188 +581,36 @@
    ]
   }
  },
- "nodeLabels": {
-  "precursor.506": {
-   "zh": "独自成长的孵化世界",
-   "en": "Hatchlings growing alone"
-  },
-  "precursor.511": {
-   "zh": "寻找同伴的监听阵列",
-   "en": "Listening for other minds"
-  },
-  "precursor.516": {
-   "zh": "被误认的外星文物",
-   "en": "The misidentified alien artifact"
-  },
-  "precursor.521": {
-   "zh": "墓地中的尤特玩偶",
-   "en": "A doll among the graves"
-  },
-  "precursor.526": {
-   "zh": "移动堡垒般的战士",
-   "en": "Warriors as mobile fortresses"
-  },
-  "precursor.531": {
-   "zh": "首次接触的图像",
-   "en": "An image of first contact"
-  },
-  "precursor.536": {
-   "zh": "双人冷冻室与医疗日志",
-   "en": "Two cryo chambers and medical logs"
-  },
-  "precursor.541": {
-   "zh": "未突破光速的殖民船",
-   "en": "A sublight colony ship"
-  },
-  "precursor.546": {
-   "zh": "等待补给的隐士",
-   "en": "The hermit awaiting supplies"
-  }
- },
- "groups": [
-  {
-   "kind": "parallel",
-   "members": [
-    "precursor.505",
-    "precursor.510",
-    "precursor.515",
-    "precursor.520",
-    "precursor.525",
-    "precursor.530",
-    "precursor.535",
-    "precursor.540",
-    "precursor.545"
-   ],
-   "required": 6,
-   "gate": "precursor.600",
-   "label": {
-    "zh": "追寻遗迹",
-    "en": "Following the traces"
-   },
-   "note": {
-    "zh": "九处地点可任意顺序调查；每项基础180天，要求科研船与科学家。收集六份报告后定位母星；额外资源回调不算另一份线索。",
-    "en": "Investigate the nine sites in any order. Each project takes a base 180 days and requires a science ship and scientist. Six reports locate the home system; the extra resource callback is not another clue."
-   }
-  },
-  {
-   "kind": "exclusive",
-   "members": [
-    "precursor.601",
-    "precursor.602"
-   ],
-   "labels": [
-    {
-     "zh": "尚未被调查，且未殖民",
-     "en": "Not yet investigated or colonized"
-    },
-    {
-     "zh": "已被调查或已殖民",
-     "en": "Already investigated or colonized"
-    }
-   ],
-   "note": {
-    "zh": "母星项目基础30天，要求科研船与科学家。完成时尚无尤特母星发现标志且目标未殖民，进入完整报告；否则进入另一结果，两者互斥。",
-    "en": "The homeworld project takes a base 30 days and requires a science ship and scientist. The full report requires no Yuht homeworld-found flag and an uncolonized target at completion; otherwise the alternative applies."
-   }
-  }
- ],
- "notes": [
-  {
-   "doc": "special_projects:YUHT_HOMEWORLD_PROJECT",
-   "zh": "六份线索完成后定位母星。首次生成若暂缺合适星系，每30天重试；成功或找到已有星系时，两天后收到通知。通知结束线索搜集并开启母星调查项目，尚不代表调查完成。",
-   "en": "Six clues locate the home system. If initial placement has no suitable system, it retries every 30 days. Successful placement or an existing system leads to a notice after two days. The notice ends clue collection and opens the homeworld project; investigation is still required.",
-   "kind": "review"
-  },
-  {
-   "doc": "special_projects:YUHT_SECRETS",
-   "zh": "另行花费750稀有文物开启，要求已发现尤特母星且尚未开始该研究。社会学项目无期限；完成报告按思潮与科技资格显示互斥正文和奖励回应。",
-   "en": "Spend 750 minor artifacts separately after finding the Yuht homeworld, provided this research has not already been started. The society project has no expiration. Its report and reward depend on ethics and technology eligibility.",
-   "kind": "review"
-  }
- ],
- "legacy": {
-  "precursorConfig": {
-   "id": "yuht",
-   "base": 500,
-   "project": "YUHT",
-   "investigations": 9,
-   "chain": "yuht",
-   "secrets": "YUHT_SECRETS",
-   "secretEvent": "ancrel.10050",
-   "title": "尤特",
-   "investigationLabels": [
-    {
-     "zh": "独自成长的孵化世界",
-     "en": "Hatchlings growing alone"
-    },
-    {
-     "zh": "寻找同伴的监听阵列",
-     "en": "Listening for other minds"
-    },
-    {
-     "zh": "被误认的外星文物",
-     "en": "The misidentified alien artifact"
-    },
-    {
-     "zh": "墓地中的尤特玩偶",
-     "en": "A doll among the graves"
-    },
-    {
-     "zh": "移动堡垒般的战士",
-     "en": "Warriors as mobile fortresses"
-    },
-    {
-     "zh": "首次接触的图像",
-     "en": "An image of first contact"
-    },
-    {
-     "zh": "双人冷冻室与医疗日志",
-     "en": "Two cryo chambers and medical logs"
-    },
-    {
-     "zh": "未突破光速的殖民船",
-     "en": "A sublight colony ship"
-    },
-    {
-     "zh": "等待补给的隐士",
-     "en": "The hermit awaiting supplies"
-    }
-   ],
-   "investigationNote": {
-    "zh": "九处地点可任意顺序调查；每项基础180天，要求科研船与科学家。收集六份报告后定位母星；额外资源回调不算另一份线索。",
-    "en": "Investigate the nine sites in any order. Each project takes a base 180 days and requires a science ship and scientist. Six reports locate the home system; the extra resource callback is not another clue."
-   },
-   "arrivalLabels": [
-    {
-     "zh": "尚未被调查，且未殖民",
-     "en": "Not yet investigated or colonized"
-    },
-    {
-     "zh": "已被调查或已殖民",
-     "en": "Already investigated or colonized"
-    }
-   ],
-   "arrivalNote": {
-    "zh": "母星项目基础30天，要求科研船与科学家。完成时尚无尤特母星发现标志且目标未殖民，进入完整报告；否则进入另一结果，两者互斥。",
-    "en": "The homeworld project takes a base 30 days and requires a science ship and scientist. The full report requires no Yuht homeworld-found flag and an uncolonized target at completion; otherwise the alternative applies."
-   },
-   "homeworldNote": {
-    "zh": "六份线索完成后定位母星。首次生成若暂缺合适星系，每30天重试；成功或找到已有星系时，两天后收到通知。通知结束线索搜集并开启母星调查项目，尚不代表调查完成。",
-    "en": "Six clues locate the home system. If initial placement has no suitable system, it retries every 30 days. Successful placement or an existing system leads to a notice after two days. The notice ends clue collection and opens the homeworld project; investigation is still required."
-   },
-   "secretNote": {
-    "zh": "另行花费750稀有文物开启，要求已发现尤特母星且尚未开始该研究。社会学项目无期限；完成报告按思潮与科技资格显示互斥正文和奖励回应。",
-    "en": "Spend 750 minor artifacts separately after finding the Yuht homeworld, provided this research has not already been started. The society project has no expiration. Its report and reward depend on ethics and technology eligibility."
-   }
-  }
- },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C2 precursor review (Claude Opus 5.5)",
   "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
-  }
+   "zh": "整条故事已逐项对照源码：开场触发与条件、全部调查异常（生成条件）、发现事件、考古项目、报告与线索计数、母星系定位路由、母星项目两种互斥结果、可选秘密研究及其后续、观察者通知与未使用的母星异常定义；中英文正文已通读。",
+   "en": "Whole story checked against source: opening trigger and conditions, every site anomaly (spawn conditions), discovery events, dig projects, reports and clue counter, home-system routing, the two exclusive homeworld outcomes, the optional secrets research and its follow-ups, the observer notice and the unused homeworld anomaly; Chinese and English text read."
+  },
+  "sources": [
+   "events/precursor_events.txt",
+   "common/anomalies/96_anomaly_categories_precursors.txt",
+   "common/special_projects/00_projects_1.txt",
+   "common/special_projects/00_projects_ancient_relics.txt",
+   "common/event_chains/00_event_chains.txt",
+   "common/artifact_actions/artifact_actions.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/solar_system_initializers/prescripted_species_systems.txt",
+   "common/scripted_triggers/00_scripted_triggers.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "events/observer_events.txt",
+   "localisation/simp_chinese",
+   "localisation/english",
+   "events/megastructure_events_1.txt",
+   "common/special_projects/00_projects_overlord.txt"
+  ],
+  "uncertain": [
+   "on_survey_planet random_events only weigh events whose trigger passes (comment at events/precursor_events.txt:5807); the per-survey chance of the opening therefore depends on which other events are eligible and is not stated as a percentage.",
+   "Rewards, relics and the secrets artifact action are gated by Ancient Relics (has_ancrel / minor artifacts); the no-DLC experience was read from script, not checked in game.",
+   "over.60 calls generate_lcluster_clue (L-Cluster clue, Distant Stars); the cross-chain effect is linked as an external story (distar.10904) and not reviewed here."
+  ],
+  "guide": "public/summaries/yuht.md"
  }
 }

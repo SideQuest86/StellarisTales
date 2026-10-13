@@ -1,5 +1,6 @@
 {
  "id": "horizon-signal",
+ "category": "exploration",
  "bridges": [
   {
    "from": "akx.9101",
@@ -7,10 +8,10 @@
    "choice": "akx.9101.a.notspiritual",
    "conditional": true,
    "label": {
-    "zh": "探索时发现信使",
-    "en": "Discover the messenger"
+    "zh": "此后任一舰队进入星系：发现信使逃生舱",
+    "en": "Next time a fleet enters a system: the Messenger pod"
    },
-   "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+   "evidence": "events/horizonsignal_events.txt:792-826 (flag at 805) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:926-938 9200 requires worm_events_available, no messenger_pod_found, system not guardian/hostile; fired by on_entering_system_fleet common/on_actions/00_on_actions.txt:1000"
   },
   {
    "from": "akx.9101",
@@ -18,10 +19,10 @@
    "choice": "akx.9101.a.notspiritual",
    "conditional": true,
    "label": {
-    "zh": "探索时遇见会合",
-    "en": "Encounter the rendezvous"
+    "zh": "此后舰队进入星系（帝国须有指挥官）：命中相会",
+    "en": "A fleet enters a system (empire needs a commander): the Rendezvous"
    },
-   "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+   "evidence": "events/horizonsignal_events.txt:792-826 (flag at 805) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:1472-1480 9300 requires worm_events_available, no syzygy_encountered, an owned commander; on_entering_system_fleet common/on_actions/00_on_actions.txt:1001"
   },
   {
    "from": "akx.9101",
@@ -29,10 +30,10 @@
    "choice": "akx.9101.a.notspiritual",
    "conditional": true,
    "label": {
-    "zh": "观察前超光速文明",
-    "en": "Observe a pre-FTL civilization"
+    "zh": "观测站监视文艺复兴以后的前超光速文明（平均600个月）",
+    "en": "An observation post over a Renaissance-or-later pre-FTL world (mean 600 months)"
    },
-   "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+   "evidence": "events/horizonsignal_events.txt:792-826 (flag at 805) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:2118-2157 hidden 9399 (observation outpost on a primitive planet, renaissance..early_space age flags, owner human with worm_events_available, mean_time_to_happen 600 months) fires 9400"
   },
   {
    "from": "akx.9101",
@@ -40,10 +41,10 @@
    "choice": "akx.9101.a.notspiritual",
    "conditional": true,
    "label": {
-    "zh": "殖民后出现异象",
-    "en": "An anomaly after colonization"
+    "zh": "新殖民地建立30天后（非栖息地/环带/城市/遗珍世界）",
+    "en": "30 days after founding a colony (not a habitat, ring, ecumenopolis or relic world)"
    },
-   "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+   "evidence": "events/horizonsignal_events.txt:792-826 (flag at 805) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:2611-2643 hidden 9499 on_colonized (common/on_actions/00_on_actions.txt:1300) requires worm_events_available and no waiting_world flag, then carrier_event 9500 days = 30"
   },
   {
    "from": "akx.9101",
@@ -51,10 +52,10 @@
    "choice": "akx.9101.a.notspiritual",
    "conditional": true,
    "label": {
-    "zh": "造访无限神机",
-    "en": "Visit the Infinity Machine"
+    "zh": "舰队进入有无限神机的星系",
+    "en": "A fleet enters a system holding the Infinity Machine"
    },
-   "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+   "evidence": "events/horizonsignal_events.txt:792-826 (flag at 805) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:3112-3137 9600 requires worm_events_available and a guardian_sphere fleet in the system; on_entering_system_fleet common/on_actions/00_on_actions.txt:1002"
   },
   {
    "from": "akx.9101",
@@ -62,10 +63,10 @@
    "choice": "akx.9101.a.notspiritual",
    "conditional": true,
    "label": {
-    "zh": "研究相关科技并建成欧米伽同调装置",
-    "en": "Research the technologies and build the Omega Alignment"
+    "zh": "研究时之螶科技并在首都建成欧米伽同调装置",
+    "en": "Research the Worm technologies and build the Omega Alignment on the capital"
    },
-   "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+   "evidence": "events/horizonsignal_events.txt:792-826 (flag at 805) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:3488-3530 10000 requires active WORM_CHAIN_1 and building_akx_worm_3; on_building_complete common/on_actions/00_on_actions.txt:2957 / on_building_replaced common/on_actions/00_on_actions.txt:3044; common/buildings/12_event_buildings.txt:43-67 needs tech_akx_worm_3; common/technology/00_horizonsignal_tech.txt:59-67 needs tech_akx_worm_1 and tech_akx_worm_2"
   },
   {
    "from": "akx.9101",
@@ -73,10 +74,10 @@
    "choice": "akx.9101.a.spiritual",
    "conditional": true,
    "label": {
-    "zh": "探索时发现信使",
-    "en": "Discover the messenger"
+    "zh": "此后任一舰队进入星系：发现信使逃生舱",
+    "en": "Next time a fleet enters a system: the Messenger pod"
    },
-   "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+   "evidence": "events/horizonsignal_events.txt:829-863 (flag at 842) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:926-938 9200 requires worm_events_available, no messenger_pod_found, system not guardian/hostile; fired by on_entering_system_fleet common/on_actions/00_on_actions.txt:1000"
   },
   {
    "from": "akx.9101",
@@ -84,10 +85,10 @@
    "choice": "akx.9101.a.spiritual",
    "conditional": true,
    "label": {
-    "zh": "探索时遇见会合",
-    "en": "Encounter the rendezvous"
+    "zh": "此后舰队进入星系（帝国须有指挥官）：命中相会",
+    "en": "A fleet enters a system (empire needs a commander): the Rendezvous"
    },
-   "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+   "evidence": "events/horizonsignal_events.txt:829-863 (flag at 842) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:1472-1480 9300 requires worm_events_available, no syzygy_encountered, an owned commander; on_entering_system_fleet common/on_actions/00_on_actions.txt:1001"
   },
   {
    "from": "akx.9101",
@@ -95,10 +96,10 @@
    "choice": "akx.9101.a.spiritual",
    "conditional": true,
    "label": {
-    "zh": "观察前超光速文明",
-    "en": "Observe a pre-FTL civilization"
+    "zh": "观测站监视文艺复兴以后的前超光速文明（平均600个月）",
+    "en": "An observation post over a Renaissance-or-later pre-FTL world (mean 600 months)"
    },
-   "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+   "evidence": "events/horizonsignal_events.txt:829-863 (flag at 842) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:2118-2157 hidden 9399 (observation outpost on a primitive planet, renaissance..early_space age flags, owner human with worm_events_available, mean_time_to_happen 600 months) fires 9400"
   },
   {
    "from": "akx.9101",
@@ -106,10 +107,10 @@
    "choice": "akx.9101.a.spiritual",
    "conditional": true,
    "label": {
-    "zh": "殖民后出现异象",
-    "en": "An anomaly after colonization"
+    "zh": "新殖民地建立30天后（非栖息地/环带/城市/遗珍世界）",
+    "en": "30 days after founding a colony (not a habitat, ring, ecumenopolis or relic world)"
    },
-   "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+   "evidence": "events/horizonsignal_events.txt:829-863 (flag at 842) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:2611-2643 hidden 9499 on_colonized (common/on_actions/00_on_actions.txt:1300) requires worm_events_available and no waiting_world flag, then carrier_event 9500 days = 30"
   },
   {
    "from": "akx.9101",
@@ -117,10 +118,10 @@
    "choice": "akx.9101.a.spiritual",
    "conditional": true,
    "label": {
-    "zh": "造访无限神机",
-    "en": "Visit the Infinity Machine"
+    "zh": "舰队进入有无限神机的星系",
+    "en": "A fleet enters a system holding the Infinity Machine"
    },
-   "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+   "evidence": "events/horizonsignal_events.txt:829-863 (flag at 842) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:3112-3137 9600 requires worm_events_available and a guardian_sphere fleet in the system; on_entering_system_fleet common/on_actions/00_on_actions.txt:1002"
   },
   {
    "from": "akx.9101",
@@ -128,10 +129,10 @@
    "choice": "akx.9101.a.spiritual",
    "conditional": true,
    "label": {
-    "zh": "研究相关科技并建成欧米伽同调装置",
-    "en": "Research the technologies and build the Omega Alignment"
+    "zh": "研究时之螶科技并在首都建成欧米伽同调装置",
+    "en": "Research the Worm technologies and build the Omega Alignment on the capital"
    },
-   "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+   "evidence": "events/horizonsignal_events.txt:829-863 (flag at 842) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:3488-3530 10000 requires active WORM_CHAIN_1 and building_akx_worm_3; on_building_complete common/on_actions/00_on_actions.txt:2957 / on_building_replaced common/on_actions/00_on_actions.txt:3044; common/buildings/12_event_buildings.txt:43-67 needs tech_akx_worm_3; common/technology/00_horizonsignal_tech.txt:59-67 needs tech_akx_worm_1 and tech_akx_worm_2"
   },
   {
    "from": "akx.9101",
@@ -139,10 +140,10 @@
    "choice": "akx.9101.b",
    "conditional": true,
    "label": {
-    "zh": "探索时发现信使",
-    "en": "Discover the messenger"
+    "zh": "此后任一舰队进入星系：发现信使逃生舱",
+    "en": "Next time a fleet enters a system: the Messenger pod"
    },
-   "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+   "evidence": "events/horizonsignal_events.txt:866-897 (flag at 876) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:926-938 9200 requires worm_events_available, no messenger_pod_found, system not guardian/hostile; fired by on_entering_system_fleet common/on_actions/00_on_actions.txt:1000"
   },
   {
    "from": "akx.9101",
@@ -150,10 +151,10 @@
    "choice": "akx.9101.b",
    "conditional": true,
    "label": {
-    "zh": "探索时遇见会合",
-    "en": "Encounter the rendezvous"
+    "zh": "此后舰队进入星系（帝国须有指挥官）：命中相会",
+    "en": "A fleet enters a system (empire needs a commander): the Rendezvous"
    },
-   "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+   "evidence": "events/horizonsignal_events.txt:866-897 (flag at 876) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:1472-1480 9300 requires worm_events_available, no syzygy_encountered, an owned commander; on_entering_system_fleet common/on_actions/00_on_actions.txt:1001"
   },
   {
    "from": "akx.9101",
@@ -161,10 +162,10 @@
    "choice": "akx.9101.b",
    "conditional": true,
    "label": {
-    "zh": "观察前超光速文明",
-    "en": "Observe a pre-FTL civilization"
+    "zh": "观测站监视文艺复兴以后的前超光速文明（平均600个月）",
+    "en": "An observation post over a Renaissance-or-later pre-FTL world (mean 600 months)"
    },
-   "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+   "evidence": "events/horizonsignal_events.txt:866-897 (flag at 876) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:2118-2157 hidden 9399 (observation outpost on a primitive planet, renaissance..early_space age flags, owner human with worm_events_available, mean_time_to_happen 600 months) fires 9400"
   },
   {
    "from": "akx.9101",
@@ -172,10 +173,10 @@
    "choice": "akx.9101.b",
    "conditional": true,
    "label": {
-    "zh": "殖民后出现异象",
-    "en": "An anomaly after colonization"
+    "zh": "新殖民地建立30天后（非栖息地/环带/城市/遗珍世界）",
+    "en": "30 days after founding a colony (not a habitat, ring, ecumenopolis or relic world)"
    },
-   "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+   "evidence": "events/horizonsignal_events.txt:866-897 (flag at 876) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:2611-2643 hidden 9499 on_colonized (common/on_actions/00_on_actions.txt:1300) requires worm_events_available and no waiting_world flag, then carrier_event 9500 days = 30"
   },
   {
    "from": "akx.9101",
@@ -183,10 +184,10 @@
    "choice": "akx.9101.b",
    "conditional": true,
    "label": {
-    "zh": "造访无限神机",
-    "en": "Visit the Infinity Machine"
+    "zh": "舰队进入有无限神机的星系",
+    "en": "A fleet enters a system holding the Infinity Machine"
    },
-   "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+   "evidence": "events/horizonsignal_events.txt:866-897 (flag at 876) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:3112-3137 9600 requires worm_events_available and a guardian_sphere fleet in the system; on_entering_system_fleet common/on_actions/00_on_actions.txt:1002"
   },
   {
    "from": "akx.9101",
@@ -194,10 +195,10 @@
    "choice": "akx.9101.b",
    "conditional": true,
    "label": {
-    "zh": "研究相关科技并建成欧米伽同调装置",
-    "en": "Research the technologies and build the Omega Alignment"
+    "zh": "研究时之螶科技并在首都建成欧米伽同调装置",
+    "en": "Research the Worm technologies and build the Omega Alignment on the capital"
    },
-   "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+   "evidence": "events/horizonsignal_events.txt:866-897 (flag at 876) option sets worm_events_available (9101.c at 900-911 ends WORM_CHAIN_1 instead). events/horizonsignal_events.txt:3488-3530 10000 requires active WORM_CHAIN_1 and building_akx_worm_3; on_building_complete common/on_actions/00_on_actions.txt:2957 / on_building_replaced common/on_actions/00_on_actions.txt:3044; common/buildings/12_event_buildings.txt:43-67 needs tech_akx_worm_3; common/technology/00_horizonsignal_tech.txt:59-67 needs tech_akx_worm_1 and tech_akx_worm_2"
   },
   {
    "from": "akx.10010",
@@ -208,16 +209,418 @@
     "zh": "击败显现的时之螶",
     "en": "Defeat the manifested Worm"
    },
-   "evidence": "10010.b creates worm_enemy; on_fleet_destroyed_perp ->10030 requires that enemy"
+   "evidence": "events/horizonsignal_events.txt:3556-3615 10010.b creates faction \"The Loop\" saved as worm_enemy with the Worm fleet; on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1651) fires 10030, whose trigger (events/horizonsignal_events.txt:3838-3844) requires from = worm_enemy"
+  },
+  {
+   "from": "akx.9315",
+   "to": "akx.9320",
+   "conditional": true,
+   "label": {
+    "zh": "由镜像舰长本人率舰队击毁朔望号",
+    "en": "The mirrored captain's own fleet destroys the Syzygy"
+   },
+   "evidence": "events/horizonsignal_events.txt:1916-1958 hidden 9318 (on_fleet_destroyed_perp common/on_actions/00_on_actions.txt:1650) when the destroyed fleet belongs to syzygy_country: destroyer has worm_events_available, mirrored_syzygy_admiral exists and leads the destroying fleet -> 9320"
+  },
+  {
+   "from": "akx.9315",
+   "to": "akx.9321",
+   "conditional": true,
+   "label": {
+    "zh": "由其他舰队击毁朔望号",
+    "en": "Another fleet destroys the Syzygy"
+   },
+   "evidence": "events/horizonsignal_events.txt:1930-1945 9318 first branch: destroyer has worm_events_available, mirrored_syzygy_admiral exists, destroying fleet has no leader or another leader -> 9321"
+  },
+  {
+   "from": "akx.9315",
+   "to": "akx.9319",
+   "conditional": true,
+   "label": {
+    "zh": "其他情形击毁（如镜像舰长已不在）",
+    "en": "Destroyed in other circumstances (e.g. the mirrored captain is gone)"
+   },
+   "evidence": "events/horizonsignal_events.txt:1959-1972 9318 else branch: a random country with worm_events_available receives 9319 at the destruction site; 9319 after opens SYZYGY_DEBRIS_PROJECT (events/horizonsignal_events.txt:1999-2007)"
+  },
+  {
+   "from": "akx.9320",
+   "to": "akx.9330",
+   "conditional": true,
+   "label": {
+    "zh": "这位注定相会的指挥官日后去世时",
+    "en": "When this foredoomed commander later dies"
+   },
+   "evidence": "events/horizonsignal_events.txt:2026-2031 9320 gives leader_trait_foredoomed_to_a_rendezvous; 9330 (events/horizonsignal_events.txt:2062-2083) on_leader_death (common/on_actions/00_on_actions.txt:2384) requires worm_events_available and that trait"
+  },
+  {
+   "from": "akx.9321",
+   "to": "akx.9330",
+   "conditional": true,
+   "label": {
+    "zh": "这位注定相会的指挥官日后去世时",
+    "en": "When this foredoomed commander later dies"
+   },
+   "evidence": "events/horizonsignal_events.txt:2045-2051 9321 after gives leader_trait_foredoomed_to_a_rendezvous; 9330 (events/horizonsignal_events.txt:2062-2083) on_leader_death (common/on_actions/00_on_actions.txt:2384)"
+  },
+  {
+   "from": "akx.9600",
+   "to": "akx.9610",
+   "choice": "akx.9600.e",
+   "conditional": true,
+   "label": {
+    "zh": "日后舰队再次进入无限神机星系",
+    "en": "A fleet later returns to the Infinity Machine system"
+   },
+   "evidence": "events/horizonsignal_events.txt:3200-3209 (same option in 9601/9602) \"Perhaps later\" sets retainer_first_convo_concluded; 9610 (events/horizonsignal_events.txt:3382-3406, on_entering_system_fleet common/on_actions/00_on_actions.txt:1003) requires it and a guardian_sphere fleet in the system"
+  },
+  {
+   "from": "akx.9601",
+   "to": "akx.9610",
+   "choice": "akx.9600.e",
+   "conditional": true,
+   "label": {
+    "zh": "日后舰队再次进入无限神机星系",
+    "en": "A fleet later returns to the Infinity Machine system"
+   },
+   "evidence": "events/horizonsignal_events.txt:3200-3209 (same option in 9601/9602) \"Perhaps later\" sets retainer_first_convo_concluded; 9610 (events/horizonsignal_events.txt:3382-3406, on_entering_system_fleet common/on_actions/00_on_actions.txt:1003) requires it and a guardian_sphere fleet in the system"
+  },
+  {
+   "from": "akx.9602",
+   "to": "akx.9610",
+   "choice": "akx.9600.e",
+   "conditional": true,
+   "label": {
+    "zh": "日后舰队再次进入无限神机星系",
+    "en": "A fleet later returns to the Infinity Machine system"
+   },
+   "evidence": "events/horizonsignal_events.txt:3200-3209 (same option in 9601/9602) \"Perhaps later\" sets retainer_first_convo_concluded; 9610 (events/horizonsignal_events.txt:3382-3406, on_entering_system_fleet common/on_actions/00_on_actions.txt:1003) requires it and a guardian_sphere fleet in the system"
   }
  ],
- "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+ "suppress": [
+  {
+   "from": "akx.9000",
+   "to": "observer.70",
+   "evidence": "events/horizonsignal_events.txt:126 owner = { observer_event = { id = observer.70 } }: an observer (spectator-mode) notification, events/observer_events.txt:1199-1213; not a window of the player story"
+  },
+  {
+   "from": "akx.10020",
+   "to": "observer.71",
+   "evidence": "events/horizonsignal_events.txt:3808 observer_event observer.71 (events/observer_events.txt:1215-1227): spectator-mode notification only"
+  },
+  {
+   "from": "akx.10010",
+   "to": "observer.72",
+   "option": "akx.10010.b",
+   "evidence": "events/horizonsignal_events.txt:3613 observer_event observer.72 (events/observer_events.txt:1229-1241): spectator-mode notification; the player outcome of 10010.b is the Worm battle (bridge to 10030)"
   }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "akx.9200",
+    "akx.9300",
+    "akx.9400",
+    "akx.9500",
+    "akx.9600"
+   ],
+   "label": {
+    "zh": "时之螶插曲（顺序不定）",
+    "en": "Episodes of the Worm (any order)"
+   },
+   "note": {
+    "zh": "环形神殿开放/研究后（worm_events_available）解锁；各插曲按自身触发条件发生，可能全部、部分或都不发生；终章不要求读完它们。",
+    "en": "Unlocked by opening or studying the Loop Temple (worm_events_available). Each starts on its own trigger; any, all or none may happen, and the finale does not require them."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "akx.9410",
+    "akx.9420"
+   ],
+   "labels": [
+    {
+     "zh": "75%",
+     "en": "75%"
+    },
+    {
+     "zh": "25%",
+     "en": "25%"
+    }
+   ],
+   "note": {
+    "zh": "镇压选项360天后随机其一（random_list 75/25）。",
+    "en": "One of these 360 days after choosing suppression (random_list 75/25)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "akx.9460",
+    "akx.9465"
+   ],
+   "labels": [
+    {
+     "zh": "75%",
+     "en": "75%"
+    },
+    {
+     "zh": "25%",
+     "en": "25%"
+    }
+   ],
+   "note": {
+    "zh": "“扰乱仪式”项目完成时随机其一。",
+    "en": "One of these when the Disrupt project completes."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "akx.9530",
+    "akx.9540"
+   ],
+   "labels": [
+    {
+     "zh": "25%",
+     "en": "25%"
+    },
+    {
+     "zh": "75%",
+     "en": "75%"
+    }
+   ],
+   "note": {
+    "zh": "选择继续监视360天后随机其一。",
+    "en": "One of these 360 days after choosing to keep monitoring."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "akx.9320",
+    "akx.9321",
+    "akx.9319"
+   ],
+   "labels": [
+    {
+     "zh": "镜像舰长亲自击毁",
+     "en": "Mirrored captain present"
+    },
+    {
+     "zh": "其他舰队击毁",
+     "en": "Other fleet"
+    },
+    {
+     "zh": "其他情形",
+     "en": "Otherwise"
+    }
+   ],
+   "note": {
+    "zh": "击毁朔望号后由隐藏事件9318按条件三选一。",
+    "en": "Hidden event 9318 picks one of these when the Syzygy is destroyed."
+   }
+  }
+ ],
+ "endings": {
+  "akx.9006": {
+   "label": {
+    "zh": "拒绝信号",
+    "en": "The signal declined"
+   },
+   "note": {
+    "zh": "不开启事件链；获得物理研究，首位科学家获得场论操纵专长与药物滥用特质。",
+    "en": "No event chain begins; a physics research reward, and the first scientist gains field-manipulation expertise and the substance abuser trait."
+   },
+   "evidence": "events/horizonsignal_events.txt:245-286"
+  },
+  "akx.9013": {
+   "label": {
+    "zh": "无视重现的信号",
+    "en": "The reprise ignored"
+   },
+   "note": {
+    "zh": "结束事件链“信号”；获得物理研究，第二位领袖获得特质。",
+    "en": "The Signals chain ends; physics research, and the second leader gains traits."
+   },
+   "evidence": "events/horizonsignal_events.txt:500-540"
+  },
+  "akx.9023": {
+   "label": {
+    "zh": "不理第三次呼唤",
+    "en": "The third call let go"
+   },
+   "note": {
+    "zh": "结束事件链“信号”；获得物理研究，第三位领袖获得特质。",
+    "en": "The Signals chain ends; physics research, and the third leader gains traits."
+   },
+   "evidence": "events/horizonsignal_events.txt:692-737"
+  },
+  "akx.10020": {
+   "label": {
+    "zh": "结局：时之螶之爱",
+    "en": "Ending: the love of the Worm"
+   },
+   "note": {
+    "zh": "母星系行星变为墓穴世界、恒星化为黑洞，主要物种特质与宜居偏好被改写；时之螶事件结束。",
+    "en": "The home system's planets become tomb worlds and the star a black hole; species traits and habitability preferences are rewritten; the Worm story ends."
+   },
+   "evidence": "events/horizonsignal_events.txt:3618-3825"
+  },
+  "akx.10030": {
+   "label": {
+    "zh": "结局：粉碎圆环",
+    "en": "Ending: the Shattered Loop"
+   },
+   "note": {
+    "zh": "击败时之螶化身：获得能源与物理研究，拥有远古遗物时得到遗珍“螶之鳞”，并开启庆典局势。",
+    "en": "The Worm's avatar is defeated: energy and physics research, the Worm Scales relic with Ancient Relics, and a celebration situation."
+   },
+   "evidence": "events/horizonsignal_events.txt:3828-3896"
+  },
+  "akx.9620": {
+   "label": {
+    "zh": "圣仆的最后使命",
+    "en": "The Retainer's last duty"
+   },
+   "note": {
+    "zh": "支付800能量与800矿物后，无限神机熔毁，黑洞旁出现新的生命并留下社会学资源点。",
+    "en": "After paying 800 energy and 800 minerals the Infinity Machine burns out; new life appears near the black hole, leaving a society deposit."
+   },
+   "evidence": "events/horizonsignal_events.txt:3169-3186, 3453-3483"
+  }
+ },
+ "nodeLabels": {
+  "akx.9006": {
+   "zh": "首次拒绝：讯息结束",
+   "en": "Declined: message ends"
+  },
+  "akx.9013": {
+   "zh": "无视重现：讯息结束",
+   "en": "Reprise ignored: message ends"
+  },
+  "akx.9023": {
+   "zh": "不理第三次：讯息结束",
+   "en": "Third call ignored: message ends"
+  },
+  "akx.9011": {
+   "zh": "第二位领袖穿越",
+   "en": "The second leader goes through"
+  },
+  "akx.9012": {
+   "zh": "第二位领袖：引擎引爆",
+   "en": "Second leader: drive detonated"
+  },
+  "akx.9021": {
+   "zh": "第三位领袖：浪子号归来",
+   "en": "Third leader: the Foundling returns"
+  },
+  "akx.9022": {
+   "zh": "第三位领袖：引擎引爆",
+   "en": "Third leader: drive detonated"
+  },
+  "akx.9312": {
+   "zh": "昨日舰长（狂热威权）",
+   "en": "The Captain that Was (fanatic authoritarian)"
+  },
+  "akx.9320": {
+   "zh": "镜像舰长亲手击毁",
+   "en": "Destroyed by the mirrored captain"
+  },
+  "akx.9321": {
+   "zh": "他人击毁朔望号",
+   "en": "Destroyed by another fleet"
+  },
+  "akx.9601": {
+   "zh": "圣仆：关于摘录者",
+   "en": "Retainer: about the Brief"
+  },
+  "akx.9602": {
+   "zh": "圣仆：关于圆环",
+   "en": "Retainer: about the Loop"
+  },
+  "akx.8888": {
+   "zh": "调试测试事件（游戏中不触发）",
+   "en": "Debug test event (never fires)"
+  }
+ },
+ "notes": [
+  {
+   "doc": "akx.8888",
+   "kind": "review",
+   "zh": "这是开发者调试用的测试事件（is_test_event = yes，trigger = always = no），正常游戏中不会出现；保留在此仅为完整收录原文。",
+   "en": "A developer debug event (is_test_event = yes; trigger always = no) that never appears in normal play; kept only so the original text is archived."
+  },
+  {
+   "doc": "akx.9000",
+   "kind": "review",
+   "zh": "开局时隐藏事件akx.8000以4/20的权重（约20%的对局）选定一个黑洞星系；首个非格式塔、非游牧的玩家帝国由科学家率领的舰队进入该星系时触发，全局仅一次。",
+   "en": "At game start hidden event akx.8000 designates a black-hole system with weight 4 of 20 (about one game in five). The first non-gestalt, non-nomadic player empire to enter it with a scientist-led fleet receives this event, once per game."
+  },
+  {
+   "doc": "akx.9310",
+   "kind": "review",
+   "zh": "前三个问题是对话内选项（is_dialog_only），可在同一窗口依次询问；其余选项结束通讯。狂热和平主义的劝降不会开战，而是获得“朔望”号。",
+   "en": "The first three questions are in-window dialogue (is_dialog_only) and can all be asked; the other options close the channel. The fanatic pacifist surrender offer avoids the battle and grants the Syzygy."
+  },
+  {
+   "doc": "akx.9600",
+   "kind": "review",
+   "zh": "“不行”选项带有default_hide_option（窗口被关闭时的默认选项）；“以后再说”或“不行”之后，舰队再次进入该星系会触发“圣仆再临”。",
+   "en": "\"No\" is marked default_hide_option (the default when the window is dismissed). After \"No\" or \"Perhaps later\", a later fleet visit triggers \"The Retainer, Again\"."
+  }
+ ],
+ "dialogues": {
+  "akx.9310": {
+   "states": {
+    "start": [
+     "akx.9310.a",
+     "akx.9310.b",
+     "akx.9310.c",
+     "akx.9310.d.notpacifist",
+     "akx.9310.d.fanaticpacifist",
+     "akx.9310.e",
+     "akx.9310.e.materialistic",
+     "akx.9310.e.spiritual",
+     "akx.9310.e.militarist",
+     "akx.9310.f"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "akx.9310.d.notpacifist",
+    "akx.9310.d.fanaticpacifist",
+    "akx.9310.e",
+    "akx.9310.e.materialistic",
+    "akx.9310.e.spiritual",
+    "akx.9310.e.militarist",
+    "akx.9310.f"
+   ],
+   "evidence": "events/horizonsignal_events.txt:1548-1638 a/b/c are is_dialog_only with response_text (one-time research rewards guarded by their own flags); d/e/f options (events/horizonsignal_events.txt:1640-1820) close the channel: all but d.fanaticpacifist fire 9315 (fanatic-authoritarian e via 9312)."
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部78个文档：开局选定、三次信号与领袖、环形神殿、五个插曲（信使、命中相会、神之圆环、时螶之界、圣仆）、终章两结局；隐藏路由、延迟、随机权重与状态触发均对照源文件。",
+   "en": "All 78 docs: game-start designation, the three signals and leaders, the Loop Temple, the five episodes (Messenger, Rendezvous, Coils of God, Waiting World, Retainer) and both finale endings; hidden routers, delays, random weights and state triggers checked against the source."
+  },
+  "sources": [
+   "events/horizonsignal_events.txt",
+   "common/special_projects/00_projects_horizonsignal.txt",
+   "common/event_chains/00_event_chains_horizonsignal.txt",
+   "common/technology/00_horizonsignal_tech.txt",
+   "common/buildings/12_event_buildings.txt",
+   "common/on_actions/00_on_actions.txt",
+   "events/observer_events.txt"
+  ],
+  "uncertain": [
+   "default_hide_option on 9600.d / 9610.b is read as the hidden default for a dismissed window; the reader still lists it as an option.",
+   "akx.8888 is a debug test event kept in the family because excluding it would create a separate root story; see ledger request.",
+   "Observer-mode notifications observer.70/71/72 are suppressed from the tree and therefore unassigned in coverage."
+  ],
+  "guide": "public/summaries/horizon-signal.md"
  }
 }

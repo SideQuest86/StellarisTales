@@ -1,0 +1,39 @@
+{
+ "id": "event-fallen-empires-awakening-4",
+ "family": {
+  "title": {
+   "zh": "星河守护者",
+   "en": "Guardians of the Galaxy"
+  },
+  "category": "stories",
+  "start": "fallen_empires_awakening.4",
+  "members": [
+   "fallen_empires_awakening.4",
+   "fallen_empires_awakening.5",
+   "observer.74",
+   "fallen_empires_awakening.0"
+  ]
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已核对触发、选项与结局；但编译器无法从隐藏入口的结果中剔除 bio.3400，图中多出一个不会出现在此路径上的文档。",
+   "en": "Trigger, options and outcomes checked; but the compiler cannot drop bio.3400 from a hidden entry's outcomes, so the tree shows one document that never occurs on this path."
+  },
+  "sources": [
+   "common/scripted_effects/fallen_empire_scripted_effects.txt:587-623",
+   "events/fallen_empire_awakening_events.txt:331-423",
+   "events/fallen_empire_awakening_events.txt:425-578",
+   "events/observer_events.txt:1278"
+  ],
+  "uncertain": [
+   "Unity bio.3400 is only sent when the Control fragment awakens (fallen_empire_awakening_events.txt:456-475), while this path awakens the War fragment, so it does not occur here; needs compiler support for suppressing hidden-entry outcomes."
+  ],
+  "guide": "public/summaries/event-fallen-empires-awakening-4.md",
+  "merged": [
+   "event-fallen-empires-awakening-0"
+  ]
+ }
+}

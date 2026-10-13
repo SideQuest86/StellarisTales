@@ -123,9 +123,15 @@ test("origin-specific options appear only for that origin", () => {
 
 test("Cybrex opens with discovery cards; the homeworld's arrivals are exclusive alternatives", () => {
   const d = byId.get("cybrex");
-  const entries = d.story.tree.nodes.n0.children.map((n) => d.story.tree.nodes[n].doc);
+  const nodes = d.story.tree.nodes;
+  const entries = nodes.n0.children.map((n) => nodes[n].doc);
   assert.equal(entries[0], "precursor.2000");
-  assert.ok(entries.filter((id) => id.startsWith("anomalies:cybrex_")).length >= 6);
+  // Reviewed: the discovery cards follow the introduction (any order), never precede it.
+  const discoveries = Object.values(nodes).filter((n) => !n.ref && n.doc?.startsWith("anomalies:cybrex_"));
+  assert.ok(discoveries.length >= 6);
+  assert.ok(discoveries.every((n) => nodes[n.parent].doc === "precursor.2000"));
+  const secrets = Object.values(nodes).find((n) => !n.ref && n.doc === "special_projects:CYBREX_SECRETS");
+  assert.ok(["precursor.2101", "precursor.2102"].includes(nodes[secrets.parent].doc), "secrets follow the homeworld");
   const project = d.chapters.find((c) => c.id === "special_projects:CYBREX_HOMEWORLD_PROJECT");
   const arrivals = project.next.filter((e) => ["precursor.2101", "precursor.2102"].includes(e.target));
   assert.equal(arrivals.length, 2);

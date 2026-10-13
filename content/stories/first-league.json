@@ -1,23 +1,443 @@
 {
  "id": "first-league",
+ "family": {
+  "title": {
+   "zh": "第一联盟",
+   "en": "The First League"
+  },
+  "category": "precursors",
+  "start": "precursor.1000",
+  "members": [
+   "precursor.1000",
+   "event_chains:first_league_chain",
+   "anomalies:league_1_cat",
+   "anomalies:league_2_cat",
+   "anomalies:league_3_cat",
+   "anomalies:league_4_cat",
+   "anomalies:league_5_cat",
+   "anomalies:league_6_cat",
+   "anomalies:league_7_cat",
+   "anomalies:league_8_cat",
+   "anomalies:league_9_cat",
+   "anomalies:league_10_cat",
+   "anomalies:league_11_cat",
+   "anomalies:league_12_cat",
+   "anomalies:league_13_cat",
+   "anomalies:league_14_cat",
+   "precursor.1005",
+   "precursor.1010",
+   "precursor.1015",
+   "precursor.1020",
+   "precursor.1025",
+   "precursor.1030",
+   "precursor.1035",
+   "precursor.1040",
+   "precursor.1045",
+   "precursor.1050",
+   "precursor.1055",
+   "precursor.1060",
+   "precursor.1065",
+   "precursor.1070",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_1",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_2",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_3",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_4",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_5",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_6",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_7",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_8",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_9",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_10",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_11",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_12",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_13",
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_14",
+   "precursor.1006",
+   "precursor.1011",
+   "precursor.1016",
+   "precursor.1021",
+   "precursor.1026",
+   "precursor.1031",
+   "precursor.1036",
+   "precursor.1041",
+   "precursor.1046",
+   "precursor.1051",
+   "precursor.1056",
+   "precursor.1061",
+   "precursor.1066",
+   "precursor.1071",
+   "precursor.1097",
+   "precursor.1098",
+   "precursor.1099",
+   "precursor.1100",
+   "event_chains:first_league_homeworld_chain",
+   "special_projects:FIRST_LEAGUE_HOMEWORLD_PROJECT",
+   "precursor.1101",
+   "precursor.1102",
+   "special_projects:LEAGUE_SECRETS",
+   "ancrel.10200",
+   "anomalies:FEN_HABBANIS"
+  ],
+  "sources": []
+ },
+ "titleFrom": "precursor.1000",
+ "category": "precursors",
+ "bridges": [
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_1_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1305 league_1_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_2_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1371 league_2_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_3_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1431 league_3_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_4_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1497 league_4_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_5_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1563 league_5_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_6_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1629 league_6_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_7_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1695 league_7_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_8_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1761 league_8_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_9_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1827 league_9_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_10_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1893 league_10_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_11_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:1959 league_11_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_12_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:2025 league_12_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_13_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:2091 league_13_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1000",
+   "to": "anomalies:league_14_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:2157 league_14_cat spawn_chance needs star flag precursor_3, the planet type, no precursor_world flag, and owner flags first_league_intro + event chain first_league_chain, both set in precursor.1000 immediate (events/precursor_events.txt:2127)"
+  },
+  {
+   "from": "precursor.1006",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2226 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1011",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2295 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1016",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2361 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1021",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2434 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1026",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2498 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1031",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2562 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1036",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2626 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1041",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2690 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1046",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2754 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1051",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2823 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1056",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2892 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1061",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:2956 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1066",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:3020 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1071",
+   "choice": "precursor.completed.a",
+   "to": "precursor.1100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:3086 option adds 1 to first_league_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.1097 (events/precursor_events.txt:3120); only a completed counter leads on: precursor.1098 spawns the home system (retry every 30 days if no usable system) or precursor.1099; both schedule precursor.1100 days = 2"
+  },
+  {
+   "from": "precursor.1101",
+   "to": "special_projects:LEAGUE_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "可选：另行花费750稀有文物开启（远古遗物）",
+    "en": "Optional: started separately for 750 minor artifacts (Ancient Relics)"
+   },
+   "evidence": "events/precursor_events.txt:3248 immediate sets league_world_found; common/artifact_actions/artifact_actions.txt:744 artifact_league_research (cost 750 minor_artifacts) requires it and no previous start, then enables LEAGUE_SECRETS and fires ancrel.10040"
+  },
+  {
+   "from": "precursor.1102",
+   "to": "special_projects:LEAGUE_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "可选：另行花费750稀有文物开启（远古遗物）",
+    "en": "Optional: started separately for 750 minor artifacts (Ancient Relics)"
+   },
+   "evidence": "events/precursor_events.txt:3326 immediate sets league_world_found; common/artifact_actions/artifact_actions.txt:744 artifact_league_research (cost 750 minor_artifacts) requires it and no previous start, then enables LEAGUE_SECRETS and fires ancrel.10040"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "precursor.1000",
+   "to": "event_chains:first_league_chain",
+   "option": "INTERESTING",
+   "evidence": "events/precursor_events.txt:2127: the option's begin_event_chain is inside tooltip = {} (display only); the chain really begins in immediate, which stays as the edge"
+  }
+ ],
  "groups": [
   {
    "kind": "parallel",
    "members": [
-    "precursor.1005",
-    "precursor.1010",
-    "precursor.1015",
-    "precursor.1020",
-    "precursor.1025",
-    "precursor.1030",
-    "precursor.1035",
-    "precursor.1040",
-    "precursor.1045",
-    "precursor.1050",
-    "precursor.1055",
-    "precursor.1060",
-    "precursor.1065",
-    "precursor.1070"
+    "anomalies:league_1_cat",
+    "anomalies:league_2_cat",
+    "anomalies:league_3_cat",
+    "anomalies:league_4_cat",
+    "anomalies:league_5_cat",
+    "anomalies:league_6_cat",
+    "anomalies:league_7_cat",
+    "anomalies:league_8_cat",
+    "anomalies:league_9_cat",
+    "anomalies:league_10_cat",
+    "anomalies:league_11_cat",
+    "anomalies:league_12_cat",
+    "anomalies:league_13_cat",
+    "anomalies:league_14_cat"
    ],
    "required": 6,
    "gate": "precursor.1100",
@@ -26,8 +446,8 @@
     "en": "Following the traces"
    },
    "note": {
-    "zh": "调查地点没有固定先后；收集六份线索后，可定位母星。",
-    "en": "Investigations may occur in any order. Six clues reveal the home system."
+    "zh": "14处调查地点没有固定先后，也不必全部完成；每处为“异常→发现→考古项目→报告”。累计六份线索（含先驱者补充线索）后定位母星系。",
+    "en": "The 14 sites have no fixed order and need not all be done; each runs anomaly → discovery → dig project → report. Six clues (supplementary precursor clues count too) locate the home system."
    }
   },
   {
@@ -36,41 +456,244 @@
     "precursor.1101",
     "precursor.1102"
    ],
+   "label": {
+    "zh": "母星调查的两种结果",
+    "en": "Two outcomes of the homeworld survey"
+   },
    "labels": [
     {
-     "zh": "率先发现",
-     "en": "First to arrive"
+     "zh": "率先调查母星",
+     "en": "First to survey the homeworld"
     },
     {
-     "zh": "他人已经先至",
-     "en": "Others arrived first"
+     "zh": "他人已先到",
+     "en": "Someone else got there first"
     }
    ],
    "note": {
-    "zh": "这两种结果互为替代，不会依次发生。",
-    "en": "These are alternative outcomes, not consecutive events."
+    "zh": "母星项目完成时只进入其中一种，不会先后发生。",
+    "en": "Completing the homeworld project leads to exactly one of these; they never follow each other."
    }
   }
  ],
- "legacy": {
-  "precursorConfig": {
-   "id": "first-league",
-   "base": 1000,
-   "project": "FIRST_LEAGUE",
-   "investigations": 14,
-   "chain": "first_league",
-   "secrets": "LEAGUE_SECRETS",
-   "secretEvent": "ancrel.10200",
-   "title": "第一联盟"
+ "nodeLabels": {
+  "precursor.1006": {
+   "zh": "第28外环巡逻舰队",
+   "en": "The 28th Outer Rim Patrol Fleet"
+  },
+  "precursor.1011": {
+   "zh": "十二个物种的船员",
+   "en": "A crew of twelve species"
+  },
+  "precursor.1016": {
+   "zh": "汉姆达的仪仗镰刀",
+   "en": "The Khamdai ceremonial sickle"
+  },
+  "precursor.1021": {
+   "zh": "卡萨克的贸易网络",
+   "en": "The Chassago trade network"
+  },
+  "precursor.1026": {
+   "zh": "米格杨外交使团",
+   "en": "The Migir-Yan diplomatic corps"
+  },
+  "precursor.1031": {
+   "zh": "维若帕的科学",
+   "en": "V'ropak science"
+  },
+  "precursor.1036": {
+   "zh": "危险研究的基地",
+   "en": "A base for dangerous research"
+  },
+  "precursor.1041": {
+   "zh": "样板殖民地的屠杀",
+   "en": "Massacre at the model colony"
+  },
+  "precursor.1046": {
+   "zh": "众族共处的贸易星",
+   "en": "A trade world of many species"
+  },
+  "precursor.1051": {
+   "zh": "与里金人的舰队战",
+   "en": "Fleet battle with the Rikim"
+  },
+  "precursor.1056": {
+   "zh": "失败的越狱",
+   "en": "A failed prison escape"
+  },
+  "precursor.1061": {
+   "zh": "不干涉原则与奴隶贩子",
+   "en": "Non-interference and the slavers"
+  },
+  "precursor.1066": {
+   "zh": "封锁与反物质袭击",
+   "en": "Blockade and an antimatter attack"
+  },
+  "precursor.1071": {
+   "zh": "联盟的地下犯罪世界",
+   "en": "The League's criminal underworld"
+  },
+  "anomalies:league_1_cat": {
+   "zh": "遗迹迹象：联盟舰队基地",
+   "en": "Signs: League Naval Base"
+  },
+  "anomalies:league_2_cat": {
+   "zh": "遗迹迹象：联盟巡洋舰",
+   "en": "Signs: League Cruiser"
+  },
+  "anomalies:league_3_cat": {
+   "zh": "遗迹迹象：汉姆达母星",
+   "en": "Signs: The Khamdai Homeworld"
+  },
+  "anomalies:league_4_cat": {
+   "zh": "遗迹迹象：卡萨克母星",
+   "en": "Signs: The Chassago Homeworld"
+  },
+  "anomalies:league_5_cat": {
+   "zh": "遗迹迹象：米格杨母星",
+   "en": "Signs: The Migir-Yan Homeworld"
+  },
+  "anomalies:league_6_cat": {
+   "zh": "遗迹迹象：维若帕母星",
+   "en": "Signs: The V'ropak Homeworld"
+  },
+  "anomalies:league_7_cat": {
+   "zh": "遗迹迹象：联盟科学基地",
+   "en": "Signs: League Science Base"
+  },
+  "anomalies:league_8_cat": {
+   "zh": "遗迹迹象：联盟联合殖民地",
+   "en": "Signs: Joint League Colony"
+  },
+  "anomalies:league_9_cat": {
+   "zh": "遗迹迹象：联盟贸易中心",
+   "en": "Signs: League Trade Center"
+  },
+  "anomalies:league_10_cat": {
+   "zh": "遗迹迹象：战役残骸",
+   "en": "Signs: Battle Wreckage"
+  },
+  "anomalies:league_11_cat": {
+   "zh": "遗迹迹象：第一联盟监狱",
+   "en": "Signs: League Prison Complex"
+  },
+  "anomalies:league_12_cat": {
+   "zh": "遗迹迹象：受保护的[Owner.GetPreFTLUpper]星球",
+   "en": "Signs: Protected [Owner.GetPreFTLUpper] World"
+  },
+  "anomalies:league_13_cat": {
+   "zh": "遗迹迹象：轨道封锁",
+   "en": "Signs: Orbital Blockade"
+  },
+  "anomalies:league_14_cat": {
+   "zh": "遗迹迹象：走私犯的小行星",
+   "en": "Signs: Smuggler Asteroid"
+  },
+  "observer.58": {
+   "zh": "观察者模式通知",
+   "en": "Observer-mode notice"
+  },
+  "anomalies:FEN_HABBANIS": {
+   "zh": "未使用的母星异常定义",
+   "en": "Unused homeworld anomaly definition"
+  }
+ },
+ "notes": [
+  {
+   "doc": "precursor.1000",
+   "kind": "review",
+   "zh": "开场：非AI帝国的科研船勘察一颗位于第一联盟星域（引擎分配的precursor_3星系）的行星（非恒星、无异常）时，on_survey_planet随机事件以权重6抽中；要求尚无任何先驱者开场。立即开始事件链并设置开场标志，此后调查异常才会生成。",
+   "en": "Opening: drawn (weight 6) from on_survey_planet random events when a non-AI empire's science ship surveys a planet (not a star, no anomaly) in a precursor_3 system allocated to the First League; the empire must have no other precursor intro. It begins the chain and sets the intro flag that the site anomalies need."
+  },
+  {
+   "doc": "precursor.1100",
+   "kind": "review",
+   "zh": "每份报告给线索计数+1；满六份后，首个定位者生成母星系（无可用位置则每30天重试）并在2天后收到此通知；若他国已生成该星系，也在2天后收到。回应结束遗迹事件链，开启母星事件链和母星项目。",
+   "en": "Each report adds one clue; at six, the first empire to finish spawns the home system (retrying every 30 days if no spot is usable) and gets this notice 2 days later; if the system already exists, the notice also comes after 2 days. The response ends the site chain and opens the homeworld chain and project."
+  },
+  {
+   "doc": "special_projects:FIRST_LEAGUE_HOMEWORLD_PROJECT",
+   "kind": "review",
+   "zh": "基础30天，需要带科学家的科研船。完成时若全局母星发现标志尚未设置且目标不是殖民地，进入首次调查报告，否则进入“他人已先到”。",
+   "en": "Base 30 days, needs a science ship with a scientist. On completion: no global homeworld-found flag and an uncolonised target → first survey report; otherwise → someone else got there first."
+  },
+  {
+   "doc": "observer.58",
+   "kind": "review",
+   "zh": "仅向观察者显示的通知（observer_event），不是玩家帝国的事件窗口。",
+   "en": "Shown only to observers (observer_event); not a window for the player's empire."
+  },
+  {
+   "doc": "anomalies:FEN_HABBANIS",
+   "kind": "review",
+   "zh": "此异常类别生成权重为0，没有脚本放置它；母星系初始化器对母星设置prevent_anomaly，原有的anomaly引用已被注释。当前版本中不会出现，这条研究路线不会实际发生。",
+   "en": "Spawn weight 0 and no script places it; the home-system initializer sets prevent_anomaly on the homeworld and its anomaly reference is commented out. It does not occur in the current game."
+  },
+  {
+   "doc": "precursor.1100",
+   "kind": "review",
+   "zh": "源码细节：precursor.1098设置的全局标志是first_league_discovered，而precursor.1097检查的是first_league_system_discovered（全游戏无处设置），因此“他国已定位”分支precursor.1099实际不会进入，每个集满线索的帝国都会走生成母星系的分支。",
+   "en": "Source detail: precursor.1098 sets the global flag first_league_discovered, but precursor.1097 checks first_league_system_discovered (never set anywhere), so the already-located branch precursor.1099 is never taken; every empire that completes the clues takes the spawning branch."
+  },
+  {
+   "doc": "special_projects:LEAGUE_SECRETS",
+   "kind": "review",
+   "zh": "母星报告已结束调查主线。拥有《远古遗物》时可另行花费750稀有文物开启此研究：要求已发现第一联盟母星且此前未开启。工程学研究项目，无期限，完成后收到秘密报告；不会自动开始。",
+   "en": "The homeworld report ends the investigation. With Ancient Relics, spend 750 minor artifacts to start this separately; the First League homeworld must be found and the research not started before. A engineering research project with no time limit; the report follows on completion. It never starts by itself."
+  }
+ ],
+ "endings": {
+  "precursor.1101": {
+   "label": {
+    "zh": "主线结局：率先调查母星",
+    "en": "Main ending: first to survey the homeworld"
+   },
+   "note": {
+    "zh": "结束调查事件链，获得奖励，并解锁可选的秘密研究。",
+    "en": "Ends the investigation chain with rewards, unlocking the optional secrets research."
+   },
+   "evidence": "events/precursor_events.txt:3248"
+  },
+  "precursor.1102": {
+   "label": {
+    "zh": "主线结局：他人已先到",
+    "en": "Main ending: someone else got there first"
+   },
+   "note": {
+    "zh": "母星已被他人调查；仍会解锁可选的秘密研究。",
+    "en": "The homeworld was already surveyed by others; the optional secrets research is still unlocked."
+   },
+   "evidence": "events/precursor_events.txt:3326"
   }
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C2 precursor review (Claude Opus 5.5)",
   "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
-  }
+   "zh": "整条故事已逐项对照源码：开场触发与条件、全部调查异常（生成条件）、发现事件、考古项目、报告与线索计数、母星系定位路由、母星项目两种互斥结果、可选秘密研究及其后续、观察者通知与未使用的母星异常定义；中英文正文已通读。",
+   "en": "Whole story checked against source: opening trigger and conditions, every site anomaly (spawn conditions), discovery events, dig projects, reports and clue counter, home-system routing, the two exclusive homeworld outcomes, the optional secrets research and its follow-ups, the observer notice and the unused homeworld anomaly; Chinese and English text read."
+  },
+  "sources": [
+   "events/precursor_events.txt",
+   "common/anomalies/96_anomaly_categories_precursors.txt",
+   "common/special_projects/00_projects_1.txt",
+   "common/special_projects/00_projects_ancient_relics.txt",
+   "common/event_chains/00_event_chains.txt",
+   "common/artifact_actions/artifact_actions.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/solar_system_initializers/prescripted_species_systems.txt",
+   "common/scripted_triggers/00_scripted_triggers.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "events/observer_events.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [
+   "on_survey_planet random_events only weigh events whose trigger passes (comment at events/precursor_events.txt:5807); the per-survey chance of the opening therefore depends on which other events are eligible and is not stated as a percentage.",
+   "Rewards, relics and the secrets artifact action are gated by Ancient Relics (has_ancrel / minor artifacts); the no-DLC experience was read from script, not checked in game.",
+   "precursor.1098 sets first_league_discovered while precursor.1097 checks first_league_system_discovered: the already-located branch 1099 is unreachable; what a second empire experiences (a second Fen Habbanis spawn) was not verified in play."
+  ],
+  "guide": "public/summaries/first-league.md"
  }
 }

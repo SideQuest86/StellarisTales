@@ -1,5 +1,399 @@
 {
  "id": "cybrex",
+ "family": {
+  "title": {
+   "zh": "赛博勒克斯",
+   "en": "The Cybrex"
+  },
+  "category": "precursors",
+  "start": "precursor.2000",
+  "members": [
+   "precursor.2000",
+   "event_chains:cybrex_chain",
+   "anomalies:cybrex_1_cat",
+   "anomalies:cybrex_2_cat",
+   "anomalies:cybrex_3_cat",
+   "anomalies:cybrex_4_cat",
+   "anomalies:cybrex_5_cat",
+   "anomalies:cybrex_6_cat",
+   "anomalies:cybrex_7_cat",
+   "anomalies:cybrex_8_cat",
+   "anomalies:cybrex_9_cat",
+   "anomalies:cybrex_10_cat",
+   "anomalies:cybrex_11_cat",
+   "precursor.2005",
+   "precursor.2010",
+   "precursor.2015",
+   "precursor.2020",
+   "precursor.2025",
+   "precursor.2030",
+   "precursor.2035",
+   "precursor.2040",
+   "precursor.2045",
+   "precursor.2050",
+   "precursor.2055",
+   "special_projects:CYBREX_ARCHEOLOGY_1",
+   "special_projects:CYBREX_ARCHEOLOGY_2",
+   "special_projects:CYBREX_ARCHEOLOGY_3",
+   "special_projects:CYBREX_ARCHEOLOGY_4",
+   "special_projects:CYBREX_ARCHEOLOGY_5",
+   "special_projects:CYBREX_ARCHEOLOGY_6",
+   "special_projects:CYBREX_ARCHEOLOGY_7",
+   "special_projects:CYBREX_ARCHEOLOGY_8",
+   "special_projects:CYBREX_ARCHEOLOGY_9",
+   "special_projects:CYBREX_ARCHEOLOGY_10",
+   "special_projects:CYBREX_ARCHEOLOGY_11",
+   "precursor.2006",
+   "precursor.2011",
+   "precursor.2016",
+   "precursor.2021",
+   "precursor.2026",
+   "precursor.2031",
+   "precursor.2036",
+   "precursor.2041",
+   "precursor.2046",
+   "precursor.2051",
+   "precursor.2056",
+   "precursor.2103",
+   "precursor.2098",
+   "precursor.2099",
+   "precursor.2100",
+   "event_chains:cybrex_homeworld_chain",
+   "special_projects:CYBREX_HOMEWORLD_PROJECT",
+   "precursor.2101",
+   "precursor.2102",
+   "special_projects:CYBREX_SECRETS",
+   "ancrel.10250"
+  ],
+  "sources": []
+ },
+ "titleFrom": "precursor.2000",
+ "category": "precursors",
+ "bridges": [
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_1_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:2943 cybrex_1_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_2_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3009 cybrex_2_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_3_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3075 cybrex_3_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_4_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3141 cybrex_4_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_5_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3207 cybrex_5_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_6_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3273 cybrex_6_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_7_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3339 cybrex_7_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_8_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3399 cybrex_8_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_9_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3465 cybrex_9_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_10_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3531 cybrex_10_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2000",
+   "to": "anomalies:cybrex_11_cat",
+   "conditional": true,
+   "label": {
+    "zh": "之后勘察该先驱者星域时出现（任意顺序）",
+    "en": "Appears on later surveys of the precursor region (any order)"
+   },
+   "evidence": "common/anomalies/96_anomaly_categories_precursors.txt:3597 cybrex_11_cat spawn_chance needs star flag precursor_5, the planet type, no precursor_world flag, and owner flags cybrex_intro + event chain cybrex_chain, both set in precursor.2000 immediate (events/precursor_events.txt:4483)"
+  },
+  {
+   "from": "precursor.2006",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:4577 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2011",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:4643 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2016",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:4707 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2021",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:4773 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2026",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:4837 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2031",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:4901 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2036",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:4970 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2041",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:5041 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2046",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:5110 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2051",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:5179 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2056",
+   "choice": "precursor.completed.a",
+   "to": "precursor.2100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "累计六份线索后：2天后定位母星系",
+    "en": "Once six clues are collected: home system located 2 days later"
+   },
+   "evidence": "events/precursor_events.txt:5248 option adds 1 to cybrex_artifacts (max 6, common/event_chains/00_event_chains.txt) and fires hidden precursor.2103 (events/precursor_events.txt:5282); only a completed counter leads on: precursor.2098 spawns the home system (retry every 30 days if no usable system) or precursor.2099; both schedule precursor.2100 days = 2"
+  },
+  {
+   "from": "precursor.2101",
+   "to": "special_projects:CYBREX_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "可选：另行花费750稀有文物开启（远古遗物）",
+    "en": "Optional: started separately for 750 minor artifacts (Ancient Relics)"
+   },
+   "evidence": "events/precursor_events.txt:5409 immediate sets cybrex_world_found; common/artifact_actions/artifact_actions.txt:713 artifact_cybrex_research (cost 750 minor_artifacts) requires it and no previous start, then enables CYBREX_SECRETS and fires ancrel.10040"
+  },
+  {
+   "from": "precursor.2102",
+   "to": "special_projects:CYBREX_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "可选：另行花费750稀有文物开启（远古遗物）",
+    "en": "Optional: started separately for 750 minor artifacts (Ancient Relics)"
+   },
+   "evidence": "events/precursor_events.txt:5614 immediate sets cybrex_world_found; common/artifact_actions/artifact_actions.txt:713 artifact_cybrex_research (cost 750 minor_artifacts) requires it and no previous start, then enables CYBREX_SECRETS and fires ancrel.10040"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "precursor.2000",
+   "to": "event_chains:cybrex_chain",
+   "option": "INTERESTING",
+   "evidence": "events/precursor_events.txt:4483: the option's begin_event_chain is inside tooltip = {} (display only); the chain really begins in immediate, which stays as the edge"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "anomalies:cybrex_1_cat",
+    "anomalies:cybrex_2_cat",
+    "anomalies:cybrex_3_cat",
+    "anomalies:cybrex_4_cat",
+    "anomalies:cybrex_5_cat",
+    "anomalies:cybrex_6_cat",
+    "anomalies:cybrex_7_cat",
+    "anomalies:cybrex_8_cat",
+    "anomalies:cybrex_9_cat",
+    "anomalies:cybrex_10_cat",
+    "anomalies:cybrex_11_cat"
+   ],
+   "required": 6,
+   "gate": "precursor.2100",
+   "label": {
+    "zh": "追寻遗迹",
+    "en": "Following the traces"
+   },
+   "note": {
+    "zh": "11处调查地点没有固定先后，也不必全部完成；每处为“异常→发现→考古项目→报告”。累计六份线索（含先驱者补充线索）后定位母星系。",
+    "en": "The 11 sites have no fixed order and need not all be done; each runs anomaly → discovery → dig project → report. Six clues (supplementary precursor clues count too) locate the home system."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "precursor.2101",
+    "precursor.2102"
+   ],
+   "label": {
+    "zh": "母星调查的两种结果",
+    "en": "Two outcomes of the homeworld survey"
+   },
+   "labels": [
+    {
+     "zh": "率先调查母星",
+     "en": "First to survey the homeworld"
+    },
+    {
+     "zh": "他人已先到",
+     "en": "Someone else got there first"
+    }
+   ],
+   "note": {
+    "zh": "母星项目完成时只进入其中一种，不会先后发生。",
+    "en": "Completing the homeworld project leads to exactly one of these; they never follow each other."
+   }
+  }
+ ],
  "nodeLabels": {
   "precursor.2006": {
    "zh": "创造者克尔的灭亡",
@@ -44,58 +438,81 @@
   "precursor.2056": {
    "zh": "机械改造实验",
    "en": "Cybernetic experiments"
+  },
+  "anomalies:cybrex_1_cat": {
+   "zh": "遗迹迹象：克尔母星",
+   "en": "Signs: Kuur Homeworld"
+  },
+  "anomalies:cybrex_2_cat": {
+   "zh": "遗迹迹象：因迪马克母星",
+   "en": "Signs: Indimak Homeworld"
+  },
+  "anomalies:cybrex_3_cat": {
+   "zh": "遗迹迹象：受损的赛博勒克斯战体",
+   "en": "Signs: Broken Cybrex Warforms"
+  },
+  "anomalies:cybrex_4_cat": {
+   "zh": "遗迹迹象：赛博勒克斯入侵",
+   "en": "Signs: Cybrex Invasion"
+  },
+  "anomalies:cybrex_5_cat": {
+   "zh": "遗迹迹象：赛博勒克斯遗迹",
+   "en": "Signs: Cybrex Ruins"
+  },
+  "anomalies:cybrex_6_cat": {
+   "zh": "遗迹迹象：赛博勒克斯监听哨站",
+   "en": "Signs: Cybrex Listening Post"
+  },
+  "anomalies:cybrex_7_cat": {
+   "zh": "遗迹迹象：赛博勒克斯精炼厂",
+   "en": "Signs: Cybrex Refinery"
+  },
+  "anomalies:cybrex_8_cat": {
+   "zh": "遗迹迹象：战斗残骸",
+   "en": "Signs: Battle Debris"
+  },
+  "anomalies:cybrex_9_cat": {
+   "zh": "遗迹迹象：古代赛博勒克斯基地",
+   "en": "Signs: Ancient Cybrex Base"
+  },
+  "anomalies:cybrex_10_cat": {
+   "zh": "遗迹迹象：有机遗骸",
+   "en": "Signs: Organic Remains"
+  },
+  "anomalies:cybrex_11_cat": {
+   "zh": "遗迹迹象：赛博勒克斯研究站",
+   "en": "Signs: Cybrex Research Station"
+  },
+  "observer.60": {
+   "zh": "观察者模式通知",
+   "en": "Observer-mode notice"
   }
  },
- "groups": [
+ "notes": [
   {
-   "kind": "parallel",
-   "members": [
-    "precursor.2005",
-    "precursor.2010",
-    "precursor.2015",
-    "precursor.2020",
-    "precursor.2025",
-    "precursor.2030",
-    "precursor.2035",
-    "precursor.2040",
-    "precursor.2045",
-    "precursor.2050",
-    "precursor.2055"
-   ],
-   "required": 6,
-   "gate": "precursor.2100",
-   "label": {
-    "zh": "追寻遗迹",
-    "en": "Following the traces"
-   },
-   "note": {
-    "zh": "调查地点没有固定先后；收集六份线索后，可定位母星。",
-    "en": "Investigations may occur in any order. Six clues reveal the home system."
-   }
+   "doc": "precursor.2000",
+   "kind": "review",
+   "zh": "开场：非AI帝国的科研船勘察一颗位于赛博勒克斯星域（引擎分配的precursor_5星系）的行星（非恒星、无异常）时，on_survey_planet随机事件以权重6抽中；要求尚无任何先驱者开场。立即开始事件链并设置开场标志，此后调查异常才会生成。",
+   "en": "Opening: drawn (weight 6) from on_survey_planet random events when a non-AI empire's science ship surveys a planet (not a star, no anomaly) in a precursor_5 system allocated to the Cybrex; the empire must have no other precursor intro. It begins the chain and sets the intro flag that the site anomalies need."
   },
   {
-   "kind": "exclusive",
-   "members": [
-    "precursor.2101",
-    "precursor.2102"
-   ],
-   "labels": [
-    {
-     "zh": "率先发现",
-     "en": "First to arrive"
-    },
-    {
-     "zh": "他人已经先至",
-     "en": "Others arrived first"
-    }
-   ],
-   "note": {
-    "zh": "这两种结果互为替代，不会依次发生。",
-    "en": "These are alternative outcomes, not consecutive events."
-   }
-  }
- ],
- "notes": [
+   "doc": "precursor.2100",
+   "kind": "review",
+   "zh": "每份报告给线索计数+1；满六份后，首个定位者生成母星系（无可用位置则每30天重试）并在2天后收到此通知；若他国已生成该星系，也在2天后收到。回应结束遗迹事件链，开启母星事件链和母星项目。",
+   "en": "Each report adds one clue; at six, the first empire to finish spawns the home system (retrying every 30 days if no spot is usable) and gets this notice 2 days later; if the system already exists, the notice also comes after 2 days. The response ends the site chain and opens the homeworld chain and project."
+  },
+  {
+   "doc": "special_projects:CYBREX_HOMEWORLD_PROJECT",
+   "kind": "review",
+   "zh": "基础30天，需要带科学家的科研船。完成时若全局母星发现标志尚未设置，进入首次调查报告，否则进入“他人已先到”（殖民地检查已在源码中注释）。",
+   "en": "Base 30 days, needs a science ship with a scientist. On completion: no global homeworld-found flag → first survey report; otherwise → someone else got there first (the colony check is commented out in the source)."
+  },
+  {
+   "doc": "observer.60",
+   "kind": "review",
+   "zh": "仅向观察者显示的通知（observer_event），不是玩家帝国的事件窗口。",
+   "en": "Shown only to observers (observer_event); not a window for the player's empire."
+  },
   {
    "doc": "special_projects:CYBREX_SECRETS",
    "zh": "母星报告已结束调查主线。玩家可另行花费750稀有文物开启秘密研究；要求已发现母星且此前未开启。工程研究项目无期限，完成后收到秘密报告，并非自动发生。",
@@ -103,75 +520,57 @@
    "kind": "review"
   }
  ],
- "legacy": {
-  "precursorConfig": {
-   "id": "cybrex",
-   "base": 2000,
-   "project": "CYBREX",
-   "investigations": 11,
-   "chain": "cybrex",
-   "secrets": "CYBREX_SECRETS",
-   "secretEvent": "ancrel.10250",
-   "title": "赛博勒克斯",
-   "investigationLabels": [
-    {
-     "zh": "创造者克尔的灭亡",
-     "en": "Destruction of the creators"
-    },
-    {
-     "zh": "奴役与战争工厂",
-     "en": "Slavery and war factories"
-    },
-    {
-     "zh": "战体之间的内斗",
-     "en": "Warforms fighting each other"
-    },
-    {
-     "zh": "小行星轰击",
-     "en": "Asteroid bombardment"
-    },
-    {
-     "zh": "有机生命保护区",
-     "en": "An organic sanctuary"
-    },
-    {
-     "zh": "被遗忘的监听站",
-     "en": "The forgotten listening post"
-    },
-    {
-     "zh": "被摧毁的自有精炼厂",
-     "en": "Their own refinery destroyed"
-    },
-    {
-     "zh": "四国联军的失败",
-     "en": "Defeat of a four-empire coalition"
-    },
-    {
-     "zh": "疑似自杀式撞击",
-     "en": "An apparent suicide collision"
-    },
-    {
-     "zh": "真空中的俘虏",
-     "en": "Captives in the vacuum"
-    },
-    {
-     "zh": "机械改造实验",
-     "en": "Cybernetic experiments"
-    }
-   ],
-   "secretNote": {
-    "zh": "母星报告已结束调查主线。玩家可另行花费750稀有文物开启秘密研究；要求已发现母星且此前未开启。工程研究项目无期限，完成后收到秘密报告，并非自动发生。",
-    "en": "The homeworld report ends the investigation. Separately spend 750 minor artifacts to start this optional engineering project; the homeworld must be found and research not previously started. It has no time limit and does not begin automatically."
-   }
+ "endings": {
+  "precursor.2101": {
+   "label": {
+    "zh": "主线结局：率先调查母星",
+    "en": "Main ending: first to survey the homeworld"
+   },
+   "note": {
+    "zh": "结束调查事件链，获得奖励与遗珍（远古遗物），并解锁可选的秘密研究。",
+    "en": "Ends the investigation chain with rewards and a relic (Ancient Relics), unlocking the optional secrets research."
+   },
+   "evidence": "events/precursor_events.txt:5409"
+  },
+  "precursor.2102": {
+   "label": {
+    "zh": "主线结局：他人已先到",
+    "en": "Main ending: someone else got there first"
+   },
+   "note": {
+    "zh": "母星已被他人调查；仍会解锁可选的秘密研究。",
+    "en": "The homeworld was already surveyed by others; the optional secrets research is still unlocked."
+   },
+   "evidence": "events/precursor_events.txt:5614"
   }
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C2 precursor review (Claude Opus 5.5)",
   "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
-  }
+   "zh": "整条故事已逐项对照源码：开场触发与条件、全部调查异常（生成条件）、发现事件、考古项目、报告与线索计数、母星系定位路由、母星项目两种互斥结果、可选秘密研究及其后续、观察者通知与未使用的母星异常定义；中英文正文已通读。",
+   "en": "Whole story checked against source: opening trigger and conditions, every site anomaly (spawn conditions), discovery events, dig projects, reports and clue counter, home-system routing, the two exclusive homeworld outcomes, the optional secrets research and its follow-ups, the observer notice and the unused homeworld anomaly; Chinese and English text read."
+  },
+  "sources": [
+   "events/precursor_events.txt",
+   "common/anomalies/96_anomaly_categories_precursors.txt",
+   "common/special_projects/00_projects_1.txt",
+   "common/special_projects/00_projects_ancient_relics.txt",
+   "common/event_chains/00_event_chains.txt",
+   "common/artifact_actions/artifact_actions.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/solar_system_initializers/prescripted_species_systems.txt",
+   "common/scripted_triggers/00_scripted_triggers.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "events/observer_events.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [
+   "on_survey_planet random_events only weigh events whose trigger passes (comment at events/precursor_events.txt:5807); the per-survey chance of the opening therefore depends on which other events are eligible and is not stated as a percentage.",
+   "Rewards, relics and the secrets artifact action are gated by Ancient Relics (has_ancrel / minor artifacts); the no-DLC experience was read from script, not checked in game."
+  ],
+  "guide": "public/summaries/cybrex.md"
  }
 }

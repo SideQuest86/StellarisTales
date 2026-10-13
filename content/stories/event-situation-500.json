@@ -1,0 +1,64 @@
+{
+ "id": "event-situation-500",
+ "suppress": [
+  {"from": "situations:situation_gravity_well", "to": "situation.590", "evidence": "Re-anchored after 580: 590 fires at 100% (on_progress_complete, common/situations/01_narrative_situations.txt:639-645), which is only reached through the no-return stage 80-100 whose on_first_enter is 580 (705-711)."}
+ ],
+ "bridges": [
+  {
+   "from": "situation.580", "to": "situation.590", "conditional": true,
+   "label": {"zh": "进度达100%：空间站越过事件视界", "en": "Progress reaches 100%: the station crosses the event horizon"},
+   "evidence": "common/situations/01_narrative_situations.txt:639-645 on_progress_complete -> situation.590; stage gravity_well_no_return (80-100) adds +7 pull on top of base 5 (796-813), more than Retreat's -10 can offset"
+  },
+  {
+   "from": "situation.510", "to": "situation.513",
+   "label": {"zh": "20–45天后夺回控制", "en": "Control regained 20-45 days later"},
+   "evidence": "510 after: situation_event situation.513 days 20 random 25 (events/situation_events.txt:997-1001); 513 restores the previous approach (1083-1100)"
+  },
+  {
+   "from": "situation.511", "to": "situation.513",
+   "label": {"zh": "20–45天后夺回控制", "en": "Control regained 20-45 days later"},
+   "evidence": "511 after: situation_event situation.513 days 20 random 25 (events/situation_events.txt:1062-1066)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive", "members": ["situation.590", "situation.596", "situation.597"],
+   "label": {"zh": "坠入黑洞或逃脱", "en": "Fall in or escape"},
+   "note": {"zh": "进度100%坠入（590）；进度降到0逃脱，隐藏595以5:5选择596或597。", "en": "At 100% the station falls in (590); at 0 it escapes and hidden 595 picks 596 or 597 at 5:5."}
+  },
+  {
+   "kind": "exclusive", "members": ["situation.591", "situation.592"],
+   "label": {"zh": "格式塔目睹坠落的结果", "en": "A gestalt witnessing the fall"},
+   "note": {"zh": "基础权重5:5；分心/亚空间感应/委派职能公民使591×2，单一意志/统一凝聚使592×2。", "en": "Base 5:5; divided-attention / subspace-ephapse / delegated-functions civics double 591, one-mind / unitary-cohesion civics double 592."}
+  },
+  {
+   "kind": "parallel", "members": ["situation.510", "situation.511", "situation.520", "situation.530", "situation.540"],
+   "label": {"zh": "每月随机事件（可重复、无固定顺序）", "en": "Monthly random events (repeatable, unordered)"},
+   "note": {"zh": "权重：无事120，510/511/540各5，520/530各10。兵变（510/511）不会对格式塔发生，且同时只有一次；540要求进度≥70且只发生一次。", "en": "Weights: nothing 120, 510/511/540 5 each, 520/530 10 each. Mutinies (510/511) never happen to gestalts and only one at a time; 540 needs progress ≥70 and happens once."}
+  }
+ ],
+ "endings": {
+  "situation.590": {"label": {"zh": "空间站坠入黑洞", "en": "The station falls in"}, "note": {"zh": "空间站与舰队被摧毁；非格式塔-100影响力，格式塔可选择目睹坠落。", "en": "The station and its fleet are destroyed; non-gestalts lose 100 influence, gestalts may choose to witness the fall."}, "evidence": "events/situation_events.txt:1276-1401"},
+  "situation.596": {"label": {"zh": "逃脱：物理研究", "en": "Escape: physics research"}, "note": {"zh": "大量物理研究奖励。", "en": "A large physics research reward."}, "evidence": "events/situation_events.txt:1513-1540"},
+  "situation.597": {"label": {"zh": "逃脱：新科学家", "en": "Escape: a new scientist"}, "note": {"zh": "获得一位6级科学家（狂热、场操纵专长）。", "en": "Grants a level-6 scientist (Maniacal, field-manipulation expertise)."}, "evidence": "events/situation_events.txt:1542-1573"}
+ },
+ "nodeLabels": {
+  "situation.591": {"zh": "混乱的时间（好）", "en": "Time Out Of Joint (good)"},
+  "situation.592": {"zh": "混乱的时间（坏）", "en": "Time Out Of Joint (bad)"},
+  "situation.596": {"zh": "归还：研究", "en": "Back: research"},
+  "situation.597": {"zh": "归还：科学家", "en": "Back: scientist"},
+  "situation.541": {"zh": "大推力 -30", "en": "Big push -30"},
+  "situation.542": {"zh": "小推力 -10", "en": "Small push -10"}
+ },
+ "notes": [
+  {"doc": "situation.501", "kind": "review", "zh": "每五年的随机国家检查（权重25/2335）运行隐藏500：须拥有建有黑洞观测站且为星辰要塞以上的黑洞星系，每个帝国一次。初始进度25；撤离每月净-5、维持轨道+2、前进+8（越靠近引力越强）。", "en": "The five-year random country pulse (weight 25/2335) runs hidden 500: needs an owned black-hole system with a Black Hole Observatory on a star fortress or larger; once per empire. Starts at 25%; Retreat nets -5/month, Maintain Orbit +2, Advance +8 (the pull grows closer in)."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c7a-society)",
+  "scope": {"zh": "自由落体/重力井完整故事：入口、三种方式、每月随机事件（兵变、彭罗斯过程）、不归点、坠落与格式塔目睹、两种逃脱结局。", "en": "Whole Free Fall / Gravity Well story: entry, the three approaches, monthly events (mutinies, Penrose process), point of no return, the fall and gestalt witnessing, both escape endings."},
+  "sources": ["events/situation_events.txt", "common/situations/01_narrative_situations.txt", "common/on_actions/00_on_actions.txt"],
+  "guide": "public/summaries/event-situation-500.md"
+ }
+}

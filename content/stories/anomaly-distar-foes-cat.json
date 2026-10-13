@@ -1,0 +1,21 @@
+{
+ "id": "anomaly-distar-foes-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:1978-2065 (old_foes_system)",
+   "common/on_actions/00_on_actions.txt:1150",
+   "events/distant_stars_events_1.txt:4044-4092 (distar.130)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:501-517",
+   "events/distant_stars_events_1.txt:4095 (distar.131)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-foes-cat.md"
+ }
+}

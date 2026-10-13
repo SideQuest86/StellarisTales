@@ -1,0 +1,22 @@
+{
+ "id": "event-colony-mod-4",
+ "family": {
+  "title": {"zh": "观测到彗星经过行星环带", "en": "Comet Sighted Through Belt"},
+  "category": "society",
+  "start": "colony_mod.161",
+  "members": ["colony_mod.4"]
+ },
+ "titleFrom": "colony_mod.4",
+ "endings": {
+  "colony_mod.4": {"label": {"zh": "彗星过境", "en": "The comet passes"}, "note": {"zh": "获得1800天的“发现彗星”修正。", "en": "Adds the Comet Sighted modifier for 1800 days."}, "evidence": "events/colony_events_3.txt:498-531"}
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "小行星带殖民地的单页事件，从合并的修正事件故事中拆出。", "en": "The one-page asteroid-belt colony event, split out of the merged modifier-event story."},
+  "sources": ["events/colony_events_3.txt:498-531", "events/colony_events_3.txt:1010-1020"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-mod-4.md"
+ }
+}

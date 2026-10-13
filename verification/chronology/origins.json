@@ -3,13 +3,14 @@
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 58,
-  "docs": 1300,
-  "nodes": 1711,
-  "refs": 411,
+  "docs": 1226,
+  "nodes": 1524,
+  "refs": 298,
   "crossLinks": 200,
   "review": {
-    "partial": 16,
-    "unreviewed": 42
+    "reviewed": 2,
+    "unreviewed": 41,
+    "partial": 15
   },
   "failures": [],
   "items": [
@@ -17,19 +18,10 @@
       "id": "origin_treasure_hunters",
       "title": "寻宝猎人",
       "kind": "origin",
-      "docs": 113,
-      "refs": 50,
-      "crossLinks": 5,
-      "review": "partial"
-    },
-    {
-      "id": "origin_mindwardens",
-      "title": "灵督",
-      "kind": "origin",
-      "docs": 111,
-      "refs": 118,
-      "crossLinks": 6,
-      "review": "partial"
+      "docs": 98,
+      "refs": 46,
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "origin_unplugged",
@@ -62,9 +54,9 @@
       "id": "origin_payback",
       "title": "血债血偿",
       "kind": "origin",
-      "docs": 82,
+      "docs": 77,
       "refs": 23,
-      "crossLinks": 25,
+      "crossLinks": 30,
       "review": "partial"
     },
     {
@@ -83,6 +75,15 @@
       "docs": 73,
       "refs": 18,
       "crossLinks": 9,
+      "review": "partial"
+    },
+    {
+      "id": "origin_mindwardens",
+      "title": "灵督",
+      "kind": "origin",
+      "docs": 73,
+      "refs": 9,
+      "crossLinks": 14,
       "review": "partial"
     },
     {
@@ -113,15 +114,6 @@
       "review": "partial"
     },
     {
-      "id": "origin_primal_calling",
-      "title": "野性呼唤",
-      "kind": "origin",
-      "docs": 40,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
       "id": "origin_sacred_path",
       "title": "神圣之路",
       "kind": "origin",
@@ -147,6 +139,15 @@
       "refs": 10,
       "crossLinks": 1,
       "review": "partial"
+    },
+    {
+      "id": "origin_primal_calling",
+      "title": "野性呼唤",
+      "kind": "origin",
+      "docs": 24,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "origin_cybernetic_creed",

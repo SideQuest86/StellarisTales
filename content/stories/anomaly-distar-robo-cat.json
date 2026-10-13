@@ -1,0 +1,178 @@
+{
+ "id": "anomaly-distar-robo-cat",
+ "family": {
+  "title": {
+   "zh": "原始机器人",
+   "en": "Rudimentary Robots"
+  },
+  "category": "exploration",
+  "start": "anomalies:DISTAR_ROBO_CAT",
+  "members": [
+   "anomalies:DISTAR_ROBO_CAT",
+   "distar.2599",
+   "distar.34",
+   "distar.37"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.25",
+   "to": "distar.26",
+   "conditional": true,
+   "label": {
+    "zh": "殖民这颗星球后（1天后）",
+    "en": "After colonising this planet (1 day later)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1302 on_colonized → distar.2599 (events/distant_stars_events_1.txt:500-541, requires carrier flag primitive_robot_planet set by common/solar_system_initializers/distant_stars_initializers.txt:1704) creates 4 robot pop groups and, for a default empire without cured_rage_virus, fires distar.26 days=1 (events/distant_stars_events_1.txt:538). Does not require the anomaly to have been researched."
+  },
+  {
+   "from": "distar.33",
+   "to": "distar.34",
+   "conditional": true,
+   "label": {
+    "zh": "守军击败暴怒殖民者",
+    "en": "Defenders defeat the enraged colonists"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:860-865 on_colony_defenders_win → distar.34 (events/distant_stars_events_1.txt:992-1026): planet has retrovirus_armies (set by distar.33) and From = enraged_colonists_country."
+  },
+  {
+   "from": "distar.33",
+   "to": "distar.37",
+   "conditional": true,
+   "label": {
+    "zh": "从暴怒殖民者手中夺回星球",
+    "en": "Retake the planet from the enraged colonists"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:835 on_colony_attackers_win → distar.37 (events/distant_stars_events_1.txt:1131-1167): planet has retrovirus_armies and its controller is enraged_colonists_country."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.28",
+    "distar.29"
+   ],
+   "label": {
+    "zh": "项目结果按帝国类型二选一",
+    "en": "Project result by empire type"
+   },
+   "note": {
+    "zh": "PRIMITIVE_ROBOT_PROJECT 成功时同时调用两者，但 distar.28 仅限机械帝国、distar.29 仅限非机械帝国。",
+    "en": "PRIMITIVE_ROBOT_PROJECT fires both on success; distar.28 requires a machine empire, distar.29 a non-machine empire."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.34",
+    "distar.37"
+   ],
+   "label": {
+    "zh": "暴乱的两种平息方式",
+    "en": "Two ways the violence ends"
+   },
+   "note": {
+    "zh": "取决于地面战斗：守军获胜为 distar.34；若殖民者先夺取星球，再攻回为 distar.37。若疫苗在 120 天内研制完成，distar.33 不会发生。",
+    "en": "Depends on ground combat: defenders win → distar.34; planet lost and later retaken → distar.37. If the vaccine is finished within 120 days, distar.33 never fires."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.26": {
+   "zh": "殖民地上的机器人",
+   "en": "Robots on the colony"
+  },
+  "distar.27": {
+   "zh": "研究失踪的造主",
+   "en": "Study the missing makers"
+  },
+  "distar.28": {
+   "zh": "机械帝国的结论",
+   "en": "Machine-empire result"
+  },
+  "distar.29": {
+   "zh": "找到受损日志",
+   "en": "Logs found"
+  },
+  "distar.31": {
+   "zh": "怪事（5–7年后）",
+   "en": "Strange goings-on (5–7 years later)"
+  },
+  "distar.32": {
+   "zh": "形势恶化（每60天）",
+   "en": "Mounting tensions (every 60 days)"
+  },
+  "distar.33": {
+   "zh": "全球暴乱（120天后）",
+   "en": "Planetside violence (after 120 days)"
+  },
+  "distar.35": {
+   "zh": "项目50%：研究员遇害",
+   "en": "Project at 50%: researchers killed"
+  },
+  "distar.36": {
+   "zh": "疫苗研制成功",
+   "en": "Vaccine developed"
+  }
+ },
+ "endings": {
+  "distar.36": {
+   "label": {
+    "zh": "病毒被治愈",
+    "en": "The virus is cured"
+   },
+   "note": {
+    "zh": "设置 cured_rage_virus，清除古怪行为修正并给予医学科技。",
+    "en": "Sets cured_rage_virus, removes erratic behaviour and grants a medical technology."
+   },
+   "evidence": "events/distant_stars_events_1.txt:1044-1129"
+  },
+  "distar.34": {
+   "label": {
+    "zh": "暴乱被镇压",
+    "en": "Violence suppressed"
+   },
+   "note": {
+    "zh": "暴怒殖民者的军队被击败。",
+    "en": "The enraged colonists' armies are defeated."
+   },
+   "evidence": "events/distant_stars_events_1.txt:992-1026"
+  },
+  "distar.37": {
+   "label": {
+    "zh": "星球被夺回",
+    "en": "Planet retaken"
+   },
+   "note": {
+    "zh": "从暴怒殖民者手中收复星球。",
+    "en": "The planet is retaken from the enraged colonists."
+   },
+   "evidence": "events/distant_stars_events_1.txt:1131-1167"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常、殖民后的机器人与狂怒病毒链、地面战斗收尾全部核对。",
+   "en": "Anomaly, colony robot/rage-virus chain and ground-combat aftermath fully checked."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:1651-1738 (primitive_robot_system)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:82-96",
+   "events/distant_stars_events_1.txt:465-497 (distar.25)",
+   "events/distant_stars_events_1.txt:499-1167 (distar.2599, 26-37)",
+   "common/special_projects/00_projects_distant_stars.txt:35-83 (PRIMITIVE_ROBOT_PROJECT, RETROVIRUS_PROJECT)",
+   "common/on_actions/00_on_actions.txt:835, 865, 1302"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-robo-cat.md",
+  "mergedStories": [
+   "event-distar-2599",
+   "event-distar-34",
+   "event-distar-37"
+  ]
+ }
+}

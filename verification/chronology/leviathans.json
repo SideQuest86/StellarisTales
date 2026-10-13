@@ -2,17 +2,27 @@
   "category": "leviathans",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 69,
-  "docs": 1108,
-  "nodes": 1921,
-  "refs": 813,
-  "crossLinks": 47,
+  "stories": 55,
+  "docs": 467,
+  "nodes": 736,
+  "refs": 269,
+  "crossLinks": 84,
   "review": {
-    "partial": 1,
-    "unreviewed": 68
+    "partial": 7,
+    "reviewed": 1,
+    "unreviewed": 47
   },
   "failures": [],
   "items": [
+    {
+      "id": "shroudwalker-divination",
+      "title": "预知",
+      "kind": "family",
+      "docs": 79,
+      "refs": 11,
+      "crossLinks": 3,
+      "review": "partial"
+    },
     {
       "id": "curators",
       "title": "策展人",
@@ -20,6 +30,33 @@
       "docs": 43,
       "refs": 45,
       "crossLinks": 1,
+      "review": "partial"
+    },
+    {
+      "id": "event-shroud-4199",
+      "title": "灵督城邦",
+      "kind": "family",
+      "docs": 42,
+      "refs": 41,
+      "crossLinks": 15,
+      "review": "reviewed"
+    },
+    {
+      "id": "shroudwalker-enclave",
+      "title": "虚境行者城邦",
+      "kind": "family",
+      "docs": 32,
+      "refs": 31,
+      "crossLinks": 30,
+      "review": "partial"
+    },
+    {
+      "id": "mercenary-enclave",
+      "title": "佣兵城邦",
+      "kind": "family",
+      "docs": 27,
+      "refs": 39,
+      "crossLinks": 0,
       "review": "partial"
     },
     {
@@ -32,85 +69,31 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-enclave-300",
-      "title": "[salvager_enclave_country.GetName]",
-      "kind": "event",
-      "docs": 172,
-      "refs": 110,
-      "crossLinks": 3,
-      "review": "unreviewed"
+      "id": "salvager-enclave",
+      "title": "打捞者城邦",
+      "kind": "family",
+      "docs": 17,
+      "refs": 22,
+      "crossLinks": 2,
+      "review": "partial"
     },
     {
-      "id": "event-enclave-304",
-      "title": "[salvager_enclave_country.GetName]",
-      "kind": "event",
-      "docs": 172,
-      "refs": 110,
-      "crossLinks": 3,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-400",
-      "title": "[shroudwalker_enclave_country.GetName]",
-      "kind": "event",
-      "docs": 156,
-      "refs": 88,
-      "crossLinks": 3,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-404",
-      "title": "[shroudwalker_enclave_country.GetName]",
-      "kind": "event",
-      "docs": 156,
-      "refs": 88,
-      "crossLinks": 3,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-2059",
-      "title": "舰队合约到期",
-      "kind": "event",
-      "docs": 67,
-      "refs": 134,
-      "crossLinks": 15,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-2",
-      "title": "佣兵城邦基金会",
-      "kind": "event",
-      "docs": 34,
-      "refs": 39,
+      "id": "shroud-tunnels",
+      "title": "虚境隧道",
+      "kind": "family",
+      "docs": 9,
+      "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "partial"
     },
     {
-      "id": "event-enclave-2045",
-      "title": "不应拒绝的交易",
-      "kind": "event",
-      "docs": 28,
-      "refs": 39,
+      "id": "enclave-leader-departure",
+      "title": "攻击[FROM.GetName]",
+      "kind": "family",
+      "docs": 1,
+      "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-200",
-      "title": "[mercenary_enclave_country.GetName]",
-      "kind": "event",
-      "docs": 27,
-      "refs": 39,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-204",
-      "title": "[mercenary_enclave_country.GetName]",
-      "kind": "event",
-      "docs": 27,
-      "refs": 39,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "partial"
     },
     {
       "id": "event-leviathans-2099",
@@ -158,6 +141,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-enclave-2",
+      "title": "佣兵城邦基金会",
+      "kind": "event",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-leviathans-140",
       "title": "[From.GetName]被摧毁",
       "kind": "event",
@@ -194,15 +186,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-leviathans-155",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 4,
-      "refs": 2,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-leviathans-351",
       "title": "太空城邦：艺术家联盟",
       "kind": "event",
@@ -227,6 +210,15 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-155",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 3,
       "review": "unreviewed"
     },
     {
@@ -275,35 +267,17 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-enclave-2059",
+      "title": "舰队合约到期",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-enclave-23",
       "title": "佣兵城邦被摧毁",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-4200",
-      "title": "指向虚境的信标",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-6005",
-      "title": "思想抹除",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-6020",
-      "title": "焦躁不安的系统",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -338,26 +312,17 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-enclave-100",
-      "title": "飘忽不定的甬道",
+      "id": "event-enclave-2045",
+      "title": "不应拒绝的交易",
       "kind": "event",
       "docs": 1,
       "refs": 0,
-      "crossLinks": 0,
+      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
       "id": "event-enclave-27",
       "title": "舰队紧急召回",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-390",
-      "title": "攻击[FROM.GetName]",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -376,87 +341,6 @@
     {
       "id": "event-enclave-4244",
       "title": "教育的失败",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-4250",
-      "title": "灵能裂口",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-6000",
-      "title": "奇异显现",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-7000",
-      "title": "[shroudwalker_enclave_country.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-7005",
-      "title": "[salvager_enclave_country.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-7060",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-7065",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-7070",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-7075",
-      "title": "未命名故事",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-enclave-7200",
-      "title": "攻击[FROM.GetName]",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -592,15 +476,6 @@
     {
       "id": "event-leviathans-354",
       "title": "太空城邦：艺术家联盟",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-leviathans-605",
-      "title": "攻击[FROM.GetName]",
       "kind": "event",
       "docs": 1,
       "refs": 0,

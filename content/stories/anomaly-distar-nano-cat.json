@@ -1,0 +1,19 @@
+{
+ "id": "anomaly-distar-nano-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:98-122",
+   "events/distant_stars_events_1.txt:1171 (distar.40)",
+   "common/scripted_effects/00_scripted_effects.txt:3243-3278 (generate_lcluster_clue)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-nano-cat.md"
+ }
+}

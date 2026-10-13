@@ -1,0 +1,68 @@
+{
+ "id": "anomaly-distar-clone-cat",
+ "family": {
+  "title": {
+   "zh": "可疑的舱体",
+   "en": "Murky Vats"
+  },
+  "category": "exploration",
+  "start": "anomalies:DISTAR_CLONE_CAT",
+  "members": [
+   "anomalies:DISTAR_CLONE_CAT",
+   "distar.72"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.70",
+   "choice": "distar.70.b",
+   "to": "distar.72",
+   "conditional": true,
+   "label": {
+    "zh": "修复并殖民环形世界区段后",
+    "en": "After repairing and colonising a ring-world segment"
+   },
+   "evidence": "distar.70.b adds clones_in_cryo (events/distant_stars_events_1.txt:2855); common/on_actions/00_on_actions.txt:1304 on_colonized → distar.72 (events/distant_stars_events_1.txt:3273-3290) requires the star to have clones_in_cryo and a pc_ringworld_habitable planet."
+  },
+  {
+   "from": "distar.70",
+   "choice": "distar.70.no_room",
+   "to": "distar.72",
+   "conditional": true,
+   "label": {
+    "zh": "修复并殖民环形世界区段后",
+    "en": "After repairing and colonising a ring-world segment"
+   },
+   "evidence": "distar.70.no_room adds clones_in_cryo (events/distant_stars_events_1.txt:2919); same on_colonized check in distar.72."
+  }
+ ],
+ "nodeLabels": {
+  "distar.72": {
+   "zh": "殖民后处置冷冻克隆体",
+   "en": "Deciding the clones' fate after colonisation"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常、解冻项目、留在冷冻中后殖民环形世界的后续全部核对。",
+   "en": "Anomaly, thaw project and the ring-world colonisation follow-up fully checked."
+  },
+  "sources": [
+   "common/solar_system_initializers/utopia_initializers.txt:818-849 (ring_world_init_01)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:205-219",
+   "events/distant_stars_events_1.txt:2803 (distar.70)",
+   "events/distant_stars_events_1.txt:2928 (distar.71)",
+   "events/distant_stars_events_1.txt:3273 (distar.72)",
+   "common/special_projects/00_projects_distant_stars.txt:146 (CRYO_CLONES_PROJECT)",
+   "common/on_actions/00_on_actions.txt:1304"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-clone-cat.md",
+  "mergedStories": [
+   "event-distar-72"
+  ]
+ }
+}

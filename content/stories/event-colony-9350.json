@@ -1,0 +1,22 @@
+{
+ "id": "event-colony-9350",
+ "category": "society",
+ "endings": {
+  "colony.9370": {"label": {"zh": "结局：核爆选项", "en": "Ending: the nuclear option"}, "note": {"zh": "仅终结者：星球变为核爆星球，事件链结束。", "en": "Determined Exterminators only: the planet becomes a tomb world; the chain ends."}, "evidence": "events/colony_events_3.txt:7325-7338 (9360.e requires civic_machine_terminator), 7413-7448 change_pc = pc_nuked."},
+  "colony.9380": {"label": {"zh": "结局：密弥库蚁发电场", "en": "Ending: Myrmeku power farms"}, "note": {"zh": "研究完成后获得密弥库蚁发电场矿藏，原有对策修正被移除，事件链结束。", "en": "The study adds the Myrmeku power farms deposit, removes the earlier counter-measure modifier and ends the chain."}, "evidence": "events/colony_events_3.txt:7509-7551; common/special_projects/00_projects_3.txt:1843."}
+ },
+ "notes": [
+  {"doc": "colony.9375", "kind": "review", "zh": "审阅注：选择“引走它们”获得合金，并以“被引走的密弥库蚁”修正结束事件链（colony_events_3.txt:7470-7498）。", "en": "Review note: \"Distract them\" grants alloys and ends the chain with the lured-Myrmeku modifier (colony_events_3.txt:7470-7498)."},
+  {"doc": "colony.9365", "kind": "review", "zh": "审阅注：“害虫防治”的正文与等待时间取决于9360的选择：密封720–750天、升级躯体/摧毁群落180–210天、捕获（催化帝国）360–390天。", "en": "Review note: Pest Control's text and delay depend on the 9360 choice: seal 720–750 days, upgrade or destroy 180–210, harvest (catalytic empires) 360–390."}
+ ],
+ "nodeLabels": {"event_chains:myrmeku_chain": {"zh": "事件链概览", "en": "Event chain overview"}},
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "密弥库蚁全部7个可见事件、研究项目与事件链概览（隐藏的易主清理事件9385未列入）。", "en": "All 7 visible Myrmeku events, the study project and the chain overview (hidden owner-change cleanup 9385 not shown)."},
+  "sources": ["events/colony_events_3.txt:7078-7577", "common/special_projects/00_projects_3.txt:1843-1870", "common/scripted_triggers/00_scripted_triggers.txt:1366", "common/on_actions/00_on_actions.txt:3821"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-9350.md"
+ }
+}

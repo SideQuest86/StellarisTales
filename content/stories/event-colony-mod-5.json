@@ -1,0 +1,26 @@
+{
+ "id": "event-colony-mod-5",
+ "family": {
+  "title": {"zh": "清除", "en": "Crackdown"},
+  "category": "society",
+  "start": "colony_mod.161",
+  "members": ["colony_mod.5", "special_projects:hallucinogen_removal", "colony_mod.10", "colony_mod.11"]
+ },
+ "titleFrom": "colony_mod.5",
+ "endings": {
+  "colony_mod.10": {"label": {"zh": "致幻成分全部清除", "en": "Hallucinogen fully removed"}, "note": {"zh": "移除“致幻大气”修正。", "en": "Removes the Atmospheric Hallucinogen modifier."}, "evidence": "events/colony_events_3.txt:582-597; hallucinogen_removal on_success random_list 75 (00_projects_3.txt:576-585)."},
+  "colony_mod.11": {"label": {"zh": "突破：过滤后的大气", "en": "Breakthrough: a filtered atmosphere"}, "note": {"zh": "“致幻大气”替换为永久的“过滤的致幻大气”。", "en": "Atmospheric Hallucinogen is replaced by the permanent Filtered Atmospheric Hallucinogen."}, "evidence": "events/colony_events_3.txt:599-621; random_list 25."}
+ },
+ "notes": [
+  {"doc": "colony_mod.5", "kind": "review", "zh": "审阅注：选择“保持原状”需支付200凝聚力，故事随即结束。", "en": "Review note: \"leave it as it is\" costs 200 unity and ends the story."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "致幻大气殖民地事件、清除项目与两个随机结果，从合并的修正事件故事中拆出。", "en": "The atmospheric-hallucinogen colony event, the removal project and its two random results, split out of the merged modifier-event story."},
+  "sources": ["events/colony_events_3.txt:533-621", "events/colony_events_3.txt:1022-1032", "common/special_projects/00_projects_3.txt:567-586"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-mod-5.md"
+ }
+}

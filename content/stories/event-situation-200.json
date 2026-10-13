@@ -1,0 +1,86 @@
+{
+ "id": "event-situation-200",
+ "suppress": [
+  {"from": "situation.202", "to": "situation.292", "evidence": "Re-anchored under the situation card: 202 only schedules hidden situation.289 1785 days later (events/situation_events.txt:1825-1830); 289 picks 292/293/294 by the situation's current stage (2558-2582)."},
+  {"from": "situation.202", "to": "situation.293", "evidence": "See the 292 entry."},
+  {"from": "situation.202", "to": "situation.294", "evidence": "See the 292 entry."}
+ ],
+ "bridges": [
+  {
+   "from": "situation.202", "to": "situation.203", "conditional": true,
+   "label": {"zh": "65–100天后，若星球上有生物战利品", "en": "65-100 days later, if bio-trophies live on the planet"},
+   "evidence": "202 after: situation_event situation.203 days 65 random 35 (events/situation_events.txt:1828); 203 trigger: target has a bio_trophy pop group and no d_machine_care_home (1846-1856)"
+  },
+  {
+   "from": "situations:situation_geomagnetic_storm", "to": "situation.292", "conditional": true,
+   "label": {"zh": "约5年后风暴平息：辐射损伤低于40%", "en": "Storm ends after about 5 years: damage below 40%"},
+   "evidence": "202 after schedules hidden situation.289 at 1785 days (events/situation_events.txt:1827); the situation's on_abort also fires 289 (01_narrative_situations.txt:858-861); 289 switch current_stage radiation_damage_low -> 292 (situation_events.txt:2558-2582); stage ends 40/70/100 (01_narrative_situations.txt:884-915)"
+  },
+  {
+   "from": "situations:situation_geomagnetic_storm", "to": "situation.293", "conditional": true,
+   "label": {"zh": "约5年后风暴平息：损伤40–70%", "en": "Storm ends after about 5 years: damage 40-70%"},
+   "evidence": "289 switch radiation_damage_mid -> 293 (events/situation_events.txt:2574-2576)"
+  },
+  {
+   "from": "situations:situation_geomagnetic_storm", "to": "situation.294", "conditional": true,
+   "label": {"zh": "约5年后风暴平息：损伤70–100%", "en": "Storm ends after about 5 years: damage 70-100%"},
+   "evidence": "289 switch radiation_damage_high -> 294 (events/situation_events.txt:2577-2579)"
+  },
+  {
+   "from": "situation.291", "to": "situation.299", "conditional": true,
+   "label": {"zh": "15天后，若生物助手的设施仍在", "en": "15 days later, if the bio-assistants' care home exists"},
+   "evidence": "291 after: carrier_event situation.299 days 15 (events/situation_events.txt:2648-2656); 299 trigger has_deposit d_machine_care_home (2779-2781), added only by 203 option a (1862-1866)"
+  },
+  {
+   "from": "situation.292", "to": "situation.299", "conditional": true,
+   "label": {"zh": "15天后，若生物助手的设施仍在", "en": "15 days later, if the bio-assistants' care home exists"},
+   "evidence": "292 after: carrier_event situation.299 days 15 (events/situation_events.txt:2676-2683); trigger as for 291"
+  },
+  {
+   "from": "situation.293", "to": "situation.299", "conditional": true,
+   "label": {"zh": "15天后，若生物助手的设施仍在", "en": "15 days later, if the bio-assistants' care home exists"},
+   "evidence": "293 after (events/situation_events.txt:2716-2723)"
+  },
+  {
+   "from": "situation.294", "to": "situation.299", "conditional": true,
+   "label": {"zh": "15天后，若生物助手的设施仍在", "en": "15 days later, if the bio-assistants' care home exists"},
+   "evidence": "294 after (events/situation_events.txt:2750-2757)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive", "members": ["situation.290", "situation.292", "situation.293", "situation.294"],
+   "label": {"zh": "风暴的结局（只发生其一）", "en": "How the storm ends (one of these)"},
+   "note": {"zh": "辐射损伤达100%时立即290致命损伤；否则约5年（1785天）后按当时阶段得到292/293/294。殖民地失守时局势中止，同样按阶段结算。", "en": "Damage reaching 100% gives 290 at once; otherwise after about 5 years (1785 days) the current stage picks 292/293/294. If the colony is lost the situation aborts and resolves the same way."}
+  },
+  {
+   "kind": "parallel", "members": ["situation.210", "situation.213", "situation.215", "situation.216", "situation.250"],
+   "label": {"zh": "风暴期间每月随机事件", "en": "Monthly random events during the storm"},
+   "note": {"zh": "权重：无事250，210/213/误计算各5，250为10。误计算由隐藏214分派：215权重5；216仅当有生物助手岗位时权重15。", "en": "Weights: nothing 250, 210/213/Miscalculations 5 each, 250 10. Hidden 214 picks Miscalculations: 215 weight 5; 216 weight 15 only with bio-assistant (machine_nurse) jobs."}
+  }
+ ],
+ "endings": {
+  "situation.291": {"label": {"zh": "全部机器人口损毁", "en": "All robot pops lost"}, "note": {"zh": "290的所有选项都会消灭该星球全部机器人口；291后局势结束。", "en": "Every option of 290 kills all robot pops on the planet; the situation ends after 291."}, "evidence": "events/situation_events.txt:2584-2662"},
+  "situation.292": {"label": {"zh": "好结局：抗辐射加固", "en": "Good end: radiation-hardened"}, "note": {"zh": "工程研究奖励与永久修正“抗辐射组件”。", "en": "Engineering research and the permanent modifier radiation_hardened_components."}, "evidence": "events/situation_events.txt:2664-2702"},
+  "situation.293": {"label": {"zh": "中性结局", "en": "Neutral end"}, "note": {"zh": "工程研究奖励。", "en": "An engineering research reward."}, "evidence": "events/situation_events.txt:2704-2736"},
+  "situation.294": {"label": {"zh": "坏结局：软件损伤", "en": "Bad end: software damage"}, "note": {"zh": "5年的“软件损伤”修正。", "en": "The software_damage modifier for 5 years."}, "evidence": "events/situation_events.txt:2738-2768"}
+ },
+ "nodeLabels": {
+  "situation.292": {"zh": "风暴之后（低损伤）", "en": "After the Storm (low)"},
+  "situation.293": {"zh": "风暴之后（中损伤）", "en": "After the Storm (mid)"},
+  "situation.294": {"zh": "风暴之后（高损伤）", "en": "After the Storm (high)"},
+  "situation.215": {"zh": "误计算（损失）", "en": "Miscalculations (loss)"},
+  "situation.216": {"zh": "误计算（生物助手）", "en": "Miscalculations (bio-assistants)"}
+ },
+ "notes": [
+  {"doc": "situation.200", "kind": "review", "zh": "殖民地满25年时的随机殖民地事件（权重5/100，弱磁场星球×2）；仅机械帝国、机器单位人口过半的非首都殖民地，每个帝国一次。选择的保护范围决定局势的初始方式与初始损伤。", "en": "Random colony event when a colony turns 25 (weight 5/100, x2 on weak-magnetic-field planets); machine empires only, non-capital colony with over half machine-unit pops, once per empire. The shielding choice sets the situation's starting approach and initial damage."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c7a-society)",
+  "scope": {"zh": "恒星耀斑/地磁风暴完整故事：开端与保护选择、局势、生物战利品支线、每月随机事件、四种结局与护理所后续。", "en": "Whole Solar Flare / Geomagnetic Storm story: opening and shielding choice, situation, bio-trophy side event, monthly random events, four endings and the care-home follow-up."},
+  "sources": ["events/situation_events.txt", "common/situations/01_narrative_situations.txt", "common/on_actions/00_on_actions.txt"],
+  "guide": "public/summaries/event-situation-200.md"
+ }
+}

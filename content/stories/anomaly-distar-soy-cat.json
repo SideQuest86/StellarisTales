@@ -1,0 +1,48 @@
+{
+ "id": "anomaly-distar-soy-cat",
+ "family": {
+  "title": {
+   "zh": "杂草丛生的遗迹",
+   "en": "Overgrown Ruins"
+  },
+  "category": "exploration",
+  "start": "anomalies:DISTAR_SOY_CAT",
+  "members": [
+   "anomalies:DISTAR_SOY_CAT",
+   "distar.262"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.261",
+   "to": "distar.262",
+   "conditional": true,
+   "label": {
+    "zh": "殖民这颗星球后（非机械帝国）",
+    "en": "After colonising the planet (non-machine empire)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1307 on_colonized → distar.262 (events/distant_stars_events_1.txt:9980) requires carrier flag funlent_planet (set by on_spawn distar.260, events/distant_stars_events_1.txt:9799), livestock pops on the planet and a non-machine owner."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:864-898",
+   "events/distant_stars_events_1.txt:9799 (distar.260)",
+   "events/distant_stars_events_1.txt:9832 (distar.261)",
+   "events/distant_stars_events_1.txt:9980 (distar.262)",
+   "common/on_actions/00_on_actions.txt:1307"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-soy-cat.md",
+  "mergedStories": [
+   "event-distar-262"
+  ]
+ }
+}
