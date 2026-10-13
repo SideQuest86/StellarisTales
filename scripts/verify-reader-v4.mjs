@@ -56,6 +56,16 @@ try {
   assert.match(await page.locator(".narrative").innerText(), /我们的一些科学家认为/);
   assert.ok(await page.locator(".narrative .game-name").count() >= 2);
   step("scripted-loc names resolve to the game's own wording and are marked as filled-in names");
+  await page.locator("[data-profile-open]").click();
+  await page.waitForSelector(".profile-panel [data-profile-gestalt]");
+  await page.locator("[data-profile-gestalt]").selectOption("yes");
+  await page.waitForFunction(() => document.querySelectorAll(".variant-condition").length === 0);
+  assert.match(await page.locator(".narrative").innerText(), /正在发育的蜂群行为/);
+  await page.locator("[data-profile-axis='0']").selectOption({ index: 1 });
+  assert.match(await page.locator(".reading-context").innerText(), /狂热/);
+  step("the empire profile panel declares traits that resolve every document");
+  await page.locator("[data-profile-reset]").click();
+  await page.waitForFunction(() => document.querySelectorAll(".variant-condition").length === 2);
 
   // 3. Origin-only option visible-with-note while the origin is unknown.
   await page.goto(`${base}#story=anomaly-origin-asteroid-category&chapter=anomaly.15`, { waitUntil: "networkidle" });

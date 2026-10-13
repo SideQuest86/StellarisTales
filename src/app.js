@@ -375,15 +375,67 @@ function treeNodeFor(id) {
   for (const node of Object.values(nodes)) if (node.doc === id && !node.ref) return node;
   return null;
 }
-function profileSummary() {
-  const facts = Object.entries(profile).map(([key, value]) => {
-    const name = local(profileNames[key]) || key.replace(/^(ethic|auth|origin|civic)_/, "").replace(/_/g, " ");
-    return (value ? "" : T("非", "not ")) + name;
-  });
-  const assumed = Object.keys(assumptions).length;
-  if (!facts.length && !assumed) return "";
-  return `<div class="reading-context"><span>${esc(T("阅读设定", "Reading as"))}</span>${facts.map((f) => `<b>${esc(f)}</b>`).join("")}${assumed ? `<b>${esc(T(`${assumed} 项情境假设`, `${assumed} assumed condition${assumed > 1 ? "s" : ""}`))}</b>` : ""}<button data-profile-reset>${esc(T("重置", "Reset"))}</button></div>`;
+let profileOptions = null, profileOpen = false;
+function loadProfileOptions() {
+  return json("stories/profile.json").then((p) => (profileOptions = p)).catch(() => null);
 }
+function profileSummary() {
+  const facts = Object.entries(profile)
+    .filter(([key, value]) => (value || !key.startsWith("ethic_fanatic_")) && !(key.startsWith("ethic_") && profile[key.replace("ethic_", "ethic_fanatic_")]))
+    .map(([key, value]) => {
+      const name = local(profileNames[key]) || key.replace(/^(ethic|auth|origin|civic)_/, "").replace(/_/g, " ");
+      const fanatic = key.startsWith("ethic_fanatic_") && !/狂热|Fanatic/.test(name) ? T("狂热", "Fanatic ") : "";
+      return (value ? "" : T("非", "not ")) + fanatic + name;
+    });
+  const assumed = Object.keys(assumptions).length;
+  const chips = facts.map((f) => `<b>${esc(f)}</b>`).join("") + (assumed ? `<b>${esc(T(`${assumed} 项情境假设`, `${assumed} assumed condition${assumed > 1 ? "s" : ""}`))}</b>` : "");
+  return `<div class="reading-context"><span>${esc(T("阅读设定", "Reading as"))}</span>${chips || `<i>${esc(T("未指定文明 · 显示所有可能", "No empire set · all possibilities shown"))}</i>`}<button data-profile-open aria-expanded="${profileOpen}">${esc(T("文明设定", "Empire profile"))}</button>${facts.length || assumed ? `<button data-profile-reset>${esc(T("重置", "Reset"))}</button>` : ""}</div>${profileOpen ? profilePanel() : ""}`;
+}
+function profilePanel() {
+  if (!profileOptions) return `<div class="profile-panel"><p>${esc(T("正在载入……", "Loading…"))}</p></div>`;
+  const option = (value, label, selected) => `<option value="${esc(value)}"${selected ? " selected" : ""}>${esc(label)}</option>`;
+  const axes = [];
+  for (let i = 0; i < profileOptions.ethics.length; i += 2) {
+    const [a, b] = [profileOptions.ethics[i], profileOptions.ethics[i + 1]];
+    const current = profile[a.fanatic] ? a.fanatic : profile[a.key] ? a.key : profile[b.fanatic] ? b.fanatic : profile[b.key] ? b.key : "";
+    axes.push(`<label><span>${esc(local(a.label))} / ${esc(local(b.label))}</span><select data-profile-axis="${i}">${option("", T("未指定", "Unspecified"), !current)}${option(a.fanatic, T("狂热", "Fanatic ") + local(a.label), current === a.fanatic)}${option(a.key, local(a.label), current === a.key)}${option(b.key, local(b.label), current === b.key)}${option(b.fanatic, T("狂热", "Fanatic ") + local(b.label), current === b.fanatic)}</select></label>`);
+  }
+  const g = profileOptions.gestalt, gv = profile[g.key];
+  axes.push(`<label><span>${esc(local(g.label))}</span><select data-profile-gestalt>${option("", T("未指定", "Unspecified"), gv === undefined)}${option("yes", T("是", "Yes"), gv === true)}${option("no", T("否", "No"), gv === false)}</select></label>`);
+  const auth = profileOptions.authorities.find((a) => profile[a.key])?.key || "";
+  axes.push(`<label><span>${esc(T("政体", "Authority"))}</span><select data-profile-set="authorities">${option("", T("未指定", "Unspecified"), !auth)}${profileOptions.authorities.map((a) => option(a.key, local(a.label), a.key === auth)).join("")}</select></label>`);
+  const origin = profileOptions.origins.find((o) => profile[o.key])?.key || "";
+  axes.push(`<label><span>${esc(T("起源", "Origin"))}</span><select data-profile-set="origins">${option("", T("未指定", "Unspecified"), !origin)}${profileOptions.origins.map((o) => option(o.key, local(o.label), o.key === origin)).join("")}</select></label>`);
+  return `<div class="profile-panel"><p>${esc(T("设定后，所有文档的文明相关文本与选项都按此一致显示；未指定的项目会显示全部可能。这不是存档模拟。", "Once set, every document resolves empire-dependent text and options consistently; unspecified traits show every possibility. This is not a save-game simulation."))}</p>${axes.join("")}</div>`;
+}
+function setProfileGroup(list, key) {
+  for (const item of list) delete profile[item.key];
+  if (key) {
+    profile[key] = true;
+    const item = list.find((i) => i.key === key);
+    if (item) profileNames[key] = item.label;
+  }
+}
+function onProfileChange(target) {
+  if (target.dataset.profileAxis !== undefined) {
+    const i = Number(target.dataset.profileAxis);
+    const pair = profileOptions.ethics.slice(i, i + 2);
+    for (const e of pair) { delete profile[e.key]; delete profile[e.fanatic]; profileNames[e.key] = e.label; profileNames[e.fanatic] = e.label; }
+    const e = pair.find((x) => x.key === target.value || x.fanatic === target.value);
+    if (e) { profile[e.key] = true; if (target.value === e.fanatic) profile[e.fanatic] = true; }
+  } else if (target.dataset.profileGestalt !== undefined) {
+    if (target.value === "") delete profile[profileOptions.gestalt.key];
+    else profile[profileOptions.gestalt.key] = target.value === "yes";
+    profileNames[profileOptions.gestalt.key] = profileOptions.gestalt.label;
+  } else if (target.dataset.profileSet) setProfileGroup(profileOptions[target.dataset.profileSet], target.value);
+  remember("st-profile", JSON.stringify(profile));
+  remember("st-profile-names", JSON.stringify(profileNames));
+  renderChapter(true);
+  document.querySelector(`[data-profile-axis="${target.dataset.profileAxis}"], [data-profile-set="${target.dataset.profileSet}"], [data-profile-gestalt]`)?.focus({ preventScroll: true });
+}
+document.addEventListener("change", (e) => {
+  if (e.target.closest(".profile-panel select")) onProfileChange(e.target);
+});
 function renderBody(r, ctx) {
   // Reviewed V3 readings / dialogue text profiles keep their explicit passage selection.
   if (chapter.readings?.length || chapter.dialogue) return { html: r.texts.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join(""), tabs: "" };
@@ -727,6 +779,13 @@ document.addEventListener("click", (e) => {
   if (open) {
     $("#search-dialog").close();
     openStory(open.dataset.open);
+    return;
+  }
+  if (e.target.closest("[data-profile-open]")) {
+    profileOpen = !profileOpen;
+    if (profileOpen && !profileOptions) loadProfileOptions().then(() => renderChapter(true));
+    renderChapter(true);
+    document.querySelector("[data-profile-open]")?.focus({ preventScroll: true });
     return;
   }
   if (e.target.closest("[data-profile-reset]")) {

@@ -83,6 +83,7 @@ def bilingual(t):
     return {lang: clean(t.get(lang, '')) for lang in ('zh', 'en')}
 
 
+ALIASES_FOR_PROFILE = {'is_machine_empire': 'auth_machine_intelligence', 'is_hive_empire': 'auth_hive_mind', 'is_megacorp': 'auth_corporate'}
 PLACEHOLDER = re.compile(r'\[([^\[\]]+)\]')
 EVENT_SCOPE = {'country_event': 'country', 'observer_event': 'country', 'event': 'country', 'ship_event': 'ship',
                'fleet_event': 'fleet', 'planet_event': 'planet', 'colony_event': 'planet', 'pop_event': 'pop',
@@ -611,6 +612,28 @@ class Compiler:
                 out[key] = {'zh': wording[0], 'en': wording[1]}
         return out
 
+    def profile_options(self):
+        """Identity facts a reader can declare up front, with the game's own names, ordered by how often stories use them."""
+        usage = collections.Counter()
+        for r in self.records:
+            for m in re.finditer(r'\b(?:has_ethic|has_origin|has_authority|has_valid_civic|has_civic)\s*=\s*(\w+)', r['script']):
+                usage[m.group(1)] += 1
+            for alias, key in ALIASES_FOR_PROFILE.items():
+                usage[key] += r['script'].count(alias + ' =')
+        labels = self.cond.labels
+        name = lambda k: {lang: re.sub(r'§.', '', labels.get(k, {}).get(lang, '') or k) for lang in ('zh', 'en')}
+        ethics = [e for e in ('materialist', 'spiritualist', 'xenophile', 'xenophobe', 'militarist', 'pacifist', 'egalitarian', 'authoritarian')]
+        return {
+            'ethics': [{'key': 'ethic_' + e, 'fanatic': 'ethic_fanatic_' + e, 'label': name('ethic_' + e), 'opposite': 'ethic_' + o}
+                       for e, o in zip(ethics, ('spiritualist', 'materialist', 'xenophobe', 'xenophile', 'pacifist', 'militarist', 'authoritarian', 'egalitarian'))],
+            'gestalt': {'key': 'ethic_gestalt_consciousness', 'label': name('ethic_gestalt_consciousness')},
+            'authorities': [{'key': k, 'label': name(k)} for k in ('auth_democratic', 'auth_oligarchic', 'auth_dictatorial', 'auth_imperial',
+                                                                    'auth_corporate', 'auth_hive_mind', 'auth_machine_intelligence') if k in labels],
+            'origins': sorted(({'key': f['id'], 'label': name(f['id'])} for f in self.families if f['id'] in self.origin_ids),
+                              key=lambda o: -usage[o['key']]),
+            'civics': [{'key': k, 'label': name(k)} for k, n in usage.most_common() if k.startswith('civic_') and n >= 5 and k in labels][:40],
+        }
+
     def compile_names(self):
         """Scripted localisation used by the docs, with typed conditions, for the reader (public/stories/names.json)."""
         pending, out = list(self.used_names), {}
@@ -989,7 +1012,8 @@ class Compiler:
         dump(out / 'excerpts.json', {s['id']: s['excerpt'] for s in stories})
         dump(out / 'records.json', mapping)
         dump(out / 'names.json', self.compile_names())
-        keep = {s['id'] + '.json' for s in stories} | {'index.json', 'excerpts.json', 'records.json', 'names.json'}
+        dump(out / 'profile.json', self.profile_options())
+        keep = {s['id'] + '.json' for s in stories} | {'index.json', 'excerpts.json', 'records.json', 'names.json', 'profile.json'}
         for p in out.glob('*.json'):
             if p.name not in keep and p.resolve().parent == out.resolve():
                 p.unlink()
