@@ -30,8 +30,11 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 ## Current state (2026-10-13)
 
 - Git: everything is committed on `main` at https://github.com/SideQuest86/StellarisTales (Archive CI on every push).
-  Pages deploys only for a `v*` tag; the live site https://sidequest86.github.io/StellarisTales/ still serves the old
-  pre-V4 version until the release.
+- **Live: https://sidequest86.github.io/StellarisTales/ serves V4 (release v4.0.0, deployed from `b4f16f9d` by the
+  RELEASE file; tag `v4.0.0` marks `559bc204`, same site content).** Verified against the live URL on 2026-10-13:
+  reader checks 12/12, reading walk 24 stories / 116 documents / 23 reversals / 0 errors, UI capture 50/50 (local
+  Chrome, RTX 5070). The first live walk attempt failed and its cause was not captured; probably a timeout over the
+  network, as the rerun passed. Publishing again = edit `RELEASE` on `main` (RUNBOOK "Release").
 - Model V4: 1,390 stories, 8,670 readable documents (all assigned); event inheritance (`base =`) resolved; compile
   deterministic and checked in CI; 0 compiler warnings; only the three intentional exclusion fragments are orphans.
 - Review: rounds 1–3 complete (ledgers in `content/chronology/review/`); every story `reviewed` with a guide. C1–C8
@@ -49,8 +52,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 
 ## Next work
 
-1. Release: green Archive CI → tag `v4.0.0` → Pages run → verify the live site and record the link here.
-2. Optional improvements: render the first chapter before the reader animation to hide the open-click frame;
+1. Optional improvements: render the first chapter before the reader animation to hide the open-click frame;
    collapse "thank-you" windows that only return to an enclave menu (r3-inherit request); merge
    event-anomaly-4036 into anomaly-sun-rays-cat (r3-integrate request); larger close-up on tall viewports.
 
