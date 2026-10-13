@@ -17,6 +17,13 @@ try {
   await page.goto(base, { waitUntil: "networkidle" });
   await page.evaluate(() => { localStorage.clear(); });
 
+  // 0. A document in ANOTHER story with an option only non-gestalt empires get (infernals.1002.a, `when`
+  //    is_gestalt = no). With an unknown profile the option is shown (as conditional).
+  const other = { id: "anomaly-crystal-lava-lakes-category", doc: "infernals.1002", option: /将此地开发为度假胜地/ };
+  await page.goto(`${base}#story=${other.id}&chapter=${other.doc}`, { waitUntil: "domcontentloaded" });
+  await page.waitForFunction((d) => document.querySelector(".chapter-document")?.dataset.doc === d, other.doc, { timeout: 20000 });
+  assert.equal(await page.locator(".choice-button", { hasText: other.option }).count(), 1);
+
   // 1. Anomaly root → weighted exclusive outcomes.
   await page.goto(`${base}#story=anomaly-crashed-ship-asteroid-category`, { waitUntil: "networkidle" });
   await page.waitForSelector('.chapter-document[data-doc="anomalies:crashed_ship_asteroid_category"]');
@@ -50,6 +57,15 @@ try {
   step("adopting a condition resolves the composed text and persists the empire profile");
   assert.match(await page.locator(".choice-condition").first().innerText(), /自我演化逻辑/);
   step("tech-gated option shows its requirement");
+  // Cross-story consistency: the adopted identity resolves the other story's document too — no contradictory
+  // non-gestalt alternative is offered there.
+  await page.goto(`${base}#story=${other.id}&chapter=${encodeURIComponent(other.doc)}`, { waitUntil: "domcontentloaded" });
+  await page.waitForFunction((d) => document.querySelector(".chapter-document")?.dataset.doc === d, other.doc, { timeout: 20000 });
+  assert.equal(await page.locator(".choice-button", { hasText: other.option }).count(), 0);
+  assert.match(await page.locator(".reading-context").innerText(), /格式塔意识/);
+  step("the adopted identity resolves a document in another story consistently (non-gestalt option hidden)", `${other.id} ${other.doc}`);
+  await page.goto(`${base}#story=anomaly-nano-swarm-cat&chapter=anomaly.6710`, { waitUntil: "domcontentloaded" });
+  await page.waitForSelector('.chapter-document[data-doc="anomaly.6710"]');
   await page.locator("[data-profile-reset]").click();
   await page.waitForFunction(() => document.querySelectorAll(".variant-condition").length === 2);
   step("reset restores both alternatives");

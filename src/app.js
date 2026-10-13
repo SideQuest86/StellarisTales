@@ -250,6 +250,7 @@ async function openStory(id, start) {
     chapter = docMap.get(start || data.story.start) || data.chapters[0];
     trail = [{ story: id, chapter: chapter.id }];
     scene?.selectStory(id);
+    openingReader = $("#reader").hidden;
     setReader(true);
     renderChapter();
   } catch (e) {
@@ -269,6 +270,8 @@ function closeReader() {
 $("#close-reader").onclick = closeReader;
 // Last known scroll offset of the reader text; -1 when unknown (after the reader was hidden).
 let panelScroll = -1;
+// True for the render that opens a hidden reader (the map is built after the card settles).
+let openingReader = false;
 $(".reader-panel").addEventListener("scroll", (e) => (panelScroll = e.currentTarget.scrollTop), { passive: true });
 let recordsLoading = null;
 function loadRecords() {
@@ -639,7 +642,16 @@ function renderChapter(preservePosition = false) {
       renderChapter(true);document.querySelector('.reading-picker select')?.focus({preventScroll:true});
     };
   }
-  flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail);
+  // When the reader opens, the map stays hidden until the extracted card settles (90 ms delay + 460 ms motion);
+  // building it once the card rests keeps both the click frame and the extraction animation free of map work.
+  // Chapter changes update it in the next idle period, so the new text and the map's relayout do not share a frame.
+  const updateFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail);
+  const ticket = readerTicket;
+  const later = (f) => () => { if (ticket === readerTicket) f(); };
+  if (reduced() || !story.tree) updateFlow();
+  else if (openingReader) setTimeout(later(updateFlow), 600);
+  else (window.requestIdleCallback || ((f) => setTimeout(f, 50)))(later(updateFlow), { timeout: 250 });
+  openingReader = false;
   if(chapter.dialogue?.textProfiles){
     const picker=document.createElement('label');picker.className='reading-picker';
     picker.innerHTML=`<span>${esc(T('此前的经历','Earlier events'))}</span><select aria-label="${esc(T('此前的经历','Earlier events'))}">${chapter.dialogue.textProfiles.map((profile,i)=>`<option value="${i}" ${i===dialogueTextProfile?'selected':''}>${esc(local(profile.label))}</option>`).join('')}</select>`;

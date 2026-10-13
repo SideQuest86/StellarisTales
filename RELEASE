@@ -1,3 +1,10 @@
+v4.0.1 — 2026-10-13
+
+Smoother reading: the story map on the left card is built after the extracted card settles when a story opens,
+and in the next idle period after a chapter change, so it no longer shares a frame with the new text (worst frame
+on open 100-112 ms -> 76-82 ms, chapter change 58-82 -> 41 ms, back 17-41 -> 12 ms on an RTX 5070 Laptop).
+Reader checks now include cross-story reading-context consistency.
+
 v4.0.0 — 2026-10-13
 
 Stellaris Tales V4: story trees for every story in the local Stellaris installation (base game and installed DLC
