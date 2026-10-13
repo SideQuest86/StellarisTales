@@ -113,3 +113,6 @@ Each review agent works in its own copy of the project and owns only the story i
 Do not edit shared code (`scripts/*.py`, `src/`), shared configuration, or other agents' fragments/guides. If you need a
 compiler feature or find an issue in another agent's stories, write it in your ledger under "Requests" and continue.
 Keep a ledger at `content/chronology/review/<agent>.md` with per-story results, evidence and open questions.
+The coordinator creates copies and merges them with `scripts/review-copies.py` (see RUNBOOK "Parallel review copies");
+when you absorb another story you own into a family, delete its fragment and guide in your copy and record it in the
+family's `review.merged` — the merge applies the deletion.

@@ -1,12 +1,14 @@
 # Development and handoff runbook
 
-Run commands from the project root. This handoff verified file locations and Node availability; historical passing tests are not fresh execution results.
+Run commands from the project root. Historical passing tests are not fresh execution results.
 
-## Preserve the current work
+## Repository and working tree
 
-The GitHub clone lacks the uncommitted V3 work. Transfer the current working directory, including untracked source/configuration/guides. Preserve `RhineLabUI-main/` and desired ignored verification images/traces separately; node_modules and dist can be rebuilt. Original game files stay outside the repo and are read-only. A diff alone omits untracked files. Review generated removals together with compilation outputs; do not run git clean/reset as cleanup. No files were relocated or deleted for this handoff.
-
-Inspect focused Git status for src/scripts/content/tests/docs and summarize generated directories rather than dumping thousands of paths. HEAD during handoff is 3309ebad9452ba88f69038e57c88dc040ea00c42. No commit, push or deployment occurred for this handoff.
+Since 2026-10-13 all source, authoring content, generated data, guides and verification summaries are committed and
+pushed to https://github.com/SideQuest86/StellarisTales (`main`); a clone plus `pnpm install` is a complete working
+copy. `RhineLabUI-main/` (visual reference), node_modules, dist and ignored screenshots/traces are not in Git. Original
+game files stay outside the repo and are read-only. Work in small commits on `main`; never `git clean`/`reset` the
+working tree as cleanup. The repo-local Git identity is `outsider86 <195519447+outsider86@users.noreply.github.com>`.
 
 ## Build and preview
 
@@ -38,6 +40,25 @@ The model is described in [STORY-MODEL-V4.md](STORY-MODEL-V4.md); review process
 [REVIEW-GUIDE.md](REVIEW-GUIDE.md). Reviewed facts live in one fragment per story (`content/stories/<id>.json`); the
 V3 monolithic configuration is archived in `content/chronology/v3/` and the V3 compiler in `scripts/v3/` (not used).
 Review tools: `scripts/print-tree.py`, `scripts/callers.py`, `scripts/inspect-source.py`, `scripts/guide-skeleton.py`.
+Compilation is deterministic (identical output for any `PYTHONHASHSEED`); CI recompiles and fails if `public/stories`,
+`public/summaries` or `content` differ from the committed files, so never hand-edit generated JSON. Group ids of
+random/if-chain outcomes are renumbered per story so unrelated graph changes do not rewrite every story file.
+
+### Parallel review copies
+
+Reviewers (subagents) work in private copies, never in this checkout and never with Git:
+
+```powershell
+& $storyPython scripts/review-copies.py create r4-example     # ../st-agents/r4-example (+ .review-copy marker)
+# write content/chronology/review/assignments/r4-example.txt (story ids it owns; each id in exactly one list)
+& $storyPython scripts/review-copies.py merge r4-example --dry-run
+& $storyPython scripts/review-copies.py merge r4-example
+```
+
+Merging takes only files the agent changed after its copy was made, only for stories it owns, and reports files that
+are newer in main instead of overwriting them. After merging: compile, tests, audit, commit; then move the finished
+copy to `../st-agents/_done/` so it is never merged again. Reviewer briefs, ledgers and assignment lists live in
+`content/chronology/review/`.
 
 Only re-extract if raw source/parser changes require it; first compare game version/source manifests because the installation may have changed. Extraction (≈35 s) also writes the whole-game call graph `public/data/source-graph.json` (every event/project/site/situation/chain/on_action invocation with option/if/random/delay context) and `public/data/script-loc.json`:
 
@@ -61,12 +82,16 @@ Category audit writes reports and does not certify chronology. Inspect test scop
 
 ```powershell
 $env:STELLARIS_PLAYWRIGHT_PATH = 'C:/Users/wangp/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs'
-node scripts/verify-flow-interaction.mjs
-node scripts/verify-cetana-dialogue.mjs
-node scripts/verify-cetana-storm.mjs
+node scripts/verify-reader-v4.mjs     # V4 reader: tree navigation, conditions, profile, reversals, 390 px, English
+node scripts/verify-ui-capture.mjs    # catalogue, rows, card extraction, frosted reveals, flow map; screenshots
+node scripts/verify-ui-perf.mjs       # headed Chrome on the real GPU (fails on a software adapter); perf.json
 ```
 
-Choose additional checks matching edits: verify-yuht, verify-vultaum, verify-cybrex-labels, verify-ness-readings, verify-ness-route, verify-exhibition, verify-motion, verify-performance (all scripts/*.mjs). Read their assertions and outputs. Legacy verify-v2/category checks include old assumptions and cannot substitute for V3 review. Some targeted scripts only print success; capture current exit code/output rather than treating an old JSON file as new evidence.
+`verify-ui-perf` records the WebGL adapter (must be the discrete GPU, e.g. ANGLE D3D11 RTX 5070), rAF intervals per
+interaction and EXT_disjoint_timer_query GPU ms. Results are written to `verification/ui/` and `verification/`.
+Older scripts (verify-yuht, verify-vultaum, verify-flow-interaction, verify-cetana-*, verify-v2/category…) target the
+V3 reader and its URLs; they cannot substitute for V4 checks. Capture current exit codes/output rather than treating an
+old JSON file as new evidence.
 
 Performance script options: `STELLARIS_MOBILE=1` for narrow desktop viewport, `STELLARIS_TRACE=1` for tracing; clear these after the intended run. `STELLARIS_TEST_URL` can target the deployed website. Run timing-sensitive checks separately. Inspect actual screenshots and interactive behavior, including open/close/reversal, language changes, history reset, keyboard focus, graph overflow and reduced motion. Distinguish desktop emulation from device hardware.
 
@@ -74,4 +99,16 @@ Performance script options: `STELLARIS_MOBILE=1` for narrow desktop viewport, `S
 
 Production: https://sidequest86.github.io/StellarisTales/ ; repository: https://github.com/SideQuest86/StellarisTales . Historical public/Pages settings must be rechecked at release time.
 
-CI on main runs dependency install, Node tests, category audit and build. Pages upload/deploy requires repository variable `ENABLE_GITHUB_PAGES=true`. CI does **not** run all Python/browser/manual-story acceptance. Complete those separately. Preserve current changes, inspect the full proposed commit, then commit/push under the user's authorization. Verify Actions success and the live site at its subpath, including art/audio, bilingual reader, direct story URLs and representative branch paths. Do not report local preview as publication. Update CodexDoc, REVIEW and verification records with actual evidence and remaining limits.
+Two workflows:
+
+- `.github/workflows/ci.yml` (**Archive CI**) on every push to `main`, pull request or manual run: Node tests, Python
+  tests, reproducible story compilation (fails on hand-edited generated output), category structure audit, a review
+  progress table in the run summary (`scripts/review-summary.mjs`), build, and the built site as an artifact. It never
+  deploys. It does not run browser, GPU or manual-story acceptance.
+- `.github/workflows/pages.yml` (**Publish story archive**) deploys GitHub Pages only for a release tag `v*` or a manual
+  run, and only when repository variable `ENABLE_GITHUB_PAGES=true`.
+
+Release: complete category, reading, visual and performance acceptance locally; push; confirm Archive CI is green for
+that commit; then tag and push the tag (`git tag -a v4.0.0 -m "…"; git push origin v4.0.0`). Verify the Pages run and
+the live site at its subpath (art/audio, bilingual reader, direct `#story=` URLs, representative branch paths). Do not
+report a local preview as publication. Update CodexDoc, REVIEW and verification records with actual evidence.

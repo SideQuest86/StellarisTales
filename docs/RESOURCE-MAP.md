@@ -49,13 +49,17 @@ V4 (2026-10-12): see [STORY-MODEL-V4.md](STORY-MODEL-V4.md) and [REVIEW-GUIDE.md
 | --- | --- |
 | `src/app.js` | Routing, catalogue, reader, choices, dialogue state/history, language and guides |
 | `src/archive-scene.js`, `archive-motion.js`, `cover-atlas.js` | Three.js card scene, motion and artwork textures |
-| `src/story-flow.js`, `flow-surface.js`, `story-map.js` | Progress/gates, interactive map presentation and supporting map logic |
+| `src/flow-tree.js`, `flow-surface.js`, `story-map.js` | V4 tree layout (exclusive/parallel groups, refs), Detroit-style flow map on the left card, fallback map |
+| `src/reading.js` | Empire profile, path flags, condition evaluation and variant/option resolution |
+| `src/reader-motion.js`, `i18n.js`, `glyph-warmup.js` | Reader enter/exit motion, bilingual chrome, idle CJK glyph warm-up (uses `stories/glyphs.json`) |
 | `src/style.css`, `index.html` | Layout, typography, CSS transitions and app shell |
 | `src/audio-player.js` | OST player |
-| `tests/*.test.mjs`, `tests/test_*.py` | Node/Python regression suites |
-| `scripts/verify-*.mjs` | Actual browser scenarios; scope differs by script |
-| `verification/chronology/`, `verification/categories/` | Generated structural/category audits; not manual acceptance |
-| `verification/v3-*` | Historical scenario outputs, screenshots and performance traces |
-| `.github/workflows/pages.yml` | main-push/manual Actions build and Pages deployment |
+| `tests/*.test.mjs`, `tests/test_*.py` | Node/Python regression suites (V3 suites archived in `tests/v3/`) |
+| `scripts/verify-reader-v4.mjs`, `verify-ui-capture.mjs`, `verify-ui-perf.mjs` | Current browser checks: reader behaviour, UI screenshots, real-GPU frame timing |
+| `scripts/audit-categories.mjs`, `review-summary.mjs` | Structural audit per category; markdown review-progress table (CI summary) |
+| `scripts/review-copies.py` | Create/merge private review copies for parallel reviewers |
+| `verification/chronology/`, `verification/ui/`, `verification/v4-reader.json` | Generated audits and current browser results; not manual acceptance |
+| `verification/v3-*` | Historical V3 scenario outputs, screenshots and performance traces |
+| `.github/workflows/ci.yml`, `pages.yml` | Archive CI on every push (tests, reproducible compile, audit, build); Pages deploy on `v*` tags / manual |
 
 `node_modules/`, `dist/`, `.tools/`, Python caches and verification PNGs are ignored/local. `.openai/hosting.json` is a historical unused Sites registration, not the requested production host. Do not expose credentials or copy machine secrets into handoff bundles.
