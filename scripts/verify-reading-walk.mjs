@@ -41,7 +41,8 @@ for (const [category, stories] of Object.entries(byCategory)) {
   for (const story of sample) {
     const visited = [];
     await page.goto(`${base}#story=${encodeURIComponent(story.id)}`, { waitUntil: "domcontentloaded" });
-    await page.waitForSelector(".chapter-document[data-doc]", { timeout: 30000 });
+    // Hash navigation does not reload: wait until the reader has rendered this story (it rewrites the hash).
+    await page.waitForFunction((id) => location.hash.includes(`story=${encodeURIComponent(id)}&chapter=`) && document.querySelector(".chapter-document[data-doc]"), story.id, { timeout: 30000 });
     visited.push(await docId());
     await checkDocument(`${story.id} ${visited[0]}`);
     const mapNodes = await page.locator("#flow-surface [data-chapter], #flow-surface .flow-node").count();

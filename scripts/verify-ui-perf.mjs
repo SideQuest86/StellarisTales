@@ -14,7 +14,10 @@ const runtime = process.env.STELLARIS_PLAYWRIGHT_PATH;
 const { chromium } = await import(runtime ? pathToFileURL(runtime).href : "playwright");
 const base = process.env.STELLARIS_PREVIEW_URL || "http://127.0.0.1:4173/";
 const headless = !!process.env.HEADLESS;
-const args = ["--use-angle=d3d11", "--enable-gpu-rasterization", "--ignore-gpu-blocklist", "--enable-gpu", "--force-high-performance-gpu", "--window-size=1700,1120"];
+// Occluded or background windows are throttled by Chrome on Windows; keep the measured window rendering at full rate
+// even if other windows overlap it (the run is still disturbed by heavy desktop activity — keep the desktop idle).
+const args = ["--use-angle=d3d11", "--enable-gpu-rasterization", "--ignore-gpu-blocklist", "--enable-gpu", "--force-high-performance-gpu", "--window-size=1700,1120",
+  "--disable-backgrounding-occluded-windows", "--disable-renderer-backgrounding", "--disable-background-timer-throttling"];
 const browser = await chromium.launch({ channel: "chrome", headless, args });
 const context = await browser.newContext(headless ? { viewport: { width: 1600, height: 1000 } } : { viewport: null });
 const page = await context.newPage();

@@ -1,6 +1,6 @@
 {
   "base": "http://127.0.0.1:4173/",
-  "startedAt": "2026-10-13T22:35:07.595Z",
+  "startedAt": "2026-10-13T23:11:58.583Z",
   "adapter": {
     "vendor": "Google Inc. (NVIDIA)",
     "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
@@ -75,15 +75,15 @@
       "name": "render loop idles when nothing moves",
       "ok": true,
       "detail": {
-        "drawn": 42750,
-        "drawnLater": 42750
+        "drawn": 37842,
+        "drawnLater": 37842
       }
     },
     {
       "name": "1600-open frame 0",
       "ok": true,
       "detail": {
-        "detail": 0.021,
+        "detail": 0.02,
         "reveal": 1
       }
     },
@@ -91,7 +91,7 @@
       "name": "1600-open frame 1",
       "ok": true,
       "detail": {
-        "detail": 0.151,
+        "detail": 0.15,
         "reveal": 1
       }
     },
@@ -99,7 +99,7 @@
       "name": "1600-open frame 2",
       "ok": true,
       "detail": {
-        "detail": 0.302,
+        "detail": 0.3,
         "reveal": 1
       }
     },
@@ -123,16 +123,16 @@
       "name": "1600-open frame 5",
       "ok": true,
       "detail": {
-        "detail": 0.75,
-        "reveal": 0.064
+        "detail": 0.751,
+        "reveal": 0.065
       }
     },
     {
       "name": "1600-open frame 6",
       "ok": true,
       "detail": {
-        "detail": 0.901,
-        "reveal": 0.392
+        "detail": 0.9,
+        "reveal": 0.39
       }
     },
     {
@@ -235,7 +235,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.703
+        "reveal": 0.702
       }
     },
     {
@@ -243,7 +243,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.922
+        "reveal": 0.92
       }
     },
     {
@@ -272,7 +272,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.455
+        "reveal": 0.451
       }
     },
     {
@@ -280,7 +280,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.751
+        "reveal": 0.752
       }
     },
     {
@@ -403,6 +403,6 @@
     "ST Sans Fallback"
   ],
   "largestStory": "cetana",
-  "finishedAt": "2026-10-13T22:36:34.493Z",
+  "finishedAt": "2026-10-13T23:13:25.526Z",
   "passed": true
 }
