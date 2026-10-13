@@ -12,8 +12,8 @@
 
 ## 剧情脉络 Story outline
 
-- 2005「技术进步」（附庸）→ 45天后 2010「附庸的义务」（a 与宗主国分享 / b 留给自己）→ 45天后 2015「技术进步」（宗主国）：a 放手 → 2020「无监督的发展」；b/c/d 指令附庸专注科学 / 社会 / 工程 → 2025 / 2030 / 2035 指令。
-  2005 "Technological Advancement" (subject) -> 2010 "A Subject's Duty" after 45 days (a share with the overlord / b keep it) -> 2015 "Technological Advancement" (overlord) after 45 days: a leave them alone -> 2020 "Unsupervised Development"; b/c/d direct the subject toward science / society / engineering -> 2025 / 2030 / 2035 directive.
+- 2005「技术进步」（附庸）→ 45天后 2010「附庸的义务」（a 与宗主国分享 → 45天后 2015；b 留给自己则到此为止）→ 2015「技术进步」（宗主国）：a 放手 → 2020「无监督的发展」；b/c/d 指令附庸专注科学 / 社会 / 工程 → 2025 / 2030 / 2035 指令。
+  2005 "Technological Advancement" (subject) -> 2010 "A Subject's Duty" after 45 days (a share with the overlord -> 2015 after 45 days; b keep it ends here) -> 2015 "Technological Advancement" (overlord): a leave them alone -> 2020 "Unsupervised Development"; b/c/d direct the subject toward science / society / engineering -> 2025 / 2030 / 2035 directive.
 - 链上的事件成对发给宗主国和附庸国双方；窗口措辞随玩家扮演的一方而异。
   Events of a chain are sent in pairs to the overlord and the subject; window wording differs for the side the player is on.
 

@@ -76,6 +76,7 @@ File name = story id. Only the reviewer owning a story edits its fragment. All f
   "nodeLabels": { "<doc>": {"zh": "…", "en": "…"} },       // short map labels; originals stay in the reader
   "notes": [{ "doc": "<doc>", "zh": "…", "en": "…", "kind": "review" }],  // commentary, shown apart from original text
   "unreachable": { "<doc>": { "zh": "…", "en": "…", "evidence": "…" } },  // proven not naturally reachable in the shipped script
+  "noStageSequence": ["situations:<key>"],   // stages are not sequential (e.g. bidirectional progress); keep stage events as siblings
   "dialogues": { "<doc>": { … see existing cetana / origin_treasure_hunters fragments … } },
   "readings": { "<doc>": { "profiles": [ … ] } },
   "opening": { "targets": ["<doc>"], "label": {...}, "labels": {...}, "evidence": "…" },   // origins only

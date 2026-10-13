@@ -1,0 +1,19 @@
+{
+ "id": "anomaly-tutorial-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/98_anomaly_categories_tutorial.txt:1 (TUTORIAL_CAT)",
+   "events/tutorial_events.txt:2351 (tutorial.52, 53, 54)",
+   "events/advisor_events.txt:406-471 (advisor.1 adds the anomaly)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-tutorial-cat.md"
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "id": "origin_common_ground",
+ "opening": {
+  "targets": [
+   "origin.57"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "origin.57": {
+    "zh": "开局2天后：联邦的性质（选择联邦类型）",
+    "en": "Two days after start: The Nature of the Alliance (choose the federation type)"
+   }
+  },
+  "evidence": "events/game_start.txt:315 fires hidden origin.55 (events/origin_events_1.txt:1442-1998: creates two federation partners, sets intel and borders). The branch `has_origin = origin_common_ground` (:1862-1933) sets the federation leader and fires origin.57 after 2 days; the Hegemon branch (:1935-1996) sets hegemony_federation directly and has no window."
+ },
+ "groups": [],
+ "notes": [
+  {
+   "doc": "origin.57",
+   "kind": "review",
+   "zh": "该窗口只出现在“共同点”起源；“霸主”起源直接设置霸权联邦，没有窗口。联邦随后获得600经验与100凝聚力。",
+   "en": "Fired only for Common Ground; Hegemon sets hegemony_federation directly without a window. The federation then receives 600 experience and 100 cohesion (events/origin_events_1.txt:2108-2113)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_1.txt",
+   "events/game_start.txt",
+   "common/governments/civics/00_origins.txt"
+  ],
+  "uncertain": [
+   "The origin-families.json \"shared\" entry that lists origin.57 for origin_hegemon is wrong: origin.57 is only fired inside the Common Ground branch (:1932). That key is not read by the compiler."
+  ],
+  "guide": "public/summaries/origin_common_ground.md"
+ }
+}

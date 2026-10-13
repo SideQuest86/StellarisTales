@@ -1,0 +1,97 @@
+{
+ "id": "origin_starlit_citadel",
+ "opening": {
+  "targets": [
+   "bio.2005",
+   "bio.2015",
+   "bio.2025",
+   "bio.2027",
+   "bio.2036",
+   "bio.2040"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "bio.2005": {
+    "zh": "开局约360天后：异常波动（姊妹星系事件链）",
+    "en": "About 360 days after start: Unusual Fluctuations (the sister-system chain)"
+   },
+   "bio.2015": {
+    "zh": "击毁第一波生物舰队后：敌人的残骸",
+    "en": "After destroying the first wave of bioships: Remains of the Enemy"
+   },
+   "bio.2025": {
+    "zh": "研发虫洞科技后：敌人的摇篮",
+    "en": "After researching the wormhole tech: Cradle of the Enemy"
+   },
+   "bio.2027": {
+    "zh": "击毁弃置孵化场的防御后：恐惧的黄昏",
+    "en": "After the abandoned hatchery defences fall: Twilight of Fear"
+   },
+   "bio.2036": {
+    "zh": "再次击毁生物舰队后：它们在学习",
+    "en": "After another bioship fleet is destroyed: They Learn"
+   },
+   "bio.2040": {
+    "zh": "孵化场防御被击毁（非本起源）：敌人迷失",
+    "en": "Hatchery defences destroyed (non-origin empires): Enemy Lost"
+   }
+  },
+  "evidence": "game_start: starlit_citadel_start_effect (common/scripted_effects/biogenesis_effects.txt:59) fires bio.2005 after 360+0-90 days; 2005 starts abandoned_hatchery_chain_1 and hidden 2010 (after 90+0-180 days), which spawns the bioship waves and repeats through 2035 every 1800+0-1800 days (events/biogenesis_origin_events.txt:1887-2000, :2343-2420). bio.2015 / 2036 on_fleet_destroyed_perp common/on_actions/00_on_actions.txt:1686-1687; 2024 (on_tech_increased common/on_actions/00_on_actions.txt:2743) -> 2025; 2026 (on_ship_destroyed_perp :1477) -> 2027 (origin) or 2040."
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "bio.2027",
+    "bio.2040"
+   ],
+   "label": {
+    "zh": "孵化场防御被击毁后",
+    "en": "After the hatchery defences are destroyed"
+   },
+   "note": {
+    "zh": "隐藏2026：星堡之城起源→2027（1天后）；否则→2040。",
+    "en": "Hidden 2026: the Starlit Citadel origin gets 2027 (1 day later), anyone else 2040 (events/biogenesis_origin_events.txt:2144-2214)."
+   }
+  }
+ ],
+ "endings": {
+  "bio.2030": {
+   "label": {
+    "zh": "生物机械瘟疫",
+    "en": "BioMechanical Plague"
+   },
+   "note": {
+    "zh": "“敌人的家园”项目完成。",
+    "en": "The Home of the Enemy project completes."
+   },
+   "evidence": "events/biogenesis_origin_events.txt:2270-2342"
+  }
+ },
+ "notes": [
+  {
+   "doc": "bio.2005",
+   "kind": "review",
+   "zh": "“包围星堡”事件链的第一部分；之后事件链2–4分别在残骸研究、虫洞科技与孵化场陷落时开启。生物舰队每1800±1800天再次入侵，数量逐次增加（隐藏 2035）。",
+   "en": "Starts the Siege of the Citadel chain (part 1); parts 2-4 start at the remains study, the wormhole tech and the hatchery fall. Bioship invasions recur every 1800+0-1800 days with growing numbers (hidden 2035)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/biogenesis_origin_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/05_projects_biogenesis.txt",
+   "common/event_chains"
+  ],
+  "uncertain": [
+   "bio.2015 / 2036 are generic fleet-destroyed hooks gated by origin state inside the event; their exact conditions were read from the listing only."
+  ],
+  "guide": "public/summaries/origin_starlit_citadel.md"
+ }
+}

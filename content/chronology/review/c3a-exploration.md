@@ -294,3 +294,12 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 ### Batch b_24_beholder
 
 - **anomaly-paragon-beholder-category** — reviewed. Tree correct (paragon.3 -> 4 -> friendly/study/suppress routes -> 25/26 -> ENERGY project -> 30 -> 1 Beholder leader); 60/40 vs 80/20 random for spiritualists; hidden 100-102 on planet loss.
+
+### Batch b_25_projects_misc
+
+- **project-contract-espionage-support-project-01** — reviewed. Single project doc CONTRACT_ESPIONAGE_SUPPORT_PROJECT_01; enabled by contract missions / generate_additional_espionage_support_project (1/3 each); part of c7b's contract chain.
+- **project-contract-espionage-support-project-02** — reviewed. Single project doc CONTRACT_ESPIONAGE_SUPPORT_PROJECT_02; enabled by contract missions / generate_additional_espionage_support_project (1/3 each); part of c7b's contract chain.
+- **project-contract-espionage-support-project-03** — reviewed. Single project doc CONTRACT_ESPIONAGE_SUPPORT_PROJECT_03; enabled by contract missions / generate_additional_espionage_support_project (1/3 each); part of c7b's contract chain.
+- **project-inetian-projects-04** — reviewed. Single path INETIAN_PROJECTS_04 -> cstorms.195; entered through artifact_inetian_research; tree correct.
+- **project-project-adakkaria-secrets-of** — reviewed. Single path project_adakkaria_secrets_of -> cstorms.2365 (options a/b); entered through artifact_adakkaria_research; tree correct.
+- **anomaly-tutorial-cat** — reviewed. Anomaly card only; outcomes tutorial.52/53/54 (1/3 each) are excluded as non-story tutorial plumbing; request to coordinator on whether to show them.

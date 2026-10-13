@@ -12,8 +12,8 @@
 
 ## 剧情脉络 Story outline
 
-- 100「破碎的壁垒」（宗主）：a 鼓舞他们自卫、b 无论如何保护、c 暂不管 → 15天后 105「破碎的壁垒」（附庸）：a 不惜一切代价求自由 → 15天后 107「守卫者」；b 拒绝宗主的条件 → 110「和平主义者」。
-  100 "Broken Bulwark" (overlord): a inspire them to defend themselves, b protect them no matter what, c leave them for now -> 105 "Broken Bulwark" (subject) 15 days later: a freedom at any cost -> 107 "The Defenders" after 15 days; b refuse the overlord's terms -> 110 "The Pacifists".
+- 100「破碎的壁垒」（宗主）：a 鼓舞他们自卫 → 15天后 105「破碎的壁垒」（附庸）；b 无论如何保护、c 暂不管则不再有后续。105：a 不惜一切代价求自由 → 15天后 107「守卫者」；b 拒绝宗主的条件 → 15天后 110「和平主义者」。
+  100 "Broken Bulwark" (overlord): a inspire them to defend themselves -> 105 "Broken Bulwark" (subject) 15 days later; b protect them no matter what and c leave them for now have no follow-up. 105: a freedom at any cost -> 107 "The Defenders" after 15 days; b refuse the overlord's terms -> 110 "The Pacifists" after 15 days.
 - 链上的事件成对发给宗主国和附庸国双方；窗口措辞随玩家扮演的一方而异。
   Events of a chain are sent in pairs to the overlord and the subject; window wording differs for the side the player is on.
 

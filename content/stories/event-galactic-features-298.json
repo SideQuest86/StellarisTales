@@ -1,0 +1,44 @@
+{
+ "id": "event-galactic-features-298",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "galactic_features.301",
+    "galactic_features.302",
+    "galactic_features.303",
+    "galactic_features.305"
+   ],
+   "label": {
+    "zh": "护盾降下后的四种发现",
+    "en": "The four discoveries once the shield falls"
+   },
+   "note": {
+    "zh": "专项完成后随机四选一（基础权重各25，部分带修正）：封存舰队 / 知识宝库 / 囚徒图伯雷克 / 流放者归来。",
+    "en": "A random pick of four when the project completes (base weight 25 each, some modified): Mothballed Fleet / Vault of Knowledge / The Prisoner / The Exiles Return."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "galactic_features.300",
+   "zh": "评注：勘测到被衰落帝国护盾（pc_shielded、fallen_shield_world）笼罩的行星时（on_survey_planet → 隐藏事件 galactic_features.299，且游戏已过去至少一年、尚无该专项）弹出（events/galactic_features_events.txt:150-224）。",
+   "en": "Commentary: shown when a planet wrapped in a Fallen Empire shield (pc_shielded, fallen_shield_world) is surveyed (on_survey_planet -> hidden galactic_features.299, once the game is at least a year old and the project is not running) (events/galactic_features_events.txt:150-224).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "触发、专项、四种随机发现及图伯雷克对话已核对。",
+   "en": "The trigger, the project, the four random discoveries and the Tuborek conversation were checked."
+  },
+  "sources": [
+   "events/galactic_features_events.txt:150-710",
+   "common/on_actions/00_on_actions.txt:1142"
+  ],
+  "guide": "public/summaries/event-galactic-features-298.md"
+ }
+}

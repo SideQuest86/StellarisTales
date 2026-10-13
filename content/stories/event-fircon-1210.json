@@ -53,7 +53,7 @@
     "zh": "阶段检定失败时随机：食物中毒",
     "en": "On a failed stage roll, random: food poisoning"
    },
-   "evidence": "on_roll_failed = standard_first_contact_on_roll_failed with RANDOM_EVENTS = jaunting_traveler_fc_random_events (02_first_contact_unique_stories.txt:189-194, 208-213, 227-232); that list holds 1220 and 1221, weight 1 each, each at most once (common/scripted_effects/first_contact_effects.txt:1818-1836)"
+   "evidence": "on_roll_failed = standard_first_contact_on_roll_failed with RANDOM_EVENTS = jaunting_traveler_fc_random_events (02_first_contact_unique_stories.txt:189-194, 208-213, 227-232); that list holds 1220 and 1221, weight 1 each, each at most once (common/scripted_effects/first_contact_effects.txt:1818-1836); the wrapper fires the list with 1/20 chance and a 125-day cooldown (first_contact_effects.txt, standard_first_contact_on_roll_failed)"
   },
   {
    "from": "fircon.1210",

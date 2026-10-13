@@ -1,4 +1,4 @@
-# 建立联络 / Communication Established
+# 万爪之母 / The Many-Tentacled One
 
 - 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/first_contact_dlc_events.txt:511-1108`；`common/first_contact/02_first_contact_unique_stories.txt:177-232`；`common/on_actions/00_on_actions.txt:505`；`common/scripted_effects/first_contact_effects.txt:1818-1836`；`common/special_projects/00_projects_first_contact_dlc.txt:286-325`
@@ -12,8 +12,8 @@
 
 - 阶段1（难度3）1210「建立联络」→ 阶段2（难度2）1211「万爪之母」→ 最终阶段（难度3）1212「迷失旅行者」。
   Stage 1 (difficulty 3) 1210 "Communication Established" -> stage 2 (difficulty 2) 1211 "The Many-Tentacled One" -> final stage (difficulty 3) 1212 "Lost Traveler".
-- 任一阶段检定失败时，随机出现 1220「食物中毒」或 1221「外交事故」（权重各1，各至多一次）。
-  A failed roll in any stage randomly brings 1220 "Food Poisoning" or 1221 "Diplomatic Accident" (weight 1 each, each at most once).
+- 任一阶段检定失败时，有1/20的机会触发随机事件（之后125天冷却）：1220「食物中毒」或 1221「外交事故」（权重各1，各至多一次）。
+  A failed roll in any stage has a 1-in-20 chance of a random event (then a 125-day cooldown): 1220 "Food Poisoning" or 1221 "Diplomatic Accident" (weight 1 each, each at most once).
 - 1212 三个结局：和平（她成为通灵科学家领袖；60+随机30天后 1230，1800+随机360天后思乡事件 1231）；实验室（社会研究奖励）；牺牲（团结奖励）。
   1212 has three endings: pacific (she becomes a psionic scientist leader; 1230 after 60 days + random 30, homesickness 1231 after 1800 + random 360); lab (society research); sacrifice (unity).
 - 1230（非排外且主种族通灵）可启用 THE_JAUNT_PROJECT（1080天）：进度25%→1240、75%→1241；完成后 10% → 1243「成功」（获得跃迁引擎科技进度/研究），90% → 1242「失败」（工程研究，设“秘密已揭示”标志）。

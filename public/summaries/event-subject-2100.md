@@ -12,8 +12,8 @@
 
 ## 剧情脉络 Story outline
 
-- 2105「实验性研究」（附庸）：a 资助 / b 关闭 / c 继续（→ 2112） / d 不能出卖自我；b 25% 160+随机160天后 2110「一切为了研究」。2112（宗主国）：a 不干涉 → 60天后 2120「研究获准」：a 全面实验 → 60%/20%/20% 2135「实验成功」/2140「意外突变」/2150「实验失败」，b 轻量实验 → 50% 2125「失败」/2130「成功」；b 关闭 → 2115「研究被否决」。
-  2105 "Experimental Research" (subject): a sponsor / b shut it down / c proceed (-> 2112) / d refuse to compromise the self; b has a 25% chance of 2110 "Everything for Research" after 160 days (+ random 160). 2112 (overlord): a do not interfere -> 2120 "Research Accepted" 60 days later: a full experiments -> 60% / 20% / 20% 2135 "Experimental Success" / 2140 "Unexpected Mutations" / 2150 "Experimental Failure", b light tests -> 50% 2125 failure / 2130 success; b shut it down -> 2115 "Research Rejected".
+- 2105「实验性研究」（附庸）：a 资助 / c 继续 → 60天后 2112；b 关闭，25% 概率 160+随机160天后 2110「一切为了研究」；d 不能出卖自我（无后续）。2112（宗主国）：a 不干涉 → 60天后 2120「研究获准」：a 全面实验 → 60%/20%/20% 2135「实验成功」/2140「意外突变」/2150「实验失败」，b 轻量实验 → 50% 2125「失败」/2130「成功」；b 关闭 → 2115「研究被否决」。
+  2105 "Experimental Research" (subject): a sponsor / c proceed -> 2112 after 60 days; b shut it down, with a 25% chance of 2110 "Everything for Research" after 160 days (+ random 160); d refuse to compromise the self (no follow-up). 2112 (overlord): a do not interfere -> 2120 "Research Accepted" 60 days later: a full experiments -> 60% / 20% / 20% 2135 "Experimental Success" / 2140 "Unexpected Mutations" / 2150 "Experimental Failure", b light tests -> 50% 2125 failure / 2130 success; b shut it down -> 2115 "Research Rejected".
 - 链上的事件成对发给宗主国和附庸国双方；窗口措辞随玩家扮演的一方而异。
   Events of a chain are sent in pairs to the overlord and the subject; window wording differs for the side the player is on.
 

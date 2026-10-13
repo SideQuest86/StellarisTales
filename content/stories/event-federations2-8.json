@@ -1,0 +1,53 @@
+{
+ "id": "event-federations2-8",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations2.10",
+    "federations2.11"
+   ],
+   "label": {
+    "zh": "研究项目的结果",
+    "en": "Research project result"
+   },
+   "note": {
+    "zh": "75 / 25",
+    "en": "75 / 25"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations2.12",
+    "federations2.13",
+    "federations2.14"
+   ],
+   "label": {
+    "zh": "放任的后果",
+    "en": "Consequence of ignoring it"
+   },
+   "note": {
+    "zh": "40 / 40 / 20",
+    "en": "40 / 40 / 20"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "舞蹈瘟疫：10个文档与2个项目。",
+   "en": "Dancing Plague: 10 docs and 2 projects."
+  },
+  "sources": [
+   "events/federations_events_2.txt:606-1000",
+   "common/special_projects/00_projects_federations.txt:325-380",
+   "common/on_actions/00_on_actions.txt:3855-3880"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-federations2-8.md"
+ }
+}

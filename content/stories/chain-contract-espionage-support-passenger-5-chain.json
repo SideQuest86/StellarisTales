@@ -1,0 +1,22 @@
+{
+ "id": "chain-contract-espionage-support-passenger-5-chain",
+ "category": "society",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "事件链卡片 contract_espionage_support_passenger_5_chain。",
+   "en": "Event-chain card contract_espionage_support_passenger_5_chain."
+  },
+  "sources": [
+   "common/missions/missions/02_contracts.txt:4698-4736",
+   "common/inline_scripts/contracts/EspionageSupportCruise.txt",
+   "common/event_chains/00_event_chains_nomads.txt:346-375"
+  ],
+  "uncertain": [
+   "项目 CONTRACT_ESPIONAGE_SUPPORT_passenger_5_PROJECT 由内联脚本生成，其具体目标（卫星/代表团等）未逐项展开。 / The generated project’s specific task was not expanded."
+  ],
+  "guide": "public/summaries/chain-contract-espionage-support-passenger-5-chain.md"
+ }
+}

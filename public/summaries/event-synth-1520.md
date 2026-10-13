@@ -1,0 +1,31 @@
+# 合成化社会 / Synthesized Society
+
+- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/machine_age_situation_events_2.txt:2739-2832
+
+## 如何开始 How it starts
+
+- “合成冲击”事件链的终点：机会事件结束后180+随机90天，隐藏事件 synth.1500 按政体权威分发：民主 1505、寡头 1510、独裁 1515、帝制 1520、企业 1525。
+  End of the "Synth Shock" chain: 180 days (+ random 90) after the opportunity event hidden synth.1500 switches on has_authority: democratic 1505, oligarchic 1510, dictatorial 1515, imperial 1520, corporate 1525.
+
+## 剧情脉络 Story outline
+
+- 「帝制政体」的最终事件：国家选择实体化（synth_physical）或虚拟化（synth_virtual）的合成体取向并设置国家标志，虚拟化选项还会触发 cybernetics.5046；另有一个保留现状的选项。
+  The final event for imperial governments: the country picks a physical (synth_physical) or virtual (synth_virtual) synthetic orientation and the matching country flag is set; the virtual option also fires cybernetics.5046; a third option keeps the status quo.
+
+## 分支与结局 Branches and outcomes
+
+- 故事终点；五个政体版本互斥（由 has_authority 决定）。
+  The end of the chain; the five authority versions are exclusive (by has_authority).
+
+## 条件与文明差异 Conditions and variants
+
+- 仅出现给帝制权威的国家。
+  Shown only to imperial (authority auth_imperial) countries.
+
+## 审阅记录 Review notes
+
+- 说明：这十个最终事件（cyber/synth 1505–1525）不在任何审阅者的分配列表中，作为连带内容一并审阅。
+  Note: these ten final events (cyber/synth 1505-1525) are in no reviewer's assignment list and were reviewed as part of the same chains.
+- 已核对：触发条件、选项效果；编译树与脚本一致。
+  Checked: trigger conditions and option effects; the compiled tree matches the script.

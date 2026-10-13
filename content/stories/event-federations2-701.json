@@ -1,0 +1,21 @@
+{
+ "id": "event-federations2-701",
+ "category": "society",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "辐射泄漏：1个事件。",
+   "en": "Radiation Leak: 1 event."
+  },
+  "sources": [
+   "events/federations_events_2.txt:501-524",
+   "common/scripted_effects/archaeology_event_effects.txt"
+  ],
+  "uncertain": [
+   "该事件被多个遗址的随机池调用，完整遗址名单见调用图。 / Many sites call this event; see the call graph for the full list."
+  ],
+  "guide": "public/summaries/event-federations2-701.md"
+ }
+}

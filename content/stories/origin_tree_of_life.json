@@ -1,0 +1,32 @@
+{
+ "id": "origin_tree_of_life",
+ "opening": {
+  "targets": [
+   "origin.3003"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "origin.3003": {
+    "zh": "生命之树所在星球受到严重轰炸后：生命之树被毁",
+    "en": "When a planet with the Tree of Life is devastated: Life-Tree Destroyed"
+   }
+  },
+  "evidence": "on_planet_bombarded common/on_actions/00_on_actions.txt:2170 fires carrier event origin.3003 when planet_devastation >= 50 on a planet with d_tree_of_life_colony / d_tree_of_life_home (events/origin_events_3.txt:52-83). Hidden 3001 (on_colonized :1309) adds the tree to new colonies, 3002 (:1343, :3377) silently removes it, 3004 (:3378) maintains the no_lifetree modifier."
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_3.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "Hidden 3001/3002/3004 only add or remove deposits and modifiers."
+  ],
+  "guide": "public/summaries/origin_tree_of_life.md"
+ }
+}

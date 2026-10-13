@@ -12,8 +12,8 @@
 
 ## 剧情脉络 Story outline
 
-- 1「有利可图的冒险」（宗主）：老兵请求前往附庸首都。a 正式批准 → 30天后 3「来自宗主国的老兵」（附庸方），其选项a善加利用 → 15天后 10「良好关系」，b 送回 → 12「老兵归来」。b 放任 → 50%（经修正）14「私掠冒险」/pirate.50「发现海盗」，或 3。c 拒绝 → 10%（经修正）16「违令——佣兵」/18「违令——海盗」/3/pirate.50。
-  1 "Lucrative Adventures" (overlord): veterans ask to travel to the subject's capital. a grant leave -> 3 "Veterans from [overlord]" (subject side) 30 days later, whose option a uses them well -> 10 "Good Relations" after 15 days, b sends them back -> 12 "Veterans Returning". b let them do as they wish -> 50% (modified) 14 "Privateering Adventures" / pirate.50 "Pirates Sighted!", or 3. c refuse -> 10% (modified) 16 "Defying Orders - Mercenaries" / 18 "Defying Orders - Pirates" / 3 / pirate.50.
+- 1「有利可图的冒险」（宗主）：老兵请求前往附庸首都。a 正式批准（获能量奖励）→ 30天后 3「来自宗主国的老兵」（附庸方），其选项a善加利用 → 15天后 10「良好关系」，b 送回 → 12「老兵归来」。b 放任（获能量奖励）→ 50%（和平主义/灵性者×1.25）同样走 3；50%（军国/唯物×1.25，且附庸需有首都系统以外的边境系统）15天后宗主国得 14「私掠冒险」，30天后附庸方得 subject.5（海盗袭扰，窗口为 pirate.50「发现海盗」）。c 拒绝 → 80% 无事；10% 16「违令——佣兵」并走 3；10% 18「违令——海盗」并触发 subject.5/pirate.50。
+  1 "Lucrative Adventures" (overlord): veterans ask to travel to the capital of the subject. a formally grant leave (energy reward) -> 3 "Veterans from [overlord]" (subject side) after 30 days, whose option a uses them well -> 10 "Good Relations" after 15 days, b sends them back -> 12 "Veterans Returning". b let them do as they wish (energy reward) -> 50% (x1.25 for pacifist / spiritualist) the same 3; 50% (x1.25 for militarist / materialist, and the subject needs a border system beyond its capital) 14 "Privateering Adventures" for the overlord after 15 days and subject.5 (pirate trouble, window pirate.50 "Pirates Sighted!") for the subject after 30 days. c refuse -> 80% nothing; 10% 16 "Defying Orders - Mercenaries" plus 3; 10% 18 "Defying Orders - Pirates" plus subject.5 / pirate.50.
 - 链上的事件成对发给宗主国和附庸国双方；窗口措辞随玩家扮演的一方而异。
   Events of a chain are sent in pairs to the overlord and the subject; window wording differs for the side the player is on.
 

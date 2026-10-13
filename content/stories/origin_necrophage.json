@@ -1,0 +1,37 @@
+{
+ "id": "origin_necrophage",
+ "include": [
+  "necroids.2"
+ ],
+ "opening": {
+  "targets": [
+   "necroids.2"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "necroids.2": {
+    "zh": "开局约9.4年后（或首都条件满足时）：升华仪式",
+    "en": "About 9.4 years after start (once the capital meets the conditions): the Elevation Ceremony"
+   }
+  },
+  "evidence": "game_start.33 (events/game_start.txt) fires necroids.2 after 3420 days for a non-purifier necrophage empire (events/necroids_events_1.txt:191-231); its own trigger needs a capital older than 8 years with building_necrophage_elevation_chamber and an assigned necro_apprentice. Hidden support: necroids.1 (on_colony_10_year_pulse common/on_actions/00_on_actions.txt:3959), 3 (:3871), 4 (on_game_start_country :36), 5 (on_pop_purged :3305), 6, 10, 15, 25."
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/necroids_events_1.txt",
+   "events/game_start.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/governments/civics/00_origins.txt"
+  ],
+  "uncertain": [
+   "The elevation mechanic (necrophage_elevation_chamber, necro_apprentice job) lives in buildings and jobs; only the announcement window is an event."
+  ],
+  "guide": "public/summaries/origin_necrophage.md"
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "id": "origin_progenitor_hive",
+ "opening": {
+  "targets": [
+   "origin.3210",
+   "origin.3245",
+   "origin.3265"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "origin.3210": {
+    "zh": "首都被攻陷时：始祖陨落",
+    "en": "When the capital is lost: The Progenitor Falls"
+   },
+   "origin.3245": {
+    "zh": "首都星球被行星毁灭武器摧毁时：漫无目的",
+    "en": "When the capital is destroyed by a planet killer: Aimless"
+   },
+   "origin.3265": {
+    "zh": "首都被轰炸时：千次爆炸之死",
+    "en": "When the capital is bombarded: Death by a Thousand Detonations"
+   }
+  },
+  "evidence": "origin.3210 on_colony_defenders_lose common/on_actions/00_on_actions.txt:883; 3245 on_destroy_planet_with_* common/on_actions/01_planet_destruction.txt:19-128; 3265 action.81 (events/on_action_events_1.txt). Hidden support events: 3200 monthly leader experience (common/on_actions/00_on_actions.txt:337), 3205 capital transfer (:3447), 3225/3230/3235 missing-offspring modifier (:335-336, :1312), 3260 final offspring ship (:1427), 3270 vassal release (:4543) (events/origin_events_3.txt:346-883)."
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.3210",
+    "origin.3245",
+    "origin.3265"
+   ],
+   "label": {
+    "zh": "始祖的三种厄运",
+    "en": "Three fates of the Progenitor"
+   },
+   "note": {
+    "zh": "首都失守、行星被毁、首都被轰炸；都使始祖沉寂并加上“始祖缺失”修正。",
+    "en": "Capital lost, planet destroyed or capital bombarded; each silences the Progenitor and adds the missing-progenitor modifier."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_3.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/on_actions/01_planet_destruction.txt"
+  ],
+  "uncertain": [
+   "Hidden maintenance events 3200-3270 only maintain deposits, modifiers and leader experience; no windows."
+  ],
+  "guide": "public/summaries/origin_progenitor_hive.md"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "id": "project-inetian-projects-04",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/special_projects/03_projects_cosmic_storms.txt:98 (INETIAN_PROJECTS_04)",
+   "events/precursor_events_cosmic_storms.txt (cstorms.195)",
+   "common/artifact_actions/artifact_actions.txt:637 (artifact_inetian_research)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/project-inetian-projects-04.md"
+ }
+}

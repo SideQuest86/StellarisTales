@@ -12,8 +12,8 @@
 
 ## 剧情脉络 Story outline
 
-- 3005「家中的麻烦」（附庸）：a 让两国共处 / b 限制平民出行 → 45天后 3010「在[首都]的分歧」（宗主国）：a 开放边境 → 3015「开放的边境」；b 关闭边境 → 3020「特权附庸」。
-  3005 "Trouble at Home" (subject): a let both empires thrive together / b restrict civilian travel -> 3010 (overlord) 45 days later: a keep the borders open -> 3015 "Open Borders"; b close them -> 3020 "Privileged Subject".
+- 3005「家中的麻烦」（附庸）：a 让两国共处（到此为止）/ b 限制平民出行 → 45天后 3010「在[首都]的分歧」（宗主国）：a 开放边境 → 3015「开放的边境」；b 关闭边境 → 3020「特权附庸」。
+  3005 "Trouble at Home" (subject): a let both empires thrive together (ends here) / b restrict civilian travel -> 3010 (overlord) 45 days later: a keep the borders open -> 3015 "Open Borders"; b close them -> 3020 "Privileged Subject".
 - 链上的事件成对发给宗主国和附庸国双方；窗口措辞随玩家扮演的一方而异。
   Events of a chain are sent in pairs to the overlord and the subject; window wording differs for the side the player is on.
 

@@ -1,0 +1,41 @@
+{
+ "id": "event-federations2-50",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations2.55",
+    "federations2.56",
+    "federations2.53",
+    "federations2.54"
+   ],
+   "label": {
+    "zh": "清点结果",
+    "en": "Tally result"
+   },
+   "note": {
+    "zh": "赞成≥2 且≥反对：55（领袖）/ 56（成员）；否则 53（领袖）/ 54（成员）。",
+    "en": "Yes ≥ 2 and ≥ no: 55 (leader) / 56 (members); otherwise 53 (leader) / 54 (members)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "霸权联邦联合行动：18个文档与2个项目。",
+   "en": "Hegemony joint operation: 18 docs and 2 projects."
+  },
+  "sources": [
+   "events/federations_events_2.txt:887-2430",
+   "common/special_projects/00_projects_federations.txt:455-640",
+   "common/on_actions/00_on_actions.txt:491-500"
+  ],
+  "uncertain": [
+   "57–62 的文本变体取决于联邦标志，只读取了触发条件，没有逐条展开。 / The 57–62 text variants depend on federation flags and were not expanded line by line."
+  ],
+  "guide": "public/summaries/event-federations2-50.md"
+ }
+}

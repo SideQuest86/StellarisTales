@@ -1,0 +1,100 @@
+{
+ "id": "origin_riftworld",
+ "opening": {
+  "targets": [
+   "astral_planes.101",
+   "astral_planes.2120",
+   "astral_planes.2105"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "astral_planes.101": {
+    "zh": "开局约28年后：伸向裂隙（局势“空间中的裂隙”开始）",
+    "en": "About 28 years after start: Reaching Into the Rift (the situation A Rift in Space begins)"
+   },
+   "astral_planes.2120": {
+    "zh": "开局：家园系统中的古老陨石坑（遗址）",
+    "en": "Game start: the Ancient Crater site in the home system"
+   },
+   "astral_planes.2105": {
+    "zh": "其他帝国完成第三次星界裂隙探索后：奇异的通讯",
+    "en": "After another empire completes its third astral rift: a strange transmission"
+   }
+  },
+  "evidence": "common/on_actions/00_on_actions.txt:50 on_game_start_country fires hidden astral_planes.2100 (events/origin_events_astral_planes.txt:12-60): schedules astral_planes.101 after 10080+0-1440 days and colony event 2120 (creates riftworld_digsite). Hidden 2104 (on_astral_rift_exploration_complete common/on_actions/00_on_actions.txt:5014) fires 2105 after 30 days to non-Riftworld empires that completed three rifts (events/origin_events_astral_planes.txt:67-130)."
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_situation.55",
+    "astral_situation.60",
+    "astral_situation.65"
+   ],
+   "label": {
+    "zh": "不稳定的时空",
+    "en": "Unstable Spacetime"
+   },
+   "note": {
+    "zh": "局势的月度钩子（astral_situation.35）随机抽取其一。",
+    "en": "Drawn at random by the situation's monthly hook (astral_situation.35)."
+   }
+  }
+ ],
+ "endings": {
+  "astral_situation.20": {
+   "label": {
+    "zh": "摩擦才是问题",
+    "en": "Friction Is the Problem"
+   },
+   "note": {
+    "zh": "局势“空间中的裂隙”完成。",
+    "en": "The situation A Rift in Space completes."
+   },
+   "evidence": "common/situations/06_astral_planes_situations.txt:65"
+  },
+  "astral_planes.2140": {
+   "label": {
+    "zh": "祖先",
+    "en": "Ancestors"
+   },
+   "note": {
+    "zh": "遗址完成。",
+    "en": "The site is complete."
+   },
+   "evidence": "events/origin_events_astral_planes.txt:231"
+  }
+ },
+ "notes": [
+  {
+   "doc": "archaeological_site_types:riftworld_digsite",
+   "kind": "review",
+   "zh": "遗址“古老陨石坑”有四个阶段：2125 → 2130 → 2135 → 2140。",
+   "en": "The Ancient Crater has four stages: 2125 -> 2130 -> 2135 -> 2140 (common/archaeological_site_types/09_astral_planes_arc_sites.txt:26-44)."
+  },
+  {
+   "doc": "astral_planes.2105",
+   "kind": "review",
+   "zh": "由其他（非裂隙世界）帝国完成3次裂隙探索后收到；2110 为后续窗口。",
+   "en": "Received by other (non-Riftworld) empires after three completed rifts; 2110 follows."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_astral_planes.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/situations/06_astral_planes_situations.txt",
+   "common/archaeological_site_types/09_astral_planes_arc_sites.txt"
+  ],
+  "uncertain": [
+   "The situation A Rift in Space is shared with all Astral Planes empires (astral_planes.100 / 118); the Riftworld empire starts it through astral_planes.101."
+  ],
+  "guide": "public/summaries/origin_riftworld.md"
+ }
+}

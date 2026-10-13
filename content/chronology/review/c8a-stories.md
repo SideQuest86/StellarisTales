@@ -283,3 +283,16 @@ Overlap note: `event-infernals-10` compiled as one story that joined the Red Gia
 - **`event-infernals-3200`** — 熔融核心 / Molten Core — **reviewed**. Colony event infernals.3200 Molten Core (events 6007-6060): keep (specimen infernal_molten_core) / toss (monthly unity).
 - **`event-infernals-3050`** — 燃起的神话 / Kindled Myths — **reviewed**. Pre-FTL observation event infernals.3050 → 3055 (events 4263-4335): ignore 3060 / investigate 50/50 3065 vs 3070.
 - **`event-infernals-30`** — 没于烈焰 / Engulfed in Flames — **reviewed**. Terraforming completion notice infernals.35 (events 330-430) from the monthly check infernals.31.
+
+
+## Batch `b08_galfeat` — Galactic features (events/galactic_features_events.txt)
+
+- **`event-galactic-features-298`** — 屏障星球 / Shielded World — **reviewed**. Survey of a shielded fallen-empire world → hidden galactic_features.299 → 300; project FALLEN_SHIELD_PROJECT → exclusive 301/302/303 (→304)/305 (25 each, modified).
+- **`event-galactic-features-387`** — 守墓兽群 / Gravekeepers — **reviewed**. Family: merged story ids `event-galactic-features-386`, `event-galactic-features-388`. Survey (events 3555-3590) → 387 (comms) / 384 via 386 (no comms); kill → 388 or TIYANKI_LURE → 389; flag tiyanki_graveyard_access ends tiyanki_graveyard_chain.
+- **`event-galactic-features-366`** — 缇扬奇母星系已净化 / Tiyanki Home System Scoured — **reviewed**. Family: merged story id `event-galactic-features-369`. 366 hidden (home cleared) → 367; 369 hidden (extinct) → 370; both → 371 after 20 d when a fallen empire exists (events 2869-3300).
+- **`event-galactic-features-368`** — 生命摇篮 / Cradle of Life — **reviewed**. Survey notice (events 3050-3108).
+- **`event-galactic-features-350`** — 遭遇环形世界 / Ring World Encountered — **reviewed**. Ring World Sanctuary 350 → 351 (events 704-772).
+- **`event-galactic-features-2`** — 扎娜姆守护者 / Guardians of Zanaam — **reviewed**. Guardians of Zanaam warning 2 (events 11-70).
+- **`event-galactic-features-360`** — 恶臭的后代 / Effluvial Offspring — **reviewed**. Void Cloud spawns offspring (galactic_features.360 → 361, events 774-940).
+- **`event-galactic-features-500`** — 繁育之所 / Breeding Grounds — **reviewed**. Family: merged story ids `event-galactic-features-501`, `event-galactic-features-505`. Amoeba home 500 (first entering), wave 501 → 502, resolution_amoeba_conservation_act → 505 (pacified_amoebas).
+- **`event-galactic-features-421`** — 弗雷尔 / VLUUR — **reviewed**. Family: merged story id `event-galactic-features-422`. VLUUR first contact 421; destroyed → hidden 422 → 423 (+100 dark matter, dark-matter deposits).

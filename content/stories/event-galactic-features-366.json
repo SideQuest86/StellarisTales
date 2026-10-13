@@ -1,0 +1,46 @@
+{
+ "id": "event-galactic-features-366",
+ "family": {
+  "title": {
+   "zh": "缇扬奇母星系已净化",
+   "en": "Tiyanki Home System Scoured"
+  },
+  "category": "stories",
+  "start": "galactic_features.367",
+  "members": [
+   "galactic_features.367",
+   "galactic_features.370",
+   "galactic_features.371"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "galactic_features.367",
+    "galactic_features.370"
+   ],
+   "label": {
+    "zh": "两种触发",
+    "en": "Two triggers"
+   },
+   "note": {
+    "zh": "367：最后一批守卫蒂扬奇家园的舰队被歼灭（全局一次）；370：最后一只蒂扬奇被杀死（全局一次）。两者各自发出，随后都可引出 371。",
+    "en": "367: the last fleets guarding the Tiyanki home are destroyed (once per galaxy); 370: the last Tiyanki is killed (once per galaxy). Each fires on its own and both may lead to 371."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "两种触发（家园被清空 / 物种灭绝）、告知条件与衰落帝国的跨国通讯均已核对。",
+   "en": "The two triggers (home cleared / species extinct), the informing conditions and the Fallen Empire transmission were checked."
+  },
+  "sources": [
+   "events/galactic_features_events.txt:2869-3010,3109-3300"
+  ],
+  "guide": "public/summaries/event-galactic-features-366.md"
+ }
+}

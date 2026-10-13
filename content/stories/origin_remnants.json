@@ -1,0 +1,46 @@
+{
+ "id": "origin_remnants",
+ "opening": {
+  "targets": [
+   "origin.3100",
+   "origin.3101"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "origin.3100": {
+    "zh": "清除首都的废弃拱廊遗迹后：缓存",
+    "en": "After clearing the ruined arcology blocker on the capital: Recovered Cache"
+   },
+   "origin.3101": {
+    "zh": "在附近预设的理想行星上开始殖民：殖民地遗迹",
+    "en": "On colonising a nearby prescripted ideal planet: Colonial Remains"
+   }
+  },
+  "evidence": "common/deposits/01_blocker_deposits.txt:1449 (d_ruined_arcology on_cleared, capital of a Remnants empire) fires origin.3100 (events/origin_events_3.txt:150-216, a random 0.95-progress research option); common/on_actions/00_on_actions.txt:1274 on_colonization_started fires carrier event origin.3101 (events/origin_events_3.txt:217-267), adding colonial_remains, d_ruined_arcology and possibly a random blocker."
+ },
+ "notes": [
+  {
+   "doc": "origin.3101",
+   "kind": "review",
+   "zh": "选项给出“殖民地遗迹”修正与废弃拱廊矿藏，并随机增加一个（约一半概率）线索性障碍（放射性荒原、城市废墟等）。",
+   "en": "The option adds colonial_remains and d_ruined_arcology and, about half the time, a hint blocker chosen at random (radioactive wasteland, city ruins ...)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_3.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/deposits/01_blocker_deposits.txt"
+  ],
+  "uncertain": [
+   "The other empires' side (Colonial Remains is also used by Payback for MSI planets) is not part of this story."
+  ],
+  "guide": "public/summaries/origin_remnants.md"
+ }
+}

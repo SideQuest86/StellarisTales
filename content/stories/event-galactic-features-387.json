@@ -1,0 +1,92 @@
+{
+ "id": "event-galactic-features-387",
+ "family": {
+  "title": {
+   "zh": "守墓兽群",
+   "en": "Gravekeepers"
+  },
+  "category": "stories",
+  "start": "galactic_features.387",
+  "members": [
+   "galactic_features.387",
+   "galactic_features.388",
+   "galactic_features.389",
+   "galactic_features.384",
+   "special_projects:TIYANKI_LURE",
+   "event_chains:tiyanki_graveyard_chain"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "galactic_features.384",
+   "to": "galactic_features.387",
+   "conditional": true,
+   "label": {
+    "zh": "之后与蒂扬奇完成初次接触时补发",
+    "en": "Sent later, when first contact with the Tiyanki is completed"
+   },
+   "evidence": "common/scripted_effects/first_contact_effects.txt:178 (finish_first_contact_effect: if has_country_flag = tiyanki_graveyard_survey fires galactic_features.387); 384 starts the first-contact process via random_active_first_contact (events/galactic_features_events.txt:3758-3760)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "galactic_features.387",
+    "galactic_features.384"
+   ],
+   "label": {
+    "zh": "勘测后：有无与蒂扬奇的通讯",
+    "en": "After the survey: with or without contact with the Tiyanki"
+   },
+   "note": {
+    "zh": "勘测完成后若已与蒂扬奇（或其守卫）有通讯则出现 387，否则出现 384“神秘的守卫”，之后初次接触等才会补上后续。",
+    "en": "After the survey 387 appears if the empire can talk to the Tiyanki (or their guardians), otherwise 384 \"Mysterious Guardians\", with the follow-up coming later through first contact."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "galactic_features.388",
+    "galactic_features.389"
+   ],
+   "label": {
+    "zh": "进入墓地的两种方式",
+    "en": "Two ways into the graveyard"
+   },
+   "note": {
+    "zh": "消灭守墓者（388）或用诱饵把它们引开（专项 → 389），两者都会设下全局旗标 tiyanki_graveyard_access 并结束事件链。",
+    "en": "Destroy the gravekeepers (388) or lure them away (project -> 389); both set the global flag tiyanki_graveyard_access and end the event chain."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "galactic_features.387",
+   "zh": "评注：勘测墓地行星（标记 graveyard_site）时，首个人类玩家会设下 tiyanki_graveyard_survey；有通讯则本窗口，无通讯则隐藏事件 galactic_features.386 发 384（events/galactic_features_events.txt:3555-3590）。",
+   "en": "Commentary: when the graveyard planet (flag graveyard_site) is surveyed the first human player sets tiyanki_graveyard_survey; with communications this window shows, otherwise the hidden galactic_features.386 sends 384 (events/galactic_features_events.txt:3555-3590).",
+   "kind": "review"
+  },
+  {
+   "doc": "galactic_features.388",
+   "zh": "评注：当守墓舰队被歼灭（on_fleet_destroyed_perp）且尚无人取得进入权时触发（common/on_actions/00_on_actions.txt:1665）。",
+   "en": "Commentary: fires when the gravekeeper fleet is destroyed (on_fleet_destroyed_perp) and nobody has gained access yet (common/on_actions/00_on_actions.txt:1665).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "勘测入口、通讯分支、杀与诱两条路线、结束旗标均已核对；墓地考古内容属其他故事。",
+   "en": "The survey entrance, the communication branch, the kill / lure routes and the closing flag were checked; the graveyard archaeology belongs to other stories."
+  },
+  "sources": [
+   "events/galactic_features_events.txt:3541-3735",
+   "common/on_actions/00_on_actions.txt:1665",
+   "common/special_projects/00_projects_3.txt:1687"
+  ],
+  "guide": "public/summaries/event-galactic-features-387.md"
+ }
+}

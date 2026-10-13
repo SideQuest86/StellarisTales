@@ -1,0 +1,111 @@
+{
+ "id": "event-central-2",
+ "family": {
+  "title": {
+   "zh": "水晶帝国",
+   "en": "Crystalline Empire"
+  },
+  "category": "stories",
+  "start": "central.5",
+  "members": [
+   "central.5",
+   "central.10",
+   "central.15",
+   "central.20",
+   "central.21",
+   "central.50",
+   "central.51",
+   "central.52",
+   "central.60",
+   "central.61",
+   "central.62",
+   "central.70",
+   "central.71",
+   "central.72"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "central.15",
+   "to": "central.20",
+   "conditional": true,
+   "label": {
+    "zh": "之后任何时候打开外交对话：基础菜单",
+    "en": "Any later diplomacy call: the base menu"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:739 on_custom_diplomacy fires central.19; events/central_crystal_events.txt:193-230 -> 20 (or 21 when hostile)"
+  },
+  {
+   "from": "central.15",
+   "to": "central.21",
+   "conditional": true,
+   "label": {
+    "zh": "若对方对你敌对：被赶走",
+    "en": "If hostile: dismissed"
+   },
+   "evidence": "events/central_crystal_events.txt:214-223 central.19 sends 21 when the empire is hostile"
+  },
+  {
+   "from": "central.20",
+   "to": "central.50",
+   "conditional": true,
+   "label": {
+    "zh": "选“有什么我们能帮上的吗”（任务可用时，权重10）：难民",
+    "en": "Asking for tasks (weight 10): refugees"
+   },
+   "evidence": "events/central_crystal_events.txt:345-364 option sets central_crystal_task and fires on_crystalline_empire_task; common/on_actions/00_on_actions.txt:4774-4780 10 = central.50"
+  },
+  {
+   "from": "central.20",
+   "to": "central.60",
+   "conditional": true,
+   "label": {
+    "zh": "选“有什么我们能帮上的吗”（权重10）：重建所需材料",
+    "en": "Asking for tasks (weight 10): construction materials"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:4774-4780 10 = central.60"
+  },
+  {
+   "from": "central.20",
+   "to": "central.70",
+   "conditional": true,
+   "label": {
+    "zh": "选“有什么我们能帮上的吗”（权重10）：好奇的学者",
+    "en": "Asking for tasks (weight 10): a curious scholar"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:4774-4780 10 = central.70"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "central.50",
+    "central.60",
+    "central.70"
+   ],
+   "label": {
+    "zh": "委托三选一",
+    "en": "One of three requests"
+   },
+   "note": {
+    "zh": "on_crystalline_empire_task 权重 10/10/10。",
+    "en": "on_crystalline_empire_task weights 10/10/10."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "银河中心的水晶帝国（Zer-Ayaki）：罕见出现、首次通讯、外交对话与三种委托（难民、重建、学者）。",
+   "en": "The Crystalline Empire (Zer-Ayaki) at the galactic centre: its rare appearance, first contact, the diplomacy dialogue and the three requests (refugees, reconstruction, a scholar)."
+  },
+  "sources": [
+   "events/central_crystal_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-central-2.md"
+ }
+}

@@ -216,6 +216,7 @@ class Compiler:
         self.bridges, self.suppressed = [], collections.defaultdict(list)
         self.dialogues, self.readings, self.endings, self.notes = {}, {}, {}, collections.defaultdict(list)
         self.node_labels, self.openings, self.unreachable = {}, {}, {}
+        self.no_stage_sequence = set()
         for sid, fragment in self.fragments.items():
             self.bridges += [{**b, 'fragment': sid} for b in fragment.get('bridges', [])]
             for s in fragment.get('suppress', []):
@@ -225,6 +226,7 @@ class Compiler:
                     if key in target:
                         raise ValueError(f'{sid}: {field} for {key} is already reviewed in another fragment')
                     target[key] = value
+            self.no_stage_sequence.update(fragment.get('noStageSequence', []))
             for doc, note in fragment.get('unreachable', {}).items():
                 self.unreachable[doc] = {k: note[k] for k in ('zh', 'en') if k in note}
             for note in fragment.get('notes', []):
@@ -573,8 +575,8 @@ class Compiler:
 
     def stage_sequence(self, rid):
         """Archaeological site and situation stages run in definition order, not as simultaneous children."""
-        if self.kind(rid) not in ('site', 'situation'):
-            return []
+        if self.kind(rid) not in ('site', 'situation') or rid in self.no_stage_sequence:
+            return []  # reviewed: stages do not run in definition order (e.g. bidirectional progress)
         stages = []  # [(stage name, [targets])] in definition order
         for t, segs in self.composite(rid):
             stage = next((p.get('name', '') for p in segs[0]['path'] if p['k'] == 'stage'), None)

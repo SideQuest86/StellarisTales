@@ -1,0 +1,39 @@
+{
+ "id": "event-federations2-100",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations2.103",
+    "federations2.104",
+    "federations2.105",
+    "federations2.106"
+   ],
+   "label": {
+    "zh": "清点结果",
+    "en": "Tally result"
+   },
+   "note": {
+    "zh": "通过：105/106；未通过：103/104（领袖/成员文本不同）。",
+    "en": "Approved: 105/106; rejected: 103/104 (leader / member texts)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "军事联邦联合演习：13个文档与项目。",
+   "en": "Military federation exercises: 13 docs and the project."
+  },
+  "sources": [
+   "events/federations_events_2.txt:2429-3700",
+   "common/special_projects/00_projects_federations.txt:860-900",
+   "common/on_actions/00_on_actions.txt:491-500"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-federations2-100.md"
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "id": "origin_arc_welders",
+ "opening": {
+  "targets": [
+   "machine_age.3400",
+   "machine_age.3405"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "machine_age.3400": {
+    "zh": "勘测到理想的星系：为熔炉提供燃料",
+    "en": "An ideal system is surveyed: Fuel for the Forge"
+   },
+   "machine_age.3405": {
+    "zh": "建成轨道电弧熔炉后：焊接地平线",
+    "en": "After the orbital arc furnace is built: Welded Horizon"
+   }
+  },
+  "evidence": "events/origin_events_machine_age.txt:2302-2420 machine_age.3400 fires from on_system_survey_ship (common/on_actions/00_on_actions.txt:1256) and starts ideal_furnace_chain (:2329); 3405 fires on_build_complete of orbital_arc_furnace_1 (common/megastructures/17_orbital_arc_furnace.txt:327)."
+ },
+ "endings": {
+  "machine_age.3405": {
+   "label": {
+    "zh": "焊接地平线",
+    "en": "Welded Horizon"
+   },
+   "note": {
+    "zh": "第二座熔炉建成（第一阶段）。",
+    "en": "The second furnace is built (first phase)."
+   },
+   "evidence": "events/origin_events_machine_age.txt:2348-2400"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_machine_age.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/megastructures/17_orbital_arc_furnace.txt"
+  ],
+  "uncertain": [
+   "Hidden follow-up events of the furnace phases (machine_age.3410+) were not found as windows."
+  ],
+  "guide": "public/summaries/origin_arc_welders.md"
+ }
+}

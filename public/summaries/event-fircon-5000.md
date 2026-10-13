@@ -1,4 +1,4 @@
-# 缺失轨道 / Missing Orbitals
+# 哈宾特统一星球国 / Habinte Unified Worlds
 
 - 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/first_contact_dlc_events.txt:6658-7560`；`common/on_actions/00_on_actions.txt:474,801,1050-1053,1163,1956,2174,2616`；`common/anomalies/02_anomaly_categories.txt:713`
