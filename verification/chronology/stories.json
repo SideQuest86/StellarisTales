@@ -2,15 +2,15 @@
   "category": "stories",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 531,
-  "docs": 2144,
-  "nodes": 3383,
-  "refs": 1239,
+  "stories": 518,
+  "docs": 2106,
+  "nodes": 3331,
+  "refs": 1225,
   "crossLinks": 207,
   "review": {
-    "reviewed": 423,
+    "reviewed": 458,
     "partial": 1,
-    "unreviewed": 107
+    "unreviewed": 59
   },
   "failures": [],
   "items": [
@@ -65,15 +65,6 @@
       "kind": "family",
       "docs": 30,
       "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "event-infernals-10",
-      "title": "令人担忧的趋势",
-      "kind": "family",
-      "docs": 29,
-      "refs": 17,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -150,15 +141,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-infernals-2500",
-      "title": "宇宙黎明",
-      "kind": "family",
-      "docs": 19,
-      "refs": 2,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
       "id": "event-country-1100",
       "title": "大灭绝",
       "kind": "family",
@@ -200,6 +182,15 @@
       "kind": "family",
       "docs": 15,
       "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-central-2",
+      "title": "水晶帝国",
+      "kind": "family",
+      "docs": 14,
+      "refs": 6,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -276,6 +267,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-infernals-10",
+      "title": "令人担忧的趋势",
+      "kind": "family",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
       "id": "event-nomads-9010",
       "title": "秋菊号的线索",
       "kind": "family",
@@ -291,6 +291,15 @@
       "docs": 8,
       "refs": 0,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-uplift-6000",
+      "title": "提升前智慧生物",
+      "kind": "family",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 1,
       "review": "reviewed"
     },
     {
@@ -402,12 +411,30 @@
       "review": "reviewed"
     },
     {
+      "id": "event-galactic-features-387",
+      "title": "守墓兽群",
+      "kind": "family",
+      "docs": 6,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-grand-archive-4500",
       "title": "失去博物天枢",
       "kind": "family",
       "docs": 6,
       "refs": 3,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-infernals-2500",
+      "title": "宇宙黎明",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 5,
       "review": "reviewed"
     },
     {
@@ -591,6 +618,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-uplift-7500",
+      "title": "前智慧原住民",
+      "kind": "family",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-apoc-1",
       "title": "遗弃星门",
       "kind": "family",
@@ -642,6 +678,24 @@
       "docs": 3,
       "refs": 1,
       "crossLinks": 3,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-galactic-features-366",
+      "title": "缇扬奇母星系已净化",
+      "kind": "family",
+      "docs": 3,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-galactic-features-500",
+      "title": "繁育之所",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -836,6 +890,15 @@
     {
       "id": "event-fallen-empires-awakening-4",
       "title": "星河守护者",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-galactic-features-421",
+      "title": "弗雷尔",
       "kind": "family",
       "docs": 2,
       "refs": 0,
@@ -1056,7 +1119,7 @@
       "docs": 11,
       "refs": 7,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-paragon-998",
@@ -1227,7 +1290,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-marauder-699",
@@ -1254,7 +1317,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-toxoids-1",
@@ -1263,16 +1326,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-uplift-6010",
-      "title": "提升成功",
-      "kind": "event",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-utopia-20",
@@ -1326,7 +1380,7 @@
       "docs": 6,
       "refs": 4,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-20",
@@ -1398,7 +1452,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-8200",
@@ -1407,7 +1461,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-pirate-4",
@@ -1509,33 +1563,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-central-50",
-      "title": "水晶之国",
-      "kind": "event",
-      "docs": 4,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-central-60",
-      "title": "水晶之国",
-      "kind": "event",
-      "docs": 4,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-central-70",
-      "title": "水晶之国",
-      "kind": "event",
-      "docs": 4,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-cstorms-1840",
       "title": "设施复工",
       "kind": "event",
@@ -1556,15 +1583,6 @@
     {
       "id": "event-extreme-frontiers-1533",
       "title": "科伯恩公司无人机",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-387",
-      "title": "守墓兽群",
       "kind": "event",
       "docs": 4,
       "refs": 0,
@@ -1623,7 +1641,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3000",
@@ -1779,15 +1797,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-central-2",
-      "title": "来自星系中心的信号",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-cstorms-1760",
       "title": "宇宙阻塞",
       "kind": "event",
@@ -1866,7 +1875,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-100",
@@ -2067,15 +2076,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-central-19",
-      "title": "水晶之国",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-crime-1000",
       "title": "在[Root.GetName]上的分部被关闭",
       "kind": "event",
@@ -2091,7 +2091,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-custodian-100",
@@ -2154,25 +2154,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-366",
-      "title": "缇扬奇母星系已净化",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-369",
-      "title": "缇扬奇已被逼至灭绝边缘",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-galactic-features-381",
@@ -2181,7 +2163,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-105",
@@ -2243,7 +2225,7 @@
       "kind": "event",
       "docs": 2,
       "refs": 0,
-      "crossLinks": 24,
+      "crossLinks": 17,
       "review": "unreviewed"
     },
     {
@@ -2252,7 +2234,7 @@
       "kind": "event",
       "docs": 2,
       "refs": 0,
-      "crossLinks": 24,
+      "crossLinks": 17,
       "review": "unreviewed"
     },
     {
@@ -2384,15 +2366,6 @@
     {
       "id": "event-syndaw-1200",
       "title": "前造主被征服",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-uplift-7520",
-      "title": "烦躁不安",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2937,7 +2910,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-drones-1-chain",
@@ -3162,7 +3135,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-snake-infestation-chain",
@@ -3171,7 +3144,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-survey-home-system",
@@ -3207,7 +3180,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-102",
@@ -3882,7 +3855,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-galactic-features-360",
@@ -3891,7 +3864,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-galactic-features-368",
@@ -3900,70 +3873,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-386",
-      "title": "神秘的守护者",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-388",
-      "title": "亵渎墓地",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-421",
-      "title": "弗雷尔",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-422",
-      "title": "弗雷尔的终结",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-500",
-      "title": "繁育之所",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-501",
-      "title": "[FromFrom.GetName]的新来客",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-galactic-features-505",
-      "title": "太空变形虫保护法案",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-2190",
@@ -4035,7 +3945,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-necroids-200",
@@ -4116,7 +4026,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-4800",
@@ -4125,7 +4035,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-6005",
@@ -4305,7 +4215,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 10,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-progress-3",
@@ -4314,7 +4224,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-refugees-3",
@@ -4737,7 +4647,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-unique-130",
@@ -4746,7 +4656,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-unique-135",
@@ -4755,7 +4665,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-unique-140",
@@ -4764,34 +4674,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-uplift-6000",
-      "title": "发现未开智物种",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-uplift-7500",
-      "title": "支链",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-uplift-7510",
-      "title": "活体实验",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     }
   ]
 }

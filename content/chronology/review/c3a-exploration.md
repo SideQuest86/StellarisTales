@@ -303,3 +303,15 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **project-inetian-projects-04** — reviewed. Single path INETIAN_PROJECTS_04 -> cstorms.195; entered through artifact_inetian_research; tree correct.
 - **project-project-adakkaria-secrets-of** — reviewed. Single path project_adakkaria_secrets_of -> cstorms.2365 (options a/b); entered through artifact_adakkaria_research; tree correct.
 - **anomaly-tutorial-cat** — reviewed. Anomaly card only; outcomes tutorial.52/53/54 (1/3 each) are excluded as non-story tutorial plumbing; request to coordinator on whether to show them.
+
+### Batch b_26_sites
+
+- **anomaly-on-crashed-ship-cat** — reviewed. Stages linked in order via bridges (site stage names are empty so the compiler made them siblings); suppress site->14002/14003/14006; hubs ancrel.8200-8203/8215; exclusive 14004/14005; ending 14006.
+- **anomaly-on-solar-sails-cat** — reviewed. Stages linked in order via bridges; suppress site->15022..15025; hubs ancrel.8200-8203/8215; ending 15025.
+
+### Batch b_27_big_anomalies
+
+- **anomaly-mountain-uninhabitable-category** — reviewed. Exclusive 2520/6905; 2520 -> GIGANTIC_SKELETON_PROJECT -> 2521/2522 (50/50), reanimator -> RESURRECTION -> 2523; 6905.b -> CRACK_THE_EGG -> 6910 (90%) / 6915 (10%); tree correct.
+- **anomaly-fungal-emitters-category** — reviewed. Exclusive 6755/6760/6765 by Fumongus quest state (draft p=0.33* corrected via group); 6755.a -> FOLLOWING_FUNGI_PROJECT -> 6770 (80%, starts fumongus_chain) / 6780; 6760.a -> MUSHROOMING_NETWORK_PROJECT -> 6785.
+  - uncertain: Which events set fumongus_active / fumongus_resolved / fumongus_dismantled (ancient_relics_arcsite_events_2.txt:9628-9744) belong to other stories and were not traced here.
+- **anomaly-signal-gasgiant-category** — reviewed. Single 5000; a -> GAS_GIANT_SIGNAL -> 5001 -> 5003; 5003.d -> GAS_GIANT_RELOCATION -> 5004 -> 5006; timeouts 5002/5005; tree correct.

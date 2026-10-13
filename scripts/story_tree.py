@@ -212,7 +212,8 @@ class Compiler:
             self.fragments[path.stem] = fragment
         chron = ROOT / 'content/chronology'
         self.hub_review = read(chron / 'hubs.json')
-        # Reviewed facts live in one fragment per story; keyed facts must be unique across fragments.
+        # Reviewed facts live in one fragment per story; keyed facts should be unique across fragments.
+        self.duplicate_facts = []
         self.bridges, self.suppressed = [], collections.defaultdict(list)
         self.dialogues, self.readings, self.endings, self.notes = {}, {}, {}, collections.defaultdict(list)
         self.node_labels, self.openings, self.unreachable = {}, {}, {}
@@ -224,7 +225,9 @@ class Compiler:
             for field, target in (('dialogues', self.dialogues), ('readings', self.readings), ('endings', self.endings)):
                 for key, value in fragment.get(field, {}).items():
                     if key in target:
-                        raise ValueError(f'{sid}: {field} for {key} is already reviewed in another fragment')
+                        if target[key] != value:  # two reviewers described the same doc; keep the first, report
+                            self.duplicate_facts.append(f'{sid}: {field} for {key} also reviewed in another fragment')
+                        continue
                     target[key] = value
             self.no_stage_sequence.update(fragment.get('noStageSequence', []))
             for doc, note in fragment.get('unreachable', {}).items():
@@ -242,7 +245,7 @@ class Compiler:
         self.container_of = {}
         self.hook_cache = {}
         self.excluded = collections.defaultdict(set)
-        self.warnings = []
+        self.warnings = list(self.duplicate_facts)
         self.defined = read(ROOT / 'public/data/scripted-loc.json')
         self.used_names = set()
 
@@ -582,6 +585,8 @@ class Compiler:
             stage = next((p.get('name', '') for p in segs[0]['path'] if p['k'] == 'stage'), None)
             if stage is None:
                 continue
+            if not stage:  # archaeological site stages are unnamed blocks: each fires its own event
+                stage = f'#{len(stages)}'
             if not stages or stages[-1][0] != stage:
                 stages.append((stage, []))
             if t not in stages[-1][1]:

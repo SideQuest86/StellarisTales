@@ -1,0 +1,56 @@
+{
+ "id": "event-operation-6200",
+ "bridges": [
+  {
+   "from": "operation.6200",
+   "to": "operation.6201",
+   "conditional": true,
+   "label": {
+    "zh": "下一阶段（上一阶段的难度检定通过后）",
+    "en": "Next stage (once the previous stage's difficulty check is passed)"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:777-829 (stage = { event = ... } entries in order; each stage runs after the previous one succeeds)"
+  },
+  {
+   "from": "operation.6201",
+   "to": "operation.6202",
+   "conditional": true,
+   "label": {
+    "zh": "下一阶段（上一阶段的难度检定通过后）",
+    "en": "Next stage (once the previous stage's difficulty check is passed)"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:777-829 (stage = { event = ... } entries in order; each stage runs after the previous one succeeds)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "operation.6205",
+    "operation.6207"
+   ],
+   "label": {
+    "zh": "成功 / 已被武装",
+    "en": "Success / already armed"
+   },
+   "note": {
+    "zh": "目标是否已是别人的私掠对象决定走 6205/6206 还是 6207。",
+    "en": "Whether the target is already someone else's privateer victim decides 6205/6206 or 6207."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "行动类型定义、各阶段事件顺序、最终结果窗口与失败分支已核对。",
+   "en": "The operation type definition, the order of the stage events, the final result windows and the failure branches were checked."
+  },
+  "sources": [
+   "common/espionage_operation_types/operations.txt:777-829",
+   "events/nemesis_operations_events_2.txt"
+  ],
+  "guide": "public/summaries/event-operation-6200.md"
+ }
+}

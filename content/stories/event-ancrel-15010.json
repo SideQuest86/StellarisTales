@@ -60,7 +60,9 @@
    "localisation/simp_chinese",
    "localisation/english"
   ],
-  "uncertain": [],
+  "uncertain": [
+   "The site definition is in the base-game file while the trigger event sits in the Ancient Relics file; ancrel.15010 itself does not check has_ancrel."
+  ],
   "guide": "public/summaries/event-ancrel-15010.md"
  }
 }

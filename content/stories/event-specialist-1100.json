@@ -1,0 +1,22 @@
+{
+ "id": "event-specialist-1100",
+ "category": "society",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "勘探者资源发现：19个文档（9个项目）。",
+   "en": "Prospectorium resource discovery: 19 docs (9 projects)."
+  },
+  "sources": [
+   "events/overlord_specialist_events.txt:329-700",
+   "common/special_projects (PROSPECTORIUM_RESOURCE_DISCOVERY_*)",
+   "common/on_actions/00_on_actions.txt:408"
+  ],
+  "uncertain": [
+   "各项目的成本与产出细节未逐项展开。 / Project costs and yields were not expanded."
+  ],
+  "guide": "public/summaries/event-specialist-1100.md"
+ }
+}

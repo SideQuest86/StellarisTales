@@ -62,22 +62,6 @@ Legend: **reviewed** = root/trigger, membership, order, exclusivity, variants an
 
 ### event-terra-30 — reviewed (single doc, on_blocker_cleared 00_on_actions.txt:2507; independent of terra.10)
 
-## Requests
-
-1. `scripts/callers.py` crashes with KeyError 'name' on call paths containing an `effect = {}` hook block (HOOKS entry
-   `{'k':'effect'}` has no name); context() should use `p.get('name')`. I used a local copy with the fix.
-2. Compiled line numbers drift in files where `extract.py` expands `inline_script` before parsing: e.g. shroud.11235 is reported at
-   events/shroud_events.txt:22541 but is at line 18475 in the game file. Evidence in fragments should be re-based on the raw file
-   (or the extractor should record pre-expansion offsets).
-3. `stage_sequence()` chains every stage target in file order. When one stage's `on_first_enter` fires several events that are
-   alternatives (situation_cyberization stage_4 → cyber.405/415/425, each gated by a different rival flag;
-   08_machine_age_situations.txt:850-860), they become a false 405→415→425 sequence that `suppress` cannot remove (stage edges
-   bypass suppress). Please group targets of the same stage as siblings of the previous stage doc.
-4. Situation random-event pools are fired via `fire_on_action` (cyber.5 → on_cyberization_situation_random_events_list,
-   cyber.2005 → on_cyberization_hive_situation_random_events_list, synth.5 → on_digitization_situation_random_events_list);
-   the graph drops on_action targets, so their events (cyber.120/160/210/220/260/320/360, cyber.22xx, synth.120…360, owned by
-   c7a) are separate one-doc roots. They belong inside my situation stories event-utopia-2500 / event-utopia-2550; I did not
-   bridge them (a bridge would silently move another reviewer's roots). Coordinator: decide the owner and merge.
 ### Megastructure stage notices — reviewed (10 families; merged 48 one-card stories)
 Pattern: each megastructure fires one country event per completed build stage (`on_build_complete` in common/megastructures/*.txt, or
 on_megastructure_built/_upgraded in 00_on_actions.txt:3658-3716), hidden routers (81, 2001, 4001, 4101) notify other empires, and a map ruin
@@ -126,3 +110,28 @@ Pool: hidden arkship.1 director (nomads_arkship_events.txt:7-49) → generate_ar
 - Single: 2190 Galactic Parasites, 2901 Cutholoids first contact + project, 105 Gravity Snares, 7015 Whalesong, 9000 Captured leaders, 9955 Artificial Breeding.
 - Compile quirk: finish_first_contact_effect in 2005 fans out to unrelated first-contact events (external links cara.1020 ... marauder.15); harmless but noisy (Request 5).
 
+### Batch 2 (2026-10-13): operations, Fallen Machine Empire, Imperium, marauders, action, nomads, misc — reviewed
+- Operations (Nemesis): families event-operation-1000 Acquire Asset, -1020 Steal Technology, -2000 Sabotage Starbase, -3000 Smear Campaign, -4000 Crisis Beacon (stage events chained in order; espionage.* detection docs are shared, not members); single: -7000 Gather Information; 11 mishap stories (5000...5055) documented with the pool matrix (espionage_event_effects.txt:2390-2821; 1/40 per failed roll, 90-day lock). Quirk: low-stakes pool calls 5030 for Mistaken for Food (5020) — probable script slip (uncertain).
+- event-fallen-machine-empire-10: 19 stories -> tasks 1-5 and demands 1-2 of the machine Custodian with exclusive outcomes.
+- Imperium: event-emperor-499 (rise; real root is the form-empire resolutions, 499/495 are is_test_event), -50 (laws, crusade, defence), -150 (end/civil-war results); event-action-150 (war-result notices). event-marauder-85/505/511/711 (Great Khan crisis pieces; aftermath 620-671 stays in event-marauder-509, c8a).
+- Misc: event-action-96/102/105/110/122/601; event-namarian-3 Galactic Nomads (5 stories merged); event-central-2 Crystalline Empire (5 merged); event-uplift-6000 & -7500; event-toxoids-1/-499; event-nomads-4750/4800; event-unique-130/135/140; event-galactic-features-381; event-progress-2/3; event-cstorms-8100; event-necroids-20; four chain overview cards (snake infestation chain marked unreachable: events commented out).
+- Observer stories (event-observer-50/77) vanished after the coordinator's compiler update (observer events are not stories).
+- Requests: (5) finish_first_contact_effect fans out to dozens of unrelated first_contact.* events (shows as external links/callers for namarian.10, grand_archive.2005); (6) callers.py misses calls made from resolutions via scripted effects (emperor.60) — shown as 'fired by the engine'; (7) project-arkship-eternal-chorus-project (c3b) holds arkship.145 between my event-arkship-140 docs; coordinator may merge.
+
+
+## Requests
+
+1. `scripts/callers.py` crashes with KeyError 'name' on call paths containing an `effect = {}` hook block (HOOKS entry
+   `{'k':'effect'}` has no name); context() should use `p.get('name')`. I used a local copy with the fix.
+2. Compiled line numbers drift in files where `extract.py` expands `inline_script` before parsing: e.g. shroud.11235 is reported at
+   events/shroud_events.txt:22541 but is at line 18475 in the game file. Evidence in fragments should be re-based on the raw file
+   (or the extractor should record pre-expansion offsets).
+3. `stage_sequence()` chains every stage target in file order. When one stage's `on_first_enter` fires several events that are
+   alternatives (situation_cyberization stage_4 → cyber.405/415/425, each gated by a different rival flag;
+   08_machine_age_situations.txt:850-860), they become a false 405→415→425 sequence that `suppress` cannot remove (stage edges
+   bypass suppress). Please group targets of the same stage as siblings of the previous stage doc.
+4. Situation random-event pools are fired via `fire_on_action` (cyber.5 → on_cyberization_situation_random_events_list,
+   cyber.2005 → on_cyberization_hive_situation_random_events_list, synth.5 → on_digitization_situation_random_events_list);
+   the graph drops on_action targets, so their events (cyber.120/160/210/220/260/320/360, cyber.22xx, synth.120…360, owned by
+   c7a) are separate one-doc roots. They belong inside my situation stories event-utopia-2500 / event-utopia-2550; I did not
+   bridge them (a bridge would silently move another reviewer's roots). Coordinator: decide the owner and merge.

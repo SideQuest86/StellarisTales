@@ -1,0 +1,37 @@
+{
+ "id": "event-fedel-500",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fedel.510",
+    "fedel.515"
+   ],
+   "label": {
+    "zh": "结算结果",
+    "en": "Resolution"
+   },
+   "note": {
+    "zh": "510：胜者；515：其他成员。",
+    "en": "510: winner; 515: everyone else."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "灵能战斗：3个文档。",
+   "en": "Psionic Battle: 3 docs."
+  },
+  "sources": [
+   "events/federations_election_events.txt:1695-2280",
+   "common/federation_laws/13_challenge_type.txt:107-201",
+   "common/on_actions/00_on_actions.txt:3560-3568"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-fedel-500.md"
+ }
+}

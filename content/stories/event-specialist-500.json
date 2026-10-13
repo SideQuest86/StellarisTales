@@ -1,0 +1,39 @@
+{
+ "id": "event-specialist-500",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "specialist.905",
+    "specialist.910",
+    "specialist.915",
+    "specialist.920"
+   ],
+   "label": {
+    "zh": "缓存类型",
+    "en": "Cache type"
+   },
+   "note": {
+    "zh": "各 25%。",
+    "en": "25% each."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "学者异常传感器读数：6个文档。",
+   "en": "Scholarium sensor abnormality: 6 docs."
+  },
+  "sources": [
+   "events/overlord_specialist_events.txt:115-330",
+   "common/scripted_effects/overlord_effects.txt",
+   "common/on_actions/00_on_actions.txt:407"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-specialist-500.md"
+ }
+}

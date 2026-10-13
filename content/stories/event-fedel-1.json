@@ -1,0 +1,38 @@
+{
+ "id": "event-fedel-1",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fedel.10",
+    "fedel.15",
+    "fedel.16"
+   ],
+   "label": {
+    "zh": "竞技场结果",
+    "en": "Arena outcome"
+   },
+   "note": {
+    "zh": "10：胜者；15：败者；16：不参赛者。",
+    "en": "10: winner; 15: losers; 16: abstainers."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "竞技场格斗：4个文档。",
+   "en": "Arena combat: 4 docs."
+  },
+  "sources": [
+   "events/federations_election_events.txt:15-720",
+   "common/federation_laws/13_challenge_type.txt:4-106",
+   "common/on_actions/00_on_actions.txt:3560-3568"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-fedel-1.md"
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "id": "event-diplomatic-1000",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "diplomatic.1011",
+    "diplomatic.1012",
+    "diplomatic.1013",
+    "diplomatic.1014"
+   ],
+   "label": {
+    "zh": "演习中的插曲",
+    "en": "Incident during the maneuvers"
+   },
+   "note": {
+    "zh": "隐藏随机，各 25%。",
+    "en": "Hidden roll, 25% each."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "舰队演习：17个文档（3个项目档位）。",
+   "en": "Fleet Maneuvers: 17 docs (3 project tiers)."
+  },
+  "sources": [
+   "events/diplomatic_events_2.txt:13-1100",
+   "common/special_projects (FLEET_MANEUVERS_*_PROJECT)"
+  ],
+  "uncertain": [
+   "各项目的成本与时限、1020–1024 对话的效果未逐项展开。 / Project costs and the 1020–1024 dialog effects were not expanded."
+  ],
+  "guide": "public/summaries/event-diplomatic-1000.md"
+ }
+}

@@ -296,3 +296,15 @@ Overlap note: `event-infernals-10` compiled as one story that joined the Red Gia
 - **`event-galactic-features-360`** — 恶臭的后代 / Effluvial Offspring — **reviewed**. Void Cloud spawns offspring (galactic_features.360 → 361, events 774-940).
 - **`event-galactic-features-500`** — 繁育之所 / Breeding Grounds — **reviewed**. Family: merged story ids `event-galactic-features-501`, `event-galactic-features-505`. Amoeba home 500 (first entering), wave 501 → 502, resolution_amoeba_conservation_act → 505 (pacified_amoebas).
 - **`event-galactic-features-421`** — 弗雷尔 / VLUUR — **reviewed**. Family: merged story id `event-galactic-features-422`. VLUUR first contact 421; destroyed → hidden 422 → 423 (+100 dark matter, dark-matter deposits).
+
+## Batch `b09_operations` — Espionage operations (events/nemesis_operations_events_2.txt, common/espionage_operation_types/operations.txt)
+
+Each `event-operation-*` card is the run of one espionage operation type: the stage events are `stage_event` hooks of the operation (common/espionage_operation_types/operations.txt), fired in order as the operation passes each stage's difficulty check; failed rolls leave the operation and fire the generic or operation-specific random events instead (`standard_espionage_operation_on_roll_failed`). The compiler shows the stage events as separate entries; c8a links them with bridges in stage order.
+
+- **`event-operation-6000`** — 渗透开始 / Infiltration Begins — **reviewed**. Operation weaken_galactic_empire (operations.txt:919-973): stages 6000 → 6005 → 6010 → LAUNCH → 6015 (−20 Imperial authority) → 6016 to the emperor; bridges added in stage order.
+- **`event-operation-6100`** — 接头 / Linking Up — **reviewed**. Operation spark_rebellion (operations.txt:1048-1130): stages 6100 → 6105 → 6110 → 6115 → 6120 → LAUNCH → emperor.101 (galactic civil war). Cancelled if Imperial authority > 80.
+- **`event-operation-6200`** — 尝试联络 / Making Contact — **reviewed**. Operation arm_privateers (operations.txt:777-829): 6200 → 6201 → 6202 → LAUNCH → hidden 6204 → 6205 (performer) / 6206 (target), or 6207 when the target is already armed.
+- **`event-operation-6250`** — 追踪领袖 / Pursuing Leads — **reviewed**. Operation extort_favors (operations.txt:399-448): 6250 → 6251 → 6252 → LAUNCH → 6255 (80/20 reward).
+- **`event-operation-6300`** — 渗透 / Infiltration — **reviewed**. Operation target_seditionists (operations.txt:975-1046): 6300 → 6305 → 6310 → LAUNCH → 6315 (+1 d) → 6316 to the target (+5 d); failure random event 6320 → 6321.
+- **`event-operation-8000`** — 推进计划 / Following Up Leads — **reviewed**. Operation sleeper_cells (operations.txt:154-202): 8000 → 8001 → LAUNCH (+15 d) → 8002 (random cell type).
+- **`event-operation-8200`** — 搜寻目标 / Seeking Targets — **reviewed**. Operation diplomatic_incident (operations.txt:89-152): 8200 → 8205 → 8210 → LAUNCH (+15 d) → hidden 8220 → success 8230 / failure 8225.

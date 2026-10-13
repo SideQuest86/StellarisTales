@@ -1,0 +1,27 @@
+{
+ "id": "anomaly-mountain-uninhabitable-category",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:673",
+   "events/anomaly_events_2.txt:158 (anomaly.2520)",
+   "common/special_projects/00_projects_1.txt (GIGANTIC_SKELETON_PROJECT)",
+   "events/anomaly_events_2.txt:210 (anomaly.2521)",
+   "events/anomaly_events_2.txt:283 (anomaly.2522)",
+   "common/special_projects/00_projects_3.txt (GIGANTIC_SKELETON_RESURRECTION_PROJECT)",
+   "events/anomaly_events_2.txt:322 (anomaly.2523)",
+   "events/anomaly_events_4.txt:3487 (anomaly.6905)",
+   "common/special_projects/00_projects_3.txt (CRACK_THE_EGG)",
+   "events/anomaly_events_4.txt:3552 (anomaly.6910)",
+   "events/anomaly_events_4.txt:3605 (anomaly.6915)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-mountain-uninhabitable-category.md"
+ }
+}

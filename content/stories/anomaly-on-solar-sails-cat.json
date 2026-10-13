@@ -1,0 +1,104 @@
+{
+ "id": "anomaly-on-solar-sails-cat",
+ "hubs": [
+  "ancrel.8200",
+  "ancrel.8201",
+  "ancrel.8202",
+  "ancrel.8203",
+  "ancrel.8215"
+ ],
+ "suppress": [
+  {
+   "from": "archaeological_site_types:site_space_shanty_dig",
+   "to": "ancrel.15022",
+   "evidence": "Unnamed stages are listed as siblings by the compiler; they run in definition order 15021 → 15022 → 15023 → 15024 → 15025 (common/archaeological_site_types/00_base_game_arc_sites.txt:63)."
+  },
+  {
+   "from": "archaeological_site_types:site_space_shanty_dig",
+   "to": "ancrel.15023",
+   "evidence": "Same: stage 3."
+  },
+  {
+   "from": "archaeological_site_types:site_space_shanty_dig",
+   "to": "ancrel.15024",
+   "evidence": "Same: stage 4."
+  },
+  {
+   "from": "archaeological_site_types:site_space_shanty_dig",
+   "to": "ancrel.15025",
+   "evidence": "Same: stage 5."
+  }
+ ],
+ "bridges": [
+  {
+   "from": "ancrel.15021",
+   "to": "ancrel.15022",
+   "conditional": false,
+   "label": {
+    "zh": "下一阶段（线索足够）",
+    "en": "Next stage (enough clues)"
+   },
+   "evidence": "site_space_shanty_dig stage 2 (stages = 5, definition order)."
+  },
+  {
+   "from": "ancrel.15022",
+   "to": "ancrel.15023",
+   "conditional": false,
+   "label": {
+    "zh": "下一阶段（线索足够）",
+    "en": "Next stage (enough clues)"
+   },
+   "evidence": "site_space_shanty_dig stage 3."
+  },
+  {
+   "from": "ancrel.15023",
+   "to": "ancrel.15024",
+   "conditional": false,
+   "label": {
+    "zh": "下一阶段（线索足够）",
+    "en": "Next stage (enough clues)"
+   },
+   "evidence": "site_space_shanty_dig stage 4."
+  },
+  {
+   "from": "ancrel.15024",
+   "to": "ancrel.15025",
+   "conditional": false,
+   "label": {
+    "zh": "下一阶段（线索足够）",
+    "en": "Next stage (enough clues)"
+   },
+   "evidence": "site_space_shanty_dig stage 5."
+  }
+ ],
+ "endings": {
+  "ancrel.15025": {
+   "label": {
+    "zh": "抛开锚链！",
+    "en": "Cast Off the Hawser!"
+   },
+   "note": {
+    "zh": "最后阶段：永久修正 harmonious_crew，记录标本“水中的鱼”乐谱。",
+    "en": "The final stage: the permanent modifier harmonious_crew and the specimen 'fish in the sea' sheet music."
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:10691"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:900 (on_solar_sails_cat)",
+   "events/anomaly_events_4.txt:3830 (anomaly.7020)",
+   "common/archaeological_site_types/00_base_game_arc_sites.txt:63 (site_space_shanty_dig, 5 stages)",
+   "events/ancient_relics_arcsite_events_2.txt:10591-10720 (ancrel.15021-15025)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-on-solar-sails-cat.md"
+ }
+}

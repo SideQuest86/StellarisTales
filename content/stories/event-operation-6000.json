@@ -1,0 +1,39 @@
+{
+ "id": "event-operation-6000",
+ "bridges": [
+  {
+   "from": "operation.6000",
+   "to": "operation.6005",
+   "conditional": true,
+   "label": {
+    "zh": "下一阶段（上一阶段的难度检定通过后）",
+    "en": "Next stage (once the previous stage's difficulty check is passed)"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:919-973 (stage = { event = ... } entries in order; each stage runs after the previous one succeeds)"
+  },
+  {
+   "from": "operation.6005",
+   "to": "operation.6010",
+   "conditional": true,
+   "label": {
+    "zh": "下一阶段（上一阶段的难度检定通过后）",
+    "en": "Next stage (once the previous stage's difficulty check is passed)"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:919-973 (stage = { event = ... } entries in order; each stage runs after the previous one succeeds)"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "行动类型定义、各阶段事件顺序、最终结果窗口与失败分支已核对。",
+   "en": "The operation type definition, the order of the stage events, the final result windows and the failure branches were checked."
+  },
+  "sources": [
+   "common/espionage_operation_types/operations.txt:919-973",
+   "events/nemesis_operations_events_2.txt"
+  ],
+  "guide": "public/summaries/event-operation-6000.md"
+ }
+}

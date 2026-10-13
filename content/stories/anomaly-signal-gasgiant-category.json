@@ -1,0 +1,26 @@
+{
+ "id": "anomaly-signal-gasgiant-category",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:710",
+   "events/anomaly_events_4.txt:10 (anomaly.5000)",
+   "common/special_projects/00_projects_1.txt (GAS_GIANT_SIGNAL)",
+   "events/anomaly_events_4.txt:42 (anomaly.5001)",
+   "events/anomaly_events_4.txt:72 (anomaly.5002)",
+   "events/anomaly_events_4.txt:93 (anomaly.5003)",
+   "common/special_projects/00_projects_1.txt (GAS_GIANT_RELOCATION)",
+   "events/anomaly_events_4.txt:160 (anomaly.5004)",
+   "events/anomaly_events_4.txt:202 (anomaly.5005)",
+   "events/anomaly_events_4.txt:223 (anomaly.5006)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-signal-gasgiant-category.md"
+ }
+}

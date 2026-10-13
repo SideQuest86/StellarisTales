@@ -1,0 +1,150 @@
+{
+ "id": "origin_red_giant",
+ "exclude": [
+  "infernals.56",
+  "anomalies:lava_whirlpool_category"
+ ],
+ "opening": {
+  "targets": [
+   "infernals.45"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "infernals.45": {
+    "zh": "开局45天后：令人担忧的趋势（红巨星膨胀局势开始）",
+    "en": "About 45 days after start: Concerning Trends (the Red Giant Expansion situation begins)"
+   }
+  },
+  "evidence": "on_game_start_country fires infernals.10 (events/infernals_1_events.txt:5-143: sets d_red_giant_unstable on the home star, adds mineral/alloy deposits to the inner planets, fires infernals.45 after 45 days). 45 (:750-875) starts situation_red_giant_expansion and the Red Giant event chain. Hidden infernals.9000-9002 (events/origin_events_infernal.txt:5-81) are the supernova visuals fired by 50."
+ },
+ "bridges": [
+  {
+   "from": "infernals.115",
+   "to": "infernals.2151",
+   "conditional": true,
+   "label": {
+    "zh": "击毁神秘空间站的守卫舰队",
+    "en": "Destroying the mysterious station's guard fleet"
+   },
+   "evidence": "events/infernals_1_events.txt:1915-2075 the third triangulation spawns the red_giant_lusus system with a mining station and guard drones (flag lusus_miner_guards); hidden 2150 (on_fleet_destroyed_perp common/on_actions/00_on_actions.txt:1694) fires 2151 when they are destroyed (:5522-5680)."
+  },
+  {
+   "from": "infernals.115",
+   "to": "infernals.2121",
+   "conditional": true,
+   "label": {
+    "zh": "击毁露丝矿站",
+    "en": "Destroying the lusus miner station"
+   },
+   "evidence": "events/infernals_1_events.txt:4659-4783 hidden 2120 (on_fleet_destroyed_perp common/on_actions/00_on_actions.txt:1695) fires 2121 (2122 if the narrative is already past that point)."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "infernals.50",
+    "infernals.60"
+   ],
+   "label": {
+    "zh": "局势的两种结果",
+    "en": "The two outcomes of the situation"
+   },
+   "note": {
+    "zh": "进度满1500 → 50“恒星新星”（坏结局）；进度降到0（失败）→ 60“恢复正常”（成功缓解）；二者12个月后都引向2160。",
+    "en": "Progress reaching 1500 -> 50 Stellar Nova (the bad ending); progress falling to 0 -> 60 Return to Normal (the star is deflated); both lead to 2160 twelve months later (common/situations/13_infernal_situations.txt:148-165)."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "infernals.65",
+    "infernals.70",
+    "infernals.75"
+   ],
+   "label": {
+    "zh": "局势阶段（由进度决定）",
+    "en": "Situation stages (set by progress)"
+   },
+   "note": {
+    "zh": "进度300/600/900/1200/1500分五个阶段；阶段2→65（选择项目：保护母星或热能利用）、阶段3→70、阶段4→75、阶段5→隐藏80。",
+    "en": "Five stages at 300 / 600 / 900 / 1200 / 1500 progress: stage 2 -> 65 (choose Protect the Homeworld or Thermal Exploitation), stage 3 -> 70, stage 4 -> 75, stage 5 -> hidden 80 (common/situations/13_infernal_situations.txt:15-146)."
+   }
+  }
+ ],
+ "endings": {
+  "infernals.50": {
+   "label": {
+    "zh": "恒星新星",
+    "en": "Stellar Nova"
+   },
+   "note": {
+    "zh": "局势完成：红巨星爆发。",
+    "en": "The situation completes: the star explodes."
+   },
+   "evidence": "events/infernals_1_events.txt:875-1110"
+  },
+  "infernals.60": {
+   "label": {
+    "zh": "恢复正常",
+    "en": "Return to Normal"
+   },
+   "note": {
+    "zh": "局势失败（成功缓解）。",
+    "en": "The situation fails: the star is deflated."
+   },
+   "evidence": "events/infernals_1_events.txt:1133-1348"
+  },
+  "infernals.2145": {
+   "label": {
+    "zh": "达成稳定",
+    "en": "Stability Achieved"
+   },
+   "note": {
+    "zh": "与露丝矿工达成稳定，12个月后2160。",
+    "en": "Stability reached with the lusus miners; 2160 follows 12 months later."
+   },
+   "evidence": "events/infernals_1_events.txt:5287-5516"
+  }
+ },
+ "notes": [
+  {
+   "doc": "infernals.105",
+   "kind": "review",
+   "zh": "项目“三角测量”共完成三次，依变量 red_giant_triangulation_progress 依次出现 105（第一次）、110（第二次）、115（第三次，完成）。",
+   "en": "The Triangulate Subspace Interference project completes three times: 105 (first), 110 (second), 115 (third, complete) by the variable red_giant_triangulation_progress (hidden 100, events/infernals_1_events.txt:1800-1915)."
+  },
+  {
+   "doc": "infernals.95",
+   "kind": "review",
+   "zh": "“恒星隧穿”：当调查进度≥8时由月度检查（隐藏85）以40%或60%概率触发，启用“三角测量”项目。",
+   "en": "Stellar Tunneling: when investigation progress is 8 or more the monthly check (hidden 85) rolls 40% or 60% to fire it, enabling the Triangulation project (events/infernals_1_events.txt:1574-1800)."
+  },
+  {
+   "doc": "situations:situation_red_giant_expansion",
+   "kind": "review",
+   "zh": "应对方针取决于阶段所设旗标（approach1–4）；“不惜一切代价”仅在阶段4–5可选。",
+   "en": "The available approaches depend on stage flags (approach1-4); At Any Cost is only available in stages 4-5 (common/situations/13_infernal_situations.txt:171-429)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/infernals_1_events.txt",
+   "events/origin_events_infernal.txt",
+   "common/situations/13_infernal_situations.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_infernals.txt"
+  ],
+  "uncertain": [
+   "The options of the 2115 Boarding Party and 2125 Alien Negotiations windows lead to the same few follow-ups (2130 / 2131 / 2135) and were taken from the compiled tree.",
+   "The range infernals.45-160 and 2105-2160 was added to content/origin-families.json; infernals.56 (Lava Whirlpool anomaly) is excluded as generic."
+  ],
+  "guide": "public/summaries/origin_red_giant.md"
+ }
+}

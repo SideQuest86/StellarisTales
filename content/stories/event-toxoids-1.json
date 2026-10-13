@@ -1,0 +1,88 @@
+{
+ "id": "event-toxoids-1",
+ "bridges": [
+  {
+   "from": "situations:relentless_industrialists_situation",
+   "to": "toxoids.15",
+   "conditional": true,
+   "label": {
+    "zh": "进入浩劫二阶段（≥80）：1/5 几率民众无所谓",
+    "en": "On entering cataclysm 2: 1/5 the populace shrugs"
+   },
+   "evidence": "common/situations/01_toxoid_situations.txt:65-82"
+  },
+  {
+   "from": "situations:relentless_industrialists_situation",
+   "to": "toxoids.10",
+   "conditional": true,
+   "label": {
+    "zh": "进入浩劫二阶段：4/5 几率民众抗议（墓地世界宜居时为0）",
+    "en": "On entering cataclysm 2: 4/5 the populace protests (0 if Tomb Worlds are habitable)"
+   },
+   "evidence": "common/situations/01_toxoid_situations.txt:65-82"
+  },
+  {
+   "from": "situations:relentless_industrialists_situation",
+   "to": "toxoids.35",
+   "conditional": true,
+   "label": {
+    "zh": "进度降到0：清理成功",
+    "en": "Progress falls to 0: cleanup succeeds"
+   },
+   "evidence": "common/situations/01_toxoid_situations.txt:22-27"
+  },
+  {
+   "from": "situations:relentless_industrialists_situation",
+   "to": "toxoids.25",
+   "conditional": true,
+   "label": {
+    "zh": "进度满且态度为不作为",
+    "en": "Progress full with the do-nothing approach"
+   },
+   "evidence": "common/situations/01_toxoid_situations.txt:28-38"
+  },
+  {
+   "from": "situations:relentless_industrialists_situation",
+   "to": "toxoids.30",
+   "conditional": true,
+   "label": {
+    "zh": "进度满且态度为清理/拥抱变化",
+    "en": "Progress full with another approach"
+   },
+   "evidence": "common/situations/01_toxoid_situations.txt:28-38"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "toxoids.35",
+    "toxoids.25",
+    "toxoids.30"
+   ],
+   "label": {
+    "zh": "结局",
+    "en": "Endings"
+   },
+   "note": {
+    "zh": "三选一。",
+    "en": "One of three."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "协调履行中心的污染累积、情境“环境恶化”、临界点与三种结局。",
+   "en": "Pollution from Coordinated Fulfillment Centers, the Environmental Deterioration situation, the tipping point and three endings."
+  },
+  "sources": [
+   "events/toxoids_events.txt",
+   "common/situations/01_toxoid_situations.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-toxoids-1.md"
+ }
+}

@@ -3,13 +3,13 @@
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 61,
-  "docs": 1195,
-  "nodes": 1443,
-  "refs": 248,
-  "crossLinks": 189,
+  "docs": 1238,
+  "nodes": 1497,
+  "refs": 259,
+  "crossLinks": 206,
   "review": {
-    "reviewed": 32,
-    "unreviewed": 29
+    "reviewed": 42,
+    "unreviewed": 19
   },
   "failures": [],
   "items": [
@@ -99,7 +99,7 @@
       "title": "屹于巨人之肩",
       "kind": "origin",
       "docs": 62,
-      "refs": 11,
+      "refs": 4,
       "crossLinks": 62,
       "review": "reviewed"
     },
@@ -146,6 +146,24 @@
       "docs": 24,
       "refs": 0,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "origin_red_giant",
+      "title": "红巨星",
+      "kind": "origin",
+      "docs": 23,
+      "refs": 18,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "origin_cosmic_dawn",
+      "title": "宇宙黎明",
+      "kind": "origin",
+      "docs": 22,
+      "refs": 0,
+      "crossLinks": 7,
       "review": "reviewed"
     },
     {
@@ -209,7 +227,7 @@
       "docs": 15,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_doomsday",
@@ -253,8 +271,8 @@
       "kind": "origin",
       "docs": 9,
       "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "origin_star_slingshot",
@@ -299,7 +317,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_progenitor_hive",
@@ -308,7 +326,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-505",
@@ -320,22 +338,31 @@
       "review": "reviewed"
     },
     {
-      "id": "origin_common_ground",
-      "title": "共同命运",
-      "kind": "origin",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "origin_remnants",
       "title": "复国孑遗",
       "kind": "origin",
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
+    },
+    {
+      "id": "origin_common_ground",
+      "title": "共同命运",
+      "kind": "origin",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "origin_necrophage",
+      "title": "食尸文化",
+      "kind": "origin",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "origin_tree_of_life",
@@ -344,16 +371,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "origin_cosmic_dawn",
-      "title": "宇宙黎明",
-      "kind": "origin",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_default",
@@ -428,15 +446,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "origin_necrophage",
-      "title": "食尸文化",
-      "kind": "origin",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "origin_ocean_machines",
       "title": "水生机械",
       "kind": "origin",
@@ -475,15 +484,6 @@
     {
       "id": "origin_post_apocalyptic_machines",
       "title": "辐射漫游机",
-      "kind": "origin",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "origin_red_giant",
-      "title": "红巨星",
       "kind": "origin",
       "docs": 1,
       "refs": 0,

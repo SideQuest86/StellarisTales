@@ -1,0 +1,48 @@
+{
+ "id": "anomaly-fungal-emitters-category",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.6755",
+    "anomaly.6760",
+    "anomaly.6765"
+   ],
+   "label": {
+    "zh": "按福蒙格斯任务进度",
+    "en": "By the progress of the Fumongus quest"
+   },
+   "note": {
+    "zh": "三个结果权重均为1，但各有条件：6755 在 fumongus_resolved 之前才可能（之后为0）；6760 只在 resolved 与 active 同时成立时可能；6765 只在 dismantled 与 resolved 同时成立时可能。因此实际上互斥：任务未解决时只有 6755；解决且“启用”时只有 6760；解决且“拆除”时只有 6765（00_anomaly_categories.txt:851-885）。编译树的 33% 是平均值。",
+    "en": "All three results have weight 1 but each is gated: 6755 is possible only before fumongus_resolved (0 afterwards); 6760 only when resolved and active are both set; 6765 only when dismantled and resolved are both set. So in practice they are exclusive by quest state: 6755 only while the quest is unresolved, 6760 only after it was resolved by activation, 6765 only after it was resolved by dismantling (00_anomaly_categories.txt:851-885). The 33% in the compiled tree is an average."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:832",
+   "events/anomaly_events_4.txt:1769 (anomaly.6755)",
+   "common/special_projects/00_projects_3.txt (FOLLOWING_FUNGI_PROJECT)",
+   "events/anomaly_events_4.txt:1898 (anomaly.6770)",
+   "events/anomaly_events_4.txt:1956 (anomaly.6780)",
+   "common/event_chains/00_event_chains.txt:360 (fumongus_chain)",
+   "events/anomaly_events_4.txt:1813 (anomaly.6760)",
+   "common/special_projects/00_projects_3.txt (MUSHROOMING_NETWORK_PROJECT)",
+   "events/anomaly_events_4.txt:1982 (anomaly.6785)",
+   "events/anomaly_events_4.txt:1849 (anomaly.6765)",
+   "common/solar_system_initializers/special_system_initializers.txt:1646 (fumongus_spawned)",
+   "events/ancient_relics_arcsite_events_2.txt:9628-9744 (fumongus_active/resolved/dismantled)"
+  ],
+  "uncertain": [
+   "Which events set fumongus_active / fumongus_resolved / fumongus_dismantled (ancient_relics_arcsite_events_2.txt:9628-9744) belong to other stories and were not traced here."
+  ],
+  "guide": "public/summaries/anomaly-fungal-emitters-category.md"
+ }
+}

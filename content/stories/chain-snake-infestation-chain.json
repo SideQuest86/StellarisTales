@@ -1,0 +1,23 @@
+{
+ "id": "chain-snake-infestation-chain",
+ "unreachable": {
+  "event_chains:snake_infestation_chain": {
+   "zh": "事件全部被注释掉，游戏中不会出现。",
+   "en": "All its events are commented out; it never appears.",
+   "evidence": "events/colony_events_3.txt:4277-4630 commented; no begin_event_chain references snake_infestation_chain"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "事件链概览页。",
+   "en": "The event-chain overview card."
+  },
+  "sources": [
+   "common/event_chains/"
+  ],
+  "guide": "public/summaries/chain-snake-infestation-chain.md"
+ }
+}

@@ -1,0 +1,107 @@
+{
+ "id": "anomaly-on-crashed-ship-cat",
+ "hubs": [
+  "ancrel.8200",
+  "ancrel.8201",
+  "ancrel.8202",
+  "ancrel.8203",
+  "ancrel.8215"
+ ],
+ "suppress": [
+  {
+   "from": "archaeological_site_types:site_rage_sage_dig",
+   "to": "ancrel.14002",
+   "evidence": "The four stages have no name, so the compiler lists their events as siblings; they run in definition order 14001 → 14002 → 14003 → 14006 (common/archaeological_site_types/02_ancient_relics_arc_sites.txt, site_rage_sage_dig)."
+  },
+  {
+   "from": "archaeological_site_types:site_rage_sage_dig",
+   "to": "ancrel.14003",
+   "evidence": "Same: stage 3, reached only after stage 2."
+  },
+  {
+   "from": "archaeological_site_types:site_rage_sage_dig",
+   "to": "ancrel.14006",
+   "evidence": "Same: stage 4, reached only after stage 3."
+  }
+ ],
+ "bridges": [
+  {
+   "from": "ancrel.14001",
+   "to": "ancrel.14002",
+   "conditional": false,
+   "label": {
+    "zh": "下一阶段（线索足够）",
+    "en": "Next stage (enough clues)"
+   },
+   "evidence": "site_rage_sage_dig stage 2 (stages = 4, definition order)."
+  },
+  {
+   "from": "ancrel.14002",
+   "to": "ancrel.14003",
+   "conditional": false,
+   "label": {
+    "zh": "下一阶段（线索足够）",
+    "en": "Next stage (enough clues)"
+   },
+   "evidence": "site_rage_sage_dig stage 3."
+  },
+  {
+   "from": "ancrel.14003",
+   "to": "ancrel.14006",
+   "conditional": false,
+   "label": {
+    "zh": "下一阶段（线索足够）",
+    "en": "Next stage (enough clues)"
+   },
+   "evidence": "site_rage_sage_dig stage 4."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.14004",
+    "ancrel.14005"
+   ],
+   "label": {
+    "zh": "极乐或狂怒（各50%）",
+    "en": "Bliss or rage (50% each)"
+   },
+   "note": {
+    "zh": "ancrel.14003 的两个选项都各以 50/50 随机触发其中之一。",
+    "en": "Both options of ancrel.14003 trigger one of the two with a 50/50 random_list."
+   }
+  }
+ ],
+ "endings": {
+  "ancrel.14006": {
+   "label": {
+    "zh": "技术的诱惑",
+    "en": "Temptations of Technology"
+   },
+   "note": {
+    "zh": "最后阶段：二选一——留下有毒云雾增强士兵（修正 rage_sage_soldiers，小型遗物），或放弃该技术（小型遗物与100影响力）。",
+    "en": "The final stage: either keep the toxic cloud to strengthen soldiers (modifier rage_sage_soldiers, a small artifact) or abandon the technology (a small artifact and 100 influence)."
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:9880"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:928 (on_crashed_ship_cat)",
+   "events/anomaly_events_4.txt:3853 (anomaly.7030)",
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2473 (site_rage_sage_dig, 4 stages)",
+   "events/ancient_relics_arcsite_events_2.txt:9753-9890 (ancrel.14001-14006)",
+   "events/ancient_relics_random_site_events.txt:1430-1640 (ancrel.8200-8215, shared failures)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-on-crashed-ship-cat.md"
+ }
+}

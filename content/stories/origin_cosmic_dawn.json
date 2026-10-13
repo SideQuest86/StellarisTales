@@ -1,0 +1,140 @@
+{
+ "id": "origin_cosmic_dawn",
+ "opening": {
+  "targets": [
+   "infernals.2500"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "infernals.2500": {
+    "zh": "开局1天后：深处的信号",
+    "en": "One day after start: Signals in the Deep"
+   }
+  },
+  "evidence": "infernals.10 (on_game_start_country, events/infernals_1_events.txt:135-141) fires infernals.2500 after 1 day and flags the capital cosmic_dawn_homeworld; common/inline_scripts/game_start/volcanic_world_setup.txt kills six pop groups of 100 and adds five d_stasis_pods deposits on the homeworld."
+ },
+ "bridges": [
+  {
+   "from": "infernals.2520",
+   "to": "anomalies:cosmic_dawn_sleepers_category",
+   "conditional": true,
+   "label": {
+    "zh": "勘测事件链放置的“孤立的沉睡者”",
+    "en": "Survey the \"Isolated Sleepers\" placed by the chain"
+   },
+   "evidence": "events/infernals_1_events.txt:2671-2880 2520 begins cosmic_dawn_anomalies_event_chain and places anomalies on nearby planets (flag has_inf_cd_anomaly); outcome events 2525 / 2530 / 2535 (:2881-3350)."
+  },
+  {
+   "from": "infernals.2520",
+   "to": "anomalies:cosmic_dawn_sleepers2_category",
+   "conditional": true,
+   "label": {
+    "zh": "勘测“警惕的沉睡者”",
+    "en": "Survey the \"Wary Sleepers\""
+   },
+   "evidence": "events/infernals_1_events.txt:2881-3350 as above."
+  },
+  {
+   "from": "infernals.2520",
+   "to": "anomalies:cosmic_dawn_sleepers3_category",
+   "conditional": true,
+   "label": {
+    "zh": "勘测“沉睡者的星港”",
+    "en": "Survey the \"Sleeper Starport\""
+   },
+   "evidence": "events/infernals_1_events.txt:2881-3350 as above."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "infernals.2510",
+    "infernals.2515",
+    "infernals.2540",
+    "infernals.2555"
+   ],
+   "label": {
+    "zh": "局势阶段（按进度依次触发）",
+    "en": "Situation stages (fire in order of progress)"
+   },
+   "note": {
+    "zh": "深挖局势进度0–500：阶段2→2510“失忆与数据”、阶段3→2515“生命维持失败”、阶段4→2540“远古牢狱”、阶段5→2555“悲惨事故”；基础每月+1，三种方针（采矿/钻探/金融）改变速度。",
+    "en": "The Deep Excavation situation runs 0-500: stage 2 -> 2510, stage 3 -> 2515, stage 4 -> 2540, stage 5 -> 2555; +1 a month base, the approaches (mining / drilling / financial) change the speed (common/situations/13_infernal_situations.txt:501-687)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "infernals.2545",
+    "infernals.2550"
+   ],
+   "label": {
+    "zh": "如何打开牢狱",
+    "en": "How to open the prison"
+   },
+   "note": {
+    "zh": "2540的选项：强攻（2545）或贿赂（2550）；二者都会暂停局势。",
+    "en": "Options of 2540: storm the facility (2545) or bribe it (2550); both pause the situation (:3353-3520)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "infernals.2560",
+    "infernals.2565",
+    "infernals.2570",
+    "infernals.2575"
+   ],
+   "label": {
+    "zh": "挽救局面的四种方式",
+    "en": "Four ways of salvaging the situation"
+   },
+   "note": {
+    "zh": "2555的四个选项各导向一个窗口（蜂巢思维与个体帝国文本不同）。",
+    "en": "Each option of 2555 leads to one window (hive and non-hive texts differ) (:3520-3805)."
+   }
+  }
+ ],
+ "endings": {
+  "infernals.2580": {
+   "label": {
+    "zh": "我们的历史显现",
+    "en": "Our History Revealed"
+   },
+   "note": {
+    "zh": "局势完成。",
+    "en": "The situation completes."
+   },
+   "evidence": "events/infernals_1_events.txt:3805-3953"
+  }
+ },
+ "notes": [
+  {
+   "doc": "infernals.2500",
+   "kind": "review",
+   "zh": "开局时母星人口被削减为沉眠，居民在休眠舱中；项目“钻探地壳”完成后2505“更多族人苏醒”开始局势“深挖”。",
+   "en": "At start six pop groups are dead and five stasis pods wait on the homeworld; the Drilling the Crust project leads to 2505 More Kin Awaken, which starts the situation Deep Excavation."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/infernals_1_events.txt",
+   "common/situations/13_infernal_situations.txt",
+   "common/inline_scripts/game_start/volcanic_world_setup.txt",
+   "common/deposits/15_infernals_deposits.txt",
+   "common/anomalies"
+  ],
+  "uncertain": [
+   "The cosmic-dawn variants inside generic colony events (colony.9055, 8232) are associations only.",
+   "Which survey outcome opens which option of 2530 / 2535 was not traced."
+  ],
+  "guide": "public/summaries/origin_cosmic_dawn.md"
+ }
+}

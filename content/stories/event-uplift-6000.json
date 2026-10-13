@@ -1,0 +1,47 @@
+{
+ "id": "event-uplift-6000",
+ "family": {
+  "title": {
+   "zh": "提升前智慧生物",
+   "en": "Uplifting pre-sapients"
+  },
+  "category": "stories",
+  "start": "uplift.6000",
+  "members": [
+   "uplift.6000",
+   "uplift.6010",
+   "uplift.7000",
+   "uplift.7010",
+   "uplift.7200",
+   "uplift.7205",
+   "uplift.7210",
+   "uplift.7215"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "uplift.6000",
+   "to": "uplift.6010",
+   "conditional": true,
+   "label": {
+    "zh": "玩家发起提升并完成后",
+    "en": "After the player starts and completes the uplift"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:2074-2076 on_uplift_completion fires uplift.6010"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "勘测发现前智慧物种、提升完成、以及随后的接纳与伦理倾向事件。",
+   "en": "Surveying a pre-sapient species, a successful uplift, and the follow-up reception and ethics events."
+  },
+  "sources": [
+   "events/uplifting_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-uplift-6000.md"
+ }
+}
