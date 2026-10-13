@@ -3,10 +3,10 @@
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 356,
-  "docs": 1655,
-  "nodes": 2022,
-  "refs": 367,
-  "crossLinks": 757,
+  "docs": 1658,
+  "nodes": 2029,
+  "refs": 371,
+  "crossLinks": 761,
   "review": {
     "reviewed": 356
   },
@@ -162,7 +162,7 @@
       "kind": "family",
       "docs": 12,
       "refs": 2,
-      "crossLinks": 36,
+      "crossLinks": 37,
       "review": "reviewed"
     },
     {
@@ -836,7 +836,7 @@
       "title": "负伤",
       "kind": "event",
       "docs": 9,
-      "refs": 0,
+      "refs": 4,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -1260,7 +1260,7 @@
       "kind": "event",
       "docs": 4,
       "refs": 0,
-      "crossLinks": 2,
+      "crossLinks": 3,
       "review": "reviewed"
     },
     {
@@ -1342,6 +1342,15 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "situation-situation-nanotech-consume-planet",
+      "title": "从[Target.GetName]采收纳米机器人",
+      "kind": "situation",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 2,
       "review": "reviewed"
     },
     {
@@ -3202,15 +3211,6 @@
       "id": "event-synth-630",
       "title": "家庭服务器建筑",
       "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "situation-situation-nanotech-consume-planet",
-      "title": "从[Target.GetName]采收纳米机器人",
-      "kind": "situation",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,

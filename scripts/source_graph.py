@@ -66,9 +66,9 @@ class Graph:
             call.update(extra)
         self.calls.append(call)
 
-    def visit(self, origin_def, nodes, text, source, ctx, stack=()):
+    def visit(self, origin_def, nodes, text, source, ctx, stack=(), option_start=0):
         previous_conditions = []  # if / else_if chain negations
-        option_index = 0
+        option_index = option_start
         chain = None
         for n in nodes:
             k, v = n['k'], n['v']
@@ -201,7 +201,28 @@ class Graph:
                 self.visit(def_id, [x for x in bv if x['k'] not in ('modifier', 'max_once', 'max_once_global')], text,
                            source, [{'k': 'on_success'}, entry])
 
+    def inherited(self, event_nodes, eid, seen=()):
+        """Segments (nodes, text, origin) an event runs: its base event's (recursively, minus `*_clear`ed and
+        overridden keys) followed by its own. Inherited calls keep the base event's file and line."""
+        v, text, origin = event_nodes[eid]
+        own = [x for x in v if x['k'] not in ('base', 'id') and not x['k'].endswith('_clear')]
+        base = first(v, 'base')
+        if not isinstance(base, str) or base not in event_nodes or base in seen or base == eid:
+            return [(own, text, origin)]
+        clear = {x['k'][:-6] for x in v if x['k'].endswith('_clear') and x['v'] == 'yes'}
+        single = {x['k'] for x in own} & {'title', 'picture', 'hide_window', 'is_triggered_only', 'fire_only_once'}
+        segments = [([x for x in nodes if x['k'].lower() not in clear and x['k'] not in single], t, o)
+                    for nodes, t, o in self.inherited(event_nodes, base, seen + (eid,))]
+        return segments + [(own, text, origin)]
+
     def build(self):
+        event_nodes = {}
+        for name, (nodes, text, origin) in self.parsed.items():
+            if name.startswith('events/') and name.endswith('.txt'):
+                for n in nodes:
+                    def_id, _ = definition_id(name, n, True)
+                    if def_id:
+                        event_nodes.setdefault(def_id, (n['v'], text, origin))
         for name, (nodes, text, origin) in self.parsed.items():
             if not name.endswith('.txt') or not name.startswith(('events/', 'common/')):
                 continue
@@ -220,8 +241,16 @@ class Graph:
                                  if first(v, f)})
                     if any(x['k'] == 'mean_time_to_happen' for x in v):
                         info['mtth'] = True
+                    if isinstance(first(v, 'base'), str) and first(v, 'base'):
+                        info['base'] = first(v, 'base')
+                defined = def_id in self.definitions
                 self.definitions.setdefault(def_id, info)
-                if def_id.startswith('anomalies:'):
+                if events_file and info.get('base') and not defined:
+                    options = 0
+                    for seg_nodes, seg_text, seg_origin in self.inherited(event_nodes, def_id):
+                        self.visit(def_id, seg_nodes, seg_text, seg_origin, [], option_start=options)
+                        options += sum(1 for x in seg_nodes if x['k'].lower() == 'option' and isinstance(x['v'], list))
+                elif def_id.startswith('anomalies:'):
                     self.anomaly(def_id, v, text, origin)
                     rest = [x for x in v if x['k'] != 'on_success']
                     self.visit(def_id, rest, text, origin, [])

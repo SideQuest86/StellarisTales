@@ -3,10 +3,10 @@
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 504,
-  "docs": 2095,
-  "nodes": 3324,
-  "refs": 1229,
-  "crossLinks": 186,
+  "docs": 2104,
+  "nodes": 3335,
+  "refs": 1231,
+  "crossLinks": 191,
   "review": {
     "reviewed": 504
   },
@@ -760,6 +760,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-planet-destruction-600",
+      "title": "圣地",
+      "kind": "family",
+      "docs": 3,
+      "refs": 1,
+      "crossLinks": 6,
+      "review": "reviewed"
+    },
+    {
       "id": "event-plant-100",
       "title": "田园至臻",
       "kind": "family",
@@ -964,15 +973,6 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "event-planet-destruction-600",
-      "title": "圣地",
-      "kind": "family",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 3,
       "review": "reviewed"
     },
     {
@@ -1210,6 +1210,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-pirate-4",
+      "title": "太空海盗的猖獗",
+      "kind": "event",
+      "docs": 10,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-shroud-4500",
       "title": "世界之喰煞",
       "kind": "event",
@@ -1403,7 +1412,7 @@
       "title": "灵能响应",
       "kind": "event",
       "docs": 6,
-      "refs": 0,
+      "refs": 1,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -1482,15 +1491,6 @@
     {
       "id": "event-operation-8200",
       "title": "搜寻目标",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "event-pirate-4",
-      "title": "太空海盗的诞生",
       "kind": "event",
       "docs": 5,
       "refs": 0,
@@ -1621,6 +1621,15 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-nomads-4800",
+      "title": "侵蚀[Target.GetName]",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 2,
       "review": "reviewed"
     },
     {
@@ -3943,15 +3952,6 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 1,
-      "review": "reviewed"
-    },
-    {
-      "id": "event-nomads-4800",
-      "title": "侵蚀[Target.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
       "review": "reviewed"
     },
     {

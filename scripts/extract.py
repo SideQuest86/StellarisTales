@@ -263,10 +263,38 @@ def import_game(game):
                 else: pics.extend(x['v'] for x in walk(value) if x['k'] in ('picture','sprite') and isinstance(x['v'],str))
             art=next((p for key in pics if (p:=picture(key))),None)
             record={'id':uid,'eventId':rid,'kind':n['k'] if event else name.split('/')[1],'group':group,'source':origin,'line':text.count('\n',0,n['s'])+1,'lineSpace':'expanded' if inline_uses[origin] else 'original','inlineSources':sorted(inline_uses[origin]),'titles':titles,'descriptions':descriptions,'sections':sections,'options':options,'links':links(v,text),'picture':art,'pictureKeys':pics,'hidden':first(v,'hide_window')=='yes','trigger':'\n'.join(raw(x,text) for x in v if x['k'] in ('trigger','mean_time_to_happen','is_triggered_only','fire_only_once')),'script':raw(n,text)}
+            if event and isinstance(first(v,'base'),str) and first(v,'base'):
+                # Event inheritance (`base = other.event`), resolved after every file is read.
+                record['_inherit']={'base':first(v,'base'),'title':bool(vals(v,'title')),'picture':bool(pics),'hide':any(x['k']=='hide_window' for x in v),
+                                    'clear':sorted({x['k'][:-6] for x in v if x['k'].endswith('_clear') and x['v']=='yes'})}
             group_records.append(record); records.append(record)
         if group_records:
             dump(ROOT/'public/data/groups'/f'{group}.json',group_records)
             groups.append({'id':group,'source':origin,'count':len(group_records)})
+    # Event inheritance: an event with `base = X` starts from X (resolved recursively). Its own title, picture and
+    # hide_window replace X's; descriptions, options and triggers are X's followed by its own unless the matching
+    # `desc_clear` / `option_clear` / `trigger_clear` drops X's. Without this, title-only variants (pirate.2) had no
+    # text and variants that add a description lost X's options.
+    by_event={r['eventId']:r for r in records if r['kind'].endswith('event')}
+    def inherit(r,seen=()):
+        info=r.pop('_inherit',None)
+        if not info: return r
+        base=by_event.get(info['base'])
+        if not base or base['id'] in seen or base is r: return r
+        base=inherit(base,seen+(r['id'],))
+        clear=info['clear']
+        if not info['title']: r['titles']=base['titles']
+        if not info['picture']: r['picture'],r['pictureKeys']=base['picture'],base['pictureKeys']
+        if not info['hide']: r['hidden']=base['hidden']
+        if 'desc' not in clear: r['descriptions']=base['descriptions']+r['descriptions']
+        inherited_options=[] if 'option' in clear else base['options']
+        r['options']=inherited_options+r['options']
+        option_scripts={o['script'] for o in base['options']} if 'option' in clear else set()
+        r['links']=[l for l in base['links'] if not any(l['script'] in s for s in option_scripts)]+r['links']
+        if 'trigger' not in clear and base['trigger']: r['trigger']=(base['trigger']+'\n'+r['trigger']).strip()
+        r['base']=base['eventId']
+        return r
+    for r in records: inherit(r)
     # Follow literal and parameterized scripted-effect calls into event/project
     # references. Keep the original caller and effect provenance in raw data.
     effects={n['k']:(n['v'],text,origin) for name,(nodes,text,origin) in parsed.items() if name.startswith('common/scripted_effects/') for n in nodes if isinstance(n['v'],list)}

@@ -1098,9 +1098,26 @@ class Compiler:
         walk(details)
         return ''.join(ch for ch, _ in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))[:limit])
 
+    @staticmethod
+    def local_groups(node, ids=None):
+        """Renumber random/if-chain group ids (global call-graph counters) per story in order of appearance, so a
+        change elsewhere in the game graph does not rewrite every story file. Ids only need to be unique per story."""
+        ids = {} if ids is None else ids
+        if isinstance(node, dict):
+            for k, v in node.items():
+                if k == 'group' and isinstance(v, str) and re.fullmatch(r'[rc]\d+', v):
+                    node[k] = ids.setdefault(v, f'{v[0]}{len(ids) + 1}')
+                else:
+                    Compiler.local_groups(v, ids)
+        elif isinstance(node, list):
+            for v in node:
+                Compiler.local_groups(v, ids)
+        return node
+
     def write(self, stories, details, mapping):
         out = ROOT / 'public/stories'
         for sid, d in details.items():
+            self.local_groups(d)
             summary = ROOT / 'public/summaries' / f'{sid}.md'
             if summary.is_file():
                 d['summary'] = {'text': summary.read_text(encoding='utf-8-sig'), 'path': f'summaries/{sid}.md'}
