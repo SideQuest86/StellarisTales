@@ -1,0 +1,33 @@
+{
+ "id": "event-envoy-events-5",
+ "notes": [
+  {
+   "doc": "envoy_events.6",
+   "zh": "此窗口由被刺杀使节所属的国家看到，而不是做出选择的玩家。",
+   "en": "This window is seen by the empire that sent the murdered envoy, not by the empire that made the choice.",
+   "kind": "review"
+  }
+ ],
+ "nodeLabels": {
+  "envoy_events.6": {
+   "zh": "使节遇害（对方视角）",
+   "en": "Envoy murdered (their view)"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/envoy_events.txt:549-740",
+   "common/on_actions/00_on_actions.txt:500",
+   "events/overlord_enclaves_events.txt:7690-7720"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-envoy-events-5.md"
+ }
+}

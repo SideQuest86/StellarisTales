@@ -10,8 +10,10 @@
 
 ## 剧情脉络 Story outline
 
-- 5000「失踪的轨道」：首次进入边境系统，给系统添加“失踪的星球”异常（另一条探索故事：揭示他们并创建哈宾特国家），之后再进入则出现 5005。
-  5000 "Missing Orbitals": first approach to the border system; it adds the "Missing Planets" anomaly (a separate exploration story reveals them and creates the Habinte country); later entries show 5005.
+- 5000「失踪的轨道」：首次进入边境系统，给系统添加“失踪的行星”异常（7级，只由 5000 添加，每国一次，`first_contact_dlc_events.txt:6661-6698`），之后再进入则出现 5005。
+  5000 "Missing Orbitals": first approach to the border system; it adds the level-7 anomaly "The Missing Planets" (added only by 5000, once per empire); later entries show 5005.
+- 异常唯一结果 5010「星球大盗」（权重1，`02_anomaly_categories.txt:703-715`）：探查或不探查都给物理研究；全银河首次时生成达恰（solarpunk_02）星系与前超光速的哈宾特国家（6751-6875）。之后舰队进入该星系才触发 5015。
+  The anomaly's single outcome 5010 "Grand Theft Planet" (weight 1): either option gives physics research; the first time in the galaxy it spawns the Dacha (solarpunk_02) system and the pre-FTL Habinte country. A fleet entering that system then fires 5015.
 - 5015「富饶世界」：首次进入母星系，物理研究奖励；亲生命起源/理想花园政体与灭绝型文明有专属选项。
   5015 "Worlds of Plenty": first entry into the home system, a physics-research reward; Life-Seeded / Idyllic Bloom civics and homicidal civics have exclusive options.
 - 5020「哈宾特统一星球国相遇」：勘测其世界；建造观测站后（隐藏5025）60天后 5026「桥接世界」，哈宾特每30天获得觉醒度直到100。
@@ -39,3 +41,5 @@
   Correction: previously seven isolated one-window stories (5000/5005/5015/5020/5034/5040/5050); now one story linked by flags.
 - 说明：fircon.5026 原挂在“谁在监视监视者”的故事下，现归入本故事。
   Note: fircon.5026 hung under the "Who Watches the Watchers?" story; it now belongs here.
+- 2026-10-13 协调：异常“失踪的行星”及其结果 5010 原是单独的探索故事（anomaly-solarpunk-cat，r2-mixed 审阅），现并入本故事，路线为 5000 → 异常 → 5010 → 5015。
+  2026-10-13 coordination: the anomaly "The Missing Planets" and its outcome 5010 were a separate exploration story (anomaly-solarpunk-cat, reviewed by r2-mixed); they are now part of this story, routed 5000 → anomaly → 5010 → 5015.

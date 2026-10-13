@@ -1,0 +1,48 @@
+{
+ "id": "event-pirate-48",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "pirate.50",
+    "pirate.53",
+    "pirate.54",
+    "pirate.56",
+    "pirate.57"
+   ],
+   "label": {
+    "zh": "按帝国类型（蜂巢、机器各自再50/50）",
+    "en": "By empire type (hive and machine then 50/50)"
+   },
+   "note": {
+    "zh": "非格式塔：50；蜂巢：53或54；机器：56或57。若无已接触的非格式塔国家，蜂巢固定为53、机器固定为56。",
+    "en": "Non-gestalt: 50; hive: 53 or 54; machine: 56 or 57. With no contacted non-gestalt empire, hive always gets 53 and machine 56."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "pirate.50",
+   "zh": "该窗口也会由 subject.5 直接发出（overlord_subject_events.txt:269）。",
+   "en": "This window is also fired directly by subject.5 (overlord_subject_events.txt:269).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:110",
+   "common/on_actions/00_on_actions.txt:4175-4179",
+   "events/pirate_events.txt:1748-1990",
+   "events/overlord_subject_events.txt:269"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-pirate-48.md"
+ }
+}

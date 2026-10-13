@@ -1,0 +1,37 @@
+{
+ "id": "event-pirate-24",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "pirate.25",
+    "pirate.26"
+   ],
+   "label": {
+    "zh": "有L星团事件链时85/15",
+    "en": "85/15 when the L-Cluster chain is active"
+   },
+   "note": {
+    "zh": "没有 l_cluster_chain 时固定为 pirate.25。",
+    "en": "Without l_cluster_chain it is always pirate.25."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:1649",
+   "events/pirate_events.txt:1243-1330",
+   "events/pirate_events.txt:1329-1522",
+   "events/pirate_events.txt:1524-1560"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-pirate-24.md"
+ }
+}

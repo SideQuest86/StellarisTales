@@ -1,0 +1,21 @@
+{
+ "id": "event-extreme-frontiers-1430",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/extreme_frontiers_events.txt:4262-4520",
+   "common/on_actions/00_on_actions.txt:1175",
+   "common/scripted_effects/extreme_frontiers_scripted_effects.txt:237-265"
+  ],
+  "uncertain": [
+   "New Bratulla is spawned at the end of the Chronicles of Dendrus site story (site-site-chronicles-of-dendrus, c2-precursors)."
+  ],
+  "guide": "public/summaries/event-extreme-frontiers-1430.md"
+ }
+}

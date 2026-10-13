@@ -2,15 +2,14 @@
   "category": "stories",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 514,
-  "docs": 2103,
-  "nodes": 3328,
-  "refs": 1225,
-  "crossLinks": 207,
+  "stories": 505,
+  "docs": 2096,
+  "nodes": 3325,
+  "refs": 1229,
+  "crossLinks": 186,
   "review": {
-    "reviewed": 473,
-    "partial": 1,
-    "unreviewed": 40
+    "reviewed": 504,
+    "unreviewed": 1
   },
   "failures": [],
   "items": [
@@ -236,6 +235,15 @@
       "kind": "family",
       "docs": 11,
       "refs": 4,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-custodian-499",
+      "title": "指派星海监管人",
+      "kind": "family",
+      "docs": 9,
+      "refs": 3,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -690,6 +698,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-cyber-7000",
+      "title": "创世计划完成",
+      "kind": "family",
+      "docs": 3,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-galactic-features-366",
       "title": "缇扬奇母星系已净化",
       "kind": "family",
@@ -1019,8 +1036,8 @@
       "kind": "event",
       "docs": 31,
       "refs": 6,
-      "crossLinks": 1,
-      "review": "partial"
+      "crossLinks": 14,
+      "review": "reviewed"
     },
     {
       "id": "event-terra-10",
@@ -1290,7 +1307,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 5,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-galactic-features-298",
@@ -1362,7 +1379,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-infernals-3000",
@@ -1479,7 +1496,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-pirate-48",
@@ -1488,7 +1505,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-strange-worlds-1",
@@ -1578,16 +1595,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-custodian-499",
-      "title": "指派星海监管人",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-extreme-frontiers-1533",
@@ -1596,7 +1604,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-infernals-3030",
@@ -2103,33 +2111,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-custodian-100",
-      "title": "监管人陨落",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-custodian-14",
-      "title": "监管人任期结束",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-custodian-16",
-      "title": "监管人被除名！",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-envoy-events-1001",
       "title": "无礼的[envoy_source.GetAdj]特使",
       "kind": "event",
@@ -2145,7 +2126,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-extreme-frontiers-1430",
@@ -2154,7 +2135,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-galactic-features-350",
@@ -2190,7 +2171,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-9000",
@@ -2217,7 +2198,7 @@
       "docs": 2,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-5015",
@@ -2229,31 +2210,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-origin-112",
-      "title": "坠毁的运奴船",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 17,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-origin-113",
-      "title": "坠毁的运奴船",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 17,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-pirate-24",
       "title": "海盗空间站被摧毁",
       "kind": "event",
       "docs": 2,
       "refs": 0,
       "crossLinks": 5,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-200",
@@ -2325,7 +2288,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-520",
@@ -2901,7 +2864,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-cybernetic-creed-chain",
@@ -2928,7 +2891,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-holy-war",
@@ -3297,7 +3260,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-aquatics-4",
@@ -3306,7 +3269,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1",
@@ -3648,52 +3611,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-custodian-30",
-      "title": "泛星系防卫军",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-custodian-40",
-      "title": "解散泛星系防卫军",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cyber-7000",
-      "title": "创世计划完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cyber-7001",
-      "title": "创世保护区落成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cyber-7020",
-      "title": "创世提升完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cybernetics-5048",
@@ -3891,7 +3809,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-7015",
@@ -3954,7 +3872,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-necroids-201",
@@ -3963,7 +3881,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-necroids-202",
@@ -3972,7 +3890,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-necroids-255",
@@ -3981,7 +3899,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-necroids-310",
@@ -3990,7 +3908,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-3095",
@@ -4017,7 +3935,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-4750",
@@ -4143,7 +4061,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-pirate-100",
@@ -4152,7 +4070,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-pirate-13",
@@ -4161,7 +4079,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-planet-destruction-1005",
@@ -4233,7 +4151,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-refugees-5",

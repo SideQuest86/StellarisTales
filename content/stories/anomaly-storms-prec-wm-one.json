@@ -11,17 +11,17 @@
   {
    "doc": "cstorms.135",
    "kind": "review",
-   "zh": "故事在此并未结束：“解析坐标”项目通过星系初始化器weathermanipulators_home_system生成三处考古遗址（坐标A/B/C），后续调查目前归档在另一个故事“坐标A：殖民星球”中。",
-   "en": "The story does not end here: the \"Unscramble the Coordinates\" project spawns the weathermanipulators_home_system initializer, which creates dig sites Coordinates A/B/C; that continuation is currently archived as the separate story \"Coordinates A: Colonized Planet\"."
+   "zh": "故事在此并未结束：“解析坐标”项目通过星系初始化器 weathermanipulators_home_system 生成三处考古遗址（坐标A/B/C），后续调查在故事“因内特贸易体”（坐标A…，C2）中，已用外链连接；“因内特秘密”研究（INETIAN_PROJECTS_04，稀有文物行动触发）是另一个独立故事。",
+   "en": "The story does not end here: the project spawns the weathermanipulators_home_system initializer with dig sites Coordinates A/B/C; the continuation lives in the C2 story \"The Inetian Traders\" (linked externally). The Inetian secrets research (INETIAN_PROJECTS_04, triggered by an artifact action) is a separate story."
   }
  ],
  "review": {
-  "status": "partial",
-  "date": "2026-10-12",
-  "reviewer": "c3b-exploration (Opus 5.5)",
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-mixed",
   "scope": {
-   "zh": "已完整审阅因内特链条的开场部分（异常、远古庇护所五个阶段、解析坐标项目、富饶星系）。后续三处坐标遗址、风暴成因、最后庇护所及秘密研究分属其他故事（C2/C3a），需要合并为同一先驱者故事，已提出请求。",
-   "en": "The opening of the Inetian chain is fully reviewed (anomaly, the five Ancient Shelters stages, the coordinates project, Bountiful System). The three coordinate sites, storm formation, last shelter and secrets research live in other stories (C2/C3a) and should be one precursor story; merge requested."
+   "zh": "整个开场故事：触发（cstorms.100）、异常、五个遗址阶段、解析坐标项目、135 与指向后续遗址故事的外链；后续故事由其所有者审阅。",
+   "en": "The whole opening story: trigger (cstorms.100), anomaly, five site stages, coordinates project, 135 and the external link to the continuation story (reviewed by its owner)."
   },
   "sources": [
    "common/anomalies/102_anomaly_categories_cosmic_storms.txt",
@@ -33,8 +33,21 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "uncertain": [
-   "Narrative continuation (site-site-weathermanipulators-coordinatesa-residential-planet, project-inetian-projects-04) is outside this story; see ledger request."
+   "The Inetian narrative stays split in three stories by design: this opening, C2's site story (linked externally) and project-inetian-projects-04 (artifact action). A single merged family would need the C2 owner."
   ],
   "guide": "public/summaries/anomaly-storms-prec-wm-one.md"
- }
+ },
+ "bridges": [
+  {
+   "from": "cstorms.135",
+   "to": "archaeological_site_types:site_weathermanipulators_CoordinatesA_Residential_Planet",
+   "conditional": true,
+   "external": true,
+   "label": {
+    "zh": "继续：新星系中的坐标A/B/C遗址（另一故事）",
+    "en": "Continues: the Coordinates A/B/C dig sites in the new system (another story)"
+   },
+   "evidence": "common/special_projects/03_projects_cosmic_storms.txt:25-37 INETIAN_PROJECTS_01 on_success spawns system weathermanipulators_home_system; common/solar_system_initializers/cosmic_storm_initializers.txt:3-60 init_effect creates sites CoordinatesA/B/C; events/precursor_events_cosmic_storms.txt:439-461 cstorms.135 marks the system"
+  }
+ ]
 }

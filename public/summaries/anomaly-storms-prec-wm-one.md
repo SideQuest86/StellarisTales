@@ -3,7 +3,7 @@
 - 分类 Category：先驱者 Precursors（审阅改定；编译默认为深空异闻）
 - 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:10-27` · `events/precursor_events_cosmic_storms.txt:18-462` · `common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:72-122` · `common/special_projects/03_projects_cosmic_storms.txt:10-44` · `common/solar_system_initializers/cosmic_storm_initializers.txt:3-60` · `common/on_actions/00_on_actions.txt:1180-1192`
 - DLC：宇宙风暴 Cosmic Storms（`01_precursor_civilizations_cosmic_storms.txt:1-8`）；远古遗物与典范 DLC 会改变部分奖励
-- 审阅 Reviewed：2026-10-12（c3b-exploration）· 状态：部分 Partial（后续在其他故事中）
+- 审阅 Reviewed：2026-10-13（r2-mixed）· 状态：已审阅 Reviewed（后续以外链连到坐标A故事）
 
 ## 如何开始 How it starts
 
@@ -31,5 +31,5 @@ The anomaly never spawns on its own. With the Inetian precursor in the galaxy, s
 
 - 已核对 Checked：异常定义、cstorms.100–135、遗址与项目定义、星系初始化器、on_survey_planet 权重。/ All listed definitions.
 - 本轮更正 Corrections：分类改为先驱者；在 135 处注明后续故事。/ Category set to precursors; continuation noted at 135.
-- 不确定/未完成 Open：因内特链条被拆成三个故事（本故事、C2 的坐标遗址故事、C3a 的秘密研究），应合并为一个先驱者故事，已在审阅台账中提出请求。/ The chain is split across three stories; a merge is requested in the ledger.
+- 补审 Completion (2026-10-13)：135 现通过带证据的外链（03_projects_cosmic_storms.txt:25-37、cosmic_storm_initializers.txt:3-60）连到 C2 的坐标A故事，不吸收其根；“因内特秘密”（INETIAN_PROJECTS_04）是独立故事。仍有的不确定：三个故事是否应合并为一个家族，由 C2 所有者决定。/ 135 now links externally (with evidence) to the C2 Coordinates A story without absorbing it; the secrets research is a separate story. Open: whether to merge the three is the C2 owner's call.
 - 覆盖 Coverage：本故事11个文档全部审阅。/ All 11 docs of this story reviewed.

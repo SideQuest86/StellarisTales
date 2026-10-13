@@ -1,6 +1,6 @@
 {
   "base": "http://127.0.0.1:4173/",
-  "startedAt": "2026-10-13T17:35:03.071Z",
+  "startedAt": "2026-10-13T22:35:07.595Z",
   "adapter": {
     "vendor": "Google Inc. (NVIDIA)",
     "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
@@ -75,8 +75,8 @@
       "name": "render loop idles when nothing moves",
       "ok": true,
       "detail": {
-        "drawn": 36305,
-        "drawnLater": 36305
+        "drawn": 42750,
+        "drawnLater": 42750
       }
     },
     {
@@ -91,7 +91,7 @@
       "name": "1600-open frame 1",
       "ok": true,
       "detail": {
-        "detail": 0.15,
+        "detail": 0.151,
         "reveal": 1
       }
     },
@@ -99,7 +99,7 @@
       "name": "1600-open frame 2",
       "ok": true,
       "detail": {
-        "detail": 0.301,
+        "detail": 0.302,
         "reveal": 1
       }
     },
@@ -107,7 +107,7 @@
       "name": "1600-open frame 3",
       "ok": true,
       "detail": {
-        "detail": 0.45,
+        "detail": 0.453,
         "reveal": 0.001
       }
     },
@@ -123,8 +123,8 @@
       "name": "1600-open frame 5",
       "ok": true,
       "detail": {
-        "detail": 0.751,
-        "reveal": 0.065
+        "detail": 0.75,
+        "reveal": 0.064
       }
     },
     {
@@ -174,7 +174,7 @@
       "name": "horizon-signal: map renders with the current node and no overlapping cards",
       "ok": true,
       "detail": {
-        "nodes": 8,
+        "nodes": 6,
         "current": 1,
         "overlaps": 0
       }
@@ -183,7 +183,7 @@
       "name": "cybrex: map renders with the current node and no overlapping cards",
       "ok": true,
       "detail": {
-        "nodes": 68,
+        "nodes": 67,
         "current": 1,
         "overlaps": 0
       }
@@ -219,7 +219,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.304
+        "reveal": 0.302
       }
     },
     {
@@ -227,7 +227,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.507
+        "reveal": 0.504
       }
     },
     {
@@ -235,7 +235,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.707
+        "reveal": 0.703
       }
     },
     {
@@ -243,7 +243,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.921
+        "reveal": 0.922
       }
     },
     {
@@ -264,7 +264,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.152
+        "reveal": 0.151
       }
     },
     {
@@ -272,7 +272,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.451
+        "reveal": 0.455
       }
     },
     {
@@ -280,7 +280,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.75
+        "reveal": 0.751
       }
     },
     {
@@ -398,9 +398,11 @@
   "fontsLoaded": [
     "Noto Sans SC",
     "Noto Serif SC",
+    "Source Serif 4",
+    "ST Serif Fallback",
     "ST Sans Fallback"
   ],
   "largestStory": "cetana",
-  "finishedAt": "2026-10-13T17:36:31.724Z",
+  "finishedAt": "2026-10-13T22:36:34.493Z",
   "passed": true
 }

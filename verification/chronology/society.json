@@ -3,14 +3,12 @@
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 357,
-  "docs": 1653,
+  "docs": 1655,
   "nodes": 2022,
-  "refs": 369,
-  "crossLinks": 761,
+  "refs": 367,
+  "crossLinks": 757,
   "review": {
-    "reviewed": 351,
-    "partial": 2,
-    "unreviewed": 4
+    "reviewed": 357
   },
   "failures": [],
   "items": [
@@ -118,9 +116,9 @@
       "title": "旧版编码",
       "kind": "family",
       "docs": 14,
-      "refs": 13,
+      "refs": 12,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1210",
@@ -186,6 +184,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-fircon-5000",
+      "title": "哈宾特统一星球国",
+      "kind": "family",
+      "docs": 10,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-first-contact-1120",
       "title": "邀请函",
       "kind": "family",
@@ -219,15 +226,6 @@
       "docs": 9,
       "refs": 3,
       "crossLinks": 54,
-      "review": "reviewed"
-    },
-    {
-      "id": "event-fircon-5000",
-      "title": "哈宾特统一星球国",
-      "kind": "family",
-      "docs": 8,
-      "refs": 1,
-      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -560,8 +558,8 @@
       "kind": "event",
       "docs": 29,
       "refs": 8,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "crossLinks": 4,
+      "review": "reviewed"
     },
     {
       "id": "event-colony-9200",
@@ -695,8 +693,8 @@
       "kind": "situation",
       "docs": 15,
       "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "event-observation-2029",
@@ -739,9 +737,9 @@
       "title": "神秘迷宫",
       "kind": "event",
       "docs": 11,
-      "refs": 2,
+      "refs": 1,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-8001",
@@ -921,7 +919,7 @@
       "docs": 7,
       "refs": 6,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1440",
@@ -2675,8 +2673,8 @@
       "kind": "event",
       "docs": 1,
       "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "event-leader-1",

@@ -2,15 +2,15 @@
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链与叙事局势 colony chain + narrative situation
 - 来源 Sources：`events/colony_events_3.txt:7579–8909` · `common/situations/01_narrative_situations.txt:1661–1817` · `common/on_actions/00_on_actions.txt:1668` · 前篇 prologue `common/special_projects/00_projects_3.txt:803–845`
-- 审阅 Reviewed：2026-10-12（c7b-society）· 状态 Status：部分 partial（见审阅记录）
+- 审阅 Reviewed：2026-10-13（c7b-society；r2-society 完成）· 状态 Status：已审阅 reviewed
 
 ## 如何开始 How it starts
 
-这是“负相物质”事件链（开发者注释 "Negative Mass"）的后半段。前半段：殖民地事件「传送门 The Doorway」（colony.3005）开启传送门研究；项目完成时以权重 5 随机抽到 colony.9800「虚无次元」（AI、人工/城市/蜂巢/机械/遗迹母星、合成繁衍/进化掠食者/毒性骑士起源以及全银河已发生过的情况下权重为0）；900–1000 天后 9805，再过 150–230 天 9810「负质量」开启事件链并克隆一位科学家领袖；360–720 天后 9815 母星旁出现传送门，一支与我们旧式护卫舰相同的舰队来袭。前半段目前位于故事 event-enclave-300。
+这是“负相物质”事件链（开发者注释 "Negative Mass"）的后半段。前半段：殖民地事件「传送门 The Doorway」（colony.3005）开启传送门研究；项目完成时以权重 5 随机抽到 colony.9800「虚无次元」（AI、人工/城市/蜂巢/机械/遗迹母星、合成繁衍/进化掠食者/毒性骑士起源以及全银河已发生过的情况下权重为0）；900–1000 天后 9805，再过 150–230 天 9810「负质量」开启事件链并克隆一位科学家领袖；360–720 天后 9815 母星旁出现传送门，一支与我们旧式护卫舰相同的舰队来袭。前半段现为独立故事 event-colony-3005。
 
 **本篇入口**：击败那支舰队（`on_fleet_destroyed_perp`，被歼灭方带 `B_world_relation` 关系标记）时触发 colony.9820「旧版编码」，全局只发生一次。
 
-This is the second half of the *Negative Mass* chain. Its prologue — the colony event *The Doorway* (colony.3005), the portal project (Negative Mass outcome weight 5, zero for AI empires, artificial/city/hive/machine/relic homeworlds, some origins, or if it already happened), 9800, 9805, 9810 *Negative Mass* (clones a scientist leader) and 9815 (a portal appears and a fleet of our own old corvette design attacks) — currently sits in the story event-enclave-300. Destroying that fleet (`on_fleet_destroyed_perp`, the destroyed side carries the `B_world_relation` flag) fires colony.9820 *An Old Code*, once per game.
+This is the second half of the *Negative Mass* chain. Its prologue — the colony event *The Doorway* (colony.3005), the portal project (Negative Mass outcome weight 5, zero for AI empires, artificial/city/hive/machine/relic homeworlds, some origins, or if it already happened), 9800, 9805, 9810 *Negative Mass* (clones a scientist leader) and 9815 (a portal appears and a fleet of our own old corvette design attacks) — is now the story event-colony-3005. Destroying that fleet (`on_fleet_destroyed_perp`, the destroyed side carries the `B_world_relation` flag) fires colony.9820 *An Old Code*, once per game.
 
 ## 剧情脉络 Story outline
 
@@ -42,5 +42,5 @@ Summary in English: the summit's four answers all start the situation *Plight of
 - 已核对 Checked：9800–9880 全部脚本、局势定义（初始进度、月进度修正、三个方案的 potential、四个阶段的 on_first_enter、on_fail/on_progress_complete）、`on_fleet_destroyed_perp`、DPORTAL_PROJECT 的随机权重。
 - 合并 Merged：原独立故事 event-colony-9885（9885，`on_colony_defenders_win`）与 event-colony-9889（隐藏 9889 → 9890，`on_colony_attackers_win`）是 9880 地面战的两种结果（00_on_actions.txt:834、868 注释即写明“Negative Mass”），现作为本篇的互斥分支。/ The former single-page stories 9885 and 9889/9890 are the two results of 9880's ground battle and are merged here as exclusive branches.
 - 审阅改动 Changes：按局势实际进度方向加入 12 条审阅连接（第二阶段→第一阶段→成功；第四阶段→失败；反悔→第二阶段）；把成功结局下由通用“开局建筑”效果带出的 3 个起源事件连接标为伪连接并抑制；登记 9821 自由问答（按帝国类型选回答）与 9840 选项文字变体；标注两个结局与互斥组。
-- 未完成 Not done（部分 partial）：编译器自动把局势各阶段事件按定义顺序串成链，图中仍有 4 条错误的“下一阶段”引用（9855→9875、9875→9870、9860→9880、9880→9855）；已在台账请求编译器支持 `stageSequence: false`。故事前半段（3005、9800–9815）在 event-enclave-300 中，应移回 C7 并与本篇相连（台账请求）。
+- 完成 Completed (2026-10-13)：用 `noStageSequence` 关闭局势阶段自动串联，并抑制 局势→9880（已由 9875→9880 桥接放到正确位置），4 条错误的“下一阶段”引用已消失。前半段现为独立故事 event-colony-3005（9815 → 9820 为跨故事连接）。 / Stage auto-chaining switched off with `noStageSequence`; situation→9880 suppressed (placed under 9875 by bridge). The prologue is now its own story event-colony-3005.
 - 不确定 Uncertain：若某个月进度从 95 以下直接越过 100，9870 的触发条件会失败，此时直接到 9851。/ If progress jumps past 100 in one tick, 9870's trigger fails and 9851 follows directly.

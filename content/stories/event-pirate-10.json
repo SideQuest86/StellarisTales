@@ -1,0 +1,19 @@
+{
+ "id": "event-pirate-10",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:997",
+   "events/pirate_events.txt:1043-1100",
+   "common/solar_system_initializers/hostile_system_initializers.txt:2834"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-pirate-10.md"
+ }
+}

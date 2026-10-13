@@ -1,0 +1,25 @@
+{
+ "id": "event-aquatics-4",
+ "nodeLabels": {
+  "aquatics.5": {
+   "zh": "首次发现冰封候选星球",
+   "en": "First frozen candidate found"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/aquatics_events.txt:26-107",
+   "events/game_start.txt:845-870",
+   "common/on_actions/00_on_actions.txt:1135"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-aquatics-4.md"
+ }
+}

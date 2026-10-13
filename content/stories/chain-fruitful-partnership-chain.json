@@ -1,0 +1,19 @@
+{
+ "id": "chain-fruitful-partnership-chain",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/event_chains/00_event_chains_3.txt:125-129",
+   "common/scripted_effects/01_start_of_game_effects.txt:4180-4200",
+   "common/special_projects/00_projects_plantoids.txt:1-45"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/chain-fruitful-partnership-chain.md"
+ }
+}

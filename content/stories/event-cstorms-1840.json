@@ -1,0 +1,20 @@
+{
+ "id": "event-cstorms-1840",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:5421-5443",
+   "events/cosmic_storms_events_1.txt:4655-4704",
+   "events/cosmic_storms_events_1.txt:4706-4830",
+   "common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:687-725"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-cstorms-1840.md"
+ }
+}

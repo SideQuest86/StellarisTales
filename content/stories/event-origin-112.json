@@ -1,0 +1,22 @@
+{
+ "id": "event-origin-112",
+ "exclude": [
+  "archaeological_site_types:broken_shackles_digsite",
+  "archaeological_site_types:payback_digsite"
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "重复条目：两个开局隐藏路由事件被编译器当成故事根；其考古遗址已在起源故事中审阅，本条目排除全部文档，不再生成故事。",
+   "en": "Duplicate entry: two hidden game-start routers were taken as story roots; their archaeological sites are already reviewed inside the origin stories, so all docs are excluded and no story is generated."
+  },
+  "sources": [
+   "events/origin_events_1.txt:3319-3380",
+   "events/game_start.txt:495-515",
+   "common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:1-125"
+  ],
+  "uncertain": []
+ }
+}

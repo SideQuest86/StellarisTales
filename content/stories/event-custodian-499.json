@@ -1,0 +1,220 @@
+{
+ "id": "event-custodian-499",
+ "family": {
+  "title": {
+   "zh": "指派星海监管人",
+   "en": "Galactic Custodian Appointed"
+  },
+  "category": "stories",
+  "start": "custodian.2",
+  "members": [
+   "custodian.2",
+   "custodian.11",
+   "custodian.15",
+   "custodian.17",
+   "custodian.101",
+   "custodian.30",
+   "custodian.32",
+   "custodian.35",
+   "custodian.40"
+  ],
+  "sources": []
+ },
+ "bridges": [
+  {
+   "from": "custodian.2",
+   "to": "custodian.11",
+   "conditional": true,
+   "label": {
+    "zh": "任期期满",
+    "en": "The term runs out"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:4727-4731 on_custodian_term_ends -> hidden custodian.10 (events/nemesis_custodian_events.txt:122-155), which clears the custodianship and sends custodian.11 to every community member. (The test event custodian.499, lines 12-48, would queue custodian.10 after 5400 days but never fires: is_test_event, trigger always = no.)"
+  },
+  {
+   "from": "custodian.2",
+   "to": "custodian.15",
+   "conditional": true,
+   "label": {
+    "zh": "决议提前终止监管",
+    "en": "Ended early by a resolution"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:2149-2168 resolution_custodian_end_custodianship -> hidden custodian.14 (events/nemesis_custodian_events.txt:182-215) -> custodian.15 to community members (shown unless the ex-custodian is a Defender of the Galaxy who did the job, 236-261)."
+  },
+  {
+   "from": "custodian.2",
+   "to": "custodian.17",
+   "conditional": true,
+   "label": {
+    "zh": "被决议除名",
+    "en": "Unseated by a resolution"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:866-893 resolution_galacticreforms_unseat_custodian -> hidden custodian.16 (events/nemesis_custodian_events.txt:278-304) -> custodian.17."
+  },
+  {
+   "from": "custodian.2",
+   "to": "custodian.101",
+   "conditional": true,
+   "label": {
+    "zh": "监管人国家被毁灭",
+    "en": "The custodian is destroyed"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:3603-3606 on_country_destroyed -> hidden custodian.100 (events/nemesis_custodian_events.txt:739-761, trigger is_galactic_custodian) -> custodian.101 to every non-AI empire."
+  },
+  {
+   "from": "custodian.2",
+   "to": "custodian.35",
+   "conditional": true,
+   "label": {
+    "zh": "防卫军已启用：10天后向新监管人报到",
+    "en": "Defense Force active: reports to the new custodian after 10 days"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:712-720 the nominate-custodian resolution fires custodian.1 and, if gdf_active, custodian.35 days = 10 (events/nemesis_custodian_events.txt:615-636)."
+  },
+  {
+   "from": "custodian.2",
+   "to": "custodian.30",
+   "conditional": true,
+   "label": {
+    "zh": "监管人通过“泛星系防卫军”决议",
+    "en": "The custodian passes the Galactic Defense Force resolution"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:2200-2248 resolution_custodian_gdf (potential: is_galactic_custodian) sets gdf_active and sends custodian.30 to every non-AI empire (2232)."
+  },
+  {
+   "from": "custodian.30",
+   "to": "custodian.40",
+   "conditional": true,
+   "label": {
+    "zh": "决议解散防卫军",
+    "en": "A resolution disbands the Defense Force"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:2570-2612 resolution_custodian_disband_gdf removes gdf_active and sends custodian.40 to every non-AI empire (2610)."
+  },
+  {
+   "from": "custodian.11",
+   "to": "custodian.32",
+   "conditional": true,
+   "label": {
+    "zh": "防卫军启用时：防卫军独立",
+    "en": "If the Defense Force is active: it goes independent"
+   },
+   "evidence": "events/nemesis_custodian_events.txt:141-146 (custodian.10) fires hidden custodian.31 when global flag gdf_active is set; custodian.31 (405-456) creates the independent GDF country and sends custodian.32 to human community members after 10 days."
+  },
+  {
+   "from": "custodian.15",
+   "to": "custodian.32",
+   "conditional": true,
+   "label": {
+    "zh": "防卫军启用时：防卫军独立",
+    "en": "If the Defense Force is active: it goes independent"
+   },
+   "evidence": "events/nemesis_custodian_events.txt:203-206 (custodian.14) fires hidden custodian.31 when global flag gdf_active is set; custodian.31 (405-456) creates the independent GDF country and sends custodian.32 to human community members after 10 days."
+  },
+  {
+   "from": "custodian.17",
+   "to": "custodian.32",
+   "conditional": true,
+   "label": {
+    "zh": "防卫军启用时：防卫军独立",
+    "en": "If the Defense Force is active: it goes independent"
+   },
+   "evidence": "events/nemesis_custodian_events.txt:299-302 (custodian.16) fires hidden custodian.31 when global flag gdf_active is set; custodian.31 (405-456) creates the independent GDF country and sends custodian.32 to human community members after 10 days."
+  },
+  {
+   "from": "custodian.101",
+   "to": "custodian.32",
+   "conditional": true,
+   "label": {
+    "zh": "防卫军启用时：防卫军独立",
+    "en": "If the Defense Force is active: it goes independent"
+   },
+   "evidence": "events/nemesis_custodian_events.txt:756-759 (custodian.100) fires hidden custodian.31 when global flag gdf_active is set; custodian.31 (405-456) creates the independent GDF country and sends custodian.32 to human community members after 10 days."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "custodian.11",
+    "custodian.15",
+    "custodian.17",
+    "custodian.101"
+   ],
+   "label": {
+    "zh": "监管任期的四种结束方式",
+    "en": "Four ways the custodianship ends"
+   }
+  }
+ ],
+ "nodeLabels": {
+  "custodian.11": {
+   "zh": "任期期满",
+   "en": "Term expired"
+  },
+  "custodian.15": {
+   "zh": "提前结束",
+   "en": "Ended early"
+  },
+  "custodian.17": {
+   "zh": "被除名",
+   "en": "Unseated"
+  },
+  "custodian.101": {
+   "zh": "监管人被毁",
+   "en": "Custodian destroyed"
+  },
+  "custodian.30": {
+   "zh": "防卫军成立",
+   "en": "Defense Force founded"
+  },
+  "custodian.32": {
+   "zh": "防卫军独立",
+   "en": "Defense Force independent"
+  },
+  "custodian.35": {
+   "zh": "防卫军向新监管人报到",
+   "en": "Reports to new custodian"
+  },
+  "custodian.40": {
+   "zh": "防卫军解散",
+   "en": "Defense Force disbanded"
+  }
+ },
+ "notes": [
+  {
+   "doc": "custodian.2",
+   "zh": "真实入口是理事会决议“提名监管人”（01_resolutions_nemesis.txt:683-722），它设置监管人并发出 custodian.1；隐藏事件 custodian.1（52-72）再向各共同体成员发出本窗口。",
+   "en": "The real entry is the council resolution \"nominate custodian\" (01_resolutions_nemesis.txt:683-722), which sets the custodian and fires custodian.1; hidden custodian.1 (52-72) then sends this window to community members.",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/nemesis_custodian_events.txt:12-130",
+   "events/nemesis_custodian_events.txt:157-340",
+   "events/nemesis_custodian_events.txt:405-456",
+   "events/nemesis_custodian_events.txt:459-471",
+   "events/nemesis_custodian_events.txt:615-651",
+   "events/nemesis_custodian_events.txt:739-776",
+   "common/resolutions/01_resolutions_nemesis.txt:683-722,866-893,2149-2235,2570-2612",
+   "common/on_actions/00_on_actions.txt:3603-3606,4727-4731"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-custodian-499.md",
+  "mergedStories": [
+   "event-custodian-14",
+   "event-custodian-16",
+   "event-custodian-100",
+   "event-custodian-30",
+   "event-custodian-40"
+  ]
+ }
+}

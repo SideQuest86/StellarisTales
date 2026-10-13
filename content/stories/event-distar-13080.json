@@ -96,22 +96,120 @@
     "en": "Kill an L-Drake"
    },
    "evidence": "common/on_actions/00_on_actions.txt:1463 on_ship_destroyed_perp → distar.13020 (events/distant_stars_events_3.txt:2009): the destroyed ship belongs to a country of type ldragon_country; the reward is larger if the L-Drake was already known (ldragon_known)."
+  },
+  {
+   "from": "special_projects:LCLUSTER_PROJECT",
+   "to": "distar.10951",
+   "conditional": true,
+   "label": {
+    "zh": "项目完成：无危机结局（其余全局标志均未设置）",
+    "en": "Project complete: the quiet ending (none of the other global flags set)"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1380 distar.10950 (hidden, fired by LCLUSTER_PROJECT on_success, common/special_projects/00_projects_distant_stars.txt:667) else-branch fires distar.10951 and distar.10960"
+  },
+  {
+   "from": "special_projects:LCLUSTER_PROJECT",
+   "to": "distar.13011",
+   "conditional": true,
+   "label": {
+    "zh": "项目完成：龙之季，无L-星门星系的国家收到通知",
+    "en": "Project complete: dragon season; countries without an L-Gate system get this notice"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1373 else_if dragon_season -> hidden distar.13000 (L1811-1862) -> distar.13011 for every playable country with no lgate system within borders"
+  },
+  {
+   "from": "special_projects:LCLUSTER_PROJECT",
+   "to": "distar.13010",
+   "conditional": true,
+   "label": {
+    "zh": "项目完成：龙之季，拥有L-星门星系的国家见到幼龙",
+    "en": "Project complete: dragon season; owners of L-Gate systems see the young drake"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1373 else_if dragon_season -> hidden distar.13000 spawns young dragons at dragon_point systems and fires distar.13010 at the owner of each gate system (L1899-1902)"
+  },
+  {
+   "from": "special_projects:LCLUSTER_PROJECT",
+   "to": "graygoo.1",
+   "conditional": true,
+   "label": {
+    "zh": "项目完成：灰色风暴危机（另一故事）",
+    "en": "Project complete: the Gray Tempest crisis (another story)"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1369 if gray_goo_crisis_set -> graygoo.1 (story gray-tempest)",
+   "external": true
+  },
+  {
+   "from": "special_projects:LCLUSTER_PROJECT",
+   "to": "graygoo.100",
+   "conditional": true,
+   "label": {
+    "zh": "项目完成：灰雾帝国（另一故事）",
+    "en": "Project complete: the gray goo empire (another story)"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1377 else_if gray_goo_empire_set -> graygoo.100 (story dessanu-consonance)",
+   "external": true
+  },
+  {
+   "from": "special_projects:LCLUSTER_PROJECT",
+   "to": "distar.10952",
+   "conditional": true,
+   "label": {
+    "zh": "另一国家开启星团：正在进行此项目的国家收到中止通知",
+    "en": "Another country opens the cluster: countries running this project are told it is aborted"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1394-1402 distar.10950 every_playable_country with LCLUSTER_PROJECT (not the opener) -> distar.10952 after 1 day"
+  },
+  {
+   "from": "special_projects:LCLUSTER_PROJECT",
+   "to": "distar.10953",
+   "conditional": true,
+   "label": {
+    "zh": "另一国家开启星团：有事件链但无项目的国家收到通知",
+    "en": "Another country opens the cluster: countries with the chain but no project are told"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1414-1422 distar.10950 every_playable_country with l_cluster_chain, no project -> distar.10953 after 1 day"
+  },
+  {
+   "from": "special_projects:LCLUSTER_PROJECT",
+   "to": "distar.10954",
+   "conditional": true,
+   "label": {
+    "zh": "另一国家开启星团：无事件链的国家收到通知",
+    "en": "Another country opens the cluster: countries without the chain are told"
+   },
+   "evidence": "events/distant_stars_events_3.txt:1404-1412 distar.10950 every_playable_country with no chain and no project -> distar.10954 after 1 day"
   }
  ],
  "groups": [
   {
    "kind": "exclusive",
    "members": [
-    "distar.13010",
-    "distar.10951"
+    "distar.10951",
+    "distar.13010"
    ],
    "label": {
     "zh": "开启后的结局（开局已决定）",
     "en": "Outcome after opening (decided at game start)"
    },
    "note": {
-    "zh": "开局事件 distar.8000 在启用L-星门时随机：50（若禁用破坏性玩法则为0）灰色风暴危机、30无事、30龙之季、30灰雾帝国（events/distant_stars_events_3.txt:1109-1129）；distar.10950 按全局标志选择 graygoo.1 / distar.13000 / graygoo.100 / distar.10951。",
-    "en": "The game-start event distar.8000 rolls when L-Gates are enabled: 50 gray goo crisis (0 if disruptive gameplay is blocked), 30 nothing, 30 dragon season, 30 gray goo empire (events/distant_stars_events_3.txt:1109-1129); distar.10950 then picks graygoo.1 / distar.13000 / graygoo.100 / distar.10951 by the global flag."
+    "zh": "开局事件 distar.8000 在启用L-星门时随机：50（若禁用破坏性玩法则为0）灰色风暴危机、30无事、30龙之季、30灰雾帝国（events/distant_stars_events_3.txt:1109-1129）；distar.10950 按全局标志选择 graygoo.1 / distar.13000 / graygoo.100 / distar.10951。　13010（拥有星门星系者）与13011（无星门星系者）是同一龙之季结局里按国家分的两份通知。",
+    "en": "The game-start event distar.8000 rolls when L-Gates are enabled: 50 gray goo crisis (0 if disruptive gameplay is blocked), 30 nothing, 30 dragon season, 30 gray goo empire (events/distant_stars_events_3.txt:1109-1129); distar.10950 then picks graygoo.1 / distar.13000 / graygoo.100 / distar.10951 by the global flag.  Within dragon season, 13010 (owners of gate systems) and 13011 (countries without one) are per-country notices."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.10952",
+    "distar.10953",
+    "distar.10954"
+   ],
+   "label": {
+    "zh": "他国开启后，每个国家只收到其中一条通知",
+    "en": "When another country opens the cluster, each country gets exactly one of these notices"
+   },
+   "note": {
+    "zh": "按是否正在做本项目、是否有事件链划分（distant_stars_events_3.txt:1394-1422）。",
+    "en": "Split by whether the country runs the project or has the chain (distant_stars_events_3.txt:1394-1422)."
    }
   }
  ],
@@ -140,12 +238,12 @@
   }
  },
  "review": {
-  "status": "partial",
+  "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "c3a-exploration (resumed reviewer)",
+  "reviewer": "r2-mixed",
   "scope": {
-   "zh": "L-星团主线（发现、线索、研究、项目、四种结局入口、龙之季后续）已核对；各线索来源的具体异常逐一列出（约20处）未逐条验证，灰色风暴与灰雾帝国分支属其他故事。",
-   "en": "The main L-Cluster line (discovery, clues, research, project, entries of the four outcomes, dragon-season follow-up) is checked; the individual clue-giving anomalies (about 20) were not verified one by one, and the Gray Tempest / gray goo empire branches belong to other stories."
+   "zh": "整条L-星团故事：入口、线索来源（逐一定位约33个调用事件并核对统一门槛）、线索满七、研究、项目、完成后的结局与他国通知、龙之季后续、邻国预警。",
+   "en": "Whole L-Cluster story: entry, clue sources (about 33 calling events located and the central gate checked), seven clues, research, project, outcomes and notices to other countries after opening, dragon-season follow-ups, neighbour warning."
   },
   "sources": [
    "events/distant_stars_events_3.txt:2366-2410 (distar.13080)",
@@ -161,12 +259,23 @@
    "events/distant_stars_events_3.txt:1331-1428 (distar.10950)",
    "events/distant_stars_events_3.txt:1109-1129 (distar.8000)",
    "events/distant_stars_events_3.txt:1812-2142 (distar.13000-13035)",
-   "events/distant_stars_events_3.txt:1498-1566 (distar.10955/10956)"
+   "events/distant_stars_events_3.txt:1498-1566 (distar.10955/10956)",
+   "events/distant_stars_events_3.txt:1330-1430 (distar.10950)",
+   "events/distant_stars_events_3.txt:1811-1905 (distar.13000)",
+   "common/special_projects/00_projects_distant_stars.txt:650-668"
   ],
   "uncertain": [
-   "The roughly 20 events that call generate_lcluster_clue / pop_lcluster_event (anomalies, distar.12000 tech, artifact action, crisis.8060 etc.) are summarised as one bridge from the chain, not listed individually; their gates (e.g. crisis.8060 requires has_event_chain = l_cluster_chain) were not each verified.",
-   "apoc.3 (surveyed L-Gate) starts the same chain in another story (event-apoc-3); the two entries are described together in the guide but only distar.13080 is in this story."
+   "apoc.3 (surveyed L-Gate) starts the same chain in event-apoc-3; both entries are shown/described but only distar.13080 owns this story.",
+   "The clue-giving events (about 33) are listed in a note and the guide, not as nodes; their own gates belong to their stories."
   ],
   "guide": "public/summaries/event-distar-13080.md"
- }
+ },
+ "notes": [
+  {
+   "doc": "event_chains:l_cluster_chain",
+   "kind": "review",
+   "zh": "审阅说明（线索来源）：generate_lcluster_clue（00_scripted_effects.txt:3243-3262）和 pop_lcluster_event（:3291-3305）本身统一要求拥有《遥远繁星》、事件链 l_cluster_chain 且星团尚未开启，所以各调用点无需单独验证。调用它们的事件共约33个：artifact_actions.txt:80；anomaly.5/30/2531/3120/4020/6705、aianom.11；distar.40/46/70/220/225/231/265/270/275/280/285/312/313/315/1031/1040/2041/2046/5058/12000；leviathans.600；crisis.8060；over.60；pirate.15/26。这些属于各自的故事，此处不逐一列为节点。",
+   "en": "Review note (clue sources): generate_lcluster_clue (00_scripted_effects.txt:3243-3262) and pop_lcluster_event (:3291-3305) themselves require Distant Stars, the chain l_cluster_chain and an unopened cluster, so each call site needs no separate gate check. About 33 events call them: artifact_actions.txt:80; anomaly.5/30/2531/3120/4020/6705, aianom.11; distar.40/46/70/220/225/231/265/270/275/280/285/312/313/315/1031/1040/2041/2046/5058/12000; leviathans.600; crisis.8060; over.60; pirate.15/26. They belong to their own stories and are not listed here as nodes."
+  }
+ ]
 }

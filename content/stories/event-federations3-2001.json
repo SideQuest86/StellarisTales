@@ -1,0 +1,33 @@
+{
+ "id": "event-federations3-2001",
+ "category": "society",
+ "titleFrom": "federations3.2001",
+ "groups": [
+  {"kind": "exclusive", "members": ["federations3.2015", "federations3.2016", "federations3.2017"],
+   "label": {"zh": "联合调查的三种结局", "en": "Three finales of the joint inquiry"},
+   "note": {"zh": "全体成员都完成（成功、失败或退出）后，协调国检查“放它自由”的次数：全部成员都选了 → 2015 完美结局（+30凝聚力）；一个都没选 → 2017 未重组（+20凝聚力，但首都获得负面修正）；其余 → 2016 部分重组。10天后向所有成员发出。", "en": "When every member has finished (success, failure or withdrawal) the coordinator counts how many chose 'Set it free': all of them -> 2015 perfect (+30 cohesion); none -> 2017 non-reassembly (+20 cohesion but a capital snag modifier); otherwise 2016 partial. Fired to all members 10 days later."}}
+ ],
+ "endings": {
+  "federations3.2015": {"label": {"zh": "完美结局：云团重组", "en": "Perfect finale: the cloud reassembles"}, "note": {"zh": "联邦+30凝聚力，成员获得3600天“联合云团恩惠”修正。", "en": "Federation +30 cohesion; each member gets the 3600-day joint cloud boon."}, "evidence": "events/federations_events_3.txt:1197-1209, 1236-1254."},
+  "federations3.2016": {"label": {"zh": "部分重组", "en": "Partial reassembly"}, "note": {"zh": "成员获得2160天的临时云团恩惠。", "en": "Members get a temporary cloud boon for 2160 days."}, "evidence": "events/federations_events_3.txt:1225-1231, 1257-1274."},
+  "federations3.2017": {"label": {"zh": "未重组", "en": "Non-reassembly"}, "note": {"zh": "联邦+20凝聚力；首都获得1440天的负面修正（pm_joint_cloud_snag）。", "en": "Federation +20 cohesion; the capital gets pm_joint_cloud_snag for 1440 days."}, "evidence": "events/federations_events_3.txt:1211-1224, 1278-1297."}
+ },
+ "nodeLabels": {
+  "federations3.2001": {"zh": "联合调查的开场", "en": "Joint inquiry opens"},
+  "federations3.2010": {"zh": "个人项目完成：放它自由 / 留下", "en": "Own project done: set it free / keep it"}
+ },
+ "notes": [
+  {"doc": "federations3.2001", "kind": "review", "zh": "真正的入口是隐藏飞船事件 federations3.2000：建成研究站时 on_building_research_station 以 5/105 权重抽到，或由荒原飞地 enclave.4150 触发。条件：联邦类型为默认或研究型，联邦未完成/近期未进行过本事件（7200天冷却），至少一名成员不在战争中且拥有 tech_sensors_2，且没有成员正处于该事件链。触发时给每个成员随机一种颜色（仅影响2010的正文）并向全体成员发出 2001，同时在各自首都生成云团。", "en": "The true entry is the hidden ship event federations3.2000: drawn from on_building_research_station with weight 5/105, or fired by enclave.4150. It needs a default or research federation, no completed or recent run (7200-day timer), a member not at war that has tech_sensors_2, and no member already on the chain. It gives each member a random colour (only changes 2010's text), fires 2001 to every member and spawns a cloud at each capital."},
+  {"doc": "federations3.2001", "kind": "review", "zh": "选“很迷人”会开始事件链并启用项目 DISMEMBERED_CLOUD_PROJECT（200点，1080天，需要科学家和科学船），同时协调国的队伍计数+1；“没有时间”则该国不参与。", "en": "'Fascinating' begins the event chain and enables DISMEMBERED_CLOUD_PROJECT (cost 200, 1080 days, needs a scientist and a science ship) and adds one to the coordinator's team count; 'No time' leaves that member out."},
+  {"doc": "federations3.2010", "kind": "review", "zh": "选“放它自由”使“已修复”计数+1，并在360/719天后清除风暴；选“留在这儿”则不增加。项目失败（2011）或取消/退出联邦（2012）也会计入完成检查（2013），三种结局据此判定。", "en": "'Set it free' raises the fixed counter and clears the storm after 360/719 days; 'Keep it here' does not. Project failure (2011) or cancellation/leaving the federation (2012) also feed the completion check (2013) that decides the finale."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-society",
+  "scope": {"zh": "整个“被解体的云团”联合行动：隐藏入口 2000、开场 2001、项目、个人完成 2010、协调检查 2013/2014 与三个结局。", "en": "The whole Dismembered Cloud joint operation: hidden entry 2000, opening 2001, the project, own-completion 2010, coordinator checks 2013/2014 and the three finales."},
+  "sources": ["events/federations_events_3.txt:786-1312", "common/special_projects/00_projects_federations.txt:421-462", "common/on_actions/00_on_actions.txt:1903", "events/overlord_enclaves_events.txt:7670"],
+  "uncertain": ["The 'Pieces of an Ephemeral Puzzle' text mentions the federation's president; the coordinator is whichever member's ship triggered 2000 (discloud_coordinator = owner of that ship)."],
+  "guide": "public/summaries/event-federations3-2001.md"
+ }
+}

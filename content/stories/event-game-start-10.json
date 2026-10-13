@@ -1,0 +1,125 @@
+{
+ "id": "event-game-start-10",
+ "suppress": [
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.4",
+   "evidence": "common/situations/03_AI_empire_situations.txt:632-638 the situation only rolls hidden fallen_empires.3 (weight 50/165); events/fallen_empire_events.txt:127-185 then chooses ONE of 4-8 by an ordered if/else_if, so the compiled random p=0.30 on each of 4-8 is wrong."
+  },
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.5",
+   "evidence": "common/situations/03_AI_empire_situations.txt:632-638 the situation only rolls hidden fallen_empires.3 (weight 50/165); events/fallen_empire_events.txt:127-185 then chooses ONE of 4-8 by an ordered if/else_if, so the compiled random p=0.30 on each of 4-8 is wrong."
+  },
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.6",
+   "evidence": "common/situations/03_AI_empire_situations.txt:632-638 the situation only rolls hidden fallen_empires.3 (weight 50/165); events/fallen_empire_events.txt:127-185 then chooses ONE of 4-8 by an ordered if/else_if, so the compiled random p=0.30 on each of 4-8 is wrong."
+  },
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.7",
+   "evidence": "common/situations/03_AI_empire_situations.txt:632-638 the situation only rolls hidden fallen_empires.3 (weight 50/165); events/fallen_empire_events.txt:127-185 then chooses ONE of 4-8 by an ordered if/else_if, so the compiled random p=0.30 on each of 4-8 is wrong."
+  },
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.8",
+   "evidence": "common/situations/03_AI_empire_situations.txt:632-638 the situation only rolls hidden fallen_empires.3 (weight 50/165); events/fallen_empire_events.txt:127-185 then chooses ONE of 4-8 by an ordered if/else_if, so the compiled random p=0.30 on each of 4-8 is wrong."
+  }
+ ],
+ "bridges": [
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.4",
+   "conditional": true,
+   "label": {
+    "zh": "警告1：放弃圣地（灵性AI）",
+    "en": "Warning 1: abandon holy worlds (spiritualist FE)"
+   },
+   "evidence": "events/fallen_empire_events.txt:127-135 first branch: FE has AI behaviour holy_planets and target is_valid_target_fe_cleanse_holy_worlds."
+  },
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.5",
+   "conditional": true,
+   "label": {
+    "zh": "警告2：禁止研究AI（狂热灵性）",
+    "en": "Warning 2: ban AI research (fanatic spiritualist FE)"
+   },
+   "evidence": "events/fallen_empire_events.txt:138-146 else_if: FE is_fanatic_spiritualist and is_valid_target_fe_stop_ai."
+  },
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.6",
+   "conditional": true,
+   "label": {
+    "zh": "警告3：禁止奴役与清洗（狂热亲异）",
+    "en": "Warning 3: ban slavery and purges (fanatic xenophile FE)"
+   },
+   "evidence": "events/fallen_empire_events.txt:149-157 else_if: FE is_fanatic_xenophile and is_valid_target_fe_stop_atrocities."
+  },
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.7",
+   "conditional": true,
+   "label": {
+    "zh": "警告4：撤出邻近殖民地（排外）",
+    "en": "Warning 4: clear the borders (xenophobe FE)"
+   },
+   "evidence": "events/fallen_empire_events.txt:160-174 else_if: FE has AI behaviour demands_clear_borders and borders the target."
+  },
+  {
+   "from": "situations:fallen_empires_situation",
+   "to": "fallen_empires.8",
+   "conditional": true,
+   "label": {
+    "zh": "警告5：向我们臣服（默认）",
+    "en": "Warning 5: prostrate yourselves (default)"
+   },
+   "evidence": "events/fallen_empire_events.txt:177-185 final else_if: target is not already humiliated."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_empires.4",
+    "fallen_empires.5",
+    "fallen_empires.6",
+    "fallen_empires.7",
+    "fallen_empires.8"
+   ],
+   "label": {
+    "zh": "按顺序匹配的五种警告",
+    "en": "Five warnings, first match wins"
+   },
+   "note": {
+    "zh": "先到先得：圣地 → AI研究 → 奴役清洗 → 清空边境 → 臣服。",
+    "en": "Checked in order: holy worlds, AI research, atrocities, clear borders, prostration."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "situations:fallen_empires_situation": {
+   "zh": "失落帝国的每月行为",
+   "en": "Fallen Empire monthly behaviour"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/game_start.txt:1706-1722",
+   "common/situations/03_AI_empire_situations.txt:618-660",
+   "events/fallen_empire_events.txt:90-190",
+   "events/fallen_empire_events.txt:190-450"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-game-start-10.md"
+ }
+}

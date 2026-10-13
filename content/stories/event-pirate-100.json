@@ -1,0 +1,27 @@
+{
+ "id": "event-pirate-100",
+ "nodeLabels": {
+  "pirate.155": {
+   "zh": "贝马特海洋霸权的封锁",
+   "en": "Bemat Thalassocracy blockade"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:293-304",
+   "common/on_actions/00_on_actions.txt:763",
+   "events/pirate_events.txt:2196-2425"
+  ],
+  "uncertain": [
+   "Which DLC owns the Bemat Thalassocracy was not traced."
+  ],
+  "guide": "public/summaries/event-pirate-100.md"
+ }
+}

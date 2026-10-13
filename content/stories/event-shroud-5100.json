@@ -1,0 +1,25 @@
+{
+ "id": "event-shroud-5100",
+ "nodeLabels": {
+  "shroud.5110": {
+   "zh": "三十天后：庇护者的召唤",
+   "en": "30 days later: the patron beckons"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/shroud_events.txt:13711-13877",
+   "events/game_start.txt:646-651",
+   "common/scripted_triggers/08_scripted_triggers_shroud.txt:205"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-shroud-5100.md"
+ }
+}

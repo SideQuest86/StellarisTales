@@ -1,6 +1,6 @@
 # 血肉苦弱 / The Flesh is Weak
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：common/traditions/01_cybernetics.txt:1–141、events/utopia_on_action_events.txt:322–726、common/special_projects/00_projects_utopia.txt:1–32、common/situations/08_machine_age_situations.txt:806–1455、events/machine_age_situation_events_1.txt · DLC：乌托邦 / 机械时代 Utopia / The Machine Age · 审阅 Reviewed 2026-10-12（部分 partial）
+- 分类 Category：银河轶事 C8 stories · 来源 Sources：common/traditions/01_cybernetics.txt:1–141、events/utopia_on_action_events.txt:322–726、common/special_projects/00_projects_utopia.txt:1–32、common/situations/08_machine_age_situations.txt:806–1455、events/machine_age_situation_events_1.txt · DLC：乌托邦 / 机械时代 Utopia / The Machine Age · 审阅 Reviewed 2026-10-13（r2-mixed）
 
 ## 如何开始 How it starts
 
@@ -38,10 +38,10 @@ Adopting the *Cybernetics* traditions picks one of three versions by DLC and emp
 
 ## 分支与结局 Branches and outcomes
 
-- 三个入口互斥；局势中对手事件与“未来震撼”各只出现一件。地图中 405→415→425 的先后连线是编译器把同一阶段开启的事件串联所致，并非剧情顺序（见审阅记录）。
-  The three entries are exclusive; rival events and Future Shock show only one each. The 405→415→425 chain on the map is a compiler artefact.
-- 局势期间另有随机事件池（cyber.5 / cyber.2005 经 on_action 列表抽取，如 cyber.120、160、210、220、260、320、360 与蜂巢 22xx），收录在其他故事中。
-  Random situation events from the on_action pools are separate stories.
+- 三个入口互斥；局势中对手事件与“未来震撼”各只出现一件。405/415/425 现在是第三阶段（首秀）之后的并列互斥分支（08_machine_age_situations.txt:850-857）。
+  The three entries are exclusive; rival events and Future Shock show only one each. 405/415/425 now hang as exclusive siblings after stage 3.
+- 局势期间另有随机事件池（cyber.5 / cyber.2005 经 on_action 列表抽取，如 cyber.120、160、210、220、260、320、360 与蜂巢 22xx），收录在其他故事中，现以外链连接（cyber.5 每月七选一、蜂巢 2005 六选一，等权，各有进度门槛：00_on_actions.txt:5183-5204）。
+  Random situation events from the on_action pools are separate stories, now linked externally (cyber.5 one of seven, hive 2005 one of six; equal weight, own progress gates; 00_on_actions.txt:5183-5204).
 
 ## 条件与文明差异 Conditions and variants
 
@@ -55,5 +55,5 @@ Adopting the *Cybernetics* traditions picks one of three versions by DLC and emp
 - 已核对 Checked：传统 on_enabled 分派、utopia.2500–2510、FLESH_IS_WEAK_PROJECT、两个局势定义（阶段、on_monthly、完成、阻塞条件）、cyber.1–6/20–22/100–430/500–525、cyber.2002–2400。
 - 更正 Corrections：月度剧情事件原本全部挂在局势根部，现按进度门槛移到对应阶段之后；完成事件移到第四阶段之后；三个入口与对手事件标为互斥。
   Monthly story events were re-parented after their stages; completion moved after stage 4; exclusive groups added.
-- 未完成 Open（状态为部分）：编译器将同一阶段 on_first_enter 调用的 405/415/425 串成先后（无法用片段修正，已提请求）；随机事件池属于其他审阅者，尚未并入本故事。
-  Partial: the stage-4 chain needs a compiler change; random pools belong to another reviewer.
+- 补审 Completion (2026-10-13)：第四阶段互斥事件用桥接挂到 cyber.300 之后并抑制局势根的直连；月度随机事件池以外链连到 c7a 的各单文档故事。仍有的不确定：进度速度随方针、传统与标记变化。
+  Completion: stage-4 rival events bridged after cyber.300 with the direct situation edges suppressed; the monthly random pools are linked externally to c7a's one-doc stories. Remaining uncertainty: progress speed varies with approach, traditions and flags.

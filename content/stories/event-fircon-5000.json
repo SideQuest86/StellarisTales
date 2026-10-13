@@ -10,6 +10,8 @@
   "members": [
    "fircon.5000",
    "fircon.5005",
+   "anomalies:SOLARPUNK_CAT",
+   "fircon.5010",
    "fircon.5015",
    "fircon.5020",
    "fircon.5026",
@@ -21,13 +23,22 @@
  "bridges": [
   {
    "from": "fircon.5000",
+   "to": "anomalies:SOLARPUNK_CAT",
+   "label": {
+    "zh": "边境星系出现异常「失踪的行星」",
+    "en": "The anomaly “The Missing Planets” appears in the border system"
+   },
+   "evidence": "5000.FASCINATING adds anomaly SOLARPUNK_CAT to the border system (events/first_contact_dlc_events.txt:6691-6698); fircon.5000 is the only source of this anomaly (r2-mixed review, common/anomalies/02_anomaly_categories.txt:703-715)"
+  },
+  {
+   "from": "fircon.5010",
    "to": "fircon.5015",
    "conditional": true,
    "label": {
     "zh": "异常揭示后，进入哈宾特母星系",
     "en": "After the anomaly reveals them, enter the Habinte home system"
    },
-   "evidence": "5000.FASCINATING adds anomaly SOLARPUNK_CAT to the border system (events/first_contact_dlc_events.txt:6691-6698); fircon.5010 (anomaly success) sets solarpunk_discovered and star flag solarpunk_system_revealed and creates the Habinte country (6761-6875); 5015 triggers on solarpunk_system_02 without solarpunk_mad (6889-6916); on_entering_system_fleet (common/on_actions/00_on_actions.txt:1050-1052)"
+   "evidence": "fircon.5010 (anomaly success) sets solarpunk_discovered and star flag solarpunk_system_revealed and creates the Habinte country (events/first_contact_dlc_events.txt:6761-6875); 5015 triggers on solarpunk_system_02 without solarpunk_mad (6889-6916); on_entering_system_fleet (common/on_actions/00_on_actions.txt:1050-1052)"
   },
   {
    "from": "fircon.5015",
@@ -147,7 +158,7 @@
    "common/solar_system_initializers"
   ],
   "uncertain": [
-   "The anomaly category anomaly-solarpunk-cat and fircon.5010 \"Grand Theft Planet\" are the middle of this story but belong to an exploration story owned by another reviewer; referenced in text only.",
+   "2026-10-13 coordinator: the anomaly SOLARPUNK_CAT and its single outcome fircon.5010 (weight 1, r2-mixed review) are now family members, so the tree runs 5000 -> anomaly -> 5010 -> 5015; the former story anomaly-solarpunk-cat is absorbed.",
    "The \"planet X\" swap that follows 5050.a lives in hidden event 5051 and was not traced line by line."
   ],
   "merged": [
@@ -156,7 +167,8 @@
    "event-fircon-5020",
    "event-fircon-5034",
    "event-fircon-5040",
-   "event-fircon-5050"
+   "event-fircon-5050",
+   "anomaly-solarpunk-cat"
   ],
   "guide": "public/summaries/event-fircon-5000.md"
  }

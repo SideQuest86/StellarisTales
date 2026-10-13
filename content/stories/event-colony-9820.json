@@ -9,7 +9,7 @@
  },
  "titleFrom": "colony.9820",
  "category": "society",
- "stageSequence": {"situations:situation_negative_mass": false},
+ "noStageSequence": ["situations:situation_negative_mass"],
  "bridges": [
   {"from": "colony.9880", "to": "colony.9885", "conditional": true,
    "label": {"zh": "地面战：我方守住星球", "en": "Ground battle: our defenders hold the planet"},
@@ -49,6 +49,7 @@
    "evidence": "colony_events_3.txt:8618-8627 as above; 9875 is the gestalt stage-2 event."}
  ],
  "suppress": [
+  {"from": "situations:situation_negative_mass", "to": "colony.9880", "evidence": "Stage 1 gestalt event is reached after stage 2 (9875) on the rescue route (initial_progress 75, 01_narrative_situations.txt:1663, 1779-1796); placed under 9875 by a reviewed bridge."},
   {"from": "situations:situation_negative_mass", "to": "colony.9860", "evidence": "Stage 1 (progress <= 30) is reached only after stage 2 on the rescue route (initial_progress 75); placed under 9855 by a reviewed bridge instead (01_narrative_situations.txt:1663, 1779-1796)."},
   {"from": "colony.9850", "to": "event_chains:cybernetic_creed_chain", "evidence": "Side call of the generic scripted effect generate_start_buildings_and_districts (common/scripted_effects/01_start_of_game_effects.txt:916) used when 9850 spawns the Beta-world; not a story continuation."},
   {"from": "colony.9850", "to": "machine_age.2150", "evidence": "Same generic start-of-game effect (01_start_of_game_effects.txt:920); not a story continuation."},
@@ -99,10 +100,10 @@
   {"doc": "colony.9860", "kind": "review", "zh": "审阅注：选择“多一朵镜中花”会在120天后再次触发本事件。", "en": "Review note: \"Two is better than one\" schedules this event again 120 days later."}
  ],
  "review": {
-  "status": "partial",
-  "date": "2026-10-12",
-  "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "已完整核对源文件（9820–9890、局势定义、阶段与方案）；原独立的 event-colony-9885 与 event-colony-9889（地面战两种结果）已并入本篇。未完成：编译器的局势阶段自动顺延仍生成4条错误的“下一阶段”引用，需编译器支持 stageSequence:false（见台账请求）；故事前半段在 event-enclave-300 中。", "en": "Source fully checked (9820–9890, the situation definition, stages and approaches); the former stories event-colony-9885 and event-colony-9889 (the two ground-battle results) are merged here. Not done: the compiler's automatic stage chaining still adds 4 wrong 'next stage' refs until it honours stageSequence:false (see ledger request); the chain's first half sits in event-enclave-300."},
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-society",
+  "scope": {"zh": "完整核对源文件（9820–9890、局势定义、阶段与方案）；原 event-colony-9885 与 event-colony-9889 已并入；阶段自动串联已用 noStageSequence 关闭；前半段是独立故事 event-colony-3005。", "en": "Source fully checked (9820-9890, situation definition, stages and approaches); the former event-colony-9885 and -9889 are merged; stage auto-chaining switched off with noStageSequence; the prologue is the separate story event-colony-3005."},
   "sources": ["events/colony_events_3.txt:7579-9053", "common/situations/01_narrative_situations.txt:1661-1817", "common/on_actions/00_on_actions.txt:834, 860-870, 1668", "common/special_projects/00_projects_3.txt:803-845"],
   "uncertain": ["9851 can also follow a jump from below 95 straight past 100 (9870's trigger then fails); the tree shows 9851 both directly under the situation and after 9870."],
   "guide": "public/summaries/event-colony-9820.md"

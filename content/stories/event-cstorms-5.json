@@ -1,0 +1,39 @@
+{
+ "id": "event-cstorms-5",
+ "nodeLabels": {
+  "cstorms.1275": {
+   "zh": "第1章：全新的困惑",
+   "en": "Chapter 1"
+  },
+  "cstorms.1300": {
+   "zh": "最终章：恢复栖息地",
+   "en": "Final chapter: the habitat restarts"
+  }
+ },
+ "notes": [
+  {
+   "doc": "cstorms.1295",
+   "zh": "文字取决于 1290 的选择（咒骂/沉默/乱按），分别设置 holdtheline_swear / holdtheline_silence / holdtheline_buttonmash 旗标（cosmic_storms_events_1.txt:1578-1610,1644-1657）。",
+   "en": "Its text depends on the choice at 1290 (swear / stay silent / mash buttons), which sets holdtheline_swear / holdtheline_silence / holdtheline_buttonmash (cosmic_storms_events_1.txt:1578-1610,1644-1657).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:5419-5427",
+   "events/cosmic_storms_events_1.txt:28-140",
+   "events/cosmic_storms_events_1.txt:1410-1455",
+   "events/cosmic_storms_events_1.txt:1457-1730",
+   "common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:626-681"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-cstorms-5.md"
+ }
+}

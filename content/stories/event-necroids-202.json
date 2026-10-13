@@ -1,0 +1,19 @@
+{
+ "id": "event-necroids-202",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/necroids_events_2.txt:148-215",
+   "common/edicts/03_sacrifices.txt:260-448",
+   "common/scripted_effects/00_scripted_effects.txt:5239"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-necroids-202.md"
+ }
+}

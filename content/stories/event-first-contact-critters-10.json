@@ -8,34 +8,103 @@
   "category": "society",
   "start": "first_contact_critters.10",
   "members": [
-   "first_contact_critters.10"
+   "first_contact_critters.10",
+   "first_contact_critters.15"
   ]
  },
  "titleFrom": "first_contact_critters.10",
  "category": "society",
  "notes": [
   {
-   "doc": "first_contact_critters.10",
+   "doc": "first_contact_critters.15",
    "kind": "review",
-   "zh": "审阅注：本事件的单选项进入 tiyanki_stage_2（难度3），其结果 first_contact_critters.15「提亚奇」归起源“原始呼唤”篇（那里把 15 当作次入口）。",
-   "en": "Review note: the single option enters tiyanki_stage_2 (difficulty 3) whose event first_contact_critters.15 “Tiyanki” is shown in the Primal Calling origin story as a secondary entry."
+   "zh": "审阅注：这是提亚奇（太空鲸）首次接触的第二阶段 tiyanki_stage_2（难度3）事件；第一阶段是 first_contact_critters.10（故事 event-first-contact-critters-10），其唯一选项进入本阶段。本事件结束首次接触（finish_first_contact_effect），并向所有者隐藏发出 grand_archive.200（原始呼唤起源在此接入）。",
+   "en": "Review note: this is stage 2 (tiyanki_stage_2, difficulty 3) of the Tiyanki first contact; stage 1 is first_contact_critters.10 (story event-first-contact-critters-10), whose single option enters this stage. The event ends first contact (finish_first_contact_effect) and fires the hidden grand_archive.200 to the owner, where the Primal Calling origin hooks in."
+  },
+  {
+   "doc": "first_contact_critters.15",
+   "kind": "review",
+   "zh": "审阅注：选项按本方类型互斥出现——唯灵、唯物或格式塔（无探索协议）、机械探索协议、其余；全部都给“太空鲸武器”科技选项/进度（已有选项则进度更多），其余类型中排外、军国或杀戮帝国额外增加猎杀数。",
+   "en": "Review note: the options are mutually exclusive by empire type: spiritualist, materialist or gestalt (without the exploration protocol), machine exploration protocol, and everyone else. All grant the space-whale weapon tech option/progress (more if the option was already open); in the last group xenophobes, militarists and homicidal empires also raise the hunted-fauna count."
   }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "c7b-society (resumed)",
+  "reviewer": "c7b-society; r2-society (stage 2); coordinator merge",
   "scope": {
-   "zh": "提亚奇首次接触的第一阶段事件（第二阶段事件在起源篇）。",
-   "en": "Stage 1 of the Tiyanki first contact (stage 2 is in the origin story)."
+   "zh": "提亚奇首次接触的两个阶段：第一阶段「怪异热源」（10）与第二阶段「提亚奇」（15），含选项、结束首次接触及与原始呼唤起源的衔接。",
+   "en": "Both stages of the Tiyanki first contact: stage 1 \"Weird Heat Blobs\" (10) and stage 2 \"Tiyanki\" (15), with options, the end of first contact and the Primal Calling hook."
   },
   "sources": [
-   "events/first_contact_NPC_country_types_events.txt:115-138",
-   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:45-83"
+   "common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:45-83",
+   "common/scripted_effects/first_contact_effects.txt:89-656",
+   "events/first_contact_NPC_country_types_events.txt:114-338",
+   "events/first_contact_NPC_country_types_events.txt:115-138"
   ],
-  "uncertain": [
-   "15 属于起源“原始呼唤”篇，本篇未重复。 / 15 is covered in the Primal Calling origin story."
-  ],
-  "guide": "public/summaries/event-first-contact-critters-10.md"
- }
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-critters-10.md",
+  "merged": [
+   "event-first-contact-critters-15"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "first_contact_critters.10",
+   "choice": "first_contact_critters.10.A",
+   "to": "first_contact_critters.15",
+   "label": {
+    "zh": "进入第二阶段（难度3）",
+    "en": "Stage 2 begins (difficulty 3)"
+   },
+   "evidence": "events/first_contact_NPC_country_types_events.txt:134 option A sets set_first_contact_stage = tiyanki_stage_2; common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:77 tiyanki_stage_2 fires first_contact_critters.15"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "first_contact_critters.15",
+   "to": "cara.1020",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  },
+  {
+   "from": "first_contact_critters.15",
+   "to": "cara.2020",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  },
+  {
+   "from": "first_contact_critters.15",
+   "to": "cara.3020",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  },
+  {
+   "from": "first_contact_critters.15",
+   "to": "first_contact.1100",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  },
+  {
+   "from": "first_contact_critters.15",
+   "to": "first_contact.1105",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  },
+  {
+   "from": "first_contact_critters.15",
+   "to": "first_contact.1110",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  },
+  {
+   "from": "first_contact_critters.15",
+   "to": "galactic_features.387",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  },
+  {
+   "from": "first_contact_critters.15",
+   "to": "marauder.15",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  },
+  {
+   "from": "first_contact_critters.15",
+   "to": "namarian.10",
+   "evidence": "Generic dispatch of the shared finish_first_contact_effect (common/scripted_effects/first_contact_effects.txt:89-656) run in 15's after block (events/first_contact_NPC_country_types_events.txt:177); it picks the follow-up from the contacted country's type, so it is not a continuation of the Tiyanki story."
+  }
+ ]
 }

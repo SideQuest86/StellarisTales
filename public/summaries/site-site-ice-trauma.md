@@ -1,6 +1,6 @@
 # 冰封之下 / Under the Ice
 
-- 分类 Category：先驱者与考古 C2 precursors · 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:362–426、events/arcsite_events.txt:14–580、events/arcsite_random_events.txt:14–200、common/scripted_effects/archaeology_event_effects.txt:1115 起、events/paragon_events_4.txt:3703–3808 · 审阅 Reviewed 2026-10-12（部分 partial）
+- 分类 Category：先驱者与考古 C2 precursors · 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:362–426、events/arcsite_events.txt:14–580、events/arcsite_random_events.txt:14–200、common/scripted_effects/archaeology_event_effects.txt:1115 起、events/paragon_events_4.txt:3703–3808 · 审阅 Reviewed 2026-10-13（r2-mixed）
 
 ## 如何开始 How it starts
 
@@ -18,8 +18,8 @@ Five stages; stage 4 is one random result of three; the final event offers rewar
 
 ## 分支与结局 Branches and outcomes
 
-- 1016/1017/1018 互斥，不是先后三章；地图中三者串成一线是编译器的已知问题。
-  The three stage-4 results are exclusive; their chain on the map is a known compiler issue.
+- 1016/1017/1018 互斥，不是先后三章；地图上它们是1010之后的并列分支，都通向“冰封磨难”（1020）。
+  The three stage-4 results are exclusive siblings after 1010 and all lead to 1020.
 - 掷骰失败时可能触发通用发掘事件（陷阱、资源、争吵、疾病、故障、幻象，收录在共享故事中）或本遗址专属的“孤独守夜人”（9000 → 9001 叛逃 / 9002 归队，各50%）与“破冰器”（9005，需相关科技或水生天赋）。
   Failed rolls can trigger generic dig incidents or the site-specific *Lonely Vigil* and *Icebreaker*.
 
@@ -32,4 +32,5 @@ Five stages; stage 4 is one random result of three; the final event offers rewar
 
 - 已核对 Checked：遗址定义、阶段事件、1015 的分派与排除条件、掷骰失败效果中的权重（9000/9005各50，共160）及9000的后续。
 - 更正 Corrections：该遗址原被并在“兹泰格·迈尔的宝藏”故事中；它是独立的考古遗址，现单列，并由纳苏兹·德墨忒尔的故事链接到这里。
-- 不确定 Uncertain：编译器的阶段串联问题未修复前，状态为部分。
+- 更正 Corrections (2026-10-13)：1015 标为 hub，1010→1016/1017/1018 与各自→1020 用带证据的桥接表达（arc_sites.txt:411–416；arcsite_events.txt:157–205）；1010→1020 的直连已抑制。1018 在已获 ocean_tech（1010 选项 b）时被排除。
+- 不确定 Uncertain：无结构性不确定项；通用发掘事件仅链接到共享故事 archaeology-incidents。

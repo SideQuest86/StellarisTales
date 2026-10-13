@@ -1,0 +1,30 @@
+{
+ "id": "event-refugees-3",
+ "notes": [
+  {
+   "doc": "refugees.1",
+   "zh": "仅当接收国尚无同物种、同来源国的难民旗标（refugeespecies@/refugeecountry@）时才出现；否则改发隐藏的 refugees.2，只显示一条消息，且同一物种4个月内不再提示。",
+   "en": "Shown only when the receiving empire has no refugee flags for the same species and origin country (refugeespecies@ / refugeecountry@); otherwise hidden refugees.2 is used, which only sends a message and suppresses the same species for 4 months.",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/refugee_events.txt:10-258",
+   "common/scripted_effects/refugee_effects.txt:1-130,236-262",
+   "common/on_actions/00_on_actions.txt:2176,3326"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-refugees-3.md",
+  "mergedStories": [
+   "event-refugees-5"
+  ]
+ }
+}

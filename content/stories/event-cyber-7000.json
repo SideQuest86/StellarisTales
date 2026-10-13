@@ -1,0 +1,92 @@
+{
+ "id": "event-cyber-7000",
+ "family": {
+  "title": {
+   "zh": "创世计划完成",
+   "en": "Genesis Project Complete"
+  },
+  "category": "stories",
+  "start": "cyber.7000",
+  "members": [
+   "cyber.7000",
+   "cyber.7001",
+   "cyber.7020"
+  ],
+  "sources": []
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cyber.7000",
+    "cyber.7001"
+   ],
+   "label": {
+    "zh": "殖民时：新建保护区或接管既有前智种族",
+    "en": "On colonisation: new preserve or existing pre-sapients"
+   },
+   "note": {
+    "zh": "7000 需要 create_presapients_no_colonize 载体旗标且无 pre_sapient_planet；7001 需要 pre_sapient_planet 且无 genesis_guided_pre_sapient_planet。",
+    "en": "7000 needs the create_presapients_no_colonize carrier flag and no pre_sapient_planet; 7001 needs pre_sapient_planet and no genesis_guided_pre_sapient_planet."
+   }
+  }
+ ],
+ "bridges": [
+  {
+   "from": "cyber.7000",
+   "to": "cyber.7020",
+   "conditional": true,
+   "label": {
+    "zh": "提升项目完成",
+    "en": "The uplift is completed"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:2079 on_uplift_completion -> cyber.7020 (events/machine_age_events.txt:245-275): owner is_guided_sapience_empire and the planet has pre_sapient_planet, which cyber.7010 (100-115) sets after cyber.7000."
+  },
+  {
+   "from": "cyber.7001",
+   "to": "cyber.7020",
+   "conditional": true,
+   "label": {
+    "zh": "提升项目完成",
+    "en": "The uplift is completed"
+   },
+   "evidence": "Same on_uplift_completion -> cyber.7020; 7001 is the case where natural pre-sapients already lived on the colonised planet (planet flag pre_sapient_planet)."
+  }
+ ],
+ "nodeLabels": {
+  "cyber.7000": {
+   "zh": "新建创世保护区",
+   "en": "New Genesis Preserve"
+  },
+  "cyber.7001": {
+   "zh": "收容既有前智种族",
+   "en": "Existing pre-sapients gathered"
+  },
+  "cyber.7020": {
+   "zh": "提升完成",
+   "en": "Uplift complete"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/machine_age_events.txt:9-70",
+   "events/machine_age_events.txt:66-95",
+   "events/machine_age_events.txt:100-240",
+   "events/machine_age_events.txt:241-275",
+   "common/on_actions/00_on_actions.txt:1321-1322,2079"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-cyber-7000.md",
+  "mergedStories": [
+   "event-cyber-7001",
+   "event-cyber-7020"
+  ]
+ }
+}

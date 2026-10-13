@@ -1,0 +1,20 @@
+{
+ "id": "event-refugees-5",
+ "exclude": [
+  "refugees.1"
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "coordinator (from r2-stories review)",
+  "scope": {
+   "zh": "重复条目：危机轰炸路径（隐藏 refugees.5 → refugees.6）与人口迁出路径进入同一窗口 refugees.1；两条路径已在 event-refugees-3 的导读中说明，本条目排除该文档，不再生成重复故事。",
+   "en": "Duplicate entry: the crisis-bombardment path (hidden refugees.5 -> refugees.6) reaches the same window refugees.1 as the displacement path; both paths are explained in the event-refugees-3 guide, so this entry excludes the doc and no duplicate story is generated."
+  },
+  "sources": [
+   "events/refugee_events.txt:10-258",
+   "common/on_actions/00_on_actions.txt:2176,3326"
+  ],
+  "uncertain": []
+ }
+}

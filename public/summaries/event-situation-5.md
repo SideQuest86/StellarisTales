@@ -1,6 +1,6 @@
 # 神秘迷宫 / The Mysterious Labyrinth
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 2026-10-12（部分：结构已审阅，树中残留编译器假连接）
+- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13（r2-society）
 - 来源 Sources：`events/situation_events.txt:8-393`；`common/situations/01_narrative_situations.txt:149-347`；`common/on_actions/00_on_actions.txt`（on_colony_4/5_years_old 随机殖民地事件池）
 
 ## 如何开始 How it starts
@@ -44,5 +44,5 @@ A bidirectional situation: progress starts at 50% and moves up or down; the appr
   Checked: events 5–55 and the situation definition (initial value, bidirectional, stage order stage_3/2/1/2_alt/3_alt, progress per approach, on_fail and on_progress_complete branches, the 21-month timer).
 - 更正 Corrections：草稿按阶段定义顺序把 25→15→10→40→45 串成一条线，并把五个结局都挂在局势卡下。现以审阅连接表达两个方向（局势→40→45→50/55；局势→10→15→20/30；局势→25）。
   The draft chained 25→15→10→40→45 in definition order and hung all five endings under the situation card. Reviewed links now express both directions (situation→40→45→50/55; situation→10→15→20/30; situation→25).
-- **未完成 Not yet complete**：编译器的阶段串联无法用 suppress 去除，树中仍有三条假“↺”连接（25→15、15→10、10→40）。已在台账中请求“阶段顺序覆盖”功能；在此之前本故事保持“部分审阅”。
-  The compiler's stage chain cannot be suppressed, so three false "↺" links remain (25→15, 15→10, 10→40). A stage-order override has been requested in the ledger; the story stays partial until then.
+- **复核 Re-check (2026-10-13)**：已用 `noStageSequence` 关闭按定义顺序的阶段串联；树中不再有 25→15、15→10 的假连接，所有阶段连接均为已审阅的桥接。
+  Re-check: stage chaining is switched off with `noStageSequence`; no false 25→15 / 15→10 / 10→40 links remain, every stage link is a reviewed bridge.

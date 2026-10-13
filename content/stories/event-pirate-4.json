@@ -1,0 +1,50 @@
+{
+ "id": "event-pirate-4",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "pirate.1",
+    "pirate.11",
+    "pirate.6",
+    "pirate.14",
+    "pirate.7"
+   ],
+   "label": {
+    "zh": "按帝国类型",
+    "en": "By empire type"
+   },
+   "note": {
+    "zh": "非格式塔：1（游牧：11）；蜂巢：6（游牧：14）；机器：7（游牧：14）。",
+    "en": "Non-gestalt: 1 (nomads: 11); hive: 6 (nomads: 14); machine: 7 (nomads: 14)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "pirate.1",
+   "zh": "与宝藏猎人起源已遇见霍船长的玩家，会改收 pirate.2/8/9/12/16（只覆盖标题的 base 变体事件，编译器未把它们建成文档）。",
+   "en": "Treasure Hunters empires that have met Captain Hoo receive pirate.2/8/9/12/16 instead (base variants that only override the title; the compiler does not build them as docs).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "r2-stories",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:86-111",
+   "events/pirate_events.txt:439-552",
+   "events/pirate_events.txt:9-130",
+   "common/on_actions/00_on_actions.txt:481"
+  ],
+  "uncertain": [
+   "pirate.2/8/9/12/16 are base-variant events (events/pirate_events.txt:316, 701, 708, 948, 1037) absent from the compiled docs."
+  ],
+  "guide": "public/summaries/event-pirate-4.md"
+ }
+}
