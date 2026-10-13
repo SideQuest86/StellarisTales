@@ -1,25 +1,73 @@
 {
  "id": "rift-tower",
+ "family": {
+  "title": {"zh": "巨塔", "en": "The Tower"},
+  "category": "rifts",
+  "start": "astral_rifts:tower",
+  "members": ["astral_rifts:tower", "astral_rift.695"]
+ },
+ "category": "rifts",
  "bridges": [
   {
    "from": "astral_rift.691",
    "to": "astral_rift.696",
    "conditional": true,
-   "label": {
-    "zh": "招募的科学家去世后",
-    "en": "After the recruited scientist dies"
-   },
-   "evidence": "on_leader_death -> astral_rift.695 requires recruited_tower_rift_leader and tower_rift_leader, set only in 691.b",
-   "choice": "astral_rift.691.b"
+   "choice": "astral_rift.691.b",
+   "label": {"zh": "招募的科学家去世后", "en": "After the recruited scientist dies"},
+   "evidence": "events/astral_rifts_0_events.txt:2754-2773 (691.b clones the leader with leader flag tower_rift_leader and sets country flag recruited_tower_rift_leader; 691.a sets neither); common/on_actions/00_on_actions.txt:2394 on_leader_death -> astral_rift.695 (:2776-2796, requires both flags and a non-gestalt empire) -> 696"
+  }
+ ],
+ "endings": {
+  "astral_rift.620": {
+   "label": {"zh": "互惠：留下礼物离开", "en": "Reciprocity: a gift left behind"},
+   "note": {"zh": "花费 100 合金留下回礼与母星坐标；探索结束，获得凝聚力。", "en": "100 alloys are left as a gift together with the home system's coordinates; the exploration ends with a unity reward."},
+   "evidence": "events/astral_rifts_0_events.txt:2426-2432, 2644-2655"
+  },
+  "astral_rift.625": {
+   "label": {"zh": "预言否决：采集星界物质", "en": "Prophecy rejected: astral material"},
+   "note": {"zh": "离开或杀死塔上的生物后改为采集云中的星界物质；探索结束，获得大量星界丝缕。", "en": "After leaving, or after killing the tower's creatures, the crew harvests astral material from the clouds; the exploration ends with a large astral thread reward."},
+   "evidence": "events/astral_rifts_0_events.txt:2658-2684"
+  },
+  "astral_rift.696": {
+   "label": {"zh": "塔中来客的葬礼", "en": "Funeral of the tower's envoy"},
+   "note": {"zh": "只有 691.b 招募为科学官的人物去世时才会触发：葬礼在裂隙彼端的塔中举行，获得社会学研究与凝聚力。", "en": "Fires only when the person recruited as a scientist in 691.b dies: a funeral in the tower beyond the rift, granting society research and unity."},
+   "evidence": "events/astral_rifts_0_events.txt:2776-2822"
+  }
+ },
+ "nodeLabels": {
+  "astral_rift.691": {"zh": "塔中来客的晋升", "en": "The tower's envoy advances"},
+  "astral_rift.696": {"zh": "来客去世", "en": "Death of the envoy"}
+ },
+ "notes": [
+  {
+   "doc": "astral_rift.615",
+   "kind": "review",
+   "zh": "两个选项都会结束探索：邀请其来帝国（615.a）在 360 天后经隐藏事件 690 生成一名科学官人选并触发 691；扣押文件（615.b）立即获得一项随机社会学科技。",
+   "en": "Both options end the exploration: inviting the creature (615.a) leads, 360 days later via hidden event 690, to a scientist candidate and event 691; confiscating its documents (615.b) grants a random society technology at once."
+  },
+  {
+   "doc": "astral_rift.691",
+   "kind": "review",
+   "zh": "691.a 让其作为普通公民生活（获得凝聚力，人物移除），不会有后续葬礼；只有 691.b 招募为科学官后，在其去世时才有 696。",
+   "en": "691.a lets the person live as a citizen (unity; the leader is removed) and has no funeral follow-up; only 691.b, recruiting them as a scientist, leads to 696 when they die."
+  },
+  {
+   "doc": "astral_rift.600",
+   "kind": "review",
+   "zh": "“试着沟通”仅限非“非友好”帝国，“杀了它”仅限非友好帝国（is_unfriendly）。",
+   "en": "“Attempt to communicate” requires a not-unfriendly empire; “Kill it.” is only for unfriendly empires (is_unfriendly)."
   }
  ],
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
   "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
-  }
+   "zh": "已核对裂隙定义与 600–696 全部事件，包括 615.a 的 360 天延时、691 的两个选项与 on_leader_death 经 695 到 696 的双标记条件；原独立故事 event-astral-rift-695 已通过故事族并入本篇。",
+   "en": "Checked the rift definition and every event 600–696, including the 360-day delay of 615.a, both options of 691 and the double-flag on_leader_death route 695 → 696; the former standalone story event-astral-rift-695 is merged in through this family."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-tower.md"
  }
 }

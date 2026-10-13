@@ -1,0 +1,102 @@
+{
+ "id": "anomaly-distar-warform-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.156",
+    "distar.157"
+   ],
+   "label": {
+    "zh": "回收成功或超时",
+    "en": "Recovery succeeds or times out"
+   },
+   "note": {
+    "zh": "RECOVER_WARFORM_PROJECT 限时1800天。",
+    "en": "RECOVER_WARFORM_PROJECT has an 1800-day limit."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.158": {
+   "zh": "启动：诊断与提问",
+   "en": "Boot: diagnostics and questions"
+  },
+  "distar.159": {
+   "zh": "“造主”",
+   "en": "\"MAKERS\""
+  },
+  "distar.160": {
+   "zh": "“造主”循环",
+   "en": "\"MAKERS\" loop"
+  },
+  "distar.161": {
+   "zh": "“你是造主吗？”",
+   "en": "\"Are you makers?\""
+  },
+  "distar.162": {
+   "zh": "陌生部件",
+   "en": "Foreign devices"
+  },
+  "distar.163": {
+   "zh": "修复者即造主？",
+   "en": "Repairers are makers?"
+  },
+  "distar.164": {
+   "zh": "招募或替换AI",
+   "en": "Recruit or replace the AI"
+  },
+  "distar.165": {
+   "zh": "它请求停止",
+   "en": "It pleads to stop"
+  },
+  "distar.166": {
+   "zh": "防篡改触发",
+   "en": "Tamper-proofing triggers"
+  }
+ },
+ "endings": {
+  "distar.167": {
+   "label": {
+    "zh": "战舰自毁",
+    "en": "The warship destroys itself"
+   },
+   "note": {
+    "zh": "替换AI触发防篡改机制；可拆解或研究残骸。",
+    "en": "Replacing the AI triggers its tamper-proofing; strip or study the wreck."
+   },
+   "evidence": "events/distant_stars_events_1.txt:5211"
+  },
+  "distar.157": {
+   "label": {
+    "zh": "战舰腐蚀殆尽",
+    "en": "The warship corrodes away"
+   },
+   "note": {
+    "zh": "回收项目超时。",
+    "en": "The recovery project timed out."
+   },
+   "evidence": "events/distant_stars_events_1.txt:4766"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:589-609",
+   "events/distant_stars_events_1.txt:4551 (distar.155)",
+   "common/special_projects/00_projects_distant_stars.txt:174 (RECOVER_WARFORM_PROJECT)",
+   "events/distant_stars_events_1.txt:4610 (distar.156)",
+   "events/distant_stars_events_1.txt:4766 (distar.157)",
+   "events/distant_stars_events_1.txt:4782-5208 (distar.158-166)",
+   "events/distant_stars_events_1.txt:5211 (distar.167)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-warform-cat.md"
+ }
+}

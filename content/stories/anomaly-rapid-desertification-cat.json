@@ -1,0 +1,107 @@
+{
+ "id": "anomaly-rapid-desertification-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.7140",
+    "anomaly.7146"
+   ],
+   "labels": [
+    {
+     "zh": "项目完成",
+     "en": "Project completed"
+    },
+    {
+     "zh": "项目超时",
+     "en": "Project timed out"
+    }
+   ]
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.7160",
+    "colony.7166"
+   ],
+   "labels": [
+    {
+     "zh": "60%（收养）",
+     "en": "60% (adopted)"
+    },
+    {
+     "zh": "40%（收养）/30%（牲畜）",
+     "en": "40% (adopted) / 30% (livestock)"
+    }
+   ]
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.7170",
+    "colony.7175"
+   ],
+   "labels": [
+    {
+     "zh": "50%",
+     "en": "50%"
+    },
+    {
+     "zh": "50%",
+     "en": "50%"
+    }
+   ]
+  }
+ ],
+ "endings": {
+  "anomaly.7145": {
+   "label": {
+    "zh": "放任：行星死亡",
+    "en": "Left alone: the planet dies"
+   },
+   "note": {
+    "zh": "行星变为贫瘠星球。",
+    "en": "The planet becomes barren."
+   },
+   "evidence": "events/anomaly_events_4.txt:4682-4748"
+  },
+  "anomaly.7150": {
+   "label": {
+    "zh": "自然的新生",
+    "en": "Nature's Rebirth"
+   },
+   "note": {
+    "zh": "侵扰解除，行星获丰饶修正与新资源点。",
+    "en": "Infestation removed; Lush Planet and new deposits."
+   },
+   "evidence": "events/anomaly_events_4.txt:4818-4845"
+  }
+ },
+ "nodeLabels": {
+  "anomaly.7145": {
+   "zh": "放任：灭绝",
+   "en": "Left alone: extinction"
+  },
+  "anomaly.7146": {
+   "zh": "项目超时：灭绝",
+   "en": "Project timed out: extinction"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部13个文档。",
+   "en": "All 13 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_4.txt",
+   "events/colony_events_3.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-rapid-desertification-cat.md"
+ }
+}

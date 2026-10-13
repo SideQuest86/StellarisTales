@@ -1,87 +1,109 @@
-# 塞塔娜：风暴、演说与调查
+# 合成女王：塞塔娜 / Cetana, the Synthetic Queen
 
-审读状态：本文目前覆盖风暴开场、两次演说、风暴研究与重复通讯，以及通讯中的宣战、塑造者线索。塞塔娜完整天灾链仍在审读，不能将此文视为全部结局和遭遇的完整总结。
+- 分类 Category：天灾 Crisis · DLC：机械时代 Machine Age · 审阅 Reviewed 2026-10-12（c5a）
+- 来源 Sources：`events/machine_age_crisis_events.txt`（crisis.8005–11030、20000–24250）、`common/situations/08_machine_age_situations.txt:607-802`、`common/special_projects/04_projects_machine_age.txt:70-441`、`common/scripted_effects/02_machine_age_effects.txt`、`common/on_actions/00_on_actions.txt`、`common/event_chains/00_event_chains_machine_age.txt`、`common/archaeological_site_types/10_machine_age_arc_sites.txt`，以及虚境入口 `events/shroud_events.txt`、`events/utopia_shroud_events.txt`、`events/shroud_forged_events.txt`。
 
-## 从风暴到第一次发言
-这场危机不是先打开重复通讯菜单。隐藏的出现事件8005启动计时：第180天向人类玩家发送风暴初现警报8035；第360天与第720天分别进行两轮风暴扩张；第1080天完成领地部署，15天后向普通、失落及觉醒帝国发送发言预告8039。因此，从初次警报到发言预告相隔约915天。网站将这段等待标在连接上，避免把两个相隔很久的消息读成即时连续对话。
+> 本导读全文均为审阅者的说明，不是游戏原文；原文（双语）在阅读器中。时间、权重与条件均来自脚本，行号见审阅台账 `content/chronology/review/c5a-cetana.md`。
+> Everything in this guide is reviewer commentary, not game text; the bilingual originals are in the reader. Timings, weights and conditions come from the scripts; line numbers are in the ledger `content/chronology/review/c5a-cetana.md`.
 
-确认发言预告后，人类玩家进入8040首次接触，AI走8041处理。8040先确认女王仍存在且尚未完成首次演说，再建立通讯、记录首次演说标志，逐步揭露她的身份。8060是之后的通讯入口，不能替代这一场介绍。
+## 如何开始 How it starts
 
-风暴期间还可能发生独立遭遇。失去星系的8020是受影响所有者的警报；未获得防护的舰队进入风暴，会由8024处理损伤和失踪，并在首次遭遇时显示8025、开放风暴研究。它们取决于领土和舰队行动，不是所有玩家都必须按编号阅读的主线章节。初现警报8035也会根据此前是否尝试进入风暴使用不同描述。
+终局阶段每五年一次的天灾抽选（`crisis_trigger.1`）可能选中塞塔娜（需机械时代DLC，基础权重10，另有多项修正）；被选中后200–1000天，她悄然出现（隐藏事件8005）。她优先在排外失落帝国的首都、其他非机械失落帝国首都、遗迹世界或墓穴世界降临，把所在星系化作风暴。“银河守护者”路线的特殊项目也可能直接召来她（若有虚境铸就起源的帝国则不会）。人类玩家第一份可见的报告是180天后的“功率骤增”（8035）。
 
-## 首次接触之后
-首次演说结束时，如果此前尚未开启风暴调查，会开放 THE_SYNTH_QUEENS_STORM。它需要10000点物理学研究，没有现场舰船要求，完成时间随科研进度而变；完成后进入9100。重复通讯并不是完成这一研究的前置。
+The end-game crisis roll every five years (`crisis_trigger.1`) can pick Cetana (Machine Age DLC required; base weight 10 with several modifiers). 200–1,000 days later she appears silently (hidden 8005), preferably at a xenophobe fallen empire's capital, another non-machine fallen empire capital, a relic world or a tomb world, turning that system into a storm. The Defender of the Galaxy special projects can also summon her (not if any empire has the Shroud-Forged origin). For human players the first visible report is "Power Surge" (8035), 180 days in.
 
-首次演说后的宗主警告属于“先辈子弟”起源分支：仍有带指定标志的宗主时，相关帝国七天后收到8046。没有这种帝国时，失落或觉醒帝国会与女王开战；若连这些帝国也不存在，则另行安排360天后的8045。网站的连接显示这些前置，不能将两种情况都读成普通帝国必经的下一章。
+## 剧情脉络 Story outline
 
-## 第二次演说与调查的开始
-第二次演说的三个开场话题最终汇合到建立前哨的要求。境内有无合适星系决定两组不同回应；接受增加5信任，反对降低5，但四个结束回应都会给出礼物并检查研究进度。未开启首项研究者得到首项；已经完成者得到第二项；正在研究者继续原项目，不会被要求从头开始。随后8999通知建立玩家调查局势，并为已完成首项研究补记1点进展。女王的末日倒计时是另一项局势，不能与玩家的调查进展混为同一计量。
+### 一、风暴期（第0–1095天）/ The storm (days 0–1,095)
 
-女王宣布此前阻挠她的人已经受罚，重新把注意力转向她口中的伟业。帝国则开始担心：这些行动背后可能另有目的。8999的文字要求分配资源调查，同时尽量避免过早激怒她。这构成了一段一边应付她、一边寻找其控制方式的故事，而非立即宣战。
+风暴在第360天与第720天两次扩张，第1080天她在自己的星系筑起基地；15天后（即警报后约915天），所有普通、失落与觉醒帝国收到“风暴中的信号”（8039），人类玩家随即进入首次演说（8040）。这段时间里有两种可选遭遇，可能早于也可能晚于风暴警报：风暴吞没你的星系时收到“失去星系”（8020，只在首次演说前）；你的舰队第一次闯入风暴且没有防护时，舰队重创、失踪，并收到“舰队残骸”（8025），风暴研究由此提前开放。若舰队已在警报前闯入过风暴，8035会显示另一段描述。
 
-## 看穿风暴
-首项研究揭露，所谓风暴实际上是极其先进的纳米虫群。若此时尚未认识女王，报告仍在追问幕后指挥者是谁；已经接触过她的版本则把问题转向她如何控制虫群。两段是不同经历下的报告，不应同时当作顺序叙述。
+The storm expands at days 360 and 720 and she builds her bases at day 1,080; 15 days later (about 915 days after the alert) every regular, fallen and awakened empire receives "A Signal in the Storm" (8039), and human players go straight into her first address (8040). Two optional encounters can come before or after the alert: "System Lost" (8020, only before the first address) when the storm swallows one of your systems, and "Wrecked Fleet" (8025) the first time an unprotected fleet of yours enters the storm — which also opens the storm study early. If a fleet tried before the alert, 8035 shows a different description.
 
-风暴研究也有自己的时序。第一项完成后，只有已经开启玩家调查局势才立即开放第二项，否则要等待第二次演说。第二项共需50000点物理学研究，采纳纳米科技传统则减至25000点；达到50%先出现9105中期发现，继续同一项目到100%才出现9110并获得风暴防护。网站在中期发现之后提供“继续同一项目”的连接，避免读到一半无路可走。七天后女王通过9115来讯；这条路线无需先宣布战争。
+### 二、首次演说与等待 / The first address and the wait
 
-中期研究从风暴中取出纳米机器人，发现微型跃迁装置和对传感器的干扰：帝国只能看见女王允许它看见的东西。最终研究转向指令机制，发现机器人会重复上一条命令，直到收到新命令。研究者不能阻止女王继续发令，但能利用指令瘫痪争取优势；这解释了获得防护的叙事依据，并不意味着已经击败她。
+8040是四步对话。结束时：若风暴研究尚未开放则开放（10000物理学，无需舰船），并可从此通过外交联系她——但在第二次演说前她不会回应（8063）。先辈子弟起源、宗主为指定失落帝国者7天后收到宗主的警告（8046）。若银河中仍有失落/觉醒帝国，它们向女王宣战，第二次演说在最后一个失落/觉醒帝国覆灭后的年度检查时到来；若已没有，则在下一次年度检查或360天后到来，以先到者为准（旧版只写“360天后”，已更正）。在获得反制手段之前与她本人的部队（不含运输船队与前哨）交战，舰队会瘫痪并被送回（8070），她随后要求停战（8075）。
 
-9115来讯先要求选择态度，然后可以追问纳米机器来源，或直接结束；追问后只剩结束回应。普通道歉与纳米科技帝国请求教导互斥。请求教导会增加10信任并开启纳米学徒话题，挑衅降低5信任。网站按此顺序显示对话，情境切换仍属于阅读假设，尚未自动继承跨章节传统与信任。
+8040 is a four-step conversation. At its end the storm study opens if it was not already open (10,000 physics, no ship needed), and she can be contacted through diplomacy — though she does not answer before the second address (8063). A Scion whose overlord is the designated fallen empire gets a warning after 7 days (8046). If fallen or awakened empires still exist they go to war with her, and the second address comes at the yearly check after the last of them falls; if none remain, it comes at the next yearly check or after 360 days, whichever is first (the old "360 days" wording was corrected). Engaging her own forces (not convoys or outposts) before you have countermeasures disables your fleet and sends it home (8070), followed by her demand for peace (8075).
 
+### 三、看穿风暴 / Seeing through the storm
 
-## 数据银行：一个不许追问的委托
-女王承认，在帝国附近建立基地是有意为之。她要求取回很久以前失去的数据银行，许诺奖励，却禁止解密，声称其中知识超出了帝国的能力。这使委托同时成为一次服从测试：面对拒绝，她宁可派风暴摧毁缓存，也不愿让别人读到它。
+首项研究完成后（9100），若调查局势已存在，立即开放第二项研究并+1调查进度；否则等第二次演说结束时开放。9100按你是否已听过首次演说有两段不同描述。第二项研究需50000物理学（采纳纳米科技传统为25000）：50%时出现中期发现（9105，+1），完成时（9110，+1）获得风暴防护；7天后她来讯警告（9115，纳米科技帝国可请求教导，解锁“纳米学徒”话题），再7天后可以袭击她的前哨（8048）。
 
-接受任务后，调查者挖出一份埋藏超过十万年、仍有电力的数据银行。可以原样交还，也可以打开；唯物主义帝国另有破解措辞。十四天后，交还者进入奖励对话，打开者读到一条残缺警报：有人急于向大元帅和星球联盟传递消息，女王卫队正在追击，发送者要求阻止她。正文没有完整说明她的计划，不能凭这段残文补写一个未经证实的完整历史。游戏在这里揭示末日倒计时，让读者意识到调查与生存的关联。
+After the first study (9100), the second study opens at once (+1 progress) if the investigation situation exists; otherwise when the second address ends. 9100 has two descriptions depending on whether you heard the first address. The second study costs 50,000 physics (25,000 with Nanotech): at 50% an interim finding (9105, +1), at completion storm protection (9110, +1); 7 days later her warning call (9115 — Nanotech empires may ask to learn, unlocking the nanite-apprentice topic), and 7 days after that her outposts can be raided (8048).
 
-读到警报后，非唯物主义帝国十四天后遭到女王质问；唯物主义帝国则进入交付回应。这是原版条件的区别，不应强制所有解密者经历同一场责问。质问开始先损失15信任，随后可以缓和或继续对抗。交付回应先增加10信任，再从科技礼物、常规资源、战略资源、稀有资源四组奖励中选择一种；不是依次领取全部。
+### 四、第二次演说之后：并行的线索 / After the second address: parallel threads
 
-拒绝最初委托后，一天后探测到风暴逼近，开启另一项抢救任务。抢先取回数据银行后，可以交还以保全天体，也可以解密；解密分支七天后读到同一份残文，并在回应中毁掉目标天体，十四天后收到女王来讯。抢救失败则先出现天体被风暴摧毁的报告，再于十四天后进入来讯。
+第二次演说（8045）是长对话：三个开场话题汇合到建立前哨的要求；境内有无合适星系决定两组回应；四个结尾都会带来礼物与风暴研究。之后六条线索同时展开：
 
-普通接受任务后的失败有所不同：它直接进入女王对话，此时目标尚未在这条回调中被摧毁；经过威胁与回应后才发生毁灭。网站因此区分“没有及时取回”和“天体已经毁灭”两类情境。原始项目均要求科研船和科学家，基础研究天数为1800，普通任务期限字段为900、抢救任务为540；这些是脚本参数，具体引擎如何计算期限与研究速度尚未完成核实，本文不据此断言任务无法完成。
+1. **末日倒计时**（她的局势）：每月约3点，受天灾强度、人类玩家数量和“最后时刻”修正影响，满1000即失败；配合要求会推进它，前哨袭击后的发现事件使其−20。50%时尚未能查看倒计时的玩家收到预警（8525）；80%时她向所有帝国宣战（8515，即使你已先宣战）；100%为失败结局（8505）。
+2. **调查局势**（8999开启）：进度只来自事件。6时3天后破解通讯频段（9000，此后袭击胜利不再招来训斥），10时完成（9010）。
+3. **第一项委托：数据库**（8080，演说后360–540天）。
+4. **通讯菜单**（8060）：随时可联系她，直到开战。
+5. **袭击**：所有玩家结束第二次演说后的首个月度检查，开始“薄弱环节”（8047）与三支运输船队，此后每年可能增加。
+6. **信标调查**：同一次检查后95天（20000）。
 
-这些结尾会标记首次委托结束，女王仍会继续她的计划。一次任务的结束不是整场天灾的结局。
+The second address (8045) is a long conversation: three opening topics converge on her outpost demand, whether you have a suitable system decides which pair of replies you get, and all four endings bring gifts and storm research. Then six threads run at once: (1) her **doomclock** — about 3 points a month, modified by crisis strength, the number of human players and an "eleventh hour" ×1.2, lost at 1,000; complying with demands pushes it, finds after outpost raids take 20 off; at 50% players who cannot yet see it get a warning (8525), at 80% she declares war on everyone (8515, even if you already did), at 100% the failure ending (8505); (2) the **investigation situation** opened by 8999 — progress only from events, at 6 the comm scrambler (9000, no more scolding after won raids), at 10 completion (9010); (3) the **databank demand** (8080, 360–540 days later); (4) her **contact menu** (8060) until war; (5) **raids** from the first monthly check after every player has finished the address (8047, three convoys, more yearly); (6) the **beacons** 95 days after that check (20000).
 
-## 随机要求与潜入报告
-五类要求并非五个连续任务。人口、资源、科研、普通星系与宜居星系分别提供普通配合、秘密行动和拒绝路线，排外主义另有专属拒绝措辞。只有秘密行动会安排各自的情报报告，通常延迟90–180天，并在报告触发时要求尚未开战。情境选择注明所假设的资格，不模拟帝国全部资源和领土。
+### 五、数据库委托 / The databank demand
 
-资源贡品里的监控设备发现，女王搜集了来自银河各处的人，准备了大量医疗设施，却几乎没有相应食物。这份报告增加调查进展并给出720天的战争准备修正。普通资源供给影响合金产出25%，秘密行动供给影响50%，均持续360天；这不是一次性支付合金的事件。
+接受：调查船与科学家前往首都系的卫星或无用行星（项目按天计算，期限900天）。成功取回后（8085）可原样交还（→8100奖励对话，四类奖励择一），或打开（→8090残缺警报；唯物主义帝国另有破解措辞）。打开后，非唯物主义帝国14天后受到质问（8095），唯物主义帝国抹去痕迹、照常领赏（8100）；两者都+1调查进度并揭示倒计时。超时未完成：女王来讯（8130），先威胁、再在回应中毁掉目标天体。拒绝：1天后风暴逼近，开启“与风暴赛跑”（期限540天）；抢回后可解密（8115，天体被毁，揭示倒计时，但不加调查进度）或交还（8120）；超时则天体被毁（8125），再进入8130。所有结尾都标记“首次委托结束”，随机要求以此为前提。项目的1800“研究天数”如何被缩短，游戏文件没有完整定义，网站不断言项目必然失败或必然可完成。
 
-科研交换让特工短暂进入女王的子处理矩阵，取得她转化为合成形体的记忆：她将追随者的死亡解释为拯救更多人的代价。这里有实质翻译差异：中文写数百人死亡，英文写数百万人；网站保留两份原文，导读不擅自统一。两种配合都会获得360天的研究速度-25%修正，秘密行动后续另加360天的-50%修正与调查进展，不能将它误称为科研奖励。
+Accepting sends a science ship with a scientist to a moon or useless planet in your capital system (day-based project, 900-day limit). Recovered (8085), the databank can be returned unopened (→ 8100, one of four rewards) or opened (→ 8090, a fragmentary warning; materialists get their own wording). After opening, non-materialists are confronted 14 days later (8095) while materialists erase their traces and are rewarded (8100); both give +1 progress and reveal the doomclock. If the limit expires she calls (8130), threatens, then destroys the body. Refusing brings a storm 1 day later and a 540-day race: decrypt (8115: body destroyed, doomclock revealed, no progress) or hand it over (8120); if the race expires the body is destroyed (8125) before 8130. Every ending marks the first demand finished, which the random demands require. The files do not fully define how the projects' 1,800 "research days" are reduced, so the archive claims neither that they must fail nor that they always succeed.
 
-交出普通星系后，隐藏设备观察到天体被分解、资源耗尽并迅速用于制造舰队。此处中文称舰队从首都启航，英文称前往首都，方向相反；不能据此补写唯一的航行路线。宜居星系报告则描述居民被送进实验设施、智能衰退，卧底随后失联。它要求调查进度至少8以及合格目标，秘密行动还需两个目标；这项牺牲不应在开场就作为人人可选的普通委托。
+### 六、随机要求与情报 / Random demands and intelligence
 
-宜居星系报告同样增加调查进展，并提供720天的进一步战争准备修正。所有这些报告提供的是观察和线索，不是宣战或胜利本身。
+首次委托结束后，调查局势每月有10%机会选中“要求检查”，180–240天后若未开战、无冷却、未在对话，就从五类要求中抽一项（各权重5），每项只出现一次，之后220天冷却：人口（8280）、资源（8285）、科研（8290）、星系（8295）、宜居星系（8300，另需调查进度≥8）。每项都可普通配合、秘密行动或拒绝（排外主义另有拒绝措辞）。只有秘密行动在90–180天后（届时尚未开战）带来情报报告（8305/8310/8315/8320/8325，各+1进度）。配合会推进倒计时，秘密行动推进更多；科研配合带来研究速度负面修正，不是奖励。
 
-## 她为何行动
-人口要求中的秘密行动会派出特工。90–180天后、仍未开战时，特工才可能传回报告：被女王关怀的人逐渐失去意识，对言语和触碰不再反应，特工担心自己也将如此。这是来自境内的观察，进一步动摇她关于关怀的说辞；收到报告增加调查进展，并开放人口要求的后续通讯话题，不直接触发战争。
+**星系要求8295在原版脚本中无法触发**：其触发条件要求事件目标`gifted_system`已存在，而该目标只在8295自身的immediate中设置，全游戏文件没有别处设置它。因此8320报告与通讯话题“这曾是我们的星系”（8060.g）同样无法到达。网站保留其原文，并在入口处注明。
 
-代价也不能忽略：普通配合与秘密行动都会推进女王自己的倒计时，秘密行动推进更多，同时带来调查线索。这里不是单纯“帮助她”或“阻止她”的单向选择，而是在取得证据和让她的计划前进之间承担代价。具体倒计时增量随天灾强度变化，不能写成固定天数。
+After the first demand, the investigation situation has a 10% monthly chance to start a demand check; 180–240 days later, if there is no war, cooldown or open conversation, one of five demands is drawn (weight 5 each), each at most once, then a 220-day cooldown: pops (8280), resources (8285), research (8290), system (8295) and habitable system (8300, which also needs progress ≥ 8). Each can be met, met through a covert action, or refused (xenophobes have their own refusal). Only covert actions bring an intelligence report 90–180 days later if war has not begun (8305/8310/8315/8320/8325, +1 progress each). Complying advances her doomclock, covert action more; the research demand imposes research-speed penalties, not rewards. **The system demand 8295 cannot fire in the shipped script**: its trigger needs the event target `gifted_system`, which only 8295's own immediate block sets, and no other file sets it — so report 8320 and the contact topic "This was our system" (8060.g) are unreachable too. The texts are kept and marked.
 
-塞塔娜将终结痛苦称作自己的功能与存在意义。面对帮助，她要求耐心等待召唤；面对威胁，她强调时间已经埋葬过往反对者。她把自己的计划描述为安宁与启蒙，这些措辞属于角色立场，读者应结合其他事件判断其后果。
+### 七、信任：惩戒与礼物 / Trust: retaliation and gifts
 
-冷冻舱中的追随者与冰封梦者展示了她和信徒之间的关系。她称赞忠诚，也承认追随者延长生命的尝试失败；谈及被困梦境数千年的埃里克·娜丽丝·凯拉克时，她表达怜悯，却说对方已不再承担计划中的角色。不要把这些通讯强排成每位玩家必经的连续事件：相关话题需要先发现对应线索。
+调查局势每月检查她对你的信任。低于25时依次惩戒（每次至少间隔900天）：小型风暴（10100，360天后平息10105）→科研病毒（10110，900或1200天后解除10115）→强风暴（10120，900或1200天后平息10125）→刺杀统治者（10130）或剔除格式塔的军事节点（10140）。高于75时依次赠礼：11010→11020→此后每次11030（每份降低10信任）。若拥有遗珍“扎克兰的头颅”，她会索要一次（8250）。
 
-## 扎克兰与抟土之塑师
-在塞塔娜的叙述中，扎克兰先积聚政治和军事力量，最后求助虚境，以自身存在为代价换取对她的囚禁。她将抟土之塑师称作孩子气的魂灵。这里记录的是她对敌人的描述，不是无立场的旁白。
+The investigation situation checks her trust in you every month. Below 25 she retaliates in order, at least 900 days apart: a small storm (10100, lifted 360 days later in 10105) → a research virus (10110, lifted after 900 or 1,200 days in 10115) → a great storm (10120, lifted after 900 or 1,200 days in 10125) → the ruler's assassination (10130) or, for gestalts, the culling of the military node (10140). Above 75 she sends gifts in order: 11010 → 11020 → 11030 every time after (each costs 10 trust). If you own the relic Severed Head of Zarqlan she asks for it once (8250).
 
-“恶魔？”与“他们不是恶魔。”会得到相同的后续答复，但游戏效果不同：第二种回应要求已突破虚境，并设置可以联系塑造者的标志。普通提问不会得到这个解锁。结束通讯时，还需虚境铸就起源、无轮回之终末契约、无叛徒标志且此前未联系等条件，才转入相应起源事件。
+### 八、袭击 / Raids
 
-## 对话如何推进
-常规话题可以返回后再次询问。星球遭毁、数据银行、人口与星系要求、扎克兰、冷冻舱、冰封梦者、纳米学徒等话题依赖此前经历；完成各自回应后，原版会清除该话题的可用标志。信任奖励也有单独标志防止重复领取，不能把重复问答解释为无限增加信任。
+每支运输船队都有一个伏击项目（舰队战力≥50000，1天）；前哨袭击在获得风暴防护后由8048开放。袭击触发战斗：赢了，3天后随机发现——普通战利品（权重70，前哨×0.2）或三种只出现一次的“秘密”（活体货物5、幽灵船15、医学之谜10，各+1进度）；7天后女王警告（8195，破解通讯频段后不再出现，5年内最多一次）。输了，7天后她训斥（8194），伏击项目重新开放。开战后袭击项目与事件链中止。
 
-纳米学徒还要求相应话题已解锁、塞塔娜信任超过49。她传授的是纳米提取方法，不是普通通讯自动获得的奖励。
+Every convoy has an ambush project (fleet power ≥ 50,000, 1 day); outpost raids open with 8048 once you have storm protection. A won fight brings, 3 days later, a random find — ordinary loot (weight 70, ×0.2 after outposts) or one of three once-only secrets (living cargo 5, ghost ships 15, medical mystery 10; +1 progress each) — and 7 days later her admonition (8195; not after the comm scrambler; at most once per 5 years). A lost fight brings her scolding 7 days later (8194) and reopens the project. War aborts the raid projects and chains.
 
-宣战需要先满足调查与风暴防护等条件，并经过表达意图、确认、最终开战三步。中途可以撤回。最终确认后，七天后的回调重组舰队，再向已建立通讯的帝国发出通知；这不是击败塞塔娜的结局。
+### 九、信标与叛教者 / The beacons and the apostate
 
-## 网站中的阅读方式
-页面使用“对话情境”选择所假设的外部经历，从常规通讯开始。切换情境会重新开始当前对话。它提供条件分支的阅读入口，不模拟整个存档的信任、科技与全局旗标。
+四座真正的信标可按任意顺序调查（各300天，需调查船）：永恒的大屠杀（20100，解锁“扎克兰”话题）、沉睡大军（20200，解锁“冷冻舱”话题）、被遗忘的武器（20300）、不可能的幸存者（20500，在首都开出考古点，其终章21220可选择把埃里克送还女王，解锁“冰封梦者”话题）。空信标（20600）只给科研奖励，不计入。四座全部完成后15天收到“被忽视的请求”（21000），30–120天后境内出现最后的信标（21005，仅人类玩家），调查后开出考古点“隐蔽神庙”：第三层（21110）读到《扎克兰史诗》并解锁联系抟土之塑师；第五层遇到无名叛教者，可招募她为领袖（21140）。开战会中止信标事件链。
 
-当前原版 crisis.8060.5.b 同时要求没有任何对话标志与存在该话题标志，条件互相矛盾。网站保留原始数据，但正常交互不将它列为可用回应。
+The four real beacons can be investigated in any order (300 days each, science ship): the timeless massacre (20100, unlocks the Zarqlan topic), the sleeping army (20200, the cryo-pod topic), the forgotten weapon (20300) and the unlikely survivor (20500, which opens a dig on your capital; its last stage 21220 can send Elik back to her queen, unlocking the Frozen Dreamer topic). Empty beacons (20600) give only research. When all four are done, "Unheeded Pleas" follows 15 days later (21000) and a last beacon appears inside your borders 30–120 days after (21005, human players), leading to the dig "Veiled Temple": its third stage (21110) yields the Epic of Zarqlan and unlocks contact with the Animator of Clay; its fifth leads to the nameless apostate, who can be hired as a leader (21140). War aborts the beacon chain.
 
-## 原文依据与后续审读
-已人工核对 crisis.8060 的状态脚本、has_synth_queen_dialogue_flag、crisis.8156/8158，并对照核心动机、扎克兰、冷冻舱、冰封梦者和纳米学徒的中英文答复。另已核对8045、8999、9100、9105、9110、9115脚本及中英文正文；来源包括 events/machine_age_crisis_events.txt、common/scripted_triggers/02_scripted_triggers_machine_age.txt、common/scripted_effects/02_machine_age_effects.txt 与 common/special_projects/04_projects_machine_age.txt。
+### 十、通讯菜单 / Her contact menu
 
-浏览器已检查常规问答、特殊话题返回和消失、宣战撤回及确认、塑造者入口门控和窄屏情境说明。其余天灾阶段、全部特殊遭遇、完整结局与跨章节条件继承仍需继续审读和验收。
+第二次演说后到开战前，外交联系打开8060：常规话题可反复询问；星球被毁、打开数据库、人口要求的特工报告、扎克兰、交出头颅、冷冻舱、冰封梦者和纳米学徒（另需信任>49）等话题依赖此前经历，回答后消失；信任奖励只给一次。询问扎克兰时，已突破虚境者可回答“他们不是恶魔”，从而解锁联系抟土之塑师。宣战需要三步确认，中途可撤回。在她的叙述中，扎克兰最终借虚境之力囚禁了她——这是角色立场，不是旁白。原版选项5.b条件自相矛盾，正常对话中不可选。
 
-后续要求的时序：首次委托结束后，调查局势每月从权重10的要求检查与权重90的空事件中随机选择。检查还要求未开战、无冷却等条件；通过后延迟180–240天，再次检查是否正在通讯等条件，才从人口、资源、研究、星系、宜居星系五类候选中选择。五类基础权重相同，各有额外触发条件，不能直接断言最终各20%。调用后设置220天冷却。源码中的五年检查注释与实际on_monthly调用不同，网站依据实际调用。
+From the second address until war, diplomacy opens 8060. Regular topics can be asked again; topics that depend on earlier play — a destroyed planet, the opened databank, the agent's pop report, Zarqlan, the surrendered head, the cryo pods, the frozen dreamer and the nanite apprenticeship (which also needs trust above 49) — disappear once answered, and trust rewards are given once. Asked about Zarqlan, an empire with a breached Shroud can answer "They are not demons", unlocking contact with the Animator of Clay. Declaring war takes three confirmations and can be withdrawn midway. In her telling Zarqlan imprisoned her through the Shroud — her side of the story, not narration. Option 5.b's original conditions contradict each other, so it never appears.
+
+## 分支与结局 Branches and outcomes
+
+**战争 / War.** 战争只有两种开始方式：在通讯菜单中宣战（需调查完成9010、第二项风暴研究的防护和首项研究），或倒计时达到80%时她宣战（8515）。开战后她的前哨与运输船队撤回首都（8158，只出现一次）；若你仍有调查局势（未自行宣战），8515结束21天后的神秘广播（8516）直接给予反制手段。战争期间首次联系她为8061，此后为8062；她的舰队把殖民地轰炸至毁坏度100时殖民地被数字化（10010）。
+
+War starts only by declaring it from her contact menu (needs the completed investigation 9010, storm protection from the second study and the first study) or when the doomclock reaches 80% (8515). Her outposts and convoys then withdraw to her capital (8158, once); if your investigation situation is still open (you did not declare war yourself), the mysterious broadcast 21 days after 8515 (8516) gives you the countermeasures directly. The first wartime contact is 8061, later ones 8062; colonies her fleets bombard to 100 devastation are digitized (10010).
+
+**三种结局（先发生者结束危机）/ Three endings (whichever comes first ends the crisis):**
+
+1. **胜利 Victory** — 击毁女王的泰坦（23015），每个普通帝国听到她的最终演说（23005，回应按政体与伦理不同），15天后庆祝胜利并获得奖励（23010）。击毁者获得遗珍“塞塔娜之心”，激活后为非蜂巢帝国释放被囚意识（10020）或为蜂巢思维提供记忆（10025）。Destroy her titan (23015); every regular empire hears her final speech (23005, replies vary by government and ethics) and 15 days later the victory and rewards (23010). The killer receives the relic Cetana's Heart; activating it frees imprisoned minds for non-hive empires (10020) or offers memories to hive minds (10025).
+2. **救赎 Redemption** — 拥有联系线索（21110或“他们不是恶魔”）的帝国，可经虚境大厅、虚境探索随机事件（shroud.10）或虚境铸就起源的菜单，支付2000能量与500泽珞联系抟土之塑师（24100，仅一次）。付出代价（统治者、一颗殖民地或27182泽珞）并接受交易（24115）后，舰队进入泰坦所在星系使其停摆并开启重塑仪式（需运输船，30天），成功后女王被重塑（24250→23020）。若她在无敌对舰队在场时重建该星系的基地，仪式中止，再次进入可重新开启。其他帝国15天后收到23030。拒绝付代价（24120）则再无机会。An empire holding the contact clue (21110 or "They are not demons") can reach the Animator of Clay through the Shroud lobby, a random Shroud delve event (shroud.10) or the Shroud-Forged origin's menu, for 2,000 energy and 500 Zro (24100, once only). After paying a price (the ruler, a colony or 27,182 Zro) and accepting the deal (24115), a fleet entering the titan's system disables it and opens the reshaping ritual (transport ship, 30 days); success reshapes her (24250 → 23020). If she rebuilds that system's base with no hostile fleet present the ritual is aborted; re-entering restarts it. Other empires receive 23030 15 days later. Refusing the price (24120) ends the chance.
+3. **失败 Failure** — 倒计时满1000：人类玩家帝国被摧毁，游戏结束（8505），13天后她获胜。The doomclock completes: human empires are destroyed and the game ends (8505); 13 days later she wins.
+
+## 条件与文明差异 Conditions and variants
+
+- 随文明身份变化 / Identity variants：首次演说结尾的措辞（军国、排外、唯心、巨企、失控机仆）、8080开场（机械帝国）与报酬措辞（巨企）、数据库的唯物主义路线、8130的回应（失控机仆、军国、唯心）、排外主义的拒绝、纪念主义者的8516回应、野蛮掠夺者的夸耀、格式塔的第四次惩戒、蜂巢的遗珍、机器人帝国的虚境文本、按政体的最终演说回应、21140不允许狂热净化者与吞噬虫群招募。The first address's closing line, 8080's opening (machine) and payment wording (megacorp), the materialist databank route, 8130's replies (rogue servitor, militarist, spiritualist), xenophobe refusals, memorialist 8516, the Barbaric Despoilers' boast, the gestalt fourth retaliation, the hive relic outcome, robot wording in the Shroud events, government-based final-speech replies, and no apostate hiring for Fanatic Purifiers or Devouring Swarms.
+- 随此前经历变化 / Variants from earlier play：通讯菜单的话题、宣战选项、8525、9100/8025（是否已听过首次演说）、8035（舰队是否已闯入风暴）、8070（是否第一次被瘫痪）、20100（“扎克兰语言”是否已在《远古遗珍》的扎克兰考古中译出——来自另一故事）。完整列表见台账。Her contact-menu topics, the war option, 8525, 9100/8025 (heard the first address or not), 8035 (a fleet already entered the storm), 8070 (first time or again), and 20100 (whether the Zarqlan language was translated in the Ancient Relics Zarqlan dig — another story). The full list is in the ledger.
+- 网站的阅读方式 / Reading：同一对话中按状态显示选项；“对话情境”是阅读假设，不模拟存档中的信任与资源。Conversation options are shown by state; "conversation context" pickers are reading assumptions, not a save-game simulation.
+
+## 审阅记录 Review notes
+
+- 已逐段读取上述全部来源（行号见台账），对照中英文本。Every source above was read in full (line numbers in the ledger) and compared in both languages.
+- 结构修正：去除观察者模式事件与经由AI版本折叠出的假连接；8020不再接在第二次演说之后；倒计时按50%/80%/100%排列；调查进度线（9000→9010）在前，惩戒与礼物按阶梯排列；四座信标为并行组并以21000为门；补上此前孤立的袭击、战时、遗珍与虚境入口章节。Structural fixes: removed the observer-mode event and false links folded through the AI version; 8020 no longer follows the second address; the doomclock reads 50%/80%/100%; the progress line comes first and retaliations/gifts read as ladders; the four beacons are a parallel group gated by 21000; previously orphaned raid, wartime, relic and Shroud chapters are attached.
+- 原文差异：8315中文“数以百计地死去”对英文“Millions died”；8320中文“从她的首都启航”对英文“departed for her capital”。网站保留两份原文。Translation differences: 8315 ("by the hundreds" vs "Millions died") and 8320 ("from her capital" vs "for her capital"); both originals are kept.
+- 不确定 / Uncertain：8295不可达基于“触发条件先于immediate执行”的标准顺序，未做运行时验证；数据库项目1800天如何被缩短，文件只给出含未定义变量的公式；抽中无法触发的要求时是否浪费冷却；同日发出的惩戒/礼物阶梯事件的引擎处理顺序；8194中夸耀选项的FROM作用域。8295's unreachability assumes the standard trigger-before-immediate order (not runtime-verified); how the databank's 1,800 days are reduced (the defines give a formula with undefined variables); whether drawing an unfireable demand wastes the cooldown; engine ordering of same-day ladder events; the FROM scope of the boast option in 8194.

@@ -1,0 +1,50 @@
+{
+ "id": "anomaly-intemporal-orb-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.7115",
+    "anomaly.7110"
+   ],
+   "labels": [
+    {
+     "zh": "研究或吃掉",
+     "en": "Study or eat"
+    },
+    {
+     "zh": "离开",
+     "en": "Leave"
+    }
+   ]
+  }
+ ],
+ "endings": {
+  "anomaly.7120": {
+   "label": {
+    "zh": "百年后返航",
+    "en": "The return, a century later"
+   },
+   "note": {
+    "zh": "不朽的科学家短暂归来又离去。",
+    "en": "The immortal scientist briefly returns, then leaves again."
+   },
+   "evidence": "events/anomaly_events_4.txt:4253, 4304-4343"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部5个文档。",
+   "en": "All 5 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "events/anomaly_events_4.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-intemporal-orb-cat.md"
+ }
+}

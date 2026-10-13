@@ -1,0 +1,25 @@
+{
+ "id": "event-colony-3029",
+ "category": "society",
+ "dialogues": {
+  "colony.3033": {
+   "states": {"start": ["colony.3033.a", "colony.3033.b", "colony.3033.c", "colony.3033.d", "colony.3033.a.robot", "colony.3033.d.robot"]},
+   "transitions": {}, "exits": ["colony.3033.d", "colony.3033.d.robot"],
+   "evidence": "events/colony_events_3.txt:2380-2420: a/b/c (non-machine) and a.robot are is_dialog_only calls into the silent portal; d / d.robot end the broadcast and remove the crisis modifier."
+  }
+ },
+ "endings": {
+  "colony.3033": {"label": {"zh": "终章：镜像帝国陷落", "en": "Finale: the mirror empire falls"}, "note": {"zh": "镜像帝国的首都被吞噬，传送门沉寂；此后不再有贸易涨落。", "en": "The mirror empire's capital is consumed and the portal falls silent; no further trade swings."}, "evidence": "events/colony_events_3.txt:2238-2258, 2351-2420 (dportal_empire_crisis_flag stops colony.3030)."}
+ },
+ "notes": [
+  {"doc": "colony.3031", "kind": "review", "zh": "审阅注：这是“传送门”事件（colony.3005，目前在另一个故事中）镜像次元结果的后续插曲：与镜像帝国通商后，每五年随机检查一次贸易。正常时 60无事/10上升/10下降；偏低时 20/20/10；偏高时 30/10/20。上升使贸易修正提高一级（已最高则给一次性奖励）。", "en": "Review note: a recurring interlude after the mirror-dimension outcome of The Doorway (colony.3005, currently in another story). Every five years one trading empire is checked: at normal trade 60 nothing / 10 up / 10 down; low 20/20/10; high 30/10/20. 'Up' raises the trade modifier one level (or pays a bonus at the top)."},
+  {"doc": "colony.3032", "kind": "review", "zh": "审阅注：贸易已处于低位时，每次下降使危机计数加一；计数达到5后再下降，镜像帝国陷入危机，1825–3650天后发来紧急广播。", "en": "Review note: each decline while trade is already low adds to a crisis counter; once it reaches 5 the next decline puts the mirror empire in crisis and the emergency broadcast follows 1825–3650 days later."}
+ ],
+ "review": {
+  "status": "reviewed", "date": "2026-10-12", "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "镜像次元贸易插曲（隐藏3029/3030、3031、3032）与紧急广播3033。", "en": "The mirror-dimension trade interludes (hidden 3029/3030, 3031, 3032) and the emergency broadcast 3033."},
+  "sources": ["events/colony_events_3.txt:2007-2420", "events/colony_events_3.txt:1825-2001 (dportal_trader set by The Doorway's mirror outcome)", "common/on_actions/00_on_actions.txt:282"],
+  "uncertain": ["The 3031 and 3032 cards are alternatives of the same five-yearly check and can recur in any order; the tree shows them as two entries."],
+  "guide": "public/summaries/event-colony-3029.md"
+ }
+}

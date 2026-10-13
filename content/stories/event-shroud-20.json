@@ -1,0 +1,73 @@
+{
+ "id": "event-shroud-20",
+ "nodeLabels": {
+  "shroud.7099": {
+   "zh": "虚境发问",
+   "en": "The Shroud asks"
+  },
+  "shroud.7100": {
+   "zh": "第一首歌",
+   "en": "First song"
+  },
+  "shroud.7105": {
+   "zh": "第二首歌",
+   "en": "Second song"
+  },
+  "shroud.7110": {
+   "zh": "第三首歌",
+   "en": "Third song"
+  },
+  "shroud.7120": {
+   "zh": "灵能飞升（超验）",
+   "en": "Transcendent authority"
+  },
+  "shroud.7121": {
+   "zh": "虚境之歌（具身）",
+   "en": "Corporeal authority"
+  }
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.7120",
+    "shroud.7121"
+   ],
+   "label": {
+    "zh": "按三次回答的倾向二选一",
+    "en": "One of two, by the leaning of the three answers"
+   },
+   "note": {
+    "zh": "7110 结束一天后：若满足超验政体条件则 7120，否则若满足具身条件则 7121；两者都不满足则没有结果窗口。",
+    "en": "One day after 7110: 7120 if eligible for the transcendent government, else 7121 if eligible for the corporeal one; if neither, no result window."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "shroud.7100",
+   "kind": "review",
+   "zh": "“歌”的名称、描述与两个回答都由脚本本地化按随机选中的歌生成；每个回答朝“超验”或“具身”高级政体推进一步。",
+   "en": "The song name, description and both answers are scripted localisation for a randomly selected song; each answer moves one step towards the transcendent or the corporeal advanced government."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "触发条件、三首歌的顺序与两种政体结果均已核对；具体歌曲文本来自脚本本地化，未逐首列出。",
+   "en": "Trigger, the order of the three songs and both government results were checked; the individual song texts come from scripted localisation and are not listed one by one."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:5801-5817 (on_shroud_delve)",
+   "events/shroud_events.txt:25-81 (shroud.2 song roll)",
+   "events/shroud_events.txt:191-211 (shroud.20)",
+   "events/shroud_events.txt:15993-16226 (7099-7121)"
+  ],
+  "guide": "public/summaries/event-shroud-20.md",
+  "uncertain": [
+   "The per-delve probability value:shroud_song_roll and the eligibility triggers is_eligible_for_advanced_government were not expanded; the extractor shows the songs as [GetRolledShroudSong…] placeholders."
+  ]
+ }
+}

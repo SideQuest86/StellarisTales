@@ -1,0 +1,106 @@
+{
+ "id": "event-enclave-2059",
+ "suppress": [
+  {
+   "from": "shroud.6878",
+   "to": "shroud.4205",
+   "option": "enclave.2060.b",
+   "evidence": "shroud.6878.b -> hidden router shroud.4201 (shroud_events.txt:11684-11736) opens the Mindwarden enclave's own contact menu (Mindwardens origin content, no owning family yet; see C6 ledger request 3). Not a continuation of this notice."
+  },
+  {
+   "from": "shroud.6878",
+   "to": "shroud.4300",
+   "option": "enclave.2060.b",
+   "evidence": "shroud.6878.b -> hidden router shroud.4201 (shroud_events.txt:11684-11736) opens the Mindwarden enclave's own contact menu (Mindwardens origin content, no owning family yet; see C6 ledger request 3). Not a continuation of this notice."
+  },
+  {
+   "from": "shroud.6878",
+   "to": "shroud.4320",
+   "option": "enclave.2060.b",
+   "evidence": "shroud.6878.b -> hidden router shroud.4201 (shroud_events.txt:11684-11736) opens the Mindwarden enclave's own contact menu (Mindwardens origin content, no owning family yet; see C6 ledger request 3). Not a continuation of this notice."
+  },
+  {
+   "from": "shroud.6878",
+   "to": "shroud.4340",
+   "option": "enclave.2060.b",
+   "evidence": "shroud.6878.b -> hidden router shroud.4201 (shroud_events.txt:11684-11736) opens the Mindwarden enclave's own contact menu (Mindwardens origin content, no owning family yet; see C6 ledger request 3). Not a continuation of this notice."
+  },
+  {
+   "from": "shroud.6878",
+   "to": "shroud.4350",
+   "option": "enclave.2060.b",
+   "evidence": "shroud.6878.b -> hidden router shroud.4201 (shroud_events.txt:11684-11736) opens the Mindwarden enclave's own contact menu (Mindwardens origin content, no owning family yet; see C6 ledger request 3). Not a continuation of this notice."
+  },
+  {
+   "from": "shroud.6878",
+   "to": "shroud.6851",
+   "option": "enclave.2060.b",
+   "evidence": "shroud.6878.b -> hidden router shroud.4201 (shroud_events.txt:11684-11736) opens the Mindwarden enclave's own contact menu (Mindwardens origin content, no owning family yet; see C6 ledger request 3). Not a continuation of this notice."
+  },
+  {
+   "from": "shroud.6878",
+   "to": "shroud.6852",
+   "option": "enclave.2060.b",
+   "evidence": "shroud.6878.b -> hidden router shroud.4201 (shroud_events.txt:11684-11736) opens the Mindwarden enclave's own contact menu (Mindwardens origin content, no owning family yet; see C6 ledger request 3). Not a continuation of this notice."
+  },
+  {
+   "from": "shroud.6878",
+   "to": "shroud.6853",
+   "option": "enclave.2060.b",
+   "evidence": "shroud.6878.b -> hidden router shroud.4201 (shroud_events.txt:11684-11736) opens the Mindwarden enclave's own contact menu (Mindwardens origin content, no owning family yet; see C6 ledger request 3). Not a continuation of this notice."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "enclave.2060",
+    "shroud.6878"
+   ],
+   "label": {
+    "zh": "按佣兵城邦类型二选一",
+    "en": "One of two notices, by enclave type"
+   },
+   "note": {
+    "zh": "enclave.2059：若出租方是灵督城邦则发shroud.6878，否则发enclave.2060（overlord_enclaves_events.txt:3937-3976）。",
+    "en": "enclave.2059: Mindwarden enclave -> shroud.6878, otherwise enclave.2060 (overlord_enclaves_events.txt:3937-3976)."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "enclave.2060": {
+   "zh": "佣兵舰队合约到期",
+   "en": "Mercenary contract ended"
+  },
+  "shroud.6878": {
+   "zh": "灵督舰队合约到期",
+   "en": "Mindwarden contract ended"
+  }
+ },
+ "notes": [
+  {
+   "doc": "shroud.6878",
+   "kind": "review",
+   "zh": "审阅注：选择“打开通信频道”会打开灵督城邦自己的联络菜单（shroud.4201，属“灵督”起源内容），此处不展开。",
+   "en": "Review note: 'open communications' opens the Mindwarden enclave's own contact menu (shroud.4201, Mindwardens origin content); not expanded here."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整：触发条件、两种互斥通知与续约链接。",
+   "en": "Complete: trigger, two exclusive notices and the renewal links."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "events/shroud_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-enclave-2059.md",
+  "uncertain": [
+   "The Mindwarden-variant renewal link is suppressed until the Mindwarden menu has an owning family (ledger request 3)."
+  ]
+ }
+}

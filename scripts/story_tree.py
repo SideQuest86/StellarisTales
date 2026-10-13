@@ -19,7 +19,7 @@ Output: public/stories/<id>.json (docs + tree), public/stories/index.json, publi
 from __future__ import annotations
 import collections, json, re
 from pathlib import Path
-from extract import dump, parse, raw
+from extract import dump, parse, raw, walk
 from conditions import Conditions
 from origin_families import build_origin_families
 
@@ -213,7 +213,7 @@ class Compiler:
         # Reviewed facts live in one fragment per story; keyed facts must be unique across fragments.
         self.bridges, self.suppressed = [], collections.defaultdict(list)
         self.dialogues, self.readings, self.endings, self.notes = {}, {}, {}, collections.defaultdict(list)
-        self.node_labels, self.openings = {}, {}
+        self.node_labels, self.openings, self.unreachable = {}, {}, {}
         for sid, fragment in self.fragments.items():
             self.bridges += [{**b, 'fragment': sid} for b in fragment.get('bridges', [])]
             for s in fragment.get('suppress', []):
@@ -223,6 +223,8 @@ class Compiler:
                     if key in target:
                         raise ValueError(f'{sid}: {field} for {key} is already reviewed in another fragment')
                     target[key] = value
+            for doc, note in fragment.get('unreachable', {}).items():
+                self.unreachable[doc] = {k: note[k] for k in ('zh', 'en') if k in note}
             for note in fragment.get('notes', []):
                 self.notes[note['doc']].append({k: note[k] for k in ('zh', 'en', 'kind') if k in note})
             if fragment.get('nodeLabels'):
@@ -234,6 +236,7 @@ class Compiler:
         self.report = collections.Counter()
         self.composite_cache = {}
         self.container_of = {}
+        self.hook_cache = {}
         self.defined = read(ROOT / 'public/data/scripted-loc.json')
         self.used_names = set()
 
@@ -521,7 +524,33 @@ class Compiler:
         out['source'] = f"{first_seg['file']}:{first_seg['line']}"
         if len(segments) > 1:
             out['through'] = [s['to'] for s in segments[:-1]]
+        # Flags set on the way (hidden routers' effects, the firing project/site hook) belong to the path state.
+        sets = set()
+        for seg in segments:
+            r = self.byid.get(seg['from'])
+            if not r:
+                continue
+            if not self.readable(seg['from']):  # hidden router: its effects run on the way
+                sets.update(FLAG_SET.findall(r['script']))
+            elif DOC_KIND.get(r['kind']):  # project / site / situation hook that fired this edge
+                for p in seg['path']:
+                    if p['k'] in ('on_success', 'on_fail', 'on_progress_complete', 'on_fail_complete', 'on_first_enter'):
+                        sets.update(self.hook_flags(seg['from'], p['k']))
+        if sets:
+            out['sets'] = sorted(sets)
         return out
+
+    def hook_flags(self, rid, hook):
+        key = (rid, hook)
+        if key not in self.hook_cache:
+            r = self.byid[rid]
+            try:
+                body = parse(r['script'])[0]['v']
+                blocks = [raw(n, r['script']) for n in walk(body) if n['k'] == hook and isinstance(n['v'], list)]
+            except (ValueError, IndexError, TypeError):
+                blocks = []
+            self.hook_cache[key] = sorted({f for b in blocks for f in FLAG_SET.findall(b)})
+        return self.hook_cache[key]
 
     def stage_sequence(self, rid):
         """Archaeological site and situation stages run in definition order, not as simultaneous children."""
@@ -665,7 +694,7 @@ class Compiler:
                 'delayed': bool(info.get('delay')), 'sourceKind': info['kind']}
         if info.get('conditional'):
             edge['conditional'] = True
-        for key in ('chance', 'group', 'delay', 'when', 'modified', 'through', 'source', 'hooks', 'label', 'requiresVisited'):
+        for key in ('chance', 'group', 'delay', 'when', 'modified', 'through', 'source', 'hooks', 'label', 'requiresVisited', 'sets'):
             if key in info:
                 edge[key] = info[key]
         return edge
@@ -761,7 +790,9 @@ class Compiler:
                     described = [(t, i) for t, i in described if t not in sequence[1:]]
                     for previous, following in zip(sequence, sequence[1:]):
                         self.stage_edges[previous] = [(following, {'kind': 'stage', 'hooks': ['stage'], 'source': chapter['source']['file']})]
-                reviewed = self.extra_edges.get(rid, []) + self.stage_edges.get(rid, [])
+                stage = [(t, i) for t, i in self.stage_edges.get(rid, [])
+                         if not any(s['to'] == t and 'option' not in s for s in self.suppressed.get(rid, []))]
+                reviewed = self.extra_edges.get(rid, []) + stage
                 if rid in self.openings_start:
                     described = []  # reviewed origin openings replace the generic game-start fan-out
                 described = [(t, i) for t, i in described
@@ -885,6 +916,8 @@ class Compiler:
             for rid in ordered_docs:
                 if rid in self.notes:
                     chapters[rid]['notes'] = self.notes[rid]
+                if rid in self.unreachable:
+                    chapters[rid]['unreachable'] = self.unreachable[rid]
             details[sid] = {'story': story, 'chapters': [chapters[d] for d in ordered_docs]}
             stories.append(entry)
         for sid, d in details.items():

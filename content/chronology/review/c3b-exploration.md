@@ -56,6 +56,25 @@ outcome already seen by that empire is not picked again; modifiers are evaluated
   site-site-weathermanipulators-coordinatesa-residential-planet; secrets INETIAN_PROJECTS_04 is c3a's story. A bridge
   from 135 would make those sites non-roots and silently absorb C2's story, so I did not add one (note on 135 instead).
 
+### Batch 02a — `common/anomalies/02_anomaly_categories.txt` (part 1) — all reviewed
+- anomaly-con-biology-cat (02:353-389): 4 outcomes w1 (4095/4100 ×0 machine; 4150 ×0 if diplomacy writing found);
+  PSIONIC_HORSES 4101|4102 and domestication 4103|4104 split by xenophobe/militarist/fanatic egalitarian; monster
+  rescue 70/30 + on_fail; Master's Writings 70/30. Uncertain: PSIONIC_HORSES on_success tests FROM (planet) owner.
+- anomaly-nuke-planet-cat (02:456-479): single outcome 4155; vault project 70/30; container 40/30/30; Majula dialogue
+  4157→4158|4159 (dialogue configs), "join" resolves to 4160|4161|4162 by ethics + suspected_* flags, f→4163.
+- anomaly-rapid-desertification-cat (02:766-790, max_once_global, null_spawn 0.7): 7135 → project (on_fail 7146) or
+  7145 after 480–510 d; 7140 four options; adoption 60/40 (colony.7160|7166) after 3620 d; livestock 30% 7166;
+  7166 hunt 50/50 (7170|7175). Related C7 story event-colony-7165 (on_colony_10_years_old) shares 7170/7175 — noted,
+  not bridged (would absorb that root).
+- anomaly-cold-research-cat (02:222-277): 4 outcomes w1 with gestalt/strategic-resource/interference modifiers.
+- anomaly-des-buried-cat (02:129-166, max_once): 4030 (×0 if ai_admiral_found) | 4135 (×0 gestalt/found).
+- anomaly-gen-old-war-cat (02:76-108): 4020 | 4165. **L-Gate decision:** 4020 calls `pop_lcluster_event`
+  (`00_scripted_effects.txt:3291-3312`: Distant Stars, after first L-Gate, 3/10 → distar.9000 in 10 days).
+  distar.9000 is called by 15 different outcome events via this shared effect, so it is a shared notification (hub),
+  not a chapter of any one anomaly; my anomalies only link to it (owner c3a).
+- Master's Writings (4135/4140/4150/4165 → edicts in `common/edicts/01_campaigns.txt:1307-1418`) are four independent
+  anomalies with a shared failure event; not merged (no order, no shared gate), cross-referenced in each guide.
+
 ## Requests
 
 1. **Observer events (compiler).** `observer_event`s in `events/observer_events.txt` are spectator-mode notifications.

@@ -1,0 +1,37 @@
+{
+ "id": "event-shroud-5051",
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "shroud.5055",
+    "shroud.5060"
+   ],
+   "label": {
+    "zh": "双方各自得知",
+    "en": "Each side learns of it"
+   },
+   "note": {
+    "zh": "同一场战争开始7天后：被煽动方得到 5055，煽动者得到 5060；各自只在第一次显示窗口，以后改为消息。",
+    "en": "7 days after the war begins the instigated side gets 5055 and the instigator 5060; each window appears only the first time, later as a message."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "曝光判定、双方通知与修正均已核对。",
+   "en": "Exposure roll, both notices and modifiers were checked."
+  },
+  "sources": [
+   "events/shroud_events.txt:13509-13709 (5050-5060)",
+   "common/on_actions/00_on_actions.txt (on_proxy_war_started → 5050; on_war_beginning → 5051)"
+  ],
+  "guide": "public/summaries/event-shroud-5051.md",
+  "uncertain": [
+   "Which empires can instigate proxy wars is defined outside this file (on_proxy_war_started); not traced further."
+  ]
+ }
+}

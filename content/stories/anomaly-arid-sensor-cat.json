@@ -1,0 +1,39 @@
+{
+ "id": "anomaly-arid-sensor-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.4081",
+    "anomaly_failure.4081"
+   ],
+   "labels": [
+    {
+     "zh": "80%",
+     "en": "80%"
+    },
+    {
+     "zh": "20%",
+     "en": "20%"
+    }
+   ]
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部5个文档。",
+   "en": "All 5 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_3.txt",
+   "events/failures.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-arid-sensor-cat.md"
+ }
+}

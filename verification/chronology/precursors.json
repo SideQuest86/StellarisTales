@@ -2,15 +2,15 @@
   "category": "precursors",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 143,
-  "docs": 1031,
-  "nodes": 1140,
-  "refs": 109,
-  "crossLinks": 1990,
+  "stories": 102,
+  "docs": 1043,
+  "nodes": 1157,
+  "refs": 114,
+  "crossLinks": 2003,
   "review": {
-    "reviewed": 7,
-    "partial": 4,
-    "unreviewed": 132
+    "reviewed": 12,
+    "partial": 2,
+    "unreviewed": 88
   },
   "failures": [],
   "items": [
@@ -60,31 +60,40 @@
       "review": "reviewed"
     },
     {
+      "id": "archaeology-incidents",
+      "title": "考古遗址",
+      "kind": "family",
+      "docs": 39,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "baol",
       "title": "最后的巴奥",
       "kind": "family",
-      "docs": 36,
-      "refs": 11,
+      "docs": 39,
+      "refs": 14,
       "crossLinks": 157,
-      "review": "partial"
+      "review": "reviewed"
+    },
+    {
+      "id": "zroni",
+      "title": "泽珞族",
+      "kind": "family",
+      "docs": 27,
+      "refs": 0,
+      "crossLinks": 235,
+      "review": "reviewed"
     },
     {
       "id": "the-sentinels",
       "title": "哨兵",
       "kind": "family",
       "docs": 26,
-      "refs": 9,
+      "refs": 11,
       "crossLinks": 40,
-      "review": "partial"
-    },
-    {
-      "id": "zroni",
-      "title": "泽珞族",
-      "kind": "family",
-      "docs": 26,
-      "refs": 0,
-      "crossLinks": 235,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "precursor-assistance",
@@ -96,13 +105,22 @@
       "review": "reviewed"
     },
     {
+      "id": "site-site-ice-trauma",
+      "title": "冰封之下",
+      "kind": "family",
+      "docs": 12,
+      "refs": 0,
+      "crossLinks": 13,
+      "review": "partial"
+    },
+    {
       "id": "the-oracle",
       "title": "神谕",
       "kind": "family",
       "docs": 8,
       "refs": 0,
       "crossLinks": 40,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-storms-prec-one",
@@ -825,53 +843,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-ancrel-13030",
-      "title": "令人不安的景象",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-2025",
-      "title": "[Root.GetName]上的巴奥生命播种完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-2026",
-      "title": "[Root.GetName]巴奥生命增强计划：完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-2027",
-      "title": "[Root.GetName]上的巴奥生命播种完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-ancrel-2068",
       "title": "C.A.R.E交互界面",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-4006",
-      "title": "甲烷爆炸",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -888,26 +861,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-ancrel-4021",
-      "title": "垃圾山大滑坡",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-ancrel-4024",
       "title": "信号传输接入",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-4078",
-      "title": "火灾",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -924,323 +879,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-ancrel-7006",
-      "title": "灵能指引",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-ancrel-7007",
       "title": "微缩星河",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8000",
-      "title": "触发激光网",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8001",
-      "title": "触发激光网",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8002",
-      "title": "触发激光网",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8003",
-      "title": "触发激光网",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8010",
-      "title": "哨戒炮被触发",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8011",
-      "title": "哨戒炮被触发",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8012",
-      "title": "哨戒炮被触发",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8013",
-      "title": "哨戒炮被触发",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8020",
-      "title": "暴走的碾压机器人",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8021",
-      "title": "暴走的碾压机器人",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8022",
-      "title": "暴走的碾压机器人",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8023",
-      "title": "暴走的碾压机器人",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8030",
-      "title": "哨兵机器人",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8031",
-      "title": "哨兵机器人",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8032",
-      "title": "哨兵机器人",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8033",
-      "title": "哨兵机器人",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8040",
-      "title": "资源贮藏点",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8045",
-      "title": "隐蔽隧道",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8050",
-      "title": "迷途的探险队",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8055",
-      "title": "争论的考古学家",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8060",
-      "title": "藏宝室",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8065",
-      "title": "传播疾病",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8070",
-      "title": "装备故障",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8075",
-      "title": "无影无踪",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8080",
-      "title": "稀有文物已发现",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8090",
-      "title": "敌对野生动物",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8091",
-      "title": "敌对野生动物",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8092",
-      "title": "敌对野生动物",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8093",
-      "title": "敌对野生动物",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8100",
-      "title": "不稳定的遗迹",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8101",
-      "title": "不稳定的遗迹",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8102",
-      "title": "不稳定的遗迹",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8103",
-      "title": "不稳定的遗迹",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8110",
-      "title": "远古记录",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -1277,15 +917,6 @@
     {
       "id": "event-ancrel-8203",
       "title": "爆炸性减压",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-8210",
-      "title": "稀有文物已发现",
       "kind": "event",
       "docs": 1,
       "refs": 0,

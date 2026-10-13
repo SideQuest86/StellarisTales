@@ -1,0 +1,23 @@
+{
+ "id": "event-terra-10",
+ "title": {"zh": "环境改造", "en": "Terraforming"},
+ "groups": [
+  {"kind": "exclusive", "members": ["terra.15", "terra.20", "terra.25", "terra.35", "terra.40", "terra.45", "terra.50", "terra.55", "terra.60", "terra.65", "terra.70", "terra.75", "terra.80", "terra.90", "strange_worlds.1000", "strange_worlds.1005", "strange_worlds.1010", "strange_worlds.1015", "strange_worlds.1020", "strange_worlds.1025", "strange_worlds.1030", "strange_worlds.1040"],
+   "label": {"zh": "每颗星球首次改造完成时最多出现其一", "en": "At most one per planet, on its first completed terraforming"},
+   "note": {"zh": "隐藏事件 terra.10 的 random_list：各项权重2–5（蜂巢“真一”0.5），另有30为什么都不发生；每项都有星球类型、原星球类别、DLC或帝国类型的排除条件。", "en": "random_list in hidden terra.10: weights 2–5 (hive 'Oneness' 0.5) plus 30 for nothing; each entry is excluded by planet class, original class, DLC or empire type."}}
+ ],
+ "notes": [
+  {"doc": "strange_worlds.1040", "kind": "review",
+   "zh": "审阅说明：与其他“奇异世界”事件不同，此项的排除条件是“已触发过且拥有生物起源DLC”，没有要求必须拥有该DLC（terraforming_events.txt:503-514）。",
+   "en": "Review note: unlike the other strange-world entries, this one is only excluded when already triggered AND BioGenesis is owned; it does not require the DLC (terraforming_events.txt:503-514)."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {"zh": "on_terraforming_complete → 隐藏随机池 terra.10 的全部22个结果、各自条件与权重，以及后续（辐射植物项目、武器贮藏遗址三阶段、冰封异种十年后的休眠者）。", "en": "on_terraforming_complete → all 22 outcomes of the hidden pool terra.10 with conditions and weights, and follow-ups (Radiotrophic project, Weapons Cache dig site, Hibernators ten years after Suspended in Ice)."},
+  "sources": ["events/terraforming_events.txt", "events/strange_worlds_terraforming_events.txt", "common/on_actions/00_on_actions.txt", "common/special_projects/00_projects_3.txt", "common/archaeological_site_types/02_ancient_relics_arc_sites.txt"],
+  "uncertain": ["Weapons Cache dig failures use the shared all_random_events incidents (ancrel.80xx), only linked."],
+  "guide": "public/summaries/event-terra-10.md"
+ }
+}

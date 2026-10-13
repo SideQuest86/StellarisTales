@@ -1,0 +1,40 @@
+{
+ "id": "event-shroud-60",
+ "family": {
+  "title": {
+   "zh": "灵能压制已被拆解",
+   "en": "Psionic Suppression Dismantled"
+  },
+  "category": "stories",
+  "start": "shroud.60",
+  "members": [
+   "shroud.60",
+   "shroud.65",
+   "shroud.70",
+   "shroud.75",
+   "shroud.80"
+  ]
+ },
+ "notes": [
+  {
+   "doc": "shroud.80",
+   "kind": "review",
+   "zh": "四个隐藏入口（获得星系、星系控制者变更、附庸化〔终末者宗主〕、整合附庸）都会拆除灵能压制建筑并调用同一窗口；它只出现一次。",
+   "en": "Four hidden entries (system gained, system controller changed, becoming a subject of an Endbringer overlord, subject integration) remove aura-suppression buildings and call this same window; it appears once."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "四个触发入口与唯一的通知窗口均已核对。",
+   "en": "All four trigger entries and the single notice window were checked."
+  },
+  "sources": [
+   "events/shroud_events.txt:313-563 (shroud.60/65/70/75 → 80)",
+   "common/on_actions/00_on_actions.txt (on_system_gained, on_system_controller_changed, on_becoming_subject, on_subject_integrated)"
+  ],
+  "guide": "public/summaries/event-shroud-60.md"
+ }
+}

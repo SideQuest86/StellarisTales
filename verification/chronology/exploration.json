@@ -2,14 +2,14 @@
   "category": "exploration",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 382,
-  "docs": 1475,
-  "nodes": 1627,
-  "refs": 152,
+  "stories": 378,
+  "docs": 1480,
+  "nodes": 1635,
+  "refs": 155,
   "crossLinks": 273,
   "review": {
-    "reviewed": 32,
-    "unreviewed": 350
+    "reviewed": 63,
+    "unreviewed": 315
   },
   "failures": [],
   "items": [
@@ -20,6 +20,15 @@
       "docs": 75,
       "refs": 41,
       "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-distar-lost-cat",
+      "title": "迷路的变形虫",
+      "kind": "family",
+      "docs": 18,
+      "refs": 0,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -38,6 +47,15 @@
       "docs": 14,
       "refs": 12,
       "crossLinks": 3,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-distar-phase-cat",
+      "title": "相变星球",
+      "kind": "family",
+      "docs": 9,
+      "refs": 1,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -101,7 +119,7 @@
       "docs": 17,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-warform-cat",
@@ -110,7 +128,7 @@
       "docs": 15,
       "refs": 8,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-nuke-planet-cat",
@@ -119,7 +137,7 @@
       "docs": 15,
       "refs": 7,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-paragon-beholder-category",
@@ -131,22 +149,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "anomaly-distar-lost-cat",
-      "title": "云中的动静",
-      "kind": "anomaly",
-      "docs": 14,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-rapid-desertification-cat",
       "title": "迅速荒漠化",
       "kind": "anomaly",
       "docs": 13,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-distar-10903",
@@ -218,7 +227,7 @@
       "docs": 10,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-disco-impossible-organism-cat",
@@ -236,7 +245,7 @@
       "docs": 10,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-time-cat",
@@ -245,7 +254,7 @@
       "docs": 10,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-fungal-emitters-category",
@@ -263,7 +272,7 @@
       "docs": 10,
       "refs": 3,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-signal-gasgiant-category",
@@ -326,7 +335,7 @@
       "docs": 9,
       "refs": 0,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-on-crashed-ship-cat",
@@ -353,7 +362,7 @@
       "docs": 9,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-anomaly-1193",
@@ -437,6 +446,24 @@
       "review": "unreviewed"
     },
     {
+      "id": "anomaly-sun-rays-cat",
+      "title": "令人疑惑的宇宙射线",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-ubume-baby-cat",
+      "title": "奇怪的残骸",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "anomaly-uhb-buoy-cat",
       "title": "多普勒效应",
       "kind": "anomaly",
@@ -470,7 +497,16 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-gen-lost-cargo-cat",
+      "title": "古怪读数",
+      "kind": "anomaly",
+      "docs": 7,
+      "refs": 2,
+      "crossLinks": 2,
+      "review": "reviewed"
     },
     {
       "id": "anomaly-hbl-lush-planet-1-cat",
@@ -545,22 +581,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "anomaly-gen-lost-cargo-cat",
-      "title": "古怪读数",
-      "kind": "anomaly",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-gen-old-war-cat",
       "title": "钢之追寻",
       "kind": "anomaly",
       "docs": 6,
       "refs": 0,
       "crossLinks": 3,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-irregular-energy-cat",
@@ -614,7 +641,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-ast-gear-cat",
@@ -623,7 +650,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-bar-colony-cat",
@@ -650,7 +677,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-debris-gasgiant-category",
@@ -686,16 +713,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-distar-phase-cat",
-      "title": "相变星球",
-      "kind": "anomaly",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-pod-cat",
@@ -704,7 +722,7 @@
       "docs": 5,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-rum-cat",
@@ -713,7 +731,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-energy-uninhabitable-category",
@@ -758,7 +776,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-intemporal-orb-cat",
@@ -767,7 +785,7 @@
       "docs": 5,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-life-gasgiant-category",
@@ -785,7 +803,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-object-uninhabitable-category",
@@ -839,7 +857,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-tomb-world-cat",
@@ -857,15 +875,6 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-ubume-baby-cat",
-      "title": "奇怪的残骸",
-      "kind": "anomaly",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
       "review": "unreviewed"
     },
     {
@@ -1001,7 +1010,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-distar-wreck-cat",
@@ -1010,7 +1019,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-froz-box-cat",
@@ -1037,7 +1046,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-geological-tension-cat",
@@ -1157,15 +1166,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "anomaly-sun-rays-cat",
-      "title": "令人疑惑的宇宙射线",
-      "kind": "anomaly",
-      "docs": 4,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-terminal-gasgiant-category",
       "title": "终结轨道",
       "kind": "anomaly",
@@ -1181,7 +1181,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-tox-mat-cat",
@@ -1253,15 +1253,6 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-58",
-      "title": "变形虫之死",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
       "review": "unreviewed"
     },
     {
@@ -1544,15 +1535,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-anomaly-6793",
-      "title": "灵能呜咽",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-anomaly-6880",
       "title": "无法解释的旋转",
       "kind": "event",
@@ -1573,15 +1555,6 @@
     {
       "id": "event-distar-13030",
       "title": "观察到L-星龙",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-254",
-      "title": "相变星球",
       "kind": "event",
       "docs": 3,
       "refs": 0,
@@ -3341,15 +3314,6 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-distar-256",
-      "title": "相变星球",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
       "review": "unreviewed"
     },
     {

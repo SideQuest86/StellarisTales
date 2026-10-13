@@ -1,4 +1,4 @@
-# 尤特帝国 / The Yuht Empire
+﻿# 尤特帝国 / The Yuht Empire
 
 - 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:1209–2118；common/anomalies/96_anomaly_categories_precursors.txt:704–1304；common/special_projects/00_projects_1.txt:1151–1425；common/artifact_actions/artifact_actions.txt:587；common/special_projects/00_projects_ancient_relics.txt:160；events/ancient_relics_arcsite_events_2.txt:6659；events/megastructure_events_1.txt:4673–4777；common/special_projects/00_projects_overlord.txt:5 · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics；贾巴蒂尼数据缓存需《四海皆臣》Overlord · 审阅 Reviewed 2026-10-12
 
@@ -40,12 +40,12 @@ A non-AI empire surveying a planet (not a star, no anomaly) in the Yuht region (
 
 ## 条件与文明差异 Conditions and variants
 
-- 10050 正文分排外/非排外，回应分“可研究且未拥有恶劣环境适应”/“已拥有或不可研究”，共四种组合，已用 readings 记录（同名回应按出现顺序区分）。
+- 10050 正文分排外/非排外，回应分“可研究且未拥有恶劣环境适应”/“已拥有或不可研究”，共四种组合，由正文与两个同名回应各自的条件解析（V3 的 readings 已删除）。
 - 母星项目完成时：无全局 yuht_homeworld_found 且目标非殖民地 → 601，否则 602。
 - 600 同时向观察者发送 observer.57（仅观察者模式）。
 - 未使用的定义：异常 YUHTAAN（研究结果指向601）生成权重为0、无脚本放置，母星设置 prevent_anomaly。
 
-- 10050 text splits xenophobe / non-xenophobe and its response splits tech-eligible / owned-or-ineligible — four combinations, recorded as readings (identically named responses are told apart by occurrence).
+- 10050 text splits xenophobe / non-xenophobe and its response splits tech-eligible / owned-or-ineligible — four combinations resolved from the body and each identically named response's own condition (the V3 readings were dropped).
 - Homeworld project: no global yuht_homeworld_found and an uncolonised target → 601, else 602.
 - 600 also sends observer.57 to observers only.
 - Unused definition: anomaly YUHTAAN (pointing to 601) has spawn weight 0, no script places it, and the homeworld has prevent_anomaly.

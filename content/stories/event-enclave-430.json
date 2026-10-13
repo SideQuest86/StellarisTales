@@ -1,0 +1,68 @@
+{
+ "id": "event-enclave-430",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "enclave.435",
+    "enclave.440",
+    "observer.95"
+   ],
+   "label": {
+    "zh": "按视角收到一种通知",
+    "en": "One notice per viewpoint"
+   },
+   "note": {
+    "zh": "空间站被摧毁时（on_ship_destroyed_victim，00_on_actions.txt:1425）：摧毁者、其他有通讯的帝国、观察者模式各收到一种。",
+    "en": "When the station is destroyed (on_ship_destroyed_victim, 00_on_actions.txt:1425): the destroyer, other empires in contact and observers each get one."
+   }
+  }
+ ],
+ "endings": {
+  "enclave.435": {
+   "label": {
+    "zh": "我们摧毁了虚境行者城邦",
+    "en": "We destroyed the Shroudwalker Enclave"
+   },
+   "note": {
+    "zh": "其服务就此终结。",
+    "en": "Its services end."
+   },
+   "evidence": "events/overlord_enclaves_events.txt enclave.430"
+  },
+  "enclave.440": {
+   "label": {
+    "zh": "虚境行者城邦被他国摧毁",
+    "en": "Shroudwalker Enclave destroyed by others"
+   },
+   "note": {
+    "zh": "旁观者通知。",
+    "en": "Bystander notice."
+   },
+   "evidence": "events/overlord_enclaves_events.txt enclave.430"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "events/observer_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-enclave-430.md"
+ },
+ "notes": [
+  {
+   "doc": "enclave.435",
+   "kind": "review",
+   "zh": "审阅注：城邦被毁时同时移除所有帝国的泽珞什一税修正（overlord_enclaves_events.txt:7525-7530）。",
+   "en": "Review note: the destruction also removes every empire's Zro tithe modifier (overlord_enclaves_events.txt:7525-7530)."
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "anomaly-distar-living-cat",
+ "bridges": [
+  {
+   "from": "distar.190",
+   "choice": "distar.190.a",
+   "to": "special_projects:STUDY_LIVING_SEA",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "已拥有该星系时立即开启（否则建前哨后开启）",
+    "en": "Opens at once if we own the system (else after an outpost)"
+   },
+   "evidence": "events/distant_stars_events_1.txt:5932-5957 if the planet's space_owner is root.owner enable STUDY_LIVING_SEA, else create point of interest living_sea.1; events/distant_stars_events_1.txt:6335-6379 distar.199 enables it later."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.194",
+    "distar.195"
+   ],
+   "label": {
+    "zh": "科学家的去留",
+    "en": "The scientist's fate"
+   },
+   "note": {
+    "zh": "distar.192 选择：加入研究队（194）、拒绝（195→196 死亡）或解职（无后续）。",
+    "en": "distar.192: join the team (194), refuse (195→196 death) or dismiss (no follow-up)."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.193": {
+   "zh": "10年后的启示",
+   "en": "Revelations after 10 years"
+  },
+  "distar.194": {
+   "zh": "科学家留在研究站",
+   "en": "Scientist stays on the station"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:2612-2700 (living_planet_system)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:704-716",
+   "events/distant_stars_events_1.txt:5880 (distar.190)",
+   "common/special_projects/00_projects_distant_stars.txt:1606 (STUDY_LIVING_SEA)",
+   "events/distant_stars_events_1.txt:6004 (distar.191)",
+   "events/distant_stars_events_1.txt:6045 (distar.192)",
+   "events/distant_stars_events_1.txt:6128 (distar.193)",
+   "events/distant_stars_events_1.txt:6196 (distar.194)",
+   "events/distant_stars_events_1.txt:6255/6285 (distar.195/196)",
+   "events/distant_stars_events_1.txt:6310-6379 (distar.1999/199)",
+   "common/on_actions/00_on_actions.txt:1512, 1933, 4188"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-living-cat.md"
+ }
+}

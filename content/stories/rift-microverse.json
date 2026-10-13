@@ -1,0 +1,47 @@
+{
+ "id": "rift-microverse",
+ "family": {
+  "title": {"zh": "微型宇宙", "en": "The Microverse"},
+  "category": "rifts",
+  "start": "astral_rifts:microverse",
+  "members": ["astral_rifts:microverse"]
+ },
+ "category": "rifts",
+ "endings": {
+  "astral_rift.1215": {
+   "label": {"zh": "紧急撤离：保住数据", "en": "Emergency retreat: data saved"},
+   "note": {"zh": "与船外舰队同步保住数据，但时间逆流使船员“返老”，紧急撤出；探索结束，获得大量物理研究，科学家年龄 −5。", "en": "Syncing with the fleet outside saves the data, but the reversed time flow de-ages the crew and they retreat; the exploration ends with major physics research and the scientist 5 years younger."},
+   "evidence": "events/astral_rifts_1_events.txt:726-750"
+  },
+  "astral_rift.1230": {
+   "label": {"zh": "始之终末：宇宙边缘", "en": "End of the Beginning: the edge"},
+   "note": {"zh": "从宇宙边缘目睹万物向一点收缩；探索结束，获得物理研究与星界丝缕。", "en": "From the edge of the universe the crew watches everything converge to one point; the exploration ends with physics research and astral threads."},
+   "evidence": "events/astral_rifts_1_events.txt:820-844"
+  },
+  "astral_rift.1235": {
+   "label": {"zh": "始之终末：新星诞生", "en": "End of the Beginning: A Star is Born"},
+   "note": {"zh": "完整记录一颗恒星“由终至始”的反向诞生；探索结束，获得 10 年“新星诞生”修正。", "en": "A star's reverse birth is recorded from end to beginning; the exploration ends with 10 years of “A Star is Born”."},
+   "evidence": "events/astral_rifts_1_events.txt:846-868"
+  }
+ },
+ "notes": [
+  {
+   "doc": "astral_rifts:microverse",
+   "kind": "review",
+   "zh": "两种来源：随机裂隙池抽取（权重 0.5，帝国已发现“不稳定星界细缝”后为 0），或在“不稳定星界细缝”事件中选择“把它炸开”，把细缝直接撕成本裂隙（astral_planes.6008）。",
+   "en": "Two sources: a draw from the random rift pool (weight 0.5, 0 once the empire has found an Astral Scar Instability), or choosing “Blow it open.” in the Astral Scar Instability events, which splits the scar directly into this rift (astral_planes.6008)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义、两种生成来源与 1200–1235 全部事件。本篇定义为故事族，使来自“不稳定星界细缝”篇的链接成为跨故事链接而不吞并本篇。",
+   "en": "Checked the rift definition, both spawn sources and every event 1200–1235. Defined as a family so the link from the Astral Scar Instability story stays a cross-story link instead of absorbing this story."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt", "events/astral_planes_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-microverse.md"
+ }
+}

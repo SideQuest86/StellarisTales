@@ -1,0 +1,115 @@
+{
+ "id": "anomaly-distar-lost-cat",
+ "family": {
+  "title": {
+   "zh": "迷路的变形虫",
+   "en": "Lost Amoeba"
+  },
+  "category": "exploration",
+  "start": "anomalies:DISTAR_LOST_CAT",
+  "members": [
+   "anomalies:DISTAR_LOST_CAT",
+   "distar.58"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.51",
+   "to": "distar.340",
+   "conditional": true,
+   "label": {
+    "zh": "收养的变形虫在战斗中失能（复活者帝国）",
+    "en": "The adopted amoeba is disabled in battle (Reanimator empire)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:2046 on_ship_disabled → distar.58 (events/distant_stars_events_1.txt:2180-2211): ship has lost_amoeba_ship (set in distar.51); owner is_reanimator and not resurrected_once → distar.340."
+  },
+  {
+   "from": "distar.51",
+   "to": "distar.57",
+   "conditional": true,
+   "label": {
+    "zh": "收养的变形虫阵亡（发现它的科学家仍在）",
+    "en": "The adopted amoeba dies (its discoverer still alive)"
+   },
+   "evidence": "distar.58 else-branch (events/distant_stars_events_1.txt:2200-2209): if event_target:amoeba_finding_scientist exists → distar.57, then the ship is destroyed."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.53",
+    "distar.54"
+   ],
+   "label": {
+    "zh": "解剖成功或逃脱",
+    "en": "Dissection or escape"
+   },
+   "note": {
+    "zh": "DISSECTION_PROJECT 限时1800天。",
+    "en": "DISSECTION_PROJECT has an 1800-day limit."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.340",
+    "distar.57"
+   ],
+   "label": {
+    "zh": "变形虫失能后的两种结果",
+    "en": "Two outcomes when the amoeba falls"
+   },
+   "note": {
+    "zh": "复活者帝国（且未复活过）→ 340；否则变形虫死亡并可能出现 57。",
+    "en": "Reanimator (not yet resurrected) → 340; otherwise it dies and 57 may follow."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.55": {
+   "zh": "再想个名字",
+   "en": "Another name"
+  },
+  "distar.56": {
+   "zh": "还是起不好名字",
+   "en": "Still no name"
+  },
+  "distar.304": {
+   "zh": "100年后",
+   "en": "100 years later"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:148-173",
+   "events/distant_stars_events_1.txt:1290 (distar.50)",
+   "events/distant_stars_events_1.txt:1483 (distar.51)",
+   "events/distant_stars_events_1.txt:1746/1864 (distar.55/56)",
+   "events/distant_stars_events_1.txt:1979 (distar.52)",
+   "common/special_projects/00_projects_distant_stars.txt:116 (DISSECTION_PROJECT)",
+   "events/distant_stars_events_1.txt:2042/2116 (distar.53/54)",
+   "events/distant_stars_events_1.txt:2330 (distar.304)",
+   "common/special_projects/00_projects_2.txt:498/514 (AMOEBAS_PROJECT, AMOEBAS_PACIFICATION_PROJECT)",
+   "events/story_events.txt:2380/2424 (story.105/107)",
+   "common/on_actions/00_on_actions.txt:2046",
+   "events/distant_stars_events_1.txt:2180 (distar.58)",
+   "events/distant_stars_events_1.txt:2214 (distar.340)",
+   "common/special_projects/00_projects_distant_stars.txt:1559 (REANIMATE_LOST_AMOEBA)",
+   "events/distant_stars_events_1.txt:2277 (distar.59)",
+   "events/distant_stars_events_1.txt:2150 (distar.57)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-lost-cat.md",
+  "mergedStories": [
+   "event-distar-58"
+  ]
+ }
+}

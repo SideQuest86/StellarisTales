@@ -1,0 +1,102 @@
+{
+ "id": "event-fircon-2600",
+ "family": {
+  "title": {
+   "zh": "行星际飞行",
+   "en": "Interplanetary Flight"
+  },
+  "category": "society",
+  "start": "fircon.2600",
+  "members": [
+   "fircon.2600",
+   "fircon.2605",
+   "fircon.2610",
+   "fircon.2615",
+   "fircon.2620",
+   "fircon.2625",
+   "fircon.2630",
+   "fircon.2635"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "fircon.2635",
+   "to": "fircon.2615",
+   "conditional": true,
+   "label": {
+    "zh": "飞船抵达目标轨道后，向星系所有者报告",
+    "en": "When the ship reaches its target orbit, the system owner is told"
+   },
+   "evidence": "2635 immediate re-enables the ship and queues move_to/orbit_planet on the target (events/first_contact_dlc_events.txt:6452-6474); on_fleet_enter_orbit -> fircon.2610 checks inteplanetary_flight_fleet and the target flag and fires 2615 to the system space owner (6118-6143)"
+  },
+  {
+   "from": "fircon.2620",
+   "choice": "fircon.2620.d",
+   "to": "fircon.2615",
+   "conditional": true,
+   "label": {
+    "zh": "修复并抹除记忆后飞船抵达目标",
+    "en": "After the repair and memory wipe the ship reaches its target"
+   },
+   "evidence": "2620.d (psionic species) re-enables the ship and queues move_to/orbit_planet on the target (events/first_contact_dlc_events.txt:6281-6311); then fircon.2610 -> 2615 as above"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.2625",
+    "fircon.2630",
+    "fircon.2635"
+   ],
+   "label": {
+    "zh": "故障的结局",
+    "en": "How the failure ends"
+   }
+  }
+ ],
+ "endings": {
+  "fircon.2615": {
+   "label": {
+    "zh": "成功着陆",
+    "en": "Touchdown"
+   },
+   "note": {
+    "zh": "他们的科技进步 +20%，观测洞见 +30。",
+    "en": "Their tech progression +20%; +30 observation insight."
+   }
+  },
+  "fircon.2630": {
+   "label": {
+    "zh": "无人生还",
+    "en": "No survivors"
+   },
+   "note": {
+    "zh": "他们的科技进步 -20%。",
+    "en": "Their tech progression -20%."
+   }
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c7a-society)",
+  "scope": {
+   "zh": "首次行星际飞行完整故事：发射、故障、营救或修复、着陆（含原独立卡片2610/2615）。",
+   "en": "The whole first interplanetary flight story: launch, failure, rescue or repair, touchdown (including the former separate 2610/2615 card)."
+  },
+  "sources": [
+   "events/first_contact_dlc_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "events/first_contact_dlc_situation_events.txt",
+   "common/situations/03_AI_empire_situations.txt"
+  ],
+  "uncertain": [
+   "Whether the ship can reach orbit (2610/2615) before 2620 fires at day 60 depends on engine travel time; not verifiable from scripts."
+  ],
+  "merged": [
+   "event-fircon-2610"
+  ],
+  "guide": "public/summaries/event-fircon-2600.md"
+ }
+}

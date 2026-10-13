@@ -1,0 +1,465 @@
+{
+ "id": "galactic-nemesis",
+ "family": {
+  "title": {
+   "zh": "星海天罚",
+   "en": "Galactic Nemesis"
+  },
+  "category": "crisis",
+  "start": "crisis.4140",
+  "sources": [
+   "events/nemesis_crisis_events.txt",
+   "events/nemesis_crisis_endgame.txt"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "crisis.4120",
+   "to": "crisis.4145",
+   "conditional": true,
+   "label": {
+    "zh": "项目一完成且威胁度达1000：第二级（3天后）",
+    "en": "Project 1 done and 1,000 Menace: level 2 (3 days later)"
+   },
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:36-73 crisis_level_2 requires crisis_special_project_1_complete (set by the project, 00_projects_nemesis.txt:113) and 1000 menace; on_unlock fires crisis.4145 days=3"
+  },
+  {
+   "from": "crisis.4125",
+   "to": "crisis.4150",
+   "conditional": true,
+   "label": {
+    "zh": "项目二完成且威胁度达2000：第三级（3天后）",
+    "en": "Project 2 done and 2,000 Menace: level 3 (3 days later)"
+   },
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:75-113 crisis_level_3 requires crisis_special_project_2_complete and 2000; on_unlock fires crisis.4150 days=3"
+  },
+  {
+   "from": "crisis.4130",
+   "to": "crisis.4155",
+   "conditional": true,
+   "label": {
+    "zh": "项目三完成且威胁度达5000：第四级（3天后）",
+    "en": "Project 3 done and 5,000 Menace: level 4 (3 days later)"
+   },
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:115-152 crisis_level_4 requires crisis_special_project_3_complete and 5000; on_unlock fires crisis.4155 days=3"
+  },
+  {
+   "from": "crisis.4135",
+   "to": "crisis.6000",
+   "conditional": true,
+   "label": {
+    "zh": "项目四完成、威胁度达10000、非附庸（游牧帝国须有以太相锚站）：第五级，5天后",
+    "en": "Project 4 done, 10,000 Menace, not a subject (nomads need an Aetherophasic anchor): level 5, 5 days later"
+   },
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:154-223 crisis_level_5 allow and on_unlock: leaves federation and Community, declare_crisis_effect, crisis.6000 days=5"
+  },
+  {
+   "from": "crisis.4135",
+   "to": "crisis.4105",
+   "conditional": true,
+   "label": {
+    "zh": "第五级时：银河共同体被迫宣告你为星系危机",
+    "en": "At level 5: the Galactic Community is made to declare you a galactic crisis"
+   },
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:207-209 declare_crisis_effect; common/scripted_effects/galactic_community_effects.txt:40-82 passes resolution_declare_crisis; common/resolutions/01_resolutions_nemesis.txt:55-91 sends crisis.4105 to the target and crisis.4100 to other human players"
+  },
+  {
+   "from": "crisis.4135",
+   "to": "crisis.4106",
+   "conditional": true,
+   "label": {
+    "zh": "第五级时（存在银河帝国）：帝皇宣告你为星系危机",
+    "en": "At level 5 with a Galactic Imperium: the Emperor declares you a galactic crisis"
+   },
+   "evidence": "common/scripted_effects/galactic_community_effects.txt:51-58 resolution_declare_crisis_empire; common/resolutions/01_resolutions_nemesis.txt:455-461 sends crisis.4106 / crisis.4101"
+  },
+  {
+   "from": "crisis.4105",
+   "to": "crisis.4100",
+   "conditional": true,
+   "label": {
+    "zh": "其他玩家看到的同一宣告",
+    "en": "The same declaration as other players see it"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:85-91 crisis.4100 to every other human player"
+  },
+  {
+   "from": "crisis.4106",
+   "to": "crisis.4101",
+   "conditional": true,
+   "label": {
+    "zh": "其他玩家看到的同一宣告（银河帝国）",
+    "en": "The same declaration as other players see it (Imperium)"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:455-461"
+  },
+  {
+   "from": "crisis.4105",
+   "to": "crisis.4111",
+   "conditional": true,
+   "label": {
+    "zh": "若共同体日后废止该宣告",
+    "en": "If the Community later repeals the declaration"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:330-341 resolution_repeal_crisis sends crisis.4111 to the former crisis and crisis.4110 to the others"
+  },
+  {
+   "from": "crisis.4100",
+   "to": "crisis.4110",
+   "conditional": true,
+   "label": {
+    "zh": "若共同体日后废止该宣告",
+    "en": "If the Community later repeals the declaration"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:330-334"
+  },
+  {
+   "from": "crisis.4106",
+   "to": "crisis.4113",
+   "conditional": true,
+   "label": {
+    "zh": "若帝国议会日后废止该宣告",
+    "en": "If the Imperium later repeals the declaration"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:617-628 resolution_repeal_crisis_empire sends crisis.4113 / crisis.4112"
+  },
+  {
+   "from": "crisis.4101",
+   "to": "crisis.4112",
+   "conditional": true,
+   "label": {
+    "zh": "若帝国议会日后废止该宣告",
+    "en": "If the Imperium later repeals the declaration"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:617-620"
+  },
+  {
+   "from": "crisis.6001",
+   "to": "crisis.6180",
+   "conditional": true,
+   "label": {
+    "zh": "首次吞噬恒星时，对该星系无情报的其他玩家收到",
+    "en": "On the first star destroyed: other players with no intel on the system"
+   },
+   "evidence": "events/nemesis_crisis_events.txt:472-519 crisis.4550 (on_destroy_planet_with_PLANET_KILLER_STAR_CRACKER, common/on_actions/01_planet_destruction.txt:110) sends crisis.6180 once per crisis country to human players without intel"
+  },
+  {
+   "from": "crisis.6001",
+   "to": "crisis.6181",
+   "conditional": true,
+   "label": {
+    "zh": "首次吞噬恒星时，对该星系有情报的其他玩家收到",
+    "en": "On the first star destroyed: other players with intel on the system"
+   },
+   "evidence": "events/nemesis_crisis_events.txt:520-535 crisis.4550 sends crisis.6181"
+  },
+  {
+   "from": "crisis.6001",
+   "to": "crisis.6182",
+   "conditional": true,
+   "label": {
+    "zh": "首次吞噬恒星时，自身也是星海天罚的其他玩家收到",
+    "en": "On the first star destroyed: other players who are also Star-Eater crises"
+   },
+   "evidence": "events/nemesis_crisis_events.txt:536-547 crisis.4550 sends crisis.6182 to empires with can_build_star_eaters"
+  },
+  {
+   "from": "crisis.6001",
+   "to": "planet_destruction.610",
+   "conditional": true,
+   "label": {
+    "zh": "若被吞噬的星系中有圣地：5天后圣地守护者震怒",
+    "en": "If a destroyed system held a Holy World: the Holy Guardians are outraged 5 days later"
+   },
+   "evidence": "events/nemesis_crisis_events.txt:563-568 crisis.4550 runs planet_destruction.605 on a holy_planet; events/planet_destruction_events.txt:1665-1689 sends planet_destruction.610 after 5 days"
+  },
+  {
+   "from": "crisis.6000",
+   "to": "crisis.6005",
+   "conditional": true,
+   "label": {
+    "zh": "引擎第一阶段完工（每阶段基础工期3600天）",
+    "en": "Engine stage 1 complete (each stage: base 3,600 days)"
+   },
+   "evidence": "common/megastructures/12_crisis_sphere.txt:60-88 crisis_sphere_1 build_time 3600, on_build_complete fires crisis.6005"
+  },
+  {
+   "from": "crisis.6005",
+   "to": "crisis.6006",
+   "conditional": true,
+   "label": {
+    "zh": "引擎第二阶段完工：全银河获悉",
+    "en": "Engine stage 2 complete: the whole galaxy learns of it"
+   },
+   "evidence": "common/megastructures/12_crisis_sphere.txt:93-122 crisis_sphere_2 on_build_complete fires crisis.6006 and crisis.6150 days=180 random=480"
+  },
+  {
+   "from": "crisis.6006",
+   "to": "crisis.6151",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段完工180–660天后：虚境生物出现",
+    "en": "180–660 days after stage 2: Shroud entities appear"
+   },
+   "evidence": "events/nemesis_crisis_endgame.txt:922-1035 crisis.6150 (requires owns_crisis_sphere_system) sends crisis.6151 to human players"
+  },
+  {
+   "from": "crisis.6006",
+   "to": "crisis.6007",
+   "conditional": true,
+   "label": {
+    "zh": "引擎第三阶段完工",
+    "en": "Engine stage 3 complete"
+   },
+   "evidence": "common/megastructures/12_crisis_sphere.txt:127-157 crisis_sphere_3 on_build_complete fires crisis.6007, crisis.6160 (180-660 d) and crisis.6170 (60-1320 d)"
+  },
+  {
+   "from": "crisis.6007",
+   "to": "crisis.6161",
+   "conditional": true,
+   "label": {
+    "zh": "第三阶段完工180–660天后：第二波虚境生物",
+    "en": "180–660 days after stage 3: a second wave of Shroud entities"
+   },
+   "evidence": "events/nemesis_crisis_endgame.txt:1062-1169 crisis.6160 sends crisis.6161"
+  },
+  {
+   "from": "crisis.6007",
+   "to": "crisis.6171",
+   "conditional": true,
+   "label": {
+    "zh": "第三阶段完工60–1320天后：灵能脉冲（拥有灵能人口的帝国）",
+    "en": "60–1320 days after stage 3: psionic pulses (empires with psionic pops)"
+   },
+   "evidence": "events/nemesis_crisis_endgame.txt:1172-1312 crisis.6170 sends crisis.6171 to empires with psionic pops"
+  },
+  {
+   "from": "crisis.6007",
+   "to": "crisis.6050",
+   "conditional": true,
+   "label": {
+    "zh": "引擎最终阶段完工：胜利",
+    "en": "Final Engine stage complete: victory"
+   },
+   "evidence": "common/megastructures/12_crisis_sphere.txt:162-182 crisis_sphere_4 on_build_complete fires crisis.6050"
+  },
+  {
+   "from": "crisis.6000",
+   "to": "crisis.6101",
+   "conditional": true,
+   "label": {
+    "zh": "若引擎被摧毁或其星系被占领（建造者视角）",
+    "en": "If the Engine is destroyed or its system occupied (builder's view)"
+   },
+   "evidence": "events/nemesis_crisis_endgame.txt:737-831 crisis.6100 (on_system_occupied 00_on_actions.txt:4629; crisis.6099 on_starbase_destroyed by an endgame crisis; crisis.6205 nomad anchor disabled) sends crisis.6101 to the builder"
+  },
+  {
+   "from": "crisis.6000",
+   "to": "crisis.6200",
+   "conditional": true,
+   "label": {
+    "zh": "若他国夺取引擎（夺取者选择摧毁或接手）",
+    "en": "If another empire captures the Engine (the captor destroys or takes it over)"
+   },
+   "evidence": "events/nemesis_crisis_endgame.txt:1375-1575 crisis.6200 (on_megastructure_change_owner, 00_on_actions.txt:4761); option B only for a level-5 crisis that lost its own Engine"
+  },
+  {
+   "from": "crisis.6000",
+   "to": "crisis.6102",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁或占领引擎的帝国看到的通报",
+    "en": "The notice seen by the empire that destroys or occupies the Engine"
+   },
+   "evidence": "events/nemesis_crisis_endgame.txt:816-818 crisis.6100 sends crisis.6102 to FROM, the destroyer; crisis.6103 goes to every other human player (L820-829)"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "crisis.6200",
+   "to": "crisis.6101",
+   "option": "crisis.6200.A",
+   "evidence": "crisis.6101 goes to the builder (event_target:sphere_builders), not to the captor reading crisis.6200 (nemesis_crisis_endgame.txt:1510-1513); it is attached under crisis.6000"
+  },
+  {
+   "from": "crisis.6050",
+   "to": "crisis.2037",
+   "evidence": "crisis.6052 (L674-701) destroys every star system; destroy_star_system only incidentally reaches the Contingency machine-world notice"
+  },
+  {
+   "from": "crisis.6050",
+   "to": "observer.50",
+   "evidence": "same destroy_star_system side effect"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:CRISIS_SPECIAL_PROJECT_PSIONIC_1",
+    "special_projects:CRISIS_SPECIAL_PROJECT_MACH_1",
+    "special_projects:CRISIS_SPECIAL_PROJECT_SH_1",
+    "special_projects:CRISIS_SPECIAL_PROJECT_HIVE_1",
+    "special_projects:CRISIS_SPECIAL_PROJECT_1"
+   ],
+   "label": {
+    "zh": "按帝国类型的第一项项目",
+    "en": "First project by empire type"
+   },
+   "note": {
+    "zh": "灵能、机械、虚境铸就机械、蜂巢与一般帝国各进行对应版本；后续三项同理。",
+    "en": "Psionic, machine, Shroud-Forged machine, hive and ordinary empires each run their own version; the next three projects work the same way."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.4105",
+    "crisis.4106"
+   ],
+   "label": {
+    "zh": "宣告者：共同体或帝国",
+    "en": "Declared by the Community or the Imperium"
+   },
+   "note": {
+    "zh": "有银河监管人或普通共同体时由共同体宣告；存在银河帝皇时由帝国宣告。",
+    "en": "The Community declares it (Custodian or ordinary Community); with a Galactic Emperor the Imperium does."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.6180",
+    "crisis.6181",
+    "crisis.6182"
+   ],
+   "label": {
+    "zh": "首颗恒星被吞噬：他国通报",
+    "en": "First star destroyed: notices to others"
+   },
+   "note": {
+    "zh": "按收件方对该星系的情报与其是否也能建造吞星者，三选一。",
+    "en": "One of three, by the recipient's intel on the system and whether it can build Star-Eaters itself."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.6101",
+    "crisis.6102",
+    "crisis.6103"
+   ],
+   "label": {
+    "zh": "引擎被毁：三种视角",
+    "en": "Engine destroyed: three points of view"
+   },
+   "note": {
+    "zh": "建造者（6101）、摧毁者（6102）与其他玩家（6103）各收到一种。",
+    "en": "The builder (6101), the destroyer (6102) and other players (6103) each receive one."
+   }
+  }
+ ],
+ "endings": {
+  "crisis.6050": {
+   "label": {
+    "zh": "胜利：始与终",
+    "en": "Victory: A Beginning and an End"
+   },
+   "note": {
+    "zh": "以太相引擎完工，帝国获胜；1天后其他玩家收到“末日”（6051），所有恒星系被摧毁。",
+    "en": "The Aetherophasic Engine is complete and the empire wins; a day later other players receive The End Times (6051) and every star system is destroyed."
+   },
+   "evidence": "events/nemesis_crisis_endgame.txt:611-701 crisis.6050 option fires crisis.6052 days=1: crisis.6051 to others, destroy_star_system on every system, win = yes"
+  },
+  "crisis.6101": {
+   "label": {
+    "zh": "挫败：引擎被毁",
+    "en": "Setback: the Engine destroyed"
+   },
+   "note": {
+    "zh": "引擎化为废墟；废墟可以重建，故事并未在脚本上终结。",
+    "en": "The Engine becomes a ruin; the ruin can be rebuilt, so the script does not end the story here."
+   },
+   "evidence": "events/nemesis_crisis_endgame.txt:755-805 spawns crisis_sphere_ruined; 1541-1549 a ruined sphere can be upgraded again"
+  }
+ },
+ "nodeLabels": {
+  "crisis.4140": {
+   "zh": "第一级：宇宙为之颤抖",
+   "en": "Level 1"
+  },
+  "crisis.4145": {
+   "zh": "第二级",
+   "en": "Level 2"
+  },
+  "crisis.4150": {
+   "zh": "第三级",
+   "en": "Level 3"
+  },
+  "crisis.4155": {
+   "zh": "第四级",
+   "en": "Level 4"
+  },
+  "crisis.6000": {
+   "zh": "第五级：以太相引擎",
+   "en": "Level 5: the Aetherophasic Engine"
+  },
+  "crisis.6001": {
+   "zh": "吞星者",
+   "en": "The Star-Eaters"
+  },
+  "crisis.4105": {
+   "zh": "被宣告为危机",
+   "en": "Declared a crisis"
+  },
+  "crisis.6050": {
+   "zh": "胜利",
+   "en": "Victory"
+  },
+  "crisis.6101": {
+   "zh": "引擎被毁",
+   "en": "Engine destroyed"
+  }
+ },
+ "notes": [
+  {
+   "doc": "crisis.4105",
+   "kind": "review",
+   "zh": "“宣告危机”是星海共同体的决议，也可被投票用于任何嗜杀帝国；星海天罚与巨兽之怒到达第五级时会被强制通过。",
+   "en": "Declare Crisis is a Galactic Community resolution that can also be voted against any homicidal empire; reaching level 5 of Galactic Nemesis or Behemoth Fury forces it through."
+  },
+  {
+   "doc": "crisis.6005",
+   "kind": "review",
+   "zh": "第一阶段完工时，拥有灵能物种或同样建造引擎的其他玩家收到“灵能警报”（6010）；第二阶段时其余玩家收到“全面警报”（6015）。",
+   "en": "At stage 1, other players with a psionic species or their own Engine receive Psionic Alert (6010); at stage 2 the remaining players receive the general alert (6015)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c5b-crisis (Opus 5.5)",
+  "scope": {
+   "zh": "完整核对 nemesis_crisis_events.txt 与 nemesis_crisis_endgame.txt 全部可见事件、五个天灾等级、特殊项目、以太相引擎各阶段、宣告/废止危机决议与吞星事件。",
+   "en": "Checked every visible event in nemesis_crisis_events.txt and nemesis_crisis_endgame.txt, the five crisis levels, special projects, Engine stages, Declare/Repeal Crisis resolutions and star-eating notices."
+  },
+  "sources": [
+   "events/nemesis_crisis_events.txt",
+   "events/nemesis_crisis_endgame.txt",
+   "common/crisis_levels/00_crisis_levels.txt",
+   "common/crisis_paths/00_nemesis_paths.txt",
+   "common/special_projects/00_projects_nemesis.txt",
+   "common/megastructures/12_crisis_sphere.txt",
+   "common/resolutions/01_resolutions_nemesis.txt",
+   "common/scripted_effects/galactic_community_effects.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/on_actions/01_planet_destruction.txt",
+   "events/planet_destruction_events.txt"
+  ],
+  "uncertain": [
+   "crisis.4100/4105 also fire when the Community votes Declare Crisis against any homicidal empire or for the Great Khan (common/resolutions/00_resolutions.txt:11983-11989); they are placed under level 5 here, where the path forces them.",
+   "Engine stage build times are the megastructure base (3600 days per stage); modifiers were not modelled."
+  ],
+  "guide": "public/summaries/galactic-nemesis.md"
+ }
+}

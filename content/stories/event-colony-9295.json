@@ -1,0 +1,19 @@
+{
+ "id": "event-colony-9295",
+ "category": "society",
+ "endings": {
+  "colony.9301": {"label": {"zh": "结局：无价洞见", "en": "Ending: invaluable insight"}, "note": {"zh": "气象学研究完成：获得食物与金属泥潭矿藏。", "en": "The meteorology study ends with food and the metallic puddles deposit."}, "evidence": "events/colony_events_3.txt:6843-6866; common/special_projects/00_projects_1.txt:3578-3598."}
+ },
+ "notes": [
+  {"doc": "colony.9300", "kind": "review", "zh": "审阅注：两条路线在此汇合——“禁止接触”经白银史莱姆、泥潭消失、银泥归来三步（每步35–75天）；“进一步调查”只经一步。研究项目需科研船与科学家，180天，1080天期限。", "en": "Review note: both routes meet here — 'leave them alone' passes Silver Slime, Disappearing Puddles and Return of the Silver Slime (35–75 days each); 'investigate' takes one step. The project needs a science ship and scientist: 180 days, 1080-day limit."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "金属泥潭全部7个事件与气象学项目。", "en": "All 7 Metallic Puddles events and the meteorology project."},
+  "sources": ["events/colony_events_3.txt:6655-6866", "common/special_projects/00_projects_1.txt:3578-3598", "common/on_actions/00_on_actions.txt:3770"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-9295.md"
+ }
+}

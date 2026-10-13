@@ -2,15 +2,14 @@
   "category": "leviathans",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 55,
-  "docs": 467,
-  "nodes": 736,
-  "refs": 269,
-  "crossLinks": 84,
+  "stories": 57,
+  "docs": 468,
+  "nodes": 717,
+  "refs": 249,
+  "crossLinks": 78,
   "review": {
-    "partial": 7,
-    "reviewed": 1,
-    "unreviewed": 47
+    "reviewed": 17,
+    "unreviewed": 40
   },
   "failures": [],
   "items": [
@@ -21,23 +20,23 @@
       "docs": 79,
       "refs": 11,
       "crossLinks": 3,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "curators",
       "title": "策展人",
       "kind": "family",
-      "docs": 43,
+      "docs": 42,
       "refs": 45,
-      "crossLinks": 1,
-      "review": "partial"
+      "crossLinks": 2,
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-4199",
       "title": "灵督城邦",
       "kind": "family",
       "docs": 42,
-      "refs": 41,
+      "refs": 23,
       "crossLinks": 15,
       "review": "reviewed"
     },
@@ -48,7 +47,7 @@
       "docs": 32,
       "refs": 31,
       "crossLinks": 30,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "mercenary-enclave",
@@ -57,16 +56,16 @@
       "docs": 27,
       "refs": 39,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "infinity-machine",
       "title": "无限神机",
       "kind": "family",
       "docs": 19,
-      "refs": 4,
-      "crossLinks": 1,
-      "review": "unreviewed"
+      "refs": 2,
+      "crossLinks": 2,
+      "review": "reviewed"
     },
     {
       "id": "salvager-enclave",
@@ -75,7 +74,7 @@
       "docs": 17,
       "refs": 22,
       "crossLinks": 2,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "shroud-tunnels",
@@ -84,7 +83,7 @@
       "docs": 9,
       "refs": 0,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "enclave-leader-departure",
@@ -93,7 +92,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "event-leviathans-2099",
@@ -147,7 +146,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-leviathans-140",
@@ -201,7 +200,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-enclave-430",
@@ -210,7 +209,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-leviathans-155",
@@ -272,8 +271,8 @@
       "kind": "event",
       "docs": 2,
       "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "event-enclave-23",
@@ -282,7 +281,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-leviathans-290",
@@ -318,7 +317,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-enclave-27",
@@ -327,7 +326,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-enclave-4239",
@@ -508,6 +507,24 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-98",
+      "title": "通讯已建立",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-shroud-5375",
+      "title": "虚境封印",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     }
   ]
 }

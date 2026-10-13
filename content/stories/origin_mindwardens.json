@@ -1,22 +1,485 @@
 {
  "id": "origin_mindwardens",
+ "hubs": [
+  "shroud.4201"
+ ],
  "opening": {
   "targets": [
-   "shroud.6050"
+   "shroud.6050",
+   "shroud.6200",
+   "shroud.6225",
+   "shroud.6125",
+   "shroud.6231"
   ],
   "label": {
-   "zh": "三个月后出现异常关联",
-   "en": "Unusual correlations after three months"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "game_start ->shroud6000 schedules6050 months3;6125 years12 is not an opening"
+  "labels": {
+   "shroud.6050": {
+    "zh": "开局3个月后：远古堡场读数异常",
+    "en": "3 months after game start: the ancient ward reads strangely"
+   },
+   "shroud.6200": {
+    "zh": "流亡者的灵能光环扩展到边境缓冲星系时",
+    "en": "When the Exiled's psionic aura reaches the border buffer system"
+   },
+   "shroud.6225": {
+    "zh": "光环扩展到母星系时（尚未升级为宏伟堡场）",
+    "en": "When the aura reaches the home system (before the Grand Ward)"
+   },
+   "shroud.6125": {
+    "zh": "开局12年后，或首次接触被中止30天后（仅一次）",
+    "en": "12 years after game start, or 30 days after the aborted first contact (once)"
+   },
+   "shroud.6231": {
+    "zh": "若母星被攻占（尚未升级为宏伟堡场）",
+    "en": "If the homeworld is captured (before the Grand Ward)"
+   }
+  },
+  "evidence": "events/game_start.txt:440-443 game_start.1 fires hidden shroud.6000 (events/origin_events_shadows_shroud.txt:8-240): creates the Exiled country and its buffer system, schedules 6050 after 3 months and 6125 after 12 years (:15-16). The Exiled's aura (common/patrons/psionic_auras/00_auras.txt:2101 / :2109, exiled_aura on_progress_complete) fires 6200 in the mindwarden_buffer_system and 6225 in the mindwarden_system. common/on_actions/00_on_actions.txt:888 on_colony_defenders_lose -> hidden 6230 (:1084-1148) -> 6231 unless the ward was already upgraded."
  },
- "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+ "bridges": [
+  {
+   "from": "special_projects:EXPLORE_BORDER_SYSTEM",
+   "to": "shroud.6101",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入边境缓冲星系",
+    "en": "A fleet enters the border buffer system"
+   },
+   "evidence": "common/special_projects/04_projects_shroud.txt:586-596 the project only has an event tooltip; common/on_actions/00_on_actions.txt:1076 on_entering_system_fleet -> hidden 6100 (events/origin_events_shadows_shroud.txt:354-385) aborts the project, sets mindwarden_visit_border and fires 6101 after 1 day."
+  },
+  {
+   "from": "shroud.6101",
+   "to": "shroud.6110",
+   "conditional": true,
+   "label": {
+    "zh": "与流亡者建立接触，首次接触开始",
+    "en": "Contact with the Exiled is established; first contact begins"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:432-444 6101 establish_contact with the Exiled; common/first_contact/00_first_contact.txt:140 base_contact_set stage event 6110 (:490-526)."
+  },
+  {
+   "from": "shroud.6110",
+   "to": "shroud.6115",
+   "conditional": true,
+   "label": {
+    "zh": "首次接触推进到第一阶段",
+    "en": "First contact advances to its first stage"
+   },
+   "evidence": "common/first_contact/02_first_contact_unique_stories.txt:239-247 exiled_stage_1 fires 6115 (events/origin_events_shadows_shroud.txt:529-560)."
+  },
+  {
+   "from": "shroud.6115",
+   "choice": "shroud.6115.a",
+   "to": "shroud.6120",
+   "conditional": true,
+   "label": {
+    "zh": "推进到第二阶段：任务中止",
+    "en": "Second stage: the mission is aborted"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:556-559 6115.a sets exiled_stage_2; common/first_contact/02_first_contact_unique_stories.txt:259-267 exiled_stage_2 fires 6120 (:563-617), which schedules 6125 after 30 days."
+  },
+  {
+   "from": "shroud.6101",
+   "to": "shroud.6020",
+   "conditional": true,
+   "label": {
+    "zh": "此后通过外交界面联络流亡者（尚未与其交谈）",
+    "en": "Later contacting the Exiled through diplomacy (before any conversation)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:745 on_custom_diplomacy -> hidden 6010 (events/origin_events_shadows_shroud.txt:242-266): 6020 without spoken_to_exiled, otherwise 6030."
+  },
+  {
+   "from": "shroud.6510",
+   "to": "shroud.6030",
+   "conditional": true,
+   "label": {
+    "zh": "交谈之后再次通过外交界面联络流亡者",
+    "en": "Contacting the Exiled through diplomacy after the conversation"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:1639 6510 sets spoken_to_exiled (also 6560 :2051); 6010 then fires 6030 (:262-264)."
+  },
+  {
+   "from": "shroud.6200",
+   "to": "shroud.6220",
+   "conditional": true,
+   "label": {
+    "zh": "此后己方舰船进入缓冲星系",
+    "en": "A ship of yours later enters the buffer system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1077 on_entering_system_fleet -> 6220 (events/origin_events_shadows_shroud.txt:992-1028) requires mindwarden_border_aura (set by 6200, :757) and no mindwarden_ship_aura."
+  },
+  {
+   "from": "shroud.6231",
+   "to": "shroud.6241",
+   "conditional": true,
+   "label": {
+    "zh": "夺回母星",
+    "en": "Retake the homeworld"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:842 on_colony_attackers_win -> hidden 6240 (events/origin_events_shadows_shroud.txt:1187-1393) fires 6241 while the reclaim chain is active."
+  },
+  {
+   "from": "event_chains:ancient_ward_upgrade_chain",
+   "to": "shroud.6215",
+   "conditional": true,
+   "label": {
+    "zh": "在母星建成宏伟堡场",
+    "en": "Build the Grand Ward on the homeworld"
+   },
+   "evidence": "common/buildings/23_shroud_buildings.txt:1900 building_ancient_ward_2 on_built fires 6215 when the ancient_ward_upgrade_chain counter is complete (AI: hidden 6211, events/origin_events_shadows_shroud.txt:874-910)."
+  },
+  {
+   "from": "shroud.6215",
+   "to": "shroud.6300",
+   "conditional": true,
+   "label": {
+    "zh": "研究“灵能压制”科技后",
+    "en": "After researching Psionic Suppression"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:2747 on_tech_increased -> 6300 (events/origin_events_shadows_shroud.txt:1458-1496): requires the shroud_seal_construction_chain begun by 6215.a (:951-954)."
+  },
+  {
+   "from": "shroud.6215",
+   "to": "shroud.6500",
+   "conditional": true,
+   "label": {
+    "zh": "在边境星系建成虚境封印后",
+    "en": "After the Shroud Seal is built in the border system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:3671 on_megastructure_built -> hidden 6305 (events/origin_events_shadows_shroud.txt:1499-1520): shroud_seal in the exiled border system ends the construction chain and fires 6500 (:1526-1562, once)."
+  },
+  {
+   "from": "shroud.6550",
+   "to": "shroud.6575",
+   "conditional": true,
+   "label": {
+    "zh": "拆除封印后又在边境重建封印",
+    "en": "Rebuilding the Shroud Seal in the border system after dismantling it"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:3673 on_megastructure_built -> hidden 6585 (events/origin_events_shadows_shroud.txt:2169-2190): with shroud_seal_reconstruction_chain_poi_1 it ends the reconstruction chain and fires 6575, which starts the war."
+  },
+  {
+   "from": "event_chains:the_psionic_war_chain",
+   "to": "shroud.6580",
+   "conditional": true,
+   "label": {
+    "zh": "在流亡者核心星系建成虚境封印",
+    "en": "Build a Shroud Seal in the Exiled core system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:3672 on_megastructure_built -> hidden 6540 (events/origin_events_shadows_shroud.txt:1801-1821) with the_psionic_war_chain_poi_1 fires 6580."
+  },
+  {
+   "from": "event_chains:the_psionic_war_chain",
+   "to": "shroud.6600",
+   "conditional": true,
+   "label": {
+    "zh": "夺取流亡者两颗星球中的第一颗",
+    "en": "Take the first of the Exiled's two worlds"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:3409 on_colony_transfer -> hidden 6545 (events/origin_events_shadows_shroud.txt:1843-1941): first exiled planet taken by the matching Mindwardens -> 6600 (invasion) or 6601 (via colonisation, 6544 on_colonized :1332)."
+  },
+  {
+   "from": "event_chains:the_psionic_war_chain",
+   "to": "shroud.6601",
+   "conditional": true,
+   "label": {
+    "zh": "殖民流亡者两颗星球中的第一颗",
+    "en": "Colonise the first of the Exiled's two worlds"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1332 on_colonized -> hidden 6544 -> 6545 (events/origin_events_shadows_shroud.txt:1823-1941) fires 6601 when the first planet comes through colonisation."
+  },
+  {
+   "from": "shroud.6600",
+   "to": "shroud.6700",
+   "conditional": true,
+   "label": {
+    "zh": "夺取第二颗星球",
+    "en": "Take the second world"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:1909-1919 6545: both war POIs cleared -> ends the war chain and fires 6700; events/on_action_events_1.txt:7540-7552 action.88 also fires 6700 when an exiled planet is transferred."
+  },
+  {
+   "from": "shroud.6601",
+   "to": "shroud.6700",
+   "conditional": true,
+   "label": {
+    "zh": "夺取第二颗星球",
+    "en": "Take the second world"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:1909-1919 (see 6600 -> 6700)."
+  },
+  {
+   "from": "shroud.6600",
+   "to": "shroud.6705",
+   "conditional": true,
+   "label": {
+    "zh": "另一颗星球被轰炸至毁灭",
+    "en": "The other world is bombarded into ruin"
+   },
+   "evidence": "hidden 6704 (events/origin_events_shadows_shroud.txt:2383-2429) fires 6705 when the other exiled planet is destroyed instead of captured; 6705 schedules 6800 after 2 years."
+  },
+  {
+   "from": "shroud.6601",
+   "to": "shroud.6705",
+   "conditional": true,
+   "label": {
+    "zh": "另一颗星球被轰炸至毁灭",
+    "en": "The other world is bombarded into ruin"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:2383-2479 (see 6600 -> 6705)."
+  },
+  {
+   "from": "shroud.6770",
+   "choice": "shroud.6770.b",
+   "to": "shroud.6780",
+   "conditional": true,
+   "label": {
+    "zh": "启用遗珍“失落的庇护者”",
+    "en": "Activate the relic The Lost Patron"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:2808-2814 6770.b adds r_the_lost_patron; common/relics/relics.txt:2922 its active effect fires 6780 the first time (:2817-2864)."
+  },
+  {
+   "from": "special_projects:MINDWARDENS_THE_FIRST_ENCLAVE",
+   "to": "shroud.6825",
+   "conditional": true,
+   "label": {
+    "zh": "用一支舰队建立灵督城邦",
+    "en": "Found a Mindwarden enclave with a fleet"
+   },
+   "evidence": "common/special_projects/04_projects_shroud.txt:554-569 the project is only a marker (aborts once first_mindwarden_enclave_founded); common/on_actions/00_on_actions.txt:4807 on_establish_mercenary_enclave fires 6825 (events/origin_events_shadows_shroud.txt:2949-3044)."
+  },
+  {
+   "from": "shroud.6825",
+   "choice": "shroud.6825.a",
+   "to": "shroud.6852",
+   "conditional": true,
+   "label": {
+    "zh": "城邦建成：首次与它通讯（城邦服务菜单）",
+    "en": "The enclave is founded: its first greeting (enclave service menu)"
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:3024-3078 6825.a -> hidden 6827 creates the mercenary enclave and opens hidden shroud.4201; events/shroud_events.txt:9339-9347 and 14927-14943 route the patron to 6852 on the first enclave (6853 for later ones)."
+  },
+  {
+   "from": "shroud.6825",
+   "choice": "shroud.6825.a",
+   "to": "shroud.6830",
+   "conditional": true,
+   "label": {
+    "zh": "结束与第一座城邦的首次通讯后",
+    "en": "After closing the first conversation with the first enclave"
+   },
+   "evidence": "events/shroud_events.txt:14976-14982 6852 sets should_fire_shroud.6830; common/scripted_effects/shroud_shadows_scripted_effects.txt:12 close_mindwarden_diplomacy fires 6830 (events/origin_events_shadows_shroud.txt:3081-3101)."
   }
+ ],
+ "suppress": [
+  {
+   "from": "shroud.6110",
+   "to": "leviathans.98",
+   "evidence": "6110's option tooltip runs the generic set_first_contact_starting_stage effect, whose guardian branch reaches leviathans.97/98; the Exiled contact continues with exiled_stage_1 (common/first_contact/02_first_contact_unique_stories.txt:239-247). Not a continuation."
+  },
+  {
+   "from": "shroud.6110",
+   "to": "cara.1020",
+   "evidence": "common/scripted_effects/first_contact_effects.txt (finish/start stage helpers): caravaneer follow-ups fire only when the contact country is a Caravaneer fleet; 6110 is the Exiled contact. Not a continuation."
+  },
+  {
+   "from": "shroud.6110",
+   "to": "cara.2020",
+   "evidence": "common/scripted_effects/first_contact_effects.txt (finish/start stage helpers): caravaneer follow-ups fire only when the contact country is a Caravaneer fleet; 6110 is the Exiled contact. Not a continuation."
+  },
+  {
+   "from": "shroud.6110",
+   "to": "cara.3020",
+   "evidence": "common/scripted_effects/first_contact_effects.txt (finish/start stage helpers): caravaneer follow-ups fire only when the contact country is a Caravaneer fleet; 6110 is the Exiled contact. Not a continuation."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.6530",
+    "shroud.6535"
+   ],
+   "label": {
+    "zh": "对灵主最后通牒的回答",
+    "en": "Answer to the Psiarch's ultimatum"
+   },
+   "note": {
+    "zh": "拒绝即开战；同意则拆除封印，10年后仍会被宣战，重建封印则立即开战。",
+    "en": "Refusing starts the war; agreeing dismantles the seal, but war comes after 10 years, or at once if the seal is rebuilt."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.6600",
+    "shroud.6601"
+   ],
+   "label": {
+    "zh": "第一颗流亡者星球如何取得",
+    "en": "How the first Exiled world is taken"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.6700",
+    "shroud.6705"
+   ],
+   "label": {
+    "zh": "第二颗星球：攻占或毁灭",
+    "en": "The second world: captured or destroyed"
+   }
+  }
+ ],
+ "endings": {
+  "shroud.6830": {
+   "label": {
+    "zh": "灵督城邦建立",
+    "en": "The Mindwarden enclave stands"
+   },
+   "note": {
+    "zh": "起源主线到此完成；城邦之后的服务与分红是持续机制。",
+    "en": "The origin's main line is complete; the enclave's services and dividends are ongoing mechanics."
+   },
+   "evidence": "events/origin_events_shadows_shroud.txt:3081-3101; dividends situation common/situations/03_AI_empire_situations.txt:440 -> 6840 (:3104-3151)."
+  }
+ },
+ "nodeLabels": {
+  "shroud.6515": {
+   "zh": "灵主的要求（续一）",
+   "en": "The Psiarch's demand (2)"
+  },
+  "shroud.6520": {
+   "zh": "灵主的要求（续二）",
+   "en": "The Psiarch's demand (3)"
+  },
+  "shroud.6525": {
+   "zh": "最后通牒",
+   "en": "The ultimatum"
+  },
+  "shroud.6530": {
+   "zh": "拒绝：战争开始",
+   "en": "Refused: war begins"
+  },
+  "shroud.6535": {
+   "zh": "同意拆除封印",
+   "en": "Agreed to dismantle the seal"
+  },
+  "shroud.6020": {
+   "zh": "联络流亡者（未交谈）",
+   "en": "Contacting the Exiled (no talks yet)"
+  },
+  "shroud.6030": {
+   "zh": "联络流亡者（交谈后）",
+   "en": "Contacting the Exiled (after talks)"
+  },
+  "shroud.6720": {
+   "zh": "茧中之声：问答",
+   "en": "The voice in the cocoon: questions"
+  },
+  "shroud.6723": {
+   "zh": "回答：抗拒",
+   "en": "Answer: resist"
+  },
+  "shroud.6725": {
+   "zh": "回答：你是什么",
+   "en": "Answer: what are you"
+  },
+  "shroud.6730": {
+   "zh": "回答：转轮",
+   "en": "Answer: the wheel"
+  },
+  "shroud.6735": {
+   "zh": "回答：为何在此",
+   "en": "Answer: why here"
+  },
+  "shroud.6740": {
+   "zh": "回答（一）",
+   "en": "Answer (i)"
+  },
+  "shroud.6745": {
+   "zh": "回答（二）",
+   "en": "Answer (ii)"
+  },
+  "shroud.6750": {
+   "zh": "回答：想要什么",
+   "en": "Answer: what it wants"
+  },
+  "shroud.6755": {
+   "zh": "回答（续）",
+   "en": "Answer (cont.)"
+  },
+  "shroud.6760": {
+   "zh": "回答（终）",
+   "en": "Answer (end)"
+  },
+  "shroud.6763": {
+   "zh": "回答：来自虚境？",
+   "en": "Answer: from the Shroud?"
+  },
+  "shroud.6765": {
+   "zh": "回答（续）",
+   "en": "Answer (cont.)"
+  },
+  "shroud.6785": {
+   "zh": "梦客之歌（二）",
+   "en": "The Dreamer's song (2)"
+  },
+  "shroud.6790": {
+   "zh": "梦客之歌（三）",
+   "en": "The Dreamer's song (3)"
+  },
+  "shroud.6795": {
+   "zh": "梦客之歌（四）",
+   "en": "The Dreamer's song (4)"
+  }
+ },
+ "notes": [
+  {
+   "doc": "shroud.6720",
+   "kind": "review",
+   "zh": "审阅注：这是可循环的问答；问“你是什么”后选“转轮”回答（6730）会解锁最后两个选项，其中“我们已经听够了”进入6770。",
+   "en": "Review note: a looping conversation; after 'What are you?' the wheel answer (6730) unlocks the last two options, and 'We have heard enough' leads to 6770."
+  },
+  {
+   "doc": "shroud.6825",
+   "kind": "review",
+   "zh": "审阅注：城邦服务菜单（雇佣、升级、科技等）是所有帝国联络灵督城邦时共用的重复菜单，作为独立故事链接，不并入本起源。",
+   "en": "Review note: the enclave service menu (hire, upgrade, technology…) is a repeatable menu shared by every empire that contacts a Mindwarden enclave; it is linked as a separate story, not merged here."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c1-origins (Opus 5.5), V4 source review",
+  "scope": {
+   "zh": "核对开局设置、边境探索与流亡者首次接触、光环扩散与堡场升级、母星失守与夺回、虚境封印与灵主对话、灵能战争、两颗星球的取得、梦客圣所与问答、遗珍、第一城邦与分红；城邦服务菜单与通用首次接触只作链接。",
+   "en": "Checked the start setup, the border exploration and Exiled first contact, aura spread and ward upgrade, homeworld loss and recapture, the Shroud Seal and Psiarch talks, the psionic war, taking both worlds, the Sanctum and its dialogue, the relic, the first enclave and dividends; the enclave service menu and generic first-contact helpers are linked only."
+  },
+  "sources": [
+   "events/origin_events_shadows_shroud.txt",
+   "events/shroud_events.txt",
+   "events/game_start.txt",
+   "events/on_action_events_1.txt",
+   "common/special_projects/04_projects_shroud.txt",
+   "common/first_contact/00_first_contact.txt",
+   "common/first_contact/02_first_contact_unique_stories.txt",
+   "common/patrons/psionic_auras/00_auras.txt",
+   "common/buildings/23_shroud_buildings.txt",
+   "common/relics/relics.txt",
+   "common/situations/03_AI_empire_situations.txt",
+   "common/scripted_effects/shroud_shadows_scripted_effects.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "Psionic war timing after dismantling or reclaiming depends on remaining timed-flag days (events/origin_events_shadows_shroud.txt:1233-1391); the archive shows the routes, not the timers.",
+   "6704 is fired from an on_action hook not resolved by the call graph (planet destroyed); the trigger conditions are read from the event itself."
+  ],
+  "guide": "public/summaries/origin_mindwardens.md"
  }
 }

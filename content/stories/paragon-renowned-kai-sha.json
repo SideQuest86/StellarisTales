@@ -1,0 +1,67 @@
+{
+ "id": "paragon-renowned-kai-sha",
+ "family": {
+  "title": {
+   "zh": "卡伊·沙",
+   "en": "Kai-Sha"
+  },
+  "category": "stories",
+  "start": "paragon.41300",
+  "members": [
+   "paragon.41300",
+   "paragon.41310",
+   "paragon.41320"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "paragon.41300",
+   "choice": "HIRE",
+   "to": "paragon.41310",
+   "conditional": true,
+   "label": {
+    "zh": "受雇后每十年判定一次：10%（1–1800天后）；与至少一个帝国有通讯",
+    "en": "After hiring, checked every decade: 10% (after 1–1800 days); condition in the guide"
+   },
+   "evidence": "events/paragon_events_4.txt:1728-1866 paragon.41234 (on_decade_pulse_country, 00_on_actions.txt:626) picks a random renowned leader and, for leader flag renowned_authoritarian1 (line 1835), random_list 10/10/80 -> paragon.41310 days=1 random=1800; paragon.41310 at 3348-3424 is fire_only_once. The flag is set when hiring (ethic_leader_hire_effect, common/scripted_effects/paragon_effects.txt:439-460)."
+  },
+  {
+   "from": "paragon.41300",
+   "choice": "HIRE",
+   "to": "paragon.41320",
+   "conditional": true,
+   "label": {
+    "zh": "受雇后每十年判定一次：10%（1–1800天后）；另有与我们通讯的帝国",
+    "en": "After hiring, checked every decade: 10% (after 1–1800 days); condition in the guide"
+   },
+   "evidence": "events/paragon_events_4.txt:1728-1866 paragon.41234 (on_decade_pulse_country, 00_on_actions.txt:626) picks a random renowned leader and, for leader flag renowned_authoritarian1 (line 1835), random_list 10/10/80 -> paragon.41320 days=1 random=1800; paragon.41320 at 3428-3490 is fire_only_once. The flag is set when hiring (ethic_leader_hire_effect, common/scripted_effects/paragon_effects.txt:439-460)."
+  }
+ ],
+ "notes": [
+  {
+   "doc": "paragon.41300",
+   "kind": "review",
+   "zh": "审阅说明：本国有威权思潮时才可能抽到此人（每十年由隐藏事件40000/40001抽签，需典范DLC、外星语言学、非AI、非杀戮帝国）。打听问题只显示回答；“解雇”后不会再出现；“招募”后才会有后续故事。",
+   "en": "Review note: offered only to empires with the authoritarian ethic (decade lottery via hidden 40000/40001: Paragon, Xeno-Linguistics, not AI, not homicidal). Questions only show replies; dismissing removes the offer for good; only hiring unlocks the later episodes."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "招募对话（抽签条件、问答、解雇/招募）与两段受雇后的个人故事（每十年10%）及其项目。",
+   "en": "Recruitment dialogue (lottery conditions, questions, dismiss/hire) and the two post-hire episodes (10% per decade) with their projects."
+  },
+  "sources": [
+   "events/paragon_events_4.txt",
+   "common/scripted_effects/paragon_effects.txt",
+   "common/script_values/01_script_values_paragon.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "The decade check picks one random renowned leader; with several renowned leaders an episode may take longer."
+  ],
+  "guide": "public/summaries/paragon-renowned-kai-sha.md"
+ }
+}

@@ -1,44 +1,119 @@
 {
  "id": "salvager-enclave",
  "family": {
-  "title": {"zh": "打捞者城邦", "en": "Salvager Enclave"},
+  "title": {
+   "zh": "打捞者城邦",
+   "en": "Salvager Enclave"
+  },
   "category": "leviathans",
   "start": "enclave.300",
   "members": [
-   "enclave.300", "enclave.304", "enclave.305", "enclave.310", "enclave.311", "enclave.312", "enclave.315",
-   "enclave.320", "enclave.321", "enclave.325", "enclave.330", "enclave.335", "enclave.336", "enclave.340",
-   "enclave.341", "enclave.342", "enclave.345", "enclave.346", "enclave.350", "enclave.360", "enclave.365",
+   "enclave.300",
+   "enclave.304",
+   "enclave.305",
+   "enclave.310",
+   "enclave.311",
+   "enclave.312",
+   "enclave.315",
+   "enclave.320",
+   "enclave.321",
+   "enclave.325",
+   "enclave.330",
+   "enclave.335",
+   "enclave.336",
+   "enclave.340",
+   "enclave.341",
+   "enclave.342",
+   "enclave.345",
+   "enclave.346",
+   "enclave.350",
+   "enclave.360",
+   "enclave.365",
    "enclave.7005"
   ]
  },
  "bridges": [
   {
-   "from": "enclave.350", "choice": "DEAL", "to": "enclave.8000", "conditional": true,
-   "label": {"zh": "若日后攻击打捞者，打捞大师将离去", "en": "If we later attack the Salvagers, the Master Salvager leaves"},
+   "from": "enclave.350",
+   "choice": "DEAL",
+   "to": "enclave.8000",
+   "conditional": true,
+   "label": {
+    "zh": "若日后攻击打捞者，打捞大师将离去",
+    "en": "If we later attack the Salvagers, the Master Salvager leaves"
+   },
    "evidence": "on_entering_battle -> enclave.390 (overlord_enclaves_events.txt:6717-6740) requires a master_salvager leader, then enclave.8000 after 5 days"
   }
  ],
  "nodeLabels": {
-  "enclave.305": {"zh": "打捞者联络菜单", "en": "Salvager contact menu"},
-  "enclave.310": {"zh": "拆解舰队", "en": "Scrap a fleet"},
-  "enclave.320": {"zh": "翻新舰船", "en": "Reclaimed vessels"},
-  "enclave.330": {"zh": "维修工坊", "en": "Salvage Works"},
-  "enclave.335": {"zh": "建造援助", "en": "Construction aid"},
-  "enclave.340": {"zh": "委托打捞残骸", "en": "Commission debris salvage"},
-  "enclave.345": {"zh": "工程学研究援助", "en": "Engineering research aid"},
-  "enclave.350": {"zh": "雇佣打捞大师", "en": "Hire a Master Salvager"},
-  "enclave.7005": {"zh": "打捞者的引见", "en": "Salvager introduction"}
+  "enclave.305": {
+   "zh": "打捞者联络菜单",
+   "en": "Salvager contact menu"
+  },
+  "enclave.310": {
+   "zh": "拆解舰队",
+   "en": "Scrap a fleet"
+  },
+  "enclave.320": {
+   "zh": "翻新舰船",
+   "en": "Reclaimed vessels"
+  },
+  "enclave.330": {
+   "zh": "维修工坊",
+   "en": "Salvage Works"
+  },
+  "enclave.335": {
+   "zh": "建造援助",
+   "en": "Construction aid"
+  },
+  "enclave.340": {
+   "zh": "委托打捞残骸",
+   "en": "Commission debris salvage"
+  },
+  "enclave.345": {
+   "zh": "工程学研究援助",
+   "en": "Engineering research aid"
+  },
+  "enclave.350": {
+   "zh": "雇佣打捞大师",
+   "en": "Hire a Master Salvager"
+  },
+  "enclave.7005": {
+   "zh": "打捞者的引见",
+   "en": "Salvager introduction"
+  }
  },
  "notes": [
-  {"doc": "enclave.305", "kind": "review", "zh": "审阅注：首次接触完成或“通讯已建立”后经enclave.304打开，之后每次外交联络经enclave.400同类入口enclave.300打开。各项服务返回本菜单，是可重复的服务枢纽。“面纱旅人”询问会转到虚境行者城邦的窗口（enclave.7110）。", "en": "Review note: opened through enclave.304 after first contact or 'Communications Established', and through enclave.300 on every later diplomatic contact. Services return here: a repeatable service hub. The Veilfarer question opens the Shroudwalkers' window (enclave.7110)."},
-  {"doc": "enclave.7005", "kind": "review", "zh": "审阅注：玩家研究战列舰、5级恒星基地、巨型工程或（非虚空居民）栖息地科技时，若尚未与打捞者接触，由其主动问候并赠送合金（00_on_actions.txt:2703 on_tech_increased）。", "en": "Review note: when a player researches battleships, starbase tier 5, mega-engineering or (non-Void Dweller) habitats without having met the Salvagers, they greet the player and send alloys (00_on_actions.txt:2703 on_tech_increased)."}
+  {
+   "doc": "enclave.305",
+   "kind": "review",
+   "zh": "审阅注：首次接触完成或“通讯已建立”后经enclave.304打开，之后每次外交联络经enclave.300（on_custom_diplomacy）打开。各项服务返回本菜单，是可重复的服务枢纽。“面纱旅人”询问会转到虚境行者城邦的窗口（enclave.7110）。",
+   "en": "Review note: opened through enclave.304 after first contact or 'Communications Established', and through enclave.300 (on_custom_diplomacy) on every later diplomatic contact. Services return here: a repeatable service hub. The Veilfarer question opens the Shroudwalkers' window (enclave.7110)."
+  },
+  {
+   "doc": "enclave.7005",
+   "kind": "review",
+   "zh": "审阅注：玩家研究战列舰、5级恒星基地、巨型工程或（非虚空居民）栖息地科技时，若尚未与打捞者接触，由其主动问候并赠送合金（00_on_actions.txt:2703 on_tech_increased）。",
+   "en": "Review note: when a player researches battleships, starbase tier 5, mega-engineering or (non-Void Dweller) habitats without having met the Salvagers, they greet the player and send alloys (00_on_actions.txt:2703 on_tech_increased)."
+  },
+  {
+   "doc": "enclave.340",
+   "kind": "review",
+   "zh": "审阅注：“成交”后若已无可用残骸则为enclave.342；否则先显示enclave.341，60–90天后送达“委托打捞”（enclave.365）。341与365是先后关系，不互斥。",
+   "en": "Review note: after 'Deal', enclave.342 if no debris remains; otherwise enclave.341 now and 'Commissioned Salvage' (enclave.365) 60-90 days later. 341 and 365 are sequential, not alternatives."
+  }
  ],
  "review": {
-  "status": "partial",
+  "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "C6 (Opus 5.5)",
-  "scope": {"zh": "进行中", "en": "in progress"},
-  "sources": ["events/overlord_enclaves_events.txt"],
+  "scope": {
+   "zh": "完整：入口、七项服务及其延迟后续、面纱旅人跨故事链接、引见事件。",
+   "en": "Complete: entries, seven services and delayed follow-ups, Veilfarer cross-link, introduction."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt"
+  ],
   "guide": "public/summaries/salvager-enclave.md"
  }
 }

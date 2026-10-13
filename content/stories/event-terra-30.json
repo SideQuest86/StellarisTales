@@ -1,0 +1,11 @@
+{
+ "id": "event-terra-30",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {"zh": "单篇：清除最后一个“环境改造障碍”矿藏时触发，按已有科技给予改造科技进度。", "en": "Single doc: fires when the last terraforming-blocker deposit is cleared; grants terraforming tech progress by current tech."},
+  "sources": ["events/terraforming_events.txt", "common/on_actions/00_on_actions.txt"],
+  "guide": "public/summaries/event-terra-30.md"
+ }
+}

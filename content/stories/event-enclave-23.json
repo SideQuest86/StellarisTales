@@ -1,0 +1,58 @@
+{
+ "id": "event-enclave-23",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "enclave.25",
+    "enclave.26"
+   ],
+   "label": {
+    "zh": "摧毁者与其他帝国各收到一种通知",
+    "en": "The destroyer and other empires get different notices"
+   },
+   "note": {
+    "zh": "enclave.23（on_ship_destroyed_victim，00_on_actions.txt:1423）：摧毁者收到enclave.25（+2000合金/能量），其他有通讯的帝国收到enclave.26；建立者另有台词。",
+    "en": "enclave.23 (on_ship_destroyed_victim, 00_on_actions.txt:1423): the destroyer gets enclave.25 (+2000 alloys/energy), every other empire in contact gets enclave.26; the founder has its own reply."
+   }
+  }
+ ],
+ "endings": {
+  "enclave.25": {
+   "label": {
+    "zh": "我们摧毁了佣兵城邦",
+    "en": "We destroyed the mercenaries"
+   },
+   "note": {
+    "zh": "城邦国家随即解散。",
+    "en": "The enclave country is dissolved."
+   },
+   "evidence": "overlord_enclaves_events.txt:273-275 after: destroy_country"
+  },
+  "enclave.26": {
+   "label": {
+    "zh": "佣兵城邦被他国摧毁",
+    "en": "Mercenaries destroyed by others"
+   },
+   "note": {
+    "zh": "旁观者通知。",
+    "en": "Bystander notice."
+   },
+   "evidence": "overlord_enclaves_events.txt:264-271"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-enclave-23.md"
+ }
+}

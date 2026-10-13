@@ -25,7 +25,7 @@ distar.261 has one result; distar.262's two options are exclusive (b needs 300 e
 
 ## 条件与文明差异 Conditions and variants
 
-distar.261 的选项文本随文明变化：排外/令人不安（默认）、狂热威权或奴隶公会、吞噬虫群、仆从、同化者、终结者、狂热净化者、演化掠食者（获得DNA与局势进度）。
+distar.261 的选项文本随文明变化：排外/令人不安（默认）、狂热威权或奴隶公会、吞噬虫群、仆从、同化者、终结者、狂热净化者、演化猎手（获得DNA与局势进度）。
 
 distar.261's option wording varies: default "Disturbing", fanatic authoritarian or Slaver Guilds, Devouring Swarm, Servitor, Assimilator, Terminator, Fanatic Purifier, Evolutionary Predators (DNA and situation progress).
 

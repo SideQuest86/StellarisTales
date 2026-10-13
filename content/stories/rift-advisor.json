@@ -1,0 +1,34 @@
+{
+ "id": "rift-advisor",
+ "category": "rifts",
+ "endings": {
+  "astral_rift.845": {
+   "label": {"zh": "VIR：开关新手指引", "en": "VIR: guidance on or off"},
+   "note": {"zh": "本帝国自己的顾问 VIR 弹出，询问是否重新开启（或关闭）新手指引；选项会实际改变教程等级。825、830 与科学家归来 840 都以此收尾。", "en": "The empire's own advisor VIR pops up asking to re-enable (or shut down) guidance; the options really change the tutorial level. 825, 830 and the scientist's return 840 all end here."},
+   "evidence": "events/astral_rifts_0_events.txt:3416-3481 (is_advisor_event, set_tutorial_level); called from 825 :3260, 830 :3281, 840 :3400"
+  }
+ },
+ "nodeLabels": {
+  "astral_rift.840": {"zh": "科学家归来", "en": "The scientist returns"}
+ },
+ "notes": [
+  {
+   "doc": "astral_rift.815",
+   "kind": "review",
+   "zh": "科学家被机器的“建议”迷住而留下，探索结束、科学家被放逐；1800 天后经隐藏事件 835 归来（840），获得“裂隙扭曲”及天才/严谨/漫游者之一的特质。",
+   "en": "Enthralled by the machine's “advice”, the scientist stays behind: the exploration ends and the scientist is exiled; 1800 days later, via hidden event 835, they return (840) with Rift Warped and one of Spark of Genius / Meticulous / Roamer."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 800–845 全部事件，包括 815 的放逐与 1800 天后的归来、三条路线共同的 VIR 收尾。",
+   "en": "Checked the rift definition and every event 800–845, including the exile in 815 with the return after 1800 days and the shared VIR coda of all three routes."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-advisor.md"
+ }
+}

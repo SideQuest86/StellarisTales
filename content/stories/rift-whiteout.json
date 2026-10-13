@@ -1,0 +1,23 @@
+{
+ "id": "rift-whiteout",
+ "category": "rifts",
+ "endings": {
+  "astral_rift.730": {
+   "label": {"zh": "写作者的礼物", "en": "The Writer's gift"},
+   "note": {"zh": "与“写作者”交流数周后得到一颗金色球体；探索结束，获得 3600 天的“一件礼物”修正与大量星界丝缕。", "en": "After weeks of exchange the Writer leaves a golden sphere; the exploration ends with the 3600-day modifier “A Gift” and a large astral thread reward."},
+   "evidence": "events/astral_rifts_0_events.txt:2994-3026"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 700–730 全部事件；两次二选一都汇合到同一结局，编译结构无误。",
+   "en": "Checked the rift definition and every event 700–730; both two-way choices converge on the single ending; the compiled structure is correct."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-whiteout.md"
+ }
+}

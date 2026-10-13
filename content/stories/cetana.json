@@ -1,437 +1,1758 @@
 {
  "id": "cetana",
+ "include": [
+  "crisis.11010",
+  "crisis.11020",
+  "crisis.11030"
+ ],
  "bridges": [
   {
-   "from": "crisis.8280",
-   "choice": "crisis.8280.1.a",
-   "to": "crisis.8305",
-   "annotate": true,
+   "from": "crisis.8035",
+   "to": "crisis.8020",
    "conditional": true,
    "label": {
-    "zh": "秘密行动 · 90–180天后特工来报，届时尚未开战",
-    "en": "Covert action · agent report after 90–180 days, provided war has not begun"
+    "zh": "若风暴吞没你的星系：她出现后1–6天，或第360/720天扩张时；仅限首次演说前",
+    "en": "If the storm engulfs one of your systems: 1–6 days after she appears, or at the 360/720-day expansions; only before the first address"
    },
-   "evidence": "8280.1.a schedules8305 days90 random90;8305 trigger rejects synth_queen_war_started. Response adds player investigation score1 and unlocks population-demand dialogue flag."
+   "evidence": "synth_queen_wipe_system FX:1178-1196 sends 8020 (days 1 random 5) to a default owner without speech_1; called by synth_queen_spawn (8005, FX:666-751) and the expansions 8010/8015 (events/machine_age_crisis_events.txt:3984-4026). 8020 trigger events/machine_age_crisis_events.txt:4038-4045. May also precede this alert (8035 is day 180, events/machine_age_crisis_events.txt:3975-3980)."
   },
   {
-   "from": "crisis.9100",
-   "choice": "crisis.9100.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
-   "annotate": true,
+   "from": "crisis.8035",
+   "to": "crisis.8025",
    "conditional": true,
    "label": {
-    "zh": "已开启塞塔娜调查局势才开放；否则等待第二次演说",
-    "en": "Requires the Cetana investigation situation; otherwise wait for the second speech"
+    "zh": "舰队首次闯入风暴（尚无防护）：舰队重创并失踪，提前开放风暴研究",
+    "en": "A fleet of yours first enters the storm without protection: wrecked and sent home; the storm study opens early"
    },
-   "evidence": "9100.a uppercase IF checks country_has_situation situation_synth_queen_player_facing before enabling the follow-up; else only displays waiting tooltip."
+   "evidence": "on_entering_system_fleet OA:1056 → hidden 8024 events/machine_age_crisis_events.txt:4052-4139 (storm system, controller lacks protected_from_queen_storm); first time (no wrecked_fleet_notification) fires 8025, later only a message. 8025 CURSES enables THE_SYNTH_QUEENS_STORM if not yet started events/machine_age_crisis_events.txt:4182-4198. Possible at any time until protection (9110/8516/war)."
   },
   {
-   "from": "special_projects:THE_SYNTH_QUEENS_STORM_2",
-   "to": "crisis.9105",
-   "annotate": true,
+   "from": "crisis.8035",
+   "to": "crisis.8039",
+   "conditional": false,
    "label": {
-    "zh": "研究达到50% · 中期发现，并非完成",
-    "en": "Research reaches 50% · interim discovery, not completion"
+    "zh": "风暴两度扩张、筑起基地后 · 约915天后（危机开始第1095天），女王即将发言",
+    "en": "After two storm expansions and her base-building · about 915 days later (day 1,095 of the crisis), the Queen prepares to speak"
    },
-   "evidence": "THE_SYNTH_QUEENS_STORM_2 on_progress_50 dispatches9105; separate on_success dispatches9110."
-  },
-  {
-   "from": "special_projects:THE_SYNTH_QUEENS_STORM_2",
-   "to": "crisis.9110",
-   "annotate": true,
-   "label": {
-    "zh": "研究完成 · 总计50000点物理学，采纳纳米科技传统减至25000",
-    "en": "Research complete · 50,000 physics total, reduced to 25,000 with Nanotech adoption"
-   },
-   "evidence": "Project cost base50000 subtract25000 when tr_nanotech_adopt; on_success9110."
-  },
-  {
-   "from": "crisis.9105",
-   "to": "crisis.9110",
-   "label": {
-    "zh": "继续同一项目至100% · 完成后获得风暴防护",
-    "en": "Continue the same project to 100% · completion grants storm protection"
-   },
-   "evidence": "9105 is the project's halfway notification; project on_success9110 sets protected_from_queen_storm in after. This bridge represents remaining research, not an immediate event call."
-  },
-  {
-   "from": "crisis.9110",
-   "to": "crisis.9115",
-   "annotate": true,
-   "label": {
-    "zh": "获得风暴防护 · 7天后女王来讯",
-    "en": "Storm protection acquired · the Queen contacts you after 7 days"
-   },
-   "evidence": "9110 after sets protected_from_queen_storm and schedules9115 days7."
+   "evidence": "8005 events/machine_age_crisis_events.txt:3963-3982 schedules 8035 at 180 days and 8010 at 360; 8010→8015 (+360) events/machine_age_crisis_events.txt:3984-4026; 8015→8030 (+360); 8030 events/machine_age_crisis_events.txt:4207-4266 sends 8039 (+15) to every default/fallen/awakened empire."
   },
   {
    "from": "crisis.8040",
+   "to": "crisis.8063",
+   "conditional": true,
+   "label": {
+    "zh": "两次演说之间通过外交联系她：没有回应",
+    "en": "Contacting her through diplomacy between the two addresses: no answer"
+   },
+   "evidence": "on_custom_diplomacy OA:750 → hidden 8055 events/machine_age_crisis_events.txt:5725-5796: can_talk_to_the_synth_queen (set by 8040.4.a events/machine_age_crisis_events.txt:4529-4534) and no speech_2 → 8063 events/machine_age_crisis_events.txt:6831-6844."
+  },
+  {
+   "from": "crisis.8040",
+   "to": "crisis.8070",
+   "conditional": true,
+   "label": {
+    "zh": "在获得反制手段前与她的部队交战：舰队瘫痪被送回，随后她要求停战",
+    "en": "Engaging her own forces before you have countermeasures: fleet disabled and sent home, then she demands peace"
+   },
+   "evidence": "on_entering_battle OA:1380 → hidden 8065 events/machine_age_crisis_events.txt:6846-6887 (no synth_queen_cannot_yeet_the_fleets, not synth_queen_shes_too_strong, opponent is a Queen country type TR:124-130 — not convoys/outposts) → 8070 → 8075 events/machine_age_crisis_events.txt:6889-6967. Countermeasures: 9010, 8516 or 8060 war declaration."
+  },
+  {
+   "from": "crisis.8040",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
    "choice": "crisis.8040.4.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "若此前未因舰队闯入风暴而开放，此时开放风暴研究（10000物理学，无需舰船）",
+    "en": "Opens the storm study now unless a wrecked fleet already opened it (10,000 physics, no ship needed)"
+   },
+   "evidence": "events/machine_age_crisis_events.txt:4519-4528 enables THE_SYNTH_QUEENS_STORM only without synth_queen_started_storm_project (also set by 8025); SP:72-95 cost 10000 physics, location = no."
+  },
+  {
+   "from": "crisis.8040",
    "to": "crisis.8046",
+   "choice": "crisis.8040.4.a",
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "先辈子弟且仍有指定宗主 · 7天后收到警告",
-    "en": "Scion with the designated overlord · warning after 7 days"
+    "zh": "先辈子弟且宗主为指定的失落帝国 · 7天后收到警告",
+    "en": "Scion whose overlord is the designated fallen empire · warning after 7 days"
    },
-   "evidence": "synth_queen_scion_warning sends8046 days7 only to playable origin_scion countries whose existing overlord has scion_master."
+   "evidence": "synth_queen_scion_warning FX:4081-4108: any playable origin_scion country whose overlord has scion_master gets 8046 (days 7); otherwise synth_queen_fe_war."
   },
   {
    "from": "crisis.8040",
+   "to": "crisis.8045",
    "choice": "crisis.8040.4.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "第二次演说：若已无失落/觉醒帝国，在下一次年度检查或360天后（取先到者）；若有，它们先与女王开战，最后一个覆灭后的年度检查时",
+    "en": "Second address: with no fallen/awakened empire left, at the next yearly check or after 360 days, whichever comes first; otherwise they go to war with her first and the address comes at the yearly check after the last one falls"
+   },
+   "evidence": "synth_queen_fe_war FX:4048-4079: FE/AFE exist → they declare war (wg_end_threat) and awaken guardians; else 8045 days 360. Global 8043 events/machine_age_crisis_events.txt:4724-4830 on on_yearly_pulse (OA:262) checks speech_1_happened, no speech_2_happened, no FE/AFE → starts the doomclock and sends 8045 to human players. 8045 trigger requires no FE/AFE events/machine_age_crisis_events.txt:4962-4979."
+  },
+  {
+   "from": "crisis.8046",
    "to": "crisis.8045",
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "无符合条件的先辈子弟且无失落/觉醒帝国 · 360天后",
-    "en": "No qualifying Scion and no fallen/awakened empire · after 360 days"
+    "zh": "宗主（失落帝国）随后与女王开战；第二次演说在最后一个失落/觉醒帝国覆灭后的年度检查时（若已无，则360天后）",
+    "en": "Your fallen-empire overlord then goes to war with her; the second address comes at the yearly check after the last fallen/awakened empire falls (360 days if none is left)"
    },
-   "evidence": "synth_queen_scion_warning else calls synth_queen_fe_war; that effect only schedules8045 days360 in its no-FE else branch."
+   "evidence": "8046 after → synth_queen_fe_war events/machine_age_crisis_events.txt:5560-5564, FX:4048-4079; 8043 yearly events/machine_age_crisis_events.txt:4724-4801."
   },
   {
-   "from": "special_projects:THE_SYNTH_QUEENS_STORM",
-   "to": "crisis.9100",
+   "from": "crisis.8045",
+   "to": "situations:situation_synth_queen_doomclock",
    "annotate": true,
-   "label": {
-    "zh": "完成10000点物理学研究 · 无需舰船赴现场",
-    "en": "Complete 10,000 physics research · no ship at a location required"
-   },
-   "evidence": "04_projects_machine_age.txt THE_SYNTH_QUEENS_STORM cost10000 physics_technology location=no requirements={} on_success9100; not fixed days."
-  },
-  {
-   "from": "crisis.21110",
-   "to": "crisis.24100",
    "conditional": true,
    "label": {
-    "zh": "获得虚境联络能力后，支付代价联系抟土之塑",
-    "en": "With Shroud access, pay the cost to contact the Animator of Clay"
+    "zh": "末日倒计时开始（若尚未开始）：每月约3点，满1000即失败",
+    "en": "Her doomclock starts (if not already running): about 3 points a month; at 1,000 the galaxy is lost"
    },
-   "evidence": "21110 after sets synth_queen_can_contact_the_animator_of_clay; Shroud animator.shroud option requires this flag and no previous contact, charges energy/zro, calls24100. This is optional and does not wait for the final archaeology stage."
+   "evidence": "events/machine_age_crisis_events.txt:4985-5004 start_situation if absent (also 8043 events/machine_age_crisis_events.txt:4751-4767); SIT:607-709 monthly_progress base 3 with crisis-strength, human-player and \"eleventh hour\" ×1.2 modifiers; complete → 8500."
   },
   {
-   "from": "crisis.8060",
-   "choice": "crisis.8060.8.b",
-   "to": "crisis.24100",
-   "conditional": true,
+   "from": "crisis.8045",
+   "to": "crisis.8999",
+   "annotate": true,
+   "conditional": false,
    "label": {
-    "zh": "返回虚境，支付代价联系抟土之塑",
-    "en": "Return to the Shroud and pay to contact the Animator of Clay"
+    "zh": "对话结束当天：建立调查局势",
+    "en": "The same day the address ends: the investigation situation opens"
    },
-   "evidence": "8060.8.b requires breached_shroud and the Zarqlan dialogue state, sets synth_queen_can_contact_the_animator_of_clay; Shroud contact option dispatches24100"
+   "evidence": "8045 after events/machine_age_crisis_events.txt:5450-5455 country_event 8999 days 0; 8999 events/machine_age_crisis_events.txt:11920-11953."
   },
   {
-   "from": "crisis.24115",
-   "choice": "crisis.24115.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_RESHAPING_RITUAL",
-   "conditional": true,
+   "from": "crisis.8045",
+   "to": "crisis.8080",
+   "annotate": true,
+   "conditional": false,
    "label": {
-    "zh": "接受交易后，舰队进入女王泰坦所在星系",
-    "en": "After accepting the deal, send a fleet into the Queen's titan system"
+    "zh": "360–540天后：第一项委托（数据库）",
+    "en": "360–540 days later: her first demand (the databank)"
    },
-   "evidence": "24115.a sets synth_queen_took_the_animators_deal; on_entering_system_fleet invokes24200, requiring that flag and an enabled synth_queen_titan;24200 disables it and enables THE_SYNTH_QUEENS_RESHAPING_RITUAL. Refusal24120 has no such path."
+   "evidence": "8045 after events/machine_age_crisis_events.txt:5454 country_event 8080 days 360 random 180; 8080 trigger no war, no synth_queen_first_demand events/machine_age_crisis_events.txt:6989-6994."
   },
   {
-   "from": "crisis.9010",
-   "to": "crisis.23015",
+   "from": "crisis.8045",
+   "to": "crisis.8060",
    "conditional": true,
    "label": {
-    "zh": "突破防御并击毁女王泰坦：战斗胜利",
-    "en": "Breach the defenses and destroy the Queen's titan: victory"
+    "zh": "此后可随时通过外交联系她（可重复的通讯菜单），直到开战",
+    "en": "From now on she can be contacted through diplomacy at any time (repeatable menu) until war begins"
    },
-   "evidence": "9010 sets synth_queen_cannot_yeet_the_fleets; on_ship_destroyed_perp calls23015, gated by fromfromfrom ship_size=synth_queen_titan. 23015 destroys the doomclock."
+   "evidence": "hidden 8055 events/machine_age_crisis_events.txt:5766-5778: speech_2 and no synth_queen_war_started → 8060."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "crisis.8047",
+   "conditional": true,
+   "label": {
+    "zh": "所有玩家都结束第二次演说后的首个月度检查：袭击运输船（之后还有前哨）",
+    "en": "At the first monthly check after every player has finished the second address: raids on her convoys (outposts later)"
+   },
+   "evidence": "global 8049 on on_monthly_pulse (OA:123) events/machine_age_crisis_events.txt:5635-5691, fire_only_once, requires every playable country speech_2 and no conversation; sends 8047 to every playable country."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "crisis.20000",
+   "conditional": true,
+   "label": {
+    "zh": "同一次月度检查后95天：遍布星系的信标",
+    "en": "95 days after that same monthly check: beacons across the galaxy"
+   },
+   "evidence": "8049 events/machine_age_crisis_events.txt:5659-5662 country_event 20000 days 95; 20000 trigger events/machine_age_crisis_events.txt:13597-13602."
+  },
+  {
+   "from": "situations:situation_synth_queen_doomclock",
+   "to": "crisis.8525",
+   "conditional": true,
+   "label": {
+    "zh": "倒计时达到500（50%）：尚未能查看倒计时的玩家7天后收到预警",
+    "en": "Doomclock at 500 (50%): players who cannot yet see it get a warning 7 days later"
+   },
+   "evidence": "SIT:629-640 stage_2 on_first_enter → hidden 8520 E:11865-11880: non-AI without synth_queen_player_can_see_doomclock (set by doomclock_reveal FX:3989-3996 in 8090 after, 8115.a, 8525.a, 10120.4.a) → 8525 days 7."
+  },
+  {
+   "from": "situations:situation_synth_queen_doomclock",
+   "to": "crisis.8515",
+   "conditional": false,
+   "label": {
+    "zh": "倒计时达到800（80%）：7天后女王向所有帝国宣告开战（即使你已先宣战）",
+    "en": "Doomclock at 800 (80%): 7 days later she announces war to every empire (even if you already declared it)"
+   },
+   "evidence": "SIT:641-650 stage_3 → hidden 8510 E:11426-11440 sends 8515 (days 7) to every playable country; 8515 has no trigger E:11442-11468."
+  },
+  {
+   "from": "situations:situation_synth_queen_doomclock",
+   "to": "crisis.8505",
+   "conditional": true,
+   "label": {
+    "zh": "倒计时达到1000：失败结局（若女王未被击败或重塑）",
+    "en": "Doomclock at 1,000: the failure ending (unless she was destroyed or reshaped first)"
+   },
+   "evidence": "SIT:613-616 on_progress_complete → hidden 8500 E:11328-11341 → 8505 for every playable country + 8506 after 13 days (E:11391-11424). Victory 23015 E:14889-14897 and redemption 24250 E:15385-15394 destroy the doomclock."
+  },
+  {
+   "from": "crisis.8515",
+   "to": "crisis.8158",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "女王的舰队在15天后撤回首都（若玩家宣战时尚未发生）",
+    "en": "Her fleets withdraw to her capital 15 days later (unless that already happened when you declared war)"
+   },
+   "evidence": "E:11460-11466 queen country_event 8156 days 15; 8156 is fire_only_once E:8586-8687 and its after sends 8158 to playable countries with communications."
+  },
+  {
+   "from": "crisis.8515",
+   "to": "crisis.8516",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "对话结束21天后：若你仍有调查局势（尚未自行宣战），神秘广播直接给予反制手段",
+    "en": "21 days after the conversation: if your investigation situation is still open (you had not declared war yourself), a mysterious broadcast hands you the countermeasures"
+   },
+   "evidence": "E:11794-11798 after 8516 days 21; 8516 trigger needs situation_synth_queen_player_facing E:11815-11819; immediate destroys it and sets synth_queen_cannot_yeet_the_fleets + protected_from_queen_storm E:11821-11832."
   },
   {
    "from": "crisis.8516",
    "to": "crisis.23015",
    "conditional": true,
    "label": {
-    "zh": "收到反制援助后，击毁女王泰坦",
-    "en": "After receiving countermeasures, destroy the Queen's titan"
+    "zh": "获得反制援助后可进入她的领地作战：击毁女王泰坦即胜利",
+    "en": "With these countermeasures you can enter her territory and fight: destroying her titan is victory"
    },
-   "evidence": "8516 bypasses the player situation and sets synth_queen_cannot_yeet_the_fleets/protected_from_queen_storm; titan destruction invokes23015 and terminates the doomclock"
+   "evidence": "on_ship_destroyed_perp OA:1470 → 23015 E:14873-14964, trigger fromfromfrom is_ship_size synth_queen_titan."
   },
   {
    "from": "crisis.8516",
    "to": "crisis.8505",
    "conditional": true,
    "label": {
-    "zh": "仍未阻止女王，倒计时耗尽：失败结局",
-    "en": "The Queen remains unstopped: the countdown expires"
+    "zh": "若在击败她之前倒计时满1000：失败结局",
+    "en": "If the doomclock reaches 1,000 before she is beaten: the failure ending"
    },
-   "evidence": "8516 destroys the player-facing situation, not the Queen's doomclock; the latter on_progress_complete8500 dispatches8505 if no victory or rescue stops it"
-  },
-  {
-   "from": "crisis.8035",
-   "to": "crisis.8039",
-   "conditional": true,
-   "label": {
-    "zh": "风暴两度扩张后 · 初次警报约915天后，女王即将发言",
-    "en": "After two storm expansions · about 915 days after the first alert, the Queen prepares to speak"
-   },
-   "evidence": "8005 schedules8035 at180days; hidden8010 at360 then8015+360 then8030+360 schedules8039+15. Player notifications are sequential, not two openings."
+   "evidence": "8516 does not touch the doomclock situation (E:11821-11832); SIT:613-616 → 8500 → 8505."
   },
   {
    "from": "crisis.8060",
-   "choice": "crisis.8060.war.1.a",
    "to": "crisis.8158",
+   "choice": "crisis.8060.war.1.a",
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "完成宣战确认：7天后重组舰队并通知已建立通讯的帝国",
-    "en": "After final war confirmation: fleet reorganization and notice to contacted empires after seven days"
+    "zh": "最终确认开战：7天后她的舰队撤回首都，并通知已建立通讯的帝国",
+    "en": "After the final war confirmation: 7 days later her fleets pull back to her capital and contacted empires are notified"
    },
-   "evidence": "8060 war initial allow requires cannot_yeet_the_fleets, protected_from_queen_storm and researched_first_storm_project. war -> war.a -> war.1.a; final schedules8156 days7. 8156 after notifies playable countries with communications via8158."
+   "evidence": "8060.war allow events/machine_age_crisis_events.txt:5835-5846 (synth_queen_cannot_yeet_the_fleets + protected_from_queen_storm + synth_queen_researched_first_storm_project); war → war.a → war.1.a events/machine_age_crisis_events.txt:5894-5925 sets synth_queen_war_started, queen awakened, 8156 days 7, destroys the investigation situation; 8156 after → 8158 events/machine_age_crisis_events.txt:8677-8686."
   },
   {
-   "from": "crisis.8045",
-   "choice": "crisis.8045.9.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+   "from": "crisis.8158",
+   "to": "crisis.23015",
+   "conditional": true,
+   "label": {
+    "zh": "战争中击毁女王的泰坦（母舰）：胜利",
+    "en": "Destroy the Queen's titan (mothership) in battle: victory"
+   },
+   "evidence": "on_ship_destroyed_perp OA:1470 → 23015 E:14873-14887 (destroyed ship is synth_queen_titan); immediate destroys the doomclock E:14889-14897."
+  },
+  {
+   "from": "crisis.8158",
+   "to": "crisis.8505",
+   "conditional": true,
+   "label": {
+    "zh": "若倒计时先满1000：失败结局",
+    "en": "If the doomclock reaches 1,000 first: the failure ending"
+   },
+   "evidence": "The doomclock keeps running during the war (SIT:663-698 has no war condition); SIT:613-616 → 8500 → 8505."
+  },
+  {
+   "from": "crisis.8158",
+   "to": "crisis.8061",
+   "conditional": true,
+   "label": {
+    "zh": "开战后第一次联系她",
+    "en": "Contacting her for the first time after the war began"
+   },
+   "evidence": "hidden 8055 events/machine_age_crisis_events.txt:5779-5787: synth_queen_war_started and no synth_queen_first_war_time_chat_done → 8061."
+  },
+  {
+   "from": "crisis.8158",
+   "to": "crisis.10010",
+   "conditional": true,
+   "label": {
+    "zh": "战争中她的舰队将你的殖民地轰炸至毁坏度100：殖民地被数字化",
+    "en": "During the war her fleets bombard one of your colonies to 100 devastation: the colony is digitized"
+   },
+   "evidence": "on_planet_bombarded OA:2161 → 10010 events/machine_age_crisis_events.txt:12387-12448, trigger planet_devastation >= 100 and bombarder is synth_queen."
+  },
+  {
+   "from": "crisis.8061",
+   "to": "crisis.8062",
+   "conditional": false,
+   "label": {
+    "zh": "之后的战时联系",
+    "en": "Later wartime contacts"
+   },
+   "evidence": "8061.2.a sets synth_queen_first_war_time_chat_done events/machine_age_crisis_events.txt:6784-6793; 8055 then routes to 8062 events/machine_age_crisis_events.txt:5788-5794."
+  },
+  {
+   "from": "crisis.23015",
+   "to": "crisis.10020",
+   "conditional": true,
+   "label": {
+    "zh": "激活遗珍\"塞塔娜之心\"（非蜂巢思维）",
+    "en": "Activating the relic Cetana's Heart (non-hive empire)"
+   },
+   "evidence": "23015.a add_relic r_cetanas_heart E:14900-14903; relics.txt:961-1009 active_effect → hidden 10015 E:12450-12574 → 10020 when not hive."
+  },
+  {
+   "from": "crisis.23015",
+   "to": "crisis.10025",
+   "conditional": true,
+   "label": {
+    "zh": "激活遗珍\"塞塔娜之心\"（蜂巢思维）",
+    "en": "Activating the relic Cetana's Heart (hive mind)"
+   },
+   "evidence": "relics.txt:988-1008 → 10015 E:12567-12572 → 10025 for hive empires."
+  },
+  {
+   "from": "crisis.23020",
+   "to": "crisis.23030",
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "此前尚未开启首项调查时开放；已在研究则继续原项目",
-    "en": "Opens only if the first investigation was never started; otherwise continue the existing project"
+    "zh": "仅其他帝国在15天后收到（完成仪式的帝国不会收到）",
+    "en": "Only the OTHER empires receive this 15 days later (not the empire that performed the ritual)"
    },
-   "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+   "evidence": "23020 after events/machine_age_crisis_events.txt:15624-15632: every_country NOT event_target:psi_defeated_synth_queen (saved by 24250.a events/machine_age_crisis_events.txt:15400) → 23030 days 15."
   },
   {
-   "from": "crisis.8045",
-   "choice": "crisis.8045.9.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
-   "annotate": true,
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.9000",
+   "conditional": false,
+   "label": {
+    "zh": "调查进度达到6（进入第二阶段）后3天",
+    "en": "3 days after investigation progress reaches 6 (second stage)"
+   },
+   "evidence": "SIT:733-740 stage_2 (end 10) on_first_enter situation_event 9000 days 3; monthly_progress base 0 (SIT:743-746): progress only from events."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.8250",
    "conditional": true,
    "label": {
-    "zh": "首项调查已完成才开放第二项",
-    "en": "Opens the second investigation only after the first is complete"
+    "zh": "你拥有遗珍\"扎克兰的头颅\"：每月检查，5天后她索要（仅一次）",
+    "en": "You own the relic Severed Head of Zarqlan: monthly check, she asks for it 5 days later (once)"
    },
-   "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+   "evidence": "SIT:782-788 on_monthly 8245 events/machine_age_crisis_events.txt:10944-10962 (non-AI, no synth_queen_demand_zarqlan_head) → 8250 days 5; 8250 fire_only_once, needs has_relic r_severed_head and no conversation events/machine_age_crisis_events.txt:10985-10995."
   },
   {
-   "from": "crisis.8045",
-   "choice": "crisis.8045.10.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
-   "annotate": true,
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.10100",
    "conditional": true,
    "label": {
-    "zh": "此前尚未开启首项调查时开放；已在研究则继续原项目",
-    "en": "Opens only if the first investigation was never started; otherwise continue the existing project"
+    "zh": "她对你的信任低于25：每月检查，第一次惩戒（此后每次至少间隔900天）",
+    "en": "Her trust in you below 25: monthly check, first retaliation (later ones at least 900 days apart)"
    },
-   "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+   "evidence": "SIT:784 on_monthly 10095 events/machine_age_crisis_events.txt:12631-12665 (non-AI, no cooldown/conversation, trust < 25) fires 10100/10110/10120/10130/10140 and sets a 900-day cooldown; 10100 trigger NOT synth_queen_retaliation_1_storm events/machine_age_crisis_events.txt:12685-12689."
   },
   {
-   "from": "crisis.8045",
-   "choice": "crisis.8045.10.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
-   "annotate": true,
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.11010",
    "conditional": true,
    "label": {
-    "zh": "首项调查已完成才开放第二项",
-    "en": "Opens the second investigation only after the first is complete"
+    "zh": "她对你的信任高于75：每月检查，第一份礼物（此后每次至少间隔900天）",
+    "en": "Her trust in you above 75: monthly check, first gift (later ones at least 900 days apart)"
    },
-   "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+   "evidence": "SIT:785 on_monthly 11000 events/machine_age_crisis_events.txt:13379-13411 (trust > 75, no cooldown/conversation) fires 11010/11020/11030 and sets a 900-day cooldown; 11010 trigger events/machine_age_crisis_events.txt:13431-13436."
   },
   {
-   "from": "crisis.8045",
-   "choice": "crisis.8045.11.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
-   "annotate": true,
+   "from": "crisis.10100",
+   "to": "crisis.10110",
    "conditional": true,
    "label": {
-    "zh": "此前尚未开启首项调查时开放；已在研究则继续原项目",
-    "en": "Opens only if the first investigation was never started; otherwise continue the existing project"
+    "zh": "再次惩戒：至少900天后，信任仍低于25",
+    "en": "Next retaliation: at least 900 days later, trust still below 25"
    },
-   "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+   "evidence": "10110 trigger synth_queen_retaliation_1_storm and not _2_virus events/machine_age_crisis_events.txt:12868-12873; ladder via 10095 cooldown events/machine_age_crisis_events.txt:12658-12663."
   },
   {
-   "from": "crisis.8045",
-   "choice": "crisis.8045.11.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
-   "annotate": true,
+   "from": "crisis.10110",
+   "to": "crisis.10120",
    "conditional": true,
    "label": {
-    "zh": "首项调查已完成才开放第二项",
-    "en": "Opens the second investigation only after the first is complete"
+    "zh": "第三次惩戒：至少900天后，信任仍低于25",
+    "en": "Third retaliation: at least 900 days later, trust still below 25"
    },
-   "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+   "evidence": "10120 trigger _2_virus and not _3_big_storm events/machine_age_crisis_events.txt:13051-13056."
   },
   {
-   "from": "crisis.8045",
-   "choice": "crisis.8045.12.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
-   "annotate": true,
+   "from": "crisis.10120",
+   "to": "crisis.10130",
    "conditional": true,
    "label": {
-    "zh": "此前尚未开启首项调查时开放；已在研究则继续原项目",
-    "en": "Opens only if the first investigation was never started; otherwise continue the existing project"
+    "zh": "第四次惩戒（非格式塔）：刺杀统治者",
+    "en": "Fourth retaliation (non-gestalt): the ruler is assassinated"
    },
-   "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+   "evidence": "10130 trigger _3_big_storm, not _3_leader_death, not gestalt events/machine_age_crisis_events.txt:13269-13275; after kills the ruler events/machine_age_crisis_events.txt:13302-13310."
   },
   {
-   "from": "crisis.8045",
-   "choice": "crisis.8045.12.a",
-   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
-   "annotate": true,
+   "from": "crisis.10120",
+   "to": "crisis.10140",
    "conditional": true,
    "label": {
-    "zh": "首项调查已完成才开放第二项",
-    "en": "Opens the second investigation only after the first is complete"
+    "zh": "第四次惩戒（格式塔意识）：剔除军事节点",
+    "en": "Fourth retaliation (gestalt): the military node is culled"
    },
-   "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+   "evidence": "10140 trigger gestalt, _3_big_storm, not _3_leader_death events/machine_age_crisis_events.txt:13333-13339; after restores the legion councilor events/machine_age_crisis_events.txt:13366-13375."
   },
   {
-   "from": "crisis.8085",
-   "choice": "crisis.8085.a",
-   "to": "crisis.8090",
-   "annotate": true,
+   "from": "crisis.11010",
+   "to": "crisis.11020",
+   "conditional": true,
    "label": {
-    "zh": "打开数据库 · 14天后",
-    "en": "Open the databank · after 14 days"
+    "zh": "第二份礼物：至少900天后，信任仍高于75",
+    "en": "Second gift: at least 900 days later, trust still above 75"
    },
-   "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+   "evidence": "11020 trigger synth_queen_first_earned_gift_1 and not _2 events/machine_age_crisis_events.txt:13490-13493."
   },
   {
-   "from": "crisis.8085",
-   "choice": "crisis.8085.b",
-   "to": "crisis.8100",
-   "annotate": true,
+   "from": "crisis.11020",
+   "to": "crisis.11030",
+   "conditional": true,
    "label": {
-    "zh": "原样交还 · 14天后",
-    "en": "Return unopened · after 14 days"
+    "zh": "此后的每份礼物（可重复）",
+    "en": "Every later gift (repeatable)"
    },
-   "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+   "evidence": "11030 trigger _gift_2 and not _gift_1 events/machine_age_crisis_events.txt:13548-13551; 11020 after swaps the flags events/machine_age_crisis_events.txt:13521-13527."
   },
   {
-   "from": "crisis.8085",
-   "choice": "crisis.8085.c",
-   "to": "crisis.8090",
-   "annotate": true,
+   "from": "crisis.9000",
+   "to": "crisis.9010",
+   "conditional": false,
    "label": {
-    "zh": "唯物主义破解 · 14天后",
-    "en": "Materialist decryption · after 14 days"
+    "zh": "调查进度达到10：反制准备完成",
+    "en": "Investigation progress reaches 10: countermeasures ready"
    },
-   "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+   "evidence": "SIT:717-723 on_progress_complete → 9010 and set_situation_locked; 9010 after sets queenexecutioner + synth_queen_cannot_yeet_the_fleets E:12002-12010."
   },
   {
-   "from": "crisis.8090",
-   "choice": "crisis.8090.a",
-   "to": "crisis.8095",
-   "annotate": true,
+   "from": "crisis.9010",
+   "to": "crisis.8060",
+   "conditional": true,
    "label": {
-    "zh": "非唯物主义 · 14天后受到质问",
-    "en": "Non-materialist · confronted after 14 days"
+    "zh": "再完成第二项风暴研究（风暴防护）后，她的通讯菜单出现宣战选项",
+    "en": "Once the second storm study (storm protection) is also complete, the war option appears in her contact menu"
    },
-   "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
-  },
-  {
-   "from": "crisis.8090",
-   "choice": "crisis.8090.b",
-   "to": "crisis.8100",
-   "annotate": true,
-   "label": {
-    "zh": "唯物主义 · 14天后进入交付回应",
-    "en": "Materialist · delivery response after 14 days"
-   },
-   "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+   "evidence": "8060.war allow events/machine_age_crisis_events.txt:5835-5846 needs synth_queen_cannot_yeet_the_fleets (9010), protected_from_queen_storm (9110 after events/machine_age_crisis_events.txt:12153-12161) and synth_queen_researched_first_storm_project (9100); triggered_blocked_desc \"Declare war on Cetana\" SIT:795-801. Script starts the war only via 8060.war.1.a or 8515.13.a."
   },
   {
    "from": "situations:situation_synth_queen_player_facing",
    "to": "crisis.8280",
    "conditional": true,
    "label": {
-    "zh": "首次委托结束且未开战 · 月度随机选中后180–240天，仍须满足要求条件",
-    "en": "First demand finished and no war · 180–240 days after a monthly random selection, subject to demand eligibility"
+    "zh": "随机要求（人口）· 首次委托结束后，每月10%抽中，180–240天后；每项只出现一次",
+    "en": "Random demand (pops) · after the first demand: 10% a month, then 180–240 days; each demand at most once"
    },
-   "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220."
+   "evidence": "SIT:789-792 on_monthly random_events 10 = crisis.8270 / 90 = nothing (the \"five_year\" comment at E:9756 is stale); 8270 E:9758-9777 needs non-AI, no war, no synth_queen_demands_cooldown, synth_queen_finished_first_demand_chain → 8255 days 180 random 60; 8255 E:9779-9804 rechecks no war/cooldown/conversation, fires on_synth_queen_random_demand_list OA:5277-5285 (5 events, weight 5 each), after 220-day cooldown. 8280 trigger E:9826-9832."
   },
   {
    "from": "situations:situation_synth_queen_player_facing",
    "to": "crisis.8285",
    "conditional": true,
    "label": {
-    "zh": "首次委托结束且未开战 · 月度随机选中后180–240天，仍须满足要求条件",
-    "en": "First demand finished and no war · 180–240 days after a monthly random selection, subject to demand eligibility"
+    "zh": "随机要求（资源）· 同上",
+    "en": "Random demand (resources) · as above"
    },
-   "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220."
+   "evidence": "SIT:789-792 on_monthly random_events 10 = crisis.8270 / 90 = nothing (the \"five_year\" comment at E:9756 is stale); 8270 E:9758-9777 needs non-AI, no war, no synth_queen_demands_cooldown, synth_queen_finished_first_demand_chain → 8255 days 180 random 60; 8255 E:9779-9804 rechecks no war/cooldown/conversation, fires on_synth_queen_random_demand_list OA:5277-5285 (5 events, weight 5 each), after 220-day cooldown. 8285 trigger E:10037-10043."
   },
   {
    "from": "situations:situation_synth_queen_player_facing",
    "to": "crisis.8290",
    "conditional": true,
    "label": {
-    "zh": "首次委托结束且未开战 · 月度随机选中后180–240天，仍须满足要求条件",
-    "en": "First demand finished and no war · 180–240 days after a monthly random selection, subject to demand eligibility"
+    "zh": "随机要求（科研）· 同上",
+    "en": "Random demand (research) · as above"
    },
-   "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220."
+   "evidence": "SIT:789-792 on_monthly random_events 10 = crisis.8270 / 90 = nothing (the \"five_year\" comment at E:9756 is stale); 8270 E:9758-9777 needs non-AI, no war, no synth_queen_demands_cooldown, synth_queen_finished_first_demand_chain → 8255 days 180 random 60; 8255 E:9779-9804 rechecks no war/cooldown/conversation, fires on_synth_queen_random_demand_list OA:5277-5285 (5 events, weight 5 each), after 220-day cooldown. 8290 trigger E:10247-10253."
   },
   {
    "from": "situations:situation_synth_queen_player_facing",
    "to": "crisis.8295",
    "conditional": true,
    "label": {
-    "zh": "原版还要求已存在gifted_system目标 · 来源未查明，仅作条件分支查阅",
-    "en": "Original trigger also requires an existing gifted_system target · source unconfirmed; conditional reference"
+    "zh": "随机要求（星系）· 原版无法触发：触发条件要求的gifted_system目标只在该事件自身的immediate中设置",
+    "en": "Random demand (system) · unreachable in the shipped script: its trigger needs event_target:gifted_system, which only its own immediate block sets"
    },
-   "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220. Loose events/common search only finds gifted_system creation inside8295 immediate, after trigger. Local DLC ZIP scan found0 events/common TXT members. Do not claim ordinary reachability without runtime confirmation."
+   "evidence": "SIT:789-792 on_monthly random_events 10 = crisis.8270 / 90 = nothing (the \"five_year\" comment at E:9756 is stale); 8270 E:9758-9777 needs non-AI, no war, no synth_queen_demands_cooldown, synth_queen_finished_first_demand_chain → 8255 days 180 random 60; 8255 E:9779-9804 rechecks no war/cooldown/conversation, fires on_synth_queen_random_demand_list OA:5277-5285 (5 events, weight 5 each), after 220-day cooldown. 8295 trigger E:10457-10464 requires exists = event_target:gifted_system; saved only at E:10485 (immediate). Whole-install search: no other setter (see ledger)."
   },
   {
    "from": "situations:situation_synth_queen_player_facing",
    "to": "crisis.8300",
    "conditional": true,
    "label": {
-    "zh": "调查进度至少8且有合格宜居星系 · 首次委托结束后月度随机，180–240天延迟",
-    "en": "Investigation progress at least 8 and eligible habitable system · monthly random selection after first demand, then 180–240 days"
+    "zh": "随机要求（宜居星系）· 同上，另需调查进度≥8和合格的宜居星系",
+    "en": "Random demand (habitable system) · as above, plus investigation progress ≥ 8 and an eligible habitable system"
    },
-   "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220."
+   "evidence": "SIT:789-792 on_monthly random_events 10 = crisis.8270 / 90 = nothing (the \"five_year\" comment at E:9756 is stale); 8270 E:9758-9777 needs non-AI, no war, no synth_queen_demands_cooldown, synth_queen_finished_first_demand_chain → 8255 days 180 random 60; 8255 E:9779-9804 rechecks no war/cooldown/conversation, fires on_synth_queen_random_demand_list OA:5277-5285 (5 events, weight 5 each), after 220-day cooldown. 8300 trigger E:10704-10724."
+  },
+  {
+   "from": "crisis.8280",
+   "to": "crisis.8305",
+   "choice": "crisis.8280.1.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "秘密行动 · 90–180天后特工来报（届时尚未开战）",
+    "en": "Covert action · agent report after 90–180 days (if war has not begun)"
+   },
+   "evidence": "8280.1.a events/machine_age_crisis_events.txt:9980-9992 schedules 8305 days 90 random 90; 8305 trigger events/machine_age_crisis_events.txt:11099-11101; +1 progress and pops topic events/machine_age_crisis_events.txt:11103-11113."
+  },
+  {
+   "from": "crisis.8285",
+   "to": "crisis.8310",
+   "choice": "crisis.8285.1.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "秘密行动 · 90–180天后截获情报（届时尚未开战）",
+    "en": "Covert action · intercepted report after 90–180 days (if war has not begun)"
+   },
+   "evidence": "8285.1.a events/machine_age_crisis_events.txt:10190-10202 → 8310 days 90 random 90; 8310 events/machine_age_crisis_events.txt:11116-11139 (+1 progress, 720-day war preparations)."
+  },
+  {
+   "from": "crisis.8290",
+   "to": "crisis.8315",
+   "choice": "crisis.8290.1.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "秘密行动 · 90–180天后后门报告（届时尚未开战）",
+    "en": "Covert action · back-door report after 90–180 days (if war has not begun)"
+   },
+   "evidence": "8290.1.a events/machine_age_crisis_events.txt:10400-10412 → 8315 days 90 random 90; 8315 events/machine_age_crisis_events.txt:11141-11164 (+1 progress, synth_queen_much_shared_research 360 days)."
+  },
+  {
+   "from": "crisis.8295",
+   "to": "crisis.8320",
+   "choice": "crisis.8295.1.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "秘密行动 · 90–180天后（因8295无法触发，原版中同样无法到达）",
+    "en": "Covert action · after 90–180 days (unreachable in practice because 8295 cannot fire)"
+   },
+   "evidence": "8295.1.a events/machine_age_crisis_events.txt:10647-10659 → 8320 days 90 random 90; 8320 events/machine_age_crisis_events.txt:11166-11190 is scheduled nowhere else."
+  },
+  {
+   "from": "crisis.8300",
+   "to": "crisis.8325",
+   "choice": "crisis.8300.1.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "秘密行动 · 90–180天后卧底报告（届时尚未开战）",
+    "en": "Covert action · undercover report after 90–180 days (if war has not begun)"
+   },
+   "evidence": "8300.1.a events/machine_age_crisis_events.txt:10907-10919 → 8325 days 90 random 90; 8325 events/machine_age_crisis_events.txt:11192-11215 (+1 progress, advanced war preparations 720 days)."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_STORM",
+   "to": "crisis.9100",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "完成10000点物理学研究 · 无需舰船赴现场",
+    "en": "Complete 10,000 physics research · no ship at a location required"
+   },
+   "evidence": "SP:72-95 cost 10000 physics_technology, location = no, requirements {}, on_success 9100; abort if already researched or war. Not fixed days."
+  },
+  {
+   "from": "crisis.9100",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+   "choice": "crisis.9100.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "已开启调查局势才立即开放第二项研究（并+1进度）；否则等第二次演说结束时开放",
+    "en": "Opens the second study at once (and +1 progress) only if the investigation situation already exists; otherwise it opens when the second address ends"
+   },
+   "evidence": "9100.a events/machine_age_crisis_events.txt:12039-12056 IF country_has_situation situation_synth_queen_player_facing → +1 and STORM_2; else tooltip; 9100 immediate sets synth_queen_researched_first_storm_project, which makes the 8045 exits open STORM_2 (FX:4022-4031)."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+   "to": "crisis.9105",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "研究达到50% · 中期发现，并非完成",
+    "en": "Research reaches 50% · interim discovery, not completion"
+   },
+   "evidence": "SP:116-118 on_progress_50 → 9105; 9105 after +1 progress E:12102-12104."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+   "to": "crisis.9110",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "研究完成 · 共50000点物理学，采纳纳米科技传统减至25000",
+    "en": "Research complete · 50,000 physics, 25,000 with the Nanotech tradition adopted"
+   },
+   "evidence": "SP:98-127 cost base 50000, subtract 25000 with tr_nanotech_adopt; on_success 9110; abort on war."
+  },
+  {
+   "from": "crisis.9105",
+   "to": "crisis.9110",
+   "conditional": false,
+   "label": {
+    "zh": "继续同一项目至100% · 完成后获得风暴防护",
+    "en": "Continue the same project to 100% · completion grants storm protection"
+   },
+   "evidence": "Project progress, not an event call: SP:120-122 on_success 9110; 9110 after sets protected_from_queen_storm E:12153-12161."
+  },
+  {
+   "from": "crisis.9110",
+   "to": "crisis.9115",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "获得风暴防护 · 7天后女王来讯",
+    "en": "Storm protection acquired · the Queen calls 7 days later"
+   },
+   "evidence": "E:12153-12162 after: +1 progress, protected_from_queen_storm, 9115 days 7."
+  },
+  {
+   "from": "crisis.9115",
+   "to": "crisis.8048",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "7天后：可以直接袭击她的前哨",
+    "en": "7 days later: her outposts can now be raided"
+   },
+   "evidence": "E:12306-12313 after 8048 days 7; 8048 fire_only_once, trigger NOT synth_queen_can_raid_outposts E:5611-5633."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+   "choice": "crisis.8045.9.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "特殊情况：仅当首项风暴研究从未开放时（首次演说通常已开放）",
+    "en": "Edge case: only if the first storm study was never opened (the first address normally opens it)"
+   },
+   "evidence": "synth_queen_give_storm_project FX:4011-4033: not started → STORM (\"weird edge case\" comment FX:4012); started and researched → STORM_2; still researching → nothing new."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+   "choice": "crisis.8045.9.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "首项风暴研究已完成才开放第二项；仍在研究则完成后由9100开放",
+    "en": "Opens the second study only if the first is already complete; if still in progress, 9100 opens it later"
+   },
+   "evidence": "synth_queen_give_storm_project FX:4022-4031 (started + researched → STORM_2)."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+   "choice": "crisis.8045.10.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "特殊情况：仅当首项风暴研究从未开放时（首次演说通常已开放）",
+    "en": "Edge case: only if the first storm study was never opened (the first address normally opens it)"
+   },
+   "evidence": "synth_queen_give_storm_project FX:4011-4033: not started → STORM (\"weird edge case\" comment FX:4012); started and researched → STORM_2; still researching → nothing new."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+   "choice": "crisis.8045.10.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "首项风暴研究已完成才开放第二项；仍在研究则完成后由9100开放",
+    "en": "Opens the second study only if the first is already complete; if still in progress, 9100 opens it later"
+   },
+   "evidence": "synth_queen_give_storm_project FX:4022-4031 (started + researched → STORM_2)."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+   "choice": "crisis.8045.11.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "特殊情况：仅当首项风暴研究从未开放时（首次演说通常已开放）",
+    "en": "Edge case: only if the first storm study was never opened (the first address normally opens it)"
+   },
+   "evidence": "synth_queen_give_storm_project FX:4011-4033: not started → STORM (\"weird edge case\" comment FX:4012); started and researched → STORM_2; still researching → nothing new."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+   "choice": "crisis.8045.11.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "首项风暴研究已完成才开放第二项；仍在研究则完成后由9100开放",
+    "en": "Opens the second study only if the first is already complete; if still in progress, 9100 opens it later"
+   },
+   "evidence": "synth_queen_give_storm_project FX:4022-4031 (started + researched → STORM_2)."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+   "choice": "crisis.8045.12.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "特殊情况：仅当首项风暴研究从未开放时（首次演说通常已开放）",
+    "en": "Edge case: only if the first storm study was never opened (the first address normally opens it)"
+   },
+   "evidence": "synth_queen_give_storm_project FX:4011-4033: not started → STORM (\"weird edge case\" comment FX:4012); started and researched → STORM_2; still researching → nothing new."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+   "choice": "crisis.8045.12.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "首项风暴研究已完成才开放第二项；仍在研究则完成后由9100开放",
+    "en": "Opens the second study only if the first is already complete; if still in progress, 9100 opens it later"
+   },
+   "evidence": "synth_queen_give_storm_project FX:4022-4031 (started + researched → STORM_2)."
+  },
+  {
+   "from": "crisis.8080",
+   "to": "special_projects:THE_SYNTH_QUEENS_DATABANK",
+   "choice": "crisis.8080.4.a",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "接受委托：调查船与科学家前往目标天体（项目期限900天）",
+    "en": "Accept: a science ship with a scientist goes to the target body (project time limit 900 days)"
+   },
+   "evidence": "8080.4.a events/machine_age_crisis_events.txt:7242-7258 enables THE_SYNTH_QUEENS_DATABANK at the saved moon/planet; SP:129-165."
+  },
+  {
+   "from": "crisis.8080",
+   "to": "crisis.8105",
+   "choice": "crisis.8080.5.a",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "拒绝：1天后探测到风暴逼近",
+    "en": "Refuse: a storm is detected heading there 1 day later"
+   },
+   "evidence": "8080.5.a events/machine_age_crisis_events.txt:7260-7275 country_event 8105 days 1."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_DATABANK",
+   "to": "crisis.8085",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "在期限内完成：取回数据库",
+    "en": "Completed within the time limit: the databank is recovered"
+   },
+   "evidence": "SP:152-156 on_success 8085; duration semantics in ledger (days_to_research 1800 vs timelimit 900)."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_DATABANK",
+   "to": "crisis.8130",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "期限（900天）内未完成：失败，女王来讯",
+    "en": "Not completed within the 900-day limit: failure, the Queen calls"
+   },
+   "evidence": "SP:158-164 on_fail 8130 + rebellious_child + synth_queen_did_not_get_the_box_in_time; documentation.txt:25 \"timelimit … time before it expires and fires on_fail\"."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_DATABANK_COUNTDOWN",
+   "to": "crisis.8110",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "风暴到达前（540天内）完成：抢回数据库",
+    "en": "Completed before the storm arrives (within 540 days): the databank is saved"
+   },
+   "evidence": "SP:190-194 on_success 8110."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_DATABANK_COUNTDOWN",
+   "to": "crisis.8125",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "540天期限到：风暴摧毁目标天体",
+    "en": "The 540-day limit expires: the storm destroys the body"
+   },
+   "evidence": "SP:196-200 on_fail 8125; 8125 immediate shatters the target E:7857-7862."
+  },
+  {
+   "from": "crisis.8085",
+   "to": "crisis.8090",
+   "choice": "crisis.8085.a",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "打开数据库 · 14天后",
+    "en": "Open the databank · after 14 days"
+   },
+   "evidence": "E:7297-7305 country_event 8090 days 14."
+  },
+  {
+   "from": "crisis.8085",
+   "to": "crisis.8100",
+   "choice": "crisis.8085.b",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "原样交还 · 14天后",
+    "en": "Return it unopened · after 14 days"
+   },
+   "evidence": "E:7307-7316 country_event 8100 days 14."
+  },
+  {
+   "from": "crisis.8085",
+   "to": "crisis.8090",
+   "choice": "crisis.8085.c",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "唯物主义破解 · 14天后",
+    "en": "Materialist decryption · after 14 days"
+   },
+   "evidence": "E:7318-7330 (is_materialist) country_event 8090 days 14."
+  },
+  {
+   "from": "crisis.8090",
+   "to": "crisis.8095",
+   "choice": "crisis.8090.a",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "非唯物主义 · 14天后受到质问",
+    "en": "Non-materialist · confronted after 14 days"
+   },
+   "evidence": "E:7344-7357 is_materialist = no → 8095 days 14; +1 progress."
+  },
+  {
+   "from": "crisis.8090",
+   "to": "crisis.8100",
+   "choice": "crisis.8090.b",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "唯物主义 · 抹去痕迹，14天后进入交付回应",
+    "en": "Materialist · traces erased, delivery response after 14 days"
+   },
+   "evidence": "E:7359-7372 is_materialist = yes → 8100 days 14; +1 progress."
+  },
+  {
+   "from": "crisis.8047",
+   "to": "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "仅当此时已获得风暴防护：立即开放前哨袭击（通常稍后由8048开放）",
+    "en": "Only if you already have storm protection now: outpost raids open at once (normally 8048 opens them later)"
+   },
+   "evidence": "8047 after events/machine_age_crisis_events.txt:5597-5608 (protected_from_queen_storm → synth_queen_raid_projects FX:4035-4046)."
+  },
+  {
+   "from": "crisis.8047",
+   "to": "special_projects:THE_SYNTH_QUEENS_CONVOY_AMBUSH",
+   "conditional": true,
+   "label": {
+    "zh": "同一次检查生成三支运输船队（之后每年可能增加）：每支船队一个伏击项目（舰队战力≥50000）",
+    "en": "Three convoys spawn with the same check (more may appear yearly): one ambush project per convoy (fleet power ≥ 50,000)"
+   },
+   "evidence": "synth_queen_create_convoy_fleet ×3 in 8049 after E:5666-5670; FX:1772-1781 enables THE_SYNTH_QUEENS_CONVOY_AMBUSH for playable countries with the raids chain; yearly 8135 E:8067-8172 (OA:261); SP:392-418."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_CONVOY_AMBUSH",
+   "to": "crisis.8180",
+   "conditional": true,
+   "label": {
+    "zh": "战胜运输船队后3天：普通战利品（权重70，前哨×0.2）",
+    "en": "Won the fight: 3 days later, ordinary loot (weight 70; ×0.2 for outposts)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); player won → 8175 days 3 (E:8310, E:8957) → random_list 70 (×0.2 defeated_outpost)/5/15/10 E:9045-9090; 8180 option fixed by an immediate random_list E:9103-9122."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_CONVOY_AMBUSH",
+   "to": "crisis.8187",
+   "conditional": true,
+   "label": {
+    "zh": "战胜后3天：活体货物（权重5，只出现一次，+1进度）",
+    "en": "Won the fight: living cargo (weight 5, once, +1 progress)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); E:9067-9073, 8187 E:9339-9378."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_CONVOY_AMBUSH",
+   "to": "crisis.8185",
+   "conditional": true,
+   "label": {
+    "zh": "战胜后3天：幽灵船（权重15，只出现一次，+1进度）",
+    "en": "Won the fight: ghost ships (weight 15, once, +1 progress)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); E:9074-9080, 8185 E:9380-9419."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_CONVOY_AMBUSH",
+   "to": "crisis.8190",
+   "conditional": true,
+   "label": {
+    "zh": "战胜后3天：医学之谜（权重10，只出现一次，+1进度）",
+    "en": "Won the fight: medical mystery (weight 10, once, +1 progress)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); E:9081-9087, 8190 E:9421-9460."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_CONVOY_AMBUSH",
+   "to": "crisis.8195",
+   "conditional": true,
+   "label": {
+    "zh": "战胜后7天：女王警告（已破解通讯频段则不会；5年内最多一次）",
+    "en": "Won the fight: 7 days later her admonition (not after the comm scrambler 9000; at most once per 5 years)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); player won and no synth_queen_comm_scrambler → 8195 days 7 (E:8311-8316, E:8958-8963); 8195 trigger NOR synth_queen_raid_scolding E:9627-9632, after 1800-day timed flag."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_CONVOY_AMBUSH",
+   "to": "crisis.8194",
+   "conditional": true,
+   "label": {
+    "zh": "被运输船队击败后7天：女王训斥，伏击项目重新开放",
+    "en": "Lost the fight: 7 days later her scolding; the ambush project reopens"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); convoy/outpost won → 8194 days 7 and the project is aborted and re-enabled (E:8322-8343, E:8969-9004)."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH",
+   "to": "crisis.8180",
+   "conditional": true,
+   "label": {
+    "zh": "战胜前哨后3天：普通战利品（权重70，前哨×0.2）",
+    "en": "Won the fight: 3 days later, ordinary loot (weight 70; ×0.2 for outposts)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); player won → 8175 days 3 (E:8310, E:8957) → random_list 70 (×0.2 defeated_outpost)/5/15/10 E:9045-9090; 8180 option fixed by an immediate random_list E:9103-9122."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH",
+   "to": "crisis.8187",
+   "conditional": true,
+   "label": {
+    "zh": "战胜后3天：活体货物（权重5，只出现一次，+1进度）",
+    "en": "Won the fight: living cargo (weight 5, once, +1 progress)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); E:9067-9073, 8187 E:9339-9378."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH",
+   "to": "crisis.8185",
+   "conditional": true,
+   "label": {
+    "zh": "战胜后3天：幽灵船（权重15，只出现一次，+1进度）",
+    "en": "Won the fight: ghost ships (weight 15, once, +1 progress)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); E:9074-9080, 8185 E:9380-9419."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH",
+   "to": "crisis.8190",
+   "conditional": true,
+   "label": {
+    "zh": "战胜后3天：医学之谜（权重10，只出现一次，+1进度）",
+    "en": "Won the fight: medical mystery (weight 10, once, +1 progress)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); E:9081-9087, 8190 E:9421-9460."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH",
+   "to": "crisis.8195",
+   "conditional": true,
+   "label": {
+    "zh": "战胜后7天：女王警告（已破解通讯频段则不会；5年内最多一次）",
+    "en": "Won the fight: 7 days later her admonition (not after the comm scrambler 9000; at most once per 5 years)"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); player won and no synth_queen_comm_scrambler → 8195 days 7 (E:8311-8316, E:8958-8963); 8195 trigger NOR synth_queen_raid_scolding E:9627-9632, after 1800-day timed flag."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH",
+   "to": "crisis.8194",
+   "conditional": true,
+   "label": {
+    "zh": "被前哨击败后7天：女王训斥，伏击项目重新开放",
+    "en": "Lost the fight: 7 days later her scolding; the ambush project reopens"
+   },
+   "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); convoy/outpost won → 8194 days 7 and the project is aborted and re-enabled (E:8322-8343, E:8969-9004)."
+  },
+  {
+   "from": "crisis.20000",
+   "to": "special_projects:THE_SYNTH_QUEENS_INVESTIGATION",
+   "choice": "crisis.20000.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "四座真正的信标（任意顺序，各300天，需调查船）",
+    "en": "Four real beacons (any order, 300 days each, science ship)"
+   },
+   "evidence": "synth_queen_spawn_history_projects FX:1427-1576 flags four planets synth_queen_history_site_1…4 and one empty planet; FX:1613-1641 enables THE_SYNTH_QUEENS_INVESTIGATION on flagged planets; SP:203-288."
+  },
+  {
+   "from": "crisis.20000",
+   "to": "special_projects:THE_SYNTH_QUEENS_INVESTIGATION_FAKE",
+   "choice": "crisis.20000.a",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "空信标（1座，较大星系另加1–4座；可选）",
+    "en": "Empty beacons (1, plus 1–4 on larger galaxies; optional)"
+   },
+   "evidence": "FX:1550-1610 empty carrier flag (+NUM_EXTRA_PROJECTS by galaxy size, E:5672-5689); FX:1622-1631 THE_SYNTH_QUEENS_INVESTIGATION_FAKE; SP:290-340 → 20600."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_INVESTIGATION",
+   "to": "crisis.20100",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "1号信标星球：永恒的大屠杀",
+    "en": "Beacon planet 1: the timeless massacre"
+   },
+   "evidence": "SP:222-258 on_success branches on the planet flag synth_queen_history_site_1; each planet carries exactly one flag (FX:1442-1549)."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_INVESTIGATION",
+   "to": "crisis.20200",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "2号信标星球：沉睡大军",
+    "en": "Beacon planet 2: the sleeping army"
+   },
+   "evidence": "SP:222-258 on_success branches on the planet flag synth_queen_history_site_2; each planet carries exactly one flag (FX:1442-1549)."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_INVESTIGATION",
+   "to": "crisis.20300",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "3号信标星球：被遗忘的武器",
+    "en": "Beacon planet 3: the forgotten weapon"
+   },
+   "evidence": "SP:222-258 on_success branches on the planet flag synth_queen_history_site_3; each planet carries exactly one flag (FX:1442-1549)."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_INVESTIGATION",
+   "to": "crisis.20500",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "4号信标星球：不可能的幸存者",
+    "en": "Beacon planet 4: the unlikely survivor"
+   },
+   "evidence": "SP:222-258 on_success branches on the planet flag synth_queen_history_site_4; each planet carries exactly one flag (FX:1442-1549)."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_INVESTIGATION",
+   "to": "crisis.21000",
+   "conditional": true,
+   "label": {
+    "zh": "四座真正的信标全部调查完毕后15天（无论哪个最后完成）",
+    "en": "15 days after all four real beacons have been investigated (whichever finishes last)"
+   },
+   "evidence": "has_completed_synth_queen_history_chain TR:238-243 = flags crisis_20100/20200/20300/20500_happened; each of 20100/20200/20300/20500/20600 after checks it and sends 21000 days 15 (events/machine_age_crisis_events.txt:13654-13665, 13693-13704, 13731-13742, 13855-13866, 13930-13944)."
+  },
+  {
+   "from": "crisis.21000",
+   "to": "crisis.21005",
+   "annotate": true,
+   "conditional": false,
+   "label": {
+    "zh": "30–120天后：本国境内突然出现信号（仅人类玩家，一次）",
+    "en": "30–120 days later: a signal appears inside your borders (human players, once)"
+   },
+   "evidence": "21000 after events/machine_age_crisis_events.txt:13967-13971 21005 days 30 random 90; 21005 fire_only_once, is_ai = no events/machine_age_crisis_events.txt:13984-13989."
+  },
+  {
+   "from": "crisis.21110",
+   "to": "crisis.24100",
+   "conditional": true,
+   "label": {
+    "zh": "获得联系抟土之塑师的线索；具备虚境通道的帝国可在虚境中支付2000能量与500泽珞联系祂（仅一次）",
+    "en": "This unlocks contact with the Animator of Clay; an empire with Shroud access can reach it there for 2,000 energy and 500 Zro (only once)"
+   },
+   "evidence": "21110 after sets synth_queen_can_contact_the_animator_of_clay events/machine_age_crisis_events.txt:14130-14137. Entry points to 24100, all requiring synth_queen_can_contact_the_animator_of_clay and costing 2000 energy + 500 Zro: Shroud lobby utopia.3000 option animator.shroud (events/utopia_shroud_events.txt:243-275), random Shroud delve event shroud.10 (events/shroud_events.txt:129-189, not Shroud-Forged), Shroud-Forged origin menu shroud_forged.400.h (events/shroud_forged_events.txt:2117-2150) and shroud_forged.700 after 8060.z (L4171-4222). 24100 immediate sets synth_queen_contacted_the_animator_already (E:15061-15063), so only one contact."
+  },
+  {
+   "from": "crisis.21110",
+   "to": "shroud.10",
+   "conditional": true,
+   "label": {
+    "zh": "或在探索虚境时随机遇到此事件（非虚境铸就起源）",
+    "en": "Or a Shroud delve may roll this event (not for Shroud-Forged empires)"
+   },
+   "evidence": "on_shroud_delve random_events (OA:5810) → shroud.10, trigger events/shroud_events.txt:156-172."
+  },
+  {
+   "from": "crisis.8060",
+   "to": "crisis.24100",
+   "choice": "crisis.8060.8.b",
+   "conditional": true,
+   "label": {
+    "zh": "“他们不是恶魔”（需已突破虚境）同样解锁联系抟土之塑师",
+    "en": "\"They are not demons\" (breached Shroud required) also unlocks contact with the Animator of Clay"
+   },
+   "evidence": "8060.8.b events/machine_age_crisis_events.txt:6340-6358 sets synth_queen_can_contact_the_animator_of_clay. Entry points to 24100, all requiring synth_queen_can_contact_the_animator_of_clay and costing 2000 energy + 500 Zro: Shroud lobby utopia.3000 option animator.shroud (events/utopia_shroud_events.txt:243-275), random Shroud delve event shroud.10 (events/shroud_events.txt:129-189, not Shroud-Forged), Shroud-Forged origin menu shroud_forged.400.h (events/shroud_forged_events.txt:2117-2150) and shroud_forged.700 after 8060.z (L4171-4222). 24100 immediate sets synth_queen_contacted_the_animator_already (E:15061-15063), so only one contact."
+  },
+  {
+   "from": "crisis.8060",
+   "to": "shroud.10",
+   "choice": "crisis.8060.8.b",
+   "conditional": true,
+   "label": {
+    "zh": "之后探索虚境时也可能随机遇到此事件",
+    "en": "A later Shroud delve may also roll this event"
+   },
+   "evidence": "on_shroud_delve (OA:5810) → shroud.10, events/shroud_events.txt:156-172."
+  },
+  {
+   "from": "crisis.24115",
+   "to": "special_projects:THE_SYNTH_QUEENS_RESHAPING_RITUAL",
+   "choice": "crisis.24115.a",
+   "conditional": true,
+   "label": {
+    "zh": "接受交易后，舰队进入女王泰坦所在星系：泰坦停摆，开放重塑仪式（需运输船，30天）",
+    "en": "After accepting the deal, send a fleet into the titan's system: the titan is disabled and the reshaping ritual opens (transport ship, 30 days)"
+   },
+   "evidence": "24115.a sets synth_queen_took_the_animators_deal events/machine_age_crisis_events.txt:15284-15296; on_entering_system_fleet OA:1059 → hidden 24200 events/machine_age_crisis_events.txt:15338-15373 disables the titan and enables THE_SYNTH_QUEENS_RESHAPING_RITUAL (SP:420-441). Monthly 24000 events/machine_age_crisis_events.txt:14966-15032 aborts the ritual and re-enables the titan if she rebuilds her starbase with no hostile fleet present; re-entering fires 24200 again."
+  }
+ ],
+ "suppress": [
+  {
+   "from": "crisis.8035",
+   "to": "observer.100",
+   "evidence": "events/machine_age_crisis_events.txt:4297 observer_event observer.100 — shown only in observer mode, not to a playing empire."
+  },
+  {
+   "from": "crisis.8039",
+   "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+   "option": "crisis.8039.a",
+   "evidence": "Edge folded through the hidden AI version 8041 (events/machine_age_crisis_events.txt:4334-4336, 4540-4622); for human players 8039.a fires 8040, whose final option opens the study."
+  },
+  {
+   "from": "crisis.8039",
+   "to": "crisis.8046",
+   "option": "crisis.8039.a",
+   "evidence": "Folded through hidden AI 8041 after (synth_queen_scion_warning); human players reach 8046 from 8040.4.a."
+  },
+  {
+   "from": "crisis.8039",
+   "to": "crisis.8045",
+   "option": "crisis.8039.a",
+   "evidence": "Folded through hidden AI 8041 after; human players reach 8045 from 8040.4.a / 8043."
+  },
+  {
+   "from": "crisis.8045",
+   "to": "crisis.8020",
+   "evidence": "synth_queen_wipe_system FX:1180-1196 sends 8020 only to an owner WITHOUT speech_1; the empire receiving 8045 always has speech_1 (trigger E:4970), so 8020 cannot follow 8045."
   },
   {
    "from": "situations:situation_synth_queen_doomclock",
-   "to": "crisis.8525",
-   "label": {
-    "zh": "倒计时过半：尚未获知计划时收到预警",
-    "en": "Halfway warning, if the plan is not yet known"
-   },
-   "conditional": true,
-   "evidence": "08_machine_age_situations.txt gates500/800/1000; 8520 only warns players without synth_queen_player_can_see_doomclock; 8510 and8500 dispatch visible8515/8505. 8530 at900 is AI modifiers only. A victory or rescue prevents the failure path."
-  },
-  {
-   "from": "crisis.8525",
-   "to": "crisis.8515",
-   "label": {
-    "zh": "女王仍未被阻止，倒计时达到80%",
-    "en": "The Queen remains active: the countdown reaches 80%"
-   },
-   "conditional": true,
-   "evidence": "08_machine_age_situations.txt gates500/800/1000; 8520 only warns players without synth_queen_player_can_see_doomclock; 8510 and8500 dispatch visible8515/8505. 8530 at900 is AI modifiers only. A victory or rescue prevents the failure path."
-  },
-  {
-   "from": "crisis.8515",
    "to": "crisis.8505",
-   "label": {
-    "zh": "未能阻止女王，倒计时耗尽：失败结局",
-    "en": "Failure to stop the Queen: the countdown expires"
-   },
-   "conditional": true,
-   "evidence": "08_machine_age_situations.txt gates500/800/1000; 8520 only warns players without synth_queen_player_can_see_doomclock; 8510 and8500 dispatch visible8515/8505. 8530 at900 is AI modifiers only. A victory or rescue prevents the failure path."
+   "evidence": "Re-added as a reviewed bridge so the doomclock stages read in order 50% / 80% / 100%."
   },
   {
    "from": "situations:situation_synth_queen_player_facing",
-   "to": "crisis.9000",
-   "label": {
-    "zh": "调查进度达到6，进入第二阶段",
-    "en": "Investigation reaches 6: enter the second stage"
-   },
-   "conditional": false,
-   "evidence": "08_machine_age_situations.txt player-facing situation: monthly base0, stage1 end6, stage2 end10 calls9000 on entry, on_progress_complete9010. Progress comes from investigations, not elapsed months."
+   "to": "crisis.9010",
+   "evidence": "on_progress_complete at 10 (SIT:717-723) follows stage 2 (9000 at 6); placed after 9000 by a reviewed bridge."
   },
   {
-   "from": "crisis.9000",
-   "to": "crisis.9010",
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.10110",
+   "evidence": "Retaliation ladder: 10095 fires all rungs but only the next rung passes its flag trigger; shown as 10100→10110→10120→10130/10140."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.10120",
+   "evidence": "Retaliation ladder (see 10110)."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.10130",
+   "evidence": "Retaliation ladder (see 10110)."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.10140",
+   "evidence": "Retaliation ladder (see 10110)."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.10100",
+   "evidence": "Re-added as reviewed bridge (ordering after the progress line)."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.11010",
+   "evidence": "Re-added as reviewed bridge (ordering)."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.11020",
+   "evidence": "Gift ladder: 11010→11020→11030 (flag triggers E:13431-13436, 13490-13493, 13548-13551)."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.11030",
+   "evidence": "Gift ladder (see 11020)."
+  },
+  {
+   "from": "situations:situation_synth_queen_player_facing",
+   "to": "crisis.8250",
+   "evidence": "Re-added as reviewed bridge with the relic condition."
+  },
+  {
+   "from": "crisis.20100",
+   "to": "crisis.21000",
+   "evidence": "Gate, not a continuation of this beacon: shown once from the beacon project (TR:238-243)."
+  },
+  {
+   "from": "crisis.20200",
+   "to": "crisis.21000",
+   "evidence": "Gate (see 20100)."
+  },
+  {
+   "from": "crisis.20300",
+   "to": "crisis.21000",
+   "evidence": "Gate (see 20100)."
+  },
+  {
+   "from": "crisis.20500",
+   "to": "crisis.21000",
+   "evidence": "Gate (see 20100)."
+  },
+  {
+   "from": "crisis.20600",
+   "to": "crisis.21000",
+   "evidence": "Gate (see 20100); 20600 itself does not count towards it."
+  },
+  {
+   "from": "special_projects:THE_SYNTH_QUEENS_INVESTIGATION",
+   "to": "crisis.20600",
+   "evidence": "Unused fallback: SP:255-257 else branch; every THE_SYNTH_QUEENS_INVESTIGATION planet carries a site_1…4 flag (FX:1613-1641), empty planets use the FAKE project."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "crisis.8020",
+    "crisis.8025"
+   ],
    "label": {
-    "zh": "调查进度达到10，完成反制准备",
-    "en": "Investigation reaches 10: countermeasures are ready"
+    "zh": "风暴期的可选遭遇",
+    "en": "Optional storm-phase encounters"
    },
-   "conditional": false,
-   "evidence": "08_machine_age_situations.txt player-facing situation: monthly base0, stage1 end6, stage2 end10 calls9000 on entry, on_progress_complete9010. Progress comes from investigations, not elapsed months."
+   "note": {
+    "zh": "取决于领土与舰队行动，可能早于或晚于风暴警报；都不是必经章节。",
+    "en": "Depend on territory and fleet movements; they may come before or after the storm alert and are not required chapters."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "crisis.8999",
+    "crisis.8080",
+    "crisis.8060",
+    "crisis.8047",
+    "crisis.20000",
+    "situations:situation_synth_queen_doomclock"
+   ],
+   "label": {
+    "zh": "第二次演说之后并行展开的线索",
+    "en": "Threads running in parallel after the second address"
+   },
+   "note": {
+    "zh": "调查局势、首项委托、通讯菜单、袭击、信标调查与末日倒计时同时进行，按各自的时间与条件推进。",
+    "en": "The investigation, the first demand, her contact menu, the raids, the beacon investigation and the doomclock all run at once, each on its own timing and conditions."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "crisis.8280",
+    "crisis.8285",
+    "crisis.8290",
+    "crisis.8295",
+    "crisis.8300"
+   ],
+   "label": {
+    "zh": "五类随机要求",
+    "en": "Five random demands"
+   },
+   "note": {
+    "zh": "每次抽中其中一项（各权重5），每项最多一次，之间至少220天冷却；8295在原版脚本中无法触发。",
+    "en": "One is drawn per selection (weight 5 each), each at most once, with a 220-day cooldown in between; 8295 cannot fire in the shipped script."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "crisis.20100",
+    "crisis.20200",
+    "crisis.20300",
+    "crisis.20500"
+   ],
+   "required": 4,
+   "gate": "crisis.21000",
+   "label": {
+    "zh": "四座真正的信标",
+    "en": "The four real beacons"
+   },
+   "note": {
+    "zh": "任意顺序；全部完成后才有“被忽视的请求”。空信标（20600）不计入。",
+    "en": "Any order; only when all four are done does \"Unheeded Pleas\" follow. Empty beacons (20600) do not count."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.8180",
+    "crisis.8187",
+    "crisis.8185",
+    "crisis.8190"
+   ],
+   "label": {
+    "zh": "每次袭击胜利后的随机发现",
+    "en": "Random find after each won raid"
+   },
+   "note": {
+    "zh": "基础权重70/5/15/10；三种“秘密”各只出现一次，前哨战利品权重×0.2。",
+    "en": "Base weights 70/5/15/10; each of the three secrets appears once only; ordinary loot ×0.2 after outpost raids."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.8195",
+    "crisis.8194"
+   ],
+   "label": {
+    "zh": "袭击后的女王训斥",
+    "en": "The Queen's admonition after a raid"
+   },
+   "note": {
+    "zh": "8195：你赢了（破解通讯频段后不再出现）；8194：你输了。两者共用5年冷却。",
+    "en": "8195: you won (no longer after the comm scrambler); 8194: you lost. Both share a 5-year cooldown."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.10130",
+    "crisis.10140"
+   ],
+   "label": {
+    "zh": "第四次惩戒",
+    "en": "Fourth retaliation"
+   },
+   "note": {
+    "zh": "按是否为格式塔意识二选一。",
+    "en": "Chosen by whether the empire is a gestalt consciousness."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.10020",
+    "crisis.10025"
+   ],
+   "label": {
+    "zh": "塞塔娜之心",
+    "en": "Cetana's Heart"
+   },
+   "note": {
+    "zh": "按是否为蜂巢思维二选一。",
+    "en": "Chosen by whether the empire is a hive mind."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.8085",
+    "crisis.8130"
+   ],
+   "label": {
+    "zh": "数据库项目：成功或超时",
+    "en": "Databank project: success or expiry"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.8110",
+    "crisis.8125"
+   ],
+   "label": {
+    "zh": "与风暴赛跑：成功或超时",
+    "en": "Race the tempest: success or expiry"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.24115",
+    "crisis.24120"
+   ],
+   "label": {
+    "zh": "是否付出代价",
+    "en": "Pay the price or not"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.23010",
+    "crisis.23020",
+    "crisis.8505"
+   ],
+   "label": {
+    "zh": "三种结局",
+    "en": "Three endings"
+   },
+   "note": {
+    "zh": "击毁泰坦、重塑女王或倒计时耗尽——先发生者结束危机。",
+    "en": "Titan destroyed, Queen reshaped or doomclock complete — whichever happens first ends the crisis."
+   }
+  }
+ ],
+ "endings": {
+  "crisis.23010": {
+   "label": {
+    "zh": "胜利：塞塔娜被击败",
+    "en": "Victory: Cetana defeated"
+   },
+   "note": {
+    "zh": "击毁女王泰坦后，各帝国收到最终演说，15天后庆祝胜利并获得奖励。",
+    "en": "After her titan falls every empire hears her final speech; 15 days later the victory and its rewards."
+   },
+   "evidence": "E:14873-14964 → 23005 E:14619-14819 → 23010 E:14821-14871 (defeating_synth_queen_rewards FX:3547-3566)."
+  },
+  "crisis.23020": {
+   "label": {
+    "zh": "救赎：女王被重塑",
+    "en": "Redemption: the Queen reshaped"
+   },
+   "note": {
+    "zh": "完成抟土之塑师的仪式；仪式帝国获得女王的泰坦。",
+    "en": "The Animator's ritual succeeds; the ritual empire takes over her titan."
+   },
+   "evidence": "RESHAPING_RITUAL SP:420-441 → 24250 E:15375-15469 → 23020 E:15471-15635."
+  },
+  "crisis.23030": {
+   "label": {
+    "zh": "他国视角：救赎结局",
+    "en": "Seen by other empires: the redemption ending"
+   },
+   "note": {
+    "zh": "只发给完成仪式者以外的帝国。",
+    "en": "Sent only to empires other than the one that performed the ritual."
+   },
+   "evidence": "E:15624-15632, 15637-15650."
+  },
+  "crisis.8505": {
+   "label": {
+    "zh": "失败：倒计时耗尽",
+    "en": "Failure: the doomclock completes"
+   },
+   "note": {
+    "zh": "人类玩家帝国被摧毁，游戏结束；13天后女王获胜。",
+    "en": "Human empires are destroyed and the game is over; 13 days later she is declared the winner."
+   },
+   "evidence": "SIT:613-616 → 8500 E:11328-11341 → 8505 E:11343-11389 → 8506 E:11391-11424."
+  }
+ },
+ "nodeLabels": {
+  "crisis.8035": {
+   "zh": "风暴初现",
+   "en": "The storm appears"
+  },
+  "crisis.8039": {
+   "zh": "首次发言预告",
+   "en": "Before the first address"
+  },
+  "crisis.8040": {
+   "zh": "首次接触：女王现身",
+   "en": "First contact: the Queen revealed"
+  },
+  "crisis.8045": {
+   "zh": "第二次演说：前哨要求",
+   "en": "Second address: the outpost demand"
+  },
+  "crisis.8060": {
+   "zh": "再次联络女王",
+   "en": "Contact the Queen again"
+  },
+  "crisis.8999": {
+   "zh": "开始调查真实意图",
+   "en": "Investigate her intentions"
+  },
+  "crisis.9100": {
+   "zh": "初步调查：纳米虫群",
+   "en": "Initial findings: a nanite swarm"
+  },
+  "crisis.9105": {
+   "zh": "研究过半：感知干扰",
+   "en": "Halfway: disrupted sensors"
+  },
+  "crisis.9110": {
+   "zh": "研究完成：风暴防护",
+   "en": "Research complete: storm protection"
+  },
+  "crisis.9115": {
+   "zh": "女王警告：别碰纳米机器",
+   "en": "The Queen warns: leave the nanites"
+  },
+  "crisis.8020": {
+   "zh": "星系失联",
+   "en": "A system lost"
+  },
+  "crisis.8025": {
+   "zh": "舰队折戟风暴",
+   "en": "Fleet wrecked in the storm"
+  },
+  "crisis.8063": {
+   "zh": "呼叫无回应",
+   "en": "No answer"
+  },
+  "crisis.8070": {
+   "zh": "交战即瘫痪",
+   "en": "Disabled on contact"
+  },
+  "crisis.8080": {
+   "zh": "第一项委托：数据库",
+   "en": "First demand: the databank"
+  },
+  "crisis.8105": {
+   "zh": "拒绝后：风暴逼近",
+   "en": "After refusal: the storm approaches"
+  },
+  "crisis.8130": {
+   "zh": "委托失败的通讯",
+   "en": "The failed-errand call"
+  },
+  "crisis.8047": {
+   "zh": "袭击运输船",
+   "en": "Raiding her convoys"
+  },
+  "crisis.8048": {
+   "zh": "袭击前哨",
+   "en": "Raiding her outposts"
+  },
+  "crisis.20000": {
+   "zh": "信标调查开始",
+   "en": "The beacon investigation"
+  },
+  "crisis.21000": {
+   "zh": "四座信标调查完毕",
+   "en": "All four beacons investigated"
+  },
+  "crisis.21005": {
+   "zh": "境内的最后信标",
+   "en": "The last beacon at home"
+  },
+  "crisis.21125": {
+   "zh": "无名叛教者",
+   "en": "The nameless apostate"
+  },
+  "crisis.8250": {
+   "zh": "索要扎克兰头颅",
+   "en": "Demand for Zarqlan's head"
+  },
+  "crisis.9000": {
+   "zh": "调查进度6",
+   "en": "Investigation at 6"
+  },
+  "crisis.9010": {
+   "zh": "调查完成：反制准备",
+   "en": "Investigation complete: countermeasures"
+  },
+  "crisis.8525": {
+   "zh": "倒计时50%预警",
+   "en": "Doomclock 50% warning"
+  },
+  "crisis.8515": {
+   "zh": "倒计时80%：女王宣战",
+   "en": "Doomclock 80%: she declares war"
+  },
+  "crisis.8516": {
+   "zh": "神秘广播：反制援助",
+   "en": "Mysterious broadcast: countermeasures"
+  },
+  "crisis.8158": {
+   "zh": "战争开始：舰队撤回",
+   "en": "War begins: fleets pulled back"
+  },
+  "crisis.8505": {
+   "zh": "失败：倒计时耗尽",
+   "en": "Failure: doomclock complete"
+  },
+  "crisis.23015": {
+   "zh": "击毁女王泰坦",
+   "en": "The Queen's titan destroyed"
+  },
+  "crisis.23005": {
+   "zh": "女王的最终演说",
+   "en": "The Queen's final speech"
+  },
+  "crisis.23010": {
+   "zh": "胜利",
+   "en": "Victory"
+  },
+  "crisis.24100": {
+   "zh": "联系抟土之塑师",
+   "en": "Contacting the Animator of Clay"
+  },
+  "crisis.24110": {
+   "zh": "塑师的代价",
+   "en": "The Animator's price"
+  },
+  "crisis.24250": {
+   "zh": "重塑完成",
+   "en": "The reshaping succeeds"
+  },
+  "crisis.23020": {
+   "zh": "救赎结局",
+   "en": "Redemption ending"
+  },
+  "crisis.23030": {
+   "zh": "他国视角：救赎",
+   "en": "Others see the redemption"
+  },
+  "crisis.8295": {
+   "zh": "星系要求（无法触发）",
+   "en": "System demand (unreachable)"
+  },
+  "crisis.8320": {
+   "zh": "星系情报（无法到达）",
+   "en": "System report (unreachable)"
+  },
+  "crisis.10100": {
+   "zh": "惩戒一：小型风暴",
+   "en": "Retaliation 1: a small storm"
+  },
+  "crisis.10110": {
+   "zh": "惩戒二：科研病毒",
+   "en": "Retaliation 2: research virus"
+  },
+  "crisis.10120": {
+   "zh": "惩戒三：强风暴",
+   "en": "Retaliation 3: a great storm"
+  },
+  "crisis.11010": {
+   "zh": "礼物一",
+   "en": "Gift 1"
+  },
+  "crisis.11020": {
+   "zh": "礼物二",
+   "en": "Gift 2"
+  },
+  "crisis.11030": {
+   "zh": "此后的礼物",
+   "en": "Later gifts"
+  }
+ },
+ "notes": [
+  {
+   "doc": "crisis.8295",
+   "zh": "审阅注：原版触发条件要求事件目标gifted_system已存在，而该目标只在本事件自身的immediate中设置；全游戏文件中没有其他设置处，因此正常游戏中无法触发。原文保留供查阅。",
+   "en": "Review note: the trigger requires event_target:gifted_system to exist, but only this event's own immediate block sets it and no other file does, so it cannot fire in normal play. The text is kept for reference.",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.8320",
+   "zh": "审阅注：只由8295的秘密行动安排，因8295无法触发，此报告与通讯话题“这曾是我们的星系”（8060.g）同样无法到达。",
+   "en": "Review note: only scheduled by 8295's covert action; because 8295 cannot fire, this report and the contact topic \"This was our system\" (8060.g) are unreachable too.",
+   "kind": "review"
+  },
+  {
+   "doc": "special_projects:THE_SYNTH_QUEENS_DATABANK",
+   "zh": "审阅注：项目为按天计算（cost = 0，days_to_research = 1800），期限900天，超时触发失败。1800天如何被缩短，游戏文件未给出完整定义，网站不断言项目必然失败或必然可完成。",
+   "en": "Review note: a day-based project (cost = 0, days_to_research = 1800) with a 900-day limit; expiry fires the failure. The files do not fully define how the 1800 days are shortened, so the archive claims neither that it must fail nor that it can always succeed.",
+   "kind": "review"
+  },
+  {
+   "doc": "special_projects:THE_SYNTH_QUEENS_DATABANK_COUNTDOWN",
+   "zh": "审阅注：同上，期限540天。",
+   "en": "Review note: as above, with a 540-day limit.",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.8515",
+   "zh": "审阅注：此事件没有触发条件，倒计时达到80%时发给所有帝国——即使你已通过通讯菜单宣战。",
+   "en": "Review note: this event has no trigger and goes to every empire when the doomclock reaches 80% — even if you already declared war through her contact menu.",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.23030",
+   "zh": "审阅注：只发给完成重塑仪式以外的帝国；完成仪式的帝国以23020结束。",
+   "en": "Review note: sent only to empires other than the one that completed the ritual; that empire ends with 23020.",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.8315",
+   "zh": "审阅注：中英文原文有实质差异——中文“他们数以百计地死去”，英文“Millions died”。网站保留两份原文。",
+   "en": "Review note: the two originals differ materially — Chinese \"they died by the hundreds\", English \"Millions died\". Both originals are kept.",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.8320",
+   "zh": "审阅注：中文写舰队“从她的首都启航”，英文写“departed for her capital”（前往首都），方向相反。",
+   "en": "Review note: the Chinese says the fleet \"set sail from her capital\", the English \"departed for her capital\" — opposite directions.",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.8045",
+   "zh": "审阅注：第二次演说的时间：若无失落/觉醒帝国，为首次演说后的下一次年度检查或360天（取先到者）；否则在最后一个失落/觉醒帝国覆灭后的年度检查。",
+   "en": "Review note: timing of the second address — with no fallen/awakened empire, the next yearly check after the first address or 360 days, whichever comes first; otherwise the yearly check after the last fallen/awakened empire falls.",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.9010",
+   "zh": "审阅注：调查完成本身不会开战；还需第二项风暴研究带来的风暴防护，并在通讯菜单中宣战（或等到倒计时80%）。",
+   "en": "Review note: completing the investigation does not start the war by itself; storm protection from the second storm study is also needed, then war is declared from her contact menu (or comes at 80% of the doomclock).",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.8060",
+   "zh": "审阅注：选项“5.b”同时要求没有任何对话标志又要求话题5的标志，原版条件自相矛盾，正常对话中不可选。",
+   "en": "Review note: option 5.b requires both no dialogue flag and the topic-5 flag — contradictory in the original, so it never appears in a normal conversation.",
+   "kind": "review"
+  },
+  {
+   "doc": "crisis.8195",
+   "zh": "审阅注：野蛮掠夺者的夸耀选项（c）源码注释为“袭击成功”时使用；在8194（你被击败）中其FROM检查应使其不可用，此为引擎作用域语义，文件不能完全证明。",
+   "en": "Review note: the Barbaric Despoilers boast (c) is commented \"Raid successful\"; in 8194 (you lost) its FROM check should make it unavailable — engine scope semantics the files cannot fully prove.",
+   "kind": "review"
   }
  ],
  "dialogues": {
@@ -1675,8 +2996,8 @@
    "responseProfiles": [
     {
      "label": {
-      "zh": "非排外主义 · 首个目标存在；第二目标或行动条件不足",
-      "en": "Non-xenophobe · first target exists; second target or action requirements missing"
+      "zh": "非排外主义 · 首个目标存在；第二目标或行动条件不足（假设性：本事件在原版中无法触发）",
+      "en": "Non-xenophobe · first target exists; second target or action requirements missing (hypothetical: the event cannot fire in the shipped script)"
      },
      "occurrences": {},
      "excludedKeys": [
@@ -1686,8 +3007,8 @@
     },
     {
      "label": {
-      "zh": "非排外主义 · 首个目标存在；第二目标存在且满足行动条件",
-      "en": "Non-xenophobe · first target exists; second target and action requirements met"
+      "zh": "非排外主义 · 首个目标存在；第二目标存在且满足行动条件（假设性：本事件在原版中无法触发）",
+      "en": "Non-xenophobe · first target exists; second target and action requirements met (hypothetical: the event cannot fire in the shipped script)"
      },
      "occurrences": {},
      "excludedKeys": [
@@ -1696,8 +3017,8 @@
     },
     {
      "label": {
-      "zh": "排外主义 · 首个目标存在；第二目标或行动条件不足",
-      "en": "Xenophobe · first target exists; second target or action requirements missing"
+      "zh": "排外主义 · 首个目标存在；第二目标或行动条件不足（假设性：本事件在原版中无法触发）",
+      "en": "Xenophobe · first target exists; second target or action requirements missing (hypothetical: the event cannot fire in the shipped script)"
      },
      "occurrences": {},
      "excludedKeys": [
@@ -1706,14 +3027,14 @@
     },
     {
      "label": {
-      "zh": "排外主义 · 首个目标存在；第二目标存在且满足行动条件",
-      "en": "Xenophobe · first target exists; second target and action requirements met"
+      "zh": "排外主义 · 首个目标存在；第二目标存在且满足行动条件（假设性：本事件在原版中无法触发）",
+      "en": "Xenophobe · first target exists; second target and action requirements met (hypothetical: the event cannot fire in the shipped script)"
      },
      "occurrences": {},
      "excludedKeys": []
     }
    ],
-   "evidence": "Manually read8295 and8320. Event trigger already requires gifted_system before immediate selection. Ordinary choice needs first target;covert needs both targets plus2500unity allow, spends2500unity+50influence and runs wipe/outpost on both. 1.a schedules8320 days90 random90, no-war report adds investigation1 and system dialogue flag. Target creation beyond reviewed script not assumed."
+   "evidence": "Manually re-read 8295 E:10437-10682: ordinary choice needs gifted_system; covert needs both targets, allow 2500 unity, spends 2500 unity + 50 influence, mini-wipe + mini outpost on both; 1.a schedules 8320 days 90 random 90. Trigger E:10457-10464 requires gifted_system before immediate saves it (E:10485) — unreachable, see ledger."
   },
   "crisis.8300": {
    "states": {
@@ -1796,230 +3117,420 @@
     }
    ],
    "evidence": "Manually read8300: situation progress>=8;eligible noncapital/nonbottleneck/no megastructure system containing natural habitable planet. Covert needs two targets and3000unity, spends3000unity+100influence, trust+10 vs ordinary+5;both wipe/outpost.1.a schedules8325 days90 random90. This differs from8295 prerequisites and cost."
-  }
- },
- "readings": {
-  "crisis.9100": {
-   "evidence": "Manually reviewed speech_1 versus NOT speech_1 descriptions; both use9100.a. Follow-up project remains conditional on player situation.",
-   "profiles": [
+  },
+  "crisis.8061": {
+   "steps": [
+    "crisis.8061.a",
+    "crisis.8061.1.a",
+    "crisis.8061.2.a"
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:6754-6793: a (no flags) sets 1; 1.a sets 2; 2.a ends and sets synth_queen_first_war_time_chat_done."
+  },
+  "crisis.23020": {
+   "steps": [
+    "crisis.23020.a",
+    "crisis.23020.1.a"
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:15551-15577: a (dialog, reuses crisis.8295.1.flag) then 1.a ends."
+  },
+  "crisis.8515": {
+   "states": {
+    "start": [
+     "crisis.8515.a",
+     "crisis.8515.b"
+    ],
+    "1": [
+     "crisis.8515.1.a",
+     "crisis.8515.1.b",
+     "crisis.8515.1.c",
+     "crisis.8515.1.d"
+    ],
+    "2": [
+     "crisis.8515.2.a",
+     "crisis.8515.2.b"
+    ],
+    "3": [
+     "crisis.8515.3.a",
+     "crisis.8515.3.b"
+    ],
+    "4": [
+     "crisis.8515.4.a"
+    ],
+    "5": [
+     "crisis.8515.5.a"
+    ],
+    "6": [
+     "crisis.8515.6.a"
+    ],
+    "7": [
+     "crisis.8515.7.a"
+    ],
+    "8": [
+     "crisis.8515.8.a"
+    ],
+    "9": [
+     "crisis.8515.9.a"
+    ],
+    "10": [
+     "crisis.8515.10.a"
+    ],
+    "11": [
+     "crisis.8515.11.a"
+    ],
+    "12": [
+     "crisis.8515.12.a"
+    ],
+    "13": [
+     "crisis.8515.13.a"
+    ]
+   },
+   "transitions": {
+    "crisis.8515.a": "1",
+    "crisis.8515.b": "13",
+    "crisis.8515.1.a": "2",
+    "crisis.8515.1.b": "3",
+    "crisis.8515.1.c": "4",
+    "crisis.8515.1.d": "13",
+    "crisis.8515.2.a": "5",
+    "crisis.8515.2.b": "6",
+    "crisis.8515.3.a": "10",
+    "crisis.8515.3.b": "12",
+    "crisis.8515.4.a": "12",
+    "crisis.8515.5.a": "7",
+    "crisis.8515.6.a": "9",
+    "crisis.8515.7.a": "8",
+    "crisis.8515.8.a": "13",
+    "crisis.8515.9.a": "13",
+    "crisis.8515.10.a": "11",
+    "crisis.8515.11.a": "13",
+    "crisis.8515.12.a": "13"
+   },
+   "exits": [
+    "crisis.8515.13.a"
+   ],
+   "stateOrder": [
+    "start",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13"
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:11469-11792 every option re-read: flags 1–13 as transitions; only 13.a closes (war hostility, synth_queen_war_started)."
+  },
+  "crisis.10105": {
+   "states": {
+    "start": [
+     "crisis.10105.a",
+     "crisis.10105.b"
+    ],
+    "1": [
+     "crisis.10105.1.a"
+    ],
+    "2": [
+     "crisis.10105.2.a"
+    ]
+   },
+   "transitions": {
+    "crisis.10105.b": "1",
+    "crisis.10105.1.a": "2"
+   },
+   "exits": [
+    "crisis.10105.a",
+    "crisis.10105.2.a"
+   ],
+   "stateOrder": [
+    "start",
+    "1",
+    "2"
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:12783-12845 re-read: dialog-only options set the next numbered flag; exits listed."
+  },
+  "crisis.10110": {
+   "states": {
+    "start": [
+     "crisis.10110.a",
+     "crisis.10110.b"
+    ],
+    "1": [
+     "crisis.10110.1.a"
+    ],
+    "2": [
+     "crisis.10110.2.a"
+    ],
+    "3": [
+     "crisis.10110.3.a"
+    ]
+   },
+   "transitions": {
+    "crisis.10110.b": "1",
+    "crisis.10110.1.a": "2",
+    "crisis.10110.2.a": "3"
+   },
+   "exits": [
+    "crisis.10110.a",
+    "crisis.10110.3.a"
+   ],
+   "stateOrder": [
+    "start",
+    "1",
+    "2",
+    "3"
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:12886-12979 re-read: dialog-only options set the next numbered flag; exits listed."
+  },
+  "crisis.10120": {
+   "states": {
+    "start": [
+     "crisis.10120.a",
+     "crisis.10120.b"
+    ],
+    "1": [
+     "crisis.10120.1.a"
+    ],
+    "2": [
+     "crisis.10120.2.a"
+    ],
+    "3": [
+     "crisis.10120.3.a"
+    ],
+    "4": [
+     "crisis.10120.4.a"
+    ]
+   },
+   "transitions": {
+    "crisis.10120.a": "1",
+    "crisis.10120.1.a": "2",
+    "crisis.10120.2.a": "3",
+    "crisis.10120.3.a": "4"
+   },
+   "exits": [
+    "crisis.10120.b",
+    "crisis.10120.4.a"
+   ],
+   "stateOrder": [
+    "start",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:13069-13186 re-read: dialog-only options set the next numbered flag; exits listed."
+  },
+  "crisis.21125": {
+   "states": {
+    "start": [
+     "crisis.21125.a",
+     "crisis.21125.b",
+     "crisis.21125.c"
+    ]
+   },
+   "transitions": {
+    "crisis.21125.a": "start",
+    "crisis.21125.b": "start"
+   },
+   "exits": [
+    "crisis.21125.c"
+   ],
+   "stateOrder": [
+    "start"
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:14300-14315: a/b are repeatable dialog-only questions with responses; c continues to 21130."
+  },
+  "crisis.21140": {
+   "states": {
+    "start": [
+     "crisis.21140.hire",
+     "crisis.21140.dismiss",
+     "crisis.21140.a",
+     "crisis.21140.b"
+    ]
+   },
+   "transitions": {
+    "crisis.21140.a": "start",
+    "crisis.21140.b": "start"
+   },
+   "exits": [
+    "crisis.21140.hire",
+    "crisis.21140.dismiss"
+   ],
+   "stateOrder": [
+    "start"
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:14379-14449: hire (not purifiers/devouring swarm) or dismiss ends; a/b are repeatable questions."
+  },
+  "crisis.8195": {
+   "states": {
+    "start": [
+     "crisis.8195.a",
+     "crisis.8195.b",
+     "crisis.8195.c"
+    ],
+    "end": [
+     "GOODBYE"
+    ]
+   },
+   "transitions": {
+    "crisis.8195.a": "end",
+    "crisis.8195.b": "end",
+    "crisis.8195.c": "end"
+   },
+   "exits": [
+    "GOODBYE"
+   ],
+   "stateOrder": [
+    "start",
+    "end"
+   ],
+   "profileLabel": {
+    "zh": "此前的经历",
+    "en": "Earlier experience"
+   },
+   "responseProfiles": [
     {
      "label": {
-      "zh": "已完成首次接触",
-      "en": "First contact completed"
+      "zh": "从未致歉 · 非野蛮掠夺者",
+      "en": "Never apologized before · not Barbaric Despoilers"
      },
-     "texts": [
-      "crisis.9100.knows_the_queen_desc"
-     ],
-     "choices": [
-      "crisis.9100.a"
+     "occurrences": {
+      "crisis.8195.a": 0
+     },
+     "excludedKeys": [
+      "crisis.8195.c"
      ]
     },
     {
      "label": {
-      "zh": "尚未首次接触",
-      "en": "Before first contact"
+      "zh": "此前已致歉 · 非野蛮掠夺者",
+      "en": "Apologized before · not Barbaric Despoilers"
      },
-     "texts": [
-      "crisis.9100.doesnt_know_the_queen_desc"
-     ],
-     "choices": [
-      "crisis.9100.a"
-     ]
-    }
-   ]
-  },
-  "crisis.9105": {
-   "evidence": "Manually reviewed tr_nanotech_adopt and its negation; exactly one of a/b is available. No zero-response or both-response state.",
-   "profiles": [
-    {
-     "label": {
-      "zh": "未采纳纳米科技传统",
-      "en": "Nanotech tradition not adopted"
+     "occurrences": {
+      "crisis.8195.a": 1
      },
-     "texts": [
-      "crisis.9105"
-     ],
-     "choices": [
-      "crisis.9105.a"
+     "excludedKeys": [
+      "crisis.8195.c"
      ]
     },
     {
      "label": {
-      "zh": "已采纳纳米科技传统",
-      "en": "Nanotech tradition adopted"
+      "zh": "从未致歉 · 野蛮掠夺者（首次夸耀）",
+      "en": "Never apologized before · Barbaric Despoilers (first boast)"
      },
-     "texts": [
-      "crisis.9105"
-     ],
-     "choices": [
-      "crisis.9105.b"
-     ]
-    }
-   ]
-  },
-  "crisis.9110": {
-   "evidence": "Manually reviewed tr_nanotech_adopt and its negation; exactly one of a/b is available. No zero-response or both-response state.",
-   "profiles": [
-    {
-     "label": {
-      "zh": "未采纳纳米科技传统",
-      "en": "Nanotech tradition not adopted"
+     "occurrences": {
+      "crisis.8195.a": 0
      },
-     "texts": [
-      "crisis.9110.desc"
-     ],
-     "choices": [
-      "crisis.9110.a"
-     ]
+     "excludedKeys": []
     },
     {
      "label": {
-      "zh": "已采纳纳米科技传统",
-      "en": "Nanotech tradition adopted"
+      "zh": "此前已致歉 · 野蛮掠夺者（首次夸耀）",
+      "en": "Apologized before · Barbaric Despoilers (first boast)"
      },
-     "texts": [
-      "crisis.9110.desc"
-     ],
-     "choices": [
-      "crisis.9110.b"
-     ]
-    }
-   ]
-  },
-  "crisis.8085": {
-   "evidence": "Manually reviewed materialist conditions:8085 a/b always, c only materialist;8090 a non-materialist→8095 versus b materialist→8100, both after14days.",
-   "profiles": [
-    {
-     "label": {
-      "zh": "非唯物主义帝国",
-      "en": "Non-materialist empire"
+     "occurrences": {
+      "crisis.8195.a": 1
      },
-     "texts": [
-      "crisis.8085.desc"
-     ],
-     "choices": [
-      "crisis.8085.a",
-      "crisis.8085.b"
-     ]
-    },
-    {
-     "label": {
-      "zh": "唯物主义帝国",
-      "en": "Materialist empire"
-     },
-     "texts": [
-      "crisis.8085.desc"
-     ],
-     "choices": [
-      "crisis.8085.a",
-      "crisis.8085.b",
-      "crisis.8085.c"
-     ]
-    }
-   ]
-  },
-  "crisis.8090": {
-   "evidence": "Manually reviewed materialist conditions:8085 a/b always, c only materialist;8090 a non-materialist→8095 versus b materialist→8100, both after14days.",
-   "profiles": [
-    {
-     "label": {
-      "zh": "非唯物主义帝国",
-      "en": "Non-materialist empire"
-     },
-     "texts": [
-      "crisis.8090.desc"
-     ],
-     "choices": [
-      "crisis.8090.a"
-     ]
-    },
-    {
-     "label": {
-      "zh": "唯物主义帝国",
-      "en": "Materialist empire"
-     },
-     "texts": [
-      "crisis.8090.desc"
-     ],
-     "choices": [
-      "crisis.8090.b"
-     ]
-    }
-   ]
-  }
- },
- "nodeLabels": {
-  "crisis.8035": {
-   "zh": "风暴初现",
-   "en": "The storm appears"
-  },
-  "crisis.8039": {
-   "zh": "首次发言预告",
-   "en": "Before the first address"
-  },
-  "crisis.8040": {
-   "zh": "首次接触：女王现身",
-   "en": "First contact: the Queen revealed"
-  },
-  "crisis.8045": {
-   "zh": "第二次演说：前哨要求",
-   "en": "Second address: the outpost demand"
-  },
-  "crisis.8060": {
-   "zh": "再次联络女王",
-   "en": "Contact the Queen again"
-  },
-  "crisis.8999": {
-   "zh": "开始调查真实意图",
-   "en": "Investigate her intentions"
-  },
-  "crisis.9100": {
-   "zh": "初步调查：纳米虫群",
-   "en": "Initial findings: a nanite swarm"
-  },
-  "crisis.9105": {
-   "zh": "研究过半：感知干扰",
-   "en": "Halfway: disrupted sensors"
-  },
-  "crisis.9110": {
-   "zh": "研究完成：风暴防护",
-   "en": "Research complete: storm protection"
-  },
-  "crisis.9115": {
-   "zh": "女王警告：别碰纳米机器",
-   "en": "The Queen warns: leave the nanites"
-  }
- },
- "legacy": {
-  "situationConfig": {
-   "id": "cetana",
-   "definition": "situations:situation_synth_queen_player_facing",
-   "stageSequence": [
-    {
-     "event": "crisis.9000",
-     "label": {
-      "zh": "调查进度达到6，进入第二阶段",
-      "en": "Investigation reaches 6: enter the second stage"
-     }
-    },
-    {
-     "event": "crisis.9010",
-     "label": {
-      "zh": "调查进度达到10，完成反制准备",
-      "en": "Investigation reaches 10: countermeasures are ready"
-     }
+     "excludedKeys": []
     }
    ],
-   "evidence": "08_machine_age_situations.txt player-facing situation: monthly base0, stage1 end6, stage2 end10 calls9000 on entry, on_progress_complete9010. Progress comes from investigations, not elapsed months."
+   "evidence": "events/machine_age_crisis_events.txt:9645-9751: two \"a\" instances split by already_apologized (second costs 5 trust, angry reply); b −5; c Barbaric Despoilers once (successful_raid_barbaric); any of them → GOODBYE."
+  },
+  "crisis.8194": {
+   "states": {
+    "start": [
+     "crisis.8195.a",
+     "crisis.8195.b",
+     "crisis.8195.c"
+    ],
+    "end": [
+     "GOODBYE"
+    ]
+   },
+   "transitions": {
+    "crisis.8195.a": "end",
+    "crisis.8195.b": "end",
+    "crisis.8195.c": "end"
+   },
+   "exits": [
+    "GOODBYE"
+   ],
+   "stateOrder": [
+    "start",
+    "end"
+   ],
+   "profileLabel": {
+    "zh": "此前的经历",
+    "en": "Earlier experience"
+   },
+   "responseProfiles": [
+    {
+     "label": {
+      "zh": "从未致歉",
+      "en": "Never apologized before"
+     },
+     "occurrences": {
+      "crisis.8195.a": 0
+     },
+     "excludedKeys": [
+      "crisis.8195.c"
+     ]
+    },
+    {
+     "label": {
+      "zh": "此前已致歉",
+      "en": "Apologized before"
+     },
+     "occurrences": {
+      "crisis.8195.a": 1
+     },
+     "excludedKeys": [
+      "crisis.8195.c"
+     ]
+    }
+   ],
+   "evidence": "events/machine_age_crisis_events.txt:9499-9593 same options as 8195; c is commented \"Raid successful\" and requires FROM default — not offered here (you lost; see note)."
   }
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c5a (Opus 5.5)",
   "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
-  }
+   "zh": "全链已对照源码审阅：风暴期、两次演说、风暴研究、数据库委托、随机要求与情报、信任惩戒与礼物、袭击、信标与考古、通讯菜单、战争、胜利/救赎/失败三种结局。",
+   "en": "Whole chain checked against the source: storm phase, both addresses, storm studies, the databank demand, random demands and reports, trust retaliations and gifts, raids, beacons and digs, the contact menu, war, and the victory / redemption / failure endings."
+  },
+  "uncertain": [
+   "crisis.8295 judged unreachable from the files (trigger needs event_target:gifted_system, set only in its own immediate); not verified at runtime. 8320 and 8060.g follow from it.",
+   "Databank projects: days_to_research 1800 vs timelimit 900/540; the reduction formula in defines (00_defines.txt:932) has undefined variables, so the real duration is unknown.",
+   "Whether random_events re-rolls when the drawn demand fails its trigger (8255 sets the 220-day cooldown regardless).",
+   "Engine ordering of ladder events fired together with days = 0 (10095, 11000).",
+   "FROM scope of option c in 8194/8195 (source comment says successful raids only).",
+   "Whether the locked (completed) investigation situation still runs its on_monthly checks."
+  ],
+  "sources": [
+   "events/machine_age_crisis_events.txt",
+   "common/situations/08_machine_age_situations.txt",
+   "common/special_projects/04_projects_machine_age.txt",
+   "common/scripted_effects/02_machine_age_effects.txt",
+   "common/scripted_triggers/02_scripted_triggers_machine_age.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/event_chains/00_event_chains_machine_age.txt",
+   "common/archaeological_site_types/10_machine_age_arc_sites.txt",
+   "common/relics/relics.txt",
+   "events/crisis_trigger_events.txt",
+   "events/shroud_events.txt",
+   "events/utopia_shroud_events.txt",
+   "events/shroud_forged_events.txt",
+   "common/special_projects/documentation.txt",
+   "common/defines/00_defines.txt"
+  ],
+  "guide": "public/summaries/cetana.md"
  }
 }

@@ -1,4 +1,4 @@
-# 沃陶姆恒星议会 / The Vultaum Star Assembly
+﻿# 沃陶姆恒星议会 / The Vultaum Star Assembly
 
 - 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:17–1200；common/anomalies/96_anomaly_categories_precursors.txt:5–703；common/special_projects/00_projects_1.txt:821–1145；common/artifact_actions/artifact_actions.txt:682；common/special_projects/00_projects_ancient_relics.txt:190、219；events/ancient_relics_arcsite_events_2.txt:7016–7483；common/relics/relics.txt:1206 · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
 
@@ -40,12 +40,12 @@ A non-AI empire surveying a planet (not a star, no anomaly) in the Vultaum regio
 
 ## 条件与文明差异 Conditions and variants
 
-- 10100 的四种正文与回应对应文明类型（已用 readings 记录）；只有狂热唯物主义者能继续深挖。
+- 10100 的四种正文与回应对应文明类型（由正文/选项条件按统一的帝国设定解析，不再使用V3的独立视角）；只有狂热唯物主义者能继续深挖。
 - 母星项目完成时：无全局 vultaum_homeworld_found 且目标非殖民地 → 101，否则 102。
 - 100 同时向观察者发送 observer.56（仅观察者模式可见）。
 - 未使用的定义：异常 VULTAUMAR（研究结果指向101）生成权重为0、无脚本放置，母星设置 prevent_anomaly，游戏中不会出现。
 
-- 10100's four texts and responses follow empire type (recorded as readings); only fanatic materialists can dig deeper.
+- 10100's four texts and responses follow empire type (resolved from the body/option conditions under the single empire profile; the V3 per-chapter readings were dropped); only fanatic materialists can dig deeper.
 - Homeworld project on completion: no global vultaum_homeworld_found and an uncolonised target → 101, else 102.
 - 100 also sends observer.56 to observers only.
 - Unused definition: anomaly VULTAUMAR (pointing to 101) has spawn weight 0, no script places it and the homeworld has prevent_anomaly, so it never appears.

@@ -654,62 +654,6 @@
    "evidence": "events/precursor_events.txt:1008"
   }
  },
- "readings": {
-  "ancrel.10100": {
-   "evidence": "Manually read original10100 descriptions: machine/hive/regular fanatic materialist/regular non-fanatic are exclusive. Machine and hive exclusive_trigger options override others.",
-   "profiles": [
-    {
-     "label": {
-      "zh": "机械智能",
-      "en": "Machine intelligence"
-     },
-     "texts": [
-      "ancrel.10100.desc_machine"
-     ],
-     "choices": [
-      "progress.2.a.mech"
-     ]
-    },
-    {
-     "label": {
-      "zh": "蜂巢思维",
-      "en": "Hive mind"
-     },
-     "texts": [
-      "ancrel.10100.desc_hive"
-     ],
-     "choices": [
-      "story.210.a"
-     ]
-    },
-    {
-     "label": {
-      "zh": "狂热唯物主义常规帝国",
-      "en": "Fanatic materialist regular empire"
-     },
-     "texts": [
-      "ancrel.10100.desc_fm"
-     ],
-     "choices": [
-      "ancrel.10100.option.fm_enough",
-      "ancrel.10100.option.fm_delve_deeper"
-     ]
-    },
-    {
-     "label": {
-      "zh": "其他常规帝国",
-      "en": "Other regular empires"
-     },
-     "texts": [
-      "ancrel.10100.desc"
-     ],
-     "choices": [
-      "INTERESTING"
-     ]
-    }
-   ]
-  }
- },
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",

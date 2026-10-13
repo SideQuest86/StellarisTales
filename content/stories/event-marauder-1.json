@@ -1,0 +1,124 @@
+{
+ "id": "event-marauder-1",
+ "family": {
+  "title": {
+   "zh": "掠夺者帝国",
+   "en": "Marauder Empires"
+  },
+  "category": "stories",
+  "start": "marauder.2",
+  "members": [
+   "marauder.2",
+   "marauder.3",
+   "marauder.15",
+   "marauder.1",
+   "marauder.19",
+   "marauder.20",
+   "marauder.21",
+   "marauder.31",
+   "marauder.32",
+   "marauder.33",
+   "marauder.34",
+   "marauder.35",
+   "marauder.37",
+   "marauder.40",
+   "marauder.50",
+   "marauder.151",
+   "marauder.70",
+   "marauder.71",
+   "marauder.750",
+   "marauder.755",
+   "marauder.760",
+   "marauder.765"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "marauder.15",
+   "to": "marauder.20",
+   "conditional": true,
+   "label": {
+    "zh": "日后外交联络（通常）",
+    "en": "Later diplomatic contact (normal)"
+   },
+   "evidence": "on_custom_diplomacy -> marauder.1 (00_on_actions.txt:729); marauder.1 final else -> marauder.20 when not being raided and not genocidal (marauder_events.txt:199-205)"
+  },
+  {
+   "from": "marauder.15",
+   "to": "marauder.19",
+   "conditional": true,
+   "label": {
+    "zh": "日后外交联络（灭绝型帝国）",
+    "en": "Later diplomatic contact (genocidal empires)"
+   },
+   "evidence": "marauder.1 L61-84: Devouring Swarm, Fanatic Purifiers, Determined Exterminators or genocidal Infernals get marauder.19"
+  },
+  {
+   "from": "marauder.34",
+   "to": "marauder.71",
+   "conditional": true,
+   "label": {
+    "zh": "佣兵指挥官死亡或被解职（5天后）",
+    "en": "Mercenary commander dies or is dismissed (5 days later)"
+   },
+   "evidence": "on_leader_death / on_leader_fired -> marauder.70 checks marauder_merc_leader (00_on_actions.txt:2385,2423; marauder_events.txt:3547-3561) -> fleet_event marauder.71"
+  }
+ ],
+ "nodeLabels": {
+  "marauder.3": {
+   "zh": "发现掠夺者",
+   "en": "Marauders sighted"
+  },
+  "marauder.15": {
+   "zh": "初次通讯",
+   "en": "First greeting"
+  },
+  "marauder.20": {
+   "zh": "联络菜单",
+   "en": "Contact menu"
+  },
+  "marauder.21": {
+   "zh": "返回菜单",
+   "en": "Back to the menu"
+  },
+  "marauder.750": {
+   "zh": "可汗后裔：其他氏族",
+   "en": "Heirs of the Khan: other clans"
+  },
+  "marauder.755": {
+   "zh": "可汗后裔：被拒",
+   "en": "Heirs of the Khan: refused"
+  },
+  "marauder.760": {
+   "zh": "可汗后裔：原氏族",
+   "en": "Heirs of the Khan: former clan"
+  },
+  "marauder.765": {
+   "zh": "可汗后裔：附庸氏族",
+   "en": "Heirs of the Khan: vassal clan"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/marauder_events.txt:12-228 (contact router marauder.1)",
+   "events/marauder_events.txt:230-329",
+   "events/marauder_events.txt:1066-3800",
+   "common/on_actions/00_on_actions.txt:729,96,2385,2423"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-marauder-1.md",
+  "merged": [
+   "event-marauder-2",
+   "event-marauder-15",
+   "event-marauder-151",
+   "event-marauder-70"
+  ]
+ }
+}

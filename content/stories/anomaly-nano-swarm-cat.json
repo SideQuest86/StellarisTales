@@ -1,0 +1,94 @@
+{
+ "id": "anomaly-nano-swarm-cat",
+ "bridges": [
+  {
+   "from": "anomaly.6705",
+   "choice": "anomaly.6705.b",
+   "to": "anomaly.6710",
+   "conditional": true,
+   "label": {
+    "zh": "80–1080天后（需自觉逻辑科技）",
+    "en": "80–1080 days later (needs Self-Aware Logic)"
+   },
+   "evidence": "events/anomaly_events_4.txt:1383-1387 country_event 6710 days 80 random 1000; 6710 trigger events/anomaly_events_4.txt:1413-1418 needs studied_nanite_swarm (6705.b) and tech_self_aware_logic; fire_only_once"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "anomaly.6705",
+   "to": "anomaly.6710",
+   "evidence": "events/anomaly_events_4.txt:1383-1387 after schedules 6710 for every option, but 6710 trigger (events/anomaly_events_4.txt:1413-1418) requires studied_nanite_swarm set only by 6705.b (events/anomaly_events_4.txt:1369)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:TAME_THE_SWARM",
+    "special_projects:DESTROY_SWARM",
+    "anomaly.6710"
+   ],
+   "labels": [
+    {
+     "zh": "驯服",
+     "en": "Tame"
+    },
+    {
+     "zh": "摧毁",
+     "en": "Destroy"
+    },
+    {
+     "zh": "继续研究后",
+     "en": "After further study"
+    }
+   ],
+   "label": {
+    "zh": "6705的三种处置",
+    "en": "The three choices of 6705"
+   }
+  }
+ ],
+ "endings": {
+  "anomaly.6715": {
+   "label": {
+    "zh": "驯服虫群",
+    "en": "The swarm tamed"
+   },
+   "note": {
+    "zh": "帕尔乌斯III成为宜居星球。",
+    "en": "Parvus III becomes habitable."
+   },
+   "evidence": "events/anomaly_events_4.txt:1458-1519"
+  },
+  "anomaly.6720": {
+   "label": {
+    "zh": "虫群被毁",
+    "en": "The swarm destroyed"
+   },
+   "note": {
+    "zh": "留下纳米残骸资源点。",
+    "en": "A nanite-remains deposit remains."
+   },
+   "evidence": "events/anomaly_events_4.txt:1521-1542"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部10个文档。",
+   "en": "All 10 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/event_chains/00_event_chains.txt",
+   "common/scripted_effects/00_scripted_effects.txt",
+   "common/solar_system_initializers/special_system_initializers.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_4.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-nano-swarm-cat.md"
+ }
+}

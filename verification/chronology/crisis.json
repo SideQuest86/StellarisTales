@@ -2,15 +2,14 @@
   "category": "crisis",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 27,
-  "docs": 549,
-  "nodes": 640,
-  "refs": 91,
-  "crossLinks": 23,
+  "stories": 18,
+  "docs": 543,
+  "nodes": 635,
+  "refs": 92,
+  "crossLinks": 22,
   "review": {
-    "partial": 2,
-    "reviewed": 3,
-    "unreviewed": 22
+    "reviewed": 8,
+    "unreviewed": 10
   },
   "failures": [],
   "items": [
@@ -18,10 +17,10 @@
       "id": "cetana",
       "title": "合成女王：塞塔娜",
       "kind": "family",
-      "docs": 121,
+      "docs": 120,
       "refs": 38,
       "crossLinks": 6,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "contingency",
@@ -29,6 +28,15 @@
       "kind": "family",
       "docs": 79,
       "refs": 7,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "galactic-nemesis",
+      "title": "星海天罚",
+      "kind": "family",
+      "docs": 60,
+      "refs": 20,
       "crossLinks": 1,
       "review": "reviewed"
     },
@@ -42,31 +50,22 @@
       "review": "unreviewed"
     },
     {
-      "id": "galactic-nemesis",
-      "title": "星海天罚",
-      "kind": "family",
-      "docs": 44,
-      "refs": 16,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "behemoth-fury",
       "title": "巨兽之怒",
       "kind": "family",
-      "docs": 41,
+      "docs": 42,
       "refs": 2,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "cosmogenesis",
       "title": "宇宙创生",
       "kind": "family",
       "docs": 41,
-      "refs": 1,
-      "crossLinks": 2,
-      "review": "partial"
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "prethoryn-scourge",
@@ -92,8 +91,8 @@
       "kind": "family",
       "docs": 24,
       "refs": 0,
-      "crossLinks": 6,
-      "review": "unreviewed"
+      "crossLinks": 8,
+      "review": "reviewed"
     },
     {
       "id": "war-in-heaven",
@@ -123,51 +122,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-crisis-6006",
-      "title": "以太相引擎",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crisis-6007",
-      "title": "以太相引擎",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crisis-6099",
-      "title": "以太相引擎被毁",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crisis-6200",
-      "title": "以太相引擎被夺",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crisis-6205",
-      "title": "以太相引擎被毁",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-infernals-1000",
       "title": "新力量",
       "kind": "event",
@@ -181,42 +135,6 @@
       "title": "结晶成果",
       "kind": "event",
       "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crisis-6000",
-      "title": "以太相引擎",
-      "kind": "event",
-      "docs": 2,
-      "refs": 4,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crisis-6005",
-      "title": "以太相引擎",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crisis-6050",
-      "title": "始与终",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
-      "id": "chain-behemoth-crisis-chain",
-      "title": "巨兽天灾",
-      "kind": "chain",
-      "docs": 1,
       "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"

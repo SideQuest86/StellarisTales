@@ -1,0 +1,36 @@
+{
+ "id": "rift-lonely-planet",
+ "category": "rifts",
+ "endings": {
+  "astral_rift.1120": {
+   "label": {"zh": "星界迁徙", "en": "Astral Migration"},
+   "note": {"zh": "保持距离观察的路线：成体出现并带幼雏穿过新裂缝离开；探索结束，获得大量星界丝缕与凝聚力（途中 1115 已给予 15 年“恒星帆航洞见”）。", "en": "The observe-from-afar route: an adult appears and leads the hatchlings through a new tear; the exploration ends with astral threads and unity (1115 earlier granted 15 years of Solar Sailing Insight)."},
+   "evidence": "events/astral_rifts_1_events.txt:560-569, 572-596"
+  },
+  "astral_rift.1125": {
+   "label": {"zh": "星界孵育", "en": "Astral Spawning"},
+   "note": {"zh": "近距离接触的路线：同样的成体离去场景；探索结束，获得大量星界丝缕与凝聚力（途中 1110 已给予研究）。", "en": "The close-contact route: the same departure scene; the exploration ends with astral threads and unity (1110 earlier granted research)."},
+   "evidence": "events/astral_rifts_1_events.txt:505-546, 598-622"
+  }
+ },
+ "notes": [
+  {
+   "doc": "astral_rift.1110",
+   "kind": "review",
+   "zh": "选项按帝国而变：使用生物舰船的帝国看到“这和我们的舰船可差不多！”（社会学研究），其他帝国得到工程研究；“演化猎手”起源只看到专属选项（exclusive_trigger），另得局势进度与 DNA。",
+   "en": "Options vary by empire: empires with bio-ships see “They are comparable to our ships!” (society research), others get engineering research; Evolutionary Predators empires see only their exclusive option (exclusive_trigger), with extra situation progress and DNA."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 1100–1125 全部事件；编译结构无误。",
+   "en": "Checked the rift definition and every event 1100–1125; the compiled structure is correct."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-lonely-planet.md"
+ }
+}

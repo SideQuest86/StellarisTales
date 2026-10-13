@@ -1,0 +1,510 @@
+{
+ "id": "archaeology-incidents",
+ "family": {
+  "title": {
+   "zh": "考古遗址",
+   "en": "Archaeological Sites"
+  },
+  "category": "precursors",
+  "members": [
+   "ancrel.8000",
+   "ancrel.8001",
+   "ancrel.8002",
+   "ancrel.8003",
+   "ancrel.8010",
+   "ancrel.8011",
+   "ancrel.8012",
+   "ancrel.8013",
+   "ancrel.8020",
+   "ancrel.8021",
+   "ancrel.8022",
+   "ancrel.8023",
+   "ancrel.8030",
+   "ancrel.8031",
+   "ancrel.8032",
+   "ancrel.8033",
+   "ancrel.8090",
+   "ancrel.8091",
+   "ancrel.8092",
+   "ancrel.8093",
+   "ancrel.8100",
+   "ancrel.8101",
+   "ancrel.8102",
+   "ancrel.8103",
+   "ancrel.8040",
+   "ancrel.8045",
+   "ancrel.8050",
+   "ancrel.8055",
+   "ancrel.8060",
+   "ancrel.8065",
+   "ancrel.8070",
+   "ancrel.8075",
+   "ancrel.8080",
+   "ancrel.8110",
+   "ancrel.8210",
+   "ancrel.4078",
+   "ancrel.13030",
+   "ancrel.4006",
+   "ancrel.4021"
+  ],
+  "sources": []
+ },
+ "category": "precursors",
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "ancrel.8000",
+    "ancrel.8010",
+    "ancrel.8020",
+    "ancrel.8030",
+    "ancrel.8090",
+    "ancrel.8100",
+    "ancrel.8040",
+    "ancrel.8045",
+    "ancrel.8050",
+    "ancrel.8055",
+    "ancrel.8060",
+    "ancrel.8065",
+    "ancrel.8070",
+    "ancrel.8075",
+    "ancrel.8080",
+    "ancrel.8110",
+    "ancrel.8210",
+    "ancrel.4078",
+    "ancrel.13030",
+    "ancrel.4006",
+    "ancrel.4021"
+   ],
+   "label": {
+    "zh": "发掘失利时的随机事件池",
+    "en": "The pool of random excavation incidents"
+   },
+   "note": {
+    "zh": "某一发掘阶段掷骰得分≤5且该阶段已有线索时，有10/130的机会从事件池中抽一个；不同遗址可能使用专属事件池。各事件相互独立，没有先后。",
+    "en": "When an excavation roll scores 5 or less and the stage already has clues, there is a 10/130 chance to draw one incident from the pool; some sites use their own pools. Incidents are independent and unordered."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.8000",
+    "ancrel.8001",
+    "ancrel.8002",
+    "ancrel.8003"
+   ],
+   "label": {
+    "zh": "激光网：四种结果",
+    "en": "Laser grid: four outcomes"
+   },
+   "labels": [
+    {
+     "zh": "科学家身亡（-2线索）",
+     "en": "Scientist killed (-2 clues)"
+    },
+    {
+     "zh": "队员身亡（-1线索）",
+     "en": "Team members killed (-1 clue)"
+    },
+    {
+     "zh": "化险为夷（+3线索）",
+     "en": "Averted (+3 clues)"
+    },
+    {
+     "zh": "花100能量通过或绕路",
+     "en": "Pay 100 energy or detour"
+    }
+   ],
+   "note": {
+    "zh": "site_laser_grid_trap（common/scripted_effects/archaeology_event_effects.txt:452）按 5/25/25/25 抽取其一。",
+    "en": "site_laser_grid_trap (common/scripted_effects/archaeology_event_effects.txt:452) draws one at 5/25/25/25."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.8010",
+    "ancrel.8011",
+    "ancrel.8012",
+    "ancrel.8013"
+   ],
+   "label": {
+    "zh": "哨戒炮：四种结果",
+    "en": "Sentry guns: four outcomes"
+   },
+   "labels": [
+    {
+     "zh": "科学家身亡（-2线索）",
+     "en": "Scientist killed (-2 clues)"
+    },
+    {
+     "zh": "队员身亡（-1线索）",
+     "en": "Team members killed (-1 clue)"
+    },
+    {
+     "zh": "化险为夷（+3线索）",
+     "en": "Averted (+3 clues)"
+    },
+    {
+     "zh": "花100能量通过或绕路",
+     "en": "Pay 100 energy or detour"
+    }
+   ],
+   "note": {
+    "zh": "site_sentry_guns_trap（common/scripted_effects/archaeology_event_effects.txt:461）按 5/25/25/25 抽取其一。",
+    "en": "site_sentry_guns_trap (common/scripted_effects/archaeology_event_effects.txt:461) draws one at 5/25/25/25."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.8020",
+    "ancrel.8021",
+    "ancrel.8022",
+    "ancrel.8023"
+   ],
+   "label": {
+    "zh": "碾压机器人：四种结果",
+    "en": "Crusher-droid: four outcomes"
+   },
+   "labels": [
+    {
+     "zh": "科学家身亡（-2线索）",
+     "en": "Scientist killed (-2 clues)"
+    },
+    {
+     "zh": "队员身亡（-1线索）",
+     "en": "Team members killed (-1 clue)"
+    },
+    {
+     "zh": "化险为夷（+3线索）",
+     "en": "Averted (+3 clues)"
+    },
+    {
+     "zh": "花100能量通过或绕路",
+     "en": "Pay 100 energy or detour"
+    }
+   ],
+   "note": {
+    "zh": "site_crusher_droids_trap（common/scripted_effects/archaeology_event_effects.txt:470）按 5/25/25/25 抽取其一。",
+    "en": "site_crusher_droids_trap (common/scripted_effects/archaeology_event_effects.txt:470) draws one at 5/25/25/25."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.8030",
+    "ancrel.8031",
+    "ancrel.8032",
+    "ancrel.8033"
+   ],
+   "label": {
+    "zh": "哨兵机器人：四种结果",
+    "en": "Sentinel droids: four outcomes"
+   },
+   "labels": [
+    {
+     "zh": "科学家身亡（-2线索）",
+     "en": "Scientist killed (-2 clues)"
+    },
+    {
+     "zh": "队员身亡（-1线索）",
+     "en": "Team members killed (-1 clue)"
+    },
+    {
+     "zh": "化险为夷（+3线索）",
+     "en": "Averted (+3 clues)"
+    },
+    {
+     "zh": "花100能量通过或绕路",
+     "en": "Pay 100 energy or detour"
+    }
+   ],
+   "note": {
+    "zh": "site_guardian_droids_trap（common/scripted_effects/archaeology_event_effects.txt:479）按 5/25/25/25 抽取其一。",
+    "en": "site_guardian_droids_trap (common/scripted_effects/archaeology_event_effects.txt:479) draws one at 5/25/25/25."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.8090",
+    "ancrel.8091",
+    "ancrel.8092",
+    "ancrel.8093"
+   ],
+   "label": {
+    "zh": "敌对野生动物：四种结果",
+    "en": "Hostile wildlife: four outcomes"
+   },
+   "labels": [
+    {
+     "zh": "科学家身亡（-2线索）",
+     "en": "Scientist killed (-2 clues)"
+    },
+    {
+     "zh": "队员身亡（-1线索）",
+     "en": "Team members killed (-1 clue)"
+    },
+    {
+     "zh": "化险为夷（+3线索）",
+     "en": "Averted (+3 clues)"
+    },
+    {
+     "zh": "花100能量通过或绕路",
+     "en": "Pay 100 energy or detour"
+    }
+   ],
+   "note": {
+    "zh": "site_wildlife（common/scripted_effects/archaeology_event_effects.txt:488）按 5/25/25/25 抽取其一。",
+    "en": "site_wildlife (common/scripted_effects/archaeology_event_effects.txt:488) draws one at 5/25/25/25."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.8100",
+    "ancrel.8101",
+    "ancrel.8102",
+    "ancrel.8103"
+   ],
+   "label": {
+    "zh": "不稳定的遗迹：四种结果",
+    "en": "Unstable ruins: four outcomes"
+   },
+   "labels": [
+    {
+     "zh": "科学家身亡（-2线索）",
+     "en": "Scientist killed (-2 clues)"
+    },
+    {
+     "zh": "队员身亡（-1线索）",
+     "en": "Team members killed (-1 clue)"
+    },
+    {
+     "zh": "化险为夷（+3线索）",
+     "en": "Averted (+3 clues)"
+    },
+    {
+     "zh": "花100能量通过或绕路",
+     "en": "Pay 100 energy or detour"
+    }
+   ],
+   "note": {
+    "zh": "site_collapsed_roof（common/scripted_effects/archaeology_event_effects.txt:497）按 5/25/25/25 抽取其一。",
+    "en": "site_collapsed_roof (common/scripted_effects/archaeology_event_effects.txt:497) draws one at 5/25/25/25."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "ancrel.8000": {
+   "zh": "激光网：科学家身亡（-2线索）",
+   "en": "Laser grid: Scientist killed (-2 clues)"
+  },
+  "ancrel.8001": {
+   "zh": "激光网：队员身亡（-1线索）",
+   "en": "Laser grid: Team members killed (-1 clue)"
+  },
+  "ancrel.8002": {
+   "zh": "激光网：化险为夷（+3线索）",
+   "en": "Laser grid: Averted (+3 clues)"
+  },
+  "ancrel.8003": {
+   "zh": "激光网：花100能量通过或绕路",
+   "en": "Laser grid: Pay 100 energy or detour"
+  },
+  "ancrel.8010": {
+   "zh": "哨戒炮：科学家身亡（-2线索）",
+   "en": "Sentry guns: Scientist killed (-2 clues)"
+  },
+  "ancrel.8011": {
+   "zh": "哨戒炮：队员身亡（-1线索）",
+   "en": "Sentry guns: Team members killed (-1 clue)"
+  },
+  "ancrel.8012": {
+   "zh": "哨戒炮：化险为夷（+3线索）",
+   "en": "Sentry guns: Averted (+3 clues)"
+  },
+  "ancrel.8013": {
+   "zh": "哨戒炮：花100能量通过或绕路",
+   "en": "Sentry guns: Pay 100 energy or detour"
+  },
+  "ancrel.8020": {
+   "zh": "碾压机器人：科学家身亡（-2线索）",
+   "en": "Crusher-droid: Scientist killed (-2 clues)"
+  },
+  "ancrel.8021": {
+   "zh": "碾压机器人：队员身亡（-1线索）",
+   "en": "Crusher-droid: Team members killed (-1 clue)"
+  },
+  "ancrel.8022": {
+   "zh": "碾压机器人：化险为夷（+3线索）",
+   "en": "Crusher-droid: Averted (+3 clues)"
+  },
+  "ancrel.8023": {
+   "zh": "碾压机器人：花100能量通过或绕路",
+   "en": "Crusher-droid: Pay 100 energy or detour"
+  },
+  "ancrel.8030": {
+   "zh": "哨兵机器人：科学家身亡（-2线索）",
+   "en": "Sentinel droids: Scientist killed (-2 clues)"
+  },
+  "ancrel.8031": {
+   "zh": "哨兵机器人：队员身亡（-1线索）",
+   "en": "Sentinel droids: Team members killed (-1 clue)"
+  },
+  "ancrel.8032": {
+   "zh": "哨兵机器人：化险为夷（+3线索）",
+   "en": "Sentinel droids: Averted (+3 clues)"
+  },
+  "ancrel.8033": {
+   "zh": "哨兵机器人：花100能量通过或绕路",
+   "en": "Sentinel droids: Pay 100 energy or detour"
+  },
+  "ancrel.8090": {
+   "zh": "敌对野生动物：科学家身亡（-2线索）",
+   "en": "Hostile wildlife: Scientist killed (-2 clues)"
+  },
+  "ancrel.8091": {
+   "zh": "敌对野生动物：队员身亡（-1线索）",
+   "en": "Hostile wildlife: Team members killed (-1 clue)"
+  },
+  "ancrel.8092": {
+   "zh": "敌对野生动物：化险为夷（+3线索）",
+   "en": "Hostile wildlife: Averted (+3 clues)"
+  },
+  "ancrel.8093": {
+   "zh": "敌对野生动物：花100能量通过或绕路",
+   "en": "Hostile wildlife: Pay 100 energy or detour"
+  },
+  "ancrel.8100": {
+   "zh": "不稳定的遗迹：科学家身亡（-2线索）",
+   "en": "Unstable ruins: Scientist killed (-2 clues)"
+  },
+  "ancrel.8101": {
+   "zh": "不稳定的遗迹：队员身亡（-1线索）",
+   "en": "Unstable ruins: Team members killed (-1 clue)"
+  },
+  "ancrel.8102": {
+   "zh": "不稳定的遗迹：化险为夷（+3线索）",
+   "en": "Unstable ruins: Averted (+3 clues)"
+  },
+  "ancrel.8103": {
+   "zh": "不稳定的遗迹：花100能量通过或绕路",
+   "en": "Unstable ruins: Pay 100 energy or detour"
+  },
+  "ancrel.8040": {
+   "zh": "资源贮藏点（随机一种资源）",
+   "en": "Resource cache (one random resource)"
+  },
+  "ancrel.8045": {
+   "zh": "隐蔽隧道（+3线索）",
+   "en": "Hidden passage (+3 clues)"
+  },
+  "ancrel.8050": {
+   "zh": "迷途的探险队（文物）",
+   "en": "Lost expedition (artifacts)"
+  },
+  "ancrel.8055": {
+   "zh": "争论的考古学家（-3线索）",
+   "en": "Bickering archaeologists (-3 clues)"
+  },
+  "ancrel.8060": {
+   "zh": "藏宝室（800–1800能量）",
+   "en": "Treasure chamber (800–1800 energy)"
+  },
+  "ancrel.8065": {
+   "zh": "传播疾病（-3线索，非机械）",
+   "en": "Spreading illness (-3 clues, non-machine)"
+  },
+  "ancrel.8070": {
+   "zh": "装备故障（-3线索或“踢一脚”）",
+   "en": "Equipment malfunction (-3 or \"kick it\")"
+  },
+  "ancrel.8075": {
+   "zh": "无影无踪（科学家失踪）",
+   "en": "Without a trace (scientist lost)"
+  },
+  "ancrel.8080": {
+   "zh": "稀有文物（远古遗物）",
+   "en": "Minor artifacts (Ancient Relics)"
+  },
+  "ancrel.8110": {
+   "zh": "远古记录（研究奖励）",
+   "en": "Ancient records (research)"
+  },
+  "ancrel.8210": {
+   "zh": "轨道遗址：稀有文物",
+   "en": "Orbital site: minor artifacts"
+  },
+  "ancrel.4078": {
+   "zh": "火灾（一次；500食物或-5线索）",
+   "en": "Fire (once; 500 food or -5 clues)"
+  },
+  "ancrel.13030": {
+   "zh": "令人不安的景象（-2线索，非格式塔）",
+   "en": "Disturbing vision (-2 clues, non-gestalt)"
+  },
+  "ancrel.4006": {
+   "zh": "甲烷爆炸（石中低语的专属事件）",
+   "en": "Methane explosion (Whispers in the Stone special)"
+  },
+  "ancrel.4021": {
+   "zh": "垃圾山大滑坡（誊录仪的专属事件）",
+   "en": "The great junkslide (Rubricator special)"
+  }
+ },
+ "notes": [
+  {
+   "doc": "ancrel.4006",
+   "kind": "review",
+   "zh": "事件池中“石中低语”的专属事件：在石灵遗址权重20；在其他遗址只要尚未触发过也可抽中（设置 triggered_lithoids_special_event 后仅限石灵遗址）。科学家致残，获得矿物、稀有水晶和大量文物。",
+   "en": "The Whispers in the Stone special: weight 20 at the lithoid site; at other sites only until it has fired once (triggered_lithoids_special_event). The scientist is maimed; minerals, rare crystals and artifacts are gained."
+  },
+  {
+   "doc": "ancrel.4021",
+   "kind": "review",
+   "zh": "事件池中“誊录仪”的专属事件：在誊录仪遗址权重20；在其他遗址只要尚未触发过也可抽中（triggered_rubricator_random_event）。",
+   "en": "The Rubricator special: weight 20 at its own site; elsewhere only until it has fired once (triggered_rubricator_random_event)."
+  },
+  {
+   "doc": "ancrel.4078",
+   "kind": "review",
+   "zh": "仅非格式塔且使用食物的帝国，每个帝国一次（triggered_sentinels_random_event）。",
+   "en": "Only for non-gestalt, food-using empires; once per empire (triggered_sentinels_random_event)."
+  },
+  {
+   "doc": "ancrel.8075",
+   "kind": "review",
+   "zh": "事件池中权重仅为2；科学家被移出并死亡。",
+   "en": "Weight only 2 in the pool; the scientist is removed and dies."
+  },
+  {
+   "doc": "ancrel.8210",
+   "kind": "review",
+   "zh": "只出现在轨道遗址（space_station_random_events）；同池的爆炸减压8200–8203与系统锁定8215目前归在另一故事（见审阅请求）。",
+   "en": "Only at orbital sites (space_station_random_events); the same pool's explosive decompression 8200–8203 and lockout 8215 currently sit in another story (see requests)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C2 precursor review (Claude Opus 5.5)",
+  "scope": {
+   "zh": "新建的“考古发掘意外”故事族：通用事件池 all_random_events 及其子池、各事件脚本与中英文文本；替代原先每个事件一个孤立故事的草稿。",
+   "en": "New curated family of excavation incidents: the generic pool all_random_events and its sub-pools, each incident script and both languages; replaces the draft of one isolated story per incident."
+  },
+  "sources": [
+   "events/ancient_relics_random_site_events.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "events/ancient_relics_arcsite_events_1.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [
+   "The family title reuses the original UI string ARCHAEOLOGICAL_SITE_PLURAL (考古遗址 / Archaeological Sites) because the game has no name for the incident pool.",
+   "Site-specific pools (e.g. engineered species, ocean sites, Genius Caeli, fungus dig) change which incidents are possible at a given site; they are noted in the site guides, not modelled here."
+  ],
+  "guide": "public/summaries/archaeology-incidents.md"
+ }
+}

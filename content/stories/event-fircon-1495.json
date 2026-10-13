@@ -1,0 +1,71 @@
+{
+ "id": "event-fircon-1495",
+ "suppress": [
+  {
+   "from": "fircon.1520",
+   "to": "clones.10",
+   "option": "fircon.1520.a",
+   "evidence": "achieve_ftl_effect (common/scripted_effects/pre_ftl_scripted_effects.txt:3087) runs generate_start_buildings_and_districts, whose origin branches fire origin start events; a newly uplifted pre-FTL never has those origins"
+  },
+  {
+   "from": "fircon.1520",
+   "to": "clones.10",
+   "option": "fircon.1520.b",
+   "evidence": "as above"
+  },
+  {
+   "from": "fircon.1520",
+   "to": "machine_age.2150",
+   "option": "fircon.1520.a",
+   "evidence": "as above (Cybernetic Creed origin start)"
+  },
+  {
+   "from": "fircon.1520",
+   "to": "machine_age.2150",
+   "option": "fircon.1520.b",
+   "evidence": "as above"
+  },
+  {
+   "from": "fircon.1520",
+   "to": "event_chains:cybernetic_creed_chain",
+   "option": "fircon.1520.a",
+   "evidence": "as above"
+  },
+  {
+   "from": "fircon.1520",
+   "to": "event_chains:cybernetic_creed_chain",
+   "option": "fircon.1520.b",
+   "evidence": "as above"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fircon.1510",
+    "fircon.1515"
+   ],
+   "label": {
+    "zh": "倒退或进入太空",
+    "en": "Regression or spaceflight"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c7a-society)",
+  "scope": {
+   "zh": "分派事件1495与1500–1520的完整分支，含退回旧时代与进入太空。",
+   "en": "Dispatcher 1495 and the full 1500-1520 branch, including regression and reaching FTL."
+  },
+  "sources": [
+   "events/first_contact_dlc_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "events/first_contact_dlc_situation_events.txt",
+   "common/situations/03_AI_empire_situations.txt",
+   "common/scripted_effects/pre_ftl_scripted_effects.txt"
+  ],
+  "guide": "public/summaries/event-fircon-1495.md"
+ }
+}

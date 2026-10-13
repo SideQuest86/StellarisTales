@@ -1,0 +1,71 @@
+{
+ "id": "anomaly-gen-derelict-ship-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.4012",
+    "anomaly.4011",
+    "anomaly_failure.4011"
+   ],
+   "labels": [
+    {
+     "zh": "20（需有未接触帝国）",
+     "en": "20 (needs an uncontacted empire)"
+    },
+    {
+     "zh": "50",
+     "en": "50"
+    },
+    {
+     "zh": "30",
+     "en": "30"
+    }
+   ]
+  }
+ ],
+ "endings": {
+  "anomaly_failure.4012": {
+   "label": {
+    "zh": "一败涂地",
+    "en": "Critical Failure"
+   },
+   "note": {
+    "zh": "我方科研船与科学家损失。",
+    "en": "Our science ship and scientist are lost."
+   },
+   "evidence": "events/failures.txt:579-600"
+  }
+ },
+ "nodeLabels": {
+  "anomaly.4012": {
+   "zh": "船员仍活着",
+   "en": "The crew is alive"
+  },
+  "anomaly.4011": {
+   "zh": "船员已死",
+   "en": "The crew is dead"
+  },
+  "anomaly_failure.4011": {
+   "zh": "自相残杀",
+   "en": "They killed each other"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部7个文档。",
+   "en": "All 7 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_3.txt",
+   "events/failures.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-gen-derelict-ship-cat.md"
+ }
+}

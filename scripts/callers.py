@@ -21,7 +21,7 @@ def context(path):
             out.append(f"{k} {p['weight']:g}/{p.get('total', 0):g}" + (' (modified)' if p.get('modified') or p.get('modifiers') else ''))
         elif k in ('if', 'else_if'):
             out.append(f"{k}({' '.join(p.get('limit', '').split())[:140]})")
-        elif k == 'effect':
+        elif k == 'effect' and p.get('name'):
             out.append(f"via effect {p['name']}")
         elif k == 'stage':
             out.append(f"stage {p.get('name', '')}")

@@ -28,6 +28,8 @@ test("story-local flags resolve from the chosen path", () => {
   assert.equal(evaluate([[flag("met_captain")]], { ...took, storyFlags }), true);
   assert.equal(evaluate([[flag("met_captain")]], { ...skipped, storyFlags }), false);
   assert.equal(evaluate([[flag("foreign_flag")]], { ...skipped, storyFlags }), null);
+  const routed = pathFlags([{ chapter: "a", choice: "a.2", sets: ["met_captain"] }], (s) => docs[s.chapter]);
+  assert.equal(evaluate([[flag("met_captain")]], { ...routed, storyFlags }), true, "flags set by routers on the edge count");
 });
 
 test("composed passages keep common text and only the matching conditional piece", () => {

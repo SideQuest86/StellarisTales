@@ -2,15 +2,15 @@
   "category": "society",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 487,
-  "docs": 1740,
+  "stories": 486,
+  "docs": 1742,
   "nodes": 2056,
-  "refs": 316,
+  "refs": 314,
   "crossLinks": 694,
   "review": {
-    "reviewed": 19,
+    "reviewed": 54,
     "partial": 3,
-    "unreviewed": 465
+    "unreviewed": 429
   },
   "failures": [],
   "items": [
@@ -87,11 +87,29 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-colony-9050",
+      "title": "意外矿层",
+      "kind": "family",
+      "docs": 9,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-colony-mod-2",
       "title": "泰坦巨兽",
       "kind": "family",
       "docs": 6,
       "refs": 4,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-fircon-2600",
+      "title": "行星际飞行",
+      "kind": "family",
+      "docs": 6,
+      "refs": 5,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -534,16 +552,7 @@
       "docs": 8,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-colony-9050",
-      "title": "意外矿层",
-      "kind": "event",
-      "docs": 8,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-9295",
@@ -552,7 +561,7 @@
       "docs": 8,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-9310",
@@ -561,7 +570,7 @@
       "docs": 8,
       "refs": 2,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-9900",
@@ -570,7 +579,7 @@
       "docs": 8,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-9950",
@@ -579,7 +588,7 @@
       "docs": 8,
       "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-observation-1100",
@@ -633,7 +642,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8530",
@@ -816,15 +825,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-first-contact-1",
-      "title": "在[This.System.GetName]的遭遇",
-      "kind": "event",
-      "docs": 6,
-      "refs": 4,
-      "crossLinks": 15,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-first-contact-200",
       "title": "深掘数据成功",
       "kind": "event",
@@ -939,7 +939,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1465",
@@ -948,7 +948,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1495",
@@ -956,16 +956,16 @@
       "kind": "event",
       "docs": 5,
       "refs": 2,
-      "crossLinks": 10,
-      "review": "unreviewed"
+      "crossLinks": 4,
+      "review": "reviewed"
     },
     {
-      "id": "event-fircon-2600",
-      "title": "行星际飞行",
+      "id": "event-first-contact-1",
+      "title": "在[This.System.GetName]的遭遇",
       "kind": "event",
       "docs": 5,
-      "refs": 4,
-      "crossLinks": 0,
+      "refs": 0,
+      "crossLinks": 20,
       "review": "unreviewed"
     },
     {
@@ -1092,7 +1092,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-mod-30",
@@ -1101,7 +1101,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fedel-1",
@@ -1128,7 +1128,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1405",
@@ -1137,7 +1137,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8000",
@@ -1164,6 +1164,15 @@
       "docs": 4,
       "refs": 2,
       "crossLinks": 45,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-first-contact-critters-1000",
+      "title": "战争之鼓",
+      "kind": "event",
+      "docs": 4,
+      "refs": 1,
+      "crossLinks": 4,
       "review": "unreviewed"
     },
     {
@@ -1335,7 +1344,7 @@
       "docs": 3,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-56",
@@ -1353,7 +1362,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-colony-75",
@@ -1425,7 +1434,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1335",
@@ -1434,7 +1443,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1355",
@@ -1443,7 +1452,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-2540",
@@ -1452,7 +1461,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-8500",
@@ -1515,15 +1524,6 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 27,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-first-contact-critters-1000",
-      "title": "战争之鼓",
-      "kind": "event",
-      "docs": 3,
-      "refs": 1,
-      "crossLinks": 0,
       "review": "unreviewed"
     },
     {
@@ -1722,7 +1722,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1260",
@@ -1731,7 +1731,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-5050",
@@ -1795,6 +1795,15 @@
       "refs": 4,
       "crossLinks": 0,
       "review": "unreviewed"
+    },
+    {
+      "id": "event-shroud-5010",
+      "title": "奇怪的联系",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "situation-situation-toxify-world",
@@ -2153,8 +2162,8 @@
       "kind": "event",
       "docs": 1,
       "refs": 0,
-      "crossLinks": 3,
-      "review": "unreviewed"
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "event-colony-5",
@@ -2294,15 +2303,6 @@
     {
       "id": "event-colony-74",
       "title": "科技需求",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-colony-9080",
-      "title": "击败晶态实体",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -2703,7 +2703,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1295",
@@ -2712,7 +2712,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-1325",
@@ -2721,7 +2721,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-2000",
@@ -2730,7 +2730,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-2010",
@@ -2739,7 +2739,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-2500",
@@ -2748,7 +2748,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-2510",
@@ -2757,7 +2757,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-2520",
@@ -2766,7 +2766,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-2530",
@@ -2775,7 +2775,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-2550",
@@ -2784,16 +2784,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fircon-2610",
-      "title": "达阵",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fircon-3505",

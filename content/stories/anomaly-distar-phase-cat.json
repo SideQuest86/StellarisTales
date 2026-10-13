@@ -1,0 +1,129 @@
+{
+ "id": "anomaly-distar-phase-cat",
+ "family": {
+  "title": {
+   "zh": "相变星球",
+   "en": "Phased Planet"
+  },
+  "category": "exploration",
+  "start": "anomalies:DISTAR_PHASE_CAT",
+  "members": [
+   "anomalies:DISTAR_PHASE_CAT",
+   "distar.254",
+   "distar.256",
+   "distar.258"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "distar.251",
+   "to": "distar.255",
+   "conditional": true,
+   "label": {
+    "zh": "在该星系建成前哨或取得星系后（1天）",
+    "en": "After building an outpost in / acquiring the system (1 day)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1934 on_building_starbase_outpost and common/on_actions/00_on_actions.txt:4189 on_starbase_transfer → distar.254 (events/distant_stars_events_1.txt:9568-9603): system has phaseshift_system, planet still phaseshifting_active, owner lacks the project → distar.255 days=1."
+  },
+  {
+   "from": "distar.258",
+   "to": "distar.255",
+   "conditional": true,
+   "label": {
+    "zh": "在该星系建成前哨或取得星系后（1天）",
+    "en": "After building an outpost in / acquiring the system (1 day)"
+   },
+   "evidence": "Same gatekeeper distar.254 (events/distant_stars_events_1.txt:9568-9603); applies to any empire that claims the system."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.250",
+    "distar.302",
+    "distar.303"
+   ],
+   "label": {
+    "zh": "按星球与星系状态三选一",
+    "en": "One of three by planet/system state"
+   },
+   "note": {
+    "zh": "三项基础权重均为0：仍在相变且星系非本帝国所有 → 250；仍在相变且星系归本帝国 → 302；已被锁定 → 303（95_anomaly_categories_distant_stars.txt:815-860）。",
+    "en": "All base weights 0: shifting and system not ours → 250; shifting and system ours → 302; already locked → 303 (95_anomaly_categories_distant_stars.txt:815-860)."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "distar.250": {
+   "zh": "报告中断",
+   "en": "Report cut off"
+  },
+  "distar.251": {
+   "zh": "目睹相变",
+   "en": "The shift witnessed"
+  },
+  "distar.302": {
+   "zh": "已拥有星系时的报告",
+   "en": "Report when we own the system"
+  },
+  "distar.303": {
+   "zh": "星球已被锁定",
+   "en": "Planet already locked"
+  },
+  "distar.255": {
+   "zh": "是否锁定星球",
+   "en": "Lock the planet?"
+  },
+  "distar.258": {
+   "zh": "后到者的通知",
+   "en": "Notice for later surveyors"
+  }
+ },
+ "endings": {
+  "distar.253": {
+   "label": {
+    "zh": "星球被锁定为盖亚世界",
+    "en": "Locked as a Gaia World"
+   },
+   "note": {
+    "zh": "相变停止，其他帝国的同名项目被中止。",
+    "en": "Shifting stops; other empires' projects are aborted."
+   },
+   "evidence": "events/distant_stars_events_1.txt:9505"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/solar_system_initializers/distant_stars_initializers.txt:3947 (distar_phaseshift_system)",
+   "common/on_actions/00_on_actions.txt:11 (distar.252)",
+   "events/distant_stars_events_1.txt:9485 (distar.252)",
+   "common/on_actions/00_on_actions.txt:1152",
+   "events/distant_stars_events_1.txt:9655-9686 (distar.256)",
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:801-862",
+   "events/distant_stars_events_1.txt:9268 (distar.250)",
+   "events/distant_stars_events_1.txt:9318 (distar.251)",
+   "events/distant_stars_events_1.txt:9387 (distar.302)",
+   "events/distant_stars_events_1.txt:9451 (distar.303)",
+   "common/on_actions/00_on_actions.txt:1934, 4189",
+   "events/distant_stars_events_1.txt:9568-9603 (distar.254)",
+   "events/distant_stars_events_1.txt:9606 (distar.255)",
+   "common/special_projects/00_projects_distant_stars.txt:617 (PHASESHIFT_PROJECT)",
+   "events/distant_stars_events_1.txt:9505 (distar.253)",
+   "events/distant_stars_events_1.txt:9689 (distar.258)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-phase-cat.md",
+  "mergedStories": [
+   "event-distar-254",
+   "event-distar-256"
+  ]
+ }
+}

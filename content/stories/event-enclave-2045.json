@@ -1,0 +1,25 @@
+{
+ "id": "event-enclave-2045",
+ "notes": [
+  {
+   "doc": "enclave.2050",
+   "kind": "review",
+   "zh": "审阅注：每两年检查（on_bi_yearly_pulse，00_on_actions.txt:273）：大可汗在世且有佣兵城邦未出租舰队时，若城邦所在星系的拥有者是AI，可汗直接雇佣；否则向该拥有者发出本通知。无论如何回复，60天（无礼回绝为7天）后若仍无人租用，隐藏事件enclave.2051让可汗租走主力舰队（1510天）。",
+   "en": "Review note: bi-yearly check (on_bi_yearly_pulse, 00_on_actions.txt:273): with the Great Khan alive and a mercenary enclave whose fleet is not leased, the Khan hires it directly if the enclave's system owner is an AI; otherwise that owner gets this notice. Whatever the answer, if nobody has leased the fleet after 60 days (7 if rudely refused), hidden enclave.2051 gives the main fleet to the Khan for 1510 days."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整：触发、三种回复与后果。",
+   "en": "Complete: trigger, three replies and outcome."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-enclave-2045.md"
+ }
+}

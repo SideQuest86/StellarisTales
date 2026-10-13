@@ -268,7 +268,7 @@ function loadRecords() {
   recordsLoading ||= json("stories/records.json").then((map) => (recordToStory = map)).catch((e) => { recordsLoading = null; throw e; });
   return recordsLoading;
 }
-async function goChapter(id, storyId, back = false) {
+async function goChapter(id, storyId, back = false, sets = null) {
   const ticket = ++readerTicket;
   try {
     let data = dossier;
@@ -279,7 +279,7 @@ async function goChapter(id, storyId, back = false) {
     if (ticket !== readerTicket) return;
     const target = data.chapters.find((c) => c.id === id);
     if (!target) return;
-    if (!back) trail.push({ story: data.story.id, chapter: id });
+    if (!back) trail.push({ story: data.story.id, chapter: id, ...(sets?.length ? { sets } : {}) });
     // Cross-dossier references keep their own route rules and return history.
     if (data !== dossier) useDossier(data);
     chapter = target;
@@ -329,7 +329,7 @@ function edgeCaption(e) {
   return parts.join(" · ") || T("继续阅读", "Continue reading");
 }
 function edgeButton(e) {
-  return `<button class="next-chapter" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"><span>${esc(titleFor(e.target, e.story))}</span><small>${esc(edgeCaption(e))} →</small></button>`;
+  return `<button class="next-chapter" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span>${esc(titleFor(e.target, e.story))}</span><small>${esc(edgeCaption(e))} →</small></button>`;
 }
 function edgeButtons(edges) {
   const seen = new Set();
@@ -359,7 +359,7 @@ function readingContext() {
   // Flags set by docs and options chosen earlier on the path (only steps inside the current story are known).
   const earlier = trail.slice(0, -1).filter((step) => step.story === dossier.story.id);
   const { flags, cleared } = pathFlags(earlier, (step) => docMap.get(step.chapter));
-  for (const f of chapter?.sets || []) { flags.add(f); cleared.delete(f); }
+  for (const f of [...(trail.at(-1)?.sets || []), ...(chapter?.sets || [])]) { flags.add(f); cleared.delete(f); }
   return { profile, assumptions, flags, cleared, storyFlags: storyFlagSet };
 }
 function adopt(dnf) {
@@ -571,7 +571,8 @@ function renderChapter(preservePosition = false) {
   };
   const body = renderBody(r, ctx);
   const sections = r.sections.filter((t, i, a) => local(t) && !r.texts.some((x) => local(x) === local(t)) && a.findIndex((v) => local(v) === local(t)) === i);
-  const notes = (chapter.notes || []).map((n) => `<aside class="review-note"><small>${esc(T("审阅注释 · 非游戏原文", "Reviewer note · not game text"))}</small><p>${esc(local(n))}</p></aside>`).join("");
+  const unreachable = chapter.unreachable ? `<aside class="review-note unreachable-note"><small>${esc(T("审阅结论 · 原版脚本中无法自然触发", "Review finding · not reachable in the shipped script"))}</small><p>${esc(local(chapter.unreachable))}</p></aside>` : "";
+  const notes = unreachable + (chapter.notes || []).map((n) => `<aside class="review-note"><small>${esc(T("审阅注释 · 非游戏原文", "Reviewer note · not game text"))}</small><p>${esc(local(n))}</p></aside>`).join("");
   const alsoIn = (chapter.alsoIn || []).filter((id) => storyById.has(id));
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
@@ -802,7 +803,7 @@ document.addEventListener("click", (e) => {
   }
   const next = e.target.closest("[data-chapter]");
   if (next) {
-    goChapter(next.dataset.chapter, next.dataset.story);
+    goChapter(next.dataset.chapter, next.dataset.story, false, next.dataset.sets?.split(" "));
     return;
   }
   const choice = e.target.closest("[data-choice]");

@@ -1,0 +1,18 @@
+{
+ "id": "event-shroud-5115",
+ "titleFrom": "shroud.5105",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "触发、文本与奖励已核对；天选国民理念的开局事件 5100/5105/5110 属于 event-game-start-1（C8b）。",
+   "en": "Trigger, text and reward were checked; the Chosen civic opening events 5100/5105/5110 belong to event-game-start-1 (C8b)."
+  },
+  "sources": [
+   "events/shroud_events.txt:13879-13935",
+   "common/on_actions/00_on_actions.txt:5801-5817 (on_shroud_delve random 100)"
+  ],
+  "guide": "public/summaries/event-shroud-5115.md"
+ }
+}

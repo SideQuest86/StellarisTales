@@ -1,0 +1,38 @@
+{
+ "id": "anomaly-mysterious-rock-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.2005",
+    "anomaly.2006"
+   ],
+   "labels": [
+    {
+     "zh": "60%",
+     "en": "60%"
+    },
+    {
+     "zh": "40%",
+     "en": "40%"
+    }
+   ]
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部5个文档。",
+   "en": "All 5 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_4.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-mysterious-rock-cat.md"
+ }
+}

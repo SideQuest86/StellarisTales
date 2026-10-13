@@ -60,4 +60,18 @@ Merged ids (absorbed into a family fragment) are listed under the family that no
   `labyrinth_timer`, else 50); down: 10 (40%) → 15 (20%) or 25 (destroying) → at 0: 25 (destroying) / 20 (within 21 months)
   / 50:50 20 or 30. Bridges + suppress implement this.
 - Remaining: three false compiler stage refs (25→15, 15→10, 10→40) — see Request 1.
+### Pre-FTL observation interludes (`events/first_contact_dlc_events.txt:1109-6489`) — reviewed
+Common entry verified: `pre_ftl_tech_progress_situation` on_monthly random_events 5/100 → preftl.50 (1800-day cooldown,
+`first_contact_dlc_situation_events.txt:316-376`) → `on_monthly_pulse_pre_ftl_observation` pool (`00_on_actions.txt:140-201`;
+broken-shackles pool 205-224). Each dispatcher checks age + observation mission + once-flag (triggers read per event).
+These are unordered random interludes → each stays its own story; compiled trees were already correct except as noted.
+- event-fircon-1255, -1260, -1270 (Stone Age), -1280, -1295, -1305 (Bronze/Iron), -1325, -1335, -1355 (Medieval/Renaissance),
+  -1375, -1405, -1440 (Steam/Industrial/Machine), -1465 (Atomic/Early Space), -2000, -2010 (any age, specimen collection),
+  -2500, -2510, -2520, -2530, -2540, -2550 (observed hive civilizations): reviewed; option ethic/civic conditions,
+  random weights and delays documented in guides.
+- event-fircon-1495 (weight 25): reviewed; suppressed false links from 1520 (achieve_ftl_effect origin start-up branches →
+  clones.10, machine_age.2150, cybernetic_creed_chain); kept links to preftl.1111 / tech-progress situation (c7b).
+- event-fircon-2600 (family): reviewed; merged `event-fircon-2610` (Touchdown via on_fleet_enter_orbit → 2610 → 2615) with
+  bridges 2635 → 2615 and 2620.d → 2615 (`first_contact_dlc_events.txt:6118-6143, 6281-6311, 6452-6474`). Uncertain:
+  whether the ship can reach orbit before 2620 fires at day 60.
 <!-- ledger-end -->

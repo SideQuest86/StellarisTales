@@ -1,0 +1,56 @@
+{
+ "id": "event-shroud-4190",
+ "family": {
+  "title": {
+   "zh": "灵能光环逼近",
+   "en": "Psionic Aura Approaches"
+  },
+  "category": "stories",
+  "start": "shroud.4190",
+  "members": [
+   "shroud.4190",
+   "shroud.4191",
+   "shroud.4195"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.4190",
+    "shroud.4191"
+   ],
+   "label": {
+    "zh": "按是否灵能飞升二选一",
+    "en": "One of two, by psionic ascension"
+   },
+   "note": {
+    "zh": "set_psionic_aura_encounter：已灵能飞升的帝国看到 4191，其余看到 4190；只发生一次。",
+    "en": "set_psionic_aura_encounter: psionic-ascended empires get 4191, others 4190; once only."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "shroud.4190",
+   "kind": "review",
+   "zh": "若存在尚未接触的灵督城邦，15天后（隐藏 4195）与其建立联系。",
+   "en": "If a Mindwarden Enclave exists and is not yet contacted, contact with it is established 15 days later (hidden 4195)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "触发效果、两种版本与灵督城邦接触均已核对。",
+   "en": "Trigger effect, both variants and the Mindwarden contact were checked."
+  },
+  "sources": [
+   "events/shroud_events.txt:9122-9251 (4190/4191/4195)",
+   "common/scripted_effects/psionic_auras_scripted_effects.txt:250-302",
+   "common/patrons/psionic_auras/00_auras.txt (on_start → check_psionic_suppression_eligibility)"
+  ],
+  "guide": "public/summaries/event-shroud-4190.md"
+ }
+}

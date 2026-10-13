@@ -1,0 +1,37 @@
+{
+ "id": "event-colony-9050",
+ "family": {
+  "title": {"zh": "意外矿层", "en": "Unexpected Mineral Seams"},
+  "category": "society",
+  "start": "colony.9050",
+  "members": ["colony.9050", "colony.9055", "colony.9060", "colony.9065", "colony.9070", "colony.9075", "colony.9085", "colony.9090",
+              "colony.9080", "colony.9081", "colony.9082", "colony.9095"]
+ },
+ "titleFrom": "colony.9050",
+ "bridges": [
+  {"from": "colony.9075", "to": "colony.9081", "conditional": true,
+   "label": {"zh": "在地面战中击败水晶海妖", "en": "Defeat the Crystal Kraken in ground combat"},
+   "evidence": "colony_events_3.txt:4926-4930 9075 spawns crystal_kraken_army on the planet; 00_on_actions.txt:2928 on_army_killed_in_combat -> hidden colony.9080 (4940-4966, army_type crystal_kraken_army) -> colony.9081 after 1 day."},
+  {"from": "colony.9090", "to": "colony.9081", "conditional": true,
+   "label": {"zh": "在地面战中击败水晶海妖", "en": "Defeat the Crystal Kraken in ground combat"},
+   "evidence": "colony_events_3.txt:5103-5107 9090 spawns crystal_kraken_army; same on_army_killed_in_combat -> 9080 -> 9081 path."}
+ ],
+ "endings": {
+  "colony.9060": {"label": {"zh": "结局：挖得太深", "en": "Ending: too little, too deep"}, "note": {"zh": "非地下帝国继续深挖：矿石洞穴与超富矿修正，链结束。", "en": "Non-subterranean empires dig on: ore caverns and the ultra-rich modifier; the chain ends."}, "evidence": "events/colony_events_3.txt:4715-4738, 4767-4786."},
+  "colony.9081": {"label": {"zh": "结局：水晶海妖被击败", "en": "Ending: the Crystal Kraken defeated"}, "note": {"zh": "海妖尸体成为矿藏，解除清洗状态，获得凝聚力。", "en": "Its body becomes a deposit, the purge ends and unity is granted."}, "evidence": "events/colony_events_3.txt:4968-5001."}
+ },
+ "notes": [
+  {"doc": "colony.9055", "kind": "review", "zh": "审阅注：“肯定还有更多”有两个同名选项：非地下帝国（且非宇宙黎明起源）→ 为“石”过早；地下帝国或宇宙黎明 → 更多矿物。每次深挖都要花能量（1000/1500/2000/2500）。", "en": "Review note: \"There has to be more\" exists twice: non-subterranean empires (not Cosmic Dawn) get Too Little, Too Deep; subterranean or Cosmic Dawn get More Ore. Each deeper probe costs energy (1000/1500/2000/2500)."},
+  {"doc": "colony.9075", "kind": "review", "zh": "审阅注：海妖陆军出现后：若被地面部队击败 → 9081；若以其他方式被消灭（隐藏9082）星球得到“被轰炸的海妖尸体”矿藏；若海妖占领星球（隐藏9095），人口被杀至只剩少量并获得海妖修正。", "en": "Review note: once the kraken army spawns — killed in ground combat → 9081; destroyed otherwise (hidden 9082) → a bombed-kraken deposit; if it occupies the planet (hidden 9095) pops are killed down to a remnant and the planet gets the kraken modifier."},
+  {"doc": "colony.9085", "kind": "review", "zh": "审阅注：选择“安全第一”移除水晶矿藏与超富矿修正，链结束。", "en": "Review note: \"Safety first\" removes the crystal deposit and ultra-rich modifier and ends the chain."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "“贪婪之害”全部事件（9050–9095，含三个隐藏回调）；原独立故事 event-colony-9080（海妖被击败）已并入。", "en": "All 'Greed is Bad' events (9050–9095 incl. three hidden callbacks); the former story event-colony-9080 (kraken defeated) is merged here."},
+  "sources": ["events/colony_events_3.txt:4633-5150", "common/on_actions/00_on_actions.txt:2841, 2928, 2945, 3769, 3820", "common/armies/02_event_armies.txt:714"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-9050.md"
+ }
+}

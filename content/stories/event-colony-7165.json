@@ -1,0 +1,17 @@
+{
+ "id": "event-colony-7165",
+ "category": "society",
+ "endings": {
+  "colony.7170": {"label": {"zh": "结果：种群稳定", "en": "Result: population stabilized"}, "note": {"zh": "狩猎后50%：获得资源，侵扰矿藏仍在。", "en": "50% after the hunt: some resources; the infestation deposit remains."}, "evidence": "events/colony_events_3.txt:10282-10285, 10366-10393."},
+  "colony.7175": {"label": {"zh": "结果：失控的侵染", "en": "Result: uncontrollable infestation"}, "note": {"zh": "狩猎后50%：接受外星侵扰修正，或打一场360天的“鼠战”，之后隐藏事件7180移除侵扰矿藏。", "en": "50% after the hunt: accept an infestation modifier, or wage a 360-day 'rodent war' after which hidden 7180 removes the infestation deposit."}, "evidence": "events/colony_events_3.txt:10395-10455."}
+ },
+ "notes": [
+  {"doc": "colony.7165", "kind": "review", "zh": "审阅注：殖民地满十年的随机池（权重10）。需要帝国拥有带“沙生兽动物群”标记的星球（异常“快速沙漠化”的研究结果 anomaly.7140 设置）或任何无智慧前智慧物种，且未与沙生兽交好。选择建保留地需1000能量，直接得到外星保护区矿藏。同一异常结果另有十年后的直接版本 colony.7166（属于该异常故事）。", "en": "Review note: 10-year colony pool (weight 10). Needs a planet flagged with desertling fauna (set by the Rapid Desertification anomaly result anomaly.7140) or any unintelligent pre-sapient species, and no friendly desertlings. The walled reserve costs 1000 energy and gives an alien sanctuary deposit. The anomaly's own ten-year follow-up colony.7166 belongs to the anomaly story."}
+ ],
+ "review": {
+  "status": "reviewed", "date": "2026-10-12", "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "随机池入口7165及其两个随机结果（隐藏7180）。", "en": "The pool entry 7165 and its two random results (hidden 7180)."},
+  "sources": ["events/colony_events_3.txt:10192-10455", "events/anomaly_events_4.txt:4570-4590", "common/on_actions/00_on_actions.txt:3905-3912"],
+  "uncertain": [], "guide": "public/summaries/event-colony-7165.md"
+ }
+}

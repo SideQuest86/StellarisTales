@@ -24,6 +24,13 @@ FLAG = re.compile(r'^has_(country|global|planet|ship|leader|fleet|pop|species|st
 SPECIAL = {'is_individual_machine': 'is_individual_machine', 'is_lithoid_empire': 'is_lithoid_empire',
            'is_wilderness_empire': 'is_wilderness_empire'}
 MAX = 48
+# Comparison triggers whose block holds arguments, not nested conditions: one opaque atom each.
+OPAQUE_BLOCKS = {'calc_true_if', 'resource_stockpile_compare', 'check_variable', 'check_variable_arithmetic',
+                 'has_resource', 'has_monthly_income', 'check_modifier_value', 'check_economic_value',
+                 'has_deposit_for', 'has_trait_in_council', 'relative_power', 'opinion', 'has_opinion_modifier',
+                 'check_galaxy_setup_value', 'is_scope_type_and_exists', 'compare_value', 'has_resource_in_stockpile'}
+OTHER_LABELS = {'is_robot_empire': {'zh': '机器人帝国', 'en': 'Robot empire'},
+                'is_wilderness_empire': {'zh': '荒野帝国', 'en': 'Wilderness empire'}}
 
 
 def _and(a, b):
@@ -80,9 +87,11 @@ class Conditions:
             name = f'{m.group(1)}:{v}'
             return {'flag|' + scope + '|' + name: {'type': 'flag', 'scope': m.group(1), 'name': v, 'path': scope,
                                                    'value': truth}}
-        label = None
+        label = OTHER_LABELS.get(k)
         if isinstance(v, str) and v in self.labels:
             label = self.labels[v]
+        elif k == 'has_tradition' and isinstance(v, str) and self.localized(v):
+            label = self.localized(v)
         key = 'other|' + scope + '|' + k + '=' + (v if isinstance(v, str) else '{…}')
         return {key: {'type': 'other', 'key': k, 'arg': v if isinstance(v, str) else '', 'scope': scope,
                       'value': truth, **({'label': label} if label else {})}}
@@ -112,7 +121,7 @@ class Conditions:
                     terms = self.expression(v, negative, 'or', scope)
                 elif k in SCOPE_NEUTRAL:
                     terms = self.expression(v, negative, 'and', scope)
-                elif k.startswith(('any_', 'count_', 'every_', 'random_')) or k in ('calc_true_if',):
+                elif k.startswith(('any_', 'count_', 'every_', 'random_', 'num_')) or k in OPAQUE_BLOCKS:
                     terms = [self.atom({'k': k, 'v': '{…}'}, scope, negative)]
                 else:
                     terms = self.expression(v, negative, 'and', (scope + '/' + k).strip('/'))

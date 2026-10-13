@@ -1,0 +1,38 @@
+{
+ "id": "event-enclave-2",
+ "nodeLabels": {
+  "situations:mercenary_dividends": {
+   "zh": "佣兵分红（循环）",
+   "en": "Mercenary dividends (repeating)"
+  }
+ },
+ "notes": [
+  {
+   "doc": "enclave.2",
+   "kind": "review",
+   "zh": "审阅注：玩家下令将舰队独立为佣兵城邦时触发（on_establish_mercenary_enclave，00_on_actions.txt:4806）；确认后由enclave.21建立城邦、开启分红局势，并立刻打开新城邦的联络菜单。佣兵城邦只会以这种方式在开局后产生（enclave_effects.txt:5）。",
+   "en": "Review note: fires when an empire orders a fleet to become a mercenary enclave (on_establish_mercenary_enclave, 00_on_actions.txt:4806); on acceptance enclave.21 creates the enclave, starts the dividends situation and opens the new enclave's contact menu. Mercenary enclaves only appear this way after game start (enclave_effects.txt:5)."
+  },
+  {
+   "doc": "situations:mercenary_dividends",
+   "kind": "review",
+   "zh": "审阅注：局势属于城邦本身；完成时enclave.275按32/32/32/2/2随机向资助者（城邦所在星系的拥有者或游牧资助者）发放一份分红，并重新开始局势，因此分红会周期性重复（overlord_enclaves_events.txt:2179-2252）。",
+   "en": "Review note: the situation belongs to the enclave; on completion enclave.275 pays the patron (owner of the enclave's system, or a nomad patron) one dividend chosen 32/32/32/2/2 and restarts the situation, so dividends repeat (overlord_enclaves_events.txt:2179-2252)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整：建立城邦、分红循环、转入联络菜单。",
+   "en": "Complete: founding, dividend cycle, hand-off to the contact menu."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "common/situations/03_AI_empire_situations.txt",
+   "common/scripted_effects/enclave_effects.txt"
+  ],
+  "guide": "public/summaries/event-enclave-2.md"
+ }
+}

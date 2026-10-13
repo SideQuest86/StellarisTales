@@ -1,78 +1,89 @@
 {
  "id": "the-sentinels",
+ "family": {
+  "title": {"zh": "哨兵", "en": "The Sentinels"},
+  "category": "precursors",
+  "start": "ancrel.4051",
+  "members": [
+   "ancrel.4051", "archaeological_site_types:sentinels_digsite", "ancrel.4052", "ancrel.4053", "ancrel.4054",
+   "special_projects:DESTROY_SENTINELS", "ancrel.4055", "ancrel.4058", "ancrel.4059", "ancrel.4060", "ancrel.4062",
+   "ancrel.4057", "ancrel.4063", "ancrel.4064", "ancrel.4075", "special_projects:SECRET_TOMB", "ancrel.4056", "ancrel.4076",
+   "special_projects:REPLICATE_THE_EVERMORE", "ancrel.4061", "special_projects:REPURPOSE_THE_EVERMORE", "ancrel.4077",
+   "ancrel.4065", "ancrel.4066", "ancrel.4067", "ancrel.4068"
+  ],
+  "sources": []
+ },
+ "category": "precursors",
  "bridges": [
-  {
-   "from": "ancrel.4055",
-   "to": "ancrel.4057",
-   "conditional": true,
-   "label": {
-    "zh": "击退哨兵",
-    "en": "Repel the Sentinels"
-   },
-   "evidence": "on_colony_defenders_win -> 4057 requires sentinels_invade_country",
-   "choice": "ancrel.4055.a"
-  },
-  {
-   "from": "ancrel.4055",
-   "to": "ancrel.4063",
-   "conditional": true,
-   "label": {
-    "zh": "防守失败",
-    "en": "Defenders defeated"
-   },
-   "evidence": "on_colony_defenders_lose -> 4063 requires sentinels_invade_country",
-   "choice": "ancrel.4055.a"
-  },
-  {
-   "from": "ancrel.4060",
-   "to": "ancrel.4057",
-   "conditional": true,
-   "label": {
-    "zh": "击退哨兵",
-    "en": "Repel the Sentinels"
-   },
-   "evidence": "on_colony_defenders_win -> 4057 requires sentinels_invade_country",
-   "choice": "ancrel.4060.a"
-  },
-  {
-   "from": "ancrel.4060",
-   "to": "ancrel.4063",
-   "conditional": true,
-   "label": {
-    "zh": "防守失败",
-    "en": "Defenders defeated"
-   },
-   "evidence": "on_colony_defenders_lose -> 4063 requires sentinels_invade_country",
-   "choice": "ancrel.4060.a"
-  },
-  {
-   "from": "ancrel.4063",
-   "to": "ancrel.4064",
-   "conditional": true,
-   "label": {
-    "zh": "反攻解放行星",
-    "en": "Liberate the planet"
-   },
-   "evidence": "on_colony_attackers_win -> 4064 requires sentinels_won and Sentinel controller"
-  },
-  {
-   "from": "ancrel.4063",
-   "to": "ancrel.4075",
-   "conditional": true,
-   "label": {
-    "zh": "哨兵驱逐居民",
-    "en": "Sentinels displace inhabitants"
-   },
-   "evidence": "on_pop_purged -> 4075 checks Sentinel controller and sentinels_planet"
-  }
+  {"from": "ancrel.4055", "choice": "ancrel.4055.a", "to": "ancrel.4057", "conditional": true,
+   "label": {"zh": "地面战：守军获胜", "en": "Ground battle: defenders win"},
+   "evidence": "4055.a creates the Sentinels faction with 9 armies and sets sentinels_invade_country (events/ancient_relics_arcsite_events_1.txt:5936-5964); common/on_actions/00_on_actions.txt:866 on_colony_defenders_win fires ancrel.4057 (trigger: flag, sentinels planet, attacker = Sentinels)"},
+  {"from": "ancrel.4055", "choice": "ancrel.4055.a", "to": "ancrel.4063", "conditional": true,
+   "label": {"zh": "地面战：守军失败", "en": "Ground battle: defenders lose"},
+   "evidence": "common/on_actions/00_on_actions.txt:882 on_colony_defenders_lose fires ancrel.4063 (trigger: sentinels_invade_country and the Sentinel planet)"},
+  {"from": "ancrel.4060", "choice": "ancrel.4060.a", "to": "ancrel.4057", "conditional": true,
+   "label": {"zh": "地面战：守军获胜", "en": "Ground battle: defenders win"},
+   "evidence": "4060.a creates the Sentinels faction and armies (events/ancient_relics_arcsite_events_1.txt:6492-6519); on_colony_defenders_win → 4057"},
+  {"from": "ancrel.4060", "choice": "ancrel.4060.a", "to": "ancrel.4063", "conditional": true,
+   "label": {"zh": "地面战：守军失败", "en": "Ground battle: defenders lose"},
+   "evidence": "on_colony_defenders_lose → 4063 (common/on_actions/00_on_actions.txt:882)"},
+  {"from": "ancrel.4058", "choice": "ancrel.4058.b", "to": "ancrel.4057", "conditional": true,
+   "label": {"zh": "地面战：守军获胜", "en": "Ground battle: defenders win"},
+   "evidence": "4058.b also sets sentinels_invade_country and creates the Sentinel armies (events/ancient_relics_arcsite_events_1.txt:6400-6425); on_colony_defenders_win → 4057"},
+  {"from": "ancrel.4058", "choice": "ancrel.4058.b", "to": "ancrel.4063", "conditional": true,
+   "label": {"zh": "地面战：守军失败", "en": "Ground battle: defenders lose"},
+   "evidence": "on_colony_defenders_lose → 4063 (common/on_actions/00_on_actions.txt:882)"},
+  {"from": "ancrel.4063", "to": "ancrel.4064", "conditional": true,
+   "label": {"zh": "反攻夺回星球", "en": "Retake the planet"},
+   "evidence": "common/on_actions/00_on_actions.txt:840 on_colony_attackers_win fires ancrel.4064 (needs sentinels_won on the planet and the Sentinels as controller)"},
+  {"from": "ancrel.4063", "to": "ancrel.4075", "conditional": true,
+   "label": {"zh": "哨兵驱逐居民", "en": "The Sentinels displace the inhabitants"},
+   "evidence": "4063 marks the population for purge (displacement); common/on_actions/00_on_actions.txt:3304 on_pop_purged fires ancrel.4075 while the Sentinels control the planet"}
  ],
+ "groups": [
+  {"kind": "exclusive", "members": ["ancrel.4055", "ancrel.4058"],
+   "label": {"zh": "项目完成：按先前的选择", "en": "Project result by the earlier choice"},
+   "note": {"zh": "“哨兵”项目（1000工程学）完成时按星球标志：摧毁 → 4055；调查或拆解 → 4058。", "en": "When the Sentinels project (1000 engineering) completes, the planet flag decides: destroy → 4055; investigate or salvage → 4058."}},
+  {"kind": "exclusive", "members": ["ancrel.4057", "ancrel.4063"],
+   "label": {"zh": "地面战的两种结果", "en": "Two outcomes of the ground battle"}},
+  {"kind": "exclusive", "members": ["ancrel.4056", "ancrel.4076"],
+   "label": {"zh": "地下墓穴的两种发现", "en": "Two findings in the tomb"},
+   "note": {"zh": "“进入地底”项目完成时：星球未被哨兵清空 → 4056；已被清空（4075 设置 sentinels_purged）→ 4076。", "en": "On completing 'Into the Earth': planet not purged → 4056; purged (sentinels_purged set by 4075) → 4076."}},
+  {"kind": "exclusive", "members": ["ancrel.4067", "ancrel.4068"],
+   "label": {"zh": "失踪考古学家的下落", "en": "Fate of the missing archaeologist"}}
+ ],
+ "nodeLabels": {
+  "ancrel.4065": {"zh": "考古学家失踪（第一阶段后）", "en": "Archaeologist missing (after stage 1)"},
+  "ancrel.4066": {"zh": "找到扫描仪：搜救选择", "en": "A scanner found: rescue options"},
+  "ancrel.4062": {"zh": "接受哨兵保护", "en": "Sentinels accept protection"},
+  "ancrel.4060": {"zh": "宣称土地", "en": "Claiming the land"},
+  "ancrel.4075": {"zh": "幸存者被驱逐", "en": "Survivors displaced"}
+ },
+ "notes": [
+  {"doc": "ancrel.4051", "kind": "review",
+   "zh": "开场：需要《远古遗物》。非AI帝国在星球上清除丛林、毒藻、沼泽或冰川类障碍时（on_blocker_cleared），隐藏的 ancrel.4030 以 5/5/95 在神谕与哨兵之间抽取；哨兵还要求非母星、非格式塔、人口>500，全银河一次。1天后出现此事件，可建立遗址或不予理会。",
+   "en": "Opening: needs Ancient Relics. When a non-AI empire clears a jungle, kelp, swamp or glacier blocker (on_blocker_cleared), hidden ancrel.4030 draws Oracle / Sentinels / nothing at 5/5/95; the Sentinels also need a non-homeworld, non-gestalt planet with more than 500 pops, once per galaxy. This event follows a day later; the site may be created or ignored."},
+  {"doc": "ancrel.4054", "kind": "review",
+   "zh": "四个选择：调查（非排外）或拆解都启动项目并最终到 4058；摧毁（非亲外）启动项目到 4055；放任（非排外）则保留雕像，星球获得哨兵修正与矿藏，故事到此结束。",
+   "en": "Four choices: investigate (non-xenophobe) or salvage start the project leading to 4058; destroy (non-xenophile) leads to 4055; leaving them (non-xenophobe) keeps the statues with a planet modifier and deposit, ending the story."},
+  {"doc": "ancrel.4059", "kind": "review",
+   "zh": "前两个回应只显示回复（is_dialog_only）；接受保护 → 4062 获得哨兵部队；宣称土地 → 4060，可再选择接受或与哨兵开战。",
+   "en": "The first two answers only show replies (is_dialog_only); accepting protection → 4062 (Sentinel armies join us); claiming the land → 4060, where one can still accept or fight."}
+ ],
+ "endings": {
+  "ancrel.4062": {"label": {"zh": "和平：哨兵守护星球", "en": "Peace: the Sentinels guard the planet"}, "note": {"zh": "获得8或9支哨兵部队。", "en": "Gain 8 or 9 Sentinel armies."}, "evidence": "events/ancient_relics_arcsite_events_1.txt:6523-6559"},
+  "ancrel.4061": {"label": {"zh": "复制永存者技术", "en": "The Evermore replicated"}, "note": {"zh": "帝国获得“永存者”修正。", "en": "The empire gains the Evermore modifier."}, "evidence": "events/ancient_relics_arcsite_events_1.txt:6034-6052"},
+  "ancrel.4077": {"label": {"zh": "改造永存者", "en": "The Evermore repurposed"}, "note": {"zh": "按选择得到科研或娱乐修正。", "en": "A science or joy modifier depending on the choice."}, "evidence": "events/ancient_relics_arcsite_events_1.txt:6335-6378"}
+ },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
-  }
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C2 precursor review (Claude Opus 5.5)",
+  "scope": {"zh": "整条故事：4030 分派、遗址三阶段、四种处置、项目结果、战斗与解放（on_action 回调）、地下墓穴两种结果与后续项目、失踪考古学家支线；中英文正文已读。",
+            "en": "Whole story: the 4030 dispatcher, the three site stages, four ways to deal with the statues, project results, battle and liberation (on_action callbacks), the two tomb results and follow-up projects, the missing-archaeologist side branch; both languages read."},
+  "sources": ["events/ancient_relics_arcsite_events_1.txt", "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+              "common/special_projects/00_projects_ancient_relics.txt", "common/on_actions/00_on_actions.txt", "localisation/simp_chinese", "localisation/english"],
+  "uncertain": ["Battle outcomes depend on real ground combat; the bridges show the possible callbacks, not probabilities."],
+  "guide": "public/summaries/the-sentinels.md"
  }
 }

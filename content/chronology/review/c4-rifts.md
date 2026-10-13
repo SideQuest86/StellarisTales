@@ -43,6 +43,75 @@ larger (see Requests R2).
   the single visible tech option of 3060 (`3055.a` switch :975-998, `inline_scripts/astral_rift/3060_tech_option.txt`).
 - Guide: public/summaries/rift-siege-on-paradise.md.
 
+### rift-riftworld — reviewed (absorbs event-astral-rift-30)
+- Root: `astral_rifts:riftworld` (`00_astral_rifts.txt:1`, randomized = no), created only by Riftworld origin
+  astral_planes.2100 (`origin_events_astral_planes.txt:28-40`, with research station). Chapters 1→3→5→10/15 (faction
+  visits, one switch allowed: 10.c/15.c; abandon 10.d/15.d → 16)→20 World Council→25 or failure 30.
+- Correction: on_roll_failed 30 (`astral_rifts_0_events.txt:585-625`, all three options of 20) was missing → 30 had
+  become story event-astral-rift-30. Added bridges 20.a/b/c → 30, exclusive group 25/30, endings 16/25/30/57, nodeLabel
+  10 (scripted loc GetStarlightVanguardName, `common/scripted_loc/09_scripted_loc_astral_planes.txt:210`), notes
+  (origin-only spawn, faction loop, zh/en "fifty years"/"15年" discrepancy in astral_rift.5).
+- 16/25/30 schedule astral_rift.50 after 360 d → 55 → 56 → 57 (Formless foreshadowing); 25/30 fire 40 at once.
+
+### rift-corridors — reviewed (absorbs event-astral-rift-120)
+- 100 → 105/110 → 115; 115.a → 125 (breakthrough) / 120 (on_roll_failed, `astral_rifts_0_events.txt:1346-1350`);
+  115.b → 130. 120 exiles scientist, hidden 135 after 1800 d → 140 return. Bridge 115.a → 120, group 125/120,
+  endings 125/130/140, nodeLabel 140.
+
+### rift-ancient-battlegrounds — reviewed
+- Weight 1, ×0 nomadic, relic lock (r_daedalus_seal). 200 → 205/210 (210 exclusive_trigger option for Evolutionary
+  Predators) → 215 → 220 (relic) / 225. No failure branch. Endings 220/225, notes.
+
+### rift-library — reviewed
+- 300 → 305/310 → 315 → 320 → 325 → 330 (9 Fractal Seeds) / 335 (3). Endings only; draft correct.
+
+### rift-subnautical — reviewed
+- Relic lock (r_celestial_tear). 500 → 505 → 510 / 515 (non-aquatic) / 516 (aquatic) → 520 → 525 (a/b/c → 535/536/537)
+  or 530 → 535. All endings give the relic. Group 515/516, endings, notes.
+
+### rift-tower — reviewed (family; absorbs event-astral-rift-695)
+- Fragment now defines family `rift-tower` (start + member `astral_rifts:tower`, member hidden router astral_rift.695)
+  so the on_leader_death router no longer opens a duplicate story. V3 bridge 691.b → 696 confirmed
+  (`astral_rifts_0_events.txt:2754-2773` sets recruited_tower_rift_leader + leader flag; 695 :2776-2796 needs both and
+  non-gestalt; on_action `00_on_actions.txt:2394`); 691.a gets no epilogue. 615.a → hidden 690 (+360 d) → 691.
+  Endings 620/625/696, nodeLabels 691/696, notes.
+
+### rift-whiteout — reviewed
+- 700 → 705/710 → 715 → 720/725 → 730 (single ending, A Gift 3600 d). Draft correct.
+
+### rift-advisor — reviewed
+- 800 → 805/810; 805 → 815/810; 810 → 815/820; 815 exile + hidden 835 (+1800 d) → 840 → 845; 820 → 825/830 → 845.
+  845 "VIR" (is_advisor_event, toggles tutorial level) is the shared coda. Ending 845, nodeLabel 840, note 815.
+
+### rift-vortex — reviewed (absorbs event-astral-rift-915)
+- Relic lock (r_ever_spinning_top). 900.a → 905; 900.b → 910 / failure 915 (`astral_rifts_0_events.txt:3517-3521`,
+  scientist killed). → 920 → 925 → 930/935 → 940 (relic). Bridge 900.b → 915, group 910/915, endings 915/940.
+
+### rift-lonely-planet — reviewed
+- 1100 → 1105 → 1110 (bio-ship / evopred variants) → 1125, or 1115 → 1120. Endings 1120/1125. Draft correct.
+
+### rift-microverse — reviewed (family)
+- Weight 0.5, ×0 if astral_scar_instability_found; also spawned by astral_planes.6008 `split_astral_scar = { ID =
+  microverse }` (`astral_planes_events.txt:4127-4135`). Made a family (member: rift card) so the reviewed cross-link
+  from 6008 stays a link (an extra edge into a root otherwise un-roots it and absorbs it). 1200 → 1205 → 1210 → 1215 /
+  1220 → 1225 → 1235 / 1230. Endings 1215/1230/1235.
+
+### event-astral-planes-6005 — reviewed
+- Astral Scar Instability: on_survey_planet (`00_on_actions.txt:1167`) → hidden 6005 (80/20, conditions
+  `astral_planes_events.txt:4005-4052`) → project ASTRAL_SCAR_INSTABILITY (60 d, limit 1080) → 6006 → 6007 / 6008, or
+  on_fail 6009. Bridge 6008 → `astral_rifts:microverse` (cross-story link), group 6006/6009, endings 6007/6009, nodeLabel
+  6008 (duplicate title "Cosmic Wound").
+
+### rift-fluid — reviewed (absorbs event-astral-rift-1330)
+- Relic lock (r_plasmic_core). 1300 → 1305 (rig snag) / 1310; 1305 → 1310 / 1311; → 1315/1316 → 1320 or 1325 / failure
+  1330 (`astral_rifts_1_events.txt:1157-1161, 1270-1274`; scientist killed + ship destroyed). Bridges 1315.b/1316.b →
+  1330, groups, endings, note on rig flag set in 1300 immediate.
+
+### rift-garden — reviewed (absorbs event-astral-rift-1405, -1415, -1430, -1435)
+- Nine on_roll_failed bridges (1400.b→1405, 1405.a→1415, 1410.b→1430, 1425.c/1430.b/1435.b→1445, 1440.b/1455.a/
+  1456.a→1435), exclusive groups, endings 1415/1420/1450/1457/1465, nodeLabels for the three "A Creature" docs, zh title
+  mistranslation note on 1445 ("行星物质"). 1445 → +1800 d 1465 (plantoid scientist returns).
+
 ## Requests
 
 (see bottom of file; maintained as work proceeds)

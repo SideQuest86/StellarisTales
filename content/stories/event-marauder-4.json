@@ -1,0 +1,42 @@
+{
+ "id": "event-marauder-4",
+ "nodeLabels": {
+  "marauder.5": {
+   "zh": "氏族覆灭（全体通告）",
+   "en": "Clan destroyed (to all)"
+  },
+  "marauder.10": {
+   "zh": "难民抵达",
+   "en": "Refugees arrive"
+  },
+  "marauder.76": {
+   "zh": "佣兵雇主：佣兵消失",
+   "en": "Mercenary hirers: mercenaries vanish"
+  },
+  "nomads.700": {
+   "zh": "可汗后裔：寻求复仇",
+   "en": "Heirs of the Khan: revenge"
+  },
+  "marauder.6": {
+   "zh": "击毁者：佣兵复仇",
+   "en": "Destroyer: mercenary vengeance"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/marauder_events.txt:330-1065",
+   "events/marauder_events.txt:3596-3676",
+   "events/nomads_events_1.txt:6803",
+   "common/on_actions/00_on_actions.txt:1409"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-marauder-4.md"
+ }
+}

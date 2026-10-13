@@ -1,0 +1,60 @@
+{
+ "id": "event-enclave-370",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "enclave.375",
+    "enclave.380",
+    "observer.90"
+   ],
+   "label": {
+    "zh": "按视角收到一种通知",
+    "en": "One notice per viewpoint"
+   },
+   "note": {
+    "zh": "空间站被摧毁时（on_ship_destroyed_victim，00_on_actions.txt:1424）：摧毁者、其他有通讯的帝国、观察者模式各收到一种。",
+    "en": "When the station is destroyed (on_ship_destroyed_victim, 00_on_actions.txt:1424): the destroyer, other empires in contact and observers each get one."
+   }
+  }
+ ],
+ "endings": {
+  "enclave.375": {
+   "label": {
+    "zh": "我们摧毁了打捞者城邦",
+    "en": "We destroyed the Salvager Enclave"
+   },
+   "note": {
+    "zh": "其服务就此终结。",
+    "en": "Its services end."
+   },
+   "evidence": "events/overlord_enclaves_events.txt enclave.370"
+  },
+  "enclave.380": {
+   "label": {
+    "zh": "打捞者城邦被他国摧毁",
+    "en": "Salvager Enclave destroyed by others"
+   },
+   "note": {
+    "zh": "旁观者通知。",
+    "en": "Bystander notice."
+   },
+   "evidence": "events/overlord_enclaves_events.txt enclave.370"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "events/observer_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-enclave-370.md"
+ }
+}

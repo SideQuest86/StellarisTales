@@ -1,0 +1,25 @@
+{
+ "id": "event-enclave-27",
+ "notes": [
+  {
+   "doc": "enclave.29",
+   "kind": "review",
+   "zh": "审阅注：佣兵城邦空间站卷入战斗时（on_entering_battle，00_on_actions.txt:1378，enclave.27），城邦召回已出租舰队；若租用方不是攻击者，1天后向其发出本通知并退款（overlord_enclaves_events.txt:352-397）。灵督城邦使用另一套文本。",
+   "en": "Review note: when a mercenary enclave station enters battle (on_entering_battle, 00_on_actions.txt:1378, enclave.27) the enclave recalls its leased fleet; if the client is not the attacker it gets this notice with a refund one day later (overlord_enclaves_events.txt:352-397). Mindwarden enclaves use their own wording."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-enclave-27.md"
+ }
+}

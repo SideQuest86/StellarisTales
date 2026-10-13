@@ -71,6 +71,7 @@ export function evaluate(dnf, ctx) {
 export function pathFlags(steps, docOf) {
   const flags = new Set(), cleared = new Set();
   for (const step of steps) {
+    for (const f of step.sets || []) { flags.add(f); cleared.delete(f); } // set on the way (routers, project hooks)
     const doc = docOf(step);
     if (!doc) continue;
     for (const f of doc.sets || []) { flags.add(f); cleared.delete(f); }

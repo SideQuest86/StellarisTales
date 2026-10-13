@@ -1,0 +1,19 @@
+{
+ "id": "event-shroud-3520",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "触发、前提与奖励已核对。",
+   "en": "Trigger, prerequisite and reward were checked."
+  },
+  "sources": [
+   "events/shroud_events.txt:8305-8335",
+   "common/on_actions/00_on_actions.txt:5743-5747 (on_active_accord_unlocked)",
+   "common/special_projects/04_projects_shroud.txt:572-585 (SHROUD_SHAPING_PROJECT)",
+   "events/shroud_events.txt:8162-8180 (3500)"
+  ],
+  "guide": "public/summaries/event-shroud-3520.md"
+ }
+}

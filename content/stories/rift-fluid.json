@@ -1,0 +1,73 @@
+{
+ "id": "rift-fluid",
+ "category": "rifts",
+ "bridges": [
+  {
+   "from": "astral_rift.1315", "choice": "astral_rift.1315.b", "to": "astral_rift.1330", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_1_events.txt:1157-1161 set_next_astral_rift_event { id = astral_rift.1325 on_roll_failed = astral_rift.1330 fail_probability = @default_failure_probability }"
+  },
+  {
+   "from": "astral_rift.1316", "choice": "astral_rift.1316.b", "to": "astral_rift.1330", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_1_events.txt:1270-1274 on_roll_failed = astral_rift.1330"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": ["astral_rift.1325", "astral_rift.1330"],
+   "label": {"zh": "泵入气体：突破或失败", "en": "Pumping gases: breakthrough or failure"},
+   "note": {"zh": "花 100 奇异气体对付团块后，本阶段要么突破（1325，遗珍“血浆核心”），要么在某次掷骰时以每次 1.5% 的基础概率失败（1330，科学家与科研船被消化）。", "en": "After spending 100 exotic gases against the blob the stage either breaks through (1325, relic Plasmic Core) or fails on a roll, base 1.5% per roll (1330, scientist and science ship digested)."}
+  },
+  {
+   "kind": "exclusive",
+   "members": ["astral_rift.1310", "astral_rift.1311"],
+   "label": {"zh": "舱室：取样设备的去留", "en": "The Chamber: keeping the rig or not"},
+   "note": {"zh": "两篇正文都叫“舱室”：1310 是切断拖网或未遇阻时的版本，1311 是用奇异气体救回拖网的版本（额外获得奇异气体或稀有晶体）。", "en": "Both are titled “The Chamber”: 1310 follows cutting the rig (or never getting stuck), 1311 follows saving the rig with exotic gases (extra exotic gases or rare crystals)."}
+  }
+ ],
+ "endings": {
+  "astral_rift.1320": {
+   "label": {"zh": "提取：带回生物样本", "en": "Extraction: biological samples"},
+   "note": {"zh": "起锚撤离；获得大量星界丝缕与“裂隙流体样本”修正（保留取样拖网时 10 年，否则 5 年）。探索结束。", "en": "Pull anchor and escape; a large astral thread reward and the Rift Fluid Samples modifier (10 years if the rig was kept, otherwise 5). The exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:1306-1363"
+  },
+  "astral_rift.1325": {
+   "label": {"zh": "溶解：血浆核心", "en": "Dissolution: Plasmic Core"},
+   "note": {"zh": "气体混合物溶解了团块的膜，只剩核心；获得遗珍“血浆核心”与大量星界丝缕，探索结束。", "en": "The gas mixture dissolves the blob's membrane, leaving its core; the relic Plasmic Core and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:1365-1395"
+  },
+  "astral_rift.1330": {
+   "label": {"zh": "被溶解：科研船损失", "en": "Dissolved: ship lost"},
+   "note": {"zh": "失败分支：科学家死亡、科研船被摧毁；从残骸上的生物质获得 10 年“裂隙流体样本”与大量星界丝缕，探索结束。", "en": "Failure branch: the scientist dies and the science ship is destroyed; the biomass on the wreck gives 10 years of Rift Fluid Samples and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:1397-1431 (kill_leader, destroy_fleet, finish_astral_rift)"
+  }
+ },
+ "notes": [
+  {
+   "doc": "astral_rifts:fluid",
+   "kind": "review",
+   "zh": "抽取权重 1。它可能奖励遗珍，因此任一帝国正在探索时其他帝国抽到它的权重为 0；探索者未得到遗珍时解除锁定。",
+   "en": "Draw weight 1. Because it can award a relic, its weight is 0 for others while any empire explores it; the lock is lifted if the explorer did not obtain the relic."
+  },
+  {
+   "doc": "astral_rift.1300",
+   "kind": "review",
+   "zh": "进入 1300 时脚本就设置了“取样拖网可用”标记，只有在 1305 选择切断拖网才会移除；因此选择“放心地继续前进”时，后文仍按保留拖网处理。",
+   "en": "Entering 1300 already sets the “sample rig available” flag; only cutting the rig in 1305 removes it, so after “Proceed forward at ease” later texts still treat the rig as kept."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 1300–1330 全部事件，补上 1315.b/1316.b 的失败分支 1330（原为独立故事）。",
+   "en": "Checked the rift definition and every event 1300–1330; added the failure branch 1330 of 1315.b/1316.b (formerly a separate story)."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-fluid.md"
+ }
+}

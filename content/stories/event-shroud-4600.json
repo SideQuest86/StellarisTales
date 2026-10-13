@@ -1,0 +1,66 @@
+{
+ "id": "event-shroud-4600",
+ "titleFrom": "event_chains:shroud_cradle_covenant_chain",
+ "nodeLabels": {
+  "shroud.4600": {
+   "zh": "魂灵之月窠的契约",
+   "en": "Cradle of Souls covenant"
+  },
+  "shroud.4605": {
+   "zh": "签订契约",
+   "en": "Covenant formed"
+  },
+  "shroud.4610": {
+   "zh": "一年后确认",
+   "en": "Confirmation after a year"
+  },
+  "utopia.2681": {
+   "zh": "选择天选者",
+   "en": "Choose the Chosen"
+  },
+  "special_projects:SHROUD_SHAPING_PROJECT": {
+   "zh": "自寻出路",
+   "en": "Forge our own path"
+  }
+ },
+ "notes": [
+  {
+   "doc": "shroud.4600",
+   "kind": "review",
+   "zh": "这是魂灵之月窠的立约提案；三个选项互斥：立约 / 拒绝（永不再提）/ 自寻出路（天选之国不可选）。",
+   "en": "Covenant offer of the Cradle of Souls; the three options are exclusive: covenant / refuse (never offered again) / forge our own path (not for a chosen empire)."
+  },
+  {
+   "doc": "shroud.4610",
+   "kind": "review",
+   "zh": "立约360天后发生；若已背叛该赞助者或已与轮回之终末立约则不会出现。",
+   "en": "360 days after the covenant; does not fire after betraying this patron or after a covenant with the End of the Cycle."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "魂灵之月窠立约提案、立约、一年后确认/弃约、天选者与“自寻出路”分支均已核对。共享的 utopia.2681/2682 与塑造虚境项目在五个契约故事中各自出现。",
+   "en": "The Cradle of Souls offer, covenant, confirmation/renunciation a year later, the Chosen and \"forge our own path\" branches were checked. The shared utopia.2681/2682 and the Shaping the Shroud project appear in each of the five covenant stories."
+  },
+  "sources": [
+   "events/shroud_events.txt:11193-11201 (shroud.4600)",
+   "events/shroud_events.txt:11203-11219 (shroud.4605/4610)",
+   "common/patrons/patron_types.txt:317 (covenant_event)",
+   "common/inline_scripts/shroud/patron_covenant_proposition_event.txt",
+   "common/inline_scripts/shroud/patron_covenant_confirmation_event.txt",
+   "common/inline_scripts/shroud/patron_covenant_formed_event.txt",
+   "common/inline_scripts/shroud/accept_covenant.txt",
+   "common/scripted_variables/09_scripted_variables_shroud.txt:163 (@covenant_confirmation_time_days = 360)",
+   "events/utopia_on_action_events.txt:3320-3348 (utopia.2679), 3435 (2681), 3593 (2682)",
+   "common/special_projects/04_projects_shroud.txt:572-585 (SHROUD_SHAPING_PROJECT)",
+   "events/shroud_events.txt:8162-8305 (3500/3510)"
+  ],
+  "guide": "public/summaries/event-shroud-4600.md",
+  "uncertain": [
+   "covenant_event is launched by the engine from the patron definition (patron_types.txt comment: patron covenant offer); the exact UI/attunement threshold is not in script."
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "id": "rift-rockworms",
+ "category": "rifts",
+ "bridges": [
+  {"from": "astral_rift.1815", "choice": "astral_rift.1815.a", "to": "astral_rift.1830", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_1_events.txt:4482-4486 set_next_astral_rift_event { id = astral_rift.1835 on_roll_failed = astral_rift.1830 fail_probability = @default_failure_probability }"},
+  {"from": "astral_rift.1816", "choice": "astral_rift.1816.a", "to": "astral_rift.1830", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_1_events.txt:4577-4581 on_roll_failed = astral_rift.1830"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.1835", "astral_rift.1830"],
+   "label": {"zh": "炸开蠕虫：突破或被消化", "en": "Blasting out: breakthrough or digested"},
+   "note": {"zh": "花 100 奇异气体安放炸药后，本阶段要么炸开蠕虫脱身（1835），要么在某次掷骰时以每次 1.5% 的基础概率失败，探球被消化（1830）。", "en": "After spending 100 exotic gases on charges the stage either blasts the worm open (1835) or fails on a roll, base 1.5% per roll, and the Sphere is digested (1830)."}},
+  {"kind": "exclusive", "members": ["astral_rift.1815", "astral_rift.1816"],
+   "label": {"zh": "在哪里被吞", "en": "Where the worm strikes"},
+   "note": {"zh": "两篇都叫“生吞”：1815 发生在采集天空微生物时，1816 发生在取卵或捕捉幼虫时。", "en": "Both are titled “Swallowed”: 1815 happens while sampling the sky plankton, 1816 while harvesting eggs or capturing larvae."}}
+ ],
+ "endings": {
+  "astral_rift.1825": {
+   "label": {"zh": "脱出：靠锚链逃生", "en": "Pulled Free"},
+   "note": {"zh": "拉动应急锚链，从蠕虫口中被拖出；获得大量星界丝缕，探索结束。", "en": "The emergency anchor drags the Sphere out of the worm's gullet; a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:4702-4720"},
+  "astral_rift.1835": {
+   "label": {"zh": "开膛破肚：岩蠹巢穴", "en": "Rupture: Rockworm Hive"},
+   "note": {"zh": "炸开蠕虫，带回卵簇或幼虫；解锁一个“岩蠹巢穴”殖民地决议并获得大量星界丝缕，探索结束。", "en": "The worm is blasted open and eggs or larvae are brought back; one Rockworm Hive colony decision is unlocked and a large astral thread reward granted; the exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:4783-4832"},
+  "astral_rift.1890": {
+   "label": {"zh": "兽口脱险：部分被消化", "en": "From the Belly of the Beast"},
+   "note": {"zh": "失败分支 1830 中科学家死亡、克隆体被放逐；360 天后科学家以毒素类新身体和“部分被消化”特质归来。", "en": "In failure branch 1830 the scientist dies and a clone is exiled; 360 days later the scientist returns in a toxoid body with the Partially Digested trait."},
+   "evidence": "events/astral_rifts_1_events.txt:4733-4780 (kill_leader, exiled clone, country_event 1890 days=360); 4837-4881"}
+ },
+ "notes": [
+  {"doc": "astral_rift.1820", "kind": "review",
+   "zh": "“赶紧返航”（1820.b）直接结束探索，获得凝聚力、生物学研究选项与少量星界丝缕（“演化猎手”起源换成专属选项并另得岩石类 DNA）；“活捉一些标本”则进入 1816。",
+   "en": "“We've pushed our luck far enough.” (1820.b) ends the exploration at once with unity, a biology research option and a few astral threads (Evolutionary Predators get an exclusive version with lithoid DNA); “Capture a live specimen” leads to 1816."},
+  {"doc": "astral_rift.1890", "kind": "review",
+   "zh": "原文差异：英文说科学家在岩蠹腹中待了“一年”（脚本延时 360 天），中文作“许多年”。",
+   "en": "Localisation difference: English says the scientist spent “a year” in the rockworm (the script delay is 360 days); the Chinese says “many years”."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 1800–1890 全部事件，补上 1815.a/1816.a 的失败分支 1830（原为独立故事，含 360 天后的 1890）。",
+   "en": "Checked the rift definition and every event 1800–1890; added the failure branch 1830 of 1815.a/1816.a (formerly a separate story, with 1890 after 360 days)."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-rockworms.md"
+ }
+}

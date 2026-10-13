@@ -1,0 +1,52 @@
+{
+ "id": "anomaly-distar-rum-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.90",
+    "distar.91"
+   ],
+   "label": {
+    "zh": "按是否机械帝国",
+    "en": "By machine empire or not"
+   },
+   "note": {
+    "zh": "各基础权重1：机械帝国时 distar.90 因子0，非机械时 distar.91 因子0（95_anomaly_categories_distant_stars.txt:338-355）。不是50%随机。",
+    "en": "Base weight 1 each: distar.90 factor 0 for machine empires, distar.91 factor 0 otherwise (95_anomaly_categories_distant_stars.txt:338-355). Not a 50% roll."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.92",
+    "distar.93"
+   ],
+   "label": {
+    "zh": "对方是否敌视",
+    "en": "Recipient hostile or not"
+   },
+   "note": {
+    "zh": "两者都在30天后调用，触发条件互斥。",
+    "en": "Both are scheduled after 30 days; their triggers are exclusive."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:303-356",
+   "events/distant_stars_events_1.txt:3699 (distar.90)",
+   "events/distant_stars_events_1.txt:3726 (distar.91)",
+   "events/distant_stars_events_1.txt:3771/3806 (distar.92/93)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-rum-cat.md"
+ }
+}

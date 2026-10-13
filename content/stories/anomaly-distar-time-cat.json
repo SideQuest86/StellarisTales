@@ -1,0 +1,44 @@
+{
+ "id": "anomaly-distar-time-cat",
+ "endings": {
+  "distar.67": {
+   "label": {
+    "zh": "警告导致了毁灭",
+    "en": "The warning caused the crash"
+   },
+   "note": {
+    "zh": "科塔罗号撞上彗星，因果闭环。",
+    "en": "The Kohtalo hits a comet; the loop closes."
+   },
+   "evidence": "events/distant_stars_events_1.txt:2716"
+  },
+  "distar.68": {
+   "label": {
+    "zh": "无法避免的毁灭",
+    "en": "An unavoidable crash"
+   },
+   "note": {
+    "zh": "未警告，飞船仍撞上彗星。",
+    "en": "Not warned, the ship still hits the comet."
+   },
+   "evidence": "events/distant_stars_events_1.txt:2762"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3a-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/95_anomaly_categories_distant_stars.txt:175-203",
+   "events/distant_stars_events_1.txt:2409 (distar.60)",
+   "events/distant_stars_events_1.txt:2454-2716 (distar.61-67)",
+   "events/distant_stars_events_1.txt:2762 (distar.68)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-distar-time-cat.md"
+ }
+}

@@ -1,0 +1,791 @@
+{
+ "id": "origin_unplugged",
+ "opening": {
+  "targets": [
+   "unplugged.100",
+   "unplugged.3205",
+   "unplugged.3250",
+   "unplugged.3255",
+   "unplugged.4005",
+   "unplugged.2495"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "unplugged.100": {
+    "zh": "开局：击毁围攻母星的机械舰队",
+    "en": "Game start: destroy the machine fleet over the homeworld"
+   },
+   "unplugged.3205": {
+    "zh": "与一个畏惧本帝国的文明建立通讯时（仅一次）",
+    "en": "On establishing communications with an empire that fears you (once)"
+   },
+   "unplugged.3250": {
+    "zh": "首次与非同化者的机械帝国通讯",
+    "en": "First communications with a machine empire that is not an assimilator"
+   },
+   "unplugged.3255": {
+    "zh": "首次与同化者机械帝国通讯",
+    "en": "First communications with a Driven Assimilator"
+   },
+   "unplugged.4005": {
+    "zh": "尚无派系时的年度检查（3/5机会，20天后）",
+    "en": "Yearly check while no factions exist (3 in 5 chance, 20 days later)"
+   },
+   "unplugged.2495": {
+    "zh": "舰队首次进入有作品哨兵驻守的机械核心星系",
+    "en": "A fleet first enters the machine core system guarded by the Opus Sentinel"
+   }
+  },
+  "evidence": "common/on_actions/00_on_actions.txt:66 on_game_start_country -> hidden unplugged.199 (events/unplugged_events.txt:25-103) spawns the hostile machine fleet over the capital; common/on_actions/00_on_actions.txt:1688 on_fleet_destroyed_perp -> 100 (events/unplugged_events.txt:249-318). common/on_actions/00_on_actions.txt:2275-2276 on_post_communications_established -> hidden 3200 / 3249 (events/unplugged_events.txt:3283-3394) -> 3205 / 3250 / 3255. common/on_actions/00_on_actions.txt:423 on_yearly_pulse_country -> hidden 4000 (events/unplugged_events.txt:4002-4018) -> unplugged_spawn_factions_check (common/scripted_effects/unplugged_effects.txt:626-635, 3/5 -> 4005 after 20 days). common/on_actions/00_on_actions.txt:1072 on_entering_system_fleet -> 2495 (events/unplugged_events.txt:2557-2601). common/on_actions/00_on_actions.txt:1174 on_survey_planet -> hidden 198 (events/unplugged_events.txt:106-217): non-Unplugged surveyors get the anomaly categories MACHINE_LEGACY_*_CAT."
+ },
+ "bridges": [
+  {
+   "from": "unplugged.2000",
+   "to": "anomalies:MACHINE_LEGACY_MAKERS_UNPLUGGED_CAT",
+   "conditional": true,
+   "label": {
+    "zh": "勘察标记的工厂世界（已勘察则立即出现）",
+    "en": "Survey the marked Makers world (at once if already surveyed)"
+   },
+   "evidence": "events/unplugged_events.txt:338-369 2000 adds the anomaly at once if the planet is surveyed, otherwise a POI; common/on_actions/00_on_actions.txt:1174 on_survey_planet -> hidden 198 (events/unplugged_events.txt:134-159) adds MACHINE_LEGACY_MAKERS_UNPLUGGED_CAT for an Unplugged surveyor."
+  },
+  {
+   "from": "unplugged.2030",
+   "to": "unplugged.2036",
+   "conditional": true,
+   "label": {
+    "zh": "本帝国击毁该舰队",
+    "en": "Your empire destroys the fleet"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1598 on_fleet_destroyed_victim -> hidden 2035 (events/unplugged_events.txt:707-735): fleet machine_legacy_makers_fleet destroyed -> 2036 for the destroyer if it is this Unplugged empire (events/unplugged_events.txt:738-783)."
+  },
+  {
+   "from": "unplugged.2030",
+   "to": "unplugged.2037",
+   "conditional": true,
+   "label": {
+    "zh": "其他帝国击毁该舰队",
+    "en": "Another empire destroys the fleet"
+   },
+   "evidence": "events/unplugged_events.txt:719-733 2035 sends 2037 to every other Unplugged empire (events/unplugged_events.txt:786-791)."
+  },
+  {
+   "from": "unplugged.2036",
+   "to": "special_projects:MACHINE_LEGACY_TAKEN_UNPLUGGED",
+   "conditional": true,
+   "label": {
+    "zh": "勘察标记的被同化者世界（科研船，90天）",
+    "en": "Survey the marked world of the Taken (science ship, 90 days)"
+   },
+   "evidence": "events/unplugged_events.txt:760-769 2036 creates unplugged_machine_legacy_taken_poi; hidden 198 (events/unplugged_events.txt:160-185) enables MACHINE_LEGACY_TAKEN_UNPLUGGED (common/special_projects/04_projects_unplugged.txt:1-18) for an Unplugged surveyor."
+  },
+  {
+   "from": "unplugged.2037",
+   "to": "special_projects:MACHINE_LEGACY_TAKEN_UNPLUGGED",
+   "conditional": true,
+   "label": {
+    "zh": "勘察标记的被同化者世界（科研船，90天）",
+    "en": "Survey the marked world of the Taken (science ship, 90 days)"
+   },
+   "evidence": "events/unplugged_events.txt:786-791 2037 inherits 2036's POI effect; events/unplugged_events.txt:160-185."
+  },
+  {
+   "from": "unplugged.2038",
+   "to": "special_projects:MACHINE_LEGACY_TAKEN_UNPLUGGED",
+   "conditional": true,
+   "label": {
+    "zh": "勘察标记的被同化者世界（科研船，90天）",
+    "en": "Survey the marked world of the Taken (science ship, 90 days)"
+   },
+   "evidence": "events/unplugged_events.txt:818-827 2038 creates the same POI; events/unplugged_events.txt:160-185."
+  },
+  {
+   "from": "unplugged.2130",
+   "to": "special_projects:MACHINE_LEGACY_CREATORS_UNPLUGGED",
+   "conditional": true,
+   "label": {
+    "zh": "勘察标记的创造者世界（科研船，90天）",
+    "en": "Survey the marked world of the Creators (science ship, 90 days)"
+   },
+   "evidence": "events/unplugged_events.txt:1172-1181 2130 creates unplugged_machine_legacy_creators_poi; hidden 198 (events/unplugged_events.txt:186-211) enables MACHINE_LEGACY_CREATORS_UNPLUGGED (common/special_projects/04_projects_unplugged.txt:20-37)."
+  },
+  {
+   "from": "special_projects:MACHINE_LEGACY_CREATORS_UNPLUGGED",
+   "to": "unplugged.2205",
+   "conditional": true,
+   "label": {
+    "zh": "首次进入创造者星系360天后：数据金库的信号",
+    "en": "360 days after first entering the Creators system: the data vault signal"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:946 on_entering_system_first_time -> hidden 2204 (events/unplugged_events.txt:1358-1385) schedules 2205 after 360 days (events/unplugged_events.txt:1388-1425)."
+  },
+  {
+   "from": "unplugged.2205",
+   "to": "unplugged.2300",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记的星系",
+    "en": "A fleet enters the marked system"
+   },
+   "evidence": "events/unplugged_events.txt:1402-1411 2205 creates unplugged_machine_legacy_unplugged_poi; common/on_actions/00_on_actions.txt:1071 on_entering_system_fleet -> 2300 (events/unplugged_events.txt:1499-1552) requires that POI."
+  },
+  {
+   "from": "unplugged.2305",
+   "to": "unplugged.2390",
+   "conditional": true,
+   "label": {
+    "zh": "击毁拦截舰队",
+    "en": "Destroy the intercepting fleet"
+   },
+   "evidence": "events/unplugged_events.txt:1579-1589 2305 spawns unplugged_homeworld_intercept_fleet; common/on_actions/00_on_actions.txt:1689 on_fleet_destroyed_perp -> 2390 (events/unplugged_events.txt:1873-1913)."
+  },
+  {
+   "from": "unplugged.2390",
+   "to": "unplugged.2401",
+   "conditional": true,
+   "label": {
+    "zh": "在机械核心击毁作品哨兵",
+    "en": "Destroy the Opus Sentinel at the machine core"
+   },
+   "evidence": "events/unplugged_events.txt:1889-1896 2390 marks the core; common/on_actions/00_on_actions.txt:1690 on_fleet_destroyed_perp -> hidden 2400 (events/unplugged_events.txt:1918-1954) -> 2401 if this Unplugged empire destroyed it."
+  },
+  {
+   "from": "unplugged.2390",
+   "to": "unplugged.2402",
+   "conditional": true,
+   "label": {
+    "zh": "另一帝国击毁了作品哨兵",
+    "en": "Another empire destroys the Opus Sentinel"
+   },
+   "evidence": "events/unplugged_events.txt:1944-1952 2400 sends 2402 to every other Unplugged empire (events/unplugged_events.txt:1980-2000)."
+  },
+  {
+   "from": "special_projects:UNPLUGGED_MACHINE_ARCHIVE",
+   "to": "unplugged.2425",
+   "conditional": true,
+   "label": {
+    "zh": "项目进度25%：工厂档案（需完成工厂遗址）",
+    "en": "At 25%: the Makers archive (Makers site completed)"
+   },
+   "evidence": "common/special_projects/04_projects_unplugged.txt:63-99 on_progress_25 -> 2425 (events/unplugged_events.txt:2277-2294, requires machine_legacy_makers_arc_site_complete)."
+  },
+  {
+   "from": "anomalies:MACHINE_LEGACY_MAKERS_UNPLUGGED_CAT",
+   "to": "anomalies:MACHINE_LEGACY_MAKERS_CAT",
+   "conditional": true,
+   "label": {
+    "zh": "（其他帝国视角）同一工厂世界被他国勘察时",
+    "en": "(Other empires' view) when another empire surveys the same Makers world"
+   },
+   "evidence": "events/unplugged_events.txt:106-217 hidden 198 (on_survey_planet, common/on_actions/00_on_actions.txt:1174): a surveyor without this origin gets the anomaly category MACHINE_LEGACY_MAKERS_CAT on the same planet instead."
+  },
+  {
+   "from": "special_projects:MACHINE_LEGACY_TAKEN_UNPLUGGED",
+   "to": "anomalies:MACHINE_LEGACY_TAKEN_CAT",
+   "conditional": true,
+   "label": {
+    "zh": "（其他帝国视角）同一世界被他国勘察时",
+    "en": "(Other empires' view) when another empire surveys the same world"
+   },
+   "evidence": "events/unplugged_events.txt:106-217 hidden 198 (on_survey_planet, common/on_actions/00_on_actions.txt:1174): a surveyor without this origin gets the anomaly category MACHINE_LEGACY_TAKEN_CAT on the same planet instead."
+  },
+  {
+   "from": "special_projects:MACHINE_LEGACY_CREATORS_UNPLUGGED",
+   "to": "anomalies:MACHINE_LEGACY_CREATORS_CAT",
+   "conditional": true,
+   "label": {
+    "zh": "（其他帝国视角）同一世界被他国勘察时",
+    "en": "(Other empires' view) when another empire surveys the same world"
+   },
+   "evidence": "events/unplugged_events.txt:106-217 hidden 198 (on_survey_planet, common/on_actions/00_on_actions.txt:1174): a surveyor without this origin gets the anomaly category MACHINE_LEGACY_CREATORS_CAT on the same planet instead."
+  },
+  {
+   "from": "unplugged.2390",
+   "to": "unplugged.2403",
+   "conditional": true,
+   "label": {
+    "zh": "（其他帝国视角）非本起源的帝国击毁作品哨兵",
+    "en": "(Other empires' view) an empire without this origin destroys the Opus Sentinel"
+   },
+   "evidence": "events/unplugged_events.txt:1939-1943 hidden 2400 sends 2403 to a destroyer without this origin (events/unplugged_events.txt:2002-2023)."
+  }
+ ],
+ "suppress": [
+  {
+   "from": "situations:situation_unplugged_identity",
+   "to": "unplugged.3106",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "situations:situation_unplugged_identity",
+   "to": "unplugged.3107",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "situations:situation_unplugged_identity",
+   "to": "unplugged.3111",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "situations:situation_unplugged_identity",
+   "to": "unplugged.3112",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "situations:situation_unplugged_identity",
+   "to": "unplugged.3116",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "situations:situation_unplugged_identity",
+   "to": "unplugged.3117",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3105",
+   "to": "unplugged.3107",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3105",
+   "to": "unplugged.3110",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3105",
+   "to": "unplugged.3111",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3105",
+   "to": "unplugged.3112",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3105",
+   "to": "unplugged.3115",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3105",
+   "to": "unplugged.3116",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3105",
+   "to": "unplugged.3117",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3106",
+   "to": "unplugged.3105",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3106",
+   "to": "unplugged.3110",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3106",
+   "to": "unplugged.3111",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3106",
+   "to": "unplugged.3112",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3106",
+   "to": "unplugged.3115",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3106",
+   "to": "unplugged.3116",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3106",
+   "to": "unplugged.3117",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3107",
+   "to": "unplugged.3105",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3107",
+   "to": "unplugged.3106",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3107",
+   "to": "unplugged.3110",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3107",
+   "to": "unplugged.3111",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3107",
+   "to": "unplugged.3112",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3107",
+   "to": "unplugged.3115",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3107",
+   "to": "unplugged.3116",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3107",
+   "to": "unplugged.3117",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.3105",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.3106",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.3107",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.3112",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.3115",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.3116",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.3117",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.3105",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.3106",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.3107",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.3110",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.3115",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.3116",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.3117",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.3105",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.3106",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.3107",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.3110",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.3111",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.3115",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.3116",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.3117",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3115",
+   "to": "unplugged.3105",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3115",
+   "to": "unplugged.3106",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3115",
+   "to": "unplugged.3107",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3115",
+   "to": "unplugged.3110",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3115",
+   "to": "unplugged.3111",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3115",
+   "to": "unplugged.3112",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3115",
+   "to": "unplugged.3117",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3116",
+   "to": "unplugged.3105",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3116",
+   "to": "unplugged.3106",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3116",
+   "to": "unplugged.3107",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3116",
+   "to": "unplugged.3110",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3116",
+   "to": "unplugged.3111",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3116",
+   "to": "unplugged.3112",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3116",
+   "to": "unplugged.3115",
+   "evidence": "Reading simplification of common/scripted_effects/unplugged_effects.txt:603-609 + events/unplugged_events.txt:3729-3854: every 1800-1920 days hidden 3901 picks the next step of the track matching the current stage (decyberize 3105/3106/3107 by remaining benefits, status quo 3115/3116/3117 by count, cyberize 3110/3111/3112 by remaining negatives). Switching stage between checks is possible and is described in a note and the guide instead of drawing all nine cross-links from every step."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.5001",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.5002",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.5003",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3110",
+   "to": "unplugged.5004",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.5001",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.5002",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.5003",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3111",
+   "to": "unplugged.5004",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.5001",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.5002",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.5003",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  },
+  {
+   "from": "unplugged.3112",
+   "to": "unplugged.5004",
+   "evidence": "common/scripted_effects/unplugged_effects.txt:637-790 unplugged_decyberization_random_event_effect only runs in the branches that swap the positive cybernetic traits (benefits decrease); cyberization steps 3110-3112 only lower the negatives (events/unplugged_events.txt:3067-3073, 3112-3118, 3157-3164). False continuation."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "unplugged.2021",
+    "unplugged.2022"
+   ],
+   "label": {
+    "zh": "工厂遗址第三阶段（二选一）",
+    "en": "Makers site, stage 3 (one of two)"
+   },
+   "note": {
+    "zh": "由第二阶段的选择决定（保留武器库设计 → 2021，否则 2022）；不会先后发生。",
+    "en": "Decided by the stage-2 choice (keeping the arsenal designs -> 2021, otherwise 2022); never both."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "unplugged.2121",
+    "unplugged.2125"
+   ],
+   "label": {
+    "zh": "被同化者遗址第三阶段（二选一）",
+    "en": "Taken site, stage 3 (one of two)"
+   },
+   "note": {
+    "zh": "第二阶段表达悔意 → 2125，否则 2121。",
+    "en": "Expressing regret at stage 2 -> 2125, otherwise 2121."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "unplugged.2321",
+    "unplugged.2325"
+   ],
+   "label": {
+    "zh": "故乡遗址第三阶段（二选一）",
+    "en": "Homeworld site, stage 3 (one of two)"
+   },
+   "note": {
+    "zh": "博物馆一章选 a → 2321，否则 2325。",
+    "en": "Picking a in the museum chapter -> 2321, otherwise 2325."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "unplugged.2036",
+    "unplugged.2037",
+    "unplugged.2038"
+   ],
+   "label": {
+    "zh": "工厂舰队的下落",
+    "en": "What happens to the Makers fleet"
+   },
+   "note": {
+    "zh": "本帝国击毁、他国击毁，或4年后仍未击毁。",
+    "en": "Destroyed by you, by another empire, or still active after 4 years."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "unplugged.2450",
+    "unplugged.2455"
+   ],
+   "label": {
+    "zh": "机械王座的结局",
+    "en": "The fate of the Machine throne"
+   },
+   "note": {
+    "zh": "继承机械王座，或将机械世界改造为盖亚星球。",
+    "en": "Inherit the Machine throne, or terraform the machine world into a Gaia world."
+   }
+  }
+ ],
+ "endings": {
+  "unplugged.2450": {
+   "label": {
+    "zh": "继承机械王座",
+    "en": "Inheriting the Machine throne"
+   },
+   "note": {
+    "zh": "机械遗产事件链结束。",
+    "en": "The Machine Legacy chain ends."
+   },
+   "evidence": "events/unplugged_events.txt:2445-2460 ends unplugged_origin_machine_legacy_chain."
+  },
+  "unplugged.2455": {
+   "label": {
+    "zh": "改造机械世界",
+    "en": "Terraforming the machine world"
+   },
+   "note": {
+    "zh": "机械核心世界变为盖亚星球，事件链结束。",
+    "en": "The core world becomes a Gaia world; the chain ends."
+   },
+   "evidence": "events/unplugged_events.txt:2463-2553 change_pc = pc_gaia, ends the chain."
+  },
+  "unplugged.3090": {
+   "label": {
+    "zh": "身份局势结束",
+    "en": "The identity situation ends"
+   },
+   "note": {
+    "zh": "三条路线（去义体化、维持现状、义体化）中先走完的一条结束局势。",
+    "en": "Whichever track (decyberize, status quo, cyberize) completes first ends the situation."
+   },
+   "evidence": "events/unplugged_events.txt:2778-2825 sets unplugged_has_finished_identity_situation_flag and destroys the situation."
+  }
+ },
+ "nodeLabels": {
+  "unplugged.2401": {
+   "zh": "作品之核：本帝国击毁哨兵",
+   "en": "Opus Nexus: you destroyed the Sentinel"
+  },
+  "unplugged.2402": {
+   "zh": "作品之核：他国击毁哨兵",
+   "en": "Opus Nexus: another empire destroyed it"
+  },
+  "unplugged.2403": {
+   "zh": "作品之核：（其他帝国视角）",
+   "en": "Opus Nexus: (other empires' view)"
+  },
+  "unplugged.2405": {
+   "zh": "作品之核：对话",
+   "en": "Opus Nexus: dialogue"
+  },
+  "unplugged.2410": {
+   "zh": "作品之核：追问",
+   "en": "Opus Nexus: questions"
+  },
+  "unplugged.2411": {
+   "zh": "作品之核：（其他帝国）",
+   "en": "Opus Nexus: (other empires)"
+  },
+  "unplugged.2415": {
+   "zh": "作品之核：终结",
+   "en": "Opus Nexus: the end"
+  },
+  "unplugged.2446": {
+   "zh": "创造者的请求",
+   "en": "The Creators' plea"
+  },
+  "unplugged.3206": {
+   "zh": "恐惧的遗产（遗址版本）",
+   "en": "A Legacy of Terror (dig version)"
+  },
+  "unplugged.2037": {
+   "zh": "下一个信号（他国击毁舰队）",
+   "en": "Next signal (fleet destroyed by another)"
+  }
+ },
+ "notes": [
+  {
+   "doc": "situations:situation_unplugged_identity",
+   "kind": "review",
+   "zh": "审阅注：局势每1800–1920天按当时所处阶段选择对应路线的下一步（去义体化0–35、维持现状35–65、义体化65–100）。阶段在两次检查之间改变时会转到另一路线，原路线的进度保留；图中只画出每条路线自身的顺序。",
+   "en": "Review note: every 1800-1920 days the situation takes the next step of the track matching its current stage (decyberize 0-35, status quo 35-65, cyberize 65-100). If the stage changes between checks the next step comes from the other track, and each track keeps its progress; the map only draws each track's own order."
+  },
+  {
+   "doc": "unplugged.2010",
+   "kind": "review",
+   "zh": "审阅注：遗址各阶段在编译图中按定义顺序相连；第三阶段的两个结果（2021/2022）实为二选一，见互斥组。",
+   "en": "Review note: the compiled map chains all site stages in definition order; the two stage-3 results (2021/2022) are alternatives, see the exclusive group."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c1-origins (Opus 5.5), V4 source review",
+  "scope": {
+   "zh": "核对开局内战与故土遗址、机械遗产五个星系的全部事件/项目/遗址、作品之核对话与两个结局、身份局势三条路线与随机后果、外交与派系插曲，以及其他帝国视角的窗口。",
+   "en": "Checked the opening civil war and the Ruined Cradle dig, every event/project/site of the five Machine Legacy systems, the Opus Nexus dialogue and both endings, the three identity-situation tracks and their random follow-ups, the diplomacy and faction interludes, and the windows seen by other empires."
+  },
+  "sources": [
+   "events/unplugged_events.txt",
+   "common/special_projects/04_projects_unplugged.txt",
+   "common/archaeological_site_types/12_unplugged_arc_sites.txt",
+   "common/situations/12_unplugged_situations.txt",
+   "common/scripted_effects/unplugged_effects.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/scripted_effects/01_start_of_game_effects.txt",
+   "common/event_chains/00_event_chains_unplugged.txt"
+  ],
+  "uncertain": [
+   "The compiler chains archaeology stage outcomes in definition order (2015 -> 2021 -> 2022, 2115 -> 2125 ... 2121, 2315 -> 2321 -> 2325); the stage-3 gatekeepers 2020/2120/2320 actually pick one of two. Recorded as exclusive groups; needs a compiler fix (ledger R5).",
+   "Identity-situation cross-track switches are described, not drawn (reading simplification, see suppress evidence)."
+  ],
+  "guide": "public/summaries/origin_unplugged.md"
+ }
+}

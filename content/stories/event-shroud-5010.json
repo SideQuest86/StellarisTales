@@ -1,0 +1,32 @@
+{
+ "id": "event-shroud-5010",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "shroud.5013",
+   "to": "shroud.5012",
+   "conditional": true,
+   "label": {
+    "zh": "与第二个开局邻国建立通讯后",
+    "en": "After communications with the second starting neighbour"
+   },
+   "evidence": "events/shroud_events.txt:13193-13227 shroud.5011: first contact with either saved starting neighbour sends 5013 (flag shroud.5013_event_triggered); the next one, via else_if, sends 5012; both 10 days later"
+  }
+ ],
+ "suppress": [],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "开局邻国设定、两次接触的顺序与秘密派系出现均已核对。",
+   "en": "Starting-neighbour setup, the order of both contacts and the faction emergence were checked."
+  },
+  "sources": [
+   "events/shroud_events.txt:13096-13290 (5000/5010-5013)",
+   "common/on_actions/00_on_actions.txt (on_game_start_country → 5000; on_post_communications_established → 5010)",
+   "common/scripted_triggers/08_scripted_triggers_shroud.txt (is_secret_societies_empire)"
+  ],
+  "guide": "public/summaries/event-shroud-5010.md"
+ }
+}

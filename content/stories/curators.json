@@ -1,24 +1,232 @@
 {
  "id": "curators",
+ "family": {
+  "title": {
+   "zh": "策展人",
+   "en": "Curators"
+  },
+  "category": "leviathans",
+  "start": "leviathans.501",
+  "members": [
+   "leviathans.499",
+   "leviathans.500",
+   "leviathans.501",
+   "leviathans.502",
+   "leviathans.504",
+   "leviathans.507",
+   "leviathans.508",
+   "leviathans.509",
+   "leviathans.510",
+   "leviathans.515",
+   "leviathans.520",
+   "leviathans.525",
+   "leviathans.530",
+   "leviathans.535",
+   "leviathans.540",
+   "leviathans.545",
+   "leviathans.550",
+   "leviathans.555",
+   "leviathans.556",
+   "leviathans.558",
+   "leviathans.559",
+   "leviathans.511",
+   "leviathans.590",
+   "leviathans.591",
+   "leviathans.598",
+   "leviathans.599",
+   "leviathans.600",
+   "leviathans.4000",
+   "leviathans.4100",
+   "leviathans.4105",
+   "leviathans.4106",
+   "leviathans.4107",
+   "leviathans.4110",
+   "leviathans.4111",
+   "leviathans.4112",
+   "leviathans.4115",
+   "leviathans.4116",
+   "leviathans.4117",
+   "leviathans.592",
+   "leviathans.593",
+   "leviathans.594",
+   "observer.7",
+   "leviathans.595",
+   "leviathans.596",
+   "leviathans.597",
+   "event_chains:curator_poi_chain"
+  ]
+ },
+ "hubs": [
+  "leviathans.98"
+ ],
  "bridges": [
   {
    "from": "leviathans.502",
    "to": "leviathans.500",
    "conditional": true,
    "label": {
-    "zh": "再次联络策展人",
-    "en": "Contact the Curators again"
+    "zh": "此后每次外交联络打开策展人菜单",
+    "en": "Later diplomatic contacts open the Curator menu"
    },
-   "evidence": "on_custom_diplomacy -> hidden leviathans.499 -> 500; 502 only establishes first contact"
+   "evidence": "on_custom_diplomacy (00_on_actions.txt:721) -> hidden leviathans.499 (leviathans_events_1.txt:4772-4796, requires no attacked_curators) -> leviathans.500; 502 itself has only an acknowledgement option"
+  },
+  {
+   "from": "leviathans.590",
+   "choice": "leviathans.590.a",
+   "to": "enclave.8000",
+   "conditional": true,
+   "label": {
+    "zh": "若日后攻击策展人，这位学者将离去",
+    "en": "If we later attack the Curators, the scientist leaves"
+   },
+   "evidence": "on_entering_battle -> leviathans.605 (leviathans_events_1.txt:7951-7984) requires a curator_archivist leader, then enclave.8000 after 5 days"
+  },
+  {
+   "from": "leviathans.502",
+   "to": "leviathans.597",
+   "conditional": true,
+   "label": {
+    "zh": "若曾攻击策展人，此后联络只得到斥责",
+    "en": "After attacking them, contact only brings rebuke"
+   },
+   "evidence": "on_custom_diplomacy (00_on_actions.txt:722) -> leviathans.597 requires has_country_flag = attacked_curators (set by leviathans.595 on_entering_battle, :1373)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.593",
+    "leviathans.594",
+    "observer.7"
+   ],
+   "label": {
+    "zh": "空间站被毁：按视角收到一种通知",
+    "en": "Station destroyed: one notice per viewpoint"
+   },
+   "note": {
+    "zh": "leviathans.592（on_ship_destroyed_victim，00_on_actions.txt:1399）：摧毁者593（获得数据碎片）、其他有通讯者594、观察者observer.7。",
+    "en": "leviathans.592 (on_ship_destroyed_victim, 00_on_actions.txt:1399): destroyer 593 (databank fragments), others in contact 594, observers observer.7."
+   }
+  }
+ ],
+ "endings": {
+  "leviathans.593": {
+   "label": {
+    "zh": "我们摧毁了策展人空间站",
+    "en": "We destroyed the Curator station"
+   },
+   "note": {
+    "zh": "策展人服务终结。",
+    "en": "Curator services end."
+   },
+   "evidence": "events/leviathans_events_1.txt:9795-9829 leviathans.592"
+  },
+  "leviathans.594": {
+   "label": {
+    "zh": "策展人空间站被他国摧毁",
+    "en": "Curator station destroyed by others"
+   },
+   "note": {
+    "zh": "若曾购买研究援助则随之失去。",
+    "en": "Research aid, if bought, is lost."
+   },
+   "evidence": "events/leviathans_events_1.txt:9864"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.502": {
+   "zh": "首次接触策展人",
+   "en": "First contact"
+  },
+  "leviathans.500": {
+   "zh": "策展人联络菜单",
+   "en": "Curator contact menu"
+  },
+  "leviathans.507": {
+   "zh": "研究援助（10年）",
+   "en": "Research aid (10 years)"
+  },
+  "leviathans.508": {
+   "zh": "宇宙之谜：守护者情报",
+   "en": "Mysteries: guardian intel"
+  },
+  "leviathans.590": {
+   "zh": "延请学者",
+   "en": "Hire a scientist"
+  },
+  "leviathans.598": {
+   "zh": "共享原则（格式塔）",
+   "en": "Shared principles (gestalt)"
+  },
+  "leviathans.599": {
+   "zh": "购买情报",
+   "en": "Buy intelligence"
+  },
+  "leviathans.511": {
+   "zh": "智库",
+   "en": "Think Tank"
+  },
+  "leviathans.600": {
+   "zh": "L星门线索",
+   "en": "L-Gate clue"
+  },
+  "leviathans.4000": {
+   "zh": "无限神机的秘密",
+   "en": "The Infinity Machine's secret"
+  },
+  "leviathans.4100": {
+   "zh": "馆藏援助（银河典藏）",
+   "en": "Collection aid (Grand Archive)"
+  },
+  "leviathans.597": {
+   "zh": "被攻击后的斥责",
+   "en": "Rebuke after attack"
+  },
+  "leviathans.596": {
+   "zh": "数据库访问被切断",
+   "en": "Databank access severed"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.502",
+   "kind": "review",
+   "zh": "审阅注：首次接触完成、“通讯已建立”或银河典藏事件后经隐藏事件leviathans.501显示；文本区分是否已见过其他策展人分部。此窗口只有一个确认选项，服务菜单要在之后的外交联络中打开。",
+   "en": "Review note: shown through hidden leviathans.501 after first contact, 'Communications Established' or a Grand Archive event; the text differs if another Curator order was met before. It has only an acknowledgement; the service menu opens on later diplomatic contacts."
+  },
+  {
+   "doc": "leviathans.508",
+   "kind": "review",
+   "zh": "审阅注：“说点新的”花能量购买一处尚未接触的守护者的位置（生成“宇宙之谜”兴趣点）；其余选项仅对已建立通讯的守护者开放，各给出该守护者的弱点情报。",
+   "en": "Review note: 'something new' buys the location of a guardian we have not met (a 'Mysteries of the Universe' point of interest); the other options are only offered for guardians already in contact and give intel on each."
+  },
+  {
+   "doc": "leviathans.4000",
+   "kind": "review",
+   "zh": "审阅注：需在“无限神机”剧情中获得pantagruel标记（leviathans_events_2.txt:2315）并曾向策展人询问无限神机（:5707）。",
+   "en": "Review note: requires the 'pantagruel' flag from the Infinity Machine story (leviathans_events_2.txt:2315) and having asked the Curators about the Infinity Machine (:5707)."
+  },
+  {
+   "doc": "leviathans.596",
+   "kind": "review",
+   "zh": "审阅注：首次与策展人交战时（leviathans.595，on_entering_battle）信任-100并设置“已攻击”；若正享有研究援助则被取消并显示本窗口。",
+   "en": "Review note: on first battle with the Curators (leviathans.595) trust -100 and the 'attacked' flag is set; if research aid is active it is removed and this window shows."
   }
  ],
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
   "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
-  }
+   "zh": "完整：首次接触、服务菜单全部选项与子菜单、攻击与毁灭后果。",
+   "en": "Complete: first contact, every menu service and submenu, attack and destruction consequences."
+  },
+  "sources": [
+   "events/leviathans_events_1.txt",
+   "events/observer_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/curators.md"
  }
 }

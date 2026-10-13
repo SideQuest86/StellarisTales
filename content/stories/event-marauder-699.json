@@ -1,0 +1,44 @@
+{
+ "id": "event-marauder-699",
+ "title": {
+  "zh": "[marauder_neighbor_species.GetName]难民",
+  "en": "[marauder_neighbor_species.GetName] Refugees"
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "marauder.701",
+    "marauder.702",
+    "marauder.703",
+    "marauder.704",
+    "marauder.705",
+    "marauder.706",
+    "marauder.707"
+   ],
+   "label": {
+    "zh": "与掠夺者为邻的随机事件",
+    "en": "Random events of living next to marauders"
+   },
+   "note": {
+    "zh": "每次触发从七个事件中等权抽一个；每个事件对同一帝国只发生一次，逐年可陆续遇到不同事件。",
+    "en": "Each firing draws one of seven with equal weight; each happens once per empire, so different ones can appear over the years."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/marauder_events.txt:9793-10238",
+   "common/on_actions/00_on_actions.txt:243"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-marauder-699.md"
+ }
+}

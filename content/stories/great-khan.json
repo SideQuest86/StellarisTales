@@ -1,0 +1,381 @@
+{
+ "id": "great-khan",
+ "family": {
+  "title": {
+   "zh": "大可汗",
+   "en": "The Great Khan"
+  },
+  "category": "stories",
+  "start": "marauder.501",
+  "members": [
+   "marauder.500",
+   "marauder.525",
+   "nomads.600",
+   "observer.18",
+   "marauder.503",
+   "marauder.504",
+   "marauder.509",
+   "marauder.510",
+   "marauder.710",
+   "observer.16",
+   "marauder.515",
+   "marauder.516",
+   "marauder.517",
+   "marauder.518",
+   "marauder.519",
+   "marauder.520",
+   "marauder.521",
+   "marauder.550",
+   "marauder.551",
+   "marauder.552",
+   "marauder.553",
+   "marauder.554",
+   "marauder.555",
+   "marauder.560",
+   "observer.19",
+   "marauder.600",
+   "marauder.601",
+   "marauder.602",
+   "marauder.603",
+   "marauder.604",
+   "marauder.620",
+   "marauder.630",
+   "marauder.640",
+   "marauder.660",
+   "marauder.661",
+   "marauder.665",
+   "marauder.670",
+   "marauder.671",
+   "observer.20",
+   "observer.21",
+   "observer.22",
+   "observer.23"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "marauder.502",
+   "to": "marauder.504",
+   "conditional": true,
+   "label": {
+    "zh": "汗国攻占星球（原主看到）",
+    "en": "The Horde takes a planet (seen by its owner)"
+   },
+   "evidence": "on_colony_attackers_win -> marauder.503 (00_on_actions.txt:824; L7462-7480): planet transferred, former owner gets 504"
+  },
+  {
+   "from": "marauder.502",
+   "to": "marauder.550",
+   "conditional": true,
+   "label": {
+    "zh": "此后与大可汗联络",
+    "en": "Contacting the Khan afterwards"
+   },
+   "evidence": "marauder.1 L218-225: awakened Horde with the Khan alive -> marauder.550"
+  },
+  {
+   "from": "marauder.502",
+   "to": "marauder.552",
+   "conditional": true,
+   "label": {
+    "zh": "其他帝国归顺",
+    "en": "Another empire submits"
+   },
+   "evidence": "AI submission: marauder.555 MTTH 5 years (L8908-8990) -> 552 to all + 553 garrison 10 days later"
+  },
+  {
+   "from": "marauder.504",
+   "to": "marauder.516",
+   "conditional": true,
+   "label": {
+    "zh": "日后夺回该星球（原主收复）",
+    "en": "The planet is retaken later (by its former owner)"
+   },
+   "evidence": "on_colony_attackers_win -> marauder.515 when the defender is the Horde (00_on_actions.txt:825; L7994-8033): 516 if the liberator is the former owner"
+  },
+  {
+   "from": "marauder.504",
+   "to": "marauder.517",
+   "conditional": true,
+   "label": {
+    "zh": "由他国解放",
+    "en": "Liberated by another empire"
+   },
+   "evidence": "marauder.515 L8019-8026: former owner exists but is not the liberator -> 517 (option b -> 519)"
+  },
+  {
+   "from": "marauder.504",
+   "to": "marauder.518",
+   "conditional": true,
+   "label": {
+    "zh": "原主已不存在时解放",
+    "en": "Liberated after the former owner is gone"
+   },
+   "evidence": "marauder.515 L8028-8033 -> 518"
+  },
+  {
+   "from": "marauder.502",
+   "to": "marauder.513",
+   "conditional": true,
+   "label": {
+    "zh": "大可汗寿终（约30–44年后）",
+    "en": "The Khan dies of old age (about 30-44 years later)"
+   },
+   "evidence": "make_khan_effect schedules marauder.514 (days 10800 random 5000) -> observer.17 / marauder.513 and marauder.600 after 200-300 days (L7953-7990); other causes of death run through marauder.511/512 (another story)"
+  },
+  {
+   "from": "marauder.502",
+   "to": "marauder.510",
+   "conditional": true,
+   "label": {
+    "zh": "大可汗第二次战败身亡",
+    "en": "The Khan falls in a second defeat"
+   },
+   "evidence": "on_ship_destroyed_victim -> marauder.509 with great_khan_defeated_once (00_on_actions.txt:1414; L7770-7786); first defeat (505) is another story"
+  },
+  {
+   "from": "marauder.510",
+   "to": "marauder.710",
+   "conditional": true,
+   "label": {
+    "zh": "击杀者两天后寻回王座",
+    "en": "The killer recovers the throne 2 days later"
+   },
+   "evidence": "marauder.509 immediate country_event marauder.710 days = 2 (L7786)"
+  },
+  {
+   "from": "marauder.510",
+   "to": "marauder.620",
+   "conditional": true,
+   "label": {
+    "zh": "继承：汗国分崩离析（60）",
+    "en": "Succession: the Horde splinters (60)"
+   },
+   "evidence": "marauder.509 -> marauder.600 days 200 random 100 (L7786); 600 random_list 60/10/10/10 with modifiers (L9094-9141); 601 needs >= 6 planets"
+  },
+  {
+   "from": "marauder.510",
+   "to": "marauder.640",
+   "conditional": true,
+   "label": {
+    "zh": "继承：新汗国（10）",
+    "en": "Succession: a new Khanate (10)"
+   },
+   "evidence": "marauder.509 -> marauder.600 days 200 random 100 (L7786); 600 random_list 60/10/10/10 with modifiers (L9094-9141); 602 needs >= 1 planet"
+  },
+  {
+   "from": "marauder.510",
+   "to": "marauder.660",
+   "conditional": true,
+   "label": {
+    "zh": "继承：新星帐汗国（10）",
+    "en": "Succession: the New Galactic Horde (10)"
+   },
+   "evidence": "marauder.509 -> marauder.600 days 200 random 100 (L7786); 600 random_list 60/10/10/10 with modifiers (L9094-9141); 603 needs >= 2 satrapies and a planet"
+  },
+  {
+   "from": "marauder.510",
+   "to": "marauder.630",
+   "conditional": true,
+   "label": {
+    "zh": "继承：归于旧道（10）",
+    "en": "Succession: reverts to the old ways (10)"
+   },
+   "evidence": "marauder.509 -> marauder.600 days 200 random 100 (L7786); 600 random_list 60/10/10/10 with modifiers (L9094-9141); 604 only if the Horde owns no planets"
+  },
+  {
+   "from": "marauder.620",
+   "to": "marauder.670",
+   "conditional": true,
+   "label": {
+    "zh": "4天后：辖地终末（原辖地）",
+    "en": "4 days later: end of the satrapy (former satrapies)"
+   },
+   "evidence": "marauder.601 country_event marauder.670 days = 4 (L9151)"
+  },
+  {
+   "from": "marauder.640",
+   "to": "marauder.671",
+   "conditional": true,
+   "label": {
+    "zh": "10天后：拆除驻军空间站",
+    "en": "10 days later: garrison stations scuttled"
+   },
+   "evidence": "marauder.602 country_event marauder.671 days = 10 (L9243)"
+  },
+  {
+   "from": "marauder.630",
+   "to": "marauder.670",
+   "conditional": true,
+   "label": {
+    "zh": "10天后：辖地终末（原辖地）",
+    "en": "10 days later: end of the satrapy (former satrapies)"
+   },
+   "evidence": "marauder.604 country_event marauder.670 days = 10 (L9560)"
+  },
+  {
+   "from": "marauder.510",
+   "to": "marauder.665",
+   "conditional": true,
+   "label": {
+    "zh": "大可汗死后联络汗国",
+    "en": "Contacting the Horde after the Khan's death"
+   },
+   "evidence": "marauder.1 L209-216: great_khan_dead -> marauder.665"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "marauder.620",
+    "marauder.640",
+    "marauder.660",
+    "marauder.630"
+   ],
+   "label": {
+    "zh": "大可汗死后的继承",
+    "en": "Succession after the Khan"
+   },
+   "note": {
+    "zh": "200–300天后按60/10/10/10随机其一，条件不满足的项权重为0（无星球时只会归于旧道）。",
+    "en": "After 200-300 days one is chosen 60/10/10/10; options whose conditions fail get weight 0 (a Horde with no planets always reverts)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "marauder.516",
+    "marauder.517",
+    "marauder.518"
+   ],
+   "label": {
+    "zh": "解放者视角",
+    "en": "Liberator's view"
+   },
+   "note": {
+    "zh": "按解放者是否原主、原主是否仍存在三选一。",
+    "en": "One of three, by whether the liberator is the former owner and whether that owner still exists."
+   }
+  }
+ ],
+ "endings": {
+  "marauder.620": {
+   "label": {
+    "zh": "汗国分裂",
+    "en": "The Horde splinters"
+   },
+   "note": {
+    "zh": "继承结局之一。",
+    "en": "One succession outcome."
+   },
+   "evidence": "L9145-9236"
+  },
+  "marauder.640": {
+   "label": {
+    "zh": "新汗国",
+    "en": "A new Khanate"
+   },
+   "note": {
+    "zh": "继承结局之一。",
+    "en": "One succession outcome."
+   },
+   "evidence": "L9237-9394"
+  },
+  "marauder.660": {
+   "label": {
+    "zh": "新星帐汗国",
+    "en": "New Galactic Horde"
+   },
+   "note": {
+    "zh": "继承结局之一。",
+    "en": "One succession outcome."
+   },
+   "evidence": "L9395-9553"
+  },
+  "marauder.630": {
+   "label": {
+    "zh": "归于旧道",
+    "en": "Reverts to the old ways"
+   },
+   "note": {
+    "zh": "继承结局之一。",
+    "en": "One succession outcome."
+   },
+   "evidence": "L9554-9650"
+  }
+ },
+ "nodeLabels": {
+  "marauder.501": {
+   "zh": "汗国觉醒",
+   "en": "The Horde awakens"
+  },
+  "marauder.526": {
+   "zh": "受攻击而觉醒",
+   "en": "Awakened by attack"
+  },
+  "nomads.600": {
+   "zh": "可汗后裔：宣称者",
+   "en": "Heirs of the Khan: the Claimant"
+  },
+  "marauder.550": {
+   "zh": "大可汗通讯",
+   "en": "Contact the Khan"
+  },
+  "observer.16": {
+   "zh": "观察者模式",
+   "en": "Observer mode"
+  },
+  "observer.18": {
+   "zh": "观察者模式",
+   "en": "Observer mode"
+  },
+  "observer.19": {
+   "zh": "观察者模式",
+   "en": "Observer mode"
+  },
+  "observer.20": {
+   "zh": "观察者模式",
+   "en": "Observer mode"
+  },
+  "observer.21": {
+   "zh": "观察者模式",
+   "en": "Observer mode"
+  },
+  "observer.22": {
+   "zh": "观察者模式",
+   "en": "Observer mode"
+  },
+  "observer.23": {
+   "zh": "观察者模式",
+   "en": "Observer mode"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/marauder_events.txt:7204-9792",
+   "events/marauder_events.txt:10239-10306",
+   "events/observer_events.txt:279-460",
+   "events/nomads_events_1.txt:6127",
+   "common/on_actions/00_on_actions.txt:824-825,1412-1414"
+  ],
+  "uncertain": [
+   "The first defeat (505/506/508/524) and death by age (511-514) belong to stories owned by another reviewer and are only referenced here; merging them into this family is suggested."
+  ],
+  "guide": "public/summaries/great-khan.md",
+  "merged": [
+   "event-marauder-525",
+   "event-marauder-509",
+   "event-marauder-503",
+   "event-marauder-555",
+   "event-marauder-515"
+  ]
+ }
+}

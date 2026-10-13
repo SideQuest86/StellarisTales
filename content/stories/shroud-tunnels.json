@@ -1,48 +1,136 @@
 {
  "id": "shroud-tunnels",
  "family": {
-  "title": {"zh": "虚境隧道", "en": "Shroud Tunnel"},
+  "title": {
+   "zh": "虚境隧道",
+   "en": "Shroud Tunnel"
+  },
   "category": "leviathans",
   "start": "enclave.100",
-  "members": ["enclave.100", "enclave.4200", "enclave.6015", "enclave.6000", "enclave.6005", "enclave.6010", "enclave.6020", "enclave.6025", "enclave.4250"]
+  "members": [
+   "enclave.100",
+   "enclave.4200",
+   "enclave.6015",
+   "enclave.6000",
+   "enclave.6005",
+   "enclave.6010",
+   "enclave.6020",
+   "enclave.6025",
+   "enclave.4250"
+  ]
  },
  "bridges": [
-  {"from": "enclave.100", "to": "enclave.6000", "conditional": true,
-   "label": {"zh": "此后每次舰队穿越隧道：随机（10/100）", "en": "Each later passage through a tunnel: random (10/100)"},
-   "evidence": "common/on_actions/00_on_actions.txt:4126-4137 on_entering_shroud_tunnel random_events 74 = 0, 10 = enclave.6000"},
-  {"from": "enclave.100", "to": "enclave.6005", "conditional": true,
-   "label": {"zh": "此后每次舰队穿越隧道：随机（10/100）", "en": "Each later passage through a tunnel: random (10/100)"},
-   "evidence": "00_on_actions.txt:4134 on_entering_shroud_tunnel 10 = enclave.6005"},
-  {"from": "enclave.100", "to": "enclave.6020", "conditional": true,
-   "label": {"zh": "此后每次舰队穿越隧道：随机（5/100）", "en": "Each later passage through a tunnel: random (5/100)"},
-   "evidence": "00_on_actions.txt:4135 on_entering_shroud_tunnel 5 = enclave.6020"},
-  {"from": "enclave.100", "to": "enclave.4250", "conditional": true,
-   "label": {"zh": "此后每次舰队穿越隧道：随机（1/100）", "en": "Each later passage through a tunnel: random (1/100)"},
-   "evidence": "00_on_actions.txt:4136 on_entering_shroud_tunnel 1 = enclave.4250"},
-  {"from": "enclave.4200", "to": "enclave.6015", "conditional": true,
-   "label": {"zh": "若信标被摧毁", "en": "If the beacon is destroyed"},
-   "evidence": "common/starbase_buildings/00_starbase_buildings.txt:1193 shroud_beacon on_destroyed -> enclave.6015"}
+  {
+   "from": "enclave.100",
+   "to": "enclave.6000",
+   "conditional": true,
+   "label": {
+    "zh": "此后每次舰队穿越隧道：随机（10/100）",
+    "en": "Each later passage through a tunnel: random (10/100)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:4126-4137 on_entering_shroud_tunnel random_events 74 = 0, 10 = enclave.6000"
+  },
+  {
+   "from": "enclave.100",
+   "to": "enclave.6005",
+   "conditional": true,
+   "label": {
+    "zh": "此后每次舰队穿越隧道：随机（10/100）",
+    "en": "Each later passage through a tunnel: random (10/100)"
+   },
+   "evidence": "00_on_actions.txt:4134 on_entering_shroud_tunnel 10 = enclave.6005"
+  },
+  {
+   "from": "enclave.100",
+   "to": "enclave.6020",
+   "conditional": true,
+   "label": {
+    "zh": "此后每次舰队穿越隧道：随机（5/100）",
+    "en": "Each later passage through a tunnel: random (5/100)"
+   },
+   "evidence": "00_on_actions.txt:4135 on_entering_shroud_tunnel 5 = enclave.6020"
+  },
+  {
+   "from": "enclave.100",
+   "to": "enclave.4250",
+   "conditional": true,
+   "label": {
+    "zh": "此后每次舰队穿越隧道：随机（1/100）",
+    "en": "Each later passage through a tunnel: random (1/100)"
+   },
+   "evidence": "00_on_actions.txt:4136 on_entering_shroud_tunnel 1 = enclave.4250"
+  },
+  {
+   "from": "enclave.4200",
+   "to": "enclave.6015",
+   "conditional": true,
+   "label": {
+    "zh": "若信标被摧毁",
+    "en": "If the beacon is destroyed"
+   },
+   "evidence": "common/starbase_buildings/00_starbase_buildings.txt:1193 shroud_beacon on_destroyed -> enclave.6015"
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["enclave.6000", "enclave.6005", "enclave.6020", "enclave.4250"],
-   "label": {"zh": "每次穿越至多发生一种", "en": "At most one per passage"},
-   "note": {"zh": "on_entering_shroud_tunnel 随机表：74无事、10/10/5/1（00_on_actions.txt:4126-4137）。", "en": "on_entering_shroud_tunnel random table: 74 nothing, 10/10/5/1 (00_on_actions.txt:4126-4137)."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "enclave.6000",
+    "enclave.6005",
+    "enclave.6020",
+    "enclave.4250"
+   ],
+   "label": {
+    "zh": "每次穿越至多发生一种",
+    "en": "At most one per passage"
+   },
+   "note": {
+    "zh": "on_entering_shroud_tunnel 随机表：74无事、10/10/5/1（00_on_actions.txt:4126-4137）。",
+    "en": "on_entering_shroud_tunnel random table: 74 nothing, 10/10/5/1 (00_on_actions.txt:4126-4137)."
+   }
+  }
  ],
  "nodeLabels": {
-  "enclave.100": {"zh": "首次发现虚境隧道", "en": "First Shroud Tunnel sighted"},
-  "enclave.4200": {"zh": "虚境信标建成", "en": "Shroud Beacon built"},
-  "enclave.6015": {"zh": "信标失效", "en": "Beacon lost"}
+  "enclave.100": {
+   "zh": "首次发现虚境隧道",
+   "en": "First Shroud Tunnel sighted"
+  },
+  "enclave.4200": {
+   "zh": "虚境信标建成",
+   "en": "Shroud Beacon built"
+  },
+  "enclave.6015": {
+   "zh": "信标失效",
+   "en": "Beacon lost"
+  }
  },
  "notes": [
-  {"doc": "enclave.100", "kind": "review", "zh": "审阅注：首次进入有虚境隧道的星系时触发（on_entering_system_first_time，00_on_actions.txt:930），“虚境学徒”起源与已自建隧道的帝国除外。隧道总枢纽随虚境行者城邦星系生成（overlord_initializers.txt:595），各地节点由虚境信标产生（enclave_effects.txt:510）。", "en": "Review note: fires on first entering a system with a Shroud Tunnel (on_entering_system_first_time, 00_on_actions.txt:930), except for the Shroudwalker Apprentice origin and empires that built their own tunnel. The tunnel nexus is spawned with the Shroudwalker enclave system (overlord_initializers.txt:595); local nodes come from Shroud Beacons (enclave_effects.txt:510)."},
-  {"doc": "enclave.4200", "kind": "review", "zh": "审阅注：建成从虚境行者处购得许可的“虚境信标”恒星基地建筑时触发（00_starbase_buildings.txt:1185）。", "en": "Review note: fires when the Shroud Beacon starbase building, licensed from the Shroudwalkers, is completed (00_starbase_buildings.txt:1185)."}
+  {
+   "doc": "enclave.100",
+   "kind": "review",
+   "zh": "审阅注：首次进入有虚境隧道的星系时触发（on_entering_system_first_time，00_on_actions.txt:930），“虚境导师”起源与已自建隧道的帝国除外。隧道总枢纽随虚境行者城邦星系生成（overlord_initializers.txt:595），各地节点由虚境信标产生（enclave_effects.txt:510）。",
+   "en": "Review note: fires on first entering a system with a Shroud Tunnel (on_entering_system_first_time, 00_on_actions.txt:930), except for the Teachers of the Shroud origin and empires that built their own tunnel. The tunnel nexus is spawned with the Shroudwalker enclave system (overlord_initializers.txt:595); local nodes come from Shroud Beacons (enclave_effects.txt:510)."
+  },
+  {
+   "doc": "enclave.4200",
+   "kind": "review",
+   "zh": "审阅注：建成从虚境行者处购得许可的“虚境信标”恒星基地建筑时触发（00_starbase_buildings.txt:1185）。",
+   "en": "Review note: fires when the Shroud Beacon starbase building, licensed from the Shroudwalkers, is completed (00_starbase_buildings.txt:1185)."
+  }
  ],
  "review": {
-  "status": "partial",
+  "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "C6 (Opus 5.5)",
-  "scope": {"zh": "进行中", "en": "in progress"},
-  "sources": ["events/overlord_enclaves_events.txt", "common/on_actions/00_on_actions.txt", "common/starbase_buildings/00_starbase_buildings.txt"],
+  "scope": {
+   "zh": "完整：首次发现、穿越随机表、信标建成与失效。",
+   "en": "Complete: first sighting, passage random table, beacon built and lost."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/starbase_buildings/00_starbase_buildings.txt"
+  ],
   "guide": "public/summaries/shroud-tunnels.md"
  }
 }

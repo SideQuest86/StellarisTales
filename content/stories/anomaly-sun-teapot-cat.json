@@ -1,0 +1,43 @@
+{
+ "id": "anomaly-sun-teapot-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.4061",
+    "anomaly.4062"
+   ],
+   "labels": [
+    {
+     "zh": "非唯心60%／唯心20%",
+     "en": "60% (20% spiritualist)"
+    },
+    {
+     "zh": "非唯心40%／唯心80%",
+     "en": "40% (80% spiritualist)"
+    }
+   ],
+   "note": {
+    "zh": "项目按是否唯心主义使用两张随机表（00_projects_3.txt:134-157）。",
+    "en": "The project uses two random lists by spiritualist ethics (00_projects_3.txt:134-157)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部5个文档。",
+   "en": "All 5 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_3.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-sun-teapot-cat.md"
+ }
+}

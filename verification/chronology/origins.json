@@ -4,13 +4,13 @@
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 58,
   "docs": 1226,
-  "nodes": 1524,
-  "refs": 298,
-  "crossLinks": 200,
+  "nodes": 1453,
+  "refs": 227,
+  "crossLinks": 192,
   "review": {
-    "reviewed": 2,
-    "unreviewed": 41,
-    "partial": 15
+    "reviewed": 4,
+    "partial": 14,
+    "unreviewed": 40
   },
   "failures": [],
   "items": [
@@ -28,9 +28,9 @@
       "title": "强制重置",
       "kind": "origin",
       "docs": 93,
-      "refs": 96,
+      "refs": 23,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_legendary_leader",
@@ -81,10 +81,10 @@
       "id": "origin_mindwardens",
       "title": "灵督",
       "kind": "origin",
-      "docs": 73,
-      "refs": 9,
-      "crossLinks": 14,
-      "review": "partial"
+      "docs": 72,
+      "refs": 11,
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "origin_fear_of_the_dark",
@@ -110,7 +110,7 @@
       "kind": "origin",
       "docs": 57,
       "refs": 4,
-      "crossLinks": 8,
+      "crossLinks": 9,
       "review": "partial"
     },
     {
@@ -234,9 +234,9 @@
       "id": "origin_heirs_of_the_khan",
       "title": "可汗后裔",
       "kind": "origin",
-      "docs": 13,
+      "docs": 14,
       "refs": 4,
-      "crossLinks": 0,
+      "crossLinks": 4,
       "review": "unreviewed"
     },
     {

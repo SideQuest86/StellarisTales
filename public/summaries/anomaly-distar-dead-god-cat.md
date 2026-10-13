@@ -25,7 +25,7 @@ distar.82: a exploit the belief (worshipper pops get Conviction for 240 months; 
 
 ## 条件与文明差异 Conditions and variants
 
-distar.80 另有“演化掠食者”起源专属选项（获取局势进度与DNA）。入侵后事件不要求先调查异常，因为生成异常时已放置隐藏修正。
+distar.80 另有“演化猎手”起源专属选项（获取局势进度与DNA）。入侵后事件不要求先调查异常，因为生成异常时已放置隐藏修正。
 
 distar.80 has an extra Evolutionary Predators origin option (situation progress and DNA). The invasion event does not require the anomaly to be researched, because the hidden modifier is placed on spawn.
 

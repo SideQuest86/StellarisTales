@@ -1,0 +1,39 @@
+{
+ "id": "anomaly-ast-gear-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.4066",
+    "anomaly_failure.4066"
+   ],
+   "labels": [
+    {
+     "zh": "项目完成",
+     "en": "Completed"
+    },
+    {
+     "zh": "项目超时",
+     "en": "Timed out"
+    }
+   ]
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部5个文档。",
+   "en": "All 5 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_3.txt",
+   "events/failures.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-ast-gear-cat.md"
+ }
+}

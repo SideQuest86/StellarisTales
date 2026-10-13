@@ -2,15 +2,15 @@
   "category": "stories",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 766,
-  "docs": 2385,
-  "nodes": 3666,
-  "refs": 1281,
-  "crossLinks": 245,
+  "stories": 760,
+  "docs": 2329,
+  "nodes": 3612,
+  "refs": 1283,
+  "crossLinks": 242,
   "review": {
-    "reviewed": 18,
-    "partial": 1,
-    "unreviewed": 747
+    "reviewed": 53,
+    "partial": 2,
+    "unreviewed": 705
   },
   "failures": [],
   "items": [
@@ -24,6 +24,42 @@
       "review": "reviewed"
     },
     {
+      "id": "great-khan",
+      "title": "大可汗",
+      "kind": "family",
+      "docs": 36,
+      "refs": 3,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-shroud-11000",
+      "title": "虚境住民",
+      "kind": "family",
+      "docs": 25,
+      "refs": 4,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-marauder-1",
+      "title": "掠夺者帝国",
+      "kind": "family",
+      "docs": 17,
+      "refs": 30,
+      "crossLinks": 6,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-marauder-100",
+      "title": "掠袭",
+      "kind": "family",
+      "docs": 17,
+      "refs": 8,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-utopia-2600",
       "title": "心胜于物",
       "kind": "family",
@@ -33,8 +69,44 @@
       "review": "reviewed"
     },
     {
+      "id": "event-shroud-12000",
+      "title": "奥伏戎",
+      "kind": "family",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-bio-800",
       "title": "准备入侵",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-lysator-syng",
+      "title": "李萨拓·辛格",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-nona",
+      "title": "诺那",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-xondar",
+      "title": "松达尔",
       "kind": "family",
       "docs": 5,
       "refs": 0,
@@ -69,13 +141,139 @@
       "review": "reviewed"
     },
     {
-      "id": "event-paragon-41234",
-      "title": "兹泰格·迈尔的宝藏",
-      "kind": "event",
-      "docs": 50,
+      "id": "paragon-renowned-aturion",
+      "title": "亚图里昂",
+      "kind": "family",
+      "docs": 3,
       "refs": 0,
-      "crossLinks": 13,
-      "review": "unreviewed"
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-borin",
+      "title": "博林",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-gia-zumon",
+      "title": "基雅·祖蒙",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-jynn",
+      "title": "基恩",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-kai-sha",
+      "title": "卡伊·沙",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-nasuz-demetor",
+      "title": "纳苏兹·德墨忒尔",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-qla-minder",
+      "title": "看守人喀·拉",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-shuladun",
+      "title": "工业人舒拉顿",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-ulastar",
+      "title": "尤拉斯塔尔",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-uld-dagr",
+      "title": "乌尔德·达格尔大法官",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-vas-the-gilded",
+      "title": "万人迷沃斯",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-vyctor-jariden",
+      "title": "维克托·夏里登男爵",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "paragon-renowned-zosira-ktun",
+      "title": "佐西拉·科顿",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-shroud-4190",
+      "title": "灵能光环逼近",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-shroud-60",
+      "title": "灵能压制已被拆解",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
     },
     {
       "id": "event-infernals-10",
@@ -91,18 +289,18 @@
       "title": "血肉苦弱",
       "kind": "event",
       "docs": 32,
-      "refs": 4,
+      "refs": 6,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "partial"
     },
     {
       "id": "event-terra-10",
-      "title": "过剩的环境改造设备",
+      "title": "环境改造",
       "kind": "event",
       "docs": 29,
       "refs": 2,
       "crossLinks": 40,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-crime-50",
@@ -119,15 +317,6 @@
       "kind": "event",
       "docs": 27,
       "refs": 5,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-1",
-      "title": "[current_marauder_diplomacy.GetName]",
-      "kind": "event",
-      "docs": 26,
-      "refs": 35,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -163,9 +352,9 @@
       "title": "合成嬗变",
       "kind": "event",
       "docs": 24,
-      "refs": 13,
+      "refs": 9,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-utopia-50",
@@ -173,15 +362,6 @@
       "kind": "event",
       "docs": 23,
       "refs": 4,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-525",
-      "title": "宣称者",
-      "kind": "event",
-      "docs": 21,
-      "refs": 1,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -240,15 +420,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-paragon-40000",
-      "title": "李萨拓·辛格",
-      "kind": "event",
-      "docs": 16,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-paragon-549",
       "title": "一位伟大领袖之死",
       "kind": "event",
@@ -276,44 +447,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-marauder-509",
-      "title": "寻回大可汗的王座",
-      "kind": "event",
-      "docs": 14,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-11000",
-      "title": "虚境住民",
-      "kind": "event",
-      "docs": 14,
-      "refs": 4,
-      "crossLinks": 3,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-apoc-10",
       "title": "重新激活星门",
-      "kind": "event",
-      "docs": 13,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-511",
-      "title": "大可汗之死",
-      "kind": "event",
-      "docs": 13,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-711",
-      "title": "大可汗之死",
       "kind": "event",
       "docs": 13,
       "refs": 0,
@@ -402,6 +537,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-marauder-4",
+      "title": "[From.GetName]的末日",
+      "kind": "event",
+      "docs": 11,
+      "refs": 0,
+      "crossLinks": 4,
+      "review": "reviewed"
+    },
+    {
       "id": "event-operation-6100",
       "title": "接头",
       "kind": "event",
@@ -448,12 +592,12 @@
     },
     {
       "id": "event-shroud-4700",
-      "title": "提出契约",
+      "title": "虚空之低语",
       "kind": "event",
       "docs": 11,
       "refs": 8,
       "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-utopia-29",
@@ -497,15 +641,6 @@
       "kind": "event",
       "docs": 10,
       "refs": 7,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-4",
-      "title": "[From.GetName]的末日",
-      "kind": "event",
-      "docs": 10,
-      "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -699,22 +834,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-marauder-103",
-      "title": "[raiding_marauder.GetName]",
-      "kind": "event",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-marauder-699",
       "title": "[marauder_neighbor_species.GetName]难民",
       "kind": "event",
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-6020",
@@ -737,15 +863,6 @@
     {
       "id": "event-operation-6300",
       "title": "渗透",
-      "kind": "event",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-12000",
-      "title": "奥伏戎",
       "kind": "event",
       "docs": 7,
       "refs": 0,
@@ -894,7 +1011,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-utopia-1",
@@ -1101,15 +1218,6 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4950",
-      "title": "恶毒光环",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 2,
       "review": "unreviewed"
     },
     {
@@ -1394,15 +1502,6 @@
     {
       "id": "event-infernals-3050",
       "title": "燃起的神话",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-515",
-      "title": "解放[liberated_planet.GetName]",
       "kind": "event",
       "docs": 4,
       "refs": 0,
@@ -1752,24 +1851,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-marauder-150",
-      "title": "[raiding_marauder.GetSpeciesName]来袭",
-      "kind": "event",
-      "docs": 3,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-555",
-      "title": "汗国在[capital_star.GetName]建造基地",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-nomads-400",
       "title": "太空城邦：冠军之铸现场秀！",
       "kind": "event",
@@ -1844,15 +1925,6 @@
     {
       "id": "event-planet-destruction-100",
       "title": "炸个球助兴",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-11240",
-      "title": "从失败中学习",
       "kind": "event",
       "docs": 3,
       "refs": 0,
@@ -2526,8 +2598,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-marauder-113",
-      "title": "放弃劫掠",
+      "id": "event-marauder-511",
+      "title": "大可汗之死",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2535,8 +2607,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-marauder-115",
-      "title": "劫掠舰队被毁",
+      "id": "event-marauder-711",
+      "title": "大可汗之死",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2652,15 +2724,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-shroud-5010",
-      "title": "奇怪的联系",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-shroud-505",
       "title": "发现主矿体",
       "kind": "event",
@@ -2676,7 +2739,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-520",
@@ -2715,44 +2778,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-shroud-60",
-      "title": "灵能压制已被拆解",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-65",
-      "title": "灵能压制已被拆解",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-70",
-      "title": "灵能压制已被拆解",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-shroud-725",
       "title": "高规格交通事故",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-75",
-      "title": "灵能压制已被拆解",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -5208,60 +5235,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-marauder-100",
-      "title": "[raiding_marauder.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-15",
-      "title": "[encountered_marauder.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-151",
-      "title": "佣兵契约终止",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-2",
-      "title": "发现[From.GetSpeciesName]战士",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-503",
-      "title": "大可汗夺取了[conquered_planet.GetName]！",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-70",
-      "title": "雇佣指挥官被取代",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-mega-9000",
       "title": "艺术设施：初始",
       "kind": "event",
@@ -5811,8 +5784,44 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-observer-100",
+      "title": "功率骤增",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-observer-50",
       "title": "机械星球被摧毁",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-observer-70",
+      "title": "视界信号",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-observer-71",
+      "title": "时之螶",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-observer-72",
+      "title": "时之螶",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -6054,40 +6063,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-shroud-11250",
-      "title": "终末",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-12130",
-      "title": "丝缕之苦",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-12160",
-      "title": "宣战",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-shroud-1510",
       "title": "灵能光环冲突",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-1550",
@@ -6096,7 +6078,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-3200",
@@ -6177,7 +6159,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-4050",
@@ -6252,33 +6234,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-shroud-4190",
-      "title": "灵能光环逼近",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4191",
-      "title": "灵能光环逼近",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4935",
-      "title": "[capital_scope.solar_system.GetName]系内创造",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-shroud-500",
       "title": "非常规突破",
       "kind": "event",
@@ -6298,12 +6253,12 @@
     },
     {
       "id": "event-shroud-5115",
-      "title": "[GetChosenPatron]",
+      "title": "天选",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-515",
@@ -6317,15 +6272,6 @@
     {
       "id": "event-shroud-530",
       "title": "发现先进残骸",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-5375",
-      "title": "未命名故事",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -6636,7 +6582,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-toxoids-499",

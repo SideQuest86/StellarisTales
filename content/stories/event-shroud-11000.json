@@ -1,0 +1,220 @@
+{
+ "id": "event-shroud-11000",
+ "family": {
+  "title": {
+   "zh": "虚境住民",
+   "en": "A Presence in the Shroud"
+  },
+  "category": "stories",
+  "start": "shroud.11000",
+  "members": [
+   "shroud.11000",
+   "shroud.11001",
+   "shroud.4040",
+   "shroud.4135",
+   "shroud.4715",
+   "shroud.4935",
+   "shroud.11250",
+   "shroud.4950",
+   "shroud.4960",
+   "shroud.4965",
+   "shroud.4970",
+   "shroud.12160",
+   "shroud.11240",
+   "shroud.11245",
+   "special_projects:RECKONING_VULNERABILITY_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "shroud.4715",
+   "to": "shroud.4935",
+   "conditional": true,
+   "label": {
+    "zh": "激活“创造”协约（局势第一阶段解锁）",
+    "en": "Creation accord used (unlocked in situation stage 1)"
+   },
+   "evidence": "common/situations/13_shroud_situations.txt:624-627 sets unlock_accord_creation; common/patrons/patron_types.txt:1020-1050 active accord (10000 energy, cooldown 5400) fires shroud.4935"
+  },
+  {
+   "from": "shroud.4715",
+   "to": "shroud.11250",
+   "conditional": true,
+   "label": {
+    "zh": "此后再潜入虚境",
+    "en": "On a later Shroud delve"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:5815 on_shroud_delve random 1 = shroud.11250; trigger has_covenant = end_of_the_cycle (Endbringers: more than 3 delves), events/shroud_events.txt:18592-18601"
+  },
+  {
+   "from": "shroud.4715",
+   "to": "shroud.4950",
+   "conditional": true,
+   "label": {
+    "zh": "终末光环触及他国（他国所见）",
+    "en": "The Aura of the End reaches another empire (seen by them)"
+   },
+   "evidence": "common/patrons/psionic_auras/00_auras.txt:966-1193 (end_aura on_start): first contact of the end_aura with a system owned by another empire sends shroud.4950 once (has_encountered_end_aura)"
+  },
+  {
+   "from": "shroud.4715",
+   "to": "shroud.4960",
+   "conditional": true,
+   "label": {
+    "zh": "光环覆盖半数星系（他国所见）",
+    "en": "Aura covers half the galaxy (seen by others)"
+   },
+   "evidence": "common/patrons/psionic_auras/00_auras.txt:966-1193 (end_aura on_start): num_end_cycle_galaxy_systems_percent >= 0.5 sends shroud.4960 to every other playable empire once"
+  },
+  {
+   "from": "shroud.4715",
+   "to": "shroud.4965",
+   "conditional": true,
+   "label": {
+    "zh": "光环覆盖四分之三星系（他国所见）",
+    "en": "Aura covers three quarters (seen by others)"
+   },
+   "evidence": "common/patrons/psionic_auras/00_auras.txt:966-1193 (end_aura on_start): >= 0.75 sends shroud.4965 to every other playable empire once"
+  },
+  {
+   "from": "shroud.4715",
+   "to": "shroud.4970",
+   "conditional": true,
+   "label": {
+    "zh": "光环吞没整个星系：立约方获胜",
+    "en": "Aura consumes the galaxy: the covenant empire wins"
+   },
+   "evidence": "common/patrons/psionic_auras/00_auras.txt:966-1193 (end_aura on_start): check_end_aura_win_condition; shroud.4970 (events/shroud_events.txt:12966-12996) sets victory and schedules shroud.4972 one day later (destroys every system, 13048-13075)"
+  },
+  {
+   "from": "shroud.4715",
+   "to": "shroud.12160",
+   "conditional": true,
+   "label": {
+    "zh": "星海共同体决议宣战（立约方所见）",
+    "en": "Galactic Community resolution declares war (seen by the covenant empire)"
+   },
+   "evidence": "common/resolutions/05_resolutions_shroud.txt resolution_galactic_focus_crisis_malevolent_aura: valid target has_covenant_with_end_of_the_cycle; effect sends shroud.12160 to the target"
+  },
+  {
+   "from": "situations:end_of_the_cycle",
+   "to": "shroud.11240",
+   "conditional": true,
+   "label": {
+    "zh": "局势完成后“清算”出现；他国首次战败",
+    "en": "After the situation completes the Reckoning appears; another empire first loses a battle to it"
+   },
+   "evidence": "common/situations/13_shroud_situations.txt:572-615 on_progress_complete begins the_reckoning_chain; shroud.11240 (events/shroud_events.txt:18496-18526) fires on_space_battle_lost against event_target:the_reckoning_country, human players only, once"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.4040",
+    "shroud.4135"
+   ],
+   "label": {
+    "zh": "上超主随机二选一",
+    "en": "Great patron: one of two"
+   },
+   "note": {
+    "zh": "基础权重95:5。灵督终末者起源只会得到轮回之终末；已有人掷出、全局禁用或另有终末者帝国时为0；他国达天灾5级×2，曾与骑士相遇×5。",
+    "en": "Base weights 95:5. Endbringers origin always gets the End of the Cycle; it is 0 if already rolled, disabled, or another empire is an Endbringer; ×2 if another empire reached crisis level 5, ×5 after meeting the Knights."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "shroud.4040": {
+   "zh": "虚空低语者",
+   "en": "Whisperers in the Void"
+  },
+  "shroud.4135": {
+   "zh": "轮回之终末",
+   "en": "End of the Cycle"
+  },
+  "shroud.4715": {
+   "zh": "立约",
+   "en": "Covenant formed"
+  },
+  "shroud.4935": {
+   "zh": "创造协约",
+   "en": "Creation accord"
+  },
+  "shroud.11250": {
+   "zh": "虚境死寂",
+   "en": "The silent Shroud"
+  },
+  "shroud.4950": {
+   "zh": "恶毒光环",
+   "en": "Malevolent Aura"
+  },
+  "shroud.4960": {
+   "zh": "光环过半",
+   "en": "Half the galaxy"
+  },
+  "shroud.4965": {
+   "zh": "光环四分之三",
+   "en": "Three quarters"
+  },
+  "shroud.4970": {
+   "zh": "终末降临",
+   "en": "The End has come"
+  },
+  "shroud.12160": {
+   "zh": "共同体宣战",
+   "en": "Community war"
+  },
+  "shroud.11240": {
+   "zh": "败于清算",
+   "en": "Defeated by the Reckoning"
+  },
+  "shroud.11245": {
+   "zh": "清算弱点",
+   "en": "Reckoning's weakness"
+  }
+ },
+ "notes": [
+  {
+   "doc": "shroud.4040",
+   "kind": "review",
+   "zh": "选项后开启“虚空低语者”首次接触特殊项目（常规/蜂巢/机械三种版本），其完成事件 shroud.4045 属于该项目的故事（C3）。编译器未识别 enable_patron_first_contact_project，故此处无连线。",
+   "en": "Starts the Whisperers in the Void first-contact special project (regular/hive/machine variants); its completion event shroud.4045 belongs to that project story (C3). The compiler does not read enable_patron_first_contact_project, so no edge is drawn here."
+  },
+  {
+   "doc": "shroud.4970",
+   "kind": "review",
+   "zh": "由光环拥有者（立约方）看到；一天后其他人类玩家收到 shroud.4971，所有星系被摧毁。",
+   "en": "Seen by the aura owner (covenant empire); one day later other human players get shroud.4971 and every system is destroyed."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "scope": {
+   "zh": "上超主掷骰、两种结果、轮回之终末立约及其后果（光环扩散通知、胜利、决议宣战、清算与研究项目、潜入死寂、创造协约）均已核对。虚空低语者首次接触项目之后的内容属于C3项目故事；局势完成后的 utopia.3320 属于 the-shroud。",
+   "en": "Great-patron roll, both outcomes, the End of the Cycle covenant and its consequences (aura notices, victory, Community war, Reckoning project, silent delve, Creation accord) were checked. Content after the Whisperers first-contact project belongs to the C3 project story; utopia.3320 after the situation completes belongs to the-shroud."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:388 (on_monthly_pulse_country → shroud.11000)",
+   "events/shroud_events.txt:17892-17974 (11000/11001)",
+   "events/shroud_events.txt:8402-8427 (4040)",
+   "events/shroud_events.txt:8933-9044 (4135)",
+   "events/shroud_events.txt:11370-11426 (4715)",
+   "common/scripted_effects/shroud_shadows_scripted_effects.txt:2376-2436 (accept_end_of_the_cycle)",
+   "common/situations/13_shroud_situations.txt:559-727",
+   "common/script_values/07_script_values_shroud.txt:795-801",
+   "common/patrons/psionic_auras/00_auras.txt:966-1193",
+   "events/shroud_events.txt:12682-13075 (4950-4972)",
+   "common/patrons/patron_types.txt:996-1050 (Creation accord → 4935)",
+   "common/resolutions/05_resolutions_shroud.txt (focus: malevolent aura → 12160)",
+   "events/shroud_events.txt:18496-18610 (11240/11245/11250)",
+   "events/shroud_events.txt:19919-19930 (12160)"
+  ],
+  "guide": "public/summaries/event-shroud-11000.md",
+  "uncertain": [
+   "The chance per month (calc_greater_patron_roll_chance = 1 + 3 × mid-game years passed, max 100) is read from the script value; how the engine evaluates mid_game_years_passed before mid-game was not tested."
+  ]
+ }
+}

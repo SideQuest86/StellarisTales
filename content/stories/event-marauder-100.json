@@ -1,0 +1,280 @@
+{
+ "id": "event-marauder-100",
+ "family": {
+  "title": {
+   "zh": "掠袭",
+   "en": "Raiding"
+  },
+  "category": "stories",
+  "start": "marauder.100",
+  "members": [
+   "marauder.100",
+   "marauder.101",
+   "marauder.102",
+   "marauder.103",
+   "marauder.104",
+   "marauder.105",
+   "marauder.106",
+   "marauder.107",
+   "marauder.108",
+   "marauder.110",
+   "marauder.111",
+   "marauder.112",
+   "marauder.113",
+   "marauder.114",
+   "marauder.115",
+   "marauder.116",
+   "marauder.117",
+   "marauder.118",
+   "marauder.120",
+   "marauder.121",
+   "marauder.122",
+   "marauder.123",
+   "marauder.124",
+   "marauder.150",
+   "marauder.160"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "marauder.101",
+   "to": "marauder.104",
+   "conditional": true,
+   "label": {
+    "zh": "拒绝后遭掠袭：掠走资源（50%）",
+    "en": "Raided after refusing: resources taken (50%)"
+   },
+   "evidence": "marauder.103 on_planet_bombarded (00_on_actions.txt:2166), devastation >= 15, picks the window by owner type (marauder_events.txt:5376-5419); non-gestalt 50/50 with 105"
+  },
+  {
+   "from": "marauder.101",
+   "to": "marauder.105",
+   "conditional": true,
+   "label": {
+    "zh": "拒绝后遭掠袭：掠走人口（50%）",
+    "en": "Raided after refusing: pops taken (50%)"
+   },
+   "evidence": "marauder.103 on_planet_bombarded (00_on_actions.txt:2166), devastation >= 15, picks the window by owner type (marauder_events.txt:5376-5419); weight 0 if the planet has 100 pops or fewer"
+  },
+  {
+   "from": "marauder.101",
+   "to": "marauder.106",
+   "conditional": true,
+   "label": {
+    "zh": "遭掠袭（机械帝国）",
+    "en": "Raided (machine empire)"
+   },
+   "evidence": "marauder.103 on_planet_bombarded (00_on_actions.txt:2166), devastation >= 15, picks the window by owner type (marauder_events.txt:5376-5419)"
+  },
+  {
+   "from": "marauder.101",
+   "to": "marauder.107",
+   "conditional": true,
+   "label": {
+    "zh": "遭掠袭（机仆）",
+    "en": "Raided (Rogue Servitor)"
+   },
+   "evidence": "marauder.103 on_planet_bombarded (00_on_actions.txt:2166), devastation >= 15, picks the window by owner type (marauder_events.txt:5376-5419)"
+  },
+  {
+   "from": "marauder.101",
+   "to": "marauder.108",
+   "conditional": true,
+   "label": {
+    "zh": "遭掠袭（蜂巢）",
+    "en": "Raided (hive mind)"
+   },
+   "evidence": "marauder.103 on_planet_bombarded (00_on_actions.txt:2166), devastation >= 15, picks the window by owner type (marauder_events.txt:5376-5419)"
+  },
+  {
+   "from": "marauder.101",
+   "to": "marauder.116",
+   "conditional": true,
+   "label": {
+    "zh": "击毁掠袭舰队",
+    "en": "Raiding fleet destroyed"
+   },
+   "evidence": "on_fleet_destroyed_victim -> marauder.115 (00_on_actions.txt:1583; L6162-6235): target gets 116, a hirer gets 124"
+  },
+  {
+   "from": "marauder.101",
+   "to": "marauder.114",
+   "conditional": true,
+   "label": {
+    "zh": "掠袭舰队受损撤退",
+    "en": "Raiding fleet weakened and retreats"
+   },
+   "evidence": "monthly marauder.113 (00_on_actions.txt:92; L5967-6145): raid fleet below its power threshold and not in combat -> target 114, hirer 117"
+  },
+  {
+   "from": "marauder.104",
+   "to": "marauder.111",
+   "conditional": true,
+   "label": {
+    "zh": "20天后掠袭者撤离",
+    "en": "Raiders leave 20 days later"
+   },
+   "evidence": "marauder.103 -> fleet_event marauder.110 days = 20 (L5373) -> victim 111, hirer 122 (L5757-5797)"
+  },
+  {
+   "from": "marauder.105",
+   "to": "marauder.111",
+   "conditional": true,
+   "label": {
+    "zh": "20天后掠袭者撤离",
+    "en": "Raiders leave 20 days later"
+   },
+   "evidence": "marauder.110 (L5706-5797)"
+  },
+  {
+   "from": "marauder.106",
+   "to": "marauder.111",
+   "conditional": true,
+   "label": {
+    "zh": "20天后掠袭者撤离",
+    "en": "Raiders leave 20 days later"
+   },
+   "evidence": "marauder.110 (L5706-5797)"
+  },
+  {
+   "from": "marauder.107",
+   "to": "marauder.111",
+   "conditional": true,
+   "label": {
+    "zh": "20天后掠袭者撤离",
+    "en": "Raiders leave 20 days later"
+   },
+   "evidence": "marauder.110 (L5706-5797)"
+  },
+  {
+   "from": "marauder.108",
+   "to": "marauder.111",
+   "conditional": true,
+   "label": {
+    "zh": "20天后掠袭者撤离",
+    "en": "Raiders leave 20 days later"
+   },
+   "evidence": "marauder.110 (L5706-5797)"
+  },
+  {
+   "from": "marauder.121",
+   "to": "marauder.104",
+   "conditional": true,
+   "label": {
+    "zh": "受雇掠袭得手",
+    "en": "Hired raid hits"
+   },
+   "evidence": "marauder.103 on_planet_bombarded (00_on_actions.txt:2166), devastation >= 15, picks the window by owner type (marauder_events.txt:5376-5419)"
+  },
+  {
+   "from": "marauder.121",
+   "to": "marauder.116",
+   "conditional": true,
+   "label": {
+    "zh": "击毁受雇的掠袭舰队",
+    "en": "Hired raiding fleet destroyed"
+   },
+   "evidence": "marauder.115 (L6162-6235)"
+  },
+  {
+   "from": "marauder.121",
+   "to": "marauder.114",
+   "conditional": true,
+   "label": {
+    "zh": "受雇舰队撤退",
+    "en": "Hired fleet retreats"
+   },
+   "evidence": "marauder.113 (L5967-6145)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "marauder.104",
+    "marauder.105",
+    "marauder.106",
+    "marauder.107",
+    "marauder.108"
+   ],
+   "label": {
+    "zh": "被掠袭星球的遭遇",
+    "en": "What the raided planet suffers"
+   },
+   "note": {
+    "zh": "按星球主人类型只出现一种：非格式塔随机资源或人口，机械、机仆、蜂巢各有专属。",
+    "en": "Only one by owner type: non-gestalts get resources or pops at random; machines, Rogue Servitors and hives have their own."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "marauder.104",
+    "marauder.116",
+    "marauder.114"
+   ],
+   "label": {
+    "zh": "掠袭的三种收场",
+    "en": "Three ways a raid ends"
+   },
+   "note": {
+    "zh": "一次掠袭以得手（之后撤离）、舰队被毁或舰队受损撤退之一收场。",
+    "en": "A raid ends with a successful hit (then withdrawal), the fleet destroyed, or the weakened fleet retreating."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "marauder.101": {
+   "zh": "索要贡品",
+   "en": "Tribute demanded"
+  },
+  "marauder.120": {
+   "zh": "受雇掠袭来袭",
+   "en": "Hired raid incoming"
+  },
+  "marauder.122": {
+   "zh": "雇主视角：撤离",
+   "en": "Hirer's view: withdrawal"
+  },
+  "marauder.117": {
+   "zh": "雇主视角：撤退",
+   "en": "Hirer's view: retreat"
+  },
+  "marauder.124": {
+   "zh": "雇主视角：被毁",
+   "en": "Hirer's view: destroyed"
+  },
+  "marauder.102": {
+   "zh": "被掠袭时联络",
+   "en": "Contact during a raid"
+  },
+  "marauder.112": {
+   "zh": "受雇掠袭时联络",
+   "en": "Contact during a hired raid"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C8b reviewer (Opus 5.5)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/marauder_events.txt:4290-6390",
+   "events/marauder_events.txt:6388-6674",
+   "common/on_actions/00_on_actions.txt:92,95,241,1583,2166"
+  ],
+  "uncertain": [
+   "When a raiding fleet actually launches after a refusal is decided outside these events; we only state that the empire remains a raid target."
+  ],
+  "guide": "public/summaries/event-marauder-100.md",
+  "merged": [
+   "event-marauder-103",
+   "event-marauder-113",
+   "event-marauder-115",
+   "event-marauder-150"
+  ]
+ }
+}

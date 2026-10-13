@@ -1,0 +1,145 @@
+{
+ "id": "defenders-of-the-galaxy",
+ "titleFrom": "ambition.120",
+ "bridges": [
+  {
+   "from": "ambition.125", "to": "ambition.105", "conditional": true,
+   "label": {"zh": "项目一完成、身为银河共同体成员且累积2000诚信：第二级（3天后）", "en": "Project 1 done, a Galactic Community member, 2,000 Integrity: level 2 (3 days later)"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:246-273 crisis_defender_level_2 requires crisis_special_project_1_complete, is_galactic_community_member, 2000; on_unlock ambition.105 days=3"
+  },
+  {
+   "from": "ambition.130", "to": "ambition.110", "conditional": true,
+   "label": {"zh": "项目二完成、身为银河议会成员且累积6000：第三级（3天后）", "en": "Project 2 done, on the Galactic Council, 6,000: level 3 (3 days later)"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:275-305 crisis_defender_level_3 requires crisis_special_project_2_complete, is_part_of_galactic_council, 6000; on_unlock ambition.110 days=3"
+  },
+  {
+   "from": "ambition.110", "to": "ambition.115", "conditional": true,
+   "label": {"zh": "成为银河监管人并累积18000：第四级（3天后）", "en": "Become Galactic Custodian and gather 18,000: level 4 (3 days later)"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:307-334 crisis_defender_level_4 requires is_galactic_custodian and 18000; on_unlock ambition.115 days=3"
+  },
+  {
+   "from": "ambition.115", "to": "ambition.120", "conditional": true,
+   "label": {"zh": "银河中存在天灾（或第五级玩家天灾）、仍为监管人并累积45000：第五级（3天后）", "en": "A crisis is active (or a level-5 player crisis exists), still Custodian, 45,000: level 5 (3 days later)"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:336-372 crisis_defender_level_5 requires has_crisis or is_level_5_player_crisis, is_galactic_custodian, 45000; on_unlock ambition.120 days=3"
+  },
+  {
+   "from": "ambition.120", "to": "ambition.325", "conditional": true,
+   "label": {"zh": "至少击败两场终局天灾、无存活天灾时卸任监管人：5天后胜利", "en": "Step down as Custodian with 2+ endgame crises defeated and none alive: victory 5 days later"},
+   "evidence": "events/nemesis_custodian_events.txt:149-153 and 213 custodian.10/custodian.14 (term ends or resignation) fire ambition.325 days=5; events/ambition_events.txt:1713-1755 requires menp_defender_defense_3 (level 5 perk), no crisis faction, 2+ crises happened and defeated; option win = yes"
+  },
+  {
+   "from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_4", "to": "crisis.11", "conditional": true,
+   "label": {"zh": "项目完成30–60天后召来一场终局天灾：索林原虫（基础权重10/38）", "en": "30–60 days after the project an endgame crisis is summoned: the Prethoryn (base weight 10/38)"},
+   "evidence": "common/special_projects/06_projects_nomads.txt:419-535 on_success random_list: crisis.10 (L443) 10, crisis.1000 (L469) 8, crisis.2005 (L494) 10, crisis.8005 (L528) 10, modified by crisis settings and crises already happened; crisis.10 sends crisis.11 (crisis_events_1.txt:60-63)"
+  },
+  {
+   "from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_4", "to": "crisis.1007", "conditional": true,
+   "label": {"zh": "或：破界者（基础权重8/38）", "en": "Or the Unbidden (base weight 8/38)"},
+   "evidence": "common/special_projects/06_projects_nomads.txt:451-475 crisis.1000 days=30 random=30; crisis_events_2.txt:323-352 sends crisis.1007 or crisis.1008 by intel"
+  },
+  {
+   "from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_4", "to": "crisis.2010", "conditional": true,
+   "label": {"zh": "或：肃正协议（基础权重10/38）", "en": "Or the Contingency (base weight 10/38)"},
+   "evidence": "common/special_projects/06_projects_nomads.txt:477-500 crisis.2005; crisis_events_3.txt:150-153 crisis.2010"
+  },
+  {
+   "from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_4", "to": "crisis.8035", "conditional": true,
+   "label": {"zh": "或：合成女王塞塔娜（基础权重10/38，需机械纪元且无虚境铸就起源）", "en": "Or the Synthetic Queen (base weight 10/38; needs Machine Age, no Shroud-Forged origin)"},
+   "evidence": "common/special_projects/06_projects_nomads.txt:501-534 crisis.8005; events/machine_age_crisis_events.txt:3979 crisis.8005 schedules crisis.8035 after 180 days"
+  },
+  {
+   "from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_5", "to": "crisis.11", "conditional": true,
+   "label": {"zh": "项目完成30–60天后召来第二场天灾：索林原虫（若尚未发生）", "en": "30–60 days after the project a second crisis is summoned: the Prethoryn (if not yet happened)"},
+   "evidence": "common/special_projects/06_projects_nomads.txt:583-704 on_success random_list crisis.10 (L607) / crisis.1000 (L634) / crisis.2005 (L661) / crisis.8005 (L697), each blocked if that crisis already happened"
+  },
+  {
+   "from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_5", "to": "crisis.1007", "conditional": true,
+   "label": {"zh": "或：破界者", "en": "Or the Unbidden"},
+   "evidence": "common/special_projects/06_projects_nomads.txt:615-640"
+  },
+  {
+   "from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_5", "to": "crisis.2010", "conditional": true,
+   "label": {"zh": "或：肃正协议", "en": "Or the Contingency"},
+   "evidence": "common/special_projects/06_projects_nomads.txt:642-667"
+  },
+  {
+   "from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_5", "to": "crisis.8035", "conditional": true,
+   "label": {"zh": "或：合成女王塞塔娜", "en": "Or the Synthetic Queen"},
+   "evidence": "common/special_projects/06_projects_nomads.txt:669-703"
+  },
+  {
+   "from": "ambition.115", "to": "ambition.200", "conditional": true,
+   "label": {"zh": "身为监管人通过“圣骑士计划”决议（第四级天赋后，需有银河防卫军）", "en": "As Custodian, pass the Paladin Initiative resolution (after the level-4 perk; needs a Galactic Defense Force)"},
+   "evidence": "common/resolutions/05_resolutions_nomads.txt:537-576 resolution_custodian_paladin_initiative: potential menp_defender_opinion_2 (level 4 perk, 00_crisis_levels.txt:321), allow is_galactic_custodian and galactic_defense_force_exists; effect sends ambition.200 to the Custodian"
+  },
+  {
+   "from": "ambition.205", "to": "ambition.210", "conditional": true,
+   "label": {"zh": "建成圣骑士舰时：提名一位圣骑士", "en": "When a Paladin ship is built: nominate a Paladin"},
+   "evidence": "events/ambition_events.txt:480-500 ambition.210 (on_ship_built, 00_on_actions.txt:2576) requires paladin_ship and paladin_project_researched (set by ambition.205 at L466)"
+  },
+  {
+   "from": "ambition.210", "to": "ambition.216", "conditional": true,
+   "label": {"zh": "指挥官就任圣骑士舰：确认圣骑士职业", "en": "A commander takes command of the Paladin ship: confirm the Paladin subclass"},
+   "evidence": "events/ambition_events.txt:503-677 ambition.215 (leader assigned) sends ambition.216 (L680-1006) unless already confirmed"
+  },
+  {
+   "from": "ambition.205", "to": "ambition.230", "conditional": true,
+   "label": {"zh": "若共同体通过“圣骑士直接指挥”决议（舰船拥有者视角）", "en": "If the Community passes Paladin Direct Command (ship owners' view)"},
+   "evidence": "common/resolutions/05_resolutions_nomads.txt:3140 resolution_paladin_direct_command sends ambition.230; events/ambition_events.txt:1066-1096 hands control to the Custodian"
+  },
+  {
+   "from": "ambition.230", "to": "ambition.235", "conditional": true,
+   "label": {"zh": "若该决议被废止：交还控制权", "en": "If that resolution is repealed: control is returned"},
+   "evidence": "common/resolutions/05_resolutions_nomads.txt:3174 resolution_repeal_paladin_direct_command sends ambition.235"
+  },
+  {
+   "from": "ambition.205", "to": "ambition.225", "conditional": true,
+   "label": {"zh": "若“圣骑士计划”被解散：圣骑士舰被拆除", "en": "If the Paladin Initiative is disbanded: the Paladin ships are removed"},
+   "evidence": "common/resolutions/05_resolutions_nomads.txt:724 resolution_custodian_disband_paladin_initiative sends ambition.225; events/ambition_events.txt:1032-1063"
+  }
+ ],
+ "suppress": [
+  {"from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_4", "to": "crisis.8020", "evidence": "crisis.8020 is a Cetana spawn notice only for owners of a wiped system (machine_age_crisis_events.txt via synth_queen_wipe_system); the summoned crisis is linked at its opening crisis.8035"},
+  {"from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_4", "to": "crisis.8039", "evidence": "crisis.8039 is a later Cetana chapter (after crisis.8035), not the summoning itself"},
+  {"from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_5", "to": "crisis.8020", "evidence": "as above"},
+  {"from": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_5", "to": "crisis.8039", "evidence": "as above"}
+ ],
+ "endings": {
+  "ambition.325": {
+   "label": {"zh": "胜利：最终的和平", "en": "Victory: Peace at Last"},
+   "note": {"zh": "到达第五级并击败至少两场终局天灾后，交出监管人权力即赢得游戏。", "en": "Having reached level 5 and defeated at least two endgame crises, surrendering the Custodian's powers wins the game."},
+   "evidence": "events/ambition_events.txt:1713-1755 option win = yes"
+  }
+ },
+ "nodeLabels": {
+  "ambition.100": {"zh": "第一级", "en": "Level 1"},
+  "ambition.105": {"zh": "第二级", "en": "Level 2"},
+  "ambition.110": {"zh": "第三级", "en": "Level 3"},
+  "ambition.115": {"zh": "第四级", "en": "Level 4"},
+  "ambition.120": {"zh": "第五级", "en": "Level 5"},
+  "ambition.135": {"zh": "召来第一场天灾", "en": "The first crisis summoned"},
+  "ambition.140": {"zh": "召来第二场天灾", "en": "A second crisis summoned"},
+  "ambition.200": {"zh": "圣骑士计划", "en": "The Paladin Initiative"},
+  "ambition.325": {"zh": "胜利", "en": "Victory"}
+ },
+ "notes": [
+  {"doc": "special_projects:DEFENDER_CRISIS_SPECIAL_PROJECT_4", "kind": "review",
+   "zh": "若在完成前银河已发生过终局天灾，此项目被取消，但仍视为完成并可能开启第二项目；完成时只召来一场尚未发生的天灾。若已发生的天灾少于两场，会开启“先发制人”召来第二场。",
+   "en": "If an endgame crisis happens before completion, the project is cancelled but still counts as done and may open the second project; on completion it summons one crisis that has not yet happened. If fewer than two crises have happened, Press the Advantage opens to summon a second."},
+  {"doc": "ambition.120", "kind": "review",
+   "zh": "第五级开启“先发制人”结局事件链，并把此前已击败的天灾计入；之后每击败一场天灾，各天灾的胜利事件都会为该事件链加一。",
+   "en": "Level 5 opens the Preemptive Strike ending chain, counting crises already defeated; each crisis victory event later adds to that chain's counter."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c5b-crisis (Opus 5.5)",
+  "scope": {"zh": "完整核对 ambition_events.txt 全部可见事件、五个星河卫士等级、四个特殊项目（含召来天灾的随机表）、圣骑士决议与胜利条件。", "en": "Checked every visible event in ambition_events.txt, the five Defender levels, its special projects (including the crisis-summoning tables), the Paladin resolutions and the victory condition."},
+  "sources": ["events/ambition_events.txt", "common/crisis_levels/00_crisis_levels.txt", "common/crisis_paths/00_defender_path.txt", "common/special_projects/06_projects_nomads.txt", "common/resolutions/05_resolutions_nomads.txt", "events/nemesis_custodian_events.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": [
+   "The perk that gates this path is ap_defender_of_the_galaxy_nomads in the objective events; its own selection screen was not re-read.",
+   "Crisis-summoning weights are base values; crisis-type game settings and earlier crises change them."
+  ],
+  "guide": "public/summaries/defenders-of-the-galaxy.md"
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "id": "event-utopia-2550",
+ "suppress": [
+  {"from": "situations:situation_digitization", "to": "synth.105", "evidence": "re-parented: needs synth_105_fire set by synth.100 (events/machine_age_situation_events_2.txt:92-95) and progress >= 100 (108-111)"},
+  {"from": "situations:situation_digitization", "to": "synth.205", "evidence": "re-parented: scheduled by every synth.200 option days=180 random=30 (338, 357, 375, 401) and needs progress >= 350 (420-423)"},
+  {"from": "situations:situation_digitization", "to": "synth.305", "evidence": "re-parented: scheduled by the synth.300 option without resistance (682) and needs the Old Towns deposit and progress >= 600 (729-737)"},
+  {"from": "situations:situation_digitization", "to": "synth.310", "evidence": "re-parented: scheduled by the synth.300 option with resistance (710) and needs the Biological Enclaves deposit and progress >= 600 (813-821)"},
+  {"from": "situations:situation_digitization", "to": "synth.405", "evidence": "re-parented: scheduled by every synth.400 option days=180 random=30 (1082, 1106, 1125), needs progress >= 850 (1144-1147)"},
+  {"from": "situations:situation_digitization", "to": "synth.4", "evidence": "re-parented: on_progress_complete (08_machine_age_situations.txt:1549-1557) -> synth.2 -> synth.4 one day later (machine_age_situation_events_2.txt:1213-1227) ends stage 4"}
+ ],
+ "bridges": [
+  {"from": "synth.100", "to": "synth.105", "conditional": true,
+   "label": {"zh": "局势进度达到100", "en": "Situation progress reaches 100"},
+   "evidence": "events/machine_age_situation_events_2.txt:92-95 synth.100 sets synth_105_fire; 99-143 synth.105 on_monthly requires it and progress >= 100"},
+  {"from": "synth.405", "to": "synth.4", "conditional": true,
+   "label": {"zh": "局势完成（进度1000）", "en": "Situation completes (progress 1000)"},
+   "evidence": "common/situations/08_machine_age_situations.txt:1549-1557 on_progress_complete -> synth.2; events/machine_age_situation_events_2.txt:1213-1227 synth.2 -> synth.4 days = 1"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["utopia.2550", "situations:situation_digitization"],
+   "label": {"zh": "采纳合成传统时按DLC二选一", "en": "One version on adopting the Synthetics traditions, by DLC"},
+   "note": {"zh": "有“机械时代”时进入“合成化”局势（合成繁衍起源另有局势）；只有无该DLC的非机械帝国才会出现“合成嬗变”项目版本。本地已安装机械时代，因此本地游戏中实际出现的是局势版本。", "en": "With Machine Age: the Synthesization situation (the Synthetic Fertility origin has its own); only without that DLC does a non-machine empire get the Synthetic Evolution project version. Machine Age is installed locally, so the situation version is what this install plays."}},
+  {"kind": "exclusive", "members": ["synth.305", "synth.310"],
+   "label": {"zh": "按是否出现抵抗二选一", "en": "One depending on the resistance"}},
+  {"kind": "exclusive", "members": ["synth.505", "synth.510", "synth.515", "synth.520", "synth.525"],
+   "label": {"zh": "按政体只出现其一", "en": "One by government authority"}}
+ ],
+ "nodeLabels": {
+  "observer.4": {"zh": "观察者视角", "en": "Observer view"},
+  "utopia.2555": {"zh": "其他帝国收到的通知", "en": "Notice to other empires"},
+  "utopia.2556": {"zh": "向其他帝国宣布", "en": "Announcement to other empires"},
+  "utopia.2558": {"zh": "狂热唯心帝国的回应", "en": "A fanatic spiritualist reply"},
+  "situations:situation_digitization": {"zh": "合成化局势", "en": "Synthesization situation"},
+  "synth.505": {"zh": "数字重构：民主制", "en": "Digital Refactoring: democratic"},
+  "synth.510": {"zh": "数字重构：寡头制", "en": "Digital Refactoring: oligarchic"},
+  "synth.515": {"zh": "数字重构：独裁制", "en": "Digital Refactoring: dictatorial"},
+  "synth.520": {"zh": "数字重构：帝制", "en": "Digital Refactoring: imperial"},
+  "synth.525": {"zh": "数字重构：企业制", "en": "Digital Refactoring: corporate"}
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {"zh": "合成传统入口二选一、乌托邦版项目与对其他帝国的通知/回应、合成化局势四个阶段、阶段剧情事件的调度与进度门槛、完成事件与“数字重构”。局势随机事件池（synth.120/160/220/260/320/360）由 on_action 列表触发，属于其他审阅者的故事，已在请求中说明。", "en": "Two-way tradition entry, the Utopia project with notices/replies, the four Synthesization stages, scheduling and progress gates of the stage events, completion and Digital Refactoring. The situation's random event pool (synth.120/160/220/260/320/360) is fired via an on_action list and belongs to another reviewer's stories (see Requests)."},
+  "sources": ["common/traditions/01_synthetics.txt", "events/utopia_on_action_events.txt", "common/special_projects/00_projects_utopia.txt", "common/situations/08_machine_age_situations.txt", "events/machine_age_situation_events_2.txt"],
+  "uncertain": ["synth.505-525 are shared with origin_synthetic_fertility (its own synthesization situation also leads to synth.500)."],
+  "guide": "public/summaries/event-utopia-2550.md"
+ }
+}

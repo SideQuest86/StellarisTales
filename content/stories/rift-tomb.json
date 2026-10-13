@@ -1,0 +1,47 @@
+{
+ "id": "rift-tomb",
+ "category": "rifts",
+ "bridges": [
+  {"from": "astral_rift.1705", "choice": "astral_rift.1705.b", "to": "astral_rift.1725", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_1_events.txt:4051-4055 set_next_astral_rift_event { id = astral_rift.1720 on_roll_failed = astral_rift.1725 fail_probability = @default_failure_probability }"},
+  {"from": "astral_rift.1710", "choice": "astral_rift.1710.b", "to": "astral_rift.1725", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_1_events.txt:4095-4099 on_roll_failed = astral_rift.1725"},
+  {"from": "astral_rift.1715", "choice": "astral_rift.1715.b", "to": "astral_rift.1725", "conditional": true,
+   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "evidence": "events/astral_rifts_1_events.txt:4144-4148 on_roll_failed = astral_rift.1725"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.1720", "astral_rift.1725"],
+   "label": {"zh": "炸开墓室：盗墓或墓地守卫", "en": "Blasting in: tomb raiding or guardians"},
+   "note": {"zh": "选择炸开或破拆后，本阶段要么突破进入墓室（1720），要么在某次掷骰时以每次 1.5% 的基础概率失败，放出墓地守卫（1725）。", "en": "After choosing to blast or break in, the stage either breaks through into the tomb (1720) or fails on a roll, base 1.5% per roll, releasing the Grave Guardians (1725)."}}
+ ],
+ "endings": {
+  "astral_rift.1720": {
+   "label": {"zh": "盗墓：大量文物", "en": "Tomb Raiding: rich artefacts"},
+   "note": {"zh": "墓中有水晶巨骨与贡品；获得矿物、合金、500 稀有晶体、稀有文物与凝聚力；灵能科学家另得一项灵能研究选项。探索结束。", "en": "A crystalline giant's skeleton surrounded by offerings; minerals, alloys, 500 rare crystals, minor artefacts and unity; a psionic scientist also yields a psionics research option. The exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:4156-4252"},
+  "astral_rift.1725": {
+   "label": {"zh": "墓地守卫：敌对舰队", "en": "Grave Guardians: a hostile fleet"},
+   "note": {"zh": "失败分支：隐藏墓室里的守卫随探球冲出裂隙，在裂隙所在处生成一支敌对的“墓地守卫”舰队（10–30 艘）。探索结束。", "en": "Failure branch: guardians from a hidden chamber follow the Sphere out of the rift; a hostile Grave Guardians fleet (10–30 ships) appears at the rift. The exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:4254-4313"}
+ },
+ "notes": [
+  {"doc": "astral_rift.1715", "kind": "review",
+   "zh": "“取一些样本就回来”（1715.a）直接结束探索，获得中量星界丝缕；“进行破坏性破拆”（1715.b）给大量星界丝缕并继续冒险。",
+   "en": "“Take samples and return.” (1715.a) ends the exploration at once with a medium astral thread reward; “Engage destructive exploration.” (1715.b) gives a large reward and continues the risk."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 1700–1725 全部事件，补上三处 on_roll_failed 失败分支 1725（原为独立故事）。",
+   "en": "Checked the rift definition and every event 1700–1725; added the three on_roll_failed fallbacks to 1725 (formerly a separate story)."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-tomb.md"
+ }
+}

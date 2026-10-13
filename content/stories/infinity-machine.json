@@ -1,0 +1,199 @@
+{
+ "id": "infinity-machine",
+ "bridges": [
+  {
+   "from": "leviathans.1030",
+   "choice": "INTERESTING",
+   "to": "leviathans.1040",
+   "conditional": true,
+   "label": {
+    "zh": "若我们的舰队在战斗中摧毁神机",
+    "en": "If our fleets destroy the Machine in battle"
+   },
+   "evidence": "on_fleet_destroyed_perp (00_on_actions.txt:1640) -> leviathans.1040 with FROM = guardian_sphere (leviathans_events_2.txt:1447-1459)"
+  },
+  {
+   "from": "leviathans.1065",
+   "choice": "AMAZING",
+   "to": "leviathans.4000",
+   "conditional": true,
+   "label": {
+    "zh": "可将秘密告诉策展人",
+    "en": "The secret can be shared with the Curators"
+   },
+   "evidence": "1065 sets pantagruel (leviathans_events_2.txt:2315); Curator menu option leviathans.500.g requires pantagruel + asked_about_infinity_machine (leviathans_events_1.txt:5067-5078)"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "leviathans.1052",
+   "to": "leviathans.1041",
+   "evidence": "leviathans.1039 (leviathans_events_2.txt:1367-1410) and leviathans.1040 (:1490-1504) send leviathans.1041 only to OTHER empires that met the Machine (NOR is_same_value = root); it is not a continuation for the acting player"
+  },
+  {
+   "from": "leviathans.1063",
+   "to": "leviathans.1041",
+   "evidence": "leviathans.1039 (leviathans_events_2.txt:1367-1410) and leviathans.1040 (:1490-1504) send leviathans.1041 only to OTHER empires that met the Machine (NOR is_same_value = root); it is not a continuation for the acting player"
+  },
+  {
+   "from": "leviathans.1065",
+   "to": "leviathans.1041",
+   "evidence": "leviathans.1039 (leviathans_events_2.txt:1367-1410) and leviathans.1040 (:1490-1504) send leviathans.1041 only to OTHER empires that met the Machine (NOR is_same_value = root); it is not a continuation for the acting player"
+  },
+  {
+   "from": "leviathans.1040",
+   "to": "leviathans.1041",
+   "evidence": "leviathans.1039 (leviathans_events_2.txt:1367-1410) and leviathans.1040 (:1490-1504) send leviathans.1041 only to OTHER empires that met the Machine (NOR is_same_value = root); it is not a continuation for the acting player"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.1061",
+    "leviathans.1062"
+   ],
+   "label": {
+    "zh": "黑洞研究完成：三种随机结果",
+    "en": "Black-hole study: three random results"
+   },
+   "note": {
+    "zh": "TECHNOSPHERE_BLACKHOLE（00_projects_leviathans.txt:344-358）：50 成功（1061）；25 失败、25 秘密，二者都先显示1062，再分别为1063或1065。",
+    "en": "TECHNOSPHERE_BLACKHOLE (00_projects_leviathans.txt:344-358): 50 success (1061); 25 failure and 25 secret both show 1062 first, then 1063 or 1065."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.1063",
+    "leviathans.1065"
+   ],
+   "label": {
+    "zh": "神机沉入黑洞后的两种结局",
+    "en": "Two outcomes as the Machine enters the black hole"
+   },
+   "note": {
+    "zh": "按项目时是否设置technosphere_special决定（leviathans_events_2.txt:2213-2224）。",
+    "en": "Decided by the technosphere_special flag set by the project (leviathans_events_2.txt:2213-2224)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.1052",
+    "leviathans.1053"
+   ],
+   "label": {
+    "zh": "骇入结果",
+    "en": "Hacking result"
+   },
+   "note": {
+    "zh": "TECHNOSPHERE_HACKING：50:50，具备相关科技或计算专长领袖时成功权重×10（00_projects_leviathans.txt:376-403）。",
+    "en": "TECHNOSPHERE_HACKING: 50:50, success weight x10 with computing techs or leaders (00_projects_leviathans.txt:376-403)."
+   }
+  }
+ ],
+ "endings": {
+  "leviathans.1065": {
+   "label": {
+    "zh": "无限方程得解：潘大固埃黑洞",
+    "en": "Infinity solved: Pantagruel"
+   },
+   "note": {
+    "zh": "黑洞被改造，获得永久研究加成。",
+    "en": "The black hole is transformed; a permanent research bonus."
+   },
+   "evidence": "events/leviathans_events_2.txt:2302-2395"
+  },
+  "leviathans.1063": {
+   "label": {
+    "zh": "神机消失于黑洞",
+    "en": "The Machine vanishes into the black hole"
+   },
+   "note": {
+    "zh": "留下残骸与研究资源。",
+    "en": "Leaves residue and research deposits."
+   },
+   "evidence": "events/leviathans_events_2.txt:2237-2299"
+  },
+  "leviathans.1061": {
+   "label": {
+    "zh": "协助计算：获得回报",
+    "en": "Helped the calculation: reward"
+   },
+   "note": {
+    "zh": "神机继续运算。",
+    "en": "The Machine continues its work."
+   },
+   "evidence": "events/leviathans_events_2.txt:2056-2148"
+  },
+  "leviathans.1052": {
+   "label": {
+    "zh": "骇入成功，神机自毁",
+    "en": "Hack succeeds; the Machine self-destructs"
+   },
+   "note": {
+    "zh": "获得科技。",
+    "en": "Technology gained."
+   },
+   "evidence": "events/leviathans_events_2.txt:1813-1909"
+  },
+  "leviathans.1040": {
+   "label": {
+    "zh": "神机被摧毁",
+    "en": "The Machine destroyed"
+   },
+   "note": {
+    "zh": "破坏或战斗击毁。",
+    "en": "By sabotage or in battle."
+   },
+   "evidence": "events/leviathans_events_2.txt:1428-1617"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.1041": {
+   "zh": "他国得知神机被毁",
+   "en": "Others learn it is gone"
+  },
+  "leviathans.1062": {
+   "zh": "运算完成",
+   "en": "It is done"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.1030",
+   "kind": "review",
+   "zh": "审阅注：玩家舰队进入有无限神机的星系时触发（on_entering_system_fleet），若已接受“视界信号”剧情（worm_events_available）则不触发。选择后开启事件链与兴趣点，并在520–720天后发来“永恒的计算机”（1050）。",
+   "en": "Review note: fires when a player fleet enters the Machine's system (on_entering_system_fleet), but not if the Horizon Signal chain is active (worm_events_available). It starts the event chain and point of interest and schedules 'The Constant Calculator' (1050) 520-720 days later."
+  },
+  {
+   "doc": "leviathans.1051",
+   "kind": "review",
+   "zh": "审阅注：研究项目（360天）完成后的选择按理念互斥出现：非格式塔“连接主处理器”→对话；唯心“奉为圣物”（获得修正，无后续窗口）；唯物或格式塔“骇入”→骇入项目；尚武“找到自毁开关”→破坏项目。",
+   "en": "Review note: after the 360-day project, choices depend on ethics: non-gestalt 'contact the main processor' -> dialogue; spiritualist 'divine instrument' (modifier, no further window); materialist or gestalt 'hack' -> hacking project; militarist 'self-destruct' -> sabotage project."
+  },
+  {
+   "doc": "leviathans.1041",
+   "kind": "review",
+   "zh": "审阅注：当另一帝国摧毁或“释放”神机时，曾遇见神机的其他帝国收到此通知。",
+   "en": "Review note: shown to other empires that met the Machine when someone else destroys or releases it."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C6 (Opus 5.5)",
+  "scope": {
+   "zh": "完整：遭遇、1050延迟、研究项目、四种理念分支、对话、黑洞/骇入/破坏项目的随机与条件结果、战斗击毁、他国通知、与策展人的联系。",
+   "en": "Complete: encounter, delayed 1050, study project, four ethic branches, dialogue, black-hole/hacking/sabotage project results, destruction in battle, notice to others, Curator link."
+  },
+  "sources": [
+   "events/leviathans_events_2.txt",
+   "common/special_projects/00_projects_leviathans.txt",
+   "common/event_chains/00_event_chains_leviathans.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/infinity-machine.md"
+ }
+}

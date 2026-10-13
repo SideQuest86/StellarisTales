@@ -1,20 +1,40 @@
 {
  "id": "enclave-leader-departure",
  "family": {
-  "title": {"zh": "攻击[FROM.GetName]", "en": "Attack on [FROM.GetName]"},
+  "title": {
+   "zh": "攻击[FROM.GetName]",
+   "en": "Attack on [FROM.GetName]"
+  },
   "category": "leviathans",
   "start": "enclave.8000",
-  "members": ["enclave.8000", "enclave.390", "enclave.7200", "leviathans.605"]
+  "members": [
+   "enclave.8000",
+   "enclave.390",
+   "enclave.7200",
+   "leviathans.605"
+  ]
  },
  "notes": [
-  {"doc": "enclave.8000", "kind": "review", "zh": "审阅注：攻击曾向我们派出人员的城邦时（on_entering_battle），5天后该领袖离开：虚境行者导师（enclave.7200）、打捞大师（enclave.390）、策展人档案员（leviathans.605），或商人城邦联络官（经leviathans.156/159/162的“断绝往来”窗口）。正文按领袖类型与是否任职议会而变化。", "en": "Review note: when we attack an enclave that supplied one of our leaders (on_entering_battle), that leader leaves 5 days later: the Shroudwalker teacher (enclave.7200), Master Salvager (enclave.390), Curator archivist (leviathans.605), or a trader liaison (through the trader reaction windows leviathans.156/159/162). The text varies by leader type and council seat."}
+  {
+   "doc": "enclave.8000",
+   "kind": "review",
+   "zh": "审阅注：攻击曾向我们派出人员的城邦时（on_entering_battle），5天后该领袖离开：虚境行者导师（enclave.7200）、打捞大师（enclave.390）、策展人档案员（leviathans.605），或商人城邦联络官（经leviathans.156/159/162的“断绝往来”窗口）。正文按领袖类型与是否任职议会而变化。",
+   "en": "Review note: when we attack an enclave that supplied one of our leaders (on_entering_battle), that leader leaves 5 days later: the Shroudwalker teacher (enclave.7200), Master Salvager (enclave.390), Curator archivist (leviathans.605), or a trader liaison (through the trader reaction windows leviathans.156/159/162). The text varies by leader type and council seat."
+  }
  ],
  "review": {
-  "status": "partial",
+  "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "C6 (Opus 5.5)",
-  "scope": {"zh": "进行中", "en": "in progress"},
-  "sources": ["events/overlord_enclaves_events.txt", "events/leviathans_events_1.txt", "common/on_actions/00_on_actions.txt"],
+  "scope": {
+   "zh": "完整：四种攻击触发与领袖离去窗口。",
+   "en": "Complete: four attack triggers and the departure window."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "events/leviathans_events_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
   "guide": "public/summaries/enclave-leader-departure.md"
  }
 }

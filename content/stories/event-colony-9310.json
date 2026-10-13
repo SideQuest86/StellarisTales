@@ -1,0 +1,19 @@
+{
+ "id": "event-colony-9310",
+ "category": "society",
+ "endings": {
+  "colony.9320": {"label": {"zh": "结局：轨道清理完成", "en": "Ending: orbit cleaned"}, "note": {"zh": "移除垃圾环修正，获得凝聚力。", "en": "Removes the trash rings modifier; grants unity."}, "evidence": "events/colony_events_3.txt:6999-7020."},
+  "colony.9325": {"label": {"zh": "结局：封锁之地", "en": "Ending: ground locked"}, "note": {"zh": "不清理时60%，或清理项目720天内未完成：获得“封锁之地”修正。", "en": "60% if ignored, or when a clean-up project is not finished in 720 days: the Ground Locked modifier."}, "evidence": "events/colony_events_3.txt:6957-6960, 7022-7038; 00_projects_3.txt:1809-1841 on_fail."},
+  "colony.9330": {"label": {"zh": "结局：流星雨", "en": "Ending: shooting stars"}, "note": {"zh": "不清理时40%：垃圾坠落成流星雨。", "en": "40% if ignored: the debris burns up as shooting stars."}, "evidence": "events/colony_events_3.txt:7040-7057."},
+  "colony.9335": {"label": {"zh": "结局：天清空净", "en": "Ending: clear skies"}, "note": {"zh": "紧急清理（仅保守特质或特定公民性）成功。", "en": "The emergency clean-up (conservational trait or listed civics only) succeeds."}, "evidence": "events/colony_events_3.txt:6965-6996, 7059-7076."}
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {"zh": "轨道垃圾场全部6个事件与两个清理项目。", "en": "All 6 Junkyard Orbit events and both clean-up projects."},
+  "sources": ["events/colony_events_3.txt:6868-7076", "common/special_projects/00_projects_3.txt:1809-1841", "common/on_actions/00_on_actions.txt:3880"],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-9310.md"
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "id": "anomaly-data-diamond-cat",
+ "endings": {
+  "anomaly.3165": {
+   "label": {
+    "zh": "困于晶体",
+    "en": "Trapped in the crystal"
+   },
+   "note": {
+    "zh": "科学家死亡，换来大量研究资源点。",
+    "en": "The scientist dies; large research deposits remain."
+   },
+   "evidence": "events/anomaly_events_4.txt:4480-4508"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部5个文档。",
+   "en": "All 5 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_4.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-data-diamond-cat.md"
+ }
+}

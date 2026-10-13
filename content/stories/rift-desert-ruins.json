@@ -1,0 +1,54 @@
+{
+ "id": "rift-desert-ruins",
+ "category": "rifts",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": ["astral_rift.1555", "astral_rift.1505"],
+   "label": {"zh": "时间是否耗尽", "en": "Has time run out"},
+   "note": {"zh": "每按错一次按钮（绿色、三角形、四点）都会让科学家在时间循环里“死去”并耗掉 1 小时；在第三间密室按错时，若累计已错 3 次则困死于时间（1505），否则再循环一次（1555）。", "en": "Each wrong button (green, triangle, four dots) kills the scientist inside a time loop and costs one hour; on a wrong button in the third chamber, if three hours are gone the scientist is trapped in time (1505), otherwise the loop repeats (1555)."}
+  }
+ ],
+ "endings": {
+  "astral_rift.1565": {
+   "label": {"zh": "时间水晶", "en": "Time Crystal"},
+   "note": {"zh": "解开三间密室，获得遗珍“时间水晶”；剩余时间越多星界丝缕奖励越高；潜在灵能物种的科学家觉醒灵能。探索结束。", "en": "All three chambers solved: the relic Time Crystal; more time left gives more astral threads; a scientist of a latent psionic species awakens as psionic. The exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:3193-3278"
+  },
+  "astral_rift.1505": {
+   "label": {"zh": "被困时光：科学家殒命", "en": "Trapped in Time: the scientist is lost"},
+   "note": {"zh": "时间耗尽：收回空无一人的探球，科学家死亡；获得大量星界丝缕，探索结束。", "en": "Time ran out: the empty Sphere is pulled back and the scientist dies; a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_1_events.txt:2520-2541, 3151-3178 (time_passed < 3 → 1555, else → 1505)"
+  }
+ },
+ "nodeLabels": {
+  "astral_rift.1540": {"zh": "第二间密室（重来）", "en": "The Second Chamber (again)"},
+  "astral_rift.1555": {"zh": "第三间密室（重来）", "en": "The Third Chamber (again)"}
+ },
+ "notes": [
+  {
+   "doc": "astral_rifts:desert_ruins",
+   "kind": "review",
+   "zh": "抽取权重 1。它可能奖励遗珍，因此任一帝国正在探索时其他帝国抽到它的权重为 0；探索者未得到遗珍时解除锁定。",
+   "en": "Draw weight 1. Because it can award a relic, its weight is 0 for others while any empire explores it; the lock is lifted if the explorer did not obtain the relic."
+  },
+  {
+   "doc": "astral_rift.1520",
+   "kind": "review",
+   "zh": "这是一个时间循环谜题：正确顺序为蓝色、五边形、六点。按错会消耗 1 小时（共 3 小时）。毒素类科学家在毒气陷阱（1545）、水生科学家在洪水陷阱（1560）中不受影响，可直接通过并降低难度。",
+   "en": "A time-loop puzzle: the right sequence is blue, pentagon, six dots. Each wrong press costs one of three hours. A toxoid scientist survives the gas trap (1545) and an aquatic scientist the flood (1560), passing straight on with lower difficulty."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 1500–1565 全部事件，包括 time_passed 计时变量（@timeToSolve = 3）与 1560 中按剩余时间分到 1555/1505 的条件。",
+   "en": "Checked the rift definition and every event 1500–1565, including the time_passed counter (@timeToSolve = 3) and the 1560 condition choosing 1555 or 1505."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-desert-ruins.md"
+ }
+}

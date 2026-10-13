@@ -1,49 +1,191 @@
 {
  "id": "shroudwalker-divination",
  "family": {
-  "title": {"zh": "预知", "en": "Divination"},
+  "title": {
+   "zh": "预知",
+   "en": "Divination"
+  },
   "category": "leviathans",
   "start": "enclave.415",
   "members": [
-   "enclave.415", "enclave.4100", "situations:divination_locus", "situations:divination_visitors",
-   "enclave.416", "enclave.4150", "enclave.4151"
+   "enclave.415",
+   "enclave.4100",
+   "situations:divination_locus",
+   "situations:divination_visitors",
+   "enclave.416",
+   "enclave.4150",
+   "enclave.4151"
   ],
-  "ranges": [{"namespace": "enclave", "min": 5000, "max": 5999, "source": "events/overlord_enclaves_events.txt"}]
+  "ranges": [
+   {
+    "namespace": "enclave",
+    "min": 5000,
+    "max": 5999,
+    "source": "events/overlord_enclaves_events.txt"
+   }
+  ]
  },
- "hubs": ["colony.3005", "envoy_events.5", "federations3.2001"],
+ "hubs": [
+  "colony.3005",
+  "envoy_events.5",
+  "federations3.2001"
+ ],
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["situations:divination_locus", "situations:divination_visitors"],
-   "label": {"zh": "仪式随机显现两种征兆之一", "en": "The rite reveals one of two signs"},
-   "note": {"zh": "10天后enclave.4100以5:5随机开启“轨迹的征兆”或“来访者的征兆”；20年内出现过的征兆权重×0.2（overlord_enclaves_events.txt:7585-7625）。", "en": "10 days later enclave.4100 starts Sign of the Locus or Sign of the Visitor at 5:5; a sign seen in the last 20 years has its weight x0.2 (overlord_enclaves_events.txt:7585-7625)."}
+   "members": [
+    "situations:divination_locus",
+    "situations:divination_visitors"
+   ],
+   "label": {
+    "zh": "仪式随机显现两种征兆之一",
+    "en": "The rite reveals one of two signs"
+   },
+   "note": {
+    "zh": "10天后enclave.4100以5:5随机开启“轨迹的征兆”或“来访者的征兆”；20年内出现过的征兆权重×0.2（overlord_enclaves_events.txt:7585-7625）。",
+    "en": "10 days later enclave.4100 starts Sign of the Locus or Sign of the Visitor at 5:5; a sign seen in the last 20 years has its weight x0.2 (overlord_enclaves_events.txt:7585-7625)."
+   }
   },
   {
    "kind": "exclusive",
-   "members": ["enclave.416", "enclave.5557"],
-   "label": {"zh": "局势完成时的两种收尾", "en": "Two closings when the sign completes"},
-   "note": {"zh": "若期间发生过一则预言（divination_occurring）则为“征兆消退”，否则为“不透明的帷幕”并补偿1000能量（01_overlord_situations.txt:87-100, 197-210）。", "en": "'The Sign Fades' if a prophecy took place (divination_occurring), otherwise 'Opaque Veil' with 1000 energy (01_overlord_situations.txt:87-100, 197-210)."}
+   "members": [
+    "enclave.416",
+    "enclave.5557"
+   ],
+   "label": {
+    "zh": "局势完成时的两种收尾",
+    "en": "Two closings when the sign completes"
+   },
+   "note": {
+    "zh": "若期间发生过一则预言（divination_occurring）则为“征兆消退”，否则为“不透明的帷幕”并补偿1000能量（01_overlord_situations.txt:87-100, 197-210）。",
+    "en": "'The Sign Fades' if a prophecy took place (divination_occurring), otherwise 'Opaque Veil' with 1000 energy (01_overlord_situations.txt:87-100, 197-210)."
+   }
   }
  ],
  "endings": {
-  "enclave.416": {"label": {"zh": "征兆消退", "en": "The Sign Fades"}, "note": {"zh": "预言已应验，局势结束。", "en": "The foretold change has happened; the situation ends."}, "evidence": "01_overlord_situations.txt:87-95 on_progress_complete with divination_occurring -> enclave.416 (destroys the situation)"},
-  "enclave.5557": {"label": {"zh": "无果而终", "en": "No prophecy"}, "note": {"zh": "整个征兆期间没有预言发生，城邦以能量补偿。", "en": "No prophecy occurred during the sign; the enclave pays energy instead."}, "evidence": "01_overlord_situations.txt:96-98 else -> enclave.5557 (+1000 energy)"}
+  "enclave.416": {
+   "label": {
+    "zh": "征兆消退",
+    "en": "The Sign Fades"
+   },
+   "note": {
+    "zh": "预言已应验，局势结束。",
+    "en": "The foretold change has happened; the situation ends."
+   },
+   "evidence": "01_overlord_situations.txt:87-95 on_progress_complete with divination_occurring -> enclave.416 (destroys the situation)"
+  },
+  "enclave.5557": {
+   "label": {
+    "zh": "无果而终",
+    "en": "No prophecy"
+   },
+   "note": {
+    "zh": "整个征兆期间没有预言发生，城邦以能量补偿。",
+    "en": "No prophecy occurred during the sign; the enclave pays energy instead."
+   },
+   "evidence": "01_overlord_situations.txt:96-98 else -> enclave.5557 (+1000 energy)"
+  }
  },
  "nodeLabels": {
-  "enclave.415": {"zh": "预知仪式开始", "en": "The rite begins"},
-  "situations:divination_locus": {"zh": "轨迹的征兆", "en": "Sign of the Locus"},
-  "situations:divination_visitors": {"zh": "来访者的征兆", "en": "Sign of the Visitor"}
+  "enclave.415": {
+   "zh": "预知仪式开始",
+   "en": "The rite begins"
+  },
+  "situations:divination_locus": {
+   "zh": "轨迹的征兆",
+   "en": "Sign of the Locus"
+  },
+  "situations:divination_visitors": {
+   "zh": "来访者的征兆",
+   "en": "Sign of the Visitor"
+  }
  },
  "notes": [
-  {"doc": "situations:divination_locus", "kind": "review", "zh": "审阅注：每月按10（无事）:1:1…抽取九则预言之一；每则预言的隐藏前置会设置divination_occurring，因此一次征兆最多应验一则。进度达90%仍无预言时，每月强制从同一组九则中抽一（enclave.5556，00_on_actions.txt:4946-4958）。", "en": "Review note: each month the sign draws 10 (nothing) : 1 : 1 ... among nine prophecies; each prophecy's hidden gate sets divination_occurring, so a sign fulfils at most one. At 90% progress without a prophecy, one of the same nine is forced each month (enclave.5556, 00_on_actions.txt:4946-4958)."},
-  {"doc": "situations:divination_visitors", "kind": "review", "zh": "审阅注：每月按10（无事）:1:1…抽取九则预言之一，最多应验一则；进度达90%仍无预言时强制抽取（enclave.5555，00_on_actions.txt:4932-4944）。其中“裂解的云群”“烦人的使节”“门扉”是借用其他故事的事件，以跨故事链接表示。", "en": "Review note: each month draws 10 (nothing) : 1 : 1 ... among nine prophecies; at most one is fulfilled; at 90% progress one is forced (enclave.5555, 00_on_actions.txt:4932-4944). 'Dismembered Cloud', 'A Most Irritating Envoy' and 'The Doorway' reuse other stories' events and are shown as cross-story links."}
+  {
+   "doc": "situations:divination_locus",
+   "kind": "review",
+   "zh": "审阅注：每月按10（无事）:1:1…抽取九则预言之一；每则预言的隐藏前置会设置divination_occurring，因此一次征兆最多应验一则。进度达90%仍无预言时，每月强制从同一组九则中抽一（enclave.5556，00_on_actions.txt:4946-4958）。",
+   "en": "Review note: each month the sign draws 10 (nothing) : 1 : 1 ... among nine prophecies; each prophecy's hidden gate sets divination_occurring, so a sign fulfils at most one. At 90% progress without a prophecy, one of the same nine is forced each month (enclave.5556, 00_on_actions.txt:4946-4958)."
+  },
+  {
+   "doc": "situations:divination_visitors",
+   "kind": "review",
+   "zh": "审阅注：每月按10（无事）:1:1…抽取九则预言之一，最多应验一则；进度达90%仍无预言时强制抽取（enclave.5555，00_on_actions.txt:4932-4944）。其中“裂解的云群”“烦人的使节”“门扉”是借用其他故事的事件，以跨故事链接表示。",
+   "en": "Review note: each month draws 10 (nothing) : 1 : 1 ... among nine prophecies; at most one is fulfilled; at 90% progress one is forced (enclave.5555, 00_on_actions.txt:4932-4944). 'Dismembered Cloud', 'A Most Irritating Envoy' and 'The Doorway' reuse other stories' events and are shown as cross-story links."
+  },
+  {
+   "doc": "enclave.415",
+   "kind": "review",
+   "zh": "审阅注：在虚境行者城邦菜单中询问命运并付费（enclave.410.b）后开始；10天后由enclave.4100开启一种征兆局势。",
+   "en": "Review note: begins after asking the Shroudwalkers about our fate and paying (enclave.410.b); 10 days later enclave.4100 starts one of the two signs."
+  },
+  {
+   "doc": "enclave.5150",
+   "kind": "review",
+   "zh": "审阅注：本窗口在某行星上生成异常现象“冰雪发光”（FROZ_ILLUMINATED_CAT，overlord_enclaves_events.txt:9615），其研究结果见该异常现象的独立故事。",
+   "en": "Review note: this window places the anomaly 'Ice Lit' (FROZ_ILLUMINATED_CAT, overlord_enclaves_events.txt:9615) on a planet; its research outcome is that anomaly's own story."
+  },
+  {
+   "doc": "enclave.5155",
+   "kind": "review",
+   "zh": "审阅注：本窗口在某行星上生成异常现象“瞬息万变”（FRBR_GRIMACING_CAT，overlord_enclaves_events.txt:9704），其研究结果见该异常现象的独立故事。",
+   "en": "Review note: this window places the anomaly 'Winking' (FRBR_GRIMACING_CAT, overlord_enclaves_events.txt:9704) on a planet; its research outcome is that anomaly's own story."
+  },
+  {
+   "doc": "enclave.5160",
+   "kind": "review",
+   "zh": "审阅注：本窗口在某行星上生成异常现象“不可能的轨道”（SUN_TEAPOT_CAT，overlord_enclaves_events.txt:9775），其研究结果见该异常现象的独立故事。",
+   "en": "Review note: this window places the anomaly 'Improbable Orbit' (SUN_TEAPOT_CAT, overlord_enclaves_events.txt:9775) on a planet; its research outcome is that anomaly's own story."
+  },
+  {
+   "doc": "enclave.5165",
+   "kind": "review",
+   "zh": "审阅注：本窗口在某行星上生成异常现象“废弃聚落”（DISTAR_BRAINSLUG_CAT，overlord_enclaves_events.txt:9888），其研究结果见该异常现象的独立故事。",
+   "en": "Review note: this window places the anomaly 'Abandoned Settlements' (DISTAR_BRAINSLUG_CAT, overlord_enclaves_events.txt:9888) on a planet; its research outcome is that anomaly's own story."
+  },
+  {
+   "doc": "enclave.5175",
+   "kind": "review",
+   "zh": "审阅注：本窗口在某行星上生成异常现象“生命迹象”（life_gasgiant_category，overlord_enclaves_events.txt:9999），其研究结果见该异常现象的独立故事。",
+   "en": "Review note: this window places the anomaly 'Life Signs' (life_gasgiant_category, overlord_enclaves_events.txt:9999) on a planet; its research outcome is that anomaly's own story."
+  },
+  {
+   "doc": "enclave.5180",
+   "kind": "review",
+   "zh": "审阅注：本窗口在某行星上生成异常现象“怪异共鸣”（STAR_RESONANCE_CAT，overlord_enclaves_events.txt:10070），其研究结果见该异常现象的独立故事。",
+   "en": "Review note: this window places the anomaly 'A Strange Resonance' (STAR_RESONANCE_CAT, overlord_enclaves_events.txt:10070) on a planet; its research outcome is that anomaly's own story."
+  },
+  {
+   "doc": "enclave.5185",
+   "kind": "review",
+   "zh": "审阅注：本窗口在某行星上生成异常现象“终结轨道”（terminal_gasgiant_category，overlord_enclaves_events.txt:10139），其研究结果见该异常现象的独立故事。",
+   "en": "Review note: this window places the anomaly 'Terminal Orbit' (terminal_gasgiant_category, overlord_enclaves_events.txt:10139) on a planet; its research outcome is that anomaly's own story."
+  },
+  {
+   "doc": "enclave.5090",
+   "kind": "review",
+   "zh": "审阅注：排外者专属选项“异族不得进入我们的领土”在脚本中同样于60天后接到“门与钥匙”（enclave.5100，overlord_enclaves_events.txt:8976-8986），与其文字含义不符，疑为原版笔误；此处按脚本记录。",
+   "en": "Review note: the xenophobe-only refusal also leads to 'The Door and the Key' (enclave.5100) after 60 days in the script (overlord_enclaves_events.txt:8976-8986), contrary to its wording - possibly an original-script slip; recorded as scripted."
+  }
  ],
  "review": {
-  "status": "partial",
+  "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "C6 (Opus 5.5)",
-  "scope": {"zh": "进行中", "en": "in progress"},
-  "sources": ["events/overlord_enclaves_events.txt", "common/situations/01_overlord_situations.txt", "common/on_actions/00_on_actions.txt", "common/special_projects/00_projects_overlord.txt"],
-  "guide": "public/summaries/shroudwalker-divination.md"
+  "scope": {
+   "zh": "完整：仪式、两种征兆、十八则预言链（含借用事件的跨故事链接与心灵异常的异常现象链接）及两种收尾。",
+   "en": "Complete: rite, two signs, eighteen prophecy chains (with cross-links for reused events and anomaly categories) and both closings."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "common/situations/01_overlord_situations.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_overlord.txt"
+  ],
+  "guide": "public/summaries/shroudwalker-divination.md",
+  "uncertain": [
+   "Each prophecy's own gate (one-time empire flag, progress thresholds such as >=10/15/50%, population or colony requirements) is summarised in the guide, not modelled as edge conditions.",
+   "enclave.5090.c (xenophobe refusal) is scripted to lead to enclave.5100 like an acceptance; probably a game-script slip, recorded as is."
+  ]
  }
 }

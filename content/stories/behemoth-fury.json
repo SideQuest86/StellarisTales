@@ -1,0 +1,134 @@
+{
+ "id": "behemoth-fury",
+ "family": {
+  "title": {"zh": "巨兽之怒", "en": "Behemoth Fury"},
+  "category": "crisis",
+  "start": "biocrisis.50",
+  "sources": ["events/biogenesis_crisis_events.txt"],
+  "members": ["event_chains:behemoth_crisis_chain"]
+ },
+ "bridges": [
+  {
+   "from": "biocrisis.50", "to": "event_chains:behemoth_crisis_chain",
+   "label": {"zh": "第一级同时开启“巨兽天灾”事件链", "en": "Level 1 also opens the Behemoth Crisis event chain"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:545-555 crisis_behemoth_level_1 on_unlock begins behemoth_crisis_chain and fires biocrisis.50 days=3"
+  },
+  {
+   "from": "biocrisis.50", "to": "biocrisis.55", "conditional": true,
+   "label": {"zh": "建成巨兽之卵并累积2000野性洞见：第二级", "en": "Build a Behemoth egg and gather 2,000 Feral Insight: level 2"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:560-593 crisis_behemoth_level_2 requires behemoth_egg_built and 2000; on_unlock fires biocrisis.55"
+  },
+  {
+   "from": "biocrisis.55", "to": "biocrisis.60", "conditional": true,
+   "label": {"zh": "巨兽孵化并累积6000：第三级", "en": "Hatch the Behemoth and gather 6,000: level 3"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:595-625 crisis_behemoth_level_3 requires behemoth_egg_hatched (biocrisis.1 on behemoth_egg_hatch, 21_behemoth_egg.txt:213) and 6000; fires biocrisis.60"
+  },
+  {
+   "from": "biocrisis.15", "to": "biocrisis.65", "conditional": true,
+   "label": {"zh": "项目三完成并累积18000：第四级（3天后）", "en": "Project 3 done and 18,000 gathered: level 4 (3 days later)"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:627-657 crisis_behemoth_level_4 requires crisis_special_project_3_complete and 18000; on_unlock biocrisis.65 days=3"
+  },
+  {
+   "from": "biocrisis.20", "to": "biocrisis.70", "conditional": true,
+   "label": {"zh": "项目四完成、累积45000且非附庸：第五级（3天后）", "en": "Project 4 done, 45,000 gathered, not a subject: level 5 (3 days later)"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:659-705 crisis_behemoth_level_5 requires is_subject = no, crisis_special_project_4_complete, 45000; on_unlock declare_crisis_effect, non-members join the war, biocrisis.70 days=3"
+  },
+  {
+   "from": "biocrisis.70", "to": "crisis.4105", "conditional": true,
+   "label": {"zh": "第五级时：共同体被迫宣告你为星系危机（见星海天罚）", "en": "At level 5: the Community is made to declare you a galactic crisis (see Galactic Nemesis)"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:680-681 declare_crisis_effect; common/resolutions/01_resolutions_nemesis.txt:84 crisis.4105"
+  },
+  {
+   "from": "biocrisis.55", "to": "biocrisis.130", "conditional": true,
+   "label": {"zh": "首次在茧中孵化出巨兽", "en": "The first Behemoth incubated in a chrysalis hatches"},
+   "evidence": "common/megastructures/21_behemoth_egg.txt:679/814 chrysalis hatch on_build_complete fires biocrisis.125; events/biogenesis_crisis_events.txt:1044-1052 biocrisis.130 the first time only"
+  },
+  {
+   "from": "biocrisis.60", "to": "biocrisis.105", "conditional": true,
+   "label": {"zh": "若孵出的巨兽被非巨兽帝国击瘫：它死去，你获得野性洞见", "en": "If a hatched Behemoth is disabled by a non-Behemoth empire: it dies and you gain Feral Insight"},
+   "evidence": "events/biogenesis_crisis_events.txt:695-742 biocrisis.99 (on_ship_disabled): a Behemoth-crisis disabler tames it, otherwise destroy_ship and the parent country receives biocrisis.105"
+  },
+  {
+   "from": "biocrisis.105", "to": "biocrisis.520", "conditional": true,
+   "label": {"zh": "击杀者若是复生者帝国，其看到的事件", "en": "What the killer sees if it is a Reanimator empire"},
+   "evidence": "events/biogenesis_crisis_events.txt:724-730 biocrisis.99 sends biocrisis.520 to the disabler's owner when is_reanimator = yes"
+  },
+  {
+   "from": "biocrisis.250", "to": "biocrisis.190", "conditional": true,
+   "label": {"zh": "局势完成后，若无其他五级巨兽帝国且虚空之子已不在：年度检查", "en": "After the situation, with no other level-5 Behemoth empire and no Voidspawn: yearly check"},
+   "evidence": "events/biogenesis_crisis_events.txt:1581-1606 biocrisis.190 (on_yearly_pulse_country, 00_on_actions.txt:424) requires finished_behemoth_situation, no running behemoth_finale_situation, no voidspawn_boss country and no other menp_behemoth_ever_hungry empire"
+  },
+  {
+   "from": "biocrisis.150", "to": "biocrisis.162", "conditional": true,
+   "label": {"zh": "虚空之子进入未获警告帝国的领土（该帝国视角）", "en": "The Voidspawn enters the space of an empire that had no warning (that empire's view)"},
+   "evidence": "events/biogenesis_crisis_events.txt:1375-1401 biocrisis.160 (on_entering_system_fleet, 00_on_actions.txt:1070) sends biocrisis.162 to a system owner without voidspawn_boss_met and below behemoth level 4"
+  },
+  {
+   "from": "biocrisis.150", "to": "biocrisis.180", "conditional": true,
+   "label": {"zh": "若你击杀虚空之子：获得遗珍", "en": "If you slay the Voidspawn: a relic"},
+   "evidence": "events/biogenesis_crisis_events.txt:1450-1464 biocrisis.170 (on_ship_destroyed_victim, 00_on_actions.txt:1439) sends biocrisis.180 to the killer; L1544-1546 adds r_voidspawn_myocardium"
+  },
+  {
+   "from": "biocrisis.150", "to": "biocrisis.175", "conditional": true,
+   "label": {"zh": "虚空之子被他人击杀（其他玩家收到）", "en": "Someone else slays the Voidspawn (other players are told)"},
+   "evidence": "events/biogenesis_crisis_events.txt:1472-1478 biocrisis.170 sends biocrisis.175 to every other human player"
+  },
+  {
+   "from": "biocrisis.70", "to": "biocrisis.265", "conditional": true,
+   "label": {"zh": "若心灵连接的四级巨兽被摧毁：你的帝国随之覆灭", "en": "If the mind-linked Class IV Behemoth is destroyed: your empire falls with it"},
+   "evidence": "events/biogenesis_crisis_events.txt:2773-2831 biocrisis.265 (on_ship_destroyed_victim, 00_on_actions.txt:1440) for a behemoth_04 ship: destroys colonies and ships, then destroy_country"
+  }
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["biocrisis.185", "biocrisis.187"],
+   "label": {"zh": "第五级通报他国", "en": "Level 5 notices to others"},
+   "note": {"zh": "其他五级巨兽帝国收到“唯一的王者”，其余帝国收到“四级巨兽警报”。", "en": "Other level-5 Behemoth empires receive There Can Be Only One; everyone else receives the Class IV warning."}},
+  {"kind": "exclusive", "members": ["biocrisis.180", "biocrisis.175"],
+   "label": {"zh": "虚空之子之死", "en": "The Voidspawn's death"},
+   "note": {"zh": "击杀者收到“屠虚者”，其他玩家收到“虚空之子被杀”。", "en": "The slayer receives Voidslayers; other players receive Spawn Killed."}}
+ ],
+ "endings": {
+  "biocrisis.191": {
+   "label": {"zh": "胜利：巨兽之王", "en": "Victory: King of the Monsters"},
+   "note": {"zh": "完成转化后获胜；可留下继续肆虐、离开银河，或（若曾从索林原虫得知“猎手”）前去对抗它们——其他玩家720天后收到“吞噬殆尽”。", "en": "Completing the Transference wins the game; you may stay and rampage, leave the galaxy, or (if the Prethoryn told you of the Hunters) go to confront them, after which other players receive Swallowed Whole 720 days later."},
+   "evidence": "events/biogenesis_crisis_events.txt:1642-1765 biocrisis.191 after: win = yes; option c requires learned_about_redacted (set by crisis.30.h/j, crisis_events_1.txt:1594-1615)"
+  },
+  "biocrisis.265": {
+   "label": {"zh": "失败：心灵连接的巨兽陨落", "en": "Defeat: the mind-linked Behemoth falls"},
+   "note": {"zh": "四级巨兽被摧毁时，帝国的殖民地与舰船被毁，国家随之覆灭。", "en": "When the Class IV Behemoth is destroyed, the empire's colonies and ships are destroyed and the country is removed."},
+   "evidence": "events/biogenesis_crisis_events.txt:2811-2830 destroy_colony, destroy_ship, destroy_country"
+  }
+ },
+ "nodeLabels": {
+  "biocrisis.50": {"zh": "第一级", "en": "Level 1"},
+  "biocrisis.55": {"zh": "第二级", "en": "Level 2"},
+  "biocrisis.60": {"zh": "第三级", "en": "Level 3"},
+  "biocrisis.65": {"zh": "第四级", "en": "Level 4"},
+  "biocrisis.70": {"zh": "第五级", "en": "Level 5"},
+  "situations:behemoth_finale_situation": {"zh": "成长之痛（局势）", "en": "Growing Pains (situation)"},
+  "biocrisis.150": {"zh": "虚空之子", "en": "The Voidspawn"},
+  "biocrisis.190": {"zh": "胜利在望", "en": "Victory at hand"},
+  "biocrisis.191": {"zh": "胜利", "en": "Victory"},
+  "biocrisis.265": {"zh": "失败", "en": "Defeat"}
+ },
+ "notes": [
+  {"doc": "biocrisis.191", "kind": "review",
+   "zh": "选项“前去对抗”只有在本帝国曾通过索林原虫外交得知“猎手”（learned_about_redacted）时出现。",
+   "en": "The 'confront' option appears only if this empire learned of the Hunters through Prethoryn diplomacy (learned_about_redacted)."},
+  {"doc": "biocrisis.197", "kind": "review",
+   "zh": "收到者的回应按是否拥有宇宙创生天赋或索林原虫虫后遗珍而不同。",
+   "en": "The reply differs if the recipient has the Cosmogenesis perk or the Prethoryn Brood-Queen relic."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c5b-crisis (Opus 5.5)",
+  "scope": {"zh": "完整核对 biogenesis_crisis_events.txt 全部可见事件、五个巨兽天灾等级、项目、成长之痛局势各阶段、虚空之子、胜负结局与他国通报。", "en": "Checked every visible event of biogenesis_crisis_events.txt, the five Behemoth levels, projects, the Growing Pains situation stages, the Voidspawn, victory/defeat and notices to others."},
+  "sources": ["events/biogenesis_crisis_events.txt", "common/crisis_levels/00_crisis_levels.txt", "common/crisis_paths/00_behemoth_paths.txt", "common/situations/12_biogenesis_situations.txt", "common/special_projects/05_projects_biogenesis.txt", "common/megastructures/21_behemoth_egg.txt", "common/event_chains/00_event_chains_biogenesis.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": [
+   "The Growing Pains stage events (210–245) are chained by the compiler's stage sequence; stage progress values were not modelled.",
+   "biocrisis.130/105 depend on chrysalis/egg megastructures whose build conditions were not re-read in full."
+  ],
+  "guide": "public/summaries/behemoth-fury.md"
+ }
+}

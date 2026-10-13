@@ -1,0 +1,63 @@
+{
+ "id": "anomaly-ubume-baby-cat",
+ "bridges": [
+  {
+   "from": "anomaly.6792",
+   "choice": "anomaly.6792.a",
+   "to": "anomaly.6793",
+   "conditional": true,
+   "label": {
+    "zh": "年度检查：帝国日后成为灵能",
+    "en": "Yearly check: the empire later becomes psionic"
+   },
+   "evidence": "events/anomaly_events_4.txt:2178-2193 6792.a (non-psionic species); events/anomaly_events_4.txt:2221-2272 6793 trigger met_ubume, is_psionic, no ubume_talking/ubume_psionic; fired by on_yearly_pulse_country common/on_actions/00_on_actions.txt:406"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.6795",
+    "anomaly.6793"
+   ],
+   "labels": [
+    {
+     "zh": "灵能物种：360天后",
+     "en": "Psionic species: 360 days later"
+    },
+    {
+     "zh": "非灵能：日后成为灵能",
+     "en": "Non-psionic: if later psionic"
+    }
+   ]
+  }
+ ],
+ "nodeLabels": {
+  "anomaly.6795": {
+   "zh": "灵能者接触幼体",
+   "en": "Psychics reach the child"
+  },
+  "anomaly.6794": {
+   "zh": "幼体伴航",
+   "en": "The child glides alongside"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部8个文档（含并入的6793–6794）。",
+   "en": "All 8 docs, including merged 6793–6794."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/solar_system_initializers/special_system_initializers.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_4.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-ubume-baby-cat.md"
+ }
+}

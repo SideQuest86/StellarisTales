@@ -2,53 +2,193 @@
  "id": "cosmogenesis",
  "bridges": [
   {
-   "from": "crisis.7100",
-   "to": "crisis.7105",
-   "conditional": true,
-   "label": {
-    "zh": "满足科技条件并达到第二级",
-    "en": "Meet the technology requirement and reach level two"
-   },
-   "evidence": "00_crisis_levels.txt crisis_cosmogenesis_level_2 requires tech_cosmogenesis_crisis_1 and4000 currency, on_unlock7105"
+   "from": "crisis.7100", "to": "crisis.7105", "conditional": true,
+   "label": {"zh": "研究“宇宙创生·一”并累积4000先进逻辑：第二级", "en": "Research Cosmogenesis I and gather 4,000 Advanced Logic: level 2"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:397-424 crisis_cosmogenesis_level_2 requires tech_cosmogenesis_crisis_1 and 4000 crisis currency; on_unlock fires crisis.7105"
   },
   {
-   "from": "crisis.7105",
-   "to": "crisis.7110",
-   "conditional": true,
-   "label": {
-    "zh": "满足科技条件并达到第三级",
-    "en": "Meet the technology requirement and reach level three"
-   },
-   "evidence": "00_crisis_levels.txt level_3 requires tech_cosmogenesis_crisis_2 and10000 currency, on_unlock7110"
+   "from": "crisis.7105", "to": "crisis.7110", "conditional": true,
+   "label": {"zh": "研究“宇宙创生·二”并累积10000：第三级", "en": "Research Cosmogenesis II and gather 10,000: level 3"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:426-453 level_3 requires tech_cosmogenesis_crisis_2 and 10000; on_unlock fires crisis.7110"
   },
   {
-   "from": "crisis.7110",
-   "to": "crisis.7115",
-   "conditional": true,
-   "label": {
-    "zh": "未中止计划，达到第四级",
-    "en": "Continue the project and reach level four"
-   },
-   "evidence": "00_crisis_levels.txt level_4 requires tech_cosmogenesis_crisis_3,22000 currency,NOT cosmogenesis_aborted; on_unlock7115"
+   "from": "crisis.7110", "to": "crisis.7115", "conditional": true,
+   "label": {"zh": "研究“宇宙创生·三”、累积22000且未放弃计划：第四级", "en": "Research Cosmogenesis III, gather 22,000 and not have renounced: level 4"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:455-490 level_4 requires tech_cosmogenesis_crisis_3, 22000, NOT cosmogenesis_aborted; on_unlock fires crisis.7115 and resets applied_infinity_thesis to 0"
   },
   {
-   "from": "crisis.7115",
-   "to": "crisis.7120",
-   "conditional": true,
-   "label": {
-    "zh": "完成两项应用无限论文并满足第五级条件",
-    "en": "Complete two applied-infinity theses and meet level-five requirements"
-   },
-   "evidence": "00_crisis_levels.txt level_5 requires tech_cosmogenesis_crisis_4,60000 currency,applied_infinity_thesis>=2,NOT cosmogenesis_aborted,is_subject=no; on_unlock7120"
+   "from": "crisis.7115", "to": "crisis.7120", "conditional": true,
+   "label": {"zh": "研究“宇宙创生·四”、完成至少两项无限课题、累积60000、未放弃且非附庸：第五级", "en": "Research Cosmogenesis IV, apply 2+ Infinity Theses, gather 60,000, not renounced, not a subject: level 5"},
+   "evidence": "common/crisis_levels/00_crisis_levels.txt:492-531 level_5 requires tech_cosmogenesis_crisis_4, applied_infinity_thesis >= 2, NOT cosmogenesis_aborted, is_subject = no, 60000; on_unlock fires crisis.7120"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7205", "conditional": true,
+   "label": {"zh": "研究“无限课题”（第四级起，可重复）：随机结果之一，权重2/25", "en": "Research an Infinity Thesis (from level 4, repeatable): one random outcome, weight 2/25"},
+   "evidence": "common/scripted_effects/02_machine_age_effects.txt:67-82 level 4 adds tech_cosmogenesis_thesis; events/machine_age_crisis_events.txt:232-432 crisis.7200 (on_tech_increased, 00_on_actions.txt:2722) random_list; global outcomes happen once per galaxy"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7210", "conditional": true,
+   "label": {"zh": "无限课题随机结果：权重2/25", "en": "Infinity Thesis outcome: weight 2/25"},
+   "evidence": "events/machine_age_crisis_events.txt:257-268 crisis.7200 weight 2 -> crisis.7210"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7215", "conditional": true,
+   "label": {"zh": "无限课题随机结果：权重1/25", "en": "Infinity Thesis outcome: weight 1/25"},
+   "evidence": "events/machine_age_crisis_events.txt:269-280 crisis.7200 weight 1 -> crisis.7215 (then 7220/7225/7230 on timers, L834-1090)"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7235", "conditional": true,
+   "label": {"zh": "无限课题随机结果：权重1/25", "en": "Infinity Thesis outcome: weight 1/25"},
+   "evidence": "events/machine_age_crisis_events.txt:281-292 crisis.7200 weight 1 -> crisis.7235"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7240", "conditional": true,
+   "label": {"zh": "无限课题随机结果：权重1/25", "en": "Infinity Thesis outcome: weight 1/25"},
+   "evidence": "events/machine_age_crisis_events.txt:293-304 crisis.7200 weight 1 -> crisis.7240"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7245", "conditional": true,
+   "label": {"zh": "无限课题随机结果：权重1/25", "en": "Infinity Thesis outcome: weight 1/25"},
+   "evidence": "events/machine_age_crisis_events.txt:305-316 crisis.7200 weight 1 -> crisis.7245"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7250", "conditional": true,
+   "label": {"zh": "无限课题随机结果：权重1/25", "en": "Infinity Thesis outcome: weight 1/25"},
+   "evidence": "events/machine_age_crisis_events.txt:317-328 crisis.7200 weight 1 -> crisis.7250"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7255", "conditional": true,
+   "label": {"zh": "无限课题随机结果：权重2/25", "en": "Infinity Thesis outcome: weight 2/25"},
+   "evidence": "events/machine_age_crisis_events.txt:329-340 crisis.7200 weight 2 -> crisis.7255"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7260", "conditional": true,
+   "label": {"zh": "无限课题随机结果：权重2/25", "en": "Infinity Thesis outcome: weight 2/25"},
+   "evidence": "events/machine_age_crisis_events.txt:341-352 crisis.7200 weight 2 -> crisis.7260"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7265", "conditional": true,
+   "label": {"zh": "无限课题随机结果：稳定的成功，权重4/25", "en": "Infinity Thesis outcome: stable success, weight 4/25"},
+   "evidence": "events/machine_age_crisis_events.txt:353-355 crisis.7200 weight 4 -> crisis.7265"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7270", "conditional": true,
+   "label": {"zh": "无限课题随机结果：不幸的失败，权重8/25（先进逻辑越多越低）", "en": "Infinity Thesis outcome: unfortunate failure, weight 8/25 (lower with more Advanced Logic)"},
+   "evidence": "events/machine_age_crisis_events.txt:356-379 crisis.7200 weight 8, -2 each at 17000/21000/26000 advanced_logic -> crisis.7270"
+  },
+  {
+   "from": "crisis.7115", "to": "crisis.7285", "conditional": true,
+   "label": {"zh": "首次课题30天后，若存在狂热唯物堕落帝国：最后通牒（仅一次）", "en": "30 days after a thesis, if a fanatic materialist Fallen Empire exists: an ultimatum (once)"},
+   "evidence": "events/machine_age_crisis_events.txt:385-430 crisis.7200 saves materialist_fe and fires crisis.7285 days=30; crisis.7285 (L2599-2660) fire_only_once, requires event_target:materialist_fe"
+  },
+  {
+   "from": "crisis.7120", "to": "crisis.7125", "conditional": true,
+   "label": {"zh": "研究第五级解锁的“宇宙创生·五”", "en": "Research Cosmogenesis V, unlocked at level 5"},
+   "evidence": "common/scripted_effects/02_machine_age_effects.txt:84-90 level 5 adds tech_cosmogenesis_crisis_5; events/machine_age_crisis_events.txt:208-227 crisis.7125 (on_tech_increased, 00_on_actions.txt:2721) requires last_increased_tech = tech_cosmogenesis_crisis_5"
+  },
+  {
+   "from": "crisis.7125", "to": "crisis.7400", "conditional": true,
+   "label": {"zh": "建成视界刺针巨型建筑", "en": "Complete the Horizon Needle megastructure"},
+   "evidence": "common/megastructures/16_cosmogenesis_needle.txt:57-85 on_build_complete fires crisis.7400"
+  },
+  {
+   "from": "crisis.7400", "to": "crisis.7500", "conditional": true,
+   "label": {"zh": "刺针逐一抵达各殖民地：居民登船（首都最后）", "en": "The Needle reaches each colony and its people embark (capital last)"},
+   "evidence": "events/machine_age_crisis_events.txt:2752-2853 crisis.7500 via on_cosmogenesis_exodus_planet_reached (common/on_actions/02_component_on_actions.txt:32); non-capital colonies are evacuated (7505 when all are done), the capital leads to crisis.7510 after 10 days"
+  },
+  {
+   "from": "crisis.7400", "to": "crisis.7501", "conditional": true,
+   "label": {"zh": "游牧方舟帝国：刺针抵达方舟船队", "en": "Nomadic arkship empires: the Needle reaches the arkship fleets"},
+   "evidence": "events/machine_age_crisis_events.txt:2938-2951 crisis.7503 (on_cosmogenesis_exodus_fleet_reached, 02_component_on_actions.txt:39) re-scopes to crisis.7501 (L2855-2936)"
+  },
+  {
+   "from": "crisis.7400", "to": "crisis.7525", "conditional": true,
+   "label": {"zh": "若视界刺针被击毁（可另建一座）", "en": "If the Horizon Needle is destroyed (another can be built)"},
+   "evidence": "events/machine_age_crisis_events.txt:3674-3698 crisis.7525 (on_ship_destroyed_victim, 00_on_actions.txt:1435) requires the monadic_qerr ship; removes cosmogenesis_needle_built"
+  },
+  {
+   "from": "crisis.7510", "choice": "crisis.7510.a", "to": "crisis.7515", "conditional": true,
+   "label": {"zh": "驶入任意黑洞：抵达7天后穿越", "en": "Any black hole: the crossing begins 7 days after arrival"},
+   "evidence": "events/machine_age_crisis_events.txt:3058-3063 option a sets cosmogenesis_any_black_hole; crisis.7514 (L3077-3104, on_cosmogenesis_exodus_planet_reached, 02_component_on_actions.txt:33) fires crisis.7515 days=7"
+  },
+  {
+   "from": "crisis.7100", "to": "crisis.7280", "conditional": true,
+   "label": {"zh": "先辈子弟起源：首次研究堕落帝国科技时导师的祝贺（仅一次）", "en": "Scion origin: the patron congratulates you on your first Fallen Empire technology (once)"},
+   "evidence": "events/machine_age_crisis_events.txt:2556-2596 crisis.7280 (on_tech_increased, 00_on_actions.txt:2724) requires just_researched_fe_tech, origin_scion and a fallen-empire overlord; level perks add FE technologies (02_machine_age_effects.txt:15-90)"
+  },
+  {
+   "from": "crisis.7100", "to": "crisis.7540", "conditional": true,
+   "label": {"zh": "若建造了突触凝练机且人口低于50：每月检查", "en": "If you built a Synaptic Lathe and it falls below 50 pops: monthly check"},
+   "evidence": "common/scripted_effects/02_machine_age_effects.txt:19 level 1 adds tech_cosmogenesis_world; events/machine_age_crisis_events.txt:3886-3933 crisis.7540 (on_monthly_pulse_country, 00_on_actions.txt:366)"
+  },
+  {
+   "from": "crisis.7100", "to": "crisis.7535", "conditional": true,
+   "label": {"zh": "他国轰炸突触凝练机后将其制服（轰炸方视角）", "en": "A Synaptic Lathe is subdued by bombardment (the bombarding empire's view)"},
+   "evidence": "events/machine_age_crisis_events.txt:3756-3772 crisis.7534 (on_planet_bombarded, 00_on_actions.txt:2189) sends crisis.7535 to FROM, the bombarder; options a-c only for empires without ap_cosmogenesis"
+  },
+  {
+   "from": "crisis.7100", "to": "crisis.7530", "conditional": true,
+   "label": {"zh": "凝练机的最后一批人口被迁走后，它自毁", "en": "When the last pops are resettled away from a Synaptic Lathe, it self-destructs"},
+   "evidence": "events/machine_age_crisis_events.txt:3702-3729 crisis.7530 (on_pop_group_resettled, 00_on_actions.txt:2246) when the lathe has 0 pops"
   }
  ],
- "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+ "suppress": [
+  {"from": "crisis.7516", "to": "crisis.2037", "evidence": "events/machine_age_crisis_events.txt:3330-3424 the victory destroys ~10% of star systems via destroy_star_system, which only incidentally reaches destroy_machine_world if a Contingency hub is in a destroyed system; not part of this story"},
+  {"from": "crisis.7516", "to": "observer.50", "evidence": "same destroy_star_system side effect (00_scripted_effects.txt) reaching the Contingency observer notice"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["crisis.7205", "crisis.7210", "crisis.7215", "crisis.7235", "crisis.7240", "crisis.7245", "crisis.7250", "crisis.7255", "crisis.7260", "crisis.7265", "crisis.7270"],
+   "label": {"zh": "每项无限课题的随机结果", "en": "One random outcome per Infinity Thesis"},
+   "note": {"zh": "每完成一级可重复的“无限课题”抽取一次；带全局效果的结果在整个银河只出现一次，并通知所有帝国。", "en": "Each level of the repeatable Infinity Thesis rolls once; outcomes with galaxy-wide effects happen once per galaxy and notify every empire."}},
+  {"kind": "exclusive", "members": ["crisis.7500", "crisis.7501"],
+   "label": {"zh": "登船：殖民地或方舟", "en": "Embarking: colonies or arkships"},
+   "note": {"zh": "普通帝国由刺针逐一造访殖民地；游牧帝国则造访方舟船队。", "en": "Ordinary empires have the Needle visit each colony; nomadic empires have it visit their arkship fleets."}},
+  {"kind": "exclusive", "members": ["crisis.7516", "crisis.7517"],
+   "label": {"zh": "穿越黑洞：两种视角", "en": "The crossing: two points of view"},
+   "note": {"zh": "宇宙创生帝国15天后读到“无穷的彼岸”并获胜；其他帝国1天后读到“穿透奇点”。", "en": "The Cosmogenesis empire reads The Yonder Side of Infinity after 15 days and wins; every other empire reads Piercing a Singularity after 1 day."}}
+ ],
+ "endings": {
+  "crisis.7516": {
+   "label": {"zh": "胜利：穿越至无穷的彼岸", "en": "Victory: beyond the event horizon"},
+   "note": {"zh": "宇宙创生帝国赢得游戏，成为堕落帝国；正文按穿越的黑洞与帝国情况变化。其他帝国随后收到“时间扭曲”。", "en": "The Cosmogenesis empire wins the game and becomes a Fallen Empire; the text varies with the black hole and the empire. Other empires then receive Time Warp."},
+   "evidence": "events/machine_age_crisis_events.txt:3148-3432 crisis.7516 after: make_fallen_empire, win = yes, crisis.7518 to default empires after 5 days"
+  },
+  "crisis.7285": {
+   "label": {"zh": "可能的中止：接受最后通牒", "en": "Possible abort: accept the ultimatum"},
+   "note": {"zh": "第一个选项设置 cosmogenesis_aborted 并摧毁己方突触凝练机，此后无法达到第四、五级；道歉或拒绝（宣战）则计划继续。", "en": "The first option sets cosmogenesis_aborted and destroys your Synaptic Lathes, blocking levels 4 and 5; apologising or refusing (war) lets the plan continue."},
+   "evidence": "events/machine_age_crisis_events.txt:2620-2655 option a sets cosmogenesis_aborted; 00_crisis_levels.txt:463-466, 508-511 levels 4/5 require NOT cosmogenesis_aborted"
   }
+ },
+ "nodeLabels": {
+  "crisis.7100": {"zh": "第一级：无尽的好奇心", "en": "Level 1: Insatiable Curiosity"},
+  "crisis.7105": {"zh": "第二级", "en": "Level 2"},
+  "crisis.7110": {"zh": "第三级", "en": "Level 3"},
+  "crisis.7111": {"zh": "堕落帝国的警告", "en": "A Fallen Empire's warning"},
+  "crisis.7115": {"zh": "第四级", "en": "Level 4"},
+  "crisis.7120": {"zh": "第五级", "en": "Level 5"},
+  "crisis.7285": {"zh": "最后通牒", "en": "The ultimatum"},
+  "crisis.7400": {"zh": "视界刺针完成", "en": "Horizon Needle complete"},
+  "crisis.7510": {"zh": "选择黑洞", "en": "Choosing the black hole"},
+  "crisis.7516": {"zh": "胜利", "en": "Victory"}
+ },
+ "notes": [
+  {"doc": "crisis.7110", "kind": "review",
+   "zh": "到达第三级7天后，若存在狂热唯物堕落帝国，会收到其警告（仅一次）；两个回答都不会中止计划。",
+   "en": "Seven days after level 3, a fanatic materialist Fallen Empire (if any) sends a warning (once); neither reply stops the project."},
+  {"doc": "crisis.7120", "kind": "review",
+   "zh": "到达第五级时，所有未与你交战的堕落帝国对你宣战（00_crisis_levels / crisis.7120 after）。",
+   "en": "On reaching level 5, every Fallen Empire not already at war with you declares war (crisis.7120 after)."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c5b-crisis (Opus 5.5)",
+  "scope": {"zh": "完整核对 machine_age_crisis_events.txt 的宇宙创生部分（7100–7545）、五个天灾等级的条件与 on_unlock、等级科技、无限课题随机表、视界刺针与结局。", "en": "Checked the Cosmogenesis section of machine_age_crisis_events.txt (7100–7545), the five crisis levels' requirements and on_unlock, level technologies, the Infinity Thesis table, the Horizon Needle and the ending."},
+  "sources": ["events/machine_age_crisis_events.txt", "common/crisis_levels/00_crisis_levels.txt", "common/crisis_paths/00_cosmogenesis_paths.txt", "common/scripted_effects/02_machine_age_effects.txt", "common/technology/00_machine_age_tech.txt", "common/megastructures/16_cosmogenesis_needle.txt", "common/special_projects/04_projects_machine_age.txt", "common/on_actions/00_on_actions.txt", "common/on_actions/02_component_on_actions.txt"],
+  "uncertain": [
+   "Level thresholds are crisis-currency (Advanced Logic) amounts from the level definitions; objective income rates were not modelled.",
+   "Synaptic Lathe events (7530/7535/7540) are optional side events available from level 1 (tech_cosmogenesis_world); 7530/7535 are mostly seen by other empires."
+  ],
+  "guide": "public/summaries/cosmogenesis.md"
  }
 }

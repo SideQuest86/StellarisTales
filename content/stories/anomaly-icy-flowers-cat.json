@@ -1,0 +1,48 @@
+{
+ "id": "anomaly-icy-flowers-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.2015",
+    "anomaly.2020"
+   ],
+   "labels": [
+    {
+     "zh": "50%",
+     "en": "50%"
+    },
+    {
+     "zh": "50%",
+     "en": "50%"
+    }
+   ]
+  }
+ ],
+ "nodeLabels": {
+  "anomaly.2015": {
+   "zh": "花海盛放",
+   "en": "The bloom"
+  },
+  "anomaly.2020": {
+   "zh": "地震撤离",
+   "en": "Evacuation"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部5个文档。",
+   "en": "All 5 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_4.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-icy-flowers-cat.md"
+ }
+}

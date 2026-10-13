@@ -1,0 +1,28 @@
+{
+ "id": "site-site-ice-trauma",
+ "family": {
+  "title": {"zh": "冰封之下", "en": "Under the Ice"},
+  "category": "precursors",
+  "start": "archaeological_site_types:site_ice_trauma",
+  "members": ["archaeological_site_types:site_ice_trauma", "arcsite.1000", "arcsite.1005", "arcsite.1010", "arcsite.1015", "arcsite.1016", "arcsite.1017", "arcsite.1018", "arcsite.1020", "arcsite.9000", "arcsite.9001", "arcsite.9002", "arcsite.9005"]
+ },
+ "groups": [
+  {"kind": "exclusive", "members": ["arcsite.1016", "arcsite.1017", "arcsite.1018"],
+   "label": {"zh": "第四阶段三选一", "en": "Stage 4: one of three"},
+   "note": {"zh": "第四阶段由隐藏事件 arcsite.1015 等权随机选择其一（已有对应考古标记时排除其他），地图中 1016→1017→1018 的先后连线是编译器把同一阶段的结果串联所致。", "en": "Stage 4 runs hidden arcsite.1015, which picks one at equal weight (archaeology flags exclude the others); the 1016→1017→1018 chain on the map is a compiler artefact."}}
+ ],
+ "notes": [
+  {"doc": "archaeological_site_types:site_ice_trauma", "kind": "review",
+   "zh": "审阅说明：遗址定义带有生成权重（冰冻星球30、寒冷宜居星球5，max_instances = 1），也可在星系生成时出现；知名领袖纳苏兹·德墨忒尔的“虚空之语”只在该遗址尚未被发现时把它放到我们境内。",
+   "en": "Review note: the site has a spawn weight (30 on frozen worlds, 5 on cold habitable ones, max_instances = 1), so it can appear at galaxy generation; Nasuz Demetor's 'Voices in the Void' only places it in our space while it has not been found."}
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-10-12",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {"zh": "已核对遗址定义（五个阶段、难度、可见条件、科学家要求）、阶段事件1000–1020、第四阶段随机分派1015、掷骰失败事件9000/9005及其后续。未完成：编译器把第四阶段的三个互斥结果串成先后（见请求3）。新建为独立遗址故事（原在 event-paragon-41234 内），分类为先驱者/考古，请协调者确认归属。", "en": "Checked the site definition (5 stages, difficulty, visibility, scientist requirement), stage events 1000–1020, the stage-4 dispatcher 1015 and the roll-failure events 9000/9005 with follow-ups. Open: the compiler chains the three exclusive stage-4 results (Request 3). Created as its own site story (was inside event-paragon-41234), category precursors/archaeology — coordinator to confirm ownership."},
+  "sources": ["common/archaeological_site_types/00_base_game_arc_sites.txt", "events/arcsite_events.txt", "events/arcsite_random_events.txt", "common/scripted_effects/archaeology_event_effects.txt", "events/paragon_events_4.txt"],
+  "uncertain": ["The generic dig incidents (ancrel.8000–8070, 13030) on roll failure are shared hubs and are only linked."],
+  "guide": "public/summaries/site-site-ice-trauma.md"
+ }
+}

@@ -1,0 +1,191 @@
+{
+ "id": "anomaly-nuke-planet-cat",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.4156",
+    "anomaly_failure.4156"
+   ],
+   "labels": [
+    {
+     "zh": "70%",
+     "en": "70%"
+    },
+    {
+     "zh": "30%",
+     "en": "30%"
+    }
+   ]
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.4157",
+    "anomaly_failure.4157",
+    "anomaly_failure.4158"
+   ],
+   "labels": [
+    {
+     "zh": "40%",
+     "en": "40%"
+    },
+    {
+     "zh": "30%",
+     "en": "30%"
+    },
+    {
+     "zh": "30%",
+     "en": "30%"
+    }
+   ]
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.4158",
+    "anomaly.4159"
+   ],
+   "labels": [
+    {
+     "zh": "安抚或如实相告",
+     "en": "Reassure or tell the truth"
+    },
+    {
+     "zh": "称打捞了残骸",
+     "en": "\"We salvaged it\""
+    }
+   ]
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.4161",
+    "anomaly.4160",
+    "anomaly.4162",
+    "anomaly.4163"
+   ],
+   "labels": [
+    {
+     "zh": "拒绝",
+     "en": "Refuses"
+    },
+    {
+     "zh": "加入",
+     "en": "Joins"
+    },
+    {
+     "zh": "逃跑被击毙",
+     "en": "Escapes and is shot"
+    },
+    {
+     "zh": "告别",
+     "en": "Farewell"
+    }
+   ],
+   "note": {
+    "zh": "“加入”的三种结局由思潮和此前回答决定，不是依次发生。",
+    "en": "The three outcomes of \"Will you join us?\" depend on ethics and the earlier reply; they are alternatives."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "anomaly.4158": {
+   "zh": "问答（安抚/如实）",
+   "en": "Questions (reassured/told)"
+  },
+  "anomaly.4159": {
+   "zh": "问答（称打捞）",
+   "en": "Questions (\"salvaged\")"
+  },
+  "anomaly.4160": {
+   "zh": "马朱拉加入",
+   "en": "Majula joins"
+  },
+  "anomaly.4161": {
+   "zh": "马朱拉拒绝",
+   "en": "Majula refuses"
+  },
+  "anomaly.4162": {
+   "zh": "挟持与击毙",
+   "en": "Hostage and death"
+  },
+  "anomaly.4163": {
+   "zh": "告别",
+   "en": "Farewell"
+  },
+  "anomaly_failure.4156": {
+   "zh": "避难所坍塌",
+   "en": "The vault collapses"
+  },
+  "anomaly_failure.4157": {
+   "zh": "容器：作物样本",
+   "en": "Container: crop samples"
+  },
+  "anomaly_failure.4158": {
+   "zh": "容器：生物武器",
+   "en": "Container: bio-weapon"
+  }
+ },
+ "dialogues": {
+  "anomaly.4158": {
+   "states": {
+    "start": [
+     "anomaly.4158.a",
+     "anomaly.4158.b",
+     "anomaly.4158.militant.b",
+     "anomaly.4158.spiritual.b",
+     "anomaly.4158.c",
+     "anomaly.4158.d",
+     "anomaly.4158.f",
+     "anomaly.4158.xenophobe.f"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "anomaly.4158.d",
+    "anomaly.4158.f",
+    "anomaly.4158.xenophobe.f"
+   ],
+   "evidence": "events/anomaly_events_3.txt:4469-4519 / 4615-4663 a, b variants and c are is_dialog_only; d (three conditional instances) and f exit"
+  },
+  "anomaly.4159": {
+   "states": {
+    "start": [
+     "anomaly.4158.a",
+     "anomaly.4158.b",
+     "anomaly.4158.militant.b",
+     "anomaly.4158.spiritual.b",
+     "anomaly.4158.c",
+     "anomaly.4158.d",
+     "anomaly.4158.f",
+     "anomaly.4158.xenophobe.f"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "anomaly.4158.d",
+    "anomaly.4158.f",
+    "anomaly.4158.xenophobe.f"
+   ],
+   "evidence": "events/anomaly_events_3.txt:4469-4519 / 4615-4663 a, b variants and c are is_dialog_only; d (three conditional instances) and f exit"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c3b-exploration (Opus 5.5)",
+  "scope": {
+   "zh": "全部15个文档。",
+   "en": "All 15 docs."
+  },
+  "sources": [
+   "common/anomalies/02_anomaly_categories.txt",
+   "common/special_projects/00_projects_3.txt",
+   "events/anomaly_events_3.txt",
+   "events/failures.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-nuke-planet-cat.md"
+ }
+}
