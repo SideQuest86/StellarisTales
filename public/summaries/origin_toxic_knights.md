@@ -35,3 +35,5 @@ At game start hidden toxoids.7000 starts the *Quest for the Toxic God* situation
 - 已核对 Checked：局势全部阶段、7000–8110 事件、on_action 钩子。 All situation stages, events 7000-8110 and on_action hooks.
 - 更正 Corrections：封印星系三种入口与击败毒圣的连接（原先为孤立入口）；要塞线入口加标签。 The three sealed-system entries and the defeat links (previously floating entries); keep entries labelled.
 - 不确定 Uncertain：中段传说（7055–7225）的选项细节取自编译树。 Option details of the middle tales are taken from the compiled tree.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

@@ -10,7 +10,7 @@ Repeatable menu enclave.405, opened via enclave.404 after first contact and via 
 
 ## 剧情脉络 Story outline（菜单与服务 Menu and services）
 大多数服务以“考虑别的事”返回菜单（↺）。Most services return to the menu.
-- 寻求虚境掌控 Mastery of the Shroud（需虚境DLC、已突破虚境、已与一位庇护者完成接触）：打开一个子菜单（shroud.5300，编译器将其折叠），含六项：
+- 寻求虚境掌控 Mastery of the Shroud（需虚境DLC、已突破虚境、已与一位庇护者完成接触）：打开子菜单（shroud.5300，继承本菜单标题，现为独立页面），含六项：
   - 与其他虚境存在交流（5305）：支付泽珞或星界丝线 → 随机与一位尚未接触的虚境庇护者建立初次接触（各庇护者的初次接触为独立故事，跨故事链接）。
   - 加深庇护者调谐（5310）、灵能光环说明（5320）。
   - 探求虚境秘密（5315）：开启“探秘仪式”项目 → 随机获得一项灵能相关发现（部分为“虚境的低语”故事中的事件，跨故事链接）；若该发现已由我们自行获得，则为5318。
@@ -33,5 +33,7 @@ Greetings differ for first/return visits and psionic ascension. Hostile or homic
 ## 审阅记录 Review notes
 - 已核对 405 全部选项条件、各服务窗口、shroud.5300 子菜单、洞见局势定义与 on_action 随机表、探秘仪式项目的随机结果。
 - 更正：草稿中本菜单在四个故事里重复，并吞入占卜、他人故事事件与十二个庇护者初次接触；现拆为本故事、“预知”与跨故事链接。“洞见”四种结果原本是四个孤立的一页故事，现按局势完成时的互斥随机组接回。
-- 由于 shroud.5300 被折叠，5325/5330 付费后回到该子菜单的边被误画成指向其他子服务，已 suppress 并加注（台账请求1）。
+- 事件继承修复后 shroud.5300 成为独立页面，5325/5330 付费后经 5326 回到它；原先为避免误边而设的 10 条 suppress 已删除（树中只剩回指）。
 - 覆盖完整。Coverage complete.
+- 2026-10-13 r3-inherit：事件继承修复后复查：shroud.5300 子菜单现为独立页面，删除 10 条已无用的 suppress，修正审阅注；其余服务窗口（base = enclave.405 + option_clear）与菜单回指核对无误。
+  2026-10-13 r3-inherit: re-checked after the inheritance fix: submenu shroud.5300 is now its own page; the 10 now-redundant suppress entries were removed and the review note corrected; the other service windows (base = enclave.405 + option_clear) and their returns were checked.

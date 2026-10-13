@@ -36,3 +36,5 @@ Homicidal empires get different option words and no services; Galactic Curators 
 - 更正（相对V3）：V3 范围 500–600 误把通用的“通讯已建立”（leviathans.98）与十年通讯扩散（leviathans.560）收入本故事；现改为明确成员，98 设为独立故事（hub）。保留并补证 V3 的“502 → 再次联络 → 500”桥接。新增“攻击后斥责”的条件连接。
 - 档案员离去（605）已移至“攻击[城邦]”故事。
 - 覆盖完整。Coverage complete.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

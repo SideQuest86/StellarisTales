@@ -29,3 +29,5 @@
   Checked: trigger conditions and option effects; the compiled tree matches the script.
 - 不确定：colony.195/200 的内容属于行星吞噬系列（colony_events_3），本审阅只核对局势定义与启动决议。
   Uncertain: colony.195/200 belong to the planet-devouring series (colony_events_3); only the situation definition and the starting decision were checked.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

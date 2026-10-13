@@ -30,4 +30,6 @@ At game start hidden origin.5 fixes the fallen-empire overlord (spawning a small
 
 - 已核对 Checked：origin.5–54、200–226 全部事件及钩子。 All events 5-54 and 200-226 and hooks.
 - 更正 Corrections：入口加标签；战争干预→收回舰队连接；干预与圣世界互斥组。 Entries labelled; war-help links; exclusive groups.
-- 不确定 Uncertain：origin.24 因 `base = origin.21` 没有窗口文本。 origin.24 has no window text (`base = origin.21`).
+- origin.24 以 `base = origin.21` 继承标题与文本，事件继承修复后已有窗口并列于 21。 origin.24 inherits 21's title and text via `base` and now has its window beside 21.
+- 2026-10-13 r3-inherit：事件继承修复后 origin.24 有了标题与文本；加入起源入口并加标签，清除未决项。
+  2026-10-13 r3-inherit: origin.24 now has its inherited title and text; added to the origin's entries with a label and the open item cleared.

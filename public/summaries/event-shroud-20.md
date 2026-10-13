@@ -40,3 +40,5 @@ Checked the shroud.2 roll, the shroud.20 trigger and the after-chain 7099–7121
 不确定 / Uncertain:
 
 - The per-delve probability value:shroud_song_roll and the eligibility triggers is_eligible_for_advanced_government were not expanded; the extractor shows the songs as [GetRolledShroudSong…] placeholders.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

@@ -36,3 +36,7 @@ None.
 原标题为空（继承行虚者菜单窗口），故用巨型建筑原名“虚境封印”作标题。分类改为 C6：它是行虚者城邦对玩家行为的反应，建议 C6 的行虚者城邦故事链接到此卡。
 
 The title is empty (inherited from the Shroudwalker menu window), so the megastructure name "Shroud Seal" is used. Category changed to C6: it is the Shroudwalker Enclave's reaction; the C6 Shroudwalker story may link here.
+
+以 base = enclave.405（desc_clear + option_clear，shroud_events.txt:14855-14858）继承行虚者菜单窗口：窗口标题现为城邦名（继承），故事标题仍用巨型建筑名“虚境封印”；只有一个“再会了”选项。 It inherits the Shroudwalker menu window (base = enclave.405 with desc_clear and option_clear): the window title is now the enclave's name, the story title stays the megastructure name; it has a single 'Farewell' option.
+- 2026-10-13 r3-inherit：事件继承修复后复查：窗口继承城邦标题、选项已清空（option_clear），结构不变。
+  2026-10-13 r3-inherit: re-checked: the window inherits the enclave title, options cleared (option_clear); structure unchanged.

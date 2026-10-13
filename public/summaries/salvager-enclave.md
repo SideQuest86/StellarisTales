@@ -32,3 +32,5 @@ Greetings vary by first/return visit, scavenger empires and past organic scrappi
   Correction: the menu was duplicated (300/304) and embedded the whole Shroudwalker content through the Veilfarer question; now cross-links.
 - 340 的三个后续中 341 与 365 是先后关系（编译器把三者标为同一条件组）。In 340, 341 then 365 are sequential although the compiler groups all three.
 - 覆盖完整。Coverage complete.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

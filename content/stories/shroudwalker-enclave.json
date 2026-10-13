@@ -122,58 +122,7 @@
    "evidence": "on_entering_battle -> enclave.7200 (overlord_enclaves_events.txt:13203-13234) requires a shroudwalker_teacher leader, then enclave.8000 after 5 days"
   }
  ],
- "suppress": [
-  {
-   "from": "shroud.5325",
-   "to": "shroud.5305",
-   "evidence": "shroud.5325.zro/.thread -> shroud.5326 (shroud_events.txt:18129-18146) re-opens the Shroud-mastery submenu shroud.5300, which the compiler folds; its sub-services are not results of the payment"
-  },
-  {
-   "from": "shroud.5325",
-   "to": "shroud.5310",
-   "evidence": "as above: folded submenu shroud.5300 re-opened by shroud.5326"
-  },
-  {
-   "from": "shroud.5325",
-   "to": "shroud.5315",
-   "evidence": "as above: folded submenu shroud.5300 re-opened by shroud.5326"
-  },
-  {
-   "from": "shroud.5325",
-   "to": "shroud.5320",
-   "evidence": "as above: folded submenu shroud.5300 re-opened by shroud.5326"
-  },
-  {
-   "from": "shroud.5325",
-   "to": "shroud.5330",
-   "evidence": "as above: folded submenu shroud.5300 re-opened by shroud.5326"
-  },
-  {
-   "from": "shroud.5330",
-   "to": "shroud.5305",
-   "evidence": "shroud.5330.zro/.thread re-open the Shroud-mastery submenu shroud.5300 (shroud_events.txt:18249,18264); folded by the compiler"
-  },
-  {
-   "from": "shroud.5330",
-   "to": "shroud.5310",
-   "evidence": "as above: folded submenu shroud.5300"
-  },
-  {
-   "from": "shroud.5330",
-   "to": "shroud.5315",
-   "evidence": "as above: folded submenu shroud.5300"
-  },
-  {
-   "from": "shroud.5330",
-   "to": "shroud.5320",
-   "evidence": "as above: folded submenu shroud.5300"
-  },
-  {
-   "from": "shroud.5330",
-   "to": "shroud.5325",
-   "evidence": "as above: folded submenu shroud.5300"
-  }
- ],
+ "suppress": [],
  "groups": [
   {
    "kind": "exclusive",
@@ -267,10 +216,10 @@
    "en": "Review note: this menu opens after first contact or 'Communications Established' (enclave.404) and on every later diplomatic contact (enclave.400, on_custom_diplomacy). Service options return here: it is a repeatable service hub, not a linear chain."
   },
   {
-   "doc": "shroud.5305",
+   "doc": "shroud.5300",
    "kind": "review",
-   "zh": "审阅注：“寻求虚境掌控”先打开一个继承本菜单文本的子菜单（shroud.5300，shroud_events.txt:17388），编译器将其折叠，因此六项子服务直接挂在本选项下。",
-   "en": "Review note: 'We seek mastery of the Shroud' first opens a submenu that inherits this window's text (shroud.5300, shroud_events.txt:17388); the compiler folds it, so its six sub-services hang directly under that option."
+   "zh": "审阅注：“寻求虚境掌控”（enclave.405.i）打开子菜单 shroud.5300（继承本菜单标题，shroud_events.txt:17388）；六项子服务都回到该子菜单，5325/5330 付费后经 5326 再次打开它（以回指节点显示）。",
+   "en": "Review note: 'We seek mastery of the Shroud' (enclave.405.i) opens the submenu shroud.5300 (it inherits this window's title, shroud_events.txt:17388); its six sub-services return to it, and after paying 5325/5330 re-open it through 5326 (shown as return nodes)."
   },
   {
    "doc": "shroud.5325",
@@ -293,8 +242,8 @@
  ],
  "review": {
   "status": "reviewed",
-  "date": "2026-10-12",
-  "reviewer": "C6 (Opus 5.5)",
+  "date": "2026-10-13",
+  "reviewer": "C6 (Opus 5.5); r3-inherit",
   "scope": {
    "zh": "完整：入口与引见、九项服务及其子菜单/项目/局势结果、跨故事链接。",
    "en": "Complete: entries and introduction, nine services with their submenu, project and situation results, cross-story links."
@@ -306,8 +255,6 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/shroudwalker-enclave.md",
-  "uncertain": [
-   "shroud.5300 (Shroud-mastery submenu) inherits its text through `base` and is folded by the compiler; its six options hang under enclave.405.i (ledger request 1)."
-  ]
+  "uncertain": []
  }
 }

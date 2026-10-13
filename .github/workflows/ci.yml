@@ -40,6 +40,8 @@ jobs:
           }
       - name: Category structure audit
         run: node scripts/audit-categories.mjs
+      - name: Reading content audit (text, choices, links, leftover markup)
+        run: node scripts/audit-content.mjs --strict
       - name: Review progress summary
         run: node scripts/review-summary.mjs >> "$GITHUB_STEP_SUMMARY"
       - name: Build

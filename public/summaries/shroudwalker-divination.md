@@ -42,3 +42,5 @@ Gates differ (e.g. All Too Lucid needs a non-AI, non-gestalt empire with >400 po
 - 更正：草稿把整个占卜嵌在打捞者和虚境行者菜单的四个副本中，并把“门扉”等其他故事的整条事件链吞入；现为独立故事，借用事件以跨故事链接表示（hub）。心灵异常生成的异常现象以审阅注说明，未建桥接（桥接会破坏这些异常现象的独立故事，见台账请求）。
 - 不确定：各预言前置以文字概括，未逐一建模为边条件。
 - 覆盖完整。Coverage complete.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

@@ -4,6 +4,7 @@
   "targets": [
    "origin.10",
    "origin.21",
+   "origin.24",
    "origin.12",
    "origin.13",
    "origin.205",
@@ -72,6 +73,10 @@
    "origin.54": {
     "zh": "战争结束：先辈收回借出的舰队（每月检查）",
     "en": "The war is over: the fallen empire reclaims its fleet (monthly check)"
+   },
+   "origin.24": {
+    "zh": "定期馈赠：合金或消费品（隐藏20，约50%）",
+    "en": "Periodic gift: alloys or consumer goods (hidden 20, about 50%)"
    }
   },
   "evidence": "events/game_start.txt:304 fires hidden origin.5 (events/origin_events_1.txt:22-170: spawns a mini fallen empire if needed, schedules origin.10 after 3 days and the gift loop origin.20). Hidden 20 (:401-434) repeats itself every scionRewardTimer days and draws 21 (technology) or 24 (resources) at 50/100. common/on_actions/00_on_actions.txt:113 on_monthly_pulse fires 50 (-> 51, :1042-1165) and 30 (-> 54, :1375-1399); on_war_beginning :2607 (29); on_fleet_destroyed_victim :1584 (52); hidden 200 (on_yearly_pulse, :567-711) draws 205/210/215/220/225 (10 of 300 each); hidden 11 (on_survey) -> 12 / 13."
@@ -79,7 +84,7 @@
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "reviewer": "c1-origins (Sonnet), V4 source review; r3-inherit",
   "sources": [
    "events/origin_events_1.txt",
    "common/on_actions/00_on_actions.txt",
@@ -87,7 +92,6 @@
    "common/war_goals/00_war_goals.txt"
   ],
   "uncertain": [
-   "origin.24 (resource gift) has no compiled window because it uses `base = origin.21` (ledger R3).",
    "Timers scionRewardTimer / scionRewardTimerDelay are script variables (@) not read here."
   ],
   "guide": "public/summaries/origin_scion.md"
@@ -153,8 +157,8 @@
   {
    "doc": "origin.21",
    "kind": "review",
-   "zh": "馈赠循环：origin.20每隔“scionRewardTimer”天自我重复；半数给科技（21），半数给合金或消费品（24，继承21的文本）。",
-   "en": "The gift loop: hidden 20 repeats every scionRewardTimer days; half the time technology (21), otherwise alloys or consumer goods (24, which inherits 21's text via base)."
+   "zh": "馈赠循环：origin.20每隔“scionRewardTimer”天自我重复；半数给科技（21），半数给合金或消费品（24，以 base 继承21的标题与文本）。",
+   "en": "The gift loop: hidden 20 repeats every scionRewardTimer days; half the time technology (21), otherwise alloys or consumer goods (24, which inherits 21's title and text via base)."
   },
   {
    "doc": "origin.225",

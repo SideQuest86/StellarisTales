@@ -49,3 +49,5 @@ The card: the civilisation has just been cut off from the machine network that a
   The tree had only loose root entries; the opening victory is now the trunk, with 18 state bridges through the five systems, the Sentinel fight and the identity situation; false links from cyberization steps to the decyberization follow-ups were removed.
 - 不确定 Uncertain：编译器把遗址各阶段按定义顺序串接，第三阶段两个结果（2021/2022、2121/2125、2321/2325）实为二选一，已以互斥组标注；身份局势在阶段改变时会换路线，图中只画各路线自身顺序（阅读简化，见片段说明）。
   The compiler chains dig stages in definition order although each stage 3 picks one of two (marked as exclusive groups); the identity situation can switch tracks when its stage changes, but the map only draws each track's own order (a reading simplification).
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

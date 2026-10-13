@@ -36,3 +36,5 @@ Most services require trust thresholds (10-50), cooldowns or not-yet-bought flag
 - 更正：草稿中同一菜单出现在五个故事（200、204、建立、可汗交易、合约到期）里；现合并为本故事族，其他故事改为跨故事链接。
   Correction: the draft copied this menu into five stories; it is now one family and the others cross-link to it.
 - 覆盖完整。Coverage complete.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

@@ -394,18 +394,6 @@
    "evidence": "events/shroud_events.txt:15040-15048 6855 is only reachable by the founding patron (4205.i trigger: is_mercenary_mindwarden_enclave + created_by@prev, lines 9568-9584); its back option re-runs 4201 whose first branch (lines 9339-9347) sends the patron to 6850 -> 6851 (6852/6853 already removed mindwarden_enclave_founded, lines 14970-14996)."
   }
  ],
- "bridges": [
-  {
-   "from": "shroud.6851",
-   "to": "shroud.6855",
-   "conditional": true,
-   "label": {
-    "zh": "赞助方提案（沿用主菜单选项 i）",
-    "en": "Patron proposals (inherited menu option i)"
-   },
-   "evidence": "events/shroud_events.txt:14948-14968 shroud.6851 uses base = shroud.4205 without option_clear, so it shows the options of 4205; option 4205.i (lines 9568-9584) is shown only to the patron who created the enclave and calls 6855"
-  }
- ],
  "groups": [
   {
    "kind": "exclusive",
@@ -603,20 +591,20 @@
   {
    "doc": "shroud.6851",
    "kind": "review",
-   "zh": "此问候窗口沿用主菜单 shroud.4205 的全部选项（泽珞、袭击、后勤……以及赞助方提案 i），见主菜单分支。",
-   "en": "This greeting window reuses every option of main menu shroud.4205 (zro, raids, logistics… and patron proposals via option i); see the main-menu branch."
+   "zh": "此问候窗口以 base = shroud.4205 继承主菜单的全部选项（泽珞、袭击、后勤……以及仅赞助方可见的提案 i → 6855），编译树以回指显示（shroud_events.txt:14948-14968）。",
+   "en": "This greeting inherits every option of main menu shroud.4205 via base (zro, raids, logistics... and, for the patron only, proposals i -> 6855); the tree shows them as returns (shroud_events.txt:14948-14968)."
   },
   {
    "doc": "shroud.6852",
    "kind": "review",
-   "zh": "此问候窗口沿用主菜单 shroud.4205 的全部选项（泽珞、袭击、后勤……以及赞助方提案 i），见主菜单分支。",
-   "en": "This greeting window reuses every option of main menu shroud.4205 (zro, raids, logistics… and patron proposals via option i); see the main-menu branch."
+   "zh": "此问候窗口以 base = shroud.4205 继承主菜单的全部选项（泽珞、袭击、后勤……以及仅赞助方可见的提案 i → 6855），编译树以回指显示（shroud_events.txt:14948-14968）。",
+   "en": "This greeting inherits every option of main menu shroud.4205 via base (zro, raids, logistics... and, for the patron only, proposals i -> 6855); the tree shows them as returns (shroud_events.txt:14948-14968)."
   },
   {
    "doc": "shroud.6853",
    "kind": "review",
-   "zh": "此问候窗口沿用主菜单 shroud.4205 的全部选项（泽珞、袭击、后勤……以及赞助方提案 i），见主菜单分支。",
-   "en": "This greeting window reuses every option of main menu shroud.4205 (zro, raids, logistics… and patron proposals via option i); see the main-menu branch."
+   "zh": "此问候窗口以 base = shroud.4205 继承主菜单的全部选项（泽珞、袭击、后勤……以及仅赞助方可见的提案 i → 6855），编译树以回指显示（shroud_events.txt:14948-14968）。",
+   "en": "This greeting inherits every option of main menu shroud.4205 via base (zro, raids, logistics... and, for the patron only, proposals i -> 6855); the tree shows them as returns (shroud_events.txt:14948-14968)."
   },
   {
    "doc": "shroud.4246",
@@ -645,8 +633,8 @@
  ],
  "review": {
   "status": "reviewed",
-  "date": "2026-10-12",
-  "reviewer": "Opus 5.5 (c8a-stories review agent)",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent); r3-inherit",
   "scope": {
    "zh": "灵督城邦的接触入口、主菜单与全部服务子页、赞助方（灵督起源）专用菜单、袭击/攻击/摧毁/物现引擎相关后果均已对照源文件。",
    "en": "Contact entry, main menu with all service pages, the founding patron menu (Mindwardens origin), and the raid / attack / destruction / Materiality Engine consequences were all checked against the source."

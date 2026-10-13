@@ -23,3 +23,5 @@ A 与 B 各有一组互斥结果。 / A and B each have an exclusive pair of res
 
 - 已核对 Checked：脚本、四个池中的出现条件、各选项对成功度变量的修改。/ Script, pool conditions and the success-variable changes.
 - 审阅改动 Changes：结构已按源码核对（原编译结构正确）。/ Structure checked against the source and kept.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

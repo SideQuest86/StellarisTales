@@ -30,3 +30,5 @@
 - 已核对 Checked：450–490、462 脚本及五个诗歌阶段、第二阶段条目。
 - 审阅改动 Changes：原 event-first-contact-475/480/485/490 四篇单页合并入本篇，450 为根。/ The four single-event stories 475, 480, 485 and 490 are merged here under root 450.
 - 不确定 Uncertain：各结局的好感修正数值在 opinion_modifiers 中，未逐项核对。/ Opinion modifier values not checked.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

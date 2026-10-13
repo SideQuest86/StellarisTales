@@ -18,20 +18,38 @@
     "zh": "非格式塔：1（游牧：11）；蜂巢：6（游牧：14）；机器：7（游牧：14）。",
     "en": "Non-gestalt: 1 (nomads: 11); hive: 6 (nomads: 14); machine: 7 (nomads: 14)."
    }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "pirate.2",
+    "pirate.12",
+    "pirate.8",
+    "pirate.16",
+    "pirate.9"
+   ],
+   "label": {
+    "zh": "宝藏猎人起源（已遇见霍船长）的标题变体",
+    "en": "Treasure Hunters title variants (Captain Hoo met)"
+   },
+   "note": {
+    "zh": "2/12/8/16/9 以 base 继承 1/11/6/14/7 的描述与选项，只替换标题（pirate_events.txt:317, 702, 709, 949, 1038）；同一次触发只显示其中一种窗口。",
+    "en": "2/12/8/16/9 inherit 1/11/6/14/7 via base and only replace the title (pirate_events.txt:317, 702, 709, 949, 1038); only one window appears per trigger."
+   }
   }
  ],
  "notes": [
   {
    "doc": "pirate.1",
-   "zh": "与宝藏猎人起源已遇见霍船长的玩家，会改收 pirate.2/8/9/12/16（只覆盖标题的 base 变体事件，编译器未把它们建成文档）。",
-   "en": "Treasure Hunters empires that have met Captain Hoo receive pirate.2/8/9/12/16 instead (base variants that only override the title; the compiler does not build them as docs).",
+   "zh": "与宝藏猎人起源已遇见霍船长的玩家，会改收 pirate.2/8/9/12/16（以 base 继承对应窗口、只覆盖标题，现已编译为文档）。",
+   "en": "Treasure Hunters empires that have met Captain Hoo receive pirate.2/8/9/12/16 instead (they inherit the matching window via base and only override the title; now compiled as docs).",
    "kind": "review"
   }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
-  "reviewer": "r2-stories",
+  "reviewer": "r2-stories; r3-inherit",
   "scope": {
    "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
    "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
@@ -42,9 +60,7 @@
    "events/pirate_events.txt:9-130",
    "common/on_actions/00_on_actions.txt:481"
   ],
-  "uncertain": [
-   "pirate.2/8/9/12/16 are base-variant events (events/pirate_events.txt:316, 701, 708, 948, 1037) absent from the compiled docs."
-  ],
+  "uncertain": [],
   "guide": "public/summaries/event-pirate-4.md"
  }
 }

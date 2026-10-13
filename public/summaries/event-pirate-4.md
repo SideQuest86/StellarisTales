@@ -18,9 +18,9 @@ Immediate effect: sets pirates_spawned (3600 days), permanent birth_of_piracy an
 
 ## 分支与结局 Branches and outcomes
 
-五个窗口互斥（按帝国类型）；之后“海盗出现”的重复事件见 event-pirate-48。
+五类窗口互斥（按帝国类型），宝藏猎人起源（已遇见霍船长）改用各自仅标题不同的变体 2/12/8/16/9；之后“海盗出现”的重复事件见 event-pirate-48。
 
-The five windows are exclusive by empire type; the later recurring "pirates sighted" events are in event-pirate-48.
+The windows are exclusive by empire type; Treasure Hunters that met Captain Hoo get title-only variants 2/12/8/16/9; the later recurring "pirates sighted" events are in event-pirate-48.
 
 ## 条件与文明差异 Conditions and variants
 
@@ -32,6 +32,8 @@ Hive (non-wilderness), machine and nomadic empires have their own variants; Trea
 
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
-- 未确定 Open: pirate.2/8/9/12/16 are base-variant events (events/pirate_events.txt:316, 701, 708, 948, 1037) absent from the compiled docs.
+- 已解决 Resolved: pirate.2/8/9/12/16 (pirate_events.txt:317, 702, 709, 949, 1038) are title-only base variants for Treasure Hunters empires that met Captain Hoo; after the inheritance fix they are compiled and grouped with their base windows. / 宝藏猎人起源且已遇见霍船长时改用这五个窗口（仅标题不同），现已编入并与基础窗口互斥分组。
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）
   (Commentary written by the reviewer, not game text; the original text is in the reader.)
+- 2026-10-13 r3-inherit：事件继承修复后 pirate.2/8/9/12/16 已编译为文档；核对 base 与标题覆盖，加入互斥分组，清除未决项。
+  2026-10-13 r3-inherit: after the inheritance fix pirate.2/8/9/12/16 are compiled docs; base and title override checked, grouped as exclusive variants, open item cleared.

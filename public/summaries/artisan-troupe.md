@@ -26,3 +26,5 @@ Homicidal empires only get 'Xeno scum'; gestalts cannot hold the festival; nomad
 - 已核对菜单全部选项条件、赞助循环（311 权重与修正、各信的后续排期）、盛典随机表（10/10/5/75）、攻击与被毁的分派。
 - 更正：草稿把问候（-290）、菜单（-285）、被毁通知（-351）和摧毁者通知（-354）拆成四个故事；现合并为一个城邦故事。赞助来信之间的 ↺ 表示“下一封信”循环，不是同一次选择的连续结果。
 - 覆盖完整。Coverage complete.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

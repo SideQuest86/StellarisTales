@@ -30,3 +30,5 @@
 - 更正 Corrections: 原树全部是“次要入口”，包括两种互斥的结局通知；现按“宿敌→宣战→联盟→结局”建立顺序与互斥组。
 - 不确定 Uncertain: observer.77/78（结局的观察者副本）属另一审阅者的故事，未链接；fallen_empires_awakening.11 只经测试事件 war_in_heaven.1000 可达，仍显示为次要入口。
 - 覆盖范围 Coverage: 21 篇，全部审阅。
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

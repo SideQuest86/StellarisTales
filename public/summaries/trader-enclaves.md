@@ -27,3 +27,5 @@ Homicidal empires cannot trade; gestalts and Worker Cooperatives get special con
 - 已核对 100/101 路由、三份菜单的选项与条件、资源窗口与续约、顾问、攻击反应、拒绝与能量取消。
 - 更正：草稿把三家菜单、首次接触（event-leviathans-101）、攻击反应（-155）、三份拒绝（-157/-160/-163）、能量取消（-170）拆成七个故事；现合并为一个商人城邦故事，城邦被毁仍为独立故事。
 - 覆盖完整。Coverage complete.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

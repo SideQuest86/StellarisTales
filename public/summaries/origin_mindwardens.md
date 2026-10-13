@@ -46,3 +46,5 @@ Hidden 6000 at game start creates a hidden psionic state, the Exiled, with a buf
   Only 6050 had been an entry and 20+ docs floated at the root; now five entries and 23 state bridges form one tree. The enclave menu (~38 windows) is a separate story; false links from 6110 to guardian/caravaneer follow-ups removed.
 - 不确定 Uncertain：战争计时依赖剩余的定时旗标天数，只展示路线不模拟计时；6704 的钩子未在调用图中解析，条件取自事件本身。
   War timers depend on remaining timed-flag days (routes shown, timers not simulated); 6704's hook is not resolved by the call graph.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

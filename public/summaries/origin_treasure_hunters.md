@@ -74,3 +74,5 @@ The main line follows the five stages of the chart; every step needs a player ac
   Moved the generic voidworm situation and plague out of this origin (separate linked story); removed impossible links from 2006 to Primal Calling events; removed four false "chain restart" links; attached the vault, trove, Grand Archive and carcass branches to their real predecessors instead of loose root entries; recorded the deal, main and epilogue endings and the exclusive groups.
 - 不确定 Uncertain：三个基地项目同属选项组，是开始还是完成某一项时移除其他项属于引擎行为，脚本中看不到；8531（机械再教育）引用的标题键在中英文本地化中都不存在；破坏局势的实时竞速（月度进度、袭击、舰队战）不作模拟。
   Whether starting or finishing one base project removes the others is engine behaviour; 8531 refers to a title key missing in both localisations; the real-time race inside the sabotage situation is not simulated.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

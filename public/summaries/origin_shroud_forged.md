@@ -37,3 +37,5 @@ At game start the hidden shroud_forged.1 sets up the rift on the capital and sta
 - 已核对 Checked：全部事件窗口、局势阶段与结局、三个特殊项目、决定、建筑钩子与 on_action 入口。 All event windows, situation stages/endings, three projects, decisions, building hooks and on_action entries.
 - 更正 Corrections：补充物现引擎入口 30→39、背叛路线的 312→330/320 连接；阶段以并列（状态）标注；入口加了可读标签。 Added the 30->39, 312->330/320 links; stages annotated as states; entries labelled.
 - 不确定 Uncertain：编译树把阶段事件串成链（编译器限制）；月度随机事件的排除规则在 inline_script 中未读。 Compiled tree chains the stage events (compiler limitation); the random-event exclusion script was not read.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.

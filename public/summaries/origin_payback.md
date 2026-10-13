@@ -35,3 +35,5 @@ At game start hidden origin.4000 creates the dig site and debris at the capital;
 - 更正 Corrections：遗址在清理项目后才可见（新增连接）；债务战斗→4020/4025；复仇结局与诊所事件接入各自事件链；移除误并入的宇宙风暴“坚守战线”遗址（cstorms.1270，原因是其触发条件在 if 中提到本起源）与通用“起源升级”路由 origin.112/113（连带破碎枷锁遗址）。
   The dig site only opens after the cleanup project (new link); fights -> 4020/4025; revenge endings and clinic events attached to their chains; removed the cosmic-storm Hold the Line site (cstorms.1270 mentions the origin inside an if) and the generic uplift routers origin.112/113 (which dragged in the Broken Shackles site).
 - 不确定 Uncertain：复仇事件链的计数细节仅通过消费事件阅读。 Swords-chain counter details read only through the consuming events.
+- 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
+  2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.
