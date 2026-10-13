@@ -1,0 +1,25 @@
+{
+ "id": "event-crime-1",
+ "unreachable": {
+  "crime.1": {
+   "zh": "在 on_colony_yearly_pulse 的随机表中权重为0，文件头注明已禁用。",
+   "en": "Weight 0/100 in the on_colony_yearly_pulse random list; disabled per the file comment.",
+   "evidence": "common/on_actions/00_on_actions.txt:3941; events/crime_events.txt:9"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/crime_events.txt:9-230",
+   "common/on_actions/00_on_actions.txt:3941"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-crime-1.md"
+ }
+}

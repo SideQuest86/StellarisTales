@@ -1,0 +1,38 @@
+{
+ "id": "event-cara-4101",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cara.4110",
+    "cara.4120",
+    "cara.4130",
+    "cara.4140",
+    "cara.4150",
+    "cara.4160"
+   ],
+   "label": {
+    "zh": "边境事件（每年一次抽取）",
+    "en": "Border incidents (one draw a year)"
+   },
+   "note": {
+    "zh": "权重 90 无事 / 2 收藏家 / 2 沉迷赌博 / 2 派对 / 2 新老虎机 / 1 适应 / 1 金属演唱会；每次只发生一个。",
+    "en": "Weights 90 nothing / 2 Collector / 2 Slaves to the Slots / 2 Festival / 2 New slot machines / 1 Acclimatization / 1 concert; only one happens per draw."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "年度抽取、六个事件的触发与后续（收藏家、MegaCorpse 专项）均已核对。",
+   "en": "The yearly draw, the triggers of the six events and the follow-ups (the Collector, the MegaCorpse project) were checked."
+  },
+  "sources": [
+   "events/caravaneer_events.txt:4986-5300",
+   "common/on_actions/00_on_actions.txt:230"
+  ],
+  "guide": "public/summaries/event-cara-4101.md"
+ }
+}

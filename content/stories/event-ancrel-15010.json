@@ -1,0 +1,66 @@
+{
+ "id": "event-ancrel-15010",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.15004",
+    "ancrel.15005"
+   ],
+   "label": {
+    "zh": "石柱的两种结局",
+    "en": "Two endings at the pillar"
+   },
+   "labels": [
+    {
+     "zh": "小心取出：造化面具",
+     "en": "careful: the Mask of Transformation"
+    },
+    {
+     "zh": "强行挖掘：石柱粉碎，得矿物与稀有水晶",
+     "en": "forceful: the pillar shatters, minerals and rare crystals"
+    }
+   ],
+   "note": {
+    "zh": "ancrel.15003 的选项a→15005（30±20天后），选项b→15004。",
+    "en": "Option a of ancrel.15003 -> 15005 (30 +- 20 days later), option b -> 15004."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.15006",
+    "ancrel.15007",
+    "ancrel.15008"
+   ],
+   "label": {
+    "zh": "丛林中的专属失败事件",
+    "en": "The jungle's own failure events"
+   },
+   "note": {
+    "zh": "site_transformation_random_events 以 10/10/10 在三者中抽取其一。",
+    "en": "site_transformation_random_events draws one of the three at 10/10/10."
+   }
+  }
+ ],
+ "notes": [],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：开端与触发条件、全部文档的先后与互斥关系、结局；相关脚本与中英文正文已读。",
+   "en": "Whole story: opening and trigger conditions, order and exclusivity of every doc, endings; the relevant scripts and both languages read."
+  },
+  "sources": [
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/archaeological_site_types/00_base_game_arc_sites.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "common/on_actions/00_on_actions.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-ancrel-15010.md"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "id": "event-shroud-1100",
+ "category": "society",
+ "notes": [
+  {
+   "doc": "shroud.1105",
+   "kind": "review",
+   "zh": "审阅注：本事件只是“残酷实验者”(Twisted Experimenters)帝国“实验测试”情境里的随机插曲。A 放走逃犯：获得团结度，并把一半试验品人口群转成难民物种投向难民系统（refugees.1，约65%；35% 另一路径）；B 停工封锁（360 天 testing_lockdown 修正）；C 处决所有试验品作为榜样，并立即结算当前情境（shroud.1010 → 1015 选择下一轮实验）。",
+   "en": "Review note: this is only a random interlude inside the Experimental Testing situation of Twisted Experimenters empires. A lets the escapees go (unity reward; half of the test-subject pop groups become a refugee species, refugees.1 at about 65%); B locks the facilities down for 360 days; C executes the rest and immediately resolves the situation (shroud.1010 → 1015 chooses the next round)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "试验品逃跑：4个文档（含难民与实验测试情境的衔接）。",
+   "en": "Test Subjects Escaping: the 4 docs, including the hand-off to refugees and the Experimental Testing situation."
+  },
+  "sources": [
+   "events/shroud_situation_events.txt:250-484",
+   "events/shroud_situation_events.txt:34-247",
+   "common/situations/13_shroud_situations.txt:401-570",
+   "common/on_actions/00_on_actions.txt:3926"
+  ],
+  "uncertain": [
+   "“残酷实验者”起源/实验测试情境本身的完整故事不在本篇范围。 / The full Twisted Experimenters / Experimental Testing story is outside this story."
+  ],
+  "guide": "public/summaries/event-shroud-1100.md"
+ }
+}

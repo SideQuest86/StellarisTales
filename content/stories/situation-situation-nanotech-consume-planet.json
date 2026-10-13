@@ -1,0 +1,21 @@
+{
+ "id": "situation-situation-nanotech-consume-planet",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "单窗口事件：入口、触发条件与选项效果已对照脚本核实。",
+   "en": "Single-window event: entry, trigger conditions and option effects checked against the script."
+  },
+  "sources": [
+   "common/situations/08_machine_age_situations.txt",
+   "common/decisions/12_machine_age_decisions.txt",
+   "events/colony_events_3.txt"
+  ],
+  "uncertain": [
+   "colony.195/200 belong to the planet-devouring series (colony_events_3); only the situation definition and the starting decision were checked."
+  ],
+  "guide": "public/summaries/situation-situation-nanotech-consume-planet.md"
+ }
+}

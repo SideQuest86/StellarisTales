@@ -1,0 +1,37 @@
+{
+ "id": "event-observation-6",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "observation.7",
+    "observation.8",
+    "observation.9"
+   ],
+   "label": {
+    "zh": "按摧毁者区分",
+    "en": "By who destroyed it"
+   },
+   "note": {
+    "zh": "同一隐藏事件 6 发出：7 给观察国；8 给其他摧毁者；9 给原观察国。",
+    "en": "All fired by hidden 6: 7 to the sighting country, 8 to another destroyer, 9 to the original observer."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "小行星被摧毁：3个结果事件。",
+   "en": "Asteroid Destroyed: 3 result events."
+  },
+  "sources": [
+   "events/observation_events.txt:381-475",
+   "common/on_actions/00_on_actions.txt:1620"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-observation-6.md"
+ }
+}

@@ -4,9 +4,9 @@
 
 ## 如何开始 How it starts
 
-玩家用巨像的“洪流（Deluge）”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:124-127），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.701。圣地另走 planet_destruction.607/615 一线。
+玩家用巨像的“天洪浩荡”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:124-127），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.701。圣地另走 planet_destruction.607/615 一线。
 
-When the player's Colossus fires "Deluge" at a planet (common/on_actions/01_planet_destruction.txt:124-127) the hidden dispatcher fires; if the planet has an owner that is not the firing country, a narrative window planet_destruction.701 is shown to the firing player. Holy worlds take the planet_destruction.607/615 route instead (see the holy-world story).
+When the player's Colossus fires "Deluge Machine" at a planet (common/on_actions/01_planet_destruction.txt:124-127) the hidden dispatcher fires; if the planet has an owner that is not the firing country, a narrative window planet_destruction.701 is shown to the firing player. Holy worlds take the planet_destruction.607/615 route instead (see the holy-world story).
 
 ## 剧情脉络 Story outline
 

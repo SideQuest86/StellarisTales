@@ -1,0 +1,186 @@
+{
+ "id": "event-federations-10400",
+ "family": {
+  "title": {
+   "zh": "措辞强硬的信",
+   "en": "A Strongly Worded Letter"
+  },
+  "category": "society",
+  "start": "federations.10401",
+  "members": [
+   "federations.10401",
+   "federations.10100",
+   "federations.10110",
+   "federations.10200",
+   "federations.10220",
+   "federations.10230",
+   "federations.10300",
+   "federations.10310",
+   "federations.10320",
+   "federations.10330",
+   "federations.10340"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "federations.10100",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10100 is fired by resolution_galacticstudies_advanced_xenostudies (common/resolutions/00_resolutions.txt:1459); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10110",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10110 is fired by resolution_galacticstudies_ethical_guideline_refactoring (common/resolutions/00_resolutions.txt:1570); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10200",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10200 is fired by resolution_greatergood_five_year_plans (common/resolutions/00_resolutions.txt:4044); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10220",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10220 is fired by resolution_greatergood_balance_in_the_middle (common/resolutions/00_resolutions.txt:4425); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10230",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10230 is fired by resolution_greatergood_universal_prosperity_mandate (common/resolutions/00_resolutions.txt:4649); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10300",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10300 is fired by resolution_rulesofwar_reverence_for_life (common/resolutions/00_resolutions.txt:6140); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10310",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10310 is fired by resolution_rulesofwar_independent_tribunals (common/resolutions/00_resolutions.txt:6244); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10320",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10320 is fired by resolution_rulesofwar_last_resort_doctrine (common/resolutions/00_resolutions.txt:6340); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10330",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10330 is fired by resolution_rulesofwar_demobilization_initiative (common/resolutions/00_resolutions.txt:6451); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  },
+  {
+   "from": "federations.10340",
+   "to": "federations.10401",
+   "conditional": true,
+   "label": {
+    "zh": "若仍违反决议：每十年的 federations.10400 之后（30+随机330天）发出警告信",
+    "en": "If still in breach: the decade pulse federations.10400 sends the warning letter (30 days + random 330)"
+   },
+   "evidence": "10340 is fired by resolution_divinity_a_defined_purpose (common/resolutions/00_resolutions.txt:7543); retaining the policy keeps the empire in breach; on_decade_pulse_country -> federations.10400 (00_on_actions.txt:620) requires is_in_breach_of_any and schedules federations.10401 30 days + random 330 (events/federations_events_1.txt:1546-1563)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "federations.10100",
+    "federations.10110",
+    "federations.10200",
+    "federations.10220",
+    "federations.10230",
+    "federations.10300",
+    "federations.10310",
+    "federations.10320",
+    "federations.10330",
+    "federations.10340"
+   ],
+   "label": {
+    "zh": "十项决议各自的违规窗口",
+    "en": "The breach window of each of ten resolutions"
+   },
+   "note": {
+    "zh": "每项决议通过后向违反该决议的成员国发出对应窗口；彼此独立，由各决议的通过时机决定。",
+    "en": "Each passed resolution sends its window to the members in breach; independent, set by when each resolution passes."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "federations.10401",
+   "kind": "review",
+   "zh": "五个选项：拒绝、遵守（有政策/科技/政体的门槛）、无视往后的信件（fed_10400_ignore）、处决使节、吃掉使节。",
+   "en": "Five options: refuse, comply (gated by policies, technologies and civics), ignore future letters (fed_10400_ignore), execute the envoys, eat the envoys."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "银河法违规通知：十项决议通过后的“遵守/保留/拒绝”窗口，以及汇合的“措辞强硬的信”。",
+   "en": "Galactic law breach notices: the comply / retain / refuse windows after ten resolutions pass, converging on \"A Strongly Worded Letter\"."
+  },
+  "sources": [
+   "events/federations_events_1.txt",
+   "common/resolutions/00_resolutions.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "merged": [
+   "event-federations-10100",
+   "event-federations-10110",
+   "event-federations-10200",
+   "event-federations-10220",
+   "event-federations-10230",
+   "event-federations-10300",
+   "event-federations-10310",
+   "event-federations-10320",
+   "event-federations-10330",
+   "event-federations-10340"
+  ],
+  "guide": "public/summaries/event-federations-10400.md"
+ }
+}

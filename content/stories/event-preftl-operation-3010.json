@@ -1,0 +1,36 @@
+{
+ "id": "event-preftl-operation-3010",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.3011",
+    "preftl_operation.3012"
+   ],
+   "label": {
+    "zh": "选项结果",
+    "en": "Option results"
+   },
+   "note": {
+    "zh": "A：50/50；B：25/75（3011/3012）。",
+    "en": "A: 50/50; B: 25/75 (3011 / 3012)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "随机插曲：弃儿",
+   "en": "Interlude: Pariah"
+  },
+  "sources": [
+   "events/first_contact_dlc_operations_events.txt:1812-2040",
+   "common/scripted_effects/espionage_event_effects.txt:2840-3260"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-preftl-operation-3010.md"
+ }
+}

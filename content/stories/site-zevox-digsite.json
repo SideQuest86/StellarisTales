@@ -1,0 +1,57 @@
+{
+ "id": "site-zevox-digsite",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "unique.85",
+    "unique.90"
+   ],
+   "label": {
+    "zh": "塑师的裁决",
+    "en": "The Animator's verdict"
+   },
+   "labels": [
+    {
+     "zh": "值得（约2/3，收入高则更易）",
+     "en": "worthy (about 2/3, better with high income)"
+    },
+    {
+     "zh": "不足（约1/3）",
+     "en": "wanting (about 1/3)"
+    }
+   ],
+   "note": {
+    "zh": "unique.80.a 的 random_list 基础权重 67/33，多项收入修正×1.5或×0.5。",
+    "en": "unique.80.a draws 67/33 with x1.5 / x0.5 modifiers on income levels."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:zevox_digsite",
+   "kind": "review",
+   "zh": "遗址权重为0，由星系初始化器 unique_system_initializer_03 创建（common/solar_system_initializers/unique_system_initializers.txt:452）：一艘坠毁在卫星上的飞船，旁边有一个与“影境”有关的裂隙。",
+   "en": "Weight 0: created by the system initializer unique_system_initializer_03 (common/solar_system_initializers/unique_system_initializers.txt:452): a crashed ship on a moon beside a rift tied to the Shroud."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/06_overlord_arc_sites.txt",
+   "events/unique_system_events.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "common/solar_system_initializers/unique_system_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-zevox-digsite.md"
+ }
+}

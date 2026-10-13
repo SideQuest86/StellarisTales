@@ -1,0 +1,24 @@
+{
+ "id": "chain-mineral-planet-chain",
+ "unreachable": {
+  "event_chains:mineral_planet_chain": {
+   "zh": "全游戏文件中没有 begin_event_chain 引用此事件链。",
+   "en": "No begin_event_chain anywhere in the game files starts this chain.",
+   "evidence": "common/event_chains/00_event_chains_2.txt:138; grep of the whole install for \"mineral_planet_chain\" finds only the definition"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "common/event_chains/00_event_chains_2.txt:138"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/chain-mineral-planet-chain.md"
+ }
+}

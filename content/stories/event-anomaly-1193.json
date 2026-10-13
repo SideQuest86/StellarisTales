@@ -1,0 +1,22 @@
+{
+ "id": "event-anomaly-1193",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "events/anomaly_events_1.txt:5435 (anomaly.1193)",
+   "events/anomaly_events_1.txt:5452 (anomaly.1194)",
+   "common/special_projects/00_projects_3.txt:939 (LIMBO_2_PROJECT)",
+   "events/anomaly_events_1.txt:5406 (anomaly.1190)",
+   "common/on_actions/00_on_actions.txt:2693 (on_tech_increased → anomaly.1193)",
+   "events/anomaly_events_1.txt:4991 (anomaly.186 option b sets limbo_downloaded)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-anomaly-1193.md"
+ }
+}

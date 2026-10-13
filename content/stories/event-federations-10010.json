@@ -1,0 +1,34 @@
+{
+ "id": "event-federations-10010",
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "federations.10010",
+    "federations.10210"
+   ],
+   "label": {
+    "zh": "同一决议的两个窗口",
+    "en": "Two windows of one resolution"
+   },
+   "note": {
+    "zh": "10010：通过15天后发给所有成员，告知可劝失业者志愿迁居；10210：立即发给处于违规（分层经济生活水准或牲畜/奴隶/电网融合奴役）的成员国。",
+    "en": "10010: sent to all members 15 days after passing, announcing voluntary resettlement of the unemployed; 10210: sent at once to members in breach (Stratified Economy, or chattel / livestock / grid amalgamation slavery)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "决议“超越自我”：福利窗口（10010）与违规窗口（10210）。",
+   "en": "The resolution \"Greater Than Ourselves\": the benefit window (10010) and the breach window (10210)."
+  },
+  "sources": [
+   "events/federations_events_1.txt",
+   "common/resolutions/00_resolutions.txt"
+  ],
+  "guide": "public/summaries/event-federations-10010.md"
+ }
+}

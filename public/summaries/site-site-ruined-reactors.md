@@ -16,7 +16,7 @@ When a body is surveyed, hidden ancrel.9999 (on_survey_planet) has a 5/405 chanc
 2. 灾难性堆芯熔毁：多座反应堆熔毁，紧急停堆程序未完成
 3. 设计失败：设计缺陷：几十座反应堆只配了极少的冷却
 4. 撤离残迹：撤离区里空着的穿梭机泊位和一架残骸（合金）
-5. 铀容器：铀容器库：泄漏的乏燃料仍蕴含巨大能量（星球获得能量资源点）
+5. 铀容器：库：泄漏的乏燃料仍蕴含巨大能量（星球获得能量资源点）
 
 A nuclear plant that suffered a serious containment failure over 10,000 years ago: crude design, little cooling, a hasty evacuation, and a vault of spent fuel below.
 

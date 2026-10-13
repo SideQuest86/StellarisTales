@@ -15,7 +15,7 @@ Created by the system initializer the_chosen_escapee_initializer (common/solar_s
 1. 夏瑞诺伊博物馆：被改作博物馆的观测站和数据水晶（小型文物）
 2. 民族志记录：第一块水晶：民族志记录
 3. 转折点：第二块水晶：他们如何发现太空旅行并自认神授（中型文物）
-4. 叛徒的诡计：“叛徒的诡计”：伊蒂卡里奥斯揭示她打开虫洞的罪（三选一）
+4. 叛徒的诡计：伊蒂卡里奥斯揭示她打开虫洞的罪（三选一）
 
 The data crystals are the Prophetess Ithikarios' "record of the Charynoi people": why the warlike Charynoi called themselves the Chosen, how she opened the Wormhole, and her attempt to shield her people.
 

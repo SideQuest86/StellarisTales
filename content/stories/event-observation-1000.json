@@ -1,0 +1,22 @@
+{
+ "id": "event-observation-1000",
+ "category": "society",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "绑架提议：5个事件。",
+   "en": "Abduction Proposal: 5 events."
+  },
+  "sources": [
+   "events/observation_events.txt:2447-2725",
+   "common/special_projects (ABDUCT_SCIENTIST_PROJECT)",
+   "common/on_actions/00_on_actions.txt:140-200"
+  ],
+  "uncertain": [
+   "项目 ABDUCT_SCIENTIST_PROJECT 的成本/时限未在此展开。 / The project’s cost and limit were not expanded."
+  ],
+  "guide": "public/summaries/event-observation-1000.md"
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "id": "event-preftl-operation-1060",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.1065",
+    "preftl_operation.1066",
+    "preftl_operation.1067",
+    "preftl_operation.1068"
+   ],
+   "label": {
+    "zh": "按成功度分档",
+    "en": "Tiered by operation success"
+   },
+   "note": {
+    "zh": ">2 → 1065；>0 → 1066；=0 → 1067；<0 → 1068。",
+    "en": ">2 → 1065; >0 → 1066; =0 → 1067; <0 → 1068."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "渗透蜂巢行动终结：7个文档。",
+   "en": "Infiltrate Hive finale: 7 docs."
+  },
+  "sources": [
+   "events/first_contact_dlc_operations_events.txt:1329-1560",
+   "common/espionage_operation_types/pre_ftl_operations.txt:746-897",
+   "common/scripted_effects/espionage_event_effects.txt:2840-2906",
+   "common/scripted_effects/first_contact_dlc_effects.txt:3093-3130"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-preftl-operation-1060.md"
+ }
+}

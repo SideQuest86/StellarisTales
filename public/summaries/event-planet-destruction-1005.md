@@ -10,9 +10,9 @@ One day after any Colossus weapon destroys or changes a planet with an observati
 
 ## 剧情脉络 Story outline
 
-正文随情形而变：自己毁掉了前哨所在的行星、行星被粉碎、被屏蔽、或被中子扫荡等；选项A拆除前哨；选项B仅限偏执/排外者在行星被粉碎时，拆除并每月获得团结。planet_destruction.1005（“被吞噬”）是巨像“Maw”吞噬行星的调度事件，同样触发此窗口。
+正文随情形而变：自己毁掉了前哨所在的行星、行星被粉碎、被屏蔽、或被中子扫荡等；选项A拆除前哨；选项B仅限偏执/排外者在行星被粉碎时，拆除并每月获得团结。planet_destruction.1005（“被吞噬”）是巨像“巨胃”（Oversized Maw）吞噬行星的调度事件，同样触发此窗口。
 
-The text varies: you destroyed the world yourself, it was shattered, shielded or swept; option A dismantles the outpost; option B (homicidal/xenophobe empires, planet shattered) dismantles it and grants monthly unity. planet_destruction.1005 ("Eaten") is the dispatcher of the Maw weapon and triggers the same window.
+The text varies: you destroyed the world yourself, it was shattered, shielded or swept; option A dismantles the outpost; option B (homicidal/xenophobe empires, planet shattered) dismantles it and grants monthly unity. planet_destruction.1005 ("Eaten") is the dispatcher of the Oversized Maw weapon and triggers the same window.
 
 ## 审阅记录 Review notes
 

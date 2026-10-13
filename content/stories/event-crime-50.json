@@ -1,0 +1,471 @@
+{
+ "id": "event-crime-50",
+ "family": {
+  "title": {
+   "zh": "恶贯满盈",
+   "en": "Scum and Villainy"
+  },
+  "category": "stories",
+  "start": "crime.40",
+  "members": [
+   "crime.40",
+   "crime.41",
+   "crime.50",
+   "crime.51",
+   "crime.52",
+   "crime.53",
+   "crime.2",
+   "crime.3",
+   "crime.4",
+   "crime.5",
+   "crime.6",
+   "crime.7",
+   "crime.8",
+   "crime.100",
+   "crime.101",
+   "crime.102",
+   "crime.103",
+   "crime.104",
+   "crime.200",
+   "crime.201",
+   "crime.202",
+   "crime.203",
+   "crime.204",
+   "crime.300",
+   "crime.301",
+   "crime.302",
+   "crime.303",
+   "crime.304",
+   "crime.500",
+   "crime.501",
+   "crime.502",
+   "crime.550",
+   "crime.551",
+   "crime.552"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.2",
+   "conditional": true,
+   "label": {
+    "zh": "黑社会存在期间的年度随机小事件",
+    "en": "A yearly random flavour event while the underworld exists"
+   },
+   "evidence": "events/crime_events.txt:1268-1318 hidden crime.51 (yearly via crime.50, common/on_actions/00_on_actions.txt:244): random_list, 10 each against 300 for nothing; needs criminal_underworld on the planet"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.3",
+   "conditional": true,
+   "label": {
+    "zh": "黑社会存在期间的年度随机小事件",
+    "en": "A yearly random flavour event while the underworld exists"
+   },
+   "evidence": "events/crime_events.txt:1268-1318 hidden crime.51 (yearly via crime.50, common/on_actions/00_on_actions.txt:244): random_list, 10 each against 300 for nothing; needs criminal_underworld on the planet"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.4",
+   "conditional": true,
+   "label": {
+    "zh": "黑社会存在期间的年度随机小事件",
+    "en": "A yearly random flavour event while the underworld exists"
+   },
+   "evidence": "events/crime_events.txt:1268-1318 hidden crime.51 (yearly via crime.50, common/on_actions/00_on_actions.txt:244): random_list, 10 each against 300 for nothing; needs criminal_underworld on the planet"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.5",
+   "conditional": true,
+   "label": {
+    "zh": "黑社会存在期间的年度随机小事件",
+    "en": "A yearly random flavour event while the underworld exists"
+   },
+   "evidence": "events/crime_events.txt:1268-1318 hidden crime.51 (yearly via crime.50, common/on_actions/00_on_actions.txt:244): random_list, 10 each against 300 for nothing; needs criminal_underworld on the planet"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.6",
+   "conditional": true,
+   "label": {
+    "zh": "黑社会存在期间的年度随机小事件",
+    "en": "A yearly random flavour event while the underworld exists"
+   },
+   "evidence": "events/crime_events.txt:1268-1318 hidden crime.51 (yearly via crime.50, common/on_actions/00_on_actions.txt:244): random_list, 10 each against 300 for nothing; needs criminal_underworld on the planet"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.7",
+   "conditional": true,
+   "label": {
+    "zh": "黑社会存在期间的年度随机小事件",
+    "en": "A yearly random flavour event while the underworld exists"
+   },
+   "evidence": "events/crime_events.txt:1268-1318 hidden crime.51 (yearly via crime.50, common/on_actions/00_on_actions.txt:244): random_list, 10 each against 300 for nothing; needs criminal_underworld on the planet"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.8",
+   "conditional": true,
+   "label": {
+    "zh": "黑社会存在期间的年度随机小事件",
+    "en": "A yearly random flavour event while the underworld exists"
+   },
+   "evidence": "events/crime_events.txt:1268-1318 hidden crime.51 (yearly via crime.50, common/on_actions/00_on_actions.txt:244): random_list, 10 each against 300 for nothing; needs criminal_underworld on the planet"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.100",
+   "conditional": true,
+   "label": {
+    "zh": "升级：帮派战争（需要犯罪值≥50）",
+    "en": "Escalation: Gang Wars (planet crime >= 50)"
+   },
+   "evidence": "events/crime_events.txt:1319-1342 crime.51 weight 10 of 520; crime.100 replaces the criminal_underworld modifier"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.200",
+   "conditional": true,
+   "label": {
+    "zh": "升级：毒品交易扩大（需要犯罪值≥50）",
+    "en": "Escalation: Drug Trade Expands (planet crime >= 50)"
+   },
+   "evidence": "events/crime_events.txt:1319-1342 crime.51 weight 10 of 520; crime.200 replaces the criminal_underworld modifier"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.a",
+   "to": "crime.300",
+   "conditional": true,
+   "label": {
+    "zh": "升级：黑道统治（需要犯罪值≥50）",
+    "en": "Escalation: Mob Rule (planet crime >= 50)"
+   },
+   "evidence": "events/crime_events.txt:1319-1342 crime.51 weight 10 of 520; crime.300 replaces the criminal_underworld modifier"
+  },
+  {
+   "from": "crime.100",
+   "choice": "crime.100.a",
+   "to": "crime.101",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.101 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.100",
+   "choice": "crime.100.a",
+   "to": "crime.102",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.102 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.100",
+   "choice": "crime.100.a",
+   "to": "crime.103",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.103 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.100",
+   "choice": "crime.100.a",
+   "to": "crime.104",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.104 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.200",
+   "choice": "crime.200.a.experimenters",
+   "to": "crime.201",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.201 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.200",
+   "choice": "crime.200.a.experimenters",
+   "to": "crime.202",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.202 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.200",
+   "choice": "crime.200.a.experimenters",
+   "to": "crime.203",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.203 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.200",
+   "choice": "crime.200.a.experimenters",
+   "to": "crime.204",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.204 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.300",
+   "choice": "crime.300.a",
+   "to": "crime.301",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.301 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.300",
+   "choice": "crime.300.a",
+   "to": "crime.302",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.302 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.300",
+   "choice": "crime.300.a",
+   "to": "crime.303",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.303 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.300",
+   "choice": "crime.300.a",
+   "to": "crime.304",
+   "conditional": true,
+   "label": {
+    "zh": "该时期的随机后续事件",
+    "en": "Random follow-up while the modifier lasts"
+   },
+   "evidence": "events/crime_events.txt:1343-1440 crime.51 draws crime.304 only while the planet has the matching modifier"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.b",
+   "to": "crime.500",
+   "conditional": true,
+   "label": {
+    "zh": "蜂巢：偏差无人机的年度随机事件",
+    "en": "Hive: yearly random deviant-drone event"
+   },
+   "evidence": "events/crime_events.txt:1446-1467 hidden crime.52 (hive empires, drone_deviancy planet): 10/10/5 against 200 for nothing"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.b",
+   "to": "crime.501",
+   "conditional": true,
+   "label": {
+    "zh": "蜂巢：偏差无人机的年度随机事件",
+    "en": "Hive: yearly random deviant-drone event"
+   },
+   "evidence": "events/crime_events.txt:1446-1467 hidden crime.52 (hive empires, drone_deviancy planet): 10/10/5 against 200 for nothing"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.b",
+   "to": "crime.502",
+   "conditional": true,
+   "label": {
+    "zh": "蜂巢：偏差无人机的年度随机事件",
+    "en": "Hive: yearly random deviant-drone event"
+   },
+   "evidence": "events/crime_events.txt:1446-1467 hidden crime.52 (hive empires, drone_deviancy planet): 10/10/5 against 200 for nothing"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.c",
+   "to": "crime.550",
+   "conditional": true,
+   "label": {
+    "zh": "机器：腐化无人机的年度随机事件",
+    "en": "Machine: yearly corrupted-drone event"
+   },
+   "evidence": "events/crime_events.txt:1469-1490 hidden crime.53 (machine empires, drone_corruption planet): 10/10/5 against 200 for nothing"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.c",
+   "to": "crime.551",
+   "conditional": true,
+   "label": {
+    "zh": "机器：腐化无人机的年度随机事件",
+    "en": "Machine: yearly corrupted-drone event"
+   },
+   "evidence": "events/crime_events.txt:1469-1490 hidden crime.53 (machine empires, drone_corruption planet): 10/10/5 against 200 for nothing"
+  },
+  {
+   "from": "crime.40",
+   "choice": "crime.40.c",
+   "to": "crime.552",
+   "conditional": true,
+   "label": {
+    "zh": "机器：腐化无人机的年度随机事件",
+    "en": "Machine: yearly corrupted-drone event"
+   },
+   "evidence": "events/crime_events.txt:1469-1490 hidden crime.53 (machine empires, drone_corruption planet): 10/10/5 against 200 for nothing"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "crime.2",
+    "crime.3",
+    "crime.4",
+    "crime.5",
+    "crime.6",
+    "crime.7",
+    "crime.8"
+   ],
+   "label": {
+    "zh": "普通帝国的年度小事件",
+    "en": "Ordinary yearly flavour events"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crime.100",
+    "crime.200",
+    "crime.300"
+   ],
+   "label": {
+    "zh": "升级路线",
+    "en": "Escalation lines"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crime.101",
+    "crime.102",
+    "crime.103",
+    "crime.104"
+   ],
+   "label": {
+    "zh": "帮派战争的后续",
+    "en": "Gang war follow-ups"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crime.201",
+    "crime.202",
+    "crime.203",
+    "crime.204"
+   ],
+   "label": {
+    "zh": "毒品交易的后续",
+    "en": "Drug trade follow-ups"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crime.301",
+    "crime.302",
+    "crime.303",
+    "crime.304"
+   ],
+   "label": {
+    "zh": "黑道统治的后续",
+    "en": "Mob rule follow-ups"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crime.500",
+    "crime.501",
+    "crime.502"
+   ],
+   "label": {
+    "zh": "蜂巢：偏差无人机",
+    "en": "Hive: deviant drones"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crime.550",
+    "crime.551",
+    "crime.552"
+   ],
+   "label": {
+    "zh": "机器：腐化无人机",
+    "en": "Machine: corrupted drones"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/crime_events.txt:3-2606",
+   "common/on_actions/00_on_actions.txt:244,3933-3941 on_yearly_pulse / on_colony_yearly_pulse"
+  ],
+  "uncertain": [
+   "Family title is the root window title with the planet variable removed; there is no static title in the localisation."
+  ],
+  "guide": "public/summaries/event-crime-50.md",
+  "merged": [
+   "event-crime-40",
+   "event-crime-41"
+  ]
+ }
+}

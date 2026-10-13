@@ -1,0 +1,91 @@
+{
+ "id": "event-cara-333",
+ "family": {
+  "title": {
+   "zh": "行商联盟",
+   "en": "Caravansary Caravan Coalition"
+  },
+  "category": "stories",
+  "start": "cara.100",
+  "members": [
+   "cara.100",
+   "cara.101",
+   "cara.150",
+   "cara.200",
+   "cara.210",
+   "cara.300",
+   "cara.310",
+   "cara.320"
+  ]
+ },
+ "notes": [
+  {
+   "doc": "cara.100",
+   "zh": "评注：玩家点击贸易站（楚尔罗盘）或某支车队的盾徽时打开；AI 只在每月检查（cara.333）中出现，需有通讯、能量储备及月收入足够，或“行商币”余额≥3000（events/caravaneer_events.txt:5639-5672）。从子菜单返回时同样回到本窗口（cara_home_return）。",
+   "en": "Commentary: opened when the player clicks the tradestation (Chor's Compass) or a fleet's shield; the AI only appears through the monthly check (cara.333): in communication, enough energy stock and income, or a CaravanCoinz balance of 3000+ (events/caravaneer_events.txt:5639-5672). Returning from a submenu comes back to this window (cara_home_return).",
+   "kind": "review"
+  },
+  {
+   "doc": "cara.101",
+   "zh": "评注：与行商处于敌对时尝试联系的替代窗口，只有“去死”一个选项（events/caravaneer_events.txt:270-330）。",
+   "en": "Commentary: the alternative window when contacting the caravaneers while hostile; its only option is \"Die...\" (events/caravaneer_events.txt:270-330).",
+   "kind": "review"
+  },
+  {
+   "doc": "cara.210",
+   "zh": "评注：老虎机一次消耗 2783.92 行商币；结果权重 70 坏1、15 坏2、4×3 小奖、1×3 大奖（其中一项需拥有远古遗物才可出）、1 特等奖（cara.210，events 553-577）。",
+   "en": "Commentary: one spin costs 2783.92 CaravanCoinz; outcome weights 70 bad-1, 15 bad-2, 4x3 small wins, 1x3 big wins (one needs an ancient relic), 1 jackpot (cara.210, events 553-577).",
+   "kind": "review"
+  },
+  {
+   "doc": "cara.310",
+   "zh": "评注：圣物箱一个 6194.21 行商币（或在“批量购买”状态下用能量，价格每次×1.05）。开箱抽取：1 迦拉特隆（全银河仅一件，已被持有则不出）、59 空箱、140 普通内容（14种，权重各100，唯一的“灵能统治者”特质项权重1）（events 915-977）。",
+   "en": "Commentary: a Reliquary costs 6194.21 CaravanCoinz (or energy once in bulk-buying mode, price x1.05 each time). The draw: 1 Galatron (only one in the galaxy; skipped if someone already holds it), 59 empty, 140 regular contents (14 kinds of weight 100, the psionic-ruler trait one only 1) (events 915-977).",
+   "kind": "review"
+  },
+  {
+   "doc": "cara.320",
+   "zh": "评注：抽中迦拉特隆后弹出，最后一个隐藏选项把遗物 r_galatron 加入帝国；遗物后续见 event-cara-970。",
+   "en": "Commentary: shown when the Galatron is drawn; the last hidden option adds the relic r_galatron to the empire; see event-cara-970 for the relic.",
+   "kind": "review"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "cara.200",
+    "cara.300",
+    "cara.150"
+   ],
+   "label": {
+    "zh": "主菜单的三个子菜单",
+    "en": "The three submenus of the main menu"
+   },
+   "note": {
+    "zh": "玩家可以任意次序、反复进入老虎机、圣物箱和行商币菜单，每次都回到主菜单；另有三个“关于车队”的对话选项和一个结束通话选项。",
+    "en": "The player may enter the slots, reliquary and CaravanCoinz menus in any order and repeatedly, each returning to the main menu; there are also three \"about the fleet\" dialog options and an end-communication option."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "主菜单与三个子菜单、敌对时的替代窗口、AI 访问条件及价格/权重均已核对。",
+   "en": "The main menu and its three submenus, the hostile alternative window, the AI visit condition, prices and weights were checked."
+  },
+  "sources": [
+   "events/caravaneer_events.txt:12-330",
+   "events/caravaneer_events.txt:465-1290",
+   "events/caravaneer_events.txt:5639-5672",
+   "common/scripted_effects/caravaneer_scripted_effects.txt:1-8",
+   "common/on_actions/00_on_actions.txt:731-732"
+  ],
+  "guide": "public/summaries/event-cara-333.md",
+  "uncertain": [
+   "The way CaravanCoinz are bought (cara.150) is a parody premium-currency menu; the real-money handling, if any, is engine-side."
+  ]
+ }
+}

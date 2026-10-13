@@ -12,14 +12,14 @@ Weight 0: created by the system initializer polaris_civilization (common/solar_s
 
 击败“北极星”守军后发现该星系第二颗行星上异常的重金属，于是发现了漂浮在冰盖中的黑色立方体“保险库”。最后阶段（隐藏事件 ancrel.13006）以50/50抽出种子库里存放的是植物胚胎还是微生物。
 
-1. ancrel.13000：击毁北极星守军后，系统最后一次扫描发现异常；设置全局标志 polaris_seen
+1. 冷酷的招待会：击毁北极星守军后，系统最后一次扫描发现异常；设置全局标志 polaris_seen
 2. 冰山：漂浮冰山里嵌着由同种合金制成的黑色立方体
 3. 霜冻之门：大门上的铭文，需在不损坏内部的前提下开启
 4. 盗墓：“保险库”：北极星人为保存财宝而造，内部气体二氧化碳含量低
 
 After the Polaris defenders fall, the second planet reveals odd heavy metals, and a black cuboid "Vault" is found in a floating ice cap. The last stage (hidden ancrel.13006) draws, 50/50, whether it stores plant embryos or microorganisms.
 
-1. ancrel.13000: after the last Polaris aggressor falls, a final scan finds something odd and sets the global flag polaris_seen
+1. A Cool Reception: after the last Polaris aggressor falls, a final scan finds something odd and sets the global flag polaris_seen
 2. Iceberg: a black cuboid of the same alloy is built into a floating iceberg
 3. Frost Gate: inscriptions on the door; it must be opened without damage
 4. Grave Robbing: the "Vault" of the Polarians, a last refuge for their treasures

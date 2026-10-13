@@ -1,0 +1,35 @@
+{
+ "id": "situation-situation-paperclips",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cyber.5005",
+    "cyber.5006"
+   ],
+   "label": {
+    "zh": "到期时消费品库存是否超过配额",
+    "en": "Whether the consumer-goods stockpile exceeds the quota at expiry"
+   },
+   "note": {
+    "zh": "超过 paperclips_once_again → 5005 选择奖励；否则 → 5006 失败惩罚。两者30天后重新启动 5000。",
+    "en": "Above paperclips_once_again -> 5005 choose a reward; otherwise -> 5006 failure penalty. Both restart 5000 after 30 days."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "强迫指令局势“商品整合”：周期性生产配额，成功得奖励、失败受惩罚后重启。",
+   "en": "The Obsessional Directive situation \"Commodities Consolidation\": a recurring production quota with a reward on success and a penalty on failure, then a restart."
+  },
+  "sources": [
+   "common/situations/08_machine_age_situations.txt",
+   "events/machine_age_events_2.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/situation-situation-paperclips.md"
+ }
+}

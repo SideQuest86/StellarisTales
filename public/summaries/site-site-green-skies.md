@@ -22,7 +22,7 @@ The "site" is a pirate lure for relic hunters: fake ruins of camp materials and 
 1. A Curious Collage: ruins mixing every known architectural style, built of colony-camp materials
 2. Weathered Situation: a cave with signs of recent occupants; the sky turns green (a storm cstorms.1406 begins)
 3. Folly: a storeroom of branded goods and a transponder (consumer goods, minerals, alloys)
-4. Pirates!: Pirates! A fleet hidden in the storm takes the leader and crew hostage (energy -2000, two answers)
+4. Pirates!: A fleet hidden in the storm takes the leader and crew hostage (energy -2000, two answers)
 
 ## 分支与结局 Branches and outcomes
 

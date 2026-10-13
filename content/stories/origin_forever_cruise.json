@@ -1,0 +1,80 @@
+{
+ "id": "origin_forever_cruise",
+ "opening": {
+  "targets": [
+   "situations:situation_passenger_satisfaction"
+  ],
+  "label": {
+   "zh": "开局：乘客满意度局势开始",
+   "en": "Game start: the Passenger Satisfaction situation begins"
+  },
+  "evidence": "hidden nomads.1000 (events/nomads_events_1.txt:6023) starts situation_passenger_satisfaction at game start; permanent bidirectional situation, initial progress 500 (common/situations/14_nomads_situations.txt:5-44)."
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "nomads.1005",
+    "nomads.1050",
+    "nomads.1100",
+    "nomads.1150",
+    "nomads.1200",
+    "nomads.1250",
+    "nomads.1025"
+   ],
+   "label": {
+    "zh": "局势阶段（由进度决定，可来回）",
+    "en": "Situation stages (set by progress, can swing both ways)"
+   },
+   "note": {
+    "zh": "进度双向：≤1 登岸（1005，失败结局）、≤100 愤怒（1050）、≤300 无聊（1100）、≤700 平稳（1150，初始500）、≤900 超负荷（1200）、≤999 紧绷（1250）、满 船员接管（1025，叛乱结局）。每个阶段首次进入时触发一次。",
+    "en": "Progress moves both ways: <=1 Planetfall (1005, the fail ending), <=100 incensed (1050), <=300 bored (1100), <=700 steady (1150, start 500), <=900 overworked (1200), <=999 stressed (1250), full Crew Takeover (1025, the mutiny ending). Each stage event fires the first time its stage is entered (common/situations/14_nomads_situations.txt:44-460)."
+   }
+  }
+ ],
+ "endings": {
+  "nomads.1005": {
+   "label": {
+    "zh": "登岸",
+    "en": "Planetfall"
+   },
+   "note": {
+    "zh": "进度降至最低：乘客登岸，局势被销毁。",
+    "en": "Progress at its minimum: the passengers land and the situation is destroyed."
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:28-34, :45-57"
+  },
+  "nomads.1025": {
+   "label": {
+    "zh": "船员接管",
+    "en": "Crew Takeover"
+   },
+   "note": {
+    "zh": "进度满：船员叛乱，局势被销毁。",
+    "en": "Progress full: the crew mutinies and the situation is destroyed."
+   },
+   "evidence": "common/situations/14_nomads_situations.txt:36-42"
+  }
+ },
+ "notes": [
+  {
+   "doc": "nomads.1055",
+   "kind": "review",
+   "zh": "每月事件1055（乘客分心）与1255（避免兵变）由局势的月度钩子随机触发。",
+   "en": "Monthly hooks of the situation fire 1055 (Passengers Distracted) and 1255 (Mutiny Averted) (common/situations/14_nomads_situations.txt:555-556)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/nomads_events_1.txt",
+   "common/situations/14_nomads_situations.txt"
+  ],
+  "uncertain": [
+   "Approach effects (crew / balanced / passenger) change modifiers and progress but not the event list; the conditions of 1055 and 1255 were not read."
+  ],
+  "guide": "public/summaries/origin_forever_cruise.md"
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "id": "site-site-ancient-robot-world",
+ "family": {
+  "title": {
+   "zh": "远古机器人星球",
+   "en": "Ancient Robot World"
+  },
+  "category": "precursors",
+  "start": "ancrel.12060",
+  "members": [
+   "ancrel.12060",
+   "ancrel.12065",
+   "archaeological_site_types:site_ancient_robot_world",
+   "ancrel.12070",
+   "ancrel.12075",
+   "ancrel.12080",
+   "ancrel.12085",
+   "ancrel.12090",
+   "ancrel.12095",
+   "ancrel.12100"
+  ],
+  "sources": []
+ },
+ "titleFrom": "archaeological_site_types:site_ancient_robot_world",
+ "bridges": [
+  {
+   "from": "ancrel.12060",
+   "choice": "BATTLESTATIONS",
+   "to": "ancrel.12065",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁“永恒守望者”的全部舰队之后",
+    "en": "After the fleets of the Eternal Watchers are all destroyed"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:8652 ancrel.12065 trigger: from has_country_flag surveillance_bots and owns no other fleet; fired by on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1669); the faction and its three fleets are created by the initializer surveillance_supercomputer_system (common/solar_system_initializers/special_system_initializers.txt:2024)"
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_ancient_robot_world",
+   "kind": "review",
+   "zh": "该星系在新游戏开始时有可能生成：隐藏事件 ancrel.12050（on_game_start）以 2:1:1 抽签——什么都不发生 / 向银河边缘（50–100距离）生成 surveillance_supercomputer_system（经 ancrel.12055）/ 若有《初次接触》且难度与AI设置允许则改为生成“被选中者”星系（fircon.3500，另一个故事）。系统里有“永恒守望者”势力的三支守卫舰队，遗址在行星“观测终端”上由初始化器创建（common/solar_system_initializers/special_system_initializers.txt:2024）。",
+   "en": "The system may be spawned when a game starts: hidden ancrel.12050 (on_game_start) draws 2 : 1 : 1 between nothing, spawning surveillance_supercomputer_system at the galactic rim (distance 50-100, via ancrel.12055), and — with First Contact and permitting difficulty/AI settings — spawning the Chosen system instead (fircon.3500, another story). The system holds the faction \"Eternal Watchers\" with three guard fleets; the site on the planet \"Observation Terminal\" is created by the initializer (common/solar_system_initializers/special_system_initializers.txt:2024)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/00_base_game_arc_sites.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/solar_system_initializers/special_system_initializers.txt",
+   "common/on_actions/00_on_actions.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-ancient-robot-world.md"
+ }
+}

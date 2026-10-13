@@ -1,0 +1,69 @@
+{
+ "id": "event-unrest-50",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "unrest.115",
+    "unrest.120",
+    "unrest.125",
+    "unrest.130",
+    "unrest.135",
+    "unrest.140",
+    "unrest.145",
+    "unrest.150",
+    "unrest.156"
+   ],
+   "label": {
+    "zh": "阶段2：叛乱性质",
+    "en": "Stage 2: character of the revolt"
+   },
+   "note": {
+    "zh": "每项权重10，按人口伦理比例与帝国伦理增减；奴隶叛乱走 unrest.156。",
+    "en": "Weight 10 each, scaled by the pop ethic share and the owner's ethic; a slave revolt goes to unrest.156."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "unrest.101",
+    "unrest.105",
+    "unrest.110",
+    "unrest.157",
+    "unrest.159"
+   ],
+   "label": {
+    "zh": "每月随机事件",
+    "en": "Monthly random events"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "unrest.4200",
+    "unrest.161",
+    "unrest.4300"
+   ],
+   "label": {
+    "zh": "结局：叛乱发生 / 被镇压",
+    "en": "Endings: revolt happens / suppressed"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/unrest_events.txt:1-2500",
+   "common/situations/02_strategic_situations.txt:2-576 situation_planetary_revolt",
+   "common/on_actions/00_on_actions.txt:3933 on_colony_yearly_pulse"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-unrest-50.md"
+ }
+}

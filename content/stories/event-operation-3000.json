@@ -1,0 +1,57 @@
+{
+ "id": "event-operation-3000",
+ "family": {
+  "title": {
+   "zh": "诋毁运动",
+   "en": "Smear Campaign"
+  },
+  "category": "stories",
+  "start": "operation.3000",
+  "members": [
+   "operation.3000",
+   "operation.3001",
+   "operation.3002",
+   "operation.3005",
+   "operation.3010",
+   "operation.3011",
+   "operation.3012",
+   "operation.3020"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "operation.3000",
+   "to": "operation.3001",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:451 operation type operation_smear_campaign: stage events in order 3000, 3001, 3002; each stage fires its event when its progress completes"
+  },
+  {
+   "from": "operation.3001",
+   "to": "operation.3002",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:451 operation type operation_smear_campaign: stage events in order 3000, 3001, 3002; each stage fires its event when its progress completes"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "间谍行动“诋毁运动”的阶段事件、结局以及相关通知。",
+   "en": "The espionage operation Smear Campaign: stage events, finale and related notices."
+  },
+  "sources": [
+   "events/nemesis_operations_events_1.txt",
+   "common/espionage_operation_types/operations.txt"
+  ],
+  "guide": "public/summaries/event-operation-3000.md"
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "id": "event-observation-2029",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "observation.2030",
+    "observation.2031",
+    "observation.2032",
+    "observation.2033",
+    "observation.2034",
+    "observation.2035",
+    "observation.2036",
+    "observation.2037",
+    "observation.2038",
+    "observation.2039",
+    "observation.2040",
+    "observation.2041",
+    "observation.2042",
+    "observation.2043"
+   ],
+   "label": {
+    "zh": "守门员 2029 的 14 种结果",
+    "en": "The 14 outcomes of gatekeeper 2029"
+   },
+   "note": {
+    "zh": "等权重抽取，已有对应伦理者 ×0.5；各自还要通过自身触发。",
+    "en": "Equal weight, ×0.5 if the ethic is already held; each also needs its own trigger."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "伦理考量守门员及 14 个子事件。",
+   "en": "The ethics gatekeeper and its 14 sub-events."
+  },
+  "sources": [
+   "events/observation_events.txt:4671-5761",
+   "common/on_actions/00_on_actions.txt:563-575"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-observation-2029.md"
+ }
+}

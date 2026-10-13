@@ -1,0 +1,62 @@
+{
+ "id": "site-omnirelic-site",
+ "family": {
+  "title": {
+   "zh": "废弃星球",
+   "en": "Ruined World"
+  },
+  "category": "precursors",
+  "start": "archaeological_site_types:omnirelic_site",
+  "members": [
+   "archaeological_site_types:omnirelic_site",
+   "ancrel.21",
+   "ancrel.22",
+   "ancrel.23",
+   "ancrel.24",
+   "ancrel.6000"
+  ],
+  "sources": []
+ },
+ "titleFrom": "archaeological_site_types:omnirelic_site",
+ "bridges": [
+  {
+   "from": "ancrel.24",
+   "choice": "EXCELLENT",
+   "to": "ancrel.6000",
+   "conditional": true,
+   "label": {
+    "zh": "获得遗珍后：激活有机全典（可重复）",
+    "en": "With the relic: activate the Omnicodex (repeatable)"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:656 ancrel.24 grants add_relic r_omnicodex; common/relics/relics.txt:290 r_omnicodex active_effect fires country_event ancrel.6000 (relics.txt:374)"
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:omnirelic_site",
+   "kind": "review",
+   "zh": "遗址权重未设（只由初始化器创建），由星系初始化器 relic_system_4 创建（common/solar_system_initializers/ancient_relics_initializers.txt:642）；全银河最多一处。",
+   "en": "No weight; created by the system initializer relic_system_4 (common/solar_system_initializers/ancient_relics_initializers.txt:642); at most one per galaxy."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/relics/relics.txt",
+   "common/solar_system_initializers/ancient_relics_initializers.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-omnirelic-site.md"
+ }
+}

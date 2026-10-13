@@ -1,0 +1,37 @@
+{
+ "id": "event-observation-1400",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "observation.1402",
+    "observation.1404",
+    "observation.1406"
+   ],
+   "label": {
+    "zh": "核战争的三种后果",
+    "en": "Three nuclear-war results"
+   },
+   "note": {
+    "zh": "权重约 5:5:200（非军国者前两项 ×0.5）。",
+    "en": "Weights ≈5:5:200 (the first two ×0.5 for non-militarist countries)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "核战争警告：4个事件。",
+   "en": "Nuclear War: 4 events."
+  },
+  "sources": [
+   "events/observation_events.txt:3644-4105",
+   "common/on_actions/00_on_actions.txt:140-200"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-observation-1400.md"
+ }
+}

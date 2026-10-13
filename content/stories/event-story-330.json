@@ -1,0 +1,60 @@
+{
+ "id": "event-story-330",
+ "family": {
+  "title": {
+   "zh": "古代矿石处理中心",
+   "en": "Ancient Mineral Processing Hub"
+  },
+  "category": "stories",
+  "start": "story.330",
+  "members": [
+   "story.330",
+   "story.332",
+   "story.335"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "story.330",
+   "choice": "story.330.a",
+   "to": "story.332",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁无人机基地",
+    "en": "Destroy the drone base"
+   },
+   "evidence": "events/story_events.txt:2851-2880 story.332 trigger: the destroyed fleet belongs to the drone country and has the ore_grinder flag"
+  },
+  {
+   "from": "story.332",
+   "choice": "story.332.b",
+   "to": "story.335",
+   "conditional": true,
+   "label": {
+    "zh": "获得遗珍后激活“勘探器”",
+    "en": "Activate the Surveyor relic once owned"
+   },
+   "evidence": "common/relics/relics.txt:373-394 r_surveyor active_effect fires story.335 (and two delayed repeats); story.332.b adds the relic (events/story_events.txt:2874-2879)"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/story_events.txt:2800-3000",
+   "common/relics/relics.txt:360-403",
+   "common/on_actions/00_on_actions.txt:989,1628"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-story-330.md",
+  "merged": [
+   "event-story-332",
+   "event-story-335"
+  ]
+ }
+}

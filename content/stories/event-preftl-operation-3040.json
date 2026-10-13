@@ -1,0 +1,66 @@
+{
+ "id": "event-preftl-operation-3040",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.3041",
+    "preftl_operation.3042"
+   ],
+   "label": {
+    "zh": "A 的结果",
+    "en": "Option A results"
+   },
+   "note": {
+    "zh": "50/50",
+    "en": "50/50"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.3043",
+    "preftl_operation.3044"
+   ],
+   "label": {
+    "zh": "B 的结果",
+    "en": "Option B results"
+   },
+   "note": {
+    "zh": "50/50",
+    "en": "50/50"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.3045",
+    "preftl_operation.3046"
+   ],
+   "label": {
+    "zh": "C 的结果",
+    "en": "Option C results"
+   },
+   "note": {
+    "zh": "50/50",
+    "en": "50/50"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "随机插曲：学术追求",
+   "en": "Interlude: Academic Pursuits"
+  },
+  "sources": [
+   "events/first_contact_dlc_operations_events.txt:2273-2683",
+   "common/scripted_effects/espionage_event_effects.txt:2840-3260"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-preftl-operation-3040.md"
+ }
+}

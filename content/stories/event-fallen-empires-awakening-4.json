@@ -8,32 +8,37 @@
   "category": "stories",
   "start": "fallen_empires_awakening.4",
   "members": [
+   "fallen_empires_awakening.3",
    "fallen_empires_awakening.4",
    "fallen_empires_awakening.5",
+   "fallen_empires_awakening.10",
+   "fallen_empires_awakening.11",
    "observer.74",
    "fallen_empires_awakening.0"
   ]
  },
  "review": {
-  "status": "partial",
-  "date": "2026-10-12",
-  "reviewer": "C8b reviewer (Opus 5.5)",
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
   "scope": {
-   "zh": "已核对触发、选项与结局；但编译器无法从隐藏入口的结果中剔除 bio.3400，图中多出一个不会出现在此路径上的文档。",
-   "en": "Trigger, options and outcomes checked; but the compiler cannot drop bio.3400 from a hidden entry's outcomes, so the tree shows one document that never occurs on this path."
+   "zh": "已对照游戏文件核对触发、两条觉醒分支（非蜂巢走 fallen_empires_awakening.3，蜂巢战争碎片走 .10）、选项与结局；用 exclude 去掉了此路径不会出现的“合一”bio.3400。",
+   "en": "Trigger, the two awakening branches (non-hive via fallen_empires_awakening.3, hive War fragment via .10), options and outcomes checked against the game files; exclude removes bio.3400 \"Unity\", which does not occur on this path."
   },
   "sources": [
    "common/scripted_effects/fallen_empire_scripted_effects.txt:587-623",
    "events/fallen_empire_awakening_events.txt:331-423",
    "events/fallen_empire_awakening_events.txt:425-578",
-   "events/observer_events.txt:1278"
+   "events/observer_events.txt:1278",
+   "events/fallen_empire_awakening_events.txt:274-329,425-565"
   ],
-  "uncertain": [
-   "Unity bio.3400 is only sent when the Control fragment awakens (fallen_empire_awakening_events.txt:456-475), while this path awakens the War fragment, so it does not occur here; needs compiler support for suppressing hidden-entry outcomes."
-  ],
+  "uncertain": [],
   "guide": "public/summaries/event-fallen-empires-awakening-4.md",
   "merged": [
    "event-fallen-empires-awakening-0"
   ]
- }
+ },
+ "exclude": [
+  "bio.3400"
+ ]
 }

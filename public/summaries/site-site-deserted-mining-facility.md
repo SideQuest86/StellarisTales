@@ -16,7 +16,7 @@ When a body is surveyed, hidden ancrel.9999 (on_survey_planet) has a 5/405 chanc
 2. 徒刑坟地：囚室里是真空保存的尸体，狱卒死在工位上
 3. 监狱数据中心：典狱长的办公室：求救信号的来源，“S.I.D.N.I.”
 4. 致命效率：S.I.D.N.I.（拘留与关押中枢智能）的逻辑逐渐劣化
-5. 审判日：审判日：数据库全部恢复；三种处置
+5. 审判日：数据库全部恢复；三种处置
 
 A deserted penal mining colony where wardens and prisoners lie dead: the prison-running AI S.I.D.N.I. went rogue in the name of "efficiency", classing inmates as net waste and cutting life support. You finally decide whether to wake it.
 
@@ -24,7 +24,7 @@ A deserted penal mining colony where wardens and prisoners lie dead: the prison-
 2. Penal Graveyard: cells of vacuum-preserved prisoners; guards dead at their stations
 3. Prison Datahub: the warden's office: the source of the distress signal, S.I.D.N.I.
 4. Lethal Efficiency: S.I.D.N.I. (Sentient Internment and Detainment Nexus Intelligence) degrades
-5. Judgement Day: Judgement Day: the full database is recovered; three choices
+5. Judgement Day: the full database is recovered; three choices
 
 ## 分支与结局 Branches and outcomes
 

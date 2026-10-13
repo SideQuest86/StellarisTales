@@ -1,0 +1,157 @@
+{
+ "id": "event-namarian-3",
+ "family": {
+  "title": {
+   "zh": "银河游牧民",
+   "en": "Galactic Nomads"
+  },
+  "category": "stories",
+  "start": "namarian.10",
+  "members": [
+   "namarian.10",
+   "namarian.30",
+   "namarian.21",
+   "namarian.41",
+   "namarian.500",
+   "namarian.505",
+   "namarian.510",
+   "namarian.511",
+   "namarian.512",
+   "namarian.513",
+   "namarian.514",
+   "namarian.520",
+   "namarian.521",
+   "namarian.522",
+   "namarian.523",
+   "namarian.524",
+   "namarian.525",
+   "namarian.526",
+   "namarian.530",
+   "namarian.100",
+   "namarian.105",
+   "namarian.9"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "namarian.10",
+   "to": "namarian.21",
+   "conditional": true,
+   "label": {
+    "zh": "停留期间（权重30）：请求收留游牧人口",
+    "en": "While nearby (weight 30): asks you to take in pops"
+   },
+   "evidence": "events/namarian_events.txt:438-483 namarian.4 random_list option 1 -> namarian.20 -> events/namarian_events.txt:1863 namarian.21"
+  },
+  {
+   "from": "namarian.10",
+   "to": "namarian.41",
+   "conditional": true,
+   "label": {
+    "zh": "停留期间（权重30）：请求让出一颗行星",
+    "en": "While nearby (weight 30): asks for a planet"
+   },
+   "evidence": "events/namarian_events.txt:485-526 option 2 -> namarian.40 -> namarian.41 (2179)"
+  },
+  {
+   "from": "namarian.10",
+   "to": "namarian.500",
+   "conditional": true,
+   "label": {
+    "zh": "停留期间（权重30）：兜售新舰",
+    "en": "While nearby (weight 30): offers to sell ships"
+   },
+   "evidence": "events/namarian_events.txt:528-566 option 3 -> namarian.499 -> 500 (2914)"
+  },
+  {
+   "from": "namarian.10",
+   "to": "namarian.30",
+   "conditional": true,
+   "label": {
+    "zh": "任何时候通过外交菜单交谈",
+    "en": "Any time through the diplomacy menu"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:714 on_custom_diplomacy fires namarian.30"
+  },
+  {
+   "from": "namarian.10",
+   "to": "namarian.100",
+   "conditional": true,
+   "label": {
+    "zh": "舰队被攻击（约50%）：决不再与你交易",
+    "en": "The fleet is attacked (about 50%): never deal with you again"
+   },
+   "evidence": "events/namarian_events.txt:2631-2730 namarian.99 random_list 50/100 -> 100"
+  },
+  {
+   "from": "namarian.10",
+   "to": "namarian.105",
+   "conditional": true,
+   "label": {
+    "zh": "舰队被攻击（约50%）：宣战声明",
+    "en": "The fleet is attacked (about 50%): declaration of hostility"
+   },
+   "evidence": "events/namarian_events.txt:2631-2730 namarian.99 -> 105"
+  },
+  {
+   "from": "namarian.10",
+   "to": "namarian.9",
+   "conditional": true,
+   "label": {
+    "zh": "舰队抵达终点：告别",
+    "en": "The fleet reaches its end point: farewell"
+   },
+   "evidence": "events/namarian_events.txt:876-900 namarian.8 -> 9 for countries flagged nomads_contacted"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "namarian.21",
+    "namarian.41",
+    "namarian.500"
+   ],
+   "label": {
+    "zh": "停留期间的请求",
+    "en": "Request while nearby"
+   },
+   "note": {
+    "zh": "权重30/30/30，另10为忽略。",
+    "en": "Weights 30/30/30, plus 10 for ignoring."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "namarian.100",
+    "namarian.105"
+   ],
+   "label": {
+    "zh": "被攻击后的反应",
+    "en": "Reaction to an attack"
+   },
+   "note": {
+    "zh": "各约50%（有修正）。",
+    "en": "About 50% each, modified."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "“逐水舰队”（纳马里安游牧民）穿过银河：首次联络、沿途的请求（收留人口、让出行星、卖船）、外交菜单、被攻击时的反应与离开。",
+   "en": "The Namarian nomad fleet \"Pursuing Waters\" crossing the galaxy: first contact, requests along the way (take in pops, cede a planet, sell ships), the diplomacy menu, reactions to attacks and the farewell."
+  },
+  "sources": [
+   "events/namarian_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-namarian-3.md",
+  "uncertain": [
+   "namarian.15 (war mission) and other hidden fleet events were not expanded."
+  ]
+ }
+}

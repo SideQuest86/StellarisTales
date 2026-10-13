@@ -1,0 +1,40 @@
+{
+ "id": "event-preftl-operation-1045",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.1046",
+    "preftl_operation.1047",
+    "preftl_operation.1048",
+    "preftl_operation.1049"
+   ],
+   "label": {
+    "zh": "按成功度分档",
+    "en": "Tiered by operation success"
+   },
+   "note": {
+    "zh": ">2 → 1046；>0 → 1047；=0 → 1048；<0 → 1049。",
+    "en": ">2 → 1046; >0 → 1047; =0 → 1048; <0 → 1049."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "植入先进知识行动终结：5个文档。",
+   "en": "Plant Advanced Knowledge finale: 5 docs."
+  },
+  "sources": [
+   "events/first_contact_dlc_operations_events.txt:552-767",
+   "common/espionage_operation_types/pre_ftl_operations.txt:300-448",
+   "common/scripted_effects/espionage_event_effects.txt:2840-2906",
+   "common/scripted_effects/first_contact_dlc_effects.txt:3093-3130"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-preftl-operation-1045.md"
+ }
+}

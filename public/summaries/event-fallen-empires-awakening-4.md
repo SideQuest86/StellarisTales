@@ -1,6 +1,6 @@
 # 星河守护者 / Guardians of the Galaxy
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/scripted_effects/fallen_empire_scripted_effects.txt:587-623; events/fallen_empire_awakening_events.txt:331-423; events/fallen_empire_awakening_events.txt:425-578; events/observer_events.txt:1278 · 部分审阅 Partially reviewed 2026-10-12
+- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/scripted_effects/fallen_empire_scripted_effects.txt:587-623; events/fallen_empire_awakening_events.txt:331-423; events/fallen_empire_awakening_events.txt:425-578; events/observer_events.txt:1278 · 审阅 Reviewed 2026-10-13
 
 ## 如何开始 How it starts
 
@@ -32,5 +32,5 @@ The picture differs depending on whether the guardian is a hive mind.
   Correction: fallen_empires_awakening.0 is an is_test_event debug event, from which the draft built a false story event-fallen-empires-awakening-0; it is now absorbed as a hidden member here so the false story disappears (its outcome docs are already in this tree and in War in Heaven).
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）
   (Commentary written by the reviewer, not game text; the original text is in the reader.)
-- 不确定之处：“合一”bio.3400 只在控制碎片觉醒时发出（fallen_empire_awakening_events.txt:456-475），而本路径觉醒的是战争碎片，故不会出现；需编译器支持对隐藏入口结果的 suppress。
-  Open questions: Unity bio.3400 is only sent when the Control fragment awakens (fallen_empire_awakening_events.txt:456-475), while this path awakens the War fragment, so it does not occur here; needs compiler support for suppressing hidden-entry outcomes.
+- 更新（2026-10-13）：两条路径已核对——守护者不是蜂巢时 fallen_empires_awakening.4 直接让该堕落帝国觉醒（fallen_empires_awakening.3，革命复兴 + 古代科技储备），蜂巢战争碎片则走 fallen_empires_awakening.10（吸收其他碎片并向通讯国发 .11）。“合一”bio.3400 只在控制碎片觉醒时由 .10 发出（L456-475），本路径不会出现，已用 exclude 从此故事中去掉。
+  Update (2026-10-13): both paths are verified - when the guardian is not a hive, fallen_empires_awakening.4 awakens that fallen empire directly (fallen_empires_awakening.3, revanchist fervor + ancient caches of technology); the hive War fragment goes through fallen_empires_awakening.10 (it absorbs the other fragments and sends .11 to empires in contact). "Unity" bio.3400 is only sent by .10 when the Control fragment awakens (L456-475), so it does not occur on this path and is removed from this story with exclude.

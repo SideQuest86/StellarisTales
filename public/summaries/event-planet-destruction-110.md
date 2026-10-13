@@ -4,7 +4,7 @@
 
 ## 如何开始 How it starts
 
-用世界粉碎者或冶炼者毁灭太阳系的地球（行星旗标 planet_earth / nuked_earth，或原始人类文明的星球）而施放者不是人类时，隐藏事件 planet_destruction.110 以50%概率触发。
+用地爆天星或行星熔炉毁灭太阳系的地球（行星旗标 planet_earth / nuked_earth，或原始人类文明的星球）而施放者不是人类时，隐藏事件 planet_destruction.110 以50%概率触发。
 
 When a World Cracker or Smelter destroys Earth in the Sol system (planet flag planet_earth / nuked_earth, or a primitive human world) and the firing empire is not human, hidden planet_destruction.110 triggers with 50% chance.
 

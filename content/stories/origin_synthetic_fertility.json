@@ -96,12 +96,86 @@
   }
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review (V3 bridges re-verified)",
+  "sources": [
+   "events/origin_events_machine_age.txt",
+   "common/situations/08_machine_age_situations.txt",
+   "common/traditions/01_synthetics.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "Which of the five synth.5xx variants shows depends on flags set in 3125 and on state; the weights/conditions were read from the compiled tree.",
+   "Approach-dependent progress (careful vs full speed) changes only the situation speed, not the events."
+  ],
+  "guide": "public/summaries/origin_synthetic_fertility.md"
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "machine_age.3200",
+    "machine_age.3125"
+   ],
+   "label": {
+    "zh": "数字化的两种出路",
+    "en": "Two ways out of the digitization crisis"
+   },
+   "note": {
+    "zh": "采用合成传统（3125）会销毁“数字化”局势并开始“合成化”局势；若数字化先走完（人口耗尽），则出现“数字炼狱”（3200）。",
+    "en": "Adopting the Synthetics tradition (3125) destroys the digitization situation and starts the synthesization situation; if digitization runs out first, Digital Purgatory (3200) follows (events/origin_events_machine_age.txt:1720-1776, :1841)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "synth.505",
+    "synth.510",
+    "synth.515",
+    "synth.520",
+    "synth.525"
+   ],
+   "label": {
+    "zh": "数字重构的五个版本",
+    "en": "Five versions of Digital Refactoring"
+   },
+   "note": {
+    "zh": "由3125选择的重点（统治者/专家/工人/维护费）等旗标决定，3315之后约180天出现。",
+    "en": "Chosen by the focus flag set in 3125 (and related state); about 180 days after 3315 (events/origin_events_machine_age.txt:2082-2170)."
+   }
   }
- }
+ ],
+ "endings": {
+  "machine_age.3200": {
+   "label": {
+    "zh": "数字炼狱",
+    "en": "Digital Purgatory"
+   },
+   "note": {
+    "zh": "数字化局势完成而未转向合成。",
+    "en": "Digitization completes without the synthetic transition."
+   },
+   "evidence": "events/origin_events_machine_age.txt:1841-1907; common/situations/08_machine_age_situations.txt:353"
+  },
+  "machine_age.3315": {
+   "label": {
+    "zh": "合成黎明",
+    "en": "Synthetic Dawning"
+   },
+   "note": {
+    "zh": "合成化局势完成后。",
+    "en": "After the synthesization situation completes."
+   },
+   "evidence": "events/origin_events_machine_age.txt:2135-2175"
+  }
+ },
+ "notes": [
+  {
+   "doc": "machine_age.3100",
+   "kind": "review",
+   "zh": "开局事件（game_start.txt:550）：启动“快速身份保存”（数字化）局势与事件链；人口耗尽前须采用合成传统。",
+   "en": "Game-start event (events/game_start.txt:550): starts the digitization situation and the Synthetic Fertility chain; the synthetics tradition must be adopted before the pops run out."
+  }
+ ]
 }

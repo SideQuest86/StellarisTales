@@ -1,0 +1,57 @@
+{
+ "id": "origin_shroudwalker_apprentice",
+ "opening": {
+  "targets": [
+   "origin.5605",
+   "origin.5620",
+   "origin.5625",
+   "enclave.4243"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "origin.5605": {
+    "zh": "开局：与虚境行者飞地的初次问候",
+    "en": "Game start: the first greeting from the Shroudwalker enclave"
+   },
+   "origin.5620": {
+    "zh": "舰队首次经超空间航道或虚境隧道进入飞地星系",
+    "en": "A fleet first enters the enclave system (hyperlane or Shroud tunnel)"
+   },
+   "origin.5625": {
+    "zh": "建成虚境信标后",
+    "en": "After the Shroud Beacon is built"
+   },
+   "enclave.4243": {
+    "zh": "每月检查：飞地的警告",
+    "en": "Monthly check: a warning from the enclave"
+   }
+  },
+  "evidence": "events/game_start.txt:408 fires hidden origin.5600 (events/origin_events_3.txt:1213-1320: meets the enclave, sets flags, shroud-forms some planets, starts Psionic Theory research); on_game_start_country common/on_actions/00_on_actions.txt:40 fires 5605 (-> tutorial.2100 after 1 day). Shroud tunnel hooks common/on_actions/00_on_actions.txt:4128-4129 (hidden 5610 / 5615 -> 5620); the Shroud Beacon starbase building (common/starbase_buildings/00_starbase_buildings.txt:1186) fires 5625; enclave.4243 on_monthly_pulse_country common/on_actions/00_on_actions.txt:340 (events/overlord_enclaves_events.txt)."
+ },
+ "notes": [
+  {
+   "doc": "enclave.4243",
+   "kind": "review",
+   "zh": "飞地事件文件中的通用警告窗口；仅对本起源的玩家出现。",
+   "en": "A warning window in the Overlord enclave events, shown here because it applies to this origin; it is generic enclave content."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_3.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/starbase_buildings/00_starbase_buildings.txt",
+   "events/overlord_enclaves_events.txt"
+  ],
+  "uncertain": [
+   "The conditions of enclave.4243 were not read."
+  ],
+  "guide": "public/summaries/origin_shroudwalker_apprentice.md"
+ }
+}

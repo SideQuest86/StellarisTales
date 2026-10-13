@@ -1,0 +1,24 @@
+{
+ "id": "anomaly-aianom-lump-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/99_anomaly_categories_ai.txt:2",
+   "events/anomaly_events_AI.txt:12 (aianom.1)",
+   "events/anomaly_events_AI.txt:70 (aianom.2)",
+   "events/anomaly_events_AI.txt:128 (aianom.3)",
+   "events/anomaly_events_AI.txt:186 (aianom.4)",
+   "events/anomaly_events_AI.txt:244 (aianom.5)"
+  ],
+  "uncertain": [
+   "The categories are marked should_ai_use = yes (an AI-oriented anomaly category, in contrast to should_ai_and_humans_use used by e.g. living_metal_category); the exact engine semantics of the flag were not verified in the files."
+  ],
+  "guide": "public/summaries/anomaly-aianom-lump-cat.md"
+ }
+}

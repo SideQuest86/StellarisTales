@@ -1,0 +1,107 @@
+{
+ "id": "event-ancrel-6098",
+ "family": {
+  "title": {
+   "zh": "隐形场现形",
+   "en": "Chameleon Field Exposed"
+  },
+  "category": "precursors",
+  "start": "ancrel.6099",
+  "members": [
+   "ancrel.6099",
+   "archaeological_site_types:site_zarqlan",
+   "ancrel.6100",
+   "ancrel.6105",
+   "ancrel.6110",
+   "ancrel.6115",
+   "ancrel.6120",
+   "ancrel.6125",
+   "ancrel.6130",
+   "ancrel.6132",
+   "ancrel.6133"
+  ],
+  "sources": []
+ },
+ "titleFrom": "ancrel.6099",
+ "bridges": [
+  {
+   "from": "ancrel.6125",
+   "choice": "INTRIGUING",
+   "to": "ancrel.6132",
+   "conditional": true,
+   "label": {
+    "zh": "获得遗珍后：激活“先知之首”，唯心主义堕落帝国仍在时召来其信徒舰队（可重复）",
+    "en": "With the relic: activate the Prophet's severed head; with the spiritualist Fallen Empire still present it summons its zealot fleet (repeatable)"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:891-936 ancrel.6125 grants add_relic r_severed_head; common/relics/relics.txt:623 active_effect fires ancrel.6131 (events/ancient_relics_arcsite_events_2.txt:1015), which fires 6132 if a fallen_empire_2 Fallen Empire exists, otherwise 6133"
+  },
+  {
+   "from": "ancrel.6125",
+   "choice": "INTRIGUING",
+   "to": "ancrel.6133",
+   "conditional": true,
+   "label": {
+    "zh": "获得遗珍后：激活“先知之首”，否则只来一支朝圣者护航舰队（可重复）",
+    "en": "With the relic: activate the Prophet's severed head; otherwise only a small pilgrim escort arrives (repeatable)"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:1054 ancrel.6131 else branch fires ancrel.6133; common/relics/relics.txt:623"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.6132",
+    "ancrel.6133"
+   ],
+   "label": {
+    "zh": "激活遗珍的两种结果",
+    "en": "Two results of activating the relic"
+   },
+   "labels": [
+    {
+     "zh": "唯心主义堕落帝国仍在：其信徒舰队听命",
+     "en": "the spiritualist Fallen Empire exists: its zealot fleet obeys"
+    },
+    {
+     "zh": "否则：朝圣者护航舰队宣誓效忠",
+     "en": "otherwise: a pilgrim escort pledges itself to us"
+    }
+   ],
+   "note": {
+    "zh": "ancrel.6131 先把 zarqlan_fervor 变量设为1（若未设置），再依据是否存在带 fallen_empire_2 标志的堕落帝国分派。",
+    "en": "ancrel.6131 first sets the variable zarqlan_fervor to 1 if unset, then dispatches by whether a Fallen Empire with the flag fallen_empire_2 exists."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "ancrel.6125": {
+   "zh": "最后一间墓室：先知之首（获得遗珍）",
+   "en": "The final chamber: the Prophet's head (relic gained)"
+  },
+  "ancrel.6130": {
+   "zh": "堕落帝国来电：成为“扎克兰选民”",
+   "en": "A Fallen Empire calls: \"Chosen of Zarqlan\""
+  }
+ },
+ "notes": [],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：开端与触发条件、全部文档的先后与互斥关系、结局；相关脚本与中英文正文已读。",
+   "en": "Whole story: opening and trigger conditions, order and exclusivity of every doc, endings; the relevant scripts and both languages read."
+  },
+  "sources": [
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "common/relics/relics.txt",
+   "common/on_actions/00_on_actions.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-ancrel-6098.md"
+ }
+}

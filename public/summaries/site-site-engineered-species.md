@@ -15,7 +15,7 @@ A random site: drawn by weight on survey, +25 on habitable planets, at most one 
 1. 承骨之重：大量化石；研究化石（+1）或办化石展览
 2. 穴居者：洞穴居民：保存历史（研究，+1）或保存日常生活
 3. 骨结构：骨质结构：研究建筑（+1）或研究内部
-4. 地下设施：地下设施：外星访客的实验室
+4. 地下设施：外星访客的实验室
 
 Large fossil deposits suggest engineered species. The first three stages each ask you to study or use/display the finds (the follow-up fires 30 days later). The number of "study" choices decides the ending: two or more gives Revelation, fewer gives Ignorance.
 
@@ -26,7 +26,7 @@ Large fossil deposits suggest engineered species. The first three stages each as
 
 ## 分支与结局 Branches and outcomes
 
-- 突破 / Breakthrough：突破：远古的太空文明对原住民做基因改造。学习≥2次：真相（社会学研究、“工程物种：真相”修正）；<2次：无知（研究与团结、“无知”修正）；排外者与亲外者有额外回应 / Breakthrough: a spacefaring civilisation engineered the natives. Studied >=2: Revelation (society research, modifier engineered_species_revelation); <2: Ignorance (research and unity, modifier engineered_species_ignorance); xenophobes and xenophiles get extra answers
+- 突破 / Breakthrough：远古的太空文明对原住民做基因改造。学习≥2次：真相（社会学研究、“工程物种：真相”修正）；<2次：无知（研究与团结、“无知”修正）；排外者与亲外者有额外回应 / a spacefaring civilisation engineered the natives. Studied >=2: Revelation (society research, modifier engineered_species_revelation); <2: Ignorance (research and unity, modifier engineered_species_ignorance); xenophobes and xenophiles get extra answers
 
 ## 条件与文明差异 Conditions and variants
 

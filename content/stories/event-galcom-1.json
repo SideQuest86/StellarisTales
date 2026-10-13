@@ -1,0 +1,115 @@
+{
+ "id": "event-galcom-1",
+ "family": {
+  "title": {
+   "zh": "银河社群",
+   "en": "A Galactic Community"
+  },
+  "category": "society",
+  "start": "galcom.2",
+  "members": [
+   "galcom.2",
+   "galcom.5",
+   "galcom.6",
+   "galcom.10",
+   "galcom.16",
+   "galcom.51"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "galcom.2",
+   "to": "galcom.5",
+   "conditional": true,
+   "label": {
+    "zh": "360天后，至少3个国家投了赞成：赞成国成为成员",
+    "en": "After 360 days with at least 3 countries voting aye: aye countries become members"
+   },
+   "evidence": "galcom.2 sets galcom_form_aye / _nay (events/galactic_community_events.txt:86-120); hidden galcom.3 360 days later: if 3+ playable countries have aye, aye countries join and get galcom.5, nay countries get galcom.6 (galactic_community_events.txt:134-175)"
+  },
+  {
+   "from": "galcom.2",
+   "to": "galcom.6",
+   "conditional": true,
+   "label": {
+    "zh": "同上：投反对者收到“拒绝社群”窗口",
+    "en": "Same: those who voted nay get the rejection window"
+   },
+   "evidence": "as above"
+  },
+  {
+   "from": "galcom.2",
+   "to": "galcom.16",
+   "conditional": true,
+   "label": {
+    "zh": "成立后20天，向尚未表态的国家发出邀请",
+    "en": "Twenty days after founding, an invitation to countries that have not voted"
+   },
+   "evidence": "galcom.3 schedules galcom.15 after 20 days which fires galcom.16 (galactic_community_events.txt:165-170, 288, 317); galcom.14 (decade pulse, 00_on_actions.txt:299) and action.110 fire 16 for later non-members"
+  },
+  {
+   "from": "galcom.2",
+   "to": "galcom.10",
+   "conditional": true,
+   "label": {
+    "zh": "不足3票：提案搁置，50年后重试（galcom.20）",
+    "en": "Fewer than 3 aye: shelved, retried 50 years later (galcom.20)"
+   },
+   "evidence": "galcom.3 else branch: sets galcom_form_failed, fires galcom.10 and schedules galcom.20 after 18000 days, which restarts galcom.2 if conditions hold (galactic_community_events.txt:176-191, 458-520)"
+  },
+  {
+   "from": "galcom.5",
+   "to": "galcom.51",
+   "conditional": true,
+   "label": {
+    "zh": "首个银河议会成立时（on_galactic_council_established → 隐藏50，5天后）",
+    "en": "When the first Galactic Council is established (on_galactic_council_established -> hidden 50, 5 days later)"
+   },
+   "evidence": "00_on_actions.txt:4400 -> galcom.50, trigger no first_council_formed flag; fires galcom.51 after 5 days (galactic_community_events.txt:522-608)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "galcom.5",
+    "galcom.6",
+    "galcom.10"
+   ],
+   "label": {
+    "zh": "投票结果",
+    "en": "Vote outcome"
+   },
+   "note": {
+    "zh": "赞成者 5、反对者 6，票数不足则所有表态者得 10。",
+    "en": "Aye voters get 5, nay voters 6; with too few votes all who voted get 10."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "galcom.2",
+   "kind": "review",
+   "zh": "入口：每年脉冲隐藏事件 galcom.1：未成立、未开始建立；至少3个非灭绝国家，且有国家与70%以上可玩国家通信；随后向相互通信的非灭绝国家发出 galcom.2，并在360天后运行 galcom.3 点票。",
+   "en": "Entry: yearly hidden galcom.1: not founded and not begun; at least 3 non-homicidal countries and one with communications to 70%+ of playable countries; then galcom.2 goes to all communicating non-homicidal countries and galcom.3 tallies 360 days later."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "银河社群的诞生：提议、投票、成立或搁置，以及银河议会的组建。",
+   "en": "Birth of the Galactic Community: proposal, vote, founding or shelving, and the formation of the Galactic Council."
+  },
+  "sources": [
+   "events/galactic_community_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "merged": [
+   "event-galcom-14",
+   "event-galcom-50"
+  ],
+  "guide": "public/summaries/event-galcom-1.md"
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "id": "origin_wilderness",
+ "opening": {
+  "targets": [
+   "wilderness.1010",
+   "wilderness.2000",
+   "wilderness.4500",
+   "wilderness.4505"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "wilderness.1010": {
+    "zh": "开始改造某星球时：苏醒",
+    "en": "When terraforming of a planet begins: it awakens"
+   },
+   "wilderness.2000": {
+    "zh": "开始改造某星球时：有计划的苏醒",
+    "en": "When terraforming of a planet begins: a planned awakening"
+   },
+   "wilderness.4500": {
+    "zh": "行动“嵌入行星根系”：搜索",
+    "en": "Operation Embed Planetary Roots: combing the wilds"
+   },
+   "wilderness.4505": {
+    "zh": "行动“嵌入行星根系”：发现潜在地点",
+    "en": "Operation Embed Planetary Roots: a site is identified"
+   }
+  },
+  "evidence": "events/origin_events_wilderness.txt:61-100 wilderness.100 sets up the game start; on_terraforming_begun (common/on_actions/00_on_actions.txt:2093 / 2095) fires hidden 1005 -> 1010 and hidden 1999 -> 2000 (events/origin_events_wilderness.txt:353-690); the operation (common/espionage_operation_types/operations.txt:265-270) fires 4500 / 4505, 4505 -> 4510 after 15 days."
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "wilderness.1010",
+    "wilderness.2000"
+   ],
+   "label": {
+    "zh": "改造开始时的两个窗口",
+    "en": "Two windows when terraforming starts"
+   },
+   "note": {
+    "zh": "隐藏1005→1010（普通改造）；隐藏1999→2000（独特内容：有计划的苏醒）；是否出现取决于各自的触发条件。",
+    "en": "Hidden 1005 -> 1010 (survey and colony), hidden 1999 -> 2000 (unique content); each has its own conditions."
+   }
+  }
+ ],
+ "endings": {
+  "wilderness.4510": {
+   "label": {
+    "zh": "行星根系嵌入",
+    "en": "Planetary Roots Embedded"
+   },
+   "note": {
+    "zh": "行动完成。",
+    "en": "The operation completes."
+   },
+   "evidence": "events/origin_events_wilderness.txt:743-790"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_wilderness.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/espionage_operation_types/operations.txt"
+  ],
+  "uncertain": [
+   "The hidden utility events (wilderness.5/10/100/150/300/310/500) convert planets and districts and have no windows; only their purpose was read."
+  ],
+  "guide": "public/summaries/origin_wilderness.md"
+ }
+}

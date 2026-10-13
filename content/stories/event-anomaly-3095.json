@@ -1,0 +1,167 @@
+{
+ "id": "event-anomaly-3095",
+ "family": {
+  "title": {
+   "zh": "星际绑架者",
+   "en": "The Ransomeers"
+  },
+  "category": "exploration",
+  "start": "event_chains:ransomeer_chain",
+  "members": [
+   "event_chains:ransomeer_chain",
+   "anomaly.3095",
+   "anomaly.3098",
+   "anomaly.3099",
+   "anomaly.3100",
+   "anomaly.3101"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "event_chains:ransomeer_chain",
+   "to": "anomaly.3095",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入星际绑架者的系统",
+    "en": "A fleet enters the Ransomeers' system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:983 on_entering_system_fleet → anomaly.3095 (events/anomaly_events_2.txt:2561): the system has star flag ransomeer_system and the owner has captive_rescue (set by anomaly.3094)."
+  },
+  {
+   "from": "event_chains:ransomeer_chain",
+   "to": "anomaly.3098",
+   "conditional": true,
+   "label": {
+    "zh": "别人先击毁了绑架者基地（有接触，约50%）",
+    "en": "Someone else destroys the Ransomeer base first (with contact, about 50%)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1577 on_fleet_destroyed_victim → anomaly.3097 (hidden, events/anomaly_events_2.txt:2612): the victim is a faction fleet with ransomeer_base_flag and the destroyer is an ordinary country you have contact with; random 50/50 between anomaly.3098 and anomaly.3099."
+  },
+  {
+   "from": "event_chains:ransomeer_chain",
+   "to": "anomaly.3099",
+   "conditional": true,
+   "label": {
+    "zh": "别人先击毁了绑架者基地（有接触，约50%）",
+    "en": "Someone else destroys the Ransomeer base first (with contact, about 50%)"
+   },
+   "evidence": "Same hook, the other half of the 50/50 random_list (events/anomaly_events_2.txt:2636-2660)."
+  },
+  {
+   "from": "event_chains:ransomeer_chain",
+   "to": "anomaly.3100",
+   "conditional": true,
+   "label": {
+    "zh": "基地被没有接触的势力击毁",
+    "en": "The base is destroyed by someone you have no contact with"
+   },
+   "evidence": "events/anomaly_events_2.txt:2664-2672: anomaly.3097 fires anomaly.3100 when the destroyer is not an ordinary country or you have no established contact."
+  },
+  {
+   "from": "event_chains:ransomeer_chain",
+   "to": "anomaly.3101",
+   "conditional": true,
+   "label": {
+    "zh": "自己击毁绑架者基地",
+    "en": "You destroy the Ransomeer base yourself"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1630 on_fleet_destroyed_perp → anomaly.3101 (events/anomaly_events_2.txt:2768): the owner has captive_rescue, the relation flag ransomeer_relation toward the destroyed country, and the destroyed fleet has ransomeer_base_flag."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.3098",
+    "anomaly.3099"
+   ],
+   "label": {
+    "zh": "他人击毁基地：俘虏死或生（各50%）",
+    "en": "Base destroyed by another: captives die or live (50% each)"
+   },
+   "note": {
+    "zh": "仅当击毁者是你有接触的普通国家；否则只有 3100。",
+    "en": "Only when the destroyer is an ordinary country you have contact with; otherwise only 3100."
+   }
+  }
+ ],
+ "endings": {
+  "anomaly.3098": {
+   "label": {
+    "zh": "尘归尘",
+    "en": "Dust and Echoes"
+   },
+   "note": {
+    "zh": "俘虏死亡，对击毁者好感度下降，链结束。",
+    "en": "The captives are dead; opinion of the destroyer drops; the chain ends."
+   },
+   "evidence": "events/anomaly_events_2.txt:2679"
+  },
+  "anomaly.3099": {
+   "label": {
+    "zh": "意外的救星",
+    "en": "Unexpected Saviors"
+   },
+   "note": {
+    "zh": "俘虏获救，对击毁者好感度上升，链结束。",
+    "en": "The captives are saved; opinion of the destroyer rises; the chain ends."
+   },
+   "evidence": "events/anomaly_events_2.txt:2709"
+  },
+  "anomaly.3100": {
+   "label": {
+    "zh": "质疑",
+    "en": "Assailed"
+   },
+   "note": {
+    "zh": "无接触的势力击毁基地，链结束。",
+    "en": "A power you have no contact with destroyed the base; the chain ends."
+   },
+   "evidence": "events/anomaly_events_2.txt:2739"
+  },
+  "anomaly.3104": {
+   "label": {
+    "zh": "化为灰烬",
+    "en": "Smoke and Ashes"
+   },
+   "note": {
+    "zh": "俘虏死于大火：影响力加成，伴随“失败的救世主”修正（1800天）。",
+    "en": "The captives die in the fire: an influence bonus with the 'failed savior' modifier (1800 days)."
+   },
+   "evidence": "events/anomaly_events_2.txt:2853"
+  },
+  "anomaly.3105": {
+   "label": {
+    "zh": "一切都好？",
+    "en": "All's Well?"
+   },
+   "note": {
+    "zh": "俘虏获救：较大影响力加成与“救世主”修正（3600天）。",
+    "en": "The captives are saved: a larger influence bonus and the 'savior' modifier (3600 days)."
+   },
+   "evidence": "events/anomaly_events_2.txt:2880"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "events/anomaly_events_2.txt:2395-2560 (anomaly.3094, chain start; story anomaly-uhb-buoy-cat)",
+   "events/anomaly_events_2.txt:2561 (anomaly.3095)",
+   "events/anomaly_events_2.txt:2592 (anomaly.3096)",
+   "events/anomaly_events_2.txt:2612 (anomaly.3097)",
+   "events/anomaly_events_2.txt:2679-2767 (anomaly.3098-3100)",
+   "events/anomaly_events_2.txt:2768-2906 (anomaly.3101-3105)",
+   "common/on_actions/00_on_actions.txt:983 (on_entering_system_fleet)",
+   "common/on_actions/00_on_actions.txt:1577 (on_fleet_destroyed_victim)",
+   "common/on_actions/00_on_actions.txt:1630 (on_fleet_destroyed_perp)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-anomaly-3095.md"
+ }
+}

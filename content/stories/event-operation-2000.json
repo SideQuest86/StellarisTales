@@ -1,0 +1,66 @@
+{
+ "id": "event-operation-2000",
+ "family": {
+  "title": {
+   "zh": "破坏恒星基地设施",
+   "en": "Sabotage Starbase Facility"
+  },
+  "category": "stories",
+  "start": "operation.2000",
+  "members": [
+   "operation.2000",
+   "operation.2001",
+   "operation.2002",
+   "operation.2005",
+   "operation.2010",
+   "operation.2006",
+   "espionage.1040"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "operation.2000",
+   "to": "operation.2001",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:582 operation type operation_sabotage_starbase: stage events in order 2000, 2001, 2002; each stage fires its event when its progress completes"
+  },
+  {
+   "from": "operation.2001",
+   "to": "operation.2002",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:582 operation type operation_sabotage_starbase: stage events in order 2000, 2001, 2002; each stage fires its event when its progress completes"
+  },
+  {
+   "from": "operation.2000",
+   "to": "operation.2006",
+   "conditional": true,
+   "label": {
+    "zh": "目标设施被改动，行动中止",
+    "en": "The target facility changes; the operation aborts"
+   },
+   "evidence": "events/nemesis_operations_events_1.txt:1479-1500 operation.2006; fired from the stage events when the starbase changes"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "间谍行动“破坏恒星基地设施”的阶段事件、结局以及相关通知。",
+   "en": "The espionage operation Sabotage Starbase Facility: stage events, finale and related notices."
+  },
+  "sources": [
+   "events/nemesis_operations_events_1.txt",
+   "common/espionage_operation_types/operations.txt"
+  ],
+  "guide": "public/summaries/event-operation-2000.md"
+ }
+}

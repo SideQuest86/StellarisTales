@@ -1,0 +1,98 @@
+{
+ "id": "event-ancrel-6150",
+ "family": {
+  "title": {
+   "zh": "屏障星球",
+   "en": "Shielded Planet"
+  },
+  "category": "precursors",
+  "start": "ancrel.6150",
+  "members": [
+   "ancrel.6150",
+   "ancrel.6151",
+   "archaeological_site_types:site_minigalaxy_1",
+   "ancrel.6155",
+   "ancrel.6160",
+   "ancrel.6165",
+   "archaeological_site_types:site_minigalaxy_2",
+   "ancrel.6170",
+   "ancrel.6175",
+   "ancrel.6180",
+   "ancrel.6185",
+   "ancrel.7007"
+  ],
+  "sources": []
+ },
+ "titleFrom": "ancrel.6150",
+ "bridges": [
+  {
+   "from": "ancrel.6185",
+   "choice": "CURIOUS",
+   "to": "ancrel.7007",
+   "conditional": true,
+   "label": {
+    "zh": "获得遗珍“微缩星河”后：激活它（可重复）",
+    "en": "With the relic \"Miniature Galaxy\": activate it (repeatable)"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:1476 ancrel.6185 option CURIOUS add_relic r_galaxy; common/relics/relics.txt:239 r_galaxy active_effect fires country_event ancrel.7007 (relics.txt:309; events/ancient_relics_arcsite_events_1.txt:6985)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.6150",
+    "ancrel.6151"
+   ],
+   "label": {
+    "zh": "先勘察哪一个天体",
+    "en": "Which body is surveyed first"
+   },
+   "labels": [
+    {
+     "zh": "先勘察被屏障包裹的行星（再由它找到卫星）",
+     "en": "the shielded planet first (it points to the moon)"
+    },
+    {
+     "zh": "先勘察卫星",
+     "en": "the moon first"
+    }
+   ],
+   "note": {
+    "zh": "两个都在 on_survey_planet 触发，并都检查全局标志 minigalaxy_site_spawned（只会发生一次）：6150 要求被勘察的是 minigalaxy_planet，6151 要求是 minigalaxy_moon。",
+    "en": "Both fire from on_survey_planet and both check the global flag minigalaxy_site_spawned (so only one ever happens): 6150 needs the surveyed body to be minigalaxy_planet, 6151 needs minigalaxy_moon."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "ancrel.6165": {
+   "zh": "护盾生成器（创建第二个遗址）",
+   "en": "The shield generator (creates the second site)"
+  },
+  "ancrel.6185": {
+   "zh": "微缩星河（获得遗珍）",
+   "en": "Miniaturized Galaxy (relic gained)"
+  }
+ },
+ "notes": [],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：开端与触发条件、全部文档的先后与互斥关系、结局；相关脚本与中英文正文已读。",
+   "en": "Whole story: opening and trigger conditions, order and exclusivity of every doc, endings; the relevant scripts and both languages read."
+  },
+  "sources": [
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "common/relics/relics.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/solar_system_initializers/ancient_relics_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-ancrel-6150.md"
+ }
+}

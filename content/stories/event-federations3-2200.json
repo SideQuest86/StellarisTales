@@ -1,0 +1,55 @@
+{
+ "id": "event-federations3-2200",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations3.2215",
+    "federations3.2220",
+    "federations3.2225"
+   ],
+   "label": {
+    "zh": "第一轮：三选一（各约三分之一）",
+    "en": "Round one: one of three (about a third each)"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations3.2235",
+    "federations3.2240",
+    "federations3.2245"
+   ],
+   "label": {
+    "zh": "第二轮：三选一（各约三分之一）",
+    "en": "Round two: one of three (about a third each)"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations3.2255",
+    "federations3.2260",
+    "federations3.2265"
+   ],
+   "label": {
+    "zh": "结局：不和 / 和谐 / 勉强成功",
+    "en": "Endings: Discord / Concord / Tentative Success"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "联邦大公会议：灵性联邦的三轮会议与三种结局。",
+   "en": "Federation Ecumenical Council: the three rounds of a spiritualist federation's council and three endings."
+  },
+  "sources": [
+   "events/federations_events_3.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-federations3-2200.md"
+ }
+}

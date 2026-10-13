@@ -1,0 +1,43 @@
+{
+ "id": "event-cara-900",
+ "notes": [
+  {
+   "doc": "cara.910",
+   "zh": "评注：这三扇窗口发给不同的帝国——910 给毁掉贸易站的一方，920 给其他帝国，930 给一个符合条件的“系统所有者”邀请其接受重建（60天后）。",
+   "en": "Commentary: these windows go to different empires — 910 to the empire that destroyed the tradestation, 920 to the others, 930 (60 days later) to a suitable system owner offering to re-establish the station.",
+   "kind": "review"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "cara.910",
+    "cara.920",
+    "cara.930"
+   ],
+   "label": {
+    "zh": "不同收件人",
+    "en": "Different recipients"
+   },
+   "note": {
+    "zh": "同一事件（cara.900）同时通知三类帝国，彼此不是先后。",
+    "en": "The same event (cara.900) notifies three kinds of empire at once; they are not consecutive."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "贸易站被毁后的三类通知与重建流程已核对。",
+   "en": "The three notices after the tradestation is destroyed and the re-establishment flow were checked."
+  },
+  "sources": [
+   "events/caravaneer_events.txt:3715-4130",
+   "common/on_actions/00_on_actions.txt:1416"
+  ],
+  "guide": "public/summaries/event-cara-900.md"
+ }
+}

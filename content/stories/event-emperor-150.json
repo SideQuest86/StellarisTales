@@ -1,0 +1,156 @@
+{
+ "id": "event-emperor-150",
+ "family": {
+  "title": {
+   "zh": "银河帝国的终结",
+   "en": "End of the Galactic Imperium"
+  },
+  "category": "stories",
+  "start": "emperor.150",
+  "members": [
+   "emperor.150",
+   "emperor.151",
+   "emperor.152",
+   "emperor.153",
+   "emperor.250",
+   "emperor.251",
+   "emperor.252",
+   "emperor.200",
+   "emperor.201",
+   "emperor.202",
+   "emperor.203",
+   "emperor.300",
+   "emperor.301",
+   "emperor.302",
+   "emperor.401"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "emperor.150",
+    "emperor.250",
+    "emperor.200"
+   ],
+   "label": {
+    "zh": "内战的结果",
+    "en": "Result of the civil war"
+   },
+   "note": {
+    "zh": "保皇胜利 / 僵局 / 反叛胜利。",
+    "en": "Loyalist victory / stalemate / rebel victory."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "emperor.151",
+    "emperor.152",
+    "emperor.153"
+   ],
+   "label": {
+    "zh": "保皇胜利的各方视角",
+    "en": "Loyalist victory by perspective"
+   },
+   "note": {
+    "zh": "保皇派、叛军、局外人各收到一份。",
+    "en": "Loyalists, rebels and outsiders each get one."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "emperor.201",
+    "emperor.202",
+    "emperor.203"
+   ],
+   "label": {
+    "zh": "反叛胜利的各方视角",
+    "en": "Rebel victory by perspective"
+   },
+   "note": {
+    "zh": "保皇派、皇帝、局外人各收到一份。",
+    "en": "Loyalists, the emperor and outsiders each get one."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "emperor.251",
+    "emperor.252"
+   ],
+   "label": {
+    "zh": "僵局的各方视角",
+    "en": "Stalemate by perspective"
+   },
+   "note": {
+    "zh": "叛军、局外人。",
+    "en": "Rebels and outsiders."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "emperor.300",
+    "emperor.301",
+    "emperor.302"
+   ],
+   "label": {
+    "zh": "恢复共同体的各方视角",
+    "en": "Restore the Community by perspective"
+   },
+   "note": {
+    "zh": "胜者、帝国成员、局外人。",
+    "en": "Winner, Imperium members, outsiders."
+   }
+  }
+ ],
+ "bridges": [
+  {
+   "from": "emperor.150",
+   "to": "emperor.151",
+   "conditional": true,
+   "label": {
+    "zh": "保皇派收到",
+    "en": "Loyalists receive"
+   },
+   "evidence": "events/nemesis_emperor_events.txt:1652-1668 emperor.150 after: every_playable_country with empire_loyalist -> 151"
+  },
+  {
+   "from": "emperor.150",
+   "to": "emperor.152",
+   "conditional": true,
+   "label": {
+    "zh": "叛军收到",
+    "en": "Rebels receive"
+   },
+   "evidence": "events/nemesis_emperor_events.txt:1657-1660 empire_rebel -> 152"
+  },
+  {
+   "from": "emperor.150",
+   "to": "emperor.153",
+   "conditional": true,
+   "label": {
+    "zh": "不属于共同体的玩家国收到",
+    "en": "Players outside the Community receive"
+   },
+   "evidence": "events/nemesis_emperor_events.txt:1661-1667 -> 153"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "银河内战的结局（保皇胜利、反叛胜利、僵局）、恢复共同体与帝国覆灭的各方视角通知。",
+   "en": "The outcomes of the galactic civil war (loyalist victory, rebel victory, stalemate), the restoration of the Community and the destruction of the Imperium, each from every side."
+  },
+  "sources": [
+   "events/nemesis_emperor_events.txt",
+   "common/war_goals/02_event_war_goals.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-emperor-150.md"
+ }
+}

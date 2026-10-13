@@ -1,0 +1,72 @@
+{
+ "id": "event-marauder-505",
+ "family": {
+  "title": {
+   "zh": "大可汗战败",
+   "en": "Great Khan Meets Defeat"
+  },
+  "category": "stories",
+  "start": "marauder.506",
+  "members": [
+   "marauder.506",
+   "marauder.508",
+   "marauder.524"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "marauder.506",
+   "to": "marauder.508",
+   "conditional": true,
+   "label": {
+    "zh": "180–360天后，若劫掠者仍存在：可汗归来",
+    "en": "After 180-360 days, if the Horde still exists: the Khan returns"
+   },
+   "evidence": "events/marauder_events.txt:7618-7712 hidden 505 -> 523 (days 180 random 180) -> 507 -> 508 when exists = from"
+  },
+  {
+   "from": "marauder.506",
+   "to": "marauder.524",
+   "conditional": true,
+   "label": {
+    "zh": "否则：大可汗被视为已死",
+    "en": "Otherwise: the Great Khan is presumed dead"
+   },
+   "evidence": "events/marauder_events.txt:7686-7692 else branch of 523 sends 524 to every human empire"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "marauder.508",
+    "marauder.524"
+   ],
+   "label": {
+    "zh": "战败后的走向",
+    "en": "After the defeat"
+   },
+   "note": {
+    "zh": "归来或被视为已死。",
+    "en": "He returns or is presumed dead."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "大可汗第一次战败：玩家得到通知；半年左右后他带着第二支舰队回归，或被视为已死。",
+   "en": "The first defeat of the Great Khan: players are told; about half a year later he returns with a second fleet, or is presumed dead."
+  },
+  "sources": [
+   "events/marauder_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-marauder-505.md",
+  "uncertain": [
+   "Scope of from in marauder.523 (what decides 507 vs 524) not independently verified."
+  ]
+ }
+}

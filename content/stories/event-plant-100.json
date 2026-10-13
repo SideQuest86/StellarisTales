@@ -1,0 +1,37 @@
+{
+ "id": "event-plant-100",
+ "family": {
+  "title": {
+   "zh": "田园至臻",
+   "en": "Idyllic Perfection"
+  },
+  "category": "stories",
+  "start": "plant.100",
+  "members": [
+   "plant.100",
+   "plant.101",
+   "plant.105",
+   "plant.110",
+   "plant.115"
+  ]
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/plantoid_events.txt:3-285",
+   "common/on_actions/00_on_actions.txt:2988 on_building_upgraded",
+   "common/buildings/15_overlord_holdings.txt:1315"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-plant-100.md",
+  "merged": [
+   "event-plant-105"
+  ]
+ }
+}

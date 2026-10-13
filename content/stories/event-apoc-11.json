@@ -1,0 +1,69 @@
+{
+ "id": "event-apoc-11",
+ "family": {
+  "title": {
+   "zh": "星门建设完成",
+   "en": "Gateway Constructed"
+  },
+  "category": "stories",
+  "start": "apoc.14",
+  "members": [
+   "apoc.14",
+   "apoc.11",
+   "apoc.13"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "apoc.14",
+   "to": "apoc.11",
+   "conditional": true,
+   "label": {
+    "zh": "把基址升级为星门（需“星门激活”科技显示该升级、“星门建造”科技允许建造，6000能量+2500合金，1800天）完成时：本国第一座星门",
+    "en": "When the site is upgraded to a gateway (shown with Gateway Activation, allowed with Gateway Construction; 6000 energy + 2500 alloys, 1800 days): the empire's first gateway"
+   },
+   "evidence": "common/megastructures/05_gateways.txt:3-217 (gateway_0, build 1080 days, on_build_complete → apoc.14), 219-318 (gateway_final upgrade_from gateway_0, build 1800 days, on_build_complete 313-316 fires apoc.13 and apoc.11); apoc.11 trigger events/apocalypse_events.txt:242-253"
+  },
+  {
+   "from": "apoc.14",
+   "to": "apoc.13",
+   "conditional": true,
+   "label": {
+    "zh": "之后建成的星门（已激活或建造过星门）",
+    "en": "Any later gateway (one was already reactivated or built)"
+   },
+   "evidence": "apoc.13 trigger events/apocalypse_events.txt:308-312 (flag gateway_reactivated or gateway_built)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "apoc.11",
+    "apoc.13"
+   ],
+   "label": {
+    "zh": "首座 / 之后",
+    "en": "First / later"
+   },
+   "note": {
+    "zh": "同一通知的两个版本：本国第一座星门显示 apoc.11，之后的显示 apoc.13。",
+    "en": "Two versions of the same notice: the empire's first gateway shows apoc.11, later ones apoc.13."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "建造基址 → 星门的升级链与首座/之后的互斥通知已核对。",
+   "en": "The construction-site → gateway upgrade chain and the exclusive first/later notices were checked."
+  },
+  "sources": [
+   "events/apocalypse_events.txt:232-262,298-345",
+   "common/megastructures/05_gateways.txt:3-318"
+  ],
+  "guide": "public/summaries/event-apoc-11.md"
+ }
+}

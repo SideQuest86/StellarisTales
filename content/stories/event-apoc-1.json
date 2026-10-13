@@ -1,0 +1,81 @@
+{
+ "id": "event-apoc-1",
+ "family": {
+  "title": {
+   "zh": "遗弃星门",
+   "en": "Abandoned Gateway"
+  },
+  "category": "stories",
+  "start": "apoc.1",
+  "members": [
+   "apoc.1",
+   "apoc.10",
+   "apoc.12"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "apoc.1",
+   "to": "apoc.10",
+   "conditional": true,
+   "label": {
+    "zh": "研究“星门激活”并修复这座废弃星门后，第一座被激活/建造的星门",
+    "en": "After researching Gateway Activation and restoring this derelict gateway — the first gateway reactivated or built"
+   },
+   "evidence": "common/megastructures/05_gateways.txt:321-395 (gateway_ruined → gateway_restored upgrade, needs tech_gateway_activation, 6000 energy + 2500 alloys, 720 days); on_build_complete 419-480 fires apoc.10; apoc.10 trigger events/apocalypse_events.txt:183-195 (neither gateway_reactivated nor gateway_built flag)"
+  },
+  {
+   "from": "apoc.1",
+   "to": "apoc.12",
+   "conditional": true,
+   "label": {
+    "zh": "之后修复的其他星门（已激活或建造过星门）",
+    "en": "Any later restored gateway (one was already reactivated or built)"
+   },
+   "evidence": "common/megastructures/05_gateways.txt:475; apoc.12 trigger events/apocalypse_events.txt:275-287 (flag gateway_reactivated or gateway_built; not the Galactic Doorstep or Sharpbeak homegate)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "apoc.10",
+    "apoc.12"
+   ],
+   "label": {
+    "zh": "首次 / 之后",
+    "en": "First / later"
+   },
+   "note": {
+    "zh": "同一通知的两个版本：第一座被激活的星门显示 apoc.10，之后的显示 apoc.12。",
+    "en": "Two versions of the same notice: the first gateway activated shows apoc.10, later ones apoc.12."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "apoc.10",
+   "zh": "评注：修复星门时，若有银河巨影DLC、修复者是玩家且尚无人找到过“夏普比克”，还有20%的抽签（权重×4/×2的修正）会额外弹出 paragon.3000，引出斯克兰德·夏普比克的故事（见 event-paragon-3901）。",
+   "en": "Commentary: when a gateway is restored, a player with the Paragons DLC may additionally roll 20% (x4 / x2 modifiers) for paragon.3000, which starts the story of Skrand Sharpbeak (see event-paragon-3901).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "从发现废弃星门到修复通知（首次/之后）的结构及触发条件已核对；斯克兰德抽签属另一故事。",
+   "en": "The structure from discovering the derelict gateway to the (first / later) restoration notices and their triggers was checked; the Skrand roll belongs to another story."
+  },
+  "sources": [
+   "events/apocalypse_events.txt:6-51",
+   "events/apocalypse_events.txt:145-230,264-296",
+   "common/megastructures/05_gateways.txt:321-480"
+  ],
+  "guide": "public/summaries/event-apoc-1.md",
+  "uncertain": [
+   "The origin-specific notice origin.1050 fired next to apoc.10/12 (Galactic Doorstep) is outside this list and was not reviewed."
+  ]
+ }
+}

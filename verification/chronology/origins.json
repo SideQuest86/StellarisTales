@@ -3,14 +3,13 @@
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 61,
-  "docs": 1196,
-  "nodes": 1436,
-  "refs": 240,
-  "crossLinks": 186,
+  "docs": 1195,
+  "nodes": 1443,
+  "refs": 248,
+  "crossLinks": 189,
   "review": {
-    "reviewed": 21,
-    "partial": 4,
-    "unreviewed": 36
+    "reviewed": 32,
+    "unreviewed": 29
   },
   "failures": [],
   "items": [
@@ -90,8 +89,8 @@
       "id": "origin_fear_of_the_dark",
       "title": "黑暗之怖",
       "kind": "origin",
-      "docs": 67,
-      "refs": 18,
+      "docs": 68,
+      "refs": 21,
       "crossLinks": 3,
       "review": "reviewed"
     },
@@ -108,9 +107,9 @@
       "id": "origin_endbringers",
       "title": "终末使者",
       "kind": "origin",
-      "docs": 45,
+      "docs": 44,
       "refs": 0,
-      "crossLinks": 6,
+      "crossLinks": 7,
       "review": "reviewed"
     },
     {
@@ -183,7 +182,7 @@
       "docs": 19,
       "refs": 8,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "origin_clone_army",
@@ -192,16 +191,16 @@
       "docs": 18,
       "refs": 0,
       "crossLinks": 16,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "origin_scion",
       "title": "先辈子弟",
       "kind": "origin",
       "docs": 16,
-      "refs": 0,
+      "refs": 2,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
     },
     {
       "id": "origin_starlit_citadel",
@@ -219,25 +218,16 @@
       "docs": 14,
       "refs": 8,
       "crossLinks": 0,
-      "review": "partial"
-    },
-    {
-      "id": "origin_heirs_of_the_khan",
-      "title": "可汗后裔",
-      "kind": "origin",
-      "docs": 12,
-      "refs": 3,
-      "crossLinks": 4,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_imperial_vassal",
       "title": "帝国封邑",
       "kind": "origin",
       "docs": 12,
-      "refs": 3,
+      "refs": 4,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_forever_cruise",
@@ -246,7 +236,16 @@
       "docs": 11,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
+    },
+    {
+      "id": "origin_heirs_of_the_khan",
+      "title": "可汗后裔",
+      "kind": "origin",
+      "docs": 11,
+      "refs": 3,
+      "crossLinks": 6,
+      "review": "reviewed"
     },
     {
       "id": "origin_riftworld",
@@ -264,16 +263,16 @@
       "docs": 9,
       "refs": 0,
       "crossLinks": 39,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_evolutionary_predators",
       "title": "演化猎手",
       "kind": "origin",
       "docs": 7,
-      "refs": 1,
+      "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_wilderness",
@@ -282,7 +281,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_shroudwalker_apprentice",
@@ -291,7 +290,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "origin_arc_welders",

@@ -13,18 +13,18 @@ A random site: drawn by weight on survey, +15 on habitable planets (common/archa
 一个有鸟类形态的跨维度难民文明“克拉祖拉”的古都。它们在“大厅”里建成了围绕传送门的空间；第二阶段设置标志 found_skravird。
 
 1. 破碎巢穴：破碎的巢穴：鸟类外形的克拉祖拉人，毁灭于五十多万年前
-2. 裂隙残留：裂隙残留：围绕传送门建造的巨大“大厅”；设置 found_skravird（星界丝线小奖励）
+2. 裂隙残留：围绕传送门建造的巨大“大厅”；设置 found_skravird（星界丝线小奖励）
 3. 开了眼了：“开了眼”：克拉祖拉人并非本维度原生，其最高领袖“雅库拉”转世
-4. 威胁者：“威胁者”：黄金时代之后，一个执着于毁灭他们的敌人出现
-5. 最后一次迁徙：“最后一次迁徙”：传奇海军上将带队冒险穿过未经测试的门户，下落不明
+4. 威胁者：黄金时代之后，一个执着于毁灭他们的敌人出现
+5. 最后一次迁徙：传奇海军上将带队冒险穿过未经测试的门户，下落不明
 
 The ancient capital of the Krazura, an avian civilisation of dimensional refugees, built around a portal in a vast Grand Hall. The second stage sets the country flag found_skravird.
 
 1. Broken Nest: broken nest: the avian Krazura, destroyed over half a million years ago
 2. Rift Remnants: rift remnants: the Grand Hall built around a portal; sets found_skravird (a small astral-thread reward)
-3. Open Eyes: Open Eyes: the Krazura were not native; their leader the Yakura reincarnated
-4. The Menace: The Menace: after a golden age, a foe obsessed with their destruction appeared
-5. The Last Migration: The Last Migration: the legendary Admiral's flagship entered an untested Gateway and was never seen again
+3. Open Eyes: the Krazura were not native; their leader the Yakura reincarnated
+4. The Menace: after a golden age, a foe obsessed with their destruction appeared
+5. The Last Migration: the legendary Admiral's flagship entered an untested Gateway and was never seen again
 
 ## 分支与结局 Branches and outcomes
 

@@ -1,0 +1,18 @@
+{
+ "id": "event-fallen-empires-2",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/fallen_empire_events.txt:35-88",
+   "common/on_actions/00_on_actions.txt:3162 on_war_lost"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-fallen-empires-2.md"
+ }
+}

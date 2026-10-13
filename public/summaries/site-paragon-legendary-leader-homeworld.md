@@ -18,11 +18,11 @@ Weight 0: created by the system initializer legendary_leader_last_site (common/s
 4. 幻视报告其一：第一份幻视报告：巨舰降临，宣告审判，钥匙将被收走
 5. 幻视报告其二：第二份报告：一个月的期限和绝望中的求生计划
 6. 幻视之终结：幻视终结：作为“继承者”的基德斯被送入太空，钥匙碎片散落银河
-7. 发掘完成：发掘完成：基德斯再次坐上王座，先人的记忆平静地流入他
+7. 发掘完成：基德斯再次坐上王座，先人的记忆平静地流入他
 
 The Vagrosian administrative world: Keides sits on the Scion's throne and sees how his people were judged by off-world masters, forced to give up their Keys, and sent him into space as a seed. He then files his excavation report.
 
-1. Seat of Power?: Seat of Power? an administrative city of vast squares
+1. Seat of Power?: an administrative city of vast squares
 2. The Vault: a vault of empty cryo-pods and a throne-like pedestal
 3. Forceful Visions: Keides sits on the throne, convulses and wakes
 4. First Vision Report: first vision: a ship descends and announces judgement; the Keys will be taken

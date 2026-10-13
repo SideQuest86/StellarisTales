@@ -13,7 +13,7 @@ When a body is surveyed, hidden ancrel.9999 (on_survey_planet) has a 5/405 chanc
 星球上有精炼材料与放射性残留：来自“毁灭者”的跨维度游牧者曾入侵此地——这里原属“抗争者”联盟的秘密殖民地。
 
 1. 古战场遗址：一方从轨道降下、被地面守军迎击的战场（社会学研究、小型文物）
-2. 被遗忘的怨恨：“被遗忘的怨恨”：毁灭者与抗争者的战争，战果不明（三类研究奖励、中型文物）
+2. 被遗忘的怨恨：毁灭者与抗争者的战争，战果不明（三类研究奖励、中型文物）
 
 Refined material and radiation mark a battle site: extra-dimensional nomads, "The Destroyers", invaded a secret colony of the coalition "Those-who-resist".
 

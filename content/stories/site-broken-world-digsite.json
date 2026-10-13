@@ -1,0 +1,56 @@
+{
+ "id": "site-broken-world-digsite",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.11027",
+    "ancrel.11030"
+   ],
+   "label": {
+    "zh": "对古神的回应",
+    "en": "Answer to the horror"
+   },
+   "labels": [
+    {
+     "zh": "膜拜（受其庇护）",
+     "en": "worship (under its protection)"
+    },
+    {
+     "zh": "拒绝（与其为敌）",
+     "en": "refuse (its enemy)"
+    }
+   ],
+   "note": {
+    "zh": "ancrel.11025 的两个选项。",
+    "en": "The two options of ancrel.11025."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:broken_world_digsite",
+   "kind": "review",
+   "zh": "随机遗址：基础权重10（需要《利维坦》）；不会出现在恒星、气态巨行星、小行星、起始/首都/黑洞星系或格式塔拥有的星球上；全银河最多一处；仅非格式塔帝国可见（common/archaeological_site_types/04_leviathans_arc_sites.txt:3）。",
+   "en": "A random site with base weight 10 (needs Leviathans); never on stars, gas giants, asteroids, starting, capital or black-hole systems, or gestalt-owned bodies; at most one per galaxy; visible to non-gestalt empires only (common/archaeological_site_types/04_leviathans_arc_sites.txt:3)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/04_leviathans_arc_sites.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-broken-world-digsite.md"
+ }
+}

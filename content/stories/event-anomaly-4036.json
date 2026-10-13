@@ -1,0 +1,71 @@
+{
+ "id": "event-anomaly-4036",
+ "family": {
+  "title": {
+   "zh": "恒星异常现象",
+   "en": "Unusual Star Stuff"
+  },
+  "category": "exploration",
+  "start": "event_chains:star_power_chain",
+  "members": [
+   "event_chains:star_power_chain",
+   "anomaly.4037",
+   "anomaly_failure.4037"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "event_chains:star_power_chain",
+   "to": "anomaly.4037",
+   "conditional": true,
+   "label": {
+    "zh": "在候选星系找到那颗恒星（首个40%，或两个都落空后的第二个）",
+    "en": "Find the star in a candidate system (40% at the first, or the second after a miss)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1023 on_entering_system_fleet → anomaly.4036 (hidden, events/anomaly_events_3.txt:925): a fleet of an owner with the chain enters a system with star flag some_system_1/2; each visit rolls 40% anomaly.4037 (and removes the other candidate) or 60% a miss that adds to the counter systems_visited_poi; when the counter completes (second miss) anomaly.4037 is fired anyway (events/anomaly_events_3.txt:950-1058)."
+  },
+  {
+   "from": "event_chains:star_power_chain",
+   "to": "anomaly_failure.4037",
+   "conditional": true,
+   "label": {
+    "zh": "第一个候选星系落空（约60%）",
+    "en": "The first candidate system is a miss (about 60%)"
+   },
+   "evidence": "events/anomaly_events_3.txt:978 / 1036: in the 60% branch, while systems_visited_poi is not yet complete, anomaly_failure.4037 (events/failures.txt:456) is shown instead."
+  }
+ ],
+ "endings": {
+  "anomaly.4038": {
+   "label": {
+    "zh": "炉中之火",
+    "en": "Fire of the Furnace"
+   },
+   "note": {
+    "zh": "项目完成：按当前能源科技推进下一级（裂变→聚变→冷聚变→反物质→零点），已有零点能则获得每月影响力；事件链结束。",
+    "en": "The project completes: it advances the next power tech (fission → fusion → cold fusion → antimatter → zero point) or, with zero-point power, gives monthly influence; the chain ends."
+   },
+   "evidence": "events/anomaly_events_3.txt:1097"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "events/anomaly_events_3.txt:815-925 (anomaly.4035, chain start; story anomaly-sun-rays-cat)",
+   "events/anomaly_events_3.txt:925-1060 (anomaly.4036)",
+   "common/on_actions/00_on_actions.txt:1023 (on_entering_system_fleet)",
+   "events/anomaly_events_3.txt:1062 (anomaly.4037)",
+   "events/failures.txt:456 (anomaly_failure.4037)",
+   "common/special_projects/00_projects_3.txt:94 (ODD_STAR_PROJECT)",
+   "events/anomaly_events_3.txt:1097 (anomaly.4038)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-anomaly-4036.md"
+ }
+}

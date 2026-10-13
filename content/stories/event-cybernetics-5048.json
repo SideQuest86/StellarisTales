@@ -1,0 +1,18 @@
+{
+ "id": "event-cybernetics-5048",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/machine_age_events_2.txt:1712-1743",
+   "common/on_actions/00_on_actions.txt:3396 on_colony_transfer"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-cybernetics-5048.md"
+ }
+}

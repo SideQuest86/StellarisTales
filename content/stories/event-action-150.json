@@ -1,0 +1,82 @@
+{
+ "id": "event-action-150",
+ "family": {
+  "title": {
+   "zh": "银河帝国的战争结果",
+   "en": "Galactic Imperium war results"
+  },
+  "category": "stories",
+  "start": "action.150",
+  "members": [
+   "action.150",
+   "action.151",
+   "action.152",
+   "action.153",
+   "action.154",
+   "action.155",
+   "action.158"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "action.150",
+    "action.151"
+   ],
+   "label": {
+    "zh": "帝国远征",
+    "en": "Imperial Crusade"
+   },
+   "note": {
+    "zh": "胜 / 败。",
+    "en": "Win / lose."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "action.152",
+    "action.153"
+   ],
+   "label": {
+    "zh": "保皇派胜利的内战",
+    "en": "Civil war won by the loyalists"
+   },
+   "note": {
+    "zh": "保皇方 / 叛军方的通知。",
+    "en": "Loyalist / rebel notices."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "action.154",
+    "action.155"
+   ],
+   "label": {
+    "zh": "叛军胜利的内战",
+    "en": "Civil war won by the rebels"
+   },
+   "note": {
+    "zh": "叛军 / 皇帝的通知。",
+    "en": "Rebel / emperor notices."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "帝国远征、银河内战与恢复共同体战争的胜负通知（玩家一方）。",
+   "en": "The win/lose notices of the Imperial Crusade, the galactic civil war and the Restore the Community war (the player's side)."
+  },
+  "sources": [
+   "events/on_action_events_2.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/war_goals/02_event_war_goals.txt"
+  ],
+  "guide": "public/summaries/event-action-150.md"
+ }
+}

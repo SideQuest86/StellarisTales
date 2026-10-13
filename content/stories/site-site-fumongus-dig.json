@@ -1,0 +1,93 @@
+{
+ "id": "site-site-fumongus-dig",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.13130",
+    "ancrel.13135"
+   ],
+   "label": {
+    "zh": "阵列上线的两个版本",
+    "en": "Two versions of the array going online"
+   },
+   "labels": [
+    {
+     "zh": "已有真菌殖民标志",
+     "en": "fumongus_colony_complete set"
+    },
+    {
+     "zh": "没有该标志",
+     "en": "flag not set"
+    }
+   ],
+   "note": {
+    "zh": "隐藏事件 ancrel.13125（13120 之后60天）依标志 fumongus_colony_complete 二选一。",
+    "en": "Hidden ancrel.13125 (60 days after 13120) picks one by the flag fumongus_colony_complete."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.8300",
+    "ancrel.8305",
+    "ancrel.8310",
+    "ancrel.8315"
+   ],
+   "label": {
+    "zh": "真菌僵尸：四种结果",
+    "en": "Fungal zombies: four outcomes"
+   },
+   "labels": [
+    {
+     "zh": "重大挫折",
+     "en": "significant setback"
+    },
+    {
+     "zh": "耽误时间",
+     "en": "causes delays"
+    },
+    {
+     "zh": "有惊无险",
+     "en": "that was close"
+    },
+    {
+     "zh": "花100食物或绕路",
+     "en": "pay 100 food or find a way around"
+    }
+   ],
+   "note": {
+    "zh": "失败池里真菌僵尸的四个事件按 5/25/25/25 的权重各占一项（与敌对野生动物、资源贮藏点同池）。",
+    "en": "The four fungal-zombie events sit in the failure pool at weights 5/25/25/25 (beside hostile wildlife and the resource cache)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_fumongus_dig",
+   "kind": "review",
+   "zh": "遗址权重为0，由星系初始化器 fumongus_init_01 在拥有《远古遗物》时创建（common/solar_system_initializers/special_system_initializers.txt:1698）：一颗干涸的、长满蘑菇的星球。",
+   "en": "Weight 0: created by the system initializer fumongus_init_01 when Ancient Relics is present (common/solar_system_initializers/special_system_initializers.txt:1698): a parched world covered in mushrooms."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/00_base_game_arc_sites.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "common/solar_system_initializers/special_system_initializers.txt",
+   "events/colony_events_2.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-fumongus-dig.md"
+ }
+}

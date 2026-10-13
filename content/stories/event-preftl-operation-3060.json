@@ -1,0 +1,51 @@
+{
+ "id": "event-preftl-operation-3060",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.3061",
+    "preftl_operation.3063"
+   ],
+   "label": {
+    "zh": "A 的结果",
+    "en": "Option A results"
+   },
+   "note": {
+    "zh": "67/33",
+    "en": "67/33"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.3062",
+    "preftl_operation.3064"
+   ],
+   "label": {
+    "zh": "B 的结果",
+    "en": "Option B results"
+   },
+   "note": {
+    "zh": "67/33",
+    "en": "67/33"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "随机插曲：受创",
+   "en": "Interlude: Stricken"
+  },
+  "sources": [
+   "events/first_contact_dlc_operations_events.txt:2994-3438",
+   "common/scripted_effects/espionage_event_effects.txt:2840-3260"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-preftl-operation-3060.md"
+ }
+}

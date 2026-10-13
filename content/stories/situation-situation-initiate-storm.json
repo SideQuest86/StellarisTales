@@ -1,0 +1,69 @@
+{
+ "id": "situation-situation-initiate-storm",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.2010",
+    "cstorms.2015"
+   ],
+   "label": {
+    "zh": "阶段二事件：增压路线 / 过量供给路线",
+    "en": "Stage-2 event: supercharge route / overfeed route"
+   },
+   "note": {
+    "zh": "由 cstorms.2000 的选择设置标志 approach_supercharge_selected 或 approach_overfeed_selected。",
+    "en": "Set by the choice in cstorms.2000 (flags approach_supercharge_selected or approach_overfeed_selected)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.2020",
+    "cstorms.2025",
+    "cstorms.2030"
+   ],
+   "label": {
+    "zh": "增压路线的终结：辐射 / 切断 / 磁化",
+    "en": "Finishers of the supercharge route: irradiate / sever / magnetize"
+   },
+   "note": {
+    "zh": "由 cstorms.2010 选择的取向决定。",
+    "en": "Decided by the approach chosen in cstorms.2010."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.2035",
+    "cstorms.2040",
+    "cstorms.2045"
+   ],
+   "label": {
+    "zh": "过量供给路线的终结：搅动 / 失稳 / 扰乱",
+    "en": "Finishers of the overfeed route: agitate / destabilize / scramble"
+   },
+   "note": {
+    "zh": "由 cstorms.2015 选择的取向决定。",
+    "en": "Decided by the approach chosen in cstorms.2015."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "“聚集风暴”：研究船在宇宙风暴中启动局势，两条路线、六种终结。",
+   "en": "\"Gather the Storm\": a research ship starts the situation at a cosmic storm; two routes and six finishers."
+  },
+  "sources": [
+   "common/situations/07_cosmic_storms_situations.txt",
+   "events/cosmic_storms_situation_events.txt"
+  ],
+  "uncertain": [
+   "The fleet order initiate_cosmic_storm_order appears in the script files only inside the situation definition (the order itself is engine-side), so the exact start cannot be verified in the files."
+  ],
+  "guide": "public/summaries/situation-situation-initiate-storm.md"
+ }
+}

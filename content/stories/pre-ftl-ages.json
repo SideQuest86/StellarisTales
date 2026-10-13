@@ -1,0 +1,30 @@
+{
+ "id": "pre-ftl-ages",
+ "category": "society",
+ "notes": [
+  {
+   "doc": "situations:pre_ftl_tech_progress_situation",
+   "kind": "review",
+   "zh": "审阅注：时代事件在图中都挂在情境下，其实是同一情境的逐轮循环：每次 on_progress_complete → preftl.0 → preftl.199/299/…/999 → set_pre_ftl_age_effect（重新启动情境，`pre_ftl_scripted_effects.txt:9`）。",
+   "en": "Review note: the age events all hang under the situation in the tree but are successive rounds of one looping situation: on_progress_complete → preftl.0 → preftl.199/299/…/999 → set_pre_ftl_age_effect (which restarts the situation, pre_ftl_scripted_effects.txt:9)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "前FTL文明发展情境：23个文档。",
+   "en": "Pre-FTL development situation: 23 docs."
+  },
+  "sources": [
+   "common/situations/03_AI_empire_situations.txt:1-400",
+   "events/first_contact_dlc_situation_events.txt:12-1130",
+   "common/on_actions/00_on_actions.txt:140-200, 563-575"
+  ],
+  "uncertain": [
+   "机器人起义与 awareness.920 的入口条件只按调用图读取。 / The robotic-uprising and awareness.920 entry conditions were read from the call graph only."
+  ],
+  "guide": "public/summaries/pre-ftl-ages.md"
+ }
+}

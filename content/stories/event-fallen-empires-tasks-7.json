@@ -1,0 +1,89 @@
+{
+ "id": "event-fallen-empires-tasks-7",
+ "family": {
+  "title": {
+   "zh": "来自堕落帝国的任务：制止错误行为",
+   "en": "Task: Stop Atrocities"
+  },
+  "category": "stories",
+  "start": "fallen_empires_tasks.8",
+  "members": [
+   "fallen_empires_tasks.7",
+   "fallen_empires_tasks.8",
+   "fallen_empires_tasks.10",
+   "fallen_empires_tasks.11",
+   "fallen_empires_tasks.12",
+   "fallen_empires_tasks.13",
+   "event_chains:fe_stop_atrocity_task_chain"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "fallen_empires_tasks.8",
+   "choice": "fallen_empires_tasks.8.a",
+   "to": "fallen_empires_tasks.10",
+   "conditional": true,
+   "label": {
+    "zh": "7200天计时器到期，且未在战争中",
+    "en": "The 7200-day timer runs out while not at war"
+   },
+   "evidence": "events/fallen_empire_tasks_events.txt:1115-1121,1181-1230 option a sets fe_task_stop_atrocity_timer for 7200 days; fallen_empires_tasks.10 needs the timer gone and is_at_war = no"
+  },
+  {
+   "from": "fallen_empires_tasks.8",
+   "choice": "fallen_empires_tasks.8.a",
+   "to": "fallen_empires_tasks.11",
+   "conditional": true,
+   "label": {
+    "zh": "对象国禁止了清洗（平均10天）",
+    "en": "The target bans purging (mean 10 days)"
+   },
+   "evidence": "events/fallen_empire_tasks_events.txt:1233-1285 trigger: a country with fe_task_stop_atrocity_target now has allows_purge = no; mean_time_to_happen 10 days"
+  },
+  {
+   "from": "fallen_empires_tasks.8",
+   "choice": "fallen_empires_tasks.8.a",
+   "to": "fallen_empires_tasks.13",
+   "conditional": true,
+   "label": {
+    "zh": "我方自己允许清洗（平均10天）",
+    "en": "We ourselves allow purging (mean 10 days)"
+   },
+   "evidence": "events/fallen_empire_tasks_events.txt:1337-1390 trigger: allows_purge = yes for the task-taker; mean_time_to_happen 10 days"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_empires_tasks.10",
+    "fallen_empires_tasks.11",
+    "fallen_empires_tasks.13"
+   ],
+   "label": {
+    "zh": "任务的失败结局",
+    "en": "Failure endings"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/fallen_empire_tasks_events.txt:955-1390",
+   "common/on_actions/00_on_actions.txt:599"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-fallen-empires-tasks-7.md",
+  "merged": [
+   "event-fallen-empires-tasks-10",
+   "event-fallen-empires-tasks-11",
+   "event-fallen-empires-tasks-13"
+  ]
+ }
+}

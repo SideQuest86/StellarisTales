@@ -295,6 +295,14 @@ class Compiler:
                 caller_files[c['to']].add(self.byid[c['from']]['source'])
             else:
                 self.triggers[c['to']].append(c)
+        # Reviewed hidden dispatchers (e.g. game_start.1) behave like on_actions: they fan out to unrelated
+        # content, so each target starts its own story instead of one catch-all.
+        for src in self.hub_review.get('dispatchers', []):
+            if src in self.out:
+                for c in self.out.pop(src):
+                    self.triggers[c['to']].append(c)
+                    callers[c['to']].discard(src)
+                self.report['dispatchers'] += 1
         self.callers = callers
         # Shared helpers (e.g. the generic contact reports, archaeology dig incidents) are not part of their callers.
         self.hubs = {t for t, s in callers.items() if (len(s) >= 10 and len(caller_files[t]) >= 3) or len(s) >= 25}

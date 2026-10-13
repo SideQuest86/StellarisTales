@@ -10,9 +10,9 @@ Fragging, shielding or flooding a holy world (holy_planet modifier), or terrafor
 
 ## 剧情脉络 Story outline
 
-窗口 610/615 按施放者的伦理/文明显示不同选项（灵性、唯物、军国……、集群、吞噬蜂群、终结者、净化者），选项本身无效果；其 after 块设置 holy_world_killed 并向该堕落帝国触发 fallen_empires_awakening.1，使其苏醒并宣战（planet_destruction.611 宣“圣世界战争”）。后续见睡狮苏醒等堕落帝国觉醒故事。
+窗口 610/615 按施放者的伦理/文明显示不同选项（灵性、唯物、军国……、集群、吞噬蜂群、终结者、净化者），选项本身无效果；其 after 块设置 holy_world_killed 并向该堕落帝国触发 fallen_empires_awakening.1，使其苏醒（fallen_empires_awakening.1 令所有玩家收到“睡狮的苏醒”fallen_empires_awakening.2，并在5天后由 planet_destruction.611 宣战，战争名为“…圣地之战”，战争目标为征服，events/fallen_empire_awakening_events.txt:138-144）。后续见“睡狮的苏醒”等堕落帝国觉醒故事。
 
-Windows 610/615 offer options by the perpetrator's ethic or civic (spiritualist, materialist, militarist ... gestalt, devouring swarm, terminator, purifier); the options themselves have no effect. Its after block sets holy_world_killed and fires fallen_empires_awakening.1 at that fallen empire, which awakens and declares war (planet_destruction.611 declares the "Holy World War"). Continues in the fallen-empire awakening stories.
+Windows 610/615 offer options by the perpetrator's ethic or civic (spiritualist, materialist, militarist ... gestalt, devouring swarm, terminator, purifier); the options themselves have no effect. Its after block sets holy_world_killed and fires fallen_empires_awakening.1 at that fallen empire, which awakens (every player gets fallen_empires_awakening.2 "Sleepers Awake" and 5 days later planet_destruction.611 declares the "... Holy World War" with a subjugation war goal, events/fallen_empire_awakening_events.txt:138-144). Continues in the fallen-empire awakening stories.
 
 ## 审阅记录 Review notes
 

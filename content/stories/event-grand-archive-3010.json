@@ -1,0 +1,106 @@
+{
+ "id": "event-grand-archive-3010",
+ "family": {
+  "title": {
+   "zh": "岩居兽",
+   "en": "Cutholoids"
+  },
+  "category": "stories",
+  "start": "grand_archive.3011",
+  "members": [
+   "grand_archive.3008",
+   "grand_archive.3009",
+   "grand_archive.3010",
+   "grand_archive.3011",
+   "grand_archive.3012",
+   "grand_archive.3014",
+   "grand_archive.3015",
+   "grand_archive.3016",
+   "grand_archive.3017",
+   "grand_archive.3018",
+   "grand_archive.3020",
+   "grand_archive.2900",
+   "grand_archive.2905",
+   "event_chains:cutholoid_discovered_chain",
+   "special_projects:HIDDEN_CUTHOLOID_ATTACK_PROJECT",
+   "special_projects:HIDDEN_CUTHOLOID_CAPTURE_PROJECT",
+   "special_projects:RESEARCH_CUTHOLOIDS_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "grand_archive.3011",
+   "choice": "grand_archive.3011.a",
+   "to": "special_projects:HIDDEN_CUTHOLOID_ATTACK_PROJECT",
+   "conditional": true,
+   "label": {
+    "zh": "项目一：派军舰摧毁小行星",
+    "en": "Project one: send a warship to destroy the asteroid"
+   },
+   "evidence": "events/grand_archive_events.txt:3154-3163 grand_archive.3008 enables both projects on the eaten fleet; 04_projects_grand_archive.txt:26-97"
+  },
+  {
+   "from": "grand_archive.3011",
+   "choice": "grand_archive.3011.a",
+   "to": "special_projects:HIDDEN_CUTHOLOID_CAPTURE_PROJECT",
+   "conditional": true,
+   "label": {
+    "zh": "项目二：用科学船捕获小行星",
+    "en": "Project two: capture the asteroid with a science ship"
+   },
+   "evidence": "events/grand_archive_events.txt:3154-3163; 04_projects_grand_archive.txt:100-151 (exclusive with the attack project)"
+  },
+  {
+   "from": "special_projects:HIDDEN_CUTHOLOID_ATTACK_PROJECT",
+   "to": "grand_archive.3016",
+   "conditional": true,
+   "label": {
+    "zh": "击毁伏击的岩居兽后",
+    "en": "After the ambushing Cutholoid is killed"
+   },
+   "evidence": "events/grand_archive_events.txt:3319-3381 on_ship_destroyed hook (common/on_actions/00_on_actions.txt:1431) grand_archive.3014 -> 3015 -> 3016; project on_success spawns the ambusher (04_projects_grand_archive.txt:50-66)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:HIDDEN_CUTHOLOID_ATTACK_PROJECT",
+    "special_projects:HIDDEN_CUTHOLOID_CAPTURE_PROJECT"
+   ],
+   "label": {
+    "zh": "互斥项目",
+    "en": "Exclusive projects"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "grand_archive.3011",
+    "grand_archive.3012"
+   ],
+   "label": {
+    "zh": "首次遭遇：被吞 / 逃脱",
+    "en": "First encounter: eaten / escaped"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/grand_archive_events.txt:3000-3562",
+   "common/special_projects/04_projects_grand_archive.txt:21-151",
+   "common/on_actions/00_on_actions.txt:1169,1431"
+  ],
+  "uncertain": [
+   "Family title taken from grand_archive.2900 \"Cutholoids\"; the chain title has a ship-name variable."
+  ],
+  "guide": "public/summaries/event-grand-archive-3010.md"
+ }
+}

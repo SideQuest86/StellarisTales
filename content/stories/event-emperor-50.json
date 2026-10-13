@@ -1,0 +1,98 @@
+{
+ "id": "event-emperor-50",
+ "family": {
+  "title": {
+   "zh": "帝国议会的法案",
+   "en": "Imperial laws"
+  },
+  "category": "stories",
+  "start": "emperor.50",
+  "members": [
+   "emperor.50",
+   "emperor.55",
+   "emperor.70",
+   "emperor.60",
+   "emperor.350",
+   "emperor.351",
+   "emperor.360",
+   "emperor.371",
+   "emperor.372",
+   "emperor.373",
+   "emperor.374"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "emperor.371",
+   "to": "emperor.372",
+   "conditional": true,
+   "label": {
+    "zh": "选择保卫成员：受害方收到支援通知",
+    "en": "Defend: the victim is told of the support"
+   },
+   "evidence": "events/nemesis_emperor_events.txt:2178-2180 option a fires emperor.372 on victim_country"
+  },
+  {
+   "from": "emperor.371",
+   "to": "emperor.373",
+   "conditional": true,
+   "label": {
+    "zh": "选择保卫成员：攻击方收到宣战通知",
+    "en": "Defend: the attacker is told the emperor intervenes"
+   },
+   "evidence": "events/nemesis_emperor_events.txt:2181-2183 option a fires emperor.373 on attacking_country"
+  },
+  {
+   "from": "emperor.371",
+   "to": "emperor.374",
+   "conditional": true,
+   "label": {
+    "zh": "选择抛弃成员：受害方收到中立声明",
+    "en": "Abandon: the victim is told the emperor stays neutral"
+   },
+   "evidence": "events/nemesis_emperor_events.txt:2223-2225 option b fires emperor.374"
+  },
+  {
+   "from": "emperor.350",
+   "to": "emperor.351",
+   "conditional": false,
+   "label": {
+    "zh": "同一次决议：其他国家收到的通知",
+    "en": "Same resolution: the notice for the other empires"
+   },
+   "evidence": "common/resolutions/01_resolutions_nemesis.txt:3214-3314 resolution_galactic_empire_imperial_crusade fires 350 on the target and 351 on others"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "emperor.372",
+    "emperor.374"
+   ],
+   "label": {
+    "zh": "皇帝的抉择",
+    "en": "The emperor's choice"
+   },
+   "note": {
+    "zh": "保卫或抛弃，受害方得到不同通知。",
+    "en": "Defend or abandon; the victim gets different notices."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "银河帝国成立后的帝国决议：帝国舰队、军团、安全局、特许状、远征、帝国和平，以及皇帝是否出兵保护成员。",
+   "en": "Imperial resolutions after the Imperium exists: the Armada, the Legions, the Security Directorate, charters, crusades, Pax Galactica, and whether the emperor defends a member."
+  },
+  "sources": [
+   "events/nemesis_emperor_events.txt",
+   "common/resolutions/01_resolutions_nemesis.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-emperor-50.md"
+ }
+}

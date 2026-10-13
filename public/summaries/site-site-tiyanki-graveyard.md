@@ -26,8 +26,8 @@ A "planet" built entirely of dead Tiyanki; the dig follows a flesh labyrinth to 
 
 ## 分支与结局 Branches and outcomes
 
-- 主脑 / Mother Brain：主脑完好：可解剖取得5000能量、保持观察、供奉、卖给馆长或研究再生（部分选项取决于帝国） / the core is intact: dissect it (5000 energy), watch it grow, leave it sacred, sell it to the Curators or study its regeneration (options depend on the empire)
-- 主脑 / Mother Brain：主脑已被我们的采矿设备摧毁，整个坟场将再死一次（只有研究奖励） / the core was destroyed by our own mining equipment; the mound will die a second time (research reward only)
+- 主脑 / Mother Brain：完好：可解剖取得5000能量、保持观察、供奉、卖给馆长或研究再生（部分选项取决于帝国） / the core is intact: dissect it (5000 energy), watch it grow, leave it sacred, sell it to the Curators or study its regeneration (options depend on the empire)
+- 主脑 / Mother Brain：已被我们的采矿设备摧毁，整个坟场将再死一次（只有研究奖励） / the core was destroyed by our own mining equipment; the mound will die a second time (research reward only)
 - 掷骰失败时从专属池抽取：争论的考古学家8055、装备故障8070、无影无踪8075、环境污染14910（各权重10）；14910 让科学家被墙体吞没并获得“偏执”特质，是本遗址的专属失败事件。 / Failed rolls draw from the site pool: bickering archaeologists 8055, equipment malfunction 8070, without a trace 8075, environmental contamination 14910 (weight 10 each); 14910 (the scientist half-fused into a wall, trait Paranoid) is this site's own failure event.
 
 ## 条件与文明差异 Conditions and variants

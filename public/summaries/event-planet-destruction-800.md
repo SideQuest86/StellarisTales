@@ -4,7 +4,7 @@
 
 ## 如何开始 How it starts
 
-玩家用巨像的“毒化者（Toxifier）”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:146-150），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.801。星球不能是栖息地或环世界。
+玩家用巨像的“毒流天降”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:146-150），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.801。星球不能是栖息地或环世界。
 
 When the player's Colossus fires "Toxifier" at a planet (common/on_actions/01_planet_destruction.txt:146-150) the hidden dispatcher fires; if the planet has an owner that is not the firing country, a narrative window planet_destruction.801 is shown to the firing player. The planet may not be a habitat or ringworld.
 

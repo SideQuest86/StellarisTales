@@ -1,0 +1,112 @@
+{
+ "id": "event-anomaly-3115",
+ "family": {
+  "title": {
+   "zh": "漂流的战场",
+   "en": "Drifting Battlefield"
+  },
+  "category": "exploration",
+  "start": "event_chains:wrecked_fleet_chain",
+  "members": [
+   "event_chains:wrecked_fleet_chain",
+   "anomaly.3115",
+   "anomaly.3114",
+   "anomaly.3120"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "event_chains:wrecked_fleet_chain",
+   "to": "anomaly.3115",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入废弃舰队所在的系统（约60%）",
+    "en": "A fleet enters the wrecked-fleet system (about 60%)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:992 on_entering_system_fleet → anomaly.3115 (events/anomaly_events_2.txt:3255): the system has wrecked_fleet_system and the owner has the chain and country flag wrecked_fleet, rolled with 60% in anomaly.3113 option b (events/anomaly_events_2.txt:3042-3045)."
+  },
+  {
+   "from": "event_chains:wrecked_fleet_chain",
+   "to": "anomaly.3114",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入已被海盗占据的系统（约40%）",
+    "en": "A fleet enters the system already taken by pirates (about 40%)"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:991 on_entering_system_fleet → anomaly.3114 (events/anomaly_events_2.txt:3086): the owner has the chain and country flag wrecker_pirates (the other 40% of the roll in anomaly.3113 option b)."
+  },
+  {
+   "from": "anomaly.3114",
+   "to": "anomaly.3120",
+   "conditional": true,
+   "label": {
+    "zh": "击毁拾荒者海盗基地",
+    "en": "Destroy the Wreckers' base"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1631 on_fleet_destroyed_perp → anomaly.3120 (events/anomaly_events_2.txt:3388): the destroyed fleet has wrecker_base_flag and the relation flag wrecker_relation exists (set when 3114 creates the Wreckers)."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.3115",
+    "anomaly.3114"
+   ],
+   "label": {
+    "zh": "战场原样或被海盗占据",
+    "en": "Untouched battlefield or taken by pirates"
+   },
+   "note": {
+    "zh": "anomaly.3113 的选项b在开启链时掷骰：60% 设置 wrecked_fleet（3115 路线），40% 设置 wrecker_pirates（3114 路线）。",
+    "en": "Option b of anomaly.3113 rolls when the chain starts: 60% sets wrecked_fleet (the 3115 route), 40% sets wrecker_pirates (the 3114 route)."
+   }
+  }
+ ],
+ "endings": {
+  "anomaly.3116": {
+   "label": {
+    "zh": "舰队被征用",
+    "en": "Fleet commandeered"
+   },
+   "note": {
+    "zh": "项目完成后得到古老联盟的主力舰队；事件链计数 battlefield_located +1。",
+    "en": "The project yields the ancient alliance's main fleet; the chain counter battlefield_located +1."
+   },
+   "evidence": "events/anomaly_events_2.txt:3306"
+  },
+  "anomaly.3120": {
+   "label": {
+    "zh": "剿灭海盗",
+    "en": "Pirates destroyed"
+   },
+   "note": {
+    "zh": "击毁海盗基地后的奖励（每月矿物，已有或开启 tech_cruisers 研究）。",
+    "en": "Reward for destroying the pirate base (monthly minerals, tech_cruisers progress or option)."
+   },
+   "evidence": "events/anomaly_events_2.txt:3388"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "events/anomaly_events_2.txt:3016-3085 (anomaly.3113, chain start; story anomaly-gaia-record-cat)",
+   "events/anomaly_events_2.txt:3086 (anomaly.3114)",
+   "events/anomaly_events_2.txt:3255 (anomaly.3115)",
+   "common/special_projects/00_projects_2.txt:709 (WRECKED_FLEET_2)",
+   "events/anomaly_events_2.txt:3306 (anomaly.3116)",
+   "events/anomaly_events_2.txt:3388 (anomaly.3120)",
+   "events/anomaly_events_2.txt:3470 (anomaly.3121)",
+   "common/on_actions/00_on_actions.txt:991-992 (on_entering_system_fleet)",
+   "common/on_actions/00_on_actions.txt:1631 (on_fleet_destroyed_perp)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-anomaly-3115.md"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "id": "event-operation-4000",
+ "family": {
+  "title": {
+   "zh": "天灾信标",
+   "en": "Crisis Beacon"
+  },
+  "category": "stories",
+  "start": "operation.4000",
+  "members": [
+   "operation.4000",
+   "operation.4001",
+   "operation.4002",
+   "operation.4005",
+   "operation.4010"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "operation.4000",
+   "to": "operation.4001",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:831 operation type operation_crisis_beacon: stage events in order 4000, 4001, 4002; each stage fires its event when its progress completes"
+  },
+  {
+   "from": "operation.4001",
+   "to": "operation.4002",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:831 operation type operation_crisis_beacon: stage events in order 4000, 4001, 4002; each stage fires its event when its progress completes"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "间谍行动“天灾信标”的阶段事件、结局以及相关通知。",
+   "en": "The espionage operation Crisis Beacon: stage events, finale and related notices."
+  },
+  "sources": [
+   "events/nemesis_operations_events_1.txt",
+   "common/espionage_operation_types/operations.txt"
+  ],
+  "guide": "public/summaries/event-operation-4000.md"
+ }
+}

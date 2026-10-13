@@ -14,7 +14,7 @@ When a body is surveyed, hidden ancrel.9999 (on_survey_planet) has a 5/405 chanc
 
 1. 地下巨兽：化石是巨型节肢动物，体内嵌着人造物的痕迹
 2. 失落城镇：体内是数十万身高一米的工具使用者的城市
-3. 宿主：宿主与居民的关系：腐蚀性气体缩短了居民寿命（殖民科技、突击艇科技选项、社会学研究）
+3. 宿主：与居民的关系：腐蚀性气体缩短了居民寿命（殖民科技、突击艇科技选项、社会学研究）
 
 The giant spiralling hollows in the crust are the fossil of a huge arthropod, and a pre-Bronze-Age city once grew inside its digestive tract.
 

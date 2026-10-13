@@ -1,0 +1,53 @@
+{
+ "id": "event-operation-1000",
+ "family": {
+  "title": {
+   "zh": "招募线人",
+   "en": "Acquire Asset"
+  },
+  "category": "stories",
+  "start": "operation.1000",
+  "members": [
+   "operation.1000",
+   "operation.1001",
+   "operation.1002",
+   "operation.1006"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "operation.1000",
+   "to": "operation.1001",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:280 operation type operation_acquire_asset: stage events in order 1000, 1001, 1002; each stage fires its event when its progress completes"
+  },
+  {
+   "from": "operation.1001",
+   "to": "operation.1002",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:280 operation type operation_acquire_asset: stage events in order 1000, 1001, 1002; each stage fires its event when its progress completes"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "间谍行动“招募线人”的阶段事件、结局以及相关通知。",
+   "en": "The espionage operation Acquire Asset: stage events, finale and related notices."
+  },
+  "sources": [
+   "events/nemesis_operations_events_1.txt",
+   "common/espionage_operation_types/operations.txt"
+  ],
+  "guide": "public/summaries/event-operation-1000.md"
+ }
+}

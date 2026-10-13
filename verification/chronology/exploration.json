@@ -2,15 +2,15 @@
   "category": "exploration",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 319,
-  "docs": 1468,
-  "nodes": 1647,
-  "refs": 179,
-  "crossLinks": 271,
+  "stories": 312,
+  "docs": 1460,
+  "nodes": 1636,
+  "refs": 176,
+  "crossLinks": 282,
   "review": {
-    "reviewed": 287,
+    "reviewed": 299,
     "partial": 2,
-    "unreviewed": 30
+    "unreviewed": 11
   },
   "failures": [],
   "items": [
@@ -52,7 +52,7 @@
     },
     {
       "id": "event-distar-5054",
-      "title": "神秘货舱",
+      "title": "神秘容器",
       "kind": "family",
       "docs": 18,
       "refs": 2,
@@ -123,6 +123,24 @@
       "review": "reviewed"
     },
     {
+      "id": "event-anomaly-142",
+      "title": "古神神殿",
+      "kind": "family",
+      "docs": 11,
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-anomaly-3095",
+      "title": "星际绑架者",
+      "kind": "family",
+      "docs": 11,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "anomaly-time-loop-world",
       "title": "屏障星球",
       "kind": "family",
@@ -159,15 +177,6 @@
       "review": "reviewed"
     },
     {
-      "id": "project-the-composer-of-strands-fc-project",
-      "title": "生命之织缕",
-      "kind": "family",
-      "docs": 7,
-      "refs": 3,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
       "id": "anomaly-distar-flare-cat",
       "title": "超强耀斑",
       "kind": "family",
@@ -177,12 +186,30 @@
       "review": "reviewed"
     },
     {
+      "id": "event-anomaly-3115",
+      "title": "漂流的战场",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "reviewed"
+    },
+    {
       "id": "anomaly-distar-clone-cat",
       "title": "可疑的舱体",
       "kind": "family",
       "docs": 5,
       "refs": 1,
       "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-anomaly-4036",
+      "title": "恒星异常现象",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -215,6 +242,15 @@
     {
       "id": "project-the-bladeless-sword-fc-project",
       "title": "空洞之点尖",
+      "kind": "family",
+      "docs": 5,
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "project-the-composer-of-strands-fc-project",
+      "title": "生命之织缕",
       "kind": "family",
       "docs": 5,
       "refs": 2,
@@ -321,6 +357,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-anomaly-96",
+      "title": "地球大陆",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-anomaly-6660",
       "title": "异常状况",
       "kind": "family",
@@ -381,7 +426,7 @@
       "docs": 15,
       "refs": 8,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-rapid-desertification-cat",
@@ -534,7 +579,7 @@
       "docs": 9,
       "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-but-they-are-cute-category",
@@ -600,26 +645,8 @@
       "review": "reviewed"
     },
     {
-      "id": "anomaly-sun-rays-cat",
-      "title": "令人疑惑的宇宙射线",
-      "kind": "anomaly",
-      "docs": 8,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
       "id": "anomaly-ubume-baby-cat",
       "title": "奇怪的残骸",
-      "kind": "anomaly",
-      "docs": 8,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "anomaly-uhb-buoy-cat",
-      "title": "多普勒效应",
       "kind": "anomaly",
       "docs": 8,
       "refs": 0,
@@ -632,15 +659,6 @@
       "kind": "anomaly",
       "docs": 7,
       "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "anomaly-gaia-record-cat",
-      "title": "破釜沉舟",
-      "kind": "anomaly",
-      "docs": 7,
-      "refs": 1,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -663,6 +681,15 @@
       "review": "reviewed"
     },
     {
+      "id": "anomaly-uhb-buoy-cat",
+      "title": "多普勒效应",
+      "kind": "anomaly",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
       "id": "event-distar-1999",
       "title": "研究智慧海洋",
       "kind": "event",
@@ -678,15 +705,6 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "anomaly-ast-debris-field-1-cat",
-      "title": "残骸场",
-      "kind": "anomaly",
-      "docs": 6,
-      "refs": 1,
-      "crossLinks": 2,
       "review": "reviewed"
     },
     {
@@ -714,6 +732,15 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-gaia-record-cat",
+      "title": "破釜沉舟",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 2,
       "review": "reviewed"
     },
     {
@@ -777,6 +804,15 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-ast-debris-field-1-cat",
+      "title": "残骸场",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 4,
       "review": "reviewed"
     },
     {
@@ -1014,15 +1050,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-anomaly-3101",
-      "title": "星际绑架者：捡拾碎片",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-abandoned-outpost-category",
       "title": "废弃观测站",
       "kind": "anomaly",
@@ -1038,7 +1065,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-ast-crater-cat",
@@ -1311,42 +1338,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-anomaly-142",
-      "title": "古神：接近恩赐女神",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-anomaly-143",
-      "title": "古神：接近勇气之神",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-anomaly-144",
-      "title": "古神：接近洞察女神",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-anomaly-4036",
-      "title": "炉中之火",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "anomaly-aerostat-gasgiant-category",
       "title": "飞行器结构",
       "kind": "anomaly",
@@ -1362,7 +1353,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-alpha-centauri-cat",
@@ -1370,15 +1361,6 @@
       "kind": "anomaly",
       "docs": 3,
       "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "anomaly-ast-shrine-1-cat",
-      "title": "被雕琢的小行星",
-      "kind": "anomaly",
-      "docs": 3,
-      "refs": 1,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -1554,6 +1536,15 @@
       "review": "reviewed"
     },
     {
+      "id": "anomaly-sun-rays-cat",
+      "title": "令人疑惑的宇宙射线",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 4,
+      "review": "reviewed"
+    },
+    {
       "id": "anomaly-survival-pod-warm-cat",
       "title": "改造的外勤站",
       "kind": "anomaly",
@@ -1590,24 +1581,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-anomaly-3097",
-      "title": "星际绑架者：尘归尘，土归土",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-anomaly-3115",
-      "title": "漂流的舰队",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "project-physics-technology-calling-project",
       "title": "知识的召唤",
       "kind": "project",
@@ -1623,7 +1596,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-alien-life-cat",
@@ -1668,6 +1641,15 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "anomaly-ast-shrine-1-cat",
+      "title": "被雕琢的小行星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 2,
       "review": "reviewed"
     },
     {
@@ -2652,15 +2634,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-anomaly-3095",
-      "title": "星际绑架者：最佳计划",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-anomaly-4171",
       "title": "失败",
       "kind": "event",
@@ -2751,40 +2724,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-anomaly-106",
-      "title": "地球大陆",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-anomaly-2574",
       "title": "发现环境改造候选",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-anomaly-3114",
-      "title": "海盗暗涌",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-anomaly-3120",
-      "title": "剿灭海盗",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-anomaly-6725",
@@ -2803,15 +2749,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-anomaly-96",
-      "title": "地球大陆",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-distar-13060",

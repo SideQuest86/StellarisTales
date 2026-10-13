@@ -1,0 +1,36 @@
+{
+ "id": "event-preftl-operation-3000",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.3002",
+    "preftl_operation.3003"
+   ],
+   "label": {
+    "zh": "选项C的两种结果",
+    "en": "Two results of option C"
+   },
+   "note": {
+    "zh": "隐藏随机各 50%。",
+    "en": "Hidden roll, 50% each."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "随机插曲：巫术！",
+   "en": "Interlude: Sorcery!"
+  },
+  "sources": [
+   "events/first_contact_dlc_operations_events.txt:1558-1810",
+   "common/scripted_effects/espionage_event_effects.txt:2840-3260"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-preftl-operation-3000.md"
+ }
+}

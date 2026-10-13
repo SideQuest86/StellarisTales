@@ -1,0 +1,76 @@
+{
+ "id": "event-machine-age-4000",
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "machine_age.4110",
+    "machine_age.4130",
+    "machine_age.4140",
+    "machine_age.4150"
+   ],
+   "label": {
+    "zh": "阶段一：纳米机器人研究",
+    "en": "Stage 1: nanite research"
+   },
+   "note": {
+    "zh": "4110（进度≥50）选择工程投入档位（max/med/min），之后进度≥200时按档位出现 4130 / 4140 / 4150 之一。",
+    "en": "4110 (progress >= 50) picks the engineering investment tier (max / med / min); at progress >= 200 one of 4130 / 4140 / 4150 follows by tier."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "machine_age.4230",
+    "machine_age.4240",
+    "machine_age.4250"
+   ],
+   "label": {
+    "zh": "阶段二：模块化研究",
+    "en": "Stage 2: modularity research"
+   },
+   "note": {
+    "zh": "4210（进度≥280）选择社会投入档位，进度≥480时出现 4230 / 4240 / 4250 之一。",
+    "en": "4210 (progress >= 280) picks the society tier; at progress >= 480 one of 4230 / 4240 / 4250 appears."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "machine_age.4330",
+    "machine_age.4340",
+    "machine_age.4350"
+   ],
+   "label": {
+    "zh": "阶段三：虚拟化研究",
+    "en": "Stage 3: virtuality research"
+   },
+   "note": {
+    "zh": "4310（进度≥520）选择物理投入档位，进度≥720时出现 4330 / 4340 / 4350 之一。",
+    "en": "4310 (progress >= 520) picks the physics tier; at progress >= 720 one of 4330 / 4340 / 4350 appears."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "machine_age.4400",
+   "kind": "review",
+   "zh": "4400「新形态」：选择纳米科技、模块化或虚拟化其一，设国家标志 transformation_*；4490（进度≥850）按此标志给出资源并设置回收/丢弃标志；4005 完成时解锁对应传统。",
+   "en": "4400 \"A New Form\": choose nanotech, modularity or virtuality (country flag transformation_*); 4490 (progress >= 850) gives the matching resource and sets the recycle/discard flag; 4005 unlocks the matching traditions on completion."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "机器时代“转变”局势：四个阶段、各阶段研究抉择与每月通知事件、最终形态。",
+   "en": "The Machine Age \"Transformation\" situation: four stages, the research choice and monthly notification events of each stage, and the final form."
+  },
+  "sources": [
+   "common/situations/08_machine_age_situations.txt",
+   "events/machine_age_situation_events_3.txt"
+  ],
+  "guide": "public/summaries/event-machine-age-4000.md"
+ }
+}

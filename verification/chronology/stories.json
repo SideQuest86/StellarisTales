@@ -2,15 +2,15 @@
   "category": "stories",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 596,
-  "docs": 2172,
-  "nodes": 3402,
-  "refs": 1230,
-  "crossLinks": 255,
+  "stories": 531,
+  "docs": 2144,
+  "nodes": 3383,
+  "refs": 1239,
+  "crossLinks": 207,
   "review": {
-    "reviewed": 339,
-    "partial": 2,
-    "unreviewed": 255
+    "reviewed": 423,
+    "partial": 1,
+    "unreviewed": 107
   },
   "failures": [],
   "items": [
@@ -60,12 +60,30 @@
       "review": "reviewed"
     },
     {
+      "id": "event-crime-50",
+      "title": "恶贯满盈",
+      "kind": "family",
+      "docs": 30,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-infernals-10",
+      "title": "令人担忧的趋势",
+      "kind": "family",
+      "docs": 29,
+      "refs": 17,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "great-khan",
       "title": "大可汗",
       "kind": "family",
-      "docs": 27,
+      "docs": 26,
       "refs": 3,
-      "crossLinks": 0,
+      "crossLinks": 1,
       "review": "reviewed"
     },
     {
@@ -78,12 +96,30 @@
       "review": "reviewed"
     },
     {
+      "id": "event-fallen-machine-empire-10",
+      "title": "看守者的任务",
+      "kind": "family",
+      "docs": 23,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-country-200",
       "title": "激进信徒",
       "kind": "family",
       "docs": 22,
       "refs": 8,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-namarian-3",
+      "title": "银河游牧民",
+      "kind": "family",
+      "docs": 22,
+      "refs": 17,
+      "crossLinks": 1,
       "review": "reviewed"
     },
     {
@@ -110,6 +146,15 @@
       "kind": "family",
       "docs": 19,
       "refs": 7,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-infernals-2500",
+      "title": "宇宙黎明",
+      "kind": "family",
+      "docs": 19,
+      "refs": 2,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -141,11 +186,47 @@
       "review": "reviewed"
     },
     {
+      "id": "event-operation-3000",
+      "title": "诋毁运动",
+      "kind": "family",
+      "docs": 17,
+      "refs": 7,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-emperor-150",
+      "title": "银河帝国的终结",
+      "kind": "family",
+      "docs": 15,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-grand-archive-3010",
+      "title": "岩居兽",
+      "kind": "family",
+      "docs": 12,
+      "refs": 2,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
       "id": "event-country-250",
       "title": "追寻风信子号",
       "kind": "family",
       "docs": 11,
       "refs": 2,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-emperor-50",
+      "title": "帝国议会的法案",
+      "kind": "family",
+      "docs": 11,
+      "refs": 3,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -174,6 +255,15 @@
       "docs": 9,
       "refs": 2,
       "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cara-333",
+      "title": "行商联盟",
+      "kind": "family",
+      "docs": 8,
+      "refs": 14,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -222,21 +312,39 @@
       "review": "reviewed"
     },
     {
+      "id": "event-action-150",
+      "title": "银河帝国的战争结果",
+      "kind": "family",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-emperor-499",
+      "title": "银河帝国的崛起",
+      "kind": "family",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-operation-2000",
+      "title": "破坏恒星基地设施",
+      "kind": "family",
+      "docs": 7,
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-utopia-2000",
       "title": "环形世界",
       "kind": "family",
       "docs": 7,
       "refs": 0,
       "crossLinks": 1,
-      "review": "reviewed"
-    },
-    {
-      "id": "event-utopia-2600",
-      "title": "心胜于物",
-      "kind": "family",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 2,
       "review": "reviewed"
     },
     {
@@ -263,6 +371,33 @@
       "kind": "family",
       "docs": 6,
       "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cara-1010",
+      "title": "行商舰队：范格利集团",
+      "kind": "family",
+      "docs": 6,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cara-2010",
+      "title": "行商舰队：拜金教团",
+      "kind": "family",
+      "docs": 6,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-cara-3010",
+      "title": "行商舰队：拉奇工业公司",
+      "kind": "family",
+      "docs": 6,
+      "refs": 1,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -294,6 +429,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-operation-1020",
+      "title": "窃取科技",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-arkship-140",
       "title": "永恒合唱",
       "kind": "family",
@@ -305,6 +449,24 @@
     {
       "id": "event-bio-800",
       "title": "准备入侵",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-fallen-empires-tasks-14",
+      "title": "来自堕落帝国的任务：阻止人工智能研究",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-fallen-empires-tasks-7",
+      "title": "来自堕落帝国的任务：制止错误行为",
       "kind": "family",
       "docs": 5,
       "refs": 0,
@@ -339,12 +501,30 @@
       "review": "reviewed"
     },
     {
+      "id": "event-operation-4000",
+      "title": "天灾信标",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-over-1",
       "title": "量子弹弓",
       "kind": "family",
       "docs": 5,
       "refs": 0,
       "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-utopia-2600",
+      "title": "心胜于物",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 4,
       "review": "reviewed"
     },
     {
@@ -393,15 +573,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-grand-archive-3014",
-      "title": "令人不快的意外",
-      "kind": "family",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
       "id": "event-grand-archive-500",
       "title": "策展人",
       "kind": "family",
@@ -411,12 +582,30 @@
       "review": "reviewed"
     },
     {
-      "id": "event-planet-destruction-600",
-      "title": "圣地",
+      "id": "event-operation-1000",
+      "title": "招募线人",
       "kind": "family",
       "docs": 4,
       "refs": 0,
-      "crossLinks": 1,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-apoc-1",
+      "title": "遗弃星门",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-apoc-11",
+      "title": "星门建设完成",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -438,13 +627,22 @@
       "review": "reviewed"
     },
     {
-      "id": "event-fallen-empires-awakening-4",
-      "title": "星河守护者",
+      "id": "event-cara-970",
+      "title": "银河之星",
       "kind": "family",
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "partial"
+      "review": "reviewed"
+    },
+    {
+      "id": "event-communications-spread-1",
+      "title": "通讯截获",
+      "kind": "family",
+      "docs": 3,
+      "refs": 1,
+      "crossLinks": 3,
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-2102",
@@ -465,8 +663,35 @@
       "review": "reviewed"
     },
     {
+      "id": "event-marauder-505",
+      "title": "大可汗战败",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-nomads-3050",
       "title": "囚犯登舰",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-plant-100",
+      "title": "田园至臻",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-story-330",
+      "title": "古代矿石处理中心",
       "kind": "family",
       "docs": 3,
       "refs": 0,
@@ -591,8 +816,26 @@
       "review": "reviewed"
     },
     {
+      "id": "event-action-96",
+      "title": "银河市场的诞生",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
       "id": "event-cstorms-1770",
       "title": "不飞之羽",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-fallen-empires-awakening-4",
+      "title": "星河守护者",
       "kind": "family",
       "docs": 2,
       "refs": 0,
@@ -627,6 +870,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-planet-destruction-600",
+      "title": "圣地",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "reviewed"
+    },
+    {
       "id": "event-shroud-4190",
       "title": "灵能光环逼近",
       "kind": "family",
@@ -645,10 +897,28 @@
       "review": "reviewed"
     },
     {
+      "id": "event-story-220",
+      "title": "水晶球",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-strange-worlds-1045",
       "title": "轨道残骸",
       "kind": "family",
       "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-marauder-511",
+      "title": "大可汗之死",
+      "kind": "family",
+      "docs": 1,
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
@@ -661,15 +931,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-infernals-10",
-      "title": "令人担忧的趋势",
-      "kind": "event",
-      "docs": 36,
-      "refs": 4,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-utopia-2500",
@@ -690,15 +951,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-crime-50",
-      "title": "[Root.GetName]的受贿官员",
-      "kind": "event",
-      "docs": 28,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-syndaw-400",
       "title": "计算超频",
       "kind": "event",
@@ -714,7 +966,7 @@
       "docs": 26,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-700",
@@ -753,24 +1005,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-namarian-3",
-      "title": "星海游牧民",
-      "kind": "event",
-      "docs": 17,
-      "refs": 17,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-operation-3000",
-      "title": "识别目标",
-      "kind": "event",
-      "docs": 17,
-      "refs": 7,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-paragon-549",
       "title": "一位伟大领袖之死",
       "kind": "event",
@@ -787,24 +1021,6 @@
       "refs": 7,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-game-start-1-x",
-      "title": "[Root.Capital.GetName]上的升格仪式",
-      "kind": "event",
-      "docs": 13,
-      "refs": 1,
-      "crossLinks": 107,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-infernals-2150",
-      "title": "神秘开采站",
-      "kind": "event",
-      "docs": 12,
-      "refs": 14,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-arkship-1240",
@@ -894,7 +1110,7 @@
       "docs": 10,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1800",
@@ -903,15 +1119,6 @@
       "docs": 10,
       "refs": 7,
       "crossLinks": 0,
-      "review": "reviewed"
-    },
-    {
-      "id": "event-marauder-4",
-      "title": "[From.GetName]的末日",
-      "kind": "event",
-      "docs": 10,
-      "refs": 0,
-      "crossLinks": 4,
       "review": "reviewed"
     },
     {
@@ -942,13 +1149,22 @@
       "review": "reviewed"
     },
     {
+      "id": "event-marauder-4",
+      "title": "[From.GetName]的末日",
+      "kind": "event",
+      "docs": 9,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "reviewed"
+    },
+    {
       "id": "event-operation-5010",
       "title": "被[patrol_drone.GetNamePlural]拘押",
       "kind": "event",
       "docs": 9,
       "refs": 7,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1120",
@@ -984,7 +1200,7 @@
       "docs": 8,
       "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-5045",
@@ -993,25 +1209,7 @@
       "docs": 8,
       "refs": 5,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-96",
-      "title": "泛星系贸易市场的诞生",
-      "kind": "event",
-      "docs": 7,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-333",
-      "title": "行商联盟",
-      "kind": "event",
-      "docs": 7,
-      "refs": 14,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-5",
@@ -1023,39 +1221,12 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-emperor-150",
-      "title": "粉碎叛乱！",
-      "kind": "event",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-emperor-499",
-      "title": "帝国海军",
-      "kind": "event",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-galactic-features-298",
       "title": "屏障星球",
       "kind": "event",
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-3010",
-      "title": "救回[this.GetName]",
-      "kind": "event",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
@@ -1075,15 +1246,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-operation-2000",
-      "title": "接近[target.solar_system.GetName]的目标",
-      "kind": "event",
-      "docs": 7,
-      "refs": 2,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-operation-6300",
@@ -1155,16 +1317,7 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-operation-1020",
-      "title": "搜集领袖",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-6200",
@@ -1209,7 +1362,7 @@
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-65",
@@ -1230,22 +1383,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-operation-4000",
-      "title": "小队待命",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-operation-5050",
       "title": "令人讨厌的反制措施",
       "kind": "event",
       "docs": 5,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-6000",
@@ -1362,7 +1506,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-central-50",
@@ -1410,24 +1554,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-emperor-200",
-      "title": "星海帝国的陨落",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-emperor-370",
-      "title": "帝国成员国受到攻击！",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-extreme-frontiers-1533",
       "title": "科伯恩公司无人机",
       "kind": "event",
@@ -1452,7 +1578,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-infernals-3050",
@@ -1461,7 +1587,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-8000",
@@ -1473,31 +1599,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-operation-1000",
-      "title": "动员特工",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-operation-5000",
-      "title": "失去联络",
-      "kind": "event",
-      "docs": 4,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-operation-5025",
       "title": "有毒的现场作业",
       "kind": "event",
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-5030",
@@ -1506,7 +1614,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-6250",
@@ -1668,7 +1776,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-central-2",
@@ -1698,35 +1806,8 @@
       "review": "reviewed"
     },
     {
-      "id": "event-emperor-300",
-      "title": "帝国的陷落",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-envoy-events-16",
       "title": "盟友间的争端",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-grand-archive-2901",
-      "title": "岩居兽",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "reviewed"
-    },
-    {
-      "id": "event-marauder-505",
-      "title": "大可汗遭遇战败",
       "kind": "event",
       "docs": 3,
       "refs": 0,
@@ -1740,7 +1821,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-nomads-4700",
@@ -1752,13 +1833,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-operation-5015",
-      "title": "多相力场",
+      "id": "event-operation-5000",
+      "title": "失去联络",
       "kind": "event",
       "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "refs": 1,
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "event-operation-5040",
@@ -1767,7 +1848,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-5055",
@@ -1776,7 +1857,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-8000",
@@ -1941,24 +2022,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-apoc-10",
-      "title": "重新激活星门",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-apoc-11",
-      "title": "星门建设完成",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-arkship-1090",
       "title": "巨兽的游乐场",
       "kind": "event",
@@ -1995,94 +2058,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-cara-1002",
-      "title": "已摧毁范格利集团",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-1010",
-      "title": "行商舰队：范格利集团",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-1020",
-      "title": "行商舰队：范格利集团",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-2002",
-      "title": "已摧毁拜金教团",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-2010",
-      "title": "行商舰队：拜金教团",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-2020",
-      "title": "行商舰队：拜金教团",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-3002",
-      "title": "已摧毁拉奇工业公司",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-3010",
-      "title": "行商舰队：拉奇工业公司",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-3020",
-      "title": "行商舰队：拉奇工业公司",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-cara-4040",
       "title": "行商：热烈欢迎！",
       "kind": "event",
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-central-19",
@@ -2094,31 +2076,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-communications-spread-1",
-      "title": "通讯截获",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-communications-spread-3",
-      "title": "通讯截获",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-crime-1000",
       "title": "在[Root.GetName]上的分部被关闭",
       "kind": "event",
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-8100",
@@ -2157,15 +2121,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-emperor-350",
-      "title": "帝国以行动反对我们",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-envoy-events-1001",
       "title": "无礼的[envoy_source.GetAdj]特使",
       "kind": "event",
@@ -2186,60 +2141,6 @@
     {
       "id": "event-extreme-frontiers-1430",
       "title": "新布拉图雅",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-empires-tasks-14",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-empires-tasks-7",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-40",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-50",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-60",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-70",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2310,24 +2211,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-infernals-2120",
-      "title": "开采站毁灭",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-namarian-99",
-      "title": "紧急通讯",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-nomads-4715",
       "title": "值得观赏的景色",
       "kind": "event",
@@ -2335,6 +2218,42 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
+    },
+    {
+      "id": "event-nomads-50",
+      "title": "[GetStartingDrivePluralCap]启用",
+      "kind": "event",
+      "docs": 2,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-operation-5015",
+      "title": "多相力场",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-origin-112",
+      "title": "坠毁的运奴船",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 24,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-origin-113",
+      "title": "坠毁的运奴船",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 24,
+      "review": "unreviewed"
     },
     {
       "id": "event-pirate-24",
@@ -2382,15 +2301,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-plant-105",
-      "title": "田园至臻",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-shroud-3120",
       "title": "遥远回声",
       "kind": "event",
@@ -2416,6 +2326,15 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
+    },
+    {
+      "id": "event-shroud-5100",
+      "title": "天选",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
     },
     {
       "id": "event-shroud-520",
@@ -2487,7 +2406,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-amoebas-2-chain",
@@ -2496,7 +2415,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-cloud-chain",
@@ -2505,7 +2424,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-clouds-1-chain",
@@ -2514,7 +2433,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-contract-build-waystation-chain",
@@ -2991,7 +2910,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-crystals-2-chain",
@@ -3000,7 +2919,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-cs-crimson-crawlers-chain",
@@ -3027,6 +2946,15 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "chain-fruitful-partnership-chain",
+      "title": "散布种子",
+      "kind": "chain",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
       "review": "unreviewed"
     },
     {
@@ -3036,7 +2964,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-mandate-district-city-chain",
@@ -3225,7 +3153,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-msi-chain",
@@ -3252,7 +3180,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-test-chain",
@@ -3261,7 +3189,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-test-chain-2",
@@ -3270,7 +3198,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "chain-the-synth-queen-war-chain",
@@ -3288,7 +3216,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-105",
@@ -3297,16 +3225,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-110",
-      "title": "星海共同体的诞生",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-122",
@@ -3315,7 +3234,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-14",
@@ -3325,69 +3244,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-action-150",
-      "title": "战胜[From.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-151",
-      "title": "败给[From.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-152",
-      "title": "战胜[From.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-153",
-      "title": "败给[From.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-154",
-      "title": "战胜[From.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-155",
-      "title": "败给[From.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-158",
-      "title": "战胜[From.GetName]",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-action-37",
@@ -3441,7 +3297,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-90",
@@ -3453,31 +3309,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-apoc-1",
-      "title": "遗弃星门",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-apoc-14",
-      "title": "星门基址就绪",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-apoc-5",
       "title": "天然虫洞",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-aquatics-1",
@@ -3687,49 +3525,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-cara-101",
-      "title": "行商联盟",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-1250",
-      "title": "行商舰队：范格利集团：最后提议",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-2250",
-      "title": "行商舰队：拜金教团：最后提议",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-3250",
-      "title": "行商舰队：拉奇工业公司：最后提议",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-cara-4000",
       "title": "行商：幽幽青草",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cara-4010",
@@ -3738,7 +3540,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cara-4030",
@@ -3747,7 +3549,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cara-4050",
@@ -3756,34 +3558,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-950",
-      "title": "夺取银河之星",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-951",
-      "title": "失去银河之星",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cara-970",
-      "title": "银河之星",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-country-999",
@@ -3801,25 +3576,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crime-40",
-      "title": "[Root.GetName]恶贯满盈",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-crime-41",
-      "title": "[Root.GetName]已经恢复了秩序",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1417",
@@ -3972,61 +3729,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-emperor-360",
-      "title": "星海帝国治下的和平",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-emperor-400",
-      "title": "星海帝国的瓦解",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-emperor-495",
-      "title": "授予帝国特许经营权",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-emperor-50",
-      "title": "帝国海军",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-emperor-55",
-      "title": "军团建立",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-emperor-70",
-      "title": "帝国安全总局",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-envoy-events-15",
@@ -4125,7 +3828,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fallen-empires-2",
@@ -4134,7 +3837,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fallen-empires-tasks-1",
@@ -4143,61 +3846,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-empires-tasks-10",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-empires-tasks-11",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-empires-tasks-13",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-empires-tasks-17",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-empires-tasks-18",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-empires-tasks-20",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fallen-empires-tasks-21",
@@ -4206,7 +3855,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fallen-empires-tasks-23",
@@ -4215,7 +3864,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-fallen-empires-tasks-3",
@@ -4224,142 +3873,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-10",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-12",
-      "title": "失控的突变",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-13",
-      "title": "良性的疫苗",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-20",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-22",
-      "title": "不兼容的代码",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-23",
-      "title": "改善的代码标准",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-30",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-42",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-43",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-52",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-53",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-62",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-63",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-72",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-fallen-machine-empire-73",
-      "title": "来自[FallenEmpireTaskOrigin.GetName]的通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-galactic-features-2",
@@ -4494,7 +4008,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-infernals-3200",
@@ -4503,7 +4017,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-infernals-36",
@@ -4513,51 +4027,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-marauder-511",
-      "title": "大可汗之死",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-711",
-      "title": "大可汗之死",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-namarian-10",
-      "title": "星海游牧民",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-namarian-30",
-      "title": "星海游牧舰队",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-namarian-8",
-      "title": "星海游牧民",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-necroids-20",
@@ -4728,7 +4197,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-operation-7000",
@@ -4737,7 +4206,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-over-100",
@@ -4828,15 +4297,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-plant-100",
-      "title": "田园至臻",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-progress-2",
@@ -5215,51 +4675,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-story-220",
-      "title": "水晶球",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-story-222",
-      "title": "击碎晶体",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-story-330",
-      "title": "古代矿石处理中心",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-story-332",
-      "title": "已摧毁采矿无人机基地",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-story-335",
-      "title": "勘探器已激活",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-strange-worlds-2020",

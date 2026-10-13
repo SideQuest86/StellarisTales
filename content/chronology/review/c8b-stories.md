@@ -1,15 +1,15 @@
 # C8b review ledger — Galactic miscellany (third of the C8 list)
 
-Reviewer: C8b reviewer (Opus 5.5), 2026-10-12. Working copy: st-agents/c8b-stories. Authority: local game install (read-only).
+Reviewer: C8b reviewer (Opus 5.5), 2026-10-12; resumed and completed 2026-10-13 (Claude resume reviewer). Working copy: st-agents/c8b-stories. Authority: local game install (read-only).
 Each entry: story id (status), title, category change, merged ids, and the structural facts used (file:line in the fragment evidence and guide).
 
 ## Counts
 
 - Assigned story ids: 287
-- Reviewed (own fragment + guide): 81
-- Merged into a reviewed family (story id no longer exists): 132
-- Partial: 1 event-fallen-empires-awakening-4
-- Untouched: 73 (event-paragon-200, event-paragon-549, event-paragon-250, event-paragon-998, event-paragon-100, event-paragon-101, event-planet-destruction-600, event-toxoids-50, event-planet-destruction-100, event-planet-destruction-200, event-planet-destruction-300, event-planet-destruction-700, event-planet-destruction-800, event-infernals-36, event-planet-destruction-1005, event-planet-destruction-110, event-planet-destruction-400, event-planet-destruction-500, event-planet-destruction-900, event-strange-worlds-1, event-strange-worlds-70, event-strange-worlds-100, event-strange-worlds-125, event-strange-worlds-150, event-strange-worlds-175, event-strange-worlds-30, event-strange-worlds-50, event-strange-worlds-2020, event-fallen-empires-tasks-14, event-fallen-empires-tasks-7, event-fallen-empires-tasks-1, event-fallen-empires-tasks-10, event-fallen-empires-tasks-11, event-fallen-empires-tasks-13, event-fallen-empires-tasks-17, event-fallen-empires-tasks-18, event-fallen-empires-tasks-20, event-fallen-empires-tasks-21, event-fallen-empires-tasks-23, event-fallen-empires-tasks-3, event-crime-50, event-crime-1000, event-crime-1, event-crime-40, event-crime-41, chain-amoebas-1-chain, chain-amoebas-2-chain, chain-cloud-chain, chain-clouds-1-chain, chain-crystals-1-chain, chain-crystals-2-chain, chain-drones-1-chain, chain-holy-war, chain-mineral-planet-chain, event-unrest-50, event-story-220, event-story-222, event-story-330, event-story-332, event-story-335, event-grand-archive-3010, chain-survey-home-system, chain-test-chain, chain-test-chain-2, event-communications-spread-1, event-communications-spread-3, event-plant-105, event-plant-100, event-fallen-empires-100, event-fallen-empires-2, event-strange-worlds-1045, event-strange-worlds-1055, event-cybernetics-5048)
+- Reviewed (own fragment + guide): 138
+- Merged into a reviewed family (story id no longer exists): 149
+- Partial: 0
+- Untouched: 0
 - New family ids created: great-khan, event-country-200, event-country-1000, event-country-1100
 
 ## Per-story results
@@ -71,6 +71,7 @@ Each entry: story id (status), title, category change, merged ids, and the struc
 - **event-marauder-4** (reviewed) The End of the [From.GetName] / [From.GetName]的末日. Reviewed as drafted; perspective nodeLabels.
 - **event-marauder-699** (reviewed) [marauder_neighbor_species.GetName] Refugees / [marauder_neighbor_species.GetName]难民. Random pool of 7 one-offs (yearly 20%), exclusive group per draw.
 
+
 <!-- resume-2026-10-13 begin -->
 ### Resume session (2026-10-13)
 
@@ -112,11 +113,70 @@ Each entry: story id (status), title, category change, merged ids, and the struc
 - **event-action-48** (reviewed) Victory against the [From.GetName] / 战胜[From.GetName]. Single victory-over-destroyed-country window.
 - **event-action-71** (reviewed) Synth Leader Out of Commission / 合成领袖已损坏. Merged story ids: event-action-72, event-action-75, event-action-76. Family of 4 exclusive random leader-death notices.
 - **event-action-90** (reviewed) Outpost Rebuilt! / 哨站已重建！. Single notice; external link origin.7400.
+- **event-paragon-200** (reviewed) Astrocreator Azaryn / 太空创生家艾莎琳. Merged story ids: event-paragon-250. Family merging the Azaryn introduction (event-paragon-200) with the terraformation/nucleus aftermath (event-paragon-250 and its 232/235/240/260...); score-based hire; fire-once nucleus theft branch.
+- **event-paragon-549** (reviewed) Death of a Great Leader / 一位伟大领袖之死. Dispatcher paragon.549 -> 550/570/571 by empire type; funeral outcomes 551-563 exclusive and flag-gated.
+- **event-paragon-998** (reviewed) Idiosyncratic Tendencies / 异质性倾向. Dispatcher paragon.998/999 -> 10 exclusive random flavour events (gestalt: 1045 only at 10%).
+- **event-paragon-100** (reviewed) Monolith Lost / 失去金字塔. Merged story ids: event-paragon-101. paragon.102 was duplicated in two stories (100/101); merged into one family (start 102). Belongs with anomaly-paragon-beholder-category (another reviewer) - see Requests.
+- **event-planet-destruction-100** (reviewed) Cracking Open a Cold One / 炸个球助兴. World Cracker (and the arkship planet reprocess / stellar ignition): dispatcher -> planet_destruction.101 / .102; once per country (fired_cracker).
+- **event-planet-destruction-200** (reviewed) [From.GetName] Shielded / [From.GetName]被屏蔽. Global Pacifier: dispatcher -> planet_destruction.210; once per country (fired_pacifier).
+- **event-planet-destruction-300** (reviewed) Neutron Swept / 中子灭杀. Neutron Sweep: dispatcher -> planet_destruction.301; once per country (fired_neutron).
+- **event-planet-destruction-400** (reviewed) Faith Enforced / 强制改信. Divine Enforcer: dispatcher -> planet_destruction.401; once per country (fired_godray).
+- **event-planet-destruction-500** (reviewed) Nanobots Dispersed / 纳米灾疫散播. Nanobot Diffuser: dispatcher -> planet_destruction.501; once per country (fired_nanobots).
+- **event-planet-destruction-700** (reviewed) Planet Drenched / 行星已被淹没. Deluge Machine: dispatcher -> planet_destruction.701; once per country (fired_deluge).
+- **event-planet-destruction-800** (reviewed) Planet Toxified / 行星被毒化. Toxifier: dispatcher -> planet_destruction.801; once per country (fired_toxifier).
+- **event-planet-destruction-900** (reviewed) Planet Devolved / 行星被退化. Devolving Beam: dispatcher -> planet_destruction.901; once per country (fired_devolving_beam).
+- **event-planet-destruction-110** (reviewed) Hyperspace Bypass / 超空间捷径. Easter egg (Hyperspace Bypass): 50% after destroying Earth.
+- **event-planet-destruction-1005** (reviewed) Observation of [From.GetName] Ceases / 对[From.GetName]的观测终止. Shared window planet_destruction.1000 fired by every Colossus dispatcher (also listed under event-infernals-36).
+- **event-planet-destruction-600** (reviewed) Holy World / 圣地. Merged story ids: event-toxoids-50. Holy-world trigger family (600/605/607/toxoids.50 -> 610/615 -> fallen_empires_awakening.1); merged duplicate toxoids-50 story. bio.3400 appears as a false child (compiler request 1/3).
+- **event-infernals-36** (reviewed) Observation of [From.GetName] Ceases / 对[From.GetName]的观测终止. Planet Smelter dispatcher infernals.36 -> shared planet_destruction.1000.
+- **event-strange-worlds-1** (reviewed) The World is Bleeding / 蹀血星球. Bleeding World chain; exclusive a/b branches; hidden strange_worlds.10 poll.
+- **event-strange-worlds-30** (reviewed) Out of Nowhere / 凭空出现. Shimmering structure chain: brute force vs external study.
+- **event-strange-worlds-50** (reviewed) Nature Shock / 自然触电. Nature Shock chain: energy-infrastructure poll, 55 -> 60 -> 65 a/b.
+- **event-strange-worlds-70** (reviewed) Strange Sands / 怪异沙子. Strange Sands chain; exclusive 90 / 95.
+- **event-strange-worlds-100** (reviewed) Sudden Disappearance / 突然消失. Bogplants chain: 105 -> 110 -> 115 a/b; only b continues to 120.
+- **event-strange-worlds-125** (reviewed) Dark Matter Eruption / 暗物质爆发. Dark Matter Eruption chain; exclusive 140 / 145.
+- **event-strange-worlds-150** (reviewed) Revolting Pests / 恶心虫虫. Revolting Pests chain; exclusive 165 / 170; purifier shortcut to 170.
+- **event-strange-worlds-175** (reviewed) Interdistrict Hostility / 地域仇恨. Interdistrict Hostility chain; poll 180; exclusive 195 / 200.
+- **event-strange-worlds-2020** (reviewed) Fatal Mutations / 致命变异. Macrophage follow-up (tech trigger, 1800-5400 days, single window).
+- **event-strange-worlds-1045** (reviewed) Orbital Debris / 轨道残骸. Merged story ids: event-strange-worlds-1055. Family joining Orbital Debris (1045/1050) with Junk Moon (1055/1060) via flag spawn_junk_moon.
+- **event-fallen-empires-tasks-1** (reviewed) Communication from [FallenEmpireTaskOrigin.GetName] / 来自[FallenEmpireTaskOrigin.GetName]的通讯. Single gift window; five-year pool weight 30/980.
+- **event-fallen-empires-tasks-3** (reviewed) Communication from [FallenEmpireTaskOrigin.GetName] / 来自[FallenEmpireTaskOrigin.GetName]的通讯. Pop request: one window, 1 accept + 4 ethic-gated refusals; pool weight 100/980.
+- **event-fallen-empires-tasks-7** (reviewed) Task: Stop Atrocities / 来自堕落帝国的任务：制止错误行为. Merged story ids: event-fallen-empires-tasks-10, event-fallen-empires-tasks-11, event-fallen-empires-tasks-13. Family: stop-atrocities task (8 + chain) with only failure endings 10/11/13 (+hidden 12); success event 9 commented out in the files.
+- **event-fallen-empires-tasks-14** (reviewed) Task: End AI Research / 来自堕落帝国的任务：阻止人工智能研究. Merged story ids: event-fallen-empires-tasks-17, event-fallen-empires-tasks-18, event-fallen-empires-tasks-20. Family: end-AI-research task, mirror of the atrocities task; only failure endings.
+- **event-fallen-empires-tasks-21** (reviewed) Communication from [FallenEmpireTaskOrigin.GetName] / 来自[FallenEmpireTaskOrigin.GetName]的通讯. Scientist request: 1 accept + refusals; pool weight 50/980.
+- **event-fallen-empires-tasks-23** (reviewed) Communication from [FallenEmpireTaskOrigin.GetName] / 来自[FallenEmpireTaskOrigin.GetName]的通讯. Brain-scan request tied to the Limbo anomaly flag limbo_downloaded; weight 200/980.
+- **event-fallen-empires-100** (reviewed) Holy World Encountered / 遭遇圣地. Single survey-triggered window; links to the holy-world destruction family.
+- **event-fallen-empires-2** (reviewed) [From.GetName] assassinate [Root.GetRulerTitle]! / [From.GetName]暗杀[Root.GetRulerTitle]！. Single window: ruler assassinated after losing to a fallen empire.
+- **event-crime-50** (reviewed) Scum and Villainy / 恶贯满盈. Merged story ids: event-crime-40, event-crime-41. Family over the crime system (yearly gatekeepers 50-53, flavour events 2-8, escalations 100/200/300 with 4 follow-ups each, hive 500-502, machine 550-552, appears/disappears 40/41); crime.1 is disabled.
+- **event-crime-1** (reviewed) Rising Unemployment on [Root.GetName] / [Root.GetName]的失业率正在继续攀升. Disabled event: weight 0/100 in on_colony_yearly_pulse.
+- **event-crime-1000** (reviewed) Branch Office shut down on [Root.GetName] / 在[Root.GetName]上的分部被关闭. Branch office closure: monthly poll 1/20, 1001 (planet owner) -> 1002 (office owner).
+- **event-unrest-50** (reviewed) Revolt Brewing on [Root.GetName] / [Root.GetName]正在酝酿叛乱. Planetary revolt situation (unrest.50/54/55 -> 4 stages -> 4200/4300/161) with exclusive groups for stage-2 characters, monthly randoms and endings.
+- **chain-amoebas-1-chain** (reviewed) Space Amoeba Specimen / 太空变形虫样本. Unused chain definition amoebas_1_chain (no begin_event_chain anywhere in the install).
+- **chain-amoebas-2-chain** (reviewed) Space Amoeba Slaughter / 消灭太空变形虫. Unused chain definition amoebas_2_chain (no begin_event_chain anywhere in the install).
+- **chain-cloud-chain** (reviewed) Drifting Clouds / 流云. Unused chain definition cloud_chain (no begin_event_chain anywhere in the install).
+- **chain-clouds-1-chain** (reviewed) Void Cloud / 虚空之云. Unused chain definition clouds_1_chain (no begin_event_chain anywhere in the install).
+- **chain-crystals-1-chain** (reviewed) Crystalline Entity Shard / 晶态实体碎片. Unused chain definition crystals_1_chain (no begin_event_chain anywhere in the install).
+- **chain-crystals-2-chain** (reviewed) Crystal Kaleidoscope / 变化多端的晶体. Unused chain definition crystals_2_chain (no begin_event_chain anywhere in the install).
+- **chain-drones-1-chain** (reviewed) Mining Drone Analysis / 分析采矿无人机. Unused chain definition drones_1_chain (no begin_event_chain anywhere in the install).
+- **chain-holy-war** (reviewed) Holy War / 圣战. Unused chain definition holy_war (no begin_event_chain anywhere in the install).
+- **chain-mineral-planet-chain** (reviewed) High-Value Mining Targets / 高价值矿产目标. Unused chain definition mineral_planet_chain (no begin_event_chain anywhere in the install).
+- **chain-survey-home-system** (reviewed) Survey Home System / 调查母星系. Unused chain definition survey_home_system (no begin_event_chain anywhere in the install).
+- **chain-test-chain** (reviewed) Mysteries of [Root.GetName] / [Root.GetName]之谜. Unused chain definition test_chain (no begin_event_chain anywhere in the install).
+- **chain-test-chain-2** (reviewed) Mysteries of [Root.GetName] / [Root.GetName]之谜. Unused chain definition test_chain_2 (no begin_event_chain anywhere in the install).
+- **event-story-220** (reviewed) Crystal Ball / 水晶球. Merged story ids: event-story-222. Crystal home system (220) -> station destroyed (222); family bridges 220 -> 222.
+- **event-story-330** (reviewed) Ancient Mineral Processing Hub / 古代矿石处理中心. Merged story ids: event-story-332, event-story-335. Drone home system (330) -> base destroyed (332) -> Surveyor relic (335); bridges added.
+- **event-grand-archive-3010** (reviewed) Cutholoids / 岩居兽. Family over the hidden-Cutholoid ambush: 3010 -> 3008 (eaten) / 3009 (escape); attack vs capture projects; 3016, 3018, 3020, 2900/2905. Bridges added from 3011 to both projects and from attack to 3016.
+- **event-communications-spread-1** (reviewed) Communications Intercepted / 通讯截获. Merged story ids: event-communications-spread-3. Family: two exclusive intercept events (35/135, 25/135) -> New Contact (2) -> action.1.
+- **event-plant-100** (reviewed) Idyllic Perfection / 田园至臻. Merged story ids: event-plant-105. Gaia Seeder chain (plant.100/101/115) joined with the Idyllic Bloom overlord holding branch (plant.105/110).
+- **event-cybernetics-5048** (reviewed) Virtually Harmless / 几乎无害. Single window, colony transfer.
+- **event-fallen-empires-awakening-4** (partial -> reviewed) Guardians of the Galaxy / 星河守护者. Re-checked both awakening branches (non-hive via fallen_empires_awakening.3, hive War fragment via .10, events/fallen_empire_awakening_events.txt:274-329,425-565). The compiler request below is solved with the fragment field exclude: [bio.3400]; hidden members .3 and .10 added.
 <!-- resume-2026-10-13 end -->
 
 ## Requests
 
 ### Compiler features (scripts/story_tree.py — not edited)
+
+_Update 2026-10-13: items 1 and 3 are worked around with the fragment field exclude (see the resume requests at the end); item 2 stays as is._
 
 1. **Suppress outcomes of hidden entries.** `suppress` only filters edges of placed docs (`expand`). Outcomes of a hidden
    entry/root or hidden family member are placed by `build_story` without consulting `suppressed`, so false outcomes cannot
@@ -155,5 +215,8 @@ Each entry: story id (status), title, category change, merged ids, and the struc
 - **Residual catch-all `event-game-start-1-x` (unowned):** after the sublight-probe family took `event-game-start-1`, the compiler keeps a residual story of every other on_game_start root (necroids.2, situation_shroud_forged, archaeological sites slingshot_digsite / site_ex_gravitas / broken_shackles_digsite / payback_digsite, fruitful_partnership_chain, nomads.50, situation_fotd_terraforming, evolutionary_predators_situation, shroud.5105). Its owners (c1 origins, c2 sites, c7 situations) should give each root its own story; the compiler should not group unrelated roots that merely share the `on_game_start` caller. The three starting stories that belong to C8b (country.1000 Wanderlust, country.1100 Mass Extinction, country.200 Radical Cult) are now own families.
 - **c2-precursors / site-site-green-skies:** `cstorms.1416` (BATTLESTATIONS) creates a pirate fleet flagged green_skies_pirate_fleet; when it is destroyed on_fleet_destroyed_victim (00_on_actions.txt:1594) fires hidden `cstorms.1417` -> `cstorms.1420` "Won't Get Fooled Again" (cosmic_storms_events_1.txt:2606-2676). Suggest a bridge `cstorms.1416 -> cstorms.1420` in the site story. C8b keeps `event-cstorms-1417` as a one-window story with a note.
 - **Compiler idea:** `on_action` dispatcher events (action.61, action.85, action.941 ...) are treated as entries of many tiny stories; a "notification hub" kind (exclusive windows sent to different perspectives) would help.
+- **Compiler items 1 and 3 of the first session are resolved by the fragment field `exclude`:** `exclude: ["bio.3400"]` removes the false "Unity" outcome from the hidden-entry results of `event-fallen-empires-awakening-4` (now reviewed) and `exclude` of `fallen_empires_awakening.11` / `bio.3400` is used in the holy-world family `event-planet-destruction-600`. A cleaner compiler fix would still be to evaluate `switch` on country flags (fallen_empires_awakening.10 sends bio.3400 only for fallen_empire_hive_control) and to skip `is_test_event = yes` events (fallen_empires_awakening.0 stays absorbed as a hidden member).
+- **c2 / anomaly-paragon-beholder-category:** `paragon.102` "Monolith Lost" (abort of the Beholder chain, fired by paragon.100 on_colonized and paragon.101 on_uplift_completion, events/paragon_events.txt:3-100) is kept in C8b family `event-paragon-100`; the anomaly story could link to it (it is the abort exit of paragon.3/4...).
+- **Stories whose ids no longer exist after the 2026-10-13 families** (absorbed on purpose): the compiler now drops e.g. event-country-2/6/9/11/14/16/18/20/52/53/201/204/205/206/211/212/215/216/217/220/222/251-254/259/1002/1020/1021/1030/1043/1050/1060/1102, event-paragon-101/250, event-communications-spread-3, event-plant-105, event-story-222/332/335, event-nomads-* (earlier), event-action-11/72/75/76, event-fallen-empires-tasks-10/11/13/17/18/20, event-crime-40/41, event-toxoids-50, event-strange-worlds-1055, event-cstorms-1313/1316/1317/1775, event-planet-destruction-... (see per-story entries).
 
 <!-- resume-requests end -->

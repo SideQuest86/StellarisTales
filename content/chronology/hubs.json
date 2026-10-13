@@ -1,8 +1,23 @@
 {
-  "note": "Shared helper events that many unrelated stories call. They are their own stories (or system notices) and never part of a caller's tree. The compiler also detects hubs by caller count; entries here are reviewed additions/removals.",
-  "hubs": ["story.1", "story.2", "story.3", "story.4", "story.5", "story.6", "story.7", "story.8"],
-  "evidence": {
-    "story.1-8": "events/story_events_1.txt contact reports: generic science reports fired 30 days after many anomaly outcomes / first contacts (e.g. anomaly.35 immediate country_event story.5 days 30). They are not chapters of the calling anomaly."
-  },
-  "notHubs": []
+    "note":  "Shared helper events that many unrelated stories call. They are their own stories (or system notices) and never part of a caller\u0027s tree. The compiler also detects hubs by caller count; entries here are reviewed additions/removals.",
+    "hubs":  [
+                 "story.1",
+                 "story.2",
+                 "story.3",
+                 "story.4",
+                 "story.5",
+                 "story.6",
+                 "story.7",
+                 "story.8"
+             ],
+    "evidence":  {
+                     "story.1-8":  "events/story_events_1.txt contact reports: generic science reports fired 30 days after many anomaly outcomes / first contacts (e.g. anomaly.35 immediate country_event story.5 days 30). They are not chapters of the calling anomaly.",
+                     "game_start.1":  "events/game_start.txt: hidden on_game_start dispatcher firing 39 unrelated origin, situation, site and chain openings across many files (reported by the C8b reviewer, 2026-10-13); its targets are separate stories."
+                 },
+    "notHubs":  [
+
+                ],
+    "dispatchers":  [
+                        "game_start.1"
+                    ]
 }

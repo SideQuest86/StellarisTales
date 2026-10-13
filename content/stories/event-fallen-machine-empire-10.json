@@ -1,0 +1,295 @@
+{
+ "id": "event-fallen-machine-empire-10",
+ "family": {
+  "title": {
+   "zh": "看守者的任务",
+   "en": "Tasks of the machine Custodian"
+  },
+  "category": "stories",
+  "start": "fallen_machine_empire.11",
+  "members": [
+   "fallen_machine_empire.11",
+   "fallen_machine_empire.12",
+   "fallen_machine_empire.13",
+   "fallen_machine_empire.21",
+   "fallen_machine_empire.22",
+   "fallen_machine_empire.23",
+   "fallen_machine_empire.31",
+   "fallen_machine_empire.41",
+   "fallen_machine_empire.42",
+   "fallen_machine_empire.43",
+   "fallen_machine_empire.51",
+   "fallen_machine_empire.52",
+   "fallen_machine_empire.53",
+   "fallen_machine_empire.61",
+   "fallen_machine_empire.62",
+   "fallen_machine_empire.63",
+   "fallen_machine_empire.71",
+   "fallen_machine_empire.72",
+   "fallen_machine_empire.73",
+   "event_chains:fe_attack_empire_task_chain",
+   "event_chains:fe_colonize_planet_task_chain",
+   "event_chains:fe_no_wars_task_chain",
+   "event_chains:fe_no_colonies_task_chain"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "fallen_machine_empire.11",
+   "to": "fallen_machine_empire.12",
+   "conditional": true,
+   "label": {
+    "zh": "接受接种后约10年：不良变异（天灾看守者的觉醒类型为2时快1/3）",
+    "en": "About 10 years after accepting: bad mutations (a third sooner for awakening type 2)"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:331-375 MTTH 10y x0.66 with fallen_machine_empire_awaken_2; requires the inoculation modifier"
+  },
+  {
+   "from": "fallen_machine_empire.11",
+   "to": "fallen_machine_empire.13",
+   "conditional": true,
+   "label": {
+    "zh": "接受接种后约10年：良性接种（觉醒类型为1时快1/3）",
+    "en": "About 10 years after accepting: benign inoculation (a third sooner for awakening type 1)"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:378-422 MTTH 10y x0.66 with fallen_machine_empire_awaken_1"
+  },
+  {
+   "from": "fallen_machine_empire.21",
+   "to": "fallen_machine_empire.22",
+   "conditional": true,
+   "label": {
+    "zh": "接受代码重写后约10年：严重缺陷",
+    "en": "About 10 years after accepting the rewrite: serious bugs"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:513-543 MTTH 10y"
+  },
+  {
+   "from": "fallen_machine_empire.21",
+   "to": "fallen_machine_empire.23",
+   "conditional": true,
+   "label": {
+    "zh": "接受代码重写后约10年：永久的生产提升",
+    "en": "About 10 years after accepting the rewrite: a permanent output boost"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:545-575 MTTH 10y"
+  },
+  {
+   "from": "event_chains:fe_attack_empire_task_chain",
+   "to": "fallen_machine_empire.42",
+   "conditional": true,
+   "label": {
+    "zh": "任务成功：与目标国交战（约10天后）",
+    "en": "Success: at war with the target (about 10 days)"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:855-910"
+  },
+  {
+   "from": "event_chains:fe_attack_empire_task_chain",
+   "to": "fallen_machine_empire.43",
+   "conditional": true,
+   "label": {
+    "zh": "任务失败：计时结束仍未交战（约12个月）",
+    "en": "Failure: the timer ran out without a war (about 12 months)"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:912-965 timer 7200 days set at events/fallen_machine_empire_events.txt:838"
+  },
+  {
+   "from": "event_chains:fe_colonize_planet_task_chain",
+   "to": "fallen_machine_empire.52",
+   "conditional": true,
+   "label": {
+    "zh": "任务成功：目标行星成为人口超过400的殖民地（约10天）",
+    "en": "Success: the target planet is a colony with more than 400 pops (about 10 days)"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:1153-1213"
+  },
+  {
+   "from": "event_chains:fe_colonize_planet_task_chain",
+   "to": "fallen_machine_empire.53",
+   "conditional": true,
+   "label": {
+    "zh": "任务失败：计时结束",
+    "en": "Failure: the timer ran out"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:1215-1288"
+  },
+  {
+   "from": "event_chains:fe_no_wars_task_chain",
+   "to": "fallen_machine_empire.62",
+   "conditional": true,
+   "label": {
+    "zh": "期限（7200天）内没有发动侵略战争",
+    "en": "No war of aggression within the period (7200 days)"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:1466-1512, 1459"
+  },
+  {
+   "from": "event_chains:fe_no_wars_task_chain",
+   "to": "fallen_machine_empire.63",
+   "conditional": true,
+   "label": {
+    "zh": "期限内发动了侵略战争：激怒",
+    "en": "A war of aggression during the period: angers the Custodian"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:1514-1565"
+  },
+  {
+   "from": "event_chains:fe_no_colonies_task_chain",
+   "to": "fallen_machine_empire.72",
+   "conditional": true,
+   "label": {
+    "zh": "期限（3600天）内没有开始殖民",
+    "en": "No colonization within the period (3600 days)"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:1746-1792, 1739"
+  },
+  {
+   "from": "event_chains:fe_no_colonies_task_chain",
+   "to": "fallen_machine_empire.73",
+   "conditional": true,
+   "label": {
+    "zh": "期限内开始了殖民：激怒",
+    "en": "Colonizing during the period: angers the Custodian"
+   },
+   "evidence": "events/fallen_machine_empire_events.txt:1794-1844"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_machine_empire.12",
+    "fallen_machine_empire.13"
+   ],
+   "label": {
+    "zh": "接种的结果",
+    "en": "Result of the inoculation"
+   },
+   "note": {
+    "zh": "两者都按10年平均时间触发，先发生者移除修正，另一个不再发生。",
+    "en": "Both run on a 10-year average timer; the first removes the modifier so only one happens."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_machine_empire.22",
+    "fallen_machine_empire.23"
+   ],
+   "label": {
+    "zh": "代码重写的结果",
+    "en": "Result of the code rewrite"
+   },
+   "note": {
+    "zh": "同上。",
+    "en": "Same."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_machine_empire.42",
+    "fallen_machine_empire.43"
+   ],
+   "label": {
+    "zh": "攻击任务的结局",
+    "en": "Outcome of the attack task"
+   },
+   "note": {
+    "zh": "成功 / 超时失败（目标无效另有隐藏的 44 静默结束）。",
+    "en": "Success / timeout (hidden 44 ends it silently if a country becomes invalid)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_machine_empire.52",
+    "fallen_machine_empire.53"
+   ],
+   "label": {
+    "zh": "殖民任务的结局",
+    "en": "Outcome of the colonize task"
+   },
+   "note": {
+    "zh": "成功 / 失败（隐藏的 54 为无效情况）。",
+    "en": "Success / failure (hidden 54 for invalid cases)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_machine_empire.62",
+    "fallen_machine_empire.63"
+   ],
+   "label": {
+    "zh": "“不得侵略”要求的结局",
+    "en": "Outcome of the no-wars demand"
+   },
+   "note": {
+    "zh": "遵守 / 违反（隐藏的 64 为无效情况）。",
+    "en": "Complied / broke it (hidden 64 for invalid cases)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_machine_empire.72",
+    "fallen_machine_empire.73"
+   ],
+   "label": {
+    "zh": "“不得殖民”要求的结局",
+    "en": "Outcome of the no-colonization demand"
+   },
+   "note": {
+    "zh": "遵守 / 违反（隐藏的 74 为无效情况）。",
+    "en": "Complied / broke it (hidden 74 for invalid cases)."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "fallen_machine_empire.11": {
+   "zh": "任务一：接种（生物帝国）",
+   "en": "Task 1: inoculations (biological)"
+  },
+  "fallen_machine_empire.21": {
+   "zh": "任务二：代码重写（合成/机械）",
+   "en": "Task 2: code rewrite (synthetic)"
+  },
+  "fallen_machine_empire.31": {
+   "zh": "任务三：提供工人单位（机械）",
+   "en": "Task 3: worker units (machine)"
+  },
+  "fallen_machine_empire.41": {
+   "zh": "任务四：攻击指定帝国",
+   "en": "Task 4: attack a specific empire"
+  },
+  "fallen_machine_empire.51": {
+   "zh": "任务五：殖民一颗行星",
+   "en": "Task 5: colonize a planet"
+  },
+  "fallen_machine_empire.61": {
+   "zh": "要求一：停止侵略战争",
+   "en": "Demand 1: stop wars of aggression"
+  },
+  "fallen_machine_empire.71": {
+   "zh": "要求二：停止殖民",
+   "en": "Demand 2: stop colonizing"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "觉醒/机械堕落帝国（看守者）向其他帝国下达的五个任务和两条要求，及各自的结果。",
+   "en": "The five tasks and two demands the machine Fallen Empire (the Custodian) gives other empires, with their results."
+  },
+  "sources": [
+   "events/fallen_machine_empire_events.txt",
+   "common/event_chains/00_fallen_empire_chains.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-fallen-machine-empire-10.md"
+ }
+}

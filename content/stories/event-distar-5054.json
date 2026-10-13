@@ -2,7 +2,7 @@
  "id": "event-distar-5054",
  "family": {
   "title": {
-   "zh": "神秘货舱",
+   "zh": "神秘容器",
    "en": "The Enigmatic Cache"
   },
   "category": "exploration",
@@ -25,7 +25,7 @@
    "to": "distar.5059",
    "conditional": true,
    "label": {
-    "zh": "货舱驶往下一颗行星",
+    "zh": "容器驶往下一颗行星",
     "en": "The cache moves on to another planet"
    },
    "evidence": "events/distant_stars_events_2.txt:5083 distar.5052 (hidden loop) picks the next unscanned colony of a non-hostile country and sends the cache fleet there; carrier distar.5056 (events/distant_stars_events_2.txt:5286) removes enigmatic_cache_in_orbit and, 1 day later, distar.5059 tells the planet's owner once (flag cache_has_changed_location)."
@@ -35,7 +35,7 @@
    "to": "distar.5062",
    "conditional": true,
    "label": {
-    "zh": "货舱被召回，回到某国首都",
+    "zh": "容器被召回，回到某国首都",
     "en": "The cache is called back to a country's capital"
    },
    "evidence": "events/distant_stars_events_2.txt:5726 distar.5060 (hidden monthly): once every non-hostile country at peace has a scanned colony (or at least one human player's species colony has been scanned), a player country (flag enigmatic_caches_choice, preferring one not outclassed in technology) is chosen, global flag cache_returned is set and the fleet flies to its homeworld; common/on_actions/00_on_actions.txt:1807 on_fleet_auto_move_arrival → distar.5061 (hidden, events/distant_stars_events_2.txt:5913) → distar.5062 (events/distant_stars_events_2.txt:5942)."
@@ -45,7 +45,7 @@
    "to": "distar.5070",
    "conditional": true,
    "label": {
-    "zh": "货舱被他人击毁（20天后）",
+    "zh": "容器被他人击毁（20天后）",
     "en": "The cache is disabled by someone else (20 days later)"
    },
    "evidence": "common/on_actions/00_on_actions.txt:2048 on_ship_disabled → distar.5053 (hidden, events/distant_stars_events_2.txt:5381): a player country researching ENIGMATIC_UPLIFTING that is not the aggressor gets distar.5070 after 20 days; the cache respawns elsewhere, but if its own uplifting was running the cache is gone for good."
@@ -55,7 +55,7 @@
    "to": "distar.5078",
    "conditional": true,
    "label": {
-    "zh": "首都被攻陷时货舱在轨（10天后）",
+    "zh": "首都被攻陷时容器在轨（10天后）",
     "en": "Capital invaded while the cache is in orbit (10 days later)"
    },
    "evidence": "common/on_actions/00_on_actions.txt:838 on_colony_attackers_win → distar.5077 (hidden, events/distant_stars_events_2.txt:6725): the country researching ENIGMATIC_UPLIFTING is invaded on its capital while the cache fleet is in orbit; the project is aborted and distar.5078 follows after 10 days."
@@ -70,7 +70,7 @@
     "distar.5074"
    ],
    "label": {
-    "zh": "项目完成的结果（取决于货舱是否损坏）",
+    "zh": "项目完成的结果（取决于容器是否损坏）",
     "en": "Project result (depends on whether the cache broke)"
    },
    "note": {
@@ -108,7 +108,7 @@
     "en": "Somewhat Uplifted"
    },
    "note": {
-    "zh": "货舱损坏后的结果：较差的智力特质与疯狂修正。",
+    "zh": "容器损坏后的结果：较差的智力特质与疯狂修正。",
     "en": "The result after the cache broke: a poorer intelligence trait and a madness modifier."
    },
    "evidence": "events/distant_stars_events_2.txt:6496"
@@ -119,7 +119,7 @@
     "en": "Uplifting aborted"
    },
    "note": {
-    "zh": "货舱被删除并留下恐怖生物的残影。",
+    "zh": "容器被删除并留下恐怖生物的残影。",
     "en": "The cache fleet is deleted and leaves a horror-spawn ambient object."
    },
    "evidence": "events/distant_stars_events_2.txt:6284"

@@ -1,0 +1,84 @@
+{
+ "id": "pre-ftl-new-world-order",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl.2170",
+    "preftl.2175"
+   ],
+   "label": {
+    "zh": "阶段一",
+    "en": "Stage 1"
+   },
+   "note": {
+    "zh": "50 / 50",
+    "en": "50 / 50"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl.2180",
+    "preftl.2185"
+   ],
+   "label": {
+    "zh": "阶段二",
+    "en": "Stage 2"
+   },
+   "note": {
+    "zh": "50 / 50",
+    "en": "50 / 50"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl.2190",
+    "preftl.2195"
+   ],
+   "label": {
+    "zh": "阶段三",
+    "en": "Stage 3"
+   },
+   "note": {
+    "zh": "50 / 50",
+    "en": "50 / 50"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl.2200",
+    "preftl.2205"
+   ],
+   "label": {
+    "zh": "结局",
+    "en": "Ending"
+   },
+   "note": {
+    "zh": "50 / 50",
+    "en": "50 / 50"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "新世界秩序情境：10个文档。",
+   "en": "New World Order situation: 10 docs."
+  },
+  "sources": [
+   "events/first_contact_dlc_situation_events.txt:6394-7640",
+   "common/situations/04_first_contact_dlc_situations.txt:765-900",
+   "common/on_actions/00_on_actions.txt:140-200"
+  ],
+  "uncertain": [
+   "路线对各结局奖励的细节只读取了选项标志。 / Approach rewards were only read from option flags."
+  ],
+  "guide": "public/summaries/pre-ftl-new-world-order.md"
+ }
+}

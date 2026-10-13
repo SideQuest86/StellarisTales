@@ -27,8 +27,8 @@ A long-gone civilisation's signal leads to an underground R&D site; they were a 
 ## 分支与结局 Branches and outcomes
 
 - 胜者是…… / And the winner is...：“获胜者是……”一艘对他们而言巨大的飞船 / "And the winner is…" a ship huge to them
-- 前进，征服 / Go forth and conquer：“前进吧，征服吧” / "Go forth and conquer"
-- 别破坏了信使 / Don't shoot the messenger：“别射信使” / "Don't shoot the messenger"
+- 前进，征服 / Go forth and conquer：“前进吧，征服吧” / 
+- 别破坏了信使 / Don't shoot the messenger：“别射信使” / 
 - 飞船获得时随机受损；可开启项目“放大信使”。 / The ship comes with random damage; the project "Upscaling the Messenger" can follow.
 
 ## 条件与文明差异 Conditions and variants

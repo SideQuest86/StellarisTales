@@ -1,0 +1,53 @@
+{
+ "id": "event-galcom-102",
+ "family": {
+  "title": {
+   "zh": "银河空间中的蒂亚尼基",
+   "en": "Tiyanki In [Species] Space"
+  },
+  "category": "society",
+  "start": "galcom.106",
+  "members": [
+   "galcom.106",
+   "galcom.104",
+   "galcom.109"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "galcom.106",
+    "galcom.104",
+    "galcom.109"
+   ],
+   "label": {
+    "zh": "同一违规通知的三个触发",
+    "en": "Three triggers of the same breach notice"
+   },
+   "note": {
+    "zh": "106：蒂亚尼基舰队进入国境（舰队事件 galcom.102）；104：决议“蒂亚尼基害虫防治”刚通过时已有蒂亚尼基在境内（galcom.103）；109：每月检查（galcom.108）发现。三者都设置 resolution_breached_tiyanki_inside_borders。",
+    "en": "106: a Tiyanki fleet enters borders (fleet event galcom.102); 104: when the resolution \"Tiyanki Pest Control\" passes with Tiyanki already inside (galcom.103); 109: found by the monthly check (galcom.108). All set resolution_breached_tiyanki_inside_borders."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "蒂亚尼基入境通知：舰队进入、决议通过、每月检查三种触发。",
+   "en": "Tiyanki inside borders notices: fleet entry, resolution enacted and monthly check."
+  },
+  "sources": [
+   "events/galactic_community_events.txt",
+   "common/resolutions/00_resolutions.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "merged": [
+   "event-galcom-103",
+   "event-galcom-108"
+  ],
+  "guide": "public/summaries/event-galcom-102.md"
+ }
+}

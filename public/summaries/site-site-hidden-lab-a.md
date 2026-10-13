@@ -22,8 +22,8 @@ A research complex buried under ice and purged by fire. After two stages hidden 
 
 ## 分支与结局 Branches and outcomes
 
-- 远古生物实验室 / Ancient Biological Lab：远古生物实验室：研发生物制剂，似因泄漏被烈火焚毁（社会学研究奖励） / ancient biological lab: research on biological agents, apparently burned after a leak (society research)
-- 远古武器实验室 / Ancient Weapons Lab：远古武器实验室：高能武器事故导致爆炸，数据中心尚存（等离子科技选项30%） / ancient weapons lab: an accident destroyed it but a data centre survived (plasma weapons tech option, 30%)
+- 远古生物实验室 / Ancient Biological Lab：研发生物制剂，似因泄漏被烈火焚毁（社会学研究奖励） / ancient biological lab: research on biological agents, apparently burned after a leak (society research)
+- 远古武器实验室 / Ancient Weapons Lab：高能武器事故导致爆炸，数据中心尚存（等离子科技选项30%） / ancient weapons lab: an accident destroyed it but a data centre survived (plasma weapons tech option, 30%)
 
 ## 条件与文明差异 Conditions and variants
 

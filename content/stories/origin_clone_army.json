@@ -11,12 +11,110 @@
   "evidence": "common/inline_scripts/game_start/origin_clone_army.txt schedules carrier_event clones.10 after 1095 days plus random 720; its response creates clone_army_digsite"
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/clone_army_events.txt",
+   "common/inline_scripts/game_start/origin_clone_army.txt",
+   "common/special_projects/00_projects_3.txt",
+   "common/archaeological_site_types"
+  ],
+  "uncertain": [
+   "The site failure outcomes (ancrel.80xx) are the shared dig-site random events."
+  ],
+  "guide": "public/summaries/origin_clone_army.md"
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "clones.14",
+    "clones.16"
+   ],
+   "label": {
+    "zh": "挖掘之后对待历史的态度",
+    "en": "Attitude to the discovered history"
+   },
+   "note": {
+    "zh": "13的选项a：数年后的“出土记录”（14，不光彩的领导，可再公开道歉15）；选项b：30–90天后“光荣的领导”（16）。",
+    "en": "Option a of 13: Unearthed Records (14, dishonourable leadership, a public apology 15 may follow); option b: Honorable Leadership (16) after 30-90 days (events/clone_army_events.txt:309-405)."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "special_projects:CLONE_SOLDIER_UNLOCK_FERTILITY",
+    "special_projects:CLONE_SOLDIER_UNLOCK_POTENTIAL"
+   ],
+   "label": {
+    "zh": "解锁克隆生育或潜能",
+    "en": "Unlocking fertility or potential"
+   },
+   "note": {
+    "zh": "21同时开放两个项目（潜能项目仅玩家可见）；完成后分别触发22（新日出）与23（极限潜能）。",
+    "en": "Event 21 enables both projects (potential only for players); completion fires 22 (A New Day Dawns) and 23 (Fullest Potential) (events/clone_army_events.txt:450-483, :484-662)."
+   }
   }
- }
+ ],
+ "endings": {
+  "clones.22": {
+   "label": {
+    "zh": "新日降临：克隆生育恢复",
+    "en": "A New Day Dawns: clone fertility restored"
+   },
+   "note": {
+    "zh": "拆除古老克隆舱，改为自然繁衍。",
+    "en": "The ancient vats are dismantled; the clones reproduce."
+   },
+   "evidence": "events/clone_army_events.txt:484-603"
+  },
+  "clones.23": {
+   "label": {
+    "zh": "极限潜能",
+    "en": "Fullest Potential"
+   },
+   "note": {
+    "zh": "克隆潜能项目完成。",
+    "en": "Clone Potential project completed."
+   },
+   "evidence": "events/clone_army_events.txt:604-662"
+  },
+  "clones.15": {
+   "label": {
+    "zh": "公开道歉",
+    "en": "Public Apology"
+   },
+   "note": {
+    "zh": "不光彩线的收束。",
+    "en": "Closes the dishonourable line."
+   },
+   "evidence": "events/clone_army_events.txt:374-389"
+  },
+  "clones.16": {
+   "label": {
+    "zh": "荣誉重于伟大",
+    "en": "Honorable Leadership"
+   },
+   "note": {
+    "zh": "光荣线的收束。",
+    "en": "Closes the honourable line."
+   },
+   "evidence": "events/clone_army_events.txt:390-405"
+  }
+ },
+ "notes": [
+  {
+   "doc": "clones.10",
+   "kind": "review",
+   "zh": "开局设置（1095±720天后）触发；回应创建遗址“母星发掘”。隐藏事件 clones.1/2/3/5/24/30 负责克隆人口的增长、衰减与星球丢失清理，不属于叙事窗口。",
+   "en": "Scheduled by the start setup 1095+0-720 days after start (common/inline_scripts/game_start/origin_clone_army.txt); its response creates the Homeworld Excavation site. Hidden clones.1/2/3/5/24/30 handle clone population growth, decline and cleanup (no windows)."
+  },
+  {
+   "doc": "clones.12",
+   "kind": "review",
+   "zh": "遗址阶段2同时安排两条线：30–60天后 clones.13（历史的选择）与 360–720天后 clones.4（克隆生育项目）。",
+   "en": "Site stage 2 schedules two lines: clones.13 after 30-60 days and clones.4 after 360-720 days (events/clone_army_events.txt:302-303)."
+  }
+ ]
 }

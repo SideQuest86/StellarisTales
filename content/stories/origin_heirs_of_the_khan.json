@@ -1,0 +1,112 @@
+{
+ "id": "origin_heirs_of_the_khan",
+ "opening": {
+  "targets": [
+   "nomads.506",
+   "nomads.546",
+   "nomads.605",
+   "nomads.610",
+   "nomads.615"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "nomads.506": {
+    "zh": "猎手再访（隐藏500每200±100天随机，5/24）",
+    "en": "The hunters return (hidden 500 rolls every 200+-100 days, 5 of 24)"
+   },
+   "nomads.546": {
+    "zh": "首次击败可汗猎手舰队",
+    "en": "The first defeat of the Khan's hunters"
+   },
+   "nomads.605": {
+    "zh": "舰队进入有野心可汗舰队的星系",
+    "en": "A fleet enters a system with an aspiring Khan fleet"
+   },
+   "nomads.610": {
+    "zh": "击败野心可汗：成为大可汗的机会",
+    "en": "The aspiring Khan is beaten: a chance to become Great Khan"
+   },
+   "nomads.615": {
+    "zh": "击败野心可汗，但另有一位玩家也在竞争",
+    "en": "The aspiring Khan is beaten, but another player is also competing"
+   }
+  },
+  "evidence": "events/nomads_events_1.txt:3696-3770 hidden nomads.500 (needs origin_heirs_of_the_khan and marauder_heir) loops every 200+-100 days: 16 nothing, 5 spawn hunters (505 -> 506), 3 spawn a contract (common/missions/missions/02_contracts.txt:5124-5272). nomads.545 (on_fleet_destroyed_perp common/on_actions/00_on_actions.txt:1696) -> 546. nomads.605 on_entering_system_fleet common/on_actions/00_on_actions.txt:1082; 610 / 615 on_space_battle_won common/on_actions/00_on_actions.txt:1724-1725. The aspiring Khan itself is spawned by marauder.500 (events/marauder_events.txt:7361 -> nomads.600), see the Marauder stories."
+ },
+ "bridges": [],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "nomads.610",
+    "nomads.615"
+   ],
+   "label": {
+    "zh": "击败野心可汗的两种情形",
+    "en": "Two cases of beating the aspiring Khan"
+   },
+   "note": {
+    "zh": "610：没有其他玩家竞争；615：另有未获胜的玩家，故自己成为“等待中的可汗”，3年后620“支配”，并通知对手（625）与上一位等待者（630）。",
+    "en": "610: no other player competes; 615: another player has not won yet, so you become the Khan in waiting, 620 follows after 3 years, and the others are told (625) and the previous waiting Khan loses (630) (events/nomads_events_1.txt:5245-5556)."
+   }
+  }
+ ],
+ "endings": {
+  "nomads.630": {
+   "label": {
+    "zh": "主张落空",
+    "en": "Claim Lost"
+   },
+   "note": {
+    "zh": "上一位等待中的可汗输了，事件链结束。",
+    "en": "The previous Khan in waiting loses; the chain ends."
+   },
+   "evidence": "events/nomads_events_1.txt:5543-5556"
+  },
+  "nomads.620": {
+   "label": {
+    "zh": "支配",
+    "en": "Dominance"
+   },
+   "note": {
+    "zh": "成为大可汗（make_heirs_khan）或拒绝（750 分红）。",
+    "en": "Become Great Khan (make_heirs_khan) or decline (dividend loop 750)."
+   },
+   "evidence": "events/nomads_events_1.txt:5441-5507"
+  }
+ },
+ "notes": [
+  {
+   "doc": "nomads.610",
+   "kind": "review",
+   "zh": "选项a使玩家成为大可汗（make_heirs_khan；触发 marauder.501 / marauder.77 / timeline.130 等后续），选项b放弃，之后每720天经 nomads.750 获得“掠夺者红利”。这些后续窗口在通用的 Marauder 故事中。",
+   "en": "Option a makes the player Great Khan (make_heirs_khan; follow-ups marauder.501 / marauder.77 / timeline.130 live in the Marauder stories); option b declines and nomads.750 pays marauder dividends every 720 days (events/nomads_events_1.txt:5290-5330)."
+  },
+  {
+   "doc": "nomads.546",
+   "kind": "review",
+   "zh": "猎手与委托（nomads.505、550、565、635、700 等）属于通用的游牧/掠夺者故事，由其他审阅范围负责；本起源仅保留其专属窗口。",
+   "en": "Hunter encounters and contracts (nomads.505, 550, 565, 635, 700 ...) belong to the generic Nomads / Marauder stories handled elsewhere; only the origin-specific windows are kept here."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/nomads_events_1.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/missions/missions/02_contracts.txt",
+   "common/scripted_effects/nomads_effects.txt",
+   "events/marauder_events.txt"
+  ],
+  "uncertain": [
+   "marauder.* follow-ups of becoming Khan are not part of this story; cross-links only.",
+   "Option-level conditions of 610 (Defender of the Galaxy / Custodian / Emperor restrictions) are read from source but not reproduced."
+  ],
+  "guide": "public/summaries/origin_heirs_of_the_khan.md"
+ }
+}

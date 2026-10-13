@@ -1,0 +1,64 @@
+{
+ "id": "event-strange-worlds-3035",
+ "family": {
+  "title": {
+   "zh": "我们遗留的东西",
+   "en": "What We Left Behind"
+  },
+  "category": "society",
+  "start": "strange_worlds.3040",
+  "members": [
+   "strange_worlds.3040",
+   "strange_worlds.3045",
+   "strange_worlds.3050",
+   "strange_worlds.3060"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "strange_worlds.3045",
+   "to": "strange_worlds.3060",
+   "choice": "strange_worlds.3045.b_normal",
+   "conditional": true,
+   "label": {
+    "zh": "选项b（食物换矿物）之后，待前超光速社会进入文艺复兴时代",
+    "en": "After option b (food for minerals), once the pre-FTL society enters the Renaissance age"
+   },
+   "evidence": "3045.b sets country flag trigger_canceled_service on the pre-FTL country (events/strange_worlds_observation_events.txt:570-597); on_ftl_society_enters_new_age -> strange_worlds.3055 (common/on_actions/00_on_actions.txt:5540), trigger renaissance_age + that flag + an observation outpost (strange_worlds_observation_events.txt:672-688); 3055 fires 3060 after 180 days (693-695)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "strange_worlds.3050",
+    "strange_worlds.3060"
+   ],
+   "label": {
+    "zh": "3045 的两种非敌对结果",
+    "en": "The two non-hostile outcomes of 3045"
+   },
+   "note": {
+    "zh": "a（秘密回收）→ 3050；b（交换）→ 日后 3060；c（灭绝型帝国）使该文明倒退一个时代，故事止。",
+    "en": "a (covert recovery) -> 3050; b (exchange) -> 3060 later; c (homicidal) regresses the civilization one age and ends the story."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "我们遗留的东西：箱子的三种处理、怨恨与日后的服务终止。",
+   "en": "What We Left Behind: three ways to handle the crates, resentment and the later canceled service."
+  },
+  "sources": [
+   "events/strange_worlds_observation_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "merged": [
+   "event-strange-worlds-3055"
+  ],
+  "guide": "public/summaries/event-strange-worlds-3035.md"
+ }
+}

@@ -1,0 +1,132 @@
+{
+ "id": "event-subject-1100",
+ "family": {
+  "title": {
+   "zh": "争吵的指挥官",
+   "en": "The Bickering Commanders"
+  },
+  "category": "society",
+  "start": "subject.1102",
+  "members": [
+   "subject.1102",
+   "subject.1105",
+   "subject.1107",
+   "subject.1110",
+   "subject.1112",
+   "subject.1115",
+   "subject.1120",
+   "subject.1125",
+   "subject.1130",
+   "subject.1135",
+   "subject.1140",
+   "subject.1142",
+   "subject.1145",
+   "subject.1147"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "subject.1115",
+   "to": "subject.1120",
+   "conditional": true,
+   "label": {
+    "zh": "随机池：三次抽取之一",
+    "en": "Random pool: one of three draws"
+   },
+   "evidence": "1115 sets the admirals-bickering variables and fires hidden 1117 after 150 days, which fires on_action on_admirals_bickering_event_chain (events/overlord_subject_events.txt:1741-1780, 00_on_actions.txt:4793-4799: five events weight 10 each); admirals_bickering_event_effect counts up and fires 1117 again until the counter exceeds 3, then 1142 (common/scripted_effects/overlord_effects.txt:1-20)"
+  },
+  {
+   "from": "subject.1115",
+   "to": "subject.1125",
+   "conditional": true,
+   "label": {
+    "zh": "随机池：三次抽取之一",
+    "en": "Random pool: one of three draws"
+   },
+   "evidence": "1115 sets the admirals-bickering variables and fires hidden 1117 after 150 days, which fires on_action on_admirals_bickering_event_chain (events/overlord_subject_events.txt:1741-1780, 00_on_actions.txt:4793-4799: five events weight 10 each); admirals_bickering_event_effect counts up and fires 1117 again until the counter exceeds 3, then 1142 (common/scripted_effects/overlord_effects.txt:1-20)"
+  },
+  {
+   "from": "subject.1115",
+   "to": "subject.1130",
+   "conditional": true,
+   "label": {
+    "zh": "随机池：三次抽取之一",
+    "en": "Random pool: one of three draws"
+   },
+   "evidence": "1115 sets the admirals-bickering variables and fires hidden 1117 after 150 days, which fires on_action on_admirals_bickering_event_chain (events/overlord_subject_events.txt:1741-1780, 00_on_actions.txt:4793-4799: five events weight 10 each); admirals_bickering_event_effect counts up and fires 1117 again until the counter exceeds 3, then 1142 (common/scripted_effects/overlord_effects.txt:1-20)"
+  },
+  {
+   "from": "subject.1115",
+   "to": "subject.1135",
+   "conditional": true,
+   "label": {
+    "zh": "随机池：三次抽取之一",
+    "en": "Random pool: one of three draws"
+   },
+   "evidence": "1115 sets the admirals-bickering variables and fires hidden 1117 after 150 days, which fires on_action on_admirals_bickering_event_chain (events/overlord_subject_events.txt:1741-1780, 00_on_actions.txt:4793-4799: five events weight 10 each); admirals_bickering_event_effect counts up and fires 1117 again until the counter exceeds 3, then 1142 (common/scripted_effects/overlord_effects.txt:1-20)"
+  },
+  {
+   "from": "subject.1115",
+   "to": "subject.1140",
+   "conditional": true,
+   "label": {
+    "zh": "随机池：三次抽取之一",
+    "en": "Random pool: one of three draws"
+   },
+   "evidence": "1115 sets the admirals-bickering variables and fires hidden 1117 after 150 days, which fires on_action on_admirals_bickering_event_chain (events/overlord_subject_events.txt:1741-1780, 00_on_actions.txt:4793-4799: five events weight 10 each); admirals_bickering_event_effect counts up and fires 1117 again until the counter exceeds 3, then 1142 (common/scripted_effects/overlord_effects.txt:1-20)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "subject.1120",
+    "subject.1125",
+    "subject.1130",
+    "subject.1135",
+    "subject.1140"
+   ],
+   "label": {
+    "zh": "随机池五选一，共抽三次",
+    "en": "Pool of five, drawn three times"
+   },
+   "note": {
+    "zh": "每次权重各10；1120 货船坠毁，1125 经费问题，1130 街头暴力，1135 民主丑闻，1140 凶手被捕。每次事件后由 admirals_bickering_event_effect 决定再抽还是进入 1142。",
+    "en": "Weight 10 each per draw: 1120 crashed cargo ship, 1125 a question of funding, 1130 violence in the streets, 1135 a democratic scandal, 1140 the murderer found. After each, admirals_bickering_event_effect decides another draw or the finale 1142."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "subject.1110",
+    "subject.1112"
+   ],
+   "label": {
+    "zh": "宗主国干预：75%成功 / 25%失败",
+    "en": "Overlord intervention: 75% success / 25% failure"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "争吵的指挥官完整链：开端、宗主国干预、三次随机事件、结局与附庸分裂。",
+   "en": "Whole Bickering Commanders chain: opening, overlord intervention, three random events, the finale and the split vassal."
+  },
+  "sources": [
+   "events/overlord_subject_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/scripted_effects/overlord_effects.txt"
+  ],
+  "merged": [
+   "event-subject-1120",
+   "event-subject-1125",
+   "event-subject-1130",
+   "event-subject-1135",
+   "event-subject-1140"
+  ],
+  "guide": "public/summaries/event-subject-1100.md"
+ }
+}

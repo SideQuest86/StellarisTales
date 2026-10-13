@@ -1,0 +1,462 @@
+{
+ "id": "event-shroud-2750",
+ "family": {
+  "title": {
+   "zh": "灵能飞升",
+   "en": "Psionic Ascension"
+  },
+  "category": "society",
+  "start": "shroud.2750",
+  "members": [
+   "shroud.2750",
+   "utopia.2602",
+   "situations:situation_breach_shroud",
+   "shroud.2760",
+   "shroud.2780",
+   "utopia.2652",
+   "shroud.2800",
+   "shroud.2810",
+   "shroud.2600",
+   "shroud.2605",
+   "shroud.2610",
+   "shroud.2615",
+   "shroud.2620",
+   "shroud.2621",
+   "shroud.2625",
+   "shroud.2626",
+   "shroud.2630",
+   "shroud.2635",
+   "shroud.2640",
+   "shroud.2300",
+   "shroud.2305",
+   "shroud.2310",
+   "shroud.2315",
+   "shroud.2320",
+   "shroud.2325",
+   "shroud.2400",
+   "shroud.2405",
+   "shroud.2410",
+   "shroud.2415",
+   "shroud.2420",
+   "shroud.2425",
+   "shroud.2502",
+   "shroud.2505",
+   "shroud.2510",
+   "shroud.2515",
+   "shroud.2520"
+  ]
+ },
+ "titleFrom": "shroud.2750",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2600",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3080-3124"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2605",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3127-3160"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2610",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3163-3221"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2615",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3224-3269"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2620",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3272-3330"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2621",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3333-3391"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2625",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3394-3450"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2626",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3453-3521"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2630",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3524-3595"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2635",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3598-3688"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2640",
+   "conditional": true,
+   "label": {
+    "zh": "阶段一进度 150–325 时抽取一个社会事件（11选1，权重各1，每次仅一次）",
+    "en": "Stage 1, progress 150–325: one of 11 social events (weight 1 each, once per run)"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 (monthly via common/situations/13_shroud_situations.txt:387-395) fires on_breach_the_shroud_situation_random_social_events_list; common/on_actions/00_on_actions.txt:5289-5304; events/shroud_situation_events.txt:3712-3804"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2300",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（有益池：冥想路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; beneficial pool: meditate approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5307-5316; events/shroud_situation_events.txt:832-980"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2305",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（有益池：冥想路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; beneficial pool: meditate approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5307-5316; events/shroud_situation_events.txt:983-1106"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2310",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（有益池：冥想路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; beneficial pool: meditate approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5307-5316; events/shroud_situation_events.txt:1109-1247"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2315",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（有益池：冥想路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; beneficial pool: meditate approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5307-5316; events/shroud_situation_events.txt:1250-1395"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2320",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（有益池：冥想路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; beneficial pool: meditate approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5307-5316; events/shroud_situation_events.txt:1398-1538"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2325",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（有益池：冥想路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; beneficial pool: meditate approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5307-5316; events/shroud_situation_events.txt:1541-1672"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2400",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（平衡池：无路线加成），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; balanced pool: no approach bonus), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5320-5329; events/shroud_situation_events.txt:1675-1755"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2405",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（平衡池：无路线加成），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; balanced pool: no approach bonus), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5320-5329; events/shroud_situation_events.txt:1758-1853"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2410",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（平衡池：无路线加成），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; balanced pool: no approach bonus), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5320-5329; events/shroud_situation_events.txt:1856-1998"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2415",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（平衡池：无路线加成），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; balanced pool: no approach bonus), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5320-5329; events/shroud_situation_events.txt:2001-2124"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2420",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（平衡池：无路线加成），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; balanced pool: no approach bonus), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5320-5329; events/shroud_situation_events.txt:2127-2264"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2425",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（平衡池：无路线加成），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; balanced pool: no approach bonus), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5320-5329; events/shroud_situation_events.txt:2267-2456"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2502",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（混乱池：分发佐罗路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; chaotic pool: distribute-zro approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5333-5340; events/shroud_situation_events.txt:2500-2579"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2505",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（混乱池：分发佐罗路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; chaotic pool: distribute-zro approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5333-5340; events/shroud_situation_events.txt:2582-2700"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2510",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（混乱池：分发佐罗路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; chaotic pool: distribute-zro approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5333-5340; events/shroud_situation_events.txt:2703-2823"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2515",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（混乱池：分发佐罗路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; chaotic pool: distribute-zro approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5333-5340; events/shroud_situation_events.txt:2826-2939"
+  },
+  {
+   "from": "situations:situation_breach_shroud",
+   "to": "shroud.2520",
+   "conditional": true,
+   "label": {
+    "zh": "进度达到阶段一 325 / 阶段二 625 / 阶段三 875 时，三类池各 1/3 抽一类（混乱池：分发佐罗路线 ×5），池内等概率",
+    "en": "At progress 325 (stage 1), 625 (stage 2) and 875 (stage 3) one of the three pools is drawn (1:1:1; chaotic pool: distribute-zro approach ×5), then equal weight inside the pool"
+   },
+   "evidence": "events/shroud_situation_events.txt:758-829 shroud.2200 random_list; common/on_actions/00_on_actions.txt:5333-5340; events/shroud_situation_events.txt:2942-3077"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.2600",
+    "shroud.2605",
+    "shroud.2610",
+    "shroud.2615",
+    "shroud.2620",
+    "shroud.2621",
+    "shroud.2625",
+    "shroud.2626",
+    "shroud.2630",
+    "shroud.2635",
+    "shroud.2640"
+   ],
+   "label": {
+    "zh": "社会事件池（11选1）",
+    "en": "Social pool (1 of 11)"
+   },
+   "note": {
+    "zh": "阶段一进度达到 150 后触发一次；2620/2621 分别面向格式塔/非格式塔，2625/2626 面向有机/机械（见池内注释）。",
+    "en": "Fired once in stage 1 after progress 150; 2620/2621 are for gestalt / non-gestalt, 2625/2626 for organic / machine (pool comments)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.2300",
+    "shroud.2305",
+    "shroud.2310",
+    "shroud.2315",
+    "shroud.2320",
+    "shroud.2325"
+   ],
+   "label": {
+    "zh": "有益事件池",
+    "en": "Beneficial pool"
+   },
+   "note": {
+    "zh": "三类池之一；“冥想”路线使本池权重 ×5。",
+    "en": "One of three pools; the meditate approach multiplies this pool by 5."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.2400",
+    "shroud.2405",
+    "shroud.2410",
+    "shroud.2415",
+    "shroud.2420",
+    "shroud.2425"
+   ],
+   "label": {
+    "zh": "平衡事件池",
+    "en": "Balanced pool"
+   },
+   "note": {
+    "zh": "三类池之一，无路线加成。",
+    "en": "One of three pools, no approach bonus."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud.2502",
+    "shroud.2505",
+    "shroud.2510",
+    "shroud.2515",
+    "shroud.2520"
+   ],
+   "label": {
+    "zh": "混乱事件池",
+    "en": "Chaotic pool"
+   },
+   "note": {
+    "zh": "三类池之一；“分发佐罗”路线使本池权重 ×5。",
+    "en": "One of three pools; the distribute-zro approach multiplies this pool by 5."
+   }
+  }
+ ],
+ "endings": {
+  "shroud.2800": {
+   "label": {
+    "zh": "结局：突破荫蔽",
+    "en": "Ending: the Shroud is breached"
+   },
+   "note": {
+    "zh": "情境销毁；解锁心灵传统；“荫蔽锻造”起源改与黏土动画师接触并触发 2810。",
+    "en": "The situation ends, psionic traditions unlock; Shroud-Forged empires open contact with the Animator of Clay (2810)."
+   },
+   "evidence": "events/shroud_situation_events.txt:4151-4212"
+  }
+ },
+ "notes": [
+  {
+   "doc": "situations:situation_breach_shroud",
+   "kind": "review",
+   "zh": "审阅注：情境从 shroud.2750 开始（initial_progress 0；阶段一结束 500，阶段二 750，阶段三结束 1000）；每月检查 shroud.2200：阶段一进度≥150 发一次社会事件；进度达 325/625/875 各发一次三类池事件；进入阶段二 → 2760，阶段三 → 2780，进度满 → 2800。",
+   "en": "Review note: the situation starts from shroud.2750 (progress 0; stage 1 ends at 500, stage 2 at 750, stage 3 at 1000). shroud.2200 runs monthly: one social event after progress 150 in stage 1; one pool event at 325 / 625 / 875; entering stage 2 fires 2760, stage 3 fires 2780, completion fires 2800."
+  },
+  {
+   "doc": "shroud.2750",
+   "kind": "review",
+   "zh": "审阅注：2750 由传统“进入荫蔽”(tr_psionics_shroud_adopt)启用时触发（深渊吞噬者起源改发 shroud.8310）；立即调用 mind_over_matter_immediate 并开始情境。",
+   "en": "Review note: 2750 is fired when the psionics tradition is enabled (the Endbringers origin gets shroud.8310 instead) and starts the situation."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "突破荫蔽（心灵升华）情境：入口、情境、阶段事件、结局及全部4个随机事件池（28个事件）。",
+   "en": "Breach the Shroud (psionic ascension): entry, situation, stage events, ending and all four random event pools (28 events)."
+  },
+  "sources": [
+   "events/shroud_situation_events.txt:758-829",
+   "events/shroud_situation_events.txt:3808-4255",
+   "common/situations/13_shroud_situations.txt:1-400",
+   "common/traditions/01_psionics_shroud.txt:25-60",
+   "common/on_actions/00_on_actions.txt:5289-5340"
+  ],
+  "uncertain": [
+   "2760、2780 的完整效果（心灵军团建筑、全面觉醒传统）只读取了正文与选项提示，未逐项展开；utopia.2602/2652 来自乌托邦篇。 / The full effects of 2760 and 2780 and the utopia events were only skimmed."
+  ],
+  "guide": "public/summaries/event-shroud-2750.md"
+ }
+}

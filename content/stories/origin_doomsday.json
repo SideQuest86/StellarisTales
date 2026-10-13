@@ -2,21 +2,109 @@
  "id": "origin_doomsday",
  "opening": {
   "targets": [
-   "origin.61"
+   "origin.61",
+   "origin.85"
   ],
   "label": {
-   "zh": "终末的最初征兆",
-   "en": "The first signs of the end"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "60 setup schedules61 after5days"
+  "labels": {
+   "origin.61": {
+    "zh": "终末的最初征兆（开局5天后）",
+    "en": "The first signs of the end (5 days after start)"
+   },
+   "origin.85": {
+    "zh": "在新星球上建立首个殖民地后",
+    "en": "After founding the first colony on another planet"
+   }
+  },
+  "evidence": "game start fires hidden origin.60 (events/origin_events_1.txt:2133-2150: marks the capital doomed, adds modifier doomsday_1, fires 61 after 5 days). Hidden 84 (:2683-2702, colony founded, non-nomadic, once) fires 85 after 5 days."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_1.txt",
+   "events/nomads_events_1.txt:13822 (nomads.4710)"
+  ],
+  "uncertain": [
+   "nomads.4710 and its situation/chain (Operational Reserves, Star Journal) belong to the Nomads arkship content; shown here as the embarkation outcome.",
+   "The exact set of options of origin.70 (a/b/c) was read only by their flag triggers."
+  ],
+  "guide": "public/summaries/origin_doomsday.md"
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.90",
+    "origin.81",
+    "origin.91"
+   ],
+   "label": {
+    "zh": "终局的三种报告",
+    "en": "Three end reports"
+   },
+   "note": {
+    "zh": "80按保留人口的旗标（保住原星球/损失部分/大部分/全部）选项；随后向邻国通报：90（星球未完全撤离）、91（完全撤离）；81为撤离后的行星（方舟起飞后）。",
+    "en": "Event 80 offers options by the flags (some / many / all pops lost, or the planet was lost); neighbours are then informed: 90 (not fully evacuated) or 91 (completely evacuated); 81 is the evacuated planet after embarkation (events/origin_events_1.txt:2432-2660, :2874-2930)."
+   }
   }
- }
+ ],
+ "endings": {
+  "origin.80": {
+   "label": {
+    "zh": "终结",
+    "en": "The End"
+   },
+   "note": {
+    "zh": "母星毁灭；依撤离程度的四种选项。",
+    "en": "The homeworld is destroyed; four options by how much was saved."
+   },
+   "evidence": "events/origin_events_1.txt:2432-2660"
+  },
+  "origin.81": {
+   "label": {
+    "zh": "行星已撤离",
+    "en": "Planet evacuated"
+   },
+   "note": {
+    "zh": "方舟起飞后的终局。",
+    "en": "The ending after embarkation."
+   },
+   "evidence": "events/origin_events_1.txt:2663-2682"
+  },
+  "origin.91": {
+   "label": {
+    "zh": "行星彻底撤离·通报邻国",
+    "en": "Completely evacuated: neighbours informed"
+   },
+   "note": {
+    "zh": "向邻国通报的终局。",
+    "en": "The neighbours are informed."
+   },
+   "evidence": "events/origin_events_1.txt:2844-2872"
+  },
+  "origin.90": {
+   "label": {
+    "zh": "通报邻国",
+    "en": "Neighbours informed"
+   },
+   "note": {
+    "zh": "向邻国通报的终局。",
+    "en": "The neighbours are informed."
+   },
+   "evidence": "events/origin_events_1.txt:2765-2843"
+  }
+ },
+ "notes": [
+  {
+   "doc": "origin.61",
+   "kind": "review",
+   "zh": "倒计时链：61 →（约3150±900天）65 → 70 → 75 → 76；其中70的选项c可解锁方舟登船（旗标 doomsday_embark_unlocked）。76 对只有一颗星球的AI帝国有80%概率触发“登船完成”（nomads.4710，origin_events_1.txt:2405-2425）；玩家则通过游牧决定“登船”（common/decisions/15_nomads_dlc_decisions.txt:261）进入4710。无论如何，260±80天后触发80“终结”。",
+   "en": "The countdown: 61 -> (3150+-900 days each) 65 -> 70 -> 75 -> 76. Option c of 70 can unlock embarkation (flag doomsday_embark_unlocked). for an AI empire with a single planet 76 has an 80% chance to fire Embarkation Complete (nomads.4710); players reach 4710 through the Nomads embarkation decision (common/decisions/15_nomads_dlc_decisions.txt:261). In any case 76 fires 80 The End after 260+-80 days (events/origin_events_1.txt:2183-2430)."
+  }
+ ]
 }

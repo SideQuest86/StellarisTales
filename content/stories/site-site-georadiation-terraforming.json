@@ -1,0 +1,49 @@
+{
+ "id": "site-site-georadiation-terraforming",
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "special_projects:GEORADIATION_SIGNAL_1_PROJECT",
+    "special_projects:GEORADIATION_SIGNAL_2_PROJECT"
+   ],
+   "required": 2,
+   "gate": "special_projects:UNDETONATED_GEORADIATION_PROJECT",
+   "label": {
+    "zh": "两个信号追踪（顺序不限）",
+    "en": "Two Signal Traces (any order)"
+   },
+   "note": {
+    "zh": "两个项目互不依赖，第二个完成时才启用“未爆装置”（需要 georadiation_signal_1/2_project_done 两个标志）。",
+    "en": "The two projects are independent; the second to finish enables the undetonated-device project (both georadiation_signal_N_project_done flags needed)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_georadiation_terraforming",
+   "kind": "review",
+   "zh": "随机遗址：权重+50，出现在有毒星球（pc_toxic，非地形改造候选）上，要求 has_shroud_dlc（common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:302）。",
+   "en": "A random site: +50 on toxic planets (pc_toxic, not a terraforming candidate), needing has_shroud_dlc (common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:302)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt",
+   "events/extreme_frontiers_events.txt",
+   "common/special_projects/05_projects_extreme_frontiers.txt",
+   "common/scripted_effects/extreme_frontiers_scripted_effects.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-georadiation-terraforming.md"
+ }
+}

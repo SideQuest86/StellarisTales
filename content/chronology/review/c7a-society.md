@@ -92,4 +92,44 @@ These are unordered random interludes → each stays its own story; compiled tre
 - **event-colony-2015** An Odd Factor (family; merged 2016,2017,2019): 30:35 random_list (`colony_events_2.txt:2402-2405`), kidnap needs 100+ factory workers.
 - **event-colony-2060** Mushroom Picking: depends on fumongus_* flags set by the Fumongus archaeological site (`ancient_relics_arcsite_events_2.txt:9628-9745`, other owner).
 - Note: `callers.py` line numbers for these events are offset from the real file lines; guides cite real lines.
+### First Contact DLC, awareness, espionage, Machine Age, situations — reviewed (Fable 5.5, 2026-10-13)
+- **event-fircon-1210** The Many-Tentacled One / Jaunting Traveler (family; merged 1211, 1212, 1220, 1221): entry fircon.1200 hidden in five-year pulse (weight 5, `00_on_actions.txt:505`);
+  stages 1210 -> 1211 -> 1212 via set_first_contact_stage (`first_contact_dlc_events.txt:575-601`, `02_first_contact_unique_stories.txt:177-232`); failure pool 1220/1221
+  (`first_contact_effects.txt:1818-1836`); THE_JAUNT_PROJECT 10% -> 1243 / 90% -> 1242 (script comments label them the other way round).
+- **event-fircon-3505** The Chosen (merged 3515): fircon.3500 spawned by ancrel.12050 (other owner); 3505 wormhole (hidden) -> 3510, first contact -> 3515, both end in a cleansing war.
+- **event-fircon-5000** Habinte Unified Worlds / Solarpunk (family; merged 5005, 5015, 5020, 5034, 5040, 5050): 5000 adds the SOLARPUNK_CAT anomaly (anomaly-solarpunk-cat, C3 owner);
+  observation 5025 -> 5026 (moved from the fircon-30 story); invasion 5034/5035 -> 5036 -> 5040; peaceful 5050 -> 5051.
+- **event-awareness-125** First Contact (pre-FTL) (family; merged 900, fircon-30): entries awareness.125 (hidden), 910, 920 all converge on action.2 -> progress.4/5/6.
+- **event-first-contact-1050** (action.13), **event-fircon-10** (Observation Insights situation, fircon.10/11).
+- **event-espionage-1 / -20 / -2** and **event-preftl-espionage-2**: dispatchers and random pools verified; 1070-1073 (operations) are not mine.
+- **event-cyber-*** (36) and **event-synth-*** (13): Machine Age Cyberization/Digitization stage pools (`00_on_actions.txt:5176-5290`), Future Shock / Synth Shock chain pools;
+  cyber.1505-1525 and synth.1505-1525 declared as hubs (shared endings).
+- **situation-situation-paperclips**, **-nanotech-consume-planet**, **-initiate-storm** (two routes, six finishers), **event-machine-age-4000** Transformation, **event-shroud-1000** Experimental Testing,
+  **event-first-contact-critters-1000** (dispatcher to marauder.501/526).
+- **event-strange-worlds-3000 / -3035 (merged 3055) / -3065**: Strange Worlds observation interludes; the canceled-service flag is set by 3045.b, not by 3050.
+### Overlord subject events — reviewed (Fable 5.5, 2026-10-13)
+- Pool `on_five_year_random_pulse_overlord` (`00_on_actions.txt:521-535`, nothing 200 / 11 chains x 10). One story per chain: **event-subject-1** (veterans), **-50** (starbase request), **-100** (broken bulwark),
+  **-1001** (war fever), **-1050** (war exhaustion), **-2001** (technological advancement), **-2050** (destructive research, escalating 90/70/50%), **-2100** (experimental research), **-3001**, **-3050**.
+- **event-subject-1100** The Bickering Commanders (family; merged 1120-1140): 1115 -> hidden 1117 draws 3 of 5 pool events (`overlord_subject_events.txt:1741-1780`, `overlord_effects.txt:1-20`) -> 1142 -> 1145 -> 1147.
+
+### Federations / Galactic Community / leaders — reviewed (Fable 5.5, 2026-10-13)
+- **event-federations-10400** A Strongly Worded Letter (family; merged 10100,10110,10200,10220,10230,10300,10310,10320,10330,10340): resolution-breach windows (fired by `resolutions:*` effects) converge on 10401 via the decade pulse 10400 (`00_on_actions.txt:620`).
+  **-10000** Project Cornucopia, **-10010** Greater Than Ourselves (10010 + 10210 windows). `event-federations-type` is a debug test event (`always = no`, `federations_events_1.txt:101-110`): no compiled story, nothing to review.
+- **event-fedev-499** (new federation), **-9500** (juggernaut notice), **-600** (trade-federation logistics trial, decade pulse `00_on_actions.txt:305`).
+- **event-federations3-2100** (Leylines, research federation), **-1000** (Relic Rails dig site), **-2200** (Ecumenical Council, spiritualist federation), **-120** (Keep Off the Grass).
+- **event-galcom-1** Galactic Community (family; merged 14, 50): galcom.1 yearly -> 2 (aye/nay) -> 3 tally after 360 days -> 5/6/16 or 10 + retry in 50 years via galcom.20 (`galactic_community_events.txt:14-190,458-520`); council 50 -> 51.
+  **-60**, **-62** Galactic Market HQ (family; merged 64), **-102** Tiyanki notices (family; merged 103, 108).
+- **event-leader-*** (15): fleet-destroyed pool (`00_on_actions.txt:1701-1707`), emergency-FTL pool (2901-2905), first-time-system pool (950), repair MTTH (leader.15) and policy trigger (leader.30). One window each.
+
+### Open
+- **event-situation-5** stays partial (compiler cannot express bidirectional stage order, see Request 1).
+
+### Requests (added 2026-10-13)
+2. **Unowned hub stories.** `event-cyber-1505/1510/1515/1520/1525` and `event-synth-1505/1510/1515/1520/1525` (final outcomes of the Future Shock / Synth Shock chains) exist as compiled stories but appear in no assignment list.
+   My stories declare them as hubs. Suggest assigning them (or marking them as hub docs of a single Future Shock story).
+3. **Future Shock chain placement (c8c `event-utopia-2500`).** The chain starts at cyber.505-525 (shown inside the c8c story tree) and continues with my pool events (610-855, 1005-1255) and the final outcomes. A single "Future Shock" family spanning
+   cyber.505-525 -> pools -> 1505-1525 would be the natural tree; I kept my events as separate pool stories to avoid claiming docs of another owner.
+4. **action.2 / progress.4-6** (generic First Contact windows) are used by c7b first contact (first_contact.6000) as well; my family `event-awareness-125` contains them as the convergence point for pre-FTL contact.
+5. **Solarpunk (Habinte) chain** crosses ownership: `anomaly-solarpunk-cat` + fircon.5010 (C3) is the middle of `event-fircon-5000` (mine).
+6. **callers.py line numbers** for several events in `colony_events_2.txt` are offset from the real file lines by up to ~30; guides cite real lines.
 <!-- ledger-end -->

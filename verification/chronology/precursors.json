@@ -2,15 +2,15 @@
   "category": "precursors",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 101,
-  "docs": 1037,
-  "nodes": 1151,
-  "refs": 114,
-  "crossLinks": 2002,
+  "stories": 92,
+  "docs": 1028,
+  "nodes": 1143,
+  "refs": 115,
+  "crossLinks": 1923,
   "review": {
-    "reviewed": 63,
+    "reviewed": 85,
     "partial": 2,
-    "unreviewed": 36
+    "unreviewed": 5
   },
   "failures": [],
   "items": [
@@ -78,6 +78,15 @@
       "review": "reviewed"
     },
     {
+      "id": "site-site-weathermanipulators-coordinatesa-residential-planet",
+      "title": "因内特贸易体",
+      "kind": "family",
+      "docs": 27,
+      "refs": 2,
+      "crossLinks": 20,
+      "review": "reviewed"
+    },
+    {
       "id": "zroni",
       "title": "泽珞族",
       "kind": "family",
@@ -96,12 +105,30 @@
       "review": "reviewed"
     },
     {
+      "id": "site-rubricator-digsite",
+      "title": "誊录仪",
+      "kind": "family",
+      "docs": 20,
+      "refs": 2,
+      "crossLinks": 42,
+      "review": "reviewed"
+    },
+    {
       "id": "precursor-assistance",
       "title": "发现先驱",
       "kind": "family",
       "docs": 17,
       "refs": 5,
       "crossLinks": 35,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-ancrel-6150",
+      "title": "屏障星球",
+      "kind": "family",
+      "docs": 12,
+      "refs": 1,
+      "crossLinks": 79,
       "review": "reviewed"
     },
     {
@@ -112,6 +139,24 @@
       "refs": 0,
       "crossLinks": 13,
       "review": "partial"
+    },
+    {
+      "id": "event-ancrel-6098",
+      "title": "隐形场现形",
+      "kind": "family",
+      "docs": 11,
+      "refs": 1,
+      "crossLinks": 40,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-ancient-robot-world",
+      "title": "远古机器人星球",
+      "kind": "family",
+      "docs": 10,
+      "refs": 4,
+      "crossLinks": 1,
+      "review": "reviewed"
     },
     {
       "id": "site-site-grand-herald",
@@ -183,6 +228,15 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 13,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-omnirelic-site",
+      "title": "废弃星球",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 40,
       "review": "reviewed"
     },
     {
@@ -321,22 +375,13 @@
       "review": "reviewed"
     },
     {
-      "id": "site-site-weathermanipulators-coordinatesa-residential-planet",
-      "title": "坐标A：殖民星球",
-      "kind": "site",
-      "docs": 27,
-      "refs": 2,
-      "crossLinks": 20,
-      "review": "unreviewed"
-    },
-    {
       "id": "site-site-georadiation-terraforming",
       "title": "地下网络",
       "kind": "site",
       "docs": 18,
       "refs": 1,
       "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "site-zevox-digsite",
@@ -345,7 +390,7 @@
       "docs": 13,
       "refs": 4,
       "crossLinks": 39,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "site-site-engineered-species",
@@ -363,7 +408,7 @@
       "docs": 12,
       "refs": 0,
       "crossLinks": 6,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "anomaly-storms-prec-wm-one",
@@ -381,16 +426,7 @@
       "docs": 11,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-rubricator-digsite",
-      "title": "飞天鼠盗",
-      "kind": "site",
-      "docs": 11,
-      "refs": 1,
-      "crossLinks": 41,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "site-site-chronicles-of-dendrus",
@@ -402,31 +438,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-ancrel-6150",
-      "title": "屏障星球",
-      "kind": "event",
-      "docs": 10,
-      "refs": 0,
-      "crossLinks": 79,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-6151",
-      "title": "屏障星球",
-      "kind": "event",
-      "docs": 10,
-      "refs": 0,
-      "crossLinks": 79,
-      "review": "unreviewed"
-    },
-    {
       "id": "site-broken-world-digsite",
       "title": "破损的大门",
       "kind": "site",
       "docs": 10,
       "refs": 0,
       "crossLinks": 41,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "site-endless-expanse-digsite",
@@ -435,7 +453,7 @@
       "docs": 10,
       "refs": 0,
       "crossLinks": 80,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "site-larion-digsite",
@@ -444,16 +462,7 @@
       "docs": 10,
       "refs": 0,
       "crossLinks": 39,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-6098",
-      "title": "隐形场现形",
-      "kind": "event",
-      "docs": 9,
-      "refs": 1,
-      "crossLinks": 40,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "site-paragon-legendary-leader-homeworld",
@@ -483,31 +492,13 @@
       "review": "reviewed"
     },
     {
-      "id": "site-site-ancient-robot-world",
-      "title": "远古机器人星球",
-      "kind": "site",
-      "docs": 8,
-      "refs": 4,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-ancrel-4008",
       "title": "石中低语",
       "kind": "event",
       "docs": 7,
       "refs": 0,
       "crossLinks": 40,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-4120",
-      "title": "裂爪巨龙之殇",
-      "kind": "event",
-      "docs": 7,
-      "refs": 1,
-      "crossLinks": 1,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-ancrel-6049",
@@ -516,7 +507,7 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 40,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "site-site-freighter-crash",
@@ -616,15 +607,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "site-omnirelic-site",
-      "title": "废弃星球",
-      "kind": "site",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 40,
-      "review": "unreviewed"
     },
     {
       "id": "site-site-abandoned-bio-lab",
@@ -741,7 +723,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "site-ancient-battle-site",
@@ -762,22 +744,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-ancrel-6131",
-      "title": "信号传输接入",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-ancrel-6499",
       "title": "在[planet.GetName]上缴获遗珍",
       "kind": "event",
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-ancrel-10010",
@@ -786,7 +759,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-ancrel-10020",
@@ -795,7 +768,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-ancrel-10030",
@@ -804,7 +777,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-ancrel-10040",
@@ -813,25 +786,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-12060",
-      "title": "[From.GetName]恒星系",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-12065",
-      "title": "[fromfrom.System.GetName]大捷",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-ancrel-2068",
@@ -840,43 +795,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-4012",
-      "title": "誊录仪",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-4024",
-      "title": "信号传输接入",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-6000",
-      "title": "有机全典",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-ancrel-7007",
-      "title": "微缩星河",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-ancrel-8200",

@@ -1,0 +1,45 @@
+{
+ "id": "event-strange-worlds-3000",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "strange_worlds.3025",
+    "strange_worlds.3030"
+   ],
+   "label": {
+    "zh": "结局视观察者是否为巨型企业而定",
+    "en": "The ending depends on whether the observer is a megacorp"
+   },
+   "note": {
+    "zh": "非巨型企业且已联系游牧者 → 3025；巨型企业 → 3030。",
+    "en": "Non-megacorp that contacted the nomads -> 3025; megacorp -> 3030."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "strange_worlds.3015",
+    "strange_worlds.3020"
+   ],
+   "label": {
+    "zh": "3010 的两个选项",
+    "en": "The two options of 3010"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "可疑的先知：游牧者/商队联系下的前超光速观测插曲。",
+   "en": "Suspicious Prophet: an observation interlude tied to the Nomads / caravaneers contact."
+  },
+  "sources": [
+   "events/strange_worlds_observation_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-strange-worlds-3000.md"
+ }
+}

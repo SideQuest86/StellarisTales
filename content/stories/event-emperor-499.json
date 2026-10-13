@@ -1,0 +1,66 @@
+{
+ "id": "event-emperor-499",
+ "family": {
+  "title": {
+   "zh": "银河帝国的崛起",
+   "en": "Rise of the Galactic Imperium"
+  },
+  "category": "stories",
+  "start": "emperor.2",
+  "members": [
+   "emperor.2",
+   "emperor.3",
+   "emperor.4",
+   "emperor.5",
+   "emperor.10",
+   "emperor.52",
+   "emperor.72"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "emperor.2",
+   "to": "emperor.52",
+   "conditional": true,
+   "label": {
+    "zh": "原先有银河防卫军决议：10天后",
+    "en": "If the Custodian defence-force resolution was active: 10 days later"
+   },
+   "evidence": "events/nemesis_emperor_events.txt:137-143 emperor.1 fires 51 (10 days) -> events/nemesis_emperor_events.txt:569-596 -> 52"
+  },
+  {
+   "from": "emperor.2",
+   "to": "emperor.72",
+   "conditional": true,
+   "label": {
+    "zh": "原先有银河警察决议：4天后",
+    "en": "If the Custodian police resolution was active: 4 days later"
+   },
+   "evidence": "events/nemesis_emperor_events.txt:144-152 emperor.1 fires 71 (4 days) -> events/nemesis_emperor_events.txt:934-950 -> 72"
+  }
+ ],
+ "nodeLabels": {
+  "emperor.2": {
+   "zh": "皇帝的加冕",
+   "en": "The coronation"
+  },
+  "emperor.3": {
+   "zh": "其他国家的通知",
+   "en": "Notice to the others"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "银河帝国成立（皇帝加冕、其他国家的通知、联邦解散、附庸离开）以及原银河防卫军/警察被改组。",
+   "en": "The founding of the Galactic Imperium: the coronation, notices to the others, federations disbanded, subjects leaving, and the renaming of the old defence force and police."
+  },
+  "sources": [
+   "events/nemesis_emperor_events.txt",
+   "common/resolutions/01_resolutions_nemesis.txt"
+  ],
+  "guide": "public/summaries/event-emperor-499.md"
+ }
+}

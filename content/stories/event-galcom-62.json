@@ -1,0 +1,87 @@
+{
+ "id": "event-galcom-62",
+ "family": {
+  "title": {
+   "zh": "银河市场总部",
+   "en": "Galactic Market Headquarters"
+  },
+  "category": "society",
+  "start": "galcom.62",
+  "members": [
+   "galcom.62",
+   "galcom.63",
+   "galcom.64",
+   "galcom.65",
+   "galcom.68",
+   "galcom.69",
+   "galcom.70",
+   "action.1000",
+   "action.1005",
+   "action.104",
+   "action.101",
+   "event_chains:market_founding_chain",
+   "event_chains:market_relocation_chain"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "galcom.68",
+    "galcom.69",
+    "galcom.70"
+   ],
+   "label": {
+    "zh": "迁移提名结果",
+    "en": "Relocation nomination result"
+   },
+   "note": {
+    "zh": "galcom.66（隐藏）在提名期后：有提名星球 → 68 新总部成立；否则 69 / 70 总部不动。",
+    "en": "Hidden galcom.66 after the nomination period: a nominee planet -> 68 the new headquarters; otherwise 69 / 70 the market stays."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "action.104",
+    "action.1000",
+    "action.1005"
+   ],
+   "label": {
+    "zh": "丢失总部后的提名结果（action.98）",
+    "en": "Nomination result after losing the headquarters (action.98)"
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "galcom.62",
+   "kind": "review",
+   "zh": "入口一：成员离开社群（on_remove_community_member → 62）而其星球是市场总部；入口二：迁移决议通过（galcom.64）。",
+   "en": "Entry one: a member leaves the community (on_remove_community_member -> 62) and its planet is the market headquarters; entry two: the relocation resolution passes (galcom.64)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "银河市场总部：失去总部后的寻找、迁移决议与新总部的成立。",
+   "en": "Galactic Market headquarters: the search after losing it, the relocation resolution and the new headquarters."
+  },
+  "sources": [
+   "events/galactic_community_events.txt",
+   "events/on_action_events_2.txt",
+   "common/event_chains/00_event_chains_3.txt",
+   "common/resolutions/00_resolutions.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "The initial founding of the market (action.96/97) is not in my list; only the headquarters-lost and relocation lines are covered."
+  ],
+  "merged": [
+   "event-galcom-64"
+  ],
+  "guide": "public/summaries/event-galcom-62.md"
+ }
+}

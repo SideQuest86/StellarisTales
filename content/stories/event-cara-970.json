@@ -1,0 +1,51 @@
+{
+ "id": "event-cara-970",
+ "family": {
+  "title": {
+   "zh": "银河之星",
+   "en": "The Galatron"
+  },
+  "category": "stories",
+  "start": "cara.970",
+  "members": [
+   "cara.970",
+   "cara.950",
+   "cara.951"
+  ]
+ },
+ "notes": [
+  {
+   "doc": "cara.970",
+   "zh": "评注：迦拉特隆（遗物 r_galatron）激活时弹出，随机十选一的奖励各权重10：合金5000（出现两次）、能量8000、矿物8000、食物8000、次级文物300、稀有水晶500、易爆微粒500、消费品5000、异星气体500（events/caravaneer_events.txt:4338-4352）。获得途径见行商联盟主菜单的圣物箱（event-cara-333）。",
+   "en": "Commentary: shown when the Galatron (relic r_galatron) is activated; rewards are a ten-way random pick of weight 10 each: alloys 5000 (twice), energy 8000, minerals 8000, food 8000, minor artifacts 300, rare crystals 500, volatile motes 500, consumer goods 5000, exotic gases 500 (events/caravaneer_events.txt:4338-4352). It is obtained from the Reliquaries of the Coalition menu (event-cara-333).",
+   "kind": "review"
+  },
+  {
+   "doc": "cara.950",
+   "zh": "评注：通过战争目标 wg_take_galatron / wg_steal_galatron（及帝国版）夺得迦拉特隆时弹出，并设成就旗标 relic_robbery_achievement。",
+   "en": "Commentary: shown when the Galatron is seized through the war goals wg_take_galatron / wg_steal_galatron (and the imperium versions); it sets the achievement flag relic_robbery_achievement.",
+   "kind": "review"
+  },
+  {
+   "doc": "cara.951",
+   "zh": "评注：失去迦拉特隆的一方弹出，并获得3600天的“颜面扫地”(humiliated) 修正。",
+   "en": "Commentary: shown to the side that loses the Galatron; it gets the humiliated modifier for 3600 days.",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "遗物激活、夺取与失去三个窗口的触发和效果已核对。",
+   "en": "The triggers and effects of the relic activation, seizing and losing windows were checked."
+  },
+  "sources": [
+   "events/caravaneer_events.txt:4131-4356",
+   "common/relics/relics.txt:405-452",
+   "common/war_goals/00_war_goals.txt:1680-1683,2028-2043"
+  ],
+  "guide": "public/summaries/event-cara-970.md"
+ }
+}

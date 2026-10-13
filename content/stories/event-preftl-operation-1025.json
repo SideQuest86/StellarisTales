@@ -1,0 +1,39 @@
+{
+ "id": "event-preftl-operation-1025",
+ "category": "society",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "preftl_operation.1026",
+    "preftl_operation.1027",
+    "preftl_operation.1028"
+   ],
+   "label": {
+    "zh": "按成功度分档",
+    "en": "Tiered by operation success"
+   },
+   "note": {
+    "zh": ">0 → 1027；=0 → 1026；<0 → 1028。",
+    "en": ">0 → 1027; =0 → 1026; <0 → 1028."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "提高觉醒度行动终结：8个文档。",
+   "en": "Increase Awareness finale: 8 docs."
+  },
+  "sources": [
+   "events/first_contact_dlc_operations_events.txt:768-1000",
+   "common/espionage_operation_types/pre_ftl_operations.txt:17-156",
+   "common/scripted_effects/espionage_event_effects.txt:2840-2906",
+   "common/scripted_effects/first_contact_dlc_effects.txt:3093-3130"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-preftl-operation-1025.md"
+ }
+}

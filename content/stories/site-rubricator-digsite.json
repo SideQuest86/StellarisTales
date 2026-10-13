@@ -1,0 +1,142 @@
+{
+ "id": "site-rubricator-digsite",
+ "family": {
+  "title": {
+   "zh": "誊录仪",
+   "en": "The Rubricator"
+  },
+  "category": "precursors",
+  "start": "ancrel.4012",
+  "members": [
+   "ancrel.4012",
+   "archaeological_site_types:rubricator_digsite",
+   "ancrel.4013",
+   "ancrel.4014",
+   "ancrel.4015",
+   "ancrel.4016",
+   "ancrel.4017",
+   "ancrel.4018",
+   "event_chains:rubricator_chain_2",
+   "ancrel.4019",
+   "ancrel.4023",
+   "ancrel.4024",
+   "ancrel.40182",
+   "ancrel.4020",
+   "ancrel.4121",
+   "ancrel.4122",
+   "special_projects:REANIMATE_SHARD_DRAGON",
+   "ancrel.4026",
+   "special_projects:SHARD_DESTROYED_BY_NON_DEFAULT_EMPIRE",
+   "ancrel.4123"
+  ],
+  "sources": []
+ },
+ "titleFrom": "ancrel.4012",
+ "bridges": [
+  {
+   "from": "ancrel.4012",
+   "choice": "ancrel.4012.a",
+   "to": "archaeological_site_types:rubricator_digsite",
+   "conditional": false,
+   "label": {
+    "zh": "设置 discovered_rubricator_planet 后遗址可见，开始发掘",
+    "en": "With discovered_rubricator_planet set the site is visible: start digging"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:3857-3911 ancrel.4012 sets discovered_rubricator_planet; common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2146 visible requires has_country_flag discovered_rubricator_planet"
+  },
+  {
+   "from": "ancrel.4019",
+   "choice": "ancrel.4019.a",
+   "to": "ancrel.4024",
+   "conditional": true,
+   "label": {
+    "zh": "若再次进入龙所在的星系且龙未被激怒（无 shard_grace / shards_angry）",
+    "en": "Entering the dragon's system again while she is not yet angry (no shard_grace / shards_angry)"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:4660-4720 ancrel.4024 (trigger: rubricator_country = owner, neither shards_angry nor shard_grace, our fleet and the dragon ship in rubricator_system); common/on_actions/00_on_actions.txt:1028 on_entering_system_fleet; 4019.a saves rubricator_country"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.4020",
+    "ancrel.4121",
+    "ancrel.4122"
+   ],
+   "label": {
+    "zh": "夏尔德之死：谁得到誊录仪",
+    "en": "The death of Shard: who gets the Rubricator"
+   },
+   "labels": [
+    {
+     "zh": "我们击杀了她：得到誊录仪",
+     "en": "we killed her: the Rubricator is ours"
+    },
+    {
+     "zh": "别国击杀了她：誊录仪归对方",
+     "en": "another empire killed her: the relic goes to them"
+    },
+    {
+     "zh": "非常规国家击杀（如堕落帝国）：誊录仪留在特殊项目里",
+     "en": "killed by a non-default state: the Rubricator stays in a special project"
+    }
+   ],
+   "note": {
+    "zh": "隐藏事件 ancrel.4120（on_fleet_destroyed_perp）在龙国舰队被毁时按击杀者类型分发：默认国家→ 4020 给击杀者誊录仪，并通知其他事件链持有者 4121；非默认国家（如堕落帝国）→ 4122（项目“夏尔德遗骸”）。",
+    "en": "Hidden ancrel.4120 (on_fleet_destroyed_perp) dispatches when the dragon's fleet is destroyed: a default-type killer gets 4020 (the Rubricator) and other chain owners get 4121; a non-default killer (e.g. a Fallen Empire) gives chain owners 4122 (project Shard's Remains)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:REANIMATE_SHARD_DRAGON",
+    "special_projects:SHARD_DESTROYED_BY_NON_DEFAULT_EMPIRE"
+   ],
+   "label": {
+    "zh": "夏尔德之后的两个项目",
+    "en": "The two projects after Shard"
+   },
+   "note": {
+    "zh": "“重塑裂爪龙”由 4020 的死灵选项启用（通关后得到一条属于我们的龙）；“裂爪龙遗骸”由 4122 启用，完成后 4123 给矿物与稀有水晶并得到遗珍。",
+    "en": "\"Restore the Shard\" is enabled by the necromancer option of 4020 (a dragon fleet of our own, ancrel.4026); \"Shard's Remains\" is enabled by 4122 and 4123 grants minerals, rare crystals and the relic."
+   }
+  }
+ ],
+ "nodeLabels": {
+  "ancrel.4012": {
+   "zh": "抵达誊录仪星球（设置 discovered_rubricator_planet）",
+   "en": "Reaching the Rubricator planet (sets discovered_rubricator_planet)"
+  },
+  "ancrel.4018": {
+   "zh": "夏尔德抓走誊录仪（开始 rubricator_chain_2）",
+   "en": "Shard snatches the Rubricator (starts rubricator_chain_2)"
+  },
+  "ancrel.4024": {
+   "zh": "龙在星系里扑来（再次进入）",
+   "en": "The dragon lunges (re-entering the system)"
+  }
+ },
+ "notes": [],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：开端与触发条件、全部文档的先后与互斥关系、结局；相关脚本与中英文正文已读。",
+   "en": "Whole story: opening and trigger conditions, order and exclusivity of every doc, endings; the relevant scripts and both languages read."
+  },
+  "sources": [
+   "events/ancient_relics_arcsite_events_1.txt",
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "common/event_chains/00_event_chains_ancient_relics.txt",
+   "common/special_projects/00_projects_ancient_relics.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/solar_system_initializers/ancient_relics_initializers.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-rubricator-digsite.md"
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "id": "event-fallen-empires-tasks-14",
+ "family": {
+  "title": {
+   "zh": "来自堕落帝国的任务：阻止人工智能研究",
+   "en": "Task: End AI Research"
+  },
+  "category": "stories",
+  "start": "fallen_empires_tasks.15",
+  "members": [
+   "fallen_empires_tasks.14",
+   "fallen_empires_tasks.15",
+   "fallen_empires_tasks.17",
+   "fallen_empires_tasks.18",
+   "fallen_empires_tasks.19",
+   "fallen_empires_tasks.20",
+   "event_chains:fe_stop_robots_task_chain"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "fallen_empires_tasks.15",
+   "choice": "fallen_empires_tasks.15.a",
+   "to": "fallen_empires_tasks.17",
+   "conditional": true,
+   "label": {
+    "zh": "7200天计时器到期",
+    "en": "The 7200-day timer runs out"
+   },
+   "evidence": "events/fallen_empire_tasks_events.txt:1562-1570,1631-1686 option a sets fe_task_stop_robots_timer for 7200 days; fallen_empires_tasks.17 fires when it has expired"
+  },
+  {
+   "from": "fallen_empires_tasks.15",
+   "choice": "fallen_empires_tasks.15.a",
+   "to": "fallen_empires_tasks.18",
+   "conditional": true,
+   "label": {
+    "zh": "对象国已禁止AI研究（平均10天）",
+    "en": "The target has banned AI research (mean 10 days)"
+   },
+   "evidence": "events/fallen_empire_tasks_events.txt:1686-1740 trigger: target has the ai_outlawed policy flag; mean_time_to_happen 10 days"
+  },
+  {
+   "from": "fallen_empires_tasks.15",
+   "choice": "fallen_empires_tasks.15.a",
+   "to": "fallen_empires_tasks.20",
+   "conditional": true,
+   "label": {
+    "zh": "我方自己赋予AI权利或奴役（平均10天）",
+    "en": "We grant AI rights or servitude ourselves (mean 10 days)"
+   },
+   "evidence": "events/fallen_empire_tasks_events.txt:1789-1845 trigger: ai_full_rights or ai_servitude for the task-taker; mean_time_to_happen 10 days"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "fallen_empires_tasks.17",
+    "fallen_empires_tasks.18",
+    "fallen_empires_tasks.20"
+   ],
+   "label": {
+    "zh": "任务的失败结局",
+    "en": "Failure endings"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/fallen_empire_tasks_events.txt:1390-1845",
+   "common/on_actions/00_on_actions.txt:600"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-fallen-empires-tasks-14.md",
+  "merged": [
+   "event-fallen-empires-tasks-17",
+   "event-fallen-empires-tasks-18",
+   "event-fallen-empires-tasks-20"
+  ]
+ }
+}

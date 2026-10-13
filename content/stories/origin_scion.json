@@ -2,21 +2,165 @@
  "id": "origin_scion",
  "opening": {
   "targets": [
-   "origin.10"
+   "origin.10",
+   "origin.21",
+   "origin.12",
+   "origin.13",
+   "origin.205",
+   "origin.210",
+   "origin.215",
+   "origin.220",
+   "origin.225",
+   "origin.51",
+   "origin.52",
+   "origin.29",
+   "origin.54"
   ],
   "label": {
-   "zh": "来自先辈的问候",
-   "en": "A greeting from the fallen empire"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "game_start calls origin.5, whose setup schedules origin.10 after 3 days"
+  "labels": {
+   "origin.10": {
+    "zh": "来自先辈的问候（开局3天后）",
+    "en": "A greeting from the fallen empire (3 days after start)"
+   },
+   "origin.21": {
+    "zh": "定期馈赠：科技（隐藏20，约50%）",
+    "en": "Periodic gift: technology (hidden 20, about 50%)"
+   },
+   "origin.12": {
+    "zh": "勘察到圣世界：宗主属于灵性派先辈",
+    "en": "Surveying a Holy World: the overlord's own"
+   },
+   "origin.13": {
+    "zh": "勘察到圣世界：另一先辈帝国的圣世界",
+    "en": "Surveying a Holy World: another fallen empire's"
+   },
+   "origin.205": {
+    "zh": "每年干预（隐藏200，随机）：任务·交出领袖",
+    "en": "Yearly intervention (hidden 200, random): task, surrender a leader"
+   },
+   "origin.210": {
+    "zh": "每年干预（随机）：奖赏·获得领袖",
+    "en": "Yearly intervention (random): reward, receive a leader"
+   },
+   "origin.215": {
+    "zh": "每年干预（随机）：奖赏·获得舰船",
+    "en": "Yearly intervention (random): reward, receive ships"
+   },
+   "origin.220": {
+    "zh": "每年干预（随机）：任务/奖赏·推进科技",
+    "en": "Yearly intervention (random): task and reward, propulsion technology"
+   },
+   "origin.225": {
+    "zh": "每年干预（随机）：任务/奖赏·殖民补给",
+    "en": "Yearly intervention (random): task and reward, colonisation supplies"
+   },
+   "origin.51": {
+    "zh": "先辈战争干预：作为附庸陷入劣势时借来舰队（每月检查）",
+    "en": "Fallen-empire war help: a borrowed fleet when the scion is losing a war (monthly check)"
+   },
+   "origin.52": {
+    "zh": "先辈远征舰队被摧毁时",
+    "en": "When a fallen-empire expeditionary fleet is destroyed"
+   },
+   "origin.29": {
+    "zh": "独立战争开始：先辈收回借出的舰队",
+    "en": "An independence war begins: the fallen empire reclaims its borrowed fleet"
+   },
+   "origin.54": {
+    "zh": "战争结束：先辈收回借出的舰队（每月检查）",
+    "en": "The war is over: the fallen empire reclaims its fleet (monthly check)"
+   }
+  },
+  "evidence": "events/game_start.txt:304 fires hidden origin.5 (events/origin_events_1.txt:22-170: spawns a mini fallen empire if needed, schedules origin.10 after 3 days and the gift loop origin.20). Hidden 20 (:401-434) repeats itself every scionRewardTimer days and draws 21 (technology) or 24 (resources) at 50/100. common/on_actions/00_on_actions.txt:113 on_monthly_pulse fires 50 (-> 51, :1042-1165) and 30 (-> 54, :1375-1399); on_war_beginning :2607 (29); on_fleet_destroyed_victim :1584 (52); hidden 200 (on_yearly_pulse, :567-711) draws 205/210/215/220/225 (10 of 300 each); hidden 11 (on_survey) -> 12 / 13."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_1.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/solar_system_initializers/federations_initializers.txt",
+   "common/war_goals/00_war_goals.txt"
+  ],
+  "uncertain": [
+   "origin.24 (resource gift) has no compiled window because it uses `base = origin.21` (ledger R3).",
+   "Timers scionRewardTimer / scionRewardTimerDelay are script variables (@) not read here."
+  ],
+  "guide": "public/summaries/origin_scion.md"
+ },
+ "bridges": [
+  {
+   "from": "origin.51",
+   "to": "origin.54",
+   "conditional": true,
+   "label": {
+    "zh": "战争结束后，借来的舰队被收回",
+    "en": "After the war the borrowed fleet is taken back"
+   },
+   "evidence": "events/origin_events_1.txt:1375-1436 hidden 30 (monthly) fires 54 for a subject not at war that still controls a scion_borrowed_fleet; 51 grants that fleet (:1167-1250)."
+  },
+  {
+   "from": "origin.51",
+   "to": "origin.29",
+   "conditional": true,
+   "label": {
+    "zh": "若附庸发动独立战争，先辈收回舰队",
+    "en": "If the subject starts an independence war, the fallen empire reclaims the fleet"
+   },
+   "evidence": "events/origin_events_1.txt:1302-1373 29 fires on_war_beginning (common/on_actions/00_on_actions.txt:2607) for the attacker with wg_independence against a fallen empire while holding a scion_borrowed_fleet."
   }
- }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.205",
+    "origin.210",
+    "origin.215",
+    "origin.220",
+    "origin.225"
+   ],
+   "label": {
+    "zh": "每年脉冲的先辈干预",
+    "en": "Fallen-empire intervention drawn by the yearly pulse"
+   },
+   "note": {
+    "zh": "隐藏200的随机列表：五选一，各10/300（有修正），其余无事。",
+    "en": "Random list of hidden 200: one of five, 10 of 300 each (modified), otherwise nothing (events/origin_events_1.txt:567-711)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.12",
+    "origin.13"
+   ],
+   "label": {
+    "zh": "圣世界遭遇",
+    "en": "Holy World encounter"
+   },
+   "note": {
+    "zh": "隐藏11按圣世界归属选择：宗主灵性派先辈的圣世界（12）或其他先辈的圣世界（13）。",
+    "en": "Hidden 11 picks by owner: the overlord's own Holy World (12) or another fallen empire's (13) (events/origin_events_1.txt:250-340)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "origin.21",
+   "kind": "review",
+   "zh": "馈赠循环：origin.20每隔“scionRewardTimer”天自我重复；半数给科技（21），半数给合金或消费品（24，继承21的文本）。",
+   "en": "The gift loop: hidden 20 repeats every scionRewardTimer days; half the time technology (21), otherwise alloys or consumer goods (24, which inherits 21's text via base)."
+  },
+  {
+   "doc": "origin.225",
+   "kind": "review",
+   "zh": "殖民补给：接受或拒绝；拒绝进入226。",
+   "en": "Colonisation supplies: accept or refuse; refusing leads to 226 (events/origin_events_1.txt:949-1040)."
+  }
+ ]
 }

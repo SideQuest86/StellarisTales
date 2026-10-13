@@ -1,0 +1,55 @@
+{
+ "id": "event-operation-1020",
+ "family": {
+  "title": {
+   "zh": "窃取科技",
+   "en": "Steal Technology"
+  },
+  "category": "stories",
+  "start": "operation.1020",
+  "members": [
+   "operation.1020",
+   "operation.1021",
+   "operation.1022",
+   "operation.1026",
+   "operation.1030",
+   "operation.1027"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "operation.1020",
+   "to": "operation.1021",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:514 operation type operation_steal_technology: stage events in order 1020, 1021, 1022; each stage fires its event when its progress completes"
+  },
+  {
+   "from": "operation.1021",
+   "to": "operation.1022",
+   "conditional": true,
+   "label": {
+    "zh": "该阶段检定成功后，下一阶段开始",
+    "en": "When this stage succeeds, the next stage begins"
+   },
+   "evidence": "common/espionage_operation_types/operations.txt:514 operation type operation_steal_technology: stage events in order 1020, 1021, 1022; each stage fires its event when its progress completes"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "间谍行动“窃取科技”的阶段事件、结局以及相关通知。",
+   "en": "The espionage operation Steal Technology: stage events, finale and related notices."
+  },
+  "sources": [
+   "events/nemesis_operations_events_1.txt",
+   "common/espionage_operation_types/operations.txt"
+  ],
+  "guide": "public/summaries/event-operation-1020.md"
+ }
+}

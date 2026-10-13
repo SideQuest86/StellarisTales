@@ -1,0 +1,60 @@
+{
+ "id": "origin_star_slingshot",
+ "opening": {
+  "targets": [
+   "archaeological_site_types:slingshot_digsite",
+   "origin.3510"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "archaeological_site_types:slingshot_digsite": {
+    "zh": "开局：量子弹射器恒星系中的遗址“量子建筑师的日志”",
+    "en": "Game start: the site \"Logs from the Quantum Architect\" at the pulsar"
+   },
+   "origin.3510": {
+    "zh": "在弹射器恒星系建成前哨站后",
+    "en": "After building an outpost in the Quantum Catapult system"
+   }
+  },
+  "evidence": "events/game_start.txt:333 fires hidden origin.3500 (events/origin_events_3.txt:889-973: finds the closest ordinary system, turns it into a pulsar, spawns the ruined slingshot and creates slingshot_digsite). Hidden ship event 3505 (on_building_starbase_outpost common/on_actions/00_on_actions.txt:1937) fires 3510 once (events/origin_events_3.txt:975-1019). Site: common/archaeological_site_types/06_overlord_arc_sites.txt:17-86."
+ },
+ "groups": [],
+ "endings": {
+  "origin.3540": {
+   "label": {
+    "zh": "量化",
+    "en": "Quantified"
+   },
+   "note": {
+    "zh": "遗址完成；游戏前30年内获得“无限召唤”修正。",
+    "en": "Site complete; before year 30 it adds infinity_beckons."
+   },
+   "evidence": "events/origin_events_3.txt:1166-1207"
+  }
+ },
+ "notes": [
+  {
+   "doc": "archaeological_site_types:slingshot_digsite",
+   "kind": "review",
+   "zh": "六个阶段依次为 3515 → 3520 → 3525 → 3530 → 3535 → 3540；失败结果使用通用的全部随机事件。",
+   "en": "Six stages in order 3515 -> 3520 -> 3525 -> 3530 -> 3535 -> 3540; failures use the shared all_random_events list."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_3.txt",
+   "common/archaeological_site_types/06_overlord_arc_sites.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "The ancrel.* failure events are the shared dig-site outcomes."
+  ],
+  "guide": "public/summaries/origin_star_slingshot.md"
+ }
+}

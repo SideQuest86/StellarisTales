@@ -1,0 +1,107 @@
+{
+ "id": "event-anomaly-142",
+ "family": {
+  "title": {
+   "zh": "古神神殿",
+   "en": "Shrines to the Old Gods"
+  },
+  "category": "exploration",
+  "start": "event_chains:old_gods_chain",
+  "members": [
+   "event_chains:old_gods_chain",
+   "anomaly.142",
+   "anomaly.143",
+   "anomaly.144",
+   "anomaly.168"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "event_chains:old_gods_chain",
+   "to": "anomaly.142",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入第一座神殿的星系",
+    "en": "A fleet enters the first shrine system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1015 on_entering_system_fleet → anomaly.142 (events/anomaly_events_1.txt:1927): the owner has the chain and the system has star flag old_gods_system_1@owner (set by anomaly.140 option b, events/anomaly_events_1.txt:1769)."
+  },
+  {
+   "from": "event_chains:old_gods_chain",
+   "to": "anomaly.143",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入第二座神殿的星系",
+    "en": "A fleet enters the second shrine system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1016 on_entering_system_fleet → anomaly.143 (events/anomaly_events_1.txt:1970): star flag old_gods_system_2@owner."
+  },
+  {
+   "from": "event_chains:old_gods_chain",
+   "to": "anomaly.144",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入第三座神殿的星系",
+    "en": "A fleet enters the third shrine system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:1017 on_entering_system_fleet → anomaly.144 (events/anomaly_events_1.txt:2013): star flag old_gods_system_3@owner."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "anomaly.142",
+    "anomaly.143",
+    "anomaly.144"
+   ],
+   "required": 3,
+   "gate": "anomaly.168",
+   "label": {
+    "zh": "三座神殿，任意顺序",
+    "en": "Three shrines, in any order"
+   },
+   "note": {
+    "zh": "每座神殿的项目完成后各让事件链计数器 shrines_searched +1；三座全部完成（max 3）时，最后完成的那一个才触发 anomaly.168“揭示”（events/anomaly_events_1.txt:2088、2129、2170）。",
+    "en": "Each shrine project adds 1 to the chain counter shrines_searched; only the last of the three (counter complete, max 3) fires anomaly.168 \"Revelation\" (events/anomaly_events_1.txt:2088, 2129, 2170)."
+   }
+  }
+ ],
+ "endings": {
+  "anomaly.168": {
+   "label": {
+    "zh": "揭示",
+    "en": "Revelation"
+   },
+   "note": {
+    "zh": "四选一的收尾（压下发现、变现、研究、神恩），结束事件链。",
+    "en": "A four-way finale (suppress, monetise, study, divine favour) that ends the chain."
+   },
+   "evidence": "events/anomaly_events_1.txt:2179"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "events/anomaly_events_1.txt:1735-1880 (anomaly.140, chain start; story anomaly-ast-shrine-1-cat)",
+   "common/event_chains (old_gods_chain, counter shrines_searched max 3)",
+   "events/anomaly_events_1.txt:1927 (anomaly.142)",
+   "events/anomaly_events_1.txt:1970 (anomaly.143)",
+   "events/anomaly_events_1.txt:2013 (anomaly.144)",
+   "common/on_actions/00_on_actions.txt:1015-1017 (on_entering_system_fleet)",
+   "common/special_projects/00_projects_2.txt:114 (OLD_GODS_*_PROJECT)",
+   "events/anomaly_events_1.txt:2056 (anomaly.165)",
+   "events/anomaly_events_1.txt:2097 (anomaly.166)",
+   "events/anomaly_events_1.txt:2138 (anomaly.167)",
+   "events/anomaly_events_1.txt:2179 (anomaly.168)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-anomaly-142.md"
+ }
+}

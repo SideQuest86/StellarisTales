@@ -4,7 +4,7 @@
 
 ## 如何开始 How it starts
 
-玩家用巨像的“退化光束（Devolving Beam）”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:165-167），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.901。
+玩家用巨像的“降智光束”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:165-167），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.901。
 
 When the player's Colossus fires "Devolving Beam" at a planet (common/on_actions/01_planet_destruction.txt:165-167) the hidden dispatcher fires; if the planet has an owner that is not the firing country, a narrative window planet_destruction.901 is shown to the firing player. 
 

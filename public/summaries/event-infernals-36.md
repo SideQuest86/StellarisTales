@@ -4,9 +4,9 @@
 
 ## 如何开始 How it starts
 
-玩家用巨像的“冶炼者（Smelter）”毁掉一颗行星时（common/on_actions/01_planet_destruction.txt:194-199），隐藏事件 infernals.36 运行：若星球有观测前哨，一天后给前哨所有者 planet_destruction.1000；机械意识（Contingency）世界则触发 crisis.2040/2046。冶炼者另外还触发“超空间捷径”彩蛋（planet_destruction.110）和圣地检查（planet_destruction.600）。
+玩家用巨像的“行星熔炉”（Planet Smelter）毁掉一颗行星时（common/on_actions/01_planet_destruction.txt:194-199），隐藏事件 infernals.36 运行：若星球有观测前哨，一天后给前哨所有者 planet_destruction.1000；机械意识（Contingency）世界则触发 crisis.2040/2046。行星熔炉另外还触发“超空间捷径”彩蛋（planet_destruction.110）和圣地检查（planet_destruction.600）。
 
-When the player's Colossus fires the Smelter at a planet (common/on_actions/01_planet_destruction.txt:194-199) hidden infernals.36 runs: with an observation outpost on the planet planet_destruction.1000 is shown to the outpost owner one day later; Contingency machine worlds trigger crisis.2040/2046. The Smelter also triggers the Hyperspace Bypass easter egg (planet_destruction.110) and the holy-world check (planet_destruction.600).
+When the player's Colossus fires the Planet Smelter at a planet (common/on_actions/01_planet_destruction.txt:194-199) hidden infernals.36 runs: with an observation outpost on the planet planet_destruction.1000 is shown to the outpost owner one day later; Contingency machine worlds trigger crisis.2040/2046. The Planet Smelter also triggers the Hyperspace Bypass easter egg (planet_destruction.110) and the holy-world check (planet_destruction.600).
 
 ## 剧情脉络 Story outline
 
@@ -16,9 +16,9 @@ The window planet_destruction.1000 is shared with the other Colossus weapons; se
 
 ## 条件与文明差异 Conditions and variants
 
-需要 Infernals DLC 的冶炼者巨像。
+需要 Infernals DLC 的行星熔炉巨像。
 
-Needs the Infernals DLC Smelter Colossus.
+Needs the Infernals DLC Planet Smelter Colossus.
 
 ## 审阅记录 Review notes
 

@@ -1,0 +1,91 @@
+{
+ "id": "origin_evolutionary_predators",
+ "opening": {
+  "targets": [
+   "situations:evolutionary_predators_situation",
+   "bio.1050",
+   "bio.1055",
+   "bio.1060"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "situations:evolutionary_predators_situation": {
+    "zh": "开局：适应性演化局势开始",
+    "en": "Game start: the Adaptive Evolution situation begins"
+   },
+   "bio.1050": {
+    "zh": "行动“获取DNA”：锁定目标",
+    "en": "Operation Procure DNA: target identified"
+   },
+   "bio.1055": {
+    "zh": "行动“获取DNA”：阶段结果",
+    "en": "Operation Procure DNA: progress"
+   },
+   "bio.1060": {
+    "zh": "行动“获取DNA”：结果",
+    "en": "Operation Procure DNA: result"
+   }
+  },
+  "evidence": "events/game_start.txt:604 fires hidden bio.1000 (events/biogenesis_origin_events.txt:11-36: starts evolutionary_predators_situation). The Procure DNA operation (common/espionage_operation_types/operations.txt:374-384 and pre_ftl_operations.txt:929-939) fires 1050 / 1055 / 1060 as its stages; 1060 -> 1065 one day later (events/biogenesis_origin_events.txt:1131-1260)."
+ },
+ "bridges": [
+  {
+   "from": "bio.1055",
+   "to": "bio.1060",
+   "conditional": true,
+   "label": {
+    "zh": "行动继续到结果阶段",
+    "en": "The operation reaches its result stage"
+   },
+   "evidence": "events/biogenesis_origin_events.txt:1131-1180 operation stages 1050 -> 1055 -> 1060 (common/espionage_operation_types/operations.txt:374-384)."
+  },
+  {
+   "from": "bio.1050",
+   "to": "bio.1055",
+   "conditional": true,
+   "label": {
+    "zh": "行动继续到下一阶段",
+    "en": "The operation reaches its next stage"
+   },
+   "evidence": "events/biogenesis_origin_events.txt:1131-1160, operation stages."
+  }
+ ],
+ "notes": [
+  {
+   "doc": "bio.1005",
+   "kind": "review",
+   "zh": "局势完成时选择一项永久性能力（人口增长、产出、领袖、宜居性、维护费或六种物种形态之一）后回到局势。",
+   "en": "On completion you pick a permanent ability (growth, output, leader, habitability, upkeep or one of six body types), then the situation runs again (events/biogenesis_origin_events.txt:48-615)."
+  }
+ ],
+ "endings": {
+  "bio.1065": {
+   "label": {
+    "zh": "基因被盗",
+    "en": "Genes Stolen"
+   },
+   "note": {
+    "zh": "行动完成。",
+    "en": "The operation completes."
+   },
+   "evidence": "events/biogenesis_origin_events.txt:1180-1259"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/biogenesis_origin_events.txt",
+   "common/situations/12_biogenesis_situations.txt",
+   "common/espionage_operation_types/operations.txt"
+  ],
+  "uncertain": [
+   "The situation (12_biogenesis_situations.txt) repeats after each choice; its exact progress rate and the harvest/purge pop mechanics (bio.1010-1025) were not read."
+  ],
+  "guide": "public/summaries/origin_evolutionary_predators.md"
+ }
+}

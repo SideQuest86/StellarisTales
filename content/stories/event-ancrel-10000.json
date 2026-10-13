@@ -1,0 +1,53 @@
+{
+ "id": "event-ancrel-10000",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.10001",
+    "ancrel.10002",
+    "ancrel.10003"
+   ],
+   "label": {
+    "zh": "奥术解密的结果",
+    "en": "Results of Arcane Deciphering"
+   },
+   "labels": [
+    {
+     "zh": "三类研究奖励（30）",
+     "en": "research in all three fields (30)"
+    },
+    {
+     "zh": "奥术洞见修正（25）",
+     "en": "arcane_insight modifier (25)"
+    },
+    {
+     "zh": "意外突破：随机科技选项（25）",
+     "en": "unexpected breakthrough: a random tech option (25)"
+    }
+   ],
+   "note": {
+    "zh": "另有权重20的隐藏结果（授予随机堕落帝国建筑），没有可读文档。",
+    "en": "A further weight-20 hidden result (a random Fallen-Empire building) has no readable doc."
+   }
+  }
+ ],
+ "notes": [],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C2 precursor review (resumed, Claude)",
+  "scope": {
+   "zh": "整条故事：开端与触发条件、全部文档的先后与互斥关系、结局；相关脚本与中英文正文已读。",
+   "en": "Whole story: opening and trigger conditions, order and exclusivity of every doc, endings; the relevant scripts and both languages read."
+  },
+  "sources": [
+   "common/artifact_actions/artifact_actions.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-ancrel-10000.md"
+ }
+}

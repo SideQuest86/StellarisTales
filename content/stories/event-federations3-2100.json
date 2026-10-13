@@ -1,0 +1,34 @@
+{
+ "id": "event-federations3-2100",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "federations3.2103",
+    "federations3.2104"
+   ],
+   "label": {
+    "zh": "有遗址标志 → 2103；否则 → 2104",
+    "en": "With an arc-site flag -> 2103; otherwise -> 2104"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "共鸣信号：研究联邦的地脉遗址（Leylines）调查与五种结局。",
+   "en": "A Resonating Signal: the research-federation Leylines dig site, its investigations and endings."
+  },
+  "sources": [
+   "events/federations_events_3.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_federations.txt"
+  ],
+  "uncertain": [
+   "Site stage events and endings depend on staged randomness; only the entry, projects and result events were checked."
+  ],
+  "guide": "public/summaries/event-federations3-2100.md"
+ }
+}

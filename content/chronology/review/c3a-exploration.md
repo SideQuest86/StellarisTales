@@ -215,6 +215,25 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-supermassive-giant-cat** — reviewed. Single result 330 (options a/b); weight x num_moons; on_spawn extensive_moon_system; tree correct.
 - **anomaly-vapor-plumes-cat** — reviewed. Single result 400; tree correct.
 
+### Batch b_17_gateways
+
+- **event-distar-13060** — reviewed. Single event distar.13060 = apoc.5 duplicate for systems not surveyed by a ship (on_system_survey); kept as its own small story; request to coordinator to consider linking with event-apoc-5.
+- **event-distar-13070** — reviewed. Single event distar.13070 = apoc.1 duplicate for systems not surveyed by a ship; kept as its own small story.
+
+### Batch b_18_enigmatic_cache
+
+- **event-distar-5054** — reviewed. Family created (start distar.5057; members project/5058/5059/5062/5064/uplifting/5070/5078). Bridges 5057->5059, 5059->5062, UPLIFTING->5070, UPLIFTING->5078; exclusive result group with real weights (75/25 intact; 37.5/62.5 or 100% 5074 broken); draft p corrected. Merged event-distar-5053, 5061, 5077.
+  - uncertain: The exact 5060 selection rule (which player country is chosen, 'not outclassed in technology') was read but its in-game effect on the chosen country was not simulated.
+  - uncertain: The text of the four dialogue options in distar.5064/5072 was not read line by line; only the options and the project/abort effects were checked.
+- **event-distar-5053** — merged into event-distar-5054. Ascension Terminated (distar.5070, via hidden distar.5053 on_ship_disabled) belongs to the Enigmatic Cache story.
+- **event-distar-5061** — merged into event-distar-5054. The Enigmatic Cache Returns (distar.5062 ... uplifting project and results) belongs to the Enigmatic Cache story.
+- **event-distar-5077** — merged into event-distar-5054. Enigmatic Ascension Terminated (distar.5078, via hidden distar.5077 on_colony_attackers_win) belongs to the Enigmatic Cache story.
+
+### Batch b_22_misc_events
+
+- **event-anomaly-2574** — reviewed. Single event anomaly.2575 via hidden 2574 (first find only); tree correct.
+- **event-anomaly-4036** — reviewed. Family created (start event_chains:star_power_chain; 4037 -> ODD_STAR_PROJECT -> 4038; failure 4037). Bridges chain -> 4037 / failure; 40/60 per system, guaranteed after two misses. Merged event-anomaly-4036 itself keeps the id.
+
 ### Batch b_14_guardians
 
 - **event-distar-135** — reviewed. Family created (start distar.135, member distar.137); bridge 135 -> 137 (on_ship_destroyed_perp); merged event-distar-137.
@@ -243,16 +262,35 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **event-distar-13020** — merged into event-distar-13080. Slayed (killing an L-Drake) belongs to the L-Cluster dragon-season branch.
 - **event-distar-13030** — merged into event-distar-13080. L-Drake Observed (+ TAME_LDRAGON_PROJECT, 13035) belongs to the L-Cluster dragon-season branch.
 
-### Batch b_17_gateways
+### Batch b_19_old_gods
 
-- **event-distar-13060** — reviewed. Single event distar.13060 = apoc.5 duplicate for systems not surveyed by a ship (on_system_survey); kept as its own small story; request to coordinator to consider linking with event-apoc-5.
-- **event-distar-13070** — reviewed. Single event distar.13070 = apoc.1 duplicate for systems not surveyed by a ship; kept as its own small story.
+- **event-anomaly-142** — reviewed. Family created (start event_chains:old_gods_chain; shrines 142/143/144 + projects + 165/166/167 + 168). Bridges chain -> 142/143/144; parallel group required 3 gating 168. Merged event-anomaly-143, event-anomaly-144.
+- **event-anomaly-143** — merged into event-anomaly-142. Old Gods: Undaunted shrine is one of the three parallel shrines of the Old Gods story.
+- **event-anomaly-144** — merged into event-anomaly-142. Old Gods: Percipient shrine is one of the three parallel shrines of the Old Gods story.
 
-### Batch b_18_enigmatic_cache
+### Batch b_20_anomaly_chains
 
-- **event-distar-5054** — reviewed. Family created (start distar.5057; members project/5058/5059/5062/5064/uplifting/5070/5078). Bridges 5057->5059, 5059->5062, UPLIFTING->5070, UPLIFTING->5078; exclusive result group with real weights (75/25 intact; 37.5/62.5 or 100% 5074 broken); draft p corrected. Merged event-distar-5053, 5061, 5077.
-  - uncertain: The exact 5060 selection rule (which player country is chosen, 'not outclassed in technology') was read but its in-game effect on the chosen country was not simulated.
-  - uncertain: The text of the four dialogue options in distar.5064/5072 was not read line by line; only the options and the project/abort effects were checked.
-- **event-distar-5053** — merged into event-distar-5054. Ascension Terminated (distar.5070, via hidden distar.5053 on_ship_disabled) belongs to the Enigmatic Cache story.
-- **event-distar-5061** — merged into event-distar-5054. The Enigmatic Cache Returns (distar.5062 ... uplifting project and results) belongs to the Enigmatic Cache story.
-- **event-distar-5077** — merged into event-distar-5054. Enigmatic Ascension Terminated (distar.5078, via hidden distar.5077 on_colony_attackers_win) belongs to the Enigmatic Cache story.
+- **event-anomaly-1193** — reviewed. Tree correct; late entry to the Limbo story (limbo_downloaded + tech_synthetic_workers -> 1194 -> LIMBO_2_PROJECT -> exclusive if/else results 189/1198/1200/1199/1190). Request: link with anomaly-barr-base-cat (c3b).
+- **event-anomaly-3095** — reviewed. Family created (start event_chains:ransomeer_chain; 3095, 3098/3099/3100 via hidden 3097, 3101 -> 3102/3103 -> 3104/3105). Bridges chain -> 3095 / 3098 / 3099 / 3100 / 3101; exclusive groups. Merged event-anomaly-3097, event-anomaly-3101.
+- **event-anomaly-3097** — merged into event-anomaly-3095. Dust and Echoes / Unexpected Saviors / Assailed (anomaly.3098-3100 via hidden 3097) are the 'another empire destroys the base' endings of the Ransomeers story.
+- **event-anomaly-3101** — merged into event-anomaly-3095. Picking Up the Pieces (anomaly.3101-3105) is the 'you destroy the base' ending of the Ransomeers story.
+- **event-anomaly-3115** — reviewed. Family created (start event_chains:wrecked_fleet_chain; 3115 -> WRECKED_FLEET_2 -> 3116; 3114 -> 3120). Bridges chain -> 3115 (60%) / 3114 (40%), 3114 -> 3120; exclusive route group. Merged event-anomaly-3114, event-anomaly-3120.
+- **event-anomaly-3114** — merged into event-anomaly-3115. Of Pirates Current (anomaly.3114) is the pirate route of the Drifting Battlefield story.
+- **event-anomaly-3120** — merged into event-anomaly-3115. Of Pirates Destroyed (anomaly.3120) is the ending of the pirate route of the Drifting Battlefield story.
+
+### Batch b_21_sol
+
+- **event-anomaly-96** — reviewed. Family created (start event_chains:find_sol_chain; anomaly.96 and anomaly.106). Bridges chain -> 96 / 106 (identical triggers; uncertain whether 106 can ever fire). Merged event-anomaly-106.
+  - uncertain: anomaly.96 and anomaly.106 have identical triggers and both are listed in on_entering_system_fleet (lines 1020, 1021); 96 clears the flags in its immediate block, so if on_action events are evaluated one after another 106 would never fire. This engine ordering behaviour is not visible in the files and was not verified.
+- **event-anomaly-106** — merged into event-anomaly-96. Terra Firma (anomaly.106) is the twin of anomaly.96 with an identical trigger; both belong to the Solar Coordinates story.
+
+### Batch b_23_aianom
+
+- **anomaly-aianom-lump-cat** — reviewed. Five exclusive results 20% each (aianom.1-5), tier roll 9:6:3:1 in hidden effects; AI-oriented (should_ai_use); tree correct.
+- **anomaly-aianom-researchdepo-cat** — reviewed. Three exclusive results (aianom.8-10), deposit tier 6:3:1 hidden; AI-oriented; tree correct.
+- **anomaly-aianom-miningdepo-cat** — reviewed. Two exclusive results (aianom.6/7), deposit tier 6:3:1 hidden; AI-oriented; tree correct.
+- **anomaly-aianom-clue-cat** — reviewed. Single result aianom.11 (generate_lcluster_clue -> L-Cluster clue); tree correct.
+
+### Batch b_24_beholder
+
+- **anomaly-paragon-beholder-category** — reviewed. Tree correct (paragon.3 -> 4 -> friendly/study/suppress routes -> 25/26 -> ENERGY project -> 30 -> 1 Beholder leader); 60/40 vs 80/20 random for spiritualists; hidden 100-102 on planet loss.

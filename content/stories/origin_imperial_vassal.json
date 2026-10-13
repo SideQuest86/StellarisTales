@@ -1,0 +1,95 @@
+{
+ "id": "origin_imperial_vassal",
+ "opening": {
+  "targets": [
+   "origin.5703",
+   "origin.5725",
+   "origin.5735"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "origin.5703": {
+    "zh": "开局1天后（仅玩家）：选择封臣专长",
+    "en": "One day after start (players only): choose the vassal specialisation"
+   },
+   "origin.5725": {
+    "zh": "宗主的领袖逝世，继承危机（对其封臣）",
+    "en": "The overlord's leader dies in a succession crisis (told to its vassals)"
+   },
+   "origin.5735": {
+    "zh": "帝国解体：封臣被释放",
+    "en": "The empire dissolves and its vassals are released"
+   }
+  },
+  "evidence": "game start: hidden origin.5700 via imperial_origin_start_effect (common/scripted_effects/01_start_of_game_effects.txt:219; events/origin_events_3.txt:1545-1626) sets up the overlord; for a player vassal origin.5703 follows after 1 day (:1627-1695). The overlord side (origin_imperial_vassal_overlord) runs hidden 5715 on the five-year pulse (common/on_actions/00_on_actions.txt:470) once 35 years have passed (events/origin_events_3.txt:2035-2085)."
+ },
+ "bridges": [
+  {
+   "from": "origin.5725",
+   "to": "origin.5735",
+   "conditional": true,
+   "label": {
+    "zh": "360–2160天后帝国解体",
+    "en": "The empire dissolves 360-2160 days later"
+   },
+   "evidence": "events/origin_events_3.txt:2057-2085 hidden 5720 kills the overlord ruler, tells every subject (5725) and schedules hidden 5730 after 360+0-1800 days; 5730 (:2105-2257) releases the subjects, converts the overlord to origin_default and fires 5735 for them."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.5745",
+    "origin.5750",
+    "origin.5755",
+    "origin.5760"
+   ],
+   "label": {
+    "zh": "新宗主的邀请",
+    "en": "Offers from a new overlord"
+   },
+   "note": {
+    "zh": "AI封臣在帝国解体后15–60天，隐藏5740按附近强国的专长选择其一：技术官僚、选帝侯、宫廷伯爵或联盟。",
+    "en": "For an AI vassal 15-60 days after the dissolution hidden 5740 picks one by the neighbouring power: Technocrats (5745), Prince-Electorate (5750), Palatinate (5755) or League (5760) (events/origin_events_3.txt:2356-2520)."
+   }
+  }
+ ],
+ "endings": {
+  "origin.5735": {
+   "label": {
+    "zh": "破碎的帝国",
+    "en": "A Broken Empire"
+   },
+   "note": {
+    "zh": "封臣获得自由、舰队与科技，可与前宗主开战或夺取领导权。",
+    "en": "The vassals get freedom, fleets and techs; war with the old overlord or taking leadership may follow."
+   },
+   "evidence": "events/origin_events_3.txt:2259-2355"
+  }
+ },
+ "notes": [
+  {
+   "doc": "origin.5705",
+   "kind": "review",
+   "zh": "封臣专长选择窗口：每个信息窗口（5706 / 5707 / 5708）回到5705；其余选项确定专长。",
+   "en": "The specialisation chooser: each information window (5706 / 5707 / 5708) returns to 5705; other options fix the specialisation (events/origin_events_3.txt:1696-1875)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_3.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/scripted_effects/01_start_of_game_effects.txt"
+  ],
+  "uncertain": [
+   "The overlord-side origin (origin_imperial_vassal_overlord) is an alias of this origin card in common/governments/civics/00_origins.txt; hidden AI setup 5710 and the opinion modifiers were not traced."
+  ],
+  "guide": "public/summaries/origin_imperial_vassal.md"
+ }
+}

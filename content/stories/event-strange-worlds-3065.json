@@ -1,0 +1,30 @@
+{
+ "id": "event-strange-worlds-3065",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "strange_worlds.3080",
+    "strange_worlds.3085"
+   ],
+   "label": {
+    "zh": "3075 的两个选项",
+    "en": "The two options of 3075"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "轨道异常：通往天堂的梯子，真相或战争。",
+   "en": "Orbital Anomaly: ladders to heaven, truth or war."
+  },
+  "sources": [
+   "events/strange_worlds_observation_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-strange-worlds-3065.md"
+ }
+}

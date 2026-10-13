@@ -4,9 +4,9 @@
 
 ## 如何开始 How it starts
 
-玩家用巨像的“纳米机器人（Nanobots）”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:90-93），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.501。星球不能是栖息地或环世界。
+玩家用巨像的“纳米灾疫”武器毁掉/改造一颗行星时（common/on_actions/01_planet_destruction.txt:90-93），隐藏事件触发；若星球有所有者且不是自己，所有者的对手即玩家获得叙事窗口 planet_destruction.501。星球不能是栖息地或环世界。
 
-When the player's Colossus fires "Nanobots" at a planet (common/on_actions/01_planet_destruction.txt:90-93) the hidden dispatcher fires; if the planet has an owner that is not the firing country, a narrative window planet_destruction.501 is shown to the firing player. The planet may not be a habitat or ringworld.
+When the player's Colossus fires "Nanobot Diffuser" at a planet (common/on_actions/01_planet_destruction.txt:90-93) the hidden dispatcher fires; if the planet has an owner that is not the firing country, a narrative window planet_destruction.501 is shown to the firing player. The planet may not be a habitat or ringworld.
 
 ## 剧情脉络 Story outline
 

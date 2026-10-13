@@ -14,7 +14,7 @@ A random site with base weight 1000 on any body that is not a star, asteroid, ar
 
 1. 废弃生物实验室：实验室里的医疗机器、囚室与停尸间，有人被关押过
 2. 远古免疫研究：实验室17的进度更新：免疫力提高百万倍，但全员突变死亡
-3. 吉列伯的选择：吉列伯的选择：项目终止令下达，他仍要继续
+3. 吉列伯的选择：项目终止令下达，他仍要继续
 
 Lab 17's research lead Gelebor sacrificed subject after subject for the "Universal Macrophage" until the mutations killed his whole team. Their last report leaves you to destroy, finish or exploit the research.
 
@@ -24,7 +24,7 @@ Lab 17's research lead Gelebor sacrificed subject after subject for the "Univers
 
 ## 分支与结局 Branches and outcomes
 
-- 万能巨噬细胞 / The Universal Macrophage：万能巨噬细胞：最后的报告。A 销毁一切（有机帝国；得稀有文物或社会学研究）；b 完成吉列伯的工作（有机帝国，非演化猎手：万能巨噬细胞科技进度+20%）；c 利用有缺陷的研究（非有机帝国；同A的奖励）；演化猎手或完成“突变”传统的帝国得到专属的 b.mutation 选项 / The Universal Macrophage: the final report. a destroy everything (organic empires; minor artifacts or society research); b finish Gelebor's work (organic empires, not Evolutionary Predators: Universal Macrophage tech progress +20%); c exploit the flawed research (non-organic empires; the same reward as a); Evolutionary Predators and empires that finished the Mutation tradition get a b.mutation option
+- 万能巨噬细胞 / The Universal Macrophage：最后的报告。A 销毁一切（有机帝国；得稀有文物或社会学研究）；b 完成吉列伯的工作（有机帝国，非演化猎手：万能巨噬细胞科技进度+20%）；c 利用有缺陷的研究（非有机帝国；同A的奖励）；演化猎手或完成“突变”传统的帝国得到专属的 b.mutation 选项 / the final report. a destroy everything (organic empires; minor artifacts or society research); b finish Gelebor's work (organic empires, not Evolutionary Predators: Universal Macrophage tech progress +20%); c exploit the flawed research (non-organic empires; the same reward as a); Evolutionary Predators and empires that finished the Mutation tradition get a b.mutation option
 - 完成吉列伯的工作后若研发出科技 tech_universal_marcophage，几年后 strange_worlds.2020→2025→2030“致命突变”会让一颗非首都有机殖民星球的居民突变并死亡；该后续在另一个故事“event-strange-worlds-2020”中。 / If tech_universal_marcophage is researched after finishing Gelebor's work, strange_worlds.2020 → 2025 → 2030 "Fatal Mutations" later mutates and kills pops on an organic non-capital colony; that follow-up is the separate story "event-strange-worlds-2020".
 
 ## 条件与文明差异 Conditions and variants

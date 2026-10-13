@@ -16,7 +16,7 @@ When a body is surveyed, hidden ancrel.9999 (on_survey_planet) has a 5/405 chanc
 2. 圣约预兆：“预兆之书”预言灾难
 3. 奴役信条：最后建造的是工业设施
 4. 追随者的颂歌：全球同时吟唱的“追随之歌”
-5. 末日朝圣：“末日朝圣”的文献
+5. 末日朝圣：的文献
 
 A deeply religious civilisation chanted and went on pilgrimage before vanishing; what the Grand Herald really is varies at random, but all three endings give a Titan-class ship.
 
