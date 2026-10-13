@@ -1,9 +1,12 @@
 name: Publish story archive
-# Deploys to GitHub Pages only for a release tag (v*) or a manual run, so ongoing development on main is tracked by
-# ci.yml without publishing unfinished work. Requires repository variable ENABLE_GITHUB_PAGES=true.
+# Deploys to GitHub Pages only for a release: a push to main that changes the RELEASE file (version + notes), or a
+# manual run. Ongoing development on main is tracked by ci.yml without publishing. The github-pages environment only
+# accepts deployments from main, so releases are made on main (tags are kept as records, not deploy triggers).
+# Requires repository variable ENABLE_GITHUB_PAGES=true.
 on:
   push:
-    tags: ["v*"]
+    branches: [main]
+    paths: [RELEASE]
   workflow_dispatch:
 permissions:
   contents: read

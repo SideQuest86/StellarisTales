@@ -105,10 +105,13 @@ Two workflows:
   tests, reproducible story compilation (fails on hand-edited generated output), category structure audit, a review
   progress table in the run summary (`scripts/review-summary.mjs`), build, and the built site as an artifact. It never
   deploys. It does not run browser, GPU or manual-story acceptance.
-- `.github/workflows/pages.yml` (**Publish story archive**) deploys GitHub Pages only for a release tag `v*` or a manual
-  run, and only when repository variable `ENABLE_GITHUB_PAGES=true`.
+- `.github/workflows/pages.yml` (**Publish story archive**) deploys GitHub Pages only for a release — a push to `main`
+  that changes the root `RELEASE` file — or a manual run, and only when repository variable `ENABLE_GITHUB_PAGES=true`.
+  The `github-pages` environment accepts deployments from `main` only, so a tag push cannot deploy (v4.0.0 was
+  rejected that way); tags are records.
 
 Release: complete category, reading, visual and performance acceptance locally; push; confirm Archive CI is green for
-that commit; then tag and push the tag (`git tag -a v4.0.0 -m "…"; git push origin v4.0.0`). Verify the Pages run and
-the live site at its subpath (art/audio, bilingual reader, direct `#story=` URLs, representative branch paths). Do not
-report a local preview as publication. Update CodexDoc, REVIEW and verification records with actual evidence.
+that commit; then edit `RELEASE` (new version line + notes), commit, push, and tag the commit
+(`git tag -a v4.0.1 -m "…"; git push origin v4.0.1`). Verify the Pages run and the live site at its subpath (art/audio,
+bilingual reader, direct `#story=` URLs, representative branch paths). Do not report a local preview as publication.
+Update CodexDoc, REVIEW and verification records with actual evidence.
