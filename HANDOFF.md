@@ -32,28 +32,27 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 - Git: everything is committed on `main` at https://github.com/SideQuest86/StellarisTales (Archive CI on every push).
   Pages deploys only for a `v*` tag; the live site https://sidequest86.github.io/StellarisTales/ still serves the old
   pre-V4 version until the release.
-- Model V4: 1,401 stories, 8,670 readable documents (all assigned), 152 shared hubs; event inheritance (`base =`)
-  resolved; compile deterministic and checked in CI.
-- Review: every story has a fragment + guide with status `reviewed` (rounds 1–2). Round 3 is running:
-  `r3-inherit` re-checks the 29 stories whose trees changed with the inheritance fix (enclaves, three origins…);
-  `r3-integrate` resolves cross-story requests, 10 compiler warnings and 9 orphan fragments. Categories are accepted in
-  REVIEW.md only after round 3 is merged.
+- Model V4: 1,390 stories, 8,670 readable documents (all assigned); event inheritance (`base =`) resolved; compile
+  deterministic and checked in CI; 0 compiler warnings; only the three intentional exclusion fragments are orphans.
+- Review: rounds 1–3 complete (ledgers in `content/chronology/review/`); every story `reviewed` with a guide. C1–C8
+  accepted in REVIEW.md with evidence and explicit remaining uncertainties.
+- Reading evidence: content audit over all documents clean (CI, `--strict`); browser reading walk 48 stories /
+  212 documents / 43 reversals / 0 errors; reader checks 12/12; UI capture 50/50.
 - Cetana: whole chain reviewed (120 docs). 8295 / gifted_system: the only setter is 8295's own immediate while its
   trigger already requires it — not naturally reachable in the shipped script (no runtime verification). Databank
   1800-day project vs 900/540-day deadline: defines formula has undefined terms; the site claims neither outcome.
-- UI/performance (RTX 5070 Laptop, ANGLE D3D11, 170 Hz): idle/scroll/drag/map/close p95 ≈ 6 ms; chapter change one
-  frame ≤ 60 ms; first story open one 70–105 ms frame at the click (layout of new chapter text; CJK glyph warm-up and
-  forced-layout removal cut it from ~110 ms with two layouts). Headed real-GPU runs only; no physical phone tested.
-- Tests: 26 Node + 10 Python; reader checks (verify-reader-v4) 12/12; UI capture 50/50.
+- UI/performance (RTX 5070 Laptop, ANGLE D3D11, 170 Hz, unthrottled headed Chrome): idle, scroll, drag, open, chapter
+  change, back, map pan/zoom and close all p95 6 ms; one 65–112 ms frame at the click that opens a story (layout of
+  the new chapter text before the animation starts) and one ≤ 65 ms frame on a chapter change. No physical phone or
+  other GPU tested; narrow layouts verified by emulation only.
+- Tests: 26 Node + 10 Python.
 
 ## Next work
 
-1. When round 3 reports: `scripts/review-copies.py merge r3-inherit r3-integrate`, compile, tests, audit, commit; move
-   the copies to `st-agents/_done/`; resolve anything they mark partial or request.
-2. Category acceptance: per category record evidence in REVIEW.md (all stories reviewed, audit clean, warnings/orphans
-   resolved, sampled reading paths in the browser incl. exclusive outcomes, reversals and cross-story links).
-3. Final reading/visual/performance pass in the real browser (desktop + narrow), screenshots inspected.
-4. Release: green Archive CI → tag `v4.0.0` → Pages run → verify the live site and report the link.
+1. Release: green Archive CI → tag `v4.0.0` → Pages run → verify the live site and record the link here.
+2. Optional improvements: render the first chapter before the reader animation to hide the open-click frame;
+   collapse "thank-you" windows that only return to an enclave menu (r3-inherit request); merge
+   event-anomaly-4036 into anomaly-sun-rays-cat (r3-integrate request); larger close-up on tall viewports.
 
 ## Working rules
 
