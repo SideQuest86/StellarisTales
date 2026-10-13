@@ -1,0 +1,124 @@
+{
+ "id": "spectral-wraith",
+ "family": {
+  "title": {
+   "zh": "魑魅魍魉",
+   "en": "The Wraith"
+  },
+  "category": "leviathans",
+  "start": "leviathans.2010",
+  "members": [
+   "leviathans.2010",
+   "leviathans.2012",
+   "leviathans.2013",
+   "leviathans.2014"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "leviathans.2010",
+   "to": "leviathans.2012",
+   "conditional": true,
+   "label": {
+    "zh": "中期脉冲：幽魂诞生于某国境内",
+    "en": "Mid-game pulse: the Wraith is born inside an empire"
+   },
+   "evidence": "on_mid_game_pulse (common/on_actions/00_on_actions.txt:312) -> hidden leviathans.2011 (events/leviathans_events_2.txt:2463-2603) turns the germinating_wraith planet into the Wraith fleet; if the star has a space_owner that owner gets leviathans.2012"
+  },
+  {
+   "from": "leviathans.2010",
+   "to": "leviathans.2013",
+   "conditional": true,
+   "label": {
+    "zh": "幽魂游荡进入某国领土",
+    "en": "The Wraith later roams into an empire's territory"
+   },
+   "evidence": "on_entering_system_fleet (common/on_actions/00_on_actions.txt:1025) -> hidden leviathans.2061 (events/leviathans_events_2.txt:2738-2756) -> leviathans.2013 for a space owner that has not met it"
+  },
+  {
+   "from": "leviathans.2010",
+   "to": "leviathans.2014",
+   "conditional": true,
+   "label": {
+    "zh": "若幽魂被击毁",
+    "en": "If the Wraith is destroyed"
+   },
+   "evidence": "on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1645) -> leviathans.2014 (events/leviathans_events_2.txt:2668-2735): victim country has flag wraith_country"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.2012",
+    "leviathans.2013"
+   ],
+   "label": {
+    "zh": "每个帝国首次遭遇只出现其一",
+    "en": "Each empire sees only one first-contact notice"
+   },
+   "note": {
+    "zh": "2012（诞生在境内）与 2013（游荡入境）都要求帝国尚无 guardians_wraith_encountered 标记，并在触发时设置它。",
+    "en": "Both 2012 (born in territory) and 2013 (roams in) require and then set guardians_wraith_encountered, so an empire gets only one."
+   }
+  }
+ ],
+ "endings": {
+  "leviathans.2014": {
+   "label": {
+    "zh": "幽魂被消灭",
+    "en": "The Wraith is destroyed"
+   },
+   "note": {
+    "zh": "获得永久修正“光谱残留研究”，设置 killed_wraith，并开启庆典情境。",
+    "en": "Grants the permanent modifier spectral_residue_studies, sets killed_wraith and starts a celebration situation."
+   },
+   "evidence": "events/leviathans_events_2.txt:2714-2734"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.2010": {
+   "zh": "扫描脉冲星",
+   "en": "Scanning the pulsar"
+  },
+  "leviathans.2012": {
+   "zh": "幽魂诞生于境内",
+   "en": "Born in our territory"
+  },
+  "leviathans.2013": {
+   "zh": "幽魂进入领土",
+   "en": "Enters our territory"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.2010",
+   "kind": "review",
+   "zh": "审阅注：勘测带有 guardians_wraith_pulsar 标记的中子星行星时触发（on_survey_planet，00_on_actions.txt:1149）：撤去标记并施加“萌芽中的幽魂”修正。若在中期脉冲前无人勘测，隐藏事件 20101 会移除该标记，幽魂不会被发现。",
+   "en": "Review note: surveying the pulsar planet flagged guardians_wraith_pulsar (on_survey_planet, 00_on_actions.txt:1149) removes the flag and adds the germinating_wraith modifier. If nobody has surveyed it by the mid-game pulse, hidden 20101 removes the flag and the Wraith is never discovered (leviathans_events_2.txt:2400-2418)."
+  },
+  {
+   "doc": "leviathans.2014",
+   "kind": "review",
+   "zh": "审阅注：幽魂有三种频率之一（蓝/黄/红，各约三分之一），在对应恒星级别的星系内获得“频率同步”修正（隐藏 2061；效果未核对）。",
+   "en": "Review note: the Wraith spawns in one of three frequencies (blue/yellow/red, one third each) and gets wraith_frequency_sync in systems of the matching star class (hidden 2061; the modifier's effect was not checked)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整：扫描、诞生、遭遇通知、击杀。频率机制仅作说明。",
+   "en": "Complete: scan, birth, encounter notices, kill. Frequency mechanic described only."
+  },
+  "sources": [
+   "events/leviathans_events_2.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/spectral-wraith.md",
+  "uncertain": [
+   "Effect of wraith_frequency_sync not verified."
+  ]
+ }
+}

@@ -1,0 +1,217 @@
+{
+ "id": "event-country-1000",
+ "family": {
+  "title": {
+   "zh": "浪迹星涯",
+   "en": "Wanderlust"
+  },
+  "category": "stories",
+  "start": "country.1000",
+  "members": [
+   "country.1000",
+   "country.1001",
+   "country.1002",
+   "country.1003",
+   "country.1005",
+   "country.1010",
+   "country.1011",
+   "country.1012",
+   "country.1015",
+   "country.1020",
+   "country.1021",
+   "country.1022",
+   "country.1025",
+   "country.1026",
+   "country.1030",
+   "country.1031",
+   "country.1035",
+   "country.1040",
+   "country.1041",
+   "country.1042",
+   "country.1043",
+   "country.1044",
+   "country.1045",
+   "country.1046",
+   "country.1047",
+   "country.1050",
+   "country.1051",
+   "country.1052",
+   "country.1053",
+   "country.1055",
+   "country.1060",
+   "country.1061",
+   "event_chains:rogue_scientist_1_chain",
+   "event_chains:rogue_scientist_2_chain",
+   "event_chains:rogue_scientist_3_chain",
+   "special_projects:ROGUE_SCIENTIST_1_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "country.1001",
+   "choice": "country.1001.a",
+   "to": "country.1003",
+   "conditional": true,
+   "label": {
+    "zh": "进入前两个搜索星系：死胡同",
+    "en": "Enter the first two search systems: dead end"
+   },
+   "evidence": "events/country_events_2.txt:523-667 hidden fleet event country.1002 counts likely_locations_searched (chain max 3, common/event_chains/00_event_chains_2.txt:16-18); below 3 it fires country.1003"
+  },
+  {
+   "from": "country.1001",
+   "choice": "country.1001.a",
+   "to": "country.1005",
+   "conditional": true,
+   "label": {
+    "zh": "搜完三个星系中的最后一个：找到科学官",
+    "en": "Search the last of the three systems: scientist found"
+   },
+   "evidence": "events/country_events_2.txt:556-566,638-650 when the counter completes country.1002 fires country.1005 instead"
+  },
+  {
+   "from": "country.1015",
+   "choice": "BATTLESTATIONS",
+   "to": "country.1020",
+   "conditional": true,
+   "label": {
+    "zh": "击毁碎片探测器",
+    "en": "Destroy the scrap probes"
+   },
+   "evidence": "events/country_events_2.txt:802-861,864-914 country.1015 spawns hostile Scrap Probes; country.1020 fires when the player destroys them (relation flag scientist_probe_relation)"
+  },
+  {
+   "from": "country.1015",
+   "choice": "BATTLESTATIONS",
+   "to": "country.1022",
+   "conditional": true,
+   "label": {
+    "zh": "探测器被他国击毁",
+    "en": "The probes are destroyed by another empire"
+   },
+   "evidence": "events/country_events_2.txt:917-976 hidden country.1021 sends country.1022 to the original owner"
+  },
+  {
+   "from": "country.1025",
+   "choice": "OK",
+   "to": "country.1030",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入倒数第二个目标星系",
+    "en": "A fleet enters the penultimate target system"
+   },
+   "evidence": "events/country_events_2.txt:1022-1145,1147-1170 country.1026 marks scientist_system_4; country.1030 trigger needs that star flag and rogue_scientist_2_chain"
+  },
+  {
+   "from": "country.1042",
+   "choice": "country.1042.a",
+   "to": "country.1045",
+   "conditional": true,
+   "label": {
+    "zh": "击毁阳炎海盗",
+    "en": "Destroy the Sunblaster Pirates"
+   },
+   "evidence": "events/country_events_2.txt:1390-1440 country.1042.a makes the pirates hostile; hidden country.1043 (destroyed by the player) fires country.1045"
+  },
+  {
+   "from": "country.1042",
+   "choice": "country.1042.a",
+   "to": "country.1061",
+   "conditional": true,
+   "label": {
+    "zh": "海盗被他国消灭",
+    "en": "The pirates are destroyed by another empire"
+   },
+   "evidence": "events/country_events_2.txt:1810-1868 hidden country.1060 sends country.1061, which continues to country.1045"
+  },
+  {
+   "from": "country.1047",
+   "choice": "OK",
+   "to": "country.1050",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入最后一个标记星系",
+    "en": "A fleet enters the final marked system"
+   },
+   "evidence": "events/country_events_2.txt:1540-1617,1620-1642 country.1047 marks scientist_system_5; country.1050 trigger needs it and rogue_scientist_3_chain"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.1011",
+    "country.1012"
+   ],
+   "label": {
+    "zh": "对话回应",
+    "en": "Dialogue replies"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.1020",
+    "country.1022"
+   ],
+   "label": {
+    "zh": "探测器：自己击毁 / 他国击毁",
+    "en": "Probes: destroyed by us / by someone else"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.1041",
+    "country.1042"
+   ],
+   "label": {
+    "zh": "付钱 / 开战",
+    "en": "Pay off / fight"
+   },
+   "note": {
+    "zh": "付钱（150能量，需和平主义或物质主义伦理）得 country.1041；开战得 country.1042，击毁海盗后 country.1045。",
+    "en": "Paying (150 energy, pacifist or materialist ethics) gives country.1041; fighting gives country.1042 and, once the pirates die, country.1045."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "country.1000",
+   "kind": "review",
+   "zh": "触发：游戏开始后由开局事件闸门 country.900 抽取（events/game_start.txt:15 在460±60天后触发；events/country_events_2.txt:17-66 为按权重的随机列表，四条开局故事互斥，另有69%什么都不发生）。权重仅1（其余开局故事各为10）；需人类玩家、非集群意识、研究总督是科学家，且全局没有进行中的“浪迹星涯”（country_events_2.txt:360-371）。该科学家被放逐（exile_leader_as）。",
+   "en": "Trigger: After game start the starting-event gate country.900 draws it (events/game_start.txt:15 fires it after 460±60 days; events/country_events_2.txt:17-66 is a weighted random list: the four opening stories are mutually exclusive and 69% of the weight is \"nothing happens\"). Weight only 1 (the others 10); needs a human player, non-gestalt, a scientist research councilor and no other Wanderlust in progress (country_events_2.txt:360-371). The scientist is exiled (exile_leader_as)."
+  },
+  {
+   "doc": "country.1055",
+   "kind": "review",
+   "zh": "结局：科学官的船恢复，设置完成旗标并移除全局旗标 wanderlust_ongoing（country_events_2.txt:1779-1808）。",
+   "en": "Ending: the scientist's ship is restored; the completion flag is set and the global flag wanderlust_ongoing removed (country_events_2.txt:1779-1808)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/country_events_2.txt:341-1868",
+   "events/game_start.txt:15",
+   "common/event_chains/00_event_chains_2.txt:12-41"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-country-1000.md",
+  "merged": [
+   "event-country-1002",
+   "event-country-1020",
+   "event-country-1021",
+   "event-country-1030",
+   "event-country-1043",
+   "event-country-1050",
+   "event-country-1060"
+  ]
+ }
+}

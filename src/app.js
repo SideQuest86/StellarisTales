@@ -2,6 +2,9 @@ import { storyMap } from "./story-map.js";
 import { FlowSurface } from "./flow-surface.js";
 import { ArchiveScene } from "./archive-scene.js";
 import { SoundtrackPlayer } from "./audio-player.js";
+// [UI] chrome dictionary + reader enter/exit (src/i18n.js, src/reader-motion.js)
+import { t, setLanguage, applyStaticText } from "./i18n.js";
+import { revealReader } from "./reader-motion.js";
 import {
   evaluate, resolveBody, resolveChoices, resolveEdges, pathFlags, storyFlags,
   impliedFacts, applyFacts, describe,
@@ -217,9 +220,9 @@ $("#next-category").onclick = () => navigate("lane", 1);
 $("#open-story").onclick = () => openStory(selected.id);
 function setReader(open) {
   document.body.classList.toggle("reader-open", open);
-  $("#reader").hidden = !open;
+  // [UI] animated enter/exit; the map fades out with the card instead of vanishing.
+  revealReader($("#reader"), open, reduced());
   if (!open) {
-    $("#flow-surface").hidden = true;
     $("#flow-surface").classList.remove('mobile-open');
   }
   $("#archive-hud").inert = open;
@@ -258,7 +261,7 @@ function closeReader() {
   chapter = null;
   trail = [];
   history.replaceState(null, "", "#");
-  document.title = "群星 · 银河记忆 | Stellaris Tales";
+  document.title = t("site.title"); // [UI]
   $("#open-story").focus();
 }
 $("#close-reader").onclick = closeReader;
@@ -577,7 +580,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt=""/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt=""/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   const remembered=trail.at(-1);
   if(remembered?.chapter===chapter.id && remembered.reading===readingIndex && remembered.choice!==undefined){
     const index=r.choices.findIndex(option=>option.key===remembered.choice);
@@ -704,20 +707,15 @@ function switchLanguage() {
 $("#language").onclick = switchLanguage;
 $("#reader-language").onclick = switchLanguage;
 function renderChrome() {
-  // Static UI chrome in the current language (story text itself is always original game text).
-  const set = (q, zh, en) => { const el = $(q); if (el) el.textContent = T(zh, en); };
-  set("#search-open span", "搜索", "Search");
-  set("#close-reader", "← 收起档案", "← Close dossier");
-  set("#chapter-toggle", "剧情脉络", "Story map");
-  $("#reader-language").textContent = lang === "zh" ? "EN" : "中";
-  set("#search-title", "搜索", "Search");
-  $("#search-input")?.setAttribute("placeholder", T("故事名称、中文或英文关键词", "Story title or keywords in Chinese or English"));
-  const open = $("#open-story");
-  if (open) open.firstChild.textContent = T("展开故事 ", "Open story ");
-  for (const b of $("#categories")?.children || []) {
-    const i = Number(b.dataset.category);
-    b.querySelector("span").innerHTML = `${esc(categoryName(i))}<em>${esc(lang === "en" ? CATEGORIES[i][1] : CATEGORIES[i][2])}</em>`;
-  }
+  // [UI] Static chrome comes from src/i18n.js (data-i18n attributes in index.html).
+  setLanguage(lang);
+  applyStaticText();
+  if (!columns.length) return;
+  // Catalogue bar: index, localized category name and its story count.
+  $("#categories").innerHTML = CATEGORIES.map(
+    (_, i) =>
+      `<button type="button" data-category="${i}" class="${i === selectedColumn ? "active" : ""}" aria-pressed="${i === selectedColumn}"><small>${String(i + 1).padStart(2, "0")}</small><span>${esc(t(`cat.${CATEGORIES[i][0]}`))}<em>${esc(t("catalogue.count", { n: columns[i].stories.length }))}</em></span></button>`,
+  ).join("");
 }
 function renderSearch() {
   if (!stories.length) return;
@@ -902,11 +900,7 @@ try {
     en,
     stories: stories.filter((s) => s.visible && s.category === id),
   }));
-  $("#categories").innerHTML = CATEGORIES.map(
-    ([id, title, en], i) =>
-      `<button data-category="${i}" aria-pressed="${i === 2}"><small>${String(i + 1).padStart(2, "0")}</small><span>${title}<em>${en}</em></span></button>`,
-  ).join("");
-  renderChrome();
+  renderChrome(); // [UI] also builds the catalogue bar
   $("#archive-count").textContent = "";
   try {
     scene = new ArchiveScene($("#scene"), {

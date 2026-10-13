@@ -1,0 +1,117 @@
+{
+ "id": "ether-drake",
+ "family": {
+  "title": {
+   "zh": "以太巨龙",
+   "en": "Ether Drake"
+  },
+  "category": "leviathans",
+  "start": "leviathans.610",
+  "members": [
+   "leviathans.610",
+   "leviathans.649",
+   "leviathans.650",
+   "leviathans.670",
+   "special_projects:REANIMATE_GUARDIAN_DRAGON",
+   "leviathans.675"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "leviathans.610",
+   "to": "leviathans.649",
+   "conditional": true,
+   "label": {
+    "zh": "若受创的巨龙摧毁我们的舰队",
+    "en": "If the wounded Drake destroys our fleet"
+   },
+   "evidence": "on_fleet_destroyed_perp (00_on_actions.txt:1641) -> hidden leviathans.648 (leviathans_events_1.txt:8266-8310): a red-dragon ship between 15% and 80% HP, no aggro_cooldown, in the guardians_dragon_system; it sends the retaliation order 652 and notifies the victim with 649"
+  },
+  {
+   "from": "leviathans.610",
+   "to": "leviathans.650",
+   "conditional": true,
+   "label": {
+    "zh": "若我们的舰队在龙受创后紧急跃迁逃离",
+    "en": "If our fleet flees by emergency FTL after wounding it"
+   },
+   "evidence": "on_emergency_ftl (00_on_actions.txt:2893) -> leviathans.650 (leviathans_events_1.txt:8352-8422): default empire escaping the dragon system while a dragon at 15-80% HP is in combat; the dragon then pursues (hidden 651)"
+  },
+  {
+   "from": "leviathans.610",
+   "to": "leviathans.670",
+   "conditional": true,
+   "label": {
+    "zh": "若我们击杀以太巨龙",
+    "en": "If we kill the Ether Drake"
+   },
+   "evidence": "on_fleet_destroyed_perp (00_on_actions.txt:1643) -> leviathans.670 (leviathans_events_1.txt:9004-9142): victim is a guardian_dragon country that is not the rubricator or here-be-the-dragon dragon"
+  }
+ ],
+ "endings": {
+  "leviathans.675": {
+   "label": {
+    "zh": "以太巨龙被亡灵法师复活",
+    "en": "The Drake is reanimated"
+   },
+   "note": {
+    "zh": "创建一支被动的复活大龙舰队“Avice”。",
+    "en": "Creates a passive reanimated grand dragon fleet."
+   },
+   "evidence": "events/leviathans_events_1.txt:9145-9202"
+  },
+  "leviathans.670": {
+   "label": {
+    "zh": "屠龙者",
+    "en": "Dragonslayer"
+   },
+   "note": {
+    "zh": "三选一（按能力）：获得300影响力与龙战利品遗物；亡灵师可启动复活项目；可收割DNA者获得DNA标记。指挥官得到“屠龙者”特质，并开启庆典情境。",
+    "en": "Three options by capability: 300 influence and the dragon trophy relic; a reanimator may start the reanimation project; a DNA harvester gets the harvested flag. The commander gains the Dragonslayer trait and a celebration situation starts."
+   },
+   "evidence": "events/leviathans_events_1.txt:9078-9141"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.610": {
+   "zh": "遭遇以太巨龙",
+   "en": "Meeting the Ether Drake"
+  },
+  "leviathans.670": {
+   "zh": "巨龙被击杀",
+   "en": "The Drake is slain"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.610",
+   "kind": "review",
+   "zh": "审阅注：玩家（或堕落帝国）的舰队进入标有 guardians_dragon_system、且有红龙舰船的星系时触发，每帝国一次（dragon_encounter；on_entering_system_fleet，00_on_actions.txt:998）。巨龙受伤会追击撤退的舰队并报复其有空间站的星系（隐藏 648/651/652/654），血量低于16%时撤回休眠修复（隐藏 655）。这些追击细节只作说明，未建模。",
+   "en": "Review note: fires once per empire (dragon_encounter) when a default or fallen empire fleet enters a guardians_dragon_system with a red-dragon ship (on_entering_system_fleet, 00_on_actions.txt:998). A wounded Drake pursues fleeing fleets and raids systems where the victim has stations (hidden 648/651/652/654) and below 16% HP retreats to hibernate and repair (hidden 655). These pursuit details are described, not modelled."
+  },
+  {
+   "doc": "leviathans.670",
+   "kind": "review",
+   "zh": "审阅注：“龙的宝库”小行星现在可以安全开采，详见“龙之宝藏”故事。",
+   "en": "Review note: the Dragon's Hoard planetoid it guarded is covered by its own story (Dragon's Hoard)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整：遭遇、报复通知、击杀与复活项目。隐藏追击逻辑仅作说明。",
+   "en": "Complete: encounter, retaliation notices, kill and reanimation. Hidden pursuit logic described only."
+  },
+  "sources": [
+   "events/leviathans_events_1.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_leviathans.txt"
+  ],
+  "uncertain": [
+   "The pursuit/hibernation behaviour of hidden events 640-655 was read only at summary level."
+  ],
+  "guide": "public/summaries/ether-drake.md"
+ }
+}

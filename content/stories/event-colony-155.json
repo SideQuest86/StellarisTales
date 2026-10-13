@@ -1,0 +1,29 @@
+{
+ "id": "event-colony-155",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.156",
+    "colony.157"
+   ],
+   "label": {
+    "zh": "项目成功或失败",
+    "en": "Project success or failure"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "核弹故事：触发、拆除项目、成功与失败。",
+   "en": "Nuclear Bomb story: trigger, disarm project, success and failure."
+  },
+  "sources": [
+   "events/colony_events_1.txt"
+  ],
+  "guide": "public/summaries/event-colony-155.md"
+ }
+}

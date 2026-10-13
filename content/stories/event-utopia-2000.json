@@ -1,0 +1,121 @@
+{
+ "id": "event-utopia-2000",
+ "family": {
+  "title": {
+   "zh": "环形世界",
+   "en": "Ring World"
+  },
+  "category": "stories",
+  "start": "utopia.2000",
+  "members": [
+   "utopia.2000",
+   "utopia.2003",
+   "utopia.2004",
+   "utopia.2002",
+   "utopia.2005",
+   "utopia.2001",
+   "utopia.2006",
+   "utopia.2016",
+   "utopia.2017"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "utopia.2000",
+   "to": "utopia.2003",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：骨架框架建成（ring_world_2_intermediate）",
+    "en": "After the next upgrade: Skeletal frame built (ring_world_2_intermediate)"
+   },
+   "evidence": "events/megastructure_events_1.txt:3212-3230; common/on_actions/00_on_actions.txt:3695 (on_megastructure_upgraded fires utopia.2003)"
+  },
+  {
+   "from": "utopia.2003",
+   "to": "utopia.2004",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：环形世界完工（ring_world_3_intermediate，且星系内已无 ring_world_2）",
+    "en": "After the next upgrade: Ring World completed (ring_world_3_intermediate, no ring_world_2 left in the system)"
+   },
+   "evidence": "events/megastructure_events_1.txt:3232-3294; common/on_actions/00_on_actions.txt:3696"
+  },
+  {
+   "from": "utopia.2000",
+   "to": "utopia.2002",
+   "conditional": true,
+   "label": {
+    "zh": "建造骨架时：与你有通讯并有经济/科技情报的玩家帝国收到通知（隐藏事件2001）",
+    "en": "While the skeleton is being built: human empires with communications/intel get a notice (hidden 2001)"
+   },
+   "evidence": "events/megastructure_events_1.txt:3104-3153 hidden utopia.2001 (on_megastructure_upgrade_begin, common/on_actions/00_on_actions.txt:3684) fires 2002 to every other non-AI country with economy or technology intel >= 1"
+  },
+  {
+   "from": "utopia.2004",
+   "to": "utopia.2005",
+   "conditional": true,
+   "label": {
+    "zh": "完工时：同样条件的玩家帝国收到通知",
+    "en": "On completion: human empires with intel get a notice"
+   },
+   "evidence": "events/megastructure_events_1.txt:3263-3285 2004 immediate fires hidden-wrapped utopia.2005 to every other non-AI country with intel >= 1; after 5 days hidden 2006 (flag, line 3288)"
+  },
+  {
+   "from": "utopia.2016",
+   "to": "utopia.2017",
+   "conditional": true,
+   "label": {
+    "zh": "修复废墟（建造“修复”型巨型结构）后",
+    "en": "After the ruin is restored (the \"restored\" megastructure type is built over it)"
+   },
+   "evidence": "common/megastructures/00_ring_world.txt:548 on_build_complete fires utopia.2017; the restored type is upgrade_from the ruined type"
+  }
+ ],
+ "nodeLabels": {
+  "utopia.2002": {
+   "zh": "其他帝国收到的通知",
+   "en": "Notice to other empires"
+  },
+  "utopia.2005": {
+   "zh": "其他帝国收到的通知",
+   "en": "Notice to other empires"
+  },
+  "utopia.2016": {
+   "zh": "遇到废墟",
+   "en": "Finding the ruin"
+  },
+  "utopia.2017": {
+   "zh": "废墟修复",
+   "en": "Ruin restored"
+  }
+ },
+ "notes": [
+  {
+   "doc": "utopia.2000",
+   "kind": "review",
+   "zh": "审阅说明：环形世界每完成一个建造阶段，由 on_megastructure_built / on_megastructure_upgraded 在建造国触发对应事件（并非选项链接）；各阶段按建造顺序排列。完工后，隐藏事件 utopia.2006 在5天后设置国家标记 finished_ringworld，之后的废墟事件按此标记换选项。",
+   "en": "Review note: each build stage of the Ring World fires its own event for the builder from on_megastructure_built / on_megastructure_upgraded (not option links); stages are shown in construction order. After completion hidden utopia.2006 sets the country flag finished_ringworld 5 days later; the ruin event uses it to pick its option."
+  },
+  {
+   "doc": "utopia.2016",
+   "kind": "review",
+   "zh": "审阅说明：废墟是地图上预置的，不属于任何建造阶段；首次进入该星系时由 on_entering_system_first_time 触发。",
+   "en": "Review note: the ruin is a pre-placed map object, not a build stage; on_entering_system_first_time fires this event the first time a ship enters the system."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "环形世界各建造阶段事件、给其他帝国的通知、废墟与修复事件。",
+   "en": "Ring World: build-stage events, notices to other empires, the ruin and restoration events."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/megastructures/00_ring_world.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-utopia-2000.md"
+ }
+}

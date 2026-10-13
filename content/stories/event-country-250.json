@@ -1,0 +1,152 @@
+{
+ "id": "event-country-250",
+ "family": {
+  "title": {
+   "zh": "追寻风信子号",
+   "en": "The Hunt for the Hyacinth"
+  },
+  "category": "stories",
+  "start": "country.250",
+  "members": [
+   "country.250",
+   "country.251",
+   "country.252",
+   "country.253",
+   "country.254",
+   "country.255",
+   "country.256",
+   "country.257",
+   "country.259",
+   "country.260",
+   "event_chains:hunting_hyacinth",
+   "special_projects:BOARD_HYACINTH"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "country.250",
+   "choice": "country.250.a",
+   "to": "country.251",
+   "conditional": true,
+   "label": {
+    "zh": "勘测第一个星图标记系统",
+    "en": "Survey the first charted system"
+   },
+   "evidence": "events/country_events_1.txt:3862-3950 country.250.a marks three systems (hyacinth_system_1..3); ship events country.251/252/253 fire on surveying each (L4103-4220)"
+  },
+  {
+   "from": "country.250",
+   "choice": "country.250.a",
+   "to": "country.252",
+   "conditional": true,
+   "label": {
+    "zh": "勘测第二个星图标记系统",
+    "en": "Survey the second charted system"
+   },
+   "evidence": "events/country_events_1.txt:4143-4158 country.252 trigger: hyacinth_system_2"
+  },
+  {
+   "from": "country.250",
+   "choice": "country.250.a",
+   "to": "country.253",
+   "conditional": true,
+   "label": {
+    "zh": "勘测第三个星图标记系统",
+    "en": "Survey the third charted system"
+   },
+   "evidence": "events/country_events_1.txt:4172-4221 country.253 trigger: hyacinth_system_3; its option spawns the Hyacinth system and POI 4"
+  },
+  {
+   "from": "country.250",
+   "choice": "country.250.a",
+   "to": "country.260",
+   "conditional": true,
+   "label": {
+    "zh": "无勘测船参与（买星图/交换）而获得星系资料",
+    "en": "System data obtained without a survey ship (star chart trade)"
+   },
+   "evidence": "events/country_events_1.txt:3961-3999 hidden carrier event country.259 -> country.260 when a marked system is surveyed without a ship (NOT exists fromfrom); L4060-4094 option for hyacinth_system_3 spawns the system"
+  },
+  {
+   "from": "country.253",
+   "choice": "country.253.a",
+   "to": "country.254",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入新出现的风信子号星系",
+    "en": "A fleet enters the newly spawned Hyacinth system"
+   },
+   "evidence": "events/country_events_1.txt:4180-4270 spawned system flagged hyacinth_system; country.254 trigger (L4236-4242) fleet enters a system with that flag"
+  },
+  {
+   "from": "country.260",
+   "choice": "country.253.a",
+   "to": "country.254",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入新出现的风信子号星系",
+    "en": "A fleet enters the newly spawned Hyacinth system"
+   },
+   "evidence": "events/country_events_1.txt:4060-4094,4236-4242 same spawn via the star-chart route"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "country.251",
+    "country.252",
+    "country.253",
+    "country.260"
+   ],
+   "required": 1,
+   "gate": "country.254",
+   "label": {
+    "zh": "三个星图标记系统",
+    "en": "Three charted systems"
+   },
+   "note": {
+    "zh": "三个标记系统的顺序任意；前两个只是清除标记，只有第三个标记系统（hyacinth_system_3）会生成风信子号所在的新星系。country.260 是同一勘测的“无船”版本。",
+    "en": "The three charted systems may be done in any order; the first two only clear their markers, only the third (hyacinth_system_3) spawns the Hyacinth's own system. country.260 is the same survey without a ship."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "country.250",
+   "kind": "review",
+   "zh": "随时间随机发生（平均1个月，注释写着80），需人类玩家、human_2旗标、非“破碎枷锁”起源，且附近有三个未勘测的无主星系（country_events_1.txt:3785-3843）。",
+   "en": "Random over time (mean 1 month, commented as 80), needs a human player, the human_2 flag, not the Broken Shackles origin and three unsurveyed unowned systems nearby (country_events_1.txt:3785-3843)."
+  },
+  {
+   "doc": "country.256",
+   "kind": "review",
+   "zh": "前四个选项只是对话（is_dialog_only），第五个选项继续到 country.257。",
+   "en": "The first four options are dialogue only (is_dialog_only); the fifth continues to country.257."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/country_events_1.txt:3774-4364",
+   "common/event_chains/00_event_chains.txt:307",
+   "common/special_projects (BOARD_HYACINTH)",
+   "common/solar_system_initializers (hyacinth_system)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-country-250.md",
+  "merged": [
+   "event-country-251",
+   "event-country-252",
+   "event-country-253",
+   "event-country-254",
+   "event-country-259"
+  ]
+ }
+}

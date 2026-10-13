@@ -84,7 +84,7 @@ try {
   // 5. Narrow viewport: no horizontal overflow.
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 } });
   mobile.on("pageerror", (e) => errors.push(e.message));
-  await mobile.goto(`${base}#story=anomaly-nano-swarm-cat&chapter=anomaly.6710`, { waitUntil: "networkidle" });
+  await mobile.goto(`${base}#story=anomaly-nano-swarm-cat&chapter=anomaly.6710`, { waitUntil: "load" });
   await mobile.waitForSelector('.chapter-document[data-doc="anomaly.6710"]');
   const overflow = await mobile.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   assert.ok(overflow <= 1, `horizontal overflow ${overflow}px`);

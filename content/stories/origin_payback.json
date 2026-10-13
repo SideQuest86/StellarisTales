@@ -2,21 +2,479 @@
  "id": "origin_payback",
  "opening": {
   "targets": [
-   "archaeological_site_types:payback_digsite"
+   "origin.4900",
+   "origin.4010",
+   "origin.4100",
+   "origin.4105",
+   "origin.4200",
+   "origin.4205",
+   "origin.4210",
+   "progress.9",
+   "origin.4020",
+   "origin.4025",
+   "origin.4110",
+   "origin.4120",
+   "origin.4130",
+   "origin.4140",
+   "origin.4150",
+   "origin.4160",
+   "origin.4170",
+   "origin.4300",
+   "origin.4936"
   ],
   "label": {
-   "zh": "清理战争留下的创伤",
-   "en": "Investigate the scars of war"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "game_start ->origin4000 creates payback_digsite"
+  "labels": {
+   "origin.4900": {
+    "zh": "开局6个月后：取回战舰（清理轨道残骸）",
+    "en": "6 months after start: Retrieve the Warship (orbital debris cleanup)"
+   },
+   "origin.4010": {
+    "zh": "开局约10年后：账单（债务催收者事件链开始）",
+    "en": "About 10 years after start: The Bill (debt collectors chain begins)"
+   },
+   "origin.4100": {
+    "zh": "清除残骸矿藏封锁物后（随机）",
+    "en": "After clearing the ship-debris blocker (random)"
+   },
+   "origin.4105": {
+    "zh": "清除残骸矿藏封锁物后（随机）",
+    "en": "After clearing the ship-debris blocker (random)"
+   },
+   "origin.4200": {
+    "zh": "与奴隶贩子首次接触：第一阶段",
+    "en": "First contact with the slavers: stage 1"
+   },
+   "origin.4205": {
+    "zh": "与奴隶贩子首次接触：第二阶段",
+    "en": "First contact with the slavers: stage 2"
+   },
+   "origin.4210": {
+    "zh": "与奴隶贩子首次接触：结束阶段",
+    "en": "First contact with the slavers: final stage"
+   },
+   "progress.9": {
+    "zh": "第二次遇到外星文明时（替换通用事件）",
+    "en": "On meeting a second alien civilisation (origin variant of a generic event)"
+   },
+   "origin.4020": {
+    "zh": "债务催收者舰队被击败时",
+    "en": "When a debt collector fleet is defeated"
+   },
+   "origin.4025": {
+    "zh": "债务催收者轰炸星球时",
+    "en": "When the debt collectors bombard a planet"
+   },
+   "origin.4110": {
+    "zh": "每5年检查：遇到破碎枷锁帝国时",
+    "en": "Five-year check: meeting a Broken Shackles empire"
+   },
+   "origin.4120": {
+    "zh": "每十年随机：与破碎枷锁共享谍报",
+    "en": "Decade pulse (random): sharing espionage intel with Broken Shackles"
+   },
+   "origin.4130": {
+    "zh": "每十年随机：在议事厅获得破碎枷锁的帮助",
+    "en": "Decade pulse (random): Broken Shackles helps on the senate floor"
+   },
+   "origin.4140": {
+    "zh": "每十年随机：战争中获得破碎枷锁的帮助",
+    "en": "Decade pulse (random): Broken Shackles helps during the war"
+   },
+   "origin.4150": {
+    "zh": "巨兽被击毁后",
+    "en": "After a leviathan is destroyed"
+   },
+   "origin.4160": {
+    "zh": "提升原始文明后",
+    "en": "After uplifting a pre-FTL civilisation"
+   },
+   "origin.4170": {
+    "zh": "出现资源赤字局势时（随机）",
+    "en": "During a resource-deficit situation (random)"
+   },
+   "origin.4300": {
+    "zh": "每十年随机：基因诊所失灵",
+    "en": "Decade pulse (random): the gene clinic breaks down"
+   },
+   "origin.4936": {
+    "zh": "研发三级以上星港科技时：可升级旗舰",
+    "en": "On researching Starbase tech 3-5: the flagship can be upgraded"
+   }
+  },
+  "evidence": "events/game_start.txt:430 fires hidden origin.4000 (events/origin_events_4.txt:14-85: creates the payback_digsite site, debris and ambient objects on the capital); on_game_start_country common/on_actions/00_on_actions.txt:42 fires hidden origin.4005 (events/origin_events_4.txt:111-163: schedules origin.4010 after 3600+0-180 days and origin.4900 after 180 days). Other entries: slavers first contact stages common/first_contact/02_first_contact_unique_stories.txt:93/131/169, d_ship_debris_payback_blocker on_cleared common/deposits/09_first_contact_deposits.txt:77-83, on_space_battle_won common/on_actions/00_on_actions.txt:1720-1721, on_planet_bombarded :2172, on_five_year_pulse_country :475 (4109), on_decade_random_pulse_country_payback_broken_shackles :653-655, on_fleet_destroyed_perp :1647 (4149), events/first_contact_dlc_situation_events.txt:1804 (4160), common/situations/02_deficit_situations.txt:57 etc (4170), on_decade_pulse_country :633 (4300), on_tech_increased :2704-2708 (4306/4936)."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_4.txt",
+   "common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt",
+   "common/special_projects",
+   "common/event_chains",
+   "common/on_actions/00_on_actions.txt",
+   "common/deposits/09_first_contact_deposits.txt",
+   "common/scripted_effects/first_contact_dlc_effects.txt"
+  ],
+  "uncertain": [
+   "The exact conditions of the swords revenge chain (event_chains payback_make_them_pay_swords_chain counters) were read only through the events that consume them.",
+   "The compiled stage chain of the dig site is a linear sequence; the site stage order 4905-4910-4920-4925 is as defined in the site file."
+  ],
+  "guide": "public/summaries/origin_payback.md"
+ },
+ "exclude": [
+  "cstorms.1270",
+  "origin.112",
+  "origin.113"
+ ],
+ "bridges": [
+  {
+   "from": "origin.4931",
+   "to": "archaeological_site_types:payback_digsite",
+   "conditional": true,
+   "label": {
+    "zh": "残骸清理完成后，遗址才可勘探",
+    "en": "Only after the debris cleanup is done can the site be surveyed"
+   },
+   "evidence": "events/origin_events_4.txt:3256-3284 4931 sets payback_unlocked_dig_site; common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:22-28 the site is only visible with that flag."
+  },
+  {
+   "from": "origin.4934",
+   "to": "origin.4936",
+   "conditional": true,
+   "label": {
+    "zh": "旗舰修复后，研发星港科技3–5可升级旗舰",
+    "en": "With the flagship restored, researching Starbase tech 3-5 offers an upgrade"
+   },
+   "evidence": "events/origin_events_4.txt:3576-3597 requires a ship with flag payback_flagship (set by create_payback_warship_effect in 4934) and last_increased_tech starbase 3/4/5; common/on_actions/00_on_actions.txt:2708."
+  },
+  {
+   "from": "origin.4019",
+   "choice": "origin.4019.a",
+   "to": "origin.4020",
+   "conditional": true,
+   "label": {
+    "zh": "开战后：击败催收者舰队",
+    "en": "After fighting: the collector fleet is defeated"
+   },
+   "evidence": "events/origin_events_4.txt:700-711 the option spawns the collector fleet and sets is_fighting_debt_collectors; events/origin_events_4.txt:726-813 4020 fires from on_space_battle_won (common/on_actions/00_on_actions.txt:1720-1721, via hidden 4022 :883-907 when someone else wins)."
+  },
+  {
+   "from": "origin.4019",
+   "choice": "origin.4019.a",
+   "to": "origin.4025",
+   "conditional": true,
+   "label": {
+    "zh": "开战后：催收者轰炸并夺走人口",
+    "en": "After fighting: the collectors bombard and take pops"
+   },
+   "evidence": "events/origin_events_4.txt:912-994 4025 fires from on_planet_bombarded (common/on_actions/00_on_actions.txt:2172) when devastation >= 15 and the bombarder is a debt-collector country."
+  },
+  {
+   "from": "origin.4037",
+   "to": "origin.4020",
+   "conditional": true,
+   "label": {
+    "zh": "开战后：击败催收者舰队",
+    "en": "After fighting: the collector fleet is defeated"
+   },
+   "evidence": "events/origin_events_4.txt:1436-1474 option a spawns the same collector fleet (is_fighting_debt_collectors); outcome as for 4019."
+  },
+  {
+   "from": "origin.4037",
+   "to": "origin.4025",
+   "conditional": true,
+   "label": {
+    "zh": "开战后：催收者轰炸并夺走人口",
+    "en": "After fighting: the collectors bombard and take pops"
+   },
+   "evidence": "events/origin_events_4.txt:1436-1474 and :912-994."
+  },
+  {
+   "from": "event_chains:payback_make_them_pay_words_1_chain",
+   "to": "origin.4052",
+   "conditional": true,
+   "label": {
+    "zh": "通过名单上的第一项决议",
+    "en": "The first resolution on the list passes"
+   },
+   "evidence": "events/origin_events_4.txt:1647-1710 hidden 4051 (on_resolution_passed common/on_actions/00_on_actions.txt:4356) -> scripted effect payback_resolution_counters_check (common/scripted_effects/first_contact_dlc_effects.txt) -> 4052 (:1713-1740)."
+  },
+  {
+   "from": "event_chains:payback_make_them_pay_words_2_chain",
+   "to": "origin.4052",
+   "conditional": true,
+   "label": {
+    "zh": "通过名单上的第一项决议",
+    "en": "The first resolution on the list passes"
+   },
+   "evidence": "events/origin_events_4.txt:1647-1740 as for the equal-standing line."
+  },
+  {
+   "from": "event_chains:payback_make_them_pay_words_1_chain",
+   "to": "origin.4055",
+   "conditional": true,
+   "label": {
+    "zh": "名单上的决议全部通过",
+    "en": "All resolutions on the list have passed"
+   },
+   "evidence": "events/origin_events_4.txt:1807-1878 4055 (via 4051/4053 counters); ends the debt-collector and words chains (:1864-1877)."
+  },
+  {
+   "from": "event_chains:payback_make_them_pay_words_2_chain",
+   "to": "origin.4055",
+   "conditional": true,
+   "label": {
+    "zh": "名单上的决议全部通过",
+    "en": "All resolutions on the list have passed"
+   },
+   "evidence": "events/origin_events_4.txt:1807-1878."
+  },
+  {
+   "from": "event_chains:payback_make_them_pay_swords_chain",
+   "to": "origin.4060",
+   "conditional": true,
+   "label": {
+    "zh": "以复仇战争目标击败奴隶贩子",
+    "en": "Win a revenge war against the slavers"
+   },
+   "evidence": "events/origin_events_4.txt:2024-2108 4060 fires from on_war_won (common/on_actions/00_on_actions.txt:3140) when the war used wg_payback_wipe_them_out / force_ideology / tribute / megacorp_subjugate against an origin_slavers empire."
+  },
+  {
+   "from": "event_chains:payback_make_them_pay_swords_chain",
+   "to": "origin.4061",
+   "conditional": true,
+   "label": {
+    "zh": "奴隶贩子被彻底消灭",
+    "en": "The slavers are annihilated"
+   },
+   "evidence": "events/origin_events_4.txt:2113-2152 fallback because on_war_won does not fire when the enemy is destroyed; fired by action.62 (events/on_action_events_1.txt:6812) when payback_killed_MSI is set."
+  },
+  {
+   "from": "event_chains:payback_make_them_pay_swords_chain",
+   "to": "origin.4070",
+   "conditional": true,
+   "label": {
+    "zh": "奴隶贩子被他人击败",
+    "en": "The slavers are defeated by someone else"
+   },
+   "evidence": "events/origin_events_4.txt:2155-2254 requires payback_stolen_revenge; fired by action.62 (events/on_action_events_1.txt:6806)."
+  },
+  {
+   "from": "origin.4070",
+   "choice": "origin.4070.c",
+   "to": "origin.4071",
+   "conditional": true,
+   "label": {
+    "zh": "击败夺走复仇的国家",
+    "en": "Defeat the empire that stole the revenge"
+   },
+   "evidence": "events/origin_events_4.txt:2189-2248 option c marks the destroyer payback_stole_revenge; 4071 (:2257-2313) fires from on_war_won (common/on_actions/00_on_actions.txt:3141)."
+  },
+  {
+   "from": "event_chains:payback_out_of_warranty_chain",
+   "to": "origin.4301",
+   "conditional": true,
+   "label": {
+    "zh": "修复诊所：医疗建筑二级的随机事件",
+    "en": "Repairing: random events of the Gene Clinic building"
+   },
+   "evidence": "events/origin_events_4.txt:2925-3046 fired by building_medical_2 (common/buildings/07_amenity_buildings.txt:1159-1185) while payback_out_of_warranty_chain is active (4302 50, 4301 20, 4303 10 of 80)."
+  },
+  {
+   "from": "event_chains:payback_out_of_warranty_chain",
+   "to": "origin.4302",
+   "conditional": true,
+   "label": {
+    "zh": "修复诊所：医疗建筑二级的随机事件",
+    "en": "Repairing: random events of the Gene Clinic building"
+   },
+   "evidence": "common/buildings/07_amenity_buildings.txt:1159-1185; events/origin_events_4.txt:2994-3045."
+  },
+  {
+   "from": "event_chains:payback_out_of_warranty_chain",
+   "to": "origin.4303",
+   "conditional": true,
+   "label": {
+    "zh": "修复诊所：医疗建筑二级的随机事件",
+    "en": "Repairing: random events of the Gene Clinic building"
+   },
+   "evidence": "common/buildings/07_amenity_buildings.txt:1159-1185; events/origin_events_4.txt:3046-3100 (carrier event)."
+  },
+  {
+   "from": "origin.4300",
+   "to": "origin.4306",
+   "conditional": true,
+   "label": {
+    "zh": "研发前沿医疗科技后重拾基因医疗",
+    "en": "Researching Frontier Health restores genetic healthcare"
+   },
+   "evidence": "events/origin_events_4.txt:2874-2878 4300 sets payback_ruined_gene_clinics; 4306 (:3164-3189) fires from on_tech_increased (common/on_actions/00_on_actions.txt:2704) for tech_frontier_health and ends the chain."
   }
- }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.4100",
+    "origin.4105"
+   ],
+   "label": {
+    "zh": "清除残骸矿藏的奖励",
+    "en": "Reward for clearing the debris deposit"
+   },
+   "note": {
+    "zh": "随机列表，两者权重相同（各10）。",
+    "en": "Random list with equal weights (10 each) (common/deposits/09_first_contact_deposits.txt:80-83)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.4120",
+    "origin.4130",
+    "origin.4140"
+   ],
+   "label": {
+    "zh": "与破碎枷锁的互助（十年脉冲）",
+    "en": "Mutual support with Broken Shackles (decade pulse)"
+   },
+   "note": {
+    "zh": "十年随机脉冲中各占10/100；各自的触发条件（谍报、议事厅、战争）不同。",
+    "en": "Each has weight 10/100 in the decade random pulse (common/on_actions/00_on_actions.txt:653-655); each has its own conditions (espionage, senate, war)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.4301",
+    "origin.4302",
+    "origin.4303"
+   ],
+   "label": {
+    "zh": "诊所建筑的随机事件",
+    "en": "Random events of the clinic building"
+   },
+   "note": {
+    "zh": "医疗建筑二级的随机列表：4302（50）、4301（20）、4303（10），其余无事发生。",
+    "en": "Random list in the building: 4302 (50), 4301 (20), 4303 (10), otherwise nothing."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.4041",
+    "origin.4042"
+   ],
+   "label": {
+    "zh": "复仇方式：武力或言辞",
+    "en": "Revenge by force or by words"
+   },
+   "note": {
+    "zh": "4040的两个选项；言辞线进一步分为“平等地位”和“不干涉”两条银河议会路线。",
+    "en": "The two options of 4040; the words line splits into the Equal Standing and Non-interference galactic-community lines (4050)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.4052",
+    "origin.4055"
+   ],
+   "label": {
+    "zh": "言辞路线的决议里程碑",
+    "en": "Resolution milestones of the words line"
+   },
+   "note": {
+    "zh": "首项决议通过（4052，一次）；全部通过（4055，结束事件链）。",
+    "en": "First resolution passed (4052, once); all passed (4055, ends the chains)."
+   }
+  }
+ ],
+ "endings": {
+  "origin.4055": {
+   "label": {
+    "zh": "言辞复仇完成",
+    "en": "Revenge by words complete"
+   },
+   "note": {
+    "zh": "结束债务催收者与言辞事件链，获得修正。",
+    "en": "Ends the debt-collector and words chains; adds a modifier."
+   },
+   "evidence": "events/origin_events_4.txt:1807-1878"
+  },
+  "origin.4060": {
+   "label": {
+    "zh": "武力复仇完成",
+    "en": "Revenge by force complete"
+   },
+   "note": {
+    "zh": "击败奴隶贩子，结束债务催收者与复仇事件链。",
+    "en": "Slavers defeated; ends the debt-collector and revenge chains."
+   },
+   "evidence": "events/origin_events_4.txt:2024-2108"
+  },
+  "origin.4061": {
+   "label": {
+    "zh": "武力复仇完成（对手被灭）",
+    "en": "Revenge by force complete (enemy destroyed)"
+   },
+   "note": {
+    "zh": "奴隶贩子被灭时的保底事件。",
+    "en": "Fallback when the slavers are destroyed."
+   },
+   "evidence": "events/origin_events_4.txt:2113-2152"
+  },
+  "origin.4070": {
+   "label": {
+    "zh": "复仇被他人抢走",
+    "en": "Revenge stolen by someone else"
+   },
+   "note": {
+    "zh": "可放弃，或将凶手列为新目标。",
+    "en": "Let it go, or make the destroyer the new target."
+   },
+   "evidence": "events/origin_events_4.txt:2155-2254"
+  },
+  "origin.4071": {
+   "label": {
+    "zh": "击败抢走复仇者",
+    "en": "Defeated those who stole the revenge"
+   },
+   "note": {
+    "zh": "结束复仇事件链。",
+    "en": "Ends the revenge chain."
+   },
+   "evidence": "events/origin_events_4.txt:2257-2313"
+  }
+ },
+ "notes": [
+  {
+   "doc": "origin.4010",
+   "kind": "review",
+   "zh": "“账单”：创建债务催收者国家，欠款1481893，约10年后；选项开始债务催收者事件链，1800天后催收者首次到访（4015）。之后每15年（5400天）经隐藏事件4029回访（4030），若与奴隶贩子交战则每5年复查。",
+   "en": "The Bill: creates the debt-collector country, debt 1481893 (events/origin_events_4.txt:456-512); the first visit follows 1800 days later (4015). Later visits come every 5400 days through hidden 4029 (:997-1041), rechecked every 1800 days while at war with the slavers."
+  },
+  {
+   "doc": "origin.4040",
+   "kind": "review",
+   "zh": "第二次到访结算后（4017/4020/4025/4032）15天后出现：选择以武力或言辞摆脱债务。",
+   "en": "Fires 15 days after the second visit is settled (4017/4020/4025/4032): choose to break free by force or by words."
+  },
+  {
+   "doc": "archaeological_site_types:payback_digsite",
+   "kind": "review",
+   "zh": "遗址在开局创建，但需先完成“清理轨道残骸”项目才可见（4931设置旗标）。失败事件使用通用的太空船遗址随机事件，不属于本起源。",
+   "en": "Created at game start (4000) but visible only after the Kessler debris project finishes (4931). Failure outcomes are the shared site_spaceship_random_events, not origin content (common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:54-58)."
+  },
+  {
+   "doc": "origin.4110",
+   "kind": "review",
+   "zh": "与“破碎枷锁”起源的互助事件（4110–4141）位于本起源的事件文件中；对方一侧的事件见 origin_broken_shackles。",
+   "en": "Mutual-support events with the Broken Shackles origin (4110-4141) sit in this origin's event file; the other side is in origin_broken_shackles."
+  }
+ ]
 }

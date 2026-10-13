@@ -1,0 +1,100 @@
+{
+ "id": "event-mega-9010",
+ "family": {
+  "title": {
+   "zh": "物质解压器",
+   "en": "Matter Decompressor"
+  },
+  "category": "stories",
+  "start": "mega.9010",
+  "members": [
+   "mega.9010",
+   "mega.9011",
+   "mega.9012",
+   "mega.9013",
+   "mega.9100",
+   "mega.9101"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "mega.9010",
+   "to": "mega.9011",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：透镜阶段建成",
+    "en": "After the next upgrade: Lensing built"
+   },
+   "evidence": "common/megastructures/06_matter_decompressor.txt:273 mega.9011"
+  },
+  {
+   "from": "mega.9011",
+   "to": "mega.9012",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：钻探阶段建成",
+    "en": "After the next upgrade: Boring built"
+   },
+   "evidence": "common/megastructures/06_matter_decompressor.txt:329 mega.9012"
+  },
+  {
+   "from": "mega.9012",
+   "to": "mega.9013",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：萃取阶段完工",
+    "en": "After the next upgrade: Extraction completed"
+   },
+   "evidence": "common/megastructures/06_matter_decompressor.txt:389 mega.9013"
+  },
+  {
+   "from": "mega.9100",
+   "to": "mega.9101",
+   "conditional": true,
+   "label": {
+    "zh": "修复废墟（建造“修复”型巨型结构）后",
+    "en": "After the ruin is restored (the \"restored\" megastructure type is built over it)"
+   },
+   "evidence": "common/megastructures/06_matter_decompressor.txt:499 on_build_complete fires mega.9101; the restored type is upgrade_from the ruined type"
+  }
+ ],
+ "nodeLabels": {
+  "mega.9100": {
+   "zh": "遇到废墟",
+   "en": "Finding the ruin"
+  },
+  "mega.9101": {
+   "zh": "废墟修复",
+   "en": "Ruin restored"
+  }
+ },
+ "notes": [
+  {
+   "doc": "mega.9010",
+   "kind": "review",
+   "zh": "审阅说明：物质解压器每完成一个建造阶段，由 on_megastructure_built / on_megastructure_upgraded 在建造国触发对应事件（并非选项链接）；各阶段按建造顺序排列。",
+   "en": "Review note: each build stage of the Matter Decompressor fires its own event for the builder from on_megastructure_built / on_megastructure_upgraded (not option links); stages are shown in construction order. "
+  },
+  {
+   "doc": "mega.9100",
+   "kind": "review",
+   "zh": "审阅说明：废墟是地图上预置的，不属于任何建造阶段；首次进入该星系时由 on_entering_system_first_time 触发。",
+   "en": "Review note: the ruin is a pre-placed map object, not a build stage; on_entering_system_first_time fires this event the first time a ship enters the system."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "物质解压器各建造阶段事件、给其他帝国的通知、废墟与修复事件。",
+   "en": "Matter Decompressor: build-stage events, notices to other empires, the ruin and restoration events."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/megastructures/06_matter_decompressor.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-mega-9010.md"
+ }
+}

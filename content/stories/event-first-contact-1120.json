@@ -1,0 +1,318 @@
+{
+ "id": "event-first-contact-1120",
+ "family": {
+  "title": {
+   "zh": "邀请函",
+   "en": "The Invitation"
+  },
+  "category": "society",
+  "start": "first_contact.1120",
+  "members": [
+   "first_contact.1120",
+   "first_contact.1125",
+   "first_contact.1130",
+   "first_contact.1135",
+   "first_contact.1140",
+   "first_contact.1145",
+   "first_contact.1150",
+   "first_contact.1155",
+   "first_contact.1160",
+   "first_contact.1165"
+  ]
+ },
+ "titleFrom": "first_contact.1120",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact.1120",
+   "to": "first_contact.1125",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：我们接受邀请",
+    "en": "Stage: xeno dinner party: we said yes"
+   },
+   "evidence": "first_contact_events.txt:8324 set_first_contact_stage = default_xeno_dinner_party_we_said_yes_stage; common/first_contact/00_*.txt:2276 fires first_contact.1125",
+   "choice": "first_contact.1120.a.proactive"
+  },
+  {
+   "from": "first_contact.1120",
+   "to": "first_contact.1135",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：我们拒绝邀请",
+    "en": "Stage: xeno dinner party: we said no"
+   },
+   "evidence": "first_contact_events.txt:8332 set_first_contact_stage = default_xeno_dinner_party_we_said_no_stage; common/first_contact/00_*.txt:2296 fires first_contact.1135",
+   "choice": "first_contact.1120.b"
+  },
+  {
+   "from": "first_contact.1125",
+   "to": "first_contact.1130",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：赛前准备(难度2)",
+    "en": "Stage: xeno dinner party: pre-game (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:8360 set_first_contact_stage = default_xeno_dinner_party_pre_game_stage; common/first_contact/00_*.txt:2316 fires first_contact.1130",
+   "choice": "first_contact.1125.a"
+  },
+  {
+   "from": "first_contact.1125",
+   "to": "first_contact.1130",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：赛前准备(难度2)",
+    "en": "Stage: xeno dinner party: pre-game (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:8368 set_first_contact_stage = default_xeno_dinner_party_pre_game_stage; common/first_contact/00_*.txt:2316 fires first_contact.1130",
+   "choice": "first_contact.1125.b"
+  },
+  {
+   "from": "first_contact.1130",
+   "to": "first_contact.1160",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：生物/岩石体质不合(难度5)",
+    "en": "Stage: xeno dinner party: bio/lithoid mismatch (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:8425 set_first_contact_stage = default_xeno_dinner_party_hungry_for_connection_end_stage; common/first_contact/00_*.txt:2436 fires first_contact.1160",
+   "choice": "first_contact.1130.a"
+  },
+  {
+   "from": "first_contact.1130",
+   "to": "first_contact.1150",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：宴会明星(难度5)",
+    "en": "Stage: xeno dinner party: life of the party (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:8454 set_first_contact_stage = default_xeno_dinner_party_life_of_the_party_end_stage; common/first_contact/00_*.txt:2396 fires first_contact.1150",
+   "choice": "first_contact.1130.a"
+  },
+  {
+   "from": "first_contact.1130",
+   "to": "first_contact.1155",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：扫兴(难度5)",
+    "en": "Stage: xeno dinner party: wet towel (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:8475 set_first_contact_stage = default_xeno_dinner_party_wet_towel_end_stage; common/first_contact/00_*.txt:2416 fires first_contact.1155",
+   "choice": "first_contact.1130.a"
+  },
+  {
+   "from": "first_contact.1130",
+   "to": "first_contact.1160",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：生物/岩石体质不合(难度5)",
+    "en": "Stage: xeno dinner party: bio/lithoid mismatch (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:8532 set_first_contact_stage = default_xeno_dinner_party_hungry_for_connection_end_stage; common/first_contact/00_*.txt:2436 fires first_contact.1160",
+   "choice": "first_contact.1130.b"
+  },
+  {
+   "from": "first_contact.1130",
+   "to": "first_contact.1155",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：扫兴(难度5)",
+    "en": "Stage: xeno dinner party: wet towel (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:8561 set_first_contact_stage = default_xeno_dinner_party_wet_towel_end_stage; common/first_contact/00_*.txt:2416 fires first_contact.1155",
+   "choice": "first_contact.1130.b"
+  },
+  {
+   "from": "first_contact.1130",
+   "to": "first_contact.1150",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：宴会明星(难度5)",
+    "en": "Stage: xeno dinner party: life of the party (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:8582 set_first_contact_stage = default_xeno_dinner_party_life_of_the_party_end_stage; common/first_contact/00_*.txt:2396 fires first_contact.1150",
+   "choice": "first_contact.1130.b"
+  },
+  {
+   "from": "first_contact.1130",
+   "to": "first_contact.1140",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：间谍行动败露(难度5)",
+    "en": "Stage: xeno dinner party: caught spying (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:8625 set_first_contact_stage = default_xeno_dinner_party_we_got_caught_spying_end_stage; common/first_contact/00_*.txt:2356 fires first_contact.1140",
+   "choice": "first_contact.1130.c"
+  },
+  {
+   "from": "first_contact.1130",
+   "to": "first_contact.1145",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：间谍行动成功(难度5)",
+    "en": "Stage: xeno dinner party: spying succeeded (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:8637 set_first_contact_stage = default_xeno_dinner_party_we_spying_end_stage; common/first_contact/00_*.txt:2376 fires first_contact.1145",
+   "choice": "first_contact.1130.c"
+  },
+  {
+   "from": "first_contact.1135",
+   "to": "first_contact.1130",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：赛前准备(难度2)",
+    "en": "Stage: xeno dinner party: pre-game (difficulty 2)"
+   },
+   "evidence": "first_contact_events.txt:8667 set_first_contact_stage = default_xeno_dinner_party_pre_game_stage; common/first_contact/00_*.txt:2316 fires first_contact.1130",
+   "choice": "first_contact.1135.a"
+  },
+  {
+   "from": "first_contact.1135",
+   "to": "first_contact.1165",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：异星晚宴：两次拒绝(难度0)",
+    "en": "Stage: xeno dinner party: refused twice (difficulty 0)"
+   },
+   "evidence": "first_contact_events.txt:8675 set_first_contact_stage = default_xeno_dinner_party_no_means_no_end_stage; common/first_contact/00_*.txt:2456 fires first_contact.1165",
+   "choice": "first_contact.1135.b"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.1150",
+    "first_contact.1155",
+    "first_contact.1160"
+   ],
+   "label": {
+    "zh": "宴会结果（1130 选项A/B）",
+    "en": "Party result (1130 options A/B)"
+   },
+   "note": {
+    "zh": "若双方恰有一方是岩石体质 → 1160；否则隐藏随机 60:40——选A 60% 宴会明星(1150)/40% 扫兴(1155)，选B 反过来；魅力 +25、可憎 −25（扫兴 +25）、有害 −50（扫兴 +50）。",
+    "en": "If exactly one side is lithoid → 1160; otherwise a hidden 60:40 roll — option A: 60% life of the party (1150) / 40% wet towel (1155), option B reversed; charismatic ±25, repugnant ±25, noxious ±50."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.1140",
+    "first_contact.1145"
+   ],
+   "label": {
+    "zh": "间谍行动（1130 选项C）",
+    "en": "Spy operation (1130 option C)"
+   },
+   "note": {
+    "zh": "默认 50:50；本方加密/解密比低于1时 1140（被抓）+100，高于1时 1145（成功）+100。",
+    "en": "Base 50:50; +100 to 1140 (caught) if our relative encryption/decryption is below 1, +100 to 1145 (success) if above 1."
+   }
+  }
+ ],
+ "endings": {
+  "first_contact.1140": {
+   "label": {
+    "zh": "结局：间谍行动失误",
+    "en": "Ending: espionage blunder"
+   },
+   "note": {
+    "zh": "对方给予“被抓到间谍”好感，我方获得 25 点情报。",
+    "en": "Caught-spying opinion; +25 intel."
+   },
+   "evidence": "events/first_contact_events.txt:8680-8715"
+  },
+  "first_contact.1145": {
+   "label": {
+    "zh": "结局：扫描完成",
+    "en": "Ending: scan complete"
+   },
+   "note": {
+    "zh": "获得 50 点情报。",
+    "en": "+50 intel."
+   },
+   "evidence": "events/first_contact_events.txt:8717-8746"
+  },
+  "first_contact.1150": {
+   "label": {
+    "zh": "结局：聚会明星",
+    "en": "Ending: life of the party"
+   },
+   "note": {
+    "zh": "对方给予“聚会明星”好感。",
+    "en": "Life-of-the-party opinion."
+   },
+   "evidence": "events/first_contact_events.txt:8747-8777"
+  },
+  "first_contact.1155": {
+   "label": {
+    "zh": "结局：扫兴",
+    "en": "Ending: threw in the towel"
+   },
+   "note": {
+    "zh": "对方给予“扫兴”好感。",
+    "en": "Wet-towel opinion."
+   },
+   "evidence": "events/first_contact_events.txt:8778-8808"
+  },
+  "first_contact.1160": {
+   "label": {
+    "zh": "结局：渴望连接",
+    "en": "Ending: hungry for connection"
+   },
+   "note": {
+    "zh": "因饮食需求不同，对方给予“吃不了食物”好感。",
+    "en": "Opinion: could not eat the food."
+   },
+   "evidence": "events/first_contact_events.txt:8809-8839"
+  },
+  "first_contact.1165": {
+   "label": {
+    "zh": "结局：不就是不",
+    "en": "Ending: no means no"
+   },
+   "note": {
+    "zh": "两次拒绝，对方给予“双重拒绝”好感。",
+    "en": "“Double rejection” opinion."
+   },
+   "evidence": "events/first_contact_events.txt:8840-8870"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact.1120",
+   "kind": "review",
+   "zh": "审阅注：A接受邀请（→1125），B拒绝（→1135 第二次机会）。",
+   "en": "Review note: A accepts (→ 1125), B refuses (→ 1135 Second Chances)."
+  },
+  {
+   "doc": "first_contact.1125",
+   "kind": "review",
+   "zh": "审阅注：B“趁机刺探情报”会设置首次接触标记 xeno_dinner_party_spy_attempted，使 1130 只提供选项C（间谍行动）。",
+   "en": "Review note: option B (covert intel) sets the first-contact flag xeno_dinner_party_spy_attempted, which makes 1130 offer only option C (the operation)."
+  },
+  {
+   "doc": "first_contact.1135",
+   "kind": "review",
+   "zh": "审阅注：1135.a 同意参加 → 回到“赛前”(1130)；1135.b 再次拒绝 → 1165。",
+   "en": "Review note: 1135.a attends after all → back to Pre-Game (1130); 1135.b refuses again → 1165."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "异星晚宴全部10个事件及阶段衔接。",
+   "en": "All 10 Xeno Dinner Party events and the stage hand-offs."
+  },
+  "sources": [
+   "events/first_contact_events.txt:8287-8870",
+   "common/first_contact/00_first_contact.txt:705-738",
+   "common/first_contact/00_first_contact.txt:2244-2420"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-1120.md"
+ }
+}

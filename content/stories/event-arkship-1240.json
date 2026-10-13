@@ -1,0 +1,37 @@
+{
+ "id": "event-arkship-1240",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "arkship.1245",
+    "arkship.1250",
+    "arkship.1255",
+    "arkship.1260",
+    "arkship.1265",
+    "arkship.1270",
+    "arkship.1275"
+   ],
+   "label": {
+    "zh": "调查发现其一（加权）",
+    "en": "One weighted find"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "方舟随机池中的一件：触发条件、一次性标记、选项与全部后续。",
+   "en": "One arkship pool episode: trigger, once-flag, options and all follow-ups."
+  },
+  "sources": [
+   "events/nomads_arkship_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/06_projects_nomads.txt",
+   "common/scripted_variables/10_scripted_variables_nomads.txt"
+  ],
+  "guide": "public/summaries/event-arkship-1240.md"
+ }
+}

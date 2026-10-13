@@ -1,0 +1,93 @@
+{
+ "id": "event-colony-1500",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.1502",
+    "colony.1503"
+   ],
+   "label": {
+    "zh": "星球上有障碍则先经1502",
+    "en": "If the planet has a blocker, 1502 comes first"
+   },
+   "note": {
+    "zh": "1501 的隐藏效果：星球有障碍则 1502（360+随机60天），否则直接 1503。",
+    "en": "1501's hidden effect: with a blocker deposit -> 1502 (360 days + random 60), else straight to 1503."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.1514",
+    "colony.1511",
+    "colony.1513"
+   ],
+   "label": {
+    "zh": "1510：三种应对海盗的方式",
+    "en": "1510: three ways to meet the pirates"
+   },
+   "note": {
+    "zh": "a：影响力奖励，720天后海盗舰队原样到达（1514）；b：无人机破坏，7天后 1511 → 700天后削弱的海盗（1512）；c：研究奖励，720天后更强的海盗（1513）。",
+    "en": "a: influence reward, 720 days later the pirate fleet arrives unmodified (1514); b: drones sabotage them, 7 days -> 1511 -> 700 days later a weakened fleet (1512); c: research reward, 720 days later a stronger fleet (1513)."
+   }
+  }
+ ],
+ "endings": {
+  "colony.1514": {
+   "label": {
+    "zh": "海盗舰队抵达",
+    "en": "Pirates arrive"
+   },
+   "evidence": "events/colony_events_2.txt:501-545",
+   "note": {
+    "zh": "海盗舰队抵达",
+    "en": "Pirates arrive"
+   }
+  },
+  "colony.1512": {
+   "label": {
+    "zh": "受创的海盗抵达",
+    "en": "Wounded pirates arrive"
+   },
+   "evidence": "events/colony_events_2.txt:395-436",
+   "note": {
+    "zh": "受创的海盗抵达",
+    "en": "Wounded pirates arrive"
+   }
+  },
+  "colony.1513": {
+   "label": {
+    "zh": "更强的海盗抵达",
+    "en": "Stronger pirates arrive"
+   },
+   "evidence": "events/colony_events_2.txt:440-497",
+   "note": {
+    "zh": "更强的海盗抵达",
+    "en": "Stronger pirates arrive"
+   }
+  }
+ },
+ "notes": [
+  {
+   "doc": "colony.1500",
+   "kind": "review",
+   "zh": "殖民地2或3岁时的随机事件（3/958、2/739）；需要有卫星的星球；每个帝国一次（FLDrone_country）。",
+   "en": "Random colony event at age 2 or 3 (3/958, 2/739); the planet needs a moon; once per empire (FLDrone_country)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "远古无人机完整链：项目、觉醒、八个延迟事件、1510三选一与三种海盗结局。",
+   "en": "Whole Ancient Drones chain: project, awakening, the delayed events, the three-way 1510 choice and three pirate endings."
+  },
+  "sources": [
+   "events/colony_events_2.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-colony-1500.md"
+ }
+}

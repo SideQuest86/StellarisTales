@@ -1,0 +1,57 @@
+{
+ "id": "rift-tiny-planet",
+ "category": "rifts",
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.2815", "astral_rift.2830"],
+   "label": {"zh": "联络或旁观", "en": "Contact or observe"},
+   "note": {"zh": "在 2810 中，友善帝国可建立联络（a → 2815）或被动观测（b → 2830）；仅限“野蛮掠夺者”公民的“索要赎金”（c）和狂暴灭绝者的“告诉他们末日来了”（d）同样进入 2815；不友善帝国只有“静观灾难扩散”（e → 2830）。", "en": "In 2810 a non-unfriendly empire may establish contact (a → 2815) or observe passively (b → 2830); “Demand ransom” (c, Barbaric Despoilers civic) and “Inform them their doom has come” (d, homicidal) also lead to 2815; unfriendly empires only get “Watch the destruction unfold” (e → 2830)."}},
+  {"kind": "exclusive", "members": ["astral_rift.2820", "astral_rift.2825", "astral_rift.2830"],
+   "label": {"zh": "修复轨道、摧毁卫星或撤离", "en": "Fix the orbit, destroy the moon or withdraw"},
+   "note": {"zh": "2815：修复卫星轨道（仅非不友善帝国 → 2820 → 2835）、摧毁卫星（非和平主义且非亲异族 → 2825）、切断通讯（c 非不友善 / d 不友善，都进入 2830，难度 −2）。", "en": "2815: fix the moon's orbit (non-unfriendly only → 2820 → 2835), destroy the moon (neither pacifist nor xenophile → 2825), cut communications (c non-unfriendly / d unfriendly, both → 2830, difficulty −2)."}},
+  {"kind": "exclusive", "members": ["astral_rift.2840", "astral_rift.2845"],
+   "label": {"zh": "撞击或遥测研究", "en": "Impact or remote research"},
+   "note": {"zh": "摧毁卫星之后：以浅冲击了结星球上的居民（2840）或部署遥测设施（2845，之后 3600 天地表气候崩溃，触发 2890）。", "en": "After destroying the moon: end the planet's suffering with a shallow impact (2840) or deploy remote research devices (2845, followed 3600 days later by the climate collapse event 2890)."}}
+ ],
+ "endings": {
+  "astral_rift.2830": {
+   "label": {"zh": "远距离观测", "en": "Observed From Afar"},
+   "note": {"zh": "该星球获得“社会”矿藏 d_society_10，大量星界丝缕与社会研究；不友善帝国另得凝聚力；探索结束。", "en": "The planet gains the society deposit d_society_10, a large astral thread reward and society research; unfriendly empires also get unity; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:4287-4350"},
+  "astral_rift.2835": {
+   "label": {"zh": "突破潮汐锁定", "en": "Tidal Locking Breakthrough"},
+   "note": {"zh": "大量星界丝缕与凝聚力；国家标记 tidal_lock_knowledge（decisions/09_astral_planes_decisions.txt:124 与矿藏条件所用）；探索结束。", "en": "A large astral thread reward and unity; country flag tidal_lock_knowledge (used by decisions/09_astral_planes_decisions.txt:124 and a deposit condition); the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:4352-4380"},
+  "astral_rift.2840": {
+   "label": {"zh": "浅冲击", "en": "Shallow Impact"},
+   "note": {"zh": "大量星界丝缕；国家标记 can_build_microplanet_memorial（决议 09_astral_planes_decisions.txt:165）；探索结束。", "en": "A large astral thread reward; country flag can_build_microplanet_memorial (decision 09_astral_planes_decisions.txt:165); the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:4382-4404"},
+  "astral_rift.2845": {
+   "label": {"zh": "模型行星", "en": "Model Planet"},
+   "note": {"zh": "该星球获得矿藏 d_society_15，大量星界丝缕与社会研究；探索结束，3600 天后触发 2890 并移除该矿藏。", "en": "The planet gains deposit d_society_15, a large astral thread reward and society research; the exploration ends and 3600 days later 2890 fires and removes the deposit."},
+   "evidence": "events/astral_rifts_2_events.txt:4406-4438"},
+  "astral_rift.2890": {
+   "label": {"zh": "袖珍行星大灭绝", "en": "Tiny Planet Extinction"},
+   "note": {"zh": "尾声：气候剧变使数据来源中断，d_society_15 被移除。", "en": "Coda: extreme climate shifts end the data stream and d_society_15 is removed."},
+   "evidence": "events/astral_rifts_2_events.txt:4429-4456"}
+ },
+ "notes": [
+  {"doc": "astral_rifts:tiny_planet", "kind": "review",
+   "zh": "抽取权重 1，无条件；不产出遗珍，没有失败分支（00_astral_rifts.txt:366-375）。",
+   "en": "Draw weight 1, no conditions; no relic and no failure branch (00_astral_rifts.txt:366-375)."},
+  {"doc": "astral_rift.2810", "kind": "review",
+   "zh": "2810 的正文有三种变体：默认、野蛮掠夺者公民、狂暴灭绝者。选项由“是否不友善”“是否狂暴灭绝”“是否有野蛮掠夺者公民”决定。",
+   "en": "The text of 2810 has three variants: default, Barbaric Despoilers civic and homicidal. Options depend on is_unfriendly, is_homicidal and the Barbaric Despoilers civic."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 2800–2890 全部事件、选项条件与国家标记的下游用途。",
+   "en": "Checked the rift definition and every event 2800–2890 with option conditions and downstream use of the country flags."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt", "common/decisions/09_astral_planes_decisions.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-tiny-planet.md"
+ }
+}

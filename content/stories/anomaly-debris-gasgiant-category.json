@@ -1,0 +1,38 @@
+{
+ "id": "anomaly-debris-gasgiant-category",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "distar.1055",
+    "anomaly.320"
+   ],
+   "label": {
+    "zh": "按人类是否存在",
+    "en": "By human presence"
+   },
+   "note": {
+    "zh": "anomaly.320权重1；distar.1055基础权重0，银河中存在人类且发现者非人类时+1（00_anomaly_categories.txt:347-385）。",
+    "en": "anomaly.320 has weight 1; distar.1055 has base 0, +1 if humans exist and the finder is not human (00_anomaly_categories.txt:347-385)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:347",
+   "events/distant_stars_events_2.txt:2283 (distar.1055)",
+   "common/special_projects/00_projects_distant_stars.txt (THE_CUBE)",
+   "events/distant_stars_events_2.txt:2315 (distar.1056)",
+   "events/anomaly_events_1.txt:4049 (anomaly.320)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-debris-gasgiant-category.md"
+ }
+}

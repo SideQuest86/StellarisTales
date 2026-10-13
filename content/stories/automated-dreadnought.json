@@ -1,0 +1,76 @@
+{
+ "id": "automated-dreadnought",
+ "family": {
+  "title": {
+   "zh": "自动无畏战舰",
+   "en": "Automated Dreadnought"
+  },
+  "category": "leviathans",
+  "start": "leviathans.3100",
+  "members": [
+   "leviathans.3100",
+   "leviathans.3102",
+   "special_projects:DISABLED_DREADNOUGHT_PROJECT",
+   "leviathans.3103"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "leviathans.3100",
+   "to": "leviathans.3102",
+   "conditional": true,
+   "label": {
+    "zh": "若玩家瘫痪无畏战舰",
+    "en": "If a player disables the dreadnought"
+   },
+   "evidence": "on_ship_destroyed_victim (common/on_actions/00_on_actions.txt:1398) -> hidden leviathans.3101 (events/leviathans_events_2.txt:4267-4322): guardian_dreadnought country, npc_warship_01 ship, disabler is a human player; fires leviathans.3102 once"
+  }
+ ],
+ "groups": [],
+ "endings": {
+  "leviathans.3103": {
+   "label": {
+    "zh": "无畏舰加入舰队",
+    "en": "The dreadnought joins our fleet"
+   },
+   "note": {
+    "zh": "生成一艘跳跃无畏舰（若有灵跃引擎则为灵跃无畏舰）。",
+    "en": "Creates a Jump Dreadnought (a Psi Jump Dreadnought if the owner has the psi jump drive)."
+   },
+   "evidence": "events/leviathans_events_2.txt:4388-4477"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.3100": {
+   "zh": "发现无畏战舰",
+   "en": "Dreadnought found"
+  },
+  "leviathans.3102": {
+   "zh": "无畏战舰被瘫痪",
+   "en": "Dreadnought disabled"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.3102",
+   "kind": "review",
+   "zh": "审阅注：三个选项互斥：a 启用修复项目；b 拆解（1000合金+5000能量，工程研究加成）；c（需 can_harvest_parts）获得 tech_leviathan_techgenesis 研究选项。无论选哪项，之后都会开启庆典情境。",
+   "en": "Review note: the three options are alternatives: a enables the repair project; b salvages it (1000 alloys, 5000 energy, engineering research bonus); c (needs can_harvest_parts) grants the tech_leviathan_techgenesis research option. A celebration situation starts afterwards in every case (leviathans_events_2.txt:4336-4384)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/leviathans_events_2.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_leviathans.txt"
+  ],
+  "guide": "public/summaries/automated-dreadnought.md"
+ }
+}

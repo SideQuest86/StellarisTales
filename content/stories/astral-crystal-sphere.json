@@ -1,0 +1,22 @@
+{
+ "id": "astral-crystal-sphere",
+ "family": {
+  "title": {"zh": "水晶球体", "en": "The Crystal Sphere"},
+  "category": "rifts",
+  "start": "astral_planes.10",
+  "members": [
+   "astral_planes.10", "astral_planes.15", "astral_planes.20", "astral_planes.25", "astral_planes.30",
+   "astral_planes.35", "situations:situation_study_crystal_sphere", "situations:situation_destroy_crystal_sphere",
+   "astral_situation.1", "astral_situation.5"
+  ]
+ },
+ "category": "rifts",
+ "review": {
+  "status": "partial",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {"zh": "草稿：仅建立家族。", "en": "Draft: family only."},
+  "sources": ["events/astral_planes_events.txt"],
+  "uncertain": []
+ }
+}

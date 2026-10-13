@@ -1,0 +1,406 @@
+{
+  "base": "http://127.0.0.1:4173/",
+  "startedAt": "2026-10-13T17:35:03.071Z",
+  "adapter": {
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "shots": [
+    "verification/ui/1600-archive.png",
+    "verification/ui/1600-archive-navigated.png",
+    "verification/ui/1600-open-00.png",
+    "verification/ui/1600-open-01.png",
+    "verification/ui/1600-open-02.png",
+    "verification/ui/1600-open-03.png",
+    "verification/ui/1600-open-04.png",
+    "verification/ui/1600-open-05.png",
+    "verification/ui/1600-open-06.png",
+    "verification/ui/1600-open-07.png",
+    "verification/ui/1600-reader.png",
+    "verification/ui/1600-map-cetana.png",
+    "verification/ui/1600-map-cetana-expanded-fit.png",
+    "verification/ui/1600-map-origin_treasure_hunters.png",
+    "verification/ui/1600-map-horizon-signal.png",
+    "verification/ui/1600-map-cybrex.png",
+    "verification/ui/1600-map-the-shroud.png",
+    "verification/ui/1600-map-the-shroud-expanded-fit.png",
+    "verification/ui/1600-map-cetana.png",
+    "verification/ui/1600-map-cetana-expanded-fit.png",
+    "verification/ui/1600-choice-expanded.png",
+    "verification/ui/1600-chapter-00.png",
+    "verification/ui/1600-chapter-01.png",
+    "verification/ui/1600-chapter-02.png",
+    "verification/ui/1600-chapter-03.png",
+    "verification/ui/1600-chapter-04.png",
+    "verification/ui/1600-chapter-after.png",
+    "verification/ui/1600-back-00.png",
+    "verification/ui/1600-back-01.png",
+    "verification/ui/1600-back-02.png",
+    "verification/ui/1600-reader-en.png",
+    "verification/ui/1600-closed.png",
+    "verification/ui/1280-archive.png",
+    "verification/ui/1280-reader.png",
+    "verification/ui/1600-reduced-reader.png",
+    "verification/ui/390-archive.png",
+    "verification/ui/390-reader.png",
+    "verification/ui/390-map.png",
+    "verification/ui/360-archive.png",
+    "verification/ui/360-reader.png",
+    "verification/ui/360-map.png"
+  ],
+  "checks": [
+    {
+      "name": "real GPU adapter (not SwiftShader)",
+      "ok": true,
+      "detail": {
+        "vendor": "Google Inc. (NVIDIA)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      }
+    },
+    {
+      "name": "closed cards show original art (atlas tiles loaded)",
+      "ok": true,
+      "detail": 108
+    },
+    {
+      "name": "instances culled to the view",
+      "ok": true,
+      "detail": "112/231"
+    },
+    {
+      "name": "archive canvas spans the full width",
+      "ok": true
+    },
+    {
+      "name": "render loop idles when nothing moves",
+      "ok": true,
+      "detail": {
+        "drawn": 36305,
+        "drawnLater": 36305
+      }
+    },
+    {
+      "name": "1600-open frame 0",
+      "ok": true,
+      "detail": {
+        "detail": 0.021,
+        "reveal": 1
+      }
+    },
+    {
+      "name": "1600-open frame 1",
+      "ok": true,
+      "detail": {
+        "detail": 0.15,
+        "reveal": 1
+      }
+    },
+    {
+      "name": "1600-open frame 2",
+      "ok": true,
+      "detail": {
+        "detail": 0.301,
+        "reveal": 1
+      }
+    },
+    {
+      "name": "1600-open frame 3",
+      "ok": true,
+      "detail": {
+        "detail": 0.45,
+        "reveal": 0.001
+      }
+    },
+    {
+      "name": "1600-open frame 4",
+      "ok": true,
+      "detail": {
+        "detail": 0.602,
+        "reveal": 0.01
+      }
+    },
+    {
+      "name": "1600-open frame 5",
+      "ok": true,
+      "detail": {
+        "detail": 0.751,
+        "reveal": 0.065
+      }
+    },
+    {
+      "name": "1600-open frame 6",
+      "ok": true,
+      "detail": {
+        "detail": 0.901,
+        "reveal": 0.392
+      }
+    },
+    {
+      "name": "1600-open frame 7",
+      "ok": true,
+      "detail": {
+        "detail": 0.99,
+        "reveal": 0.999
+      }
+    },
+    {
+      "name": "card close-up on the left, text column on the right",
+      "ok": true,
+      "detail": {
+        "mapRight": 777,
+        "textLeft": 864,
+        "width": 1600
+      }
+    },
+    {
+      "name": "cetana: map renders with the current node and no overlapping cards",
+      "ok": true,
+      "detail": {
+        "nodes": 44,
+        "current": 1,
+        "overlaps": 0
+      }
+    },
+    {
+      "name": "origin_treasure_hunters: map renders with the current node and no overlapping cards",
+      "ok": true,
+      "detail": {
+        "nodes": 5,
+        "current": 1,
+        "overlaps": 0
+      }
+    },
+    {
+      "name": "horizon-signal: map renders with the current node and no overlapping cards",
+      "ok": true,
+      "detail": {
+        "nodes": 8,
+        "current": 1,
+        "overlaps": 0
+      }
+    },
+    {
+      "name": "cybrex: map renders with the current node and no overlapping cards",
+      "ok": true,
+      "detail": {
+        "nodes": 68,
+        "current": 1,
+        "overlaps": 0
+      }
+    },
+    {
+      "name": "the-shroud: map renders with the current node and no overlapping cards",
+      "ok": true,
+      "detail": {
+        "nodes": 10,
+        "current": 1,
+        "overlaps": 0
+      }
+    },
+    {
+      "name": "cetana: map renders with the current node and no overlapping cards",
+      "ok": true,
+      "detail": {
+        "nodes": 13,
+        "current": 1,
+        "overlaps": 0
+      }
+    },
+    {
+      "name": "1600-chapter frame 0",
+      "ok": true,
+      "detail": {
+        "detail": 1,
+        "reveal": 0.081
+      }
+    },
+    {
+      "name": "1600-chapter frame 1",
+      "ok": true,
+      "detail": {
+        "detail": 1,
+        "reveal": 0.304
+      }
+    },
+    {
+      "name": "1600-chapter frame 2",
+      "ok": true,
+      "detail": {
+        "detail": 1,
+        "reveal": 0.507
+      }
+    },
+    {
+      "name": "1600-chapter frame 3",
+      "ok": true,
+      "detail": {
+        "detail": 1,
+        "reveal": 0.707
+      }
+    },
+    {
+      "name": "1600-chapter frame 4",
+      "ok": true,
+      "detail": {
+        "detail": 1,
+        "reveal": 0.921
+      }
+    },
+    {
+      "name": "chapter changed",
+      "ok": true,
+      "detail": {
+        "first": "#story=cybrex&chapter=precursor.2005",
+        "second": "#story=cybrex&chapter=special_projects%3ACYBREX_ARCHEOLOGY_1"
+      }
+    },
+    {
+      "name": "map highlights the route just taken",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "name": "1600-back frame 0",
+      "ok": true,
+      "detail": {
+        "detail": 1,
+        "reveal": 0.152
+      }
+    },
+    {
+      "name": "1600-back frame 1",
+      "ok": true,
+      "detail": {
+        "detail": 1,
+        "reveal": 0.451
+      }
+    },
+    {
+      "name": "1600-back frame 2",
+      "ok": true,
+      "detail": {
+        "detail": 1,
+        "reveal": 0.75
+      }
+    },
+    {
+      "name": "reversal returns to the first doc",
+      "ok": true
+    },
+    {
+      "name": "English chrome in English mode",
+      "ok": true,
+      "detail": {
+        "lang": "en",
+        "close": "← Back to archive",
+        "map": "Story map",
+        "heading": "Your choices",
+        "cjkInChrome": []
+      }
+    },
+    {
+      "name": "map keyboard: Home focuses the current node",
+      "ok": true
+    },
+    {
+      "name": "map keyboard: arrows move focus between nodes",
+      "ok": true,
+      "detail": "n25"
+    },
+    {
+      "name": "Escape closes the reader and returns focus",
+      "ok": true
+    },
+    {
+      "name": "1280: caption sits below the card, above the player",
+      "ok": true,
+      "detail": {
+        "cardBottom": 588,
+        "captionTop": 602,
+        "captionBottom": 654.296875,
+        "playerTop": 656
+      }
+    },
+    {
+      "name": "prefers-reduced-motion: reduced class, no breathing",
+      "ok": true,
+      "detail": {
+        "cls": true,
+        "breathing": false
+      }
+    },
+    {
+      "name": "reduced motion: card extraction snaps",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "name": "reduced motion: no running CSS/WAAPI animations",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "in-app reduced-motion toggle",
+      "ok": true,
+      "detail": {
+        "cls": true,
+        "pressed": "true"
+      }
+    },
+    {
+      "name": "390: no horizontal overflow",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "390: reader content fits the width",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "390: map sheet opens",
+      "ok": true
+    },
+    {
+      "name": "390: map sheet closes",
+      "ok": true
+    },
+    {
+      "name": "390: scene stops rendering under the full-screen reader",
+      "ok": true,
+      "detail": false
+    },
+    {
+      "name": "360: no horizontal overflow",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "360: reader content fits the width",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "360: map sheet opens",
+      "ok": true
+    },
+    {
+      "name": "360: map sheet closes",
+      "ok": true
+    },
+    {
+      "name": "360: scene stops rendering under the full-screen reader",
+      "ok": true,
+      "detail": false
+    }
+  ],
+  "errors": [],
+  "fontsLoaded": [
+    "Noto Sans SC",
+    "Noto Serif SC",
+    "ST Sans Fallback"
+  ],
+  "largestStory": "cetana",
+  "finishedAt": "2026-10-13T17:36:31.724Z",
+  "passed": true
+}

@@ -2,157 +2,176 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0c181d" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#08151a" />
+    <meta name="color-scheme" content="dark" />
     <meta
       name="description"
+      data-i18n-content="site.description"
       content="穿行于银河档案阵列，展开完整群星故事，在原版配乐中探索每一个选择。"
     />
     <title>群星 · 银河记忆 | Stellaris Tales</title>
     <link rel="icon" href="./public/mark.svg" />
+    <!--
+      Fonts: Google Fonts serves unicode-range slices, so a page downloads only the
+      CJK/Latin subsets it actually renders. The stylesheet is non-blocking (print →
+      all swap): first paint uses metric-matched local fallbacks and never waits for a
+      third-party host (it may be unreachable, e.g. in mainland China).
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+    /></noscript>
     <link rel="stylesheet" href="./src/style.css" />
+    <!-- The 3D engine is discovered late through app.js → archive-scene.js; fetch it in parallel. -->
+    <link rel="modulepreload" href="./vendor/three.module.js" />
+    <link rel="modulepreload" href="./vendor/three.core.js" />
+    <link rel="modulepreload" href="./src/archive-scene.js" />
+    <script>
+      // Apply stored preferences before first paint: no flash of the wrong language or motion.
+      try {
+        var stored = localStorage.getItem("st-language");
+        if (stored === "en") document.documentElement.lang = "en";
+        if (localStorage.getItem("st-motion") === "reduced") document.documentElement.classList.add("reduced-motion");
+      } catch (e) {}
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#archive-hud" data-i18n="archive.open">展开故事</a>
     <header class="masthead">
-      <a href="#" class="brand" aria-label="群星档案馆首页"
-        ><svg viewBox="0 0 40 40" aria-hidden="true">
-          <path d="M20 3 36 31H4Z M20 12v25 M8 25h24" /></svg
-        ><span>STELLARIS<small>银河叙事档案</small><b>TALES</b></span></a
+      <a href="#" class="brand" data-i18n-aria="brand.home" aria-label="群星档案馆首页"
+        ><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 36 31H4Z M20 12v25 M8 25h24" /></svg
+        ><span class="brand-type"
+          ><b>STELLARIS</b><small data-i18n="brand.subtitle">银河叙事档案</small><i>TALES</i></span
+        ></a
       >
+      <nav id="categories" class="catalogue" data-i18n-aria="catalogue.label" aria-label="故事类别"></nav>
       <div class="header-actions">
-        <button id="search-open">⌕ <span>搜索</span></button
-        ><button id="language">中 / EN</button
-        ><button id="motion" aria-pressed="false">减少动态</button>
+        <button id="search-open" type="button"><span aria-hidden="true">⌕</span> <span data-i18n="header.search">搜索</span></button
+        ><button id="language" type="button" data-i18n="header.language" data-i18n-aria="header.languageLabel" aria-label="切换为英文">中 / EN</button
+        ><button id="motion" type="button" aria-pressed="false" data-i18n="motion.reduce">减少动态</button>
       </div>
     </header>
     <main id="archive">
-      <nav id="categories" aria-label="故事类别"></nav>
       <div id="scene" class="scene">
-        <div id="scene-fallback" hidden>
-          档案已准备好。使用分类与方向按钮继续探索。
-        </div>
+        <div id="scene-fallback" hidden data-i18n="scene.fallback">档案已准备好。使用分类与方向按钮继续探索。</div>
       </div>
       <div class="scene-vignette" aria-hidden="true"></div>
-
       <div class="archive-hud" id="archive-hud">
         <div class="selection">
           <div class="selection-eyebrow">
-            <span id="category-label">深空异闻</span><i></i
-            ><span id="chapter-count"></span>
+            <span id="category-label">深空异闻</span><i aria-hidden="true"></i><span id="chapter-count"></span>
           </div>
-          <h1 id="selected-title">群星之间</h1>
+          <h1 id="selected-title" data-i18n="archive.loadingTitle">群星之间</h1>
           <p id="selected-excerpt"></p>
-          <button id="open-story" class="access">
-            展开故事 <span>↗</span>
-          </button>
+          <button id="open-story" class="access" type="button"
+            ><span data-i18n="archive.open">展开故事</span> <span aria-hidden="true">↗</span></button
+          >
+          <p class="archive-hint" data-i18n="archive.hint">拖动或方向键浏览 · 回车展开</p>
         </div>
         <div class="navigation">
           <div class="row-navigation">
-            <button id="previous-story" aria-label="上一份故事">↑</button>
-            <div>
-              <b id="story-number">01</b><span id="story-total">/ —</span>
-            </div>
-            <button id="next-story" aria-label="下一份故事">↓</button>
+            <div class="row-counter"><b id="story-number">01</b><span id="story-total">/ —</span></div>
+            <button id="previous-story" type="button" data-i18n-aria="archive.previousStory" aria-label="上一份故事">↑</button
+            ><button id="next-story" type="button" data-i18n-aria="archive.nextStory" aria-label="下一份故事">↓</button>
           </div>
-          <span class="navigation-hint"
-            >上下滑动 · 翻阅故事<br />左右拖动 · 穿行类别</span
-          >
           <div class="lane-navigation">
-            <button id="previous-category" aria-label="上一个类别">←</button
-            ><span>切换类别</span
-            ><button id="next-category" aria-label="下一个类别">→</button>
+            <button id="previous-category" type="button" data-i18n-aria="archive.previousCategory" aria-label="上一个类别">←</button
+            ><span data-i18n="archive.switchCategory">切换类别</span
+            ><button id="next-category" type="button" data-i18n-aria="archive.nextCategory" aria-label="下一个类别">→</button>
           </div>
         </div>
       </div>
       <div class="archive-count" id="archive-count"></div>
     </main>
-    <section id="reader" hidden aria-labelledby="reader-title">
+    <section id="reader" hidden aria-labelledby="reader-title" data-i18n-aria="reader.label">
       <div class="reader-left">
         <h2 id="dossier-title"></h2>
         <span id="dossier-size"></span>
       </div>
-      <aside id="flow-surface" hidden aria-label="档案剧情路线"></aside>
+      <aside id="flow-surface" hidden data-i18n-aria="reader.routeLabel" aria-label="档案剧情路线"></aside>
       <div class="reader-panel">
         <div class="reader-toolbar">
-          <button id="close-reader">← 收起档案</button>
+          <button id="close-reader" type="button"><span aria-hidden="true">←</span> <span data-i18n="reader.close">收起档案</span></button>
           <div>
-            <button id="chapter-toggle" aria-expanded="false">剧情脉络</button
-            ><button id="reader-language">EN</button>
+            <button id="chapter-toggle" type="button" aria-expanded="false" data-i18n="reader.map">剧情脉络</button
+            ><button id="reader-language" type="button" data-i18n="reader.languageShort" data-i18n-aria="reader.languageLabel" aria-label="切换为英文">EN</button>
           </div>
         </div>
-        <nav id="chapter-list" hidden aria-label="故事篇章"></nav>
+        <nav id="chapter-list" hidden data-i18n-aria="reader.chapterList" aria-label="故事篇章"></nav>
         <div id="reading-content"></div>
       </div>
     </section>
     <footer class="music-player" id="music-player">
       <div class="playing-track">
-        <img id="album-cover" alt="群星原声专辑封面" />
+        <img id="album-cover" data-i18n-alt="music.cover" alt="群星原声专辑封面" width="43" height="43" />
         <div>
           <span class="music-overline">STELLARIS ORIGINAL SOUNDTRACK</span
-          ><button id="playlist-toggle" aria-expanded="false">
-            <span id="track-title">群星原声音乐集</span><span>⌃</span></button
+          ><button id="playlist-toggle" type="button" aria-expanded="false">
+            <span id="track-title" data-i18n="music.defaultTitle">群星原声音乐集</span><span aria-hidden="true">⌃</span></button
           ><small id="track-artist"></small>
         </div>
       </div>
       <div class="transport">
-        <button id="track-previous" aria-label="上一首">‹</button
-        ><button id="play-pause" aria-label="播放音乐">▶</button
-        ><button id="track-next" aria-label="下一首">›</button>
+        <button id="track-previous" type="button" data-i18n-aria="music.previous" aria-label="上一首">‹</button
+        ><button id="play-pause" type="button" data-i18n-aria="music.play" aria-label="播放音乐">▶</button
+        ><button id="track-next" type="button" data-i18n-aria="music.next" aria-label="下一首">›</button>
       </div>
       <div class="seek">
         <span id="elapsed">0:00</span
-        ><input
-          id="music-seek"
-          type="range"
-          min="0"
-          max="1000"
-          value="0"
-          aria-label="音乐进度"
-        /><span id="duration">0:00</span>
+        ><input id="music-seek" type="range" min="0" max="1000" value="0" data-i18n-aria="music.seek" aria-label="音乐进度" /><span
+          id="duration"
+          >0:00</span
+        >
       </div>
       <div class="volume">
         <span aria-hidden="true">♫</span
-        ><input
-          id="music-volume"
-          type="range"
-          min="0"
-          max="100"
-          value="28"
-          aria-label="音乐音量"
-        />
+        ><input id="music-volume" type="range" min="0" max="100" value="28" data-i18n-aria="music.volume" aria-label="音乐音量" />
       </div>
-      <span class="loop-label" title="整张专辑循环播放"
-        >↻<small>专辑循环</small></span
+      <span class="loop-label" data-i18n-title="music.loop" title="整张专辑循环播放"
+        ><span aria-hidden="true">↻</span><small data-i18n="music.loopShort">专辑循环</small></span
       ><audio id="ost-audio" preload="none"></audio>
     </footer>
-    <section id="playlist" hidden aria-label="原声音乐播放列表">
+    <section id="playlist" hidden data-i18n-aria="music.playlist" aria-label="原声音乐播放列表">
       <div class="playlist-heading">
         <div>
           <span class="eyebrow">ORIGINAL SOUNDTRACK</span>
-          <h2>原声</h2>
+          <h2 data-i18n="music.playlistTitle">原声</h2>
         </div>
-        <button id="playlist-close" aria-label="关闭音乐列表">×</button>
+        <button id="playlist-close" type="button" data-i18n-aria="music.playlistClose" aria-label="关闭音乐列表">×</button>
       </div>
       <p id="playlist-description"></p>
       <div id="track-list"></div>
     </section>
     <dialog id="search-dialog" aria-labelledby="search-title">
       <div class="search-heading">
-        <h2 id="search-title">搜索</h2>
-        <button id="search-close" aria-label="关闭搜索">×</button>
+        <h2 id="search-title" data-i18n="search.title">搜索</h2>
+        <button id="search-close" type="button" data-i18n-aria="search.close" aria-label="关闭搜索">×</button>
       </div>
       <label class="search-field"
-        ><span>⌕</span
+        ><span aria-hidden="true">⌕</span
         ><input
           id="search-input"
           type="search"
+          data-i18n-placeholder="search.placeholder"
           placeholder="故事名称、中文或英文关键词"
+          data-i18n-aria="search.label"
           aria-label="搜索完整故事" /></label
       ><span id="search-count" role="status"></span>
       <div id="search-results"></div>
       <div class="search-pager">
-        <button id="search-previous">←</button><span id="search-page"></span
-        ><button id="search-next">→</button>
+        <button id="search-previous" type="button" data-i18n-aria="search.previous" aria-label="上一页">←</button
+        ><span id="search-page"></span
+        ><button id="search-next" type="button" data-i18n-aria="search.next" aria-label="下一页">→</button>
       </div>
     </dialog>
     <div id="toast" role="status"></div>

@@ -1,0 +1,80 @@
+{
+ "id": "dimensional-horror",
+ "family": {
+  "title": {
+   "zh": "虚空中的梦魇",
+   "en": "Horror in the Void"
+  },
+  "category": "leviathans",
+  "start": "leviathans.3001",
+  "members": [
+   "leviathans.3001",
+   "leviathans.3003",
+   "special_projects:DIMENSIONAL_HORROR_PROJECT",
+   "leviathans.3004"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "leviathans.3001",
+   "to": "leviathans.3003",
+   "conditional": true,
+   "label": {
+    "zh": "若梦魇被击毁（6天后）",
+    "en": "If the Horror is destroyed (6 days later)"
+   },
+   "evidence": "ship destroyed (on_ship_destroyed_victim, common/on_actions/00_on_actions.txt:1397) -> hidden leviathans.3002 (events/leviathans_events_2.txt:4021-4079): dimensional_horror ship, then FROM gets leviathans.3003 after 6 days"
+  }
+ ],
+ "endings": {
+  "leviathans.3004": {
+   "label": {
+    "zh": "位面裂隙研究完成",
+    "en": "Rift study completed"
+   },
+   "note": {
+    "zh": "每月物理/社会研究加成；尚未拥有跳跃引擎的帝国另获其50%进度。",
+    "en": "Monthly physics/society research bonus; empires without a jump drive also get 50% progress on tech_jump_drive_1."
+   },
+   "evidence": "events/leviathans_events_2.txt:4126-4218"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.3001": {
+   "zh": "遭遇梦魇",
+   "en": "Meeting the Horror"
+  },
+  "leviathans.3003": {
+   "zh": "梦魇被逐出",
+   "en": "The Horror is banished"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.3001",
+   "kind": "review",
+   "zh": "审阅注：首次进入标有 guardians_horror_system 的星系时，隐藏事件 3000（on_entering_system_first_time，00_on_actions.txt:911）生成位面梦魇（初始被瘫痪，8天后由隐藏 3220 解除）并向进入者发出本通知。",
+   "en": "Review note: on first entering a guardians_horror_system, hidden 3000 (on_entering_system_first_time, 00_on_actions.txt:911) spawns the Dimensional Horror (disabled at first; hidden 3220 enables it 8 days later) and sends this notice (leviathans_events_2.txt:3909-4002)."
+  },
+  {
+   "doc": "leviathans.3003",
+   "kind": "review",
+   "zh": "审阅注：击杀者另会在尚无 horrific_celebration 标记且拥有行星时开启庆典情境（见庆典故事；其中恐怖负相物质路线与此相关）。",
+   "en": "Review note: if the killer owns planets and lacks the flag horrific_celebration it also starts the celebration situation (see that story; its Horrific Inverse Mass branch belongs here)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/leviathans_events_2.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/dimensional-horror.md"
+ }
+}

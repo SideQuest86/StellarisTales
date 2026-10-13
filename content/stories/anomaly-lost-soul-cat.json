@@ -1,0 +1,33 @@
+{
+ "id": "anomaly-lost-soul-cat",
+ "endings": {
+  "anomaly.6787": {
+   "label": {
+    "zh": "老灵魂",
+    "en": "Old Soul"
+   },
+   "note": {
+    "zh": "选项a五天后的单事件结局，记录标本 castaway_robot。",
+    "en": "Single-event ending five days after option a; specimen castaway_robot."
+   },
+   "evidence": "events/anomaly_events_4.txt:2043"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:887",
+   "events/anomaly_events_4.txt:2015 (anomaly.6786)",
+   "events/anomaly_events_4.txt:2043 (ship_event anomaly.6787, 5 days)",
+   "events/anomaly_events_4.txt:2054 (anomaly.6787)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-lost-soul-cat.md"
+ }
+}

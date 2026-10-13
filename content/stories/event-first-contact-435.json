@@ -1,0 +1,101 @@
+{
+ "id": "event-first-contact-435",
+ "family": {
+  "title": {
+   "zh": "点亮屏幕",
+   "en": "Light Displays"
+  },
+  "category": "society",
+  "start": "first_contact.430",
+  "members": [
+   "first_contact.430",
+   "first_contact.435",
+   "special_projects:OCTOPODES_LIGHT_PATTERNS_PROJECT",
+   "first_contact.437",
+   "first_contact.440"
+  ]
+ },
+ "titleFrom": "first_contact.430",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact.430",
+   "to": "first_contact.440",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：章鱼人收尾阶段（坚持，对方主动）(难度8) / 章鱼人收尾阶段（坚持，对方谨慎）(难度10)",
+    "en": "Stage: octopodes end stage (persevered, proactive) (difficulty 8) / octopodes end stage (persevered, cautious) (difficulty 10)"
+   },
+   "evidence": "first_contact_events.txt:6614 set_first_contact_stage = default_octopodes_no_action_end_stage_proactive; common/first_contact/00_*.txt:2104 fires first_contact.440; first_contact_events.txt:6617 set_first_contact_stage = default_octopodes_no_action_end_stage_cautious; common/first_contact/00_*.txt:2123 fires first_contact.440",
+   "choice": "first_contact.430.A"
+  },
+  {
+   "from": "first_contact.430",
+   "to": "first_contact.435",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：章鱼人收尾阶段（拨款，对方主动）(难度5) / 章鱼人收尾阶段（拨款，对方谨慎）(难度7)",
+    "en": "Stage: octopodes end stage (funded, proactive) (difficulty 5) / octopodes end stage (funded, cautious) (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:6643 set_first_contact_stage = default_octopodes_end_stage_proactive; common/first_contact/00_*.txt:2066 fires first_contact.435; first_contact_events.txt:6646 set_first_contact_stage = default_octopodes_end_stage_cautious; common/first_contact/00_*.txt:2085 fires first_contact.435",
+   "choice": "first_contact.430.B"
+  }
+ ],
+ "endings": {
+  "first_contact.437": {
+   "label": {
+    "zh": "结局：超空间航道的启示",
+    "en": "Ending: hyperlane insights"
+   },
+   "note": {
+    "zh": "项目完成，获得“太空光影启示”修正。",
+    "en": "The project completes and grants the space_lights_insights modifier."
+   },
+   "evidence": "events/first_contact_events.txt:6692-6711"
+  },
+  "first_contact.440": {
+   "label": {
+    "zh": "结局：坚持后读懂光语",
+    "en": "Ending: the language of lights, by perseverance"
+   },
+   "note": {
+    "zh": "无额外奖励，结束首次接触。",
+    "en": "No reward; first contact ends."
+   },
+   "evidence": "events/first_contact_events.txt:6712-6737"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact.430",
+   "kind": "review",
+   "zh": "审阅注：与“嗡鸣者”结构相同：A坚持→无行动收尾（8/10）→440；B花费1000能量→拨款收尾（5/7）→435。",
+   "en": "Review note: same structure as the Hummers chain: A persevere → no-action end stage (8/10) → 440; B pay 1000 energy → funded end stage (5/7) → 435."
+  },
+  {
+   "doc": "first_contact.435",
+   "kind": "review",
+   "zh": "审阅注：435 启用特殊项目 OCTOPODES_LIGHT_PATTERNS_PROJECT（3000物理学），完成后触发 437。",
+   "en": "Review note: 435 enables the special project OCTOPODES_LIGHT_PATTERNS_PROJECT (3000 physics research); its completion fires 437."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "章鱼人光语链全部事件、项目及阶段衔接。",
+   "en": "The whole Octopodes light-language chain: events, project and stage hand-offs."
+  },
+  "sources": [
+   "events/first_contact_events.txt:6587-6737",
+   "common/special_projects/00_projects_nemesis.txt:77-90",
+   "common/first_contact/00_first_contact.txt:604-642",
+   "common/first_contact/00_first_contact.txt:2054-2130"
+  ],
+  "uncertain": [
+   "437 另有 on_post_communications_established 触发（00_on_actions.txt:2268），未并入本篇的另一入口。 / 437 also has an on_action entry (00_on_actions.txt:2268)."
+  ],
+  "guide": "public/summaries/event-first-contact-435.md"
+ }
+}

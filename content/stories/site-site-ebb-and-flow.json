@@ -1,0 +1,103 @@
+{
+ "id": "site-site-ebb-and-flow",
+ "family": {
+  "title": {
+   "zh": "岩石之外",
+   "en": "Any Other Rock"
+  },
+  "category": "precursors",
+  "start": "archaeological_site_types:site_ebb_and_flow",
+  "members": [
+   "archaeological_site_types:site_ebb_and_flow",
+   "ancrel.9165",
+   "ancrel.9170",
+   "ancrel.9175",
+   "ancrel.9176",
+   "ancrel.9177",
+   "ancrel.9180",
+   "ancrel.9185"
+  ],
+  "sources": []
+ },
+ "titleFrom": "archaeological_site_types:site_ebb_and_flow",
+ "hubs": [
+  "ancrel.9176"
+ ],
+ "bridges": [
+  {
+   "from": "ancrel.9175",
+   "to": "ancrel.9177",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：随机结果之一（33%）",
+    "en": "Final stage completed: one random outcome (33%)"
+   },
+   "evidence": "common/archaeological_site_types/02_ancient_relics_arc_sites.txt:852 last stage event ancrel.9176 is hidden (events/ancient_relics_arcsite_events_2.txt:3629) and fires one of ancrel.9177, ancrel.9180, ancrel.9185 by random_list (33.0/33.0/33.0); hub marking keeps the compiler from chaining them as consecutive stages"
+  },
+  {
+   "from": "ancrel.9175",
+   "to": "ancrel.9180",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：随机结果之一（33%）",
+    "en": "Final stage completed: one random outcome (33%)"
+   },
+   "evidence": "common/archaeological_site_types/02_ancient_relics_arc_sites.txt:852 last stage event ancrel.9176 is hidden (events/ancient_relics_arcsite_events_2.txt:3629) and fires one of ancrel.9177, ancrel.9180, ancrel.9185 by random_list (33.0/33.0/33.0); hub marking keeps the compiler from chaining them as consecutive stages"
+  },
+  {
+   "from": "ancrel.9175",
+   "to": "ancrel.9185",
+   "conditional": true,
+   "label": {
+    "zh": "最后阶段完成：随机结果之一（33%）",
+    "en": "Final stage completed: one random outcome (33%)"
+   },
+   "evidence": "common/archaeological_site_types/02_ancient_relics_arc_sites.txt:852 last stage event ancrel.9176 is hidden (events/ancient_relics_arcsite_events_2.txt:3629) and fires one of ancrel.9177, ancrel.9180, ancrel.9185 by random_list (33.0/33.0/33.0); hub marking keeps the compiler from chaining them as consecutive stages"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.9177",
+    "ancrel.9180",
+    "ancrel.9185"
+   ],
+   "label": {
+    "zh": "最后阶段的随机结局",
+    "en": "Random final outcomes"
+   },
+   "note": {
+    "zh": "最后阶段完成时只抽取其中一个，不会依次发生。",
+    "en": "Only one is drawn when the last stage completes; they never follow each other."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "archaeological_site_types:site_ebb_and_flow",
+   "kind": "review",
+   "zh": "勘察天体时，隐藏事件 ancrel.9999（on_survey_planet）以 5/405 的机会生成一个随机考古遗址（AI帝国或5年内刚发现过遗址者机会×0.2），再按各遗址的权重抽取；本遗址要求拥有《远古遗物》，权重100，只出现在熔岩星球上。",
+   "en": "When a body is surveyed, hidden ancrel.9999 (on_survey_planet) has a 5/405 chance to create a random dig site (×0.2 for AI empires or if a site was found in the last 5 years), then picks a site type by weight; this site needs Ancient Relics and has weight 100 on molten worlds."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "C2 precursor review (Claude Opus 5.5)",
+  "scope": {
+   "zh": "整条故事：遗址的出现方式、全部阶段（按定义顺序）、最后结果及其互斥关系、掷骰失败时的事件池；中英文正文已读。",
+   "en": "Whole story: how the site appears, every stage in definition order, the final outcome(s) and their exclusivity, the roll-failure incident pool; both languages read."
+  },
+  "sources": [
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "events/ancient_relics_site_spawn_event.txt",
+   "common/scripted_effects/archaeology_event_effects.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/site-site-ebb-and-flow.md"
+ }
+}

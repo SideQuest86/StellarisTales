@@ -1,0 +1,114 @@
+{
+ "id": "dragons-hoard",
+ "family": {
+  "title": {
+   "zh": "龙之宝藏",
+   "en": "Dragon's Hoard"
+  },
+  "category": "leviathans",
+  "start": "leviathans.661",
+  "members": [
+   "leviathans.661",
+   "leviathans.663",
+   "special_projects:DRAGON_INCUBATION_PROJECT",
+   "leviathans.664",
+   "leviathans.665"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "leviathans.661",
+    "leviathans.663"
+   ],
+   "required": 0,
+   "label": {
+    "zh": "骸骨与龙蛋（各自独立，随机在1天至50年内触发）",
+    "en": "Bones and egg (independent, each 1 day to 50 years later)"
+   },
+   "note": {
+    "zh": "在宝藏行星建成采矿站时，隐藏事件 660 同时为两者各排期（1天+随机18000天）。一旦行星标记 deboned / deegged，各自只触发一次。若星系易手，隐藏事件 662 重新排期。",
+    "en": "When a mining station is built on the hoard planet, hidden 660 (on_building_mining_station, 00_on_actions.txt:1884) schedules each separately (1 day plus up to 18000 random days). Each fires once per planet (flags deboned/deegged); 662 reschedules them if the system changes hands."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.664",
+    "leviathans.665"
+   ],
+   "label": {
+    "zh": "孵化成功 / 失败",
+    "en": "Hatching success / failure"
+   },
+   "note": {
+    "zh": "项目成功 → 664，失败 → 665。",
+    "en": "Project success gives 664, failure gives 665."
+   }
+  }
+ ],
+ "endings": {
+  "leviathans.664": {
+   "label": {
+    "zh": "龙蛋孵化",
+    "en": "The egg hatches"
+   },
+   "note": {
+    "zh": "生成一支以太幼龙舰队“Scile”（不占舰队容量），设置 hatched_dragon。",
+    "en": "Spawns an Ether hatchling fleet (no fleet capacity) and sets hatched_dragon."
+   },
+   "evidence": "events/leviathans_events_1.txt:8926-8967"
+  },
+  "leviathans.665": {
+   "label": {
+    "zh": "龙蛋已死",
+    "en": "The egg is no longer viable"
+   },
+   "note": {
+    "zh": "无后续效果。",
+    "en": "No further effect."
+   },
+   "evidence": "events/leviathans_events_1.txt:8969-9001"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.661": {
+   "zh": "骸骨",
+   "en": "The bones"
+  },
+  "leviathans.663": {
+   "zh": "龙蛋",
+   "en": "The egg"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.661",
+   "kind": "review",
+   "zh": "审阅注：选项 a「研究」授予龙甲（grant_dragon_armor_effect），选项 b「磨碎」给予每月矿物与社会研究加成；均不通向其他事件。",
+   "en": "Review note: option a grants dragon armour (grant_dragon_armor_effect), option b gives monthly minerals and society research; neither leads to another event (leviathans_events_1.txt:8824-8843)."
+  },
+  {
+   "doc": "leviathans.663",
+   "kind": "review",
+   "zh": "审阅注：选项 a 在首都启用孵化项目；选项 b 立刻获得300影响力。项目花费50000社会研究点，限时1800天（超时失败 → 665）。",
+   "en": "Review note: option a enables the incubation project at the capital; option b gives 300 influence at once (leviathans_events_1.txt:8906-8922). The project costs 50000 and has a 1800-day limit; timing out gives 665 (00_projects_leviathans.txt:430-448)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/leviathans_events_1.txt",
+   "common/special_projects/00_projects_leviathans.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/dragons-hoard.md"
+ }
+}

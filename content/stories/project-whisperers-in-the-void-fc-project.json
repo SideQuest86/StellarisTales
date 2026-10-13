@@ -1,0 +1,134 @@
+{
+ "id": "project-whisperers-in-the-void-fc-project",
+ "family": {
+  "title": {
+   "zh": "虚空之低语",
+   "en": "Whisperers in the Void"
+  },
+  "category": "exploration",
+  "start": "shroud.4040",
+  "members": [
+   "shroud.4040",
+   "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT",
+   "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT_HIVE",
+   "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT_ROBOT",
+   "shroud.4045",
+   "shroud.4046",
+   "shroud.11110",
+   "shroud.11120",
+   "shroud.11130",
+   "special_projects:the_eater_of_worlds_REVENGE_PROJECT",
+   "special_projects:the_cradle_of_souls_REVENGE_PROJECT",
+   "special_projects:the_instrument_of_desire_REVENGE_PROJECT",
+   "special_projects:the_composer_of_strands_REVENGE_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "shroud.4040",
+   "choice": "shroud.4040.a",
+   "to": "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT",
+   "conditional": true,
+   "label": {
+    "zh": "普通帝国",
+    "en": "Standard empires"
+   },
+   "evidence": "common/inline_scripts/shroud/patron_start_first_contact_special_project.txt: robot / hive / default branch (events/shroud_events.txt:8402-8426)"
+  },
+  {
+   "from": "shroud.4040",
+   "choice": "shroud.4040.a",
+   "to": "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT_HIVE",
+   "conditional": true,
+   "label": {
+    "zh": "蜂巢思维",
+    "en": "Hive minds"
+   },
+   "evidence": "common/inline_scripts/shroud/patron_start_first_contact_special_project.txt: robot / hive / default branch (events/shroud_events.txt:8402-8426)"
+  },
+  {
+   "from": "shroud.4040",
+   "choice": "shroud.4040.a",
+   "to": "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT_ROBOT",
+   "conditional": true,
+   "label": {
+    "zh": "机械帝国",
+    "en": "Robot empires"
+   },
+   "evidence": "common/inline_scripts/shroud/patron_start_first_contact_special_project.txt: robot / hive / default branch (events/shroud_events.txt:8402-8426)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT",
+    "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT_HIVE",
+    "special_projects:WHISPERERS_IN_THE_VOID_FC_PROJECT_ROBOT"
+   ],
+   "label": {
+    "zh": "按帝国类型启用一个项目",
+    "en": "One project by empire type"
+   },
+   "note": {
+    "zh": "机械帝国→_ROBOT；蜂巢思维→_HIVE；其余→基础项目。",
+    "en": "Robot empires get _ROBOT, hive minds _HIVE, all others the base project."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:the_eater_of_worlds_REVENGE_PROJECT",
+    "special_projects:the_cradle_of_souls_REVENGE_PROJECT",
+    "special_projects:the_instrument_of_desire_REVENGE_PROJECT",
+    "special_projects:the_composer_of_strands_REVENGE_PROJECT"
+   ],
+   "label": {
+    "zh": "按被背叛的赞助者启用复仇项目",
+    "en": "Revenge project by betrayed patron"
+   },
+   "note": {
+    "zh": "复仇项目由旗标 the_*_betrayal 对应的赞助者决定（patron_revenge）。",
+    "en": "The revenge project follows the betrayed patron flag the_*_betrayal (patron_revenge)."
+   }
+  }
+ ],
+ "endings": {
+  "shroud.11130": {
+   "label": {
+    "zh": "复仇化身出现",
+    "en": "Avatar of vengeance emerges"
+   },
+   "note": {
+    "zh": "复仇项目成功或失败都触发shroud.11130。",
+    "en": "Both success and failure of a revenge project fire shroud.11130."
+   },
+   "evidence": "common/special_projects/04_projects_shroud.txt:739-762"
+  }
+ },
+ "notes": [
+  {
+   "doc": "shroud.4045",
+   "zh": "审阅注：选项b“拒绝盟约”结束本线（拒绝盟约并重置调谐，获得每月研究与佐罗），不再有后续事件（events/shroud_events.txt shroud.4045）。",
+   "en": "Review note: option b rejects the covenant and ends the line (refuse_covenant with attunement reset, plus monthly research and Zro); no follow-up events (events/shroud_events.txt, shroud.4045).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (resumed)",
+  "scope": {
+   "zh": "全部13个文档（含机械/蜂巢版项目）。",
+   "en": "All 13 docs (including robot/hive project versions)."
+  },
+  "sources": [
+   "common/special_projects/04_projects_shroud.txt",
+   "events/shroud_events.txt",
+   "common/patrons/patron_types.txt",
+   "common/scripted_effects/shroud_shadows_scripted_effects.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/project-whisperers-in-the-void-fc-project.md"
+ }
+}

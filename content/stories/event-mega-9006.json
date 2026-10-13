@@ -1,0 +1,100 @@
+{
+ "id": "event-mega-9006",
+ "family": {
+  "title": {
+   "zh": "星际集会",
+   "en": "Interstellar Assembly"
+  },
+  "category": "stories",
+  "start": "mega.9006",
+  "members": [
+   "mega.9006",
+   "mega.9007",
+   "mega.9008",
+   "mega.9009",
+   "mega.9130",
+   "mega.9131"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "mega.9006",
+   "to": "mega.9007",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：执政官环建成",
+    "en": "After the next upgrade: Consul Ring built"
+   },
+   "evidence": "common/megastructures/09_interstellar_assembly.txt:280 mega.9007"
+  },
+  {
+   "from": "mega.9007",
+   "to": "mega.9008",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：论坛模块建成",
+    "en": "After the next upgrade: Forum Modules built"
+   },
+   "evidence": "common/megastructures/09_interstellar_assembly.txt:337 mega.9008"
+  },
+  {
+   "from": "mega.9008",
+   "to": "mega.9009",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：星际集会完工",
+    "en": "After the next upgrade: Assembly completed"
+   },
+   "evidence": "common/megastructures/09_interstellar_assembly.txt:398 mega.9009"
+  },
+  {
+   "from": "mega.9130",
+   "to": "mega.9131",
+   "conditional": true,
+   "label": {
+    "zh": "修复废墟（建造“修复”型巨型结构）后",
+    "en": "After the ruin is restored (the \"restored\" megastructure type is built over it)"
+   },
+   "evidence": "common/megastructures/09_interstellar_assembly.txt:510 on_build_complete fires mega.9131; the restored type is upgrade_from the ruined type"
+  }
+ ],
+ "nodeLabels": {
+  "mega.9130": {
+   "zh": "遇到废墟",
+   "en": "Finding the ruin"
+  },
+  "mega.9131": {
+   "zh": "废墟修复",
+   "en": "Ruin restored"
+  }
+ },
+ "notes": [
+  {
+   "doc": "mega.9006",
+   "kind": "review",
+   "zh": "审阅说明：星际集会每完成一个建造阶段，由 on_megastructure_built / on_megastructure_upgraded 在建造国触发对应事件（并非选项链接）；各阶段按建造顺序排列。",
+   "en": "Review note: each build stage of the Interstellar Assembly fires its own event for the builder from on_megastructure_built / on_megastructure_upgraded (not option links); stages are shown in construction order. "
+  },
+  {
+   "doc": "mega.9130",
+   "kind": "review",
+   "zh": "审阅说明：废墟是地图上预置的，不属于任何建造阶段；首次进入该星系时由 on_entering_system_first_time 触发。",
+   "en": "Review note: the ruin is a pre-placed map object, not a build stage; on_entering_system_first_time fires this event the first time a ship enters the system."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "星际集会各建造阶段事件、给其他帝国的通知、废墟与修复事件。",
+   "en": "Interstellar Assembly: build-stage events, notices to other empires, the ruin and restoration events."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/megastructures/09_interstellar_assembly.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-mega-9006.md"
+ }
+}

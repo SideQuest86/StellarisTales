@@ -1,0 +1,146 @@
+{
+ "id": "event-country-1100",
+ "family": {
+  "title": {
+   "zh": "大灭绝",
+   "en": "Mass Extinction"
+  },
+  "category": "stories",
+  "start": "country.1100",
+  "members": [
+   "country.1100",
+   "country.1101",
+   "country.1102",
+   "country.1105",
+   "country.1110",
+   "country.1115",
+   "country.1120",
+   "country.1125",
+   "country.1130",
+   "country.1135",
+   "country.1140",
+   "country.1145",
+   "country.1150",
+   "country.1155",
+   "event_chains:mass_extinction_chain",
+   "special_projects:MASSEX_1_PROJECT",
+   "special_projects:MASSEX_2_PROJECT",
+   "special_projects:MASSEX_3_PROJECT",
+   "special_projects:MASSEX_4_PROJECT",
+   "special_projects:MASSEX_5_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "country.1100",
+   "choice": "country.1100.a",
+   "to": "country.1105",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记的小行星",
+    "en": "A fleet enters the marked asteroid"
+   },
+   "evidence": "events/country_events_2.txt:1919-2138 hidden country.1101 marks one planet of each of five classes (asteroid, molten, barren, toxic, frozen); hidden fleet event country.1102 (L2141-2205) fires country.1105/1110/1115/1120/1125"
+  },
+  {
+   "from": "country.1100",
+   "choice": "country.1100.a",
+   "to": "country.1110",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记的熔岩星球",
+    "en": "A fleet enters the marked molten planet"
+   },
+   "evidence": "events/country_events_2.txt:2173-2180 country.1102 -> country.1110"
+  },
+  {
+   "from": "country.1100",
+   "choice": "country.1100.a",
+   "to": "country.1115",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记的荒芜星球",
+    "en": "A fleet enters the marked barren planet"
+   },
+   "evidence": "events/country_events_2.txt:2181-2188 country.1102 -> country.1115"
+  },
+  {
+   "from": "country.1100",
+   "choice": "country.1100.a",
+   "to": "country.1120",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记的有毒星球",
+    "en": "A fleet enters the marked toxic planet"
+   },
+   "evidence": "events/country_events_2.txt:2189-2196 country.1102 -> country.1120"
+  },
+  {
+   "from": "country.1100",
+   "choice": "country.1100.a",
+   "to": "country.1125",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记的冰冻星球",
+    "en": "A fleet enters the marked frozen planet"
+   },
+   "evidence": "events/country_events_2.txt:2197-2204 country.1102 -> country.1125"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "country.1105",
+    "country.1110",
+    "country.1115",
+    "country.1120",
+    "country.1125"
+   ],
+   "required": 5,
+   "gate": "country.1155",
+   "label": {
+    "zh": "五种类型的星球",
+    "en": "Five planet classes"
+   },
+   "note": {
+    "zh": "五个标记星球任意顺序；每个先出现发现事件，再启用分析项目，完成后计数 massex_analyzed 加一（上限5）。",
+    "en": "Five marked planets in any order; each shows a discovery event, enables an analysis project and on completion adds to massex_analyzed (max 5)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "country.1100",
+   "kind": "review",
+   "zh": "触发：游戏开始后由开局事件闸门 country.900 抽取（events/game_start.txt:15 在460±60天后触发；events/country_events_2.txt:17-66 为按权重的随机列表，四条开局故事互斥，另有69%什么都不发生）。权重10；“年轻”、虚空居民或破碎环起源为0；非集群意识、非“生命播种”起源、非游牧（country_events_2.txt:1889-1897）。",
+   "en": "Trigger: After game start the starting-event gate country.900 draws it (events/game_start.txt:15 fires it after 460±60 days; events/country_events_2.txt:17-66 is a weighted random list: the four opening stories are mutually exclusive and 69% of the weight is \"nothing happens\"). Weight 10; 0 for young, void dweller or shattered ring origins; non-gestalt, not Life Seeded, not nomadic (country_events_2.txt:1889-1897)."
+  },
+  {
+   "doc": "country.1155",
+   "kind": "review",
+   "zh": "两个选项都结束事件链：a 为物理加社会研究，b 为影响力加团结（country_events_2.txt:3123-3153）。",
+   "en": "Both options end the chain: a gives physics and society research, b influence and unity (country_events_2.txt:3123-3153)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/country_events_2.txt:1875-3158",
+   "events/game_start.txt:15",
+   "common/event_chains/00_event_chains_2.txt:45-52",
+   "common/special_projects/00_projects_2.txt (MASSEX_*)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-country-1100.md",
+  "merged": [
+   "event-country-1102"
+  ]
+ }
+}

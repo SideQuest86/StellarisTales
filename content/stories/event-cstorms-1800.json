@@ -1,0 +1,41 @@
+{
+ "id": "event-cstorms-1800",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:EYE_OF_THE_gravity_storm_PROJECT",
+    "special_projects:EYE_OF_THE_celestial_storm_PROJECT",
+    "special_projects:EYE_OF_THE_electric_storm_PROJECT",
+    "special_projects:EYE_OF_THE_particle_storm_PROJECT",
+    "special_projects:EYE_OF_THE_solar_storm_PROJECT",
+    "special_projects:EYE_OF_THE_magnetic_storm_PROJECT",
+    "special_projects:EYE_OF_THE_shroud_storm_PROJECT",
+    "special_projects:EYE_OF_THE_nexus_storm_PROJECT"
+   ],
+   "label": {
+    "zh": "按风暴类型选择项目",
+    "en": "Project chosen by storm type"
+   },
+   "note": {
+    "zh": "只会启用与当前风暴类型相符的一个项目（if/else_if 链）。",
+    "en": "Only the project matching the storm type is enabled (if / else_if chain)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/cosmic_storms_events_1.txt:3800-4005",
+   "common/on_actions/00_on_actions.txt:5404-5417"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-cstorms-1800.md"
+ }
+}

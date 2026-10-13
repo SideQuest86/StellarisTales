@@ -1,0 +1,122 @@
+{
+ "id": "event-colony-1",
+ "family": {
+  "title": {
+   "zh": "迁徙森林",
+   "en": "Migrating Forests"
+  },
+  "category": "society",
+  "start": "colony.1",
+  "members": [
+   "colony.1",
+   "colony.2",
+   "colony.3",
+   "colony.4",
+   "colony.5",
+   "colony.6",
+   "colony.7",
+   "colony.8",
+   "colony.9",
+   "colony.10",
+   "colony.11",
+   "colony.12",
+   "event_chains:migrating_forests_chain",
+   "special_projects:MIGRATING_FORESTS_1_PROJECT",
+   "special_projects:MIGRATING_FORESTS_2_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "colony.4",
+   "to": "colony.5",
+   "conditional": true,
+   "label": {
+    "zh": "若击退树人的入侵",
+    "en": "If the tree invasion is repelled"
+   },
+   "evidence": "colony.4 creates armies for a new country and sets country flag burned_forests_rampaged_country / planet flag burned_forests_rampaged_planet (events/colony_events_1.txt:206-242); on_colony_defenders_win -> colony.5 (common/on_actions/00_on_actions.txt:862), whose trigger checks those flags (colony_events_1.txt:265-267)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:MIGRATING_FORESTS_1_PROJECT",
+    "special_projects:MIGRATING_FORESTS_2_PROJECT"
+   ],
+   "label": {
+    "zh": "研究或烧毁（烧毁仅限非环保主义文明）",
+    "en": "Study or burn (burn only for non-Environmentalist empires)"
+   },
+   "note": {
+    "zh": "两个项目由同一选项启用，玩家完成其一；烧毁项目完成会移除迁徙加成。",
+    "en": "Both projects are enabled by one option and the player completes one; finishing the burn project removes the migrating_forests modifier."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "colony.9",
+    "colony.10",
+    "colony.11"
+   ],
+   "label": {
+    "zh": "共存路线：三个事件各至多一次",
+    "en": "Coexistence route: three events, each at most once"
+   },
+   "note": {
+    "zh": "各自延迟1800+随机5400天，各由自己的标记限定，彼此独立。",
+    "en": "Each fires 1800 days + random 5400 after colony.2, once per own flag; independent."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "colony.4",
+    "colony.6",
+    "colony.7",
+    "colony.8"
+   ],
+   "label": {
+    "zh": "焚林路线：四个延迟事件",
+    "en": "Burn route: four delayed events"
+   },
+   "note": {
+    "zh": "colony.3 同时安排4、6、7、8（1800+随机5400天）。6与7共用标记而互斥（7还需星球没有战略资源）；4为树人入侵。",
+    "en": "colony.3 schedules 4, 6, 7, 8 together (1800 days + random 5400). 6 and 7 share flags and exclude each other (7 also needs no strategic resource); 4 is the tree invasion."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "colony.12",
+   "kind": "review",
+   "zh": "迁移事件每720+随机1680天自我重复，直到玩家完成任一项目（触发条件需要 migrating_forests 修正）。",
+   "en": "The migration event repeats every 720 days + random 1680 until a project is completed (its trigger needs the migrating_forests modifier)."
+  },
+  {
+   "doc": "colony.1",
+   "kind": "review",
+   "zh": "殖民地2或3岁时的随机殖民地事件（权重3/958、2/739）；非AI、非首都、非机械/荒野帝国，五种宜居星球类型；全局仅一次。",
+   "en": "Random colony event at colony age 2 or 3 (weights 3/958, 2/739); non-AI, non-capital colony of a non-machine/wilderness empire on five habitable classes; once per game."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "迁徙森林完整故事：开端、两个项目、六个后续事件、树人入侵与击退，以及自循环的迁移事件。",
+   "en": "Whole Migrating Forests story: opening, two projects, six follow-ups, the tree invasion and its defeat, and the self-repeating migration event."
+  },
+  "sources": [
+   "events/colony_events_1.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_1.txt"
+  ],
+  "merged": [
+   "event-colony-5"
+  ],
+  "guide": "public/summaries/event-colony-1.md"
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "id": "rift-cleaning-drones",
+ "category": "rifts",
+ "groups": [
+  {"kind": "parallel", "members": ["astral_rift.2625", "astral_rift.2630"], "required": 2, "gate": "astral_rift.2640",
+   "label": {"zh": "尸检与无人机：两项都要做", "en": "Autopsy and drone: both must be done"},
+   "note": {"zh": "洞穴路线上，“鸟类解剖”（2625，设置标记 avian_autopsy）与“无人机修复”（2630，设置标记 drone_reactivated）可按任意顺序，各自的第一个选项指向另一个；只有两个标记都已设置，才会出现通向 2640 的选项。", "en": "On the cave route the “Avian Autopsy” (2625, sets flag avian_autopsy) and “Drone Repaired” (2630, sets flag drone_reactivated) can be done in either order, the first option of each leading to the other; the option to 2640 only appears once both flags are set."}},
+  {"kind": "exclusive", "members": ["astral_rift.2650", "astral_rift.2655"],
+   "label": {"zh": "实验室的取舍", "en": "What to do with the lab"},
+   "note": {"zh": "仅限有机物种且非荒野帝国可选“记录并研究”（→ 2650）；机械物种只有“很迷人”（→ 2655）；有机物种另可“关闭设施”（→ 2655）。", "en": "Only an organic species in a non-Wilderness empire may “Document and study” (→ 2650); a non-organic species only gets “Fascinating” (→ 2655); an organic species may also “Shut down the Facility” (→ 2655)."}}
+ ],
+ "endings": {
+  "astral_rift.2650": {
+   "label": {"zh": "自动清洁：记录基础设施", "en": "Automated Disinfection: documented"},
+   "note": {"zh": "大量星界丝缕；格式塔帝国另得社会研究；设置国家标记 edict_automated_disinfection；探索结束。", "en": "Large astral thread reward; gestalt empires also get society research; sets country flag edict_automated_disinfection; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:2921-2960"},
+  "astral_rift.2655": {
+   "label": {"zh": "关闭设施", "en": "Shut Down the Facility"},
+   "note": {"zh": "能量收入（不友善帝国为更高档），加大量星界丝缕；探索结束。", "en": "An energy income (a higher tier for unfriendly empires) plus a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:2962-3027"},
+  "astral_rift.2660": {
+   "label": {"zh": "干净地逃离", "en": "A Clean Escape"},
+   "note": {"zh": "瘫痪无人机后撤退：合金收入与大量星界丝缕；探索结束。", "en": "Retreating after disabling the drones: an alloy income and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:3029-3053"},
+  "astral_rift.2665": {
+   "label": {"zh": "改造无人机", "en": "Repurposing the Drone"},
+   "note": {"zh": "标本“改造的清洁无人机”；大量星界丝缕与殖民无人机修正（荒野帝国为荒野版）；探索结束。", "en": "Specimen “repurposed cleaning drone”; a large astral thread reward and the colonization-drones modifier (Wilderness variant for Wilderness empires); the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:3055-3084"},
+  "astral_rift.2670": {
+   "label": {"zh": "讽刺性病毒", "en": "Viral Irony"},
+   "note": {"zh": "大量星界丝缕，并按尚未持有的加密/解密科技赠送一项，否则一项计算类研究选项；探索结束。", "en": "A large astral thread reward plus the first encryption/decryption technology not yet owned, else a computing research option; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:3086-3127"},
+  "astral_rift.2675": {
+   "label": {"zh": "个人研究助理", "en": "Personal research assistant"},
+   "note": {"zh": "大量星界丝缕；科学家获得特质 leader_trait_sanitary_drone；探索结束。", "en": "A large astral thread reward; the scientist gains trait leader_trait_sanitary_drone; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:3129-3152"}
+ },
+ "notes": [
+  {"doc": "astral_rifts:cleaning_drones", "kind": "review",
+   "zh": "抽取权重 1，无条件；不产出遗珍，没有失败分支。",
+   "en": "Draw weight 1, no conditions; no relic and no failure branch (00_astral_rifts.txt:344-353)."},
+  {"doc": "astral_rift.2665", "kind": "review",
+   "zh": "2665 的“殖民无人机”修正会让新殖民事件 astral_rift.2698（on_colonization_started，00_on_actions.txt:1279）随机给新殖民星球添加阻挡物；它是后续的副作用而不是本故事的一章，未并入。",
+   "en": "The colonization-drones modifier of 2665 makes the hidden colonization event astral_rift.2698 (on_colonization_started, 00_on_actions.txt:1279) randomly add blockers to new colonies; it is a side effect, not a chapter of this story, and is not merged."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 2600–2675 全部事件、选项条件、标记（clean_shot / avian_autopsy / drone_reactivated）及奖励。",
+   "en": "Checked the rift definition and every event 2600–2675 with option conditions, flags (clean_shot / avian_autopsy / drone_reactivated) and rewards."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-cleaning-drones.md"
+ }
+}

@@ -1,0 +1,98 @@
+{
+ "id": "dessanu-consonance",
+ "family": {
+  "title": {"zh": "德萨努协和国", "en": "The Dessanu Consonance"},
+  "category": "exploration",
+  "start": "graygoo.100",
+  "members": ["graygoo.100", "graygoo.110", "graygoo.111", "graygoo.112", "graygoo.115", "graygoo.116", "graygoo.119", "graygoo.120", "graygoo.121", "graygoo.122", "graygoo.123", "graygoo.124", "graygoo.125", "graygoo.126", "graygoo.130", "graygoo.150", "graygoo.155", "graygoo.156", "graygoo.160", "graygoo.161", "graygoo.162", "graygoo.180", "graygoo.181", "graygoo.182", "graygoo.183", "graygoo.184", "observer.66", "observer.67"]
+ },
+ "bridges": [
+  {
+   "from": "graygoo.110", "to": "observer.66",
+   "label": {"zh": "观察者模式：对应通知（文本不同）", "en": "Observer mode: the matching notice (own text)"},
+   "evidence": "events/gray_goo_events.txt:1118 hidden graygoo.100 fires observer.66; events/observer_events.txt:1130-1133 uses its own observer.66.name/desc"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.120", "conditional": true,
+   "label": {"zh": "与德萨努通讯（可重复，非剧情步骤）", "en": "Communicate with the Dessanu (repeatable, not a story step)"},
+   "evidence": "on_custom_diplomacy (00_on_actions.txt:730) fires graygoo.120 when From is a gate_builders country and neither gate_builder_diplomacy_engaged nor gate_builders_hostility is set (events/gray_goo_events.txt:1323-1329)"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.130", "conditional": true,
+   "label": {"zh": "敌对后的通讯（可重复）", "en": "Communication once hostile (repeatable)"},
+   "evidence": "on_custom_diplomacy (00_on_actions.txt:733) fires graygoo.130 when gate_builders_hostility is set (events/gray_goo_events.txt:1642-1646)"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.160", "conditional": true,
+   "label": {"zh": "首次进入工厂星系：被要求离开", "en": "First entry into the factory system: told to leave"},
+   "evidence": "on_entering_system_first_time (00_on_actions.txt:906); events/gray_goo_events.txt:1812-1824 star flag graygoo_factory_system with a Dessanu factory and no hostility"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.162", "conditional": true,
+   "label": {"zh": "再次进入工厂星系：第二次警告", "en": "Entering the factory system again: second warning"},
+   "evidence": "on_entering_system_fleet (00_on_actions.txt:1027); events/gray_goo_events.txt:1934-1950 requires gk_first_entry and no gk_told_to_leave"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.155", "conditional": true,
+   "label": {"zh": "与德萨努舰船交战：关系转为敌对", "en": "Fighting Dessanu ships: they turn hostile"},
+   "evidence": "on_entering_battle (00_on_actions.txt:1374); events/gray_goo_events.txt:1747-1755 sets gate_builders_hostility"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.150", "conditional": true,
+   "label": {"zh": "地面部队攻陷德萨努殖民地", "en": "Ground forces take a Dessanu colony"},
+   "evidence": "on_colony_attackers_win (00_on_actions.txt:826); events/gray_goo_events.txt:1700-1714 the planet becomes pc_gray_goo; option fires graygoo.156 (hostility) after 3 days"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.181", "conditional": true,
+   "label": {"zh": "摧毁德萨努工厂：击破者", "en": "Destroy the Dessanu factory: the slayer"},
+   "evidence": "on_ship_destroyed_victim (00_on_actions.txt:1417) -> hidden graygoo.180 (events/gray_goo_events.txt:2000-2037) -> graygoo.181 to the slayer, graygoo.182 to other human players, observer.67, then the Consonance is destroyed"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.182", "conditional": true,
+   "label": {"zh": "摧毁德萨努工厂：其他玩家", "en": "Destroy the Dessanu factory: other players"},
+   "evidence": "events/gray_goo_events.txt:2017-2023"
+  },
+  {
+   "from": "graygoo.182", "to": "observer.67",
+   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "evidence": "events/gray_goo_events.txt:2024; events/observer_events.txt:1145-1148 reuses graygoo.181.name / graygoo.182.a.desc"
+  },
+  {
+   "from": "graygoo.115", "to": "graygoo.184", "conditional": true,
+   "label": {"zh": "若德萨努转为敌对：赠礼终止", "en": "If the Dessanu turn hostile: their gift ends"},
+   "evidence": "on_monthly_pulse (00_on_actions.txt:105) -> hidden graygoo.183 (events/gray_goo_events.txt:2082-2110) requires a country with the dessanu_gift modifier that the gate builders are hostile to"
+  }
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["graygoo.111", "graygoo.112"],
+   "label": {"zh": "他国得知：有L星团线索 / 无", "en": "Others learn: with the L-Cluster chain or project / without"},
+   "note": {"zh": "graygoo.110 的 after 按是否持有线索链或项目分发", "en": "graygoo.110 after-block splits by chain or project"}},
+  {"kind": "parallel", "members": ["graygoo.160", "graygoo.162", "graygoo.155", "graygoo.150", "graygoo.126"],
+   "label": {"zh": "引发敌对的途径（任一即可；126 为在对话中追问纳米机器到底）", "en": "Ways to provoke hostility (any one; 126 = pressing the nanite question to the end in the dialogue)"},
+   "note": {"zh": "它们设置 gate_builders_hostility，之后只会出现敌对通讯 graygoo.130", "en": "They set gate_builders_hostility; afterwards only the hostile communication graygoo.130 appears"}},
+  {"kind": "exclusive", "members": ["graygoo.181", "graygoo.182"],
+   "label": {"zh": "结局：击破者 / 其他玩家", "en": "Ending: the slayer / other players"},
+   "note": {"zh": "同一摧毁事件的两种视角", "en": "Two views of one destruction"}}
+ ],
+ "endings": {
+  "graygoo.181": {"label": {"zh": "德萨努的末日（击破者）", "en": "The End of the Dessanu (slayer)"}, "note": {"zh": "工厂被毁后协和国一切化为灰尘", "en": "With the factory destroyed the Consonance turns to dust"}, "evidence": "events/gray_goo_events.txt:2000-2037"},
+  "graygoo.182": {"label": {"zh": "德萨努的末日（旁观）", "en": "The End of the Dessanu (witnessed)"}, "note": {"zh": "其他玩家的同一结局", "en": "Same ending for other players"}, "evidence": "events/gray_goo_events.txt:2055-2078"}
+ },
+ "nodeLabels": {
+  "graygoo.110": {"zh": "开场：联系建立", "en": "Opening: link established"},
+  "graygoo.115": {"zh": "截获的信号", "en": "Incoming transmission"},
+  "graygoo.120": {"zh": "通讯菜单（可重复）", "en": "Communication menu (repeatable)"},
+  "graygoo.130": {"zh": "敌对通讯（可重复）", "en": "Hostile communication (repeatable)"}
+ },
+ "notes": [
+  {"doc": "graygoo.115", "kind": "review",
+   "zh": "评注：只有开局随机选中「德萨努」结局（gray_goo_empire_set）时，开门事件 distar.10950 才发出隐藏的 graygoo.100，建立德萨努协和国并开通 L 星团。其后的敌对由玩家行为（进入工厂星系、交战、攻陷殖民地）决定，没有固定时间表。",
+   "en": "Commentary: only when the game-start roll chose the Dessanu outcome (gray_goo_empire_set) does opening the L-Gate (distar.10950) fire hidden graygoo.100, which sets up the Consonance. Everything afterwards depends on player behaviour (entering the factory system, battles, invading colonies); there is no fixed schedule (events/distant_stars_events_3.txt:1375-1378; events/gray_goo_events.txt:754-1121)."}
+ ],
+ "review": {
+  "status": "reviewed", "date": "2026-10-13", "reviewer": "c5b-crisis (Opus 5.5)",
+  "sources": ["events/gray_goo_events.txt", "events/distant_stars_events_3.txt", "events/observer_events.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": ["The dessanu_gift modifier source (diplomacy reward) was not traced in this pass", "Dialogue choices 121-126 are a repeatable question tree; their consequences beyond the hostility flag were not mapped"],
+  "guide": "public/summaries/dessanu-consonance.md"
+ }
+}

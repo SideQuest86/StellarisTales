@@ -1,0 +1,94 @@
+{
+ "id": "galactic-hyperthermia",
+ "family": {
+  "title": {"zh": "星系热症", "en": "Galactic Hyperthermia"},
+  "category": "crisis",
+  "start": "infernals.1000",
+  "sources": ["events/infernals_crisis_events.txt"],
+  "members": [
+   "special_projects:INF_CRISIS_ENTROPY",
+   "special_projects:INF_CRISIS_ENTROPY_EVIL",
+   "special_projects:INF_CRISIS_ENTROPY_GOOD",
+   "special_projects:INF_THERMOPHILE_ADAPTATION",
+   "situations:situation_galactic_hyperthermia_timer",
+   "situations:situation_galactic_hyperthermia",
+   "event_chains:galactic_hyperthermia_chain"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "special_projects:INF_CRISIS_ENTROPY", "to": "infernals.1005", "conditional": true,
+   "label": {"zh": "项目完成（标记 Lv1）：解锁危机一级", "en": "Project done (flag Lv1): crisis level 1 unlocks"},
+   "evidence": "common/special_projects/00_projects_infernals.txt:11-14 on_success sets Hyperthermia_Lv1_unlocked; common/crisis_levels/00_crisis_levels.txt:707-726 level 1 allow needs that flag and on_unlock fires infernals.1005 (events/infernals_crisis_events.txt:98)"
+  },
+  {
+   "from": "infernals.1005", "to": "infernals.1010", "conditional": true,
+   "label": {"zh": "建成星系熔炉第1阶段（标记 Lv2）：解锁危机二级", "en": "Crucible stage 1 built (flag Lv2): crisis level 2 unlocks"},
+   "evidence": "common/megastructures/22_galactic_crucible.txt:174 galactic_crucible_1 sets Hyperthermia_Lv2_unlocked; 00_crisis_levels.txt:729-749 level 2 allow needs it, on_unlock fires infernals.1010"
+  },
+  {
+   "from": "infernals.1010", "to": "infernals.1015", "conditional": true,
+   "label": {"zh": "建成熔炉第2阶段（标记 Lv3）：解锁危机三级", "en": "Crucible stage 2 built (flag Lv3): crisis level 3 unlocks"},
+   "evidence": "22_galactic_crucible.txt:212 galactic_crucible_2 sets Hyperthermia_Lv3_unlocked; 00_crisis_levels.txt:751-776 level 3 on_unlock fires infernals.1015"
+  },
+  {
+   "from": "infernals.1020", "to": "infernals.1025", "conditional": true,
+   "label": {"zh": "「策划火风暴」后建成熔炉第3阶段（标记 Lv4）：解锁危机四级", "en": "After the Firestorm project, crucible stage 3 (flag Lv4): crisis level 4 unlocks"},
+   "evidence": "22_galactic_crucible.txt:247-250 galactic_crucible_3 needs Hyperthermia_Lv4_project (set by INF_CRISIS_ENTROPY_EVIL, 00_projects_infernals.txt:29) and sets Lv4_unlocked; 00_crisis_levels.txt:778-805 level 4 needs both flags, on_unlock fires infernals.1025"
+  },
+  {
+   "from": "infernals.1025", "to": "infernals.1030", "conditional": true,
+   "label": {"zh": "建成熔炉第4阶段（标记 Lv5）：解锁危机五级，开始点火竞赛", "en": "Crucible stage 4 built (flag Lv5): crisis level 5 unlocks, the ignition race begins"},
+   "evidence": "22_galactic_crucible.txt:284-288 galactic_crucible_4 sets Hyperthermia_Lv5_unlocked; 00_crisis_levels.txt:807-835 level 5 on_unlock sets Hyperthermia_ongoing and fires infernals.1030"
+  },
+  {
+   "from": "infernals.1043", "to": "infernals.1052", "conditional": true,
+   "label": {"zh": "战争结束时夺得熔炉（战后通知）", "en": "Crucible taken when the war ends (after-war notice)"},
+   "evidence": "on_war_ended -> infernals.1051 (common/on_actions/00_on_actions.txt:2639; events/infernals_crisis_events.txt:844-866) hidden router -> infernals.1052 for non-crisis war participants"
+  },
+  {
+   "from": "infernals.1043", "to": "infernals.1053", "conditional": true,
+   "label": {"zh": "战争期间夺得熔炉（进行中通知）", "en": "Crucible taken during the war (ongoing notice)"},
+   "evidence": "on_megastructure_change_owner -> infernals.10530 (00_on_actions.txt:4762; events/infernals_crisis_events.txt:983-1024) hidden router -> infernals.1053 after 1 day unless discovered_crucible is set"
+  }
+ ],
+ "suppress": [
+  {"from": "infernals.1055", "to": "crisis.2037", "evidence": "hyperthermia_galaxy_effect (common/scripted_effects/infernals_effects.txt, calls destroy_machine_world) reaches the Contingency machine-world notice only as a side effect"},
+  {"from": "infernals.1055", "to": "observer.50", "evidence": "same side effect; observer.50 is the observer copy of crisis.2037"},
+  {"from": "infernals.1055", "to": "crisis.2035", "evidence": "same side effect via destroy_machine_world (00_scripted_effects.txt:219-220)"},
+  {"from": "infernals.1055", "to": "crisis.2046", "evidence": "same side effect (infernals_effects.txt:40)"}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["special_projects:INF_CRISIS_ENTROPY_EVIL", "special_projects:INF_CRISIS_ENTROPY_GOOD"],
+   "label": {"zh": "二选一：策划火风暴 / 抑制野心", "en": "Either: plan the firestorm / restrain ambition"},
+   "note": {"zh": "infernals.1015 的两个选项；「抑制野心」设置 Hyperthermia_Lv4_denied，熔炉只能走和平阶段（不会解锁下一危机级别）", "en": "The two options of infernals.1015; the restrained option sets Hyperthermia_Lv4_denied and the crucible only gets the peaceful stage that does not unlock the next crisis level"}},
+  {"kind": "exclusive", "members": ["infernals.1055", "infernals.1056"],
+   "label": {"zh": "结局：发动者获胜 / 其他热症者见证", "en": "Ending: the perpetrator wins / another Hyperthermia empire witnesses"},
+   "note": {"zh": "星系火风暴进度满时按身份分支", "en": "Branch by identity when the Firestorm situation completes"}},
+  {"kind": "exclusive", "members": ["infernals.1052", "infernals.1053"],
+   "label": {"zh": "夺取熔炉：战后 / 战时", "en": "Crucible captured: after the war / during it"},
+   "note": {"zh": "两条不同的 on_action 路径，通知各自触发", "en": "Two different on_action paths, each with its own notice"}}
+ ],
+ "endings": {
+  "infernals.1055": {"label": {"zh": "胜利：星系被点燃", "en": "Victory: the galaxy ignites"}, "note": {"zh": "win = yes；设置 Hyperthermia_happened", "en": "win = yes; sets Hyperthermia_happened"}, "evidence": "events/infernals_crisis_events.txt:1078-1104"},
+  "infernals.1056": {"label": {"zh": "他人获胜：银河重生", "en": "Another empire wins: Galactic Rebirth"}, "note": {"zh": "持有星系热症天赋但不是发动者的国家看到此事件", "en": "Shown to a holder of the perk who is not the perpetrator"}, "evidence": "common/situations/13_infernal_situations.txt:786-792"}
+ },
+ "nodeLabels": {
+  "infernals.1000": {"zh": "获得飞升天赋", "en": "Ascension perk taken"},
+  "infernals.1035": {"zh": "核心航路开启", "en": "Core lanes open"},
+  "infernals.1040": {"zh": "他国得知", "en": "Others learn"},
+  "infernals.1052": {"zh": "熔炉被占（战后）", "en": "Crucible taken (post-war)"},
+  "infernals.1053": {"zh": "熔炉被占（战时）", "en": "Crucible taken (in war)"}
+ },
+ "notes": [
+  {"doc": "infernals.1043", "kind": "review",
+   "zh": "评注：隐藏事件 infernals.1041 在「动员」计时结束时宣战并启动「星系火风暴」状况；1040 的联盟选项设置 anti_hyperthermia_coalition 标记，决定谁参战。1050（危机国家被灭，终止状况）与 1054（己方熔炉被夺回）为隐藏事件，无可读文本。",
+   "en": "Commentary: hidden infernals.1041 declares the war and starts the Firestorm situation when the Mobilization timer ends; the coalition option of 1040 sets anti_hyperthermia_coalition, which decides who joins. 1050 (crisis country destroyed, situations aborted) and 1054 (own crucible recaptured) are hidden events with no readable text (events/infernals_crisis_events.txt:574-752, 821-840, 1065-1075)."}
+ ],
+ "review": {
+  "status": "reviewed", "date": "2026-10-13", "reviewer": "c5b-crisis (Opus 5.5)",
+  "sources": ["events/infernals_crisis_events.txt", "common/situations/13_infernal_situations.txt", "common/crisis_levels/00_crisis_levels.txt", "common/megastructures/22_galactic_crucible.txt", "common/special_projects/00_projects_infernals.txt"],
+  "uncertain": ["Hidden conduit/objective events infernals.2000-2020 (monthly Entropy Crystal rewards) are not story docs and are not shown", "Exact doomclock timing depends on core systems held (situation monthly_progress), not fixed"],
+  "guide": "public/summaries/galactic-hyperthermia.md"
+ }
+}

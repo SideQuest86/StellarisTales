@@ -1,0 +1,46 @@
+{
+ "id": "rift-psionic-stranger",
+ "category": "rifts",
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.3215", "astral_rift.3220", "astral_rift.3225", "astral_rift.3230"],
+   "label": {"zh": "对先知说什么：取决于泽洛族故事线进度", "en": "What to tell the Far-Seer: depends on the Zroni storyline"},
+   "note": {"zh": "3210 的前三个选项由探索者在泽洛族考古故事线中的进度决定（进入 3210 时由 update_zrony_storyline_flags 设为 completed / started / not_started 三者之一）：已完成 → 3215，已开始 → 3220，未开始 → 3225；非唯物主义者可选“无权干预”、唯物主义者可选“微不足道”（都 → 3230）。", "en": "The first three options of 3210 depend on the explorer's progress in the Zroni archaeology storyline (update_zrony_storyline_flags sets exactly one of completed / started / not_started): completed → 3215, started → 3220, not started → 3225; non-materialists may choose “not our place”, materialists “trivial” (both → 3230)."}},
+  {"kind": "exclusive", "members": ["astral_rift.3235", "astral_rift.3240"],
+   "label": {"zh": "劝阻或鼓励先知进入虚境", "en": "Discourage or encourage the Far-Seer to enter the Shroud"},
+   "note": {"zh": "3215.a / 3220.a / 3225.a 劝阻（→ 3235），3215.b / 3220.b / 3225.b 鼓励（→ 3240，3215.b 使难度 +1）。3225 的两个选项分别排除狂热唯灵者 / 狂热唯物主义者。", "en": "3215.a / 3220.a / 3225.a discourage (→ 3235), 3215.b / 3220.b / 3225.b encourage (→ 3240, 3215.b raises difficulty by 1). The two options of 3225 exclude fanatic spiritualists and fanatic materialists respectively."}}
+ ],
+ "endings": {
+  "astral_rift.3245": {
+   "label": {"zh": "机会来袭：矿物贮藏", "en": "Opportunity Strikes: the mineral cache"},
+   "note": {"zh": "不干预先知：大量星界丝缕、矿物与稀有水晶收入；探索结束。", "en": "Not intervening: a large astral thread reward, minerals and rare crystals income; the exploration ends."},
+   "evidence": "events/astral_rifts_3_events.txt:2596-2625"},
+  "astral_rift.3280": {
+   "label": {"zh": "来自彼岸的讯息（劝阻）", "en": "A Message from Beyond (discouraged)"},
+   "note": {"zh": "3235 结束探索（格式塔 / 唯物主义者得能量，其余得灵能研究选项），1080 天 + 随机 720 天后触发：一项稀有科技选项与大量星界丝缕。", "en": "3235 ends the exploration (gestalt / materialist empires get energy, others a psionics research option); 1080 days + up to 720 random days later: a rare technology option and a large astral thread reward."},
+   "evidence": "events/astral_rifts_3_events.txt:2443-2506, 2627-2663"},
+  "astral_rift.3285": {
+   "label": {"zh": "虚境之诺（鼓励）", "en": "The Shroud's Promise (encouraged)"},
+   "note": {"zh": "3240 结束探索（同样的资源 / 灵能研究奖励），1080 天 + 随机 720 天后触发：修正 zroni_insight_modifier（舰队的太空风暴减免，由 3290–3292 隐藏事件维护）、能量、稀有水晶与大量星界丝缕。", "en": "3240 ends the exploration (the same energy / psionics reward), 1080 days + up to 720 random days later: modifier zroni_insight_modifier (space storm reduction for fleets, maintained by hidden events 3290–3292), energy, rare crystals and a large astral thread reward."},
+   "evidence": "events/astral_rifts_3_events.txt:2508-2594, 2665-2772"}
+ },
+ "notes": [
+  {"doc": "astral_rifts:psionic_stranger", "kind": "review",
+   "zh": "抽取权重 1，无条件；不产出遗珍，没有失败分支（00_astral_rifts.txt:422-431）。故事通过国家标记 zroni_intro / zroni_completed 与泽洛族考古故事线衔接，但并不属于该故事线，未并入。",
+   "en": "Draw weight 1, no conditions; no relic and no failure branch (00_astral_rifts.txt:422-431). The story ties into the Zroni archaeology storyline through the country flags zroni_intro / zroni_completed but is not part of it, and is not merged."},
+  {"doc": "astral_rift.3235", "kind": "review",
+   "zh": "3235 / 3240 的 a 选项立即结束探索；3280 / 3285 是之后很久才送达的国家事件（hidden_effect 内 days = 1080, random = 720），其正文随泽洛族故事线进度变化。",
+   "en": "Option a of 3235 / 3240 ends the exploration immediately; 3280 / 3285 are country events delivered much later (days = 1080, random = 720 inside a hidden_effect), their text varying with the Zroni storyline progress."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 3200–3292 全部事件、泽洛族故事线标记、延时事件和奖励。",
+   "en": "Checked the rift definition and every event 3200–3292 with the Zroni storyline flags, delayed events and rewards."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_3_events.txt", "common/scripted_effects/astral_rift_effects.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-psionic-stranger.md"
+ }
+}

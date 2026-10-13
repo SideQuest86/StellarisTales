@@ -1,0 +1,34 @@
+{
+ "id": "event-arkship-65",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "arkship.70",
+    "arkship.80",
+    "arkship.85",
+    "arkship.90"
+   ],
+   "label": {
+    "zh": "比赛结果四选一",
+    "en": "One of four race results"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "方舟随机池中的一件：触发条件、一次性标记、选项与全部后续。",
+   "en": "One arkship pool episode: trigger, once-flag, options and all follow-ups."
+  },
+  "sources": [
+   "events/nomads_arkship_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/06_projects_nomads.txt",
+   "common/scripted_variables/10_scripted_variables_nomads.txt"
+  ],
+  "guide": "public/summaries/event-arkship-65.md"
+ }
+}

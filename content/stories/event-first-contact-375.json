@@ -1,0 +1,259 @@
+{
+ "id": "event-first-contact-375",
+ "family": {
+  "title": {
+   "zh": "恐怖噪音",
+   "en": "Monstrous Noises"
+  },
+  "category": "society",
+  "start": "first_contact.365",
+  "members": [
+   "first_contact.365",
+   "first_contact.370",
+   "first_contact.375",
+   "first_contact.376",
+   "first_contact.377",
+   "first_contact.378",
+   "first_contact.379",
+   "first_contact.500",
+   "first_contact.505"
+  ]
+ },
+ "titleFrom": "first_contact.365",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact.365",
+   "to": "first_contact.378",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声收尾阶段（未回应，对方主动）(难度5) / 怪声收尾阶段（未回应，对方谨慎）(难度7)",
+    "en": "Stage: monstrous noises end stage (no reply, proactive) (difficulty 5) / monstrous noises end stage (no reply, cautious) (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:5217 set_first_contact_stage = default_monstrous_noises_no_action_end_stage_proactive; common/first_contact/00_*.txt:1676 fires first_contact.378; first_contact_events.txt:5220 set_first_contact_stage = default_monstrous_noises_no_action_end_stage_cautious; common/first_contact/00_*.txt:1715 fires first_contact.378",
+   "choice": "first_contact.365.A"
+  },
+  {
+   "from": "first_contact.365",
+   "to": "first_contact.379",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声收尾阶段（未回应，对方主动）(难度5) / 怪声收尾阶段（未回应，对方谨慎）(难度7)",
+    "en": "Stage: monstrous noises end stage (no reply, proactive) (difficulty 5) / monstrous noises end stage (no reply, cautious) (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:5217 set_first_contact_stage = default_monstrous_noises_no_action_end_stage_proactive; common/first_contact/00_*.txt:1690 fires first_contact.379; first_contact_events.txt:5220 set_first_contact_stage = default_monstrous_noises_no_action_end_stage_cautious; common/first_contact/00_*.txt:1729 fires first_contact.379",
+   "choice": "first_contact.365.A"
+  },
+  {
+   "from": "first_contact.365",
+   "to": "first_contact.370",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声：对方回应通知(难度0)",
+    "en": "Stage: monstrous noises: their reaction arrives (difficulty 0)"
+   },
+   "evidence": "first_contact_events.txt:5227 set_first_contact_stage = default_monstrous_noises_notification_stage; common/first_contact/00_*.txt:1596 fires first_contact.370; first_contact_events.txt:5230 set_first_contact_stage = default_monstrous_noises_notification_stage; common/first_contact/00_*.txt:1596 fires first_contact.370",
+   "choice": "first_contact.365.B"
+  },
+  {
+   "from": "first_contact.370",
+   "to": "first_contact.375",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:5310 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1620 fires first_contact.375",
+   "choice": "INTRIGUING"
+  },
+  {
+   "from": "first_contact.370",
+   "to": "first_contact.376",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:5310 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1637 fires first_contact.376",
+   "choice": "INTRIGUING"
+  },
+  {
+   "from": "first_contact.370",
+   "to": "first_contact.377",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:5310 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1651 fires first_contact.377",
+   "choice": "INTRIGUING"
+  },
+  {
+   "from": "first_contact.370",
+   "to": "first_contact.375",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:5314 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1620 fires first_contact.375",
+   "choice": "WORRYING"
+  },
+  {
+   "from": "first_contact.370",
+   "to": "first_contact.376",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:5314 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1637 fires first_contact.376",
+   "choice": "WORRYING"
+  },
+  {
+   "from": "first_contact.370",
+   "to": "first_contact.377",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:5314 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1651 fires first_contact.377",
+   "choice": "WORRYING"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.375",
+    "first_contact.376",
+    "first_contact.377"
+   ],
+   "label": {
+    "zh": "回应后的三种结局（按对方文明抽取）",
+    "en": "Three endings after we answered (drawn by the other empire)"
+   },
+   "note": {
+    "zh": "同一阶段按权重抽取：375 权重1，仅对方为“狂热净化者”；376 权重3，对方须为好战且非净化者；377 权重1，仅对方不是净化者。",
+    "en": "One stage draws among them by weight: 375 (weight 1) only if they are fanatic purifiers; 376 (weight 3) only if they are militarist non-purifiers; 377 (weight 1) only if they are not purifiers."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.378",
+    "first_contact.379"
+   ],
+   "label": {
+    "zh": "未回应的两种结局",
+    "en": "Two endings if we stayed silent"
+   },
+   "note": {
+    "zh": "378 权重3（对方是净化者或好战才可能）；379 权重1（对方是净化者时为0）。",
+    "en": "378 (weight 3) needs a purifier or militarist contact; 379 (weight 1) is zero when the contact is a purifier."
+   }
+  }
+ ],
+ "endings": {
+  "first_contact.375": {
+   "label": {
+    "zh": "结局：原来是净化者",
+    "en": "Ending: they are purifiers"
+   },
+   "note": {
+    "zh": "得知对方是狂热净化者；无额外加成，仅结束首次接触。",
+    "en": "Learns they are fanatic purifiers; no extra reward, first contact ends."
+   },
+   "evidence": "events/first_contact_events.txt:5320-5378"
+  },
+  "first_contact.376": {
+   "label": {
+    "zh": "结局：配得上他们的挑战",
+    "en": "Ending: worthy of the challenge"
+   },
+   "note": {
+    "zh": "获得10年的“战士得到承认/被默认”修正，对方给予“赢得尊重”好感。",
+    "en": "10-year warrior-recognised (or presumed) modifier; the other side gains a respect-earned opinion."
+   },
+   "evidence": "events/first_contact_events.txt:5379-5450"
+  },
+  "first_contact.377": {
+   "label": {
+    "zh": "结局：侮辱了他们",
+    "en": "Ending: an insult"
+   },
+   "note": {
+    "zh": "对方好感大降；选项B（非亲异族）反而获得少量团结度。",
+    "en": "Large opinion loss; option B (non-xenophile) also yields a small unity reward."
+   },
+   "evidence": "events/first_contact_events.txt:5451-5519"
+  },
+  "first_contact.378": {
+   "label": {
+    "zh": "结局：未回应挑战",
+    "en": "Ending: failed to answer the challenge"
+   },
+   "note": {
+    "zh": "对方认为我方懦弱（cowardly 好感修正）。",
+    "en": "They think us cowardly (cowardly opinion modifier)."
+   },
+   "evidence": "events/first_contact_events.txt:5520-5566"
+  },
+  "first_contact.379": {
+   "label": {
+    "zh": "结局：不回应是对的",
+    "en": "Ending: right not to respond"
+   },
+   "note": {
+    "zh": "获得少量团结度。",
+    "en": "A small unity reward."
+   },
+   "evidence": "events/first_contact_events.txt:5567-5613"
+  },
+  "first_contact.505": {
+   "label": {
+    "zh": "结局：战斗爆发",
+    "en": "Ending: shots fired"
+   },
+   "note": {
+    "zh": "对方开火，转入战斗（500/505 的选项均为“拿起武器”）。",
+    "en": "They open fire; the only option is “To arms!”."
+   },
+   "evidence": "events/first_contact_events.txt:7992-8045"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact.365",
+   "kind": "review",
+   "zh": "审阅注：选项B“回敬威胁噪音”在隐藏效果中 90% 进入“回应通知”阶段（→370），10% 直接打响（500，并转入谨慎收尾阶段）；若对方是和平主义者则 10% 档权重为0。选项C“备战”获得5400天的备战修正并转入通用收尾阶段。",
+   "en": "Review note: option B (return threatening noises) rolls 9:1 in a hidden random_list — the 9 enters the “their reaction” stage (370), the 1 starts a fight (500) and the cautious end stage; the 1 is removed if the contact is pacifist. Option C (prepare for war) grants a 5400-day war-preparations modifier and uses the generic end stage."
+  },
+  {
+   "doc": "first_contact.370",
+   "kind": "review",
+   "zh": "审阅注：370 的两个选项（有趣/令人担忧）效果相同，都转入“回应收尾阶段”（难度3）。",
+   "en": "Review note: both options of 370 (intriguing / worrying) are identical and enter the end stage (difficulty 3)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "怪声链全部9个事件及阶段衔接（含 500/505 敌对爆发）。",
+   "en": "All 9 Monstrous Noises events with stage hand-offs, including the 500/505 hostilities."
+  },
+  "sources": [
+   "events/first_contact_events.txt:5182-5613",
+   "events/first_contact_events.txt:7992-8045",
+   "common/first_contact/00_first_contact.txt:488-527",
+   "common/first_contact/00_first_contact.txt:1584-1740"
+  ],
+  "uncertain": [
+   "阶段权重修正的精确含义（factor 0 的条件取反）按脚本直读。 / Weight modifiers read literally from the stage file."
+  ],
+  "guide": "public/summaries/event-first-contact-375.md"
+ }
+}

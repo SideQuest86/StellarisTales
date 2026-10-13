@@ -1,0 +1,120 @@
+{
+ "id": "event-utopia-4100",
+ "family": {
+  "title": {
+   "zh": "哨兵阵列",
+   "en": "Sentry Array"
+  },
+  "category": "stories",
+  "start": "utopia.4100",
+  "members": [
+   "utopia.4100",
+   "utopia.4103",
+   "utopia.4104",
+   "utopia.4102",
+   "utopia.4110",
+   "utopia.4101",
+   "utopia.2014",
+   "utopia.2015"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "utopia.4100",
+   "to": "utopia.4103",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：哨兵中心建成（spy_orb_1）",
+    "en": "After the next upgrade: Sentry hub built (spy_orb_1)"
+   },
+   "evidence": "events/megastructure_events_1.txt:2708-2727; common/on_actions/00_on_actions.txt:3703"
+  },
+  {
+   "from": "utopia.4103",
+   "to": "utopia.4104",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：哨兵阵列完工（spy_orb_4）",
+    "en": "After the next upgrade: Sentry Array completed (spy_orb_4)"
+   },
+   "evidence": "events/megastructure_events_1.txt:2729-2771; common/on_actions/00_on_actions.txt:3704"
+  },
+  {
+   "from": "utopia.4103",
+   "to": "utopia.4102",
+   "conditional": true,
+   "label": {
+    "zh": "中心建成时：有通讯并有情报的玩家帝国收到通知（隐藏事件4101）",
+    "en": "When the hub is built: human empires with communications/intel get a notice (hidden 4101)"
+   },
+   "evidence": "events/megastructure_events_1.txt:2645-2690 hidden utopia.4101 (spy_orb_1, common/on_actions/00_on_actions.txt:3702) fires 4102 at line 2675"
+  },
+  {
+   "from": "utopia.4104",
+   "to": "utopia.4110",
+   "conditional": true,
+   "label": {
+    "zh": "完工时：同样条件的玩家帝国收到通知",
+    "en": "On completion: the same empires get a notice"
+   },
+   "evidence": "events/megastructure_events_1.txt:2729-2771 4104 immediate fires utopia.4110 at line 2763"
+  },
+  {
+   "from": "utopia.2014",
+   "to": "utopia.2015",
+   "conditional": true,
+   "label": {
+    "zh": "修复废墟（建造“修复”型巨型结构）后",
+    "en": "After the ruin is restored (the \"restored\" megastructure type is built over it)"
+   },
+   "evidence": "common/megastructures/02_spy_orb.txt:495 on_build_complete fires utopia.2015; the restored type is upgrade_from the ruined type"
+  }
+ ],
+ "nodeLabels": {
+  "utopia.4102": {
+   "zh": "其他帝国收到的通知",
+   "en": "Notice to other empires"
+  },
+  "utopia.4110": {
+   "zh": "其他帝国收到的通知",
+   "en": "Notice to other empires"
+  },
+  "utopia.2014": {
+   "zh": "遇到废墟",
+   "en": "Finding the ruin"
+  },
+  "utopia.2015": {
+   "zh": "废墟修复",
+   "en": "Ruin restored"
+  }
+ },
+ "notes": [
+  {
+   "doc": "utopia.4100",
+   "kind": "review",
+   "zh": "审阅说明：哨兵阵列每完成一个建造阶段，由 on_megastructure_built / on_megastructure_upgraded 在建造国触发对应事件（并非选项链接）；各阶段按建造顺序排列。",
+   "en": "Review note: each build stage of the Sentry Array fires its own event for the builder from on_megastructure_built / on_megastructure_upgraded (not option links); stages are shown in construction order. "
+  },
+  {
+   "doc": "utopia.2014",
+   "kind": "review",
+   "zh": "审阅说明：废墟是地图上预置的，不属于任何建造阶段；首次进入该星系时由 on_entering_system_first_time 触发。",
+   "en": "Review note: the ruin is a pre-placed map object, not a build stage; on_entering_system_first_time fires this event the first time a ship enters the system."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "哨兵阵列各建造阶段事件、给其他帝国的通知、废墟与修复事件。",
+   "en": "Sentry Array: build-stage events, notices to other empires, the ruin and restoration events."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/megastructures/02_spy_orb.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-utopia-4100.md"
+ }
+}

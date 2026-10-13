@@ -1,0 +1,54 @@
+{
+ "id": "rift-windswept-planet",
+ "category": "rifts",
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.2705", "astral_rift.2710"],
+   "label": {"zh": "越过风暴或躲入洞穴", "en": "Rise above the storm or shelter in the cave"},
+   "note": {"zh": "2700 的两个选项开启两条平行但互不相交的线索：风之线（2705 → 2715 → 2725）与真菌洞穴线（2710 → 2720 → 2730），随后汇合到相同的四种结局。", "en": "The two options of 2700 open two separate lines: the wind line (2705 → 2715 → 2725) and the fungal cave line (2710 → 2720 → 2730), which then converge on the same four outcomes."}},
+  {"kind": "exclusive", "members": ["astral_rift.2755", "astral_rift.2760", "astral_rift.2765", "astral_rift.2770"],
+   "label": {"zh": "风、真菌、折衷或灭绝", "en": "Wind, fungus, compromise or eradication"},
+   "note": {"zh": "在 2745 / 2750 中选择：加固风（花 25 合金，难度 −3 → 2755）、滋养真菌（花 50 矿物，难度 −3 → 2760）、协商折衷（非狂暴灭绝者 → 2765）或灭绝两者（狂暴灭绝者 → 2770）。2730.a 可直接以 50 矿物保护生态系统（→ 2760）。", "en": "Chosen in 2745 / 2750: fortify the wind (25 alloys, difficulty −3 → 2755), nourish the fungus (50 minerals, difficulty −3 → 2760), negotiate (non-homicidal → 2765) or eradicate both (homicidal → 2770). 2730.a protects the ecosystem directly for 50 minerals (→ 2760)."}}
+ ],
+ "endings": {
+  "astral_rift.2755": {
+   "label": {"zh": "镰鼬之风：风占上风", "en": "Cutting Winds: the wind prevails"},
+   "note": {"zh": "解锁培育风生物的能力（国家变量 num_authorized_wind_creatures = 3）；演化猎手起源另得真菌 DNA；探索结束。", "en": "Unlocks incubating wind creatures (country variable num_authorized_wind_creatures = 3); Evolutionary Predators also get fungoid DNA; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:3680-3719"},
+  "astral_rift.2760": {
+   "label": {"zh": "真菌绽放：真菌占上风", "en": "Fungal Bloom: the fungus prevails"},
+   "note": {"zh": "标本“超维真菌”与修正 extra_dimensional_spores_modifier；演化猎手起源另得鸟类 DNA；探索结束。", "en": "Specimen “extradimensional fungus” and modifier extra_dimensional_spores_modifier; Evolutionary Predators also get avian DNA; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:3721-3750"},
+  "astral_rift.2765": {
+   "label": {"zh": "困难的协商：折衷", "en": "A Difficult Compromise"},
+   "note": {"zh": "该星球获得“社会”矿藏 d_society_10，外加奇异气体、能量与大量星界丝缕；格式塔帝国另得凝聚力；探索结束。非格式塔帝国两天后触发领袖事件 2790。", "en": "The planet gains the society deposit d_society_10, plus exotic gases, energy and a large astral thread reward; gestalt empires also get unity; the exploration ends. Non-gestalt empires get leader event 2790 two days later."},
+   "evidence": "events/astral_rifts_2_events.txt:3753-3819"},
+  "astral_rift.2770": {
+   "label": {"zh": "生物灭绝", "en": "Biological Eradication"},
+   "note": {"zh": "两个物种都被消灭：食物、凝聚力与大量星界丝缕；探索结束。", "en": "Both species are wiped out: food, unity and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_2_events.txt:3821-3863"},
+  "astral_rift.2790": {
+   "label": {"zh": "特殊请求：科学家转任", "en": "A Special Request: the scientist asks for a new duty"},
+   "note": {"zh": "尾声：调解成功的科学家请求转为使节（得到 reconverted_leader_modifier）或留任。", "en": "Coda: the scientist who brokered the agreement asks to become an envoy (gaining reconverted_leader_modifier) or stays."},
+   "evidence": "events/astral_rifts_2_events.txt:3865-3915"}
+ },
+ "notes": [
+  {"doc": "astral_rifts:windswept_planet", "kind": "review",
+   "zh": "抽取权重 1，无条件；不产出遗珍，没有失败分支（00_astral_rifts.txt:355-364）。",
+   "en": "Draw weight 1, no conditions; no relic and no failure branch (00_astral_rifts.txt:355-364)."},
+  {"doc": "astral_rift.2750", "kind": "review",
+   "zh": "2750 的第四个选项与 2745 共用同一选项键 astral_rift.2745.d（events/astral_rifts_2_events.txt:3660），所以编译图把两处都标成同一个键。",
+   "en": "The fourth option of 2750 reuses the option key astral_rift.2745.d (events/astral_rifts_2_events.txt:3660), so the compiled graph shows the same key on both."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 2700–2790 全部事件、资源门槛、选项条件与奖励。",
+   "en": "Checked the rift definition and every event 2700–2790 with resource gates, option conditions and rewards."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-windswept-planet.md"
+ }
+}

@@ -3,14 +3,14 @@
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
   "stories": 102,
-  "docs": 1043,
-  "nodes": 1157,
+  "docs": 1037,
+  "nodes": 1151,
   "refs": 114,
-  "crossLinks": 2003,
+  "crossLinks": 2002,
   "review": {
-    "reviewed": 12,
+    "reviewed": 29,
     "partial": 2,
-    "unreviewed": 88
+    "unreviewed": 71
   },
   "failures": [],
   "items": [
@@ -18,7 +18,7 @@
       "id": "first-league",
       "title": "第一联盟",
       "kind": "family",
-      "docs": 67,
+      "docs": 66,
       "refs": 15,
       "crossLinks": 1,
       "review": "reviewed"
@@ -27,7 +27,7 @@
       "id": "vultaum",
       "title": "沃陶姆恒星议会",
       "kind": "family",
-      "docs": 61,
+      "docs": 60,
       "refs": 14,
       "crossLinks": 1,
       "review": "reviewed"
@@ -36,7 +36,7 @@
       "id": "irassian",
       "title": "伊拉斯协约国",
       "kind": "family",
-      "docs": 55,
+      "docs": 54,
       "refs": 12,
       "crossLinks": 1,
       "review": "reviewed"
@@ -45,7 +45,7 @@
       "id": "cybrex",
       "title": "赛博勒克斯",
       "kind": "family",
-      "docs": 54,
+      "docs": 53,
       "refs": 11,
       "crossLinks": 1,
       "review": "reviewed"
@@ -54,7 +54,7 @@
       "id": "yuht",
       "title": "尤特帝国",
       "kind": "family",
-      "docs": 50,
+      "docs": 49,
       "refs": 10,
       "crossLinks": 2,
       "review": "reviewed"
@@ -72,7 +72,7 @@
       "id": "baol",
       "title": "最后的巴奥",
       "kind": "family",
-      "docs": 39,
+      "docs": 38,
       "refs": 14,
       "crossLinks": 157,
       "review": "reviewed"
@@ -114,12 +114,165 @@
       "review": "partial"
     },
     {
+      "id": "site-site-grand-herald",
+      "title": "伟大先驱",
+      "kind": "family",
+      "docs": 10,
+      "refs": 2,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-lesser-messenger",
+      "title": "尘中之信",
+      "kind": "family",
+      "docs": 9,
+      "refs": 2,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
       "id": "the-oracle",
       "title": "神谕",
       "kind": "family",
       "docs": 8,
       "refs": 0,
       "crossLinks": 40,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-ebb-and-flow",
+      "title": "岩石之外",
+      "kind": "family",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 14,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-phoenix-collective",
+      "title": "有人在吗？",
+      "kind": "family",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 12,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-cut-to-fit",
+      "title": "棱角分明",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-deja-vu-dig",
+      "title": "似曾相识的挖掘",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 17,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-fossilized-jellyfish",
+      "title": "星罗群岛",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 7,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-hive-coral",
+      "title": "波涛之下",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 7,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-orbital-rain",
+      "title": "一查到底",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 7,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-shot-into-the-ground",
+      "title": "大地之眼",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 6,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-sky-glow-hymn",
+      "title": "美丽泡沫",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 9,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-strange-flows",
+      "title": "奇异流体",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-target-from-orbit",
+      "title": "轨道目标",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 22,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-warmer-climates",
+      "title": "深入探查",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 12,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-moon-bump",
+      "title": "被撞肿的行星",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 8,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-popular-rock",
+      "title": "受欢迎的岩石",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 10,
+      "review": "reviewed"
+    },
+    {
+      "id": "site-site-trench-world",
+      "title": "堑壕星球",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 5,
       "review": "reviewed"
     },
     {
@@ -236,7 +389,7 @@
       "kind": "site",
       "docs": 10,
       "refs": 0,
-      "crossLinks": 42,
+      "crossLinks": 41,
       "review": "unreviewed"
     },
     {
@@ -255,15 +408,6 @@
       "docs": 10,
       "refs": 0,
       "crossLinks": 39,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-grand-herald",
-      "title": "伟大先驱",
-      "kind": "site",
-      "docs": 10,
-      "refs": 2,
-      "crossLinks": 9,
       "review": "unreviewed"
     },
     {
@@ -300,15 +444,6 @@
       "docs": 9,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-lesser-messenger",
-      "title": "尘中之信",
-      "kind": "site",
-      "docs": 9,
-      "refs": 2,
-      "crossLinks": 9,
       "review": "unreviewed"
     },
     {
@@ -357,15 +492,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "site-site-ebb-and-flow",
-      "title": "岩石之外",
-      "kind": "site",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 14,
-      "review": "unreviewed"
-    },
-    {
       "id": "site-site-freighter-crash",
       "title": "陨落星舰",
       "kind": "site",
@@ -381,15 +507,6 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-phoenix-collective",
-      "title": "有人在吗？",
-      "kind": "site",
-      "docs": 7,
-      "refs": 0,
-      "crossLinks": 12,
       "review": "unreviewed"
     },
     {
@@ -447,51 +564,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "site-site-cut-to-fit",
-      "title": "棱角分明",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-deja-vu-dig",
-      "title": "似曾相识的挖掘",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 17,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-fossilized-jellyfish",
-      "title": "星罗群岛",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 7,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-hive-coral",
-      "title": "波涛之下",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 7,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-orbital-rain",
-      "title": "一查到底",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 7,
-      "review": "unreviewed"
-    },
-    {
       "id": "site-site-polaris-seed-vault",
       "title": "最后的希望",
       "kind": "site",
@@ -507,51 +579,6 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 39,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-shot-into-the-ground",
-      "title": "大地之眼",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 6,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-sky-glow-hymn",
-      "title": "美丽泡沫",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 9,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-strange-flows",
-      "title": "奇异流体",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 3,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-target-from-orbit",
-      "title": "轨道目标",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 22,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-warmer-climates",
-      "title": "深入探查",
-      "kind": "site",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 12,
       "review": "unreviewed"
     },
     {
@@ -636,15 +663,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "site-site-moon-bump",
-      "title": "被撞肿的行星",
-      "kind": "site",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 8,
-      "review": "unreviewed"
-    },
-    {
       "id": "site-site-percussive-maintenance",
       "title": "被毁的空间站",
       "kind": "site",
@@ -654,30 +672,12 @@
       "review": "unreviewed"
     },
     {
-      "id": "site-site-popular-rock",
-      "title": "受欢迎的岩石",
-      "kind": "site",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 10,
-      "review": "unreviewed"
-    },
-    {
       "id": "site-site-star-petal",
       "title": "气态巨行星中的建筑",
       "kind": "site",
       "docs": 5,
       "refs": 0,
       "crossLinks": 40,
-      "review": "unreviewed"
-    },
-    {
-      "id": "site-site-trench-world",
-      "title": "堑壕星球",
-      "kind": "site",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 5,
       "review": "unreviewed"
     },
     {

@@ -1,0 +1,34 @@
+{
+ "id": "event-colony-2010",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.2011",
+    "colony.2012"
+   ],
+   "label": {
+    "zh": "镇压的结果：40%良好 / 60%糟糕",
+    "en": "Subjugation result: 40% good / 60% bad"
+   },
+   "note": {
+    "zh": "选项c.spirit与c.material各自触发同一个 random_list，160天后出现。",
+    "en": "Options c.spirit and c.material each run the same random_list; the result appears 160 days later."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "伦理转变：殖民地信仰/物质分歧、四个选项及两种结果。",
+   "en": "A Change of Heart: spiritualist/materialist divergence, four options and two results."
+  },
+  "sources": [
+   "events/colony_events_2.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-colony-2010.md"
+ }
+}

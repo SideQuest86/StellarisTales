@@ -1,0 +1,116 @@
+{
+ "id": "event-utopia-4000",
+ "family": {
+  "title": {
+   "zh": "戴森球",
+   "en": "Dyson Sphere"
+  },
+  "category": "stories",
+  "start": "utopia.4000",
+  "members": [
+   "utopia.4000",
+   "utopia.4003",
+   "utopia.4004",
+   "utopia.4005",
+   "utopia.4002",
+   "utopia.4001",
+   "utopia.2010",
+   "utopia.2011"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "utopia.4000",
+   "to": "utopia.4003",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：框架建成（dyson_sphere_1）",
+    "en": "After the next upgrade: Frame built (dyson_sphere_1)"
+   },
+   "evidence": "events/megastructure_events_1.txt:2919-2937; common/on_actions/00_on_actions.txt:3698"
+  },
+  {
+   "from": "utopia.4003",
+   "to": "utopia.4004",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：部分建成：已装嵌板（dyson_sphere_2）",
+    "en": "After the next upgrade: Panels installed (dyson_sphere_2)"
+   },
+   "evidence": "events/megastructure_events_1.txt:2939-2957; common/on_actions/00_on_actions.txt:3699"
+  },
+  {
+   "from": "utopia.4004",
+   "to": "utopia.4005",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：戴森球完工（dyson_sphere_5）",
+    "en": "After the next upgrade: Dyson Sphere completed (dyson_sphere_5)"
+   },
+   "evidence": "events/megastructure_events_1.txt:2959-2988; common/on_actions/00_on_actions.txt:3700"
+  },
+  {
+   "from": "utopia.4003",
+   "to": "utopia.4002",
+   "conditional": true,
+   "label": {
+    "zh": "框架完成时：有通讯并有经济/科技情报的玩家帝国收到通知（隐藏事件4001）",
+    "en": "When the frame stage is built: human empires with communications/intel get a notice (hidden 4001)"
+   },
+   "evidence": "events/megastructure_events_1.txt:2811-2856 hidden utopia.4001 (dyson_sphere_1, common/on_actions/00_on_actions.txt:3697) -> every_relation, not AI, has_communications, economy/technology intel >= 1 -> utopia.4002"
+  },
+  {
+   "from": "utopia.2010",
+   "to": "utopia.2011",
+   "conditional": true,
+   "label": {
+    "zh": "修复废墟（建造“修复”型巨型结构）后",
+    "en": "After the ruin is restored (the \"restored\" megastructure type is built over it)"
+   },
+   "evidence": "common/megastructures/01_dyson_sphere.txt:1038 on_build_complete fires utopia.2011; the restored type is upgrade_from the ruined type"
+  }
+ ],
+ "nodeLabels": {
+  "utopia.4002": {
+   "zh": "其他帝国收到的通知",
+   "en": "Notice to other empires"
+  },
+  "utopia.2010": {
+   "zh": "遇到废墟",
+   "en": "Finding the ruin"
+  },
+  "utopia.2011": {
+   "zh": "废墟修复",
+   "en": "Ruin restored"
+  }
+ },
+ "notes": [
+  {
+   "doc": "utopia.4000",
+   "kind": "review",
+   "zh": "审阅说明：戴森球每完成一个建造阶段，由 on_megastructure_built / on_megastructure_upgraded 在建造国触发对应事件（并非选项链接）；各阶段按建造顺序排列。dyson_sphere_3、_4 阶段只发出隐藏的提示消息 utopia.4006，没有可读事件。",
+   "en": "Review note: each build stage of the Dyson Sphere fires its own event for the builder from on_megastructure_built / on_megastructure_upgraded (not option links); stages are shown in construction order. Stages dyson_sphere_3 and _4 only fire the hidden alert message utopia.4006; there is no readable event for them."
+  },
+  {
+   "doc": "utopia.2010",
+   "kind": "review",
+   "zh": "审阅说明：废墟是地图上预置的，不属于任何建造阶段；首次进入该星系时由 on_entering_system_first_time 触发。",
+   "en": "Review note: the ruin is a pre-placed map object, not a build stage; on_entering_system_first_time fires this event the first time a ship enters the system."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "戴森球各建造阶段事件、给其他帝国的通知、废墟与修复事件。",
+   "en": "Dyson Sphere: build-stage events, notices to other empires, the ruin and restoration events."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/megastructures/01_dyson_sphere.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-utopia-4000.md"
+ }
+}

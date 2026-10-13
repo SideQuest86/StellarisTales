@@ -1,0 +1,89 @@
+{
+ "id": "event-colony-150",
+ "family": {
+  "title": {
+   "zh": "地下避难所",
+   "en": "Underground Vault"
+  },
+  "category": "society",
+  "start": "colony.150",
+  "members": [
+   "colony.150",
+   "colony.151",
+   "colony.152",
+   "colony.153",
+   "colony.154",
+   "colony.158",
+   "special_projects:UNDERGROUND_VAULT_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "colony.153",
+   "to": "colony.154",
+   "conditional": true,
+   "label": {
+    "zh": "若殖民地失守",
+    "en": "If the colony is lost"
+   },
+   "evidence": "153 sets vault_mutants_invade flags and creates mutant armies (events/colony_events_1.txt:3374-3405); on_colony_defenders_lose -> colony.154 (common/on_actions/00_on_actions.txt:881), trigger colony_events_1.txt:3423-3426"
+  },
+  {
+   "from": "colony.154",
+   "to": "colony.158",
+   "conditional": true,
+   "label": {
+    "zh": "若夺回星球",
+    "en": "If the planet is retaken"
+   },
+   "evidence": "on_colony_attackers_win -> colony.158 (00_on_actions.txt:833), trigger needs vault_mutants_won (colony_events_1.txt:3469-3472)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.151",
+    "colony.152",
+    "colony.153"
+   ],
+   "label": {
+    "zh": "开启结果各三分之一",
+    "en": "Opening outcomes, one third each"
+   },
+   "note": {
+    "zh": "151骸骨、152幸存者、153变异恐怖入侵。",
+    "en": "151 skeletal remains, 152 survivors, 153 mutant horrors invade."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "colony.150",
+   "kind": "review",
+   "zh": "殖民地2或3岁时的随机事件（权重75/958、50/739）；全局仅一次；非AI、非首都、非格式塔意识帝国、非核爆星球。",
+   "en": "Random colony event at age 2 or 3 (weights 75/958, 50/739); once per game; non-AI, non-capital, non-Gestalt-Consciousness empire, not a nuked world."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "地下避难所完整故事：开启项目、三种结果、变异恐怖入侵与失守/夺回。",
+   "en": "Whole Underground Vault story: opening project, three outcomes, mutant horror invasion with loss and liberation."
+  },
+  "sources": [
+   "events/colony_events_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "There is no dedicated \"mutants repelled\" event: on_colony_defenders_win lists no vault event."
+  ],
+  "merged": [
+   "event-colony-154",
+   "event-colony-158"
+  ],
+  "guide": "public/summaries/event-colony-150.md"
+ }
+}

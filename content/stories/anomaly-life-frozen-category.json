@@ -1,0 +1,22 @@
+{
+ "id": "anomaly-life-frozen-category",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:526",
+   "events/anomaly_events_2.txt:42 (anomaly.2510)",
+   "common/special_projects/00_projects_1.txt (SEA_EXPEDITION_PROJECT)",
+   "events/anomaly_events_2.txt:90 (anomaly.2512)",
+   "events/anomaly_events_2.txt:141 (anomaly.2513)",
+   "events/anomaly_events_4.txt:3369 (anomaly.6900)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-life-frozen-category.md"
+ }
+}

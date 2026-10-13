@@ -1,0 +1,125 @@
+{
+ "id": "event-first-contact-5085",
+ "family": {
+  "title": {
+   "zh": "穿梭机",
+   "en": "The Shuttle"
+  },
+  "category": "society",
+  "start": "first_contact.5080",
+  "members": [
+   "first_contact.5080",
+   "first_contact.5085",
+   "first_contact.5090",
+   "first_contact.5095"
+  ]
+ },
+ "titleFrom": "first_contact.5080",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact.5080",
+   "to": "first_contact.5085",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：审判：等待（对方主动）(难度5) / 审判：等待（对方谨慎）(难度7)",
+    "en": "Stage: the trial: the wait (proactive) (difficulty 5) / the trial: the wait (cautious) (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:7482 set_first_contact_stage = default_trial_wait_proactive; common/first_contact/00_*.txt:2476 fires first_contact.5085; first_contact_events.txt:7485 set_first_contact_stage = default_trial_wait_cautious; common/first_contact/00_*.txt:2495 fires first_contact.5085",
+   "choice": "PECULIAR"
+  },
+  {
+   "from": "first_contact.5085",
+   "to": "first_contact.5090",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：审判：方式（对方主动）(难度5) / 审判：方式（对方谨慎）(难度7)",
+    "en": "Stage: the trial: the method (proactive) (difficulty 5) / the trial: the method (cautious) (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:7603 set_first_contact_stage = default_trial_method_proactive; common/first_contact/00_*.txt:2514 fires first_contact.5090; first_contact_events.txt:7606 set_first_contact_stage = default_trial_method_cautious; common/first_contact/00_*.txt:2533 fires first_contact.5090",
+   "choice": "first_contact.5085.a"
+  },
+  {
+   "from": "first_contact.5090",
+   "to": "first_contact.5095",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：审判：裁决（对方主动）(难度5) / 审判：裁决（对方谨慎）(难度7)",
+    "en": "Stage: the trial: the verdict (proactive) (difficulty 5) / the trial: the verdict (cautious) (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:7735 set_first_contact_stage = default_trial_verdict_proactive; common/first_contact/00_*.txt:2552 fires first_contact.5095; first_contact_events.txt:7738 set_first_contact_stage = default_trial_verdict_cautious; common/first_contact/00_*.txt:2571 fires first_contact.5095",
+   "choice": "first_contact.5090.a"
+  },
+  {
+   "from": "first_contact.5090",
+   "to": "first_contact.5095",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：审判：裁决（对方主动）(难度5) / 审判：裁决（对方谨慎）(难度7)",
+    "en": "Stage: the trial: the verdict (proactive) (difficulty 5) / the trial: the verdict (cautious) (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:7815 set_first_contact_stage = default_trial_verdict_proactive; common/first_contact/00_*.txt:2552 fires first_contact.5095; first_contact_events.txt:7818 set_first_contact_stage = default_trial_verdict_cautious; common/first_contact/00_*.txt:2571 fires first_contact.5095",
+   "choice": "first_contact.5090.b"
+  },
+  {
+   "from": "first_contact.5090",
+   "to": "first_contact.5095",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：审判：裁决（对方主动）(难度5) / 审判：裁决（对方谨慎）(难度7)",
+    "en": "Stage: the trial: the verdict (proactive) (difficulty 5) / the trial: the verdict (cautious) (difficulty 7)"
+   },
+   "evidence": "first_contact_events.txt:7895 set_first_contact_stage = default_trial_verdict_proactive; common/first_contact/00_*.txt:2552 fires first_contact.5095; first_contact_events.txt:7898 set_first_contact_stage = default_trial_verdict_cautious; common/first_contact/00_*.txt:2571 fires first_contact.5095",
+   "choice": "first_contact.5090.c"
+  }
+ ],
+ "endings": {
+  "first_contact.5095": {
+   "label": {
+    "zh": "结局：裁决",
+    "en": "Ending: the verdict"
+   },
+   "note": {
+    "zh": "按所选方式与随机好/坏结果显示不同文本，并调整对方好感，结束首次接触。",
+    "en": "Text and opinion depend on the chosen method and a good/bad roll; first contact ends."
+   },
+   "evidence": "events/first_contact_events.txt:7904-7986"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact.5080",
+   "kind": "review",
+   "zh": "审阅注：5080 的 immediate 随机决定穿梭机外观：武装 / 实用 / 华丽 / 普通（各权重1；对方和平主义者时武装为0，灵性时实用为0，威权时华丽为0；其偏好伦理 ×6、狂热 ×24）。",
+   "en": "Review note: 5080 randomly picks the shuttle’s look — weaponised, functional, bling or standard (weight 1 each; weapon is 0 for pacifist contacts, functional 0 for spiritualist, bling 0 for authoritarian; matching ethics ×6, fanatic ×24)."
+  },
+  {
+   "doc": "first_contact.5085",
+   "kind": "review",
+   "zh": "审阅注：5085 同理随机房间布置：冥想 / 泳池 / 威严 / 普通。",
+   "en": "Review note: 5085 likewise randomises the meeting room: meditation, pool, imposing or standard."
+  },
+  {
+   "doc": "first_contact.5090",
+   "kind": "review",
+   "zh": "审阅注：三种方式——A 决斗、B 演讲、C 即兴说唱；每种在隐藏效果中 3:1 随机好/坏结果（对方偏好的伦理使不好的一支为 0，厌恶的伦理使好的一支为 0），写入首次接触标记 fc_event_trial_*，并给对方好感修正。",
+   "en": "Review note: three methods — A combat, B speech, C improvised rhyme; each rolls 3:1 good/bad in a hidden effect (the contact’s liked ethic zeroes the bad branch, the hated ethic zeroes the good one), sets an fc_event_trial_* flag and an opinion modifier."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "审判全部4个事件及阶段衔接。",
+   "en": "All 4 The Trial events and the stage hand-offs."
+  },
+  "sources": [
+   "events/first_contact_events.txt:7370-7986",
+   "common/first_contact/00_first_contact.txt:739-765",
+   "common/first_contact/00_first_contact.txt:2464-2577"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-5085.md"
+ }
+}

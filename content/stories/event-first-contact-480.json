@@ -1,0 +1,205 @@
+{
+ "id": "event-first-contact-480",
+ "family": {
+  "title": {
+   "zh": "诗歌",
+   "en": "Poetry"
+  },
+  "category": "society",
+  "start": "first_contact.450",
+  "members": [
+   "first_contact.450",
+   "first_contact.455",
+   "first_contact.460",
+   "first_contact.462",
+   "first_contact.465",
+   "first_contact.470",
+   "first_contact.472",
+   "first_contact.474",
+   "first_contact.475",
+   "first_contact.480",
+   "first_contact.485",
+   "first_contact.490"
+  ]
+ },
+ "titleFrom": "first_contact.450",
+ "category": "society",
+ "bridges": [
+  {
+   "from": "first_contact.450",
+   "to": "first_contact.475",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：诗歌：敌对收尾阶段(难度5)",
+    "en": "Stage: poetry: hostile end stage (difficulty 5)"
+   },
+   "evidence": "first_contact_events.txt:6786 set_first_contact_stage = default_poetry_end_stage_hostile; common/first_contact/00_*.txt:2179 fires first_contact.475",
+   "choice": "first_contact.450.A"
+  },
+  {
+   "from": "first_contact.460",
+   "to": "first_contact.480",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：诗歌收尾阶段(难度3)",
+    "en": "Stage: poetry end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:6900 set_first_contact_stage = default_poetry_end_stage; common/first_contact/00_*.txt:2198 fires first_contact.480",
+   "choice": "first_contact.460.A"
+  },
+  {
+   "from": "first_contact.465",
+   "to": "first_contact.480",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：诗歌收尾阶段(难度3)",
+    "en": "Stage: poetry end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:6925 set_first_contact_stage = default_poetry_end_stage; common/first_contact/00_*.txt:2198 fires first_contact.480",
+   "choice": "first_contact.465.A"
+  },
+  {
+   "from": "first_contact.470",
+   "to": "first_contact.490",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：诗歌：花言巧语收尾阶段(难度3)",
+    "en": "Stage: poetry: flowery end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:6950 set_first_contact_stage = default_poetry_end_stage_flowery; common/first_contact/00_*.txt:2217 fires first_contact.490",
+   "choice": "first_contact.470.A"
+  },
+  {
+   "from": "first_contact.470",
+   "to": "first_contact.490",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：诗歌：花言巧语收尾阶段(难度3)",
+    "en": "Stage: poetry: flowery end stage (difficulty 3)"
+   },
+   "evidence": "first_contact_events.txt:6955 set_first_contact_stage = default_poetry_end_stage_flowery; common/first_contact/00_*.txt:2217 fires first_contact.490",
+   "choice": "first_contact.470.B"
+  },
+  {
+   "from": "first_contact.474",
+   "to": "first_contact.485",
+   "conditional": true,
+   "label": {
+    "zh": "进入阶段：诗歌：达达主义收尾阶段(难度12)",
+    "en": "Stage: poetry: dada end stage (difficulty 12)"
+   },
+   "evidence": "first_contact_events.txt:7005 set_first_contact_stage = default_poetry_end_stage_dada; common/first_contact/00_*.txt:2236 fires first_contact.485",
+   "choice": "first_contact.474.A"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.455",
+    "first_contact.460",
+    "first_contact.462"
+   ],
+   "label": {
+    "zh": "战歌的三种反应",
+    "en": "Three reactions to the battle chant"
+   },
+   "note": {
+    "zh": "隐藏随机，权重各 1：455 对方好战时 ×0.5；460 对方和平主义时为 0；462 除非对方是狂热军国主义者否则为 0。",
+    "en": "Hidden random_list with weight 1 each: 455 is ×0.5 for militarist contacts; 460 is 0 for pacifist contacts; 462 is 0 unless the contact has fanatic militarist ethics."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "first_contact.470",
+    "first_contact.472"
+   ],
+   "label": {
+    "zh": "友谊诗的两种反应",
+    "en": "Two reactions to the friendship poem"
+   },
+   "note": {
+    "zh": "按对方是否亲异族：亲异族 → 470 调戏；否则 → 472 无回应。",
+    "en": "Chosen by whether the contact is xenophile: xenophile → 470 Flirtations; otherwise → 472 silence."
+   }
+  }
+ ],
+ "endings": {
+  "first_contact.475": {
+   "label": {
+    "zh": "结局：冲突结束",
+    "en": "Ending: clashes end"
+   },
+   "note": {
+    "zh": "获得团结度（好战时更多），对方给予“诗意战士”好感。",
+    "en": "Unity reward (more if militarist) and a poetic-warrior opinion from the contact."
+   },
+   "evidence": "events/first_contact_events.txt:7015-7066"
+  },
+  "first_contact.480": {
+   "label": {
+    "zh": "结局：诗歌被成功解读",
+    "en": "Ending: poetry interpreted"
+   },
+   "note": {
+    "zh": "对方给予“诗歌爱好者”好感并获得10点情报。",
+    "en": "Admirer-of-poetry opinion and 10 intel."
+   },
+   "evidence": "events/first_contact_events.txt:7067-7103"
+  },
+  "first_contact.485": {
+   "label": {
+    "zh": "结局：谜团解开",
+    "en": "Ending: enigma decoded"
+   },
+   "note": {
+    "zh": "获得“战胜达达主义”国家修正。",
+    "en": "Grants the first_contact_defeated_dadaism modifier."
+   },
+   "evidence": "events/first_contact_events.txt:7104-7135"
+  },
+  "first_contact.490": {
+   "label": {
+    "zh": "结局：奉承被译出",
+    "en": "Ending: flattery translated"
+   },
+   "note": {
+    "zh": "对方给予“诗意奉承者”好感。",
+    "en": "Poetic-flatterer opinion from the contact."
+   },
+   "evidence": "events/first_contact_events.txt:7136-7170"
+  }
+ },
+ "notes": [
+  {
+   "doc": "first_contact.450",
+   "kind": "review",
+   "zh": "审阅注：五个选项——A战歌（本方非和平主义）、B探索诗、C友谊诗（本方非排外）、D晦涩之物、E“没时间”（直接进入通用主动收尾阶段，可在脚本中见 6851 行）。",
+   "en": "Review note: five options — A battle chant (non-pacifist owner), B discovery poem, C friendship poem (non-xenophobe owner), D something enigmatic, E “no time” (goes straight to the generic proactive end stage, line 6851)."
+  },
+  {
+   "doc": "first_contact.455",
+   "kind": "review",
+   "zh": "审阅注：455 与 472 的选项都把阶段设为通用谨慎收尾阶段（100/103/104），不属于本链专属结局。",
+   "en": "Review note: 455 and 472 both set the generic cautious end stage (100/103/104); they are chain endings without a dedicated closing event."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "诗歌链全部12个事件（含 462 战歌反噬）及阶段衔接。",
+   "en": "All 12 Poetry events including 462 and the stage hand-offs."
+  },
+  "sources": [
+   "events/first_contact_events.txt:6738-7170",
+   "events/first_contact_events.txt:8017-8030",
+   "common/first_contact/00_first_contact.txt:678-704",
+   "common/first_contact/00_first_contact.txt:2169-2243"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-first-contact-480.md"
+ }
+}

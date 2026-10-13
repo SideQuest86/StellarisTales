@@ -1,0 +1,35 @@
+{
+ "id": "event-colony-2005",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.2006",
+    "colony.2007",
+    "colony.2008"
+   ],
+   "label": {
+    "zh": "项目结果 50/30/20",
+    "en": "Project results 50/30/20"
+   },
+   "note": {
+    "zh": "失败权重受修正。",
+    "en": "The failure weight is modified."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "潜没巡洋舰：打捞项目的三种结果。",
+   "en": "Submerged Cruiser: the three results of the salvage project."
+  },
+  "sources": [
+   "events/colony_events_2.txt",
+   "common/special_projects/00_projects_3.txt"
+  ],
+  "guide": "public/summaries/event-colony-2005.md"
+ }
+}

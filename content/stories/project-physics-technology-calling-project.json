@@ -1,0 +1,38 @@
+{
+ "id": "project-physics-technology-calling-project",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:physics_technology_CALLING_PROJECT",
+    "special_projects:society_technology_CALLING_PROJECT",
+    "special_projects:engineering_technology_CALLING_PROJECT"
+   ],
+   "label": {
+    "zh": "随机启用其中一个（各33%）",
+    "en": "One enabled at random (33% each)"
+   },
+   "note": {
+    "zh": "由calling_research_special_project的on_start随机选择。",
+    "en": "Chosen at random by the on_start of calling_research_special_project."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (resumed)",
+  "scope": {
+   "zh": "全部3个文档。",
+   "en": "All 3 docs."
+  },
+  "sources": [
+   "common/special_projects/04_projects_shroud.txt",
+   "common/patrons/callings/00_callings.txt",
+   "common/inline_scripts/shroud/patron_calling_special_project.txt",
+   "events/shroud_events.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/project-physics-technology-calling-project.md"
+ }
+}

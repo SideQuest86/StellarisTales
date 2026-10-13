@@ -1,0 +1,21 @@
+{
+ "id": "anomaly-object-uninhabitable-category",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:693",
+   "events/anomaly_events_2.txt:482 (anomaly.2540)",
+   "common/special_projects/00_projects_1.txt (TRANSLATE_MURAL_PROJECT)",
+   "events/anomaly_events_2.txt:511 (anomaly.2541)",
+   "events/anomaly_events_2.txt:537 (anomaly.2542)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-object-uninhabitable-category.md"
+ }
+}

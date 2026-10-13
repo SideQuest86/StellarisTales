@@ -120,3 +120,97 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 ## Requests
 
 - (none)
+
+### Batch b_06_basic1
+
+- **anomaly-aerostat-gasgiant-category** — reviewed. Two exclusive outcomes 310/315 (1/1); tree correct.
+- **anomaly-asteroid-uninhabitable-category** — reviewed. Exclusive 660/6875; 660 weight 0 with strategic resource; Lithoid option; tree correct.
+- **anomaly-collision-asteroid-category** — reviewed. Exclusive 55/6805; max_once; tree correct.
+- **anomaly-crashed-ship-asteroid-category** — reviewed. Exclusive 35/65 (65 weight 0 with strategic resource); tree correct.
+- **anomaly-debris-asteroid-category** — reviewed. Exclusive 30/6800; tree correct; pop_lcluster_event is a shared effect.
+- **anomaly-emissions-asteroid-category** — reviewed. Exclusive 50/60; tree correct.
+
+### Batch b_07_basic2
+
+- **anomaly-hatch-asteroid-category** — reviewed. Exclusive anomaly.5/25 (25 weight 0 with strategic resource); tree correct.
+- **anomaly-impact-uninhabitable-category** — reviewed. Exclusive 600/605; tree correct.
+- **anomaly-inhabited-toxic-category** — reviewed. Exclusive 670/685; tree correct.
+- **anomaly-life-asteroid-category** — reviewed. Exclusive 10/6825; max_once; Lithoid/food option variants; tree correct.
+- **anomaly-life-toxic-category** — reviewed. Exclusive 690/6895; option variants; tree correct.
+- **anomaly-lost-soul-cat** — reviewed. Single result anomaly.6786; option a -> anomaly.6787 (5 days), b ends; tree correct.
+
+### Batch b_08_basic3
+
+- **anomaly-moon-gasgiant-category** — reviewed. Exclusive 340/6840; draft p=0.00* corrected via group (6840 +10 if no ring); max_once.
+- **anomaly-object-gasgiant-category** — reviewed. Exclusive 325/335; tree correct.
+- **anomaly-signal-uninhabitable-category** — reviewed. Exclusive 625/630; evopred options; homicidal option text; tree correct.
+- **anomaly-beacon-uninhabitable-category** — reviewed. Single result anomaly.705; tree correct.
+- **anomaly-life-barren-category** — reviewed. Single result anomaly.695; tree correct.
+- **anomaly-living-metal-category** — reviewed. Single result anomaly.2576 (research option tech_mine_living_metal); tree correct.
+- **anomaly-sol-wasteland-category** — reviewed. Single result galactic_features.104; spawn only via Sol initializer (Earth); tree correct.
+- **anomaly-solar-uninhabitable-category** — reviewed. Single result anomaly.650; tree correct.
+- **anomaly-the-lonely-bot-category** — reviewed. Single result anomaly.2580; max_once_global; tree correct.
+- **anomaly-writing-uninhabitable-category** — reviewed. Single result anomaly.635; tree correct.
+
+### Batch b_09_projects1
+
+- **anomaly-life-frozen-category** — reviewed. Exclusive 2510/6900; 2510 -> SEA_EXPEDITION_PROJECT (180d, not machine empires) -> exclusive 2512/2513; tree correct.
+- **anomaly-battle-uninhabitable-category** — reviewed. Single 2530 -> BATTLE_WRECKAGE_PROJECT (180d) -> exclusive 2531/2532; tree correct.
+- **anomaly-debris-gasgiant-category** — reviewed. Exclusive 320/distar.1055 (1055 weight +1 only with humans in the galaxy and a non-human finder; draft p=0.00* explained via group); 1055 -> THE_CUBE (60d) -> distar.1056.
+- **anomaly-energy-uninhabitable-category** — reviewed. Exclusive 610/615/655/distar.1040; 610 weight 0 with strategic resource; tree correct.
+- **anomaly-life-gasgiant-category** — reviewed. Exclusive 300/6845; 6845 option -> GAS_RESTORATION project -> 6850; max_once; tree correct.
+- **anomaly-object-uninhabitable-category** — reviewed. Single 2540 -> TRANSLATE_MURAL_PROJECT (180d) -> exclusive 2541/2542; tree correct.
+
+### Batch b_10_projects2
+
+- **anomaly-ship-gasgiant-category** — reviewed. Single 2560; option a -> GAS_GIANT_SHIP_PROJECT (180d) -> exclusive 2561 (70%) / 2562 (30%), option b = 50 influence; tree correct.
+- **anomaly-shipyard-uninhabitable-category** — reviewed. Single 2550 -> AUTOMATED_SHIPYARD_PROJECT (180d, constructor/arkship) -> exclusive 2551/2552; tree correct.
+- **anomaly-station-asteroid-category** — reviewed. Exclusive 40/6810; 6810.c -> 6815 -> 6820 (curators); random inside 6810.a noted; max_once; tree correct.
+- **anomaly-storms-gasgiant-category** — reviewed. Exclusive 330/6855 (6855 +1 only with >1 science ship; draft p=0.00* explained via group); 6855.a -> RESCUE_STORM -> 6860; 6855.b = sacrifice.
+- **anomaly-cargo-gasgiant-category** — reviewed. Exclusive 305/6865; 6865.a -> 6870 after 3600 days; tree correct.
+- **anomaly-origin-asteroid-category** — reviewed. Exclusive anomaly.1/15/distar.225 (distar.225 weight +1 with DLC; strategic resource kills 1 and 225); draft p corrected via group.
+- **anomaly-terminal-gasgiant-category** — reviewed. Single 2570 -> TERMINAL_ORBIT_PROJECT (180d, limit 1080d) -> 2571; tree correct.
+
+### Batch b_11_extreme_frontiers1
+
+- **anomaly-chthonian-preservation-cat** — reviewed. Single 430 -> CHTHONIAN_PETRIFICATION_PROJECT (360d) -> 435; max_once, tiyanki/catalytic conditions; tree correct.
+- **anomaly-diamond-dust-cat** — reviewed. Single 280 -> ATMOSPHERIC_DIAMONDS_PROJECT (180d) -> 285; gestalt variant; max_once; tree correct.
+- **anomaly-gaseous-metals-cat** — reviewed. Single 260 -> ATMOSPHERIC_ELECTROPLATING (90d) -> 265; bio-ship factor 0; tree correct.
+- **anomaly-geological-tension-cat** — reviewed. Single 290; a -> CONTROLLED_ERUPTION_PROJECT (90d, limit 720d) -> 295; b = energy bonus; tree correct.
+- **anomaly-glimpse-core-cat** — reviewed. Single 150; a -> PURIFY_CORE_PROJECT (240d) -> 155 (random desert/savannah/arid); b = deposits; tree correct.
+- **anomaly-infernal-tornadoes-cat** — reviewed. Single 360 -> INFERNAL_CATALYSTS_PROJECT (180d) -> 365; max_once; tree correct.
+- **anomaly-magma-megafauna-cat** — reviewed. Single 370 -> LAVA_DIVERS_PROJECT (180d) -> 375; needs tech_volatile_motes; max_once; tree correct.
+- **anomaly-orbital-resonance-cat** — reviewed. Single 440 -> GRAVITY_ASSIST_PROJECT (180d) -> 445; tree correct.
+- **anomaly-planet-thrusters-cat** — reviewed. Single 380; b -> REPURPOSE_THRUSTERS_PROJECT (360d) -> 385; a = direct reward; tree correct.
+- **anomaly-poisoned-atmosphere-cat** — reviewed. Single 140; a -> DETOXIFICATION_GLAND_PROJECT (180d) -> 145; b = trade (non-gestalt); tree correct.
+- **anomaly-survival-pod-warm-cat** — reviewed. Single 350; a -> 352 (Scru recruit dialog, recruit/dismiss); b/c/d rewards; max_once_global; tree correct.
+
+### Batch b_12_extreme_frontiers2
+
+- **anomaly-backwards-orbit-cat** — reviewed. Single result 390; neighbour-system condition noted; tree correct.
+- **anomaly-black-clouds-cat** — reviewed. Single result 180; Devouring Swarm variant option; tree correct.
+- **anomaly-carbon-allotropes-cat** — reviewed. Single result 270; on_spawn carbon_world; tree correct.
+- **anomaly-crystalline-plains-cat** — reviewed. Single result 320; max_once; tree correct.
+- **anomaly-electric-waters-cat** — reviewed. Single result 200; max_once; tree correct.
+- **anomaly-exploding-skies-cat** — reviewed. Single result 420 with 15%/15% leader trauma/maimed roll; max_once; tree correct.
+- **anomaly-fibrous-atmosphere-cat** — reviewed. Single result 410; max_once; tree correct.
+- **anomaly-frozen-inferno-cat** — reviewed. Single result 130; action.941 is a shared helper (day 1); max_once; tree correct.
+- **anomaly-great-blue-spots-cat** — reviewed. Single result 120; tree correct.
+- **anomaly-invisible-planet-cat** — reviewed. Single result 340 (random invisible barren/molten planet); First Contact variant; tree correct.
+- **anomaly-layered-atmosphere-cat** — reviewed. Single result 300; action.941 shared helper; max_once; tree correct.
+- **anomaly-life-in-darkness-cat** — reviewed. Single result 240; options by homicidal/Devouring Swarm status; tree correct.
+
+### Batch b_13_extreme_frontiers3
+
+- **anomaly-missing-mass-cat** — reviewed. Single result 230 (options minerals vs society); tree correct.
+- **anomaly-molten-metal-ocean-cat** — reviewed. Single result 110; tree correct.
+- **anomaly-obsidian-planet-cat** — reviewed. Single result 210; action.941 shared helper; max_once; tree correct.
+- **anomaly-optical-phenomena-cat** — reviewed. Single result 160 (machine variant; flag can_exhibit_prismatic_ice; action.941); exhibit consumer not traced; max_once.
+- **anomaly-plasma-trails-cat** — reviewed. Single result 310; max_once; tree correct.
+- **anomaly-plasma-volcano-cat** — reviewed. Single result 170 with 15%/15% leader trauma/maimed roll; needs tech_lasers_2; max_once.
+- **anomaly-pulsating-object-toxic-cat** — reviewed. Single result 100 (planet-class text variants); tree correct.
+- **anomaly-rainbow-rivers-cat** — reviewed. Single result 250; max_once; tree correct.
+- **anomaly-shearing-force-cat** — reviewed. Single result 220; max_once; tree correct.
+- **anomaly-subglacial-vibrations-cat** — reviewed. Single result 190 (options a/b); AI/robotic factor 0; max_once_global; tree correct.
+- **anomaly-supermassive-giant-cat** — reviewed. Single result 330 (options a/b); weight x num_moons; on_spawn extensive_moon_system; tree correct.
+- **anomaly-vapor-plumes-cat** — reviewed. Single result 400; tree correct.

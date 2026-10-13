@@ -1,3 +1,4 @@
+import { t } from "./i18n.js";
 const escape = (s) =>
   String(s || "").replace(
     /[&<>"']/g,
@@ -41,7 +42,7 @@ export function storyMap(story, chapters, current, visited, language, prose) {
   return `<div class="story-map"><svg aria-hidden="true" width="100%" height="${nodes.length * 65}">${paths}</svg>${nodes
     .map((n, i) => {
       const c = lookup.get(n.id);
-      const title = prose(c?.title?.[language] || c?.title?.zh || "篇章");
+      const title = prose(c?.title?.[language] || c?.title?.zh || t("reader.chapter", null, language));
       const label = n.label?.[language] || n.label?.zh || "";
       return `<button data-chapter="${escape(n.id)}" class="map-chapter ${n.id === current ? "active" : ""} ${visited.has(n.id) ? "visited" : ""}" style="--branch-indent:${Math.min(n.depth, 4) * 19}px" aria-current="${n.id === current ? "step" : "false"}" title="${escape(title)}"><span class="map-dot"></span><span class="map-number">${String(i + 1).padStart(2, "0")}</span><span class="map-title">${escape(title)}${label ? `<small>${escape(prose(label))}</small>` : ""}</span></button>`;
     })

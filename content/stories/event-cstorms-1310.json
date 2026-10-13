@@ -1,0 +1,100 @@
+{
+ "id": "event-cstorms-1310",
+ "family": {
+  "title": {
+   "zh": "困于风暴的舰船",
+   "en": "Stormbound"
+  },
+  "category": "stories",
+  "start": "cstorms.1310",
+  "members": [
+   "cstorms.1310",
+   "cstorms.1311",
+   "cstorms.1313",
+   "cstorms.1316",
+   "cstorms.1317",
+   "cstorms.1320",
+   "cstorms.1321",
+   "cstorms.1325",
+   "event_chains:cs_stormbound_chain",
+   "special_projects:project_cosmic_storms_stormbound"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "cstorms.1310",
+   "choice": "INTRIGUING",
+   "to": "cstorms.1313",
+   "conditional": true,
+   "label": {
+    "zh": "800天后，风暴离开拥有研究站的星系",
+    "en": "After 800 days, a storm leaves a system with a research station"
+   },
+   "evidence": "events/cosmic_storms_events_1.txt:1764-1768,1788-1805 cstorms.1311 sets omen_returns after 800 days; cstorms.1313 (on_storm_left_system, common/on_actions/00_on_actions.txt:5430) needs that flag and a research station in the system"
+  },
+  {
+   "from": "cstorms.1313",
+   "choice": "INTRIGUING",
+   "to": "cstorms.1316",
+   "conditional": true,
+   "label": {
+    "zh": "选择继续聆听：风暴离开有科学船的星系",
+    "en": "Choose to keep listening: a storm leaves a system with our science ship"
+   },
+   "evidence": "events/cosmic_storms_events_1.txt:1807-1820,1837-1856 option INTRIGUING sets whispers_in_the_tempest; cstorms.1316 (on_storm_left_system, common/on_actions/00_on_actions.txt:5431) needs it and an own science ship in the system"
+  },
+  {
+   "from": "cstorms.1316",
+   "choice": "DISCONCERTING",
+   "to": "cstorms.1317",
+   "conditional": true,
+   "label": {
+    "zh": "风暴进入拥有的星系（非“暴风消退”风暴）",
+    "en": "A storm enters an owned system (not a stormfall storm)"
+   },
+   "evidence": "events/cosmic_storms_events_1.txt:1870-1883,1886-1934 option sets spirits_of_the_storm; cstorms.1317 (on_storm_entered_system, common/on_actions/00_on_actions.txt:5411) creates the stormbound ship and enables the project"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.1316",
+    "cstorms.1321"
+   ],
+   "label": {
+    "zh": "结局取舍",
+    "en": "Fork"
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "cstorms.1313",
+   "kind": "review",
+   "zh": "选项a“继续聆听”进入 cstorms.1316；选项b（cstorms.1313.a）直接结束事件链并给团结。cstorms.1310 本身由 on_storm_left_system 以 5/105 的概率抽中，仅一次，需人类玩家（cosmic_storms_events_1.txt:1729-1747；00_on_actions.txt:5421-5427）。",
+   "en": "The first option continues to cstorms.1316; option b (cstorms.1313.a) ends the chain at once and gives unity. cstorms.1310 is drawn by on_storm_left_system with weight 5/105, once only, human players (cosmic_storms_events_1.txt:1729-1747; 00_on_actions.txt:5421-5427)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/cosmic_storms_events_1.txt:1726-2036",
+   "common/on_actions/00_on_actions.txt:5404-5439",
+   "common/special_projects/03_projects_cosmic_storms.txt (project_cosmic_storms_stormbound)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-cstorms-1310.md",
+  "merged": [
+   "event-cstorms-1313",
+   "event-cstorms-1316",
+   "event-cstorms-1317"
+  ]
+ }
+}

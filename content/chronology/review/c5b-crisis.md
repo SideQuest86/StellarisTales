@@ -135,3 +135,30 @@ is the real line in the installed file (these crisis files use no inline scripts
    because observer.50 is an auto-hub via destroy_machine_world. Suggest merging it into contingency.
 5. Compiled `source.line` is in inline-script-expanded space for some files (e.g. grand_archive_events.txt 7220 vs
    9075, relics.txt) — evidence lines should be read from the real files.
+
+### galactic-hyperthermia — reviewed (2026-10-13); absorbs event-infernals-1000/1005/1010/1015/1025/1030/1051/10530
+- New family (start infernals.1000, ap_galactic_hyperthermia on_enabled 00_ascension_perks.txt:587). Level chain bridged by flags set
+  by projects/crucible stages (22_galactic_crucible.txt:174/212/247-250/284-288) and crisis_levels.txt:707-835; evil vs peaceful
+  projects exclusive (1015); timer 1030 -> stage 2 1035/1040 -> hidden 1041 -> firestorm situation, notices 1042/1043, 1045;
+  endings 1055 (perpetrator, win=yes) | 1056; crucible capture 1052 (post-war) | 1053 (in war) via hidden routers 1051/10530.
+- Corrected: 8 id-fragments merged; suppressed hyperthermia_galaxy_effect side-effect links 1055 -> crisis.2037/2035/2046, observer.50.
+- Uncertain: hidden objective events infernals.2000-2020 not shown.
+
+### gray-tempest — reviewed (2026-10-13); split into three stories
+- Draft was the whole L-Cluster ("Secrets of the L-Cluster", 59 docs). Game-start roll distar.8000 (distant_stars_events_3.txt:1110-1135)
+  picks exactly one of Tempest / empty / dragons / Dessanu, so these are separate stories.
+- gray-tempest: graygoo.1 (hidden) -> 10|11|13 -> 12; 2 colony devoured, 555, factory destroyed (hidden 6) -> 15 | 16 (+observer.64/65).
+- New family dessanu-consonance (graygoo.100-184, observer.66/67): hostility paths 126/150/155/156/160-162, endings 181|182.
+- New family lcluster-gray (anomaly disco_gray_cat + graygoo.400-406, menus 500-504, 510-512, 550): only in the empty-cluster outcome
+  (anomaly spawn_chance factor 0 if any of the three flags, 95_anomaly_categories_distant_stars.txt:1713-1735).
+- Left to others: distar.10950-10954, observer.62/63, distar.13010/13011 (L-Gate opening / dragons) now fall outside my families.
+
+### event-infernals-1000/1005/1010/1015/1025/1030/1051/10530 — merged into galactic-hyperthermia
+
+### Requests added 2026-10-13
+6. After splitting gray-tempest the L-Gate opening notices (distar.10951-10954, distar.13010/13011 dragons, observer.62/63) compile as an
+   unowned story `event-distar-10950` (hidden router distar.10950 declared a hub in gray-tempest.json so the test events
+   graygoo.25/30 stop spawning duplicate stories). Suggest the L-Cluster owner (c3a, event-distar-10903) absorb them as the
+   "L-Cluster outcome" notices; the four game-start outcomes (distar.8000, distant_stars_events_3.txt:1110-1135) lead to gray-tempest,
+   dessanu-consonance, lcluster-gray (empty cluster) and the dragon-season story.
+7. graygoo.25/29/30/32 are `is_test_event` events with `always = no`: dev-only, not story content.

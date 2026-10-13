@@ -1,0 +1,54 @@
+{
+ "id": "rift-tropical-habitat",
+ "category": "rifts",
+ "bridges": [
+  {"from": "astral_rift.3130", "choice": "astral_rift.3130.a", "to": "astral_rift.3140", "conditional": true,
+   "label": {"zh": "本阶段探索失败时（非毒素物种）", "en": "If this stage fails (non-toxoid species)"},
+   "evidence": "events/astral_rifts_3_events.txt:1893-1902 the first option named astral_rift.3130.a (explorer species not toxoid) sets set_next_astral_rift_event { id = astral_rift.3135 on_roll_failed = astral_rift.3140 fail_probability = @default_failure_probability }; the second same-named option (toxoid, :1909-1914) has no fallback. The `choice` key binds to the first instance, which is the correct one."}
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["astral_rift.3135", "astral_rift.3140"],
+   "label": {"zh": "提取口腔：成功或遭遇反噬", "en": "Extracting the mouth: success or backlash"},
+   "note": {"zh": "非毒素物种在 3130 中提取口腔时，本阶段要么突破（3135 提取），要么在某次掷骰时以每次 1.5% 的基础概率失败（3140 创伤性提取：科学家获得“残废”特质，机械物种除外）。两者都进入 3155。毒素物种的同名选项没有失败分支。", "en": "When a non-toxoid species extracts the mouth in 3130 the stage either breaks through (3135 Extraction) or fails on a roll, base 1.5% each (3140 Traumatic Extraction: the scientist gains the maimed trait, robotic species excepted). Both continue to 3155. The toxoid variant of the option has no failure branch."}},
+  {"kind": "exclusive", "members": ["astral_rift.3110", "astral_rift.3111"],
+   "label": {"zh": "检查动物群：按物种类型", "en": "Examining the fauna: by species type"},
+   "note": {"zh": "机械、岩石、毒素物种进入 3110“草食生态系统”（社会研究，难度 −3）；其他物种进入 3111“致幻气体”（奇异气体）。", "en": "Robotic, lithoid and toxoid species go to 3110 “Herbivorous Ecosystem” (society research, difficulty −3); all others go to 3111 “Intoxicating Gas” (exotic gases)."}},
+  {"kind": "exclusive", "members": ["astral_rift.3145", "astral_rift.3150"],
+   "label": {"zh": "挖掘或直接探索裂口", "en": "Excavating or exploring the chasm"},
+   "note": {"zh": "3120：谨慎挖掘（→ 3125 → 3145 地质奇迹，结束）或直接进入裂口（→ 3130）；3130 中可收获最深处的土壤（→ 3150 地质奇迹，结束）。", "en": "3120: dig carefully (→ 3125 → 3145 Geological Marvel, end) or enter the chasm directly (→ 3130); in 3130 the deepest soil can be harvested (→ 3150 Geological Marvel, end)."}}
+ ],
+ "endings": {
+  "astral_rift.3145": {
+   "label": {"zh": "地质奇迹（挖掘）", "en": "Geological Marvel (excavation)"},
+   "note": {"zh": "获得下一项尚未拥有的农业科技（生态模拟、地形塑造、基因作物、纳米活力作物，否则可重复的食物产出科技）与大量星界丝缕；探索结束。", "en": "The first unowned farming technology (Eco Simulation, Terrestrial Sculpting, Gene Crops, Nano-Vitality Crops, else the repeatable tile food output technology) and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_3_events.txt:2003-2031"},
+  "astral_rift.3150": {
+   "label": {"zh": "地质奇迹（取土）", "en": "Geological Marvel (soil harvest)"},
+   "note": {"zh": "同上科技，另加社会研究与大量星界丝缕；探索结束。", "en": "The same technology plus society research and a large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_3_events.txt:2033-2067"},
+  "astral_rift.3155": {
+   "label": {"zh": "行星解剖：粉红配方", "en": "Planetary Dissection: the pink formula"},
+   "note": {"zh": "机械或和平主义物种：设置国家标记 formula_pink_opinion_modifier，已有联络的国家好感增加（并通过 on_post_communications_established → 3190 对日后联络的国家生效）；其他物种：获得修正 formula_pink_armies。大量星界丝缕；探索结束。", "en": "Robotic or pacifist species: sets country flag formula_pink_opinion_modifier, countries in contact gain opinion (and later contacts via on_post_communications_established → 3190); other species: modifier formula_pink_armies. A large astral thread reward; the exploration ends."},
+   "evidence": "events/astral_rifts_3_events.txt:2069-2120; common/on_actions/00_on_actions.txt:2273"}
+ },
+ "notes": [
+  {"doc": "astral_rifts:tropical_habitat", "kind": "review",
+   "zh": "抽取权重 1，无条件；不产出遗珍（00_astral_rifts.txt:411-420）。失败分支只存在于 3130 的非毒素选项。",
+   "en": "Draw weight 1, no conditions; no relic (00_astral_rifts.txt:411-420). The failure branch exists only on the non-toxoid option of 3130."},
+  {"doc": "astral_rift.3155", "kind": "review",
+   "zh": "隐藏事件 astral_rift.3190（on_post_communications_established，00_on_actions.txt:2273）只是 3155 效果的后续（为之后建立联络的国家补上好感），不是本故事的一章，未并入。",
+   "en": "Hidden event astral_rift.3190 (on_post_communications_established, 00_on_actions.txt:2273) only follows up the effect of 3155 (opinion for countries met later); it is not a chapter of this story and is not merged."}
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (C4 rifts review)",
+  "scope": {
+   "zh": "已核对裂隙定义与 3100–3155 全部事件，补上 3130 的失败分支 3140（原为独立故事）。",
+   "en": "Checked the rift definition and every event 3100–3155; added the failure branch 3140 of 3130 (formerly a separate story)."
+  },
+  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_3_events.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": [],
+  "guide": "public/summaries/rift-tropical-habitat.md"
+ }
+}

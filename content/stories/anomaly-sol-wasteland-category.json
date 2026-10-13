@@ -1,0 +1,19 @@
+{
+ "id": "anomaly-sol-wasteland-category",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:762",
+   "events/galactic_features_events.txt:110 (galactic_features.104)",
+   "common/solar_system_initializers/sol_initializers.txt:3448"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-sol-wasteland-category.md"
+ }
+}

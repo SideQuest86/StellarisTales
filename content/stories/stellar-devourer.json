@@ -1,0 +1,114 @@
+{
+ "id": "stellar-devourer",
+ "family": {
+  "title": {
+   "zh": "噬星者",
+   "en": "Stellar Devourer"
+  },
+  "category": "leviathans",
+  "start": "leviathans.999",
+  "members": [
+   "leviathans.999",
+   "leviathans.1000",
+   "leviathans.1001",
+   "leviathans.1016",
+   "leviathans.1017",
+   "leviathans.1018",
+   "special_projects:STELLARITE_DEAD_PROJECT",
+   "special_projects:STELLARITE_STAR_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "leviathans.1000",
+   "to": "leviathans.1016",
+   "conditional": true,
+   "label": {
+    "zh": "若玩家击杀噬星者",
+    "en": "If a player kills the Stellar Devourer"
+   },
+   "evidence": "on_ship_destroyed_perp (00_on_actions.txt:1452) -> leviathans.1016 (leviathans_events_2.txt:784-813): victim is the guardian_stellarite country, ship flag stellarite_ship, system flagged stellarite_present and not yet stellarite_slain"
+  }
+ ],
+ "groups": [],
+ "endings": {
+  "leviathans.1018": {
+   "label": {
+    "zh": "恒星被重新点燃（成功 70% / 失败 30%）",
+    "en": "The star is stoked (success 70% / failure 30%)"
+   },
+   "note": {
+    "zh": "进入事件时掷 70:30：成功则 EXCELLENT——恒星体积+12，冰冻行星改造为盖亚/温暖世界；失败则科学家死亡、科研舰队被毁，只有 UNFORTUNATE 选项：恒星体积+8，行星部分升温。",
+    "en": "A 70:30 roll on entry: success shows EXCELLENT (star +12 size, frozen planets warmed, one becomes a Gaia world); failure kills the scientist and destroys the fleet and shows UNFORTUNATE (star +8, planets only partly warmed)."
+   },
+   "evidence": "events/leviathans_events_2.txt:1008-1171"
+  },
+  "leviathans.1017": {
+   "label": {
+    "zh": "分支：重燃恒星 / 收割能量",
+    "en": "Branch: stoke the star / harvest energy"
+   },
+   "note": {
+    "zh": "选 b 收割遗骸能量（每月能量/矿物/影响力加成），故事就此结束；选 a 启用项目 STELLARITE_STAR_PROJECT。",
+    "en": "Option b harvests the remains for monthly energy, minerals and influence and ends the story; option a enables STELLARITE_STAR_PROJECT."
+   },
+   "evidence": "events/leviathans_events_2.txt:964-1004"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.999": {
+   "zh": "进入噬星者星系",
+   "en": "Entering the Stellarite system"
+  },
+  "leviathans.1000": {
+   "zh": "噬星者现身",
+   "en": "The Devourer appears"
+  },
+  "leviathans.1001": {
+   "zh": "在别处遭遇噬星者",
+   "en": "Meeting it elsewhere"
+  },
+  "leviathans.1016": {
+   "zh": "噬星者被击杀",
+   "en": "The Devourer is slain"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.999",
+   "kind": "review",
+   "zh": "审阅注：第一个进入标有 guardians_stellarite_system 的星系的舰队触发（on_entering_system_fleet，00_on_actions.txt:1012）。星系行星立刻获得低温修正；7天后（leviathans.1000）噬星者及其国家生成。同一星系只会触发一次（guardians_stellarite_about_to_spawn）。",
+   "en": "Review note: fires for the first fleet entering a system flagged guardians_stellarite_system (on_entering_system_fleet, 00_on_actions.txt:1012). Planets there get a low-temperature modifier at once; 7 days later leviathans.1000 spawns the Devourer and its country. It fires once per system (guardians_stellarite_about_to_spawn)."
+  },
+  {
+   "doc": "leviathans.1001",
+   "kind": "review",
+   "zh": "审阅注：玩家在噬星者所在之处（包括它游荡到的其他星系）看到它时的通知；每个玩家一次（guardians_stellarite_encountered）。噬星者每进入新星系，隐藏事件 1005 会把高温修正移到那里。",
+   "en": "Review note: notice when a player first sees the Devourer, including in systems it roams into; once per empire (guardians_stellarite_encountered). Hidden event 1005 moves the high-temperature modifier to whichever system it enters."
+  },
+  {
+   "doc": "leviathans.1016",
+   "kind": "review",
+   "zh": "审阅注：选项 a 与 c 互为替代：a 启用研究项目（60天），c 取走卵鞘并开启庆典情境。在庆典中途事件 1120 仍可再启用同一项目（见庆典故事）。",
+   "en": "Review note: options a and c are alternatives: a enables the 60-day study project, c retrieves the egg sac and starts the celebration situation. The celebration event 1120 can still enable the same project later (see that story)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整：出现、遭遇通知、击杀、两个项目与结局。隐藏的战斗/温度事件 1005–1015 只作说明。",
+   "en": "Complete: spawn, encounter notice, kill, both projects and endings. Hidden combat/temperature events 1005-1015 are noted only."
+  },
+  "sources": [
+   "events/leviathans_events_2.txt",
+   "common/special_projects/00_projects_leviathans.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "The combat behaviour of the hidden events leviathans.1009-1015 (stellarite heat/repair mechanics) was not modelled."
+  ],
+  "guide": "public/summaries/stellar-devourer.md"
+ }
+}

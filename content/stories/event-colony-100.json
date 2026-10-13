@@ -1,0 +1,190 @@
+{
+ "id": "event-colony-100",
+ "family": {
+  "title": {
+   "zh": "废弃地形改造设备",
+   "en": "Abandoned Terraforming Equipment"
+  },
+  "category": "society",
+  "start": "colony.100",
+  "members": [
+   "colony.100",
+   "colony.101",
+   "colony.102",
+   "colony.103",
+   "colony.104",
+   "colony.105",
+   "colony.106",
+   "colony.107",
+   "colony.108",
+   "colony.109",
+   "colony.110",
+   "colony.111",
+   "colony.112",
+   "colony.113",
+   "colony.114",
+   "event_chains:abandoned_terraforming_chain",
+   "special_projects:ABANDONED_TERRAFORMING_1_PROJECT",
+   "special_projects:ABANDONED_TERRAFORMING_2_PROJECT",
+   "special_projects:MUTANT_STALKER_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "colony.101",
+   "to": "colony.102",
+   "conditional": true,
+   "label": {
+    "zh": "拆除后，每月随机（240个月）",
+    "en": "After dismantling, monthly random (240 months)"
+   },
+   "evidence": "colony.101 immediate sets did_not_terraform (events/colony_events_1.txt:2312-2314); 102 and 103 trigger on it with MTTH 240 months (2360-2368, 2399-2407)"
+  },
+  {
+   "from": "colony.101",
+   "to": "colony.103",
+   "conditional": true,
+   "label": {
+    "zh": "拆除后，每月随机（240个月）",
+    "en": "After dismantling, monthly random (240 months)"
+   },
+   "evidence": "as above"
+  },
+  {
+   "from": "colony.105",
+   "to": "colony.108",
+   "conditional": true,
+   "label": {
+    "zh": "若击退变异体",
+    "en": "If the mutants are repelled"
+   },
+   "evidence": "105 sets terraforming_mutants_invade_country/planet flags and creates mutant armies (colony_events_1.txt:2750-2776); on_colony_defenders_win -> colony.108 (00_on_actions.txt:864), trigger colony_events_1.txt:2915-2918"
+  },
+  {
+   "from": "colony.105",
+   "to": "colony.113",
+   "conditional": true,
+   "label": {
+    "zh": "若殖民地失守",
+    "en": "If the colony is lost"
+   },
+   "evidence": "on_colony_defenders_lose -> colony.113 (00_on_actions.txt:880), trigger colony_events_1.txt:3084-3087; sets terraforming_mutants_won"
+  },
+  {
+   "from": "colony.113",
+   "to": "colony.114",
+   "conditional": true,
+   "label": {
+    "zh": "若夺回星球",
+    "en": "If the planet is retaken"
+   },
+   "evidence": "on_colony_attackers_win -> colony.114 (00_on_actions.txt:832), trigger needs planet flag terraforming_mutants_won (colony_events_1.txt:3131-3134)"
+  },
+  {
+   "from": "colony.108",
+   "to": "colony.109",
+   "conditional": true,
+   "label": {
+    "zh": "击退后，每月随机（240个月）",
+    "en": "After victory, monthly random (240 months)"
+   },
+   "evidence": "108 and 114 set terraforming_mutants_defeated (colony_events_1.txt:2920-2926, 3136-3141); 109 triggers on it, MTTH 240 months (2953-2961)"
+  },
+  {
+   "from": "colony.114",
+   "to": "colony.109",
+   "conditional": true,
+   "label": {
+    "zh": "夺回后，每月随机（240个月）",
+    "en": "After liberation, monthly random (240 months)"
+   },
+   "evidence": "as above"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:ABANDONED_TERRAFORMING_1_PROJECT",
+    "special_projects:ABANDONED_TERRAFORMING_2_PROJECT"
+   ],
+   "label": {
+    "zh": "继续改造或拆除",
+    "en": "Resume the process or dismantle"
+   },
+   "note": {
+    "zh": "同一选项启用两个项目，玩家完成其一。",
+    "en": "One option enables both projects; the player completes one."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.104",
+    "colony.105",
+    "colony.106",
+    "colony.107"
+   ],
+   "label": {
+    "zh": "改造结果各25%",
+    "en": "Terraforming outcomes, 25% each"
+   },
+   "note": {
+    "zh": "104改变星球类型、105变异生物入侵、106盖亚世界、107墓地世界。",
+    "en": "104 changes the planet class, 105 mutated creatures invade, 106 Gaia world, 107 Tomb world."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "colony.102",
+    "colony.103"
+   ],
+   "label": {
+    "zh": "拆除后的天气灾害",
+    "en": "Weather hazards after dismantling"
+   },
+   "note": {
+    "zh": "各至多一次，平均240个月。",
+    "en": "Each at most once, mean 240 months."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "colony.100",
+   "kind": "review",
+   "zh": "殖民地2或3岁时的随机事件（权重15/958、10/739）；排除机械/荒野帝国与多种星球；需有一种不同于宜居类型的星球类型；每个帝国一次。",
+   "en": "Random colony event at age 2 or 3 (weights 15/958, 10/739); excludes machine/wilderness empires and many planet classes; once per empire."
+  },
+  {
+   "doc": "colony.109",
+   "kind": "review",
+   "zh": "潜伏者项目失败时 111/112 各50%；成功 110。",
+   "en": "On the stalker project: success -> 110; failure -> 111 or 112 at 50% each."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "废弃地形改造设备完整故事：恢复/拆除项目、四种改造结果、变异体入侵与胜败、拆除后的天气事件、变异潜伏者。",
+   "en": "Whole Abandoned Terraforming Equipment story: resume/dismantle projects, four terraforming outcomes, mutant invasion with victory/defeat, post-dismantle weather events, the mutant stalker."
+  },
+  "sources": [
+   "events/colony_events_1.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_1.txt"
+  ],
+  "merged": [
+   "event-colony-102",
+   "event-colony-103",
+   "event-colony-109",
+   "event-colony-108",
+   "event-colony-113",
+   "event-colony-114"
+  ],
+  "guide": "public/summaries/event-colony-100.md"
+ }
+}

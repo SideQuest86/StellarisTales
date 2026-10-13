@@ -59,3 +59,21 @@ Conventions used in fragments:
 - R3 (compiler): events defined with `base = <event>` (e.g. shroud.6515-6535, 6723-6795, grand_archive.8527/8528/8532/8533) lose the inherited title/options in extraction, so they show empty titles and no options; C1 used nodeLabels as a stopgap.
 - R4 (compiler): bridges cannot carry an ordering hint, so a later main-line child with a delay sorts after optional bridged branches (e.g. TH 8280 children).
 ﻿- R5 (compiler): `stage_sequence` chains every readable outcome reached through an archaeology site's stages in definition order, so if/else outcomes of a hidden stage gatekeeper become consecutive "next stage" edges (unplugged 2015→2021→2022→2030, 2121/2125, 2321/2325; likely also in C2 precursor sites). Stage edges are also not suppressible from fragments. Suggest: treat outcomes of one stage event as one stage slot (exclusive by its if/else/random), and honour `suppress` on stage edges.
+
+## Session 2 (Sonnet resume, 2026-10-13)
+
+### origin_shroud_forged — reviewed (86 docs)
+
+- Opening (11): game start `game_start.txt:424` -> hidden 1 -> situation (`shroud_forged_events.txt:12-66`); decision "pierce the rift" 160 (`02_special_decisions.txt:2738`); first colony 220 and Zroni worlds 305/306/307 (on_colonized `00_on_actions.txt:1317-1319`); equilibrators 308 (`12_event_buildings.txt:462`); entrap decision 330 (`02_special_decisions.txt:2841`); Animator of Clay menu 400 (`00_on_actions.txt:743`); Materiality Engine 39 (`shroud_shadows_scripted_effects.txt:4482-4486`); Synthetic Queen call 700 (`machine_age_crisis_events.txt:6718`).
+- Situation `03_origin_situations.txt:1-340` is bidirectional (initial 1500). Stage events 280/270/250/260 are progress states (not a sequence): annotated as a parallel group. Fail (0) -> 50 -> project Reintegration -> 60 -> 30 (+30 d); complete -> 70 -> project The Guide -> 80, plus Zroni Legacy 300 after 360-2160 d (`:293-297`).
+- Added bridges: 30 -> 39 (tech + building), 312.a -> 330 (entrap decision, traitor flag) and 312.a -> 320 (equilibrator lost while entity trapped, `12_event_buildings.txt:488-494`).
+- Uncertain: inline_script `shroud/shroud_forged_random_events_exclusion` (exclusion of monthly events 500-690) not read.
+
+### origin_payback — reviewed (74 docs after corrections)
+
+- Opening (19): hidden 4000 (digsite, `origin_events_4.txt:14-85`) and 4005 (`:111-163`) -> 4900 (+180 d) and 4010 (+3600 d); state-triggered branches labelled (debt fights 4020/4025, Broken Shackles mutual support 4110-4141, 4150, 4160, 4170, gene clinic 4300-4306, flagship 4936, slavers first contact 4200-4210, debris deposit 4100/4105).
+- Correction: the digsite is only visible after the Kessler cleanup project (4931 sets `payback_unlocked_dig_site`, site `potential/visible` in `07_first_contact_dlc_arc_sites.txt:14-28`), so it is now a child of 4931 instead of a game-start branch.
+- Corrections to membership: `cstorms.1270` (cosmic storm site creator; the origin-families `positive` heuristic read `has_origin` inside an `if limit`) and the generic uplift routers `origin.112/113` (which pulled Broken Shackles' dig site into Payback) are excluded.
+- Bridges: 4019/4037 fight -> 4020 (win) / 4025 (bombardment); chains -> 4052/4055 (resolutions), 4060/4061/4070 (war outcomes), 4070.c -> 4071; Out-of-Warranty chain -> 4301/4302/4303 (medical building `07_amenity_buildings.txt:1159-1185`) and 4300 -> 4306.
+- Endings: 4055, 4060, 4061, 4070, 4071.
+- Request R6 (compiler/origin-families): `positive()` in `scripts/origin_families.py` treats `has_origin` inside `if = { limit = ... }` of another event as exclusivity (cstorms.1270). Worked around with `exclude`.

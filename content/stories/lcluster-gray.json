@@ -1,0 +1,73 @@
+{
+ "id": "lcluster-gray",
+ "family": {
+  "title": {"zh": "小灰", "en": "Gray"},
+  "category": "exploration",
+  "start": "anomalies:disco_gray_cat",
+  "members": ["anomalies:disco_gray_cat", "graygoo.400", "graygoo.401", "graygoo.402", "graygoo.403", "graygoo.404", "graygoo.405", "graygoo.406", "graygoo.499", "graygoo.500", "graygoo.501", "graygoo.502", "graygoo.503", "graygoo.504", "graygoo.510", "graygoo.511", "graygoo.512", "graygoo.550"]
+ },
+ "bridges": [
+  {
+   "from": "graygoo.406", "to": "graygoo.500", "conditional": true,
+   "label": {"zh": "邀请小灰加入后：通讯菜单（可重复）", "en": "After Gray is invited to join: communication menu (repeatable)"},
+   "evidence": "events/gray_goo_events.txt:2352-2360 hidden option graygoo.406.c fires hidden graygoo.499 (creates the Gray country, L2363-2412); on_custom_diplomacy (00_on_actions.txt:734) then opens graygoo.500"
+  },
+  {
+   "from": "graygoo.500", "to": "graygoo.501", "conditional": true,
+   "label": {"zh": "小灰任行政官时的菜单（可重复）", "en": "Menu while Gray serves as official (repeatable)"},
+   "evidence": "events/gray_goo_events.txt:2415-2460 option graygoo.500.a calls create_gray_official; menu screens 501-503 are chosen by on_custom_diplomacy (00_on_actions.txt:735-737) from gray_*_active flags"
+  },
+  {
+   "from": "graygoo.500", "to": "graygoo.502", "conditional": true,
+   "label": {"zh": "小灰化为战舰时的菜单（可重复）", "en": "Menu while Gray is a warship (repeatable)"},
+   "evidence": "events/gray_goo_events.txt:2572-2590 (create_gray_warship from 500.b)"
+  },
+  {
+   "from": "graygoo.500", "to": "graygoo.503", "conditional": true,
+   "label": {"zh": "小灰化为地面单位时的菜单（可重复）", "en": "Menu while Gray is a ground unit (repeatable)"},
+   "evidence": "events/gray_goo_events.txt:2656-2675 (create_gray_army from 500.c)"
+  },
+  {
+   "from": "graygoo.500", "to": "graygoo.504", "conditional": true,
+   "label": {"zh": "小灰重组期间的菜单（可重复）", "en": "Menu while Gray is reforming (repeatable)"},
+   "evidence": "events/gray_goo_events.txt:2777-2791 trigger has_country_flag gray_reforming"
+  },
+  {
+   "from": "graygoo.500", "to": "graygoo.511", "conditional": true,
+   "label": {"zh": "小灰被击溃或解散：重组（每月检查）", "en": "Gray is destroyed or disbanded: it must reform (monthly check)"},
+   "evidence": "on_monthly_pulse (00_on_actions.txt:106) -> hidden graygoo.510 (events/gray_goo_events.txt:2802-2845): gray_reforming + modifier gray_scattered for 3600 days; fires graygoo.511 now and graygoo.512 after 3600 days"
+  }
+  ,{
+   "from": "graygoo.511", "to": "graygoo.512",
+   "label": {"zh": "3600天后：小灰恢复", "en": "3600 days later: Gray recovers"},
+   "evidence": "events/gray_goo_events.txt:2843 hidden graygoo.510 fires graygoo.512 with days = 3600 when it fires graygoo.511"
+  }
+ ],
+ "groups": [
+  {"kind": "exclusive", "members": ["graygoo.501", "graygoo.502", "graygoo.503", "graygoo.504"],
+   "label": {"zh": "同一菜单的几种状态", "en": "States of the same menu"},
+   "note": {"zh": "每次联络只出现与小灰当前状态对应的一个", "en": "Each contact shows only the screen matching Gray's current state"}}
+ ],
+ "endings": {
+  "graygoo.512": {"label": {"zh": "小灰重新恢复", "en": "Gray recovers"}, "note": {"zh": "击溃3600天后", "en": "3600 days after being scattered"}, "evidence": "events/gray_goo_events.txt:2843-2887"}
+ },
+ "nodeLabels": {
+  "anomalies:disco_gray_cat": {"zh": "异常：地表信号", "en": "Anomaly: surface signature"},
+  "graygoo.500": {"zh": "小灰通讯菜单（可重复）", "en": "Gray communication menu (repeatable)"},
+  "graygoo.550": {"zh": "空星团：诡异的宁静", "en": "Empty cluster: eerie silence"}
+ },
+ "notes": [
+  {"doc": "graygoo.400", "kind": "review",
+   "zh": "评注：这条线只在开局随机得到「空星团」结局（四种结局都未设置）时出现：异常 disco_gray_cat 只在 L 星团的灰蛊行星上刷出，而 graygoo.550 也只在该情况下于首次进入 L 星团星系时触发。",
+   "en": "Commentary: this line exists only when the game-start roll gave the 'empty cluster' outcome (none of gray_goo_crisis_set / dragon_season / gray_goo_empire_set): anomaly disco_gray_cat spawns only on gray-goo planets of the L-Cluster, and graygoo.550 fires only in that case on first entering an L-Cluster system (common/anomalies/95_anomaly_categories_distant_stars.txt:1713-1735; events/gray_goo_events.txt:2889-2910)."},
+  {"doc": "graygoo.550", "kind": "review",
+   "zh": "评注：graygoo.550 是进入空星团时的独立氛围事件，与小灰的相遇无关联。",
+   "en": "Commentary: graygoo.550 is a stand-alone atmosphere event on entering the empty cluster, not part of the Gray encounter."}
+ ],
+ "review": {
+  "status": "reviewed", "date": "2026-10-13", "reviewer": "c5b-crisis (Opus 5.5)",
+  "sources": ["events/gray_goo_events.txt", "common/anomalies/95_anomaly_categories_distant_stars.txt", "common/on_actions/00_on_actions.txt"],
+  "uncertain": ["The exact effects of create_gray_official / warship / army (scripted effects) were not read", "Whether graygoo.550 and the anomaly are meant as one narrative: they share only the empty-cluster condition"],
+  "guide": "public/summaries/lcluster-gray.md"
+ }
+}

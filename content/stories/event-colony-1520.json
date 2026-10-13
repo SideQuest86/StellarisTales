@@ -1,0 +1,95 @@
+{
+ "id": "event-colony-1520",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.1526",
+    "colony.1529"
+   ],
+   "label": {
+    "zh": "1525：接管殖民地或放任",
+    "en": "1525: take over the colony or stay hands-off"
+   },
+   "note": {
+    "zh": "b（再承受一项负面修正）→ 1526 → 1527 → 1528 清除花粉；a（放任）→ 1529 → 1530 → 灾难项目。",
+    "en": "b (accept another penalty) -> 1526 -> 1527 -> 1528 purges the plant; a (hands-off) -> 1529 -> 1530 -> the disaster project."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.1531",
+    "colony.1532"
+   ],
+   "label": {
+    "zh": "灾难项目成败",
+    "en": "Disaster project result"
+   }
+  }
+ ],
+ "endings": {
+  "colony.1528": {
+   "label": {
+    "zh": "军队清除花粉",
+    "en": "The plant is purged by loyal forces"
+   },
+   "evidence": "events/colony_events_2.txt:913-976",
+   "note": {
+    "zh": "军队清除花粉",
+    "en": "The plant is purged by loyal forces"
+   }
+  },
+  "colony.1531": {
+   "label": {
+    "zh": "灾难避免",
+    "en": "Disaster averted"
+   },
+   "evidence": "events/colony_events_2.txt:1046-1116",
+   "note": {
+    "zh": "灾难避免",
+    "en": "Disaster averted"
+   }
+  },
+  "colony.1533": {
+   "label": {
+    "zh": "星球重新可殖民",
+    "en": "The planet can be recolonised"
+   },
+   "evidence": "events/colony_events_2.txt:1198-1233",
+   "note": {
+    "zh": "星球重新可殖民",
+    "en": "The planet can be recolonised"
+   }
+  }
+ },
+ "unreachable": {},
+ "notes": [
+  {
+   "doc": "colony.1521",
+   "kind": "review",
+   "zh": "选项b（花费400能量）在脚本中直接中止链条；其余选项继续到1522。",
+   "en": "Option b (pay 400 energy) stops the chain in the script; the other options continue to 1522."
+  },
+  {
+   "doc": "colony.1520",
+   "kind": "review",
+   "zh": "殖民地2或3岁时的随机事件（3/958、2/739）；全局仅一次；非意识集合体、非个体机械；排除干旱/沙漠/稀树草原等。",
+   "en": "Random colony event at age 2 or 3 (3/958, 2/739); once per game; not Gestalt Consciousness or individual machines; arid/desert/savannah etc. excluded."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "花粉催情链完整故事：两个分支（接管/放任）、三个可选项目、四种结局。",
+   "en": "Whole Pollen Aphrodisiac chain: both branches (take control / hands-off), three optional projects, four endings."
+  },
+  "sources": [
+   "events/colony_events_2.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-colony-1520.md"
+ }
+}

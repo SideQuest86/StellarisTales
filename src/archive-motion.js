@@ -1,5 +1,49 @@
 // Inspired by RhineLabUI's continuous tracks, critically damped springs and waves.
 export const wrap = (n, length) => ((n % length) + length) % length;
+export const clamp01 = (t) => (t < 0 ? 0 : t > 1 ? 1 : t);
+/** Quintic smoothstep: zero velocity and acceleration at both ends. */
+export const smooth = (t) => {
+  t = clamp01(t);
+  return t * t * t * (10 + t * (-15 + 6 * t));
+};
+export const easeInOutCubic = (t) => {
+  t = clamp01(t);
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+};
+/**
+ * Breathing envelope: rises after input, fades after `idle` seconds so the
+ * render loop can stop instead of animating an unattended page forever.
+ */
+export function idleEnvelope(sinceInput, idle = 9, fade = 1.6) {
+  if (sinceInput < 0) return 0;
+  return smooth(sinceInput / 1.2) * (1 - smooth((sinceInput - idle) / fade));
+}
+/** Frame-time governor for adaptive resolution (all times in ms). */
+export class FrameGovernor {
+  constructor({ budget = 20, slowFrames = 40, fastFrames = 240 } = {}) {
+    Object.assign(this, { budget, slowFrames, fastFrames, slow: 0, fast: 0, ema: 0 });
+  }
+  /** Returns -1 to lower resolution, +1 to raise it, 0 to keep. */
+  sample(interval) {
+    if (!(interval > 0) || interval > 250) return 0; // tab switches, first frames
+    this.ema = this.ema ? this.ema * 0.9 + interval * 0.1 : interval;
+    if (this.ema > this.budget) {
+      this.fast = 0;
+      if (++this.slow >= this.slowFrames) {
+        this.slow = 0;
+        this.ema = 0;
+        return -1;
+      }
+    } else if (this.ema < this.budget * 0.55) {
+      this.slow = 0;
+      if (++this.fast >= this.fastFrames) {
+        this.fast = 0;
+        return 1;
+      }
+    } else this.slow = Math.max(0, this.slow - 1);
+    return 0;
+  }
+}
 export function damp(s, target, rate, dt) {
   const delta = s.value - target,
     impulse = s.velocity + rate * delta,

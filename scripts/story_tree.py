@@ -30,7 +30,9 @@ FLAG_SET = re.compile(r'\bset_(?:country|global|planet|ship|leader|fleet|species
 FLAG_CLEAR = re.compile(r'\bremove_(?:country|global|planet|ship|leader|fleet|species|situation|pop)_flag\s*=\s*([\w@.]+)')
 # Game UI/tutorial/achievement plumbing: original text, but not stories of the galaxy.
 NON_STORY_SOURCES = ('events/tutorial_events.txt', 'events/achievement_events.txt', 'events/timeline_events.txt',
-                     'events/advisor_events.txt', 'common/event_chains/00_tutorial_chains.txt')
+                     'events/advisor_events.txt', 'common/event_chains/00_tutorial_chains.txt',
+                     # Observer (spectator-mode) notifications duplicate player-facing events; reviewed 2026-10-13.
+                     'events/observer_events.txt')
 ROOT_PRIORITY = ['origin', 'family', 'anomaly', 'site', 'rift', 'situation', 'chain', 'project', 'event']
 CATEGORY_FILES = [
     ('crisis', ('crisis', 'war_in_heaven', 'gray_goo', 'contingency', 'prethoryn', 'unbidden', 'cetana')),
@@ -237,6 +239,7 @@ class Compiler:
         self.composite_cache = {}
         self.container_of = {}
         self.hook_cache = {}
+        self.excluded = collections.defaultdict(set)
         self.defined = read(ROOT / 'public/data/scripted-loc.json')
         self.used_names = set()
 
@@ -368,6 +371,7 @@ class Compiler:
             for rid in fragment.get('exclude', []):
                 if member_of.get(rid) == sid:
                     del member_of[rid]
+                self.excluded[sid].add(rid)  # also keeps a reachable non-member out of this story's tree
         self.member_of = member_of
 
     def find_roots(self):
@@ -556,10 +560,20 @@ class Compiler:
         """Archaeological site and situation stages run in definition order, not as simultaneous children."""
         if self.kind(rid) not in ('site', 'situation'):
             return []
-        ordered = []
+        stages = []  # [(stage name, [targets])] in definition order
         for t, segs in self.composite(rid):
-            if any(p['k'] == 'stage' for p in segs[0]['path']) and t not in ordered:
-                ordered.append(t)
+            stage = next((p.get('name', '') for p in segs[0]['path'] if p['k'] == 'stage'), None)
+            if stage is None:
+                continue
+            if not stages or stages[-1][0] != stage:
+                stages.append((stage, []))
+            if t not in stages[-1][1]:
+                stages[-1][1].append(t)
+        # Only stages that fire a single event form a sequence; a stage that fires several at once (alternatives
+        # gated by their own triggers) keeps them as siblings.
+        ordered = [targets[0] for _, targets in stages if len(targets) == 1]
+        if any(len(targets) > 1 for _, targets in stages):
+            self.report['multi_event_stages'] += 1
         return ordered if len(ordered) > 1 else []
 
     def doc(self, rid):
@@ -747,7 +761,7 @@ class Compiler:
         own = set(entries)
 
         def allowed(t):
-            if not self.readable(t):
+            if not self.readable(t) or t in self.excluded.get(sid, ()):
                 return False
             if t in own:
                 return True
@@ -804,6 +818,9 @@ class Compiler:
                     if signature in seen_edges:  # same outcome reached through another router path
                         continue
                     seen_edges.add(signature)
+                    if not self.readable(target):  # e.g. a reviewed link into an observer-mode notification
+                        self.report['edges_to_non_story'] += 1
+                        continue
                     edge = self.edge_payload(target, info)
                     index = info.get('optionIndex')
                     if index is not None and index < len(chapter['choices']):
@@ -910,6 +927,10 @@ class Compiler:
                 if fragment.get(field):
                     story[field] = fragment[field]
             for group in story.get('groups', []):
+                dropped = [m for m in group.get('members', []) if m in self.byid and not self.readable(m)]
+                if dropped:  # e.g. observer-mode notifications, which are not stories
+                    group['members'] = [m for m in group['members'] if m not in dropped]
+                    self.report['group_members_not_stories'] += len(dropped)
                 missing = [m for m in group.get('members', []) + ([group['gate']] if group.get('gate') else []) if m not in chapters]
                 if missing:
                     raise ValueError(f'{sid}: reviewed group references docs outside the story: {missing}')

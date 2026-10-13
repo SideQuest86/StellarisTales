@@ -1,0 +1,111 @@
+{
+ "id": "event-country-50",
+ "family": {
+  "title": {
+   "zh": "宜居星球调查",
+   "en": "Habitable Worlds Survey"
+  },
+  "category": "stories",
+  "start": "country.50",
+  "members": [
+   "country.50",
+   "country.51",
+   "country.52",
+   "country.53",
+   "country.54",
+   "country.55",
+   "country.56",
+   "country.57",
+   "country.58",
+   "country.59",
+   "country.60",
+   "country.61",
+   "event_chains:survey_habitable_worlds_chain",
+   "event_chains:specimen_procurement_chain",
+   "special_projects:TARBLAC_PROCUREMENT",
+   "special_projects:TASSARGOID_PROCUREMENT",
+   "special_projects:ORINTHI_PROCUREMENT",
+   "special_projects:SNIRAN_PROCUREMENT",
+   "special_projects:GOOLANTHA_PROCUREMENT",
+   "special_projects:UDDLORAN_PROCUREMENT",
+   "special_projects:ZULCOR_PROCUREMENT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "country.50",
+   "choice": "country.50.a",
+   "to": "country.51",
+   "conditional": true,
+   "label": {
+    "zh": "勘测满8颗宜居星球",
+    "en": "Eight habitable planets surveyed"
+   },
+   "evidence": "events/country_events_1.txt:1440-1475 hidden ship event country.52 (on_survey_planet, 00_on_actions.txt:1138) counts habitable classes into habitable_worlds_surveyed (max 8, 00_event_chains.txt:139-140) and fires country.51 after 1 day"
+  },
+  {
+   "from": "country.51",
+   "choice": "EXCELLENT",
+   "to": "country.53",
+   "conditional": true,
+   "label": {
+    "zh": "约十年后（平均120个月）外星生物博物馆提出采样请求",
+    "en": "About ten years later (mean 120 months) the museum asks for specimens"
+   },
+   "evidence": "events/country_events_1.txt:1436,1488 country.51 sets museum_of_exobiology; country.53 requires that flag, seven surveyed non-capital planet classes and mean_time_to_happen 120 months (L1487-1647)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "special_projects:TARBLAC_PROCUREMENT",
+    "special_projects:TASSARGOID_PROCUREMENT",
+    "special_projects:ORINTHI_PROCUREMENT",
+    "special_projects:SNIRAN_PROCUREMENT",
+    "special_projects:GOOLANTHA_PROCUREMENT",
+    "special_projects:UDDLORAN_PROCUREMENT",
+    "special_projects:ZULCOR_PROCUREMENT"
+   ],
+   "required": 7,
+   "gate": "country.61",
+   "label": {
+    "zh": "七种外星生物样本",
+    "en": "Seven specimen projects"
+   },
+   "note": {
+    "zh": "七个特殊项目各在一颗已勘测的对应类型星球上启用，可任意顺序完成；七个都完成后 country.61 才出现。",
+    "en": "Seven special projects, each enabled on a surveyed planet of a given class, completed in any order; country.61 appears when all seven are done (counter specimens_collected, max 7)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "country.50",
+   "kind": "review",
+   "zh": "随时间随机发生（平均40个月），需人类玩家、非集群意识、已有 first_alien_life 旗标且非游牧（country_events_1.txt:1354-1366）。选项b跳过：获得少量团结并结束事件链。",
+   "en": "Random over time (mean 40 months); needs a human player, non-gestalt, the first_alien_life flag and not nomadic (country_events_1.txt:1354-1366). Option b declines: a small unity bonus and the chain ends."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/country_events_1.txt:1330-2238",
+   "common/event_chains/00_event_chains.txt:135-155",
+   "common/on_actions/00_on_actions.txt:1138",
+   "common/special_projects/00_projects_1.txt (*_PROCUREMENT)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-country-50.md",
+  "merged": [
+   "event-country-52",
+   "event-country-53"
+  ]
+ }
+}

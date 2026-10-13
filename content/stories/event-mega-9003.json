@@ -1,0 +1,89 @@
+{
+ "id": "event-mega-9003",
+ "family": {
+  "title": {
+   "zh": "战略指挥中心",
+   "en": "Strategic Coordination Center"
+  },
+  "category": "stories",
+  "start": "mega.9003",
+  "members": [
+   "mega.9003",
+   "mega.9004",
+   "mega.9005",
+   "mega.9110",
+   "mega.9111"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "mega.9003",
+   "to": "mega.9004",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：通讯设施建成",
+    "en": "After the next upgrade: Comms built"
+   },
+   "evidence": "common/megastructures/07_strategic_coordination_center.txt:277 mega.9004"
+  },
+  {
+   "from": "mega.9004",
+   "to": "mega.9005",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：全面运行",
+    "en": "After the next upgrade: Fully operational"
+   },
+   "evidence": "common/megastructures/07_strategic_coordination_center.txt:338 mega.9005"
+  },
+  {
+   "from": "mega.9110",
+   "to": "mega.9111",
+   "conditional": true,
+   "label": {
+    "zh": "修复废墟（建造“修复”型巨型结构）后",
+    "en": "After the ruin is restored (the \"restored\" megastructure type is built over it)"
+   },
+   "evidence": "common/megastructures/07_strategic_coordination_center.txt:442 on_build_complete fires mega.9111; the restored type is upgrade_from the ruined type"
+  }
+ ],
+ "nodeLabels": {
+  "mega.9110": {
+   "zh": "遇到废墟",
+   "en": "Finding the ruin"
+  },
+  "mega.9111": {
+   "zh": "废墟修复",
+   "en": "Ruin restored"
+  }
+ },
+ "notes": [
+  {
+   "doc": "mega.9003",
+   "kind": "review",
+   "zh": "审阅说明：战略指挥中心每完成一个建造阶段，由 on_megastructure_built / on_megastructure_upgraded 在建造国触发对应事件（并非选项链接）；各阶段按建造顺序排列。9003 的正文按帝国伦理（如奴役）有所不同（megastructure_events_1.txt:3755-3790）。",
+   "en": "Review note: each build stage of the Strategic Coordination Center fires its own event for the builder from on_megastructure_built / on_megastructure_upgraded (not option links); stages are shown in construction order. The text of 9003 varies with ethics (e.g. slaver; megastructure_events_1.txt:3755-3790)."
+  },
+  {
+   "doc": "mega.9110",
+   "kind": "review",
+   "zh": "审阅说明：废墟是地图上预置的，不属于任何建造阶段；首次进入该星系时由 on_entering_system_first_time 触发。",
+   "en": "Review note: the ruin is a pre-placed map object, not a build stage; on_entering_system_first_time fires this event the first time a ship enters the system."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "战略指挥中心各建造阶段事件、给其他帝国的通知、废墟与修复事件。",
+   "en": "Strategic Coordination Center: build-stage events, notices to other empires, the ruin and restoration events."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/megastructures/07_strategic_coordination_center.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-mega-9003.md"
+ }
+}

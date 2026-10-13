@@ -1,0 +1,36 @@
+{
+ "id": "anomaly-moon-gasgiant-category",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.340",
+    "anomaly.6840"
+   ],
+   "label": {
+    "zh": "按光环有无",
+    "en": "By ring"
+   },
+   "note": {
+    "zh": "340权重1；6840基础权重0，行星无光环时+10（00_anomaly_categories.txt:229-250）。",
+    "en": "340 has weight 1; 6840 has base 0, +10 if the planet has no ring (00_anomaly_categories.txt:229-250)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:229",
+   "events/anomaly_events_1.txt:4181 (anomaly.340)",
+   "events/anomaly_events_4.txt:2814 (anomaly.6840)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-moon-gasgiant-category.md"
+ }
+}

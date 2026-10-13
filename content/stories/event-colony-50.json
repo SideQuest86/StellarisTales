@@ -1,0 +1,376 @@
+{
+ "id": "event-colony-50",
+ "family": {
+  "title": {
+   "zh": "地底文明",
+   "en": "Subterranean Civilization"
+  },
+  "category": "society",
+  "start": "colony.50",
+  "members": [
+   "colony.50",
+   "colony.51",
+   "colony.52",
+   "colony.53",
+   "colony.54",
+   "colony.56",
+   "colony.57",
+   "colony.58",
+   "colony.59",
+   "colony.60",
+   "colony.61",
+   "colony.62",
+   "colony.63",
+   "colony.64",
+   "colony.65",
+   "colony.66",
+   "colony.67",
+   "colony.68",
+   "colony.69",
+   "colony.70",
+   "colony.71",
+   "colony.72",
+   "colony.73",
+   "colony.74",
+   "colony.75",
+   "colony.76",
+   "event_chains:subterranean_civilization_chain",
+   "special_projects:SEISMIC_DISTURBANCE_1_PROJECT",
+   "special_projects:SEISMIC_DISTURBANCE_2_PROJECT",
+   "special_projects:SEISMIC_DISTURBANCE_3_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "colony.54",
+   "to": "colony.56",
+   "conditional": true,
+   "label": {
+    "zh": "若击退入侵",
+    "en": "If the invasion is repelled"
+   },
+   "evidence": "colony.54 sets country flag subterranean_invasion_country and planet flag subterranean_invasion_planet and creates 6 subterranean armies (events/colony_events_1.txt:836-883); on_colony_defenders_win -> colony.56 (common/on_actions/00_on_actions.txt:863), trigger colony_events_1.txt:919-923"
+  },
+  {
+   "from": "colony.54",
+   "to": "colony.57",
+   "conditional": true,
+   "label": {
+    "zh": "若殖民地被占领",
+    "en": "If the colony is lost"
+   },
+   "evidence": "on_colony_defenders_lose -> colony.57 (00_on_actions.txt:879), trigger colony_events_1.txt:956-959; 57 hands the planet to a new subterranean empire"
+  },
+  {
+   "from": "colony.73",
+   "to": "colony.75",
+   "conditional": true,
+   "label": {
+    "zh": "地底人怒气超过2（友好路线）",
+    "en": "Subterraneans angry above 2 (friendly route)"
+   },
+   "evidence": "colony.75 trigger: seismic_disturbance_friendly and variable angry_subterraneans > 2, MTTH 20 days (colony_events_1.txt:2107-2117); the variable is raised by options of 69, 71, 73, 74 (e.g. 73.b at 2010-2018)"
+  },
+  {
+   "from": "colony.56",
+   "to": "colony.60",
+   "conditional": true,
+   "label": {
+    "zh": "胜利后（战争标记），每月随机",
+    "en": "After victory (war flag), monthly random"
+   },
+   "evidence": "colony.56 immediate sets planet flag seismic_disturbance_war (colony_events_1.txt:925-931); 60-63 trigger on it, MTTH 240 months each (1149-1156, 1326-1335, 1370-1378, 1410-1418)"
+  },
+  {
+   "from": "colony.56",
+   "to": "colony.61",
+   "conditional": true,
+   "label": {
+    "zh": "胜利后（战争标记），每月随机",
+    "en": "After victory (war flag), monthly random"
+   },
+   "evidence": "colony.56 immediate sets planet flag seismic_disturbance_war (colony_events_1.txt:925-931); 60-63 trigger on it, MTTH 240 months each (1149-1156, 1326-1335, 1370-1378, 1410-1418)"
+  },
+  {
+   "from": "colony.56",
+   "to": "colony.62",
+   "conditional": true,
+   "label": {
+    "zh": "胜利后（战争标记），每月随机",
+    "en": "After victory (war flag), monthly random"
+   },
+   "evidence": "colony.56 immediate sets planet flag seismic_disturbance_war (colony_events_1.txt:925-931); 60-63 trigger on it, MTTH 240 months each (1149-1156, 1326-1335, 1370-1378, 1410-1418)"
+  },
+  {
+   "from": "colony.56",
+   "to": "colony.63",
+   "conditional": true,
+   "label": {
+    "zh": "胜利后（战争标记），每月随机",
+    "en": "After victory (war flag), monthly random"
+   },
+   "evidence": "colony.56 immediate sets planet flag seismic_disturbance_war (colony_events_1.txt:925-931); 60-63 trigger on it, MTTH 240 months each (1149-1156, 1326-1335, 1370-1378, 1410-1418)"
+  },
+  {
+   "from": "colony.52",
+   "to": "colony.64",
+   "conditional": true,
+   "label": {
+    "zh": "文明被摧毁后，每月随机",
+    "en": "After the civilization is destroyed, monthly random"
+   },
+   "evidence": "colony.52 immediate sets seismic_disturbance_destroyed (colony_events_1.txt:705-707); 64-68 trigger on it, MTTH 240 months each (1450-1459, 1537-1547, 1595-1603, 1641-1649, 1685-1693)"
+  },
+  {
+   "from": "colony.52",
+   "to": "colony.65",
+   "conditional": true,
+   "label": {
+    "zh": "文明被摧毁后，每月随机",
+    "en": "After the civilization is destroyed, monthly random"
+   },
+   "evidence": "colony.52 immediate sets seismic_disturbance_destroyed (colony_events_1.txt:705-707); 64-68 trigger on it, MTTH 240 months each (1450-1459, 1537-1547, 1595-1603, 1641-1649, 1685-1693)"
+  },
+  {
+   "from": "colony.52",
+   "to": "colony.66",
+   "conditional": true,
+   "label": {
+    "zh": "文明被摧毁后，每月随机",
+    "en": "After the civilization is destroyed, monthly random"
+   },
+   "evidence": "colony.52 immediate sets seismic_disturbance_destroyed (colony_events_1.txt:705-707); 64-68 trigger on it, MTTH 240 months each (1450-1459, 1537-1547, 1595-1603, 1641-1649, 1685-1693)"
+  },
+  {
+   "from": "colony.52",
+   "to": "colony.67",
+   "conditional": true,
+   "label": {
+    "zh": "文明被摧毁后，每月随机",
+    "en": "After the civilization is destroyed, monthly random"
+   },
+   "evidence": "colony.52 immediate sets seismic_disturbance_destroyed (colony_events_1.txt:705-707); 64-68 trigger on it, MTTH 240 months each (1450-1459, 1537-1547, 1595-1603, 1641-1649, 1685-1693)"
+  },
+  {
+   "from": "colony.52",
+   "to": "colony.68",
+   "conditional": true,
+   "label": {
+    "zh": "文明被摧毁后，每月随机",
+    "en": "After the civilization is destroyed, monthly random"
+   },
+   "evidence": "colony.52 immediate sets seismic_disturbance_destroyed (colony_events_1.txt:705-707); 64-68 trigger on it, MTTH 240 months each (1450-1459, 1537-1547, 1595-1603, 1641-1649, 1685-1693)"
+  },
+  {
+   "from": "colony.51",
+   "to": "colony.69",
+   "conditional": true,
+   "label": {
+    "zh": "建立沟通后（友好标记），每月随机",
+    "en": "After contact (friendly flag), monthly random"
+   },
+   "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
+  },
+  {
+   "from": "colony.51",
+   "to": "colony.70",
+   "conditional": true,
+   "label": {
+    "zh": "建立沟通后（友好标记），每月随机",
+    "en": "After contact (friendly flag), monthly random"
+   },
+   "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
+  },
+  {
+   "from": "colony.51",
+   "to": "colony.71",
+   "conditional": true,
+   "label": {
+    "zh": "建立沟通后（友好标记），每月随机",
+    "en": "After contact (friendly flag), monthly random"
+   },
+   "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
+  },
+  {
+   "from": "colony.51",
+   "to": "colony.72",
+   "conditional": true,
+   "label": {
+    "zh": "建立沟通后（友好标记），每月随机",
+    "en": "After contact (friendly flag), monthly random"
+   },
+   "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
+  },
+  {
+   "from": "colony.51",
+   "to": "colony.73",
+   "conditional": true,
+   "label": {
+    "zh": "建立沟通后（友好标记），每月随机",
+    "en": "After contact (friendly flag), monthly random"
+   },
+   "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
+  },
+  {
+   "from": "colony.51",
+   "to": "colony.74",
+   "conditional": true,
+   "label": {
+    "zh": "建立沟通后（友好标记），每月随机",
+    "en": "After contact (friendly flag), monthly random"
+   },
+   "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:SEISMIC_DISTURBANCE_1_PROJECT",
+    "special_projects:SEISMIC_DISTURBANCE_2_PROJECT"
+   ],
+   "label": {
+    "zh": "沟通或先发制人（嗜杀文明另有一次先发制人选项）",
+    "en": "Communicate or pre-empt (homicidal empires get a pre-empt-only option)"
+   },
+   "note": {
+    "zh": "选项a同时启用项目1与2；选项b仅限嗜杀文明，只启用项目2。",
+    "en": "Option a enables projects 1 and 2; option b (homicidal empires only) enables project 2 alone."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.54",
+    "colony.59"
+   ],
+   "label": {
+    "zh": "先发制人失败：60%入侵 / 40%地底人现身",
+    "en": "Pre-empt fails: 60% invasion / 40% aliens surface"
+   },
+   "note": {
+    "zh": "SEISMIC_DISTURBANCE_2 失败时的 random_list（地底人现身权重经修正）。",
+    "en": "random_list on failure of SEISMIC_DISTURBANCE_2 (the aliens-surface weight is modified)."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "colony.60",
+    "colony.61",
+    "colony.62",
+    "colony.63"
+   ],
+   "label": {
+    "zh": "战争池（胜利后）",
+    "en": "War pool (after victory)"
+   },
+   "note": {
+    "zh": "每个事件至多一次，平均240个月，彼此独立。60再次引发入侵；61塌陷（需有军队）、62袭扰、63地表进攻。",
+    "en": "Each at most once, mean 240 months, independent. 60 triggers another invasion; 61 collapse (needs an army), 62 raids, 63 surface attack."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "colony.64",
+    "colony.65",
+    "colony.66",
+    "colony.67",
+    "colony.68"
+   ],
+   "label": {
+    "zh": "摧毁池",
+    "en": "Destroyed pool"
+   },
+   "note": {
+    "zh": "每个事件至多一次，平均240个月：64幸存者据点、65地底扩张、66黄金、67宝库、68地震。",
+    "en": "Each at most once, mean 240 months: 64 survivor pocket, 65 expansion, 66 gold, 67 treasury, 68 earthquakes."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "colony.69",
+    "colony.70",
+    "colony.71",
+    "colony.72",
+    "colony.73",
+    "colony.74"
+   ],
+   "label": {
+    "zh": "友好池",
+    "en": "Friendly pool"
+   },
+   "note": {
+    "zh": "每个事件至多一次，平均240个月：69饥荒、70礼物、71难民、72人类学家、73地震、74技术请求。",
+    "en": "Each at most once, mean 240 months: 69 famine, 70 gift, 71 refugees, 72 anthropologists, 73 earthquakes, 74 technology request."
+   }
+  }
+ ],
+ "endings": {
+  "colony.58": {
+   "label": {
+    "zh": "地底帝国取得星球",
+    "en": "A subterranean empire holds the planet"
+   },
+   "note": {
+    "zh": "殖民地被地底国家占领，故事结束。",
+    "en": "The colony is lost to a subterranean country; the story ends."
+   },
+   "evidence": "events/colony_events_1.txt:945-1058"
+  }
+ },
+ "notes": [
+  {
+   "doc": "colony.50",
+   "kind": "review",
+   "zh": "殖民地2或3岁时的随机事件（权重3/958、2/739）；非AI、非机械/荒野帝国，排除多种特殊星球；全局仅一次。",
+   "en": "Random colony event at age 2 or 3 (weights 3/958, 2/739); non-AI, non-machine/wilderness empire, many special planet classes excluded; once per game."
+  },
+  {
+   "doc": "colony.75",
+   "kind": "review",
+   "zh": "75：关系恶化（怒气>2）后20天内移除友好标记并发信，76 随后在35+40天后引发入侵54。",
+   "en": "75: once anger exceeds 2 the friendly flag is removed and a message sent (76), then invasion 54 follows after 35 days + random 40."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "地底文明完整故事：地震异象、三个项目、入侵与胜败、胜利后/摧毁后/友好后的三组每月随机事件、地底人怒气升级。",
+   "en": "Whole Subterranean Civilization story: seismic disturbances, the three projects, invasion and its victory/defeat, the three monthly random pools (war / destroyed / friendly), and the escalation through angry subterraneans."
+  },
+  "sources": [
+   "events/colony_events_1.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_1.txt"
+  ],
+  "uncertain": [
+   "colony.51 sets the friendly flag unconditionally at contact, even if 53 then picks the war option; the script does not stop friendly-pool events firing in that case."
+  ],
+  "merged": [
+   "event-colony-56",
+   "event-colony-57",
+   "event-colony-60",
+   "event-colony-61",
+   "event-colony-62",
+   "event-colony-63",
+   "event-colony-64",
+   "event-colony-65",
+   "event-colony-66",
+   "event-colony-67",
+   "event-colony-68",
+   "event-colony-69",
+   "event-colony-70",
+   "event-colony-71",
+   "event-colony-72",
+   "event-colony-73",
+   "event-colony-74",
+   "event-colony-75"
+  ],
+  "guide": "public/summaries/event-colony-50.md"
+ }
+}

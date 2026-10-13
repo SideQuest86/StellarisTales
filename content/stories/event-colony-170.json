@@ -1,0 +1,44 @@
+{
+ "id": "event-colony-170",
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "colony.171",
+    "colony.172"
+   ],
+   "label": {
+    "zh": "碎片仍在时的延迟事件",
+    "en": "Delayed events while the debris remains"
+   },
+   "note": {
+    "zh": "170 安排 171/172（200+随机7000天），二者在项目移除碎片修正后不再满足条件。",
+    "en": "170 schedules 171/172 (200 days + random 7000); both need the debris modifier, which the project removes."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.173",
+    "colony.174"
+   ],
+   "label": {
+    "zh": "项目结果各50%",
+    "en": "Project outcomes, 50% each"
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "轨道碎片故事：触发、清理项目、两个延迟事件。",
+   "en": "Orbital Debris story: trigger, clean-up project, two delayed events."
+  },
+  "sources": [
+   "events/colony_events_1.txt"
+  ],
+  "guide": "public/summaries/event-colony-170.md"
+ }
+}

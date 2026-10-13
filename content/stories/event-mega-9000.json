@@ -1,0 +1,89 @@
+{
+ "id": "event-mega-9000",
+ "family": {
+  "title": {
+   "zh": "巨型艺术设施",
+   "en": "Mega Art Installation"
+  },
+  "category": "stories",
+  "start": "mega.9000",
+  "members": [
+   "mega.9000",
+   "mega.9001",
+   "mega.9002",
+   "mega.9120",
+   "mega.9121"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "mega.9000",
+   "to": "mega.9001",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：成熟阶段建成",
+    "en": "After the next upgrade: Maturity stage built"
+   },
+   "evidence": "common/megastructures/08_mega_art_installation.txt:279 mega.9001"
+  },
+  {
+   "from": "mega.9001",
+   "to": "mega.9002",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：巨型艺术设施完工",
+    "en": "After the next upgrade: Installation completed"
+   },
+   "evidence": "common/megastructures/08_mega_art_installation.txt:342 mega.9002"
+  },
+  {
+   "from": "mega.9120",
+   "to": "mega.9121",
+   "conditional": true,
+   "label": {
+    "zh": "修复废墟（建造“修复”型巨型结构）后",
+    "en": "After the ruin is restored (the \"restored\" megastructure type is built over it)"
+   },
+   "evidence": "common/megastructures/08_mega_art_installation.txt:503 on_build_complete fires mega.9121; the restored type is upgrade_from the ruined type"
+  }
+ ],
+ "nodeLabels": {
+  "mega.9120": {
+   "zh": "遇到废墟",
+   "en": "Finding the ruin"
+  },
+  "mega.9121": {
+   "zh": "废墟修复",
+   "en": "Ruin restored"
+  }
+ },
+ "notes": [
+  {
+   "doc": "mega.9000",
+   "kind": "review",
+   "zh": "审阅说明：巨型艺术设施每完成一个建造阶段，由 on_megastructure_built / on_megastructure_upgraded 在建造国触发对应事件（并非选项链接）；各阶段按建造顺序排列。9002 的正文按帝国伦理（如亲异）有所不同（megastructure_events_1.txt:3718-3745）。",
+   "en": "Review note: each build stage of the Mega Art Installation fires its own event for the builder from on_megastructure_built / on_megastructure_upgraded (not option links); stages are shown in construction order. The text of 9002 varies with ethics (e.g. xenophile; megastructure_events_1.txt:3718-3745)."
+  },
+  {
+   "doc": "mega.9120",
+   "kind": "review",
+   "zh": "审阅说明：废墟是地图上预置的，不属于任何建造阶段；首次进入该星系时由 on_entering_system_first_time 触发。",
+   "en": "Review note: the ruin is a pre-placed map object, not a build stage; on_entering_system_first_time fires this event the first time a ship enters the system."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "巨型艺术设施各建造阶段事件、给其他帝国的通知、废墟与修复事件。",
+   "en": "Mega Art Installation: build-stage events, notices to other empires, the ruin and restoration events."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/megastructures/08_mega_art_installation.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-mega-9000.md"
+ }
+}

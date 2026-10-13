@@ -1,0 +1,227 @@
+{
+ "id": "origin_toxic_knights",
+ "opening": {
+  "targets": [
+   "situations:situation_toxic_knights",
+   "toxoids.8015",
+   "toxoids.8017",
+   "toxoids.8025",
+   "toxoids.8030"
+  ],
+  "label": {
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
+  },
+  "labels": {
+   "situations:situation_toxic_knights": {
+    "zh": "开局：毒神之旅局势开始",
+    "en": "Game start: the Quest for the Toxic God situation begins"
+   },
+   "toxoids.8015": {
+    "zh": "骑士团要塞失守时（每月检查）",
+    "en": "When the Order's Keep is lost (monthly check)"
+   },
+   "toxoids.8017": {
+    "zh": "骑士团要塞被摧毁时",
+    "en": "When the Order's Keep is destroyed"
+   },
+   "toxoids.8025": {
+    "zh": "重新夺回骑士团要塞时",
+    "en": "When the Order's Keep is retaken"
+   },
+   "toxoids.8030": {
+    "zh": "在原故乡星球定居时（方舟）",
+    "en": "When settling on the former homeworld (arkship)"
+   }
+  },
+  "evidence": "common/on_actions/00_on_actions.txt:41 on_game_start_country fires hidden toxoids.7000 (events/toxoids_events.txt:576-633: starts situation_toxic_knights and turns a nearby barren/molten/toxic planet into a molten world with alloy and energy deposits). Keep branches: hidden 8014 (monthly common/on_actions/00_on_actions.txt:343, events/toxoids_events.txt:3423-3476), hidden 8016 (planet destroyed, common/on_actions/01_planet_destruction.txt:16/39, 02_component_on_actions.txt:249/277), hidden 8018/8019 (arkship), hidden 8024 (planet regained); 8030 is fired by nomads.4705 arkship_settle_planet_effect for the knights homeworld."
+ },
+ "bridges": [
+  {
+   "from": "toxoids.7305",
+   "to": "toxoids.7310",
+   "conditional": true,
+   "label": {
+    "zh": "骑士团舰队进入毒神星系且毒神仍在",
+    "en": "A knights fleet enters the Toxic God system while the entity is still there"
+   },
+   "evidence": "events/toxoids_events.txt:2735-2759 7310 fires from on_entering_system_fleet (common/on_actions/00_on_actions.txt:1044) when the system has star flag guardian_toxic_god_system, the controller has the origin and the original entity fleet is present."
+  },
+  {
+   "from": "toxoids.7305",
+   "to": "toxoids.7311",
+   "conditional": true,
+   "label": {
+    "zh": "非骑士团帝国的舰队进入毒神星系",
+    "en": "A fleet of another empire enters the Toxic God system"
+   },
+   "evidence": "events/toxoids_events.txt:2789-2812 7311 (controller without the origin, entity present)."
+  },
+  {
+   "from": "toxoids.7305",
+   "to": "toxoids.7312",
+   "conditional": true,
+   "label": {
+    "zh": "骑士团舰队进入毒神星系，但毒神已被消灭或离开",
+    "en": "A knights fleet enters the system but the entity is gone or killed"
+   },
+   "evidence": "events/toxoids_events.txt:2827-2853 7312 (global flag toxic_god_killed or no toxic_god_original_fleet)."
+  },
+  {
+   "from": "toxoids.7310",
+   "to": "toxoids.7315",
+   "conditional": true,
+   "label": {
+    "zh": "击败毒神",
+    "en": "The Toxic God is defeated"
+   },
+   "evidence": "events/toxoids_events.txt:2891-2905 7315 fires from on_ship_destroyed_perp (common/on_actions/00_on_actions.txt:1468) when the destroyed ship belongs to country type guardian_toxic_god and the killer has the origin."
+  },
+  {
+   "from": "toxoids.7311",
+   "to": "toxoids.7515",
+   "conditional": true,
+   "label": {
+    "zh": "他国舰队击毁毒神",
+    "en": "The Toxic God is destroyed by another empire"
+   },
+   "evidence": "events/toxoids_events.txt:3075-3109 7515 fires from on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1662); sets global flag toxic_god_killed."
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "toxoids.7310",
+    "toxoids.7311",
+    "toxoids.7312"
+   ],
+   "label": {
+    "zh": "进入封印星系所见",
+    "en": "What awaits in the sealed system"
+   },
+   "note": {
+    "zh": "取决于进入者是否为骑士团起源、毒神是否仍在。",
+    "en": "Depends on whether the visitor has the origin and whether the entity is still present."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "toxoids.7315",
+    "toxoids.7515"
+   ],
+   "label": {
+    "zh": "击败毒神",
+    "en": "Defeating the Toxic God"
+   },
+   "note": {
+    "zh": "骑士团帝国得到“驯服/终结”的选择（7315）；其他帝国直接得到遗物（7515）。",
+    "en": "A knights empire chooses to tame or finish it (7315); other empires just receive the relic (7515)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "toxoids.8000",
+    "toxoids.8005"
+   ],
+   "label": {
+    "zh": "每月随机的小事件",
+    "en": "Monthly random side events"
+   },
+   "note": {
+    "zh": "局势每月随机列表：8000与8005各10，其余1200为无事（约1.6%/月）。",
+    "en": "Monthly random list of the situation: 8000 and 8005 weight 10 each against 1200 for nothing (common/situations/01_toxoid_situations.txt:318-327)."
+   }
+  }
+ ],
+ "endings": {
+  "toxoids.7320": {
+   "label": {
+    "zh": "骑士团的命运：解散",
+    "en": "Fate of the Order: disbanded"
+   },
+   "note": {
+    "zh": "驯服毒神后900天。",
+    "en": "900 days after taming the entity."
+   },
+   "evidence": "events/toxoids_events.txt:2960-2985"
+  },
+  "toxoids.7510": {
+   "label": {
+    "zh": "毒神被终结",
+    "en": "The Toxic God is slain"
+   },
+   "note": {
+    "zh": "获得遗物 r_toxic_god，之后触发 8020。",
+    "en": "Grants the relic r_toxic_god; 8020 follows."
+   },
+   "evidence": "events/toxoids_events.txt:3052-3073"
+  },
+  "toxoids.8020": {
+   "label": {
+    "zh": "终章：旅途的尽头？",
+    "en": "The End?"
+   },
+   "note": {
+    "zh": "任务完成；若有宇宙起源飞升则有额外选项。",
+    "en": "Quest complete; an extra option exists with Cosmogenesis."
+   },
+   "evidence": "events/toxoids_events.txt:3703-3747"
+  },
+  "toxoids.8017": {
+   "label": {
+    "zh": "要塞被摧毁",
+    "en": "The Keep is destroyed"
+   },
+   "note": {
+    "zh": "局势被销毁，任务结束。",
+    "en": "The situation is destroyed and the quest ends."
+   },
+   "evidence": "events/toxoids_events.txt:3547-3623"
+  }
+ },
+ "notes": [
+  {
+   "doc": "toxoids.7300",
+   "kind": "review",
+   "zh": "与诡计之神的对决：若第四传说中选择了沙卢骑士路线（旗标 toxoids_7095_b），骑士力挽狂澜；否则传奇骑士身亡，帝国受诅咒900天。",
+   "en": "Fight with the Trickster: with the Sable Knights choice of 7095.b the knights save the day, otherwise a legend dies and the empire is cursed for 900 days (events/toxoids_events.txt:2619-2658)."
+  },
+  {
+   "doc": "situations:situation_toxic_knights",
+   "kind": "review",
+   "zh": "局势进度0–1000共8个阶段（每阶段125）；阶段2–8首次进入时依次触发隐藏事件 7005/7020/7050/7075/7110/7140/7195，各开启一段“骑士传说”。每月基础进度+0.4（受方针、政策、骑士岗位和士气影响）。完成后 7250 → 7255。",
+   "en": "Progress 0-1000 in eight stages of 125. Entering stages 2-8 fires hidden 7005/7020/7050/7075/7110/7140/7195, each opening one knight tale. Base progress +0.4 a month, modified by approach, policy, knight jobs and morale (common/situations/01_toxoid_situations.txt:192-365). Completion fires 7250 -> 7255."
+  },
+  {
+   "doc": "toxoids.7305",
+   "kind": "review",
+   "zh": "打开通往封印星系的超空间航道：生成毒神星系（隐藏 7500）、开启“毒神：位置”事件链与兴趣点，并销毁局势。",
+   "en": "Opens the hyperlane to the sealed system: hidden 7500 spawns the Toxic God system, the finisher event chain and POI start, and the situation is destroyed (events/toxoids_events.txt:2660-2731)."
+  },
+  {
+   "doc": "toxoids.8010",
+   "kind": "review",
+   "zh": "游戏满100年且尚未触发时出现；可办庆典、置之不理或解散骑士团（销毁局势）。",
+   "en": "Fires once after 100 years of game time; festival, ignore, or disband the order for a payout (destroys the situation) (events/toxoids_events.txt:3335-3419)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/toxoids_events.txt",
+   "common/situations/01_toxoid_situations.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/event_chains"
+  ],
+  "uncertain": [
+   "Tales 7006-7225 are shown as read in the compiled tree: each quest starts when the situation enters its stage, so tales can overlap in play; the compiler chains the stage events (ledger R5).",
+   "Option-level details of the middle tales (7055-7165, 7195-7225) were taken from the compiled tree rather than re-read line by line."
+  ],
+  "guide": "public/summaries/origin_toxic_knights.md"
+ }
+}

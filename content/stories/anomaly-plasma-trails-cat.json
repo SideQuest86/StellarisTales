@@ -1,0 +1,20 @@
+{
+ "id": "anomaly-plasma-trails-cat",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/103_anomaly_categories_extreme_frontiers.txt:519",
+   "events/extreme_frontiers_events.txt:1474 (extreme_frontiers.310)"
+  ],
+  "uncertain": [
+   "Spawn needs has_shroud_dlc (host_has_dlc \"Shadows of the Shroud\", common/scripted_triggers); no matching folder exists in this install's dlc directory, so whether these anomalies can spawn here depends on the host's DLC ownership."
+  ],
+  "guide": "public/summaries/anomaly-plasma-trails-cat.md"
+ }
+}

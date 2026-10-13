@@ -1,0 +1,266 @@
+{
+ "id": "situation-leviathan-celebration-opportunity",
+ "bridges": [
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1050",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自裂爪龙",
+    "en": "Stage 2: if the trophy is the Shard behemoth"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:4370 requires celebration_shard"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1055",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自无畏战舰",
+    "en": "Stage 2: if the trophy is the Automated Dreadnought"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:4425 requires celebration_automated_dreadnought"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1060",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自族母",
+    "en": "Stage 2: if the trophy is the Tiyanki Matriarch"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:4481 requires celebration_tiyanki_matriarch"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1065",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自天空龙",
+    "en": "Stage 2: if the trophy is the Sky Dragon"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:4567 requires celebration_hrozgar"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1070",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自拾荒机器人",
+    "en": "Stage 2: if the trophy is the Scavenger Bot"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:4767 requires celebration_scavenger_bot"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1075",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自星际幽魂",
+    "en": "Stage 2: if the trophy is the Stellar Wraith"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:4836 requires celebration_spectral_wraith"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1080",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自恐怖负相物质（位面之魇、古老者、巨虫）",
+    "en": "Stage 2: if the trophy is the Horrific Inverse Mass (dimensional horror, Elder One, worm)"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:4879 requires celebration_dimensional_horror / _elder_one / _worm"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1100",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自神秘堡垒",
+    "en": "Stage 2: if the trophy is the Enigmatic Fortress"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:5154 requires celebration_enigmatic_fortress"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1110",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自虚空孳孽",
+    "en": "Stage 2: if the trophy is the Voidspawn"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:5262 requires celebration_voidspawn"
+  },
+  {
+   "from": "situations:leviathan_celebration_opportunity",
+   "to": "situation.1120",
+   "conditional": true,
+   "label": {
+    "zh": "第二阶段：若战利品来自噬星者",
+    "en": "Stage 2: if the trophy is the Stellar Devourer"
+   },
+   "evidence": "common/situations/01_narrative_situations.txt:480-492 stage_2 on_first_enter fires all eleven events; events/situation_events.txt:5340 requires celebration_stellar_devourer"
+  }
+ ],
+ "suppress": [
+  {
+   "from": "situation.1045",
+   "to": "situation.1050",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1050",
+   "to": "situation.1055",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1055",
+   "to": "situation.1060",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1060",
+   "to": "situation.1065",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1065",
+   "to": "situation.1070",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1070",
+   "to": "situation.1075",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1075",
+   "to": "situation.1080",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1080",
+   "to": "situation.1100",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1100",
+   "to": "situation.1110",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  },
+  {
+   "from": "situation.1110",
+   "to": "situation.1120",
+   "evidence": "false chain: all stage_2 events are fired together by on_first_enter (01_narrative_situations.txt:480-492); each self-gates on its trophy flag, so they are alternatives, not a sequence"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "situation.1045",
+    "situation.1050",
+    "situation.1055",
+    "situation.1060",
+    "situation.1065",
+    "situation.1070",
+    "situation.1075",
+    "situation.1080",
+    "situation.1100",
+    "situation.1110",
+    "situation.1120"
+   ],
+   "label": {
+    "zh": "第二阶段：按战利品只发生一种",
+    "en": "Stage 2: one event per trophy"
+   },
+   "note": {
+    "zh": "阶段2开始时游戏同时触发11个事件，但每个事件都检查 celebration_* 标记（由开启庆典的击败事件设置），所以只会出现与战利品对应的那一个。",
+    "en": "Entering stage 2 fires all eleven events at once, but each checks a celebration_* flag set by the victory event that started the parade, so only the matching one appears."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "situation.1000",
+    "situation.1005"
+   ],
+   "label": {
+    "zh": "完成时：格式塔 / 非格式塔",
+    "en": "On completion: gestalt / non-gestalt"
+   },
+   "note": {
+    "zh": "1000 要求拥有者是格式塔；1005 要求不是。两者各有三个按奖励等级（小/标准/大）出现的选项。",
+    "en": "1000 needs a gestalt owner, 1005 a non-gestalt owner; each has three options shown by reward tier (small/standard/large)."
+   }
+  }
+ ],
+ "endings": {
+  "situation.1115": {
+   "label": {
+    "zh": "毒液污染清理完毕",
+    "en": "Contamination cleared"
+   },
+   "note": {
+    "zh": "移除污染修正，并为同一庆典增加一级单位奖励。",
+    "en": "Removes the contaminant modifier and raises the celebration reward one tier."
+   },
+   "evidence": "events/situation_events.txt:5302-5330"
+  },
+  "situation.1095": {
+   "label": {
+    "zh": "行星化为黑洞或趋于稳定",
+    "en": "Planet becomes a black hole or stabilises"
+   },
+   "note": {
+    "zh": "约2:1 随机（在 1090 选择时即已掷出）。",
+    "en": "About 2:1 random, rolled when 1090 is answered (situation_events.txt:5017-5020)."
+   },
+   "evidence": "events/situation_events.txt:5052-5142"
+  }
+ },
+ "nodeLabels": {
+  "situations:leviathan_celebration_opportunity": {
+   "zh": "庆典机遇（击败巨兽后）",
+   "en": "Celebration after a leviathan kill"
+  }
+ },
+ "notes": [
+  {
+   "doc": "situations:leviathan_celebration_opportunity",
+   "kind": "review",
+   "zh": "审阅注：击败巨兽后由 16 个事件分别 start_situation 开启（见 callers）：以太龙 670、噬星者 1016、幽魂 2014、神秘堡垒 2099/2151/2154/2156、位面之魇 3003、无畏战舰 3102、拾荒机器人/提央奇/天空龙/孳孽/碎片/古老者/巨虫来自其他DLC。每月进度基础+4（鼓励+2，抑制-8，重组暂停并花费1000凝聚力）；进度50/70/100进入阶段2/3/完成；若目标星球易主则中止（01_narrative_situations.txt:470-622）。",
+   "en": "Review note: started by start_situation from 16 victory events (see callers): Ether Drake 670, Stellar Devourer 1016, Wraith 2014, Fortress 2099/2151/2154/2156, Horror 3003, Dreadnought 3102 and other-DLC kills (Scavenger Bot, Tiyanki, Sky Dragon, Voidspawn, Shard, Elder One, worm). Monthly progress base +4 (+2 encourage, -8 discourage; reorganize freezes it for 1000 unity); stages at 50/70/100; aborted if the target planet changes owner (01_narrative_situations.txt:470-622)."
+  },
+  {
+   "doc": "situation.1085",
+   "kind": "review",
+   "zh": "审阅注：仅恐怖负相物质类战利品（位面之魇、古老者、巨虫）会走到这里：完成时 set_celebration_modifier 依 1080 所设标记给星球加修正并延迟 2480 天（“控制”则 4960 天）触发 1085 → 1240 天 → 1090 → 720 天 → 1095（00_scripted_effects.txt:5897-5983）。",
+   "en": "Review note: only the Horrific Inverse Mass trophies (dimensional horror, Elder One, worm) reach this: on completion set_celebration_modifier adds a planet modifier and fires 1085 after 2480 days (4960 if contained), then 1090 after 1240 and 1095 after 720 (00_scripted_effects.txt:5897-5983)."
+  },
+  {
+   "doc": "situation.1110",
+   "kind": "review",
+   "zh": "审阅注：选项 a 开启污染情境（situation_tainted_voidspawn）；该情境运行时庆典进度为 0（01_narrative_situations.txt:598-609）。",
+   "en": "Review note: option a starts the contamination situation; while it runs the celebration progress is frozen (01_narrative_situations.txt:598-609)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整：情境定义、阶段2十一事件的互斥、完成事件、位面之魇后续与失败/开始的隐藏事件。",
+   "en": "Complete: situation definition, stage-2 exclusivity, completion events, horror follow-up, hidden start/fail events."
+  },
+  "sources": [
+   "common/situations/01_narrative_situations.txt",
+   "events/situation_events.txt",
+   "common/scripted_effects/00_scripted_effects.txt"
+  ],
+  "uncertain": [
+   "The Chinese names of Shard/Tiyanki/Dreadnought trophies in the stage labels are descriptive; check against the reader text."
+  ],
+  "guide": "public/summaries/situation-leviathan-celebration-opportunity.md"
+ }
+}

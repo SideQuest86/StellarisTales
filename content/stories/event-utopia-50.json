@@ -1,0 +1,28 @@
+{
+ "id": "event-utopia-50",
+ "notes": [
+  {
+   "doc": "utopia.62",
+   "kind": "review",
+   "zh": "审阅说明：脚本中该选项的权重在“存在科学家议员”时为0，而事件触发要求存在科学家议员，二者矛盾；仅当抽签后的60–120天内状态变化才可能发生。",
+   "en": "Review note: this branch has weight 0 whenever a councilor scientist exists, yet the event itself requires one; it can only fire if that changes during the 60-120 day delay."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "科学枢纽建成后的三条十年期随机后续：青春之泉（含项目链）、被绑架的科学家、神经库。",
+   "en": "The three decade-pulse follow-ups of a completed Science Nexus: Fountain of Youth (with its project chain), Abducted Leader, Neural Bank."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-utopia-50.md",
+  "uncertain": [
+   "Practical reachability of utopia.62 (weight modifier contradicts its own trigger)."
+  ]
+ }
+}

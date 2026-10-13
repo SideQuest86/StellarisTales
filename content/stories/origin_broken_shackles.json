@@ -3,11 +3,48 @@
  "opening": {
   "targets": [
    "archaeological_site_types:broken_shackles_digsite",
-   "origin.5041"
+   "origin.5041",
+   "origin.5010",
+   "origin.5011",
+   "origin.5046",
+   "origin.5047",
+   "origin.5049",
+   "origin.5065",
+   "origin.5070",
+   "origin.5075",
+   "origin.5080",
+   "origin.5094",
+   "origin.5104",
+   "origin.5114",
+   "origin.5124",
+   "origin.5095",
+   "origin.5100",
+   "origin.5105",
+   "origin.5110",
+   "origin.5115",
+   "origin.5120",
+   "origin.5125",
+   "origin.5130",
+   "origin.5131",
+   "origin.5135",
+   "origin.5146",
+   "origin.5147",
+   "origin.5140",
+   "origin.5142",
+   "origin.5145",
+   "origin.5150",
+   "origin.5151",
+   "origin.5276",
+   "origin.5500",
+   "origin.5505",
+   "origin.5510",
+   "origin.5515",
+   "origin.5520",
+   "origin.5525"
   ],
   "label": {
-   "zh": "早期的独立支线",
-   "en": "Independent early branches"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
   "labels": {
    "archaeological_site_types:broken_shackles_digsite": {
@@ -17,17 +54,392 @@
    "origin.5041": {
     "zh": "年度政治变化；议会制度或传媒集团提前至30天",
     "en": "Annual political change; Parliamentary System or Media Conglomerate advances it to 30 days"
+   },
+   "origin.5010": {
+    "zh": "首次建造前哨站时：迈向星辰",
+    "en": "When the first starbase outpost is built"
+   },
+   "origin.5011": {
+    "zh": "每年检查：思乡之情（另一条路径）",
+    "en": "Yearly check: homesickness (alternate path)"
+   },
+   "origin.5046": {
+    "zh": "游戏中期：自由的代价事件链",
+    "en": "Mid-game: The Cost of Freedom chain"
+   },
+   "origin.5047": {
+    "zh": "每年检查：多元团队的研究加成",
+    "en": "Yearly check: a diverse research team"
+   },
+   "origin.5049": {
+    "zh": "拥有大型商业/影院/工厂建筑后：多元设计",
+    "en": "With a megaplex, holo-theatre or factory: Diverse Design"
+   },
+   "origin.5065": {
+    "zh": "与MSI首次接触：第一阶段",
+    "en": "First contact with MSI: stage 1"
+   },
+   "origin.5070": {
+    "zh": "与MSI首次接触：第二阶段",
+    "en": "First contact with MSI: stage 2"
+   },
+   "origin.5075": {
+    "zh": "与MSI首次接触：结束阶段",
+    "en": "First contact with MSI: final stage"
+   },
+   "origin.5080": {
+    "zh": "在星海共同体遇到MSI",
+    "en": "Meeting MSI in the Galactic Community"
+   },
+   "origin.5094": {
+    "zh": "每月检查：提议“取缔绝大多数奴隶制”议案",
+    "en": "Monthly check: resolution to outlaw most slavery proposed"
+   },
+   "origin.5104": {
+    "zh": "每月检查：提议“取缔一切奴隶制”议案",
+    "en": "Monthly check: resolution to ban all slavery proposed"
+   },
+   "origin.5114": {
+    "zh": "每月检查：提议禁止有机体奴隶贸易议案",
+    "en": "Monthly check: resolution against the organic slave trade proposed"
+   },
+   "origin.5124": {
+    "zh": "每月检查：提议禁止一切奴隶贸易议案",
+    "en": "Monthly check: resolution against all slave trade proposed"
+   },
+   "origin.5095": {
+    "zh": "议案“超越自我的大善”通过",
+    "en": "Resolution passes: Greater Good, Greater Than Ourselves"
+   },
+   "origin.5100": {
+    "zh": "议案“超越自我的大善”未通过",
+    "en": "Resolution fails: Greater Good, Greater Than Ourselves"
+   },
+   "origin.5105": {
+    "zh": "议案“中庸之道”通过",
+    "en": "Resolution passes: Balance in the Middle"
+   },
+   "origin.5110": {
+    "zh": "议案“中庸之道”未通过",
+    "en": "Resolution fails: Balance in the Middle"
+   },
+   "origin.5115": {
+    "zh": "泛星系贸易市场禁止有机体奴隶贸易",
+    "en": "Galactic Market bans the organic slave trade"
+   },
+   "origin.5120": {
+    "zh": "有机体奴隶贸易议案失败",
+    "en": "Organic slave trade ban fails"
+   },
+   "origin.5125": {
+    "zh": "泛星系贸易市场禁止一切奴隶贸易",
+    "en": "Galactic Market bans all slave trade"
+   },
+   "origin.5130": {
+    "zh": "奴隶贸易议案失败/允许",
+    "en": "Slave trade ban fails or sale is allowed"
+   },
+   "origin.5131": {
+    "zh": "反奴隶制议案被废止",
+    "en": "An anti-slavery resolution is repealed"
+   },
+   "origin.5135": {
+    "zh": "与MSI开战（三个公告窗口同时出现）",
+    "en": "War with MSI begins (three announcement windows at once)"
+   },
+   "origin.5146": {
+    "zh": "与MSI开战（三个公告窗口同时出现）",
+    "en": "War with MSI begins (three announcement windows at once)"
+   },
+   "origin.5147": {
+    "zh": "与MSI开战（三个公告窗口同时出现）",
+    "en": "War with MSI begins (three announcement windows at once)"
+   },
+   "origin.5140": {
+    "zh": "输掉与MSI的战争",
+    "en": "The war against MSI is lost"
+   },
+   "origin.5142": {
+    "zh": "与MSI签订维持现状协议",
+    "en": "A status-quo peace with MSI"
+   },
+   "origin.5145": {
+    "zh": "赢得与MSI的战争",
+    "en": "The war against MSI is won"
+   },
+   "origin.5150": {
+    "zh": "加入有MSI的联邦",
+    "en": "Joining a federation that includes MSI"
+   },
+   "origin.5151": {
+    "zh": "与奴隶主国家结盟",
+    "en": "Allying with a slaver state"
+   },
+   "origin.5276": {
+    "zh": "与MSI共组联邦后的和解",
+    "en": "Reconciliation after forming a federation with MSI"
+   },
+   "origin.5500": {
+    "zh": "研发科技后：研究改善",
+    "en": "After a technology: Research Improvements"
+   },
+   "origin.5505": {
+    "zh": "研发科技后：官僚需求",
+    "en": "After a technology: Bureaucratic Needs"
+   },
+   "origin.5510": {
+    "zh": "开始殖民后：第一个殖民地",
+    "en": "When the first colony is founded"
+   },
+   "origin.5515": {
+    "zh": "故乡星球旁建成观测站：照料或提升",
+    "en": "Observation station at a former home: hold or raise"
+   },
+   "origin.5520": {
+    "zh": "故乡星球旁建成观测站：家园之景",
+    "en": "Observation station at a former home: view of home"
+   },
+   "origin.5525": {
+    "zh": "提升原始文明至星海舞台后",
+    "en": "After uplifting a former home to the galactic stage"
    }
   },
-  "evidence": "origin.110 creates the digsite, visible only after built_first_science_ship set by5060; schedules5041 after30days for civic_parliamentary_system or civic_media_conglomerate. 00_on_actions on_yearly_pulse_country also calls5041 for all eligible Broken Shackles countries (once via internal_politics flag). Digsite stages5015/5020/5025/5030/5035. Midgame5045->5046 is not an opening."
+  "evidence": "events/origin_events_1.txt origin.110 (game start events/game_start.txt:402) creates broken_shackles_digsite, visible only after hidden 5060 (events/origin_events_broken_shackles.txt:2378-2399, on_ship_built common/on_actions/00_on_actions.txt:2553) sets built_first_science_ship; yearly/mid-game/monthly pulses common/on_actions/00_on_actions.txt:317 (5045), 411-413 (5047/5011), 346-349 (5094/5104/5114/5124); first-contact stages common/first_contact/02_first_contact_unique_stories.txt:80/118/156; resolutions common/resolutions/00_resolutions.txt:3551, 3672, 4220-4449, 13336-13619; on_war_beginning common/on_actions/00_on_actions.txt:2610-2612, on_war_won :3136, on_war_lost :3164, on_join_federation :3508-3509, on_tech_increased :2705-2706, on_colonization_started :1276, observation stations :1958-1959."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/origin_events_broken_shackles.txt",
+   "common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/resolutions/00_resolutions.txt",
+   "common/first_contact/02_first_contact_unique_stories.txt"
+  ],
+  "uncertain": [
+   "Slave-ban resolution events are fired by the resolutions of the Galactic Community (shared); only the origin-specific windows are in this story.",
+   "Cost of Freedom (5200-5255) option weights/groups were taken from the compiled tree."
+  ],
+  "guide": "public/summaries/origin_broken_shackles.md"
+ },
+ "bridges": [
+  {
+   "from": "event_chains:homeworlds_chain",
+   "to": "origin.5000",
+   "conditional": true,
+   "label": {
+    "zh": "勘测主要母星所在星系",
+    "en": "Survey the main homeworld system"
+   },
+   "evidence": "events/origin_events_broken_shackles.txt:12-53 hidden 4997 (on_survey_planet common/on_actions/00_on_actions.txt:936/1164) fires 5000 for the star flagged broken_shackles_home_system if the country has not set met_broken_shackles_homeworld."
+  },
+  {
+   "from": "event_chains:homeworlds_chain",
+   "to": "origin.5001",
+   "conditional": true,
+   "label": {
+    "zh": "首次勘测被掳走族群的其他母星",
+    "en": "First survey of another abductee world"
+   },
+   "evidence": "events/origin_events_broken_shackles.txt:55-103 hidden 4998 (common/on_actions/00_on_actions.txt:1165) fires 5001 once for a system with a broken_shackles_abductees_world planet."
+  },
+  {
+   "from": "event_chains:homeworlds_chain",
+   "to": "origin.5009",
+   "conditional": true,
+   "label": {
+    "zh": "勘测第三处被掳走族群的母星",
+    "en": "Survey a further abductee world"
+   },
+   "evidence": "events/origin_events_broken_shackles.txt:106-155 hidden 4999 (common/on_actions/00_on_actions.txt:1166) fires 5009 after 5001 (visited_former_home_world) when not recently_found_homeworld."
   }
- }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "origin.5000",
+    "origin.5001",
+    "origin.5009"
+   ],
+   "required": 3,
+   "label": {
+    "zh": "寻找三处母星",
+    "en": "Finding the three home worlds"
+   },
+   "note": {
+    "zh": "三处母星可按任意顺序勘测；事件链计数 found_homeworlds 满后触发“重返归根之地”（5270，7天后）。",
+    "en": "The three home worlds can be surveyed in any order; once the found_homeworlds counter is complete, Roots Reclaimed (5270) follows after 7 days."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.5095",
+    "origin.5100"
+   ],
+   "label": {
+    "zh": "议案结果：大善",
+    "en": "Resolution result: Greater Good"
+   },
+   "note": {
+    "zh": "通过或未通过。",
+    "en": "Passed or failed (common/resolutions/00_resolutions.txt:4220-4236)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.5105",
+    "origin.5110"
+   ],
+   "label": {
+    "zh": "议案结果：中庸之道",
+    "en": "Resolution result: Balance in the Middle"
+   },
+   "note": {
+    "zh": "通过或未通过。",
+    "en": "Passed or failed (common/resolutions/00_resolutions.txt:4432-4449)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.5115",
+    "origin.5120"
+   ],
+   "label": {
+    "zh": "议案结果：有机体奴隶贸易",
+    "en": "Resolution result: organic slave trade"
+   },
+   "note": {
+    "zh": "通过或未通过。",
+    "en": "Passed or failed (common/resolutions/00_resolutions.txt:13336-13354)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.5125",
+    "origin.5130"
+   ],
+   "label": {
+    "zh": "议案结果：智慧生命奴隶贸易",
+    "en": "Resolution result: sentient slave trade"
+   },
+   "note": {
+    "zh": "通过或未通过/允许。",
+    "en": "Passed or failed or sale allowed (common/resolutions/00_resolutions.txt:13519-13619)."
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "origin.5135",
+    "origin.5146",
+    "origin.5147"
+   ],
+   "label": {
+    "zh": "开战公告",
+    "en": "War announcements"
+   },
+   "note": {
+    "zh": "隐藏事件5148在与MSI（或同类奴隶主）开战时同时触发三个窗口。",
+    "en": "Hidden 5148 fires the three windows together when a war with MSI (or a similar slaver) starts (events/origin_events_broken_shackles.txt:3393-3431)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.5140",
+    "origin.5142",
+    "origin.5145"
+   ],
+   "label": {
+    "zh": "与MSI战争的结果",
+    "en": "Outcome of the war with MSI"
+   },
+   "note": {
+    "zh": "战败 5140、维持现状 5142（经隐藏5141）、战胜 5145。",
+    "en": "Lost 5140, status quo 5142 (via hidden 5141), won 5145."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "origin.5225",
+    "origin.5230",
+    "origin.5235"
+   ],
+   "label": {
+    "zh": "分裂的社会结局",
+    "en": "Outcomes of a divided society"
+   },
+   "note": {
+    "zh": "三选一，各1/3。",
+    "en": "One of three, 1/3 each."
+   }
+  }
+ ],
+ "endings": {
+  "origin.5270": {
+   "label": {
+    "zh": "重返归根之地",
+    "en": "Roots Reclaimed"
+   },
+   "note": {
+    "zh": "三处母星都找到后。",
+    "en": "After all home worlds are found."
+   },
+   "evidence": "events/origin_events_broken_shackles.txt:4081-4121"
+  },
+  "origin.5276": {
+   "label": {
+    "zh": "与MSI和解",
+    "en": "Reconciliation with MSI"
+   },
+   "note": {
+    "zh": "联邦中的和解结局。",
+    "en": "Reconciliation ending in a federation."
+   },
+   "evidence": "events/origin_events_broken_shackles.txt:4122-4181"
+  },
+  "origin.5145": {
+   "label": {
+    "zh": "宣称正义",
+    "en": "Justice Claimed"
+   },
+   "note": {
+    "zh": "战胜MSI。",
+    "en": "MSI defeated in war."
+   },
+   "evidence": "events/origin_events_broken_shackles.txt:3221"
+  },
+  "origin.5255": {
+   "label": {
+    "zh": "成熟的社会",
+    "en": "Mature Society"
+   },
+   "note": {
+    "zh": "自由的代价线的收束。",
+    "en": "Closes the Cost of Freedom line."
+   },
+   "evidence": "events/origin_events_broken_shackles.txt:4019"
+  }
+ },
+ "notes": [
+  {
+   "doc": "origin.5040",
+   "kind": "review",
+   "zh": "“母星定位”项目完成后开启“寻找家园”事件链：在三处母星系统创建兴趣点，并把已访问过的母星记入计数。",
+   "en": "After the Locate Home Worlds project: starts the Finding Home chain, points of interest in three systems, and counts already visited home worlds (events/origin_events_broken_shackles.txt:1988-2123)."
+  },
+  {
+   "doc": "origin.5046",
+   "kind": "review",
+   "zh": "“自由的代价”：每个玩家的中期脉冲（on_mid_game_pulse → 隐藏5045）；两条路线——放任（5200起）或特别委员会项目（5205起）。",
+   "en": "The Cost of Freedom: mid-game pulse (hidden 5045 -> every playable Broken Shackles country); two routes: let it run (5200 onward) or the special committee project (5205 onward) (events/origin_events_broken_shackles.txt:2175-2245)."
+  }
+ ]
 }

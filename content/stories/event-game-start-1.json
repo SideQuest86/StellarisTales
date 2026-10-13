@@ -1,0 +1,254 @@
+{
+ "id": "event-game-start-1",
+ "family": {
+  "title": {
+   "zh": "亚光速探测器",
+   "en": "Sublight Exploration Probes"
+  },
+  "category": "stories",
+  "start": "country.1",
+  "members": [
+   "country.1",
+   "country.2",
+   "country.3",
+   "country.4",
+   "country.5",
+   "country.6",
+   "country.7",
+   "country.8",
+   "country.9",
+   "country.10",
+   "country.11",
+   "country.12",
+   "country.13",
+   "country.14",
+   "country.15",
+   "country.16",
+   "country.17",
+   "country.18",
+   "country.19",
+   "country.20",
+   "country.21",
+   "event_chains:sublight_probes_chain",
+   "special_projects:SUBLIGHT_PROBE_PROJECT"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "country.1",
+   "choice": "country.1.a",
+   "to": "country.3",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入四个标记星系之一：发现探测器（直接回收）",
+    "en": "A fleet enters one of the four marked systems: probe found (direct recovery)"
+   },
+   "evidence": "events/country_events_1.txt:171-350 hidden fleet event country.2 removes the marker and draws country.3 / .5 / .10 / .12 by random_list (weights depend on the flags probe_salvage_flag, probe_subspace_anomaly_flag, modified_probe_flag)"
+  },
+  {
+   "from": "country.1",
+   "choice": "country.1.a",
+   "to": "country.5",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记星系：离子轨迹",
+    "en": "A fleet enters a marked system: ion trail"
+   },
+   "evidence": "events/country_events_1.txt:233-349 country.2 random_list branch to country.5 (excluded once probe_salvage_flag is set)"
+  },
+  {
+   "from": "country.1",
+   "choice": "country.1.a",
+   "to": "country.10",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记星系：亚空间异常现象",
+    "en": "A fleet enters a marked system: subspace anomaly"
+   },
+   "evidence": "events/country_events_1.txt:233-349 country.2 random_list branch to country.10 (excluded once probe_subspace_anomaly_flag is set)"
+  },
+  {
+   "from": "country.1",
+   "choice": "country.1.a",
+   "to": "country.12",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入标记星系：改造探测器",
+    "en": "A fleet enters a marked system: modified probe"
+   },
+   "evidence": "events/country_events_1.txt:233-349 country.2 random_list branch to country.12 (excluded once modified_probe_flag is set)"
+  },
+  {
+   "from": "country.5",
+   "choice": "country.5.a",
+   "to": "country.6",
+   "conditional": true,
+   "label": {
+    "zh": "舰队抵达离子轨迹尽头的星系",
+    "en": "A fleet reaches the system at the end of the ion trail"
+   },
+   "evidence": "events/country_events_1.txt:445-475 country.5.a sets chasing_ion_trail and a point of interest; country.6 trigger (L489-492) needs the ion_trail_target star flag and the chasing flag"
+  },
+  {
+   "from": "country.7",
+   "choice": "country.7.a",
+   "to": "country.9",
+   "conditional": true,
+   "label": {
+    "zh": "击毁打捞舰队，夺回探测器",
+    "en": "Destroy the salvage fleet and take the probe"
+   },
+   "evidence": "events/country_events_1.txt:570-584 country.7.a makes the salvagers hostile and marks them; country.9 (L632-680) fires on their destruction by the player (probe_salvagers flag and relation flag)"
+  },
+  {
+   "from": "country.7",
+   "choice": "country.7.a",
+   "to": "country.17",
+   "conditional": true,
+   "label": {
+    "zh": "打捞舰队被他国击毁",
+    "en": "The salvage fleet is destroyed by another empire"
+   },
+   "evidence": "events/country_events_1.txt:683-739 hidden country.16 (probe_salvagers, no relation flag with the killer) sends country.17 to the original owner"
+  },
+  {
+   "from": "country.10",
+   "choice": "country.10.a",
+   "to": "country.11",
+   "conditional": true,
+   "label": {
+    "zh": "击毁亚空间异常舰队",
+    "en": "Destroy the subspace anomaly fleet"
+   },
+   "evidence": "events/country_events_1.txt:827-907 country.10.a creates the point of interest and flag; country.11 trigger needs the subspace_anomaly flag and relation flag of the killer"
+  },
+  {
+   "from": "country.10",
+   "choice": "country.10.a",
+   "to": "country.19",
+   "conditional": true,
+   "label": {
+    "zh": "异常舰队被他国击毁",
+    "en": "The anomaly fleet is destroyed by another empire"
+   },
+   "evidence": "events/country_events_1.txt:910-970 hidden country.18 sends country.19 to the original discoverer"
+  },
+  {
+   "from": "country.13",
+   "choice": "country.13.a",
+   "to": "country.14",
+   "conditional": true,
+   "label": {
+    "zh": "击毁改造探测器",
+    "en": "Destroy the modified probe"
+   },
+   "evidence": "events/country_events_1.txt:1048-1143 both replies make the probe hostile and create the point of interest; country.14 fires on its destruction"
+  },
+  {
+   "from": "country.13",
+   "choice": "country.13.a",
+   "to": "country.21",
+   "conditional": true,
+   "label": {
+    "zh": "改造探测器被他国击毁",
+    "en": "The modified probe is destroyed by another empire"
+   },
+   "evidence": "events/country_events_1.txt:1145-1202 hidden country.20 sends country.21 to the original discoverer"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "country.3",
+    "country.5",
+    "country.10",
+    "country.12"
+   ],
+   "required": 4,
+   "label": {
+    "zh": "四个探测器标记星系",
+    "en": "Four probe systems"
+   },
+   "note": {
+    "zh": "共四个探测器（事件链计数 probes_recovered，上限4），可按任意顺序回收；每进入一个标记星系随机抽到一种遭遇。离子轨迹、亚空间异常、改造探测器各自设置旗标后不再重复，发现探测器可重复。",
+    "en": "Four probes in all (chain counter probes_recovered, max 4), recovered in any order; each marked system gives one random encounter. Ion trail, subspace anomaly and modified probe set a flag and are not drawn again; the plain discovery can repeat."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.9",
+    "country.17"
+   ],
+   "label": {
+    "zh": "打捞舰队：自己击毁 / 他国击毁",
+    "en": "Salvagers: destroyed by us / by someone else"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.11",
+    "country.19"
+   ],
+   "label": {
+    "zh": "异常舰队：自己击毁 / 他国击毁",
+    "en": "Anomaly: destroyed by us / by someone else"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.14",
+    "country.21"
+   ],
+   "label": {
+    "zh": "改造探测器：自己击毁 / 他国击毁",
+    "en": "Modified probe: destroyed by us / by someone else"
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "country.1",
+   "kind": "review",
+   "zh": "触发：游戏开始后由开局事件闸门 country.900 抽取（events/game_start.txt:15 在460±60天后触发；events/country_events_2.txt:17-66 为按权重的随机列表，四条开局故事互斥，另有69%什么都不发生）。另有 country.258 在带故事旗标或已有通讯对象时放行，否则180天后重试（country_events_1.txt:13-37）；仅限非AI玩家（L49-52）。",
+   "en": "Trigger: After game start the starting-event gate country.900 draws it (events/game_start.txt:15 fires it after 460±60 days; events/country_events_2.txt:17-66 is a weighted random list: the four opening stories are mutually exclusive and 69% of the weight is \"nothing happens\"). country.258 lets it through only if a story flag is set or a communication exists, otherwise it retries after 180 days (country_events_1.txt:13-37); human players only (L49-52)."
+  },
+  {
+   "doc": "country.15",
+   "kind": "review",
+   "zh": "四个探测器全部回收后（计数达到上限）触发；奖励物理研究与能量，并勘测首都附近若干星系（country_events_1.txt:1205-1328）。",
+   "en": "Fires after all four probes are recovered (counter at its maximum); rewards physics research and energy and surveys several systems near the capital (country_events_1.txt:1205-1328)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/country_events_1.txt:11-1328",
+   "events/game_start.txt:15",
+   "events/country_events_2.txt:10-68",
+   "common/event_chains/00_event_chains.txt:124-133",
+   "common/on_actions/00_on_actions.txt:981-986,1573,1615-1616,2042-2045"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-game-start-1.md",
+  "merged": [
+   "event-country-2",
+   "event-country-6",
+   "event-country-9",
+   "event-country-11",
+   "event-country-14",
+   "event-country-16",
+   "event-country-18",
+   "event-country-20"
+  ]
+ }
+}

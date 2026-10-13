@@ -1,0 +1,48 @@
+{
+ "id": "event-cstorms-1770",
+ "family": {
+  "title": {
+   "zh": "不飞之羽",
+   "en": "Flightless Fauna"
+  },
+  "category": "stories",
+  "start": "cstorms.1770",
+  "members": [
+   "cstorms.1770",
+   "cstorms.1771",
+   "cstorms.1775",
+   "cstorms.1776"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "cstorms.1771",
+   "choice": "cstorms.1771.c",
+   "to": "cstorms.1776",
+   "conditional": true,
+   "label": {
+    "zh": "救下鸟类（花费350矿物）后，引力风暴再次离开",
+    "en": "Birds saved (350 minerals): a gravity storm leaves again"
+   },
+   "evidence": "events/cosmic_storms_events_1.txt:3722-3734,3748-3777 option c sets flightless_fauna_saved_by_@owner; cstorms.1775 (on_storm_left_system, common/on_actions/00_on_actions.txt:5438) schedules cstorms.1776 after 360 days"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/cosmic_storms_events_1.txt:3591-3797",
+   "common/on_actions/00_on_actions.txt:5438,5412"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-cstorms-1770.md",
+  "merged": [
+   "event-cstorms-1775"
+  ]
+ }
+}

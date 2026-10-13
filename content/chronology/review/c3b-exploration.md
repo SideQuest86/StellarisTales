@@ -138,3 +138,35 @@ outcome already seen by that empire is not picked again; modifiers are evaluated
     SOLARPUNK_CAT and the system initializers' `add_anomaly` are not edges, so the real spawners never appear as
     triggers of the anomaly roots. An `add_anomaly` edge kind (trigger only, not a tree edge) would let the compiler
     show "spawned by X".
+
+### Batch 01 (resumed session) — `common/anomalies/01_anomaly_categories.txt` — 41 stories reviewed
+Category blocks read at original lines (spawn_chance, level, outcome weights/modifiers); outcome events and projects checked
+in `events/anomaly_events_1.txt` / `_2.txt` and `common/special_projects/00_projects_2/3.txt` as needed. No structural
+corrections needed: the compiled trees were right (all are anomaly -> research/random outcome -> project -> result).
+Stories: ast-cluster, ast-wavelengths-1, barr-base (LIMBO_2 if/else order 189/1198/1200/1199/1190 verified at
+`00_projects_3.txt`), crystal-manufactory (project weights by flags manufactory2/3/4, hidden router 3131 -> 3127),
+gen-desert, uhb-buoy (-> Ransomeers chain), gaia-record (-> Drifting Battlefield chain), hbl-lush-planet-1,
+ast-debris-field-1 (-> find_sol_chain), cont-signs, frbr-grimacing, bar-colony, froz-base, hab-corn, trop-woods, ast-crater,
+dimensional-pocket, froz-box, proj-moon, tox-mat, ast-shrine-1 (-> old_gods_chain), hbl-music-1, hole-radiation,
+uhb-ancient-ruins-1 (note: option 120.b has `is_gestalt = no` inside NOR, so literally gestalt-only), ast-illicit-dark,
+atm-anomaly, froz-base2, froz-illuminated, gaea-checkered, gaia-move, gas-cloudy, gas-zro-ice, gen-abandoned-ship,
+gen-playground, hab-mat, leveled, molten-base, sea, tox-purple-rain, tox-structures, trop-pets.
+Open: whether 3125 (crystal-manufactory) options a/c allow retry is not verified.
+
+### Shroud patron first-contact projects (resumed session) — 12 families, 39 stories -> 13 stories
+The 39 assigned `project-*-fc-project[-hive|-robot]` stories were one project per empire type (`enable_patron_first_contact_project`
+inside inline script `shroud/patron_start_first_contact_special_project.txt` / `minor_patron_first_contact_start_event.txt`: robot ->
+`_ROBOT`, hive -> `_HIVE`, else base; all three have the same end event). They are now **one family per patron**, id = the
+former base-project story id, start = the patron's first-contact event, with three exclusive project variants and the end event:
+eater-of-world (shroud.4000/4005), cradle-of-souls (4010/4015), composer-of-strands (4020/4025, plus the Shroud Forged
+path shroud.2810 -> THE_COMPOSER_OF_STRANDS_CLAY_FC_PROJECT, `shroud_situation_events.txt:4215-4255`; former story
+project-the-composer-of-strands-clay-fc-project merged), instrument-of-desire (4030/4035), animator-of-clay (4050/4055),
+outsider (4060/4065), endless-sands = Endless Tide (4070/4075), mountain-of-bones = Pale Mountain (4080/4085), golden-dream
+(4090/4095), bladeless-sword = Hollow Point (4100/4105), throne-shadow = Vacant Throne (4110/4115), black-river (4120/4125),
+and whisperers-in-the-void (4040 -> 4045 -> 4046 | 11110 -> 11120 -> revenge projects -> 11130; 13 docs). Triggers:
+`common/patrons/patron_types.txt` `first_contact_event` (natural discovery in the Shroud) and `shroud_touched_patron_first_contact`
+(`shroud_shadows_scripted_effects.txt:4299`, 12 equal weights, 0 if already contacted, minors need all majors first; called by
+inline `shroud_touched_patron_contact.txt` and shroud.5305). Major end events (inline `major_patron_first_contact_end_event.txt`)
+offer embrace / neutral / reject (attunement); minor ones one option (4055, 4065, 4105, 4125 add monthly Zro).
+The `-hive` / `-robot` story ids no longer exist (intended, absorbed); only the base id keeps a fragment.
+Note: shroud.4000/4010/... also appear as docs inside the enclave stories event-enclave-300/304/400/404 (via shroud.5305); not mine.

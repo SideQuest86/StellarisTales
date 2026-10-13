@@ -1,0 +1,322 @@
+{
+ "id": "event-country-200",
+ "family": {
+  "title": {
+   "zh": "激进信徒",
+   "en": "Radical Cult"
+  },
+  "category": "stories",
+  "start": "country.200",
+  "members": [
+   "country.200",
+   "country.201",
+   "country.202",
+   "country.203",
+   "country.204",
+   "country.205",
+   "country.206",
+   "country.207",
+   "country.208",
+   "country.209",
+   "country.210",
+   "country.211",
+   "country.212",
+   "country.213",
+   "country.214",
+   "country.215",
+   "country.216",
+   "country.217",
+   "country.218",
+   "country.219",
+   "country.220",
+   "country.221",
+   "country.222",
+   "country.223",
+   "country.225",
+   "event_chains:radical_cult",
+   "special_projects:BOARD_CULT_SHIP_1",
+   "special_projects:BOARD_CULT_SHIP_2",
+   "special_projects:CULTIST_DEBRIS"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "country.200",
+   "choice": "country.200.a",
+   "to": "country.202",
+   "conditional": true,
+   "label": {
+    "zh": "击瘫被劫持舰队的旗舰",
+    "en": "The hijacked flagship is disabled"
+   },
+   "evidence": "events/country_events_1.txt:2448-2463 hidden country.201 (on_ship_disabled, 00_on_actions.txt:2042) fires country.202 for the owner of the cultist_ship; country.217/218 (L2520-2582) does the same when another empire disables it"
+  },
+  {
+   "from": "country.200",
+   "choice": "country.200.a",
+   "to": "country.218",
+   "conditional": true,
+   "label": {
+    "zh": "旗舰被他国击瘫",
+    "en": "The flagship is disabled by another empire"
+   },
+   "evidence": "events/country_events_1.txt:2520-2582 hidden country.217 (on_ship_disabled, 00_on_actions.txt:2044) sends country.218 to the cult's original target"
+  },
+  {
+   "from": "country.203",
+   "choice": "country.203.a",
+   "to": "country.204",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入第一个搜索星系",
+    "en": "A fleet enters the first search system"
+   },
+   "evidence": "events/country_events_1.txt:2610-2711 country.203 marks three systems and the searching_for_cultists flag; country.204/205/206 (L2715-3100) fire on entering each marked system"
+  },
+  {
+   "from": "country.203",
+   "choice": "country.203.a",
+   "to": "country.205",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入第二个搜索星系",
+    "en": "A fleet enters the second search system"
+   },
+   "evidence": "events/country_events_1.txt:2909-2925 country.205 trigger: cultists_2 star flag, searching_for_cultists, not yet sighted"
+  },
+  {
+   "from": "country.203",
+   "choice": "country.203.a",
+   "to": "country.206",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入第三个搜索星系",
+    "en": "A fleet enters the third search system"
+   },
+   "evidence": "events/country_events_1.txt:3009-3030 country.206 trigger: cultists_3 star flag"
+  },
+  {
+   "from": "country.204",
+   "choice": "BATTLESTATIONS",
+   "to": "country.219",
+   "conditional": true,
+   "label": {
+    "zh": "击毁掠夺舰队（前两支）",
+    "en": "Destroy the marauder fleet (first two)"
+   },
+   "evidence": "events/country_events_1.txt:2808-2889 hidden country.216 (on_fleet_destroyed_perp, 00_on_actions.txt:1616) counts cultist_fleets_destroyed; <3 -> country.219"
+  },
+  {
+   "from": "country.205",
+   "choice": "BATTLESTATIONS",
+   "to": "country.219",
+   "conditional": true,
+   "label": {
+    "zh": "击毁掠夺舰队（前两支）",
+    "en": "Destroy the marauder fleet (first two)"
+   },
+   "evidence": "events/country_events_1.txt:2808-2889 same hidden country.216 count; <3 -> country.219"
+  },
+  {
+   "from": "country.205",
+   "choice": "BATTLESTATIONS",
+   "to": "country.207",
+   "conditional": true,
+   "label": {
+    "zh": "第三支掠夺舰队被击毁",
+    "en": "The third marauder fleet is destroyed"
+   },
+   "evidence": "events/country_events_1.txt:2839-2847 count > 2 -> country.207"
+  },
+  {
+   "from": "country.206",
+   "choice": "BATTLESTATIONS",
+   "to": "country.219",
+   "conditional": true,
+   "label": {
+    "zh": "击毁掠夺舰队（前两支）",
+    "en": "Destroy the marauder fleet (first two)"
+   },
+   "evidence": "events/country_events_1.txt:2808-2889 same hidden country.216 count; <3 -> country.219"
+  },
+  {
+   "from": "country.206",
+   "choice": "BATTLESTATIONS",
+   "to": "country.207",
+   "conditional": true,
+   "label": {
+    "zh": "第三支掠夺舰队被击毁",
+    "en": "The third marauder fleet is destroyed"
+   },
+   "evidence": "events/country_events_1.txt:2839-2847 count > 2 -> country.207"
+  },
+  {
+   "from": "country.204",
+   "choice": "BATTLESTATIONS",
+   "to": "country.207",
+   "conditional": true,
+   "label": {
+    "zh": "第三支掠夺舰队被击毁",
+    "en": "The third marauder fleet is destroyed"
+   },
+   "evidence": "events/country_events_1.txt:2839-2847 cultist_fleets_destroyed > 2 -> country.207 (battle debris)"
+  },
+  {
+   "from": "country.207",
+   "choice": "country.207.a",
+   "to": "country.208",
+   "conditional": true,
+   "label": {
+    "zh": "回收残骸项目完成",
+    "en": "Salvage project finished"
+   },
+   "evidence": "events/country_events_1.txt:3108-3156 country.207 enables special project CULTIST_DEBRIS; its on_success fires country.208 (common/special_projects/00_projects_1.txt:2775)"
+  },
+  {
+   "from": "country.208",
+   "choice": "country.208.a",
+   "to": "country.209",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁邪教船坞",
+    "en": "Destroy the cultist shipyard"
+   },
+   "evidence": "events/country_events_1.txt:3159-3308 country.208 builds the Cultist Shipyard fleet and POI; hidden country.215 (on_fleet_destroyed_perp, L3311-3327) fires country.209; country.220/221 (L3365-3409, on_fleet_destroyed_victim) when someone else destroys it"
+  },
+  {
+   "from": "country.208",
+   "choice": "country.208.a",
+   "to": "country.221",
+   "conditional": true,
+   "label": {
+    "zh": "船坞被他国摧毁",
+    "en": "The shipyard is destroyed by another empire"
+   },
+   "evidence": "events/country_events_1.txt:3365-3386 country.220 (fire_only_once) sends country.221 to the cult's original target"
+  },
+  {
+   "from": "country.210",
+   "choice": "country.210.a",
+   "to": "country.211",
+   "conditional": true,
+   "label": {
+    "zh": "舰队进入旗舰所在星系",
+    "en": "A fleet enters the flagship system"
+   },
+   "evidence": "events/country_events_1.txt:3427-3481 country.210 sets hunting_cult_flagship and a POI; country.211 trigger needs that flag and the cult_flagship_system star flag"
+  },
+  {
+   "from": "country.211",
+   "choice": "country.211.a",
+   "to": "country.213",
+   "conditional": true,
+   "label": {
+    "zh": "击瘫邪教旗舰",
+    "en": "Disable the cult flagship"
+   },
+   "evidence": "events/country_events_1.txt:3577-3600 hidden country.212 (on_ship_disabled, 00_on_actions.txt:2043) fires country.213"
+  },
+  {
+   "from": "country.211",
+   "choice": "country.211.a",
+   "to": "country.223",
+   "conditional": true,
+   "label": {
+    "zh": "旗舰被他国击瘫",
+    "en": "The flagship is disabled by another empire"
+   },
+   "evidence": "events/country_events_1.txt:3635-3662 hidden country.222 (on_ship_disabled, 00_on_actions.txt:2045) fires country.223"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.202",
+    "country.218"
+   ],
+   "label": {
+    "zh": "旗舰被自己击瘫 / 被他国击瘫",
+    "en": "Flagship disabled by us / by someone else"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.209",
+    "country.221"
+   ],
+   "label": {
+    "zh": "船坞被自己摧毁 / 被他国摧毁",
+    "en": "Shipyard destroyed by us / by someone else"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "country.213",
+    "country.223"
+   ],
+   "label": {
+    "zh": "邪教旗舰被自己击瘫 / 被他国击瘫",
+    "en": "Cult flagship disabled by us / by someone else"
+   }
+  },
+  {
+   "kind": "parallel",
+   "members": [
+    "country.204",
+    "country.205",
+    "country.206"
+   ],
+   "required": 3,
+   "label": {
+    "zh": "三个搜索星系",
+    "en": "Three search systems"
+   },
+   "note": {
+    "zh": "三个标记星系各有一支掠夺舰队，任意顺序；前两支被击毁给 country.219，第三支引出战斗残骸 country.207。",
+    "en": "Each of the three marked systems holds a marauder fleet, in any order; the first two kills give country.219, the third leads to the debris country.207."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "country.200",
+   "kind": "review",
+   "zh": "触发：游戏开始后由开局事件闸门 country.900 抽取（events/game_start.txt:15 在460±60天后触发；events/country_events_2.txt:17-66 为按权重的随机列表，四条开局故事互斥，另有69%什么都不发生）。权重10：灵性主义者×2、物质主义者×0.5，“年轻”起源或热衷探索者为0；非集群意识、人类玩家、非游牧（country_events_1.txt:2267-2274）。选项b：花费125团结买下被劫持的舰队并结束事件链，另有20%在约360天后得到 country.225（旗舰赠予）。",
+   "en": "Trigger: After game start the starting-event gate country.900 draws it (events/game_start.txt:15 fires it after 460±60 days; events/country_events_2.txt:17-66 is a weighted random list: the four opening stories are mutually exclusive and 69% of the weight is \"nothing happens\"). Weight 10: spiritualists x2, materialists x0.5, 0 for \"young\" origins or eager explorers; non-gestalt, human player, not nomadic (country_events_1.txt:2267-2274). Option b pays 125 unity for the hijacked fleet and ends the chain, with a 20% chance of country.225 (flagship gifted) after about 360 days."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/country_events_1.txt:2240-3772",
+   "events/country_events_2.txt:17-66",
+   "common/event_chains/00_event_chains.txt:157-186",
+   "common/on_actions/00_on_actions.txt:981-986,1573,1615-1616,2042-2045",
+   "common/special_projects/00_projects_1.txt:2728-2775"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-country-200.md",
+  "merged": [
+   "event-country-201",
+   "event-country-204",
+   "event-country-205",
+   "event-country-206",
+   "event-country-211",
+   "event-country-212",
+   "event-country-215",
+   "event-country-216",
+   "event-country-217",
+   "event-country-220",
+   "event-country-222"
+  ]
+ }
+}

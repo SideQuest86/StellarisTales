@@ -1,0 +1,26 @@
+{
+ "id": "event-leviathans-4",
+ "notes": [
+  {
+   "doc": "leviathans.5",
+   "kind": "review",
+   "zh": "审阅注：任何守护者被击杀时（on_fleet_destroyed_perp，00_on_actions.txt:1646）隐藏事件 leviathans.4 记录系统与击杀者，2天后隐藏 leviathans.6（要求被击杀国家已无舰队）向所有有通讯的帝国发 leviathans.5，向观察者发 observer.1。神秘堡垒首次仅被瘫痪时不发出时间线通知（leviathans.4 的 after 例外）。",
+   "en": "Review note: when any guardian dies (on_fleet_destroyed_perp, 00_on_actions.txt:1646) hidden leviathans.4 records system and killer; two days later hidden leviathans.6 (requires the victim country to have no fleets left) sends leviathans.5 to every empire in contact and observer.1 to observers. The Enigmatic Fortress is exempt from the timeline notice when merely disabled (leviathans.4 after-block, leviathans_events_1.txt:69-88)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整（共用通知，无选项分支）。",
+   "en": "Complete (shared notice, no branches)."
+  },
+  "sources": [
+   "events/leviathans_events_1.txt",
+   "events/observer_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-leviathans-4.md"
+ }
+}

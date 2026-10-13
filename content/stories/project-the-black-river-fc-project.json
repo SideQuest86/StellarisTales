@@ -1,0 +1,101 @@
+{
+ "id": "project-the-black-river-fc-project",
+ "family": {
+  "title": {
+   "zh": "幽黑之长河",
+   "en": "Black River"
+  },
+  "category": "exploration",
+  "start": "shroud.4120",
+  "members": [
+   "shroud.4120",
+   "special_projects:THE_BLACK_RIVER_FC_PROJECT",
+   "special_projects:THE_BLACK_RIVER_FC_PROJECT_HIVE",
+   "special_projects:THE_BLACK_RIVER_FC_PROJECT_ROBOT",
+   "shroud.4125"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "shroud.4120",
+   "choice": "shroud.whispers_in_the_shroud.a",
+   "to": "special_projects:THE_BLACK_RIVER_FC_PROJECT",
+   "conditional": true,
+   "label": {
+    "zh": "普通帝国",
+    "en": "Standard empires"
+   },
+   "evidence": "common/inline_scripts/shroud/minor_patron_first_contact_start_event.txt: robot / hive / default branch enable_patron_first_contact_project"
+  },
+  {
+   "from": "shroud.4120",
+   "choice": "shroud.whispers_in_the_shroud.a",
+   "to": "special_projects:THE_BLACK_RIVER_FC_PROJECT_HIVE",
+   "conditional": true,
+   "label": {
+    "zh": "蜂巢思维",
+    "en": "Hive minds"
+   },
+   "evidence": "common/inline_scripts/shroud/minor_patron_first_contact_start_event.txt: robot / hive / default branch enable_patron_first_contact_project"
+  },
+  {
+   "from": "shroud.4120",
+   "choice": "shroud.whispers_in_the_shroud.a",
+   "to": "special_projects:THE_BLACK_RIVER_FC_PROJECT_ROBOT",
+   "conditional": true,
+   "label": {
+    "zh": "机械帝国",
+    "en": "Robot empires"
+   },
+   "evidence": "common/inline_scripts/shroud/minor_patron_first_contact_start_event.txt: robot / hive / default branch enable_patron_first_contact_project"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "special_projects:THE_BLACK_RIVER_FC_PROJECT",
+    "special_projects:THE_BLACK_RIVER_FC_PROJECT_HIVE",
+    "special_projects:THE_BLACK_RIVER_FC_PROJECT_ROBOT"
+   ],
+   "label": {
+    "zh": "按帝国类型启用一个项目",
+    "en": "One project by empire type"
+   },
+   "note": {
+    "zh": "机械帝国→_ROBOT；蜂巢思维→_HIVE；其余→基础项目（if/else顺序）。",
+    "en": "Robot empires get _ROBOT, hive minds _HIVE, all others the base project (if/else order)."
+   }
+  }
+ ],
+ "endings": {
+  "shroud.4125": {
+   "label": {
+    "zh": "首次接触完成",
+    "en": "First contact complete"
+   },
+   "note": {
+    "zh": "项目完成后触发，记录该赞助者接触状态为completed。",
+    "en": "Fired when the project completes; sets the patron first-contact state to completed."
+   },
+   "evidence": "common/special_projects/04_projects_shroud.txt on_success; events/shroud_events.txt"
+  }
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3b-exploration (resumed)",
+  "scope": {
+   "zh": "全部5个文档（含机械/蜂巢版项目）。",
+   "en": "All 5 docs (including robot/hive project versions)."
+  },
+  "sources": [
+   "common/special_projects/04_projects_shroud.txt",
+   "events/shroud_events.txt",
+   "common/inline_scripts/shroud/minor_patron_first_contact_end_event.txt",
+   "common/patrons/patron_types.txt"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/project-the-black-river-fc-project.md"
+ }
+}

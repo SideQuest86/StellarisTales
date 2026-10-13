@@ -1,0 +1,61 @@
+{
+ "id": "event-cstorms-1200",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.1220",
+    "cstorms.1225"
+   ],
+   "label": {
+    "zh": "稳定撞击的结果",
+    "en": "Result of stabilising"
+   },
+   "note": {
+    "zh": "95% 稳定成功（cstorms.1220），5% 盖亚星球（cstorms.1225）。",
+    "en": "95% stabilised (cstorms.1220), 5% gaia world (cstorms.1225)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.1225",
+    "cstorms.1230",
+    "cstorms.1235"
+   ],
+   "label": {
+    "zh": "改造相撞行星的结果",
+    "en": "Result of harmonising"
+   },
+   "note": {
+    "zh": "33% 盖亚星球，63% 全面大修（八个障碍），4% 家园四分五裂（星球被毁，但获得大量社会研究）。",
+    "en": "33% gaia world, 63% overhaul (eight blockers), 4% the home splits apart (planet destroyed, large society research bonus)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "cstorms.1240",
+   "kind": "review",
+   "zh": "若选项c不处理、或项目未在时限内完成，cstorms.1215 在 18000 天（50年，common/scripted_variables/07_scripted_variables_cosmic_storms.txt:24）后发现“collided_planet_collapsing”仍在，弹出 cstorms.1240，星球被毁并获得社会研究。",
+   "en": "If option c is chosen or the project is not finished in time, hidden cstorms.1215 finds the collided_planet_collapsing modifier still present after 18000 days (50 years, common/scripted_variables/07_scripted_variables_cosmic_storms.txt:24), shows cstorms.1240, the planet is destroyed and society research is granted."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/cosmic_storms_events_1.txt:957-1348",
+   "common/on_actions/00_on_actions.txt:3723",
+   "common/special_projects/03_projects_cosmic_storms.txt:357-431",
+   "common/scripted_variables/07_scripted_variables_cosmic_storms.txt:24"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-cstorms-1200.md"
+ }
+}

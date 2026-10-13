@@ -1,0 +1,89 @@
+{
+ "id": "event-feda-1",
+ "family": {
+  "title": {
+   "zh": "巨型船坞",
+   "en": "Mega Shipyard"
+  },
+  "category": "stories",
+  "start": "feda.1",
+  "members": [
+   "feda.1",
+   "feda.2",
+   "feda.3",
+   "feda.5",
+   "feda.6"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "feda.1",
+   "to": "feda.2",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：核心建成（mega_shipyard_2）",
+    "en": "After the next upgrade: Core built (mega_shipyard_2)"
+   },
+   "evidence": "common/megastructures/11_mega_shipyard.txt:284 feda.2"
+  },
+  {
+   "from": "feda.2",
+   "to": "feda.3",
+   "conditional": true,
+   "label": {
+    "zh": "升级后：巨型船坞上线（mega_shipyard_3）",
+    "en": "After the next upgrade: Mega Shipyard online (mega_shipyard_3)"
+   },
+   "evidence": "common/megastructures/11_mega_shipyard.txt:350 feda.3 (also focus.665)"
+  },
+  {
+   "from": "feda.5",
+   "to": "feda.6",
+   "conditional": true,
+   "label": {
+    "zh": "修复废墟（建造“修复”型巨型结构）后",
+    "en": "After the ruin is restored (the \"restored\" megastructure type is built over it)"
+   },
+   "evidence": "common/megastructures/11_mega_shipyard.txt:463 on_build_complete fires feda.6; the restored type is upgrade_from the ruined type"
+  }
+ ],
+ "nodeLabels": {
+  "feda.5": {
+   "zh": "遇到废墟",
+   "en": "Finding the ruin"
+  },
+  "feda.6": {
+   "zh": "废墟修复",
+   "en": "Ruin restored"
+  }
+ },
+ "notes": [
+  {
+   "doc": "feda.1",
+   "kind": "review",
+   "zh": "审阅说明：巨型船坞每完成一个建造阶段，由 on_megastructure_built / on_megastructure_upgraded 在建造国触发对应事件（并非选项链接）；各阶段按建造顺序排列。",
+   "en": "Review note: each build stage of the Mega Shipyard fires its own event for the builder from on_megastructure_built / on_megastructure_upgraded (not option links); stages are shown in construction order. "
+  },
+  {
+   "doc": "feda.5",
+   "kind": "review",
+   "zh": "审阅说明：废墟是地图上预置的，不属于任何建造阶段；首次进入该星系时由 on_entering_system_first_time 触发。",
+   "en": "Review note: the ruin is a pre-placed map object, not a build stage; on_entering_system_first_time fires this event the first time a ship enters the system."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c8c-stories (Opus 5.5)",
+  "scope": {
+   "zh": "巨型船坞各建造阶段事件、给其他帝国的通知、废墟与修复事件。",
+   "en": "Mega Shipyard: build-stage events, notices to other empires, the ruin and restoration events."
+  },
+  "sources": [
+   "events/megastructure_events_1.txt",
+   "common/megastructures/11_mega_shipyard.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/event-feda-1.md"
+ }
+}

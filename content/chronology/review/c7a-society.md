@@ -74,4 +74,22 @@ These are unordered random interludes → each stays its own story; compiled tre
 - event-fircon-2600 (family): reviewed; merged `event-fircon-2610` (Touchdown via on_fleet_enter_orbit → 2610 → 2615) with
   bridges 2635 → 2615 and 2620.d → 2615 (`first_contact_dlc_events.txt:6118-6143, 6281-6311, 6452-6474`). Uncertain:
   whether the ship can reach orbit before 2620 fires at day 60.
+### Colony events (colony_events_1) — reviewed (Fable 5.5, 2026-10-13)
+- **event-colony-1** Migrating Forests (family, merged colony.5): 3/958+2/739 colony-age random, global once (`colony_events_1.txt:12-98`);
+  bridge 4 -> 5 via on_colony_defenders_win (`00_on_actions.txt:862`, flags 206-267); 12 self-repeats until a project is done (525-556).
+- **event-colony-50** Subterranean Civilization (family; merged 56,57,60-75): war flag set only in 56 (`:925-931`) -> pool 60-63; destroyed flag set in 52
+  (`:705-707`) -> pool 64-68; friendly flag set in 51 (`:681`) -> pool 69-74; 75 (angry_subterraneans > 2, `:2107-2117`) -> 76 -> 54.
+  54 -> 56/57 via on_colony_defenders_win/lose (`00_on_actions.txt:863,879`). Uncertain: friendly flag stays after war chosen at 53.
+- **event-colony-100** Abandoned Terraforming (family; merged 102,103,108,113,114): 104-107 25% each; 105 mutants -> 108/113 (on_actions 864/880),
+  113 -> 114 (attackers_win 832); 108/114 -> 109 stalker (flag terraforming_mutants_defeated, MTTH 240 months); 101 -> 102/103 (did_not_terraform).
+- **event-colony-150** Underground Vault (family; merged 154,158): 151/152/153 one third each; 153 -> 154 -> 158; no "repelled" event exists.
+- **event-colony-155** Nuclear Bomb, **-170** Orbital Debris (171/172 race the project), **-160..164** nuked-wasteland colony random events (one window each).
+- **event-colony-180** Asteroid Sighted (family; merged 181 hidden dispatcher -> 182 destroyed); 183 impact when the fleet arrives (`:4313-4322`).
+### Colony events (colony_events_2) — reviewed (Fable 5.5, 2026-10-13)
+- **event-colony-1500** Ancient Drones (A Prelude): 8 chained delays, 1502 only with a blocker, 1510 a/b/c -> 1514 / 1511->1512 / 1513 pirate fleets.
+- **event-colony-1520** Pollen aphrodisiac: 1521.b stops the chain (400 energy); 1525.a hands-off -> worship -> disaster project 1531/1532/1533; 1525.b -> 1526-1528.
+- **event-colony-2001, -2005, -2010, -2025, -2050**: single or project-result stories, triggers verified.
+- **event-colony-2015** An Odd Factor (family; merged 2016,2017,2019): 30:35 random_list (`colony_events_2.txt:2402-2405`), kidnap needs 100+ factory workers.
+- **event-colony-2060** Mushroom Picking: depends on fumongus_* flags set by the Fumongus archaeological site (`ancient_relics_arcsite_events_2.txt:9628-9745`, other owner).
+- Note: `callers.py` line numbers for these events are offset from the real file lines; guides cite real lines.
 <!-- ledger-end -->

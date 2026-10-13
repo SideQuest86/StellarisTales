@@ -1,0 +1,68 @@
+{
+ "id": "event-colony-2060",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.2065",
+    "colony.2080"
+   ],
+   "label": {
+    "zh": "2060：未发掘与已发掘的选项",
+    "en": "2060: not-excavated vs excavated options"
+   },
+   "note": {
+    "zh": "选项b仅在没有 fumongus_ours 标志时可选；选项c仅在有该标志时可选。",
+    "en": "Option b is available without the fumongus_ours flag; option c only with it."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.2070",
+    "colony.2075"
+   ],
+   "label": {
+    "zh": "2065.a 后：真菌网络活跃与否",
+    "en": "After 2065.a: fungus network active or not"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.2085",
+    "colony.2090"
+   ],
+   "label": {
+    "zh": "2080.b：10%不满 / 90%监控生效",
+    "en": "2080.b: 10% unrest / 90% surveillance active"
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "colony.2060",
+   "kind": "review",
+   "zh": "殖民地2岁时（15/958）的随机事件；全局仅一次（fumongus_colony）；排除火山、方舟与荒野帝国。",
+   "en": "Random colony event at age 2 (15/958); once per game (fumongus_colony); excludes volcanic, ark and wilderness empires."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "蘑菇采集：未挖掘的真菌线、已挖掘的菌丝网线及其后续。",
+   "en": "Mushroom Picking: the not-yet-dug-up fungus line, the mycelium-network line and their follow-ups."
+  },
+  "sources": [
+   "events/colony_events_2.txt",
+   "common/on_actions/00_on_actions.txt",
+   "events/ancient_relics_arcsite_events_2.txt"
+  ],
+  "uncertain": [
+   "fumongus_active / fumongus_dismantled / fumongus_ours are set by the Fumongus archaeological site (ancient_relics_arcsite_events_2.txt:9628-9745), a story owned by another reviewer; only the flags are referenced here."
+  ],
+  "guide": "public/summaries/event-colony-2060.md"
+ }
+}

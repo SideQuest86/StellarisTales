@@ -1,0 +1,94 @@
+{
+ "id": "shroudwalkers-depart",
+ "family": {
+  "title": {
+   "zh": "最终觉醒 / 教育的失败",
+   "en": "Final Awakening / A Failure of Education"
+  },
+  "category": "leviathans",
+  "start": "enclave.4240",
+  "members": [
+   "enclave.4240",
+   "enclave.4245"
+  ]
+ },
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "enclave.4240",
+    "enclave.4245"
+   ],
+   "label": {
+    "zh": "虚境行者只离开一次",
+    "en": "The Shroudwalkers leave only once"
+   },
+   "note": {
+    "zh": "两个守门事件都要求全局标记 shroudwalkers_departed 尚未设置，并在 after 中设置它并销毁虚境行者城邦；因此“危机降临”(4240)与“你就是危机”(4245)互斥。",
+    "en": "Both gatekeepers require the global flag shroudwalkers_departed to be unset and set it (destroying the Shroudwalker enclave) afterwards, so the crisis farewell (4240) and the you-are-the-crisis farewell (4245) are alternatives."
+   }
+  }
+ ],
+ "endings": {
+  "enclave.4240": {
+   "label": {
+    "zh": "虚境行者离去（外来危机）",
+    "en": "The Shroudwalkers depart (external crisis)"
+   },
+   "note": {
+    "zh": "a：20年“敬畏”修正；b：20年“愤怒”修正；两者之后都获得50零。",
+    "en": "a: 20-year reverence modifier; b: 20-year anger modifier; both then grant 50 Zro."
+   },
+   "evidence": "events/overlord_enclaves_events.txt:7799-7832"
+  },
+  "enclave.4245": {
+   "label": {
+    "zh": "虚境行者离去（玩家即危机）",
+    "en": "The Shroudwalkers depart (the player is the crisis)"
+   },
+   "note": {
+    "zh": "同上；另设置成就标记 non_prophet_organization_achievement。",
+    "en": "Same; also sets the achievement flag non_prophet_organization_achievement."
+   },
+   "evidence": "events/overlord_enclaves_events.txt:7920-7959"
+  }
+ },
+ "nodeLabels": {
+  "enclave.4240": {
+   "zh": "虚境行者告别（危机）",
+   "en": "Farewell: the crisis"
+  },
+  "enclave.4245": {
+   "zh": "虚境行者告别（你即危机）",
+   "en": "Farewell: you are the crisis"
+  }
+ },
+ "notes": [
+  {
+   "doc": "enclave.4240",
+   "kind": "review",
+   "zh": "审阅注：由每月国家脉冲（00_on_actions.txt:339）上的隐藏守门事件 enclave.4239 触发：存在危机（偶发危机/维度外来者/普雷索林）、未被击败、虚境行者城邦在场，对每个“虚境导师”起源的帝国发出本窗口，然后销毁虚境行者城邦并设置 shroudwalkers_departed（:7756-7796）。",
+   "en": "Review note: hidden gatekeeper enclave.4239 on the monthly country pulse (00_on_actions.txt:339) needs a live, undefeated crisis (Contingency, Extradimensionals or Prethoryn) and a Shroudwalker enclave; it sends this window to every Teachers of the Shroud empire, then destroys the enclave and sets shroudwalkers_departed (overlord_enclaves_events.txt:7756-7796)."
+  },
+  {
+   "doc": "enclave.4245",
+   "kind": "review",
+   "zh": "审阅注：守门事件 enclave.4244（00_on_actions.txt:341）要求帝国自身达到危机等级5（玩家成为危机）。更早的等级2会触发警告 enclave.4243（属于“虚境导师”起源故事，不在此家族内）。",
+   "en": "Review note: gatekeeper enclave.4244 (00_on_actions.txt:341) needs crisis level 5 (the player is the crisis). The earlier warning enclave.4243 at level 2 belongs to the Teachers of the Shroud origin story, not to this family (overlord_enclaves_events.txt:7836-7917)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/overlord_enclaves_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/shroudwalkers-depart.md"
+ }
+}

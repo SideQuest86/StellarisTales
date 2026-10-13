@@ -2,14 +2,13 @@
   "category": "crisis",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 18,
-  "docs": 543,
-  "nodes": 635,
-  "refs": 92,
-  "crossLinks": 22,
+  "stories": 11,
+  "docs": 460,
+  "nodes": 545,
+  "refs": 85,
+  "crossLinks": 20,
   "review": {
-    "reviewed": 9,
-    "unreviewed": 9
+    "reviewed": 11
   },
   "failures": [],
   "items": [
@@ -26,7 +25,7 @@
       "id": "contingency",
       "title": "肃正协议",
       "kind": "family",
-      "docs": 79,
+      "docs": 66,
       "refs": 7,
       "crossLinks": 1,
       "review": "reviewed"
@@ -35,19 +34,10 @@
       "id": "galactic-nemesis",
       "title": "星海天罚",
       "kind": "family",
-      "docs": 60,
+      "docs": 59,
       "refs": 20,
       "crossLinks": 1,
       "review": "reviewed"
-    },
-    {
-      "id": "gray-tempest",
-      "title": "L 星团的秘密",
-      "kind": "family",
-      "docs": 59,
-      "refs": 9,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "behemoth-fury",
@@ -71,7 +61,7 @@
       "id": "prethoryn-scourge",
       "title": "索林原虫：银河之外",
       "kind": "family",
-      "docs": 38,
+      "docs": 31,
       "refs": 9,
       "crossLinks": 1,
       "review": "reviewed"
@@ -80,9 +70,18 @@
       "id": "unbidden",
       "title": "破界者：异次元入侵",
       "kind": "family",
-      "docs": 35,
+      "docs": 28,
       "refs": 4,
       "crossLinks": 2,
+      "review": "reviewed"
+    },
+    {
+      "id": "galactic-hyperthermia",
+      "title": "星系热症",
+      "kind": "family",
+      "docs": 25,
+      "refs": 1,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -98,82 +97,19 @@
       "id": "war-in-heaven",
       "title": "天堂之战",
       "kind": "family",
-      "docs": 20,
+      "docs": 16,
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
     },
     {
-      "id": "event-infernals-1030",
-      "title": "点火竞赛",
-      "kind": "event",
-      "docs": 10,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-infernals-1015",
-      "title": "温度将如何提升？",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
+      "id": "gray-tempest",
+      "title": "灰色风暴",
+      "kind": "family",
+      "docs": 8,
+      "refs": 2,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-infernals-1000",
-      "title": "新力量",
-      "kind": "event",
-      "docs": 3,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-infernals-1005",
-      "title": "结晶成果",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-infernals-1010",
-      "title": "启动导管群",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-infernals-1025",
-      "title": "环绕核心",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-infernals-1051",
-      "title": "星系熔炉被占领",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-infernals-10530",
-      "title": "星系熔炉被占领",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     }
   ]
 }

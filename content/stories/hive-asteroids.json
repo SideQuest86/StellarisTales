@@ -1,0 +1,120 @@
+{
+ "id": "hive-asteroids",
+ "family": {
+  "title": {
+   "zh": "晶态小行星",
+   "en": "Crystalline Asteroids"
+  },
+  "category": "leviathans",
+  "start": "leviathans.3202",
+  "members": [
+   "leviathans.3202",
+   "leviathans.3201",
+   "leviathans.3204",
+   "special_projects:EXPLOIT_HIVERS",
+   "leviathans.3230",
+   "special_projects:HIVE_ASTEROID_PROJECT",
+   "leviathans.3205"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "leviathans.3202",
+   "to": "leviathans.3201",
+   "conditional": true,
+   "label": {
+    "zh": "若在蜂巢小行星上建采矿站：平均约100年后遭袭（每颗已开采的蜂巢小行星 ×0.3）",
+    "en": "If we mine the hive asteroids: attack after about 100 years on average (x0.3 per mined hive asteroid)"
+   },
+   "evidence": "hidden leviathans.3200 sets built_hiver_mine (events/leviathans_events_2.txt:4482-4499); hidden leviathans.3210 (events/leviathans_events_2.txt:4502-4572) mean_time_to_happen 100 years with 0.3 factors; fires leviathans.3201"
+  },
+  {
+   "from": "leviathans.3201",
+   "to": "leviathans.3204",
+   "conditional": true,
+   "label": {
+    "zh": "若被激怒的蜂群被击溃",
+    "en": "If the provoked hive is crushed"
+   },
+   "evidence": "3201 sets provoked_hivers (events/leviathans_events_2.txt:4728); hidden leviathans.3203 (events/leviathans_events_2.txt:4818-4878) needs it, a human attacker and no hive_asteroid ships left; fires leviathans.3204"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "leviathans.3201",
+    "special_projects:EXPLOIT_HIVERS"
+   ],
+   "label": {
+    "zh": "冲突或共存",
+    "en": "Conflict or coexistence"
+   },
+   "note": {
+    "zh": "虚空蜂巢可通过 3202.b 启动项目 EXPLOIT_HIVERS（abort_trigger：蜂群已出现）并获得3年的 pacified_hiver_mine；其他情况下开采会招致 3201 攻击。",
+    "en": "A Void Hive empire can take 3202.b and start EXPLOIT_HIVERS (aborts once the hivers have appeared) and gets pacified_hiver_mine for 3 years; otherwise mining eventually brings the 3201 attack."
+   }
+  }
+ ],
+ "endings": {
+  "leviathans.3230": {
+   "label": {
+    "zh": "蜂群成为盟友",
+    "en": "The hive is friendly"
+   },
+   "note": {
+    "zh": "蜂群国家对项目所有者友好；设置 hivers_appeared。",
+    "en": "The hive country is friendly to the project owner; hivers_appeared is set."
+   },
+   "evidence": "events/leviathans_events_2.txt:4932-5085"
+  },
+  "leviathans.3205": {
+   "label": {
+    "zh": "探索蜂巢小行星",
+    "en": "Hive asteroid explored"
+   },
+   "note": {
+    "zh": "获得2000社会研究点与500能量。",
+    "en": "2000 society research and 500 energy."
+   },
+   "evidence": "events/leviathans_events_2.txt:4905-4930"
+  }
+ },
+ "nodeLabels": {
+  "leviathans.3202": {
+   "zh": "晶态小行星带",
+   "en": "The crystalline belt"
+  },
+  "leviathans.3201": {
+   "zh": "蜂群来袭",
+   "en": "The hive attacks"
+  },
+  "leviathans.3204": {
+   "zh": "蜂群被击败",
+   "en": "Hive defeated"
+  }
+ },
+ "notes": [
+  {
+   "doc": "leviathans.3202",
+   "kind": "review",
+   "zh": "审阅注：首次进入蜂巢星系时触发（on_entering_system_first_time，00_on_actions.txt:913），仅限玩家，且蜂群尚未出现、星系尚未 hivers_defeated。非虚空蜂巢只有一个选项；虚空蜂巢有 b（共存项目）与 c（观察）。",
+   "en": "Review note: fires on first entry into the hive system (on_entering_system_first_time, 00_on_actions.txt:913) for human players while the hivers have not appeared and the system is not hivers_defeated. Others get one option; Void Hive empires get b (coexistence project) and c (observe) (leviathans_events_2.txt:4736-4815)."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C6 (resume)",
+  "scope": {
+   "zh": "完整。",
+   "en": "Complete."
+  },
+  "sources": [
+   "events/leviathans_events_2.txt",
+   "common/special_projects/00_projects_leviathans.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "guide": "public/summaries/hive-asteroids.md"
+ }
+}

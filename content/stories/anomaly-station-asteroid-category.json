@@ -1,0 +1,29 @@
+{
+ "id": "anomaly-station-asteroid-category",
+ "notes": [
+  {
+   "doc": "anomaly.6810",
+   "zh": "选项a内部是 random_list：50% 杀死一名科学家，50% 获得或推进超空间引擎科技（anomaly_events_4.txt:2475-2505 附近）。",
+   "en": "Option a contains a random_list: 50% a scientist is killed, 50% hyperdrive tech is granted or advanced (around anomaly_events_4.txt:2475-2505).",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:166",
+   "events/anomaly_events_1.txt:285 (anomaly.40)",
+   "events/anomaly_events_4.txt:2464 (anomaly.6810)",
+   "events/anomaly_events_4.txt:2572 (anomaly.6815)",
+   "events/anomaly_events_4.txt:2640 (anomaly.6820)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-station-asteroid-category.md"
+ }
+}

@@ -2,21 +2,246 @@
  "id": "origin_shroud_forged",
  "opening": {
   "targets": [
-   "situations:situation_shroud_forged"
+   "situations:situation_shroud_forged",
+   "shroud_forged.160",
+   "shroud_forged.220",
+   "shroud_forged.305",
+   "shroud_forged.306",
+   "shroud_forged.307",
+   "shroud_forged.308",
+   "shroud_forged.330",
+   "shroud_forged.400",
+   "shroud_forged.39",
+   "shroud_forged.700"
   ],
   "label": {
-   "zh": "虚境所铸",
-   "en": "Shroud-Forged"
+   "zh": "起源触发的独立支线",
+   "en": "Independent branches started by the origin"
   },
-  "evidence": "game_start ->shroud_forged1 ->situation_shroud_forged"
+  "labels": {
+   "situations:situation_shroud_forged": {
+    "zh": "开局：虚境铸就局势开始",
+    "en": "Game start: the Shroud-Forged situation begins"
+   },
+   "shroud_forged.160": {
+    "zh": "决定「刺穿虚境」使虚境裂口失稳时",
+    "en": "When the \"Pierce the Shroud\" decision destabilises the rift"
+   },
+   "shroud_forged.220": {
+    "zh": "首个殖民地建成时",
+    "en": "When the first colony is founded"
+   },
+   "shroud_forged.305": {
+    "zh": "殖民第一颗泽珞族核心星球时",
+    "en": "When the first Zroni core world is colonised"
+   },
+   "shroud_forged.306": {
+    "zh": "殖民第二颗泽珞族核心星球时",
+    "en": "When the second Zroni core world is colonised"
+   },
+   "shroud_forged.307": {
+    "zh": "殖民第三颗泽珞族核心星球时",
+    "en": "When the third Zroni core world is colonised"
+   },
+   "shroud_forged.308": {
+    "zh": "泽珞族平衡仪建成数达到要求时",
+    "en": "When enough Zroni Equilibrators are built"
+   },
+   "shroud_forged.330": {
+    "zh": "决定「捕获虚境实体」失败时",
+    "en": "When the entrap-a-Shroud-entity decision fails"
+   },
+   "shroud_forged.400": {
+    "zh": "与抟土之塑师通讯（外交菜单）",
+    "en": "Contacting the Animator of Clay (diplomacy menu)"
+   },
+   "shroud_forged.39": {
+    "zh": "物现引擎建成时",
+    "en": "When a Materiality Engine is built"
+   },
+   "shroud_forged.700": {
+    "zh": "合成女王危机中的呼唤（需已突破虚境）",
+    "en": "Call during the Synthetic Queen crisis (Shroud breached)"
+   }
+  },
+  "evidence": "events/game_start.txt:424 game_start fires shroud_forged.1 (events/shroud_forged_events.txt:12-66: sets up the capital, d_shroud_rift_deposit and start_situation situation_shroud_forged). Other entries: decision pierce the rift common/decisions/02_special_decisions.txt:2738 (160), on_colonized hooks common/on_actions/00_on_actions.txt:1317-1319 (220/304 -> 305/306/307), building_zroni_equilibrator on_built common/buildings/12_event_buildings.txt:462 (308), decision_entrap_shroud_entity :2841 (330), on_custom_diplomacy 00_on_actions.txt:743 (400), materiality_engine_on_built_effect common/scripted_effects/shroud_shadows_scripted_effects.txt:4482-4486 (39), events/machine_age_crisis_events.txt:6718 (700)."
  },
  "review": {
-  "status": "partial",
-  "date": "2026-09-11",
-  "reviewer": "V3 (Codex) migrated 2026-10-12",
-  "scope": {
-   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
-   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "events/shroud_forged_events.txt",
+   "common/situations/03_origin_situations.txt",
+   "common/special_projects/00_projects_origins.txt",
+   "common/decisions/02_special_decisions.txt",
+   "common/buildings/12_event_buildings.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "Stage events appear chained in the compiled tree (compiler stage_sequence, see ledger R5) although stages are progress states.",
+   "Random monthly events 500-690: weights/exclusion rules are in inline_script shroud/shroud_forged_random_events_exclusion, not read."
+  ],
+  "guide": "public/summaries/origin_shroud_forged.md"
+ },
+ "bridges": [
+  {
+   "from": "shroud_forged.30",
+   "to": "shroud_forged.39",
+   "conditional": true,
+   "label": {
+    "zh": "研发物现引擎科技并建成物现引擎建筑",
+    "en": "Research the Materiality Engine tech and build the building"
+   },
+   "evidence": "events/shroud_forged_events.txt:212-217 shroud_forged.30 option adds the research option tech_materiality_engine; common/scripted_effects/shroud_shadows_scripted_effects.txt:4482-4486 the building on_built fires carrier event 39."
+  },
+  {
+   "from": "shroud_forged.312",
+   "choice": "shroud_forged.312.a",
+   "to": "shroud_forged.330",
+   "conditional": true,
+   "label": {
+    "zh": "背叛路线：用「捕获虚境实体」决定（至少3座平衡仪）",
+    "en": "Traitor path: the entrap-a-Shroud-entity decision (3+ equilibrators)"
+   },
+   "evidence": "events/shroud_forged_events.txt:1536-1546 option a sets shroud_forged_traitor; common/decisions/02_special_decisions.txt:2792-2859 decision_entrap_shroud_entity requires that flag, 3 equilibrator planets, random 10/100 -> 330."
+  },
+  {
+   "from": "shroud_forged.312",
+   "choice": "shroud_forged.312.a",
+   "to": "shroud_forged.320",
+   "conditional": true,
+   "label": {
+    "zh": "被困实体存在时失去平衡仪",
+    "en": "An equilibrator is lost while the entity is trapped"
+   },
+   "evidence": "events/shroud_forged_events.txt:1578-1608 hidden 319 (on_building_demolished/ruined, 00_on_actions.txt:3007/3071) and common/buildings/12_event_buildings.txt:488-494 fire 320 if modifier shroud_forged_trapped_entity is set (added in 312.a :1539-1541)."
   }
- }
+ ],
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "shroud_forged.280",
+    "shroud_forged.270",
+    "shroud_forged.250",
+    "shroud_forged.260"
+   ],
+   "label": {
+    "zh": "局势阶段（由进度决定，可来回）",
+    "en": "Situation stages (set by progress, can swing back and forth)"
+   },
+   "note": {
+    "zh": "局势初始进度1500，处于“平衡”阶段；进度双向变化：<600 受压迫(280)，<1200 受控(270)，到接受阈值为平衡，<2400 不受限(250)，<3000 自由(260)。每个阶段首次进入时触发各自事件，并非固定先后顺序。",
+    "en": "The situation starts at progress 1500 (Balanced) and moves both ways: <600 Oppressed (280), <1200 Controlled (270), up to the acceptance threshold Balanced, <2400 Unrestricted (250), <3000 Free (260). Each stage event fires the first time its stage is entered; they are not a fixed sequence."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud_forged.50",
+    "shroud_forged.70"
+   ],
+   "label": {
+    "zh": "局势结局：控制或解放",
+    "en": "Situation endings: control or liberation"
+   },
+   "note": {
+    "zh": "进度降至0（失败）→ 强行控制 50；进度满 → 解放 70（360–2160天后另有泽珞遗产 300）。",
+    "en": "Progress falling to 0 (fail) -> Control Enforced 50; progress full -> liberation 70 (plus Zroni Legacy 300 after 360-2160 days)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud_forged.301",
+    "shroud_forged.302",
+    "shroud_forged.303"
+   ],
+   "label": {
+    "zh": "泽珞遗产开篇的三个版本",
+    "en": "Three versions of the Zroni Legacy opener"
+   },
+   "note": {
+    "zh": "由标志位决定：已有 zroni_intro 且非最后一个泽珞星系→301；最后一个泽珞星系→302；其余→303。",
+    "en": "Chosen by flags: zroni_intro and not the last Zroni system -> 301; last Zroni system -> 302; neither -> 303."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "shroud_forged.41",
+    "shroud_forged.42",
+    "shroud_forged.43",
+    "shroud_forged.44",
+    "shroud_forged.45",
+    "shroud_forged.46",
+    "shroud_forged.47",
+    "shroud_forged.48"
+   ],
+   "label": {
+    "zh": "物现引擎成果",
+    "en": "Materiality Engine result"
+   },
+   "note": {
+    "zh": "隐藏事件40随机抽取一项尚未拥有的灵能科技（41–47各1/7）；全都已拥有时为48（研究加成）。每次约1440–2160天后物现引擎可再次使用(39)。",
+    "en": "Hidden 40 rolls one psionic tech you do not yet have (41-47, equal weights); if none is left, 48 (research bonus). The engine is ready again after about 1440-2160 days (39)."
+   }
+  }
+ ],
+ "endings": {
+  "shroud_forged.30": {
+   "label": {
+    "zh": "控制结局：解锁物现引擎",
+    "en": "Control ending: Materiality Engine unlocked"
+   },
+   "note": {
+    "zh": "重同化完成，30天后解锁科技。",
+    "en": "Reintegration done; the tech unlocks 30 days later."
+   },
+   "evidence": "events/shroud_forged_events.txt:212-217"
+  },
+  "shroud_forged.80": {
+   "label": {
+    "zh": "解放结局：指引",
+    "en": "Liberation ending: The Guide"
+   },
+   "note": {
+    "zh": "指引项目完成，获得永久修正。",
+    "en": "The Guide project completes; a permanent modifier is added."
+   },
+   "evidence": "events/shroud_forged_events.txt:634-653"
+  },
+  "shroud_forged.313": {
+   "label": {
+    "zh": "背叛路线：实体被囚",
+    "en": "Traitor path: the entity is trapped"
+   },
+   "note": {
+    "zh": "虚境实体被困；失去平衡仪会使其挣脱（320）。",
+    "en": "The Shroud entity is trapped; losing an equilibrator frees it (320)."
+   },
+   "evidence": "events/shroud_forged_events.txt:1558-1573"
+  }
+ },
+ "notes": [
+  {
+   "doc": "shroud_forged.10",
+   "kind": "review",
+   "zh": "局势开始后2–7天触发；三个选项分别设定局势方针（安抚/镇压/扶持）并各引向一个“……”后续窗口（15/20/25）。",
+   "en": "Fires 2-7 days after the situation starts (03_origin_situations.txt:187-199); the three options set the approach (appease/suppress/support) and each leads to a short follow-up window (15/20/25)."
+  },
+  {
+   "doc": "shroud_forged.400",
+   "kind": "review",
+   "zh": "外交菜单：每个援助选项消耗泽珞、有冷却，结果为随机列表（各含10%无事发生，未列为文档）。军事:430/432/434/436；民政:438/440/442/444；研究:446/448/450与444（共享的“袭击”结果）。",
+   "en": "Diplomacy menu: each assistance option costs Zro and starts a cooldown, outcomes are random lists (each with a 10% nothing-happens entry that has no window): military 430/432/434/436, civic 438/440/442/444, research 446/448/450 plus the shared attack 444 (events/shroud_forged_events.txt:1862-2031)."
+  },
+  {
+   "doc": "shroud_forged.700",
+   "kind": "review",
+   "zh": "由合成女王危机（crisis.8060 的一个选项）在突破虚境的抟土之塑师起源帝国中触发；选项通向 crisis.24100。",
+   "en": "Fired from the Synthetic Queen crisis (crisis.8060 option) for a Shroud-Forged empire that breached the Shroud; its option leads to crisis.24100 (machine_age_crisis_events.txt:6718)."
+  }
+ ]
 }

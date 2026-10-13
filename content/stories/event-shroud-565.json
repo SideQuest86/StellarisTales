@@ -1,0 +1,30 @@
+{
+ "id": "event-shroud-565",
+ "notes": [
+  {
+   "doc": "shroud.543",
+   "zh": "评注：这是 shroud.565 在没有合适行星时的备用分支（events/shroud_events.txt:2364-2365 调用 system_event shroud.542），结果等同“废弃巡洋舰”；很可能是原脚本笔误，但仍如实保留。",
+   "en": "Commentary: this is the fallback of shroud.565 when no suitable planet exists (events/shroud_events.txt:2364-2365 calls system_event shroud.542); the outcome equals Abandoned Cruiser. Probably a slip in the original script, kept as-is.",
+   "kind": "review"
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "触发链、触发条件、隐藏分流事件、选项效果与文本变体均已核对。",
+   "en": "Trigger chain, conditions, hidden router events, option effects and text variants were checked."
+  },
+  "sources": [
+   "common/on_actions/00_on_actions.txt:5749-5789",
+   "events/shroud_events.txt:645-760,961-1221",
+   "common/scripted_variables/09_scripted_variables_shroud.txt:43",
+   "events/shroud_events.txt:2297-2475"
+  ],
+  "guide": "public/summaries/event-shroud-565.md",
+  "uncertain": [
+   "shroud.565 fallback fires shroud.542 (cruiser) rather than shroud.567; behaviour taken from the script as written."
+  ]
+ }
+}

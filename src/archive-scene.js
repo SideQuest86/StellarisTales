@@ -7,31 +7,138 @@ import {
   selectionWave,
   Momentum,
   inverseProjection,
+  smooth,
+  easeInOutCubic,
+  idleEnvelope,
+  FrameGovernor,
 } from "./archive-motion.js";
+
+// Geometry. Rows (cards within a category) recede in depth; lanes (categories)
+// run side by side. The window is wider than any viewport so rows always leave
+// both screen edges and cells are recycled out of sight, never popped in view.
 const LANES = 7,
-  ROWS = 41,
+  ROWS = 33,
+  HALF_LANES = 3,
+  HALF_ROWS = 16,
   SPACING = 5.45,
-  DEPTH = 0.62;
-const COLORS = [
-  "#748a80",
-  "#678e8b",
-  "#9e9b7b",
-  "#7d8798",
-  "#948477",
-  "#75897a",
-  "#819a91",
-  "#7c8b8e",
-];
+  DEPTH = 1.12,
+  CARD_W = 2.5,
+  CARD_H = 1.85,
+  FACE_W = 4.88,
+  FACE_H = 3.58,
+  FACE_Z = 0.156,
+  PREVIEW_LIFT = 1.15,
+  DETAIL_LIFT = 4.1;
+// The 3:1 event banner sits in the top band of every face, as on the detail card.
+const INSET_X = 0.018,
+  INSET_Y = (INSET_X * FACE_W) / FACE_H,
+  BAND_H = ((1 - 2 * INSET_X) * FACE_W) / 3 / FACE_H,
+  BAND_TOP = 1 - INSET_Y,
+  BAND_BOTTOM = BAND_TOP - BAND_H;
+export const CARD_BAND = { top: INSET_Y, height: BAND_H }; // fractions of the face, from the top
+const FACE_PX = { w: 1024, h: 752 };
+const TINTS = ["#5d7a73", "#557b7a", "#857f61", "#66738a", "#7c6b5f", "#61786a", "#6a8a82", "#687a80"];
+const HIGHLIGHT = new THREE.Color("#c2ab72");
+const BACKGROUND = 0x08151a;
+// Camera: browse looks down onto the rows so their art band reads; detail turns
+// toward a near-frontal close-up. Unit vectors from target to camera.
+const dirFrom = (azimuth, elevation) => {
+  const a = THREE.MathUtils.degToRad(azimuth), e = THREE.MathUtils.degToRad(elevation);
+  return new THREE.Vector3(-Math.sin(a) * Math.cos(e), Math.sin(e), Math.cos(a) * Math.cos(e));
+};
+const BROWSE_DIR = dirFrom(36, 37);
+const DETAIL_DIR = dirFrom(14, 11);
+const DISTANCE = 85;
+
+const FACE_COMMON = /* glsl */ `
+uniform sampler2D coverAtlas;
+uniform vec3 laneTints[8];
+#define INSET_X ${INSET_X.toFixed(5)}
+#define BAND_TOP ${BAND_TOP.toFixed(5)}
+#define BAND_BOTTOM ${BAND_BOTTOM.toFixed(5)}
+// Albedo of a closed card: original art in the top band, a quiet label panel below.
+vec3 archiveFace(vec2 uv, vec4 cover, float tier, float tint, out float artMask) {
+  artMask = 0.0;
+  vec3 tintColor = laneTints[int(tint + 0.5)];
+  float rule = step(0.982, fract(uv.y * 24.0)) * 0.025;
+  vec3 panel = mix(vec3(0.030, 0.058, 0.066), tintColor * 0.30, 0.5) + rule;
+  float accent = (1.0 - smoothstep(0.0, 0.0045, abs(uv.y - (BAND_BOTTOM - 0.03)))) * step(0.05, uv.x) * step(uv.x, 0.27);
+  panel = mix(panel, vec3(0.74, 0.62, 0.40), accent * 0.8);
+  vec2 bandUv = vec2((uv.x - INSET_X) / (1.0 - 2.0 * INSET_X), (uv.y - BAND_BOTTOM) / (BAND_TOP - BAND_BOTTOM));
+  float inBand = step(0.0, bandUv.x) * step(bandUv.x, 1.0) * step(0.0, bandUv.y) * step(bandUv.y, 1.0);
+  // Explicit LOD: the atlas has no mipmaps, and the reveal samples it inside a loop.
+  vec3 art = tier > 0.5 ? textureLod(coverAtlas, cover.xy + clamp(bandUv, 0.0, 1.0) * cover.zw, 0.0).rgb : mix(panel, tintColor * 0.42, 0.5);
+  artMask = inBand * step(0.5, tier);
+  return mix(panel, art, inBand);
+}
+`;
+const REVEAL_COMMON = /* glsl */ `
+uniform sampler2D faceFrom;
+uniform sampler2D faceTo;
+uniform vec4 fromCover;
+uniform vec4 toCover;
+uniform vec3 fromInfo; // x: 1 atlas / 0 texture, y: tier, z: tint
+uniform vec3 toInfo;
+uniform float revealProgress;
+uniform float revealDir;
+uniform float faceLod; // log2(texture width / projected card width): no derivatives needed
+float revealHash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+vec3 sideFrom(vec2 uv, float lod, out float m) {
+  vec3 c = vec3(0.0);
+  m = 1.0;
+  if (fromInfo.x > 0.5) c = archiveFace(uv, fromCover, fromInfo.y, fromInfo.z, m);
+  else c = textureLod(faceFrom, uv, lod).rgb;
+  return c;
+}
+vec3 sideTo(vec2 uv, float lod, out float m) {
+  vec3 c = vec3(0.0);
+  m = 1.0;
+  if (toInfo.x > 0.5) c = archiveFace(uv, toCover, toInfo.y, toInfo.z, m);
+  else c = textureLod(faceTo, uv, lod).rgb;
+  return c;
+}
+// Frosted geometric reveal: triangular facets clear along a diagonal sweep; each
+// facet passes through frosted glass. Progress endpoints are wholly old/new.
+vec3 revealFace(vec2 uv, out float artMask) {
+  float mt = 1.0; float mf = 1.0;
+  vec3 to = sideTo(uv, faceLod, mt);
+  if (revealProgress >= 0.9999) { artMask = mt; return to; }
+  vec3 from = sideFrom(uv, faceLod, mf);
+  vec2 grid = vec2(6.0, 4.4);
+  vec2 g = uv * grid;
+  vec2 cell = floor(g);
+  vec2 f = fract(g);
+  float upper = step(f.x, f.y);
+  vec2 centre = (cell + mix(vec2(0.67, 0.33), vec2(0.33, 0.67), upper)) / grid;
+  float along = revealDir > 0.0 ? centre.x * 0.62 + (1.0 - centre.y) * 0.38 : (1.0 - centre.x) * 0.62 + centre.y * 0.38;
+  float threshold = along * 0.78 + revealHash(cell * 2.0 + upper) * 0.22;
+  const float F = 0.16;
+  float w = smoothstep(threshold - F, threshold + F, revealProgress * (1.0 + 2.0 * F) - F);
+  float frost = max(4.0 * w * (1.0 - w), sin(3.14159265 * revealProgress) * 0.28);
+  vec3 sharp = mix(from, to, w);
+  artMask = mix(mf, mt, w);
+  if (frost < 0.003) return sharp;
+  float r = 0.016 * frost;
+  vec3 soft = vec3(0.0);
+  float mm = 0.0;
+  for (int i = 0; i < 8; i++) {
+    float a = float(i) * 0.7853982 + revealHash(cell) * 0.6;
+    vec2 o = vec2(cos(a), sin(a) * 1.36) * r;
+    soft += mix(sideFrom(uv + o, faceLod + 1.0, mm), sideTo(uv + o, faceLod + 1.0, mm), w);
+  }
+  soft = (soft + sharp) / 9.0;
+  vec3 glass = mix(soft, soft * 0.82 + vec3(0.055, 0.085, 0.095), 0.55);
+  float edge = 1.0 - smoothstep(0.0, 0.035, min(min(f.x, f.y), min(1.0 - max(f.x, f.y), abs(f.x - f.y) * 0.7071)));
+  return mix(sharp, glass, frost) + vec3(0.62, 0.58, 0.46) * edge * frost * 0.22;
+}
+`;
+
+const tmpColor = new THREE.Color();
+const tmpSphere = new THREE.Sphere(new THREE.Vector3(), 3.4);
+
 export class ArchiveScene {
   constructor(container, { columns, onSelect, onOpen, reduced, asset }) {
-    Object.assign(this, {
-      container,
-      columns,
-      onSelect,
-      onOpen,
-      reduced,
-      asset,
-    });
+    Object.assign(this, { container, columns, onSelect, onOpen, reduced, asset });
     this.lane = { value: 2, velocity: 0 };
     this.row = { value: 0, velocity: 0 };
     this.targetLane = 2;
@@ -41,548 +148,608 @@ export class ArchiveScene {
     this.pulses = [];
     this.detail = { value: 0, velocity: 0 };
     this.detailTarget = 0;
-    this.lift = { value: 0.45, velocity: 0 };
-    this.cells = [];
-    this.last = 0;
-    this.lastDraw = 0;
+    this.lift = { value: PREVIEW_LIFT, velocity: 0 };
+    this.outgoing = [];
     this.frame = 0;
+    this.last = 0;
     this.dirty = true;
-    this.imageToken = 0;
-    this.textures = new Map();
+    this.lastInput = performance.now();
+    this.framesDrawn = 0;
+    this.governor = new FrameGovernor({ budget: 20 });
+    this.maxPixelRatio = Math.min(devicePixelRatio || 1, 2);
+    this.pixelRatio = this.maxPixelRatio;
+    const antialias = (devicePixelRatio || 1) < 2;
     this.renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      alpha: true,
+      antialias,
+      alpha: false,
+      stencil: false,
+      depth: true,
+      preserveDrawingBuffer: false,
       powerPreference: "high-performance",
     });
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
-    this.renderer.setClearColor(0x071216, 0);
+    this.renderer.setPixelRatio(this.pixelRatio);
+    this.renderer.setClearColor(BACKGROUND, 1);
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.1;
-    this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.autoUpdate = false;
-    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.renderer.toneMappingExposure = 1.06;
+    this.renderer.shadowMap.enabled = false;
+    // Status queries after compile force a synchronous link (hundreds of ms on first
+    // use); programs are warmed asynchronously instead (see warmUp()).
+    this.renderer.debug.checkShaderErrors = /[?&]debug\b/.test(location.search);
+    this.renderer.info.autoReset = true;
     this.canvas = this.renderer.domElement;
-    this.canvas.setAttribute(
-      "aria-label",
-      "三维故事档案阵列，可拖动浏览；也可使用分类与方向按钮",
-    );
     this.canvas.tabIndex = 0;
     container.append(this.canvas);
+    this.gpu = readAdapter(this.renderer);
+
     this.scene = new THREE.Scene();
-    this.scene.fog = new THREE.Fog(0x0c181d, 89, 110);
-    this.camera = new THREE.PerspectiveCamera(9, 1, 2, 180);
-    this.camera.position.set(-19, 13, 23);
-    this.camera.lookAt(0, 1, 0);
-    this.scene.add(new THREE.HemisphereLight(0xd5e8e2, 0x152827, 1.7));
-    const light = new THREE.DirectionalLight(0xf6e9c9, 2.8);
-    light.position.set(-12, 22, 8);
-    light.castShadow = true;
-    light.shadow.mapSize.set(2048, 2048);
-    Object.assign(light.shadow.camera, {
-      left: -18,
-      right: 18,
-      top: 18,
-      bottom: -18,
-      near: 1,
-      far: 65,
-    });
-    light.shadow.bias = -0.0003;
-    light.shadow.normalBias = 0.035;
-    this.scene.add(light);
-    const fill = new THREE.DirectionalLight(0x94c7cf, 1.2);
-    fill.position.set(12, 10, -8);
+    this.scene.fog = new THREE.Fog(BACKGROUND, DISTANCE - 4, DISTANCE + 40);
+    this.camera = new THREE.PerspectiveCamera(9, 1, 6, 220);
+    this.scene.add(new THREE.HemisphereLight(0xd8e9e4, 0x10201f, 1.55));
+    const key = new THREE.DirectionalLight(0xf6e7c6, 2.3);
+    key.position.set(-12, 22, 14);
+    this.scene.add(key);
+    const fill = new THREE.DirectionalLight(0x8fc4cf, 0.85);
+    fill.position.set(14, 8, 10);
     this.scene.add(fill);
+
+    this.coverAtlas = new CoverAtlas(this.renderer, asset, () => this.wake());
+    this.tintUniform = { value: TINTS.map((c) => new THREE.Color(c)) };
+    this.atlasUniform = { value: this.coverAtlas.texture };
+
+    // Shared shell geometry for array cards and the extracted card.
     const shape = new THREE.Shape();
-    const w = 2.5,
-      h = 1.85,
-      r = 0.045;
-    shape.moveTo(-w + r, -h);
-    shape.lineTo(w - r, -h);
-    shape.quadraticCurveTo(w, -h, w, -h + r);
-    shape.lineTo(w, h - r);
-    shape.quadraticCurveTo(w, h, w - r, h);
-    shape.lineTo(-w + r, h);
-    shape.quadraticCurveTo(-w, h, -w, h - r);
-    shape.lineTo(-w, -h + r);
-    shape.quadraticCurveTo(-w, -h, -w + r, -h);
+    const r = 0.045;
+    shape.moveTo(-CARD_W + r, -CARD_H);
+    shape.lineTo(CARD_W - r, -CARD_H);
+    shape.quadraticCurveTo(CARD_W, -CARD_H, CARD_W, -CARD_H + r);
+    shape.lineTo(CARD_W, CARD_H - r);
+    shape.quadraticCurveTo(CARD_W, CARD_H, CARD_W - r, CARD_H);
+    shape.lineTo(-CARD_W + r, CARD_H);
+    shape.quadraticCurveTo(-CARD_W, CARD_H, -CARD_W, CARD_H - r);
+    shape.lineTo(-CARD_W, -CARD_H + r);
+    shape.quadraticCurveTo(-CARD_W, -CARD_H, -CARD_W + r, -CARD_H);
     const shell = new THREE.ExtrudeGeometry(shape, {
       depth: 0.25,
       bevelEnabled: true,
-      bevelSegments: 2,
+      bevelSegments: 1,
       steps: 1,
       bevelSize: 0.028,
       bevelThickness: 0.028,
       curveSegments: 2,
     });
     shell.translate(0, 0, -0.125);
-    this.genericTexture = new THREE.CanvasTexture(this.makeFace(null, 0));
-    this.genericTexture.colorSpace = THREE.SRGBColorSpace;
-    this.body = new THREE.InstancedMesh(
-      shell,
-      new THREE.MeshStandardMaterial({
-        color: 0xffffff,
-        metalness: 0.06,
-        roughness: 0.58,
-      }),
-      LANES * ROWS,
-    );
-    this.faces = new THREE.InstancedMesh(
-      new THREE.PlaneGeometry(4.88, 3.58),
-      new THREE.MeshStandardMaterial({
-        map: this.genericTexture,
-        roughness: 0.78,
-        metalness: 0,
-      }),
-      LANES * ROWS,
-    );
-    this.coverAtlas = new CoverAtlas(this.asset, () => this.wake());
-    this.faces.material.map = this.coverAtlas.texture;
-    this.coverUV = new THREE.InstancedBufferAttribute(
-      new Float32Array(LANES * ROWS * 4),
-      4,
-    );
-    this.faces.geometry.setAttribute("coverUV", this.coverUV);
-    this.faces.material.onBeforeCompile = (shader) => {
-      shader.vertexShader = "attribute vec4 coverUV;\n" + shader.vertexShader;
-      shader.vertexShader = shader.vertexShader.replace(
-        "#include <uv_vertex>",
-        "#include <uv_vertex>\nvMapUv = coverUV.xy + vMapUv * coverUV.zw;",
-      );
-    };
-    this.body.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-    this.faces.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-    this.body.frustumCulled = false;
-    this.faces.frustumCulled = false;
-    this.body.castShadow = true;
-    this.body.receiveShadow = true;
-    this.faces.receiveShadow = true;
-    this.scene.add(this.body, this.faces);
-    this.spines = new THREE.InstancedMesh(
-      new THREE.BoxGeometry(0.105, 3.6, 0.33),
-      new THREE.MeshStandardMaterial({
-        color: 0x54706b,
-        roughness: 0.4,
-        metalness: 0.08,
-      }),
-      LANES * ROWS,
-    );
-    this.scene.add(this.spines);
-    this.fasteners = new THREE.InstancedMesh(
-      new THREE.SphereGeometry(0.034, 6, 4),
-      new THREE.MeshStandardMaterial({
-        color: 0x8e8e86,
-        roughness: 0.37,
-        metalness: 0.6,
-      }),
-      LANES * ROWS * 2,
-    );
-    this.scene.add(this.fasteners);
-    this.active = new THREE.Group();
-    this.active.add(
-      new THREE.Mesh(
-        shell,
-        new THREE.MeshStandardMaterial({
-          color: 0xb4a778,
-          metalness: 0.12,
-          roughness: 0.4,
-        }),
-      ),
-    );
-    this.activeFace = new THREE.Mesh(
-      new THREE.PlaneGeometry(4.88, 3.58),
-      new THREE.MeshStandardMaterial({
-        map: this.genericTexture,
-        roughness: 0.72,
-        metalness: 0.1,
-      }),
-    );
-    this.activeFace.position.z = 0.156;
-    this.active.add(this.activeFace);
-    this.coverReveal = { value: 0 };
-    this.artTransition = { value: 1, velocity: 0 };
-    this.artTarget = 1;
-    this.outgoing = [];
-    this.artFace = new THREE.Mesh(
-      this.activeFace.geometry,
-      new THREE.MeshStandardMaterial({
-        map: this.genericTexture,
-        roughness: 0.72,
-        transparent: true,
-        depthWrite: false,
-      }),
-    );
-    this.artFace.position.z = 0.159;
-    this.artFace.visible = false;
-    this.artFace.material.onBeforeCompile = (shader) => {
-      shader.uniforms.coverReveal = this.coverReveal;
-      shader.fragmentShader =
-        "uniform float coverReveal;\n" + shader.fragmentShader;
-      shader.fragmentShader = shader.fragmentShader.replace(
-        "#include <map_fragment>",
-        `
-        vec2 uv = vMapUv;
-        float p = clamp(coverReveal, 0.0, 1.0);
-        if (p > 0.999) {
-          diffuseColor *= texture2D(map, uv);
-        } else {
-        float diamond = abs(uv.x - 0.5) * 0.7 + abs(uv.y - 0.5) * 0.9;
-        float facet = floor((uv.x + uv.y) * 9.0) / 9.0;
-        float threshold = diamond * 0.75 + facet * 0.12;
-        float clearArea = smoothstep(threshold, threshold + 0.28, p * 1.15);
-        vec2 radius = vec2(0.008, 0.012) * (1.0 - clearArea);
-        vec4 softImage = texture2D(map, uv) * 0.2;
-        softImage += texture2D(map, uv + vec2(radius.x, 0.0)) * 0.12;
-        softImage += texture2D(map, uv - vec2(radius.x, 0.0)) * 0.12;
-        softImage += texture2D(map, uv + vec2(0.0, radius.y)) * 0.12;
-        softImage += texture2D(map, uv - vec2(0.0, radius.y)) * 0.12;
-        softImage += texture2D(map, uv + radius) * 0.08;
-        softImage += texture2D(map, uv - radius) * 0.08;
-        softImage += texture2D(map, uv + vec2(radius.x, -radius.y)) * 0.08;
-        softImage += texture2D(map, uv + vec2(-radius.x, radius.y)) * 0.08;
-        float grain = fract(sin(dot(floor(uv * 900.0), vec2(12.9898,78.233))) * 43758.5453);
-        vec3 frosted = softImage.rgb + (grain - 0.5) * 0.008 * (1.0 - clearArea);
-        diffuseColor *= vec4(mix(frosted, texture2D(map, uv).rgb, clearArea), 1.0);
-        }
-        `,
-      );
-    };
-    this.active.add(this.artFace);
+    const faceGeometry = new THREE.PlaneGeometry(FACE_W, FACE_H);
+    faceGeometry.translate(0, 0, FACE_Z);
 
-    this.active.add(
-      new THREE.LineSegments(
-        new THREE.EdgesGeometry(new THREE.BoxGeometry(5.02, 3.72, 0.31)),
-        new THREE.LineBasicMaterial({
-          color: 0xbaa875,
-          transparent: true,
-          opacity: 0.8,
-        }),
-      ),
+    // Instanced array: body + face share one instance-matrix buffer.
+    const count = LANES * ROWS;
+    this.instanceMatrix = new THREE.InstancedBufferAttribute(new Float32Array(count * 16), 16);
+    this.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+    this.body = new THREE.InstancedMesh(shell, this.bodyMaterial(), count);
+    this.body.instanceMatrix = this.instanceMatrix;
+    this.body.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(count * 3), 3);
+    this.body.instanceColor.setUsage(THREE.DynamicDrawUsage);
+    const faceInstanced = faceGeometry.clone();
+    this.coverUV = new THREE.InstancedBufferAttribute(new Float32Array(count * 4), 4);
+    this.coverInfo = new THREE.InstancedBufferAttribute(new Float32Array(count * 3), 3); // tier, tint, focus
+    this.coverUV.setUsage(THREE.DynamicDrawUsage);
+    this.coverInfo.setUsage(THREE.DynamicDrawUsage);
+    faceInstanced.setAttribute("coverUV", this.coverUV);
+    faceInstanced.setAttribute("coverInfo", this.coverInfo);
+    this.faces = new THREE.InstancedMesh(faceInstanced, this.faceMaterial(), count);
+    this.faces.instanceMatrix = this.instanceMatrix;
+    for (const mesh of [this.body, this.faces]) {
+      mesh.frustumCulled = false; // culled per instance below
+      mesh.count = 0;
+      this.scene.add(mesh);
+    }
+    this.cells = new Int32Array(count * 2); // visible instance → lane,row
+    this.tileOut = new Float32Array(5);
+
+    // The extracted card: its own body and a face that runs the frosted reveal.
+    this.active = new THREE.Group();
+    this.activeBodyMaterial = new THREE.MeshStandardMaterial({ color: HIGHLIGHT, metalness: 0.12, roughness: 0.42 });
+    this.activeBody = new THREE.Mesh(shell, this.activeBodyMaterial);
+    this.reveal = {
+      faceFrom: { value: null },
+      faceTo: { value: null },
+      fromCover: { value: new THREE.Vector4() },
+      toCover: { value: new THREE.Vector4() },
+      fromInfo: { value: new THREE.Vector3(1, 0, 0) },
+      toInfo: { value: new THREE.Vector3(1, 0, 0) },
+      revealProgress: { value: 1 },
+      revealDir: { value: 1 },
+      faceLod: { value: 0 },
+    };
+    this.activeFace = new THREE.Mesh(faceGeometry, this.revealMaterial());
+    this.activeFrame = new THREE.LineSegments(
+      new THREE.EdgesGeometry(new THREE.BoxGeometry(5.02, 3.72, 0.31)),
+      new THREE.LineBasicMaterial({ color: 0xbaa875, transparent: true, opacity: 0.75 }),
     );
-    this.active.children[0].castShadow = true;
+    this.active.add(this.activeBody, this.activeFace, this.activeFrame);
     this.scene.add(this.active);
-    const floor = new THREE.Mesh(
-      new THREE.PlaneGeometry(180, 180),
-      new THREE.MeshStandardMaterial({ color: 0x15262b, roughness: 1 }),
-    );
-    floor.rotation.x = -Math.PI / 2;
-    floor.position.y = -2;
-    floor.receiveShadow = true;
-    this.scene.add(floor);
-    this.dummy = new THREE.Object3D();
-    this.tint = new THREE.Color();
+    this.art = {
+      progress: 1,
+      duration: 0.9,
+      key: null,
+      history: [],
+      canvases: [makeCanvas(), makeCanvas()],
+      textures: [],
+      which: 0,
+      snapshots: [],
+      pendingDetail: null,
+      images: new Map(),
+      token: 0,
+    };
+    this.art.textures = this.art.canvases.map((canvas) => {
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      // No anisotropy: the face is viewed head-on, and querying the limit stalls (sync GL query).
+      return texture;
+    });
+    this.snapshotScene = new THREE.Scene();
+    this.snapshotCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    this.snapshotScene.add(new THREE.Mesh(new THREE.PlaneGeometry(2, 2), this.snapshotMaterial()));
+
     this.raycaster = new THREE.Raycaster();
     this.pointer = new THREE.Vector2();
-    this.cameraDirection = new THREE.Vector3(-0.76, 0.44, 0.53).normalize();
-    this.cameraRight = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), this.cameraDirection).normalize();
-    this.cameraUp = new THREE.Vector3().crossVectors(this.cameraDirection, this.cameraRight).normalize();
+    this.frustum = new THREE.Frustum();
+    this.projScreen = new THREE.Matrix4();
+    this.cameraDirection = new THREE.Vector3();
+    this.cameraRight = new THREE.Vector3();
+    this.cameraUp = new THREE.Vector3();
     this.cameraAim = new THREE.Vector3();
+    this.worldUp = new THREE.Vector3(0, 1, 0);
+    this.corner = [new THREE.Vector3(), new THREE.Vector3()];
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(container);
+    // Test hook (no global): verification scripts slow time to capture transition frames.
+    this.timeScale = 1;
+    container.__scene = this;
     this.bind();
-    this.updateFace();
     this.resize();
     this.wake();
+    this.warmUp();
   }
+  /** Compile every program off the critical path (KHR_parallel_shader_compile when available). */
+  warmUp() {
+    const run = async () => {
+      try {
+        await this.renderer.compileAsync(this.scene, this.camera);
+        // The snapshot pass renders into a target: compile that program variant there.
+        const target = this.snapshotTarget(0);
+        const previous = this.renderer.getRenderTarget();
+        this.renderer.setRenderTarget(target);
+        const pending = this.renderer.compileAsync(this.snapshotScene, this.snapshotCamera);
+        this.renderer.setRenderTarget(previous);
+        await pending;
+      } catch {}
+    };
+    (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(run);
+  }
+
+  // ------------------------------------------------------------ materials
+  bodyMaterial() {
+    const material = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.08, roughness: 0.56 });
+    material.onBeforeCompile = (shader) => {
+      shader.vertexShader = "varying vec3 vLocal;\n" + shader.vertexShader.replace("#include <begin_vertex>", "#include <begin_vertex>\nvLocal = position;");
+      // No shadow pass: a baked-in gradient grounds each card, and the left edge reads as a spine.
+      shader.fragmentShader =
+        "varying vec3 vLocal;\n" +
+        shader.fragmentShader.replace(
+          "#include <color_fragment>",
+          `#include <color_fragment>
+          diffuseColor.rgb *= mix(0.42, 1.0, smoothstep(${(-CARD_H).toFixed(2)}, 0.9, vLocal.y));
+          diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * 0.45, step(vLocal.x, ${(-CARD_W + 0.11).toFixed(3)}));`,
+        );
+    };
+    return material;
+  }
+  faceMaterial() {
+    const material = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0, roughness: 0.62 });
+    material.onBeforeCompile = (shader) => {
+      shader.uniforms.coverAtlas = this.atlasUniform;
+      shader.uniforms.laneTints = this.tintUniform;
+      shader.vertexShader =
+        "attribute vec4 coverUV;\nattribute vec3 coverInfo;\nvarying vec4 vCover;\nvarying vec3 vInfo;\nvarying vec2 vFaceUv;\n" +
+        shader.vertexShader.replace("#include <begin_vertex>", "#include <begin_vertex>\nvCover = coverUV; vInfo = coverInfo; vFaceUv = uv;");
+      shader.fragmentShader =
+        "varying vec4 vCover;\nvarying vec3 vInfo;\nvarying vec2 vFaceUv;\n" +
+        FACE_COMMON +
+        shader.fragmentShader
+          .replace("#include <map_fragment>", "float artMask; vec3 faceAlbedo = archiveFace(vFaceUv, vCover, vInfo.x, vInfo.y, artMask) * mix(0.58, 1.0, vInfo.z); diffuseColor.rgb *= faceAlbedo;")
+          .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\ntotalEmissiveRadiance += faceAlbedo * artMask * 0.5;");
+    };
+    return material;
+  }
+  revealMaterial() {
+    const material = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0, roughness: 0.55 });
+    material.onBeforeCompile = (shader) => {
+      Object.assign(shader.uniforms, this.reveal, { coverAtlas: this.atlasUniform, laneTints: this.tintUniform });
+      shader.vertexShader = "varying vec2 vFaceUv;\n" + shader.vertexShader.replace("#include <begin_vertex>", "#include <begin_vertex>\nvFaceUv = uv;");
+      shader.fragmentShader =
+        "varying vec2 vFaceUv;\n" +
+        FACE_COMMON +
+        REVEAL_COMMON +
+        shader.fragmentShader
+          .replace("#include <map_fragment>", "float artMask; vec3 faceAlbedo = revealFace(vFaceUv, artMask); diffuseColor.rgb *= faceAlbedo;")
+          .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\ntotalEmissiveRadiance += faceAlbedo * artMask * 0.55;");
+    };
+    return material;
+  }
+  /** Unlit copy of the reveal composite, used to freeze an interrupted transition. */
+  snapshotMaterial() {
+    return new THREE.ShaderMaterial({
+      uniforms: { ...this.reveal, coverAtlas: this.atlasUniform, laneTints: this.tintUniform },
+      vertexShader: "varying vec2 vFaceUv; void main(){ vFaceUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }",
+      fragmentShader: `varying vec2 vFaceUv;\n${FACE_COMMON}${REVEAL_COMMON}\nvoid main(){ float m; gl_FragColor = vec4(revealFace(vFaceUv, m), 1.0); }`,
+      depthTest: false,
+      depthWrite: false,
+    });
+  }
+
+  // ------------------------------------------------------------ selection
   get current() {
     const col = this.columns[wrap(this.selection.lane, this.columns.length)];
     return col.stories[wrap(this.selection.row, col.stories.length)];
   }
-  makeFace(story, lane, image) {
-    const canvas = document.createElement("canvas");
-    canvas.width = 1024;
-    canvas.height = 700;
-    const c = canvas.getContext("2d");
-    c.fillStyle = "#1a3034";
-    c.fillRect(0, 0, 1024, 700);
-    c.strokeStyle = "#405c59";
-    c.lineWidth = 2;
-    c.strokeRect(18, 18, 988, 664);
-    c.fillStyle = COLORS[wrap(lane, COLORS.length)];
-    c.fillRect(36, 35, 12, 85);
-    c.font = "18px monospace";
-    c.fillText("STELLARIS  /  STORIES", 72, 54);
-    c.strokeStyle = "#8b957a";
-    c.beginPath();
-    c.moveTo(36, 590);
-    c.lineTo(988, 590);
-    c.stroke();
-    if (image) {
-      c.save();
-      c.beginPath();
-      c.rect(0, 0, 1024, 700);
-      c.clip();
-      const scale = Math.max(1024 / image.width, 700 / image.height);
-      c.drawImage(
-        image,
-        (1024 - image.width * scale) / 2,
-        (700 - image.height * scale) / 2,
-        image.width * scale,
-        image.height * scale,
-      );
-      c.restore();
-      const shade = c.createLinearGradient(0, 340, 0, 700);
-      shade.addColorStop(0, "#06151b00");
-      shade.addColorStop(1, "#06151bdd");
-      c.fillStyle = shade;
-      c.fillRect(0, 340, 1024, 360);
-    } else {
-      c.strokeStyle = "#34524e";
-      for (let i = 0; i < 3; i++) {
-        c.beginPath();
-        c.ellipse(510, 260, 135 + i * 35, 130 - i * 13, -0.3, 0, Math.PI * 2);
-        c.stroke();
-      }
-      c.fillStyle = "#aaa99d";
-      c.fillRect(505, 255, 10, 10);
-    }
-    c.fillStyle = "#d6dfce";
-    c.font = '500 42px "Microsoft YaHei",sans-serif';
-    const text = story?.title?.zh || "";
-    const width = c.measureText(text).width;
-    if (width > 925)
-      c.font = `500 ${Math.max(23, (42 * 925) / width)}px "Microsoft YaHei",sans-serif`;
-    c.fillText(text, 40, 484);
-    c.fillStyle = "#9bb2a0";
-    c.font = "20px sans-serif";
-    c.fillText(story ? `${story.chapters} 篇` : "", 42, 547);
-    c.font = "14px monospace";
-    c.strokeStyle = "#cbb57c";
-    c.beginPath();
-    c.moveTo(930, 623);
-    c.lineTo(954, 623);
-    c.lineTo(954, 647);
-    c.moveTo(929, 648);
-    c.lineTo(954, 623);
-    c.stroke();
-    return canvas;
+  storyAt(lane, row) {
+    const col = this.columns[wrap(lane, this.columns.length)];
+    return col.stories[wrap(row, col.stories.length)];
   }
-  async updateFace(override) {
-    const token = ++this.imageToken,
-      source = override || this.current,
-      story = {
-        ...source,
-        image:
-          source.image ||
-          this.columns[
-            wrap(this.selection.lane, this.columns.length)
-          ].stories.find((card) => card.image)?.image,
-      },
-      lane = this.selection.lane;
-    const apply = (image) => {
-      if (token !== this.imageToken) return;
-      const canvas = this.makeFace(story, lane, image);
-      if (!this.eventTexture) {
-        this.eventTexture = new THREE.CanvasTexture(canvas);
-        this.eventTexture.colorSpace = THREE.SRGBColorSpace;
-        this.eventTexture.anisotropy = Math.min(
-          4,
-          this.renderer.capabilities.getMaxAnisotropy(),
-        );
-        this.artFace.material.map = this.eventTexture;
-        this.artFace.material.needsUpdate = true;
-      } else {
-        this.eventTexture.image = canvas;
-        this.eventTexture.needsUpdate = true;
-      }
-      this.wake();
-    };
-    if (!story?.image) {
-      apply(null);
-      return;
-    }
-    let image = this.textures.get(story.image);
-    if (!image) {
-      image = new Image();
-      image.decoding = "async";
-      image.src = this.asset(story.image);
-      try {
-        await image.decode();
-      } catch {
-        return;
-      }
-      this.textures.set(story.image, image);
-      if (this.textures.size > 24)
-        this.textures.delete(this.textures.keys().next().value);
-    }
-    apply(image);
+  coverSource(story, lane) {
+    return story.image ? { image: story.image } : { title: story.title?.zh || story.title?.en || "", lane: wrap(lane, this.columns.length) };
   }
-  resize() {
-    this.width = this.container.clientWidth;
-    this.height = this.container.clientHeight;
-    this.camera.aspect = this.width / Math.max(this.height, 1);
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(this.width, this.height);
-    this.wake();
+  coverKey(story) {
+    return story.image || `title:${story.id}`;
   }
   setSelection(lane, row) {
     if (this.selection.lane === lane && this.selection.row === row) return;
-    if (!this.reduced() && this.lift.value > 0.02) {
-      const mesh = new THREE.Group();
-      for (const child of this.active.children) {
-        if (child === this.artFace) continue;
-        const copy = child.clone();
-        if (child === this.activeFace && this.eventTexture) {
-          copy.material = child.material.clone();
-          copy.material.map = new THREE.CanvasTexture(this.eventTexture.image);
-          copy.material.map.colorSpace = THREE.SRGBColorSpace;
-          mesh.userData.coverMaterial = copy.material;
-        }
-        mesh.add(copy);
-      }
-      this.scene.add(mesh);
-      this.outgoing.push({
-        mesh,
-        lane: this.selection.lane,
-        row: this.selection.row,
-        lift: { value: this.lift.value, velocity: this.lift.velocity },
-      });
-      if (this.outgoing.length > 4)
-        this.removeOutgoing(this.outgoing.shift().mesh);
-    }
-    const returning = this.outgoing.find(
-      (old) => old.lane === lane && old.row === row,
-    );
-    this.lift.value = returning?.lift.value ?? 0;
-    this.lift.velocity = returning?.lift.velocity ?? 0;
-    if (returning) {
-      this.removeOutgoing(returning.mesh);
-      this.outgoing = this.outgoing.filter((old) => old !== returning);
-    }
+    if (!this.reduced() && this.lift.value > 0.02)
+      this.outgoing.push({ lane: this.selection.lane, row: this.selection.row, lift: { value: this.lift.value, velocity: this.lift.velocity } });
+    if (this.outgoing.length > 6) this.outgoing.shift();
+    const returning = this.outgoing.findIndex((old) => old.lane === lane && old.row === row);
+    this.lift.value = returning >= 0 ? this.outgoing[returning].lift.value : 0;
+    this.lift.velocity = returning >= 0 ? this.outgoing[returning].lift.velocity : 0;
+    if (returning >= 0) this.outgoing.splice(returning, 1);
     this.selection = { lane, row };
     this.memories[wrap(lane, this.columns.length)] = row;
     this.pulses.push({ lane, row, time: performance.now() / 1000 });
-    this.pulses = this.pulses.slice(-4);
-    this.updateFace();
-    this.onSelect(
-      this.current,
-      wrap(lane, this.columns.length),
-      wrap(row, this.columns[wrap(lane, this.columns.length)].stories.length),
-    );
+    if (this.pulses.length > 4) this.pulses.shift();
+    this.art.key = null;
+    this.art.history.length = 0;
+    this.art.progress = 1;
+    this.reveal.revealProgress.value = 1;
+    this.setFaceSide("to", { atlas: true });
+    this.onSelect(this.current, wrap(lane, this.columns.length), wrap(row, this.columns[wrap(lane, this.columns.length)].stories.length));
   }
   navigate(axis, direction) {
     if (this.detailTarget) return;
     this.momentum = null;
     this.drag = null;
+    this.touch();
     if (axis === "lane") {
       this.targetLane = Math.round(this.targetLane) + direction;
-      this.targetRow =
-        this.memories[wrap(this.targetLane, this.columns.length)];
+      this.targetRow = this.memories[wrap(this.targetLane, this.columns.length)];
     } else this.targetRow = Math.round(this.targetRow) + direction;
     this.setSelection(Math.round(this.targetLane), Math.round(this.targetRow));
     this.wake();
   }
-  removeOutgoing(mesh) {
-    this.scene.remove(mesh);
-    mesh.userData.coverMaterial?.map.dispose();
-    mesh.userData.coverMaterial?.dispose();
-  }
   selectCategory(index) {
-    const distance =
-      wrap(
-        index -
-          wrap(this.targetLane, this.columns.length) +
-          Math.floor(this.columns.length / 2),
-        this.columns.length,
-      ) - Math.floor(this.columns.length / 2);
+    const n = this.columns.length;
+    const distance = wrap(index - wrap(this.targetLane, n) + Math.floor(n / 2), n) - Math.floor(n / 2);
     this.navigate("lane", distance);
   }
   selectStory(id) {
     for (let i = 0; i < this.columns.length; i++) {
       const row = this.columns[i].stories.findIndex((s) => s.id === id);
-      if (row >= 0) {
-        this.detailTarget = 0;
-        this.selectCategory(i);
-        this.targetRow = row;
-        this.setSelection(Math.round(this.targetLane), row);
-        this.wake();
-        return;
-      }
+      if (row < 0) continue;
+      if (wrap(this.selection.lane, this.columns.length) === i && wrap(this.selection.row, this.columns[i].stories.length) === row) return;
+      this.detailTarget = 0;
+      this.selectCategory(i);
+      // Nearest occurrence of that row in the endless track.
+      const len = this.columns[i].stories.length;
+      this.targetRow = row + Math.round((this.targetRow - row) / len) * len;
+      this.setSelection(Math.round(this.targetLane), this.targetRow);
+      this.wake();
+      return;
     }
   }
-  setChapterArt(image, title) {
-    const key = image + JSON.stringify(title);
-    if (this.chapterArtKey === key) return;
-    this.chapterArtKey = key;
-    this.pendingArt = {
-      ...this.current,
-      image: image || this.current.image,
-      title,
-    };
-    this.artTarget = 0;
-    this.wake();
-  }
   setDetail(open) {
-    this.detailTarget = open ? 1 : 0;
+    const target = open ? 1 : 0;
+    if (this.detailTarget === target) return;
+    this.detailTarget = target;
     this.momentum = null;
     this.drag = null;
+    this.touch();
+    if (open) {
+      // Start from the archive face; the chapter face arrives via setChapterArt.
+      this.setFaceSide("to", { atlas: true });
+      this.art.progress = 1;
+      this.reveal.revealProgress.value = 1;
+      this.art.openedAt = performance.now();
+    } else {
+      this.art.key = null;
+      this.art.history.length = 0;
+      this.art.pendingDetail = null;
+      this.startReveal({ atlas: true }, -1, 0.6);
+      this.setFlowReady(false);
+    }
     this.wake();
+  }
+
+  // ------------------------------------------------------------ chapter art
+  /** Chapter (doc) changes run the frosted geometric reveal on the extracted card. */
+  setChapterArt(image, title, meta = {}) {
+    const lang = document.documentElement.lang === "en" ? "en" : "zh";
+    const clean = (s) => String(s || "").replace(/§./g, "").replace(/\[[^\]]*\]/g, "").replace(/\$[^$]*\$/g, "");
+    const text = clean(title?.[lang] || title?.zh || title?.en);
+    const story = this.current;
+    const source = image || story.image || null;
+    // Keyed by doc identity (both languages), so history survives a language switch.
+    const key = `${source}|${title?.zh || ""}|${title?.en || ""}`;
+    const column = this.columns[wrap(this.selection.lane, this.columns.length)];
+    const kicker = meta.category || (lang === "en" ? column?.en : column?.title) || "";
+    const lane = wrap(this.selection.lane, this.columns.length);
+    if (this.art.key === key) {
+      // Same doc in another language: redraw the face in place, no transition.
+      if (this.art.lang !== lang && this.detailTarget && !this.art.pendingDetail) {
+        this.art.lang = lang;
+        const token = ++this.art.token;
+        this.loadImage(source).then((img) => {
+          if (token !== this.art.token) return;
+          this.drawDetail(this.art.which, { img, text, kicker, story, lane });
+          this.art.textures[this.art.which].needsUpdate = true;
+          this.wake();
+        });
+      }
+      return;
+    }
+    this.art.lang = lang;
+    const history = this.art.history;
+    const back = history.length > 1 && history[history.length - 2] === key;
+    if (back) history.pop();
+    else history.push(key);
+    if (history.length > 24) history.shift();
+    this.art.key = key;
+    const token = ++this.art.token;
+    this.loadImage(source).then((img) => {
+      if (token !== this.art.token) return;
+      this.art.pendingDetail = { img, text, kicker, story, lane, dir: back ? -1 : 1 };
+      this.wake();
+    });
+  }  loadImage(path) {
+    if (!path) return Promise.resolve(null);
+    let pending = this.art.images.get(path);
+    if (!pending) {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = this.asset(path);
+      pending = img.decode().then(() => img, () => null);
+      this.art.images.set(path, pending);
+      if (this.art.images.size > 8) this.art.images.delete(this.art.images.keys().next().value);
+    }
+    return pending;
+  }
+  drawDetail(index, { img, text, kicker, lane }) {
+    const canvas = this.art.canvases[index];
+    const c = canvas.getContext("2d");
+    const { w, h } = FACE_PX;
+    const bx = INSET_X * w, by = INSET_Y * h, bw = (1 - 2 * INSET_X) * w, bh = BAND_H * h;
+    c.save();
+    c.fillStyle = "#0a191e";
+    c.fillRect(0, 0, w, h);
+    if (img) {
+      // Pre-blurred backdrop, so the frosted glass under the map costs nothing per
+      // frame. Blur by down- then up-sampling (a CSS-style canvas blur filter of this
+      // radius cost tens of ms on the main thread per chapter change).
+      const small = (this.art.blurCanvas ??= Object.assign(document.createElement("canvas"), { width: 24, height: 18 }));
+      const sc = small.getContext("2d");
+      sc.imageSmoothingQuality = "high";
+      const cover = Math.max(small.width / img.width, small.height / img.height) * 1.1;
+      sc.drawImage(img, (small.width - img.width * cover) / 2, (small.height - img.height * cover) / 2, img.width * cover, img.height * cover);
+      c.imageSmoothingQuality = "high";
+      c.drawImage(small, -w * 0.05, -h * 0.05, w * 1.1, h * 1.1);
+      c.fillStyle = "#06121780";
+      c.fillRect(0, 0, w, h);
+    } else {
+      const g = c.createLinearGradient(0, 0, w, h);
+      g.addColorStop(0, TINTS[lane % TINTS.length] + "66");
+      g.addColorStop(1, "#0a191e");
+      c.fillStyle = g;
+      c.fillRect(0, 0, w, h);
+    }
+    const shade = c.createLinearGradient(0, by + bh, 0, h);
+    shade.addColorStop(0, "#08161bcc");
+    shade.addColorStop(1, "#06121690");
+    c.fillStyle = shade;
+    c.fillRect(0, by + bh, w, h - by - bh);
+    c.strokeStyle = "#9fb7ad14";
+    c.lineWidth = 1;
+    for (let y = by + bh + 22; y < h; y += 22) {
+      c.beginPath();
+      c.moveTo(0, y + 0.5);
+      c.lineTo(w, y + 0.5);
+      c.stroke();
+    }
+    if (img) {
+      const aspect = img.width / img.height;
+      let sx = 0, sy = 0, sw = img.width, sh = img.height;
+      if (aspect > 3) (sw = img.height * 3), (sx = (img.width - sw) / 2);
+      else (sh = img.width / 3), (sy = (img.height - sh) / 2);
+      c.imageSmoothingQuality = "high";
+      c.drawImage(img, sx, sy, sw, sh, bx, by, bw, bh);
+    } else {
+      c.fillStyle = "#13262b";
+      c.fillRect(bx, by, bw, bh);
+    }
+    c.strokeStyle = "#d9c08a55";
+    c.strokeRect(bx + 0.5, by + 0.5, bw - 1, bh - 1);
+    // No text on the face: the reader panel carries the title, and the map covers this panel.
+    c.fillStyle = "#cbb27a";
+    c.fillRect(bx, by + bh + 18, 48, 2);
+    c.restore();
+  }
+  /** Point one side of the reveal at the archive face (atlas) or a texture. */
+  setFaceSide(side, { atlas, texture }) {
+    const info = this.reveal[`${side}Info`].value;
+    if (atlas) {
+      info.x = 1;
+      this.reveal[`face${side === "to" ? "To" : "From"}`].value = this.art.textures[0];
+    } else {
+      info.x = 0;
+      this.reveal[`face${side === "to" ? "To" : "From"}`].value = texture;
+    }
+    this.refreshActiveCover();
+  }
+  refreshActiveCover() {
+    const story = this.current;
+    const tile = this.coverAtlas.get(this.coverKey(story), this.coverSource(story, this.selection.lane), true, this.tileOut);
+    for (const side of ["from", "to"]) {
+      if (this.reveal[`${side}Info`].value.x < 0.5) continue;
+      this.reveal[`${side}Cover`].value.set(tile[0], tile[1], tile[2], tile[3]);
+      this.reveal[`${side}Info`].value.y = tile[4];
+      this.reveal[`${side}Info`].value.z = wrap(this.selection.lane, this.columns.length) % 8;
+    }
+  }
+  /** Begin a reveal toward `to`; an interrupted reveal is frozen into a snapshot first. */
+  startReveal(to, dir, duration = 0.9) {
+    const reveal = this.reveal;
+    if (this.reduced()) {
+      this.setFaceSide("to", to);
+      this.art.progress = 1;
+      reveal.revealProgress.value = 1;
+      return;
+    }
+    if (this.art.progress < 1) {
+      const snapshot = this.snapshot();
+      this.setFaceSide("from", { texture: snapshot });
+    } else if (reveal.toInfo.value.x > 0.5) {
+      reveal.fromInfo.value.copy(reveal.toInfo.value);
+      reveal.fromCover.value.copy(reveal.toCover.value);
+    } else this.setFaceSide("from", { texture: reveal.faceTo.value });
+    this.setFaceSide("to", to);
+    reveal.revealDir.value = dir;
+    this.art.progress = 0;
+    this.art.duration = duration;
+    reveal.revealProgress.value = 0;
+  }
+  snapshotTarget(index) {
+    return (this.art.snapshots[index] ??= new THREE.WebGLRenderTarget(FACE_PX.w, FACE_PX.h, {
+      depthBuffer: false,
+      stencilBuffer: false,
+      generateMipmaps: false,
+      colorSpace: THREE.SRGBColorSpace,
+    }));
+  }
+  snapshot() {
+    const index = (this.art.snapshotIndex = ((this.art.snapshotIndex || 0) + 1) % 2);
+    const target = this.snapshotTarget(index);
+    // The snapshot target is never the texture being sampled (ping-pong).
+    if (this.reveal.faceFrom.value === target.texture) {
+      this.reveal.faceFrom.value = this.art.snapshots[1 - index]?.texture || this.art.textures[0];
+    }
+    const previous = this.renderer.getRenderTarget();
+    this.renderer.setRenderTarget(target);
+    this.renderer.render(this.snapshotScene, this.snapshotCamera);
+    this.renderer.setRenderTarget(previous);
+    return target.texture;
+  }
+  advanceArt(dt) {
+    // Apply a pending chapter face once the card has lifted far enough to read.
+    const pending = this.art.pendingDetail;
+    if (pending && this.detailTarget && (this.detail.value > 0.35 || this.reduced())) {
+      this.art.pendingDetail = null;
+      const next = (this.art.which = 1 - this.art.which);
+      this.drawDetail(next, pending);
+      this.art.textures[next].needsUpdate = true;
+      // If the outgoing side still shows this canvas, freeze it first.
+      if (this.reveal.faceFrom.value === this.art.textures[next] && this.reveal.fromInfo.value.x < 0.5) {
+        this.setFaceSide("from", { texture: this.snapshot() });
+      }
+      this.startReveal({ texture: this.art.textures[next] }, pending.dir, this.detail.value < 0.98 ? 1.05 : 0.85);
+    }
+    if (this.art.progress < 1) {
+      this.art.progress = Math.min(1, this.art.progress + dt / this.art.duration);
+      this.reveal.revealProgress.value = easeInOutCubic(this.art.progress);
+      return true;
+    }
+    return false;
+  }
+
+  // ------------------------------------------------------------ layout
+  resize() {
+    this.width = this.container.clientWidth;
+    this.height = this.container.clientHeight;
+    if (!this.width || !this.height) return;
+    this.camera.aspect = this.width / this.height;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(this.width, this.height, false);
+    this.canvas.style.width = this.width + "px";
+    this.canvas.style.height = this.height + "px";
+    this.flowBounds = null;
+    this.wake();
+  }
+  setPixelRatio(ratio) {
+    ratio = Math.max(1, Math.min(this.maxPixelRatio, Math.round(ratio * 4) / 4));
+    if (ratio === this.pixelRatio) return;
+    this.pixelRatio = ratio;
+    this.renderer.setPixelRatio(ratio);
+    this.renderer.setSize(this.width, this.height, false);
   }
   hit(e) {
     const b = this.canvas.getBoundingClientRect();
-    this.pointer.set(
-      ((e.clientX - b.left) / b.width) * 2 - 1,
-      1 - ((e.clientY - b.top) / b.height) * 2,
-    );
+    this.pointer.set(((e.clientX - b.left) / b.width) * 2 - 1, 1 - ((e.clientY - b.top) / b.height) * 2);
     this.raycaster.setFromCamera(this.pointer, this.camera);
-    if (this.raycaster.intersectObject(this.active, true).length)
-      return this.selection;
+    if (this.raycaster.intersectObject(this.active, true).length) return this.selection;
     const hit = this.raycaster.intersectObject(this.body)[0];
-    return hit ? this.cells[hit.instanceId] : null;
+    if (!hit || hit.instanceId === undefined || hit.instanceId >= this.body.count) return null;
+    return { lane: this.cells[hit.instanceId * 2], row: this.cells[hit.instanceId * 2 + 1] };
   }
   projection() {
     const origin = new THREE.Vector3(0, 0, 0).project(this.camera),
       a = new THREE.Vector3(-SPACING, 0, 0).project(this.camera),
       b = new THREE.Vector3(0, 0, -DEPTH).project(this.camera);
     return inverseProjection(
-      {
-        x: ((a.x - origin.x) * this.width) / 2,
-        y: (-(a.y - origin.y) * this.height) / 2,
-      },
-      {
-        x: ((b.x - origin.x) * this.width) / 2,
-        y: (-(b.y - origin.y) * this.height) / 2,
-      },
+      { x: ((a.x - origin.x) * this.width) / 2, y: (-(a.y - origin.y) * this.height) / 2 },
+      { x: ((b.x - origin.x) * this.width) / 2, y: (-(b.y - origin.y) * this.height) / 2 },
     );
+  }
+  touch() {
+    this.lastInput = performance.now();
   }
   bind() {
     this.canvas.addEventListener("pointerdown", (e) => {
       if (this.detailTarget || e.button > 0) return;
       this.canvas.setPointerCapture(e.pointerId);
       this.momentum = null;
-      this.drag = {
-        x: e.clientX,
-        y: e.clientY,
-        lane: this.lane.value,
-        row: this.row.value,
-        inverse: this.projection(),
-        samples: [],
-        moved: false,
-      };
+      this.touch();
+      this.drag = { x: e.clientX, y: e.clientY, lane: this.lane.value, row: this.row.value, inverse: this.projection(), samples: [], moved: false };
       this.wake();
     });
     this.canvas.addEventListener("pointermove", (e) => {
-      if (!this.drag) return;
-      const d = this.drag,
-        dx = e.clientX - d.x,
-        dy = e.clientY - d.y;
+      if (!this.drag) {
+        // Hovering keeps the archive breathing; nothing renders while unattended.
+        if (!this.detailTarget && performance.now() - this.lastInput > 400) {
+          this.touch();
+          this.wake();
+        }
+        return;
+      }
+      const d = this.drag, dx = e.clientX - d.x, dy = e.clientY - d.y;
       if (Math.hypot(dx, dy) > 8) d.moved = true;
       if (!d.moved || !d.inverse) return;
+      this.touch();
       this.lane.value = d.lane + dx * d.inverse.lane.x + dy * d.inverse.lane.y;
       this.row.value = d.row + dx * d.inverse.row.x + dy * d.inverse.row.y;
       this.lane.velocity = this.row.velocity = 0;
       this.targetLane = this.lane.value;
       this.targetRow = this.row.value;
-      d.samples.push({
-        time: performance.now(),
-        lane: this.lane.value,
-        row: this.row.value,
-      });
-      d.samples = d.samples.filter((s) => performance.now() - s.time < 100);
-      this.setSelection(
-        Math.round(this.lane.value),
-        Math.round(this.row.value),
-      );
+      const now = performance.now();
+      d.samples.push({ time: now, lane: this.lane.value, row: this.row.value });
+      while (d.samples.length && now - d.samples[0].time > 100) d.samples.shift();
+      this.setSelection(Math.round(this.lane.value), Math.round(this.row.value));
       this.wake();
     });
     const finish = (e, cancelled = false) => {
@@ -590,28 +757,13 @@ export class ArchiveScene {
       if (!d) return;
       this.drag = null;
       if (d.moved) {
-        const first = d.samples[0],
-          last = d.samples.at(-1),
-          dt = first && last ? (last.time - first.time) / 1000 : 0;
-        const velocity = (axis) =>
-          !cancelled &&
-          !this.reduced() &&
-          dt > 0.008 &&
-          performance.now() - last.time < 90
-            ? (last[axis] - first[axis]) / dt
-            : 0;
-        this.momentum = {
-          lane: new Momentum(this.lane.value, velocity("lane")),
-          row: new Momentum(this.row.value, velocity("row")),
-        };
+        const first = d.samples[0], last = d.samples.at(-1), dt = first && last ? (last.time - first.time) / 1000 : 0;
+        const velocity = (axis) => (!cancelled && !this.reduced() && dt > 0.008 && performance.now() - last.time < 90 ? (last[axis] - first[axis]) / dt : 0);
+        this.momentum = { lane: new Momentum(this.lane.value, velocity("lane")), row: new Momentum(this.row.value, velocity("row")) };
       } else if (!cancelled) {
         const hit = this.hit(e);
         if (hit) {
-          if (
-            hit.lane === this.selection.lane &&
-            hit.row === this.selection.row
-          )
-            this.onOpen(this.current);
+          if (hit.lane === this.selection.lane && hit.row === this.selection.row) this.onOpen(this.current);
           else {
             this.targetLane = hit.lane;
             this.targetRow = hit.row;
@@ -629,8 +781,7 @@ export class ArchiveScene {
       (e) => {
         if (this.detailTarget) return;
         e.preventDefault();
-        const horizontal =
-          e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY) * 1.4;
+        const horizontal = e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY) * 1.4;
         wheel += horizontal ? e.deltaX || e.deltaY : e.deltaY;
         if (Math.abs(wheel) > 38) {
           this.navigate(horizontal ? "lane" : "row", Math.sign(wheel));
@@ -640,12 +791,7 @@ export class ArchiveScene {
       { passive: false },
     );
     this.canvas.addEventListener("keydown", (e) => {
-      const keys = {
-        ArrowLeft: ["lane", -1],
-        ArrowRight: ["lane", 1],
-        ArrowUp: ["row", -1],
-        ArrowDown: ["row", 1],
-      };
+      const keys = { ArrowLeft: ["lane", -1], ArrowRight: ["lane", 1], ArrowUp: ["row", -1], ArrowDown: ["row", 1] };
       if (keys[e.key]) {
         e.preventDefault();
         this.navigate(...keys[e.key]);
@@ -663,23 +809,47 @@ export class ArchiveScene {
     });
     this.canvas.addEventListener("webglcontextlost", (e) => {
       e.preventDefault();
+      this.lost = true;
       cancelAnimationFrame(this.frame);
       this.frame = 0;
       this.container.dispatchEvent(new Event("scene-lost"));
     });
+    this.canvas.addEventListener("webglcontextrestored", () => {
+      this.lost = false;
+      // three re-uploads geometry and textures lazily; render targets come back empty.
+      this.coverAtlas.reset();
+      this.art.snapshots.forEach((t) => t?.dispose());
+      this.art.snapshots = [];
+      for (const texture of this.art.textures) texture.needsUpdate = true;
+      if (this.art.progress < 1) {
+        this.art.progress = 1;
+        this.reveal.revealProgress.value = 1;
+      }
+      const fallback = this.container.querySelector("#scene-fallback");
+      if (fallback) fallback.hidden = true;
+      this.container.dispatchEvent(new Event("scene-restored"));
+      this.dirty = true;
+      this.wake();
+    });
   }
+
+  // ------------------------------------------------------------ loop
   wake() {
     this.dirty = true;
-    if (!this.frame && !document.hidden) {
+    if (!this.frame && !document.hidden && !this.lost) {
       this.last = performance.now();
       this.frame = requestAnimationFrame((t) => this.tick(t));
     }
   }
   tick(now) {
     this.frame = 0;
-    if (document.hidden) return;
-    const dt = Math.min((now - this.last) / 1000, 0.05);
+    if (document.hidden || this.lost) return;
+    const interval = now - this.last;
+    // rAF timestamps are frame-start times and can precede the wake() call: never step backwards.
+    const dt = Math.min(Math.max(interval, 0) / 1000, 0.05) * this.timeScale;
     this.last = now;
+    // Read once per frame: reduced() consults matchMedia.
+    const reduced = (this.isReduced = this.reduced());
     if (!this.drag) {
       if (this.momentum) {
         this.momentum.lane.step(dt);
@@ -689,223 +859,297 @@ export class ArchiveScene {
         this.targetLane = Math.round(this.lane.value);
         this.targetRow = Math.round(this.row.value);
         this.setSelection(this.targetLane, this.targetRow);
-        if (this.momentum.lane.done && this.momentum.row.done)
-          this.momentum = null;
+        if (this.momentum.lane.done && this.momentum.row.done) this.momentum = null;
       } else {
         damp(this.lane, this.targetLane, 6.5, dt);
         damp(this.row, this.targetRow, 7, dt);
       }
     }
-    for (const old of this.outgoing) {
+    for (let i = this.outgoing.length - 1; i >= 0; i--) {
+      const old = this.outgoing[i];
       damp(old.lift, 0, 7, dt);
-      if (this.reduced()) old.lift.value = 0;
+      if (reduced || Math.abs(old.lift.value) < 0.002) this.outgoing.splice(i, 1);
     }
-    this.outgoing = this.outgoing.filter((old) => {
-      if (old.lift.value < 0.002) {
-        this.removeOutgoing(old.mesh);
-        return false;
-      }
-      return true;
-    });
     damp(this.detail, this.detailTarget, 5.5, dt);
-    damp(this.artTransition, this.artTarget, this.artTarget ? 5 : 11, dt);
-    if (this.reduced()) this.artTransition.value = this.artTarget;
-    if (this.pendingArt && this.artTransition.value < 0.025) {
-      const next = this.pendingArt;
-      this.pendingArt = null;
-      const key = this.chapterArtKey;
-      this.updateFace(next).then(() => {
-        if (key === this.chapterArtKey) this.artTarget = 1;
-        this.wake();
-      });
-    }
-    damp(this.lift, this.detailTarget ? 4.1 : 1.15, 5, dt);
-    if (this.reduced()) {
+    damp(this.lift, this.detailTarget ? DETAIL_LIFT : PREVIEW_LIFT, 5, dt);
+    if (reduced) {
       this.lane.value = this.targetLane;
       this.row.value = this.targetRow;
       this.detail.value = this.detailTarget;
-      this.lift.value = this.detailTarget ? 4.1 : 1.15;
+      this.lift.value = this.detailTarget ? DETAIL_LIFT : PREVIEW_LIFT;
+      this.lane.velocity = this.row.velocity = this.detail.velocity = this.lift.velocity = 0;
     }
-    const moving =
-      Math.abs(this.lane.value - this.targetLane) > 0.001 ||
-      Math.abs(this.row.value - this.targetRow) > 0.001 ||
-      Math.abs(this.detail.value - this.detailTarget) > 0.001 ||
-      Math.abs(this.artTransition.value - this.artTarget) > 0.001 ||
-      !!this.drag ||
-      !!this.momentum;
-    if (this.dirty || moving || now - this.lastDraw >= 32) {
-      if (moving || !this.lastShadow || now - this.lastShadow > 250) {
-        this.renderer.shadowMap.needsUpdate = true;
-        this.lastShadow = now;
+    const settle = (s, target, eps = 0.0008) => {
+      if (Math.abs(s.value - target) < eps && Math.abs(s.velocity) < eps * 4) {
+        s.value = target;
+        s.velocity = 0;
+        return false;
       }
-      this.draw(now / 1000);
-      this.lastDraw = now;
+      return true;
+    };
+    let moving = false;
+    moving = settle(this.lane, this.targetLane) || moving;
+    moving = settle(this.row, this.targetRow) || moving;
+    moving = settle(this.detail, this.detailTarget, 0.0004) || moving;
+    moving = settle(this.lift, this.detailTarget ? DETAIL_LIFT : PREVIEW_LIFT) || moving;
+    moving = moving || !!this.drag || !!this.momentum || this.outgoing.length > 0;
+    const revealing = this.advanceArt(dt) || !!this.art.pendingDetail;
+    const time = now / 1000;
+    const pulsing = !reduced && this.pulses.length > 0 && time - this.pulses[this.pulses.length - 1].time < 3;
+    // Breathing only while someone is here and the array is in view.
+    this.breathing = reduced || this.detail.value > 0.6 ? 0 : idleEnvelope((now - this.lastInput) / 1000);
+    const covered = this.width < 700 && this.detailTarget === 1 && this.detail.value > 0.98;
+    const tiles = this.coverAtlas.ready.length > 0;
+    const animating = moving || revealing || pulsing || this.breathing > 0.0005;
+    if (!covered && (this.dirty || animating || tiles)) {
+      const t0 = performance.now();
+      this.draw(time);
+      this.cpuMs = performance.now() - t0;
       this.dirty = false;
-    }
-    const coveredByMobileReader = window.innerWidth <= 700 && this.detailTarget === 1;
-    if (moving || this.outgoing.length || (!this.reduced() && !coveredByMobileReader))
-      this.frame = requestAnimationFrame((t) => this.tick(t));
-  }
-  draw(time) {
-    const centerLane = Math.round(this.lane.value),
-      centerRow = Math.round(this.row.value);
-    this.pulses = this.pulses.filter((p) => time - p.time < 3);
-    let index = 0;
-    const newCells = this.cellCenterLane !== centerLane || this.cellCenterRow !== centerRow;
-    this.coverAtlas.flush(time * 1000);
-    this.coverAtlas.frame++;
-    const height = (row, lane) =>
-      0.95 *
-        Math.exp(-Math.pow(row - this.row.value, 2) / 15) *
-        Math.exp(-Math.pow(lane - this.lane.value, 2) * 0.6) +
-      (this.reduced()
-        ? 0
-        : breath(row, lane, time) +
-          this.pulses.reduce(
-            (sum, p) =>
-              sum +
-              selectionWave(
-                Math.hypot(row - p.row, (lane - p.lane) * 2.2),
-                time - p.time,
-              ),
-            0,
-          ));
-    for (let l = -3; l <= 3; l++)
-      for (let r = -20; r <= 20; r++) {
-        const lane = centerLane + l,
-          row = centerRow + r;
-        if (newCells) {
-        this.cells[index] = { lane, row };
-        const column = this.columns[wrap(lane, this.columns.length)];
-        const card = column.stories[wrap(row, column.stories.length)];
-        const cover =
-          card.image || column.stories.find((story) => story.image)?.image;
-        this.coverUV.setXYZW(index, ...this.coverAtlas.get(cover));
-        }
-        const selected =
-          (lane === this.selection.lane && row === this.selection.row) ||
-          this.outgoing.some((old) => old.lane === lane && old.row === row);
-        this.dummy.position.set(
-          (lane - this.lane.value) * SPACING,
-          height(row, lane),
-          (row - this.row.value) * DEPTH,
-        );
-        this.dummy.scale.setScalar(selected ? 0 : 1);
-        this.dummy.updateMatrix();
-        this.body.setMatrixAt(index, this.dummy.matrix);
-        this.dummy.position.z += 0.156;
-        this.dummy.updateMatrix();
-        this.faces.setMatrixAt(index, this.dummy.matrix);
-        this.dummy.position.x -= 2.43;
-        this.dummy.position.z -= 0.156;
-        this.dummy.updateMatrix();
-        this.spines.setMatrixAt(index, this.dummy.matrix);
-        this.dummy.position.x -= 0.063;
-        for (let screw = 0; screw < 2; screw++) {
-          this.dummy.position.y += screw ? -3.12 : 1.56;
-          this.dummy.updateMatrix();
-          this.fasteners.setMatrixAt(index * 2 + screw, this.dummy.matrix);
-        }
-        index++;
+      if (animating && interval < 250) {
+        const step = this.governor.sample(interval);
+        if (step) this.setPixelRatio(this.pixelRatio + step * 0.25);
       }
-    if (newCells) {
-    for (let i = 0; i < this.cells.length; i++) {
-      this.tint.set(COLORS[wrap(this.cells[i].lane, COLORS.length)]);
-      this.body.setColorAt(i, this.tint);
-      this.faces.setColorAt(i, this.tint);
     }
-    this.body.instanceColor.needsUpdate = true;
-    this.faces.instanceColor.needsUpdate = true;
-    this.coverUV.needsUpdate = true;
-    this.cellCenterLane = centerLane;
-    this.cellCenterRow = centerRow;
-    }
-    this.spines.instanceMatrix.needsUpdate = true;
-    this.fasteners.instanceMatrix.needsUpdate = true;
-    this.body.instanceMatrix.needsUpdate = true;
-    this.faces.instanceMatrix.needsUpdate = true;
-    this.active.position.set(
-      (this.selection.lane - this.lane.value) * SPACING,
-      this.lift.value +
-        height(this.selection.row, this.selection.lane) *
-          (1 - this.detail.value),
-      (this.selection.row - this.row.value) * DEPTH,
-    );
-    for (const old of this.outgoing)
-      old.mesh.position.set(
-        (old.lane - this.lane.value) * SPACING,
-        height(old.row, old.lane) + old.lift.value,
-        (old.row - this.row.value) * DEPTH,
-      );
-    this.coverReveal.value = Math.max(0, Math.min(1, this.artTransition.value));
-    this.artFace.visible = true;
-    const mobile = this.width < 700,
-      d = this.detail.value;
-    const direction = this.cameraDirection,
-      distance = 85;
-    const span = mobile
-      ? Math.max(10.5, 8.2 / this.camera.aspect)
-      : 10.2 - 1.2 * d;
-    const right = this.cameraRight,
-      up = this.cameraUp;
-    const anchor = this.cameraAim.set(0, 0.8 + this.detail.value * 3.1, 0),
-      px = mobile ? 0.5 : 0.29 - 0.04 * d,
-      py = mobile ? 0.36 : 0.46;
-    const aim = anchor
-      .addScaledVector(right, (0.5 - px) * span * this.camera.aspect)
-      .addScaledVector(up, (py - 0.5) * span);
-    this.camera.position.copy(aim).addScaledVector(direction, distance);
-    this.camera.lookAt(aim);
-    this.camera.fov = THREE.MathUtils.radToDeg(
-      2 * Math.atan(span / (2 * distance)),
-    );
+    if (!covered && (animating || tiles || this.coverAtlas.pending > 0 || this.dirty)) this.frame = requestAnimationFrame((t) => this.tick(t));
+    else if (covered && (moving || revealing)) this.frame = requestAnimationFrame((t) => this.tick(t));
+  }
+  frameCamera(d) {
+    const aspect = this.width / Math.max(1, this.height);
+    const mobile = this.width < 700;
+    const pose = smooth(d);
+    const direction = this.cameraDirection.copy(BROWSE_DIR).lerp(DETAIL_DIR, mobile ? pose * 0.4 : pose).normalize();
+    this.cameraRight.crossVectors(this.worldUp, direction).normalize();
+    this.cameraUp.crossVectors(direction, this.cameraRight).normalize();
+    const browseSpan = mobile ? Math.max(12.5, 10.2 / aspect) : Math.max(10.6, (10.6 * 1.55) / aspect);
+    const detailSpan = mobile ? browseSpan : THREE.MathUtils.clamp(12.2 / aspect, 6.6, 11);
+    const span = THREE.MathUtils.lerp(browseSpan, detailSpan, pose);
+    const px = mobile ? 0.5 : THREE.MathUtils.lerp(0.31, this.width < 1100 ? 0.245 : 0.262, pose);
+    const py = mobile ? THREE.MathUtils.lerp(0.36, 0.3, pose) : THREE.MathUtils.lerp(0.47, 0.515, pose);
+    const anchor = this.cameraAim.set(0, 0.6 + pose * 3.5, 0);
+    anchor.addScaledVector(this.cameraRight, (0.5 - px) * span * aspect).addScaledVector(this.cameraUp, (py - 0.5) * span);
+    this.camera.position.copy(anchor).addScaledVector(direction, DISTANCE);
+    this.camera.up.copy(this.worldUp);
+    this.camera.lookAt(anchor);
+    this.camera.fov = THREE.MathUtils.radToDeg(2 * Math.atan(span / (2 * DISTANCE)));
     this.camera.updateProjectionMatrix();
     this.camera.updateMatrixWorld();
-    const pose = THREE.MathUtils.smoothstep(d, 0.2, 0.95);
-    this.active.quaternion.identity().slerp(this.camera.quaternion, pose);
-    this.active.scale.setScalar(1 + 0.12 * pose);
-    this.active.position.addScaledVector(direction, 2.5 * pose);
-    this.flowElement ??= document.querySelector('#flow-surface');
-    if (this.flowElement && !this.flowElement.hidden) {
-      const ready = d > 0.97;
-      if (this.flowReady !== ready) {
-        this.flowReady = ready;
-        this.flowElement.style.setProperty('--card-ready', ready ? '1' : '0');
+    return pose;
+  }
+  cellHeight(row, lane, time) {
+    let h = 0.95 * Math.exp(-((row - this.row.value) ** 2) / 15) * Math.exp(-((lane - this.lane.value) ** 2) * 0.6);
+    if (this.breathing) h += breath(row, lane, time) * this.breathing;
+    if (!this.isReduced)
+      for (let i = 0; i < this.pulses.length; i++) {
+        const p = this.pulses[i];
+        h += selectionWave(Math.hypot(row - p.row, (lane - p.lane) * 2.2), time - p.time);
       }
-      if (!mobile && d > 0.97) {
-        this.active.updateMatrixWorld(true);
-        this.flowCorners ??= [new THREE.Vector3(), new THREE.Vector3()];
-        const [a,b] = this.flowCorners;
-        a.set(-2.36,1.69,0.17).applyMatrix4(this.active.matrixWorld).project(this.camera);
-        b.set(2.36,-1.69,0.17).applyMatrix4(this.active.matrixWorld).project(this.camera);
-        const bounds = [Math.round((a.x+1)*this.width/2), Math.round((1-a.y)*this.height/2), Math.round((b.x-a.x)*this.width/2), Math.round((a.y-b.y)*this.height/2)];
-        const signature = bounds.join(',');
-        if (signature !== this.flowBounds) {
-          this.flowBounds = signature;
-          ['left','top','width','height'].forEach((key,i)=>this.flowElement.style.setProperty('--card-'+key,bounds[i]+'px'));
-        }
+    return h;
+  }
+  draw(time) {
+    const d = this.detail.value;
+    const pose = this.frameCamera(d);
+    this.projScreen.multiplyMatrices(this.camera.projectionMatrix, this.camera.matrixWorldInverse);
+    this.frustum.setFromProjectionMatrix(this.projScreen);
+    while (this.pulses.length && time - this.pulses[0].time > 3) this.pulses.shift();
+    this.coverAtlas.flush(4);
+    const centerLane = Math.round(this.lane.value), centerRow = Math.round(this.row.value);
+    const matrices = this.instanceMatrix.array;
+    const colors = this.body.instanceColor.array;
+    const covers = this.coverUV.array;
+    const infos = this.coverInfo.array;
+    const tile = this.tileOut;
+    const laneCount = this.columns.length;
+    let n = 0;
+    for (let l = -HALF_LANES; l <= HALF_LANES; l++)
+      for (let r = -HALF_ROWS; r <= HALF_ROWS; r++) {
+        const lane = centerLane + l, row = centerRow + r;
+        if (lane === this.selection.lane && row === this.selection.row) continue;
+        let extra = 0;
+        for (let i = 0; i < this.outgoing.length; i++) if (this.outgoing[i].lane === lane && this.outgoing[i].row === row) extra = this.outgoing[i].lift.value;
+        const x = (lane - this.lane.value) * SPACING, z = (row - this.row.value) * DEPTH;
+        const y = this.cellHeight(row, lane, time) + extra;
+        tmpSphere.center.set(x, y, z);
+        if (!this.frustum.intersectsSphere(tmpSphere)) continue;
+        const o = n * 16;
+        matrices[o] = 1; matrices[o + 1] = 0; matrices[o + 2] = 0; matrices[o + 3] = 0;
+        matrices[o + 4] = 0; matrices[o + 5] = 1; matrices[o + 6] = 0; matrices[o + 7] = 0;
+        matrices[o + 8] = 0; matrices[o + 9] = 0; matrices[o + 10] = 1; matrices[o + 11] = 0;
+        matrices[o + 12] = x; matrices[o + 13] = y; matrices[o + 14] = z; matrices[o + 15] = 1;
+        const tintIndex = wrap(lane, laneCount) % 8;
+        tmpColor.copy(this.tintUniform.value[tintIndex]);
+        if (extra > 0) tmpColor.lerp(HIGHLIGHT, Math.min(1, extra / PREVIEW_LIFT));
+        colors[n * 3] = tmpColor.r; colors[n * 3 + 1] = tmpColor.g; colors[n * 3 + 2] = tmpColor.b;
+        const story = this.storyAt(lane, row);
+        const near = Math.abs(l) <= 2 && r >= -4 && r <= 3;
+        this.coverAtlas.get(this.coverKey(story), this.coverSource(story, lane), near, tile);
+        covers[n * 4] = tile[0]; covers[n * 4 + 1] = tile[1]; covers[n * 4 + 2] = tile[2]; covers[n * 4 + 3] = tile[3];
+        const dl = lane - this.lane.value, dr = row - this.row.value;
+        infos[n * 3] = tile[4]; infos[n * 3 + 1] = tintIndex; infos[n * 3 + 2] = Math.exp(-dl * dl * 0.3 - dr * dr * 0.01);
+        this.cells[n * 2] = lane;
+        this.cells[n * 2 + 1] = row;
+        n++;
       }
+    this.body.count = this.faces.count = n;
+    for (const [attribute, size] of [[this.instanceMatrix, 16], [this.body.instanceColor, 3], [this.coverUV, 4], [this.coverInfo, 3]]) {
+      attribute.clearUpdateRanges();
+      attribute.addUpdateRange(0, Math.max(1, n) * size);
+      attribute.needsUpdate = true;
     }
+    this.visibleInstances = n;
+    // The extracted card: lifts in place, then turns to face the camera.
+    this.refreshActiveCover();
+    const sel = this.selection;
+    this.active.position.set(
+      (sel.lane - this.lane.value) * SPACING,
+      this.lift.value + this.cellHeight(sel.row, sel.lane, time) * (1 - d),
+      (sel.row - this.row.value) * DEPTH,
+    );
+    const turn = smooth((d - 0.15) / 0.8);
+    this.active.quaternion.identity().slerp(this.camera.quaternion, turn);
+    this.active.scale.setScalar(1 + 0.12 * turn);
+    this.active.position.addScaledVector(this.cameraDirection, 2.5 * turn);
+    tmpColor.copy(this.tintUniform.value[wrap(sel.lane, laneCount) % 8]).lerp(HIGHLIGHT, Math.min(1, Math.max(0, this.lift.value) / PREVIEW_LIFT));
+    this.activeBodyMaterial.color.copy(tmpColor);
+    this.activeFrame.material.opacity = 0.35 + 0.45 * Math.min(1, this.lift.value / PREVIEW_LIFT);
+    this.updateFlowBounds(d);
+    if (d > 0.02) {
+      // Mip level for the chapter face from its projected width (no shader derivatives).
+      this.active.updateMatrixWorld(true);
+      const [a, b] = this.corner;
+      a.set(-FACE_W / 2, 0, FACE_Z).applyMatrix4(this.active.matrixWorld).project(this.camera);
+      b.set(FACE_W / 2, 0, FACE_Z).applyMatrix4(this.active.matrixWorld).project(this.camera);
+      const px = ((Math.abs(b.x - a.x) * this.width) / 2) * this.pixelRatio;
+      this.reveal.faceLod.value = px > 1 ? Math.max(0, Math.log2(FACE_PX.w / px)) : 0;
+    }
+    this.scene.fog.near = DISTANCE - 4 - pose * 2;
+    this.scene.fog.far = DISTANCE + 40;
+    this.gpuTimer?.begin();
     this.renderer.render(this.scene, this.camera);
+    this.gpuTimer?.end();
+    this.framesDrawn++;
+  }
+  setFlowReady(ready) {
+    this.flowElement ??= document.querySelector("#flow-surface");
+    if (!this.flowElement || this.flowReady === ready) return;
+    this.flowReady = ready;
+    this.flowElement.classList.toggle("card-ready", ready);
+  }
+  /** Map overlay follows the card once it rests (one layout write, not one per frame). */
+  updateFlowBounds(d) {
+    this.flowElement ??= document.querySelector("#flow-surface");
+    const el = this.flowElement;
+    if (!el) return;
+    const settled = this.detailTarget === 1 && d > 0.985 && this.width >= 700;
+    if (!settled) {
+      if (this.detailTarget === 0) this.setFlowReady(false);
+      return;
+    }
+    this.active.updateMatrixWorld(true);
+    const [a, b] = this.corner;
+    a.set(-FACE_W / 2, FACE_H / 2, FACE_Z).applyMatrix4(this.active.matrixWorld).project(this.camera);
+    b.set(FACE_W / 2, -FACE_H / 2, FACE_Z).applyMatrix4(this.active.matrixWorld).project(this.camera);
+    const rect = this.canvas.getBoundingClientRect();
+    const left = Math.round(rect.left + ((a.x + 1) * this.width) / 2);
+    const top = Math.round(rect.top + ((1 - a.y) * this.height) / 2);
+    const width = Math.round(((b.x - a.x) * this.width) / 2);
+    const height = Math.round(((a.y - b.y) * this.height) / 2);
+    const signature = `${left},${top},${width},${height}`;
+    if (signature !== this.flowBounds) {
+      this.flowBounds = signature;
+      // On the reader root so the map and the card caption both follow the card.
+      const host = el.parentElement || el;
+      host.style.setProperty("--card-left", left + "px");
+      host.style.setProperty("--card-top", top + "px");
+      host.style.setProperty("--card-width", width + "px");
+      host.style.setProperty("--card-height", height + "px");
+      host.style.setProperty("--card-band", (INSET_Y + BAND_H).toFixed(4));
+    }
+    this.setFlowReady(d > 0.995 || this.reduced());
+  }
+
+  // ------------------------------------------------------------ instrumentation
+  /** GPU time per frame via EXT_disjoint_timer_query_webgl2, when the browser exposes it. */
+  enableGpuTiming() {
+    if (this.gpuTimer) return !!this.gpuTimer.ext;
+    const gl = this.renderer.getContext();
+    const ext = gl.getExtension("EXT_disjoint_timer_query_webgl2");
+    const samples = [];
+    const pending = [];
+    let active = null;
+    this.gpuTimer = {
+      ext,
+      samples,
+      begin() {
+        if (!ext || active) return;
+        active = gl.createQuery();
+        gl.beginQuery(ext.TIME_ELAPSED_EXT, active);
+      },
+      end() {
+        if (!ext || !active) return;
+        gl.endQuery(ext.TIME_ELAPSED_EXT);
+        pending.push({ query: active, at: performance.now() });
+        active = null;
+        for (let i = pending.length - 1; i >= 0; i--) {
+          const { query, at } = pending[i];
+          if (!gl.getQueryParameter(query, gl.QUERY_RESULT_AVAILABLE)) continue;
+          if (!gl.getParameter(ext.GPU_DISJOINT_EXT)) samples.push({ at, ms: gl.getQueryParameter(query, gl.QUERY_RESULT) / 1e6 });
+          gl.deleteQuery(query);
+          pending.splice(i, 1);
+        }
+        if (samples.length > 4000) samples.splice(0, samples.length - 4000);
+      },
+    };
+    return !!ext;
   }
   diagnostics() {
+    const info = this.renderer.info;
     return {
       lane: this.selection.lane,
       row: this.selection.row,
       story: this.current.id,
       detail: this.detail.value,
       selectedY: this.active.position.y,
-      coverReveal: this.coverReveal.value,
+      coverReveal: this.reveal.revealProgress.value,
+      artTransition: this.art.progress,
       imageCovers: this.coverAtlas.loaded,
-      artTransition: this.artTransition.value,
+      atlas: this.coverAtlas.stats(),
       closeup: this.detail.value > 0.95,
       outgoing: this.outgoing.length,
-      breathing: !this.reduced(),
+      breathing: this.breathing > 0,
       instances: LANES * ROWS,
-      drawCalls: this.renderer.info.render.calls,
-      triangles: this.renderer.info.render.triangles,
-      textureCount: this.renderer.info.memory.textures,
+      visibleInstances: this.visibleInstances,
+      drawCalls: info.render.calls,
+      triangles: info.render.triangles,
+      textureCount: info.memory.textures,
+      geometries: info.memory.geometries,
       framePending: !!this.frame,
+      framesDrawn: this.framesDrawn,
+      pixelRatio: this.pixelRatio,
+      maxPixelRatio: this.maxPixelRatio,
+      antialias: this.renderer.getContextAttributes()?.antialias,
+      cpuMs: this.cpuMs,
+      gpu: this.gpu,
+      gpuTiming: this.gpuTimer ? !!this.gpuTimer.ext : undefined,
     };
+  }
+}
+
+function makeCanvas() {
+  const canvas = document.createElement("canvas");
+  canvas.width = FACE_PX.w;
+  canvas.height = FACE_PX.h;
+  return canvas;
+}
+function readAdapter(renderer) {
+  try {
+    const gl = renderer.getContext();
+    const debug = gl.getExtension("WEBGL_debug_renderer_info");
+    return {
+      vendor: debug ? gl.getParameter(debug.UNMASKED_VENDOR_WEBGL) : gl.getParameter(gl.VENDOR),
+      renderer: debug ? gl.getParameter(debug.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER),
+    };
+  } catch {
+    return null;
   }
 }

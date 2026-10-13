@@ -2,15 +2,15 @@
   "category": "stories",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 737,
-  "docs": 2289,
-  "nodes": 3568,
-  "refs": 1279,
-  "crossLinks": 242,
+  "stories": 641,
+  "docs": 2216,
+  "nodes": 3510,
+  "refs": 1294,
+  "crossLinks": 261,
   "review": {
-    "reviewed": 102,
+    "reviewed": 203,
     "partial": 2,
-    "unreviewed": 633
+    "unreviewed": 436
   },
   "failures": [],
   "items": [
@@ -18,16 +18,25 @@
       "id": "the-shroud",
       "title": "虚境",
       "kind": "family",
-      "docs": 112,
+      "docs": 111,
       "refs": 846,
       "crossLinks": 4,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-country-1000",
+      "title": "浪迹星涯",
+      "kind": "family",
+      "docs": 30,
+      "refs": 10,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
       "id": "great-khan",
       "title": "大可汗",
       "kind": "family",
-      "docs": 36,
+      "docs": 27,
       "refs": 3,
       "crossLinks": 0,
       "review": "reviewed"
@@ -38,7 +47,43 @@
       "kind": "family",
       "docs": 25,
       "refs": 4,
-      "crossLinks": 5,
+      "crossLinks": 7,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-country-200",
+      "title": "激进信徒",
+      "kind": "family",
+      "docs": 22,
+      "refs": 8,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-country-50",
+      "title": "宜居星球调查",
+      "kind": "family",
+      "docs": 20,
+      "refs": 8,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-game-start-1",
+      "title": "亚光速探测器",
+      "kind": "family",
+      "docs": 19,
+      "refs": 7,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-country-1100",
+      "title": "大灭绝",
+      "kind": "family",
+      "docs": 18,
+      "refs": 5,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -60,6 +105,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-country-250",
+      "title": "追寻风信子号",
+      "kind": "family",
+      "docs": 11,
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-nomads-1590",
       "title": "过去的碎片",
       "kind": "family",
@@ -69,12 +123,12 @@
       "review": "reviewed"
     },
     {
-      "id": "event-utopia-2600",
-      "title": "心胜于物",
+      "id": "event-cstorms-1310",
+      "title": "困于风暴的舰船",
       "kind": "family",
-      "docs": 9,
+      "docs": 8,
       "refs": 0,
-      "crossLinks": 2,
+      "crossLinks": 0,
       "review": "reviewed"
     },
     {
@@ -96,12 +150,111 @@
       "review": "reviewed"
     },
     {
+      "id": "event-utopia-80",
+      "title": "科学枢纽",
+      "kind": "family",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-utopia-2000",
+      "title": "环形世界",
+      "kind": "family",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-utopia-2600",
+      "title": "心胜于物",
+      "kind": "family",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-utopia-4000",
+      "title": "戴森球",
+      "kind": "family",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-utopia-4100",
+      "title": "哨兵阵列",
+      "kind": "family",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-mega-9006",
+      "title": "星际集会",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-mega-9010",
+      "title": "物质解压器",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
       "id": "event-bio-800",
       "title": "准备入侵",
       "kind": "family",
       "docs": 5,
       "refs": 0,
       "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-feda-1",
+      "title": "巨型船坞",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-mega-9000",
+      "title": "巨型艺术设施",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-mega-9003",
+      "title": "战略指挥中心",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-over-1",
+      "title": "量子弹弓",
+      "kind": "family",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
       "review": "reviewed"
     },
     {
@@ -132,15 +285,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-fallen-empires-awakening-4",
-      "title": "星河守护者",
-      "kind": "family",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "partial"
-    },
-    {
       "id": "event-bio-3100",
       "title": "强者生存",
       "kind": "family",
@@ -157,6 +301,15 @@
       "refs": 1,
       "crossLinks": 0,
       "review": "reviewed"
+    },
+    {
+      "id": "event-fallen-empires-awakening-4",
+      "title": "星河守护者",
+      "kind": "family",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "partial"
     },
     {
       "id": "event-nomads-3050",
@@ -285,6 +438,15 @@
       "review": "reviewed"
     },
     {
+      "id": "event-cstorms-1770",
+      "title": "不飞之羽",
+      "kind": "family",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "event-nomads-3036",
       "title": "搭载代表团",
       "kind": "family",
@@ -333,7 +495,7 @@
       "id": "event-utopia-2500",
       "title": "血肉苦弱",
       "kind": "event",
-      "docs": 32,
+      "docs": 31,
       "refs": 6,
       "crossLinks": 1,
       "review": "partial"
@@ -360,7 +522,7 @@
       "id": "event-syndaw-400",
       "title": "计算超频",
       "kind": "event",
-      "docs": 27,
+      "docs": 26,
       "refs": 5,
       "crossLinks": 0,
       "review": "unreviewed"
@@ -387,19 +549,10 @@
       "id": "event-utopia-2550",
       "title": "合成嬗变",
       "kind": "event",
-      "docs": 24,
+      "docs": 23,
       "refs": 9,
       "crossLinks": 2,
       "review": "reviewed"
-    },
-    {
-      "id": "event-game-start-1",
-      "title": "亚光速探测器",
-      "kind": "event",
-      "docs": 23,
-      "refs": 3,
-      "crossLinks": 90,
-      "review": "unreviewed"
     },
     {
       "id": "event-utopia-50",
@@ -408,7 +561,7 @@
       "docs": 23,
       "refs": 4,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1300",
@@ -425,15 +578,6 @@
       "kind": "event",
       "docs": 18,
       "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-53",
-      "title": "外星生物收集",
-      "kind": "event",
-      "docs": 17,
-      "refs": 7,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -456,15 +600,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-country-1102",
-      "title": "大灭绝：崩坏的星球",
-      "kind": "event",
-      "docs": 16,
-      "refs": 4,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-paragon-549",
       "title": "一位伟大领袖之死",
       "kind": "event",
@@ -480,7 +615,7 @@
       "docs": 15,
       "refs": 7,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-10000",
@@ -498,6 +633,15 @@
       "docs": 13,
       "refs": 0,
       "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-game-start-1-x",
+      "title": "[Root.Capital.GetName]上的升格仪式",
+      "kind": "event",
+      "docs": 13,
+      "refs": 1,
+      "crossLinks": 107,
       "review": "unreviewed"
     },
     {
@@ -528,22 +672,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-shroud-4020",
-      "title": "虚境住民",
-      "kind": "event",
-      "docs": 12,
-      "refs": 8,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-arkship-1240",
       "title": "未知资源使用",
       "kind": "event",
       "docs": 11,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-5",
@@ -552,7 +687,7 @@
       "docs": 11,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1200",
@@ -561,7 +696,7 @@
       "docs": 11,
       "refs": 2,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-3010",
@@ -571,15 +706,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-4",
-      "title": "[From.GetName]的末日",
-      "kind": "event",
-      "docs": 11,
-      "refs": 0,
-      "crossLinks": 4,
-      "review": "reviewed"
     },
     {
       "id": "event-operation-6100",
@@ -600,31 +726,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-shroud-4000",
-      "title": "虚境住民",
+      "id": "event-shroud-4650",
+      "title": "生命之织缕",
       "kind": "event",
       "docs": 11,
       "refs": 8,
       "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4010",
-      "title": "虚境住民",
-      "kind": "event",
-      "docs": 11,
-      "refs": 8,
-      "crossLinks": 2,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4030",
-      "title": "虚境住民",
-      "kind": "event",
-      "docs": 11,
-      "refs": 8,
-      "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-4700",
@@ -642,16 +750,7 @@
       "docs": 11,
       "refs": 6,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-action-61",
-      "title": "[LastKilledCountryName]的末日",
-      "kind": "event",
-      "docs": 10,
-      "refs": 0,
-      "crossLinks": 2,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1030",
@@ -660,7 +759,7 @@
       "docs": 10,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cara-4101",
@@ -678,7 +777,16 @@
       "docs": 10,
       "refs": 7,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
+    },
+    {
+      "id": "event-marauder-4",
+      "title": "[From.GetName]的末日",
+      "kind": "event",
+      "docs": 10,
+      "refs": 0,
+      "crossLinks": 4,
+      "review": "reviewed"
     },
     {
       "id": "event-paragon-3901",
@@ -690,13 +798,31 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-country-1030",
-      "title": "浪迹星涯：遇上麻烦了",
+      "id": "event-shroud-4500",
+      "title": "世界之喰煞",
       "kind": "event",
-      "docs": 9,
-      "refs": 4,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "docs": 10,
+      "refs": 8,
+      "crossLinks": 2,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-shroud-4550",
+      "title": "渴求之器具",
+      "kind": "event",
+      "docs": 10,
+      "refs": 8,
+      "crossLinks": 2,
+      "review": "reviewed"
+    },
+    {
+      "id": "event-shroud-4600",
+      "title": "魂灵之月窠",
+      "kind": "event",
+      "docs": 10,
+      "refs": 8,
+      "crossLinks": 2,
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-4135",
@@ -723,7 +849,7 @@
       "docs": 8,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1215",
@@ -732,16 +858,7 @@
       "docs": 8,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-2",
-      "title": "发现亚光速探测器",
-      "kind": "event",
-      "docs": 8,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-envoy-events-7",
@@ -930,24 +1047,15 @@
       "docs": 7,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
-      "id": "event-apoc-100",
-      "title": "巨像计划",
+      "id": "event-action-61",
+      "title": "[LastKilledCountryName]的末日",
       "kind": "event",
       "docs": 6,
       "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-1002",
-      "title": "浪迹星涯：匆匆一瞥",
-      "kind": "event",
-      "docs": 6,
-      "refs": 1,
-      "crossLinks": 0,
+      "crossLinks": 2,
       "review": "unreviewed"
     },
     {
@@ -957,7 +1065,7 @@
       "docs": 6,
       "refs": 1,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-game-start-10",
@@ -975,24 +1083,6 @@
       "docs": 6,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-85",
-      "title": "[marauder_mercenary_country.GetSpeciesName]雇佣兵",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-nomads-4750",
-      "title": "吞食[Target.GetName]",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
@@ -1047,7 +1137,7 @@
       "docs": 6,
       "refs": 3,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-action-1",
@@ -1068,40 +1158,22 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-apoc-100",
+      "title": "巨像计划",
+      "kind": "event",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-arkship-65",
       "title": "启动引擎",
       "kind": "event",
       "docs": 5,
       "refs": 84,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-1050",
-      "title": "浪迹星涯：真实之窗开启",
-      "kind": "event",
-      "docs": 5,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-1060",
-      "title": "浪迹星涯：海盗已消灭",
-      "kind": "event",
-      "docs": 5,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-254",
-      "title": "找到风信子号",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-grand-archive-6005",
@@ -1113,12 +1185,12 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-marauder-505",
-      "title": "大可汗遭遇战败",
+      "id": "event-nomads-4750",
+      "title": "吞食[Target.GetName]",
       "kind": "event",
       "docs": 5,
       "refs": 0,
-      "crossLinks": 0,
+      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
@@ -1212,15 +1284,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-planet-destruction-600",
-      "title": "[outraged_FE.GetName]",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-strange-worlds-1",
       "title": "蹀血星球",
       "kind": "event",
@@ -1239,22 +1302,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-toxoids-50",
-      "title": "[outraged_FE.GetName]",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-arkship-105",
       "title": "面临压力",
       "kind": "event",
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1100",
@@ -1263,7 +1317,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1170",
@@ -1272,7 +1326,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1185",
@@ -1281,7 +1335,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-125",
@@ -1290,7 +1344,7 @@
       "docs": 4,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-160",
@@ -1343,60 +1397,6 @@
       "kind": "event",
       "docs": 4,
       "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-1020",
-      "title": "浪迹星涯：毁坏的无人机",
-      "kind": "event",
-      "docs": 4,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-1021",
-      "title": "浪迹星涯：无人机被击毁",
-      "kind": "event",
-      "docs": 4,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-1043",
-      "title": "首席科学官",
-      "kind": "event",
-      "docs": 4,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-216",
-      "title": "异教徒舰队已摧毁",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-6",
-      "title": "探测到打捞舰",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cstorms-1317",
-      "title": "发现被困舰船",
-      "kind": "event",
-      "docs": 4,
-      "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -1563,6 +1563,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-planet-destruction-600",
+      "title": "[outraged_FE.GetName]",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-shroud-3000",
       "title": "短暂印象",
       "kind": "event",
@@ -1662,6 +1671,15 @@
       "review": "unreviewed"
     },
     {
+      "id": "event-toxoids-50",
+      "title": "[outraged_FE.GetName]",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
       "id": "event-action-941",
       "title": "发现泽珞矿藏",
       "kind": "event",
@@ -1686,7 +1704,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-95",
@@ -1695,7 +1713,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-bio-3300",
@@ -1725,40 +1743,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-country-201",
-      "title": "异教徒飞船已瘫痪！",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-212",
-      "title": "旗舰已瘫痪",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-217",
-      "title": "异教徒飞船已瘫痪！",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-cstorms-1760",
       "title": "宇宙阻塞",
       "kind": "event",
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-8500",
@@ -1767,7 +1758,7 @@
       "docs": 3,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-emperor-300",
@@ -1835,6 +1826,24 @@
     {
       "id": "event-grand-archive-6020",
       "title": "海盗伏击",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-marauder-505",
+      "title": "大可汗遭遇战败",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-marauder-85",
+      "title": "[encountered_marauder.GetName]",
       "kind": "event",
       "docs": 3,
       "refs": 0,
@@ -2040,15 +2049,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-syndaw-1200",
-      "title": "前造主被征服",
-      "kind": "event",
-      "docs": 3,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-action-11",
       "title": "通讯已建立",
       "kind": "event",
@@ -2100,7 +2100,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1205",
@@ -2109,7 +2109,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-140",
@@ -2256,107 +2256,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-country-11",
-      "title": "异常现象已消除",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-14",
-      "title": "探测器已摧毁",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-16",
-      "title": "打捞舰队被摧毁",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-18",
-      "title": "亚空间异常现象已消除",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-20",
-      "title": "改造探测器已被摧毁",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-215",
-      "title": "船坞已摧毁",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-220",
-      "title": "船坞已摧毁",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-250",
-      "title": "追寻风信子号",
-      "kind": "event",
-      "docs": 2,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-50",
-      "title": "宜居星球调查",
-      "kind": "event",
-      "docs": 2,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-9",
-      "title": "探测器回收完毕",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-crime-1000",
       "title": "在[Root.GetName]上的分部被关闭",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cstorms-1310",
-      "title": "被困舰船再现",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2580,24 +2481,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-marauder-511",
-      "title": "大可汗之死",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-marauder-711",
-      "title": "大可汗之死",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-namarian-99",
       "title": "紧急通讯",
       "kind": "event",
@@ -2614,15 +2497,6 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
-    },
-    {
-      "id": "event-observer-77",
-      "title": "天堂之战的终章",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
     },
     {
       "id": "event-pirate-24",
@@ -2694,7 +2568,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-5051",
@@ -2712,7 +2586,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-525",
@@ -2721,7 +2595,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-535",
@@ -2730,7 +2604,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-565",
@@ -2739,7 +2613,7 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-725",
@@ -2748,11 +2622,11 @@
       "docs": 2,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
-      "id": "event-syndaw-1205",
-      "title": "机械叛乱被粉碎",
+      "id": "event-syndaw-1200",
+      "title": "前造主被征服",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -2762,33 +2636,6 @@
     {
       "id": "event-uplift-7520",
       "title": "烦躁不安",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2004",
-      "title": "环形世界完成",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4104",
-      "title": "哨兵阵列完成",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-84",
-      "title": "科学枢纽完成",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -3873,7 +3720,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1160",
@@ -3882,7 +3729,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-1165",
@@ -3891,7 +3738,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-141",
@@ -3945,7 +3792,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-860",
@@ -3954,7 +3801,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-870",
@@ -3963,7 +3810,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-880",
@@ -3972,7 +3819,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-890",
@@ -3981,7 +3828,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-900",
@@ -3990,7 +3837,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-arkship-910",
@@ -3999,7 +3846,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-bio-185",
@@ -4182,103 +4029,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-country-204",
-      "title": "遭遇异教徒掠夺者",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-205",
-      "title": "遭遇异教徒掠夺者",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-206",
-      "title": "遭遇异教徒掠夺者",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-211",
-      "title": "异教徒旗舰",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-222",
-      "title": "异教徒旗舰已摧毁",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-251",
-      "title": "星系调查完毕",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-252",
-      "title": "星系调查完毕",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-253",
-      "title": "星系调查完毕",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-259",
-      "title": "星系调查完毕",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-country-52",
-      "title": "调查完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-country-999",
       "title": "发现彗星",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-crime-1",
@@ -4308,31 +4065,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-cstorms-1313",
-      "title": "被困舰船回归",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cstorms-1316",
-      "title": "风暴中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-cstorms-1417",
       "title": "错不二犯",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1700",
@@ -4341,7 +4080,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1710",
@@ -4350,7 +4089,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1720",
@@ -4359,7 +4098,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1730",
@@ -4368,7 +4107,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1740",
@@ -4377,7 +4116,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1750",
@@ -4386,25 +4125,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cstorms-1770",
-      "title": "不飞之羽",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-cstorms-1775",
-      "title": "再次飞翔",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-1830",
@@ -4413,7 +4134,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-500",
@@ -4422,7 +4143,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-8000",
@@ -4431,7 +4152,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-cstorms-tutorial-1",
@@ -4884,51 +4605,6 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-feda-1",
-      "title": "巨型船坞框架",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-feda-2",
-      "title": "巨型船坞核心",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-feda-3",
-      "title": "巨型船坞已上线",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-feda-5",
-      "title": "被毁的巨型船坞",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-feda-6",
-      "title": "巨型船坞已修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-galactic-features-2",
       "title": "扎娜姆守护者",
       "kind": "event",
@@ -5199,8 +4875,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-mega-9000",
-      "title": "艺术设施：初始",
+      "id": "event-marauder-511",
+      "title": "大可汗之死",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -5208,188 +4884,8 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-mega-9001",
-      "title": "艺术设施：成品",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9002",
-      "title": "巨型艺术设施",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9003",
-      "title": "战略指挥中心：外结构",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9004",
-      "title": "战略指挥中心：通讯",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9005",
-      "title": "战略指挥中心：全面运行",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9006",
-      "title": "星际集会：基座",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9007",
-      "title": "星际集会：领事环",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9008",
-      "title": "星际集会：会议广场模块",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9009",
-      "title": "星际集会",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9010",
-      "title": "物质解压器：锚定",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9011",
-      "title": "物质解压器：透镜",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9012",
-      "title": "物质解压器：钻孔",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9013",
-      "title": "物质解压器：萃取",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9100",
-      "title": "被毁的物质解压器",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9101",
-      "title": "物质解压器已修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9110",
-      "title": "被毁的战略指挥中心",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9111",
-      "title": "战略指挥中心已修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9120",
-      "title": "被毁的巨型艺术设施",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9121",
-      "title": "被毁的巨型艺术设施已修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9130",
-      "title": "被毁的星际集会",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-mega-9131",
-      "title": "星际集会已修复",
+      "id": "event-marauder-711",
+      "title": "大可汗之死",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -5577,51 +5073,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-observer-100",
-      "title": "功率骤增",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-observer-50",
-      "title": "机械星球被摧毁",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-observer-70",
-      "title": "视界信号",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-observer-71",
-      "title": "时之螶",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-observer-72",
-      "title": "时之螶",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-operation-5020",
       "title": "误作美食",
       "kind": "event",
@@ -5640,58 +5091,13 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-over-1",
-      "title": "量子弹弓单阵列",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-over-10",
-      "title": "量子弹弓上线",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-over-100",
       "title": "已结成中继器网道",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-over-20",
-      "title": "被毁的量子弹弓",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-over-25",
-      "title": "量子弹弓已修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-over-5",
-      "title": "量子弹弓双排扭力透镜",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-paragon-100",
@@ -5955,85 +5361,13 @@
       "review": "reviewed"
     },
     {
-      "id": "event-shroud-4050",
-      "title": "虚境中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4060",
-      "title": "虚境中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4070",
-      "title": "虚境中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4080",
-      "title": "虚境中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4090",
-      "title": "虚境中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4100",
-      "title": "虚境中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4110",
-      "title": "虚境中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-shroud-4120",
-      "title": "虚境中的低语",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-shroud-500",
       "title": "非常规突破",
       "kind": "event",
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-510",
@@ -6042,7 +5376,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-5115",
@@ -6060,7 +5394,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-530",
@@ -6069,7 +5403,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-540",
@@ -6078,7 +5412,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-545",
@@ -6087,7 +5421,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-550",
@@ -6096,7 +5430,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-555",
@@ -6105,7 +5439,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-560",
@@ -6114,7 +5448,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-570",
@@ -6123,7 +5457,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-575",
@@ -6132,7 +5466,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-700",
@@ -6141,7 +5475,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-705",
@@ -6150,7 +5484,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-710",
@@ -6159,7 +5493,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-715",
@@ -6168,7 +5502,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-720",
@@ -6177,7 +5511,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-730",
@@ -6186,7 +5520,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-735",
@@ -6195,7 +5529,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-740",
@@ -6204,7 +5538,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-745",
@@ -6213,7 +5547,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-750",
@@ -6222,7 +5556,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-755",
@@ -6231,7 +5565,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-760",
@@ -6240,7 +5574,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-765",
@@ -6249,7 +5583,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-770",
@@ -6258,7 +5592,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-shroud-775",
@@ -6267,7 +5601,7 @@
       "docs": 1,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "event-story-220",
@@ -6335,6 +5669,15 @@
     {
       "id": "event-strange-worlds-2020",
       "title": "致命变异",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-syndaw-1205",
+      "title": "机械叛乱被粉碎",
       "kind": "event",
       "docs": 1,
       "refs": 0,
@@ -6434,213 +5777,6 @@
     {
       "id": "event-uplift-7510",
       "title": "活体实验",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2000",
-      "title": "环形世界建设",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2001",
-      "title": "环形世界项目",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2003",
-      "title": "环形世界框架完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2010",
-      "title": "废弃的戴森球",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2011",
-      "title": "戴森球被修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2012",
-      "title": "废弃的科学枢纽",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2013",
-      "title": "科学枢纽被修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2014",
-      "title": "废弃的哨兵阵列",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2015",
-      "title": "哨兵阵列已修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2016",
-      "title": "废弃的环形世界",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 1,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-2017",
-      "title": "环形世界区段被修复",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4000",
-      "title": "戴森球建设",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4001",
-      "title": "外星巨型结构",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4003",
-      "title": "戴森球框架",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4004",
-      "title": "戴森球嵌板已安装",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4005",
-      "title": "[From.From.GetName]戴森球完成",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4100",
-      "title": "哨兵阵列建造",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4101",
-      "title": "外星巨型结构",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-4103",
-      "title": "哨兵阵列中心已组装",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-80",
-      "title": "科学枢纽建设",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-81",
-      "title": "外星巨型结构",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-83",
-      "title": "科学枢纽中心",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-utopia-85",
-      "title": "科学枢纽研发辅翼",
       "kind": "event",
       "docs": 1,
       "refs": 0,

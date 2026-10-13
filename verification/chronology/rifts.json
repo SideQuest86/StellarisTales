@@ -2,23 +2,42 @@
   "category": "rifts",
   "model": 4,
   "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
-  "stories": 55,
-  "docs": 458,
-  "nodes": 631,
+  "stories": 47,
+  "docs": 428,
+  "nodes": 601,
   "refs": 173,
-  "crossLinks": 3,
+  "crossLinks": 2,
   "review": {
-    "reviewed": 25,
-    "unreviewed": 30
+    "reviewed": 34,
+    "partial": 1,
+    "unreviewed": 12
   },
   "failures": [],
   "items": [
+    {
+      "id": "rift-crystal",
+      "title": "晶体裂隙",
+      "kind": "family",
+      "docs": 10,
+      "refs": 4,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
     {
       "id": "rift-tower",
       "title": "巨塔",
       "kind": "family",
       "docs": 10,
       "refs": 5,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
+      "id": "astral-rift-in-space",
+      "title": "空间裂隙",
+      "kind": "family",
+      "docs": 9,
+      "refs": 1,
       "crossLinks": 0,
       "review": "reviewed"
     },
@@ -30,6 +49,15 @@
       "refs": 0,
       "crossLinks": 0,
       "review": "reviewed"
+    },
+    {
+      "id": "astral-crystal-sphere",
+      "title": "水晶球体",
+      "kind": "family",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "partial"
     },
     {
       "id": "rift-siege-on-paradise",
@@ -47,7 +75,7 @@
       "docs": 17,
       "refs": 6,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-garden",
@@ -65,7 +93,7 @@
       "docs": 17,
       "refs": 6,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-entangled-dark-matter",
@@ -83,7 +111,7 @@
       "docs": 16,
       "refs": 0,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-desert-ruins",
@@ -104,22 +132,22 @@
       "review": "reviewed"
     },
     {
+      "id": "rift-tropical-habitat",
+      "title": "热带栖息地",
+      "kind": "rift",
+      "docs": 14,
+      "refs": 5,
+      "crossLinks": 0,
+      "review": "reviewed"
+    },
+    {
       "id": "rift-psionic-stranger",
       "title": "灵能陌生人",
       "kind": "rift",
       "docs": 13,
       "refs": 5,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "rift-tropical-habitat",
-      "title": "热带栖息地",
-      "kind": "rift",
-      "docs": 13,
-      "refs": 4,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-volcano",
@@ -146,7 +174,7 @@
       "docs": 12,
       "refs": 5,
       "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-rockworms",
@@ -173,16 +201,7 @@
       "docs": 10,
       "refs": 4,
       "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "rift-crystal",
-      "title": "晶体裂隙",
-      "kind": "rift",
-      "docs": 10,
-      "refs": 4,
-      "crossLinks": 0,
-      "review": "unreviewed"
+      "review": "reviewed"
     },
     {
       "id": "rift-fluid",
@@ -275,24 +294,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-astral-planes-118",
-      "title": "抵近裂隙",
-      "kind": "event",
-      "docs": 7,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-7",
-      "title": "抵近裂隙",
-      "kind": "event",
-      "docs": 7,
-      "refs": 1,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "rift-ancient-battlegrounds",
       "title": "次元冲突",
       "kind": "rift",
@@ -329,33 +330,6 @@
       "review": "reviewed"
     },
     {
-      "id": "event-astral-planes-25",
-      "title": "水晶球体",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-5055",
-      "title": "空间裂隙",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-5060",
-      "title": "空间裂隙",
-      "kind": "event",
-      "docs": 6,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-astral-planes-6029",
       "title": "星界奇迹",
       "kind": "event",
@@ -365,29 +339,11 @@
       "review": "unreviewed"
     },
     {
-      "id": "event-astral-planes-10",
-      "title": "水晶球体",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
       "id": "event-astral-planes-3110",
       "title": "无形异使",
       "kind": "event",
       "docs": 5,
       "refs": 5,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-35",
-      "title": "水晶球体",
-      "kind": "event",
-      "docs": 5,
-      "refs": 0,
       "crossLinks": 0,
       "review": "unreviewed"
     },
@@ -424,21 +380,12 @@
       "kind": "event",
       "docs": 2,
       "refs": 0,
-      "crossLinks": 2,
+      "crossLinks": 1,
       "review": "unreviewed"
     },
     {
       "id": "event-astral-planes-6095",
       "title": "最后的逃亡者",
-      "kind": "event",
-      "docs": 2,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-rift-3140",
-      "title": "创伤性提取",
       "kind": "event",
       "docs": 2,
       "refs": 0,
@@ -457,24 +404,6 @@
     {
       "id": "event-astral-planes-110",
       "title": "星界行动",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-119",
-      "title": "空间裂隙",
-      "kind": "event",
-      "docs": 1,
-      "refs": 0,
-      "crossLinks": 0,
-      "review": "unreviewed"
-    },
-    {
-      "id": "event-astral-planes-2005",
-      "title": "裂隙探球科技已开发",
       "kind": "event",
       "docs": 1,
       "refs": 0,

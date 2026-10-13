@@ -1,0 +1,38 @@
+{
+ "id": "anomaly-storms-gasgiant-category",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "anomaly.330",
+    "anomaly.6855"
+   ],
+   "label": {
+    "zh": "按科学船数量",
+    "en": "By science-ship count"
+   },
+   "note": {
+    "zh": "330权重1；6855基础权重0，拥有多于1艘科学船时+1（00_anomaly_categories.txt:279-326）。",
+    "en": "330 has weight 1; 6855 has base 0, +1 if the owner has more than one science ship (00_anomaly_categories.txt:279-326)."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c3a-exploration (resumed reviewer)",
+  "scope": {
+   "zh": "异常定义（生成条件、等级、次数限制）与全部结果事件已对照源文件核对。",
+   "en": "Anomaly definition (spawn conditions, level, once-limits) and every outcome event checked against the source."
+  },
+  "sources": [
+   "common/anomalies/00_anomaly_categories.txt:279",
+   "events/anomaly_events_1.txt:4114 (anomaly.330)",
+   "events/anomaly_events_4.txt:2972 (anomaly.6855)",
+   "common/special_projects/00_projects_3.txt (RESCUE_STORM)",
+   "events/anomaly_events_4.txt:3022 (anomaly.6860)"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/anomaly-storms-gasgiant-category.md"
+ }
+}

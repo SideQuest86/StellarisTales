@@ -1,0 +1,63 @@
+{
+ "id": "event-colony-180",
+ "family": {
+  "title": {
+   "zh": "小行星来袭",
+   "en": "Asteroid Sighted"
+  },
+  "category": "society",
+  "start": "colony.180",
+  "members": [
+   "colony.180",
+   "colony.182",
+   "colony.183",
+   "event_chains:asteroid_sighted_chain"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "colony.180",
+   "to": "colony.182",
+   "conditional": true,
+   "label": {
+    "zh": "若玩家在其撞击前击毁该小行星舰队",
+    "en": "If the player destroys the asteroid fleet before impact"
+   },
+   "evidence": "on_fleet_destroyed_perp -> colony.181 (hidden; 00_on_actions.txt:1619) checks the incoming_asteroid country flag and relation flag asteroid_enemy and fires carrier_event colony.182 (events/colony_events_1.txt:4363-4400)"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.182",
+    "colony.183"
+   ],
+   "label": {
+    "zh": "被击毁或撞击",
+    "en": "Destroyed or impacts"
+   },
+   "note": {
+    "zh": "小行星舰队 move_to 殖民地到达时触发183；中途被击毁则触发182。",
+    "en": "The asteroid fleet's move_to arrival fires 183; being destroyed first fires 182."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "小行星来袭完整故事：发现、事件链、击毁或撞击。",
+   "en": "Whole Asteroid Sighted story: sighting, event chain, destroyed or impact."
+  },
+  "sources": [
+   "events/colony_events_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "merged": [
+   "event-colony-181"
+  ],
+  "guide": "public/summaries/event-colony-180.md"
+ }
+}

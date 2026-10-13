@@ -1,0 +1,101 @@
+{
+ "id": "event-colony-2015",
+ "family": {
+  "title": {
+   "zh": "怪异因素",
+   "en": "An Odd Factor"
+  },
+  "category": "society",
+  "start": "colony.2015",
+  "members": [
+   "colony.2015",
+   "colony.2016",
+   "colony.2017",
+   "colony.2019"
+  ]
+ },
+ "bridges": [
+  {
+   "from": "colony.2015",
+   "to": "colony.2016",
+   "conditional": true,
+   "label": {
+    "zh": "权重30：工厂开始绑架工人（需≥100名工厂工人）",
+    "en": "Weight 30: the factory starts kidnapping workers (needs 100+ factory workers)"
+   },
+   "evidence": "2015 immediate random_list sets colony_factory_kidnap (30) or colony_factory_no_effect (35) (events/colony_events_2.txt:2402-2405); 2016 triggers on colony_factory_kidnap, the d_odd_factory deposit and 100+ odd_factory_worker jobs, MTTH 4 months (2429-2441)"
+  },
+  {
+   "from": "colony.2015",
+   "to": "colony.2019",
+   "conditional": true,
+   "label": {
+    "zh": "权重35：无事发生，约6个月后收尾",
+    "en": "Weight 35: nothing happens; closing note after about 6 months"
+   },
+   "evidence": "2019 triggers on colony_factory_no_effect, MTTH 6 months (2562-2573)"
+  },
+  {
+   "from": "colony.2016",
+   "to": "colony.2017",
+   "conditional": true,
+   "choice": "colony.2016.a",
+   "label": {
+    "zh": "选项a：50%再次绑架",
+    "en": "Option a: 50% a second kidnapping"
+   },
+   "evidence": "2016.a random_list 50 colony_factory_kidnap_sequel / 50 colony_factory_no_effect (2464-2473); 2017 MTTH 4 months (2494-2505)"
+  },
+  {
+   "from": "colony.2016",
+   "to": "colony.2019",
+   "conditional": true,
+   "choice": "colony.2016.a",
+   "label": {
+    "zh": "选项a：50%转为无事发生",
+    "en": "Option a: 50% falls back to nothing"
+   },
+   "evidence": "as above"
+  }
+ ],
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.2016",
+    "colony.2019"
+   ],
+   "label": {
+    "zh": "2015 的随机结果（30:35）",
+    "en": "Random result of 2015 (30:35)"
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "colony.2016",
+   "kind": "review",
+   "zh": "选项b关闭工厂（移除矿藏）并终结故事；选项a继续。因标志在选项b后未清除，但矿藏已移除，触发条件不再满足。",
+   "en": "Option b shuts the factory (removes the deposit) and ends the story; option a continues. The kidnap flag stays after b but the deposit is gone, so the trigger fails."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Fable 5.5 (c7a-society, resumed)",
+  "scope": {
+   "zh": "怪异因素：发现工厂，权重30:35决定绑架线或无事线，以及两次绑架的后续。",
+   "en": "An Odd Factor: factory found, a 30:35 draw between the kidnap line and the nothing-happens line, and the two kidnap follow-ups."
+  },
+  "sources": [
+   "events/colony_events_2.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "merged": [
+   "event-colony-2016",
+   "event-colony-2017",
+   "event-colony-2019"
+  ],
+  "guide": "public/summaries/event-colony-2015.md"
+ }
+}

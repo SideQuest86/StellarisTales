@@ -1,0 +1,46 @@
+{
+ "id": "event-cstorms-1810",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "cstorms.1816",
+    "cstorms.1817"
+   ],
+   "label": {
+    "zh": "发现地点",
+    "en": "Where it is found"
+   },
+   "note": {
+    "zh": "游牧民族且拥有驿站时在驿站所在系统（1817），否则在境内随机系统（1816）。",
+    "en": "Nomads with a waystation get it at the waystation system (1817), otherwise a random system inside the borders (1816)."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "cstorms.1816",
+   "kind": "review",
+   "zh": "隐藏事件 cstorms.1810 在首次遭遇风暴时（on_storm_encountered，00_on_actions.txt:5509）排程，1800天后 cstorms.1815 选地点。注意 1810 设置的是 triggered_eye_of_the_storm 而不是 triggered_storm_in_a_box（cosmic_storms_events_1.txt:4024），所以“只触发一次”的保护可能并未生效；未实测，存疑。",
+   "en": "Hidden cstorms.1810 is scheduled on the first storm encounter (on_storm_encountered, 00_on_actions.txt:5509); 1800 days later cstorms.1815 picks the place. Note 1810 sets triggered_eye_of_the_storm rather than triggered_storm_in_a_box (cosmic_storms_events_1.txt:4024), so the once-only guard may not work; untested, uncertain."
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "C8b reviewer (Claude resume)",
+  "scope": {
+   "zh": "已对照游戏文件核对入口与触发、条件、选项与结果、分类，并撰写双语导读。",
+   "en": "Root and trigger, conditions, options and outcomes, and category checked against the game files; bilingual guide written."
+  },
+  "sources": [
+   "events/cosmic_storms_events_1.txt:4008-4262",
+   "common/on_actions/00_on_actions.txt:5509",
+   "common/special_projects/03_projects_cosmic_storms.txt:839"
+  ],
+  "uncertain": [
+   "cstorms.1810 sets triggered_eye_of_the_storm instead of triggered_storm_in_a_box (L4024); not tested whether it can fire repeatedly."
+  ],
+  "guide": "public/summaries/event-cstorms-1810.md"
+ }
+}
