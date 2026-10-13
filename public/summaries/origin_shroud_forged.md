@@ -16,7 +16,7 @@ At game start the hidden shroud_forged.1 sets up the rift on the capital and sta
    **Situation progress** moves both ways; the stage you are in selects the event (280/270/250/260). They are states, not a fixed order. Each month a random small event 500-690 may fire (weights 80 nothing : 52 events, 1-year cooldown flag set at start).
 2. **进度降到0 → 控制结局**：强行控制（50）→ 特殊项目“重同化”→ 60 → 30天后 30 解锁物现引擎科技。
    **Progress at 0 -> control ending**: 50 -> project Reintegration -> 60 -> 30 days later 30 unlocks the Materiality Engine tech.
-3. **进度满 → 解放结局**：70 → 项目“指引” → 80；360–2160天后另开始“泽珞遗产”事件链（300）。
+3. **进度满 → 解放结局**：70 → 项目“指引” → 80；360–2160天后另开始“泽珞族遗产”事件链（300）。
    **Progress full -> liberation ending**: 70 -> project The Guide -> 80; after 360-2160 days the Zroni Legacy chain begins (300).
 4. **泽珞遗产**：殖民三颗泽珞核心星球（305/306/307）并在其上建平衡仪 → 308 → 310 → 311 → 312：选“背叛”（312.a，困住虚境实体，313，之后可用决定捕获实体）或“忠诚”。
    **Zroni Legacy**: colonise three Zroni core worlds (305/306/307), build equilibrators -> 308 -> 310 -> 311 -> 312: traitor (trap the entity, 313) or loyalist.

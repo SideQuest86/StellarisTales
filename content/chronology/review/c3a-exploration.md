@@ -6,11 +6,11 @@ fragments (content/stories/<id>.json) and guides (public/summaries/<id>.md); thi
 
 ## Summary
 
-- Fragments written: 64 (reviewed 64, partial 0).
-- Assigned ids merged into another story (no separate story any more): 22.
-- Assigned ids not yet handled: 122.
-
-Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-mountain-uninhabitable-category, anomaly-fungal-emitters-category, anomaly-signal-gasgiant-category, anomaly-life-frozen-category, anomaly-battle-uninhabitable-category, anomaly-debris-gasgiant-category, anomaly-energy-uninhabitable-category, anomaly-life-gasgiant-category, anomaly-object-uninhabitable-category, anomaly-ship-gasgiant-category, anomaly-shipyard-uninhabitable-category, anomaly-station-asteroid-category, anomaly-storms-gasgiant-category, anomaly-cargo-gasgiant-category, anomaly-origin-asteroid-category, anomaly-terminal-gasgiant-category, anomaly-aerostat-gasgiant-category, anomaly-asteroid-uninhabitable-category, anomaly-collision-asteroid-category, anomaly-crashed-ship-asteroid-category, anomaly-debris-asteroid-category, anomaly-emissions-asteroid-category, anomaly-hatch-asteroid-category, anomaly-impact-uninhabitable-category, anomaly-inhabited-toxic-category, anomaly-life-asteroid-category, anomaly-life-toxic-category, anomaly-lost-soul-cat, anomaly-moon-gasgiant-category, anomaly-object-gasgiant-category, anomaly-signal-uninhabitable-category, anomaly-beacon-uninhabitable-category, anomaly-life-barren-category, anomaly-living-metal-category, anomaly-sol-wasteland-category, anomaly-solar-uninhabitable-category, anomaly-the-lonely-bot-category, anomaly-writing-uninhabitable-category, anomaly-chthonian-preservation-cat, anomaly-diamond-dust-cat, anomaly-gaseous-metals-cat, anomaly-geological-tension-cat, anomaly-glimpse-core-cat, anomaly-infernal-tornadoes-cat, anomaly-magma-megafauna-cat, anomaly-orbital-resonance-cat, anomaly-planet-thrusters-cat, anomaly-poisoned-atmosphere-cat, anomaly-survival-pod-warm-cat, anomaly-backwards-orbit-cat, anomaly-black-clouds-cat, anomaly-carbon-allotropes-cat, anomaly-crystalline-plains-cat, anomaly-electric-waters-cat, anomaly-exploding-skies-cat, anomaly-fibrous-atmosphere-cat, anomaly-frozen-inferno-cat, anomaly-great-blue-spots-cat, anomaly-invisible-planet-cat, anomaly-layered-atmosphere-cat, anomaly-life-in-darkness-cat, anomaly-missing-mass-cat, anomaly-molten-metal-ocean-cat, anomaly-obsidian-planet-cat, anomaly-optical-phenomena-cat, anomaly-plasma-trails-cat, anomaly-plasma-volcano-cat, anomaly-pulsating-object-toxic-cat, anomaly-rainbow-rivers-cat, anomaly-shearing-force-cat, anomaly-subglacial-vibrations-cat, anomaly-supermassive-giant-cat, anomaly-vapor-plumes-cat, event-distar-212, event-distar-135, event-distar-137, event-distar-211, event-distar-10903, event-distar-5000, event-distar-5009, event-distar-5001, event-distar-13030, event-distar-10904, event-distar-13080, event-distar-10955, event-distar-13020, event-distar-13060, event-distar-13070, event-distar-5011, event-distar-5014, event-distar-9000, event-distar-5061, event-distar-5054, event-distar-5053, event-distar-5077, event-anomaly-1193, event-anomaly-142, event-anomaly-143, event-anomaly-144, event-anomaly-106, event-anomaly-96, event-anomaly-3101, event-anomaly-3097, event-anomaly-3115, event-anomaly-3095, event-anomaly-2574, event-anomaly-3114, event-anomaly-3120, anomaly-aianom-lump-cat, anomaly-aianom-researchdepo-cat, anomaly-aianom-miningdepo-cat, anomaly-aianom-clue-cat, anomaly-paragon-beholder-category, project-contract-espionage-support-project-01, project-contract-espionage-support-project-02, project-contract-espionage-support-project-03, project-inetian-projects-04, project-project-adakkaria-secrets-of, event-anomaly-4036, anomaly-tutorial-cat
+- Stories in my list: 208. Fragments written: 164 (reviewed 163, partial 1).
+- Assigned ids merged into another story (no separate story any more): 44.
+- Assigned ids not yet handled: 0.
+- Partial: event-distar-13080 (the L-Cluster; the roughly 20 individual clue-giving anomalies are summarised by one bridge, not listed one by one).
+- Date of the second pass (resuming reviewer): 2026-10-13. `python scripts/story_tree.py` runs cleanly.
 
 ## Merged story ids
 
@@ -36,6 +36,15 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - `event-distar-58` → `anomaly-distar-lost-cat`: death of the adopted Lost Amoeba (on_ship_disabled → hidden distar.58 → distar.340 or distar.57)
 - `event-distar-72` → `anomaly-distar-clone-cat`: on_colonized of a repaired ring-world segment while the clones were left in cryostasis (clones_in_cryo set by distar.70 b / no_room)
 - `event-distar-81` → `anomaly-distar-dead-god-cat`: invasion of the primitive planet that orbits the Silent Behemoth moon (on_colony_attackers_win → hidden distar.81 → distar.82)
+- `event-distar-137` → `event-distar-135`: the destroyed Scavenger Bot (on_ship_destroyed_perp → distar.137) is the second chapter of the Scavenger story
+- `event-distar-212` → `event-distar-211`: death of the Tiyanki Matriarch (distar.212 and its 213-218 chain) follows the encounter distar.211
+- `event-distar-5001`, `event-distar-5009`, `event-distar-5011`, `event-distar-5014` → `event-distar-5000`: monthly owned-system entry, Voidspawn defeated, Voidspawn encounter and "As Good as New" are stages of the Voidspawn egg story
+- `event-distar-10903`, `event-distar-10904`, `event-distar-10955`, `event-distar-9000`, `event-distar-13020`, `event-distar-13030` → `event-distar-13080`: opening, clues, neighbour warning, clue follow-up and the two L-Drake pieces are parts of the L-Cluster story
+- `event-distar-5053`, `event-distar-5061`, `event-distar-5077` → `event-distar-5054`: cache destroyed, cache returns and ascension terminated belong to the Enigmatic Cache story
+- `event-anomaly-143`, `event-anomaly-144` → `event-anomaly-142`: the other two Old Gods shrines
+- `event-anomaly-3097`, `event-anomaly-3101` → `event-anomaly-3095`: the "base destroyed by another / by you" endings of the Ransomeers chain
+- `event-anomaly-3114`, `event-anomaly-3120` → `event-anomaly-3115`: the pirate route of the Drifting Battlefield chain
+- `event-anomaly-106` → `event-anomaly-96`: twin Terra Firma event of the Solar Coordinates chain
 
 ## Per-story results
 
@@ -45,6 +54,7 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-distar-flare-cat** — reviewed. Family created (root DISTAR_FLARE_CAT, member hidden distar.5); merged event-distar-5. Bridge distar.6→distar.7 (on_colonized of the nuked moon, 360–410 days). Exclusive project results 9/10.
 - **anomaly-distar-dead-god-cat** — reviewed. Family created (root DISTAR_DEAD_GOD_CAT, member hidden distar.81); merged event-distar-81. Bridge distar.80→82 (invasion, 2 days).
 - **anomaly-distar-clone-cat** — reviewed. Family created (root DISTAR_CLONE_CAT, member distar.72); merged event-distar-72. Choice bridges distar.70.b/no_room → distar.72.
+
 ### Batch b_02_distar_simple
 
 - **anomaly-distar-collapse-cat** — reviewed. Single outcome distar.125; spawn only via collapse_system initializer; tree correct.
@@ -74,6 +84,7 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-distar-soy-cat** — reviewed. Family (root DISTAR_SOY_CAT, member distar.262); merged event-distar-262; bridge distar.261→262 (on_colonized).
 - **event-distar-230** — reviewed. Family created (start distar.230, members DISTAR_RAT_CAT, distar.235); merged anomaly-distar-rat-cat and event-distar-235. Bridges distar.230→anomaly (after-block add_anomaly), distar.233→235 (invasion). Exclusive group of KETLING_PROJECT_1-6 (same_option_group_as).
 - **event-distar-240** — reviewed. Family created (start distar.240; members distar.242, distar.243, DISTAR_MED_CAT); merged event-distar-242, event-distar-243, anomaly-distar-med-cat. Bridges 240→242→243→anomaly.
+
 ### Batch b_03_distar_multi
 
 - **anomaly-distar-phase-cat** — reviewed. Family (start DISTAR_PHASE_CAT; members hidden distar.254/256 and distar.258); merged event-distar-254, event-distar-256. Bridges 251→255 and 258→255; exclusive group 250/302/303.
@@ -87,6 +98,7 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-distar-wreck-cat** — reviewed. Tree correct; noted the duplicated desc trigger in distar.1.
   - uncertain: distar.1 desc.nocontact has the same trigger as desc.contact (exists = event_target:wreckage_owner); which text the engine shows when both match was not tested.
 - **anomaly-distar-flow-cat** — reviewed. Tree correct.
+
 ### Batch b_04_distar_1000s
 
 - **anomaly-debris-gasgiant-category-temp** — reviewed. Family (start anomaly; members distar.1002, hidden 1007 and 1015, distar.1014); merged event-distar-1002/1007/1014/1015. Bridges 1001→1002, 1011→1016, 1003→1014.
@@ -106,6 +118,7 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-time-loop-world** — reviewed. Family (start anomaly; member distar.2036); merged event-distar-2036; bridge 2031→2036; exclusive 2032/2033.
 - **anomaly-stolen-ship-cat** — reviewed. Tree correct.
 - **anomaly-transmitter-cat** — reviewed. Tree correct.
+
 ### Batch b_05_disco
 
 - **anomaly-disco-trojan-asteroid-cat** — reviewed. Tree correct.
@@ -116,10 +129,6 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-disco-alien-machine-cat** — reviewed. Tree correct; exclusive 3041/3042.
 - **anomaly-disco-speed-demon-cat** — reviewed. Tree correct.
 - **anomaly-disco-breathing-rift-cat** — reviewed. Tree correct; loop documented.
-
-## Requests
-
-- (none)
 
 ### Batch b_06_basic1
 
@@ -215,25 +224,6 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-supermassive-giant-cat** — reviewed. Single result 330 (options a/b); weight x num_moons; on_spawn extensive_moon_system; tree correct.
 - **anomaly-vapor-plumes-cat** — reviewed. Single result 400; tree correct.
 
-### Batch b_17_gateways
-
-- **event-distar-13060** — reviewed. Single event distar.13060 = apoc.5 duplicate for systems not surveyed by a ship (on_system_survey); kept as its own small story; request to coordinator to consider linking with event-apoc-5.
-- **event-distar-13070** — reviewed. Single event distar.13070 = apoc.1 duplicate for systems not surveyed by a ship; kept as its own small story.
-
-### Batch b_18_enigmatic_cache
-
-- **event-distar-5054** — reviewed. Family created (start distar.5057; members project/5058/5059/5062/5064/uplifting/5070/5078). Bridges 5057->5059, 5059->5062, UPLIFTING->5070, UPLIFTING->5078; exclusive result group with real weights (75/25 intact; 37.5/62.5 or 100% 5074 broken); draft p corrected. Merged event-distar-5053, 5061, 5077.
-  - uncertain: The exact 5060 selection rule (which player country is chosen, 'not outclassed in technology') was read but its in-game effect on the chosen country was not simulated.
-  - uncertain: The text of the four dialogue options in distar.5064/5072 was not read line by line; only the options and the project/abort effects were checked.
-- **event-distar-5053** — merged into event-distar-5054. Ascension Terminated (distar.5070, via hidden distar.5053 on_ship_disabled) belongs to the Enigmatic Cache story.
-- **event-distar-5061** — merged into event-distar-5054. The Enigmatic Cache Returns (distar.5062 ... uplifting project and results) belongs to the Enigmatic Cache story.
-- **event-distar-5077** — merged into event-distar-5054. Enigmatic Ascension Terminated (distar.5078, via hidden distar.5077 on_colony_attackers_win) belongs to the Enigmatic Cache story.
-
-### Batch b_22_misc_events
-
-- **event-anomaly-2574** — reviewed. Single event anomaly.2575 via hidden 2574 (first find only); tree correct.
-- **event-anomaly-4036** — reviewed. Family created (start event_chains:star_power_chain; 4037 -> ODD_STAR_PROJECT -> 4038; failure 4037). Bridges chain -> 4037 / failure; 40/60 per system, guaranteed after two misses. Merged event-anomaly-4036 itself keeps the id.
-
 ### Batch b_14_guardians
 
 - **event-distar-135** — reviewed. Family created (start distar.135, member distar.137); bridge 135 -> 137 (on_ship_destroyed_perp); merged event-distar-137.
@@ -262,6 +252,20 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **event-distar-13020** — merged into event-distar-13080. Slayed (killing an L-Drake) belongs to the L-Cluster dragon-season branch.
 - **event-distar-13030** — merged into event-distar-13080. L-Drake Observed (+ TAME_LDRAGON_PROJECT, 13035) belongs to the L-Cluster dragon-season branch.
 
+### Batch b_17_gateways
+
+- **event-distar-13060** — reviewed. Single event distar.13060 = apoc.5 duplicate for systems not surveyed by a ship (on_system_survey); kept as its own small story; request to coordinator to consider linking with event-apoc-5.
+- **event-distar-13070** — reviewed. Single event distar.13070 = apoc.1 duplicate for systems not surveyed by a ship; kept as its own small story.
+
+### Batch b_18_enigmatic_cache
+
+- **event-distar-5054** — reviewed. Family created (start distar.5057; members project/5058/5059/5062/5064/uplifting/5070/5078). Bridges 5057->5059, 5059->5062, UPLIFTING->5070, UPLIFTING->5078; exclusive result group with real weights (75/25 intact; 37.5/62.5 or 100% 5074 broken); draft p corrected. Merged event-distar-5053, 5061, 5077.
+  - uncertain: The exact 5060 selection rule (which player country is chosen, 'not outclassed in technology') was read but its in-game effect on the chosen country was not simulated.
+  - uncertain: The text of the four dialogue options in distar.5064/5072 was not read line by line; only the options and the project/abort effects were checked.
+- **event-distar-5053** — merged into event-distar-5054. Ascension Terminated (distar.5070, via hidden distar.5053 on_ship_disabled) belongs to the Enigmatic Cache story.
+- **event-distar-5061** — merged into event-distar-5054. The Enigmatic Cache Returns (distar.5062 ... uplifting project and results) belongs to the Enigmatic Cache story.
+- **event-distar-5077** — merged into event-distar-5054. Enigmatic Ascension Terminated (distar.5078, via hidden distar.5077 on_colony_attackers_win) belongs to the Enigmatic Cache story.
+
 ### Batch b_19_old_gods
 
 - **event-anomaly-142** — reviewed. Family created (start event_chains:old_gods_chain; shrines 142/143/144 + projects + 165/166/167 + 168). Bridges chain -> 142/143/144; parallel group required 3 gating 168. Merged event-anomaly-143, event-anomaly-144.
@@ -283,6 +287,11 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **event-anomaly-96** — reviewed. Family created (start event_chains:find_sol_chain; anomaly.96 and anomaly.106). Bridges chain -> 96 / 106 (identical triggers; uncertain whether 106 can ever fire). Merged event-anomaly-106.
   - uncertain: anomaly.96 and anomaly.106 have identical triggers and both are listed in on_entering_system_fleet (lines 1020, 1021); 96 clears the flags in its immediate block, so if on_action events are evaluated one after another 106 would never fire. This engine ordering behaviour is not visible in the files and was not verified.
 - **event-anomaly-106** — merged into event-anomaly-96. Terra Firma (anomaly.106) is the twin of anomaly.96 with an identical trigger; both belong to the Solar Coordinates story.
+
+### Batch b_22_misc_events
+
+- **event-anomaly-2574** — reviewed. Single event anomaly.2575 via hidden 2574 (first find only); tree correct.
+- **event-anomaly-4036** — reviewed. Family created (start event_chains:star_power_chain; 4037 -> ODD_STAR_PROJECT -> 4038; failure 4037). Bridges chain -> 4037 / failure; 40/60 per system, guaranteed after two misses. Merged event-anomaly-4036 itself keeps the id.
 
 ### Batch b_23_aianom
 
@@ -315,3 +324,18 @@ Untouched: anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat, anomaly-moun
 - **anomaly-fungal-emitters-category** — reviewed. Exclusive 6755/6760/6765 by Fumongus quest state (draft p=0.33* corrected via group); 6755.a -> FOLLOWING_FUNGI_PROJECT -> 6770 (80%, starts fumongus_chain) / 6780; 6760.a -> MUSHROOMING_NETWORK_PROJECT -> 6785.
   - uncertain: Which events set fumongus_active / fumongus_resolved / fumongus_dismantled (ancient_relics_arcsite_events_2.txt:9628-9744) belong to other stories and were not traced here.
 - **anomaly-signal-gasgiant-category** — reviewed. Single 5000; a -> GAS_GIANT_SIGNAL -> 5001 -> 5003; 5003.d -> GAS_GIANT_RELOCATION -> 5004 -> 5006; timeouts 5002/5005; tree correct.
+
+## Requests
+
+Compiler / cross-agent notes (I did not edit any code, any other agent's fragment, or any story outside my list):
+
+1. **Unnamed archaeological-site stages.** `stage_sequence` groups stages by name; sites whose `stage = { ... }` blocks have no name (site_rage_sage_dig, site_space_shanty_dig, site_debris_belt, ...) are merged into one "multi-event stage" and every stage event is shown as a sibling under the site. A stage index fallback in `scripts/story_tree.py` would fix all such sites. I fixed my two (anomaly-on-crashed-ship-cat, anomaly-on-solar-sails-cat) with suppress + bridges.
+2. **Shared dig-site failure incidents** ancrel.8200-8203 and ancrel.8215 appear as chapters in at least 8 stories (spaceship / station sites). I marked them as hubs in my two site fragments; the coordinator may want to make them hubs globally.
+3. **Story pairs across agents (continuations).** Several of my stories continue chains that start in c3b stories; the chain doc is shared and I made it the start of my family: Old Gods (anomaly-ast-shrine-1-cat), The Ransomeers (anomaly-uhb-buoy-cat), Drifting Battlefield (anomaly-gaia-record-cat), Solar Coordinates (anomaly-ast-debris-field-1-cat), Unusual Star Stuff (anomaly-sun-rays-cat), the Fumongus trail (anomaly-alpha-centauri-cat). A "continues in" cross-link between stories would be useful.
+4. **Limbo.** event-anomaly-1193 (Limbo: Technological Advances) is a late entry to the Limbo story in c3b's anomaly-barr-base-cat (anomaly.186 option b sets limbo_downloaded; tech_synthetic_workers later fires anomaly.1193 → 1194 → LIMBO_2_PROJECT). A bridge anomaly.186 → anomaly.1194 would belong in that story's fragment.
+5. **apoc duplicates.** event-distar-13060 / 13070 / (13080) are the "system not surveyed by a ship" variants of apoc.5 / apoc.1 / apoc.3 (on_system_survey comments). event-apoc-3 and event-distar-13080 both start the L-Cluster chain (the chain doc appears in both stories). Consider merging or cross-linking event-apoc-1/3/5 with the distar variants (owner of the apoc stories).
+6. **Nomad contract projects.** project-contract-espionage-support-project-01/02/03 are sub-tasks of chain-contract-espionage-support-chain (c7b); nomads.6000 (fired by project 01) is not a story doc.
+7. **Tutorial anomaly.** tutorial.52/53/54 (outcomes of TUTORIAL_CAT) are in `events/tutorial_events.txt`, which `NON_STORY_SOURCES` excludes; the story shows only the anomaly card. Decide whether this is intended.
+8. **Shadows of the Shroud content.** Twenty-two anomaly stories (the `103_anomaly_categories_extreme_frontiers.txt` categories and their `extreme_frontiers.*` events) require `has_shroud_dlc` (host_has_dlc "Shadows of the Shroud"); no matching folder exists in the local `dlc` directory. Whether such stories should be visible without that DLC is a product decision.
+9. **L-Cluster outcomes.** graygoo.* / observer.* / distar.10951 are shared sinks with the Gray Tempest story; `generate_lcluster_clue` is called from about 20 events in other stories (listed by callers.py for distar.10904); each of those stories could cross-link to the L-Cluster story.
+10. **Earlier request kept.** `chain-star-crazy-chain` is an unused definition (no begin_event_chain anywhere); whether the archive should show unused definitions is a product decision.

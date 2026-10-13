@@ -1,7 +1,9 @@
 name: Publish story archive
+# Deploys to GitHub Pages only for a release tag (v*) or a manual run, so ongoing development on main is tracked by
+# ci.yml without publishing unfinished work. Requires repository variable ENABLE_GITHUB_PAGES=true.
 on:
   push:
-    branches: [main]
+    tags: ["v*"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,6 +26,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: npm test
       - run: node scripts/audit-categories.mjs
+      - run: node scripts/review-summary.mjs >> "$GITHUB_STEP_SUMMARY"
       - run: npm run build
       - uses: actions/configure-pages@v5
         if: vars.ENABLE_GITHUB_PAGES == 'true'

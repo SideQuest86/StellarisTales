@@ -1,0 +1,22 @@
+{
+ "id": "situation-situation-terravore-consume-planet",
+ "category": "society",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "吞噬世界情境：6个文档。",
+   "en": "Consume World situation: 6 docs."
+  },
+  "sources": [
+   "common/situations/02_strategic_situations.txt:833-900",
+   "common/decisions/02_special_decisions.txt:1763",
+   "events/colony_events_3.txt (colony.185 / colony.190)"
+  ],
+  "uncertain": [
+   "610 之后的堕落帝国分支条件只按调用图读取。 / The Fallen Empire branches after 610 were read from the call graph."
+  ],
+  "guide": "public/summaries/situation-situation-terravore-consume-planet.md"
+ }
+}

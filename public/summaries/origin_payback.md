@@ -1,4 +1,4 @@
-# 以牙还牙 / Payback
+# 血债血偿 / Payback
 
 - 分类 Category：起源 Origins · DLC：First Contact · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_4.txt:1-3620`、`common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:1-59`、`common/special_projects`、`common/deposits/09_first_contact_deposits.txt:70-85`、`common/on_actions/00_on_actions.txt`
@@ -12,7 +12,7 @@ At game start hidden origin.4000 creates the dig site and debris at the capital;
 
 ## 剧情脉络 Story outline
 
-1. **战舰线**：4900 → 项目“轨道残骸清理”（4930 完成一半，4931 完成）→ 遗址变为可勘探 → 阶段 4905 → 4910（三选一：剖析/游行/安葬）→ 4920 → 4925 → 同时启用项目“旗舰修复”（4934）与“栖息地修复”（4935）。研发三级以上星港科技后可升级旗舰（4936）。
+1. **战舰线**：4900 → 项目“轨道残骸清理”（4930 完成一半，4931 完成）→ 遗址变为可勘探 → 阶段 4905 → 4910（三选一：剖析/游行/安葬）→ 4920 → 4925 → 同时启用项目“旗舰修复”（4934）与“居住站复原”（4935）。研发三级以上星港科技后可升级旗舰（4936）。
    **Warship line**: 4900 -> debris project (4930 half, 4931 done) -> the site becomes surveyable -> stages 4905 -> 4910 (dissect / parade / burial) -> 4920 -> 4925 -> projects Flagship Restoration (4934) and Habitat Restoration (4935). Starbase tech 3-5 later allows an upgrade (4936).
 2. **债务线**：4010 → 1800天后 4015：付款（4016）、拒绝（4019）。付款可用能量/消费品/合金/人口，之后每5400天回访（4029 → 4030）；拒绝则战斗，赢（4020）或输被轰炸（4025）。第二次交涉后 15 天 4040：选择武力或言辞。击败3次后 4021 奴隶贩子大怒。
    **Debt line**: 4010 -> 1800 days later 4015: pay (4016) or refuse (4019). Paying (energy / consumer goods / alloys / pops) is followed by visits every 5400 days; refusing means a fight, won (4020) or lost with bombardment (4025). After the second meeting 4040: force or words. Three defeats lead to 4021.

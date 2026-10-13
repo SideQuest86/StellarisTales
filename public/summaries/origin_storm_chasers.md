@@ -1,4 +1,4 @@
-# 风暴追猎者 / Storm Chasers
+# 追风者 / Storm Chasers
 
 - 分类 Category：起源 Origins · DLC：Cosmic Storms · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_cosmic_storms.txt`、`common/situations/07_cosmic_storms_situations.txt:431-600`、`common/missions/missions/00_missions_cosmic_storms.txt`、`common/special_projects/03_projects_cosmic_storms.txt`
@@ -16,7 +16,7 @@ At game start hidden cstorms.3101 starts the Stormfall situation. After mid-game
    **Stormfall**: three stages 3100 (Tempest Brewing project -> 3105) -> 3140 -> 3170; monthly stories 3110 / 3130 / 3160; completion 3190.
 2. **风暴热**：3205 → 六项挑战（击败风暴中的舰队 305、探索边缘 310、驾驭风暴 315、调查遗留异常 320、传播欢乐 325、风暴骑手死亡/失踪 330 / 331），顺序任意；全部完成 3215 → 1800±360 天后 3220。
    **Storm Fever**: 3205 -> six challenges in any order -> 3215 -> 3220 1800+0-360 days later.
-3. **风暴狂热**：3220 → 项目“引诱大风暴”→ 3222 → 3224 → 3225 → 项目“菜单之外”（可重复喂养 3226）→ 3227 → 3230（大风暴诞生）或 3235（风暴尾声）。
+3. **风暴狂热**：3220 → 项目“引诱大风暴”→ 3222 → 3224 → 3225 → 项目“隐藏菜品”（可重复喂养 3226）→ 3227 → 3230（大风暴诞生）或 3235（风暴尾声）。
    **Storm Frenzy**: 3220 -> Entice the Big One -> 3222 -> 3224 -> 3225 -> Something Off the Menu (repeatable feeding 3226) -> 3227 -> 3230 or 3235.
 
 ## 分支与结局 Branches and outcomes

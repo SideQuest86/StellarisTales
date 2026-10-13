@@ -1,4 +1,4 @@
-# 毒神骑士团 / Knights of the Toxic God
+# 毒圣骑士 / Knights of the Toxic God
 
 - 分类 Category：起源 Origins · DLC：Toxoids · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/toxoids_events.txt:572-3890`、`common/situations/01_toxoid_situations.txt:190-365`、`common/on_actions/00_on_actions.txt`
@@ -7,7 +7,7 @@
 
 ## 如何开始 How it starts
 
-开局隐藏事件 toxoids.7000 启动局势“毒神之旅”，并在首都附近把一颗星球改为熔岩世界（带合金与能量矿藏）。
+开局隐藏事件 toxoids.7000 启动局势“毒圣试炼”，并在首都附近把一颗星球改为熔岩世界（带合金与能量矿藏）。
 At game start hidden toxoids.7000 starts the *Quest for the Toxic God* situation and turns a nearby planet into a molten world with alloy and energy deposits.
 
 ## 剧情脉络 Story outline
@@ -24,7 +24,7 @@ At game start hidden toxoids.7000 starts the *Quest for the Toxic God* situation
 - 7007/7009 两条分支各 50%；7095 的选择决定 7300 中是沙卢骑士得救还是传奇骑士身亡。 7007/7009 are 50/50; 7095's choice decides the outcome of 7300.
 - 其他帝国进入星系为 7311，击毁毒神得 7515（遗物）。 Other empires: 7311, relic 7515.
 - 要塞失守/被毁/夺回：8015 / 8017 / 8025；方舟起源在故乡定居 8030。 Keep lost / destroyed / retaken: 8015 / 8017 / 8025; arkship settling 8030.
-- 满100年的“百年之旅”8010、每月随机的 8000/8005。 The Hundred Years Quest 8010; monthly random 8000/8005.
+- 满100年的“百年试炼”8010、每月随机的 8000/8005。 The Hundred Years Quest 8010; monthly random 8000/8005.
 
 ## 条件与文明差异 Conditions and variants
 

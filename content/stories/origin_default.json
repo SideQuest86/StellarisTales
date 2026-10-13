@@ -1,0 +1,26 @@
+{
+ "id": "origin_default",
+ "opening": {
+  "targets": [],
+  "label": {
+   "zh": "没有叙事窗口：仅有开局设置",
+   "en": "No story windows: start setup only"
+  },
+  "evidence": "common/governments/civics/00_origins.txt:2-52 (origin definition); common/inline_scripts/game_start/origin_default.txt."
+ },
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c1-origins (Sonnet), V4 source review",
+  "sources": [
+   "common/governments/civics/00_origins.txt",
+   "common/inline_scripts/game_start/origin_default.txt"
+  ],
+  "scope": {
+   "zh": "卡片型起源：没有专属事件窗口，已核对起源定义与开局设置。",
+   "en": "Card-only origin: no origin-specific event windows; the origin definition and start setup were checked."
+  },
+  "uncertain": [],
+  "guide": "public/summaries/origin_default.md"
+ }
+}

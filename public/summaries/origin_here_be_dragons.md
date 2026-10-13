@@ -1,4 +1,4 @@
-# 此处有龙 / Here Be Dragons
+# 与龙共舞 / Here Be Dragons
 
 - 分类 Category：起源 Origins · DLC：Aquatics · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/aquatics_events.txt:100-1700`、`common/first_contact/02_first_contact_unique_stories.txt`、`common/special_projects`、`common/on_actions/00_on_actions.txt`
@@ -16,12 +16,12 @@ At game start hidden aquatics.100 places the dragon and schedules 150 *A Hungry 
    **A Hungry Dragon (150)**: three responses: attack (155), feed so it lands (160 / 165) -> takes flight (170).
 2. **龙鳞研究（190）**：十二年后满足科技条件时提供两个项目：采集龙样本（随机结果 200 / 205 / 210 / 215）或远程扫描（195）。
    **Dragon material study (190)**: after year twelve with the right techs; project outcomes 200 / 205 / 210 / 215 or remote scans 195.
-3. **与龙交流**：研究完成且冷却结束后首次接触阶段 255 → 260 → 265 → 270；2400 天后 120“龙语传来”。
+3. **与龙交流**：研究完成且冷却结束后首次接触阶段 255 → 260 → 265 → 270；2400 天后 120“龙语传输接入”。
    **Contact**: first-contact stages 255 -> 260 -> 265 -> 270; 120 follows after 2400 days.
 
 ## 分支与结局 Branches and outcomes
 
-- 其他：击毁天空之龙 105 → 项目“复苏天空之龙”→ 115，或 110（击杀）；守护之龙 180 / 305。 Others: slaying the Sky Dragon 105 (reanimation project -> 115 or 110), Guardian Dragon 180 / 305.
+- 其他：击毁天空之龙 105 → 项目“复活天龙”→ 115，或 110（击杀）；守护之龙 180 / 305。 Others: slaying the Sky Dragon 105 (reanimation project -> 115 or 110), Guardian Dragon 180 / 305.
 
 ## 条件与文明差异 Conditions and variants
 

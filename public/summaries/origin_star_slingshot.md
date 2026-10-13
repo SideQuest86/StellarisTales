@@ -1,4 +1,4 @@
-# 星际弹射 / Slingshot to the Stars
+# 射向星际 / Slingshot to the Stars
 
 - 分类 Category：起源 Origins · DLC：Overlord · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_3.txt:885-1207`、`common/archaeological_site_types/06_overlord_arc_sites.txt:17-86`、`events/game_start.txt:333`
@@ -12,8 +12,8 @@ Hidden origin.3500 turns the closest ordinary star system into a pulsar, spawns 
 
 ## 剧情脉络 Story outline
 
-1. **占领弹射器星系**：在该星系建成前哨站 → 3510“量子弹射器单阵列已控制”（影响力+150）。 Building an outpost there fires 3510 once (+150 influence).
-2. **遗址**：阶段 3515 → 3520 → 3525 → 3530 → 3535 → 3540“量化”（工程研究加成；游戏前30年内另有修正）。 Site stages 3515 -> 3540 (an engineering research bonus; before year 30 an extra modifier).
+1. **占领弹射器星系**：在该星系建成前哨站 → 3510“量子弹弓单阵列已获得”（影响力+150）。 Building an outpost there fires 3510 once (+150 influence).
+2. **遗址**：阶段 3515 → 3520 → 3525 → 3530 → 3535 → 3540“量子化”（工程研究加成；游戏前30年内另有修正）。 Site stages 3515 -> 3540 (an engineering research bonus; before year 30 an extra modifier).
 
 ## 分支与结局 Branches and outcomes
 

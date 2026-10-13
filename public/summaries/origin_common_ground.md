@@ -1,4 +1,4 @@
-# 共同点 / Common Ground
+# 共同命运 / Common Ground
 
 - 分类 Category：起源 Origins · DLC：Federations · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_1.txt:1438-2127`、`events/game_start.txt:315`、`common/governments/civics/00_origins.txt:2152-2195`
@@ -7,7 +7,7 @@
 
 ## 如何开始 How it starts
 
-开局隐藏事件 origin.55 创建两个联邦伙伴并设置情报与开放边境；2 天后窗口 origin.57“联邦的性质”让玩家选择联邦类型。
+开局隐藏事件 origin.55 创建两个联邦伙伴并设置情报与开放边境；2 天后窗口 origin.57“联盟的本质”让玩家选择联邦类型。
 Hidden origin.55 creates two federation partners and sets intel and open borders; two days later origin.57 lets the player choose the federation type.
 
 ## 剧情脉络 Story outline

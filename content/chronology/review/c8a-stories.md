@@ -308,3 +308,21 @@ Each `event-operation-*` card is the run of one espionage operation type: the st
 - **`event-operation-6300`** — 渗透 / Infiltration — **reviewed**. Operation target_seditionists (operations.txt:975-1046): 6300 → 6305 → 6310 → LAUNCH → 6315 (+1 d) → 6316 to the target (+5 d); failure random event 6320 → 6321.
 - **`event-operation-8000`** — 推进计划 / Following Up Leads — **reviewed**. Operation sleeper_cells (operations.txt:154-202): 8000 → 8001 → LAUNCH (+15 d) → 8002 (random cell type).
 - **`event-operation-8200`** — 搜寻目标 / Seeking Targets — **reviewed**. Operation diplomatic_incident (operations.txt:89-152): 8200 → 8205 → 8210 → LAUNCH (+15 d) → hidden 8220 → success 8230 / failure 8225.
+
+## Batch `b10_envoy` — Envoy flavour events (events/envoy_events.txt)
+
+Shared mechanism: the five-year random pulse (action.2211 from on_five_year_random_pulse_country) fires `on_five_year_random_pulse_country_negative_list` (common/on_actions/00_on_actions.txt:576-592; weights 10/20/10/20/20/20/10/20/20/10/20, total 180; the comment explains that on_actions check each event's trigger first and drop failing ones, so one event always fires if any can). envoy_events.4 and .15 are entries of the positive five-year pulse list (weights 50 and 5 of 2335, :499-501). Most envoy events share a 5400-day country cooldown `recent_envoy_event`.
+
+- **`event-envoy-events-3`** — 星海段子手 / A Contribution to Galactic Comedy — **reviewed**. Pool event envoy_events.3 (negative list, 20/180): faux-pas; options ignore / recall (modifier diplo_corps_is_a_joke 3600 d).
+- **`event-envoy-events-4`** — 精干星系外交 / Astute Galactic Diplomacy — **reviewed**. Positive pulse event envoy_events.4 (50/2335): respected-envoy modifier (3600 d).
+- **`event-envoy-events-7`** — 亡命鸳鸯 / Star-Crossed Lovers — **reviewed**. Pool event envoy_events.7 (20/180) with chain 8 → 9/10 → 11/12 or 13/14 (events 747-1426).
+- **`event-envoy-events-15`** — 奇异生物 / A Strange Creature — **reviewed**. Positive pulse event envoy_events.15 (5/2335): feline affection opinions + pet_collar specimen.
+- **`event-envoy-events-200`** — 说客 / Lobbyists — **reviewed**. Pool event envoy_events.200 (20/180): lobbyists, energy bonus vs beholden modifier (10 y) / recall.
+- **`event-envoy-events-205`** — 大使的失足 / Missteps from an Ambassador — **reviewed**. Pool event envoy_events.205 (10/180): local-norm violation.
+- **`event-envoy-events-210`** — 入乡随俗 / Gone Native — **reviewed**. Pool event envoy_events.210 (20/180): envoy goes native; keep / recall.
+- **`event-envoy-events-215`** — 药物滥用 / Substance Abuse — **reviewed**. Pool event envoy_events.215 (20/180): substance abuse; fire (diplo_corps_lost_control) / recall (trait).
+- **`event-envoy-events-220`** — 受到冒犯 / Offense Taken — **reviewed**. Pool event envoy_events.220 (10/180): leaked recording; keep / recall.
+- **`event-envoy-events-225`** — 色事孽务 / A Salacious Affair — **reviewed**. Pool event envoy_events.225 (20/180): salacious affair; lift immunity / recall.
+- **`event-envoy-events-230`** — [Root.GetName]被捕 / [Root.GetName] Arrested — **reviewed**. envoy_events.230 from on_leader_assigned (OA:2457): arrested envoy.
+- **`event-envoy-events-16`** — 盟友间的争端 / Disputes Among Allies — **reviewed**. Federation centralisation flavour (hidden 16 → 17 (50%) → 18/19; events 1426-1700).
+- **`event-envoy-events-1001`** — 无礼的[envoy_source.GetAdj]特使 / Insulting [envoy_source.GetAdj] Envoy — **reviewed**. Pool event envoy_events.1001 → 1 → 2 (10/180; also used by operation_diplomatic_incident).

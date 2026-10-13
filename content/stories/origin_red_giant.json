@@ -54,7 +54,7 @@
     "en": "The two outcomes of the situation"
    },
    "note": {
-    "zh": "进度满1500 → 50“恒星新星”（坏结局）；进度降到0（失败）→ 60“恢复正常”（成功缓解）；二者12个月后都引向2160。",
+    "zh": "进度满1500 → 50“恒星新星”（坏结局）；进度降到0（失败）→ 60“恢复常态”（成功缓解）；二者12个月后都引向2160。",
     "en": "Progress reaching 1500 -> 50 Stellar Nova (the bad ending); progress falling to 0 -> 60 Return to Normal (the star is deflated); both lead to 2160 twelve months later (common/situations/13_infernal_situations.txt:148-165)."
    }
   },
@@ -114,13 +114,13 @@
   {
    "doc": "infernals.105",
    "kind": "review",
-   "zh": "项目“三角测量”共完成三次，依变量 red_giant_triangulation_progress 依次出现 105（第一次）、110（第二次）、115（第三次，完成）。",
+   "zh": "项目“三角定位亚空间干扰源”共完成三次，依变量 red_giant_triangulation_progress 依次出现 105（第一次）、110（第二次）、115（第三次，完成）。",
    "en": "The Triangulate Subspace Interference project completes three times: 105 (first), 110 (second), 115 (third, complete) by the variable red_giant_triangulation_progress (hidden 100, events/infernals_1_events.txt:1800-1915)."
   },
   {
    "doc": "infernals.95",
    "kind": "review",
-   "zh": "“恒星隧穿”：当调查进度≥8时由月度检查（隐藏85）以40%或60%概率触发，启用“三角测量”项目。",
+   "zh": "“恒星隧道”：当调查进度≥8时由月度检查（隐藏85）以40%或60%概率触发，启用“三角定位亚空间干扰源”项目。",
    "en": "Stellar Tunneling: when investigation progress is 8 or more the monthly check (hidden 85) rolls 40% or 60% to fire it, enabling the Triangulation project (events/infernals_1_events.txt:1574-1800)."
   },
   {

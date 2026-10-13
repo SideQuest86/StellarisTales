@@ -1,4 +1,4 @@
-# 克隆军团 / Clone Army
+# 克隆大军 / Clone Army
 
 - 分类 Category：起源 Origins · DLC：（核心/Humanoids 以外，按游戏文件未核对）· 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/clone_army_events.txt`、`common/inline_scripts/game_start/origin_clone_army.txt`、`common/special_projects/00_projects_3.txt`
@@ -16,7 +16,7 @@ Start setup (hidden clones.1-3) fixes the clone population rules; 1095 (+0-720) 
    **Homeworld Excavation**: clones.11 -> clones.12, which schedules clones.13 and clones.4.
 2. **历史的选择**：clones.13 的选项——不光彩线（14 → 15 公开道歉）或光荣线（16）。
    **Choice of history**: dishonourable line (14 -> 15) or honourable line (16).
-3. **克隆生育**：clones.4 → 项目“生物密码”→ clones.20 → 21 → 同时开放“克隆生育”（→ 22）与“克隆潜能”（→ 23）。
+3. **克隆生育**：clones.4 → 项目“生物编码密码”→ clones.20 → 21 → 同时开放“克隆复育”（→ 22）与“克隆潜能”（→ 23）。
    **Clone fertility**: clones.4 -> Bio-Code Cipher project -> 20 -> 21 -> fertility (22) and potential (23) projects.
 
 ## 分支与结局 Branches and outcomes

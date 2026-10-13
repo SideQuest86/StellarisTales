@@ -1,4 +1,4 @@
-# 后裔 / Scion
+# 先辈子弟 / Scion
 
 - 分类 Category：起源 Origins · DLC：Federations · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_1.txt:18-1436`、`common/solar_system_initializers/federations_initializers.txt`、`common/war_goals/00_war_goals.txt`、`common/on_actions/00_on_actions.txt`

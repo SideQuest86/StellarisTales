@@ -1,4 +1,4 @@
-# 硕果之盟 / Fruitful Partnership
+# 硕果协作 / Fruitful Partnership
 
 - 分类 Category：起源 Origins · DLC：Plantoids · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_5.txt:1-1300`、`common/special_projects/00_projects_plantoids.txt`、`common/on_actions/00_on_actions.txt`
@@ -7,7 +7,7 @@
 
 ## 如何开始 How it starts
 
-开局设置之后，origin.7000“天基生物”在 1800–3600 天后出现：启用项目“天基生物观察”，完成后 7005 收束。
+开局设置之后，origin.7000“缇扬奇”在 1800–3600 天后出现：启用项目“缇扬奇观测”，完成后 7005 收束。
 After game start origin.7000 appears 1800-3600 days later: it enables the Tiyanki Observation project, which ends in 7005.
 
 ## 剧情脉络 Story outline

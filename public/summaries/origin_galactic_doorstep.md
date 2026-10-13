@@ -1,4 +1,4 @@
-# 银河门前 / Galactic Doorstep
+# 繁星门阶 / Galactic Doorstep
 
 - 分类 Category：起源 Origins · DLC：Federations（星门）· 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_2.txt:9-783`、`common/archaeological_site_types`、`common/megastructures/05_gateways.txt`、`common/special_projects`
@@ -7,16 +7,16 @@
 
 ## 如何开始 How it starts
 
-开局隐藏事件 origin.1001 在母星系放置一座废弃星门，300（±30）天后触发 1000“有人敲门”。
+开局隐藏事件 origin.1001 在母星系放置一座废弃星门，300（±30）天后触发 1000“隔门有人”。
 At game start hidden origin.1001 places a ruined gateway in the home system and fires 1000 *Someone at the Door* after 300 (+0-30) days.
 
 ## 剧情脉络 Story outline
 
-1. **星门来客**：1000（资源奖励，随机四选一）→ 500 天后 1005（星门虫群出现）→ 约 1000 天后 1010（探测器坠落）→ 项目“仔细查看”。
+1. **星门来客**：1000（资源奖励，随机四选一）→ 500 天后 1005（星门虫群出现）→ 约 1000 天后 1010（探测器坠落）→ 项目“细致考察”。
    **Visitors**: 1000 (random resource reward) -> 1005 -> 1010 -> project A Closer Look.
-2. **遗址“星门所遣”**：项目完成后 1011 创建遗址并通知 1012；阶段 1100 → 1105 → 1110 → 1115 → 10 天后 1013“开启星门”。
+2. **遗址“星门发射之物”**：项目完成后 1011 创建遗址并通知 1012；阶段 1100 → 1105 → 1110 → 1115 → 10 天后 1013“打开大门”。
    **Site From Gateway Sent**: stages 1100-1115 -> 1013 ten days later.
-3. **星门炮**：项目“星门炮”→ 1015“等待游戏”→ 700 天后 1020“寄回原处”（获得星门启动科技）→ 约 360 天后随机反噬。
+3. **星门炮**：项目“星门大炮”→ 1015“静等比赛”→ 700 天后 1020“物归原主”（获得星门启动科技）→ 约 360 天后随机反噬。
    **Gateway Cannon**: project -> 1015 -> 1020 -> a random backlash 360 days later.
 
 ## 分支与结局 Branches and outcomes

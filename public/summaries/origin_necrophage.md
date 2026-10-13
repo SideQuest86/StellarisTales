@@ -1,4 +1,4 @@
-# 嗜尸者 / Necrophage
+# 食尸文化 / Necrophage
 
 - 分类 Category：起源 Origins · DLC：Necroids Species Pack · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/necroids_events_1.txt:1-1000`、`events/game_start.txt`（game_start.33）、`common/governments/civics/00_origins.txt:1807-1872`
@@ -25,4 +25,4 @@ No window at start. After about 3420 days a non-purifier empire sees necroids.2 
 ## 审阅记录 Review notes
 
 - 已核对 Checked：necroids.1–25 与 game_start 钩子。 Events necroids.1-25 and the start hook.
-- 更正 Corrections：该窗口原被误并入“共同点”，现归属嗜尸者。 The window had been absorbed into Common Ground; now attached here.
+- 更正 Corrections：该窗口原被误并入“共同点”，现归属食尸文化。 The window had been absorbed into Common Ground; now attached here.

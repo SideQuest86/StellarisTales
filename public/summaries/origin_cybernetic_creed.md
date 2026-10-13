@@ -7,7 +7,7 @@
 
 ## 如何开始 How it starts
 
-开局约 30 天后 machine_age.2150“教派”成形。之后每两年脉冲（隐藏 2200 → 2201）抽取一个小事件；采用义体传统时 machine_age.100 开启局势“融合会议”。
+开局约 30 天后 machine_age.2150“教派”成形。之后每两年脉冲（隐藏 2200 → 2201）抽取一个小事件；采用义体传统时 machine_age.100 开启局势“融合主教团”。
 About 30 days after start machine_age.2150 forms the Creeds. A two-year pulse (hidden 2200 -> 2201) draws small events; adopting the Cybernetics tradition fires machine_age.100, which starts the *Conclave of Fusion* situation.
 
 ## 剧情脉络 Story outline

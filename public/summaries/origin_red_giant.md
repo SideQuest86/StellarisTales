@@ -12,11 +12,11 @@ At game start infernals.10 makes the home star an unstable red giant and fires i
 
 ## 剧情脉络 Story outline
 
-1. **膨胀局势**：进度 0–1500 分五个阶段；阶段2 → 65（选择项目“保护母星”或“热能利用”），阶段3 → 70，阶段4 → 75。每月检查 85 → 调查进度≥8 时 95“恒星隧穿” → 项目“三角测量”三次 → 105 / 110 / 115。
+1. **膨胀局势**：进度 0–1500 分五个阶段；阶段2 → 65（选择项目“保护母星”或“热能利用”），阶段3 → 70，阶段4 → 75。每月检查 85 → 调查进度≥8 时 95“恒星隧道” → 项目“三角定位亚空间干扰源”三次 → 105 / 110 / 115。
    **Expansion situation**: five stages; stage 2 -> 65 (choose a project), stage 3 -> 70, stage 4 -> 75; monthly check 85 -> 95 *Stellar Tunneling* -> three triangulations 105 / 110 / 115.
-2. **结局**：进度满 → 50“恒星新星”（隐藏 9000–9002 为爆炸画面）→ 51；进度归零 → 60“恢复正常”；二者之后 12 个月出现 2160“危机的火花”。
+2. **结局**：进度满 → 50“恒星新星”（隐藏 9000–9002 为爆炸画面）→ 51；进度归零 → 60“恢复常态”；二者之后 12 个月出现 2160“危机火花”。
    **Ending**: full progress -> 50 Stellar Nova; progress 0 -> 60 Return to Normal; both lead to 2160 twelve months later.
-3. **露丝矿站**：第三次三角测量 115 生成矿站与守卫；击毁守卫 → 2151“神秘空间站”→ 项目“紧急异语学”（2125 外星谈判）或“登上空间站”（2115 登船队）→ 2130 / 2131 / 2135 → 24 个月后 2140“稳定的前景”→ 2145“达成稳定”。
+3. **露丝矿站**：第三次三角测量 115 生成矿站与守卫；击毁守卫 → 2151“神秘开采站”→ 项目“紧急外星语言学研究”（2125 外星谈判）或“登陆开采站”（2115 登船队）→ 2130 / 2131 / 2135 → 24 个月后 2140“稳定可能”→ 2145“达成稳定”。
    **The lusus station**: 115 spawns a mining station and guards; destroying them -> 2151 -> project Parlay (2125) or Board the Station (2115) -> 2130 / 2131 / 2135 -> 2140 -> 2145.
 
 ## 分支与结局 Branches and outcomes

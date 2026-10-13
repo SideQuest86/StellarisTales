@@ -7,12 +7,12 @@
 
 ## 如何开始 How it starts
 
-开局隐藏事件 origin.5700 建立宗主与封臣关系；玩家封臣在 1 天后看到 5703“来讯”并选择专长（5705，三个信息窗口 5706 / 5707 / 5708 回到该窗口）。
+开局隐藏事件 origin.5700 建立宗主与封臣关系；玩家封臣在 1 天后看到 5703“信号传输接入”并选择专长（5705，三个信息窗口 5706 / 5707 / 5708 回到该窗口）。
 At game start hidden origin.5700 sets up the overlord and vassals; a player vassal sees 5703 one day later and chooses a specialisation (5705, three information windows 5706-5708 return to it).
 
 ## 剧情脉络 Story outline
 
-1. **宗主视角（隐藏）**：35 年后每五年脉冲检查 5715 → 1800 至 10925 天后 5720：宗主领袖逝世，通知封臣 5725“有疑问的继承” → 360–2160 天后 5730 帝国解体。
+1. **宗主视角（隐藏）**：35 年后每五年脉冲检查 5715 → 1800 至 10925 天后 5720：宗主领袖逝世，通知封臣 5725“受质疑的继位” → 360–2160 天后 5730 帝国解体。
    **Overlord side (hidden)**: after 35 years hidden 5715 -> 5720 (the ruler dies; vassals see 5725) -> 5730 the empire dissolves.
 2. **解体之后**：封臣收到 5735“破碎的帝国”；AI 封臣 15–60 天后 5740 → 新宗主邀请 5745 / 5750 / 5755 / 5760。
    **After**: vassals see 5735; AI vassals get an offer from a new overlord (5745 / 5750 / 5755 / 5760).

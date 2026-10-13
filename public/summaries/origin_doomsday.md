@@ -1,4 +1,4 @@
-# 末日将至 / Doomsday
+# 末日将临 / Doomsday
 
 - 分类 Category：起源 Origins · DLC：Federations / Nomads（登船部分）· 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_1.txt:2128-2935`、`events/nomads_events.txt`（nomads.4710）
@@ -7,7 +7,7 @@
 
 ## 如何开始 How it starts
 
-开局隐藏事件 origin.60 把首都标记为“注定毁灭”（修正 doomsday_1），5 天后出现 61“终结将至”。
+开局隐藏事件 origin.60 把首都标记为“注定毁灭”（修正 doomsday_1），5 天后出现 61“终焉将临”。
 Hidden origin.60 marks the capital as doomed (modifier doomsday_1); 5 days later 61 *The End is Nigh* appears.
 
 ## 剧情脉络 Story outline

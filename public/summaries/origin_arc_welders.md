@@ -1,4 +1,4 @@
-# 电弧焊工 / Arc Welders
+# 电弧焊机 / Arc Welders
 
 - 分类 Category：起源 Origins · DLC：Machine Age · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_machine_age.txt:2300-2420`、`common/megastructures/17_orbital_arc_furnace.txt`、`common/governments/civics/00_origins.txt:941-981`
@@ -12,8 +12,8 @@ No narrative opening: the origin card gives an extra arc furnace limit and fixed
 
 ## 剧情脉络 Story outline
 
-1. 勘测到理想星系 → machine_age.3400“为熔炉提供燃料”（开启事件链 ideal_furnace_chain）。 Surveying an ideal system fires 3400 and starts the chain.
-2. 建成轨道电弧熔炉 → machine_age.3405“焊接地平线”。 Building the orbital arc furnace fires 3405.
+1. 勘测到理想星系 → machine_age.3400“熔炉的燃料”（开启事件链 ideal_furnace_chain）。 Surveying an ideal system fires 3400 and starts the chain.
+2. 建成轨道电弧熔炉 → machine_age.3405“铸就视野”。 Building the orbital arc furnace fires 3405.
 
 ## 分支与结局 Branches and outcomes
 

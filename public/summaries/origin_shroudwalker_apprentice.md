@@ -1,4 +1,4 @@
-# 虚境之师 / Teachers of the Shroud
+# 虚境导师 / Teachers of the Shroud
 
 - 分类 Category：起源 Origins · DLC：Overlord（虚境行者飞地）· 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_3.txt:1209-1540`、`common/on_actions/00_on_actions.txt`、`events/overlord_enclaves_events.txt`
@@ -14,7 +14,7 @@ Hidden origin.5600 introduces the Shroudwalker enclave, shroud-forms some planet
 
 - 5605 → 教程（飞地外交）。 5605 -> the enclave diplomacy tutorial.
 - 舰队首次进入飞地星系 → 5620“欢迎学徒”。 First entry into the enclave system -> 5620.
-- 建成虚境信标 → 5625“信标已点亮”。 Shroud Beacon built -> 5625.
+- 建成虚境信标 → 5625“点亮信标”。 Shroud Beacon built -> 5625.
 - enclave.4243 为每月检查的飞地警告。 enclave.4243: a monthly enclave warning.
 
 ## 分支与结局 Branches and outcomes

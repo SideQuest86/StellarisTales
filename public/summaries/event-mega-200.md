@@ -9,7 +9,7 @@
 
 ## 剧情脉络 Story outline
 
-**生态大都会：[星球] 被包覆（200）**：城市层层叠叠覆盖整个地壳；唯一选项“令人印象深刻”。随后（distar.198 “死海”）：若该星球曾被改造成无海景观，则“意识之海”的后果由 distar.198 作为次入口展示。/ The only option is “Impressive.” The compile also lists distar.198 “Dead Sea” as a secondary entry for a terraformed ocean world.
+**生态大都会：[星球] 被包覆（200）**：城市层层叠叠覆盖整个地壳；唯一选项“令人印象深刻”。同一决定还会向本国发出 distar.201（“活星球”的接口事件，其隐藏事件 distar.197 在满足条件时触发 **distar.198 死海**：被改造成无海景观后，星球表面的“意识之海”消失）。/ The only option is “Impressive.” The same decision also fires distar.201, a port for the Living Planet whose hidden distar.197 can fire distar.198 “Dead Sea” (the sea of consciousness is lost).
 
 ## 分支与结局 Branches and outcomes
 

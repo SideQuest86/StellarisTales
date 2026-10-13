@@ -1,0 +1,34 @@
+{
+ "id": "event-envoy-events-7",
+ "groups": [
+  {
+   "kind": "exclusive",
+   "members": [
+    "envoy_events.11",
+    "envoy_events.13"
+   ],
+   "label": {
+    "zh": "特种行动成败",
+    "en": "Special-ops outcome"
+   },
+   "note": {
+    "zh": "对方的特种部队63天后成功（67%）或失败（33%），均带修正。",
+    "en": "The other side's special forces succeed (67%) or fail (33%) after 63 days, both modified."
+   }
+  }
+ ],
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "Opus 5.5 (c8a-stories review agent, resumed)",
+  "scope": {
+   "zh": "触发、冷却、选项与效果已核对。",
+   "en": "The trigger, cooldown, options and effects were checked."
+  },
+  "sources": [
+   "events/envoy_events.txt:747-1426",
+   "common/on_actions/00_on_actions.txt:576-592"
+  ],
+  "guide": "public/summaries/event-envoy-events-7.md"
+ }
+}

@@ -1,4 +1,4 @@
-# 遗民 / Remnants
+# 复国孑遗 / Remnants
 
 - 分类 Category：起源 Origins · DLC：Federations / Ancient Relics · 审阅 Reviewed 2026-10-13
 - 来源 Sources：`events/origin_events_3.txt:150-267`、`common/deposits/01_blocker_deposits.txt:1449`、`common/governments/civics/00_origins.txt:1875-1910`
@@ -12,7 +12,7 @@ No narrative opening: the card turns the homeworld into a relic world (pc_relic)
 
 ## 剧情脉络 Story outline
 
-- 清除首都的废弃拱廊 → origin.3100“已回收的缓存”（随机一项科技进度0.95）。 Clearing the ruined arcology -> 3100.
+- 清除首都的废弃拱廊 → origin.3100“发现贮藏”（随机一项科技进度0.95）。 Clearing the ruined arcology -> 3100.
 - 在附近预设的理想行星开始殖民 → origin.3101“殖民地遗迹”。 Colonising a nearby ideal planet -> 3101.
 
 ## 分支与结局 Branches and outcomes

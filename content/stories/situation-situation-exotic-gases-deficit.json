@@ -1,0 +1,22 @@
+{
+ "id": "situation-situation-exotic-gases-deficit",
+ "category": "society",
+ "review": {
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c7b-society (resumed)",
+  "scope": {
+   "zh": "奇异气体短缺：情境及2个事件。",
+   "en": "Exotic Gas Shortages: the situation and 2 events."
+  },
+  "sources": [
+   "common/situations/02_deficit_situations.txt:2133",
+   "events/situation_deficit_events.txt",
+   "common/scripted_effects/first_contact_dlc_effects.txt:2960-3020"
+  ],
+  "uncertain": [
+   "情境的开始由引擎判定，脚本里看不到。 / The start of the situation is engine-side and not visible in the scripts."
+  ],
+  "guide": "public/summaries/situation-situation-exotic-gases-deficit.md"
+ }
+}

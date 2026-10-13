@@ -1,4 +1,4 @@
-# 强制重置 / Hard Reset (Unplugged)
+# 强制重置 / Hard Reset
 
 - 分类 Category：起源 Origins · 审阅 Reviewed 2026-10-12
 - 来源 Sources：`events/unplugged_events.txt:1-4437`、`common/special_projects/04_projects_unplugged.txt:1-99`、`common/archaeological_site_types/12_unplugged_arc_sites.txt:1-249`、`common/situations/12_unplugged_situations.txt`、`common/scripted_effects/unplugged_effects.txt`、`common/scripted_effects/01_start_of_game_effects.txt:4651`（开局生成机械帝国）、`common/on_actions/00_on_actions.txt`
