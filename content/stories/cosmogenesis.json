@@ -1,0 +1,54 @@
+{
+ "id": "cosmogenesis",
+ "bridges": [
+  {
+   "from": "crisis.7100",
+   "to": "crisis.7105",
+   "conditional": true,
+   "label": {
+    "zh": "满足科技条件并达到第二级",
+    "en": "Meet the technology requirement and reach level two"
+   },
+   "evidence": "00_crisis_levels.txt crisis_cosmogenesis_level_2 requires tech_cosmogenesis_crisis_1 and4000 currency, on_unlock7105"
+  },
+  {
+   "from": "crisis.7105",
+   "to": "crisis.7110",
+   "conditional": true,
+   "label": {
+    "zh": "满足科技条件并达到第三级",
+    "en": "Meet the technology requirement and reach level three"
+   },
+   "evidence": "00_crisis_levels.txt level_3 requires tech_cosmogenesis_crisis_2 and10000 currency, on_unlock7110"
+  },
+  {
+   "from": "crisis.7110",
+   "to": "crisis.7115",
+   "conditional": true,
+   "label": {
+    "zh": "未中止计划，达到第四级",
+    "en": "Continue the project and reach level four"
+   },
+   "evidence": "00_crisis_levels.txt level_4 requires tech_cosmogenesis_crisis_3,22000 currency,NOT cosmogenesis_aborted; on_unlock7115"
+  },
+  {
+   "from": "crisis.7115",
+   "to": "crisis.7120",
+   "conditional": true,
+   "label": {
+    "zh": "完成两项应用无限论文并满足第五级条件",
+    "en": "Complete two applied-infinity theses and meet level-five requirements"
+   },
+   "evidence": "00_crisis_levels.txt level_5 requires tech_cosmogenesis_crisis_4,60000 currency,applied_infinity_thesis>=2,NOT cosmogenesis_aborted,is_subject=no; on_unlock7120"
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

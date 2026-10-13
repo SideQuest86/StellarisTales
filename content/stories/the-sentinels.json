@@ -1,0 +1,78 @@
+{
+ "id": "the-sentinels",
+ "bridges": [
+  {
+   "from": "ancrel.4055",
+   "to": "ancrel.4057",
+   "conditional": true,
+   "label": {
+    "zh": "击退哨兵",
+    "en": "Repel the Sentinels"
+   },
+   "evidence": "on_colony_defenders_win -> 4057 requires sentinels_invade_country",
+   "choice": "ancrel.4055.a"
+  },
+  {
+   "from": "ancrel.4055",
+   "to": "ancrel.4063",
+   "conditional": true,
+   "label": {
+    "zh": "防守失败",
+    "en": "Defenders defeated"
+   },
+   "evidence": "on_colony_defenders_lose -> 4063 requires sentinels_invade_country",
+   "choice": "ancrel.4055.a"
+  },
+  {
+   "from": "ancrel.4060",
+   "to": "ancrel.4057",
+   "conditional": true,
+   "label": {
+    "zh": "击退哨兵",
+    "en": "Repel the Sentinels"
+   },
+   "evidence": "on_colony_defenders_win -> 4057 requires sentinels_invade_country",
+   "choice": "ancrel.4060.a"
+  },
+  {
+   "from": "ancrel.4060",
+   "to": "ancrel.4063",
+   "conditional": true,
+   "label": {
+    "zh": "防守失败",
+    "en": "Defenders defeated"
+   },
+   "evidence": "on_colony_defenders_lose -> 4063 requires sentinels_invade_country",
+   "choice": "ancrel.4060.a"
+  },
+  {
+   "from": "ancrel.4063",
+   "to": "ancrel.4064",
+   "conditional": true,
+   "label": {
+    "zh": "反攻解放行星",
+    "en": "Liberate the planet"
+   },
+   "evidence": "on_colony_attackers_win -> 4064 requires sentinels_won and Sentinel controller"
+  },
+  {
+   "from": "ancrel.4063",
+   "to": "ancrel.4075",
+   "conditional": true,
+   "label": {
+    "zh": "哨兵驱逐居民",
+    "en": "Sentinels displace inhabitants"
+   },
+   "evidence": "on_pop_purged -> 4075 checks Sentinel controller and sentinels_planet"
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

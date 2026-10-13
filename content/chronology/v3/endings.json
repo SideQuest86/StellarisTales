@@ -1,0 +1,7 @@
+{
+  "grand_archive.8500": {
+    "label":{"zh":"交易结局 · 寻宝之旅在此结束","en":"Deal ending · Your treasure hunt ends here"},
+    "note":{"zh":"你交出了星图，收下报酬与舰船。此路线不会继续进入奈斯的宝库。","en":"You surrendered the chart in exchange for payment and a ship. This route does not continue into Ness's hoard."},
+    "evidence":"8500 removes r_celestial_chart_4, grants energy and Black Needle Eye, deletes opposing fleet, returns fleets home and replaces NESS_GRAND_ARCHIVE with HOARDED. No subsequent event or hoard project is enabled."
+  }
+}

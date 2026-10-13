@@ -1,0 +1,84 @@
+{
+ "id": "prethoryn-scourge",
+ "bridges": [
+  {
+   "from": "crisis.11",
+   "to": "crisis.13",
+   "conditional": true,
+   "label": {
+    "zh": "回声逐渐接近银河外缘",
+    "en": "The echoes approach the rim"
+   },
+   "evidence": "hidden10 sets prethoryn_subspace_echoes;12 MTTH600 months ->13"
+  },
+  {
+   "from": "crisis.13",
+   "to": "crisis.15",
+   "conditional": true,
+   "label": {
+    "zh": "传来新的亚空间信号",
+    "en": "A new subspace transmission"
+   },
+   "evidence": "12 sets prethoryn_approaching_rim;14 MTTH120 months ->15"
+  },
+  {
+   "from": "crisis.16",
+   "to": "crisis.18",
+   "conditional": true,
+   "label": {
+    "zh": "索林先锋抵达",
+    "en": "The Prethoryn vanguard arrives"
+   },
+   "evidence": "14 sets prethoryn_transmission;17 MTTH30 months ->18"
+  },
+  {
+   "from": "crisis.18",
+   "to": "crisis.20",
+   "conditional": true,
+   "label": {
+    "zh": "主力舰队随后抵达",
+    "en": "The main invasion follows"
+   },
+   "evidence": "17 schedules19 after400-600days;19 announces20"
+  },
+  {
+   "from": "crisis.20",
+   "to": "crisis.51",
+   "conditional": true,
+   "label": {
+    "zh": "虫群势力大幅扩张后",
+    "en": "After the swarm expands sufficiently"
+   },
+   "evidence": "50 requires prethoryn_main_invasion and endgame_crisis_large_size_trigger ->51"
+  },
+  {
+   "from": "crisis.20",
+   "to": "crisis.101",
+   "conditional": true,
+   "label": {
+    "zh": "战争中发现受伤的虫后",
+    "en": "An injured queen is found during the war"
+   },
+   "evidence": "100 requires main invasion and a swarm-owned system; MTTH820months ->101"
+  },
+  {
+   "from": "crisis.20",
+   "to": "crisis.211",
+   "conditional": true,
+   "label": {
+    "zh": "清除虫群的殖民地与舰队",
+    "en": "Eliminate the swarm colonies and fleets"
+   },
+   "evidence": "208 annual callback removes swarm with <20ships and no owned/controlled planets;210 country destruction ->211"
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

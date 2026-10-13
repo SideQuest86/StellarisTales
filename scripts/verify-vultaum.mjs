@@ -1,0 +1,37 @@
+import assert from 'node:assert/strict';
+import {pathToFileURL} from 'node:url';
+import {writeFile} from 'node:fs/promises';
+const {chromium}=await import(pathToFileURL(process.env.STELLARIS_PLAYWRIGHT_PATH).href);
+const browser=await chromium.launch({channel:'chrome',headless:true});
+try{
+ const page=await browser.newPage({viewport:{width:1600,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(`${process.env.STELLARIS_PREVIEW_URL||'http://127.0.0.1:4173/'}#story=vultaum&chapter=ancrel.10100`,{waitUntil:'networkidle'});
+ assert.equal(await page.locator('[data-reading]').count(),4);
+ assert.equal(await page.locator('.flow-node').count(),7);
+ assert.equal(await page.locator('.flow-connections path').count(),8);
+ assert.equal(await page.locator('.reading-next').count(),0);
+ await page.waitForFunction(()=>Number(getComputedStyle(document.querySelector('#flow-surface')).opacity)>.9);
+ await page.screenshot({path:'verification/v3-vultaum-map.png',fullPage:true});
+ await page.locator('[data-reading="2"]').click();
+ assert.equal(await page.locator('.choice-button').count(),2);
+ await page.locator('.choice-button').nth(1).click();
+ await page.locator('.choice-response:not([hidden]) [data-chapter="special_projects:VULTAUM_SECRETS_2"]').click();
+ await page.locator('.continuation [data-chapter="ancrel.10110"]').click();
+ await page.locator('.choice-button').first().click();
+ const results=page.locator('.choice-response:not([hidden]) [data-chapter]');
+ assert.equal(await results.count(),3);
+ assert.match(await page.locator('.choice-response:not([hidden])').innerText(),/50%/);
+ assert.match(await page.locator('.choice-response:not([hidden])').innerText(),/科学家/);
+ await page.locator('.choice-button').nth(1).click();
+ assert.equal(await results.count(),2);
+ assert.equal(await page.locator('.choice-response:not([hidden]) [data-chapter="ancrel.10111"]').count(),0);
+ await results.last().click();
+ await page.waitForURL(/ancrel.10113/);
+ const choicePaths=page.locator('.flow-connections path[data-flow-choice]:not([data-flow-choice=""])');
+ assert.equal(await choicePaths.locator('xpath=self::*[contains(@class,"traversed")]').count(),2);
+ const geometry=await choicePaths.evaluateAll(paths=>paths.map(path=>path.getAttribute('d')));
+ assert.equal(new Set(geometry).size,geometry.length);
+ assert.deepEqual(errors,[]);
+ await writeFile('verification/v3-vultaum.json',JSON.stringify({fourExclusivePerspectives:true,optionalProjectReachable:true,suppressionOutcomes:3,publicationOutcomes:2,errors},null,2));
+ console.log('Vultaum optional research branches passed.');
+}finally{await browser.close();}

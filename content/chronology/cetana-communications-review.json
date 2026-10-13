@@ -1,0 +1,170 @@
+{
+  "status": "Integrated into dialogues.json with explicit context profiles; browser core routes verified. Remaining full-topic and visual acceptance pending.",
+  "event": "crisis.8060",
+  "evidence": [
+    "events/machine_age_crisis_events.txt crisis.8060",
+    "common/scripted_triggers/02_scripted_triggers_machine_age.txt has_synth_queen_dialogue_flag"
+  ],
+  "states": {
+    "start": [
+      "crisis.8060.war",
+      "crisis.8060.a",
+      "crisis.8060.b",
+      "crisis.8060.c",
+      "crisis.8060.d",
+      "crisis.8060.e",
+      "crisis.8060.f",
+      "crisis.8060.g",
+      "crisis.8060.h",
+      "crisis.8060.i",
+      "crisis.8060.j",
+      "crisis.8060.k",
+      "crisis.8060.l",
+      "crisis.8060.z"
+    ],
+    "war": [
+      "crisis.8060.war.a",
+      "crisis.8060.war.b"
+    ],
+    "war_confirm": [
+      "crisis.8060.war.1.a"
+    ],
+    "end": [],
+    "1": [
+      "crisis.8060.1.a",
+      "crisis.8060.1.b"
+    ],
+    "2": [
+      "crisis.8060.2.a",
+      "crisis.8060.2.2"
+    ],
+    "3": [
+      "crisis.8060.3.a",
+      "crisis.8060.3.b"
+    ],
+    "4": [
+      "crisis.8060.4.a",
+      "crisis.8060.4.b"
+    ],
+    "5": [
+      "crisis.8060.5.a"
+    ],
+    "6": [
+      "crisis.8060.6.a",
+      "crisis.8060.6.b"
+    ],
+    "7": [
+      "crisis.8060.7.a"
+    ],
+    "8": [
+      "crisis.8060.8.a",
+      "crisis.8060.8.b"
+    ],
+    "9": [
+      "crisis.8060.9.a",
+      "crisis.8060.9.b"
+    ],
+    "10": [
+      "crisis.8060.10.a",
+      "crisis.8060.10.b"
+    ],
+    "11": [
+      "crisis.8060.11.a",
+      "crisis.8060.11.b"
+    ],
+    "12": [
+      "crisis.8060.12.a"
+    ],
+    "8_followup": [
+      "crisis.8060.8.1.a",
+      "crisis.8060.8.1.b",
+      "crisis.8060.8.1.c"
+    ]
+  },
+  "transitions": {
+    "crisis.8060.war": "war",
+    "crisis.8060.war.a": "war_confirm",
+    "crisis.8060.war.b": "start",
+    "crisis.8060.war.1.a": "end",
+    "crisis.8060.z": "end",
+    "crisis.8060.a": "1",
+    "crisis.8060.1.a": "start",
+    "crisis.8060.1.b": "start",
+    "crisis.8060.b": "2",
+    "crisis.8060.2.a": "start",
+    "crisis.8060.2.2": "start",
+    "crisis.8060.c": "3",
+    "crisis.8060.3.a": "start",
+    "crisis.8060.3.b": "start",
+    "crisis.8060.d": "4",
+    "crisis.8060.4.a": "start",
+    "crisis.8060.4.b": "start",
+    "crisis.8060.e": "5",
+    "crisis.8060.5.a": "start",
+    "crisis.8060.f": "6",
+    "crisis.8060.6.a": "start",
+    "crisis.8060.6.b": "start",
+    "crisis.8060.g": "7",
+    "crisis.8060.7.a": "start",
+    "crisis.8060.h": "8",
+    "crisis.8060.8.a": "8_followup",
+    "crisis.8060.8.b": "8_followup",
+    "crisis.8060.i": "9",
+    "crisis.8060.9.a": "start",
+    "crisis.8060.9.b": "start",
+    "crisis.8060.j": "10",
+    "crisis.8060.10.a": "start",
+    "crisis.8060.10.b": "start",
+    "crisis.8060.k": "11",
+    "crisis.8060.11.a": "start",
+    "crisis.8060.11.b": "start",
+    "crisis.8060.l": "12",
+    "crisis.8060.12.a": "start",
+    "crisis.8060.8.1.a": "start",
+    "crisis.8060.8.1.b": "start",
+    "crisis.8060.8.1.c": "start"
+  },
+  "defaultTopics": [
+    "crisis.8060.a",
+    "crisis.8060.b",
+    "crisis.8060.c",
+    "crisis.8060.z"
+  ],
+  "conditionalTopics": {
+    "crisis.8060.d": "synth_queen_question_blew_up_a_planet",
+    "crisis.8060.e": "synth_queen_question_opened_the_databank",
+    "crisis.8060.f": "synth_queen_question_random_demand_pops",
+    "crisis.8060.g": "synth_queen_question_random_demand_system",
+    "crisis.8060.h": "synth_queen_question_zarqlan_knowledge",
+    "crisis.8060.i": "synth_queen_question_gave_zarqlans_head",
+    "crisis.8060.j": "synth_queen_question_found_cryo_pods",
+    "crisis.8060.k": "synth_queen_question_found_the_frozen_dreamer",
+    "crisis.8060.l": "synth_queen_question_nanite_apprentice"
+  },
+  "additionalConditions": {
+    "crisis.8060.war": [
+      "synth_queen_cannot_yeet_the_fleets",
+      "protected_from_queen_storm",
+      "synth_queen_researched_first_storm_project"
+    ],
+    "crisis.8060.8.b": [
+      "breached_shroud"
+    ],
+    "crisis.8060.8.1.c": [
+      "breached_shroud"
+    ],
+    "crisis.8060.l": [
+      "synth_queen trust > 49"
+    ]
+  },
+  "unreachableOptions": {
+    "crisis.8060.5.b": "Requires has_synth_queen_dialogue_flag=no and crisis.8060.5.flag=yes; helper includes this same flag."
+  },
+  "implementationNotes": [
+    "Topics d-l clear their topic-availability flag on completing replies; a-c remain repeatable. Opinion flags prevent repeating trust rewards.",
+    "8.b grants synth_queen_can_contact_the_animator_of_clay; 8.a does not. Both lead to 8_followup.",
+    "z can call shroud_forged.700 only with breached_shroud, shroud_forged origin, animator access, no End of Cycle covenant, no traitor flag and no previous animator contact.",
+    "Do not expose every conditional topic as if available in a default playthrough. Implement context gates before activating these states.",
+    "Preserve original bilingual responses. War exits must preserve real8158 follow-up."
+  ]
+}

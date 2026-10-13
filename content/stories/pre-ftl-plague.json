@@ -1,0 +1,39 @@
+{
+ "id": "pre-ftl-plague",
+ "legacy": {
+  "situationConfig": {
+   "id": "pre-ftl-plague",
+   "entry": "preftl.2001",
+   "definition": "situations:situation_pre_ftl_plague",
+   "gates": [
+    {
+     "event": "preftl.2002",
+     "trigger": "current_situation_approach",
+     "setter": "set_situation_approach",
+     "progress": 35
+    },
+    {
+     "event": "preftl.2003",
+     "trigger": "has_country_flag",
+     "setter": "set_country_flag",
+     "progress": 70
+    },
+    {
+     "event": "preftl.2005",
+     "trigger": "has_country_flag",
+     "setter": "set_country_flag",
+     "progress": 100
+    }
+   ]
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

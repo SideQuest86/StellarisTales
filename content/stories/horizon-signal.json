@@ -1,0 +1,223 @@
+{
+ "id": "horizon-signal",
+ "bridges": [
+  {
+   "from": "akx.9101",
+   "to": "akx.9200",
+   "choice": "akx.9101.a.notspiritual",
+   "conditional": true,
+   "label": {
+    "zh": "探索时发现信使",
+    "en": "Discover the messenger"
+   },
+   "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9300",
+   "choice": "akx.9101.a.notspiritual",
+   "conditional": true,
+   "label": {
+    "zh": "探索时遇见会合",
+    "en": "Encounter the rendezvous"
+   },
+   "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9400",
+   "choice": "akx.9101.a.notspiritual",
+   "conditional": true,
+   "label": {
+    "zh": "观察前超光速文明",
+    "en": "Observe a pre-FTL civilization"
+   },
+   "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9500",
+   "choice": "akx.9101.a.notspiritual",
+   "conditional": true,
+   "label": {
+    "zh": "殖民后出现异象",
+    "en": "An anomaly after colonization"
+   },
+   "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9600",
+   "choice": "akx.9101.a.notspiritual",
+   "conditional": true,
+   "label": {
+    "zh": "造访无限神机",
+    "en": "Visit the Infinity Machine"
+   },
+   "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.10000",
+   "choice": "akx.9101.a.notspiritual",
+   "conditional": true,
+   "label": {
+    "zh": "研究相关科技并建成欧米伽同调装置",
+    "en": "Research the technologies and build the Omega Alignment"
+   },
+   "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9200",
+   "choice": "akx.9101.a.spiritual",
+   "conditional": true,
+   "label": {
+    "zh": "探索时发现信使",
+    "en": "Discover the messenger"
+   },
+   "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9300",
+   "choice": "akx.9101.a.spiritual",
+   "conditional": true,
+   "label": {
+    "zh": "探索时遇见会合",
+    "en": "Encounter the rendezvous"
+   },
+   "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9400",
+   "choice": "akx.9101.a.spiritual",
+   "conditional": true,
+   "label": {
+    "zh": "观察前超光速文明",
+    "en": "Observe a pre-FTL civilization"
+   },
+   "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9500",
+   "choice": "akx.9101.a.spiritual",
+   "conditional": true,
+   "label": {
+    "zh": "殖民后出现异象",
+    "en": "An anomaly after colonization"
+   },
+   "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9600",
+   "choice": "akx.9101.a.spiritual",
+   "conditional": true,
+   "label": {
+    "zh": "造访无限神机",
+    "en": "Visit the Infinity Machine"
+   },
+   "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.10000",
+   "choice": "akx.9101.a.spiritual",
+   "conditional": true,
+   "label": {
+    "zh": "研究相关科技并建成欧米伽同调装置",
+    "en": "Research the technologies and build the Omega Alignment"
+   },
+   "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9200",
+   "choice": "akx.9101.b",
+   "conditional": true,
+   "label": {
+    "zh": "探索时发现信使",
+    "en": "Discover the messenger"
+   },
+   "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9300",
+   "choice": "akx.9101.b",
+   "conditional": true,
+   "label": {
+    "zh": "探索时遇见会合",
+    "en": "Encounter the rendezvous"
+   },
+   "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9400",
+   "choice": "akx.9101.b",
+   "conditional": true,
+   "label": {
+    "zh": "观察前超光速文明",
+    "en": "Observe a pre-FTL civilization"
+   },
+   "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9500",
+   "choice": "akx.9101.b",
+   "conditional": true,
+   "label": {
+    "zh": "殖民后出现异象",
+    "en": "An anomaly after colonization"
+   },
+   "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.9600",
+   "choice": "akx.9101.b",
+   "conditional": true,
+   "label": {
+    "zh": "造访无限神机",
+    "en": "Visit the Infinity Machine"
+   },
+   "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+  },
+  {
+   "from": "akx.9101",
+   "to": "akx.10000",
+   "choice": "akx.9101.b",
+   "conditional": true,
+   "label": {
+    "zh": "研究相关科技并建成欧米伽同调装置",
+    "en": "Research the technologies and build the Omega Alignment"
+   },
+   "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+  },
+  {
+   "from": "akx.10010",
+   "to": "akx.10030",
+   "choice": "akx.10010.b",
+   "conditional": true,
+   "label": {
+    "zh": "击败显现的时之螶",
+    "en": "Defeat the manifested Worm"
+   },
+   "evidence": "10010.b creates worm_enemy; on_fleet_destroyed_perp ->10030 requires that enemy"
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

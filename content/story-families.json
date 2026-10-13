@@ -1,90 +1,463 @@
 [
   {
     "id": "horizon-signal",
-    "title": { "zh": "视界信号", "en": "The Horizon Signal" },
+    "title": {
+      "zh": "视界信号",
+      "en": "The Horizon Signal"
+    },
     "category": "exploration",
-    "sources": ["events/horizonsignal_events.txt"],
+    "sources": [
+      "events/horizonsignal_events.txt"
+    ],
     "start": "akx.9000"
   },
   {
     "id": "war-in-heaven",
-    "title": { "zh": "天堂之战", "en": "War in Heaven" },
+    "title": {
+      "zh": "天堂之战",
+      "en": "War in Heaven"
+    },
     "category": "crisis",
-    "sources": ["events/war_in_heaven_events.txt"]
+    "sources": [
+      "events/war_in_heaven_events.txt"
+    ]
   },
   {
     "id": "gray-tempest",
-    "title": { "zh": "L 星团的秘密", "en": "Secrets of the L-Cluster" },
+    "title": {
+      "zh": "L 星团的秘密",
+      "en": "Secrets of the L-Cluster"
+    },
     "category": "crisis",
-    "sources": ["events/gray_goo_events.txt"]
+    "sources": [
+      "events/gray_goo_events.txt"
+    ]
   },
   {
     "id": "the-shroud",
-    "title": { "zh": "虚境的低语", "en": "Whispers of the Shroud" },
+    "title": {
+      "zh": "虚境的低语",
+      "en": "Whispers of the Shroud"
+    },
     "category": "stories",
-    "sources": ["events/utopia_shroud_events.txt"]
+    "sources": [
+      "events/utopia_shroud_events.txt"
+    ]
   },
   {
     "id": "prethoryn-scourge",
-    "title": { "zh": "索林原虫：银河之外", "en": "The Prethoryn Scourge" },
+    "title": {
+      "zh": "索林原虫：银河之外",
+      "en": "The Prethoryn Scourge"
+    },
     "category": "crisis",
-    "sources": ["events/crisis_events_1.txt"],
+    "sources": [
+      "events/crisis_events_1.txt"
+    ],
     "start": "crisis.11"
   },
   {
     "id": "unbidden",
-    "title": { "zh": "破界者：异次元入侵", "en": "The Unbidden" },
+    "title": {
+      "zh": "破界者：异次元入侵",
+      "en": "The Unbidden"
+    },
     "category": "crisis",
-    "sources": ["events/crisis_events_2.txt"],
+    "sources": [
+      "events/crisis_events_2.txt"
+    ],
     "start": "crisis.1007"
   },
   {
     "id": "contingency",
-    "title": { "zh": "肃正协议", "en": "The Contingency" },
+    "title": {
+      "zh": "肃正协议",
+      "en": "The Contingency"
+    },
     "category": "crisis",
-    "sources": ["events/crisis_events_3.txt"],
+    "sources": [
+      "events/crisis_events_3.txt"
+    ],
     "start": "crisis.2010"
   },
   {
     "id": "cosmogenesis",
-    "title": { "zh": "宇宙创生", "en": "Cosmogenesis" },
+    "title": {
+      "zh": "宇宙创生",
+      "en": "Cosmogenesis"
+    },
     "category": "crisis",
-    "sources": ["events/machine_age_crisis_events.txt"]
+    "ranges": [{"namespace":"crisis","min":7000,"max":7999}],
+    "start":"crisis.7100"
+  },
+  {
+    "id":"cetana",
+    "title":{"zh":"合成女王：塞塔娜","en":"Cetana, the Synthetic Queen"},
+    "category":"crisis",
+    "ranges":[
+      {"namespace":"crisis","min":8000,"max":10999,"source":"events/machine_age_crisis_events.txt"},
+      {"namespace":"crisis","min":20000,"max":25000,"source":"events/machine_age_crisis_events.txt"}
+    ],
+    "members":["situations:situation_synth_queen_doomclock","situations:situation_synth_queen_player_facing"],
+    "start":"crisis.8035"
   },
   {
     "id": "vultaum",
-    "title": { "zh": "沃陶姆恒星议会", "en": "The Vultaum Star Assembly" },
+    "title": {
+      "zh": "沃陶姆恒星议会",
+      "en": "The Vultaum Star Assembly"
+    },
     "category": "precursors",
-    "ranges": [{ "namespace": "precursor", "min": 1, "max": 499 }],
-    "start": "precursor.1"
+    "ranges": [
+      {
+        "namespace": "precursor",
+        "min": 1,
+        "max": 199
+      }
+    ],
+    "start": "precursor.1",
+    "members": [
+      "ancrel.10100",
+      "special_projects:VULTAUM_SECRETS"
+    ]
   },
   {
     "id": "yuht",
-    "title": { "zh": "尤特帝国", "en": "The Yuht Empire" },
+    "title": {
+      "zh": "尤特帝国",
+      "en": "The Yuht Empire"
+    },
     "category": "precursors",
-    "ranges": [{ "namespace": "precursor", "min": 500, "max": 999 }],
-    "start": "precursor.500"
+    "ranges": [
+      {
+        "namespace": "precursor",
+        "min": 500,
+        "max": 999
+      }
+    ],
+    "start": "precursor.500",
+    "members": [
+      "ancrel.10050",
+      "special_projects:YUHT_SECRETS"
+    ]
   },
   {
     "id": "first-league",
-    "title": { "zh": "第一联盟", "en": "The First League" },
+    "title": {
+      "zh": "第一联盟",
+      "en": "The First League"
+    },
     "category": "precursors",
-    "ranges": [{ "namespace": "precursor", "min": 1000, "max": 1499 }],
-    "start": "precursor.1000"
+    "ranges": [
+      {
+        "namespace": "precursor",
+        "min": 1000,
+        "max": 1499
+      }
+    ],
+    "start": "precursor.1000",
+    "members": [
+      "ancrel.10200",
+      "special_projects:LEAGUE_SECRETS"
+    ]
   },
   {
     "id": "irassian",
-    "title": { "zh": "伊瑞森协约国", "en": "The Irassian Concordat" },
+    "title": {
+      "zh": "伊瑞森协约国",
+      "en": "The Irassian Concordat"
+    },
     "category": "precursors",
-    "ranges": [{ "namespace": "precursor", "min": 1500, "max": 1999 }],
-    "start": "precursor.1500"
+    "ranges": [
+      {
+        "namespace": "precursor",
+        "min": 1500,
+        "max": 1999
+      }
+    ],
+    "start": "precursor.1500",
+    "members": [
+      "ancrel.9001",
+      "special_projects:IRASSIAN_SECRETS"
+    ]
   },
   {
     "id": "cybrex",
-    "title": { "zh": "赛博勒克斯", "en": "The Cybrex" },
+    "title": {
+      "zh": "赛博勒克斯",
+      "en": "The Cybrex"
+    },
     "category": "precursors",
-    "members": ["ancrel.10250"],
-    "ranges": [{ "namespace": "precursor", "min": 2000, "max": 2499 }],
+    "members": [
+      "ancrel.10250",
+      "special_projects:CYBREX_SECRETS"
+    ],
+    "ranges": [
+      {
+        "namespace": "precursor",
+        "min": 2000,
+        "max": 2499
+      }
+    ],
     "start": "precursor.2000"
+  },
+  {
+    "id": "precursor-assistance",
+    "title": {
+      "zh": "先驱者：遗失的线索",
+      "en": "Precursors: Lost Clues"
+    },
+    "category": "precursors",
+    "ranges": [
+      {
+        "namespace": "precursor",
+        "min": 200,
+        "max": 499
+      }
+    ],
+    "start": "precursor.301"
+  },
+  {
+    "id": "baol",
+    "title": {
+      "zh": "最后的巴奥",
+      "en": "The Last Baol"
+    },
+    "category": "precursors",
+    "start": "ancrel.2000",
+    "ranges": [
+      {
+        "namespace": "ancrel",
+        "min": 2000,
+        "max": 2024
+      }
+    ],
+    "prefixes": [
+      "archaeological_site_types:baol_",
+      "archaeological_site_types:grunur_",
+      "special_projects:BAOL_"
+    ],
+    "members": [
+      "special_projects:THE_LAST_BAOL",
+      "ancrel.10300"
+    ]
+  },
+  {
+    "id": "zroni",
+    "title": {
+      "zh": "泽珞族",
+      "en": "The Zroni"
+    },
+    "category": "precursors",
+    "start": "ancrel.1",
+    "ranges": [
+      {
+        "namespace": "ancrel",
+        "min": 1,
+        "max": 19
+      }
+    ],
+    "prefixes": [
+      "archaeological_site_types:zroni_"
+    ],
+    "members": [
+      "special_projects:ZRONI_SECRETS",
+      "ancrel.10350"
+    ]
+  },
+  {
+    "id": "infinity-machine",
+    "title": {
+      "zh": "无限神机",
+      "en": "The Infinity Machine"
+    },
+    "category": "leviathans",
+    "start": "leviathans.1030",
+    "ranges": [
+      {
+        "namespace": "leviathans",
+        "min": 1030,
+        "max": 1069
+      }
+    ],
+    "prefixes": [
+      "special_projects:TECHNOSPHERE_"
+    ],
+    "members": [
+      "event_chains:technosphere_chain"
+    ]
+  },
+  {
+    "id": "curators",
+    "title": {
+      "zh": "策展人",
+      "en": "The Curators"
+    },
+    "category": "leviathans",
+    "start": "leviathans.502",
+    "ranges": [
+      {
+        "namespace": "leviathans",
+        "min": 500,
+        "max": 600
+      },
+      {
+        "namespace": "leviathans",
+        "min": 4000,
+        "max": 4117
+      }
+    ],
+    "members": [
+      "event_chains:curator_poi_chain"
+    ]
+  },
+  {
+    "id": "the-oracle",
+    "title": {
+      "zh": "神谕",
+      "en": "The Oracle"
+    },
+    "category": "precursors",
+    "start": "ancrel.4031",
+    "ranges": [
+      {
+        "namespace": "ancrel",
+        "min": 4031,
+        "max": 4039
+      }
+    ],
+    "members": [
+      "archaeological_site_types:oracle_digsite"
+    ]
+  },
+  {
+    "id": "the-sentinels",
+    "title": {
+      "zh": "哨兵",
+      "en": "The Sentinels"
+    },
+    "category": "precursors",
+    "start": "ancrel.4051",
+    "ranges": [
+      {
+        "namespace": "ancrel",
+        "min": 4051,
+        "max": 4077
+      }
+    ],
+    "members": [
+      "archaeological_site_types:sentinels_digsite"
+    ]
+  },
+  {
+    "id": "galactic-nemesis",
+    "title": {
+      "zh": "星海天罚",
+      "en": "Galactic Nemesis"
+    },
+    "category": "crisis",
+    "sources": [
+      "events/nemesis_crisis_events.txt"
+    ],
+    "start": "crisis.4100"
+  },
+  {
+    "id": "behemoth-fury",
+    "title": {
+      "zh": "巨兽之怒",
+      "en": "Behemoth Fury"
+    },
+    "category": "crisis",
+    "sources": [
+      "events/biogenesis_crisis_events.txt"
+    ]
+  },
+  {
+    "id": "defenders-of-the-galaxy",
+    "title": {
+      "zh": "星河卫士",
+      "en": "Defender of the Galaxy"
+    },
+    "category": "crisis",
+    "sources": [
+      "events/ambition_events.txt"
+    ],
+    "start": "ambition.100"
+  },
+  {
+    "id": "pre-ftl-ages",
+    "title": {
+      "zh": "文明的年代",
+      "en": "Ages of Civilization"
+    },
+    "category": "society",
+    "ranges": [
+      {
+        "namespace": "preftl",
+        "min": 0,
+        "max": 1999
+      }
+    ],
+    "members": [
+      "situations:pre_ftl_tech_progress_situation"
+    ],
+    "start": "situations:pre_ftl_tech_progress_situation"
+  },
+  {
+    "id": "pre-ftl-plague",
+    "title": {
+      "zh": "动物传染病",
+      "en": "Zoonotic Plague"
+    },
+    "category": "society",
+    "ranges": [
+      {
+        "namespace": "preftl",
+        "min": 2000,
+        "max": 2099
+      }
+    ],
+    "members": [
+      "situations:situation_pre_ftl_plague"
+    ],
+    "start": "preftl.2001"
+  },
+  {
+    "id": "pre-ftl-singularity",
+    "title": {
+      "zh": "有机奇点",
+      "en": "Organic Singularity"
+    },
+    "category": "society",
+    "ranges": [
+      {
+        "namespace": "preftl",
+        "min": 2100,
+        "max": 2166
+      }
+    ],
+    "members": [
+      "situations:situation_pre_ftl_singularity"
+    ],
+    "start": "preftl.2101"
+  },
+  {
+    "id": "pre-ftl-new-world-order",
+    "title": {
+      "zh": "新世界秩序",
+      "en": "New World Order"
+    },
+    "category": "society",
+    "ranges": [
+      {
+        "namespace": "preftl",
+        "min": 2167,
+        "max": 2205
+      }
+    ],
+    "members": [
+      "situations:situation_pre_ftl_nwo"
+    ],
+    "start": "preftl.2167"
   }
 ]

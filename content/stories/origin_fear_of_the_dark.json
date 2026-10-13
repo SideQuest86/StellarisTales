@@ -1,0 +1,154 @@
+{
+ "id": "origin_fear_of_the_dark",
+ "bridges": [
+  {
+   "from": "origin.6160",
+   "choice": "origin.6160.b",
+   "to": "origin.6275",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "宽恕后每360天检查：己方观测站仍在，且猎手已不再排外",
+    "en": "Checked every 360 days after mercy: your observation post remains and the hunters are no longer xenophobic"
+   },
+   "evidence": "6160.b schedules6270 days360 on the hunter country.6270 requires capital observation outpost owned by matching Fear of the Dark origin empire, matching fotd_hunter flag, and is_xenophobe=no; otherwise reschedules itself360days.6275 offers integration, independence, or xenophobe-only confinement; no later6280 chronology link."
+  },
+  {
+   "from": "origin-intro:origin_fear_of_the_dark",
+   "to": "origin.6145",
+   "conditional": true,
+   "label": {
+    "zh": "进入中期25天后；分离主义星球仍在境内且由原政权拥有",
+    "en": "25 days after midgame, if the separatist planet remains within your borders under its original government"
+   },
+   "evidence": "on_mid_game_pulse calls6140; its trigger and country filter require fotd_seperatist_planet@country within borders and its matching separatist owner; then6145 days25. This milestone is independent of annual6000 encounters."
+  },
+  {
+   "from": "origin.6150",
+   "choice": "origin.6150.a",
+   "to": "origin.6155",
+   "conditional": true,
+   "label": {
+    "zh": "派遣舰船首次进入目标星系",
+    "en": "Send a ship into the target system for the first time"
+   },
+   "evidence": "6150 creates hunter system and POI; on_entering_system_first_time calls6155, checking fotd_hunter@root.owner on a system planet."
+  },
+  {
+   "from": "origin.6155",
+   "to": "origin.6160",
+   "conditional": true,
+   "label": {
+    "zh": "勘察猎手的行星",
+    "en": "Survey the hunters' planet"
+   },
+   "evidence": "on_survey_planet calls6160, requiring from.has_carrier_flag=fotd_hunter@root.owner; entering alone does not trigger the encounter."
+  },
+  {
+   "from": "origin.6165",
+   "to": "origin.6170",
+   "conditional": true,
+   "label": {
+    "zh": "毁灭猎手13天后警报到来；仍拥有母星",
+    "en": "The alarm arrives 13 days after destroying the hunters, if you still own your homeworld"
+   },
+   "evidence": "6160.a independently schedules6165 days3 and6170 days13. Either6165 response precedes the scheduled alarm;6170 requires home_planet.owner=root. This is reading continuity, not a new timer started by6165."
+  },
+  {
+   "from": "situations:situation_last_gift",
+   "to": "origin.6185",
+   "label": {
+    "zh": "倒计时进入第二阶段，启动四项应对措施",
+    "en": "The countdown enters stage two: launch four countermeasures"
+   },
+   "conditional": false,
+   "evidence": "04_first_contact_dlc_situations: monthly base2, each completion flag subtracts0.5; stage2 opens6185; progress100 triggers6175. Projects400/350/390/430 days set four separate flags through6186–6189; monthly6180 requires all four and homeworld ownership. Project reading represents successful completion; no real-time simulation."
+  },
+  {
+   "from": "origin.6185",
+   "to": "origin.6175",
+   "label": {
+    "zh": "四项措施未能及时完成，倒计时达到100%",
+    "en": "The countdown reaches 100% before all four countermeasures succeed"
+   },
+   "conditional": true,
+   "evidence": "04_first_contact_dlc_situations: monthly base2, each completion flag subtracts0.5; stage2 opens6185; progress100 triggers6175. Projects400/350/390/430 days set four separate flags through6186–6189; monthly6180 requires all four and homeworld ownership. Project reading represents successful completion; no real-time simulation."
+  }
+ ],
+ "opening": {
+  "targets": [
+   "origin.6005",
+   "origin.6006",
+   "origin.6015",
+   "origin.6020"
+  ],
+  "label": {
+   "zh": "年度随机遭遇之一：分离主义者仍存在且未被激怒",
+   "en": "One possible annual encounter while the separatists remain and are not angered"
+  },
+  "evidence": "game_start initializes the separatist planet, not a fixed narrative event. on_yearly_pulse_country invokes6000; its weighted table permits6005/6006 (leader cooldown),6015,6020 (aid cooldown), or no event.6025 requires previous aid/exploitation and a player deficit.6140->6145 is midgame, not an opening."
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "special_projects:FOTD_DEFLECTING_FIELDS",
+    "special_projects:FOTD_REVERSED_THRUSTERS",
+    "special_projects:FOTD_COUNTER_SHOT",
+    "special_projects:FOTD_CONTROLLED_SHATTERING"
+   ],
+   "required": 4,
+   "gate": "origin.6180",
+   "label": {
+    "zh": "四项应对措施",
+    "en": "Four countermeasures"
+   },
+   "note": {
+    "zh": "四项措施全部完成且仍拥有母星；月度检查成功",
+    "en": "All four countermeasures complete and homeworld retained; monthly success check"
+   }
+  }
+ ],
+ "legacy": {
+  "situationConfig": {
+   "id": "origin_fear_of_the_dark",
+   "definition": "situations:situation_last_gift",
+   "stageSequence": [
+    {
+     "event": "origin.6185",
+     "label": {
+      "zh": "倒计时进入第二阶段，启动四项应对措施",
+      "en": "The countdown enters stage two: launch four countermeasures"
+     }
+    },
+    {
+     "event": "origin.6175",
+     "conditional": true,
+     "label": {
+      "zh": "四项措施未能及时完成，倒计时达到100%",
+      "en": "The countdown reaches 100% before all four countermeasures succeed"
+     }
+    }
+   ],
+   "parallelTasks": {
+    "tasks": [
+     "special_projects:FOTD_DEFLECTING_FIELDS",
+     "special_projects:FOTD_REVERSED_THRUSTERS",
+     "special_projects:FOTD_COUNTER_SHOT",
+     "special_projects:FOTD_CONTROLLED_SHATTERING"
+    ],
+    "outcome": "origin.6180"
+   },
+   "evidence": "04_first_contact_dlc_situations: monthly base2, each completion flag subtracts0.5; stage2 opens6185; progress100 triggers6175. Projects400/350/390/430 days set four separate flags through6186–6189; monthly6180 requires all four and homeworld ownership. Project reading represents successful completion; no real-time simulation."
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

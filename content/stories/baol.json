@@ -1,0 +1,24 @@
+{
+ "id": "baol",
+ "bridges": [
+  {
+   "from": "ancrel.2015",
+   "to": "special_projects:BAOL_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "研究巴奥的遗产",
+    "en": "Research the Baol legacy"
+   },
+   "evidence": "ancrel.2014 sets last_baol_system before scheduling 2015; artifact_baol_research uses that flag to enable BAOL_SECRETS"
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

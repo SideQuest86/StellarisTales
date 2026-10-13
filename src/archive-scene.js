@@ -60,6 +60,7 @@ export class ArchiveScene {
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.1;
     this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.autoUpdate = false;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.canvas = this.renderer.domElement;
     this.canvas.setAttribute(
@@ -222,6 +223,9 @@ export class ArchiveScene {
         `
         vec2 uv = vMapUv;
         float p = clamp(coverReveal, 0.0, 1.0);
+        if (p > 0.999) {
+          diffuseColor *= texture2D(map, uv);
+        } else {
         float diamond = abs(uv.x - 0.5) * 0.7 + abs(uv.y - 0.5) * 0.9;
         float facet = floor((uv.x + uv.y) * 9.0) / 9.0;
         float threshold = diamond * 0.75 + facet * 0.12;
@@ -239,6 +243,7 @@ export class ArchiveScene {
         float grain = fract(sin(dot(floor(uv * 900.0), vec2(12.9898,78.233))) * 43758.5453);
         vec3 frosted = softImage.rgb + (grain - 0.5) * 0.008 * (1.0 - clearArea);
         diffuseColor *= vec4(mix(frosted, texture2D(map, uv).rgb, clearArea), 1.0);
+        }
         `,
       );
     };
@@ -268,6 +273,10 @@ export class ArchiveScene {
     this.tint = new THREE.Color();
     this.raycaster = new THREE.Raycaster();
     this.pointer = new THREE.Vector2();
+    this.cameraDirection = new THREE.Vector3(-0.76, 0.44, 0.53).normalize();
+    this.cameraRight = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), this.cameraDirection).normalize();
+    this.cameraUp = new THREE.Vector3().crossVectors(this.cameraDirection, this.cameraRight).normalize();
+    this.cameraAim = new THREE.Vector3();
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(container);
     this.bind();
@@ -725,11 +734,16 @@ export class ArchiveScene {
       !!this.drag ||
       !!this.momentum;
     if (this.dirty || moving || now - this.lastDraw >= 32) {
+      if (moving || !this.lastShadow || now - this.lastShadow > 250) {
+        this.renderer.shadowMap.needsUpdate = true;
+        this.lastShadow = now;
+      }
       this.draw(now / 1000);
       this.lastDraw = now;
       this.dirty = false;
     }
-    if (!this.reduced() || moving)
+    const coveredByMobileReader = window.innerWidth <= 700 && this.detailTarget === 1;
+    if (moving || this.outgoing.length || (!this.reduced() && !coveredByMobileReader))
       this.frame = requestAnimationFrame((t) => this.tick(t));
   }
   draw(time) {
@@ -737,6 +751,8 @@ export class ArchiveScene {
       centerRow = Math.round(this.row.value);
     this.pulses = this.pulses.filter((p) => time - p.time < 3);
     let index = 0;
+    const newCells = this.cellCenterLane !== centerLane || this.cellCenterRow !== centerRow;
+    this.coverAtlas.flush(time * 1000);
     this.coverAtlas.frame++;
     const height = (row, lane) =>
       0.95 *
@@ -758,12 +774,14 @@ export class ArchiveScene {
       for (let r = -20; r <= 20; r++) {
         const lane = centerLane + l,
           row = centerRow + r;
+        if (newCells) {
         this.cells[index] = { lane, row };
         const column = this.columns[wrap(lane, this.columns.length)];
         const card = column.stories[wrap(row, column.stories.length)];
         const cover =
           card.image || column.stories.find((story) => story.image)?.image;
         this.coverUV.setXYZW(index, ...this.coverAtlas.get(cover));
+        }
         const selected =
           (lane === this.selection.lane && row === this.selection.row) ||
           this.outgoing.some((old) => old.lane === lane && old.row === row);
@@ -790,6 +808,7 @@ export class ArchiveScene {
         }
         index++;
       }
+    if (newCells) {
     for (let i = 0; i < this.cells.length; i++) {
       this.tint.set(COLORS[wrap(this.cells[i].lane, COLORS.length)]);
       this.body.setColorAt(i, this.tint);
@@ -797,11 +816,14 @@ export class ArchiveScene {
     }
     this.body.instanceColor.needsUpdate = true;
     this.faces.instanceColor.needsUpdate = true;
+    this.coverUV.needsUpdate = true;
+    this.cellCenterLane = centerLane;
+    this.cellCenterRow = centerRow;
+    }
     this.spines.instanceMatrix.needsUpdate = true;
     this.fasteners.instanceMatrix.needsUpdate = true;
     this.body.instanceMatrix.needsUpdate = true;
     this.faces.instanceMatrix.needsUpdate = true;
-    this.coverUV.needsUpdate = true;
     this.active.position.set(
       (this.selection.lane - this.lane.value) * SPACING,
       this.lift.value +
@@ -819,16 +841,14 @@ export class ArchiveScene {
     this.artFace.visible = true;
     const mobile = this.width < 700,
       d = this.detail.value;
-    const direction = new THREE.Vector3(-0.76, 0.44, 0.53).normalize(),
+    const direction = this.cameraDirection,
       distance = 85;
     const span = mobile
       ? Math.max(10.5, 8.2 / this.camera.aspect)
       : 10.2 - 1.2 * d;
-    const right = new THREE.Vector3()
-        .crossVectors(new THREE.Vector3(0, 1, 0), direction)
-        .normalize(),
-      up = new THREE.Vector3().crossVectors(direction, right).normalize();
-    const anchor = new THREE.Vector3(0, 0.8 + this.detail.value * 3.1, 0),
+    const right = this.cameraRight,
+      up = this.cameraUp;
+    const anchor = this.cameraAim.set(0, 0.8 + this.detail.value * 3.1, 0),
       px = mobile ? 0.5 : 0.29 - 0.04 * d,
       py = mobile ? 0.36 : 0.46;
     const aim = anchor
@@ -845,6 +865,27 @@ export class ArchiveScene {
     this.active.quaternion.identity().slerp(this.camera.quaternion, pose);
     this.active.scale.setScalar(1 + 0.12 * pose);
     this.active.position.addScaledVector(direction, 2.5 * pose);
+    this.flowElement ??= document.querySelector('#flow-surface');
+    if (this.flowElement && !this.flowElement.hidden) {
+      const ready = d > 0.97;
+      if (this.flowReady !== ready) {
+        this.flowReady = ready;
+        this.flowElement.style.setProperty('--card-ready', ready ? '1' : '0');
+      }
+      if (!mobile && d > 0.97) {
+        this.active.updateMatrixWorld(true);
+        this.flowCorners ??= [new THREE.Vector3(), new THREE.Vector3()];
+        const [a,b] = this.flowCorners;
+        a.set(-2.36,1.69,0.17).applyMatrix4(this.active.matrixWorld).project(this.camera);
+        b.set(2.36,-1.69,0.17).applyMatrix4(this.active.matrixWorld).project(this.camera);
+        const bounds = [Math.round((a.x+1)*this.width/2), Math.round((1-a.y)*this.height/2), Math.round((b.x-a.x)*this.width/2), Math.round((a.y-b.y)*this.height/2)];
+        const signature = bounds.join(',');
+        if (signature !== this.flowBounds) {
+          this.flowBounds = signature;
+          ['left','top','width','height'].forEach((key,i)=>this.flowElement.style.setProperty('--card-'+key,bounds[i]+'px'));
+        }
+      }
+    }
     this.renderer.render(this.scene, this.camera);
   }
   diagnostics() {

@@ -1,0 +1,75 @@
+{
+  "scope": "Headless Chrome, 1600x1000: settled reading, twenty zoom clicks, then three cross-dossier navigations with a 500ms minimum observation window. Frame intervals are browser scheduling, not GPU timing; handler duration excludes later paint. No universal FPS claim.",
+  "frameIntervals": {
+    "samples": 451,
+    "medianMs": 6.099999999999454,
+    "p95Ms": 12.100000000000364,
+    "maxMs": 18.199999999999818
+  },
+  "framesOver33ms": 0,
+  "zoomHandler": {
+    "samples": 20,
+    "medianMs": 0.4000000059604645,
+    "p95Ms": 0.7999999821186066,
+    "maxMs": 0.7999999821186066
+  },
+  "longTasksMs": [],
+  "retainedSvg": true,
+  "scene": {
+    "lane": 0,
+    "row": 13,
+    "story": "origin_treasure_hunters",
+    "detail": 0.999999999917239,
+    "selectedY": 5.172418194140645,
+    "coverReveal": 0.9999999881255874,
+    "imageCovers": 243,
+    "artTransition": 0.9999999887924154,
+    "closeup": true,
+    "outgoing": 0,
+    "breathing": true,
+    "instances": 287,
+    "drawCalls": 9,
+    "triangles": 65008,
+    "textureCount": 6,
+    "framePending": true
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 24,
+  "transitions": [
+    {
+      "story": "cybrex",
+      "chapter": "precursor.2005",
+      "settled": true,
+      "elapsedMs": 2374.5999999940395,
+      "maxFrameIntervalMs": 42.5,
+      "framesOver33ms": 2,
+      "longTasksMs": [],
+      "loafSupported": true,
+      "longAnimationFrames": []
+    },
+    {
+      "story": "cetana",
+      "chapter": "crisis.24115",
+      "settled": true,
+      "elapsedMs": 2396.899999976158,
+      "maxFrameIntervalMs": 42.5,
+      "framesOver33ms": 3,
+      "longTasksMs": [],
+      "loafSupported": true,
+      "longAnimationFrames": []
+    },
+    {
+      "story": "origin_treasure_hunters",
+      "chapter": "grand_archive.8580",
+      "settled": true,
+      "elapsedMs": 2395.0999999940395,
+      "maxFrameIntervalMs": 48.600000000000364,
+      "framesOver33ms": 5,
+      "longTasksMs": [],
+      "loafSupported": true,
+      "longAnimationFrames": []
+    }
+  ],
+  "errors": [],
+  "checkedAt": "2026-09-12T05:49:33.821Z"
+}

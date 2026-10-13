@@ -1,0 +1,234 @@
+{
+ "id": "contingency",
+ "bridges": [
+  {
+   "from": "crisis.2010",
+   "to": "crisis.2011",
+   "conditional": true,
+   "label": {
+    "zh": "拥有合成人时，出现异常",
+    "en": "Synthetic workers begin behaving strangely"
+   },
+   "evidence": "2005 schedules2006 at100-300days;2006 requires synthetic_workers/mechanical population and selects2011 OR2012"
+  },
+  {
+   "from": "crisis.2010",
+   "to": "crisis.2012",
+   "conditional": true,
+   "label": {
+    "zh": "拥有合成人时，出现异常",
+    "en": "Synthetic workers begin behaving strangely"
+   },
+   "evidence": "2005 schedules2006 at100-300days;2006 requires synthetic_workers/mechanical population and selects2011 OR2012"
+  },
+  {
+   "from": "crisis.2010",
+   "to": "crisis.2502",
+   "conditional": true,
+   "label": {
+    "zh": "机械智能的单元出现异常",
+    "en": "Machine intelligence units begin behaving strangely"
+   },
+   "evidence": "2005 schedules2500 at100-300days;2500 requires machine empire/machine units and selects2502 OR2503"
+  },
+  {
+   "from": "crisis.2010",
+   "to": "crisis.2503",
+   "conditional": true,
+   "label": {
+    "zh": "机械智能的单元出现异常",
+    "en": "Machine intelligence units begin behaving strangely"
+   },
+   "evidence": "2005 schedules2500 at100-300days;2500 requires machine empire/machine units and selects2502 OR2503"
+  },
+  {
+   "from": "crisis.2010",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "信号继续扩散",
+    "en": "The signal continues to spread"
+   },
+   "evidence": "2005 schedules2020 at700-900days even when local synthetic warnings are unavailable"
+  },
+  {
+   "from": "crisis.2011",
+   "to": "crisis.2015",
+   "conditional": true,
+   "label": {
+    "zh": "数月后，合成人开始失踪",
+    "en": "Months later, synthetics begin to disappear"
+   },
+   "evidence": "2005 schedules2007 at400-600days;2007 selects2015 OR2016"
+  },
+  {
+   "from": "crisis.2011",
+   "to": "crisis.2016",
+   "conditional": true,
+   "label": {
+    "zh": "数月后，合成人开始失踪",
+    "en": "Months later, synthetics begin to disappear"
+   },
+   "evidence": "2005 schedules2007 at400-600days;2007 selects2015 OR2016"
+  },
+  {
+   "from": "crisis.2012",
+   "to": "crisis.2015",
+   "conditional": true,
+   "label": {
+    "zh": "数月后，合成人开始失踪",
+    "en": "Months later, synthetics begin to disappear"
+   },
+   "evidence": "2005 schedules2007 at400-600days;2007 selects2015 OR2016"
+  },
+  {
+   "from": "crisis.2012",
+   "to": "crisis.2016",
+   "conditional": true,
+   "label": {
+    "zh": "数月后，合成人开始失踪",
+    "en": "Months later, synthetics begin to disappear"
+   },
+   "evidence": "2005 schedules2007 at400-600days;2007 selects2015 OR2016"
+  },
+  {
+   "from": "crisis.2015",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "信号继续扩散",
+    "en": "The signal continues to spread"
+   },
+   "evidence": "2005 schedules2020 at700-900days"
+  },
+  {
+   "from": "crisis.2016",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "信号继续扩散",
+    "en": "The signal continues to spread"
+   },
+   "evidence": "2005 schedules2020 at700-900days"
+  },
+  {
+   "from": "crisis.2502",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "信号继续扩散",
+    "en": "The signal continues to spread"
+   },
+   "evidence": "2005 schedules2020 at700-900days"
+  },
+  {
+   "from": "crisis.2503",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "信号继续扩散",
+    "en": "The signal continues to spread"
+   },
+   "evidence": "2005 schedules2020 at700-900days"
+  },
+  {
+   "from": "crisis.2020",
+   "to": "crisis.2021",
+   "conditional": true,
+   "label": {
+    "zh": "大召唤随后到来",
+    "en": "The summons follows"
+   },
+   "evidence": "2005 schedules2021 at1000-1200days"
+  },
+  {
+   "from": "crisis.2021",
+   "to": "crisis.2022",
+   "conditional": true,
+   "label": {
+    "zh": "肃正协议显现",
+    "en": "The Contingency reveals itself"
+   },
+   "evidence": "2005 schedules2022 at1400days"
+  },
+  {
+   "from": "crisis.2023",
+   "to": "crisis.2030",
+   "conditional": true,
+   "label": {
+    "zh": "首座肃正中心启动",
+    "en": "The first sterilization hub activates"
+   },
+   "evidence": "2005 schedules2024 at1450-1460days;2024 starts2025 ->2030"
+  },
+  {
+   "from": "crisis.2030",
+   "to": "crisis.2031",
+   "conditional": true,
+   "label": {
+    "zh": "第二座中心启动",
+    "en": "The second hub activates"
+   },
+   "evidence": "2024 schedules2026 at50-60days ->2031"
+  },
+  {
+   "from": "crisis.2031",
+   "to": "crisis.2032",
+   "conditional": true,
+   "label": {
+    "zh": "第三座中心启动",
+    "en": "The third hub activates"
+   },
+   "evidence": "2024 schedules2027 at100-110days ->2032"
+  },
+  {
+   "from": "crisis.2032",
+   "to": "crisis.2033",
+   "conditional": true,
+   "label": {
+    "zh": "第四座中心启动",
+    "en": "The fourth hub activates"
+   },
+   "evidence": "2024 schedules2028 at150-160days ->2033"
+  },
+  {
+   "from": "crisis.2033",
+   "to": "crisis.2037",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁机械星球",
+    "en": "Destroy a machine world"
+   },
+   "evidence": "machine world destruction effect emits2037 for world losses"
+  },
+  {
+   "from": "crisis.2037",
+   "to": "crisis.2036",
+   "conditional": true,
+   "label": {
+    "zh": "四座中心均被摧毁后",
+    "en": "After all four hubs have been destroyed"
+   },
+   "evidence": "00_scripted_effects.txt machine_worlds_destroyed=4 ->2035 ->2036"
+  },
+  {
+   "from": "crisis.2039",
+   "to": "crisis.2038",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁肃正之心后",
+    "en": "After destroying the Contingency core"
+   },
+   "evidence": "final machine-world destruction callback2046 announces2038"
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

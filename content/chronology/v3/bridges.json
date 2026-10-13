@@ -1,0 +1,2000 @@
+[
+  {
+    "from": "crisis.8280",
+    "choice": "crisis.8280.1.a",
+    "to": "crisis.8305",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "秘密行动 · 90–180天后特工来报，届时尚未开战",
+      "en": "Covert action · agent report after 90–180 days, provided war has not begun"
+    },
+    "evidence": "8280.1.a schedules8305 days90 random90;8305 trigger rejects synth_queen_war_started. Response adds player investigation score1 and unlocks population-demand dialogue flag."
+  },
+  {
+    "from": "crisis.9100",
+    "choice": "crisis.9100.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "已开启塞塔娜调查局势才开放；否则等待第二次演说",
+      "en": "Requires the Cetana investigation situation; otherwise wait for the second speech"
+    },
+    "evidence": "9100.a uppercase IF checks country_has_situation situation_synth_queen_player_facing before enabling the follow-up; else only displays waiting tooltip."
+  },
+  {
+    "from": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+    "to": "crisis.9105",
+    "annotate": true,
+    "label": {
+      "zh": "研究达到50% · 中期发现，并非完成",
+      "en": "Research reaches 50% · interim discovery, not completion"
+    },
+    "evidence": "THE_SYNTH_QUEENS_STORM_2 on_progress_50 dispatches9105; separate on_success dispatches9110."
+  },
+  {
+    "from": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+    "to": "crisis.9110",
+    "annotate": true,
+    "label": {
+      "zh": "研究完成 · 总计50000点物理学，采纳纳米科技传统减至25000",
+      "en": "Research complete · 50,000 physics total, reduced to 25,000 with Nanotech adoption"
+    },
+    "evidence": "Project cost base50000 subtract25000 when tr_nanotech_adopt; on_success9110."
+  },
+  {
+    "from": "crisis.9105",
+    "to": "crisis.9110",
+    "label": {
+      "zh": "继续同一项目至100% · 完成后获得风暴防护",
+      "en": "Continue the same project to 100% · completion grants storm protection"
+    },
+    "evidence": "9105 is the project's halfway notification; project on_success9110 sets protected_from_queen_storm in after. This bridge represents remaining research, not an immediate event call."
+  },
+  {
+    "from": "crisis.9110",
+    "to": "crisis.9115",
+    "annotate": true,
+    "label": {
+      "zh": "获得风暴防护 · 7天后女王来讯",
+      "en": "Storm protection acquired · the Queen contacts you after 7 days"
+    },
+    "evidence": "9110 after sets protected_from_queen_storm and schedules9115 days7."
+  },
+  {
+    "from": "crisis.8040",
+    "choice": "crisis.8040.4.a",
+    "to": "crisis.8046",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "先辈子弟且仍有指定宗主 · 7天后收到警告",
+      "en": "Scion with the designated overlord · warning after 7 days"
+    },
+    "evidence": "synth_queen_scion_warning sends8046 days7 only to playable origin_scion countries whose existing overlord has scion_master."
+  },
+  {
+    "from": "crisis.8040",
+    "choice": "crisis.8040.4.a",
+    "to": "crisis.8045",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "无符合条件的先辈子弟且无失落/觉醒帝国 · 360天后",
+      "en": "No qualifying Scion and no fallen/awakened empire · after 360 days"
+    },
+    "evidence": "synth_queen_scion_warning else calls synth_queen_fe_war; that effect only schedules8045 days360 in its no-FE else branch."
+  },
+  {
+    "from": "special_projects:THE_SYNTH_QUEENS_STORM",
+    "to": "crisis.9100",
+    "annotate": true,
+    "label": {
+      "zh": "完成10000点物理学研究 · 无需舰船赴现场",
+      "en": "Complete 10,000 physics research · no ship at a location required"
+    },
+    "evidence": "04_projects_machine_age.txt THE_SYNTH_QUEENS_STORM cost10000 physics_technology location=no requirements={} on_success9100; not fixed days."
+  },
+  {
+    "from": "grand_archive.8055",
+    "choice": "FASCINATING",
+    "to": "grand_archive.8075",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "可选展览支线：尚未提出档案馆计划，且未掌握银河档案学",
+      "en": "Optional exhibition: archive proposal not made and Galactic Archivism not researched"
+    },
+    "evidence": "8070 chooses8075 only without grand_archive_kickstart_proposed;8075 trigger also excludes tech_galactic_archivism. This branch is independent of the second capsule project."
+  },
+  {
+    "from": "grand_archive.8055",
+    "choice": "FASCINATING",
+    "to": "grand_archive.8076",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "可选展览支线：此前已提出档案馆计划",
+      "en": "Optional exhibition: archive proposal already made"
+    },
+    "evidence": "8070 dispatches8076 when grand_archive_kickstart_proposed is present;8076 opens the exhibition project."
+  },
+  {
+    "from": "grand_archive.8600",
+    "to": "grand_archive.8595",
+    "conditional": true,
+    "requiresVisited": [
+      "grand_archive.8590"
+    ],
+    "label": {
+      "zh": "审判路线后日谈：1800–3600天后",
+      "en": "Judgment epilogue: after 1800–3600 days"
+    },
+    "evidence": "8590.a schedules8595 days1800 random1800, later than8580's30day8600 finale. Only offer this reading continuation after the judgment scene was read; this is reading history, not a simulation of all game flags."
+  },
+  {
+    "from": "grand_archive.8585",
+    "to": "grand_archive.8600",
+    "conditional": false,
+    "label": {
+      "zh": "继续主线收尾（处置船长后第30天）",
+      "en": "Continue to the finale (30 days after deciding the captain's fate)"
+    },
+    "evidence": "8580 DISMISS schedules8585 in1day;8580 after independently schedules8600 in30days. Reading continuation after farewell, not a new game timer."
+  },
+  {
+    "from": "grand_archive.8590",
+    "to": "grand_archive.8595",
+    "choice": "grand_archive.8590.a",
+    "annotate": true,
+    "requiresVisited": [
+      "grand_archive.8600"
+    ],
+    "conditional": false,
+    "label": {
+      "zh": "远期后日谈：1800–3600天后（主线收尾在此前发生）",
+      "en": "Later epilogue: after 1800–3600 days (the main finale happens first)"
+    },
+    "evidence": "8590.a schedules8595 days1800 random1800.8580 after schedules8600 days30; this is not the immediately following scene."
+  },
+  {
+    "from": "grand_archive.8590",
+    "to": "grand_archive.8600",
+    "conditional": false,
+    "label": {
+      "zh": "先阅读主线收尾（处置船长后第30天）",
+      "en": "Read the main finale first (30 days after deciding the captain's fate)"
+    },
+    "evidence": "8580.d schedules8590 in1day;8580 after independently schedules8600 in30days, before8590.a's1800–3600day epilogue."
+  },
+  {
+    "from": "situations:situation_sabotage",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "on_fleet_destroyed_perp8540 matches black_needle_country/fleet and is_spawned_for origin country. Active situation_sabotage calls8555, which cleans flags, aborts situation and schedules8560 after1day. Combat can end sabotage early, not only after its progress outcome. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "from": "grand_archive.8400",
+    "to": "grand_archive.8405",
+    "conditional": true,
+    "label": {
+      "zh": "穿过星门，舰船首次进入藏宝星系",
+      "en": "Travel through the gateway and first enter the treasure system"
+    },
+    "evidence": "8400 creates ness_treasure_system_poi and links gateways; on_entering_system_first_time8405 checks matching target system, origin chain and POI, spawns final fleet and calls8410 after1day. Opening the gateway does not itself spawn the ambush."
+  },
+  {
+    "from": "special_projects:RESEARCH_GATEWAY_ACTIVATION_PROJECT",
+    "to": "grand_archive.8325",
+    "conditional": true,
+    "label": {
+      "zh": "研究完成星门激活科技后",
+      "en": "After completing research into Gateway Activation"
+    },
+    "evidence": "on_tech_increased8320 requires last_increased_tech=tech_gateway_activation and project active;8321 completes project, sets activate_gateway_from_tech, calls8325."
+  },
+  {
+    "from": "special_projects:ACTIVATE_GATEWAY_PROJECT",
+    "to": "grand_archive.8400",
+    "conditional": true,
+    "label": {
+      "zh": "完成对应星门的修复建造后",
+      "en": "After completing restoration of the marked gateway"
+    },
+    "evidence": "05_gateways gateway_ness_restored build_time720; on_build_complete checks Grand Archive DLC, builder origin, active ACTIVATE_GATEWAY_PROJECT and matching gateway flag, completes project and calls8400."
+  },
+  {
+    "from": "special_projects:ACTIVATE_GATEWAY_PROJECT_NOMADS",
+    "to": "grand_archive.8400",
+    "conditional": true,
+    "label": {
+      "zh": "游牧激活项目完成，并完成星门升级后",
+      "en": "After the nomadic activation project and gateway upgrade complete"
+    },
+    "evidence": "Nomadic project30days sets activating_ness_gate and upgrades ruined gateway. gateway_ness_restored.on_build_complete selects matching nomadic origin with flag, spawns treasure system and calls8400."
+  },
+  {
+    "from": "special_projects:GATEWAY_VOIDWORMS_KILL_PROJECT",
+    "to": "grand_archive.8315",
+    "conditional": true,
+    "label": {
+      "zh": "击败星门虚空虫后，尚未掌握星门激活科技",
+      "en": "After defeating the gateway voidworms, without Gateway Activation technology"
+    },
+    "evidence": "on_fleet_destroyed_perp8305 requires voidworms_treasure_hunters and gateway_voidworms fleet flag; completes kill project then branches on tech_gateway_activation. Missing tech calls8315."
+  },
+  {
+    "from": "special_projects:GATEWAY_VOIDWORMS_KILL_PROJECT",
+    "to": "grand_archive.8325",
+    "conditional": true,
+    "label": {
+      "zh": "击败星门虚空虫后，已有激活科技但星门尚未修复",
+      "en": "After defeating the gateway voidworms, with activation technology but the gateway still unrestored"
+    },
+    "evidence": "8305 with tech_gateway_activation checks target system for gateway_ness_restored; absent calls8325, which only starts once and requires tagged gateway."
+  },
+  {
+    "from": "special_projects:GATEWAY_VOIDWORMS_KILL_PROJECT",
+    "to": "grand_archive.8400",
+    "conditional": true,
+    "label": {
+      "zh": "击败星门虚空虫后，已有激活科技且目标星门已修复",
+      "en": "After defeating the gateway voidworms, with activation technology and the target gateway already restored"
+    },
+    "evidence": "8305 with tech_gateway_activation and gateway_ness_restored in target system calls8400 directly. These three branches are alternatives, not consecutive stages."
+  },
+  {
+    "from": "grand_archive.8285",
+    "to": "grand_archive.8300",
+    "conditional": true,
+    "label": {
+      "zh": "舰船首次进入星图标出的星门星系",
+      "en": "A ship first enters the gateway system marked on the chart"
+    },
+    "evidence": "8285 spawns gateway_to_ness_treasure_system and tags ruined gateway. on_entering_system_first_time calls8300 requiring the matching gateway POI; creates hostile voidworm encounter and GATEWAY_VOIDWORMS_KILL_PROJECT. Not an automatic thirty-day followup to8285."
+  },
+  {
+    "from": "grand_archive.8245",
+    "choice": "CLOSE_COMMUNICATIONS",
+    "to": "grand_archive.8265",
+    "conditional": true,
+    "label": {
+      "zh": "结束通讯并交战后，伊纳克斯的舰船被瘫痪",
+      "en": "After closing communications and engaging, Captain Inax's ship is disabled"
+    },
+    "evidence": "8245 close calls8250 hostile fleet setup. on_ship_disabled8260 checks captain_inax_ship and resolves origin country by is_in_combat_with flag, then8264 deletes fleet and calls8265. Ordinary dialog-only questions do not start this combat.8265 opens CHART_PIECE_3_PROJECT."
+  },
+  {
+    "from": "grand_archive.8230",
+    "choice": "grand_archive.8230.a",
+    "to": "grand_archive.8236",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "发掘结束一天后，藏身星系中没有己方舰队",
+      "en": "One day after excavation, if none of your fleets is in the shelter system"
+    },
+    "evidence": "8230.a schedules8235 days1;8235 selects8236 if no fleet controlled by root in smeegibb_system, otherwise8241."
+  },
+  {
+    "from": "grand_archive.8230",
+    "choice": "grand_archive.8230.a",
+    "to": "grand_archive.8241",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "发掘结束一天后，己方舰队已在藏身星系",
+      "en": "One day after excavation, if your fleet is already in the shelter system"
+    },
+    "evidence": "8235 fleet-presence branch directly calls8241 instead of8236; no return trip notification when already present."
+  },
+  {
+    "from": "grand_archive.8236",
+    "to": "grand_archive.8241",
+    "conditional": true,
+    "label": {
+      "zh": "派遣舰队返回藏身星系调查",
+      "en": "Send a fleet back to investigate the shelter system"
+    },
+    "evidence": "8235 creates smeegibb_shelter_system_poi.2; on_entering_system_fleet8240 checks matching POI and calls8241.8236 notification alone does not spawn the encounter."
+  },
+  {
+    "from": "grand_archive.8135",
+    "to": "grand_archive.8200",
+    "conditional": true,
+    "label": {
+      "zh": "勘察斯米吉卜的藏身星球，或取得该星系",
+      "en": "Survey Smeegibb's shelter planet, or gain its system"
+    },
+    "evidence": "8135 spawns shelter system and upgrades chart. on_survey_planet8201/on_system_gained8202 dispatch8200, requiring smeegibb_shelter flag and matching shelter POI;8200 then schedules8205 after1day."
+  },
+  {
+    "from": "special_projects:BLACK_NEEDLE_BASE_BOMBARD",
+    "to": "grand_archive.8103",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "轰炸进度25%且援军尚未出现",
+      "en": "At 25% bombardment progress, if reinforcements have not yet appeared"
+    },
+    "evidence": "BLACK_NEEDLE_BASE_BOMBARD.on_progress_25 calls8103;8103 requires NOT reinforcement_fleet_spawned and spawns flagged reinforcements."
+  },
+  {
+    "from": "special_projects:BLACK_NEEDLE_BASE_BOMBARD",
+    "to": "grand_archive.8105",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "轰炸项目完成后；中途可能遭遇援军",
+      "en": "After bombardment completes; reinforcements may intervene along the way"
+    },
+    "evidence": "Bombard project on_success calls8105, separate from25% reinforcement notification. Killing reinforcements aborts this project and starts replacement through8104."
+  },
+  {
+    "from": "grand_archive.8103",
+    "to": "special_projects:BLACK_NEEDLE_BASE_BOMBARD_REINFORCEMENTS_KILLED",
+    "conditional": true,
+    "label": {
+      "zh": "击败黑针援军后继续轰炸",
+      "en": "Continue bombardment after defeating the Black Needle reinforcements"
+    },
+    "evidence": "on_fleet_destroyed_perp calls8104 requiring black_needle_reinforcement_fleet@root; aborts original bombard and starts replacement90day project requiring1000fleet power instead of2000."
+  },
+  {
+    "from": "grand_archive.8045",
+    "to": "special_projects:TREASURE_HUNTERS_CHART_PIECE_2_PROJECT",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "勘察碎裂世界后打捞星图片；已勘察则立即开放",
+      "en": "Recover the chart fragment after surveying the shattered world; available immediately if already surveyed"
+    },
+    "evidence": "8045 opens project when shattered_ytterite_world surveyed, otherwise adds exploration POI.8051 survey and8052 system-gained dispatch8050, which requires the POI and enables the same project. Project takes180days using constructor/arkship and calls8055."
+  },
+  {
+    "from": "grand_archive.8060",
+    "to": "grand_archive.8100",
+    "conditional": true,
+    "label": {
+      "zh": "勘察黑针基地行星，或取得该星系",
+      "en": "Survey the Black Needle base planet, or gain its system"
+    },
+    "evidence": "8060 spawns black_needle_base_system and upgrades chart;8101 survey or8102 system-gained dispatch8100, requiring d_black_needle_base and matching black_needle_base_system_poi. Arrival alone does not trigger the base decision."
+  },
+  {
+    "from": "grand_archive.8025",
+    "choice": "CLOSE_COMMUNICATIONS",
+    "to": "grand_archive.8045",
+    "conditional": true,
+    "label": {
+      "zh": "结束通讯并交战后，黑针号被瘫痪",
+      "en": "After closing communications and engaging, the Black Needle is disabled"
+    },
+    "evidence": "8025 CLOSE_COMMUNICATIONS schedules8030 after1day, which sets the flagged fleet hostile. on_ship_disabled invokes8040 only for captain_hoo_ship;8044 resolves the origin country associated with is_in_combat_with, removes fleet and calls8045. Other empires may disable it too. Question options are dialog-only and do not independently trigger the battle."
+  },
+  {
+    "from": "grand_archive.8015",
+    "to": "grand_archive.8020",
+    "conditional": true,
+    "label": {
+      "zh": "舰船首次进入星图标出的目标星系",
+      "en": "A ship first enters the target system marked on the star chart"
+    },
+    "evidence": "8005 spawns first hidden system and schedules8015 after1day.00_on_actions on_entering_system_first_time calls8020 requiring matching treasure_hunters_hidden_system_poi.1 and origin chain. Announcement does not automatically trigger combat."
+  },
+  {
+    "from": "origin.6160",
+    "choice": "origin.6160.b",
+    "to": "origin.6275",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "宽恕后每360天检查：己方观测站仍在，且猎手已不再排外",
+      "en": "Checked every 360 days after mercy: your observation post remains and the hunters are no longer xenophobic"
+    },
+    "evidence": "6160.b schedules6270 days360 on the hunter country.6270 requires capital observation outpost owned by matching Fear of the Dark origin empire, matching fotd_hunter flag, and is_xenophobe=no; otherwise reschedules itself360days.6275 offers integration, independence, or xenophobe-only confinement; no later6280 chronology link."
+  },
+  {
+    "from": "origin-intro:origin_fear_of_the_dark",
+    "to": "origin.6145",
+    "conditional": true,
+    "label": {
+      "zh": "进入中期25天后；分离主义星球仍在境内且由原政权拥有",
+      "en": "25 days after midgame, if the separatist planet remains within your borders under its original government"
+    },
+    "evidence": "on_mid_game_pulse calls6140; its trigger and country filter require fotd_seperatist_planet@country within borders and its matching separatist owner; then6145 days25. This milestone is independent of annual6000 encounters."
+  },
+  {
+    "from": "origin.6150",
+    "choice": "origin.6150.a",
+    "to": "origin.6155",
+    "conditional": true,
+    "label": {
+      "zh": "派遣舰船首次进入目标星系",
+      "en": "Send a ship into the target system for the first time"
+    },
+    "evidence": "6150 creates hunter system and POI; on_entering_system_first_time calls6155, checking fotd_hunter@root.owner on a system planet."
+  },
+  {
+    "from": "origin.6155",
+    "to": "origin.6160",
+    "conditional": true,
+    "label": {
+      "zh": "勘察猎手的行星",
+      "en": "Survey the hunters' planet"
+    },
+    "evidence": "on_survey_planet calls6160, requiring from.has_carrier_flag=fotd_hunter@root.owner; entering alone does not trigger the encounter."
+  },
+  {
+    "from": "origin.6165",
+    "to": "origin.6170",
+    "conditional": true,
+    "label": {
+      "zh": "毁灭猎手13天后警报到来；仍拥有母星",
+      "en": "The alarm arrives 13 days after destroying the hunters, if you still own your homeworld"
+    },
+    "evidence": "6160.a independently schedules6165 days3 and6170 days13. Either6165 response precedes the scheduled alarm;6170 requires home_planet.owner=root. This is reading continuity, not a new timer started by6165."
+  },
+  {
+    "from": "origin.1020",
+    "to": "origin.1050",
+    "conditional": true,
+    "label": {
+      "zh": "修复母星星门；需启用银河典范、由玩家完成，且尚未发现星门人物",
+      "en": "Restore the home gateway; requires Galactic Paragons, player completion, and no previously discovered gateway paragon"
+    },
+    "evidence": "1020 grants gateway activation technology. common/megastructures/05_gateways.txt gateway_restored.on_build_complete calls1050 inside has_paragon_dlc/exists from/from.is_ai=no/NOT gateway_dude_found guard, outside random_list.1050 additionally requires Galactic Doorstep and doorstep_gateway@root flag. Repair is independent of the delayed1021 random disaster; this is a conditional reading bridge, not an automatic event dispatch."
+  },
+  {
+    "from": "origin.1025",
+    "to": "origin.1030",
+    "conditional": true,
+    "label": {
+      "zh": "击败从星门涌出的虫群后",
+      "en": "After defeating the swarm emerging from the gateway"
+    },
+    "evidence": "1025 creates a fleet with gateway_vermin flag; on_fleet_destroyed_perp calls1030, requiring that fleet flag and Galactic Doorstep origin.1035 creates a different unflagged invasion and does not trigger this report."
+  },
+  {
+    "from": "origin.1012",
+    "to": "archaeological_site_types:site_from_gateway_sent",
+    "conditional": true,
+    "label": {
+      "zh": "派遣科研船发掘新发现的遗迹",
+      "en": "Send a science ship to excavate the newly revealed site"
+    },
+    "evidence": "1011 creates site_from_gateway_sent and notifies the system owner with1012 after1day; reading the notification leads to undertaking its excavation"
+  },
+  {
+    "from": "crisis.21110",
+    "to": "crisis.24100",
+    "conditional": true,
+    "label": {
+      "zh": "获得虚境联络能力后，支付代价联系抟土之塑",
+      "en": "With Shroud access, pay the cost to contact the Animator of Clay"
+    },
+    "evidence": "21110 after sets synth_queen_can_contact_the_animator_of_clay; Shroud animator.shroud option requires this flag and no previous contact, charges energy/zro, calls24100. This is optional and does not wait for the final archaeology stage."
+  },
+  {
+    "from": "crisis.8060",
+    "choice": "crisis.8060.8.b",
+    "to": "crisis.24100",
+    "conditional": true,
+    "label": {
+      "zh": "返回虚境，支付代价联系抟土之塑",
+      "en": "Return to the Shroud and pay to contact the Animator of Clay"
+    },
+    "evidence": "8060.8.b requires breached_shroud and the Zarqlan dialogue state, sets synth_queen_can_contact_the_animator_of_clay; Shroud contact option dispatches24100"
+  },
+  {
+    "from": "crisis.24115",
+    "choice": "crisis.24115.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_RESHAPING_RITUAL",
+    "conditional": true,
+    "label": {
+      "zh": "接受交易后，舰队进入女王泰坦所在星系",
+      "en": "After accepting the deal, send a fleet into the Queen's titan system"
+    },
+    "evidence": "24115.a sets synth_queen_took_the_animators_deal; on_entering_system_fleet invokes24200, requiring that flag and an enabled synth_queen_titan;24200 disables it and enables THE_SYNTH_QUEENS_RESHAPING_RITUAL. Refusal24120 has no such path."
+  },
+  {
+    "from": "crisis.9010",
+    "to": "crisis.23015",
+    "conditional": true,
+    "label": {
+      "zh": "突破防御并击毁女王泰坦：战斗胜利",
+      "en": "Breach the defenses and destroy the Queen's titan: victory"
+    },
+    "evidence": "9010 sets synth_queen_cannot_yeet_the_fleets; on_ship_destroyed_perp calls23015, gated by fromfromfrom ship_size=synth_queen_titan. 23015 destroys the doomclock."
+  },
+  {
+    "from": "crisis.8516",
+    "to": "crisis.23015",
+    "conditional": true,
+    "label": {
+      "zh": "收到反制援助后，击毁女王泰坦",
+      "en": "After receiving countermeasures, destroy the Queen's titan"
+    },
+    "evidence": "8516 bypasses the player situation and sets synth_queen_cannot_yeet_the_fleets/protected_from_queen_storm; titan destruction invokes23015 and terminates the doomclock"
+  },
+  {
+    "from": "crisis.8516",
+    "to": "crisis.8505",
+    "conditional": true,
+    "label": {
+      "zh": "仍未阻止女王，倒计时耗尽：失败结局",
+      "en": "The Queen remains unstopped: the countdown expires"
+    },
+    "evidence": "8516 destroys the player-facing situation, not the Queen's doomclock; the latter on_progress_complete8500 dispatches8505 if no victory or rescue stops it"
+  },
+  {
+    "from": "crisis.8035",
+    "to": "crisis.8039",
+    "conditional": true,
+    "label": {
+      "zh": "风暴两度扩张后 · 初次警报约915天后，女王即将发言",
+      "en": "After two storm expansions · about 915 days after the first alert, the Queen prepares to speak"
+    },
+    "evidence": "8005 schedules8035 at180days; hidden8010 at360 then8015+360 then8030+360 schedules8039+15. Player notifications are sequential, not two openings."
+  },
+  {
+    "from": "crisis.7100",
+    "to": "crisis.7105",
+    "conditional": true,
+    "label": {
+      "zh": "满足科技条件并达到第二级",
+      "en": "Meet the technology requirement and reach level two"
+    },
+    "evidence": "00_crisis_levels.txt crisis_cosmogenesis_level_2 requires tech_cosmogenesis_crisis_1 and4000 currency, on_unlock7105"
+  },
+  {
+    "from": "crisis.7105",
+    "to": "crisis.7110",
+    "conditional": true,
+    "label": {
+      "zh": "满足科技条件并达到第三级",
+      "en": "Meet the technology requirement and reach level three"
+    },
+    "evidence": "00_crisis_levels.txt level_3 requires tech_cosmogenesis_crisis_2 and10000 currency, on_unlock7110"
+  },
+  {
+    "from": "crisis.7110",
+    "to": "crisis.7115",
+    "conditional": true,
+    "label": {
+      "zh": "未中止计划，达到第四级",
+      "en": "Continue the project and reach level four"
+    },
+    "evidence": "00_crisis_levels.txt level_4 requires tech_cosmogenesis_crisis_3,22000 currency,NOT cosmogenesis_aborted; on_unlock7115"
+  },
+  {
+    "from": "crisis.7115",
+    "to": "crisis.7120",
+    "conditional": true,
+    "label": {
+      "zh": "完成两项应用无限论文并满足第五级条件",
+      "en": "Complete two applied-infinity theses and meet level-five requirements"
+    },
+    "evidence": "00_crisis_levels.txt level_5 requires tech_cosmogenesis_crisis_4,60000 currency,applied_infinity_thesis>=2,NOT cosmogenesis_aborted,is_subject=no; on_unlock7120"
+  },
+  {
+    "from": "machine_age.3100",
+    "to": "machine_age.3110",
+    "conditional": true,
+    "label": {
+      "zh": "研究机器人劳工科技后",
+      "en": "After researching Robotic Workers"
+    },
+    "evidence": "00_on_actions.txt on_tech_increased calls 3110; its trigger requires origin_synthetic_fertility and tech_robotic_workers, once per origin_synthetic_fertility_robots flag"
+  },
+  {
+    "from": "machine_age.3110",
+    "to": "machine_age.3115",
+    "conditional": true,
+    "label": {
+      "zh": "研究智能人科技后",
+      "en": "After researching Droids"
+    },
+    "evidence": "3110 grants a Droids research option; on_tech_increased calls 3115 gated by tech_droid_workers and origin_synthetic_fertility_droids"
+  },
+  {
+    "from": "machine_age.3115",
+    "to": "machine_age.3120",
+    "conditional": true,
+    "label": {
+      "zh": "研究合成人科技后",
+      "en": "After researching Synthetics"
+    },
+    "evidence": "3115 grants a Synthetics research option; on_tech_increased calls 3120 gated by tech_synthetic_workers and origin_synthetic_fertility_synths"
+  },
+  {
+    "from": "machine_age.3120",
+    "to": "machine_age.3125",
+    "conditional": true,
+    "label": {
+      "zh": "采纳合成传统后",
+      "en": "After adopting the Synthetics traditions"
+    },
+    "evidence": "common/traditions/01_synthetics.txt tr_synthetics_adopt calls 3125 for origin_synthetic_fertility; this route can precede or follow the population digitization deadline"
+  },
+  {
+    "from": "ancrel.13",
+    "to": "archaeological_site_types:zroni_digsite_6",
+    "conditional": true,
+    "label": {
+      "zh": "前往泽珞星",
+      "en": "Travel to Zron"
+    },
+    "evidence": "ancrel.13 -> hidden ancrel.14 -> Zrocursor_system; common/solar_system_initializers/ancient_relics_initializers.txt creates zroni_digsite_6"
+  },
+  {
+    "from": "ancrel.13",
+    "to": "special_projects:ZRONI_SECRETS",
+    "conditional": true,
+    "label": {
+      "zh": "研究泽珞族的遗产",
+      "en": "Research the Zroni legacy"
+    },
+    "evidence": "ancrel.14 sets last_zroni_system; artifact_zroni_research potential requires that flag and enables ZRONI_SECRETS"
+  },
+  {
+    "from": "ancrel.2015",
+    "to": "special_projects:BAOL_SECRETS",
+    "conditional": true,
+    "label": {
+      "zh": "研究巴奥的遗产",
+      "en": "Research the Baol legacy"
+    },
+    "evidence": "ancrel.2014 sets last_baol_system before scheduling 2015; artifact_baol_research uses that flag to enable BAOL_SECRETS"
+  },
+  {
+    "from": "astral_rift.691",
+    "to": "astral_rift.696",
+    "conditional": true,
+    "label": {
+      "zh": "招募的科学家去世后",
+      "en": "After the recruited scientist dies"
+    },
+    "evidence": "on_leader_death -> astral_rift.695 requires recruited_tower_rift_leader and tower_rift_leader, set only in 691.b",
+    "choice": "astral_rift.691.b"
+  },
+  {
+    "from": "ancrel.4055",
+    "to": "ancrel.4057",
+    "conditional": true,
+    "label": {
+      "zh": "击退哨兵",
+      "en": "Repel the Sentinels"
+    },
+    "evidence": "on_colony_defenders_win -> 4057 requires sentinels_invade_country",
+    "choice": "ancrel.4055.a"
+  },
+  {
+    "from": "ancrel.4055",
+    "to": "ancrel.4063",
+    "conditional": true,
+    "label": {
+      "zh": "防守失败",
+      "en": "Defenders defeated"
+    },
+    "evidence": "on_colony_defenders_lose -> 4063 requires sentinels_invade_country",
+    "choice": "ancrel.4055.a"
+  },
+  {
+    "from": "ancrel.4060",
+    "to": "ancrel.4057",
+    "conditional": true,
+    "label": {
+      "zh": "击退哨兵",
+      "en": "Repel the Sentinels"
+    },
+    "evidence": "on_colony_defenders_win -> 4057 requires sentinels_invade_country",
+    "choice": "ancrel.4060.a"
+  },
+  {
+    "from": "ancrel.4060",
+    "to": "ancrel.4063",
+    "conditional": true,
+    "label": {
+      "zh": "防守失败",
+      "en": "Defenders defeated"
+    },
+    "evidence": "on_colony_defenders_lose -> 4063 requires sentinels_invade_country",
+    "choice": "ancrel.4060.a"
+  },
+  {
+    "from": "ancrel.4063",
+    "to": "ancrel.4064",
+    "conditional": true,
+    "label": {
+      "zh": "反攻解放行星",
+      "en": "Liberate the planet"
+    },
+    "evidence": "on_colony_attackers_win -> 4064 requires sentinels_won and Sentinel controller"
+  },
+  {
+    "from": "ancrel.4063",
+    "to": "ancrel.4075",
+    "conditional": true,
+    "label": {
+      "zh": "哨兵驱逐居民",
+      "en": "Sentinels displace inhabitants"
+    },
+    "evidence": "on_pop_purged -> 4075 checks Sentinel controller and sentinels_planet"
+  },
+  {
+    "from": "leviathans.502",
+    "to": "leviathans.500",
+    "conditional": true,
+    "label": {
+      "zh": "再次联络策展人",
+      "en": "Contact the Curators again"
+    },
+    "evidence": "on_custom_diplomacy -> hidden leviathans.499 -> 500; 502 only establishes first contact"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9200",
+    "choice": "akx.9101.a.notspiritual",
+    "conditional": true,
+    "label": {
+      "zh": "探索时发现信使",
+      "en": "Discover the messenger"
+    },
+    "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9300",
+    "choice": "akx.9101.a.notspiritual",
+    "conditional": true,
+    "label": {
+      "zh": "探索时遇见会合",
+      "en": "Encounter the rendezvous"
+    },
+    "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9400",
+    "choice": "akx.9101.a.notspiritual",
+    "conditional": true,
+    "label": {
+      "zh": "观察前超光速文明",
+      "en": "Observe a pre-FTL civilization"
+    },
+    "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9500",
+    "choice": "akx.9101.a.notspiritual",
+    "conditional": true,
+    "label": {
+      "zh": "殖民后出现异象",
+      "en": "An anomaly after colonization"
+    },
+    "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9600",
+    "choice": "akx.9101.a.notspiritual",
+    "conditional": true,
+    "label": {
+      "zh": "造访无限神机",
+      "en": "Visit the Infinity Machine"
+    },
+    "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.10000",
+    "choice": "akx.9101.a.notspiritual",
+    "conditional": true,
+    "label": {
+      "zh": "研究相关科技并建成欧米伽同调装置",
+      "en": "Research the technologies and build the Omega Alignment"
+    },
+    "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9200",
+    "choice": "akx.9101.a.spiritual",
+    "conditional": true,
+    "label": {
+      "zh": "探索时发现信使",
+      "en": "Discover the messenger"
+    },
+    "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9300",
+    "choice": "akx.9101.a.spiritual",
+    "conditional": true,
+    "label": {
+      "zh": "探索时遇见会合",
+      "en": "Encounter the rendezvous"
+    },
+    "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9400",
+    "choice": "akx.9101.a.spiritual",
+    "conditional": true,
+    "label": {
+      "zh": "观察前超光速文明",
+      "en": "Observe a pre-FTL civilization"
+    },
+    "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9500",
+    "choice": "akx.9101.a.spiritual",
+    "conditional": true,
+    "label": {
+      "zh": "殖民后出现异象",
+      "en": "An anomaly after colonization"
+    },
+    "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9600",
+    "choice": "akx.9101.a.spiritual",
+    "conditional": true,
+    "label": {
+      "zh": "造访无限神机",
+      "en": "Visit the Infinity Machine"
+    },
+    "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.10000",
+    "choice": "akx.9101.a.spiritual",
+    "conditional": true,
+    "label": {
+      "zh": "研究相关科技并建成欧米伽同调装置",
+      "en": "Research the technologies and build the Omega Alignment"
+    },
+    "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9200",
+    "choice": "akx.9101.b",
+    "conditional": true,
+    "label": {
+      "zh": "探索时发现信使",
+      "en": "Discover the messenger"
+    },
+    "evidence": "9101 option sets worm_events_available; 9200 on_entering_system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9300",
+    "choice": "akx.9101.b",
+    "conditional": true,
+    "label": {
+      "zh": "探索时遇见会合",
+      "en": "Encounter the rendezvous"
+    },
+    "evidence": "9101 option sets worm_events_available; 9300 on_entering_system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9400",
+    "choice": "akx.9101.b",
+    "conditional": true,
+    "label": {
+      "zh": "观察前超光速文明",
+      "en": "Observe a pre-FTL civilization"
+    },
+    "evidence": "9101 option sets worm_events_available; 9399 observation conditions ->9400"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9500",
+    "choice": "akx.9101.b",
+    "conditional": true,
+    "label": {
+      "zh": "殖民后出现异象",
+      "en": "An anomaly after colonization"
+    },
+    "evidence": "9101 option sets worm_events_available; on_colonized ->9499 ->9500"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.9600",
+    "choice": "akx.9101.b",
+    "conditional": true,
+    "label": {
+      "zh": "造访无限神机",
+      "en": "Visit the Infinity Machine"
+    },
+    "evidence": "9101 option sets worm_events_available; 9600 entering guardian_sphere system"
+  },
+  {
+    "from": "akx.9101",
+    "to": "akx.10000",
+    "choice": "akx.9101.b",
+    "conditional": true,
+    "label": {
+      "zh": "研究相关科技并建成欧米伽同调装置",
+      "en": "Research the technologies and build the Omega Alignment"
+    },
+    "evidence": "9101 option sets worm_events_available; 10000 requires WORM_CHAIN_1 and building_akx_worm_3; on building complete"
+  },
+  {
+    "from": "akx.10010",
+    "to": "akx.10030",
+    "choice": "akx.10010.b",
+    "conditional": true,
+    "label": {
+      "zh": "击败显现的时之螶",
+      "en": "Defeat the manifested Worm"
+    },
+    "evidence": "10010.b creates worm_enemy; on_fleet_destroyed_perp ->10030 requires that enemy"
+  },
+  {
+    "from": "crisis.11",
+    "to": "crisis.13",
+    "conditional": true,
+    "label": {
+      "zh": "回声逐渐接近银河外缘",
+      "en": "The echoes approach the rim"
+    },
+    "evidence": "hidden10 sets prethoryn_subspace_echoes;12 MTTH600 months ->13"
+  },
+  {
+    "from": "crisis.13",
+    "to": "crisis.15",
+    "conditional": true,
+    "label": {
+      "zh": "传来新的亚空间信号",
+      "en": "A new subspace transmission"
+    },
+    "evidence": "12 sets prethoryn_approaching_rim;14 MTTH120 months ->15"
+  },
+  {
+    "from": "crisis.16",
+    "to": "crisis.18",
+    "conditional": true,
+    "label": {
+      "zh": "索林先锋抵达",
+      "en": "The Prethoryn vanguard arrives"
+    },
+    "evidence": "14 sets prethoryn_transmission;17 MTTH30 months ->18"
+  },
+  {
+    "from": "crisis.18",
+    "to": "crisis.20",
+    "conditional": true,
+    "label": {
+      "zh": "主力舰队随后抵达",
+      "en": "The main invasion follows"
+    },
+    "evidence": "17 schedules19 after400-600days;19 announces20"
+  },
+  {
+    "from": "crisis.20",
+    "to": "crisis.51",
+    "conditional": true,
+    "label": {
+      "zh": "虫群势力大幅扩张后",
+      "en": "After the swarm expands sufficiently"
+    },
+    "evidence": "50 requires prethoryn_main_invasion and endgame_crisis_large_size_trigger ->51"
+  },
+  {
+    "from": "crisis.20",
+    "to": "crisis.101",
+    "conditional": true,
+    "label": {
+      "zh": "战争中发现受伤的虫后",
+      "en": "An injured queen is found during the war"
+    },
+    "evidence": "100 requires main invasion and a swarm-owned system; MTTH820months ->101"
+  },
+  {
+    "from": "crisis.20",
+    "to": "crisis.211",
+    "conditional": true,
+    "label": {
+      "zh": "清除虫群的殖民地与舰队",
+      "en": "Eliminate the swarm colonies and fleets"
+    },
+    "evidence": "208 annual callback removes swarm with <20ships and no owned/controlled planets;210 country destruction ->211"
+  },
+  {
+    "from": "crisis.2010",
+    "to": "crisis.2011",
+    "conditional": true,
+    "label": {
+      "zh": "拥有合成人时，出现异常",
+      "en": "Synthetic workers begin behaving strangely"
+    },
+    "evidence": "2005 schedules2006 at100-300days;2006 requires synthetic_workers/mechanical population and selects2011 OR2012"
+  },
+  {
+    "from": "crisis.2010",
+    "to": "crisis.2012",
+    "conditional": true,
+    "label": {
+      "zh": "拥有合成人时，出现异常",
+      "en": "Synthetic workers begin behaving strangely"
+    },
+    "evidence": "2005 schedules2006 at100-300days;2006 requires synthetic_workers/mechanical population and selects2011 OR2012"
+  },
+  {
+    "from": "crisis.2010",
+    "to": "crisis.2502",
+    "conditional": true,
+    "label": {
+      "zh": "机械智能的单元出现异常",
+      "en": "Machine intelligence units begin behaving strangely"
+    },
+    "evidence": "2005 schedules2500 at100-300days;2500 requires machine empire/machine units and selects2502 OR2503"
+  },
+  {
+    "from": "crisis.2010",
+    "to": "crisis.2503",
+    "conditional": true,
+    "label": {
+      "zh": "机械智能的单元出现异常",
+      "en": "Machine intelligence units begin behaving strangely"
+    },
+    "evidence": "2005 schedules2500 at100-300days;2500 requires machine empire/machine units and selects2502 OR2503"
+  },
+  {
+    "from": "crisis.2010",
+    "to": "crisis.2020",
+    "conditional": true,
+    "label": {
+      "zh": "信号继续扩散",
+      "en": "The signal continues to spread"
+    },
+    "evidence": "2005 schedules2020 at700-900days even when local synthetic warnings are unavailable"
+  },
+  {
+    "from": "crisis.2011",
+    "to": "crisis.2015",
+    "conditional": true,
+    "label": {
+      "zh": "数月后，合成人开始失踪",
+      "en": "Months later, synthetics begin to disappear"
+    },
+    "evidence": "2005 schedules2007 at400-600days;2007 selects2015 OR2016"
+  },
+  {
+    "from": "crisis.2011",
+    "to": "crisis.2016",
+    "conditional": true,
+    "label": {
+      "zh": "数月后，合成人开始失踪",
+      "en": "Months later, synthetics begin to disappear"
+    },
+    "evidence": "2005 schedules2007 at400-600days;2007 selects2015 OR2016"
+  },
+  {
+    "from": "crisis.2012",
+    "to": "crisis.2015",
+    "conditional": true,
+    "label": {
+      "zh": "数月后，合成人开始失踪",
+      "en": "Months later, synthetics begin to disappear"
+    },
+    "evidence": "2005 schedules2007 at400-600days;2007 selects2015 OR2016"
+  },
+  {
+    "from": "crisis.2012",
+    "to": "crisis.2016",
+    "conditional": true,
+    "label": {
+      "zh": "数月后，合成人开始失踪",
+      "en": "Months later, synthetics begin to disappear"
+    },
+    "evidence": "2005 schedules2007 at400-600days;2007 selects2015 OR2016"
+  },
+  {
+    "from": "crisis.2015",
+    "to": "crisis.2020",
+    "conditional": true,
+    "label": {
+      "zh": "信号继续扩散",
+      "en": "The signal continues to spread"
+    },
+    "evidence": "2005 schedules2020 at700-900days"
+  },
+  {
+    "from": "crisis.2016",
+    "to": "crisis.2020",
+    "conditional": true,
+    "label": {
+      "zh": "信号继续扩散",
+      "en": "The signal continues to spread"
+    },
+    "evidence": "2005 schedules2020 at700-900days"
+  },
+  {
+    "from": "crisis.2502",
+    "to": "crisis.2020",
+    "conditional": true,
+    "label": {
+      "zh": "信号继续扩散",
+      "en": "The signal continues to spread"
+    },
+    "evidence": "2005 schedules2020 at700-900days"
+  },
+  {
+    "from": "crisis.2503",
+    "to": "crisis.2020",
+    "conditional": true,
+    "label": {
+      "zh": "信号继续扩散",
+      "en": "The signal continues to spread"
+    },
+    "evidence": "2005 schedules2020 at700-900days"
+  },
+  {
+    "from": "crisis.2020",
+    "to": "crisis.2021",
+    "conditional": true,
+    "label": {
+      "zh": "大召唤随后到来",
+      "en": "The summons follows"
+    },
+    "evidence": "2005 schedules2021 at1000-1200days"
+  },
+  {
+    "from": "crisis.2021",
+    "to": "crisis.2022",
+    "conditional": true,
+    "label": {
+      "zh": "肃正协议显现",
+      "en": "The Contingency reveals itself"
+    },
+    "evidence": "2005 schedules2022 at1400days"
+  },
+  {
+    "from": "crisis.2023",
+    "to": "crisis.2030",
+    "conditional": true,
+    "label": {
+      "zh": "首座肃正中心启动",
+      "en": "The first sterilization hub activates"
+    },
+    "evidence": "2005 schedules2024 at1450-1460days;2024 starts2025 ->2030"
+  },
+  {
+    "from": "crisis.2030",
+    "to": "crisis.2031",
+    "conditional": true,
+    "label": {
+      "zh": "第二座中心启动",
+      "en": "The second hub activates"
+    },
+    "evidence": "2024 schedules2026 at50-60days ->2031"
+  },
+  {
+    "from": "crisis.2031",
+    "to": "crisis.2032",
+    "conditional": true,
+    "label": {
+      "zh": "第三座中心启动",
+      "en": "The third hub activates"
+    },
+    "evidence": "2024 schedules2027 at100-110days ->2032"
+  },
+  {
+    "from": "crisis.2032",
+    "to": "crisis.2033",
+    "conditional": true,
+    "label": {
+      "zh": "第四座中心启动",
+      "en": "The fourth hub activates"
+    },
+    "evidence": "2024 schedules2028 at150-160days ->2033"
+  },
+  {
+    "from": "crisis.2033",
+    "to": "crisis.2037",
+    "conditional": true,
+    "label": {
+      "zh": "摧毁机械星球",
+      "en": "Destroy a machine world"
+    },
+    "evidence": "machine world destruction effect emits2037 for world losses"
+  },
+  {
+    "from": "crisis.2037",
+    "to": "crisis.2036",
+    "conditional": true,
+    "label": {
+      "zh": "四座中心均被摧毁后",
+      "en": "After all four hubs have been destroyed"
+    },
+    "evidence": "00_scripted_effects.txt machine_worlds_destroyed=4 ->2035 ->2036"
+  },
+  {
+    "from": "crisis.2039",
+    "to": "crisis.2038",
+    "conditional": true,
+    "label": {
+      "zh": "摧毁肃正之心后",
+      "en": "After destroying the Contingency core"
+    },
+    "evidence": "final machine-world destruction callback2046 announces2038"
+  },
+  {
+    "from": "aquatics.160",
+    "to": "aquatics.190",
+    "conditional": true,
+    "label": {
+      "zh": "十二年后，相关科技满足研究条件",
+      "en": "After year twelve, with the required technologies"
+    },
+    "evidence": "190 on_tech_increased requires years_passed>12 and xenobiology/material research (waived after50years), non-hostile dragon"
+  },
+  {
+    "from": "aquatics.165",
+    "to": "aquatics.190",
+    "conditional": true,
+    "label": {
+      "zh": "十二年后，相关科技满足研究条件",
+      "en": "After year twelve, with the required technologies"
+    },
+    "evidence": "190 on_tech_increased requires years_passed>12 and xenobiology/material research (waived after50years), non-hostile dragon"
+  },
+  {
+    "from": "aquatics.170",
+    "to": "aquatics.190",
+    "conditional": true,
+    "label": {
+      "zh": "十二年后，相关科技满足研究条件",
+      "en": "After year twelve, with the required technologies"
+    },
+    "evidence": "190 on_tech_increased requires years_passed>12 and xenobiology/material research (waived after50years), non-hostile dragon"
+  },
+  {
+    "from": "aquatics.195",
+    "to": "aquatics.255",
+    "conditional": true,
+    "label": {
+      "zh": "研究冷却结束且具备联络经验后",
+      "en": "After research cooldown and sufficient contact experience"
+    },
+    "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+    "from": "aquatics.200",
+    "to": "aquatics.255",
+    "conditional": true,
+    "label": {
+      "zh": "研究冷却结束且具备联络经验后",
+      "en": "After research cooldown and sufficient contact experience"
+    },
+    "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+    "from": "aquatics.205",
+    "to": "aquatics.255",
+    "conditional": true,
+    "label": {
+      "zh": "研究冷却结束且具备联络经验后",
+      "en": "After research cooldown and sufficient contact experience"
+    },
+    "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+    "from": "aquatics.210",
+    "to": "aquatics.255",
+    "conditional": true,
+    "label": {
+      "zh": "研究冷却结束且具备联络经验后",
+      "en": "After research cooldown and sufficient contact experience"
+    },
+    "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+    "from": "aquatics.215",
+    "to": "aquatics.255",
+    "conditional": true,
+    "label": {
+      "zh": "研究冷却结束且具备联络经验后",
+      "en": "After research cooldown and sufficient contact experience"
+    },
+    "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+    "from": "aquatics.255",
+    "to": "aquatics.260",
+    "conditional": true,
+    "label": {
+      "zh": "继续破译龙语",
+      "en": "Continue deciphering the dragon language"
+    },
+    "evidence": "255 sets origin_dragon_stage_2;02_first_contact_unique_stories.txt event260"
+  },
+  {
+    "from": "aquatics.260",
+    "to": "aquatics.265",
+    "conditional": true,
+    "label": {
+      "zh": "完成联络研究",
+      "en": "Complete first-contact research"
+    },
+    "evidence": "260 sets origin_dragon_finish;02_first_contact_unique_stories.txt event265"
+  },
+  {
+    "from": "origin.1310",
+    "to": "origin.1380",
+    "conditional": true,
+    "label": {
+      "zh": "进入游戏中期后，继续不懈追寻",
+      "en": "Continue the relentless pursuit after midgame"
+    },
+    "evidence": "1310.a sets relentless_pursuit;1334 requires mid_game_years_passed>1 and calls1380"
+  },
+  {
+    "from": "origin.1330",
+    "to": "origin.1380",
+    "conditional": true,
+    "label": {
+      "zh": "一路顺风结局：中期继续追寻",
+      "en": "Godspeed outcome: continue the pursuit after midgame"
+    },
+    "evidence": "1330 godspeed_outcome sets relentless_pursuit;1334 ->1380"
+  },
+  {
+    "from": "origin.1330",
+    "to": "origin.1335",
+    "conditional": true,
+    "label": {
+      "zh": "另一种历史：中期发现新踪迹",
+      "en": "Alternative history: new traces after midgame"
+    },
+    "evidence": "1330 without godspeed_outcome sets intercepting_history;1334 ->1335"
+  },
+  {
+    "to": "grand_archive.8526",
+    "choice": "grand_archive.8520.a.machine",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "机械帝国：处决叛徒",
+      "en": "Machine empire: execute the traitor"
+    },
+    "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+    "from": "grand_archive.8520"
+  },
+  {
+    "from": "grand_archive.8526",
+    "to": "grand_archive.8550",
+    "conditional": true,
+    "label": {
+      "zh": "继续应对，局势进度最终达到150",
+      "en": "Continue countermeasures until situation progress reaches150"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8526",
+    "to": "grand_archive.8545",
+    "conditional": true,
+    "label": {
+      "zh": "另一结果：应对局势失败",
+      "en": "Alternative: the countermeasure situation fails"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8526",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "to": "grand_archive.8527",
+    "choice": "grand_archive.8520.a.machine",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "蜂巢帝国：处决叛徒",
+      "en": "Hive empire: execute the traitor"
+    },
+    "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+    "from": "grand_archive.8520"
+  },
+  {
+    "from": "grand_archive.8527",
+    "to": "grand_archive.8550",
+    "conditional": true,
+    "label": {
+      "zh": "继续应对，局势进度最终达到150",
+      "en": "Continue countermeasures until situation progress reaches150"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8527",
+    "to": "grand_archive.8545",
+    "conditional": true,
+    "label": {
+      "zh": "另一结果：应对局势失败",
+      "en": "Alternative: the countermeasure situation fails"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8527",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "to": "grand_archive.8528",
+    "choice": "grand_archive.8520.a.machine",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "常规帝国：处决叛徒",
+      "en": "Regular empire: execute the traitor"
+    },
+    "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+    "from": "grand_archive.8520"
+  },
+  {
+    "from": "grand_archive.8528",
+    "to": "grand_archive.8550",
+    "conditional": true,
+    "label": {
+      "zh": "继续应对，局势进度最终达到150",
+      "en": "Continue countermeasures until situation progress reaches150"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8528",
+    "to": "grand_archive.8545",
+    "conditional": true,
+    "label": {
+      "zh": "另一结果：应对局势失败",
+      "en": "Alternative: the countermeasure situation fails"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8528",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "to": "grand_archive.8531",
+    "choice": "grand_archive.8520.b.machine",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "机械帝国：重新教育",
+      "en": "Machine empire: re-education"
+    },
+    "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+    "from": "grand_archive.8520"
+  },
+  {
+    "from": "grand_archive.8531",
+    "to": "grand_archive.8550",
+    "conditional": true,
+    "label": {
+      "zh": "继续应对，局势进度最终达到150",
+      "en": "Continue countermeasures until situation progress reaches150"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8531",
+    "to": "grand_archive.8545",
+    "conditional": true,
+    "label": {
+      "zh": "另一结果：应对局势失败",
+      "en": "Alternative: the countermeasure situation fails"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8531",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "to": "grand_archive.8532",
+    "choice": "grand_archive.8520.b.machine",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "蜂巢帝国：重新教育",
+      "en": "Hive empire: re-education"
+    },
+    "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+    "from": "grand_archive.8520"
+  },
+  {
+    "from": "grand_archive.8532",
+    "to": "grand_archive.8550",
+    "conditional": true,
+    "label": {
+      "zh": "继续应对，局势进度最终达到150",
+      "en": "Continue countermeasures until situation progress reaches150"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8532",
+    "to": "grand_archive.8545",
+    "conditional": true,
+    "label": {
+      "zh": "另一结果：应对局势失败",
+      "en": "Alternative: the countermeasure situation fails"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8532",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "to": "grand_archive.8533",
+    "choice": "grand_archive.8520.b.machine",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "常规帝国：重新教育",
+      "en": "Regular empire: re-education"
+    },
+    "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+    "from": "grand_archive.8520"
+  },
+  {
+    "from": "grand_archive.8533",
+    "to": "grand_archive.8550",
+    "conditional": true,
+    "label": {
+      "zh": "继续应对，局势进度最终达到150",
+      "en": "Continue countermeasures until situation progress reaches150"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8533",
+    "to": "grand_archive.8545",
+    "conditional": true,
+    "label": {
+      "zh": "另一结果：应对局势失败",
+      "en": "Alternative: the countermeasure situation fails"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8533",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "to": "grand_archive.8535",
+    "choice": "grand_archive.8520.c",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "非格式塔随机结果：叛徒死亡",
+      "en": "Non-gestalt random outcome: the traitor dies"
+    },
+    "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+    "from": "grand_archive.8520"
+  },
+  {
+    "from": "grand_archive.8535",
+    "to": "grand_archive.8550",
+    "conditional": true,
+    "label": {
+      "zh": "继续应对，局势进度最终达到150",
+      "en": "Continue countermeasures until situation progress reaches150"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8535",
+    "to": "grand_archive.8545",
+    "conditional": true,
+    "label": {
+      "zh": "另一结果：应对局势失败",
+      "en": "Alternative: the countermeasure situation fails"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8535",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "to": "grand_archive.8536",
+    "choice": "grand_archive.8520.c",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "非格式塔随机结果：叛徒获救",
+      "en": "Non-gestalt random outcome: the traitor survives"
+    },
+    "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+    "from": "grand_archive.8520"
+  },
+  {
+    "from": "grand_archive.8536",
+    "to": "grand_archive.8550",
+    "conditional": true,
+    "label": {
+      "zh": "继续应对，局势进度最终达到150",
+      "en": "Continue countermeasures until situation progress reaches150"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8536",
+    "to": "grand_archive.8545",
+    "conditional": true,
+    "label": {
+      "zh": "另一结果：应对局势失败",
+      "en": "Alternative: the countermeasure situation fails"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+    "from": "grand_archive.8536",
+    "to": "grand_archive.8555",
+    "conditional": true,
+    "label": {
+      "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+      "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+    },
+    "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+    "from": "ancrel.10110",
+    "choice": "ancrel.10110.option.fm_suppress",
+    "to": "ancrel.10111",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "5天后的一种随机结果（50%）；须仍存在负责研究的科学家",
+      "en": "One random outcome after5days (50%); the leading research scientist must still exist"
+    },
+    "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+    "from": "ancrel.10110",
+    "choice": "ancrel.10110.option.fm_suppress",
+    "to": "ancrel.10112",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "5天后的一种随机结果（35%）；须仍存在负责研究的科学家",
+      "en": "One random outcome after5days (35%); the leading research scientist must still exist"
+    },
+    "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+    "from": "ancrel.10110",
+    "choice": "ancrel.10110.option.fm_suppress",
+    "to": "ancrel.10113",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "5天后的一种随机结果（15%）；须仍存在负责研究的科学家",
+      "en": "One random outcome after5days (15%); the leading research scientist must still exist"
+    },
+    "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+    "from": "ancrel.10110",
+    "choice": "ancrel.10110.option.fm_public",
+    "to": "ancrel.10112",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "5天后的一种随机结果（35%）；须仍存在负责研究的科学家",
+      "en": "One random outcome after5days (35%); the leading research scientist must still exist"
+    },
+    "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+    "from": "ancrel.10110",
+    "choice": "ancrel.10110.option.fm_public",
+    "to": "ancrel.10113",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "5天后的一种随机结果（65%）；须仍存在负责研究的科学家",
+      "en": "One random outcome after5days (65%); the leading research scientist must still exist"
+    },
+    "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+    "from": "precursor.601",
+    "to": "over.50",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "拥有《四海皆臣》：720–1800天后发现贾巴迪尼储藏处",
+      "en": "With Overlord: Jabbardeeni cache discovered after 720–1800 days"
+    },
+    "evidence": "precursor.601 after checks has_overlord_dlc and schedules over.50 days=720 random=1080; over.50 opens YUHT_JABBARDEENI_CACHE."
+  },
+  {
+    "from": "special_projects:YUHT_JABBARDEENI_CACHE",
+    "to": "over.60",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "科研船与科学家完成研究：基础360天，无到期限制",
+      "en": "Science ship and scientist complete research: base 360 days, no expiration"
+    },
+    "evidence": "00_projects_overlord.txt YUHT_JABBARDEENI_CACHE requirements, days_to_research=360 and timelimit=-1; on_success over.60."
+  },
+  {
+    "from": "crisis.8060",
+    "choice": "crisis.8060.war.1.a",
+    "to": "crisis.8158",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "完成宣战确认：7天后重组舰队并通知已建立通讯的帝国",
+      "en": "After final war confirmation: fleet reorganization and notice to contacted empires after seven days"
+    },
+    "evidence": "8060 war initial allow requires cannot_yeet_the_fleets, protected_from_queen_storm and researched_first_storm_project. war -> war.a -> war.1.a; final schedules8156 days7. 8156 after notifies playable countries with communications via8158."
+  },
+  {
+    "from": "crisis.8045",
+    "choice": "crisis.8045.9.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "此前尚未开启首项调查时开放；已在研究则继续原项目",
+      "en": "Opens only if the first investigation was never started; otherwise continue the existing project"
+    },
+    "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+  },
+  {
+    "from": "crisis.8045",
+    "choice": "crisis.8045.9.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "首项调查已完成才开放第二项",
+      "en": "Opens the second investigation only after the first is complete"
+    },
+    "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+  },
+  {
+    "from": "crisis.8045",
+    "choice": "crisis.8045.10.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "此前尚未开启首项调查时开放；已在研究则继续原项目",
+      "en": "Opens only if the first investigation was never started; otherwise continue the existing project"
+    },
+    "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+  },
+  {
+    "from": "crisis.8045",
+    "choice": "crisis.8045.10.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "首项调查已完成才开放第二项",
+      "en": "Opens the second investigation only after the first is complete"
+    },
+    "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+  },
+  {
+    "from": "crisis.8045",
+    "choice": "crisis.8045.11.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "此前尚未开启首项调查时开放；已在研究则继续原项目",
+      "en": "Opens only if the first investigation was never started; otherwise continue the existing project"
+    },
+    "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+  },
+  {
+    "from": "crisis.8045",
+    "choice": "crisis.8045.11.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "首项调查已完成才开放第二项",
+      "en": "Opens the second investigation only after the first is complete"
+    },
+    "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+  },
+  {
+    "from": "crisis.8045",
+    "choice": "crisis.8045.12.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "此前尚未开启首项调查时开放；已在研究则继续原项目",
+      "en": "Opens only if the first investigation was never started; otherwise continue the existing project"
+    },
+    "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+  },
+  {
+    "from": "crisis.8045",
+    "choice": "crisis.8045.12.a",
+    "to": "special_projects:THE_SYNTH_QUEENS_STORM_2",
+    "annotate": true,
+    "conditional": true,
+    "label": {
+      "zh": "首项调查已完成才开放第二项",
+      "en": "Opens the second investigation only after the first is complete"
+    },
+    "evidence": "Manually reviewed synth_queen_give_storm_project: not-started opens first; else started+researched opens second; in-progress has no new enable call."
+  },
+  {
+    "from": "crisis.8085",
+    "choice": "crisis.8085.a",
+    "to": "crisis.8090",
+    "annotate": true,
+    "label": {
+      "zh": "打开数据库 · 14天后",
+      "en": "Open the databank · after 14 days"
+    },
+    "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+  },
+  {
+    "from": "crisis.8085",
+    "choice": "crisis.8085.b",
+    "to": "crisis.8100",
+    "annotate": true,
+    "label": {
+      "zh": "原样交还 · 14天后",
+      "en": "Return unopened · after 14 days"
+    },
+    "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+  },
+  {
+    "from": "crisis.8085",
+    "choice": "crisis.8085.c",
+    "to": "crisis.8090",
+    "annotate": true,
+    "label": {
+      "zh": "唯物主义破解 · 14天后",
+      "en": "Materialist decryption · after 14 days"
+    },
+    "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+  },
+  {
+    "from": "crisis.8090",
+    "choice": "crisis.8090.a",
+    "to": "crisis.8095",
+    "annotate": true,
+    "label": {
+      "zh": "非唯物主义 · 14天后受到质问",
+      "en": "Non-materialist · confronted after 14 days"
+    },
+    "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+  },
+  {
+    "from": "crisis.8090",
+    "choice": "crisis.8090.b",
+    "to": "crisis.8100",
+    "annotate": true,
+    "label": {
+      "zh": "唯物主义 · 14天后进入交付回应",
+      "en": "Materialist · delivery response after 14 days"
+    },
+    "evidence": "Manually reviewed8085 and8090 explicit country_event days14; materialist conditions decide8090 response."
+  },
+  {
+    "from": "situations:situation_synth_queen_player_facing",
+    "to": "crisis.8280",
+    "conditional": true,
+    "label": {
+      "zh": "首次委托结束且未开战 · 月度随机选中后180–240天，仍须满足要求条件",
+      "en": "First demand finished and no war · 180–240 days after a monthly random selection, subject to demand eligibility"
+    },
+    "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220."
+  },
+  {
+    "from": "situations:situation_synth_queen_player_facing",
+    "to": "crisis.8285",
+    "conditional": true,
+    "label": {
+      "zh": "首次委托结束且未开战 · 月度随机选中后180–240天，仍须满足要求条件",
+      "en": "First demand finished and no war · 180–240 days after a monthly random selection, subject to demand eligibility"
+    },
+    "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220."
+  },
+  {
+    "from": "situations:situation_synth_queen_player_facing",
+    "to": "crisis.8290",
+    "conditional": true,
+    "label": {
+      "zh": "首次委托结束且未开战 · 月度随机选中后180–240天，仍须满足要求条件",
+      "en": "First demand finished and no war · 180–240 days after a monthly random selection, subject to demand eligibility"
+    },
+    "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220."
+  },
+  {
+    "from": "situations:situation_synth_queen_player_facing",
+    "to": "crisis.8295",
+    "conditional": true,
+    "label": {
+      "zh": "原版还要求已存在gifted_system目标 · 来源未查明，仅作条件分支查阅",
+      "en": "Original trigger also requires an existing gifted_system target · source unconfirmed; conditional reference"
+    },
+    "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220. Loose events/common search only finds gifted_system creation inside8295 immediate, after trigger. Local DLC ZIP scan found0 events/common TXT members. Do not claim ordinary reachability without runtime confirmation."
+  },
+  {
+    "from": "situations:situation_synth_queen_player_facing",
+    "to": "crisis.8300",
+    "conditional": true,
+    "label": {
+      "zh": "调查进度至少8且有合格宜居星系 · 首次委托结束后月度随机，180–240天延迟",
+      "en": "Investigation progress at least 8 and eligible habitable system · monthly random selection after first demand, then 180–240 days"
+    },
+    "evidence": "08_machine_age_situations on_monthly random_events10:8270/90:none (not stale five-year comment).8270 checks first demand finished/no cooldown/no war/nonAI, schedules8255 days180 random60;8255 rechecks no war/cooldown/conversation then on_synth_queen_random_demand_list five equal-weight candidates. Each candidate has own trigger;8255 then cooldown220."
+  }
+]

@@ -1,0 +1,54 @@
+{
+ "id": "origin_shoulders_of_giants",
+ "bridges": [
+  {
+   "from": "origin.1310",
+   "to": "origin.1380",
+   "conditional": true,
+   "label": {
+    "zh": "进入游戏中期后，继续不懈追寻",
+    "en": "Continue the relentless pursuit after midgame"
+   },
+   "evidence": "1310.a sets relentless_pursuit;1334 requires mid_game_years_passed>1 and calls1380"
+  },
+  {
+   "from": "origin.1330",
+   "to": "origin.1380",
+   "conditional": true,
+   "label": {
+    "zh": "一路顺风结局：中期继续追寻",
+    "en": "Godspeed outcome: continue the pursuit after midgame"
+   },
+   "evidence": "1330 godspeed_outcome sets relentless_pursuit;1334 ->1380"
+  },
+  {
+   "from": "origin.1330",
+   "to": "origin.1335",
+   "conditional": true,
+   "label": {
+    "zh": "另一种历史：中期发现新踪迹",
+    "en": "Alternative history: new traces after midgame"
+   },
+   "evidence": "1330 without godspeed_outcome sets intercepting_history;1334 ->1335"
+  }
+ ],
+ "opening": {
+  "targets": [
+   "archaeological_site_types:site_ex_gravitas"
+  ],
+  "label": {
+   "zh": "调查母星附近的遗迹",
+   "en": "Investigate the ruins near the homeworld"
+  },
+  "evidence": "1199 setup creates site_ex_gravitas;stage1 is1200"
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

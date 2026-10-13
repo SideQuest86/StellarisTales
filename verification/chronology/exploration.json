@@ -1,0 +1,3581 @@
+{
+  "category": "exploration",
+  "model": 4,
+  "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
+  "stories": 396,
+  "docs": 1560,
+  "nodes": 1721,
+  "refs": 161,
+  "crossLinks": 284,
+  "review": {
+    "partial": 1,
+    "unreviewed": 395
+  },
+  "failures": [],
+  "items": [
+    {
+      "id": "horizon-signal",
+      "title": "视界信号",
+      "kind": "family",
+      "docs": 78,
+      "refs": 38,
+      "crossLinks": 1,
+      "review": "partial"
+    },
+    {
+      "id": "anomaly-storms-prec-one",
+      "title": "远古信号",
+      "kind": "anomaly",
+      "docs": 61,
+      "refs": 12,
+      "crossLinks": 17,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ancrel-mechano-cat",
+      "title": "行星规模的机器",
+      "kind": "anomaly",
+      "docs": 21,
+      "refs": 2,
+      "crossLinks": 39,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-con-biology-cat",
+      "title": "大陆上的发现",
+      "kind": "anomaly",
+      "docs": 17,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-warform-cat",
+      "title": "神秘构造",
+      "kind": "anomaly",
+      "docs": 15,
+      "refs": 8,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-nuke-planet-cat",
+      "title": "末日之冬",
+      "kind": "anomaly",
+      "docs": 15,
+      "refs": 7,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-paragon-beholder-category",
+      "title": "峰值读数",
+      "kind": "anomaly",
+      "docs": 15,
+      "refs": 8,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-lost-cat",
+      "title": "云中的动静",
+      "kind": "anomaly",
+      "docs": 14,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-on-crashed-ship-cat",
+      "title": "失事地点",
+      "kind": "anomaly",
+      "docs": 14,
+      "refs": 2,
+      "crossLinks": 11,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-on-solar-sails-cat",
+      "title": "在恒星帆上",
+      "kind": "anomaly",
+      "docs": 13,
+      "refs": 0,
+      "crossLinks": 11,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-rapid-desertification-cat",
+      "title": "迅速荒漠化",
+      "kind": "anomaly",
+      "docs": 13,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-10903",
+      "title": "打开L-星团",
+      "kind": "event",
+      "docs": 13,
+      "refs": 1,
+      "crossLinks": 4,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-cluster-cat",
+      "title": "矿群",
+      "kind": "anomaly",
+      "docs": 12,
+      "refs": 2,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-wavelengths-1-cat",
+      "title": "小行星电波",
+      "kind": "anomaly",
+      "docs": 12,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-barr-base-cat",
+      "title": "荒芜平原",
+      "kind": "anomaly",
+      "docs": 12,
+      "refs": 3,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-2599",
+      "title": "原始机器人",
+      "kind": "event",
+      "docs": 12,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5061",
+      "title": "神秘容器回归",
+      "kind": "event",
+      "docs": 12,
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-mountain-uninhabitable-category",
+      "title": "成因奇怪的山脉",
+      "kind": "anomaly",
+      "docs": 11,
+      "refs": 1,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-prec-wm-one",
+      "title": "远古庇护所",
+      "kind": "anomaly",
+      "docs": 11,
+      "refs": 1,
+      "crossLinks": 4,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5011",
+      "title": "失去联络",
+      "kind": "event",
+      "docs": 11,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-230",
+      "title": "毁灭的世界",
+      "kind": "event",
+      "docs": 11,
+      "refs": 12,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-cold-research-cat",
+      "title": "潜在发现",
+      "kind": "anomaly",
+      "docs": 10,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-disco-impossible-organism-cat",
+      "title": "不可能的有机体",
+      "kind": "anomaly",
+      "docs": 10,
+      "refs": 5,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-living-cat",
+      "title": "彷徨海",
+      "kind": "anomaly",
+      "docs": 10,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-time-cat",
+      "title": "舰船碎片",
+      "kind": "anomaly",
+      "docs": 10,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-fungal-emitters-category",
+      "title": "怪异辐射",
+      "kind": "anomaly",
+      "docs": 10,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-nano-swarm-cat",
+      "title": "荒芜的沙漠",
+      "kind": "anomaly",
+      "docs": 10,
+      "refs": 3,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-signal-gasgiant-category",
+      "title": "气态巨行星信号",
+      "kind": "anomaly",
+      "docs": 10,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-1002",
+      "title": "失乐园",
+      "kind": "event",
+      "docs": 10,
+      "refs": 2,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-whisperers-in-the-void-fc-project",
+      "title": "与[Root.Patron:whisperers_in_the_void.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 10,
+      "refs": 7,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-whisperers-in-the-void-fc-project-hive",
+      "title": "与[Root.Patron:whisperers_in_the_void.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 10,
+      "refs": 7,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-whisperers-in-the-void-fc-project-robot",
+      "title": "与[Root.Patron:whisperers_in_the_void.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 10,
+      "refs": 7,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-atomic-clock-cat",
+      "title": "残骸场",
+      "kind": "anomaly",
+      "docs": 9,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-des-buried-cat",
+      "title": "沙中迷藏",
+      "kind": "anomaly",
+      "docs": 9,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-time-loop-world",
+      "title": "屏障星球",
+      "kind": "anomaly",
+      "docs": 9,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-wat-planet-cat",
+      "title": "沧海一粟",
+      "kind": "anomaly",
+      "docs": 9,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-1193",
+      "title": "生死弥留：科技进步",
+      "kind": "event",
+      "docs": 9,
+      "refs": 3,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-212",
+      "title": "族母之死",
+      "kind": "event",
+      "docs": 9,
+      "refs": 6,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-but-they-are-cute-category",
+      "title": "但它们实在太可爱了！",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-crystal-manufactory-cat",
+      "title": "古代工厂",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-disco-molluscoid-miners-cat",
+      "title": "可能的居民",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-disco-speed-demon-cat",
+      "title": "轨道高速妖",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 5,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gen-desert-cat",
+      "title": "沙丘",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 1,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-spontaneous-explosions-cat",
+      "title": "自发爆炸",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-uhb-buoy-cat",
+      "title": "多普勒效应",
+      "kind": "anomaly",
+      "docs": 8,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-disco-trojan-asteroid-cat",
+      "title": "未知内部",
+      "kind": "anomaly",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gaia-record-cat",
+      "title": "破釜沉舟",
+      "kind": "anomaly",
+      "docs": 7,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gen-derelict-ship-cat",
+      "title": "求救信号",
+      "kind": "anomaly",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-hbl-lush-planet-1-cat",
+      "title": "丰饶的星球",
+      "kind": "anomaly",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-1999",
+      "title": "研究智慧海洋",
+      "kind": "event",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-aianom-lump-cat",
+      "title": "轨道残骸",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-debris-field-1-cat",
+      "title": "残骸场",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 1,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-debris-field-1-cat-2",
+      "title": "残骸场",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-cont-signs-cat",
+      "title": "行星伤痕",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-disco-breathing-rift-cat",
+      "title": "光学现象",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 3,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-frbr-grimacing-cat",
+      "title": "瞬息万变",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gen-lost-cargo-cat",
+      "title": "古怪读数",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gen-old-war-cat",
+      "title": "钢之追寻",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-irregular-energy-cat",
+      "title": "异常能源放射",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-life-frozen-category",
+      "title": "生命迹象",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 6,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-star-lifting-category",
+      "title": "废弃外星平台",
+      "kind": "anomaly",
+      "docs": 6,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-1007",
+      "title": "信息传输",
+      "kind": "event",
+      "docs": 6,
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ancrel-rubricator-cat",
+      "title": "武器痕迹",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-arid-sensor-cat",
+      "title": "荒无人烟",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-gear-cat",
+      "title": "惊人的小行星",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-bar-colony-cat",
+      "title": "俯瞰",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-battle-uninhabitable-category",
+      "title": "战争迹象",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-data-diamond-cat",
+      "title": "薄冰",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-debris-gasgiant-category",
+      "title": "太空碎片",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-debris-gasgiant-category-temp",
+      "title": "远古船壳",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-disco-alien-machine-cat",
+      "title": "外星机器",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-brainslug-cat",
+      "title": "废弃聚落",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-phase-cat",
+      "title": "相变星球",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-pod-cat",
+      "title": "不明吊舱",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-rum-cat",
+      "title": "熟悉的化合物",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-energy-uninhabitable-category",
+      "title": "异常能源示数",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-froz-base-cat",
+      "title": "冰冻荒原",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-greatest-show-cat",
+      "title": "探测到光亮物体",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-hab-corn-cat",
+      "title": "点点绿意",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-icy-flowers-cat",
+      "title": "寒冷的发现",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-intemporal-orb-cat",
+      "title": "球体",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-life-gasgiant-category",
+      "title": "生命迹象",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-mysterious-rock-cat",
+      "title": "神秘的岩石形态",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-object-uninhabitable-category",
+      "title": "未知物体",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ship-gasgiant-category",
+      "title": "气态巨行星飞船",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-shipyard-uninhabitable-category",
+      "title": "远古船坞",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-station-asteroid-category",
+      "title": "废弃空间站",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-gasgiant-category",
+      "title": "大气风暴",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-sun-teapot-cat",
+      "title": "不可能的轨道",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-tomb-world-cat",
+      "title": "死寂星球",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-trop-woods-cat",
+      "title": "森林国度",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ubume-baby-cat",
+      "title": "奇怪的残骸",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-wenkwort-cat",
+      "title": "行星花园",
+      "kind": "anomaly",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-3101",
+      "title": "星际绑架者：捡拾碎片",
+      "kind": "event",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5000",
+      "title": "有脉搏的星球",
+      "kind": "event",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5009",
+      "title": "虚空孳孽被击败",
+      "kind": "event",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-abandoned-outpost-category",
+      "title": "废弃观测站",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-aianom-researchdepo-cat",
+      "title": "地表读数",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-crater-cat",
+      "title": "尘暴区",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 4,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-astral-scar-cat",
+      "title": "星界细缝",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-black-hole-instable-cat",
+      "title": "不稳定黑洞",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-cargo-gasgiant-category",
+      "title": "货舱",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-chthonian-preservation-cat",
+      "title": "冥界生物",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-crimson-crawlers-category",
+      "title": "猩红地表",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-diamond-dust-cat",
+      "title": "高速物质",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-dimensional-pocket-cat",
+      "title": "维度扰动",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-clone-cat",
+      "title": "可疑的舱体",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 5,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-flow-cat",
+      "title": "异常的读数",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-wreck-cat",
+      "title": "补给船残骸",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-froz-box-cat",
+      "title": "暗藏玄机",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gaseous-metals-cat",
+      "title": "气态金属",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gen-mystical-cat",
+      "title": "谜团",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-geological-tension-cat",
+      "title": "极端地质应力",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-glimpse-core-cat",
+      "title": "核心一瞥",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-infernal-tornadoes-cat",
+      "title": "极端温度",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-magma-megafauna-cat",
+      "title": "不稳地质",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-orbital-resonance-cat",
+      "title": "黄金比例",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-origin-asteroid-category",
+      "title": "未知起源",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-peculiar-patterns-cat",
+      "title": "奇怪的图案",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-planet-thrusters-cat",
+      "title": "漂浮装置",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-poisoned-atmosphere-cat",
+      "title": "毒性大气",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-proj-moon-cat",
+      "title": "奇异无比",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-stolen-ship-cat",
+      "title": "武装舰船",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-displaced-tiyanki",
+      "title": "走失的缇扬奇",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-eviscerated-fauna",
+      "title": "异物",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-sun-rays-cat",
+      "title": "令人疑惑的宇宙射线",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-terminal-gasgiant-category",
+      "title": "终结轨道",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-the-judge-cat",
+      "title": "辐射激增",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-tox-mat-cat",
+      "title": "剧毒外表",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-transmitter-cat",
+      "title": "加密通讯",
+      "kind": "anomaly",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-142",
+      "title": "古神：接近恩赐女神",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-143",
+      "title": "古神：接近勇气之神",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-144",
+      "title": "古神：接近洞察女神",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-4036",
+      "title": "炉中之火",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5",
+      "title": "超强耀斑",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5001",
+      "title": "异形魔怪",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5054",
+      "title": "发现外星个体",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-58",
+      "title": "变形虫之死",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-aerostat-gasgiant-category",
+      "title": "飞行器结构",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-aianom-miningdepo-cat",
+      "title": "地表读数",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-alpha-centauri-cat",
+      "title": "稳态",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-shrine-1-cat",
+      "title": "被雕琢的小行星",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 1,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-asteroid-uninhabitable-category",
+      "title": "轨道小行星",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-collision-asteroid-category",
+      "title": "小行星碰撞",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-cosmic-dawn-sleepers2-category",
+      "title": "警惕的休眠者",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-crashed-ship-asteroid-category",
+      "title": "坠毁的飞船",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-debris-asteroid-category",
+      "title": "覆盖着残骸",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-disco-stranded-scientist-cat",
+      "title": "太空船遗留物",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-emissions-asteroid-category",
+      "title": "能量辐射",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-frozen-springs-cat",
+      "title": "神秘热源",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-hatch-asteroid-category",
+      "title": "对接舱",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-hbl-music-1-cat",
+      "title": "深夜天籁",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-hole-radiation-cat",
+      "title": "黑暗中的彩虹",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-impact-uninhabitable-category",
+      "title": "巨大撞击",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-inhabited-toxic-category",
+      "title": "前人殖民的迹象",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-life-asteroid-category",
+      "title": "生命迹象",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-life-toxic-category",
+      "title": "生命迹象",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-lost-soul-cat",
+      "title": "迷路灵魂",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-moon-gasgiant-category",
+      "title": "潜力巨大的卫星",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-object-gasgiant-category",
+      "title": "大气层中的物体",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-signal-uninhabitable-category",
+      "title": "微弱的信号",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-survival-pod-warm-cat",
+      "title": "改造的外勤站",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-the-imitator-category",
+      "title": "模仿者",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-uhb-ancient-ruins-1-cat",
+      "title": "碑塔",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-vending-machine-cat",
+      "title": "一份邀请",
+      "kind": "anomaly",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-3097",
+      "title": "星际绑架者：尘归尘，土归土",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-3115",
+      "title": "漂流的舰队",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5007",
+      "title": "新殖民地",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5009",
+      "title": "查比克·莱迪",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-6793",
+      "title": "灵能呜咽",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-6880",
+      "title": "无法解释的旋转",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-1085",
+      "title": "冰层中的外星生命体",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-13030",
+      "title": "观察到L-星龙",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-254",
+      "title": "相变星球",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-physics-technology-calling-project",
+      "title": "知识的召唤",
+      "kind": "project",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-aianom-clue-cat",
+      "title": "L-星门线索",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-alien-life-cat",
+      "title": "外星生命",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ancrel-arc-cat",
+      "title": "外星遗址",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-arid-planet-cat",
+      "title": "干燥的废土",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-illicit-dark-cat",
+      "title": "辐射小行星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-ast-mining-cat",
+      "title": "留心矿物",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-atm-anomaly-cat",
+      "title": "大气异常现象",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-backwards-orbit-cat",
+      "title": "逆行轨道",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-beacon-uninhabitable-category",
+      "title": "地表信标",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-bioadaptive-flora-category",
+      "title": "生物适应性植被",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-black-clouds-cat",
+      "title": "黑云",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-breachsealer-cat",
+      "title": "发现宇宙裂口",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-carbon-allotropes-cat",
+      "title": "碳的同素异形体",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-corrupt-data-cat",
+      "title": "调查数据损坏",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-cosmic-dawn-sleepers-category",
+      "title": "与世隔绝的休眠者",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-cosmic-dawn-sleepers3-category",
+      "title": "休眠者星港",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-crystal-lava-lakes-category",
+      "title": "晶体熔岩湖",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-crystalline-plains-cat",
+      "title": "冷火山活动",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-des-planet-cat",
+      "title": "荒凉沙漠",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-collapse-cat",
+      "title": "荒废站点",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-dead-god-cat",
+      "title": "沉默巨兽",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-diamond-cat",
+      "title": "超重脉冲",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-electro-cat",
+      "title": "网状构造",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-exo-cat",
+      "title": "奇异的植物毯子",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-flare-cat",
+      "title": "文明的遗踪",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-flytrap-cat",
+      "title": "巨型植被",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-foes-cat",
+      "title": "二重身",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-geode-cat",
+      "title": "隐秘核心",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-holo-cat",
+      "title": "舰队的信号",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-ice-cat",
+      "title": "不一致的读数",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-med-cat",
+      "title": "神秘箱体",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-medgas-cat",
+      "title": "坚固的核心",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-mercury-cat",
+      "title": "深层洞窟",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-metal-cat",
+      "title": "干扰云层",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-molten-cat",
+      "title": "火山喷口",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-nano-cat",
+      "title": "灰蛊",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-nanocity-cat",
+      "title": "金属晶体结构",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-nanosand-cat",
+      "title": "金属沙子",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-ocean-cat",
+      "title": "深层隧道",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-puzzle-cat",
+      "title": "无法扫描的物体",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-rainbow-cat",
+      "title": "黑暗中的彩虹",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-rat-cat",
+      "title": "残毁首都",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-robo-cat",
+      "title": "对称结构",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-signal-cat",
+      "title": "干扰",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-soothe-cat",
+      "title": "共鸣水晶",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-soothe-gc-cat",
+      "title": "高强磁性",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-soy-cat",
+      "title": "杂草丛生的遗迹",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-thirsty-cat",
+      "title": "干涸峡谷",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-distar-zone-cat",
+      "title": "遗世废墟",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-electric-waters-cat",
+      "title": "带电海洋",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-exploding-skies-cat",
+      "title": "强热脉冲",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-fibrous-atmosphere-cat",
+      "title": "扫描失败",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-fractalized-entropy-category",
+      "title": "分形熵",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-froz-base2-cat",
+      "title": "冰雪平原",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-froz-illuminated-cat",
+      "title": "冰雪发光",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-frozen-inferno-cat",
+      "title": "热脉冲",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gaea-checkered-cat",
+      "title": "扫雷",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gaia-move-cat",
+      "title": "似是天堂",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gaia-planet-cat",
+      "title": "外星人活动",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gas-cloudy-cat",
+      "title": "云舞",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gas-zro-ice-cat",
+      "title": "冰冻冰巨星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gen-abandoned-ship-cat",
+      "title": "停泊",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-gen-playground-cat",
+      "title": "令人玩味的遗迹",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-geocentric-experiment-cat",
+      "title": "天体星仪",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-great-blue-spots-cat",
+      "title": "大蓝点",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-hab-mat-cat",
+      "title": "金属闪烁",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-infernal-oasis-category",
+      "title": "地狱绿洲",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-invisible-planet-cat",
+      "title": "轨道不规则",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-lava-whirlpool-category",
+      "title": "熔岩漩涡",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-layered-atmosphere-cat",
+      "title": "喷发巨行星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-leveled-cat",
+      "title": "蒸汽翻腾",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-life-barren-category",
+      "title": "生命迹象",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-life-in-darkness-cat",
+      "title": "黑夜生灵",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-living-metal-category",
+      "title": "奇特的撞击坑",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-missing-mass-cat",
+      "title": "缺失质量",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-molten-base-cat",
+      "title": "剧热律动",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-molten-metal-ocean-cat",
+      "title": "极端熔岩流",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-moon-cat",
+      "title": "奇特卫星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-mysterious-ringing-category",
+      "title": "神秘鸣响",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-obsidian-planet-cat",
+      "title": "闪光地景",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-optical-phenomena-cat",
+      "title": "闪烁地表",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-outgassing-category",
+      "title": "气体释放",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-plasma-trails-cat",
+      "title": "能量波动",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-plasma-volcano-cat",
+      "title": "轨道等离子体",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-pulsating-object-toxic-cat",
+      "title": "悸动之物",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-radioactive-planet-cat",
+      "title": "放射性行星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-rainbow-rivers-cat",
+      "title": "荧光之河",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-sea-cat",
+      "title": "变幻莫测",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-sea-crystal-cat",
+      "title": "漂浮珍宝",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-shearing-force-cat",
+      "title": "失去联络",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-singing-planet-cat",
+      "title": "怪异读数",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-sol-wasteland-category",
+      "title": "核废墟",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-solar-uninhabitable-category",
+      "title": "太阳帆",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-solarpunk-cat",
+      "title": "失踪的行星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-spires-of-light-category",
+      "title": "光之尖塔",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-star-resonance-cat",
+      "title": "怪异共鸣",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-anom-ants",
+      "title": "有机彗星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-anom-brain",
+      "title": "存在主义耗散",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-anom-polychromatic",
+      "title": "多彩之星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-anom-stat",
+      "title": "令人费解的组成",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-anom-travellers",
+      "title": "余波求助信号",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-anom-triplets",
+      "title": "小行星三姊妹",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-cosmic-sludge",
+      "title": "宇宙污泥",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-storms-shattered-sattelite",
+      "title": "破碎的卫星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-strange-signal-category",
+      "title": "令人好奇的信号",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-subglacial-vibrations-cat",
+      "title": "冰下振动",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-supermassive-giant-cat",
+      "title": "超大质量巨行星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-tectonic-icebreaker-category",
+      "title": "构造破冰活动",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-temporal-prism-cat",
+      "title": "异常时间波动",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-terrestial-telescope-category",
+      "title": "天文望远镜",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-the-lonely-bot-category",
+      "title": "古生命迹象",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-tiyanki-asteroid-cat",
+      "title": "活体小行星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-tox-planet-cat",
+      "title": "毒性",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-tox-purple-rain-cat",
+      "title": "斑斓毒星",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-tox-structures-cat",
+      "title": "剧毒建筑",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-trop-biology-cat",
+      "title": "热带奇谭",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-trop-conditions-cat",
+      "title": "丛林之间",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-trop-pets-cat",
+      "title": "疾行",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-unique-system-battle-cat",
+      "title": "古战场",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-vapor-plumes-cat",
+      "title": "羽状蒸汽",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-writing-uninhabitable-category",
+      "title": "地表文字",
+      "kind": "anomaly",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-3095",
+      "title": "星际绑架者：最佳计划",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-4171",
+      "title": "失败",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-1082",
+      "title": "阿兹詹虫逃跑了！",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-10904",
+      "title": "已收集好L-星门的线索",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-13080",
+      "title": "遗弃星门",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-gas-giant-bodies-project",
+      "title": "分析死亡的太空生物",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-inetian-projects-04",
+      "title": "探究因内特贸易体的秘密",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-project-adakkaria-secrets-of",
+      "title": "阿达卡利亚公约的秘密",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-relentless-industrialists-study-project",
+      "title": "安全辐射化的秘密",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-retaliatory-genome-mapping",
+      "title": "报复性基因测序",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-robot-cleaners-project",
+      "title": "遗留的机械",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-animator-of-clay-fc-project",
+      "title": "与雕刻之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-animator-of-clay-fc-project-hive",
+      "title": "与雕刻之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-animator-of-clay-fc-project-robot",
+      "title": "与雕刻之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-black-river-fc-project",
+      "title": "与不息之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-black-river-fc-project-hive",
+      "title": "与不息之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-black-river-fc-project-robot",
+      "title": "与不息之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-bladeless-sword-fc-project",
+      "title": "与和平之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-bladeless-sword-fc-project-hive",
+      "title": "与和平之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-bladeless-sword-fc-project-robot",
+      "title": "与和平之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-composer-of-strands-clay-fc-project",
+      "title": "与[Root.Patron:the_composer_of_strands.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-composer-of-strands-fc-project",
+      "title": "与[Root.Patron:the_composer_of_strands.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-composer-of-strands-fc-project-hive",
+      "title": "与[Root.Patron:the_composer_of_strands.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-composer-of-strands-fc-project-robot",
+      "title": "与[Root.Patron:the_composer_of_strands.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-cradle-of-souls-fc-project",
+      "title": "与[Root.Patron:the_cradle_of_souls.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-cradle-of-souls-fc-project-hive",
+      "title": "与[Root.Patron:the_cradle_of_souls.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-cradle-of-souls-fc-project-robot",
+      "title": "与[Root.Patron:the_cradle_of_souls.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-eater-of-world-fc-project",
+      "title": "与[Root.Patron:the_eater_of_worlds.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-eater-of-world-fc-project-hive",
+      "title": "与[Root.Patron:the_eater_of_worlds.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-eater-of-world-fc-project-robot",
+      "title": "与[Root.Patron:the_eater_of_worlds.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-endless-sands-fc-project",
+      "title": "与无底之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-endless-sands-fc-project-hive",
+      "title": "与无底之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-endless-sands-fc-project-robot",
+      "title": "与无底之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-golden-dream-fc-project",
+      "title": "与奢华之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-golden-dream-fc-project-hive",
+      "title": "与奢华之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-golden-dream-fc-project-robot",
+      "title": "与奢华之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-instrument-of-desire-fc-project",
+      "title": "与[Root.Patron:the_instrument_of_desire.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-instrument-of-desire-fc-project-hive",
+      "title": "与[Root.Patron:the_instrument_of_desire.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-instrument-of-desire-fc-project-robot",
+      "title": "与[Root.Patron:the_instrument_of_desire.GetPreCommunicationName]通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-mountain-of-bones-fc-project",
+      "title": "与不越之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-mountain-of-bones-fc-project-hive",
+      "title": "与不越之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-mountain-of-bones-fc-project-robot",
+      "title": "与不越之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-outsider-fc-project",
+      "title": "与悲伤之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-outsider-fc-project-hive",
+      "title": "与悲伤之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-outsider-fc-project-robot",
+      "title": "与悲伤之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-throne-shadow-fc-project",
+      "title": "与不屈之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-throne-shadow-fc-project-hive",
+      "title": "与不屈之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-the-throne-shadow-fc-project-robot",
+      "title": "与不屈之物通灵",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-woodwind-instrument-investigation",
+      "title": "木管乐器调查",
+      "kind": "project",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "anomaly-tutorial-cat",
+      "title": "离开家园",
+      "kind": "anomaly",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "chain-star-crazy-chain",
+      "title": "能量辐射",
+      "kind": "chain",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-106",
+      "title": "地球大陆",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-2574",
+      "title": "发现环境改造候选",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-3114",
+      "title": "海盗暗涌",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-3120",
+      "title": "剿灭海盗",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 2,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5017",
+      "title": "伯达拉克大众声明",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5018",
+      "title": "伯达拉克大众声明",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5019",
+      "title": "伯达拉克大众声明",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5022",
+      "title": "新伯达拉克公告",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5023",
+      "title": "新伯达拉克公告",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5024",
+      "title": "伯达拉克大众声明",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5025",
+      "title": "伯达拉克科学学院",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-5026",
+      "title": "大扫除",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-6660",
+      "title": "反常情况",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-6661",
+      "title": "反常情况",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-6725",
+      "title": "准备不足",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-6830",
+      "title": "水晶的呼唤",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-6885",
+      "title": "发怒的晶体",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-anomaly-96",
+      "title": "地球大陆",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-1014",
+      "title": "身处乐园",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-1015",
+      "title": "失乐园",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-10955",
+      "title": "L-星团的召唤",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-13020",
+      "title": "被消灭",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-13060",
+      "title": "天然虫洞",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-13070",
+      "title": "遗弃星门",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-135",
+      "title": "拾荒者",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-137",
+      "title": "拾荒者的末日",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-2036",
+      "title": "[time_loop_world.GetName]",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-211",
+      "title": "族母",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-235",
+      "title": "鼠人已割让行星",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-240",
+      "title": "未知信号",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-242",
+      "title": "灵能实体",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-243",
+      "title": "实体沉默",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-256",
+      "title": "相变星球",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-262",
+      "title": "美味的真核生物",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-34",
+      "title": "全球暴乱已平定",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-37",
+      "title": "全球暴乱已平定",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5011",
+      "title": "虚空孳孽",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5014",
+      "title": "完好如初",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5053",
+      "title": "飞升已终止",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-5077",
+      "title": "神秘提升已终止",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-72",
+      "title": "冷冻克隆体已复苏",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-81",
+      "title": "死亡之神",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-distar-9000",
+      "title": "L-星门线索",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-arkship-eternal-chorus-project",
+      "title": "永恒合唱",
+      "kind": "project",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-contract-espionage-support-project-01",
+      "title": "部署间谍卫星",
+      "kind": "project",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-contract-espionage-support-project-02",
+      "title": "走私补给",
+      "kind": "project",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-contract-espionage-support-project-03",
+      "title": "渗透恒星基地",
+      "kind": "project",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-endbringers-commune-with-the-voice",
+      "title": "与心声通灵",
+      "kind": "project",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "project-establish-communications",
+      "title": "调查[Prev.From.GetName]",
+      "kind": "project",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+ "id": "irassian",
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "precursor.1505",
+    "precursor.1510",
+    "precursor.1515",
+    "precursor.1520",
+    "precursor.1525",
+    "precursor.1530",
+    "precursor.1535",
+    "precursor.1540",
+    "precursor.1545",
+    "precursor.1550",
+    "precursor.1555"
+   ],
+   "required": 6,
+   "gate": "precursor.1600",
+   "label": {
+    "zh": "追寻遗迹",
+    "en": "Following the traces"
+   },
+   "note": {
+    "zh": "调查地点没有固定先后；收集六份线索后，可定位母星。",
+    "en": "Investigations may occur in any order. Six clues reveal the home system."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "precursor.1601",
+    "precursor.1602"
+   ],
+   "labels": [
+    {
+     "zh": "率先发现",
+     "en": "First to arrive"
+    },
+    {
+     "zh": "他人已经先至",
+     "en": "Others arrived first"
+    }
+   ],
+   "note": {
+    "zh": "这两种结果互为替代，不会依次发生。",
+    "en": "These are alternative outcomes, not consecutive events."
+   }
+  }
+ ],
+ "legacy": {
+  "precursorConfig": {
+   "id": "irassian",
+   "base": 1500,
+   "project": "IRASSIAN",
+   "investigations": 11,
+   "chain": "irassian",
+   "secrets": "IRASSIAN_SECRETS",
+   "secretEvent": "ancrel.9001",
+   "title": "伊拉斯"
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "id": "origin_here_be_dragons",
+ "bridges": [
+  {
+   "from": "aquatics.160",
+   "to": "aquatics.190",
+   "conditional": true,
+   "label": {
+    "zh": "十二年后，相关科技满足研究条件",
+    "en": "After year twelve, with the required technologies"
+   },
+   "evidence": "190 on_tech_increased requires years_passed>12 and xenobiology/material research (waived after50years), non-hostile dragon"
+  },
+  {
+   "from": "aquatics.165",
+   "to": "aquatics.190",
+   "conditional": true,
+   "label": {
+    "zh": "十二年后，相关科技满足研究条件",
+    "en": "After year twelve, with the required technologies"
+   },
+   "evidence": "190 on_tech_increased requires years_passed>12 and xenobiology/material research (waived after50years), non-hostile dragon"
+  },
+  {
+   "from": "aquatics.170",
+   "to": "aquatics.190",
+   "conditional": true,
+   "label": {
+    "zh": "十二年后，相关科技满足研究条件",
+    "en": "After year twelve, with the required technologies"
+   },
+   "evidence": "190 on_tech_increased requires years_passed>12 and xenobiology/material research (waived after50years), non-hostile dragon"
+  },
+  {
+   "from": "aquatics.195",
+   "to": "aquatics.255",
+   "conditional": true,
+   "label": {
+    "zh": "研究冷却结束且具备联络经验后",
+    "en": "After research cooldown and sufficient contact experience"
+   },
+   "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+   "from": "aquatics.200",
+   "to": "aquatics.255",
+   "conditional": true,
+   "label": {
+    "zh": "研究冷却结束且具备联络经验后",
+    "en": "After research cooldown and sufficient contact experience"
+   },
+   "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+   "from": "aquatics.205",
+   "to": "aquatics.255",
+   "conditional": true,
+   "label": {
+    "zh": "研究冷却结束且具备联络经验后",
+    "en": "After research cooldown and sufficient contact experience"
+   },
+   "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+   "from": "aquatics.210",
+   "to": "aquatics.255",
+   "conditional": true,
+   "label": {
+    "zh": "研究冷却结束且具备联络经验后",
+    "en": "After research cooldown and sufficient contact experience"
+   },
+   "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+   "from": "aquatics.215",
+   "to": "aquatics.255",
+   "conditional": true,
+   "label": {
+    "zh": "研究冷却结束且具备联络经验后",
+    "en": "After research cooldown and sufficient contact experience"
+   },
+   "evidence": "250 requires dragon_materials_study_complete, no cooldown, first_contact_skill_4 OR communications>=70%; first_contact/origin_dragon stage starts255"
+  },
+  {
+   "from": "aquatics.255",
+   "to": "aquatics.260",
+   "conditional": true,
+   "label": {
+    "zh": "继续破译龙语",
+    "en": "Continue deciphering the dragon language"
+   },
+   "evidence": "255 sets origin_dragon_stage_2;02_first_contact_unique_stories.txt event260"
+  },
+  {
+   "from": "aquatics.260",
+   "to": "aquatics.265",
+   "conditional": true,
+   "label": {
+    "zh": "完成联络研究",
+    "en": "Complete first-contact research"
+   },
+   "evidence": "260 sets origin_dragon_finish;02_first_contact_unique_stories.txt event265"
+  }
+ ],
+ "opening": {
+  "targets": [
+   "aquatics.150"
+  ],
+  "label": {
+   "zh": "数年后，天龙开始进食",
+   "en": "Years later, the dragon grows hungry"
+  },
+  "evidence": "aquatics.100 initial setup schedules150 at3300-4300days; aquatics1/4/5 are Hydrocentric ascension content, not this origin"
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

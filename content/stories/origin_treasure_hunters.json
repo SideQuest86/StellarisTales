@@ -1,0 +1,1122 @@
+{
+ "id": "origin_treasure_hunters",
+ "bridges": [
+  {
+   "from": "grand_archive.8055",
+   "choice": "FASCINATING",
+   "to": "grand_archive.8075",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "可选展览支线：尚未提出档案馆计划，且未掌握银河档案学",
+    "en": "Optional exhibition: archive proposal not made and Galactic Archivism not researched"
+   },
+   "evidence": "8070 chooses8075 only without grand_archive_kickstart_proposed;8075 trigger also excludes tech_galactic_archivism. This branch is independent of the second capsule project."
+  },
+  {
+   "from": "grand_archive.8055",
+   "choice": "FASCINATING",
+   "to": "grand_archive.8076",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "可选展览支线：此前已提出档案馆计划",
+    "en": "Optional exhibition: archive proposal already made"
+   },
+   "evidence": "8070 dispatches8076 when grand_archive_kickstart_proposed is present;8076 opens the exhibition project."
+  },
+  {
+   "from": "grand_archive.8600",
+   "to": "grand_archive.8595",
+   "conditional": true,
+   "requiresVisited": [
+    "grand_archive.8590"
+   ],
+   "label": {
+    "zh": "审判路线后日谈：1800–3600天后",
+    "en": "Judgment epilogue: after 1800–3600 days"
+   },
+   "evidence": "8590.a schedules8595 days1800 random1800, later than8580's30day8600 finale. Only offer this reading continuation after the judgment scene was read; this is reading history, not a simulation of all game flags."
+  },
+  {
+   "from": "grand_archive.8585",
+   "to": "grand_archive.8600",
+   "conditional": false,
+   "label": {
+    "zh": "继续主线收尾（处置船长后第30天）",
+    "en": "Continue to the finale (30 days after deciding the captain's fate)"
+   },
+   "evidence": "8580 DISMISS schedules8585 in1day;8580 after independently schedules8600 in30days. Reading continuation after farewell, not a new game timer."
+  },
+  {
+   "from": "grand_archive.8590",
+   "to": "grand_archive.8595",
+   "choice": "grand_archive.8590.a",
+   "annotate": true,
+   "requiresVisited": [
+    "grand_archive.8600"
+   ],
+   "conditional": false,
+   "label": {
+    "zh": "远期后日谈：1800–3600天后（主线收尾在此前发生）",
+    "en": "Later epilogue: after 1800–3600 days (the main finale happens first)"
+   },
+   "evidence": "8590.a schedules8595 days1800 random1800.8580 after schedules8600 days30; this is not the immediately following scene."
+  },
+  {
+   "from": "grand_archive.8590",
+   "to": "grand_archive.8600",
+   "conditional": false,
+   "label": {
+    "zh": "先阅读主线收尾（处置船长后第30天）",
+    "en": "Read the main finale first (30 days after deciding the captain's fate)"
+   },
+   "evidence": "8580.d schedules8590 in1day;8580 after independently schedules8600 in30days, before8590.a's1800–3600day epilogue."
+  },
+  {
+   "from": "situations:situation_sabotage",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "on_fleet_destroyed_perp8540 matches black_needle_country/fleet and is_spawned_for origin country. Active situation_sabotage calls8555, which cleans flags, aborts situation and schedules8560 after1day. Combat can end sabotage early, not only after its progress outcome. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "from": "grand_archive.8400",
+   "to": "grand_archive.8405",
+   "conditional": true,
+   "label": {
+    "zh": "穿过星门，舰船首次进入藏宝星系",
+    "en": "Travel through the gateway and first enter the treasure system"
+   },
+   "evidence": "8400 creates ness_treasure_system_poi and links gateways; on_entering_system_first_time8405 checks matching target system, origin chain and POI, spawns final fleet and calls8410 after1day. Opening the gateway does not itself spawn the ambush."
+  },
+  {
+   "from": "special_projects:RESEARCH_GATEWAY_ACTIVATION_PROJECT",
+   "to": "grand_archive.8325",
+   "conditional": true,
+   "label": {
+    "zh": "研究完成星门激活科技后",
+    "en": "After completing research into Gateway Activation"
+   },
+   "evidence": "on_tech_increased8320 requires last_increased_tech=tech_gateway_activation and project active;8321 completes project, sets activate_gateway_from_tech, calls8325."
+  },
+  {
+   "from": "special_projects:ACTIVATE_GATEWAY_PROJECT",
+   "to": "grand_archive.8400",
+   "conditional": true,
+   "label": {
+    "zh": "完成对应星门的修复建造后",
+    "en": "After completing restoration of the marked gateway"
+   },
+   "evidence": "05_gateways gateway_ness_restored build_time720; on_build_complete checks Grand Archive DLC, builder origin, active ACTIVATE_GATEWAY_PROJECT and matching gateway flag, completes project and calls8400."
+  },
+  {
+   "from": "special_projects:ACTIVATE_GATEWAY_PROJECT_NOMADS",
+   "to": "grand_archive.8400",
+   "conditional": true,
+   "label": {
+    "zh": "游牧激活项目完成，并完成星门升级后",
+    "en": "After the nomadic activation project and gateway upgrade complete"
+   },
+   "evidence": "Nomadic project30days sets activating_ness_gate and upgrades ruined gateway. gateway_ness_restored.on_build_complete selects matching nomadic origin with flag, spawns treasure system and calls8400."
+  },
+  {
+   "from": "special_projects:GATEWAY_VOIDWORMS_KILL_PROJECT",
+   "to": "grand_archive.8315",
+   "conditional": true,
+   "label": {
+    "zh": "击败星门虚空虫后，尚未掌握星门激活科技",
+    "en": "After defeating the gateway voidworms, without Gateway Activation technology"
+   },
+   "evidence": "on_fleet_destroyed_perp8305 requires voidworms_treasure_hunters and gateway_voidworms fleet flag; completes kill project then branches on tech_gateway_activation. Missing tech calls8315."
+  },
+  {
+   "from": "special_projects:GATEWAY_VOIDWORMS_KILL_PROJECT",
+   "to": "grand_archive.8325",
+   "conditional": true,
+   "label": {
+    "zh": "击败星门虚空虫后，已有激活科技但星门尚未修复",
+    "en": "After defeating the gateway voidworms, with activation technology but the gateway still unrestored"
+   },
+   "evidence": "8305 with tech_gateway_activation checks target system for gateway_ness_restored; absent calls8325, which only starts once and requires tagged gateway."
+  },
+  {
+   "from": "special_projects:GATEWAY_VOIDWORMS_KILL_PROJECT",
+   "to": "grand_archive.8400",
+   "conditional": true,
+   "label": {
+    "zh": "击败星门虚空虫后，已有激活科技且目标星门已修复",
+    "en": "After defeating the gateway voidworms, with activation technology and the target gateway already restored"
+   },
+   "evidence": "8305 with tech_gateway_activation and gateway_ness_restored in target system calls8400 directly. These three branches are alternatives, not consecutive stages."
+  },
+  {
+   "from": "grand_archive.8285",
+   "to": "grand_archive.8300",
+   "conditional": true,
+   "label": {
+    "zh": "舰船首次进入星图标出的星门星系",
+    "en": "A ship first enters the gateway system marked on the chart"
+   },
+   "evidence": "8285 spawns gateway_to_ness_treasure_system and tags ruined gateway. on_entering_system_first_time calls8300 requiring the matching gateway POI; creates hostile voidworm encounter and GATEWAY_VOIDWORMS_KILL_PROJECT. Not an automatic thirty-day followup to8285."
+  },
+  {
+   "from": "grand_archive.8245",
+   "choice": "CLOSE_COMMUNICATIONS",
+   "to": "grand_archive.8265",
+   "conditional": true,
+   "label": {
+    "zh": "结束通讯并交战后，伊纳克斯的舰船被瘫痪",
+    "en": "After closing communications and engaging, Captain Inax's ship is disabled"
+   },
+   "evidence": "8245 close calls8250 hostile fleet setup. on_ship_disabled8260 checks captain_inax_ship and resolves origin country by is_in_combat_with flag, then8264 deletes fleet and calls8265. Ordinary dialog-only questions do not start this combat.8265 opens CHART_PIECE_3_PROJECT."
+  },
+  {
+   "from": "grand_archive.8230",
+   "choice": "grand_archive.8230.a",
+   "to": "grand_archive.8236",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "发掘结束一天后，藏身星系中没有己方舰队",
+    "en": "One day after excavation, if none of your fleets is in the shelter system"
+   },
+   "evidence": "8230.a schedules8235 days1;8235 selects8236 if no fleet controlled by root in smeegibb_system, otherwise8241."
+  },
+  {
+   "from": "grand_archive.8230",
+   "choice": "grand_archive.8230.a",
+   "to": "grand_archive.8241",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "发掘结束一天后，己方舰队已在藏身星系",
+    "en": "One day after excavation, if your fleet is already in the shelter system"
+   },
+   "evidence": "8235 fleet-presence branch directly calls8241 instead of8236; no return trip notification when already present."
+  },
+  {
+   "from": "grand_archive.8236",
+   "to": "grand_archive.8241",
+   "conditional": true,
+   "label": {
+    "zh": "派遣舰队返回藏身星系调查",
+    "en": "Send a fleet back to investigate the shelter system"
+   },
+   "evidence": "8235 creates smeegibb_shelter_system_poi.2; on_entering_system_fleet8240 checks matching POI and calls8241.8236 notification alone does not spawn the encounter."
+  },
+  {
+   "from": "grand_archive.8135",
+   "to": "grand_archive.8200",
+   "conditional": true,
+   "label": {
+    "zh": "勘察斯米吉卜的藏身星球，或取得该星系",
+    "en": "Survey Smeegibb's shelter planet, or gain its system"
+   },
+   "evidence": "8135 spawns shelter system and upgrades chart. on_survey_planet8201/on_system_gained8202 dispatch8200, requiring smeegibb_shelter flag and matching shelter POI;8200 then schedules8205 after1day."
+  },
+  {
+   "from": "special_projects:BLACK_NEEDLE_BASE_BOMBARD",
+   "to": "grand_archive.8103",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "轰炸进度25%且援军尚未出现",
+    "en": "At 25% bombardment progress, if reinforcements have not yet appeared"
+   },
+   "evidence": "BLACK_NEEDLE_BASE_BOMBARD.on_progress_25 calls8103;8103 requires NOT reinforcement_fleet_spawned and spawns flagged reinforcements."
+  },
+  {
+   "from": "special_projects:BLACK_NEEDLE_BASE_BOMBARD",
+   "to": "grand_archive.8105",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "轰炸项目完成后；中途可能遭遇援军",
+    "en": "After bombardment completes; reinforcements may intervene along the way"
+   },
+   "evidence": "Bombard project on_success calls8105, separate from25% reinforcement notification. Killing reinforcements aborts this project and starts replacement through8104."
+  },
+  {
+   "from": "grand_archive.8103",
+   "to": "special_projects:BLACK_NEEDLE_BASE_BOMBARD_REINFORCEMENTS_KILLED",
+   "conditional": true,
+   "label": {
+    "zh": "击败黑针援军后继续轰炸",
+    "en": "Continue bombardment after defeating the Black Needle reinforcements"
+   },
+   "evidence": "on_fleet_destroyed_perp calls8104 requiring black_needle_reinforcement_fleet@root; aborts original bombard and starts replacement90day project requiring1000fleet power instead of2000."
+  },
+  {
+   "from": "grand_archive.8045",
+   "to": "special_projects:TREASURE_HUNTERS_CHART_PIECE_2_PROJECT",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "勘察碎裂世界后打捞星图片；已勘察则立即开放",
+    "en": "Recover the chart fragment after surveying the shattered world; available immediately if already surveyed"
+   },
+   "evidence": "8045 opens project when shattered_ytterite_world surveyed, otherwise adds exploration POI.8051 survey and8052 system-gained dispatch8050, which requires the POI and enables the same project. Project takes180days using constructor/arkship and calls8055."
+  },
+  {
+   "from": "grand_archive.8060",
+   "to": "grand_archive.8100",
+   "conditional": true,
+   "label": {
+    "zh": "勘察黑针基地行星，或取得该星系",
+    "en": "Survey the Black Needle base planet, or gain its system"
+   },
+   "evidence": "8060 spawns black_needle_base_system and upgrades chart;8101 survey or8102 system-gained dispatch8100, requiring d_black_needle_base and matching black_needle_base_system_poi. Arrival alone does not trigger the base decision."
+  },
+  {
+   "from": "grand_archive.8025",
+   "choice": "CLOSE_COMMUNICATIONS",
+   "to": "grand_archive.8045",
+   "conditional": true,
+   "label": {
+    "zh": "结束通讯并交战后，黑针号被瘫痪",
+    "en": "After closing communications and engaging, the Black Needle is disabled"
+   },
+   "evidence": "8025 CLOSE_COMMUNICATIONS schedules8030 after1day, which sets the flagged fleet hostile. on_ship_disabled invokes8040 only for captain_hoo_ship;8044 resolves the origin country associated with is_in_combat_with, removes fleet and calls8045. Other empires may disable it too. Question options are dialog-only and do not independently trigger the battle."
+  },
+  {
+   "from": "grand_archive.8015",
+   "to": "grand_archive.8020",
+   "conditional": true,
+   "label": {
+    "zh": "舰船首次进入星图标出的目标星系",
+    "en": "A ship first enters the target system marked on the star chart"
+   },
+   "evidence": "8005 spawns first hidden system and schedules8015 after1day.00_on_actions on_entering_system_first_time calls8020 requiring matching treasure_hunters_hidden_system_poi.1 and origin chain. Announcement does not automatically trigger combat."
+  },
+  {
+   "to": "grand_archive.8526",
+   "choice": "grand_archive.8520.a.machine",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "机械帝国：处决叛徒",
+    "en": "Machine empire: execute the traitor"
+   },
+   "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+   "from": "grand_archive.8520"
+  },
+  {
+   "from": "grand_archive.8526",
+   "to": "grand_archive.8550",
+   "conditional": true,
+   "label": {
+    "zh": "继续应对，局势进度最终达到150",
+    "en": "Continue countermeasures until situation progress reaches150"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8526",
+   "to": "grand_archive.8545",
+   "conditional": true,
+   "label": {
+    "zh": "另一结果：应对局势失败",
+    "en": "Alternative: the countermeasure situation fails"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8526",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "to": "grand_archive.8527",
+   "choice": "grand_archive.8520.a.machine",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "蜂巢帝国：处决叛徒",
+    "en": "Hive empire: execute the traitor"
+   },
+   "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+   "from": "grand_archive.8520"
+  },
+  {
+   "from": "grand_archive.8527",
+   "to": "grand_archive.8550",
+   "conditional": true,
+   "label": {
+    "zh": "继续应对，局势进度最终达到150",
+    "en": "Continue countermeasures until situation progress reaches150"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8527",
+   "to": "grand_archive.8545",
+   "conditional": true,
+   "label": {
+    "zh": "另一结果：应对局势失败",
+    "en": "Alternative: the countermeasure situation fails"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8527",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "to": "grand_archive.8528",
+   "choice": "grand_archive.8520.a.machine",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "常规帝国：处决叛徒",
+    "en": "Regular empire: execute the traitor"
+   },
+   "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+   "from": "grand_archive.8520"
+  },
+  {
+   "from": "grand_archive.8528",
+   "to": "grand_archive.8550",
+   "conditional": true,
+   "label": {
+    "zh": "继续应对，局势进度最终达到150",
+    "en": "Continue countermeasures until situation progress reaches150"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8528",
+   "to": "grand_archive.8545",
+   "conditional": true,
+   "label": {
+    "zh": "另一结果：应对局势失败",
+    "en": "Alternative: the countermeasure situation fails"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8528",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "to": "grand_archive.8531",
+   "choice": "grand_archive.8520.b.machine",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "机械帝国：重新教育",
+    "en": "Machine empire: re-education"
+   },
+   "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+   "from": "grand_archive.8520"
+  },
+  {
+   "from": "grand_archive.8531",
+   "to": "grand_archive.8550",
+   "conditional": true,
+   "label": {
+    "zh": "继续应对，局势进度最终达到150",
+    "en": "Continue countermeasures until situation progress reaches150"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8531",
+   "to": "grand_archive.8545",
+   "conditional": true,
+   "label": {
+    "zh": "另一结果：应对局势失败",
+    "en": "Alternative: the countermeasure situation fails"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8531",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "to": "grand_archive.8532",
+   "choice": "grand_archive.8520.b.machine",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "蜂巢帝国：重新教育",
+    "en": "Hive empire: re-education"
+   },
+   "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+   "from": "grand_archive.8520"
+  },
+  {
+   "from": "grand_archive.8532",
+   "to": "grand_archive.8550",
+   "conditional": true,
+   "label": {
+    "zh": "继续应对，局势进度最终达到150",
+    "en": "Continue countermeasures until situation progress reaches150"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8532",
+   "to": "grand_archive.8545",
+   "conditional": true,
+   "label": {
+    "zh": "另一结果：应对局势失败",
+    "en": "Alternative: the countermeasure situation fails"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8532",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "to": "grand_archive.8533",
+   "choice": "grand_archive.8520.b.machine",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "常规帝国：重新教育",
+    "en": "Regular empire: re-education"
+   },
+   "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+   "from": "grand_archive.8520"
+  },
+  {
+   "from": "grand_archive.8533",
+   "to": "grand_archive.8550",
+   "conditional": true,
+   "label": {
+    "zh": "继续应对，局势进度最终达到150",
+    "en": "Continue countermeasures until situation progress reaches150"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8533",
+   "to": "grand_archive.8545",
+   "conditional": true,
+   "label": {
+    "zh": "另一结果：应对局势失败",
+    "en": "Alternative: the countermeasure situation fails"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8533",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "to": "grand_archive.8535",
+   "choice": "grand_archive.8520.c",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "非格式塔随机结果：叛徒死亡",
+    "en": "Non-gestalt random outcome: the traitor dies"
+   },
+   "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+   "from": "grand_archive.8520"
+  },
+  {
+   "from": "grand_archive.8535",
+   "to": "grand_archive.8550",
+   "conditional": true,
+   "label": {
+    "zh": "继续应对，局势进度最终达到150",
+    "en": "Continue countermeasures until situation progress reaches150"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8535",
+   "to": "grand_archive.8545",
+   "conditional": true,
+   "label": {
+    "zh": "另一结果：应对局势失败",
+    "en": "Alternative: the countermeasure situation fails"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8535",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "to": "grand_archive.8536",
+   "choice": "grand_archive.8520.c",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "非格式塔随机结果：叛徒获救",
+    "en": "Non-gestalt random outcome: the traitor survives"
+   },
+   "evidence": "Manually read8520,8525,8530 and8526–8536: empire-specific dispatch for a/b; c has mutually exclusive weighted random outcomes, not consecutive scenes.",
+   "from": "grand_archive.8520"
+  },
+  {
+   "from": "grand_archive.8536",
+   "to": "grand_archive.8550",
+   "conditional": true,
+   "label": {
+    "zh": "继续应对，局势进度最终达到150",
+    "en": "Continue countermeasures until situation progress reaches150"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8536",
+   "to": "grand_archive.8545",
+   "conditional": true,
+   "label": {
+    "zh": "另一结果：应对局势失败",
+    "en": "Alternative: the countermeasure situation fails"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls."
+  },
+  {
+   "from": "grand_archive.8536",
+   "to": "grand_archive.8555",
+   "conditional": true,
+   "label": {
+    "zh": "军事解决：局势进行中击败对应黑针主舰队（普通袭击舰队不计）",
+    "en": "Defeat the associated Black Needle main fleet during the situation (raiding fleets do not count)"
+   },
+   "evidence": "8526–8536 resolve the traitor but do not end situation_sabotage.11_grand_archive_situations on_progress_complete8550/on_fail8545;8540 fleet-destroyed callback during active situation calls8555. Reading continuations express conditional outcomes, not automatic event calls. Reviewed8540 requires black_needle_fleet plus is_spawned_for;8516 handles sabotage_situation_fleet separately and only resets3600day spawn cooldown."
+  },
+  {
+   "from": "situations:situation_sabotage",
+   "to": "grand_archive.8520",
+   "label": {
+    "zh": "应对进度达到100且存在非统治者、非继承人、非节点领袖",
+    "en": "At progress 100, with a leader who is not a ruler, heir or gestalt node"
+   },
+   "conditional": true,
+   "evidence": "11_grand_archive_situations sabotage starts25; stage1 ends100, stage2 ends150.8520 at stage2 entry;8550 on_progress_complete;8545 on_fail remains independent. Monthly base-0.5, purge+4.5, mitigate+2.5; not a simple increasing failure clock. Military victory8555 can abort throughout."
+  },
+  {
+   "from": "grand_archive.8520",
+   "to": "grand_archive.8550",
+   "label": {
+    "zh": "应对进度达到150，且黑针舰队仍存在",
+    "en": "Countermeasure progress reaches 150, while the Black Needle fleet still exists"
+   },
+   "conditional": true,
+   "evidence": "11_grand_archive_situations sabotage starts25; stage1 ends100, stage2 ends150.8520 at stage2 entry;8550 on_progress_complete;8545 on_fail remains independent. Monthly base-0.5, purge+4.5, mitigate+2.5; not a simple increasing failure clock. Military victory8555 can abort throughout."
+  }
+ ],
+ "dialogues": {
+  "grand_archive.8570": {
+   "states": {
+    "start": [
+     "grand_archive.8570.a",
+     "grand_archive.8570.b",
+     "grand_archive.8570.c",
+     "CLOSE_COMMUNICATIONS"
+    ],
+    "first": [
+     "grand_archive.8570.a",
+     "grand_archive.8570.b",
+     "grand_archive.8570.c",
+     "grand_archive.8570.d",
+     "CLOSE_COMMUNICATIONS"
+    ],
+    "second": [
+     "grand_archive.8570.a",
+     "grand_archive.8570.b",
+     "grand_archive.8570.c",
+     "grand_archive.8570.d",
+     "grand_archive.8570.e",
+     "CLOSE_COMMUNICATIONS"
+    ],
+    "third": [
+     "grand_archive.8570.a",
+     "grand_archive.8570.b",
+     "grand_archive.8570.c",
+     "grand_archive.8570.d",
+     "grand_archive.8570.f",
+     "CLOSE_COMMUNICATIONS"
+    ],
+    "fourth": [
+     "grand_archive.8570.a",
+     "grand_archive.8570.b",
+     "grand_archive.8570.c",
+     "grand_archive.8570.d",
+     "grand_archive.8570.g",
+     "CLOSE_COMMUNICATIONS"
+    ]
+   },
+   "transitions": {
+    "grand_archive.8570.c": "first",
+    "grand_archive.8570.d": "second",
+    "grand_archive.8570.e": "third",
+    "grand_archive.8570.f": "fourth"
+   },
+   "stateOrder": [
+    "start",
+    "first",
+    "second",
+    "third",
+    "fourth"
+   ],
+   "exits": [
+    "CLOSE_COMMUNICATIONS"
+   ],
+   "responseProfiles": [
+    {
+     "label": {
+      "zh": "存在失落或觉醒帝国",
+      "en": "A fallen or awakened empire exists"
+     },
+     "occurrences": {
+      "grand_archive.8570.a": 0
+     }
+    },
+    {
+     "label": {
+      "zh": "不存在失落或觉醒帝国",
+      "en": "No fallen or awakened empire exists"
+     },
+     "occurrences": {
+      "grand_archive.8570.a": 1
+     }
+    }
+   ],
+   "evidence": "Manually read grand_archive.8570: c/d/e/f set accumulating flags 1/2/3/4. e disappears after flag3, f after flag4; a/b/c/d remain repeatable. Closing is always allowed and schedules8575 in1day. a has mutually exclusive fallen/awakened-empire versus curator responses."
+  },
+  "grand_archive.8410": {
+   "states": {
+    "start": [
+     "grand_archive.8410.a",
+     "CLOSE_COMMUNICATIONS"
+    ],
+    "first": [
+     "grand_archive.8410.a",
+     "grand_archive.8410.b",
+     "CLOSE_COMMUNICATIONS"
+    ],
+    "second": [
+     "grand_archive.8410.a",
+     "grand_archive.8410.b",
+     "grand_archive.8410.c",
+     "CLOSE_COMMUNICATIONS"
+    ],
+    "third": [
+     "grand_archive.8410.a",
+     "grand_archive.8410.b",
+     "grand_archive.8410.c",
+     "grand_archive.8410.d",
+     "CLOSE_COMMUNICATIONS"
+    ]
+   },
+   "transitions": {
+    "grand_archive.8410.a": "first",
+    "grand_archive.8410.b": "second",
+    "grand_archive.8410.c": "third"
+   },
+   "stateOrder": [
+    "start",
+    "first",
+    "second",
+    "third"
+   ],
+   "exits": [
+    "CLOSE_COMMUNICATIONS"
+   ],
+   "responseProfiles": [
+    {
+     "label": {
+      "zh": "常规帝国",
+      "en": "Regular empire"
+     },
+     "occurrences": {
+      "grand_archive.8410.b": 0
+     }
+    },
+    {
+     "label": {
+      "zh": "蜂巢帝国",
+      "en": "Hive empire"
+     },
+     "occurrences": {
+      "grand_archive.8410.b": 1
+     }
+    },
+    {
+     "label": {
+      "zh": "机械帝国",
+      "en": "Machine empire"
+     },
+     "occurrences": {
+      "grand_archive.8410.b": 2
+     }
+    }
+   ],
+   "evidence": "8410 flags dialog_1/2/3 accumulate; a unlocks b, b unlocks c, c unlocks d. Repeating earlier questions does not clear flags. Close has no trigger and is always available; b has regular/hive/machine response instances."
+  },
+  "grand_archive.8245": {
+   "textProfiles": [
+    {
+     "label": {
+      "zh": "此前掠夺基地",
+      "en": "Previously ransacked the base"
+     },
+     "text": "grand_archive.8245.desc.ransacked",
+     "after": [
+      "grand_archive.8130"
+     ]
+    },
+    {
+     "label": {
+      "zh": "此前潜入窃取科技",
+      "en": "Previously infiltrated and stole technology"
+     },
+     "text": "grand_archive.8245.desc.stolen",
+     "after": [
+      "grand_archive.8125"
+     ]
+    }
+   ],
+   "states": {
+    "start": [
+     "grand_archive.8245.a",
+     "grand_archive.8245.b",
+     "grand_archive.8245.c",
+     "grand_archive.8245.d",
+     "grand_archive.8245.e"
+    ],
+    "end": [
+     "CLOSE_COMMUNICATIONS"
+    ]
+   },
+   "transitions": {
+    "grand_archive.8245.e": "end"
+   },
+   "responseProfiles": [
+    {
+     "label": {
+      "zh": "其他物种",
+      "en": "Other species"
+     },
+     "occurrences": {
+      "grand_archive.8245.b": 1
+     }
+    },
+    {
+     "label": {
+      "zh": "机器人／机械物种",
+      "en": "Robot / machine species"
+     },
+     "occurrences": {
+      "grand_archive.8245.b": 0
+     }
+    }
+   ],
+   "evidence": "8245 has two b option instances: first requires ROBOT or MACHINE species class with robot response; second requires neither and gives default response. a/b/c/d optional; e sets end_dialog; then only close. Opening text's earlier base-outcome flags are separately pending."
+  },
+  "grand_archive.8205": {
+   "states": {
+    "start": [
+     "grand_archive.8205.a",
+     "grand_archive.8205.b",
+     "grand_archive.8205.c",
+     "grand_archive.8205.d",
+     "CLOSE_COMMUNICATIONS"
+    ]
+   },
+   "transitions": {},
+   "exits": [
+    "CLOSE_COMMUNICATIONS"
+   ],
+   "evidence": "8205.a/b/c/d are optional repeatable is_dialog_only questions with response_text; CLOSE_COMMUNICATIONS alone calls8210. No question prerequisites or fixed order.8210.a creates smeegibb_digsite."
+  },
+  "grand_archive.8025": {
+   "states": {
+    "start": [
+     "grand_archive.8025.a",
+     "grand_archive.8025.b",
+     "grand_archive.8025.c",
+     "grand_archive.8025.e"
+    ],
+    "followup": [
+     "grand_archive.8025.a",
+     "grand_archive.8025.b",
+     "grand_archive.8025.c",
+     "grand_archive.8025.d",
+     "grand_archive.8025.e"
+    ],
+    "end": [
+     "CLOSE_COMMUNICATIONS"
+    ]
+   },
+   "transitions": {
+    "grand_archive.8025.b": "followup",
+    "grand_archive.8025.c": "followup",
+    "grand_archive.8025.e": "end"
+   },
+   "labelProfiles": {
+    "CLOSE_COMMUNICATIONS": {
+     "zh": "通常回应",
+     "en": "Default response"
+    },
+    "grand_archive.8025.f.lom": {
+     "zh": "企业十字军",
+     "en": "Corporate Crusader"
+    }
+   },
+   "evidence": "8025.a/b/c/e visible before end flag; b/c sets next_dialog_step enabling d; e sets end_dialog; only CLOSE_COMMUNICATIONS visible afterward. Questions may repeat; a/d leave state unchanged."
+  }
+ },
+ "readings": {
+  "grand_archive.8580": {
+   "evidence": "Manually read8580 nested flags and8575 choice restrictions: exactly one treasure response, then regular/default plus no_lom when eligible, or gestalt passage; b/c exclusive; d unavailable to the two raider civics.",
+   "profiles": [
+    {
+     "label": {
+      "zh": "收取宝藏 · 常规文明",
+      "en": "Claimed the hoard · Regular civilization"
+     },
+     "texts": [
+      "grand_archive.8580.desc.1",
+      "grand_archive.8580.desc.default",
+      "grand_archive.8580.desc.no_lom"
+     ],
+     "choices": [
+      "grand_archive.8580.c",
+      "grand_archive.8580.d",
+      "grand_archive.8580.a",
+      "DISMISS"
+     ],
+     "afterChoice": {
+      "chapter": "grand_archive.8575",
+      "key": "grand_archive.8575.a.lom",
+      "readings": [
+       0
+      ]
+     }
+    },
+    {
+     "label": {
+      "zh": "收取宝藏 · 格式塔",
+      "en": "Claimed the hoard · Gestalt"
+     },
+     "texts": [
+      "grand_archive.8580.desc.1",
+      "grand_archive.8580.desc.gestalt"
+     ],
+     "choices": [
+      "grand_archive.8580.b",
+      "grand_archive.8580.d",
+      "grand_archive.8580.a",
+      "DISMISS"
+     ]
+    },
+    {
+     "label": {
+      "zh": "归还可溯源物品 · 常规文明",
+      "en": "Returned traceable items · Regular civilization"
+     },
+     "texts": [
+      "grand_archive.8580.desc.2",
+      "grand_archive.8580.desc.default",
+      "grand_archive.8580.desc.no_lom"
+     ],
+     "choices": [
+      "grand_archive.8580.c",
+      "grand_archive.8580.d",
+      "grand_archive.8580.a",
+      "DISMISS"
+     ],
+     "afterChoice": {
+      "chapter": "grand_archive.8575",
+      "key": "grand_archive.8575.b",
+      "readings": [
+       0
+      ]
+     }
+    },
+    {
+     "label": {
+      "zh": "归还可溯源物品 · 格式塔",
+      "en": "Returned traceable items · Gestalt"
+     },
+     "texts": [
+      "grand_archive.8580.desc.2",
+      "grand_archive.8580.desc.gestalt"
+     ],
+     "choices": [
+      "grand_archive.8580.b",
+      "grand_archive.8580.d",
+      "grand_archive.8580.a",
+      "DISMISS"
+     ]
+    },
+    {
+     "label": {
+      "zh": "布施财富 · 常规文明",
+      "en": "Distributed the wealth · Regular civilization"
+     },
+     "texts": [
+      "grand_archive.8580.desc.3",
+      "grand_archive.8580.desc.default",
+      "grand_archive.8580.desc.no_lom"
+     ],
+     "choices": [
+      "grand_archive.8580.c",
+      "grand_archive.8580.d",
+      "grand_archive.8580.a",
+      "DISMISS"
+     ],
+     "afterChoice": {
+      "chapter": "grand_archive.8575",
+      "key": "grand_archive.8575.c",
+      "readings": [
+       0
+      ]
+     }
+    },
+    {
+     "label": {
+      "zh": "布施财富 · 格式塔",
+      "en": "Distributed the wealth · Gestalt"
+     },
+     "texts": [
+      "grand_archive.8580.desc.3",
+      "grand_archive.8580.desc.gestalt"
+     ],
+     "choices": [
+      "grand_archive.8580.b",
+      "grand_archive.8580.d",
+      "grand_archive.8580.a",
+      "DISMISS"
+     ]
+    },
+    {
+     "label": {
+      "zh": "收取宝藏 · 私掠许可／野蛮掠夺者",
+      "en": "Claimed the hoard · Letters of Marque / Barbaric Despoilers"
+     },
+     "texts": [
+      "grand_archive.8580.desc.1",
+      "grand_archive.8580.desc.default"
+     ],
+     "choices": [
+      "grand_archive.8580.c",
+      "grand_archive.8580.a",
+      "DISMISS"
+     ],
+     "afterChoice": {
+      "chapter": "grand_archive.8575",
+      "key": "grand_archive.8575.a.lom",
+      "readings": [
+       1,
+       2
+      ]
+     }
+    }
+   ]
+  }
+ },
+ "endings": {
+  "grand_archive.8500": {
+   "label": {
+    "zh": "交易结局 · 寻宝之旅在此结束",
+    "en": "Deal ending · Your treasure hunt ends here"
+   },
+   "note": {
+    "zh": "你交出了星图，收下报酬与舰船。此路线不会继续进入奈斯的宝库。",
+    "en": "You surrendered the chart in exchange for payment and a ship. This route does not continue into Ness's hoard."
+   },
+   "evidence": "8500 removes r_celestial_chart_4, grants energy and Black Needle Eye, deletes opposing fleet, returns fleets home and replaces NESS_GRAND_ARCHIVE with HOARDED. No subsequent event or hoard project is enabled."
+  }
+ },
+ "opening": {
+  "targets": [
+   "grand_archive.8000"
+  ],
+  "label": {
+   "zh": "开局第1天：神秘胶囊与星图",
+   "en": "Day 1: the mysterious capsule and star chart"
+  },
+  "evidence": "00_on_actions on_game_start_country calls7999; origin check schedules8000 days1.8000 enables TREASURE_HUNTERS_ANCIENT_CAPSULE_PROJECT; success8005 spawns first hidden system and schedules8015 announcement days1.8020 requires ship entering the target POI, not game start."
+ },
+ "legacy": {
+  "situationConfig": {
+   "id": "origin_treasure_hunters",
+   "definition": "situations:situation_sabotage",
+   "stageSequence": [
+    {
+     "event": "grand_archive.8520",
+     "optional": true,
+     "conditional": true,
+     "label": {
+      "zh": "应对进度达到100且存在非统治者、非继承人、非节点领袖",
+      "en": "At progress 100, with a leader who is not a ruler, heir or gestalt node"
+     }
+    },
+    {
+     "event": "grand_archive.8550",
+     "conditional": true,
+     "label": {
+      "zh": "应对进度达到150，且黑针舰队仍存在",
+      "en": "Countermeasure progress reaches 150, while the Black Needle fleet still exists"
+     }
+    }
+   ],
+   "evidence": "11_grand_archive_situations sabotage starts25; stage1 ends100, stage2 ends150.8520 at stage2 entry;8550 on_progress_complete;8545 on_fail remains independent. Monthly base-0.5, purge+4.5, mitigate+2.5; not a simple increasing failure clock. Military victory8555 can abort throughout."
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

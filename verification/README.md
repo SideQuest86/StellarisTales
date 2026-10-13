@@ -1,3 +1,5 @@
+> 2026-10-12 交接入口：[HANDOFF.md](../HANDOFF.md)。资源位置、当前状态和接续步骤以该入口为准；下文旧完成标记、测试与额度属于历史记录，不代表 V3 已验收或当前额度。此次仅整理交接，未发布。
+
 # Draft 2 verification
 
 - `v2-results.json`: current local Chrome checks at 1440×1000 and 390×844. Covers pointer dragging, wheel, category and per-column memory, physical breathing/extraction, reduced motion, story/project navigation, search, bilingual text, origin identities/directories, Cybrex perspectives, matching responses, body font size and reader layout.
@@ -18,3 +20,52 @@ Origin family rules use explicit source ranges and source identities. General st
 Older browser-results.json, performance.json, online-results.json and non-v2 captures are historical Draft 1 evidence.
 
 Eight category audits and complete browser traversals are in categories/. Run node scripts/audit-categories.mjs for every dossier and node scripts/verify-category.mjs CATEGORY for each representative. Solid tree links retain parsed game relations; dashed links provide reading coverage without asserting game causality. Closed uniform covers and opened event art are asserted by the main browser verifier.
+
+## 暂停检查点（2026-09-10）
+最近展览支线变更：剧情专项34项通过，构建通过；8075/8076支线未做浏览器验收。现有v3-ness-route.json验证回退改选后不保留审判后日谈；verify-cybrex-labels.mjs验证图中主题名与正文原版标题分离。局部结果不能证明全站完成。用户要求暂停到明确说“继续”，下一步见CodexDoc.md。不要自动重跑或发布。
+2026-09-11：verify-exhibition.mjs三条浏览器路径通过，结果v3-exhibition.json；8075付款或拒付以及8076均到展览项目/8080。此前暂停现已解除。
+verify-ness-readings.mjs：七种奈斯结尾视角的实际浏览器逐项断言，验证历史段落互斥、文明选项、监禁限制和段落数量。未覆盖跨章节选择自动传递。
+2026-09-11回归：52项Node与跨故事交互通过。动画检查并行时超时，单独复测通过；原因未确定。verify-motion现异常写失败结果，避免旧JSON误报。性能/动画最终验收仍未完成。
+动画恢复检查扩展：刻意屏蔽媒体change通知，触发focus/visibilitychange，验证减少动态的启用与恢复；通过。此项是漏通知恢复机制测试，不是并行超时根因证明。
+verify-ness-readings新增SVG身份检查：七种正文视角切换不销毁未变化的左侧图；通过。
+verify-vultaum.mjs验证四种视角数量、进一步研究入口、项目到10110、公开/压制互斥目标与条件标注，结果v3-vultaum.json。不是整个先驱者类别验收。
+
+2026-09-11：verify-vultaum.mjs追加七节点八条原始边、机械视角无深入研究页底入口检查；1600×1000截图等待档案图显现后保存v3-vultaum-map.png，已人工查看。35项剧情测试通过。
+
+2026-09-11：人工核对赛博勒克斯2101/2102、artifact_cybrex_research、CYBREX_SECRETS与10250。母星两结果均结束主调查；秘密研究需另付750稀有文物，母星标志存在且未开始研究，工程项目无期限。secretNote支持人工说明；跨入optional阶段页底明确可选/另行开启，中英标题齐全。赛博勒克斯导读同步。verify-cybrex-labels新增实际点击可选入口并检查750说明，通过；跨故事verify-flow-interaction通过，编译构建通过。全部类别验收和发布仍未完成。
+
+2026-09-11：流程图同源同目标的不同选择原本完全重叠，并仅按章节对将所有线标成已走。现平行线按组偏移，choice边按trail中的实际choice键高亮；无选择记录的地图跳转不冒充选择。更新签名包含choice，路径支持键盘焦点。verify-vultaum新增公开结果后检查仅两条实际选择边高亮、所有选择线几何不重合，浏览器通过。后续仍需整站复杂图视觉验收；额度剩余22%，未使用重置，未发布。
+
+2026-09-11：尤特人工读取601/602、ancrel.10050、YUHT_SECRETS及over.50。601在Overlord条件下720+random1080天调度over.50，后者开放YUHT_JABBARDEENI_CACHE；原网站因staged flow过滤跨档案链接而断路。现保留显式且已解析story的外部连接，不把它加入自动下一章；添加原版延迟/DLC标签。verify-yuht实际从601跨档案到over.50，再到储藏项目，通过且无pageerror；4项流程进度检查及编译构建通过。尤特全文审读、储藏项目后续及Markdown导读仍待完成，不能视作整链验收。
+
+2026-09-11：人工阅读贾巴蒂尼数据缓存项目与over.60，逐页对照三页中英文。360天/科研船+科学家/无期限；科技奖励为else_if择一。新增该支线Markdown导读，记录中文开战后/英文战后差异，以及generate_lcluster_clue条件关联尚未完整实现。项目完成边补时间条件；verify-yuht从601经over.50、项目到over.60并展开导读，通过。编译构建通过；尤特主链及L星门状态关联仍待继续，未发布。
+
+2026-09-11：尤特九个调查项目及母星项目逐项读取，调查均180天，科研船+科学家，注释skill无效；母星30天按全局发现标志/殖民判定601或602。配置和导读补齐。verify-yuht新增27节点、180天说明与当前主题名检查，通过；v3-yuht-map.png已人工查看，当前节点在视口中，长图需滚动。脚本最初误用SVG innerText，改textContent后通过；编译构建通过。遗址发现触发、母星生成仍待继续，未发布。
+
+2026-09-11：尤特其余八份报告511–546计数源码逐项读完，均回应+1再调用597；导读清理对应过期待办。verify-yuht新增9→3→7→1→5→2非数值顺序全程发现/项目/报告实际点击，确认前五无母星入口，第六后600，再项目出现两互斥结果，浏览器通过。异常发现trigger及可选研究开启仍待继续。额度剩余20%，未重置、未发布。
+
+2026-09-11：尤特390×844移动端验证视角、无横向溢出、图开关ARIA和导读通过。截图发现同章换视角触发图片揭示，初帧裁切空白；等待decode/动画完成确认图片正常。现same-chapter禁用图片重复揭示，保留换章效果，浏览器断言同章图片无活动动画通过。两张移动截图已人工查看。构建通过，仍不代表全站视觉/性能完成。
+
+2026-09-11：核查CSS正文/回应动画为opacity+transform，旧narrative动画已禁用；没有把此代码检查当作全站帧率证据。verify-motion新增移动图片CSS动画中切换OS减少动态效果，验证动画清零、clip-path=none、opacity=1及图片成功解码；连同正文WAAPI取消、下一章抑制、图开关和生命周期恢复检查通过。v3-motion.json记录imageState。整站硬件性能基准仍待完成，未发布。
+
+2026-09-11：新增verify-performance.mjs，本机Headless Chrome1600×1000寻宝猎人8580稳定阅读3秒+20次缩放。481个帧间隔样本p95约6.2ms/max12.2ms，未见>33.4ms；缩放同步handler中位0.3ms/max0.8ms，SVG复用；无longtask/pageerror，场景9drawcalls/6textures。原始环境与数据v3-performance.json。rAF间隔不是GPU耗时，handler不含后续paint；不能据此保证跨设备帧率。仍待档案切换/打开、移动端性能及全部类别验收，未发布。
+
+2026-09-11：性能脚本追加跨档案cybrex/cetana/treasure_hunters，结束条件含当前节点、detail>.999、artTransition>.999、outgoing=0。首次仅500ms观察不足，已纠正；新测三次约2386ms含刻意动画收敛，不等于加载耗时。最大帧间隔42.3–48.6ms，各2/2/5次>33.4ms，无longtask/pageerror。说明切换存在帧尖峰，不能以稳定阅读样本声明完全流畅。原始v3-performance.json更新，下一步定位切换阶段CPU/绘制开销；未发布。
+
+2026-09-11：新增可选STELLARIS_TRACE性能追踪，原始v3-transition-trace.json与最长操作v3-transition-costs.json。改前最大Layout22.34ms、重复UpdateLayoutTree约2ms；card坐标变量注册为inherits:false，避免传给SVG后代，改后最长样式更新1.593ms但Layout23.714ms仍在。单次测量不能证明整体改善：寻宝切换帧间隔出现78.8ms、无longtask，原因仍待定位。构建通过，跨故事图交互复测见本轮工具结果。下一步分析首次整图布局，不宣称性能验收完成。
+
+2026-09-11：追踪最大Layout涉及1052/1184对象，布局根为document。流程节点foreignObject内文本加入content-visibility:auto与固定内在尺寸，保留完整SVG节点/边，只允许浏览器跳过视口外文字工作。新样本最大Layout10.101ms（上一样本23.714ms），但寻宝帧间隔仍66.7ms，不能声称尖峰解决。跨故事交互、缩放/滚动复用与定位回归通过，塞塔娜截图已人工查看当前及邻近节点文字正常。构建及性能追踪通过，下一步继续定位非布局尖峰。
+
+2026-09-11：补充long-animation-frame观察器，记录API支持、blockingDuration、脚本与强制布局来源。此次三次切换API支持但无长动画帧/长任务，rAF最大42.5/42.5/48.6ms；之前67ms未稳定重现，现有证据无法把尖峰归因于特定脚本或GPU。原始结果更新；不能据此宣称GPU问题或性能完成。额度剩余16%，不重置。下一步需覆盖真实打开/关闭与移动端环境，保持全类别人工审读目标。
+
+2026-09-11：性能脚本支持STELLARIS_MOBILE=1（390×844桌面Chrome窄视口，不是真手机），实际打开流程图后测量。发现窄屏阅读覆盖3D场景却仍循环呼吸绘制，现detailTarget=1且动画/退场收敛后停止rAF；换章、关闭、resize仍由wake恢复。浏览器断言稳定framePending=false，收起档案后detail<.001且framePending=true通过；三次跨档案也通过，原始v3-performance-mobile.json。不能用窄视口代替低端手机硬件验收。构建通过，未发布。
+
+2026-09-11：8060替换29自动读法，接入完整话题状态+12个明确情境（默认a/b/c/z，宣战及各特殊经历独立查看）。编译支持excludedKeys/consumedTopics/edgeRequirements/profileLabel；完成d-l后话题消失，a-c可重复。原版矛盾5.b不列可选；普通8.a不开放塑造者，满足前置情境的8.b后才允许z→shroud_forged.700。新增verify-cetana-dialogue验证常规循环、宣战撤回/三步、一次话题与塑造者门控，通过；全套56项Node通过。切换情境清除旧trail选择避免自动展开旧退出。情境选择为阅读假设，不模拟全局信任/旗标；全部话题与视觉仍需验收。未发布。
+
+2026-09-11：verify-cetana-dialogue扩展八种一次话题d/e/f/g/i/j/k/l，验证5入口→正确追问数→回应后回4常规入口，话题不可再次问；b/c可重复。特殊h两类情境、宣战与退出既有检查均通过。390px截图发现长情境被select截断，新增换行完整说明，复测构建与浏览器通过。全部话题主要路径已覆盖，但第二回应的每种奖励/信任数值及跨章节旗标不作全模拟。
+
+V3 2026-09-11：scripts/verify-cetana-storm.mjs覆盖风暴研究中期→完成→来讯实际点击、完成7天标签、9115传统互斥与追问状态，已通过。
+
+V3 2026-09-11：v3-cetana-second-speech-desktop.png / mobile.png已人工查看，窄屏无横向溢出；退出对话页底状态修复后专项复测通过。
+
+2026-09-11 停止记录：最新56Node/10Python通过，Cetana专项包含五类20情境和遗珍两路线；最后构建通过。额度剩余4%，已按用户要求停止，未发布。接续见content/chronology/CHECKPOINT-2026-09-11.md。

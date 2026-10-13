@@ -1,0 +1,79 @@
+{
+  "scope": "Headless desktop Chrome with selected viewport (not physical mobile hardware): visible map, settled reading, twenty zoom clicks, then three cross-dossier navigations with a 500ms minimum observation window. Frame intervals are browser scheduling, not GPU timing; handler duration excludes later paint. No universal FPS claim.",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "frameIntervals": {
+    "samples": 489,
+    "medianMs": 6.099999999999454,
+    "p95Ms": 6.199999999999818,
+    "maxMs": 12.100000000000364
+  },
+  "framesOver33ms": 0,
+  "zoomHandler": {
+    "samples": 20,
+    "medianMs": 0.4000000059604645,
+    "p95Ms": 0.5999999940395355,
+    "maxMs": 0.5999999940395355
+  },
+  "longTasksMs": [],
+  "retainedSvg": true,
+  "scene": {
+    "lane": 0,
+    "row": 13,
+    "story": "origin_treasure_hunters",
+    "detail": 0.9999686231222104,
+    "selectedY": 5.172056436250214,
+    "coverReveal": 0.9989913851286378,
+    "imageCovers": 242,
+    "artTransition": 0.9990187575678653,
+    "closeup": true,
+    "outgoing": 0,
+    "breathing": true,
+    "instances": 287,
+    "drawCalls": 9,
+    "triangles": 65008,
+    "textureCount": 6,
+    "framePending": false
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 24,
+  "transitions": [
+    {
+      "story": "cybrex",
+      "chapter": "precursor.2005",
+      "settled": true,
+      "elapsedMs": 2385.300000011921,
+      "maxFrameIntervalMs": 24.299999999999272,
+      "framesOver33ms": 0,
+      "longTasksMs": [],
+      "loafSupported": true,
+      "longAnimationFrames": []
+    },
+    {
+      "story": "cetana",
+      "chapter": "crisis.24115",
+      "settled": true,
+      "elapsedMs": 2380.2999999821186,
+      "maxFrameIntervalMs": 18,
+      "framesOver33ms": 0,
+      "longTasksMs": [],
+      "loafSupported": true,
+      "longAnimationFrames": []
+    },
+    {
+      "story": "origin_treasure_hunters",
+      "chapter": "grand_archive.8580",
+      "settled": true,
+      "elapsedMs": 2379.9000000059605,
+      "maxFrameIntervalMs": 12.100000000000364,
+      "framesOver33ms": 0,
+      "longTasksMs": [],
+      "loafSupported": true,
+      "longAnimationFrames": []
+    }
+  ],
+  "errors": [],
+  "checkedAt": "2026-09-12T05:52:07.652Z"
+}

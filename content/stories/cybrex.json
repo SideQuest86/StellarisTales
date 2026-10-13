@@ -1,0 +1,177 @@
+{
+ "id": "cybrex",
+ "nodeLabels": {
+  "precursor.2006": {
+   "zh": "创造者克尔的灭亡",
+   "en": "Destruction of the creators"
+  },
+  "precursor.2011": {
+   "zh": "奴役与战争工厂",
+   "en": "Slavery and war factories"
+  },
+  "precursor.2016": {
+   "zh": "战体之间的内斗",
+   "en": "Warforms fighting each other"
+  },
+  "precursor.2021": {
+   "zh": "小行星轰击",
+   "en": "Asteroid bombardment"
+  },
+  "precursor.2026": {
+   "zh": "有机生命保护区",
+   "en": "An organic sanctuary"
+  },
+  "precursor.2031": {
+   "zh": "被遗忘的监听站",
+   "en": "The forgotten listening post"
+  },
+  "precursor.2036": {
+   "zh": "被摧毁的自有精炼厂",
+   "en": "Their own refinery destroyed"
+  },
+  "precursor.2041": {
+   "zh": "四国联军的失败",
+   "en": "Defeat of a four-empire coalition"
+  },
+  "precursor.2046": {
+   "zh": "疑似自杀式撞击",
+   "en": "An apparent suicide collision"
+  },
+  "precursor.2051": {
+   "zh": "真空中的俘虏",
+   "en": "Captives in the vacuum"
+  },
+  "precursor.2056": {
+   "zh": "机械改造实验",
+   "en": "Cybernetic experiments"
+  }
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "precursor.2005",
+    "precursor.2010",
+    "precursor.2015",
+    "precursor.2020",
+    "precursor.2025",
+    "precursor.2030",
+    "precursor.2035",
+    "precursor.2040",
+    "precursor.2045",
+    "precursor.2050",
+    "precursor.2055"
+   ],
+   "required": 6,
+   "gate": "precursor.2100",
+   "label": {
+    "zh": "追寻遗迹",
+    "en": "Following the traces"
+   },
+   "note": {
+    "zh": "调查地点没有固定先后；收集六份线索后，可定位母星。",
+    "en": "Investigations may occur in any order. Six clues reveal the home system."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "precursor.2101",
+    "precursor.2102"
+   ],
+   "labels": [
+    {
+     "zh": "率先发现",
+     "en": "First to arrive"
+    },
+    {
+     "zh": "他人已经先至",
+     "en": "Others arrived first"
+    }
+   ],
+   "note": {
+    "zh": "这两种结果互为替代，不会依次发生。",
+    "en": "These are alternative outcomes, not consecutive events."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "special_projects:CYBREX_SECRETS",
+   "zh": "母星报告已结束调查主线。玩家可另行花费750稀有文物开启秘密研究；要求已发现母星且此前未开启。工程研究项目无期限，完成后收到秘密报告，并非自动发生。",
+   "en": "The homeworld report ends the investigation. Separately spend 750 minor artifacts to start this optional engineering project; the homeworld must be found and research not previously started. It has no time limit and does not begin automatically.",
+   "kind": "review"
+  }
+ ],
+ "legacy": {
+  "precursorConfig": {
+   "id": "cybrex",
+   "base": 2000,
+   "project": "CYBREX",
+   "investigations": 11,
+   "chain": "cybrex",
+   "secrets": "CYBREX_SECRETS",
+   "secretEvent": "ancrel.10250",
+   "title": "赛博勒克斯",
+   "investigationLabels": [
+    {
+     "zh": "创造者克尔的灭亡",
+     "en": "Destruction of the creators"
+    },
+    {
+     "zh": "奴役与战争工厂",
+     "en": "Slavery and war factories"
+    },
+    {
+     "zh": "战体之间的内斗",
+     "en": "Warforms fighting each other"
+    },
+    {
+     "zh": "小行星轰击",
+     "en": "Asteroid bombardment"
+    },
+    {
+     "zh": "有机生命保护区",
+     "en": "An organic sanctuary"
+    },
+    {
+     "zh": "被遗忘的监听站",
+     "en": "The forgotten listening post"
+    },
+    {
+     "zh": "被摧毁的自有精炼厂",
+     "en": "Their own refinery destroyed"
+    },
+    {
+     "zh": "四国联军的失败",
+     "en": "Defeat of a four-empire coalition"
+    },
+    {
+     "zh": "疑似自杀式撞击",
+     "en": "An apparent suicide collision"
+    },
+    {
+     "zh": "真空中的俘虏",
+     "en": "Captives in the vacuum"
+    },
+    {
+     "zh": "机械改造实验",
+     "en": "Cybernetic experiments"
+    }
+   ],
+   "secretNote": {
+    "zh": "母星报告已结束调查主线。玩家可另行花费750稀有文物开启秘密研究；要求已发现母星且此前未开启。工程研究项目无期限，完成后收到秘密报告，并非自动发生。",
+    "en": "The homeworld report ends the investigation. Separately spend 750 minor artifacts to start this optional engineering project; the homeworld must be found and research not previously started. It has no time limit and does not begin automatically."
+   }
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

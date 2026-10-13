@@ -1,0 +1,24 @@
+{
+ "id": "curators",
+ "bridges": [
+  {
+   "from": "leviathans.502",
+   "to": "leviathans.500",
+   "conditional": true,
+   "label": {
+    "zh": "再次联络策展人",
+    "en": "Contact the Curators again"
+   },
+   "evidence": "on_custom_diplomacy -> hidden leviathans.499 -> 500; 502 only establishes first contact"
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

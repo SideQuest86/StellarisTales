@@ -1,0 +1,638 @@
+{
+  "category": "leviathans",
+  "model": 4,
+  "scope": "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)",
+  "stories": 69,
+  "docs": 1108,
+  "nodes": 1921,
+  "refs": 813,
+  "crossLinks": 47,
+  "review": {
+    "partial": 1,
+    "unreviewed": 68
+  },
+  "failures": [],
+  "items": [
+    {
+      "id": "curators",
+      "title": "策展人",
+      "kind": "family",
+      "docs": 43,
+      "refs": 45,
+      "crossLinks": 1,
+      "review": "partial"
+    },
+    {
+      "id": "infinity-machine",
+      "title": "无限神机",
+      "kind": "family",
+      "docs": 19,
+      "refs": 4,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-300",
+      "title": "[salvager_enclave_country.GetName]",
+      "kind": "event",
+      "docs": 172,
+      "refs": 110,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-304",
+      "title": "[salvager_enclave_country.GetName]",
+      "kind": "event",
+      "docs": 172,
+      "refs": 110,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-400",
+      "title": "[shroudwalker_enclave_country.GetName]",
+      "kind": "event",
+      "docs": 156,
+      "refs": 88,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-404",
+      "title": "[shroudwalker_enclave_country.GetName]",
+      "kind": "event",
+      "docs": 156,
+      "refs": 88,
+      "crossLinks": 3,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-2059",
+      "title": "舰队合约到期",
+      "kind": "event",
+      "docs": 67,
+      "refs": 134,
+      "crossLinks": 15,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-2",
+      "title": "佣兵城邦基金会",
+      "kind": "event",
+      "docs": 34,
+      "refs": 39,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-2045",
+      "title": "不应拒绝的交易",
+      "kind": "event",
+      "docs": 28,
+      "refs": 39,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-200",
+      "title": "[mercenary_enclave_country.GetName]",
+      "kind": "event",
+      "docs": 27,
+      "refs": 39,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-204",
+      "title": "[mercenary_enclave_country.GetName]",
+      "kind": "event",
+      "docs": 27,
+      "refs": 39,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-2099",
+      "title": "神秘堡垒",
+      "kind": "event",
+      "docs": 25,
+      "refs": 5,
+      "crossLinks": 5,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-2100",
+      "title": "神秘堡垒",
+      "kind": "event",
+      "docs": 25,
+      "refs": 5,
+      "crossLinks": 4,
+      "review": "unreviewed"
+    },
+    {
+      "id": "situation-leviathan-celebration-opportunity",
+      "title": "[This.GetLeviathanParadeName]机遇",
+      "kind": "situation",
+      "docs": 23,
+      "refs": 7,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-100",
+      "title": "雪拉企业",
+      "kind": "event",
+      "docs": 18,
+      "refs": 36,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-285",
+      "title": "太空城邦：艺术家联盟",
+      "kind": "event",
+      "docs": 18,
+      "refs": 23,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-140",
+      "title": "[From.GetName]被摧毁",
+      "kind": "event",
+      "docs": 7,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-1016",
+      "title": "噬星者",
+      "kind": "event",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-660",
+      "title": "龙之宝藏，龙之坟墓",
+      "kind": "event",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-662",
+      "title": "龙之宝藏，龙之坟墓",
+      "kind": "event",
+      "docs": 5,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-155",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 4,
+      "refs": 2,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-351",
+      "title": "太空城邦：艺术家联盟",
+      "kind": "event",
+      "docs": 4,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-370",
+      "title": "打捞者城邦被毁",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-430",
+      "title": "虚境行者城邦被毁",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-3002",
+      "title": "逐出",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-3101",
+      "title": "无畏战舰已被瘫痪",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-3202",
+      "title": "晶态小行星",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-3203",
+      "title": "小行星蜂群被击败",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-670",
+      "title": "屠龙者",
+      "kind": "event",
+      "docs": 3,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-23",
+      "title": "佣兵城邦被摧毁",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-4200",
+      "title": "指向虚境的信标",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-6005",
+      "title": "思想抹除",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-6020",
+      "title": "焦躁不安的系统",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-290",
+      "title": "[from.GetName]",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-4",
+      "title": "星神兽被击败",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-999",
+      "title": "塌缩恒星",
+      "kind": "event",
+      "docs": 2,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-100",
+      "title": "飘忽不定的甬道",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-27",
+      "title": "舰队紧急召回",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-390",
+      "title": "攻击[FROM.GetName]",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-4239",
+      "title": "最终觉醒",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-4244",
+      "title": "教育的失败",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-4250",
+      "title": "灵能裂口",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-6000",
+      "title": "奇异显现",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-7000",
+      "title": "[shroudwalker_enclave_country.GetName]",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-7005",
+      "title": "[salvager_enclave_country.GetName]",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-7060",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-7065",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-7070",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-7075",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-enclave-7200",
+      "title": "攻击[FROM.GetName]",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-1001",
+      "title": "噬星者",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-101",
+      "title": "与[From.GetName]的第一次接触",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-157",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-160",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-163",
+      "title": "未命名故事",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-170",
+      "title": "能量贸易已取消",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-2010",
+      "title": "光谱发条",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-2011",
+      "title": "魑魅魍魉",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-2014",
+      "title": "幽魂退治",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-2061",
+      "title": "魑魅魍魉",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 1,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-2105",
+      "title": "古代建筑",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-3000",
+      "title": "虚空中的梦魇",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-3100",
+      "title": "自动无畏战舰",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-3210",
+      "title": "大群蜂巢攻击机",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-354",
+      "title": "太空城邦：艺术家联盟",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-605",
+      "title": "攻击[FROM.GetName]",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-610",
+      "title": "遭遇以太巨龙",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-648",
+      "title": "龙来了",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    },
+    {
+      "id": "event-leviathans-650",
+      "title": "龙来了",
+      "kind": "event",
+      "docs": 1,
+      "refs": 0,
+      "crossLinks": 0,
+      "review": "unreviewed"
+    }
+  ]
+}

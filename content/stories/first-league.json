@@ -1,0 +1,76 @@
+{
+ "id": "first-league",
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "precursor.1005",
+    "precursor.1010",
+    "precursor.1015",
+    "precursor.1020",
+    "precursor.1025",
+    "precursor.1030",
+    "precursor.1035",
+    "precursor.1040",
+    "precursor.1045",
+    "precursor.1050",
+    "precursor.1055",
+    "precursor.1060",
+    "precursor.1065",
+    "precursor.1070"
+   ],
+   "required": 6,
+   "gate": "precursor.1100",
+   "label": {
+    "zh": "追寻遗迹",
+    "en": "Following the traces"
+   },
+   "note": {
+    "zh": "调查地点没有固定先后；收集六份线索后，可定位母星。",
+    "en": "Investigations may occur in any order. Six clues reveal the home system."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "precursor.1101",
+    "precursor.1102"
+   ],
+   "labels": [
+    {
+     "zh": "率先发现",
+     "en": "First to arrive"
+    },
+    {
+     "zh": "他人已经先至",
+     "en": "Others arrived first"
+    }
+   ],
+   "note": {
+    "zh": "这两种结果互为替代，不会依次发生。",
+    "en": "These are alternative outcomes, not consecutive events."
+   }
+  }
+ ],
+ "legacy": {
+  "precursorConfig": {
+   "id": "first-league",
+   "base": 1000,
+   "project": "FIRST_LEAGUE",
+   "investigations": 14,
+   "chain": "first_league",
+   "secrets": "LEAGUE_SECRETS",
+   "secretEvent": "ancrel.10200",
+   "title": "第一联盟"
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

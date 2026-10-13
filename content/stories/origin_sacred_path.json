@@ -1,0 +1,22 @@
+{
+ "id": "origin_sacred_path",
+ "opening": {
+  "targets": [
+   "nomads.2005"
+  ],
+  "label": {
+   "zh": "圣道的起点",
+   "en": "The beginning of the Sacred Path"
+  },
+  "evidence": "game_start calls hidden nomads.2000, which schedules 2005 after 5 days; 2005 enables SACRED_SITE_ONE_PROJECT and separately schedules 2015 after 3600 days"
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

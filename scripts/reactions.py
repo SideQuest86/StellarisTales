@@ -163,7 +163,7 @@ class Reactions:
         # share a reading; retain all source option indices for traceability.
         unique={}
         for view in views:
-            signatures=sorted(set(json.dumps({'label':options[j]['label']['zh'],'targets':[e['target'] for e in options[j]['links']]},sort_keys=True) for j in view['choiceIndices']))
+            signatures=sorted(set(json.dumps({'label':options[j]['label']['zh'],'responses':options[j].get('responses',[]),'targets':[e['target'] for e in options[j]['links']]},sort_keys=True) for j in view['choiceIndices']))
             key=json.dumps([view['label'],view['textIndices'],signatures],sort_keys=True)
             if key in unique:unique[key]['choiceIndices']=sorted(set(unique[key]['choiceIndices']+view['choiceIndices']))
             else:unique[key]=view

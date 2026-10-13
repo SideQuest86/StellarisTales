@@ -1,6 +1,11 @@
-import { nextUnread, storyMap } from "./story-map.js";
+import { storyMap } from "./story-map.js";
+import { FlowSurface } from "./flow-surface.js";
 import { ArchiveScene } from "./archive-scene.js";
 import { SoundtrackPlayer } from "./audio-player.js";
+import {
+  evaluate, resolveBody, resolveChoices, resolveEdges, pathFlags, storyFlags,
+  impliedFacts, applyFacts, describe,
+} from "./reading.js";
 const $ = (q) => document.querySelector(q),
   esc = (s) =>
     String(s ?? "").replace(
@@ -43,10 +48,20 @@ let lang = "zh",
   searchText = "",
   storyById = new Map(),
   recordToStory = {};
+// Reading context (src/reading.js): one empire profile for the whole archive, assumptions for unknowable
+// conditions per reading session, flags derived from the path. Docs on a path therefore never contradict.
+let profile = {},
+  profileNames = {},
+  assumptions = {},
+  storyFlagSet = new Set(),
+  docMap = new Map();
 try {
   lang = localStorage.getItem("st-language") || "zh";
   reducedPreference = localStorage.getItem("st-motion") === "reduced";
+  profile = JSON.parse(localStorage.getItem("st-profile") || "{}");
+  profileNames = JSON.parse(localStorage.getItem("st-profile-names") || "{}");
 } catch {}
+const T = (zh, en) => (lang === "en" ? en : zh);
 const media = matchMedia("(prefers-reduced-motion: reduce)"),
   reduced = () => reducedPreference || media.matches;
 function remember(k, v) {
@@ -87,7 +102,7 @@ function toast(s) {
 }
 async function json(path) {
   const r = await fetch(asset(path));
-  if (!r.ok) throw new Error("这份记忆暂时未能抵达，请稍后重试。");
+  if (!r.ok) throw new Error(T("这份记忆暂时未能抵达，请稍后重试。", "This memory could not be reached. Please try again."));
   return r.json();
 }
 const cache = new Map();
@@ -105,9 +120,10 @@ async function loadStory(id) {
   return cache.get(id);
 }
 function applyMotion() {
+  if(reduced())for(const selector of ['#selected-title','.chapter-document'])$(selector)?.getAnimations().forEach(animation=>animation.cancel());
   document.documentElement.classList.toggle("reduced-motion", reduced());
   $("#motion").setAttribute("aria-pressed", String(reduced()));
-  $("#motion").textContent = reduced() ? "动态已减少" : "减少动态";
+  $("#motion").textContent = reduced() ? T("动态已减少", "Motion reduced") : T("减少动态", "Reduce motion");
   scene?.wake();
 }
 $("#motion").onclick = () => {
@@ -116,12 +132,18 @@ $("#motion").onclick = () => {
   applyMotion();
 };
 media.addEventListener("change", applyMotion);
+// Reconcile preferences when returning from a throttled background tab.
+window.addEventListener('focus', applyMotion);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)applyMotion();});
 applyMotion();
+function categoryName(column) {
+  return lang === "en" ? CATEGORIES[column][2] : CATEGORIES[column][1];
+}
 function showSelection(story, column, index) {
   selected = story;
   selectedColumn = column;
-  $("#category-label").textContent = CATEGORIES[column][1];
-  $("#chapter-count").textContent = `${story.chapters} 篇`;
+  $("#category-label").textContent = categoryName(column);
+  $("#chapter-count").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "document" : "documents"}`);
   $("#selected-title").textContent = prose(local(story.title));
   $("#selected-excerpt").textContent = prose(local(story.excerpt));
   $("#story-number").textContent = String(index + 1).padStart(2, "0");
@@ -173,6 +195,10 @@ $("#open-story").onclick = () => openStory(selected.id);
 function setReader(open) {
   document.body.classList.toggle("reader-open", open);
   $("#reader").hidden = !open;
+  if (!open) {
+    $("#flow-surface").hidden = true;
+    $("#flow-surface").classList.remove('mobile-open');
+  }
   $("#archive-hud").inert = open;
   $("#archive-hud").classList.toggle("concealed", open);
   $("#categories").inert = open;
@@ -180,16 +206,20 @@ function setReader(open) {
   scene?.setDetail(open);
   if (scene) scene.canvas.tabIndex = open ? -1 : 0;
 }
+function useDossier(data) {
+  dossier = data;
+  docMap = new Map(data.chapters.map((c) => [c.id, c]));
+  storyFlagSet = storyFlags(data);
+}
 async function openStory(id, start) {
   const ticket = ++readerTicket;
   try {
     const data = await loadStory(id);
     if (ticket !== readerTicket) return;
     visitedChapters.clear();
-    dossier = data;
-    chapter =
-      data.chapters.find((c) => c.id === (start || data.story.start)) ||
-      data.chapters[0];
+    assumptions = {};
+    useDossier(data);
+    chapter = docMap.get(start || data.story.start) || data.chapters[0];
     trail = [{ story: id, chapter: chapter.id }];
     scene?.selectStory(id);
     setReader(true);
@@ -213,50 +243,160 @@ async function goChapter(id, storyId, back = false) {
   const ticket = ++readerTicket;
   try {
     let data = dossier;
-    if (!data.chapters.some((c) => c.id === id))
+    if (!docMap.has(id) || (storyId && storyId !== dossier.story.id && !docMap.has(id)))
       data = await loadStory(storyId || recordToStory[id]);
     if (ticket !== readerTicket) return;
     const target = data.chapters.find((c) => c.id === id);
     if (!target) return;
     if (!back) trail.push({ story: data.story.id, chapter: id });
+    // Cross-dossier references keep their own route rules and return history.
+    if (data !== dossier) useDossier(data);
     chapter = target;
-    // Referenced interludes stay inside the open story, without closing its file.
-    if (data !== dossier && !dossier.chapters.some((c) => c.id === id))
-      dossier = { ...dossier, chapters: [...dossier.chapters, target] };
     renderChapter();
   } catch (e) {
     toast(e.message);
   }
 }
-function titleFor(id) {
-  const c = dossier?.chapters.find((c) => c.id === id);
-  return c ? prose(local(c.title)) || "篇章" : "继续";
+function titleFor(id, storyId) {
+  const c = docMap.get(id);
+  if (c) return prose(local(c.title)) || T("篇章", "Document");
+  const other = storyById.get(storyId || recordToStory[id]);
+  return other ? prose(local(other.title)) : T("继续", "Continue");
 }
-function visibleEdges(edges) {
+function delayText(delays) {
+  if (!delays?.length) return "";
+  let low = 0, high = 0;
+  for (const d of delays) {
+    const value = (k) => Number.parseFloat(d[k]) || 0;
+    const fixed = value("days") + value("months") * 30 + value("years") * 360;
+    low += fixed;
+    high += fixed + value("random") + value("random_days");
+  }
+  if (!low && !high) return "";
+  const range = high > low ? `${Math.round(low)}–${Math.round(high)}` : `${Math.round(low)}`;
+  return T(`约${range}天后`, `about ${range} days later`);
+}
+function edgeCaption(e) {
+  const parts = [];
+  if (e.label) parts.push(prose(local(e.label)));
+  else if (e.kind === "random" && e.chance != null)
+    parts.push(T(`随机结果 · 基础约${Math.round(e.chance * 100)}%`, `Random outcome · base ~${Math.round(e.chance * 100)}%`) + (e.modified ? T("（受条件修正）", " (modified)") : ""));
+  else if (e.kind === "research") parts.push(T("研究完成后", "When the research completes"));
+  else if (e.kind === "project") parts.push(T("项目结束后", "When the project ends"));
+  else if (e.kind === "failure") parts.push(T("失败时", "On failure"));
+  else if (e.kind === "stage") parts.push(T("下一阶段", "Next stage"));
+  else if (e.kind === "entry") parts.push(T("开端", "Opening"));
+  if (!e.label && e.when) {
+    const condition = e.when.map((w) => describe(w, lang, profileNames)).filter(Boolean).join(T("；", "; "));
+    if (condition) parts.push(T("条件：", "If: ") + condition);
+  }
+  if (!e.label) {
+    const delay = delayText(e.delay);
+    if (delay) parts.push(delay);
+  }
+  if (e.story && e.story !== dossier.story.id) parts.push(T("进入另一则故事", "Leads into another story"));
+  return parts.join(" · ") || T("继续阅读", "Continue reading");
+}
+function edgeButton(e) {
+  return `<button class="next-chapter" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"><span>${esc(titleFor(e.target, e.story))}</span><small>${esc(edgeCaption(e))} →</small></button>`;
+}
+function edgeButtons(edges) {
   const seen = new Set();
-  return edges.filter((e) => {
+  const unique = resolveEdges(edges, readingContext()).filter((e) => {
     if (seen.has(e.target)) return false;
     seen.add(e.target);
     return true;
   });
-}
-function edgeButtons(edges) {
-  return visibleEdges(edges)
-    .map(
-      (e) =>
-        `<button class="next-chapter" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"><span>${esc(titleFor(e.target))}</span><small>${e.conditional ? "另一种可能" : e.delayed ? "时间流逝之后" : "继续阅读"} →</small></button>`,
-    )
-    .join("");
+  const groups = new Map();
+  for (const e of unique) {
+    const key = e.group || `single:${e.target}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(e);
+  }
+  return [...groups.values()].map((list) => list.length > 1
+    ? `<div class="exclusive-outcomes"><small>${esc(T("以下结果互斥，只会发生其一", "Only one of these outcomes happens"))}</small>${list.map(edgeButton).join("")}</div>`
+    : edgeButton(list[0])).join("");
 }
 const visitedChapters = new Set();
+const flowSurface = new FlowSurface($("#flow-surface"));
 let readingIndex = 0,
-  readingChapterId = null;
+  readingChapterId = null,
+  passageIndex = 0;
+let dialogueStep = 0;
+let dialogueState='start', dialogueHistory=[], dialogueProfile=0, dialogueTextProfile=0;
+function readingContext() {
+  // Flags set by docs and options chosen earlier on the path (only steps inside the current story are known).
+  const earlier = trail.slice(0, -1).filter((step) => step.story === dossier.story.id);
+  const { flags, cleared } = pathFlags(earlier, (step) => docMap.get(step.chapter));
+  for (const f of chapter?.sets || []) { flags.add(f); cleared.delete(f); }
+  return { profile, assumptions, flags, cleared, storyFlags: storyFlagSet };
+}
+function adopt(dnf) {
+  // Choosing a reading implies facts; identity facts are kept archive-wide, the rest for this reading.
+  if (!dnf || dnf.length !== 1) return;
+  for (const atom of dnf[0]) if (atom.label) profileNames[atom.key] = atom.label;
+  applyFacts(impliedFacts(dnf), profile, assumptions);
+  remember("st-profile", JSON.stringify(profile));
+  remember("st-profile-names", JSON.stringify(profileNames));
+}
+function treeNodeFor(id) {
+  const nodes = dossier.story.tree?.nodes || {};
+  for (const node of Object.values(nodes)) if (node.doc === id && !node.ref) return node;
+  return null;
+}
+function profileSummary() {
+  const facts = Object.entries(profile).map(([key, value]) => {
+    const name = local(profileNames[key]) || key.replace(/^(ethic|auth|origin|civic)_/, "").replace(/_/g, " ");
+    return (value ? "" : T("非", "not ")) + name;
+  });
+  const assumed = Object.keys(assumptions).length;
+  if (!facts.length && !assumed) return "";
+  return `<div class="reading-context"><span>${esc(T("阅读设定", "Reading as"))}</span>${facts.map((f) => `<b>${esc(f)}</b>`).join("")}${assumed ? `<b>${esc(T(`${assumed} 项情境假设`, `${assumed} assumed condition${assumed > 1 ? "s" : ""}`))}</b>` : ""}<button data-profile-reset>${esc(T("重置", "Reset"))}</button></div>`;
+}
+function renderBody(r, ctx) {
+  // Reviewed V3 readings / dialogue text profiles keep their explicit passage selection.
+  if (chapter.readings?.length || chapter.dialogue) return { html: r.texts.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join(""), tabs: "" };
+  const passages = resolveBody(chapter, ctx);
+  if (passageIndex >= passages.length) passageIndex = 0;
+  const passage = passages[passageIndex];
+  let tabs = "";
+  if (passages.length > 1) {
+    tabs = `<div class="reading-tabs" role="group" aria-label="${esc(T("文本版本", "Text version"))}">${passages.map((p, i) => {
+      const label = describe(p.when, lang, profileNames) || T(`版本 ${i + 1}`, `Version ${i + 1}`);
+      return `<button data-passage="${i}" aria-pressed="${i === passageIndex}">${esc(label)}</button>`;
+    }).join("")}</div>`;
+  }
+  const html = (passage?.paragraphs || []).map((para) => `<section><p>${para.parts.map((part) => {
+    const text = paragraph(local(part.text));
+    if (part.status !== null || !part.when) return text;
+    const label = describe(part.when, lang, profileNames);
+    return `<span class="variant-piece"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(T("若", "If"))}：${esc(label)}</button>${text}</span>`;
+  }).join("")}</p></section>`).join("");
+  return { html, tabs, passage };
+}
 function renderChapter(preservePosition = false) {
+  const chapterChanged = readingChapterId !== chapter.id;
   visitedChapters.add(chapter.id);
   if (readingChapterId !== chapter.id) {
-    readingIndex = 0;
+    readingIndex = trail.at(-1)?.chapter===chapter.id ? (trail.at(-1).reading ?? 0) : 0;
+    for(const step of [...trail].reverse()){
+      const inherited=chapter.readings?.findIndex(view=>view.afterChoice?.chapter===step.chapter && view.afterChoice.key===step.choice && view.afterChoice.readings.includes(step.reading));
+      if(inherited>=0){readingIndex=inherited;break;}
+    }
+    dialogueStep = 0;
+    dialogueState='start'; dialogueHistory=[];
+    dialogueProfile=0;
+    dialogueTextProfile=0;
+    passageIndex = 0;
+    if(chapter.dialogue?.textProfiles){
+      for(const step of [...trail].reverse()){
+        const index=chapter.dialogue.textProfiles.findIndex(profile=>profile.after.includes(step.chapter));
+        if(index>=0){dialogueTextProfile=index;break;}
+      }
+    }
     readingChapterId = chapter.id;
   }
+  const ctx = readingContext();
   const selectedReading = chapter.readings?.[readingIndex];
   const r = {
     ...chapter,
@@ -264,80 +404,197 @@ function renderChapter(preservePosition = false) {
       ? selectedReading.textIndices.map((i) => chapter.texts[i]).filter(Boolean)
       : chapter.texts,
     choices: selectedReading
-      ? selectedReading.choiceIndices.map((i) => chapter.choices[i])
-      : chapter.choices,
+      ? selectedReading.choiceIndices.map((i) => ({ ...chapter.choices[i], index: i }))
+      : chapter.dialogue ? chapter.choices.map((c, i) => ({ ...c, index: i })) : resolveChoices(chapter, ctx),
   };
+  if (chapter.dialogue?.states) {
+    if(chapter.dialogue.textProfiles)r.texts=[chapter.texts[chapter.dialogue.textProfiles[dialogueTextProfile].textIndex]];
+    const excluded=chapter.dialogue.responseProfiles?.[dialogueProfile]?.excluded || [];
+    const historyKeys=new Set(dialogueHistory.map(index=>chapter.choices[index].key));
+    r.choices=chapter.choices.map((choice,index)=>({...choice,index})).filter((choice)=>chapter.dialogue.states[dialogueState].includes(choice.key)&&!excluded.includes(choice.index)&&!(chapter.dialogue.consumedTopics?.[choice.key]||[]).some(key=>historyKeys.has(key)));
+    r.choices=r.choices.map(choice=>{
+      const next=choice.next.filter(edge=>(chapter.dialogue.edgeRequirements?.[edge.target]||[]).every(key=>historyKeys.has(key)));
+      return next.length===choice.next.length?choice:{...choice,next};
+    });
+    r.texts=[...r.texts,...dialogueHistory.flatMap(index=>{
+      const choice=chapter.choices[index];
+      return [choice.label,...(choice.responses||[])];
+    })];
+    if(dialogueState!=='end')r.next=[];
+  } else if (chapter.dialogue) {
+    const steps=chapter.dialogue.steps;
+    r.choices=[{...chapter.choices[steps[dialogueStep]], index: steps[dialogueStep]}];
+    r.texts=[...r.texts,...steps.slice(0,dialogueStep).flatMap(index=>{
+      const choice=chapter.choices[index];
+      return [choice.label,...(choice.responses || [])];
+    })];
+    if (dialogueStep<steps.length-1) r.next=[];
+  }
   scene?.setChapterArt(chapter.image, chapter.title);
   const scrollPosition = $(".reader-panel").scrollTop;
   r.choices = r.choices.filter(
     (c, i, a) =>
       a.findIndex(
         (x) =>
-          local(x.label) === local(c.label) &&
+            local(x.label) === local(c.label) &&
+            JSON.stringify(x.responses) === JSON.stringify(c.responses) &&
           JSON.stringify(x.next) === JSON.stringify(c.next),
       ) === i,
   );
-
-  $("#dossier-title").textContent = prose(local(dossier.story.title));
-  $("#dossier-size").textContent = `${dossier.story.chapters} 篇`;
-  const readable = [
-      ...dossier.chapters.filter((c) => !c.hidden),
-      ...(dossier.story.related || []).filter(
-        (c) => !dossier.chapters.some((x) => x.id === c.id),
-      ),
-    ],
-    number =
-      (dossier.story.navigation?.order || readable.map((c) => c.id)).indexOf(
-        r.id,
-      ) + 1;
-  const order = dossier.story.navigation?.order || readable.map((c) => c.id);
-  const nextId = nextUnread(order, r.id, visitedChapters);
-  const nextTitle = readable.find((c) => c.id === nextId)?.title;
-  const nextReading = nextId
-    ? `<button class="reading-next" data-chapter="${esc(nextId)}"><small>下一篇</small><span>${esc(prose(local(nextTitle)) || "继续阅读")}</span><b>→</b></button>`
-    : '<span class="reading-complete">已读完</span>';
-  const texts = [...r.texts, ...r.sections].filter(
-    (t, i, a) => local(t) && a.findIndex((v) => local(v) === local(t)) === i,
-  );
+  const story = dossier.story;
+  $("#dossier-title").textContent = prose(local(story.title));
+  $("#dossier-size").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "document" : "documents"}`);
+  const readable = dossier.chapters;
+  const node = treeNodeFor(r.id);
+  const via = node?.via;
+  const entryCaption = via?.kind === "entry" && via.triggers?.length ? T("触发：", "Trigger: ") + via.triggers.map(local).join(T("；", "; ")) : "";
+  const caption = entryCaption || (node?.parent === "n0" ? T("故事开端", "Opening") : T("当前篇章", "Current document"));
+  // How the story continues from here.
+  const nextEdges = resolveEdges(r.next, ctx);
+  let nextReading;
+  if (chapter.ending && !nextEdges.length) {
+    nextReading = `<div class="reading-ending"><strong>${esc(local(chapter.ending.label))}</strong><p>${esc(local(chapter.ending.note))}</p></div>`;
+  } else if (r.choices.length) {
+    nextReading = `<span class="reading-complete">${esc(T("选择回应，沿这条路线继续", "Choose a response to follow its path"))}</span>`;
+  } else if (!nextEdges.length) {
+    nextReading = `<span class="reading-complete">${esc(T("这条路线到此结束 · 可在左侧探索其他可能", "This path ends here · explore other branches on the map"))}</span>`;
+  } else nextReading = "";
+  // Parallel groups (e.g. investigations in any order, N required before the gate).
+  const group = story.groups?.find((g) => g.kind === "parallel" && (g.members.includes(r.id) || g.gate === r.id));
+  let groupPanel = "";
+  if (group) {
+    const done = group.members.filter((m) => visitedChapters.has(m)).length;
+    groupPanel = `<div class="flow-investigations"><small>${esc(local(group.label))} · ${esc(T(`已读 ${done} / ${group.members.length}`, `${done} of ${group.members.length} read`))}${group.required ? esc(T(`，需要 ${group.required} 项`, ` · ${group.required} required`)) : ""}</small><p>${esc(local(group.note))}</p>${group.members.filter((m) => m !== r.id).map((m) => `<button class="reading-next${visitedChapters.has(m) ? " visited" : ""}" data-chapter="${esc(m)}"><span>${esc(titleFor(m))}</span><b>→</b></button>`).join("")}</div>`;
+  }
+  if ((chapter.dialogue?.states && dialogueState!=='end') || (chapter.dialogue?.steps && dialogueStep<chapter.dialogue.steps.length-1)) {
+    const ended=chapter.dialogue?.exits?.includes(trail.at(-1)?.choice);
+    nextReading=`<span class="reading-complete" data-dialogue-status>${ended?T('对话已结束','Conversation complete'):T('继续对话','Continue the conversation')}</span>`;
+  }
+  const responseFor = (c) => {
+    const dialogue = (c.responses || []).map(text => `<p class="dialogue-reply">${paragraph(local(text))}</p>`).join('');
+    const tooltips = (c.tooltips || []).map(text => `<p class="choice-tooltip">${paragraph(local(text))}</p>`).join('');
+    const outgoing = c.next.length ? c.next : r.next.filter(e => !c.terminal || e.sourceKind !== 'stage');
+    if (outgoing.length) return dialogue + tooltips + edgeButtons(outgoing);
+    if (dialogue || tooltips) return dialogue + tooltips;
+    return c.terminal ? `<span class="reading-complete">${esc(T("这条分支到此结束", "This branch ends here"))}</span>` : nextReading || `<span class="reading-complete">${esc(T("这条分支到此结束", "This branch ends here"))}</span>`;
+  };
+  const choiceNote = (c) => {
+    const notes = [];
+    if (c.visible === null && c.when) notes.push(T("仅在以下情形出现：", "Only when: ") + describe(c.when, lang, profileNames));
+    if (c.allowed === false) notes.push(T("不可选：", "Unavailable: ") + describe(c.allow, lang, profileNames));
+    else if (c.allowed === null && c.allow) notes.push(T("需要：", "Requires: ") + describe(c.allow, lang, profileNames));
+    return notes.length ? `<small class="choice-condition">${esc(notes.join(" · "))}</small>` : "";
+  };
+  const body = renderBody(r, ctx);
+  const sections = r.sections.filter((t, i, a) => local(t) && !r.texts.some((x) => local(x) === local(t)) && a.findIndex((v) => local(v) === local(t)) === i);
+  const notes = (chapter.notes || []).map((n) => `<aside class="review-note"><small>${esc(T("审阅注释 · 非游戏原文", "Reviewer note · not game text"))}</small><p>${esc(local(n))}</p></aside>`).join("");
+  const alsoIn = (chapter.alsoIn || []).filter((id) => storyById.has(id));
+  const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
+  const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art"><img src="${asset(r.image)}" alt=""/><span>STELLARIS / ${esc(local(dossier.story.title))}</span></div>` : ""}<article class="chapter-document"><div class="chapter-eyebrow"><span>${number > 0 ? `第 ${String(number).padStart(2, "0")} 篇` : "故事的间奏"}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>← 回到上一步</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || "故事的间奏")}</h1>${chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="文明视角">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>视角</span><select id="reading-select" aria-label="文明视角">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : ""}<div class="narrative">${texts.map((t, i) => `<section><p>${paragraph(local(t))}</p></section>`).join("") || ""}</div><section class="choices">${r.choices.length ? '<div class="section-heading"><span>你的选择</span><i></i></div>' : ""}${r.choices.map((c, i) => `<div class="choice"><button class="choice-button" data-choice="${i}" aria-expanded="false"><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || "继续")}</span><b>→</b></button><div class="choice-response" hidden>${c.next.length ? edgeButtons(c.next) : nextReading}</div></div>`).join("")}</section>${r.next.length ? `<section class="continuation"><div class="section-heading"><span>故事继续</span><i></i></div>${edgeButtons(r.next)}</section>` : ""}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">剧情脉络</button></div></article>`;
-  $("#chapter-list").innerHTML =
-    `<div class="contents-title"><span>剧情脉络</span><button id="contents-close" aria-label="关闭剧情脉络">×</button></div>` +
-    storyMap(dossier.story, readable, r.id, visitedChapters, lang, prose);
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt=""/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+  const remembered=trail.at(-1);
+  if(remembered?.chapter===chapter.id && remembered.reading===readingIndex && remembered.choice!==undefined){
+    const index=r.choices.findIndex(option=>option.key===remembered.choice);
+    const button=document.querySelector(`[data-choice="${index}"]`);
+    if(button){button.setAttribute('aria-expanded','true');button.parentElement.querySelector('.choice-response').hidden=false;button.closest('.choice').classList.add('chosen');}
+  }
+  if(dossier.summary){
+    const notesBox=document.createElement('details');
+    notesBox.className='story-summary';
+    const heading=document.createElement('summary');
+    heading.textContent=T('故事导读 · 含剧透','Story reading notes · Spoilers');
+    const download=document.createElement('a');
+    download.href=asset(dossier.summary.path); download.download='';
+    download.textContent=T('下载 Markdown','Download Markdown');
+    const text=document.createElement('div');
+    text.style.whiteSpace='pre-wrap'; text.style.lineHeight='1.85';
+    text.textContent=dossier.summary.text;
+    notesBox.append(heading,download,text);
+    $('.chapter-document').append(notesBox);
+  }
+  $("#chapter-list").innerHTML = story.tree ? '' :
+    `<div class="contents-title"><span>${esc(T("剧情脉络", "Story map"))}</span><button id="contents-close" aria-label="${esc(T("关闭剧情脉络", "Close story map"))}">×</button></div>` +
+    storyMap(story, readable, r.id, visitedChapters, lang, prose, trail);
   $("#chapter-list").hidden = true;
-  $("#chapter-toggle").setAttribute("aria-expanded", "false");
+  for (const [index,choice] of r.choices.entries()) {
+    if (!choice.labelVariants?.length) continue;
+    const button=document.querySelector(`[data-choice="${index}"]`);
+    const label=document.createElement('label');
+    label.className='reading-picker';
+    label.innerHTML=`<span>${esc(T('回应视角','Response perspective'))}</span><select aria-label="${esc(T('回应视角','Response perspective'))}">${choice.labelVariants.map((variant,i)=>`<option value="${i}">${esc(local(variant.profile))}</option>`).join('')}</select>`;
+    button.before(label);
+    label.querySelector('select').onchange=e=>{
+      button.children[1].innerHTML=paragraph(local(choice.labelVariants[Number(e.target.value)].label));
+    };
+  }
+  if(chapter.dialogue?.responseProfiles){
+    const picker=document.createElement('label');picker.className='reading-picker';
+    const profileLabel=local(chapter.dialogue.profileLabel)||T('对话物种','Speaker');
+    picker.innerHTML=`<span>${esc(profileLabel)}</span><select aria-label="${esc(profileLabel)}">${chapter.dialogue.responseProfiles.map((profile,i)=>`<option value="${i}" ${i===dialogueProfile?'selected':''}>${esc(local(profile.label))}</option>`).join('')}</select>`;
+    document.querySelector('.narrative').before(picker);
+    if(chapter.dialogue.profileLabel){
+      const contextNote=document.createElement('p');contextNote.className='dialogue-context-note';
+      contextNote.textContent=local(chapter.dialogue.responseProfiles[dialogueProfile].label);
+      picker.after(contextNote);
+    }
+    picker.querySelector('select').onchange=event=>{
+      dialogueProfile=Number(event.target.value);dialogueState='start';dialogueHistory=[];
+      if(trail.at(-1)?.chapter===chapter.id){delete trail.at(-1).choice;delete trail.at(-1).reading;}
+      renderChapter(true);document.querySelector('.reading-picker select')?.focus({preventScroll:true});
+    };
+  }
+  flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail);
+  if(chapter.dialogue?.textProfiles){
+    const picker=document.createElement('label');picker.className='reading-picker';
+    picker.innerHTML=`<span>${esc(T('此前的经历','Earlier events'))}</span><select aria-label="${esc(T('此前的经历','Earlier events'))}">${chapter.dialogue.textProfiles.map((profile,i)=>`<option value="${i}" ${i===dialogueTextProfile?'selected':''}>${esc(local(profile.label))}</option>`).join('')}</select>`;
+    document.querySelector('.narrative').before(picker);
+    picker.querySelector('select').onchange=event=>{dialogueTextProfile=Number(event.target.value);renderChapter(true);};
+  }
+  $("#chapter-toggle").setAttribute("aria-expanded", String(Boolean(story.tree && $("#flow-surface").classList.contains('mobile-open'))));
   $(".reader-panel").scrollTop = preservePosition ? scrollPosition : 0;
   for (const button of document.querySelectorAll("[data-reading]"))
     button.onclick = () => {
       readingIndex = Number(button.dataset.reading);
+      if(trail.at(-1)?.chapter===chapter.id){delete trail.at(-1).choice;delete trail.at(-1).reading;}
       renderChapter(true);
       document
         .querySelector(`[data-reading="${readingIndex}"]`)
         ?.focus({ preventScroll: true });
     };
+  for (const button of document.querySelectorAll("[data-passage]"))
+    button.onclick = () => {
+      const passage = resolveBody(chapter, readingContext())[Number(button.dataset.passage)];
+      passageIndex = Number(button.dataset.passage);
+      if (passage?.when) { adopt(passage.when); passageIndex = 0; }
+      renderChapter(true);
+      document.querySelector("[data-passage]")?.focus({ preventScroll: true });
+    };
   if ($("#reading-select"))
     $("#reading-select").onchange = (e) => {
       readingIndex = Number(e.target.value);
+      if(trail.at(-1)?.chapter===chapter.id){delete trail.at(-1).choice;delete trail.at(-1).reading;}
       renderChapter(true);
       $("#reading-select")?.focus({ preventScroll: true });
     };
-  $("#reader-title").focus({ preventScroll: true });
+  if (chapterChanged) $("#reader-title").focus({ preventScroll: true });
   history.replaceState(
     null,
     "",
-    `#story=${encodeURIComponent(dossier.story.id)}&chapter=${encodeURIComponent(r.id)}`,
+    `#story=${encodeURIComponent(story.id)}&chapter=${encodeURIComponent(r.id)}`,
   );
-  document.title = prose(local(dossier.story.title)) + " · 群星";
-  if (!reduced())
+  document.title = prose(local(story.title)) + T(" · 群星", " · Stellaris Tales");
+  if (!reduced() && chapterChanged)
     $(".chapter-document").animate(
       [
-        { opacity: 0, transform: "translateY(16px)" },
+        { opacity: 0, transform: "translateY(4px)" },
         { opacity: 1, transform: "none" },
       ],
-      { duration: 600, easing: "cubic-bezier(.2,.8,.2,1)" },
+      { duration: 220, easing: "cubic-bezier(.2,.8,.2,1)" },
     );
 }
 function toggleContents(force) {
+  if (dossier?.story.tree) { flowSurface.show(force); return; }
   const open = force ?? $("#chapter-list").hidden;
   $("#chapter-list").hidden = !open;
   $("#chapter-toggle").setAttribute("aria-expanded", String(open));
@@ -347,17 +604,36 @@ $("#chapter-toggle").onclick = () => toggleContents();
 function switchLanguage() {
   lang = lang === "zh" ? "en" : "zh";
   remember("st-language", lang);
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  applyMotion();
+  renderChrome();
   if (selected)
     showSelection(
       selected,
       selectedColumn,
       columns[selectedColumn].stories.indexOf(selected),
     );
-  if (chapter) renderChapter();
+  if (chapter) renderChapter(true);
   renderSearch();
 }
 $("#language").onclick = switchLanguage;
 $("#reader-language").onclick = switchLanguage;
+function renderChrome() {
+  // Static UI chrome in the current language (story text itself is always original game text).
+  const set = (q, zh, en) => { const el = $(q); if (el) el.textContent = T(zh, en); };
+  set("#search-open span", "搜索", "Search");
+  set("#close-reader", "← 收起档案", "← Close dossier");
+  set("#chapter-toggle", "剧情脉络", "Story map");
+  $("#reader-language").textContent = lang === "zh" ? "EN" : "中";
+  set("#search-title", "搜索", "Search");
+  $("#search-input")?.setAttribute("placeholder", T("故事名称、中文或英文关键词", "Story title or keywords in Chinese or English"));
+  const open = $("#open-story");
+  if (open) open.firstChild.textContent = T("展开故事 ", "Open story ");
+  for (const b of $("#categories")?.children || []) {
+    const i = Number(b.dataset.category);
+    b.querySelector("span").innerHTML = `${esc(categoryName(i))}<em>${esc(lang === "en" ? CATEGORIES[i][1] : CATEGORIES[i][2])}</em>`;
+  }
+}
 function renderSearch() {
   if (!stories.length) return;
   const words = searchText.toLowerCase().trim().split(/\s+/).filter(Boolean),
@@ -372,15 +648,17 @@ function renderSearch() {
     );
   const pages = Math.max(1, Math.ceil(filtered.length / 20));
   searchPage = Math.min(searchPage, pages - 1);
-  $("#search-count").textContent = `${filtered.length} 份档案`;
+  $("#search-count").textContent = T(`${filtered.length} 份档案`, `${filtered.length} dossiers`);
   $("#search-results").innerHTML =
     filtered
       .slice(searchPage * 20, searchPage * 20 + 20)
       .map(
-        (s) =>
-          `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${s.chapters} 篇章 · ${CATEGORIES.find((c) => c[0] === s.category)?.[1] || "银河故事"}</small></span><i>↗</i></button>`,
+        (s) => {
+          const column = CATEGORIES.findIndex((c) => c[0] === s.category);
+          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${esc(T(`${s.chapters} 篇`, `${s.chapters} docs`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
+        },
       )
-      .join("") || '<p class="empty">没有匹配结果。</p>';
+      .join("") || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
   $("#search-page").textContent = `${searchPage + 1} / ${pages}`;
   $("#search-previous").disabled = searchPage === 0;
   $("#search-next").disabled = searchPage === pages - 1;
@@ -419,6 +697,18 @@ document.addEventListener("click", (e) => {
     openStory(open.dataset.open);
     return;
   }
+  if (e.target.closest("[data-profile-reset]")) {
+    profile = {}; assumptions = {};
+    remember("st-profile", "{}");
+    renderChapter(true);
+    return;
+  }
+  const adoptButton = e.target.closest("[data-adopt]");
+  if (adoptButton) {
+    adopt(JSON.parse(adoptButton.dataset.adopt));
+    renderChapter(true);
+    return;
+  }
   const next = e.target.closest("[data-chapter]");
   if (next) {
     goChapter(next.dataset.chapter, next.dataset.story);
@@ -426,11 +716,49 @@ document.addEventListener("click", (e) => {
   }
   const choice = e.target.closest("[data-choice]");
   if (choice) {
-    const panel = choice.nextElementSibling,
+    if (choice.getAttribute("aria-disabled") === "true") return;
+    if(chapter.dialogue?.states && dialogueState!=='end'){
+      const index=Number(choice.dataset.choiceSource);
+      const key=chapter.choices[index].key;
+      if(!chapter.dialogue.exits?.includes(key)){
+      if(!dialogueHistory.includes(index))dialogueHistory.push(index);
+      const targetState=chapter.dialogue.transitions[key]||dialogueState;
+      const stateOrder=chapter.dialogue.stateOrder;
+      if(!stateOrder || stateOrder.indexOf(targetState)>stateOrder.indexOf(dialogueState))dialogueState=targetState;
+      renderChapter(true);
+      document.querySelector('.choice-button')?.focus({preventScroll:true});
+      return;
+      }
+    }
+    if (chapter.dialogue?.steps && dialogueStep<chapter.dialogue.steps.length-1) {
+      dialogueStep++;
+      renderChapter(true);
+      document.querySelector('.choice-button')?.focus({preventScroll:true});
+      return;
+    }
+    const panel = choice.parentElement.querySelector(".choice-response"),
       open = panel.hidden;
+    const step=trail.at(-1);
+    const source=chapter.choices[Number(choice.dataset.choiceSource)];
+    if(step?.chapter===chapter.id){
+      if(open){step.choice=source.key;step.choiceIndex=Number(choice.dataset.choiceSource);step.reading=readingIndex;}
+      else if(step.choice===source.key){delete step.choice;delete step.choiceIndex;delete step.reading;}
+    }
+    if(open)for(const other of document.querySelectorAll('.choice-button')){
+      if(other===choice)continue;
+      other.setAttribute('aria-expanded','false');
+      other.parentElement.querySelector('.choice-response').hidden=true;
+      other.closest('.choice').classList.remove('chosen');
+    }
     panel.hidden = !open;
     choice.setAttribute("aria-expanded", String(open));
     choice.closest(".choice").classList.toggle("chosen", open);
+    const dialogueStatus=document.querySelector('[data-dialogue-status]');
+    if(dialogueStatus){
+      const ended=open && chapter.dialogue?.exits?.includes(source.key);
+      dialogueStatus.textContent=ended?T('对话已结束','Conversation complete'):T('继续对话','Continue the conversation');
+    }
+    flowSurface.update(dossier.story, dossier.chapters, chapter.id, visitedChapters, lang, prose, trail);
     return;
   }
   if (e.target.closest("#reading-back") && trail.length > 1) {
@@ -480,6 +808,7 @@ try {
     ([id, title, en], i) =>
       `<button data-category="${i}" aria-pressed="${i === 2}"><small>${String(i + 1).padStart(2, "0")}</small><span>${title}<em>${en}</em></span></button>`,
   ).join("");
+  renderChrome();
   $("#archive-count").textContent = "";
   try {
     scene = new ArchiveScene($("#scene"), {
@@ -496,19 +825,19 @@ try {
   }
   $("#scene").addEventListener("scene-lost", () => {
     $("#scene-fallback").hidden = false;
-    toast("画面暂时休息了，仍可通过分类和搜索继续阅读。");
+    toast(T("画面暂时休息了，仍可通过分类和搜索继续阅读。", "The 3D view paused; categories and search still work."));
   });
   showSelection(columns[2].stories[0], 2, 0);
   parseHash();
 } catch (e) {
-  $("#selected-title").textContent = "记忆暂时失联";
+  $("#selected-title").textContent = T("记忆暂时失联", "The archive is unreachable");
   $("#selected-excerpt").textContent = e.message;
-  $("#open-story").textContent = "重新连接";
+  $("#open-story").textContent = T("重新连接", "Reconnect");
   $("#open-story").onclick = () => location.reload();
 }
 try {
   new SoundtrackPlayer(await json("music/playlist.json"), asset, toast);
 } catch (e) {
-  $("#track-title").textContent = "原声音乐暂时未能加载";
+  $("#track-title").textContent = T("原声音乐暂时未能加载", "The soundtrack could not be loaded");
   toast(e.message);
 }

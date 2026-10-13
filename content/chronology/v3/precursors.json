@@ -1,0 +1,249 @@
+[
+  {
+    "id": "cybrex",
+    "base": 2000,
+    "project": "CYBREX",
+    "investigations": 11,
+    "chain": "cybrex",
+    "secrets": "CYBREX_SECRETS",
+    "secretEvent": "ancrel.10250",
+    "title": "赛博勒克斯",
+    "investigationLabels": [
+      {
+        "zh": "创造者克尔的灭亡",
+        "en": "Destruction of the creators"
+      },
+      {
+        "zh": "奴役与战争工厂",
+        "en": "Slavery and war factories"
+      },
+      {
+        "zh": "战体之间的内斗",
+        "en": "Warforms fighting each other"
+      },
+      {
+        "zh": "小行星轰击",
+        "en": "Asteroid bombardment"
+      },
+      {
+        "zh": "有机生命保护区",
+        "en": "An organic sanctuary"
+      },
+      {
+        "zh": "被遗忘的监听站",
+        "en": "The forgotten listening post"
+      },
+      {
+        "zh": "被摧毁的自有精炼厂",
+        "en": "Their own refinery destroyed"
+      },
+      {
+        "zh": "四国联军的失败",
+        "en": "Defeat of a four-empire coalition"
+      },
+      {
+        "zh": "疑似自杀式撞击",
+        "en": "An apparent suicide collision"
+      },
+      {
+        "zh": "真空中的俘虏",
+        "en": "Captives in the vacuum"
+      },
+      {
+        "zh": "机械改造实验",
+        "en": "Cybernetic experiments"
+      }
+    ],
+    "secretNote": {
+      "zh": "母星报告已结束调查主线。玩家可另行花费750稀有文物开启秘密研究；要求已发现母星且此前未开启。工程研究项目无期限，完成后收到秘密报告，并非自动发生。",
+      "en": "The homeworld report ends the investigation. Separately spend 750 minor artifacts to start this optional engineering project; the homeworld must be found and research not previously started. It has no time limit and does not begin automatically."
+    }
+  },
+  {
+    "id": "vultaum",
+    "base": 0,
+    "intro": "precursor.1",
+    "project": "VULTAUM",
+    "investigations": 11,
+    "chain": "vultaum",
+    "secrets": "VULTAUM_SECRETS",
+    "secretEvent": "ancrel.10100",
+    "title": "沃陶姆",
+    "optional": [
+      "precursor.105"
+    ],
+    "investigationLabels": [
+      {
+        "zh": "时间单位科尔加",
+        "en": "The korga time unit"
+      },
+      {
+        "zh": "天文台星座壁画",
+        "en": "Observatory constellations"
+      },
+      {
+        "zh": "商船贸易星图",
+        "en": "Merchant trade routes"
+      },
+      {
+        "zh": "医疗记录与寿命",
+        "en": "Medical records and lifespan"
+      },
+      {
+        "zh": "沃陶姆化石遗骸",
+        "en": "Fossilized Vultaum remains"
+      },
+      {
+        "zh": "四米长的宇航服",
+        "en": "A four-meter space suit"
+      },
+      {
+        "zh": "虚拟现实的桎梏",
+        "en": "Shackles of virtual reality"
+      },
+      {
+        "zh": "编程语言的线索",
+        "en": "A programming language"
+      },
+      {
+        "zh": "拒绝大谎言的殖民地",
+        "en": "A colony rejecting the lie"
+      },
+      {
+        "zh": "虚拟游戏中的社会",
+        "en": "Society in a virtual game"
+      },
+      {
+        "zh": "以振动操作的矿机",
+        "en": "Vibration-operated machinery"
+      }
+    ],
+    "investigationNote": {
+      "zh": "地点没有固定先后；各项目要求科学家带领的科研船，基础研究时间180天。累计六份完成报告后定位母星。",
+      "en": "Investigate in any order. Each project requires a science ship with a scientist and has a base duration of 180 days. Six completed reports locate the home system."
+    },
+    "homeworldNote": {
+      "zh": "六份线索完成后定位母星。首次生成若暂缺合适星系，每30天重试；成功或已存在时，两天后收到通知。之后仍须完成母星调查。",
+      "en": "After six clues, locate the home system. If initial placement lacks a suitable system, retry every 30 days; successful placement or an existing system produces the notice after 2 days. The homeworld project still follows."
+    },
+    "arrivalLabels": [
+      {
+        "zh": "尚未被调查，且未殖民",
+        "en": "Not yet investigated or colonized"
+      },
+      {
+        "zh": "已被调查或已殖民",
+        "en": "Already investigated or colonized"
+      }
+    ],
+    "arrivalNote": {
+      "zh": "母星项目基础30天，要求科学家带领的科研船。完成时若尚无母星发现标志且目标未殖民，进入完整报告；否则进入另一结果。两者互斥，星系被定位并不等于母星已被调查。",
+      "en": "The homeworld project takes 30 base days and requires a science ship with a scientist. On completion, the full report requires no homeworld-found flag and an uncolonized target; otherwise the alternative applies. Locating the system is not completing its investigation."
+    },
+    "secretBranches": [
+      "special_projects:VULTAUM_SECRETS_2",
+      "ancrel.10110",
+      "ancrel.10111",
+      "ancrel.10112",
+      "ancrel.10113"
+    ],
+    "secretNote": {
+      "zh": "首次秘密研究后，仅常规帝国的狂热唯物视角可继续深入。选择公开或压制会改变五天后各结果的权重；科学家须仍存在。三种后果互斥，不依次发生。",
+      "en": "Only the fanatic materialist perspective of a regular empire can pursue further research. Publishing or suppressing the findings changes the outcome weights after five days; the scientist must still exist. The three outcomes are alternatives."
+    }
+  },
+  {
+    "id": "yuht",
+    "base": 500,
+    "project": "YUHT",
+    "investigations": 9,
+    "chain": "yuht",
+    "secrets": "YUHT_SECRETS",
+    "secretEvent": "ancrel.10050",
+    "title": "尤特",
+    "investigationLabels": [
+      {
+        "zh": "独自成长的孵化世界",
+        "en": "Hatchlings growing alone"
+      },
+      {
+        "zh": "寻找同伴的监听阵列",
+        "en": "Listening for other minds"
+      },
+      {
+        "zh": "被误认的外星文物",
+        "en": "The misidentified alien artifact"
+      },
+      {
+        "zh": "墓地中的尤特玩偶",
+        "en": "A doll among the graves"
+      },
+      {
+        "zh": "移动堡垒般的战士",
+        "en": "Warriors as mobile fortresses"
+      },
+      {
+        "zh": "首次接触的图像",
+        "en": "An image of first contact"
+      },
+      {
+        "zh": "双人冷冻室与医疗日志",
+        "en": "Two cryo chambers and medical logs"
+      },
+      {
+        "zh": "未突破光速的殖民船",
+        "en": "A sublight colony ship"
+      },
+      {
+        "zh": "等待补给的隐士",
+        "en": "The hermit awaiting supplies"
+      }
+    ],
+    "investigationNote": {
+      "zh": "九处地点可任意顺序调查；每项基础180天，要求科研船与科学家。收集六份报告后定位母星；额外资源回调不算另一份线索。",
+      "en": "Investigate the nine sites in any order. Each project takes a base 180 days and requires a science ship and scientist. Six reports locate the home system; the extra resource callback is not another clue."
+    },
+    "arrivalLabels": [
+      {
+        "zh": "尚未被调查，且未殖民",
+        "en": "Not yet investigated or colonized"
+      },
+      {
+        "zh": "已被调查或已殖民",
+        "en": "Already investigated or colonized"
+      }
+    ],
+    "arrivalNote": {
+      "zh": "母星项目基础30天，要求科研船与科学家。完成时尚无尤特母星发现标志且目标未殖民，进入完整报告；否则进入另一结果，两者互斥。",
+      "en": "The homeworld project takes a base 30 days and requires a science ship and scientist. The full report requires no Yuht homeworld-found flag and an uncolonized target at completion; otherwise the alternative applies."
+    },
+    "homeworldNote": {
+      "zh": "六份线索完成后定位母星。首次生成若暂缺合适星系，每30天重试；成功或找到已有星系时，两天后收到通知。通知结束线索搜集并开启母星调查项目，尚不代表调查完成。",
+      "en": "Six clues locate the home system. If initial placement has no suitable system, it retries every 30 days. Successful placement or an existing system leads to a notice after two days. The notice ends clue collection and opens the homeworld project; investigation is still required."
+    },
+    "secretNote": {
+      "zh": "另行花费750稀有文物开启，要求已发现尤特母星且尚未开始该研究。社会学项目无期限；完成报告按思潮与科技资格显示互斥正文和奖励回应。",
+      "en": "Spend 750 minor artifacts separately after finding the Yuht homeworld, provided this research has not already been started. The society project has no expiration. Its report and reward depend on ethics and technology eligibility."
+    }
+  },
+  {
+    "id": "first-league",
+    "base": 1000,
+    "project": "FIRST_LEAGUE",
+    "investigations": 14,
+    "chain": "first_league",
+    "secrets": "LEAGUE_SECRETS",
+    "secretEvent": "ancrel.10200",
+    "title": "第一联盟"
+  },
+  {
+    "id": "irassian",
+    "base": 1500,
+    "project": "IRASSIAN",
+    "investigations": 11,
+    "chain": "irassian",
+    "secrets": "IRASSIAN_SECRETS",
+    "secretEvent": "ancrel.9001",
+    "title": "伊拉斯"
+  }
+]

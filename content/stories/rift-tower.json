@@ -1,0 +1,25 @@
+{
+ "id": "rift-tower",
+ "bridges": [
+  {
+   "from": "astral_rift.691",
+   "to": "astral_rift.696",
+   "conditional": true,
+   "label": {
+    "zh": "招募的科学家去世后",
+    "en": "After the recruited scientist dies"
+   },
+   "evidence": "on_leader_death -> astral_rift.695 requires recruited_tower_rift_leader and tower_rift_leader, set only in 691.b",
+   "choice": "astral_rift.691.b"
+  }
+ ],
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

@@ -1,0 +1,334 @@
+{
+ "id": "vultaum",
+ "bridges": [
+  {
+   "from": "ancrel.10110",
+   "choice": "ancrel.10110.option.fm_suppress",
+   "to": "ancrel.10111",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "5天后的一种随机结果（50%）；须仍存在负责研究的科学家",
+    "en": "One random outcome after5days (50%); the leading research scientist must still exist"
+   },
+   "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+   "from": "ancrel.10110",
+   "choice": "ancrel.10110.option.fm_suppress",
+   "to": "ancrel.10112",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "5天后的一种随机结果（35%）；须仍存在负责研究的科学家",
+    "en": "One random outcome after5days (35%); the leading research scientist must still exist"
+   },
+   "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+   "from": "ancrel.10110",
+   "choice": "ancrel.10110.option.fm_suppress",
+   "to": "ancrel.10113",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "5天后的一种随机结果（15%）；须仍存在负责研究的科学家",
+    "en": "One random outcome after5days (15%); the leading research scientist must still exist"
+   },
+   "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+   "from": "ancrel.10110",
+   "choice": "ancrel.10110.option.fm_public",
+   "to": "ancrel.10112",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "5天后的一种随机结果（35%）；须仍存在负责研究的科学家",
+    "en": "One random outcome after5days (35%); the leading research scientist must still exist"
+   },
+   "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  },
+  {
+   "from": "ancrel.10110",
+   "choice": "ancrel.10110.option.fm_public",
+   "to": "ancrel.10113",
+   "annotate": true,
+   "conditional": true,
+   "label": {
+    "zh": "5天后的一种随机结果（65%）；须仍存在负责研究的科学家",
+    "en": "One random outcome after5days (65%); the leading research scientist must still exist"
+   },
+   "evidence": "Manually read10110: suppress random_list50/35/15;public35/65;each delayed5days. Outcomes are mutually exclusive. All three target events require leading_vultaum_research_scientist to exist at execution."
+  }
+ ],
+ "readings": {
+  "ancrel.10100": {
+   "evidence": "Manually read original10100 descriptions: machine/hive/regular fanatic materialist/regular non-fanatic are exclusive. Machine and hive exclusive_trigger options override others.",
+   "profiles": [
+    {
+     "label": {
+      "zh": "机械智能",
+      "en": "Machine intelligence"
+     },
+     "texts": [
+      "ancrel.10100.desc_machine"
+     ],
+     "choices": [
+      "progress.2.a.mech"
+     ]
+    },
+    {
+     "label": {
+      "zh": "蜂巢思维",
+      "en": "Hive mind"
+     },
+     "texts": [
+      "ancrel.10100.desc_hive"
+     ],
+     "choices": [
+      "story.210.a"
+     ]
+    },
+    {
+     "label": {
+      "zh": "狂热唯物主义常规帝国",
+      "en": "Fanatic materialist regular empire"
+     },
+     "texts": [
+      "ancrel.10100.desc_fm"
+     ],
+     "choices": [
+      "ancrel.10100.option.fm_enough",
+      "ancrel.10100.option.fm_delve_deeper"
+     ]
+    },
+    {
+     "label": {
+      "zh": "其他常规帝国",
+      "en": "Other regular empires"
+     },
+     "texts": [
+      "ancrel.10100.desc"
+     ],
+     "choices": [
+      "INTERESTING"
+     ]
+    }
+   ]
+  }
+ },
+ "nodeLabels": {
+  "precursor.6": {
+   "zh": "时间单位科尔加",
+   "en": "The korga time unit"
+  },
+  "precursor.11": {
+   "zh": "天文台星座壁画",
+   "en": "Observatory constellations"
+  },
+  "precursor.16": {
+   "zh": "商船贸易星图",
+   "en": "Merchant trade routes"
+  },
+  "precursor.21": {
+   "zh": "医疗记录与寿命",
+   "en": "Medical records and lifespan"
+  },
+  "precursor.26": {
+   "zh": "沃陶姆化石遗骸",
+   "en": "Fossilized Vultaum remains"
+  },
+  "precursor.31": {
+   "zh": "四米长的宇航服",
+   "en": "A four-meter space suit"
+  },
+  "precursor.36": {
+   "zh": "虚拟现实的桎梏",
+   "en": "Shackles of virtual reality"
+  },
+  "precursor.41": {
+   "zh": "编程语言的线索",
+   "en": "A programming language"
+  },
+  "precursor.46": {
+   "zh": "拒绝大谎言的殖民地",
+   "en": "A colony rejecting the lie"
+  },
+  "precursor.51": {
+   "zh": "虚拟游戏中的社会",
+   "en": "Society in a virtual game"
+  },
+  "precursor.56": {
+   "zh": "以振动操作的矿机",
+   "en": "Vibration-operated machinery"
+  }
+ },
+ "groups": [
+  {
+   "kind": "parallel",
+   "members": [
+    "precursor.5",
+    "precursor.10",
+    "precursor.15",
+    "precursor.20",
+    "precursor.25",
+    "precursor.30",
+    "precursor.35",
+    "precursor.40",
+    "precursor.45",
+    "precursor.50",
+    "precursor.55"
+   ],
+   "required": 6,
+   "gate": "precursor.100",
+   "label": {
+    "zh": "追寻遗迹",
+    "en": "Following the traces"
+   },
+   "note": {
+    "zh": "地点没有固定先后；各项目要求科学家带领的科研船，基础研究时间180天。累计六份完成报告后定位母星。",
+    "en": "Investigate in any order. Each project requires a science ship with a scientist and has a base duration of 180 days. Six completed reports locate the home system."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "precursor.101",
+    "precursor.102"
+   ],
+   "labels": [
+    {
+     "zh": "尚未被调查，且未殖民",
+     "en": "Not yet investigated or colonized"
+    },
+    {
+     "zh": "已被调查或已殖民",
+     "en": "Already investigated or colonized"
+    }
+   ],
+   "note": {
+    "zh": "母星项目基础30天，要求科学家带领的科研船。完成时若尚无母星发现标志且目标未殖民，进入完整报告；否则进入另一结果。两者互斥，星系被定位并不等于母星已被调查。",
+    "en": "The homeworld project takes 30 base days and requires a science ship with a scientist. On completion, the full report requires no homeworld-found flag and an uncolonized target; otherwise the alternative applies. Locating the system is not completing its investigation."
+   }
+  }
+ ],
+ "notes": [
+  {
+   "doc": "special_projects:VULTAUM_HOMEWORLD_PROJECT",
+   "zh": "六份线索完成后定位母星。首次生成若暂缺合适星系，每30天重试；成功或已存在时，两天后收到通知。之后仍须完成母星调查。",
+   "en": "After six clues, locate the home system. If initial placement lacks a suitable system, retry every 30 days; successful placement or an existing system produces the notice after 2 days. The homeworld project still follows.",
+   "kind": "review"
+  },
+  {
+   "doc": "special_projects:VULTAUM_SECRETS",
+   "zh": "首次秘密研究后，仅常规帝国的狂热唯物视角可继续深入。选择公开或压制会改变五天后各结果的权重；科学家须仍存在。三种后果互斥，不依次发生。",
+   "en": "Only the fanatic materialist perspective of a regular empire can pursue further research. Publishing or suppressing the findings changes the outcome weights after five days; the scientist must still exist. The three outcomes are alternatives.",
+   "kind": "review"
+  }
+ ],
+ "legacy": {
+  "precursorConfig": {
+   "id": "vultaum",
+   "base": 0,
+   "intro": "precursor.1",
+   "project": "VULTAUM",
+   "investigations": 11,
+   "chain": "vultaum",
+   "secrets": "VULTAUM_SECRETS",
+   "secretEvent": "ancrel.10100",
+   "title": "沃陶姆",
+   "optional": [
+    "precursor.105"
+   ],
+   "investigationLabels": [
+    {
+     "zh": "时间单位科尔加",
+     "en": "The korga time unit"
+    },
+    {
+     "zh": "天文台星座壁画",
+     "en": "Observatory constellations"
+    },
+    {
+     "zh": "商船贸易星图",
+     "en": "Merchant trade routes"
+    },
+    {
+     "zh": "医疗记录与寿命",
+     "en": "Medical records and lifespan"
+    },
+    {
+     "zh": "沃陶姆化石遗骸",
+     "en": "Fossilized Vultaum remains"
+    },
+    {
+     "zh": "四米长的宇航服",
+     "en": "A four-meter space suit"
+    },
+    {
+     "zh": "虚拟现实的桎梏",
+     "en": "Shackles of virtual reality"
+    },
+    {
+     "zh": "编程语言的线索",
+     "en": "A programming language"
+    },
+    {
+     "zh": "拒绝大谎言的殖民地",
+     "en": "A colony rejecting the lie"
+    },
+    {
+     "zh": "虚拟游戏中的社会",
+     "en": "Society in a virtual game"
+    },
+    {
+     "zh": "以振动操作的矿机",
+     "en": "Vibration-operated machinery"
+    }
+   ],
+   "investigationNote": {
+    "zh": "地点没有固定先后；各项目要求科学家带领的科研船，基础研究时间180天。累计六份完成报告后定位母星。",
+    "en": "Investigate in any order. Each project requires a science ship with a scientist and has a base duration of 180 days. Six completed reports locate the home system."
+   },
+   "homeworldNote": {
+    "zh": "六份线索完成后定位母星。首次生成若暂缺合适星系，每30天重试；成功或已存在时，两天后收到通知。之后仍须完成母星调查。",
+    "en": "After six clues, locate the home system. If initial placement lacks a suitable system, retry every 30 days; successful placement or an existing system produces the notice after 2 days. The homeworld project still follows."
+   },
+   "arrivalLabels": [
+    {
+     "zh": "尚未被调查，且未殖民",
+     "en": "Not yet investigated or colonized"
+    },
+    {
+     "zh": "已被调查或已殖民",
+     "en": "Already investigated or colonized"
+    }
+   ],
+   "arrivalNote": {
+    "zh": "母星项目基础30天，要求科学家带领的科研船。完成时若尚无母星发现标志且目标未殖民，进入完整报告；否则进入另一结果。两者互斥，星系被定位并不等于母星已被调查。",
+    "en": "The homeworld project takes 30 base days and requires a science ship with a scientist. On completion, the full report requires no homeworld-found flag and an uncolonized target; otherwise the alternative applies. Locating the system is not completing its investigation."
+   },
+   "secretBranches": [
+    "special_projects:VULTAUM_SECRETS_2",
+    "ancrel.10110",
+    "ancrel.10111",
+    "ancrel.10112",
+    "ancrel.10113"
+   ],
+   "secretNote": {
+    "zh": "首次秘密研究后，仅常规帝国的狂热唯物视角可继续深入。选择公开或压制会改变五天后各结果的权重；科学家须仍存在。三种后果互斥，不依次发生。",
+    "en": "Only the fanatic materialist perspective of a regular empire can pursue further research. Publishing or suppressing the findings changes the outcome weights after five days; the scientist must still exist. The three outcomes are alternatives."
+   }
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

@@ -1,0 +1,421 @@
+{
+  "grand_archive.8580": {
+    "evidence": "Manually read8580 nested flags and8575 choice restrictions: exactly one treasure response, then regular/default plus no_lom when eligible, or gestalt passage; b/c exclusive; d unavailable to the two raider civics.",
+    "profiles": [
+      {
+        "label": {
+          "zh": "收取宝藏 · 常规文明",
+          "en": "Claimed the hoard · Regular civilization"
+        },
+        "texts": [
+          "grand_archive.8580.desc.1",
+          "grand_archive.8580.desc.default",
+          "grand_archive.8580.desc.no_lom"
+        ],
+        "choices": [
+          "grand_archive.8580.c",
+          "grand_archive.8580.d",
+          "grand_archive.8580.a",
+          "DISMISS"
+        ],
+        "afterChoice": {
+          "chapter": "grand_archive.8575",
+          "key": "grand_archive.8575.a.lom",
+          "readings": [
+            0
+          ]
+        }
+      },
+      {
+        "label": {
+          "zh": "收取宝藏 · 格式塔",
+          "en": "Claimed the hoard · Gestalt"
+        },
+        "texts": [
+          "grand_archive.8580.desc.1",
+          "grand_archive.8580.desc.gestalt"
+        ],
+        "choices": [
+          "grand_archive.8580.b",
+          "grand_archive.8580.d",
+          "grand_archive.8580.a",
+          "DISMISS"
+        ]
+      },
+      {
+        "label": {
+          "zh": "归还可溯源物品 · 常规文明",
+          "en": "Returned traceable items · Regular civilization"
+        },
+        "texts": [
+          "grand_archive.8580.desc.2",
+          "grand_archive.8580.desc.default",
+          "grand_archive.8580.desc.no_lom"
+        ],
+        "choices": [
+          "grand_archive.8580.c",
+          "grand_archive.8580.d",
+          "grand_archive.8580.a",
+          "DISMISS"
+        ],
+        "afterChoice": {
+          "chapter": "grand_archive.8575",
+          "key": "grand_archive.8575.b",
+          "readings": [
+            0
+          ]
+        }
+      },
+      {
+        "label": {
+          "zh": "归还可溯源物品 · 格式塔",
+          "en": "Returned traceable items · Gestalt"
+        },
+        "texts": [
+          "grand_archive.8580.desc.2",
+          "grand_archive.8580.desc.gestalt"
+        ],
+        "choices": [
+          "grand_archive.8580.b",
+          "grand_archive.8580.d",
+          "grand_archive.8580.a",
+          "DISMISS"
+        ]
+      },
+      {
+        "label": {
+          "zh": "布施财富 · 常规文明",
+          "en": "Distributed the wealth · Regular civilization"
+        },
+        "texts": [
+          "grand_archive.8580.desc.3",
+          "grand_archive.8580.desc.default",
+          "grand_archive.8580.desc.no_lom"
+        ],
+        "choices": [
+          "grand_archive.8580.c",
+          "grand_archive.8580.d",
+          "grand_archive.8580.a",
+          "DISMISS"
+        ],
+        "afterChoice": {
+          "chapter": "grand_archive.8575",
+          "key": "grand_archive.8575.c",
+          "readings": [
+            0
+          ]
+        }
+      },
+      {
+        "label": {
+          "zh": "布施财富 · 格式塔",
+          "en": "Distributed the wealth · Gestalt"
+        },
+        "texts": [
+          "grand_archive.8580.desc.3",
+          "grand_archive.8580.desc.gestalt"
+        ],
+        "choices": [
+          "grand_archive.8580.b",
+          "grand_archive.8580.d",
+          "grand_archive.8580.a",
+          "DISMISS"
+        ]
+      },
+      {
+        "label": {
+          "zh": "收取宝藏 · 私掠许可／野蛮掠夺者",
+          "en": "Claimed the hoard · Letters of Marque / Barbaric Despoilers"
+        },
+        "texts": [
+          "grand_archive.8580.desc.1",
+          "grand_archive.8580.desc.default"
+        ],
+        "choices": [
+          "grand_archive.8580.c",
+          "grand_archive.8580.a",
+          "DISMISS"
+        ],
+        "afterChoice": {
+          "chapter": "grand_archive.8575",
+          "key": "grand_archive.8575.a.lom",
+          "readings": [
+            1,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "ancrel.10100": {
+    "evidence": "Manually read original10100 descriptions: machine/hive/regular fanatic materialist/regular non-fanatic are exclusive. Machine and hive exclusive_trigger options override others.",
+    "profiles": [
+      {
+        "label": {
+          "zh": "机械智能",
+          "en": "Machine intelligence"
+        },
+        "texts": [
+          "ancrel.10100.desc_machine"
+        ],
+        "choices": [
+          "progress.2.a.mech"
+        ]
+      },
+      {
+        "label": {
+          "zh": "蜂巢思维",
+          "en": "Hive mind"
+        },
+        "texts": [
+          "ancrel.10100.desc_hive"
+        ],
+        "choices": [
+          "story.210.a"
+        ]
+      },
+      {
+        "label": {
+          "zh": "狂热唯物主义常规帝国",
+          "en": "Fanatic materialist regular empire"
+        },
+        "texts": [
+          "ancrel.10100.desc_fm"
+        ],
+        "choices": [
+          "ancrel.10100.option.fm_enough",
+          "ancrel.10100.option.fm_delve_deeper"
+        ]
+      },
+      {
+        "label": {
+          "zh": "其他常规帝国",
+          "en": "Other regular empires"
+        },
+        "texts": [
+          "ancrel.10100.desc"
+        ],
+        "choices": [
+          "INTERESTING"
+        ]
+      }
+    ]
+  },
+  "ancrel.10050": {
+    "evidence": "10050 descriptions split is_xenophobe yes/no. First INTERESTING requires can_research tech_colonization_3 and not owned; second requires owned or cannot research. Source order verified; identical localization key needs occurrence selection.",
+    "profiles": [
+      {
+        "label": {
+          "zh": "排外 · 可研究恶劣环境适应",
+          "en": "Xenophobe · Hostile Environment Adaptation eligible"
+        },
+        "texts": [
+          "ancrel.10050.desc.1.phobe"
+        ],
+        "choices": [
+          {
+            "key": "INTERESTING",
+            "count": 2,
+            "occurrence": 0
+          }
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外 · 已有科技或不具研究资格",
+          "en": "Xenophobe · Technology owned or ineligible"
+        },
+        "texts": [
+          "ancrel.10050.desc.1.phobe"
+        ],
+        "choices": [
+          {
+            "key": "INTERESTING",
+            "count": 2,
+            "occurrence": 1
+          }
+        ]
+      },
+      {
+        "label": {
+          "zh": "非排外 · 可研究恶劣环境适应",
+          "en": "Non-xenophobe · Hostile Environment Adaptation eligible"
+        },
+        "texts": [
+          "ancrel.10050.desc.1"
+        ],
+        "choices": [
+          {
+            "key": "INTERESTING",
+            "count": 2,
+            "occurrence": 0
+          }
+        ]
+      },
+      {
+        "label": {
+          "zh": "非排外 · 已有科技或不具研究资格",
+          "en": "Non-xenophobe · Technology owned or ineligible"
+        },
+        "texts": [
+          "ancrel.10050.desc.1"
+        ],
+        "choices": [
+          {
+            "key": "INTERESTING",
+            "count": 2,
+            "occurrence": 1
+          }
+        ]
+      }
+    ]
+  },
+  "crisis.9100": {
+    "evidence": "Manually reviewed speech_1 versus NOT speech_1 descriptions; both use9100.a. Follow-up project remains conditional on player situation.",
+    "profiles": [
+      {
+        "label": {
+          "zh": "已完成首次接触",
+          "en": "First contact completed"
+        },
+        "texts": [
+          "crisis.9100.knows_the_queen_desc"
+        ],
+        "choices": [
+          "crisis.9100.a"
+        ]
+      },
+      {
+        "label": {
+          "zh": "尚未首次接触",
+          "en": "Before first contact"
+        },
+        "texts": [
+          "crisis.9100.doesnt_know_the_queen_desc"
+        ],
+        "choices": [
+          "crisis.9100.a"
+        ]
+      }
+    ]
+  },
+  "crisis.9105": {
+    "evidence": "Manually reviewed tr_nanotech_adopt and its negation; exactly one of a/b is available. No zero-response or both-response state.",
+    "profiles": [
+      {
+        "label": {
+          "zh": "未采纳纳米科技传统",
+          "en": "Nanotech tradition not adopted"
+        },
+        "texts": [
+          "crisis.9105"
+        ],
+        "choices": [
+          "crisis.9105.a"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已采纳纳米科技传统",
+          "en": "Nanotech tradition adopted"
+        },
+        "texts": [
+          "crisis.9105"
+        ],
+        "choices": [
+          "crisis.9105.b"
+        ]
+      }
+    ]
+  },
+  "crisis.9110": {
+    "evidence": "Manually reviewed tr_nanotech_adopt and its negation; exactly one of a/b is available. No zero-response or both-response state.",
+    "profiles": [
+      {
+        "label": {
+          "zh": "未采纳纳米科技传统",
+          "en": "Nanotech tradition not adopted"
+        },
+        "texts": [
+          "crisis.9110.desc"
+        ],
+        "choices": [
+          "crisis.9110.a"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已采纳纳米科技传统",
+          "en": "Nanotech tradition adopted"
+        },
+        "texts": [
+          "crisis.9110.desc"
+        ],
+        "choices": [
+          "crisis.9110.b"
+        ]
+      }
+    ]
+  },
+  "crisis.8085": {
+    "evidence": "Manually reviewed materialist conditions:8085 a/b always, c only materialist;8090 a non-materialist→8095 versus b materialist→8100, both after14days.",
+    "profiles": [
+      {
+        "label": {
+          "zh": "非唯物主义帝国",
+          "en": "Non-materialist empire"
+        },
+        "texts": [
+          "crisis.8085.desc"
+        ],
+        "choices": [
+          "crisis.8085.a",
+          "crisis.8085.b"
+        ]
+      },
+      {
+        "label": {
+          "zh": "唯物主义帝国",
+          "en": "Materialist empire"
+        },
+        "texts": [
+          "crisis.8085.desc"
+        ],
+        "choices": [
+          "crisis.8085.a",
+          "crisis.8085.b",
+          "crisis.8085.c"
+        ]
+      }
+    ]
+  },
+  "crisis.8090": {
+    "evidence": "Manually reviewed materialist conditions:8085 a/b always, c only materialist;8090 a non-materialist→8095 versus b materialist→8100, both after14days.",
+    "profiles": [
+      {
+        "label": {
+          "zh": "非唯物主义帝国",
+          "en": "Non-materialist empire"
+        },
+        "texts": [
+          "crisis.8090.desc"
+        ],
+        "choices": [
+          "crisis.8090.a"
+        ]
+      },
+      {
+        "label": {
+          "zh": "唯物主义帝国",
+          "en": "Materialist empire"
+        },
+        "texts": [
+          "crisis.8090.desc"
+        ],
+        "choices": [
+          "crisis.8090.b"
+        ]
+      }
+    ]
+  }
+}

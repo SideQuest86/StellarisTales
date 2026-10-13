@@ -1,0 +1,1603 @@
+{
+  "crisis.8250": {
+    "states": {"start": ["crisis.8250.1"], "decision": ["crisis.8250.2.a", "crisis.8250.2.b"], "surrendered": ["crisis.8250.3.a"]},
+    "transitions": {"crisis.8250.1": "decision", "crisis.8250.2.b": "surrendered"},
+    "stateOrder": ["start", "decision", "surrendered"],
+    "exits": ["crisis.8250.2.a", "crisis.8250.3.a"],
+    "evidence": "Manually read8245/8250: monthly gate schedules5days;8250 requires relic and no current conversation, fire_only_once. Initial question setsa; refusal loses20trust and exits; surrender transfers relic, gains20trust and setsb;final3.a unlocks gave_head dialogue topic."
+  },
+  "crisis.8045": {
+    "states": {
+      "1": [
+        "crisis.8045.1.a",
+        "crisis.8045.1.b"
+      ],
+      "2": [
+        "crisis.8045.2.a"
+      ],
+      "3": [
+        "crisis.8045.3.a",
+        "crisis.8045.3.b"
+      ],
+      "4": [
+        "crisis.8045.4.a",
+        "crisis.8045.4.b"
+      ],
+      "5": [
+        "crisis.8045.5.a"
+      ],
+      "6": [
+        "crisis.8045.6.a",
+        "crisis.8045.6.b"
+      ],
+      "7": [
+        "crisis.8045.7.a"
+      ],
+      "8": [
+        "crisis.8045.8.a",
+        "crisis.8045.8.b",
+        "crisis.8045.8.c",
+        "crisis.8045.8.d"
+      ],
+      "9": [
+        "crisis.8045.9.a"
+      ],
+      "10": [
+        "crisis.8045.10.a"
+      ],
+      "11": [
+        "crisis.8045.11.a"
+      ],
+      "12": [
+        "crisis.8045.12.a"
+      ],
+      "start": [
+        "crisis.8045.a",
+        "crisis.8045.b",
+        "crisis.8045.c"
+      ]
+    },
+    "transitions": {
+      "crisis.8045.a": "1",
+      "crisis.8045.b": "3",
+      "crisis.8045.c": "6",
+      "crisis.8045.1.a": "2",
+      "crisis.8045.1.b": "8",
+      "crisis.8045.2.a": "8",
+      "crisis.8045.3.a": "8",
+      "crisis.8045.3.b": "4",
+      "crisis.8045.4.a": "5",
+      "crisis.8045.4.b": "8",
+      "crisis.8045.5.a": "8",
+      "crisis.8045.6.a": "7",
+      "crisis.8045.6.b": "8",
+      "crisis.8045.7.a": "8",
+      "crisis.8045.8.a": "9",
+      "crisis.8045.8.b": "10",
+      "crisis.8045.8.c": "11",
+      "crisis.8045.8.d": "12"
+    },
+    "stateOrder": [
+      "start",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "exits": [
+      "crisis.8045.9.a",
+      "crisis.8045.10.a",
+      "crisis.8045.11.a",
+      "crisis.8045.12.a"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "境内有符合条件的前哨星系",
+          "en": "An eligible outpost system exists within your borders"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8045.8.c",
+          "crisis.8045.8.d"
+        ]
+      },
+      {
+        "label": {
+          "zh": "境内没有符合条件的前哨星系",
+          "en": "No eligible outpost system exists within your borders"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8045.8.a",
+          "crisis.8045.8.b"
+        ]
+      }
+    ],
+    "evidence": "Manually read8045 start and all12 exclusive flag states. Three opening topics converge at8. has_a_system gates a/b versus c/d; acceptance gains5trust, objection loses5; all four terminal responses still grant gifts and storm research."
+  },
+  "crisis.9115": {
+    "states": {
+      "start": [
+        "crisis.9115.a",
+        "crisis.9115.b",
+        "crisis.9115.b.nanotech"
+      ],
+      "reply": [
+        "crisis.9115.1.a",
+        "crisis.9115.1.b"
+      ],
+      "asked": [
+        "crisis.9115.1.b"
+      ]
+    },
+    "transitions": {
+      "crisis.9115.a": "reply",
+      "crisis.9115.b": "reply",
+      "crisis.9115.b.nanotech": "reply",
+      "crisis.9115.1.a": "asked"
+    },
+    "stateOrder": [
+      "start",
+      "reply",
+      "asked"
+    ],
+    "exits": [
+      "crisis.9115.1.b"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "未采纳纳米科技传统",
+          "en": "Nanotech tradition not adopted"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.9115.b.nanotech"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已采纳纳米科技传统",
+          "en": "Nanotech tradition adopted"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.9115.b"
+        ]
+      }
+    ],
+    "evidence": "Manually read9115: first responses require no1/2/3 flags; b vs b.nanotech exclusive by tr_nanotech_adopt;1.a requires1or2, sets3 and clears1/2;1.b exits from1/2/3. after schedules8048 days7."
+  },
+  "grand_archive.8570": {
+    "states": {
+      "start": [
+        "grand_archive.8570.a",
+        "grand_archive.8570.b",
+        "grand_archive.8570.c",
+        "CLOSE_COMMUNICATIONS"
+      ],
+      "first": [
+        "grand_archive.8570.a",
+        "grand_archive.8570.b",
+        "grand_archive.8570.c",
+        "grand_archive.8570.d",
+        "CLOSE_COMMUNICATIONS"
+      ],
+      "second": [
+        "grand_archive.8570.a",
+        "grand_archive.8570.b",
+        "grand_archive.8570.c",
+        "grand_archive.8570.d",
+        "grand_archive.8570.e",
+        "CLOSE_COMMUNICATIONS"
+      ],
+      "third": [
+        "grand_archive.8570.a",
+        "grand_archive.8570.b",
+        "grand_archive.8570.c",
+        "grand_archive.8570.d",
+        "grand_archive.8570.f",
+        "CLOSE_COMMUNICATIONS"
+      ],
+      "fourth": [
+        "grand_archive.8570.a",
+        "grand_archive.8570.b",
+        "grand_archive.8570.c",
+        "grand_archive.8570.d",
+        "grand_archive.8570.g",
+        "CLOSE_COMMUNICATIONS"
+      ]
+    },
+    "transitions": {
+      "grand_archive.8570.c": "first",
+      "grand_archive.8570.d": "second",
+      "grand_archive.8570.e": "third",
+      "grand_archive.8570.f": "fourth"
+    },
+    "stateOrder": [
+      "start",
+      "first",
+      "second",
+      "third",
+      "fourth"
+    ],
+    "exits": [
+      "CLOSE_COMMUNICATIONS"
+    ],
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "存在失落或觉醒帝国",
+          "en": "A fallen or awakened empire exists"
+        },
+        "occurrences": {
+          "grand_archive.8570.a": 0
+        }
+      },
+      {
+        "label": {
+          "zh": "不存在失落或觉醒帝国",
+          "en": "No fallen or awakened empire exists"
+        },
+        "occurrences": {
+          "grand_archive.8570.a": 1
+        }
+      }
+    ],
+    "evidence": "Manually read grand_archive.8570: c/d/e/f set accumulating flags 1/2/3/4. e disappears after flag3, f after flag4; a/b/c/d remain repeatable. Closing is always allowed and schedules8575 in1day. a has mutually exclusive fallen/awakened-empire versus curator responses."
+  },
+  "grand_archive.8410": {
+    "states": {
+      "start": [
+        "grand_archive.8410.a",
+        "CLOSE_COMMUNICATIONS"
+      ],
+      "first": [
+        "grand_archive.8410.a",
+        "grand_archive.8410.b",
+        "CLOSE_COMMUNICATIONS"
+      ],
+      "second": [
+        "grand_archive.8410.a",
+        "grand_archive.8410.b",
+        "grand_archive.8410.c",
+        "CLOSE_COMMUNICATIONS"
+      ],
+      "third": [
+        "grand_archive.8410.a",
+        "grand_archive.8410.b",
+        "grand_archive.8410.c",
+        "grand_archive.8410.d",
+        "CLOSE_COMMUNICATIONS"
+      ]
+    },
+    "transitions": {
+      "grand_archive.8410.a": "first",
+      "grand_archive.8410.b": "second",
+      "grand_archive.8410.c": "third"
+    },
+    "stateOrder": [
+      "start",
+      "first",
+      "second",
+      "third"
+    ],
+    "exits": [
+      "CLOSE_COMMUNICATIONS"
+    ],
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "常规帝国",
+          "en": "Regular empire"
+        },
+        "occurrences": {
+          "grand_archive.8410.b": 0
+        }
+      },
+      {
+        "label": {
+          "zh": "蜂巢帝国",
+          "en": "Hive empire"
+        },
+        "occurrences": {
+          "grand_archive.8410.b": 1
+        }
+      },
+      {
+        "label": {
+          "zh": "机械帝国",
+          "en": "Machine empire"
+        },
+        "occurrences": {
+          "grand_archive.8410.b": 2
+        }
+      }
+    ],
+    "evidence": "8410 flags dialog_1/2/3 accumulate; a unlocks b, b unlocks c, c unlocks d. Repeating earlier questions does not clear flags. Close has no trigger and is always available; b has regular/hive/machine response instances."
+  },
+  "grand_archive.8245": {
+    "textProfiles": [
+      {
+        "label": {
+          "zh": "此前掠夺基地",
+          "en": "Previously ransacked the base"
+        },
+        "text": "grand_archive.8245.desc.ransacked",
+        "after": [
+          "grand_archive.8130"
+        ]
+      },
+      {
+        "label": {
+          "zh": "此前潜入窃取科技",
+          "en": "Previously infiltrated and stole technology"
+        },
+        "text": "grand_archive.8245.desc.stolen",
+        "after": [
+          "grand_archive.8125"
+        ]
+      }
+    ],
+    "states": {
+      "start": [
+        "grand_archive.8245.a",
+        "grand_archive.8245.b",
+        "grand_archive.8245.c",
+        "grand_archive.8245.d",
+        "grand_archive.8245.e"
+      ],
+      "end": [
+        "CLOSE_COMMUNICATIONS"
+      ]
+    },
+    "transitions": {
+      "grand_archive.8245.e": "end"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "其他物种",
+          "en": "Other species"
+        },
+        "occurrences": {
+          "grand_archive.8245.b": 1
+        }
+      },
+      {
+        "label": {
+          "zh": "机器人／机械物种",
+          "en": "Robot / machine species"
+        },
+        "occurrences": {
+          "grand_archive.8245.b": 0
+        }
+      }
+    ],
+    "evidence": "8245 has two b option instances: first requires ROBOT or MACHINE species class with robot response; second requires neither and gives default response. a/b/c/d optional; e sets end_dialog; then only close. Opening text's earlier base-outcome flags are separately pending."
+  },
+  "grand_archive.8205": {
+    "states": {
+      "start": [
+        "grand_archive.8205.a",
+        "grand_archive.8205.b",
+        "grand_archive.8205.c",
+        "grand_archive.8205.d",
+        "CLOSE_COMMUNICATIONS"
+      ]
+    },
+    "transitions": {},
+    "exits": [
+      "CLOSE_COMMUNICATIONS"
+    ],
+    "evidence": "8205.a/b/c/d are optional repeatable is_dialog_only questions with response_text; CLOSE_COMMUNICATIONS alone calls8210. No question prerequisites or fixed order.8210.a creates smeegibb_digsite."
+  },
+  "grand_archive.8025": {
+    "states": {
+      "start": [
+        "grand_archive.8025.a",
+        "grand_archive.8025.b",
+        "grand_archive.8025.c",
+        "grand_archive.8025.e"
+      ],
+      "followup": [
+        "grand_archive.8025.a",
+        "grand_archive.8025.b",
+        "grand_archive.8025.c",
+        "grand_archive.8025.d",
+        "grand_archive.8025.e"
+      ],
+      "end": [
+        "CLOSE_COMMUNICATIONS"
+      ]
+    },
+    "transitions": {
+      "grand_archive.8025.b": "followup",
+      "grand_archive.8025.c": "followup",
+      "grand_archive.8025.e": "end"
+    },
+    "labelProfiles": {
+      "CLOSE_COMMUNICATIONS": {
+        "zh": "通常回应",
+        "en": "Default response"
+      },
+      "grand_archive.8025.f.lom": {
+        "zh": "企业十字军",
+        "en": "Corporate Crusader"
+      }
+    },
+    "evidence": "8025.a/b/c/e visible before end flag; b/c sets next_dialog_step enabling d; e sets end_dialog; only CLOSE_COMMUNICATIONS visible afterward. Questions may repeat; a/d leave state unchanged."
+  },
+  "crisis.8040": {
+    "steps": [
+      "crisis.8040.1.a",
+      "crisis.8040.2.a",
+      "crisis.8040.2.b",
+      "crisis.8040.4.a"
+    ],
+    "labelProfiles": {
+      "crisis.8040.4.a": {
+        "zh": "通常回应",
+        "en": "Default response"
+      },
+      "crisis.8040.4.b": {
+        "zh": "军国主义",
+        "en": "Militarist"
+      },
+      "crisis.8040.4.c": {
+        "zh": "排外主义",
+        "en": "Xenophobe"
+      },
+      "crisis.8040.4.d": {
+        "zh": "唯心主义",
+        "en": "Spiritualist"
+      },
+      "crisis.8040.4.e": {
+        "zh": "寰宇企业",
+        "en": "Megacorporation"
+      },
+      "crisis.8040.4.f": {
+        "zh": "失控机仆",
+        "en": "Rogue Servitor"
+      }
+    },
+    "evidence": "machine_age_crisis_events.txt: immediate sets8040.1.flag; the three is_dialog_only questions move1->2->3->4 and provide response_text. Only the final option enables the storm project and ends the conversation. Final civilization-specific name variants still need expanded handling."
+  },
+  "crisis.8060": {
+    "states": {
+      "1": [
+        "crisis.8060.1.a",
+        "crisis.8060.1.b"
+      ],
+      "2": [
+        "crisis.8060.2.a",
+        "crisis.8060.2.2"
+      ],
+      "3": [
+        "crisis.8060.3.a",
+        "crisis.8060.3.b"
+      ],
+      "4": [
+        "crisis.8060.4.a",
+        "crisis.8060.4.b"
+      ],
+      "5": [
+        "crisis.8060.5.a"
+      ],
+      "6": [
+        "crisis.8060.6.a",
+        "crisis.8060.6.b"
+      ],
+      "7": [
+        "crisis.8060.7.a"
+      ],
+      "8": [
+        "crisis.8060.8.a",
+        "crisis.8060.8.b"
+      ],
+      "9": [
+        "crisis.8060.9.a",
+        "crisis.8060.9.b"
+      ],
+      "10": [
+        "crisis.8060.10.a",
+        "crisis.8060.10.b"
+      ],
+      "11": [
+        "crisis.8060.11.a",
+        "crisis.8060.11.b"
+      ],
+      "12": [
+        "crisis.8060.12.a"
+      ],
+      "start": [
+        "crisis.8060.war",
+        "crisis.8060.a",
+        "crisis.8060.b",
+        "crisis.8060.c",
+        "crisis.8060.d",
+        "crisis.8060.e",
+        "crisis.8060.f",
+        "crisis.8060.g",
+        "crisis.8060.h",
+        "crisis.8060.i",
+        "crisis.8060.j",
+        "crisis.8060.k",
+        "crisis.8060.l",
+        "crisis.8060.z"
+      ],
+      "war": [
+        "crisis.8060.war.a",
+        "crisis.8060.war.b"
+      ],
+      "war_confirm": [
+        "crisis.8060.war.1.a"
+      ],
+      "end": [],
+      "8_followup": [
+        "crisis.8060.8.1.a",
+        "crisis.8060.8.1.b",
+        "crisis.8060.8.1.c"
+      ]
+    },
+    "transitions": {
+      "crisis.8060.war": "war",
+      "crisis.8060.war.a": "war_confirm",
+      "crisis.8060.war.b": "start",
+      "crisis.8060.war.1.a": "end",
+      "crisis.8060.z": "end",
+      "crisis.8060.a": "1",
+      "crisis.8060.1.a": "start",
+      "crisis.8060.1.b": "start",
+      "crisis.8060.b": "2",
+      "crisis.8060.2.a": "start",
+      "crisis.8060.2.2": "start",
+      "crisis.8060.c": "3",
+      "crisis.8060.3.a": "start",
+      "crisis.8060.3.b": "start",
+      "crisis.8060.d": "4",
+      "crisis.8060.4.a": "start",
+      "crisis.8060.4.b": "start",
+      "crisis.8060.e": "5",
+      "crisis.8060.5.a": "start",
+      "crisis.8060.f": "6",
+      "crisis.8060.6.a": "start",
+      "crisis.8060.6.b": "start",
+      "crisis.8060.g": "7",
+      "crisis.8060.7.a": "start",
+      "crisis.8060.h": "8",
+      "crisis.8060.8.a": "8_followup",
+      "crisis.8060.8.b": "8_followup",
+      "crisis.8060.i": "9",
+      "crisis.8060.9.a": "start",
+      "crisis.8060.9.b": "start",
+      "crisis.8060.j": "10",
+      "crisis.8060.10.a": "start",
+      "crisis.8060.10.b": "start",
+      "crisis.8060.k": "11",
+      "crisis.8060.11.a": "start",
+      "crisis.8060.11.b": "start",
+      "crisis.8060.l": "12",
+      "crisis.8060.12.a": "start",
+      "crisis.8060.8.1.a": "start",
+      "crisis.8060.8.1.b": "start",
+      "crisis.8060.8.1.c": "start"
+    },
+    "exits": [
+      "crisis.8060.war.1.a",
+      "crisis.8060.z"
+    ],
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "常规通讯",
+          "en": "Ordinary contact"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已具备全部宣战条件",
+          "en": "All war prerequisites met"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "星球遭毁",
+          "en": "Planet destroyed"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已打开数据银行",
+          "en": "Databank opened"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已交付人口",
+          "en": "Population demand answered"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已交付星系",
+          "en": "System demand answered"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已知扎克兰往事",
+          "en": "Zarqlan knowledge"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已交出扎克兰头颅",
+          "en": "Zarqlan head surrendered"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已发现冷冻舱",
+          "en": "Cryopods found"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "已发现冰封梦者",
+          "en": "Frozen Dreamer found"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.l",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "纳米学徒话题已解锁且信任超过49",
+          "en": "Nanite topic unlocked and trust above 49"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.h",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.war",
+          "crisis.8060.8.b",
+          "crisis.8060.8.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "虚境铸就：已知扎克兰且满足联系塑造者条件",
+          "en": "Shroud Forged: Zarqlan knowledge and Animator contact prerequisites met"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8060.d",
+          "crisis.8060.e",
+          "crisis.8060.f",
+          "crisis.8060.g",
+          "crisis.8060.i",
+          "crisis.8060.j",
+          "crisis.8060.k",
+          "crisis.8060.l",
+          "crisis.8060.war"
+        ]
+      }
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "consumedTopics": {
+      "crisis.8060.d": [
+        "crisis.8060.4.a",
+        "crisis.8060.4.b"
+      ],
+      "crisis.8060.e": [
+        "crisis.8060.5.a"
+      ],
+      "crisis.8060.f": [
+        "crisis.8060.6.a",
+        "crisis.8060.6.b"
+      ],
+      "crisis.8060.g": [
+        "crisis.8060.7.a"
+      ],
+      "crisis.8060.h": [
+        "crisis.8060.8.1.a",
+        "crisis.8060.8.1.b",
+        "crisis.8060.8.1.c"
+      ],
+      "crisis.8060.i": [
+        "crisis.8060.9.a",
+        "crisis.8060.9.b"
+      ],
+      "crisis.8060.j": [
+        "crisis.8060.10.a",
+        "crisis.8060.10.b"
+      ],
+      "crisis.8060.k": [
+        "crisis.8060.11.a",
+        "crisis.8060.11.b"
+      ],
+      "crisis.8060.l": [
+        "crisis.8060.12.a"
+      ]
+    },
+    "edgeRequirements": {
+      "shroud_forged.700": [
+        "crisis.8060.8.b"
+      ]
+    },
+    "evidence": "Reviewed crisis.8060 and has_synth_queen_dialogue_flag. Context selector explicitly provides one set of external prerequisites; no global game simulation. 5.b impossible condition excluded. Topic replies clear availability; war three steps."
+  },
+  "crisis.8080": {
+    "states": {
+      "1": [
+        "crisis.8080.1.a",
+        "crisis.8080.1.b",
+        "crisis.8080.1.c"
+      ],
+      "2": [
+        "crisis.8080.2.a",
+        "crisis.8080.2.b"
+      ],
+      "3": [
+        "crisis.8080.3.a",
+        "crisis.8080.3.b"
+      ],
+      "4": [
+        "crisis.8080.4.a"
+      ],
+      "5": [
+        "crisis.8080.5.a"
+      ],
+      "start": [
+        "crisis.8080.a",
+        "crisis.8080.b"
+      ]
+    },
+    "transitions": {
+      "crisis.8080.a": "1",
+      "crisis.8080.b": "1",
+      "crisis.8080.1.a": "2",
+      "crisis.8080.1.b": "3",
+      "crisis.8080.1.c": "3",
+      "crisis.8080.2.a": "4",
+      "crisis.8080.2.b": "5",
+      "crisis.8080.3.a": "4",
+      "crisis.8080.3.b": "5"
+    },
+    "stateOrder": [
+      "start",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "exits": [
+      "crisis.8080.4.a",
+      "crisis.8080.5.a"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "非机械帝国 · 非巨型企业",
+          "en": "Non-machine empire · Non-megacorporation"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8080.b",
+          "crisis.8080.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "机械帝国 · 非巨型企业",
+          "en": "Machine empire · Non-megacorporation"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8080.a",
+          "crisis.8080.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "非机械帝国 · 巨型企业",
+          "en": "Non-machine empire · Megacorporation"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8080.b",
+          "crisis.8080.1.b"
+        ]
+      },
+      {
+        "label": {
+          "zh": "机械帝国 · 巨型企业",
+          "en": "Machine empire · Megacorporation"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8080.a",
+          "crisis.8080.1.b"
+        ]
+      }
+    ],
+    "evidence": "Manually read8080 all options: machine a/b and megacorp1.b/c exclusive; ask databank or reward leads acceptance4/rejection5. Rejection loses5trust and final5.a schedules8105 days1; acceptance final4.a enables databank project."
+  },
+  "crisis.8095": {
+    "states": {
+      "start": [
+        "crisis.8095.a"
+      ],
+      "reply": [
+        "crisis.8095.1.a",
+        "crisis.8095.1.b"
+      ],
+      "defiant": [
+        "crisis.8095.2.a"
+      ]
+    },
+    "transitions": {
+      "crisis.8095.a": "reply",
+      "crisis.8095.1.a": "defiant"
+    },
+    "stateOrder": [
+      "start",
+      "reply",
+      "defiant"
+    ],
+    "exits": [
+      "crisis.8095.1.b",
+      "crisis.8095.2.a"
+    ],
+    "evidence": "Manually read8095: immediate trust-15, a sets1;1.a moves1→2;1.b ends trust+5;2.a ends trust-5;after first demand finished."
+  },
+  "crisis.8100": {
+    "states": {
+      "start": [
+        "crisis.8100.a"
+      ],
+      "reward": [
+        "crisis.8100.1.a",
+        "crisis.8100.1.b",
+        "crisis.8100.1.c",
+        "crisis.8100.1.d"
+      ]
+    },
+    "transitions": {
+      "crisis.8100.a": "reward"
+    },
+    "stateOrder": [
+      "start",
+      "reward"
+    ],
+    "exits": [
+      "crisis.8100.1.a",
+      "crisis.8100.1.b",
+      "crisis.8100.1.c",
+      "crisis.8100.1.d"
+    ],
+    "evidence": "Manually read8100 complete: initial thanks grants10trust sets1; four reward exits each clear1 and close; after first demand finished. Reward alternatives, not sequential grants."
+  },
+  "crisis.8130": {
+    "states": {
+      "start": [
+        "crisis.8130.a",
+        "crisis.8130.b",
+        "crisis.8130.c",
+        "crisis.8130.1.d"
+      ],
+      "threat": [
+        "crisis.8130.2.a"
+      ],
+      "destroyed": [
+        "crisis.8130.1.a",
+        "crisis.8130.1.b",
+        "crisis.8130.1.c"
+      ]
+    },
+    "transitions": {
+      "crisis.8130.a": "destroyed",
+      "crisis.8130.b": "destroyed",
+      "crisis.8130.c": "threat",
+      "crisis.8130.1.d": "threat",
+      "crisis.8130.2.a": "destroyed"
+    },
+    "stateOrder": [
+      "start",
+      "threat",
+      "destroyed"
+    ],
+    "exits": [
+      "crisis.8130.1.a",
+      "crisis.8130.1.b",
+      "crisis.8130.1.c"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "未及时取回 · 常规回应",
+          "en": "Collection failed · regular response"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8130.a",
+          "crisis.8130.b",
+          "crisis.8130.1.b",
+          "crisis.8130.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "星球已毁 · 常规回应",
+          "en": "World destroyed · regular response"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8130.b",
+          "crisis.8130.c",
+          "crisis.8130.1.d",
+          "crisis.8130.1.b",
+          "crisis.8130.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "星球已毁 · 军国主义",
+          "en": "World destroyed · militarist"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8130.b",
+          "crisis.8130.c",
+          "crisis.8130.1.d",
+          "crisis.8130.1.c"
+        ]
+      },
+      {
+        "label": {
+          "zh": "星球已毁 · 唯心主义",
+          "en": "World destroyed · spiritualist"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8130.b",
+          "crisis.8130.c",
+          "crisis.8130.1.d",
+          "crisis.8130.1.b"
+        ]
+      },
+      {
+        "label": {
+          "zh": "星球已毁 · 军国与唯心主义",
+          "en": "World destroyed · militarist and spiritualist"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8130.b",
+          "crisis.8130.c",
+          "crisis.8130.1.d"
+        ]
+      },
+      {
+        "label": {
+          "zh": "星球已毁 · 失控机仆",
+          "en": "World destroyed · rogue servitor"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8130.a",
+          "crisis.8130.c",
+          "crisis.8130.1.d",
+          "crisis.8130.1.b",
+          "crisis.8130.1.c"
+        ]
+      }
+    ],
+    "evidence": "Manually read8130 all flags. Failed ordinary project sets did_not_get_in_time: c/1.d→3flag→2.a destroys target and sets1flag. Already-destroyed a/b depends servitor.1.b militarist and1.c spiritualist can coexist; all exits end chain. Contexts explicitly cover listed assumptions only."
+  },
+  "crisis.8120": {
+    "states": {
+      "start": [
+        "crisis.8120.a"
+      ],
+      "reply": [
+        "crisis.8120.1.a"
+      ]
+    },
+    "transitions": {
+      "crisis.8120.a": "reply"
+    },
+    "stateOrder": [
+      "start",
+      "reply"
+    ],
+    "exits": [
+      "crisis.8120.1.a"
+    ],
+    "evidence": "Manually read8120 a sets1;1.a closes;after first demand chain finished."
+  },
+  "crisis.8280": {
+    "states": {
+      "start": [
+        "crisis.8280.1",
+        "crisis.8280.2",
+        "crisis.8280.3",
+        "crisis.8280.4"
+      ],
+      "covert": [
+        "crisis.8280.1.a"
+      ],
+      "accept": [
+        "crisis.8280.2.a"
+      ],
+      "refuse": [
+        "crisis.8280.3.a"
+      ]
+    },
+    "transitions": {
+      "crisis.8280.1": "covert",
+      "crisis.8280.2": "accept",
+      "crisis.8280.3": "refuse",
+      "crisis.8280.4": "refuse"
+    },
+    "stateOrder": [
+      "start",
+      "covert",
+      "accept",
+      "refuse"
+    ],
+    "exits": [
+      "crisis.8280.1.a",
+      "crisis.8280.2.a",
+      "crisis.8280.3.a"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "非排外主义 · 不满足秘密行动条件",
+          "en": "Non-xenophobe · Covert action unavailable"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8280.4",
+          "crisis.8280.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "非排外主义 · 满足秘密行动条件",
+          "en": "Non-xenophobe · Covert action eligible"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8280.4"
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外主义 · 不满足秘密行动条件",
+          "en": "Xenophobe · Covert action unavailable"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8280.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外主义 · 满足秘密行动条件",
+          "en": "Xenophobe · Covert action eligible"
+        },
+        "occurrences": {},
+        "excludedKeys": []
+      }
+    ],
+    "evidence": "Manually read8280 trigger and all7choices:1 covert→a,2 ordinary→b,3/4 rejection→cd;4 xenophobe. Covert allow checks200unity while effect spends2000unity+25influence; explicit eligibility assumption, no economy simulation. Only1.a schedules8305 days90 random90."
+  },
+  "crisis.8285": {
+    "states": {
+      "start": [
+        "crisis.8285.1",
+        "crisis.8285.2",
+        "crisis.8285.3",
+        "crisis.8285.4"
+      ],
+      "covert": [
+        "crisis.8285.1.a"
+      ],
+      "accept": [
+        "crisis.8285.2.a"
+      ],
+      "refuse": [
+        "crisis.8285.3.a"
+      ]
+    },
+    "transitions": {
+      "crisis.8285.1": "covert",
+      "crisis.8285.2": "accept",
+      "crisis.8285.3": "refuse",
+      "crisis.8285.4": "refuse"
+    },
+    "stateOrder": [
+      "start",
+      "covert",
+      "accept",
+      "refuse"
+    ],
+    "exits": [
+      "crisis.8285.1.a",
+      "crisis.8285.2.a",
+      "crisis.8285.3.a"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "非排外主义 · 不满足秘密行动条件",
+          "en": "Non-xenophobe · Covert action unavailable"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8285.4",
+          "crisis.8285.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "非排外主义 · 满足秘密行动条件",
+          "en": "Non-xenophobe · Covert action eligible"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8285.4"
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外主义 · 不满足秘密行动条件",
+          "en": "Xenophobe · Covert action unavailable"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8285.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外主义 · 满足秘密行动条件",
+          "en": "Xenophobe · Covert action eligible"
+        },
+        "occurrences": {},
+        "excludedKeys": []
+      }
+    ],
+    "evidence": "Manually read8285 all7options and8310: matching3result flags;4 xenophobe;1 allow1000unity and spends1000unity+25influence with360day large alloy shipment;2 ordinary360day shipment;only1.a schedules8310 days90 random90,8310 requires no war and grants investigation1 plus720day war preparation modifier."
+  },
+  "crisis.8290": {
+    "states": {
+      "start": [
+        "crisis.8290.1",
+        "crisis.8290.2",
+        "crisis.8290.3",
+        "crisis.8290.4"
+      ],
+      "covert": [
+        "crisis.8290.1.a"
+      ],
+      "accept": [
+        "crisis.8290.2.a"
+      ],
+      "refuse": [
+        "crisis.8290.3.a"
+      ]
+    },
+    "transitions": {
+      "crisis.8290.1": "covert",
+      "crisis.8290.2": "accept",
+      "crisis.8290.3": "refuse",
+      "crisis.8290.4": "refuse"
+    },
+    "stateOrder": [
+      "start",
+      "covert",
+      "accept",
+      "refuse"
+    ],
+    "exits": [
+      "crisis.8290.1.a",
+      "crisis.8290.2.a",
+      "crisis.8290.3.a"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "非排外主义 · 不满足秘密行动条件",
+          "en": "Non-xenophobe · Covert action unavailable"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8290.4",
+          "crisis.8290.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "非排外主义 · 满足秘密行动条件",
+          "en": "Non-xenophobe · Covert action eligible"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8290.4"
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外主义 · 不满足秘密行动条件",
+          "en": "Xenophobe · Covert action unavailable"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8290.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外主义 · 满足秘密行动条件",
+          "en": "Xenophobe · Covert action eligible"
+        },
+        "occurrences": {},
+        "excludedKeys": []
+      }
+    ],
+    "evidence": "Manually read8290 all7choices and8315. Covert checks/spends1500unity plus25influence; both accepted routes shared_research360days. Only1.a schedules8315 days90 random90;no war required; report adds investigation1 and much_shared_research360days. Static modifiers confirmed negative25% and negative50% research speed respectively, not a research reward."
+  },
+  "crisis.8295": {
+    "states": {
+      "start": [
+        "crisis.8295.1",
+        "crisis.8295.2",
+        "crisis.8295.3",
+        "crisis.8295.4"
+      ],
+      "covert": [
+        "crisis.8295.1.a"
+      ],
+      "accept": [
+        "crisis.8295.2.a"
+      ],
+      "refuse": [
+        "crisis.8295.3.a"
+      ]
+    },
+    "transitions": {
+      "crisis.8295.1": "covert",
+      "crisis.8295.2": "accept",
+      "crisis.8295.3": "refuse",
+      "crisis.8295.4": "refuse"
+    },
+    "stateOrder": [
+      "start",
+      "covert",
+      "accept",
+      "refuse"
+    ],
+    "exits": [
+      "crisis.8295.1.a",
+      "crisis.8295.2.a",
+      "crisis.8295.3.a"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "非排外主义 · 首个目标存在；第二目标或行动条件不足",
+          "en": "Non-xenophobe · first target exists; second target or action requirements missing"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8295.4",
+          "crisis.8295.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "非排外主义 · 首个目标存在；第二目标存在且满足行动条件",
+          "en": "Non-xenophobe · first target exists; second target and action requirements met"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8295.4"
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外主义 · 首个目标存在；第二目标或行动条件不足",
+          "en": "Xenophobe · first target exists; second target or action requirements missing"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8295.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "排外主义 · 首个目标存在；第二目标存在且满足行动条件",
+          "en": "Xenophobe · first target exists; second target and action requirements met"
+        },
+        "occurrences": {},
+        "excludedKeys": []
+      }
+    ],
+    "evidence": "Manually read8295 and8320. Event trigger already requires gifted_system before immediate selection. Ordinary choice needs first target;covert needs both targets plus2500unity allow, spends2500unity+50influence and runs wipe/outpost on both. 1.a schedules8320 days90 random90, no-war report adds investigation1 and system dialogue flag. Target creation beyond reviewed script not assumed."
+  },
+  "crisis.8300": {
+    "states": {
+      "start": [
+        "crisis.8300.1",
+        "crisis.8300.2",
+        "crisis.8300.3",
+        "crisis.8300.4"
+      ],
+      "covert": [
+        "crisis.8300.1.a"
+      ],
+      "accept": [
+        "crisis.8300.2.a"
+      ],
+      "refuse": [
+        "crisis.8300.3.a"
+      ]
+    },
+    "transitions": {
+      "crisis.8300.1": "covert",
+      "crisis.8300.2": "accept",
+      "crisis.8300.3": "refuse",
+      "crisis.8300.4": "refuse"
+    },
+    "stateOrder": [
+      "start",
+      "covert",
+      "accept",
+      "refuse"
+    ],
+    "exits": [
+      "crisis.8300.1.a",
+      "crisis.8300.2.a",
+      "crisis.8300.3.a"
+    ],
+    "profileLabel": {
+      "zh": "对话情境",
+      "en": "Conversation context"
+    },
+    "responseProfiles": [
+      {
+        "label": {
+          "zh": "调查进度至少8 · 非排外主义 · 首个目标存在；第二目标或行动条件不足",
+          "en": "Investigation progress at least 8 · Non-xenophobe · first target exists; second target or action requirements missing"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8300.4",
+          "crisis.8300.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "调查进度至少8 · 非排外主义 · 首个目标存在；第二目标存在且满足行动条件",
+          "en": "Investigation progress at least 8 · Non-xenophobe · first target exists; second target and action requirements met"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8300.4"
+        ]
+      },
+      {
+        "label": {
+          "zh": "调查进度至少8 · 排外主义 · 首个目标存在；第二目标或行动条件不足",
+          "en": "Investigation progress at least 8 · Xenophobe · first target exists; second target or action requirements missing"
+        },
+        "occurrences": {},
+        "excludedKeys": [
+          "crisis.8300.1"
+        ]
+      },
+      {
+        "label": {
+          "zh": "调查进度至少8 · 排外主义 · 首个目标存在；第二目标存在且满足行动条件",
+          "en": "Investigation progress at least 8 · Xenophobe · first target exists; second target and action requirements met"
+        },
+        "occurrences": {},
+        "excludedKeys": []
+      }
+    ],
+    "evidence": "Manually read8300: situation progress>=8;eligible noncapital/nonbottleneck/no megastructure system containing natural habitable planet. Covert needs two targets and3000unity, spends3000unity+100influence, trust+10 vs ordinary+5;both wipe/outpost.1.a schedules8325 days90 random90. This differs from8295 prerequisites and cost."
+  }
+}

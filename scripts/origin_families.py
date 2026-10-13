@@ -10,11 +10,21 @@ def build_origin_families(root,records):
     origins=[o for o in all_origins if o['source'].endswith('/00_origins.txt') and o['id'] not in aliases]
     valid={o['id'] for o in origins}
     def positive(nodes):
+        """Origins required by every allowed branch, in the protagonist scope.
+
+        Merely mentioning an origin in OR or another empire's scope does not
+        make a generic espionage/encounter event exclusive to that origin.
+        """
         keys=set()
         for n in nodes:
-            if n['k'].lower() in ('not','nor'):continue
+            kind=n['k'].lower()
+            if kind in ('not','nor','nand','from','fromfrom','target') or kind.startswith(('event_target:','any_','every_','random_','from.')):continue
             if n['k']=='has_origin' and isinstance(n['v'],str):keys.add(aliases.get(n['v'],n['v']))
-            elif isinstance(n['v'],list):keys.update(positive(n['v']))
+            elif isinstance(n['v'],list):
+                if kind=='or':
+                    alternatives=[positive([child]) for child in n['v']]
+                    if alternatives:keys.update(set.intersection(*alternatives))
+                else:keys.update(positive(n['v']))
         return keys&valid
     assigned={};evidence={}
     for r in records:

@@ -1,112 +1,45 @@
+// Structural audit of the V4 story trees per category, plus manual-review status counts.
+// Structural validity is required (CI fails on errors); review status is reported, never certified here —
+// acceptance is recorded in content/chronology/REVIEW.md with evidence.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import assert from "node:assert/strict";
-import { nextUnread } from "../src/story-map.js";
-const read = async (p) => JSON.parse(await readFile(p, "utf8"));
+const read = async (path) => JSON.parse(await readFile(path, "utf8"));
 const index = await read("public/stories/index.json");
-const categories = [
-  "origins",
-  "precursors",
-  "exploration",
-  "rifts",
-  "crisis",
-  "leviathans",
-  "society",
-  "stories",
-];
+const categories = ["origins", "precursors", "exploration", "rifts", "crisis", "leviathans", "society", "stories"];
 const requested = process.argv[2];
-if (requested && !categories.includes(requested))
-  throw Error("Unknown category");
-await mkdir("verification/categories", { recursive: true });
+if (requested && !categories.includes(requested)) throw Error("Unknown category");
+const known = new Set(index.stories.map((s) => s.id));
+await mkdir("verification/chronology", { recursive: true });
 for (const category of requested ? [requested] : categories) {
-  const report = {
-    category,
-    dossiers: 0,
-    chapters: 0,
-    originalLinks: 0,
-    choiceLinks: 0,
-    readingBridges: 0,
-    sharedChapters: 0,
-    traversed: 0,
-    failures: [],
-    stories: [],
-  };
-  for (const meta of index.stories.filter(
-    (s) => s.visible && s.category === category,
-  )) {
-    const d = await read(`public/stories/${meta.id}.json`),
-      nav = d.story.navigation;
-    const expected = new Set([
-      ...d.chapters.filter((c) => !c.hidden).map((c) => c.id),
-      ...(d.story.related || []).map((c) => c.id),
-    ]);
+  const report = { category, model: 4, scope: "Tree structure and review status only; narrative acceptance is manual (content/chronology/REVIEW.md)", stories: 0, docs: 0, nodes: 0, refs: 0, crossLinks: 0, review: {}, failures: [], items: [] };
+  for (const meta of index.stories.filter((s) => s.visible && s.category === category)) {
+    const d = await read(`public/stories/${meta.id}.json`);
     try {
-      assert.ok(nav);
-      assert.equal(nav.order.length, expected.size);
-      assert.deepEqual(new Set(nav.order), expected);
-      assert.equal(new Set(nav.tree.map((n) => n.id)).size, expected.size);
-      const visited = new Set();
-      let current = nav.order[0];
-      while (current) {
-        assert.ok(!visited.has(current));
-        visited.add(current);
-        current = nextUnread(nav.order, current, visited);
+      const { root, nodes } = d.story.tree;
+      const full = new Set();
+      let refs = 0;
+      for (const [nid, node] of Object.entries(nodes)) {
+        if (nid === root) continue;
+        assert.ok(nodes[node.parent], `${meta.id}: ${nid} has no parent`);
+        if (node.ref) { refs++; assert.ok(nodes[node.ref], `${meta.id}: dangling ref ${nid}`); }
+        else { assert.ok(!full.has(node.doc), `${meta.id}: ${node.doc} placed twice`); full.add(node.doc); }
       }
-      assert.equal(visited.size, expected.size);
-      for (const edge of nav.links) {
-        assert.ok(expected.has(edge.from));
-        assert.ok(expected.has(edge.to));
-      }
-      // Branch switching to any chapter must still reach every other unread chapter.
-      for (const start of nav.order) {
-        const seen = new Set([start]);
-        let n = nextUnread(nav.order, start, seen);
-        while (n) {
-          seen.add(n);
-          n = nextUnread(nav.order, n, seen);
+      assert.equal(full.size, d.chapters.length, `${meta.id}: tree and docs differ`);
+      let cross = 0;
+      for (const c of d.chapters)
+        for (const e of [...c.next, ...c.choices.flatMap((o) => o.next)]) {
+          assert.ok(known.has(e.story), `${meta.id}: ${c.id} links to unknown story ${e.story}`);
+          if (e.story !== meta.id) cross++;
         }
-        assert.equal(seen.size, expected.size);
-      }
-      const original = d.chapters
-        .flatMap((c) => [
-          ...c.next.map((e) => ({ from: c.id, to: e.target, kind: "event" })),
-          ...c.choices.flatMap((o) =>
-            o.next.map((e) => ({ from: c.id, to: e.target, kind: "choice" })),
-          ),
-        ])
-        .filter((e) => expected.has(e.from) && expected.has(e.to));
-      for (const e of original)
-        assert.ok(
-          nav.links.some(
-            (x) => x.from === e.from && x.to === e.to && x.kind === e.kind,
-          ),
-        );
-      const choiceLinks = nav.links.filter((e) => e.kind === "choice").length,
-        bridges = nav.tree.filter(
-          (n) => n.parent && n.kind === "reading",
-        ).length;
-      report.dossiers++;
-      report.chapters += expected.size;
-      report.originalLinks += nav.links.length;
-      report.choiceLinks += choiceLinks;
-      report.readingBridges += bridges;
-      report.sharedChapters += (d.story.related || []).length;
-      report.traversed += visited.size;
-      report.stories.push({
-        id: meta.id,
-        title: meta.title.zh,
-        chapters: expected.size,
-        links: nav.links.length,
-        choiceLinks,
-        readingBridges: bridges,
-      });
+      const status = meta.review?.status || "unreviewed";
+      report.review[status] = (report.review[status] || 0) + 1;
+      report.stories++; report.docs += d.chapters.length; report.nodes += Object.keys(nodes).length - 1; report.refs += refs; report.crossLinks += cross;
+      report.items.push({ id: meta.id, title: meta.title.zh, kind: meta.kind, docs: d.chapters.length, refs, crossLinks: cross, review: status });
     } catch (e) {
-      report.failures.push({ id: meta.id, error: e.message });
+      report.failures.push({ id: meta.id, message: e.message });
     }
   }
-  await writeFile(
-    `verification/categories/${category}.json`,
-    JSON.stringify(report, null, 2),
-  );
-  console.log(JSON.stringify({ ...report, stories: undefined }));
-  assert.equal(report.failures.length, 0);
+  await writeFile(`verification/chronology/${category}.json`, JSON.stringify(report, null, 2));
+  console.log(`${category}: ${report.stories} stories, ${report.docs} docs, ${report.refs} convergences, ${report.failures.length} structural failures; review ${JSON.stringify(report.review)}`);
+  assert.equal(report.failures.length, 0, category + " structural errors");
 }

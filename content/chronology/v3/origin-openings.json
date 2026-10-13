@@ -1,0 +1,136 @@
+{
+  "origin_treasure_hunters": {
+    "targets":["grand_archive.8000"],
+    "label":{"zh":"开局第1天：神秘胶囊与星图","en":"Day 1: the mysterious capsule and star chart"},
+    "evidence":"00_on_actions on_game_start_country calls7999; origin check schedules8000 days1.8000 enables TREASURE_HUNTERS_ANCIENT_CAPSULE_PROJECT; success8005 spawns first hidden system and schedules8015 announcement days1.8020 requires ship entering the target POI, not game start."
+  },
+  "origin_fear_of_the_dark": {
+    "targets":["origin.6005","origin.6006","origin.6015","origin.6020"],
+    "label":{"zh":"年度随机遭遇之一：分离主义者仍存在且未被激怒","en":"One possible annual encounter while the separatists remain and are not angered"},
+    "evidence":"game_start initializes the separatist planet, not a fixed narrative event. on_yearly_pulse_country invokes6000; its weighted table permits6005/6006 (leader cooldown),6015,6020 (aid cooldown), or no event.6025 requires previous aid/exploitation and a player deficit.6140->6145 is midgame, not an opening."
+  },
+  "origin_broken_shackles": {
+    "targets":["archaeological_site_types:broken_shackles_digsite","origin.5041"],
+    "label":{"zh":"早期的独立支线","en":"Independent early branches"},
+    "labels":{
+      "archaeological_site_types:broken_shackles_digsite":{"zh":"建造首艘科研船后，调查坠毁的奴隶船","en":"Build the first science ship, then investigate the crashed slaver ship"},
+      "origin.5041":{"zh":"年度政治变化；议会制度或传媒集团提前至30天","en":"Annual political change; Parliamentary System or Media Conglomerate advances it to 30 days"}
+    },
+    "evidence":"origin.110 creates the digsite, visible only after built_first_science_ship set by5060; schedules5041 after30days for civic_parliamentary_system or civic_media_conglomerate. 00_on_actions on_yearly_pulse_country also calls5041 for all eligible Broken Shackles countries (once via internal_politics flag). Digsite stages5015/5020/5025/5030/5035. Midgame5045->5046 is not an opening."
+  },
+  "origin_here_be_dragons": {
+    "targets": [
+      "aquatics.150"
+    ],
+    "label": {
+      "zh": "数年后，天龙开始进食",
+      "en": "Years later, the dragon grows hungry"
+    },
+    "evidence": "aquatics.100 initial setup schedules150 at3300-4300days; aquatics1/4/5 are Hydrocentric ascension content, not this origin"
+  },
+  "origin_galactic_doorstep": {
+    "targets": [
+      "origin.1000"
+    ],
+    "label": {
+      "zh": "星门第一次启动",
+      "en": "The gateway first activates"
+    },
+    "evidence": "1001 setup schedules1000 at300-330days;1100-1115 are its From Gateway Sent archaeology"
+  },
+  "origin_shoulders_of_giants": {
+    "targets": [
+      "archaeological_site_types:site_ex_gravitas"
+    ],
+    "label": {
+      "zh": "调查母星附近的遗迹",
+      "en": "Investigate the ruins near the homeworld"
+    },
+    "evidence": "1199 setup creates site_ex_gravitas;stage1 is1200"
+  },
+  "origin_scion": {
+    "targets": [
+      "origin.10"
+    ],
+    "label": {
+      "zh": "来自先辈的问候",
+      "en": "A greeting from the fallen empire"
+    },
+    "evidence": "game_start calls origin.5, whose setup schedules origin.10 after 3 days"
+  },
+  "origin_doomsday": {
+    "targets": [
+      "origin.61"
+    ],
+    "label": {
+      "zh": "终末的最初征兆",
+      "en": "The first signs of the end"
+    },
+    "evidence": "60 setup schedules61 after5days"
+  },
+  "origin_shroud_forged": {
+    "targets": [
+      "situations:situation_shroud_forged"
+    ],
+    "label": {
+      "zh": "虚境所铸",
+      "en": "Shroud-Forged"
+    },
+    "evidence": "game_start ->shroud_forged1 ->situation_shroud_forged"
+  },
+  "origin_payback": {
+    "targets": [
+      "archaeological_site_types:payback_digsite"
+    ],
+    "label": {
+      "zh": "清理战争留下的创伤",
+      "en": "Investigate the scars of war"
+    },
+    "evidence": "game_start ->origin4000 creates payback_digsite"
+  },
+  "origin_mindwardens": {
+    "targets": [
+      "shroud.6050"
+    ],
+    "label": {
+      "zh": "三个月后出现异常关联",
+      "en": "Unusual correlations after three months"
+    },
+    "evidence": "game_start ->shroud6000 schedules6050 months3;6125 years12 is not an opening"
+  },
+  "origin_endbringers": {
+    "targets": [
+      "shroud.8010"
+    ],
+    "label": {
+      "zh": "一个月后的任务",
+      "en": "A mission one month later"
+    },
+    "evidence": "game_start ->shroud8000 schedules8010 days30"
+  },
+  "origin_clone_army": {
+    "targets": ["clones.10"],
+    "label": {"zh": "数年后，追问克隆人的来历", "en": "Years later, question the clones' origins"},
+    "evidence": "common/inline_scripts/game_start/origin_clone_army.txt schedules carrier_event clones.10 after 1095 days plus random 720; its response creates clone_army_digsite"
+  },
+  "origin_synthetic_fertility": {
+    "targets": ["machine_age.3100"],
+    "label": {"zh": "人口危机与数字化计划", "en": "The population crisis and digitization plan"},
+    "evidence": "game_start directly calls machine_age.3100, which starts situation_synthetic_fertility_digitization; 3110/3115/3120 require subsequent technologies via on_tech_increased"
+  },
+  "origin_sacred_path": {
+    "targets": ["nomads.2005"],
+    "label": {"zh": "圣道的起点", "en": "The beginning of the Sacred Path"},
+    "evidence": "game_start calls hidden nomads.2000, which schedules 2005 after 5 days; 2005 enables SACRED_SITE_ONE_PROJECT and separately schedules 2015 after 3600 days"
+  },
+  "origin_legendary_leader": {
+    "targets": [
+      "paragon.5004"
+    ],
+    "label": {
+      "zh": "启明者的允诺",
+      "en": "The Luminary's promise"
+    },
+    "evidence": "game_start ->paragon5000 schedules5004 days180 random360"
+  }
+}

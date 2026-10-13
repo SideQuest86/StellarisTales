@@ -9,7 +9,9 @@
     "origin_life_seeded_ai_only": "origin_life_seeded"
   },
   "sources": {
-    "origin_shroud_forged": ["events/shroud_forged_events.txt"],
+    "origin_shroud_forged": [
+      "events/shroud_forged_events.txt"
+    ],
     "origin_unplugged": [
       "events/unplugged_events.txt",
       "common/archaeological_site_types/12_unplugged_arc_sites.txt",
@@ -17,16 +19,36 @@
       "common/situations/12_unplugged_situations.txt",
       "common/special_projects/04_projects_unplugged.txt"
     ],
-    "origin_clone_army": ["events/clone_army_events.txt"],
-    "origin_legendary_leader": ["events/origin_events_paragon.txt"],
-    "origin_broken_shackles": ["events/origin_events_broken_shackles.txt"],
-    "origin_payback": ["events/origin_events_4.txt"],
-    "origin_fruitful": ["events/origin_events_5.txt"],
-    "origin_riftworld": ["events/origin_events_astral_planes.txt"],
-    "origin_storm_chasers": ["events/origin_events_cosmic_storms.txt"],
-    "origin_sacred_path": ["events/nomads_origin_events.txt"],
-    "origin_red_giant": ["events/origin_events_infernal.txt"],
-    "origin_wilderness": ["events/origin_events_wilderness.txt"]
+    "origin_clone_army": [
+      "events/clone_army_events.txt"
+    ],
+    "origin_legendary_leader": [
+      "events/origin_events_paragon.txt"
+    ],
+    "origin_broken_shackles": [
+      "events/origin_events_broken_shackles.txt"
+    ],
+    "origin_payback": [
+      "events/origin_events_4.txt"
+    ],
+    "origin_fruitful": [
+      "events/origin_events_5.txt"
+    ],
+    "origin_riftworld": [
+      "events/origin_events_astral_planes.txt"
+    ],
+    "origin_storm_chasers": [
+      "events/origin_events_cosmic_storms.txt"
+    ],
+    "origin_sacred_path": [
+      "events/nomads_origin_events.txt"
+    ],
+    "origin_red_giant": [
+      "events/origin_events_infernal.txt"
+    ],
+    "origin_wilderness": [
+      "events/origin_events_wilderness.txt"
+    ]
   },
   "ranges": [
     [
@@ -71,8 +93,20 @@
       8999,
       "events/origin_events_shadows_shroud.txt"
     ],
-    ["origin_tree_of_life", "origin", 3000, 3099, "events/origin_events_3.txt"],
-    ["origin_remnants", "origin", 3100, 3149, "events/origin_events_3.txt"],
+    [
+      "origin_tree_of_life",
+      "origin",
+      3000,
+      3099,
+      "events/origin_events_3.txt"
+    ],
+    [
+      "origin_remnants",
+      "origin",
+      3100,
+      3149,
+      "events/origin_events_3.txt"
+    ],
     [
       "origin_shattered_ring",
       "origin",
@@ -119,13 +153,13 @@
       "origin_galactic_doorstep",
       "origin",
       1000,
-      1099,
+      1198,
       "events/origin_events_2.txt"
     ],
     [
       "origin_shoulders_of_giants",
       "origin",
-      1100,
+      1199,
       2999,
       "events/origin_events_2.txt"
     ],
@@ -153,7 +187,7 @@
     [
       "origin_here_be_dragons",
       "aquatics",
-      0,
+      100,
       999,
       "events/aquatics_events.txt"
     ],
@@ -164,11 +198,41 @@
       8999,
       "events/toxoids_events.txt"
     ],
-    ["origin_scion", "origin", 0, 54, "events/origin_events_1.txt"],
-    ["origin_scion", "origin", 200, 250, "events/origin_events_1.txt"],
-    ["origin_common_ground", "origin", 55, 59, "events/origin_events_1.txt"],
-    ["origin_doomsday", "origin", 60, 99, "events/origin_events_1.txt"],
-    ["origin_lost_colony", "origin", 100, 109, "events/origin_events_1.txt"],
+    [
+      "origin_scion",
+      "origin",
+      0,
+      54,
+      "events/origin_events_1.txt"
+    ],
+    [
+      "origin_scion",
+      "origin",
+      200,
+      250,
+      "events/origin_events_1.txt"
+    ],
+    [
+      "origin_common_ground",
+      "origin",
+      55,
+      59,
+      "events/origin_events_1.txt"
+    ],
+    [
+      "origin_doomsday",
+      "origin",
+      60,
+      99,
+      "events/origin_events_1.txt"
+    ],
+    [
+      "origin_lost_colony",
+      "origin",
+      100,
+      109,
+      "events/origin_events_1.txt"
+    ],
     [
       "origin_broken_shackles",
       "origin",
@@ -176,10 +240,18 @@
       111,
       "events/origin_events_1.txt"
     ],
-    ["origin_payback", "origin", 112, 150, "events/origin_events_1.txt"]
+    [
+      "origin_payback",
+      "origin",
+      112,
+      150,
+      "events/origin_events_1.txt"
+    ]
   ],
   "shared": {
-    "origin_hegemon": ["origin.57"],
+    "origin_hegemon": [
+      "origin.57"
+    ],
     "origin_broken_shackles": [
       "origin.4109",
       "origin.4120",

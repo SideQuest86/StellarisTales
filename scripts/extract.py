@@ -1,6 +1,6 @@
 """Reproducible read-only Stellaris archive importer. Python 3 + Pillow."""
 from __future__ import annotations
-import argparse, collections, hashlib, io, json, re, zipfile
+import argparse, collections, hashlib, io, json, re, time, zipfile
 from pathlib import Path
 from PIL import Image
 
@@ -42,13 +42,55 @@ def walk(nodes):
         yield n
         if isinstance(n['v'],list): yield from walk(n['v'])
 def raw(node,text): return text[node['s']:node['e']]
+def links(nodes,text):
+    out=[]
+    def visit(items,conditions):
+        for n in items:
+            v=n['v']
+            scalar_reference={'create_archaeological_site':'archaeological_site_types','begin_event_chain':'event_chains'}.get(n['k'])
+            if scalar_reference and isinstance(v,str):
+                out.append({'target':scalar_reference+':'+v,'kind':n['k'],'days':'','random':'','condition':'\n'.join(conditions),'script':raw(n,text)})
+            if n['k']=='set_next_astral_rift_event' and isinstance(v,str) and re.fullmatch(r'[\w]+\.[\w]+',v):
+                out.append({'target':v,'kind':n['k'],'days':'','random':'','condition':'\n'.join(conditions),'script':raw(n,text)})
+            if n['k']=='on_roll_failed' and isinstance(v,str) and re.fullmatch(r'[\w]+\.[\w]+',v):
+                out.append({'target':v,'kind':'on_roll_failed','days':'','random':'','condition':raw(n,text),'script':raw(n,text)})
+            if n['k']=='event' and isinstance(v,str) and re.fullmatch(r'[\w]+\.[\w]+',v):
+                out.append({'target':v,'kind':'stage_event','days':'','random':'','condition':'\n'.join(conditions),'script':raw(n,text)})
+            # Anomaly categories: `on_success = event`, `N = event` shorthand and `anomaly_event = event`.
+            if isinstance(v,str) and re.fullmatch(r'[A-Za-z_]\w*\.\w+',v) and (n['k']=='anomaly_event' or (n['k']=='on_success' and not conditions) or n['k'].replace('.','',1).isdigit()):
+                weighted=n['k'].replace('.','',1).isdigit()
+                out.append({'target':v,'kind':'weighted_event' if weighted else 'anomaly_outcome','days':'','random':n['k'] if weighted else '','condition':'\n'.join(conditions),'script':raw(n,text)})
+            if not isinstance(v,list): continue
+            context=conditions
+            if n['k'].lower() in ('if','else_if','else','random','random_list','switch','case','on_success','on_fail','on_abort','stage') or n['k'].isdigit():
+                context=conditions+[raw(n,text)]
+            if (n['k']=='event' or n['k'].endswith('_event')) and isinstance(first(v,'id'),str) and first(v,'id'):
+                out.append({'target':first(v,'id'),'kind':n['k'],'days':first(v,'days'),'months':first(v,'months'),'years':first(v,'years'),'random':first(v,'random'),'condition':'\n'.join(context),'script':raw(n,text)})
+            reference={'enable_special_project':('special_projects','name'),'create_archaeological_site':('archaeological_site_types','type'),'create_situation':('situations','type'),'start_situation':('situations','type'),'begin_event_chain':('event_chains','event_chain')}.get(n['k'])
+            if reference and isinstance(first(v,reference[1]),str) and first(v,reference[1]):
+                out.append({'target':reference[0]+':'+first(v,reference[1]),'kind':n['k'],'days':'','random':'','condition':'\n'.join(context),'script':raw(n,text)})
+            visit(v,context)
+    visit(nodes,[])
+    return out
+
 def dump(path,obj):
     path.parent.mkdir(parents=True,exist_ok=True)
-    path.write_text(json.dumps(obj,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+    temporary = path.with_suffix(path.suffix+'.tmp')
+    payload=json.dumps(obj,ensure_ascii=False,separators=(',',':'))
+    for attempt in range(6):
+        try:
+            temporary.write_text(payload,encoding='utf-8')
+            temporary.replace(path)
+            break
+        except OSError as error:
+            if error.errno not in (13,22) or attempt == 5:
+                raise
+            time.sleep(0.1 * (attempt + 1))
 
-NARRATIVE=('events/','common/archaeological_site_types/','common/astral_rifts/','common/situations/','common/special_projects/','common/event_chains/')
+NARRATIVE=('events/','common/anomalies/','common/archaeological_site_types/','common/astral_rifts/','common/situations/','common/special_projects/','common/event_chains/')
 def relevant(p):
-    return (p.startswith(NARRATIVE+('common/inline_scripts/','common/scripted_effects/','common/governments/civics/','common/start_screen_messages/')) and p.endswith('.txt')) or (p.startswith('interface/') and p.endswith('.gfx')) or (p.startswith(('localisation/english/','localisation/simp_chinese/','localisation_synced/')) and p.endswith('.yml'))
+    # All of common/ is parsed for the whole-game call graph (on_actions, decisions, relics, ...).
+    return (p.startswith(('events/','common/')) and p.endswith('.txt')) or (p.startswith('interface/') and p.endswith('.gfx')) or (p.startswith(('localisation/english/','localisation/simp_chinese/','localisation_synced/')) and p.endswith('.yml'))
 
 def import_game(game):
     files={}; assets={}; sources=[]; archives=[]; overrides=[]
@@ -118,7 +160,7 @@ def import_game(game):
         if name.endswith('.yml'): continue
         text=data.decode('utf-8-sig',errors='replace')
         try:
-            if name.startswith(NARRATIVE): text=expand_inline(text,origin)
+            if name.startswith(('events/','common/')) and not name.startswith('common/inline_scripts/'): text=expand_inline(text,origin)
             nodes=parse(text); parsed[name]=(nodes,text,origin)
         except ValueError as e: errors.append({'source':origin,'error':str(e)}); continue
         if name.endswith('.gfx'):
@@ -156,25 +198,6 @@ def import_game(game):
                 found=[n for n in walk(v) if n['k']=='text' and isinstance(n['v'],str)]
                 for n in found: result.append({**localized(n['v']),'condition':'\n'.join(raw(x,text) for x in v if x['k']!='text') if text else ''})
         return result
-    def links(nodes,text):
-        out=[]
-        def visit(items,conditions):
-            for n in items:
-                v=n['v']
-                if n['k']=='event' and isinstance(v,str) and re.fullmatch(r'[\w]+\.[\w]+',v):
-                    out.append({'target':v,'kind':'stage_event','days':'','random':'','condition':'\n'.join(conditions),'script':raw(n,text)})
-                if not isinstance(v,list): continue
-                context=conditions
-                if n['k'] in ('if','else_if','else','random','random_list','switch','case','on_success','on_fail','on_abort','stage') or n['k'].isdigit():
-                    context=conditions+[raw(n,text)]
-                if (n['k']=='event' or n['k'].endswith('_event')) and isinstance(first(v,'id'),str) and first(v,'id'):
-                    out.append({'target':first(v,'id'),'kind':n['k'],'days':first(v,'days'),'random':first(v,'random'),'condition':'\n'.join(context),'script':raw(n,text)})
-                reference={'enable_special_project':('special_projects','name'),'create_archaeological_site':('archaeological_site_types','type'),'create_situation':('situations','type'),'begin_event_chain':('event_chains','event_chain')}.get(n['k'])
-                if reference and isinstance(first(v,reference[1]),str) and first(v,reference[1]):
-                    out.append({'target':reference[0]+':'+first(v,reference[1]),'kind':n['k'],'days':'','random':'','condition':'\n'.join(context),'script':raw(n,text)})
-                visit(v,context)
-        visit(nodes,[])
-        return out
     origins=[]
     for name,(nodes,text,origin) in parsed.items():
         if not name.startswith('common/governments/civics/'): continue
@@ -222,6 +245,8 @@ def import_game(game):
             for opt in vals(v,'option'):
                 if not isinstance(opt,list): continue
                 key=first(opt,'name'); opts=texts(opt,'name',text); options.append({'label':localized(key) if isinstance(key,str) else (opts[0] if opts else localized('')),'conditions':'\n'.join(raw(x,text) for x in opt if x['k'] in ('trigger','allow','exclusive_trigger')),'links':links(opt,text),'script':'\n'.join(raw(x,text) for x in opt),'tooltips':[localized(x['v']) for x in walk(opt) if x['k']=='custom_tooltip' and isinstance(x['v'],str)]})
+                options[-1]['responses']=texts(opt,'response_text',text)
+                options[-1]['labelVariants']=opts
             # Retain stage/approach text in non-event narrative definitions, alongside exact source.
             sections=[]
             if not event:
@@ -268,6 +293,13 @@ def import_game(game):
                 if edge['target'] not in existing:
                     item['links'].append(edge);existing.add(edge['target']);indirect_count+=1
     for g in groups:dump(ROOT/'public/data/groups'/f"{g['id']}.json",[r for r in records if r['group']==g['id']])
+    from source_graph import Graph
+    effect_nodes={n['k']:(n['v'],text,origin) for name,(nodes,text,origin) in parsed.items() if name.startswith('common/scripted_effects/') for n in nodes if isinstance(n['v'],list)}
+    graph=Graph(parsed,effect_nodes).build()
+    dump(ROOT/'public/data/source-graph.json',graph)
+    # Original wording for condition tooltips / names referenced inside narrative scripts.
+    tokens={n['v'] for r in records for n in walk(parse(r['script'])) if isinstance(n['v'],str)}
+    dump(ROOT/'public/data/script-loc.json',{k:{lang:re.sub(r'§.','',loc[lang].get(k,'')) for lang in loc} for k in sorted(tokens) if k in loc['en'] or k in loc['zh']})
     def category(r):
         s=(r['source']+' '+r['id']).lower()
         for cat,patterns in [('crisis',['crisis','gray_goo','war_in_heaven','storm']),('origins',['origin','gateway']),('precursors',['precursor','ancient_relic','archaeolog']),('rifts',['astral','rifts']),('leviathans',['leviathan','guardian','enclave']),('exploration',['anomaly','distant','horizon','special_project']),('society',['situation','colony','faction','diplom','first_contact'])]:

@@ -1,0 +1,50 @@
+[
+ {
+  "id":"origin_treasure_hunters",
+  "definition":"situations:situation_sabotage",
+  "stageSequence":[
+   {"event":"grand_archive.8520","optional":true,"conditional":true,"label":{"zh":"应对进度达到100且存在非统治者、非继承人、非节点领袖","en":"At progress 100, with a leader who is not a ruler, heir or gestalt node"}},
+   {"event":"grand_archive.8550","conditional":true,"label":{"zh":"应对进度达到150，且黑针舰队仍存在","en":"Countermeasure progress reaches 150, while the Black Needle fleet still exists"}}
+  ],
+  "evidence":"11_grand_archive_situations sabotage starts25; stage1 ends100, stage2 ends150.8520 at stage2 entry;8550 on_progress_complete;8545 on_fail remains independent. Monthly base-0.5, purge+4.5, mitigate+2.5; not a simple increasing failure clock. Military victory8555 can abort throughout."
+ },
+ {
+  "id":"origin_fear_of_the_dark",
+  "definition":"situations:situation_last_gift",
+  "stageSequence":[
+   {"event":"origin.6185","label":{"zh":"倒计时进入第二阶段，启动四项应对措施","en":"The countdown enters stage two: launch four countermeasures"}},
+   {"event":"origin.6175","conditional":true,"label":{"zh":"四项措施未能及时完成，倒计时达到100%","en":"The countdown reaches 100% before all four countermeasures succeed"}}
+  ],
+  "parallelTasks":{"tasks":["special_projects:FOTD_DEFLECTING_FIELDS","special_projects:FOTD_REVERSED_THRUSTERS","special_projects:FOTD_COUNTER_SHOT","special_projects:FOTD_CONTROLLED_SHATTERING"],"outcome":"origin.6180"},
+  "evidence":"04_first_contact_dlc_situations: monthly base2, each completion flag subtracts0.5; stage2 opens6185; progress100 triggers6175. Projects400/350/390/430 days set four separate flags through6186–6189; monthly6180 requires all four and homeworld ownership. Project reading represents successful completion; no real-time simulation."
+ },
+ {"id":"pre-ftl-plague","entry":"preftl.2001","definition":"situations:situation_pre_ftl_plague","gates":[{"event":"preftl.2002","trigger":"current_situation_approach","setter":"set_situation_approach","progress":35},{"event":"preftl.2003","trigger":"has_country_flag","setter":"set_country_flag","progress":70},{"event":"preftl.2005","trigger":"has_country_flag","setter":"set_country_flag","progress":100}]},
+ {
+  "id":"origin_synthetic_fertility",
+  "definition":"situations:situation_synthetic_fertility_synthesization",
+  "stageSequence":[
+   {"event":"machine_age.3305","label":{"zh":"数字化完成，进入第二阶段","en":"Digitization complete: enter the second stage"}},
+   {"event":"machine_age.3310","label":{"zh":"局势完成后","en":"After the situation completes"}}
+  ],
+  "evidence":"08_machine_age_situations.txt: repeated stages blocks; stage_1 sets digitization_ongoing and pauses progress for synth.3; stage_2 on_first_enter schedules3305; on_progress_complete calls3310. These are consecutive, not alternative outcomes."
+ },
+ {
+  "id":"cetana",
+  "definition":"situations:situation_synth_queen_doomclock",
+  "stageSequence":[
+   {"event":"crisis.8520","outcome":"crisis.8525","optional":true,"conditional":true,"label":{"zh":"倒计时过半：尚未获知计划时收到预警","en":"Halfway warning, if the plan is not yet known"}},
+   {"event":"crisis.8510","outcome":"crisis.8515","conditional":true,"label":{"zh":"女王仍未被阻止，倒计时达到80%","en":"The Queen remains active: the countdown reaches 80%"}},
+   {"event":"crisis.8500","outcome":"crisis.8505","conditional":true,"label":{"zh":"未能阻止女王，倒计时耗尽：失败结局","en":"Failure to stop the Queen: the countdown expires"}}
+  ],
+  "evidence":"08_machine_age_situations.txt gates500/800/1000; 8520 only warns players without synth_queen_player_can_see_doomclock; 8510 and8500 dispatch visible8515/8505. 8530 at900 is AI modifiers only. A victory or rescue prevents the failure path."
+ },
+ {
+  "id":"cetana",
+  "definition":"situations:situation_synth_queen_player_facing",
+  "stageSequence":[
+   {"event":"crisis.9000","label":{"zh":"调查进度达到6，进入第二阶段","en":"Investigation reaches 6: enter the second stage"}},
+   {"event":"crisis.9010","label":{"zh":"调查进度达到10，完成反制准备","en":"Investigation reaches 10: countermeasures are ready"}}
+  ],
+  "evidence":"08_machine_age_situations.txt player-facing situation: monthly base0, stage1 end6, stage2 end10 calls9000 on entry, on_progress_complete9010. Progress comes from investigations, not elapsed months."
+ }
+ ]

@@ -1,0 +1,54 @@
+{
+ "id": "origin_galactic_doorstep",
+ "bridges": [
+  {
+   "from": "origin.1020",
+   "to": "origin.1050",
+   "conditional": true,
+   "label": {
+    "zh": "修复母星星门；需启用银河典范、由玩家完成，且尚未发现星门人物",
+    "en": "Restore the home gateway; requires Galactic Paragons, player completion, and no previously discovered gateway paragon"
+   },
+   "evidence": "1020 grants gateway activation technology. common/megastructures/05_gateways.txt gateway_restored.on_build_complete calls1050 inside has_paragon_dlc/exists from/from.is_ai=no/NOT gateway_dude_found guard, outside random_list.1050 additionally requires Galactic Doorstep and doorstep_gateway@root flag. Repair is independent of the delayed1021 random disaster; this is a conditional reading bridge, not an automatic event dispatch."
+  },
+  {
+   "from": "origin.1025",
+   "to": "origin.1030",
+   "conditional": true,
+   "label": {
+    "zh": "击败从星门涌出的虫群后",
+    "en": "After defeating the swarm emerging from the gateway"
+   },
+   "evidence": "1025 creates a fleet with gateway_vermin flag; on_fleet_destroyed_perp calls1030, requiring that fleet flag and Galactic Doorstep origin.1035 creates a different unflagged invasion and does not trigger this report."
+  },
+  {
+   "from": "origin.1012",
+   "to": "archaeological_site_types:site_from_gateway_sent",
+   "conditional": true,
+   "label": {
+    "zh": "派遣科研船发掘新发现的遗迹",
+    "en": "Send a science ship to excavate the newly revealed site"
+   },
+   "evidence": "1011 creates site_from_gateway_sent and notifies the system owner with1012 after1day; reading the notification leads to undertaking its excavation"
+  }
+ ],
+ "opening": {
+  "targets": [
+   "origin.1000"
+  ],
+  "label": {
+   "zh": "星门第一次启动",
+   "en": "The gateway first activates"
+  },
+  "evidence": "1001 setup schedules1000 at300-330days;1100-1115 are its From Gateway Sent archaeology"
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

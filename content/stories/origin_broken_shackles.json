@@ -1,0 +1,33 @@
+{
+ "id": "origin_broken_shackles",
+ "opening": {
+  "targets": [
+   "archaeological_site_types:broken_shackles_digsite",
+   "origin.5041"
+  ],
+  "label": {
+   "zh": "早期的独立支线",
+   "en": "Independent early branches"
+  },
+  "labels": {
+   "archaeological_site_types:broken_shackles_digsite": {
+    "zh": "建造首艘科研船后，调查坠毁的奴隶船",
+    "en": "Build the first science ship, then investigate the crashed slaver ship"
+   },
+   "origin.5041": {
+    "zh": "年度政治变化；议会制度或传媒集团提前至30天",
+    "en": "Annual political change; Parliamentary System or Media Conglomerate advances it to 30 days"
+   }
+  },
+  "evidence": "origin.110 creates the digsite, visible only after built_first_science_ship set by5060; schedules5041 after30days for civic_parliamentary_system or civic_media_conglomerate. 00_on_actions on_yearly_pulse_country also calls5041 for all eligible Broken Shackles countries (once via internal_politics flag). Digsite stages5015/5020/5025/5030/5035. Midgame5045->5046 is not an opening."
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}

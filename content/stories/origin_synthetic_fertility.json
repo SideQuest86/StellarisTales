@@ -1,0 +1,107 @@
+{
+ "id": "origin_synthetic_fertility",
+ "bridges": [
+  {
+   "from": "machine_age.3100",
+   "to": "machine_age.3110",
+   "conditional": true,
+   "label": {
+    "zh": "研究机器人劳工科技后",
+    "en": "After researching Robotic Workers"
+   },
+   "evidence": "00_on_actions.txt on_tech_increased calls 3110; its trigger requires origin_synthetic_fertility and tech_robotic_workers, once per origin_synthetic_fertility_robots flag"
+  },
+  {
+   "from": "machine_age.3110",
+   "to": "machine_age.3115",
+   "conditional": true,
+   "label": {
+    "zh": "研究智能人科技后",
+    "en": "After researching Droids"
+   },
+   "evidence": "3110 grants a Droids research option; on_tech_increased calls 3115 gated by tech_droid_workers and origin_synthetic_fertility_droids"
+  },
+  {
+   "from": "machine_age.3115",
+   "to": "machine_age.3120",
+   "conditional": true,
+   "label": {
+    "zh": "研究合成人科技后",
+    "en": "After researching Synthetics"
+   },
+   "evidence": "3115 grants a Synthetics research option; on_tech_increased calls 3120 gated by tech_synthetic_workers and origin_synthetic_fertility_synths"
+  },
+  {
+   "from": "machine_age.3120",
+   "to": "machine_age.3125",
+   "conditional": true,
+   "label": {
+    "zh": "采纳合成传统后",
+    "en": "After adopting the Synthetics traditions"
+   },
+   "evidence": "common/traditions/01_synthetics.txt tr_synthetics_adopt calls 3125 for origin_synthetic_fertility; this route can precede or follow the population digitization deadline"
+  },
+  {
+   "from": "situations:situation_synthetic_fertility_synthesization",
+   "to": "machine_age.3305",
+   "label": {
+    "zh": "数字化完成，进入第二阶段",
+    "en": "Digitization complete: enter the second stage"
+   },
+   "conditional": false,
+   "evidence": "08_machine_age_situations.txt: repeated stages blocks; stage_1 sets digitization_ongoing and pauses progress for synth.3; stage_2 on_first_enter schedules3305; on_progress_complete calls3310. These are consecutive, not alternative outcomes."
+  },
+  {
+   "from": "machine_age.3305",
+   "to": "machine_age.3310",
+   "label": {
+    "zh": "局势完成后",
+    "en": "After the situation completes"
+   },
+   "conditional": false,
+   "evidence": "08_machine_age_situations.txt: repeated stages blocks; stage_1 sets digitization_ongoing and pauses progress for synth.3; stage_2 on_first_enter schedules3305; on_progress_complete calls3310. These are consecutive, not alternative outcomes."
+  }
+ ],
+ "opening": {
+  "targets": [
+   "machine_age.3100"
+  ],
+  "label": {
+   "zh": "人口危机与数字化计划",
+   "en": "The population crisis and digitization plan"
+  },
+  "evidence": "game_start directly calls machine_age.3100, which starts situation_synthetic_fertility_digitization; 3110/3115/3120 require subsequent technologies via on_tech_increased"
+ },
+ "legacy": {
+  "situationConfig": {
+   "id": "origin_synthetic_fertility",
+   "definition": "situations:situation_synthetic_fertility_synthesization",
+   "stageSequence": [
+    {
+     "event": "machine_age.3305",
+     "label": {
+      "zh": "数字化完成，进入第二阶段",
+      "en": "Digitization complete: enter the second stage"
+     }
+    },
+    {
+     "event": "machine_age.3310",
+     "label": {
+      "zh": "局势完成后",
+      "en": "After the situation completes"
+     }
+    }
+   ],
+   "evidence": "08_machine_age_situations.txt: repeated stages blocks; stage_1 sets digitization_ongoing and pauses progress for synth.3; stage_2 on_first_enter schedules3305; on_progress_complete calls3310. These are consecutive, not alternative outcomes."
+  }
+ },
+ "review": {
+  "status": "partial",
+  "date": "2026-09-11",
+  "reviewer": "V3 (Codex) migrated 2026-10-12",
+  "scope": {
+   "zh": "V3人工审阅的局部事实已迁移；整条故事尚未在V4中完整复核。",
+   "en": "V3 manually reviewed facts migrated; the whole story has not yet been fully re-reviewed in V4."
+  }
+ }
+}
