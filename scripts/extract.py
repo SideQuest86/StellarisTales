@@ -297,8 +297,31 @@ def import_game(game):
     effect_nodes={n['k']:(n['v'],text,origin) for name,(nodes,text,origin) in parsed.items() if name.startswith('common/scripted_effects/') for n in nodes if isinstance(n['v'],list)}
     graph=Graph(parsed,effect_nodes).build()
     dump(ROOT/'public/data/source-graph.json',graph)
+    # Scripted localisation ([X.GetScientistPlural] etc.): ordered conditional original texts. Language-specific
+    # grammar helper files for other languages are skipped.
+    defined={}
+    for name,(nodes,text,origin) in parsed.items():
+        if not name.startswith('common/scripted_loc/') or re.search(r'_fr\.txt$|(fr|de|por|ru)loc\.txt$',name):continue
+        for n in nodes:
+            if n['k']!='defined_text' or not isinstance(n['v'],list):continue
+            key=first(n['v'],'name')
+            if not isinstance(key,str) or key in defined:continue
+            variants=[]
+            for t in vals(n['v'],'text'):
+                if not isinstance(t,list):continue
+                lk=first(t,'localization_key')
+                trig=next((x for x in t if x['k']=='trigger'),None)
+                variants.append({'key':lk,'zh':loc['zh'].get(lk,''),'en':loc['en'].get(lk,''),'trigger':raw(trig,text) if trig else ''})
+            dk=first(n['v'],'default')
+            defined[key]={'random':first(n['v'],'random')=='yes','variants':variants,'default':{'key':dk,'zh':loc['zh'].get(dk,''),'en':loc['en'].get(dk,'')} if isinstance(dk,str) and dk else None,'source':origin}
+    dump(ROOT/'public/data/scripted-loc.json',defined)
     # Original wording for condition tooltips / names referenced inside narrative scripts.
     tokens={n['v'] for r in records for n in walk(parse(r['script'])) if isinstance(n['v'],str)}
+    # Game-concept links inside texts, e.g. ['concept_auth_democratic'] or [concept_x].
+    for r in records:
+        for t in r['titles']+r['descriptions']+[o['label'] for o in r['options']]+[x for o in r['options'] for x in o.get('responses',[])]:
+            for lang in ('zh','en'):
+                tokens.update(m.strip("'") for m in re.findall(r"\[('?concept_[^\]\[|]+'?)\]",t.get(lang,'') or ''))
     dump(ROOT/'public/data/script-loc.json',{k:{lang:re.sub(r'§.','',loc[lang].get(k,'')) for lang in loc} for k in sorted(tokens) if k in loc['en'] or k in loc['zh']})
     def category(r):
         s=(r['source']+' '+r['id']).lower()

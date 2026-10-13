@@ -72,28 +72,51 @@ function remember(k, v) {
 function local(value) {
   return value?.[lang] || value?.zh || value?.en || "";
 }
-// Resolve game-state placeholders to prose without exposing scripting syntax.
-function prose(s) {
-  return String(s || "")
-    .replace(/§./g, "")
-    .replace(/£([^£]+)£/g, lang === "zh" ? "资源" : "resources")
-    .replace(/\[([^\]]+)\]/g, (_, key) => {
-      if (/Species|Pop/.test(key))
-        return lang === "zh" ? "这个物种" : "this species";
-      if (/Leader|Scientist|Name.*leader/i.test(key))
-        return lang === "zh" ? "这位领袖" : "the leader";
-      if (/Ship|Fleet/i.test(key))
-        return lang === "zh" ? "这支舰队" : "the fleet";
-      if (/Planet|From.*Name|Capital/i.test(key))
-        return lang === "zh" ? "这颗星球" : "the planet";
-      if (/Name/.test(key))
-        return lang === "zh" ? "我们的文明" : "our civilization";
-      return lang === "zh" ? "此刻" : "at this moment";
-    })
-    .replace(/\$[^$]+\$/g, lang === "zh" ? "未知" : "unknown")
-    .replace(/<[^>]*>/g, "");
+// Placeholders: [..] names the game fills in from a save. Scripted localisation (names.json) resolves to the
+// game's own wording for the reading profile; engine names use the doc's neutral, scope-aware wording. Inserted
+// names are wrapped in private-use markers so the reader can show them as annotations, not as original prose.
+let names = {}, namesLoading = null;
+const OPEN = "", CLOSE = "";
+function loadNames() {
+  namesLoading ||= json("stories/names.json").then((n) => (names = n)).catch(() => { namesLoading = null; });
+  return namesLoading;
 }
-const paragraph = (s) => esc(prose(s)).replace(/\n/g, "<br>");
+let nameContext = null; // the reading context of the doc being rendered (computed once per render)
+function scriptedName(def, depth) {
+  const ctx = nameContext || { profile, assumptions };
+  let pick = null, fallback = null;
+  for (const v of def.variants) {
+    const status = evaluate(v.when, ctx);
+    if (status === true) { pick = v.text; break; }
+    if (status === null) fallback = v.text;
+  }
+  const text = pick || fallback || def.default || def.variants.at(-1)?.text;
+  return fill(local(text), depth + 1);
+}
+function fill(s, depth = 0) {
+  return String(s || "").replace(/\[([^\[\]]+)\]/g, (match, key) => {
+    if (depth > 3) return "";
+    const own = chapter?.names?.[key];
+    if (own) return OPEN + local(own) + CLOSE;
+    const tail = key.split("|")[0].split(".").at(-1);
+    if (names[tail]) return OPEN + scriptedName(names[tail], depth) + CLOSE;
+    if (/Plural/.test(tail)) return OPEN + T("他们", "they") + CLOSE;
+    if (/Name/.test(tail)) return OPEN + T("某处", "somewhere") + CLOSE;
+    return OPEN + T("……", "…") + CLOSE;
+  });
+}
+function prose(s, keepMarks = false) {
+  const text = fill(String(s || ""))
+    .replace(/§./g, "")
+    .replace(/£([^£]+)£/g, "")
+    .replace(/\$[^$]+\$/g, lang === "zh" ? "……" : "…")
+    .replace(/<[^>]*>/g, "");
+  return keepMarks ? text : text.replace(/[]/g, "");
+}
+const paragraph = (s) => esc(prose(s, true))
+  .replace(//g, `<span class="game-name" title="${esc(T("由游戏按存档填入的名称", "Name filled in by the game from the save"))}">`)
+  .replace(//g, "</span>")
+  .replace(/\n/g, "<br>");
 function toast(s) {
   $("#toast").textContent = s;
   $("#toast").classList.add("show");
@@ -214,7 +237,7 @@ function useDossier(data) {
 async function openStory(id, start) {
   const ticket = ++readerTicket;
   try {
-    const data = await loadStory(id);
+    const [data] = await Promise.all([loadStory(id), loadNames()]);
     if (ticket !== readerTicket) return;
     visitedChapters.clear();
     assumptions = {};
@@ -239,12 +262,20 @@ function closeReader() {
   $("#open-story").focus();
 }
 $("#close-reader").onclick = closeReader;
+let recordsLoading = null;
+function loadRecords() {
+  // The record → story map is only needed for #record= links and edges without a story id.
+  recordsLoading ||= json("stories/records.json").then((map) => (recordToStory = map)).catch((e) => { recordsLoading = null; throw e; });
+  return recordsLoading;
+}
 async function goChapter(id, storyId, back = false) {
   const ticket = ++readerTicket;
   try {
     let data = dossier;
-    if (!docMap.has(id) || (storyId && storyId !== dossier.story.id && !docMap.has(id)))
+    if (!docMap.has(id)) {
+      if (!storyId) await loadRecords();
       data = await loadStory(storyId || recordToStory[id]);
+    }
     if (ticket !== readerTicket) return;
     const target = data.chapters.find((c) => c.id === id);
     if (!target) return;
@@ -397,6 +428,7 @@ function renderChapter(preservePosition = false) {
     readingChapterId = chapter.id;
   }
   const ctx = readingContext();
+  nameContext = ctx;
   const selectedReading = chapter.readings?.[readingIndex];
   const r = {
     ...chapter,
@@ -492,7 +524,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt=""/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt=""/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   const remembered=trail.at(-1);
   if(remembered?.chapter===chapter.id && remembered.reading===readingIndex && remembered.choice!==undefined){
     const index=r.choices.findIndex(option=>option.key===remembered.choice);
@@ -789,15 +821,21 @@ function parseHash() {
   if (q.has("story")) openStory(q.get("story"), q.get("chapter"));
   else if (location.hash.startsWith("#record=")) {
     const id = decodeURIComponent(location.hash.slice(8));
-    if (recordToStory[id]) openStory(recordToStory[id], id);
+    loadRecords().then(() => { if (recordToStory[id]) openStory(recordToStory[id], id); }).catch((e) => toast(e.message));
   } else if (dossier) closeReader();
 }
 window.addEventListener("hashchange", parseHash);
 try {
   const data = await json("stories/index.json");
   stories = data.stories;
-  recordToStory = data.recordToStory;
+  for (const s of stories) s.excerpt ||= { zh: "", en: "" };
   storyById = new Map(stories.map((s) => [s.id, s]));
+  // Excerpts are not needed to draw the archive; fetch them right after the first paint.
+  json("stories/excerpts.json").then((excerpts) => {
+    for (const s of stories) s.excerpt = excerpts[s.id] || s.excerpt;
+    if (selected) $("#selected-excerpt").textContent = prose(local(selected.excerpt));
+    if ($("#search-dialog").open) renderSearch();
+  }).catch(() => {});
   columns = CATEGORIES.map(([id, title, en]) => ({
     id,
     title,

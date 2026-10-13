@@ -5,11 +5,13 @@ import { createHash } from "node:crypto";
 import { resolveBody, resolveChoices } from "../src/reading.js";
 const read = async (p) => JSON.parse(await readFile(p, "utf8"));
 const index = await read("public/stories/index.json");
+const records = await read("public/stories/records.json");
+const excerpts = await read("public/stories/excerpts.json");
 const coverage = await read("public/data/story-coverage.json");
 const stories = await Promise.all(index.stories.map((s) => read(`public/stories/${s.id}.json`)));
 const byId = new Map(stories.map((d) => [d.story.id, d]));
 const docIn = (sid, id) => byId.get(sid)?.chapters.find((c) => c.id === id);
-const owner = (id) => index.recordToStory[id];
+const owner = (id) => records[id];
 const nodesOf = (d) => Object.entries(d.story.tree.nodes);
 
 test("V4: every readable document belongs to at least one story tree", () => {
@@ -18,6 +20,10 @@ test("V4: every readable document belongs to at least one story tree", () => {
   assert.equal(coverage.assignedDocs, coverage.readableDocs);
   assert.deepEqual(coverage.unassignedDocs, []);
   for (const d of stories) for (const c of d.chapters) assert.ok(owner(c.id), c.id);
+  for (const s of index.stories) {
+    assert.ok(!("excerpt" in s), "excerpts load separately from the first-paint index");
+    assert.ok(excerpts[s.id], s.id);
+  }
 });
 
 test("V4: each story is a strict tree — every doc once as a full node, refs point at full nodes", () => {

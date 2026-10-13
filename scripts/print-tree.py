@@ -11,8 +11,10 @@ args = [a for a in sys.argv[1:] if not a.startswith('--')]
 lang = 'en' if '--en' in sys.argv else 'zh'
 show_text = '--text' in sys.argv
 index = json.loads((ROOT / 'public/stories/index.json').read_text(encoding='utf-8'))
+records_path = ROOT / 'public/stories/records.json'
+records = json.loads(records_path.read_text(encoding='utf-8')) if records_path.is_file() else index.get('recordToStory', {})
 for key in args:
-    sid = key if (ROOT / 'public/stories' / f'{key}.json').is_file() else index['recordToStory'].get(key)
+    sid = key if (ROOT / 'public/stories' / f'{key}.json').is_file() else records.get(key)
     if not sid:
         print('not found:', key)
         continue

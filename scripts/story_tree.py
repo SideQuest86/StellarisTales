@@ -83,6 +83,68 @@ def bilingual(t):
     return {lang: clean(t.get(lang, '')) for lang in ('zh', 'en')}
 
 
+PLACEHOLDER = re.compile(r'\[([^\[\]]+)\]')
+EVENT_SCOPE = {'country_event': 'country', 'observer_event': 'country', 'event': 'country', 'ship_event': 'ship',
+               'fleet_event': 'fleet', 'planet_event': 'planet', 'colony_event': 'planet', 'pop_event': 'pop',
+               'pop_group_event': 'pop', 'leader_event': 'leader', 'system_event': 'system', 'starbase_event': 'starbase'}
+SCOPE_TOKENS = {'owner': 'country', 'controller': 'country', 'space_owner': 'country', 'country': 'country',
+                'planet': 'planet', 'capital': 'planet', 'capital_scope': 'planet', 'home_planet': 'planet',
+                'homeworld': 'planet', 'orbit': 'planet', 'species': 'species', 'owner_species': 'species',
+                'owner_main_species': 'species', 'main_species': 'species', 'founder_species': 'species',
+                'leader': 'leader', 'ruler': 'leader', 'heir': 'leader', 'scientist': 'leader', 'admiral': 'leader',
+                'general': 'leader', 'governor': 'leader', 'solar_system': 'system', 'system': 'system', 'star': 'star',
+                'fleet': 'fleet', 'ship': 'ship', 'federation': 'federation'}
+TARGET_HINTS = [('planet', ('planet', 'world', 'colony', 'capital', 'moon', 'habitat')), ('system', ('system', 'star')),
+                ('fleet', ('fleet', 'armada', 'swarm')), ('ship', ('ship', 'vessel', 'probe', 'titan')),
+                ('leader', ('leader', 'scientist', 'admiral', 'general', 'governor', 'ruler', 'envoy', 'captain')),
+                ('species', ('species', 'pop')), ('country', ('country', 'empire', 'enclave', 'federation', 'overlord', 'patron', 'nation'))]
+NAMES = {  # neutral wording for names the engine fills in from the save; shown as an annotation, never as lore
+    ('GetName', 'country-root'): ('我们的帝国', 'our empire'), ('GetName', 'country'): ('该帝国', 'that empire'),
+    ('GetName', 'planet'): ('这颗星球', 'this planet'), ('GetName', 'ship'): ('这艘舰船', 'the ship'),
+    ('GetName', 'fleet'): ('这支舰队', 'the fleet'), ('GetName', 'leader'): ('这位领袖', 'the leader'),
+    ('GetName', 'species'): ('该物种', 'the species'), ('GetName', 'system'): ('这个星系', 'this system'),
+    ('GetName', 'star'): ('这颗恒星', 'the star'), ('GetName', 'federation'): ('该联邦', 'the federation'),
+    ('GetAdj', 'country-root'): ('我方', 'our'), ('GetAdj', 'country'): ('该国', 'their'), ('GetAdj', 'species'): ('该族', "the species'"),
+    ('GetSpeciesName', None): ('该物种', 'the species'), ('GetSpeciesNamePlural', None): ('该物种', 'the species'),
+    ('GetNamePlural', None): ('该物种', 'the species'), ('GetSpeciesAdj', None): ('该族', "the species'"),
+    ('GetRulerTitle', None): ('统治者', 'ruler'), ('GetRulerName', None): ('统治者', 'the ruler'),
+    ('GetRegnalName', None): ('这位统治者', 'the ruler'), ('GetLeaderName', None): ('这位领袖', 'the leader'),
+    ('GetFirstName', None): ('这位领袖', 'the leader'), ('GetRealName', None): ('这位领袖', 'the leader'),
+    ('GetTitle', None): ('这位领袖', 'the leader'), ('GetStarName', None): ('这颗恒星', 'the star'),
+    ('GetHomeWorldName', None): ('母星', 'the homeworld'), ('GetAllianceName', None): ('该联盟', 'the alliance'),
+    ('GetGovernmentName', None): ('该政府', 'the government'), ('GetFleetName', None): ('这支舰队', 'the fleet'),
+    ('GetHisHer', None): ('其', 'their'), ('GetHerHis', None): ('其', 'their'), ('GetHisHerCap', None): ('其', 'Their'),
+    ('GetSheHe', None): ('此人', 'they'), ('GetHeShe', None): ('此人', 'they'), ('GetSheHeCap', None): ('此人', 'They'),
+    ('GetHeSheCap', None): ('此人', 'They'), ('GetHimHer', None): ('此人', 'them'), ('GetHerHim', None): ('此人', 'them'),
+    ('GetHimselfHerself', None): ('其本人', 'themselves'), ('GetIndividualName', None): ('个体', 'individual'),
+    ('GetIndividualNamePlural', None): ('个体们', 'individuals'), ('GetHasHave', None): ('拥有', 'have'),
+    ('GetIsAre', None): ('是', 'are'), ('GetWasWere', None): ('曾是', 'were'), ('GetClass', None): ('这一级别', 'class'),
+}
+
+
+def scope_of(chain, root_scope, anomaly=False):
+    """Scope type at the end of a placeholder chain like Root.Owner.Capital (heuristic; for wording only)."""
+    kind, rooted = root_scope, True
+    for token in chain:
+        low = token.lower()
+        if low in ('root', 'this'):
+            kind, rooted = root_scope, True
+        elif low in ('from',):
+            kind, rooted = ('planet' if anomaly else None), False
+        elif low.startswith('event_target:') or low.startswith('fromfrom') or low.startswith('prev'):
+            name = low.split(':', 1)[-1]
+            kind = next((k for k, hints in TARGET_HINTS if any(h in name for h in hints)), None)
+            rooted = False
+        elif low in SCOPE_TOKENS:
+            kind = SCOPE_TOKENS[low]
+            rooted = rooted and kind == 'country' and low in ('owner', 'controller', 'space_owner')
+        else:
+            name = low
+            kind = next((k for k, hints in TARGET_HINTS if any(h in name for h in hints)), None)
+            rooted = False
+    return kind, rooted
+
+
 def slug(text):
     return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', text.lower())).strip('-')
 
@@ -171,6 +233,8 @@ class Compiler:
         self.report = collections.Counter()
         self.composite_cache = {}
         self.container_of = {}
+        self.defined = read(ROOT / 'public/data/scripted-loc.json')
+        self.used_names = set()
 
     # ------------------------------------------------------------------ records ---
     def prepare(self):
@@ -512,7 +576,61 @@ class Compiler:
             if removed:
                 choice['clears'] = sorted(set(removed))
             chapter['choices'].append(choice)
+        names = self.placeholder_names(r, chapter)
+        if names:
+            chapter['names'] = names
         return chapter
+
+    def placeholder_names(self, r, chapter):
+        """Wording for [..] placeholders: scripted-loc getters resolve in the reader (names.json, original text by
+        profile); engine-filled names get neutral, scope-aware wording here."""
+        strings = [chapter['title'], *chapter['texts'], *chapter['sections']]
+        for c in chapter['choices']:
+            strings += [c['label'], *c['responses'], *c['tooltips']]
+        keys = {m for s in strings for lang in ('zh', 'en') for m in PLACEHOLDER.findall(s.get(lang, '') or '')}
+        root_scope = EVENT_SCOPE.get(r['kind'], None)
+        out = {}
+        for key in keys:
+            parts = key.split('|')[0].split('.')
+            tail = parts[-1]
+            if tail in self.defined:
+                self.used_names.add(tail)
+                continue
+            if key.startswith("'") or key.startswith('concept_'):
+                concept = self.loc.get(key.strip("'"))
+                if concept:
+                    out[key] = concept
+                continue
+            kind, rooted = scope_of(parts[:-1], root_scope, anomaly=r['kind'] == 'ship_event')
+            wording = NAMES.get((tail, 'country-root' if kind == 'country' and rooted else kind)) or NAMES.get((tail, None))
+            if wording:
+                out[key] = {'zh': wording[0], 'en': wording[1]}
+        return out
+
+    def compile_names(self):
+        """Scripted localisation used by the docs, with typed conditions, for the reader (public/stories/names.json)."""
+        pending, out = list(self.used_names), {}
+        while pending:
+            name = pending.pop()
+            if name in out or name not in self.defined:
+                continue
+            d = self.defined[name]
+            variants = []
+            for v in d['variants']:
+                text = bilingual(v)
+                entry = {'text': text}
+                when = self.cond.compile(v['trigger']) if v['trigger'] else None
+                if when:
+                    entry['when'] = when
+                variants.append(entry)
+                for lang in ('zh', 'en'):
+                    pending += [m.split('|')[0].split('.')[-1] for m in PLACEHOLDER.findall(text[lang])]
+            out[name] = {'variants': variants}
+            if d.get('random'):
+                out[name]['random'] = True
+            if d.get('default') and (d['default']['zh'] or d['default']['en']):
+                out[name]['default'] = bilingual(d['default'])
+        return out
 
     @staticmethod
     def edge_payload(target, info):
@@ -861,8 +979,13 @@ class Compiler:
                 d['summary'] = {'text': summary.read_text(encoding='utf-8-sig'), 'path': f'summaries/{sid}.md'}
             dump(out / f'{sid}.json', d)
         stories.sort(key=lambda s: (s['kind'] not in ('origin', 'family'), -s['chapters'], s['id']))
-        dump(out / 'index.json', {'version': 4, 'gameVersion': self.version, 'stories': stories, 'recordToStory': mapping})
-        keep = {s['id'] + '.json' for s in stories} | {'index.json'}
+        # The catalogue needs only identities and art at first paint; excerpts and the record map load later.
+        dump(out / 'index.json', {'version': 4, 'gameVersion': self.version,
+                                  'stories': [{k: v for k, v in s.items() if k != 'excerpt'} for s in stories]})
+        dump(out / 'excerpts.json', {s['id']: s['excerpt'] for s in stories})
+        dump(out / 'records.json', mapping)
+        dump(out / 'names.json', self.compile_names())
+        keep = {s['id'] + '.json' for s in stories} | {'index.json', 'excerpts.json', 'records.json', 'names.json'}
         for p in out.glob('*.json'):
             if p.name not in keep and p.resolve().parent == out.resolve():
                 p.unlink()
