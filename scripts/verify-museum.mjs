@@ -26,6 +26,9 @@ try {
   await page.evaluate(() => localStorage.clear());
   await page.locator("#museum-open").click();
   await page.waitForSelector("#museum.open .museum-exhibit");
+  // The click lands before app start-up has finished, so the start-up hash parse opens the museum a second time.
+  await page.waitForTimeout(1500);
+  assert.equal(await page.locator("section#museum").count(), 1);
   const total = await page.locator(".museum-exhibit").count();
   assert.equal(total, 258);
   step("menu opens the museum with every specimen", `${total} exhibits`);

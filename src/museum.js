@@ -21,13 +21,14 @@ function placeholder(p) {
 const label = (x) => (x?.[lang()] || x?.en || x?.zh || "").replace(/§[A-Za-z!]|£\w+£/g, "").trim();
 
 let data = null, models = {}, root = null, state = { type: "all", rarity: "all", query: "", only3d: false, open: null };
-let viewer = null, opener = null, onClose = null;
+let viewer = null, opener = null, onClose = null, building = null;
 const RARITY_ORDER = ["common", "rare", "epic", "exceptional"];
 
 export async function openMuseum({ asset, closeTo, focusKey } = {}) {
   onClose = closeTo;
   opener = document.activeElement;
-  if (!root) await build(asset);
+  // One build even when two opens overlap (e.g. a hash change while the data is still downloading).
+  await (building ||= build(asset).catch((e) => { building = null; throw e; }));
   root.hidden = false;
   document.body.classList.add("museum-open");
   requestAnimationFrame(() => root.classList.add("open"));
