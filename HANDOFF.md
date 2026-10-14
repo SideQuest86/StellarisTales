@@ -60,7 +60,8 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
   `node scripts/verify-gpu.mjs`, evidence `verification/gpu/`.
 - Status (2026-10-14): all 258 specimens have v3 multi-view models (187 MB, meshopt-compressed), all inspected on
   `verification/museum/review-1..6.png` (`scripts/museum/contact-sheet.py`); `verify-museum.mjs` 268 checks, 0 page
-  errors; released as v4.1.0.
+  errors locally and on https://sidequest86.github.io/StellarisTales/#museum (v4.1.1, which fixes a double-built hall
+  when the museum opened during start-up). Budget: 4 of 40 weekly points (docs/museum/BUDGET.md).
 - Possible improvements: regenerate the weakest fits (lowest `silhouetteIoU`: black_needle_ceremonial_sword,
   massive_metatarsal, yuht_audio_console, crystal_nest_fragments) with another seed; flat items (maps, blueprints,
   panels such as star_mall_map, kuurian_cybrex_blueprints) open edge-on — a per-model opening angle in the manifest

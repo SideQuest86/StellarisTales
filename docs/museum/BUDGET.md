@@ -15,5 +15,6 @@ conservatively (all movement of the weekly counter counts against this task).
 | 2026-10-14 ~05:00 | 18 % | 7 % | user asked for higher quality: HQ preset tested, then v3 multi-view pipeline (Zero123++ + Hunyuan3D-2mv); full v3 batch started (~13 h) |
 | 2026-10-14 ~09:15 | 19 % | 0 % (new window) | batch paused for the user's GPU use and resumed; reverse story links, data tests, meshopt compression, 44.5 GB of unused weights removed; all 258 view sets done, v3 models in progress (14) |
 | 2026-10-14 ~14:40 | 20 % | 3 % | session restart: batch had stopped at 64 v3 models (exit 4, cause not logged); resumed with `--skip-existing` |
+| 2026-10-14 ~23:05 | 20 % | 2 % | complete: 258/258 v3 models inspected, local + live verify-museum 268 checks / 0 errors, released v4.1.0 + fix v4.1.1. **Task total: 4 points of 40** |
 
 Stop rule: checkpoint and stop at 52 % weekly (36 points used), never exceed 56 % (40 points).
