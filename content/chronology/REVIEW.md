@@ -11,9 +11,18 @@
 - [x] C5 天灾：预兆、入侵、升级、终结，排除通讯菜单伪时序。（11 篇）
 - [x] C6 巨兽与城邦：初遇、交互、战斗/研究分支，拆开共享菜单。（33 篇）
 - [x] C7 文明纪事：科技年代、局势阶段、随机插曲与独立局势。（356 篇）
-- [x] C8 银河轶事：重复遭遇/通讯枢纽与单次故事区分。（495 篇）
+- [x] C8 银河轶事：重复遭遇/通讯枢纽与单次故事区分。（493 篇）
 
 **验收依据（2026-10-13，V4，提交 b094b89e 之后）**：每个可见故事均为 reviewed，并有导读（第一至第三轮审阅；账本 `review/c*.md`、`r2-*.md`、`r3-*.md`）；8 类结构审计 0 失败（`verification/chronology/`）；编译警告 0，孤立片段仅剩 3 个有意的排除片段；阅读内容审计（`scripts/audit-content.mjs --strict`，CI 每次运行）对 8,670 个文档无缺正文、无未标注选项、无原始本地化键、无残留格式码、无断链；浏览器阅读抽查（`scripts/verify-reading-walk.mjs`）每类 6 篇、共 48 篇 212 个文档、43 次返回，0 页面错误；V4 阅读器检查 12/12。
+**独立抽查（2026-10-13，协调者 Opus 5.5 亲自对照游戏文件）**：按固定种子每类抽 1 篇中等规模故事，逐条核对树结构与导读中的关键结论，8/8 与原文一致——
+- C4 rift-clock：2105.a→2110、2105.b→2115、2115.a→2125 且 on_roll_failed→2120（`astral_rifts_2_events.txt:369-459`）；导读“难度 6”“失败基础 1.5%”与 `06_scripted_variables_astral_planes.txt:7,16` 一致。
+- C2 event-ancrel-6150：6150（行星先）与 6151（卫星先）由全局旗标 minigalaxy_site_spawned 互斥，均创建 site_minigalaxy_1；6165 创建 site_minigalaxy_2（`ancient_relics_arcsite_events_2.txt:1172-1341`）。
+- C6 event-enclave-2：mercenary_dividends 完成后经隐藏 enclave.275 以 32/32/32/2/2 择一，并在 after 中重开局势（`03_AI_empire_situations.txt:275-310`，`overlord_enclaves_events.txt:2180-2254`）。
+- C7 event-federations-10400：十年脉冲 federations.10400（成员且违反任一决议）→ 30+随机330天后 10401（`federations_events_1.txt:1545-1569`，`00_on_actions.txt:618-620`）。
+- C5 gray-tempest：graygoo.10/11/13 三个互斥开场的同名选项都触发 graygoo.12（`gray_goo_events.txt:501-585`）。
+- C1 origin_star_slingshot、C8 event-operation-5025、C3 project-the-black-river-fc-project：入口、阶段/项目 on_success/on_fail 与按帝国类型分开的三个项目和树一致（打印树与脚本核对）。
+抽查只能说明抽到的故事正确，不能证明全部 1,388 篇无误；另有 `scripts/audit-guides.mjs`（CI 严格模式）确认每篇都有 reviewed 片段、来源与含五个小节且引用游戏文件的导读。
+
 **验收范围与保留**：审阅由多名代理逐篇对照游戏文件完成，质量因篇幅而异；未能从文件证明的引擎行为（如 8295 的 gifted_system、数据库项目期限公式、部分权重修正与脚本数值）在各篇 `uncertain` 与导读中注明，网站不作断言。10 个窗口在游戏中本无标题（BLANK_STRING 或缺失本地化键），按原样保留。阅读条件为一致的帝国设定与路径旗标，不是存档模拟。若后续发现错误，按故事修正片段并重新编译，不撤销整体结构。
 
 ## 2026-10-12 V4 改版（Opus 5.5 接手）

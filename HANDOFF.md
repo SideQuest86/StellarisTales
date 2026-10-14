@@ -35,10 +35,10 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
   reading-context consistency), reading walk 48 stories / 212 documents / 43 reversals / 0 errors, UI capture 50/50,
   frame timing p95 6 ms for every interaction (worst frames: open 76 ms, chapter change 47 ms, back 18 ms). Publishing
   again = edit `RELEASE` on `main` (RUNBOOK "Release").
-- Model V4: 1,390 stories, 8,670 readable documents (all assigned); event inheritance (`base =`) resolved; compile
+- Model V4: 1,388 stories, 8,668 readable documents (all assigned; the two unused developer test chains are excluded); event inheritance (`base =`) resolved; compile
   deterministic and checked in CI; 0 compiler warnings; only the three intentional exclusion fragments are orphans.
 - Review: rounds 1–3 complete (ledgers in `content/chronology/review/`); every story `reviewed` with a guide. C1–C8
-  accepted in REVIEW.md with evidence and explicit remaining uncertainties.
+  accepted in REVIEW.md with evidence and explicit remaining uncertainties. Review records are audited per story in CI (`scripts/audit-guides.mjs --strict`), and an independent source spot-check by the coordinator (one story per category, 8/8 correct) is recorded in REVIEW.md.
 - Reading evidence: content audit over all documents clean (CI, `--strict`); browser reading walk 48 stories /
   212 documents / 43 reversals / 0 errors; reader checks 12/12; UI capture 50/50.
 - Cetana: whole chain reviewed (120 docs). 8295 / gifted_system: the only setter is 8295's own immediate while its
