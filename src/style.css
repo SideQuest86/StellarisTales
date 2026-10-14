@@ -977,6 +977,42 @@ input {
   font: 14px/1.8 var(--sans);
   color: #b0c4be;
 }
+/* Specimens a document awards — links into the Grand Archive museum (original icons). */
+.specimen-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: 18px 0 6px;
+  padding: 10px 14px;
+  border: 1px solid #c2ab7240;
+  border-radius: 4px;
+  background: #0d222966;
+}
+.specimen-links small {
+  flex-basis: 100%;
+  font: 500 11px var(--mono);
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+.specimen-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font: 15px var(--serif);
+  text-decoration: none;
+  border-bottom: 1px solid #c2ab7255;
+}
+.specimen-links a:hover,
+.specimen-links a:focus-visible {
+  color: var(--gold);
+}
+.specimen-links img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
 .also-in {
   display: flex;
   flex-wrap: wrap;

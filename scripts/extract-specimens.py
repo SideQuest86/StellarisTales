@@ -345,6 +345,14 @@ out = {'version': 1, 'source': 'common/specimens/specimens.txt', 'archive': arch
        'specimens': specimens}
 (ROOT / 'public/museum').mkdir(parents=True, exist_ok=True)
 (ROOT / 'public/museum/specimens.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+# Reverse links for the reader: document id -> specimens it awards or declares (story documents only), so a chapter
+# can point to its exhibit. Small and lazily loaded by the reader.
+by_doc = collections.defaultdict(list)
+for s in specimens:
+    for a in s['acquisition']:
+        if a.get('story') and a['kind'] in ('give_specimen', 'event_specimen') and s['key'] not in by_doc[a['from']]:
+            by_doc[a['from']].append(s['key'])
+(ROOT / 'public/museum/by-doc.json').write_text(json.dumps({k: {'specimens': v, 'names': {x: by_key[x]['name']['zh'] + '|' + by_key[x]['name']['en'] for x in v}} for k, v in sorted(by_doc.items())}, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 
 # ---------------------------------------------------------------- readable inventory ---
 lines = ['# Grand Archive specimen inventory (generated)', '',

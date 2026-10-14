@@ -605,6 +605,7 @@ function renderChapter(preservePosition = false) {
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
     `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt="" decoding="async"/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+  showSpecimenLinks(r.id);
   const remembered=trail.at(-1);
   if(remembered?.chapter===chapter.id && remembered.reading===readingIndex && remembered.choice!==undefined){
     const index=r.choices.findIndex(option=>option.key===remembered.choice);
@@ -912,12 +913,38 @@ document.addEventListener("keydown", (e) => {
     $("#search-open").click();
   }
 });
+// Documents that award a Grand Archive specimen link to its exhibit (museum/by-doc.json, written by
+// scripts/extract-specimens.py; loaded once, on the first chapter that is rendered).
+let specimenMap = null;
+function showSpecimenLinks(docId) {
+  const add = () => {
+    const entry = specimenMap?.[docId];
+    const article = document.querySelector(`.chapter-document[data-doc="${CSS.escape(docId)}"]`);
+    if (!entry || !article || article.querySelector(".specimen-links")) return;
+    const box = document.createElement("aside");
+    box.className = "specimen-links";
+    box.innerHTML = `<small>${esc(T("博物天枢 · 此文档给予的标本", "Grand Archive · specimens from this document"))}</small>` +
+      entry.specimens.map((key) => {
+        const [zh, en] = (entry.names[key] || "|").split("|");
+        return `<a href="#museum=${encodeURIComponent(key)}"><img src="${asset(`museum/img/${key}.webp`)}" alt="" width="36" height="36" loading="lazy">${esc(lang === "en" ? en || zh : zh || en)}</a>`;
+      }).join("");
+    const end = article.querySelector(".chapter-end");
+    end ? end.before(box) : article.append(box);
+  };
+  if (specimenMap) return add();
+  json("museum/by-doc.json").then((m) => { specimenMap = m; add(); }).catch(() => { specimenMap = {}; });
+}
 // 博物天枢 · Grand Archive specimen museum: loaded on first use (#museum or #museum=<specimen key>).
 let museum = null;
 async function showMuseum(focusKey) {
   try {
     museum ||= await import("./museum.js");
-    if (dossier) closeReader();
+    if (dossier) {
+      // closeReader() resets the hash; keep the museum address (#museum=<key>) for sharing and back navigation.
+      const hash = location.hash;
+      closeReader();
+      history.replaceState(null, "", hash);
+    }
     await museum.openMuseum({
       asset,
       focusKey,

@@ -12,7 +12,9 @@ await mkdir(`${out}/shots`, { recursive: true });
 const headless = !!process.env.HEADLESS;
 // STELLARIS_WINDOW_POSITION / STELLARIS_WINDOW_SIZE place the headed window (e.g. on a side monitor: "-1900,20").
 const place = [`--window-size=${process.env.STELLARIS_WINDOW_SIZE || "1600,1000"}`, ...(process.env.STELLARIS_WINDOW_POSITION ? [`--window-position=${process.env.STELLARIS_WINDOW_POSITION}`] : [])];
-const browser = await chromium.launch({ channel: "chrome", headless, args: ["--use-angle=d3d11", "--force-high-performance-gpu", "--ignore-gpu-blocklist", ...place] });
+// STELLARIS_NO_RTX=1 leaves the discrete GPU alone (e.g. while it is busy): Chrome then uses its default adapter.
+const gpuArgs = process.env.STELLARIS_NO_RTX ? [] : ["--use-angle=d3d11", "--force-high-performance-gpu", "--ignore-gpu-blocklist"];
+const browser = await chromium.launch({ channel: "chrome", headless, args: [...gpuArgs, ...place] });
 const results = [];
 const step = (name, detail = "") => { results.push({ name, detail }); console.log("✔", name, detail); };
 const manifest = JSON.parse(await readFile("public/museum/models/manifest.json", "utf8"));
@@ -107,6 +109,16 @@ try {
     await page.waitForFunction((id) => location.hash.includes(`story=${encodeURIComponent(id)}`) && document.querySelector(".chapter-document"), sid, { timeout: 20000 });
     step("acquisition link opens the related story dossier", sid);
   }
+
+  // Reverse link: a story document that awards a specimen links to its exhibit.
+  const byDoc = JSON.parse(await readFile("public/museum/by-doc.json", "utf8"));
+  const records = JSON.parse(await readFile("public/stories/records.json", "utf8"));
+  const [doc, entry] = Object.entries(byDoc)[0];
+  await page.goto(`${base}#story=${encodeURIComponent(records[doc])}&chapter=${encodeURIComponent(doc)}`, { waitUntil: "domcontentloaded" });
+  await page.waitForSelector(`.chapter-document[data-doc="${doc}"] .specimen-links a`, { timeout: 20000 });
+  await page.locator(".specimen-links a").first().click();
+  await page.waitForFunction((k) => location.hash.includes(`museum=${k}`) && document.querySelector(".museum-detail:not([hidden]) h2"), entry.specimens[0], { timeout: 20000 });
+  step("a story document that awards a specimen links to its exhibit", `${doc} → ${entry.specimens[0]}`);
 
   // Mobile layout.
   const mobile = await (await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true })).newPage();
