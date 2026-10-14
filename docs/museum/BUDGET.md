@@ -14,5 +14,6 @@ conservatively (all movement of the weekly counter counts against this task).
 | 2026-10-14 ~04:00 | 18 % | 3 % (new 5-h window) | GPU subagent merged; 6 v2 models inspected; full v2 batch started (local GPU, ~9–10 h, no token cost while running) |
 | 2026-10-14 ~05:00 | 18 % | 7 % | user asked for higher quality: HQ preset tested, then v3 multi-view pipeline (Zero123++ + Hunyuan3D-2mv); full v3 batch started (~13 h) |
 | 2026-10-14 ~09:15 | 19 % | 0 % (new window) | batch paused for the user's GPU use and resumed; reverse story links, data tests, meshopt compression, 44.5 GB of unused weights removed; all 258 view sets done, v3 models in progress (14) |
+| 2026-10-14 ~14:40 | 20 % | 3 % | session restart: batch had stopped at 64 v3 models (exit 4, cause not logged); resumed with `--skip-existing` |
 
 Stop rule: checkpoint and stop at 52 % weekly (36 points used), never exceed 56 % (40 points).
