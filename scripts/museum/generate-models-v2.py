@@ -313,6 +313,14 @@ for key in keys:
         out.apply_transform(trimesh.transformations.rotation_matrix(angle, axis))
     glb = out.export(file_type='glb')
     (out_dir / f'{key}.glb').write_bytes(glb)
+    # Meshopt compression (gltfpack 1.3 -cc: quantized, EXT_meshopt_compression; texture kept as JPEG).
+    gltfpack = TOOLS / 'gltfpack/gltfpack.exe'
+    if gltfpack.exists():
+        import subprocess
+        tmp = out_dir / f'{key}.packed.glb'
+        subprocess.run([str(gltfpack), '-i', str(out_dir / f'{key}.glb'), '-o', str(tmp), '-cc', '-kn'], check=True, capture_output=True)
+        tmp.replace(out_dir / f'{key}.glb')
+        glb = (out_dir / f'{key}.glb').read_bytes()
     entry = {
         'key': key, 'file': f'museum/models/{key}.glb', 'bytes': len(glb), 'triangles': int(len(faces)), 'pipeline': PIPELINE,
         'source': {'image': s['icon']['url'], 'gameTexture': s['icon']['source'], 'sha256': s['icon']['sha256'], 'size': [s['icon']['width'], s['icon']['height']]},
@@ -323,6 +331,7 @@ for key in keys:
                      'view': view + (' mirrored' if mirror else ''), 'silhouetteIoU': round(float(iou), 3),
                      **({'multiView': f'Zero123++ v1.2 (sudo-ai, Apache-2.0) 6 views, map {args.mvmap}', 'viewsIoU': view_fit} if views else {}),
                      'device': torch.cuda.get_device_name(0)},
+        'compression': 'EXT_meshopt_compression (gltfpack 1.3 -cc)' if (TOOLS / 'gltfpack/gltfpack.exe').exists() else None,
         'date': datetime.date.today().isoformat(), 'seconds': round(time.time() - t1, 1), 'status': 'generated', 'canonical': False,
     }
     manifest['models'] = [m for m in manifest['models'] if m['key'] != key] + [entry]

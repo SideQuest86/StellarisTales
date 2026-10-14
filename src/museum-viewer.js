@@ -4,6 +4,7 @@
 import * as THREE from "../vendor/three.module.js";
 import { OrbitControls } from "../vendor/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "../vendor/addons/loaders/GLTFLoader.js";
+import { MeshoptDecoder } from "../vendor/addons/libs/meshopt_decoder.module.js";
 import { createRenderer, pixelRatioFor } from "./gpu.js";
 
 const CACHE = 3;
@@ -34,7 +35,8 @@ export class ExhibitViewer {
     this.controls.maxDistance = 6;
     this.controls.addEventListener("change", () => this.request());
     this.controls.addEventListener("start", () => { this.spin = false; });
-    this.loader = new GLTFLoader();
+    // Models are meshopt-compressed (EXT_meshopt_compression, gltfpack -cc): about half the download.
+    this.loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
     this.cache = new Map();
     this.frame = 0;
     this.resize = new ResizeObserver(() => this.fit());
