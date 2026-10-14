@@ -1,0 +1,244 @@
+{
+  "measuredAt": "2026-10-14T03:18:49.140Z",
+  "headless": false,
+  "requestedGpu": "integrated (no --force-high-performance-gpu)",
+  "url": "http://127.0.0.1:4191/",
+  "env": {
+    "adapter": {
+      "vendor": "Google Inc. (Intel)",
+      "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    "gpuTimerQuery": true,
+    "devicePixelRatio": 1,
+    "scenePixelRatio": 1,
+    "antialias": true,
+    "viewport": [
+      1684,
+      905
+    ],
+    "drawingBuffer": [
+      1684,
+      905
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+  },
+  "note": "rAF intervals are what the page could present; GPU ms are EXT_disjoint_timer_query_webgl2 per scene frame when exposed. Which adapter Chrome uses also depends on the Windows per-app graphics preference (not changed by this script).",
+  "results": [
+    {
+      "name": "idle (reference)",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 217,
+        "p50": 5.9,
+        "p95": 6,
+        "max": 88.2,
+        "over60Hz": 2,
+        "over170Hz": 2
+      },
+      "sceneFramesRendered": 0,
+      "sceneFramesPerRaf": 0,
+      "gpuMsPerSceneFrame": null,
+      "sceneGpuMsTotal": 0,
+      "spanMs": 1435,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 124,
+      "drawCalls": 5
+    },
+    {
+      "name": "hover breathing",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 520,
+        "p50": 5.9,
+        "p95": 6,
+        "max": 11.9,
+        "over60Hz": 0,
+        "over170Hz": 4
+      },
+      "sceneFramesRendered": 1,
+      "sceneFramesPerRaf": 0,
+      "gpuMsPerSceneFrame": null,
+      "sceneGpuMsTotal": 0,
+      "spanMs": 3081,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 124,
+      "drawCalls": 5
+    },
+    {
+      "name": "archive keyboard scroll",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 141,
+        "p50": 12,
+        "p95": 47,
+        "max": 105.9,
+        "over60Hz": 38,
+        "over170Hz": 109
+      },
+      "sceneFramesRendered": 685,
+      "sceneFramesPerRaf": 4.86,
+      "gpuMsPerSceneFrame": {
+        "samples": 635,
+        "p50": 3.08,
+        "p95": 5.44,
+        "max": 8.111
+      },
+      "sceneGpuMsTotal": 2266.2,
+      "spanMs": 2834,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 124,
+      "drawCalls": 5
+    },
+    {
+      "name": "archive drag + momentum",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 59,
+        "p50": 58.8,
+        "p95": 82.3,
+        "max": 117.6,
+        "over60Hz": 55,
+        "over170Hz": 57
+      },
+      "sceneFramesRendered": 900,
+      "sceneFramesPerRaf": 15.25,
+      "gpuMsPerSceneFrame": {
+        "samples": 798,
+        "p50": 3.2,
+        "p95": 5.64,
+        "max": 12.205
+      },
+      "sceneGpuMsTotal": 2912.3,
+      "spanMs": 3340,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 124,
+      "drawCalls": 5
+    },
+    {
+      "name": "open story",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 19,
+        "p50": 88.3,
+        "p95": 276.4,
+        "max": 276.4,
+        "over60Hz": 16,
+        "over170Hz": 18
+      },
+      "sceneFramesRendered": 323,
+      "sceneFramesPerRaf": 17,
+      "gpuMsPerSceneFrame": {
+        "samples": 221,
+        "p50": 5.61,
+        "p95": 8.31,
+        "max": 18.263
+      },
+      "sceneGpuMsTotal": 1273.3,
+      "spanMs": 1835,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 101,
+      "drawCalls": 5
+    },
+    {
+      "name": "chapter change",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 14,
+        "p50": 105.8,
+        "p95": 294,
+        "max": 294,
+        "over60Hz": 12,
+        "over170Hz": 12
+      },
+      "sceneFramesRendered": 248,
+      "sceneFramesPerRaf": 17.71,
+      "gpuMsPerSceneFrame": {
+        "samples": 158,
+        "p50": 5.3,
+        "p95": 8.8,
+        "max": 13.211
+      },
+      "sceneGpuMsTotal": 897.7,
+      "spanMs": 1535,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 99,
+      "drawCalls": 5
+    },
+    {
+      "name": "go back",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 16,
+        "p50": 94.1,
+        "p95": 264.6,
+        "max": 264.6,
+        "over60Hz": 14,
+        "over170Hz": 14
+      },
+      "sceneFramesRendered": 288,
+      "sceneFramesPerRaf": 18,
+      "gpuMsPerSceneFrame": {
+        "samples": 198,
+        "p50": 4.18,
+        "p95": 6.3,
+        "max": 12.245
+      },
+      "sceneGpuMsTotal": 919.3,
+      "spanMs": 1500,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 102,
+      "drawCalls": 5
+    },
+    {
+      "name": "map pan + zoom",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 202,
+        "p50": 5.9,
+        "p95": 117.4,
+        "max": 335.2,
+        "over60Hz": 34,
+        "over170Hz": 34
+      },
+      "sceneFramesRendered": 558,
+      "sceneFramesPerRaf": 2.76,
+      "gpuMsPerSceneFrame": {
+        "samples": 450,
+        "p50": 5.79,
+        "p95": 8.42,
+        "max": 13.691
+      },
+      "sceneGpuMsTotal": 2642.1,
+      "spanMs": 4840,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 101,
+      "drawCalls": 5
+    },
+    {
+      "name": "close story",
+      "adapter": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 107,
+        "p50": 17.6,
+        "p95": 29.5,
+        "max": 47.1,
+        "over60Hz": 11,
+        "over170Hz": 101
+      },
+      "sceneFramesRendered": 107,
+      "sceneFramesPerRaf": 1,
+      "gpuMsPerSceneFrame": {
+        "samples": 102,
+        "p50": 10.98,
+        "p95": 21.79,
+        "max": 27.848
+      },
+      "sceneGpuMsTotal": 1222.1,
+      "spanMs": 1811,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 125,
+      "drawCalls": 5
+    }
+  ],
+  "errors": []
+}

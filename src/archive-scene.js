@@ -10,8 +10,10 @@ import {
   smooth,
   easeInOutCubic,
   idleEnvelope,
+  capDelay,
   FrameGovernor,
 } from "./archive-motion.js";
+import { createRenderer, pixelRatioFor } from "./gpu.js";
 
 // Geometry. Rows (cards within a category) recede in depth; lanes (categories)
 // run side by side. The window is wider than any viewport so rows always leave
@@ -151,22 +153,26 @@ export class ArchiveScene {
     this.lift = { value: PREVIEW_LIFT, velocity: 0 };
     this.outgoing = [];
     this.frame = 0;
+    this.timer = 0; // pending timeout of a frame-rate-capped frame
     this.last = 0;
+    this.lastDraw = 0;
     this.dirty = true;
     this.lastInput = performance.now();
     this.framesDrawn = 0;
     this.governor = new FrameGovernor({ budget: 20 });
-    this.maxPixelRatio = Math.min(devicePixelRatio || 1, 2);
-    this.pixelRatio = this.maxPixelRatio;
-    const antialias = (devicePixelRatio || 1) < 2;
-    this.renderer = new THREE.WebGLRenderer({
-      antialias,
+    // Adapter tier (src/gpu.js): integrated/software adapters get a lower resolution cap, no MSAA and frame caps.
+    const { renderer, gpu } = createRenderer(THREE, {
+      antialias: (devicePixelRatio || 1) < 2,
       alpha: false,
       stencil: false,
       depth: true,
       preserveDrawingBuffer: false,
-      powerPreference: "high-performance",
     });
+    this.renderer = renderer;
+    this.gpu = gpu;
+    this.quality = gpu.settings;
+    this.maxPixelRatio = pixelRatioFor(gpu);
+    this.pixelRatio = this.maxPixelRatio;
     this.renderer.setPixelRatio(this.pixelRatio);
     this.renderer.setClearColor(BACKGROUND, 1);
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -180,7 +186,6 @@ export class ArchiveScene {
     this.canvas = this.renderer.domElement;
     this.canvas.tabIndex = 0;
     container.append(this.canvas);
-    this.gpu = readAdapter(this.renderer);
 
     this.scene = new THREE.Scene();
     this.scene.fog = new THREE.Fog(BACKGROUND, DISTANCE - 4, DISTANCE + 40);
@@ -802,16 +807,13 @@ export class ArchiveScene {
       }
     });
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        cancelAnimationFrame(this.frame);
-        this.frame = 0;
-      } else this.wake();
+      if (document.hidden) this.halt();
+      else this.wake();
     });
     this.canvas.addEventListener("webglcontextlost", (e) => {
       e.preventDefault();
       this.lost = true;
-      cancelAnimationFrame(this.frame);
-      this.frame = 0;
+      this.halt();
       this.container.dispatchEvent(new Event("scene-lost"));
     });
     this.canvas.addEventListener("webglcontextrestored", () => {
@@ -836,14 +838,50 @@ export class ArchiveScene {
   // ------------------------------------------------------------ loop
   wake() {
     this.dirty = true;
-    if (!this.frame && !document.hidden && !this.lost) {
+    // Input never waits for a capped frame's timeout.
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = 0;
+      this.frame ||= requestAnimationFrame((t) => this.tick(t));
+    }
+    // Inside tick() the loop decides on the next frame itself: a second request here would start a parallel loop
+    // that draws the scene again in the same display frame (measured: up to 18 draws per displayed frame before 2026-10-13; atlas uploads call wake() from draw()).
+    if (!this.frame && !this.ticking && !document.hidden && !this.lost) {
       this.last = performance.now();
       this.frame = requestAnimationFrame((t) => this.tick(t));
     }
   }
+  /** Stop the loop (hidden tab, lost context); wake() resumes it. */
+  halt() {
+    cancelAnimationFrame(this.frame);
+    clearTimeout(this.timer);
+    this.frame = this.timer = 0;
+  }
+  /** Next frame: at the next display refresh, or after a timeout when a frame-rate cap leaves several refreshes idle. */
+  schedule(delay) {
+    if (this.frame || this.timer) return;
+    if (delay > 10) {
+      this.timer = setTimeout(() => {
+        this.timer = 0;
+        this.paced = true;
+        this.frame ||= requestAnimationFrame((t) => this.tick(t));
+      }, delay - 6);
+    } else this.frame = requestAnimationFrame((t) => this.tick(t));
+  }
   tick(now) {
     this.frame = 0;
     if (document.hidden || this.lost) return;
+    this.ticking = true;
+    try {
+      this.step(now);
+    } finally {
+      this.ticking = false;
+    }
+  }
+  step(now) {
+    // A frame resumed after a cap timeout has a long interval by design: not a slow frame for the governor.
+    const paced = this.paced;
+    this.paced = false;
     const interval = now - this.last;
     // rAF timestamps are frame-start times and can precede the wake() call: never step backwards.
     const dt = Math.min(Math.max(interval, 0) / 1000, 0.05) * this.timeScale;
@@ -896,23 +934,34 @@ export class ArchiveScene {
     const revealing = this.advanceArt(dt) || !!this.art.pendingDetail;
     const time = now / 1000;
     const pulsing = !reduced && this.pulses.length > 0 && time - this.pulses[this.pulses.length - 1].time < 3;
-    // Breathing only while someone is here and the array is in view.
-    this.breathing = reduced || this.detail.value > 0.6 ? 0 : idleEnvelope((now - this.lastInput) / 1000);
-    const covered = this.width < 700 && this.detailTarget === 1 && this.detail.value > 0.98;
+    // Breathing only while someone is here and the array is in view (not on the software tier).
+    // rAF timestamps can precede the input that woke the loop: clamp, or the first frame reads "no input yet".
+    const sinceInput = Math.max(0, now - this.lastInput) / 1000;
+    const canBreathe = !reduced && this.quality.breathing && this.detail.value <= 0.6;
+    this.breathing = canBreathe ? idleEnvelope(sinceInput) : 0;
+    // The envelope starts at 0: keep the loop alive while it rises, or hovering alone would never start breathing.
+    const breathingOn = this.breathing > 0.0005 || (canBreathe && sinceInput < 1.2);
+    // Covered: the close-up reader fills a narrow screen, or the museum sits over the archive.
+    const covered = (this.width < 700 && this.detailTarget === 1 && this.detail.value > 0.98) || document.body.classList.contains("museum-open");
     const tiles = this.coverAtlas.ready.length > 0;
-    const animating = moving || revealing || pulsing || this.breathing > 0.0005;
-    if (!covered && (this.dirty || animating || tiles)) {
+    const animating = moving || revealing || pulsing || breathingOn;
+    // Frame-rate caps of the adapter tier; only the idle motion left uses the lower idle cap.
+    const fps = moving || revealing || pulsing || tiles ? this.quality.maxFps : this.quality.idleFps || this.quality.maxFps;
+    let wait = capDelay(now, this.lastDraw, fps);
+    if (!covered && (this.dirty || animating || tiles) && wait <= 1) {
       const t0 = performance.now();
       this.draw(time);
       this.cpuMs = performance.now() - t0;
       this.dirty = false;
-      if (animating && interval < 250) {
+      this.lastDraw = now;
+      wait = capDelay(now, now, fps);
+      if (animating && interval < 250 && !paced) {
         const step = this.governor.sample(interval);
         if (step) this.setPixelRatio(this.pixelRatio + step * 0.25);
       }
     }
-    if (!covered && (animating || tiles || this.coverAtlas.pending > 0 || this.dirty)) this.frame = requestAnimationFrame((t) => this.tick(t));
-    else if (covered && (moving || revealing)) this.frame = requestAnimationFrame((t) => this.tick(t));
+    if (!covered && (animating || tiles || this.coverAtlas.pending > 0 || this.dirty)) this.schedule(wait);
+    else if (covered && (moving || revealing)) this.schedule(0);
   }
   frameCamera(d) {
     const aspect = this.width / Math.max(1, this.height);
@@ -1123,13 +1172,15 @@ export class ArchiveScene {
       triangles: info.render.triangles,
       textureCount: info.memory.textures,
       geometries: info.memory.geometries,
-      framePending: !!this.frame,
+      framePending: !!this.frame || !!this.timer,
       framesDrawn: this.framesDrawn,
       pixelRatio: this.pixelRatio,
       maxPixelRatio: this.maxPixelRatio,
       antialias: this.renderer.getContextAttributes()?.antialias,
       cpuMs: this.cpuMs,
+      // Adapter, its kind (discrete / integrated / software / …) and the rendering tier chosen for it (src/gpu.js).
       gpu: this.gpu,
+      tier: this.quality.name,
       gpuTiming: this.gpuTimer ? !!this.gpuTimer.ext : undefined,
     };
   }
@@ -1140,16 +1191,4 @@ function makeCanvas() {
   canvas.width = FACE_PX.w;
   canvas.height = FACE_PX.h;
   return canvas;
-}
-function readAdapter(renderer) {
-  try {
-    const gl = renderer.getContext();
-    const debug = gl.getExtension("WEBGL_debug_renderer_info");
-    return {
-      vendor: debug ? gl.getParameter(debug.UNMASKED_VENDOR_WEBGL) : gl.getParameter(gl.VENDOR),
-      renderer: debug ? gl.getParameter(debug.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER),
-    };
-  } catch {
-    return null;
-  }
 }

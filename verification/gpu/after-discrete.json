@@ -1,0 +1,263 @@
+{
+  "measuredAt": "2026-10-14T03:18:22.943Z",
+  "headless": false,
+  "requestedGpu": "discrete (--force-high-performance-gpu)",
+  "url": "http://127.0.0.1:4190/",
+  "env": {
+    "adapter": {
+      "vendor": "Google Inc. (NVIDIA)",
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "kind": "discrete",
+      "tier": "high",
+      "caveat": false,
+      "forced": null,
+      "probeMs": 102.5,
+      "settings": {
+        "name": "high",
+        "maxPixelRatio": 2,
+        "antialias": true,
+        "maxFps": 0,
+        "idleFps": 0,
+        "breathing": true
+      }
+    },
+    "gpuTimerQuery": true,
+    "devicePixelRatio": 1,
+    "scenePixelRatio": 1,
+    "antialias": true,
+    "viewport": [
+      1684,
+      905
+    ],
+    "drawingBuffer": [
+      1684,
+      905
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+  },
+  "note": "rAF intervals are what the page could present; GPU ms are EXT_disjoint_timer_query_webgl2 per scene frame when exposed. Which adapter Chrome uses also depends on the Windows per-app graphics preference (not changed by this script).",
+  "results": [
+    {
+      "name": "idle (reference)",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 255,
+        "p50": 5.9,
+        "p95": 6,
+        "max": 6.1,
+        "over60Hz": 0,
+        "over170Hz": 0
+      },
+      "sceneFramesRendered": 0,
+      "sceneFramesPerRaf": 0,
+      "gpuMsPerSceneFrame": null,
+      "sceneGpuMsTotal": 0,
+      "spanMs": 1500,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 124,
+      "drawCalls": 5
+    },
+    {
+      "name": "hover breathing",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 507,
+        "p50": 5.9,
+        "p95": 6,
+        "max": 17.6,
+        "over60Hz": 0,
+        "over170Hz": 16
+      },
+      "sceneFramesRendered": 504,
+      "sceneFramesPerRaf": 0.99,
+      "gpuMsPerSceneFrame": {
+        "samples": 500,
+        "p50": 0.29,
+        "p95": 0.29,
+        "max": 6.419
+      },
+      "sceneGpuMsTotal": 148.2,
+      "spanMs": 3087,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 124,
+      "drawCalls": 5
+    },
+    {
+      "name": "archive keyboard scroll",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 473,
+        "p50": 5.9,
+        "p95": 6.3,
+        "max": 29.5,
+        "over60Hz": 1,
+        "over170Hz": 21
+      },
+      "sceneFramesRendered": 473,
+      "sceneFramesPerRaf": 1,
+      "gpuMsPerSceneFrame": {
+        "samples": 470,
+        "p50": 0.28,
+        "p95": 4.02,
+        "max": 7.846
+      },
+      "sceneGpuMsTotal": 345.6,
+      "spanMs": 2946,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 123,
+      "drawCalls": 5
+    },
+    {
+      "name": "archive drag + momentum",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 329,
+        "p50": 5.9,
+        "p95": 11.8,
+        "max": 29.4,
+        "over60Hz": 1,
+        "over170Hz": 88
+      },
+      "sceneFramesRendered": 329,
+      "sceneFramesPerRaf": 1,
+      "gpuMsPerSceneFrame": {
+        "samples": 325,
+        "p50": 0.26,
+        "p95": 4.07,
+        "max": 5.625
+      },
+      "sceneGpuMsTotal": 236.8,
+      "spanMs": 2546,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 124,
+      "drawCalls": 5
+    },
+    {
+      "name": "open story",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 209,
+        "p50": 5.9,
+        "p95": 17.6,
+        "max": 158.7,
+        "over60Hz": 5,
+        "over170Hz": 36
+      },
+      "sceneFramesRendered": 209,
+      "sceneFramesPerRaf": 1,
+      "gpuMsPerSceneFrame": {
+        "samples": 206,
+        "p50": 3.21,
+        "p95": 5.24,
+        "max": 21.721
+      },
+      "sceneGpuMsTotal": 602.8,
+      "spanMs": 1811,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 101,
+      "drawCalls": 5
+    },
+    {
+      "name": "chapter change",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 71,
+        "p50": 5.9,
+        "p95": 135.2,
+        "max": 217.5,
+        "over60Hz": 10,
+        "over170Hz": 15
+      },
+      "sceneFramesRendered": 71,
+      "sceneFramesPerRaf": 1,
+      "gpuMsPerSceneFrame": {
+        "samples": 66,
+        "p50": 3.85,
+        "p95": 125.27,
+        "max": 131.119
+      },
+      "sceneGpuMsTotal": 1126.5,
+      "spanMs": 1570,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 100,
+      "drawCalls": 5
+    },
+    {
+      "name": "go back",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 20,
+        "p50": 70.6,
+        "p95": 311.7,
+        "max": 311.7,
+        "over60Hz": 16,
+        "over170Hz": 17
+      },
+      "sceneFramesRendered": 20,
+      "sceneFramesPerRaf": 1,
+      "gpuMsPerSceneFrame": {
+        "samples": 15,
+        "p50": 67.92,
+        "p95": 86.17,
+        "max": 86.173
+      },
+      "sceneGpuMsTotal": 1019.2,
+      "spanMs": 1500,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 101,
+      "drawCalls": 5
+    },
+    {
+      "name": "map pan + zoom",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 210,
+        "p50": 5.9,
+        "p95": 70.8,
+        "max": 117.6,
+        "over60Hz": 31,
+        "over170Hz": 32
+      },
+      "sceneFramesRendered": 27,
+      "sceneFramesPerRaf": 0.13,
+      "gpuMsPerSceneFrame": {
+        "samples": 21,
+        "p50": 63.58,
+        "p95": 87.18,
+        "max": 111.133
+      },
+      "sceneGpuMsTotal": 1435.4,
+      "spanMs": 3228,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 101,
+      "drawCalls": 5
+    },
+    {
+      "name": "close story",
+      "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "rafIntervalsMs": {
+        "frames": 133,
+        "p50": 5.9,
+        "p95": 82.3,
+        "max": 117.7,
+        "over60Hz": 14,
+        "over170Hz": 15
+      },
+      "sceneFramesRendered": 133,
+      "sceneFramesPerRaf": 1,
+      "gpuMsPerSceneFrame": {
+        "samples": 133,
+        "p50": 0.29,
+        "p95": 72.35,
+        "max": 113.724
+      },
+      "sceneGpuMsTotal": 1145.1,
+      "spanMs": 1805,
+      "pixelRatioAfter": 1,
+      "visibleInstances": 125,
+      "drawCalls": 5
+    }
+  ],
+  "errors": []
+}

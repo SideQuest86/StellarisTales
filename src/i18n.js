@@ -10,6 +10,8 @@ export const UI = {
   "brand.home": { zh: "群星档案馆首页", en: "Stellaris Tales home" },
   "brand.subtitle": { zh: "银河叙事档案", en: "Galactic story archive" },
   "header.search": { zh: "搜索", en: "Search" },
+  "header.museum": { zh: "博物天枢", en: "Grand Archive" },
+  "header.museumLabel": { zh: "打开博物天枢标本陈列", en: "Open the Grand Archive specimen exhibition" },
   "header.language": { zh: "中 / EN", en: "EN / 中" },
   "header.languageLabel": { zh: "切换为英文", en: "Switch to Chinese" },
   "motion.reduce": { zh: "减少动态", en: "Reduce motion" },
@@ -31,6 +33,31 @@ export const UI = {
   },
   "scene.fallback": { zh: "档案已准备好。使用分类与方向按钮继续探索。", en: "The archive is ready. Use the categories and arrow buttons to explore." },
   "scene.lost": { zh: "画面暂时休息了，仍可通过分类和搜索继续阅读。", en: "The 3D view paused. You can keep reading through categories and search." },
+  // Graphics-adapter notice (src/gpu.js). Windows 11 labels: Settings › System › Display › Graphics, "Custom options
+  // for apps", GPU preference "High performance" (zh-CN: 设置 › 系统 › 屏幕 › 显示卡, 应用的自定义选项, GPU 首选项, 高性能).
+  "gpu.label": { zh: "显卡提示", en: "Graphics notice" },
+  "gpu.close": { zh: "关闭提示", en: "Dismiss" },
+  "gpu.title": { zh: "正在使用集成显卡", en: "Running on integrated graphics" },
+  "gpu.more": { zh: "已改用省电画质 · 如何改用独立显卡？", en: "Lighter mode is on · How to use the discrete GPU?" },
+  "gpu.softwareMore": { zh: "已改用最低画质 · 如何开启图形加速？", en: "Lightest mode is on · How to turn on acceleration?" },
+  "gpu.body": {
+    zh: "浏览器正在用集成显卡绘制本页，档案已自动改用省电画质。如果这台电脑还有独立显卡（如 NVIDIA GeForce RTX），可以让浏览器改用它：",
+    en: "Your browser is drawing this page on integrated graphics, so the archive has switched to a lighter mode. If this computer also has a discrete GPU (such as an NVIDIA GeForce RTX), you can move the browser to it:",
+  },
+  "gpu.windows": {
+    zh: "Windows：设置 → 系统 → 屏幕 → 显示卡，在“应用的自定义选项”中选择浏览器，将 GPU 首选项设为“高性能”，然后重启浏览器。",
+    // Straight quotes in English: the CJK-first sans stack draws curly quotes full-width.
+    en: 'Windows: Settings → System → Display → Graphics. Under "Custom options for apps" pick your browser, set its GPU preference to "High performance", then restart the browser.',
+  },
+  "gpu.flag": {
+    zh: "或在 Chrome / Edge 地址栏打开下面的地址，把“Force High Performance GPU”设为“已启用”（Enabled）并重启浏览器（耗电会增加）：",
+    en: 'Or open this address in Chrome / Edge, set "Force High Performance GPU" to Enabled and relaunch (uses more battery):',
+  },
+  "gpu.softwareTitle": { zh: "显卡加速不可用", en: "No graphics acceleration" },
+  "gpu.softwareBody": {
+    zh: "浏览器正在以软件方式绘制本页，档案已改用最省资源的画质。可在浏览器设置的“系统”页开启图形加速（硬件加速），然后重启浏览器。",
+    en: "Your browser is drawing this page in software, so the archive uses its lightest mode. Turn on graphics (hardware) acceleration in the browser's System settings, then restart the browser.",
+  },
   "archive.chapters": { zh: "{n} 篇", en: "{n} chapters" },
   "archive.chapter1": { zh: "{n} 篇", en: "{n} chapter" },
   "archive.open": { zh: "展开故事", en: "Open story" },

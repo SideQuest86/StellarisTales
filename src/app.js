@@ -1,6 +1,7 @@
 import { storyMap } from "./story-map.js";
 import { FlowSurface } from "./flow-surface.js";
 import { ArchiveScene } from "./archive-scene.js";
+import { showAdapterHint } from "./gpu.js";
 import { SoundtrackPlayer } from "./audio-player.js";
 // [UI] chrome dictionary + reader enter/exit (src/i18n.js, src/reader-motion.js)
 import { t, setLanguage, applyStaticText } from "./i18n.js";
@@ -739,6 +740,7 @@ function switchLanguage() {
     );
   if (chapter) renderChapter(true);
   renderSearch();
+  document.dispatchEvent(new CustomEvent("st-language", { detail: lang }));
 }
 $("#language").onclick = switchLanguage;
 $("#reader-language").onclick = switchLanguage;
@@ -910,8 +912,29 @@ document.addEventListener("keydown", (e) => {
     $("#search-open").click();
   }
 });
+// 博物天枢 · Grand Archive specimen museum: loaded on first use (#museum or #museum=<specimen key>).
+let museum = null;
+async function showMuseum(focusKey) {
+  try {
+    museum ||= await import("./museum.js");
+    if (dossier) closeReader();
+    await museum.openMuseum({
+      asset,
+      focusKey,
+      closeTo: () => {
+        if (location.hash.startsWith("#museum")) history.replaceState(null, "", "#");
+        scene?.wake(); // the archive stops drawing while the museum covers it
+      },
+    });
+  } catch (e) {
+    toast(T("博物天枢暂时无法打开。", "The Grand Archive could not be opened.") + " " + e.message);
+  }
+}
+$("#museum-open").onclick = () => { location.hash = "museum"; };
 function parseHash() {
   const q = new URLSearchParams(location.hash.slice(1));
+  if (location.hash.startsWith("#museum")) return showMuseum(q.get("museum") || undefined);
+  museum?.closeMuseum();
   if (q.has("story")) openStory(q.get("story"), q.get("chapter"));
   else if (location.hash.startsWith("#record=")) {
     const id = decodeURIComponent(location.hash.slice(8));
@@ -947,6 +970,8 @@ try {
       asset,
     });
     window.__archiveDiagnostics = () => scene.diagnostics();
+    // Integrated or software adapter: dismissible notice on how to move the browser to the discrete GPU.
+    showAdapterHint(scene.gpu, { t });
   } catch (e) {
     $("#scene-fallback").hidden = false;
     console.warn("3D archive unavailable; using accessible navigation.");

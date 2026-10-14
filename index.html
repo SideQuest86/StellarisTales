@@ -36,6 +36,7 @@
     <link rel="modulepreload" href="./vendor/three.module.js" />
     <link rel="modulepreload" href="./vendor/three.core.js" />
     <link rel="modulepreload" href="./src/archive-scene.js" />
+    <link rel="modulepreload" href="./src/gpu.js" />
     <script>
       // Apply stored preferences before first paint: no flash of the wrong language or motion.
       try {
@@ -56,7 +57,8 @@
       >
       <nav id="categories" class="catalogue" data-i18n-aria="catalogue.label" aria-label="故事类别"></nav>
       <div class="header-actions">
-        <button id="search-open" type="button"><span aria-hidden="true">⌕</span> <span data-i18n="header.search">搜索</span></button
+        <button id="museum-open" type="button" data-i18n-aria="header.museumLabel" aria-label="打开博物天枢标本陈列"><span aria-hidden="true">◇</span> <span data-i18n="header.museum">博物天枢</span></button
+        ><button id="search-open" type="button"><span aria-hidden="true">⌕</span> <span data-i18n="header.search">搜索</span></button
         ><button id="language" type="button" data-i18n="header.language" data-i18n-aria="header.languageLabel" aria-label="切换为英文">中 / EN</button
         ><button id="motion" type="button" aria-pressed="false" data-i18n="motion.reduce">减少动态</button>
       </div>

@@ -1,0 +1,173 @@
+{
+ "models": [
+  {
+   "key": "acidic_spores",
+   "file": "museum/models/acidic_spores.glb",
+   "bytes": 1034680,
+   "triangles": 36568,
+   "source": {
+    "image": "museum/img/acidic_spores.webp",
+    "gameTexture": "gfx/interface/icons/specimens/acidic_spores.dds",
+    "sha256": "f78641a6d91171a6be1cf70be9edefda8164809790045e6afa1558dad1cdd99a",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "TripoSR (stabilityai/TripoSR, MIT) via scripts/museum/generate-models.py",
+   "settings": {
+    "input": "512x512, alpha-cropped, Lanczos upscale, grey background",
+    "foregroundRatio": 0.85,
+    "marchingCubes": 128,
+    "texture": 512,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 5.5,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "alien_toy",
+   "file": "museum/models/alien_toy.glb",
+   "bytes": 685232,
+   "triangles": 22240,
+   "source": {
+    "image": "museum/img/alien_toy.webp",
+    "gameTexture": "gfx/interface/icons/specimens/alien_toy.dds",
+    "sha256": "10a1ddd5eef044f691380e02c40635ca991a395d1ece67e342bc4104960f5594",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "TripoSR (stabilityai/TripoSR, MIT) via scripts/museum/generate-models.py",
+   "settings": {
+    "input": "512x512, alpha-cropped, Lanczos upscale, grey background",
+    "foregroundRatio": 0.85,
+    "marchingCubes": 128,
+    "texture": 512,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 8.7,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "starmetal",
+   "file": "museum/models/starmetal.glb",
+   "bytes": 719392,
+   "triangles": 23700,
+   "source": {
+    "image": "museum/img/starmetal.webp",
+    "gameTexture": "gfx/interface/icons/specimens/starmetal.dds",
+    "sha256": "0dcba6760ae14d400169d656af48f936c6da74571099929dd52eb640a34a7d5f",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "TripoSR (stabilityai/TripoSR, MIT) via scripts/museum/generate-models.py",
+   "settings": {
+    "input": "512x512, alpha-cropped, Lanczos upscale, grey background",
+    "foregroundRatio": 0.85,
+    "marchingCubes": 128,
+    "texture": 512,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 4.4,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "infernal_molten_core",
+   "file": "museum/models/infernal_molten_core.glb",
+   "bytes": 1169024,
+   "triangles": 38984,
+   "source": {
+    "image": "museum/img/infernal_molten_core.webp",
+    "gameTexture": "gfx/interface/icons/specimens/infernal_molten_core.dds",
+    "sha256": "b325c1f48bcea3224f414e7d7d320a98c51ead2dd4721e2b99be538cb9659a9c",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "TripoSR (stabilityai/TripoSR, MIT) via scripts/museum/generate-models.py",
+   "settings": {
+    "input": "512x512, alpha-cropped, Lanczos upscale, grey background",
+    "foregroundRatio": 0.85,
+    "marchingCubes": 128,
+    "texture": 512,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 8.7,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "captain_ness_logbook",
+   "file": "museum/models/captain_ness_logbook.glb",
+   "bytes": 570168,
+   "triangles": 18184,
+   "source": {
+    "image": "museum/img/captain_ness_logbook.webp",
+    "gameTexture": "gfx/interface/icons/specimens/captain_ness_logbook.dds",
+    "sha256": "3b2830c1ff6dbb5c20c1a3b6d3f12738a3c4f4415ecb07815c6b8251deace748",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "TripoSR (stabilityai/TripoSR, MIT) via scripts/museum/generate-models.py",
+   "settings": {
+    "input": "512x512, alpha-cropped, Lanczos upscale, grey background",
+    "foregroundRatio": 0.85,
+    "marchingCubes": 128,
+    "texture": 512,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 5.6,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "advisor_core",
+   "file": "museum/models/advisor_core.glb",
+   "bytes": 767960,
+   "triangles": 24000,
+   "pipeline": "v2",
+   "source": {
+    "image": "museum/img/advisor_core.webp",
+    "gameTexture": "gfx/interface/icons/specimens/advisor_core.dds",
+    "sha256": "aa6fb42663273c0bb5a6e022aef3d6e709947ede04d95c5ad5aef198ec23061b",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2mini shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py",
+   "licenceNote": "Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).",
+   "settings": {
+    "upscale": "RealESRGAN_x4plus 100->400 px",
+    "shape": "tencent/Hunyuan3D-2mini hunyuan3d-dit-v2-mini",
+    "steps": 30,
+    "octree": 256,
+    "seed": 2026,
+    "faces": 24000,
+    "texture": 1024,
+    "view": "+z",
+    "silhouetteIoU": 0.971,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 143.7,
+   "status": "generated",
+   "canonical": false
+  }
+ ]
+}

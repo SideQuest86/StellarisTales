@@ -5,18 +5,27 @@
 // override. Each sample records the WebGL adapter string (WEBGL_debug_renderer_info);
 // the run fails if it is SwiftShader/software. GPU time per scene frame comes from
 // EXT_disjoint_timer_query_webgl2 when Chrome exposes it.
-// Output: verification/ui/perf.json
+// Output: verification/ui/perf.json (STELLARIS_PERF_OUT to override).
+// STELLARIS_GPU=integrated drops --force-high-performance-gpu: on a hybrid Windows laptop Chrome then runs on the
+// integrated GPU (the default for a browser without a per-app graphics preference), so both paths can be measured.
 import assert from "node:assert/strict";
 import { mkdir, writeFile } from "node:fs/promises";
+import { dirname } from "node:path";
 import { pathToFileURL } from "node:url";
 
 const runtime = process.env.STELLARIS_PLAYWRIGHT_PATH;
 const { chromium } = await import(runtime ? pathToFileURL(runtime).href : "playwright");
 const base = process.env.STELLARIS_PREVIEW_URL || "http://127.0.0.1:4173/";
 const headless = !!process.env.HEADLESS;
+const integrated = process.env.STELLARIS_GPU === "integrated";
+const output = process.env.STELLARIS_PERF_OUT || "verification/ui/perf.json";
 // Occluded or background windows are throttled by Chrome on Windows; keep the measured window rendering at full rate
 // even if other windows overlap it (the run is still disturbed by heavy desktop activity — keep the desktop idle).
-const args = ["--use-angle=d3d11", "--enable-gpu-rasterization", "--ignore-gpu-blocklist", "--enable-gpu", "--force-high-performance-gpu", "--window-size=1700,1120",
+// Window placement: STELLARIS_WINDOW_SIZE ("w,h", default 1700,1120) and STELLARIS_WINDOW_POSITION ("x,y", e.g. a
+// side monitor so the run does not cover other work).
+const windowArgs = [`--window-size=${process.env.STELLARIS_WINDOW_SIZE || "1700,1120"}`,
+  ...(process.env.STELLARIS_WINDOW_POSITION ? [`--window-position=${process.env.STELLARIS_WINDOW_POSITION}`] : [])];
+const args = ["--use-angle=d3d11", "--enable-gpu-rasterization", "--ignore-gpu-blocklist", "--enable-gpu", ...(integrated ? [] : ["--force-high-performance-gpu"]), ...windowArgs,
   "--disable-backgrounding-occluded-windows", "--disable-renderer-backgrounding", "--disable-background-timer-throttling"];
 const browser = await chromium.launch({ channel: "chrome", headless, args });
 const context = await browser.newContext(headless ? { viewport: { width: 1600, height: 1000 } } : { viewport: null });
@@ -95,7 +104,12 @@ async function measure(name, action, settleMs = 1400) {
     adapter: env.adapter?.renderer,
     rafIntervalsMs: summary(intervals),
     sceneFramesRendered: rendered,
+    // More than 1 means the scene drew several times per displayed frame (duplicate render loops).
+    sceneFramesPerRaf: intervals.length ? +(rendered / intervals.length).toFixed(2) : null,
     gpuMsPerSceneFrame: raw.gpu.length ? { samples: raw.gpu.length, p50: percentile(raw.gpu, 50), p95: percentile(raw.gpu, 95), max: +Math.max(...raw.gpu).toFixed(3) } : null,
+    // Scene GPU time summed over the measured span: per-frame ms alone rises when a lightly loaded GPU clocks down.
+    sceneGpuMsTotal: +raw.gpu.reduce((a, b) => a + b, 0).toFixed(1),
+    spanMs: raw.t.length > 1 ? +(raw.t.at(-1) - raw.t[0]).toFixed(0) : 0,
     pixelRatioAfter: raw.d.pixelRatio,
     visibleInstances: raw.d.visibleInstances,
     drawCalls: raw.d.drawCalls,
@@ -110,6 +124,14 @@ const canvas = page.locator("#scene canvas");
 await page.mouse.move(2, 400);
 await page.waitForFunction(() => !window.__archiveDiagnostics().framePending, null, { timeout: 30000 });
 results.push(await measure("idle (reference)", async () => {}, 1500));
+results.push(
+  await measure("hover breathing", async () => {
+    // Pointer movement over the archive starts the idle "breathing" motion (fades after ~9 s without input).
+    const box = await canvas.boundingBox();
+    for (let i = 0; i < 6; i++) await page.mouse.move(box.x + box.width * (0.45 + i * 0.02), box.y + box.height * 0.6, { steps: 2 });
+  }, 3000),
+);
+await page.mouse.move(2, 400);
 results.push(
   await measure("archive keyboard scroll", async () => {
     await canvas.focus();
@@ -159,16 +181,18 @@ await browser.close();
 const report = {
   measuredAt: new Date().toISOString(),
   headless,
+  requestedGpu: integrated ? "integrated (no --force-high-performance-gpu)" : "discrete (--force-high-performance-gpu)",
+  url: base,
   env,
   note:
     "rAF intervals are what the page could present; GPU ms are EXT_disjoint_timer_query_webgl2 per scene frame when exposed. Which adapter Chrome uses also depends on the Windows per-app graphics preference (not changed by this script).",
   results,
   errors,
 };
-await mkdir("verification/ui", { recursive: true });
-await writeFile("verification/ui/perf.json", JSON.stringify(report, null, 2));
+await mkdir(dirname(output), { recursive: true });
+await writeFile(output, JSON.stringify(report, null, 2));
 assert.deepEqual(errors, []);
-console.log("written verification/ui/perf.json");
+console.log("written", output);
 
 
 

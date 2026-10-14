@@ -2223,6 +2223,97 @@ dialog::backdrop {
   }
 }
 
+/* ------------------------------------------------------------ graphics-adapter notice (src/gpu.js)
+   Top right over the archive, never over the reader or the museum; dismissal is remembered. */
+.gpu-hint {
+  position: fixed;
+  top: calc(var(--masthead) + 8px);
+  right: var(--gutter);
+  z-index: 7;
+  width: min(360px, calc(100vw - 32px));
+  padding: 8px 10px 6px 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  background: #0b1d23f2;
+  border: 1px solid var(--line-2);
+  border-left: 2px solid var(--gold-2);
+  opacity: 0;
+  transform: translate3d(0, -6px, 0);
+  transition:
+    opacity 0.3s var(--ease-out),
+    transform 0.3s var(--ease-out);
+}
+.gpu-hint.show {
+  opacity: 1;
+  transform: none;
+}
+body.reader-open .gpu-hint,
+body.museum-open .gpu-hint {
+  display: none;
+}
+.gpu-hint-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.gpu-hint-head strong {
+  font-weight: 500;
+  color: var(--gold);
+}
+.gpu-hint-close {
+  flex: none;
+  width: 32px;
+  min-height: 32px;
+  margin: -4px -6px -4px 0;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--dim);
+}
+.gpu-hint summary {
+  width: fit-content;
+  min-height: 28px;
+  padding-top: 2px;
+  color: var(--dim);
+  cursor: pointer;
+}
+.gpu-hint summary:hover,
+.gpu-hint details[open] summary {
+  color: var(--ink);
+}
+.gpu-hint-adapter {
+  display: block;
+  margin-top: 4px;
+  font: 11px var(--mono);
+  color: var(--faint);
+}
+.gpu-hint p,
+.gpu-hint ol {
+  margin: 6px 0 0;
+}
+.gpu-hint ol {
+  padding-left: 18px;
+}
+.gpu-hint li + li {
+  margin-top: 4px;
+}
+.gpu-hint code {
+  font: 11px var(--mono);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+@media (max-width: 700px) {
+  /* Below the wrapped masthead + category row, over the cards (the selection and navigation sit at the bottom). */
+  .gpu-hint {
+    top: calc(var(--masthead) + 60px + env(safe-area-inset-top, 0px));
+    right: 16px;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+}
+
 /* ------------------------------------------------------------ reduced motion */
 .reduced-motion *,
 .reduced-motion *::before,

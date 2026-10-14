@@ -3,6 +3,9 @@ import { stat } from "node:fs/promises";
 import { createReadStream } from "node:fs";
 import path from "node:path";
 const root = path.resolve("dist");
+// --port <n> when 4173 is taken by another preview.
+const portArg = process.argv.indexOf("--port");
+const port = portArg > 0 ? Number(process.argv[portArg + 1]) || 4173 : 4173;
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
@@ -59,4 +62,4 @@ http
       res.writeHead(404).end("Not found");
     }
   })
-  .listen(4173, "127.0.0.1", () => console.log("Local: http://127.0.0.1:4173"));
+  .listen(port, "127.0.0.1", () => console.log(`Local: http://127.0.0.1:${port}`));

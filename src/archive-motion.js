@@ -18,6 +18,14 @@ export function idleEnvelope(sinceInput, idle = 9, fade = 1.6) {
   if (sinceInput < 0) return 0;
   return smooth(sinceInput / 1.2) * (1 - smooth((sinceInput - idle) / fade));
 }
+/**
+ * Milliseconds until a frame-rate cap allows the next draw (0: draw now; fps 0 = uncapped). The gap is 0.8 of the
+ * period so capped draws land on whole display refreshes (e.g. every 3rd at 170 Hz for 60 fps) instead of jittering.
+ */
+export function capDelay(now, lastDraw, fps) {
+  if (!fps) return 0;
+  return Math.max(0, lastDraw + 800 / fps - now);
+}
 /** Frame-time governor for adaptive resolution (all times in ms). */
 export class FrameGovernor {
   constructor({ budget = 20, slowFrames = 40, fastFrames = 240 } = {}) {

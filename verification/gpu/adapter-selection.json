@@ -1,0 +1,284 @@
+﻿{
+    "measuredAt":  "2026-10-13",
+    "machine":  {
+                    "os":  "Windows 11 Home 10.0.26200",
+                    "adapters":  [
+                                     "Intel(R) Graphics (0x7D67, driver 32.0.101.8724, display adapter)",
+                                     "NVIDIA GeForce RTX 5070 Laptop GPU (0x2D58, driver 32.0.15.9201)"
+                                 ],
+                    "chromeGpuPage":  "chrome://gpu (Chrome 155.0.8059.40): GPU0 Intel *ACTIVE*, GPU1 NVIDIA; Optimus: false; Has Discrete GPU: yes; Display type ANGLE_D3D11",
+                    "windowsPerAppGpuPreference":  "HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences has no entry for chrome.exe, msedge.exe or claude.exe (read only, not changed)"
+                },
+    "note":  "Each row: one fresh browser launched by Playwright with the given flags; WebGL2 UNMASKED_RENDERER for contexts requested with default / low-power / high-performance powerPreference, and WebGPU requestAdapter() info for the same preferences.",
+    "chrome":  {
+                   "value":  [
+                                 {
+                                     "name":  "headless, no flags",
+                                     "channel":  "chrome",
+                                     "args":  [
+
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "lowPower":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "highPerformance":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  "intel / xe-lpg",
+                                                    "lowPower":  "intel / xe-lpg",
+                                                    "highPerformance":  "intel / xe-lpg"
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed, no flags",
+                                     "channel":  "chrome",
+                                     "args":  [
+
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "lowPower":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "highPerformance":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  "intel / xe-lpg",
+                                                    "lowPower":  "intel / xe-lpg",
+                                                    "highPerformance":  "intel / xe-lpg"
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed --force-high-performance-gpu",
+                                     "channel":  "chrome",
+                                     "args":  [
+                                                  "--force-high-performance-gpu"
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "lowPower":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "highPerformance":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  "nvidia / blackwell",
+                                                    "lowPower":  "nvidia / blackwell",
+                                                    "highPerformance":  "nvidia / blackwell"
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed --use-angle=d3d11",
+                                     "channel":  "chrome",
+                                     "args":  [
+                                                  "--use-angle=d3d11"
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "lowPower":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "highPerformance":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  "intel / xe-lpg",
+                                                    "lowPower":  "intel / xe-lpg",
+                                                    "highPerformance":  "intel / xe-lpg"
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed --use-angle=d3d11 --force-high-performance-gpu",
+                                     "channel":  "chrome",
+                                     "args":  [
+                                                  "--use-angle=d3d11",
+                                                  "--force-high-performance-gpu"
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "lowPower":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "highPerformance":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  "nvidia / blackwell",
+                                                    "lowPower":  "nvidia / blackwell",
+                                                    "highPerformance":  "nvidia / blackwell"
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed --use-angle=d3d11on12",
+                                     "channel":  "chrome",
+                                     "args":  [
+                                                  "--use-angle=d3d11on12"
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11on12 vs_5_0 ps_5_0, D3D11)",
+                                                   "lowPower":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11on12 vs_5_0 ps_5_0, D3D11)",
+                                                   "highPerformance":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11on12 vs_5_0 ps_5_0, D3D11)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  "intel / xe-lpg",
+                                                    "lowPower":  "intel / xe-lpg",
+                                                    "highPerformance":  "intel / xe-lpg"
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed --use-angle=gl",
+                                     "channel":  "chrome",
+                                     "args":  [
+                                                  "--use-angle=gl"
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (Intel, Intel(R) Graphics, OpenGL 4.5.0)",
+                                                   "lowPower":  "ANGLE (Intel, Intel(R) Graphics, OpenGL 4.5.0)",
+                                                   "highPerformance":  "ANGLE (Intel, Intel(R) Graphics, OpenGL 4.5.0)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  null,
+                                                    "lowPower":  null,
+                                                    "highPerformance":  null
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed --use-angle=vulkan",
+                                     "channel":  "chrome",
+                                     "args":  [
+                                                  "--use-angle=vulkan"
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (NVIDIA, Vulkan 1.4.325 (NVIDIA NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58)), NVIDIA)",
+                                                   "lowPower":  "ANGLE (NVIDIA, Vulkan 1.4.325 (NVIDIA NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58)), NVIDIA)",
+                                                   "highPerformance":  "ANGLE (NVIDIA, Vulkan 1.4.325 (NVIDIA NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58)), NVIDIA)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  null,
+                                                    "lowPower":  null,
+                                                    "highPerformance":  null
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed --use-webgpu-power-preference=force-low-power",
+                                     "channel":  "chrome",
+                                     "args":  [
+                                                  "--use-webgpu-power-preference=force-low-power"
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "lowPower":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                   "highPerformance":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  "intel / xe-lpg",
+                                                    "lowPower":  "intel / xe-lpg",
+                                                    "highPerformance":  "intel / xe-lpg"
+                                                }
+                                 },
+                                 {
+                                     "name":  "headed --use-angle=swiftshader",
+                                     "channel":  "chrome",
+                                     "args":  [
+                                                  "--use-angle=swiftshader"
+                                              ],
+                                     "webgl":  {
+                                                   "default":  "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+                                                   "lowPower":  "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+                                                   "highPerformance":  "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+                                               },
+                                     "webgpu":  {
+                                                    "default":  null,
+                                                    "lowPower":  null,
+                                                    "highPerformance":  null
+                                                }
+                                 }
+                             ],
+                   "Count":  10
+               },
+    "chromeMore":  {
+                       "value":  [
+                                     {
+                                         "name":  "headed --use-webgpu-power-preference=force-high-performance",
+                                         "channel":  "chrome",
+                                         "args":  [
+                                                      "--use-webgpu-power-preference=force-high-performance"
+                                                  ],
+                                         "webgl":  {
+                                                       "default":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                       "lowPower":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                       "highPerformance":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                                   },
+                                         "webgpu":  {
+                                                        "default":  null,
+                                                        "lowPower":  null,
+                                                        "highPerformance":  null
+                                                    }
+                                     },
+                                     {
+                                         "name":  "headless --force-high-performance-gpu",
+                                         "channel":  "chrome",
+                                         "args":  [
+                                                      "--force-high-performance-gpu"
+                                                  ],
+                                         "webgl":  {
+                                                       "default":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                       "lowPower":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                       "highPerformance":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                                   },
+                                         "webgpu":  {
+                                                        "default":  "nvidia / blackwell",
+                                                        "lowPower":  "nvidia / blackwell",
+                                                        "highPerformance":  "nvidia / blackwell"
+                                                    }
+                                     }
+                                 ],
+                       "Count":  2
+                   },
+    "edge":  {
+                 "value":  [
+                               {
+                                   "name":  "edge headed, no flags",
+                                   "channel":  "msedge",
+                                   "args":  [
+
+                                            ],
+                                   "webgl":  {
+                                                 "default":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                 "lowPower":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                 "highPerformance":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                             },
+                                   "webgpu":  {
+                                                  "default":  "intel / xe-lpg",
+                                                  "lowPower":  "intel / xe-lpg",
+                                                  "highPerformance":  "intel / xe-lpg"
+                                              }
+                               },
+                               {
+                                   "name":  "edge headed --force-high-performance-gpu",
+                                   "channel":  "msedge",
+                                   "args":  [
+                                                "--force-high-performance-gpu"
+                                            ],
+                                   "webgl":  {
+                                                 "default":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                 "lowPower":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                                 "highPerformance":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                             },
+                                   "webgpu":  {
+                                                  "default":  "nvidia / blackwell",
+                                                  "lowPower":  "nvidia / blackwell",
+                                                  "highPerformance":  "nvidia / blackwell"
+                                              }
+                               }
+                           ],
+                 "Count":  2
+             },
+    "flagsPage":  {
+                      "value":  [
+                                    {
+                                        "channel":  "chrome",
+                                        "flagsPage":  "Force High Performance GPU -\u003e enabled",
+                                        "before":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                        "afterRelaunch":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                    },
+                                    {
+                                        "channel":  "msedge",
+                                        "flagsPage":  "Force High Performance GPU -\u003e enabled",
+                                        "before":  "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+                                        "afterRelaunch":  "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+                                    }
+                                ],
+                      "Count":  2
+                  }
+}

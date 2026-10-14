@@ -24,6 +24,13 @@ await mkdir("dist/vendor", { recursive: true });
 for (const file of ["three.module.js", "three.core.js"])
   await cp("node_modules/three/build/" + file, "dist/vendor/" + file);
 await cp("node_modules/three/LICENSE", "dist/vendor/THREE-LICENSE.txt");
+// Museum viewer add-ons (loaded only when an exhibit with a 3D model opens). Their bare `three` import is
+// rewritten to the vendored module so no import map is needed.
+for (const file of ["loaders/GLTFLoader.js", "controls/OrbitControls.js", "utils/BufferGeometryUtils.js", "utils/SkeletonUtils.js"]) {
+  const source = await readFile("node_modules/three/examples/jsm/" + file, "utf8");
+  await mkdir(dirname("dist/vendor/addons/" + file), { recursive: true });
+  await writeFile("dist/vendor/addons/" + file, source.replace(/from ['"]three['"]/g, "from '../../three.module.js'"));
+}
 await cp("src", "dist/src", { recursive: true });
 await cp("public", "dist", { recursive: true });
 const html = (await readFile("index.html", "utf8")).replaceAll(

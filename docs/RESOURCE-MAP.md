@@ -49,6 +49,7 @@ V4 (2026-10-12): see [STORY-MODEL-V4.md](STORY-MODEL-V4.md) and [REVIEW-GUIDE.md
 | --- | --- |
 | `src/app.js` | Routing, catalogue, reader, choices, dialogue state/history, language and guides |
 | `src/archive-scene.js`, `archive-motion.js`, `cover-atlas.js` | Three.js card scene, motion and artwork textures |
+| `src/gpu.js` | Shared WebGL renderer creation: adapter detection, rendering tier (high / low / minimal), graphics notice |
 | `src/flow-tree.js`, `flow-surface.js`, `story-map.js` | V4 tree layout (exclusive/parallel groups, refs), Detroit-style flow map on the left card, fallback map |
 | `src/reading.js` | Empire profile, path flags, condition evaluation and variant/option resolution |
 | `src/reader-motion.js`, `i18n.js`, `glyph-warmup.js` | Reader enter/exit motion, bilingual chrome, idle CJK glyph warm-up (uses `stories/glyphs.json`) |

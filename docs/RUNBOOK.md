@@ -85,7 +85,15 @@ $env:STELLARIS_PLAYWRIGHT_PATH = 'C:/Users/wangp/.cache/codex-runtimes/codex-pri
 node scripts/verify-reader-v4.mjs     # V4 reader: tree navigation, conditions, profile, reversals, 390 px, English
 node scripts/verify-ui-capture.mjs    # catalogue, rows, card extraction, frosted reveals, flow map; screenshots
 node scripts/verify-ui-perf.mjs       # headed Chrome on the real GPU (fails on a software adapter); perf.json
+node scripts/verify-gpu.mjs           # adapter tiers, graphics notice, idle/hidden/covered rendering; verification/gpu/
 ```
+
+GPU selection (src/gpu.js, evidence in `verification/gpu/README.md`): Chrome/Edge on Windows render every page on the
+adapter the browser's GPU process chose, regardless of `powerPreference`; without `--force-high-performance-gpu` (or the
+`chrome://flags/#force-high-performance-gpu` flag, or a Windows per-app "High performance" preference) that is the
+integrated GPU on this laptop. `STELLARIS_GPU=integrated` makes `verify-ui-perf` measure that path; `?gpu=integrated|software`
+fakes the classification in any browser. `STELLARIS_WINDOW_POSITION` / `STELLARIS_WINDOW_SIZE` ("x,y" / "w,h") place headed
+windows (e.g. on a side monitor). `serve.mjs --port <n>` serves on another port when 4173 is taken.
 
 `verify-ui-perf` records the WebGL adapter (must be the discrete GPU, e.g. ANGLE D3D11 RTX 5070), rAF intervals per
 interaction and EXT_disjoint_timer_query GPU ms. Results are written to `verification/ui/` and `verification/`.
