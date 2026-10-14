@@ -6,3 +6,9 @@ __pycache__/
 .tools/
 .env
 verification/*.png
+
+# Museum model-generation intermediates (reproducible; kept locally, not shipped): synthesized views, upscaled
+# inputs, viewer screenshots. The contact sheet and JSON results stay tracked.
+verification/museum/views/
+verification/museum/inputs/
+verification/museum/shots/
