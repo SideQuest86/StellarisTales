@@ -366,12 +366,25 @@ let readingIndex = 0,
   passageIndex = 0;
 let dialogueStep = 0;
 let dialogueState='start', dialogueHistory=[], dialogueProfile=0, dialogueTextProfile=0;
+const entryCache = new WeakMap();
+/** Documents a reader can start a story from: its start and the tree root's entries. */
+function storyEntries(story) {
+  if (!entryCache.has(story)) {
+    const nodes = story.tree?.nodes || {};
+    const entries = new Set([story.start, ...(nodes.n0?.children || []).map((id) => nodes[id]?.doc).filter(Boolean)]);
+    entryCache.set(story, entries);
+  }
+  return entryCache.get(story);
+}
 function readingContext() {
   // Flags set by docs and options chosen earlier on the path (only steps inside the current story are known).
   const earlier = trail.slice(0, -1).filter((step) => step.story === dossier.story.id);
   const { flags, cleared } = pathFlags(earlier, (step) => docMap.get(step.chapter));
   for (const f of [...(trail.at(-1)?.sets || []), ...(chapter?.sets || [])]) { flags.add(f); cleared.delete(f); }
-  return { profile, assumptions, flags, cleared, storyFlags: storyFlagSet };
+  // Story-local flags can only be known absent if this reading started at one of the story's entries and stayed in it.
+  const inStory = trail.filter((step) => step.story === dossier.story.id);
+  const pathFromEntry = inStory.length === trail.length && storyEntries(dossier.story).has(trail[0]?.chapter);
+  return { profile, assumptions, flags, cleared, storyFlags: storyFlagSet, pathFromEntry };
 }
 function adopt(dnf) {
   // Choosing a reading implies facts; identity facts are kept archive-wide, the rest for this reading.

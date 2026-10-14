@@ -43,8 +43,12 @@ export function atomValue(atom, ctx) {
   if (atom.type === "flag") {
     if (ctx.flags?.has(atom.name)) return atom.value === true;
     if (ctx.cleared?.has(atom.name)) return atom.value === false;
-    // A flag only this story sets, never set on the path so far, is known to be absent.
-    if (ctx.storyFlags?.has(atom.name)) return atom.value === false;
+    // A flag only this story sets, never set on the path so far, is known to be absent — but only when the reader
+    // followed the story from one of its entries (a document opened directly has no known path), and only for a
+    // flag checked on the reader's own country: one checked on another scope (e.g. `from`, the emperor in a civil
+    // war) may have been set by a document of that other party that this reader never sees.
+    const ownScope = !atom.path || atom.path === "root" || atom.path === "this";
+    if (ctx.storyFlags?.has(atom.name) && ctx.pathFromEntry && ownScope) return atom.value === false;
     return null;
   }
   return null;

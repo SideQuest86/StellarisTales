@@ -25,11 +25,22 @@ test("story-local flags resolve from the chosen path", () => {
   const storyFlags = new Set(["met_captain"]);
   const took = pathFlags([{ chapter: "a", choice: "a.1" }], (s) => docs[s.chapter]);
   const skipped = pathFlags([{ chapter: "a", choice: "a.2" }], (s) => docs[s.chapter]);
-  assert.equal(evaluate([[flag("met_captain")]], { ...took, storyFlags }), true);
-  assert.equal(evaluate([[flag("met_captain")]], { ...skipped, storyFlags }), false);
-  assert.equal(evaluate([[flag("foreign_flag")]], { ...skipped, storyFlags }), null);
+  const fromEntry = { storyFlags, pathFromEntry: true };
+  assert.equal(evaluate([[flag("met_captain")]], { ...took, ...fromEntry }), true);
+  assert.equal(evaluate([[flag("met_captain")]], { ...skipped, ...fromEntry }), false);
+  assert.equal(evaluate([[flag("foreign_flag")]], { ...skipped, ...fromEntry }), null);
   const routed = pathFlags([{ chapter: "a", choice: "a.2", sets: ["met_captain"] }], (s) => docs[s.chapter]);
-  assert.equal(evaluate([[flag("met_captain")]], { ...routed, storyFlags }), true, "flags set by routers on the edge count");
+  assert.equal(evaluate([[flag("met_captain")]], { ...routed, ...fromEntry }), true, "flags set by routers on the edge count");
+});
+
+test("an unseen story flag is only known absent on a full path and for the reader's own country", () => {
+  const storyFlags = new Set(["civil_war_leniency"]);
+  const empty = { flags: new Set(), cleared: new Set(), storyFlags };
+  const own = { type: "flag", name: "civil_war_leniency", value: true };
+  const other = { ...own, path: "from" }; // set by the emperor's decision, which the rebel reader never sees
+  assert.equal(evaluate([[own]], { ...empty, pathFromEntry: true }), false);
+  assert.equal(evaluate([[own]], { ...empty, pathFromEntry: false }), null, "a document opened directly has no known path");
+  assert.equal(evaluate([[other]], { ...empty, pathFromEntry: true }), null, "another country's flag stays unknown");
 });
 
 test("composed passages keep common text and only the matching conditional piece", () => {
