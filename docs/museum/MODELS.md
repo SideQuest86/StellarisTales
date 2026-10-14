@@ -60,11 +60,20 @@ python scripts/museum/contact-sheet.py    # verification/museum/contact-sheet.pn
 All generation is local on the RTX 5070 (8 GB); no paid service is used. Timing: ~40–140 s per specimen depending
 on GPU contention (the diffusion step slows ~30× when another process uses the GPU).
 
+## Coverage (2026-10-14)
+
+All 258 specimens: pipeline v3, 40k triangles, ~0.73 MB each (187 MB total). Inspected on
+`verification/museum/review-1..6.png` (icon, opening view, opposite side). Silhouette IoU of the chosen view against
+the icon: p10 0.66, median 0.83, p90 0.93; below 0.5: black_needle_ceremonial_sword (0.38), massive_metatarsal,
+yuht_audio_console, crystal_nest_fragments — still recognisable, candidates for a re-run with another seed. Thin flat
+items (maps, blueprints, panels) open edge-on in the viewer.
+
 ## Known limits
 
 - One 100 px view per specimen: depth, thickness and the back are inferred. Flat objects (posters, plaques, books)
   may come out as slabs; elongated or thin items may lose thin parts.
-- The back carries a dimmed mirror of the front art, not a real back.
+- v2: the back carries a dimmed mirror of the front art. v3: sides and back come from synthesized views — AI
+  guesses, not real surfaces.
 - Compression: every GLB is passed through gltfpack 1.3 (`st-tools/gltfpack/gltfpack.exe -cc -kn`, MIT, from
   github.com/zeux/meshoptimizer releases): quantized geometry + EXT_meshopt_compression, decoded in the viewer by
   three's `meshopt_decoder.module.js` (copied to `dist/vendor/addons/libs/` by the build). v3 models: ~1.6 MB → ~0.85 MB

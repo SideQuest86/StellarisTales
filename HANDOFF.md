@@ -58,9 +58,13 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
   models `public/museum/models/` + `manifest.json`. Check: `node scripts/verify-museum.mjs` (headed; set
   `STELLARIS_WINDOW_POSITION=-1900,20` to keep the window on the user's left monitor). GPU tiers: `src/gpu.js`,
   `node scripts/verify-gpu.mjs`, evidence `verification/gpu/`.
-- Continuation: the v3 multi-view batch (`novel-views.py --all`, then `generate-models-v2.py --all --mv --skip-existing`; logs in `st-tools/views-all.log`, `st-tools/v3all.log`) was started 2026-10-14 ~05:00 (~13 h); when done rebuild the contact sheet (`scripts/museum/contact-sheet.py`),
-  rerun museum + GPU checks, re-measure `verify-ui-perf.mjs` on the RTX once the GPU is idle, then publish by editing
-  `RELEASE`.
+- Status (2026-10-14): all 258 specimens have v3 multi-view models (187 MB, meshopt-compressed), all inspected on
+  `verification/museum/review-1..6.png` (`scripts/museum/contact-sheet.py`); `verify-museum.mjs` 268 checks, 0 page
+  errors; released as v4.1.0.
+- Possible improvements: regenerate the weakest fits (lowest `silhouetteIoU`: black_needle_ceremonial_sword,
+  massive_metatarsal, yuht_audio_console, crystal_nest_fragments) with another seed; flat items (maps, blueprints,
+  panels such as star_mall_map, kuurian_cybrex_blueprints) open edge-on — a per-model opening angle in the manifest
+  would fix that.
 
 ## Next work
 

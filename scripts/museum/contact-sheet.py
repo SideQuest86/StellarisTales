@@ -22,3 +22,23 @@ for row, m in enumerate(models):
 sheet.save(ROOT / 'verification/museum/contact-sheet.png')
 (ROOT / 'verification/museum/contact-order.json').write_text(json.dumps([m['key'] for m in models]), encoding='utf-8')
 print('contact sheet:', len(models), 'models')
+
+# Review pages: 45 specimens per page (3 per row: icon, opening view, opposite side) — small enough to inspect.
+C, PER_ROW, ROWS = 140, 3, 15
+per_page = PER_ROW * ROWS
+for p in range(0, len(models), per_page):
+    page = Image.new('RGB', (PER_ROW * 3 * C, ROWS * C), (8, 21, 26))
+    draw = ImageDraw.Draw(page)
+    for n, m in enumerate(models[p:p + per_page]):
+        x, y = (n % PER_ROW) * 3 * C, (n // PER_ROW) * C
+        icon = Image.open(ROOT / 'public/museum/img' / f"{m['key']}.webp").convert('RGBA').resize((C - 24, C - 24))
+        page.paste(icon, (x + 12, y + 18), icon)
+        for j, i in enumerate((0, 2)):
+            shot = ROOT / 'verification/museum/shots' / f"model-{m['key']}-{i}.png"
+            if shot.exists():
+                im = Image.open(shot).convert('RGB')
+                im.thumbnail((C, C))
+                page.paste(im, (x + (j + 1) * C, y))
+        draw.text((x + 3, y + 2), f"{p + n} {m['key'][:22]}", fill=(220, 200, 140))
+    page.save(ROOT / f'verification/museum/review-{p // per_page + 1}.png')
+print('review pages:', -(-len(models) // per_page))
