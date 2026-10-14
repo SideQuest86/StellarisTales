@@ -58,7 +58,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
   models `public/museum/models/` + `manifest.json`. Check: `node scripts/verify-museum.mjs` (headed; set
   `STELLARIS_WINDOW_POSITION=-1900,20` to keep the window on the user's left monitor). GPU tiers: `src/gpu.js`,
   `node scripts/verify-gpu.mjs`, evidence `verification/gpu/`.
-- Continuation: finish/inspect the v2 batch (`generate-models-v2.py --all --skip-existing`), rebuild the contact sheet,
+- Continuation: the v3 multi-view batch (`novel-views.py --all`, then `generate-models-v2.py --all --mv --skip-existing`; logs in `st-tools/views-all.log`, `st-tools/v3all.log`) was started 2026-10-14 ~05:00 (~13 h); when done rebuild the contact sheet (`scripts/museum/contact-sheet.py`),
   rerun museum + GPU checks, re-measure `verify-ui-perf.mjs` on the RTX once the GPU is idle, then publish by editing
   `RELEASE`.
 

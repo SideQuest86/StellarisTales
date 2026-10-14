@@ -17,7 +17,19 @@ feature only (2026-10-14); all other site art stays original.
 
 ## Pipelines
 
-**v2 (current)** — `scripts/museum/generate-models-v2.py`
+**v3 (current, user-chosen for quality)** — `scripts/museum/novel-views.py` then `generate-models-v2.py --mv`
+1. Same Real-ESRGAN x4 input (`verification/museum/inputs/<key>-x4.png`).
+2. Zero123++ v1.2 (`sudo-ai/zero123plus-v1.2`, Apache-2.0; custom pipeline code `sudo-ai/zero123plus-pipeline`
+   reviewed before use, copied to `st-tools/zero123plus_pipeline.py`) synthesizes 6 views (azimuth 30…330°,
+   elevation +20/−10) → `verification/museum/views/<key>-<az>.png` (grey background removed) and `<key>-grid.png`.
+3. Hunyuan3D-2mv (`tencent/Hunyuan3D-2mv`, `hunyuan3d-dit-v2-mv`, 50 steps, octree 380) from front = icon,
+   left = az 90, back = az 210, right = az 270 (map "a", chosen visually on the altar test); 40k triangles.
+4. Texture 2048²: front from the original icon (weight 4), sides/back from the six synthesized views by facing weight;
+   the rotation sense of the views is chosen by silhouette fit. Manifest `pipeline: "v3"`, `settings.viewsIoU`.
+   Synthesized views are AI guesses of unseen sides — still non-canonical.
+   Run: `novel-views.py --all` then `generate-models-v2.py --all --mv --skip-existing` (resumable, rarest first).
+
+**v2 (single view)** — `scripts/museum/generate-models-v2.py`
 1. Real-ESRGAN x4plus (BSD-3, `RealESRGAN_x4plus.pth` from github.com/xinntao/Real-ESRGAN, run via `spandrel`)
    upscales the icon 100 → 400 px; alpha by Lanczos.
 2. Hunyuan3D-2mini shape (`tencent/Hunyuan3D-2mini`, subfolder `hunyuan3d-dit-v2-mini`, 30 steps, octree 256,
