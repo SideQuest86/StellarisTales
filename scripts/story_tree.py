@@ -279,6 +279,8 @@ class Compiler:
             return False
         if 'is_test_event = yes' in r.get('trigger', '') or re.search(r'\bis_test_event\s*=\s*yes', r.get('script', '')[:400]):
             return False  # developer test events (never fire in a normal game)
+        if rid in ('event_chains:test_chain', 'event_chains:test_chain_2'):
+            return False  # developer test chains: no shipped script begins them (review of chain-test-chain, 2026-10-13)
         return bool(self.meta.get(rid, {}).get('hasText')) and not r['hidden']
 
     # -------------------------------------------------------------------- edges ---
