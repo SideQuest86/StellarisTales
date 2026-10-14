@@ -11,5 +11,6 @@ conservatively (all movement of the weekly counter counts against this task).
 | 2026-10-14 ~02:35 | 16 % | 25 % | specimen inventory extracted (258), Grand Archive facts documented |
 | 2026-10-14 ~02:55 | 17 % | 29 % | museum UI + viewer, TripoSR installed, 6 v1 models; Opus 5.5 high GPU-render subagent launched (user request) |
 | 2026-10-14 ~03:00 | 17 % | 32 % | v2 pipeline (Real-ESRGAN + Hunyuan3D-2mini) approved by user; first run downloading weights |
+| 2026-10-14 ~04:00 | 18 % | 3 % (new 5-h window) | GPU subagent merged; 6 v2 models inspected; full v2 batch started (local GPU, ~9–10 h, no token cost while running) |
 
 Stop rule: checkpoint and stop at 52 % weekly (36 points used), never exceed 56 % (40 points).

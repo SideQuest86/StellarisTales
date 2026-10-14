@@ -33,6 +33,7 @@ ap.add_argument('--faces', type=int, default=24000)
 ap.add_argument('--texture', type=int, default=1024)
 ap.add_argument('--octree', type=int, default=256)
 ap.add_argument('--steps', type=int, default=30)
+ap.add_argument('--variant', default='hunyuan3d-dit-v2-mini', help='hunyuan3d-dit-v2-mini (30 steps) or hunyuan3d-dit-v2-mini-turbo (5 steps)')
 args = ap.parse_args()
 TOOLS = Path(args.tools)
 sys.path.insert(0, str(TOOLS / 'hunyuan3d'))
@@ -58,10 +59,13 @@ if args.skip_existing:
 device = 'cuda'
 t0 = time.time()
 upscaler = spandrel.ModelLoader().load_from_file(str(TOOLS / 'weights/RealESRGAN_x4plus.pth')).to(device).eval()
-shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained('tencent/Hunyuan3D-2mini', subfolder='hunyuan3d-dit-v2-mini')
+TURBO = args.variant.endswith('turbo')
+# Turbo settings follow Tencent's examples/faster_shape_gen_with_flashvdm_mini_turbo.py (ckpt weights, 'merge' top-k).
+shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained('tencent/Hunyuan3D-2mini', subfolder=args.variant,
+                                                            **({'use_safetensors': False} if TURBO else {}))
 # FlashVDM: hierarchical volume decoding (turbo VAE of the same repo) — the plain dense decode of a 256^3 field did
 # not finish in 20 min on an 8 GB laptop GPU.
-shapegen.enable_flashvdm(mc_algo='mc')
+shapegen.enable_flashvdm(mc_algo='mc', **({'topk_mode': 'merge'} if TURBO else {}))
 print(f'models ready in {time.time() - t0:.1f}s', flush=True)
 
 
@@ -198,8 +202,8 @@ for key in keys:
     big = upscale(icon)
     big.save(inputs_dir / f'{key}-x4.png')
     print(f'  {key}: upscaled in {time.time() - t1:.1f}s', flush=True)
-    mesh = shapegen(image=big, num_inference_steps=args.steps, octree_resolution=args.octree,
-                    generator=torch.manual_seed(2026))[0]
+    mesh = shapegen(image=big, num_inference_steps=args.steps, octree_resolution=args.octree, num_chunks=20000,
+                    generator=torch.manual_seed(2026), output_type='trimesh')[0]
     print(f'  {key}: shape in {time.time() - t1:.1f}s ({len(mesh.faces)} faces)', flush=True)
     mesh = FloaterRemover()(mesh)
     mesh = DegenerateFaceRemover()(mesh)
@@ -228,7 +232,7 @@ for key in keys:
         'source': {'image': s['icon']['url'], 'gameTexture': s['icon']['source'], 'sha256': s['icon']['sha256'], 'size': [s['icon']['width'], s['icon']['height']]},
         'generator': 'Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2mini shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py',
         'licenceNote': 'Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).',
-        'settings': {'upscale': 'RealESRGAN_x4plus 100->400 px', 'shape': 'tencent/Hunyuan3D-2mini hunyuan3d-dit-v2-mini', 'steps': args.steps,
+        'settings': {'upscale': 'RealESRGAN_x4plus 100->400 px', 'shape': f'tencent/Hunyuan3D-2mini {args.variant}', 'steps': args.steps,
                      'octree': args.octree, 'seed': 2026, 'faces': args.faces, 'texture': args.texture,
                      'view': view + (' mirrored' if mirror else ''), 'silhouetteIoU': round(float(iou), 3),
                      'device': torch.cuda.get_device_name(0)},
