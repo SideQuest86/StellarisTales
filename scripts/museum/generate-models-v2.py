@@ -47,6 +47,10 @@ if args.mv:
     args.steps, args.octree, args.faces, args.texture = max(args.steps, 50), max(args.octree, 380), max(args.faces, 40000), max(args.texture, 2048)
 TOOLS = Path(args.tools)
 sys.path.insert(0, str(TOOLS / 'hunyuan3d'))
+# Hunyuan weights used by the pipeline live in st-tools/hy3dgen-models/<repo>/<subfolder> (config + .fp16.safetensors
+# only); hy3dgen loads from there before trying Hugging Face, so unused variants need not stay in the HF cache.
+import os  # noqa: E402
+os.environ.setdefault('HY3DGEN_MODELS', str(TOOLS / 'hy3dgen-models'))
 
 import torch  # noqa: E402
 import trimesh  # noqa: E402

@@ -13,7 +13,8 @@ feature only (2026-10-14); all other site art stays original.
 | Provenance + settings per model | `public/museum/models/manifest.json` |
 | Inputs actually fed to the generator | `verification/museum/inputs/<key>-x4.png` (v2), `<key>.png` (v1) |
 | Visual inspection | `verification/museum/contact-sheet.png` (icon + 4 viewer angles per model), `verification/museum/shots/` |
-| Tool environment (outside the repo) | `D:/Saving/Living/CodexProjects/st-tools/` — `venv/` (Python 3.12, torch 2.11 cu128), `triposr/`, `hunyuan3d/`, `weights/RealESRGAN_x4plus.pth`, `hf/` (Hugging Face cache) |
+| Tool environment (outside the repo) | `D:/Saving/Living/CodexProjects/st-tools/` — `venv/` (Python 3.12, torch 2.11 cu128, ~5 GB), `hunyuan3d/` (code), `hy3dgen-models/` (only the weights v3 loads: Hunyuan3D-2mv `hunyuan3d-dit-v2-mv` and Hunyuan3D-2 `hunyuan3d-vae-v2-0-turbo`, config + `.fp16.safetensors`, ~5.1 GB; the generator sets `HY3DGEN_MODELS` to it), `hf/` (Hugging Face cache: Zero123++ ~5.3 GB), `weights/RealESRGAN_x4plus.pth`, `gltfpack/`, `triposr/` (v1 code) |
+| Storage note (2026-10-14) | Unused weights deleted at the user's request (44.5 GB: Hunyuan3D-2 full DiT, Hunyuan3D-2mini, TripoSR, DINO, duplicate checkpoint formats). Running v1 (TripoSR), single-view v2 or `--hq` again re-downloads their weights. |
 
 ## Pipelines
 
