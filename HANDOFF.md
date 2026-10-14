@@ -30,7 +30,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 ## Current state (2026-10-13)
 
 - Git: everything is committed on `main` at https://github.com/SideQuest86/StellarisTales (Archive CI on every push).
-- **Live: https://sidequest86.github.io/StellarisTales/ serves release v4.0.1 (`18abe485`, tag `v4.0.1`).** Verified
+- **Live: https://sidequest86.github.io/StellarisTales/ serves release v4.0.2 (`c0b8f203`, tag `v4.0.2`; v4.0.1 performance numbers below were re-measured live).** Verified v4.0.2 live: 1,388 stories, reader 13/13, walk 48 stories / 198 documents / 41 reversals / 0 errors, UI capture 50/50. Earlier v4.0.1 live run
   against the live URL on 2026-10-13 with local Chrome on the RTX 5070: reader checks 13/13 (incl. cross-story
   reading-context consistency), reading walk 48 stories / 212 documents / 43 reversals / 0 errors, UI capture 50/50,
   frame timing p95 6 ms for every interaction (worst frames: open 76 ms, chapter change 47 ms, back 18 ms). Publishing

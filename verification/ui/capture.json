@@ -1,6 +1,6 @@
 {
   "base": "https://sidequest86.github.io/StellarisTales/",
-  "startedAt": "2026-10-13T23:59:04.764Z",
+  "startedAt": "2026-10-14T00:21:04.805Z",
   "adapter": {
     "vendor": "Google Inc. (NVIDIA)",
     "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
@@ -75,15 +75,15 @@
       "name": "render loop idles when nothing moves",
       "ok": true,
       "detail": {
-        "drawn": 8769,
-        "drawnLater": 8769
+        "drawn": 8754,
+        "drawnLater": 8754
       }
     },
     {
       "name": "1600-open frame 0",
       "ok": true,
       "detail": {
-        "detail": 0.021,
+        "detail": 0.02,
         "reveal": 1
       }
     },
@@ -91,7 +91,7 @@
       "name": "1600-open frame 1",
       "ok": true,
       "detail": {
-        "detail": 0.153,
+        "detail": 0.151,
         "reveal": 1
       }
     },
@@ -99,7 +99,7 @@
       "name": "1600-open frame 2",
       "ok": true,
       "detail": {
-        "detail": 0.301,
+        "detail": 0.3,
         "reveal": 1
       }
     },
@@ -107,7 +107,7 @@
       "name": "1600-open frame 3",
       "ok": true,
       "detail": {
-        "detail": 0.45,
+        "detail": 0.453,
         "reveal": 0.001
       }
     },
@@ -115,7 +115,7 @@
       "name": "1600-open frame 4",
       "ok": true,
       "detail": {
-        "detail": 0.601,
+        "detail": 0.602,
         "reveal": 0.01
       }
     },
@@ -123,8 +123,8 @@
       "name": "1600-open frame 5",
       "ok": true,
       "detail": {
-        "detail": 0.75,
-        "reveal": 0.065
+        "detail": 0.752,
+        "reveal": 0.066
       }
     },
     {
@@ -227,7 +227,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.506
+        "reveal": 0.504
       }
     },
     {
@@ -243,7 +243,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.92
+        "reveal": 0.922
       }
     },
     {
@@ -272,7 +272,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.453
+        "reveal": 0.455
       }
     },
     {
@@ -280,7 +280,7 @@
       "ok": true,
       "detail": {
         "detail": 1,
-        "reveal": 0.75
+        "reveal": 0.753
       }
     },
     {
@@ -403,6 +403,6 @@
     "ST Sans Fallback"
   ],
   "largestStory": "cetana",
-  "finishedAt": "2026-10-14T00:00:35.966Z",
+  "finishedAt": "2026-10-14T00:22:34.616Z",
   "passed": true
 }
