@@ -51,14 +51,18 @@ inputs_dir.mkdir(parents=True, exist_ok=True)
 manifest_path = out_dir / 'manifest.json'
 manifest = json.loads(manifest_path.read_text(encoding='utf-8')) if manifest_path.exists() else {'models': []}
 specimens = {s['key']: s for s in json.loads((ROOT / 'public/museum/specimens.json').read_text(encoding='utf-8'))['specimens']}
-keys = list(specimens) if args.all else args.keys
+# --all runs rarest first, so an interrupted batch has covered the most notable exhibits.
+RANK = {'exceptional': 0, 'epic': 1, 'rare': 2, 'common': 3}
+keys = sorted(specimens, key=lambda k: (RANK.get(specimens[k]['rarity'], 9), k)) if args.all else args.keys
 if args.skip_existing:
     done = {m['key'] for m in manifest['models'] if m.get('pipeline') == 'v2'}
     keys = [k for k in keys if k not in done]
 
 device = 'cuda'
 t0 = time.time()
-upscaler = spandrel.ModelLoader().load_from_file(str(TOOLS / 'weights/RealESRGAN_x4plus.pth')).to(device).eval()
+# The upscaler runs on the CPU (a 100 px input takes ~1 s): keeping it in VRAM pushed an 8 GB laptop GPU into
+# shared-memory spill and slowed every diffusion step.
+upscaler = spandrel.ModelLoader().load_from_file(str(TOOLS / 'weights/RealESRGAN_x4plus.pth')).to('cpu').eval()
 TURBO = args.variant.endswith('turbo')
 # Turbo settings follow Tencent's examples/faster_shape_gen_with_flashvdm_mini_turbo.py (ckpt weights, 'merge' top-k).
 shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained('tencent/Hunyuan3D-2mini', subfolder=args.variant,
@@ -74,7 +78,7 @@ def upscale(icon):
     rgba = np.asarray(icon.convert('RGBA')).astype(np.float32) / 255
     rgb = rgba[..., :3] * rgba[..., 3:] + 0.5 * (1 - rgba[..., 3:])
     with torch.no_grad():
-        x = torch.from_numpy(rgb).permute(2, 0, 1)[None].to(device)
+        x = torch.from_numpy(rgb).permute(2, 0, 1)[None]
         y = upscaler(x).clamp(0, 1)[0].permute(1, 2, 0).cpu().numpy()
     alpha = icon.getchannel('A').resize((y.shape[1], y.shape[0]), Image.LANCZOS)
     out = Image.fromarray((y * 255).astype(np.uint8)).convert('RGBA')

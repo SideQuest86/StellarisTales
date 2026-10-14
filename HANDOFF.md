@@ -48,7 +48,19 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
   Remaining single frames: ~76 ms at the click that opens a story (layout of the new chapter text, before the
   extraction animation starts; the map is built after the card settles), ≤ 47 ms on a chapter change (map updates in
   the next idle period). No physical phone or other GPU tested; narrow layouts verified by emulation only.
-- Tests: 26 Node + 10 Python.
+- Tests: 32 Node + 10 Python.
+
+## 博物天枢 · Grand Archive museum (added 2026-10-14)
+
+- Read `docs/museum/GRAND-ARCHIVE.md` (verified mechanics), `docs/museum/MODELS.md` (3D generation workflow, tool
+  environment `D:/Saving/Living/CodexProjects/st-tools/`), `docs/museum/BUDGET.md` (task budget ledger).
+- Data `public/museum/specimens.json` (regenerate: `python scripts/extract-specimens.py`), UI `src/museum*.js/.css`,
+  models `public/museum/models/` + `manifest.json`. Check: `node scripts/verify-museum.mjs` (headed; set
+  `STELLARIS_WINDOW_POSITION=-1900,20` to keep the window on the user's left monitor). GPU tiers: `src/gpu.js`,
+  `node scripts/verify-gpu.mjs`, evidence `verification/gpu/`.
+- Continuation: finish/inspect the v2 batch (`generate-models-v2.py --all --skip-existing`), rebuild the contact sheet,
+  rerun museum + GPU checks, re-measure `verify-ui-perf.mjs` on the RTX once the GPU is idle, then publish by editing
+  `RELEASE`.
 
 ## Next work
 
