@@ -30,11 +30,11 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 ## Current state (2026-10-13)
 
 - Git: everything is committed on `main` at https://github.com/SideQuest86/StellarisTales (Archive CI on every push).
-- **Live: https://sidequest86.github.io/StellarisTales/ serves V4 (release v4.0.0, deployed from `b4f16f9d` by the
-  RELEASE file; tag `v4.0.0` marks `559bc204`, same site content).** Verified against the live URL on 2026-10-13:
-  reader checks 12/12, reading walk 24 stories / 116 documents / 23 reversals / 0 errors, UI capture 50/50 (local
-  Chrome, RTX 5070). The first live walk attempt failed and its cause was not captured; probably a timeout over the
-  network, as the rerun passed. Publishing again = edit `RELEASE` on `main` (RUNBOOK "Release").
+- **Live: https://sidequest86.github.io/StellarisTales/ serves release v4.0.1 (`18abe485`, tag `v4.0.1`).** Verified
+  against the live URL on 2026-10-13 with local Chrome on the RTX 5070: reader checks 13/13 (incl. cross-story
+  reading-context consistency), reading walk 48 stories / 212 documents / 43 reversals / 0 errors, UI capture 50/50,
+  frame timing p95 6 ms for every interaction (worst frames: open 76 ms, chapter change 47 ms, back 18 ms). Publishing
+  again = edit `RELEASE` on `main` (RUNBOOK "Release").
 - Model V4: 1,390 stories, 8,670 readable documents (all assigned); event inheritance (`base =`) resolved; compile
   deterministic and checked in CI; 0 compiler warnings; only the three intentional exclusion fragments are orphans.
 - Review: rounds 1–3 complete (ledgers in `content/chronology/review/`); every story `reviewed` with a guide. C1–C8
@@ -44,10 +44,10 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 - Cetana: whole chain reviewed (120 docs). 8295 / gifted_system: the only setter is 8295's own immediate while its
   trigger already requires it — not naturally reachable in the shipped script (no runtime verification). Databank
   1800-day project vs 900/540-day deadline: defines formula has undefined terms; the site claims neither outcome.
-- UI/performance (RTX 5070 Laptop, ANGLE D3D11, 170 Hz, unthrottled headed Chrome): idle, scroll, drag, open, chapter
-  change, back, map pan/zoom and close all p95 6 ms; one 65–112 ms frame at the click that opens a story (layout of
-  the new chapter text before the animation starts) and one ≤ 65 ms frame on a chapter change. No physical phone or
-  other GPU tested; narrow layouts verified by emulation only.
+- UI/performance (RTX 5070 Laptop, ANGLE D3D11, 170 Hz, unthrottled headed Chrome): every interaction p95 6 ms.
+  Remaining single frames: ~76 ms at the click that opens a story (layout of the new chapter text, before the
+  extraction animation starts; the map is built after the card settles), ≤ 47 ms on a chapter change (map updates in
+  the next idle period). No physical phone or other GPU tested; narrow layouts verified by emulation only.
 - Tests: 26 Node + 10 Python.
 
 ## Next work

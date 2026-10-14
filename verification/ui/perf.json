@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-13T23:40:16.515Z",
+  "measuredAt": "2026-10-14T00:00:54.324Z",
   "headless": false,
   "env": {
     "adapter": {
@@ -26,10 +26,10 @@
       "name": "idle (reference)",
       "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
       "rafIntervalsMs": {
-        "frames": 254,
+        "frames": 255,
         "p50": 5.9,
         "p95": 6,
-        "max": 6.1,
+        "max": 6,
         "over60Hz": 0,
         "over170Hz": 0
       },
@@ -43,19 +43,19 @@
       "name": "archive keyboard scroll",
       "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
       "rafIntervalsMs": {
-        "frames": 484,
+        "frames": 492,
         "p50": 5.9,
         "p95": 6,
-        "max": 11.9,
+        "max": 11.8,
         "over60Hz": 0,
-        "over170Hz": 10
+        "over170Hz": 8
       },
-      "sceneFramesRendered": 1561,
+      "sceneFramesRendered": 2145,
       "gpuMsPerSceneFrame": {
-        "samples": 1561,
+        "samples": 2140,
         "p50": 0.32,
-        "p95": 2.63,
-        "max": 4.186
+        "p95": 2.68,
+        "max": 8.328
       },
       "pixelRatioAfter": 1,
       "visibleInstances": 116,
@@ -68,16 +68,16 @@
         "frames": 403,
         "p50": 5.9,
         "p95": 6,
-        "max": 11.8,
+        "max": 11.6,
         "over60Hz": 0,
         "over170Hz": 1
       },
-      "sceneFramesRendered": 3720,
+      "sceneFramesRendered": 3429,
       "gpuMsPerSceneFrame": {
-        "samples": 3711,
+        "samples": 3421,
         "p50": 0.31,
-        "p95": 2.45,
-        "max": 4.533
+        "p95": 2.36,
+        "max": 4.358
       },
       "pixelRatioAfter": 1,
       "visibleInstances": 117,
@@ -87,19 +87,19 @@
       "name": "open story",
       "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
       "rafIntervalsMs": {
-        "frames": 271,
+        "frames": 274,
         "p50": 5.9,
         "p95": 6,
-        "max": 82.4,
-        "over60Hz": 4,
-        "over170Hz": 9
+        "max": 76.4,
+        "over60Hz": 5,
+        "over170Hz": 8
       },
-      "sceneFramesRendered": 2710,
+      "sceneFramesRendered": 2466,
       "gpuMsPerSceneFrame": {
-        "samples": 2701,
-        "p50": 0.43,
-        "p95": 0.89,
-        "max": 20.044
+        "samples": 2458,
+        "p50": 0.48,
+        "p95": 1.39,
+        "max": 10.437
       },
       "pixelRatioAfter": 1,
       "visibleInstances": 104,
@@ -109,41 +109,41 @@
       "name": "chapter change",
       "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
       "rafIntervalsMs": {
-        "frames": 263,
+        "frames": 260,
         "p50": 5.9,
         "p95": 6,
-        "max": 41,
-        "over60Hz": 1,
+        "max": 47,
+        "over60Hz": 2,
         "over170Hz": 3
       },
-      "sceneFramesRendered": 2630,
+      "sceneFramesRendered": 2340,
       "gpuMsPerSceneFrame": {
-        "samples": 2620,
+        "samples": 2314,
         "p50": 0.45,
-        "p95": 0.92,
-        "max": 7.79
+        "p95": 0.95,
+        "max": 8.561
       },
       "pixelRatioAfter": 1,
-      "visibleInstances": 104,
+      "visibleInstances": 103,
       "drawCalls": 5
     },
     {
       "name": "go back",
       "adapter": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
       "rafIntervalsMs": {
-        "frames": 272,
+        "frames": 273,
         "p50": 5.9,
         "p95": 6,
-        "max": 11.9,
+        "max": 17.7,
         "over60Hz": 0,
         "over170Hz": 2
       },
-      "sceneFramesRendered": 2720,
+      "sceneFramesRendered": 2457,
       "gpuMsPerSceneFrame": {
-        "samples": 2711,
+        "samples": 2449,
         "p50": 0.45,
         "p95": 0.93,
-        "max": 7.896
+        "max": 9.333
       },
       "pixelRatioAfter": 1,
       "visibleInstances": 105,
@@ -156,16 +156,16 @@
         "frames": 259,
         "p50": 5.9,
         "p95": 6,
-        "max": 6.1,
+        "max": 6.7,
         "over60Hz": 0,
         "over170Hz": 0
       },
-      "sceneFramesRendered": 2340,
+      "sceneFramesRendered": 2088,
       "gpuMsPerSceneFrame": {
-        "samples": 2301,
-        "p50": 0.44,
-        "p95": 1.01,
-        "max": 2.912
+        "samples": 2071,
+        "p50": 0.46,
+        "p95": 1.55,
+        "max": 3.604
       },
       "pixelRatioAfter": 1,
       "visibleInstances": 104,
@@ -178,7 +178,7 @@
         "frames": 309,
         "p50": 5.9,
         "p95": 6,
-        "max": 6.1,
+        "max": 6.2,
         "over60Hz": 0,
         "over170Hz": 0
       },
@@ -186,8 +186,8 @@
       "gpuMsPerSceneFrame": {
         "samples": 309,
         "p50": 0.34,
-        "p95": 0.56,
-        "max": 2.645
+        "p95": 0.55,
+        "max": 4.394
       },
       "pixelRatioAfter": 1,
       "visibleInstances": 117,
