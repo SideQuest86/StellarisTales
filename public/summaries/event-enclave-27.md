@@ -12,5 +12,9 @@ When a mercenary enclave's station enters battle, hidden enclave.27 recalls its 
 单窗口：合约按“285b.15条款”终止，舰队返回城邦星系，费用退还。两个选项（祝福对方 / 抱怨没读细则）效果相同。灵督城邦使用专门文本与画面。
 One window: the contract is ended under "clause 285b.15", the fleet returns home and the fee is refunded. Both replies have the same effect. Mindwarden enclaves use their own text and art.
 
+## 分支与结局 Branches and outcomes
+
+本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
+
 ## 审阅记录 Review notes
 已核对触发条件、退款效果与变体文本。覆盖完整。Checked trigger, refund and text variants. Coverage complete.

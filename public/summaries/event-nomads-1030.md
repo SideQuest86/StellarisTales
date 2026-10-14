@@ -20,6 +20,10 @@ The passenger class is absorbed into the population and the old luxuries are rep
 
 One reply by regular/hive/servitor/machine.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 类别改为 C1：依赖永恒航行起源的叛乱标记。

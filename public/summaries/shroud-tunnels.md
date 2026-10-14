@@ -21,6 +21,10 @@ The tunnel nexus is created with the Shroudwalker enclave's system; nodes come f
 ## 条件与文明差异 Conditions and variants
 6000/6005/6010 的正文按排外、亲外、蜂巢、机械变化。Texts vary by xenophile/xenophobe/hive/machine.
 
+## 分支与结局 Branches and outcomes
+
+本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
+
 ## 审阅记录 Review notes
 - 已核对随机表权重、6005→6010 的30天延迟与条件、6020→6025 的180天延迟、信标建筑的完成/摧毁回调。
 - 更正：草稿把这些事件拆成六个互不相关的一页故事；现按同一触发表组织。Correction: six unrelated one-page stories regrouped by their shared trigger table.

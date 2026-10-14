@@ -20,6 +20,10 @@ Following the signal starts the chain: the Hyacinth fleet finds the relay buoy (
 
 Option b in 9000 only logs the signal (the chain is begun, but nothing advances it).
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 修正：草稿把起点9000放在“游戏开始”杂项故事里，并把9005、9010分成两个故事；现按事件链合并。

@@ -14,6 +14,10 @@ Fires on a won war (on_war_won, 00_on_actions.txt:3123) when all of the loser's 
 
 One window with a three-part text that varies with the loser's government (generic, spiritualist, militarist, pacifist, materialist ...) and whether it is the galactic emperor.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

@@ -11,6 +11,14 @@
 按视角收到一种通知（互斥）：摧毁者 enclave.435——攻入后发现城邦几乎人去楼空，只剩一名冥想中的侍僧；其他有通讯的帝国 enclave.440；观察者 observer.95。同时所有帝国的“泽珞什一税”修正被移除（:7527–7529）。
 One notice per viewpoint: the destroyer (enclave.435) finds the station almost empty save one meditating acolyte; others in contact get enclave.440; observers observer.95. Every empire's Zro tithe modifier is removed.
 
+## 分支与结局 Branches and outcomes
+
+本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
+
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 已核对接收者与效果。覆盖完整。Coverage complete.
 （评注：435 中“其余成员去向不明”为原文，本档案不作推测。Commentary: where the others went is left unexplained in the source.）

@@ -14,6 +14,10 @@ After a pre-FTL world is conquered (on_colony_attackers_win, 00_on_actions.txt:8
 
 A single window whose text varies with policy and civic (normal, purge citizenship, servitor, assimilator ...).
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

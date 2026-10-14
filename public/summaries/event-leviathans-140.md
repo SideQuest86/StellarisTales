@@ -13,5 +13,9 @@ When a trader enclave's headquarters station is destroyed.
 One notice per viewpoint: the destroyer gets 141 (large resource haul); others in contact get 142/143/144 by enclave (text varies with past trade and whether the attacker is known); observers get observer.8–10.
 此后该城邦的菜单与协定终结。The enclave's menu and deals end.
 
+## 分支与结局 Branches and outcomes
+
+本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
+
 ## 审阅记录 Review notes
 已核对 140 的接收者分派与各通知的文本条件。覆盖完整。Coverage complete.

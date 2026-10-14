@@ -20,6 +20,10 @@ bio.3310：被同化者宣告我方物种基因已被收录（“熟悉面孔”
 
 bio.3310: the assimilated one announces our genome has been secured (Familiar Face hives get their own reply). bio.3315: they risk sending a data packet; accepting gives a 50% chance of a genuine Fallen Empire building, otherwise it was a test and angers the fragment. Refusing bio.3305 only displeases the fragment.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对 bio.3305.a 的 random_list 权重（L9032-9044）与两种通讯的效果。

@@ -20,6 +20,10 @@ action.62 的 after 块：若玩家有 payback_stolen_revenge 标记则 15 天�
 
 The after block of action.62: with the payback_stolen_revenge flag origin.4070 follows after 15 days, with payback_killed_MSI origin.4061 (Payback origin, other stories). Memorialist civics get an extra option.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

@@ -13,6 +13,14 @@ When we enter battle against an enclave that supplied one of our leaders, that l
 单一领袖窗口 enclave.8000：领袖留言后离开；若其任职议会，议程进度-20%。正文与画面按领袖类型、是否任职议会变化。每类只触发一次（各自标记）。
 One leader window: the leader leaves a parting message; a councilor's departure costs 20% agenda progress. Text and art vary by leader type and council seat.
 
+## 分支与结局 Branches and outcomes
+
+本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
+
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 - 更正：草稿把同一窗口分成三个一页故事（390、7200、605）；现合并为一个故事，商人城邦路线以跨故事链接接入。
   Correction: three duplicate one-page stories merged; the trader route links in from the trader reaction windows.

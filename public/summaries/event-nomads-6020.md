@@ -20,6 +20,10 @@ Strange noises come from the hold. Option a ignores them; option b investigates 
 
 The six results are exclusive, each with one to three ways to deal with it (some need alloys, trade or consumer goods).
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

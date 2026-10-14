@@ -14,6 +14,10 @@ strange_worlds.2030“致命变异”：社会研究奖励；所有有机物种�
 
 strange_worlds.2030 "Fatal Mutations": a society research reward; every organic species gains trait_geleboric_mutations (portrait switched to a toxoid or lithoid look) and part of the population dies.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

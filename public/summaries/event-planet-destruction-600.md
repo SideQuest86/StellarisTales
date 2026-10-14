@@ -14,6 +14,10 @@ Fragging, shielding or flooding a holy world (holy_planet modifier), or terrafor
 
 Windows 610/615 offer options by the perpetrator's ethic or civic (spiritualist, materialist, militarist ... gestalt, devouring swarm, terminator, purifier); the options themselves have no effect. Its after block sets holy_world_killed and fires fallen_empires_awakening.1 at that fallen empire, which awakens (every player gets fallen_empires_awakening.2 "Sleepers Awake" and 5 days later planet_destruction.611 declares the "... Holy World War" with a subjugation war goal, events/fallen_empire_awakening_events.txt:138-144). Continues in the fallen-empire awakening stories.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

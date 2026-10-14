@@ -14,6 +14,10 @@ Surveying a planet with a primitive civilisation (on_survey_planet, 00_on_action
 
 Exclusive branches matched in order (first hit stops): stone to steam age civilisations give action.5 ("[Primitive] Encountered"); industrial, machine, atomic and early-space age give action.6; "human" civilisations flagged humans_* give galactic_features.101 (late medieval), .102 (machine age), .103 (early space age); benefactor empires give origin.1355. action.5 and action.6 both lead 30 days later to story.6 (another story).
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

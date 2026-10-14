@@ -12,5 +12,13 @@
 One notice per viewpoint: the destroyer gets enclave.375, other empires in contact get enclave.380, observers get observer.90.
 此后“打捞者城邦”的联络菜单及其服务不再可用。The Salvager contact menu and its services end.
 
+## 分支与结局 Branches and outcomes
+
+本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
+
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 已核对接收者筛选与三份通知。覆盖完整。Coverage complete.

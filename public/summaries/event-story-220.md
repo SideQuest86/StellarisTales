@@ -14,6 +14,10 @@ story.220“水晶球”：正文随是否集群意识、是否已有 crystal_hu
 
 story.220 "Crystal Ball": the text varies with gestalt status and the crystal_hunting_buff. Empires without the buff only have "OK"; with the buff the option is "Battlestations!". Destroying the large crystal station (on_ship_destroyed_perp, common/on_actions/00_on_actions.txt:1458) shows story.222 "Crystal Shattered", which grants a research option for tech_crystal_armor_2.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

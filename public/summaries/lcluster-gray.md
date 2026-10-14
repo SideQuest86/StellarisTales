@@ -20,6 +20,10 @@
 - 没有终局；小灰可在行政官、战舰、地面部队之间切换。
 - `graygoo.550`「诡异的宁静」是空星团中首次进入星系时的独立氛围事件，与小灰的相遇无直接联系。
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 由原“星团的秘密”拆出。未读：`create_gray_official/warship/army` 的脚本效果。

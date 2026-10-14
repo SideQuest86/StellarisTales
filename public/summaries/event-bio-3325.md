@@ -20,6 +20,10 @@ The Control fragment demands that the current resolution pass or fail (random 50
 
 When the resolution passes or fails, hidden bio.3335 / bio.3340 clear the demand flags (on_resolution_passed / on_resolution_failed); no further window. Empires with the Politics tradition get an extra reply.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对两步触发与表决结果的处理；草稿入口 bio.3330 正确，触发说明已补全。

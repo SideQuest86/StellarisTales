@@ -15,5 +15,9 @@ One notice per viewpoint (exclusive):
 - 其他与城邦有通讯的帝国：enclave.26（增加城邦容量修正）；城邦建立者的回复为“他们会为此付出代价”。Others in contact: enclave.26; the founder answers "They will pay for this."
 随后城邦国家被解散，两天后各帝国的城邦容量修正被重新计算（enclave.24）。The enclave country is then dissolved; enclave capacity is recalculated two days later.
 
+## 分支与结局 Branches and outcomes
+
+本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
+
 ## 审阅记录 Review notes
 已核对 enclave.23 的接收者筛选、两份通知及选项条件。覆盖完整。Checked recipients, both notices and option conditions. Coverage complete.

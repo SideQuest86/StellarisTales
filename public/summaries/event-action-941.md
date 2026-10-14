@@ -14,6 +14,10 @@ When a survey finds a strategic resource deposit (00_on_actions.txt:1151) hidden
 
 Split by origin and resource: Shroud-Forged finding Zro - action.942; Mindwardens finding Zro - action.943 (also 10% progress on tech_mine_zro); everyone else - action.94 (text varies by resource, with a has_tech variant if the tech is already known). Later discoveries only send a message, no window.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

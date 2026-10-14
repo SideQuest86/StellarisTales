@@ -14,6 +14,10 @@ Fires when a war is lost (on_war_lost, 00_on_actions.txt:3157).
 
 A diplomatic window whose text varies with the winner's AI personality and describes the terms of defeat.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

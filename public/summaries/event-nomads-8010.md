@@ -20,6 +20,10 @@ Approaching the Target 8010 -> Systems Compromised 8015 -> Waystation Heist 8020
 
 8025's options are exclusive; 8030 gives the victim different replies for looting vs destruction/theft.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 修正：草稿把三个阶段事件并列为入口；现按行动定义排序，标题改用行动名。

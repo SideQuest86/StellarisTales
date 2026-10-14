@@ -14,6 +14,10 @@ One day after any Colossus weapon destroys or changes a planet with an observati
 
 The text varies: you destroyed the world yourself, it was shattered, shielded or swept; option A dismantles the outpost; option B (homicidal/xenophobe empires, planet shattered) dismantles it and grants monthly unity. planet_destruction.1005 ("Eaten") is the dispatcher of the Oversized Maw weapon and triggers the same window.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对入口、触发、选项与结果。

@@ -20,6 +20,10 @@ The Growth fragment finds one of our species "boring" and offers three ways to m
 
 Three of fourteen phenotype modifications are offered at random; any of them gives that species a random trait of the phenotype and pleases the fragment; refusing displeases it. Evolutionary Predators targeting their own species get an option adding 50% to the Adaptive Evolution situation.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对候选选项的生成与各选项效果；无后续窗口。

@@ -20,6 +20,10 @@ Seven independent one-window events: refugees cross the border (701), border ski
 
 The events have no order and no follow-up windows.
 
+## 条件与文明差异 Conditions and variants
+
+本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
+
 ## 审阅记录 Review notes
 
 - 已核对抽取权重与各事件的一次性标记。标题使用 701 的原文。
