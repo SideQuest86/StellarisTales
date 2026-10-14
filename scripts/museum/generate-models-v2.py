@@ -33,8 +33,18 @@ ap.add_argument('--faces', type=int, default=24000)
 ap.add_argument('--texture', type=int, default=1024)
 ap.add_argument('--octree', type=int, default=256)
 ap.add_argument('--steps', type=int, default=30)
-ap.add_argument('--variant', default='hunyuan3d-dit-v2-mini', help='hunyuan3d-dit-v2-mini (30 steps) or hunyuan3d-dit-v2-mini-turbo (5 steps)')
+ap.add_argument('--repo', default='tencent/Hunyuan3D-2mini', help='tencent/Hunyuan3D-2mini or tencent/Hunyuan3D-2')
+ap.add_argument('--variant', default='hunyuan3d-dit-v2-mini', help='hunyuan3d-dit-v2-mini(-turbo) or hunyuan3d-dit-v2-0')
+ap.add_argument('--guidance', type=float, default=5.0, help='classifier-free guidance scale (pipeline default 5.0)')
+ap.add_argument('--hq', action='store_true', help='quality preset: Hunyuan3D-2 full DiT, 50 steps, octree 380, 40k faces, 2048 texture')
+ap.add_argument('--mv', action='store_true', help='multi-view: Zero123++ views (scripts/museum/novel-views.py) -> Hunyuan3D-2mv shape + multi-view texture')
+ap.add_argument('--mvmap', default='a', help="a: left=az90 right=az270; b: left=az270 right=az90 (Zero123++ azimuths)")
 args = ap.parse_args()
+if args.hq:
+    args.repo, args.variant, args.steps, args.octree, args.faces, args.texture = 'tencent/Hunyuan3D-2', 'hunyuan3d-dit-v2-0', 50, 380, 40000, 2048
+if args.mv:
+    args.repo, args.variant = 'tencent/Hunyuan3D-2mv', 'hunyuan3d-dit-v2-mv'
+    args.steps, args.octree, args.faces, args.texture = max(args.steps, 50), max(args.octree, 380), max(args.faces, 40000), max(args.texture, 2048)
 TOOLS = Path(args.tools)
 sys.path.insert(0, str(TOOLS / 'hunyuan3d'))
 
@@ -54,8 +64,9 @@ specimens = {s['key']: s for s in json.loads((ROOT / 'public/museum/specimens.js
 # --all runs rarest first, so an interrupted batch has covered the most notable exhibits.
 RANK = {'exceptional': 0, 'epic': 1, 'rare': 2, 'common': 3}
 keys = sorted(specimens, key=lambda k: (RANK.get(specimens[k]['rarity'], 9), k)) if args.all else args.keys
+PIPELINE = 'v3' if args.mv else 'v2'
 if args.skip_existing:
-    done = {m['key'] for m in manifest['models'] if m.get('pipeline') == 'v2'}
+    done = {m['key'] for m in manifest['models'] if m.get('pipeline') == PIPELINE}
     keys = [k for k in keys if k not in done]
 
 device = 'cuda'
@@ -65,7 +76,7 @@ t0 = time.time()
 upscaler = spandrel.ModelLoader().load_from_file(str(TOOLS / 'weights/RealESRGAN_x4plus.pth')).to('cpu').eval()
 TURBO = args.variant.endswith('turbo')
 # Turbo settings follow Tencent's examples/faster_shape_gen_with_flashvdm_mini_turbo.py (ckpt weights, 'merge' top-k).
-shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained('tencent/Hunyuan3D-2mini', subfolder=args.variant,
+shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(args.repo, subfolder=args.variant,
                                                             **({'use_safetensors': False} if TURBO else {}))
 # FlashVDM: hierarchical volume decoding (turbo VAE of the same repo) — the plain dense decode of a 256^3 field did
 # not finish in 20 min on an 8 GB laptop GPU.
@@ -147,15 +158,53 @@ def align(mesh, icon):
     return best
 
 
-def project_texture(mesh, icon, frame, d, texture):
-    """UV atlas + per-texel projection of the (upscaled) icon along the chosen view."""
+def rotate_y(d, deg):
+    t = np.radians(deg)
+    c, s = np.cos(t), np.sin(t)
+    return np.array([c * d[0] + s * d[2], d[1], -s * d[0] + c * d[2]])
+
+
+def tilt(d, el):
+    e = np.radians(el)
+    v = np.cos(e) * d + np.sin(e) * np.array([0, 1.0, 0])
+    return v / np.linalg.norm(v)
+
+
+def view_iou(mesh, d, img):
+    sil, _ = silhouette(mesh, d, False)
+    a = np.asarray(img.getchannel('A')) > 127
+    ys, xs = np.nonzero(a)
+    ys2, xs2 = np.nonzero(sil)
+    if not len(xs) or not len(xs2):
+        return 0.0
+    crop = Image.fromarray((a[ys.min():ys.max() + 1, xs.min():xs.max() + 1] * 255).astype(np.uint8))
+    target = np.asarray(crop.resize((xs2.max() - xs2.min() + 1, ys2.max() - ys2.min() + 1))) > 127
+    region = sil[ys2.min():ys2.max() + 1, xs2.min():xs2.max() + 1]
+    return float((region & target).sum() / max(1, (region | target).sum()))
+
+
+def view_frame(mesh, d):
+    right, up = basis(d)
+    p = np.stack([mesh.vertices @ right, mesh.vertices @ up], 1)
+    return right, up, p.min(0), p.max(0)
+
+
+def project_texture(mesh, icon, frame, d, texture, extra=()):
+    """UV atlas + per-texel projection. The icon (front view, original art) dominates where it faces the texel;
+    `extra` synthesized views (image, direction) fill sides/back by their own facing weight."""
     vmap, faces, uvs = xatlas.parametrize(mesh.vertices, mesh.faces)
     verts, normals = mesh.vertices[vmap], mesh.vertex_normals[vmap]
+    views = [(icon, d, frame, 4.0)] + [(img, vd, view_frame(mesh, vd), 1.0) for img, vd in extra]
+    prepared = []
+    for img, vd, fr, weight in views:
+        a = np.asarray(img.getchannel('A')) > 127
+        ys, xs = np.nonzero(a)
+        prepared.append((np.asarray(fill_transparent(img)).astype(np.float32), (xs.min(), ys.min(), xs.max(), ys.max()), vd, fr, weight))
     right, up, lo, hi = frame
     a = np.asarray(icon.getchannel('A')) > 127
     ys, xs = np.nonzero(a)
     box = (xs.min(), ys.min(), xs.max(), ys.max())
-    filled = np.asarray(fill_transparent(icon)).astype(np.float32)
+    filled = prepared[0][0]
     H, W = filled.shape[:2]
     tex = np.zeros((texture, texture, 3), np.float32)
     written = np.zeros((texture, texture), bool)
@@ -178,16 +227,33 @@ def project_texture(mesh, icon, frame, d, texture):
         p = L @ verts[tri]
         n = L @ normals[tri]
         n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-9
-        sx = (p @ right - lo[0]) / (hi[0] - lo[0])
-        sy = 1 - (p @ up - lo[1]) / (hi[1] - lo[1])
-        px = np.clip(box[0] + sx * (box[2] - box[0]), 0, W - 1).astype(int)
-        py = np.clip(box[1] + sy * (box[3] - box[1]), 0, H - 1).astype(int)
-        col = filled[py, px]
-        facing = n @ d
-        shade = np.where(facing >= 0, 1.0, 0.55 + 0.15 * (1 + facing))[:, None]  # away-facing: dimmed guess
+        if len(prepared) == 1:
+            sx = (p @ right - lo[0]) / (hi[0] - lo[0])
+            sy = 1 - (p @ up - lo[1]) / (hi[1] - lo[1])
+            px = np.clip(box[0] + sx * (box[2] - box[0]), 0, W - 1).astype(int)
+            py = np.clip(box[1] + sy * (box[3] - box[1]), 0, H - 1).astype(int)
+            col = filled[py, px]
+            facing = n @ d
+            shade = np.where(facing >= 0, 1.0, 0.55 + 0.15 * (1 + facing))[:, None]  # away-facing: dimmed guess
+            col = col * shade
+        else:
+            acc = np.zeros((len(p), 3), np.float32)
+            wsum = np.zeros(len(p), np.float32)
+            for img_arr, vbox, vd, (vr, vu, vlo, vhi), weight in prepared:
+                vh, vw = img_arr.shape[:2]
+                sx = (p @ vr - vlo[0]) / (vhi[0] - vlo[0])
+                sy = 1 - (p @ vu - vlo[1]) / (vhi[1] - vlo[1])
+                px = np.clip(vbox[0] + sx * (vbox[2] - vbox[0]), 0, vw - 1).astype(int)
+                py = np.clip(vbox[1] + sy * (vbox[3] - vbox[1]), 0, vh - 1).astype(int)
+                w = weight * np.clip(n @ vd, 0, None) ** 3
+                acc += img_arr[py, px] * w[:, None]
+                wsum += w
+            front = filled[np.clip(box[1] + (1 - (p @ up - lo[1]) / (hi[1] - lo[1])) * (box[3] - box[1]), 0, H - 1).astype(int),
+                           np.clip(box[0] + (p @ right - lo[0]) / (hi[0] - lo[0]) * (box[2] - box[0]), 0, W - 1).astype(int)] * 0.6
+            col = np.where(wsum[:, None] > 1e-4, acc / np.maximum(wsum, 1e-4)[:, None], front)
         tx, ty = gx[inside], gy[inside]
         ok = (tx >= 0) & (tx < texture) & (ty >= 0) & (ty < texture)
-        tex[texture - 1 - ty[ok], tx[ok]] = col[ok] * shade[ok]
+        tex[texture - 1 - ty[ok], tx[ok]] = col[ok]
         written[texture - 1 - ty[ok], tx[ok]] = True
     # Dilate the atlas a few texels so seams do not show the background.
     img = Image.fromarray(np.clip(tex, 0, 255).astype(np.uint8))
@@ -206,7 +272,17 @@ for key in keys:
     big = upscale(icon)
     big.save(inputs_dir / f'{key}-x4.png')
     print(f'  {key}: upscaled in {time.time() - t1:.1f}s', flush=True)
-    mesh = shapegen(image=big, num_inference_steps=args.steps, octree_resolution=args.octree, num_chunks=20000,
+    views = {}
+    if args.mv:
+        # Zero123++ views: azimuth -> (image, elevation); see scripts/museum/novel-views.py.
+        vdir = ROOT / 'verification/museum/views'
+        views = {az: (Image.open(vdir / f'{key}-{az}.png').convert('RGBA'), el) for az, el in
+                 ((30, 20), (90, -10), (150, 20), (210, -10), (270, 20), (330, -10))}
+        side_l, side_r = (90, 270) if args.mvmap == 'a' else (270, 90)
+        image_in = {'front': big, 'left': views[side_l][0], 'back': views[210][0], 'right': views[side_r][0]}
+    else:
+        image_in = big
+    mesh = shapegen(image=image_in, num_inference_steps=args.steps, octree_resolution=args.octree, num_chunks=20000, guidance_scale=args.guidance,
                     generator=torch.manual_seed(2026), output_type='trimesh')[0]
     print(f'  {key}: shape in {time.time() - t1:.1f}s ({len(mesh.faces)} faces)', flush=True)
     mesh = FloaterRemover()(mesh)
@@ -214,7 +290,13 @@ for key in keys:
     mesh = FaceReducer()(mesh, max_facenum=args.faces)
     iou, view, mirror, frame = align(mesh, big)
     d = AXES[view]
-    verts, faces, uvs, tex = project_texture(mesh, big, frame, d, args.texture)
+    extra, view_fit = [], None
+    if views:
+        # One rotation sense for all synthesized views: the sign whose silhouettes match the views best overall.
+        best = max((sum(view_iou(mesh, tilt(rotate_y(d, sign * az), el), img) for az, (img, el) in views.items()), sign) for sign in (1, -1))
+        view_fit = round(best[0] / len(views), 3)
+        extra = [(img, tilt(rotate_y(d, best[1] * az), el)) for az, (img, el) in views.items()]
+    verts, faces, uvs, tex = project_texture(mesh, big, frame, d, args.texture, extra)
     print(f'  {key}: textured in {time.time() - t1:.1f}s', flush=True)
     buf = io.BytesIO()
     tex.save(buf, 'JPEG', quality=86, optimize=True)
@@ -232,13 +314,14 @@ for key in keys:
     glb = out.export(file_type='glb')
     (out_dir / f'{key}.glb').write_bytes(glb)
     entry = {
-        'key': key, 'file': f'museum/models/{key}.glb', 'bytes': len(glb), 'triangles': int(len(faces)), 'pipeline': 'v2',
+        'key': key, 'file': f'museum/models/{key}.glb', 'bytes': len(glb), 'triangles': int(len(faces)), 'pipeline': PIPELINE,
         'source': {'image': s['icon']['url'], 'gameTexture': s['icon']['source'], 'sha256': s['icon']['sha256'], 'size': [s['icon']['width'], s['icon']['height']]},
-        'generator': 'Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2mini shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py',
+        'generator': f'Real-ESRGAN x4plus (BSD-3) + {args.repo.split("/")[-1]} shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py' + (' --hq' if args.hq else ''),
         'licenceNote': 'Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).',
-        'settings': {'upscale': 'RealESRGAN_x4plus 100->400 px', 'shape': f'tencent/Hunyuan3D-2mini {args.variant}', 'steps': args.steps,
+        'settings': {'upscale': 'RealESRGAN_x4plus 100->400 px', 'shape': f'{args.repo} {args.variant}', 'steps': args.steps, 'guidance': args.guidance,
                      'octree': args.octree, 'seed': 2026, 'faces': args.faces, 'texture': args.texture,
                      'view': view + (' mirrored' if mirror else ''), 'silhouetteIoU': round(float(iou), 3),
+                     **({'multiView': f'Zero123++ v1.2 (sudo-ai, Apache-2.0) 6 views, map {args.mvmap}', 'viewsIoU': view_fit} if views else {}),
                      'device': torch.cuda.get_device_name(0)},
         'date': datetime.date.today().isoformat(), 'seconds': round(time.time() - t1, 1), 'status': 'generated', 'canonical': False,
     }

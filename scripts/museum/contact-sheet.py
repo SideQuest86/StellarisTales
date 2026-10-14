@@ -20,4 +20,5 @@ for row, m in enumerate(models):
             im.thumbnail((W, H))
             sheet.paste(im, (W * (i + 1), row * H))
 sheet.save(ROOT / 'verification/museum/contact-sheet.png')
+(ROOT / 'verification/museum/contact-order.json').write_text(json.dumps([m['key'] for m in models]), encoding='utf-8')
 print('contact sheet:', len(models), 'models')

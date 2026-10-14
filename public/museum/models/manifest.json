@@ -137,15 +137,15 @@
    "canonical": false
   },
   {
-   "key": "captain_ness_logbook",
-   "file": "museum/models/captain_ness_logbook.glb",
-   "bytes": 917392,
+   "key": "captain_ness_body",
+   "file": "museum/models/captain_ness_body.glb",
+   "bytes": 747840,
    "triangles": 24000,
    "pipeline": "v2",
    "source": {
-    "image": "museum/img/captain_ness_logbook.webp",
-    "gameTexture": "gfx/interface/icons/specimens/captain_ness_logbook.dds",
-    "sha256": "3b2830c1ff6dbb5c20c1a3b6d3f12738a3c4f4415ecb07815c6b8251deace748",
+    "image": "museum/img/captain_ness_body.webp",
+    "gameTexture": "gfx/interface/icons/specimens/captain_ness_body.dds",
+    "sha256": "6fef1a33ef3bc9cc82c37edcf6dda97b3fbcf1161a5a1d137e01355c0872cd97",
     "size": [
      100,
      100
@@ -161,12 +161,221 @@
     "seed": 2026,
     "faces": 24000,
     "texture": 1024,
-    "view": "+x mirrored",
-    "silhouetteIoU": 0.797,
+    "view": "+z",
+    "silhouetteIoU": 0.775,
     "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
    },
    "date": "2026-10-13",
-   "seconds": 165.3,
+   "seconds": 149.0,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "cetana_love",
+   "file": "museum/models/cetana_love.glb",
+   "bytes": 843008,
+   "triangles": 24000,
+   "pipeline": "v2",
+   "source": {
+    "image": "museum/img/cetana_love.webp",
+    "gameTexture": "gfx/interface/icons/specimens/cetana_love.dds",
+    "sha256": "41f4a2a5b166e53c90dbf9a0e1e90656f4ad8c5c014680248b82077547546a8d",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2mini shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py",
+   "licenceNote": "Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).",
+   "settings": {
+    "upscale": "RealESRGAN_x4plus 100->400 px",
+    "shape": "tencent/Hunyuan3D-2mini hunyuan3d-dit-v2-mini",
+    "steps": 30,
+    "octree": 256,
+    "seed": 2026,
+    "faces": 24000,
+    "texture": 1024,
+    "view": "+z",
+    "silhouetteIoU": 0.836,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 145.8,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "claw_of_the_trickster",
+   "file": "museum/models/claw_of_the_trickster.glb",
+   "bytes": 675040,
+   "triangles": 24000,
+   "pipeline": "v2",
+   "source": {
+    "image": "museum/img/claw_of_the_trickster.webp",
+    "gameTexture": "gfx/interface/icons/specimens/claw_of_the_trickster.dds",
+    "sha256": "5ea3ba2f8caf9579e53b6da62d87e84a4edf16610951b0d8ea7fcc1fa926851d",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2mini shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py",
+   "licenceNote": "Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).",
+   "settings": {
+    "upscale": "RealESRGAN_x4plus 100->400 px",
+    "shape": "tencent/Hunyuan3D-2mini hunyuan3d-dit-v2-mini",
+    "steps": 30,
+    "octree": 256,
+    "seed": 2026,
+    "faces": 24000,
+    "texture": 1024,
+    "view": "+z",
+    "silhouetteIoU": 0.701,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 143.7,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "crystal_sphere_fragments",
+   "file": "museum/models/crystal_sphere_fragments.glb",
+   "bytes": 728344,
+   "triangles": 24000,
+   "pipeline": "v2",
+   "source": {
+    "image": "museum/img/crystal_sphere_fragments.webp",
+    "gameTexture": "gfx/interface/icons/specimens/crystal_sphere_fragments.dds",
+    "sha256": "bed072353d23cefe2fb4aee39c08911ec7798a5889a4f22de9072ea98626bc98",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2mini shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py",
+   "licenceNote": "Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).",
+   "settings": {
+    "upscale": "RealESRGAN_x4plus 100->400 px",
+    "shape": "tencent/Hunyuan3D-2mini hunyuan3d-dit-v2-mini",
+    "steps": 30,
+    "octree": 256,
+    "seed": 2026,
+    "faces": 24000,
+    "texture": 1024,
+    "view": "+z",
+    "silhouetteIoU": 0.897,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 159.0,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "alien_jewelry",
+   "file": "museum/models/alien_jewelry.glb",
+   "bytes": 1527224,
+   "triangles": 40000,
+   "pipeline": "v2",
+   "source": {
+    "image": "museum/img/alien_jewelry.webp",
+    "gameTexture": "gfx/interface/icons/specimens/alien_jewelry.dds",
+    "sha256": "36c11a9593b7d45682856726dc457d456366ca4244c048d765d1d5cba1b64c08",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2 shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py --hq",
+   "licenceNote": "Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).",
+   "settings": {
+    "upscale": "RealESRGAN_x4plus 100->400 px",
+    "shape": "tencent/Hunyuan3D-2 hunyuan3d-dit-v2-0",
+    "steps": 50,
+    "guidance": 5.0,
+    "octree": 380,
+    "seed": 2026,
+    "faces": 40000,
+    "texture": 2048,
+    "view": "+z",
+    "silhouetteIoU": 0.766,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 65.9,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "captain_ness_logbook",
+   "file": "museum/models/captain_ness_logbook.glb",
+   "bytes": 1773504,
+   "triangles": 40000,
+   "pipeline": "v2",
+   "source": {
+    "image": "museum/img/captain_ness_logbook.webp",
+    "gameTexture": "gfx/interface/icons/specimens/captain_ness_logbook.dds",
+    "sha256": "3b2830c1ff6dbb5c20c1a3b6d3f12738a3c4f4415ecb07815c6b8251deace748",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2 shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py --hq",
+   "licenceNote": "Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).",
+   "settings": {
+    "upscale": "RealESRGAN_x4plus 100->400 px",
+    "shape": "tencent/Hunyuan3D-2 hunyuan3d-dit-v2-0",
+    "steps": 50,
+    "guidance": 5.0,
+    "octree": 380,
+    "seed": 2026,
+    "faces": 40000,
+    "texture": 2048,
+    "view": "+x mirrored",
+    "silhouetteIoU": 0.79,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 76.2,
+   "status": "generated",
+   "canonical": false
+  },
+  {
+   "key": "altar_to_the_elder_one",
+   "file": "museum/models/altar_to_the_elder_one.glb",
+   "bytes": 1753340,
+   "triangles": 40000,
+   "pipeline": "v2",
+   "source": {
+    "image": "museum/img/altar_to_the_elder_one.webp",
+    "gameTexture": "gfx/interface/icons/specimens/altar_to_the_elder_one.dds",
+    "sha256": "6f04eb6be47f1607f8a93a0d5fe2837093fc2cba3420ad60a7811b8ec5b30be7",
+    "size": [
+     100,
+     100
+    ]
+   },
+   "generator": "Real-ESRGAN x4plus (BSD-3) + Hunyuan3D-2mv shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py",
+   "licenceNote": "Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).",
+   "settings": {
+    "upscale": "RealESRGAN_x4plus 100->400 px",
+    "shape": "tencent/Hunyuan3D-2mv hunyuan3d-dit-v2-mv",
+    "steps": 50,
+    "guidance": 5.0,
+    "octree": 380,
+    "seed": 2026,
+    "faces": 40000,
+    "texture": 2048,
+    "view": "+z",
+    "silhouetteIoU": 0.684,
+    "multiView": "Zero123++ v1.2 (sudo-ai, Apache-2.0) 6 views, map b",
+    "viewsIoU": 0.663,
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
+   },
+   "date": "2026-10-13",
+   "seconds": 153.2,
    "status": "generated",
    "canonical": false
   }
