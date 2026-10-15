@@ -114,7 +114,7 @@ function toast(s) {
 }
 async function json(path) {
   const r = await fetch(asset(path));
-  if (!r.ok) throw new Error(T("这份记忆暂时未能抵达，请稍后重试。", "This memory could not be reached. Please try again."));
+  if (!r.ok) throw new Error(T("未能载入，请稍后重试。", "Could not load. Please try again."));
   return r.json();
 }
 const cache = new Map();
@@ -415,7 +415,7 @@ function profilePanel() {
   axes.push(`<label><span>${esc(T("政体", "Authority"))}</span><select data-profile-set="authorities">${option("", T("未指定", "Unspecified"), !auth)}${profileOptions.authorities.map((a) => option(a.key, local(a.label), a.key === auth)).join("")}</select></label>`);
   const origin = profileOptions.origins.find((o) => profile[o.key])?.key || "";
   axes.push(`<label><span>${esc(T("起源", "Origin"))}</span><select data-profile-set="origins">${option("", T("未指定", "Unspecified"), !origin)}${profileOptions.origins.map((o) => option(o.key, local(o.label), o.key === origin)).join("")}</select></label>`);
-  return `<div class="profile-panel"><p>${esc(T("设定后，所有文档的文明相关文本与选项都按此一致显示；未指定的项目会显示全部可能。这不是存档模拟。", "Once set, every document resolves empire-dependent text and options consistently; unspecified traits show every possibility. This is not a save-game simulation."))}</p>${axes.join("")}</div>`;
+  return `<div class="profile-panel"><p>${esc(T("设定后，所有文档按此一致显示文明相关文本与选项；未指定项显示全部可能。非存档模拟。", "Once set, all documents show empire-dependent text and options consistently; unspecified traits show every possibility. Not a save simulation."))}</p>${axes.join("")}</div>`;
 }
 function setProfileGroup(list, key) {
   for (const item of list) delete profile[item.key];
@@ -550,9 +550,9 @@ function renderChapter(preservePosition = false) {
   if (chapter.ending && !nextEdges.length) {
     nextReading = `<div class="reading-ending"><strong>${esc(local(chapter.ending.label))}</strong><p>${esc(local(chapter.ending.note))}</p></div>`;
   } else if (r.choices.length) {
-    nextReading = `<span class="reading-complete">${esc(T("选择回应，沿这条路线继续", "Choose a response to follow its path"))}</span>`;
+    nextReading = `<span class="reading-complete">${esc(T("选择一个回应", "Choose a response"))}</span>`;
   } else if (!nextEdges.length) {
-    nextReading = `<span class="reading-complete">${esc(T("这条路线到此结束 · 可在左侧探索其他可能", "This path ends here · explore other branches on the map"))}</span>`;
+    nextReading = `<span class="reading-complete">${esc(T("这条路线到此结束", "This route ends here"))}</span>`;
   } else nextReading = "";
   // Parallel groups (e.g. investigations in any order, N required before the gate).
   const group = story.groups?.find((g) => g.kind === "parallel" && (g.members.includes(r.id) || g.gate === r.id));
@@ -588,7 +588,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   showSpecimenLinks(r.id);
   showEffects(story, r.id, r.choices);
   const remembered=trail.at(-1);
@@ -1023,14 +1023,14 @@ try {
   }
   $("#scene").addEventListener("scene-lost", () => {
     $("#scene-fallback").hidden = false;
-    toast(T("画面暂时休息了，仍可通过分类和搜索继续阅读。", "The 3D view paused; categories and search still work."));
+    toast(T("三维画面已暂停，分类和搜索仍可使用。", "The 3D view paused. Categories and search still work."));
   });
   showSelection(columns[2].stories[0], 2, 0);
   parseHash();
   // After the archive has settled, prepare Chinese glyphs so the first story opens without a long layout frame.
   setTimeout(() => warmGlyphs(json), 2500);
 } catch (e) {
-  $("#selected-title").textContent = T("记忆暂时失联", "The archive is unreachable");
+  $("#selected-title").textContent = T("档案暂时无法连接", "Archive unavailable");
   $("#selected-excerpt").textContent = e.message;
   $("#open-story").textContent = T("重新连接", "Reconnect");
   $("#open-story").onclick = () => location.reload();

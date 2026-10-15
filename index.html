@@ -66,7 +66,7 @@
     </header>
     <main id="archive">
       <div id="scene" class="scene">
-        <div id="scene-fallback" hidden data-i18n="scene.fallback">档案已准备好。使用分类与方向按钮继续探索。</div>
+        <div id="scene-fallback" hidden data-i18n="scene.fallback">可用分类和方向按钮浏览。</div>
       </div>
       <div class="scene-vignette" aria-hidden="true"></div>
       <div class="archive-hud" id="archive-hud">
@@ -137,11 +137,11 @@
         <span aria-hidden="true">♫</span
         ><input id="music-volume" type="range" min="0" max="100" value="28" data-i18n-aria="music.volume" aria-label="音乐音量" />
       </div>
-      <span class="loop-label" data-i18n-title="music.loop" title="整张专辑循环播放"
+      <span class="loop-label" data-i18n-title="music.loop" title="专辑循环播放"
         ><span aria-hidden="true">↻</span><small data-i18n="music.loopShort">专辑循环</small></span
       ><audio id="ost-audio" preload="none"></audio>
     </footer>
-    <section id="playlist" hidden data-i18n-aria="music.playlist" aria-label="原声音乐播放列表">
+    <section id="playlist" hidden data-i18n-aria="music.playlist" aria-label="原声列表">
       <div class="playlist-heading">
         <div>
           <h2 data-i18n="music.playlistTitle">原声</h2>
@@ -164,7 +164,7 @@
           data-i18n-placeholder="search.placeholder"
           placeholder="故事名称、中文或英文关键词"
           data-i18n-aria="search.label"
-          aria-label="搜索完整故事" /></label
+          aria-label="搜索故事" /></label
       ><span id="search-count" role="status"></span>
       <div id="search-results"></div>
       <div class="search-pager">

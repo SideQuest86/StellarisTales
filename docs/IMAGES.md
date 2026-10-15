@@ -80,3 +80,16 @@ max 65.8 KB, mean 22.5 KB), img-hd 5.2 MB (258 files, max 144 KB), fetched only 
 - Rollback: `scripts/verify-rollback.mjs` against a build without `art-hd/` and `museum/img-hd/` — desktop close-up,
   DPR-2 phone `srcset` and museum detail all fall back to the originals, 0 page errors (the museum image has an
   `onerror` fallback to the original; the close-up canvas falls back in `archive-scene.js`).
+
+## Licence files checked at the source (2026-10-15)
+
+| Component | LICENSE fetched from | Result |
+| --- | --- | --- |
+| Real-ESRGAN (code; weights released under it) | raw.githubusercontent.com/xinntao/Real-ESRGAN/master/LICENSE | BSD 3-Clause, © 2021 Xintao Wang |
+| Newsreader | raw.githubusercontent.com/google/fonts/main/ofl/newsreader/OFL.txt | SIL OFL 1.1, © The Newsreader Project Authors |
+| Noto Serif SC | raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/OFL.txt | SIL OFL 1.1, © 2012 Google Inc. |
+| Noto Sans SC | raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt | SIL OFL 1.1, © 2014–2021 Adobe (Reserved Font Name "Source") |
+| gltfpack / meshoptimizer (3D model compression) | raw.githubusercontent.com/zeux/meshoptimizer/master/LICENSE.md | MIT, © Arseny Kapoulkine |
+
+Game-derived images keep Paradox Interactive's ownership (the archive's existing basis); no third-party image
+assets are used.

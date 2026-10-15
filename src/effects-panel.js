@@ -140,7 +140,7 @@ export function renderEffects(effects, opts = {}) {
   const title = opts.title || T("游戏内效果", "Gameplay effects");
   const tail = skipped ? `<p class="fx-note fx-skipped">${esc(T(`另有 ${skipped} 项效果未逐条整理，请见游戏脚本。`, `${skipped} more effects are not itemised; see the game script.`))}</p>` : "";
   return `<details class="fx"><summary class="fx-sum"><span class="fx-sum-t">${esc(title)}</span>${n ? `<span class="fx-count">${n}</span>` : ""}</summary>`
-    + `<div class="fx-body"><p class="fx-note">${esc(T("来自游戏文件的静态解读，不模拟具体存档；标明“概率”的结果以基础权重计算。", "Read statically from the game files; no save is simulated. Chances use the base weights."))}</p>${body}${tail}</div></details>`;
+    + `<div class="fx-body"><p class="fx-note">${esc(T("依游戏文件静态解读，不模拟具体存档；概率按基础权重计算。", "Read from the game files; no save is simulated. Chances use base weights."))}</p>${body}${tail}</div></details>`;
 }
 
 // Delegated, idempotent: none of the markup needs JS to open (native <details> is keyboard-accessible).

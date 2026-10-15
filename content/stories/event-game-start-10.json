@@ -204,7 +204,14 @@
    },
    "Root.GetName": {
     "zh": "我们的帝国",
-    "en": "our empire"
+    "en": "our empire",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Ends rivalry with ",
+      "text": "the fallen empire. Our empire"
+     }
+    ]
    },
    "from.GetName": {
     "zh": "堕落帝国",

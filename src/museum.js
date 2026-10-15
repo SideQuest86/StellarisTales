@@ -179,7 +179,7 @@ function showExhibit(key, keepFocus = false) {
       <p class="museum-other-lang" lang="${lang() === "zh" ? "en" : "zh-CN"}">${esc(lang() === "zh" ? s.name.en : s.name.zh)}</p>
       <div class="museum-desc"><p>${gameText(raw(s.short), s)}</p><p>${gameText(raw(s.details), s)}</p></div>
       <h3>${esc(T("展览效果", "While exhibited"))}</h3>
-      <p class="museum-note">${esc(T("在博物天枢中展览时生效；数值为基础值，会乘以展区产出加成（例如“着重展区”政策 +50%，其余两个展区 −25%）。", "Applies while exhibited in a Grand Archive; values are base values, multiplied by the collection's specimen output (e.g. the Exhibition Focus policy: +50 % for the focused collection, −25 % for the others)."))}</p>
+      <p class="museum-note">${esc(T("在博物天枢展出时生效；数值为基础值，会乘以展区产出加成（如“着重展区”政策：重点展区 +50%，其余 −25%）。", "Applies while exhibited in a Grand Archive; values are base values, multiplied by the collection's output bonus (e.g. Exhibition Focus: +50% for the focused collection, −25% for the others)."))}</p>
       <ul class="museum-effects">${s.effects.map(formatEffect).join("")}</ul>
       <h3>${esc(T("获得方式", "How it is acquired"))}</h3>
       ${acquisitionHtml(s)}

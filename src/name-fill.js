@@ -86,7 +86,8 @@ export function fillNames(s, opts) {
     .replace(TITLE_RE, (m, title, n) => {
       if (/^operation$/i.test(title)) return "the operation" + OMIT;
       const phrase = m.slice(m.indexOf(SEP) + 1, -1);
-      if (phrase.toLowerCase().endsWith(title.toLowerCase()) && phrase.length > title.length) return OPEN + n + SEP + phrase + CLOSE;
+      const p = phrase.toLowerCase(), t = title.toLowerCase();
+      if ((p.endsWith(t) || p.endsWith(t + "s")) && phrase.length > title.length) return OPEN + n + SEP + phrase + CLOSE;
       return OPEN + n + SEP + title + CLOSE;
     })
     // "the [X] species" with X = "this species": drop the repeated noun; "[X]s" after a phrase ending in s.

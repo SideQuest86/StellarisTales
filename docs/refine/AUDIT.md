@@ -7,12 +7,12 @@ Every story was processed; "reviewed" counts stories whose placeholders a review
 | crisis | 11 | 11 | 11 | 11 | 136 | 1 | 0 | 0 | 0 | 0 |
 | exploration | 307 | 281 | 281 | 281 | 791 | 21 | 0 | 28 | 0 | 0 |
 | leviathans | 33 | 32 | 32 | 32 | 176 | 4 | 0 | 19 | 0 | 0 |
-| origins | 61 | 49 | 49 | 49 | 535 | 3 | 0 | 24 | 0 | 0 |
-| precursors | 86 | 78 | 78 | 78 | 280 | 11 | 0 | 2 | 0 | 0 |
+| origins | 61 | 49 | 49 | 49 | 535 | 2 | 0 | 24 | 0 | 0 |
+| precursors | 86 | 78 | 78 | 78 | 280 | 10 | 0 | 2 | 0 | 0 |
 | rifts | 41 | 32 | 32 | 32 | 70 | 2 | 0 | 28 | 0 | 0 |
 | society | 356 | 297 | 297 | 297 | 1107 | 21 | 0 | 86 | 0 | 0 |
-| stories | 493 | 379 | 379 | 379 | 1782 | 22 | 0 | 99 | 0 | 0 |
-| **all** | **1388** | **1159** | **1159** | **1159** | **4877** | **85** | **0** | **286** | **0** | **0** |
+| stories | 493 | 379 | 379 | 379 | 1787 | 20 | 0 | 99 | 0 | 0 |
+| **all** | **1388** | **1159** | **1159** | **1159** | **4882** | **81** | **0** | **286** | **0** | **0** |
 
 ## $KEY$ references not defined in the games own localisation (the reader omits them; progress counters $COUNT$/$REQUIRED$ read as "the required number of")
 
