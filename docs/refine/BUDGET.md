@@ -22,3 +22,4 @@ Stop rule: checkpoint at 57 % weekly (34 points), never exceed 63 % (40 points).
 | 2026-10-15 ~03:35 | 24 % | 11 % | released v4.3.0 (578af821), live checks passed (effects, refine reader/chrome/audio, reader V4). **Round-2 total: 1 point of 40** |
 | 2026-10-15 ~04:00 | 25 % | 24 % | completion pass (rendered review of all sentences, effects gaps closed, layout sweep) before release. **Round-2 total so far: 2 points of 40** |
 | 2026-10-15 ~04:20 | 26 % | 25 % | released v4.4.0 + v4.4.1 (a94069b4); live: layout sweep, effects, refine reader/chrome/audio, reader V4 all passed. **Round-2 total: 3 points of 40** |
+| 2026-10-15 ~05:20 | 29 % | 54 % | released v4.5.0 (c0aca240) after second + residual review and effects conditions; live: layout sweep, effects, refine reader/chrome/audio, reader V4 all passed. **Round-2 total: 6 points of 40** |

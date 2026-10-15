@@ -87,7 +87,8 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 
 ## Refinement round 2 (2026-10-15: images, placeholders, effects, polish)
 
-- **Live: v4.4.1 (`a94069b4`)**, verified live 2026-10-15 with verify-layout-sweep (all categories, museum, playlist, search; HD close-up), verify-effects, verify-refine-reader/-chrome/-audio, verify-reader-v4 (0 page errors). Budget round 2: 3 of 40 weekly points.
+- **Live: v4.5.0 (`c0aca240`)**, verified live 2026-10-15 (layout sweep, effects, refine reader/chrome/audio, reader V4; 0 page errors); round-2 budget 6 of 40 weekly points.
+- Earlier: v4.4.1 (`a94069b4`), verified live 2026-10-15 with verify-layout-sweep (all categories, museum, playlist, search; HD close-up), verify-effects, verify-refine-reader/-chrome/-audio, verify-reader-v4 (0 page errors). Budget round 2: 3 of 40 weekly points.
 - Earlier: v4.3.0 (`578af821`), verified live with verify-effects, verify-refine-reader/-chrome/-audio and verify-reader-v4 (all passed, 0 page errors); locally also verify-museum (268), verify-ui-capture. Budget: 1 of 40 weekly points.
 
 - Images: Real-ESRGAN x4plus (BSD-3) ×2 derivatives for all 618 event pictures (`public/art-hd/`, used for the
