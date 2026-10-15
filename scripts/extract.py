@@ -331,6 +331,11 @@ def import_game(game):
     # Scripted localisation ([X.GetScientistPlural] etc.): ordered conditional original texts. Language-specific
     # grammar helper files for other languages are skipped.
     defined={}
+    # The game's localisation lookups ignore case (scripts say `moon`, the file defines `MOON`).
+    lower={lang:{k.lower():v for k,v in loc[lang].items()} for lang in loc}
+    def L(lang,key):
+        if not isinstance(key,str):return ''
+        return loc[lang].get(key) or lower[lang].get(key.lower(),'')
     for name,(nodes,text,origin) in parsed.items():
         if not name.startswith('common/scripted_loc/') or re.search(r'_fr\.txt$|(fr|de|por|ru)loc\.txt$',name):continue
         for n in nodes:
@@ -342,9 +347,9 @@ def import_game(game):
                 if not isinstance(t,list):continue
                 lk=first(t,'localization_key')
                 trig=next((x for x in t if x['k']=='trigger'),None)
-                variants.append({'key':lk,'zh':loc['zh'].get(lk,''),'en':loc['en'].get(lk,''),'trigger':raw(trig,text) if trig else ''})
+                variants.append({'key':lk,'zh':L('zh',lk),'en':L('en',lk),'trigger':raw(trig,text) if trig else ''})
             dk=first(n['v'],'default')
-            defined[key]={'random':first(n['v'],'random')=='yes','variants':variants,'default':{'key':dk,'zh':loc['zh'].get(dk,''),'en':loc['en'].get(dk,'')} if isinstance(dk,str) and dk else None,'source':origin}
+            defined[key]={'random':first(n['v'],'random')=='yes','variants':variants,'default':{'key':dk,'zh':L('zh',dk),'en':L('en',dk)} if isinstance(dk,str) and dk else None,'source':origin}
     dump(ROOT/'public/data/scripted-loc.json',defined)
     # Original wording for condition tooltips / names referenced inside narrative scripts.
     tokens={n['v'] for r in records for n in walk(parse(r['script'])) if isinstance(n['v'],str)}

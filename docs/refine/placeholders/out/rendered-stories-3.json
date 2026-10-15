@@ -1,0 +1,126 @@
+{
+  "event-cara-4010": {"reviewed": true},
+  "event-cara-4020": {"reviewed": true},
+  "event-cara-4030": {"reviewed": true},
+  "event-cara-4040": {"reviewed": true},
+  "event-cara-4050": {"reviewed": true},
+  "event-cara-4101": {"reviewed": true},
+  "event-cara-900": {"reviewed": true},
+  "event-cara-970": {"reviewed": true},
+  "event-central-2": {"reviewed": true},
+  "event-communications-spread-1": {
+    "docs": {
+      "communications_spread.2": {"From.GetName": {"zh": "陌生人", "en": "the strangers", "note": {"zh": "游戏里这里会出现这个未知帝国自称的名号。", "en": "In the game, the name this unknown empire gives itself appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-country-1000": {
+    "docs": {
+      "country.1010": {"Root.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-country-1100": {"reviewed": true},
+  "event-country-200": {"reviewed": true},
+  "event-country-250": {
+    "docs": {
+      "event_chains:hunting_hyacinth": {"Root.Capital.GetName": {"zh": "", "en": "this planet", "omit": ["zh"], "note": {"zh": "游戏里这里会出现首都星球的名称。", "en": "In the game, the name of the capital planet appears here."}}}
+    },
+    "exceptions": ["country.253 en: 'Science Officer' is followed by the leader role, so the title and role stack; the site title rule carries the note, phrase kept"],
+    "reviewed": true
+  },
+  "event-country-50": {
+    "docs": {
+      "special_projects:TARBLAC_PROCUREMENT": {"This.GetName": {"zh": "", "en": "", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现这颗海洋星球的名称。", "en": "In the game, the name of this ocean world appears here."}}},
+      "country.60": {"Root.GetName": {"zh": "本舰", "en": "the ship", "note": {"zh": "游戏里这里会出现这艘舰船的称呼。", "en": "In the game, this ship's name appears here."}}}
+    },
+    "exceptions": ["country.56/58/59: sentences with an empty «» use a token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-country-999": {
+    "exceptions": ["country.999 en 481 / zh 461: 'the species' appears twice in one sentence from two separate tokens; game text, kept"],
+    "reviewed": true
+  },
+  "event-crime-1": {
+    "exceptions": ["crime.1: a sentence in zh (我们可以提升«»的失业补助金) and en (on the «») renders an empty token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-crime-1000": {
+    "exceptions": ["crime.1001/crime.1002: zh and en sentences with an empty «» token (the «»'s / on the «») missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-crime-50": {
+    "exceptions": ["crime.3/5/6/7/8/40/41/100/101/104/200/201/202/300/301/302/304/501/552: many sentences render an empty «» for a token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-cstorms-1200": {"reviewed": true},
+  "event-cstorms-1310": {"reviewed": true},
+  "event-cstorms-1700": {"reviewed": true},
+  "event-cstorms-1710": {"reviewed": true},
+  "event-cstorms-1720": {"reviewed": true},
+  "event-cstorms-1730": {"reviewed": true},
+  "event-cstorms-1740": {"reviewed": true},
+  "event-cstorms-1750": {"reviewed": true},
+  "event-cstorms-1760": {"reviewed": true},
+  "event-cstorms-1770": {"reviewed": true},
+  "event-cstorms-1800": {"reviewed": true},
+  "event-cstorms-1810": {"reviewed": true},
+  "event-cstorms-1830": {"reviewed": true},
+  "event-cstorms-1840": {"reviewed": true},
+  "event-cstorms-8000": {"reviewed": true},
+  "event-cstorms-8100": {"reviewed": true},
+  "event-cstorms-8500": {"reviewed": true},
+  "event-custodian-499": {
+    "docs": {
+      "custodian.30": {"custodian.GetName": {"zh": "此人", "en": "the new Custodian", "note": {"zh": "游戏里这里会出现新任监管人的称呼。", "en": "In the game, the new Custodian's title appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-cyber-7000": {
+    "docs": {
+      "cyber.7020": {"From.GetNamePlural": {"zh": "新物种", "en": "this nascent species", "note": {"zh": "游戏里这里会出现这个新兴物种的名称。", "en": "In the game, the name of this nascent species appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-cybernetics-5048": {"reviewed": true},
+  "event-emperor-150": {"reviewed": true},
+  "event-emperor-499": {
+    "docs": {
+      "emperor.3": {"gal_emperor.GetSpeciesName": {"zh": "该物种", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现旧监管人的种族名称。", "en": "In the game, the species of the former Custodians appears here."}}},
+      "emperor.4": {"gal_emperor.ruler.GetRegnalName": {"zh": "这位", "en": "the ruler", "note": {"zh": "游戏里这里会出现统治者的称号。", "en": "In the game, the ruler's regnal name appears here."}}}
+    },
+    "exceptions": ["emperor.2 en 'the ruler was crowned our ruler' and emperor.3 en 'crowned ruler': the regnal name and title stack in game wording; kept"],
+    "reviewed": true
+  },
+  "event-emperor-50": {
+    "exceptions": ["emperor.373 zh: '星海帝国成员国«受害者»' is game wording with the victim phrase; kept"],
+    "reviewed": true
+  },
+  "event-envoy-events-1001": {
+    "docs": {
+      "envoy_events.1": {"Root.GetRulerName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现统治者本人。", "en": "In the game, the ruler's own name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-envoy-events-15": {"reviewed": true},
+  "event-envoy-events-16": {"reviewed": true},
+  "event-envoy-events-200": {
+    "docs": {
+      "envoy_events.200": {"event_envoy.GetName": {"zh": "此人", "en": "the envoy", "note": {"zh": "游戏里这里会出现这位使者的称呼。", "en": "In the game, the envoy's name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-envoy-events-205": {
+    "exceptions": ["envoy_events.205 en: 'represent«»' ends with an empty token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-envoy-events-210": {
+    "exceptions": ["envoy_events.210 en: 'seem«»' renders an empty token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-envoy-events-215": {
+    "exceptions": ["envoy_events.215 en: 'appear«»' renders an empty token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-envoy-events-220": {"reviewed": true}
+}

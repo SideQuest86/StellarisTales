@@ -1,0 +1,338 @@
+{
+  "event-nomads-505": {"reviewed": true},
+  "event-nomads-635": {"reviewed": true},
+  "origin_arc_welders": {
+    "docs": {
+      "machine_age.3400": {
+        "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this star system's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "origin_broken_shackles": {
+    "docs": {
+      "origin.5510": {
+        "Root.Owner.GetSpeciesName": {"zh": "该物种", "en": "species", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+        "Root.Owner.GetAdj": {"zh": "我方", "en": "our", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的势力形容词。", "en": "In the game, your faction's adjective appears here."}}
+      }
+    },
+    "exceptions": [
+      "origin.5510: empty token in 'the «»-spanning ocean' (zh 166, en 178) has no key; left as is",
+      "origin.5047: en 'non «the species» member' is ungrammatical because the game text puts 'non' before the phrase"
+    ],
+    "reviewed": true
+  },
+  "origin_clone_army": {
+    "docs": {
+      "clones.12": {
+        "Root.Owner.GetSpeciesName": {"zh": "该物种", "en": "our species", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      }
+    },
+    "reviewed": true
+  },
+  "origin_cosmic_dawn": {
+    "exceptions": ["infernals.2535: stray «.» marker after 'other species' (zh 282, en 284) has no key; left as is"],
+    "reviewed": true
+  },
+  "origin_cybernetic_creed": {
+    "exceptions": ["situations:situation_cybernetic_creed_cyberization: empty «» after 'holy implants next Month:' (zh 299, en 301) has no key"],
+    "reviewed": true
+  },
+  "origin_default_nomads": {
+    "docs": {
+      "origin-intro:origin_default_nomads": {
+        "Species.GetAdj": {"zh": "该族", "en": "our species'", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}}
+      }
+    },
+    "exceptions": [
+      "origin-intro: en 401 'our «the government»' doubles the possessive with game text",
+      "origin-intro: zh 372 '我们的«该政府»' doubles the possessive with game text",
+      "origin-intro: en 403 'We are «the ship» Arkship' is a game-text construction",
+      "origin-intro: en 412 'ready «our species'»,' has no noun after it in the game text"
+    ],
+    "reviewed": true
+  },
+  "origin_doomsday": {
+    "exceptions": [
+      "origin.85: empty «» token (zh 499 and 503, en 509 and 513) has no key; left as is",
+      "origin.85: 'over «this planet»' (zh 501, en 511) probably means the old homeworld; one key serves both uses, left as is",
+      "origin.80: en 487 'the surviving «the species»' doubles the article with game text",
+      "nomads.4710: empty «» token (zh 449, en 458) has no key; left as is",
+      "situations:situation_nomad_economy: stray empty «» (zh 466, en 467) has no key; left as is"
+    ],
+    "reviewed": true
+  },
+  "origin_endbringers": {
+    "exceptions": [
+      "shroud.8100: zh 539 '及其«其»的组员' doubles 其 with game text",
+      "situations:end_of_the_cycle_endbringers: empty «» (zh 599, en 600) has no key; left as is"
+    ],
+    "reviewed": true
+  },
+  "origin_evolutionary_predators": {"reviewed": true},
+  "origin_fear_of_the_dark": {
+    "docs": {
+      "origin.6020": {
+        "fotd_seperatist_planet.owner.GetSpeciesNamePlural": {"zh": "该物种", "en": "people", "note": {"zh": "游戏里这里会出现对方星球居民的物种名称。", "en": "In the game, the species name of the other planet's inhabitants appears here."}}
+      },
+      "origin.6125": {
+        "fotd_seperatist_planet.GetName": {"zh": "这颗星球的", "en": "this planet's", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+      },
+      "origin.6130": {
+        "fotd_seperatist_planet.GetName": {"zh": "这颗星球的", "en": "this planet's", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+      },
+      "origin.6135": {
+        "fotd_seperatist_planet.GetName": {"zh": "这颗星球的", "en": "this planet's", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+      }
+    },
+    "exceptions": [
+      "origin.6011: en 778 'let «their» go' uses the possessive where the game needs the object form",
+      "origin.6006: en 797 '«They» motivations' and en 803 'as an «Commander»' keep game-text grammar",
+      "bio.170 and bio.180: empty «» in 'Changes Authority' (zh 979 and 983, en 980 and 984) has no key; left as is"
+    ],
+    "reviewed": true
+  },
+  "origin_forever_cruise": {
+    "exceptions": [
+      "origin-intro:origin_forever_cruise: en 1137 'aboard flagship' has no article; the game text puts 'aboard' before the phrase",
+      "situations:situation_passenger_satisfaction: empty «» in the pop lines (zh 1141-1143, en 1146-1147) has no key; left as is"
+    ],
+    "reviewed": true
+  },
+  "origin_fruitful": {
+    "docs": {
+      "origin.7328": {
+        "from.GetName": {"zh": "这颗星球", "en": "on this planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+      }
+    },
+    "exceptions": ["origin.7201: empty «» in 'filling the «»' and '«»上' (zh 1155, en 1157) has no key; left as is"],
+    "reviewed": true
+  },
+  "origin_galactic_doorstep": {"reviewed": true},
+  "origin_heirs_of_the_khan": {
+    "docs": {
+      "marauder.502": {
+        "raider_khanate.Ruler.GetName": {"zh": "这位领袖", "en": "the new Khan", "note": {"zh": "游戏里这里会出现新大汗的名字。", "en": "In the game, the new Khan's name appears here."}},
+        "raider_khanate.GetRulerName": {"zh": "本人", "en": "in person", "omit": ["en"], "note": {"zh": "游戏里这里会出现大汗的称呼。", "en": "In the game, the Khan's form of address appears here."}}
+      }
+    },
+    "reviewed": true
+  },
+  "origin_here_be_dragons": {
+    "exceptions": ["aquatics.170, aquatics.105, aquatics.115, aquatics.185 and special_projects:REANIMATE_ORIGIN_DRAGON: zh '«这个星系»恒星系' adds 恒星系 after the phrase (game text); left as is"],
+    "reviewed": true
+  },
+  "origin_imperial_vassal": {
+    "docs": {
+      "origin.5755": {
+        "previous_overlord.GetName": {"zh": "前宗主国", "en": "the former overlord", "note": {"zh": "游戏里这里会出现前宗主国的名称。", "en": "In the game, the former overlord's name appears here."}}
+      }
+    },
+    "reviewed": true
+  },
+  "origin_legendary_leader": {
+    "docs": {
+      "event_chains:paragon_origin_promise_chain": {
+        "owner.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+      },
+      "paragon.5005": {
+        "Root.Owner.GetSpeciesName": {"zh": "该物种", "en": "species", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      },
+      "paragon.5008": {
+        "Root.Owner.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+      },
+      "paragon.5033": {
+        "Owner.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+      },
+      "paragon.5131": {
+        "Owner.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+      },
+      "paragon.5201": {
+        "Owner.GetSpeciesNamePlural": {"zh": "该物种", "en": "people", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      },
+      "paragon.5210": {
+        "Owner.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+      }
+    },
+    "exceptions": [
+      "standalone title 'our' with no regnal name beside it (en 1448, 1451, 1454, 1471, 1492, 1539, 1541, 1593, 1610, 1613, 1616, 1622, 1626, 1636, 1653, 1753; zh 1440, 1443, 1446, 1469, 1489, 1532, 1534, 1562, 1566, 1588, 1595, 1609, 1631, 1646, 1747): the same key pairs with the regnal name elsewhere, so one phrase cannot serve both",
+      "paragon.5210 en 1541 and paragon.5345 en 1622: 'our «our»' doubles the title with game text",
+      "paragon.5009 en 1437, paragon.5008 en 1591, paragon.5023 en 1685: 'They' with a verb is game-text grammar",
+      "paragon.5340 en 1619: stray apostrophe after «our» is game text"
+    ],
+    "reviewed": true
+  },
+  "origin_life_seeded": {"reviewed": true},
+  "origin_lithoid": {"reviewed": true},
+  "origin_lost_colony": {
+    "exceptions": ["origin-intro:origin_lost_colony: en 1892 and 1894 'aboard «this planet»' reads oddly; game text puts 'aboard' before the planet phrase; left as is"],
+    "reviewed": true
+  },
+  "origin_mindwardens": {
+    "docs": {
+      "shroud.6101": {
+        "exiled_center_system.GetName": {"zh": "这个星系", "en": "system", "note": {"zh": "游戏里这里会出现那个星系的名称。", "en": "In the game, the name of that system appears here."}}
+      }
+    },
+    "exceptions": [
+      "shroud.6050, special_projects:EXPLORE_BORDER_SYSTEM, shroud.6200, shroud.6210, shroud.6225 and others: zh '«这个星系»系' or '恒星系' adds a suffix after the phrase (game text); left as is",
+      "shroud.6205: en 1990 'our «this system»' uses a system name with a possessive; left as is",
+      "shroud.6600 zh 2061 and shroud.6601 zh 2111: 这颗星球 appears twice in one sentence (current and other planet keys); left as is"
+    ],
+    "reviewed": true
+  },
+  "origin_necrophage": {
+    "exceptions": ["necroids.2: en 2196 'each «our» planet' uses the bare title where a noun is needed; left as is"],
+    "reviewed": true
+  },
+  "origin_ocean_machines": {"reviewed": true},
+  "origin_ocean_paradise": {"reviewed": true},
+  "origin_payback": {
+    "exceptions": [
+      "origin.4016: 'this sum' follows the £energy£ icon; the amount comes from game text, phrase kept",
+      "origin.4306: en 'need no «power»-holding' keeps the game text suffix; reads acceptably"
+    ],
+    "reviewed": true
+  },
+  "origin_post_apocalyptic": {"reviewed": true},
+  "origin_primal_calling": {
+    "docs": {
+      "grand_archive.1210": {
+        "avenged_homeworld.GetName": {"zh": "母星", "en": "our homeworld", "note": {"zh": "游戏里这里会出现我们母星的名称。", "en": "In the game, the name of our homeworld appears here."}}
+      }
+    },
+    "reviewed": true
+  },
+  "origin_progenitor_hive": {
+    "docs": {
+      "origin.3210": {
+        "From.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+      }
+    },
+    "exceptions": ["origin.3245: empty «» in zh 2424 and en 2428 has no key; left as is"],
+    "reviewed": true
+  },
+  "origin_red_giant": {"reviewed": true},
+  "origin_remnants": {"reviewed": true},
+  "origin_riftworld": {"reviewed": true},
+  "origin_sacred_path": {
+    "exceptions": [
+      "nomads.2050 zh 2561 '«我们的»声称' and nomads.2085 zh 2610 / en 2612: bare title 'our' with no regnal name beside it; the key pairs elsewhere, left as is",
+      "nomads.2085 en 2611: 'our own «our ruler»' repeats 'our' with game text",
+      "nomads.2056 and nomads.2072 en: 'Scientist «himself»' keeps the game's title plus pronoun form"
+    ],
+    "reviewed": true
+  },
+  "origin_scion": {
+    "exceptions": [
+      "origin.205 en 2665: the headline '«In person» joins' reads oddly; the same phrase fits the sentence at en 2660, left as is",
+      "origin.210 zh 2671 '指望你们«我们的帝国»' and en 2681-2684 'A «alien» Commander/Official/Scientist/General': phrase or article mismatch from game text"
+    ],
+    "reviewed": true
+  },
+  "origin_shattered_ring": {"reviewed": true},
+  "origin_shoulders_of_giants": {
+    "docs": {
+      "origin.1235": {
+        "Leader.GetName": {"zh": "本人", "en": "the head scientist", "note": {"zh": "游戏里这里会出现首席科学官的称呼。", "en": "In the game, the head scientist's form of address appears here."}}
+      }
+    },
+    "exceptions": ["origin.1210 en 2740: 'Scientist «himself» have requested' verb agreement is game text; left as is"],
+    "reviewed": true
+  },
+  "origin_shroud_forged": {
+    "docs": {
+      "origin-intro:origin_shroud_forged": {
+        "Root.GetSpeciesNamePlural": {"zh": "该物种", "en": "species", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      }
+    },
+    "exceptions": [
+      "origin-intro: en 2838 '«our»kind' joins without a space (game text); the open issue cannot be fixed by the phrase alone; left as is",
+      "origin-intro: zh 2836 '«我们的»一族' uses the bare title",
+      "shroud_forged.220 and shroud_forged.225: en 'our homeworld of «the homeworld»' repeats the noun with game text"
+    ],
+    "reviewed": true
+  },
+  "origin_shroudwalker_apprentice": {"reviewed": true},
+  "origin_starlit_citadel": {
+    "exceptions": ["bio.2025 zh 3022, event_chains:abandoned_hatchery_chain_3 zh 3025, bio.2040 zh 3042 and event_chains:abandoned_hatchery_chain_4 zh 3038: zh '恒星系' suffix after the system phrase is game text"],
+    "reviewed": true
+  },
+  "origin_storm_chasers": {
+    "docs": {
+      "cstorms.3170": {
+        "event_target:storm_commander.GetName": {"zh": "本人", "en": "the commander", "note": {"zh": "游戏里这里会出现指挥官的称呼。", "en": "In the game, the commander's form of address appears here."}}
+      }
+    },
+    "exceptions": [
+      "cstorms.3222, cstorms.3224, cstorms.3227, cstorms.3230 and cstorms.3235: $@...$ variables are not replaced by the game text; left as is",
+      "cstorms.3170 en 3093: 'Scientist «himself»' keeps the game's title plus pronoun form"
+    ],
+    "reviewed": true
+  },
+  "origin_subterranean": {"reviewed": true},
+  "origin_subterranean_machines": {"reviewed": true},
+  "origin_synthetic_fertility": {"reviewed": true},
+  "origin_toxic_knights": {
+    "docs": {
+      "toxoids.7010": {
+        "questing_knight_2.GetName": {"zh": "扈从", "en": "squire", "note": {"zh": "游戏里这里会出现那位受伤的扈从。", "en": "In the game, the wounded squire appears here."}}
+      },
+      "toxoids.7260": {
+        "questing_knight_8.GetName": {"zh": "本人", "en": "the knight", "note": {"zh": "游戏里这里会出现这位骑士的称呼。", "en": "In the game, this knight's form of address appears here."}}
+      },
+      "toxoids.7295": {
+        "questing_knight_6.GetName": {"zh": "另一位骑士", "en": "the other knight", "note": {"zh": "游戏里这里会出现另一位骑士。", "en": "In the game, another knight appears here."}}
+      }
+    },
+    "exceptions": [
+      "toxoids.7300: questing_knight_15 and questing_knight_8 both render 'the knight' in the same sentences; the text does not separate them; left as is",
+      "toxoids.7006 zh 3230: '骑士«这位骑士»' doubles the noun; left as is",
+      "toxoids.7050: GetYear is empty in English ('In the year of , ...'); left as is",
+      "toxoids.7080 and toxoids.7090: bare 'knight' and «Knight» titles (en 3394, 3396, 3397) read as generic nouns; left as is",
+      "toxoids.7120 zh 3417 and toxoids.7130 zh 3425: '扈从«这位扈从»' doubles the noun; en 3433 'the squire the Squire' is game text",
+      "toxoids.7195 zh 3449: '«这位骑士»这位默默无闻' doubles the phrase",
+      "toxoids.7160 en 3562: '«their» discovered' uses the possessive as subject (game text)",
+      "toxoids.7260 en 3173: 'stand«s»' marker is game text",
+      "toxoids.7510 and toxoids.7515 zh: '«这个星系»恒星系' suffix is game text"
+    ],
+    "reviewed": true
+  },
+  "origin_treasure_hunters": {
+    "docs": {
+      "grand_archive.8115": {
+        "Leader.GetName": {"zh": "本人", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的称呼。", "en": "In the game, this scientist's form of address appears here."}}
+      },
+      "grand_archive.8120": {
+        "Leader.GetName": {"zh": "本人", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的称呼。", "en": "In the game, this scientist's form of address appears here."}}
+      }
+    },
+    "exceptions": [
+      "grand_archive.8115 en 3685-3690 and grand_archive.8120 en 3878: 'Scientist «the scientist»' repeats the title; no neutral phrase fits both the title and the sentences; en 'the scientist were' is game grammar"
+    ],
+    "reviewed": true
+  },
+  "origin_tree_of_life": {"reviewed": true},
+  "origin_unplugged": {
+    "exceptions": [
+      "unplugged.2022: heading 'Old «this planet»' reads awkwardly in English; left as is",
+      "unplugged.2000: zh 3940 '我们恒星«这颗恒星»' doubles the star; en 3945 'Every «the species'» who' is game grammar",
+      "unplugged.2450 zh 4257 and unplugged.2455 zh 4262: '原始的«原始»' doubles the word",
+      "unplugged.2315 zh 4199 and en 4200: '我们现在的«我方»' and 'our «our» dialect' double the pronoun",
+      "unplugged.3010 zh 3995: '我们«我方»' doubles the pronoun",
+      "archaeological_site_types:machine_legacy_creators_site (en 4166) and machine_legacy_unplugged_site (en 4197): 'a «assimilator» monitoring station' has an article mismatch from game text",
+      "unplugged.2405: keys 'persistent' and '持续' both carry the status word; the duplicated status text looks like a source token issue"
+    ],
+    "reviewed": true
+  },
+  "origin_wilderness": {
+    "docs": {
+      "wilderness.2000": {
+        "from.GetName": {"zh": "这颗星球", "en": "the planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+      }
+    },
+    "exceptions": ["wilderness.2000 zh 4402: '我们«我们的帝国»' doubles 我们 with game text; left as is"],
+    "reviewed": true
+  }
+}

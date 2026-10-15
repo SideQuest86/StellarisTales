@@ -43,5 +43,21 @@
     "en": "In the game, the science officer's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "special_projects:GAS_GIANT_SHIP_PROJECT": {
+   "From.GetName": {
+    "zh": "这颗气态巨行星",
+    "en": "this gas giant",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这颗气态巨行星的名称。",
+     "en": "In the game, this gas giant's name appears here."
+    }
+   }
+  }
  }
 }

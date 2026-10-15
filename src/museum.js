@@ -2,6 +2,7 @@
 // never pays for it. Data: museum/specimens.json (game files, scripts/extract-specimens.py) and
 // museum/models/manifest.json (generated, unofficial 3D interpretations). The 3D viewer (museum-viewer.js) is
 // imported only when an exhibit with a model is opened.
+import { fillNames } from "./name-fill.js";
 const $ = (s, r = document) => r.querySelector(s);
 const lang = () => (document.documentElement.lang === "en" ? "en" : "zh");
 const T = (zh, en) => (lang() === "en" ? en : zh);
@@ -11,22 +12,13 @@ const reduced = () => document.documentElement.classList.contains("reduced-motio
 // Original game text: colour codes and inline icons removed. Save-dependent placeholders become the reviewed natural
 // phrase for this specimen (content/museum/placeholders.json), annotated like the reader's substitutions: the shared
 // tooltip (src/name-tooltip.js, installed by app.js) explains them on hover, focus and tap.
+// The wording rules are the reader's (src/name-fill.js), so specimens and stories read alike.
 function gameText(s, spec) {
-  return esc((s || "").replace(/§[A-Za-z!]|£\w+£/g, "").trim())
-    .replace(/(\b(?:the|a|an) )?\[([^\]]+)\]/gi, (_, art, p) => {
-      const w = spec?.placeholders?.[p];
-      let text = w ? label(w) : placeholder(p);
-      if (art && lang() === "en" && /^(the|our|this|that|a|an|your|their)\b/i.test(text)) art = "";
-      if (art && /^[A-Z]/.test(art)) art = art[0].toLowerCase() + art.slice(1);
-      const note = w?.note ? label(w.note) : T("游戏会在这里填入存档中的名称。", "The game fills in a name from your save here.");
-      return `${art || ""}<span class="game-name" tabindex="0" role="note" data-note="${esc(note)}">${esc(text)}</span>`;
-    })
-    .replace(/^(<span[^>]*>)([a-z])/, (_, open, c) => open + c.toUpperCase())
+  const filled = fillNames((s || "").replace(/§[A-Za-z!]|£\w+£/g, "").trim(), { lang: lang(), chapterNames: spec?.placeholders });
+  return esc(filled)
+    .replace(/([^]*)/g, (_, note) => `<span class="game-name" tabindex="0" role="note" data-note="${note}">`)
+    .replace(//g, "</span>")
     .replace(/\n+/g, "</p><p>");
-}
-// Without reviewed wording a placeholder reads as a plain phrase, never as code.
-function placeholder(p) {
-  return /GetName|GetAdj|GetSpeciesName|GetRulerTitle|GetPlural|GetTitle/.test(p) ? T("这个名字", "this name") : T("……", "…");
 }
 const raw = (x) => x?.[lang()] || x?.en || x?.zh || "";
 // Titles: a save-dependent name inside a specimen name (e.g. "[planet] Hyper Mulch") is left out.

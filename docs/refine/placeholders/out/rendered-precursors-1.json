@@ -1,0 +1,90 @@
+{
+  "anomaly-storms-prec-one": {
+    "docs": {"cstorms.2170": {"Root.GetFleetName": {"zh": "我们的", "en": "the science ship", "note": {"zh": "这里会出现你的科研船的名称。", "en": "In the game, your science ship's name appears here."}}}},
+    "exceptions": ["cstorms.2170: en 'Scientist were' plural mismatch is game text"],
+    "reviewed": true
+  },
+  "anomaly-storms-prec-wm-one": {"exceptions": [], "reviewed": true},
+  "archaeology-incidents": {
+    "docs": {
+      "ancrel.4006": {"Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "omit": ["zh"], "note": {"zh": "游戏里这里会出现你的科学家的名字。", "en": "In the game, your scientist's name appears here."}}},
+      "ancrel.8065": {"Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "omit": ["zh"], "note": {"zh": "游戏里这里会出现你的科学家的名字。", "en": "In the game, your scientist's name appears here."}}},
+      "ancrel.13030": {"From.Leader.GetName": {"zh": "这位考古学家", "en": "the archaeologist", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现首席考古学家的名字。", "en": "In the game, the chief archaeologist's name appears here."}}},
+      "ancrel.8210": {"root.leader.GetName": {"zh": "这位考古学家", "en": "the archaeologist", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现首席考古学家的名字。", "en": "In the game, the chief archaeologist's name appears here."}}}
+    },
+    "exceptions": ["ancrel.4021: 'mouthwash' compound is split by the placeholder; game text"],
+    "reviewed": true
+  },
+  "baol": {
+    "exceptions": ["ancrel.2026: repeated noun leaves empty «» (zh and en); site rule, not wording", "ancrel.2027: en 'transformed «this planet»'s over' is game text"],
+    "reviewed": true
+  },
+  "cybrex": {
+    "docs": {"precursor.2016": {"Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学家的称呼。", "en": "In the game, your scientist's title appears here."}}}},
+    "exceptions": ["precursor.2005, 2006, 2010, 2011, 2020, 2021, 2026: repeated noun leaves empty «» in some sentences; site rule"],
+    "reviewed": true
+  },
+  "event-ancrel-10030": {"reviewed": true},
+  "event-ancrel-15010": {"reviewed": true},
+  "event-ancrel-4008": {"reviewed": true},
+  "event-ancrel-6049": {"exceptions": ["ancrel.6049: repeated noun leaves empty «» (zh and en); site rule"], "reviewed": true},
+  "event-ancrel-6098": {"exceptions": ["ancrel.6099: repeated noun leaves empty «» (zh and en); site rule"], "reviewed": true},
+  "event-ancrel-6150": {"reviewed": true},
+  "event-ancrel-6499": {"exceptions": ["ancrel.6500: empty «» after repeated noun; site rule", "ancrel.6505 zh: game word order 'our great capital' plus the other empire reads wrongly; game text"], "reviewed": true},
+  "first-league": {"exceptions": ["precursor.1015-1102 and FIRST_LEAGUE special projects: empty «» after repeated noun in several sentences; site rule"], "reviewed": true},
+  "irassian": {"exceptions": ["precursor.1521 zh: '上将' appears inside 'orbit «上将»' and is not this key's phrase; game text", "precursor.1505-1602: empty «» after repeated noun in several sentences; site rule"], "reviewed": true},
+  "precursor-assistance": {
+    "docs": {"precursor.301": {"Root.GetSpeciesAdj": {"zh": "我们的", "en": "our", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}}}},
+    "exceptions": ["precursor.301 zh: '«这颗星球»帝国' wording is game text", "precursor.313 zh: stammer is game text"],
+    "reviewed": true
+  },
+  "site-ancient-battle-site": {"exceptions": ["ancrel.109 en: 'that that' is game text"], "reviewed": true},
+  "site-asteroid-vault-1": {"reviewed": true},
+  "site-broken-world-digsite": {"reviewed": true},
+  "site-city-of-bones": {"reviewed": true},
+  "site-endless-expanse-digsite": {
+    "docs": {"ancrel.4046": {"Root.Owner.GetSpeciesName": {"zh": "我们", "en": "we", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现你的物种的自称。", "en": "In the game, your species' self-name appears here."}}}},
+    "reviewed": true
+  },
+  "site-from-the-ashes-site": {"reviewed": true},
+  "site-inferno-temple-site": {"reviewed": true},
+  "site-it-was-aliens-site": {"reviewed": true},
+  "site-larion-digsite": {"reviewed": true},
+  "site-last-thought-site": {"reviewed": true},
+  "site-mutation-vats": {"reviewed": true},
+  "site-omnirelic-site": {"reviewed": true},
+  "site-rubricator-digsite": {"reviewed": true},
+  "site-site-abandoned-bio-lab": {"reviewed": true},
+  "site-site-absolute-zero": {"reviewed": true},
+  "site-site-ancient-robot-world": {
+    "docs": {"ancrel.12060": {"From.GetName": {"zh": "这个星系", "en": "this system", "omit": ["en"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}}}},
+    "reviewed": true
+  },
+  "site-site-anomalous-cube": {"reviewed": true},
+  "site-site-chronicles-of-dendrus": {"exceptions": ["extreme_frontiers.1435: empty «» in zh 'Gain «» society' after repeated noun; site rule"], "reviewed": true},
+  "site-site-command-center": {"reviewed": true},
+  "site-site-cut-to-fit": {"reviewed": true},
+  "site-site-debris-belt": {"reviewed": true},
+  "site-site-deja-vu-dig": {"reviewed": true},
+  "site-site-deserted-mining-facility": {"exceptions": ["extreme_frontiers.1330 en: sentence is cut off in game text"], "reviewed": true},
+  "site-site-ebb-and-flow": {"reviewed": true},
+  "site-site-echoes-inside": {"reviewed": true},
+  "site-site-engineered-species": {"reviewed": true},
+  "site-site-fossilized-jellyfish": {"reviewed": true},
+  "site-site-fumongus-dig": {"exceptions": ["ancrel.8305 en: missing full stop before 'Their desiccated' is game text"], "reviewed": true},
+  "site-site-georadiation-terraforming": {"reviewed": true},
+  "site-site-grand-herald": {"reviewed": true},
+  "site-site-green-skies": {"reviewed": true},
+  "site-site-hidden-lab-a": {"reviewed": true},
+  "site-site-hive-coral": {"reviewed": true},
+  "site-site-ice-trauma": {
+    "docs": {
+      "arcsite.9000": {"leader.GetName": {"zh": "这位领袖", "en": "the leader", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现首席考古学家的名字。", "en": "In the game, the chief archaeologist's name appears here."}}},
+      "arcsite.9001": {"absconded_archaeologist.GetName": {"zh": "那位考古学家", "en": "the other archaeologist", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现失踪的考古学家的名字。", "en": "In the game, the name of the missing archaeologist appears here."}}},
+      "arcsite.9002": {"leader.GetName": {"zh": "这位领袖", "en": "the leader", "omit": ["zh"], "note": {"zh": "游戏里这里会出现考古学家的名字。", "en": "In the game, the archaeologist's name appears here."}}}
+    },
+    "exceptions": ["arcsite.9000: empty «» (repeated noun) and 'Perhaps «are» onto something' are game text", "arcsite.9002 en: 'archaeologist «the leader»' keeps the game title"],
+    "reviewed": true
+  },
+  "site-site-krazura-dig": {"reviewed": true}
+}

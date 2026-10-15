@@ -1,4 +1,5 @@
-import { GENERIC_NOTE, SCRIPTED_NOTE, installNameTooltips } from "./name-tooltip.js";
+import { installNameTooltips } from "./name-tooltip.js";
+import { fillNames } from "./name-fill.js";
 import { guideElement } from "./markdown.js";
 import { renderEffects, bindEffects } from "./effects-panel.js";
 import { storyMap } from "./story-map.js";
@@ -91,81 +92,9 @@ function loadNames() {
   return namesLoading;
 }
 let nameContext = null; // the reading context of the doc being rendered (computed once per render)
-function scriptedName(def, depth) {
-  const ctx = nameContext || { profile, assumptions };
-  let pick = null, fallback = null;
-  for (const v of def.variants) {
-    const status = evaluate(v.when, ctx);
-    if (status === true) { pick = v.text; break; }
-    if (status === null) fallback = v.text;
-  }
-  const text = pick || fallback || def.default || def.variants.at(-1)?.text;
-  return fill(local(text), depth + 1, def.names);
-}
-function nameNote(own, scripted) {
-  const n = own?.note || (scripted ? SCRIPTED_NOTE : GENERIC_NOTE);
-  return String(local(n)).replace(/[\uE000-\uE002]/g, "");
-}
-const TITLE_WORDS = [
-  "Science Officer", "Officer", "Admiral", "General", "Captain", "Commander", "Governor", "Doctor", "Dr\\.", "Professor",
-  "Envoy", "Ambassador", "Lieutenant", "Director", "Chancellor", "Knight", "Sir", "Dame", "Spymaster",
-  "Operation", "Arkship", "Asteroid", "planet", "Emissary", "Councilor", "science ship", "Survey Unit",
-  "行动", "方舟", "议员", "使节",
-  "科学专员", "专员", "博士", "将军", "舰长", "总督", "上将", "元帅", "教授", "特使", "大使", "指挥官", "主任",
-].join("|");
-function fill(s, depth = 0, nested = null) {
-  const wrap = (text, note) => OPEN + note + "\uE002" + text + CLOSE;
-  return String(s || "").replace(/(\b(?:the|a|an)\s+)?\[([^\[\]]+)\]([\u3400-\u9fff]{1,6})?/gi, (match, art, key, after, offset, whole) => {
-    if (depth > 3) return "";
-    let text, note;
-    // Inside scripted text the scripted name's own wording applies first (public/stories/names.json `names`).
-    const own = nested?.[key] || chapter?.names?.[key];
-    const tail = key.split("|")[0].split(".").at(-1);
-    // Reviewed as "omit" for this language: the sentence reads naturally without the name.
-    if (own && own[lang] === "" && own.omit?.includes(lang)) return (art || "") + "" + (after || "");
-    if (own) { text = local(own); note = nameNote(own, false); }
-    else if (names[tail]) { text = scriptedName(names[tail], depth).replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, ""); note = nameNote(null, true); }
-    else {
-      text = /Plural/.test(tail) ? T("他们", "they") : /Name/.test(tail) ? T("这个名字", "this name") : T("……", "…");
-      note = nameNote(null, false);
-    }
-    let lead = art || "", trail = after || "";
-    if (lang === "en") {
-      if (lead && /^(the|our|this|that|your|their|these|those)\b/i.test(text)) lead = "";
-      const before = whole.slice(0, offset);
-      if ((!lead) && /^[a-z]/.test(text) && (!before.trim() || /[.!?…]["”’']?\s*$/.test(before))) text = text[0].toUpperCase() + text.slice(1);
-      else if (lead && (!before.trim() || /[.!?…]["”’']?\s*$/.test(before)) && /^[a-z]/.test(lead)) lead = lead[0].toUpperCase() + lead.slice(1);
-    } else if (trail) {
-      // 我们的帝国[帝国] -> drop the repeated noun
-      for (let n = Math.min(trail.length, 6); n >= 2; n--) {
-        if (text.endsWith(trail.slice(0, n))) { trail = trail.slice(n); break; }
-      }
-    }
-    return lead + wrap(text, note) + trail;
-  }).replace(/([Tt]hey) (has|is|was|does)\b/g, (_, pronoun, verb) =>
-    // The game picks he/she with a singular verb; the neutral "they" needs the plural form.
-    `${pronoun} ${{ has: "have", is: "are", was: "were", does: "do" }[verb]}`)
-    // A title before a name placeholder ("Science Officer [Root.GetLeaderName]", "科学专员[…]"): the title itself
-    // carries the annotation instead of reading "Science Officer the leader".
-    .replace(new RegExp(`(${TITLE_WORDS})\\s?\\uE000([^\\uE002]*)\\uE002[^\\uE001]*\\uE001`, "gi"), (_, title, note) => /^operation$/i.test(title) ? "the operation" + "" : OPEN + note + "" + title + CLOSE)
-    // "the [X] species" with X = "this species": drop the repeated noun; "[X]s" after a phrase ending in s.
-    .replace(/([\s])(\w+) \2\b/g, "$1$2")
-    .replace(/ss\b/g, "s")
-    // "[X]'s bodyguard" with X = "our": a possessive determiner takes no 's; zh "我们的[的]".
-    .replace(/(\b(?:our|their|your|its))['’]s\b/gi, "$1")
-    .replace(/的的/g, "的")
-    // Two substitutions side by side ("[Root.GetRulerTitle] [Root.GetRulerName]") name one person: a second phrase
-    // that brings its own determiner ("the ruler", "这位统治者") stands alone, otherwise they join ("our" + "ruler").
-    .replace(/([^]*)([^]*)(\s?)([^]*)([^]*)/g, (_, n1, t1, gap, n2, t2) =>
-      OPEN + n2 + "" + (/^(the|our|this|that|a|an|your|their|这|那|我们)/i.test(t2) ? t2 : t1 + gap + t2) + CLOSE)
-    // Sentence starts (also after a merge or a dropped article): capitalise the phrase.
-    .replace(/(^|[.!?]["”’']?\s+)([^]*)([a-z])/g, (_, lead, note, c) => lead + OPEN + note + "" + c.toUpperCase())
-    // An omitted code name after "Operation" ("assigned to Operation [X].") reads as "the operation".
-    .replace(/\b(the )?Operation\s?/g, "the operation")
-    .replace(/\b[Tt]he the operation/g, (m) => m[0] + "he operation")
-    .replace(/(^|[.!?]["”’']?\s+)the operation/g, "$1The operation")
-    .replace(//g, "");
-}
+// Substitution rules live in src/name-fill.js (shared with the review tools in scripts/refine/).
+const fill = (s, depth = 0, nested = null) =>
+  fillNames(s, { lang, chapterNames: chapter?.names, names, evaluate, ctx: nameContext || { profile, assumptions }, nested, depth });
 function prose(s, keepMarks = false) {
   const text = fill(String(s || ""))
     .replace(/§./g, "")
@@ -677,7 +606,7 @@ function renderChapter(preservePosition = false) {
     const download=document.createElement('a');
     download.href=asset(dossier.summary.path); download.download='';
     download.textContent=T('下载 Markdown','Download Markdown');
-    const text=guideElement(dossier.summary.text,lang,{show:T('显示英文 / Show English','Show Chinese / 显示中文'),hide:T('仅当前语言','Current language only')});
+    const text=guideElement(dossier.summary.text,lang,{show:T('显示英文','Show Chinese'),hide:T('仅显示中文','English only')});
     notesBox.append(heading,download,text);
     $('.chapter-document').append(notesBox);
   }

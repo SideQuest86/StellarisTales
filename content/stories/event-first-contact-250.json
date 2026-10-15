@@ -363,7 +363,38 @@
   }
  },
  "placeholderDocs": {
+  "first_contact.252": {
+   "root.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "英文中这里省略，句子读起来更自然。",
+     "en": "This word is left out in English, so the sentence reads naturally."
+    }
+   }
+  },
+  "first_contact.285": {
+   "This.ContactCountry.GetRealName": {
+    "zh": "这个文明",
+    "en": "the civilisation",
+    "note": {
+     "zh": "游戏里这里会出现这个文明的名称。",
+     "en": "In the game, the name of this civilisation appears here."
+    }
+   }
+  },
   "first_contact.290": {
+   "This.ContactCountry.GetRealName": {
+    "zh": "这个文明",
+    "en": "the civilisation",
+    "note": {
+     "zh": "游戏里这里会出现这个文明的名称。",
+     "en": "In the game, the name of this civilisation appears here."
+    }
+   },
    "This.ContactCountry.GetSpeciesEarNamePlural": {
     "zh": "感觉器官",
     "en": "sensory organs",
@@ -386,6 +417,67 @@
     "note": {
      "zh": "游戏里这里会出现该物种这一身体部位的名称。",
      "en": "In the game, this species' body part name appears here."
+    }
+   }
+  },
+  "first_contact.295": {
+   "This.ContactCountry.GetRealName": {
+    "zh": "这个文明",
+    "en": "the civilisation",
+    "note": {
+     "zh": "游戏里这里会出现这个文明的名称。",
+     "en": "In the game, the name of this civilisation appears here."
+    }
+   }
+  },
+  "first_contact.320": {
+   "This.ContactCountry.GetName": {
+    "zh": "那个帝国",
+    "en": "rival empire",
+    "note": {
+     "zh": "游戏里这里会出现那个帝国的名称。",
+     "en": "In the game, the name of the other empire appears here."
+    }
+   },
+   "This.Owner.GetGovernmentName": {
+    "zh": "政府",
+    "en": "government",
+    "note": {
+     "zh": "游戏里这里会出现我们的政府。",
+     "en": "In the game, your government appears here."
+    }
+   }
+  },
+  "first_contact.322": {
+   "This.Owner.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "the species",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "英文中这里省略，句子读起来更自然。",
+     "en": "This word is left out in English, so the sentence reads naturally."
+    }
+   }
+  },
+  "first_contact.330": {
+   "This.ContactCountry.GetName": {
+    "zh": "那个帝国",
+    "en": "rival empire",
+    "note": {
+     "zh": "游戏里这里会出现那个帝国的名称。",
+     "en": "In the game, the name of the other empire appears here."
+    }
+   }
+  },
+  "first_contact.332": {
+   "This.Owner.GetGovernmentName": {
+    "zh": "政府",
+    "en": "government",
+    "note": {
+     "zh": "游戏里这里会出现我们的政府。",
+     "en": "In the game, your government appears here."
     }
    }
   }

@@ -1,0 +1,126 @@
+{
+  "event-apoc-5": {"reviewed": true},
+  "event-aquatics-4": {
+    "exceptions": ["aquatics.5: 'Terraforming this «»' and '这颗«»' render an empty phrase because the sentences use a token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-arkship-1": {"reviewed": true},
+  "event-arkship-1020": {
+    "docs": {
+      "arkship.1015": {"from.GetName": {"zh": "此船", "en": "this ship", "note": {"zh": "游戏里这里会出现这艘方舟的名称。", "en": "In the game, the name of this Arkship appears here."}}},
+      "arkship.1005": {"from.GetName": {"zh": "此船", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这艘方舟的名称。", "en": "In the game, the name of this Arkship appears here."}}}
+    },
+    "exceptions": ["arkship.1015: en renders the literal name «Arkship» for the ship; the phrase cannot change that rendering"],
+    "reviewed": true
+  },
+  "event-arkship-1030": {
+    "docs": {
+      "arkship.1045": {"arkship_leader.GetName": {"zh": "此人", "en": "the leader", "note": {"zh": "游戏里这里会出现领袖的称呼。", "en": "In the game, the leader's name appears here."}}},
+      "arkship.1050": {"arkship_leader.GetName": {"zh": "此人", "en": "the leader", "note": {"zh": "游戏里这里会出现领袖的称呼。", "en": "In the game, the leader's name appears here."}}},
+      "arkship.1060": {"arkship_leader.GetName": {"zh": "此人", "en": "the leader", "note": {"zh": "游戏里这里会出现领袖的称呼。", "en": "In the game, the leader's name appears here."}}},
+      "arkship.1065": {"arkship_leader.GetName": {"zh": "此人", "en": "the leader", "note": {"zh": "游戏里这里会出现领袖的称呼。", "en": "In the game, the leader's name appears here."}}}
+    },
+    "exceptions": ["arkship.1045/1050/1060/1065 en: 'Our leader the leader' doubles the role; the same key is needed in 'until the leader took command' sentences, so the role phrase is kept"],
+    "reviewed": true
+  },
+  "event-arkship-105": {"reviewed": true},
+  "event-arkship-1070": {"reviewed": true},
+  "event-arkship-1075": {"reviewed": true},
+  "event-arkship-1090": {
+    "docs": {
+      "arkship.1095": {"Root.GetName": {"zh": "这艘", "en": "this ship", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这艘方舟的名称。", "en": "In the game, the name of this Arkship appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-arkship-1100": {"reviewed": true},
+  "event-arkship-1120": {"reviewed": true},
+  "event-arkship-1160": {"reviewed": true},
+  "event-arkship-1165": {"reviewed": true},
+  "event-arkship-1170": {"reviewed": true},
+  "event-arkship-1185": {"reviewed": true},
+  "event-arkship-1205": {"reviewed": true},
+  "event-arkship-1215": {"reviewed": true},
+  "event-arkship-1240": {"reviewed": true},
+  "event-arkship-125": {"reviewed": true},
+  "event-arkship-1300": {"reviewed": true},
+  "event-arkship-1385": {"reviewed": true},
+  "event-arkship-140": {"reviewed": true},
+  "event-arkship-155": {"reviewed": true},
+  "event-arkship-5": {"reviewed": true},
+  "event-arkship-60": {
+    "exceptions": ["arkship.60 zh: '«这艘舰»号方舟舰的反应堆' stacks the ship name with 号方舟舰; game text, phrase kept"],
+    "reviewed": true
+  },
+  "event-arkship-65": {
+    "docs": {
+      "arkship.65": {
+        "pilot_dragonslayer.GetName": {"zh": "", "en": "", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现这位屠龙者的称呼。", "en": "In the game, this pilot's title appears here."}},
+        "pilot_great_khan.GetName": {"zh": "", "en": "", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现这位大汗的称呼。", "en": "In the game, this pilot's title appears here."}}
+      }
+    },
+    "reviewed": true
+  },
+  "event-arkship-700": {
+    "exceptions": ["arkship.760 and arkship.780 en: sentences start with 'has' because the subject token is not in the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-arkship-860": {"reviewed": true},
+  "event-arkship-870": {"reviewed": true},
+  "event-arkship-880": {"reviewed": true},
+  "event-arkship-890": {"reviewed": true},
+  "event-arkship-900": {"reviewed": true},
+  "event-arkship-910": {"reviewed": true},
+  "event-arkship-95": {"reviewed": true},
+  "event-bio-3000": {"reviewed": true},
+  "event-bio-3100": {"reviewed": true},
+  "event-bio-3125": {"reviewed": true},
+  "event-bio-3145": {
+    "docs": {
+      "bio.3150": {"Root.GetName": {"zh": "你们", "en": "your empire", "note": {"zh": "游戏里这里会出现你们帝国的称呼。", "en": "In the game, your empire's name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-bio-3200": {
+    "docs": {
+      "bio.3205": {"targetrivalname.GetName": {"zh": "我们的对手", "en": "our rivals", "note": {"zh": "游戏里这里会出现与我们对立的一方。", "en": "In the game, the opposing side appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-bio-3215": {"reviewed": true},
+  "event-bio-3225": {
+    "docs": {
+      "bio.3230": {"interesting_species.GetName": {"zh": "种群", "en": "population", "note": {"zh": "游戏里这里会出现该种族的种群。", "en": "In the game, this species' population appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-bio-3300": {
+    "docs": {
+      "bio.3305": {"fallen_empire_hive_control.Capital.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现另一颗星球的名称。", "en": "In the game, the name of the other planet appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-bio-3325": {
+    "exceptions": ["bio.3330: 'must pass' is the game's own wording for the vote; kept"],
+    "reviewed": true
+  },
+  "event-bio-3345": {
+    "docs": {
+      "bio.3360": {"FromFrom.GetName": {"zh": "那个星系", "en": "the other system", "note": {"zh": "游戏里这里会出现另一个星系的名称。", "en": "In the game, the name of the other system appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-bio-800": {"reviewed": true},
+  "event-bio-900": {"reviewed": true},
+  "event-cara-2010": {
+    "exceptions": ["cara.2200 en: 'your planet, «this planet»' names the planet twice; game text, phrase kept"],
+    "reviewed": true
+  },
+  "event-cara-3010": {"reviewed": true},
+  "event-cara-333": {
+    "docs": {
+      "cara.310": {"Root.Capital.GetStarName": {"zh": "此", "en": "the star", "note": {"zh": "游戏里这里会出现首都所在恒星的称呼。", "en": "In the game, the name of the capital's star appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-cara-4000": {"reviewed": true}
+}

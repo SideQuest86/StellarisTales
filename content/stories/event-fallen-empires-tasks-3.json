@@ -40,5 +40,29 @@
     "en": "In the game, the plural name of your species appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "fallen_empires_tasks.4": {
+   "FallenEmpireTaskOrigin.GetSpeciesName": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里不会单独显示该物种名称。",
+     "en": "In the game, the name of the species is not shown here."
+    }
+   },
+   "Root.GetSpeciesName": {
+    "zh": "你们的物种",
+    "en": "your species",
+    "note": {
+     "zh": "游戏里这里会出现你们种族的名称。",
+     "en": "In the game, the name of your species appears here."
+    }
+   }
+  }
  }
 }

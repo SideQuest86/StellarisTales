@@ -158,5 +158,46 @@
     "en": "In the game, the name of the other empire appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "espionage.1021": {
+   "disavowed_agent_country.GetAdj": {
+    "zh": "该国",
+    "en": "their",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现那个帝国的称谓。",
+     "en": "In the game, the other empire's name appears here."
+    }
+   }
+  },
+  "espionage.1081": {
+   "insidious_plot_country.GetAdj": {
+    "zh": "该国",
+    "en": "their",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现那个帝国的称谓。",
+     "en": "In the game, the other empire's name appears here."
+    }
+   }
+  },
+  "espionage.1082": {
+   "insidious_plot_spymaster.GetName": {
+    "zh": "这位首脑",
+    "en": "the spymaster",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现间谍首脑的名称。",
+     "en": "In the game, the name of the spymaster appears here."
+    }
+   }
+  }
  }
 }

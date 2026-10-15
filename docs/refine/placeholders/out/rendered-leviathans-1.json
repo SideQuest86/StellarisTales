@@ -1,0 +1,199 @@
+{
+  "artisan-troupe": {
+    "docs": {
+      "leviathans.304": {"root.GetSpeciesAdj": {"zh": "这一族的", "en": "your kind", "omit": ["en"], "note": {"zh": "游戏里这里会出现你们这一族的特征。", "en": "In the game, your species' trait appears here."}}},
+      "leviathans.315": {"Root.GetRulerTitle": {"zh": "统治者", "en": "ruler", "omit": ["zh"], "note": {"zh": "游戏里这里会出现你的统治者头衔。", "en": "In the game, your ruler's title appears here."}}},
+      "leviathans.322": {"Root.GetRulerName": {"zh": "阁下", "en": "your majesty", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的统治者称呼。", "en": "In the game, your ruler's name appears here."}}},
+      "leviathans.323": {"Root.GetRulerName": {"zh": "阁下", "en": "your majesty", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的统治者称呼。", "en": "In the game, your ruler's name appears here."}}},
+      "leviathans.324": {"Root.GetRulerName": {"zh": "阁下", "en": "your majesty", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的统治者称呼。", "en": "In the game, your ruler's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "automated-dreadnought": {
+    "docs": {
+      "leviathans.3100": {"dreadnought_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "curators": {
+    "docs": {
+      "leviathans.559": {"origin_unplugged_assimilator_empire.GetAdj": {"zh": "别的", "en": "other", "note": {"zh": "游戏里这里会出现这个帝国的其他同类。", "en": "In the game, this empire's other peers appear here."}}},
+      "leviathans.597": {"Root.GetSpeciesNamePlural": {"zh": "朋友们", "en": "friends", "omit": ["en"], "note": {"zh": "游戏里这里会出现你们的称呼。", "en": "In the game, your group's name appears here."}}},
+      "leviathans.4000": {"Root.GetSpeciesNamePlural": {"zh": "朋友们", "en": "friends", "omit": ["en"], "note": {"zh": "游戏里这里会出现你们的称呼。", "en": "In the game, your group's name appears here."}}}
+    },
+    "exceptions": ["leviathans.559: 'splintered the other empire' keeps the game's article before the substituted phrase."],
+    "reviewed": true
+  },
+  "dimensional-horror": {
+    "docs": {},
+    "exceptions": ["leviathans.3004: 'produced by this system dimensional rifts' reads awkwardly; the system name is a modifier in game text."],
+    "reviewed": true
+  },
+  "dragons-hoard": {
+    "docs": {
+      "leviathans.661": {"From.GetStarName": {"zh": "这个", "en": "the star", "note": {"zh": "游戏里这里会出现这颗恒星所在的星系。", "en": "In the game, the name of this star's system appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "enclave-leader-departure": {
+    "docs": {
+      "enclave.8000": {"root.GetName": {"zh": "领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现离开的领袖的身份。", "en": "In the game, the departing leader's title appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "enigmatic-fortress": {
+    "docs": {
+      "leviathans.2105": {"fortress_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}},
+      "leviathans.2157": {"Root.GetAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的帝国的名称形容词。", "en": "In the game, your empire's adjective appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "ether-drake": {
+    "docs": {},
+    "exceptions": ["leviathans.650: zh doubles the word '我们收' in game text."],
+    "reviewed": true
+  },
+  "event-enclave-2": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-enclave-2045": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-enclave-2059": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-enclave-23": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-enclave-27": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-enclave-370": {
+    "docs": {
+      "enclave.375": {"salvager_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}},
+      "enclave.380": {"salvager_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-enclave-430": {
+    "docs": {
+      "enclave.435": {"shroudwalker_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}},
+      "enclave.440": {"shroudwalker_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-leviathans-140": {
+    "docs": {},
+    "exceptions": ["leviathans.141: 'the other empire headquarters' lacks the possessive in game text; kept."],
+    "reviewed": true
+  },
+  "event-leviathans-4": {
+    "docs": {
+      "leviathans.5": {"leviathan_destroyed_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-leviathans-98": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-150": {
+    "docs": {
+      "nomads.290": {"Species.GetHandName": {"zh": "手", "en": "hand", "note": {"zh": "游戏里这里会出现你们的手的称呼。", "en": "In the game, your species' hand appears here."}}}
+    },
+    "exceptions": [
+      "nomads.1545: en phrase has a stray space inside « Calculators» and its key is not in the list.",
+      "nomads.255, special_projects:CHAMPIONS_FORGE_TRAVEL: fleet size slot '25' reads 'at most 25 Fleet Size' in game text; kept.",
+      "nomads.255: 'Next CFL Tournament in this system System' repeats the noun from game text; kept."
+    ],
+    "reviewed": true
+  },
+  "event-shroud-4199": {
+    "docs": {
+      "shroud.4286": {"root.GetName": {"zh": "领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现离开的领袖的身份。", "en": "In the game, the departing leader's title appears here."}}},
+      "shroud.4250": {"event_target:shroudwalker_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the name of the rival enclave appears here."}}},
+      "shroud.4230": {"event_target:shroudwalker_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the name of the rival enclave appears here."}}},
+      "shroud.4240": {"event_target:shroudwalker_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the name of the rival enclave appears here."}}},
+      "shroud.4260": {"event_target:shroudwalker_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the name of the rival enclave appears here."}}},
+      "shroud.4270": {"event_target:shroudwalker_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the name of the rival enclave appears here."}}},
+      "shroud.4280": {"event_target:shroudwalker_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the name of the rival enclave appears here."}}},
+      "shroud.4405": {"mindwarden_enclave_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}},
+      "shroud.4406": {"mindwarden_enclave_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}}
+    },
+    "exceptions": ["shroud.4247 vs shroud.4205: 'kin' and 'people' are different keys, each reads naturally in its sentence; kept."],
+    "reviewed": true
+  },
+  "event-shroud-5375": {"docs": {}, "exceptions": [], "reviewed": true},
+  "hive-asteroids": {
+    "docs": {
+      "leviathans.3202": {"hiver_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}},
+      "leviathans.3230": {"from.solar_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "infinity-machine": {
+    "docs": {
+      "leviathans.1030": {"Root.GetStarName": {"zh": "这颗恒星", "en": "this", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "mercenary-enclave": {"docs": {}, "exceptions": [], "reviewed": true},
+  "salvager-enclave": {
+    "docs": {
+      "enclave.305": {"salvager_enclave_country.species.GetHandNamePlural": {"zh": "手", "en": "hands", "note": {"zh": "游戏里这里会出现打捞者的手的称呼。", "en": "In the game, the salvagers' hands appear here."}}},
+      "enclave.7005": {"Root.GetName": {"zh": "我们的帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, your empire's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "shroud-tunnels": {
+    "docs": {},
+    "exceptions": ["enclave.6025: 'science vessel the fleet' keeps the game's article before the substituted phrase."],
+    "reviewed": true
+  },
+  "shroudwalker-divination": {
+    "docs": {
+      "enclave.5076": {"shroudwalker_enclave_country.GetName": {"zh": "这个城邦", "en": "the enclave", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个城邦的名称。", "en": "In the game, the enclave's name appears here."}}}
+    },
+    "exceptions": [
+      "enclave.5195: 'the legendary hero the hero' and zh '传奇英雄这位英雄' repeat the noun in game text; kept (open issue).",
+      "enclave.5200: '«their» has now settled' uses a possessive where a subject is needed; game text.",
+      "enclave.5200: 'the hero's' brainwave' has a doubled possessive; game text.",
+      "enclave.5540, enclave.5550: 'not your this planet' and 'not this this planet' self-reference in game text; kept.",
+      "enclave.5521, enclave.5525: 'It's not this this system?' repeats the determiner in game text; kept."
+    ],
+    "reviewed": true
+  },
+  "shroudwalker-enclave": {
+    "docs": {
+      "enclave.405": {"shroudwalker_enclave_country.GetName": {"zh": "这个城邦", "en": "our enclave", "note": {"zh": "游戏里这里会出现我们这个城邦的名称。", "en": "In the game, our enclave's name appears here."}}},
+      "shroud.5300": {"shroudwalker_enclave_country.GetName": {"zh": "这个城邦", "en": "our enclave", "note": {"zh": "游戏里这里会出现我们这个城邦的名称。", "en": "In the game, our enclave's name appears here."}}},
+      "enclave.420": {"shroudwalker_enclave_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}}
+    },
+    "exceptions": ["special_projects:DELVING_RITUAL: 'Our enclave have made' verb agreement from game text; kept."],
+    "reviewed": true
+  },
+  "situation-leviathan-celebration-opportunity": {
+    "docs": {},
+    "exceptions": [
+      "situation.1000, situation.1005, situation.1055, situation.1090, situation.1095, situation.1110, situation.1120: empty «» substitution renders blank; site-side fix needed.",
+      "situation.1085: 'his can spread' is a game typo for 'this'; kept.",
+      "situation.1120: 'reignite this system star' and zh '这个星系恒星系' repeat the noun; the same phrase also fills the object; game text kept."
+    ],
+    "reviewed": true
+  },
+  "spectral-wraith": {
+    "docs": {},
+    "exceptions": ["leviathans.2010: 'at date that moment' — date token from game text; kept (open issue)."],
+    "reviewed": true
+  },
+  "stellar-devourer": {
+    "docs": {},
+    "exceptions": ["leviathans.999, leviathans.1000, leviathans.1017, leviathans.1018: three systems share the phrase 'this'; each sentence reads naturally with the named system, kept (open issue)."],
+    "reviewed": true
+  },
+  "trader-enclaves": {
+    "docs": {
+      "leviathans.102": {"trader_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}}
+    },
+    "exceptions": ["leviathans.105, 106, 107, 123, 124, 125, 126, 127, 128, 133, 134, 135: 'Opinion: £opinion£ «»' value slot is blank (no key); site-side fix needed."],
+    "reviewed": true
+  }
+}

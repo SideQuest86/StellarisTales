@@ -1,0 +1,157 @@
+{
+  "anomaly-star-resonance-cat": {"reviewed": true},
+  "anomaly-station-asteroid-category": {
+    "docs": {
+      "anomaly.40": {
+        "From.GetName": {"zh": "它", "en": "the asteroid", "note": {"zh": "游戏里这里会指代这颗小行星。", "en": "In the game, this asteroid appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-stolen-ship-cat": {"reviewed": true},
+  "anomaly-storms-anom-polychromatic": {"reviewed": true},
+  "anomaly-storms-anom-travellers": {"reviewed": true},
+  "anomaly-storms-anom-triplets": {"reviewed": true},
+  "anomaly-storms-cosmic-sludge": {
+    "docs": {
+      "anomalies:STORMS_COSMIC_SLUDGE": {
+        "from.solar_system.GetName": {"zh": "这颗恒星", "en": "the star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-storms-displaced-tiyanki": {"reviewed": true},
+  "anomaly-storms-eviscerated-fauna": {"reviewed": true},
+  "anomaly-storms-gasgiant-category": {
+    "exceptions": ["anomaly.6855 zh: a stray '们' starts one sentence and '更—加—有趣' is game text; neither is fixable by a phrase"],
+    "reviewed": true
+  },
+  "anomaly-storms-shattered-sattelite": {"reviewed": true},
+  "anomaly-strange-signal-category": {
+    "exceptions": [
+      "anomalies:strange_signal_category and federations2.1: placeholder renders as empty «» on 'the only non-natural structure on «»' with no keys line; needs key lookup",
+      "federations2.1 zh: '火灾600年前' uses game text that reads oddly; not a placeholder issue"
+    ],
+    "reviewed": true
+  },
+  "anomaly-subglacial-vibrations-cat": {"reviewed": true},
+  "anomaly-sun-rays-cat": {
+    "exceptions": ["anomaly.4035 and anomaly.4040: placeholder renders as empty «» with no keys line; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-sun-teapot-cat": {
+    "docs": {
+      "anomaly.4060": {
+        "From.GetName": {"zh": "这颗恒星", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}}
+      }
+    },
+    "exceptions": ["anomaly.4060 zh: '围绕着«这颗恒星»的恒星旋转' repeats the star noun, and the second noun is game text"],
+    "reviewed": true
+  },
+  "anomaly-supermassive-giant-cat": {"reviewed": true},
+  "anomaly-survival-pod-warm-cat": {"reviewed": true},
+  "anomaly-tectonic-icebreaker-category": {"reviewed": true},
+  "anomaly-temporal-prism-cat": {"reviewed": true},
+  "anomaly-terminal-gasgiant-category": {"reviewed": true},
+  "anomaly-terrestial-telescope-category": {"reviewed": true},
+  "anomaly-the-imitator-category": {
+    "exceptions": ["cstorms.1550 en: 'They explained they have been dragged' has a grammar slip from game text; the zh repeats 此人 as game text"],
+    "reviewed": true
+  },
+  "anomaly-the-judge-cat": {
+    "exceptions": ["anomaly.9002 zh: '科学家«这位»' leaves the role word and the leader phrase side by side; the role word is game text"],
+    "reviewed": true
+  },
+  "anomaly-the-lonely-bot-category": {"reviewed": true},
+  "anomaly-time-loop-world": {"reviewed": true},
+  "anomaly-tomb-world-cat": {"reviewed": true},
+  "anomaly-tox-mat-cat": {"reviewed": true},
+  "anomaly-tox-planet-cat": {
+    "exceptions": ["anomaly.4105 zh: '«这颗星球»行星' doubles the planet noun from game text, and the second zh sentence needs the phrase, so no single phrase fixes both"],
+    "reviewed": true
+  },
+  "anomaly-tox-purple-rain-cat": {
+    "docs": {
+      "anomaly.160": {
+        "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-tox-structures-cat": {
+    "exceptions": ["anomaly.3050 zh: '科研«专员»' splits the game-text title, so the phrase reads as a fragment"],
+    "reviewed": true
+  },
+  "anomaly-transmitter-cat": {"reviewed": true},
+  "anomaly-trop-biology-cat": {"reviewed": true},
+  "anomaly-trop-conditions-cat": {"reviewed": true},
+  "anomaly-trop-pets-cat": {"reviewed": true},
+  "anomaly-trop-woods-cat": {"reviewed": true},
+  "anomaly-tutorial-cat": {"reviewed": true},
+  "anomaly-uhb-ancient-ruins-1-cat": {"reviewed": true},
+  "anomaly-uhb-buoy-cat": {"reviewed": true},
+  "anomaly-unique-system-battle-cat": {"reviewed": true},
+  "anomaly-vapor-plumes-cat": {"reviewed": true},
+  "anomaly-vending-machine-cat": {"reviewed": true},
+  "anomaly-wat-planet-cat": {
+    "exceptions": ["anomaly.4046, anomaly.4047, anomaly.4048, anomaly.4049 and anomaly.4052: placeholder renders as empty «» in zh and en with no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-wenkwort-cat": {"reviewed": true},
+  "anomaly-writing-uninhabitable-category": {
+    "exceptions": ["anomaly.635: placeholder renders as empty «» in zh and en with no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "dessanu-consonance": {
+    "docs": {
+      "graygoo.160": {
+        "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}
+      },
+      "graygoo.161": {
+        "lcluster_factory_system.GetName": {"zh": "这个", "en": "the star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}}
+      }
+    },
+    "exceptions": ["graygoo.150: placeholder renders as empty «» in zh and en for 'on «»' and 'the «»' with no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "event-anomaly-1193": {
+    "docs": {
+      "anomaly.1194": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}},
+      "anomaly.189": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}},
+      "anomaly.1198": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}},
+      "anomaly.1200": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}},
+      "anomaly.1199": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-anomaly-142": {
+    "docs": {
+      "special_projects:OLD_GODS_BENEFACTRESS_PROJECT": {
+        "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}
+      },
+      "special_projects:OLD_GODS_UNDAUNTED_PROJECT": {
+        "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}
+      }
+    },
+    "exceptions": ["special_projects:OLD_GODS_BENEFACTRESS_PROJECT zh: '由的象形文字' has an empty placeholder with no key line; needs key lookup"],
+    "reviewed": true
+  },
+  "event-anomaly-2574": {
+    "exceptions": ["anomaly.2575: placeholder renders as empty «» in several zh and en sentences with no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "event-anomaly-3095": {
+    "docs": {
+      "anomaly.3105": {
+        "Root.GetRulerTitle": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现你的统治者的称谓。", "en": "In the game, your ruler's title appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-anomaly-3115": {"reviewed": true}
+}

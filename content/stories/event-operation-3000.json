@@ -279,5 +279,48 @@
     "en": "In the game, the name of the third smear option appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "operation.3000": {
+   "smear_option_1.GetName": {
+    "zh": "第一种手段",
+    "en": "first approach"
+   },
+   "smear_option_2.GetName": {
+    "zh": "第二种手段",
+    "en": "second approach"
+   },
+   "smear_option_3.GetName": {
+    "zh": "第三种手段",
+    "en": "third approach"
+   }
+  },
+  "operation.3001": {
+   "root.target.GetAdj": {
+    "zh": "该国",
+    "en": "rival"
+   },
+   "smear_campaign_recipient.GetAdj": {
+    "zh": "该国",
+    "en": "rival"
+   },
+   "smear_campaign_recipient.leader.GetName": {
+    "zh": "这位领袖",
+    "en": "the leader",
+    "omit": [
+     "en"
+    ]
+   }
+  },
+  "operation.3020": {
+   "smear_campaign_instigator.GetAdj": {
+    "zh": "该国",
+    "en": "rival"
+   },
+   "smear_campaign_recipient.GetAdj": {
+    "zh": "该国",
+    "en": "the other empire's"
+   }
+  }
  }
 }

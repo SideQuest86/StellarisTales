@@ -1,0 +1,194 @@
+{
+  "chain-contract-diplomatic-support-chain": {"reviewed": true},
+  "chain-establish-colony": {"reviewed": true},
+  "event-awareness-125": {"reviewed": true},
+  "event-bio-1": {
+    "docs": {
+      "bio.85": {
+        "Owner.Leader.GetHerselfHimself": {
+          "zh": "这位领袖本人",
+          "en": "the leader themselves",
+          "note": {"zh": "游戏里这里会出现领袖本人的说法。", "en": "In the game, the leader themselves appears here."}
+        }
+      },
+      "bio.86": {
+        "Owner.GetSpeciesAdj": {
+          "zh": "我们的",
+          "en": "",
+          "omit": ["en", "zh"],
+          "note": {"zh": "这里省略这个词，句子读起来更自然。", "en": "This word is left out, so the sentence reads naturally."}
+        }
+      }
+    },
+    "exceptions": [
+      "bio.220: 'by the name of «the geneticist»' and bio.300: 'a «scientist» by the name of «the scientist»' - the role phrase follows game text 'by the name of'; one phrase cannot read well in every position",
+      "bio.85: 'each a replica of our «leader», «the leader»' - title plus name pair is not collapsed by the site; needs a page-side rule"
+    ],
+    "reviewed": true
+  },
+  "event-colony-1": {"reviewed": true},
+  "event-colony-100": {"reviewed": true},
+  "event-colony-10000": {
+    "docs": {
+      "colony.10082": {
+        "Owner.GetSpeciesNamePlural": {
+          "zh": "同胞",
+          "en": "people",
+          "omit": ["en"],
+          "note": {"zh": "英文中这里省略，句子读起来更自然。", "en": "This word is left out in English, so the sentence reads naturally."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-colony-150": {"reviewed": true},
+  "event-colony-1500": {
+    "docs": {
+      "colony.1511": {
+        "Root.Owner.GetSpeciesName": {
+          "zh": "我们的",
+          "en": "our",
+          "omit": ["en", "zh"],
+          "note": {"zh": "这里省略这个词，句子读起来更自然。", "en": "This word is left out, so the sentence reads naturally."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-colony-1520": {"reviewed": true},
+  "event-colony-155": {"reviewed": true},
+  "event-colony-160": {"reviewed": true},
+  "event-colony-161": {"reviewed": true},
+  "event-colony-162": {"reviewed": true},
+  "event-colony-163": {"reviewed": true},
+  "event-colony-164": {"reviewed": true},
+  "event-colony-170": {"reviewed": true},
+  "event-colony-180": {"reviewed": true},
+  "event-colony-2001": {"reviewed": true},
+  "event-colony-2005": {"reviewed": true},
+  "event-colony-2010": {"reviewed": true},
+  "event-colony-2015": {"reviewed": true},
+  "event-colony-2025": {"reviewed": true},
+  "event-colony-2050": {"reviewed": true},
+  "event-colony-2060": {"reviewed": true},
+  "event-colony-3001": {
+    "docs": {
+      "colony.3001": {
+        "event_target:roguemoon.Planet.GetName": {
+          "zh": "这颗卫星",
+          "en": "it",
+          "note": {"zh": "游戏里这里会出现这颗卫星的指代。", "en": "In the game, the moon appears here as 'it'."}
+        }
+      }
+    },
+    "exceptions": ["colony.3001: 'the moon it does not seem to be made of' reads awkwardly; the same phrase is needed for 'Quite where it came from'"],
+    "reviewed": true
+  },
+  "event-colony-3005": {
+    "exceptions": [
+      "colony.9810 and colony.9815: 'lead physics unit «the physicist»' and 'physics specialized drone «the physicist»' - the unit word plus role phrase reads awkwardly; the name phrase is shared across the document",
+      "colony.3060: 'nothing could stand in «them» way' - the object form is used for a possessive in game text; cannot fix with one phrase"
+    ],
+    "reviewed": true
+  },
+  "event-colony-3029": {
+    "docs": {
+      "colony.3031": {
+        "Root.Owner.GetName": {
+          "zh": "那个帝国",
+          "en": "",
+          "omit": ["en"],
+          "note": {"zh": "英文中这里省略，句子读起来更自然。", "en": "This name is left out in English, so the sentence reads naturally."}
+        }
+      },
+      "colony.3032": {
+        "Root.Owner.GetName": {
+          "zh": "那个帝国",
+          "en": "",
+          "omit": ["en"],
+          "note": {"zh": "英文中这里省略，句子读起来更自然。", "en": "This name is left out in English, so the sentence reads naturally."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-colony-3051": {
+    "docs": {
+      "colony.3051": {
+        "doomslayer_knight.GetHimHer": {
+          "zh": "此人",
+          "en": "",
+          "omit": ["en"],
+          "note": {"zh": "英文中这里省略，句子读起来更自然。", "en": "This word is left out in English, so the sentence reads naturally."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-colony-50": {
+    "exceptions": [
+      "colony.67: 'museums on «our capital»' - the preposition 'on' is game text; the phrase cannot fix it",
+      "colony.52: the English sentence is split into two rendered lines ('Our efforts to destroy the «mantle-dwelling».' / 'aliens on «this planet» have met with success!') because the source text breaks there; not fixed"
+    ],
+    "reviewed": true
+  },
+  "event-colony-5000": {"reviewed": true},
+  "event-colony-7229": {"reviewed": true},
+  "event-colony-8001": {"reviewed": true},
+  "event-colony-9000": {
+    "exceptions": ["colony.9005: 'While our «this planet» colony' gives 'our this planet colony'; the same phrase is needed for 'colony at «this planet»' in the same document"],
+    "reviewed": true
+  },
+  "event-colony-9050": {"reviewed": true},
+  "event-colony-9200": {"reviewed": true},
+  "event-colony-9295": {
+    "exceptions": ["colony.9300: 'calling «this planet»onium' renders as 'this planetonium'; the same phrase is needed for 'discovered on this planet!' in the same document"],
+    "reviewed": true
+  },
+  "event-colony-9310": {"reviewed": true},
+  "event-colony-9350": {
+    "docs": {
+      "event_chains:myrmeku_chain": {
+        "myrmeku_planet.GetName": {
+          "zh": "这颗星球",
+          "en": "this planet's",
+          "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here, as a possessive."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-colony-9820": {
+    "docs": {
+      "colony.9840": {
+        "Root.Species.GetNamePlural": {
+          "zh": "同胞",
+          "en": "citizens",
+          "note": {"zh": "游戏里这里会出现我们这个物种的复数称呼。", "en": "In the game, the plural name of your species appears here."}
+        }
+      },
+      "colony.9875": {
+        "Root.GetName": {
+          "zh": "我们的帝国",
+          "en": "empire",
+          "note": {"zh": "游戏里这里会出现我们的帝国的名称。", "en": "In the game, the name of your empire appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "colony.9821: 'This is «the physicist»s unique ID' - the possessive suffix is game text after the phrase; the same phrase is needed in other sentences",
+      "colony.9821: 'lead physics unit «the physicist»' style unit plus role phrase reads awkwardly; the name phrase is shared across the document"
+    ],
+    "reviewed": true
+  },
+  "event-colony-9900": {"reviewed": true},
+  "event-colony-9950": {"reviewed": true},
+  "event-colony-fed-100": {"reviewed": true},
+  "event-colony-mod-1": {"reviewed": true},
+  "event-colony-mod-161": {"reviewed": true},
+  "event-colony-mod-2": {"reviewed": true},
+  "event-colony-mod-3": {"reviewed": true},
+  "event-colony-mod-30": {"reviewed": true},
+  "event-colony-mod-4": {"reviewed": true},
+  "event-colony-mod-5": {"reviewed": true}
+}

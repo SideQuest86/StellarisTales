@@ -1,0 +1,187 @@
+{
+  "anomaly-abandoned-outpost-category": {"reviewed": true},
+  "anomaly-aerostat-gasgiant-category": {"reviewed": true},
+  "anomaly-aianom-clue-cat": {
+    "docs": {
+      "aianom.11": {
+        "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-aianom-lump-cat": {"reviewed": true},
+  "anomaly-aianom-miningdepo-cat": {"reviewed": true},
+  "anomaly-aianom-researchdepo-cat": {"reviewed": true},
+  "anomaly-alien-life-cat": {
+    "exceptions": ["distar.2020: en 'our home of «the homeworld»' is stilted because 'our home of' is game text; phrase cannot fix it cleanly"],
+    "reviewed": true
+  },
+  "anomaly-alpha-centauri-cat": {
+    "docs": {
+      "anomaly.6745": {
+        "Root.Owner.GetSpeciesNamePlural": {"zh": "该物种", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-ancrel-arc-cat": {"reviewed": true},
+  "anomaly-ancrel-mechano-cat": {"reviewed": true},
+  "anomaly-ancrel-rubricator-cat": {"reviewed": true},
+  "anomaly-arid-planet-cat": {
+    "exceptions": ["anomalies:ARID_PLANET_CAT and anomaly.4170: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-arid-sensor-cat": {
+    "exceptions": ["anomalies:ARID_SENSOR_CAT and anomaly.4080: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-ast-cluster-cat": {
+    "docs": {
+      "anomaly.3085": {
+        "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-ast-crater-cat": {
+    "docs": {
+      "anomaly.270": {
+        "From.GetName": {"zh": "这颗小行星", "en": "the asteroid", "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-ast-debris-field-1-cat": {
+    "docs": {
+      "anomaly.3040": {
+        "Root.Owner.GetRulerTitle": {"zh": "统治者", "en": "ruler", "omit": ["zh"], "note": {"zh": "游戏里这里会出现你的统治者的头衔。", "en": "In the game, your ruler's title appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-ast-debris-field-1-cat-2": {"reviewed": true},
+  "anomaly-ast-gear-cat": {
+    "docs": {
+      "anomaly.4065": {
+        "From.GetName": {"zh": "这颗小行星", "en": "asteroid", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-ast-illicit-dark-cat": {"reviewed": true},
+  "anomaly-ast-mining-cat": {
+    "docs": {
+      "anomaly.4005": {
+        "From.GetName": {"zh": "这颗小行星", "en": "asteroid", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-ast-shrine-1-cat": {
+    "docs": {
+      "anomaly.140": {
+        "Root.Owner.GetSpeciesName": {"zh": "该物种", "en": "species", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+        "Root.leader.GetHeSheCap": {"zh": "此人", "en": "they", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这位领袖的代词。", "en": "In the game, the leader's pronoun appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-ast-wavelengths-1-cat": {
+    "docs": {
+      "anomaly.75": {
+        "From.GetName": {"zh": "这块小行星", "en": "asteroid", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这块小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+      }
+    },
+    "exceptions": ["anomaly.77: en 'the star «this star»' is doubled, and the same key also serves the orbit sentence, so one phrase cannot fix both"],
+    "reviewed": true
+  },
+  "anomaly-asteroid-uninhabitable-category": {
+    "exceptions": ["anomalies:asteroid_uninhabitable_category: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-astral-scar-cat": {
+    "docs": {
+      "astral_planes.6001": {
+        "FromFromFrom.System.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-atm-anomaly-cat": {"reviewed": true},
+  "anomaly-atomic-clock-cat": {
+    "docs": {
+      "distar.311": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}},
+      "distar.315": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}},
+      "distar.320": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}},
+      "distar.330": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}},
+      "distar.335": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital world", "note": {"zh": "游戏里这里会出现你的首都星球名称。", "en": "In the game, your capital world's name appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-backwards-orbit-cat": {"reviewed": true},
+  "anomaly-bar-colony-cat": {"reviewed": true},
+  "anomaly-barr-base-cat": {"reviewed": true},
+  "anomaly-battle-uninhabitable-category": {
+    "exceptions": ["anomalies:battle_uninhabitable_category and anomaly.2530: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-beacon-uninhabitable-category": {
+    "exceptions": ["anomalies:beacon_uninhabitable_category: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-bioadaptive-flora-category": {"reviewed": true},
+  "anomaly-black-clouds-cat": {"reviewed": true},
+  "anomaly-black-hole-instable-cat": {"reviewed": true},
+  "anomaly-but-they-are-cute-category": {"reviewed": true},
+  "anomaly-carbon-allotropes-cat": {"reviewed": true},
+  "anomaly-cargo-gasgiant-category": {"reviewed": true},
+  "anomaly-chthonian-preservation-cat": {"reviewed": true},
+  "anomaly-cold-research-cat": {
+    "docs": {
+      "anomaly.4075": {
+        "From.GetName": {"zh": "这颗星球", "en": "planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      },
+      "anomaly.4120": {
+        "From.GetName": {"zh": "这颗星球", "en": "planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-collision-asteroid-category": {"reviewed": true},
+  "anomaly-con-biology-cat": {
+    "exceptions": [
+      "anomaly.4100: zh '科学官«这位领袖»' doubles the role with the leader phrase; the role word is game text",
+      "anomaly.4100: en '«The leader» have been able' is a grammar slip in game text",
+      "anomaly.4095 and anomaly.4115: placeholder renders as empty «» with no keys line; needs key lookup",
+      "special_projects:ALIEN_MONSTER_ON_SHIP: unmatched « marker in both languages, no key in the worksheet",
+      "anomaly.4116: en 'aboard this planet' uses the ship preposition from game text; phrase cannot fix it"
+    ],
+    "reviewed": true
+  },
+  "anomaly-cont-signs-cat": {"reviewed": true},
+  "anomaly-corrupt-data-cat": {"reviewed": true},
+  "anomaly-crashed-ship-asteroid-category": {
+    "exceptions": ["anomaly.65 zh: '一座«这颗星球»的重力井' — the classifier 一座 is game text, so the phrase reads acceptably but not ideally"],
+    "reviewed": true
+  },
+  "anomaly-crimson-crawlers-category": {
+    "exceptions": ["cstorms.1255 en: \"«this planet»'s shone\" lacks a noun; the broken possessive is game text"],
+    "reviewed": true
+  },
+  "anomaly-crystal-lava-lakes-category": {"reviewed": true},
+  "anomaly-crystal-manufactory-cat": {"reviewed": true},
+  "anomaly-crystalline-plains-cat": {"reviewed": true},
+  "anomaly-data-diamond-cat": {"reviewed": true},
+  "anomaly-debris-asteroid-category": {"reviewed": true}
+}

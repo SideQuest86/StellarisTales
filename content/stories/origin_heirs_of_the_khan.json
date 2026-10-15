@@ -174,5 +174,28 @@
     "en": "In the game, the plural name of the raiders appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "marauder.502": {
+   "raider_khanate.GetRulerName": {
+    "zh": "本人",
+    "en": "in person",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现大汗的称呼。",
+     "en": "In the game, the Khan's form of address appears here."
+    }
+   },
+   "raider_khanate.Ruler.GetName": {
+    "zh": "这位领袖",
+    "en": "the new Khan",
+    "note": {
+     "zh": "游戏里这里会出现新大汗的名字。",
+     "en": "In the game, the new Khan's name appears here."
+    }
+   }
+  }
  }
 }

@@ -1,0 +1,301 @@
+{
+  "event-envoy-events-225": {
+    "exceptions": [
+      "envoy_events.225: en 'Our the envoy' (\"Our «the envoy»\") repeats the lead word; the same key is needed as 'the envoy' elsewhere, so game wording stays",
+      "envoy_events.225: en 'Are' appears in the pronoun slot ('«Are» currently in connection'); the substituted word is not a phrase for any listed key"
+    ],
+    "reviewed": true
+  },
+  "event-envoy-events-230": {"reviewed": true},
+  "event-envoy-events-3": {"reviewed": true},
+  "event-envoy-events-4": {"reviewed": true},
+  "event-envoy-events-5": {
+    "exceptions": [
+      "envoy_events.5: en 'So great an irritation «they» been' reads wrong ('they been'); game grammar, the site only fixes 'they has'",
+      "envoy_events.5: en 'The «foreign» envoy, «the envoy»' repeats the noun; source text puts both nouns in one phrase"
+    ],
+    "reviewed": true
+  },
+  "event-envoy-events-7": {
+    "docs": {
+      "envoy_events.8": {
+        "other_species_nation.GetAdj": {
+          "zh": "外国",
+          "en": "foreign national",
+          "note": {"zh": "游戏里这里会出现另一个国家的成员身份。", "en": "In the game, this foreign nation's citizenship appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "envoy_events.8: en 'Are under our protection' appears with a pronoun slot that renders as 'Are'; game text"
+    ],
+    "reviewed": true
+  },
+  "event-fallen-empires-100": {"reviewed": true},
+  "event-fallen-empires-2": {
+    "exceptions": [
+      "fallen_empires.2: en title 'The rival empire assassinate the ruler!' has a subject-verb mismatch from the game title; game text"
+    ],
+    "reviewed": true
+  },
+  "event-fallen-empires-awakening-4": {
+    "exceptions": [
+      "fallen_empires_awakening.11: en 'The ancient Fallen Empire Fragment, «the fragment» has been assimilated' repeats the noun; game text, one key for both uses"
+    ],
+    "reviewed": true
+  },
+  "event-fallen-empires-tasks-1": {
+    "exceptions": [
+      "fallen_empires_tasks.2: 'as «the species» client' and 'We «the species» believe' use FallenEmpireTaskOrigin.GetSpeciesName, which has no plain phrase that fits both; kept"
+    ],
+    "reviewed": true
+  },
+  "event-fallen-empires-tasks-14": {
+    "docs": {
+      "event_chains:fe_stop_robots_task_chain": {
+        "FallenEmpireTaskOrigin.GetName": {
+          "zh": "堕落帝国",
+          "en": "the fallen empires",
+          "note": {"zh": "游戏里这里会出现堕落帝国的名称。", "en": "In the game, the name of the fallen empire appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "fallen_empires_tasks.15: en 'This is is a message' is a game typo"
+    ],
+    "reviewed": true
+  },
+  "event-fallen-empires-tasks-21": {
+    "exceptions": [
+      "fallen_empires_tasks.22: en 'we «the species» always have a use' (FallenEmpireTaskOrigin.GetSpeciesName) has no plain phrase that fits; kept"
+    ],
+    "reviewed": true
+  },
+  "event-fallen-empires-tasks-23": {"reviewed": true},
+  "event-fallen-empires-tasks-3": {
+    "docs": {
+      "fallen_empires_tasks.4": {
+        "FallenEmpireTaskOrigin.GetSpeciesName": {
+          "zh": "",
+          "en": "",
+          "omit": ["zh", "en"],
+          "note": {"zh": "游戏里这里不会单独显示该物种名称。", "en": "In the game, the name of the species is not shown here."}
+        },
+        "Root.GetSpeciesName": {
+          "zh": "你们的物种",
+          "en": "your species",
+          "note": {"zh": "游戏里这里会出现你们种族的名称。", "en": "In the game, the name of your species appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-fallen-empires-tasks-7": {
+    "docs": {
+      "event_chains:fe_stop_atrocity_task_chain": {
+        "FallenEmpireTaskOrigin.GetName": {
+          "zh": "堕落帝国",
+          "en": "the fallen empires",
+          "note": {"zh": "游戏里这里会出现堕落帝国的名称。", "en": "In the game, the name of the fallen empire appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-fallen-machine-empire-10": {
+    "docs": {
+      "event_chains:fe_attack_empire_task_chain": {
+        "FallenEmpireTaskOrigin.GetName": {"zh": "堕落帝国", "en": "the fallen empires", "note": {"zh": "游戏里这里会出现堕落帝国的名称。", "en": "In the game, the name of the fallen empire appears here."}}
+      },
+      "event_chains:fe_colonize_planet_task_chain": {
+        "FallenEmpireTaskOrigin.GetName": {"zh": "堕落帝国", "en": "the fallen empires", "note": {"zh": "游戏里这里会出现堕落帝国的名称。", "en": "In the game, the name of the fallen empire appears here."}}
+      },
+      "event_chains:fe_no_wars_task_chain": {
+        "FallenEmpireTaskOrigin.GetName": {"zh": "堕落帝国", "en": "the fallen empires", "note": {"zh": "游戏里这里会出现堕落帝国的名称。", "en": "In the game, the name of the fallen empire appears here."}}
+      },
+      "event_chains:fe_no_colonies_task_chain": {
+        "FallenEmpireTaskOrigin.GetName": {"zh": "堕落帝国", "en": "the fallen empires", "note": {"zh": "游戏里这里会出现堕落帝国的名称。", "en": "In the game, the name of the fallen empire appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-feda-1": {"reviewed": true},
+  "event-galactic-features-2": {"reviewed": true},
+  "event-galactic-features-298": {
+    "docs": {
+      "galactic_features.303": {
+        "fallen_4_species.GetName": {
+          "zh": "该物种",
+          "en": "being",
+          "note": {"zh": "游戏里这里会出现这个残存种族的名称。", "en": "In the game, the name of this surviving species appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "galactic_features.301: empty substitution «» in the zh and en lines about the energy barrier over the planet; no listed key covers it",
+      "galactic_features.303: empty substitution «» in the zh and en lines about the hut's hemisphere; no listed key covers it"
+    ],
+    "reviewed": true
+  },
+  "event-galactic-features-350": {"reviewed": true},
+  "event-galactic-features-360": {"reviewed": true},
+  "event-galactic-features-366": {
+    "docs": {
+      "galactic_features.367": {
+        "tiyanki_system.GetName": {
+          "zh": "这个星系",
+          "en": "the home",
+          "note": {"zh": "游戏里这里会出现你们的母星系所在的星系名称。", "en": "In the game, the name of the home system appears here."}
+        }
+      },
+      "galactic_features.370": {
+        "tiyanki_system.GetName": {
+          "zh": "这个星系",
+          "en": "the home",
+          "note": {"zh": "游戏里这里会出现你们的母星系所在的星系名称。", "en": "In the game, the name of the home system appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "galactic_features.371: en 'your feeble the species brains' reads awkwardly; the key is shared by 'the species' and 'your' uses in one doc"
+    ],
+    "reviewed": true
+  },
+  "event-galactic-features-368": {"reviewed": true},
+  "event-galactic-features-381": {"reviewed": true},
+  "event-galactic-features-387": {"reviewed": true},
+  "event-galactic-features-421": {
+    "exceptions": [
+      "galactic_features.421: en 'its mere presence in «home»' reads awkwardly; the same key sits in 'in the «home» system' in the same story"
+    ],
+    "reviewed": true
+  },
+  "event-galactic-features-500": {
+    "exceptions": [
+      "galactic_features.502: title 'New Arrivals in «nearby»' reads oddly; the same key is used as 'in the «nearby» system' in the body"
+    ],
+    "reviewed": true
+  },
+  "event-game-start-1": {
+    "docs": {
+      "country.11": {
+        "anomaly_system.GetName": {
+          "zh": "那个星系",
+          "en": "remote system",
+          "note": {"zh": "游戏里这里会出现那个偏远星系的名称。", "en": "In the game, the name of the remote system appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-game-start-10": {
+    "exceptions": [
+      "fallen_empires.8: en '«empire» loses any claims...' starts with a stray fragment of game text; game text"
+    ],
+    "reviewed": true
+  },
+  "event-grand-archive-10000": {
+    "docs": {
+      "grand_archive.10055": {
+        "FromFrom.solar_system.GetName": {
+          "zh": "这个星系",
+          "en": "this system",
+          "note": {"zh": "游戏里这里会出现巨型生物所在星系的名称。", "en": "In the game, the name of the system where the giant was found appears here."}
+        }
+      },
+      "grand_archive.10075": {
+        "FromFrom.solar_system.GetName": {
+          "zh": "这个星系",
+          "en": "this system",
+          "note": {"zh": "游戏里这里会出现巨型生物所在星系的名称。", "en": "In the game, the name of the system where the giant was found appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-grand-archive-105": {"reviewed": true},
+  "event-grand-archive-2005": {"reviewed": true},
+  "event-grand-archive-2102": {"reviewed": true},
+  "event-grand-archive-2190": {"reviewed": true},
+  "event-grand-archive-3010": {"reviewed": true},
+  "event-grand-archive-3102": {"reviewed": true},
+  "event-grand-archive-4135": {"reviewed": true},
+  "event-grand-archive-4500": {"reviewed": true},
+  "event-grand-archive-6005": {
+    "exceptions": [
+      "grand_archive.6015: 'named «the ship»' (en) and 'the ship' zh reads oddly; game text names the ship with the same key",
+      "grand_archive.6015: zh '加入加入' is a game typo",
+      "grand_archive.6025: 'the leader were' (en) and '这位领袖曾是' (zh) carry game fragments beyond the listed key; game text"
+    ],
+    "reviewed": true
+  },
+  "event-grand-archive-7015": {"reviewed": true},
+  "event-grand-archive-9000": {
+    "docs": {
+      "grand_archive.9005": {
+        "fromfrom.GetName": {
+          "zh": "指挥官",
+          "en": "commander",
+          "note": {"zh": "游戏里这里会出现这位指挥官的称呼。", "en": "In the game, this commander's title appears here."}
+        }
+      },
+      "grand_archive.9010": {
+        "fromfrom.GetName": {
+          "zh": "指挥官",
+          "en": "commander",
+          "note": {"zh": "游戏里这里会出现这位指挥官的称呼。", "en": "In the game, this commander's title appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-grand-archive-9955": {"reviewed": true},
+  "event-infernals-30": {"reviewed": true},
+  "event-infernals-3000": {"reviewed": true},
+  "event-infernals-3030": {"reviewed": true},
+  "event-infernals-3050": {"reviewed": true},
+  "event-infernals-3200": {"reviewed": true},
+  "event-infernals-36": {
+    "exceptions": [
+      "planet_destruction.1000: empty substitution «» in 'destroyed the «» of «that planet»' (en) and the zh line about the planet's surface; no listed key covers it"
+    ],
+    "reviewed": true
+  },
+  "event-marauder-1": {
+    "docs": {
+      "marauder.760": {
+        "Root.Species.GetSpeciesName": {
+          "zh": "外乡人",
+          "en": "outlander",
+          "note": {"zh": "游戏里这里会出现你们种族的称呼。", "en": "In the game, your people's name appears here."}
+        }
+      },
+      "marauder.117": {
+        "marauder_country.GetSpeciesName": {
+          "zh": "掠夺者",
+          "en": "marauder",
+          "omit": ["en"],
+          "note": {"zh": "游戏里这里会出现掠夺者的名称。", "en": "In the game, the name of the marauder species appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "marauder.3: en 'in and around the «neighboring» system' and 'trespassing in «neighboring»' share one phrase; no plain phrase fits both uses"
+    ],
+    "reviewed": true
+  },
+  "event-marauder-100": {
+    "exceptions": [
+      "marauder.102: en 'Every «your» that is sacrificed', 'You will regret this slight, «your»' and 'Fare thee well, «your»' use bare 'your' as a noun; game text, one key for every use",
+      "marauder.121: en 'Are there any «your» warriors' reads awkwardly; the key covers both the adjective and noun uses",
+      "marauder.104, marauder.105, marauder.108: empty substitution «» in 'on the «»' (en and zh) for the settlements and facilities lines; no listed key covers it"
+    ],
+    "reviewed": true
+  }
+}

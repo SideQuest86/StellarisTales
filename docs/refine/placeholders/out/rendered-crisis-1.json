@@ -1,0 +1,65 @@
+{
+  "behemoth-fury": {
+    "docs": {},
+    "exceptions": ["situations:behemoth_finale_situation: the second «» placeholder has no key and renders empty ('我们当前的«生长因数»为：«»'); needs the game key"],
+    "reviewed": true
+  },
+  "cetana": {
+    "docs": {},
+    "exceptions": [
+      "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH: title 'Raid «star» Outpost' keeps the word 'star'; the same phrase is needed in the body sentence, so the title reads 'Raid star Outpost'",
+      "repeated-noun marker renders empty «» in THE_SYNTH_QUEENS_INVESTIGATION_FAKE, THE_SYNTH_QUEENS_INVESTIGATION, THE_SYNTH_QUEENS_INVESTIGATION_PARAGON and crisis.20200, crisis.20300, crisis.8125 (e.g. ZH '这颗«»上', EN 'on this «»'); the site must fill it"
+    ],
+    "reviewed": true
+  },
+  "contingency": {
+    "docs": {
+      "crisis.2303": {"admiral.GetName": {"zh": "本人", "en": "in person", "omit": ["zh", "en"]}},
+      "crisis.2503": {"Root.GetName": {"zh": "这颗星球", "en": "this planet"}}
+    },
+    "exceptions": [
+      "crisis.2097 and crisis.2302: EN 'Scientist «the officer»' keeps the title before the placeholder (the game text is a title + name pair); no phrase fixes it",
+      "crisis.2037: game text repeats 'Machine World' around the placeholder ('«That machine world», the Machine World in the «star» system'); kept",
+      "crisis.2011, crisis.2042, crisis.2091: repeated-noun marker renders empty «» (ZH '在«»上', EN 'the «»'s surface'); the site must fill it"
+    ],
+    "reviewed": true
+  },
+  "cosmogenesis": {
+    "docs": {},
+    "exceptions": ["crisis.7205, crisis.7210, crisis.7215, crisis.7235, crisis.7240, crisis.7245, crisis.7250, crisis.7255, crisis.7260, crisis.7265: 'We have gained «» £advanced_logic£ Advanced Logic' has an empty «» placeholder with no key"],
+    "reviewed": true
+  },
+  "defenders-of-the-galaxy": {"docs": {}, "exceptions": [], "reviewed": true},
+  "galactic-hyperthermia": {"docs": {}, "exceptions": [], "reviewed": true},
+  "galactic-nemesis": {
+    "docs": {
+      "crisis.4140": {"Root.GetSpeciesNamePlural": {"zh": "这些人", "en": "our kind", "omit": ["en"]}},
+      "special_projects:CRISIS_SPECIAL_PROJECT_1": {"Root.GetSpeciesNamePlural": {"zh": "这些人", "en": "our kind", "omit": ["zh", "en"]}},
+      "crisis.6182": {"destroyed_system.GetName": {"zh": "这个星系", "en": "this system"}},
+      "crisis.6015": {"From.GetSpeciesNamePlural": {"zh": "对方", "en": "they"}}
+    },
+    "exceptions": ["crisis.6101 and crisis.6103: game text 'the «destroyers» has destroyed' uses a singular verb with a plural noun; no phrase fixes the agreement"],
+    "reviewed": true
+  },
+  "gray-tempest": {
+    "docs": {
+      "graygoo.11": {"From.GetSpeciesName": {"zh": "对方", "en": "other species", "omit": ["en"]}}
+    },
+    "exceptions": ["graygoo.2: repeated-noun marker renders an empty «» (ZH '«»原居民', EN 'the «»'s original inhabitants'); the site must fill it"],
+    "reviewed": true
+  },
+  "prethoryn-scourge": {"docs": {}, "exceptions": [], "reviewed": true},
+  "unbidden": {
+    "docs": {},
+    "exceptions": ["crisis.1011: repeated-noun marker renders an empty «» (ZH '«»的整个生物圈', EN 'The «»'s entire biosphere'); the site must fill it"],
+    "reviewed": true
+  },
+  "war-in-heaven": {
+    "docs": {
+      "war_in_heaven.4": {"From.GetSpeciesName": {"zh": "宿敌种族", "en": "rival species", "omit": ["en"]}},
+      "war_in_heaven.7": {"From.GetSpeciesName": {"zh": "宿敌种族", "en": "rival species", "omit": ["en"]}}
+    },
+    "exceptions": ["war_in_heaven.2, war_in_heaven.4, war_in_heaven.5, war_in_heaven.7: game text uses plural verbs with singular empire placeholders ('«The rival empire» have', '«the winning empire» have'); verb agreement is game text and is kept"],
+    "reviewed": true
+  }
+}

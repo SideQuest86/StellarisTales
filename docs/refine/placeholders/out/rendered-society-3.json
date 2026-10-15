@@ -1,0 +1,260 @@
+{
+  "event-fircon-1440": {"reviewed": true},
+  "event-fircon-1465": {"reviewed": true},
+  "event-fircon-1495": {"reviewed": true},
+  "event-fircon-2000": {"reviewed": true},
+  "event-fircon-2010": {
+    "docs": {
+      "fircon.2011": {
+        "pre_ftl_planet.GetName": {
+          "zh": "这颗星球",
+          "en": "this planet",
+          "omit": ["en"],
+          "note": {"zh": "这里的星球名称在英文中省略，因为句子已经写明了“planet”。", "en": "The planet's name is left out in English here, because the sentence already says 'planet'."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-fircon-2500": {"reviewed": true},
+  "event-fircon-2510": {"reviewed": true},
+  "event-fircon-2520": {"reviewed": true},
+  "event-fircon-2530": {"reviewed": true},
+  "event-fircon-2540": {"reviewed": true},
+  "event-fircon-2550": {"reviewed": true},
+  "event-fircon-2600": {
+    "exceptions": ["fircon.2615: 'The launching empire have been inspired' - plural verb after a singular empire name is game text agreement; the phrase cannot fix it"],
+    "reviewed": true
+  },
+  "event-fircon-5000": {
+    "docs": {
+      "fircon.5026": {
+        "From.solar_system.GetName": {
+          "zh": "这个星系",
+          "en": "the affected system",
+          "note": {"zh": "游戏里这里会出现受影响星系的名称。", "en": "In the game, the name of the affected system appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-fircon-6000": {"reviewed": true},
+  "event-fircon-7500": {
+    "docs": {
+      "fircon.7500": {
+        "Root.GetSpeciesNamePlural": {
+          "zh": "我们的同胞",
+          "en": "our own kind",
+          "note": {"zh": "游戏里这里会出现我们这个物种的复数名称。", "en": "In the game, the plural name of your species appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-fircon-7505": {"reviewed": true},
+  "event-fircon-7510": {"reviewed": true},
+  "event-fircon-8000": {"reviewed": true},
+  "event-fircon-8025": {
+    "docs": {
+      "fircon.8025": {
+        "freeport_species.GetAdj": {
+          "zh": "当地人",
+          "en": "locals",
+          "note": {"zh": "游戏里这里会出现当地居民的称呼。", "en": "In the game, the name of the local inhabitants appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-fircon-8030": {"reviewed": true},
+  "event-fircon-8035": {"reviewed": true},
+  "event-fircon-8040": {"reviewed": true},
+  "event-fircon-8045": {
+    "exceptions": ["fircon.8045: zh «当地人野蛮人» (species phrase plus game text 野蛮人) reads awkwardly; game text pattern, phrase cannot fix it"],
+    "reviewed": true
+  },
+  "event-fircon-8050": {"reviewed": true},
+  "event-fircon-8055": {"reviewed": true},
+  "event-fircon-8060": {"reviewed": true},
+  "event-fircon-8500": {"reviewed": true},
+  "event-fircon-8515": {
+    "exceptions": ["fircon.8520: zh «个体»子个体 repeats the same role in one phrase; game text pattern, phrase cannot fix it"],
+    "reviewed": true
+  },
+  "event-fircon-8530": {"reviewed": true},
+  "event-fircon-8565": {"reviewed": true},
+  "event-first-contact-1": {
+    "docs": {
+      "first_contact.10": {
+        "This.Owner.GetSpeciesNamePlural": {
+          "zh": "我们的同胞",
+          "en": "of our people",
+          "note": {"zh": "游戏里这里会出现我们这个物种的复数名称。", "en": "In the game, the plural name of your species appears here."}
+        }
+      },
+      "first_contact.20": {
+        "This.Owner.GetSpeciesNamePlural": {
+          "zh": "我们的同胞",
+          "en": "of our people",
+          "note": {"zh": "游戏里这里会出现我们这个物种的复数名称。", "en": "In the game, the plural name of your species appears here."}
+        }
+      },
+      "first_contact.25": {
+        "This.Owner.GetSpeciesNamePlural": {
+          "zh": "我们的同胞",
+          "en": "of our people",
+          "note": {"zh": "游戏里这里会出现我们这个物种的复数名称。", "en": "In the game, the plural name of your species appears here."}
+        }
+      }
+    },
+    "exceptions": ["first_contact.15: the long phrase 'An unfamiliar moon of the system's tenth planet,' (trailing comma, not in the keys line) reads badly in about 40 sentences; it needs a short phrase from its source key, not changed here"],
+    "reviewed": true
+  },
+  "event-first-contact-100": {"reviewed": true},
+  "event-first-contact-103": {
+    "docs": {
+      "first_contact.103": {
+        "This.Owner.GetSpeciesAdj": {
+          "zh": "这一",
+          "en": "our",
+          "note": {"zh": "游戏里这里会出现我们物种的形容词。", "en": "In the game, the adjective for your species appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-first-contact-104": {"reviewed": true},
+  "event-first-contact-1100": {"reviewed": true},
+  "event-first-contact-1105": {"reviewed": true},
+  "event-first-contact-1110": {
+    "exceptions": ["first_contact.1110: 'identify the «unknown» as the civilisation' - the same key drives 'unknown machines' in the same story, so the phrase cannot change without breaking that sentence"],
+    "reviewed": true
+  },
+  "event-first-contact-1120": {"reviewed": true},
+  "event-first-contact-200": {
+    "exceptions": ["first_contact.210: zh «此人曾是» reads 'this person was' before the verb; the phrase is shared with game text, not fixed"],
+    "reviewed": true
+  },
+  "event-first-contact-250": {
+    "docs": {
+      "first_contact.252": {
+        "root.GetSpeciesAdj": {
+          "zh": "该族",
+          "en": "",
+          "omit": ["en"],
+          "note": {"zh": "英文中这里省略，句子读起来更自然。", "en": "This word is left out in English, so the sentence reads naturally."}
+        }
+      },
+      "first_contact.285": {
+        "This.ContactCountry.GetRealName": {
+          "zh": "这个文明",
+          "en": "the civilisation",
+          "note": {"zh": "游戏里这里会出现这个文明的名称。", "en": "In the game, the name of this civilisation appears here."}
+        }
+      },
+      "first_contact.290": {
+        "This.ContactCountry.GetRealName": {
+          "zh": "这个文明",
+          "en": "the civilisation",
+          "note": {"zh": "游戏里这里会出现这个文明的名称。", "en": "In the game, the name of this civilisation appears here."}
+        }
+      },
+      "first_contact.295": {
+        "This.ContactCountry.GetRealName": {
+          "zh": "这个文明",
+          "en": "the civilisation",
+          "note": {"zh": "游戏里这里会出现这个文明的名称。", "en": "In the game, the name of this civilisation appears here."}
+        }
+      },
+      "first_contact.320": {
+        "This.ContactCountry.GetName": {
+          "zh": "那个帝国",
+          "en": "rival empire",
+          "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}
+        },
+        "This.Owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们的政府。", "en": "In the game, your government appears here."}
+        }
+      },
+      "first_contact.322": {
+        "This.Owner.GetSpeciesName": {
+          "zh": "该物种",
+          "en": "the species",
+          "omit": ["en"],
+          "note": {"zh": "英文中这里省略，句子读起来更自然。", "en": "This word is left out in English, so the sentence reads naturally."}
+        }
+      },
+      "first_contact.330": {
+        "This.ContactCountry.GetName": {
+          "zh": "那个帝国",
+          "en": "rival empire",
+          "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}
+        }
+      },
+      "first_contact.332": {
+        "This.Owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们的政府。", "en": "In the game, your government appears here."}
+        }
+      }
+    },
+    "exceptions": ["first_contact.285: 'we can now identify the other empire as the civilisation' is fine, but 'the other empire machines' (same key, game text 'machines') still reads awkwardly; the phrase is shared with 'identify the other empire'"],
+    "reviewed": true
+  },
+  "event-first-contact-355": {
+    "exceptions": ["first_contact.355: zh '在我们«外星人»之间' reads awkwardly; the plural phrase is game text plus 我们, not changed"],
+    "reviewed": true
+  },
+  "event-first-contact-375": {"reviewed": true},
+  "event-first-contact-385": {"reviewed": true},
+  "event-first-contact-395": {
+    "docs": {
+      "first_contact.395": {
+        "This.Owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们的政府。", "en": "In the game, your government appears here."}
+        }
+      },
+      "first_contact.397": {
+        "This.Owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们的政府。", "en": "In the game, your government appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-first-contact-405": {
+    "docs": {
+      "first_contact.405": {
+        "This.Owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们的政府。", "en": "In the game, your government appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-first-contact-420": {"reviewed": true},
+  "event-first-contact-435": {
+    "docs": {
+      "first_contact.437": {
+        "encountered_country.GetSpeciesAdj": {
+          "zh": "发光",
+          "en": "glowing",
+          "note": {"zh": "游戏里这里会出现发光的形容词。", "en": "In the game, a word describing the glowing light appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "event-first-contact-480": {"reviewed": true},
+  "event-first-contact-5000": {"reviewed": true},
+  "event-first-contact-5005": {"reviewed": true}
+}

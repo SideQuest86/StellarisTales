@@ -1,0 +1,167 @@
+{
+  "anomaly-distar-wreck-cat": {
+    "docs": {
+      "distar.1": {
+        "From.GetName": {"zh": "补给船", "en": "the supply ship", "note": {"zh": "游戏里这里会出现这艘补给船的名称。", "en": "In the game, the name of this supply ship appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-distar-zone-cat": {
+    "docs": {
+      "distar.220": {
+        "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这位科学家的称谓。", "en": "In the game, the name of this scientist appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-electric-waters-cat": {"reviewed": true},
+  "anomaly-emissions-asteroid-category": {
+    "docs": {
+      "anomaly.50": {
+        "From.GetName": {"zh": "它", "en": "", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-energy-uninhabitable-category": {
+    "exceptions": ["anomalies:energy_uninhabitable_category, anomaly.610 and anomaly.615: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-exploding-skies-cat": {"reviewed": true},
+  "anomaly-fibrous-atmosphere-cat": {"reviewed": true},
+  "anomaly-fractalized-entropy-category": {"reviewed": true},
+  "anomaly-frbr-grimacing-cat": {"reviewed": true},
+  "anomaly-froz-base-cat": {
+    "docs": {
+      "anomaly.175": {
+        "Root.GetName": {"zh": "我们的科学船", "en": "our science ship", "omit": ["zh"], "note": {"zh": "游戏里这里会出现你的科学船的舰名。", "en": "In the game, your science ship's name appears here."}}
+      }
+    },
+    "exceptions": ["anomaly.175 en: rendered as «Science ship» without 'our'; the key says 'our science ship', so the rendering path needs checking"],
+    "reviewed": true
+  },
+  "anomaly-froz-base2-cat": {"reviewed": true},
+  "anomaly-froz-box-cat": {"reviewed": true},
+  "anomaly-froz-illuminated-cat": {"reviewed": true},
+  "anomaly-frozen-inferno-cat": {
+    "exceptions": ["extreme_frontiers.130 zh: '对«这颗星球»这颗冰封星球上' doubles the planet noun; the second noun is game text"],
+    "reviewed": true
+  },
+  "anomaly-frozen-springs-cat": {
+    "docs": {
+      "anomaly.3141": {
+        "From.GetName": {"zh": "我们的科学船", "en": "our science ship", "note": {"zh": "游戏里这里会出现你的科学船的舰名。", "en": "In the game, your science ship's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-fungal-emitters-category": {"reviewed": true},
+  "anomaly-gaea-checkered-cat": {"reviewed": true},
+  "anomaly-gaia-move-cat": {"reviewed": true},
+  "anomaly-gaia-planet-cat": {"reviewed": true},
+  "anomaly-gaia-record-cat": {"reviewed": true},
+  "anomaly-gas-cloudy-cat": {
+    "docs": {
+      "anomalies:GAS_CLOUDY_CAT": {"Root.GetName": {"zh": "它", "en": "this gas giant", "note": {"zh": "游戏里这里会指代这颗气态巨行星。", "en": "In the game, this gas giant appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-gas-zro-ice-cat": {"reviewed": true},
+  "anomaly-gaseous-metals-cat": {"reviewed": true},
+  "anomaly-gen-abandoned-ship-cat": {"reviewed": true},
+  "anomaly-gen-derelict-ship-cat": {"reviewed": true},
+  "anomaly-gen-desert-cat": {
+    "docs": {
+      "anomaly.3035": {
+        "From.GetName": {"zh": "这颗星球", "en": "planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-gen-lost-cargo-cat": {"reviewed": true},
+  "anomaly-gen-mystical-cat": {"reviewed": true},
+  "anomaly-gen-old-war-cat": {
+    "exceptions": ["anomaly.4020: placeholder renders as empty «» (no keys line for it); needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-gen-playground-cat": {
+    "docs": {
+      "anomaly.135": {
+        "Root.Owner.GetSpeciesNamePlural": {"zh": "这些人", "en": "our kind", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的物种的称呼。", "en": "In the game, your species' name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-geocentric-experiment-cat": {"reviewed": true},
+  "anomaly-geological-tension-cat": {"reviewed": true},
+  "anomaly-glimpse-core-cat": {"reviewed": true},
+  "anomaly-great-blue-spots-cat": {"reviewed": true},
+  "anomaly-greatest-show-cat": {"reviewed": true},
+  "anomaly-hab-corn-cat": {"reviewed": true},
+  "anomaly-hab-mat-cat": {
+    "exceptions": ["anomaly.220 zh: 'the ship' is linked to the planet's surface ('«这艘舰船»的地表附近'); the surface link is game text"],
+    "reviewed": true
+  },
+  "anomaly-hatch-asteroid-category": {
+    "docs": {
+      "anomaly.25": {
+        "From.GetName": {"zh": "小行星", "en": "the asteroid", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-hbl-lush-planet-1-cat": {
+    "docs": {
+      "anomaly.3130": {
+        "From.GetName": {"zh": "这颗星球", "en": "planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "exceptions": ["anomaly.3130: placeholder renders as empty «» in zh and en with no keys line; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-hbl-music-1-cat": {"reviewed": true},
+  "anomaly-hole-radiation-cat": {
+    "exceptions": ["anomaly.3075 en: 'in the this system' has a doubled article from an unlisted placeholder or game text; needs checking"],
+    "reviewed": true
+  },
+  "anomaly-icy-flowers-cat": {"reviewed": true},
+  "anomaly-impact-uninhabitable-category": {
+    "exceptions": ["anomalies:impact_uninhabitable_category, anomaly.600 and anomaly.605: placeholder renders as empty «» with no keys line; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-infernal-oasis-category": {"reviewed": true},
+  "anomaly-infernal-tornadoes-cat": {"reviewed": true},
+  "anomaly-inhabited-toxic-category": {
+    "exceptions": ["anomaly.670 and anomaly.685: placeholder renders as empty «» with no keys line; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-intemporal-orb-cat": {
+    "exceptions": [
+      "anomaly.7115 en: 'junior «the leader»' reads awkwardly because 'junior' is game text before the leader phrase",
+      "anomaly.7115 en: empty «» after 'want', 'receive' and 'stay' (verb endings with no keys line); needs key lookup",
+      "anomaly.7115 zh: '被被吸入' duplicates a character in game text",
+      "anomaly.7120 en: 'who «were» detached' has a verb from game text that does not match the 'they' phrase"
+    ],
+    "reviewed": true
+  },
+  "anomaly-invisible-planet-cat": {"reviewed": true},
+  "anomaly-irregular-energy-cat": {
+    "docs": {
+      "distar.1071": {
+        "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这位科学家的称谓。", "en": "In the game, the name of this scientist appears here."}}
+      }
+    },
+    "exceptions": ["special_projects:STAR_CRAZY en: '«officer»' drops the article and reads awkwardly; the article is not in the phrase, check rendering"],
+    "reviewed": true
+  },
+  "anomaly-lava-whirlpool-category": {"reviewed": true}
+}

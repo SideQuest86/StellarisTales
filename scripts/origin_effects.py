@@ -18,14 +18,19 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from extract import parse, first  # noqa: E402
-from effects import L, cond_label, entry, State, fmt, humanize, nm, to_num, ROOT  # noqa: E402
+from effects import L, cond_label, entry, State, fmt, humanize, hz, nm, resolve_links, to_num, ROOT  # noqa: E402
+
+# Origins whose civic script declares no effects of its own: the game fires a hidden start-of-game event for them
+# (events/game_start.txt `every_playable_country = { limit = { has_origin = X } country_event = { id = ... } }`).
+START_EVENTS = {'origin_doomsday': ('origin.60', 'events/game_start.txt:320'),
+                'origin_endbringers': ('shroud.8000', 'events/game_start.txt:447')}
 
 BULLET = re.compile(r'^[\s \-–—·•]+')
 
 
 def bullets(ctx, key):
     """The game's description key -> {zh: [{text, level}], en: [...]} (one entry per line; level 1 = indented sub-item), or None."""
-    name = ctx.name(key) if key else None
+    name = resolve_links(ctx.name(key), ctx) if key else None
     if not name:
         return None
     out = {}
@@ -47,7 +52,7 @@ def _stat_entries(block, ctx, st, src):
         if num[0] != 'num':
             continue
         pct = stat.endswith(('_mult', '_percent'))
-        lab = ctx.stat(stat) or L(humanize(stat), humanize(stat))
+        lab = ctx.stat(stat) or hz(stat)
         txt = fmt(num[1], pct)
         out.append({'kind': 'modifier', 'label': L(f'{lab["zh"]} {txt}', f'{lab["en"]} {txt}'), 'stat': stat,
                     'value': num[1] * (100 if pct else 1), 'unit': 'percent' if pct else 'flat', 'phase': 'start', 'duration': 'permanent',
@@ -55,7 +60,7 @@ def _stat_entries(block, ctx, st, src):
     return out
 
 
-def describe_origin(origin, ctx):
+def describe_origin(origin, ctx, records=None):
     try:
         top = parse(origin['script'])
     except ValueError:
@@ -71,6 +76,10 @@ def describe_origin(origin, ctx):
     if b:
         result['bullets'] = b
         result['bulletsKey'] = desc_key if isinstance(desc_key, str) else data.get('description')
+    neg_key = first(body, 'negative_description')
+    nb = bullets(ctx, neg_key if isinstance(neg_key, str) else None)
+    if nb:
+        result['negativeBullets'] = nb
     variants = []
     for x in body:
         if x['k'] == 'swap_type' and isinstance(x['v'], list):
@@ -98,12 +107,21 @@ def describe_origin(origin, ctx):
                 effects.append({'kind': 'planet', 'phase': 'start', 'source': src,
                                 'label': L(('可选的母星类型增加：' if add else '可选的母星类型移除：') + '、'.join(n['zh'] for n in names),
                                            ('Homeworld types added: ' if add else 'Homeworld types removed: ') + ', '.join(n['en'] for n in names))})
+    start = START_EVENTS.get(origin['id'])
+    if start and records and start[0] in records:
+        from effects import describe_record
+        doc = (describe_record(records[start[0]], ctx).get('doc') or {})
+        for e in doc.get('immediate', []):
+            e.setdefault('phase', 'start')
+            e['startEvent'] = start[0]
+            effects.append(e)
+        result['startEvent'] = {'id': start[0], 'source': start[1]}
     if effects:
         result['effects'] = effects
-    if not (b or variants or effects):
+    if not (b or nb or variants or effects):
         return None
     return result
 
 
-def describe_all(origins, ctx):
-    return {o['id']: d for o in origins if (d := describe_origin(o, ctx))}
+def describe_all(origins, ctx, records=None):
+    return {o['id']: d for o in origins if (d := describe_origin(o, ctx, records))}

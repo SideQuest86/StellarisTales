@@ -135,10 +135,24 @@
   }
  },
  "placeholderDocs": {
+  "country.60": {
+   "Root.GetName": {
+    "zh": "本舰",
+    "en": "the ship",
+    "note": {
+     "zh": "游戏里这里会出现这艘舰船的称呼。",
+     "en": "In the game, this ship's name appears here."
+    }
+   }
+  },
   "special_projects:TARBLAC_PROCUREMENT": {
    "This.GetName": {
-    "zh": "这里",
-    "en": "here",
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ],
     "note": {
      "zh": "游戏里这里会出现这颗海洋星球的名称。",
      "en": "In the game, the name of this ocean world appears here."

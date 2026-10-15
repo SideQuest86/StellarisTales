@@ -272,5 +272,61 @@
     "en": "In the game, the name of this station appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "syndaw.1025": {
+   "current_uprising_originator.GetAdj": {
+    "zh": "有机",
+    "en": "organic",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里不单独显示这个形容词。",
+     "en": "In the game, this adjective is not shown separately here."
+    }
+   }
+  },
+  "syndaw.1030": {
+   "LastKilledCountryName": {
+    "zh": "那个帝国",
+    "en": "rival",
+    "note": {
+     "zh": "游戏里这里会出现被灭亡帝国的名称。",
+     "en": "In the game, the name of the destroyed empire appears here."
+    }
+   }
+  },
+  "syndaw.505": {
+   "Root.Owner.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "our",
+    "note": {
+     "zh": "游戏里这里会出现你们这一族的设计风格。",
+     "en": "In the game, your species' design appears here."
+    }
+   }
+  },
+  "syndaw.525": {
+   "Root.Owner.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "our",
+    "note": {
+     "zh": "游戏里这里会出现你们这一族的名称。",
+     "en": "In the game, your species' name appears here."
+    }
+   }
+  },
+  "syndaw.526": {
+   "Root.Owner.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "our",
+    "note": {
+     "zh": "游戏里这里会出现你们这一族的名称。",
+     "en": "In the game, your species' name appears here."
+    }
+   }
+  }
  }
 }

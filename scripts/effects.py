@@ -26,6 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from extract import parse, walk  # noqa: E402
+import effects_gloss as G  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MAX_DEPTH = 4
@@ -45,7 +46,7 @@ class Ctx:
         self.effects = data.get('effects', {})
         self.modifiers = data.get('modifiers', {})
         self.opinion = data.get('opinion', {})
-        self.stats = {'handled': {}, 'skipped': {}, 'unhandled': {}}
+        self.stats = {'handled': {}, 'skipped': {}, 'unhandled': {}, 'template': {}}
         self.expanded = {}
 
     def count(self, bucket, key):
@@ -73,10 +74,28 @@ def humanize(key):
     return re.sub(r'\s+', ' ', re.sub(r'^(?:event_target:|mod_|is_|has_)', '', str(key)).replace('_', ' ').replace(':', ' ')).strip()
 
 
+def hz(key, generic=None):
+    """Name for a key the game does not localise: glossary Chinese (else a generic noun), plain humanised English (else generic)."""
+    k = str(key)
+    odd = bool(re.search(r'[:@.\[\]$]|^[A-Z_]+$', k)) or k.lower() in ('yes', 'no', 'root', 'this', 'prev', 'from', 'owner')
+    return L(G.zh_words(k) or (generic[0] if generic else G.OBJECT[0]), (generic[1] if generic else G.OBJECT[1]) if odd else humanize(k))
+
+
+LINK = re.compile(r'(?<![A-Za-z0-9_])(building|trait|technology|tradition_category|tradition|edict|scripted_action|tech|civic|ethic|ascension_perk|deposit|planet_class|policy|district|species_trait|megastructure|relic|resolution):([A-Za-z0-9_]+)')
+
+
+def resolve_links(name, ctx):
+    """Engine links inside the game's own sentences (`building:building_x`) -> the object's name in the same language (display-time
+    substitution like the [Root.GetName] placeholders; the sentence is otherwise untouched)."""
+    if not name:
+        return name
+    return {lang: LINK.sub(lambda m: nm(ctx, m[2])[lang], text) for lang, text in name.items()}
+
+
 def nm(ctx, key):
-    """Readable name of a game object key: its localisation, else the humanised key (marked as an id)."""
+    """Readable name of a game object key: its localisation, else the glossary / generic name (never a raw id in Chinese)."""
     n = ctx.name(key, 'mod_' + key)
-    return n if n else L(humanize(key), humanize(key))
+    return n if n else hz(key)
 
 
 # ------------------------------------------------------------------------------------------------- numbers ---
@@ -201,10 +220,10 @@ def scope_label(key, ctx, root_scope):
         return L('此前保存的对象', 'a target saved earlier')
     m = ITER.match(k)
     if m:
-        noun = humanize(m[2])
+        zhn, enn = G.NOUNS.get(m[2]) or (G.zh_words(m[2]) or G.OBJECT[0], humanize(m[2]))
         word = {'every': ('每一个', 'every '), 'random': ('随机一个', 'a random '), 'ordered': ('按顺序选取的', 'an ordered pick of '),
                 'weighted_random': ('按权重随机一个', 'a weighted random ')}[m[1]]
-        return L(f'{word[0]}{noun}', f'{word[1]}{noun}')
+        return L(f'{word[0]}{zhn}', f'{word[1]}{enn}')
     parts = re.split(r'[.]', k)
     if len(parts) > 1:
         labels = [scope_label(p, ctx, root_scope) for p in parts]
@@ -218,6 +237,25 @@ def scope_label(key, ctx, root_scope):
 FLAG_KEY = re.compile(r'^(has|is)_(\w+?)_flag$')
 
 
+def generic_cond(k, v, op='='):
+    zh, en = G.classify(k)
+    return {'zh': zh, 'en': en, 'detail': [f'{k} {op} {v if not isinstance(v, list) else "{...}"}']}
+
+
+def negate(zh, en):
+    nzh = '不' + zh if zh.startswith(('是', '具有', '可以', '处于', '由')) else '不满足：' + zh
+    for a, b in (('is ', 'is not '), ('has ', 'does not have '), ('can ', 'cannot ')):
+        if en.startswith(a):
+            return nzh, b + en[len(a):]
+    return nzh, 'not: ' + en
+
+
+DLC_NAMES = {'first_contact': ('首次接触', 'First Contact'), 'paragon': ('典范', 'Paragon'), 'astral_planes': ('星界', 'Astral Planes'),
+             'shroud': ('虚境', 'Shroud'), 'nomads': ('游牧', 'Nomads'), 'grand_archive': ('大档案馆', 'Grand Archive'),
+             'machine_age': ('机械纪元', 'Machine Age'), 'biogenesis': ('生物起源', 'Biogenesis'), 'overlord': ('霸主', 'Overlord'),
+             'cosmic_storms': ('宇宙风暴', 'Cosmic Storms'), 'federations': ('联邦', 'Federations'), 'infernals': ('炼狱', 'Infernals')}
+
+
 def atom_label(n, ctx):
     k, v = n['k'], n['v']
     low = k.lower()
@@ -226,14 +264,23 @@ def atom_label(n, ctx):
         if low in ('and',):
             return inner
         scope = scope_label(k, ctx, 'country')
+        det = inner.get('detail')
         if scope:
-            return L(f"{scope['zh']}：{inner['zh']}", f"{scope['en']}: {inner['en']}")
-        return L(f'{humanize(k)}：{inner["zh"]}', f'{humanize(k)}: {inner["en"]}')
+            r = L(f"{scope['zh']}：{inner['zh']}", f"{scope['en']}: {inner['en']}")
+        elif det or G.classify(low) is not G.SPECIFIC or low in ('check_variable',):
+            r = generic_cond(k, v)
+            r['detail'] = (det or []) + r['detail']
+            return r
+        else:
+            r = L(f"{G.OBJECT[0]}：{inner['zh']}", f"{G.OBJECT[1]}: {inner['en']}")
+        if det:
+            r['detail'] = det
+        return r
     val = str(v)
     yes = val != 'no'
     obj = nm(ctx, val)
-    if FLAG_KEY.match(low):
-        return L(f'此前已设置标记「{val}」' if yes else f'未设置标记「{val}」', f'flag "{val}" is set' if yes else f'flag "{val}" is not set')
+    if FLAG_KEY.match(low) or G.STORY_RE.search(low) and low not in BOOL_OR_TABLE:
+        return generic_cond(k, val, n.get('op', '='))
     table = {
         'has_trait': ('拥有特质「{o}」', 'has the "{o}" trait'), 'has_technology': ('已研究「{o}」', 'has researched "{o}"'),
         'has_ethic': ('信奉「{o}」', 'has the "{o}" ethic'), 'has_civic': ('拥有国民理念「{o}」', 'has the "{o}" civic'),
@@ -244,26 +291,41 @@ def atom_label(n, ctx):
         'has_deposit': ('带有资源点「{o}」', 'has the "{o}" deposit'), 'has_policy': ('已启用政策「{o}」', 'has the "{o}" policy'),
         'is_planet_class': ('星球类型为「{o}」', 'planet class is "{o}"'), 'is_species_class': ('物种类别为「{o}」', 'species class is "{o}"'),
         'has_special_project': ('进行着专项「{o}」', 'has the "{o}" special project'),
-        'has_event_chain': ('正在进行事件链「{o}」', 'event chain "{o}" is active'),
         'is_star_class': ('恒星类型为「{o}」', 'star class is "{o}"'), 'has_resource': ('持有「{o}」', 'holds "{o}"'),
+        'has_pre_ftl_age': ('前星际文明处于「{o}」', 'the pre-FTL age is "{o}"'), 'has_relic': ('拥有遗珍「{o}」', 'has the "{o}" relic'),
+        'is_ship_size': ('舰船规格为「{o}」', 'ship size is "{o}"'), 'is_deposit_type': ('资源点类型为「{o}」', 'deposit type is "{o}"'),
+        'is_councilor_type': ('议员职位为「{o}」', 'councilor type is "{o}"'), 'is_megastructure_type': ('巨型建筑类型为「{o}」', 'megastructure type is "{o}"'),
+        'is_ship_class': ('舰船类别为「{o}」', 'ship class is "{o}"'), 'is_pop_category': ('人口类别为「{o}」', 'pop category is "{o}"'),
+        'has_deposit_for': ('适合建造「{o}」的资源点', 'has a deposit for "{o}"'), 'can_research_technology': ('可以研究「{o}」', 'can research "{o}"'),
+        'has_tech_option': ('研究选项中有「{o}」', 'has "{o}" as a research option'), 'leader_class': ('领袖职业为「{o}」', 'leader class is "{o}"'),
+        'is_country_type': ('国家类型为「{o}」', 'country type is "{o}"'), 'is_same_species': ('与「{o}」同一物种', 'is the same species as "{o}"'),
     }
     if low in table and not isinstance(v, list):
         a, b = table[low]
         t = (a.format(o=obj['zh']), b.format(o=obj['en']))
-        return L(t[0] if yes else '不满足：' + t[0], t[1] if yes else 'not: ' + t[1])
+        if yes:
+            return L(*t)
+        nz, ne = negate(*t)
+        return L(nz, ne)
     if low == 'always':
         return L('总是', 'always')
     if low.endswith('_dlc') or low in ('host_has_dlc', 'has_dlc'):
-        dlc = humanize(re.sub(r'_dlc$', '', low)) if low.endswith('_dlc') else val.strip('"')
-        return L(f'已安装「{dlc}」资料片' if yes else f'未安装「{dlc}」资料片', f'the {dlc} DLC is installed' if yes else f'the {dlc} DLC is not installed')
+        raw = re.sub(r'^has_', '', low[:-4]) if low.endswith('_dlc') else re.sub(r'\W+', '_', val.strip('"').lower())
+        dz, de = DLC_NAMES.get(raw, (None, None))
+        if dz is None:
+            dz, de = G.OBJECT[0], humanize(raw)
+        return L(f'已安装「{dz}」资料片' if yes else f'未安装「{dz}」资料片', f'the {de} DLC is installed' if yes else f'the {de} DLC is not installed')
     if low == 'is_ai':
         return L('由电脑控制' if yes else '由玩家控制', 'controlled by the AI' if yes else 'controlled by a player')
-    if low.startswith('is_') and val in ('yes', 'no'):
-        return L(f'{humanize(k)}' if yes else f'不是 {humanize(k)}', f'{humanize(k)}' if yes else f'not {humanize(k)}')
-    if low == 'exists':
-        return L(f'存在目标 {val}' if yes else '目标不存在', f'{val} exists' if yes else f'{val} does not exist')
-    op = n.get('op', '=')
-    return L(f'{humanize(k)} {op} {humanize(val) if not NUM.match(val) else val}', f'{humanize(k)} {op} {humanize(val) if not NUM.match(val) else val}')
+    if low in G.TIME_COND:
+        return L(*G.TIME_COND[low])
+    if low in G.BOOL_COND and val in ('yes', 'no'):
+        zh, en = G.BOOL_COND[low]
+        return L(zh, en) if yes else L(*negate(zh, en))
+    return generic_cond(k, val, n.get('op', '='))
+
+
+BOOL_OR_TABLE = set(G.BOOL_COND) | set(G.TIME_COND) | {'has_technology', 'has_modifier', 'has_pre_ftl_age', 'has_special_project', 'has_event_chain'}
 
 
 def cond_label(nodes, ctx, mode='and'):
@@ -289,14 +351,27 @@ def cond_label(nodes, ctx, mode='and'):
             parts.append(cond_label(n['v'], ctx))
         elif isinstance(n['v'], list) and (k.startswith(('any_', 'count_')) or k in ('num_owned_planets',)):
             inner = cond_label([x for x in n['v'] if x['k'] not in ('count',)], ctx)
-            parts.append(L(f'存在满足条件的 {humanize(k)}：{inner["zh"]}', f'there is a matching {humanize(k)}: {inner["en"]}'))
+            zhn, enn = G.NOUNS.get(re.sub(r'^(any|count)_', '', k)) or (G.zh_words(re.sub(r'^(any|count)_', '', k)) or G.OBJECT[0], G.OBJECT[1])
+            p = L(f'存在满足条件的{zhn}：{inner["zh"]}', f'there is a matching {enn}: {inner["en"]}')
+            if inner.get('detail'):
+                p['detail'] = inner['detail']
+            parts.append(p)
         else:
             parts.append(atom_label(n, ctx))
     parts = [p for p in parts if p and (p['zh'] or p['en'])]
     if not parts:
         return L('（条件见游戏脚本）', '(condition in the game script)')
+    seen, uniq = set(), []
+    for p in parts:  # several internal conditions read the same: say it once
+        if (p['zh'], p['en']) not in seen:
+            seen.add((p['zh'], p['en']))
+            uniq.append(p)
     zh, en = (' 或 ', ' or ') if mode == 'or' else ('，且 ', ', and ')
-    return L(zh.join(p['zh'] for p in parts), en.join(p['en'] for p in parts))
+    out = L(zh.join(p['zh'] for p in uniq), en.join(p['en'] for p in uniq))
+    detail = [d for p in parts for d in p.get('detail', [])]
+    if detail:
+        out['detail'] = detail
+    return out
 
 
 # ------------------------------------------------------------------------------------------------ walker ---
@@ -438,6 +513,9 @@ def _node(n, ctx, st, prev_if):
         if res is not None:
             ctx.count('handled', low)
             return res
+    if re.fullmatch(r'\$[^$]+\$', k):  # inline-script parameter placeholder ($POP_GROUP$ = { ... }), not an effect
+        ctx.count('template', low)
+        return []
     if low in SKIP_EXACT or SKIP_RE.match(low) or NUM.match(low):
         ctx.count('skipped', 'weighted_event' if NUM.match(low) else low)
         return []
@@ -563,8 +641,15 @@ def g_switch(n, ctx, st):
             continue
         kids = _walk(x['v'], ctx, st)
         if kids:
-            label = L(f'如果 {humanize(var)} 为 {humanize(x["k"])}：', f'If {humanize(var)} is {humanize(x["k"])}:')
-            out.append(entry('if', label, x, st, effects=kids, when=L(f'{humanize(var)} = {humanize(x["k"])}', f'{humanize(var)} = {humanize(x["k"])}'), conditional=True))
+            sm = re.fullmatch(r'stage_(\d+)', x['k'])
+            if sm:
+                when = L(f'处于第 {sm[1]} 阶段时', f'at stage {sm[1]}')
+                when['detail'] = [f'{var} = {x["k"]}']
+            else:
+                when = atom_label({'k': var, 'v': x['k']}, ctx)
+                if when['zh'] == G.SPECIFIC[0] or when['zh'] == G.STORY[0]:
+                    when = dict(when, zh='按具体情形' if when['zh'] == G.SPECIFIC[0] else when['zh'], en='in this case' if when['en'] == G.SPECIFIC[1] else when['en'])
+            out.append(entry('if', L('如果：' + when['zh'], 'If: ' + when['en']), x, st, effects=kids, when=when, conditional=True))
     return out
 
 
@@ -573,7 +658,7 @@ def g_tooltip(n, ctx, st):
     v = n['v']
     key = v if isinstance(v, str) else next((x['v'] for x in v if x['k'] == 'text' and isinstance(x['v'], str)), None)
     kids = _walk([x for x in v if x['k'] != 'text'], ctx, st) if isinstance(v, list) else []
-    name = ctx.name(key) if key else None
+    name = resolve_links(ctx.name(key), ctx) if key else None
     if name and re.search(r'\$[^$]*\$', name['en'] + name['zh']):  # template with parameters filled in by the UI
         name = None
     ctx.count('handled', n['k'].lower())
@@ -595,7 +680,7 @@ GROUP = {'if': g_if, 'else_if': g_if, 'else': g_if, 'hidden_effect': g_hidden, '
 def scripted(n, ctx, st):
     name = n['k']
     entry_def = ctx.effects[name]
-    label = ctx.name(name) or L(humanize(name), humanize(name))
+    label = ctx.name(name) or hz(name)
     ctx.count('handled', 'scripted_effect')
     if st.depth >= MAX_DEPTH:
         return [entry('scripted', label, n, st, name=name, truncated=True, unhandled=True)]
@@ -631,7 +716,7 @@ def scripted(n, ctx, st):
 
 # ------------------------------------------------------------------------------------------ leaf handlers ---
 def res_name(ctx, r):
-    return ctx.name(r, r.upper()) or L(humanize(r), humanize(r))
+    return ctx.name(r, r.upper()) or hz(r, ('某种资源', 'a resource'))
 
 
 def h_add_resource(n, ctx, st):
@@ -691,7 +776,7 @@ def modifier_stats(ctx, name, mult=None):
             continue
         pct = key.endswith('_mult') or key.endswith('_percent')
         v = num[1] * (mult if mult is not None else 1)
-        lab = ctx.stat(key) or L(humanize(key), humanize(key))
+        lab = ctx.stat(key) or hz(key, ('某项加成', 'a bonus'))
         stats.append({'stat': key, 'label': lab, 'value': v * (100 if pct else 1), 'unit': 'percent' if pct else 'flat',
                       'text': fmt(v, pct)})
     return stats
@@ -708,7 +793,7 @@ def h_add_modifier(n, ctx, st):
     stats = modifier_stats(ctx, key, mult[1] if mult and mult[0] == 'num' else None)
     label = L(f'获得修正「{name["zh"]}」，{dl["zh"]}', f'Gains the "{name["en"]}" modifier, {dl["en"]}')
     tip = ctx.modifiers.get(key, {}).get('stats', {}).get('custom_tooltip')
-    note = ctx.name(tip) if isinstance(tip, str) else None
+    note = resolve_links(ctx.name(tip), ctx) if isinstance(tip, str) else None
     return [entry('modifier', label, n, st, modifier=key, duration=d, stats=stats or None, name=name, note=note,
                   definition=ctx.modifiers.get(key, {}).get('source'))]
 
@@ -800,7 +885,7 @@ def h_create_leader(n, ctx, st):
     p = params_of(n)
     cls = p.get('class')
     nme = ctx.name('job_' + cls, cls) if isinstance(cls, str) else None
-    cl = nme or L(humanize(cls) if isinstance(cls, str) else '领袖', humanize(cls) if isinstance(cls, str) else 'a leader')
+    cl = nme or (hz(cls) if isinstance(cls, str) else L('领袖', 'a leader'))
     return [entry('leader', L(f'出现一位新的领袖：{cl["zh"]}', f'A new leader appears: {cl["en"]}'), n, st, leaderClass=cls)]
 
 
@@ -849,8 +934,8 @@ def h_specimen(n, ctx, st):
 
 
 def h_change_pc(n, ctx, st):
-    key = n['v'] if isinstance(n['v'], str) else None
-    if not key:
+    key = n['v'] if isinstance(n['v'], str) else params_of(n).get('class')
+    if not isinstance(key, str):
         return None
     name = nm(ctx, key)
     return [entry('planet', L(f'星球类型变为「{name["zh"]}」', f'Planet class becomes "{name["en"]}"'), n, st, planetClass=key)]
@@ -1145,7 +1230,7 @@ def _static_effects(nodes, ctx, st, n):
                 if num[0] != 'num':
                     continue
                 pct = y['k'].endswith(('_mult', '_percent'))
-                lab = ctx.stat(y['k']) or L(humanize(y['k']), humanize(y['k']))
+                lab = ctx.stat(y['k']) or hz(y['k'], ('某项加成', 'a bonus'))
                 e = entry('modifier', L(f'{lab["zh"]} {fmt(num[1], pct)}', f'{lab["en"]} {fmt(num[1], pct)}'), y, st, stat=y['k'],
                           value=num[1] * (100 if pct else 1), unit='percent' if pct else 'flat', duration=None, whileActive=True)
                 if pot:
@@ -1166,7 +1251,27 @@ def _static_effects(nodes, ctx, st, n):
     return out
 
 
+def scrub(o):
+    """An object the game gives no name to is left out of the sentence instead of printing a placeholder noun."""
+    if isinstance(o, dict):
+        for k, v in list(o.items()):
+            if k == 'zh' and isinstance(v, str) and G.OBJECT[0] in v and v != G.OBJECT[0]:
+                o[k] = re.sub(r'\s{2,}', ' ', v.replace('「' + G.OBJECT[0] + '」', '').replace(G.OBJECT[0] + '：', ''))
+            elif k == 'en' and isinstance(v, str) and G.OBJECT[1] in v and v != G.OBJECT[1]:
+                o[k] = re.sub(r'\s{2,}', ' ', re.sub(r'\s*"%s"' % G.OBJECT[1], '', v)).replace(' :', ':')
+            else:
+                scrub(v)
+    elif isinstance(o, list):
+        for x in o:
+            scrub(x)
+    return o
+
+
 def describe_record(record, ctx):
+    return scrub(_describe_record(record, ctx))
+
+
+def _describe_record(record, ctx):
     """{'doc': {'immediate': [...], 'after': [...], 'sections': [{id,label,effects}]} | None, 'choices': [[...]|None, ...]}"""
     text, file = record['script'], record['source']
     base_line = record.get('line', 1)
@@ -1275,3 +1380,7 @@ def flat(effects):
     for e in effects or []:
         yield e
         yield from flat(e.get('effects'))
+
+
+import effects_more as _more  # noqa: E402  (second-pass handlers + classified keys; needs the names above)
+_more.install(sys.modules[__name__])

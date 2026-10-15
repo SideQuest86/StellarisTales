@@ -1,0 +1,96 @@
+{
+  "event-situation-150": {"docs": {}, "exceptions": ["situation.190: 'FromFrom.GetName' renders as an empty «» in two sentences; token has no phrase on this doc, game text needs a key", "situation.195: lowercase fragment 'but our researchers...' is game text"], "reviewed": true},
+  "event-situation-200": {"docs": {
+    "situation.200": {
+      "complex_drones_cost": {"zh": "所需数量", "en": "the required amount", "omit": ["en"], "note": {"zh": "游戏里这里会出现所需的能量数值。", "en": "In the game, the required energy amount appears here."}},
+      "complex_drones_counter_100": {"zh": "若干", "en": "some", "omit": ["en"], "note": {"zh": "游戏里这里会出现无人机的数量。", "en": "In the game, the number of drones appears here."}},
+      "simple_drones_cost": {"zh": "所需数量", "en": "the required amount", "omit": ["en"], "note": {"zh": "游戏里这里会出现所需的能量数值。", "en": "In the game, the required energy amount appears here."}},
+      "simple_drones_counter_100": {"zh": "若干", "en": "some", "omit": ["en"], "note": {"zh": "游戏里这里会出现无人机的数量。", "en": "In the game, the number of drones appears here."}},
+      "total_drones_cost": {"zh": "所需数量", "en": "the required amount", "omit": ["en"], "note": {"zh": "游戏里这里会出现所需的能量数值。", "en": "In the game, the required energy amount appears here."}},
+      "total_drones_counter_100": {"zh": "若干", "en": "some", "omit": ["en"], "note": {"zh": "游戏里这里会出现无人机的数量。", "en": "In the game, the number of drones appears here."}},
+      "energy_cost": {"zh": "维持费用", "en": "upkeep", "note": {"zh": "游戏里这里会出现每100人口的维持费用。", "en": "In the game, the upkeep per 100 pop appears here."}}
+    }
+  }, "exceptions": ["situation.291 zh: '运行中的的无人机' has a doubled 的; source text, not a placeholder"], "reviewed": true},
+  "event-situation-2000": {"docs": {
+    "situation.2025": {"kaleidoscope_new_owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the other empire's name appears here."}}}
+  }, "exceptions": ["situations:situation_kaleidoscope: a standalone «Calm». fragment whose wording comes from the save; kept", "situation.2031: 'one our Energy Nexus' is a typo in game text"], "reviewed": true},
+  "event-situation-5": {"docs": {}, "exceptions": ["situation.5: the empty «» phrase in 'the «»' needs a key on this doc line; game text"], "reviewed": true},
+  "event-situation-500": {"docs": {
+    "situation.513": {"Target.GetName": {"zh": "这座空间站", "en": "the station", "note": {"zh": "游戏里这里会出现这座空间站。", "en": "In the game, this space station appears here."}}},
+    "situation.540": {"Target.GetName": {"zh": "这座空间站", "en": "the station", "note": {"zh": "游戏里这里会出现这座空间站。", "en": "In the game, this space station appears here."}}},
+    "situation.541": {"Target.GetName": {"zh": "这座空间站", "en": "the station", "note": {"zh": "游戏里这里会出现这座空间站。", "en": "In the game, this space station appears here."}}},
+    "situation.542": {"Target.GetName": {"zh": "这座空间站", "en": "the station", "note": {"zh": "游戏里这里会出现这座空间站。", "en": "In the game, this space station appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-specialist-1100": {"docs": {}, "exceptions": ["specialist.1200-1280: a stray leading « with no closing quote opens several sentences; game text markup, not a placeholder"], "reviewed": true},
+  "event-specialist-500": {"docs": {}, "exceptions": ["specialist.905, specialist.910, specialist.915: a stray leading « with no closing quote; game text markup"], "reviewed": true},
+  "event-strange-worlds-3000": {"docs": {
+    "strange_worlds.3005": {"event_target:pre_ftl_planet.Owner.GetSpeciesName": {"zh": "当地人", "en": "locals", "note": {"zh": "游戏里这里会出现这颗星球上的当地人。", "en": "In the game, the natives of this planet appear here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-strange-worlds-3035": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-strange-worlds-3065": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-subject-1": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-subject-100": {"docs": {
+    "subject.105": {"overlord_empire.GetName": {"zh": "宗主帝国", "en": "home empire", "omit": ["zh"], "note": {"zh": "游戏里这里会出现你的宗主帝国的名称。", "en": "In the game, the name of your overlord empire appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-subject-1001": {"docs": {}, "exceptions": ["subject.1010: zh '附属国«附庸国»' repeats the vassal term; source text, not a placeholder"], "reviewed": true},
+  "event-subject-1050": {"docs": {
+    "subject.1052": {"overlord_empire.GetName": {"zh": "宗主国", "en": "the overlord", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}},
+    "subject.1055": {"subject_empire.GetName": {"zh": "附庸国", "en": "the vassal empire", "note": {"zh": "游戏里这里会出现你的附庸国的名称。", "en": "In the game, the name of your vassal empire appears here."}}},
+    "subject.1057": {"overlord_empire.GetName": {"zh": "宗主国", "en": "the overlord", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}},
+    "subject.1060": {"overlord_empire.GetName": {"zh": "宗主国", "en": "the overlord", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-subject-1100": {"docs": {
+    "subject.1110": {"overlord_empire.GetName": {"zh": "宗主国", "en": "the overlord", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}},
+    "subject.1112": {"overlord_empire.GetName": {"zh": "宗主国", "en": "the overlord", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}}
+  }, "exceptions": ["subject.1145: a stray leading « without a closing quote; game text markup"], "reviewed": true},
+  "event-subject-2001": {"docs": {
+    "subject.2005": {"overlord_empire.GetName": {"zh": "宗主国", "en": "the overlord", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}},
+    "subject.2010": {"overlord_empire.GetName": {"zh": "宗主国", "en": "the overlord", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-subject-2050": {"docs": {}, "exceptions": ["subject.2055: 'we have have' is a doubled verb in the game text"], "reviewed": true},
+  "event-subject-2100": {"docs": {
+    "subject.2120": {"overlord_empire.GetName": {"zh": "宗主国", "en": "overlord", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-subject-3001": {"docs": {
+    "subject.3020": {"overlord_empire.GetAdj": {"zh": "宗主国", "en": "overlord's", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-subject-3050": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-subject-50": {"docs": {
+    "subject.62": {"overlord_empire.GetName": {"zh": "宗主国", "en": "the overlord", "note": {"zh": "游戏里这里会出现你的宗主国。", "en": "In the game, your overlord's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-synth-1505": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-synth-1510": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-synth-1515": {"docs": {
+    "synth.1515": {"From.GetRulerTitle": {"zh": "统治者", "en": "ruler", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现你的统治者的名称。", "en": "In the game, your ruler's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-synth-1520": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-synth-1525": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-synth-320": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-synth-360": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-synth-630": {"docs": {}, "exceptions": [], "reviewed": true},
+  "pre-ftl-ages": {"docs": {
+    "preftl.180": {"From.Capital.GetStarName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系。", "en": "In the game, this system appears here."}}},
+    "preftl.1115": {"event_target:current_uprising.Capital.GetStarName": {"zh": "这个星系", "en": "the central system", "note": {"zh": "游戏里这里会出现起义势力所在的星系。", "en": "In the game, the system held by the uprising appears here."}}}
+  }, "exceptions": ["preftl.200, preftl.300, preftl.400, preftl.700, preftl.800, preftl.1110: empty «» tokens for the planet's surface; the key is not on those doc lines, game text needs a key"], "reviewed": true},
+  "pre-ftl-new-world-order": {"docs": {}, "exceptions": [], "reviewed": true},
+  "pre-ftl-plague": {"docs": {}, "exceptions": [], "reviewed": true},
+  "pre-ftl-singularity": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-situation-alloys-deficit": {"docs": {}, "exceptions": ["deficit.170: en shows raw £pop£ / £alloys£ tokens and empty values in the option lines; game text"], "reviewed": true},
+  "situation-situation-consumer-goods-deficit": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-situation-energy-deficit": {"docs": {
+    "situation.2025": {"kaleidoscope_new_owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the other empire's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "situation-situation-exotic-gases-deficit": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-situation-food-deficit": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-situation-initiate-storm": {"docs": {}, "exceptions": ["situations:situation_initiate_storm: 'seed a Electric Storm' article error; game text", "cstorms.2000: zh '«、磁力风暴或电力风暴»' and '«重力风暴星尘风暴»' and en 'Radiant Storm«, Magnetic Stormor Electric Storm»' are garbled option lists; game text", "cstorms.2010: 'bloated of state' typo and cstorms.2000 en 'Begin preparations for a «Cosmic StormGravity Storm»«Stardust Storm»' are garbled; game text"], "reviewed": true},
+  "situation-situation-mineral-deficit": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-situation-nanotech-consume-planet": {"docs": {}, "exceptions": ["situations: 'In the species space, fleets are gathering' keeps 'the species' because the species phrase is not replaced in that sentence; game text, the open issue is not fixable by wording", "fallen_empires_awakening.2: 'that world are looking outwards' verb agreement; game text"], "reviewed": true},
+  "situation-situation-paperclips": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-situation-rare-crystals-deficit": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-situation-terravore-consume-planet": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-situation-toxify-world": {"docs": {}, "exceptions": ["situations:situation_toxify_world: raw £minerals£ and £exotic_gases£ tokens inside the phrase; game text"], "reviewed": true},
+  "situation-situation-volatile-motes-deficit": {"docs": {}, "exceptions": [], "reviewed": true},
+  "situation-voidworm-country-situation": {"docs": {
+    "grand_archive.2405": {"this.GetName": {"zh": "帝国", "en": "the empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, your empire's name appears here."}}}
+  }, "exceptions": ["grand_archive.2420: 'the leader have become infected' verb agreement; game text"], "reviewed": true}
+}

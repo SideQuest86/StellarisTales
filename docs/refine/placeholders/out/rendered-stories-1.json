@@ -1,0 +1,203 @@
+{
+  "chain-contract-destroy-station-heirs-chain": {"reviewed": true},
+  "chain-contract-intercept-raid-heirs-chain": {"reviewed": true},
+  "chain-contract-join-war-chain": {"reviewed": true},
+  "chain-contract-prisoner-disposal-chain": {"reviewed": true},
+  "chain-contract-raid-planet-chain": {"reviewed": true},
+  "chain-holy-war": {"reviewed": true},
+  "chain-mandate-district-city-chain": {"reviewed": true},
+  "chain-mandate-district-farming-chain": {"reviewed": true},
+  "chain-mandate-district-generator-chain": {"reviewed": true},
+  "chain-mandate-district-mining-chain": {"reviewed": true},
+  "chain-mandate-emancipation-chain": {"reviewed": true},
+  "chain-mandate-emancipation2-chain": {
+    "docs": {
+      "event_chains:mandate_emancipation2_chain": {
+        "free_planet.GetName": {
+          "zh": "这颗星球",
+          "en": "this world",
+          "note": {"zh": "游戏里这里会出现要解放奴隶的那颗星球。", "en": "In the game, the planet where slaves are freed appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "chain-mandate-fiscal-reserve-chain": {"reviewed": true},
+  "chain-mandate-miner-chain": {"reviewed": true},
+  "chain-mandate-monthly-alloys-chain": {"reviewed": true},
+  "chain-mandate-monthly-consumer-goods-chain": {"reviewed": true},
+  "chain-mandate-monthly-energy-chain": {"reviewed": true},
+  "chain-mandate-monthly-food-chain": {"reviewed": true},
+  "chain-mandate-monthly-minerals-chain": {"reviewed": true},
+  "chain-mandate-nationalist-chain": {"reviewed": true},
+  "chain-mandate-orbresearch-chain": {"reviewed": true},
+  "chain-mandate-peacemaker-chain": {
+    "docs": {
+      "event_chains:mandate_peacemaker_chain": {
+        "Root.GetSpeciesAdj": {
+          "zh": "该族",
+          "en": "our species'",
+          "note": {"zh": "游戏里这里会出现你的种族名称。", "en": "In the game, your species' name appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "chain-mandate-separatist-chain": {
+    "docs": {
+      "event_chains:mandate_separatist_chain": {
+        "release_planet.GetName": {
+          "zh": "这颗星球",
+          "en": "this world",
+          "note": {"zh": "游戏里这里会出现被释放的那颗星球的名字。", "en": "In the game, the name of the planet being released appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "chain-mandate-shipwright-chain": {"reviewed": true},
+  "chain-mandate-slaver-chain": {"reviewed": true},
+  "chain-mandate-xenopurge-chain": {
+    "docs": {
+      "event_chains:mandate_xenopurge_chain": {
+        "Root.GetSpeciesAdj": {
+          "zh": "该族",
+          "en": "our species'",
+          "note": {"zh": "游戏里这里会出现你的种族名称。", "en": "In the game, your species' name appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "chain-survey-home-system": {"reviewed": true},
+  "event-action-1": {
+    "docs": {
+      "action.1": {
+        "GetPrimaryHiveFEName": {
+          "zh": "第一个词",
+          "en": "the first word",
+          "note": {"zh": "游戏里这里会出现第一个词的译文。", "en": "In the game, the first translated word appears here."}
+        },
+        "GetSecondaryHiveFEName": {
+          "zh": "第二个词",
+          "en": "the second word",
+          "note": {"zh": "游戏里这里会出现第二个词的译文。", "en": "In the game, the second translated word appears here."}
+        },
+        "GetTertiaryHiveFEName": {
+          "zh": "第三个词",
+          "en": "the third word",
+          "note": {"zh": "游戏里这里会出现第三个词的译文。", "en": "In the game, the third translated word appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "action.1: zh 统治者统治者 doubled ruler phrase comes from adjacent title and name keys (contact_empire.GetRulerTitle, contact_empire.GetRulerName); shared key, not fixable per sentence",
+      "action.1: en 'you' used as noun ('from one you to another', 'You you all are those were sent out?', \"you're you\") is shared by singular and plural keys; game wording",
+      "action.1: en 'Root.GetSpeciesName' vocative 'you' reads awkwardly in some lines; game wording"
+    ],
+    "reviewed": true
+  },
+  "event-action-102": {"reviewed": true},
+  "event-action-105": {"reviewed": true},
+  "event-action-12": {
+    "exceptions": [
+      "action.5: empty substitution in 'surface of the «»' (zh and en) and a barbarian phrase with no listed key; game text, no key covers it"
+    ],
+    "reviewed": true
+  },
+  "event-action-122": {
+    "exceptions": [
+      "action.123: empty substitution in \"«»'s wilderness\" (en) and '«»的野外' (zh); no listed key"
+    ],
+    "reviewed": true
+  },
+  "event-action-14": {
+    "docs": {
+      "action.140": {
+        "Root.GetSpeciesAdj": {
+          "zh": "该族",
+          "en": "our species'",
+          "note": {"zh": "游戏里这里会出现你的种族名称。", "en": "In the game, your species' name appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-action-150": {"reviewed": true},
+  "event-action-37": {
+    "docs": {
+      "action.37": {
+        "Root.GetSpeciesAdj": {
+          "zh": "该族",
+          "en": "our species'",
+          "note": {"zh": "游戏里这里会出现你的种族名称。", "en": "In the game, your species' name appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-action-38": {
+    "exceptions": [
+      "action.38: 'our empire' (Root.GetName / This.GetName) is used for the player's empire while the speaker is the other side; the same key also means our own empire elsewhere in the text; game wording"
+    ],
+    "reviewed": true
+  },
+  "event-action-39": {
+    "exceptions": [
+      "action.39: en 'Their people has agreed' keeps game grammar ('people has'); site only fixes 'they has'"
+    ],
+    "reviewed": true
+  },
+  "event-action-41": {"reviewed": true},
+  "event-action-48": {"reviewed": true},
+  "event-action-601": {"reviewed": true},
+  "event-action-61": {"reviewed": true},
+  "event-action-71": {
+    "docs": {
+      "action.72": {
+        "malfunctioning_leader.GetName": {
+          "zh": "这位领袖",
+          "en": "the leader",
+          "omit": ["zh", "en"],
+          "note": {"zh": "游戏里这里会出现这位科学官的名字。", "en": "In the game, this scientist's name appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-action-81": {
+    "exceptions": [
+      "action.82: empty substitution in 'reducing the «» to an irradiated wasteland' (en) and '«»已经变成' (zh); no listed key",
+      "action.83: empty substitution in 'the irradiated «» can now only support' (en) and '现在充满辐射的«»' (zh); no listed key"
+    ],
+    "reviewed": true
+  },
+  "event-action-85": {"reviewed": true},
+  "event-action-90": {"reviewed": true},
+  "event-action-941": {
+    "docs": {
+      "action.942": {
+        "Owner.GetSpeciesAdj": {
+          "zh": "该族",
+          "en": "our species'",
+          "note": {"zh": "游戏里这里会出现你的种族名称。", "en": "In the game, your species' name appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "action.94: unresolved game token '$action.92.part3$' shows in the English text"
+    ],
+    "reviewed": true
+  },
+  "event-action-96": {"reviewed": true},
+  "event-apoc-1": {"reviewed": true},
+  "event-apoc-100": {"reviewed": true},
+  "event-apoc-11": {"reviewed": true}
+}

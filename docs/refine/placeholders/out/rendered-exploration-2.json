@@ -1,0 +1,135 @@
+{
+  "anomaly-debris-gasgiant-category": {
+    "docs": {"distar.1056": {"From.GetName": {"zh": "我们的科学船", "en": "our science ship"}}},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-debris-gasgiant-category-temp": {
+    "docs": {},
+    "exceptions": ["distar.1001: game text 'head researcher' / '首席科学官' sits directly before the leader phrase (EN 'head researcher the leader', ZH '首席科学官这位领袖'); no phrase can fix it without changing game text"],
+    "reviewed": true
+  },
+  "anomaly-des-buried-cat": {
+    "docs": {"anomalies:DES_BURIED_CAT": {"Root.GetName": {"zh": "这颗星球", "en": "this planet", "omit": ["zh"]}}},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-des-planet-cat": {
+    "docs": {},
+    "exceptions": ["anomaly.4110: a placeholder with no mapped key renders as an empty «» (ZH 穿越«»表面, EN 'make the «» easier to traverse'); needs the game key, not a phrase"],
+    "reviewed": true
+  },
+  "anomaly-diamond-dust-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-dimensional-pocket-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-disco-alien-machine-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-disco-breathing-rift-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-disco-impossible-organism-cat": {
+    "docs": {"anomalies:disco_impossible_organism_cat": {"From.GetName": {"zh": "这颗星球", "en": "this planet", "omit": ["zh"]}}},
+    "exceptions": ["distar.3012 and distar.3017: the player's species is named 'citizen' and 'our species' in one story; the game text distinguishes the two roles, so the phrases are kept"],
+    "reviewed": true
+  },
+  "anomaly-disco-molluscoid-miners-cat": {
+    "docs": {},
+    "exceptions": ["distar.3032: '600 £pop£ the molluscoids Pops' reads awkwardly because the game appends 'Pops' after the species placeholder"],
+    "reviewed": true
+  },
+  "anomaly-disco-speed-demon-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-disco-stranded-scientist-cat": {
+    "docs": {},
+    "exceptions": ["distar.3020: the species placeholder has no English phrase, so EN reads 'the hitherto-unknown  species' (double space, missing word); the game text needs the species name"],
+    "reviewed": true
+  },
+  "anomaly-disco-trojan-asteroid-cat": {
+    "docs": {
+      "distar.3000": {"From.GetName": {"zh": "这颗小行星", "en": "this asteroid", "omit": ["zh"]}},
+      "distar.3003": {"trojan_asteroid.GetName": {"zh": "这颗小行星", "en": "this asteroid", "omit": ["zh"]}},
+      "distar.3005": {"trojan_asteroid.GetName": {"zh": "这颗小行星", "en": "this asteroid", "omit": ["zh"]}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-distar-brainslug-cat": {
+    "docs": {"distar.172": {"Root.Owner.GetSpeciesNamePlural": {"zh": "该物种", "en": "the species", "omit": ["en"]}}},
+    "exceptions": ["distar.172: game text 'Every our leader' is ungrammatical because the game puts 'Every' before the 'our' placeholder"],
+    "reviewed": true
+  },
+  "anomaly-distar-clone-cat": {
+    "docs": {"anomalies:DISTAR_CLONE_CAT": {"From.GetName": {"zh": "这个", "en": "this", "omit": ["en"]}}},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-distar-collapse-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-dead-god-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-diamond-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-electro-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-exo-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-flare-cat": {
+    "docs": {},
+    "exceptions": ["distar.6: game text 'the star «the star»' doubles the word 'the' before the star placeholder; the phrase cannot fix it"],
+    "reviewed": true
+  },
+  "anomaly-distar-flow-cat": {
+    "docs": {},
+    "exceptions": ["distar.46: EN 'chased the source' shows a bare «Officer» (the game's 'Science Officer' title is cut to 'Officer'); no phrase fixes the title strip"],
+    "reviewed": true
+  },
+  "anomaly-distar-flytrap-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-foes-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-geode-cat": {
+    "docs": {"distar.75": {"From.GetName": {"zh": "它", "en": "this asteroid"}}},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-distar-holo-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-ice-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-living-cat": {
+    "docs": {
+      "distar.194": {"living_planet_scientist.GetHimHer": {"zh": "此人", "en": "them", "omit": ["zh"]}},
+      "distar.193": {"Root.GetName": {"zh": "我们的帝国", "en": "our empire"}}
+    },
+    "exceptions": ["distar.191 and distar.192: a pronoun placeholder renders as 'Apparently, «are» requesting' and an empty «» follows 'attest'; these are pronoun/repeat rendering artifacts, not phrase fixes"],
+    "reviewed": true
+  },
+  "anomaly-distar-lost-cat": {
+    "docs": {},
+    "exceptions": ["distar.340 and distar.57: EN shows a bare «Officer» for the scientist ('«Officer» may never be the same'); the game's title is cut, so no phrase fix", "distar.304: game text 'she's presence' (possessive typo) is kept"],
+    "reviewed": true
+  },
+  "anomaly-distar-medgas-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-mercury-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-metal-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-molten-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-nano-cat": {
+    "docs": {},
+    "exceptions": ["distar.40: EN shows a bare «Officer» for the leader ('«Officer» has discovered'); the game's title is cut, so no phrase fix"],
+    "reviewed": true
+  },
+  "anomaly-distar-nanocity-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-nanosand-cat": {
+    "docs": {},
+    "exceptions": ["distar.280: game text 'terraform the surface «this planet»' lacks 'of'; the same phrase is used correctly elsewhere in the doc, so no phrase fix"],
+    "reviewed": true
+  },
+  "anomaly-distar-ocean-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-phase-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-pod-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-puzzle-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-rainbow-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-robo-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-rum-cat": {
+    "docs": {"distar.90": {"Root.Owner.GetAdj": {"zh": "我方", "en": "our", "omit": ["en"]}}},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-distar-signal-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-soothe-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-soothe-gc-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-soy-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-thirsty-cat": {
+    "docs": {},
+    "exceptions": ["distar.180: game text 'this planet's' stone' has a doubled possessive ('s'); no phrase can fix it"],
+    "reviewed": true
+  },
+  "anomaly-distar-time-cat": {"docs": {}, "exceptions": [], "reviewed": true},
+  "anomaly-distar-warform-cat": {"docs": {}, "exceptions": [], "reviewed": true}
+}

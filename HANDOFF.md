@@ -101,6 +101,18 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
   origin's starting effects). Coverage: 6,060 of 8,751 story documents have effects, 56 of 58 origins; 0.9 % of effect
   uses unhandled (counted in the panel). Model, limits, coverage table: docs/EFFECTS.md. Check: `scripts/verify-effects.mjs`.
 - Polish: redundant hints/labels removed, spacing scale, transitions ≤ 0.2 s, AA contrast (docs/refine/progress-polish.md).
+- Completion pass (after review feedback):
+  - Substitution rules now live in `src/name-fill.js` (pure; used by the reader, the museum and
+    `scripts/refine/render-sentences.mjs`; tests `tests/name-fill.test.mjs`). Every substituted sentence
+    (27,037) was rendered as the site shows it and reviewed by 11 Haiku reviewers (`docs/refine/briefs/rendered.md`):
+    1,159 / 1,159 stories and all specimens confirmed, 3,721 reviewed entries, 457 game-text exceptions in
+    LEDGER.md. A case-insensitive localisation lookup fixed 14 scripted names (GetPlanetMoon …); empty phrases → 0.
+  - Effects: 0 unhandled keys (≈170 new handlers, ≈90 justified bookkeeping keys, `scripts/effects_more.py`), all
+    58 origins with starting effects (endbringers / doomsday via their start events), every document without
+    effects classified (no effects 939 · chaining only 1,029 · bookkeeping only 678 · no record 58 · other 0);
+    Chinese labels contain no English fallbacks (`scripts/effects_gloss.py`, check in effects_coverage.py).
+  - Layout sweep `scripts/verify-layout-sweep.mjs` (all 8 categories, museum, playlist, search; 1600 / 390; zh / en;
+    overflow, column, page errors; desktop close-up loads `art-hd`) — screenshots reviewed as contact sheets.
 
 ## Next work
 

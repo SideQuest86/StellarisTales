@@ -1,0 +1,99 @@
+{
+  "event-mega-201": {"docs": {}, "exceptions": ["mega.201: title 'Ecumenopolis: this planet Encased' keeps the game's title wording; 'this planet' before 'Encased' reads awkwardly."], "reviewed": true},
+  "event-observation-0": {"docs": {}, "exceptions": ["observation.2, observation.4, observation.5: empty «» substitution (token not in the key list) renders blank before 's; site-side fix needed."], "reviewed": true},
+  "event-observation-100": {"docs": {}, "exceptions": ["observation.101: 'The scientist were taking part' depends on a verb key (GetWasWere) outside this worksheet; site needs a singular rule.", "observation.105, observation.106, observation.108, observation.109, observation.112, observation.1402, observation.1404, observation.1406: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-observation-1000": {"docs": {"observation.1004": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}}}, "exceptions": ["special_projects:ABDUCT_SCIENTIST_PROJECT: 'abduct their and then convince their' — the object slot shows the possessive phrase (no object key listed); game text."], "reviewed": true},
+  "event-observation-1100": {"docs": {"observation.1103": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}}}, "exceptions": ["observation.1102, observation.1105: empty «» substitution renders blank before 's; site-side fix needed."], "reviewed": true},
+  "event-observation-1200": {"docs": {}, "exceptions": ["observation.1202: empty «» substitution (token not in the key list) renders blank; site-side fix needed.", "observation.1205: 'The native on this planet have conducted' — singular species key with plural verb; no plural key in this document."], "reviewed": true},
+  "event-observation-1300": {"docs": {}, "exceptions": ["observation.1301: empty «» substitution renders blank in several sentences; site-side fix needed."], "reviewed": true},
+  "event-observation-1400": {"docs": {}, "exceptions": ["observation.1402, observation.1404, observation.1406: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-observation-1500": {"docs": {}, "exceptions": ["observation.1501, special_projects:PROBE_ALIENS_PROJECT, observation.1502: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-observation-200": {"docs": {}, "exceptions": ["observation.205, observation.206, observation.207, observation.209, observation.211: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-observation-2011": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-2014": {"docs": {"observation.2014": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}}}, "exceptions": [], "reviewed": true},
+  "event-observation-2016": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-2018": {"docs": {}, "exceptions": ["observation.2018: the lower-case fragment 'unique appearance and odor of the natives' is game text, kept."], "reviewed": true},
+  "event-observation-2020": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-2022": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-2029": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-300": {"docs": {}, "exceptions": ["observation.301, special_projects:SMUGGLER_RAID_PROJECT: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-observation-3138": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-3140": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-3142": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-3144": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-3146": {"docs": {"observation.3147": {"From.GetSpeciesAdj": {"zh": "该族", "en": "species'", "note": {"zh": "游戏里这里会出现该物种的所属形容。", "en": "In the game, the species' adjective appears here."}}}}, "exceptions": [], "reviewed": true},
+  "event-observation-3148": {"docs": {}, "exceptions": ["observation.3149: empty «» substitution renders blank in 'on the «»'; site-side fix needed."], "reviewed": true},
+  "event-observation-3150": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-3152": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-observation-6": {"docs": {}, "exceptions": ["observation.7, observation.8, observation.9: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-preftl-10156": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-10160": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-10250": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-espionage-2": {
+    "docs": {
+      "preftl_espionage.1010": {"rogue_agent_spymaster.GetName": {"zh": "这位间谍首脑", "en": "the spymaster", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这位间谍首脑的称呼。", "en": "In the game, the spymaster's title appears here."}}},
+      "preftl_espionage.1020": {"rogue_agent_country.GetSpeciesName": {"zh": "当地", "en": "native", "note": {"zh": "游戏里这里会出现当地人的称呼。", "en": "In the game, the local people's name appears here."}}},
+      "preftl_espionage.1021": {"rogue_agent_country.GetSpeciesName": {"zh": "当地", "en": "native", "note": {"zh": "游戏里这里会出现当地人的称呼。", "en": "In the game, the local people's name appears here."}}}
+    },
+    "exceptions": [
+      "preftl_espionage.1001: zh '名叫这位间谍首脑的间谍首脑' repeats the noun and the name slot has no name phrase (no invented names); kept.",
+      "preftl_espionage.1001: en 'if are still posing' (verb slot) and 'to them love interest' (pronoun slot) come from game text; kept.",
+      "preftl_espionage.1001, preftl_espionage.1110, preftl_espionage.1115, preftl_espionage.1155, preftl_espionage.1165: empty «» substitution renders blank; site-side fix needed."
+    ],
+    "reviewed": true
+  },
+  "event-preftl-operation-1000": {"docs": {}, "exceptions": ["preftl_operation.1000, preftl_operation.1005, preftl_operation.1006, preftl_operation.1007: empty «» substitution renders blank in the annexation sentences; site-side fix needed."], "reviewed": true},
+  "event-preftl-operation-1015": {"docs": {}, "exceptions": ["preftl_operation.1016: 'Natives' advocates' possessive comes from game text; kept.", "preftl_operation.1016, 1017, 1018, 1019, 1020, 1021: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-preftl-operation-1025": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-operation-1035": {
+    "docs": {
+      "preftl_operation.1035": {"spynetwork.leader.GetName": {"zh": "这位领袖", "en": "the leader", "omit": ["zh"], "note": {"zh": "游戏里这里会出现间谍首脑的称呼。", "en": "In the game, the spymaster's name appears here."}}},
+      "preftl_operation.1037": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}},
+      "preftl_operation.1038": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}},
+      "preftl_operation.1039": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-preftl-operation-1045": {
+    "docs": {
+      "preftl_operation.1046": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}},
+      "preftl_operation.1047": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}},
+      "preftl_operation.1048": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}},
+      "preftl_operation.1049": {"pre_ftl_country.TechProgressPercentage": {"zh": "一定比例", "en": "a certain amount of", "note": {"zh": "游戏里这里会出现一个具体的科技进步数值。", "en": "In the game, a specific technological progression amount appears here."}}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-preftl-operation-1060": {"docs": {}, "exceptions": ["preftl_operation.1060, preftl_operation.1066, preftl_operation.1067: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-preftl-operation-3000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-operation-3010": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-operation-3020": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-operation-3030": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-operation-3040": {"docs": {}, "exceptions": ["preftl_operation.3045: empty «» substitution renders blank; site-side fix needed."], "reviewed": true},
+  "event-preftl-operation-3050": {"docs": {}, "exceptions": ["preftl_operation.3050: zh '间谍首脑 这位领袖' and 'a native native' (en) repeat the noun; the name and species slots are shared with other sentences; game text kept.", "preftl_operation.3050, 3061, 3063: zh title-plus-name duplication from the game text; kept."], "reviewed": true},
+  "event-preftl-operation-3060": {"docs": {}, "exceptions": ["preftl_operation.3063: en 'Several «the species'» witnessed' reads awkwardly with the possessive phrase after 'Several'; game text kept."], "reviewed": true},
+  "event-preftl-operation-3100": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-preftl-operation-3105": {"docs": {}, "exceptions": ["preftl_operation.3105: zh '一个这颗星球子个体' fuses the planet phrase with a drone noun; game text kept."], "reviewed": true},
+  "event-shroud-1100": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-shroud-2750": {
+    "docs": {
+      "shroud.2615": {"owner.GetSpeciesNamePlural": {"zh": "该物种", "en": "species", "note": {"zh": "游戏里这里会出现该物种的统称。", "en": "In the game, the species' collective name appears here."}}},
+      "shroud.2640": {"owner.GetSpeciesNamePlural": {"zh": "该物种", "en": "species", "note": {"zh": "游戏里这里会出现该物种的统称。", "en": "In the game, the species' collective name appears here."}}},
+      "shroud.2780": {"Owner.GetSpeciesAdj": {"zh": "该族", "en": "species'", "note": {"zh": "游戏里这里会出现该物种的所属形容。", "en": "In the game, the species' adjective appears here."}}}
+    },
+    "exceptions": [
+      "shroud.2750: open issue 'mechanotype' phrase has no key in this document; game text kept.",
+      "utopia.2602: 'certain «the species»' and 'the species' mechanotype' use the phrase as a determiner; game text kept.",
+      "shroud.2505: 'The species' psyche' is capitalised mid-sentence because the phrase comes from game text."
+    ],
+    "reviewed": true
+  },
+  "event-shroud-5010": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-situation-1125": {"docs": {}, "exceptions": [
+    "situation.1125: 'entered the S«star» system' has a letter before the placeholder in game text; kept.",
+    "situation.1130, situation.1135: 'the Spymaster, the leader' title-plus-name duplication from game text; kept.",
+    "situations:situation_stellarite_infested_star: 'Our star, star,' repeats the noun; game text.",
+    "situation.1170: 'our capital star this star' and zh '我们的首都恒星这颗恒星' repeat the noun in game text; kept."
+  ], "reviewed": true}
+}

@@ -158,5 +158,48 @@
     "en": "In the game, your capital's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "arcsite.9000": {
+   "leader.GetName": {
+    "zh": "这位领袖",
+    "en": "the leader",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现首席考古学家的名字。",
+     "en": "In the game, the chief archaeologist's name appears here."
+    }
+   }
+  },
+  "arcsite.9001": {
+   "absconded_archaeologist.GetName": {
+    "zh": "那位考古学家",
+    "en": "the other archaeologist",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现失踪的考古学家的名字。",
+     "en": "In the game, the name of the missing archaeologist appears here."
+    }
+   }
+  },
+  "arcsite.9002": {
+   "leader.GetName": {
+    "zh": "这位领袖",
+    "en": "the leader",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现考古学家的名字。",
+     "en": "In the game, the archaeologist's name appears here."
+    }
+   }
+  }
  }
 }

@@ -1,0 +1,154 @@
+{
+  "event-anomaly-4036": {
+    "docs": {},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-anomaly-4171": {
+    "docs": {},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-anomaly-5007": {
+    "docs": {
+      "special_projects:GAS_GIANT_COLONY": {
+        "NewBaldarak.GetName": {"zh": "这颗星球", "en": "this planet", "omit": ["zh"]}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-anomaly-6660": {
+    "docs": {},
+    "exceptions": ["anomaly.6660 and anomaly.6661: later sentences render an empty «» for the planet (zh 强烈的风暴无休止地袭击着«», EN 'the «»'s magnetic field'); this is the repeated-noun marker with no phrase, so the site must fill it"],
+    "reviewed": true
+  },
+  "event-anomaly-6725": {
+    "docs": {},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-anomaly-6880": {
+    "docs": {
+      "special_projects:STUDY_SLEEPING_CRYSTAL": {
+        "From.GetName": {"zh": "它", "en": "this asteroid", "note": {"zh": "游戏里这里会出现这颗小行星。", "en": "In the game, this asteroid appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-anomaly-96": {
+    "docs": {},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-distar-13060": {
+    "docs": {},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-distar-13070": {
+    "docs": {},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-distar-13080": {
+    "docs": {
+      "distar.9000": {
+        "Root.Capital.GetName": {"zh": "我们的母星", "en": "our home world", "note": {"zh": "游戏里这里会出现你的母星。", "en": "In the game, your home world appears here."}}
+      }
+    },
+    "exceptions": ["distar.13010: dragons_current_system is one phrase for both the star system and the L-Drake creature, so the creature line reads 'This system specimen' and 'zh 这个星系貌似并无敌意'; a single phrase cannot fit both"],
+    "reviewed": true
+  },
+  "event-distar-135": {
+    "docs": {},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-distar-1999": {
+    "docs": {
+      "distar.194": {
+        "living_planet_scientist.GetHimHer": {"zh": "此人", "en": "them", "omit": ["zh"]}
+      }
+    },
+    "exceptions": ["distar.192: a pronoun placeholder renders as 'Apparently, «are» requesting' and an empty «» follows 'attest'; these are pronoun/repeat rendering artifacts, not phrase fixes"],
+    "reviewed": true
+  },
+  "event-distar-211": {
+    "docs": {},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-distar-230": {
+    "docs": {
+      "distar.233": {
+        "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital"}
+      },
+      "distar.237": {
+        "sensor_ratling_system.GetName": {"zh": "这个星系", "en": "this"}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-distar-240": {
+    "docs": {},
+    "exceptions": ["distar.242 and distar.243: game text appends 'System' after the system placeholder ('«this system» System'); the phrase cannot drop the word"],
+    "reviewed": true
+  },
+  "event-distar-5000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-distar-5054": {"docs": {}, "exceptions": [], "reviewed": true},
+  "horizon-signal": {
+    "docs": {"akx.9500": {"Root.Owner.GetSpeciesAdj": {"zh": "我们的", "en": "our", "omit": ["en"]}}},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "lcluster-gray": {
+    "docs": {},
+    "exceptions": ["graygoo.400: repeated-noun marker renders an empty «» for the planet (EN \"the «»'s southern polar region\"; ZH \"在«»南极附近\"); the site must fill it"],
+    "reviewed": true
+  },
+  "project-arkship-eternal-chorus-project": {"docs": {}, "exceptions": [], "reviewed": true},
+  "project-endbringers-commune-with-the-voice": {"docs": {}, "exceptions": [], "reviewed": true},
+  "project-establish-communications": {
+    "docs": {},
+    "exceptions": ["special_projects:ESTABLISH_COMMUNICATIONS: ZH 'code-named as «这个种群»' is clumsy; the game uses a code name that the site cannot supply"],
+    "reviewed": true
+  },
+  "project-gas-giant-bodies-project": {
+    "docs": {"special_projects:GAS_GIANT_BODIES_PROJECT": {"From.GetName": {"zh": "这颗星球", "en": "this gas giant", "omit": ["zh", "en"]}}},
+    "exceptions": [],
+    "reviewed": true
+  },
+  "project-retaliatory-genome-mapping": {"docs": {}, "exceptions": [], "reviewed": true},
+  "project-robot-cleaners-project": {"docs": {}, "exceptions": [], "reviewed": true},
+  "project-the-composer-of-strands-fc-project": {
+    "docs": {},
+    "exceptions": ["shroud.4020: the substituted phrase «一道疯狂的脉冲» has no key and the ZH sentence 'it «...» in the depths' reads oddly; left as game text"],
+    "reviewed": true
+  },
+  "project-the-cradle-of-souls-fc-project": {
+    "docs": {},
+    "exceptions": ["shroud.4015: unbalanced «» from the game's quotation marks ('«知道了祂...' / '«We know its vision'); no key"],
+    "reviewed": true
+  },
+  "project-the-eater-of-world-fc-project": {
+    "docs": {},
+    "exceptions": ["shroud.4005: unbalanced and garbled « » quotation markers from game text (e.g. '在残垣断壁«的废墟之中'); no key to fix"],
+    "reviewed": true
+  },
+  "project-the-instrument-of-desire-fc-project": {"docs": {}, "exceptions": [], "reviewed": true},
+  "project-whisperers-in-the-void-fc-project": {
+    "docs": {
+      "special_projects:the_eater_of_worlds_REVENGE_PROJECT": {"event_target:selected_planet_for_revenge.solar_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"]}},
+      "special_projects:the_cradle_of_souls_REVENGE_PROJECT": {"event_target:selected_planet_for_revenge.solar_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"]}},
+      "special_projects:the_instrument_of_desire_REVENGE_PROJECT": {"event_target:selected_planet_for_revenge.solar_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"]}},
+      "special_projects:the_composer_of_strands_REVENGE_PROJECT": {"event_target:selected_planet_for_revenge.solar_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"]}},
+      "shroud.11130": {"event_target:spawn_system.GetName": {"zh": "这个星系", "en": "this system", "omit": ["zh"]}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "project-woodwind-instrument-investigation": {"docs": {}, "exceptions": [], "reviewed": true}
+}

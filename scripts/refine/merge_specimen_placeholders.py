@@ -26,6 +26,26 @@ for key, entry in sorted(review.items()):
         if e:
             out.setdefault(key, {})[pk] = e
     issues += [f'{key}: {i}' for i in entry.get('issues') or []]
+# Rendered-sentence review (out/rendered-specimens.json) overrides the first pass.
+rendered_file = ROOT / 'docs/refine/placeholders/out/rendered-specimens.json'
+reviewed = set()
+if rendered_file.exists():
+    for key, entry in json.loads(rendered_file.read_text(encoding='utf-8')).items():
+        if entry.get('reviewed'):
+            reviewed.add(key)
+        s = specimens.get(key)
+        if not s:
+            continue
+        used = {m for f in ('name', 'short', 'details') for lang in ('zh', 'en') for m in P.findall((s.get(f) or {}).get(lang) or '')}
+        for pk, wording in (entry.get('placeholders') or {}).items():
+            if pk not in used:
+                problems.append(f'{key}: rendered key {pk} not in its text')
+                continue
+            e = check(wording, problems, f'{key} {pk} (rendered)')
+            if e:
+                out.setdefault(key, {})[pk] = e
+        issues += [f'{key}: exception: {x}' for x in entry.get('exceptions') or []]
+    print(f'rendered review: {len(reviewed)} specimens confirmed')
 (ROOT / 'content/museum').mkdir(parents=True, exist_ok=True)
 (ROOT / 'content/museum/placeholders.json').write_text(json.dumps(out, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 print(f'specimens with wording: {len(out)}; problems: {len(problems)}; issues: {len(issues)}')

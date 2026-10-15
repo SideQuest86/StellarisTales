@@ -45,6 +45,7 @@ export function countEffects(effects) {
   for (const k of ["immediate", "after", "effects"]) n += leaves(effects[k]);
   for (const s of effects.sections || []) n += leaves(s.effects);
   if (effects.bullets) n += (effects.bullets.en || effects.bullets.zh || []).length;
+  if (effects.negativeBullets) n += (effects.negativeBullets.en || effects.negativeBullets.zh || []).length;
   return n;
 }
 
@@ -121,11 +122,14 @@ export function renderEffects(effects, opts = {}) {
     if (effects.bullets) {
       body += `<section class="fx-sec"><h4 class="fx-h">${esc(T("开局效果（游戏原文）", "Starting benefits (game text)"))}</h4>${bulletsHtml(effects.bullets, ctx)}</section>`;
     }
+    if (effects.negativeBullets) {
+      body += `<section class="fx-sec"><h4 class="fx-h">${esc(T("代价（游戏原文）", "Drawbacks (game text)"))}</h4>${bulletsHtml(effects.negativeBullets, ctx)}</section>`;
+    }
     for (const v of effects.variants || []) {
       const when = v.when ? pick(v.when, lang) : "";
       body += `<section class="fx-sec"><h4 class="fx-h">${esc(when ? T("在以下情况：", "When: ") + when : T("另一种开局", "Alternative start"))}</h4>${bulletsHtml(v.bullets, ctx)}</section>`;
     }
-    if (effects.effects) body += section(effects.bullets ? T("具体数值", "Numbers behind it") : T("效果", "Effects"), effects.effects, ctx);
+    if (effects.effects) body += section((effects.bullets || effects.negativeBullets) ? T("具体数值", "Numbers behind it") : T("效果", "Effects"), effects.effects, ctx);
     body += section(T("立即发生", "Immediately"), effects.immediate, ctx);
     body += section(T("事件结束后", "After the event"), effects.after, ctx);
     for (const s of effects.sections || []) body += section(pick(s.label, lang), s.effects, ctx);

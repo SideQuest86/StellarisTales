@@ -1,0 +1,278 @@
+{
+  "event-operation-6100": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-operation-6200": {
+    "docs": {
+      "operation.6207": {"target_country.GetSpeciesNamePlural": {"zh": "该物种", "en": "species"}},
+      "operation.6205": {
+        "target_country.GetSpeciesName": {"zh": "该物种", "en": "species"},
+        "target_country.GetSpeciesNamePlural": {"zh": "该物种", "en": "species"}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-operation-6250": {
+    "docs": {
+      "operation.6252": {"scandal_species.GetSpeciesName": {"zh": "该物种", "en": "species"}}
+    },
+    "exceptions": [
+      "operation.6252 en 122-123: article dropped before 'species' ('with species embassy staff member', 'member of species government') - game text needs 'the'; no single phrase fits"
+    ],
+    "reviewed": true
+  },
+  "event-operation-6300": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-operation-8000": {
+    "docs": {},
+    "exceptions": [
+      "operation.8002 en 207: 'hiding in plain site' - game text typo",
+      "open issue 'Operation unnamed': no operation code name exists in the data"
+    ],
+    "reviewed": true
+  },
+  "event-operation-8200": {
+    "docs": {},
+    "exceptions": [
+      "operation.8230 en 255: 'cause the them considerable embarrassment' - pronoun slot after 'the' in game text"
+    ],
+    "reviewed": true
+  },
+  "event-over-1": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-over-100": {
+    "docs": {
+      "over.100": {"root.GetAdj": {"zh": "我方", "en": "our", "omit": ["zh", "en"]}}
+    },
+    "exceptions": [
+      "open issue zh 'Our close ally [name]' doubles 友邦 ('亲密友邦«那个友邦»'): no clean Chinese phrase fits both slots; kept"
+    ],
+    "reviewed": true
+  },
+  "event-paragon-100": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-paragon-200": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-paragon-3100": {
+    "docs": {
+      "paragon.3100": {"event_target:exakeides_planet.GetName": {"zh": "此", "en": "planet"}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-paragon-3901": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-paragon-549": {
+    "docs": {
+      "paragon.550": {"Root.GetRulerName": {"zh": "统治者", "en": "the ruler", "omit": ["zh"]}},
+      "paragon.553": {"From.GetTitle": {"zh": "这位领袖", "en": "leader"}},
+      "paragon.557": {"From.GetTitle": {"zh": "这位领袖", "en": "leader"}},
+      "paragon.562": {"From.GetTitle": {"zh": "领袖", "en": "leader"}}
+    },
+    "exceptions": [
+      "paragon.550 zh 379 and paragon.571 zh 467: '享年高龄岁' / '高龄岁时' - the age slot needs a number in the game text",
+      "paragon.562 en 459: 'the themself Building' - the name slot needs a real building name; cannot be supplied"
+    ],
+    "reviewed": true
+  },
+  "event-paragon-998": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-pirate-10": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-pirate-100": {
+    "docs": {},
+    "exceptions": ["pirate.155 en 572: 'A bold move, the species''' - possessive used alone in game text"],
+    "reviewed": true
+  },
+  "event-pirate-13": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-pirate-24": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-pirate-4": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-pirate-48": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-planet-destruction-100": {
+    "docs": {},
+    "exceptions": ["planet_destruction.1000: unmapped spans - empty «» (zh 743, en 748) and «行星»/'planet' (zh 756 pattern); no key listed"],
+    "reviewed": true
+  },
+  "event-planet-destruction-1005": {
+    "docs": {},
+    "exceptions": ["planet_destruction.1000: unmapped «行星»/'planet' span (zh 756, en 761 'the planet of this planet'); no key listed"],
+    "reviewed": true
+  },
+  "event-planet-destruction-110": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-planet-destruction-200": {
+    "docs": {},
+    "exceptions": ["planet_destruction.1000: unmapped «行星»/'planet' span (zh 784, en 789); no key listed"],
+    "reviewed": true
+  },
+  "event-planet-destruction-300": {
+    "docs": {},
+    "exceptions": ["planet_destruction.1000: unmapped «行星»/'planet' span (zh 802, en 807); no key listed"],
+    "reviewed": true
+  },
+  "event-planet-destruction-400": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-planet-destruction-500": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-planet-destruction-600": {
+    "docs": {
+      "fallen_empires_awakening.2": {"From.GetAdjective": {"zh": "这颗星球的", "en": "this planet's"}}
+    },
+    "exceptions": [
+      "fallen_empires_awakening.2 en 843: 'the empire are looking outwards' - verb agreement from game text"
+    ],
+    "reviewed": true
+  },
+  "event-planet-destruction-700": {
+    "docs": {},
+    "exceptions": ["planet_destruction.1000: unmapped «行星»/'planet' span (zh 859, en 864); no key listed"],
+    "reviewed": true
+  },
+  "event-planet-destruction-800": {
+    "docs": {},
+    "exceptions": ["planet_destruction.1000: unmapped «行星»/'planet' span (zh 875, en 880); no key listed"],
+    "reviewed": true
+  },
+  "event-planet-destruction-900": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-plant-100": {
+    "docs": {},
+    "exceptions": ["plant.110 en 903-904: 'Our Overlord have completed' - verb agreement from game text"],
+    "reviewed": true
+  },
+  "event-progress-2": {
+    "docs": {},
+    "exceptions": [
+      "progress.2 en 931: 'we, the this planet, are not alone' - the key slot needs a noun phrase game text does not supply",
+      "progress.2 zh 911: '这颗星球这颗行星' - doubled noun from game text",
+      "progress.2 unmapped «行星»/'planet' spans (zh 908, 913, 917, 923; en 927, 930, 933, 937, 943); no key listed"
+    ],
+    "reviewed": true
+  },
+  "event-progress-3": {
+    "docs": {
+      "progress.3": {"Root.Owner.GetSpeciesName": {"zh": "该物种", "en": "species"}}
+    },
+    "exceptions": [
+      "progress.3 en 973: 'the «planet»-spanning ocean' - unmapped 'planet' span; no key listed"
+    ],
+    "reviewed": true
+  },
+  "event-refugees-3": {
+    "docs": {},
+    "exceptions": [
+      "refugees.1 en 1013: 'home planet of this planet' - the planet-name slot is shared with 'settle on this planet'; kept (open issue)"
+    ],
+    "reviewed": true
+  },
+  "event-shroud-11000": {
+    "docs": {
+      "shroud.4715": {"root.GetSpeciesAdj": {"zh": "该族", "en": "their"}},
+      "shroud.4935": {"Root.GetSpeciesAdj": {"zh": "该族", "en": "their"}}
+    },
+    "exceptions": [
+      "shroud.4715 zh and en: '«**Error - for GCs**»' - broken placeholder text in the game data; a phrase cannot fix it",
+      "open issue 'Reckoning of the target': reads as a title in both languages; kept"
+    ],
+    "reviewed": true
+  },
+  "event-shroud-12000": {
+    "docs": {},
+    "exceptions": [
+      "shroud.12020 en 1121: 'they strokes' - verb agreement from game text; 'they' is the only neutral pronoun"
+    ],
+    "reviewed": true
+  },
+  "event-shroud-1510": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-shroud-3055": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-shroud-3060": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-shroud-3105": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-shroud-3520": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-shroud-4190": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-shroud-4500": {
+    "docs": {
+      "utopia.2681": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      },
+      "shroud.3510": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-shroud-4550": {
+    "docs": {
+      "utopia.2681": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      },
+      "shroud.3510": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-shroud-4600": {
+    "docs": {
+      "utopia.2681": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      },
+      "shroud.3510": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-shroud-4650": {
+    "docs": {
+      "utopia.2681": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      },
+      "shroud.3510": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      },
+      "shroud.4655": {"Root.GetSpeciesAdj": {"zh": "该族", "en": "their"}},
+      "shroud.4862": {"Root.GetSpeciesAdj": {"zh": "该族", "en": "their"}}
+    },
+    "exceptions": [
+      "shroud.4862 en 1415-1416 and zh 1409-1410: 'The this planet has been transformed' / 'Arkship «这颗星球»' - the same key renders a ship as a planet; game text / key mismatch"
+    ],
+    "reviewed": true
+  },
+  "event-shroud-4700": {
+    "docs": {
+      "utopia.2681": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      },
+      "shroud.3510": {
+        "leader_1.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_2.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_3.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]},
+        "leader_4.GetName": {"zh": "本人", "en": "personally", "omit": ["en"]}
+      }
+    },
+    "exceptions": [
+      "shroud.4890 zh 1469: 'Arkship «这颗星球»' - candidate planet phrase used as a ship name; en shows only 'Arkship'"
+    ],
+    "reviewed": true
+  },
+  "event-shroud-505": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-shroud-5051": {"docs": {}, "exceptions": [], "reviewed": true}
+}

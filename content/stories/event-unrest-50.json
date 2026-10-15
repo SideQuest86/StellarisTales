@@ -246,8 +246,16 @@
  },
  "placeholderDocs": {
   "situations:situation_planetary_revolt": {
+   "Owner.GetGovernmentName": {
+    "zh": "政府",
+    "en": "government",
+    "note": {
+     "zh": "游戏里这里会出现我们政府的名称。",
+     "en": "In the game, the name of our government appears here."
+    }
+   },
    "owner.GetGovernmentName": {
-    "zh": "我们的政府",
+    "zh": "政府",
     "en": "government",
     "note": {
      "zh": "游戏里这里会出现我们政府的名称。",
@@ -256,6 +264,14 @@
    }
   },
   "unrest.4000": {
+   "Owner.GetGovernmentName": {
+    "zh": "政府",
+    "en": "government",
+    "note": {
+     "zh": "游戏里这里会出现我们政府的名称。",
+     "en": "In the game, the name of our government appears here."
+    }
+   },
    "owner.GetGovernmentName": {
     "zh": "我们的政府",
     "en": "government",
@@ -270,6 +286,16 @@
     "note": {
      "zh": "游戏里这里会出现那颗星球的名称。",
      "en": "In the game, the name of that planet appears here."
+    }
+   }
+  },
+  "unrest.4055": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "the planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, the name of this planet appears here."
     }
    }
   },
@@ -324,6 +350,16 @@
     "note": {
      "zh": "游戏里这里会出现那颗星球的名称。",
      "en": "In the game, the name of that planet appears here."
+    }
+   }
+  },
+  "unrest.55": {
+   "Owner.GetGovernmentName": {
+    "zh": "政府",
+    "en": "government",
+    "note": {
+     "zh": "游戏里这里会出现我们政府的名称。",
+     "en": "In the game, the name of our government appears here."
     }
    }
   }

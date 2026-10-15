@@ -178,6 +178,14 @@ def main():
     for k in sorted(keys):  # tooltips of custom_tooltip / game effect text are referenced with their own keys
         if k.startswith('origin_') and k not in out_loc and ('effects' in k or 'tooltip' in k):
             out_loc[k] = {'zh': expand(k, 'zh'), 'en': expand(k, 'en')}
+    # engine links inside the kept sentences (`building:building_x`, `trait:...`): keep the linked object's name too
+    link = re.compile(r'(?<![A-Za-z0-9_])(?:building|trait|technology|tradition_category|tradition|edict|scripted_action|tech|civic|ethic|ascension_perk|deposit|planet_class|policy|district|species_trait|megastructure|relic|resolution):([A-Za-z0-9_]+)')
+    for _ in range(2):
+        for text in [v for e in list(out_loc.values()) for v in e.values()]:
+            for ref in link.findall(text):
+                for k in (ref, ref.upper()):
+                    if k in keys and k not in out_loc:
+                        out_loc[k] = {'zh': expand(k, 'zh'), 'en': expand(k, 'en')}
     out = {
         'game': (game / 'launcher-settings.json').exists() and json.loads((game / 'launcher-settings.json').read_text(encoding='utf-8-sig')).get('version'),
         'loc': out_loc, 'vars': variables,

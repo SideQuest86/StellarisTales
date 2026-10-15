@@ -62,5 +62,30 @@
     "en": "In the game, the name of the other empire appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "arkship.1005": {
+   "from.GetName": {
+    "zh": "此船",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这艘方舟的名称。",
+     "en": "In the game, the name of this Arkship appears here."
+    }
+   }
+  },
+  "arkship.1015": {
+   "from.GetName": {
+    "zh": "此船",
+    "en": "this ship",
+    "note": {
+     "zh": "游戏里这里会出现这艘方舟的名称。",
+     "en": "In the game, the name of this Arkship appears here."
+    }
+   }
+  }
  }
 }

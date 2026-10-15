@@ -20,3 +20,4 @@ Stop rule: checkpoint at 54 % weekly (34 points), never exceed 60 % (40 points).
 
 Stop rule: checkpoint at 57 % weekly (34 points), never exceed 63 % (40 points).
 | 2026-10-15 ~03:35 | 24 % | 11 % | released v4.3.0 (578af821), live checks passed (effects, refine reader/chrome/audio, reader V4). **Round-2 total: 1 point of 40** |
+| 2026-10-15 ~04:00 | 25 % | 24 % | completion pass (rendered review of all sentences, effects gaps closed, layout sweep) before release. **Round-2 total so far: 2 points of 40** |

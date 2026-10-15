@@ -1,6 +1,6 @@
 # Placeholder review ledger
 
-Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer output): 1159; reviewed wording entries merged: 3270.
+Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer output): 1159; reviewed wording entries merged: 3721.
 
 | Group | Stories | Reviewed |
 | --- | ---: | ---: |
@@ -34,6 +34,8 @@ Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer o
 ## Validation problems (not merged)
 
 - origin_heirs_of_the_khan raider_khanate.GetRulerTitle: check capitalised words (possible invented name): Great Khan
+- origin_heirs_of_the_khan marauder.502 raider_khanate.Ruler.GetName (reworded): check capitalised words (possible invented name): the new Khan
+- origin_shroud_forged: reworded key Root.GetSpeciesNamePlural not used in origin-intro:origin_shroud_forged
 - origin_toxic_knights order_headquarters.GetName: check capitalised words (possible invented name): the Order's Keep
 - origin_toxic_knights order_keep.GetName: check capitalised words (possible invented name): the Order's Keep
 - origin_wilderness: unknown key Root.GetName
@@ -44,489 +46,491 @@ Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer o
 - event-bio-1 bio.85 Owner.Leader.GetHerselfHimself (fallback): invalid entry {"zh": "", "en": "themselves", "note": {"zh": "游戏里这里会出现领袖的自称代词。", "en": "In the game, the leader's reflexive pronoun appears here."}}
 - event-colony-3005 doomslayer_knight.GetName: check capitalised words (possible invented name): the Doomslayer
 - event-situation-150: unknown key saved_owner.GetResearchers
+- event-situation-200: reworded key complex_drones_cost not used in situation.200
+- event-situation-200: reworded key complex_drones_counter_100 not used in situation.200
+- event-situation-200: reworded key simple_drones_cost not used in situation.200
+- event-situation-200: reworded key simple_drones_counter_100 not used in situation.200
+- event-situation-200: reworded key total_drones_cost not used in situation.200
+- event-situation-200: reworded key total_drones_counter_100 not used in situation.200
+- event-situation-200: reworded key energy_cost not used in situation.200
 - event-synth-1515 From.GetRulerTitle: invalid entry {"zh": "", "en": "beloved", "note": {"zh": "游戏里这里会出现这位统治者的敬称。", "en": "In the game, a form of address for this ruler appears here."}}
 - event-action-38: unknown key Root.GetSpeciesToothNamePlural
 - event-custodian-499 custodian.GetName: check capitalised words (possible invented name): the new Custodian
+- event-custodian-499 custodian.30 custodian.GetName (reworded): check capitalised words (possible invented name): the new Custodian
+- event-marauder-1: reworded key marauder_country.GetSpeciesName not used in marauder.117
+- event-marauder-4: reworded key raider_khanate.GetRulerTitle not used in marauder.508
 - event-operation-6300 From.GetName: check capitalised words (possible invented name): the Imperium
 - event-shroud-745: unknown key FromFrom.GetDissent
 - event-syndaw-400 From.GetName: check capitalised words (possible invented name): rogue AI
 - great-khan raider_khanate.GetRulerTitle: check capitalised words (possible invented name): Great Khan
 
-## Reviewer issues (open)
+## Rendered-sentence review: 1159 of 1159 stories confirmed
 
-- cetana: 'Raid [star] Outpost' in the special project title reads 'Raid star Outpost'.
-- cetana: event_target:synth_queen_animator_of_clay_leader_price keeps 'the leader' next to 'our ruler'; the doll line reads oddly.
-- contingency: 'Commander' and 'Scientist' precede the officer and commander placeholders; in crisis.2303 'Commander in person' and 'military unit in person' read awkwardly.
-- contingency: crisis.2095 uses the ruler pair twice; the second 'bodyguard' reference reads 'our's bodyguard' with the document override.
-- contingency: 'the Machine World' appears after the From.GetName phrase in crisis.2037; the entity is a machine world.
-- cosmogenesis: The rival empire is used for both the empire key and From.GetName, which probably refer to one empire.
-- galactic-nemesis: 'we [species]' in crisis.4140 reads 'we our kind have known'.
-- galactic-nemesis: 'Galactic Custodian' and 'Senate' lines use 'it' for the custodian.
-- gray-tempest: 'The other species scientists' reads awkwardly in graygoo.11.
-- prethoryn-scourge: 'Science Officer [name]' precedes the leader placeholder in crisis.105.
-- prethoryn-scourge: Four systems in this story need distinct phrases; 'in the other star system' and 'in the remote star system' are the best available.
-- unbidden: crisis.1008 reads 'across the this planet' with the current phrase.
-- war-in-heaven: 'ancient [rival species] rivals' reads 'ancient rival species rivals' in war_in_heaven.4.
-- war-in-heaven: 'the winning empire have' uses a plural verb in the source text; the verb agreement is left unchanged.
-- anomaly-aianom-clue-cat: From is assumed to be the survey ship (the text says 'survey carried out by the'); verify against the event.
-- anomaly-alien-life-cat: Root.Owner.GetHomeWorldName reads 'our home of the homeworld' in EN; acceptable but slightly stilted.
-- anomaly-alpha-centauri-cat: EN 'we [species] have been able to look' reads as 'we the species'; the sentence needs a rephrase in the game text, not in the placeholder.
-- anomaly-ancrel-rubricator-cat: Root.GetLeaderName follows the text's 'Science officer'; the leader phrase may read doubled ('Science officer the leader').
-- anomaly-ast-cluster-cat: Root.GetLeaderName follows the text's 'Science Officer' and may read doubled; book_writer.GetName is assumed to be an empire/region.
-- anomaly-ast-crater-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-ast-debris-field-1-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-ast-gear-cat: The text already says 'asteroid' before the placeholder, so the phrase may read doubled in ZH.
-- anomaly-ast-illicit-dark-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-ast-shrine-1-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-ast-shrine-1-cat: Root.Owner.GetSpeciesName reads 'a small the species temple'; no clean phrase without rewriting the text.
-- anomaly-ast-wavelengths-1-cat: From.GetName reads 'massive asteroid this asteroid' in anomaly.75; the text already names the asteroid.
-- anomaly-ast-wavelengths-1-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-atm-anomaly-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-bar-colony-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-barr-base-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-battle-uninhabitable-category: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-black-clouds-cat: Source text contains a typo ('下a额') in the zh line; not a placeholder issue.
-- anomaly-but-they-are-cute-category: Root.GetLeaderName may read awkwardly in some lines; kept the standard leader phrase.
-- anomaly-cold-research-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-con-biology-cat: Root.GetLeaderName and From.From.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-con-biology-cat: In anomaly.4116 'beast aboard the [From.From]' uses 'aboard' (a ship) but the zh uses '上' (a planet); the placeholder is kept as a planet, so the EN may read 'aboard this planet'.
-- anomaly-cont-signs-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-corrupt-data-cat: The text calls the object a planet and then says it is not a planet; the phrase 'this world' keeps both sentences readable.
-- anomaly-crystal-manufactory-cat: Root.GetLeaderName may read doubled after 'Science Officer'; 'the ship's commander' in anomaly_failure.2670 is fine.
-- anomaly-data-diamond-cat: Root.GetLeaderName is the same leader who later dies in anomaly.3165; the leader phrase is kept.
-- anomaly-debris-gasgiant-category: [Root.Owner.GetScientist] precedes the scientist's name in distar.1055, so EN may read 'Scientist the scientist is convinced'.
-- anomaly-debris-gasgiant-category-temp: Root.GetLeaderName (vechtar_zavonia_leader_name) reads 'head researcher the leader' in EN; kept the standard leader phrase.
-- anomaly-des-buried-cat: In anomalies:DES_BURIED_CAT the text reads 'The desert planet [X]', so the planet phrase may read doubled.
-- anomaly-des-planet-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-dimensional-pocket-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-disco-alien-machine-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-disco-impossible-organism-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-disco-impossible-organism-cat: Root.GetSpeciesName ('a newborn citizen') and Root.Owner.GetSpeciesName ('our species') name the same species with two phrases in one story.
-- anomaly-disco-molluscoid-miners-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-disco-speed-demon-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-disco-speed-demon-cat: Species placeholders sit inside 'the [X] species' and 'the [X] people'; EN reads 'the our species' and needs a text-level rephrase.
-- anomaly-disco-stranded-scientist-cat: Root.GetLeaderName may read doubled after 'Science Officer'; 'the asteroid this asteroid' reads doubled in distar.3020.
-- anomaly-disco-trojan-asteroid-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-brainslug-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-brainslug-cat: Root.Owner.GetAdj ('our') reads 'Every our leader' and 'the our whole' in EN; needs a text-level rephrase.
-- anomaly-distar-clone-cat: 'Initial imaging of the ruined [X] ring world' reads 'the ruined this ring world' in EN.
-- anomaly-distar-clone-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-dead-god-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-electro-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-exo-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-flare-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-flow-cat: 'the [From] gateway' reads 'the this gateway gateway' in distar.45; text-level rephrase needed.
-- anomaly-distar-flow-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-flytrap-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-foes-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-geode-cat: 'the [X] asteroid' reads 'the this asteroid asteroid' in EN; text-level rephrase needed.
-- anomaly-distar-geode-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-holo-cat: 'in the [X] system' reads 'in the this black hole system' in distar.20.
-- anomaly-distar-holo-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-living-cat: Root.GetLeaderName may read doubled after 'Science Officer'; 'former Science Officer the scientist' in distar.195 is doubled.
-- anomaly-distar-living-cat: living_planet_tar.GetName (in distar.192 and distar.196) is not yet assigned a phrase in this story.
-- anomaly-distar-lost-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-lost-cat: 'the [X] spirit' and 'the [X] pop' read oddly with 'our'; text-level rephrase needed.
-- anomaly-distar-lost-cat: 'she's presence' reads awkwardly in distar.304 after the pronoun swap.
-- anomaly-distar-medgas-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-molten-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-nano-cat: Root.GetLeaderName reads 'Officer the leader' in distar.40; kept the standard leader phrase.
-- anomaly-distar-nanocity-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-nanosand-cat: Owner.GetScientistCapital is not in the worksheet list; it reads as 'the scientist' prefix in distar.280.
-- anomaly-distar-phase-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-phase-cat: From and phaseshift_planet are probably the same planet; they share the phrase 'this planet' on purpose.
-- anomaly-distar-puzzle-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-robo-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-rum-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-rum-cat: 'the well-known [Root.Owner.GetAdj] beverage' would read 'the well-known our beverage'; text-level rephrase needed.
-- anomaly-distar-signal-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-soothe-gc-cat: 'the [Root.Owner.GetAdj] neural network' reads 'the our neural network' in EN; text-level rephrase needed.
-- anomaly-distar-soy-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-thirsty-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-time-cat: ouroboros_system.GetName reads 'in the this system system' in EN where the text says 'the [X] system'; text-level rephrase needed.
-- anomaly-distar-time-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-warform-cat: Root.GetLeaderName may read doubled after 'Science Officer'.
-- anomaly-distar-wreck-cat: From.GetName is a supply ship in distar.1, but the 'gravity well' sentence in the same document treats it as a planet; the phrase reads 'the supply ship's gravity well'.
-- anomaly-distar-zone-cat: The text puts 'Science Officer' or '科学家' before the placeholder, so the phrase reads 'Science Officer the officer' and '科学家这位'.
-- anomaly-emissions-asteroid-category: anomaly.50 begins 'Asteroid [name]', so the label reads awkwardly with any phrase; 'Asteroid this one' is the best available.
-- anomaly-frbr-grimacing-cat: The text puts 'Science Officer' or '科学专员' before the placeholder, so the phrase reads 'Science Officer the officer' and '科学专员这位'.
-- anomaly-froz-base-cat: 'Science Officer' or '科学专员' precedes the leader placeholder; zh reads '科学专员这位'.
-- anomaly-froz-box-cat: 'Science Officer' or '科学专员' precedes the leader placeholder; zh reads '科学专员这位'.
-- anomaly-gaea-checkered-cat: 'Science Officer' precedes the leader placeholder in anomaly.3020; reads 'Science Officer the officer'.
-- anomaly-gaia-record-cat: 'Science Officer' precedes the leader placeholders; reads 'Science Officer the officer'.
-- anomaly-gen-abandoned-ship-cat: 'Science Officer' precedes the leader placeholder; reads 'Science Officer the officer'.
-- anomaly-gen-derelict-ship-cat: 'Science Officer' precedes the leader placeholder; reads 'Science Officer the officer'.
-- anomaly-gen-desert-cat: From.GetPlanetMoon plus From.GetName ('the desert moon this planet') reads awkwardly in anomaly.3035.
-- anomaly-gen-desert-cat: 'Science Officer' precedes the leader placeholder in several sentences.
-- anomaly-gen-lost-cargo-cat: 'Science Officer' precedes the leader placeholder in anomaly.4085.
-- anomaly-gen-old-war-cat: 'Science Officer' precedes the leader placeholder in anomaly.4020.
-- anomaly-gen-playground-cat: 'Science Officer' precedes the leader placeholder in anomaly.135.
-- anomaly-hab-corn-cat: 'Science Officer' precedes the leader placeholder in anomaly.215.
-- anomaly-hab-mat-cat: 'Science Officer' precedes the leader placeholder in anomaly.220.
-- anomaly-hatch-asteroid-category: anomaly.25 begins 'asteroid [name]', so 'asteroid this one' is awkward; the label cannot be fully fixed without changing the game text.
-- anomaly-hbl-lush-planet-1-cat: 'Science Officer' precedes the leader placeholder in anomaly.3130.
-- anomaly-intemporal-orb-cat: 'junior [scientist] [name]' reads 'junior scientist the leader' with the current phrase; the intemporal_leader name is left as 'the leader' for review.
-- anomaly-intemporal-orb-cat: Several pronoun keys (GetHeShe, GetHimHer and similar) are left unchanged; they read acceptably with the current phrases.
-- anomaly-irregular-energy-cat: 'Science Officer' precedes the leader placeholders in several sentences; reads 'Science Officer the officer'.
-- anomaly-life-gasgiant-category: anomaly.300 reads 'the gas giant this planet' with the current phrase; the gas giant may need its own phrase in that document.
-- anomaly-moon-gasgiant-category: anomaly.340 reads 'the gas giant this gas giant' with the current phrase.
-- anomaly-mountain-uninhabitable-category: 'Science Officer' and 'Lead Scientist' precede the leader placeholder; reads awkwardly.
-- anomaly-mysterious-rock-cat: anomaly.2005 uses the same key both for the crew (ship) and for the planet's wind; 'the crew of this planet' is left in place.
-- anomaly-orbital-resonance-cat: 'in the this system system' occurs with the current phrase for from.System.GetName; the game name cannot be given a phrase that fits both 'in the ... system' and 'is the most perfect example'.
-- anomaly-origin-asteroid-category: anomaly.1 begins 'asteroid [name]', so the label reads awkwardly; 'asteroid this one' is the best available.
-- anomaly-rapid-desertification-cat: desertling_planet.Planet.GetName reads 'The planet [name]' with the current phrase; the game name follows the word 'planet', so 'this planet' reads as 'The planet this planet'.
-- anomaly-ship-gasgiant-category: special_projects reads 'the gas giant this gas giant' with the current phrase.
-- anomaly-signal-gasgiant-category: anomaly.5002 reads 'the gas giant that planet' with the current phrase.
-- anomaly-spires-of-light-category: 'Scientist [name]' precedes the leader placeholder; reads 'Scientist the leader posits'.
-- anomaly-star-resonance-cat: The worksheet gives 'the corona of' as the context; a star is assumed for both keys, so check that the planet/star reading in anomaly.6740 is right.
-- anomaly-station-asteroid-category: anomaly.40 begins 'asteroid [name]', so 'asteroid this one' is awkward.
-- anomaly-strange-signal-category: 'Root.Owner.Leader' title and name are split into two keys so that 'our ruler' reads correctly in both languages.
-- anomaly-sun-rays-cat: 'Science Officer' precedes the leader placeholder in anomaly.4040.
-- anomaly-sun-teapot-cat: anomaly.4060 reads 'circling the star this star'.
-- anomaly-sun-teapot-cat: 'We [species plural]' in anomaly.4062 keeps the current phrase because no phrase fits 'what we ... know'.
-- anomaly-the-judge-cat: 'Our scientist' in anomaly.9002 is followed by the placeholder; reads 'our scientist, the officer'.
-- anomaly-tomb-world-cat: 'Science Officer' precedes the leader placeholders in anomaly.2005-level text.
-- anomaly-tox-planet-cat: anomaly.4105 begins 'The planet [name]', so the current 'this planet' reads 'The planet this planet'.
-- anomaly-wat-planet-cat: 'Science Officer' precedes the leader placeholder in several sentences.
-- dessanu-consonance: The Dessanu lines address the player's species directly; 'your people' is used for the addressed species.
-- event-anomaly-142: 'Science Officer' precedes the leader placeholder in anomaly.167.
-- event-anomaly-3095: anomaly.3105 reads 'our empire's our ruler' because the empire and ruler placeholders both appear in one sentence.
-- event-anomaly-4036: The title 'Science Officer' / '科学专员' already precedes the placeholder, so the sentence reads 'Science Officer the scientist'; consider dropping the title in display.
-- event-anomaly-5007: The zh phrase '这颗星球' is followed by '这一气态巨行星' in the same sentence, which reads repetitive.
-- event-anomaly-5007: The en 'the' before our placeholders in anomaly.5016 relies on article removal.
-- event-anomaly-6880: In zh the phrase '这颗小行星' is followed by '一颗奇怪的小行星', a near repeat.
-- event-anomaly-96: Current phrase 'our empire' follows the article 'the' in en ('the our empire'); it relies on the site dropping the article.
-- event-distar-13080: dragons_current_system is used both for the system and for the L-Drake creature in distar.13010; one phrase cannot fit both, so the creature line reads '这个星系貌似并无敌意'.
-- event-distar-13080: The worksheet lists distar.10953 and distar.10954 for From.GetName but shows no lines for them.
-- event-distar-1999: 'Science Officer [name]' in en reads 'Science Officer the scientist'; the title should be dropped in display.
-- event-distar-211: root.GetNecromancersLower may be a different unit from Owner.GetNecromancersLower here; both use role phrases, so check against the game's unit names.
-- event-distar-230: In distar.230 the placeholder is a system ('near the [X] system'); the en 'near the this system' depends on article handling.
-- event-distar-5000: Several placeholders on the pulse planet all become 'this planet'; confirm they are the same planet in the save.
-- event-distar-5054: Root.GetName is treated as the planet in this story; check that it is the planet and not the ship.
-- horizon-signal: Shared 'the captain' phrase for mirrored_syzygy_admiral and From.GetName; en 'Captain the captain' and 'Commander the captain' read awkwardly.
-- horizon-signal: Root.Owner.GetSpeciesAdj in akx.9500 gives 'the first our settlement' in en.
-- horizon-signal: Gray-level role words like 'the researcher' are used for two scientists; the second is distinguished only by 'other'.
-- lcluster-gray: In graygoo.402 'not a [name]' becomes 'not a our species' in en.
-- project-arkship-eternal-chorus-project: The preceding placeholder [owner.GetScientistCapital] is a title, so the sentence reads 'Scientist the scientist'.
-- project-establish-communications: zh 'code-named as this population' is clumsy; the mysterious aliens are referred to by a code name in the game.
-- project-gas-giant-bodies-project: zh 'the gas giant' is preceded by '气态巨行星', so the phrase '这颗星球' reads awkwardly there.
-- project-robot-cleaners-project: The en 'Science Officer the scientist' reads awkwardly; the title should be dropped in display.
-- project-the-composer-of-strands-fc-project: en 'the our form' depends on the site dropping the article.
-- artisan-troupe: 'you [species adjective] ...' in leviathans.304 reads awkwardly in en ('about you your kind').
-- artisan-troupe: The ruler placeholder works as a title ('patron your majesty') and needs a check in the sentence 'Esteemed ruler your majesty'.
-- curators: The worksheet gives 'root.GetSpeciesAdj' and 'Root.GetSpeciesName' the same phrase, which is intended for one entity.
-- curators: In leviathans.594 the 'the other empire' phrase for From.GetName may clash with the hostile empire phrase in the same story; check the save.
-- enclave-leader-departure: In en the 'the' from the title and 'the' before the enclave may need article handling.
-- ether-drake: 'Commander the leader' reads awkwardly in en.
-- event-shroud-4199: Several enclave placeholders in this story share the phrase 'the enclave'; the FROM enclave, the mindwarden enclave and the rival enclave may be different entities and need checking in the save.
-- event-shroud-4199: Shroud.4247 and shroud.4205 use different phrases for the same people ('them' vs 'kin').
-- mercenary-enclave: 'Recruiting a the mercenary enclave fleet' reads awkwardly in en.
-- salvager-enclave: The reclaimed-design empires are numbered because the worksheet gives them no distinguishing names; check the save.
-- shroudwalker-divination: Root.GetName and root.GetName both mean the colony planet; confirm they are the same planet.
-- shroudwalker-divination: 'legendary hero the hero' reads awkwardly in en.
-- shroudwalker-enclave: The self-reference 'We, the our enclave' reads awkwardly in en.
-- situation-leviathan-celebration-opportunity: 'our' before the species adjective in 'the [Owner.Species.GetAdj] culture' reads 'the our culture' in en.
-- spectral-wraith: The zh text 'date [GetMidGameDate]' is a date-type token; the phrase 'that moment' is a best fit but the sentence reads 'date that moment'.
-- stellar-devourer: Three different systems (From, stellarite and guardians home) share the same phrase 'this', which may refer to one system; confirm in the save.
-- event-nomads-505: Species.GetName: zh 物种 reads a little bare after 一个死.
-- event-nomads-635: From.GetName reads as an emphasis ('the khan himself') rather than a name; acceptable but not ideal.
-- origin_broken_shackles: Root.GetName in the intro line reads 'our shareholders'; check the corporate tone.
-- origin_broken_shackles: Root.Owner.GetSpeciesName in origin.5510 gives 'the first the species city' in English; needs review.
-- origin_broken_shackles: Root.GetSpeciesName in origin.5047 gives 'non the species member' in English.
-- origin_broken_shackles: Root.Owner.GetAdj in origin.5510 gives 'The First our Colony' in English.
-- origin_cosmic_dawn: Stasis-pod populations are described as 'kin'; if the game name is a species name, check the tone.
-- origin_default_nomads: Species.GetAdj is used twice; 'ready the species' crews' reads awkwardly in English.
-- origin_doomsday: 'the surviving species' in origin.80 and 'homeworld of the species' in origin.91 read acceptably but should be checked.
-- origin_endbringers: The 'presence' wording for the Patron is abstract; check against the story's tone.
-- origin_fear_of_the_dark: Root.GetAdj in origin.6045 reads 'outdated our ships' in English.
-- origin_fear_of_the_dark: From.Target.GetClassName reads 'the previously bountiful world' in English.
-- origin_heirs_of_the_khan: 'I am [name], Great Khan' still uses the leader phrase and reads awkwardly.
-- origin_heirs_of_the_khan: Raider khanate title and name render as 'Great Khan in person' in English.
-- origin_here_be_dragons: This.GetAdj in aquatics.105 reads 'the our psyche' in English.
-- origin_legendary_leader: Title and regnal name are used as a pair; standalone title uses (paragon.5057, paragon.5020, paragon.5062) read 'our' alone.
-- origin_legendary_leader: Root.Owner.GetSpeciesName in paragon.5340 gives 'the first the species city' in English.
-- origin_legendary_leader: Root.GetName (planet) in paragon.5011 and paragon.5012 gives 'The this planet Celebrates' in English.
-- origin_lost_colony: Root.Capital.GetName is a planet in one line but the other line says 'aboard', which reads oddly for a planet.
-- origin_mindwardens: exiled_envoy.GetName reads 'envoy the envoy' in English; needs rephrasing.
-- origin_mindwardens: mindwarden_enclave_country.GetName uses a game term as a name; check.
-- origin_payback: owner.debt_collectors_amount reads 'this sum' before a number and may need a fuller phrase.
-- origin_payback: root.species.GetHandName 'power' reads awkwardly in origin.4306 ('we need no power-holding').
-- origin_primal_calling: Root.GetName and root.GetName are used for different entities (colony versus empire); both are kept separate.
-- origin_progenitor_hive: From.species.GetHandNamePlural reads 'the hands of the despicable other empire' with the zh 掌控 needing a check.
-- origin_sacred_path: Root.Owner.GetRulerTitle used alone (nomads.2050) reads 'our claims' style; check.
-- origin_sacred_path: Owner.Capital.GetName in nomads.2015 gives 'the Arkship ship' style doubling in the Arkship line.
-- origin_sacred_path: Head Scientist himself phrasing is an approximation.
-- origin_scion: desired_leader.GetName uses 'in person' which does not fit every sentence.
-- origin_shoulders_of_giants: Leader.GetName uses 'Head Scientist himself' phrasing; some lines ('Just as himself suspected') read awkwardly.
-- origin_shroud_forged: Owner.GetAdjective is attached to 'kind' in English ('ourkind'); check the join.
-- origin_storm_chasers: event_target:storm_commander and storm_scientist use 'himself' as a stand-in; the sentences 'led by himself' read oddly.
-- origin_synthetic_fertility: From.GetRulerName/GetRulerTitle are reversed between zh and en order; check the rendering.
-- origin_toxic_knights: Knight-name keys (questing_knight_*) mostly render as 'the knight' inside 'Knight [name]' titles, which reads 'Knight the knight' in English; these need sentence-level review.
-- origin_toxic_knights: GetYear renders 'In the year of some' in English; check.
-- origin_toxic_knights: knight.GetName renders '+200 such knight Jobs' in English.
-- origin_treasure_hunters: Leader.GetName uses 'the scientist' while sentences also say 'Scientist'; check doubled title.
-- origin_treasure_hunters: traitor_leader.GetClass plus traitor_leader.GetName ('node the leader') reads awkwardly.
-- origin_treasure_hunters: This.GetName in special_projects:BLACK_NEEDLE_BASE_BOMBARD uses this planet; confirm the entity is a planet.
-- origin_unplugged: 'Old [X]' heading in unplugged.2022 and 'the apparently pre-FTL ... world' phrasing may need a human check.
-- origin_unplugged: planet.GetName in unplugged.2105 reads 'world of that planet' in English.
-- origin_unplugged: persistent and 持续 are two keys carrying one status word; they may be a token bug in the source.
-- origin_unplugged: Root.GetName in the unplugged lines is the ship and needs no change.
-- origin_wilderness: root.GetHomeWorldName is used both as a planet name and as 'the planet [name]'; the English reads 'the planet our homeworld' and needs a check.
-- anomaly-storms-prec-wm-one: The three dig sites are numbered because the worksheet gives them no distinct names; check against the save.
-- archaeology-incidents: In en, 'Science Officer the scientist' reads awkwardly; the title should be dropped in display.
-- archaeology-incidents: The mouthwash phrase in ancrel.4021 relies on the en word 'mouth' attaching to 'wash'.
-- cybrex: In en, 'Science Officer the scientist' reads awkwardly; the title should be dropped in display.
-- event-ancrel-6499: 'the capital [From.GetName]' in ancrel.6505 reads 'our great capital the other empire'.
-- precursor-assistance: The artifact-seller and artifact-giver empires are distinct; keep them distinct in the same story.
-- precursor-assistance: Root.GetSpeciesAdj in precursor.301 gives 'No our units' in en.
-- site-broken-world-digsite: 'the our notion' reads awkwardly in en.
-- site-site-percussive-maintenance: The leader's gender is not known; the pronoun phrases are neutral.
-- site-site-robot-debris: ancrel.6255 calls the body an asteroid while the phrase reads this planet.
-- site-site-ruins-of-shallash: federations2.4 uses the leader title and name as separate placeholders; the override keeps the sentence readable.
-- site-site-toxic-matrix: extreme_frontiers.1115 reads 'across the our empire' for the leader's empire; confirm the owner.
-- site-zevox-digsite: unique.80 and unique.65 use the moon and parent planet names in a chain; the phrases are generic.
-- the-sentinels: ancrel.4065 reads 'Science Officer the archaeologist'; the title and name clash.
-- the-sentinels: ancrel.4077 assumes the capital belongs to our empire; check the owner.
-- vultaum: ancrel.10111 reads '科学家这位科学家' in Chinese; the title and name are split.
-- yuht: over.50 reads 'coming from the asteroid there'; the asteroid name is not shown.
-- astral-formless: crystal_sphere_system.GetName reads 'in the this system system' in astral_planes.50; kept the phrase, text-level rephrase needed.
-- event-astral-planes-6029: 'across the [owner.GetName]' reads 'across the our empire' in EN; text-level rephrase needed.
-- rift-crystal: 'in the [X] System' reads 'in the this system System' in EN, and 'the [X] system' in astral_planes.45 doubles as well; text-level rephrase needed.
-- rift-crystal: Explorer.GetHomeWorldName's EN 'this was our Homeworld, the homeworld' reads doubled.
-- rift-dimensional-dump: astral_rift_dimensional_dump_leader_loc.GetName is used as 'The alien's name is [X]'; no clean role phrase fits, so the leader phrase is kept.
-- rift-entangled-dark-matter: Explorer.GetSpeciesNamePlural reads 'We are the species.' in astral_rift.2410; kept the standard phrase.
-- rift-riftworld: explorer.GetName is used in 'X Day will be celebrated'; no clean role phrase fits, so the placeholder is left unchanged.
-- rift-station: 'with [final_mirrored_empire.GetName]' reads 'with other empire' in EN (no article); text-level rephrase may be needed.
-- event-awareness-125: awareness.920 names the other empire and species separately; both are shown as other-party phrases.
-- event-bio-1: bio.220 and bio.300 read 'by the name of' before a name; the phrase reads as a role, not a name.
-- event-bio-1: bio.85 uses the leader's title and name together; the English reads 'our leader, the leader'.
-- event-colony-10000: colony.10082 reads 'for the people species'; the phrase cannot fit both the plural and the 'species' word.
-- event-colony-1500: colony.1511 reads 'top our scientists'; acceptable but not idiomatic.
-- event-colony-3005: colony.9810 and colony.9815 name the physicist as a unit; the phrase reads as a role.
-- event-colony-3005: colony.3021 uses the leader name twice in one sentence; acceptable.
-- event-colony-3029: colony.3031 reads 'The Mirror-Dimension other empire reports'.
-- event-colony-50: colony.67 assumes the capital belongs to our empire; check the owner.
-- event-colony-9000: colony.9005 reads 'our this planet colony' where the colony is named.
-- event-colony-9350: event_chains:myrmeku_chain reads 'across the this planet landscape'.
-- event-colony-9820: colony.9821 reads 'our empire-Alpha'; the suffix is the game's name for the parallel universe.
-- event-colony-9820: colony.9821 reads 'the physicist' as a unit name; the phrase is a role.
-- event-colony-9820: colony.9840 reads 'Add 6 people-Beta'.
-- event-cyber-1010: cyber.1015 reads 'around this species' for a billboard site; check the sense.
-- event-cyber-1515: cyber.1515 reads 'their iron-willed the leader'; the title and name are split across the phrase.
-- event-cyber-820: cyber.820 reads 'non-our' for those who no longer look like your species.
-- event-diplomatic-1000: diplomatic.1000 and diplomatic.1013 read 'Commander the officer'; the role phrase does not fit a name slot.
-- event-diplomatic-1000: diplomatic.1026 and diplomatic.1023 use different phrases for the other species; both are 'other' phrases.
-- event-diplomatic-1000: diplomatic.1000 reads 'lies within our space' for a nearby system.
-- event-espionage-1: espionage.16 and espionage.18 read 'Spymaster the leader' where the title and name clash.
-- event-espionage-2: espionage.1021 reads 'the operative' as a name; the sentence reads as a role.
-- event-espionage-2: espionage.1082 reads 'Spymaster the spymaster'.
-- event-espionage-20: espionage.21 and espionage.24 read 'Spymaster the leader' where the title and name clash.
-- event-factions-3000: factions.3010 reads 'colonists democracy' where the adjective is needed.
-- event-fedel-1: fedel.2 and fedel.15 read 'the leader' for the chairing leader; the phrase is generic.
-- event-fedel-1500: fedel.1506 reads 'the leader the ruler' where the title and name are split.
-- event-fedel-900: fedel.904 reads '£energy£ the pot'; the amount itself is a number, so the phrase is only a stand-in.
-- event-federations2-20: federations2.20 title reads 'The nearby System'.
-- event-federations2-50: federations2.50 reads 'the great our leaders' for the leaders of your empire.
-- event-federations3-2001: federations3.2001 reads 'President the ruler' where the title and name are split.
-- event-fedev-499: fedev.500 reads 'an era of our dominance'; the founder species may not be yours.
-- event-fircon-1440: Four different worlds appear in one story; they are given distinct phrases to avoid confusion.
-- event-fircon-2010: 'from planet [pre_ftl_planet]' reads 'from planet this planet'; the planet phrase cannot drop the word 'planet' without changing game text.
-- event-fircon-2600: Several different empires and species appear in one story; distinct phrases are used. 'Local' is used for the species of the launching empire.
-- event-fircon-5000: 'in the [system] system' needs an adjective, so 'nearby', 'central' and 'affected' stand in for the system name in those sentences.
-- event-fircon-6000: 'Hollow [planet]' reads awkwardly in fircon.6025; 'planet' is used there instead.
-- event-fircon-8045: 'a large group of native [pre-FTL plural]' may read awkwardly.
-- event-fircon-8055: 'Pressure the [country] into better deals' reads 'Pressure the local into better deals'.
-- event-fircon-8565: 'We confronted the [planet] diplomats' reads 'the this planet diplomats'; the planet phrase cannot be reused for both 'diplomats' and 'popular on'.
-- event-first-contact-1: 'in the [system] system' reads 'in the this system system' where the system name is used with the word 'system' in the text; the title 'Encounter in [system]' reads correctly.
-- event-first-contact-103: 'the individual [species] of the species'' phrase keeps the generic 'the species' form for the species' own adjective.
-- event-first-contact-1110: 'identify the [name] as the civilisation' reads awkwardly where the working name is 'unknown'.
-- event-first-contact-1120: 'Envoy [leader]' reads 'Our Envoy the leader' because the leader name is a role phrase.
-- event-first-contact-200: 'within the [our empire]' reads 'within the our empire' and needs a fix on the page side.
-- event-first-contact-250: 'the [unknown] aliens' is used because the species class is not known to the site; 'the other empire machines' may read awkwardly.
-- event-first-contact-355: 'Our envoy [leader] pauses' is not fixed here: the leader phrase is a role phrase and reads awkwardly after 'Our envoy'.
-- event-first-contact-385: 'the aliens we first encountered in the [system] system' reads 'in the this system system'.
-- event-first-contact-405: 'Our envoy [leader] sent to investigate' reads awkwardly because the leader phrase is a role phrase.
-- event-first-contact-5010: 'Our Envoy [leader] states' reads 'Our Envoy the leader states' because the leader phrase is a role phrase.
-- event-first-contact-5085: 'Our envoy [leader]' reads 'Our envoy the leader' because the leader phrase is a role phrase.
-- event-first-contact-critters-1000: The raider ruler's full name line 'great Khan' is a title plus name, not a personal name.
-- event-first-contact-critters-50: 'Our envoy [leader]' reads 'Our envoy the leader' because the leader phrase is a role phrase.
-- event-first-contact-critters-70: 'Our envoy [leader]' reads 'Our envoy the leader' because the leader phrase is a role phrase.
-- event-first-contact-critters-85: 'Our envoy [leader]' reads 'Our envoy the leader' because the leader phrase is a role phrase.
-- event-galcom-62: The title 'galactic_market_station_system' reads 'This system Stripped...' and 'in the this system system' appears in the body; the body phrase needs a page-side fix.
-- event-leader-12: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-leader-13: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-leader-14: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-leader-15: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-leader-17: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-leader-19: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-leader-7: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-leader-8: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-leader-9: 'Commander [officer]' reads 'Commander the officer' because the officer phrase is a role phrase.
-- event-mega-201: English title reads 'Ecumenopolis: this planet Encased'; the title may need its own wording.
-- event-observation-100: Verb agreement ('the scientist was/were taking part') depends on the GetWasWere key, which is outside this worksheet.
-- event-observation-100: observation.108 Chinese repeats the same pronoun phrase for two different references.
-- event-observation-1000: The percentage slot reads as '+this value% Technological Progression'; a number-aware rendering would read better.
-- event-observation-1100: The percentage slot reads as '+this value% Technological Progression'.
-- event-observation-1200: 'Science Officer our leader' reads awkwardly because the title precedes the placeholder.
-- event-observation-2014: The percentage slot reads as '+this value% Technological Progression'.
-- event-observation-3138: Assumes From is an empire; if it is a planet the phrase must change.
-- event-observation-3140: Assumes From is an empire; if it is a planet the phrase must change.
-- event-observation-3142: Assumes From is an empire; if it is a planet the phrase must change.
-- event-preftl-espionage-2: 'Our Spymaster ... [name]' and 'named [name]' constructions read redundantly because the spymaster phrase repeats the title.
-- event-preftl-espionage-2: The Root.Owner.GetSpeciesName phrase 'one of your kind' depends on the speaker being the rogue agent.
-- event-preftl-operation-1000: 'Operation this' reads awkwardly; operation-name placeholders need a better wording.
-- event-preftl-operation-1015: 'Operation this' reads awkwardly; operation-name placeholders need a better wording.
-- event-preftl-operation-1035: 'Our Spymaster [name]' reads redundantly; the spymaster phrase is kept as the existing one.
-- event-preftl-operation-1060: 'Operation this' reads awkwardly; operation-name placeholders need a better wording.
-- event-preftl-operation-3010: 'Operation this' reads awkwardly; operation-name placeholders need a better wording.
-- event-preftl-operation-3020: 'Operation this' reads awkwardly; operation-name placeholders need a better wording.
-- event-preftl-operation-3030: 'Operation this' reads awkwardly; operation-name placeholders need a better wording.
-- event-preftl-operation-3040: 'Operation this' reads awkwardly; operation-name placeholders need a better wording.
-- event-preftl-operation-3050: 'Spymaster the leader' reads awkwardly because the title precedes the placeholder; the leader phrase is kept.
-- event-preftl-operation-3060: 'Spymaster the leader' reads awkwardly because the title precedes the placeholder.
-- event-preftl-operation-3100: 'The Operation this' reads awkwardly; operation-name placeholders need a better wording.
-- event-shroud-1100: The 'other' phrase for the refugee species' empire may collide with 'the other empire' in the same story.
-- event-shroud-2750: 'Owner.GetSpeciesNamePlural' phrase 'kin' and 'Some kin...' is ambiguous; the grammar of the species plural needs checking.
-- event-shroud-2750: 'From.GetSpeciesName' mechanotype phrase cannot be expressed as a single noun without the species word.
-- event-situation-1125: 'The light of the the twin stars' and 'Our star, star' phrasing is awkward; the star placeholders need a better form.
-- event-situation-1125: 'life-giving this star' reads awkwardly because the placeholder is a planet-star mismatch.
-- event-situation-200: These are numeric values from the save; the phrases are generic stand-ins, so 'Spend energy the required amount' reads as a template.
-- event-situation-2000: The lone sentence '[mood].' is a fragment whose wording depends on the save.
-- event-situation-5: 'adorable [size] creatures' reads well only with a small size word; the size phrase is a generic choice.
-- event-strange-worlds-3000: 'the [local] mythology' and 'lead the [local] into a new golden age' read awkwardly with one phrase.
-- event-strange-worlds-3035: 'the angry [locals] locals' is a doubled noun in the game text.
-- event-subject-1: 'our vassal [empire]' reads 'our vassal empire'; the vassal's name is a role phrase.
-- event-subject-1001: 'the government in [vassal]' reads 'in vassal state'.
-- event-subject-1100: 'the leader' is used for the democratic admiral; the oligarch uses 'the oligarch' to keep them apart.
-- event-subject-2100: 'our overlord [overlord]' reads 'our overlord overlord' in subject.2120.
-- event-subject-3050: 'Pilgrims on [capital]' reads 'Pilgrims on overlord's capital'.
-- event-synth-1515: The Chinese title phrase is left empty so that the name reads '最高领袖统治者的信任'; the page must handle an empty zh title.
-- situation-situation-nanotech-consume-planet: 'In [species] space, fleets are gathering' still reads 'In the species space' because the species phrase is not replaced in that sentence.
-- chain-mandate-emancipation2-chain: English reads 'on planet this planet' because the source text already says 'planet'.
-- chain-mandate-separatist-chain: English reads 'the planet of this planet' because the source text already says 'the planet of'.
-- event-action-1: Signal and translation placeholders read as 'this exchange' and 'this word' and need a fuller rewrite of the lines.
-- event-action-1: The contact empire ruler title keys (contact_empire.GetRulerTitle and GetRulerName) are kept; 'Our ruler ... wishes' and 'the our ruler' pairs need one phrase that works in both forms.
-- event-action-1: 'Root.GetSpeciesName' 'you' is used in a vocative ('[name], you') and reads awkwardly.
-- event-action-38: Root.GetName 'our empire' in 'frail our empire' reads oddly because the speaker is the other side.
-- event-action-39: 'Lazy you all wouldn't be any good' reads awkwardly; the plural address needs a rewrite.
-- event-action-61: The same 'the other empire' phrase is used for two references in this story.
-- event-action-71: Title-plus-leader lines ('Science Officer the leader', 'Commander the leader') read awkwardly; the leader phrase is kept.
-- event-arkship-1020: 'Arkship this ship' reads awkwardly because the title already names the ship type.
-- event-arkship-1030: 'Our leader the leader' reads awkwardly because the title precedes the leader phrase.
-- event-arkship-105: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1070: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1075: 'Arkship this ship's power core' reads awkwardly in English.
-- event-arkship-1090: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1100: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1120: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1160: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1185: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1205: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1215: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-1240: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-125: 'the this nebula nebula's' doubles the noun in one sentence.
-- event-arkship-140: 'Chief Scientist the leader' reads awkwardly because the title precedes the leader phrase.
-- event-arkship-5: 'the young on Arkship this ship' reads awkwardly in English.
-- event-arkship-60: 'Arkship this ship' reads awkwardly in English.
-- event-arkship-65: Each pilot needs a distinct role phrase; 'Our Dragonslayer the dragonslayer' and 'Our the khan' read awkwardly where the title precedes the name.
-- event-bio-3200: 'Would another planet suffice' and the 'other side' rival phrase may need a clearer rewrite.
-- event-bio-3225: 'A complete the species is not necessary' still reads awkwardly; the species placeholder needs a rewrite.
-- event-bio-3325: The phrase 'must pass' may be read as a fixed outcome; check against the vote result.
-- event-cara-2010: 'your planet, this planet' reads awkwardly; the planet phrase needs a rewrite in that sentence.
-- event-cara-333: 'Root.GetName' phrase needs checking in each sentence of this event.
-- event-cara-4101: Root.GetName is assumed to be the same border planet as cara_border_planet; the MegaCorpse origins text uses it for the planet of the concert.
-- event-communications-spread-1: Sentence 'that call themselves their own name' (communications_spread.2) reads awkwardly; the game name must be a proper name in the data.
-- event-country-1100: Root.GetSpeciesAdj in 'For a X future' has no plain phrase that fits; reword.
-- event-country-200: Root.Owner.GetSpeciesName reads 'for the future of the X species' (country.211); no plain phrase fits the article, so the current phrase was kept and should be reworded.
-- event-country-250: Root.GetLeaderName is a person's name after the prefix 'Science Officer'; the role phrase makes the line read 'Science Officer the scientist' and should be reworded.
-- event-country-50: Procurement texts describe the world with 'ocean world [X]' (TARBLAC) and the Chinese 'X的海面下' has no plain phrase; reword as the ocean world is named in the game.
-- event-country-50: Root.GetName in country.61 ('from all across the [X]') does not fit the ship phrase; current phrase kept.
-- event-country-999: Root.GetSpeciesName is used as 'the X people' and reads awkwardly with the species phrase.
-- event-custodian-499: custodian.30 reads 'the new Custodian, the current Galactic Custodians'; the Chinese '星海监管人这位监管人' doubles the role and should be reworded.
-- event-cyber-7000: From.GetNamePlural is used as 'X们' in Chinese and the plural form does not fit a phrase; current phrase kept.
-- event-emperor-499: ruler.GetRegnalName is a person's regnal name and the phrase 'the ruler' makes 'crowned our ruler' read oddly.
-- event-emperor-499: gal_emperor.GetSpeciesName reads 'the former X Custodians' and no plain phrase fits the adjective slot.
-- event-emperor-50: emperor.373 has 'the victim, a member of the Galactic Imperium' and the Chinese 'X星海帝国成员国受害者' doubles the noun; reword.
-- event-envoy-events-200: 'emissary [X]' reads 'emissary the envoy' in English; reword the lead-in.
-- event-envoy-events-230: 'Ambassador [Root.GetName]' reads 'Ambassador our envoy' in English and Chinese; reword the lead-in.
-- event-envoy-events-4: 'our emissary [X]' reads 'our emissary the envoy' in English.
-- event-envoy-events-7: 'our envoy [X]' reads 'our envoy the envoy' in English.
-- event-fallen-empires-2: The title 'The rival empire assassinate the ruler!' has a subject-verb mismatch.
-- event-fallen-empires-awakening-4: 'The ancient Fallen Empire Fragment, the fragment has been assimilated' reads awkwardly.
-- event-fallen-empires-tasks-1: FallenEmpireTaskOrigin.GetSpeciesName ('as a X client') has no plain phrase that fits; kept as the species.
-- event-fallen-empires-tasks-14: 'The [X] have asked us' uses plural verbs with the singular fallen empire.
-- event-fallen-empires-tasks-21: FallenEmpireTaskOrigin.GetSpeciesName ('we X always have a use') has no plain phrase that fits.
-- event-fallen-empires-tasks-3: FallenEmpireTaskOrigin.GetSpeciesName and Root.GetSpeciesName both still render as 'the species' in this story.
-- event-galactic-features-298: 'Science Officer [X]' reads 'Science Officer the scientist' in English.
-- event-galactic-features-298: fallen_4_species.GetName ('a withered old X') renders as 'the old the species' and needs rewording.
-- event-galactic-features-366: 'outside of [X]' reads 'outside of home'.
-- event-galactic-features-381: Kill-count placeholders read as 'number of Tiyanki Bulls' and similar.
-- event-galactic-features-421: 'its mere presence in [X]' reads awkwardly with 'home'.
-- event-galactic-features-500: Title 'New Arrivals in nearby' reads oddly.
-- event-game-start-1: 'the entire [X] on' phrases with 'remote' or 'outlying' read awkwardly.
-- event-grand-archive-3010: Ship-name placeholders ('science ship [X]') cannot be read naturally with a plain role phrase; reword the sentences.
-- event-grand-archive-6005: 'named [X]' reads 'named the ship' in English.
-- event-grand-archive-9000: 'Our commander the commander' repeats the role in English.
-- event-marauder-1: 'Commander [X]' names read 'Commander the leader' in English (Root.Leader.GetName, new_leader.GetName) and need rewording.
-- event-marauder-1: Dwamak slang lines with 'the species' fallbacks have been replaced with role words; check tone.
-- event-marauder-100: 'Every your' and similar 'your' phrasings read awkwardly; the plural 'outlanders' and singular 'your' are mixed for the same species.
-- event-marauder-4: Ruler lines '[Title] [Name]' (marauder.502, marauder.508) would show the same word twice; needs one phrase or site-side handling.
-- event-marauder-4: Self-introduction 'I am [ruler], Great Khan' renders as 'I am the leader'.
-- event-marauder-505: 'Great Khan the leader of the khanate' reads awkwardly in marauder.508; the name slot needs a neater phrase.
-- event-namarian-3: '[Root.GetSpeciesAdj]' as a form of address needs a vocative; 'your people' is used as an approximation.
-- event-nomads-4700: 'We [species plural] are living...' still reads 'We the species'; no clean single phrase found.
-- event-operation-1000: 'Spymaster personally' reads awkwardly where the name is followed by a verb phrase such as 'under Spymaster'.
-- event-operation-1020: 'Operation unnamed' needs a real operation code name from the game; the placeholder cannot supply it.
-- event-operation-2000: Title 'Approaching Target in the star' is awkward; the title reads better with 'this system'.
-- event-operation-3000: 'Spymaster personally' reads awkwardly in 'under Spymaster [name]' phrasing; a phrase with a role name would be better if the game ever allows it.
-- event-operation-3000: Two-slot line 'the other leader the leader' (smear_campaign_recipient.leader) remains unresolved.
-- event-operation-5000: 'Operation unnamed' needs a real operation code name from the game; the placeholder cannot supply it.
-- event-operation-5005: Operation names are not supplied by the placeholder; 'Operation unnamed' is a stand-in and the game's code name is not available here.
-- event-operation-5020: 'This particular [species] [individual]' still reads 'the species' in English; no single phrase fits both slots.
-- event-operation-5045: 'Get your house in order, personally!' reads awkwardly for the spymaster in operation.5045.
-- event-operation-6000: Person-name slots ('by the name of [name]') read as 'by the name of the official'; a real name cannot be supplied.
-- event-operation-8000: 'Operation unnamed' is a stand-in; the game's code name is not available here.
-- event-operation-8200: 'Operation unnamed' is a stand-in; the game's code name is not available here.
-- event-over-100: zh 'Our close ally [name]' doubles the noun ('那个友邦'); a cleaner Chinese phrase needs site-side handling.
-- event-paragon-549: 'at the age of [age]' and 'the leader [name]' templates read awkwardly with these phrases; the sentence wording needs a site-side fix.
-- event-paragon-549: '[Root.GetRulerTitle] [Root.GetRulerName]' renders the ruler word twice.
-- event-paragon-998: '[root.GetClass] [root.GetName]' (class plus name) renders as 'class the leader'; needs a combined phrase.
-- event-refugees-3: 'their home planet of [this planet]' reads oddly; the phrase for a planet name is awkward here.
-- event-shroud-11000: Two-slot line 'Reckoning of the target' and title forms need review.
-- event-shroud-4500: Leader title and name lines ('[Title] [Name]') show 'the leader personally'; acceptable but not ideal.
-- event-shroud-4550: Leader title and name lines ('[Title] [Name]') show 'the leader personally'; acceptable but not ideal.
-- event-shroud-4600: Leader title and name lines ('[Title] [Name]') show 'the leader personally'; acceptable but not ideal.
-- event-shroud-4650: Leader title and name lines ('[Title] [Name]') show 'the leader personally'; acceptable but not ideal.
-- event-shroud-570: Councilor names render as 'councilor one' and 'councilor two' in English.
-- event-shroud-735: 'in the local colony' and 'on local' read awkwardly in English.
-- event-shroud-765: Councilor names render as 'councilor one' and 'councilor two' in English.
-- event-story-220: '[X] is home to a crystal construct' reads awkwardly with a system phrase.
-- event-syndaw-21: Unit designations such as 'Survey Unit [X] of the [fleet]' cannot be replaced by a plain phrase; the current 'the leader' phrase was kept and the sentence needs rewording.
-- event-syndaw-400: Root.Owner.GetSpeciesName ('design of [X]') still reads as 'the species'.
-- event-syndaw-400: target_army and uprising names read awkwardly in English.
-- event-terra-10: Terraforming class phrasing ('into a [class] lush world') may not match every planet type.
-- event-unrest-50: Root.GetSpeciesName ('the X people' / 'the X kind') reads awkwardly with the species phrase.
-- event-unrest-50: 'the world you know as [X]' reads awkwardly with 'this planet'.
-- event-uplift-6000: 'the dominant species on [Root.GetName], the [From.GetName]' uses the planet phrase for a species and reads awkwardly.
-- event-uplift-7500: uplift.7520 en: 'the [Root.Owner.GetName]'s' renders as 'the our empire's'
-- event-uplift-7500: uplift.7525 en: 'recognize us [species] as similar' reads awkwardly with 'our species'
-- event-utopia-1: ringworld_builder and From.GetName may be the same empire; check whether the phrases should match
-- event-utopia-2000: 'the [From.GetSpeciesName] Ring World' title becomes 'Other Ring World'
-- event-utopia-2000: Root.GetSpeciesName en 'the our species' reads wrongly
-- event-utopia-2000: en 'the this system' for 'the [X] system' templates
-- event-utopia-2500: en 'a metallic this hand' reads awkwardly (cyber.2100)
-- event-utopia-2500: en 'the the species' doubled article in utopia.2500 lines using the species placeholder
-- event-utopia-2600: utopia.2650 en: 'The the species species' style doubling from Root.GetSpeciesName ('the species')
-- event-utopia-2600: utopia.2606 en: 'they has been identified' grammar comes from the pronoun token
-- event-utopia-29: 'the builder are building' grammar in utopia.30 depends on the plural verb of the text
-- event-utopia-4000: '[X]星系' with zh '这个星系' may double 星系 in utopia.4002 lines
-- event-utopia-50: volunteer_leader en 'in person's brain' reads awkwardly
-- event-utopia-50: ointment zh '这个星系星系' may double the noun in some lines
-- great-khan: 'the [From.GetSpeciesName] Khanate' lines use 'the species' phrasing that can read as a species title
-- paragon-renowned-nasuz-demetor: en 'the leader the Archivist' doubles the role; the game's name and title pattern needs a neutral form
-- paragon-renowned-nona: paragon.40220 zh: '一位这位领袖曾经的伙伴' stacks the leader phrase with a classifier
-- paragon-renowned-ulastar: en 'the leader the Mystic' doubles the role in paragon.41510
-- paragon-renowned-xondar: en 'Admiral in person' is a stopgap for the admiral's name
-- the-shroud: chosen_one_species.GetAdj en 'the species' psychic' reads awkwardly in utopia.3401
-- the-shroud: leader_1 to leader_4 share the name 'leader' and differ only by title
-- the-shroud: '[GetPsychicNoun] of our [GetPsychicNounPlural]' phrasing in utopia.3320 is approximate
+Every story with placeholders was confirmed.
+
+First-pass reviewer notes are superseded for these stories by the rendered review; what remains are the exceptions below (sentences that cannot read naturally without rewriting game text).
+
+## Exceptions (game text would have to change)
+
+- behemoth-fury: situations:behemoth_finale_situation: the second «» placeholder has no key and renders empty ('我们当前的«生长因数»为：«»'); needs the game key
+- cetana: special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH: title 'Raid «star» Outpost' keeps the word 'star'; the same phrase is needed in the body sentence, so the title reads 'Raid star Outpost'
+- cetana: repeated-noun marker renders empty «» in THE_SYNTH_QUEENS_INVESTIGATION_FAKE, THE_SYNTH_QUEENS_INVESTIGATION, THE_SYNTH_QUEENS_INVESTIGATION_PARAGON and crisis.20200, crisis.20300, crisis.8125 (e.g. ZH '这颗«»上', EN 'on this «»'); the site must fill it
+- contingency: crisis.2097 and crisis.2302: EN 'Scientist «the officer»' keeps the title before the placeholder (the game text is a title + name pair); no phrase fixes it
+- contingency: crisis.2037: game text repeats 'Machine World' around the placeholder ('«That machine world», the Machine World in the «star» system'); kept
+- contingency: crisis.2011, crisis.2042, crisis.2091: repeated-noun marker renders empty «» (ZH '在«»上', EN 'the «»'s surface'); the site must fill it
+- cosmogenesis: crisis.7205, crisis.7210, crisis.7215, crisis.7235, crisis.7240, crisis.7245, crisis.7250, crisis.7255, crisis.7260, crisis.7265: 'We have gained «» £advanced_logic£ Advanced Logic' has an empty «» placeholder with no key
+- galactic-nemesis: crisis.6101 and crisis.6103: game text 'the «destroyers» has destroyed' uses a singular verb with a plural noun; no phrase fixes the agreement
+- gray-tempest: graygoo.2: repeated-noun marker renders an empty «» (ZH '«»原居民', EN 'the «»'s original inhabitants'); the site must fill it
+- unbidden: crisis.1011: repeated-noun marker renders an empty «» (ZH '«»的整个生物圈', EN 'The «»'s entire biosphere'); the site must fill it
+- war-in-heaven: war_in_heaven.2, war_in_heaven.4, war_in_heaven.5, war_in_heaven.7: game text uses plural verbs with singular empire placeholders ('«The rival empire» have', '«the winning empire» have'); verb agreement is game text and is kept
+- anomaly-alien-life-cat: distar.2020: en 'our home of «the homeworld»' is stilted because 'our home of' is game text; phrase cannot fix it cleanly
+- anomaly-arid-planet-cat: anomalies:ARID_PLANET_CAT and anomaly.4170: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup
+- anomaly-arid-sensor-cat: anomalies:ARID_SENSOR_CAT and anomaly.4080: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup
+- anomaly-ast-wavelengths-1-cat: anomaly.77: en 'the star «this star»' is doubled, and the same key also serves the orbit sentence, so one phrase cannot fix both
+- anomaly-asteroid-uninhabitable-category: anomalies:asteroid_uninhabitable_category: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup
+- anomaly-battle-uninhabitable-category: anomalies:battle_uninhabitable_category and anomaly.2530: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup
+- anomaly-beacon-uninhabitable-category: anomalies:beacon_uninhabitable_category: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup
+- anomaly-con-biology-cat: anomaly.4100: zh '科学官«这位领袖»' doubles the role with the leader phrase; the role word is game text
+- anomaly-con-biology-cat: anomaly.4100: en '«The leader» have been able' is a grammar slip in game text
+- anomaly-con-biology-cat: anomaly.4095 and anomaly.4115: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-con-biology-cat: special_projects:ALIEN_MONSTER_ON_SHIP: unmatched « marker in both languages, no key in the worksheet
+- anomaly-con-biology-cat: anomaly.4116: en 'aboard this planet' uses the ship preposition from game text; phrase cannot fix it
+- anomaly-crashed-ship-asteroid-category: anomaly.65 zh: '一座«这颗星球»的重力井' — the classifier 一座 is game text, so the phrase reads acceptably but not ideally
+- anomaly-crimson-crawlers-category: cstorms.1255 en: "«this planet»'s shone" lacks a noun; the broken possessive is game text
+- anomaly-debris-gasgiant-category-temp: distar.1001: game text 'head researcher' / '首席科学官' sits directly before the leader phrase (EN 'head researcher the leader', ZH '首席科学官这位领袖'); no phrase can fix it without changing game text
+- anomaly-des-planet-cat: anomaly.4110: a placeholder with no mapped key renders as an empty «» (ZH 穿越«»表面, EN 'make the «» easier to traverse'); needs the game key, not a phrase
+- anomaly-disco-impossible-organism-cat: distar.3012 and distar.3017: the player's species is named 'citizen' and 'our species' in one story; the game text distinguishes the two roles, so the phrases are kept
+- anomaly-disco-molluscoid-miners-cat: distar.3032: '600 £pop£ the molluscoids Pops' reads awkwardly because the game appends 'Pops' after the species placeholder
+- anomaly-disco-stranded-scientist-cat: distar.3020: the species placeholder has no English phrase, so EN reads 'the hitherto-unknown  species' (double space, missing word); the game text needs the species name
+- anomaly-distar-brainslug-cat: distar.172: game text 'Every our leader' is ungrammatical because the game puts 'Every' before the 'our' placeholder
+- anomaly-distar-flare-cat: distar.6: game text 'the star «the star»' doubles the word 'the' before the star placeholder; the phrase cannot fix it
+- anomaly-distar-flow-cat: distar.46: EN 'chased the source' shows a bare «Officer» (the game's 'Science Officer' title is cut to 'Officer'); no phrase fixes the title strip
+- anomaly-distar-living-cat: distar.191 and distar.192: a pronoun placeholder renders as 'Apparently, «are» requesting' and an empty «» follows 'attest'; these are pronoun/repeat rendering artifacts, not phrase fixes
+- anomaly-distar-lost-cat: distar.340 and distar.57: EN shows a bare «Officer» for the scientist ('«Officer» may never be the same'); the game's title is cut, so no phrase fix
+- anomaly-distar-lost-cat: distar.304: game text 'she's presence' (possessive typo) is kept
+- anomaly-distar-nano-cat: distar.40: EN shows a bare «Officer» for the leader ('«Officer» has discovered'); the game's title is cut, so no phrase fix
+- anomaly-distar-nanosand-cat: distar.280: game text 'terraform the surface «this planet»' lacks 'of'; the same phrase is used correctly elsewhere in the doc, so no phrase fix
+- anomaly-distar-thirsty-cat: distar.180: game text 'this planet's' stone' has a doubled possessive ('s'); no phrase can fix it
+- anomaly-energy-uninhabitable-category: anomalies:energy_uninhabitable_category, anomaly.610 and anomaly.615: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup
+- anomaly-froz-base-cat: anomaly.175 en: rendered as «Science ship» without 'our'; the key says 'our science ship', so the rendering path needs checking
+- anomaly-frozen-inferno-cat: extreme_frontiers.130 zh: '对«这颗星球»这颗冰封星球上' doubles the planet noun; the second noun is game text
+- anomaly-gen-old-war-cat: anomaly.4020: placeholder renders as empty «» (no keys line for it); needs key lookup
+- anomaly-hab-mat-cat: anomaly.220 zh: 'the ship' is linked to the planet's surface ('«这艘舰船»的地表附近'); the surface link is game text
+- anomaly-hbl-lush-planet-1-cat: anomaly.3130: placeholder renders as empty «» in zh and en with no keys line; needs key lookup
+- anomaly-hole-radiation-cat: anomaly.3075 en: 'in the this system' has a doubled article from an unlisted placeholder or game text; needs checking
+- anomaly-impact-uninhabitable-category: anomalies:impact_uninhabitable_category, anomaly.600 and anomaly.605: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-inhabited-toxic-category: anomaly.670 and anomaly.685: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-intemporal-orb-cat: anomaly.7115 en: 'junior «the leader»' reads awkwardly because 'junior' is game text before the leader phrase
+- anomaly-intemporal-orb-cat: anomaly.7115 en: empty «» after 'want', 'receive' and 'stay' (verb endings with no keys line); needs key lookup
+- anomaly-intemporal-orb-cat: anomaly.7115 zh: '被被吸入' duplicates a character in game text
+- anomaly-intemporal-orb-cat: anomaly.7120 en: 'who «were» detached' has a verb from game text that does not match the 'they' phrase
+- anomaly-irregular-energy-cat: special_projects:STAR_CRAZY en: '«officer»' drops the article and reads awkwardly; the article is not in the phrase, check rendering
+- anomaly-life-barren-category: anomalies:life_barren_category: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup
+- anomaly-life-frozen-category: anomalies:life_frozen_category: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup
+- anomaly-life-toxic-category: anomalies:life_toxic_category and anomaly.690: placeholder renders as empty «» in the atmosphere sentence and the worksheet has no keys line for it; needs key lookup
+- anomaly-moon-gasgiant-category: anomaly.6840: game text reads 'this gas giant is a peculiar gas giant', so the noun repeats in both languages; the phrase cannot remove it
+- anomaly-mountain-uninhabitable-category: anomalies:mountain_uninhabitable_category, anomaly.2520 and anomaly.2522: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-mountain-uninhabitable-category: anomaly.6915: game text contains a broken placeholder '**Error - for GCs**' in zh and en, and the en line ends mid-sentence ('we find a'); not fixable by a phrase
+- anomaly-mysterious-ringing-category: infernals.3210 zh: an unmatched « opens a sentence in game text; no phrase can fix it
+- anomaly-mysterious-rock-cat: anomaly.2005: one placeholder is used for both the crew of the ship and the planet's wind, so 'the crew of this planet' cannot be fixed by a single phrase
+- anomaly-object-uninhabitable-category: anomalies:object_uninhabitable_category and anomaly.2540: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-poisoned-atmosphere-cat: extreme_frontiers.140 zh: '这些物种都被被逐一灭绝了' has a duplicated character in game text
+- anomaly-radioactive-planet-cat: anomalies and anomaly.680: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-ship-gasgiant-category: anomaly.2560 zh: '对«这颗气态巨行星»的深度扫描显示这颗气态巨行星' repeats the gas giant noun, and the second noun is game text
+- anomaly-signal-uninhabitable-category: anomalies:signal_uninhabitable_category: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-solar-uninhabitable-category: anomalies:solar_uninhabitable_category: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-storms-gasgiant-category: anomaly.6855 zh: a stray '们' starts one sentence and '更—加—有趣' is game text; neither is fixable by a phrase
+- anomaly-strange-signal-category: anomalies:strange_signal_category and federations2.1: placeholder renders as empty «» on 'the only non-natural structure on «»' with no keys line; needs key lookup
+- anomaly-strange-signal-category: federations2.1 zh: '火灾600年前' uses game text that reads oddly; not a placeholder issue
+- anomaly-sun-rays-cat: anomaly.4035 and anomaly.4040: placeholder renders as empty «» with no keys line; needs key lookup
+- anomaly-sun-teapot-cat: anomaly.4060 zh: '围绕着«这颗恒星»的恒星旋转' repeats the star noun, and the second noun is game text
+- anomaly-the-imitator-category: cstorms.1550 en: 'They explained they have been dragged' has a grammar slip from game text; the zh repeats 此人 as game text
+- anomaly-the-judge-cat: anomaly.9002 zh: '科学家«这位»' leaves the role word and the leader phrase side by side; the role word is game text
+- anomaly-tox-planet-cat: anomaly.4105 zh: '«这颗星球»行星' doubles the planet noun from game text, and the second zh sentence needs the phrase, so no single phrase fixes both
+- anomaly-tox-structures-cat: anomaly.3050 zh: '科研«专员»' splits the game-text title, so the phrase reads as a fragment
+- anomaly-wat-planet-cat: anomaly.4046, anomaly.4047, anomaly.4048, anomaly.4049 and anomaly.4052: placeholder renders as empty «» in zh and en with no keys line for it; needs key lookup
+- anomaly-writing-uninhabitable-category: anomaly.635: placeholder renders as empty «» in zh and en with no keys line for it; needs key lookup
+- dessanu-consonance: graygoo.150: placeholder renders as empty «» in zh and en for 'on «»' and 'the «»' with no keys line for it; needs key lookup
+- event-anomaly-142: special_projects:OLD_GODS_BENEFACTRESS_PROJECT zh: '由的象形文字' has an empty placeholder with no key line; needs key lookup
+- event-anomaly-2574: anomaly.2575: placeholder renders as empty «» in several zh and en sentences with no keys line for it; needs key lookup
+- event-anomaly-6660: anomaly.6660 and anomaly.6661: later sentences render an empty «» for the planet (zh 强烈的风暴无休止地袭击着«», EN 'the «»'s magnetic field'); this is the repeated-noun marker with no phrase, so the site must fill it
+- event-distar-13080: distar.13010: dragons_current_system is one phrase for both the star system and the L-Drake creature, so the creature line reads 'This system specimen' and 'zh 这个星系貌似并无敌意'; a single phrase cannot fit both
+- event-distar-1999: distar.192: a pronoun placeholder renders as 'Apparently, «are» requesting' and an empty «» follows 'attest'; these are pronoun/repeat rendering artifacts, not phrase fixes
+- event-distar-240: distar.242 and distar.243: game text appends 'System' after the system placeholder ('«this system» System'); the phrase cannot drop the word
+- lcluster-gray: graygoo.400: repeated-noun marker renders an empty «» for the planet (EN "the «»'s southern polar region"; ZH "在«»南极附近"); the site must fill it
+- project-establish-communications: special_projects:ESTABLISH_COMMUNICATIONS: ZH 'code-named as «这个种群»' is clumsy; the game uses a code name that the site cannot supply
+- project-the-composer-of-strands-fc-project: shroud.4020: the substituted phrase «一道疯狂的脉冲» has no key and the ZH sentence 'it «...» in the depths' reads oddly; left as game text
+- project-the-cradle-of-souls-fc-project: shroud.4015: unbalanced «» from the game's quotation marks ('«知道了祂...' / '«We know its vision'); no key
+- project-the-eater-of-world-fc-project: shroud.4005: unbalanced and garbled « » quotation markers from game text (e.g. '在残垣断壁«的废墟之中'); no key to fix
+- curators: leviathans.559: 'splintered the other empire' keeps the game's article before the substituted phrase.
+- dimensional-horror: leviathans.3004: 'produced by this system dimensional rifts' reads awkwardly; the system name is a modifier in game text.
+- ether-drake: leviathans.650: zh doubles the word '我们收' in game text.
+- event-leviathans-140: leviathans.141: 'the other empire headquarters' lacks the possessive in game text; kept.
+- event-nomads-150: nomads.1545: en phrase has a stray space inside « Calculators» and its key is not in the list.
+- event-nomads-150: nomads.255, special_projects:CHAMPIONS_FORGE_TRAVEL: fleet size slot '25' reads 'at most 25 Fleet Size' in game text; kept.
+- event-nomads-150: nomads.255: 'Next CFL Tournament in this system System' repeats the noun from game text; kept.
+- event-shroud-4199: shroud.4247 vs shroud.4205: 'kin' and 'people' are different keys, each reads naturally in its sentence; kept.
+- shroud-tunnels: enclave.6025: 'science vessel the fleet' keeps the game's article before the substituted phrase.
+- shroudwalker-divination: enclave.5195: 'the legendary hero the hero' and zh '传奇英雄这位英雄' repeat the noun in game text; kept (open issue).
+- shroudwalker-divination: enclave.5200: '«their» has now settled' uses a possessive where a subject is needed; game text.
+- shroudwalker-divination: enclave.5200: 'the hero's' brainwave' has a doubled possessive; game text.
+- shroudwalker-divination: enclave.5540, enclave.5550: 'not your this planet' and 'not this this planet' self-reference in game text; kept.
+- shroudwalker-divination: enclave.5521, enclave.5525: 'It's not this this system?' repeats the determiner in game text; kept.
+- shroudwalker-enclave: special_projects:DELVING_RITUAL: 'Our enclave have made' verb agreement from game text; kept.
+- situation-leviathan-celebration-opportunity: situation.1000, situation.1005, situation.1055, situation.1090, situation.1095, situation.1110, situation.1120: empty «» substitution renders blank; site-side fix needed.
+- situation-leviathan-celebration-opportunity: situation.1085: 'his can spread' is a game typo for 'this'; kept.
+- situation-leviathan-celebration-opportunity: situation.1120: 'reignite this system star' and zh '这个星系恒星系' repeat the noun; the same phrase also fills the object; game text kept.
+- spectral-wraith: leviathans.2010: 'at date that moment' — date token from game text; kept (open issue).
+- stellar-devourer: leviathans.999, leviathans.1000, leviathans.1017, leviathans.1018: three systems share the phrase 'this'; each sentence reads naturally with the named system, kept (open issue).
+- trader-enclaves: leviathans.105, 106, 107, 123, 124, 125, 126, 127, 128, 133, 134, 135: 'Opinion: £opinion£ «»' value slot is blank (no key); site-side fix needed.
+- origin_broken_shackles: origin.5510: empty token in 'the «»-spanning ocean' (zh 166, en 178) has no key; left as is
+- origin_broken_shackles: origin.5047: en 'non «the species» member' is ungrammatical because the game text puts 'non' before the phrase
+- origin_cosmic_dawn: infernals.2535: stray «.» marker after 'other species' (zh 282, en 284) has no key; left as is
+- origin_cybernetic_creed: situations:situation_cybernetic_creed_cyberization: empty «» after 'holy implants next Month:' (zh 299, en 301) has no key
+- origin_default_nomads: origin-intro: en 401 'our «the government»' doubles the possessive with game text
+- origin_default_nomads: origin-intro: zh 372 '我们的«该政府»' doubles the possessive with game text
+- origin_default_nomads: origin-intro: en 403 'We are «the ship» Arkship' is a game-text construction
+- origin_default_nomads: origin-intro: en 412 'ready «our species'»,' has no noun after it in the game text
+- origin_doomsday: origin.85: empty «» token (zh 499 and 503, en 509 and 513) has no key; left as is
+- origin_doomsday: origin.85: 'over «this planet»' (zh 501, en 511) probably means the old homeworld; one key serves both uses, left as is
+- origin_doomsday: origin.80: en 487 'the surviving «the species»' doubles the article with game text
+- origin_doomsday: nomads.4710: empty «» token (zh 449, en 458) has no key; left as is
+- origin_doomsday: situations:situation_nomad_economy: stray empty «» (zh 466, en 467) has no key; left as is
+- origin_endbringers: shroud.8100: zh 539 '及其«其»的组员' doubles 其 with game text
+- origin_endbringers: situations:end_of_the_cycle_endbringers: empty «» (zh 599, en 600) has no key; left as is
+- origin_fear_of_the_dark: origin.6011: en 778 'let «their» go' uses the possessive where the game needs the object form
+- origin_fear_of_the_dark: origin.6006: en 797 '«They» motivations' and en 803 'as an «Commander»' keep game-text grammar
+- origin_fear_of_the_dark: bio.170 and bio.180: empty «» in 'Changes Authority' (zh 979 and 983, en 980 and 984) has no key; left as is
+- origin_forever_cruise: origin-intro:origin_forever_cruise: en 1137 'aboard flagship' has no article; the game text puts 'aboard' before the phrase
+- origin_forever_cruise: situations:situation_passenger_satisfaction: empty «» in the pop lines (zh 1141-1143, en 1146-1147) has no key; left as is
+- origin_fruitful: origin.7201: empty «» in 'filling the «»' and '«»上' (zh 1155, en 1157) has no key; left as is
+- origin_here_be_dragons: aquatics.170, aquatics.105, aquatics.115, aquatics.185 and special_projects:REANIMATE_ORIGIN_DRAGON: zh '«这个星系»恒星系' adds 恒星系 after the phrase (game text); left as is
+- origin_legendary_leader: standalone title 'our' with no regnal name beside it (en 1448, 1451, 1454, 1471, 1492, 1539, 1541, 1593, 1610, 1613, 1616, 1622, 1626, 1636, 1653, 1753; zh 1440, 1443, 1446, 1469, 1489, 1532, 1534, 1562, 1566, 1588, 1595, 1609, 1631, 1646, 1747): the same key pairs with the regnal name elsewhere, so one phrase cannot serve both
+- origin_legendary_leader: paragon.5210 en 1541 and paragon.5345 en 1622: 'our «our»' doubles the title with game text
+- origin_legendary_leader: paragon.5009 en 1437, paragon.5008 en 1591, paragon.5023 en 1685: 'They' with a verb is game-text grammar
+- origin_legendary_leader: paragon.5340 en 1619: stray apostrophe after «our» is game text
+- origin_lost_colony: origin-intro:origin_lost_colony: en 1892 and 1894 'aboard «this planet»' reads oddly; game text puts 'aboard' before the planet phrase; left as is
+- origin_mindwardens: shroud.6050, special_projects:EXPLORE_BORDER_SYSTEM, shroud.6200, shroud.6210, shroud.6225 and others: zh '«这个星系»系' or '恒星系' adds a suffix after the phrase (game text); left as is
+- origin_mindwardens: shroud.6205: en 1990 'our «this system»' uses a system name with a possessive; left as is
+- origin_mindwardens: shroud.6600 zh 2061 and shroud.6601 zh 2111: 这颗星球 appears twice in one sentence (current and other planet keys); left as is
+- origin_necrophage: necroids.2: en 2196 'each «our» planet' uses the bare title where a noun is needed; left as is
+- origin_payback: origin.4016: 'this sum' follows the £energy£ icon; the amount comes from game text, phrase kept
+- origin_payback: origin.4306: en 'need no «power»-holding' keeps the game text suffix; reads acceptably
+- origin_progenitor_hive: origin.3245: empty «» in zh 2424 and en 2428 has no key; left as is
+- origin_sacred_path: nomads.2050 zh 2561 '«我们的»声称' and nomads.2085 zh 2610 / en 2612: bare title 'our' with no regnal name beside it; the key pairs elsewhere, left as is
+- origin_sacred_path: nomads.2085 en 2611: 'our own «our ruler»' repeats 'our' with game text
+- origin_sacred_path: nomads.2056 and nomads.2072 en: 'Scientist «himself»' keeps the game's title plus pronoun form
+- origin_scion: origin.205 en 2665: the headline '«In person» joins' reads oddly; the same phrase fits the sentence at en 2660, left as is
+- origin_scion: origin.210 zh 2671 '指望你们«我们的帝国»' and en 2681-2684 'A «alien» Commander/Official/Scientist/General': phrase or article mismatch from game text
+- origin_shoulders_of_giants: origin.1210 en 2740: 'Scientist «himself» have requested' verb agreement is game text; left as is
+- origin_shroud_forged: origin-intro: en 2838 '«our»kind' joins without a space (game text); the open issue cannot be fixed by the phrase alone; left as is
+- origin_shroud_forged: origin-intro: zh 2836 '«我们的»一族' uses the bare title
+- origin_shroud_forged: shroud_forged.220 and shroud_forged.225: en 'our homeworld of «the homeworld»' repeats the noun with game text
+- origin_starlit_citadel: bio.2025 zh 3022, event_chains:abandoned_hatchery_chain_3 zh 3025, bio.2040 zh 3042 and event_chains:abandoned_hatchery_chain_4 zh 3038: zh '恒星系' suffix after the system phrase is game text
+- origin_storm_chasers: cstorms.3222, cstorms.3224, cstorms.3227, cstorms.3230 and cstorms.3235: $@...$ variables are not replaced by the game text; left as is
+- origin_storm_chasers: cstorms.3170 en 3093: 'Scientist «himself»' keeps the game's title plus pronoun form
+- origin_toxic_knights: toxoids.7300: questing_knight_15 and questing_knight_8 both render 'the knight' in the same sentences; the text does not separate them; left as is
+- origin_toxic_knights: toxoids.7006 zh 3230: '骑士«这位骑士»' doubles the noun; left as is
+- origin_toxic_knights: toxoids.7050: GetYear is empty in English ('In the year of , ...'); left as is
+- origin_toxic_knights: toxoids.7080 and toxoids.7090: bare 'knight' and «Knight» titles (en 3394, 3396, 3397) read as generic nouns; left as is
+- origin_toxic_knights: toxoids.7120 zh 3417 and toxoids.7130 zh 3425: '扈从«这位扈从»' doubles the noun; en 3433 'the squire the Squire' is game text
+- origin_toxic_knights: toxoids.7195 zh 3449: '«这位骑士»这位默默无闻' doubles the phrase
+- origin_toxic_knights: toxoids.7160 en 3562: '«their» discovered' uses the possessive as subject (game text)
+- origin_toxic_knights: toxoids.7260 en 3173: 'stand«s»' marker is game text
+- origin_toxic_knights: toxoids.7510 and toxoids.7515 zh: '«这个星系»恒星系' suffix is game text
+- origin_treasure_hunters: grand_archive.8115 en 3685-3690 and grand_archive.8120 en 3878: 'Scientist «the scientist»' repeats the title; no neutral phrase fits both the title and the sentences; en 'the scientist were' is game grammar
+- origin_unplugged: unplugged.2022: heading 'Old «this planet»' reads awkwardly in English; left as is
+- origin_unplugged: unplugged.2000: zh 3940 '我们恒星«这颗恒星»' doubles the star; en 3945 'Every «the species'» who' is game grammar
+- origin_unplugged: unplugged.2450 zh 4257 and unplugged.2455 zh 4262: '原始的«原始»' doubles the word
+- origin_unplugged: unplugged.2315 zh 4199 and en 4200: '我们现在的«我方»' and 'our «our» dialect' double the pronoun
+- origin_unplugged: unplugged.3010 zh 3995: '我们«我方»' doubles the pronoun
+- origin_unplugged: archaeological_site_types:machine_legacy_creators_site (en 4166) and machine_legacy_unplugged_site (en 4197): 'a «assimilator» monitoring station' has an article mismatch from game text
+- origin_unplugged: unplugged.2405: keys 'persistent' and '持续' both carry the status word; the duplicated status text looks like a source token issue
+- origin_wilderness: wilderness.2000 zh 4402: '我们«我们的帝国»' doubles 我们 with game text; left as is
+- anomaly-storms-prec-one: cstorms.2170: en 'Scientist were' plural mismatch is game text
+- archaeology-incidents: ancrel.4021: 'mouthwash' compound is split by the placeholder; game text
+- baol: ancrel.2026: repeated noun leaves empty «» (zh and en); site rule, not wording
+- baol: ancrel.2027: en 'transformed «this planet»'s over' is game text
+- cybrex: precursor.2005, 2006, 2010, 2011, 2020, 2021, 2026: repeated noun leaves empty «» in some sentences; site rule
+- event-ancrel-6049: ancrel.6049: repeated noun leaves empty «» (zh and en); site rule
+- event-ancrel-6098: ancrel.6099: repeated noun leaves empty «» (zh and en); site rule
+- event-ancrel-6499: ancrel.6500: empty «» after repeated noun; site rule
+- event-ancrel-6499: ancrel.6505 zh: game word order 'our great capital' plus the other empire reads wrongly; game text
+- first-league: precursor.1015-1102 and FIRST_LEAGUE special projects: empty «» after repeated noun in several sentences; site rule
+- irassian: precursor.1521 zh: '上将' appears inside 'orbit «上将»' and is not this key's phrase; game text
+- irassian: precursor.1505-1602: empty «» after repeated noun in several sentences; site rule
+- precursor-assistance: precursor.301 zh: '«这颗星球»帝国' wording is game text
+- precursor-assistance: precursor.313 zh: stammer is game text
+- site-ancient-battle-site: ancrel.109 en: 'that that' is game text
+- site-site-chronicles-of-dendrus: extreme_frontiers.1435: empty «» in zh 'Gain «» society' after repeated noun; site rule
+- site-site-deserted-mining-facility: extreme_frontiers.1330 en: sentence is cut off in game text
+- site-site-fumongus-dig: ancrel.8305 en: missing full stop before 'Their desiccated' is game text
+- site-site-ice-trauma: arcsite.9000: empty «» (repeated noun) and 'Perhaps «are» onto something' are game text
+- site-site-ice-trauma: arcsite.9002 en: 'archaeologist «the leader»' keeps the game title
+- site-site-robot-debris: ancrel.6255 zh: '这颗小行星' calls the body an asteroid; game text, the phrase reads this planet as intended
+- site-site-ruins-of-shallash: federations2.6: 'that species' and 'the other peoples' both name the xenophobic species in one story; kept as game text distinguishes singular and plural
+- site-site-ruins-of-shallash: federations2.6 en: 'pon their first encounter' is missing its first letter in game text
+- site-zevox-digsite: unique.80 en: lowercase 'this planet' starting a sentence is game text
+- the-oracle: ancrel.4031 zh: 'has有着有一座' repetition is game text
+- the-sentinels: ancrel.4065 en: 'They were' carries a verb in the phrase; game text
+- the-sentinels: ancrel.4066 zh: 此人 used for two pronouns in one sentence; game text wording
+- the-sentinels: ancrel.4077: 'our capital' assumes the owner is the player; the game key is from.owner
+- vultaum: precursor.101, precursor.102, ancrel.10100, ancrel.10110, VULTAUM_ARCHEOLOGY_2: empty «» after repeated noun or a stat name; site rule
+- vultaum: precursor.20, precursor.25: empty «» in zh 'at «»' after repeated noun; site rule
+- yuht: precursor.505, 506, 520, 525, 601, 602: empty «» after repeated noun in several sentences; site rule
+- yuht: over.50: the asteroid name is shown as 'asteroid' and the cache phrase as 'there'; open issue resolved
+- zroni: archaeological_site_types:zroni_digsite_5: empty «» in zh and en after repeated noun; site rule
+- rift-advisor: astral_rift.840 en: 'The leader have' verb agreement is game text
+- rift-corridors: astral_rift.120 zh: '此人曾是' carries a verb inside the phrase; game text
+- rift-corridors: astral_rift.125 en: 'The leader were' verb agreement is game text
+- rift-corridors: astral_rift.140 en: 'The leader have' and the lone 'Are' line are game text
+- rift-dimensional-dump: astral_rift.2225 zh: 此人 used twice in one sentence (送回此人来的地方); game text
+- rift-dimensional-dump: astral_rift.2225 en: 'miss«their»' and 'know«»' are game text with empty phrases
+- rift-dimensional-dump: astral_rift.2230 en: 'the pilot have' verb agreement is game text
+- rift-dimensional-dump: open issue: the leader phrase kept for 'The alien's name is' as no clean role phrase fits
+- rift-entangled-dark-matter: astral_rift.2431: 'a gesture of their «the leader»' is game text; the leader phrase cannot be replaced without changing other sentences in the same document
+- rift-garden: astral_rift.1465 en: 'resemble«their»' and 'seem«»' are game text with missing space or empty phrase
+- rift-psionic-stranger: astral_rift.3280 zh: '太空舱从的裂隙' wording is game text
+- rift-rockworms: astral_rift.1890 en: 'The colonist have', 'are the worse' and 'have become' are game text verb forms
+- rift-tower: astral_rift.696 zh and en: the leader phrase repeats the title 'the leader «the leader»' in game text; the site rule cannot remove it
+- rift-tower: astral_rift.691 en: 'serve«» us' is game text with an empty phrase
+- rift-windswept-planet: astral_rift.2790 zh and en: '«有»' and '«have»' verb forms are game text
+- event-bio-1: bio.220: 'by the name of «the geneticist»' and bio.300: 'a «scientist» by the name of «the scientist»' - the role phrase follows game text 'by the name of'; one phrase cannot read well in every position
+- event-bio-1: bio.85: 'each a replica of our «leader», «the leader»' - title plus name pair is not collapsed by the site; needs a page-side rule
+- event-colony-3001: colony.3001: 'the moon it does not seem to be made of' reads awkwardly; the same phrase is needed for 'Quite where it came from'
+- event-colony-3005: colony.9810 and colony.9815: 'lead physics unit «the physicist»' and 'physics specialized drone «the physicist»' - the unit word plus role phrase reads awkwardly; the name phrase is shared across the document
+- event-colony-3005: colony.3060: 'nothing could stand in «them» way' - the object form is used for a possessive in game text; cannot fix with one phrase
+- event-colony-50: colony.67: 'museums on «our capital»' - the preposition 'on' is game text; the phrase cannot fix it
+- event-colony-50: colony.52: the English sentence is split into two rendered lines ('Our efforts to destroy the «mantle-dwelling».' / 'aliens on «this planet» have met with success!') because the source text breaks there; not fixed
+- event-colony-9000: colony.9005: 'While our «this planet» colony' gives 'our this planet colony'; the same phrase is needed for 'colony at «this planet»' in the same document
+- event-colony-9295: colony.9300: 'calling «this planet»onium' renders as 'this planetonium'; the same phrase is needed for 'discovered on this planet!' in the same document
+- event-colony-9820: colony.9821: 'This is «the physicist»s unique ID' - the possessive suffix is game text after the phrase; the same phrase is needed in other sentences
+- event-colony-9820: colony.9821: 'lead physics unit «the physicist»' style unit plus role phrase reads awkwardly; the name phrase is shared across the document
+- event-cyber-1005: cyber.1005: «决斗者» / «Duelists» is marked but has no key on its doc line; kept as game text
+- event-cyber-1515: cyber.1515: 'cyber-enhanced «our»' uses the adjective as a noun; game text
+- event-cyber-1515: cyber.1515 zh: '每一个通过义体增强的«我们的»' has the same problem; game text
+- event-cyber-1520: cyber.1520: 'on «our capital» of «our capital»' repeats the phrase; game text
+- event-cyber-1525: cyber.1525: 'to the their new ocular implants' is a typo in game text
+- event-cyber-820: cyber.820: 'appear non-«our»' needs a negated adjective; game text
+- event-cyber-820: cyber.822: 'unmodified, non-«our» patients' has the same problem; game text
+- event-diplomatic-1000: diplomatic.1013: 'Commander' has no key on its doc line; kept as game text
+- event-diplomatic-1000: diplomatic.1024: 'yet another «other species» ruse' reads awkwardly; needs game text change
+- event-espionage-2: espionage.1012: 'claim«»' has an empty phrase; game text
+- event-espionage-2: espionage.1021: 'confirmed that «are» no longer missing' shows a wrong token; game text
+- event-espionage-2: espionage.1060: '«£job_manager£ Steward»' shows a raw token; game text
+- event-espionage-20: espionage.22-25: '«an barbarian»' article error in the game text; not a placeholder key
+- event-factions-3000: factions.3000: 'this modest «»' and the zh '«»' have empty phrases; game text needs a key
+- event-factions-3000: factions.3010: 'present «colonists» democracy' needs a possessive; the same key also reads well in other sentences, so kept
+- event-fedel-1: fedel.10/fedel.15: '«are»' shows a wrong token in place of a pronoun; game text
+- event-fedel-1: fedel.10/fedel.15: empty «» markers after verbs ('make«»', 'lose«their»', 'give«»', 'succumb«»') are game text markup
+- event-fedel-900: fedel.904, fedel.901: raw £energy£ token shown next to the pot phrase; game text, not a placeholder
+- event-federations3-120: federations3.121 and federations3.131: 'such as designate «this planet»' and 'at designate «this planet»' carry a stray word; game text
+- event-federations3-2200: federations3.2215-2245: quoted debate titles open with an unclosed «; game text
+- event-fircon-2600: fircon.2615: 'The launching empire have been inspired' - plural verb after a singular empire name is game text agreement; the phrase cannot fix it
+- event-fircon-8045: fircon.8045: zh «当地人野蛮人» (species phrase plus game text 野蛮人) reads awkwardly; game text pattern, phrase cannot fix it
+- event-fircon-8515: fircon.8520: zh «个体»子个体 repeats the same role in one phrase; game text pattern, phrase cannot fix it
+- event-first-contact-1: first_contact.15: the long phrase 'An unfamiliar moon of the system's tenth planet,' (trailing comma, not in the keys line) reads badly in about 40 sentences; it needs a short phrase from its source key, not changed here
+- event-first-contact-1110: first_contact.1110: 'identify the «unknown» as the civilisation' - the same key drives 'unknown machines' in the same story, so the phrase cannot change without breaking that sentence
+- event-first-contact-200: first_contact.210: zh «此人曾是» reads 'this person was' before the verb; the phrase is shared with game text, not fixed
+- event-first-contact-250: first_contact.285: 'we can now identify the other empire as the civilisation' is fine, but 'the other empire machines' (same key, game text 'machines') still reads awkwardly; the phrase is shared with 'identify the other empire'
+- event-first-contact-355: first_contact.355: zh '在我们«外星人»之间' reads awkwardly; the plural phrase is game text plus 我们, not changed
+- event-first-contact-5035: first_contact.5035: 'lithoid' in quotes has no key on its doc line; kept as game text
+- event-first-contact-critters-25: first_contact_critters.25: 'a «imperial» Corvette' article mismatch in the game text; not a placeholder key
+- event-galcom-62: event_chains:market_founding_chain: a stray «Our people ... opening quote and no space after the previous sentence; game text
+- event-galcom-62: event_chains:market_relocation_chain: same stray quote and missing space; game text
+- event-leader-17: leader.17: '«Are» now capable' shows a wrong token in place of a pronoun; game text
+- event-leader-8: leader.8: '«Are» experimenting' shows a wrong token in place of a pronoun; game text
+- event-mega-201: mega.201: title 'Ecumenopolis: this planet Encased' keeps the game's title wording; 'this planet' before 'Encased' reads awkwardly.
+- event-observation-0: observation.2, observation.4, observation.5: empty «» substitution (token not in the key list) renders blank before 's; site-side fix needed.
+- event-observation-100: observation.101: 'The scientist were taking part' depends on a verb key (GetWasWere) outside this worksheet; site needs a singular rule.
+- event-observation-100: observation.105, observation.106, observation.108, observation.109, observation.112, observation.1402, observation.1404, observation.1406: empty «» substitution renders blank; site-side fix needed.
+- event-observation-1000: special_projects:ABDUCT_SCIENTIST_PROJECT: 'abduct their and then convince their' — the object slot shows the possessive phrase (no object key listed); game text.
+- event-observation-1100: observation.1102, observation.1105: empty «» substitution renders blank before 's; site-side fix needed.
+- event-observation-1200: observation.1202: empty «» substitution (token not in the key list) renders blank; site-side fix needed.
+- event-observation-1200: observation.1205: 'The native on this planet have conducted' — singular species key with plural verb; no plural key in this document.
+- event-observation-1300: observation.1301: empty «» substitution renders blank in several sentences; site-side fix needed.
+- event-observation-1400: observation.1402, observation.1404, observation.1406: empty «» substitution renders blank; site-side fix needed.
+- event-observation-1500: observation.1501, special_projects:PROBE_ALIENS_PROJECT, observation.1502: empty «» substitution renders blank; site-side fix needed.
+- event-observation-200: observation.205, observation.206, observation.207, observation.209, observation.211: empty «» substitution renders blank; site-side fix needed.
+- event-observation-2018: observation.2018: the lower-case fragment 'unique appearance and odor of the natives' is game text, kept.
+- event-observation-300: observation.301, special_projects:SMUGGLER_RAID_PROJECT: empty «» substitution renders blank; site-side fix needed.
+- event-observation-3148: observation.3149: empty «» substitution renders blank in 'on the «»'; site-side fix needed.
+- event-observation-6: observation.7, observation.8, observation.9: empty «» substitution renders blank; site-side fix needed.
+- event-preftl-espionage-2: preftl_espionage.1001: zh '名叫这位间谍首脑的间谍首脑' repeats the noun and the name slot has no name phrase (no invented names); kept.
+- event-preftl-espionage-2: preftl_espionage.1001: en 'if are still posing' (verb slot) and 'to them love interest' (pronoun slot) come from game text; kept.
+- event-preftl-espionage-2: preftl_espionage.1001, preftl_espionage.1110, preftl_espionage.1115, preftl_espionage.1155, preftl_espionage.1165: empty «» substitution renders blank; site-side fix needed.
+- event-preftl-operation-1000: preftl_operation.1000, preftl_operation.1005, preftl_operation.1006, preftl_operation.1007: empty «» substitution renders blank in the annexation sentences; site-side fix needed.
+- event-preftl-operation-1015: preftl_operation.1016: 'Natives' advocates' possessive comes from game text; kept.
+- event-preftl-operation-1015: preftl_operation.1016, 1017, 1018, 1019, 1020, 1021: empty «» substitution renders blank; site-side fix needed.
+- event-preftl-operation-1060: preftl_operation.1060, preftl_operation.1066, preftl_operation.1067: empty «» substitution renders blank; site-side fix needed.
+- event-preftl-operation-3040: preftl_operation.3045: empty «» substitution renders blank; site-side fix needed.
+- event-preftl-operation-3050: preftl_operation.3050: zh '间谍首脑 这位领袖' and 'a native native' (en) repeat the noun; the name and species slots are shared with other sentences; game text kept.
+- event-preftl-operation-3050: preftl_operation.3050, 3061, 3063: zh title-plus-name duplication from the game text; kept.
+- event-preftl-operation-3060: preftl_operation.3063: en 'Several «the species'» witnessed' reads awkwardly with the possessive phrase after 'Several'; game text kept.
+- event-preftl-operation-3105: preftl_operation.3105: zh '一个这颗星球子个体' fuses the planet phrase with a drone noun; game text kept.
+- event-shroud-2750: shroud.2750: open issue 'mechanotype' phrase has no key in this document; game text kept.
+- event-shroud-2750: utopia.2602: 'certain «the species»' and 'the species' mechanotype' use the phrase as a determiner; game text kept.
+- event-shroud-2750: shroud.2505: 'The species' psyche' is capitalised mid-sentence because the phrase comes from game text.
+- event-situation-1125: situation.1125: 'entered the S«star» system' has a letter before the placeholder in game text; kept.
+- event-situation-1125: situation.1130, situation.1135: 'the Spymaster, the leader' title-plus-name duplication from game text; kept.
+- event-situation-1125: situations:situation_stellarite_infested_star: 'Our star, star,' repeats the noun; game text.
+- event-situation-1125: situation.1170: 'our capital star this star' and zh '我们的首都恒星这颗恒星' repeat the noun in game text; kept.
+- event-situation-150: situation.190: 'FromFrom.GetName' renders as an empty «» in two sentences; token has no phrase on this doc, game text needs a key
+- event-situation-150: situation.195: lowercase fragment 'but our researchers...' is game text
+- event-situation-200: situation.291 zh: '运行中的的无人机' has a doubled 的; source text, not a placeholder
+- event-situation-2000: situations:situation_kaleidoscope: a standalone «Calm». fragment whose wording comes from the save; kept
+- event-situation-2000: situation.2031: 'one our Energy Nexus' is a typo in game text
+- event-situation-5: situation.5: the empty «» phrase in 'the «»' needs a key on this doc line; game text
+- event-specialist-1100: specialist.1200-1280: a stray leading « with no closing quote opens several sentences; game text markup, not a placeholder
+- event-specialist-500: specialist.905, specialist.910, specialist.915: a stray leading « with no closing quote; game text markup
+- event-subject-1001: subject.1010: zh '附属国«附庸国»' repeats the vassal term; source text, not a placeholder
+- event-subject-1100: subject.1145: a stray leading « without a closing quote; game text markup
+- event-subject-2050: subject.2055: 'we have have' is a doubled verb in the game text
+- pre-ftl-ages: preftl.200, preftl.300, preftl.400, preftl.700, preftl.800, preftl.1110: empty «» tokens for the planet's surface; the key is not on those doc lines, game text needs a key
+- situation-situation-alloys-deficit: deficit.170: en shows raw £pop£ / £alloys£ tokens and empty values in the option lines; game text
+- situation-situation-initiate-storm: situations:situation_initiate_storm: 'seed a Electric Storm' article error; game text
+- situation-situation-initiate-storm: cstorms.2000: zh '«、磁力风暴或电力风暴»' and '«重力风暴星尘风暴»' and en 'Radiant Storm«, Magnetic Stormor Electric Storm»' are garbled option lists; game text
+- situation-situation-initiate-storm: cstorms.2010: 'bloated of state' typo and cstorms.2000 en 'Begin preparations for a «Cosmic StormGravity Storm»«Stardust Storm»' are garbled; game text
+- situation-situation-nanotech-consume-planet: situations: 'In the species space, fleets are gathering' keeps 'the species' because the species phrase is not replaced in that sentence; game text, the open issue is not fixable by wording
+- situation-situation-nanotech-consume-planet: fallen_empires_awakening.2: 'that world are looking outwards' verb agreement; game text
+- situation-situation-toxify-world: situations:situation_toxify_world: raw £minerals£ and £exotic_gases£ tokens inside the phrase; game text
+- situation-voidworm-country-situation: grand_archive.2420: 'the leader have become infected' verb agreement; game text
+- manna_fruit: zh: 这颗星球行星 repeats the planet noun; 行星 is game text, left as is
+- pet_collar: zh: 使者«这位» keeps game text 使者 before the pronoun phrase; left as is
+- event-action-1: action.1: zh 统治者统治者 doubled ruler phrase comes from adjacent title and name keys (contact_empire.GetRulerTitle, contact_empire.GetRulerName); shared key, not fixable per sentence
+- event-action-1: action.1: en 'you' used as noun ('from one you to another', 'You you all are those were sent out?', "you're you") is shared by singular and plural keys; game wording
+- event-action-1: action.1: en 'Root.GetSpeciesName' vocative 'you' reads awkwardly in some lines; game wording
+- event-action-12: action.5: empty substitution in 'surface of the «»' (zh and en) and a barbarian phrase with no listed key; game text, no key covers it
+- event-action-122: action.123: empty substitution in "«»'s wilderness" (en) and '«»的野外' (zh); no listed key
+- event-action-38: action.38: 'our empire' (Root.GetName / This.GetName) is used for the player's empire while the speaker is the other side; the same key also means our own empire elsewhere in the text; game wording
+- event-action-39: action.39: en 'Their people has agreed' keeps game grammar ('people has'); site only fixes 'they has'
+- event-action-81: action.82: empty substitution in 'reducing the «» to an irradiated wasteland' (en) and '«»已经变成' (zh); no listed key
+- event-action-81: action.83: empty substitution in 'the irradiated «» can now only support' (en) and '现在充满辐射的«»' (zh); no listed key
+- event-action-941: action.94: unresolved game token '$action.92.part3$' shows in the English text
+- event-aquatics-4: aquatics.5: 'Terraforming this «»' and '这颗«»' render an empty phrase because the sentences use a token missing from the key list; no phrase assigned
+- event-arkship-1020: arkship.1015: en renders the literal name «Arkship» for the ship; the phrase cannot change that rendering
+- event-arkship-1030: arkship.1045/1050/1060/1065 en: 'Our leader the leader' doubles the role; the same key is needed in 'until the leader took command' sentences, so the role phrase is kept
+- event-arkship-60: arkship.60 zh: '«这艘舰»号方舟舰的反应堆' stacks the ship name with 号方舟舰; game text, phrase kept
+- event-arkship-700: arkship.760 and arkship.780 en: sentences start with 'has' because the subject token is not in the key list; no phrase assigned
+- event-bio-3325: bio.3330: 'must pass' is the game's own wording for the vote; kept
+- event-cara-2010: cara.2200 en: 'your planet, «this planet»' names the planet twice; game text, phrase kept
+- event-country-250: country.253 en: 'Science Officer' is followed by the leader role, so the title and role stack; the site title rule carries the note, phrase kept
+- event-country-50: country.56/58/59: sentences with an empty «» use a token missing from the key list; no phrase assigned
+- event-country-999: country.999 en 481 / zh 461: 'the species' appears twice in one sentence from two separate tokens; game text, kept
+- event-crime-1: crime.1: a sentence in zh (我们可以提升«»的失业补助金) and en (on the «») renders an empty token missing from the key list; no phrase assigned
+- event-crime-1000: crime.1001/crime.1002: zh and en sentences with an empty «» token (the «»'s / on the «») missing from the key list; no phrase assigned
+- event-crime-50: crime.3/5/6/7/8/40/41/100/101/104/200/201/202/300/301/302/304/501/552: many sentences render an empty «» for a token missing from the key list; no phrase assigned
+- event-emperor-499: emperor.2 en 'the ruler was crowned our ruler' and emperor.3 en 'crowned ruler': the regnal name and title stack in game wording; kept
+- event-emperor-50: emperor.373 zh: '星海帝国成员国«受害者»' is game wording with the victim phrase; kept
+- event-envoy-events-205: envoy_events.205 en: 'represent«»' ends with an empty token missing from the key list; no phrase assigned
+- event-envoy-events-210: envoy_events.210 en: 'seem«»' renders an empty token missing from the key list; no phrase assigned
+- event-envoy-events-215: envoy_events.215 en: 'appear«»' renders an empty token missing from the key list; no phrase assigned
+- event-envoy-events-225: envoy_events.225: en 'Our the envoy' ("Our «the envoy»") repeats the lead word; the same key is needed as 'the envoy' elsewhere, so game wording stays
+- event-envoy-events-225: envoy_events.225: en 'Are' appears in the pronoun slot ('«Are» currently in connection'); the substituted word is not a phrase for any listed key
+- event-envoy-events-5: envoy_events.5: en 'So great an irritation «they» been' reads wrong ('they been'); game grammar, the site only fixes 'they has'
+- event-envoy-events-5: envoy_events.5: en 'The «foreign» envoy, «the envoy»' repeats the noun; source text puts both nouns in one phrase
+- event-envoy-events-7: envoy_events.8: en 'Are under our protection' appears with a pronoun slot that renders as 'Are'; game text
+- event-fallen-empires-2: fallen_empires.2: en title 'The rival empire assassinate the ruler!' has a subject-verb mismatch from the game title; game text
+- event-fallen-empires-awakening-4: fallen_empires_awakening.11: en 'The ancient Fallen Empire Fragment, «the fragment» has been assimilated' repeats the noun; game text, one key for both uses
+- event-fallen-empires-tasks-1: fallen_empires_tasks.2: 'as «the species» client' and 'We «the species» believe' use FallenEmpireTaskOrigin.GetSpeciesName, which has no plain phrase that fits both; kept
+- event-fallen-empires-tasks-14: fallen_empires_tasks.15: en 'This is is a message' is a game typo
+- event-fallen-empires-tasks-21: fallen_empires_tasks.22: en 'we «the species» always have a use' (FallenEmpireTaskOrigin.GetSpeciesName) has no plain phrase that fits; kept
+- event-galactic-features-298: galactic_features.301: empty substitution «» in the zh and en lines about the energy barrier over the planet; no listed key covers it
+- event-galactic-features-298: galactic_features.303: empty substitution «» in the zh and en lines about the hut's hemisphere; no listed key covers it
+- event-galactic-features-366: galactic_features.371: en 'your feeble the species brains' reads awkwardly; the key is shared by 'the species' and 'your' uses in one doc
+- event-galactic-features-421: galactic_features.421: en 'its mere presence in «home»' reads awkwardly; the same key sits in 'in the «home» system' in the same story
+- event-galactic-features-500: galactic_features.502: title 'New Arrivals in «nearby»' reads oddly; the same key is used as 'in the «nearby» system' in the body
+- event-game-start-10: fallen_empires.8: en '«empire» loses any claims...' starts with a stray fragment of game text; game text
+- event-grand-archive-6005: grand_archive.6015: 'named «the ship»' (en) and 'the ship' zh reads oddly; game text names the ship with the same key
+- event-grand-archive-6005: grand_archive.6015: zh '加入加入' is a game typo
+- event-grand-archive-6005: grand_archive.6025: 'the leader were' (en) and '这位领袖曾是' (zh) carry game fragments beyond the listed key; game text
+- event-infernals-36: planet_destruction.1000: empty substitution «» in 'destroyed the «» of «that planet»' (en) and the zh line about the planet's surface; no listed key covers it
+- event-marauder-1: marauder.3: en 'in and around the «neighboring» system' and 'trespassing in «neighboring»' share one phrase; no plain phrase fits both uses
+- event-marauder-100: marauder.102: en 'Every «your» that is sacrificed', 'You will regret this slight, «your»' and 'Fare thee well, «your»' use bare 'your' as a noun; game text, one key for every use
+- event-marauder-100: marauder.121: en 'Are there any «your» warriors' reads awkwardly; the key covers both the adjective and noun uses
+- event-marauder-100: marauder.104, marauder.105, marauder.108: empty substitution «» in 'on the «»' (en and zh) for the settlements and facilities lines; no listed key covers it
+- event-marauder-505: marauder.508: 'This is Great Khan the leader of the khanate' - title before the name slot is game text; no cleaner single phrase
+- event-marauder-511: marauder.513: zh '这位领袖其由于年老' - game text puts 其 right after the name slot; cannot reorder
+- event-namarian-3: namarian.10: 'The contacted empire care little' - verb agreement comes from game text with a singular phrase
+- event-namarian-3: namarian.21: 'the one named this planet' - game text expects a proper name after 'named'
+- event-nomads-4700: nomads.4705: empty «» spans (zh 456, 459, 466; en 472, 475, 482) - no key is listed for them; needs a phrase or site-side handling
+- event-nomads-4700: nomads.4705: zh 453 names the arkship twice (方舟舰 + 这艘舰船) - game text
+- event-nomads-4700: situations:situation_nomad_economy: empty «» span (zh 486, en 487)
+- event-nomads-50: nomads.50 and event_chains:nomad_checklist_chain: 'aboard this planet' - game preposition used for a planet
+- event-nomads-6020: nomads.6045 en: 'prove them usefulness' and 'them self' - object pronoun used as a possessive/reflexive in game text
+- event-operation-1020: operation.1020 en 648: 'the other empire have also been invited' - verb agreement from game text
+- event-operation-1020: operation.1020 open issue 'Operation unnamed': no operation code name exists in the data, so it stays as is
+- event-operation-2000: operation.2005 en 741: 'struck a a successful blow' - doubled article in game text
+- event-operation-2000: operation.2006 en 769: 'sabotage other in the star system' - game text has no noun after the adjective
+- event-operation-2000: espionage.1040 en 761: 'have have trapped' - game text typo
+- event-operation-3000: operation.3001 en 840 and 854: 'the other empire hold' verb agreement; 'a rival plot to infiltrate the rival political system' - two different parties share one phrase
+- event-operation-3000: operation.3010 and operation.3011 en: 'enemies in the accuser' - preposition from game text
+- event-operation-3000: espionage.1070 en 943: 'many the species' lives' - adjective slot takes no article in game text
+- event-operation-3000: espionage.1070 en 946: 'the species-looking operatives' - compound adjective from game text
+- event-operation-5000: operation.5000 open issue 'Operation unnamed': no operation code name exists in the data
+- event-operation-5005: operation.5005 open issue 'Operation unnamed': no operation code name exists in the data
+- event-operation-5005: espionage.1070 en 943 and 946 (see operation-3000): 'many the species' lives', 'the species-looking operatives'
+- event-operation-5010: espionage.1070 en 943 and 946 (see operation-3000): 'many the species' lives', 'the species-looking operatives'
+- event-operation-5015: operation.5016 en 1259: 'a worthy adversary us' - game text omits 'to'
+- event-operation-5040: operation.5040 zh 1318: '此人有' - the pronoun span includes 有 from game text
+- event-operation-5045: operation.5045 en 1351: 'Get your house in order, personally!' - 'personally' is the only phrase that fits both sentences
+- event-operation-5045: espionage.1070 en 943 and 946 (see operation-3000)
+- event-operation-5050: espionage.1070 en 943 and 946 (see operation-3000)
+- event-operation-5055: operation.5055 en 1470: empty «» span after 'concede' - stray placeholder in game text
+- event-operation-6000: operation.6010 en 1510 and 1518: 'by the name of the official' - no real name exists, the phrase stays
+- event-operation-6000: operation.6010 en 1516: 'Are personally responsible' - the pronoun slot renders as a verb; cannot be fixed by a phrase
+- event-operation-6250: operation.6252 en 122-123: article dropped before 'species' ('with species embassy staff member', 'member of species government') - game text needs 'the'; no single phrase fits
+- event-operation-8000: operation.8002 en 207: 'hiding in plain site' - game text typo
+- event-operation-8000: open issue 'Operation unnamed': no operation code name exists in the data
+- event-operation-8200: operation.8230 en 255: 'cause the them considerable embarrassment' - pronoun slot after 'the' in game text
+- event-over-100: open issue zh 'Our close ally [name]' doubles 友邦 ('亲密友邦«那个友邦»'): no clean Chinese phrase fits both slots; kept
+- event-paragon-549: paragon.550 zh 379 and paragon.571 zh 467: '享年高龄岁' / '高龄岁时' - the age slot needs a number in the game text
+- event-paragon-549: paragon.562 en 459: 'the themself Building' - the name slot needs a real building name; cannot be supplied
+- event-pirate-100: pirate.155 en 572: 'A bold move, the species''' - possessive used alone in game text
+- event-planet-destruction-100: planet_destruction.1000: unmapped spans - empty «» (zh 743, en 748) and «行星»/'planet' (zh 756 pattern); no key listed
+- event-planet-destruction-1005: planet_destruction.1000: unmapped «行星»/'planet' span (zh 756, en 761 'the planet of this planet'); no key listed
+- event-planet-destruction-200: planet_destruction.1000: unmapped «行星»/'planet' span (zh 784, en 789); no key listed
+- event-planet-destruction-300: planet_destruction.1000: unmapped «行星»/'planet' span (zh 802, en 807); no key listed
+- event-planet-destruction-600: fallen_empires_awakening.2 en 843: 'the empire are looking outwards' - verb agreement from game text
+- event-planet-destruction-700: planet_destruction.1000: unmapped «行星»/'planet' span (zh 859, en 864); no key listed
+- event-planet-destruction-800: planet_destruction.1000: unmapped «行星»/'planet' span (zh 875, en 880); no key listed
+- event-plant-100: plant.110 en 903-904: 'Our Overlord have completed' - verb agreement from game text
+- event-progress-2: progress.2 en 931: 'we, the this planet, are not alone' - the key slot needs a noun phrase game text does not supply
+- event-progress-2: progress.2 zh 911: '这颗星球这颗行星' - doubled noun from game text
+- event-progress-2: progress.2 unmapped «行星»/'planet' spans (zh 908, 913, 917, 923; en 927, 930, 933, 937, 943); no key listed
+- event-progress-3: progress.3 en 973: 'the «planet»-spanning ocean' - unmapped 'planet' span; no key listed
+- event-refugees-3: refugees.1 en 1013: 'home planet of this planet' - the planet-name slot is shared with 'settle on this planet'; kept (open issue)
+- event-shroud-11000: shroud.4715 zh and en: '«**Error - for GCs**»' - broken placeholder text in the game data; a phrase cannot fix it
+- event-shroud-11000: open issue 'Reckoning of the target': reads as a title in both languages; kept
+- event-shroud-12000: shroud.12020 en 1121: 'they strokes' - verb agreement from game text; 'they' is the only neutral pronoun
+- event-shroud-4650: shroud.4862 en 1415-1416 and zh 1409-1410: 'The this planet has been transformed' / 'Arkship «这颗星球»' - the same key renders a ship as a planet; game text / key mismatch
+- event-shroud-4700: shroud.4890 zh 1469: 'Arkship «这颗星球»' - candidate planet phrase used as a ship name; en shows only 'Arkship'
+- event-story-220: story.220: en '«local» is home to a crystal construct' reads awkwardly; the same key also fills 'in the «local» system' in this story
+- event-strange-worlds-50: strange_worlds.65: en 'become a staple of «this planet» diet' reads awkwardly; the key is also used for 'on «this planet»' in the same doc
+- event-terra-10: terra.35, terra.40, terra.45, terra.55, terra.60, terra.65, terra.70, terra.75, terra.80: empty substitution «» for the planet-type word (zh and en); no listed key covers it
+- event-terra-10: terra.50: en 'an lush' article error from the 'into a [class] lush world' frame; the class phrase is shared
+- event-toxoids-1: toxoids.5, toxoids.10, toxoids.15: empty substitution «» in 'the «»'s surface' and 'the «» uninhabitable' lines (zh and en); no listed key covers it
+- event-toxoids-499: toxoids.500: empty substitution «» in several zh and en lines (the planet-type word); no listed key covers it
+- event-unrest-50: unrest.4200: en 'the history of «the species»kind' runs the species phrase into the word 'kind'; game text
+- event-unrest-50: unrest.4200: empty substitution «» in several zh and en lines (the seized object); no listed key covers it
+- event-unrest-50: situations:situation_nomad_economy: empty «» in the zh line and at the end of the en line; no listed key covers it
+- event-uplift-6000: uplift.6010: en 'The dominant species on «this planet», «this planet»' and 'This planet have' / 'the tropical «planet»' reuse the planet phrase for a species and an adjective; the same key stands for the planet elsewhere
+- event-uplift-6000: uplift.7210, uplift.7215: en 'newly-uplifted «uplifted»' and 'the uplifted «uplifted»' double the word; one key for every use in these docs
+- event-uplift-6000: uplift.6010: zh '«这颗星球»上的主导物种，«这颗星球»' repeats the planet phrase; shared key
+- event-utopia-1: utopia.2 en: 'The other empire engineers' merges the empire phrase with 'engineers'; game text, kept
+- event-utopia-2500: situations:situation_cyberization_hive and situations:situation_cyberization: 'Pops to receive implants next month: «»' render an empty token missing from the key list; no phrase assigned
+- event-utopia-2550: situations:situation_digitization: 'Pops to be digitized next month: «»' renders an empty token missing from the key list; no phrase assigned
+- event-utopia-2600: utopia.2608: literal «**Error - for GCs**» placeholder in the game text; kept
+- event-utopia-50: utopia.59 en: 'science leader the scientist' stacks the title and role; kept
+- event-utopia-50: utopia.62 zh/en: standalone «本人» title; kept
+- event-utopia-50: utopia.63 en: 'claim«they»', 'theyre' and '«Are»' come from the game's pronoun template; kept
+- great-khan: marauder.504/516/517/518/519: sentences with an empty «» token missing from the key list; no phrase assigned
+- great-khan: marauder.550 zh 572 / en 592: the species phrase appears for two different species in one sentence; game text, kept
+- great-khan: marauder.510 en 656: 'So ends the reign of «in person»' reads oddly; the same key is used in 'Great Khan in person'; kept
+- paragon-renowned-xondar: paragon.40920 en: 'within the our borders' is game text; kept
+- the-shroud: utopia.3192/3333/3334/3340: literal «**Error - for GCs**» placeholder in the game text; kept
+- the-shroud: utopia.3401 en: 'the species' psychic' stacks the species adjective with a noun; game wording, kept
+- the-shroud: utopia.3304/3306/3307/2658 en: '« telepaths»' spacing comes from the game text; kept
+
+## First-pass reviewer notes (stories without a rendered review)
+

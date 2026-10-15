@@ -1,0 +1,124 @@
+{
+  "astral-crystal-sphere": {"reviewed": true},
+  "astral-formless": {"reviewed": true},
+  "astral-rift-in-space": {"reviewed": true},
+  "event-astral-planes-210": {"reviewed": true},
+  "event-astral-planes-6005": {"reviewed": true},
+  "event-astral-planes-6029": {"reviewed": true},
+  "event-astral-planes-6095": {"reviewed": true},
+  "rift-advisor": {
+    "exceptions": ["astral_rift.840 en: 'The leader have' verb agreement is game text"],
+    "reviewed": true
+  },
+  "rift-bleached-planet": {"reviewed": true},
+  "rift-cleaning-drones": {"reviewed": true},
+  "rift-corridors": {
+    "exceptions": [
+      "astral_rift.120 zh: '此人曾是' carries a verb inside the phrase; game text",
+      "astral_rift.125 en: 'The leader were' verb agreement is game text",
+      "astral_rift.140 en: 'The leader have' and the lone 'Are' line are game text"
+    ],
+    "reviewed": true
+  },
+  "rift-crystal": {
+    "docs": {
+      "astral_rift.1020": {
+        "solar_system.GetName": {
+          "zh": "这个星系", "en": "this", "note": {"zh": "这里会出现这个星系的名称。", "en": "In the game, this star system's name appears here."}
+        }
+      },
+      "astral_rift.1005": {
+        "Explorer.GetHomeWorldName": {
+          "zh": "母星", "en": "the homeworld", "omit": ["en"], "note": {"zh": "这里会出现探险者的母星名称。", "en": "In the game, the explorer's homeworld name appears here."}
+        }
+      },
+      "astral_rift.1006": {
+        "Explorer.GetHomeWorldName": {
+          "zh": "母星", "en": "the homeworld", "omit": ["en"], "note": {"zh": "这里会出现探险者的母星名称。", "en": "In the game, the explorer's homeworld name appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "rift-desert-ruins": {"reviewed": true},
+  "rift-dimensional-dump": {
+    "exceptions": [
+      "astral_rift.2225 zh: 此人 used twice in one sentence (送回此人来的地方); game text",
+      "astral_rift.2225 en: 'miss«their»' and 'know«»' are game text with empty phrases",
+      "astral_rift.2230 en: 'the pilot have' verb agreement is game text",
+      "open issue: the leader phrase kept for 'The alien's name is' as no clean role phrase fits"
+    ],
+    "reviewed": true
+  },
+  "rift-entangled-dark-matter": {
+    "exceptions": ["astral_rift.2431: 'a gesture of their «the leader»' is game text; the leader phrase cannot be replaced without changing other sentences in the same document"],
+    "reviewed": true
+  },
+  "rift-garden": {
+    "exceptions": ["astral_rift.1465 en: 'resemble«their»' and 'seem«»' are game text with missing space or empty phrase"],
+    "reviewed": true
+  },
+  "rift-genesis": {"reviewed": true},
+  "rift-interdimensional-circus": {"reviewed": true},
+  "rift-library": {"reviewed": true},
+  "rift-microverse": {"reviewed": true},
+  "rift-psionic-stranger": {
+    "exceptions": ["astral_rift.3280 zh: '太空舱从的裂隙' wording is game text"],
+    "reviewed": true
+  },
+  "rift-research-lab": {
+    "docs": {
+      "astral_rift.2045": {
+        "FromFrom.solar_system.GetName": {
+          "zh": "另一个", "en": "another system",
+          "note": {"zh": "这里会出现另一个星系的名称。", "en": "In the game, the name of the other star system appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "rift-riftworld": {"reviewed": true},
+  "rift-rockworms": {
+    "exceptions": ["astral_rift.1890 en: 'The colonist have', 'are the worse' and 'have become' are game text verb forms"],
+    "reviewed": true
+  },
+  "rift-siege-on-paradise": {"reviewed": true},
+  "rift-station": {
+    "docs": {
+      "astral_rift.1610": {
+        "mirrored_empire.GetName": {
+          "zh": "那个帝国", "en": "the other empire",
+          "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}
+        }
+      },
+      "astral_rift.1620": {
+        "final_mirrored_empire.GetName": {
+          "zh": "那个帝国", "en": "the other empire",
+          "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}
+        }
+      },
+      "astral_rift.1625": {
+        "final_mirrored_empire.GetName": {
+          "zh": "那个帝国", "en": "the other empire",
+          "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}
+        }
+      }
+    },
+    "reviewed": true
+  },
+  "rift-tiny-planet": {"reviewed": true},
+  "rift-tower": {
+    "exceptions": [
+      "astral_rift.696 zh and en: the leader phrase repeats the title 'the leader «the leader»' in game text; the site rule cannot remove it",
+      "astral_rift.691 en: 'serve«» us' is game text with an empty phrase"
+    ],
+    "reviewed": true
+  },
+  "rift-tropical-habitat": {"reviewed": true},
+  "rift-volcano": {"reviewed": true},
+  "rift-vortex": {"reviewed": true},
+  "rift-windswept-planet": {
+    "exceptions": ["astral_rift.2790 zh and en: '«有»' and '«have»' verb forms are game text"],
+    "reviewed": true
+  }
+}

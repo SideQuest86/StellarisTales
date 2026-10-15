@@ -52,6 +52,16 @@ def main():
     fallback = json.loads(fallback_file.read_text(encoding='utf-8')) if fallback_file.exists() else {}
     mechanical_file = BASE / 'out' / 'mechanical.json'
     mechanical = json.loads(mechanical_file.read_text(encoding='utf-8')) if mechanical_file.exists() else {}
+    # Final pass over rendered sentences (rendered/<group>.md → out/rendered-<group>.json): per-doc wording applied
+    # last; exceptions (sentences that cannot read naturally without rewriting game text) recorded in the ledger.
+    rendered, exceptions, rendered_reviewed = {}, [], set()
+    for f in sorted((BASE / 'out').glob('rendered-*.json')):
+        for sid, r in json.loads(f.read_text(encoding='utf-8')).items():
+            if r.get('reviewed'):
+                rendered_reviewed.add(sid)
+            for doc, keys in (r.get('docs') or {}).items():
+                rendered.setdefault(sid, {}).setdefault(doc, {}).update(keys or {})
+            exceptions += [f'{sid}: {e}' for e in r.get('exceptions') or []]
     rows, problems, changed_keys, covered, missing_groups = [], [], 0, 0, []
     issues = []
     for g in groups:
@@ -100,8 +110,9 @@ def main():
                     e = check(entry, problems, f'{sid} {doc} {key} (fallback)')
                     if e and key not in per_doc.get(doc, {}):
                         per_doc.setdefault(doc, {})[key] = e
-            # Rewording pass over mechanical phrases (work/mechanical.md): replaces earlier per-doc wording.
-            for doc, keys in (mechanical.get(sid) or {}).items():
+            # Rewording passes (mechanical phrases, then rendered sentences): replace earlier per-doc wording.
+            later = [(d, k) for d, k in (mechanical.get(sid) or {}).items()] + [(d, k) for d, k in (rendered.get(sid) or {}).items()]
+            for doc, keys in later:
                 for key, entry in (keys or {}).items():
                     if doc not in used or key not in used[doc]:
                         problems.append(f'{sid}: reworded key {key} not used in {doc}')
@@ -132,7 +143,17 @@ def main():
     if missing_groups:
         lines += ['', 'Groups without output: ' + ', '.join(missing_groups)]
     lines += ['', '## Validation problems (not merged)', ''] + [f'- {p}' for p in problems] or ['- none']
-    lines += ['', '## Reviewer issues (open)', ''] + [f'- {i}' for i in issues]
+    all_stories = {s for g in groups for s in g['stories']}
+    unconfirmed = sorted(all_stories - rendered_reviewed)
+    rendered_reviewed &= all_stories
+    print(f'rendered review: {len(rendered_reviewed)} of {total} confirmed; not confirmed: {unconfirmed[:20]}')
+    lines += ['', f'## Rendered-sentence review: {len(rendered_reviewed)} of {total} stories confirmed', '',
+              ('Not confirmed: ' + ', '.join(unconfirmed)) if unconfirmed else 'Every story with placeholders was confirmed.', '',
+              'First-pass reviewer notes are superseded for these stories by the rendered review; what remains are '
+              'the exceptions below (sentences that cannot read naturally without rewriting game text).', '']
+    lines += ['## Exceptions (game text would have to change)', ''] + [f'- {e}' for e in exceptions]
+    lines += ['', '## First-pass reviewer notes (stories without a rendered review)', '']
+    lines += [f'- {i}' for i in issues if i.split(':', 1)[0] not in rendered_reviewed]
     if not args.dry_run:
         (BASE / 'LEDGER.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
     print(f'covered {covered}/{total}, merged entries {changed_keys}, problems {len(problems)}, issues {len(issues)}, '

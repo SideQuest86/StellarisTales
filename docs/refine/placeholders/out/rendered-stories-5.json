@@ -1,0 +1,239 @@
+{
+  "event-marauder-4": {
+    "docs": {
+      "marauder.502": {"raider_khanate.GetRulerTitle": {"zh": "统治者", "en": "ruler", "omit": ["zh"]}},
+      "marauder.508": {"raider_khanate.GetRulerTitle": {"zh": "统治者", "en": "ruler", "omit": ["zh"]}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-marauder-505": {
+    "docs": {},
+    "exceptions": ["marauder.508: 'This is Great Khan the leader of the khanate' - title before the name slot is game text; no cleaner single phrase"],
+    "reviewed": true
+  },
+  "event-marauder-511": {
+    "docs": {},
+    "exceptions": ["marauder.513: zh '这位领袖其由于年老' - game text puts 其 right after the name slot; cannot reorder"],
+    "reviewed": true
+  },
+  "event-marauder-699": {
+    "docs": {
+      "marauder.701": {"Root.GetName": {"zh": "我们的帝国", "en": "our territory"}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-marauder-85": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-mega-9000": {
+    "docs": {
+      "mega.9121": {"From.GetName": {"zh": "这颗星球", "en": "this world"}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-mega-9003": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-mega-9006": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-mega-9010": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-namarian-3": {
+    "docs": {
+      "namarian.522": {"Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital"}}
+    },
+    "exceptions": [
+      "namarian.10: 'The contacted empire care little' - verb agreement comes from game text with a singular phrase",
+      "namarian.21: 'the one named this planet' - game text expects a proper name after 'named'"
+    ],
+    "reviewed": true
+  },
+  "event-necroids-200": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-necroids-201": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-necroids-202": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-necroids-255": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-necroids-310": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-1590": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-3036": {
+    "docs": {
+      "nomads.3036": {"pickup_planet.GetName": {"zh": "出发星球", "en": "the departure planet"}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-nomads-3050": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-3060": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-3095": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-4105": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-4700": {
+    "docs": {
+      "nomads.4705": {"event_target:player_country.GetSpeciesNamePlural": {"zh": "这个物种", "en": "the species", "omit": ["en"]}}
+    },
+    "exceptions": [
+      "nomads.4705: empty «» spans (zh 456, 459, 466; en 472, 475, 482) - no key is listed for them; needs a phrase or site-side handling",
+      "nomads.4705: zh 453 names the arkship twice (方舟舰 + 这艘舰船) - game text",
+      "situations:situation_nomad_economy: empty «» span (zh 486, en 487)"
+    ],
+    "reviewed": true
+  },
+  "event-nomads-4750": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-4800": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-50": {
+    "docs": {},
+    "exceptions": ["nomads.50 and event_chains:nomad_checklist_chain: 'aboard this planet' - game preposition used for a planet"],
+    "reviewed": true
+  },
+  "event-nomads-6005": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-6020": {
+    "docs": {
+      "nomads.6045": {"arkship_cargo_leader.GetHeSheCap": {"zh": "此人", "en": "this person"}}
+    },
+    "exceptions": [
+      "nomads.6045 en: 'prove them usefulness' and 'them self' - object pronoun used as a possessive/reflexive in game text"
+    ],
+    "reviewed": true
+  },
+  "event-nomads-6055": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-6060": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-6065": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-6070": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-6075": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-nomads-8010": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-operation-1000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-operation-1020": {
+    "docs": {
+      "operation.1020": {
+        "root.target.GetAdj": {"zh": "该国", "en": "rival"},
+        "target.GetAdj": {"zh": "该国", "en": "rival"}
+      },
+      "operation.1021": {"root.target.GetAdj": {"zh": "该国", "en": "rival"}},
+      "operation.1022": {"root.target.GetAdj": {"zh": "该国", "en": "rival"}}
+    },
+    "exceptions": [
+      "operation.1020 en 648: 'the other empire have also been invited' - verb agreement from game text",
+      "operation.1020 open issue 'Operation unnamed': no operation code name exists in the data, so it stays as is"
+    ],
+    "reviewed": true
+  },
+  "event-operation-2000": {
+    "docs": {
+      "operation.2000": {"target.solar_system.GetName": {"zh": "这个星系", "en": "this star"}}
+    },
+    "exceptions": [
+      "operation.2005 en 741: 'struck a a successful blow' - doubled article in game text",
+      "operation.2006 en 769: 'sabotage other in the star system' - game text has no noun after the adjective",
+      "espionage.1040 en 761: 'have have trapped' - game text typo"
+    ],
+    "reviewed": true
+  },
+  "event-operation-3000": {
+    "docs": {
+      "operation.3000": {
+        "smear_option_1.GetName": {"zh": "第一种手段", "en": "first approach"},
+        "smear_option_2.GetName": {"zh": "第二种手段", "en": "second approach"},
+        "smear_option_3.GetName": {"zh": "第三种手段", "en": "third approach"}
+      },
+      "operation.3001": {
+        "root.target.GetAdj": {"zh": "该国", "en": "rival"},
+        "smear_campaign_recipient.GetAdj": {"zh": "该国", "en": "rival"},
+        "smear_campaign_recipient.leader.GetName": {"zh": "这位领袖", "en": "the leader", "omit": ["en"]}
+      },
+      "operation.3020": {
+        "smear_campaign_instigator.GetAdj": {"zh": "该国", "en": "rival"},
+        "smear_campaign_recipient.GetAdj": {"zh": "该国", "en": "the other empire's"}
+      }
+    },
+    "exceptions": [
+      "operation.3001 en 840 and 854: 'the other empire hold' verb agreement; 'a rival plot to infiltrate the rival political system' - two different parties share one phrase",
+      "operation.3010 and operation.3011 en: 'enemies in the accuser' - preposition from game text",
+      "espionage.1070 en 943: 'many the species' lives' - adjective slot takes no article in game text",
+      "espionage.1070 en 946: 'the species-looking operatives' - compound adjective from game text"
+    ],
+    "reviewed": true
+  },
+  "event-operation-4000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-operation-5000": {
+    "docs": {},
+    "exceptions": ["operation.5000 open issue 'Operation unnamed': no operation code name exists in the data"],
+    "reviewed": true
+  },
+  "event-operation-5005": {
+    "docs": {
+      "operation.5035": {"snuffedout_country.GetAdj": {"zh": "该国", "en": "rival"}},
+      "operation.5036": {"snuffedout_country.GetAdj": {"zh": "该国", "en": "rival"}},
+      "operation.5037": {"snuffedout_country.GetAdj": {"zh": "该国", "en": "rival"}}
+    },
+    "exceptions": [
+      "operation.5005 open issue 'Operation unnamed': no operation code name exists in the data",
+      "espionage.1070 en 943 and 946 (see operation-3000): 'many the species' lives', 'the species-looking operatives'"
+    ],
+    "reviewed": true
+  },
+  "event-operation-5010": {
+    "docs": {
+      "operation.5035": {"snuffedout_country.GetAdj": {"zh": "该国", "en": "rival"}},
+      "operation.5036": {"snuffedout_country.GetAdj": {"zh": "该国", "en": "rival"}},
+      "operation.5037": {"snuffedout_country.GetAdj": {"zh": "该国", "en": "rival"}}
+    },
+    "exceptions": [
+      "espionage.1070 en 943 and 946 (see operation-3000): 'many the species' lives', 'the species-looking operatives'"
+    ],
+    "reviewed": true
+  },
+  "event-operation-5015": {
+    "docs": {},
+    "exceptions": ["operation.5016 en 1259: 'a worthy adversary us' - game text omits 'to'"],
+    "reviewed": true
+  },
+  "event-operation-5020": {
+    "docs": {
+      "operation.5020": {"from.target.GetSpeciesName": {"zh": "该物种", "en": "the species", "omit": ["en"]}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-operation-5025": {
+    "docs": {
+      "operation.5025": {"toxic_field_country.GetName": {"zh": "那个帝国", "en": "the other empire's"}}
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-operation-5030": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-operation-5040": {
+    "docs": {
+      "operation.5042": {"fromfrom.target.GetName": {"zh": "那个目标", "en": "target"}}
+    },
+    "exceptions": [
+      "operation.5040 zh 1318: '此人有' - the pronoun span includes 有 from game text"
+    ],
+    "reviewed": true
+  },
+  "event-operation-5045": {
+    "docs": {},
+    "exceptions": [
+      "operation.5045 en 1351: 'Get your house in order, personally!' - 'personally' is the only phrase that fits both sentences",
+      "espionage.1070 en 943 and 946 (see operation-3000)"
+    ],
+    "reviewed": true
+  },
+  "event-operation-5050": {
+    "docs": {},
+    "exceptions": ["espionage.1070 en 943 and 946 (see operation-3000)"],
+    "reviewed": true
+  },
+  "event-operation-5055": {
+    "docs": {
+      "operation.5057": {"target_country.GetAdj": {"zh": "该国", "en": "rival"}}
+    },
+    "exceptions": [
+      "operation.5055 en 1470: empty «» span after 'concede' - stray placeholder in game text"
+    ],
+    "reviewed": true
+  },
+  "event-operation-6000": {
+    "docs": {},
+    "exceptions": [
+      "operation.6010 en 1510 and 1518: 'by the name of the official' - no real name exists, the phrase stays",
+      "operation.6010 en 1516: 'Are personally responsible' - the pronoun slot renders as a verb; cannot be fixed by a phrase"
+    ],
+    "reviewed": true
+  }
+}

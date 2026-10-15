@@ -43,6 +43,28 @@
      "zh": "游戏里这里会出现你的科学船的舰名。",
      "en": "In the game, your science ship's name appears here."
     }
+   },
+   "Root.Owner.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "species",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现你的物种名称。",
+     "en": "In the game, your species' name appears here."
+    }
+   },
+   "Root.leader.GetHeSheCap": {
+    "zh": "此人",
+    "en": "they",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这位领袖的代词。",
+     "en": "In the game, the leader's pronoun appears here."
+    }
    }
   }
  }

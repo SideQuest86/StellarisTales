@@ -1,0 +1,142 @@
+{
+  "anomaly-layered-atmosphere-cat": {"reviewed": true},
+  "anomaly-leveled-cat": {"reviewed": true},
+  "anomaly-life-asteroid-category": {"reviewed": true},
+  "anomaly-life-barren-category": {
+    "exceptions": ["anomalies:life_barren_category: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-life-frozen-category": {
+    "exceptions": ["anomalies:life_frozen_category: placeholder renders as empty «» and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-life-gasgiant-category": {"reviewed": true},
+  "anomaly-life-in-darkness-cat": {"reviewed": true},
+  "anomaly-life-toxic-category": {
+    "exceptions": ["anomalies:life_toxic_category and anomaly.690: placeholder renders as empty «» in the atmosphere sentence and the worksheet has no keys line for it; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-living-metal-category": {"reviewed": true},
+  "anomaly-magma-megafauna-cat": {"reviewed": true},
+  "anomaly-missing-mass-cat": {"reviewed": true},
+  "anomaly-molten-base-cat": {"reviewed": true},
+  "anomaly-molten-metal-ocean-cat": {"reviewed": true},
+  "anomaly-moon-cat": {"reviewed": true},
+  "anomaly-moon-gasgiant-category": {
+    "docs": {
+      "anomaly.340": {
+        "From.GetName": {"zh": "这颗气态巨行星", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这颗气态巨行星的名称。", "en": "In the game, this gas giant's name appears here."}}
+      }
+    },
+    "exceptions": ["anomaly.6840: game text reads 'this gas giant is a peculiar gas giant', so the noun repeats in both languages; the phrase cannot remove it"],
+    "reviewed": true
+  },
+  "anomaly-mountain-uninhabitable-category": {
+    "docs": {
+      "special_projects:CRACK_THE_EGG": {
+        "Solar_System.GetName": {"zh": "这个", "en": "the star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}}
+      }
+    },
+    "exceptions": [
+      "anomalies:mountain_uninhabitable_category, anomaly.2520 and anomaly.2522: placeholder renders as empty «» with no keys line; needs key lookup",
+      "anomaly.6915: game text contains a broken placeholder '**Error - for GCs**' in zh and en, and the en line ends mid-sentence ('we find a'); not fixable by a phrase"
+    ],
+    "reviewed": true
+  },
+  "anomaly-mysterious-ringing-category": {
+    "exceptions": ["infernals.3210 zh: an unmatched « opens a sentence in game text; no phrase can fix it"],
+    "reviewed": true
+  },
+  "anomaly-mysterious-rock-cat": {
+    "exceptions": ["anomaly.2005: one placeholder is used for both the crew of the ship and the planet's wind, so 'the crew of this planet' cannot be fixed by a single phrase"],
+    "reviewed": true
+  },
+  "anomaly-nano-swarm-cat": {"reviewed": true},
+  "anomaly-nuke-planet-cat": {"reviewed": true},
+  "anomaly-object-gasgiant-category": {"reviewed": true},
+  "anomaly-object-uninhabitable-category": {
+    "exceptions": ["anomalies:object_uninhabitable_category and anomaly.2540: placeholder renders as empty «» with no keys line; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-obsidian-planet-cat": {"reviewed": true},
+  "anomaly-optical-phenomena-cat": {"reviewed": true},
+  "anomaly-orbital-resonance-cat": {"reviewed": true},
+  "anomaly-origin-asteroid-category": {
+    "docs": {
+      "anomaly.1": {
+        "From.GetName": {"zh": "这颗小行星", "en": "the asteroid", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-outgassing-category": {"reviewed": true},
+  "anomaly-paragon-beholder-category": {"reviewed": true},
+  "anomaly-peculiar-patterns-cat": {"reviewed": true},
+  "anomaly-planet-thrusters-cat": {"reviewed": true},
+  "anomaly-plasma-trails-cat": {"reviewed": true},
+  "anomaly-plasma-volcano-cat": {"reviewed": true},
+  "anomaly-poisoned-atmosphere-cat": {
+    "exceptions": ["extreme_frontiers.140 zh: '这些物种都被被逐一灭绝了' has a duplicated character in game text"],
+    "reviewed": true
+  },
+  "anomaly-proj-moon-cat": {"reviewed": true},
+  "anomaly-pulsating-object-toxic-cat": {"reviewed": true},
+  "anomaly-radioactive-planet-cat": {
+    "exceptions": ["anomalies and anomaly.680: placeholder renders as empty «» with no keys line; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-rainbow-rivers-cat": {"reviewed": true},
+  "anomaly-rapid-desertification-cat": {"reviewed": true},
+  "anomaly-sea-cat": {"reviewed": true},
+  "anomaly-sea-crystal-cat": {"reviewed": true},
+  "anomaly-shearing-force-cat": {"reviewed": true},
+  "anomaly-ship-gasgiant-category": {
+    "docs": {
+      "special_projects:GAS_GIANT_SHIP_PROJECT": {
+        "From.GetName": {"zh": "这颗气态巨行星", "en": "this gas giant", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现这颗气态巨行星的名称。", "en": "In the game, this gas giant's name appears here."}}
+      }
+    },
+    "exceptions": ["anomaly.2560 zh: '对«这颗气态巨行星»的深度扫描显示这颗气态巨行星' repeats the gas giant noun, and the second noun is game text"],
+    "reviewed": true
+  },
+  "anomaly-shipyard-uninhabitable-category": {"reviewed": true},
+  "anomaly-signal-gasgiant-category": {
+    "docs": {
+      "anomaly.5000": {
+        "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这位科学家的称谓。", "en": "In the game, the name of this scientist appears here."}}
+      },
+      "special_projects:GAS_GIANT_SIGNAL": {
+        "From.GetName": {"zh": "这颗气态巨行星", "en": "this gas giant", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现这颗气态巨行星的名称。", "en": "In the game, this gas giant's name appears here."}}
+      },
+      "anomaly.5002": {
+        "From.From.From.GetName": {"zh": "那颗星球", "en": "that planet", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现那颗气态巨行星的名称。", "en": "In the game, that gas giant's name appears here."}}
+      },
+      "special_projects:GAS_GIANT_RELOCATION": {
+        "baldarak_planet.GetName": {"zh": "那颗气态巨行星", "en": "that gas giant", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现那颗气态巨行星的名称。", "en": "In the game, that gas giant's name appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-signal-uninhabitable-category": {
+    "exceptions": ["anomalies:signal_uninhabitable_category: placeholder renders as empty «» with no keys line; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-sol-wasteland-category": {"reviewed": true},
+  "anomaly-solar-uninhabitable-category": {
+    "exceptions": ["anomalies:solar_uninhabitable_category: placeholder renders as empty «» with no keys line; needs key lookup"],
+    "reviewed": true
+  },
+  "anomaly-spires-of-light-category": {
+    "docs": {
+      "infernals.500": {
+        "Leader.GetName": {"zh": "这位领袖", "en": "the leader", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现这位科学家的称谓。", "en": "In the game, the name of this scientist appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "anomaly-spontaneous-explosions-cat": {"reviewed": true},
+  "anomaly-star-lifting-category": {"reviewed": true}
+}

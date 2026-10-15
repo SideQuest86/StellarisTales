@@ -150,6 +150,86 @@ class EffectTests(unittest.TestCase):
         self.assertTrue(res['bullets']['en'] and res['bullets']['zh'])
         self.assertEqual(res['phase'], 'start')
 
+    # Second-pass handlers, real game snippets (source lines checked against the game files, see docs/EFFECTS.md).
+    # events/biogenesis_origin_events.txt:1690
+    def test_terraform_process_names_the_planet_class(self):
+        out = describe('capital_scope = { start_terraform_process = pc_hive }')
+        self.assertEqual(out[0]['kind'], 'planet')
+        self.assertIn('Hive', out[0]['label']['en'])
+        self.assertEqual(out[0]['object'], 'pc_hive')
+        self.assertEqual(out[0]['target']['en'], 'the capital planet')
+
+    # events/biogenesis_events.txt:480
+    def test_add_tradition_uses_the_game_name(self):
+        out = describe('add_tradition = tr_purity_adopt')
+        self.assertEqual(out[0]['object'], 'tr_purity_adopt')
+        self.assertIn('tradition', out[0]['label']['en'])
+        self.assertNotIn('unprocessed', out[0]['label']['en'])
+
+    # common/scripted_effects/00_scripted_effects.txt:1501
+    def test_crisis_strength_multiplier_keeps_the_number(self):
+        out = describe('multiply_crisis_strength = 2')
+        self.assertEqual(out[0]['value'], 2.0)
+        self.assertIn('2', out[0]['label']['zh'])
+
+    # events/anomaly_events_2.txt:2204 (block form with target and value)
+    def test_add_favors_block_form(self):
+        out = describe('add_favors = { target = event_target:book_writer value = 1 }')
+        self.assertEqual(out[0]['value'], 1.0)
+        self.assertIn('avors', out[0]['label']['en'])
+
+    # events/cosmic_storms_events_1.txt:2665
+    def test_return_leader_from_exile(self):
+        out = describe('return_leader_from_exile = green_skies_hostage')
+        self.assertEqual(out[0]['kind'], 'leader')
+        self.assertIn('returns', out[0]['label']['en'])
+
+    # events/game_start.txt: inline-script parameter placeholders are templates, not effects
+    def test_template_placeholders_are_not_effects(self):
+        before = dict(CTX.stats['template'])
+        out = describe('$POP_GROUP$ = { save_event_target_as = source_pop_group }')
+        self.assertEqual(out, [])
+        self.assertEqual(sum(CTX.stats['template'].values()), sum(before.values()) + 1)
+
+    def test_no_unhandled_keys_over_every_record(self):
+        import effects_coverage as C
+        ctx, _ = C.run()
+        self.assertEqual(ctx.stats['unhandled'], {})
+
+    def test_origins_without_description_still_get_start_effects(self):
+        origins = {o['id']: o for o in json.loads((ROOT / 'public/data/origins.json').read_text(encoding='utf-8'))}
+        recs = {i: record(i) for i in ('origin.60', 'shroud.8000')}
+        d = O.describe_origin(origins['origin_doomsday'], CTX, recs)
+        self.assertTrue(d['negativeBullets']['en'])
+        self.assertTrue(any(e.get('modifier') == 'doomsday_1' for e in d['effects']))
+        e = O.describe_origin(origins['origin_endbringers'], CTX, recs)
+        self.assertTrue(any(x.get('kind') == 'if' for x in e['effects']))
+
+    # Label language (docs/EFFECTS.md): internal-state conditions read as one generic phrase, the raw condition stays in `detail`.
+    def test_internal_conditions_are_generic_with_hidden_detail(self):
+        for script in ('check_variable = { which = first_contact_skill_var value > 3 }', 'is_same_value = event_target:contact', 'has_country_flag = seen_it'):
+            lab = E.cond_label(parse(script), CTX)
+            self.assertEqual(lab['zh'], '满足此前剧情设定的条件时')
+            self.assertEqual(lab['en'], 'if an earlier story condition holds')
+            self.assertTrue(lab['detail'])
+        lab = E.cond_label(parse('is_site_current_stage_score > 3'), CTX)
+        self.assertEqual((lab['zh'], lab['en']), ('按调查进度', 'depending on progress'))
+
+    def test_glossary_conditions_and_scopes_are_translated(self):
+        lab = E.cond_label(parse('NOT = { is_hive_empire = yes } any_system_planet = { is_colony = yes }'), CTX)
+        self.assertNotRegex(lab['zh'], '[A-Za-z]')
+        self.assertIn('matching planet in the system', lab['en'])
+        out = describe('random_system_planet = { limit = { is_capital = no } add_deposit = d_zro_deposit_1 }')
+        self.assertNotRegex(out[0]['label']['zh'], '[A-Za-z]')
+
+    def test_chinese_labels_have_no_latin_words_and_english_no_raw_keys(self):
+        import effects_coverage as C
+        if not (ROOT / 'public/effects').exists():
+            self.skipTest('run scripts/compile-effects.py first')
+        r = C.label_language_report()
+        self.assertEqual(r['zhLatinWords'], 0, r['top'])
+        self.assertEqual(r['enRawKeys'], 0)
+
     def test_coverage_floor_over_every_record(self):
         total = unhandled = docs = 0
         ctx = E.load_ctx()

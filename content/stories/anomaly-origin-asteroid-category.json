@@ -56,8 +56,11 @@
  "placeholderDocs": {
   "anomaly.1": {
    "From.GetName": {
-    "zh": "它",
-    "en": "this one",
+    "zh": "这颗小行星",
+    "en": "the asteroid",
+    "omit": [
+     "zh"
+    ],
     "note": {
      "zh": "游戏里这里会出现这颗小行星的名称。",
      "en": "In the game, this asteroid's name appears here."

@@ -1,0 +1,250 @@
+{
+  "event-shroud-510": {"reviewed": true},
+  "event-shroud-515": {"reviewed": true},
+  "event-shroud-520": {"reviewed": true},
+  "event-shroud-525": {"reviewed": true},
+  "event-shroud-530": {"reviewed": true},
+  "event-shroud-535": {"reviewed": true},
+  "event-shroud-540": {"reviewed": true},
+  "event-shroud-545": {"reviewed": true},
+  "event-shroud-550": {"reviewed": true},
+  "event-shroud-555": {"reviewed": true},
+  "event-shroud-560": {"reviewed": true},
+  "event-shroud-565": {"reviewed": true},
+  "event-shroud-570": {
+    "docs": {
+      "shroud.570": {
+        "councilor_harmony_leader_1.GetTitle": {
+          "zh": "内阁成员",
+          "en": "councilor",
+          "omit": ["en"],
+          "note": {"zh": "游戏里这里会出现这位内阁成员的名字。", "en": "In the game, this council member's name appears here."}
+        },
+        "councilor_harmony_leader_2.GetTitle": {
+          "zh": "内阁成员",
+          "en": "councilor",
+          "omit": ["en"],
+          "note": {"zh": "游戏里这里会出现这位内阁成员的名字。", "en": "In the game, this council member's name appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-shroud-60": {"reviewed": true},
+  "event-shroud-700": {"reviewed": true},
+  "event-shroud-705": {"reviewed": true},
+  "event-shroud-710": {"reviewed": true},
+  "event-shroud-715": {"reviewed": true},
+  "event-shroud-720": {"reviewed": true},
+  "event-shroud-725": {"reviewed": true},
+  "event-shroud-730": {"reviewed": true},
+  "event-shroud-735": {
+    "docs": {
+      "shroud.737": {
+        "This.GetName": {
+          "zh": "这颗星球",
+          "en": "the planet",
+          "note": {"zh": "游戏里这里会出现这颗殖民星球的名称。", "en": "In the game, the name of this colony planet appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-shroud-740": {"reviewed": true},
+  "event-shroud-745": {"reviewed": true},
+  "event-shroud-750": {"reviewed": true},
+  "event-shroud-755": {"reviewed": true},
+  "event-shroud-760": {"reviewed": true},
+  "event-shroud-765": {
+    "docs": {
+      "shroud.765": {
+        "discordant_council_leader_1.GetTitle": {
+          "zh": "内阁成员",
+          "en": "councilor",
+          "omit": ["en"],
+          "note": {"zh": "游戏里这里会出现这位内阁成员的名字。", "en": "In the game, this council member's name appears here."}
+        },
+        "discordant_council_leader_2.GetTitle": {
+          "zh": "内阁成员",
+          "en": "councilor",
+          "omit": ["en"],
+          "note": {"zh": "游戏里这里会出现这位内阁成员的名字。", "en": "In the game, this council member's name appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-shroud-770": {"reviewed": true},
+  "event-story-220": {
+    "exceptions": [
+      "story.220: en '«local» is home to a crystal construct' reads awkwardly; the same key also fills 'in the «local» system' in this story"
+    ],
+    "reviewed": true
+  },
+  "event-story-330": {"reviewed": true},
+  "event-strange-worlds-1": {"reviewed": true},
+  "event-strange-worlds-100": {"reviewed": true},
+  "event-strange-worlds-1045": {"reviewed": true},
+  "event-strange-worlds-125": {"reviewed": true},
+  "event-strange-worlds-150": {
+    "docs": {
+      "strange_worlds.155": {
+        "Root.Owner.GetSpeciesNamePlural": {
+          "zh": "该物种",
+          "en": "people",
+          "note": {"zh": "游戏里这里会出现你们这一族的称呼。", "en": "In the game, the name of your people appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-strange-worlds-175": {"reviewed": true},
+  "event-strange-worlds-2020": {"reviewed": true},
+  "event-strange-worlds-30": {"reviewed": true},
+  "event-strange-worlds-50": {
+    "exceptions": [
+      "strange_worlds.65: en 'become a staple of «this planet» diet' reads awkwardly; the key is also used for 'on «this planet»' in the same doc"
+    ],
+    "reviewed": true
+  },
+  "event-strange-worlds-70": {"reviewed": true},
+  "event-syndaw-21": {
+    "docs": {
+      "syndaw.25": {
+        "malfunctioning_leader.GetName": {
+          "zh": "这位领袖",
+          "en": "the leader",
+          "omit": ["en"],
+          "note": {"zh": "游戏里这里会出现这位指挥单位的名称。", "en": "In the game, the name of this command unit appears here."}
+        }
+      },
+      "syndaw.26": {
+        "malfunctioning_leader.GetName": {
+          "zh": "这位领袖",
+          "en": "the leader",
+          "omit": ["en"],
+          "note": {"zh": "游戏里这里会出现这位管理单位的名称。", "en": "In the game, the name of this management unit appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-syndaw-400": {
+    "docs": {
+      "syndaw.505": {
+        "Root.Owner.GetSpeciesName": {
+          "zh": "该物种",
+          "en": "our",
+          "note": {"zh": "游戏里这里会出现你们这一族的设计风格。", "en": "In the game, your species' design appears here."}
+        }
+      },
+      "syndaw.525": {
+        "Root.Owner.GetSpeciesName": {
+          "zh": "该物种",
+          "en": "our",
+          "note": {"zh": "游戏里这里会出现你们这一族的名称。", "en": "In the game, your species' name appears here."}
+        }
+      },
+      "syndaw.526": {
+        "Root.Owner.GetSpeciesName": {
+          "zh": "该物种",
+          "en": "our",
+          "note": {"zh": "游戏里这里会出现你们这一族的名称。", "en": "In the game, your species' name appears here."}
+        }
+      },
+      "syndaw.1025": {
+        "current_uprising_originator.GetAdj": {
+          "zh": "有机",
+          "en": "organic",
+          "omit": ["zh", "en"],
+          "note": {"zh": "游戏里这里不单独显示这个形容词。", "en": "In the game, this adjective is not shown separately here."}
+        }
+      },
+      "syndaw.1030": {
+        "LastKilledCountryName": {
+          "zh": "那个帝国",
+          "en": "rival",
+          "note": {"zh": "游戏里这里会出现被灭亡帝国的名称。", "en": "In the game, the name of the destroyed empire appears here."}
+        }
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "event-terra-10": {
+    "exceptions": [
+      "terra.35, terra.40, terra.45, terra.55, terra.60, terra.65, terra.70, terra.75, terra.80: empty substitution «» for the planet-type word (zh and en); no listed key covers it",
+      "terra.50: en 'an lush' article error from the 'into a [class] lush world' frame; the class phrase is shared"
+    ],
+    "reviewed": true
+  },
+  "event-terra-30": {"reviewed": true},
+  "event-toxoids-1": {
+    "exceptions": [
+      "toxoids.5, toxoids.10, toxoids.15: empty substitution «» in 'the «»'s surface' and 'the «» uninhabitable' lines (zh and en); no listed key covers it"
+    ],
+    "reviewed": true
+  },
+  "event-toxoids-499": {
+    "exceptions": [
+      "toxoids.500: empty substitution «» in several zh and en lines (the planet-type word); no listed key covers it"
+    ],
+    "reviewed": true
+  },
+  "event-unrest-50": {
+    "docs": {
+      "situations:situation_planetary_revolt": {
+        "Owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们政府的名称。", "en": "In the game, the name of our government appears here."}
+        },
+        "owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们政府的名称。", "en": "In the game, the name of our government appears here."}
+        }
+      },
+      "unrest.55": {
+        "Owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们政府的名称。", "en": "In the game, the name of our government appears here."}
+        }
+      },
+      "unrest.4000": {
+        "Owner.GetGovernmentName": {
+          "zh": "政府",
+          "en": "government",
+          "note": {"zh": "游戏里这里会出现我们政府的名称。", "en": "In the game, the name of our government appears here."}
+        }
+      },
+      "unrest.4055": {
+        "Root.GetName": {
+          "zh": "这颗星球",
+          "en": "the planet",
+          "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "unrest.4200: en 'the history of «the species»kind' runs the species phrase into the word 'kind'; game text",
+      "unrest.4200: empty substitution «» in several zh and en lines (the seized object); no listed key covers it",
+      "situations:situation_nomad_economy: empty «» in the zh line and at the end of the en line; no listed key covers it"
+    ],
+    "reviewed": true
+  },
+  "event-uplift-6000": {
+    "exceptions": [
+      "uplift.6010: en 'The dominant species on «this planet», «this planet»' and 'This planet have' / 'the tropical «planet»' reuse the planet phrase for a species and an adjective; the same key stands for the planet elsewhere",
+      "uplift.7210, uplift.7215: en 'newly-uplifted «uplifted»' and 'the uplifted «uplifted»' double the word; one key for every use in these docs",
+      "uplift.6010: zh '«这颗星球»上的主导物种，«这颗星球»' repeats the planet phrase; shared key"
+    ],
+    "reviewed": true
+  }
+}

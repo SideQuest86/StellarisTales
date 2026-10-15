@@ -1,0 +1,127 @@
+{
+  "event-uplift-7500": {
+    "docs": {
+      "uplift.7525": {"Root.Owner.GetSpeciesNamePlural": {"zh": "这个物种", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-utopia-1": {
+    "exceptions": ["utopia.2 en: 'The other empire engineers' merges the empire phrase with 'engineers'; game text, kept"],
+    "reviewed": true
+  },
+  "event-utopia-2000": {"reviewed": true},
+  "event-utopia-2500": {
+    "docs": {
+      "utopia.2505": {"From.GetSpeciesNamePlural": {"zh": "该物种", "en": "new species", "note": {"zh": "游戏里这里会出现他们新改的物种名称。", "en": "In the game, the species' new name appears here."}}},
+      "cyber.2100": {"owner.GetSpeciesHandName": {"zh": "这只手", "en": "hand", "note": {"zh": "游戏里这里会出现物种的手。", "en": "In the game, the species' hand appears here."}}},
+      "cyber.300": {"Owner.Species.GetName": {"zh": "该物种", "en": "species", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}},
+      "cyber.515": {"Ruler.GetTitle": {"zh": "这位领袖", "en": "leader", "note": {"zh": "游戏里这里会出现领袖的称呼。", "en": "In the game, the leader's title appears here."}}}
+    },
+    "exceptions": ["situations:situation_cyberization_hive and situations:situation_cyberization: 'Pops to receive implants next month: «»' render an empty token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-utopia-2550": {
+    "docs": {
+      "synth.300": {"owner.species.GetName": {"zh": "该物种", "en": "species", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}}
+    },
+    "exceptions": ["situations:situation_digitization: 'Pops to be digitized next month: «»' renders an empty token missing from the key list; no phrase assigned"],
+    "reviewed": true
+  },
+  "event-utopia-2600": {
+    "docs": {
+      "utopia.2606": {"psionic_leader.GetName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这位领袖本人。", "en": "In the game, the leader's own name appears here."}}},
+      "utopia.2607": {"psionic_leader.GetName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这位领袖本人。", "en": "In the game, the leader's own name appears here."}}},
+      "utopia.2608": {"psionic_leader.GetName": {"zh": "这位领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现这位领袖。", "en": "In the game, the leader appears here."}}}
+    },
+    "exceptions": ["utopia.2608: literal «**Error - for GCs**» placeholder in the game text; kept"],
+    "reviewed": true
+  },
+  "event-utopia-29": {
+    "docs": {
+      "utopia.30": {"dysonsphere_builder.GetName": {"zh": "建造方", "en": "the builders", "note": {"zh": "游戏里这里会出现建造戴森球的一方。", "en": "In the game, the party building the Dyson Sphere appears here."}}},
+      "utopia.33": {
+        "dyson_sphere_neighbor.GetRulerName": {"zh": "统治者本人", "en": "ruler", "note": {"zh": "游戏里这里会出现对方统治者的称呼。", "en": "In the game, the other side's ruler appears here."}},
+        "dysonsphere_builder.GetRulerName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现建造方统治者的称呼。", "en": "In the game, the builder's ruler appears here."}}
+      },
+      "utopia.35": {
+        "dyson_sphere_neighbor.GetRulerName": {"zh": "统治者本人", "en": "ruler", "note": {"zh": "游戏里这里会出现对方统治者的称呼。", "en": "In the game, the other side's ruler appears here."}},
+        "dysonsphere_builder.GetRulerName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现建造方统治者的称呼。", "en": "In the game, the builder's ruler appears here."}}
+      },
+      "utopia.36": {
+        "dyson_sphere_neighbor.GetRulerName": {"zh": "统治者本人", "en": "ruler", "note": {"zh": "游戏里这里会出现对方统治者的称呼。", "en": "In the game, the other side's ruler appears here."}},
+        "dysonsphere_builder.GetRulerName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现建造方统治者的称呼。", "en": "In the game, the builder's ruler appears here."}}
+      }
+    },
+    "reviewed": true
+  },
+  "event-utopia-4000": {
+    "docs": {
+      "utopia.4002": {"dyson_system.GetName": {"zh": "这里", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的称呼。", "en": "In the game, this system's name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "event-utopia-4100": {"reviewed": true},
+  "event-utopia-50": {
+    "docs": {
+      "utopia.106": {"ointment_name.GetName": {"zh": "精华", "en": "this system", "note": {"zh": "游戏里这里会出现这款药膏的名称。", "en": "In the game, the name of this ointment's source system appears here."}}},
+      "utopia.59": {"volunteer_leader.GetName": {"zh": "本人", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的称呼。", "en": "In the game, the scientist appears here."}}},
+      "utopia.64": {"volunteer_leader.GetName": {"zh": "本人", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的称呼。", "en": "In the game, the scientist appears here."}}}
+    },
+    "exceptions": ["utopia.59 en: 'science leader the scientist' stacks the title and role; kept", "utopia.62 zh/en: standalone «本人» title; kept", "utopia.63 en: 'claim«they»', 'theyre' and '«Are»' come from the game's pronoun template; kept"],
+    "reviewed": true
+  },
+  "event-utopia-80": {"reviewed": true},
+  "great-khan": {
+    "docs": {
+      "marauder.517": {"planet_former_owner.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}}
+    },
+    "exceptions": ["marauder.504/516/517/518/519: sentences with an empty «» token missing from the key list; no phrase assigned", "marauder.550 zh 572 / en 592: the species phrase appears for two different species in one sentence; game text, kept", "marauder.510 en 656: 'So ends the reign of «in person»' reads oddly; the same key is used in 'Great Khan in person'; kept"],
+    "reviewed": true
+  },
+  "paragon-renowned-aturion": {"reviewed": true},
+  "paragon-renowned-borin": {"reviewed": true},
+  "paragon-renowned-gia-zumon": {"reviewed": true},
+  "paragon-renowned-kai-sha": {"reviewed": true},
+  "paragon-renowned-lysator-syng": {"reviewed": true},
+  "paragon-renowned-nasuz-demetor": {
+    "docs": {
+      "paragon.41610": {"Root.GetName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这位档案员的称呼。", "en": "In the game, the archivist's name appears here."}}},
+      "paragon.41620": {"Root.GetName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这位档案员的称呼。", "en": "In the game, the archivist's name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "paragon-renowned-nona": {
+    "docs": {
+      "paragon.40220": {"Root.GetFirstName": {"zh": "", "en": "the leader", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这位领袖的名字。", "en": "In the game, the leader's first name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "paragon-renowned-qla-minder": {"reviewed": true},
+  "paragon-renowned-shuladun": {"reviewed": true},
+  "paragon-renowned-ulastar": {
+    "docs": {
+      "paragon.41510": {"Root.GetName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这位神秘人的称呼。", "en": "In the game, the mystic's name appears here."}}}
+    },
+    "reviewed": true
+  },
+  "paragon-renowned-uld-dagr": {"reviewed": true},
+  "paragon-renowned-vas-the-gilded": {"reviewed": true},
+  "paragon-renowned-vyctor-jariden": {"reviewed": true},
+  "paragon-renowned-xondar": {
+    "docs": {
+      "special_projects:XONDAR_VALUABLE_ALLOYS": {"event_target:renowned_materialist1.GetName": {"zh": "本人", "en": "the admiral", "note": {"zh": "游戏里这里会出现这位舰队司令的称呼。", "en": "In the game, the fleet commander's name appears here."}}}
+    },
+    "exceptions": ["paragon.40920 en: 'within the our borders' is game text; kept"],
+    "reviewed": true
+  },
+  "paragon-renowned-zosira-ktun": {"reviewed": true},
+  "the-shroud": {
+    "docs": {
+      "utopia.3056": {"Root.GetName": {"zh": "这个帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}},
+      "utopia.3401": {"chosen_one.GetRegnalName": {"zh": "本人", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现这位统治者本人。", "en": "In the game, the ruler's own name appears here."}}},
+      "utopia.3341": {"Root.GetSpeciesAdj": {"zh": "该族", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容。", "en": "In the game, your species' adjective appears here."}}}
+    },
+    "exceptions": ["utopia.3192/3333/3334/3340: literal «**Error - for GCs**» placeholder in the game text; kept", "utopia.3401 en: 'the species' psychic' stacks the species adjective with a noun; game wording, kept", "utopia.3304/3306/3307/2658 en: '« telepaths»' spacing comes from the game text; kept"],
+    "reviewed": true
+  }
+}

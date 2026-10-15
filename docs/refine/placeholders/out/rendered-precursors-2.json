@@ -1,0 +1,96 @@
+{
+  "site-site-lesser-messenger": {"reviewed": true},
+  "site-site-lost-moments": {"reviewed": true},
+  "site-site-moon-bump": {"reviewed": true},
+  "site-site-orbital-rain": {"reviewed": true},
+  "site-site-percussive-maintenance": {
+    "exceptions": [],
+    "reviewed": true
+  },
+  "site-site-phoenix-collective": {"reviewed": true},
+  "site-site-polaris-seed-vault": {"reviewed": true},
+  "site-site-robot-debris": {
+    "exceptions": ["ancrel.6255 zh: '这颗小行星' calls the body an asteroid; game text, the phrase reads this planet as intended"],
+    "reviewed": true
+  },
+  "site-site-ruined-reactors": {"reviewed": true},
+  "site-site-ruins-of-shallash": {
+    "exceptions": [
+      "federations2.6: 'that species' and 'the other peoples' both name the xenophobic species in one story; kept as game text distinguishes singular and plural",
+      "federations2.6 en: 'pon their first encounter' is missing its first letter in game text"
+    ],
+    "reviewed": true
+  },
+  "site-site-shot-into-the-ground": {"reviewed": true},
+  "site-site-sky-glow-hymn": {"reviewed": true},
+  "site-site-star-petal": {"reviewed": true},
+  "site-site-strange-flows": {"reviewed": true},
+  "site-site-target-from-orbit": {"reviewed": true},
+  "site-site-the-chosen-backstory": {"reviewed": true},
+  "site-site-the-library": {"reviewed": true},
+  "site-site-tiyanki-graveyard": {"reviewed": true},
+  "site-site-toxic-matrix": {"reviewed": true},
+  "site-site-trench-world": {"reviewed": true},
+  "site-site-warmer-climates": {"reviewed": true},
+  "site-the-host": {"reviewed": true},
+  "site-zevox-digsite": {
+    "docs": {
+      "archaeological_site_types:zevox_digsite": {
+        "Root.Planet.Orbit.GetName": {
+          "zh": "这颗星球",
+          "en": "the parent planet",
+          "note": {"zh": "这里会出现这颗卫星所绕行的母星的名称。", "en": "In the game, the name of this moon's parent planet appears here."}
+        }
+      }
+    },
+    "exceptions": ["unique.80 en: lowercase 'this planet' starting a sentence is game text"],
+    "reviewed": true
+  },
+  "the-oracle": {
+    "exceptions": ["ancrel.4031 zh: 'has有着有一座' repetition is game text"],
+    "reviewed": true
+  },
+  "the-sentinels": {
+    "docs": {
+      "ancrel.4065": {
+        "missing_archaeologist.GetName": {
+          "zh": "这位考古学家",
+          "en": "the archaeologist",
+          "note": {"zh": "游戏里这里会出现失踪的考古学家的名字。", "en": "In the game, the name of the missing archaeologist appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "ancrel.4065 en: 'They were' carries a verb in the phrase; game text",
+      "ancrel.4066 zh: 此人 used for two pronouns in one sentence; game text wording",
+      "ancrel.4077: 'our capital' assumes the owner is the player; the game key is from.owner"
+    ],
+    "reviewed": true
+  },
+  "vultaum": {
+    "docs": {
+      "ancrel.10111": {
+        "leading_vultaum_research_scientist.GetName": {
+          "zh": "这位科学家", "en": "the lead scientist", "omit": ["zh"],
+          "note": {"zh": "游戏里这里会出现领导研究项目的科学家的名字。", "en": "In the game, the name of the lead research scientist appears here."}
+        }
+      }
+    },
+    "exceptions": [
+      "precursor.101, precursor.102, ancrel.10100, ancrel.10110, VULTAUM_ARCHEOLOGY_2: empty «» after repeated noun or a stat name; site rule",
+      "precursor.20, precursor.25: empty «» in zh 'at «»' after repeated noun; site rule"
+    ],
+    "reviewed": true
+  },
+  "yuht": {
+    "exceptions": [
+      "precursor.505, 506, 520, 525, 601, 602: empty «» after repeated noun in several sentences; site rule",
+      "over.50: the asteroid name is shown as 'asteroid' and the cache phrase as 'there'; open issue resolved"
+    ],
+    "reviewed": true
+  },
+  "zroni": {
+    "exceptions": ["archaeological_site_types:zroni_digsite_5: empty «» in zh and en after repeated noun; site rule"],
+    "reviewed": true
+  }
+}
