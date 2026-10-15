@@ -69,6 +69,9 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 
 ## Refinement 2026-10 (Markdown guides, placeholders, typography, navigation, audio)
 
+- **Live: v4.2.0 (`175c028c`) at https://sidequest86.github.io/StellarisTales/**; verified live 2026-10-15 with
+  verify-refine-reader / -chrome / -audio and verify-reader-v4 (all passed, 0 page errors). Locally also verify-museum
+  (268 checks), verify-ui-capture and verify-gpu (RTX 170 fps breathing). Budget: 2 of 40 weekly points.
 - Start with [docs/refine/README.md](docs/refine/README.md): work split, files, evidence, limits. Audit per category:
   [docs/refine/AUDIT.md](docs/refine/AUDIT.md); placeholder ledger with open reviewer issues:
   [docs/refine/placeholders/LEDGER.md](docs/refine/placeholders/LEDGER.md); fonts and licences: [docs/FONTS.md](docs/FONTS.md).
