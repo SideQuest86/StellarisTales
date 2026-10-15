@@ -62,3 +62,21 @@ max 65.8 KB, mean 22.5 KB), img-hd 5.2 MB (258 files, max 144 KB), fetched only 
 | `public/museum/ui/*` game textures | 5 | 0 | UI chrome, not shown large |
 | `public/music/cover.webp` 600x600 | 1 | 0 | already large enough |
 | `public/mark.svg` | 1 | 0 | vector |
+
+## Licences by asset class
+
+| Asset class | Source | Licence / basis | Notes |
+| --- | --- | --- | --- |
+| Event pictures, specimen icons, museum UI textures, album cover | Stellaris game files (Paradox Interactive), read-only local installation | Paradox content, shown unmodified as in the rest of this fan archive; derivatives are resolution changes only | originals kept in `public/art`, `public/museum/img` |
+| Super-resolved derivatives (`public/art-hd`, `public/museum/img-hd`) | produced locally by `scripts/images/batch.py` | same basis as the originals; tool: Real-ESRGAN code BSD-3-Clause, weights BSD-3 (sha256 in this file) | no upload, no paid service |
+| 3D specimen models (`public/museum/models`) | generated locally (Zero123++ Apache-2.0, Hunyuan3D-2mv Tencent community licence) | unofficial interpretations authorised by the user; `licenceNote` per model in the manifest | see docs/museum/MODELS.md |
+| Fonts | Google Fonts (Newsreader, Noto Serif SC, Noto Sans SC) | SIL Open Font License 1.1 | see docs/FONTS.md |
+| `public/mark.svg` | drawn for this site | project's own | vector, never upscaled |
+
+## Reproducibility and rollback (verified 2026-10-15)
+
+- Re-running `python scripts/images/batch.py icons` (st-tools venv, RTX 5070, 383 s) reproduced all 258 icons and the
+  manifest byte-for-byte (no changes in git).
+- Rollback: `scripts/verify-rollback.mjs` against a build without `art-hd/` and `museum/img-hd/` — desktop close-up,
+  DPR-2 phone `srcset` and museum detail all fall back to the originals, 0 page errors (the museum image has an
+  `onerror` fallback to the original; the close-up canvas falls back in `archive-scene.js`).
