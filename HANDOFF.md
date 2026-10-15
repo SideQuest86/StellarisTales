@@ -112,6 +112,14 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
     58 origins with starting effects (endbringers / doomsday via their start events), every document without
     effects classified (no effects 939 · chaining only 1,029 · bookkeeping only 678 · no record 58 · other 0);
     Chinese labels contain no English fallbacks (`scripts/effects_gloss.py`, check in effects_coverage.py).
+  - Final placeholder state: after the Haiku rendered review, an independent Sonnet second review
+    (`docs/refine/briefs/rendered2.md`) and a residual pass (`rendered3.md`) re-read every rendered sentence;
+    1,159 / 1,159 stories confirmed by both, 4,821 reviewed entries (incl. per-document context `variants` for one key
+    in several positions, and overrides of the game's scripted helpers). 113 exceptions remain, all faults in the
+    game's own text (typos, agreement, truncated lines) or frames that need a real proper name — never rewritten
+    (LEDGER.md). `$KEY$` refs the game never defines are omitted; `$COUNT$/$REQUIRED$` read "the required number of".
+  - Effects conditions: 0 generic "specific condition" labels (`scripts/effects_cond.py`, game trigger sentences,
+    bilingual glossary); internal story-state conditions read "if an earlier story condition holds".
   - Layout sweep `scripts/verify-layout-sweep.mjs` (all 8 categories, museum, playlist, search; 1600 / 390; zh / en;
     overflow, column, page errors; desktop close-up loads `art-hd`) — screenshots reviewed as contact sheets.
 

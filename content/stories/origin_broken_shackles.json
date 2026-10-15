@@ -501,6 +501,26 @@
   }
  },
  "placeholderDocs": {
+  "origin.111": {
+   "clerk.GetIcon": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   },
+   "clerk.GetNamePlural": {
+    "zh": "文员",
+    "en": "Clerk"
+   }
+  },
+  "origin.5047": {
+   "Root.GetSpeciesName": {
+    "zh": "本族",
+    "en": "native"
+   }
+  },
   "origin.5140": {
    "From.GetName": {
     "zh": "那个帝国",
@@ -542,14 +562,10 @@
    },
    "Root.Owner.GetAdj": {
     "zh": "我方",
-    "en": "our",
+    "en": "",
     "omit": [
      "en"
-    ],
-    "note": {
-     "zh": "游戏里这里会出现你的势力形容词。",
-     "en": "In the game, your faction's adjective appears here."
-    }
+    ]
    },
    "Root.Owner.GetSpeciesName": {
     "zh": "该物种",
@@ -562,12 +578,8 @@
   },
   "origin.5525": {
    "From.GetName": {
-    "zh": "我们的新名字",
-    "en": "our new name",
-    "note": {
-     "zh": "游戏里这里会出现你们新名号的名字。",
-     "en": "In the game, the new name for your people appears here."
-    }
+    "zh": "新国名",
+    "en": "our new name"
    }
   }
  }

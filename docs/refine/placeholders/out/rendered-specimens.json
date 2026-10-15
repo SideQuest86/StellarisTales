@@ -1,137 +1,395 @@
 {
-  "acidic_spores": {"reviewed": true},
-  "advisor_core": {"reviewed": true},
-  "alien_brain_scans": {"reviewed": true},
-  "altar_to_the_elder_one": {"reviewed": true},
-  "aluminium_plaque": {"reviewed": true},
-  "ancient_nanites": {"reviewed": true},
-  "ancient_nuclear_armament": {"reviewed": true},
-  "ancient_rift_sphere": {"reviewed": true},
-  "ancient_satellite": {"reviewed": true},
-  "beauty_of_planet": {"reviewed": true},
-  "black_hole_chromatic_anomaly": {"reviewed": true},
-  "carnivorous_megaflora": {"reviewed": true},
-  "cenotaph_display": {"reviewed": true},
-  "centrifugal_container": {"reviewed": true},
-  "cetana_love": {"reviewed": true},
-  "confessions_benefactors": {"reviewed": true},
-  "cosmic_diamond_fragment": {"reviewed": true},
-  "crystal_sphere_fragments": {"reviewed": true},
-  "cult_pendant": {"reviewed": true},
-  "cunning_flora_specimen": {"reviewed": true},
-  "curator_survey": {"reviewed": true},
-  "dead_god_mantle": {"reviewed": true},
-  "decayed_satellite": {"reviewed": true},
-  "declaration_of_animosity": {"reviewed": true},
-  "declaration_of_friendship": {"reviewed": true},
-  "desiccated_brain_slug": {"reviewed": true},
-  "destroyed_mascot_of_colony": {"reviewed": true},
-  "drone_ship_core": {"reviewed": true},
-  "electric_life": {"reviewed": true},
-  "enormous_scrambled_albumen": {"reviewed": true},
-  "ethereal_dust": {"reviewed": true},
-  "fevorian_blueprints": {"reviewed": true},
-  "first_defiled_astronaut": {"reviewed": true},
-  "flooded_settlement_mound": {"reviewed": true},
-  "fossilized_endoskeletons": {"reviewed": true},
-  "fossilized_megastomach": {"reviewed": true},
-  "fragment_of_reckoning": {"reviewed": true},
-  "fragmented_zroni_archive": {"reviewed": true},
-  "gargantua_megalus": {"reviewed": true},
-  "genetic_code": {"reviewed": true},
-  "geometric_water_currents": {"reviewed": true},
-  "giant_egg_shell": {"reviewed": true},
-  "golden_phonograph_record": {"reviewed": true},
-  "head_of_the_beast": {"reviewed": true},
-  "high_geode_of_the_molluscoids": {"reviewed": true},
-  "hot_ice": {"reviewed": true},
-  "hyper_mulch": {"reviewed": true},
-  "hyperfertile_soil": {"reviewed": true},
-  "illanii_archives": {"reviewed": true},
-  "impossible_object": {"reviewed": true},
-  "interdimensional_treaty": {"reviewed": true},
-  "intergalactic_projectile": {"reviewed": true},
-  "invasive_exofungus": {"reviewed": true},
-  "irassian_bacterium_javoria": {"reviewed": true},
-  "key_to_fertility": {"reviewed": true},
-  "khalanka_crystallized_corpses": {"reviewed": true},
-  "khamdai_magil_sha": {"reviewed": true},
-  "last_copy_of_the_prince": {"reviewed": true},
-  "last_fragment_fevor": {"reviewed": true},
-  "living_snow_sculpture": {"reviewed": true},
-  "localised_aurora_borealis": {"reviewed": true},
-  "loopmail": {"reviewed": true},
-  "manna_fruit": {
-    "placeholders": {
-      "EVENT_TARGET_0.GetName": {
-        "zh": "这颗星球",
-        "en": "this planet",
-        "note": {
-          "zh": "游戏里这里会出现这颗星球的名称。",
-          "en": "In the game, this planet's name appears here."
-        }
-      }
-    },
-    "exceptions": ["zh: 这颗星球行星 repeats the planet noun; 行星 is game text, left as is"],
-    "reviewed": true
+ "acidic_spores": {
+  "reviewed": true
+ },
+ "advisor_core": {
+  "reviewed": true
+ },
+ "alien_brain_scans": {
+  "reviewed": true
+ },
+ "altar_to_the_elder_one": {
+  "reviewed": true
+ },
+ "aluminium_plaque": {
+  "reviewed": true
+ },
+ "ancient_nanites": {
+  "reviewed": true
+ },
+ "ancient_nuclear_armament": {
+  "reviewed": true
+ },
+ "ancient_rift_sphere": {
+  "reviewed": true
+ },
+ "ancient_satellite": {
+  "reviewed": true
+ },
+ "beauty_of_planet": {
+  "reviewed": true
+ },
+ "black_hole_chromatic_anomaly": {
+  "reviewed": true
+ },
+ "carnivorous_megaflora": {
+  "reviewed": true
+ },
+ "cenotaph_display": {
+  "reviewed": true
+ },
+ "centrifugal_container": {
+  "reviewed": true
+ },
+ "cetana_love": {
+  "reviewed": true
+ },
+ "confessions_benefactors": {
+  "reviewed": true
+ },
+ "cosmic_diamond_fragment": {
+  "reviewed": true
+ },
+ "crystal_sphere_fragments": {
+  "reviewed": true
+ },
+ "cult_pendant": {
+  "reviewed": true
+ },
+ "cunning_flora_specimen": {
+  "reviewed": true
+ },
+ "curator_survey": {
+  "reviewed": true
+ },
+ "dead_god_mantle": {
+  "reviewed": true
+ },
+ "decayed_satellite": {
+  "reviewed": true
+ },
+ "declaration_of_animosity": {
+  "reviewed": true
+ },
+ "declaration_of_friendship": {
+  "reviewed": true
+ },
+ "desiccated_brain_slug": {
+  "reviewed": true
+ },
+ "destroyed_mascot_of_colony": {
+  "reviewed": true
+ },
+ "drone_ship_core": {
+  "reviewed": true
+ },
+ "electric_life": {
+  "reviewed": true
+ },
+ "enormous_scrambled_albumen": {
+  "reviewed": true
+ },
+ "ethereal_dust": {
+  "reviewed": true
+ },
+ "fevorian_blueprints": {
+  "reviewed": true
+ },
+ "first_defiled_astronaut": {
+  "reviewed": true
+ },
+ "flooded_settlement_mound": {
+  "reviewed": true
+ },
+ "fossilized_endoskeletons": {
+  "reviewed": true
+ },
+ "fossilized_megastomach": {
+  "reviewed": true
+ },
+ "fragment_of_reckoning": {
+  "reviewed": true
+ },
+ "fragmented_zroni_archive": {
+  "reviewed": true
+ },
+ "gargantua_megalus": {
+  "reviewed": true
+ },
+ "genetic_code": {
+  "reviewed": true
+ },
+ "geometric_water_currents": {
+  "reviewed": true
+ },
+ "giant_egg_shell": {
+  "reviewed": true
+ },
+ "golden_phonograph_record": {
+  "reviewed": true
+ },
+ "head_of_the_beast": {
+  "reviewed": true
+ },
+ "high_geode_of_the_molluscoids": {
+  "reviewed": true
+ },
+ "hot_ice": {
+  "reviewed": true
+ },
+ "hyper_mulch": {
+  "reviewed": true
+ },
+ "hyperfertile_soil": {
+  "reviewed": true
+ },
+ "illanii_archives": {
+  "reviewed": true
+ },
+ "impossible_object": {
+  "reviewed": true
+ },
+ "interdimensional_treaty": {
+  "reviewed": true
+ },
+ "intergalactic_projectile": {
+  "reviewed": true
+ },
+ "invasive_exofungus": {
+  "reviewed": true
+ },
+ "irassian_bacterium_javoria": {
+  "reviewed": true
+ },
+ "key_to_fertility": {
+  "reviewed": true
+ },
+ "khalanka_crystallized_corpses": {
+  "reviewed": true
+ },
+ "khamdai_magil_sha": {
+  "reviewed": true
+ },
+ "last_copy_of_the_prince": {
+  "reviewed": true
+ },
+ "last_fragment_fevor": {
+  "reviewed": true
+ },
+ "living_snow_sculpture": {
+  "reviewed": true
+ },
+ "localised_aurora_borealis": {
+  "reviewed": true
+ },
+ "loopmail": {
+  "reviewed": true
+ },
+ "manna_fruit": {
+  "placeholders": {
+   "EVENT_TARGET_0.GetName": {
+    "zh": "",
+    "en": "this planet",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现种植这种果实的星球名称。",
+     "en": "In the game, the name of the planet where this fruit is grown appears here."
+    }
+   }
   },
-  "massive_metatarsal": {"reviewed": true},
-  "medal_for_services_to_diplomacy": {"reviewed": true},
-  "megacorpse_hyperguitar": {"reviewed": true},
-  "memorial_for_bubbles": {"reviewed": true},
-  "memorial_to_homeworld": {"reviewed": true},
-  "mercenary_story": {"reviewed": true},
-  "metallic_snow": {"reviewed": true},
-  "minamar_chandelier": {"reviewed": true},
-  "mineralized_brain": {"reviewed": true},
-  "mining_transmitter": {"reviewed": true},
-  "molten_slag": {"reviewed": true},
-  "musings_on_infinity": {"reviewed": true},
-  "namarian_colonist_standard": {"reviewed": true},
-  "namarian_sculpture": {"reviewed": true},
-  "nanite_sludge": {"reviewed": true},
-  "organic_computer": {"reviewed": true},
-  "organic_machine_interface_sculpture": {"reviewed": true},
-  "orinthi_teeth": {"reviewed": true},
-  "osseus_construction_material": {"reviewed": true},
-  "path_to_progress": {"reviewed": true},
-  "peerless_atomic_clock": {"reviewed": true},
-  "perception_of_infinity": {"reviewed": true},
-  "pet_collar": {
-    "exceptions": ["zh: 使者«这位» keeps game text 使者 before the pronoun phrase; left as is"],
-    "reviewed": true
+  "exceptions": [],
+  "reviewed": true
+ },
+ "massive_metatarsal": {
+  "reviewed": true
+ },
+ "medal_for_services_to_diplomacy": {
+  "reviewed": true
+ },
+ "megacorpse_hyperguitar": {
+  "reviewed": true
+ },
+ "memorial_for_bubbles": {
+  "reviewed": true
+ },
+ "memorial_to_homeworld": {
+  "reviewed": true
+ },
+ "mercenary_story": {
+  "reviewed": true
+ },
+ "metallic_snow": {
+  "reviewed": true
+ },
+ "minamar_chandelier": {
+  "reviewed": true
+ },
+ "mineralized_brain": {
+  "reviewed": true
+ },
+ "mining_transmitter": {
+  "reviewed": true
+ },
+ "molten_slag": {
+  "reviewed": true
+ },
+ "musings_on_infinity": {
+  "reviewed": true
+ },
+ "namarian_colonist_standard": {
+  "reviewed": true
+ },
+ "namarian_sculpture": {
+  "reviewed": true
+ },
+ "nanite_sludge": {
+  "reviewed": true
+ },
+ "organic_computer": {
+  "reviewed": true
+ },
+ "organic_machine_interface_sculpture": {
+  "reviewed": true
+ },
+ "orinthi_teeth": {
+  "reviewed": true
+ },
+ "osseus_construction_material": {
+  "reviewed": true
+ },
+ "path_to_progress": {
+  "reviewed": true
+ },
+ "peerless_atomic_clock": {
+  "reviewed": true
+ },
+ "perception_of_infinity": {
+  "reviewed": true
+ },
+ "pet_collar": {
+  "placeholders": {
+   "EVENT_TARGET_0.GetName": {
+    "zh": "",
+    "en": "this one",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这位使者的名字。",
+     "en": "In the game, the envoy's name appears here."
+    }
+   },
+   "EVENT_TARGET_1.GetName": {
+    "zh": "那个帝国",
+    "en": "the other empire's",
+    "note": {
+     "zh": "游戏里这里会出现另一个帝国的名称。",
+     "en": "In the game, the other empire's name appears here."
+    }
+   }
   },
-  "pilgrimage_last_days": {"reviewed": true},
-  "planet_super_roots": {"reviewed": true},
-  "planet_vaccine": {"reviewed": true},
-  "planetary_sculpture": {"reviewed": true},
-  "primitive_mega_electromagnet": {"reviewed": true},
-  "psionic_entity_residue": {"reviewed": true},
-  "rainaissance": {"reviewed": true},
-  "reparation_invoice": {"reviewed": true},
-  "repurposed_cleaning_drone": {"reviewed": true},
-  "rock_jellies": {"reviewed": true},
-  "rudari_death_laser_prototype": {"reviewed": true},
-  "secrets_black_crown": {"reviewed": true},
-  "shallarian_data_core": {"reviewed": true},
-  "shipyard_schematics": {"reviewed": true},
-  "sky_dragon": {"reviewed": true},
-  "spirit_of_the_unshackled": {"reviewed": true},
-  "terraforming_case_study": {"reviewed": true},
-  "terraforming_case_study_dry": {"reviewed": true},
-  "terraforming_case_study_frozen": {"reviewed": true},
-  "terraforming_records": {"reviewed": true},
-  "the_mask_of_transformation": {"reviewed": true},
-  "the_planet_orchestra": {"reviewed": true},
-  "torn_solar_sail": {"reviewed": true},
-  "toxic_bio_engine": {"reviewed": true},
-  "tricorne_of_aussan": {"reviewed": true},
-  "uddloran_pelts": {"reviewed": true},
-  "unfinished_manifesto": {"reviewed": true},
-  "vibrating_crystal": {"reviewed": true},
-  "zone_a_sedative": {"reviewed": true},
-  "zulcor_wings": {"reviewed": true},
-  "infernal_stasispod": {"reviewed": true},
-  "lava_surfboard": {"reviewed": true},
-  "infernal_burning_gem": {"reviewed": true}
+  "exceptions": [],
+  "reviewed": true
+ },
+ "pilgrimage_last_days": {
+  "reviewed": true
+ },
+ "planet_super_roots": {
+  "reviewed": true
+ },
+ "planet_vaccine": {
+  "reviewed": true
+ },
+ "planetary_sculpture": {
+  "reviewed": true
+ },
+ "primitive_mega_electromagnet": {
+  "reviewed": true
+ },
+ "psionic_entity_residue": {
+  "reviewed": true
+ },
+ "rainaissance": {
+  "reviewed": true
+ },
+ "reparation_invoice": {
+  "reviewed": true
+ },
+ "repurposed_cleaning_drone": {
+  "reviewed": true
+ },
+ "rock_jellies": {
+  "reviewed": true
+ },
+ "rudari_death_laser_prototype": {
+  "reviewed": true
+ },
+ "secrets_black_crown": {
+  "reviewed": true
+ },
+ "shallarian_data_core": {
+  "reviewed": true
+ },
+ "shipyard_schematics": {
+  "reviewed": true
+ },
+ "sky_dragon": {
+  "reviewed": true
+ },
+ "spirit_of_the_unshackled": {
+  "reviewed": true
+ },
+ "terraforming_case_study": {
+  "reviewed": true
+ },
+ "terraforming_case_study_dry": {
+  "reviewed": true
+ },
+ "terraforming_case_study_frozen": {
+  "reviewed": true
+ },
+ "terraforming_records": {
+  "reviewed": true
+ },
+ "the_mask_of_transformation": {
+  "reviewed": true
+ },
+ "the_planet_orchestra": {
+  "reviewed": true
+ },
+ "torn_solar_sail": {
+  "reviewed": true
+ },
+ "toxic_bio_engine": {
+  "reviewed": true
+ },
+ "tricorne_of_aussan": {
+  "reviewed": true
+ },
+ "uddloran_pelts": {
+  "reviewed": true
+ },
+ "unfinished_manifesto": {
+  "reviewed": true
+ },
+ "vibrating_crystal": {
+  "reviewed": true
+ },
+ "zone_a_sedative": {
+  "reviewed": true
+ },
+ "zulcor_wings": {
+  "reviewed": true
+ },
+ "infernal_stasispod": {
+  "reviewed": true
+ },
+ "lava_surfboard": {
+  "reviewed": true
+ },
+ "infernal_burning_gem": {
+  "reviewed": true
+ }
 }

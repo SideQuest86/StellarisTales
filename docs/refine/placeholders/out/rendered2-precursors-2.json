@@ -1,0 +1,60 @@
+{
+"site-site-lesser-messenger": {"reviewed": true},
+"site-site-lost-moments": {"reviewed": true},
+"site-site-moon-bump": {"reviewed": true},
+"site-site-orbital-rain": {"reviewed": true},
+"site-site-percussive-maintenance": {"reviewed": true},
+"site-site-phoenix-collective": {"reviewed": true},
+"site-site-polaris-seed-vault": {"docs": {
+  "archaeological_site_types:site_polaris_seed_vault": {"From.Planet.GetName": {"zh": "这颗", "en": "this planet"}}},
+  "exceptions": [], "reviewed": true},
+"site-site-robot-debris": {"docs": {
+  "ancrel.6250": {"From.Planet.GetName": {"zh": "这颗小行星", "en": "this asteroid"}},
+  "ancrel.6255": {"From.Planet.GetName": {"zh": "这颗小行星", "en": "this asteroid"}},
+  "ancrel.6260": {"From.Planet.GetName": {"zh": "这颗小行星", "en": "this asteroid"}}},
+  "exceptions": [], "reviewed": true},
+"site-site-ruined-reactors": {"exceptions": ["extreme_frontiers.1205: game text: 'Several of the reactors ... shows'"], "reviewed": true},
+"site-site-ruins-of-shallash": {"docs": {
+  "federations2.7": {"Root.Leader.GetName": {"zh": "这位领袖", "en": "the leader"}},
+  "federations2.6": {
+    "Root.Leader.GetName": {"zh": "这位领袖", "en": "the leader"},
+    "fanatic_xenophobe_fe.GetName": {"zh": "那个物种", "en": "xenophobes"},
+    "fanatic_xenophobe_fe.GetSpeciesName": {"zh": "排外", "en": "xenophobic"},
+    "fanatic_xenophobe_fe.GetSpeciesNamePlural": {"zh": "排外者", "en": "the xenophobes"}},
+  "federations2.702": {"From.System.GetName": {"zh": "这个", "en": "star"}}},
+  "exceptions": ["federations2.6: game text: en 'pon their first encounter' is missing its first letter"], "reviewed": true},
+"site-site-shot-into-the-ground": {"reviewed": true},
+"site-site-sky-glow-hymn": {"reviewed": true},
+"site-site-star-petal": {"reviewed": true},
+"site-site-strange-flows": {"reviewed": true},
+"site-site-target-from-orbit": {"reviewed": true},
+"site-site-the-chosen-backstory": {"reviewed": true},
+"site-site-the-library": {"reviewed": true},
+"site-site-tiyanki-graveyard": {"exceptions": ["ancrel.14200: game text: the en sentence is cut off at its start (first words missing); zh has an ellipsis"], "reviewed": true},
+"site-site-toxic-matrix": {"exceptions": ["extreme_frontiers.1120: game text: zh sentence has the empire name directly followed by the subject '我们会'"], "reviewed": true},
+"site-site-trench-world": {"reviewed": true},
+"site-site-warmer-climates": {"reviewed": true},
+"site-the-host": {"reviewed": true},
+"site-zevox-digsite": {"docs": {
+  "archaeological_site_types:zevox_digsite": {
+    "Root.Planet.GetName": {"zh": "这颗卫星", "en": "this moon", "omit": ["en"]},
+    "Root.solar_system.GetName": {"zh": "这个", "en": "star"}}},
+  "exceptions": [], "reviewed": true},
+"the-oracle": {"exceptions": ["ancrel.4031: game text: zh '有着有一座' repeats the verb"], "reviewed": true},
+"the-sentinels": {"docs": {
+  "ancrel.4065": {"missing_archaeologist.GetHerHis": {"zh": "自己", "en": "their"}},
+  "ancrel.4066": {"missing_archaeologist.GetHerHis": {"zh": "自己", "en": "their"}},
+  "ancrel.4067": {"missing_archaeologist.GetHerHim": {"zh": "此人", "en": "their"}},
+  "ancrel.4068": {"missing_archaeologist.GetSheHe": {"zh": "此人", "en": "the archaeologist"}}},
+  "exceptions": [], "reviewed": true},
+"vultaum": {"docs": {
+  "special_projects:VULTAUM_ARCHEOLOGY_11": {"From.GetName": {"zh": "这颗", "en": "the asteroid"}},
+  "ancrel.10111": {"leading_vultaum_research_scientist.GetName": {"zh": "这位科学家", "en": "the lead scientist", "omit": ["zh"]}}},
+  "exceptions": ["precursor.102: game text: second en sentence starts in lowercase"], "reviewed": true},
+"yuht": {"docs": {
+  "over.50": {"jabbardeeni_cache.GetName": {"zh": "那里", "en": "there", "omit": ["zh"]}},
+  "precursor.546": {"From.From.GetName": {"zh": "这颗", "en": "the asteroid"}},
+  "special_projects:YUHT_ARCHEOLOGY_9": {"From.GetName": {"zh": "这块岩石", "en": "the asteroid", "omit": ["zh"]}}},
+  "exceptions": [], "reviewed": true},
+"zroni": {"reviewed": true}
+}

@@ -209,17 +209,16 @@
   }
  },
  "placeholderDocs": {
+  "colony.10035": {
+   "Owner.GetSpeciesNamePluralInsult": {
+    "zh": "家伙",
+    "en": "creatures"
+   }
+  },
   "colony.10082": {
    "Owner.GetSpeciesNamePlural": {
     "zh": "同胞",
-    "en": "people",
-    "omit": [
-     "en"
-    ],
-    "note": {
-     "zh": "英文中这里省略，句子读起来更自然。",
-     "en": "This word is left out in English, so the sentence reads naturally."
-    }
+    "en": "colonist"
    }
   }
  }

@@ -86,14 +86,19 @@
   }
  },
  "placeholderDocs": {
+  "paragon.40910": {
+   "Root.GetHeShe": {
+    "zh": "此人",
+    "en": "the leader"
+   }
+  },
   "special_projects:XONDAR_VALUABLE_ALLOYS": {
    "event_target:renowned_materialist1.GetName": {
-    "zh": "本人",
+    "zh": "",
     "en": "the admiral",
-    "note": {
-     "zh": "游戏里这里会出现这位舰队司令的称呼。",
-     "en": "In the game, the fleet commander's name appears here."
-    }
+    "omit": [
+     "zh"
+    ]
    }
   }
  }

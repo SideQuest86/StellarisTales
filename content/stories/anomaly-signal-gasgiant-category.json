@@ -60,56 +60,56 @@
  "placeholderDocs": {
   "anomaly.5000": {
    "Root.GetLeaderName": {
-    "zh": "这位",
+    "zh": "",
     "en": "the officer",
     "omit": [
      "zh"
     ],
     "note": {
-     "zh": "游戏里这里会出现这位科学家的称谓。",
-     "en": "In the game, the name of this scientist appears here."
+     "zh": "游戏里这里会出现科学专员的姓名。",
+     "en": "In the game, the science officer's name appears here."
     }
    }
   },
   "anomaly.5002": {
    "From.From.From.GetName": {
-    "zh": "那颗星球",
-    "en": "that planet",
-    "omit": [
-     "en",
-     "zh"
-    ],
-    "note": {
-     "zh": "游戏里这里会出现那颗气态巨行星的名称。",
-     "en": "In the game, that gas giant's name appears here."
-    }
-   }
-  },
-  "special_projects:GAS_GIANT_RELOCATION": {
-   "baldarak_planet.GetName": {
-    "zh": "那颗气态巨行星",
-    "en": "that gas giant",
-    "omit": [
-     "en",
-     "zh"
-    ],
-    "note": {
-     "zh": "游戏里这里会出现那颗气态巨行星的名称。",
-     "en": "In the game, that gas giant's name appears here."
-    }
-   }
-  },
-  "special_projects:GAS_GIANT_SIGNAL": {
-   "From.GetName": {
-    "zh": "这颗气态巨行星",
-    "en": "this gas giant",
+    "zh": "",
+    "en": "",
     "omit": [
      "en",
      "zh"
     ],
     "note": {
      "zh": "游戏里这里会出现这颗气态巨行星的名称。",
-     "en": "In the game, this gas giant's name appears here."
+     "en": "In the game, the gas giant's name appears here."
+    }
+   }
+  },
+  "special_projects:GAS_GIANT_RELOCATION": {
+   "baldarak_planet.GetName": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现那颗气态巨行星的名称。",
+     "en": "In the game, the gas giant's name appears here."
+    }
+   }
+  },
+  "special_projects:GAS_GIANT_SIGNAL": {
+   "From.GetName": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这颗气态巨行星的名称。",
+     "en": "In the game, the gas giant's name appears here."
     }
    }
   }

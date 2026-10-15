@@ -66,25 +66,21 @@
  "placeholderDocs": {
   "arkship.1005": {
    "from.GetName": {
-    "zh": "此船",
+    "zh": "",
     "en": "",
     "omit": [
-     "en"
-    ],
-    "note": {
-     "zh": "游戏里这里会出现这艘方舟的名称。",
-     "en": "In the game, the name of this Arkship appears here."
-    }
+     "en",
+     "zh"
+    ]
    }
   },
   "arkship.1015": {
    "from.GetName": {
-    "zh": "此船",
+    "zh": "",
     "en": "this ship",
-    "note": {
-     "zh": "游戏里这里会出现这艘方舟的名称。",
-     "en": "In the game, the name of this Arkship appears here."
-    }
+    "omit": [
+     "zh"
+    ]
    }
   }
  }

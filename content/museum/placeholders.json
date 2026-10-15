@@ -851,11 +851,14 @@
  },
  "manna_fruit": {
   "EVENT_TARGET_0.GetName": {
-   "zh": "这颗星球",
+   "zh": "",
    "en": "this planet",
+   "omit": [
+    "zh"
+   ],
    "note": {
-    "zh": "游戏里这里会出现这颗星球的名称。",
-    "en": "In the game, this planet's name appears here."
+    "zh": "游戏里这里会出现种植这种果实的星球名称。",
+    "en": "In the game, the name of the planet where this fruit is grown appears here."
    }
   }
  },
@@ -1161,11 +1164,14 @@
  },
  "pet_collar": {
   "EVENT_TARGET_0.GetName": {
-   "zh": "这位",
+   "zh": "",
    "en": "this one",
+   "omit": [
+    "zh"
+   ],
    "note": {
     "zh": "游戏里这里会出现这位使者的名字。",
-    "en": "In the game, the name of this envoy appears here."
+    "en": "In the game, the envoy's name appears here."
    }
   },
   "EVENT_TARGET_0.Species.GetHandName": {
@@ -1178,10 +1184,10 @@
   },
   "EVENT_TARGET_1.GetName": {
    "zh": "那个帝国",
-   "en": "the other empire",
+   "en": "the other empire's",
    "note": {
-    "zh": "游戏里这里会出现派出这位使者的帝国名称。",
-    "en": "In the game, the name of the empire that sent this envoy appears here."
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the other empire's name appears here."
    }
   }
  },

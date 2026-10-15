@@ -41,5 +41,26 @@
     "en": "In the game, the plural name of our kind appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "origin-intro:origin_lost_colony": {
+   "Root.Capital.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "they could aboard ",
+      "text": "a ship"
+     },
+     {
+      "lang": "en",
+      "before": "aboard ",
+      "after": " are old enough",
+      "text": "their ship"
+     }
+    ]
+   }
+  }
  }
 }

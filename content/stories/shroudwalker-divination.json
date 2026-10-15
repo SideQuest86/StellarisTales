@@ -259,12 +259,121 @@
    "shroudwalker_enclave_country.GetName": {
     "zh": "这个城邦",
     "en": "the enclave",
-    "omit": [
-     "zh"
-    ],
     "note": {
      "zh": "游戏里这里会出现这个城邦的名称。",
      "en": "In the game, the enclave's name appears here."
+    }
+   }
+  },
+  "enclave.5195": {
+   "hero_redivivus.GetName": {
+    "zh": "这位英雄",
+    "en": "the hero",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "legendary hero ",
+      "text": ""
+     },
+     {
+      "lang": "zh",
+      "before": "传奇英雄",
+      "text": ""
+     }
+    ]
+   }
+  },
+  "enclave.5200": {
+   "hero_redivivus.GetHisHer": {
+    "zh": "其",
+    "en": "they",
+    "note": {
+     "zh": "游戏里这里会出现“他”或“她”。",
+     "en": "In the game, 'he' or 'she' appears here."
+    }
+   }
+  },
+  "enclave.5505": {
+   "root.GetName": {
+    "zh": "这颗星球",
+    "en": "the planet's",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, the planet's name appears here."
+    }
+   }
+  },
+  "enclave.5521": {
+   "shattered_frontier_planet.solar_system.GetName": {
+    "zh": "这个星系",
+    "en": "system",
+    "note": {
+     "zh": "游戏里这里会出现这个星系的名称。",
+     "en": "In the game, the system's name appears here."
+    }
+   }
+  },
+  "enclave.5522": {
+   "root.GetName": {
+    "zh": "这颗星球",
+    "en": "our home world",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, the planet's name appears here."
+    }
+   },
+   "shattered_frontier_planet.GetName": {
+    "zh": "这颗星球",
+    "en": "our home world",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, the planet's name appears here."
+    }
+   }
+  },
+  "enclave.5525": {
+   "shattered_frontier_planet.solar_system.GetName": {
+    "zh": "这个星系",
+    "en": "system",
+    "note": {
+     "zh": "游戏里这里会出现这个星系的名称。",
+     "en": "In the game, the system's name appears here."
+    }
+   }
+  },
+  "enclave.5540": {
+   "root.GetName": {
+    "zh": "星球",
+    "en": "planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, the planet's name appears here."
+    }
+   },
+   "shattered_frontier_planet.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "but not this ",
+      "text": "planet"
+     },
+     {
+      "lang": "zh",
+      "before": "不是这个",
+      "text": ""
+     }
+    ]
+   }
+  },
+  "enclave.5550": {
+   "shattered_frontier_planet.GetName": {
+    "zh": "家园",
+    "en": "home",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, the planet's name appears here."
     }
    }
   }

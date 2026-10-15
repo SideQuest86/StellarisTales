@@ -176,17 +176,51 @@
   }
  },
  "placeholderDocs": {
-  "preftl_espionage.1010": {
+  "preftl_espionage.1001": {
+   "rogue_agent_spymaster.GetHimHer": {
+    "zh": "其",
+    "en": "them",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " love interest",
+      "text": "their"
+     }
+    ]
+   },
    "rogue_agent_spymaster.GetName": {
-    "zh": "这位间谍首脑",
-    "en": "the spymaster",
+    "zh": "某某",
+    "en": "so-and-so"
+   }
+  },
+  "preftl_espionage.1003": {
+   "rogue_agent_country.GetAdj": {
+    "zh": "该国",
+    "en": "native"
+   }
+  },
+  "preftl_espionage.1010": {
+   "rogue_agent_spymaster.GetHerHim": {
+    "zh": "此人",
+    "en": "them"
+   },
+   "rogue_agent_spymaster.GetHimHer": {
+    "zh": "此人",
+    "en": "them",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "the skills ",
+      "text": "their"
+     }
+    ]
+   },
+   "rogue_agent_spymaster.GetName": {
+    "zh": "",
+    "en": "agent",
     "omit": [
      "zh"
-    ],
-    "note": {
-     "zh": "游戏里这里会出现这位间谍首脑的称呼。",
-     "en": "In the game, the spymaster's title appears here."
-    }
+    ]
    }
   },
   "preftl_espionage.1020": {

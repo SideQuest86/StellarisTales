@@ -42,5 +42,20 @@
     "en": "In the game, your ruler's title appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "event_chains:mandate_district_generator_chain": {
+   "Root.GetRulerName": {
+    "zh": "我们的统治者",
+    "en": "ruler"
+   },
+   "Root.GetRulerTitle": {
+    "zh": "",
+    "en": "our",
+    "omit": [
+     "zh"
+    ]
+   }
+  }
  }
 }

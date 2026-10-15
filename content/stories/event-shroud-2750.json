@@ -502,24 +502,40 @@
   }
  },
  "placeholderDocs": {
+  "shroud.2505": {
+   "Owner.GetOutOfControlPsyche": {
+    "zh": "同族心灵",
+    "en": "the species' psyche"
+   }
+  },
+  "shroud.2610": {
+   "owner.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "our people"
+   }
+  },
   "shroud.2615": {
    "owner.GetSpeciesNamePlural": {
     "zh": "该物种",
-    "en": "species",
-    "note": {
-     "zh": "游戏里这里会出现该物种的统称。",
-     "en": "In the game, the species' collective name appears here."
-    }
+    "en": "individuals"
+   }
+  },
+  "shroud.2635": {
+   "owner.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "our people's"
    }
   },
   "shroud.2640": {
    "owner.GetSpeciesNamePlural": {
     "zh": "该物种",
-    "en": "species",
-    "note": {
-     "zh": "游戏里这里会出现该物种的统称。",
-     "en": "In the game, the species' collective name appears here."
-    }
+    "en": "individuals"
+   }
+  },
+  "shroud.2750": {
+   "This.GetSpeciesNamePlural": {
+    "zh": "同类",
+    "en": "people"
    }
   },
   "shroud.2780": {
@@ -530,6 +546,26 @@
      "zh": "游戏里这里会出现该物种的所属形容。",
      "en": "In the game, the species' adjective appears here."
     }
+   },
+   "Owner.GetSpeciesNamePlural": {
+    "zh": "人口",
+    "en": "our people"
+   }
+  },
+  "situations:situation_breach_shroud": {
+   "Owner.GetSpeciesNamePlural": {
+    "zh": "我们的族人",
+    "en": "our people"
+   }
+  },
+  "utopia.2602": {
+   "From.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "alien"
+   },
+   "From.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "aliens"
    }
   }
  }

@@ -27,12 +27,24 @@
  },
  "placeholderDocs": {
   "nomads.4705": {
+   "event_target:player_country.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " lifecycle",
+      "text": "our empire's"
+     }
+    ]
+   },
    "event_target:player_country.GetSpeciesNamePlural": {
     "zh": "这个物种",
-    "en": "the species",
-    "omit": [
-     "en"
-    ]
+    "en": "the species"
+   },
+   "event_target:settling_arkship.GetName": {
+    "zh": "本舰",
+    "en": "the ship"
    }
   }
  }

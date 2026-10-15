@@ -113,5 +113,76 @@
     "en": "In the game, the name of this pilot appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "astral_rift.2225": {
+   "astral_rift_dimensional_dump_leader_loc.GetEsXX": {
+    "zh": "",
+    "en": "es",
+    "omit": [
+     "zh"
+    ]
+   },
+   "astral_rift_dimensional_dump_leader_loc.GetHeShe": {
+    "zh": "此人",
+    "en": "they",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "In doing so, ",
+      "text": "the leader"
+     }
+    ]
+   },
+   "astral_rift_dimensional_dump_leader_loc.GetName": {
+    "zh": "这位领袖",
+    "en": "the leader",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "The alien's name is ",
+      "text": "not recorded"
+     }
+    ]
+   },
+   "astral_rift_dimensional_dump_leader_loc.GetSXX": {
+    "zh": "",
+    "en": "s",
+    "omit": [
+     "zh"
+    ]
+   },
+   "event_target:astral_rift_dimensional_dump_leader_loc.GetName": {
+    "zh": "这位领袖",
+    "en": "the leader",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "The alien's name is ",
+      "text": "not recorded"
+     }
+    ]
+   }
+  },
+  "astral_rift.2230": {
+   "From.GetHasHave": {
+    "zh": "",
+    "en": "has",
+    "omit": [
+     "zh"
+    ]
+   },
+   "From.GetHeSheCap": {
+    "zh": "此人",
+    "en": "They",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " will make an excellent",
+      "text": "The pilot"
+     }
+    ]
+   }
+  }
  }
 }

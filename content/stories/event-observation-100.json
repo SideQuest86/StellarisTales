@@ -85,5 +85,81 @@
     "en": "In the game, this planet's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "observation.101": {
+   "missing_scientist.GetHeSheCap": {
+    "zh": "这位科学家",
+    "en": "they"
+   },
+   "pre_ftl_planet.GetPlanetHabitat": {
+    "zh": "行星",
+    "en": "planet"
+   }
+  },
+  "observation.106": {
+   "pre_ftl_planet.GetPlanetHabitat": {
+    "zh": "行星",
+    "en": "planet"
+   }
+  },
+  "observation.108": {
+   "missing_scientist.GetHeShe": {
+    "zh": "他",
+    "en": "they"
+   },
+   "missing_scientist.GetHimHer": {
+    "zh": "他",
+    "en": "them"
+   }
+  },
+  "observation.109": {
+   "pre_ftl_planet.GetPlanetHabitat": {
+    "zh": "行星",
+    "en": "planet"
+   }
+  },
+  "observation.110": {
+   "missing_scientist.GetHimHerCap": {
+    "zh": "此人",
+    "en": "them",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "mimic ",
+      "text": "their"
+     },
+     {
+      "lang": "en",
+      "before": "I demand ",
+      "text": "their"
+     }
+    ]
+   }
+  },
+  "observation.112": {
+   "pre_ftl_planet.GetPlanetHabitat": {
+    "zh": "行星",
+    "en": "planet"
+   }
+  },
+  "observation.1402": {
+   "pre_ftl_planet.GetPlanetHabitat": {
+    "zh": "行星",
+    "en": "planet"
+   }
+  },
+  "observation.1404": {
+   "pre_ftl_planet.GetPlanetHabitat": {
+    "zh": "行星",
+    "en": "planet"
+   }
+  },
+  "observation.1406": {
+   "pre_ftl_planet.GetPlanetHabitat": {
+    "zh": "行星",
+    "en": "planet"
+   }
+  }
  }
 }

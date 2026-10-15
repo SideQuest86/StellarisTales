@@ -1017,6 +1017,35 @@
     }
    }
   },
+  "unplugged.2000": {
+   "capital_scope.star.GetName": {
+    "zh": "母星系的核心",
+    "en": "the heart of our home system"
+   },
+   "root.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "member of our species"
+   }
+  },
+  "unplugged.2022": {
+   "from.planet.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Old ",
+      "text": "world"
+     }
+    ]
+   }
+  },
+  "unplugged.2115": {
+   "owner.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "our species'"
+   }
+  },
   "unplugged.2300": {
    "from.GetName": {
     "zh": "这个",
@@ -1027,6 +1056,52 @@
     }
    }
   },
+  "unplugged.2305": {
+   "fromfrom.GetName": {
+    "zh": "家园",
+    "en": "home"
+   }
+  },
+  "unplugged.2315": {
+   "owner.GetAdj": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   }
+  },
+  "unplugged.2450": {
+   "creator_species.GetAdj": {
+    "zh": "",
+    "en": "original",
+    "omit": [
+     "zh"
+    ]
+   },
+   "root.GetAdj": {
+    "zh": "我方",
+    "en": "our empire's"
+   }
+  },
+  "unplugged.2455": {
+   "creator_species.GetAdj": {
+    "zh": "",
+    "en": "original",
+    "omit": [
+     "zh"
+    ]
+   },
+   "origin_unplugged_machine_legacy_core_planet.GetClassAdj": {
+    "zh": "这颗星球",
+    "en": "hostile"
+   },
+   "root.GetAdj": {
+    "zh": "我方",
+    "en": "our empire's"
+   }
+  },
   "unplugged.2495": {
    "from.GetName": {
     "zh": "这个",
@@ -1035,6 +1110,27 @@
      "zh": "游戏里这里会出现附近星系的名称。",
      "en": "In the game, the nearby system's name appears here."
     }
+   }
+  },
+  "unplugged.3010": {
+   "owner.GetAdj": {
+    "zh": "",
+    "en": "our",
+    "omit": [
+     "zh"
+    ]
+   }
+  },
+  "unplugged.3106": {
+   "target.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "target-species people"
+   }
+  },
+  "unplugged.3111": {
+   "target.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "target-species people"
    }
   }
  }

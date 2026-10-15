@@ -230,6 +230,29 @@ class EffectTests(unittest.TestCase):
         self.assertEqual(r['zhLatinWords'], 0, r['top'])
         self.assertEqual(r['enRawKeys'], 0)
 
+    def test_no_generic_specific_condition_phrase_and_no_missing_glossary_words(self):
+        import effects_coverage as C
+        import effects_cond as K
+        if not (ROOT / 'public/effects').exists():
+            self.skipTest('run scripts/compile-effects.py first')
+        C.run()  # every record, so every trigger key is phrased and any glossary gap is recorded
+        r = C.generic_condition_report()
+        self.assertEqual(r['specific'], 0, r['keys'])
+        self.assertEqual(K.UNKNOWN_WORDS, set())
+
+    def test_conditions_use_arguments_and_game_names(self):
+        for script, zh, en in (('num_owned_planets > 5', '拥有超过5颗星球', 'owns more than 5 planets'),
+                               ('has_technology = tech_lasers_1', '已研究「红激光发射器」', 'has researched "Red Lasers"'),
+                               ('years_passed > 30', '游戏已进行超过30年', 'the game has run more than 30 years')):
+            lab = E.cond_label(parse(script), CTX)
+            self.assertEqual((lab['zh'], lab['en']), (zh, en))
+        lab = E.cond_label(parse('has_building = building_research_lab_1'), CTX)  # the game's own sentence: "Has Building: $BUILDING$"
+        self.assertIn('Research Labs', lab['en'])
+        self.assertNotRegex(lab['zh'], '[A-Za-z]')
+        lab = E.cond_label(parse('is_twisted_experimenters_empire = no'), CTX)
+        self.assertNotIn('specific condition', lab['en'])
+        self.assertTrue(lab['detail'])
+
     def test_coverage_floor_over_every_record(self):
         total = unhandled = docs = 0
         ctx = E.load_ctx()

@@ -625,22 +625,67 @@
   }
  },
  "placeholderDocs": {
+  "crisis.4135": {
+   "From.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
+   }
+  },
   "crisis.4140": {
+   "Root.GetSpeciesAdj": {
+    "zh": "我们自身",
+    "en": "our own"
+   },
    "Root.GetSpeciesNamePlural": {
     "zh": "这些人",
-    "en": "our kind",
+    "en": "",
     "omit": [
      "en"
     ]
    }
   },
+  "crisis.4150": {
+   "Root.GetSpeciesName": {
+    "zh": "我族成员",
+    "en": "member of our species"
+   }
+  },
+  "crisis.4155": {
+   "Root.GetSpeciesName": {
+    "zh": "我族成员",
+    "en": "member of our species"
+   }
+  },
   "crisis.6015": {
    "From.GetSpeciesNamePlural": {
     "zh": "对方",
-    "en": "they"
+    "en": "people of that empire"
+   }
+  },
+  "crisis.6101": {
+   "sphere_destroyers.GetName": {
+    "zh": "毁灭者",
+    "en": "destroyer"
+   }
+  },
+  "crisis.6103": {
+   "sphere_destroyers.GetName": {
+    "zh": "毁灭者",
+    "en": "destroyer"
    }
   },
   "crisis.6182": {
+   "crisis_country.GetName": {
+    "zh": "另一个帝国",
+    "en": "the other empire",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " now also possess",
+      "text": "the other empire's people"
+     }
+    ]
+   },
    "destroyed_system.GetName": {
     "zh": "这个星系",
     "en": "this system"
@@ -649,11 +694,7 @@
   "special_projects:CRISIS_SPECIAL_PROJECT_1": {
    "Root.GetSpeciesNamePlural": {
     "zh": "这些人",
-    "en": "our kind",
-    "omit": [
-     "en",
-     "zh"
-    ]
+    "en": "our kind"
    }
   },
   "special_projects:CRISIS_SPECIAL_PROJECT_MACH_1": {

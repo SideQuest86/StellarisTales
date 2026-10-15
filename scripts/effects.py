@@ -27,6 +27,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from extract import parse, walk  # noqa: E402
 import effects_gloss as G  # noqa: E402
+import effects_cond as C  # noqa: E402
+LOGIC_AND = ('and', 'this', 'if', 'else_if', 'else', '?', 'hidden_trigger', 'trigger', 'limit')
+PARAM_ATOMS = ('max_jumps', 'min_jumps', 'max_distance', 'min_distance', 'use_bypasses', 'max_steps', 'min_steps', 'count', 'multiply', 'divide', 'add', 'subtract', 'save_event_target_as')
 
 ROOT = Path(__file__).resolve().parents[1]
 MAX_DEPTH = 4
@@ -260,26 +263,60 @@ def atom_label(n, ctx):
     k, v = n['k'], n['v']
     low = k.lower()
     if isinstance(v, list):
-        inner = cond_label(v, ctx)
-        if low in ('and',):
-            return inner
-        scope = scope_label(k, ctx, 'country')
-        det = inner.get('detail')
-        if scope:
-            r = L(f"{scope['zh']}：{inner['zh']}", f"{scope['en']}: {inner['en']}")
-        elif det or G.classify(low) is not G.SPECIFIC or low in ('check_variable',):
-            r = generic_cond(k, v)
-            r['detail'] = (det or []) + r['detail']
+        if low in LOGIC_AND:
+            return cond_label(v, ctx)
+        if low == 'nand':
+            inner = cond_label(v, ctx)
+            r = L('不满足（' + inner['zh'] + '）', 'not (' + inner['en'] + ')')
+            if inner.get('detail'):
+                r['detail'] = inner['detail']
             return r
+        if low == 'calc_true_if':
+            inner = cond_label([x for x in v if x['k'] != 'amount'], ctx)
+            amt = next((x for x in v if x['k'] == 'amount'), None)
+            nn = (amt or {}).get('v', '1')
+            r = L(f'下列条件至少满足 {nn.lstrip("=")} 项：{inner["zh"]}', f'at least {nn.lstrip("=")} of: {inner["en"]}')
+            if inner.get('detail'):
+                r['detail'] = inner['detail']
+            return r
+        scope = scope_label(k, ctx, 'country') or (L(*G.OBJECT) if (':' in k or '.' in k) else None)
+        if scope:
+            inner = cond_label([x for x in v if x['k'].lower() not in PARAM_ATOMS], ctx)
+            r = L(f"{scope['zh']}：{inner['zh']}", f"{scope['en']}: {inner['en']}")
+            if inner.get('detail'):
+                r['detail'] = inner['detail']
+            return r
+        if low == 'check_galaxy_setup_value':
+            gl = C.galaxy_setup_label(v, ctx)
+            if gl:
+                return gl
+        if G.classify(low) is G.STORY or low in ('check_variable',):
+            r = generic_cond(k, v)
+            r['detail'] = [f"{x['k']} {x.get('op', '=')} {x['v'] if isinstance(x['v'], str) else '{...}'}" for x in v] + r['detail']
+            return r
+        if low in G.BOOL_COND and low not in ('has_ancrel',):
+            zh, en = G.BOOL_COND[low]
+            if any(x['k'].lower() == 'status' and x['v'] == 'no' for x in v):
+                zh, en = negate(zh, en)
+            return L(zh, en)
+        if low in G.TIME_COND:
+            return L(*G.TIME_COND[low])
         else:
-            r = L(f"{G.OBJECT[0]}：{inner['zh']}", f"{G.OBJECT[1]}: {inner['en']}")
-        if det:
-            r['detail'] = det
+            t = C.trigger_label(k, v, n.get('op'), ctx)
+            if t:
+                return t
+        r = generic_cond(k, v)
+        r['detail'] = [f"{x['k']} {x.get('op', '=')} {x['v'] if isinstance(x['v'], str) else '{...}'}" for x in v] + r['detail']
         return r
     val = str(v)
     yes = val != 'no'
     obj = nm(ctx, val)
-    if FLAG_KEY.match(low) or G.STORY_RE.search(low) and low not in BOOL_OR_TABLE:
+    if G.classify(low) is G.PROGRESS:
+        return generic_cond(k, val, n.get('op', '='))
+    nl = C.numeric_label(low, n.get('op'), val, ctx)
+    if nl:
+        return nl
+    if FLAG_KEY.match(low) or G.STORY_RE.search(low) and low not in BOOL_OR_TABLE and not low.endswith('_dlc'):
         return generic_cond(k, val, n.get('op', '='))
     table = {
         'has_trait': ('拥有特质「{o}」', 'has the "{o}" trait'), 'has_technology': ('已研究「{o}」', 'has researched "{o}"'),
@@ -298,7 +335,8 @@ def atom_label(n, ctx):
         'is_ship_class': ('舰船类别为「{o}」', 'ship class is "{o}"'), 'is_pop_category': ('人口类别为「{o}」', 'pop category is "{o}"'),
         'has_deposit_for': ('适合建造「{o}」的资源点', 'has a deposit for "{o}"'), 'can_research_technology': ('可以研究「{o}」', 'can research "{o}"'),
         'has_tech_option': ('研究选项中有「{o}」', 'has "{o}" as a research option'), 'leader_class': ('领袖职业为「{o}」', 'leader class is "{o}"'),
-        'is_country_type': ('国家类型为「{o}」', 'country type is "{o}"'), 'is_same_species': ('与「{o}」同一物种', 'is the same species as "{o}"'),
+        'is_country_type': ('国家类型为「{o}」', 'country type is "{o}"'), 'is_situation_type': ('情势类型为「{o}」', 'situation type is "{o}"'),
+        'current_situation_approach': ('当前方针为「{o}」', 'the current approach is "{o}"'), 'is_same_species': ('与「{o}」同一物种', 'is the same species as "{o}"'),
     }
     if low in table and not isinstance(v, list):
         a, b = table[low]
@@ -322,16 +360,19 @@ def atom_label(n, ctx):
     if low in G.BOOL_COND and val in ('yes', 'no'):
         zh, en = G.BOOL_COND[low]
         return L(zh, en) if yes else L(*negate(zh, en))
-    return generic_cond(k, val, n.get('op', '='))
+    t = C.trigger_label(k, val, n.get('op'), ctx)
+    return t if t else generic_cond(k, val, n.get('op', '='))
 
 
-BOOL_OR_TABLE = set(G.BOOL_COND) | set(G.TIME_COND) | {'has_technology', 'has_modifier', 'has_pre_ftl_age', 'has_special_project', 'has_event_chain'}
+BOOL_OR_TABLE = set(G.BOOL_COND) | set(G.TIME_COND) | {'has_technology', 'has_modifier', 'has_pre_ftl_age', 'has_special_project', 'has_event_chain', 'is_situation_type', 'current_situation_approach'}
 
 
 def cond_label(nodes, ctx, mode='and'):
     parts = []
     for n in nodes:
         k = n['k'].lower()
+        if not k:
+            continue
         if k in ('text', 'fail_text', 'success_text', 'desc', 'title', 'tooltip', 'custom_tooltip') and not isinstance(n['v'], list):
             continue
         if k == 'custom_tooltip' and isinstance(n['v'], list):

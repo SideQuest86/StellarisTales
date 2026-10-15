@@ -1452,33 +1452,59 @@
  },
  "placeholderDocs": {
   "grand_archive.8115": {
+   "Leader.GetHasHave": {
+    "zh": "",
+    "en": "has",
+    "omit": [
+     "zh"
+    ]
+   },
+   "Leader.GetHeShe": {
+    "zh": "此人",
+    "en": "they",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "fabricated orders from Captain Hoo, ",
+      "text": "the scientist"
+     }
+    ]
+   },
    "Leader.GetName": {
-    "zh": "本人",
+    "zh": "",
     "en": "the scientist",
-    "note": {
-     "zh": "游戏里这里会出现这位科学家的称呼。",
-     "en": "In the game, this scientist's form of address appears here."
-    }
+    "omit": [
+     "zh"
+    ]
+   },
+   "Leader.GetWasWere": {
+    "zh": "",
+    "en": "was",
+    "omit": [
+     "zh"
+    ]
    }
   },
   "grand_archive.8120": {
    "Leader.GetName": {
-    "zh": "本人",
+    "zh": "",
     "en": "the scientist",
-    "note": {
-     "zh": "游戏里这里会出现这位科学家的称呼。",
-     "en": "In the game, this scientist's form of address appears here."
-    }
+    "omit": [
+     "zh"
+    ]
+   },
+   "Leader.GetWasWere": {
+    "zh": "",
+    "en": "was",
+    "omit": [
+     "zh"
+    ]
    }
   },
   "grand_archive.8205": {
    "FROM.GetName": {
     "zh": "这个",
-    "en": "nearby",
-    "note": {
-     "zh": "游戏里这里会出现附近星系的名称。",
-     "en": "In the game, the nearby system's name appears here."
-    }
+    "en": "the nearby star"
    }
   },
   "grand_archive.8285": {
@@ -1489,6 +1515,12 @@
      "zh": "游戏里这里会出现附近星系的名称。",
      "en": "In the game, the nearby system's name appears here."
     }
+   }
+  },
+  "grand_archive.8400": {
+   "ness_treasure_system.GetName": {
+    "zh": "该",
+    "en": "this system"
    }
   },
   "special_projects:TREASURE_HUNTERS_BLACK_NEEDLE_PROJECT": {

@@ -71,13 +71,28 @@
  },
  "placeholderDocs": {
   "preftl.1115": {
+   "Root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
+   },
    "event_target:current_uprising.Capital.GetStarName": {
     "zh": "这个星系",
     "en": "the central system",
-    "note": {
-     "zh": "游戏里这里会出现起义势力所在的星系。",
-     "en": "In the game, the system held by the uprising appears here."
-    }
+    "variants": [
+     {
+      "lang": "en",
+      "after": " System is now",
+      "text": "the central"
+     }
+    ]
+   },
+   "event_target:current_uprising.GetName": {
+    "zh": "起义势力",
+    "en": "the uprising"
+   },
+   "root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
    }
   },
   "preftl.180": {
@@ -88,6 +103,14 @@
      "zh": "游戏里这里会出现这个星系。",
      "en": "In the game, this system appears here."
     }
+   },
+   "From.GetName": {
+    "zh": "当地势力",
+    "en": "the local power"
+   },
+   "Root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
    }
   }
  }

@@ -325,5 +325,7 @@ def install(E):
     for key in CLASSIFIED:
         E.HANDLERS.pop(key, None)
         E.SKIP_EXACT.add(key)
+    for key, lab in SCOPES.items():
+        E.SCOPE_NAMES.setdefault(key, L(*lab))
     E.CLASSIFIED = CLASSIFIED
     E.CATEGORIES = CATEGORIES

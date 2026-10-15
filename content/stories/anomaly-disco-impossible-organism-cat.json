@@ -141,10 +141,27 @@
   "anomalies:disco_impossible_organism_cat": {
    "From.GetName": {
     "zh": "这颗星球",
-    "en": "this planet",
-    "omit": [
-     "zh"
-    ]
+    "en": "this planet"
+   }
+  },
+  "distar.3010": {
+   "Root.GetLeaderName": {
+    "zh": "科研官员",
+    "en": "the leader",
+    "note": {
+     "zh": "游戏里这里会出现这位科研官员的名字。",
+     "en": "In the game, the science officer's name appears here."
+    }
+   }
+  },
+  "distar.3013": {
+   "nivlac_joint_planet.GetName": {
+    "zh": "那个世界",
+    "en": "planet",
+    "note": {
+     "zh": "游戏里这里会出现那个世界的名称。",
+     "en": "In the game, the world's name appears here."
+    }
    }
   }
  }

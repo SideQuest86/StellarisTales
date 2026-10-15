@@ -1,0 +1,539 @@
+{
+ "event-mega-201": {
+  "docs": {
+   "mega.201": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "the planet"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-observation-0": {
+  "reviewed": true
+ },
+ "event-observation-100": {
+  "docs": {
+   "observation.101": {
+    "missing_scientist.GetHeSheCap": {
+     "zh": "这位科学家",
+     "en": "they"
+    }
+   },
+   "observation.108": {
+    "missing_scientist.GetHeShe": {
+     "zh": "他",
+     "en": "they"
+    },
+    "missing_scientist.GetHimHer": {
+     "zh": "他",
+     "en": "them"
+    }
+   }
+  },
+  "exceptions": [
+   "observation.110: game text: GetHimHerCap stands where a possessive is needed ('mimic them appearance', 'demand them immediate release')"
+  ],
+  "reviewed": true
+ },
+ "event-observation-1000": {
+  "exceptions": [
+   "special_projects:ABDUCT_SCIENTIST_PROJECT: game text: 'abduct [GetHisHer] and then convince [GetHisHer]' uses the possessive pronoun as an object"
+  ],
+  "reviewed": true
+ },
+ "event-observation-1100": {
+  "reviewed": true
+ },
+ "event-observation-1200": {
+  "exceptions": [
+   "observation.1205: game text: singular species name as the subject of a plural verb ('The native on this planet have')"
+  ],
+  "reviewed": true
+ },
+ "event-observation-1300": {
+  "reviewed": true
+ },
+ "event-observation-1400": {
+  "reviewed": true
+ },
+ "event-observation-1500": {
+  "reviewed": true
+ },
+ "event-observation-200": {
+  "reviewed": true
+ },
+ "event-observation-2011": {
+  "reviewed": true
+ },
+ "event-observation-2014": {
+  "reviewed": true
+ },
+ "event-observation-2016": {
+  "reviewed": true
+ },
+ "event-observation-2018": {
+  "reviewed": true
+ },
+ "event-observation-2020": {
+  "reviewed": true
+ },
+ "event-observation-2022": {
+  "reviewed": true
+ },
+ "event-observation-2029": {
+  "reviewed": true
+ },
+ "event-observation-300": {
+  "reviewed": true
+ },
+ "event-observation-3138": {
+  "reviewed": true
+ },
+ "event-observation-3140": {
+  "reviewed": true
+ },
+ "event-observation-3142": {
+  "reviewed": true
+ },
+ "event-observation-3144": {
+  "reviewed": true
+ },
+ "event-observation-3146": {
+  "reviewed": true
+ },
+ "event-observation-3148": {
+  "reviewed": true
+ },
+ "event-observation-3150": {
+  "reviewed": true
+ },
+ "event-observation-3152": {
+  "reviewed": true
+ },
+ "event-observation-6": {
+  "reviewed": true
+ },
+ "event-preftl-10156": {
+  "docs": {
+   "preftl.10157": {
+    "pre_ftl_country.GetAdj": {
+     "zh": "该国",
+     "en": "the native"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-preftl-10160": {
+  "docs": {
+   "preftl.10161": {
+    "pre_ftl_country.GetAdj": {
+     "zh": "该国",
+     "en": "the native"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-preftl-10250": {
+  "reviewed": true
+ },
+ "event-preftl-espionage-2": {
+  "docs": {
+   "preftl_espionage.1001": {
+    "rogue_agent_spymaster.GetName": {
+     "zh": "某某",
+     "en": "the spymaster"
+    }
+   },
+   "preftl_espionage.1003": {
+    "rogue_agent_country.GetAdj": {
+     "zh": "该国",
+     "en": "native"
+    }
+   },
+   "preftl_espionage.1010": {
+    "rogue_agent_spymaster.GetName": {
+     "zh": "",
+     "en": "agent",
+     "omit": [
+      "zh"
+     ]
+    },
+    "rogue_agent_spymaster.GetHerHim": {
+     "zh": "此人",
+     "en": "they"
+    }
+   }
+  },
+  "exceptions": [
+   "preftl_espionage.1001: game text: [GetHimHer] used as a possessive ('to them love interest'); '[GetHeShe] [GetIsAre]' pair renders as 'if are still posing'"
+  ],
+  "reviewed": true
+ },
+ "event-preftl-operation-1000": {
+  "docs": {
+   "preftl_operation.1008": {
+    "From.GetName": {
+     "zh": "行动",
+     "en": "operation"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-preftl-operation-1015": {
+  "docs": {
+   "preftl_operation.1017": {
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   },
+   "preftl_operation.1018": {
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   },
+   "preftl_operation.1016": {
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   },
+   "preftl_operation.1019": {
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   },
+   "preftl_operation.1020": {
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   },
+   "preftl_operation.1021": {
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   }
+  },
+  "exceptions": [
+   "preftl_operation.1017: game text: 'a more militaristic [empire name]' expects a proper name; 'enlightened [species adjective] have' uses an adjective as a noun",
+   "preftl_operation.1018: game text: 'a more militaristic [empire name]' expects a proper name; 'enlightened [species adjective] have' uses an adjective as a noun",
+   "preftl_operation.1016: game text: 'a more militaristic [empire name]' expects a proper name; 'Natives advocates' uses a plural noun as a modifier; 'enlightened [adjective] have' uses an adjective as a noun",
+   "preftl_operation.1019: game text: 'a more militaristic [empire name]' expects a proper name; 'Natives advocates' uses a plural noun as a modifier; 'enlightened [adjective] have' uses an adjective as a noun",
+   "preftl_operation.1020: game text: 'a more militaristic [empire name]' expects a proper name; 'enlightened [species adjective] have' uses an adjective as a noun",
+   "preftl_operation.1021: game text: 'a more militaristic [empire name]' expects a proper name; 'enlightened [species adjective] have' uses an adjective as a noun"
+  ],
+  "reviewed": true
+ },
+ "event-preftl-operation-1025": {
+  "reviewed": true
+ },
+ "event-preftl-operation-1035": {
+  "docs": {
+   "preftl_operation.1035": {
+    "spynetwork.leader.GetName": {
+     "zh": "",
+     "en": "the leader",
+     "omit": [
+      "zh"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-preftl-operation-1045": {
+  "reviewed": true
+ },
+ "event-preftl-operation-1060": {
+  "docs": {
+   "preftl_operation.1060": {
+    "from.GetName": {
+     "zh": "行动",
+     "en": "operation"
+    }
+   },
+   "preftl_operation.1065": {
+    "infiltrated_country_species.GetAdj": {
+     "zh": "该族",
+     "en": "the natives"
+    },
+    "infiltrated_country_species.GetName": {
+     "zh": "该物种",
+     "en": "native"
+    }
+   },
+   "preftl_operation.1066": {
+    "infiltrated_country_species.GetAdj": {
+     "zh": "该族",
+     "en": "the natives'"
+    }
+   },
+   "preftl_operation.1067": {
+    "infiltrated_country_species.GetAdj": {
+     "zh": "该族",
+     "en": "the natives'"
+    }
+   },
+   "preftl_operation.1068": {
+    "From.GetName": {
+     "zh": "行动",
+     "en": "operation"
+    },
+    "from.GetName": {
+     "zh": "行动",
+     "en": "operation"
+    },
+    "infiltrated_country_species.GetAdj": {
+     "zh": "该族",
+     "en": "the natives'"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-preftl-operation-3000": {
+  "reviewed": true
+ },
+ "event-preftl-operation-3010": {
+  "reviewed": true
+ },
+ "event-preftl-operation-3020": {
+  "reviewed": true
+ },
+ "event-preftl-operation-3030": {
+  "reviewed": true
+ },
+ "event-preftl-operation-3040": {
+  "reviewed": true
+ },
+ "event-preftl-operation-3050": {
+  "docs": {
+   "preftl_operation.3050": {
+    "from.spynetwork.leader.GetName": {
+     "zh": "间谍首脑",
+     "en": "the spymaster"
+    },
+    "from.target.GetSpeciesName": {
+     "zh": "土著",
+     "en": "inhabitant"
+    }
+   },
+   "preftl_operation.3051": {
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-preftl-operation-3060": {
+  "docs": {
+   "preftl_operation.3060": {
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   },
+   "preftl_operation.3061": {
+    "from.spynetwork.leader.GetName": {
+     "zh": "",
+     "en": "the leader",
+     "omit": [
+      "zh"
+     ]
+    }
+   },
+   "preftl_operation.3063": {
+    "from.spynetwork.leader.GetName": {
+     "zh": "",
+     "en": "the leader",
+     "omit": [
+      "zh"
+     ]
+    },
+    "from.target.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "natives"
+    }
+   },
+   "preftl_operation.3064": {
+    "from.spynetwork.leader.GetName": {
+     "zh": "",
+     "en": "the leader",
+     "omit": [
+      "zh"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-preftl-operation-3100": {
+  "reviewed": true
+ },
+ "event-preftl-operation-3105": {
+  "docs": {
+   "preftl_operation.3105": {
+    "from.target.capital_scope.GetName": {
+     "zh": "",
+     "en": "this planet",
+     "omit": [
+      "zh"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-1100": {
+  "docs": {
+   "refugees.1": {
+    "Root.GetSpeciesNamePlural": {
+     "zh": "同胞",
+     "en": "our people"
+    },
+    "RefugeeEscapedFrom.GetSpeciesName": {
+     "zh": "那个",
+     "en": "neighbouring"
+    },
+    "RefugeeEscapedCrisis.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "alien"
+    },
+    "RefugeeEscapedFrom.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "alien"
+    },
+    "RefugeeEscapedPlanet.GetName": {
+     "zh": "",
+     "en": "their kind",
+     "omit": [
+      "zh"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-2750": {
+  "docs": {
+   "shroud.2750": {
+    "This.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "people"
+    }
+   },
+   "utopia.2602": {
+    "From.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "aliens"
+    },
+    "From.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "aliens"
+    }
+   },
+   "situations:situation_breach_shroud": {
+    "Owner.GetSpeciesNamePlural": {
+     "zh": "我们的族人",
+     "en": "our people"
+    }
+   },
+   "shroud.2780": {
+    "Owner.GetSpeciesNamePlural": {
+     "zh": "人口",
+     "en": "our people"
+    }
+   },
+   "shroud.2610": {
+    "owner.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "our people"
+    }
+   },
+   "shroud.2615": {
+    "owner.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "individuals"
+    }
+   },
+   "shroud.2635": {
+    "owner.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "our people's"
+    }
+   },
+   "shroud.2640": {
+    "owner.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "individuals"
+    }
+   }
+  },
+  "exceptions": [
+   "utopia.2602: game text: '[species] mechanotype' uses the species name as a determiner"
+  ],
+  "reviewed": true
+ },
+ "event-shroud-5010": {
+  "reviewed": true
+ },
+ "event-situation-1125": {
+  "docs": {
+   "situation.1125": {
+    "Target.capital_star.GetName": {
+     "zh": "这颗",
+     "en": "home"
+    },
+    "Target.capital_scope.Solar_System.GetName": {
+     "zh": "该星系",
+     "en": "star"
+    }
+   },
+   "situation.1130": {
+    "spynetwork.leader.GetName": {
+     "zh": "",
+     "en": "the leader",
+     "omit": [
+      "zh"
+     ]
+    }
+   },
+   "situation.1135": {
+    "spynetwork.leader.GetName": {
+     "zh": "",
+     "en": "the leader",
+     "omit": [
+      "zh"
+     ]
+    }
+   },
+   "situations:situation_stellarite_infested_star": {
+    "Target.GetName": {
+     "zh": "恒星",
+     "en": "this star"
+    }
+   },
+   "situation.1170": {
+    "target.GetName": {
+     "zh": "恒星",
+     "en": "star"
+    }
+   }
+  },
+  "exceptions": [
+   "situation.1125: game text: a literal 'S' precedes the star name ('the S[name] system')"
+  ],
+  "reviewed": true
+ }
+}

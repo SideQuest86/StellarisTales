@@ -142,5 +142,36 @@
     "en": "In the game, this system's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "enclave.6025": {
+   "Root.GetName": {
+    "zh": "这支舰队",
+    "en": "the fleet",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "science vessel ",
+      "text": "in question"
+     },
+     {
+      "lang": "en",
+      "after": "'s operations",
+      "text": "the vessel"
+     },
+     {
+      "lang": "zh",
+      "before": "科研船",
+      "text": ""
+     },
+     {
+      "lang": "zh",
+      "before": "改善",
+      "after": "的运行",
+      "text": "这艘船"
+     }
+    ]
+   }
+  }
  }
 }

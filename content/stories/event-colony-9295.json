@@ -47,5 +47,20 @@
     "en": "In the game, the name of this planet appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "colony.9300": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "variants": [
+     {
+      "lang": "en",
+      "after": "onium",
+      "text": "planet"
+     }
+    ]
+   }
+  }
  }
 }

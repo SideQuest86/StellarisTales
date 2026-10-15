@@ -637,6 +637,26 @@
     }
    }
   },
+  "first_contact.102": {
+   "This.ContactCountry.GetName": {
+    "zh": "未知",
+    "en": "unknown",
+    "note": {
+     "zh": "游戏里这里会出现这个未知文明的暂用代称。",
+     "en": "In the game, the provisional designation of this unknown civilisation appears here."
+    }
+   }
+  },
+  "first_contact.1020": {
+   "This.ContactCountry.GetName": {
+    "zh": "未知",
+    "en": "unknown",
+    "note": {
+     "zh": "游戏里这里会出现这个未知文明的暂用代称。",
+     "en": "In the game, the provisional designation of this unknown civilisation appears here."
+    }
+   }
+  },
   "first_contact.105": {
    "this.ContactCountry.GetHiveAuthority": {
     "zh": "集体",
@@ -647,6 +667,16 @@
     }
    }
   },
+  "first_contact.15": {
+   "known_planet.GetPlanetBioInfo": {
+    "zh": "那颗星球",
+    "en": "the inhabited world",
+    "note": {
+     "zh": "游戏里这里会出现那颗有人居住的星球。",
+     "en": "In the game, the inhabited planet appears here."
+    }
+   }
+  },
   "first_contact.20": {
    "This.Owner.GetSpeciesNamePlural": {
     "zh": "我们的同胞",
@@ -654,6 +684,20 @@
     "note": {
      "zh": "游戏里这里会出现我们这个物种的复数名称。",
      "en": "In the game, the plural name of your species appears here."
+    }
+   }
+  },
+  "first_contact.2000": {
+   "needed_name.GetSXX": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现动词词尾。",
+     "en": "In the game, the verb ending appears here."
     }
    }
   },

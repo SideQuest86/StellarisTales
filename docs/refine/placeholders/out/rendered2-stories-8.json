@@ -1,0 +1,421 @@
+{
+ "event-uplift-7500": {
+  "reviewed": true
+ },
+ "event-utopia-1": {
+  "reviewed": true
+ },
+ "event-utopia-2000": {
+  "reviewed": true
+ },
+ "event-utopia-2500": {
+  "docs": {
+   "utopia.2501": {
+    "Root.GetSpeciesNamePlural": {
+     "zh": "义体人",
+     "en": "Cyborgs"
+    }
+   },
+   "utopia.2505": {
+    "From.GetSpeciesNamePlural": {
+     "zh": "义体人",
+     "en": "Cyborgs"
+    }
+   },
+   "cyber.505": {
+    "root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   }
+  },
+  "exceptions": [
+   "utopia.2505: game text: 'They have even go so far as to' (typo)",
+   "cyber.510: game text: 'While X are fitted ..., and we have a unique opportunity' (broken clause)",
+   "cyber.515: game text: 'imprints the will of our leader the masses' (missing word)"
+  ],
+  "reviewed": true
+ },
+ "event-utopia-2550": {
+  "docs": {
+   "utopia.2555": {
+    "From.GetSpeciesNamePlural": {
+     "zh": "合成人",
+     "en": "Synthetics"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-utopia-2600": {
+  "docs": {
+   "utopia.2600": {
+    "Root.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "people"
+    },
+    "root.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "people"
+    },
+    "Root.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "",
+     "omit": [
+      "en"
+     ]
+    },
+    "Root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "",
+     "omit": [
+      "en"
+     ]
+    }
+   },
+   "utopia.2650": {
+    "Root.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "our species"
+    }
+   }
+  },
+  "exceptions": [
+   "utopia.2608: game text: raw '**Error - for GCs**' placeholder left in the original data"
+  ],
+  "reviewed": true
+ },
+ "event-utopia-29": {
+  "docs": {
+   "utopia.33": {
+    "dysonsphere_builder.GetRulerTitle": {
+     "zh": "统治者",
+     "en": "the ruler"
+    },
+    "dyson_sphere_neighbor.GetRulerTitle": {
+     "zh": "对方",
+     "en": "the other"
+    }
+   },
+   "utopia.35": {
+    "dysonsphere_builder.GetRulerTitle": {
+     "zh": "统治者",
+     "en": "the ruler"
+    },
+    "dyson_sphere_neighbor.GetRulerTitle": {
+     "zh": "对方",
+     "en": "the other"
+    }
+   },
+   "utopia.36": {
+    "dysonsphere_builder.GetRulerTitle": {
+     "zh": "统治者",
+     "en": "the ruler"
+    },
+    "dyson_sphere_neighbor.GetRulerTitle": {
+     "zh": "对方",
+     "en": "the other"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-utopia-4000": {
+  "reviewed": true
+ },
+ "event-utopia-4100": {
+  "reviewed": true
+ },
+ "event-utopia-50": {
+  "docs": {
+   "utopia.55": {
+    "target_country.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "natives"
+    }
+   },
+   "utopia.56": {
+    "target_country.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "natives"
+    }
+   },
+   "utopia.57": {
+    "target_country.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "native"
+    }
+   },
+   "utopia.103": {
+    "target_country.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "natives"
+    }
+   },
+   "utopia.105": {
+    "target_country.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "natives"
+    }
+   },
+   "utopia.108": {
+    "target_country.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "natives"
+    }
+   },
+   "utopia.107": {
+    "fountain_of_youth_country.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "people"
+    }
+   },
+   "utopia.59": {
+    "volunteer_leader.GetName": {
+     "zh": "本人",
+     "en": "the volunteer"
+    }
+   },
+   "utopia.64": {
+    "volunteer_leader.GetName": {
+     "zh": "本人",
+     "en": "the volunteer"
+    }
+   },
+   "utopia.62": {
+    "abducted_leader.GetName": {
+     "zh": "这位科学家",
+     "en": "the scientist"
+    }
+   },
+   "utopia.63": {
+    "abducted_leader.GetName": {
+     "zh": "这位科学家",
+     "en": "the scientist"
+    }
+   }
+  },
+  "exceptions": [
+   "utopia.63: game text: pronoun template renders 'claim«they»', 'theyre' and '«Are»' with missing subject"
+  ],
+  "reviewed": true
+ },
+ "event-utopia-80": {
+  "reviewed": true
+ },
+ "great-khan": {
+  "docs": {
+   "marauder.502": {
+    "raider_khanate.GetSpeciesName": {
+     "zh": "我的族人",
+     "en": "my people"
+    },
+    "raider_khanate.GetSpeciesNamePlural": {
+     "zh": "我的族人",
+     "en": "my people"
+    }
+   },
+   "marauder.550": {
+    "raider_khanate.GetSpeciesName": {
+     "zh": "我的族人",
+     "en": "my people"
+    },
+    "raider_khanate.GetSpeciesNamePlural": {
+     "zh": "我的族人",
+     "en": "my people"
+    }
+   },
+   "marauder.552": {
+    "raider_khanate.GetSpeciesNamePlural": {
+     "zh": "掠夺者",
+     "en": "the marauders"
+    }
+   },
+   "marauder.510": {
+    "great_khan.GetName": {
+     "zh": "大可汗",
+     "en": "the Great Khan"
+    }
+   },
+   "marauder.77": {
+    "raider_khanate.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "the khanate's"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "paragon-renowned-aturion": {
+  "reviewed": true
+ },
+ "paragon-renowned-borin": {
+  "docs": {
+   "paragon.41010": {
+    "Root.GetHeShe": {
+     "zh": "此人",
+     "en": "the leader"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "paragon-renowned-gia-zumon": {
+  "reviewed": true
+ },
+ "paragon-renowned-jynn": {
+  "reviewed": true
+ },
+ "paragon-renowned-kai-sha": {
+  "docs": {
+   "paragon.41320": {
+    "Root.GetHeShe": {
+     "zh": "此人",
+     "en": "the leader"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "paragon-renowned-lysator-syng": {
+  "reviewed": true
+ },
+ "paragon-renowned-nasuz-demetor": {
+  "reviewed": true
+ },
+ "paragon-renowned-nona": {
+  "reviewed": true
+ },
+ "paragon-renowned-qla-minder": {
+  "reviewed": true
+ },
+ "paragon-renowned-shuladun": {
+  "docs": {
+   "paragon.40520": {
+    "Root.GetHeSheCap": {
+     "zh": "此人",
+     "en": "The leader"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "paragon-renowned-ulastar": {
+  "docs": {
+   "paragon.41510": {
+    "Root.GetSheHe": {
+     "zh": "此人",
+     "en": "the mystic"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "paragon-renowned-uld-dagr": {
+  "reviewed": true
+ },
+ "paragon-renowned-vas-the-gilded": {
+  "docs": {
+   "paragon.41220": {
+    "Root.GetHeShe": {
+     "zh": "此人",
+     "en": "the leader"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "paragon-renowned-vyctor-jariden": {
+  "reviewed": true
+ },
+ "paragon-renowned-xondar": {
+  "docs": {
+   "paragon.40910": {
+    "Root.GetHeShe": {
+     "zh": "此人",
+     "en": "the leader"
+    }
+   }
+  },
+  "exceptions": [
+   "paragon.40920: game text: 'within the our borders'"
+  ],
+  "reviewed": true
+ },
+ "paragon-renowned-zosira-ktun": {
+  "reviewed": true
+ },
+ "the-shroud": {
+  "docs": {
+   "utopia.3200": {
+    "Root.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "member of our species"
+    }
+   },
+   "utopia.3150": {
+    "fallen_empire.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "an alien"
+    },
+    "fallen_empire.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "aliens"
+    }
+   },
+   "utopia.3151": {
+    "fallen_empire.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "aliens"
+    }
+   },
+   "utopia.3152": {
+    "fallen_empire.GetSpeciesNamePlural": {
+     "zh": "同类",
+     "en": "aliens"
+    },
+    "Root.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "our own"
+    }
+   },
+   "utopia.3401": {
+    "chosen_one_species.GetAdj": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    },
+    "chosen_one.GetRulerTitle": {
+     "zh": "统治者",
+     "en": "the ruler"
+    }
+   },
+   "utopia.3350": {
+    "Root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "our"
+    }
+   },
+   "utopia.3351": {
+    "Root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "our"
+    }
+   },
+   "shroud.11255": {
+    "solar_system.Star.GetStarName": {
+     "zh": "这颗恒星",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [
+   "utopia.3192/3333/3334/3340: game text: raw '**Error - for GCs**' placeholder left in the original data",
+   "utopia.3304/3305/3306/3307/2658: game text: leading space inside the original term '« telepaths»'"
+  ],
+  "reviewed": true
+ }
+}

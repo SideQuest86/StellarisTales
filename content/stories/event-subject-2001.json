@@ -52,11 +52,7 @@
   "subject.2005": {
    "overlord_empire.GetName": {
     "zh": "宗主国",
-    "en": "the overlord",
-    "note": {
-     "zh": "游戏里这里会出现你的宗主国。",
-     "en": "In the game, your overlord's name appears here."
-    }
+    "en": "the overlord's realm"
    }
   },
   "subject.2010": {
@@ -67,6 +63,12 @@
      "zh": "游戏里这里会出现你的宗主国。",
      "en": "In the game, your overlord's name appears here."
     }
+   }
+  },
+  "subject.2015": {
+   "overlord_empire.Capital.GetName": {
+    "zh": "宗主国首都",
+    "en": "the overlord's capital"
    }
   }
  }

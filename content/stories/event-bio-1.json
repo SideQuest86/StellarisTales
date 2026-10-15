@@ -995,12 +995,16 @@
  "placeholderDocs": {
   "bio.85": {
    "Owner.Leader.GetHerselfHimself": {
-    "zh": "这位领袖本人",
+    "zh": "这位领袖",
     "en": "the leader themselves",
     "note": {
-     "zh": "游戏里这里会出现领袖本人的说法。",
-     "en": "In the game, the leader themselves appears here."
+     "zh": "游戏里这里会出现这位领袖的称呼。",
+     "en": "In the game, the leader's name appears here."
     }
+   },
+   "Owner.Leader.GetName": {
+    "zh": "这位领袖",
+    "en": "the original"
    }
   },
   "bio.86": {
@@ -1008,13 +1012,8 @@
     "zh": "我们的",
     "en": "",
     "omit": [
-     "en",
-     "zh"
-    ],
-    "note": {
-     "zh": "这里省略这个词，句子读起来更自然。",
-     "en": "This word is left out, so the sentence reads naturally."
-    }
+     "en"
+    ]
    }
   }
  }

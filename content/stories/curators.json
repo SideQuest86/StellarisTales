@@ -364,9 +364,6 @@
    "Root.GetSpeciesNamePlural": {
     "zh": "朋友们",
     "en": "friends",
-    "omit": [
-     "en"
-    ],
     "note": {
      "zh": "游戏里这里会出现你们的称呼。",
      "en": "In the game, your group's name appears here."
@@ -391,15 +388,20 @@
      "zh": "游戏里这里会出现这个帝国的其他同类。",
      "en": "In the game, this empire's other peers appear here."
     }
+   },
+   "origin_unplugged_assimilator_empire.GetName": {
+    "zh": "那个帝国",
+    "en": "the former empire",
+    "note": {
+     "zh": "游戏里这里会出现那个帝国的名字。",
+     "en": "In the game, that empire's name appears here."
+    }
    }
   },
   "leviathans.597": {
    "Root.GetSpeciesNamePlural": {
     "zh": "朋友们",
     "en": "friends",
-    "omit": [
-     "en"
-    ],
     "note": {
      "zh": "游戏里这里会出现你们的称呼。",
      "en": "In the game, your group's name appears here."

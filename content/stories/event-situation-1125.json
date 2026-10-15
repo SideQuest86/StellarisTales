@@ -195,5 +195,51 @@
     "en": "In the game, this star's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "situation.1125": {
+   "Target.capital_scope.Solar_System.GetName": {
+    "zh": "该星系",
+    "en": "star"
+   },
+   "Target.capital_star.GetName": {
+    "zh": "这颗",
+    "en": "home"
+   }
+  },
+  "situation.1130": {
+   "spynetwork.leader.GetName": {
+    "zh": "",
+    "en": "the leader",
+    "omit": [
+     "zh"
+    ]
+   }
+  },
+  "situation.1135": {
+   "spynetwork.leader.GetName": {
+    "zh": "",
+    "en": "the leader",
+    "omit": [
+     "zh"
+    ]
+   }
+  },
+  "situation.1170": {
+   "Target.GetName": {
+    "zh": "这颗恒星",
+    "en": "Star"
+   },
+   "target.GetName": {
+    "zh": "恒星",
+    "en": "Star"
+   }
+  },
+  "situations:situation_stellarite_infested_star": {
+   "Target.GetName": {
+    "zh": "恒星",
+    "en": "Star"
+   }
+  }
  }
 }

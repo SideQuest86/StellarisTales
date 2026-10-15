@@ -55,5 +55,25 @@
     "en": "In the game, the name of the other empire appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "envoy_events.225": {
+   "event_envoy.GetAmbassadorOrNot": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   },
+   "event_envoy.GetHerselfHimself": {
+    "zh": "自己",
+    "en": "themselves"
+   },
+   "event_envoy.GetName": {
+    "zh": "这位使者",
+    "en": "Envoy"
+   }
+  }
  }
 }

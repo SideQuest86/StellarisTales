@@ -17,9 +17,9 @@ SPECIFIC = ('满足特定条件时', 'if a specific condition holds')
 OBJECT = ('相关对象', 'a related object')
 
 # trigger keys that read internal story state -> STORY
+# purely internal story state only: variables, flags, saved targets, event-chain / first-contact / situation bookkeeping
 STORY_RE = re.compile(r'(variable|_flag$|^has_\w*flag|event_target|^exists$|is_same_value|same_value|first_contact|situation|event_chain|'
-                      r'^check_|^modulo|arithmetic|counter|insight|^which$|^value$|^who$|^is_in_|saved|^always$|^is_current|^has_completed|'
-                      r'^current_|^last_|_progress|clue|^num_|^distance|^has_term|^has_envoy_task|^intel|^has_intel|^compare|_compare$|^relative_)')
+                      r'^check_|^modulo|arithmetic|counter|insight|^which$|^is_current_|^has_completed|^current_|clue)')
 PROGRESS_RE = re.compile(r'(stage|score)')
 
 BOOL_COND = {  # key -> (zh, en) as a positive statement about the scope
@@ -136,6 +136,97 @@ WORDS = {  # single words of humanised keys (for objects with no localisation); 
     'civic': '国民理念', 'tradition': '传统', 'ascension': '飞升', 'perk': '天赋', 'edict': '法令', 'policy': '政策', 'resolution': '决议',
     'federation': '联邦', 'alliance': '联盟', 'war': '战争', 'peace': '和平', 'army': '陆军', 'tier': '等级', 'level': '等级', 'size': '规模',
 }
+
+WORDS.update({
+    'a': '', 'access': '通行', 'accessible': '可进入的', 'active': '活跃的', 'affected': '受影响的', 'agreement': '协议', 'ai': 'AI', 'alloy': '合金',
+    'alternative': '替代', 'amoeba': '阿米巴', 'amount': '数量', 'and': '与', 'anglers': '垂钓者', 'anti': '反', 'anvil': '铁砧', 'any': '任意',
+    'apocalyptic': '末世', 'apply': '应用', 'aquatic': '水生', 'armies': '陆军', 'ascensionist': '飞升主义', 'assigned': '在岗', 'assimilation': '同化',
+    'assimilator': '同化者', 'association': '联盟关系', 'asteroid': '小行星', 'astral': '星界', 'attacker': '进攻方', 'aura': '光环', 'available': '可用的',
+    'awareness': '觉察度', 'be': '', 'beastmasters': '驭兽者', 'been': '已', 'behemoth': '巨兽', 'being': '正在', 'binary': '双星', 'blocker': '阻挡物',
+    'blocks': '阻挡', 'branch': '分部', 'broken': '破碎', 'buildings': '建筑', 'can': '能够', 'candidate': '候选', 'capital': '首都', 'capitalist': '资本主义',
+    'caravan': '商队', 'caravaneer': '商队团', 'casus': '宣战', 'catalytic': '催化', 'category': '类别', 'center': '中心', 'chosen': '天选', 'citizenship': '公民权',
+    'civilian': '民用', 'claim': '宣称', 'climate': '气候', 'cloaking': '隐形', 'cloning': '克隆', 'closed': '封闭', 'cold': '寒冷', 'colonizable': '可殖民',
+    'commercial': '商业', 'communications': '通讯', 'complete': '完成', 'component': '组件', 'constructing': '建造中', 'contains': '含有', 'controlled': '受控',
+    'corporeal': '肉体', 'cosmic': '宇宙', 'count': '数量', 'covenant': '契约', 'create': '创建', 'crime': '犯罪度', 'criminal': '犯罪', 'critter': '小生物',
+    'culture': '文化', 'curator': '策展人', 'current': '当前', 'custom': '自定义', 'cutholoids': '岩居兽', 'cybernetic': '义体', 'cyborg': '半机械', 'cycle': '轮回',
+    'deep': '深', 'defender': '防守方', 'deficit': '赤字', 'democracy': '民主制', 'democratic': '民主', 'devastation': '荒废度', 'deviancy': '异常', 'devouring': '吞噬',
+    'dictatorial': '独裁', 'difficulty': '难度', 'dimensional': '维度', 'diplo': '外交', 'diplomatic': '外交', 'dissociation': '解离', 'distance': '距离',
+    'distar': '遥远恒星', 'districts': '区划', 'dna': '基因', 'dry': '干燥', 'eager': '热切', 'eater': '吞噬者', 'ego': '自我', 'eligible': '符合条件的',
+    'enclave': '飞地', 'energy': '能量', 'entropy': '熵', 'environmental': '环境', 'espionage': '间谍', 'established': '已建立的', 'event': '事件',
+    'exempt': '豁免', 'exhibit': '展品', 'exotic': '奇异', 'exploring': '探索中', 'faction': '派系', 'failed': '失败的', 'fanatic': '狂热', 'fauna': '动物',
+    'favoring': '偏向', 'fleets': '舰队', 'flight': '飞行', 'flora': '植物', 'food': '食物', 'forced': '被迫', 'forger': '锻造者', 'founder': '创始',
+    'free': '空闲', 'galactic': '银河', 'galaxy': '银河', 'galvanic': '电镀', 'gang': '帮派', 'gas': '气体', 'genocidal': '灭绝', 'go': '进入', 'grand': '大',
+    'group': '群体', 'guaranteed': '有保障的', 'guardian': '守护者', 'guided': '受引导的', 'habitability': '宜居性', 'habitable': '宜居', 'habitat': '栖息地',
+    'happened': '已发生', 'happiness': '幸福度', 'harming': '损害', 'harvest': '收获', 'harvestable': '可收获的', 'has': '有', 'have': '有', 'head': '负责人',
+    'hidden:owner': '', 'holy': '神圣', 'hospitality': '待客', 'hp': '耐久', 'human': '人类', 'hyperlane': '超空间航道', 'hyperspace': '超空间', 'ideal': '理想',
+    'idle': '闲置', 'immortal': '不死', 'imperial': '帝国', 'in': '在', 'inside': '内', 'intel': '情报', 'is': '是', 'job': '岗位', 'killed': '被消灭',
+    'knights': '骑士', 'last': '最近', 'latent': '潜在', 'law': '法律', 'leased': '租赁', 'leviathans': '利维坦', 'lgate': 'L星门', 'lithoids': '石质生命',
+    'living': '生活', 'location': '位置', 'marauder': '掠夺者', 'market': '市场', 'matching': '匹配', 'max': '最大', 'megacorp': '巨型企业', 'megastructure': '巨型建筑',
+    'memorialist': '纪念者', 'menace': '威胁', 'mercenary': '雇佣兵', 'met': '已遇到', 'mindwardens': '心灵守护者', 'mineral': '矿物', 'minor': '次要',
+    'mission': '任务', 'mob': '暴民', 'module': '模块', 'moon': '卫星', 'most': '最多', 'multiplayer': '多人游戏', 'mutation': '变异', 'natural': '天然',
+    'nemesis': '复仇女神', 'no': '无', 'non': '非', 'nonshipyard': '非造船厂', 'normal': '普通', 'notification': '提示', 'obtain': '获得', 'of': '', 'oligarchic': '寡头',
+    'oligarchy': '寡头制', 'on': '在', 'opinion': '态度', 'or': '或', 'orbital': '轨道', 'organic': '有机', 'organo': '有机体', 'overlord': '宗主', 'owned': '所属',
+    'owner': '所有者', 'owns': '拥有', 'participant': '参与方', 'patron': '赞助者', 'perc': '百分比', 'pest': '害虫', 'phototrophic': '光合', 'planetary': '行星',
+    'planets': '星球', 'platform': '平台', 'point': '点', 'position': '位置', 'potential': '潜在', 'pre': '前', 'preferred': '偏好的', 'prefers': '偏好', 'preftl': '前星际',
+    'presapient': '前智慧', 'prevprev': '上两层对象', 'purge': '清洗', 'purity': '纯净', 'rare': '稀有', 'reanimator': '复活者', 'receive': '接收', 'reduced': '减少的',
+    'regular': '常规', 'relative': '相对', 'relentless': '不懈', 'researching': '正在研究', 'resource': '资源', 'rim': '边缘', 'rivals': '宿敌', 'sabotage': '破坏',
+    'same': '相同', 'sapient': '开智', 'sb': '星港', 'scavenger': '拾荒者', 'science': '科学', 'scion': '后裔', 'scope': '范围', 'scripted': '脚本', 'secret': '秘密',
+    'sector': '星域', 'sector.sector': '星域首府', 'seeded': '播种的', 'separatism': '分离主义', 'set': '设置', 'setting': '设置', 'shackled': '被束缚', 'ships': '舰船',
+    'site': '遗址', 'slave': '奴隶', 'slavery': '奴役', 'spawn': '生成', 'specialist': '专业人才', 'specimen': '标本', 'sphere': '领域', 'spiritualist': '唯心',
+    'spy': '间谍', 'spynetwork': '间谍网络', 'stability': '稳定度', 'star': '恒星', 'start': '开局', 'starting': '起始', 'subspecies': '亚种', 'subterranean': '地下',
+    'suitable': '适合', 'superstitious': '迷信', 'synth': '合成', 'synthetic': '合成', 'taken': '被占领', 'tankbound': '缸中', 'targeted': '被针对的', 'task': '任务',
+    'term': '条款', 'tier1or2': '一或二级', 'tier1or2or3': '一至三级', 'tiyanki': '提雅奇', 'total': '总', 'toxic': '有毒', 'toxoids': '毒质人', 'treasure': '宝藏',
+    'trinary': '三星', 'truce': '停战', 'trust': '信任', 'twisted': '扭曲', 'type': '类型', 'uncleared': '未清理的', 'under': '受', 'undermining': '削弱',
+    'unfriendly': '不友好', 'uninhabitable': '不宜居', 'unique': '独特', 'unplugged': '断线者', 'uses': '使用', 'using': '使用', 'valid': '有效', 'value': '数值',
+    'values': '重视', 'virtual': '虚拟', 'vivarium': '生态馆', 'void': '虚空', 'voidworms': '虚空蠕虫', 'volatile': '挥发', 'wet': '潮湿', 'whisperers': '低语者',
+    'will': '将', 'worker': '工人', 'years': '年数', 'zone': '分区', 'zroni': '泽珞',
+})
+
+WORDS.update({
+    'architects': '建筑师', 'archive': '档案馆', 'artifact': '神器', 'asset': '资产', 'attunement': '共鸣度', 'authority': '统治权柄', 'backup': '备份', 'baths': '浴场',
+    'beliefs': '信仰', 'belli': '理由', 'belt': '带', 'bio': '生物', 'biochemical': '生化', 'blockers': '阻挡物', 'bombardment': '轨道轰炸', 'border': '边境',
+    'borders': '边境', 'breach': '违反', 'but': '但', 'by': '被', 'caster': '投射器', 'chain': '链', 'champions': '冠军', 'changed': '被改变的', 'class': '类别',
+    'closer': '更近', 'cluster': '星团', 'collection': '收集', 'colonies': '殖民地', 'combat': '战斗', 'commander': '指挥官', 'community': '共同体', 'conflict': '冲突',
+    'consumer': '消费', 'contracts': '合约', 'control': '控制', 'controllable': '可控', 'coop': '合作社', 'council': '议会', 'created': '已创建', 'crystals': '水晶',
+    'curators': '策展人', 'cybernetics': '义体', 'declared': '被宣告', 'defeated': '被击败', 'deposits': '资源点', 'diadochi': '继业者', 'district': '区划',
+    'domain': '领域', 'drinkers': '饮者', 'drug': '毒品', 'dweller': '居民', 'emitter': '发射器', 'empires': '帝国', 'enabled': '启用', 'encryption': '加密',
+    'equilibrators': '平衡器', 'equivalent': '等价', 'expansion': '扩张', 'experimenters': '实验者', 'explorer': '探索者', 'extorted': '被勒索', 'extreme': '极端',
+    'fealty': '效忠', 'fleet1': '舰队一', 'fleet2': '舰队二', 'fleet3': '舰队三', 'focus': '专长', 'for': '对', 'fortune': '命运', 'friendly': '友好', 'from': '来自',
+    'ftl': '超光速', 'game': '游戏', 'giant': '巨', 'goal': '目标', 'harmony': '和谐', 'housing': '住房', 'income': '收入', 'incompatible': '不兼容',
+    'increased': '提升的', 'industrialist': '工业家', 'integrated': '被整合', 'integration': '整合', 'interest': '关注点', 'interfacing': '接口', 'jobs': '岗位',
+    'joining': '加入', 'knowledge': '知识', 'losing': '处于劣势', 'lured': '被引诱', 'madness': '疯狂', 'masters': '大师', 'mia': '失踪', 'migration': '迁徙',
+    'mindwarden': '心灵守护者', 'minister': '大臣', 'motes': '微粒', 'muutagan': '穆塔甘', 'naval': '海军', 'necrophaged': '被噬尸', 'negative': '负面',
+    'neutral': '中立', 'newfound': '新发现', 'nominee': '提名', 'not': '不', 'office': '办事处', 'omens': '预兆', 'one': '一', 'open': '开放', 'operation': '行动',
+    'origin': '起源', 'others': '他人', 'pact': '条约', 'paperclip': '回形针', 'percentage': '比例', 'picked': '已选择', 'positive': '正面', 'power': '实力',
+    'prescripted': '预设', 'preset': '预设', 'primitives': '原始文明', 'progress': '进度', 'prosperity': '繁荣', 'psychosis': '精神错乱', 'queen': '女王',
+    'reached': '达到', 'refugee': '难民', 'relation': '关系', 'relations': '关系', 'remote': '远程', 'reserve': '后备', 'resources': '资源', 'rift': '裂隙',
+    'riggan': '里甘', 'rights': '权利', 'ring': '环', 'rule': '统治', 'sapience': '智慧', 'schools': '学校', 'scientist': '科学家', 'scrapped': '被拆解',
+    'seeker': '追寻者', 'servitor': '侍从', 'shackles': '枷锁', 'shock': '冲击', 'shroud': '虚境', 'shrouded': '虚境', 'side': '一方', 'sleep': '沉睡',
+    'slots': '空位', 'smuggled': '被走私', 'societal': '社会', 'societies': '社团', 'special': '特殊', 'specialization': '专精', 'specialty': '专长',
+    'splitter': '分裂器', 'stage': '阶段', 'standard': '标准', 'status': '状态', 'stockpile': '库存', 'story': '剧情', 'strategic': '战略', 'strength': '强度',
+    'structure': '结构', 'subject': '附庸', 'suppressed': '被压制', 'swarm': '虫群', 'synergy': '协同', 'systems': '星系', 'target': '目标', 'template': '模板',
+    'terraforming': '环境改造', 'to': '', 'trove': '宝库', 'troves': '宝库', 'underworld': '地下世界', 'unhappiness': '不满', 'wars': '战争', 'weapons': '武器',
+    'with': '与', 'wormhole': '虫洞', 'worship': '崇拜', 'xuracorp': '朱拉企业',
+})
+
+WORDS.update({
+    'adopt': '采纳', 'advanced': '高级', 'approach': '方针', 'capacity': '容量', 'celestial': '天界', 'check': '检查', 'clone': '克隆', 'collision': '碰撞',
+    'compare': '', 'composure': '镇定', 'computer': '计算机', 'decryption': '解密', 'defensive': '防御', 'destination': '目的地', 'diplomacy': '外交',
+    'eligibility': '资格', 'end': '终结', 'enlightenment': '启蒙', 'era': '时期', 'fe': '衰落帝国', 'fertility': '肥沃', 'forge': '熔炉', 'formula': '配方',
+    'galcom': '银河共同体', 'generation': '生成', 'goods': '商品', 'governors': '总督', 'homicidal': '杀戮', 'ignited': '被点燃', 'killer': '杀手', 'lvl': '等级',
+    'modern': '现代', 'nomads': '游牧', 'observed': '被观察', 'offensive': '进攻', 'playable': '可玩', 'project': '专项', 'rank': '排名', 'reduction': '削减',
+    'repeatable': '可重复', 'revenge': '复仇', 'reward': '奖励', 'score': '得分', 'solar': '恒星', 'specimens': '标本', 'state': '状态', 'steal': '窃取',
+    'subterfuge': '诡计', 'technological': '技术', 'than': '于', 'the': '', 'theme': '主题', 'trade': '贸易', 'treaty': '条约', 'trigger': '条件', 'uncovered': '被揭示',
+    'universe': '宇宙', 'urban': '都市', 'victorian': '维多利亚', 'voidworm': '虚空蠕虫', 'composer': '谱线者', 'strands': '丝线', 'instrument': '工具', 'desire': '欲望',
+    'cradle': '摇篮', 'souls': '灵魂', 'cycle': '轮回', 'ancient': '远古', 'pink': '粉红', 'storm': '风暴', 'respawn': '重生', 'resources': '资源',
+})
+
+WORDS.update({'cleanse': '净化', 'combatant': '参战方', 'flare': '耀斑', 'government': '政府', 'log': '记录', 'nanobots': '纳米机器人', 'skipped': '被跳过',
+              'stop': '制止', 'tear': '裂口', 'visit': '到访', 'worlds': '世界', 'planet': '星球', 'killer': '杀手'})
+
+WORDS.update({'scale': '规模系数', 'crisis': '天灾', 'strength': '强度'})
+WORDS.update({'exact': '完全', 'geology': '地质', 'item': '物品', 'wonder': '奇观'})
+WORDS.update({'aesthetic': '审美', 'atrocities': '暴行', 'historical': '历史', 'xeno': '异种'})
 
 
 def zh_words(key):

@@ -85,5 +85,32 @@
     "en": "In the game, this planet's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "refugees.1": {
+   "RefugeeEscapedCrisis.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "alien"
+   },
+   "RefugeeEscapedFrom.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "alien"
+   },
+   "RefugeeEscapedFrom.GetSpeciesName": {
+    "zh": "那个",
+    "en": "neighbouring"
+   },
+   "RefugeeEscapedPlanet.GetName": {
+    "zh": "",
+    "en": "their kind",
+    "omit": [
+     "zh"
+    ]
+   },
+   "Root.GetSpeciesNamePlural": {
+    "zh": "同胞",
+    "en": "our people"
+   }
+  }
  }
 }

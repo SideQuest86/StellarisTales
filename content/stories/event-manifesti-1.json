@@ -41,5 +41,37 @@
     "en": "In the game, the name of your empire appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "event_chains:manifesti_chain": {
+   "owner.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire",
+    "note": {
+     "zh": "游戏里这里会出现你的帝国名称。",
+     "en": "In the game, your empire's name appears here."
+    }
+   }
+  },
+  "manifesti.20": {
+   "this.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "note": {
+     "zh": "游戏里这里会出现展览所在的星球。",
+     "en": "In the game, the planet hosting the exhibit appears here."
+    }
+   }
+  },
+  "manifesti.5": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "note": {
+     "zh": "游戏里这里会出现示威发生的星球。",
+     "en": "In the game, the planet where the protests took place appears here."
+    }
+   }
+  }
  }
 }

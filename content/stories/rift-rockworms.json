@@ -130,5 +130,23 @@
     "en": "In the game, the name of this colonist appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "astral_rift.1890": {
+   "From.GetHasHave": {
+    "zh": "",
+    "en": "has",
+    "omit": [
+     "zh"
+    ],
+    "variants": [
+     {
+      "lang": "en",
+      "before": "capabilities ",
+      "text": "have"
+     }
+    ]
+   }
+  }
  }
 }

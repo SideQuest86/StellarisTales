@@ -93,5 +93,31 @@
    "bio.2015 / 2036 are generic fleet-destroyed hooks gated by origin state inside the event; their exact conditions were read from the listing only."
   ],
   "guide": "public/summaries/origin_starlit_citadel.md"
+ },
+ "placeholderDocs": {
+  "bio.2025": {
+   "event_target:starlit_sealed_system.GetName": {
+    "zh": "这个",
+    "en": "this system"
+   }
+  },
+  "bio.2040": {
+   "event_target:starlit_sealed_system.GetName": {
+    "zh": "这个恒星",
+    "en": "this system"
+   }
+  },
+  "event_chains:abandoned_hatchery_chain_3": {
+   "event_target:starlit_sealed_system.GetName": {
+    "zh": "这个",
+    "en": "this system"
+   }
+  },
+  "event_chains:abandoned_hatchery_chain_4": {
+   "starlit_sealed_system.GetName": {
+    "zh": "这个",
+    "en": "this system"
+   }
+  }
  }
 }

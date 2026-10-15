@@ -79,6 +79,24 @@
      "en": "In the game, a specific technological progression amount appears here."
     }
    }
+  },
+  "special_projects:ABDUCT_SCIENTIST_PROJECT": {
+   "abducted_scientist.GetHisHer": {
+    "zh": "此人",
+    "en": "their",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "abduct ",
+      "text": "them"
+     },
+     {
+      "lang": "en",
+      "before": "\"convince\" ",
+      "text": "them"
+     }
+    ]
+   }
   }
  }
 }

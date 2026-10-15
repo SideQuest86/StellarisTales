@@ -70,6 +70,54 @@
   }
  },
  "placeholderDocs": {
+  "fedel.10": {
+   "rival_chosen_leader.GetRegnalName": {
+    "zh": "对方统治者",
+    "en": "the rival ruler",
+    "note": {
+     "zh": "游戏里这里会出现对方帝国统治者的名字。",
+     "en": "In the game, the other empire's ruler's name appears here."
+    }
+   },
+   "rival_chosen_leader.GetRulerTitle": {
+    "zh": "",
+    "en": "rival",
+    "omit": [
+     "zh"
+    ]
+   },
+   "ruler.GetIsAre": {
+    "zh": "",
+    "en": "they are",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现动词形式。",
+     "en": "In the game, the matching verb form appears here."
+    }
+   },
+   "ruler.GetRegnalName": {
+    "zh": "我们的统治者",
+    "en": "our ruler",
+    "note": {
+     "zh": "游戏里这里会出现你的统治者的名字。",
+     "en": "In the game, your ruler's name appears here."
+    }
+   },
+   "ruler.GetSXX": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现动词词尾。",
+     "en": "In the game, the verb ending appears here."
+    }
+   }
+  },
   "fedel.15": {
    "ruler.GetHerselfHimself": {
     "zh": "自己",
@@ -78,16 +126,64 @@
      "zh": "游戏里这里会出现统治者的自称代词。",
      "en": "In the game, the ruler's reflexive pronoun appears here."
     }
+   },
+   "ruler.GetIsAre": {
+    "zh": "",
+    "en": "they are",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现动词形式。",
+     "en": "In the game, the matching verb form appears here."
+    }
+   },
+   "ruler.GetRegnalName": {
+    "zh": "我们的统治者",
+    "en": "our ruler",
+    "note": {
+     "zh": "游戏里这里会出现你的统治者的名字。",
+     "en": "In the game, your ruler's name appears here."
+    }
+   },
+   "ruler.GetSXX": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现动词词尾。",
+     "en": "In the game, the verb ending appears here."
+    }
+   },
+   "winning_leader.GetRegnalName": {
+    "zh": "对方统治者",
+    "en": "the rival ruler",
+    "note": {
+     "zh": "游戏里这里会出现获胜帝国统治者的名字。",
+     "en": "In the game, the winning empire's ruler's name appears here."
+    }
+   }
+  },
+  "fedel.16": {
+   "winning_leader.GetRegnalName": {
+    "zh": "对方统治者",
+    "en": "the rival ruler",
+    "note": {
+     "zh": "游戏里这里会出现获胜帝国统治者的名字。",
+     "en": "In the game, the winning empire's ruler's name appears here."
+    }
    }
   },
   "fedel.2": {
    "fed_leader.GetName": {
-    "zh": "这位领袖",
+    "zh": "",
     "en": "the chairing empire",
-    "note": {
-     "zh": "游戏里这里会出现当前主席国的领袖。",
-     "en": "In the game, the leader of the current chairing empire appears here."
-    }
+    "omit": [
+     "zh"
+    ]
    }
   }
  }

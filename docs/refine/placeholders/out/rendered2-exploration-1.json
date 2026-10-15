@@ -1,0 +1,443 @@
+{
+ "anomaly-abandoned-outpost-category": {
+  "reviewed": true
+ },
+ "anomaly-aerostat-gasgiant-category": {
+  "reviewed": true
+ },
+ "anomaly-aianom-clue-cat": {
+  "reviewed": true
+ },
+ "anomaly-aianom-lump-cat": {
+  "reviewed": true
+ },
+ "anomaly-aianom-miningdepo-cat": {
+  "reviewed": true
+ },
+ "anomaly-aianom-researchdepo-cat": {
+  "reviewed": true
+ },
+ "anomaly-alien-life-cat": {
+  "docs": {
+   "distar.2020": {
+    "Root.Owner.GetHomeWorldName": {
+     "zh": "母星",
+     "en": "origin",
+     "note": {
+      "zh": "游戏里这里会出现你的母星的名称。",
+      "en": "In the game, the name of your homeworld appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-alpha-centauri-cat": {
+  "reviewed": true
+ },
+ "anomaly-ancrel-arc-cat": {
+  "reviewed": true
+ },
+ "anomaly-ancrel-mechano-cat": {
+  "reviewed": true
+ },
+ "anomaly-ancrel-rubricator-cat": {
+  "reviewed": true
+ },
+ "anomaly-arid-planet-cat": {
+  "exceptions": [
+   "anomaly.4170: game text: \"Scans ... has unveiled\" (verb agreement)"
+  ],
+  "reviewed": true
+ },
+ "anomaly-arid-sensor-cat": {
+  "reviewed": true
+ },
+ "anomaly-ast-cluster-cat": {
+  "docs": {
+   "anomaly.3085": {
+    "From.GetName": {
+     "zh": "行星",
+     "en": "planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗行星的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "anomaly.3086": {
+    "book_writer.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "that people's",
+     "note": {
+      "zh": "游戏里这里会出现那个物种的名称。",
+      "en": "In the game, the name of that species appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-ast-crater-cat": {
+  "docs": {
+   "anomaly.270": {
+    "From.GetName": {
+     "zh": "",
+     "en": "the asteroid",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-ast-debris-field-1-cat": {
+  "exceptions": [
+   "anomaly.100: game text: \"Everyone aboard ... recognize\" (verb agreement)"
+  ],
+  "reviewed": true
+ },
+ "anomaly-ast-debris-field-1-cat-2": {
+  "reviewed": true
+ },
+ "anomaly-ast-gear-cat": {
+  "docs": {
+   "anomalies:AST_GEAR_CAT": {
+    "Root.GetName": {
+     "zh": "小行星",
+     "en": "asteroid",
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   },
+   "anomaly.4065": {
+    "From.GetName": {
+     "zh": "",
+     "en": "asteroid",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-ast-illicit-dark-cat": {
+  "reviewed": true
+ },
+ "anomaly-ast-mining-cat": {
+  "docs": {
+   "anomaly.4005": {
+    "From.GetName": {
+     "zh": "",
+     "en": "asteroid",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-ast-shrine-1-cat": {
+  "docs": {
+   "anomaly.140": {
+    "Root.Owner.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "",
+     "omit": [
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    },
+    "Root.leader.GetHeSheCap": {
+     "zh": "该科学家",
+     "en": "the scientist",
+     "note": {
+      "zh": "游戏里这里会出现这位科学家的称呼。",
+      "en": "In the game, a pronoun for the scientist appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-ast-wavelengths-1-cat": {
+  "docs": {
+   "anomalies:AST_WAVELENGTHS_1_CAT": {
+    "Root.GetName": {
+     "zh": "这块小行星",
+     "en": "asteroid",
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   },
+   "anomaly.75": {
+    "From.GetName": {
+     "zh": "这个天体",
+     "en": "asteroid",
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   },
+   "anomaly.77": {
+    "rock_sun.GetName": {
+     "zh": "这颗恒星",
+     "en": "our sun",
+     "note": {
+      "zh": "游戏里这里会出现这颗恒星的名称。",
+      "en": "In the game, the star's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-asteroid-uninhabitable-category": {
+  "reviewed": true
+ },
+ "anomaly-astral-scar-cat": {
+  "docs": {
+   "astral_planes.6001": {
+    "FromFromFrom.System.GetName": {
+     "zh": "该",
+     "en": "this system",
+     "note": {
+      "zh": "游戏里这里会出现这个星系的名称。",
+      "en": "In the game, the system's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-atm-anomaly-cat": {
+  "reviewed": true
+ },
+ "anomaly-atomic-clock-cat": {
+  "reviewed": true
+ },
+ "anomaly-backwards-orbit-cat": {
+  "reviewed": true
+ },
+ "anomaly-bar-colony-cat": {
+  "reviewed": true
+ },
+ "anomaly-barr-base-cat": {
+  "reviewed": true
+ },
+ "anomaly-battle-uninhabitable-category": {
+  "reviewed": true
+ },
+ "anomaly-beacon-uninhabitable-category": {
+  "reviewed": true
+ },
+ "anomaly-bioadaptive-flora-category": {
+  "reviewed": true
+ },
+ "anomaly-black-clouds-cat": {
+  "reviewed": true
+ },
+ "anomaly-black-hole-instable-cat": {
+  "docs": {
+   "anomalies:BLACK_HOLE_INSTABLE_CAT": {
+    "from.System.GetName": {
+     "zh": "该",
+     "en": "this system",
+     "note": {
+      "zh": "游戏里这里会出现这个星系的名称。",
+      "en": "In the game, the system's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-but-they-are-cute-category": {
+  "reviewed": true
+ },
+ "anomaly-carbon-allotropes-cat": {
+  "reviewed": true
+ },
+ "anomaly-cargo-gasgiant-category": {
+  "reviewed": true
+ },
+ "anomaly-chthonian-preservation-cat": {
+  "reviewed": true
+ },
+ "anomaly-cold-research-cat": {
+  "reviewed": true
+ },
+ "anomaly-collision-asteroid-category": {
+  "reviewed": true
+ },
+ "anomaly-con-biology-cat": {
+  "docs": {
+   "anomaly.4100": {
+    "Root.GetLeaderName": {
+     "zh": "科学官",
+     "en": "the leader",
+     "note": {
+      "zh": "游戏里这里会出现这位科学官的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   },
+   "anomaly.4116": {
+    "From.From.GetName": {
+     "zh": "我们的科学船",
+     "en": "our science ship",
+     "note": {
+      "zh": "游戏里这里会出现你的科学船的舰名。",
+      "en": "In the game, your science ship's name appears here."
+     }
+    }
+   },
+   "anomaly.4117": {
+    "From.From.GetName": {
+     "zh": "我们的科学船",
+     "en": "our science ship",
+     "note": {
+      "zh": "游戏里这里会出现你的科学船的舰名。",
+      "en": "In the game, your science ship's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "anomaly.4100: game text: \"have been able\" (verb agreement with a single name)",
+   "special_projects:ALIEN_MONSTER_ON_SHIP: game text: stray opening marker at the start, no substitution"
+  ],
+  "reviewed": true
+ },
+ "anomaly-cont-signs-cat": {
+  "docs": {
+   "anomaly.257": {
+    "Root.Owner.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "our own",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-corrupt-data-cat": {
+  "docs": {
+   "distar.1065": {
+    "From.GetName": {
+     "zh": "这个天体",
+     "en": "this world",
+     "note": {
+      "zh": "游戏里这里会出现这个天体的名称。",
+      "en": "In the game, the name of this world appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-crashed-ship-asteroid-category": {
+  "docs": {
+   "anomaly.65": {
+    "From.GetName": {
+     "zh": "行星",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗行星的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-crimson-crawlers-category": {
+  "exceptions": [
+   "cstorms.1255: game text: \"'s shone\" has no noun before the possessive"
+  ],
+  "reviewed": true
+ },
+ "anomaly-crystal-lava-lakes-category": {
+  "reviewed": true
+ },
+ "anomaly-crystal-manufactory-cat": {
+  "docs": {
+   "anomaly.3125": {
+    "Root.Owner.GetSpeciesNamePlural": {
+     "zh": "我们的人",
+     "en": "our people",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   },
+   "anomaly.3128": {
+    "Root.Owner.GetSpeciesName": {
+     "zh": "我们的",
+     "en": "our",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   },
+   "anomaly.3126": {
+    "Root.Owner.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "our own",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   },
+   "anomaly.3127": {
+    "Root.Owner.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "our own",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-crystalline-plains-cat": {
+  "reviewed": true
+ },
+ "anomaly-data-diamond-cat": {
+  "reviewed": true
+ },
+ "anomaly-debris-asteroid-category": {
+  "reviewed": true
+ }
+}

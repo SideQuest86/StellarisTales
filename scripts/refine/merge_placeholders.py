@@ -17,26 +17,56 @@ def valid_text(s, lang):
     return len(s) <= (16 if lang == 'zh' else 48)
 
 
+PH = re.compile(r'\[([^\[\]]+)\]')
+
+
+def text_keys(c):
+    """Placeholder keys a compiled document uses in its own text (incl. scripted names the game fills in)."""
+    strings = [c['title'], *c['texts'], *c.get('sections', [])]
+    for ch in c.get('choices', []):
+        strings += [ch['label'], *ch.get('responses', []), *ch.get('tooltips', [])]
+    return {m for s in strings for lang in ('zh', 'en') for m in PH.findall(s.get(lang) or '')}
+
+
 def check(entry, problems, where):
     # "omit": ["en"] marks a language where the sentence reads naturally without any phrase (empty string).
-    omit = set(entry.get('omit') or []) if isinstance(entry, dict) else set()
-    ok = isinstance(entry, dict) and all(
-        (lang in omit and entry.get(lang) == '') or valid_text(entry.get(lang), lang) for lang in ('zh', 'en'))
+    if not isinstance(entry, dict):
+        problems.append(f'{where}: invalid entry {entry!r}'[:200])
+        return None
+    entry = dict(entry)
+    # A language listed under omit but not given means the empty phrase; an empty phrase can only mean "omit".
+    for lang in entry.get('omit') or []:
+        entry.setdefault(lang, '')
+    omit = {lang for lang in ('zh', 'en') if entry.get(lang) == ''}
+    # A language not given at all keeps the existing wording (the compiler falls back to it).
+    given = [lang for lang in ('zh', 'en') if lang in entry]
+    ok = bool(given) and all(lang in omit or valid_text(entry.get(lang), lang) for lang in given)
     note = entry.get('note') if isinstance(entry, dict) else None
     if ok and note is not None:
         ok = isinstance(note, dict) and all(isinstance(note.get(k), str) and note[k].strip()
                                             and not any(c in note[k] for c in '[]<>$') for k in ('zh', 'en'))
-    if ok and CJK.search(entry['en']):
+    if ok and CJK.search(entry.get('en', '')):
         ok = False
     if not ok:
         problems.append(f'{where}: invalid entry {json.dumps(entry, ensure_ascii=False)[:160]}')
         return None
-    out = {'zh': entry['zh'].strip(), 'en': entry['en'].strip()}
+    out = {lang: entry[lang].strip() for lang in given}
     if omit:
         out['omit'] = sorted(omit)
     if note:
         out['note'] = {'zh': note['zh'].strip(), 'en': note['en'].strip()}
-    caps = [w for w in re.findall(r"[A-Za-z][\w'-]*", out['en'])[1:] if w[0].isupper() and w not in ('I', 'FTL', 'L-Gate')]
+    # Context variants: one key in several positions of one document ({lang, before?/after?, text}).
+    variants = []
+    for v in entry.get('variants') or []:
+        if (isinstance(v, dict) and v.get('lang') in ('zh', 'en') and (v.get('before') or v.get('after'))
+                and all(isinstance(v.get(k, ''), str) and len(v.get(k, '')) <= 60 for k in ('before', 'after'))
+                and (v.get('text') == '' or valid_text(v.get('text'), v['lang']))):
+            variants.append({k: v[k] for k in ('lang', 'before', 'after', 'text') if k in v})
+        else:
+            problems.append(f'{where}: invalid variant {json.dumps(v, ensure_ascii=False)[:120]}')
+    if variants:
+        out['variants'] = variants
+    caps = [w for w in re.findall(r"[A-Za-z][\w'-]*", out.get('en', ''))[1:] if w[0].isupper() and w not in ('I', 'FTL', 'L-Gate')]
     if caps:
         problems.append(f'{where}: check capitalised words (possible invented name): {out["en"]}')
     return out
@@ -62,6 +92,18 @@ def main():
             for doc, keys in (r.get('docs') or {}).items():
                 rendered.setdefault(sid, {}).setdefault(doc, {}).update(keys or {})
             exceptions += [f'{sid}: {e}' for e in r.get('exceptions') or []]
+    # Independent second review (rendered2-*.json, Sonnet): wording applied last; its exception list replaces the
+    # first review's for every story it confirmed (only original-text faults remain).
+    second = {}
+    for f in sorted((BASE / 'out').glob('rendered2-*.json')) + sorted((BASE / 'out').glob('rendered3-*.json')):
+        for sid, r in json.loads(f.read_text(encoding='utf-8')).items():
+            if r.get('reviewed'):
+                second[sid] = r
+            for doc, keys in (r.get('docs') or {}).items():
+                rendered.setdefault(sid, {}).setdefault(doc, {}).update(keys or {})
+    if second:
+        exceptions = [e for e in exceptions if e.split(':', 1)[0] not in second]
+        exceptions += [f'{sid}: {e}' for sid, r in second.items() for e in r.get('exceptions') or []]
     rows, problems, changed_keys, covered, missing_groups = [], [], 0, 0, []
     issues = []
     for g in groups:
@@ -81,7 +123,7 @@ def main():
         for sid in done:
             review = data[sid] or {}
             story = json.loads((ROOT / 'public/stories' / f'{sid}.json').read_text(encoding='utf-8'))
-            used = {d['id']: set((d.get('names') or {}).keys()) for d in story['chapters']}
+            used = {d['id']: set((d.get('names') or {}).keys()) | text_keys(d) for d in story['chapters']}
             all_keys = set().union(*used.values()) if used else set()
             merged, per_doc = {}, {}
             for key, entry in (review.get('placeholders') or {}).items():
@@ -149,6 +191,8 @@ def main():
     print(f'rendered review: {len(rendered_reviewed)} of {total} confirmed; not confirmed: {unconfirmed[:20]}')
     lines += ['', f'## Rendered-sentence review: {len(rendered_reviewed)} of {total} stories confirmed', '',
               ('Not confirmed: ' + ', '.join(unconfirmed)) if unconfirmed else 'Every story with placeholders was confirmed.', '',
+              f'Independent second review (Sonnet, docs/refine/briefs/rendered2.md): '
+              f'{len(set(second) & all_stories)} of {total} stories confirmed; remaining exceptions are original-text faults only.', '',
               'First-pass reviewer notes are superseded for these stories by the rendered review; what remains are '
               'the exceptions below (sentences that cannot read naturally without rewriting game text).', '']
     lines += ['## Exceptions (game text would have to change)', ''] + [f'- {e}' for e in exceptions]

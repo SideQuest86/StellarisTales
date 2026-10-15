@@ -276,16 +276,12 @@
  "placeholderDocs": {
   "syndaw.1025": {
    "current_uprising_originator.GetAdj": {
-    "zh": "有机",
-    "en": "organic",
+    "zh": "",
+    "en": "",
     "omit": [
      "en",
      "zh"
-    ],
-    "note": {
-     "zh": "游戏里这里不单独显示这个形容词。",
-     "en": "In the game, this adjective is not shown separately here."
-    }
+    ]
    }
   },
   "syndaw.1030": {
@@ -298,6 +294,18 @@
     }
    }
   },
+  "syndaw.1200": {
+   "Root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
+   }
+  },
+  "syndaw.1205": {
+   "Root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
+   }
+  },
   "syndaw.505": {
    "Root.Owner.GetSpeciesName": {
     "zh": "该物种",
@@ -306,6 +314,12 @@
      "zh": "游戏里这里会出现你们这一族的设计风格。",
      "en": "In the game, your species' design appears here."
     }
+   }
+  },
+  "syndaw.522": {
+   "Root.Owner.GetName": {
+    "zh": "帝国",
+    "en": "our empire"
    }
   },
   "syndaw.525": {

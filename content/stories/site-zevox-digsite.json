@@ -106,6 +106,10 @@
  },
  "placeholderDocs": {
   "archaeological_site_types:zevox_digsite": {
+   "Root.Planet.GetName": {
+    "zh": "这颗卫星",
+    "en": "this moon"
+   },
    "Root.Planet.Orbit.GetName": {
     "zh": "这颗星球",
     "en": "the parent planet",
@@ -116,11 +120,7 @@
    },
    "Root.solar_system.GetName": {
     "zh": "这个",
-    "en": "target star",
-    "note": {
-     "zh": "游戏里这里会显示该恒星系的名字。",
-     "en": "In the game, the name of that star system appears here."
-    }
+    "en": "star"
    }
   }
  }

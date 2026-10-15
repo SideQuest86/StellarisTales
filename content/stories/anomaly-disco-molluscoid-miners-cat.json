@@ -45,5 +45,41 @@
     "en": "In the game, the name of this new species appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "anomalies:disco_molluscoid_miners_cat": {
+   "From.GetName": {
+    "zh": "这颗星球",
+    "en": "planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, the planet's name appears here."
+    }
+   }
+  },
+  "distar.3030": {
+   "Root.GetLeaderName": {
+    "zh": "此人",
+    "en": "the leader",
+    "note": {
+     "zh": "游戏里这里会出现这位领袖的名字。",
+     "en": "In the game, the leader's name appears here."
+    }
+   }
+  },
+  "distar.3032": {
+   "molluscoid_miners_species.GetName": {
+    "zh": "软体生物",
+    "en": "molluscoids",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "600 ",
+      "after": " Pops",
+      "text": "molluscoid"
+     }
+    ]
+   }
+  }
  }
 }

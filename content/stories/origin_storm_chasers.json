@@ -220,12 +220,12 @@
  "placeholderDocs": {
   "cstorms.3170": {
    "event_target:storm_commander.GetName": {
-    "zh": "本人",
-    "en": "the commander",
-    "note": {
-     "zh": "游戏里这里会出现指挥官的称呼。",
-     "en": "In the game, the commander's form of address appears here."
-    }
+    "zh": "指挥官",
+    "en": "the commander"
+   },
+   "event_target:storm_scientist.GetName": {
+    "zh": "这位科学家",
+    "en": "the scientist"
    }
   }
  }

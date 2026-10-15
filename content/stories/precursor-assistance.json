@@ -215,6 +215,14 @@
     "en": "In the game, the plural name of your species appears here."
    }
   },
+  "Root.Owner.GetPrecursorCiv": {
+   "zh": "先驱者",
+   "en": "Precursor",
+   "note": {
+    "zh": "游戏里这里会出现先驱者文明的名称。",
+    "en": "In the game, the Precursor civilization's name appears here."
+   }
+  },
   "artifact_giver.GetName": {
    "zh": "友邦",
    "en": "the friendly empire",
@@ -254,23 +262,66 @@
     "zh": "游戏里这里会出现这颗星球的名字。",
     "en": "In the game, this planet's name appears here."
    }
+  },
+  "controller.GetIndividualNamePluralCap": {
+   "zh": "回收单位",
+   "en": "retrieval units",
+   "note": {
+    "zh": "游戏里这里会出现回收单位的称呼。",
+    "en": "In the game, the retrieval units' name appears here."
+   }
   }
  },
  "placeholderDocs": {
   "precursor.301": {
+   "Root.Capital.GetName": {
+    "zh": "我们的首都",
+    "en": "our capital",
+    "variants": [
+     {
+      "lang": "zh",
+      "after": "帝国最近发现",
+      "text": "我们"
+     }
+    ]
+   },
    "Root.GetSpeciesAdj": {
-    "zh": "我们的",
-    "en": "our",
+    "zh": "",
+    "en": "",
     "omit": [
-     "en"
-    ],
-    "note": {
-     "zh": "游戏里这里会出现你的物种的形容词。",
-     "en": "In the game, your species' adjective appears here."
-    }
+     "en",
+     "zh"
+    ]
+   }
+  },
+  "precursor.311": {
+   "Root.Capital.GetName": {
+    "zh": "我们的首都",
+    "en": "our capital"
+   },
+   "artifact_seller.Capital.GetName": {
+    "zh": "对方首都",
+    "en": "their capital"
+   }
+  },
+  "precursor.313": {
+   "artifact_seller.GetName": {
+    "zh": "那个帝国",
+    "en": "the other empire",
+    "variants": [
+     {
+      "lang": "zh",
+      "before": "当然十分乐意将",
+      "text": "这件文物"
+     }
+    ]
    }
   },
   "precursor.314": {
+   "Root.Capital.GetName": {
+    "zh": "我们的首都",
+    "en": "our capital"
+   },
    "Root.GetSpeciesAdj": {
     "zh": "各位",
     "en": "dear",
@@ -278,6 +329,10 @@
      "zh": "游戏里这里会出现你的物种形容词。",
      "en": "In the game, your species' adjective appears here."
     }
+   },
+   "artifact_giver.Capital.GetName": {
+    "zh": "友邦的首都",
+    "en": "the friendly empire's capital"
    }
   }
  }

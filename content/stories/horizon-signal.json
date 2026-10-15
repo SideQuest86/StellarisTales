@@ -740,13 +740,28 @@
     }
    }
   },
+  "akx.9319": {
+   "syzygy_location.GetStarName": {
+    "zh": "这个星系",
+    "en": "this system",
+    "note": {
+     "zh": "游戏里这里会出现这个星系的名称。",
+     "en": "In the game, the system's name appears here."
+    }
+   }
+  },
   "akx.9500": {
    "Root.Owner.GetSpeciesAdj": {
-    "zh": "我们的",
-    "en": "our",
+    "zh": "",
+    "en": "",
     "omit": [
-     "en"
-    ]
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现你的物种名称。",
+     "en": "In the game, your species' name appears here."
+    }
    }
   },
   "special_projects:WAITING_WORLD_PURGE": {

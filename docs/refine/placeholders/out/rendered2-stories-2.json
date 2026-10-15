@@ -1,0 +1,137 @@
+{
+"event-apoc-5": {"reviewed": true},
+"event-aquatics-4": {"reviewed": true},
+"event-arkship-1": {"reviewed": true},
+"event-arkship-1020": {"docs": {
+  "arkship.1015": {"from.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1005": {"from.GetName": {"omit": ["zh", "en"]}}
+ }, "reviewed": true},
+"event-arkship-1030": {"docs": {
+  "arkship.1030": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1035": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1040": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1045": {"Root.GetName": {"zh": "本舰", "en": "this ship"},
+     "arkship_leader.GetName": {"zh": "领袖", "en": "the commander", "note": {"zh": "游戏里这里会出现方舟舰领袖的名字。", "en": "In the game, the name of the Arkship's leader appears here."}}},
+  "arkship.1050": {"Root.GetName": {"zh": "本舰", "en": "this ship"},
+     "arkship_leader.GetName": {"zh": "领袖", "en": "the commander", "note": {"zh": "游戏里这里会出现方舟舰领袖的名字。", "en": "In the game, the name of the Arkship's leader appears here."}}},
+  "special_projects:A_MYSTERIOUS_SICKNESS_PROJECT": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1055": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1060": {"Root.GetName": {"zh": "本舰", "en": "this ship"},
+     "arkship_leader.GetName": {"zh": "领袖", "en": "the commander", "note": {"zh": "游戏里这里会出现方舟舰领袖的名字。", "en": "In the game, the name of the Arkship's leader appears here."}}},
+  "arkship.1065": {"Root.GetName": {"zh": "本舰", "en": "this ship"},
+     "arkship_leader.GetName": {"zh": "领袖", "en": "the commander", "note": {"zh": "游戏里这里会出现方舟舰领袖的名字。", "en": "In the game, the name of the Arkship's leader appears here."}}},
+  "event_chains:a_mysterious_sickness_chain": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}
+ }, "reviewed": true},
+"event-arkship-105": {"reviewed": true},
+"event-arkship-1070": {"docs": {"arkship.1070": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}}, "reviewed": true},
+"event-arkship-1075": {"docs": {
+  "arkship.1075": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1080": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1085": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}
+ }, "reviewed": true},
+"event-arkship-1090": {"docs": {
+  "arkship.1090": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1095": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}
+ }, "reviewed": true},
+"event-arkship-1100": {"docs": {
+  "arkship.1100": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1115": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}
+ }, "reviewed": true},
+"event-arkship-1120": {"docs": {
+  "arkship.1120": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "event_chains:a_forgotten_level_chain": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}
+ }, "reviewed": true},
+"event-arkship-1160": {"docs": {"arkship.1160": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}}, "reviewed": true},
+"event-arkship-1165": {"reviewed": true},
+"event-arkship-1170": {"reviewed": true},
+"event-arkship-1185": {"docs": {"arkship.1185": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}}, "reviewed": true},
+"event-arkship-1205": {"docs": {"arkship.1205": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}}, "reviewed": true},
+"event-arkship-1215": {"docs": {
+  "arkship.1215": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "special_projects:ARKSHIP_FUNGAL_CONTAMINATION_PROJECT": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1225": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "special_projects:ARKSHIP_FUNGAL_COMMUNICATION_PROJECT": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "event_chains:fungal_contamination_chain": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}
+ }, "reviewed": true},
+"event-arkship-1240": {"docs": {"arkship.1240": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}}, "reviewed": true},
+"event-arkship-125": {"docs": {"arkship.125": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}}, "reviewed": true},
+"event-arkship-1300": {"docs": {
+  "arkship.1300": {"Root.GetName": {"zh": "本舰", "en": "this ship"}},
+  "situations:situation_grand_refurbishment": {"Target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.1380": {"Target.GetName": {"zh": "本舰", "en": "this ship"}}
+ }, "reviewed": true},
+"event-arkship-1385": {"docs": {
+  "arkship.1395": {"event_target:star_crossed_survivor.GetHeShe": {"zh": "它", "en": "the survivor"}}
+ }, "reviewed": true},
+"event-arkship-140": {"reviewed": true},
+"event-arkship-155": {"reviewed": true},
+"event-arkship-5": {"docs": {
+  "arkship.5": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.55": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "event_chains:an_old_container_chain": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}}
+ }, "reviewed": true},
+"event-arkship-60": {"docs": {
+  "arkship.60": {"Root.GetName": {"zh": "方舟", "en": "this ship"}}
+ }, "exceptions": ["arkship.60: game text: English 'symbionts who's designated rest area' should be 'whose'"], "reviewed": true},
+"event-arkship-65": {"docs": {
+  "arkship.65": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.70": {"Root.GetName": {"zh": "本舰", "en": "the Arkship"}},
+  "arkship.80": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.85": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.90": {"Root.GetName": {"zh": "本舰", "en": "the Arkship"}}
+ }, "reviewed": true},
+"event-arkship-700": {"docs": {
+  "arkship.700": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.701": {"Root.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "situations:situation_core_conspiracy": {"Target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.705": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.716": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.710": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.715": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.717": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.720": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.790": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.722": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.800": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.750": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.755": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.760": {"target.GetName": {"en": "this ship", "omit": ["zh"]}},
+  "arkship.780": {"target.GetName": {"en": "this ship", "omit": ["zh"]}}
+ }, "exceptions": ["arkship.760: game text: English sentence begins 'has implemented...' with no subject", "arkship.780: game text: English sentence begins 'has initiated...' with no subject"], "reviewed": true},
+"event-arkship-860": {"reviewed": true},
+"event-arkship-870": {"docs": {"arkship.875": {"from.solar_system.GetName": {"zh": "此星系", "en": "star"}}}, "reviewed": true},
+"event-arkship-880": {"reviewed": true},
+"event-arkship-890": {"reviewed": true},
+"event-arkship-900": {"reviewed": true},
+"event-arkship-910": {"reviewed": true},
+"event-arkship-95": {"reviewed": true},
+"event-bio-3000": {"reviewed": true},
+"event-bio-3100": {"reviewed": true},
+"event-bio-3125": {"reviewed": true},
+"event-bio-3145": {"docs": {"bio.3150": {"Root.GetName": {"zh": "帝国", "en": "empire"}}}, "reviewed": true},
+"event-bio-3200": {"exceptions": ["bio.3205: game text: English sentence begins lowercase 'you are not'"], "reviewed": true},
+"event-bio-3215": {"reviewed": true},
+"event-bio-3225": {"reviewed": true},
+"event-bio-3300": {"reviewed": true},
+"event-bio-3325": {"reviewed": true},
+"event-bio-3345": {"docs": {"bio.3360": {"FromFrom.GetName": {"zh": "那个星系", "en": "that system's"}}}, "reviewed": true},
+"event-bio-800": {"docs": {
+  "bio.805": {"Target.GetName": {"zh": "那个帝国", "en": "the other empire's"}},
+  "bio.810": {"Target.GetName": {"zh": "那个帝国", "en": "the other empire's"}}
+ }, "exceptions": ["bio.805: game text: 'The works continues' (verb agreement)"], "reviewed": true},
+"event-bio-900": {"reviewed": true},
+"event-cara-2010": {"docs": {
+  "cara.2200": {"fleet2deal8planet.GetName": {"zh": "这个世界", "en": "this very world"},
+                "fleet2deal9planet.GetName": {"zh": "这个世界", "en": "this very world"}},
+  "cara.2002": {"From.From.GetName": {"zh": "那个帝国的舰队", "en": "the other empire's"}}
+ }, "reviewed": true},
+"event-cara-3010": {"docs": {
+  "cara.3200": {"Root.GetName": {"zh": "你们的帝国", "en": "your empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}},
+  "cara.3251": {"Root.GetName": {"zh": "你们的帝国", "en": "your empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}}
+ }, "exceptions": ["cara.3200: game text: stray opening quote marks at the start of some lines", "cara.3251: game text: stray opening quote marks at the start of some lines"], "reviewed": true},
+"event-cara-333": {"docs": {
+  "cara.300": {"root.box_cost": {"zh": "若干", "en": "a number of"}},
+  "cara.310": {"Root.Capital.GetStarName": {"en": "the star", "omit": ["zh"]}}
+ }, "reviewed": true},
+"event-cara-4000": {"reviewed": true}
+}

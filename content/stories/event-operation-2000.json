@@ -157,7 +157,36 @@
   "operation.2000": {
    "target.solar_system.GetName": {
     "zh": "这个星系",
-    "en": "this star"
+    "en": "the destination star"
+   }
+  },
+  "operation.2001": {
+   "spynetwork.leader.GetName": {
+    "zh": "本人",
+    "en": "the spymaster"
+   }
+  },
+  "operation.2002": {
+   "spynetwork.leader.GetName": {
+    "zh": "本人",
+    "en": "the spymaster"
+   }
+  },
+  "operation.2006": {
+   "from.spynetwork.leader.GetName": {
+    "zh": "本人",
+    "en": "the spymaster"
+   },
+   "sabotaged_starbase_owner.GetAdj": {
+    "zh": "该国",
+    "en": "other",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "to sabotage ",
+      "text": "the other empire's targets"
+     }
+    ]
    }
   }
  }

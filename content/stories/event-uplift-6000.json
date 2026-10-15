@@ -106,6 +106,10 @@
    }
   },
   "uplift.6010": {
+   "From.GetName": {
+    "zh": "这些生物",
+    "en": "the creatures"
+   },
    "Root.GetName": {
     "zh": "这颗星球",
     "en": "this planet",
@@ -113,6 +117,30 @@
      "zh": "游戏里这里会出现这颗星球的名称。",
      "en": "In the game, this planet's name appears here."
     }
+   },
+   "Root.Owner.GetName": {
+    "zh": "帝国",
+    "en": "our empire"
+   },
+   "Root.Owner.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "our people's"
+   },
+   "This.Owner.GetName": {
+    "zh": "帝国",
+    "en": "our empire"
+   }
+  },
+  "uplift.7010": {
+   "From.Owner.GetName": {
+    "zh": "帝国",
+    "en": "our empire"
+   }
+  },
+  "uplift.7200": {
+   "Root.Owner.GetName": {
+    "zh": "帝国",
+    "en": "our empire"
    }
   },
   "uplift.7205": {
@@ -126,6 +154,10 @@
    }
   },
   "uplift.7210": {
+   "From.From.From.GetName": {
+    "zh": "被提升者",
+    "en": "fledgling"
+   },
    "Root.GetName": {
     "zh": "这颗星球",
     "en": "this planet",
@@ -133,6 +165,24 @@
      "zh": "游戏里这里会出现这颗星球的名称。",
      "en": "In the game, this planet's name appears here."
     }
+   },
+   "Root.Owner.GetSpeciesName": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   }
+  },
+  "uplift.7215": {
+   "From.From.From.GetName": {
+    "zh": "被提升者",
+    "en": "fledgling"
+   },
+   "Root.Owner.GetName": {
+    "zh": "帝国",
+    "en": "our empire"
    }
   }
  }

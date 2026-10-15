@@ -1,0 +1,119 @@
+{
+  "behemoth-fury": {
+    "docs": {},
+    "exceptions": ["situations:behemoth_finale_situation: game text: the value after 'Growth Factor is:' is a runtime number with no key, so the sentence ends 'is: %'"],
+    "reviewed": true
+  },
+  "cetana": {
+    "docs": {
+      "special_projects:THE_SYNTH_QUEENS_OUTPOST_AMBUSH": {
+        "solar_system.GetName": {"zh": "敌方", "en": "enemy", "note": {"zh": "游戏里这里会出现该恒星系的名称。", "en": "In the game, the name of that system appears here."}}
+      },
+      "special_projects:THE_SYNTH_QUEENS_INVESTIGATION_PARAGON": {
+        "apostate_site_planet.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现该星球的名称。", "en": "In the game, the name of that planet appears here."}}
+      },
+      "crisis.20400": {
+        "apostate_site_planet.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现信标所在星球的名称。", "en": "In the game, the name of the beacon's planet appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "contingency": {
+    "docs": {
+      "crisis.2037": {
+        "From.GetName": {"zh": "机械星球", "en": "this world", "note": {"zh": "游戏里这里会出现该机械星球的名称。", "en": "In the game, the name of that Machine World appears here."}},
+        "From.solar_system.GetName": {"zh": "该", "en": "star", "note": {"zh": "游戏里这里会出现该星系的名称。", "en": "In the game, the name of that system appears here."}}
+      },
+      "crisis.2095": {
+        "Root.GetRulerTitle": {"zh": "我们的统治者", "en": "our ruler"},
+        "ruler.GetRegnalName": {"zh": "", "en": "", "omit": ["zh", "en"]}
+      },
+      "crisis.2097": {
+        "scientist.GetName": {"zh": "这位科学官", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的名字。", "en": "In the game, the scientist's name appears here."}}
+      },
+      "crisis.2302": {
+        "scientist.GetName": {"zh": "这位科学官", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的名字。", "en": "In the game, the scientist's name appears here."}}
+      },
+      "crisis.2098": {
+        "admiral.GetName": {"zh": "这位", "en": "the commander", "note": {"zh": "游戏里这里会出现这位指挥官的名字。", "en": "In the game, the commander's name appears here."}}
+      },
+      "crisis.2303": {
+        "admiral.GetName": {"zh": "这位", "en": "the commander", "note": {"zh": "游戏里这里会出现这位指挥官的名字。", "en": "In the game, the commander's name appears here."}}
+      },
+      "fallen_machine_empire.4": {
+        "From.GetName": {"zh": "机械帝国", "en": "the machine empire's", "note": {"zh": "游戏里这里会出现该机械帝国的名称。", "en": "In the game, the machine empire's name appears here."}},
+        "From.GetAdjective": {"zh": "机械帝国的", "en": "the machine empire's"}
+      }
+    },
+    "exceptions": ["crisis.2037: game text: the Chinese opening sentence puts the name directly before '这个位于…的机械星球', a clumsy structure that exists with any name"],
+    "reviewed": true
+  },
+  "cosmogenesis": {"docs": {}, "exceptions": [], "reviewed": true},
+  "defenders-of-the-galaxy": {
+    "docs": {},
+    "exceptions": ["ambition.216: game text: 'Train them as a Ace Pilot / a Architech / a Ranger' uses 'a' before vowel-initial class names"],
+    "reviewed": true
+  },
+  "galactic-hyperthermia": {
+    "docs": {
+      "situations:situation_galactic_hyperthermia": {
+        "event_target:hyperthermia_empire.gh_crisis_core_var": {"zh": "", "en": "", "omit": ["zh", "en"]}
+      },
+      "infernals.1043": {
+        "hyperthermia_empire.GetName": {"zh": "该帝国", "en": "the rogue empire", "note": {"zh": "游戏里这里会出现那个加热星系核心的帝国名称。", "en": "In the game, the name of the empire heating the core appears here."}}
+      }
+    },
+    "exceptions": [],
+    "reviewed": true
+  },
+  "galactic-nemesis": {
+    "docs": {
+      "crisis.4140": {
+        "Root.GetSpeciesNamePlural": {"zh": "这些人", "en": "our kind", "omit": ["en"]},
+        "Root.GetSpeciesAdj": {"zh": "我们自身", "en": "our own"}
+      },
+      "crisis.4150": {
+        "Root.GetSpeciesName": {"zh": "我族成员", "en": "member of our species"}
+      },
+      "crisis.4155": {
+        "Root.GetSpeciesName": {"zh": "我族成员", "en": "member of our species"}
+      },
+      "crisis.4135": {
+        "From.GetName": {"zh": "我们的帝国", "en": "our empire"}
+      },
+      "crisis.6101": {
+        "sphere_destroyers.GetName": {"zh": "毁灭者", "en": "destroyer"}
+      },
+      "crisis.6103": {
+        "sphere_destroyers.GetName": {"zh": "毁灭者", "en": "destroyer"}
+      }
+    },
+    "exceptions": ["crisis.6182: game text: 'the other empire now also possess' uses a plural verb with a singular empire"],
+    "reviewed": true
+  },
+  "gray-tempest": {"docs": {}, "exceptions": [], "reviewed": true},
+  "prethoryn-scourge": {"docs": {}, "exceptions": [], "reviewed": true},
+  "unbidden": {"docs": {}, "exceptions": [], "reviewed": true},
+  "war-in-heaven": {
+    "docs": {
+      "war_in_heaven.2": {
+        "From.GetName": {"zh": "宿敌帝国", "en": "the rival empire's people"}
+      },
+      "war_in_heaven.15": {
+        "From.GetName": {"zh": "宿敌帝国", "en": "the rival empire's people"}
+      },
+      "war_in_heaven.5": {
+        "WarInHeavenFEOne.GetName": {"zh": "胜出的帝国", "en": "the winning empire's people"}
+      },
+      "war_in_heaven.4": {
+        "From.GetSpeciesName": {"zh": "宿敌种族", "en": "opposing species"}
+      },
+      "war_in_heaven.7": {
+        "From.GetSpeciesName": {"zh": "宿敌种族", "en": "opposing species"}
+      }
+    },
+    "exceptions": ["war_in_heaven.4: game text: 'The rival empire have our allegiance' uses a plural verb with a singular empire"],
+    "reviewed": true
+  }
+}

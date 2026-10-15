@@ -86,9 +86,30 @@
      "zh": "游戏里这里会显示该行动的代号。",
      "en": "In the game, the codename of this operation appears here."
     }
+   },
+   "from.spynetwork.leader.GetHasHave": {
+    "zh": "",
+    "en": "have",
+    "omit": [
+     "zh"
+    ]
+   },
+   "from.spynetwork.leader.GetName": {
+    "zh": "本人",
+    "en": "the spymaster"
+   }
+  },
+  "operation.5041": {
+   "fromfrom.target.GetName": {
+    "zh": "目标帝国",
+    "en": "the target empire"
    }
   },
   "operation.5042": {
+   "fromfrom.spynetwork.leader.GetName": {
+    "zh": "本人",
+    "en": "the spymaster"
+   },
    "fromfrom.target.GetName": {
     "zh": "那个目标",
     "en": "target"

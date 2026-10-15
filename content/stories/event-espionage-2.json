@@ -160,43 +160,91 @@
   }
  },
  "placeholderDocs": {
-  "espionage.1021": {
-   "disavowed_agent_country.GetAdj": {
-    "zh": "该国",
-    "en": "their",
+  "espionage.1012": {
+   "disavowed_agent_official.GetSXX": {
+    "zh": "",
+    "en": "",
     "omit": [
-     "en"
+     "en",
+     "zh"
     ],
     "note": {
-     "zh": "游戏里这里会出现那个帝国的称谓。",
+     "zh": "游戏里这里会出现动词词尾。",
+     "en": "In the game, the verb ending appears here."
+    }
+   },
+   "root.GetAdj": {
+    "zh": "我方",
+    "en": "imperial",
+    "note": {
+     "zh": "游戏里这里会出现你的帝国名称。",
+     "en": "In the game, your empire's name appears here."
+    }
+   }
+  },
+  "espionage.1013": {
+   "disavowed_agent_country.GetName": {
+    "zh": "那个帝国",
+    "en": "other empire's authorities"
+   },
+   "root.GetAdj": {
+    "zh": "我方",
+    "en": "imperial",
+    "note": {
+     "zh": "游戏里这里会出现你的帝国名称。",
+     "en": "In the game, your empire's name appears here."
+    }
+   }
+  },
+  "espionage.1021": {
+   "disavowed_agent_country.GetAdj": {
+    "zh": "外国",
+    "en": "foreign",
+    "note": {
+     "zh": "游戏里这里会出现对方帝国的名称。",
      "en": "In the game, the other empire's name appears here."
     }
+   },
+   "disavowed_operative.GetHimselfHerself": {
+    "zh": "",
+    "en": "themselves",
+    "omit": [
+     "zh"
+    ]
    }
   },
   "espionage.1081": {
    "insidious_plot_country.GetAdj": {
-    "zh": "该国",
-    "en": "their",
-    "omit": [
-     "en"
-    ],
+    "zh": "本国",
+    "en": "own",
     "note": {
-     "zh": "游戏里这里会出现那个帝国的称谓。",
+     "zh": "游戏里这里会出现对方帝国的名称。",
      "en": "In the game, the other empire's name appears here."
     }
+   },
+   "insidious_plot_country.GetName": {
+    "zh": "那个帝国",
+    "en": "other empire's leaders"
    }
   },
   "espionage.1082": {
+   "insidious_plot_country.GetName": {
+    "zh": "那个帝国",
+    "en": "other empire's leaders"
+   },
    "insidious_plot_spymaster.GetName": {
     "zh": "这位首脑",
     "en": "the spymaster",
-    "omit": [
-     "zh"
-    ],
     "note": {
      "zh": "游戏里这里会出现间谍首脑的名称。",
      "en": "In the game, the name of the spymaster appears here."
     }
+   }
+  },
+  "espionage.1085": {
+   "from.GetName": {
+    "zh": "那个帝国",
+    "en": "other empire's leaders"
    }
   }
  }

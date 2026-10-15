@@ -32,5 +32,20 @@
     "en": "In the game, the name of this planet appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "strange_worlds.65": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " diet",
+      "text": "this planet's"
+     }
+    ]
+   }
+  }
  }
 }

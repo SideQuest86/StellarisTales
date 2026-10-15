@@ -161,5 +161,55 @@
     "en": "In the game, the name of this space amoeba appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "distar.304": {
+   "Root.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "our",
+    "note": {
+     "zh": "游戏里这里会出现你的物种的名称。",
+     "en": "In the game, your species' name appears here."
+    }
+   },
+   "lost_amoeba_centenarian_fleet.GetName": {
+    "zh": "她",
+    "en": "she",
+    "variants": [
+     {
+      "lang": "en",
+      "after": "'s presence",
+      "text": "the Amoeba"
+     }
+    ]
+   }
+  },
+  "distar.340": {
+   "amoeba_finding_scientist.GetName": {
+    "zh": "科学专员",
+    "en": "the science officer",
+    "note": {
+     "zh": "游戏里这里会出现这位科学专员的名字。",
+     "en": "In the game, the science officer's name appears here."
+    }
+   }
+  },
+  "distar.57": {
+   "amoeba_finding_scientist.GetHisHer": {
+    "zh": "",
+    "en": "their",
+    "omit": [
+     "zh"
+    ]
+   },
+   "amoeba_finding_scientist.GetName": {
+    "zh": "科学专员",
+    "en": "the science officer",
+    "note": {
+     "zh": "游戏里这里会出现这位科学专员的名字。",
+     "en": "In the game, the science officer's name appears here."
+    }
+   }
+  }
  }
 }

@@ -144,21 +144,16 @@
   "cara.300": {
    "root.box_cost": {
     "zh": "若干",
-    "en": "a set price of",
-    "note": {
-     "zh": "游戏里这里会显示圣遗物的能量价格。",
-     "en": "In the game, the energy price of the Reliquary appears here."
-    }
+    "en": "a number of"
    }
   },
   "cara.310": {
    "Root.Capital.GetStarName": {
-    "zh": "此",
+    "zh": "",
     "en": "the star",
-    "note": {
-     "zh": "游戏里这里会出现首都所在恒星的称呼。",
-     "en": "In the game, the name of the capital's star appears here."
-    }
+    "omit": [
+     "zh"
+    ]
    }
   }
  }

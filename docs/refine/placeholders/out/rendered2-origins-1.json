@@ -1,0 +1,1098 @@
+{
+ "event-nomads-505": {
+  "docs": {
+   "nomads.555": {
+    "Root.GetSpeciesName": {
+     "zh": "说话者",
+     "en": "the speaker",
+     "note": {
+      "zh": "游戏里这里会出现喊话者的种族称呼。",
+      "en": "In the game, the speaker's species appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "event-nomads-635": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_arc_welders": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_broken_shackles": {
+  "docs": {
+   "origin.5510": {
+    "Root.Owner.GetAdj": {
+     "zh": "我方",
+     "en": "",
+     "omit": [
+      "en"
+     ]
+    }
+   },
+   "origin.111": {
+    "clerk.GetIcon": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    },
+    "clerk.GetNamePlural": {
+     "zh": "文员",
+     "en": "Clerk"
+    }
+   },
+   "origin.5047": {
+    "Root.GetSpeciesName": {
+     "zh": "本族",
+     "en": "native"
+    }
+   },
+   "origin.5525": {
+    "From.GetName": {
+     "zh": "新国名",
+     "en": "our new name"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_clone_army": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_cosmic_dawn": {
+  "docs": {},
+  "exceptions": [
+   "infernals.2535: game text: a stray full stop sits inside its own markup after 'other species'"
+  ],
+  "reviewed": true
+ },
+ "origin_cybernetic_creed": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_default_nomads": {
+  "docs": {
+   "origin-intro:origin_default_nomads": {
+    "Root.GetGovernmentName": {
+     "zh": "政府",
+     "en": "our government"
+    },
+    "Species.GetAdj": {
+     "zh": "该族",
+     "en": "our species"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_doomsday": {
+  "docs": {
+   "origin.85": {
+    "Root.Owner.Capital.GetName": {
+     "zh": "旧母星",
+     "en": "the old homeworld"
+    },
+    "Root.Owner.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "our species"
+    },
+    "Root.OWner.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "our species"
+    },
+    "Root.Owner.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "members of our species"
+    }
+   },
+   "origin.80": {
+    "doomsday_owner.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "members of our species"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_endbringers": {
+  "docs": {
+   "shroud.8100": {
+    "Leader.GetHisHer": {
+     "zh": "自己",
+     "en": "their"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_evolutionary_predators": {
+  "docs": {
+   "bio.1050": {
+    "Target.GetSpeciesName": {
+     "zh": "目标物种",
+     "en": "the target species"
+    }
+   },
+   "bio.1055": {
+    "Target.GetSpeciesName": {
+     "zh": "目标物种",
+     "en": "the target species"
+    }
+   },
+   "bio.1060": {
+    "Target.GetSpeciesName": {
+     "zh": "目标物种",
+     "en": "the target species"
+    }
+   },
+   "bio.1065": {
+    "From.Target.GetSpeciesName": {
+     "zh": "目标物种",
+     "en": "the target species"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_fear_of_the_dark": {
+  "docs": {
+   "origin.6150": {
+    "fotd_seperatist_planet.GetName": {
+     "zh": "这颗星球",
+     "en": "the separatists"
+    }
+   },
+   "origin.6020": {
+    "fotd_seperatist_planet.GetName": {
+     "zh": "分离派星球",
+     "en": "the separatists"
+    }
+   },
+   "origin.6025": {
+    "fotd_seperatist_planet.GetName": {
+     "zh": "分离派星球",
+     "en": "the separatist world"
+    }
+   },
+   "origin.6005": {
+    "Root.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "member of our species"
+    }
+   },
+   "origin.6006": {
+    "fotd_Leader.GetSheHeCap": {
+     "zh": "此人",
+     "en": "Their"
+    }
+   },
+   "origin.6046": {
+    "capital_star.GetName": {
+     "zh": "我们的母星",
+     "en": "our home star"
+    }
+   },
+   "origin.6260": {
+    "capital_star.GetName": {
+     "zh": "我们的母星",
+     "en": "our home star"
+    }
+   },
+   "origin.6065": {
+    "home_planet.GetStarName": {
+     "zh": "母星",
+     "en": "our home system"
+    }
+   },
+   "origin.6220": {
+    "FromFrom.GetName": {
+     "zh": "这场",
+     "en": "this"
+    }
+   },
+   "origin.6235": {
+    "from.Target.GetStarName": {
+     "zh": "这个星系",
+     "en": "this system"
+    },
+    "Root.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "member of our species"
+    }
+   }
+  },
+  "exceptions": [
+   "origin.6011: game text: 'let [their] go' uses the possessive where an object is needed",
+   "origin.6006: game text: 'Add [leader] as an Commander' and 'extended [title] the opportunity' keep the game's wording"
+  ],
+  "reviewed": true
+ },
+ "origin_forever_cruise": {
+  "docs": {
+   "origin-intro:origin_forever_cruise": {
+    "capital_scope.GetName": {
+     "zh": "我们的旗舰",
+     "en": "our flagship"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_fruitful": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_galactic_doorstep": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_heirs_of_the_khan": {
+  "docs": {
+   "marauder.502": {
+    "raider_khanate.GetRulerName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   },
+   "nomads.625": {
+    "From.GetName": {
+     "zh": "那个帝国",
+     "en": "the other empire's people"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_here_be_dragons": {
+  "docs": {
+   "aquatics.170": {
+    "here_be_dragons_planet.System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "aquatics.105": {
+    "dragon_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "special_projects:REANIMATE_ORIGIN_DRAGON": {
+    "dragon_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "aquatics.115": {
+    "dragon_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "aquatics.185": {
+    "here_be_dragons_planet.System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_imperial_vassal": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_legendary_leader": {
+  "docs": {
+   "paragon.5020": {
+    "owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5057": {
+    "Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    },
+    "owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5062": {
+    "Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5055": {
+    "Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    },
+    "owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5131": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    },
+    "Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5310": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5315": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5320": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5345": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "统治者",
+     "en": "ruler"
+    }
+   },
+   "paragon.5340": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our"
+    }
+   },
+   "paragon.5010": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our"
+    }
+   },
+   "paragon.5008": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    },
+    "Root.Owner.Ruler.GetSheHeCap": {
+     "zh": "此人",
+     "en": "The ruler"
+    },
+    "Root.Owner.GetName": {
+     "zh": "我们的帝国",
+     "en": "our people"
+    }
+   },
+   "paragon.5009": {
+    "Root.Owner.Ruler.GetSheHeCap": {
+     "zh": "此人",
+     "en": "The ruler"
+    }
+   },
+   "paragon.5023": {
+    "Root.Owner.Ruler.GetHeSheCap": {
+     "zh": "此人",
+     "en": "The ruler"
+    }
+   },
+   "paragon.5011": {
+    "Root.Owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    },
+    "owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5202": {
+    "Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5210": {
+    "Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    },
+    "owner.Ruler.GetTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "paragon.5038": {
+    "Root.Owner.Ruler.GetSheHe": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "en"
+     ]
+    }
+   },
+   "paragon.6010": {
+    "Ruler.GetSheHe": {
+     "zh": "此人",
+     "en": "the ruler"
+    }
+   }
+  },
+  "exceptions": [
+   "paragon.5010: game text: 'their [title]' puts a possessive before the title",
+   "paragon.5210 and paragon.5340: game text: 'our [title] official statement' and a stray apostrophe after the title",
+   "paragon.5202: game text: 'our ruler neural net' lacks a possessive 's",
+   "paragon.5020, paragon.5054, paragon.5061 and paragon.5202: a few sentences use the regnal name alone (no title), which shares a key with the 'our ruler' pairs, so it stays 'ruler'"
+  ],
+  "reviewed": true
+ },
+ "origin_life_seeded": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_lithoid": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_lost_colony": {
+  "docs": {},
+  "exceptions": [
+   "origin-intro:origin_lost_colony: game text: 'aboard [planet]' puts 'aboard' before a planet name"
+  ],
+  "reviewed": true
+ },
+ "origin_mindwardens": {
+  "docs": {
+   "shroud.6050": {
+    "exiled_system_border.GetName": {
+     "zh": "该星",
+     "en": "this system"
+    }
+   },
+   "special_projects:EXPLORE_BORDER_SYSTEM": {
+    "exiled_system_border.GetName": {
+     "zh": "该星",
+     "en": "this system"
+    }
+   },
+   "shroud.6101": {
+    "exiled_center_system.GetName": {
+     "zh": "这个",
+     "en": "system"
+    }
+   },
+   "shroud.6205": {
+    "exiled_system_border.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    },
+    "exiled_center_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    },
+    "Root.home_planet.System.GetName": {
+     "zh": "我们的",
+     "en": "home system"
+    }
+   },
+   "shroud.6200": {
+    "Root.home_planet.System.GetName": {
+     "zh": "我们的母星系",
+     "en": "our home system"
+    }
+   },
+   "shroud.6210": {
+    "Root.home_planet.System.GetName": {
+     "zh": "我们的母星",
+     "en": "home system"
+    }
+   },
+   "shroud.6225": {
+    "Root.home_planet.System.GetName": {
+     "zh": "我们的母星",
+     "en": "our home system"
+    }
+   },
+   "shroud.6215": {
+    "exiled_system_border.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "event_chains:shroud_seal_construction_chain": {
+    "exiled_system_border.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "event_chains:the_psionic_war_chain": {
+    "exiled_center_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "shroud.6505": {
+    "exiled_system_border.GetName": {
+     "zh": "该星",
+     "en": "this system"
+    },
+    "exiled_country.GetName": {
+     "zh": "那个帝国",
+     "en": "the other empire's people"
+    }
+   },
+   "shroud.6500": {
+    "exiled_system_border.GetName": {
+     "zh": "该星",
+     "en": "this system"
+    },
+    "exiled_country.GetName": {
+     "zh": "那个帝国",
+     "en": "the other empire's people"
+    }
+   },
+   "shroud.6510": {
+    "exiled_system_border.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "shroud.6550": {
+    "exiled_system_border.GetName": {
+     "zh": "该星",
+     "en": "this system"
+    }
+   },
+   "shroud.6030": {
+    "exiled_country.GetName": {
+     "zh": "那个帝国",
+     "en": "the other empire's people"
+    }
+   }
+  },
+  "exceptions": [
+   "shroud.6110, shroud.6115, shroud.6200, shroud.6580: game text: the Chinese text appends 恒星系 to the system name in some sentences but not others, and one key serves both",
+   "shroud.6205: zh and en: the same system key appears with and without a suffix; kept as the best compromise",
+   "shroud.6600 and shroud.6601: game text: the sentence names the planet twice ('这颗星球«这颗星球»')"
+  ],
+  "reviewed": true
+ },
+ "origin_necrophage": {
+  "docs": {
+   "necroids.2": {
+    "Root.GetAdj": {
+     "zh": "我方",
+     "en": "our empire's"
+    }
+   }
+  },
+  "exceptions": [
+   "origin-intro:origin_necrophage: game text: 'into the [species] race / hive mind' needs a real species name"
+  ],
+  "reviewed": true
+ },
+ "origin_ocean_machines": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_ocean_paradise": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_payback": {
+  "docs": {
+   "origin.4130": {
+    "root.GetName": {
+     "zh": "贵国",
+     "en": "your empire"
+    }
+   },
+   "origin.4306": {
+    "root.species.GetHandName": {
+     "zh": "势力",
+     "en": "hand"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_post_apocalyptic": {
+  "docs": {
+   "origin-intro:origin_post_apocalyptic": {
+    "GetSpeciesNamePlural": {
+     "zh": "族人",
+     "en": "our people"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_primal_calling": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_progenitor_hive": {
+  "docs": {
+   "origin.3210": {
+    "From.GetSpeciesAdj": {
+     "zh": "入侵者",
+     "en": "the invaders"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_red_giant": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_remnants": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_riftworld": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_sacred_path": {
+  "docs": {
+   "nomads.2050": {
+    "Root.Owner.GetRulerTitle": {
+     "zh": "我们的统治者",
+     "en": "our ruler"
+    }
+   },
+   "nomads.2085": {
+    "Root.Owner.GetRulerTitle": {
+     "zh": "统治者",
+     "en": "ruler"
+    }
+   },
+   "nomads.2056": {
+    "sacred_eye_scientist.GetName": {
+     "zh": "科学家",
+     "en": "the scientist"
+    }
+   },
+   "nomads.2072": {
+    "mechsiah_plug_scientist.GetName": {
+     "zh": "科学家",
+     "en": "the scientist"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_scion": {
+  "docs": {
+   "origin.205": {
+    "desired_leader.GetName": {
+     "zh": "此人",
+     "en": "the person in question"
+    }
+   },
+   "origin.12": {
+    "overlord.GetName": {
+     "zh": "宗主国",
+     "en": "overlords"
+    }
+   },
+   "origin.210": {
+    "Root.GetName": {
+     "zh": "这个帝国",
+     "en": "empire"
+    }
+   },
+   "origin.215": {
+    "Root.GetName": {
+     "zh": "这个帝国",
+     "en": "empire"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_shattered_ring": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_shoulders_of_giants": {
+  "docs": {
+   "origin.1205": {
+    "Leader.GetName": {
+     "zh": "首席科学官",
+     "en": "the head scientist"
+    }
+   },
+   "origin.1210": {
+    "Leader.GetName": {
+     "zh": "科学官",
+     "en": "the scientist"
+    }
+   },
+   "origin.1225": {
+    "Leader.GetName": {
+     "zh": "首席科学官",
+     "en": "the head scientist"
+    }
+   },
+   "origin.1230": {
+    "Leader.GetName": {
+     "zh": "首席科学官",
+     "en": "the head scientist"
+    }
+   },
+   "origin.1265": {
+    "Leader.GetName": {
+     "zh": "首席科学官",
+     "en": "the head scientist"
+    }
+   },
+   "origin.1270": {
+    "Leader.GetName": {
+     "zh": "首席科学官",
+     "en": "the head scientist"
+    }
+   },
+   "origin.1285": {
+    "Leader.GetName": {
+     "zh": "首席科学官",
+     "en": "the head scientist"
+    }
+   },
+   "origin.1295": {
+    "Leader.GetName": {
+     "zh": "首席科学官",
+     "en": "the head scientist"
+    }
+   },
+   "origin.1305": {
+    "Leader.GetName": {
+     "zh": "科学官",
+     "en": "the scientist"
+    }
+   }
+  },
+  "exceptions": [
+   "origin.1210: game text: 'Scientist ... have requested' uses a plural verb"
+  ],
+  "reviewed": true
+ },
+ "origin_shroud_forged": {
+  "docs": {
+   "origin-intro:origin_shroud_forged": {
+    "GetSpeciesNamePlural": {
+     "zh": "族人",
+     "en": "people"
+    }
+   }
+  },
+  "exceptions": [
+   "origin-intro:origin_shroud_forged: game text: '[adjective]kind' is written without a space",
+   "shroud_forged.220 and shroud_forged.225: game text: 'our homeworld of [name]' repeats the noun when the name is generic"
+  ],
+  "reviewed": true
+ },
+ "origin_shroudwalker_apprentice": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_starlit_citadel": {
+  "docs": {
+   "bio.2025": {
+    "event_target:starlit_sealed_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "event_chains:abandoned_hatchery_chain_3": {
+    "event_target:starlit_sealed_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "event_chains:abandoned_hatchery_chain_4": {
+    "starlit_sealed_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [
+   "bio.2040: zh: the system name is followed by 恒星系 in one of two sentences, and one key serves both"
+  ],
+  "reviewed": true
+ },
+ "origin_storm_chasers": {
+  "docs": {
+   "cstorms.3170": {
+    "event_target:storm_scientist.GetName": {
+     "zh": "这位科学家",
+     "en": "the scientist"
+    },
+    "event_target:storm_commander.GetName": {
+     "zh": "指挥官",
+     "en": "the commander"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_subterranean": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_subterranean_machines": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_synthetic_fertility": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_toxic_knights": {
+  "docs": {
+   "toxoids.7260": {
+    "questing_knight_82.GetFirstName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   },
+   "toxoids.7050": {
+    "GetYear": {
+     "zh": "那一",
+     "en": "the Visit"
+    }
+   },
+   "toxoids.7006": {
+    "questing_knight_1.GetName": {
+     "zh": "骑士",
+     "en": "the knight"
+    }
+   },
+   "toxoids.7195": {
+    "questing_knight_15.GetName": {
+     "zh": "骑士",
+     "en": "the knight"
+    }
+   },
+   "toxoids.7011": {
+    "questing_knight_2.GetName": {
+     "zh": "这位扈从",
+     "en": "the squire"
+    }
+   },
+   "toxoids.7120": {
+    "questing_squire_10.GetName": {
+     "zh": "扈从",
+     "en": "the squire"
+    }
+   },
+   "toxoids.7130": {
+    "questing_squire_10.GetName": {
+     "zh": "扈从",
+     "en": "the squire"
+    }
+   },
+   "toxoids.7510": {
+    "toxic_god_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "toxoids.7515": {
+    "toxic_god_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [
+   "toxoids.7300: the two knights (questing_knight_15 and questing_knight_8) are both 'the knight' in the same sentences and the text does not tell which is which",
+   "toxoids.7080, toxoids.7085 and toxoids.7090: game text: bare 'knight' / 'Knight' title tokens read as generic nouns",
+   "toxoids.7120 and toxoids.7130: game text: '[name] the Squire' repeats the role",
+   "toxoids.7160: game text: '[their] discovered' uses the possessive as subject",
+   "toxoids.7260 and toxoids.7265: game text: 'stand[s]' marker and archaic verb forms ('hast', 'seemeth') mixed with a modern pronoun",
+   "toxoids.7040: game text: 'a corroded [species] remains' article and plural mismatch"
+  ],
+  "reviewed": true
+ },
+ "origin_treasure_hunters": {
+  "docs": {
+   "grand_archive.8205": {
+    "FROM.GetName": {
+     "zh": "这个",
+     "en": "the nearby star"
+    }
+   },
+   "grand_archive.8400": {
+    "ness_treasure_system.GetName": {
+     "zh": "该",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [
+   "grand_archive.8115 and grand_archive.8120: game text: 'Scientist [name] were' uses a plural verb with a singular leader"
+  ],
+  "reviewed": true
+ },
+ "origin_tree_of_life": {
+  "docs": {},
+  "exceptions": [],
+  "reviewed": true
+ },
+ "origin_unplugged": {
+  "docs": {
+   "unplugged.2000": {
+    "root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "member of our species"
+    }
+   },
+   "unplugged.3010": {
+    "owner.GetAdj": {
+     "zh": "",
+     "en": "our",
+     "omit": [
+      "zh"
+     ]
+    }
+   },
+   "unplugged.2315": {
+    "owner.GetAdj": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   },
+   "unplugged.3106": {
+    "target.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "target-species people"
+    }
+   },
+   "unplugged.3111": {
+    "target.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "target-species people"
+    }
+   },
+   "unplugged.2115": {
+    "owner.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "our species'"
+    }
+   },
+   "unplugged.2450": {
+    "creator_species.GetAdj": {
+     "zh": "",
+     "en": "original",
+     "omit": [
+      "zh"
+     ]
+    },
+    "root.GetAdj": {
+     "zh": "我方",
+     "en": "our empire's"
+    }
+   },
+   "unplugged.2455": {
+    "creator_species.GetAdj": {
+     "zh": "",
+     "en": "original",
+     "omit": [
+      "zh"
+     ]
+    },
+    "root.GetAdj": {
+     "zh": "我方",
+     "en": "our empire's"
+    },
+    "origin_unplugged_machine_legacy_core_planet.GetClassAdj": {
+     "zh": "这颗星球",
+     "en": "hostile"
+    }
+   }
+  },
+  "exceptions": [
+   "unplugged.2000: game text: 'our star, [name]' is an appositive that repeats the noun when the name is generic",
+   "unplugged.2022: game text: the heading 'Old [planet name]' needs a real planet name",
+   "unplugged.2305: game text: 'the planet we know as [name]' repeats the noun when the name is generic",
+   "archaeological_site_types:machine_legacy_creators_site and archaeological_site_types:machine_legacy_unplugged_site: game text: 'an [adjective] monitoring station' article mismatch"
+  ],
+  "reviewed": true
+ },
+ "origin_wilderness": {
+  "docs": {},
+  "exceptions": [
+   "origin-intro:origin_wilderness: game text: 'the planet named [name]' repeats the homeworld noun when the name is generic"
+  ],
+  "reviewed": true
+ }
+}

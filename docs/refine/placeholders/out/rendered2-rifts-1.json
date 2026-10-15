@@ -1,0 +1,210 @@
+{
+ "astral-crystal-sphere": {
+  "reviewed": true
+ },
+ "astral-formless": {
+  "reviewed": true
+ },
+ "astral-rift-in-space": {
+  "reviewed": true
+ },
+ "event-astral-planes-210": {
+  "reviewed": true
+ },
+ "event-astral-planes-6005": {
+  "reviewed": true
+ },
+ "event-astral-planes-6029": {
+  "reviewed": true
+ },
+ "event-astral-planes-6095": {
+  "reviewed": true
+ },
+ "rift-advisor": {
+  "exceptions": [
+   "astral_rift.840: game text: plural verb after a singular name (\"The leader have\", \"they were\")"
+  ],
+  "reviewed": true
+ },
+ "rift-bleached-planet": {
+  "reviewed": true
+ },
+ "rift-cleaning-drones": {
+  "reviewed": true
+ },
+ "rift-corridors": {
+  "docs": {
+   "astral_rift.120": {
+    "Leader.GetHeShe": {
+     "zh": "",
+     "en": "they",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这位领袖的代词。",
+      "en": "In the game, a pronoun for the leader appears here."
+     }
+    }
+   },
+   "astral_rift.140": {
+    "Root.Leader.IsAre": {
+     "zh": "是",
+     "en": "They are",
+     "note": {
+      "zh": "游戏里这里会出现这位领袖的代词和系动词。",
+      "en": "In the game, a pronoun and verb for the leader appear here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "astral_rift.125: game text: \"were able\" after a singular name",
+   "astral_rift.140: game text: \"have unexpectedly returned\" after a singular name"
+  ],
+  "reviewed": true
+ },
+ "rift-crystal": {
+  "docs": {
+   "astral_rift.1005": {
+    "Explorer.GetHomeWorldName": {
+     "zh": "母星",
+     "en": "our cradle",
+     "note": {
+      "zh": "游戏里这里会出现你的母星的名称。",
+      "en": "In the game, the name of your homeworld appears here."
+     }
+    }
+   },
+   "astral_rift.1006": {
+    "Explorer.GetHomeWorldName": {
+     "zh": "母星",
+     "en": "our cradle",
+     "note": {
+      "zh": "游戏里这里会出现你的母星的名称。",
+      "en": "In the game, the name of your homeworld appears here."
+     }
+    }
+   },
+   "astral_rift.1020": {
+    "solar_system.GetName": {
+     "zh": "该",
+     "en": "this",
+     "note": {
+      "zh": "游戏里这里会出现这个星系的名称。",
+      "en": "In the game, the system's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "astral_rift.1000: game text: \"scientists's\" (double possessive)"
+  ],
+  "reviewed": true
+ },
+ "rift-desert-ruins": {
+  "exceptions": [
+   "astral_rift.1525: renderer: unmapped verb tokens render as \"are\" and glance«s», recommend«s» (no key listed)"
+  ],
+  "reviewed": true
+ },
+ "rift-dimensional-dump": {
+  "exceptions": [
+   "astral_rift.2225: game text: \"The alien's name is\" followed by the name slot, no neutral phrase fits all sentences",
+   "astral_rift.2225: renderer: unmapped verb tokens render as miss«their», know«s» (no key listed)",
+   "astral_rift.2230: game text: plural verbs after a singular name (\"the pilot have\", \"have earned\")"
+  ],
+  "reviewed": true
+ },
+ "rift-entangled-dark-matter": {
+  "exceptions": [
+   "astral_rift.2431: renderer: the slot after \"a gesture of their\" is mapped to the leader's name, so it reads \"their «the leader»\" (no other key available)"
+  ],
+  "reviewed": true
+ },
+ "rift-garden": {
+  "exceptions": [
+   "astral_rift.1465: renderer: unmapped verb tokens render as resemble«their» and seem«s» (no key listed)",
+   "astral_rift.1465: game text: Chinese uses 此人 twice in one sentence"
+  ],
+  "reviewed": true
+ },
+ "rift-genesis": {
+  "reviewed": true
+ },
+ "rift-interdimensional-circus": {
+  "reviewed": true
+ },
+ "rift-library": {
+  "reviewed": true
+ },
+ "rift-microverse": {
+  "reviewed": true
+ },
+ "rift-psionic-stranger": {
+  "exceptions": [
+   "astral_rift.3280: game text: Chinese \"从的裂隙\" is missing a word",
+   "astral_rift.3285: game text: Chinese \"从的裂隙\" is missing a word"
+  ],
+  "reviewed": true
+ },
+ "rift-research-lab": {
+  "reviewed": true
+ },
+ "rift-riftworld": {
+  "reviewed": true
+ },
+ "rift-rockworms": {
+  "exceptions": [
+   "astral_rift.1890: game text: plural verbs after a singular name (\"The colonist have\", \"have become\")",
+   "astral_rift.1890: renderer: unmapped verb token renders as a bare \"are\" (no key listed)"
+  ],
+  "reviewed": true
+ },
+ "rift-siege-on-paradise": {
+  "exceptions": [
+   "astral_rift.3099: game text: plural verbs after a singular name (\"The leader have\", \"they have become\")"
+  ],
+  "reviewed": true
+ },
+ "rift-station": {
+  "reviewed": true
+ },
+ "rift-tiny-planet": {
+  "reviewed": true
+ },
+ "rift-tower": {
+  "docs": {
+   "astral_rift.696": {
+    "From.GetName": {
+     "zh": "领袖",
+     "en": "leader",
+     "note": {
+      "zh": "游戏里这里会出现这位领袖的名字。",
+      "en": "In the game, the leader's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "astral_rift.691: renderer: unmapped verb-suffix token renders as serve«s» (no key listed)",
+   "astral_rift.696: renderer: unmapped verb-suffix token renders as find«s» (no key listed)"
+  ],
+  "reviewed": true
+ },
+ "rift-tropical-habitat": {
+  "reviewed": true
+ },
+ "rift-volcano": {
+  "reviewed": true
+ },
+ "rift-vortex": {
+  "reviewed": true
+ },
+ "rift-windswept-planet": {
+  "exceptions": [
+   "astral_rift.2790: renderer: the pronoun before the verb is dropped, leaving a bare \"have\" / 有 (no key for the verb token)"
+  ],
+  "reviewed": true
+ }
+}

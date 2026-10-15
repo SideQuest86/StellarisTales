@@ -64,10 +64,13 @@
    "event_target:roguemoon.Planet.GetName": {
     "zh": "这颗卫星",
     "en": "it",
-    "note": {
-     "zh": "游戏里这里会出现这颗卫星的指代。",
-     "en": "In the game, the moon appears here as 'it'."
-    }
+    "variants": [
+     {
+      "lang": "en",
+      "before": "the moon ",
+      "text": ""
+     }
+    ]
    }
   }
  }

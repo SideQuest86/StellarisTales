@@ -186,9 +186,21 @@ def main():
                 for k in (ref, ref.upper()):
                     if k in keys and k not in out_loc:
                         out_loc[k] = {'zh': expand(k, 'zh'), 'en': expand(k, 'en')}
+    # raw trigger wording ("Is Owned by $EMPIRE$"): the game's own condition sentence for a trigger key, placeholders kept
+    trig = {}
+    def rawloc(k, lang):
+        return re.sub(r'§.|£\w+£', '', loc[lang].get(k, '')).replace('\\n', '\n')
+    for t in sorted(used):
+        if t in out_loc or not re.fullmatch(r'[a-z][a-z0-9_]*', t):
+            continue  # objects with their own name are not triggers
+        for k in (t.upper(), t.upper() + '_TOOLTIP', t + '_tooltip', t):
+            zh, en = rawloc(k, 'zh'), rawloc(k, 'en')
+            if zh and en and '\n' not in zh.strip() and len(zh) < 160 and ('_' in t or '$' in zh):
+                trig[t] = {'zh': zh.strip(), 'en': en.strip(), 'key': k}
+                break
     out = {
         'game': (game / 'launcher-settings.json').exists() and json.loads((game / 'launcher-settings.json').read_text(encoding='utf-8-sig')).get('version'),
-        'loc': out_loc, 'vars': variables,
+        'loc': out_loc, 'trig': trig, 'vars': variables,
         'values': {k: values[k] for k in sorted(value_names) if k in values},
         'effects': {k: scripted[k] for k in sorted(seen_eff)},
         'modifiers': {k: modifiers[k] for k in sorted(modifiers)}, 'opinion': {k: opinion[k] for k in sorted(opinion)},

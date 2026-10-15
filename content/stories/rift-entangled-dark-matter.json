@@ -170,5 +170,26 @@
    "2435's text describes the scientist's suicide but its option has no kill_leader effect; recorded as observed in the script."
   ],
   "guide": "public/summaries/rift-entangled-dark-matter.md"
+ },
+ "placeholderDocs": {
+  "astral_rift.2431": {
+   "Leader.GetName": {
+    "zh": "这位领袖",
+    "en": "the leader",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "a gesture of their ",
+      "text": "own"
+     },
+     {
+      "lang": "zh",
+      "before": "做了一个",
+      "after": "的手势",
+      "text": "他惯用"
+     }
+    ]
+   }
+  }
  }
 }

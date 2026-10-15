@@ -409,22 +409,56 @@
   }
  },
  "placeholderDocs": {
+  "war_in_heaven.15": {
+   "From.GetName": {
+    "zh": "宿敌帝国",
+    "en": "the rival empire's people"
+   }
+  },
+  "war_in_heaven.2": {
+   "From.GetName": {
+    "zh": "宿敌帝国",
+    "en": "the rival empire's people"
+   }
+  },
   "war_in_heaven.4": {
+   "From.GetName": {
+    "zh": "宿敌帝国",
+    "en": "the rival empire",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " have our allegiance",
+      "text": "the rival empire's people"
+     }
+    ]
+   },
    "From.GetSpeciesName": {
     "zh": "宿敌种族",
-    "en": "rival species",
-    "omit": [
-     "en"
+    "en": "opposing species"
+   },
+   "from.GetName": {
+    "zh": "宿敌帝国",
+    "en": "the rival empire",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " have our allegiance",
+      "text": "the rival empire's people"
+     }
     ]
+   }
+  },
+  "war_in_heaven.5": {
+   "WarInHeavenFEOne.GetName": {
+    "zh": "胜出的帝国",
+    "en": "the winning empire's people"
    }
   },
   "war_in_heaven.7": {
    "From.GetSpeciesName": {
     "zh": "宿敌种族",
-    "en": "rival species",
-    "omit": [
-     "en"
-    ]
+    "en": "opposing species"
    }
   }
  }

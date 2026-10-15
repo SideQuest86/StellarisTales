@@ -257,5 +257,27 @@
     "en": "In the game, the name of this core system appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "infernals.1043": {
+   "hyperthermia_empire.GetName": {
+    "zh": "该帝国",
+    "en": "the rogue empire",
+    "note": {
+     "zh": "游戏里这里会出现那个加热星系核心的帝国名称。",
+     "en": "In the game, the name of the empire heating the core appears here."
+    }
+   }
+  },
+  "situations:situation_galactic_hyperthermia": {
+   "event_target:hyperthermia_empire.gh_crisis_core_var": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   }
+  }
  }
 }

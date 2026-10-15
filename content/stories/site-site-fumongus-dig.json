@@ -99,5 +99,26 @@
     "en": "In the game, this colleague's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "ancrel.13120": {
+   "Root.Owner.Capital.GetName": {
+    "zh": "我们的首都",
+    "en": "our capital"
+   }
+  },
+  "ancrel.8305": {
+   "Root.GetLeaderName": {
+    "zh": "这位领袖",
+    "en": "the leader",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " Their desiccated",
+      "text": "the leader."
+     }
+    ]
+   }
+  }
  }
 }

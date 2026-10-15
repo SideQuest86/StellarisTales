@@ -59,5 +59,25 @@
     "en": "In the game, the name of this outraged empire appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "fallen_empires_awakening.2": {
+   "From.GetName": {
+    "zh": "该帝国",
+    "en": "the empire's people"
+   },
+   "From.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "the species",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "In ",
+      "after": " space, fleets",
+      "text": "their"
+     }
+    ]
+   }
+  }
  }
 }

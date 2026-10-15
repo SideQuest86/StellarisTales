@@ -143,39 +143,46 @@
   }
  },
  "placeholderDocs": {
+  "astral_rift.1000": {
+   "Explorer.GetScientistPlural": {
+    "zh": "科学家",
+    "en": "scientists",
+    "variants": [
+     {
+      "lang": "en",
+      "after": "'s",
+      "text": "scientist"
+     }
+    ]
+   }
+  },
   "astral_rift.1005": {
    "Explorer.GetHomeWorldName": {
     "zh": "母星",
-    "en": "the homeworld",
-    "omit": [
-     "en"
-    ],
+    "en": "our cradle",
     "note": {
-     "zh": "这里会出现探险者的母星名称。",
-     "en": "In the game, the explorer's homeworld name appears here."
+     "zh": "游戏里这里会出现你的母星的名称。",
+     "en": "In the game, the name of your homeworld appears here."
     }
    }
   },
   "astral_rift.1006": {
    "Explorer.GetHomeWorldName": {
     "zh": "母星",
-    "en": "the homeworld",
-    "omit": [
-     "en"
-    ],
+    "en": "our cradle",
     "note": {
-     "zh": "这里会出现探险者的母星名称。",
-     "en": "In the game, the explorer's homeworld name appears here."
+     "zh": "游戏里这里会出现你的母星的名称。",
+     "en": "In the game, the name of your homeworld appears here."
     }
    }
   },
   "astral_rift.1020": {
    "solar_system.GetName": {
-    "zh": "这个星系",
+    "zh": "该",
     "en": "this",
     "note": {
-     "zh": "这里会出现这个星系的名称。",
-     "en": "In the game, this star system's name appears here."
+     "zh": "游戏里这里会出现这个星系的名称。",
+     "en": "In the game, the system's name appears here."
     }
    }
   }

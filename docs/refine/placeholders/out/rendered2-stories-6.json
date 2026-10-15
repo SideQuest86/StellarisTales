@@ -1,0 +1,851 @@
+{
+ "event-operation-6100": {
+  "reviewed": true
+ },
+ "event-operation-6200": {
+  "docs": {
+   "operation.6207": {
+    "target_country.GetAdj": {
+     "zh": "该国",
+     "en": "their"
+    },
+    "target_country.GetSpeciesNamePlural": {
+     "zh": "那些海盗",
+     "en": "raiders"
+    }
+   },
+   "operation.6201": {
+    "target.GetSpeciesName": {
+     "zh": "当地",
+     "en": "local"
+    },
+    "target.GetSpeciesNamePlural": {
+     "zh": "海盗",
+     "en": "pirates"
+    }
+   },
+   "operation.6205": {
+    "privateer_system.GetName": {
+     "zh": "此处",
+     "en": "this system"
+    },
+    "target_country.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "outcast"
+    }
+   },
+   "operation.6206": {
+    "privateer_system.GetName": {
+     "zh": "此处",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-operation-6250": {
+  "docs": {
+   "operation.6252": {
+    "scandal_species.GetSpeciesName": {
+     "zh": "外国",
+     "en": "foreign"
+    },
+    "target.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "local"
+    },
+    "target.GetGovernmentName": {
+     "zh": "该政府",
+     "en": "their government"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-operation-6300": {
+  "docs": {
+   "operation.6320": {
+    "target_country.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "their people"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-operation-8000": {
+  "docs": {
+   "operation.8000": {
+    "root.target.GetName": {
+     "zh": "目标帝国",
+     "en": "the target empire"
+    }
+   },
+   "operation.8002": {
+    "root.target.GetName": {
+     "zh": "目标帝国",
+     "en": "the target empire"
+    },
+    "root.target.GetAdj": {
+     "zh": "该国",
+     "en": "local"
+    }
+   }
+  },
+  "exceptions": [
+   "operation.8002: game text: 'hiding in plain site' typo"
+  ],
+  "reviewed": true
+ },
+ "event-operation-8200": {
+  "docs": {
+   "operation.8200": {
+    "Root.Target.GetName": {
+     "zh": "目标帝国",
+     "en": "the target empire"
+    }
+   },
+   "operation.8205": {
+    "Root.Target.GetAdj": {
+     "zh": "该国",
+     "en": "their"
+    }
+   },
+   "operation.8210": {
+    "Root.Target.GetName": {
+     "zh": "目标帝国",
+     "en": "the target empire"
+    }
+   },
+   "operation.8225": {
+    "Root.Target.GetName": {
+     "zh": "目标帝国",
+     "en": "the target empire"
+    },
+    "Root.Target.GetAdj": {
+     "zh": "该国",
+     "en": "their"
+    }
+   },
+   "operation.8230": {
+    "Root.Target.GetName": {
+     "zh": "目标帝国",
+     "en": "the target empire"
+    },
+    "Root.Target.GetAdj": {
+     "zh": "该国",
+     "en": "their"
+    },
+    "offended_party.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "the offended empire"
+    }
+   }
+  },
+  "exceptions": [
+   "operation.8230: game text: 'cause the them considerable embarrassment'"
+  ],
+  "reviewed": true
+ },
+ "event-over-1": {
+  "docs": {
+   "over.20": {
+    "quantum_catapult_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "over.25": {
+    "quantum_catapult_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-over-100": {
+  "docs": {
+   "over.100": {
+    "from.GetName": {
+     "zh": "该国",
+     "en": "the ally"
+    },
+    "from.GetAdj": {
+     "zh": "该国",
+     "en": "their people"
+    },
+    "root.GetAdj": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-paragon-100": {
+  "reviewed": true
+ },
+ "event-paragon-200": {
+  "reviewed": true
+ },
+ "event-paragon-3100": {
+  "docs": {
+   "paragon.3100": {
+    "From.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    },
+    "event_target:exakeides_planet.GetName": {
+     "zh": "此",
+     "en": "this planet"
+    }
+   },
+   "paragon.3120": {
+    "From.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "paragon.3125": {
+    "From.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-paragon-3901": {
+  "docs": {
+   "paragon.3000": {
+    "gateway_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-paragon-549": {
+  "docs": {
+   "paragon.550": {
+    "From.GetName": {
+     "zh": "本人",
+     "en": "the leader"
+    },
+    "From.GetAge": {
+     "zh": "若干",
+     "en": "advanced years"
+    }
+   },
+   "paragon.552": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.551": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.555": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.556": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.558": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.559": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.560": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.561": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.562": {
+    "From.GetName": {
+     "zh": "领袖纪念",
+     "en": "the leader's"
+    }
+   },
+   "paragon.563": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.570": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    }
+   },
+   "paragon.571": {
+    "From.GetName": {
+     "zh": "这位领袖",
+     "en": "the leader"
+    },
+    "From.GetAge": {
+     "zh": "若干",
+     "en": "advanced years"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-paragon-998": {
+  "reviewed": true
+ },
+ "event-pirate-10": {
+  "docs": {
+   "pirate.10": {
+    "Root.GetName": {
+     "zh": "舰队指挥官",
+     "en": "the fleet commander"
+    },
+    "From.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-pirate-100": {
+  "docs": {
+   "pirate.155": {
+    "thalassocracy_species.GetAdj": {
+     "zh": "海盗",
+     "en": "pirate"
+    },
+    "thalassocracy_species.GetName": {
+     "zh": "该物种",
+     "en": "their"
+    },
+    "thalassocracy_target_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-pirate-13": {
+  "docs": {
+   "pirate.15": {
+    "killer_fleet.solar_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-pirate-24": {
+  "docs": {
+   "pirate.25": {
+    "From.From.GetStarName": {
+     "zh": "这个",
+     "en": "this system"
+    },
+    "pirate_slayers.GetStarName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "pirate.26": {
+    "pirate_slayers.GetStarName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-pirate-4": {
+  "docs": {
+   "pirate.12": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.11": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.2": {
+    "pirate_system.GetName": {
+     "zh": "此处",
+     "en": "this system"
+    }
+   },
+   "pirate.1": {
+    "pirate_system.GetName": {
+     "zh": "此处",
+     "en": "this system"
+    }
+   },
+   "pirate.16": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.14": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.8": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.6": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.9": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.7": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-pirate-48": {
+  "docs": {
+   "pirate.50": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.53": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.54": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.56": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "pirate.57": {
+    "pirate_system.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-planet-destruction-100": {
+  "docs": {
+   "planet_destruction.102": {
+    "From.From.GetName": {
+     "zh": "巨像",
+     "en": "colossus"
+    }
+   },
+   "planet_destruction.101": {
+    "From.From.GetName": {
+     "zh": "巨像",
+     "en": "colossus"
+    }
+   }
+  },
+  "exceptions": [
+   "planet_destruction.1000: unmapped slot (no key listed) renders 'destroyed the planet of this planet'; cannot be adjusted"
+  ],
+  "reviewed": true
+ },
+ "event-planet-destruction-1005": {
+  "exceptions": [
+   "planet_destruction.1000: unmapped slot (no key listed) renders 'destroyed the planet of this planet'; cannot be adjusted"
+  ],
+  "reviewed": true
+ },
+ "event-planet-destruction-110": {
+  "reviewed": true
+ },
+ "event-planet-destruction-200": {
+  "docs": {
+   "planet_destruction.210": {
+    "From.GetStarName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [
+   "planet_destruction.1000: unmapped slot (no key listed) renders 'destroyed the planet of this planet'; cannot be adjusted"
+  ],
+  "reviewed": true
+ },
+ "event-planet-destruction-300": {
+  "exceptions": [
+   "planet_destruction.1000: unmapped slot (no key listed) renders 'destroyed the planet of this planet'; cannot be adjusted"
+  ],
+  "reviewed": true
+ },
+ "event-planet-destruction-400": {
+  "reviewed": true
+ },
+ "event-planet-destruction-500": {
+  "reviewed": true
+ },
+ "event-planet-destruction-600": {
+  "docs": {
+   "fallen_empires_awakening.2": {
+    "From.GetAdjective": {
+     "zh": "这个帝国的",
+     "en": "the empire's"
+    },
+    "From.GetName": {
+     "zh": "这个帝国",
+     "en": "the empire's people"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-planet-destruction-700": {
+  "exceptions": [
+   "planet_destruction.1000: unmapped slot (no key listed) renders 'destroyed the planet of this planet'; cannot be adjusted"
+  ],
+  "reviewed": true
+ },
+ "event-planet-destruction-800": {
+  "exceptions": [
+   "planet_destruction.1000: unmapped slot (no key listed) renders 'destroyed the planet of this planet'; cannot be adjusted"
+  ],
+  "reviewed": true
+ },
+ "event-planet-destruction-900": {
+  "reviewed": true
+ },
+ "event-plant-100": {
+  "exceptions": [
+   "plant.110: game text: 'Our Overlord have completed' (verb agreement)"
+  ],
+  "reviewed": true
+ },
+ "event-progress-2": {
+  "docs": {
+   "progress.2": {
+    "Root.Owner.Capital.GetName": {
+     "zh": "我们",
+     "en": "people of our homeworld"
+    },
+    "root.owner.capital_scope.GetName": {
+     "zh": "我们",
+     "en": "people of our homeworld"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-progress-3": {
+  "docs": {
+   "progress.3": {
+    "Root.Owner.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "",
+     "omit": [
+      "en"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-refugees-3": {
+  "docs": {
+   "refugees.1": {
+    "RefugeeEscapedCrisis.GetSpeciesAdj": {
+     "zh": "敌方",
+     "en": "enemy"
+    },
+    "RefugeeEscapedFrom.GetSpeciesAdj": {
+     "zh": "敌方",
+     "en": "enemy"
+    },
+    "RefugeeEscapedPlanet.GetName": {
+     "zh": "故土",
+     "en": "birth"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-11000": {
+  "docs": {
+   "event_chains:the_reckoning_chain": {
+    "this.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    }
+   },
+   "event_chains:the_reckoning_observer_chain": {
+    "event_target:the_reckoning_observer_target.GetName": {
+     "zh": "该帝国",
+     "en": "that empire"
+    }
+   },
+   "shroud.4715": {
+    "root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "man"
+    }
+   },
+   "shroud.4935": {
+    "Root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "man"
+    },
+    "capital_scope.solar_system.GetName": {
+     "zh": "本",
+     "en": "our home system"
+    }
+   },
+   "shroud.4950": {
+    "from.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "shroud.4955": {
+    "from.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "shroud.4960": {
+    "from.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "shroud.4965": {
+    "from.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   },
+   "shroud.4971": {
+    "from.GetName": {
+     "zh": "这个星系",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [
+   "shroud.4715: game text: raw placeholder '**Error - for GCs**' left in the original data"
+  ],
+  "reviewed": true
+ },
+ "event-shroud-12000": {
+  "docs": {
+   "shroud.12020": {
+    "shroud_leader.GetHeShe": {
+     "zh": "此人",
+     "en": "the officer"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-1510": {
+  "docs": {
+   "shroud.1510": {
+    "from.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    },
+    "fromfrom.GetName": {
+     "zh": "那个",
+     "en": "rival"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-3055": {
+  "reviewed": true
+ },
+ "event-shroud-3060": {
+  "reviewed": true
+ },
+ "event-shroud-3105": {
+  "reviewed": true
+ },
+ "event-shroud-3520": {
+  "reviewed": true
+ },
+ "event-shroud-4190": {
+  "docs": {
+   "shroud.4190": {
+    "from.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "shroud.4191": {
+    "from.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-4500": {
+  "docs": {
+   "utopia.2682": {
+    "chosen_leader_lost_patron.GetName": {
+     "zh": "这位领袖",
+     "en": "leader"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-4550": {
+  "docs": {
+   "utopia.2682": {
+    "chosen_leader_lost_patron.GetName": {
+     "zh": "这位领袖",
+     "en": "leader"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-4600": {
+  "docs": {
+   "utopia.2682": {
+    "chosen_leader_lost_patron.GetName": {
+     "zh": "这位领袖",
+     "en": "leader"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-4650": {
+  "docs": {
+   "utopia.2682": {
+    "chosen_leader_lost_patron.GetName": {
+     "zh": "这位领袖",
+     "en": "leader"
+    }
+   },
+   "shroud.4862": {
+    "From.GetName": {
+     "zh": "这个世界",
+     "en": "the world"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-4700": {
+  "docs": {
+   "utopia.2682": {
+    "chosen_leader_lost_patron.GetName": {
+     "zh": "这位领袖",
+     "en": "leader"
+    }
+   },
+   "shroud.4890": {
+    "event_target:hindsight_planet_candidate_1.GetName": {
+     "zh": "",
+     "en": "Arkship",
+     "omit": [
+      "zh"
+     ]
+    },
+    "event_target:hindsight_planet_candidate_2.GetName": {
+     "zh": "",
+     "en": "Arkship",
+     "omit": [
+      "zh"
+     ]
+    },
+    "event_target:hindsight_planet_candidate_3.GetName": {
+     "zh": "",
+     "en": "Arkship",
+     "omit": [
+      "zh"
+     ]
+    },
+    "event_target:hindsight_planet_candidate_4.GetName": {
+     "zh": "",
+     "en": "Arkship",
+     "omit": [
+      "zh"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-shroud-505": {
+  "reviewed": true
+ },
+ "event-shroud-5051": {
+  "reviewed": true
+ }
+}

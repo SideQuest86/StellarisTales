@@ -88,20 +88,44 @@
   }
  },
  "placeholderDocs": {
+  "operation.6201": {
+   "target.GetSpeciesName": {
+    "zh": "当地",
+    "en": "local"
+   },
+   "target.GetSpeciesNamePlural": {
+    "zh": "海盗",
+    "en": "pirates"
+   }
+  },
   "operation.6205": {
+   "privateer_system.GetName": {
+    "zh": "此处",
+    "en": "this system"
+   },
    "target_country.GetSpeciesName": {
     "zh": "该物种",
     "en": "species"
    },
    "target_country.GetSpeciesNamePlural": {
     "zh": "该物种",
-    "en": "species"
+    "en": "outcast"
+   }
+  },
+  "operation.6206": {
+   "privateer_system.GetName": {
+    "zh": "此处",
+    "en": "this system"
    }
   },
   "operation.6207": {
+   "target_country.GetAdj": {
+    "zh": "该国",
+    "en": "their"
+   },
    "target_country.GetSpeciesNamePlural": {
-    "zh": "该物种",
-    "en": "species"
+    "zh": "那些海盗",
+    "en": "raiders"
    }
   }
  }

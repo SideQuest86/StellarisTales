@@ -735,7 +735,7 @@ class Compiler:
         return {**entry, 'note': name_note(tail, role)}
 
     @staticmethod
-    def reviewed_names(fragment, rid, names):
+    def reviewed_names(fragment, rid, names, used=None):
         """Per-story reviewed wording for placeholders (fragment `placeholders`, per-doc `placeholderDocs`) over the
         neutral defaults. Only keys the doc actually uses are kept; the original token stays in the text."""
         story = fragment.get('placeholders', {})
@@ -752,12 +752,21 @@ class Compiler:
                 merged = {**{k: v for k, v in wording.items() if k != 'default'}, **merged}
                 if omit:
                     merged['omit'] = omit
+                if chosen.get('variants'):
+                    merged['variants'] = chosen['variants']
                 note = chosen.get('note') or wording.get('note')
                 if note:
                     merged['note'] = note
                 out[key] = merged
             else:
                 out[key] = wording
+        # Reviewed per-document wording may also replace a scripted name the game fills from its own text (e.g. a
+        # long planet description that does not fit the sentence); only keys the document actually uses.
+        for key, chosen in doc.items():
+            if key not in out and key in (used or ()):
+                entry = {k: chosen[k] for k in ('zh', 'en', 'note', 'omit', 'variants') if k in chosen}
+                if entry.get('zh') is not None and entry.get('en') is not None:
+                    out[key] = entry
         return out
 
     def profile_options(self):
@@ -1069,8 +1078,16 @@ class Compiler:
                     chapters[rid]['notes'] = self.notes[rid]
                 if rid in self.unreachable:
                     chapters[rid]['unreachable'] = self.unreachable[rid]
-                if chapters[rid].get('names'):
-                    chapters[rid] = {**chapters[rid], 'names': self.reviewed_names(fragment, rid, chapters[rid]['names'])}
+                doc_review = fragment.get('placeholderDocs', {}).get(rid)
+                if chapters[rid].get('names') or doc_review:
+                    c = chapters[rid]
+                    strings = [c['title'], *c['texts'], *c['sections']]
+                    for ch in c['choices']:
+                        strings += [ch['label'], *ch['responses'], *ch['tooltips']]
+                    used = {m for s in strings for lang in ('zh', 'en') for m in PLACEHOLDER.findall(s.get(lang, '') or '')}
+                    names = self.reviewed_names(fragment, rid, c.get('names') or {}, used)
+                    if names:
+                        chapters[rid] = {**c, 'names': names}
             details[sid] = {'story': story, 'chapters': [chapters[d] for d in ordered_docs]}
             stories.append(entry)
         for sid, d in details.items():

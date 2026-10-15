@@ -1,0 +1,343 @@
+{
+ "chain-contract-destroy-station-heirs-chain": {
+  "reviewed": true
+ },
+ "chain-contract-intercept-raid-heirs-chain": {
+  "reviewed": true
+ },
+ "chain-contract-join-war-chain": {
+  "reviewed": true
+ },
+ "chain-contract-prisoner-disposal-chain": {
+  "reviewed": true
+ },
+ "chain-contract-raid-planet-chain": {
+  "reviewed": true
+ },
+ "chain-holy-war": {
+  "reviewed": true
+ },
+ "chain-mandate-district-city-chain": {
+  "docs": {
+   "event_chains:mandate_district_city_chain": {
+    "Root.GetRulerTitle": {
+     "zh": "",
+     "en": "our",
+     "omit": [
+      "zh"
+     ]
+    },
+    "Root.GetRulerName": {
+     "zh": "我们的统治者",
+     "en": "ruler"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "chain-mandate-district-farming-chain": {
+  "docs": {
+   "event_chains:mandate_district_farming_chain": {
+    "Root.GetRulerTitle": {
+     "zh": "",
+     "en": "our",
+     "omit": [
+      "zh"
+     ]
+    },
+    "Root.GetRulerName": {
+     "zh": "我们的统治者",
+     "en": "ruler"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "chain-mandate-district-generator-chain": {
+  "docs": {
+   "event_chains:mandate_district_generator_chain": {
+    "Root.GetRulerTitle": {
+     "zh": "",
+     "en": "our",
+     "omit": [
+      "zh"
+     ]
+    },
+    "Root.GetRulerName": {
+     "zh": "我们的统治者",
+     "en": "ruler"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "chain-mandate-district-mining-chain": {
+  "docs": {
+   "event_chains:mandate_district_mining_chain": {
+    "Root.GetRulerTitle": {
+     "zh": "",
+     "en": "our",
+     "omit": [
+      "zh"
+     ]
+    },
+    "Root.GetRulerName": {
+     "zh": "我们的统治者",
+     "en": "ruler"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "chain-mandate-emancipation-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-emancipation2-chain": {
+  "docs": {
+   "event_chains:mandate_emancipation2_chain": {
+    "free_planet.GetName": {
+     "zh": "这颗星球",
+     "en": "that planet"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "chain-mandate-fiscal-reserve-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-miner-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-monthly-alloys-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-monthly-consumer-goods-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-monthly-energy-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-monthly-food-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-monthly-minerals-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-nationalist-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-orbresearch-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-peacemaker-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-separatist-chain": {
+  "docs": {
+   "event_chains:mandate_separatist_chain": {
+    "release_planet.GetName": {
+     "zh": "该",
+     "en": "choice"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "chain-mandate-shipwright-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-slaver-chain": {
+  "reviewed": true
+ },
+ "chain-mandate-xenopurge-chain": {
+  "docs": {
+   "event_chains:mandate_xenopurge_chain": {
+    "Root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "kindred"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "chain-survey-home-system": {
+  "reviewed": true
+ },
+ "event-action-1": {
+  "docs": {
+   "action.1": {
+    "Root.GetSpeciesName": {
+     "zh": "同胞",
+     "en": "kindred"
+    },
+    "Root.GetSpeciesNamePlural": {
+     "zh": "同胞",
+     "en": "kindred"
+    },
+    "Root.GetName": {
+     "zh": "你们的帝国",
+     "en": "your empire"
+    },
+    "Root.GetAdj": {
+     "zh": "你们的",
+     "en": "your"
+    },
+    "Root.Capital.GetName": {
+     "zh": "你们的首都",
+     "en": "your capital"
+    },
+    "contact_empire.GetName": {
+     "zh": "帝国",
+     "en": "the empire"
+    }
+   }
+  },
+  "exceptions": [
+   "action.1: game text: ruler-name slots after adjectives ('our beloved [name]', 'the illustrious [name]') expect a proper name",
+   "action.1: game text: 'The [empire] care little for our diplomatic maneuvering' verb agreement"
+  ],
+  "reviewed": true
+ },
+ "event-action-102": {
+  "reviewed": true
+ },
+ "event-action-105": {
+  "reviewed": true
+ },
+ "event-action-12": {
+  "reviewed": true
+ },
+ "event-action-122": {
+  "reviewed": true
+ },
+ "event-action-14": {
+  "reviewed": true
+ },
+ "event-action-150": {
+  "reviewed": true
+ },
+ "event-action-37": {
+  "docs": {
+   "action.37": {
+    "This.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    },
+    "This.GetSpeciesAdj": {
+     "zh": "我族",
+     "en": "our species'"
+    },
+    "Root.GetName": {
+     "zh": "你们的帝国",
+     "en": "your empire"
+    },
+    "Root.GetSpeciesAdj": {
+     "zh": "你们",
+     "en": "your species'"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-action-38": {
+  "docs": {
+   "action.38": {
+    "Root.GetAdj": {
+     "zh": "你们的",
+     "en": "your"
+    },
+    "Root.GetName": {
+     "zh": "你们的帝国",
+     "en": "empire"
+    },
+    "Root.GetSpeciesAdj": {
+     "zh": "你们",
+     "en": "your species'"
+    },
+    "This.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    },
+    "This.GetSpeciesAdj": {
+     "zh": "我族",
+     "en": "our species'"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-action-39": {
+  "exceptions": [
+   "action.39: game text: 'Their people has agreed' verb agreement"
+  ],
+  "reviewed": true
+ },
+ "event-action-41": {
+  "docs": {
+   "action.41": {
+    "From.GetName": {
+     "zh": "与那个帝国的",
+     "en": "the war against the other empire"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-action-48": {
+  "reviewed": true
+ },
+ "event-action-601": {
+  "reviewed": true
+ },
+ "event-action-61": {
+  "docs": {
+   "syndaw.1035": {
+    "current_uprising_originator.GetAdj": {
+     "zh": "该国的",
+     "en": "that empire's"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-action-71": {
+  "docs": {
+   "action.72": {
+    "malfunctioning_leader.GetName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-action-81": {
+  "reviewed": true
+ },
+ "event-action-85": {
+  "reviewed": true
+ },
+ "event-action-90": {
+  "reviewed": true
+ },
+ "event-action-941": {
+  "reviewed": true
+ },
+ "event-action-96": {
+  "reviewed": true
+ },
+ "event-apoc-1": {
+  "reviewed": true
+ },
+ "event-apoc-100": {
+  "reviewed": true
+ },
+ "event-apoc-11": {
+  "reviewed": true
+ }
+}

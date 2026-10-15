@@ -39,5 +39,52 @@
     "en": "In the game, the envoy's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "envoy_events.205": {
+   "envoy_country.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "people"
+   },
+   "event_envoy.GetAmbassadorOrNot": {
+    "zh": "大使",
+    "en": "ambassador",
+    "note": {
+     "zh": "游戏里这里会出现使者的职衔。",
+     "en": "In the game, the envoy's title appears here."
+    }
+   },
+   "event_envoy.GetEnvoyLocation": {
+    "zh": "该联邦",
+    "en": "the federation",
+    "note": {
+     "zh": "游戏里这里会出现使者所在的地点。",
+     "en": "In the game, the envoy's location appears here."
+    }
+   },
+   "event_envoy.GetHerHim": {
+    "en": "him or her"
+   },
+   "event_envoy.GetHerHis": {
+    "en": "his or her"
+   },
+   "event_envoy.GetSXX": {
+    "zh": "",
+    "en": "s",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现动词词尾。",
+     "en": "In the game, the verb ending appears here."
+    }
+   },
+   "event_envoy.GetSheHe": {
+    "en": "he or she"
+   },
+   "event_envoy.GetSheHeCap": {
+    "en": "He or she"
+   }
+  }
  }
 }

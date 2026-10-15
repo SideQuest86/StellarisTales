@@ -84,13 +84,26 @@
     }
    }
   },
+  "marauder.5": {
+   "From.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "marauder"
+   },
+   "From.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "marauders"
+   }
+  },
   "marauder.502": {
    "raider_khanate.GetRulerTitle": {
     "zh": "统治者",
-    "en": "ruler",
-    "omit": [
-     "zh"
-    ]
+    "en": "ruler"
+   }
+  },
+  "marauder.7": {
+   "Root.GetName": {
+    "zh": "你们的帝国",
+    "en": "your empire"
    }
   }
  }

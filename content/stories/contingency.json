@@ -1122,32 +1122,84 @@
   }
  },
  "placeholderDocs": {
+  "crisis.2037": {
+   "From.GetName": {
+    "zh": "机械星球",
+    "en": "this world",
+    "variants": [
+     {
+      "lang": "zh",
+      "after": "这个位于",
+      "text": ""
+     },
+     {
+      "lang": "zh",
+      "before": "星系的机械星球",
+      "text": ""
+     }
+    ]
+   },
+   "From.solar_system.GetName": {
+    "zh": "该",
+    "en": "star",
+    "note": {
+     "zh": "游戏里这里会出现该星系的名称。",
+     "en": "In the game, the name of that system appears here."
+    }
+   }
+  },
   "crisis.2095": {
    "Root.GetRulerTitle": {
-    "zh": "我们的",
-    "en": "our",
-    "note": {
-     "zh": "游戏里这里会出现你的统治者的称呼前缀。",
-     "en": "In the game, the prefix of your ruler's title appears here."
-    }
+    "zh": "我们的统治者",
+    "en": "our ruler"
    },
    "ruler.GetRegnalName": {
-    "zh": "统治者",
-    "en": "ruler",
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   }
+  },
+  "crisis.2097": {
+   "scientist.GetName": {
+    "zh": "此人",
+    "en": "the scientist",
     "note": {
-     "zh": "游戏里这里会出现你的统治者的称号。",
-     "en": "In the game, your ruler's title appears here."
+     "zh": "游戏里这里会出现这位科学官的名字。",
+     "en": "In the game, the scientist's name appears here."
+    }
+   }
+  },
+  "crisis.2098": {
+   "admiral.GetName": {
+    "zh": "此人",
+    "en": "the commander",
+    "note": {
+     "zh": "游戏里这里会出现这位指挥官的名字。",
+     "en": "In the game, the commander's name appears here."
+    }
+   }
+  },
+  "crisis.2302": {
+   "scientist.GetName": {
+    "zh": "这位科学官",
+    "en": "the scientist",
+    "note": {
+     "zh": "游戏里这里会出现这位科学家的名字。",
+     "en": "In the game, the scientist's name appears here."
     }
    }
   },
   "crisis.2303": {
    "admiral.GetName": {
-    "zh": "本人",
-    "en": "in person",
-    "omit": [
-     "en",
-     "zh"
-    ]
+    "zh": "这位",
+    "en": "the commander",
+    "note": {
+     "zh": "游戏里这里会出现这位指挥官的名字。",
+     "en": "In the game, the commander's name appears here."
+    }
    }
   },
   "crisis.2503": {
@@ -1158,11 +1210,15 @@
   },
   "fallen_machine_empire.4": {
    "From.GetAdjective": {
-    "zh": "那个帝国的",
-    "en": "that empire's",
+    "zh": "机械帝国的",
+    "en": "the machine empire's"
+   },
+   "From.GetName": {
+    "zh": "机械帝国",
+    "en": "the machine empire's",
     "note": {
-     "zh": "游戏里这里会出现那个帝国的名称形容词。",
-     "en": "In the game, the adjective for that empire appears here."
+     "zh": "游戏里这里会出现该机械帝国的名称。",
+     "en": "In the game, the machine empire's name appears here."
     }
    }
   }

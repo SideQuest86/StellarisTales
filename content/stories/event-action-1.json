@@ -224,6 +224,45 @@
      "zh": "游戏里这里会出现第三个词的译文。",
      "en": "In the game, the third translated word appears here."
     }
+   },
+   "Root.Capital.GetName": {
+    "zh": "你们的首都",
+    "en": "your capital"
+   },
+   "Root.GetAdj": {
+    "zh": "你们的",
+    "en": "your"
+   },
+   "Root.GetName": {
+    "zh": "你们的帝国",
+    "en": "your empire"
+   },
+   "Root.GetSpeciesName": {
+    "zh": "同胞",
+    "en": "kindred"
+   },
+   "Root.GetSpeciesNamePlural": {
+    "zh": "同胞",
+    "en": "kindred"
+   },
+   "contact_empire.GetGovernmentName": {
+    "zh": "政府",
+    "en": "our government",
+    "note": {
+     "zh": "游戏里这里会出现对方政府的称呼。",
+     "en": "In the game, the other empire's form of government appears here."
+    }
+   },
+   "contact_empire.GetName": {
+    "zh": "帝国",
+    "en": "the empire",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " care little for",
+      "text": "the people of the empire"
+     }
+    ]
    }
   }
  }

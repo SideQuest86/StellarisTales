@@ -86,11 +86,26 @@
  "placeholderDocs": {
   "anomalies:DISTAR_CLONE_CAT": {
    "From.GetName": {
-    "zh": "这个",
-    "en": "this",
+    "zh": "",
+    "en": "",
     "omit": [
-     "en"
-    ]
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这个环形世界的名称。",
+     "en": "In the game, the ring world's name appears here."
+    }
+   }
+  },
+  "special_projects:CRYO_CLONES_PROJECT": {
+   "From.GetName": {
+    "zh": "这颗恒星",
+    "en": "the star",
+    "note": {
+     "zh": "游戏里这里会出现这颗恒星的名称。",
+     "en": "In the game, the star's name appears here."
+    }
    }
   }
  }

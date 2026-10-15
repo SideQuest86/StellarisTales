@@ -76,6 +76,16 @@
   }
  },
  "placeholderDocs": {
+  "anomalies:AST_WAVELENGTHS_1_CAT": {
+   "Root.GetName": {
+    "zh": "这块小行星",
+    "en": "asteroid",
+    "note": {
+     "zh": "游戏里这里会出现这颗小行星的名称。",
+     "en": "In the game, the asteroid's name appears here."
+    }
+   }
+  },
   "anomaly.130": {
    "Root.GetName": {
     "zh": "我们的科学船",
@@ -88,14 +98,11 @@
   },
   "anomaly.75": {
    "From.GetName": {
-    "zh": "这块小行星",
+    "zh": "这个天体",
     "en": "asteroid",
-    "omit": [
-     "zh"
-    ],
     "note": {
-     "zh": "游戏里这里会出现这块小行星的名称。",
-     "en": "In the game, this asteroid's name appears here."
+     "zh": "游戏里这里会出现这颗小行星的名称。",
+     "en": "In the game, the asteroid's name appears here."
     }
    },
    "Root.GetName": {
@@ -104,6 +111,16 @@
     "note": {
      "zh": "游戏里这里会出现你的科学船的舰名。",
      "en": "In the game, your science ship's name appears here."
+    }
+   }
+  },
+  "anomaly.77": {
+   "rock_sun.GetName": {
+    "zh": "这颗恒星",
+    "en": "our sun",
+    "note": {
+     "zh": "游戏里这里会出现这颗恒星的名称。",
+     "en": "In the game, the star's name appears here."
     }
    }
   },

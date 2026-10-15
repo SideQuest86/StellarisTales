@@ -90,6 +90,12 @@ Decisions that matter:
   game gives no name is left out of its sentence (`scrub`), never printed as an English id in Chinese.
 * Engine links inside the game's own sentences (`building:building_x`, `trait:...`) are replaced by the object's name in the same
   language (`resolve_links`, like the `[Root.GetName]` placeholders); `scripts/effects_data.py` keeps the names those links point to.
+* Conditions with no hand-written wording (`scripts/effects_cond.py`) are phrased in this order: (1) the game's own trigger sentence from
+  localisation (`effects-data.json` `trig`: HAS_OWNER, IS_OWNED_BY_TOOLTIP ... with `$PLACEHOLDER$`s filled from the arguments: game
+  names, numbers, comparison words), (2) a sentence built from the key's words (`has_X`, `is_X_empire`, `num_X > 5`, `X >= 100`) with the
+  `WORDS` glossary and the arguments appended as names, (3) only internal story state (variables, flags, saved targets, event-chain /
+  first-contact / situation bookkeeping) uses the generic "earlier story condition" phrase. A glossary gap is recorded in
+  `effects_cond.UNKNOWN_WORDS` and fails `test_no_generic_specific_condition_phrase_and_no_missing_glossary_words`.
 * Check: `label_language_report()` in `scripts/effects_coverage.py` counts Latin words in Chinese labels (excluded: `[...]` and `$...$`
   placeholders, the game's own proper names inside 「」, all-caps designations, `2k`-style counts, FTL / AI / DNA / L-Gate / roman
   numerals) and raw script keys in English labels; `test_chinese_labels_have_no_latin_words_and_english_no_raw_keys` asserts 0.
@@ -231,6 +237,8 @@ Story documents without an effects entry (2704 distinct, from `public/effects/co
 
 
 Label language check (`label_language_report`, over `public/effects/*.json`): Chinese labels with Latin words 0 (0 words; placeholders in `[...]` / `$...$` and FTL, AI, DNA, L-Gate, roman numerals excluded); English labels with raw script keys 0 (0 occurrences).
+
+Condition wording: generic "specific condition" phrase 0 (target 0); "earlier story condition" (internal variables, flags, saved targets only) 3125; "depending on progress" 500.
 
 Most frequent handled / skipped keys:
 

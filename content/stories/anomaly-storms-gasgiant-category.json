@@ -62,6 +62,27 @@
   }
  },
  "placeholderDocs": {
+  "anomaly.6860": {
+   "FromFrom.GetName": {
+    "zh": "这艘飞船",
+    "en": "the ship",
+    "note": {
+     "zh": "游戏里这里会出现这艘被困飞船的名称。",
+     "en": "In the game, the trapped ship's name appears here."
+    }
+   },
+   "FromFromFrom.GetName": {
+    "zh": "这场风暴",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这场风暴的名称。",
+     "en": "In the game, the storm's name appears here."
+    }
+   }
+  },
   "special_projects:RESCUE_STORM": {
    "Root.GetName": {
     "zh": "我们的科学船",

@@ -104,5 +104,46 @@
     "en": "In the game, a verb matching the leader's pronoun appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "astral_rift.120": {
+   "Leader.GetHeShe": {
+    "zh": "",
+    "en": "they",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这位领袖的代词。",
+     "en": "In the game, a pronoun for the leader appears here."
+    }
+   }
+  },
+  "astral_rift.125": {
+   "Leader.GetWasWere": {
+    "zh": "",
+    "en": "was",
+    "omit": [
+     "zh"
+    ]
+   }
+  },
+  "astral_rift.140": {
+   "Root.GetHasHave": {
+    "zh": "",
+    "en": "has",
+    "omit": [
+     "zh"
+    ]
+   },
+   "Root.Leader.IsAre": {
+    "zh": "是",
+    "en": "They are",
+    "note": {
+     "zh": "游戏里这里会出现这位领袖的代词和系动词。",
+     "en": "In the game, a pronoun and verb for the leader appear here."
+    }
+   }
+  }
  }
 }

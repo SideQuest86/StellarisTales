@@ -1,0 +1,80 @@
+{
+"chain-contract-diplomatic-support-chain": {"docs": {
+  "event_chains:contract_diplomatic_support_chain": {"from.capital_scope.solar_system.GetName": {"zh": "这个", "en": "star"}}},
+  "exceptions": [], "reviewed": true},
+"chain-establish-colony": {"docs": {
+  "event_chains:establish_colony": {"This.Capital.GetName": {"zh": "我们的首都", "en": "our capital"}}},
+  "exceptions": [], "reviewed": true},
+"event-awareness-125": {"docs": {
+  "awareness.910": {"contact_empire.GetName": {"zh": "那个帝国", "en": "people of that empire"}, "contact_empire_system.GetName": {"zh": "这个", "en": "star"}}},
+  "exceptions": [], "reviewed": true},
+"event-bio-1": {"docs": {
+  "bio.85": {"Owner.Leader.GetName": {"zh": "这位领袖", "en": "the original"}},
+  "bio.86": {"Owner.GetSpeciesAdj": {"zh": "我们的", "en": "", "omit": ["zh"]}}},
+  "exceptions": ["bio.220: game text: 'by the name of <name>' needs a personal name, a role phrase repeats the noun", "bio.300: game text: 'a scientist by the name of <name>' needs a personal name, a role phrase repeats the noun"], "reviewed": true},
+"event-colony-1": {"reviewed": true},
+"event-colony-100": {"reviewed": true},
+"event-colony-10000": {"docs": {
+  "colony.10035": {"Owner.GetSpeciesNamePluralInsult": {"zh": "家伙", "en": "creatures"}},
+  "colony.10082": {"Owner.GetSpeciesNamePlural": {"zh": "同胞", "en": "colonist"}}},
+  "exceptions": [], "reviewed": true},
+"event-colony-150": {"reviewed": true},
+"event-colony-1500": {"docs": {
+  "colony.1511": {"Root.Owner.GetSpeciesName": {"zh": "我们的", "en": "our", "omit": ["zh", "en"]}}},
+  "exceptions": [], "reviewed": true},
+"event-colony-1520": {"reviewed": true},
+"event-colony-155": {"reviewed": true},
+"event-colony-160": {"reviewed": true},
+"event-colony-161": {"reviewed": true},
+"event-colony-162": {"reviewed": true},
+"event-colony-163": {"reviewed": true},
+"event-colony-164": {"reviewed": true},
+"event-colony-170": {"reviewed": true},
+"event-colony-180": {"reviewed": true},
+"event-colony-2001": {"reviewed": true},
+"event-colony-2005": {"reviewed": true},
+"event-colony-2010": {"reviewed": true},
+"event-colony-2015": {"reviewed": true},
+"event-colony-2025": {"reviewed": true},
+"event-colony-2050": {"exceptions": ["colony.2050: game text: 'parts of ... has fallen' verb agreement"], "reviewed": true},
+"event-colony-2060": {"reviewed": true},
+"event-colony-3001": {"exceptions": ["colony.3001: game text: the moon name stands both after 'the moon' and as a sentence subject ('Quite where it came from'); one phrase cannot fit both"], "reviewed": true},
+"event-colony-3005": {"docs": {
+  "colony.9810": {"Root.GetName": {"zh": "我们的帝国", "en": "our empire's"}}},
+  "exceptions": ["colony.9810: game text: 'lead physics unit <name>' and 'physics specialized drone <name>' need a unit name", "colony.3060: game text: object pronoun used for the possessive ('in them way')"], "reviewed": true},
+"event-colony-3029": {"reviewed": true},
+"event-colony-3051": {"docs": {
+  "colony.3051": {"fromfrom.solar_system.GetName": {"zh": "这个", "en": "star"}, "doomslayer_knight.GetHimHer": {"zh": "自己", "en": "them"}}},
+  "exceptions": [], "reviewed": true},
+"event-colony-50": {"docs": {
+  "colony.67": {"From.Owner.Capital.GetName": {"zh": "我们的首都星", "en": "our capital world"}}},
+  "exceptions": ["colony.52: game text: the en sentence is split into two rendered lines at the source break"], "reviewed": true},
+"event-colony-5000": {"reviewed": true},
+"event-colony-7229": {"docs": {
+  "colony.7247": {"flooding_planet.GetName": {"zh": "这颗", "en": "planet"}}},
+  "exceptions": [], "reviewed": true},
+"event-colony-8001": {"reviewed": true},
+"event-colony-9000": {"exceptions": ["colony.9005: game text: 'our <planet> colony' needs a planet name; the same key reads 'colony at this planet' elsewhere"], "reviewed": true},
+"event-colony-9050": {"reviewed": true},
+"event-colony-9200": {"docs": {
+  "colony.9260": {"Root.GetName": {"zh": "这颗星球", "en": "this planet's"}},
+  "colony.9270": {"Root.GetName": {"zh": "这颗星球", "en": "this planet's"}},
+  "colony.9280": {"Root.GetName": {"zh": "这颗星球", "en": "this planet's"}}},
+  "exceptions": [], "reviewed": true},
+"event-colony-9295": {"exceptions": ["colony.9300: game text: '<planet>onium' joins the planet name to a suffix; the same key reads 'on this planet' in the same text"], "reviewed": true},
+"event-colony-9310": {"reviewed": true},
+"event-colony-9350": {"reviewed": true},
+"event-colony-9820": {"docs": {
+  "colony.9840": {"Root.GetSpeciesName": {"zh": "我们的同类", "en": "our kin"}}},
+  "exceptions": ["colony.9821: game text: 'This is <name>s unique ID' (possessive 's after the name) and 'until <homeworld>-Betas erasure'", "colony.9840: game text: 'gathered on <empire>' where a planet is meant"], "reviewed": true},
+"event-colony-9900": {"reviewed": true},
+"event-colony-9950": {"reviewed": true},
+"event-colony-fed-100": {"reviewed": true},
+"event-colony-mod-1": {"reviewed": true},
+"event-colony-mod-161": {"reviewed": true},
+"event-colony-mod-2": {"reviewed": true},
+"event-colony-mod-3": {"reviewed": true},
+"event-colony-mod-30": {"reviewed": true},
+"event-colony-mod-4": {"reviewed": true},
+"event-colony-mod-5": {"reviewed": true}
+}

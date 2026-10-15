@@ -1,0 +1,376 @@
+{
+ "anomaly-layered-atmosphere-cat": {
+  "reviewed": true
+ },
+ "anomaly-leveled-cat": {
+  "reviewed": true
+ },
+ "anomaly-life-asteroid-category": {
+  "reviewed": true
+ },
+ "anomaly-life-barren-category": {
+  "reviewed": true
+ },
+ "anomaly-life-frozen-category": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.2510": {
+    "Root.GetLeaderName": {
+     "zh": "科学家",
+     "en": "scientist",
+     "note": {
+      "zh": "游戏里这里会出现首席科学家的姓名。",
+      "en": "In the game, the lead scientist's name appears here."
+     }
+    }
+   },
+   "anomaly.2512": {
+    "Root.GetLeaderName": {
+     "zh": "科学家",
+     "en": "scientist",
+     "note": {
+      "zh": "游戏里这里会出现首席科学家的姓名。",
+      "en": "In the game, the lead scientist's name appears here."
+     }
+    }
+   },
+   "anomaly.2513": {
+    "Root.GetLeaderName": {
+     "zh": "科学家",
+     "en": "scientist",
+     "note": {
+      "zh": "游戏里这里会出现首席科学家的姓名。",
+      "en": "In the game, the lead scientist's name appears here."
+     }
+    }
+   },
+   "anomaly.6900": {
+    "Owner.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital",
+     "note": {
+      "zh": "游戏里这里会出现你的首都星球的名称。",
+      "en": "In the game, the name of your capital planet appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-life-gasgiant-category": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.300": {
+    "From.GetName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗气态巨行星的名称。",
+      "en": "In the game, the gas giant's name appears here."
+     }
+    }
+   },
+   "anomaly.6850": {
+    "FromFromFrom.GetName": {
+     "zh": "那颗气态巨行星",
+     "en": "that gas giant",
+     "note": {
+      "zh": "游戏里这里会出现这颗气态巨行星的名称。",
+      "en": "In the game, the gas giant's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-life-in-darkness-cat": {
+  "reviewed": true
+ },
+ "anomaly-life-toxic-category": {
+  "reviewed": true
+ },
+ "anomaly-living-metal-category": {
+  "reviewed": true
+ },
+ "anomaly-magma-megafauna-cat": {
+  "reviewed": true
+ },
+ "anomaly-missing-mass-cat": {
+  "reviewed": true
+ },
+ "anomaly-molten-base-cat": {
+  "reviewed": true
+ },
+ "anomaly-molten-metal-ocean-cat": {
+  "reviewed": true
+ },
+ "anomaly-moon-cat": {
+  "reviewed": true
+ },
+ "anomaly-moon-gasgiant-category": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.6840": {
+    "From.GetName": {
+     "zh": "这一颗",
+     "en": "this one",
+     "note": {
+      "zh": "游戏里这里会出现这颗气态巨行星的名称。",
+      "en": "In the game, the gas giant's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-mountain-uninhabitable-category": {
+  "reviewed": true,
+  "docs": {
+   "special_projects:CRACK_THE_EGG": {
+    "Solar_System.GetName": {
+     "zh": "这个星系",
+     "en": "this system",
+     "note": {
+      "zh": "游戏里这里会出现这个星系的名称。",
+      "en": "In the game, the system's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "anomaly.6915: game text: broken placeholder '**Error - for GCs**' and the en line ends mid-sentence ('we find a')"
+  ]
+ },
+ "anomaly-mysterious-ringing-category": {
+  "reviewed": true,
+  "exceptions": [
+   "infernals.3210: game text: an unmatched opening « begins a zh sentence"
+  ]
+ },
+ "anomaly-mysterious-rock-cat": {
+  "reviewed": true,
+  "exceptions": [
+   "anomaly.2005: game text: the same name is used for the crew and for the planet's winds, so one phrase cannot fit both"
+  ]
+ },
+ "anomaly-nano-swarm-cat": {
+  "reviewed": true,
+  "exceptions": [
+   "anomaly.6700: game text: the original appends s' directly to the ship's name (\"[Root.GetName]s' crew\")"
+  ]
+ },
+ "anomaly-nuke-planet-cat": {
+  "reviewed": true,
+  "exceptions": [
+   "anomaly_failure.4157: game text: the en line ends with a doubled period"
+  ]
+ },
+ "anomaly-object-gasgiant-category": {
+  "reviewed": true
+ },
+ "anomaly-object-uninhabitable-category": {
+  "reviewed": true
+ },
+ "anomaly-obsidian-planet-cat": {
+  "reviewed": true
+ },
+ "anomaly-optical-phenomena-cat": {
+  "reviewed": true
+ },
+ "anomaly-orbital-resonance-cat": {
+  "reviewed": true
+ },
+ "anomaly-origin-asteroid-category": {
+  "reviewed": true
+ },
+ "anomaly-outgassing-category": {
+  "reviewed": true
+ },
+ "anomaly-paragon-beholder-category": {
+  "reviewed": true
+ },
+ "anomaly-peculiar-patterns-cat": {
+  "reviewed": true
+ },
+ "anomaly-planet-thrusters-cat": {
+  "reviewed": true
+ },
+ "anomaly-plasma-trails-cat": {
+  "reviewed": true
+ },
+ "anomaly-plasma-volcano-cat": {
+  "reviewed": true
+ },
+ "anomaly-poisoned-atmosphere-cat": {
+  "reviewed": true,
+  "exceptions": [
+   "extreme_frontiers.140: game text: zh has a duplicated character (被被逐一灭绝)"
+  ]
+ },
+ "anomaly-proj-moon-cat": {
+  "reviewed": true
+ },
+ "anomaly-pulsating-object-toxic-cat": {
+  "reviewed": true
+ },
+ "anomaly-radioactive-planet-cat": {
+  "reviewed": true
+ },
+ "anomaly-rainbow-rivers-cat": {
+  "reviewed": true
+ },
+ "anomaly-rapid-desertification-cat": {
+  "reviewed": true,
+  "docs": {
+   "special_projects:RAPID_DESERTIFICATION_PROJECT": {
+    "desertling_planet.Planet.GetName": {
+     "zh": "",
+     "en": "planet",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "anomaly.7146: game text: stray comma after the planet name in the en sentence",
+   "anomaly.7145: game text: stray comma after the planet name in the en sentence"
+  ]
+ },
+ "anomaly-sea-cat": {
+  "reviewed": true
+ },
+ "anomaly-sea-crystal-cat": {
+  "reviewed": true
+ },
+ "anomaly-shearing-force-cat": {
+  "reviewed": true
+ },
+ "anomaly-ship-gasgiant-category": {
+  "reviewed": true,
+  "docs": {
+   "special_projects:GAS_GIANT_SHIP_PROJECT": {
+    "From.GetName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗气态巨行星的名称。",
+      "en": "In the game, the gas giant's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-shipyard-uninhabitable-category": {
+  "reviewed": true
+ },
+ "anomaly-signal-gasgiant-category": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.5000": {
+    "Root.GetLeaderName": {
+     "zh": "",
+     "en": "the officer",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现科学专员的姓名。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   },
+   "special_projects:GAS_GIANT_SIGNAL": {
+    "From.GetName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗气态巨行星的名称。",
+      "en": "In the game, the gas giant's name appears here."
+     }
+    }
+   },
+   "special_projects:GAS_GIANT_RELOCATION": {
+    "baldarak_planet.GetName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现那颗气态巨行星的名称。",
+      "en": "In the game, the gas giant's name appears here."
+     }
+    }
+   },
+   "anomaly.5002": {
+    "From.From.From.GetName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗气态巨行星的名称。",
+      "en": "In the game, the gas giant's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-signal-uninhabitable-category": {
+  "reviewed": true
+ },
+ "anomaly-sol-wasteland-category": {
+  "reviewed": true
+ },
+ "anomaly-solar-uninhabitable-category": {
+  "reviewed": true
+ },
+ "anomaly-spires-of-light-category": {
+  "reviewed": true,
+  "docs": {
+   "infernals.500": {
+    "Leader.GetName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这位科学家的姓名。",
+      "en": "In the game, the scientist's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-spontaneous-explosions-cat": {
+  "reviewed": true
+ },
+ "anomaly-star-lifting-category": {
+  "reviewed": true
+ }
+}

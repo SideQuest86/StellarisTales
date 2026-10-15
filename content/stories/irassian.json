@@ -592,6 +592,24 @@
   "guide": "public/summaries/irassian.md"
  },
  "placeholderDocs": {
+  "precursor.1521": {
+   "From.From.GetPlanetMoon": {
+    "zh": "上将整颗行星",
+    "en": "planet"
+   }
+  },
+  "precursor.1551": {
+   "From.From.GetName": {
+    "zh": "这颗",
+    "en": "the asteroid"
+   }
+  },
+  "precursor.1600": {
+   "Root.Capital.GetName": {
+    "zh": "我们的首都",
+    "en": "our capital"
+   }
+  },
   "special_projects:IRASSIAN_ARCHEOLOGY_1": {
    "From.GetName": {
     "zh": "这颗星球",
@@ -604,12 +622,11 @@
   },
   "special_projects:IRASSIAN_ARCHEOLOGY_10": {
    "From.GetName": {
-    "zh": "这块岩石",
-    "en": "this rock",
-    "note": {
-     "zh": "游戏里这里会出现这颗小行星的名称。",
-     "en": "In the game, this asteroid's name appears here."
-    }
+    "zh": "",
+    "en": "the asteroid",
+    "omit": [
+     "zh"
+    ]
    }
   },
   "special_projects:IRASSIAN_ARCHEOLOGY_11": {

@@ -1,0 +1,648 @@
+{
+ "anomaly-debris-gasgiant-category": {
+  "reviewed": true
+ },
+ "anomaly-debris-gasgiant-category-temp": {
+  "docs": {
+   "distar.1001": {
+    "vechtar_zavonia_leader_name.GetName": {
+     "zh": "他",
+     "en": "the researcher",
+     "note": {
+      "zh": "游戏里这里会出现这位首席科学官的名字。",
+      "en": "In the game, the head researcher's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-des-buried-cat": {
+  "docs": {
+   "anomalies:DES_BURIED_CAT": {
+    "Root.GetName": {
+     "zh": "",
+     "en": "planet",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-des-planet-cat": {
+  "reviewed": true
+ },
+ "anomaly-diamond-dust-cat": {
+  "reviewed": true
+ },
+ "anomaly-dimensional-pocket-cat": {
+  "docs": {
+   "anomaly.211": {
+    "Root.Owner.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "our own",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    },
+    "Root.Owner.GetSpeciesNamePlural": {
+     "zh": "我方",
+     "en": "our people",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-disco-alien-machine-cat": {
+  "docs": {
+   "distar.3040": {
+    "Root.GetLeaderName": {
+     "zh": "科研官员",
+     "en": "the leader",
+     "note": {
+      "zh": "游戏里这里会出现这位科研官员的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-disco-breathing-rift-cat": {
+  "reviewed": true
+ },
+ "anomaly-disco-impossible-organism-cat": {
+  "docs": {
+   "distar.3010": {
+    "Root.GetLeaderName": {
+     "zh": "科研官员",
+     "en": "the leader",
+     "note": {
+      "zh": "游戏里这里会出现这位科研官员的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   },
+   "distar.3013": {
+    "nivlac_joint_planet.GetName": {
+     "zh": "那个世界",
+     "en": "planet",
+     "note": {
+      "zh": "游戏里这里会出现那个世界的名称。",
+      "en": "In the game, the world's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-disco-molluscoid-miners-cat": {
+  "docs": {
+   "anomalies:disco_molluscoid_miners_cat": {
+    "From.GetName": {
+     "zh": "这颗星球",
+     "en": "planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "distar.3032": {
+    "molluscoid_miners_species.GetName": {
+     "zh": "软体生物",
+     "en": "molluscoids",
+     "note": {
+      "zh": "游戏里这里会出现这个物种的名称。",
+      "en": "In the game, the species' name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "distar.3032: game text: \"600 <species> Pops\" has the plural noun directly before \"Pops\""
+  ],
+  "reviewed": true
+ },
+ "anomaly-disco-speed-demon-cat": {
+  "docs": {
+   "distar.3050": {
+    "Root.GetLeaderName": {
+     "zh": "科研官员",
+     "en": "the leader",
+     "note": {
+      "zh": "游戏里这里会出现这位科研官员的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   },
+   "distar.3057": {
+    "Root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "species'",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-disco-stranded-scientist-cat": {
+  "docs": {
+   "distar.3020": {
+    "From.GetName": {
+     "zh": "这颗小行星",
+     "en": "asteroid",
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-disco-trojan-asteroid-cat": {
+  "docs": {
+   "anomalies:disco_trojan_asteroid_cat": {
+    "From.GetName": {
+     "zh": "这颗小行星",
+     "en": "asteroid",
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   },
+   "distar.3000": {
+    "From.GetName": {
+     "zh": "",
+     "en": "asteroid",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   },
+   "distar.3001": {
+    "Root.GetLeaderName": {
+     "zh": "科研官员",
+     "en": "the leader",
+     "note": {
+      "zh": "游戏里这里会出现这位科研官员的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   },
+   "distar.3003": {
+    "trojan_asteroid.GetName": {
+     "zh": "",
+     "en": "this asteroid",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   },
+   "distar.3005": {
+    "trojan_asteroid.GetName": {
+     "zh": "",
+     "en": "this asteroid",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "distar.3003: game text: \"News ... have reached\" (verb agreement)"
+  ],
+  "reviewed": true
+ },
+ "anomaly-distar-brainslug-cat": {
+  "docs": {
+   "distar.172": {
+    "Root.Owner.GetAdj": {
+     "zh": "我方",
+     "en": "",
+     "omit": [
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现你的帝国的称呼。",
+      "en": "In the game, your empire's name appears here."
+     }
+    },
+    "Root.Owner.GetSpeciesNamePlural": {
+     "zh": "该物种",
+     "en": "people",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-clone-cat": {
+  "docs": {
+   "anomalies:DISTAR_CLONE_CAT": {
+    "From.GetName": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这个环形世界的名称。",
+      "en": "In the game, the ring world's name appears here."
+     }
+    }
+   },
+   "special_projects:CRYO_CLONES_PROJECT": {
+    "From.GetName": {
+     "zh": "这颗恒星",
+     "en": "the star",
+     "note": {
+      "zh": "游戏里这里会出现这颗恒星的名称。",
+      "en": "In the game, the star's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-collapse-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-dead-god-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-diamond-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-electro-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-exo-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-flare-cat": {
+  "docs": {
+   "distar.6": {
+    "From.GetStarName": {
+     "zh": "恒星",
+     "en": "star",
+     "note": {
+      "zh": "游戏里这里会出现这颗恒星的名称。",
+      "en": "In the game, the star's name appears here."
+     }
+    }
+   },
+   "distar.7": {
+    "Root.GetAdj": {
+     "zh": "我们的",
+     "en": "",
+     "omit": [
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现你的帝国的称呼。",
+      "en": "In the game, your empire's name appears here."
+     }
+    }
+   },
+   "distar.9": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-flow-cat": {
+  "docs": {
+   "distar.46": {
+    "Root.GetLeaderName": {
+     "zh": "科学专员",
+     "en": "the science officer",
+     "note": {
+      "zh": "游戏里这里会出现这位科学专员的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-flytrap-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-foes-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-geode-cat": {
+  "docs": {
+   "distar.75": {
+    "From.GetName": {
+     "zh": "此处",
+     "en": "this asteroid",
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星所在位置的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-holo-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-ice-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-living-cat": {
+  "docs": {
+   "distar.194": {
+    "living_planet_scientist.GetHimHer": {
+     "zh": "",
+     "en": "them",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这位科学家的代词。",
+      "en": "In the game, a pronoun for the scientist appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "distar.191: renderer: an unmapped verb token after the pronoun renders as a bare \"are\" (no key in the worksheet)",
+   "distar.192: renderer: unmapped verb tokens render as \"are\" and \"s\" next to the pronoun (no key in the worksheet)"
+  ],
+  "reviewed": true
+ },
+ "anomaly-distar-lost-cat": {
+  "docs": {
+   "distar.340": {
+    "amoeba_finding_scientist.GetName": {
+     "zh": "科学专员",
+     "en": "the science officer",
+     "note": {
+      "zh": "游戏里这里会出现这位科学专员的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   },
+   "distar.57": {
+    "amoeba_finding_scientist.GetName": {
+     "zh": "科学专员",
+     "en": "the science officer",
+     "note": {
+      "zh": "游戏里这里会出现这位科学专员的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   },
+   "distar.304": {
+    "Root.GetSpeciesAdj": {
+     "zh": "该族",
+     "en": "our",
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "distar.304: game text: \"she's presence\" (possessive typo)"
+  ],
+  "reviewed": true
+ },
+ "anomaly-distar-medgas-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-mercury-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-metal-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-molten-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-nano-cat": {
+  "docs": {
+   "distar.40": {
+    "Root.GetLeaderName": {
+     "zh": "科学专员",
+     "en": "the science officer",
+     "note": {
+      "zh": "游戏里这里会出现这位科学专员的名字。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-nanocity-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-nanosand-cat": {
+  "exceptions": [
+   "distar.280: game text: \"terraform the surface «planet»\" lacks \"of\""
+  ],
+  "reviewed": true
+ },
+ "anomaly-distar-ocean-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-phase-cat": {
+  "docs": {
+   "distar.255": {
+    "phaseshift_planet.GetName": {
+     "zh": "面纱",
+     "en": "Veil",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称（游戏中科学家称它为“面纱”）。",
+      "en": "In the game, the planet's name appears here (the scientist calls it \"The Veil\")."
+     }
+    }
+   },
+   "distar.258": {
+    "phaseshift_planet.GetName": {
+     "zh": "面纱",
+     "en": "Veil",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称（游戏中科学家称它为“面纱”）。",
+      "en": "In the game, the planet's name appears here (the scientist calls it \"The Veil\")."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-pod-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-puzzle-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-rainbow-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-robo-cat": {
+  "docs": {
+   "distar.26": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "distar.27": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "distar.31": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "distar.36": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "distar.35": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "distar.32": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "distar.33": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-rum-cat": {
+  "docs": {
+   "distar.90": {
+    "Root.Owner.GetAdj": {
+     "zh": "我方",
+     "en": "",
+     "omit": [
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现你的帝国的称呼。",
+      "en": "In the game, your empire's name appears here."
+     }
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "anomaly-distar-signal-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-soothe-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-soothe-gc-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-soy-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-thirsty-cat": {
+  "exceptions": [
+   "anomalies:DISTAR_THIRSTY_CAT: game text: \"planet's' stone\" has a doubled possessive"
+  ],
+  "reviewed": true
+ },
+ "anomaly-distar-time-cat": {
+  "reviewed": true
+ },
+ "anomaly-distar-warform-cat": {
+  "exceptions": [
+   "distar.162: game text: \"preformed\" (typo for performed, no substitution involved)"
+  ],
+  "reviewed": true
+ }
+}

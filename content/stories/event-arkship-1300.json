@@ -263,5 +263,28 @@
     "en": "In the game, this ship's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "arkship.1300": {
+   "Root.GetName": {
+    "zh": "本舰",
+    "en": "this ship"
+   }
+  },
+  "arkship.1380": {
+   "Target.GetName": {
+    "zh": "本舰",
+    "en": "this ship"
+   }
+  },
+  "situations:situation_grand_refurbishment": {
+   "Target.GetName": {
+    "zh": "",
+    "en": "this ship",
+    "omit": [
+     "zh"
+    ]
+   }
+  }
  }
 }

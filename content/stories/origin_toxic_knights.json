@@ -539,6 +539,12 @@
   }
  },
  "placeholderDocs": {
+  "toxoids.7006": {
+   "questing_knight_1.GetName": {
+    "zh": "骑士",
+    "en": "the knight"
+   }
+  },
   "toxoids.7010": {
    "questing_knight_2.GetName": {
     "zh": "扈从",
@@ -561,9 +567,24 @@
      "zh": "游戏里这里会显示骑士的类型图标。",
      "en": "In the game, the knight type's icon appears here."
     }
+   },
+   "questing_knight_2.GetName": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
    }
   },
   "toxoids.7040": {
+   "Root.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "",
+    "omit": [
+     "en"
+    ]
+   },
    "knight.GetIcon": {
     "zh": "",
     "en": "",
@@ -575,19 +596,16 @@
      "zh": "游戏里这里会显示骑士的类型图标。",
      "en": "In the game, the knight type's icon appears here."
     }
+   },
+   "questing_knight_A.Species.GetRemnantName": {
+    "zh": "遗骸",
+    "en": "skeleton"
    }
   },
   "toxoids.7050": {
    "GetYear": {
     "zh": "那一",
-    "en": "",
-    "omit": [
-     "en"
-    ],
-    "note": {
-     "zh": "游戏里这里会显示该事件发生的年份。",
-     "en": "In the game, the year of the event appears here."
-    }
+    "en": "the Visit"
    }
   },
   "toxoids.7060": {
@@ -618,6 +636,12 @@
     }
    }
   },
+  "toxoids.7120": {
+   "questing_squire_10.GetName": {
+    "zh": "扈从",
+    "en": "the squire"
+   }
+  },
   "toxoids.7130": {
    "knight.GetIcon": {
     "zh": "",
@@ -630,6 +654,17 @@
      "zh": "游戏里这里会显示骑士的类型图标。",
      "en": "In the game, the knight type's icon appears here."
     }
+   },
+   "questing_squire_10.GetName": {
+    "zh": "扈从",
+    "en": "the squire",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "And so ",
+      "text": ""
+     }
+    ]
    }
   },
   "toxoids.7160": {
@@ -644,6 +679,23 @@
      "zh": "游戏里这里会显示骑士的类型图标。",
      "en": "In the game, the knight type's icon appears here."
     }
+   },
+   "questing_knight_6.GetHisHer": {
+    "zh": "其",
+    "en": "their",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "affixed to their armor, ",
+      "text": "they"
+     }
+    ]
+   }
+  },
+  "toxoids.7195": {
+   "questing_knight_15.GetName": {
+    "zh": "骑士",
+    "en": "the knight"
    }
   },
   "toxoids.7220": {
@@ -668,6 +720,22 @@
      "zh": "游戏里这里会出现这位骑士的称呼。",
      "en": "In the game, this knight's form of address appears here."
     }
+   },
+   "questing_knight_8.GetSXX": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   },
+   "questing_knight_82.GetFirstName": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
    }
   },
   "toxoids.7295": {
@@ -706,6 +774,18 @@
      "zh": "游戏里这里会显示骑士的类型图标。",
      "en": "In the game, the knight type's icon appears here."
     }
+   }
+  },
+  "toxoids.7510": {
+   "toxic_god_system.GetName": {
+    "zh": "这个",
+    "en": "this system"
+   }
+  },
+  "toxoids.7515": {
+   "toxic_god_system.GetName": {
+    "zh": "这个",
+    "en": "this system"
    }
   },
   "toxoids.8020": {

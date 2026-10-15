@@ -39,5 +39,25 @@
     "en": "In the game, the name of the second party appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "fedev.500": {
+   "fed_founder_1.GetName": {
+    "zh": "一方",
+    "en": "first empire",
+    "note": {
+     "zh": "游戏里这里会出现联邦创始国之一的名称。",
+     "en": "In the game, one founding member's name appears here."
+    }
+   },
+   "fed_founder_2.GetName": {
+    "zh": "另一方",
+    "en": "second empire",
+    "note": {
+     "zh": "游戏里这里会出现联邦另一个创始国的名称。",
+     "en": "In the game, the other founding member's name appears here."
+    }
+   }
+  }
  }
 }

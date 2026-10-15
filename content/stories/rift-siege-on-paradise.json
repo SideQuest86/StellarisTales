@@ -193,5 +193,27 @@
     "en": "In the game, a body part of the leader's species appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "astral_rift.3099": {
+   "Leader.GetHasHave": {
+    "zh": "",
+    "en": "has",
+    "omit": [
+     "zh"
+    ]
+   },
+   "Leader.GetHeShe": {
+    "zh": "此人",
+    "en": "they",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Kept as a slave by the Grunur, ",
+      "text": "the leader"
+     }
+    ]
+   }
+  }
  }
 }

@@ -88,7 +88,23 @@
   }
  },
  "placeholderDocs": {
+  "operation.8200": {
+   "Root.Target.GetName": {
+    "zh": "目标帝国",
+    "en": "the target empire"
+   }
+  },
+  "operation.8205": {
+   "Root.Target.GetAdj": {
+    "zh": "该国",
+    "en": "their"
+   }
+  },
   "operation.8210": {
+   "Root.Target.GetName": {
+    "zh": "目标帝国",
+    "en": "the target empire"
+   },
    "This.GetName": {
     "zh": "这项",
     "en": "",
@@ -101,7 +117,25 @@
     }
    }
   },
+  "operation.8225": {
+   "Root.Target.GetAdj": {
+    "zh": "该国",
+    "en": "their"
+   },
+   "Root.Target.GetName": {
+    "zh": "目标帝国",
+    "en": "the target empire"
+   }
+  },
   "operation.8230": {
+   "Root.Target.GetAdj": {
+    "zh": "该国",
+    "en": "their"
+   },
+   "Root.Target.GetName": {
+    "zh": "目标帝国",
+    "en": "the target empire"
+   },
    "This.GetName": {
     "zh": "这项",
     "en": "",
@@ -112,6 +146,10 @@
      "zh": "游戏里这里会显示该行动的代号。",
      "en": "In the game, the codename of this operation appears here."
     }
+   },
+   "offended_party.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "the offended empire"
    }
   }
  }

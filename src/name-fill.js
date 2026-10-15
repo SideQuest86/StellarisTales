@@ -9,7 +9,8 @@ export const OPEN = "", SEP = "", CLOSE = "", OMIT = "";
 const TITLE_WORDS = [
   "Science Officer", "Officer", "Admiral", "General", "Captain", "Commander", "Governor", "Doctor", "Dr\\.", "Professor",
   "Envoy", "Ambassador", "Lieutenant", "Director", "Chancellor", "Knight", "Sir", "Dame", "Spymaster",
-  "Operation", "Arkship", "Asteroid", "planet", "Emissary", "Councilor", "science ship", "Survey Unit",
+  "Operation", "Arkship", "Asteroid", "planet", "Emissary", "Councilor", "science ship", "Survey Unit", "Scientist",
+  "Head Researcher", "Lead Scientist", "科学家", "科学官",
   "行动", "方舟", "议员", "使节",
   "科学专员", "专员", "博士", "将军", "舰长", "总督", "上将", "元帅", "教授", "特使", "大使", "指挥官", "主任",
 ].join("|");
@@ -42,7 +43,14 @@ export function fillNames(s, opts) {
     if (depth > 3) return "";
     let text, n;
     // Inside scripted text the scripted name's own wording applies first (names.json `names`).
-    const own = nested?.[key] || chapterNames?.[key];
+    let own = nested?.[key] || chapterNames?.[key];
+    // One key in several grammatical positions of one document: a reviewed variant is chosen by the exact text right
+    // before ("before": the preceding text ends with it) or after ("after": the following text starts with it).
+    if (own?.variants) {
+      const prev = whole.slice(0, offset) + (art || ""), next = (after || "") + whole.slice(offset + match.length);
+      const v = own.variants.find((x) => x.lang === lang && (!x.before || prev.endsWith(x.before)) && (!x.after || next.startsWith(x.after)));
+      if (v) own = { ...own, [lang]: v.text, omit: v.text === "" ? [lang] : own.omit };
+    }
     const tail = key.split("|")[0].split(".").at(-1);
     // Reviewed as "omit" for this language: the sentence reads naturally without the name.
     if (own && own[lang] === "" && own.omit?.includes(lang)) return (art || "") + OMIT + (after || "");
@@ -87,12 +95,14 @@ export function fillNames(s, opts) {
     // "[X]'s bodyguard" with X = "our": a possessive determiner takes no 's; zh "我们的[的]".
     .replace(/(\b(?:our|their|your|its))['’]s\b/gi, "$1")
     .replace(/的的/g, "的")
+    // "the tropical [X]" with X = "this planet": the sentence already has a determiner, so the phrase drops its own.
+    .replace(/\b(the|their|our|its|his|her|your|a|an)\s+([a-z][\w-]*)\s+([^]*)(?:this|that|our|the)\s+/gi, (_, det, adj, n) => `${det} ${adj} ${OPEN}${n}${SEP}`)
     // A computed amount ("+[X]% research"): the phrase stands for the whole quantity, sign and % included.
     .replace(new RegExp(`[+\\-]?(${SPAN})\\s?%`, "g"), "$1")
     // Two substitutions side by side ("[Root.GetRulerTitle] [Root.GetRulerName]") name one person: a second phrase
     // with its own determiner stands alone, otherwise they join ("our" + "ruler").
     .replace(/([^]*)([^]*)(\s?)([^]*)([^]*)/g, (_, n1, t1, gap, n2, t2) =>
-      OPEN + n2 + SEP + (/^(the|our|this|that|a|an|your|their|这|那|我们)/i.test(t2) || t2.endsWith(t1) || t1.endsWith(t2) ? t2 : t1 + gap + t2) + CLOSE)
+      OPEN + n2 + SEP + (/^(?:(?:the|our|this|that|a|an|your|their)\b|这|那|我们)/i.test(t2) || t2.endsWith(t1) || t1.endsWith(t2) || t2.startsWith(t1) ? t2 : t1 + gap + t2) + CLOSE)
     // Sentence starts (also after a merge or a dropped article): capitalise the phrase.
     .replace(/(^|[.!?]["”’']?\s+)([^]*)([a-z])/g, (_, lead, n, c) => lead + OPEN + n + SEP + c.toUpperCase())
     // An omitted code name after "Operation" ("assigned to Operation [X].") reads as "the operation".
@@ -101,6 +111,20 @@ export function fillNames(s, opts) {
     .replace(/(^|[.!?]["”’']?\s+)the operation/g, "$1The operation")
     .replace(/ (?= )/g, "")
     .replace(//g, "");
+}
+
+/**
+ * $KEY$ references left after compilation (scripts/story_tree.py expands every one the game localises): special-project
+ * progress counters the engine fills in ($COUNT$/$REQUIRED$) read as a natural phrase; references the game itself never
+ * defines (missing from its localisation; listed in docs/refine/AUDIT.md) are left out instead of showing a token.
+ */
+export function cleanRefs(s, lang) {
+  return String(s || "")
+    .replace(/\$COUNT\$\s*\/\s*\$REQUIRED\$\s?/g, lang === "en" ? "the required number of " : "所需数量的")
+    .replace(/\$[A-Za-z_@][\w.@|]*\$/g, "")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .replace(/ +([.,;:!?])/g, "$1");
 }
 
 /** Plain text of a filled string (markers removed). */

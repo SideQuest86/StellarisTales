@@ -1,0 +1,118 @@
+{
+  "event-cyber-1005": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-cyber-1010": {"docs": {
+    "cyber.1015": {"most_populous.GetName": {"zh": "我们人口最多的星球", "en": "our most populous world", "note": {"zh": "游戏里这里会出现你人口最多的星球。", "en": "In the game, your most populous world appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-cyber-1055": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-cyber-1505": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-cyber-1515": {"docs": {
+    "cyber.1515": {"Species.GetAdj": {"zh": "本族", "en": "imperial", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-cyber-1520": {"docs": {
+    "cyber.1520": {"root.Capital.GetName": {"zh": "我们的首都", "en": "this world", "note": {"zh": "游戏里这里会出现你首都星球的名称。", "en": "In the game, your capital world's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-cyber-1525": {"docs": {}, "exceptions": ["cyber.1525: game text: 'to the their new ocular implants' has a stray 'the'"], "reviewed": true},
+  "event-cyber-160": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-cyber-220": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-cyber-2460": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-cyber-655": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-cyber-815": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-cyber-820": {"docs": {
+    "cyber.820": {"root.GetSpeciesAdj": {"zh": "本族", "en": "imperial", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}},
+    "cyber.822": {"root.GetSpeciesAdj": {"zh": "本族", "en": "imperial", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-cyber-830": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-diplomatic-1000": {"docs": {
+    "diplomatic.1000": {"exercise_system.GetName": {"zh": "这个恒星系", "en": "the target star", "note": {"zh": "游戏里这里会出现举行演习的恒星系。", "en": "In the game, the star system where the exercise is held appears here."}}},
+    "diplomatic.1006": {"exercise_system.GetName": {"zh": "这个恒星系", "en": "the target star", "note": {"zh": "游戏里这里会出现举行演习的恒星系。", "en": "In the game, the star system where the exercise is held appears here."}}},
+    "diplomatic.1022": {
+      "Root.GetName": {"zh": "你们帝国", "en": "your empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "From.GetName": {"zh": "我们帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现发来这条消息的帝国名称。", "en": "In the game, the name of the empire that sent this message appears here."}}
+    },
+    "diplomatic.1023": {"Root.GetName": {"zh": "你们帝国", "en": "your empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}},
+    "diplomatic.1024": {"From.GetSpeciesName": {"zh": "对方", "en": "alien", "note": {"zh": "游戏里这里会出现对方帝国的物种名称。", "en": "In the game, the other empire's species name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-espionage-1": {"docs": {
+    "espionage.17": {"owner.species.GetAdj": {"zh": "本族", "en": "imperial", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-espionage-2": {"docs": {
+    "espionage.1012": {
+      "root.GetAdj": {"zh": "我方", "en": "imperial", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "disavowed_agent_official.GetSXX": {"zh": "", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现动词词尾。", "en": "In the game, the verb ending appears here."}}
+    },
+    "espionage.1013": {"root.GetAdj": {"zh": "我方", "en": "imperial", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}},
+    "espionage.1021": {"disavowed_agent_country.GetAdj": {"zh": "外国", "en": "foreign", "note": {"zh": "游戏里这里会出现对方帝国的名称。", "en": "In the game, the other empire's name appears here."}}},
+    "espionage.1081": {"insidious_plot_country.GetAdj": {"zh": "本国", "en": "own", "note": {"zh": "游戏里这里会出现对方帝国的名称。", "en": "In the game, the other empire's name appears here."}}}
+  }, "exceptions": ["espionage.1013: game text: plural verb ('do not state', 'have issued') after a singular empire name", "espionage.1081: game text: plural verb ('are plotting') after a singular empire name", "espionage.1082: game text: plural verb ('mean to deceive') after a singular empire name", "espionage.1085: game text: plural verb ('have taken offense') after a singular empire name"], "reviewed": true},
+  "event-espionage-20": {"docs": {
+    "espionage.22": {"from.target.GetName": {"zh": "那颗星球", "en": "the other world", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}},
+    "espionage.23": {"from.target.GetName": {"zh": "那颗星球", "en": "the other world", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-factions-0": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-factions-3000": {"docs": {
+    "factions.3010": {"root.owner.GetAdj": {"zh": "殖民者", "en": "colonist", "note": {"zh": "游戏里这里会出现你的殖民者所属的称呼。", "en": "In the game, the name your colonists go by appears here."}}},
+    "factions.3005": {"owner.GetAdj": {"zh": "本国", "en": "our", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-fedel-1": {"docs": {
+    "fedel.2": {"fed_leader.GetName": {"zh": "主席国", "en": "the chairing empire", "note": {"zh": "游戏里这里会出现当前主席国的名称。", "en": "In the game, the name of the current chairing empire appears here."}}},
+    "fedel.10": {
+      "ruler.GetRegnalName": {"zh": "我们的统治者", "en": "our ruler", "note": {"zh": "游戏里这里会出现你的统治者的名字。", "en": "In the game, your ruler's name appears here."}},
+      "rival_chosen_leader.GetRegnalName": {"zh": "对方统治者", "en": "the rival ruler", "note": {"zh": "游戏里这里会出现对方帝国统治者的名字。", "en": "In the game, the other empire's ruler's name appears here."}},
+      "ruler.GetSXX": {"zh": "", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现动词词尾。", "en": "In the game, the verb ending appears here."}},
+      "ruler.GetIsAre": {"zh": "", "en": "they are", "omit": ["zh"], "note": {"zh": "游戏里这里会出现动词形式。", "en": "In the game, the matching verb form appears here."}}
+    },
+    "fedel.15": {
+      "ruler.GetRegnalName": {"zh": "我们的统治者", "en": "our ruler", "note": {"zh": "游戏里这里会出现你的统治者的名字。", "en": "In the game, your ruler's name appears here."}},
+      "winning_leader.GetRegnalName": {"zh": "对方统治者", "en": "the rival ruler", "note": {"zh": "游戏里这里会出现获胜帝国统治者的名字。", "en": "In the game, the winning empire's ruler's name appears here."}},
+      "ruler.GetSXX": {"zh": "", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现动词词尾。", "en": "In the game, the verb ending appears here."}},
+      "ruler.GetIsAre": {"zh": "", "en": "they are", "omit": ["zh"], "note": {"zh": "游戏里这里会出现动词形式。", "en": "In the game, the matching verb form appears here."}}
+    },
+    "fedel.16": {"winning_leader.GetRegnalName": {"zh": "对方统治者", "en": "the rival ruler", "note": {"zh": "游戏里这里会出现获胜帝国统治者的名字。", "en": "In the game, the winning empire's ruler's name appears here."}}}
+  }, "exceptions": ["fedel.2: game text: 'is a not an independent state'", "fedel.10: game text: 'The powerful psionic abilities ... gives'", "fedel.15: game text: 'lose their nerve and attempts' (verb agreement)"], "reviewed": true},
+  "event-fedel-1500": {"docs": {
+    "fedel.1506": {
+      "Root.GetAllianceName": {"zh": "联盟", "en": "the alliance", "note": {"zh": "游戏里这里会出现联盟的名称。", "en": "In the game, the alliance's name appears here."}},
+      "root.GetAllianceName": {"zh": "联盟", "en": "the alliance", "note": {"zh": "游戏里这里会出现联盟的名称。", "en": "In the game, the alliance's name appears here."}}
+    }
+  }, "exceptions": [], "reviewed": true},
+  "event-fedel-1800": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fedel-500": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fedel-900": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-federations-10400": {"docs": {
+    "federations.10401": {"Root.GetName": {"zh": "我们", "en": "we", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-federations2-100": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-federations2-20": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-federations2-50": {"docs": {
+    "federations2.50": {"Root.GetAdj": {"zh": "我们的", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}},
+    "special_projects:hegemony_joint_project_member": {"This.Owner.GetAdj": {"zh": "我们的", "en": "", "omit": ["en"], "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-federations2-701": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-federations2-8": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-federations3-1000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-federations3-120": {"docs": {
+    "federations3.121": {"root.System.GetName": {"zh": "目标", "en": "target star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the system's name appears here."}}}
+  }, "exceptions": ["federations3.121: game text: 'such as designate' directly before the planet name", "federations3.131: game text: 'at designate' directly before the planet name"], "reviewed": true},
+  "event-federations3-2001": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-federations3-2100": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-federations3-2200": {"docs": {}, "exceptions": ["federations3.2215/2220/2225/2235/2240/2245: game text: the quoted debate title has an opening quote but no closing quote"], "reviewed": true},
+  "event-fedev-499": {"docs": {
+    "fedev.500": {
+      "fed_founder_1.GetName": {"zh": "一方", "en": "first empire", "note": {"zh": "游戏里这里会出现联邦创始国之一的名称。", "en": "In the game, one founding member's name appears here."}},
+      "fed_founder_2.GetName": {"zh": "另一方", "en": "second empire", "note": {"zh": "游戏里这里会出现联邦另一个创始国的名称。", "en": "In the game, the other founding member's name appears here."}}
+    }
+  }, "exceptions": [], "reviewed": true},
+  "event-fedev-600": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fedev-9500": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1255": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1260": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1270": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1280": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1295": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1305": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1325": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1335": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1355": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1375": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1405": {"docs": {}, "exceptions": [], "reviewed": true}
+}

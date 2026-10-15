@@ -2,7 +2,7 @@
 // never pays for it. Data: museum/specimens.json (game files, scripts/extract-specimens.py) and
 // museum/models/manifest.json (generated, unofficial 3D interpretations). The 3D viewer (museum-viewer.js) is
 // imported only when an exhibit with a model is opened.
-import { fillNames } from "./name-fill.js";
+import { fillNames, cleanRefs } from "./name-fill.js";
 const $ = (s, r = document) => r.querySelector(s);
 const lang = () => (document.documentElement.lang === "en" ? "en" : "zh");
 const T = (zh, en) => (lang() === "en" ? en : zh);
@@ -14,7 +14,7 @@ const reduced = () => document.documentElement.classList.contains("reduced-motio
 // tooltip (src/name-tooltip.js, installed by app.js) explains them on hover, focus and tap.
 // The wording rules are the reader's (src/name-fill.js), so specimens and stories read alike.
 function gameText(s, spec) {
-  const filled = fillNames((s || "").replace(/§[A-Za-z!]|£\w+£/g, "").trim(), { lang: lang(), chapterNames: spec?.placeholders });
+  const filled = cleanRefs(fillNames((s || "").replace(/§[A-Za-z!]|£\w+£/g, "").trim(), { lang: lang(), chapterNames: spec?.placeholders }), lang());
   return esc(filled)
     .replace(/([^]*)/g, (_, note) => `<span class="game-name" tabindex="0" role="note" data-note="${note}">`)
     .replace(//g, "</span>")

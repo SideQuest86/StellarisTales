@@ -46,6 +46,24 @@
   }
  },
  "placeholderDocs": {
+  "anomaly.2005": {
+   "From.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "crew of ",
+      "text": "our science ship"
+     },
+     {
+      "lang": "zh",
+      "after": "船员",
+      "text": "我们的科学船"
+     }
+    ]
+   }
+  },
   "anomaly.2006": {
    "From.GetName": {
     "zh": "我们的科学船",

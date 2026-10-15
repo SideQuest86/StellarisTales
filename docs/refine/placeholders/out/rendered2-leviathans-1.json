@@ -1,0 +1,287 @@
+{
+ "artisan-troupe": {
+  "reviewed": true,
+  "docs": {
+   "leviathans.304": {
+    "root.GetSpeciesAdj": {
+     "zh": "这一族的",
+     "en": "",
+     "omit": [
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现你的物种的名称。",
+      "en": "In the game, your species' name appears here."
+     }
+    }
+   },
+   "leviathans.323": {
+    "Root.GetRulerName": {
+     "zh": "贵国",
+     "en": "your majesty",
+     "note": {
+      "zh": "游戏里这里会出现你的统治者的称呼。",
+      "en": "In the game, your ruler's name appears here."
+     }
+    }
+   },
+   "leviathans.324": {
+    "Root.GetRulerName": {
+     "zh": "贵国",
+     "en": "your majesty",
+     "note": {
+      "zh": "游戏里这里会出现你的统治者的称呼。",
+      "en": "In the game, your ruler's name appears here."
+     }
+    }
+   },
+   "leviathans.315": {
+    "Root.GetRulerTitle": {
+     "zh": "",
+     "en": "ruler",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现你的统治者的头衔。",
+      "en": "In the game, your ruler's title appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "automated-dreadnought": {
+  "reviewed": true
+ },
+ "curators": {
+  "reviewed": true,
+  "exceptions": [
+   "leviathans.559: game text: 'the splintered [name]' places an article before the name, so the en keeps 'the splintered the other empire'"
+  ]
+ },
+ "dimensional-horror": {
+  "reviewed": true,
+  "docs": {
+   "leviathans.3004": {
+    "guardians_horror_system.GetName": {
+     "zh": "这个星系",
+     "en": "the local",
+     "note": {
+      "zh": "游戏里这里会出现这个星系的名称。",
+      "en": "In the game, the system's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "dragons-hoard": {
+  "reviewed": true
+ },
+ "enclave-leader-departure": {
+  "reviewed": true
+ },
+ "enigmatic-fortress": {
+  "reviewed": true
+ },
+ "ether-drake": {
+  "reviewed": true,
+  "exceptions": [
+   "leviathans.650: game text: zh doubles the words 我们收"
+  ]
+ },
+ "event-enclave-2": {
+  "reviewed": true
+ },
+ "event-enclave-2045": {
+  "reviewed": true
+ },
+ "event-enclave-2059": {
+  "reviewed": true
+ },
+ "event-enclave-23": {
+  "reviewed": true
+ },
+ "event-enclave-27": {
+  "reviewed": true
+ },
+ "event-enclave-370": {
+  "reviewed": true
+ },
+ "event-enclave-430": {
+  "reviewed": true
+ },
+ "event-leviathans-140": {
+  "reviewed": true,
+  "exceptions": [
+   "leviathans.141: game text: 'the [name] headquarters' lacks the possessive in the original"
+  ]
+ },
+ "event-leviathans-4": {
+  "reviewed": true
+ },
+ "event-leviathans-98": {
+  "reviewed": true
+ },
+ "event-nomads-150": {
+  "reviewed": true,
+  "exceptions": [
+   "nomads.1545: game text: the original term has a stray leading space inside the quoted word",
+   "nomads.255: game text: 'at most 25 Fleet Size' and 'in [system] System' repeat the noun in the original",
+   "special_projects:CHAMPIONS_FORGE_TRAVEL: game text: 'at most 25 Fleet Size' reads oddly in the original"
+  ]
+ },
+ "event-shroud-4199": {
+  "reviewed": true,
+  "docs": {
+   "shroud.4300": {
+    "Root.GetName": {
+     "zh": "帝国",
+     "en": "empire",
+     "note": {
+      "zh": "游戏里这里会出现你的帝国的名称。",
+      "en": "In the game, your empire's name appears here."
+     }
+    }
+   },
+   "shroud.6855": {
+    "root.GetName": {
+     "zh": "贵国",
+     "en": "empire",
+     "note": {
+      "zh": "游戏里这里会出现你的帝国的名称。",
+      "en": "In the game, your empire's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "event-shroud-5375": {
+  "reviewed": true
+ },
+ "hive-asteroids": {
+  "reviewed": true
+ },
+ "infinity-machine": {
+  "reviewed": true
+ },
+ "mercenary-enclave": {
+  "reviewed": true
+ },
+ "salvager-enclave": {
+  "reviewed": true
+ },
+ "shroud-tunnels": {
+  "reviewed": true,
+  "exceptions": [
+   "enclave.6025: game text: 'the science vessel [name]' then '[name]'s operations' uses the name as a ship, which no single phrase fits"
+  ]
+ },
+ "shroudwalker-divination": {
+  "reviewed": true,
+  "docs": {
+   "enclave.5505": {
+    "root.GetName": {
+     "zh": "这颗星球",
+     "en": "the planet's",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "enclave.5522": {
+    "root.GetName": {
+     "zh": "这颗星球",
+     "en": "our home world",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    },
+    "shattered_frontier_planet.GetName": {
+     "zh": "这颗星球",
+     "en": "our home world",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "enclave.5540": {
+    "root.GetName": {
+     "zh": "星球",
+     "en": "planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "enclave.5550": {
+    "shattered_frontier_planet.GetName": {
+     "zh": "家园",
+     "en": "home",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   },
+   "enclave.5521": {
+    "shattered_frontier_planet.solar_system.GetName": {
+     "zh": "这个星系",
+     "en": "system",
+     "note": {
+      "zh": "游戏里这里会出现这个星系的名称。",
+      "en": "In the game, the system's name appears here."
+     }
+    }
+   },
+   "enclave.5525": {
+    "shattered_frontier_planet.solar_system.GetName": {
+     "zh": "这个星系",
+     "en": "system",
+     "note": {
+      "zh": "游戏里这里会出现这个星系的名称。",
+      "en": "In the game, the system's name appears here."
+     }
+    }
+   },
+   "enclave.5200": {
+    "hero_redivivus.GetHisHer": {
+     "zh": "其",
+     "en": "they",
+     "note": {
+      "zh": "游戏里这里会出现“他”或“她”。",
+      "en": "In the game, 'he' or 'she' appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "enclave.5195: game text: 'the legendary hero [name]' expects a proper name, so a role phrase repeats 'hero'",
+   "enclave.5200: game text: 'the hero's' brainwave' has a doubled possessive in the original"
+  ]
+ },
+ "shroudwalker-enclave": {
+  "reviewed": true,
+  "exceptions": [
+   "special_projects:DELVING_RITUAL: game text: 'have made' disagrees with a singular enclave name in the original"
+  ]
+ },
+ "situation-leviathan-celebration-opportunity": {
+  "reviewed": true
+ },
+ "spectral-wraith": {
+  "reviewed": true
+ },
+ "stellar-devourer": {
+  "reviewed": true
+ },
+ "trader-enclaves": {
+  "reviewed": true
+ }
+}

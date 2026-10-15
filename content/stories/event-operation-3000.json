@@ -281,6 +281,18 @@
   }
  },
  "placeholderDocs": {
+  "espionage.1070": {
+   "root.species.GetAdj": {
+    "zh": "我们的",
+    "en": "our"
+   }
+  },
+  "espionage.1082": {
+   "insidious_plot_spymaster.GetName": {
+    "zh": "本人",
+    "en": "the spymaster"
+   }
+  },
   "operation.3000": {
    "smear_option_1.GetName": {
     "zh": "第一种手段",
@@ -296,26 +308,59 @@
    }
   },
   "operation.3001": {
+   "Root.SpyNetwork.leader.GetName": {
+    "zh": "本人",
+    "en": "the spymaster"
+   },
+   "root.spynetwork.leader.GetName": {
+    "zh": "本人",
+    "en": "the spymaster"
+   },
    "root.target.GetAdj": {
-    "zh": "该国",
-    "en": "rival"
+    "zh": "敌方",
+    "en": "enemy"
    },
    "smear_campaign_recipient.GetAdj": {
-    "zh": "该国",
+    "zh": "对方",
     "en": "rival"
    },
    "smear_campaign_recipient.leader.GetName": {
-    "zh": "这位领袖",
-    "en": "the leader",
-    "omit": [
-     "en"
-    ]
+    "zh": "本人",
+    "en": "in question"
+   }
+  },
+  "operation.3005": {
+   "from.target.GetName": {
+    "zh": "被指控方",
+    "en": "the accused empire"
+   }
+  },
+  "operation.3010": {
+   "from.GetName": {
+    "zh": "那个指控方",
+    "en": "the accusing empire"
+   }
+  },
+  "operation.3011": {
+   "from.GetName": {
+    "zh": "那个指控方",
+    "en": "the accusing empire"
+   }
+  },
+  "operation.3012": {
+   "from.GetName": {
+    "zh": "那个指控方",
+    "en": "the accusing empire"
    }
   },
   "operation.3020": {
    "smear_campaign_instigator.GetAdj": {
     "zh": "该国",
     "en": "rival"
+   },
+   "smear_campaign_instigator.GetName": {
+    "zh": "始作俑者",
+    "en": "the instigators"
    },
    "smear_campaign_recipient.GetAdj": {
     "zh": "该国",

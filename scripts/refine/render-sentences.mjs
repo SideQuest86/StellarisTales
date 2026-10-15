@@ -4,7 +4,7 @@
 // docs/refine/placeholders/groups.json group, plus the open reviewer issues of each story) and a summary of
 // automatic flags. Usage: node scripts/refine/render-sentences.mjs
 import { readFile, writeFile, mkdir } from "node:fs/promises";
-import { fillNames } from "../../src/name-fill.js";
+import { fillNames, cleanRefs } from "../../src/name-fill.js";
 import { evaluate } from "../../src/reading.js";
 
 const names = JSON.parse(await readFile("public/stories/names.json", "utf8"));
@@ -17,6 +17,13 @@ for (const g of groups) {
     const out = JSON.parse(await readFile(`docs/refine/placeholders/out/${g.id}.json`, "utf8"));
     for (const [sid, r] of Object.entries(out)) if (r?.issues?.length) issuesByStory[sid] = r.issues;
   } catch {}
+}
+// Exceptions recorded by the rendered review (out/rendered-*.json): re-checked in the next review pass.
+const exceptionsByStory = {};
+for (const f of (await import("node:fs")).readdirSync("docs/refine/placeholders/out").filter((n) => n.startsWith("rendered-") && n !== "rendered-specimens.json")) {
+  for (const [sid, r] of Object.entries(JSON.parse(await readFile(`docs/refine/placeholders/out/${f}`, "utf8")))) {
+    if (r?.exceptions?.length) exceptionsByStory[sid] = r.exceptions;
+  }
 }
 const mark = (s) => s.replace(/[^]*([^]*)/g, "«$1»");
 const FLAGS = {
@@ -39,7 +46,7 @@ for (const g of groups) {
         for (const s of strings) {
           const raw = s?.[lang] || "";
           if (!raw.includes("[")) continue;
-          const filled = mark(fillNames(raw, { lang, chapterNames: c.names, names, evaluate, ctx: { profile: {}, assumptions: {} } }));
+          const filled = mark(cleanRefs(fillNames(raw, { lang, chapterNames: c.names, names, evaluate, ctx: { profile: {}, assumptions: {} } }), lang));
           for (const sent of filled.match(SENT) || []) {
             const t = sent.trim();
             if (!t.includes("«") || seen.has(t)) continue;
@@ -51,15 +58,21 @@ for (const g of groups) {
           }
         }
       }
-      if (block.length > before && c.names) {
-        const keys = Object.entries(c.names).filter(([k]) => !k.startsWith("'") && !k.startsWith("concept_"))
+      if (block.length > before) {
+        const keys = Object.entries(c.names || {}).filter(([k]) => !k.startsWith("'") && !k.startsWith("concept_"))
           .map(([k, v]) => `\`${k}\` = ${v.zh || "∅"} / ${v.en || "∅"}`);
+        // Keys the game fills from its own scripted text (overridable per document too).
+        const own = new Set(Object.keys(c.names || {}));
+        for (const s of strings) for (const lang of ["zh", "en"]) for (const m of (s?.[lang] || "").matchAll(/\[([^\[\]]+)\]/g)) {
+          const k = m[1];
+          if (!own.has(k) && !k.startsWith("'") && !k.startsWith("concept_")) { own.add(k); keys.push(`\`${k}\` = (game's scripted wording)`); }
+        }
         if (keys.length) block.splice(before, 0, `  · keys [${c.id}]: ${keys.join("; ")}`);
       }
     }
     if (!block.length) continue;
     lines.push(`## ${sid}`);
-    for (const i of issuesByStory[sid] || []) lines.push(`- open issue: ${i}`);
+    for (const i of exceptionsByStory[sid] || []) lines.push(`- earlier exception: ${i}`);
     lines.push(...block, "");
   }
   await writeFile(`${outDir}/${g.id}.md`, lines.join("\n"));

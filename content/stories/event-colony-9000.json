@@ -96,5 +96,21 @@
     "en": "In the game, the plural name of your species appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "colony.9005": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "While our ",
+      "after": " colony",
+      "text": ""
+     }
+    ]
+   }
+  }
  }
 }

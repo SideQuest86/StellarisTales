@@ -63,16 +63,26 @@
   }
  },
  "placeholderDocs": {
+  "anomalies:AST_GEAR_CAT": {
+   "Root.GetName": {
+    "zh": "小行星",
+    "en": "asteroid",
+    "note": {
+     "zh": "游戏里这里会出现这颗小行星的名称。",
+     "en": "In the game, the asteroid's name appears here."
+    }
+   }
+  },
   "anomaly.4065": {
    "From.GetName": {
-    "zh": "这颗小行星",
+    "zh": "",
     "en": "asteroid",
     "omit": [
      "zh"
     ],
     "note": {
      "zh": "游戏里这里会出现这颗小行星的名称。",
-     "en": "In the game, this asteroid's name appears here."
+     "en": "In the game, the asteroid's name appears here."
     }
    }
   }

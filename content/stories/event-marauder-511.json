@@ -46,5 +46,24 @@
     "en": "In the game, the khanate's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "marauder.513": {
+   "great_khan.GetHerHis": {
+    "zh": "这位领袖",
+    "en": "their"
+   },
+   "great_khan.GetName": {
+    "zh": "这位领袖",
+    "en": "the leader",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Great Khan ",
+      "text": ""
+     }
+    ]
+   }
+  }
  }
 }

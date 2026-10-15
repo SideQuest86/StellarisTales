@@ -2,19 +2,19 @@
 
 Every story was processed; "reviewed" counts stories whose placeholders a reviewer read in complete sentences (docs/refine/placeholders/out/). Rendered confirmed = a reviewer then read every rendered sentence of the story as the site shows it (docs/refine/placeholders/rendered/). Game-text exceptions are sentences that cannot read naturally without rewriting the game's own text (LEDGER.md); exceptions about empty phrases were fixed in the renderer after the review (0 empty phrases remain). Generic fallback keys are placeholders still shown with the neutral default because the reviewer kept it or the key was not listed.
 
-| Category | stories | with placeholders | reviewed | rendered confirmed | reviewed entries | game-text exceptions | generic fallback keys | unresolved $refs | no guide | guide raw HTML |
+| Category | stories | with placeholders | reviewed | rendered confirmed | reviewed entries | game-text exceptions | generic fallback keys | $refs undefined in game (omitted) | no guide | guide raw HTML |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| crisis | 11 | 11 | 11 | 11 | 112 | 11 | 0 | 0 | 0 | 0 |
-| exploration | 307 | 281 | 281 | 281 | 671 | 79 | 0 | 28 | 0 | 0 |
-| leviathans | 33 | 32 | 32 | 32 | 157 | 21 | 0 | 19 | 0 | 0 |
-| origins | 61 | 49 | 49 | 49 | 348 | 64 | 0 | 24 | 0 | 0 |
-| precursors | 86 | 78 | 78 | 78 | 187 | 33 | 0 | 2 | 0 | 0 |
-| rifts | 41 | 32 | 32 | 32 | 43 | 15 | 0 | 28 | 0 | 0 |
-| society | 356 | 297 | 297 | 297 | 897 | 100 | 0 | 86 | 0 | 0 |
-| stories | 493 | 379 | 379 | 379 | 1306 | 134 | 0 | 99 | 0 | 0 |
-| **all** | **1388** | **1159** | **1159** | **1159** | **3721** | **457** | **0** | **286** | **0** | **0** |
+| crisis | 11 | 11 | 11 | 11 | 136 | 1 | 0 | 0 | 0 | 0 |
+| exploration | 307 | 281 | 281 | 281 | 787 | 25 | 0 | 28 | 0 | 0 |
+| leviathans | 33 | 32 | 32 | 32 | 176 | 4 | 0 | 19 | 0 | 0 |
+| origins | 61 | 49 | 49 | 49 | 510 | 7 | 0 | 24 | 0 | 0 |
+| precursors | 86 | 78 | 78 | 78 | 277 | 11 | 0 | 2 | 0 | 0 |
+| rifts | 41 | 32 | 32 | 32 | 70 | 2 | 0 | 28 | 0 | 0 |
+| society | 356 | 297 | 297 | 297 | 1098 | 30 | 0 | 86 | 0 | 0 |
+| stories | 493 | 379 | 379 | 379 | 1767 | 33 | 0 | 99 | 0 | 0 |
+| **all** | **1388** | **1159** | **1159** | **1159** | **4821** | **113** | **0** | **286** | **0** | **0** |
 
-## Unresolved $KEY$ references (runtime values or keys without localisation)
+## $KEY$ references not defined in the games own localisation (the reader omits them; progress counters $COUNT$/$REQUIRED$ read as "the required number of")
 
 `COUNT` ×80, `REQUIRED` ×80, `RELIC` ×30, `fedel.15.victor.desc` ×20, `astral_rift.3005.desc.know_baol.1` ×8, `astral_rift.3005.desc.know_baol.2` ×8, `mandate_influence_reward_t3` ×8, `mandate_influence_reward_t2` ×8, `paragon.201.name` ×6, `mandate_happiness_reward_t1` ×6, `astral_rift.1555.desc.common` ×4, `astral_rift.15.desc.common.lithoid` ×4, `astral_rift.15.desc.common.synthetic` ×4, `action.92.part3` ×4, `contract_scientific_observation_internal` ×4, `contract_scientific_observation_internal_desc` ×4, `operation.1026.desc.intro` ×2, `building_upload_center` ×2, `contract_destroy_station_heirs_heirs` ×2, `contract_espionage_support_nomad_desc` ×2
 

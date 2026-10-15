@@ -33,5 +33,27 @@
     "en": "In the game, the name of the colonists appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "factions.3005": {
+   "owner.GetAdj": {
+    "zh": "本国",
+    "en": "our",
+    "note": {
+     "zh": "游戏里这里会出现你的帝国名称。",
+     "en": "In the game, your empire's name appears here."
+    }
+   }
+  },
+  "factions.3010": {
+   "root.owner.GetAdj": {
+    "zh": "殖民者",
+    "en": "colonist",
+    "note": {
+     "zh": "游戏里这里会出现你的殖民者所属的称呼。",
+     "en": "In the game, the name your colonists go by appears here."
+    }
+   }
+  }
  }
 }

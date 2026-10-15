@@ -567,21 +567,41 @@
    },
    "Root.Owner.GetSpeciesName": {
     "zh": "该物种",
-    "en": "species",
-    "note": {
-     "zh": "游戏里这里会出现你的物种名称。",
-     "en": "In the game, your species' name appears here."
-    }
+    "en": "",
+    "omit": [
+     "en"
+    ]
    }
   },
   "paragon.5008": {
    "Root.Owner.GetName": {
     "zh": "我们的帝国",
-    "en": "our empire",
-    "note": {
-     "zh": "游戏里这里会出现你的帝国名称。",
-     "en": "In the game, your empire's name appears here."
-    }
+    "en": "our people"
+   },
+   "Root.Owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " has appeared",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "Root.Owner.Ruler.GetSheHeCap": {
+    "zh": "此人",
+    "en": "The ruler"
+   },
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
+  "paragon.5009": {
+   "Root.Owner.Ruler.GetSheHeCap": {
+    "zh": "此人",
+    "en": "The ruler"
    }
   },
   "paragon.5010": {
@@ -592,6 +612,17 @@
      "zh": "游戏里这里会出现你的星球的名称。",
      "en": "In the game, the name of your world appears here."
     }
+   },
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "dedicated to their ",
+      "text": "ruler"
+     }
+    ]
    }
   },
   "paragon.5011": {
@@ -602,6 +633,26 @@
      "zh": "游戏里这里会出现你的星球的名称。",
      "en": "In the game, the name of your world appears here."
     }
+   },
+   "Root.Owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " stands in front",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "before": "monument of ",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
    }
   },
   "paragon.5012": {
@@ -612,6 +663,10 @@
      "zh": "游戏里这里会出现你的星球的名称。",
      "en": "In the game, the name of your world appears here."
     }
+   },
+   "Root.Owner.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "members of our species"
    }
   },
   "paragon.5013": {
@@ -624,6 +679,39 @@
     }
    }
   },
+  "paragon.5020": {
+   "owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Despite ",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "before": "Although ",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "before": "strengthen ",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
+  "paragon.5023": {
+   "Root.Owner.Ruler.GetHeSheCap": {
+    "zh": "此人",
+    "en": "The ruler"
+   }
+  },
   "paragon.5033": {
    "Owner.GetName": {
     "zh": "我们的帝国",
@@ -634,6 +722,140 @@
     }
    }
   },
+  "paragon.5038": {
+   "Root.Owner.Ruler.GetSheHe": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   }
+  },
+  "paragon.5054": {
+   "Owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Their trust in ",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Their trust in ",
+      "text": "our ruler"
+     }
+    ]
+   }
+  },
+  "paragon.5055": {
+   "Owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "it appears that ",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "after": "'s Luminary",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   },
+   "owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "it appears that ",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "after": "'s Luminary",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
+  "paragon.5057": {
+   "Owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "after": "'s refusal",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
+  "paragon.5061": {
+   "Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " was struck hard",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " was struck hard",
+      "text": "our ruler"
+     }
+    ]
+   }
+  },
+  "paragon.5062": {
+   "Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " refused to accept",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
   "paragon.5131": {
    "Owner.GetName": {
     "zh": "我们的帝国",
@@ -642,6 +864,35 @@
      "zh": "游戏里这里会出现你的帝国名称。",
      "en": "In the game, your empire's name appears here."
     }
+   },
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   },
+   "Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "cheering for ",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "before": "benevolent ",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "before": "praised ",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
    }
   },
   "paragon.5201": {
@@ -654,6 +905,38 @@
     }
    }
   },
+  "paragon.5202": {
+   "Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "after": " neural net",
+      "text": "our ruler's"
+     },
+     {
+      "lang": "en",
+      "after": " is dying",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "after": " can remain",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "after": " will die",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
   "paragon.5210": {
    "Owner.GetName": {
     "zh": "我们的帝国",
@@ -662,6 +945,110 @@
      "zh": "游戏里这里会出现你的帝国名称。",
      "en": "In the game, your empire's name appears here."
     }
+   },
+   "Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "time for ",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "after": "'s Paranoid",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "after": " will be assassinated",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "listening to our ",
+      "text": "ruler"
+     },
+     {
+      "lang": "zh",
+      "before": "听取我们",
+      "text": "统治者"
+     }
+    ]
+   },
+   "owner.Ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "time for ",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "after": "'s Paranoid",
+      "text": "our ruler"
+     },
+     {
+      "lang": "en",
+      "after": " will be assassinated",
+      "text": "our ruler"
+     }
+    ]
+   },
+   "owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "listening to our ",
+      "text": "ruler"
+     },
+     {
+      "lang": "zh",
+      "before": "听取我们",
+      "text": "统治者"
+     }
+    ]
+   }
+  },
+  "paragon.5310": {
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
+  "paragon.5315": {
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
+  "paragon.5320": {
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our ruler"
+   }
+  },
+  "paragon.5340": {
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "我们的统治者",
+    "en": "our"
+   }
+  },
+  "paragon.5345": {
+   "Root.Owner.Ruler.GetTitle": {
+    "zh": "统治者",
+    "en": "ruler"
    }
   },
   "paragon.6000": {
@@ -672,6 +1059,12 @@
      "zh": "游戏里这里会出现你的灵能者群体的名称。",
      "en": "In the game, the name of your psychic group appears here."
     }
+   }
+  },
+  "paragon.6010": {
+   "Ruler.GetSheHe": {
+    "zh": "此人",
+    "en": "the ruler"
    }
   }
  }

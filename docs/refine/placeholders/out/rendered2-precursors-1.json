@@ -1,0 +1,712 @@
+{
+ "anomaly-storms-prec-one": {
+  "docs": {
+   "cstorms.2140": {
+    "planet_windswept_fates.GetName": {
+     "zh": "这颗",
+     "en": "this planet"
+    }
+   },
+   "cstorms.2170": {
+    "Root.GetFleetName": {
+     "zh": "我们的",
+     "en": "science ship"
+    }
+   },
+   "special_projects:project_adakkaria_tracing_history": {
+    "planet_assembling_the_past.System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [
+   "cstorms.2170: game text: 'Scientist were' plural mismatch and 'the a very particular pattern'"
+  ],
+  "reviewed": true
+ },
+ "anomaly-storms-prec-wm-one": {
+  "docs": {
+   "cstorms.105": {
+    "From.GetStarName": {
+     "zh": "该恒星",
+     "en": "the star"
+    },
+    "From.Planet.GetName": {
+     "zh": "这颗",
+     "en": "planet"
+    }
+   },
+   "cstorms.181": {
+    "From.Planet.GetName": {
+     "zh": "这颗星球",
+     "en": "on this planet"
+    }
+   },
+   "cstorms.140": {
+    "wm_storm_shelter_planet.GetName": {
+     "zh": "庇护所所在星球",
+     "en": "the shelter planet"
+    }
+   },
+   "cstorms.150": {
+    "wm_storm_shelter_planet.GetName": {
+     "zh": "庇护所所在星球",
+     "en": "the shelter planet"
+    }
+   },
+   "cstorms.155": {
+    "wm_storm_shelter_planet.GetName": {
+     "zh": "庇护所所在星球",
+     "en": "the shelter planet"
+    }
+   },
+   "cstorms.172": {
+    "wm_storm_shelter_planet.GetName": {
+     "zh": "庇护所所在星球",
+     "en": "the shelter planet"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "archaeology-incidents": {
+  "docs": {
+   "ancrel.4006": {
+    "Root.GetLeaderName": {
+     "zh": "这位科学家",
+     "en": "the scientist",
+     "omit": [
+      "zh"
+     ]
+    }
+   },
+   "ancrel.13030": {
+    "From.Leader.GetName": {
+     "zh": "这位考古学家",
+     "en": "the archaeologist",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   },
+   "ancrel.8200": {
+    "System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "ancrel.8201": {
+    "System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "ancrel.8202": {
+    "System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "ancrel.8203": {
+    "System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "ancrel.8210": {
+    "fromfrom.planet.system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    },
+    "root.leader.GetName": {
+     "zh": "这位考古学家",
+     "en": "the archaeologist",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "baol": {
+  "docs": {
+   "ancrel.2000": {
+    "From.GetStarName": {
+     "zh": "该恒星",
+     "en": "the star"
+    }
+   },
+   "ancrel.2007": {
+    "Root.GetStarName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [
+   "ancrel.2027: game text: 'transformed this planet's over' (noun missing in the original)"
+  ],
+  "reviewed": true
+ },
+ "cybrex": {
+  "docs": {
+   "precursor.2100": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    }
+   },
+   "precursor.2030": {
+    "From.GetName": {
+     "zh": "这块岩石",
+     "en": "this rock"
+    }
+   },
+   "special_projects:CYBREX_ARCHEOLOGY_6": {
+    "From.GetName": {
+     "zh": "这块岩石",
+     "en": "the asteroid",
+     "omit": [
+      "zh"
+     ]
+    }
+   },
+   "precursor.2031": {
+    "From.From.GetName": {
+     "zh": "这颗",
+     "en": "this asteroid"
+    }
+   },
+   "precursor.2035": {
+    "From.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "event-ancrel-10030": {
+  "reviewed": true
+ },
+ "event-ancrel-15010": {
+  "docs": {
+   "ancrel.15006": {
+    "Root.GetLeaderName": {
+     "zh": "这位科学家",
+     "en": "the scientist",
+     "omit": [
+      "zh",
+      "en"
+     ]
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "event-ancrel-4008": {
+  "reviewed": true
+ },
+ "event-ancrel-6049": {
+  "reviewed": true
+ },
+ "event-ancrel-6098": {
+  "docs": {
+   "ancrel.6130": {
+    "spiritualist_fallen_empire.Capital.GetName": {
+     "zh": "那个帝国的首都",
+     "en": "that empire's capital"
+    }
+   },
+   "ancrel.6133": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "event-ancrel-6150": {
+  "docs": {
+   "ancrel.6151": {
+    "From.GetName": {
+     "zh": "这个天体",
+     "en": "this body"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "event-ancrel-6499": {
+  "docs": {
+   "ancrel.6500": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    }
+   },
+   "ancrel.6505": {
+    "From.Capital.GetName": {
+     "zh": "那颗星球",
+     "en": "that planet"
+    },
+    "From.GetSpeciesNamePlural": {
+     "zh": "他们",
+     "en": "people of the other empire"
+    }
+   }
+  },
+  "exceptions": [
+   "ancrel.6505: game text: zh word order puts 'our great capital' directly before the other empire's name"
+  ],
+  "reviewed": true
+ },
+ "first-league": {
+  "docs": {
+   "precursor.1100": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    }
+   },
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_14": {
+    "From.GetName": {
+     "zh": "这块岩石",
+     "en": "the asteroid",
+     "omit": [
+      "zh"
+     ]
+    }
+   },
+   "precursor.1071": {
+    "From.From.GetName": {
+     "zh": "这颗星球",
+     "en": "the asteroid",
+     "omit": [
+      "zh"
+     ]
+    }
+   }
+  },
+  "exceptions": [
+   "special_projects:FIRST_LEAGUE_ARCHEOLOGY_11: game text: 'The hostile planet of <name>' names the planet twice"
+  ],
+  "reviewed": true
+ },
+ "irassian": {
+  "docs": {
+   "precursor.1600": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    }
+   },
+   "special_projects:IRASSIAN_ARCHEOLOGY_10": {
+    "From.GetName": {
+     "zh": "这块岩石",
+     "en": "the asteroid",
+     "omit": [
+      "zh"
+     ]
+    }
+   },
+   "precursor.1551": {
+    "From.From.GetName": {
+     "zh": "这颗",
+     "en": "the asteroid"
+    }
+   }
+  },
+  "exceptions": [
+   "precursor.1521: game text: zh has a stray word '上将' in 'from orbit' clause"
+  ],
+  "reviewed": true
+ },
+ "precursor-assistance": {
+  "docs": {
+   "precursor.301": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    },
+    "Root.GetSpeciesAdj": {
+     "zh": "我们的",
+     "en": "our",
+     "omit": [
+      "en"
+     ]
+    }
+   },
+   "precursor.311": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    },
+    "artifact_seller.Capital.GetName": {
+     "zh": "对方首都",
+     "en": "their capital"
+    }
+   },
+   "precursor.314": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    },
+    "artifact_giver.Capital.GetName": {
+     "zh": "友邦的首都",
+     "en": "the friendly empire's capital"
+    }
+   }
+  },
+  "exceptions": [
+   "precursor.301: game text: zh '<capital>帝国' wording",
+   "precursor.313: game text: zh stammer and a name placed where the artifact should be"
+  ],
+  "reviewed": true
+ },
+ "site-ancient-battle-site": {
+  "exceptions": [
+   "ancrel.109: game text: 'that that'"
+  ],
+  "reviewed": true
+ },
+ "site-asteroid-vault-1": {
+  "docs": {
+   "archaeological_site_types:asteroid_vault_1": {
+    "From.Planet.GetName": {
+     "zh": "这个天体",
+     "en": "this object"
+    }
+   },
+   "ancrel.102": {
+    "From.Planet.GetName": {
+     "zh": "这个天体",
+     "en": "this object"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-broken-world-digsite": {
+  "docs": {
+   "ancrel.11020": {
+    "eldritch_location.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-city-of-bones": {
+  "reviewed": true
+ },
+ "site-endless-expanse-digsite": {
+  "docs": {
+   "ancrel.4046": {
+    "Root.Owner.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    },
+    "Root.Owner.GetSpeciesName": {
+     "zh": "族群",
+     "en": "our species"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-from-the-ashes-site": {
+  "reviewed": true
+ },
+ "site-inferno-temple-site": {
+  "reviewed": true
+ },
+ "site-it-was-aliens-site": {
+  "docs": {
+   "ancrel.106": {
+    "arc_anomaly_planet.GetName": {
+     "zh": "那颗星球",
+     "en": "that planet"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-larion-digsite": {
+  "docs": {
+   "unique.20": {
+    "Root.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    },
+    "larion_planet.solar_system.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-last-thought-site": {
+  "reviewed": true
+ },
+ "site-mutation-vats": {
+  "reviewed": true
+ },
+ "site-omnirelic-site": {
+  "docs": {
+   "ancrel.6000": {
+    "planet_option_1.GetName": {
+     "zh": "第一颗星球",
+     "en": "the first planet"
+    },
+    "planet_option_2.GetName": {
+     "zh": "第二颗星球",
+     "en": "the second planet"
+    },
+    "planet_option_3.GetName": {
+     "zh": "第三颗星球",
+     "en": "the third planet"
+    },
+    "planet_option_4.GetName": {
+     "zh": "第四颗星球",
+     "en": "the fourth planet"
+    },
+    "planet_option_5.GetName": {
+     "zh": "第五颗星球",
+     "en": "the fifth planet"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-rubricator-digsite": {
+  "reviewed": true
+ },
+ "site-site-abandoned-bio-lab": {
+  "docs": {
+   "strange_worlds.2000": {
+    "universal_macrophage_scientist.GetName": {
+     "zh": "这位科学家",
+     "en": "the scientist"
+    }
+   },
+   "strange_worlds.2005": {
+    "universal_macrophage_scientist.GetName": {
+     "zh": "这位科学家",
+     "en": "the scientist"
+    }
+   },
+   "strange_worlds.2010": {
+    "universal_macrophage_scientist.GetName": {
+     "zh": "这位科学家",
+     "en": "the scientist"
+    }
+   },
+   "strange_worlds.2015": {
+    "universal_macrophage_scientist.GetName": {
+     "zh": "这位科学家",
+     "en": "the scientist"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-site-absolute-zero": {
+  "reviewed": true
+ },
+ "site-site-ancient-robot-world": {
+  "docs": {
+   "ancrel.12060": {
+    "From.GetName": {
+     "zh": "这个",
+     "en": "this star"
+    }
+   },
+   "archaeological_site_types:site_ancient_robot_world": {
+    "From.Planet.System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-site-anomalous-cube": {
+  "reviewed": true
+ },
+ "site-site-chronicles-of-dendrus": {
+  "reviewed": true
+ },
+ "site-site-command-center": {
+  "docs": {
+   "archaeological_site_types:site_command_center": {
+    "From.Planet.GetName": {
+     "zh": "这颗小行星",
+     "en": "this asteroid"
+    }
+   },
+   "ancrel.6005": {
+    "From.Planet.GetName": {
+     "zh": "这颗",
+     "en": "the asteroid"
+    }
+   },
+   "ancrel.6010": {
+    "From.Planet.GetName": {
+     "zh": "这块小行星",
+     "en": "the asteroid"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-site-cut-to-fit": {
+  "reviewed": true
+ },
+ "site-site-debris-belt": {
+  "docs": {
+   "archaeological_site_types:site_debris_belt": {
+    "From.Planet.System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   },
+   "arcsite.2500": {
+    "From.Planet.System.GetName": {
+     "zh": "这个",
+     "en": "this system"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-site-deja-vu-dig": {
+  "reviewed": true
+ },
+ "site-site-deserted-mining-facility": {
+  "docs": {
+   "extreme_frontiers.1330": {
+    "event_target:sidni_origin_planet.GetName": {
+     "zh": "原来那颗星球",
+     "en": "its original planet"
+    }
+   }
+  },
+  "exceptions": [
+   "extreme_frontiers.1330: game text: en sentence is cut off ('calling for S.I.D.N.I.')"
+  ],
+  "reviewed": true
+ },
+ "site-site-ebb-and-flow": {
+  "docs": {
+   "archaeological_site_types:site_ebb_and_flow": {
+    "From.Planet.GetName": {
+     "zh": "这颗",
+     "en": "this planet"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-site-echoes-inside": {
+  "reviewed": true
+ },
+ "site-site-engineered-species": {
+  "reviewed": true
+ },
+ "site-site-fossilized-jellyfish": {
+  "reviewed": true
+ },
+ "site-site-fumongus-dig": {
+  "docs": {
+   "ancrel.13120": {
+    "Root.Owner.Capital.GetName": {
+     "zh": "我们的首都",
+     "en": "our capital"
+    }
+   }
+  },
+  "exceptions": [
+   "ancrel.8305: game text: missing full stop before 'Their desiccated'"
+  ],
+  "reviewed": true
+ },
+ "site-site-georadiation-terraforming": {
+  "docs": {
+   "special_projects:GEORADIATION_SIGNAL_1_PROJECT": {
+    "from.Planet.GetName": {
+     "zh": "先前那颗星球",
+     "en": "the earlier planet"
+    }
+   },
+   "special_projects:GEORADIATION_SIGNAL_2_PROJECT": {
+    "from.Planet.GetName": {
+     "zh": "先前那颗星球",
+     "en": "the earlier planet"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-site-grand-herald": {
+  "docs": {
+   "ancrel.9300": {
+    "FromFrom.Planet.GetName": {
+     "zh": "这颗星球上",
+     "en": "this planet"
+    }
+   }
+  },
+  "exceptions": [],
+  "reviewed": true
+ },
+ "site-site-green-skies": {
+  "reviewed": true
+ },
+ "site-site-hidden-lab-a": {
+  "reviewed": true
+ },
+ "site-site-hive-coral": {
+  "reviewed": true
+ },
+ "site-site-ice-trauma": {
+  "exceptions": [
+   "arcsite.9000: game text: en verb-agreement tokens ('appear«s»', 'mutter«s»', 'Perhaps «are» onto something') and title 'Chief archaeologist' before the name",
+   "arcsite.9001: game text: title 'Chief archaeologist' before the name",
+   "arcsite.9002: game text: title 'archaeologist' before the name"
+  ],
+  "reviewed": true
+ },
+ "site-site-krazura-dig": {
+  "reviewed": true
+ }
+}

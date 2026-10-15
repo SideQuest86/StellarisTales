@@ -62,31 +62,63 @@
   }
  },
  "placeholderDocs": {
-  "distar.3000": {
+  "anomalies:disco_trojan_asteroid_cat": {
    "From.GetName": {
     "zh": "这颗小行星",
-    "en": "this asteroid",
+    "en": "asteroid",
+    "note": {
+     "zh": "游戏里这里会出现这颗小行星的名称。",
+     "en": "In the game, the asteroid's name appears here."
+    }
+   }
+  },
+  "distar.3000": {
+   "From.GetName": {
+    "zh": "",
+    "en": "asteroid",
     "omit": [
      "zh"
-    ]
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这颗小行星的名称。",
+     "en": "In the game, the asteroid's name appears here."
+    }
+   }
+  },
+  "distar.3001": {
+   "Root.GetLeaderName": {
+    "zh": "此人",
+    "en": "the leader",
+    "note": {
+     "zh": "游戏里这里会出现这位领袖的名字。",
+     "en": "In the game, the leader's name appears here."
+    }
    }
   },
   "distar.3003": {
    "trojan_asteroid.GetName": {
-    "zh": "这颗小行星",
+    "zh": "",
     "en": "this asteroid",
     "omit": [
      "zh"
-    ]
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这颗小行星的名称。",
+     "en": "In the game, the asteroid's name appears here."
+    }
    }
   },
   "distar.3005": {
    "trojan_asteroid.GetName": {
-    "zh": "这颗小行星",
+    "zh": "",
     "en": "this asteroid",
     "omit": [
      "zh"
-    ]
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这颗小行星的名称。",
+     "en": "In the game, the asteroid's name appears here."
+    }
    }
   }
  }

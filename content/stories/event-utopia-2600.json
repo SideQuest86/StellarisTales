@@ -158,6 +158,30 @@
   }
  },
  "placeholderDocs": {
+  "utopia.2600": {
+   "Root.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "",
+    "omit": [
+     "en"
+    ]
+   },
+   "Root.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "",
+    "omit": [
+     "en"
+    ]
+   },
+   "Root.GetSpeciesNamePlural": {
+    "zh": "同类",
+    "en": "people"
+   },
+   "root.GetSpeciesNamePlural": {
+    "zh": "同类",
+    "en": "people"
+   }
+  },
   "utopia.2606": {
    "psionic_leader.GetName": {
     "zh": "本人",
@@ -185,6 +209,10 @@
    }
   },
   "utopia.2608": {
+   "GetBrainName": {
+    "zh": "心智",
+    "en": "mind"
+   },
    "psionic_leader.GetName": {
     "zh": "这位领袖",
     "en": "the leader",
@@ -192,6 +220,16 @@
      "zh": "游戏里这里会出现这位领袖。",
      "en": "In the game, the leader appears here."
     }
+   }
+  },
+  "utopia.2650": {
+   "Root.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "our species"
+   },
+   "Root.GetSpeciesNamePlural": {
+    "zh": "同类",
+    "en": "our people"
    }
   }
  }

@@ -1,0 +1,448 @@
+{
+ "event-situation-150": {
+  "reviewed": true
+ },
+ "event-situation-200": {
+  "docs": {
+   "situation.291": {
+    "Root.owner.GetSpeciesName": {
+     "zh": "该物种",
+     "en": "species"
+    }
+   }
+  },
+  "exceptions": [
+   "situation.291: game text: zh '运行中的的无人机' has a doubled 的"
+  ],
+  "reviewed": true
+ },
+ "event-situation-2000": {
+  "exceptions": [
+   "situation.2031: game text: 'one our Energy Nexus' is a typo",
+   "situation.2025: game text: stray comma after the empire name ('..., is currently suffering')"
+  ],
+  "reviewed": true
+ },
+ "event-situation-5": {
+  "reviewed": true
+ },
+ "event-situation-500": {
+  "docs": {
+   "situation.596": {
+    "Target.GetName": {
+     "zh": "这座空间站",
+     "en": "the station"
+    }
+   },
+   "situation.597": {
+    "Target.GetName": {
+     "zh": "这座空间站",
+     "en": "the station"
+    }
+   },
+   "situation.520": {
+    "Target.GetName": {
+     "zh": "这座空间站",
+     "en": "the station"
+    }
+   },
+   "situation.530": {
+    "Target.GetName": {
+     "zh": "这座空间站",
+     "en": "the station"
+    }
+   },
+   "situation.580": {
+    "Target.GetName": {
+     "zh": "这座空间站",
+     "en": "the station"
+    }
+   },
+   "situation.590": {
+    "Target.GetName": {
+     "zh": "这座空间站",
+     "en": "the station"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-specialist-1100": {
+  "exceptions": [
+   "specialist.1200-1280: game text: a stray leading quotation mark opens several sentences ('an dilapidated' typo as well)"
+  ],
+  "reviewed": true
+ },
+ "event-specialist-500": {
+  "exceptions": [
+   "specialist.905, specialist.910, specialist.915, specialist.920: game text: a stray leading quotation mark opens several sentences"
+  ],
+  "reviewed": true
+ },
+ "event-strange-worlds-3000": {
+  "docs": {
+   "strange_worlds.3015": {
+    "event_target:caravaneer_fleet3_country.GetSpeciesName": {
+     "zh": "外来者",
+     "en": "wanderer"
+    }
+   },
+   "strange_worlds.3020": {
+    "event_target:caravaneer_fleet3_country.GetSpeciesName": {
+     "zh": "外来者",
+     "en": "wanderer"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-strange-worlds-3035": {
+  "reviewed": true
+ },
+ "event-strange-worlds-3065": {
+  "reviewed": true
+ },
+ "event-subject-1": {
+  "docs": {
+   "subject.1": {
+    "subject_empire.GetName": {
+     "zh": "帝国",
+     "en": "the vassal empire"
+    }
+   },
+   "subject.3": {
+    "overlord_empire.Capital.GetName": {
+     "zh": "宗主国首都",
+     "en": "the overlord's capital"
+    }
+   },
+   "subject.14": {
+    "subject_empire.GetName": {
+     "zh": "帝国",
+     "en": "the vassal empire"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-subject-100": {
+  "reviewed": true
+ },
+ "event-subject-1001": {
+  "docs": {
+   "subject.1010": {
+    "subject_empire.GetName": {
+     "zh": "该国",
+     "en": "that state"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-subject-1050": {
+  "docs": {
+   "subject.1060": {
+    "overlord_empire.GetName": {
+     "zh": "宗主国",
+     "en": "the overlord's realm"
+    }
+   },
+   "subject.1062": {
+    "subject_empire.GetName": {
+     "zh": "附庸",
+     "en": "vassal empire"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-subject-1100": {
+  "docs": {
+   "subject.1107": {
+    "subject_empire.GetName": {
+     "zh": "该国",
+     "en": "that state"
+    }
+   },
+   "subject.1110": {
+    "overlord_empire.Capital.GetName": {
+     "zh": "宗主国首都",
+     "en": "the overlord's capital"
+    }
+   }
+  },
+  "exceptions": [
+   "subject.1145: game text: a stray leading quotation mark opens several sentences"
+  ],
+  "reviewed": true
+ },
+ "event-subject-2001": {
+  "docs": {
+   "subject.2005": {
+    "overlord_empire.GetName": {
+     "zh": "宗主国",
+     "en": "the overlord's realm"
+    }
+   },
+   "subject.2015": {
+    "overlord_empire.Capital.GetName": {
+     "zh": "宗主国首都",
+     "en": "the overlord's capital"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-subject-2050": {
+  "exceptions": [
+   "subject.2055: game text: doubled verb 'we have have been conducting'"
+  ],
+  "reviewed": true
+ },
+ "event-subject-2100": {
+  "docs": {
+   "subject.2120": {
+    "overlord_empire.GetName": {
+     "zh": "",
+     "en": "directly",
+     "omit": [
+      "zh"
+     ]
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-subject-3001": {
+  "reviewed": true
+ },
+ "event-subject-3050": {
+  "docs": {
+   "subject.3055": {
+    "overlord_empire.Capital.GetName": {
+     "zh": "宗主国首都",
+     "en": "the overlord's capital"
+    }
+   },
+   "subject.3060": {
+    "overlord_empire.Capital.GetName": {
+     "zh": "宗主国首都",
+     "en": "the overlord's capital"
+    },
+    "overlord_empire.GetName": {
+     "zh": "宗主国",
+     "en": "the overlord's realm"
+    }
+   },
+   "subject.3070": {
+    "overlord_empire.Capital.GetName": {
+     "zh": "宗主国首都",
+     "en": "the overlord's capital"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-subject-50": {
+  "docs": {
+   "subject.55": {
+    "overlord_empire.Capital.GetName": {
+     "zh": "宗主国首都",
+     "en": "the overlord's capital"
+    }
+   },
+   "subject.60": {
+    "subject_empire.Capital.GetName": {
+     "zh": "附庸国首都",
+     "en": "the vassal's capital"
+    },
+    "subject_empire.GetName": {
+     "zh": "附庸国",
+     "en": "the vassal state"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-synth-1505": {
+  "reviewed": true
+ },
+ "event-synth-1510": {
+  "reviewed": true
+ },
+ "event-synth-1515": {
+  "docs": {
+   "synth.1515": {
+    "From.GetRulerName": {
+     "zh": "统治者",
+     "en": "the ruler"
+    },
+    "From.GetRulerTitle": {
+     "zh": "统治者",
+     "en": "the ruler"
+    },
+    "root.GetSpeciesAdj": {
+     "zh": "族人",
+     "en": "our"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "event-synth-1520": {
+  "reviewed": true
+ },
+ "event-synth-1525": {
+  "reviewed": true
+ },
+ "event-synth-320": {
+  "reviewed": true
+ },
+ "event-synth-360": {
+  "reviewed": true
+ },
+ "event-synth-630": {
+  "reviewed": true
+ },
+ "pre-ftl-ages": {
+  "docs": {
+   "preftl.180": {
+    "From.GetName": {
+     "zh": "当地势力",
+     "en": "the local power"
+    },
+    "Root.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    }
+   },
+   "preftl.1115": {
+    "event_target:current_uprising.GetName": {
+     "zh": "起义势力",
+     "en": "the uprising"
+    },
+    "Root.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    },
+    "root.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    }
+   }
+  },
+  "exceptions": [
+   "preftl.1115: game text: '[name] System' appends the word System to the system name ('The central system System')"
+  ],
+  "reviewed": true
+ },
+ "pre-ftl-new-world-order": {
+  "reviewed": true
+ },
+ "pre-ftl-plague": {
+  "docs": {
+   "preftl.2090": {
+    "Owner.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "pre-ftl-singularity": {
+  "reviewed": true
+ },
+ "situation-situation-alloys-deficit": {
+  "docs": {
+   "deficit.170": {
+    "robots_planet.recycled_robots": {
+     "zh": "若干",
+     "en": "some"
+    },
+    "robots_planet.total_alloys_gained": {
+     "zh": "若干",
+     "en": "some"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "situation-situation-consumer-goods-deficit": {
+  "docs": {
+   "deficit.155": {
+    "Root.Owner.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "situation-situation-energy-deficit": {
+  "exceptions": [
+   "situation.2025: game text: stray comma after the empire name ('..., is currently suffering')"
+  ],
+  "reviewed": true
+ },
+ "situation-situation-exotic-gases-deficit": {
+  "reviewed": true
+ },
+ "situation-situation-food-deficit": {
+  "reviewed": true
+ },
+ "situation-situation-initiate-storm": {
+  "exceptions": [
+   "situations:situation_initiate_storm: game text: 'seed a Electric Storm' article",
+   "cstorms.2000: game text: garbled option lists ('Radiant Storm, Magnetic Stormor Electric Storm')",
+   "cstorms.2015: game text: 'bloated of state' typo"
+  ],
+  "reviewed": true
+ },
+ "situation-situation-mineral-deficit": {
+  "reviewed": true
+ },
+ "situation-situation-nanotech-consume-planet": {
+  "docs": {
+   "fallen_empires_awakening.2": {
+    "From.GetName": {
+     "zh": "该帝国",
+     "en": "the empire's people"
+    }
+   }
+  },
+  "exceptions": [
+   "fallen_empires_awakening.2: game text: '[species name] space' needs a name used as an adjective"
+  ],
+  "reviewed": true
+ },
+ "situation-situation-paperclips": {
+  "reviewed": true
+ },
+ "situation-situation-rare-crystals-deficit": {
+  "docs": {
+   "deficit.185": {
+    "Root.Owner.GetName": {
+     "zh": "我们的帝国",
+     "en": "our empire"
+    }
+   }
+  },
+  "reviewed": true
+ },
+ "situation-situation-terravore-consume-planet": {
+  "reviewed": true
+ },
+ "situation-situation-toxify-world": {
+  "reviewed": true
+ },
+ "situation-situation-volatile-motes-deficit": {
+  "reviewed": true
+ },
+ "situation-voidworm-country-situation": {
+  "exceptions": [
+   "grand_archive.2420: game text: verb agreement 'the leader have become infected'"
+  ],
+  "reviewed": true
+ }
+}

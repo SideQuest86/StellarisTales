@@ -90,17 +90,24 @@
   }
  },
  "placeholderDocs": {
+  "emperor.2": {
+   "ruler.GetRegnalName": {
+    "zh": "新君主",
+    "en": "the new sovereign"
+   }
+  },
   "emperor.3": {
    "gal_emperor.GetSpeciesName": {
-    "zh": "该物种",
+    "zh": "",
     "en": "",
     "omit": [
-     "en"
-    ],
-    "note": {
-     "zh": "游戏里这里会出现旧监管人的种族名称。",
-     "en": "In the game, the species of the former Custodians appears here."
-    }
+     "en",
+     "zh"
+    ]
+   },
+   "gal_emperor.ruler.GetRegnalName": {
+    "zh": "新君主",
+    "en": "the new sovereign"
    }
   },
   "emperor.4": {

@@ -782,6 +782,12 @@
   }
  },
  "placeholderDocs": {
+  "shroud.11255": {
+   "solar_system.Star.GetStarName": {
+    "zh": "这颗恒星",
+    "en": "this system"
+   }
+  },
   "utopia.3056": {
    "Root.GetName": {
     "zh": "这个帝国",
@@ -790,6 +796,45 @@
      "zh": "游戏里这里会出现你的帝国名称。",
      "en": "In the game, your empire's name appears here."
     }
+   }
+  },
+  "utopia.3150": {
+   "fallen_empire.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "an alien",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "settles on an ",
+      "text": "alien"
+     }
+    ]
+   },
+   "fallen_empire.GetSpeciesNamePlural": {
+    "zh": "同类",
+    "en": "aliens"
+   }
+  },
+  "utopia.3151": {
+   "fallen_empire.GetSpeciesNamePlural": {
+    "zh": "同类",
+    "en": "aliens"
+   }
+  },
+  "utopia.3152": {
+   "Root.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "our own"
+   },
+   "fallen_empire.GetSpeciesNamePlural": {
+    "zh": "同类",
+    "en": "aliens"
+   }
+  },
+  "utopia.3200": {
+   "Root.GetSpeciesName": {
+    "zh": "该物种",
+    "en": "member of our species"
    }
   },
   "utopia.3321": {
@@ -822,6 +867,25 @@
     }
    }
   },
+  "utopia.3350": {
+   "Root.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "our",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "among some ",
+      "text": ""
+     }
+    ]
+   }
+  },
+  "utopia.3351": {
+   "Root.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "our"
+   }
+  },
   "utopia.3401": {
    "chosen_one.GetRegnalName": {
     "zh": "本人",
@@ -833,6 +897,18 @@
      "zh": "游戏里这里会出现这位统治者本人。",
      "en": "In the game, the ruler's own name appears here."
     }
+   },
+   "chosen_one.GetRulerTitle": {
+    "zh": "统治者",
+    "en": "the ruler"
+   },
+   "chosen_one_species.GetAdj": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
    }
   }
  }

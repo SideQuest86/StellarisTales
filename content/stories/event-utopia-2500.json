@@ -531,6 +531,18 @@
     }
    }
   },
+  "cyber.410": {
+   "Owner.Species.GetName": {
+    "zh": "该物种",
+    "en": "organic"
+   }
+  },
+  "cyber.505": {
+   "root.GetSpeciesAdj": {
+    "zh": "该族",
+    "en": "native"
+   }
+  },
   "cyber.515": {
    "Ruler.GetTitle": {
     "zh": "这位领袖",
@@ -544,21 +556,23 @@
   "special_projects:FLESH_IS_WEAK_PROJECT": {
    "Root.GetName": {
     "zh": "帝国",
-    "en": "empire",
-    "note": {
-     "zh": "游戏里这里会出现你的帝国名称。",
-     "en": "In the game, your empire's name appears here."
-    }
+    "en": "our empire"
+   }
+  },
+  "utopia.2501": {
+   "Root.GetSpeciesNamePlural": {
+    "zh": "义体人",
+    "en": "Cyborgs"
    }
   },
   "utopia.2505": {
+   "From.Capital.GetName": {
+    "zh": "那个帝国的首都",
+    "en": "the other empire's capital"
+   },
    "From.GetSpeciesNamePlural": {
-    "zh": "该物种",
-    "en": "new species",
-    "note": {
-     "zh": "游戏里这里会出现他们新改的物种名称。",
-     "en": "In the game, the species' new name appears here."
-    }
+    "zh": "义体人",
+    "en": "Cyborgs"
    }
   }
  }

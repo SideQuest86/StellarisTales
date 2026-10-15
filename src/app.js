@@ -1,5 +1,5 @@
 import { installNameTooltips } from "./name-tooltip.js";
-import { fillNames } from "./name-fill.js";
+import { fillNames, cleanRefs } from "./name-fill.js";
 import { guideElement } from "./markdown.js";
 import { renderEffects, bindEffects } from "./effects-panel.js";
 import { storyMap } from "./story-map.js";
@@ -96,10 +96,9 @@ let nameContext = null; // the reading context of the doc being rendered (comput
 const fill = (s, depth = 0, nested = null) =>
   fillNames(s, { lang, chapterNames: chapter?.names, names, evaluate, ctx: nameContext || { profile, assumptions }, nested, depth });
 function prose(s, keepMarks = false) {
-  const text = fill(String(s || ""))
+  const text = cleanRefs(fill(String(s || "")), lang)
     .replace(/§./g, "")
     .replace(/£([^£]+)£/g, "")
-    .replace(/\$[^$]+\$/g, lang === "zh" ? "……" : "…")
     .replace(/<[^>]*>/g, "");
   return keepMarks ? text : text.replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, "");
 }

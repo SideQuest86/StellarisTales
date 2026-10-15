@@ -1,0 +1,74 @@
+{
+  "event-fircon-1440": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1465": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-1495": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2010": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2500": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2510": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2520": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2530": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2540": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2550": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-2600": {"docs": {}, "exceptions": ["fircon.2615: game text: plural verb ('have been inspired') after a singular empire name"], "reviewed": true},
+  "event-fircon-5000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-6000": {"docs": {
+    "fircon.6020": {"non_believers_planet.GetName": {"zh": "这颗星球", "en": "world", "note": {"zh": "游戏里这里会出现这个文明的母星名称。", "en": "In the game, the name of this civilisation's homeworld appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-fircon-7500": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-7505": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-7510": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8025": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8030": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8035": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8040": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8045": {"docs": {
+    "fircon.8045": {"space_slavers_species.GetName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住物种的名称。", "en": "In the game, the name of the local species appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-fircon-8050": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8055": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8060": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8500": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8515": {"docs": {
+    "fircon.8515": {"preftl_lone_drone_species.GetName": {"zh": "子个体", "en": "individual", "note": {"zh": "游戏里这里会出现这个格式塔物种的名称。", "en": "In the game, the name of this gestalt species appears here."}}},
+    "fircon.8520": {"preftl_lone_drone_species.GetName": {"zh": "子个体", "en": "individual", "note": {"zh": "游戏里这里会出现这个格式塔物种的名称。", "en": "In the game, the name of this gestalt species appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-fircon-8530": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-fircon-8565": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-1": {"docs": {
+    "first_contact.15": {"known_planet.GetPlanetBioInfo": {"zh": "那颗星球", "en": "the inhabited world", "note": {"zh": "游戏里这里会出现那颗有人居住的星球。", "en": "In the game, the inhabited planet appears here."}}},
+    "first_contact.102": {"This.ContactCountry.GetName": {"zh": "未知", "en": "unknown", "note": {"zh": "游戏里这里会出现这个未知文明的暂用代称。", "en": "In the game, the provisional designation of this unknown civilisation appears here."}}},
+    "first_contact.1020": {"This.ContactCountry.GetName": {"zh": "未知", "en": "unknown", "note": {"zh": "游戏里这里会出现这个未知文明的暂用代称。", "en": "In the game, the provisional designation of this unknown civilisation appears here."}}},
+    "first_contact.2000": {"needed_name.GetSXX": {"zh": "", "en": "", "omit": ["zh", "en"], "note": {"zh": "游戏里这里会出现动词词尾。", "en": "In the game, the verb ending appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-first-contact-100": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-103": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-104": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-1100": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-1105": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-1110": {"docs": {
+    "first_contact.1110": {"This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个未知文明的暂用代称。", "en": "In the game, the provisional designation of this unknown civilisation appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-first-contact-1120": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-200": {"docs": {
+    "first_contact.210": {"This.Leader.GetWasWere": {"zh": "", "en": "they were", "omit": ["zh"], "note": {"zh": "游戏里这里会出现动词形式。", "en": "In the game, the matching verb form appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-first-contact-250": {"docs": {
+    "first_contact.322": {"This.Owner.GetSpeciesName": {"zh": "该物种", "en": "imperial", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-first-contact-355": {"docs": {
+    "first_contact.355": {"This.ContactCountry.GetSpeciesNamePlural": {"zh": "", "en": "aliens", "omit": ["zh"], "note": {"zh": "游戏里这里会出现这个文明的物种名称。", "en": "In the game, this civilisation's species name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-first-contact-375": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-385": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-395": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-405": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-420": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-435": {"docs": {
+    "first_contact.430": {"This.Owner.GetSpeciesNamePlural": {"zh": "我们的同胞", "en": "our people", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}}
+  }, "exceptions": [], "reviewed": true},
+  "event-first-contact-480": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-5000": {"docs": {}, "exceptions": [], "reviewed": true},
+  "event-first-contact-5005": {"docs": {}, "exceptions": [], "reviewed": true}
+}

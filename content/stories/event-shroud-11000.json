@@ -284,16 +284,91 @@
   }
  },
  "placeholderDocs": {
+  "event_chains:the_reckoning_chain": {
+   "this.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
+   }
+  },
+  "event_chains:the_reckoning_observer_chain": {
+   "event_target:the_reckoning_observer_target.GetName": {
+    "zh": "该帝国",
+    "en": "that empire"
+   }
+  },
+  "shroud.12160": {
+   "this.GetName": {
+    "zh": "我们",
+    "en": "us"
+   }
+  },
+  "shroud.4140": {
+   "This.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
+   }
+  },
+  "shroud.4150": {
+   "This.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire"
+   }
+  },
   "shroud.4715": {
+   "GetBrainName": {
+    "zh": "心智",
+    "en": "mind"
+   },
    "root.GetSpeciesAdj": {
     "zh": "该族",
-    "en": "their"
+    "en": "man"
    }
   },
   "shroud.4935": {
    "Root.GetSpeciesAdj": {
     "zh": "该族",
-    "en": "their"
+    "en": "man"
+   },
+   "capital_scope.solar_system.GetName": {
+    "zh": "本",
+    "en": "our home system",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "in our ",
+      "text": "home system"
+     }
+    ]
+   }
+  },
+  "shroud.4950": {
+   "from.GetName": {
+    "zh": "这个",
+    "en": "this system"
+   }
+  },
+  "shroud.4955": {
+   "from.GetName": {
+    "zh": "这个星系",
+    "en": "this system"
+   }
+  },
+  "shroud.4960": {
+   "from.GetName": {
+    "zh": "这个星系",
+    "en": "this system"
+   }
+  },
+  "shroud.4965": {
+   "from.GetName": {
+    "zh": "这个星系",
+    "en": "this system"
+   }
+  },
+  "shroud.4971": {
+   "from.GetName": {
+    "zh": "这个星系",
+    "en": "this system"
    }
   }
  }

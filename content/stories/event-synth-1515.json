@@ -23,6 +23,17 @@
     "en": "In the game, the title of this ruler appears here."
    }
   },
+  "From.GetRulerTitle": {
+   "zh": "",
+   "en": "beloved",
+   "omit": [
+    "zh"
+   ],
+   "note": {
+    "zh": "游戏里这里会出现这位统治者的敬称。",
+    "en": "In the game, a form of address for this ruler appears here."
+   }
+  },
   "owner.species.GetNamePlural": {
    "zh": "人们",
    "en": "people",
@@ -34,17 +45,17 @@
  },
  "placeholderDocs": {
   "synth.1515": {
+   "From.GetRulerName": {
+    "zh": "统治者",
+    "en": "the ruler"
+   },
    "From.GetRulerTitle": {
     "zh": "统治者",
-    "en": "ruler",
-    "omit": [
-     "en",
-     "zh"
-    ],
-    "note": {
-     "zh": "游戏里这里会出现你的统治者的名称。",
-     "en": "In the game, your ruler's name appears here."
-    }
+    "en": "the ruler"
+   },
+   "root.GetSpeciesAdj": {
+    "zh": "族人",
+    "en": "our"
    }
   }
  }

@@ -1,0 +1,200 @@
+{
+"event-utopia-50": {"docs": {
+ "utopia.55": {"target_country.GetSpeciesNamePlural": {"zh":"原住民","en":"natives"}},
+ "utopia.56": {"target_country.GetSpeciesNamePlural": {"zh":"原住民","en":"natives"}},
+ "utopia.57": {"target_country.GetSpeciesAdj": {"zh":"原生物种","en":"native"}},
+ "utopia.103": {"target_country.GetSpeciesNamePlural": {"zh":"原住民","en":"natives"}},
+ "utopia.105": {"target_country.GetSpeciesNamePlural": {"zh":"原住民","en":"natives"}},
+ "utopia.107": {"fountain_of_youth_country.GetSpeciesNamePlural": {"zh":"种族","en":"people"}},
+ "utopia.108": {"target_country.GetSpeciesNamePlural": {"zh":"原住民","en":"natives"}},
+ "utopia.59": {"volunteer_leader.GetName": {"zh":"这位志愿者","en":"the volunteer"}},
+ "utopia.64": {"volunteer_leader.GetName": {"zh":"这位志愿者","en":"the volunteer"}},
+ "utopia.63": {"abducted_leader.GetSXX": {"zh":"","en":" they","omit":["zh"]}, "abducted_leader.GetSRe": {"zh":"","en":"they're","omit":["zh"]}}
+ },
+ "exceptions": ["utopia.63: game text: 'and has no recollection of ever leaving' uses a singular verb after the plural 'they' pronoun in the original"], "reviewed": true},
+"first-league": {"docs": {
+ "special_projects:FIRST_LEAGUE_ARCHEOLOGY_11": {"From.GetName": {"zh":"这颗星球","en":"this system"}},
+ "special_projects:FIRST_LEAGUE_ARCHEOLOGY_14": {"From.GetName": {"zh":"","en":"the asteroid","omit":["zh"]}},
+ "precursor.1071": {"From.From.GetName": {"zh":"","en":"the asteroid","omit":["zh"]}}
+ }, "exceptions": [], "reviewed": true},
+"galactic-nemesis": {"docs": {
+ "crisis.4140": {"Root.GetSpeciesNamePlural": {"zh":"这些人","en":"","omit":["en"]}},
+ "crisis.6015": {"From.GetSpeciesNamePlural": {"zh":"对方","en":"people of that empire"}},
+ "crisis.6182": {"crisis_country.GetName": {"zh":"另一个帝国","en":"the other empire","variants":[{"lang":"en","after":" now also possess","text":"the other empire's people"}]}}
+ }, "exceptions": [], "reviewed": true},
+"irassian": {"docs": {
+ "precursor.1521": {"From.From.GetPlanetMoon": {"zh":"上将整颗行星","en":"planet"}},
+ "special_projects:IRASSIAN_ARCHEOLOGY_10": {"From.GetName": {"zh":"","en":"the asteroid","omit":["zh"]}}
+ }, "exceptions": [], "reviewed": true},
+"origin_cosmic_dawn": {"docs": {}, "exceptions": [], "reviewed": true},
+"origin_fear_of_the_dark": {"docs": {
+ "origin.6150": {"fotd_seperatist_planet.GetName": {"zh":"分离派","en":"the separatists"}},
+ "origin.6099": {"Species.GetName": {"zh":"该物种","en":"member of our species"}},
+ "utopia.2703": {"Root.GetSpeciesName": {"zh":"该物种","en":"our people"}},
+ "origin.6011": {"fotd_Leader.GetHerHis": {"zh":"其","en":"their","variants":[{"lang":"en","before":"suggest we let ","text":"them"}]}}
+ }, "exceptions": ["origin.6006: game text: 'Add [leader] as an Commander' (a/an) and 'extended [title] the opportunity' keep the game's wording"], "reviewed": true},
+"origin_legendary_leader": {"docs": {
+ "paragon.5005": {"Root.Owner.GetSpeciesName": {"zh":"该物种","en":"","omit":["en"]}},
+ "paragon.5012": {"Root.Owner.GetSpeciesNamePlural": {"zh":"该物种","en":"members of our species"}},
+ "paragon.5010": {"Root.Owner.Ruler.GetTitle": {"zh":"我们的统治者","en":"our","variants":[{"lang":"en","before":"dedicated to their ","text":"ruler"}]}},
+ "paragon.5020": {"owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","before":"Despite ","text":"our ruler"},{"lang":"en","before":"Although ","text":"our ruler"},{"lang":"en","before":"strengthen ","text":"our ruler"}]}},
+ "paragon.5054": {"Owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","before":"Their trust in ","text":"our ruler"}]}, "owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","before":"Their trust in ","text":"our ruler"}]}},
+ "paragon.5055": {"Owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","before":"it appears that ","text":"our ruler"},{"lang":"en","after":"'s Luminary","text":"our ruler"}]}, "owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","before":"it appears that ","text":"our ruler"},{"lang":"en","after":"'s Luminary","text":"our ruler"}]}},
+ "paragon.5057": {"Owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","after":"'s refusal","text":"our ruler"}]}},
+ "paragon.5061": {"Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","after":" was struck hard","text":"our ruler"}]}, "owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","after":" was struck hard","text":"our ruler"}]}},
+ "paragon.5062": {"Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","after":" refused to accept","text":"our ruler"}]}},
+ "paragon.5008": {"Root.Owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","after":" has appeared","text":"our ruler"}]}},
+ "paragon.5011": {"Root.Owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","after":" stands in front","text":"our ruler"},{"lang":"en","before":"monument of ","text":"our ruler"}]}},
+ "paragon.5131": {"Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","before":"cheering for ","text":"our ruler"},{"lang":"en","before":"benevolent ","text":"our ruler"},{"lang":"en","before":"praised ","text":"our ruler"}]}},
+ "paragon.5202": {"Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","after":" neural net","text":"our ruler's"},{"lang":"en","after":" is dying","text":"our ruler"},{"lang":"en","after":" can remain","text":"our ruler"},{"lang":"en","after":" will die","text":"our ruler"}]}},
+ "paragon.5210": {"Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","before":"time for ","text":"our ruler"},{"lang":"en","after":"'s Paranoid","text":"our ruler"},{"lang":"en","after":" will be assassinated","text":"our ruler"}]}, "owner.Ruler.GetRegnalName": {"zh":"统治者","en":"ruler","variants":[{"lang":"en","before":"time for ","text":"our ruler"},{"lang":"en","after":"'s Paranoid","text":"our ruler"},{"lang":"en","after":" will be assassinated","text":"our ruler"}]}, "Ruler.GetTitle": {"zh":"我们的统治者","en":"our ruler","variants":[{"lang":"en","before":"listening to our ","text":"ruler"},{"lang":"zh","before":"听取我们","text":"统治者"}]}, "owner.Ruler.GetTitle": {"zh":"我们的统治者","en":"our ruler","variants":[{"lang":"en","before":"listening to our ","text":"ruler"},{"lang":"zh","before":"听取我们","text":"统治者"}]}}
+ }, "exceptions": ["paragon.5340: game text: a stray apostrophe after the title ('invigorated by [title]' speech')"], "reviewed": true},
+"origin_lost_colony": {"docs": {
+ "origin-intro:origin_lost_colony": {"Root.Capital.GetName": {"zh":"这颗星球","en":"this planet","variants":[{"lang":"en","before":"they could aboard ","text":"a ship"},{"lang":"en","before":"aboard ","after":" are old enough","text":"their ship"}]}}
+ }, "exceptions": [], "reviewed": true},
+"origin_mindwardens": {"docs": {
+ "shroud.6110": {"This.System.GetName": {"zh":"这个恒星","en":"this system"}},
+ "shroud.6115": {"This.System.GetName": {"zh":"这个恒星","en":"this system"}},
+ "shroud.6200": {"exiled_system_border.GetName": {"zh":"这个恒星","en":"this system"}},
+ "shroud.6580": {"exiled_center_system.GetName": {"zh":"这个恒星","en":"this system"}},
+ "shroud.6600": {"other_planet.GetName": {"zh":"","en":"planet","omit":["zh"]}},
+ "shroud.6601": {"other_planet.GetName": {"zh":"","en":"planet","omit":["zh"]}}
+ }, "exceptions": [], "reviewed": true},
+"origin_necrophage": {"docs": {
+ "origin-intro:origin_necrophage": {"GetSpeciesName": {"zh":"该物种","en":"our"}}
+ }, "exceptions": [], "reviewed": true},
+"origin_shoulders_of_giants": {"docs": {
+ "origin.1235": {"Leader.GetName": {"zh":"首席科学官","en":"the head scientist"}}
+ }, "exceptions": ["origin.1210: game text: 'Scientist ... have requested' uses a plural verb"], "reviewed": true},
+"origin_shroud_forged": {"docs": {
+ "origin-intro:origin_shroud_forged": {"Owner.GetAdjective": {"zh":"我们的","en":"our "}}
+ }, "exceptions": ["shroud_forged.220 and shroud_forged.225: game text: 'our homeworld of [name]' repeats the noun when the name is generic"], "reviewed": true},
+"origin_starlit_citadel": {"docs": {
+ "bio.2040": {"event_target:starlit_sealed_system.GetName": {"zh":"这个恒星","en":"this system"}}
+ }, "exceptions": [], "reviewed": true},
+"origin_toxic_knights": {"docs": {
+ "toxoids.7260": {"questing_knight_8.GetSXX": {"zh":"","en":"","omit":["zh","en"]}},
+ "toxoids.7011": {"questing_knight_2.GetName": {"zh":"","en":"","omit":["zh","en"]}},
+ "toxoids.7040": {"Root.GetSpeciesAdj": {"zh":"该族","en":"","omit":["en"]}, "questing_knight_A.Species.GetRemnantName": {"zh":"遗骸","en":"skeleton"}},
+ "toxoids.7130": {"questing_squire_10.GetName": {"zh":"扈从","en":"the squire","variants":[{"lang":"en","before":"And so ","text":""}]}},
+ "toxoids.7160": {"questing_knight_6.GetHisHer": {"zh":"其","en":"their","variants":[{"lang":"en","before":"affixed to their armor, ","text":"they"}]}}
+ }, "exceptions": [
+ "toxoids.7300: game text: the two knights are both written as 'the knight' in the same sentences and the text does not say which is which",
+ "toxoids.7080, toxoids.7085 and toxoids.7090: game text: bare 'knight' / 'Knight' title tokens read as generic nouns",
+ "toxoids.7265: game text: archaic verb forms ('hast', 'seemeth', 'art', 'shalt') mixed with a modern pronoun"
+ ], "reviewed": true},
+"origin_treasure_hunters": {"docs": {
+ "grand_archive.8115": {"Leader.GetName": {"zh":"","en":"the scientist","omit":["zh"]}, "Leader.GetWasWere": {"zh":"","en":"was","omit":["zh"]}, "Leader.GetHasHave": {"zh":"","en":"has","omit":["zh"]}, "Leader.GetHeShe": {"zh":"此人","en":"they","variants":[{"lang":"en","before":"fabricated orders from Captain Hoo, ","text":"the scientist"}]}},
+ "grand_archive.8120": {"Leader.GetName": {"zh":"","en":"the scientist","omit":["zh"]}, "Leader.GetWasWere": {"zh":"","en":"was","omit":["zh"]}}
+ }, "exceptions": [], "reviewed": true},
+"origin_unplugged": {"docs": {
+ "unplugged.2000": {"capital_scope.star.GetName": {"zh":"母星系的核心","en":"the heart of our home system"}},
+ "unplugged.2022": {"from.planet.GetName": {"zh":"这颗星球","en":"this planet","variants":[{"lang":"en","before":"Old ","text":"world"}]}},
+ "unplugged.2305": {"fromfrom.GetName": {"zh":"家园","en":"home"}}
+ }, "exceptions": [], "reviewed": true},
+"origin_wilderness": {"docs": {
+ "origin-intro:origin_wilderness": {"root.GetHomeWorldName": {"zh":"我们的母星","en":"our homeworld","variants":[{"lang":"zh","before":"始终是那颗名为","text":"家园"}]}}
+ }, "exceptions": [], "reviewed": true},
+"paragon-renowned-xondar": {"docs": {
+ "special_projects:XONDAR_VALUABLE_ALLOYS": {"event_target:renowned_materialist1.GetName": {"zh":"","en":"the admiral","omit":["zh"]}}
+ }, "exceptions": ["paragon.40920: game text: 'within the our borders'"], "reviewed": true},
+"pre-ftl-ages": {"docs": {
+ "preftl.1115": {"event_target:current_uprising.Capital.GetStarName": {"zh":"这个星系","en":"the central system","variants":[{"lang":"en","after":" System is now","text":"the central"}]}}
+ }, "exceptions": [], "reviewed": true},
+"precursor-assistance": {"docs": {
+ "precursor.301": {"Root.Capital.GetName": {"zh":"我们的首都","en":"our capital","variants":[{"lang":"zh","after":"帝国最近发现","text":"我们"}]}, "Root.GetSpeciesAdj": {"zh":"","en":"","omit":["zh","en"]}},
+ "precursor.313": {"artifact_seller.GetName": {"zh":"那个帝国","en":"the other empire","variants":[{"lang":"zh","before":"当然十分乐意将","text":"这件文物"}]}}
+ }, "exceptions": [], "reviewed": true},
+"project-the-composer-of-strands-fc-project": {"docs": {
+ "shroud.4020": {"GetPatronInsert": {"zh":"一道疯狂的脉冲","en":"a frenzied pulse","variants":[{"lang":"zh","before":"它","after":"在上方无底深渊中","text":"是一道疯狂的脉冲，盘踞"},{"lang":"zh","before":"深深地","after":"在虚境中","text":"潜藏"}]}}
+ }, "exceptions": [], "reviewed": true},
+"project-the-cradle-of-souls-fc-project": {"docs": {
+ "shroud.4010": {"GetPatronInsert": {"zh":"一道疯狂的脉冲","en":"a frenzied pulse","variants":[{"lang":"zh","before":"它","after":"在上方无底深渊中","text":"是一道疯狂的脉冲，盘踞"},{"lang":"zh","before":"深深地","after":"在虚境中","text":"潜藏"}]}}
+ }, "exceptions": ["shroud.4015: game text: an unbalanced opening quotation mark starts the sentence"], "reviewed": true},
+"project-the-eater-of-world-fc-project": {"docs": {
+ "shroud.4000": {"GetPatronInsert": {"zh":"一道疯狂的脉冲","en":"a frenzied pulse","variants":[{"lang":"zh","before":"它","after":"在上方无底深渊中","text":"是一道疯狂的脉冲，盘踞"},{"lang":"zh","before":"深深地","after":"在虚境中","text":"潜藏"}]}}
+ }, "exceptions": ["shroud.4005: game text: unbalanced opening quotation marks inside the zh and en sentences"], "reviewed": true},
+"project-the-instrument-of-desire-fc-project": {"docs": {
+ "shroud.4030": {"GetPatronInsert": {"zh":"一道疯狂的脉冲","en":"a frenzied pulse","variants":[{"lang":"zh","before":"它","after":"在上方无底深渊中","text":"是一道疯狂的脉冲，盘踞"},{"lang":"zh","before":"深深地","after":"在虚境中","text":"潜藏"}]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-advisor": {"docs": {
+ "astral_rift.840": {"Leader.GetHasHave": {"zh":"","en":"has","omit":["zh"]}, "Leader.GetWasWere": {"zh":"","en":"was","omit":["zh"]}, "Leader.GetHeShe": {"zh":"此人","en":"the leader"}, "Root.Leader.GetHeShe": {"zh":"此人","en":"the leader"}}
+ }, "exceptions": [], "reviewed": true},
+"rift-corridors": {"docs": {
+ "astral_rift.125": {"Leader.GetWasWere": {"zh":"","en":"was","omit":["zh"]}},
+ "astral_rift.140": {"Root.GetHasHave": {"zh":"","en":"has","omit":["zh"]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-crystal": {"docs": {
+ "astral_rift.1000": {"Explorer.GetScientistPlural": {"zh":"科学家","en":"scientists","variants":[{"lang":"en","after":"'s","text":"scientist"}]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-desert-ruins": {"docs": {
+ "astral_rift.1525": {"Leader.GetSXX": {"zh":"","en":"","omit":["zh","en"]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-dimensional-dump": {"docs": {
+ "astral_rift.2225": {"astral_rift_dimensional_dump_leader_loc.GetEsXX": {"zh":"","en":"es","omit":["zh"]}, "astral_rift_dimensional_dump_leader_loc.GetSXX": {"zh":"","en":"s","omit":["zh"]}, "astral_rift_dimensional_dump_leader_loc.GetName": {"zh":"这位领袖","en":"the leader","variants":[{"lang":"en","before":"The alien's name is ","text":"not recorded"}]}, "event_target:astral_rift_dimensional_dump_leader_loc.GetName": {"zh":"这位领袖","en":"the leader","variants":[{"lang":"en","before":"The alien's name is ","text":"not recorded"}]}, "astral_rift_dimensional_dump_leader_loc.GetHeShe": {"zh":"此人","en":"they","variants":[{"lang":"en","before":"In doing so, ","text":"the leader"}]}},
+ "astral_rift.2230": {"From.GetHasHave": {"zh":"","en":"has","omit":["zh"]}, "From.GetHeSheCap": {"zh":"此人","en":"They","variants":[{"lang":"en","after":" will make an excellent","text":"The pilot"}]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-entangled-dark-matter": {"docs": {
+ "astral_rift.2431": {"Leader.GetName": {"zh":"这位领袖","en":"the leader","variants":[{"lang":"en","before":"a gesture of their ","text":"own"},{"lang":"zh","before":"做了一个","after":"的手势","text":"他惯用"}]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-garden": {"docs": {
+ "astral_rift.1465": {"From.GetSXX": {"zh":"","en":"","omit":["zh","en"]}, "From.GetHisHer": {"zh":"其","en":"their","variants":[{"lang":"en","before":"no longer resemble","text":" their"}]}}
+ }, "exceptions": ["astral_rift.1465: game text: Chinese uses 此人 twice in one sentence"], "reviewed": true},
+"rift-psionic-stranger": {"docs": {}, "exceptions": ["astral_rift.3280 and astral_rift.3285: game text: Chinese '从的裂隙' is missing a word"], "reviewed": true},
+"rift-rockworms": {"docs": {
+ "astral_rift.1890": {"From.GetHasHave": {"zh":"","en":"has","omit":["zh"],"variants":[{"lang":"en","before":"capabilities ","text":"have"}]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-siege-on-paradise": {"docs": {
+ "astral_rift.3099": {"Leader.GetHasHave": {"zh":"","en":"has","omit":["zh"]}, "Leader.GetHeShe": {"zh":"此人","en":"they","variants":[{"lang":"en","before":"Kept as a slave by the Grunur, ","text":"the leader"}]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-tower": {"docs": {
+ "astral_rift.691": {"From.GetSXX": {"zh":"","en":"","omit":["zh","en"]}},
+ "astral_rift.696": {"From.GetSXX": {"zh":"","en":"","omit":["zh","en"]}}
+ }, "exceptions": [], "reviewed": true},
+"rift-windswept-planet": {"docs": {
+ "astral_rift.2790": {"this.GetHasHave": {"zh":"已","en":"has"}}
+ }, "exceptions": [], "reviewed": true},
+"shroud-tunnels": {"docs": {
+ "enclave.6025": {"Root.GetName": {"zh":"这支舰队","en":"the fleet","variants":[{"lang":"en","before":"science vessel ","text":"in question"},{"lang":"en","after":"'s operations","text":"the vessel"},{"lang":"zh","before":"科研船","text":""},{"lang":"zh","before":"改善","after":"的运行","text":"这艘船"}]}}
+ }, "exceptions": [], "reviewed": true},
+"shroudwalker-divination": {"docs": {
+ "enclave.5195": {"hero_redivivus.GetName": {"zh":"这位英雄","en":"the hero","variants":[{"lang":"en","before":"legendary hero ","text":""},{"lang":"zh","before":"传奇英雄","text":""}]}},
+ "enclave.5540": {"shattered_frontier_planet.GetName": {"zh":"这颗星球","en":"this planet","variants":[{"lang":"en","before":"but not this ","text":"planet"},{"lang":"zh","before":"不是这个","text":""}]}}
+ }, "exceptions": ["enclave.5200: game text: 'the hero's' brainwave' has a doubled possessive in the original"], "reviewed": true},
+"shroudwalker-enclave": {"docs": {
+ "special_projects:DELVING_RITUAL": {"shroudwalker_enclave_country.GetName": {"zh":"我们这个城邦","en":"our enclave","variants":[{"lang":"en","after":" have made","text":"the members of our enclave"}]}}
+ }, "exceptions": [], "reviewed": true},
+"site-ancient-battle-site": {"docs": {}, "exceptions": ["ancrel.109: game text: 'that that'"], "reviewed": true},
+"site-site-deserted-mining-facility": {"docs": {}, "exceptions": ["extreme_frontiers.1330: game text: en sentence is cut off ('calling for S.I.D.N.I.')"], "reviewed": true},
+"site-site-fumongus-dig": {"docs": {
+ "ancrel.8305": {"Root.GetLeaderName": {"zh":"这位领袖","en":"the leader","variants":[{"lang":"en","after":" Their desiccated","text":"the leader."}]}}
+ }, "exceptions": [], "reviewed": true},
+"site-site-ice-trauma": {"docs": {
+ "arcsite.9000": {"leader.GetSXX": {"zh":"","en":"","omit":["zh","en"]}, "leader.GetName": {"zh":"这位领袖","en":"the leader","variants":[{"lang":"en","before":"Chief archaeologist ","text":""},{"lang":"zh","before":"首席考古学家","text":""}]}},
+ "arcsite.9001": {"absconded_archaeologist.GetName": {"zh":"那位考古学家","en":"the other archaeologist","variants":[{"lang":"en","before":"Chief archaeologist ","text":""},{"lang":"zh","before":"首席考古学家","text":""}]}},
+ "arcsite.9002": {"leader.GetName": {"zh":"这位领袖","en":"the leader","variants":[{"lang":"zh","before":"考古学家","text":""}]}}
+ }, "exceptions": ["arcsite.9002: game text: title 'archaeologist' before the name"], "reviewed": true},
+"site-site-ruined-reactors": {"docs": {}, "exceptions": ["extreme_frontiers.1205: game text: 'Several of the reactors ... shows'"], "reviewed": true},
+"site-site-ruins-of-shallash": {"docs": {}, "exceptions": ["federations2.6: game text: en 'pon their first encounter' is missing its first letter"], "reviewed": true},
+"site-site-tiyanki-graveyard": {"docs": {}, "exceptions": ["ancrel.14200: game text: the en sentence is cut off at its start (first words missing); zh has an ellipsis"], "reviewed": true},
+"site-site-toxic-matrix": {"docs": {
+ "extreme_frontiers.1120": {"Root.Owner.GetName": {"zh":"我们的帝国","en":"our empire","variants":[{"lang":"zh","after":"我们会给它们","text":"对此"}]}}
+ }, "exceptions": [], "reviewed": true},
+"situation-situation-energy-deficit": {"docs": {}, "exceptions": ["situation.2025: game text: stray comma after the empire name ('..., is currently suffering')"], "reviewed": true},
+"situation-situation-initiate-storm": {"docs": {}, "exceptions": ["situations:situation_initiate_storm: game text: 'seed a Electric Storm' article", "cstorms.2000: game text: garbled option lists ('Radiant Storm, Magnetic Stormor Electric Storm')", "cstorms.2015: game text: 'bloated of state' typo"], "reviewed": true},
+"situation-situation-nanotech-consume-planet": {"docs": {
+ "fallen_empires_awakening.2": {"From.GetSpeciesName": {"zh":"该物种","en":"the species","variants":[{"lang":"en","before":"In ","after":" space, fleets","text":"their"}]}}
+ }, "exceptions": [], "reviewed": true},
+"situation-voidworm-country-situation": {"docs": {
+ "grand_archive.2420": {"infected_leader.GetHasHave": {"zh":"","en":"has","omit":["zh"]}}
+ }, "exceptions": [], "reviewed": true},
+"the-oracle": {"docs": {}, "exceptions": ["ancrel.4031: game text: zh '有着有一座' repeats the verb"], "reviewed": true},
+"the-shroud": {"docs": {
+ "utopia.3150": {"fallen_empire.GetSpeciesName": {"zh":"该物种","en":"an alien","variants":[{"lang":"en","before":"settles on an ","text":"alien"}]}},
+ "utopia.3350": {"Root.GetSpeciesAdj": {"zh":"该族","en":"our","variants":[{"lang":"en","before":"among some ","text":""}]}}
+ }, "exceptions": ["utopia.3192/3333/3334/3340: game text: raw '**Error - for GCs**' placeholder left in the original data", "utopia.3304/3305/3306/3307/2658: game text: leading space inside the original term '« telepaths»'"], "reviewed": true},
+"vultaum": {"docs": {}, "exceptions": ["precursor.102: game text: second en sentence starts in lowercase"], "reviewed": true},
+"war-in-heaven": {"docs": {
+ "war_in_heaven.4": {"From.GetName": {"zh":"宿敌帝国","en":"the rival empire","variants":[{"lang":"en","after":" have our allegiance","text":"the rival empire's people"}]}, "from.GetName": {"zh":"宿敌帝国","en":"the rival empire","variants":[{"lang":"en","after":" have our allegiance","text":"the rival empire's people"}]}}
+ }, "exceptions": [], "reviewed": true}
+}

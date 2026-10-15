@@ -1,0 +1,310 @@
+{
+ "anomaly-star-resonance-cat": {
+  "reviewed": true
+ },
+ "anomaly-station-asteroid-category": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.40": {
+    "From.GetName": {
+     "zh": "这颗小行星",
+     "en": "the asteroid",
+     "note": {
+      "zh": "游戏里这里会出现这颗小行星的名称。",
+      "en": "In the game, the asteroid's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-stolen-ship-cat": {
+  "reviewed": true
+ },
+ "anomaly-storms-anom-polychromatic": {
+  "reviewed": true
+ },
+ "anomaly-storms-anom-travellers": {
+  "reviewed": true
+ },
+ "anomaly-storms-anom-triplets": {
+  "reviewed": true
+ },
+ "anomaly-storms-cosmic-sludge": {
+  "reviewed": true
+ },
+ "anomaly-storms-displaced-tiyanki": {
+  "reviewed": true
+ },
+ "anomaly-storms-eviscerated-fauna": {
+  "reviewed": true
+ },
+ "anomaly-storms-gasgiant-category": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.6860": {
+    "FromFrom.GetName": {
+     "zh": "这艘飞船",
+     "en": "the ship",
+     "note": {
+      "zh": "游戏里这里会出现这艘被困飞船的名称。",
+      "en": "In the game, the trapped ship's name appears here."
+     }
+    },
+    "FromFromFrom.GetName": {
+     "zh": "这场风暴",
+     "en": "",
+     "omit": [
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现这场风暴的名称。",
+      "en": "In the game, the storm's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "anomaly.6855: game text: zh has a stray sentence-initial 们 and the spaced 更—加—有趣"
+  ]
+ },
+ "anomaly-storms-shattered-sattelite": {
+  "reviewed": true
+ },
+ "anomaly-strange-signal-category": {
+  "reviewed": true,
+  "exceptions": [
+   "federations2.1: game text: zh '火灾600年前' reads oddly",
+   "federations2.1: game text: 'on [planet]' has no article in the original"
+  ]
+ },
+ "anomaly-subglacial-vibrations-cat": {
+  "reviewed": true
+ },
+ "anomaly-sun-rays-cat": {
+  "reviewed": true
+ },
+ "anomaly-sun-teapot-cat": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.4060": {
+    "From.GetName": {
+     "zh": "本星系",
+     "en": "this system",
+     "note": {
+      "zh": "游戏里这里会出现这颗恒星的名称。",
+      "en": "In the game, the star's name appears here."
+     }
+    }
+   },
+   "anomaly.4062": {
+    "Root.Owner.GetSpeciesNamePlural": {
+     "zh": "",
+     "en": "",
+     "omit": [
+      "zh",
+      "en"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现你的物种的复数名称。",
+      "en": "In the game, your species' plural name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-supermassive-giant-cat": {
+  "reviewed": true
+ },
+ "anomaly-survival-pod-warm-cat": {
+  "reviewed": true,
+  "exceptions": [
+   "extreme_frontiers.352: game text: 'the sounds from her mouth rasps' has a verb-agreement slip in the original"
+  ]
+ },
+ "anomaly-tectonic-icebreaker-category": {
+  "reviewed": true
+ },
+ "anomaly-temporal-prism-cat": {
+  "reviewed": true
+ },
+ "anomaly-terminal-gasgiant-category": {
+  "reviewed": true
+ },
+ "anomaly-terrestial-telescope-category": {
+  "reviewed": true
+ },
+ "anomaly-the-imitator-category": {
+  "reviewed": true,
+  "docs": {
+   "cstorms.1550": {
+    "event_target:the_imitator.GetHeShe": {
+     "zh": "",
+     "en": "they",
+     "omit": [
+      "zh"
+     ],
+     "note": {
+      "zh": "游戏里这里会出现“他”或“她”。",
+      "en": "In the game, 'he' or 'she' appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "cstorms.1550: game text: 'and is seeking rescue' disagrees with the plural pronoun the original would not use"
+  ]
+ },
+ "anomaly-the-judge-cat": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.9002": {
+    "Root.GetLeaderName": {
+     "zh": "老友",
+     "en": "poor soul",
+     "note": {
+      "zh": "游戏里这里会出现这位科学专员的姓名。",
+      "en": "In the game, the science officer's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-the-lonely-bot-category": {
+  "reviewed": true
+ },
+ "anomaly-time-loop-world": {
+  "reviewed": true
+ },
+ "anomaly-tomb-world-cat": {
+  "reviewed": true
+ },
+ "anomaly-tox-mat-cat": {
+  "reviewed": true
+ },
+ "anomaly-tox-planet-cat": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.4105": {
+    "From.GetName": {
+     "zh": "这颗",
+     "en": "planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-tox-purple-rain-cat": {
+  "reviewed": true
+ },
+ "anomaly-tox-structures-cat": {
+  "reviewed": true
+ },
+ "anomaly-transmitter-cat": {
+  "reviewed": true
+ },
+ "anomaly-trop-biology-cat": {
+  "reviewed": true
+ },
+ "anomaly-trop-conditions-cat": {
+  "reviewed": true
+ },
+ "anomaly-trop-pets-cat": {
+  "reviewed": true
+ },
+ "anomaly-trop-woods-cat": {
+  "reviewed": true
+ },
+ "anomaly-tutorial-cat": {
+  "reviewed": true
+ },
+ "anomaly-uhb-ancient-ruins-1-cat": {
+  "reviewed": true
+ },
+ "anomaly-uhb-buoy-cat": {
+  "reviewed": true,
+  "docs": {
+   "anomalies:UHB_BUOY_CAT": {
+    "Root.GetName": {
+     "zh": "这颗星球",
+     "en": "this planet",
+     "note": {
+      "zh": "游戏里这里会出现这颗星球的名称。",
+      "en": "In the game, the planet's name appears here."
+     }
+    }
+   }
+  },
+  "exceptions": []
+ },
+ "anomaly-unique-system-battle-cat": {
+  "reviewed": true
+ },
+ "anomaly-vapor-plumes-cat": {
+  "reviewed": true
+ },
+ "anomaly-vending-machine-cat": {
+  "reviewed": true
+ },
+ "anomaly-wat-planet-cat": {
+  "reviewed": true
+ },
+ "anomaly-wenkwort-cat": {
+  "reviewed": true
+ },
+ "anomaly-writing-uninhabitable-category": {
+  "reviewed": true
+ },
+ "dessanu-consonance": {
+  "reviewed": true
+ },
+ "event-anomaly-1193": {
+  "reviewed": true
+ },
+ "event-anomaly-142": {
+  "reviewed": true,
+  "exceptions": [
+   "special_projects:OLD_GODS_BENEFACTRESS_PROJECT: game text: zh '由的象形文字' is missing a word in the original"
+  ]
+ },
+ "event-anomaly-2574": {
+  "reviewed": true
+ },
+ "event-anomaly-3095": {
+  "reviewed": true,
+  "docs": {
+   "anomaly.3099": {
+    "From.From.GetName": {
+     "zh": "另一个帝国",
+     "en": "another empire",
+     "note": {
+      "zh": "游戏里这里会出现另一方势力的名称。",
+      "en": "In the game, the name of another power appears here."
+     }
+    }
+   },
+   "anomaly.3104": {
+    "Root.GetRulerTitle": {
+     "zh": "统治者",
+     "en": "our ruler",
+     "note": {
+      "zh": "游戏里这里会出现你的统治者的头衔。",
+      "en": "In the game, your ruler's title appears here."
+     }
+    }
+   }
+  },
+  "exceptions": [
+   "anomaly.3099: game text: en 'to be a rendezvous' is garbled in the original"
+  ]
+ },
+ "event-anomaly-3115": {
+  "reviewed": true
+ }
+}

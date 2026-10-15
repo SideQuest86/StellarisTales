@@ -1,0 +1,1048 @@
+{
+    "anomaly-arid-planet-cat":  {
+                                    "docs":  {
+
+                                             },
+                                    "exceptions":  [
+                                                       "anomaly.4170: game text: \"Scans ... has unveiled\" (verb agreement)"
+                                                   ],
+                                    "reviewed":  true
+                                },
+    "anomaly-ast-debris-field-1-cat":  {
+                                           "docs":  {
+                                                        "anomaly.3040":  {
+                                                                             "Root.Owner.GetRulerName":  {
+                                                                                                             "zh":  "此人",
+                                                                                                             "en":  "the ruler",
+                                                                                                             "note":  {
+                                                                                                                          "zh":  "游戏里这里会出现我们统治者的名字。",
+                                                                                                                          "en":  "In the game, your ruler\u0027s name appears here."
+                                                                                                                      }
+                                                                                                         }
+                                                                         }
+                                                    },
+                                           "exceptions":  [
+                                                              "anomaly.100: game text: \"Everyone aboard ... recognize\" (verb agreement)"
+                                                          ],
+                                           "reviewed":  true
+                                       },
+    "anomaly-con-biology-cat":  {
+                                    "docs":  {
+                                                 "anomaly.4100":  {
+                                                                      "Root.GetLeaderName":  {
+                                                                                                 "zh":  "此人",
+                                                                                                 "en":  "the leader",
+                                                                                                 "note":  {
+                                                                                                              "zh":  "游戏里这里会出现这位领袖的名字。",
+                                                                                                              "en":  "In the game, the leader\u0027s name appears here."
+                                                                                                          },
+                                                                                                 "variants":  [
+                                                                                                                  {
+                                                                                                                      "lang":  "en",
+                                                                                                                      "after":  " have been able",
+                                                                                                                      "text":  "they"
+                                                                                                                  }
+                                                                                                              ]
+                                                                                             }
+                                                                  }
+                                             },
+                                    "exceptions":  [
+                                                       "special_projects:ALIEN_MONSTER_ON_SHIP: game text: stray opening marker at the start, no substitution"
+                                                   ],
+                                    "reviewed":  true
+                                },
+    "anomaly-crimson-crawlers-category":  {
+                                              "docs":  {
+
+                                                       },
+                                              "exceptions":  [
+                                                                 "cstorms.1255: game text: \"\u0027s shone\" has no noun before the possessive"
+                                                             ],
+                                              "reviewed":  true
+                                          },
+    "anomaly-disco-molluscoid-miners-cat":  {
+                                                "docs":  {
+                                                             "distar.3030":  {
+                                                                                 "Root.GetLeaderName":  {
+                                                                                                            "zh":  "此人",
+                                                                                                            "en":  "the leader",
+                                                                                                            "note":  {
+                                                                                                                         "zh":  "游戏里这里会出现这位领袖的名字。",
+                                                                                                                         "en":  "In the game, the leader\u0027s name appears here."
+                                                                                                                     }
+                                                                                                        }
+                                                                             },
+                                                             "distar.3032":  {
+                                                                                 "molluscoid_miners_species.GetName":  {
+                                                                                                                           "zh":  "软体生物",
+                                                                                                                           "en":  "molluscoids",
+                                                                                                                           "variants":  [
+                                                                                                                                            {
+                                                                                                                                                "lang":  "en",
+                                                                                                                                                "before":  "600 ",
+                                                                                                                                                "after":  " Pops",
+                                                                                                                                                "text":  "molluscoid"
+                                                                                                                                            }
+                                                                                                                                        ]
+                                                                                                                       }
+                                                                             }
+                                                         },
+                                                "exceptions":  [
+
+                                                               ],
+                                                "reviewed":  true
+                                            },
+    "anomaly-disco-trojan-asteroid-cat":  {
+                                              "docs":  {
+                                                           "distar.3001":  {
+                                                                               "Root.GetLeaderName":  {
+                                                                                                          "zh":  "此人",
+                                                                                                          "en":  "the leader",
+                                                                                                          "note":  {
+                                                                                                                       "zh":  "游戏里这里会出现这位领袖的名字。",
+                                                                                                                       "en":  "In the game, the leader\u0027s name appears here."
+                                                                                                                   }
+                                                                                                      }
+                                                                           }
+                                                       },
+                                              "exceptions":  [
+                                                                 "distar.3003: game text: \"News ... have reached\" (verb agreement)"
+                                                             ],
+                                              "reviewed":  true
+                                          },
+    "anomaly-distar-living-cat":  {
+                                      "docs":  {
+                                                   "distar.191":  {
+                                                                      "living_planet_scientist.GetIsAre":  {
+                                                                                                               "zh":  "",
+                                                                                                               "en":  "are",
+                                                                                                               "omit":  [
+                                                                                                                            "zh"
+                                                                                                                        ],
+                                                                                                               "note":  {
+                                                                                                                            "zh":  "游戏里这里会出现动词形式。",
+                                                                                                                            "en":  "In the game, the matching verb form appears here."
+                                                                                                                        }
+                                                                                                           }
+                                                                  },
+                                                   "distar.192":  {
+                                                                      "living_planet_scientist.GetIsAre":  {
+                                                                                                               "zh":  "",
+                                                                                                               "en":  "are",
+                                                                                                               "omit":  [
+                                                                                                                            "zh"
+                                                                                                                        ],
+                                                                                                               "note":  {
+                                                                                                                            "zh":  "游戏里这里会出现动词形式。",
+                                                                                                                            "en":  "In the game, the matching verb form appears here."
+                                                                                                                        }
+                                                                                                           },
+                                                                      "living_planet_scientist.GetHasHave":  {
+                                                                                                                 "zh":  "",
+                                                                                                                 "en":  "have",
+                                                                                                                 "omit":  [
+                                                                                                                              "zh"
+                                                                                                                          ],
+                                                                                                                 "note":  {
+                                                                                                                              "zh":  "游戏里这里会出现动词形式。",
+                                                                                                                              "en":  "In the game, the matching verb form appears here."
+                                                                                                                          }
+                                                                                                             },
+                                                                      "living_planet_scientist.GetSXX":  {
+                                                                                                             "zh":  "",
+                                                                                                             "en":  "",
+                                                                                                             "omit":  [
+                                                                                                                          "zh",
+                                                                                                                          "en"
+                                                                                                                      ],
+                                                                                                             "note":  {
+                                                                                                                          "zh":  "游戏里这里会出现动词词尾。",
+                                                                                                                          "en":  "In the game, the verb ending appears here."
+                                                                                                                      }
+                                                                                                         }
+                                                                  }
+                                               },
+                                      "exceptions":  [
+
+                                                     ],
+                                      "reviewed":  true
+                                  },
+    "anomaly-distar-lost-cat":  {
+                                    "docs":  {
+                                                 "distar.57":  {
+                                                                   "amoeba_finding_scientist.GetHisHer":  {
+                                                                                                              "zh":  "",
+                                                                                                              "en":  "their",
+                                                                                                              "omit":  [
+                                                                                                                           "zh"
+                                                                                                                       ]
+                                                                                                          }
+                                                               },
+                                                 "distar.304":  {
+                                                                    "lost_amoeba_centenarian_fleet.GetName":  {
+                                                                                                                  "zh":  "她",
+                                                                                                                  "en":  "she",
+                                                                                                                  "variants":  [
+                                                                                                                                   {
+                                                                                                                                       "lang":  "en",
+                                                                                                                                       "after":  "\u0027s presence",
+                                                                                                                                       "text":  "the Amoeba"
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                              }
+                                                                }
+                                             },
+                                    "exceptions":  [
+
+                                                   ],
+                                    "reviewed":  true
+                                },
+    "anomaly-distar-nanosand-cat":  {
+                                        "docs":  {
+
+                                                 },
+                                        "exceptions":  [
+                                                           "distar.280: game text: \"terraform the surface «planet»\" lacks \"of\""
+                                                       ],
+                                        "reviewed":  true
+                                    },
+    "anomaly-distar-thirsty-cat":  {
+                                       "docs":  {
+
+                                                },
+                                       "exceptions":  [
+                                                          "anomalies:DISTAR_THIRSTY_CAT: game text: \"planet\u0027s\u0027 stone\" has a doubled possessive"
+                                                      ],
+                                       "reviewed":  true
+                                   },
+    "anomaly-distar-warform-cat":  {
+                                       "docs":  {
+
+                                                },
+                                       "exceptions":  [
+                                                          "distar.162: game text: \"preformed\" (typo for performed, no substitution involved)"
+                                                      ],
+                                       "reviewed":  true
+                                   },
+    "anomaly-hole-radiation-cat":  {
+                                       "docs":  {
+                                                    "anomaly.3075":  {
+                                                                         "Solar_System.GetName":  {
+                                                                                                      "zh":  "这个",
+                                                                                                      "en":  "star",
+                                                                                                      "note":  {
+                                                                                                                   "zh":  "游戏里这里会出现这个星系的名字。",
+                                                                                                                   "en":  "In the game, the system\u0027s name appears here."
+                                                                                                               }
+                                                                                                  }
+                                                                     }
+                                                },
+                                       "exceptions":  [
+
+                                                      ],
+                                       "reviewed":  true
+                                   },
+    "anomaly-intemporal-orb-cat":  {
+                                       "docs":  {
+                                                    "anomaly.7115":  {
+                                                                         "intemporal_leader.GetSXX":  {
+                                                                                                          "zh":  "",
+                                                                                                          "en":  "s",
+                                                                                                          "omit":  [
+                                                                                                                       "zh"
+                                                                                                                   ],
+                                                                                                          "note":  {
+                                                                                                                       "zh":  "游戏里这里会出现动词词尾。",
+                                                                                                                       "en":  "In the game, the verb ending appears here."
+                                                                                                                   }
+                                                                                                      },
+                                                                         "leader.GetSXX":  {
+                                                                                               "zh":  "",
+                                                                                               "en":  "",
+                                                                                               "omit":  [
+                                                                                                            "zh",
+                                                                                                            "en"
+                                                                                                        ],
+                                                                                               "note":  {
+                                                                                                            "zh":  "游戏里这里会出现动词词尾。",
+                                                                                                            "en":  "In the game, the verb ending appears here."
+                                                                                                        }
+                                                                                           },
+                                                                         "intemporal_leader.GetName":  {
+                                                                                                           "zh":  "科学家",
+                                                                                                           "en":  "the scientist",
+                                                                                                           "variants":  [
+                                                                                                                            {
+                                                                                                                                "lang":  "en",
+                                                                                                                                "before":  "junior ",
+                                                                                                                                "text":  "scientist"
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                       }
+                                                                     },
+                                                    "anomaly.7120":  {
+                                                                         "intemporal_explorer.GetWasWere":  {
+                                                                                                                "zh":  "",
+                                                                                                                "en":  "was",
+                                                                                                                "omit":  [
+                                                                                                                             "zh"
+                                                                                                                         ],
+                                                                                                                "note":  {
+                                                                                                                             "zh":  "游戏里这里会出现动词形式。",
+                                                                                                                             "en":  "In the game, the matching verb form appears here."
+                                                                                                                         }
+                                                                                                            }
+                                                                     }
+                                                },
+                                       "exceptions":  [
+                                                          "anomaly.7115: game text: duplicated character in the Chinese (被被吸入)",
+                                                          "anomaly.7115: game text: \"a hour\" (wrong article in the original)"
+                                                      ],
+                                       "reviewed":  true
+                                   },
+    "anomaly-mountain-uninhabitable-category":  {
+                                                    "docs":  {
+                                                                 "anomaly.2520":  {
+                                                                                      "Root.GetLeaderName":  {
+                                                                                                                 "zh":  "这位科学官",
+                                                                                                                 "en":  "the officer",
+                                                                                                                 "note":  {
+                                                                                                                              "zh":  "游戏里这里会出现这位领袖的名字。",
+                                                                                                                              "en":  "In the game, the leader\u0027s name appears here."
+                                                                                                                          }
+                                                                                                             }
+                                                                                  }
+                                                             },
+                                                    "exceptions":  [
+                                                                       "anomaly.6915: game text: broken placeholder \u0027**Error - for GCs**\u0027 and the en line ends mid-sentence (\u0027we find a\u0027)"
+                                                                   ],
+                                                    "reviewed":  true
+                                                },
+    "anomaly-mysterious-ringing-category":  {
+                                                "docs":  {
+
+                                                         },
+                                                "exceptions":  [
+                                                                   "infernals.3210: game text: an unmatched opening « begins a zh sentence"
+                                                               ],
+                                                "reviewed":  true
+                                            },
+    "anomaly-mysterious-rock-cat":  {
+                                        "docs":  {
+                                                     "anomaly.2005":  {
+                                                                          "From.GetName":  {
+                                                                                               "zh":  "这颗星球",
+                                                                                               "en":  "this planet",
+                                                                                               "variants":  [
+                                                                                                                {
+                                                                                                                    "lang":  "en",
+                                                                                                                    "before":  "crew of ",
+                                                                                                                    "text":  "our science ship"
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "lang":  "zh",
+                                                                                                                    "after":  "船员",
+                                                                                                                    "text":  "我们的科学船"
+                                                                                                                }
+                                                                                                            ]
+                                                                                           }
+                                                                      }
+                                                 },
+                                        "exceptions":  [
+
+                                                       ],
+                                        "reviewed":  true
+                                    },
+    "anomaly-nano-swarm-cat":  {
+                                   "docs":  {
+
+                                            },
+                                   "exceptions":  [
+
+                                                  ],
+                                   "reviewed":  true
+                               },
+    "anomaly-nuke-planet-cat":  {
+                                    "docs":  {
+
+                                             },
+                                    "exceptions":  [
+                                                       "anomaly_failure.4157: game text: the en line ends with a doubled period"
+                                                   ],
+                                    "reviewed":  true
+                                },
+    "anomaly-poisoned-atmosphere-cat":  {
+                                            "docs":  {
+
+                                                     },
+                                            "exceptions":  [
+                                                               "extreme_frontiers.140: game text: zh has a duplicated character (被被逐一灭绝)"
+                                                           ],
+                                            "reviewed":  true
+                                        },
+    "anomaly-rapid-desertification-cat":  {
+                                              "docs":  {
+
+                                                       },
+                                              "exceptions":  [
+                                                                 "anomaly.7146: game text: stray comma after the planet name in the en sentence",
+                                                                 "anomaly.7145: game text: stray comma after the planet name in the en sentence"
+                                                             ],
+                                              "reviewed":  true
+                                          },
+    "anomaly-storms-gasgiant-category":  {
+                                             "docs":  {
+
+                                                      },
+                                             "exceptions":  [
+                                                                "anomaly.6855: game text: zh has a stray sentence-initial 们 and the spaced 更—加—有趣",
+                                                                "anomaly.6860: game text: \"Communications with ... was\" (verb agreement)"
+                                                            ],
+                                             "reviewed":  true
+                                         },
+    "anomaly-storms-prec-one":  {
+                                    "docs":  {
+
+                                             },
+                                    "exceptions":  [
+                                                       "cstorms.2170: game text: \u0027Scientist were\u0027 plural mismatch and \u0027the a very particular pattern\u0027"
+                                                   ],
+                                    "reviewed":  true
+                                },
+    "anomaly-strange-signal-category":  {
+                                            "docs":  {
+                                                         "federations2.1":  {
+                                                                                "From.GetPlanetMoon":  {
+                                                                                                           "zh":  "这颗行星",
+                                                                                                           "en":  "the planet",
+                                                                                                           "note":  {
+                                                                                                                        "zh":  "游戏里这里会出现星球或卫星的称呼。",
+                                                                                                                        "en":  "In the game, the word for planet or moon appears here."
+                                                                                                                    }
+                                                                                                       }
+                                                                            }
+                                                     },
+                                            "exceptions":  [
+                                                               "federations2.1: game text: zh \u0027火灾600年前\u0027 reads oddly"
+                                                           ],
+                                            "reviewed":  true
+                                        },
+    "anomaly-survival-pod-warm-cat":  {
+                                          "docs":  {
+
+                                                   },
+                                          "exceptions":  [
+                                                             "extreme_frontiers.352: game text: \u0027the sounds from her mouth rasps\u0027 has a verb-agreement slip in the original"
+                                                         ],
+                                          "reviewed":  true
+                                      },
+    "anomaly-the-imitator-category":  {
+                                          "docs":  {
+
+                                                   },
+                                          "exceptions":  [
+                                                             "cstorms.1550: game text: \u0027have been dragged ... and is seeking rescue\u0027 mixes plural and singular verbs in the original"
+                                                         ],
+                                          "reviewed":  true
+                                      },
+    "baol":  {
+                 "docs":  {
+
+                          },
+                 "exceptions":  [
+                                    "ancrel.2027: game text: \u0027transformed this planet\u0027s over\u0027 (noun missing in the original)",
+                                    "ancrel.2013: game text: the en line is cut off mid-word at \u0027Hiv\u0027"
+                                ],
+                 "reviewed":  true
+             },
+    "behemoth-fury":  {
+                          "docs":  {
+                                       "situations:behemoth_finale_situation":  {
+                                                                                    "growth_factor_value":  {
+                                                                                                                "zh":  "X",
+                                                                                                                "en":  "X",
+                                                                                                                "note":  {
+                                                                                                                             "zh":  "游戏里这里会出现当前的生长因数数值。",
+                                                                                                                             "en":  "In the game, the current growth factor value appears here."
+                                                                                                                         }
+                                                                                                            }
+                                                                                }
+                                   },
+                          "exceptions":  [
+
+                                         ],
+                          "reviewed":  true
+                      },
+    "contingency":  {
+                        "docs":  {
+                                     "crisis.2098":  {
+                                                         "admiral.GetName":  {
+                                                                                 "zh":  "此人",
+                                                                                 "en":  "the commander",
+                                                                                 "note":  {
+                                                                                              "zh":  "游戏里这里会出现这位指挥官的名字。",
+                                                                                              "en":  "In the game, the commander\u0027s name appears here."
+                                                                                          }
+                                                                             }
+                                                     },
+                                     "crisis.2097":  {
+                                                         "scientist.GetName":  {
+                                                                                   "zh":  "此人",
+                                                                                   "en":  "the scientist",
+                                                                                   "note":  {
+                                                                                                "zh":  "游戏里这里会出现这位科学官的名字。",
+                                                                                                "en":  "In the game, the scientist\u0027s name appears here."
+                                                                                            }
+                                                                               }
+                                                     },
+                                     "crisis.2037":  {
+                                                         "From.GetName":  {
+                                                                              "zh":  "机械星球",
+                                                                              "en":  "this world",
+                                                                              "variants":  [
+                                                                                               {
+                                                                                                   "lang":  "zh",
+                                                                                                   "after":  "这个位于",
+                                                                                                   "text":  ""
+                                                                                               },
+                                                                                               {
+                                                                                                   "lang":  "zh",
+                                                                                                   "before":  "星系的机械星球",
+                                                                                                   "text":  ""
+                                                                                               }
+                                                                                           ]
+                                                                          }
+                                                     }
+                                 },
+                        "exceptions":  [
+
+                                       ],
+                        "reviewed":  true
+                    },
+    "curators":  {
+                     "docs":  {
+                                  "leviathans.559":  {
+                                                         "origin_unplugged_assimilator_empire.GetName":  {
+                                                                                                             "zh":  "那个帝国",
+                                                                                                             "en":  "the former empire",
+                                                                                                             "note":  {
+                                                                                                                          "zh":  "游戏里这里会出现那个帝国的名字。",
+                                                                                                                          "en":  "In the game, that empire\u0027s name appears here."
+                                                                                                                      }
+                                                                                                         }
+                                                     }
+                              },
+                     "exceptions":  [
+
+                                    ],
+                     "reviewed":  true
+                 },
+    "defenders-of-the-galaxy":  {
+                                    "docs":  {
+
+                                             },
+                                    "exceptions":  [
+                                                       "ambition.216: game text: \u0027Train them as a Ace Pilot / a Architech / a Ranger\u0027 uses \u0027a\u0027 before vowel-initial class names"
+                                                   ],
+                                    "reviewed":  true
+                                },
+    "ether-drake":  {
+                        "docs":  {
+
+                                 },
+                        "exceptions":  [
+                                           "leviathans.650: game text: zh doubles the words 我们收"
+                                       ],
+                        "reviewed":  true
+                    },
+    "event-action-1":  {
+                           "docs":  {
+                                        "action.1":  {
+                                                         "contact_empire.GetGovernmentName":  {
+                                                                                                  "zh":  "政府",
+                                                                                                  "en":  "our government",
+                                                                                                  "note":  {
+                                                                                                               "zh":  "游戏里这里会出现对方政府的称呼。",
+                                                                                                               "en":  "In the game, the other empire\u0027s form of government appears here."
+                                                                                                           }
+                                                                                              },
+                                                         "contact_empire.GetName":  {
+                                                                                        "zh":  "帝国",
+                                                                                        "en":  "the empire",
+                                                                                        "variants":  [
+                                                                                                         {
+                                                                                                             "lang":  "en",
+                                                                                                             "after":  " care little for",
+                                                                                                             "text":  "the people of the empire"
+                                                                                                         }
+                                                                                                     ]
+                                                                                    }
+                                                     }
+                                    },
+                           "exceptions":  [
+                                              "action.1: game text: \u0027The [empire] care little for our diplomatic maneuvering\u0027 verb agreement"
+                                          ],
+                           "reviewed":  true
+                       },
+    "event-action-39":  {
+                            "docs":  {
+
+                                     },
+                            "exceptions":  [
+                                               "action.39: game text: \u0027Their people has agreed\u0027 verb agreement"
+                                           ],
+                            "reviewed":  true
+                        },
+    "event-ancrel-6499":  {
+                              "docs":  {
+                                           "ancrel.6505":  {
+                                                               "From.GetName":  {
+                                                                                    "zh":  "那个帝国",
+                                                                                    "en":  "the other empire",
+                                                                                    "variants":  [
+                                                                                                     {
+                                                                                                         "lang":  "zh",
+                                                                                                         "before":  "我们伟大的首都",
+                                                                                                         "text":  "也被那个帝国攻陷"
+                                                                                                     }
+                                                                                                 ]
+                                                                                }
+                                                           }
+                                       },
+                              "exceptions":  [
+
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-anomaly-142":  {
+                              "docs":  {
+
+                                       },
+                              "exceptions":  [
+                                                 "special_projects:OLD_GODS_BENEFACTRESS_PROJECT: game text: zh \u0027由的象形文字\u0027 is missing a word in the original"
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-anomaly-3095":  {
+                               "docs":  {
+                                            "anomaly.3099":  {
+                                                                 "From.From.GetName":  {
+                                                                                           "zh":  "另一个帝国",
+                                                                                           "en":  "the other empire",
+                                                                                           "note":  {
+                                                                                                        "zh":  "游戏里这里会出现另一个帝国的名字。",
+                                                                                                        "en":  "In the game, the other empire\u0027s name appears here."
+                                                                                                    }
+                                                                                       }
+                                                             },
+                                            "anomaly.3104":  {
+                                                                 "Root.GetSpeciesNamePlural":  {
+                                                                                                   "zh":  "同胞",
+                                                                                                   "en":  "people",
+                                                                                                   "note":  {
+                                                                                                                "zh":  "游戏里这里会出现我们物种的名称。",
+                                                                                                                "en":  "In the game, your species\u0027 name appears here."
+                                                                                                            }
+                                                                                               }
+                                                             }
+                                        },
+                               "exceptions":  [
+                                                  "anomaly.3099: game text: en \u0027to be a rendezvous\u0027 is garbled in the original"
+                                              ],
+                               "reviewed":  true
+                           },
+    "event-arkship-60":  {
+                             "docs":  {
+
+                                      },
+                             "exceptions":  [
+                                                "arkship.60: game text: English \u0027symbionts who\u0027s designated rest area\u0027 should be \u0027whose\u0027"
+                                            ],
+                             "reviewed":  true
+                         },
+    "event-arkship-700":  {
+                              "docs":  {
+
+                                       },
+                              "exceptions":  [
+                                                 "arkship.760: game text: English sentence begins \u0027has implemented...\u0027 with no subject",
+                                                 "arkship.780: game text: English sentence begins \u0027has initiated...\u0027 with no subject"
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-bio-1":  {
+                        "docs":  {
+                                     "bio.85":  {
+                                                    "Owner.Leader.GetHerselfHimself":  {
+                                                                                           "zh":  "这位领袖",
+                                                                                           "en":  "the leader themselves",
+                                                                                           "note":  {
+                                                                                                        "zh":  "游戏里这里会出现这位领袖的称呼。",
+                                                                                                        "en":  "In the game, the leader\u0027s name appears here."
+                                                                                                    }
+                                                                                       }
+                                                }
+                                 },
+                        "exceptions":  [
+                                           "bio.220: game text: \u0027by the name of \u003cname\u003e\u0027 needs a personal name, a role phrase repeats the noun",
+                                           "bio.300: game text: \u0027a scientist by the name of \u003cname\u003e\u0027 needs a personal name, a role phrase repeats the noun",
+                                           "bio.350: game text: \u0027100 Presapient Pops is created\u0027 (verb agreement)"
+                                       ],
+                        "reviewed":  true
+                    },
+    "event-bio-3200":  {
+                           "docs":  {
+
+                                    },
+                           "exceptions":  [
+                                              "bio.3205: game text: English sentence begins lowercase \u0027you are not\u0027"
+                                          ],
+                           "reviewed":  true
+                       },
+    "event-bio-800":  {
+                          "docs":  {
+                                       "bio.815":  {
+                                                       "From.Target.GetName":  {
+                                                                                   "zh":  "第三方",
+                                                                                   "en":  "the third-party forces",
+                                                                                   "note":  {
+                                                                                                "zh":  "游戏里这里会出现第三方的名称。",
+                                                                                                "en":  "In the game, the third party\u0027s name appears here."
+                                                                                            }
+                                                                               }
+                                                   },
+                                       "bio.825":  {
+                                                       "From.GetName":  {
+                                                                            "zh":  "那一派",
+                                                                            "en":  "factions",
+                                                                            "note":  {
+                                                                                         "zh":  "游戏里这里会出现那一派的名称。",
+                                                                                         "en":  "In the game, the faction\u0027s name appears here."
+                                                                                     }
+                                                                        }
+                                                   }
+                                   },
+                          "exceptions":  [
+                                             "bio.805: game text: \u0027The works continues\u0027 and \u0027involvement ... have solidified\u0027 (verb agreement)"
+                                         ],
+                          "reviewed":  true
+                      },
+    "event-cara-3010":  {
+                            "docs":  {
+
+                                     },
+                            "exceptions":  [
+                                               "cara.3200: game text: stray opening quote marks at the start of some lines",
+                                               "cara.3251: game text: stray opening quote marks at the start of some lines"
+                                           ],
+                            "reviewed":  true
+                        },
+    "event-colony-2050":  {
+                              "docs":  {
+
+                                       },
+                              "exceptions":  [
+                                                 "colony.2050: game text: \u0027parts of ... has fallen\u0027 verb agreement"
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-colony-3001":  {
+                              "docs":  {
+                                           "colony.3001":  {
+                                                               "event_target:roguemoon.Planet.GetName":  {
+                                                                                                             "zh":  "这颗卫星",
+                                                                                                             "en":  "it",
+                                                                                                             "variants":  [
+                                                                                                                              {
+                                                                                                                                  "lang":  "en",
+                                                                                                                                  "before":  "the moon ",
+                                                                                                                                  "text":  ""
+                                                                                                                              }
+                                                                                                                          ]
+                                                                                                         }
+                                                           }
+                                       },
+                              "exceptions":  [
+
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-colony-3005":  {
+                              "docs":  {
+                                           "colony.3060":  {
+                                                               "doomslayer_knight.GetHimHer":  {
+                                                                                                   "zh":  "此人",
+                                                                                                   "en":  "them",
+                                                                                                   "variants":  [
+                                                                                                                    {
+                                                                                                                        "lang":  "en",
+                                                                                                                        "before":  "stand in ",
+                                                                                                                        "after":  " way",
+                                                                                                                        "text":  "their"
+                                                                                                                    }
+                                                                                                                ]
+                                                                                               }
+                                                           }
+                                       },
+                              "exceptions":  [
+                                                 "colony.9810: game text: \u0027lead physics unit \u003cname\u003e\u0027 and \u0027physics specialized drone \u003cname\u003e\u0027 need a unit name"
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-colony-50":  {
+                            "docs":  {
+
+                                     },
+                            "exceptions":  [
+                                               "colony.52: game text: the en sentence is split into two rendered lines at the source break"
+                                           ],
+                            "reviewed":  true
+                        },
+    "event-colony-9000":  {
+                              "docs":  {
+                                           "colony.9005":  {
+                                                               "Root.GetName":  {
+                                                                                    "zh":  "这颗星球",
+                                                                                    "en":  "this planet",
+                                                                                    "variants":  [
+                                                                                                     {
+                                                                                                         "lang":  "en",
+                                                                                                         "before":  "While our ",
+                                                                                                         "after":  " colony",
+                                                                                                         "text":  ""
+                                                                                                     }
+                                                                                                 ]
+                                                                                }
+                                                           }
+                                       },
+                              "exceptions":  [
+
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-colony-9295":  {
+                              "docs":  {
+                                           "colony.9300":  {
+                                                               "Root.GetName":  {
+                                                                                    "zh":  "这颗星球",
+                                                                                    "en":  "this planet",
+                                                                                    "variants":  [
+                                                                                                     {
+                                                                                                         "lang":  "en",
+                                                                                                         "after":  "onium",
+                                                                                                         "text":  "planet"
+                                                                                                     }
+                                                                                                 ]
+                                                                                }
+                                                           }
+                                       },
+                              "exceptions":  [
+
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-colony-9820":  {
+                              "docs":  {
+                                           "colony.9840":  {
+                                                               "Root.GetName":  {
+                                                                                    "zh":  "我们的帝国",
+                                                                                    "en":  "our empire",
+                                                                                    "variants":  [
+                                                                                                     {
+                                                                                                         "lang":  "en",
+                                                                                                         "before":  "gathered on ",
+                                                                                                         "text":  "our homeworld"
+                                                                                                     }
+                                                                                                 ]
+                                                                                }
+                                                           }
+                                       },
+                              "exceptions":  [
+                                                 "colony.9821: game text: \u0027This is \u003cname\u003es unique ID\u0027 (possessive \u0027s after the name) and \u0027until \u003chomeworld\u003e-Betas erasure\u0027"
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-country-999":  {
+                              "docs":  {
+                                           "country.999":  {
+                                                               "Root.GetSpeciesNamePlural":  {
+                                                                                                 "zh":  "该物种",
+                                                                                                 "en":  "the species",
+                                                                                                 "variants":  [
+                                                                                                                  {
+                                                                                                                      "lang":  "en",
+                                                                                                                      "before":  "turned to ",
+                                                                                                                      "after":  " for assurance",
+                                                                                                                      "text":  "its own kind"
+                                                                                                                  }
+                                                                                                              ]
+                                                                                             }
+                                                           }
+                                       },
+                              "exceptions":  [
+
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-cyber-1525":  {
+                             "docs":  {
+
+                                      },
+                             "exceptions":  [
+                                                "cyber.1525: game text: \u0027to the their new ocular implants\u0027 has a stray \u0027the\u0027"
+                                            ],
+                             "reviewed":  true
+                         },
+    "event-distar-13080":  {
+                               "docs":  {
+                                            "distar.13010":  {
+                                                                 "dragons_current_system.GetName":  {
+                                                                                                        "zh":  "这个星系",
+                                                                                                        "en":  "this system",
+                                                                                                        "variants":  [
+                                                                                                                         {
+                                                                                                                             "lang":  "zh",
+                                                                                                                             "after":  "貌似并无敌意",
+                                                                                                                             "text":  "这只L-星龙"
+                                                                                                                         },
+                                                                                                                         {
+                                                                                                                             "lang":  "en",
+                                                                                                                             "after":  " specimen",
+                                                                                                                             "text":  "This"
+                                                                                                                         }
+                                                                                                                     ]
+                                                                                                    }
+                                                             }
+                                        },
+                               "exceptions":  [
+
+                                              ],
+                               "reviewed":  true
+                           },
+    "event-distar-1999":  {
+                              "docs":  {
+                                           "distar.191":  {
+                                                              "living_planet_scientist.GetIsAre":  {
+                                                                                                       "zh":  "",
+                                                                                                       "en":  "are",
+                                                                                                       "omit":  [
+                                                                                                                    "zh"
+                                                                                                                ],
+                                                                                                       "note":  {
+                                                                                                                    "zh":  "游戏里这里会出现动词形式。",
+                                                                                                                    "en":  "In the game, the matching verb form appears here."
+                                                                                                                }
+                                                                                                   }
+                                                          },
+                                           "distar.192":  {
+                                                              "living_planet_scientist.GetIsAre":  {
+                                                                                                       "zh":  "",
+                                                                                                       "en":  "are",
+                                                                                                       "omit":  [
+                                                                                                                    "zh"
+                                                                                                                ],
+                                                                                                       "note":  {
+                                                                                                                    "zh":  "游戏里这里会出现动词形式。",
+                                                                                                                    "en":  "In the game, the matching verb form appears here."
+                                                                                                                }
+                                                                                                   },
+                                                              "living_planet_scientist.GetHasHave":  {
+                                                                                                         "zh":  "",
+                                                                                                         "en":  "have",
+                                                                                                         "omit":  [
+                                                                                                                      "zh"
+                                                                                                                  ],
+                                                                                                         "note":  {
+                                                                                                                      "zh":  "游戏里这里会出现动词形式。",
+                                                                                                                      "en":  "In the game, the matching verb form appears here."
+                                                                                                                  }
+                                                                                                     },
+                                                              "living_planet_scientist.GetSXX":  {
+                                                                                                     "zh":  "",
+                                                                                                     "en":  "",
+                                                                                                     "omit":  [
+                                                                                                                  "zh",
+                                                                                                                  "en"
+                                                                                                              ],
+                                                                                                     "note":  {
+                                                                                                                  "zh":  "游戏里这里会出现动词词尾。",
+                                                                                                                  "en":  "In the game, the verb ending appears here."
+                                                                                                              }
+                                                                                                 }
+                                                          }
+                                       },
+                              "exceptions":  [
+
+                                             ],
+                              "reviewed":  true
+                          },
+    "event-distar-240":  {
+                             "docs":  {
+                                          "distar.243":  {
+                                                             "sealed_system.GetName":  {
+                                                                                           "zh":  "这个星系",
+                                                                                           "en":  "this",
+                                                                                           "note":  {
+                                                                                                        "zh":  "游戏里这里会出现这个星系的名字。",
+                                                                                                        "en":  "In the game, the system\u0027s name appears here."
+                                                                                                    }
+                                                                                       }
+                                                         },
+                                          "distar.242":  {
+                                                             "sealed_entry_system.GetName":  {
+                                                                                                 "zh":  "这个星系",
+                                                                                                 "en":  "this system",
+                                                                                                 "variants":  [
+                                                                                                                  {
+                                                                                                                      "lang":  "en",
+                                                                                                                      "before":  "in ",
+                                                                                                                      "after":  " System!",
+                                                                                                                      "text":  "this"
+                                                                                                                  }
+                                                                                                              ]
+                                                                                             }
+                                                         }
+                                      },
+                             "exceptions":  [
+
+                                            ],
+                             "reviewed":  true
+                         },
+    "event-envoy-events-205":  {
+                                   "docs":  {
+                                                "envoy_events.205":  {
+                                                                         "event_envoy.GetEnvoyLocation":  {
+                                                                                                              "zh":  "该联邦",
+                                                                                                              "en":  "the federation",
+                                                                                                              "note":  {
+                                                                                                                           "zh":  "游戏里这里会出现使者所在的地点。",
+                                                                                                                           "en":  "In the game, the envoy\u0027s location appears here."
+                                                                                                                       }
+                                                                                                          },
+                                                                         "event_envoy.GetAmbassadorOrNot":  {
+                                                                                                                "zh":  "大使",
+                                                                                                                "en":  "ambassador",
+                                                                                                                "note":  {
+                                                                                                                             "zh":  "游戏里这里会出现使者的职衔。",
+                                                                                                                             "en":  "In the game, the envoy\u0027s title appears here."
+                                                                                                                         }
+                                                                                                            },
+                                                                         "event_envoy.GetSXX":  {
+                                                                                                    "zh":  "",
+                                                                                                    "en":  "s",
+                                                                                                    "omit":  [
+                                                                                                                 "zh"
+                                                                                                             ],
+                                                                                                    "note":  {
+                                                                                                                 "zh":  "游戏里这里会出现动词词尾。",
+                                                                                                                 "en":  "In the game, the verb ending appears here."
+                                                                                                             }
+                                                                                                }
+                                                                     }
+                                            },
+                                   "exceptions":  [
+
+                                                  ],
+                                   "reviewed":  true
+                               }
+}

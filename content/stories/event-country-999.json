@@ -31,5 +31,25 @@
     "en": "In the game, your empire's name appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "country.999": {
+   "Root.Capital.GetStarName": {
+    "zh": "此",
+    "en": "the star"
+   },
+   "Root.GetSpeciesNamePlural": {
+    "zh": "该物种",
+    "en": "the species",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "turned to ",
+      "after": " for assurance",
+      "text": "its own kind"
+     }
+    ]
+   }
+  }
  }
 }

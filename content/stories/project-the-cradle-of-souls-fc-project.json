@@ -107,5 +107,27 @@
     "en": "In the game, the name this being is known by before its true name is learned appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "shroud.4010": {
+   "GetPatronInsert": {
+    "zh": "一道疯狂的脉冲",
+    "en": "a frenzied pulse",
+    "variants": [
+     {
+      "lang": "zh",
+      "before": "它",
+      "after": "在上方无底深渊中",
+      "text": "是一道疯狂的脉冲，盘踞"
+     },
+     {
+      "lang": "zh",
+      "before": "深深地",
+      "after": "在虚境中",
+      "text": "潜藏"
+     }
+    ]
+   }
+  }
  }
 }
