@@ -243,6 +243,7 @@ class Compiler:
             self.fragments[path.stem] = fragment
         chron = ROOT / 'content/chronology'
         self.hub_review = read(chron / 'hubs.json')
+        self.scripted_review = read(chron / 'scripted-names.json') if (chron / 'scripted-names.json').exists() else {}
         # Reviewed facts live in one fragment per story; keyed facts should be unique across fragments.
         self.duplicate_facts = []
         self.bridges, self.suppressed = [], collections.defaultdict(list)
@@ -694,22 +695,44 @@ class Compiler:
         root_scope = EVENT_SCOPE.get(r['kind'], None)
         out = {}
         for key in sorted(keys):  # deterministic output (set order varies per Python process)
-            parts = key.split('|')[0].split('.')
-            tail = parts[-1]
-            if tail in self.defined:
-                self.used_names.add(tail)
-                continue
-            if key.startswith("'") or key.startswith('concept_'):
-                concept = self.loc.get(key.strip("'"))
-                if concept:
-                    out[key] = concept
-                continue
-            kind, rooted = scope_of(parts[:-1], root_scope, anomaly=r['kind'] == 'ship_event')
-            role = 'country-root' if kind == 'country' and rooted else kind
-            wording = NAMES.get((tail, role)) or NAMES.get((tail, None))
-            entry = {'zh': wording[0], 'en': wording[1]} if wording else {'zh': '这个名字', 'en': 'this name', 'default': True}
-            out[key] = {**entry, 'note': name_note(tail, role)}
+            entry = self.key_wording(key, root_scope, anomaly=r['kind'] == 'ship_event')
+            if entry:
+                out[key] = entry
         return out
+
+    def concept_name(self, key):
+        """Game concept links: ['concept_x'], ['trait:trait_x'], ['edict:x', $label$] → the game's own name."""
+        body = key.strip()
+        if not (body.startswith("'") or body.startswith('concept_')):
+            return None
+        name, _, label = body.partition(',')
+        name = name.strip().strip("'")
+        label = label.strip().strip("'")
+        if label:
+            text = {lang: self.expand_ref(label, lang) for lang in ('zh', 'en')}
+            if '$' not in text['zh'] + text['en']:
+                return text
+        for candidate in (name, name.split(':', 1)[-1], 'concept_' + name.split(':', 1)[-1]):
+            entry = self.loc.get(candidate)
+            if entry and entry.get('zh') and entry.get('en'):
+                return {lang: self.expand_ref(entry[lang], lang) for lang in ('zh', 'en')}
+        return None
+
+    def key_wording(self, key, root_scope, anomaly=False):
+        """Display wording for one placeholder key (None for scripted localisation, resolved by the reader)."""
+        parts = key.split('|')[0].split('.')
+        tail = parts[-1]
+        if tail in self.defined:
+            self.used_names.add(tail)
+            return None
+        if key.startswith("'") or key.startswith('concept_'):
+            concept = self.concept_name(key)
+            return {**concept, 'note': {'zh': '游戏中的术语。', 'en': 'A game term.'}} if concept else None
+        kind, rooted = scope_of(parts[:-1], root_scope, anomaly=anomaly)
+        role = 'country-root' if kind == 'country' and rooted else kind
+        wording = NAMES.get((tail, role)) or NAMES.get((tail, None))
+        entry = {'zh': wording[0], 'en': wording[1]} if wording else {'zh': '这个名字', 'en': 'this name', 'default': True}
+        return {**entry, 'note': name_note(tail, role)}
 
     @staticmethod
     def reviewed_names(fragment, rid, names):
@@ -724,8 +747,11 @@ class Compiler:
         for key, wording in names.items():
             chosen = doc.get(key) or story.get(key) or doc_ci.get(key.lower()) or story_ci.get(key.lower())
             if chosen:
-                merged = {k: chosen[k] for k in ('zh', 'en') if chosen.get(k)}
+                omit = chosen.get('omit') or []
+                merged = {k: chosen[k] for k in ('zh', 'en') if chosen.get(k) or k in omit}
                 merged = {**{k: v for k, v in wording.items() if k != 'default'}, **merged}
+                if omit:
+                    merged['omit'] = omit
                 note = chosen.get('note') or wording.get('note')
                 if note:
                     merged['note'] = note
@@ -779,6 +805,25 @@ class Compiler:
                 out[name]['random'] = True
             if d.get('default') and (d['default']['zh'] or d['default']['en']):
                 out[name]['default'] = bilingual(d['default'])
+            # Placeholders inside the scripted text (e.g. [Root.GetSpeciesNamePlural]) get their own wording: neutral
+            # defaults (scripted localisation is mostly used in country scope) under reviewed wording
+            # (content/chronology/scripted-names.json: {name: {key: {zh, en, note}}}).
+            texts = [v['text'] for v in variants] + ([out[name]['default']] if out[name].get('default') else [])
+            keys = sorted({m for t in texts for lang in ('zh', 'en') for m in PLACEHOLDER.findall(t.get(lang) or '')})
+            nested = {}
+            for key in keys:
+                entry = self.key_wording(key, 'country')
+                reviewed = self.scripted_review.get(name, {}).get(key)
+                if reviewed:
+                    entry = {**{k: v for k, v in (entry or {}).items() if k != 'default'}, **reviewed}
+                if entry:
+                    nested[key] = entry
+            if nested:
+                out[name]['names'] = nested
+                for key in keys:
+                    tail = key.split('|')[0].split('.')[-1]
+                    if tail in self.defined and tail not in out:
+                        pending.append(tail)
         return out
 
     @staticmethod

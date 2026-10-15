@@ -11,3 +11,11 @@ A weekly reset does not renew the budget (post-reset usage is added to the pre-r
 | 2026-10-15 ~00:50 | 22 % | 0 % | released v4.2.0, live checks passed (refine reader/chrome/audio, reader V4). **Task total: 2 points of 40** |
 
 Stop rule: checkpoint at 54 % weekly (34 points), never exceed 60 % (40 points).
+
+## Round 2 (2026-10-15: images, placeholders, effects, polish) — separate 40-point cap
+
+| When (UTC) | Weekly all-models | 5-hour | Note |
+| --- | ---: | ---: | --- |
+| 2026-10-15 02:40 | 23 % (baseline; resets 2026-10-20 08:00) | 3 % | before round-2 work |
+
+Stop rule: checkpoint at 57 % weekly (34 points), never exceed 63 % (40 points).

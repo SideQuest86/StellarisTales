@@ -357,6 +357,14 @@ def import_game(game):
     # localisation; the story compiler does the same), followed transitively.
     ref=re.compile(r'\$([A-Za-z_][\w.]*)\$')
     texts=[t.get(lang,'') or '' for r in records for t in r['titles']+r['descriptions']+[o['label'] for o in r['options']]+[x for o in r['options'] for x in o.get('responses',[])+o.get('tooltips',[])] for lang in ('zh','en')]
+    texts+=[v.get(lang,'') or '' for d in defined.values() for v in d['variants']+([d['default']] if d.get('default') else []) for lang in ('zh','en')]
+    # Typed concept links (['trait:trait_x'], ['building:building_x'], ['tradition_category:tradition_x', Label]) in
+    # texts and scripted localisation: keep the linked key and the plain name after the type prefix.
+    for s in texts:
+        for m in re.findall(r"\['([A-Za-z_]+:[^\]'\[|,]+|concept_[^\]'\[|,]+)'",s):
+            tokens.update(k for k in (m,m.split(':',1)[-1]) if k in loc['en'] or k in loc['zh'])
+    # Concept names (short game terms) can be linked from any text, including origin descriptions: keep them all.
+    tokens|={k for lang in loc for k in loc[lang] if k.startswith('concept_') and not k.endswith(('_desc','_tooltip'))}
     found={m for s in texts for m in ref.findall(s)}
     for _ in range(4):
         new={k for k in found if k not in tokens and (k in loc['en'] or k in loc['zh'])}

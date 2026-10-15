@@ -18,7 +18,10 @@ def valid_text(s, lang):
 
 
 def check(entry, problems, where):
-    ok = isinstance(entry, dict) and valid_text(entry.get('zh'), 'zh') and valid_text(entry.get('en'), 'en')
+    # "omit": ["en"] marks a language where the sentence reads naturally without any phrase (empty string).
+    omit = set(entry.get('omit') or []) if isinstance(entry, dict) else set()
+    ok = isinstance(entry, dict) and all(
+        (lang in omit and entry.get(lang) == '') or valid_text(entry.get(lang), lang) for lang in ('zh', 'en'))
     note = entry.get('note') if isinstance(entry, dict) else None
     if ok and note is not None:
         ok = isinstance(note, dict) and all(isinstance(note.get(k), str) and note[k].strip()
@@ -29,6 +32,8 @@ def check(entry, problems, where):
         problems.append(f'{where}: invalid entry {json.dumps(entry, ensure_ascii=False)[:160]}')
         return None
     out = {'zh': entry['zh'].strip(), 'en': entry['en'].strip()}
+    if omit:
+        out['omit'] = sorted(omit)
     if note:
         out['note'] = {'zh': note['zh'].strip(), 'en': note['en'].strip()}
     caps = [w for w in re.findall(r"[A-Za-z][\w'-]*", out['en'])[1:] if w[0].isupper() and w not in ('I', 'FTL', 'L-Gate')]
@@ -45,6 +50,8 @@ def main():
     # Follow-up pass over keys still on the generic phrase (work/fallback.md): per-doc wording added on top.
     fallback_file = BASE / 'out' / 'fallback.json'
     fallback = json.loads(fallback_file.read_text(encoding='utf-8')) if fallback_file.exists() else {}
+    mechanical_file = BASE / 'out' / 'mechanical.json'
+    mechanical = json.loads(mechanical_file.read_text(encoding='utf-8')) if mechanical_file.exists() else {}
     rows, problems, changed_keys, covered, missing_groups = [], [], 0, 0, []
     issues = []
     for g in groups:
@@ -92,6 +99,15 @@ def main():
                         continue
                     e = check(entry, problems, f'{sid} {doc} {key} (fallback)')
                     if e and key not in per_doc.get(doc, {}):
+                        per_doc.setdefault(doc, {})[key] = e
+            # Rewording pass over mechanical phrases (work/mechanical.md): replaces earlier per-doc wording.
+            for doc, keys in (mechanical.get(sid) or {}).items():
+                for key, entry in (keys or {}).items():
+                    if doc not in used or key not in used[doc]:
+                        problems.append(f'{sid}: reworded key {key} not used in {doc}')
+                        continue
+                    e = check(entry, problems, f'{sid} {doc} {key} (reworded)')
+                    if e:
                         per_doc.setdefault(doc, {})[key] = e
             for text in review.get('issues') or []:
                 issues.append(f'{sid}: {text}')

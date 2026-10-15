@@ -5,14 +5,14 @@ Every story was processed; "reviewed" counts stories whose placeholders a review
 | Category | stories | with placeholders | reviewed | reviewed entries | open issues | generic fallback keys | unresolved $refs | no guide | guide raw HTML |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | crisis | 11 | 11 | 11 | 103 | 14 | 0 | 0 | 0 | 0 |
-| exploration | 307 | 281 | 281 | 598 | 144 | 0 | 28 | 0 | 0 |
+| exploration | 307 | 281 | 281 | 599 | 144 | 0 | 28 | 0 | 0 |
 | leviathans | 33 | 32 | 32 | 119 | 16 | 0 | 19 | 0 | 0 |
-| origins | 61 | 49 | 49 | 307 | 44 | 0 | 24 | 0 | 0 |
-| precursors | 86 | 78 | 78 | 168 | 17 | 0 | 2 | 0 | 0 |
-| rifts | 41 | 32 | 32 | 34 | 8 | 0 | 28 | 0 | 0 |
-| society | 356 | 297 | 297 | 764 | 105 | 1 | 86 | 0 | 0 |
-| stories | 493 | 379 | 379 | 1101 | 128 | 0 | 99 | 0 | 0 |
-| **all** | **1388** | **1159** | **1159** | **3194** | **476** | **1** | **286** | **0** | **0** |
+| origins | 61 | 49 | 49 | 318 | 44 | 0 | 24 | 0 | 0 |
+| precursors | 86 | 78 | 78 | 172 | 17 | 0 | 2 | 0 | 0 |
+| rifts | 41 | 32 | 32 | 36 | 8 | 0 | 28 | 0 | 0 |
+| society | 356 | 297 | 297 | 803 | 105 | 1 | 86 | 0 | 0 |
+| stories | 493 | 379 | 379 | 1120 | 128 | 0 | 99 | 0 | 0 |
+| **all** | **1388** | **1159** | **1159** | **3270** | **476** | **1** | **286** | **0** | **0** |
 
 ## Unresolved $KEY$ references (runtime values or keys without localisation)
 

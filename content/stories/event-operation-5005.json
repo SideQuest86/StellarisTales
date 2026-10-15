@@ -84,21 +84,40 @@
  "placeholderDocs": {
   "operation.5005": {
    "from.GetName": {
-    "zh": "未命名",
-    "en": "unnamed",
+    "zh": "这项",
+    "en": "",
+    "omit": [
+     "en"
+    ],
     "note": {
-     "zh": "游戏里这里会出现这项行动的代号。",
-     "en": "In the game, the code name of this operation appears here."
+     "zh": "游戏里这里会显示该行动的代号。",
+     "en": "In the game, the codename of this operation appears here."
     }
    }
   },
   "operation.5035": {
    "from.GetName": {
-    "zh": "未命名",
-    "en": "unnamed",
+    "zh": "这项",
+    "en": "",
+    "omit": [
+     "en"
+    ],
     "note": {
-     "zh": "游戏里这里会出现这项行动的代号。",
-     "en": "In the game, the code name of this operation appears here."
+     "zh": "游戏里这里会显示该行动的代号。",
+     "en": "In the game, the codename of this operation appears here."
+    }
+   }
+  },
+  "operation.5037": {
+   "fromfrom.GetName": {
+    "zh": "这项",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会显示该行动的代号。",
+     "en": "In the game, the codename of this operation appears here."
     }
    }
   }

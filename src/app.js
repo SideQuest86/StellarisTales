@@ -99,7 +99,7 @@ function scriptedName(def, depth) {
     if (status === null) fallback = v.text;
   }
   const text = pick || fallback || def.default || def.variants.at(-1)?.text;
-  return fill(local(text), depth + 1);
+  return fill(local(text), depth + 1, def.names);
 }
 function nameNote(own, scripted) {
   const n = own?.note || (scripted ? SCRIPTED_NOTE : GENERIC_NOTE);
@@ -112,13 +112,16 @@ const TITLE_WORDS = [
   "行动", "方舟", "议员", "使节",
   "科学专员", "专员", "博士", "将军", "舰长", "总督", "上将", "元帅", "教授", "特使", "大使", "指挥官", "主任",
 ].join("|");
-function fill(s, depth = 0) {
+function fill(s, depth = 0, nested = null) {
   const wrap = (text, note) => OPEN + note + "\uE002" + text + CLOSE;
   return String(s || "").replace(/(\b(?:the|a|an)\s+)?\[([^\[\]]+)\]([\u3400-\u9fff]{1,6})?/gi, (match, art, key, after, offset, whole) => {
     if (depth > 3) return "";
     let text, note;
-    const own = chapter?.names?.[key];
+    // Inside scripted text the scripted name's own wording applies first (public/stories/names.json `names`).
+    const own = nested?.[key] || chapter?.names?.[key];
     const tail = key.split("|")[0].split(".").at(-1);
+    // Reviewed as "omit" for this language: the sentence reads naturally without the name.
+    if (own && own[lang] === "" && own.omit?.includes(lang)) return (art || "") + "" + (after || "");
     if (own) { text = local(own); note = nameNote(own, false); }
     else if (names[tail]) { text = scriptedName(names[tail], depth).replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, ""); note = nameNote(null, true); }
     else {
@@ -143,7 +146,7 @@ function fill(s, depth = 0) {
     `${pronoun} ${{ has: "have", is: "are", was: "were", does: "do" }[verb]}`)
     // A title before a name placeholder ("Science Officer [Root.GetLeaderName]", "科学专员[…]"): the title itself
     // carries the annotation instead of reading "Science Officer the leader".
-    .replace(new RegExp(`(${TITLE_WORDS})\\s?\\uE000([^\\uE002]*)\\uE002[^\\uE001]*\\uE001`, "gi"), (_, title, note) => OPEN + note + "" + title + CLOSE)
+    .replace(new RegExp(`(${TITLE_WORDS})\\s?\\uE000([^\\uE002]*)\\uE002[^\\uE001]*\\uE001`, "gi"), (_, title, note) => /^operation$/i.test(title) ? "the operation" + "" : OPEN + note + "" + title + CLOSE)
     // "the [X] species" with X = "this species": drop the repeated noun; "[X]s" after a phrase ending in s.
     .replace(/([\s])(\w+) \2\b/g, "$1$2")
     .replace(/ss\b/g, "s")
@@ -155,7 +158,12 @@ function fill(s, depth = 0) {
     .replace(/([^]*)([^]*)(\s?)([^]*)([^]*)/g, (_, n1, t1, gap, n2, t2) =>
       OPEN + n2 + "" + (/^(the|our|this|that|a|an|your|their|这|那|我们)/i.test(t2) ? t2 : t1 + gap + t2) + CLOSE)
     // Sentence starts (also after a merge or a dropped article): capitalise the phrase.
-    .replace(/(^|[.!?]["”’']?\s+)([^]*)([a-z])/g, (_, lead, note, c) => lead + OPEN + note + "" + c.toUpperCase());
+    .replace(/(^|[.!?]["”’']?\s+)([^]*)([a-z])/g, (_, lead, note, c) => lead + OPEN + note + "" + c.toUpperCase())
+    // An omitted code name after "Operation" ("assigned to Operation [X].") reads as "the operation".
+    .replace(/\b(the )?Operation\s?/g, "the operation")
+    .replace(/\b[Tt]he the operation/g, (m) => m[0] + "he operation")
+    .replace(/(^|[.!?]["”’']?\s+)the operation/g, "$1The operation")
+    .replace(//g, "");
 }
 function prose(s, keepMarks = false) {
   const text = fill(String(s || ""))
@@ -461,7 +469,7 @@ function profileSummary() {
     });
   const assumed = Object.keys(assumptions).length;
   const chips = facts.map((f) => `<b>${esc(f)}</b>`).join("") + (assumed ? `<b>${esc(T(`${assumed} 项情境假设`, `${assumed} assumed condition${assumed > 1 ? "s" : ""}`))}</b>` : "");
-  return `<div class="reading-context"><span>${esc(T("阅读设定", "Reading as"))}</span>${chips || `<i>${esc(T("未指定文明 · 显示所有可能", "No empire set · all possibilities shown"))}</i>`}<button data-profile-open aria-expanded="${profileOpen}">${esc(T("文明设定", "Empire profile"))}</button>${facts.length || assumed ? `<button data-profile-reset>${esc(T("重置", "Reset"))}</button>` : ""}</div>${profileOpen ? profilePanel() : ""}`;
+  return `<div class="reading-context"><span>${esc(T("阅读设定", "Reading as"))}</span>${chips || `<i>${esc(T("未指定文明", "No empire set"))}</i>`}<button data-profile-open aria-expanded="${profileOpen}">${esc(T("文明设定", "Empire profile"))}</button>${facts.length || assumed ? `<button data-profile-reset>${esc(T("重置", "Reset"))}</button>` : ""}</div>${profileOpen ? profilePanel() : ""}`;
 }
 function profilePanel() {
   if (!profileOptions) return `<div class="profile-panel"><p>${esc(T("正在载入……", "Loading…"))}</p></div>`;
@@ -651,7 +659,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt="" decoding="async"/><span>STELLARIS / ${esc(local(story.title))}</span></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 回到上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt="" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   showSpecimenLinks(r.id);
   const remembered=trail.at(-1);
   if(remembered?.chapter===chapter.id && remembered.reading===readingIndex && remembered.choice!==undefined){

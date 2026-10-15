@@ -26,7 +26,7 @@
   --ink: #dbe5df;
   --ink-2: #b9cbc5;
   --dim: #86a29f;
-  --faint: #58716f;
+  --faint: #6f8b88; /* 4.9:1 on --bg */
   --line: #2d4549;
   --line-2: #3d5a5c;
   --gold: #d8bb84;
@@ -50,6 +50,15 @@
   --mono: ui-monospace, "Cascadia Mono", Consolas, "SFMono-Regular", monospace;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  /* spacing scale (4px base) and motion */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --t: 0.2s;
   --masthead: 88px;
   --player: 72px;
   --gutter: clamp(16px, 3.5vw, 64px);
@@ -217,7 +226,7 @@ input {
   background: var(--gold);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.32s var(--ease-out);
+  transition: transform 0.2s var(--ease-out);
 }
 .catalogue button.active {
   color: var(--gold);
@@ -306,8 +315,8 @@ input {
   z-index: 3;
   pointer-events: none;
   transition:
-    opacity 0.32s var(--ease-out),
-    transform 0.42s var(--ease-out);
+    opacity 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out);
 }
 .archive-hud button {
   pointer-events: auto;
@@ -387,16 +396,10 @@ input {
 }
 .access span[aria-hidden] {
   font-size: 20px;
-  transition: transform 0.25s var(--ease-out);
+  transition: transform 0.2s var(--ease-out);
 }
 .access:hover span[aria-hidden] {
   transform: translate3d(4px, -4px, 0);
-}
-.archive-hint {
-  margin: 12px 0 0;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: var(--faint);
 }
 .navigation {
   position: absolute;
@@ -460,7 +463,7 @@ input {
   max-width: min(40vw, var(--card-width, 40vw));
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s var(--ease-out);
+  transition: opacity 0.2s var(--ease-out);
 }
 #reader:has(#flow-surface.card-ready) .reader-left {
   opacity: 1;
@@ -618,7 +621,7 @@ input {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: 0 0 24px;
+  margin: 0 0 var(--s-5);
 }
 .reading-tabs button {
   min-height: 38px;
@@ -660,7 +663,7 @@ input {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 34px 0 14px;
+  margin: var(--s-6) 0 var(--s-3);
   font-size: 12px;
   letter-spacing: 0.16em;
   color: var(--gold);
@@ -678,7 +681,7 @@ input {
   counter-reset: choice;
 }
 .choice {
-  margin: 10px 0;
+  margin: var(--s-3) 0;
   border: 1px solid #3c574f;
   background: #11292733;
   transition: border-color 0.2s;
@@ -704,7 +707,7 @@ input {
   margin-left: auto;
   font-weight: 400;
   color: #7a9a8e;
-  transition: transform 0.22s var(--ease-out);
+  transition: transform 0.2s var(--ease-out);
 }
 .choice-button:hover b {
   transform: translate3d(3px, 0, 0);
@@ -718,7 +721,7 @@ input {
 }
 .choice-response {
   padding: 0 18px 16px;
-  animation: rise-in 0.32s var(--ease-out) both;
+  animation: rise-in 0.2s var(--ease-out) both;
 }
 .next-chapter {
   position: relative;
@@ -741,8 +744,8 @@ input {
   background: #c0b97808;
 }
 .chapter-end {
-  margin-top: 36px;
-  padding-top: 8px;
+  margin-top: var(--s-6);
+  padding-top: var(--s-2);
   border-top: 1px solid var(--line);
 }
 .reading-next {
@@ -770,7 +773,7 @@ input {
   font-weight: 400;
   font-size: 20px;
   color: var(--gold);
-  transition: transform 0.22s var(--ease-out);
+  transition: transform 0.2s var(--ease-out);
 }
 .reading-next:hover b {
   transform: translate3d(4px, 0, 0);
@@ -916,7 +919,7 @@ input {
   padding: 14px 16px;
   border: 1px solid var(--line-2);
   background: #0c2026;
-  animation: rise-in 0.24s var(--ease-out) both;
+  animation: rise-in 0.2s var(--ease-out) both;
 }
 .profile-panel > p {
   grid-column: 1 / -1;
@@ -1211,7 +1214,7 @@ input {
   flex-direction: column;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.26s var(--ease-out);
+  transition: opacity 0.2s var(--ease-out);
   contain: layout paint;
 }
 #flow-surface.card-ready {
@@ -1752,7 +1755,7 @@ dialog {
   border: 1px solid #456356;
 }
 dialog[open] {
-  animation: rise-in 0.3s var(--ease-out) both;
+  animation: rise-in 0.2s var(--ease-out) both;
 }
 dialog::backdrop {
   background: #030e13d9;
@@ -1877,8 +1880,8 @@ dialog::backdrop {
   pointer-events: none;
   transform: translate3d(-50%, 14px, 0);
   transition:
-    opacity 0.25s,
-    transform 0.25s var(--ease-out);
+    opacity 0.2s,
+    transform 0.2s var(--ease-out);
 }
 #toast.show {
   opacity: 1;
@@ -2013,10 +2016,7 @@ dialog::backdrop {
     max-width: none;
     padding: 10px 2px;
   }
-  .archive-hint {
-    display: none;
-  }
-  .navigation {
+    .navigation {
     bottom: calc(var(--player) + 14px);
   }
   .row-counter {
@@ -2028,9 +2028,6 @@ dialog::backdrop {
   .lane-navigation {
     margin-right: 0;
     gap: 0;
-  }
-  .lane-navigation span {
-    display: none;
   }
   #reader {
     inset: 0 0 var(--player);
@@ -2091,9 +2088,6 @@ dialog::backdrop {
   .chapter-art.same-chapter::after {
     opacity: 0;
   }
-  .chapter-art > span {
-    display: none;
-  }
   .chapter-document {
     padding-top: 20px;
   }
@@ -2133,7 +2127,7 @@ dialog::backdrop {
   .reader-open #flow-surface.mobile-open {
     display: flex;
     pointer-events: auto;
-    animation: rise-in 0.28s var(--ease-out) both;
+    animation: rise-in 0.2s var(--ease-out) both;
   }
   .flow-band {
     flex: 0 0 52px;
@@ -2280,8 +2274,8 @@ dialog::backdrop {
   opacity: 0;
   transform: translate3d(0, -6px, 0);
   transition:
-    opacity 0.3s var(--ease-out),
-    transform 0.3s var(--ease-out);
+    opacity 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out);
 }
 .gpu-hint.show {
   opacity: 1;

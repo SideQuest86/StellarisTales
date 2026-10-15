@@ -1,6 +1,6 @@
 # Placeholder review ledger
 
-Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer output): 1159; reviewed wording entries merged: 3194.
+Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer output): 1159; reviewed wording entries merged: 3270.
 
 | Group | Stories | Reviewed |
 | --- | ---: | ---: |

@@ -1,0 +1,392 @@
+{
+ "GetBoonPsiLink": {
+  "Root.GetAdjective": {
+   "zh": "我们的",
+   "en": "collective",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "同族",
+   "en": "our people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  }
+ },
+ "GetCradleAnguishIntro": {
+  "root.GetSpeciesAdj": {
+   "zh": "同族",
+   "en": "species'",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  }
+ },
+ "GetCradleCovenantFormedDesc": {
+  "Root.GetIndividualPlural": {
+   "zh": "个体",
+   "en": "individuals",
+   "note": {
+    "zh": "游戏里这里会出现你的物种个体的复数名称。",
+    "en": "In the game, the plural name of your species' individuals appears here."
+   }
+  },
+  "Root.GetSpeciesAdj": {
+   "zh": "同族",
+   "en": "species'",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  }
+ },
+ "GetCrisisProjectPsionic1Desc": {
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "作为一个物种",
+   "en": "as a species",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  }
+ },
+ "GetCursePsiLink": {
+  "Root.GetSpeciesNamePlural": {
+   "zh": "同族",
+   "en": "our people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  }
+ },
+ "GetEnvoyLocation": {
+  "This.Owner.Federation.GetName": {
+   "zh": "该联邦",
+   "en": "the federation",
+   "note": {
+    "zh": "游戏里这里会出现联邦的名称。",
+    "en": "In the game, the federation's name appears here."
+   }
+  },
+  "This.envoy_location_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现使节所在帝国的名称。",
+    "en": "In the game, the name of the empire the envoy is in appears here."
+   }
+  }
+ },
+ "GetGoldenRuleDebrief": {
+  "event_target:federation_bidding_winner.GetName": {
+   "zh": "胜出的帝国",
+   "en": "the winning empire",
+   "note": {
+    "zh": "游戏里这里会出现在竞标中胜出的帝国名称。",
+    "en": "In the game, the name of the empire that won the bidding appears here."
+   }
+  }
+ },
+ "GetHeirsBargain": {
+  "Ruler.Species.GetName": {
+   "zh": "我们的物种",
+   "en": "our species",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者所属物种的名称。",
+    "en": "In the game, the name of your ruler's species appears here."
+   }
+  },
+  "Species.GetName": {
+   "zh": "那个物种",
+   "en": "the other species",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的名称。",
+    "en": "In the game, the name of the other species appears here."
+   }
+  }
+ },
+ "GetLeviathanParadeName": {
+  "Owner.GetAdj": {
+   "zh": "我方",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国的形容词。",
+    "en": "In the game, your empire's adjective appears here."
+   }
+  }
+ },
+ "GetLususMiningDesc": {
+  "event_target:red_giant_homeworld_tmp.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
+ },
+ "GetMindOverMatterEnding": {
+  "This.GetAdjective": {
+   "zh": "同族",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  }
+ },
+ "GetNavalCollisionLeader": {
+  "Leader.GetName": {
+   "zh": "这位领袖",
+   "en": "the leader",
+   "note": {
+    "zh": "游戏里这里会出现这位领袖的名字。",
+    "en": "In the game, this leader's name appears here."
+   }
+  }
+ },
+ "GetNeuralOverloadIntro": {
+  "Owner.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  }
+ },
+ "GetOutOfControlPsyche": {
+  "Owner.GetAdjective": {
+   "zh": "同族",
+   "en": "species'",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  }
+ },
+ "GetPaybackChainDescSwords": {
+  "event_target:payback_stole_revenge_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现窃取我们复仇的帝国名称。",
+    "en": "In the game, the name of the empire that stole our revenge appears here."
+   }
+  }
+ },
+ "GetPlanetBioInfo": {
+  "known_planet.GetClassAdj": {
+   "zh": "未知",
+   "en": "unfamiliar",
+   "note": {
+    "zh": "游戏里这里会出现这颗行星的类型描述词。",
+    "en": "In the game, this planet's class description appears here."
+   }
+  }
+ },
+ "GetRedGiantEndingExplode": {
+  "Target.GetStarName": {
+   "zh": "这颗恒星",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, the name of this star appears here."
+   }
+  },
+  "event_target:red_giant_homeworld_tmp.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
+ },
+ "GetRedGiantEndingKalmStationStatus": {
+  "Owner.Species.GetHandNamePlural": {
+   "zh": "我们的手",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现你的物种对“手”的复数称呼。",
+    "en": "In the game, your species' plural word for hands appears here."
+   }
+  }
+ },
+ "GetResearcherPluralWithIcon": {
+  "biologist.GetIcon": {
+   "zh": "",
+   "en": "",
+   "omit": [
+    "en",
+    "zh"
+   ]
+  },
+  "calculator_biologist.GetIcon": {
+   "zh": "",
+   "en": "",
+   "omit": [
+    "en",
+    "zh"
+   ]
+  },
+  "calculator_engineer.GetIcon": {
+   "zh": "",
+   "en": "",
+   "omit": [
+    "en",
+    "zh"
+   ]
+  },
+  "calculator_physicist.GetIcon": {
+   "zh": "",
+   "en": "",
+   "omit": [
+    "en",
+    "zh"
+   ]
+  },
+  "engineer.GetIcon": {
+   "zh": "",
+   "en": "",
+   "omit": [
+    "en",
+    "zh"
+   ]
+  },
+  "physicist.GetIcon": {
+   "zh": "",
+   "en": "",
+   "omit": [
+    "en",
+    "zh"
+   ]
+  }
+ },
+ "GetShroudfallExtra": {
+  "Owner.GetSpeciesNamePlural": {
+   "zh": "我们的人民",
+   "en": "our people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  }
+ },
+ "GetSystemsVisited": {
+  "owner.visited_systems_nomad": {
+   "zh": "已访问星系数",
+   "en": "systems visited so far",
+   "note": {
+    "zh": "游戏里这里会出现你已访问的星系数量。",
+    "en": "In the game, the number of star systems you have visited appears here."
+   }
+  }
+ },
+ "GetTelepathSwapPluralWithIcon": {
+  "telepath.GetIcon": {
+   "zh": "",
+   "en": "",
+   "omit": [
+    "en",
+    "zh"
+   ]
+  },
+  "telepath.GetNamePlural": {
+   "zh": "灵能者",
+   "en": "telepaths",
+   "note": {
+    "zh": "游戏里这里会出现灵能者的复数名称。",
+    "en": "In the game, the plural name of the telepaths appears here."
+   }
+  },
+  "telepath_drone.GetIcon": {
+   "zh": "",
+   "en": "",
+   "omit": [
+    "en",
+    "zh"
+   ]
+  },
+  "telepath_drone.GetNamePlural": {
+   "zh": "子个体",
+   "en": "drones",
+   "note": {
+    "zh": "游戏里这里会出现灵能子个体的复数名称。",
+    "en": "In the game, the plural name of the telepath drones appears here."
+   }
+  }
+ },
+ "GetThoughtTransmissionIntro": {
+  "Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  }
+ },
+ "GetThoughtTransmissionOutro": {
+  "Owner.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  }
+ },
+ "ResourceDiscovery": {
+  "FromFromFrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
+ },
+ "ResourceDiscoveryEnergy": {
+  "FromFromFrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
+ },
+ "ResourceDiscoveryExoticGases": {
+  "FromFromFrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
+ }
+}

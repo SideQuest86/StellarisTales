@@ -68,5 +68,27 @@
     "en": "In the game, the name of this star system appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "ancrel.12040": {
+   "curator_poi.GetName": {
+    "zh": "这个",
+    "en": "distant star",
+    "note": {
+     "zh": "游戏里这里会显示该恒星系的名字。",
+     "en": "In the game, the name of that star system appears here."
+    }
+   }
+  },
+  "event_chains:find_the_curators": {
+   "curator_poi.GetName": {
+    "zh": "这个",
+    "en": "distant star",
+    "note": {
+     "zh": "游戏里这里会显示该恒星系的名字。",
+     "en": "In the game, the name of that star system appears here."
+    }
+   }
+  }
  }
 }

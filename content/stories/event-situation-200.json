@@ -286,6 +286,41 @@
   }
  },
  "placeholderDocs": {
+  "situation.200": {
+   "Root.complex_drones_counter_100": {
+    "zh": "若干",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会显示受保护的复合子个体数量。",
+     "en": "In the game, the number of protected complex drones appears here."
+    }
+   },
+   "Root.simple_drones_counter_100": {
+    "zh": "若干",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会显示受保护的低级子个体数量。",
+     "en": "In the game, the number of protected simple drones appears here."
+    }
+   },
+   "Root.total_drones_counter_100": {
+    "zh": "若干",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会显示受保护的子个体数量。",
+     "en": "In the game, the number of protected drones appears here."
+    }
+   }
+  },
   "situation.291": {
    "Target.GetName": {
     "zh": "这颗星球",

@@ -64,5 +64,47 @@
     "en": "In the game, the name of that empire appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "operation.5025": {
+   "from.GetName": {
+    "zh": "这项",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会显示该行动的代号。",
+     "en": "In the game, the codename of this operation appears here."
+    }
+   }
+  },
+  "operation.5026": {
+   "event_target:toxic_field_operation.GetName": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会显示该行动的代号。",
+     "en": "In the game, the codename of this operation appears here."
+    }
+   }
+  },
+  "operation.5027": {
+   "fromfromfrom.GetName": {
+    "zh": "这项",
+    "en": "",
+    "omit": [
+     "en"
+    ],
+    "note": {
+     "zh": "游戏里这里会显示该行动的代号。",
+     "en": "In the game, the codename of this operation appears here."
+    }
+   }
+  }
  }
 }

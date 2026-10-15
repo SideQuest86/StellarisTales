@@ -64,8 +64,6 @@ export const UI = {
   "archive.nextStory": { zh: "下一份故事", en: "Next story" },
   "archive.previousCategory": { zh: "上一个类别", en: "Previous category" },
   "archive.nextCategory": { zh: "下一个类别", en: "Next category" },
-  "archive.switchCategory": { zh: "切换类别", en: "Category" },
-  "archive.hint": { zh: "拖动或方向键浏览 · 回车展开", en: "Drag or use arrow keys · Enter to open" },
   "archive.loadingTitle": { zh: "载入中", en: "Loading" },
   "archive.offline": { zh: "记忆暂时失联", en: "The archive is out of reach" },
   "archive.reconnect": { zh: "重新连接", en: "Reconnect" },

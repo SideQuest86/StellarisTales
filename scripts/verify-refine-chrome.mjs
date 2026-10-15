@@ -63,6 +63,21 @@ try {
       await page.waitForFunction(() => document.body.classList.contains("museum-open"), null, { timeout: 15000 });
       await page.waitForTimeout(1200);
       await page.screenshot({ path: `${out}/chrome-${tag}-museum.png` });
+      assert.equal(await page.locator(".museum-eyebrow").count(), 0, "no decorative museum eyebrow");
+      await page.locator(".museum-exhibit").first().click();
+      await page.waitForTimeout(900);
+      await page.screenshot({ path: `${out}/chrome-${tag}-museum-detail.png` });
+      // polish checks on the archive chrome: removed filler stays removed, transitions stay short
+      assert.equal(await page.locator(".archive-hint, .lane-navigation span").count(), 0, "no archive hint / category label");
+      const slow = await page.evaluate(() => {
+        const bad = [];
+        for (const el of document.querySelectorAll("body *")) {
+          const cs = getComputedStyle(el);
+          cs.transitionDuration.split(",").forEach((d) => { if (parseFloat(d) > 0.2001 && !el.closest("canvas")) bad.push(`${el.tagName}.${el.className}:${d}`); });
+        }
+        return bad.slice(0, 5);
+      });
+      assert.deepEqual(slow, [], "transitions <= 200 ms");
       await page.evaluate(() => (location.hash = ""));
       await page.waitForFunction(() => !document.body.classList.contains("museum-open"), null, { timeout: 8000 });
       await page.locator("#museum-open").focus();
