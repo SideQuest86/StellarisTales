@@ -33,6 +33,7 @@
 .museum-head h1 span { margin-left: 12px; font: 400 13px var(--mono); letter-spacing: 0.18em; color: var(--dim); text-transform: uppercase; }
 .museum-eyebrow { margin: 0; font: 11px var(--mono); letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; }
 .museum-concept { max-width: 760px; margin: 0; font: 14px/1.8 var(--serif); color: var(--ink-2); white-space: pre-line; }
+.museum-concept p { margin: 0; }
 .museum-close {
   flex: 0 0 auto;
   width: 40px;

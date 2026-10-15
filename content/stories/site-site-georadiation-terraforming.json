@@ -116,5 +116,17 @@
    },
    "evidence": "events/extreme_frontiers_events.txt:5275 option fires hidden extreme_frontiers.1532 (create_geocorp_fleet, :5297-5312); on_fleet_destroyed_perp (common/on_actions/00_on_actions.txt:1692) fires hidden 1533 (:5319-5346) which sends 1534 after 1 day"
   }
- ]
+ ],
+ "placeholderDocs": {
+  "extreme_frontiers.1545": {
+   "from.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, this planet's name appears here."
+    }
+   }
+  }
+ }
 }

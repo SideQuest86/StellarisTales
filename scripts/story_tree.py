@@ -717,12 +717,15 @@ class Compiler:
         neutral defaults. Only keys the doc actually uses are kept; the original token stays in the text."""
         story = fragment.get('placeholders', {})
         doc = fragment.get('placeholderDocs', {}).get(rid, {})
+        # The game's scope names are case-insensitive (Root / root / ROOT): so is the reviewed wording.
+        story_ci = {k.lower(): v for k, v in story.items()}
+        doc_ci = {k.lower(): v for k, v in doc.items()}
         out = {}
         for key, wording in names.items():
-            chosen = doc.get(key) or story.get(key)
+            chosen = doc.get(key) or story.get(key) or doc_ci.get(key.lower()) or story_ci.get(key.lower())
             if chosen:
                 merged = {k: chosen[k] for k in ('zh', 'en') if chosen.get(k)}
-                merged = {**wording, **merged}
+                merged = {**{k: v for k, v in wording.items() if k != 'default'}, **merged}
                 note = chosen.get('note') or wording.get('note')
                 if note:
                     merged['note'] = note

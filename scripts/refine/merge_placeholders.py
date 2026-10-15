@@ -42,6 +42,9 @@ def main():
     ap.add_argument('--dry-run', action='store_true')
     args = ap.parse_args()
     groups = json.loads((BASE / 'groups.json').read_text(encoding='utf-8'))['groups']
+    # Follow-up pass over keys still on the generic phrase (work/fallback.md): per-doc wording added on top.
+    fallback_file = BASE / 'out' / 'fallback.json'
+    fallback = json.loads(fallback_file.read_text(encoding='utf-8')) if fallback_file.exists() else {}
     rows, problems, changed_keys, covered, missing_groups = [], [], 0, 0, []
     issues = []
     for g in groups:
@@ -81,6 +84,14 @@ def main():
                         continue
                     e = check(entry, problems, f'{sid} {doc} {key}')
                     if e:
+                        per_doc.setdefault(doc, {})[key] = e
+            for doc, keys in ((fallback.get(sid) or {}).get('placeholderDocs') or {}).items():
+                for key, entry in (keys or {}).items():
+                    if doc not in used or key not in used[doc]:
+                        problems.append(f'{sid}: fallback key {key} not used in {doc}')
+                        continue
+                    e = check(entry, problems, f'{sid} {doc} {key} (fallback)')
+                    if e and key not in per_doc.get(doc, {}):
                         per_doc.setdefault(doc, {})[key] = e
             for text in review.get('issues') or []:
                 issues.append(f'{sid}: {text}')

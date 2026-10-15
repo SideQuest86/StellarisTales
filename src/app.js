@@ -108,7 +108,7 @@ function nameNote(own, scripted) {
 const TITLE_WORDS = [
   "Science Officer", "Officer", "Admiral", "General", "Captain", "Commander", "Governor", "Doctor", "Dr\\.", "Professor",
   "Envoy", "Ambassador", "Lieutenant", "Director", "Chancellor", "Knight", "Sir", "Dame", "Spymaster",
-  "Operation", "Arkship", "Asteroid", "the planet", "Emissary", "Councilor", "science ship", "Survey Unit",
+  "Operation", "Arkship", "Asteroid", "planet", "Emissary", "Councilor", "science ship", "Survey Unit",
   "行动", "方舟", "议员", "使节",
   "科学专员", "专员", "博士", "将军", "舰长", "总督", "上将", "元帅", "教授", "特使", "大使", "指挥官", "主任",
 ].join("|");

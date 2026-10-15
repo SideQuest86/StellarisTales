@@ -67,6 +67,21 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
   panels such as star_mall_map, kuurian_cybrex_blueprints) open edge-on — a per-model opening angle in the manifest
   would fix that.
 
+## Refinement 2026-10 (Markdown guides, placeholders, typography, navigation, audio)
+
+- Start with [docs/refine/README.md](docs/refine/README.md): work split, files, evidence, limits. Audit per category:
+  [docs/refine/AUDIT.md](docs/refine/AUDIT.md); placeholder ledger with open reviewer issues:
+  [docs/refine/placeholders/LEDGER.md](docs/refine/placeholders/LEDGER.md); fonts and licences: [docs/FONTS.md](docs/FONTS.md).
+- Placeholder wording lives in the story fragments (`placeholders`, `placeholderDocs`) and
+  `content/museum/placeholders.json`; never in game text. To re-review: `python scripts/refine/placeholder_worksheets.py`
+  (worksheets in docs/refine/placeholders/work/, not committed), reviewers write `docs/refine/placeholders/out/<group>.json`,
+  then `python scripts/refine/merge_placeholders.py`, `python scripts/compile-stories.py`, `python scripts/refine/audit.py`.
+  Specimens: `scripts/refine/merge_specimen_placeholders.py` then `scripts/extract-specimens.py`.
+- Parallel front-end agents test with `node scripts/dev-sync.mjs` (refreshes dist/ without deleting it); only the
+  coordinator runs `scripts/build.mjs`.
+- Checks added: `scripts/verify-refine-reader.mjs`, `verify-refine-chrome.mjs`, `verify-refine-audio.mjs`,
+  `scripts/refine/sample-render.mjs story:chapter …`; tests `tests/markdown.test.mjs`, `tests/audio.test.mjs`.
+
 ## Next work
 
 1. Optional improvements: render the first chapter before the reader animation to hide the open-click frame;
@@ -75,6 +90,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 
 ## Working rules
 
-- Reviewers are subagents (model Sonnet, low effort) in private copies; only the coordinator merges and commits.
+- Reviewers are subagents in private copies or own output files; only the coordinator merges and commits. Story-detail
+  refinement runs on Haiku (low effort) in parallel; other subagents on Sonnet (low effort).
 - Never hand-edit generated JSON; edit `content/` or scripts and recompile.
 - Never reset/clean the working tree; keep small commits on `main`.

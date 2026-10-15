@@ -114,7 +114,7 @@ function render() {
       <div>
         <p class="museum-eyebrow">${esc(T("标本陈列", "Specimen exhibition"))}</p>
         <h1>${esc(label(a.name))} <span lang="${lang() === "zh" ? "en" : "zh-CN"}">${esc(lang() === "zh" ? a.name.en : a.name.zh)}</span></h1>
-        <p class="museum-concept">${gameText(raw(a.specimenConcept))}</p>
+        <div class="museum-concept"><p>${gameText(raw(a.specimenConcept))}</p></div>
       </div>
       <button class="museum-close" data-close aria-label="${esc(T("离开博物天枢", "Leave the Grand Archive"))}">×</button>
     </header>

@@ -579,3 +579,11 @@ V3：新增public/summaries/origin_treasure_hunters.md，人工整合胶囊—�
 - Tests at completion: node unit tests 36/36; verify-museum 268 checks (258 models × 4 angles, filters, search, keyboard, load-failure fallback, English, story links both ways, 390 px), 0 page errors. Released as v4.1.0.
 - GPU (Opus 5.5 subagent at user request): src/gpu.js tiers + bilingual integrated-GPU hint; found/fixed duplicate rAF chains (archive scene drew up to 18× per displayed frame). Evidence verification/gpu/. Browsers here ignore powerPreference; only --force-high-performance-gpu, chrome://flags/#force-high-performance-gpu or the Windows per-app GPU preference move Chrome to the RTX.
 - Budget ledger: docs/museum/BUDGET.md (baseline 16 %, 18 % at the batch start).
+
+## 2026-10-15 Refinement (goal: guides, placeholders, typography, navigation, audio; budget ≤ 40 weekly points)
+
+- Summary, file ownership, evidence and limits: docs/refine/README.md; audit docs/refine/AUDIT.md; placeholder ledger docs/refine/placeholders/LEDGER.md; fonts docs/FONTS.md; budget docs/refine/BUDGET.md.
+- Guides render as sanitised Markdown (src/markdown.js), current language first with a toggle for the other. Map drags no longer select page text (src/flow-surface.js).
+- Placeholders: compiler defaults + hover notes; 12 parallel Haiku reviewers covered 1,159/1,159 stories with placeholders and 121/121 specimens; 3,058 reviewed story entries in fragments; central reader rules for articles, titles, pairs, possessives, agreement; accessible tooltip (src/name-tooltip.js). $KEY$ references expanded from the game's localisation.
+- Site name exactly "Stellaris Tales"; decorative subtitles removed; Grand Archive entry in the category navigation (first on phones). Fonts Newsreader / Noto Serif SC / Noto Sans SC (OFL); Anthropic Serif not licensed for third-party web use as far as could be found.
+- Soundtrack defaults to Faster Than Light (vocal), one-time first-gesture fallback when autoplay is blocked, saved pause/mute respected.

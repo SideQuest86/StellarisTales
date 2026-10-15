@@ -7,5 +7,6 @@ A weekly reset does not renew the budget (post-reset usage is added to the pre-r
 | When (UTC) | Weekly all-models | 5-hour | Note |
 | --- | ---: | ---: | --- |
 | 2026-10-14 23:50 | 20 % (baseline; resets 2026-10-20 08:00) | 2 % | before any refinement work |
+| 2026-10-15 ~00:40 | 22 % | 0 % (new window) | 3 Sonnet front-end agents + 12 Haiku placeholder reviewers done; integration, audit, regression suites; before release |
 
 Stop rule: checkpoint at 54 % weekly (34 points), never exceed 60 % (40 points).

@@ -22,7 +22,11 @@ def sentences(text, key):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--chunk', type=int, default=60)
+    ap.add_argument('--fallback-only', action='store_true',
+                    help='only keys still on the generic fallback; writes work/fallback.md (no groups.json)')
     args = ap.parse_args()
+    if args.fallback_only:
+        return fallback_sheet()
     index = json.loads((ROOT / 'public/stories/index.json').read_text(encoding='utf-8'))['stories']
     scripted = set(json.loads((ROOT / 'public/stories/names.json').read_text(encoding='utf-8')))
     by_cat = collections.defaultdict(list)
@@ -82,6 +86,31 @@ def main():
     (OUT / 'groups.json').write_text(json.dumps({'groups': groups, 'stats': stats}, ensure_ascii=False, indent=1),
                                      encoding='utf-8')
     print(dict(stats), 'groups:', len(groups))
+
+
+def fallback_sheet():
+    index = json.loads((ROOT / 'public/stories/index.json').read_text(encoding='utf-8'))['stories']
+    scripted = set(json.loads((ROOT / 'public/stories/names.json').read_text(encoding='utf-8')))
+    lines, n = ['# Fallback worksheet: placeholders still on the generic phrase ("this name")', ''], 0
+    for s in index:
+        d = json.loads((ROOT / 'public/stories' / f"{s['id']}.json").read_text(encoding='utf-8'))
+        block = []
+        for c in d['chapters']:
+            strings = [c['title'], *c['texts'], *c.get('sections', [])]
+            for ch in c.get('choices', []):
+                strings += [ch['label'], *ch.get('responses', []), *ch.get('tooltips', [])]
+            for key, w in (c.get('names') or {}).items():
+                if not w.get('default') or key.split('|')[0].split('.')[-1] in scripted:
+                    continue
+                n += 1
+                block.append(f"- doc `{c['id']}` key `{key}`")
+                for lang in ('zh', 'en'):
+                    for sent in [x for st in strings for x in sentences(st.get(lang) or '', key)][:2]:
+                        block.append(f'  - {lang}: {sent[:300]}')
+        if block:
+            lines += [f"## {s['id']} — {d['story']['title'].get('en', '')}"] + block + ['']
+    (OUT / 'work' / 'fallback.md').write_text('\n'.join(lines), encoding='utf-8')
+    print('fallback keys:', n)
 
 
 if __name__ == '__main__':

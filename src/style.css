@@ -1971,6 +1971,10 @@ dialog::backdrop {
     margin: 0 calc(var(--gutter) * -1);
     padding: 0 var(--gutter);
   }
+  /* The scrolling row would hide the Grand Archive past the edge; on phones it leads the row instead. */
+  .catalogue .catalogue-museum {
+    order: -1;
+  }
   .catalogue button {
     min-height: 40px;
     padding: 6px 8px 8px;

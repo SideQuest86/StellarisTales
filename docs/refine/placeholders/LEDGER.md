@@ -1,6 +1,6 @@
 # Placeholder review ledger
 
-Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer output): 1159; reviewed wording entries merged: 3058.
+Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer output): 1159; reviewed wording entries merged: 3194.
 
 | Group | Stories | Reviewed |
 | --- | ---: | ---: |
@@ -41,6 +41,7 @@ Stories with engine-filled placeholders: 1159; reviewed (present in a reviewer o
 - precursor-assistance: unknown key Root.Owner.GetPrecursorCiv
 - precursor-assistance: unknown key controller.GetIndividualNamePluralCap
 - site-site-debris-belt: unknown key Root.Owner.GetResearchers
+- event-bio-1 bio.85 Owner.Leader.GetHerselfHimself (fallback): invalid entry {"zh": "", "en": "themselves", "note": {"zh": "游戏里这里会出现领袖的自称代词。", "en": "In the game, the leader's reflexive pronoun appears here."}}
 - event-colony-3005 doomslayer_knight.GetName: check capitalised words (possible invented name): the Doomslayer
 - event-situation-150: unknown key saved_owner.GetResearchers
 - event-synth-1515 From.GetRulerTitle: invalid entry {"zh": "", "en": "beloved", "note": {"zh": "游戏里这里会出现这位统治者的敬称。", "en": "In the game, a form of address for this ruler appears here."}}
