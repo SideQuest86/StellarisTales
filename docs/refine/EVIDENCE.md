@@ -22,3 +22,5 @@ Each claim with the command that proves it (run from the project root; browser c
 | Release | Published and verified live | RELEASE, HANDOFF.md "Live:" line |
 
 Not possible from here: a physical phone test (emulation only) and a native-speaker proofread of the wording.
+
+Decision (user, 2026-10-15): the 81 faults in the game's own text are kept exactly as shipped (no display-time correction); they stay listed in docs/refine/placeholders/LEDGER.md as known game-text issues.
