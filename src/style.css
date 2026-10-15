@@ -508,6 +508,15 @@ input {
   border-bottom: 1px solid var(--line);
   background: linear-gradient(180deg, var(--bg) 70%, #08151ae6);
 }
+/* The column's top padding sits above the sticky toolbar: mask it so scrolled text never shows behind the bar. */
+.reader-toolbar::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 100% 0;
+  height: 200px;
+  background: var(--bg);
+  pointer-events: none;
+}
 .reader-toolbar button {
   font-size: 13px;
   letter-spacing: 0.06em;
