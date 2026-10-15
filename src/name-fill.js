@@ -97,6 +97,11 @@ export function fillNames(s, opts) {
     .replace(/的的/g, "的")
     // "the tropical [X]" with X = "this planet": the sentence already has a determiner, so the phrase drops its own.
     .replace(/\b(the|their|our|its|his|her|your|a|an)\s+([a-z][\w-]*)\s+([^]*)(?:this|that|our|the)\s+/gi, (_, det, adj, n) => `${det} ${adj} ${OPEN}${n}${SEP}`)
+    // A frame that only introduces a proper name ("a scientist by the name of [X]", "名叫[X]的间谍首脑"): we never
+    // invent the name, so the frame and its slot are left out together ("a scientist", "间谍首脑"). Display only —
+    // the original text is kept in the data.
+    .replace(new RegExp(`,?\\s+(?:by the name of|named)\\s+${SPAN}(,(?=\\s))?`, "g"), "")
+    .replace(new RegExp(`(?:名叫|名为|名字叫)${SPAN}的?`, "g"), "")
     // A computed amount ("+[X]% research"): the phrase stands for the whole quantity, sign and % included.
     .replace(new RegExp(`[+\\-]?(${SPAN})\\s?%`, "g"), "$1")
     // Two substitutions side by side ("[Root.GetRulerTitle] [Root.GetRulerName]") name one person: a second phrase

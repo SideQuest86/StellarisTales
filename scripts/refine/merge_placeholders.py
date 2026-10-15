@@ -104,6 +104,8 @@ def main():
     if second:
         exceptions = [e for e in exceptions if e.split(':', 1)[0] not in second]
         exceptions += [f'{sid}: {e}' for sid, r in second.items() for e in r.get('exceptions') or []]
+    # Frames that only introduce a proper name are now left out with their slot by the renderer (src/name-fill.js).
+    exceptions = [e for e in exceptions if not re.search(r'proper name|personal name|unit name|by the name of|needs a name', e, re.I)]
     rows, problems, changed_keys, covered, missing_groups = [], [], 0, 0, []
     issues = []
     for g in groups:

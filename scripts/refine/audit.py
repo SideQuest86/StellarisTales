@@ -36,7 +36,7 @@ for s in index:
         r['with placeholders'] += 1
         r['reviewed'] += sid in outs
         r['rendered confirmed'] += sid in rendered
-        r['game-text exceptions'] += len((rendered.get(sid) or {}).get('exceptions') or [])
+        r['game-text exceptions'] += len([e for e in (rendered.get(sid) or {}).get('exceptions') or [] if not re.search(r'proper name|personal name|unit name|by the name of|needs a name', e, re.I)])
     r['reviewed entries'] += len(frag.get('placeholders', {})) + sum(len(v) for v in frag.get('placeholderDocs', {}).values())
     for c in d['chapters']:
         for key, w in (c.get('names') or {}).items():

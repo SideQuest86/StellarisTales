@@ -56,6 +56,11 @@ test("context variants: one key, different positions in one document", () => {
   assert.equal(f("The [W.GetName] crew cheered."), "Our ship's crew cheered.");
   assert.equal(f("We reached [W.GetName]."), "We reached this world.");
 });
+test("frames that only introduce a proper name are left out with the slot", () => {
+  assert.equal(fill("A scientist by the name of [L.GetLeaderName] has joined us."), "A scientist has joined us.");
+  assert.equal(fill("A scientist, by the name of [L.GetLeaderName], has joined us."), "A scientist has joined us.");
+  assert.equal(fill("我们在那里有一位名叫[L.GetLeaderName]的间谍首脑。", "zh"), "我们在那里有一位间谍首脑。");
+});
 test("a/an agrees with the phrase", () => {
   const n = { "R.GetName": { zh: "那个帝国", en: "other empire" }, "Q.GetName": { zh: "舰队", en: "fleet" } };
   const f = (s) => plainNames(fillNames(s, { lang: "en", chapterNames: n }));

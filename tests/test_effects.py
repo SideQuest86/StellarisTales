@@ -134,12 +134,13 @@ class EffectTests(unittest.TestCase):
         created = next(s for s in res['doc']['sections'] if s['id'] == 'on_create')
         self.assertIn('modifier', [e['kind'] for e in created['effects']])
 
-    def test_budget_trim_says_what_was_left_out(self):
+    def test_every_effect_is_itemised(self):
+        # No cut-off any more: long lists (archaeology failure pools) are complete in the data; the panel clips them
+        # behind "show all" (src/effects-panel.js bindEffects).
         many = [{'kind': 'resource', 'label': E.L('a', 'a')} for _ in range(70)]
         out = E.trim(many)
-        self.assertEqual(len(out), 61)
-        self.assertEqual(out[-1]['kind'], 'more')
-        self.assertEqual(out[-1]['omitted'], 10)
+        self.assertEqual(len(out), 70)
+        self.assertNotIn('more', [e['kind'] for e in out])
 
     def test_origin_numbers_and_game_text(self):
         origins = json.loads((ROOT / 'public/data/origins.json').read_text(encoding='utf-8'))

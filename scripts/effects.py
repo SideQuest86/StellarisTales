@@ -1,4 +1,4 @@
-﻿"""What the choices, stages and outcomes of a story document DO in the game (docs/EFFECTS.md).
+"""What the choices, stages and outcomes of a story document DO in the game (docs/EFFECTS.md).
 
 Pure functions over parsed Stellaris script (scripts/extract.parse nodes). Nothing is simulated and nothing is invented:
 every number comes from the script, from a scripted variable / static script value, or from a game modifier definition;
@@ -1382,7 +1382,7 @@ def _describe_record(record, ctx):
     return {'doc': {'sections': sections} if sections else None, 'choices': []}
 
 
-BUDGET = 60
+BUDGET = 100000  # every effect is itemised; the panel clips long lists behind "show all" (src/effects-panel.js)
 
 
 def trim(effects, budget=BUDGET):
