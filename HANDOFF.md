@@ -87,6 +87,8 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 
 ## Refinement round 2 (2026-10-15: images, placeholders, effects, polish)
 
+- **Live: v4.3.0 (`578af821`)**, verified live with verify-effects, verify-refine-reader/-chrome/-audio and verify-reader-v4 (all passed, 0 page errors); locally also verify-museum (268), verify-ui-capture. Budget: 1 of 40 weekly points.
+
 - Images: Real-ESRGAN x4plus (BSD-3) ×2 derivatives for all 618 event pictures (`public/art-hd/`, used for the
   close-up canvas and 2x `srcset`) and ×3 for all 258 specimen icons (`public/museum/img-hd/`, museum detail);
   originals untouched (rollback = remove the folders/markup), manifests with sources/settings/sha256, 3D atlas still on

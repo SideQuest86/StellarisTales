@@ -19,3 +19,4 @@ Stop rule: checkpoint at 54 % weekly (34 points), never exceed 60 % (40 points).
 | 2026-10-15 02:40 | 23 % (baseline; resets 2026-10-20 08:00) | 3 % | before round-2 work |
 
 Stop rule: checkpoint at 57 % weekly (34 points), never exceed 63 % (40 points).
+| 2026-10-15 ~03:35 | 24 % | 11 % | released v4.3.0 (578af821), live checks passed (effects, refine reader/chrome/audio, reader V4). **Round-2 total: 1 point of 40** |
