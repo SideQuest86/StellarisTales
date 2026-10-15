@@ -87,7 +87,8 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 
 ## Refinement round 2 (2026-10-15: images, placeholders, effects, polish)
 
-- **Live: v4.5.2 (`555afe1e`)**, verified live 2026-10-15 with verify-images, verify-a11y, verify-layout-sweep, verify-effects, verify-refine-reader/-chrome/-audio, verify-reader-v4 (all passed).
+- **Live: v4.5.3 (`cb76673c`)**, verified live 2026-10-15 (verify-images, verify-a11y, verify-layout-sweep, verify-effects, verify-refine-chrome, verify-reader-v4). Evidence index: docs/refine/EVIDENCE.md.
+- Earlier: v4.5.2 (`555afe1e`), verified live 2026-10-15 with verify-images, verify-a11y, verify-layout-sweep, verify-effects, verify-refine-reader/-chrome/-audio, verify-reader-v4 (all passed).
 - Earlier: v4.5.1 (`6b8ef7e1`), verified live 2026-10-15 (layout sweep, effects, refine reader/chrome/audio, reader V4; 0 page errors); full-catalogue local sweep `scripts/verify-layout-full.mjs`: 3,292 pages (every story + exhibit, 1600/390), 0 failures. Round-2 budget 8 of 40 weekly points.
 - Earlier: v4.5.0 (`c0aca240`), verified live 2026-10-15 (layout sweep, effects, refine reader/chrome/audio, reader V4; 0 page errors); round-2 budget 6 of 40 weekly points.
 - Earlier: v4.4.1 (`a94069b4`), verified live 2026-10-15 with verify-layout-sweep (all categories, museum, playlist, search; HD close-up), verify-effects, verify-refine-reader/-chrome/-audio, verify-reader-v4 (0 page errors). Budget round 2: 3 of 40 weekly points.
