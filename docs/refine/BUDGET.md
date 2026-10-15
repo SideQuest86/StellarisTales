@@ -26,3 +26,4 @@ Stop rule: checkpoint at 57 % weekly (34 points), never exceed 63 % (40 points).
 | 2026-10-15 ~06:30 | 31 % | 5 % | released v4.5.1 (6b8ef7e1): verified entity mappings, natural effect labels, full-catalogue sweep (3,292 pages, 0 failures); live checks passed. **Round-2 total: 8 points of 40** |
 | 2026-10-15 ~06:55 | 31 % | 7 % | released v4.5.2 (555afe1e); live: images, a11y, layout sweep, effects, refine reader/chrome/audio, reader V4 all passed. **Round-2 total: 8 points of 40** |
 | 2026-10-15 ~07:30 | 31 % | — | released v4.5.3 (cb76673c) with rollback/reproducibility evidence; live checks passed. **Round-2 total: 8 points of 40** |
+| 2026-10-15 ~08:15 | 31 % | — | released v4.5.4 (e19a281e): full UI-copy pass, final exception pass, source-checked licences; live checks passed. **Round-2 total: 8 points of 40** |
