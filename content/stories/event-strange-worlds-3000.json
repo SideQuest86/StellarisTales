@@ -41,5 +41,63 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-strange-worlds-3000.md"
+ },
+ "placeholders": {
+  "Owner.GetSpeciesName": {
+   "zh": "诸位",
+   "en": "friends",
+   "note": {
+    "zh": "游戏里这里会出现对你物种的称呼。",
+    "en": "In the game, a form of address for your species appears here."
+   }
+  },
+  "Owner.GetSpeciesNamePlural": {
+   "zh": "人们",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "event_target:caravaneer_fleet3_country.GetSpeciesName": {
+   "zh": "外来",
+   "en": "wandering",
+   "note": {
+    "zh": "游戏里这里会出现这个外来物种的形容词。",
+    "en": "In the game, the adjective for this visiting species appears here."
+   }
+  },
+  "event_target:caravaneer_home_country.GetName": {
+   "zh": "故土",
+   "en": "home realm",
+   "note": {
+    "zh": "游戏里这里会出现这个游牧群体的故土名称。",
+    "en": "In the game, the name of this group's home realm appears here."
+   }
+  },
+  "event_target:nomad01_country.GetName": {
+   "zh": "游牧者",
+   "en": "nomads",
+   "note": {
+    "zh": "游戏里这里会出现这个游牧群体的名称。",
+    "en": "In the game, the name of this nomadic group appears here."
+   }
+  },
+  "event_target:pre_ftl_country.GetName": {
+   "zh": "当地势力",
+   "en": "the local power",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL势力的名称。",
+    "en": "In the game, the name of this pre-FTL power appears here."
+   }
+  },
+  "event_target:pre_ftl_planet.Owner.GetSpeciesName": {
+   "zh": "当地人",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL物种的形容词。",
+    "en": "In the game, the adjective for this pre-FTL species appears here."
+   }
+  }
  }
 }

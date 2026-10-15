@@ -34,5 +34,31 @@
    "common/scripted_variables/10_scripted_variables_nomads.txt"
   ],
   "guide": "public/summaries/event-arkship-1385.md"
+ },
+ "placeholders": {
+  "event_target:star_crossed_empire.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "event_target:star_crossed_survivor.GetHeShe": {
+   "zh": "此人",
+   "en": "the survivor",
+   "note": {
+    "zh": "游戏里这里会出现这位幸存者的代词。",
+    "en": "In the game, a pronoun for this survivor appears here."
+   }
+  },
+  "event_target:star_crossed_survivor.GetName": {
+   "zh": "这位幸存者",
+   "en": "the survivor",
+   "note": {
+    "zh": "游戏里这里会出现这位幸存者的名字。",
+    "en": "In the game, this survivor's name appears here."
+   }
+  }
  }
 }

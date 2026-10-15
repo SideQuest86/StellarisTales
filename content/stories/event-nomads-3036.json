@@ -42,5 +42,39 @@
   "merged": [
    "event-nomads-3045"
   ]
+ },
+ "placeholders": {
+  "diplomatic_support_issuer.GetName": {
+   "zh": "支持方帝国",
+   "en": "the supporting empire",
+   "note": {
+    "zh": "游戏里这里会出现提供外交支持的帝国名称。",
+    "en": "In the game, the name of the empire giving diplomatic support appears here."
+   }
+  },
+  "dropoff_planet.owner.GetName": {
+   "zh": "接收方帝国",
+   "en": "the receiving empire",
+   "note": {
+    "zh": "游戏里这里会出现接收方帝国的名称。",
+    "en": "In the game, the name of the receiving empire appears here."
+   }
+  },
+  "dropoff_planet.solar_system.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "pickup_planet.owner.GetName": {
+   "zh": "派出方帝国",
+   "en": "the sending empire",
+   "note": {
+    "zh": "游戏里这里会出现派出方帝国的名称。",
+    "en": "In the game, the name of the sending empire appears here."
+   }
+  }
  }
 }

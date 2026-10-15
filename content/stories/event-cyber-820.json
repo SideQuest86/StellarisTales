@@ -30,5 +30,31 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-cyber-820.md"
+ },
+ "placeholders": {
+  "root.GetSpeciesAdj": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "root.GetSpeciesHandNamePlural": {
+   "zh": "肢体",
+   "en": "limbs",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的肢体称呼。",
+    "en": "In the game, the name of your species' limbs appears here."
+   }
+  },
+  "root.GetSpeciesNamePlural": {
+   "zh": "同胞",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  }
  }
 }

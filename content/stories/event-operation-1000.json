@@ -49,5 +49,47 @@
    "common/espionage_operation_types/operations.txt"
   ],
   "guide": "public/summaries/event-operation-1000.md"
+ },
+ "placeholders": {
+  "from.spynetwork.leader.GetName": {
+   "zh": "本人",
+   "en": "personally",
+   "note": {
+    "zh": "游戏里这里会出现间谍首脑的名字。",
+    "en": "In the game, the spymaster's name appears here."
+   }
+  },
+  "from.target.GetAdj": {
+   "zh": "当地",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现当地的形容词形式。",
+    "en": "In the game, the local adjective appears here."
+   }
+  },
+  "from.target.GetName": {
+   "zh": "目标",
+   "en": "target",
+   "note": {
+    "zh": "游戏里这里会出现目标实体的名称。",
+    "en": "In the game, the name of the target entity appears here."
+   }
+  },
+  "spynetwork.leader.GetName": {
+   "zh": "本人",
+   "en": "personally",
+   "note": {
+    "zh": "游戏里这里会出现间谍首脑的名字。",
+    "en": "In the game, the spymaster's name appears here."
+   }
+  },
+  "target.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现目标帝国的名称。",
+    "en": "In the game, the name of the target empire appears here."
+   }
+  }
  }
 }

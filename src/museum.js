@@ -8,17 +8,29 @@ const T = (zh, en) => (lang() === "en" ? en : zh);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const reduced = () => document.documentElement.classList.contains("reduced-motion") || matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Original game text: colour codes and inline icons removed; save-dependent placeholders kept and marked.
-function gameText(s) {
+// Original game text: colour codes and inline icons removed. Save-dependent placeholders become the reviewed natural
+// phrase for this specimen (content/museum/placeholders.json), annotated like the reader's substitutions: the shared
+// tooltip (src/name-tooltip.js, installed by app.js) explains them on hover, focus and tap.
+function gameText(s, spec) {
   return esc((s || "").replace(/§[A-Za-z!]|£\w+£/g, "").trim())
-    .replace(/\[([^\]]+)\]/g, (_, p) => `<span class="museum-placeholder" title="${esc(T("存档决定的名称", "Name decided by the save"))}">${esc(placeholder(p))}</span>`)
+    .replace(/(\b(?:the|a|an) )?\[([^\]]+)\]/gi, (_, art, p) => {
+      const w = spec?.placeholders?.[p];
+      let text = w ? label(w) : placeholder(p);
+      if (art && lang() === "en" && /^(the|our|this|that|a|an|your|their)\b/i.test(text)) art = "";
+      if (art && /^[A-Z]/.test(art)) art = art[0].toLowerCase() + art.slice(1);
+      const note = w?.note ? label(w.note) : T("游戏会在这里填入存档中的名称。", "The game fills in a name from your save here.");
+      return `${art || ""}<span class="game-name" tabindex="0" role="note" data-note="${esc(note)}">${esc(text)}</span>`;
+    })
+    .replace(/^(<span[^>]*>)([a-z])/, (_, open, c) => open + c.toUpperCase())
     .replace(/\n+/g, "</p><p>");
 }
-// Engine placeholders are never shown as code: names become "a name", other scripted text "text from the save".
+// Without reviewed wording a placeholder reads as a plain phrase, never as code.
 function placeholder(p) {
-  return /GetName|GetAdj|GetSpeciesName|GetRulerTitle|GetPlural|GetTitle/.test(p) ? T("某名称", "a name") : T("（随存档而定的文字）", "(text decided by the save)");
+  return /GetName|GetAdj|GetSpeciesName|GetRulerTitle|GetPlural|GetTitle/.test(p) ? T("这个名字", "this name") : T("……", "…");
 }
-const label = (x) => (x?.[lang()] || x?.en || x?.zh || "").replace(/§[A-Za-z!]|£\w+£/g, "").trim();
+const raw = (x) => x?.[lang()] || x?.en || x?.zh || "";
+// Titles: a save-dependent name inside a specimen name (e.g. "[planet] Hyper Mulch") is left out.
+const label = (x) => (x?.[lang()] || x?.en || x?.zh || "").replace(/§[A-Za-z!]|£\w+£/g, "").replace(/\s*\[[^\]]+\]\s*/g, " ").replace(/\s+/g, " ").trim();
 
 let data = null, models = {}, root = null, state = { type: "all", rarity: "all", query: "", only3d: false, open: null };
 let viewer = null, opener = null, onClose = null, building = null;
@@ -100,9 +112,9 @@ function render() {
     <div class="museum-floor" aria-hidden="true"></div>
     <header class="museum-head">
       <div>
-        <p class="museum-eyebrow">${esc(T("银河叙事档案 · 标本陈列", "Stellaris Tales · Specimen exhibition"))}</p>
+        <p class="museum-eyebrow">${esc(T("标本陈列", "Specimen exhibition"))}</p>
         <h1>${esc(label(a.name))} <span lang="${lang() === "zh" ? "en" : "zh-CN"}">${esc(lang() === "zh" ? a.name.en : a.name.zh)}</span></h1>
-        <p class="museum-concept">${gameText(label(a.specimenConcept))}</p>
+        <p class="museum-concept">${gameText(raw(a.specimenConcept))}</p>
       </div>
       <button class="museum-close" data-close aria-label="${esc(T("离开博物天枢", "Leave the Grand Archive"))}">×</button>
     </header>
@@ -174,7 +186,7 @@ function showExhibit(key, keepFocus = false) {
       <p class="museum-eyebrow">${esc(label(a.types[s.type]))} · ${esc(label(a.rarities[s.rarity]))}</p>
       <h2>${esc(label(s.name))}</h2>
       <p class="museum-other-lang" lang="${lang() === "zh" ? "en" : "zh-CN"}">${esc(lang() === "zh" ? s.name.en : s.name.zh)}</p>
-      <div class="museum-desc"><p>${gameText(label(s.short))}</p><p>${gameText(label(s.details))}</p></div>
+      <div class="museum-desc"><p>${gameText(raw(s.short), s)}</p><p>${gameText(raw(s.details), s)}</p></div>
       <h3>${esc(T("展览效果", "While exhibited"))}</h3>
       <p class="museum-note">${esc(T("在博物天枢中展览时生效；数值为基础值，会乘以展区产出加成（例如“着重展区”政策 +50%，其余两个展区 −25%）。", "Applies while exhibited in a Grand Archive; values are base values, multiplied by the collection's specimen output (e.g. the Exhibition Focus policy: +50 % for the focused collection, −25 % for the others)."))}</p>
       <ul class="museum-effects">${s.effects.map(formatEffect).join("")}</ul>

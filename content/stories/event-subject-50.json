@@ -13,5 +13,47 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-subject-50.md"
+ },
+ "placeholders": {
+  "overlord_empire.Capital.GetName": {
+   "zh": "宗主国首都",
+   "en": "overlord's capital",
+   "note": {
+    "zh": "游戏里这里会出现宗主国首都的名称。",
+    "en": "In the game, the name of the overlord's capital appears here."
+   }
+  },
+  "overlord_empire.GetName": {
+   "zh": "宗主国",
+   "en": "overlord",
+   "note": {
+    "zh": "游戏里这里会出现宗主国的名称。",
+    "en": "In the game, the name of the overlord appears here."
+   }
+  },
+  "subject_empire.Capital.GetName": {
+   "zh": "附庸国首都",
+   "en": "vassal's capital",
+   "note": {
+    "zh": "游戏里这里会出现附庸国首都的名称。",
+    "en": "In the game, the name of the vassal's capital appears here."
+   }
+  },
+  "subject_empire.GetName": {
+   "zh": "附庸国",
+   "en": "vassal state",
+   "note": {
+    "zh": "游戏里这里会出现附庸国的名称。",
+    "en": "In the game, the name of the vassal state appears here."
+   }
+  },
+  "targeted_starbase.GetName": {
+   "zh": "这座恒星基地",
+   "en": "the starbase",
+   "note": {
+    "zh": "游戏里这里会出现这座恒星基地的名称。",
+    "en": "In the game, the name of this starbase appears here."
+   }
+  }
  }
 }

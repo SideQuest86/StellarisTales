@@ -319,5 +319,47 @@
    "first_contact_can_capture_ship 等条件的内部定义在引擎/脚本触发器中，未展开。 / Internal definitions of triggers such as first_contact_can_capture_ship were not expanded."
   ],
   "guide": "public/summaries/event-first-contact-250.md"
+ },
+ "placeholders": {
+  "From.Owner.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "From.Owner.Species.GetClass": {
+   "zh": "未知",
+   "en": "unknown",
+   "note": {
+    "zh": "游戏里这里会出现这个外星物种的分类。",
+    "en": "In the game, the class of this alien species appears here."
+   }
+  },
+  "This.ContactCountry.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "This.ContactCountry.Species.GetClass": {
+   "zh": "未知",
+   "en": "unknown",
+   "note": {
+    "zh": "游戏里这里会出现这个外星物种的分类。",
+    "en": "In the game, the class of this alien species appears here."
+   }
+  },
+  "This.ContactCountry.Species.GetClassPlural": {
+   "zh": "无人机",
+   "en": "drones",
+   "note": {
+    "zh": "游戏里这里会出现这个外星物种的复数分类。",
+    "en": "In the game, the plural class of this alien species appears here."
+   }
+  }
  }
 }

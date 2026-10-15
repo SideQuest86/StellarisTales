@@ -152,5 +152,23 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-emperor-150.md"
+ },
+ "placeholders": {
+  "LastKilledCountryName": {
+   "zh": "最后覆灭的帝国",
+   "en": "last empire",
+   "note": {
+    "zh": "游戏里这里会出现最后被消灭的帝国的名称。",
+    "en": "In the game, the name of the last defeated empire appears here."
+   }
+  },
+  "dissolve_winner.GetName": {
+   "zh": "胜利者",
+   "en": "the victor",
+   "note": {
+    "zh": "游戏里这里会出现胜利者的名称。",
+    "en": "In the game, the name of the victor appears here."
+   }
+  }
  }
 }

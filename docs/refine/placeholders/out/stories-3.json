@@ -1,0 +1,425 @@
+{
+  "event-cara-4010": {
+    "placeholders": {
+      "caravan_pops_join_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cara-4020": {
+    "placeholders": {
+      "caravan_hulk_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "caravan_hulk_system.GetName": {"zh": "附近", "en": "nearby", "note": {"zh": "游戏里这里会出现附近星系的名称。", "en": "In the game, the name of the nearby star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cara-4030": {
+    "placeholders": {
+      "disgruntled_planet.owner.Species.GetNamePlural": {"zh": "当地居民", "en": "local people", "note": {"zh": "游戏里这里会出现这颗星球上的物种名称。", "en": "In the game, the name of this planet's species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cara-4040": {
+    "placeholders": {
+      "pleased_planet.owner.Species.GetNamePlural": {"zh": "当地居民", "en": "local people", "note": {"zh": "游戏里这里会出现这颗星球上的物种名称。", "en": "In the game, the name of this planet's species appears here."}},
+      "welcome_fleet.owner.Species.GetNamePlural": {"zh": "来访者", "en": "visitors", "note": {"zh": "游戏里这里会出现来访舰队所属物种的名称。", "en": "In the game, the name of the visiting fleet's species appears here."}},
+      "party_host.GetNamePlural": {"zh": "东道主", "en": "the hosts", "note": {"zh": "游戏里这里会出现派对主人所属物种的名称。", "en": "In the game, the name of the party host's species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cara-4050": {},
+  "event-cara-4101": {
+    "placeholders": {
+      "cara_border_planet.GetName": {"zh": "这颗边境星球", "en": "the border planet", "note": {"zh": "游戏里这里会出现这颗边境星球的名称。", "en": "In the game, the name of this border planet appears here."}},
+      "pleased_planet.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}},
+      "party_host.GetNamePlural": {"zh": "东道主", "en": "the hosts", "note": {"zh": "游戏里这里会出现派对主人所属物种的名称。", "en": "In the game, the name of the party host's species appears here."}},
+      "caravaneer_neighbor.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "Root.GetName": {"zh": "这颗边境星球", "en": "the border planet", "note": {"zh": "游戏里这里会出现这颗边境星球的名称。", "en": "In the game, the name of this border planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Root.GetName is assumed to be the same border planet as cara_border_planet; the MegaCorpse origins text uses it for the planet of the concert."]
+  },
+  "event-cara-900": {
+    "placeholders": {
+      "From.From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "From.GetAdj": {"zh": "敌对", "en": "rival", "note": {"zh": "游戏里这里会出现敌对一方的形容词。", "en": "In the game, the adjective for the rival side appears here."}},
+      "cara_home_new_location.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "caravaneer_home_country.GetName": {"zh": "行商帝国", "en": "caravaneer empire", "note": {"zh": "游戏里这里会出现行商一方的国家名称。", "en": "In the game, the name of the caravaneers' empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cara-970": {
+    "placeholders": {
+      "From.From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "From.GetAdj": {"zh": "敌对", "en": "rival", "note": {"zh": "游戏里这里会出现敌对一方的形容词。", "en": "In the game, the adjective for the rival side appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-central-2": {},
+  "event-communications-spread-1": {
+    "placeholders": {
+      "CommSpreader.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "contact_empire.GetName": {"zh": "另一个帝国", "en": "the third empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the third empire appears here."}},
+      "From.GetName": {"zh": "他们自己的名号", "en": "their own name", "note": {"zh": "游戏里这里会出现这个帝国自称的名号。", "en": "In the game, the name this empire calls itself appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Sentence 'that call themselves their own name' (communications_spread.2) reads awkwardly; the game name must be a proper name in the data."]
+  },
+  "event-country-200": {
+    "placeholders": {
+      "radical_cult.GetName": {"zh": "这个教派", "en": "the cult", "note": {"zh": "游戏里这里会出现这个邪教的名称。", "en": "In the game, the name of this cult appears here."}},
+      "cult_name.GetName": {"zh": "这个教派", "en": "the cult", "note": {"zh": "游戏里这里会出现这个邪教的名称。", "en": "In the game, the name of this cult appears here."}},
+      "hijacked_fleet_planet.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}},
+      "From.Owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现我们首都的名称。", "en": "In the game, the name of our capital appears here."}},
+      "marauder_system.GetName": {"zh": "附近", "en": "nearby", "note": {"zh": "游戏里这里会出现附近星系的名称。", "en": "In the game, the name of the nearby star system appears here."}},
+      "our_fleet_position.GetName": {"zh": "当前", "en": "current", "note": {"zh": "游戏里这里会出现我们舰队所在星系的名称。", "en": "In the game, the name of the system where our fleet is appears here."}},
+      "flagship_system.GetName": {"zh": "远方", "en": "distant", "note": {"zh": "游戏里这里会出现远方星系的名称。", "en": "In the game, the name of the distant star system appears here."}},
+      "Root.GetStarName": {"zh": "这个", "en": "the star", "note": {"zh": "游戏里这里会出现这颗恒星所在星系的名称。", "en": "In the game, the name of this star's system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Root.Owner.GetSpeciesName reads 'for the future of the X species' (country.211); no plain phrase fits the article, so the current phrase was kept and should be reworded."]
+  },
+  "event-country-250": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个", "en": "the other", "note": {"zh": "游戏里这里会出现那个星系的名称。", "en": "In the game, the name of the other star system appears here."}},
+      "Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现科学专员的名字。", "en": "In the game, the science officer's name appears here."}},
+      "hyacinth_planet.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}},
+      "surveyed_planets_system.GetName": {"zh": "附近", "en": "nearby", "note": {"zh": "游戏里这里会出现附近星系的名称。", "en": "In the game, the name of the nearby star system appears here."}}
+    },
+    "placeholderDocs": {
+      "event_chains:hunting_hyacinth": {
+        "Root.Capital.GetName": {"zh": "这个", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球所在星系的名称。", "en": "In the game, the name of this planet appears here."}}
+      }
+    },
+    "issues": ["Root.GetLeaderName is a person's name after the prefix 'Science Officer'; the role phrase makes the line read 'Science Officer the scientist' and should be reworded."]
+  },
+  "event-country-50": {
+    "placeholders": {
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}},
+      "This.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现我们首都的名称。", "en": "In the game, the name of our capital appears here."}}
+    },
+    "placeholderDocs": {
+      "special_projects:TARBLAC_PROCUREMENT": {
+        "This.GetName": {"zh": "这里", "en": "here", "note": {"zh": "游戏里这里会出现这颗海洋星球的名称。", "en": "In the game, the name of this ocean world appears here."}}
+      }
+    },
+    "issues": ["Procurement texts describe the world with 'ocean world [X]' (TARBLAC) and the Chinese 'X的海面下' has no plain phrase; reword as the ocean world is named in the game.", "Root.GetName in country.61 ('from all across the [X]') does not fit the ship phrase; current phrase kept."]
+  },
+  "event-country-999": {
+    "placeholders": {
+      "Root.Capital.GetStarName": {"zh": "这个", "en": "the star", "note": {"zh": "游戏里这里会出现这颗恒星所在星系的名称。", "en": "In the game, the name of this star's system appears here."}},
+      "Root.GetName": {"zh": "我们的帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Root.GetSpeciesName is used as 'the X people' and reads awkwardly with the species phrase."]
+  },
+  "event-crime-1": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-crime-1000": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "office_owner.GetName": {"zh": "那个犯罪集团", "en": "the rival syndicate", "note": {"zh": "游戏里这里会出现那个犯罪集团的名称。", "en": "In the game, the name of the rival syndicate appears here."}},
+      "From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}},
+      "From.Owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-crime-50": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Root.solar_system.GetName": {"zh": "这个", "en": "local", "note": {"zh": "游戏里这里会出现这颗星球所在星系的名称。", "en": "In the game, the name of this planet's star system appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "该物种", "en": "species", "note": {"zh": "游戏里这里会出现这个物种的名称。", "en": "In the game, the name of this species appears here."}},
+      "governor_target.GetTitle": {"zh": "这位总督", "en": "the governor", "note": {"zh": "游戏里这里会出现这位总督的头衔。", "en": "In the game, the governor's title appears here."}},
+      "governor_target.GetName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现这位总督的名字。", "en": "In the game, the governor's name appears here."}},
+      "Root.Owner.GetName": {"zh": "我们", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1200": {
+    "placeholders": {
+      "collided_planets.GetName": {"zh": "另一颗星球", "en": "the other planet", "note": {"zh": "游戏里这里会出现另一颗星球的名称。", "en": "In the game, the name of the other planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1310": {
+    "placeholders": {
+      "This.GetName": {"zh": "这个", "en": "local", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "stormbound_science.GetName": {"zh": "我们的科学船", "en": "our science ship", "note": {"zh": "游戏里这里会出现你的科学船的舰名。", "en": "In the game, your science ship's name appears here."}}
+    },
+    "placeholderDocs": {
+      "cstorms.1313": {
+        "This.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}}
+      },
+      "cstorms.1317": {
+        "this.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-cstorms-1700": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1710": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1720": {},
+  "event-cstorms-1730": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1740": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1750": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1760": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Owner.GetName": {"zh": "我们的领土", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1770": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1800": {
+    "placeholders": {
+      "from.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "fromfrom.GetName": {"zh": "这场风暴", "en": "the storm", "note": {"zh": "游戏里这里会出现这场风暴的名称。", "en": "In the game, the name of this storm appears here."}},
+      "this.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1810": {
+    "placeholders": {
+      "from.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "this.GetName": {"zh": "这个", "en": "local", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "solar_system.GetName": {"zh": "那个", "en": "the other", "note": {"zh": "游戏里这里会出现另一个星系的名称。", "en": "In the game, the name of the other star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1830": {
+    "placeholders": {
+      "this.GetSpeciesNamePlural": {"zh": "各位", "en": "everyone", "note": {"zh": "游戏里这里会出现受影响物种的复数名称。", "en": "In the game, the plural name of the affected species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-1840": {},
+  "event-cstorms-8000": {},
+  "event-cstorms-8100": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Owner.GetName": {"zh": "我们的领土", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-cstorms-8500": {
+    "placeholders": {
+      "from.GetClassName": {"zh": "恒星", "en": "star", "note": {"zh": "游戏里这里会出现这颗恒星的类别名称。", "en": "In the game, the type of this star appears here."}},
+      "from.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "from.solar_system.GetName": {"zh": "这个", "en": "local", "note": {"zh": "游戏里这里会出现这颗星球所在星系的名称。", "en": "In the game, the name of this planet's star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-custodian-499": {
+    "placeholders": {
+      "custodian.GetName": {"zh": "这位监管人", "en": "the new Custodian", "note": {"zh": "游戏里这里会出现新任监管人的名称。", "en": "In the game, the name of the new Custodian appears here."}},
+      "From.GetName": {"zh": "那些前任监管人", "en": "the former custodians", "note": {"zh": "游戏里这里会出现前任监管人的名称。", "en": "In the game, the name of the former Custodians appears here."}},
+      "former_custodians.GetName": {"zh": "前任监管人", "en": "the former custodian", "note": {"zh": "游戏里这里会出现前任监管人的名称。", "en": "In the game, the name of the former Custodian appears here."}},
+      "LastKilledCountryName": {"zh": "最后覆灭的帝国", "en": "last empire", "note": {"zh": "游戏里这里会出现最后被消灭的帝国的名称。", "en": "In the game, the name of the last defeated empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["custodian.30 reads 'the new Custodian, the current Galactic Custodians'; the Chinese '星海监管人这位监管人' doubles the role and should be reworded."]
+  },
+  "event-cyber-7000": {
+    "placeholders": {
+      "THIS.GetName": {"zh": "这颗新星球", "en": "the new world", "note": {"zh": "游戏里这里会出现这颗新星球的名称。", "en": "In the game, the name of this new world appears here."}},
+      "From.GetName": {"zh": "这些生物", "en": "creatures", "note": {"zh": "游戏里这里会出现这些生物的名称。", "en": "In the game, the name of these creatures appears here."}},
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["From.GetNamePlural is used as 'X们' in Chinese and the plural form does not fit a phrase; current phrase kept."]
+  },
+  "event-cybernetics-5048": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-emperor-150": {
+    "placeholders": {
+      "dissolve_winner.GetName": {"zh": "胜利者", "en": "the victor", "note": {"zh": "游戏里这里会出现胜利者的名称。", "en": "In the game, the name of the victor appears here."}},
+      "LastKilledCountryName": {"zh": "最后覆灭的帝国", "en": "last empire", "note": {"zh": "游戏里这里会出现最后被消灭的帝国的名称。", "en": "In the game, the name of the last defeated empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-emperor-499": {
+    "placeholders": {
+      "Root.GetRulerTitle": {"zh": "我们的统治者", "en": "our ruler", "note": {"zh": "游戏里这里会出现你的统治者的头衔。", "en": "In the game, your ruler's title appears here."}},
+      "Root.GetName": {"zh": "我们的帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "gal_emperor.GetName": {"zh": "这个新政权", "en": "new state", "note": {"zh": "游戏里这里会出现这个新政权的名称。", "en": "In the game, the name of this new state appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["ruler.GetRegnalName is a person's regnal name and the phrase 'the ruler' makes 'crowned our ruler' read oddly.", "gal_emperor.GetSpeciesName reads 'the former X Custodians' and no plain phrase fits the adjective slot."]
+  },
+  "event-emperor-50": {
+    "placeholders": {
+      "gal_emperor.GetName": {"zh": "这个新政权", "en": "new state", "note": {"zh": "游戏里这里会出现这个新政权的名称。", "en": "In the game, the name of this new state appears here."}},
+      "crusade_target.GetName": {"zh": "我们", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "From.From.GetName": {"zh": "盟友帝国", "en": "allied empire", "note": {"zh": "游戏里这里会出现这个盟友帝国的名称。", "en": "In the game, the name of this allied empire appears here."}},
+      "Root.GetName": {"zh": "我们的帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "attacking_country.GetName": {"zh": "侵略者", "en": "aggressor", "note": {"zh": "游戏里这里会出现攻击方的名称。", "en": "In the game, the name of the attacking empire appears here."}},
+      "victim_country.GetName": {"zh": "受害者", "en": "victim", "note": {"zh": "游戏里这里会出现受攻击方的名称。", "en": "In the game, the name of the attacked empire appears here."}},
+      "From.From.From.GetName": {"zh": "联邦", "en": "federation", "note": {"zh": "游戏里这里会出现这个联邦的名称。", "en": "In the game, the name of this federation appears here."}},
+      "From.GetName": {"zh": "盟友", "en": "ally", "note": {"zh": "游戏里这里会出现这个盟友的名称。", "en": "In the game, the name of this ally appears here."}},
+      "charter_corp.GetName": {"zh": "这家公司", "en": "the corporation", "note": {"zh": "游戏里这里会出现这家公司的名称。", "en": "In the game, the name of this corporation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["emperor.373 has 'the victim, a member of the Galactic Imperium' and the Chinese 'X星海帝国成员国受害者' doubles the noun; reword."]
+  },
+  "event-envoy-events-1001": {
+    "placeholders": {
+      "envoy_source.GetAdj": {"zh": "外国", "en": "foreign", "note": {"zh": "游戏里这里会出现特使所属国家的形容词。", "en": "In the game, the adjective for the envoy's home empire appears here."}},
+      "Root.GetRulerName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现统治者的名字。", "en": "In the game, the ruler's name appears here."}},
+      "event_envoy.GetName": {"zh": "这位使者", "en": "the envoy", "note": {"zh": "游戏里这里会出现使者的名字。", "en": "In the game, the envoy's name appears here."}},
+      "ruler_species.GetNameInsult": {"zh": "物种", "en": "species", "note": {"zh": "游戏里这里会出现对方物种的侮辱性称呼。", "en": "In the game, an insulting name for their species appears here."}},
+      "From.GetAdj": {"zh": "对方", "en": "rival", "note": {"zh": "游戏里这里会出现对方的形容词。", "en": "In the game, the adjective for the other side appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "Root.GetAdj": {"zh": "我方", "en": "domestic", "note": {"zh": "游戏里这里会出现我方的形容词。", "en": "In the game, the adjective for our side appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-envoy-events-15": {
+    "placeholders": {
+      "event_envoy.GetName": {"zh": "这位使者", "en": "the envoy", "note": {"zh": "游戏里这里会出现使者的名字。", "en": "In the game, the envoy's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-envoy-events-16": {
+    "placeholders": {
+      "dispute_loser_envoy.GetName": {"zh": "这位使者", "en": "the envoy", "note": {"zh": "游戏里这里会出现这位使者的名字。", "en": "In the game, this envoy's name appears here."}},
+      "dispute_winner_envoy.GetName": {"zh": "另一位使者", "en": "the other envoy", "note": {"zh": "游戏里这里会出现另一位使者的名字。", "en": "In the game, the other envoy's name appears here."}},
+      "dispute_winner.GetAdj": {"zh": "对方", "en": "rival", "note": {"zh": "游戏里这里会出现对方的形容词。", "en": "In the game, the adjective for the other side appears here."}},
+      "dispute_winner.GetName": {"zh": "另一方", "en": "the other side", "note": {"zh": "游戏里这里会出现另一方的名称。", "en": "In the game, the name of the other side appears here."}},
+      "dispute_loser.GetAdj": {"zh": "对立", "en": "opposing", "note": {"zh": "游戏里这里会出现对立一方的形容词。", "en": "In the game, the adjective for the opposing side appears here."}},
+      "dispute_loser.GetName": {"zh": "对立一方", "en": "the opposing side", "note": {"zh": "游戏里这里会出现对立一方的名称。", "en": "In the game, the name of the opposing side appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-envoy-events-200": {
+    "placeholders": {
+      "event_envoy.GetName": {"zh": "这位使者", "en": "the envoy", "note": {"zh": "游戏里这里会出现使者的名字。", "en": "In the game, the envoy's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'emissary [X]' reads 'emissary the envoy' in English; reword the lead-in."]
+  },
+  "event-envoy-events-205": {
+    "placeholders": {
+      "envoy_country.GetAdj": {"zh": "外国", "en": "foreign", "note": {"zh": "游戏里这里会出现使者所属国家的形容词。", "en": "In the game, the adjective for the envoy's home empire appears here."}},
+      "envoy_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "event_envoy.GetName": {"zh": "这位使者", "en": "the envoy", "note": {"zh": "游戏里这里会出现使者的名字。", "en": "In the game, the envoy's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-envoy-events-210": {
+    "placeholders": {
+      "Root.GetAdj": {"zh": "本国", "en": "domestic", "note": {"zh": "游戏里这里会出现我国的形容词。", "en": "In the game, the adjective for our nation appears here."}},
+      "Root.GetGovernmentName": {"zh": "该政府", "en": "government", "note": {"zh": "游戏里这里会出现我们政府的名称。", "en": "In the game, the name of our government appears here."}},
+      "Root.GetName": {"zh": "这个帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "envoy_country.Capital.GetName": {"zh": "那个首都", "en": "the foreign capital", "note": {"zh": "游戏里这里会出现那个帝国首都的名称。", "en": "In the game, the name of the foreign capital appears here."}},
+      "envoy_country.GetAdj": {"zh": "外国", "en": "foreign", "note": {"zh": "游戏里这里会出现使者所属国家的形容词。", "en": "In the game, the adjective for the envoy's home empire appears here."}},
+      "envoy_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "envoy_country.GetSpeciesAdj": {"zh": "异族", "en": "alien", "note": {"zh": "游戏里这里会出现那个物种的形容词。", "en": "In the game, the adjective for that species appears here."}},
+      "envoy_country.GetSpeciesNamePluralCompliment": {"zh": "姑娘", "en": "ladies", "note": {"zh": "游戏里这里会出现这个物种的称呼。", "en": "In the game, the form of address for that species appears here."}},
+      "event_envoy.GetName": {"zh": "这位使者", "en": "the envoy", "note": {"zh": "游戏里这里会出现使者的名字。", "en": "In the game, the envoy's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-envoy-events-215": {
+    "placeholders": {
+      "event_envoy.GetName": {"zh": "这位使者", "en": "the envoy", "note": {"zh": "游戏里这里会出现使者的名字。", "en": "In the game, the envoy's name appears here."}},
+      "provider_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "provider_country.GetSpeciesNamePlural": {"zh": "其他物种", "en": "the other species", "note": {"zh": "游戏里这里会出现那个帝国所属物种的复数名称。", "en": "In the game, the plural name of that empire's species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-envoy-events-220": {
+    "placeholders": {
+      "event_envoy.GetName": {"zh": "这位使者", "en": "the envoy", "note": {"zh": "游戏里这里会出现使者的名字。", "en": "In the game, the envoy's name appears here."}},
+      "offended_party.GetAdj": {"zh": "被冒犯的", "en": "offended", "note": {"zh": "游戏里这里会出现被冒犯一方的形容词。", "en": "In the game, the adjective for the offended side appears here."}},
+      "offended_party.GetName": {"zh": "被冒犯的一方", "en": "the offended party", "note": {"zh": "游戏里这里会出现被冒犯一方的名称。", "en": "In the game, the name of the offended side appears here."}},
+      "offended_party.GetSpeciesNamePluralInsult": {"zh": "生物", "en": "creatures", "note": {"zh": "游戏里这里会出现对方物种的侮辱性称呼。", "en": "In the game, an insulting name for their species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-country-1000": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-country-1100": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "Root.Owner.GetName": {"zh": "我们的帝国", "en": "the empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现我们首都的名称。", "en": "In the game, the name of our capital appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Root.GetSpeciesAdj in 'For a X future' has no plain phrase that fits; reword."]
+  }
+}

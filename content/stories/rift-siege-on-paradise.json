@@ -4,67 +4,145 @@
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["astral_rift.3005", "astral_rift.3006"],
-   "label": {"zh": "按是否知晓巴奥人二选一", "en": "Depends on knowing the Baol"},
-   "note": {"zh": "3000 的两个“联络行星的栖息地”选项文字相同，按探索帝国是否已开始或完成巴奥事件链只出现其一。", "en": "Event 3000 has two identical “Contact the planet's inhabitants.” options; only one appears, depending on whether the explorer has started or completed the Baol event chain."}
+   "members": [
+    "astral_rift.3005",
+    "astral_rift.3006"
+   ],
+   "label": {
+    "zh": "按是否知晓巴奥人二选一",
+    "en": "Depends on knowing the Baol"
+   },
+   "note": {
+    "zh": "3000 的两个“联络行星的栖息地”选项文字相同，按探索帝国是否已开始或完成巴奥事件链只出现其一。",
+    "en": "Event 3000 has two identical “Contact the planet's inhabitants.” options; only one appears, depending on whether the explorer has started or completed the Baol event chain."
+   }
   },
   {
    "kind": "exclusive",
-   "members": ["astral_rift.3060", "astral_rift.3065"],
-   "label": {"zh": "按是否知晓巴奥人二选一", "en": "Depends on knowing the Baol"},
-   "note": {"zh": "3055 的两个选项分别要求已知/未知巴奥事件链，玩家只会看到其中一个。", "en": "The two options of 3055 require the Baol event chain to be known / unknown; the player sees only one of them."}
+   "members": [
+    "astral_rift.3060",
+    "astral_rift.3065"
+   ],
+   "label": {
+    "zh": "按是否知晓巴奥人二选一",
+    "en": "Depends on knowing the Baol"
+   },
+   "note": {
+    "zh": "3055 的两个选项分别要求已知/未知巴奥事件链，玩家只会看到其中一个。",
+    "en": "The two options of 3055 require the Baol event chain to be known / unknown; the player sees only one of them."
+   }
   },
   {
    "kind": "exclusive",
-   "members": ["astral_rift.3045", "astral_rift.3046"],
-   "label": {"zh": "按是否知晓巴奥人二选一", "en": "Depends on knowing the Baol"},
-   "note": {"zh": "3025 的同名选项按巴奥事件链状态分别通向 3045 或 3046，两者都在约 720–1440 天后接 3047。", "en": "The same-named option of 3025 leads to 3045 or 3046 by Baol event chain status; both lead to 3047 about 720–1440 days later."}
+   "members": [
+    "astral_rift.3045",
+    "astral_rift.3046"
+   ],
+   "label": {
+    "zh": "按是否知晓巴奥人二选一",
+    "en": "Depends on knowing the Baol"
+   },
+   "note": {
+    "zh": "3025 的同名选项按巴奥事件链状态分别通向 3045 或 3046，两者都在约 720–1440 天后接 3047。",
+    "en": "The same-named option of 3025 leads to 3045 or 3046 by Baol event chain status; both lead to 3047 about 720–1440 days later."
+   }
   }
  ],
  "endings": {
   "astral_rift.3031": {
-   "label": {"zh": "基因强化：可招募橡树茎", "en": "Gene reinforcement: Oakenstalk"},
-   "note": {"zh": "裂隙探索结束，获得大量星界丝缕；巴奥指挥官“橡树茎”可以招募或遣散。", "en": "The rift exploration ends with a large astral thread reward; the Baol commander Oakenstalk can be enlisted or dismissed."},
+   "label": {
+    "zh": "基因强化：可招募橡树茎",
+    "en": "Gene reinforcement: Oakenstalk"
+   },
+   "note": {
+    "zh": "裂隙探索结束，获得大量星界丝缕；巴奥指挥官“橡树茎”可以招募或遣散。",
+    "en": "The rift exploration ends with a large astral thread reward; the Baol commander Oakenstalk can be enlisted or dismissed."
+   },
    "evidence": "events/astral_rifts_3_events.txt:585-592 (3030 option: astral_thread_large_reward, country_event 3031, finish_astral_rift); 3031 creates a renowned commander 606-679"
   },
   "astral_rift.3035": {
-   "label": {"zh": "行星隐形：解锁星界隐形法令", "en": "Cloaking: Astral Cloaking edict"},
-   "note": {"zh": "花费 50 星界丝缕选择此路；探索结束并解锁“星界隐形”法令。", "en": "Chosen for 50 astral threads; the exploration ends and the Astral Cloaking edict becomes available."},
+   "label": {
+    "zh": "行星隐形：解锁星界隐形法令",
+    "en": "Cloaking: Astral Cloaking edict"
+   },
+   "note": {
+    "zh": "花费 50 星界丝缕选择此路；探索结束并解锁“星界隐形”法令。",
+    "en": "Chosen for 50 astral threads; the exploration ends and the Astral Cloaking edict becomes available."
+   },
    "evidence": "events/astral_rifts_3_events.txt:347-367 (3020.b requires tech_cloaking_1, costs 50 threads); 692-702 (3035 sets astral_cloaking_available, finish_astral_rift)"
   },
   "astral_rift.3040": {
-   "label": {"zh": "保存幼苗：巴奥人迁入", "en": "Seedlings saved: Baol settle"},
-   "note": {"zh": "探索结束；在离裂隙最近的己方殖民地生成一批巴奥人口（格式塔帝国生成蜂巢版巴奥）。", "en": "The exploration ends; a Baol pop group appears on the empire's colony nearest the rift (a hive-minded Baol species for gestalt empires)."},
+   "label": {
+    "zh": "保存幼苗：巴奥人迁入",
+    "en": "Seedlings saved: Baol settle"
+   },
+   "note": {
+    "zh": "探索结束；在离裂隙最近的己方殖民地生成一批巴奥人口（格式塔帝国生成蜂巢版巴奥）。",
+    "en": "The exploration ends; a Baol pop group appears on the empire's colony nearest the rift (a hive-minded Baol species for gestalt empires)."
+   },
    "evidence": "events/astral_rifts_3_events.txt:738-783"
   },
   "astral_rift.3049": {
-   "label": {"zh": "星界护盾实验", "en": "Astral Shield Experimentation"},
-   "note": {"zh": "花费 100 星界丝缕选择此路；探索结束，获得“星界护盾实验”修正。", "en": "Chosen for 100 astral threads; the exploration ends with the Astral Shield Experimentation modifier."},
+   "label": {
+    "zh": "星界护盾实验",
+    "en": "Astral Shield Experimentation"
+   },
+   "note": {
+    "zh": "花费 100 星界丝缕选择此路；探索结束，获得“星界护盾实验”修正。",
+    "en": "Chosen for 100 astral threads; the exploration ends with the Astral Shield Experimentation modifier."
+   },
    "evidence": "events/astral_rifts_3_events.txt:378-401, 879-886"
   },
   "astral_rift.3047": {
-   "label": {"zh": "旁观：殖民地最终陷落", "en": "Observed: the colony falls"},
-   "note": {"zh": "3045/3046 结束探索并留下社会研究矿藏；约 720–1440 天后本篇发生，矿藏移除并给予研究产出。", "en": "3045/3046 end the exploration and leave a society research deposit; this event follows about 720–1440 days later, removing the deposit and granting research."},
+   "label": {
+    "zh": "旁观：殖民地最终陷落",
+    "en": "Observed: the colony falls"
+   },
+   "note": {
+    "zh": "3045/3046 结束探索并留下社会研究矿藏；约 720–1440 天后本篇发生，矿藏移除并给予研究产出。",
+    "en": "3045/3046 end the exploration and leave a society research deposit; this event follows about 720–1440 days later, removing the deposit and granting research."
+   },
    "evidence": "events/astral_rifts_3_events.txt:797-810, 824-837 (country_event 3047 days=720 random=720); 840-866"
   },
   "astral_rift.3085": {
-   "label": {"zh": "交换科技：古茹努尔武器界面", "en": "Tech exchange: Grunur Weapons Interface"},
-   "note": {"zh": "探索结束，获得“古茹努尔武器界面”修正与大量星界丝缕。", "en": "The exploration ends with the Grunur Weapons Interface modifier and a large astral thread reward."},
+   "label": {
+    "zh": "交换科技：古茹努尔武器界面",
+    "en": "Tech exchange: Grunur Weapons Interface"
+   },
+   "note": {
+    "zh": "探索结束，获得“古茹努尔武器界面”修正与大量星界丝缕。",
+    "en": "The exploration ends with the Grunur Weapons Interface modifier and a large astral thread reward."
+   },
    "evidence": "events/astral_rifts_3_events.txt:1209-1227 (3070 -> 3085), 1371-1380"
   },
   "astral_rift.3090": {
-   "label": {"zh": "旁观灭绝：焰爆部队", "en": "Watched the extermination: Flamestorm Troopers"},
-   "note": {"zh": "探索结束；可建造焰爆部队，并获得一项军事理论研究选项。", "en": "The exploration ends; Flamestorm Troopers can be built and a military theory research option is granted."},
+   "label": {
+    "zh": "旁观灭绝：焰爆部队",
+    "en": "Watched the extermination: Flamestorm Troopers"
+   },
+   "note": {
+    "zh": "探索结束；可建造焰爆部队，并获得一项军事理论研究选项。",
+    "en": "The exploration ends; Flamestorm Troopers can be built and a military theory research option is granted."
+   },
    "evidence": "events/astral_rifts_3_events.txt:1402-1426"
   },
   "astral_rift.3099": {
-   "label": {"zh": "被扣押的科学家归来", "en": "The detained scientist returns"},
-   "note": {"zh": "3095 中科学家被古茹努尔扣押、探索结束；约 1800–2520 天后科学家带着新特质（含“裂隙扭曲”）归来。", "en": "In 3095 the scientist is detained by the Grunur and the exploration ends; about 1800–2520 days later the scientist returns with new traits, including Rift Warped."},
+   "label": {
+    "zh": "被扣押的科学家归来",
+    "en": "The detained scientist returns"
+   },
+   "note": {
+    "zh": "3095 中科学家被古茹努尔扣押、探索结束；约 1800–2520 天后科学家带着新特质（含“裂隙扭曲”）归来。",
+    "en": "In 3095 the scientist is detained by the Grunur and the exploration ends; about 1800–2520 days later the scientist returns with new traits, including Rift Warped."
+   },
    "evidence": "events/astral_rifts_3_events.txt:1448-1481 (exile_leader_as, country_event 3098 days=1800 random=720, finish_astral_rift); 1484-1539 (3098 hidden); 1541-1583"
   }
  },
  "nodeLabels": {
-  "astral_rift.3099": {"zh": "科学家归来", "en": "The scientist returns"}
+  "astral_rift.3099": {
+   "zh": "科学家归来",
+   "en": "The scientist returns"
+  }
  },
  "notes": [
   {
@@ -88,10 +166,32 @@
    "zh": "已逐段核对裂隙定义、3000–3099 全部事件的选项、条件、终止与延时后续，并对照中英文标题与选项。",
    "en": "Checked the rift definition and every event 3000–3099: options, conditions, finishes and delayed follow-ups, against both localisations."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_3_events.txt", "common/inline_scripts/astral_rift/3060_tech_option.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_3_events.txt",
+   "common/inline_scripts/astral_rift/3060_tech_option.txt"
+  ],
   "uncertain": [
    "Text variants keyed by has_astral_rift_flag description_* (set by astral_planes.6 from the explorer's identity) are not resolved by the V4 condition model; see ledger Requests."
   ],
   "guide": "public/summaries/rift-siege-on-paradise.md"
+ },
+ "placeholders": {
+  "Explorer.GetName": {
+   "zh": "我们的帝国",
+   "en": "our empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国的名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Explorer.GetSpeciesHandName": {
+   "zh": "手",
+   "en": "hand",
+   "note": {
+    "zh": "游戏里这里会出现领袖种族的一个身体部位。",
+    "en": "In the game, a body part of the leader's species appears here."
+   }
+  }
  }
 }

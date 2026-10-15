@@ -467,5 +467,55 @@
    "event-crime-40",
    "event-crime-41"
   ]
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Root.Owner.GetName": {
+   "zh": "我们",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesName": {
+   "zh": "该物种",
+   "en": "species",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的名称。",
+    "en": "In the game, the name of this species appears here."
+   }
+  },
+  "Root.solar_system.GetName": {
+   "zh": "这个",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球所在星系的名称。",
+    "en": "In the game, the name of this planet's star system appears here."
+   }
+  },
+  "governor_target.GetName": {
+   "zh": "本人",
+   "en": "in person",
+   "note": {
+    "zh": "游戏里这里会出现这位总督的名字。",
+    "en": "In the game, the governor's name appears here."
+   }
+  },
+  "governor_target.GetTitle": {
+   "zh": "这位总督",
+   "en": "the governor",
+   "note": {
+    "zh": "游戏里这里会出现这位总督的头衔。",
+    "en": "In the game, the governor's title appears here."
+   }
+  }
  }
 }

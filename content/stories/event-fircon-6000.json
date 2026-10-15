@@ -112,5 +112,53 @@
    "event-fircon-6036"
   ],
   "guide": "public/summaries/event-fircon-6000.md"
+ },
+ "placeholders": {
+  "non_believers_country.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "non_believers_country.GetSpeciesName": {
+   "zh": "他们",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的名称。",
+    "en": "In the game, the name of this species appears here."
+   }
+  },
+  "non_believers_country.GetSpeciesNamePlural": {
+   "zh": "他们",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的复数名称。",
+    "en": "In the game, the plural name of this species appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "fircon.6000": {
+   "non_believers_planet.GetName": {
+    "zh": "这颗星球",
+    "en": "the homeworld",
+    "note": {
+     "zh": "游戏里这里会出现这颗行星的名称。",
+     "en": "In the game, the name of this planet appears here."
+    }
+   }
+  },
+  "fircon.6025": {
+   "non_believers_planet.GetName": {
+    "zh": "这颗星球",
+    "en": "planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗行星的名称。",
+     "en": "In the game, the name of this planet appears here."
+    }
+   }
+  }
  }
 }

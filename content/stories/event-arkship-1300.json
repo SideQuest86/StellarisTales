@@ -237,5 +237,31 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-arkship-1300.md"
+ },
+ "placeholders": {
+  "Owner.Ruler.GetSheHe": {
+   "zh": "统治者",
+   "en": "the ruler",
+   "note": {
+    "zh": "游戏里这里会出现统治者的称呼。",
+    "en": "In the game, the ruler's title appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这艘",
+   "en": "this ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘舰船的名称。",
+    "en": "In the game, this ship's name appears here."
+   }
+  },
+  "Target.GetName": {
+   "zh": "这艘",
+   "en": "this ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘舰船的名称。",
+    "en": "In the game, this ship's name appears here."
+   }
+  }
  }
 }

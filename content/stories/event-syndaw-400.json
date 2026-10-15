@@ -134,5 +134,143 @@
   "uncertain": [
    "The situation's progress rate, approach effects and the project costs were not simulated."
   ]
+ },
+ "placeholders": {
+  "From.GetAdj": {
+   "zh": "敌方",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现对方的形容词。",
+    "en": "In the game, the adjective for the other side appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "失控智能",
+   "en": "rogue AI",
+   "note": {
+    "zh": "游戏里这里会出现失控人工智能的名称。",
+    "en": "In the game, the name of the rogue AI appears here."
+   }
+  },
+  "LastKilledCountryName": {
+   "zh": "被灭的",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现最后被消灭帝国的形容词。",
+    "en": "In the game, the adjective for the last defeated empire appears here."
+   }
+  },
+  "Root.GetAdj": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现我们的形容词。",
+    "en": "In the game, the word for our side appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Root.Owner.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesNamePlural": {
+   "zh": "劳工",
+   "en": "laborers",
+   "note": {
+    "zh": "游戏里这里会出现这个物种劳工的称呼。",
+    "en": "In the game, the word for this species' laborers appears here."
+   }
+  },
+  "current_uprising.GetName": {
+   "zh": "反叛",
+   "en": "rebel",
+   "note": {
+    "zh": "游戏里这里会出现反叛的机械智能名称。",
+    "en": "In the game, the name of the rebellious machine intelligence appears here."
+   }
+  },
+  "current_uprising_originator.GetAdj": {
+   "zh": "有机",
+   "en": "organic",
+   "note": {
+    "zh": "游戏里这里会出现有机生命的形容词。",
+    "en": "In the game, the adjective for organic life appears here."
+   }
+  },
+  "current_uprising_originator.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "destroyed_ships.GetName": {
+   "zh": "这支舰队",
+   "en": "the fleet",
+   "note": {
+    "zh": "游戏里这里会出现被毁舰队的名称。",
+    "en": "In the game, the name of the destroyed fleet appears here."
+   }
+  },
+  "destroyer_country.GetName": {
+   "zh": "毁灭者",
+   "en": "destroyers",
+   "note": {
+    "zh": "游戏里这里会出现叛乱机械一方的名称。",
+    "en": "In the game, the name of the rebel machines appears here."
+   }
+  },
+  "target_army.GetName": {
+   "zh": "番号",
+   "en": "its designation",
+   "note": {
+    "zh": "游戏里这里会出现这支机器人陆军的番号。",
+    "en": "In the game, the designation of this robotic army appears here."
+   }
+  },
+  "target_orbital.GetName": {
+   "zh": "这个轨道站",
+   "en": "the orbital",
+   "note": {
+    "zh": "游戏里这里会出现这个轨道站的名称。",
+    "en": "In the game, the name of this orbital station appears here."
+   }
+  },
+  "target_planet.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "target_planetoid.GetName": {
+   "zh": "这颗小行星",
+   "en": "this planetoid",
+   "note": {
+    "zh": "游戏里这里会出现这颗小行星的名称。",
+    "en": "In the game, the name of this planetoid appears here."
+   }
+  },
+  "target_station.GetName": {
+   "zh": "这座空间站",
+   "en": "the station",
+   "note": {
+    "zh": "游戏里这里会出现这座空间站的名称。",
+    "en": "In the game, the name of this station appears here."
+   }
+  }
  }
 }

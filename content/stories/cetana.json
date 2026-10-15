@@ -3532,5 +3532,155 @@
    "common/defines/00_defines.txt"
   ],
   "guide": "public/summaries/cetana.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现那个恒星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "GetPsychicNounPlural": {
+   "zh": "灵能者",
+   "en": "psychics",
+   "note": {
+    "zh": "游戏里这里会出现灵能者的复数称呼。",
+    "en": "In the game, the plural word for psychics appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "Root.GetRulerTitle": {
+   "zh": "我们的统治者",
+   "en": "our ruler",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的称号。",
+    "en": "In the game, your ruler's title appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "你们这些人",
+   "en": "your people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, your species' plural name appears here."
+   }
+  },
+  "Root.synth_queen_freed_pops": {
+   "zh": "大量",
+   "en": "many",
+   "note": {
+    "zh": "游戏里这里会出现被解放人口的数量。",
+    "en": "In the game, the number of freed population appears here."
+   }
+  },
+  "apostate_site_planet.GetName": {
+   "zh": "另一颗星球",
+   "en": "the other planet",
+   "note": {
+    "zh": "游戏里这里会出现另一颗星球的名称。",
+    "en": "In the game, the name of the other planet appears here."
+   }
+  },
+  "event_target:gifted_habitable_system_2.GetName": {
+   "zh": "那个星系",
+   "en": "that system",
+   "note": {
+    "zh": "游戏里这里会出现另一个星系的名称。",
+    "en": "In the game, the name of the other system appears here."
+   }
+  },
+  "event_target:gifted_system_2.GetName": {
+   "zh": "那个星系",
+   "en": "that system",
+   "note": {
+    "zh": "游戏里这里会出现另一个星系的名称。",
+    "en": "In the game, the name of the other system appears here."
+   }
+  },
+  "event_target:psi_defeated_synth_queen.GetName": {
+   "zh": "这支舰队",
+   "en": "the fleet",
+   "note": {
+    "zh": "游戏里这里会出现这支舰队的名称。",
+    "en": "In the game, the name of this fleet appears here."
+   }
+  },
+  "event_target:synth_queen_databank_location.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, that planet's name appears here."
+   }
+  },
+  "solar_system.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现那个恒星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "synth_queen_lost_system.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现那个恒星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "this.solar_system.GetName": {
+   "zh": "这颗恒星",
+   "en": "this star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "crisis.10130": {
+   "Root.GetRulerTitle": {
+    "zh": "我们的",
+    "en": "our",
+    "note": {
+     "zh": "游戏里这里会出现你的统治者的称呼前缀。",
+     "en": "In the game, the prefix of your ruler's title appears here."
+    }
+   },
+   "ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "note": {
+     "zh": "游戏里这里会出现你的统治者的称号。",
+     "en": "In the game, your ruler's title appears here."
+    }
+   }
+  }
  }
 }

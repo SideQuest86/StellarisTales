@@ -116,5 +116,31 @@
    "zh": "遗址阶段2同时安排两条线：30–60天后 clones.13（历史的选择）与 360–720天后 clones.4（克隆生育项目）。",
    "en": "Site stage 2 schedules two lines: clones.13 after 30-60 days and clones.4 after 360-720 days (events/clone_army_events.txt:302-303)."
   }
- ]
+ ],
+ "placeholders": {
+  "Root.GetAdjective": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现我们的人民的称呼。",
+    "en": "In the game, our people's name appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "克隆个体",
+   "en": "clones",
+   "note": {
+    "zh": "游戏里这里会出现新一代个体的称呼。",
+    "en": "In the game, the name of the new generation appears here."
+   }
+  },
+  "Root.Owner.GetAdjective": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现我们原本的人民的称呼。",
+    "en": "In the game, our people's original name appears here."
+   }
+  }
+ }
 }

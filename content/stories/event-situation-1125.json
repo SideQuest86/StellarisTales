@@ -1,47 +1,199 @@
 {
  "id": "event-situation-1125",
- "title": {"zh": "吞噬恒星", "en": "Consume Star"},
+ "title": {
+  "zh": "吞噬恒星",
+  "en": "Consume Star"
+ },
  "bridges": [
   {
-   "from": "situation.1125", "to": "situation.1130",
-   "label": {"zh": "行动第二阶段", "en": "Second operation stage"},
+   "from": "situation.1125",
+   "to": "situation.1130",
+   "label": {
+    "zh": "行动第二阶段",
+    "en": "Second operation stage"
+   },
    "evidence": "common/espionage_operation_types/operations.txt:1196-1210 operation_consume_star stages: situation.1125, situation.1130, situation.1135 (each diff_t7)"
   },
   {
-   "from": "situation.1130", "to": "situation.1135",
-   "label": {"zh": "行动第三阶段", "en": "Third operation stage"},
+   "from": "situation.1130",
+   "to": "situation.1135",
+   "label": {
+    "zh": "行动第三阶段",
+    "en": "Third operation stage"
+   },
    "evidence": "operations.txt:1206-1210 third stage event situation.1135"
   }
  ],
  "groups": [
   {
-   "kind": "exclusive", "members": ["situation.1170", "special_projects:STELLARITE_INFESTED_STAR_PROJECT"],
-   "label": {"zh": "恒星熄灭或被治愈", "en": "The star dies or is cured"},
-   "note": {"zh": "进度100%时1170恒星熄灭；完成项目后方式改为“治愈恒星”（每月-7），降到0时隐藏1175移除修正并静默结束。", "en": "At 100% the star dies (1170); after the project the approach becomes 'Cure the Star' (net -7 per month) and at 0 hidden 1175 removes the modifiers and ends it silently."}
+   "kind": "exclusive",
+   "members": [
+    "situation.1170",
+    "special_projects:STELLARITE_INFESTED_STAR_PROJECT"
+   ],
+   "label": {
+    "zh": "恒星熄灭或被治愈",
+    "en": "The star dies or is cured"
+   },
+   "note": {
+    "zh": "进度100%时1170恒星熄灭；完成项目后方式改为“治愈恒星”（每月-7），降到0时隐藏1175移除修正并静默结束。",
+    "en": "At 100% the star dies (1170); after the project the approach becomes 'Cure the Star' (net -7 per month) and at 0 hidden 1175 removes the modifiers and ends it silently."
+   }
   }
  ],
  "endings": {
-  "situation.1170": {"label": {"zh": "首都恒星熄灭", "en": "The capital star goes out"}, "note": {"zh": "恒星变为褐矮星，星系内殖民地被摧毁并冰冻；若知道凶手，可获得复仇宣战理由。", "en": "The star becomes a brown dwarf and the system's colonies are destroyed and frozen; if the culprit is known, a revenge casus belli is granted."}, "evidence": "events/situation_events.txt:5655-5736"},
-  "special_projects:STELLARITE_INFESTED_STAR_PROJECT": {"label": {"zh": "找到治愈方法", "en": "A cure is found"}, "note": {"zh": "隐藏1165把局势方式设为治愈；进度归零后隐藏1175静默结束，不再有窗口。", "en": "Hidden 1165 switches the situation to the cure approach; when progress reaches 0, hidden 1175 ends it silently with no further window."}, "evidence": "common/special_projects/00_projects_leviathans.txt:508-534; events/situation_events.txt:5624-5653, 5738-5760; common/situations/01_narrative_situations.txt:1185-1243"}
+  "situation.1170": {
+   "label": {
+    "zh": "首都恒星熄灭",
+    "en": "The capital star goes out"
+   },
+   "note": {
+    "zh": "恒星变为褐矮星，星系内殖民地被摧毁并冰冻；若知道凶手，可获得复仇宣战理由。",
+    "en": "The star becomes a brown dwarf and the system's colonies are destroyed and frozen; if the culprit is known, a revenge casus belli is granted."
+   },
+   "evidence": "events/situation_events.txt:5655-5736"
+  },
+  "special_projects:STELLARITE_INFESTED_STAR_PROJECT": {
+   "label": {
+    "zh": "找到治愈方法",
+    "en": "A cure is found"
+   },
+   "note": {
+    "zh": "隐藏1165把局势方式设为治愈；进度归零后隐藏1175静默结束，不再有窗口。",
+    "en": "Hidden 1165 switches the situation to the cure approach; when progress reaches 0, hidden 1175 ends it silently with no further window."
+   },
+   "evidence": "common/special_projects/00_projects_leviathans.txt:508-534; events/situation_events.txt:5624-5653, 5738-5760; common/situations/01_narrative_situations.txt:1185-1243"
+  }
  },
  "nodeLabels": {
-  "situation.1125": {"zh": "运输船潜入", "en": "Transport slips in"},
-  "situation.1140": {"zh": "感染成功（发起方）", "en": "Infested (attacker)"},
-  "situation.1145": {"zh": "目标：恒星变暗", "en": "Target: the star dims"},
-  "situation.1150": {"zh": "目标：严寒", "en": "Target: great chill"},
-  "situation.1160": {"zh": "目标：发现寄生虫", "en": "Target: parasites found"},
-  "situation.1170": {"zh": "目标：恒星熄灭", "en": "Target: star extinguished"}
+  "situation.1125": {
+   "zh": "运输船潜入",
+   "en": "Transport slips in"
+  },
+  "situation.1140": {
+   "zh": "感染成功（发起方）",
+   "en": "Infested (attacker)"
+  },
+  "situation.1145": {
+   "zh": "目标：恒星变暗",
+   "en": "Target: the star dims"
+  },
+  "situation.1150": {
+   "zh": "目标：严寒",
+   "en": "Target: great chill"
+  },
+  "situation.1160": {
+   "zh": "目标：发现寄生虫",
+   "en": "Target: parasites found"
+  },
+  "situation.1170": {
+   "zh": "目标：恒星熄灭",
+   "en": "Target: star extinguished"
+  }
  },
  "notes": [
-  {"doc": "situation.1125", "kind": "review", "zh": "间谍行动“吞噬恒星”（250影响力、60间谍力量）要求发起国拥有带“噬星者战利品”修正的星球（来自利维坦庆典中的噬星者庆典）；目标首都不能是黑洞、未曾研究过侵染、首都星系无戴森球。1125–1140由发起国阅读，1145起由目标国阅读。", "en": "The espionage operation 'Consume Star' (250 influence, 60 spy power) requires the operator to own a planet with the Stellar Devourer trophy modifier (from the Stellar Devourer celebration of the leviathan celebration situation); the target capital must not orbit a black hole, the target must not have studied the infestation, and its capital system has no Dyson Sphere. 1125–1140 are read by the operator, 1145 onward by the target."},
-  {"doc": "situations:situation_stellarite_infested_star", "kind": "review", "zh": "初始10%，基础每月+3，默认方式“寻找治愈方法”下净+2。20%时隐藏1155加重修正；50%时1160。是否得知凶手取决于目标对发起国的加密/解密比较。", "en": "Starts at 10%, base +3 per month, net +2 under the default 'Search for a Cure'. At 20% hidden 1155 worsens the modifiers; at 50% comes 1160. Whether the target learns who did it depends on its encryption/decryption against the operator."}
+  {
+   "doc": "situation.1125",
+   "kind": "review",
+   "zh": "间谍行动“吞噬恒星”（250影响力、60间谍力量）要求发起国拥有带“噬星者战利品”修正的星球（来自利维坦庆典中的噬星者庆典）；目标首都不能是黑洞、未曾研究过侵染、首都星系无戴森球。1125–1140由发起国阅读，1145起由目标国阅读。",
+   "en": "The espionage operation 'Consume Star' (250 influence, 60 spy power) requires the operator to own a planet with the Stellar Devourer trophy modifier (from the Stellar Devourer celebration of the leviathan celebration situation); the target capital must not orbit a black hole, the target must not have studied the infestation, and its capital system has no Dyson Sphere. 1125–1140 are read by the operator, 1145 onward by the target."
+  },
+  {
+   "doc": "situations:situation_stellarite_infested_star",
+   "kind": "review",
+   "zh": "初始10%，基础每月+3，默认方式“寻找治愈方法”下净+2。20%时隐藏1155加重修正；50%时1160。是否得知凶手取决于目标对发起国的加密/解密比较。",
+   "en": "Starts at 10%, base +3 per month, net +2 under the default 'Search for a Cure'. At 20% hidden 1155 worsens the modifiers; at 50% comes 1160. Whether the target learns who did it depends on its encryption/decryption against the operator."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "Opus 5.5 (c7a-society)",
-  "scope": {"zh": "吞噬恒星间谍行动三阶段、发起方确认、目标方的恒星变冷、局势、治愈项目与两种结局。", "en": "The three operation stages, the operator's confirmation, the target's cooling star, the situation, the cure project and both endings."},
-  "sources": ["events/situation_events.txt", "common/espionage_operation_types/operations.txt", "common/situations/01_narrative_situations.txt", "common/special_projects/00_projects_leviathans.txt", "common/scripted_effects/00_scripted_effects.txt"],
+  "scope": {
+   "zh": "吞噬恒星间谍行动三阶段、发起方确认、目标方的恒星变冷、局势、治愈项目与两种结局。",
+   "en": "The three operation stages, the operator's confirmation, the target's cooling star, the situation, the cure project and both endings."
+  },
+  "sources": [
+   "events/situation_events.txt",
+   "common/espionage_operation_types/operations.txt",
+   "common/situations/01_narrative_situations.txt",
+   "common/special_projects/00_projects_leviathans.txt",
+   "common/scripted_effects/00_scripted_effects.txt"
+  ],
   "guide": "public/summaries/event-situation-1125.md"
+ },
+ "placeholders": {
+  "From.target.capital_star.GetName": {
+   "zh": "这颗恒星",
+   "en": "this star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "Target.GetAdj": {
+   "zh": "这对",
+   "en": "the",
+   "note": {
+    "zh": "游戏里这里会出现这对双星的形容词。",
+    "en": "In the game, the adjective for this twin star pair appears here."
+   }
+  },
+  "Target.GetName": {
+   "zh": "这颗恒星",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "Target.capital_scope.Solar_System.GetName": {
+   "zh": "此",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this star system's name appears here."
+   }
+  },
+  "Target.capital_star.GetName": {
+   "zh": "这颗",
+   "en": "this",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "This.GetName": {
+   "zh": "这颗恒星",
+   "en": "this star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "capital_star.GetName": {
+   "zh": "这颗恒星",
+   "en": "this star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "star_infesters.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "target.GetName": {
+   "zh": "这颗恒星",
+   "en": "this star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  }
  }
 }

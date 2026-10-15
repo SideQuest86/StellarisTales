@@ -1,107 +1,320 @@
 {
  "id": "astral-formless",
  "family": {
-  "title": {"zh": "无形异使", "en": "The Formless"},
+  "title": {
+   "zh": "无形异使",
+   "en": "The Formless"
+  },
   "category": "rifts",
   "start": "astral_planes.3000",
   "members": [
-   "astral_planes.3000", "astral_planes.3005", "astral_planes.3010", "astral_planes.3015", "astral_planes.3020",
-   "astral_planes.3025", "astral_planes.3030", "astral_planes.3050", "astral_planes.3065", "astral_planes.3070",
-   "astral_planes.3080", "astral_planes.3099", "astral_planes.3100", "astral_planes.3101", "astral_planes.3102",
-   "astral_planes.3110", "astral_planes.3111", "astral_planes.3114", "astral_planes.3115", "astral_planes.3116",
-   "astral_planes.3119", "astral_planes.3120", "astral_planes.3121", "astral_planes.3122", "astral_planes.3123",
-   "astral_planes.3150", "astral_planes.3151", "astral_planes.3155", "astral_planes.3160", "astral_planes.3165",
-   "astral_planes.3170", "astral_planes.50", "situations:situation_the_seal", "astral_situation.10", "astral_situation.15"
+   "astral_planes.3000",
+   "astral_planes.3005",
+   "astral_planes.3010",
+   "astral_planes.3015",
+   "astral_planes.3020",
+   "astral_planes.3025",
+   "astral_planes.3030",
+   "astral_planes.3050",
+   "astral_planes.3065",
+   "astral_planes.3070",
+   "astral_planes.3080",
+   "astral_planes.3099",
+   "astral_planes.3100",
+   "astral_planes.3101",
+   "astral_planes.3102",
+   "astral_planes.3110",
+   "astral_planes.3111",
+   "astral_planes.3114",
+   "astral_planes.3115",
+   "astral_planes.3116",
+   "astral_planes.3119",
+   "astral_planes.3120",
+   "astral_planes.3121",
+   "astral_planes.3122",
+   "astral_planes.3123",
+   "astral_planes.3150",
+   "astral_planes.3151",
+   "astral_planes.3155",
+   "astral_planes.3160",
+   "astral_planes.3165",
+   "astral_planes.3170",
+   "astral_planes.50",
+   "situations:situation_the_seal",
+   "astral_situation.10",
+   "astral_situation.15"
   ]
  },
  "category": "rifts",
  "bridges": [
-  {"from": "astral_planes.3005", "choice": "astral_planes.3005.a", "to": "astral_planes.3015", "conditional": true,
-   "label": {"zh": "八支侵略者侦察舰队全部被击毁后（+2 天）", "en": "Once all eight Aberrant scout fleets are destroyed (+2 days)"},
-   "evidence": "common/solar_system_initializers/astral_planes_initializers.txt:116-125 spawns 8 scout fleets (spawn_extradimensional_scouts_fleet, common/scripted_effects/astral_planes_effects.txt:342-376 flags invader_scout and counts alive_scout_fleet_count); events/astral_planes_events.txt:1930-1964 astral_planes.3010 (on_fleet_destroyed_victim, 00_on_actions.txt:1591) decrements it and at 0 fires astral_planes.3015 after 2 days"},
-  {"from": "astral_planes.3100", "choice": "astral_planes.3100.f", "to": "astral_planes.3121", "conditional": true,
-   "label": {"zh": "盟友领袖的舰队日后与“破界者”交战时", "en": "When the allied leader's fleet later fights the Unbidden"},
-   "evidence": "events/astral_planes_events.txt:2561-2564 option f sets allied_with_formless; :3197-3234 astral_planes.3120 (on_entering_battle, 00_on_actions.txt:1379) needs allied_with_formless, formless_leader alive and the enemy country_type extradimensional -> astral_planes.3121 (fire_only_once)"},
-  {"from": "astral_planes.3100", "choice": "astral_planes.3100.f", "to": "astral_planes.3122", "conditional": true,
-   "label": {"zh": "……与“背道者”交战时", "en": "... fights the Aberrant"},
-   "evidence": "events/astral_planes_events.txt:3224-3233 country_type extradimensional_2 -> astral_planes.3122 (:3257-3276, fire_only_once)"},
-  {"from": "astral_planes.3100", "choice": "astral_planes.3100.f", "to": "astral_planes.3123", "conditional": true,
-   "label": {"zh": "……与“暴烈者”交战时", "en": "... fights the Vehement"},
-   "evidence": "events/astral_planes_events.txt:3224-3233 country_type extradimensional_3 -> astral_planes.3123 (:3278-3297, fire_only_once)"},
-  {"from": "astral_planes.3100", "choice": "astral_planes.3100.f", "to": "astral_planes.3110", "conditional": true,
-   "label": {"zh": "结盟之后：通过外交窗口索取奖励（每 3600 天一次）", "en": "After allying: rewards through the diplomacy window (once per 3600 days)"},
-   "evidence": "events/astral_planes_events.txt:2537-2569 option f hires the leader, sets allied_with_formless and calls schedule_next_formless_reward (common/scripted_effects/astral_planes_effects.txt:3, @formless_reward_delay_days = 3600 -> astral_planes.3111 sets formless_reward_available); astral_planes.3110 is opened from on_custom_diplomacy (00_on_actions.txt:748) and needs allied_with_formless (:2807-2813)"},
-  {"from": "situations:situation_the_seal", "to": "astral_planes.3070", "conditional": true,
-   "label": {"zh": "若无形者的锚被摧毁（侵略者得手）：封印失败", "en": "If the Formless anchor is destroyed (the invaders win): the Seal fails"},
-   "evidence": "events/astral_planes_events.txt:2231-2286 astral_planes.3065 (on_fleet_destroyed_victim, 00_on_actions.txt:1593): when the anchor is destroyed and a country that opened the wormhole has the situation, abort_situation, astral_planes.3070 and destroy the aberrant country; 3070 (:2288-2328) destroys the Formless system and sets global flag strange_wormhole_closed"},
-  {"from": "astral_planes.3102", "choice": "astral_planes.3102.a", "to": "astral_planes.3165", "conditional": true,
-   "label": {"zh": "战争中无形者的锚被摧毁时", "en": "If the Formless anchor is destroyed during the war"},
-   "evidence": "events/astral_planes_events.txt:2273-2280 astral_planes.3065: if the Formless country has formless_war_state_initiated, the destroyer receives astral_planes.3165 (:3450-3464: relic r_eternal_throne and 1000 astral threads)"}
+  {
+   "from": "astral_planes.3005",
+   "choice": "astral_planes.3005.a",
+   "to": "astral_planes.3015",
+   "conditional": true,
+   "label": {
+    "zh": "八支侵略者侦察舰队全部被击毁后（+2 天）",
+    "en": "Once all eight Aberrant scout fleets are destroyed (+2 days)"
+   },
+   "evidence": "common/solar_system_initializers/astral_planes_initializers.txt:116-125 spawns 8 scout fleets (spawn_extradimensional_scouts_fleet, common/scripted_effects/astral_planes_effects.txt:342-376 flags invader_scout and counts alive_scout_fleet_count); events/astral_planes_events.txt:1930-1964 astral_planes.3010 (on_fleet_destroyed_victim, 00_on_actions.txt:1591) decrements it and at 0 fires astral_planes.3015 after 2 days"
+  },
+  {
+   "from": "astral_planes.3100",
+   "choice": "astral_planes.3100.f",
+   "to": "astral_planes.3121",
+   "conditional": true,
+   "label": {
+    "zh": "盟友领袖的舰队日后与“破界者”交战时",
+    "en": "When the allied leader's fleet later fights the Unbidden"
+   },
+   "evidence": "events/astral_planes_events.txt:2561-2564 option f sets allied_with_formless; :3197-3234 astral_planes.3120 (on_entering_battle, 00_on_actions.txt:1379) needs allied_with_formless, formless_leader alive and the enemy country_type extradimensional -> astral_planes.3121 (fire_only_once)"
+  },
+  {
+   "from": "astral_planes.3100",
+   "choice": "astral_planes.3100.f",
+   "to": "astral_planes.3122",
+   "conditional": true,
+   "label": {
+    "zh": "……与“背道者”交战时",
+    "en": "... fights the Aberrant"
+   },
+   "evidence": "events/astral_planes_events.txt:3224-3233 country_type extradimensional_2 -> astral_planes.3122 (:3257-3276, fire_only_once)"
+  },
+  {
+   "from": "astral_planes.3100",
+   "choice": "astral_planes.3100.f",
+   "to": "astral_planes.3123",
+   "conditional": true,
+   "label": {
+    "zh": "……与“暴烈者”交战时",
+    "en": "... fights the Vehement"
+   },
+   "evidence": "events/astral_planes_events.txt:3224-3233 country_type extradimensional_3 -> astral_planes.3123 (:3278-3297, fire_only_once)"
+  },
+  {
+   "from": "astral_planes.3100",
+   "choice": "astral_planes.3100.f",
+   "to": "astral_planes.3110",
+   "conditional": true,
+   "label": {
+    "zh": "结盟之后：通过外交窗口索取奖励（每 3600 天一次）",
+    "en": "After allying: rewards through the diplomacy window (once per 3600 days)"
+   },
+   "evidence": "events/astral_planes_events.txt:2537-2569 option f hires the leader, sets allied_with_formless and calls schedule_next_formless_reward (common/scripted_effects/astral_planes_effects.txt:3, @formless_reward_delay_days = 3600 -> astral_planes.3111 sets formless_reward_available); astral_planes.3110 is opened from on_custom_diplomacy (00_on_actions.txt:748) and needs allied_with_formless (:2807-2813)"
+  },
+  {
+   "from": "situations:situation_the_seal",
+   "to": "astral_planes.3070",
+   "conditional": true,
+   "label": {
+    "zh": "若无形者的锚被摧毁（侵略者得手）：封印失败",
+    "en": "If the Formless anchor is destroyed (the invaders win): the Seal fails"
+   },
+   "evidence": "events/astral_planes_events.txt:2231-2286 astral_planes.3065 (on_fleet_destroyed_victim, 00_on_actions.txt:1593): when the anchor is destroyed and a country that opened the wormhole has the situation, abort_situation, astral_planes.3070 and destroy the aberrant country; 3070 (:2288-2328) destroys the Formless system and sets global flag strange_wormhole_closed"
+  },
+  {
+   "from": "astral_planes.3102",
+   "choice": "astral_planes.3102.a",
+   "to": "astral_planes.3165",
+   "conditional": true,
+   "label": {
+    "zh": "战争中无形者的锚被摧毁时",
+    "en": "If the Formless anchor is destroyed during the war"
+   },
+   "evidence": "events/astral_planes_events.txt:2273-2280 astral_planes.3065: if the Formless country has formless_war_state_initiated, the destroyer receives astral_planes.3165 (:3450-3464: relic r_eternal_throne and 1000 astral threads)"
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["astral_planes.3101", "astral_planes.3102"],
-   "label": {"zh": "“向我们臣服”：成功或失败", "en": "“Serve under us”: success or failure"},
-   "note": {"zh": "3100.d（仅限非狂暴灭绝者、无宗主）：75% 权重（另加本国完成的裂隙探索次数）成功 → 3101，无形异使成为附庸（预设 preset_luminarium）；25% 失败 → 敌对 → 3102。3100.e 直接交出王座要求 → 3102（战争）。", "en": "3100.d (non-homicidal empires without an overlord only): weight 75 (plus the number of rift explorations the empire has completed) succeeds → 3101, the Formless become a subject (preset_luminarium); weight 25 fails → hostility → 3102. 3100.e (demanding the Throne) leads straight to 3102 (war)."}},
-  {"kind": "exclusive", "members": ["astral_planes.3050", "astral_planes.3110", "astral_planes.3170"],
-   "label": {"zh": "无形异使外交窗口：按进度与关系分三种", "en": "The Formless diplomacy window: three versions by progress and relation"},
-   "note": {"zh": "on_custom_diplomacy 依次检查（00_on_actions.txt:746-749）：3050 在封印尚未完成时对任何国家开放（可花 100 星界丝缕让其生成防卫舰队，至多 2 支）；3100 在封印成功后；3110 对已结盟者（索取奖励）；3170 对从未打开虫洞的国家（只能告别）。", "en": "on_custom_diplomacy checks in order (00_on_actions.txt:746-749): 3050 is open to any country while the Seal is not yet set (100 astral threads buy a defense fleet, at most 2); 3100 after a successful Seal; 3110 for allies (rewards); 3170 for countries that never opened the wormhole (goodbye only)."}},
-  {"kind": "exclusive", "members": ["astral_planes.3121", "astral_planes.3122", "astral_planes.3123"],
-   "label": {"zh": "盟友领袖遇上哪一类异维度存在", "en": "Which kind of extradimensional the allied leader meets"},
-   "note": {"zh": "按敌方国家类型（extradimensional / _2 / _3）选一；每个事件只触发一次，纯叙事。", "en": "One by the enemy country type (extradimensional / _2 / _3); each fires only once and is pure narrative."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_planes.3101",
+    "astral_planes.3102"
+   ],
+   "label": {
+    "zh": "“向我们臣服”：成功或失败",
+    "en": "“Serve under us”: success or failure"
+   },
+   "note": {
+    "zh": "3100.d（仅限非狂暴灭绝者、无宗主）：75% 权重（另加本国完成的裂隙探索次数）成功 → 3101，无形异使成为附庸（预设 preset_luminarium）；25% 失败 → 敌对 → 3102。3100.e 直接交出王座要求 → 3102（战争）。",
+    "en": "3100.d (non-homicidal empires without an overlord only): weight 75 (plus the number of rift explorations the empire has completed) succeeds → 3101, the Formless become a subject (preset_luminarium); weight 25 fails → hostility → 3102. 3100.e (demanding the Throne) leads straight to 3102 (war)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_planes.3050",
+    "astral_planes.3110",
+    "astral_planes.3170"
+   ],
+   "label": {
+    "zh": "无形异使外交窗口：按进度与关系分三种",
+    "en": "The Formless diplomacy window: three versions by progress and relation"
+   },
+   "note": {
+    "zh": "on_custom_diplomacy 依次检查（00_on_actions.txt:746-749）：3050 在封印尚未完成时对任何国家开放（可花 100 星界丝缕让其生成防卫舰队，至多 2 支）；3100 在封印成功后；3110 对已结盟者（索取奖励）；3170 对从未打开虫洞的国家（只能告别）。",
+    "en": "on_custom_diplomacy checks in order (00_on_actions.txt:746-749): 3050 is open to any country while the Seal is not yet set (100 astral threads buy a defense fleet, at most 2); 3100 after a successful Seal; 3110 for allies (rewards); 3170 for countries that never opened the wormhole (goodbye only)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_planes.3121",
+    "astral_planes.3122",
+    "astral_planes.3123"
+   ],
+   "label": {
+    "zh": "盟友领袖遇上哪一类异维度存在",
+    "en": "Which kind of extradimensional the allied leader meets"
+   },
+   "note": {
+    "zh": "按敌方国家类型（extradimensional / _2 / _3）选一；每个事件只触发一次，纯叙事。",
+    "en": "One by the enemy country type (extradimensional / _2 / _3); each fires only once and is pure narrative."
+   }
+  }
  ],
  "endings": {
   "astral_planes.3070": {
-   "label": {"zh": "无形者被毁：虫洞封闭", "en": "The Formless destroyed: the wormhole sealed"},
-   "note": {"zh": "封印期间锚被摧毁：情境中止，无形异使被来自另一位面的侵略者消灭；开启者获得物理研究收入，其在该星系的舰队被撤回或摧毁，星系被摧毁，全局标记 strange_wormhole_closed。", "en": "The anchor is destroyed during the Seal: the situation aborts and the Formless are destroyed by attackers from another dimension; the opener gets physics research income, its fleets there are pulled out or destroyed, the system is destroyed and global flag strange_wormhole_closed is set."},
-   "evidence": "events/astral_planes_events.txt:2288-2328"},
+   "label": {
+    "zh": "无形者被毁：虫洞封闭",
+    "en": "The Formless destroyed: the wormhole sealed"
+   },
+   "note": {
+    "zh": "封印期间锚被摧毁：情境中止，无形异使被来自另一位面的侵略者消灭；开启者获得物理研究收入，其在该星系的舰队被撤回或摧毁，星系被摧毁，全局标记 strange_wormhole_closed。",
+    "en": "The anchor is destroyed during the Seal: the situation aborts and the Formless are destroyed by attackers from another dimension; the opener gets physics research income, its fleets there are pulled out or destroyed, the system is destroyed and global flag strange_wormhole_closed is set."
+   },
+   "evidence": "events/astral_planes_events.txt:2288-2328"
+  },
   "astral_planes.3101": {
-   "label": {"zh": "臣服成功：无形异使成为附庸", "en": "Subjugation succeeds: the Formless become a subject"},
-   "note": {"zh": "创建新的“无形异使”国家（裂隙世界起源，民主），把盖亚星球交给它；获得遗珍“永恒王座”（r_eternal_throne），无形异使成为附庸（preset_luminarium）并获修正 pledged_allegiance，国家标记 allied_with_formless。", "en": "A new Formless country (Riftworld origin, democratic) is created and the Gaia planet given to it; the empire gets the relic r_eternal_throne and the Formless become a subject (preset_luminarium) with modifier pledged_allegiance; country flag allied_with_formless."},
-   "evidence": "events/astral_planes_events.txt:2579-2744"},
+   "label": {
+    "zh": "臣服成功：无形异使成为附庸",
+    "en": "Subjugation succeeds: the Formless become a subject"
+   },
+   "note": {
+    "zh": "创建新的“无形异使”国家（裂隙世界起源，民主），把盖亚星球交给它；获得遗珍“永恒王座”（r_eternal_throne），无形异使成为附庸（preset_luminarium）并获修正 pledged_allegiance，国家标记 allied_with_formless。",
+    "en": "A new Formless country (Riftworld origin, democratic) is created and the Gaia planet given to it; the empire gets the relic r_eternal_throne and the Formless become a subject (preset_luminarium) with modifier pledged_allegiance; country flag allied_with_formless."
+   },
+   "evidence": "events/astral_planes_events.txt:2579-2744"
+  },
   "astral_planes.3155": {
-   "label": {"zh": "对无形异使宣战", "en": "War on the Formless"},
-   "note": {"zh": "对无形异使的敌意由 3150 隐藏事件落实：它设置 formless_war_state_initiated，生成 2 支 32 艘的防卫舰队并每 360 天再生成 24 艘一支（3151）；若盟友领袖属于攻击者，3155 令其离开（被解雇）。无形异使在敌人全部消失时自毁（3160）。", "en": "Hostility is enacted by hidden event 3150: it sets formless_war_state_initiated, spawns two 32-ship defense fleets and a 24-ship fleet every 360 days (3151); if the allied leader belongs to the attacker 3155 makes the leader leave (fired). The Formless destroy themselves when no hostile playable country remains (3160)."},
-   "evidence": "events/astral_planes_events.txt:3299-3448; common/on_actions/00_on_actions.txt:3622 (3160 on_country_destroyed), :5116 (3150 on_country_attacked)"},
+   "label": {
+    "zh": "对无形异使宣战",
+    "en": "War on the Formless"
+   },
+   "note": {
+    "zh": "对无形异使的敌意由 3150 隐藏事件落实：它设置 formless_war_state_initiated，生成 2 支 32 艘的防卫舰队并每 360 天再生成 24 艘一支（3151）；若盟友领袖属于攻击者，3155 令其离开（被解雇）。无形异使在敌人全部消失时自毁（3160）。",
+    "en": "Hostility is enacted by hidden event 3150: it sets formless_war_state_initiated, spawns two 32-ship defense fleets and a 24-ship fleet every 360 days (3151); if the allied leader belongs to the attacker 3155 makes the leader leave (fired). The Formless destroy themselves when no hostile playable country remains (3160)."
+   },
+   "evidence": "events/astral_planes_events.txt:3299-3448; common/on_actions/00_on_actions.txt:3622 (3160 on_country_destroyed), :5116 (3150 on_country_attacked)"
+  },
   "astral_planes.3165": {
-   "label": {"zh": "无形者被摧毁（封印完成之后）", "en": "Formless Destroyed (after the Seal)"},
-   "note": {"zh": "获得遗珍“永恒王座”与 1000 星界丝缕。", "en": "The relic r_eternal_throne and 1000 astral threads."},
-   "evidence": "events/astral_planes_events.txt:3450-3464"},
+   "label": {
+    "zh": "无形者被摧毁（封印完成之后）",
+    "en": "Formless Destroyed (after the Seal)"
+   },
+   "note": {
+    "zh": "获得遗珍“永恒王座”与 1000 星界丝缕。",
+    "en": "The relic r_eternal_throne and 1000 astral threads."
+   },
+   "evidence": "events/astral_planes_events.txt:3450-3464"
+  },
   "astral_planes.3116": {
-   "label": {"zh": "弱点之获得", "en": "The weakness acquired"},
-   "note": {"zh": "3115 付出 2000 星界丝缕换取对应修正之后的说明；之后回到 3110 或告别。", "en": "Follows 3115 after 2000 astral threads buy the matching modifier; afterwards back to 3110 or goodbye."},
-   "evidence": "events/astral_planes_events.txt:3080-3176"}
+   "label": {
+    "zh": "弱点之获得",
+    "en": "The weakness acquired"
+   },
+   "note": {
+    "zh": "3115 付出 2000 星界丝缕换取对应修正之后的说明；之后回到 3110 或告别。",
+    "en": "Follows 3115 after 2000 astral threads buy the matching modifier; afterwards back to 3110 or goodbye."
+   },
+   "evidence": "events/astral_planes_events.txt:3080-3176"
+  }
  },
  "nodeLabels": {
-  "astral_planes.3050": {"zh": "外交窗口：封印期间", "en": "Diplomacy window: during the Seal"},
-  "astral_planes.3100": {"zh": "封印成功：王座与抉择", "en": "The Seal succeeds: the Throne and the choice"},
-  "astral_planes.3101": {"zh": "臣服成功", "en": "Subjugation succeeds"},
-  "astral_planes.3102": {"zh": "臣服失败 / 索取王座：开战", "en": "Subjugation fails / the Throne demanded: war"},
-  "astral_planes.3110": {"zh": "外交窗口：盟友的奖励", "en": "Diplomacy window: the allies' rewards"},
-  "astral_planes.3114": {"zh": "盟友提问：异维度存在", "en": "Ally questions: the extradimensionals"},
-  "astral_planes.3115": {"zh": "弱点：付 2000 星界丝缕", "en": "The weakness: pay 2000 astral threads"},
-  "astral_planes.3116": {"zh": "弱点已获得", "en": "The weakness acquired"},
-  "astral_planes.3121": {"zh": "遭遇“破界者”", "en": "Encounter: the Unbidden"},
-  "astral_planes.3122": {"zh": "遭遇“背道者”", "en": "Encounter: the Aberrant"},
-  "astral_planes.3123": {"zh": "遭遇“暴烈者”", "en": "Encounter: the Vehement"},
-  "astral_planes.3170": {"zh": "外交窗口：与此事无关的国家", "en": "Diplomacy window: a country outside the chain"},
-  "astral_planes.3015": {"zh": "信使", "en": "The Messengers"}
+  "astral_planes.3050": {
+   "zh": "外交窗口：封印期间",
+   "en": "Diplomacy window: during the Seal"
+  },
+  "astral_planes.3100": {
+   "zh": "封印成功：王座与抉择",
+   "en": "The Seal succeeds: the Throne and the choice"
+  },
+  "astral_planes.3101": {
+   "zh": "臣服成功",
+   "en": "Subjugation succeeds"
+  },
+  "astral_planes.3102": {
+   "zh": "臣服失败 / 索取王座：开战",
+   "en": "Subjugation fails / the Throne demanded: war"
+  },
+  "astral_planes.3110": {
+   "zh": "外交窗口：盟友的奖励",
+   "en": "Diplomacy window: the allies' rewards"
+  },
+  "astral_planes.3114": {
+   "zh": "盟友提问：异维度存在",
+   "en": "Ally questions: the extradimensionals"
+  },
+  "astral_planes.3115": {
+   "zh": "弱点：付 2000 星界丝缕",
+   "en": "The weakness: pay 2000 astral threads"
+  },
+  "astral_planes.3116": {
+   "zh": "弱点已获得",
+   "en": "The weakness acquired"
+  },
+  "astral_planes.3121": {
+   "zh": "遭遇“破界者”",
+   "en": "Encounter: the Unbidden"
+  },
+  "astral_planes.3122": {
+   "zh": "遭遇“背道者”",
+   "en": "Encounter: the Aberrant"
+  },
+  "astral_planes.3123": {
+   "zh": "遭遇“暴烈者”",
+   "en": "Encounter: the Vehement"
+  },
+  "astral_planes.3170": {
+   "zh": "外交窗口：与此事无关的国家",
+   "en": "Diplomacy window: a country outside the chain"
+  },
+  "astral_planes.3015": {
+   "zh": "信使",
+   "en": "The Messengers"
+  }
  },
  "notes": [
-  {"doc": "astral_planes.3000", "kind": "review",
+  {
+   "doc": "astral_planes.3000",
+   "kind": "review",
    "zh": "起点：任何舰队首次通过奇异虫洞进入“无形异使”星系，且是从水晶球星系过来的（on_entering_strange_wormhole，00_on_actions.txt:4144-4148；fire_only_once）。虫洞本身来自《晶体裂隙》中“打开传送门”的选择，或是水晶球星系天然存在的奇异虫洞（astral_planes.45）；本家族不重复那部分。",
-   "en": "Start: the first fleet of any country to enter the Formless system through the strange wormhole from the crystal sphere system (on_entering_strange_wormhole, 00_on_actions.txt:4144-4148; fire_only_once). The wormhole comes from the “open the doorway” choice in “The Crystal Rift” or from the natural strange wormhole of the crystal sphere system (astral_planes.45); this family does not repeat that part."},
-  {"doc": "situations:situation_the_seal", "kind": "review",
+   "en": "Start: the first fleet of any country to enter the Formless system through the strange wormhole from the crystal sphere system (on_entering_strange_wormhole, 00_on_actions.txt:4144-4148; fire_only_once). The wormhole comes from the “open the doorway” choice in “The Crystal Rift” or from the natural strange wormhole of the crystal sphere system (astral_planes.45); this family does not repeat that part."
+  },
+  {
+   "doc": "situations:situation_the_seal",
+   "kind": "review",
    "zh": "封印情境（单阶段，100 进度，每月基础 1）：不做事 −0.2、编织星界织物 +0.4（每月 10 星界丝缕）、注入奇异气体 +0.2（每月 50 奇异气体）；只要侵略者还有舰队且进度超过 95，就停止增长。每月脉冲 astral_situation.10：每 12 个月侵略者增援一支舰队（强度逐次 +1），无形者生成一支防卫舰队；每击毁一支侵略者舰队（astral_planes.3025）进度 +5。情境失败条件：开启者与无形异使敌对。完成后 astral_situation.15：消灭侵略者国家，在系统中生成盖亚星球（pm_formless_haven，3080 为其人口），解除奇异虫洞锁（所有玩家 1 天后收到 astral_planes.50），国家标记 the_formless_seal_is_set，再过 1 天触发 3099 → 3100。",
-   "en": "The Seal situation (one stage, 100 progress, base 1 per month): doing nothing −0.2, weaving astral fabric +0.4 (10 astral threads per month), pumping exotic gases +0.2 (50 exotic gases per month); growth stops while the invaders still have fleets and progress is above 95. The monthly pulse astral_situation.10: every 12 months the invaders reinforce with a fleet (strength +1 each time) and the Formless spawn a defense fleet; each invader fleet destroyed (astral_planes.3025) adds 5 progress. Abort condition: the opener becomes hostile to the Formless. On completion astral_situation.15: the invader country is destroyed, a Gaia planet is spawned in the system (pm_formless_haven, populated by 3080), the strange wormhole lock is lifted (all players get astral_planes.50 a day later), country flag the_formless_seal_is_set is set, and a day later 3099 → 3100 fires."},
-  {"doc": "astral_planes.3100", "kind": "review",
+   "en": "The Seal situation (one stage, 100 progress, base 1 per month): doing nothing −0.2, weaving astral fabric +0.4 (10 astral threads per month), pumping exotic gases +0.2 (50 exotic gases per month); growth stops while the invaders still have fleets and progress is above 95. The monthly pulse astral_situation.10: every 12 months the invaders reinforce with a fleet (strength +1 each time) and the Formless spawn a defense fleet; each invader fleet destroyed (astral_planes.3025) adds 5 progress. Abort condition: the opener becomes hostile to the Formless. On completion astral_situation.15: the invader country is destroyed, a Gaia planet is spawned in the system (pm_formless_haven, populated by 3080), the strange wormhole lock is lifted (all players get astral_planes.50 a day later), country flag the_formless_seal_is_set is set, and a day later 3099 → 3100 fires."
+  },
+  {
+   "doc": "astral_planes.3100",
+   "kind": "review",
    "zh": "3100 是对话窗口：三个提问（你是什么 / 为何在此 / 什么是王座）只是对话，依次解锁；之后可 d 臣服（见互斥组）、e 索要王座（战争）、f 结盟（聘用领袖“乍狄伽”，设置 allied_with_formless 与成就标记）或告辞。它也由 on_custom_diplomacy 触发（00_on_actions.txt:747），要求国家带有 saved_formless 标记（astral_planes.3099 设置）且尚未选择奖励路径。",
-   "en": "3100 is a dialogue window: the three questions (what are you / why are you here / what is the Throne) only unlock one another; afterwards d submits (see the exclusive group), e demands the Throne (war), f allies (hires the leader “zadigal”, sets allied_with_formless and an achievement flag) or you say goodbye. It is also fired from on_custom_diplomacy (00_on_actions.txt:747) and requires the country flag saved_formless (set by astral_planes.3099) and no reward path chosen yet."},
-  {"doc": "astral_planes.3110", "kind": "review",
+   "en": "3100 is a dialogue window: the three questions (what are you / why are you here / what is the Throne) only unlock one another; afterwards d submits (see the exclusive group), e demands the Throne (war), f allies (hires the leader “zadigal”, sets allied_with_formless and an achievement flag) or you say goodbye. It is also fired from on_custom_diplomacy (00_on_actions.txt:747) and requires the country flag saved_formless (set by astral_planes.3099) and no reward path chosen yet."
+  },
+  {
+   "doc": "astral_planes.3110",
+   "kind": "review",
    "zh": "盟友奖励窗口：每 3600 天可以在“力量”（一支 16 艘巡洋舰的舰队）、“知识”（一项随机物理科技）和“织缕”（100 星界丝缕）之间选一项；选择后 3111 在 3600 天后重新开放。另有三个提问（谁是破界者 / 背道者 / 暴烈者）→ 3114 → 3115（花 2000 星界丝缕获得针对该存在的修正 secret_of_the_unbidden / pacification_of_the_aberrant / folly_of_the_vehement）→ 3116。3110.d / h 只是关于领袖的对话。",
-   "en": "The allies' reward window: every 3600 days one of “power” (a fleet of 16 cruisers), “knowledge” (a random physics technology) or “fabric” (100 astral threads); after a choice 3111 reopens it 3600 days later. Three questions (who are the Unbidden / the Aberrant / the Vehement) lead to 3114 → 3115 (2000 astral threads buy a modifier against that being: secret_of_the_unbidden / pacification_of_the_aberrant / folly_of_the_vehement) → 3116. 3110.d / h are dialogue about the leader."},
-  {"doc": "astral_planes.3119", "kind": "review",
+   "en": "The allies' reward window: every 3600 days one of “power” (a fleet of 16 cruisers), “knowledge” (a random physics technology) or “fabric” (100 astral threads); after a choice 3111 reopens it 3600 days later. Three questions (who are the Unbidden / the Aberrant / the Vehement) lead to 3114 → 3115 (2000 astral threads buy a modifier against that being: secret_of_the_unbidden / pacification_of_the_aberrant / folly_of_the_vehement) → 3116. 3110.d / h are dialogue about the leader."
+  },
+  {
+   "doc": "astral_planes.3119",
+   "kind": "review",
    "zh": "隐藏事件 3119（on_leader_death，00_on_actions.txt:2395）在盟友领袖死亡时设置 formless_leader_died，使 3110 出现“领袖已逝”的对话并停止 3120。",
-   "en": "Hidden event 3119 (on_leader_death, 00_on_actions.txt:2395) sets formless_leader_died when the allied leader dies, which shows the “leader has died” dialogue in 3110 and stops 3120."}
+   "en": "Hidden event 3119 (on_leader_death, 00_on_actions.txt:2395) sets formless_leader_died when the allied leader dies, which shows the “leader has died” dialogue in 3110 and stops 3120."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -111,12 +324,38 @@
    "zh": "已核对 astral_planes.3000–3170、50、3080、3099、situation_the_seal、astral_situation.10 / 15、solar_system_initializers 中的无形异使系统、相关 on_actions 与 scripted_effects；原先分散的 3010、3050、3065、3110、3120、3170、3000 等触发器故事已并入。未核对 timeline.65 与遗珍“永恒王座”的效果（不属于 C4）。",
    "en": "Checked astral_planes.3000–3170, 50, 3080, 3099, situation_the_seal, astral_situation.10 / 15, the Formless system in solar_system_initializers, the related on_actions and scripted_effects; the formerly separate trigger stories (3010, 3050, 3065, 3110, 3120, 3170, 3000 and others) are merged. timeline.65 and the effects of the relic “Eternal Throne” were not checked (outside C4)."
   },
-  "sources": ["events/astral_planes_events.txt", "events/astral_planes_situation_events.txt", "common/situations/06_astral_planes_situations.txt", "common/solar_system_initializers/astral_planes_initializers.txt", "common/scripted_effects/astral_planes_effects.txt", "common/scripted_variables/06_scripted_variables_astral_planes.txt", "common/on_actions/00_on_actions.txt"],
+  "sources": [
+   "events/astral_planes_events.txt",
+   "events/astral_planes_situation_events.txt",
+   "common/situations/06_astral_planes_situations.txt",
+   "common/solar_system_initializers/astral_planes_initializers.txt",
+   "common/scripted_effects/astral_planes_effects.txt",
+   "common/scripted_variables/06_scripted_variables_astral_planes.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
   "uncertain": [
    "“进度超过 95 且侵略者仍有舰队则停止增长”按脚本中 final_step − 5 < 进度 的条件转述。 / The “stops above 95 while invaders live” rule is paraphrased from the final_step − 5 < progress condition.",
    "3100 的 75/25 随机中“加上已完成裂隙探索次数”按 modifier add = astral_rifts_completed 转述。 / The “plus rift explorations completed” on the 75/25 roll is paraphrased from modifier add = astral_rifts_completed.",
    "三种异维度存在的名称（破界者 = Unbidden 等）取自 3110.e/f/g 的本地化；未核对国家类型 extradimensional_2/_3 的映射。 / The names of the three extradimensionals (Unbidden etc.) come from the localisation of 3110.e/f/g; the mapping of country types extradimensional_2/_3 was not checked."
   ],
   "guide": "public/summaries/astral-formless.md"
+ },
+ "placeholders": {
+  "Root.Target.GetName": {
+   "zh": "目标",
+   "en": "target",
+   "note": {
+    "zh": "游戏里这里会出现这个目标恒星系的名称。",
+    "en": "In the game, the name of this target star system appears here."
+   }
+  },
+  "this.species.GetHandNamePlural": {
+   "zh": "双手",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现一个身体部位的复数名称。",
+    "en": "In the game, the plural name of a body part appears here."
+   }
+  }
  }
 }

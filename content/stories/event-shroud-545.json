@@ -18,5 +18,23 @@
   "uncertain": [
    "Whether the engine redraws when a drawn on_action event fails its trigger is not visible in script."
   ]
+ },
+ "placeholders": {
+  "This.GetAdjective": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现我们的形容词。",
+    "en": "In the game, the word for our side appears here."
+   }
+  },
+  "This.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  }
  }
 }

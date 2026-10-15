@@ -8,9 +8,9 @@
     <meta
       name="description"
       data-i18n-content="site.description"
-      content="穿行于银河档案阵列，展开完整群星故事，在原版配乐中探索每一个选择。"
+      content="完整收录《群星》游戏内的故事文本，附原版配乐。"
     />
-    <title>群星 · 银河记忆 | Stellaris Tales</title>
+    <title>Stellaris Tales</title>
     <link rel="icon" href="./public/mark.svg" />
     <!--
       Fonts: Google Fonts serves unicode-range slices, so a page downloads only the
@@ -22,16 +22,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
       media="print"
       onload="this.media='all'"
     />
     <noscript
       ><link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
     /></noscript>
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/reader-extras.css" />
     <!-- The 3D engine is discovered late through app.js → archive-scene.js; fetch it in parallel. -->
     <link rel="modulepreload" href="./vendor/three.module.js" />
     <link rel="modulepreload" href="./vendor/three.core.js" />
@@ -49,16 +50,15 @@
   <body>
     <a class="skip-link" href="#archive-hud" data-i18n="archive.open">展开故事</a>
     <header class="masthead">
-      <a href="#" class="brand" data-i18n-aria="brand.home" aria-label="群星档案馆首页"
+      <a href="#" class="brand" data-i18n-aria="brand.home" aria-label="Stellaris Tales 首页"
         ><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 36 31H4Z M20 12v25 M8 25h24" /></svg
         ><span class="brand-type"
-          ><b>STELLARIS</b><small data-i18n="brand.subtitle">银河叙事档案</small><i>TALES</i></span
+          >Stellaris Tales</span
         ></a
       >
       <nav id="categories" class="catalogue" data-i18n-aria="catalogue.label" aria-label="故事类别"></nav>
       <div class="header-actions">
-        <button id="museum-open" type="button" data-i18n-aria="header.museumLabel" aria-label="打开博物天枢标本陈列"><span aria-hidden="true">◇</span> <span data-i18n="header.museum">博物天枢</span></button
-        ><button id="search-open" type="button"><span aria-hidden="true">⌕</span> <span data-i18n="header.search">搜索</span></button
+        <button id="search-open" type="button"><span aria-hidden="true">⌕</span> <span data-i18n="header.search">搜索</span></button
         ><button id="language" type="button" data-i18n="header.language" data-i18n-aria="header.languageLabel" aria-label="切换为英文">中 / EN</button
         ><button id="motion" type="button" aria-pressed="false" data-i18n="motion.reduce">减少动态</button>
       </div>
@@ -73,7 +73,7 @@
           <div class="selection-eyebrow">
             <span id="category-label">深空异闻</span><i aria-hidden="true"></i><span id="chapter-count"></span>
           </div>
-          <h1 id="selected-title" data-i18n="archive.loadingTitle">群星之间</h1>
+          <h1 id="selected-title" data-i18n="archive.loadingTitle">载入中</h1>
           <p id="selected-excerpt"></p>
           <button id="open-story" class="access" type="button"
             ><span data-i18n="archive.open">展开故事</span> <span aria-hidden="true">↗</span></button
@@ -117,8 +117,7 @@
       <div class="playing-track">
         <img id="album-cover" data-i18n-alt="music.cover" alt="群星原声专辑封面" width="43" height="43" />
         <div>
-          <span class="music-overline">STELLARIS ORIGINAL SOUNDTRACK</span
-          ><button id="playlist-toggle" type="button" aria-expanded="false">
+          <button id="playlist-toggle" type="button" aria-expanded="false">
             <span id="track-title" data-i18n="music.defaultTitle">群星原声音乐集</span><span aria-hidden="true">⌃</span></button
           ><small id="track-artist"></small>
         </div>
@@ -146,7 +145,6 @@
     <section id="playlist" hidden data-i18n-aria="music.playlist" aria-label="原声音乐播放列表">
       <div class="playlist-heading">
         <div>
-          <span class="eyebrow">ORIGINAL SOUNDTRACK</span>
           <h2 data-i18n="music.playlistTitle">原声</h2>
         </div>
         <button id="playlist-close" type="button" data-i18n-aria="music.playlistClose" aria-label="关闭音乐列表">×</button>

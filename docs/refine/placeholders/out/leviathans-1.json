@@ -1,0 +1,290 @@
+{
+  "artisan-troupe": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现对方帝国的名称。", "en": "In the game, the other empire's name appears here."}},
+      "from.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现对方帝国的名称。", "en": "In the game, the other empire's name appears here."}},
+      "root.GetSpeciesAdj": {"zh": "这一族的", "en": "your kind", "note": {"zh": "游戏里这里会出现你的物种名称的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.GetRulerName": {"zh": "阁下", "en": "your majesty", "note": {"zh": "游戏里这里会出现你的统治者的名字。", "en": "In the game, your ruler's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'you [species adjective] ...' in leviathans.304 reads awkwardly in en ('about you your kind').", "The ruler placeholder works as a title ('patron your majesty') and needs a check in the sentence 'Esteemed ruler your majesty'."]
+  },
+  "automated-dreadnought": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "curators": {
+    "placeholders": {
+      "curator_enclave_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "Root.GetSpeciesName": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "朋友们", "en": "friends", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "root.GetSpeciesAdj": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "origin_unplugged_assimilator_empire.GetAdj": {"zh": "其他", "en": "other", "note": {"zh": "游戏里这里会出现这一类其他同类的说法。", "en": "In the game, a phrase for the other ships of its kind appears here."}},
+      "origin_unplugged_assimilator_empire.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "origin_unplugged_machine_legacy_core.GetName": {"zh": "这个", "en": "this", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "root.GetSpeciesName": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "curator_customer_1.GetName": {"zh": "第一位客户", "en": "first customer", "note": {"zh": "游戏里这里会出现第一位客户的名称。", "en": "In the game, the name of the first customer appears here."}},
+      "curator_customer_2.GetName": {"zh": "第二位客户", "en": "second customer", "note": {"zh": "游戏里这里会出现第二位客户的名称。", "en": "In the game, the name of the second customer appears here."}},
+      "curator_customer_3.GetName": {"zh": "第三位客户", "en": "third customer", "note": {"zh": "游戏里这里会出现第三位客户的名称。", "en": "In the game, the name of the third customer appears here."}},
+      "curator_customer_4.GetName": {"zh": "第四位客户", "en": "fourth customer", "note": {"zh": "游戏里这里会出现第四位客户的名称。", "en": "In the game, the name of the fourth customer appears here."}},
+      "From.GetSpeciesNamePlural": {"zh": "这一族", "en": "your kind", "note": {"zh": "游戏里这里会出现这一族的名称。", "en": "In the game, the name of this kind appears here."}},
+      "unfriends.GetName": {"zh": "别人", "en": "someone else", "note": {"zh": "游戏里这里会出现你误认的对象的名称。", "en": "In the game, the name of the one you were confused with appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "curator_destroyer.GetName": {"zh": "敌对帝国", "en": "hostile empire", "note": {"zh": "游戏里这里会出现敌对帝国的名称。", "en": "In the game, the hostile empire's name appears here."}}
+    },
+    "placeholderDocs": {
+      "leviathans.504": {
+        "Root.GetSpeciesNamePlural": {"zh": "我们人民", "en": "our people", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, the plural name of your species appears here."}}
+      }
+    },
+    "issues": ["The worksheet gives 'root.GetSpeciesAdj' and 'Root.GetSpeciesName' the same phrase, which is intended for one entity.", "In leviathans.594 the 'the other empire' phrase for From.GetName may clash with the hostile empire phrase in the same story; check the save."]
+  },
+  "dimensional-horror": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "dragons-hoard": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "enclave-leader-departure": {
+    "placeholders": {
+      "FROM.GetName": {"zh": "那个城邦", "en": "that enclave", "note": {"zh": "游戏里这里会出现那个城邦的名称。", "en": "In the game, that enclave's name appears here."}},
+      "root.GetTitle": {"zh": "这位", "en": "the", "note": {"zh": "游戏里这里会出现领袖的称谓。", "en": "In the game, the leader's title appears here."}},
+      "root.GetName": {"zh": "领袖", "en": "leader", "note": {"zh": "游戏里这里会出现领袖的名字。", "en": "In the game, the leader's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["In en the 'the' from the title and 'the' before the enclave may need article handling."]
+  },
+  "enigmatic-fortress": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "ether-drake": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "From.From.GetLeaderName": {"zh": "这位领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现指挥官的名字。", "en": "In the game, the commander's name appears here."}},
+      "From.From.GetName": {"zh": "这艘舰船", "en": "the ship", "note": {"zh": "游戏里这里会出现这艘舰船的名字。", "en": "In the game, this ship's name appears here."}},
+      "Owner.GetNecromancersUpper": {"zh": "死灵术士", "en": "necromancers", "note": {"zh": "游戏里这里会出现你的死灵术士的称呼。", "en": "In the game, your necromancers appear here."}},
+      "Owner.GetNecromancersLower": {"zh": "死灵术士", "en": "necromancers", "note": {"zh": "游戏里这里会出现你的死灵术士的称呼。", "en": "In the game, your necromancers appear here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Commander the leader' reads awkwardly in en."]
+  },
+  "event-enclave-2": {
+    "placeholders": {
+      "mercenary_enclave_country.GetName": {"zh": "佣兵", "en": "mercenary", "note": {"zh": "游戏里这里会出现佣兵城邦的名称。", "en": "In the game, the mercenary enclave's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-enclave-2045": {
+    "placeholders": {
+      "khan_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "mercenary_enclave_country.GetName": {"zh": "佣兵城邦", "en": "the mercenary enclave", "note": {"zh": "游戏里这里会出现佣兵城邦的名称。", "en": "In the game, the mercenary enclave's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-enclave-2059": {
+    "placeholders": {
+      "event_target:mercenary_enclave_country.GetName": {"zh": "佣兵城邦", "en": "mercenary enclave", "note": {"zh": "游戏里这里会出现佣兵城邦的名称。", "en": "In the game, the mercenary enclave's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-enclave-23": {
+    "placeholders": {
+      "FROM.GetName": {"zh": "佣兵城邦", "en": "mercenary enclave", "note": {"zh": "游戏里这里会出现佣兵城邦的名称。", "en": "In the game, the mercenary enclave's name appears here."}},
+      "mercenary_destroyer.GetName": {"zh": "这支舰队", "en": "the fleet", "note": {"zh": "游戏里这里会出现摧毁佣兵城邦的舰队名称。", "en": "In the game, the name of the fleet that destroyed the enclave appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-enclave-27": {
+    "placeholders": {
+      "mercenary_enclave_country.GetName": {"zh": "佣兵城邦", "en": "the mercenary enclave", "note": {"zh": "游戏里这里会出现佣兵城邦的名称。", "en": "In the game, the mercenary enclave's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-enclave-370": {
+    "placeholders": {
+      "FROM.GetName": {"zh": "打捞者", "en": "salvager", "note": {"zh": "游戏里这里会出现打捞者城邦的名称。", "en": "In the game, the salvager enclave's name appears here."}},
+      "salvager_system.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-enclave-430": {
+    "placeholders": {
+      "FROM.GetName": {"zh": "那个城邦", "en": "the enclave", "note": {"zh": "游戏里这里会出现那个城邦的名称。", "en": "In the game, that enclave's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-leviathans-140": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "trader_destroyer.GetName": {"zh": "敌对帝国", "en": "hostile empire", "note": {"zh": "游戏里这里会出现敌对帝国的名称。", "en": "In the game, the hostile empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-leviathans-4": {
+    "placeholders": {
+      "leviathan_destroyer_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-leviathans-98": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-150": {
+    "placeholders": {
+      "FromFrom.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "soldier.GetName": {"zh": "士兵", "en": "soldier", "note": {"zh": "游戏里这里会出现这个岗位的名称。", "en": "In the game, the name of this job appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "from.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "Species.GetHandName": {"zh": "我们的手", "en": "our hand", "note": {"zh": "游戏里这里会出现你的物种的手型名称。", "en": "In the game, your species' hand name appears here."}},
+      "champions_forge_destroyer.GetName": {"zh": "这支舰队", "en": "the fleet", "note": {"zh": "游戏里这里会出现摧毁太空城邦的舰队名称。", "en": "In the game, the name of the fleet that destroyed the enclave appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-shroud-4199": {
+    "placeholders": {
+      "FROM.GetName": {"zh": "那个城邦", "en": "that enclave", "note": {"zh": "游戏里这里会出现那个城邦的名称。", "en": "In the game, that enclave's name appears here."}},
+      "root.GetTitle": {"zh": "这位", "en": "the", "note": {"zh": "游戏里这里会出现领袖的称谓。", "en": "In the game, the leader's title appears here."}},
+      "root.GetName": {"zh": "领袖", "en": "leader", "note": {"zh": "游戏里这里会出现领袖的名字。", "en": "In the game, the leader's name appears here."}},
+      "event_target:mindwarden_enclave_country.GetName": {"zh": "这个城邦", "en": "the enclave", "note": {"zh": "游戏里这里会出现灵督城邦的名称。", "en": "In the game, the Mindwarden enclave's name appears here."}},
+      "mindwarden_enclave_country.GetName": {"zh": "这个城邦", "en": "the enclave", "note": {"zh": "游戏里这里会出现灵督城邦的名称。", "en": "In the game, the Mindwarden enclave's name appears here."}},
+      "mindwarden_destroyer.GetName": {"zh": "这支舰队", "en": "the fleet", "note": {"zh": "游戏里这里会出现摧毁城邦的舰队名称。", "en": "In the game, the name of the fleet that destroyed the enclave appears here."}},
+      "event_target:mindwarden_enclave_country.species.GetNamePlural": {"zh": "他们", "en": "people", "note": {"zh": "游戏里这里会出现这个城邦的人民的称呼。", "en": "In the game, the name of this enclave's people appears here."}},
+      "event_target:mindwarden_enclave_country.GetSpeciesName": {"zh": "这个城邦", "en": "the enclave", "note": {"zh": "游戏里这里会出现这个城邦的名称。", "en": "In the game, the name of this enclave appears here."}},
+      "event_target:mindwarden_enclave_country.GetSpeciesNamePlural": {"zh": "同族", "en": "kin", "note": {"zh": "游戏里这里会出现这个城邦的人民的称呼。", "en": "In the game, the name of this enclave's people appears here."}},
+      "event_target:shroudwalker_enclave_country.GetName": {"zh": "那个城邦", "en": "that enclave", "note": {"zh": "游戏里这里会出现那个城邦的名称。", "en": "In the game, that enclave's name appears here."}},
+      "event_target:raid_target_1.GetName": {"zh": "第一个目标", "en": "first target", "note": {"zh": "游戏里这里会出现第一个袭击目标的名称。", "en": "In the game, the first raid target's name appears here."}},
+      "event_target:raid_target_2.GetName": {"zh": "第二个目标", "en": "second target", "note": {"zh": "游戏里这里会出现第二个袭击目标的名称。", "en": "In the game, the second raid target's name appears here."}},
+      "event_target:raid_target_3.GetName": {"zh": "第三个目标", "en": "third target", "note": {"zh": "游戏里这里会出现第三个袭击目标的名称。", "en": "In the game, the third raid target's name appears here."}},
+      "event_target:raid_target_4.GetName": {"zh": "第四个目标", "en": "fourth target", "note": {"zh": "游戏里这里会出现第四个袭击目标的名称。", "en": "In the game, the fourth raid target's name appears here."}},
+      "shroudwalker_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the other enclave's name appears here."}},
+      "mercenary_fleet.GetName": {"zh": "这支舰队", "en": "the fleet", "note": {"zh": "游戏里这里会出现佣兵舰队的名称。", "en": "In the game, the mercenary fleet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Several enclave placeholders in this story share the phrase 'the enclave'; the FROM enclave, the mindwarden enclave and the rival enclave may be different entities and need checking in the save.", "Shroud.4247 and shroud.4205 use different phrases for the same people ('them' vs 'kin')."]
+  },
+  "event-shroud-5375": {
+    "placeholders": {
+      "shroudwalker_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the other enclave's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "hive-asteroids": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "infinity-machine": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "mercenary-enclave": {
+    "placeholders": {
+      "mercenary_enclave_country.GetName": {"zh": "佣兵城邦", "en": "the mercenary enclave", "note": {"zh": "游戏里这里会出现佣兵城邦的名称。", "en": "In the game, the mercenary enclave's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Recruiting a the mercenary enclave fleet' reads awkwardly in en."]
+  },
+  "salvager-enclave": {
+    "placeholders": {
+      "Root.GetSpeciesHandNamePlural": {"zh": "双手", "en": "hands", "note": {"zh": "游戏里这里会出现你的双手的称呼。", "en": "In the game, your hands appear here."}},
+      "salvager_enclave_country.GetName": {"zh": "打捞者", "en": "salvager", "note": {"zh": "游戏里这里会出现打捞者城邦的名称。", "en": "In the game, the salvager enclave's name appears here."}},
+      "salvager_enclave_country.species.GetHandNamePlural": {"zh": "双手", "en": "hands", "note": {"zh": "游戏里这里会出现打捞者的双手的称呼。", "en": "In the game, the salvagers' hands appear here."}},
+      "salvager_enclave_country.GetSpeciesName": {"zh": "打捞者", "en": "salvager", "note": {"zh": "游戏里这里会出现打捞者的物种名称。", "en": "In the game, the salvagers' species name appears here."}},
+      "scrappable_fleet_1.GetName": {"zh": "第一支舰队", "en": "the first fleet", "note": {"zh": "游戏里这里会出现待拆解舰队的名称。", "en": "In the game, the name of this fleet to be scrapped appears here."}},
+      "scrappable_fleet_2.GetName": {"zh": "第二支舰队", "en": "the second fleet", "note": {"zh": "游戏里这里会出现待拆解舰队的名称。", "en": "In the game, the name of this fleet to be scrapped appears here."}},
+      "scrappable_fleet_3.GetName": {"zh": "第三支舰队", "en": "the third fleet", "note": {"zh": "游戏里这里会出现待拆解舰队的名称。", "en": "In the game, the name of this fleet to be scrapped appears here."}},
+      "scrappable_fleet_4.GetName": {"zh": "第四支舰队", "en": "the fourth fleet", "note": {"zh": "游戏里这里会出现待拆解舰队的名称。", "en": "In the game, the name of this fleet to be scrapped appears here."}},
+      "salvager_reclaimed_battleship_country.GetName": {"zh": "第一个帝国", "en": "the first empire", "note": {"zh": "游戏里这里会出现这个帝国的名称。", "en": "In the game, this empire's name appears here."}},
+      "salvager_reclaimed_corvette_country.GetName": {"zh": "第二个帝国", "en": "the second empire", "note": {"zh": "游戏里这里会出现这个帝国的名称。", "en": "In the game, this empire's name appears here."}},
+      "salvager_reclaimed_cruiser_country.GetName": {"zh": "第三个帝国", "en": "the third empire", "note": {"zh": "游戏里这里会出现这个帝国的名称。", "en": "In the game, this empire's name appears here."}},
+      "salvager_reclaimed_destroyer_country.GetName": {"zh": "第四个帝国", "en": "the fourth empire", "note": {"zh": "游戏里这里会出现这个帝国的名称。", "en": "In the game, this empire's name appears here."}},
+      "salvager_reclaimed_frigate_country.GetName": {"zh": "第五个帝国", "en": "the fifth empire", "note": {"zh": "游戏里这里会出现这个帝国的名称。", "en": "In the game, this empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The reclaimed-design empires are numbered because the worksheet gives them no distinguishing names; check the save."]
+  },
+  "shroud-tunnels": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "shroudwalker-divination": {
+    "placeholders": {
+      "shroudwalker_enclave_country.GetName": {"zh": "这个城邦", "en": "the enclave", "note": {"zh": "游戏里这里会出现预言城邦的名称。", "en": "In the game, the name of the divining enclave appears here."}},
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现你的星球的名字。", "en": "In the game, the name of your planet appears here."}},
+      "root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现你的星球的名字。", "en": "In the game, the name of your planet appears here."}},
+      "root.species.GetHandNamePlural": {"zh": "双手", "en": "hands", "note": {"zh": "游戏里这里会出现这个物种的双手的称呼。", "en": "In the game, this species' hands appear here."}},
+      "shattered_frontier_governor.GetName": {"zh": "这位总督", "en": "the governor", "note": {"zh": "游戏里这里会出现这位总督的名字。", "en": "In the game, this governor's name appears here."}},
+      "root.GetSpeciesName": {"zh": "同胞", "en": "kin", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "divination_situation.GetName": {"zh": "这项预言", "en": "divination", "note": {"zh": "游戏里这里会出现这项预言的名称。", "en": "In the game, the name of this divination appears here."}},
+      "hero_redivivus.GetName": {"zh": "这位英雄", "en": "the hero", "note": {"zh": "游戏里这里会出现这位英雄的名字。", "en": "In the game, this hero's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Root.GetName and root.GetName both mean the colony planet; confirm they are the same planet.", "'legendary hero the hero' reads awkwardly in en."]
+  },
+  "shroudwalker-enclave": {
+    "placeholders": {
+      "mindwarden_enclave_country.GetName": {"zh": "另一个城邦", "en": "the rival enclave", "note": {"zh": "游戏里这里会出现另一个城邦的名称。", "en": "In the game, the other enclave's name appears here."}},
+      "shroudwalker_enclave_country.GetName": {"zh": "我们这个城邦", "en": "our enclave", "note": {"zh": "游戏里这里会出现你们城邦的名称。", "en": "In the game, your enclave's name appears here."}},
+      "spynetwork_country_1.GetName": {"zh": "第一个间谍网", "en": "first spy network", "note": {"zh": "游戏里这里会出现这个情报网的名称。", "en": "In the game, this spy network's name appears here."}},
+      "spynetwork_country_2.GetName": {"zh": "第二个间谍网", "en": "second spy network", "note": {"zh": "游戏里这里会出现这个情报网的名称。", "en": "In the game, this spy network's name appears here."}},
+      "spynetwork_country_3.GetName": {"zh": "第三个间谍网", "en": "third spy network", "note": {"zh": "游戏里这里会出现这个情报网的名称。", "en": "In the game, this spy network's name appears here."}},
+      "spynetwork_country_4.GetName": {"zh": "第四个间谍网", "en": "fourth spy network", "note": {"zh": "游戏里这里会出现这个情报网的名称。", "en": "In the game, this spy network's name appears here."}},
+      "spynetwork_country_5.GetName": {"zh": "第五个间谍网", "en": "fifth spy network", "note": {"zh": "游戏里这里会出现这个情报网的名称。", "en": "In the game, this spy network's name appears here."}},
+      "spynetwork_country_6.GetName": {"zh": "第六个间谍网", "en": "sixth spy network", "note": {"zh": "游戏里这里会出现这个情报网的名称。", "en": "In the game, this spy network's name appears here."}},
+      "Target.GetName": {"zh": "目标帝国", "en": "the target empire", "note": {"zh": "游戏里这里会出现被监视帝国的名称。", "en": "In the game, the name of the watched empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The self-reference 'We, the our enclave' reads awkwardly in en."]
+  },
+  "situation-leviathan-celebration-opportunity": {
+    "placeholders": {
+      "Owner.GetParadeStudy": {"zh": "游行", "en": "parade", "note": {"zh": "游戏里这里会出现这场游行的名称。", "en": "In the game, the name of this parade appears here."}},
+      "Owner.GetWaterCoolantLower": {"zh": "冷却液", "en": "coolant", "note": {"zh": "游戏里这里会出现这种冷却液的名称。", "en": "In the game, the name of this coolant appears here."}},
+      "Owner.GetWaterCoolantUpper": {"zh": "冷却液", "en": "coolant", "note": {"zh": "游戏里这里会出现这种冷却液的名称。", "en": "In the game, the name of this coolant appears here."}},
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "This.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "Owner.GetSensoryWorkers": {"zh": "感知员", "en": "sensory workers", "note": {"zh": "游戏里这里会出现这些感知员的称呼。", "en": "In the game, the name of these sensory workers appears here."}},
+      "Owner.GetSpeciesNamePlural": {"zh": "同胞", "en": "our people", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "Owner.GetSpeciesName": {"zh": "人", "en": "person", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Owner.Species.GetAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'our' before the species adjective in 'the [Owner.Species.GetAdj] culture' reads 'the our culture' in en."]
+  },
+  "spectral-wraith": {
+    "placeholders": {
+      "GetMidGameDate": {"zh": "那个时间点", "en": "that moment", "note": {"zh": "游戏里这里会出现这个时间点的日期。", "en": "In the game, the date of this moment appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The zh text 'date [GetMidGameDate]' is a date-type token; the phrase 'that moment' is a best fit but the sentence reads 'date that moment'."]
+  },
+  "stellar-devourer": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个", "en": "this", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "stellarite_system.GetName": {"zh": "这个", "en": "this", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "guardians_stellarite_home_system.GetName": {"zh": "这个", "en": "this", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "stellarite_rich_planet.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "Root.GetStarName": {"zh": "这个", "en": "this", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Three different systems (From, stellarite and guardians home) share the same phrase 'this', which may refer to one system; confirm in the save."]
+  },
+  "trader-enclaves": {
+    "placeholders": {
+      "enclave_country.GetAdj": {"zh": "商人", "en": "trader", "note": {"zh": "游戏里这里会出现商人城邦的形容词。", "en": "In the game, the trader enclave's adjective appears here."}},
+      "xuracorp_country.species.GetHandNamePlural": {"zh": "双手", "en": "hands", "note": {"zh": "游戏里这里会出现这家公司的双手的称呼。", "en": "In the game, this company's hands appear here."}},
+      "Root.GetSpeciesName": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  }
+}

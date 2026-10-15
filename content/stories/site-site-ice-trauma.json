@@ -140,5 +140,23 @@
    "to": "arcsite.1020",
    "evidence": "common/archaeological_site_types/00_base_game_arc_sites.txt:411-416 stage 4 (hidden arcsite.1015) lies between 1010 and 1020; 1020 follows the drawn stage-4 result, not 1010 directly"
   }
- ]
+ ],
+ "placeholders": {
+  "absconded_archaeologist.GetName": {
+   "zh": "那位考古学家",
+   "en": "the other archaeologist",
+   "note": {
+    "zh": "游戏里这里会出现那位考古学家的名字。",
+    "en": "In the game, that archaeologist's name appears here."
+   }
+  },
+  "owner.capital_scope.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都的名字。",
+    "en": "In the game, your capital's name appears here."
+   }
+  }
+ }
 }

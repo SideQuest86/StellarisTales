@@ -33,5 +33,39 @@
    "events/nemesis_espionage_events.txt"
   ],
   "guide": "public/summaries/event-espionage-20.md"
+ },
+ "placeholders": {
+  "from.target.GetAdj": {
+   "zh": "当地",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现当地的形容词。",
+    "en": "In the game, the local adjective appears here."
+   }
+  },
+  "from.target.GetName": {
+   "zh": "那颗星球",
+   "en": "other world",
+   "note": {
+    "zh": "游戏里这里会出现目标世界的名称。",
+    "en": "In the game, the name of the target world appears here."
+   }
+  },
+  "from.target.GetSpeciesAdj": {
+   "zh": "那个物种",
+   "en": "other species'",
+   "note": {
+    "zh": "游戏里这里会出现目标世界物种的形容词。",
+    "en": "In the game, the adjective of the target world's species appears here."
+   }
+  },
+  "from.target.species.GetName": {
+   "zh": "那个物种",
+   "en": "other species",
+   "note": {
+    "zh": "游戏里这里会出现目标世界物种的名称。",
+    "en": "In the game, the name of the target world's species appears here."
+   }
+  }
  }
 }

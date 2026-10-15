@@ -33,5 +33,47 @@
    "events/nemesis_espionage_events.txt"
   ],
   "guide": "public/summaries/event-espionage-1.md"
+ },
+ "placeholders": {
+  "from.target.GetAdj": {
+   "zh": "外星帝国",
+   "en": "foreign",
+   "note": {
+    "zh": "游戏里这里会出现这个外星帝国的形容词。",
+    "en": "In the game, the adjective of this foreign empire appears here."
+   }
+  },
+  "from.target.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现这个外星帝国的名称。",
+    "en": "In the game, the name of this foreign empire appears here."
+   }
+  },
+  "from.target.GetSpeciesNamePlural": {
+   "zh": "外星人",
+   "en": "other species",
+   "note": {
+    "zh": "游戏里这里会出现这个外星物种的复数名称。",
+    "en": "In the game, the plural name of this foreign species appears here."
+   }
+  },
+  "owner.species.GetAdj": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "owner.species.GetHandNamePlural": {
+   "zh": "手",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的手的复数称呼。",
+    "en": "In the game, the plural of your species' hands appears here."
+   }
+  }
  }
 }

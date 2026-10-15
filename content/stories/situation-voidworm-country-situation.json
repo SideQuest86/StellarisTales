@@ -166,5 +166,39 @@
   "merged": [
    "event-grand-archive-2040"
   ]
+ },
+ "placeholders": {
+  "Root.GetSpeciesAdj": {
+   "zh": "帝国",
+   "en": "imperial",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国的形容词。",
+    "en": "In the game, your empire's adjective appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "人们",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "infected_planet_pop.species.GetName": {
+   "zh": "人们",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的名称。",
+    "en": "In the game, the name of this species appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国的名称。",
+    "en": "In the game, the name of your empire appears here."
+   }
+  }
  }
 }

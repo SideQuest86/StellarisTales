@@ -622,5 +622,123 @@
    "Observer-mode notifications observer.70/71/72 are suppressed from the tree and therefore unassigned in coverage."
   ],
   "guide": "public/summaries/horizon-signal.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这位舰长",
+   "en": "the captain",
+   "note": {
+    "zh": "游戏里这里会出现这位舰长的名字。",
+    "en": "In the game, this captain's name appears here."
+   }
+  },
+  "Owner.Species.GetHandName": {
+   "zh": "我们的手",
+   "en": "our hand",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的手型名称。",
+    "en": "In the game, your species' hand name appears here."
+   }
+  },
+  "Root.GetLeaderName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现你的科学专员的名字。",
+    "en": "In the game, your science officer's name appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "朋友",
+   "en": "friend",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.GetStarName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名字。",
+    "en": "In the game, this system's name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesAdj": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "coils_planet.Owner.GetSpeciesName": {
+   "zh": "当地土著",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球原住民的物种名称。",
+    "en": "In the game, the name of this planet's native species appears here."
+   }
+  },
+  "horizonsignal_firstleader.GetName": {
+   "zh": "前一位科学家",
+   "en": "the first scientist",
+   "note": {
+    "zh": "游戏里这里会出现第一位失踪科学家的名字。",
+    "en": "In the game, the name of the first missing scientist appears here."
+   }
+  },
+  "horizonsignal_secondleader.GetName": {
+   "zh": "后一位科学家",
+   "en": "the second scientist",
+   "note": {
+    "zh": "游戏里这里会出现第二位科学家的名字。",
+    "en": "In the game, the name of the second scientist appears here."
+   }
+  },
+  "horizonsignal_thirdleader.GetName": {
+   "zh": "第三位科学家",
+   "en": "the third scientist",
+   "note": {
+    "zh": "游戏里这里会出现第三位科学家的名字。",
+    "en": "In the game, the name of the third scientist appears here."
+   }
+  },
+  "mirrored_syzygy_admiral.GetName": {
+   "zh": "这位舰长",
+   "en": "the captain",
+   "note": {
+    "zh": "游戏里这里会出现这位舰长的名字。",
+    "en": "In the game, this captain's name appears here."
+   }
+  },
+  "researchingscientist.GetName": {
+   "zh": "这位研究员",
+   "en": "the researcher",
+   "note": {
+    "zh": "游戏里这里会出现这位研究员的名字。",
+    "en": "In the game, this researcher's name appears here."
+   }
+  },
+  "researchingscientist9220.GetName": {
+   "zh": "另一位研究员",
+   "en": "the other researcher",
+   "note": {
+    "zh": "游戏里这里会出现另一位研究员的名字。",
+    "en": "In the game, the other researcher's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "akx.10010": {
+   "Root.GetStarName": {
+    "zh": "这颗恒星",
+    "en": "this star",
+    "note": {
+     "zh": "游戏里这里会出现这颗恒星的名字。",
+     "en": "In the game, this star's name appears here."
+    }
+   }
+  }
  }
 }

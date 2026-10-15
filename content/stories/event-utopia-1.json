@@ -16,5 +16,39 @@
   "uncertain": [
    "default_hide_option display rule not visible in the files."
   ]
+ },
+ "placeholders": {
+  "From.From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现提出请求的帝国的名字。",
+    "en": "In the game, the name of the empire making the request appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "东道主帝国",
+   "en": "the host empire",
+   "note": {
+    "zh": "游戏里这里会出现接待我们研究团队的帝国的名字。",
+    "en": "In the game, the name of the empire hosting our research team appears here."
+   }
+  },
+  "From.GetSpeciesName": {
+   "zh": "东道主",
+   "en": "host",
+   "note": {
+    "zh": "游戏里这里会出现该帝国主体物种的名字。",
+    "en": "In the game, the name of the host empire's species appears here."
+   }
+  },
+  "ringworld_builder.GetName": {
+   "zh": "建造方",
+   "en": "the builder",
+   "note": {
+    "zh": "游戏里这里会出现建造这座环形世界的帝国的名字。",
+    "en": "In the game, the name of the empire that built the ring world appears here."
+   }
+  }
  }
 }

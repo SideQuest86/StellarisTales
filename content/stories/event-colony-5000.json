@@ -2,19 +2,63 @@
  "id": "event-colony-5000",
  "category": "society",
  "endings": {
-  "colony.5006": {"label": {"zh": "结局：工厂崩塌", "en": "Ending: the factory collapses"}, "note": {"zh": "修复项目1800天内未完成：机器人的工厂矿藏消失，只得少量合金。", "en": "The restoration project was not finished within 1800 days: the factory deposit is lost, leaving some alloys."}, "evidence": "common/special_projects/00_projects_nemesis.txt:575-592 (timelimit 1800, on_fail); events/colony_events_3.txt:2920-2952."},
-  "colony.5020": {"label": {"zh": "结局：找回小机器人", "en": "Ending: the little robot found"}, "note": {"zh": "修好它当吉祥物（升级矿藏），或拆开研究（人工智能科技进度与标本）。", "en": "Repair it as the colony's mascot (upgraded deposit), or take it apart for AI research progress and a specimen."}, "evidence": "events/colony_events_3.txt:3032-3116."}
+  "colony.5006": {
+   "label": {
+    "zh": "结局：工厂崩塌",
+    "en": "Ending: the factory collapses"
+   },
+   "note": {
+    "zh": "修复项目1800天内未完成：机器人的工厂矿藏消失，只得少量合金。",
+    "en": "The restoration project was not finished within 1800 days: the factory deposit is lost, leaving some alloys."
+   },
+   "evidence": "common/special_projects/00_projects_nemesis.txt:575-592 (timelimit 1800, on_fail); events/colony_events_3.txt:2920-2952."
+  },
+  "colony.5020": {
+   "label": {
+    "zh": "结局：找回小机器人",
+    "en": "Ending: the little robot found"
+   },
+   "note": {
+    "zh": "修好它当吉祥物（升级矿藏），或拆开研究（人工智能科技进度与标本）。",
+    "en": "Repair it as the colony's mascot (upgraded deposit), or take it apart for AI research progress and a specimen."
+   },
+   "evidence": "events/colony_events_3.txt:3032-3116."
+  }
  },
  "notes": [
-  {"doc": "colony.5000", "kind": "review", "zh": "审阅注：只有带“孤独机器人”矿藏的星球会触发本事件，该矿藏由异常“孤独的机器人”的结果 anomaly.2580 放置（anomaly_events_2.txt:1045），属于另一个故事。", "en": "Review note: only planets with the Lonely Bot deposit trigger this event; the deposit is placed by the anomaly outcome anomaly.2580 (anomaly_events_2.txt:1045), which belongs to another story."}
+  {
+   "doc": "colony.5000",
+   "kind": "review",
+   "zh": "审阅注：只有带“孤独机器人”矿藏的星球会触发本事件，该矿藏由异常“孤独的机器人”的结果 anomaly.2580 放置（anomaly_events_2.txt:1045），属于另一个故事。",
+   "en": "Review note: only planets with the Lonely Bot deposit trigger this event; the deposit is placed by the anomaly outcome anomaly.2580 (anomaly_events_2.txt:1045), which belongs to another story."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "孤独机器人殖民地后续全部6个事件与2个项目。", "en": "All 6 Lonely Bot colony events and both projects."},
-  "sources": ["events/colony_events_3.txt:2840-3116", "common/special_projects/00_projects_nemesis.txt:574-614", "common/deposits/02_event_planetary_deposits.txt:1215-1265", "common/on_actions/00_on_actions.txt:3743-3746", "events/anomaly_events_2.txt:1034-1050"],
+  "scope": {
+   "zh": "孤独机器人殖民地后续全部6个事件与2个项目。",
+   "en": "All 6 Lonely Bot colony events and both projects."
+  },
+  "sources": [
+   "events/colony_events_3.txt:2840-3116",
+   "common/special_projects/00_projects_nemesis.txt:574-614",
+   "common/deposits/02_event_planetary_deposits.txt:1215-1265",
+   "common/on_actions/00_on_actions.txt:3743-3746",
+   "events/anomaly_events_2.txt:1034-1050"
+  ],
   "uncertain": [],
   "guide": "public/summaries/event-colony-5000.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

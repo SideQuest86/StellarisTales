@@ -2,43 +2,104 @@
  "id": "rift-interdimensional-circus",
  "category": "rifts",
  "groups": [
-  {"kind": "exclusive", "members": ["astral_rift.2930", "astral_rift.2935", "astral_rift.2940"],
-   "label": {"zh": "选择会见哪位表演者", "en": "Which performer to meet"},
-   "note": {"zh": "2925 让玩家选一位：杂技狐狸（2930）、义体大嘴（2935）或柔术巨岩（2940）。每位都有“取回组织样本”（免费）与“付费接触”两个选项：狐狸与巨岩 1000 能量币，大嘴 1000 食物。", "en": "2925 lets the player pick one performer: the vulpine acrobats (2930), the cyborg maw (2935) or the contortionist (2940). Each has a free “secure a tissue sample” option and a paid approach: 1000 energy for the acrobats and contortionist, 1000 food for the maw."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.2930",
+    "astral_rift.2935",
+    "astral_rift.2940"
+   ],
+   "label": {
+    "zh": "选择会见哪位表演者",
+    "en": "Which performer to meet"
+   },
+   "note": {
+    "zh": "2925 让玩家选一位：杂技狐狸（2930）、义体大嘴（2935）或柔术巨岩（2940）。每位都有“取回组织样本”（免费）与“付费接触”两个选项：狐狸与巨岩 1000 能量币，大嘴 1000 食物。",
+    "en": "2925 lets the player pick one performer: the vulpine acrobats (2930), the cyborg maw (2935) or the contortionist (2940). Each has a free “secure a tissue sample” option and a paid approach: 1000 energy for the acrobats and contortionist, 1000 food for the maw."
+   }
+  }
  ],
  "endings": {
   "astral_rift.2960": {
-   "label": {"zh": "高维度基因（狐狸 · 组织样本）", "en": "Extra-Dimensional Genetics (acrobats · sample)"},
-   "note": {"zh": "标本“虫洞毛发”；一项生物类科技选项（首个尚未获得的基因科技），否则生物研究选项；大量星界丝缕；探索结束。", "en": "Specimen “wormhole fur”; the first unowned genetics technology option, else a biology research option; a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:4798-4857"},
+   "label": {
+    "zh": "高维度基因（狐狸 · 组织样本）",
+    "en": "Extra-Dimensional Genetics (acrobats · sample)"
+   },
+   "note": {
+    "zh": "标本“虫洞毛发”；一项生物类科技选项（首个尚未获得的基因科技），否则生物研究选项；大量星界丝缕；探索结束。",
+    "en": "Specimen “wormhole fur”; the first unowned genetics technology option, else a biology research option; a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:4798-4857"
+  },
   "astral_rift.2965": {
-   "label": {"zh": "微型虫洞（狐狸 · 小费）", "en": "Micro-Wormholes (acrobats · tip)"},
-   "note": {"zh": "研究选项：虫洞稳定，其次超空间引擎 II，否则粒子类选项；大量星界丝缕；探索结束。", "en": "A research option for Wormhole Stabilization, else Hyper Drive II, else a particles option; a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:4859-4913"},
+   "label": {
+    "zh": "微型虫洞（狐狸 · 小费）",
+    "en": "Micro-Wormholes (acrobats · tip)"
+   },
+   "note": {
+    "zh": "研究选项：虫洞稳定，其次超空间引擎 II，否则粒子类选项；大量星界丝缕；探索结束。",
+    "en": "A research option for Wormhole Stabilization, else Hyper Drive II, else a particles option; a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:4859-4913"
+  },
   "astral_rift.2970": {
-   "label": {"zh": "非正式样品收集（大嘴 · 组织样本）", "en": "Unorthodox Sample Collection (maw · sample)"},
-   "note": {"zh": "标本“变异消化液”；生物性非格式塔帝国得修正 revolutionary_medigel_modifier（选项“恶心”），其余得一项食物类科技选项（选项“很迷人”）；大量星界丝缕；探索结束。", "en": "Specimen “mutative digestive fluids”; biological non-gestalt empires get modifier revolutionary_medigel_modifier (option “Disgusting”), others a food-technology option (option “Fascinating”); a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:4915-5015"},
+   "label": {
+    "zh": "非正式样品收集（大嘴 · 组织样本）",
+    "en": "Unorthodox Sample Collection (maw · sample)"
+   },
+   "note": {
+    "zh": "标本“变异消化液”；生物性非格式塔帝国得修正 revolutionary_medigel_modifier（选项“恶心”），其余得一项食物类科技选项（选项“很迷人”）；大量星界丝缕；探索结束。",
+    "en": "Specimen “mutative digestive fluids”; biological non-gestalt empires get modifier revolutionary_medigel_modifier (option “Disgusting”), others a food-technology option (option “Fascinating”); a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:4915-5015"
+  },
   "astral_rift.2975": {
-   "label": {"zh": "高级生命支持（大嘴 · 食物）", "en": "Extensive Life Support (maw · food)"},
-   "note": {"zh": "一项机器人 / 工业类科技选项，大量星界丝缕；探索结束。", "en": "A robotics / industry technology option and a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:5017-5071"},
+   "label": {
+    "zh": "高级生命支持（大嘴 · 食物）",
+    "en": "Extensive Life Support (maw · food)"
+   },
+   "note": {
+    "zh": "一项机器人 / 工业类科技选项，大量星界丝缕；探索结束。",
+    "en": "A robotics / industry technology option and a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:5017-5071"
+  },
   "astral_rift.2980": {
-   "label": {"zh": "生物析晶化（巨岩 · 组织样本）", "en": "Biological Crystallization (contortionist · sample)"},
-   "note": {"zh": "标本“魔像柔术家 DNA”；国家标记 has_spontaneous_crystallization；大量星界丝缕；探索结束。", "en": "Specimen “golem contortionist DNA”; country flag has_spontaneous_crystallization; a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:5073-5097"},
+   "label": {
+    "zh": "生物析晶化（巨岩 · 组织样本）",
+    "en": "Biological Crystallization (contortionist · sample)"
+   },
+   "note": {
+    "zh": "标本“魔像柔术家 DNA”；国家标记 has_spontaneous_crystallization；大量星界丝缕；探索结束。",
+    "en": "Specimen “golem contortionist DNA”; country flag has_spontaneous_crystallization; a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:5073-5097"
+  },
   "astral_rift.2985": {
-   "label": {"zh": "量子矿化（巨岩 · 小费）", "en": "Quantum Mineralization (contortionist · tip)"},
-   "note": {"zh": "大量星界丝缕与物理研究；探索结束。", "en": "A large astral thread reward and physics research; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:5099-5122"}
+   "label": {
+    "zh": "量子矿化（巨岩 · 小费）",
+    "en": "Quantum Mineralization (contortionist · tip)"
+   },
+   "note": {
+    "zh": "大量星界丝缕与物理研究；探索结束。",
+    "en": "A large astral thread reward and physics research; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:5099-5122"
+  }
  },
  "notes": [
-  {"doc": "astral_rifts:interdimensional_circus", "kind": "review",
+  {
+   "doc": "astral_rifts:interdimensional_circus",
+   "kind": "review",
    "zh": "抽取权重 1；若探索帝国已发现异常“最伟大的表演”（国家标记 greatest_show_anomaly_found），权重为 0（00_astral_rifts.txt:377-390）。没有失败分支，也不产出遗珍。",
-   "en": "Draw weight 1; 0 if the explorer already found the anomaly “The Greatest Show” (country flag greatest_show_anomaly_found) (00_astral_rifts.txt:377-390). No failure branch and no relic."},
-  {"doc": "astral_rift.2925", "kind": "review",
+   "en": "Draw weight 1; 0 if the explorer already found the anomaly “The Greatest Show” (country flag greatest_show_anomaly_found) (00_astral_rifts.txt:377-390). No failure branch and no relic."
+  },
+  {
+   "doc": "astral_rift.2925",
+   "kind": "review",
    "zh": "2900–2920 是一条直线（观众席与三段表演），之后才分叉；只能选一位表演者，没有回到另外两位的路径。",
-   "en": "2900–2920 are a straight line (the audience and three acts); the branching starts at 2925. Only one performer can be met; there is no path back to the other two."}
+   "en": "2900–2920 are a straight line (the audience and three acts); the branching starts at 2925. Only one performer can be met; there is no path back to the other two."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -48,8 +109,21 @@
    "zh": "已核对裂隙定义与 2900–2985 全部事件、资源门槛、选项条件与奖励。",
    "en": "Checked the rift definition and every event 2900–2985 with resource gates, option conditions and rewards."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_2_events.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/rift-interdimensional-circus.md"
+ },
+ "placeholders": {
+  "explorer.species.GetHandNamePlural": {
+   "zh": "双手",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现你的物种身体部位的复数名称。",
+    "en": "In the game, the plural name of a body part of your species appears here."
+   }
+  }
  }
 }

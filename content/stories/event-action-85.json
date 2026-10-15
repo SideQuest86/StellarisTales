@@ -14,5 +14,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-action-85.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "former_planet_owner.GetName": {
+   "zh": "原来的主人",
+   "en": "the former owner",
+   "note": {
+    "zh": "游戏里这里会出现原来主人的名称。",
+    "en": "In the game, the name of the former owner appears here."
+   }
+  },
+  "new_planet_owner.GetName": {
+   "zh": "新占领者",
+   "en": "the new owner",
+   "note": {
+    "zh": "游戏里这里会出现新占领者的名称。",
+    "en": "In the game, the name of the new owner appears here."
+   }
+  }
  }
 }

@@ -3,33 +3,62 @@
  "category": "rifts",
  "bridges": [
   {
-   "from": "astral_planes.6008", "to": "astral_rifts:microverse", "conditional": false,
-   "label": {"zh": "细缝被撕开成“微型宇宙”裂隙", "en": "The scar opens as the Microverse rift"},
+   "from": "astral_planes.6008",
+   "to": "astral_rifts:microverse",
+   "conditional": false,
+   "label": {
+    "zh": "细缝被撕开成“微型宇宙”裂隙",
+    "en": "The scar opens as the Microverse rift"
+   },
    "evidence": "events/astral_planes_events.txt:4127-4135 (6008 option: from = { split_astral_scar = { ID = microverse } }); common/scripted_effects/astral_planes_effects.txt:49-85 split_astral_scar -> spawn_astral_rift id = $ID$; rift definition common/astral_rifts/00_astral_rifts.txt:139"
   }
  ],
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["astral_planes.6006", "astral_planes.6009"],
-   "label": {"zh": "项目完成或超时", "en": "Project done or expired"},
-   "note": {"zh": "特殊项目 60 天、限时 1080 天：按时完成进入 6006，超时失败则细缝自行坍缩（6009）。", "en": "The special project takes 60 days with a 1080-day limit: completing it opens 6006; if it expires the scar collapses on its own (6009)."}
+   "members": [
+    "astral_planes.6006",
+    "astral_planes.6009"
+   ],
+   "label": {
+    "zh": "项目完成或超时",
+    "en": "Project done or expired"
+   },
+   "note": {
+    "zh": "特殊项目 60 天、限时 1080 天：按时完成进入 6006，超时失败则细缝自行坍缩（6009）。",
+    "en": "The special project takes 60 days with a 1080-day limit: completing it opens 6006; if it expires the scar collapses on its own (6009)."
+   }
   }
  ],
  "endings": {
   "astral_planes.6007": {
-   "label": {"zh": "缝死细缝：星界丝缕", "en": "Stitched shut: astral threads"},
-   "note": {"zh": "细缝被封闭并从星系中移除；获得大量星界丝缕与物理研究。", "en": "The scar is sealed and removed from the system; a large astral thread reward and physics research."},
+   "label": {
+    "zh": "缝死细缝：星界丝缕",
+    "en": "Stitched shut: astral threads"
+   },
+   "note": {
+    "zh": "细缝被封闭并从星系中移除；获得大量星界丝缕与物理研究。",
+    "en": "The scar is sealed and removed from the system; a large astral thread reward and physics research."
+   },
    "evidence": "events/astral_planes_events.txt:4081-4115"
   },
   "astral_planes.6009": {
-   "label": {"zh": "星界坍缩", "en": "Astral Collapse"},
-   "note": {"zh": "项目超时：细缝向内坍缩并消失，抛出少量星界丝缕。", "en": "The project expired: the scar collapses inward and disappears, releasing a small amount of astral threads."},
+   "label": {
+    "zh": "星界坍缩",
+    "en": "Astral Collapse"
+   },
+   "note": {
+    "zh": "项目超时：细缝向内坍缩并消失，抛出少量星界丝缕。",
+    "en": "The project expired: the scar collapses inward and disappears, releasing a small amount of astral threads."
+   },
    "evidence": "common/special_projects/02_projects_astral_planes.txt:46-50; events/astral_planes_events.txt:4139-4165"
   }
  },
  "nodeLabels": {
-  "astral_planes.6008": {"zh": "把细缝炸开", "en": "The scar blown open"}
+  "astral_planes.6008": {
+   "zh": "把细缝炸开",
+   "en": "The scar blown open"
+  }
  },
  "notes": [
   {
@@ -47,8 +76,24 @@
    "zh": "已核对触发（on_survey_planet、6005 的条件与 80/20 随机）、特殊项目（60 天、1080 天时限、需科学家）、6006 两个选项与 6007/6008/6009；补上 6008 通往“微型宇宙”裂隙的跨故事链接。",
    "en": "Checked the trigger (on_survey_planet, 6005 conditions and the 80/20 roll), the special project (60 days, 1080-day limit, scientist required), both options of 6006 and 6007/6008/6009; added the cross-story link from 6008 to the Microverse rift."
   },
-  "sources": ["events/astral_planes_events.txt", "common/special_projects/02_projects_astral_planes.txt", "common/on_actions/00_on_actions.txt", "common/scripted_effects/astral_planes_effects.txt", "common/astral_rifts/00_astral_rifts.txt"],
+  "sources": [
+   "events/astral_planes_events.txt",
+   "common/special_projects/02_projects_astral_planes.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/scripted_effects/astral_planes_effects.txt",
+   "common/astral_rifts/00_astral_rifts.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/event-astral-planes-6005.md"
+ },
+ "placeholders": {
+  "FromFromFromFrom.System.GetName": {
+   "zh": "那个星系",
+   "en": "that system",
+   "note": {
+    "zh": "游戏里这里会出现那个星系的名称。",
+    "en": "In the game, the name of that system appears here."
+   }
+  }
  }
 }

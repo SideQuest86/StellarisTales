@@ -91,5 +91,31 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-colony-1520.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Root.Owner.Capital.GetName": {
+   "zh": "我们的母星",
+   "en": "our homeworld",
+   "note": {
+    "zh": "游戏里这里会出现你的母星名称。",
+    "en": "In the game, your homeworld's name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesName": {
+   "zh": "该物种",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现当地物种的名称。",
+    "en": "In the game, the name of the native species appears here."
+   }
+  }
  }
 }

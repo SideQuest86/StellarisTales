@@ -78,5 +78,31 @@
    "common/war_goals/02_event_war_goals.txt"
   ],
   "guide": "public/summaries/event-action-150.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "Root.GetRulerTitle": {
+   "zh": "统治者",
+   "en": "ruler",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的头衔。",
+    "en": "In the game, your ruler's title appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "你们",
+   "en": "you all",
+   "note": {
+    "zh": "游戏里这里会出现你们的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  }
  }
 }

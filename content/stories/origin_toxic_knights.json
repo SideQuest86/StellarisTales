@@ -223,5 +223,319 @@
    "Option-level details of the middle tales (7055-7165, 7195-7225) were taken from the compiled tree rather than re-read line by line."
   ],
   "guide": "public/summaries/origin_toxic_knights.md"
+ },
+ "placeholders": {
+  "GetYear": {
+   "zh": "某",
+   "en": "some",
+   "note": {
+    "zh": "游戏里这里会出现这一年份的称呼。",
+    "en": "In the game, the year appears here."
+   }
+  },
+  "Owner.Species.GetName": {
+   "zh": "物种",
+   "en": "species",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "同族",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现我们这一族的称呼。",
+    "en": "In the game, the name of our kind appears here."
+   }
+  },
+  "Root.GetSpeciesSpawnNamePlural": {
+   "zh": "后代",
+   "en": "offspring",
+   "note": {
+    "zh": "游戏里这里会出现新生后代的称呼。",
+    "en": "In the game, the word for newborn offspring appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this system's name appears here."
+   }
+  },
+  "knight.GetIcon": {
+   "zh": "这类",
+   "en": "such",
+   "note": {
+    "zh": "游戏里这里会出现这类骑士的标记。",
+    "en": "In the game, the marker for this kind of knight appears here."
+   }
+  },
+  "knight.GetName": {
+   "zh": "骑士",
+   "en": "knight",
+   "note": {
+    "zh": "游戏里这里会出现骑士的岗位名称。",
+    "en": "In the game, the knight job name appears here."
+   }
+  },
+  "knight.GetNamePlural": {
+   "zh": "骑士",
+   "en": "knights",
+   "note": {
+    "zh": "游戏里这里会出现骑士的复数称呼。",
+    "en": "In the game, the plural word for knights appears here."
+   }
+  },
+  "order_headquarters.GetName": {
+   "zh": "骑士团总部",
+   "en": "the Order's Keep",
+   "note": {
+    "zh": "游戏里这里会出现骑士团总部的名称。",
+    "en": "In the game, the Order's headquarters' name appears here."
+   }
+  },
+  "order_keep.GetName": {
+   "zh": "骑士团主城",
+   "en": "the Order's Keep",
+   "note": {
+    "zh": "游戏里这里会出现骑士团主城的名称。",
+    "en": "In the game, the Order's Keep's name appears here."
+   }
+  },
+  "questing_knight_1.GetFirstName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_1.GetName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_10.GetFirstName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_10.GetName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_15.GetFirstName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_15.GetHerselfHimself": {
+   "zh": "其",
+   "en": "their",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的物主代词。",
+    "en": "In the game, this knight's possessive pronoun appears here."
+   }
+  },
+  "questing_knight_15.GetName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_15.Species.GetHandName": {
+   "zh": "手",
+   "en": "hand",
+   "note": {
+    "zh": "游戏里这里会出现该物种的手的称呼。",
+    "en": "In the game, this species' word for hand appears here."
+   }
+  },
+  "questing_knight_2.GetName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_4.GetFirstName": {
+   "zh": "这位王牌",
+   "en": "the champion",
+   "note": {
+    "zh": "游戏里这里会出现这位王牌骑士的名字。",
+    "en": "In the game, this champion knight's name appears here."
+   }
+  },
+  "questing_knight_4.GetName": {
+   "zh": "这位王牌",
+   "en": "the champion",
+   "note": {
+    "zh": "游戏里这里会出现这位王牌骑士的名字。",
+    "en": "In the game, this champion knight's name appears here."
+   }
+  },
+  "questing_knight_42.GetFirstName": {
+   "zh": "第一位挑战者",
+   "en": "the first challenger",
+   "note": {
+    "zh": "游戏里这里会出现第一位挑战者的名字。",
+    "en": "In the game, the first challenger's name appears here."
+   }
+  },
+  "questing_knight_42.GetName": {
+   "zh": "第一位挑战者",
+   "en": "the first challenger",
+   "note": {
+    "zh": "游戏里这里会出现第一位挑战者的名字。",
+    "en": "In the game, the first challenger's name appears here."
+   }
+  },
+  "questing_knight_43.GetName": {
+   "zh": "第二位挑战者",
+   "en": "the second challenger",
+   "note": {
+    "zh": "游戏里这里会出现第二位挑战者的名字。",
+    "en": "In the game, the second challenger's name appears here."
+   }
+  },
+  "questing_knight_44.GetFirstName": {
+   "zh": "第三位挑战者",
+   "en": "the third challenger",
+   "note": {
+    "zh": "游戏里这里会出现第三位挑战者的名字。",
+    "en": "In the game, the third challenger's name appears here."
+   }
+  },
+  "questing_knight_44.GetName": {
+   "zh": "第三位挑战者",
+   "en": "the third challenger",
+   "note": {
+    "zh": "游戏里这里会出现第三位挑战者的名字。",
+    "en": "In the game, the third challenger's name appears here."
+   }
+  },
+  "questing_knight_6.GetFirstName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_6.GetName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_8.GetFirstName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_8.GetName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_knight_82.GetFirstName": {
+   "zh": "本人",
+   "en": "myself",
+   "note": {
+    "zh": "游戏里这里会出现这位扈从的名字。",
+    "en": "In the game, this squire's name appears here."
+   }
+  },
+  "questing_knight_A.GetFirstName": {
+   "zh": "前者",
+   "en": "the first knight",
+   "note": {
+    "zh": "游戏里这里会出现这两位骑士中第一位的名字。",
+    "en": "In the game, the first of these two knights' names appears here."
+   }
+  },
+  "questing_knight_A.GetName": {
+   "zh": "前者",
+   "en": "the first knight",
+   "note": {
+    "zh": "游戏里这里会出现这两位骑士中第一位的名字。",
+    "en": "In the game, the first of these two knights' names appears here."
+   }
+  },
+  "questing_knight_A.Species.GetRemnantName": {
+   "zh": "遗骸",
+   "en": "remains",
+   "note": {
+    "zh": "游戏里这里会出现这具遗骸的称呼。",
+    "en": "In the game, the word for these remains appears here."
+   }
+  },
+  "questing_knight_B.GetFirstName": {
+   "zh": "后者",
+   "en": "the second knight",
+   "note": {
+    "zh": "游戏里这里会出现这两位骑士中第二位的名字。",
+    "en": "In the game, the second of these two knights' names appears here."
+   }
+  },
+  "questing_knight_B.GetName": {
+   "zh": "后者",
+   "en": "the second knight",
+   "note": {
+    "zh": "游戏里这里会出现这两位骑士中第二位的名字。",
+    "en": "In the game, the second of these two knights' names appears here."
+   }
+  },
+  "questing_knight_X.GetName": {
+   "zh": "这位骑士",
+   "en": "the knight",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "questing_squire_10.GetName": {
+   "zh": "这位扈从",
+   "en": "the squire",
+   "note": {
+    "zh": "游戏里这里会出现这位扈从的名字。",
+    "en": "In the game, this squire's name appears here."
+   }
+  }
  }
 }

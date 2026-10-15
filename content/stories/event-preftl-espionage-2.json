@@ -68,5 +68,133 @@
    "events/first_contact_dlc_espionage_events.txt"
   ],
   "guide": "public/summaries/event-preftl-espionage-2.md"
+ },
+ "placeholders": {
+  "From.From.Owner.GetSpeciesName": {
+   "zh": "土著",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "From.Owner.GetSpeciesName": {
+   "zh": "当地",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现当地的物种名称。",
+    "en": "In the game, the local species' name appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "我们",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你们的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesName": {
+   "zh": "你们的同类",
+   "en": "one of your kind",
+   "note": {
+    "zh": "游戏里这里会出现你们物种的名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "great_pyramid_country.GetSpeciesName": {
+   "zh": "土著",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  },
+  "great_pyramid_country.GetSpeciesNamePlural": {
+   "zh": "土著",
+   "en": "natives",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  },
+  "prelude_to_war_country.GetSpeciesNamePlural": {
+   "zh": "土著",
+   "en": "natives",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  },
+  "rogue_agent_country.GetSpeciesName": {
+   "zh": "当地人",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现当地人的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  },
+  "rogue_agent_spymaster.GetHerHim": {
+   "zh": "此人",
+   "en": "them",
+   "note": {
+    "zh": "游戏里这里会按性别出现对应的代词。",
+    "en": "In the game, a pronoun matching this spymaster's gender appears here."
+   }
+  },
+  "rogue_agent_spymaster.GetHisHerCap": {
+   "zh": "此人",
+   "en": "Their",
+   "note": {
+    "zh": "游戏里这里会按性别出现对应的代词。",
+    "en": "In the game, a pronoun matching this spymaster's gender appears here."
+   }
+  },
+  "rogue_agent_spymaster.GetName": {
+   "zh": "这位间谍首脑",
+   "en": "the spymaster",
+   "note": {
+    "zh": "游戏里这里会出现这位间谍首脑的名字。",
+    "en": "In the game, this spymaster's name appears here."
+   }
+  },
+  "rogue_agent_spymaster.GetSheHe": {
+   "zh": "此人",
+   "en": "they",
+   "note": {
+    "zh": "游戏里这里会按性别出现对应的代词。",
+    "en": "In the game, a pronoun matching this spymaster's gender appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "preftl_espionage.1021": {
+   "rogue_agent_spymaster.GetSheHe": {
+    "zh": "此人",
+    "en": "the spymaster",
+    "note": {
+     "zh": "游戏里这里会出现这位间谍首脑的称谓。",
+     "en": "In the game, this spymaster's title appears here."
+    }
+   }
+  },
+  "preftl_espionage.1023": {
+   "rogue_agent_spymaster.GetHerHim": {
+    "zh": "此人",
+    "en": "their",
+    "note": {
+     "zh": "游戏里这里会按性别出现对应的代词。",
+     "en": "In the game, a pronoun matching this spymaster's gender appears here."
+    }
+   }
+  }
  }
 }

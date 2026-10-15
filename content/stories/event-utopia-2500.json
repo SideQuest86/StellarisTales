@@ -467,5 +467,47 @@
    "The random-pool events are separate one-doc stories owned by c7a; only linked externally."
   ],
   "guide": "public/summaries/event-utopia-2500.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名字。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "owner.GetSpeciesHandName": {
+   "zh": "这只手",
+   "en": "this hand",
+   "note": {
+    "zh": "游戏里这里会出现你的物种手部的名称。",
+    "en": "In the game, your species' hand name appears here."
+   }
+  },
+  "pop_cat_ruler.GetNamePlural": {
+   "zh": "统治者",
+   "en": "rulers",
+   "note": {
+    "zh": "游戏里这里会出现统治者这一人口类别的名称。",
+    "en": "In the game, the name of the ruler population group appears here."
+   }
+  },
+  "pop_cat_specialist.GetNamePlural": {
+   "zh": "专家",
+   "en": "specialists",
+   "note": {
+    "zh": "游戏里这里会出现专家这一人口类别的名称。",
+    "en": "In the game, the name of the specialist population group appears here."
+   }
+  },
+  "pop_cat_worker.GetNamePlural": {
+   "zh": "工人",
+   "en": "workers",
+   "note": {
+    "zh": "游戏里这里会出现工人这一人口类别的名称。",
+    "en": "In the game, the name of the worker population group appears here."
+   }
+  }
  }
 }

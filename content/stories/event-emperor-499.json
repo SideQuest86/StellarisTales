@@ -62,5 +62,31 @@
    "common/resolutions/01_resolutions_nemesis.txt"
   ],
   "guide": "public/summaries/event-emperor-499.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.GetRulerTitle": {
+   "zh": "我们的统治者",
+   "en": "our ruler",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的头衔。",
+    "en": "In the game, your ruler's title appears here."
+   }
+  },
+  "gal_emperor.GetName": {
+   "zh": "这个新政权",
+   "en": "new state",
+   "note": {
+    "zh": "游戏里这里会出现这个新政权的名称。",
+    "en": "In the game, the name of this new state appears here."
+   }
+  }
  }
 }

@@ -15,5 +15,39 @@
    "common/situations/03_AI_empire_situations.txt"
   ],
   "guide": "public/summaries/event-fircon-1440.md"
+ },
+ "placeholders": {
+  "From.Owner.Capital.GetName": {
+   "zh": "那个帝国的首都",
+   "en": "the other empire's capital",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国首都的名称。",
+    "en": "In the game, the name of the other empire's capital appears here."
+   }
+  },
+  "FromFrom.Owner.Capital.GetName": {
+   "zh": "另一颗星球",
+   "en": "another world",
+   "note": {
+    "zh": "游戏里这里会出现另一颗星球的名称。",
+    "en": "In the game, the name of another world appears here."
+   }
+  },
+  "FromFromFrom.Owner.Capital.GetName": {
+   "zh": "第三颗星球",
+   "en": "a third world",
+   "note": {
+    "zh": "游戏里这里会出现第三颗星球的名称。",
+    "en": "In the game, the name of a third world appears here."
+   }
+  },
+  "FromFromFromFrom.Owner.Capital.GetName": {
+   "zh": "第四颗星球",
+   "en": "a fourth world",
+   "note": {
+    "zh": "游戏里这里会出现第四颗星球的名称。",
+    "en": "In the game, the name of a fourth world appears here."
+   }
+  }
  }
 }

@@ -13,5 +13,23 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-synth-1515.md"
+ },
+ "placeholders": {
+  "From.GetRulerName": {
+   "zh": "统治者",
+   "en": "ruler",
+   "note": {
+    "zh": "游戏里这里会出现这位统治者的称谓。",
+    "en": "In the game, the title of this ruler appears here."
+   }
+  },
+  "owner.species.GetNamePlural": {
+   "zh": "人们",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  }
  }
 }

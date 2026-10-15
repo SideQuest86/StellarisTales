@@ -18,5 +18,23 @@
   "uncertain": [
    "Whether the engine redraws when a drawn on_action event fails its trigger is not visible in script."
   ]
+ },
+ "placeholders": {
+  "From.GetAdjective": {
+   "zh": "敌对",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现对方的形容词。",
+    "en": "In the game, the adjective for the other side appears here."
+   }
+  },
+  "This.GetName": {
+   "zh": "这颗星球",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

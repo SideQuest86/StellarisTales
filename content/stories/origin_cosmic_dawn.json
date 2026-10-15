@@ -136,5 +136,23 @@
    "Which survey outcome opens which option of 2530 / 2535 was not traced."
   ],
   "guide": "public/summaries/origin_cosmic_dawn.md"
+ },
+ "placeholders": {
+  "Species.GetName": {
+   "zh": "同族",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现沉睡者所属物种的名称。",
+    "en": "In the game, the name of the sleepers' species appears here."
+   }
+  },
+  "root.GetSpeciesNamePlural": {
+   "zh": "同族",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现我们这一族的复数称呼。",
+    "en": "In the game, the plural name of our kind appears here."
+   }
+  }
  }
 }

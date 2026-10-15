@@ -546,10 +546,21 @@ export class FlowSurface {
     let drag = null;
     let pinch = null;
     const pointers = new Map();
+    let gestureOn = false;
+    const noSelect = (e) => e.preventDefault();
+    el.addEventListener("lostpointercapture", end_);
+    function end_(e) { el.dispatchEvent(new PointerEvent("pointercancel", { pointerId: e.pointerId })); }
     el.addEventListener("pointerdown", (e) => {
       const viewport = e.target.closest(".flow-viewport");
       if (!viewport || e.button > 0) return;
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      // Gesture started on the map: no page text selection until it ends.
+      if (!gestureOn) {
+        gestureOn = true;
+        document.addEventListener("selectstart", noSelect, true);
+        el.classList.add("flow-gesture");
+        try { getSelection()?.removeAllRanges(); } catch {}
+      }
       if (pointers.size === 2) {
         const [a, b] = [...pointers.values()];
         pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: this.view.k };
@@ -582,6 +593,11 @@ export class FlowSurface {
     });
     const end = (e) => {
       pointers.delete(e.pointerId);
+      if (!pointers.size && gestureOn) {
+        gestureOn = false;
+        document.removeEventListener("selectstart", noSelect, true);
+        el.classList.remove("flow-gesture");
+      }
       if (pointers.size < 2) pinch = null;
       if (drag?.id === e.pointerId) {
         if (drag.moved) {

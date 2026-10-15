@@ -13,5 +13,23 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-subject-1050.md"
+ },
+ "placeholders": {
+  "overlord_empire.GetName": {
+   "zh": "宗主国",
+   "en": "overlord",
+   "note": {
+    "zh": "游戏里这里会出现宗主国的名称。",
+    "en": "In the game, the name of the overlord appears here."
+   }
+  },
+  "subject_empire.GetName": {
+   "zh": "附庸",
+   "en": "vassal",
+   "note": {
+    "zh": "游戏里这里会出现附庸的名称。",
+    "en": "In the game, the name of the vassal appears here."
+   }
+  }
  }
 }

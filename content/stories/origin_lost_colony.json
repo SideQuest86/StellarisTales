@@ -23,5 +23,23 @@
   },
   "uncertain": [],
   "guide": "public/summaries/origin_lost_colony.md"
+ },
+ "placeholders": {
+  "GetSpeciesName": {
+   "zh": "物种",
+   "en": "species",
+   "note": {
+    "zh": "游戏里这里会出现最初物种的名称。",
+    "en": "In the game, the name of the original species appears here."
+   }
+  },
+  "GetSpeciesNamePlural": {
+   "zh": "同族",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现我们这一族的复数称呼。",
+    "en": "In the game, the plural name of our kind appears here."
+   }
+  }
  }
 }

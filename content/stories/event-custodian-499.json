@@ -216,5 +216,39 @@
    "event-custodian-30",
    "event-custodian-40"
   ]
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那些前任监管人",
+   "en": "the former custodians",
+   "note": {
+    "zh": "游戏里这里会出现前任监管人的名称。",
+    "en": "In the game, the name of the former Custodians appears here."
+   }
+  },
+  "LastKilledCountryName": {
+   "zh": "最后覆灭的帝国",
+   "en": "last empire",
+   "note": {
+    "zh": "游戏里这里会出现最后被消灭的帝国的名称。",
+    "en": "In the game, the name of the last defeated empire appears here."
+   }
+  },
+  "custodian.GetName": {
+   "zh": "这位监管人",
+   "en": "the new Custodian",
+   "note": {
+    "zh": "游戏里这里会出现新任监管人的名称。",
+    "en": "In the game, the name of the new Custodian appears here."
+   }
+  },
+  "former_custodians.GetName": {
+   "zh": "前任监管人",
+   "en": "the former custodian",
+   "note": {
+    "zh": "游戏里这里会出现前任监管人的名称。",
+    "en": "In the game, the name of the former Custodian appears here."
+   }
+  }
  }
 }

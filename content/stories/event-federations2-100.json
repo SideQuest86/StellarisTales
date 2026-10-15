@@ -35,5 +35,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-federations2-100.md"
+ },
+ "placeholders": {
+  "From.GetAdj": {
+   "zh": "对方的",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现对方的形容词。",
+    "en": "In the game, the adjective for the rival appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "rival empire",
+   "note": {
+    "zh": "游戏里这里会出现对方帝国的名称。",
+    "en": "In the game, the name of the rival empire appears here."
+   }
+  },
+  "Root.GetSpeciesNamePluralCompliment": {
+   "zh": "朋友们",
+   "en": "friends",
+   "note": {
+    "zh": "游戏里这里会出现对你们的称呼。",
+    "en": "In the game, a greeting for the other members appears here."
+   }
+  }
  }
 }

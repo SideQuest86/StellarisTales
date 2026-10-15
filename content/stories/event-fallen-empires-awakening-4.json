@@ -40,5 +40,23 @@
  },
  "exclude": [
   "bio.3400"
- ]
+ ],
+ "placeholders": {
+  "From.GetName": {
+   "zh": "堕落帝国",
+   "en": "fallen empires",
+   "note": {
+    "zh": "游戏里这里会出现堕落帝国的名称。",
+    "en": "In the game, the name of the fallen empires appears here."
+   }
+  },
+  "assimilated_fe.GetName": {
+   "zh": "这个残片",
+   "en": "the fragment",
+   "note": {
+    "zh": "游戏里这里会出现这个残片的名称。",
+    "en": "In the game, the name of this fragment appears here."
+   }
+  }
+ }
 }

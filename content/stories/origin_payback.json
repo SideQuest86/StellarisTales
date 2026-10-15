@@ -476,5 +476,79 @@
    "zh": "与“破碎枷锁”起源的互助事件（4110–4141）位于本起源的事件文件中；对方一侧的事件见 origin_broken_shackles。",
    "en": "Mutual-support events with the Broken Shackles origin (4110-4141) sit in this origin's event file; the other side is in origin_broken_shackles."
   }
- ]
+ ],
+ "placeholders": {
+  "bsempire.GetName": {
+   "zh": "那个帝国",
+   "en": "the new empire",
+   "note": {
+    "zh": "游戏里这里会出现新帝国的名称。",
+    "en": "In the game, the new empire's name appears here."
+   }
+  },
+  "destroyer_country.GetName": {
+   "zh": "该帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "owner.GetName": {
+   "zh": "债务人",
+   "en": "debtor",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "owner.capital_scope.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "owner.debt_collectors_amount": {
+   "zh": "此笔",
+   "en": "this sum",
+   "note": {
+    "zh": "游戏里这里会出现欠款的数额。",
+    "en": "In the game, the amount owed appears here."
+   }
+  },
+  "root.owner.payback_debt_collectors_timer": {
+   "zh": "约定日期",
+   "en": "the agreed date",
+   "note": {
+    "zh": "游戏里这里会出现约定的收债日期。",
+    "en": "In the game, the agreed debt-collection date appears here."
+   }
+  },
+  "root.payback_debt_collectors_timer": {
+   "zh": "约定日期",
+   "en": "the agreed date",
+   "note": {
+    "zh": "游戏里这里会出现约定的收债日期。",
+    "en": "In the game, the agreed debt-collection date appears here."
+   }
+  },
+  "root.species.GetHandName": {
+   "zh": "势力",
+   "en": "power",
+   "note": {
+    "zh": "游戏里这里会出现掌控你们的势力的称呼。",
+    "en": "In the game, the word for the controlling power appears here."
+   }
+  }
+ }
 }

@@ -326,5 +326,15 @@
    "zh": "五处遗址依次连锁：每处最后一个阶段的选项3天后（±1）经隐藏事件1219/1239/1249/1269/1289生成下一处；第五处“最后的遗世之幢”之后是“黑暗秘密”。",
    "en": "The sites are chained: the last stage of each fires, 3 days (+-1) later, a hidden setup event (1219 / 1239 / 1249 / 1269 / 1289) that creates the next site; Dark Secret follows The Last Stand (common/archaeological_site_types/03_federations_arc_sites.txt:68-399)."
   }
- ]
+ ],
+ "placeholders": {
+  "Leader.GetName": {
+   "zh": "本人",
+   "en": "himself",
+   "note": {
+    "zh": "游戏里这里会出现首席科学官的名字。",
+    "en": "In the game, the head scientist's name appears here."
+   }
+  }
+ }
 }

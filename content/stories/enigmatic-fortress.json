@@ -1,19 +1,41 @@
 {
  "id": "enigmatic-fortress",
  "family": {
-  "title": {"zh": "神秘堡垒", "en": "The Enigmatic Fortress"},
+  "title": {
+   "zh": "神秘堡垒",
+   "en": "The Enigmatic Fortress"
+  },
   "category": "leviathans",
   "start": "leviathans.2105",
   "members": [
-   "leviathans.2105", "leviathans.2099", "leviathans.2100", "leviathans.2101",
-   "event_chains:enigmatic_fortress_chain", "leviathans.2111",
-   "special_projects:ENIGMATIC_FORTRESS_1A", "special_projects:ENIGMATIC_FORTRESS_1B",
-   "leviathans.2112", "leviathans.2113", "leviathans.2114", "leviathans.2115",
-   "leviathans.2131", "leviathans.2132", "leviathans.2133", "leviathans.2150",
-   "special_projects:ENIGMATIC_FORTRESS_5A", "special_projects:ENIGMATIC_FORTRESS_5B",
-   "special_projects:ENIGMATIC_FORTRESS_5C", "special_projects:ENIGMATIC_FORTRESS_5D",
-   "leviathans.2151", "leviathans.2152", "leviathans.2153", "leviathans.2154", "leviathans.2155",
-   "leviathans.2156", "leviathans.2157", "leviathans.2160"
+   "leviathans.2105",
+   "leviathans.2099",
+   "leviathans.2100",
+   "leviathans.2101",
+   "event_chains:enigmatic_fortress_chain",
+   "leviathans.2111",
+   "special_projects:ENIGMATIC_FORTRESS_1A",
+   "special_projects:ENIGMATIC_FORTRESS_1B",
+   "leviathans.2112",
+   "leviathans.2113",
+   "leviathans.2114",
+   "leviathans.2115",
+   "leviathans.2131",
+   "leviathans.2132",
+   "leviathans.2133",
+   "leviathans.2150",
+   "special_projects:ENIGMATIC_FORTRESS_5A",
+   "special_projects:ENIGMATIC_FORTRESS_5B",
+   "special_projects:ENIGMATIC_FORTRESS_5C",
+   "special_projects:ENIGMATIC_FORTRESS_5D",
+   "leviathans.2151",
+   "leviathans.2152",
+   "leviathans.2153",
+   "leviathans.2154",
+   "leviathans.2155",
+   "leviathans.2156",
+   "leviathans.2157",
+   "leviathans.2160"
   ]
  },
  "bridges": [
@@ -21,22 +43,34 @@
    "from": "leviathans.2105",
    "to": "leviathans.2101",
    "conditional": true,
-   "label": {"zh": "堡垒全部舰船被瘫痪后", "en": "Once every fortress ship is disabled"},
+   "label": {
+    "zh": "堡垒全部舰船被瘫痪后",
+    "en": "Once every fortress ship is disabled"
+   },
    "evidence": "on_ship_disabled (00_on_actions.txt:2047) -> hidden leviathans.2100 (leviathans_events_2.txt:2838-2852): needs ship flag fortress_vault and a normal-empire disabler; it fires leviathans.2101 at the disabler's owner (trigger: all fortress_country ships disabled, :3014-3022)"
   },
   {
    "from": "leviathans.2105",
    "to": "leviathans.2099",
    "conditional": true,
-   "label": {"zh": "（备选入口）堡垒最后一艘舰船被击毁时", "en": "Alternative entry: when the last fortress ship is destroyed"},
+   "label": {
+    "zh": "（备选入口）堡垒最后一艘舰船被击毁时",
+    "en": "Alternative entry: when the last fortress ship is destroyed"
+   },
    "evidence": "on_ship_destroyed_perp (00_on_actions.txt:1453) -> leviathans.2099 (leviathans_events_2.txt:2855-2883): the destroyed ship belongs to fortress_country, the vault core still exists and no fortress ship remains un-disabled"
   }
  ],
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["leviathans.2101", "leviathans.2099"],
-   "label": {"zh": "两种入口（同一次胜利，取其一）", "en": "Two entry windows for the same victory"},
+   "members": [
+    "leviathans.2101",
+    "leviathans.2099"
+   ],
+   "label": {
+    "zh": "两种入口（同一次胜利，取其一）",
+    "en": "Two entry windows for the same victory"
+   },
    "note": {
     "zh": "2101 经 on_ship_disabled 触发（攻击者令堡垒瘫痪）；2099 经 on_ship_destroyed_perp 触发（击毁堡垒舰船）。两者正文相同，2099 另为格式塔意识提供无需项目的捷径（选项 c.gesta）。",
     "en": "2101 comes from on_ship_disabled; 2099 comes from on_ship_destroyed_perp. Same text; 2099 adds a no-project shortcut for Gestalt Consciousness (option c.gesta)."
@@ -44,8 +78,14 @@
   },
   {
    "kind": "exclusive",
-   "members": ["special_projects:ENIGMATIC_FORTRESS_1A", "special_projects:ENIGMATIC_FORTRESS_1B"],
-   "label": {"zh": "第一阶段：二选一项目", "en": "Stage 1: one project of two"},
+   "members": [
+    "special_projects:ENIGMATIC_FORTRESS_1A",
+    "special_projects:ENIGMATIC_FORTRESS_1B"
+   ],
+   "label": {
+    "zh": "第一阶段：二选一项目",
+    "en": "Stage 1: one project of two"
+   },
    "note": {
     "zh": "1B 声明 same_option_group_as = 1A（00_projects_leviathans.txt:191），二者只能进行其一。1A 需要运输舰，1B 需要科研船；均限时1080天。",
     "en": "1B declares same_option_group_as = 1A (00_projects_leviathans.txt:191), so only one can run. 1A needs a transport, 1B a science ship; both have a 1080-day limit."
@@ -54,10 +94,15 @@
   {
    "kind": "exclusive",
    "members": [
-    "special_projects:ENIGMATIC_FORTRESS_5A", "special_projects:ENIGMATIC_FORTRESS_5B",
-    "special_projects:ENIGMATIC_FORTRESS_5C", "special_projects:ENIGMATIC_FORTRESS_5D"
+    "special_projects:ENIGMATIC_FORTRESS_5A",
+    "special_projects:ENIGMATIC_FORTRESS_5B",
+    "special_projects:ENIGMATIC_FORTRESS_5C",
+    "special_projects:ENIGMATIC_FORTRESS_5D"
    ],
-   "label": {"zh": "第二阶段：四选一项目", "en": "Stage 2: one project of four"},
+   "label": {
+    "zh": "第二阶段：四选一项目",
+    "en": "Stage 2: one project of four"
+   },
    "note": {
     "zh": "5B/5C/5D 均声明 same_option_group_as = 5A（00_projects_leviathans.txt:243,269,295）。5A 仅在有可达黑洞时出现，5C 仅在有暗物质（>10）时出现，5D 需军舰。",
     "en": "5B/5C/5D all declare same_option_group_as = 5A (00_projects_leviathans.txt:243,269,295). 5A exists only with a reachable black hole, 5C only with more than 10 dark matter, 5D needs a warship (leviathans_events_2.txt:3313-3363)."
@@ -65,8 +110,15 @@
   },
   {
    "kind": "exclusive",
-   "members": ["leviathans.2153", "leviathans.2154", "leviathans.2155"],
-   "label": {"zh": "回看哪一段施工影像", "en": "Which part of the construction footage to review"},
+   "members": [
+    "leviathans.2153",
+    "leviathans.2154",
+    "leviathans.2155"
+   ],
+   "label": {
+    "zh": "回看哪一段施工影像",
+    "en": "Which part of the construction footage to review"
+   },
    "note": {
     "zh": "只有“中段”（2154）能成功；“开头”与“结尾”会让堡垒重新启动。",
     "en": "Only the middle (2154) succeeds; the beginning and the end let the fortress restart."
@@ -74,22 +126,127 @@
   }
  ],
  "endings": {
-  "leviathans.2151": {"label": {"zh": "成功：黑洞研究", "en": "Solved: black-hole research"}, "note": {"zh": "获得谜码编码/解码科技进度30%，+科研加成；堡垒被拆除，触发庆典情境。", "en": "Unlocks the Enigmatic Encoder/Decoder techs at 30% and a research bonus; the fortress is removed and a celebration situation starts."}, "evidence": "events/leviathans_events_2.txt:3368-3469"},
-  "leviathans.2154": {"label": {"zh": "成功：中间路线", "en": "Solved: the middle path"}, "note": {"zh": "同上奖励。", "en": "Same reward."}, "evidence": "events/leviathans_events_2.txt:3520-3634"},
-  "leviathans.2156": {"label": {"zh": "成功：暗物质诡计", "en": "Solved: dark matter gambit"}, "note": {"zh": "同上奖励。", "en": "Same reward."}, "evidence": "events/leviathans_events_2.txt:3660-3761"},
-  "leviathans.2157": {"label": {"zh": "武力：恒星系被毁", "en": "By force: the system is wrecked"}, "note": {"zh": "堡垒爆炸；星系内宜居行星变为核战废土，其他行星熔融，舰队尽毁；无研究奖励。", "en": "The fortress explodes; habitable planets are nuked, other rocky planets turn molten and fleets in the system are destroyed; no research reward."}, "evidence": "events/leviathans_events_2.txt:3764-3874"},
-  "leviathans.2114": {"label": {"zh": "失败：能量过载，堡垒重启", "en": "Failure: energy surge restarts the fortress"}, "note": {"zh": "（花费500能量的选项）堡垒修复并恢复运作，事件链结束。", "en": "(The 500-energy option) the fortress is repaired and reactivates; chain ends."}, "evidence": "events/leviathans_events_2.txt:3189-3209"},
-  "leviathans.2132": {"label": {"zh": "失败：塔楼谜题答错", "en": "Failure: wrong tower solution"}, "note": {"zh": "堡垒修复，事件链结束。", "en": "Fortress repaired; chain ends."}, "evidence": "events/leviathans_events_2.txt:3259-3279"},
-  "leviathans.2153": {"label": {"zh": "失败：看错了开头", "en": "Failure: the beginning footage"}, "note": {"zh": "堡垒重启，事件链结束。", "en": "Fortress restarts; chain ends."}, "evidence": "events/leviathans_events_2.txt:3497-3517"},
-  "leviathans.2155": {"label": {"zh": "失败：看错了结尾", "en": "Failure: the end footage"}, "note": {"zh": "堡垒重启，事件链结束。", "en": "Fortress restarts; chain ends."}, "evidence": "events/leviathans_events_2.txt:3637-3657"},
-  "leviathans.2160": {"label": {"zh": "失败/放弃：堡垒自行重启", "en": "Failure or abandonment: the fortress restarts"}, "note": {"zh": "由两种途径到达：选择“离远点”360天后，或项目 1A/5A 超时失败。重启后事件链结束。", "en": "Reached by choosing to stay away (360 days later) or when project 1A or 5A times out. Chain ends."}, "evidence": "events/leviathans_events_2.txt:3056,2912; common/special_projects/00_projects_leviathans.txt:178,228"}
+  "leviathans.2151": {
+   "label": {
+    "zh": "成功：黑洞研究",
+    "en": "Solved: black-hole research"
+   },
+   "note": {
+    "zh": "获得谜码编码/解码科技进度30%，+科研加成；堡垒被拆除，触发庆典情境。",
+    "en": "Unlocks the Enigmatic Encoder/Decoder techs at 30% and a research bonus; the fortress is removed and a celebration situation starts."
+   },
+   "evidence": "events/leviathans_events_2.txt:3368-3469"
+  },
+  "leviathans.2154": {
+   "label": {
+    "zh": "成功：中间路线",
+    "en": "Solved: the middle path"
+   },
+   "note": {
+    "zh": "同上奖励。",
+    "en": "Same reward."
+   },
+   "evidence": "events/leviathans_events_2.txt:3520-3634"
+  },
+  "leviathans.2156": {
+   "label": {
+    "zh": "成功：暗物质诡计",
+    "en": "Solved: dark matter gambit"
+   },
+   "note": {
+    "zh": "同上奖励。",
+    "en": "Same reward."
+   },
+   "evidence": "events/leviathans_events_2.txt:3660-3761"
+  },
+  "leviathans.2157": {
+   "label": {
+    "zh": "武力：恒星系被毁",
+    "en": "By force: the system is wrecked"
+   },
+   "note": {
+    "zh": "堡垒爆炸；星系内宜居行星变为核战废土，其他行星熔融，舰队尽毁；无研究奖励。",
+    "en": "The fortress explodes; habitable planets are nuked, other rocky planets turn molten and fleets in the system are destroyed; no research reward."
+   },
+   "evidence": "events/leviathans_events_2.txt:3764-3874"
+  },
+  "leviathans.2114": {
+   "label": {
+    "zh": "失败：能量过载，堡垒重启",
+    "en": "Failure: energy surge restarts the fortress"
+   },
+   "note": {
+    "zh": "（花费500能量的选项）堡垒修复并恢复运作，事件链结束。",
+    "en": "(The 500-energy option) the fortress is repaired and reactivates; chain ends."
+   },
+   "evidence": "events/leviathans_events_2.txt:3189-3209"
+  },
+  "leviathans.2132": {
+   "label": {
+    "zh": "失败：塔楼谜题答错",
+    "en": "Failure: wrong tower solution"
+   },
+   "note": {
+    "zh": "堡垒修复，事件链结束。",
+    "en": "Fortress repaired; chain ends."
+   },
+   "evidence": "events/leviathans_events_2.txt:3259-3279"
+  },
+  "leviathans.2153": {
+   "label": {
+    "zh": "失败：看错了开头",
+    "en": "Failure: the beginning footage"
+   },
+   "note": {
+    "zh": "堡垒重启，事件链结束。",
+    "en": "Fortress restarts; chain ends."
+   },
+   "evidence": "events/leviathans_events_2.txt:3497-3517"
+  },
+  "leviathans.2155": {
+   "label": {
+    "zh": "失败：看错了结尾",
+    "en": "Failure: the end footage"
+   },
+   "note": {
+    "zh": "堡垒重启，事件链结束。",
+    "en": "Fortress restarts; chain ends."
+   },
+   "evidence": "events/leviathans_events_2.txt:3637-3657"
+  },
+  "leviathans.2160": {
+   "label": {
+    "zh": "失败/放弃：堡垒自行重启",
+    "en": "Failure or abandonment: the fortress restarts"
+   },
+   "note": {
+    "zh": "由两种途径到达：选择“离远点”360天后，或项目 1A/5A 超时失败。重启后事件链结束。",
+    "en": "Reached by choosing to stay away (360 days later) or when project 1A or 5A times out. Chain ends."
+   },
+   "evidence": "events/leviathans_events_2.txt:3056,2912; common/special_projects/00_projects_leviathans.txt:178,228"
+  }
  },
  "nodeLabels": {
-  "leviathans.2105": {"zh": "接近堡垒", "en": "Approaching the fortress"},
-  "leviathans.2101": {"zh": "堡垒被瘫痪", "en": "Fortress disabled"},
-  "leviathans.2099": {"zh": "堡垒舰船被毁", "en": "Fortress ship destroyed"},
-  "leviathans.2131": {"zh": "塔楼谜题", "en": "The tower puzzle"},
-  "leviathans.2150": {"zh": "枢纽核心", "en": "The core"}
+  "leviathans.2105": {
+   "zh": "接近堡垒",
+   "en": "Approaching the fortress"
+  },
+  "leviathans.2101": {
+   "zh": "堡垒被瘫痪",
+   "en": "Fortress disabled"
+  },
+  "leviathans.2099": {
+   "zh": "堡垒舰船被毁",
+   "en": "Fortress ship destroyed"
+  },
+  "leviathans.2131": {
+   "zh": "塔楼谜题",
+   "en": "The tower puzzle"
+  },
+  "leviathans.2150": {
+   "zh": "枢纽核心",
+   "en": "The core"
+  }
  },
  "notes": [
   {
@@ -121,7 +278,10 @@
   "status": "reviewed",
   "date": "2026-10-13",
   "reviewer": "C6 (resume)",
-  "scope": {"zh": "完整：入口、两阶段项目、谜题与全部结局。", "en": "Complete: entries, both project stages, puzzles and all endings."},
+  "scope": {
+   "zh": "完整：入口、两阶段项目、谜题与全部结局。",
+   "en": "Complete: entries, both project stages, puzzles and all endings."
+  },
   "sources": [
    "events/leviathans_events_2.txt",
    "common/special_projects/00_projects_leviathans.txt",

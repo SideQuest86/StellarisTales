@@ -1,0 +1,430 @@
+{
+  "chain-contract-diplomatic-support-chain": {
+    "placeholders": {
+      "from.capital_scope.solar_system.GetName": {"zh": "某个", "en": "nearby", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of the star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "chain-establish-colony": {
+    "placeholders": {
+      "This.GetSpeciesName": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "This.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-awareness-125": {
+    "placeholders": {
+      "contact_empire.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "contact_empire_system.GetName": {"zh": "某个", "en": "nearby", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of the star system appears here."}},
+      "contact_empire.GetSpeciesNamePlural": {"zh": "另一个物种", "en": "other species", "note": {"zh": "游戏里这里会出现另一个物种的复数名称。", "en": "In the game, the plural name of the other species appears here."}},
+      "fromfrom.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "fromfrom.owner.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["awareness.920 names the other empire and species separately; both are shown as other-party phrases."]
+  },
+  "event-bio-1": {
+    "placeholders": {
+      "owner.species.GetHandNamePlural": {"zh": "手", "en": "hands", "note": {"zh": "游戏里这里会出现你的物种的手的复数称呼。", "en": "In the game, the plural of your species' hands appears here."}},
+      "event_target:rogue_geneticist.GetName": {"zh": "这位基因学家", "en": "the geneticist", "note": {"zh": "游戏里这里会出现这位基因学家的名字。", "en": "In the game, this geneticist's name appears here."}},
+      "Owner.Leader.GetTitle": {"zh": "这位", "en": "leader", "note": {"zh": "游戏里这里会出现你的领袖的称谓。", "en": "In the game, your leader's title appears here."}},
+      "Owner.GetSpeciesAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "event_target:genius_geneticist.GetName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的名字。", "en": "In the game, this scientist's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["bio.220 and bio.300 read 'by the name of' before a name; the phrase reads as a role, not a name.", "bio.85 uses the leader's title and name together; the English reads 'our leader, the leader'."]
+  },
+  "event-colony-1": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-100": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}},
+      "From.From.GetName": {"zh": "另一颗星球", "en": "another planet", "note": {"zh": "游戏里这里会出现另一颗星球的名称。", "en": "In the game, the name of another planet appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都名称。", "en": "In the game, your capital's name appears here."}},
+      "Root.Owner.GetSpeciesNamePlural": {"zh": "我们的同类", "en": "our kind", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "我们的同类", "en": "our kind", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-10000": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Owner.GetSpeciesNamePlural": {"zh": "同胞", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "Owner.GetSpeciesNamePluralInsult": {"zh": "小家伙", "en": "creatures", "note": {"zh": "游戏里这里会出现对你的物种的称呼。", "en": "In the game, a name for your species appears here."}},
+      "Owner.GetSpeciesNameInsult": {"zh": "小东西", "en": "creature", "note": {"zh": "游戏里这里会出现对你的物种的称呼。", "en": "In the game, a name for your species appears here."}},
+      "Owner.Species.GetMouthName": {"zh": "嘴", "en": "mouth", "note": {"zh": "游戏里这里会出现你的物种的嘴的称呼。", "en": "In the game, your species' mouth appears here."}},
+      "Owner.Species.GetHandName": {"zh": "手", "en": "hand", "note": {"zh": "游戏里这里会出现你的物种的手的称呼。", "en": "In the game, your species' hand appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["colony.10082 reads 'for the people species'; the phrase cannot fit both the plural and the 'species' word."]
+  },
+  "event-colony-150": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-1500": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+    },
+    "placeholderDocs": {
+      "colony.1503": {
+        "Root.Owner.GetSpeciesName": {"zh": "自己", "en": "ourselves", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      }
+    },
+    "issues": ["colony.1511 reads 'top our scientists'; acceptable but not idiomatic."]
+  },
+  "event-colony-1520": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "该物种", "en": "native", "note": {"zh": "游戏里这里会出现当地物种的名称。", "en": "In the game, the name of the native species appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "我们的母星", "en": "our homeworld", "note": {"zh": "游戏里这里会出现你的母星名称。", "en": "In the game, your homeworld's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-155": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-160": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-161": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-162": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-163": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-164": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-170": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-180": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-2001": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-2005": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-2010": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-2015": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-2025": {
+    "placeholders": {
+      "MyEmpire.GetSpeciesName": {"zh": "我们的物种", "en": "our species", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-2050": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-2060": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-3001": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "event_target:roguemoon.Planet.GetName": {"zh": "这颗卫星", "en": "this moon", "note": {"zh": "游戏里这里会出现这颗神秘卫星的名称。", "en": "In the game, the name of this moon appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-3005": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}},
+      "doomslayer_knight.GetName": {"zh": "末日杀手", "en": "the Doomslayer", "note": {"zh": "游戏里这里会出现这位骑士的名字。", "en": "In the game, this knight's name appears here."}},
+      "doomslayer_knight.GetFirstName": {"zh": "末日杀手", "en": "Doomslayer", "note": {"zh": "游戏里这里会出现这位骑士的名字。", "en": "In the game, this knight's name appears here."}},
+      "root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "doomslayer_knight.GetHisHer": {"zh": "此人", "en": "their", "note": {"zh": "游戏里这里会出现这位骑士的代词。", "en": "In the game, this knight's pronoun appears here."}},
+      "Root.Owner.Species.GetNamePlural": {"zh": "同胞", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都名称。", "en": "In the game, your capital's name appears here."}},
+      "Root.Owner.Species.GetName": {"zh": "我们的同胞", "en": "our people", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "cloned_physicist.GetName": {"zh": "这位物理学家", "en": "the physicist", "note": {"zh": "游戏里这里会出现这位物理学家的名字。", "en": "In the game, this physicist's name appears here."}}
+    },
+    "placeholderDocs": {
+      "colony.9810": {
+        "Root.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+      }
+    },
+    "issues": ["colony.9810 and colony.9815 name the physicist as a unit; the phrase reads as a role.", "colony.3021 uses the leader name twice in one sentence; acceptable."]
+  },
+  "event-colony-3029": {
+    "placeholders": {
+      "Root.Owner.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现镜像次元里另一个帝国的名称。", "en": "In the game, the name of the mirror empire appears here."}},
+      "Root.Owner.Species.GetName": {"zh": "那个物种", "en": "other species", "note": {"zh": "游戏里这里会出现镜像次元里另一个物种的名称。", "en": "In the game, the name of the mirror species appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "那个首都", "en": "the other capital", "note": {"zh": "游戏里这里会出现镜像次元里另一个首都的名称。", "en": "In the game, the name of the mirror capital appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["colony.3031 reads 'The Mirror-Dimension other empire reports'."]
+  },
+  "event-colony-3051": {
+    "placeholders": {
+      "demonic_incursion_country.GetName": {"zh": "恶魔军队", "en": "demonic forces", "note": {"zh": "游戏里这里会出现入侵的恶魔势力名称。", "en": "In the game, the name of the invading demonic forces appears here."}},
+      "doomslayer_knight.GetFirstName": {"zh": "这位骑士", "en": "the knight", "note": {"zh": "游戏里这里会出现这位骑士的名字。", "en": "In the game, this knight's name appears here."}},
+      "doomslayer_knight.GetTitle": {"zh": "这位", "en": "the", "note": {"zh": "游戏里这里会出现这位骑士的称谓。", "en": "In the game, this knight's title appears here."}},
+      "doomslayer_knight.GetName": {"zh": "末日杀手", "en": "Doomslayer", "note": {"zh": "游戏里这里会出现这位骑士的名字。", "en": "In the game, this knight's name appears here."}},
+      "doomslayer_knight.GetHisHer": {"zh": "此人", "en": "their", "note": {"zh": "游戏里这里会出现这位骑士的代词。", "en": "In the game, this knight's pronoun appears here."}},
+      "fromfrom.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "fromfrom.solar_system.GetName": {"zh": "某个", "en": "nearby", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of the star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-50": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, the name of that planet appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都名称。", "en": "In the game, your capital's name appears here."}},
+      "From.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都名称。", "en": "In the game, your capital's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["colony.67 assumes the capital belongs to our empire; check the owner."]
+  },
+  "event-colony-5000": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-7229": {
+    "placeholders": {
+      "planet.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "flooding_planet.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-8001": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Planet.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {
+      "special_projects:INVESTIGATE_CAVE_SHROOM_PROJECT": {
+        "Root.GetName": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的殖民地。", "en": "In the game, your colony appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-colony-9000": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Root.Owner.GetSpeciesNamePlural": {"zh": "同胞", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["colony.9005 reads 'our this planet colony' where the colony is named."]
+  },
+  "event-colony-9050": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-9200": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-9295": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-9310": {
+    "placeholders": {
+      "planet.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Planet.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-9350": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "myrmeku_planet.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["event_chains:myrmeku_chain reads 'across the this planet landscape'."]
+  },
+  "event-colony-9820": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "Root.GetSpeciesName": {"zh": "同类", "en": "kin", "note": {"zh": "游戏里这里会出现你的物种的称呼。", "en": "In the game, your species' name appears here."}},
+      "Root.GetAdjective": {"zh": "我们的", "en": "labor", "note": {"zh": "游戏里这里会出现你们投入的劳动时间。", "en": "In the game, the labor you invest appears here."}},
+      "cloned_physicist.GetName": {"zh": "这位物理学家", "en": "the physicist", "note": {"zh": "游戏里这里会出现这位物理学家的名字。", "en": "In the game, this physicist's name appears here."}},
+      "Root.Species.GetNamePlural": {"zh": "同胞", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "This.situation_age": {"zh": "此刻", "en": "now", "note": {"zh": "游戏里这里会出现当前的局势年代。", "en": "In the game, the current situation age appears here."}},
+      "Owner.GetSpeciesName": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Owner.GetSpeciesNamePlural": {"zh": "同胞", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "Owner.GetGovernmentName": {"zh": "政府", "en": "government", "note": {"zh": "游戏里这里会出现你的政府名称。", "en": "In the game, your government's name appears here."}},
+      "FromFrom.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["colony.9821 reads 'our empire-Alpha'; the suffix is the game's name for the parallel universe.", "colony.9821 reads 'the physicist' as a unit name; the phrase is a role.", "colony.9840 reads 'Add 6 people-Beta'."]
+  },
+  "event-colony-9900": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Owner.GetColonistPluralCap": {"zh": "殖民者", "en": "colonists", "note": {"zh": "游戏里这里会出现你的殖民者的称呼。", "en": "In the game, the name of your colonists appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-9950": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-fed-100": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-mod-1": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-mod-161": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-mod-2": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-mod-3": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-mod-30": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-mod-4": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-colony-mod-5": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  }
+}

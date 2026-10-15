@@ -36,5 +36,31 @@
    "common/special_projects/06_projects_nomads.txt"
   ],
   "guide": "public/summaries/event-arkship-1020.md"
+ },
+ "placeholders": {
+  "from.GetName": {
+   "zh": "这艘舰船",
+   "en": "this ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘舰船的名称。",
+    "en": "In the game, this ship's name appears here."
+   }
+  },
+  "from.solar_system.GetName": {
+   "zh": "此",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this star system's name appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  }
  }
 }

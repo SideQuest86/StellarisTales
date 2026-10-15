@@ -17,5 +17,27 @@
    "3125的选项a/c之后是否可再次研究未验证（树中没有继续）。 / Whether 3125 options a/c allow later retries is not verified."
   ],
   "guide": "public/summaries/anomaly-crystal-manufactory-cat.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗小行星",
+   "en": "this asteroid",
+   "note": {
+    "zh": "游戏里这里会出现这颗小行星的名称。",
+    "en": "In the game, this asteroid's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "anomaly_failure.2670": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  }
  }
 }

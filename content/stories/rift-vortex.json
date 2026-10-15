@@ -3,28 +3,55 @@
  "category": "rifts",
  "bridges": [
   {
-   "from": "astral_rift.900", "choice": "astral_rift.900.b", "to": "astral_rift.915", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "from": "astral_rift.900",
+   "choice": "astral_rift.900.b",
+   "to": "astral_rift.915",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
    "evidence": "events/astral_rifts_0_events.txt:3515-3522 set_next_astral_rift_event { id = astral_rift.910 on_roll_failed = astral_rift.915 fail_probability = @default_failure_probability }"
   }
  ],
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["astral_rift.910", "astral_rift.915"],
-   "label": {"zh": "明火实验：突破或灾难", "en": "Flame test: breakthrough or catastrophe"},
-   "note": {"zh": "选择用明火点燃样本后，本阶段要么突破（910，获得工程研究与 10 年“天顶燃料”），要么在某次掷骰时以每次 1.5% 的基础概率失败（915，科学家殒命，探索结束）。", "en": "After choosing the flame test the stage either breaks through (910: engineering research and 10 years of Vortex Fuel) or fails on a roll, base 1.5% per roll (915: the scientist dies and the exploration ends)."}
+   "members": [
+    "astral_rift.910",
+    "astral_rift.915"
+   ],
+   "label": {
+    "zh": "明火实验：突破或灾难",
+    "en": "Flame test: breakthrough or catastrophe"
+   },
+   "note": {
+    "zh": "选择用明火点燃样本后，本阶段要么突破（910，获得工程研究与 10 年“天顶燃料”），要么在某次掷骰时以每次 1.5% 的基础概率失败（915，科学家殒命，探索结束）。",
+    "en": "After choosing the flame test the stage either breaks through (910: engineering research and 10 years of Vortex Fuel) or fails on a roll, base 1.5% per roll (915: the scientist dies and the exploration ends)."
+   }
   }
  ],
  "endings": {
   "astral_rift.915": {
-   "label": {"zh": "灾难：科学家殒命", "en": "Catastrophe: the scientist dies"},
-   "note": {"zh": "失败分支：探球取回时只剩焦黑的遗骸，科学家死亡；获得奇异气体与大量星界丝缕，探索结束。", "en": "Failure branch: the recovered Sphere holds only charred remains and the scientist is killed; exotic gases and a large astral thread reward; the exploration ends."},
+   "label": {
+    "zh": "灾难：科学家殒命",
+    "en": "Catastrophe: the scientist dies"
+   },
+   "note": {
+    "zh": "失败分支：探球取回时只剩焦黑的遗骸，科学家死亡；获得奇异气体与大量星界丝缕，探索结束。",
+    "en": "Failure branch: the recovered Sphere holds only charred remains and the scientist is killed; exotic gases and a large astral thread reward; the exploration ends."
+   },
    "evidence": "events/astral_rifts_0_events.txt:3601-3638 (kill_leader, finish_astral_rift)"
   },
   "astral_rift.940": {
-   "label": {"zh": "倏然离去：永旋陀螺", "en": "It Leaves: Ever Spinning Top"},
-   "note": {"zh": "风暴中心的存在消失，留下的装置上取下一个永不停转的部件；探索结束，获得遗珍“永旋陀螺”。", "en": "The being at the storm's eye vanishes; a part taken from the device it left spins forever; the exploration ends with the relic Ever Spinning Top."},
+   "label": {
+    "zh": "倏然离去：永旋陀螺",
+    "en": "It Leaves: Ever Spinning Top"
+   },
+   "note": {
+    "zh": "风暴中心的存在消失，留下的装置上取下一个永不停转的部件；探索结束，获得遗珍“永旋陀螺”。",
+    "en": "The being at the storm's eye vanishes; a part taken from the device it left spins forever; the exploration ends with the relic Ever Spinning Top."
+   },
    "evidence": "events/astral_rifts_0_events.txt:3773-3806"
   }
  },
@@ -44,8 +71,21 @@
    "zh": "已核对裂隙定义与 900–940 全部事件，补上 900.b 的失败分支 915（原为独立故事）。",
    "en": "Checked the rift definition and every event 900–940; added the failure branch 915 of 900.b (formerly a separate story)."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_0_events.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/rift-vortex.md"
+ },
+ "placeholders": {
+  "explorer.GetSpeciesHandName": {
+   "zh": "手臂",
+   "en": "arm",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的一个身体部位。",
+    "en": "In the game, a body part of your species appears here."
+   }
+  }
  }
 }

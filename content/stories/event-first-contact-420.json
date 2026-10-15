@@ -95,5 +95,39 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-first-contact-420.md"
+ },
+ "placeholders": {
+  "This.ContactCountry.GetName": {
+   "zh": "未知外星人",
+   "en": "unknown aliens",
+   "note": {
+    "zh": "游戏里这里会出现这个外星势力的代称。",
+    "en": "In the game, the working name of this alien power appears here."
+   }
+  },
+  "This.ContactCountry.GetRealName": {
+   "zh": "这个文明",
+   "en": "civilisation",
+   "note": {
+    "zh": "游戏里这里会出现这个外星文明的真实名称。",
+    "en": "In the game, the real name of this alien civilisation appears here."
+   }
+  },
+  "This.Owner.GetSpeciesEarNamePlural": {
+   "zh": "耳朵",
+   "en": "ears",
+   "note": {
+    "zh": "游戏里这里会出现你的物种耳朵的名称。",
+    "en": "In the game, the name of your species' ears appears here."
+   }
+  },
+  "contacted_hummers.GetName": {
+   "zh": "接触过的物种",
+   "en": "contacted species",
+   "note": {
+    "zh": "游戏里这里会出现这个已接触物种的名称。",
+    "en": "In the game, the name of this contacted species appears here."
+   }
+  }
  }
 }

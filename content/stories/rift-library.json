@@ -3,13 +3,25 @@
  "category": "rifts",
  "endings": {
   "astral_rift.330": {
-   "label": {"zh": "取回球仪：九颗分形之种", "en": "Globes retrieved: nine Fractal Seeds"},
-   "note": {"zh": "探索结束，获得大量星界丝缕与 9 颗可通过殖民地决议放置的分形之种。", "en": "The exploration ends with a large astral thread reward and 9 Fractal Seeds to place through colony decisions."},
+   "label": {
+    "zh": "取回球仪：九颗分形之种",
+    "en": "Globes retrieved: nine Fractal Seeds"
+   },
+   "note": {
+    "zh": "探索结束，获得大量星界丝缕与 9 颗可通过殖民地决议放置的分形之种。",
+    "en": "The exploration ends with a large astral thread reward and 9 Fractal Seeds to place through colony decisions."
+   },
    "evidence": "events/astral_rifts_0_events.txt:1889-1905"
   },
   "astral_rift.335": {
-   "label": {"zh": "放弃球仪：三颗分形之种", "en": "Globes left: three Fractal Seeds"},
-   "note": {"zh": "探索结束，另一个“自己”替我们带回了球仪：获得大量星界丝缕与 3 颗分形之种。", "en": "The exploration ends; another version of ourselves brought the globes back: a large astral thread reward and 3 Fractal Seeds."},
+   "label": {
+    "zh": "放弃球仪：三颗分形之种",
+    "en": "Globes left: three Fractal Seeds"
+   },
+   "note": {
+    "zh": "探索结束，另一个“自己”替我们带回了球仪：获得大量星界丝缕与 3 颗分形之种。",
+    "en": "The exploration ends; another version of ourselves brought the globes back: a large astral thread reward and 3 Fractal Seeds."
+   },
    "evidence": "events/astral_rifts_0_events.txt:1919-1935"
   }
  },
@@ -21,8 +33,21 @@
    "zh": "已核对裂隙定义与 300–335 全部事件；编译结构无误，补充结局。",
    "en": "Checked the rift definition and every event 300–335; the compiled structure is correct; endings added."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_0_events.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/rift-library.md"
+ },
+ "placeholders": {
+  "Explorer.num_authorized_fractal_seeds": {
+   "zh": "若干",
+   "en": "some",
+   "note": {
+    "zh": "游戏里这里会出现你获得的分形之种的数量。",
+    "en": "In the game, the number of Fractal Seeds you have appears here."
+   }
+  }
  }
 }

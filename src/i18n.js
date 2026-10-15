@@ -1,17 +1,16 @@
 // Interface chrome dictionary. Story text never passes through here: original
 // bilingual game text stays in the story data. Every key has zh and en.
 export const UI = {
-  "site.title": { zh: "群星 · 银河记忆 | Stellaris Tales", en: "Stellaris Tales · Galactic Memory Archive" },
-  "site.titleSuffix": { zh: "群星", en: "Stellaris Tales" },
+  "site.title": { zh: "Stellaris Tales", en: "Stellaris Tales" },
+  "site.titleSuffix": { zh: "Stellaris Tales", en: "Stellaris Tales" },
   "site.description": {
-    zh: "穿行于银河档案阵列，展开完整群星故事，在原版配乐中探索每一个选择。",
-    en: "Walk the galactic archive, open every Stellaris story and explore each choice to the original soundtrack.",
+    zh: "完整收录《群星》游戏内的故事文本，附原版配乐。",
+    en: "Every story from the game Stellaris, with the original soundtrack.",
   },
-  "brand.home": { zh: "群星档案馆首页", en: "Stellaris Tales home" },
-  "brand.subtitle": { zh: "银河叙事档案", en: "Galactic story archive" },
+  "brand.home": { zh: "Stellaris Tales 首页", en: "Stellaris Tales home" },
   "header.search": { zh: "搜索", en: "Search" },
   "header.museum": { zh: "博物天枢", en: "Grand Archive" },
-  "header.museumLabel": { zh: "打开博物天枢标本陈列", en: "Open the Grand Archive specimen exhibition" },
+  "header.museumLabel": { zh: "打开博物天枢", en: "Open the Grand Archive" },
   "header.language": { zh: "中 / EN", en: "EN / 中" },
   "header.languageLabel": { zh: "切换为英文", en: "Switch to Chinese" },
   "motion.reduce": { zh: "减少动态", en: "Reduce motion" },
@@ -67,7 +66,7 @@ export const UI = {
   "archive.nextCategory": { zh: "下一个类别", en: "Next category" },
   "archive.switchCategory": { zh: "切换类别", en: "Category" },
   "archive.hint": { zh: "拖动或方向键浏览 · 回车展开", en: "Drag or use arrow keys · Enter to open" },
-  "archive.loadingTitle": { zh: "群星之间", en: "Among the stars" },
+  "archive.loadingTitle": { zh: "载入中", en: "Loading" },
   "archive.offline": { zh: "记忆暂时失联", en: "The archive is out of reach" },
   "archive.reconnect": { zh: "重新连接", en: "Reconnect" },
   "error.load": { zh: "这份记忆暂时未能抵达，请稍后重试。", en: "This record could not be loaded. Please try again." },
@@ -187,6 +186,14 @@ export const UI = {
   "map.report": { zh: "调查报告", en: "Report" },
   "map.stage": { zh: "剧情阶段", en: "Story stages" },
   "map.empty": { zh: "这份档案只有一页。", en: "This record has a single page." },
+  // audio-refine
+  "music.vocal": { zh: "人声", en: "Vocal" },
+  "music.instrumental": { zh: "纯音乐", en: "Instrumental" },
+  "music.playFailed": { zh: "点击播放按钮开始听原声。", en: "Press play to start the soundtrack." },
+  "music.loadFailed": { zh: "这一首暂时未能加载，可以重试或切换下一首。", en: "This track could not be loaded. Try again or skip to the next one." },
+  "music.pause": { zh: "暂停音乐", en: "Pause music" },
+  "music.description": { zh: "{n} 首原版配乐 · 按专辑顺序循环播放", en: "{n} original tracks · plays through the album on a loop" },
+  // end audio-refine
 };
 
 const FALLBACK = "zh";

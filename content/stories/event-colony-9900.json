@@ -2,20 +2,80 @@
  "id": "event-colony-9900",
  "category": "society",
  "endings": {
-  "colony.9920": {"label": {"zh": "结局：坏邻居", "en": "Ending: bad neighbors"}, "note": {"zh": "释放的囚犯多为罪犯：1800天犯罪修正，新增人口。", "en": "Mostly criminals: a 1800-day crime modifier and new pops."}, "evidence": "events/colony_events_3.txt:9414-9452."},
-  "colony.9925": {"label": {"zh": "结局：大杂烩", "en": "Ending: a mixed bag"}, "note": {"zh": "罪犯与异见者兼有：两种修正，新增人口。", "en": "Criminals and dissidents alike: both modifiers and new pops."}, "evidence": "events/colony_events_3.txt:9454-9496."},
-  "colony.9930": {"label": {"zh": "结局：好邻居", "en": "Ending: good neighbors"}, "note": {"zh": "几乎全是艺术家、作家等异见者：永久修正，新增人口。", "en": "Almost all artists and other dissidents: a permanent modifier and new pops."}, "evidence": "events/colony_events_3.txt:9498-9540."}
+  "colony.9920": {
+   "label": {
+    "zh": "结局：坏邻居",
+    "en": "Ending: bad neighbors"
+   },
+   "note": {
+    "zh": "释放的囚犯多为罪犯：1800天犯罪修正，新增人口。",
+    "en": "Mostly criminals: a 1800-day crime modifier and new pops."
+   },
+   "evidence": "events/colony_events_3.txt:9414-9452."
+  },
+  "colony.9925": {
+   "label": {
+    "zh": "结局：大杂烩",
+    "en": "Ending: a mixed bag"
+   },
+   "note": {
+    "zh": "罪犯与异见者兼有：两种修正，新增人口。",
+    "en": "Criminals and dissidents alike: both modifiers and new pops."
+   },
+   "evidence": "events/colony_events_3.txt:9454-9496."
+  },
+  "colony.9930": {
+   "label": {
+    "zh": "结局：好邻居",
+    "en": "Ending: good neighbors"
+   },
+   "note": {
+    "zh": "几乎全是艺术家、作家等异见者：永久修正，新增人口。",
+    "en": "Almost all artists and other dissidents: a permanent modifier and new pops."
+   },
+   "evidence": "events/colony_events_3.txt:9498-9540."
+  }
  },
  "notes": [
-  {"doc": "colony.9915", "kind": "review", "zh": "审阅注：四种处置——留作监狱（静滞监狱矿藏，结束）；释放（非格式塔）→ 60–120天后随机：坏邻居25/大杂烩50/好邻居25，亲外与排外帝国权重各±15；逐步释放（和平、平等或警察国家）→ 融合矿藏与新人口，结束；吞噬虫群 → 当作储备食物，结束。", "en": "Review note: four choices — keep it as a prison (stasis prison deposit, end); release them (non-gestalt) → 60–120 days later at random Bad 25 / Mixed 50 / Good 25, shifted ±15 for xenophile or xenophobe empires; gradual release (pacifist, egalitarian or Police State) → integration deposit and new pops, end; Devouring Swarm → stored meals, end."}
+  {
+   "doc": "colony.9915",
+   "kind": "review",
+   "zh": "审阅注：四种处置——留作监狱（静滞监狱矿藏，结束）；释放（非格式塔）→ 60–120天后随机：坏邻居25/大杂烩50/好邻居25，亲外与排外帝国权重各±15；逐步释放（和平、平等或警察国家）→ 融合矿藏与新人口，结束；吞噬虫群 → 当作储备食物，结束。",
+   "en": "Review note: four choices — keep it as a prison (stasis prison deposit, end); release them (non-gestalt) → 60–120 days later at random Bad 25 / Mixed 50 / Good 25, shifted ±15 for xenophile or xenophobe empires; gradual release (pacifist, egalitarian or Police State) → integration deposit and new pops, end; Devouring Swarm → stored meals, end."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "静滞监狱全部7个事件与粒子谜题项目。", "en": "All 7 Stasis Prison events and the Particle Mystery project."},
-  "sources": ["events/colony_events_3.txt:9073-9540", "common/special_projects/00_projects_3.txt:1787-1806", "common/on_actions/00_on_actions.txt:3882"],
+  "scope": {
+   "zh": "静滞监狱全部7个事件与粒子谜题项目。",
+   "en": "All 7 Stasis Prison events and the Particle Mystery project."
+  },
+  "sources": [
+   "events/colony_events_3.txt:9073-9540",
+   "common/special_projects/00_projects_3.txt:1787-1806",
+   "common/on_actions/00_on_actions.txt:3882"
+  ],
   "uncertain": [],
   "guide": "public/summaries/event-colony-9900.md"
+ },
+ "placeholders": {
+  "Owner.GetColonistPluralCap": {
+   "zh": "殖民者",
+   "en": "colonists",
+   "note": {
+    "zh": "游戏里这里会出现你的殖民者的称呼。",
+    "en": "In the game, the name of your colonists appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

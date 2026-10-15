@@ -2,84 +2,260 @@
  "id": "rift-garden",
  "category": "rifts",
  "bridges": [
-  {"from": "astral_rift.1400", "choice": "astral_rift.1400.b", "to": "astral_rift.1405", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:1481-1485 set_next_astral_rift_event { id = astral_rift.1410 on_roll_failed = astral_rift.1405 fail_probability = @default_failure_probability }"},
-  {"from": "astral_rift.1405", "choice": "astral_rift.1405.a", "to": "astral_rift.1415", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:1531-1535 on_roll_failed = astral_rift.1415"},
-  {"from": "astral_rift.1410", "choice": "astral_rift.1410.b", "to": "astral_rift.1430", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:1649-1653 on_roll_failed = astral_rift.1430"},
-  {"from": "astral_rift.1425", "choice": "astral_rift.1425.c", "to": "astral_rift.1445", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:1839-1843 on_roll_failed = astral_rift.1445"},
-  {"from": "astral_rift.1430", "choice": "astral_rift.1430.b", "to": "astral_rift.1445", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:1917-1921 on_roll_failed = astral_rift.1445"},
-  {"from": "astral_rift.1435", "choice": "astral_rift.1435.b", "to": "astral_rift.1445", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:1995-1999 on_roll_failed = astral_rift.1445"},
-  {"from": "astral_rift.1440", "choice": "astral_rift.1440.b", "to": "astral_rift.1435", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:2073-2077 on_roll_failed = astral_rift.1435"},
-  {"from": "astral_rift.1455", "choice": "astral_rift.1455.a", "to": "astral_rift.1435", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:2314-2318 on_roll_failed = astral_rift.1435"},
-  {"from": "astral_rift.1456", "choice": "astral_rift.1455.a", "to": "astral_rift.1435", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:2349-2353 on_roll_failed = astral_rift.1435 (1456 reuses option key astral_rift.1455.a)"}
+  {
+   "from": "astral_rift.1400",
+   "choice": "astral_rift.1400.b",
+   "to": "astral_rift.1405",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:1481-1485 set_next_astral_rift_event { id = astral_rift.1410 on_roll_failed = astral_rift.1405 fail_probability = @default_failure_probability }"
+  },
+  {
+   "from": "astral_rift.1405",
+   "choice": "astral_rift.1405.a",
+   "to": "astral_rift.1415",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:1531-1535 on_roll_failed = astral_rift.1415"
+  },
+  {
+   "from": "astral_rift.1410",
+   "choice": "astral_rift.1410.b",
+   "to": "astral_rift.1430",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:1649-1653 on_roll_failed = astral_rift.1430"
+  },
+  {
+   "from": "astral_rift.1425",
+   "choice": "astral_rift.1425.c",
+   "to": "astral_rift.1445",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:1839-1843 on_roll_failed = astral_rift.1445"
+  },
+  {
+   "from": "astral_rift.1430",
+   "choice": "astral_rift.1430.b",
+   "to": "astral_rift.1445",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:1917-1921 on_roll_failed = astral_rift.1445"
+  },
+  {
+   "from": "astral_rift.1435",
+   "choice": "astral_rift.1435.b",
+   "to": "astral_rift.1445",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:1995-1999 on_roll_failed = astral_rift.1445"
+  },
+  {
+   "from": "astral_rift.1440",
+   "choice": "astral_rift.1440.b",
+   "to": "astral_rift.1435",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:2073-2077 on_roll_failed = astral_rift.1435"
+  },
+  {
+   "from": "astral_rift.1455",
+   "choice": "astral_rift.1455.a",
+   "to": "astral_rift.1435",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:2314-2318 on_roll_failed = astral_rift.1435"
+  },
+  {
+   "from": "astral_rift.1456",
+   "choice": "astral_rift.1455.a",
+   "to": "astral_rift.1435",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:2349-2353 on_roll_failed = astral_rift.1435 (1456 reuses option key astral_rift.1455.a)"
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["astral_rift.1410", "astral_rift.1405"],
-   "label": {"zh": "提取果实：突破或被缠住", "en": "Extracting fruit: breakthrough or entangled"},
-   "note": {"zh": "1400.b 之后本阶段要么突破进入空谷（1410），要么以每次掷骰 1.5% 的基础概率失败，探球被藤蔓缠住（1405）；1405 中再次焚烧时又可能失败为 1415。", "en": "After 1400.b the stage either breaks through to the Hollow (1410) or fails at a base 1.5% per roll and the Sphere is entangled (1405); burning free in 1405 may in turn fail into 1415."}},
-  {"kind": "exclusive", "members": ["astral_rift.1440", "astral_rift.1430"],
-   "label": {"zh": "研究空谷：未被发现或被发现", "en": "Studying the Hollow: unseen or noticed"},
-   "note": {"zh": "1410.b 之后，要么隐蔽地观察生物（1440），要么失败被它发现（1430）。", "en": "After 1410.b the crew either watches the creature unseen (1440) or the stage fails and it notices them (1430)."}},
-  {"kind": "exclusive", "members": ["astral_rift.1450", "astral_rift.1445"],
-   "label": {"zh": "焚烧生物：无限之根或全员殒命", "en": "Burning the creature: Infinity Root or crew lost"},
-   "note": {"zh": "从 1425、1430、1435 选择“把它也烧了”后，突破得到无限之根（1450），失败则探球被根系占据、科学家死亡（1445）。1425 的“不要轻举妄动”会直接进入 1445。", "en": "Choosing “Burn the Creature” in 1425, 1430 or 1435 either breaks through to the Infinity Root (1450) or fails: roots fill the Sphere and the scientist dies (1445). “Do nothing” in 1425 leads straight to 1445."}},
-  {"kind": "exclusive", "members": ["astral_rift.1457", "astral_rift.1435"],
-   "label": {"zh": "持续研究：每一步都可能被发现", "en": "Continued study: noticed at any step"},
-   "note": {"zh": "1440.b → 1455 → 1456 → 1457 的每一阶段都以 1435“被发现”为失败后备；坚持到 1457 可不用焚烧取得无限之根。", "en": "Each stage of 1440.b → 1455 → 1456 → 1457 has 1435 “Noticed” as its failure fallback; persisting to 1457 obtains the Infinity Root without burning anything."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.1410",
+    "astral_rift.1405"
+   ],
+   "label": {
+    "zh": "提取果实：突破或被缠住",
+    "en": "Extracting fruit: breakthrough or entangled"
+   },
+   "note": {
+    "zh": "1400.b 之后本阶段要么突破进入空谷（1410），要么以每次掷骰 1.5% 的基础概率失败，探球被藤蔓缠住（1405）；1405 中再次焚烧时又可能失败为 1415。",
+    "en": "After 1400.b the stage either breaks through to the Hollow (1410) or fails at a base 1.5% per roll and the Sphere is entangled (1405); burning free in 1405 may in turn fail into 1415."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.1440",
+    "astral_rift.1430"
+   ],
+   "label": {
+    "zh": "研究空谷：未被发现或被发现",
+    "en": "Studying the Hollow: unseen or noticed"
+   },
+   "note": {
+    "zh": "1410.b 之后，要么隐蔽地观察生物（1440），要么失败被它发现（1430）。",
+    "en": "After 1410.b the crew either watches the creature unseen (1440) or the stage fails and it notices them (1430)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.1450",
+    "astral_rift.1445"
+   ],
+   "label": {
+    "zh": "焚烧生物：无限之根或全员殒命",
+    "en": "Burning the creature: Infinity Root or crew lost"
+   },
+   "note": {
+    "zh": "从 1425、1430、1435 选择“把它也烧了”后，突破得到无限之根（1450），失败则探球被根系占据、科学家死亡（1445）。1425 的“不要轻举妄动”会直接进入 1445。",
+    "en": "Choosing “Burn the Creature” in 1425, 1430 or 1435 either breaks through to the Infinity Root (1450) or fails: roots fill the Sphere and the scientist dies (1445). “Do nothing” in 1425 leads straight to 1445."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.1457",
+    "astral_rift.1435"
+   ],
+   "label": {
+    "zh": "持续研究：每一步都可能被发现",
+    "en": "Continued study: noticed at any step"
+   },
+   "note": {
+    "zh": "1440.b → 1455 → 1456 → 1457 的每一阶段都以 1435“被发现”为失败后备；坚持到 1457 可不用焚烧取得无限之根。",
+    "en": "Each stage of 1440.b → 1455 → 1456 → 1457 has 1435 “Noticed” as its failure fallback; persisting to 1457 obtains the Infinity Root without burning anything."
+   }
+  }
  ],
  "endings": {
   "astral_rift.1415": {
-   "label": {"zh": "熊熊烈焰：探球熔毁", "en": "Conflagration: Sphere melted"},
-   "note": {"zh": "在缠绕中焚烧藤蔓失败：探球半毁，船员全部遇难；获得大量星界丝缕，探索结束。", "en": "Burning the entangling vines failed: half the Sphere melted and all aboard perished; a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_1_events.txt:1707-1725"},
+   "label": {
+    "zh": "熊熊烈焰：探球熔毁",
+    "en": "Conflagration: Sphere melted"
+   },
+   "note": {
+    "zh": "在缠绕中焚烧藤蔓失败：探球半毁，船员全部遇难；获得大量星界丝缕，探索结束。",
+    "en": "Burning the entangling vines failed: half the Sphere melted and all aboard perished; a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:1707-1725"
+  },
   "astral_rift.1420": {
-   "label": {"zh": "逃离：带回样本", "en": "Escape: samples recovered"},
-   "note": {"zh": "起锚撤离；获得一项生物学研究选项与大量星界丝缕，探索结束。", "en": "Pull anchor and leave; a biology research option and a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_1_events.txt:1727-1769"},
+   "label": {
+    "zh": "逃离：带回样本",
+    "en": "Escape: samples recovered"
+   },
+   "note": {
+    "zh": "起锚撤离；获得一项生物学研究选项与大量星界丝缕，探索结束。",
+    "en": "Pull anchor and leave; a biology research option and a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:1727-1769"
+  },
   "astral_rift.1450": {
-   "label": {"zh": "无限之根（焚烧）", "en": "Infinity Root (burned)"},
-   "note": {"zh": "生物被火吓走，丢下一块会自行扎根、显出智慧迹象的根块；获得遗珍“无限之根”，探索结束。1451 是同一结局的另一入口（1440.a）。", "en": "Fire drives the creature away and it drops a root mass that takes root by itself and shows signs of intelligence; the relic Infinity Root; the exploration ends. 1451 is the same ending reached via 1440.a."},
-   "evidence": "events/astral_rifts_1_events.txt:2193-2288"},
+   "label": {
+    "zh": "无限之根（焚烧）",
+    "en": "Infinity Root (burned)"
+   },
+   "note": {
+    "zh": "生物被火吓走，丢下一块会自行扎根、显出智慧迹象的根块；获得遗珍“无限之根”，探索结束。1451 是同一结局的另一入口（1440.a）。",
+    "en": "Fire drives the creature away and it drops a root mass that takes root by itself and shows signs of intelligence; the relic Infinity Root; the exploration ends. 1451 is the same ending reached via 1440.a."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:2193-2288"
+  },
   "astral_rift.1457": {
-   "label": {"zh": "无限之根（暗中取得）", "en": "Infinity Root (taken unseen)"},
-   "note": {"zh": "持续暗中观察，趁生物离开取走它埋下的根块；获得遗珍“无限之根”（另一版本标记），探索结束。", "en": "After long unseen observation the crew takes the root mass the creature buried; the relic Infinity Root (a different version flag); the exploration ends."},
-   "evidence": "events/astral_rifts_1_events.txt:2360-2407"},
+   "label": {
+    "zh": "无限之根（暗中取得）",
+    "en": "Infinity Root (taken unseen)"
+   },
+   "note": {
+    "zh": "持续暗中观察，趁生物离开取走它埋下的根块；获得遗珍“无限之根”（另一版本标记），探索结束。",
+    "en": "After long unseen observation the crew takes the root mass the creature buried; the relic Infinity Root (a different version flag); the exploration ends."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:2360-2407"
+  },
   "astral_rift.1465": {
-   "label": {"zh": "种下种子：植物化的科学家", "en": "Seeds Sown: the plantoid scientist"},
-   "note": {"zh": "1445 中科学家死亡，被根系同化；1800 天后其心智以植物类新身体恢复，作为年轻的领袖回归。", "en": "In 1445 the scientist dies, absorbed by the roots; 1800 days later their mind is restored in a new plantoid body and they return as a young leader."},
-   "evidence": "events/astral_rifts_1_events.txt:2141-2189 (kill_leader, clone_leader exiled, country_event 1465 days=1800); 2436-2488"}
+   "label": {
+    "zh": "种下种子：植物化的科学家",
+    "en": "Seeds Sown: the plantoid scientist"
+   },
+   "note": {
+    "zh": "1445 中科学家死亡，被根系同化；1800 天后其心智以植物类新身体恢复，作为年轻的领袖回归。",
+    "en": "In 1445 the scientist dies, absorbed by the roots; 1800 days later their mind is restored in a new plantoid body and they return as a young leader."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:2141-2189 (kill_leader, clone_leader exiled, country_event 1465 days=1800); 2436-2488"
+  }
  },
  "nodeLabels": {
-  "astral_rift.1425": {"zh": "未知生物（焚烧后）", "en": "A Creature (after the fire)"},
-  "astral_rift.1430": {"zh": "未知生物（被发现）", "en": "A Creature (noticed)"},
-  "astral_rift.1440": {"zh": "未知生物（暗中观察）", "en": "A Creature (unseen)"},
-  "astral_rift.1445": {"zh": "植物物质", "en": "Plant Material"},
-  "astral_rift.1451": {"zh": "无限之根", "en": "Infinity Root"}
+  "astral_rift.1425": {
+   "zh": "未知生物（焚烧后）",
+   "en": "A Creature (after the fire)"
+  },
+  "astral_rift.1430": {
+   "zh": "未知生物（被发现）",
+   "en": "A Creature (noticed)"
+  },
+  "astral_rift.1440": {
+   "zh": "未知生物（暗中观察）",
+   "en": "A Creature (unseen)"
+  },
+  "astral_rift.1445": {
+   "zh": "植物物质",
+   "en": "Plant Material"
+  },
+  "astral_rift.1451": {
+   "zh": "无限之根",
+   "en": "Infinity Root"
+  }
  },
  "notes": [
-  {"doc": "astral_rifts:garden", "kind": "review",
+  {
+   "doc": "astral_rifts:garden",
+   "kind": "review",
    "zh": "抽取权重 1。它可能奖励遗珍，因此任一帝国正在探索时其他帝国抽到它的权重为 0；探索者未得到遗珍时解除锁定。",
-   "en": "Draw weight 1. Because it can award a relic, its weight is 0 for others while any empire explores it; the lock is lifted if the explorer did not obtain the relic."},
-  {"doc": "astral_rift.1445", "kind": "review",
+   "en": "Draw weight 1. Because it can award a relic, its weight is 0 for others while any empire explores it; the lock is lifted if the explorer did not obtain the relic."
+  },
+  {
+   "doc": "astral_rift.1445",
+   "kind": "review",
    "zh": "原文差异：本篇中文标题作“行星物质”，英文为 Plant Material（植物物质）。",
-   "en": "Localisation difference: the Chinese title reads “行星物质” (planet material); the English is “Plant Material”."}
+   "en": "Localisation difference: the Chinese title reads “行星物质” (planet material); the English is “Plant Material”."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -89,8 +265,21 @@
    "zh": "已核对裂隙定义与 1400–1465 全部事件，补上九处 on_roll_failed 失败分支（1405、1415、1430、1435、1445），原独立故事 event-astral-rift-1405/1415/1430/1435 均已并入。",
    "en": "Checked the rift definition and every event 1400–1465; added all nine on_roll_failed failure branches (1405, 1415, 1430, 1435, 1445); the former standalone stories event-astral-rift-1405/1415/1430/1435 are merged in."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_1_events.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/rift-garden.md"
+ },
+ "placeholders": {
+  "from.GetName": {
+   "zh": "这位殖民者",
+   "en": "the colonist",
+   "note": {
+    "zh": "游戏里这里会出现这位殖民者的名字。",
+    "en": "In the game, the name of this colonist appears here."
+   }
+  }
  }
 }

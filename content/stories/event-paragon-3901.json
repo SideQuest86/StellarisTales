@@ -268,5 +268,15 @@
    "Whether the engine redraws the pulse when the drawn event's trigger fails (not visible in script).",
    "The exact winning/losing conditions inside the Feather Rot sickness and cure situations (situation progress rates) were not simulated."
   ]
+ },
+ "placeholders": {
+  "gateway_system.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  }
  }
 }

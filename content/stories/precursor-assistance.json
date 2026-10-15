@@ -1,14 +1,30 @@
 {
  "id": "precursor-assistance",
  "family": {
-  "title": {"zh": "发现先驱", "en": "Precursor Discovery"},
+  "title": {
+   "zh": "发现先驱",
+   "en": "Precursor Discovery"
+  },
   "category": "precursors",
   "start": "precursor.301",
   "members": [
-   "precursor.301", "precursor.302", "precursor.303", "precursor.304", "precursor.305", "precursor.306",
-   "special_projects:VULTAUM_ARTIFACT_FOUND", "special_projects:YUHT_ARTIFACT_FOUND", "special_projects:LEAGUE_ARTIFACT_FOUND",
-   "special_projects:IRASSIAN_ARTIFACT_FOUND", "special_projects:CYBREX_ARTIFACT_FOUND",
-   "precursor.310", "precursor.311", "precursor.312", "precursor.313", "precursor.314", "precursor.320"
+   "precursor.301",
+   "precursor.302",
+   "precursor.303",
+   "precursor.304",
+   "precursor.305",
+   "precursor.306",
+   "special_projects:VULTAUM_ARTIFACT_FOUND",
+   "special_projects:YUHT_ARTIFACT_FOUND",
+   "special_projects:LEAGUE_ARTIFACT_FOUND",
+   "special_projects:IRASSIAN_ARTIFACT_FOUND",
+   "special_projects:CYBREX_ARTIFACT_FOUND",
+   "precursor.310",
+   "precursor.311",
+   "precursor.312",
+   "precursor.313",
+   "precursor.314",
+   "precursor.320"
   ],
   "sources": []
  },
@@ -17,75 +33,239 @@
  "groups": [
   {
    "kind": "parallel",
-   "members": ["precursor.301", "precursor.310", "precursor.311", "precursor.314", "precursor.320"],
-   "label": {"zh": "补足线索的五种途径", "en": "Five ways to make up a missing clue"},
-   "note": {"zh": "301、310、311、314由每五年一次的随机事件抽取（各权重25，对“无事件”75，只计算条件满足者）；320来自稀有文物行动。它们彼此独立，都只对正在进行、尚未集齐线索的五个经典先驱者事件链之一生效。",
-            "en": "301, 310, 311 and 314 are drawn by the five-year random pulse (weight 25 each vs 75 \"nothing\", eligible events only); 320 comes from a minor-artifact action. They are independent and only apply to an active, unfinished classic precursor chain."}
+   "members": [
+    "precursor.301",
+    "precursor.310",
+    "precursor.311",
+    "precursor.314",
+    "precursor.320"
+   ],
+   "label": {
+    "zh": "补足线索的五种途径",
+    "en": "Five ways to make up a missing clue"
+   },
+   "note": {
+    "zh": "301、310、311、314由每五年一次的随机事件抽取（各权重25，对“无事件”75，只计算条件满足者）；320来自稀有文物行动。它们彼此独立，都只对正在进行、尚未集齐线索的五个经典先驱者事件链之一生效。",
+    "en": "301, 310, 311 and 314 are drawn by the five-year random pulse (weight 25 each vs 75 \"nothing\", eligible events only); 320 comes from a minor-artifact action. They are independent and only apply to an active, unfinished classic precursor chain."
+   }
   },
   {
    "kind": "exclusive",
-   "members": ["special_projects:VULTAUM_ARTIFACT_FOUND", "special_projects:YUHT_ARTIFACT_FOUND", "special_projects:LEAGUE_ARTIFACT_FOUND",
-               "special_projects:IRASSIAN_ARTIFACT_FOUND", "special_projects:CYBREX_ARTIFACT_FOUND"],
-   "label": {"zh": "按正在进行的先驱者择一", "en": "One project for the active precursor"},
-   "note": {"zh": "switch 按 has_event_chain 选择唯一的项目；一个帝国同一时间只会有一个经典先驱者事件链。",
-            "en": "A switch on has_event_chain picks exactly one project; an empire only ever has one classic precursor chain."}
+   "members": [
+    "special_projects:VULTAUM_ARTIFACT_FOUND",
+    "special_projects:YUHT_ARTIFACT_FOUND",
+    "special_projects:LEAGUE_ARTIFACT_FOUND",
+    "special_projects:IRASSIAN_ARTIFACT_FOUND",
+    "special_projects:CYBREX_ARTIFACT_FOUND"
+   ],
+   "label": {
+    "zh": "按正在进行的先驱者择一",
+    "en": "One project for the active precursor"
+   },
+   "note": {
+    "zh": "switch 按 has_event_chain 选择唯一的项目；一个帝国同一时间只会有一个经典先驱者事件链。",
+    "en": "A switch on has_event_chain picks exactly one project; an empire only ever has one classic precursor chain."
+   }
   },
   {
    "kind": "exclusive",
-   "members": ["precursor.312", "precursor.313"],
-   "label": {"zh": "威逼的两种回应", "en": "Two answers to the threat"},
-   "labels": [{"zh": "拒绝并结怨", "en": "Refuses and becomes hostile"}, {"zh": "屈服并交出文物", "en": "Folds and hands it over"}],
-   "note": {"zh": "random_list 基础权重10/10；舰队实力不如对方或对方也是尚武文化时“拒绝”权重×50，舰队实力占优时“屈服”权重×50。",
-            "en": "random_list base 10/10; refusing ×50 when our fleet is inferior/pathetic or the seller has Warrior Culture, folding ×50 when our fleet is superior/overwhelming."}
+   "members": [
+    "precursor.312",
+    "precursor.313"
+   ],
+   "label": {
+    "zh": "威逼的两种回应",
+    "en": "Two answers to the threat"
+   },
+   "labels": [
+    {
+     "zh": "拒绝并结怨",
+     "en": "Refuses and becomes hostile"
+    },
+    {
+     "zh": "屈服并交出文物",
+     "en": "Folds and hands it over"
+    }
+   ],
+   "note": {
+    "zh": "random_list 基础权重10/10；舰队实力不如对方或对方也是尚武文化时“拒绝”权重×50，舰队实力占优时“屈服”权重×50。",
+    "en": "random_list base 10/10; refusing ×50 when our fleet is inferior/pathetic or the seller has Warrior Culture, folding ×50 when our fleet is superior/overwhelming."
+   }
   }
  ],
  "nodeLabels": {
-  "precursor.301": {"zh": "五年脉冲：新的先驱者遗址", "en": "Five-year pulse: a new precursor site"},
-  "precursor.310": {"zh": "私人收藏家（一次）", "en": "Private collector (once)"},
-  "precursor.311": {"zh": "邻国出售文物（一次）", "en": "A neighbour sells an artifact (once)"},
-  "precursor.314": {"zh": "友邦赠送文物（一次）", "en": "A friendly neighbour's gift (once)"},
-  "precursor.320": {"zh": "稀有文物行动：寻找先驱线索", "en": "Artifact action: seek a precursor clue"},
-  "precursor.312": {"zh": "对方拒绝威胁", "en": "The seller refuses"},
-  "precursor.313": {"zh": "对方屈服", "en": "The seller folds"}
+  "precursor.301": {
+   "zh": "五年脉冲：新的先驱者遗址",
+   "en": "Five-year pulse: a new precursor site"
+  },
+  "precursor.310": {
+   "zh": "私人收藏家（一次）",
+   "en": "Private collector (once)"
+  },
+  "precursor.311": {
+   "zh": "邻国出售文物（一次）",
+   "en": "A neighbour sells an artifact (once)"
+  },
+  "precursor.314": {
+   "zh": "友邦赠送文物（一次）",
+   "en": "A friendly neighbour's gift (once)"
+  },
+  "precursor.320": {
+   "zh": "稀有文物行动：寻找先驱线索",
+   "en": "Artifact action: seek a precursor clue"
+  },
+  "precursor.312": {
+   "zh": "对方拒绝威胁",
+   "en": "The seller refuses"
+  },
+  "precursor.313": {
+   "zh": "对方屈服",
+   "en": "The seller folds"
+  }
  },
  "notes": [
-  {"doc": "precursor.301", "kind": "review",
+  {
+   "doc": "precursor.301",
+   "kind": "review",
    "zh": "条件：非AI、开局已超过50年、没有进行中的补充遗物，且有一个尚未集齐线索、可到达其星域的经典先驱者事件链。常规帝国的四种正文在条件相同时随机显示其一；机械与蜂巢各有专属正文。",
-   "en": "Requires a non-AI empire, more than 50 years elapsed, no artifact already in progress, and an unfinished classic precursor chain whose region is reachable. Regular empires see one of four equally valid flavour texts; machines and hives have their own."},
-  {"doc": "special_projects:VULTAUM_ARTIFACT_FOUND", "kind": "review",
+   "en": "Requires a non-AI empire, more than 50 years elapsed, no artifact already in progress, and an unfinished classic precursor chain whose region is reachable. Regular empires see one of four equally valid flavour texts; machines and hives have their own."
+  },
+  {
+   "doc": "special_projects:VULTAUM_ARTIFACT_FOUND",
+   "kind": "review",
    "zh": "五个“活动迹象”项目同构：180天，需科研船与科学家；完成后的“文物已回收”报告给对应事件链线索+1，并调用该事件链的母星定位检查（见各先驱者故事）。",
-   "en": "The five 'Signs of … Activity' projects are identical in form: 180 days, science ship with scientist; the 'Artifact Recovered' report adds one clue to that chain and runs its home-system check (see each precursor story)."},
-  {"doc": "precursor.310", "kind": "review",
+   "en": "The five 'Signs of … Activity' projects are identical in form: 180 days, science ship with scientist; the 'Artifact Recovered' report adds one clue to that chain and runs its home-system check (see each precursor story)."
+  },
+  {
+   "doc": "precursor.310",
+   "kind": "review",
    "zh": "每个帝国一次，非格式塔；500能量收购或100影响力征收都会直接给当前事件链线索+1（collector_surrenders_artifact，无单独报告）；也可让收藏家保留。",
-   "en": "Once per empire, non-gestalt. Buying (500 energy) or seizing (100 influence) adds one clue to the active chain directly (collector_surrenders_artifact, no separate report); the collector may also keep it."},
-  {"doc": "precursor.311", "kind": "review",
+   "en": "Once per empire, non-gestalt. Buying (500 energy) or seizing (100 influence) adds one clue to the active chain directly (collector_surrenders_artifact, no separate report); the collector may also keep it."
+  },
+  {
+   "doc": "precursor.311",
+   "kind": "review",
    "zh": "每个帝国一次：一位有通讯、关系中立、境内有该先驱星系的邻国出价。1000能量购买；企业统治可500能量还价；尚武文化可威逼（312/313随机）；也可拒绝。购买或对方屈服都会让线索+1。",
-   "en": "Once per empire: a neutral neighbour with communications and a system of that precursor offers to sell. 1000 energy; Corporate Dominion can counter at 500; Warrior Culture can threaten (312/313 at random); or decline. Buying or a folding seller adds one clue."},
-  {"doc": "precursor.314", "kind": "review",
+   "en": "Once per empire: a neutral neighbour with communications and a system of that precursor offers to sell. 1000 energy; Corporate Dominion can counter at 500; Warrior Culture can threaten (312/313 at random); or decline. Buying or a folding seller adds one clue."
+  },
+  {
+   "doc": "precursor.314",
+   "kind": "review",
    "zh": "每个帝国一次：一位友好、保护或忠诚的邻国（境内有该先驱星系）赠送文物，接受即线索+1。",
-   "en": "Once per empire: a friendly, protective or loyal neighbour with a system of that precursor donates an artifact; accepting adds one clue."},
-  {"doc": "precursor.320", "kind": "review",
+   "en": "Once per empire: a friendly, protective or loyal neighbour with a system of that precursor donates an artifact; accepting adds one clue."
+  },
+  {
+   "doc": "precursor.320",
+   "kind": "review",
    "zh": "稀有文物行动 artifact_precursor_clue：花费500稀有文物，冷却1800天；要求一个尚未集齐线索且星域可到达的经典先驱者事件链。效果与301相同，生成对应的“活动迹象”项目。",
-   "en": "Minor-artifact action artifact_precursor_clue: 500 minor artifacts, 1800-day cooldown; needs an unfinished classic precursor chain with a reachable region. Same effect as 301: the matching 'Signs of … Activity' project."}
+   "en": "Minor-artifact action artifact_precursor_clue: 500 minor artifacts, 1800-day cooldown; needs an unfinished classic precursor chain with a reachable region. Same effect as 301: the matching 'Signs of … Activity' project."
+  }
  ],
  "endings": {
-  "precursor.312": {"label": {"zh": "无文物：对方敌视", "en": "No artifact: the seller is offended"},
-                    "note": {"zh": "对方获得“受到威胁”看法修正，不交出文物。", "en": "The seller gains a 'threatened' opinion modifier and keeps the artifact."},
-                    "evidence": "events/precursor_events.txt:6772"}
+  "precursor.312": {
+   "label": {
+    "zh": "无文物：对方敌视",
+    "en": "No artifact: the seller is offended"
+   },
+   "note": {
+    "zh": "对方获得“受到威胁”看法修正，不交出文物。",
+    "en": "The seller gains a 'threatened' opinion modifier and keeps the artifact."
+   },
+   "evidence": "events/precursor_events.txt:6772"
+  }
  },
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "C2 precursor review (Claude Opus 5.5)",
-  "scope": {"zh": "整条故事：五种补充线索途径的触发条件与权重、五个“活动迹象”项目与回收报告、收藏家/出售/赠送三种外交来源及其选项、威逼的随机回应、稀有文物行动；中英文正文已读。",
-            "en": "Whole story: triggers and weights of the five clue sources, the five 'Signs of … Activity' projects and recovery reports, the collector/sale/gift diplomatic sources and their options, the coercion random answers, and the minor-artifact action; text read in both languages."},
-  "sources": ["events/precursor_events.txt", "common/on_actions/00_on_actions.txt", "common/special_projects/00_projects_1.txt",
-              "common/artifact_actions/artifact_actions.txt", "common/scripted_effects/00_scripted_effects.txt",
-              "common/scripted_effects/nomads_effects.txt", "localisation/simp_chinese", "localisation/english"],
+  "scope": {
+   "zh": "整条故事：五种补充线索途径的触发条件与权重、五个“活动迹象”项目与回收报告、收藏家/出售/赠送三种外交来源及其选项、威逼的随机回应、稀有文物行动；中英文正文已读。",
+   "en": "Whole story: triggers and weights of the five clue sources, the five 'Signs of … Activity' projects and recovery reports, the collector/sale/gift diplomatic sources and their options, the coercion random answers, and the minor-artifact action; text read in both languages."
+  },
+  "sources": [
+   "events/precursor_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/00_projects_1.txt",
+   "common/artifact_actions/artifact_actions.txt",
+   "common/scripted_effects/00_scripted_effects.txt",
+   "common/scripted_effects/nomads_effects.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
   "uncertain": [
    "The legacy title 'Precursors: Lost Clues' was invented by V3; the story now takes the original title of its entry event precursor.301 ('Precursor Discovery').",
    "When several regular-empire descriptions of precursor.301 are valid at once the engine shows one of them; which one is not predictable from script."
   ],
   "guide": "public/summaries/precursor-assistance.md"
+ },
+ "placeholders": {
+  "Root.GetSpeciesAdj": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "朋友们",
+   "en": "friends",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "artifact_giver.GetName": {
+   "zh": "友邦",
+   "en": "the friendly empire",
+   "note": {
+    "zh": "游戏里这里会出现赠送文物的友邦的名称。",
+    "en": "In the game, the name of the friendly empire giving the artifact appears here."
+   }
+  },
+  "artifact_giver.GetSpeciesAdj": {
+   "zh": "友邦的",
+   "en": "friendly",
+   "note": {
+    "zh": "游戏里这里会出现友邦的物种形容词。",
+    "en": "In the game, the friendly empire's species adjective appears here."
+   }
+  },
+  "artifact_seller.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现出售文物的帝国的名称。",
+    "en": "In the game, the name of the empire selling the artifact appears here."
+   }
+  },
+  "artifact_seller.GetSpeciesAdj": {
+   "zh": "他们的",
+   "en": "their",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的物种形容词。",
+    "en": "In the game, that empire's species adjective appears here."
+   }
+  },
+  "collector_home.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名字。",
+    "en": "In the game, this planet's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "precursor.314": {
+   "Root.GetSpeciesAdj": {
+    "zh": "各位",
+    "en": "dear",
+    "note": {
+     "zh": "游戏里这里会出现你的物种形容词。",
+     "en": "In the game, your species' adjective appears here."
+    }
+   }
+  }
  }
 }

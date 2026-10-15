@@ -1,72 +1,235 @@
 {
  "id": "gray-tempest",
  "family": {
-  "title": {"zh": "灰色风暴", "en": "The Gray Tempest"},
+  "title": {
+   "zh": "灰色风暴",
+   "en": "The Gray Tempest"
+  },
   "category": "crisis",
   "start": "graygoo.1",
-  "members": ["graygoo.1", "graygoo.2", "graygoo.3", "graygoo.4", "graygoo.6", "graygoo.10", "graygoo.11", "graygoo.12", "graygoo.13", "graygoo.15", "graygoo.16", "graygoo.555", "observer.64", "observer.65"]
+  "members": [
+   "graygoo.1",
+   "graygoo.2",
+   "graygoo.3",
+   "graygoo.4",
+   "graygoo.6",
+   "graygoo.10",
+   "graygoo.11",
+   "graygoo.12",
+   "graygoo.13",
+   "graygoo.15",
+   "graygoo.16",
+   "graygoo.555",
+   "observer.64",
+   "observer.65"
+  ]
  },
- "hubs": ["distar.10950"],
+ "hubs": [
+  "distar.10950"
+ ],
  "bridges": [
   {
-   "from": "graygoo.10", "to": "observer.64",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "graygoo.10",
+   "to": "observer.64",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/gray_goo_events.txt:272 hidden graygoo.1 fires observer.64; events/observer_events.txt:1100-1103 reuses graygoo.10.name / graygoo.13.desc"
   },
   {
-   "from": "graygoo.12", "to": "graygoo.2", "conditional": true,
-   "label": {"zh": "风暴舰队轰炸殖民地至毁灭度100：星球化为灰蛊（可重复）", "en": "Tempest fleet bombards a colony to 100 devastation: planet becomes gray goo (repeatable)"},
+   "from": "graygoo.12",
+   "to": "graygoo.2",
+   "conditional": true,
+   "label": {
+    "zh": "风暴舰队轰炸殖民地至毁灭度100：星球化为灰蛊（可重复）",
+    "en": "Tempest fleet bombards a colony to 100 devastation: planet becomes gray goo (repeatable)"
+   },
    "evidence": "common/on_actions/00_on_actions.txt on_planet_bombarded -> graygoo.2; events/gray_goo_events.txt:291-293 trigger planet_devastation >= 100 and FROM is a gray_goo country; immediate kills pops and changes the planet class (L296-319)"
   },
   {
-   "from": "graygoo.12", "to": "graygoo.555", "conditional": true,
-   "label": {"zh": "若被驯服的纳米虫群星球遭轰炸：风暴夺回虫群", "en": "If a planet with a tamed nanite swarm is bombarded: the Tempest takes the swarm back"},
+   "from": "graygoo.12",
+   "to": "graygoo.555",
+   "conditional": true,
+   "label": {
+    "zh": "若被驯服的纳米虫群星球遭轰炸：风暴夺回虫群",
+    "en": "If a planet with a tamed nanite swarm is bombarded: the Tempest takes the swarm back"
+   },
    "evidence": "events/gray_goo_events.txt:2913-2929 carrier_event requires tamed_nanite_swarm_modifier and a gray_goo bombarder; on_planet_bombarded (00_on_actions.txt:2168)"
   },
   {
-   "from": "graygoo.12", "to": "graygoo.15", "conditional": true,
-   "label": {"zh": "摧毁风暴的纳米工厂：击破者收到此通知", "en": "Destroy the Tempest's Nanite Factory: the slayer gets this notice"},
+   "from": "graygoo.12",
+   "to": "graygoo.15",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁风暴的纳米工厂：击破者收到此通知",
+    "en": "Destroy the Tempest's Nanite Factory: the slayer gets this notice"
+   },
    "evidence": "on_ship_destroyed_victim (00_on_actions.txt:1415) -> hidden graygoo.6 (events/gray_goo_events.txt:460-497): country type gray_goo and the destroyed ship is a graygoo_factory; fires graygoo.15 at the slayer, graygoo.16 at other human players, observer.65, then destroys the country"
   },
   {
-   "from": "graygoo.12", "to": "graygoo.16", "conditional": true,
-   "label": {"zh": "摧毁风暴的纳米工厂：其他玩家收到此通知", "en": "Destroy the Tempest's Nanite Factory: other players get this notice"},
+   "from": "graygoo.12",
+   "to": "graygoo.16",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁风暴的纳米工厂：其他玩家收到此通知",
+    "en": "Destroy the Tempest's Nanite Factory: other players get this notice"
+   },
    "evidence": "events/gray_goo_events.txt:479-485"
   },
   {
-   "from": "graygoo.16", "to": "observer.65",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "graygoo.16",
+   "to": "observer.65",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/gray_goo_events.txt:486; events/observer_events.txt:1115-1119 reuses graygoo.15.name / graygoo.16.desc"
   }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["graygoo.10", "graygoo.11", "graygoo.13"],
-   "label": {"zh": "开场通知：开门者 / 有L星团线索的他国 / 其他国家", "en": "Opening notice: the gate opener / others with the L-Cluster chain or project / everyone else"},
-   "note": {"zh": "同一事件按身份分发，每个国家只看到一个；三者的选项都弹出同一通讯（graygoo.12）", "en": "One event fanned out by identity; each country sees one of them; all three lead to the same transmission (graygoo.12)"}},
-  {"kind": "exclusive", "members": ["graygoo.15", "graygoo.16"],
-   "label": {"zh": "风暴被击溃：击破者 / 其他玩家", "en": "Tempest defeated: the slayer / other players"},
-   "note": {"zh": "graygoo.6 按是否为击破者分发", "en": "graygoo.6 fans out depending on who made the kill"}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "graygoo.10",
+    "graygoo.11",
+    "graygoo.13"
+   ],
+   "label": {
+    "zh": "开场通知：开门者 / 有L星团线索的他国 / 其他国家",
+    "en": "Opening notice: the gate opener / others with the L-Cluster chain or project / everyone else"
+   },
+   "note": {
+    "zh": "同一事件按身份分发，每个国家只看到一个；三者的选项都弹出同一通讯（graygoo.12）",
+    "en": "One event fanned out by identity; each country sees one of them; all three lead to the same transmission (graygoo.12)"
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "graygoo.15",
+    "graygoo.16"
+   ],
+   "label": {
+    "zh": "风暴被击溃：击破者 / 其他玩家",
+    "en": "Tempest defeated: the slayer / other players"
+   },
+   "note": {
+    "zh": "graygoo.6 按是否为击破者分发",
+    "en": "graygoo.6 fans out depending on who made the kill"
+   }
+  }
  ],
  "endings": {
-  "graygoo.15": {"label": {"zh": "胜利：风暴消散", "en": "Victory: the Tempest is spent"}, "note": {"zh": "击破纳米工厂后所有风暴舰队消失，国家被销毁；设置 graygoo_defeated", "en": "After the factory dies the Tempest fleets vanish and the country is destroyed; sets graygoo_defeated"}, "evidence": "events/gray_goo_events.txt:471-496, 606-608"},
-  "graygoo.16": {"label": {"zh": "胜利（旁观）：风暴消散", "en": "Victory (witnessed): the Tempest is spent"}, "note": {"zh": "其他玩家的同一结局", "en": "The same ending seen by other players"}, "evidence": "events/gray_goo_events.txt:617-629"}
+  "graygoo.15": {
+   "label": {
+    "zh": "胜利：风暴消散",
+    "en": "Victory: the Tempest is spent"
+   },
+   "note": {
+    "zh": "击破纳米工厂后所有风暴舰队消失，国家被销毁；设置 graygoo_defeated",
+    "en": "After the factory dies the Tempest fleets vanish and the country is destroyed; sets graygoo_defeated"
+   },
+   "evidence": "events/gray_goo_events.txt:471-496, 606-608"
+  },
+  "graygoo.16": {
+   "label": {
+    "zh": "胜利（旁观）：风暴消散",
+    "en": "Victory (witnessed): the Tempest is spent"
+   },
+   "note": {
+    "zh": "其他玩家的同一结局",
+    "en": "The same ending seen by other players"
+   },
+   "evidence": "events/gray_goo_events.txt:617-629"
+  }
  },
  "nodeLabels": {
-  "graygoo.10": {"zh": "开场：风暴来袭（开门者）", "en": "Opening: the Tempest (gate opener)"},
-  "graygoo.11": {"zh": "开场（有线索的他国）", "en": "Opening (others with clues)"},
-  "graygoo.13": {"zh": "开场（其他国家）", "en": "Opening (everyone else)"},
-  "graygoo.12": {"zh": "截获的信号", "en": "Incoming transmission"},
-  "graygoo.2": {"zh": "殖民地被吞噬", "en": "Colony devoured"}
+  "graygoo.10": {
+   "zh": "开场：风暴来袭（开门者）",
+   "en": "Opening: the Tempest (gate opener)"
+  },
+  "graygoo.11": {
+   "zh": "开场（有线索的他国）",
+   "en": "Opening (others with clues)"
+  },
+  "graygoo.13": {
+   "zh": "开场（其他国家）",
+   "en": "Opening (everyone else)"
+  },
+  "graygoo.12": {
+   "zh": "截获的信号",
+   "en": "Incoming transmission"
+  },
+  "graygoo.2": {
+   "zh": "殖民地被吞噬",
+   "en": "Colony devoured"
+  }
  },
  "notes": [
-  {"doc": "graygoo.12", "kind": "review",
+  {
+   "doc": "graygoo.12",
+   "kind": "review",
    "zh": "评注：灰色风暴只在游戏开局随机选中的一种L星团结局（概率与德萨努协和国、龙季、空星团并列）下出现；开门事件 distar.10950 随后发出隐藏的 graygoo.1，创建风暴国家与舰队，并每3600天增援一次（graygoo.3/4，隐藏）。",
-   "en": "Commentary: the Gray Tempest exists only when the game-start roll picked it among the four L-Cluster outcomes (Tempest 50 unless disruptive gameplay is blocked / empty 30 / dragons 30 / Dessanu 30). Opening the L-Gate (distar.10950) then fires hidden graygoo.1, which creates the Tempest country and fleets and reinforces every 3600 days (hidden graygoo.3/4). Sources: events/distant_stars_events_3.txt:1110-1135, 1367-1370; events/gray_goo_events.txt:11-279, 327-457."}
+   "en": "Commentary: the Gray Tempest exists only when the game-start roll picked it among the four L-Cluster outcomes (Tempest 50 unless disruptive gameplay is blocked / empty 30 / dragons 30 / Dessanu 30). Opening the L-Gate (distar.10950) then fires hidden graygoo.1, which creates the Tempest country and fleets and reinforces every 3600 days (hidden graygoo.3/4). Sources: events/distant_stars_events_3.txt:1110-1135, 1367-1370; events/gray_goo_events.txt:11-279, 327-457."
+  }
  ],
  "review": {
-  "status": "reviewed", "date": "2026-10-13", "reviewer": "c5b-crisis (Opus 5.5)",
-  "sources": ["events/gray_goo_events.txt", "events/distant_stars_events_3.txt", "events/observer_events.txt", "common/on_actions/00_on_actions.txt"],
-  "uncertain": ["How a non-hidden player is told when the Tempest later expands (no further readable events exist after the opening notice)", "The player-facing Defender timeline event timeline.64 is not a compiled story doc here"],
+  "status": "reviewed",
+  "date": "2026-10-13",
+  "reviewer": "c5b-crisis (Opus 5.5)",
+  "sources": [
+   "events/gray_goo_events.txt",
+   "events/distant_stars_events_3.txt",
+   "events/observer_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "How a non-hidden player is told when the Tempest later expands (no further readable events exist after the opening notice)",
+   "The player-facing Defender timeline event timeline.64 is not a compiled story doc here"
+  ],
   "guide": "public/summaries/gray-tempest.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "另一个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "From.GetSpeciesName": {
+   "zh": "对方",
+   "en": "other species",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的名称。",
+    "en": "In the game, the name of the other species appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "goo_slayer.GetName": {
+   "zh": "这支舰队",
+   "en": "the fleet",
+   "note": {
+    "zh": "游戏里这里会出现这支舰队的名称。",
+    "en": "In the game, this fleet's name appears here."
+   }
+  },
+  "nanite_swarm_planet.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, that planet's name appears here."
+   }
+  }
  }
 }

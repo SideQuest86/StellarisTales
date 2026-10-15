@@ -190,5 +190,31 @@
    "Storm site anomalies (cstorms.5020-5050) belong to the generic cosmic-storm anomaly stories; only their link to 320 is recorded here."
   ],
   "guide": "public/summaries/origin_storm_chasers.md"
+ },
+ "placeholders": {
+  "event_target:storm_commander.GetName": {
+   "zh": "本人",
+   "en": "himself",
+   "note": {
+    "zh": "游戏里这里会出现这位指挥官的名字。",
+    "en": "In the game, this commander's name appears here."
+   }
+  },
+  "event_target:storm_scientist.GetName": {
+   "zh": "本人",
+   "en": "himself",
+   "note": {
+    "zh": "游戏里这里会出现这位科学家的名字。",
+    "en": "In the game, this scientist's name appears here."
+   }
+  },
+  "owner.capital_scope.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  }
  }
 }

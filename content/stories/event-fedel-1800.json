@@ -18,5 +18,31 @@
    "各捐献档位对得票的精确加成未逐项展开。 / The exact vote bonus of each contribution tier was not expanded."
   ],
   "guide": "public/summaries/event-fedel-1800.md"
+ },
+ "placeholders": {
+  "Root.GetAllianceName": {
+   "zh": "联盟",
+   "en": "alliance",
+   "note": {
+    "zh": "游戏里这里会出现联盟的名称。",
+    "en": "In the game, the name of the alliance appears here."
+   }
+  },
+  "conclave_frontrunner.GetName": {
+   "zh": "此人",
+   "en": "the candidate",
+   "note": {
+    "zh": "游戏里这里会出现这位候选人的名字。",
+    "en": "In the game, the name of this candidate appears here."
+   }
+  },
+  "conclave_winner.GetName": {
+   "zh": "此人",
+   "en": "the chosen",
+   "note": {
+    "zh": "游戏里这里会出现当选者的名字。",
+    "en": "In the game, the name of the chosen candidate appears here."
+   }
+  }
  }
 }

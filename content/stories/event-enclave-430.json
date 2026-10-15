@@ -64,5 +64,15 @@
    "zh": "审阅注：城邦被毁时同时移除所有帝国的泽珞什一税修正（overlord_enclaves_events.txt:7525-7530）。",
    "en": "Review note: the destruction also removes every empire's Zro tithe modifier (overlord_enclaves_events.txt:7525-7530)."
   }
- ]
+ ],
+ "placeholders": {
+  "FROM.GetName": {
+   "zh": "那个城邦",
+   "en": "the enclave",
+   "note": {
+    "zh": "游戏里这里会出现那个城邦的名称。",
+    "en": "In the game, that enclave's name appears here."
+   }
+  }
+ }
 }

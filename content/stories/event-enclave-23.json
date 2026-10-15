@@ -54,5 +54,23 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-enclave-23.md"
+ },
+ "placeholders": {
+  "FROM.GetName": {
+   "zh": "佣兵城邦",
+   "en": "mercenary enclave",
+   "note": {
+    "zh": "游戏里这里会出现佣兵城邦的名称。",
+    "en": "In the game, the mercenary enclave's name appears here."
+   }
+  },
+  "mercenary_destroyer.GetName": {
+   "zh": "这支舰队",
+   "en": "the fleet",
+   "note": {
+    "zh": "游戏里这里会出现摧毁佣兵城邦的舰队名称。",
+    "en": "In the game, the name of the fleet that destroyed the enclave appears here."
+   }
+  }
  }
 }

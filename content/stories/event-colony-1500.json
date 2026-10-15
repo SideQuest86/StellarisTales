@@ -89,5 +89,35 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-colony-1500.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesName": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "colony.1503": {
+   "Root.Owner.GetSpeciesName": {
+    "zh": "自己",
+    "en": "ourselves",
+    "note": {
+     "zh": "游戏里这里会出现你的物种名称。",
+     "en": "In the game, your species' name appears here."
+    }
+   }
+  }
  }
 }

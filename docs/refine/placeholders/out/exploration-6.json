@@ -1,0 +1,253 @@
+{
+  "event-anomaly-4036": {
+    "placeholders": {
+      "Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学专员的名字。", "en": "In the game, your science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The title 'Science Officer' / '科学专员' already precedes the placeholder, so the sentence reads 'Science Officer the scientist'; consider dropping the title in display."]
+  },
+  "event-anomaly-4171": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-anomaly-5007": {
+    "placeholders": {
+      "NewBaldarak.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗气态巨行星的名字。", "en": "In the game, this gas giant's name appears here."}},
+      "Root.GetName": {"zh": "我们的舰队", "en": "our fleet", "note": {"zh": "游戏里这里会出现你的舰队名称。", "en": "In the game, your fleet's name appears here."}},
+      "Root.GetSpeciesName": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.Owner.GetSpeciesNamePlural": {"zh": "朋友们", "en": "friends", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {
+      "anomaly.5009": {
+        "Root.GetSpeciesName": {"zh": "各位", "en": "dear", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      },
+      "anomaly.5011": {
+        "Root.Owner.GetSpeciesName": {"zh": "各位", "en": "dear", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      },
+      "anomaly.5016": {
+        "Root.GetName": {"zh": "我们的护卫舰队", "en": "our escort fleet", "note": {"zh": "游戏里这里会出现护送我们的舰队名称。", "en": "In the game, the name of the escorting fleet appears here."}}
+      }
+    },
+    "issues": ["The zh phrase '这颗星球' is followed by '这一气态巨行星' in the same sentence, which reads repetitive.", "The en 'the' before our placeholders in anomaly.5016 relies on article removal."]
+  },
+  "event-anomaly-6660": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "event-anomaly-6725": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "event-anomaly-6880": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗小行星", "en": "this asteroid", "note": {"zh": "游戏里这里会出现这颗小行星的名字。", "en": "In the game, this asteroid's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["In zh the phrase '这颗小行星' is followed by '一颗奇怪的小行星', a near repeat."]
+  },
+  "event-anomaly-96": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": ["Current phrase 'our empire' follows the article 'the' in en ('the our empire'); it relies on the site dropping the article."]
+  },
+  "event-distar-13060": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "event-distar-13070": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "event-distar-13080": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "From.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学专员的名字。", "en": "In the game, your science officer's name appears here."}},
+      "Root.GetSpeciesAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}},
+      "dragons_target.GetName": {"zh": "这个", "en": "this", "note": {"zh": "游戏里这里会出现目标星系的名字。", "en": "In the game, the name of the target system appears here."}}
+    },
+    "placeholderDocs": {
+      "distar.9000": {
+        "From.GetName": {"zh": "我们的科学船", "en": "our science ship", "note": {"zh": "游戏里这里会出现你的科学船的舰名。", "en": "In the game, your science ship's name appears here."}}
+      },
+      "distar.10952": {
+        "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the other empire's name appears here."}}
+      }
+    },
+    "issues": ["dragons_current_system is used both for the system and for the L-Drake creature in distar.13010; one phrase cannot fit both, so the creature line reads '这个星系貌似并无敌意'.", "The worksheet lists distar.10953 and distar.10954 for From.GetName but shows no lines for them."]
+  },
+  "event-distar-135": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "event-distar-1999": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "living_planet_scientist.GetName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学专员的名字。", "en": "In the game, this science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Science Officer [name]' in en reads 'Science Officer the scientist'; the title should be dropped in display."]
+  },
+  "event-distar-211": {
+    "placeholders": {
+      "Owner.GetNecromancersUpper": {"zh": "死灵术士", "en": "necromancers", "note": {"zh": "游戏里这里会出现你的死灵术士的称呼。", "en": "In the game, your necromancers appear here."}},
+      "Owner.GetNecromancersLower": {"zh": "死灵术士", "en": "necromancers", "note": {"zh": "游戏里这里会出现你的死灵术士的称呼。", "en": "In the game, your necromancers appear here."}},
+      "root.GetNecromancersLower": {"zh": "部队", "en": "troops", "note": {"zh": "游戏里这里会出现你的虫草部队的称呼。", "en": "In the game, your cordyceptic troops appear here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["root.GetNecromancersLower may be a different unit from Owner.GetNecromancersLower here; both use role phrases, so check against the game's unit names."]
+  },
+  "event-distar-230": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {
+      "distar.230": {
+        "From.GetName": {"zh": "这个", "en": "this", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}}
+      }
+    },
+    "issues": ["In distar.230 the placeholder is a system ('near the [X] system'); the en 'near the this system' depends on article handling."]
+  },
+  "event-distar-240": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "Root.Owner.GetSpeciesAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "人", "en": "people", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+    },
+    "placeholderDocs": {
+      "anomalies:DISTAR_MED_CAT": {
+        "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+      },
+      "distar.244": {
+        "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-distar-5000": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "hatchling_egg.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "Owner.GetNecromancersUpper": {"zh": "死灵术士", "en": "necromancers", "note": {"zh": "游戏里这里会出现你的死灵术士的称呼。", "en": "In the game, your necromancers appear here."}},
+      "Owner.GetNecromancersLower": {"zh": "死灵术士", "en": "necromancers", "note": {"zh": "游戏里这里会出现你的死灵术士的称呼。", "en": "In the game, your necromancers appear here."}},
+      "root.GetNecromancersLower": {"zh": "部队", "en": "troops", "note": {"zh": "游戏里这里会出现你的死灵部队的称呼。", "en": "In the game, your necromancer troops appear here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Several placeholders on the pulse planet all become 'this planet'; confirm they are the same planet in the save."]
+  },
+  "event-distar-5054": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现你的星球的名字。", "en": "In the game, the name of your planet appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "我们人民", "en": "our people", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "cache_killers.GetSpeciesName": {"zh": "那个物种", "en": "the other species", "note": {"zh": "游戏里这里会出现袭击者的物种名称。", "en": "In the game, the name of the attacking species appears here."}},
+      "From.GetSpeciesName": {"zh": "那个物种", "en": "the other species", "note": {"zh": "游戏里这里会出现入侵者的物种名称。", "en": "In the game, the name of the invading species appears here."}},
+      "FromFromFrom.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Root.GetName is treated as the planet in this story; check that it is the planet and not the ship."]
+  },
+  "horizon-signal": {
+    "placeholders": {
+      "Root.GetStarName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学专员的名字。", "en": "In the game, your science officer's name appears here."}},
+      "horizonsignal_firstleader.GetName": {"zh": "前一位科学家", "en": "the first scientist", "note": {"zh": "游戏里这里会出现第一位失踪科学家的名字。", "en": "In the game, the name of the first missing scientist appears here."}},
+      "horizonsignal_secondleader.GetName": {"zh": "后一位科学家", "en": "the second scientist", "note": {"zh": "游戏里这里会出现第二位科学家的名字。", "en": "In the game, the name of the second scientist appears here."}},
+      "horizonsignal_thirdleader.GetName": {"zh": "第三位科学家", "en": "the third scientist", "note": {"zh": "游戏里这里会出现第三位科学家的名字。", "en": "In the game, the name of the third scientist appears here."}},
+      "Owner.Species.GetHandName": {"zh": "我们的手", "en": "our hand", "note": {"zh": "游戏里这里会出现你的物种的手型名称。", "en": "In the game, your species' hand name appears here."}},
+      "researchingscientist.GetName": {"zh": "这位研究员", "en": "the researcher", "note": {"zh": "游戏里这里会出现这位研究员的名字。", "en": "In the game, this researcher's name appears here."}},
+      "researchingscientist9220.GetName": {"zh": "另一位研究员", "en": "the other researcher", "note": {"zh": "游戏里这里会出现另一位研究员的名字。", "en": "In the game, the other researcher's name appears here."}},
+      "mirrored_syzygy_admiral.GetName": {"zh": "这位舰长", "en": "the captain", "note": {"zh": "游戏里这里会出现这位舰长的名字。", "en": "In the game, this captain's name appears here."}},
+      "From.GetName": {"zh": "这位舰长", "en": "the captain", "note": {"zh": "游戏里这里会出现这位舰长的名字。", "en": "In the game, this captain's name appears here."}},
+      "Root.GetSpeciesName": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.Owner.GetSpeciesAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}},
+      "coils_planet.Owner.GetSpeciesName": {"zh": "当地土著", "en": "native", "note": {"zh": "游戏里这里会出现这颗星球原住民的物种名称。", "en": "In the game, the name of this planet's native species appears here."}}
+    },
+    "placeholderDocs": {
+      "akx.10010": {
+        "Root.GetStarName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名字。", "en": "In the game, this star's name appears here."}}
+      }
+    },
+    "issues": ["Shared 'the captain' phrase for mirrored_syzygy_admiral and From.GetName; en 'Captain the captain' and 'Commander the captain' read awkwardly.", "Root.Owner.GetSpeciesAdj in akx.9500 gives 'the first our settlement' in en.", "Gray-level role words like 'the researcher' are used for two scientists; the second is distinguished only by 'other'."]
+  },
+  "lcluster-gray": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "这种生物", "en": "creature", "note": {"zh": "游戏里这里会出现这种生物的物种名称。", "en": "In the game, the species name of this creature appears here."}},
+      "Root.GetSpeciesName": {"zh": "我们的物种", "en": "our species", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "我们人民", "en": "our people", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {
+      "graygoo.550": {
+        "From.GetName": {"zh": "这个", "en": "this", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}}
+      },
+      "graygoo.401": {
+        "Root.GetSpeciesName": {"zh": "同族", "en": "kin", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+      }
+    },
+    "issues": ["In graygoo.402 'not a [name]' becomes 'not a our species' in en."]
+  },
+  "project-arkship-eternal-chorus-project": {
+    "placeholders": {
+      "eternal_chorus_leader.GetName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现永恒合唱的领袖的名字。", "en": "In the game, the name of the Eternal Chorus leader appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The preceding placeholder [owner.GetScientistCapital] is a title, so the sentence reads 'Scientist the scientist'."]
+  },
+  "project-endbringers-commune-with-the-voice": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "project-establish-communications": {
+    "placeholders": {
+      "Prev.From.GetName": {"zh": "这个种群", "en": "this population", "note": {"zh": "游戏里这里会出现这个外星种群的代号。", "en": "In the game, the code name of this alien population appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["zh 'code-named as this population' is clumsy; the mysterious aliens are referred to by a code name in the game."]
+  },
+  "project-gas-giant-bodies-project": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this gas giant", "note": {"zh": "游戏里这里会出现这颗气态巨行星的名字。", "en": "In the game, this gas giant's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学专员的名字。", "en": "In the game, your science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["zh 'the gas giant' is preceded by '气态巨行星', so the phrase '这颗星球' reads awkwardly there."]
+  },
+  "project-retaliatory-genome-mapping": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "project-robot-cleaners-project": {
+    "placeholders": {
+      "From.GetName": {"zh": "这艘舰船", "en": "this ship", "note": {"zh": "游戏里这里会出现这艘舰船的名字。", "en": "In the game, this ship's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学专员的名字。", "en": "In the game, your science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The en 'Science Officer the scientist' reads awkwardly; the title should be dropped in display."]
+  },
+  "project-the-composer-of-strands-fc-project": {
+    "placeholders": {
+      "Root.Patron:the_composer_of_strands.GetPreCommunicationName": {"zh": "这个存在", "en": "the being", "note": {"zh": "游戏里这里会出现这个存在在知道真名之前的称呼。", "en": "In the game, the name this being is known by before its true name is learned appears here."}},
+      "Root.GetSpeciesAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["en 'the our form' depends on the site dropping the article."]
+  },
+  "project-the-cradle-of-souls-fc-project": {
+    "placeholders": {
+      "Root.Patron:the_cradle_of_souls.GetPreCommunicationName": {"zh": "这个存在", "en": "the being", "note": {"zh": "游戏里这里会出现这个存在在知道真名之前的称呼。", "en": "In the game, the name this being is known by before its true name is learned appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "project-the-eater-of-world-fc-project": {
+    "placeholders": {
+      "Root.Patron:the_eater_of_worlds.GetPreCommunicationName": {"zh": "这个存在", "en": "the being", "note": {"zh": "游戏里这里会出现这个存在在知道真名之前的称呼。", "en": "In the game, the name this being is known by before its true name is learned appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "project-the-instrument-of-desire-fc-project": {
+    "placeholders": {
+      "Root.Patron:the_instrument_of_desire.GetPreCommunicationName": {"zh": "这个存在", "en": "the being", "note": {"zh": "游戏里这里会出现这个存在在知道真名之前的称呼。", "en": "In the game, the name this being is known by before its true name is learned appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "project-whisperers-in-the-void-fc-project": {
+    "placeholders": {
+      "Root.Patron:whisperers_in_the_void.GetPreCommunicationName": {"zh": "这个存在", "en": "the being", "note": {"zh": "游戏里这里会出现这个存在在知道真名之前的称呼。", "en": "In the game, the name this being is known by before its true name is learned appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "project-woodwind-instrument-investigation": {
+    "placeholders": {
+      "Root.GetSpeciesAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  }
+}

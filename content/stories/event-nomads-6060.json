@@ -14,5 +14,15 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-nomads-6060.md"
+ },
+ "placeholders": {
+  "event_target:contract_issuer.GetName": {
+   "zh": "委托方",
+   "en": "the client",
+   "note": {
+    "zh": "游戏里这里会出现委托这项合同的一方名称。",
+    "en": "In the game, the name of the party that commissioned this contract appears here."
+   }
+  }
  }
 }

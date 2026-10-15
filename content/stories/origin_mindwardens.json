@@ -481,5 +481,55 @@
    "6704 is fired from an on_action hook not resolved by the call graph (planet destroyed); the trigger conditions are read from the event itself."
   ],
   "guide": "public/summaries/origin_mindwardens.md"
+ },
+ "placeholders": {
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "This.GetSpeciesNamePlural": {
+   "zh": "同族",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现这群人的复数称呼。",
+    "en": "In the game, the plural name for these people appears here."
+   }
+  },
+  "exiled_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "exiled_envoy.GetName": {
+   "zh": "这位特使",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现这位特使的名字。",
+    "en": "In the game, this envoy's name appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现附近星系的名称。",
+    "en": "In the game, the nearby system's name appears here."
+   }
+  },
+  "mindwarden_enclave_country.GetName": {
+   "zh": "灵督",
+   "en": "Mindwarden",
+   "note": {
+    "zh": "游戏里这里会出现灵督城邦的名称。",
+    "en": "In the game, the Mindwarden enclave's name appears here."
+   }
+  }
  }
 }

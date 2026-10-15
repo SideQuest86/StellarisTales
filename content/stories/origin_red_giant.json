@@ -146,5 +146,55 @@
    "The range infernals.45-160 and 2105-2160 was added to content/origin-families.json; infernals.56 (Lava Whirlpool anomaly) is excluded as generic."
   ],
   "guide": "public/summaries/origin_red_giant.md"
+ },
+ "placeholders": {
+  "FromFromFrom.GetName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this system's name appears here."
+   }
+  },
+  "Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Target.GetName": {
+   "zh": "这颗恒星",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "Target.system_star.GetName": {
+   "zh": "这颗恒星",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "capital_star.GetName": {
+   "zh": "我们的恒星",
+   "en": "our star",
+   "note": {
+    "zh": "游戏里这里会出现你们恒星的名称。",
+    "en": "In the game, your star's name appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  }
  }
 }

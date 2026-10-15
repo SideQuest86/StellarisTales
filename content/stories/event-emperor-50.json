@@ -94,5 +94,79 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-emperor-50.md"
+ },
+ "placeholders": {
+  "From.From.From.GetName": {
+   "zh": "联邦",
+   "en": "federation",
+   "note": {
+    "zh": "游戏里这里会出现这个联邦的名称。",
+    "en": "In the game, the name of this federation appears here."
+   }
+  },
+  "From.From.GetName": {
+   "zh": "盟友帝国",
+   "en": "allied empire",
+   "note": {
+    "zh": "游戏里这里会出现这个盟友帝国的名称。",
+    "en": "In the game, the name of this allied empire appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "盟友",
+   "en": "ally",
+   "note": {
+    "zh": "游戏里这里会出现这个盟友的名称。",
+    "en": "In the game, the name of this ally appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "attacking_country.GetName": {
+   "zh": "侵略者",
+   "en": "aggressor",
+   "note": {
+    "zh": "游戏里这里会出现攻击方的名称。",
+    "en": "In the game, the name of the attacking empire appears here."
+   }
+  },
+  "charter_corp.GetName": {
+   "zh": "这家公司",
+   "en": "the corporation",
+   "note": {
+    "zh": "游戏里这里会出现这家公司的名称。",
+    "en": "In the game, the name of this corporation appears here."
+   }
+  },
+  "crusade_target.GetName": {
+   "zh": "我们",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "gal_emperor.GetName": {
+   "zh": "这个新政权",
+   "en": "new state",
+   "note": {
+    "zh": "游戏里这里会出现这个新政权的名称。",
+    "en": "In the game, the name of this new state appears here."
+   }
+  },
+  "victim_country.GetName": {
+   "zh": "受害者",
+   "en": "victim",
+   "note": {
+    "zh": "游戏里这里会出现受攻击方的名称。",
+    "en": "In the game, the name of the attacked empire appears here."
+   }
+  }
  }
 }

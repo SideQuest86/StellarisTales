@@ -43,5 +43,43 @@
   "merged": [
    "event-toxoids-50"
   ]
+ },
+ "placeholders": {
+  "From.GetAdjective": {
+   "zh": "这颗星球的",
+   "en": "planetary",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的形容词形式。",
+    "en": "In the game, the planet's adjective appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "outraged_FE.GetName": {
+   "zh": "堕落帝国",
+   "en": "the fallen empire",
+   "note": {
+    "zh": "游戏里这里会出现愤怒的堕落帝国的名称。",
+    "en": "In the game, the name of the angry fallen empire appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "fallen_empires_awakening.2": {
+   "From.GetName": {
+    "zh": "这个帝国",
+    "en": "the empire",
+    "note": {
+     "zh": "游戏里这里会出现这个帝国的名称。",
+     "en": "In the game, the name of this empire appears here."
+    }
+   }
+  }
  }
 }

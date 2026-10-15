@@ -228,5 +228,147 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/curators.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "From.GetSpeciesNamePlural": {
+   "zh": "这一族",
+   "en": "your kind",
+   "note": {
+    "zh": "游戏里这里会出现这一族的名称。",
+    "en": "In the game, the name of this kind appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "朋友",
+   "en": "friend",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "朋友们",
+   "en": "friends",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "curator_customer_1.GetName": {
+   "zh": "第一位客户",
+   "en": "first customer",
+   "note": {
+    "zh": "游戏里这里会出现第一位客户的名称。",
+    "en": "In the game, the name of the first customer appears here."
+   }
+  },
+  "curator_customer_2.GetName": {
+   "zh": "第二位客户",
+   "en": "second customer",
+   "note": {
+    "zh": "游戏里这里会出现第二位客户的名称。",
+    "en": "In the game, the name of the second customer appears here."
+   }
+  },
+  "curator_customer_3.GetName": {
+   "zh": "第三位客户",
+   "en": "third customer",
+   "note": {
+    "zh": "游戏里这里会出现第三位客户的名称。",
+    "en": "In the game, the name of the third customer appears here."
+   }
+  },
+  "curator_customer_4.GetName": {
+   "zh": "第四位客户",
+   "en": "fourth customer",
+   "note": {
+    "zh": "游戏里这里会出现第四位客户的名称。",
+    "en": "In the game, the name of the fourth customer appears here."
+   }
+  },
+  "curator_destroyer.GetName": {
+   "zh": "敌对帝国",
+   "en": "hostile empire",
+   "note": {
+    "zh": "游戏里这里会出现敌对帝国的名称。",
+    "en": "In the game, the hostile empire's name appears here."
+   }
+  },
+  "curator_enclave_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "origin_unplugged_assimilator_empire.GetAdj": {
+   "zh": "其他",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现这一类其他同类的说法。",
+    "en": "In the game, a phrase for the other ships of its kind appears here."
+   }
+  },
+  "origin_unplugged_assimilator_empire.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "origin_unplugged_machine_legacy_core.GetName": {
+   "zh": "这个",
+   "en": "this",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名字。",
+    "en": "In the game, this system's name appears here."
+   }
+  },
+  "root.GetSpeciesAdj": {
+   "zh": "朋友",
+   "en": "friend",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "root.GetSpeciesName": {
+   "zh": "朋友",
+   "en": "friend",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "unfriends.GetName": {
+   "zh": "别人",
+   "en": "someone else",
+   "note": {
+    "zh": "游戏里这里会出现你误认的对象的名称。",
+    "en": "In the game, the name of the one you were confused with appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "leviathans.504": {
+   "Root.GetSpeciesNamePlural": {
+    "zh": "我们人民",
+    "en": "our people",
+    "note": {
+     "zh": "游戏里这里会出现你的物种复数名称。",
+     "en": "In the game, the plural name of your species appears here."
+    }
+   }
+  }
  }
 }

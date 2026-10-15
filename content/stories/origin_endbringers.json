@@ -187,5 +187,47 @@
    "zh": "结局依赖“虚境”调查：遗址五个阶段（8100–8120）→ 项目“灵能理论” → 8200 → 采用灵能传统项目。",
    "en": "Shrouded World site stages 8100-8120 -> project Psionic Theory -> 8200 -> adopt the Psionics tradition project."
   }
- ]
+ ],
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.Patron:end_of_the_cycle.GetPreCommunicationName": {
+   "zh": "这个存在",
+   "en": "the presence",
+   "note": {
+    "zh": "游戏里这里会出现这个存在的名称。",
+    "en": "In the game, this presence's name appears here."
+   }
+  },
+  "former_malevolent_aura.GetName": {
+   "zh": "这股光环",
+   "en": "aura",
+   "note": {
+    "zh": "游戏里这里会出现这股光环的名称。",
+    "en": "In the game, this aura's name appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这个源头",
+   "en": "source",
+   "note": {
+    "zh": "游戏里这里会出现这个源头的名称。",
+    "en": "In the game, this source's name appears here."
+   }
+  },
+  "owner.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  }
+ }
 }

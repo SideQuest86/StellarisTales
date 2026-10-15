@@ -26,5 +26,23 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-federations3-120.md"
+ },
+ "placeholders": {
+  "root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "root.System.GetName": {
+   "zh": "某个",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of the star system appears here."
+   }
+  }
  }
 }

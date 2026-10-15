@@ -1,92 +1,326 @@
 {
  "id": "event-situation-2000",
  "family": {
-  "title": {"zh": "万华镜", "en": "The Kaleidoscope"},
+  "title": {
+   "zh": "万华镜",
+   "en": "The Kaleidoscope"
+  },
   "category": "society",
   "start": "situation.2000",
   "members": [
-   "situation.1999", "situation.2000", "situation.2001", "situation.2002", "situation.2003", "situation.2004",
-   "situation.2005", "situation.2010", "situation.2011", "situation.2020", "situation.2021", "situation.2030",
-   "situation.2031", "situation.2032", "situation.2033", "situation.2034", "situation.2037", "situation.2038",
-   "situation.2040", "situation.2041", "situation.2042", "situation.2043", "situation.2044", "situation.2045",
-   "situation.2048", "situation.2049", "situation.2050", "situation.2060",
-   "special_projects:KALEIDOSCOPE_INFESTATION_FIRST", "special_projects:KALEIDOSCOPE_INFESTATION",
+   "situation.1999",
+   "situation.2000",
+   "situation.2001",
+   "situation.2002",
+   "situation.2003",
+   "situation.2004",
+   "situation.2005",
+   "situation.2010",
+   "situation.2011",
+   "situation.2020",
+   "situation.2021",
+   "situation.2030",
+   "situation.2031",
+   "situation.2032",
+   "situation.2033",
+   "situation.2034",
+   "situation.2037",
+   "situation.2038",
+   "situation.2040",
+   "situation.2041",
+   "situation.2042",
+   "situation.2043",
+   "situation.2044",
+   "situation.2045",
+   "situation.2048",
+   "situation.2049",
+   "situation.2050",
+   "situation.2060",
+   "special_projects:KALEIDOSCOPE_INFESTATION_FIRST",
+   "special_projects:KALEIDOSCOPE_INFESTATION",
    "situations:situation_kaleidoscope"
   ]
  },
  "bridges": [
   {
-   "from": "situations:situation_kaleidoscope", "to": "situation.2020", "conditional": true,
-   "label": {"zh": "发动间谍行动“引诱万华镜”", "en": "Run the 'Lure the Kaleidoscope' operation"},
+   "from": "situations:situation_kaleidoscope",
+   "to": "situation.2020",
+   "conditional": true,
+   "label": {
+    "zh": "发动间谍行动“引诱万华镜”",
+    "en": "Run the 'Lure the Kaleidoscope' operation"
+   },
    "evidence": "common/espionage_operation_types/operations.txt:1225-1276 operation_kaleidoscope: potential needs kaleidoscope_started and the owner hosting situation_kaleidoscope; target capital unshielded and not a previous owner; stage 1 event situation.2020, stage 2 situation.2021"
   },
   {
-   "from": "situation.2020", "to": "situation.2021",
-   "label": {"zh": "行动第二阶段", "en": "Second operation stage"},
+   "from": "situation.2020",
+   "to": "situation.2021",
+   "label": {
+    "zh": "行动第二阶段",
+    "en": "Second operation stage"
+   },
    "evidence": "common/espionage_operation_types/operations.txt:1267-1276 operation stages: situation.2020 (diff_t0) then situation.2021 (diff_t1)"
   },
   {
-   "from": "situation.2021", "choice": "LAUNCH_OPERATION", "to": "situation.2025", "conditional": true,
-   "label": {"zh": "目标日后陷入能量赤字（30年内）", "en": "If the target later falls into an energy deficit (within 30 years)"},
+   "from": "situation.2021",
+   "choice": "LAUNCH_OPERATION",
+   "to": "situation.2025",
+   "conditional": true,
+   "label": {
+    "zh": "目标日后陷入能量赤字（30年内）",
+    "en": "If the target later falls into an energy deficit (within 30 years)"
+   },
    "evidence": "operations.txt:1280-1289 on_create sets gave_kaleidoscope_to@target for @operationTargetedByTimer = 10800 days (operations.txt:29); common/situations/02_deficit_situations.txt:37-42 situation_energy_deficit on_start fires situation.2025 (10+0-20 days) for the country holding that flag"
   },
   {
-   "from": "situation.2048", "choice": "situation.2048.a", "to": "situation.2049", "conditional": true,
-   "label": {"zh": "把戴森球改建为迪斯科球并完工", "en": "Upgrade a Dyson Sphere to the Disco Sphere and finish it"},
+   "from": "situation.2048",
+   "choice": "situation.2048.a",
+   "to": "situation.2049",
+   "conditional": true,
+   "label": {
+    "zh": "把戴森球改建为迪斯科球并完工",
+    "en": "Upgrade a Dyson Sphere to the Disco Sphere and finish it"
+   },
    "evidence": "2048.a sets can_build_disco_sphere; common/megastructures/01_dyson_sphere.txt:1044-1133 dyson_sphere_disco (upgrade_from dyson_sphere_5, potential has_country_flag can_build_disco_sphere, 360 days) and :1137-1272 dyson_sphere_disco_restored; on_build_complete fires situation.2049"
   }
  ],
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["situation.2041", "situation.2043"],
-   "label": {"zh": "进度满100%：绽放或爆炸", "en": "At 100% progress: bloom or explosion"},
-   "note": {"zh": "on_progress_complete 的 random_list：绽放基础权重10、爆炸90，按心情值 kaleidoscope_good_ending_chances 调整。", "en": "on_progress_complete random_list: bloom base 10, explosion base 90, shifted by value:kaleidoscope_good_ending_chances (mood)."}
+   "members": [
+    "situation.2041",
+    "situation.2043"
+   ],
+   "label": {
+    "zh": "进度满100%：绽放或爆炸",
+    "en": "At 100% progress: bloom or explosion"
+   },
+   "note": {
+    "zh": "on_progress_complete 的 random_list：绽放基础权重10、爆炸90，按心情值 kaleidoscope_good_ending_chances 调整。",
+    "en": "on_progress_complete random_list: bloom base 10, explosion base 90, shifted by value:kaleidoscope_good_ending_chances (mood)."
+   }
   },
   {
    "kind": "exclusive",
-   "members": ["situation.2041", "situation.2043", "situation.2040", "situation.2049", "situation.2021"],
-   "label": {"zh": "宿主的结局（只发生其一）", "en": "How it ends for the host (one of these)"},
-   "note": {"zh": "撑爆（2041/2043）、25年寿命到期消散（2040）、迪斯科球（2049）或通过间谍行动送走（2021）。宿主被灭亡时由征服者接手或消散（隐藏事件2060）。", "en": "Burst (2041/2043), fade when its 25-year lifetime ends (2040), the Disco Sphere (2049), or passing it on by espionage (2021). If the host is destroyed, the conqueror inherits it or it fades (hidden 2060)."}
+   "members": [
+    "situation.2041",
+    "situation.2043",
+    "situation.2040",
+    "situation.2049",
+    "situation.2021"
+   ],
+   "label": {
+    "zh": "宿主的结局（只发生其一）",
+    "en": "How it ends for the host (one of these)"
+   },
+   "note": {
+    "zh": "撑爆（2041/2043）、25年寿命到期消散（2040）、迪斯科球（2049）或通过间谍行动送走（2021）。宿主被灭亡时由征服者接手或消散（隐藏事件2060）。",
+    "en": "Burst (2041/2043), fade when its 25-year lifetime ends (2040), the Disco Sphere (2049), or passing it on by espionage (2021). If the host is destroyed, the conqueror inherits it or it fades (hidden 2060)."
+   }
   },
   {
    "kind": "parallel",
-   "members": ["situation.2030", "situation.2031", "situation.2032", "situation.2033", "situation.2034", "situation.2037", "situation.2038", "situation.2048"],
-   "label": {"zh": "每月随机插曲（可重复、无固定顺序）", "en": "Monthly random interludes (repeatable, unordered)"},
-   "note": {"zh": "on_monthly random_events：无事100，各事件1，无尽的饥饿2。不喂养时多为负面事件，喂养时多为正面事件。", "en": "on_monthly random_events: nothing 100, each event 1, Endless Hunger 2. Starving it allows the negative events, feeding it the positive ones."}
+   "members": [
+    "situation.2030",
+    "situation.2031",
+    "situation.2032",
+    "situation.2033",
+    "situation.2034",
+    "situation.2037",
+    "situation.2038",
+    "situation.2048"
+   ],
+   "label": {
+    "zh": "每月随机插曲（可重复、无固定顺序）",
+    "en": "Monthly random interludes (repeatable, unordered)"
+   },
+   "note": {
+    "zh": "on_monthly random_events：无事100，各事件1，无尽的饥饿2。不喂养时多为负面事件，喂养时多为正面事件。",
+    "en": "on_monthly random_events: nothing 100, each event 1, Endless Hunger 2. Starving it allows the negative events, feeding it the positive ones."
+   }
   }
  ],
  "endings": {
-  "situation.2041": {"label": {"zh": "绽放：获得遗珍", "en": "Bloom: a relic"}, "note": {"zh": "获得遗珍“真空花朵”，局势结束。", "en": "Grants the Vacuum Flower relic; the situation ends."}, "evidence": "events/situation_events.txt:3893-3938 add_relic r_vacuum_flower, destroy_situation"},
-  "situation.2043": {"label": {"zh": "爆炸：星系受损", "en": "Explosion: system devastated"}, "note": {"zh": "星系内殖民地+50荒芜度，局势结束。", "en": "Colonies in the system gain 50 devastation; the situation ends."}, "evidence": "events/situation_events.txt:3955-4001"},
-  "situation.2040": {"label": {"zh": "寿命耗尽而消散", "en": "Fades when its lifetime ends"}, "note": {"zh": "全局25年寿命标记到期后，月度检查使其消散。", "en": "When the 25-year global lifetime flag expires, the monthly check makes it fade."}, "evidence": "events/situation_events.txt:2932-2952 and 3821-3876; common/scripted_effects/00_scripted_effects.txt:8708-8712"},
-  "situation.2049": {"label": {"zh": "迪斯科球结局", "en": "Disco Sphere ending"}, "note": {"zh": "移除万华镜并结束局势。", "en": "Removes the Kaleidoscope and ends the situation."}, "evidence": "events/situation_events.txt:4063-4084"},
-  "situation.2021": {"label": {"zh": "送给他国", "en": "Passed to another empire"}, "note": {"zh": "本国局势销毁；目标帝国从头经历（首次为2003，曾拥有则直接2010）。", "en": "Your situation is destroyed; the target starts over (2003 the first time, 2010 if it hosted it before)."}, "evidence": "events/situation_events.txt:3322-3371 and 3031-3062"}
+  "situation.2041": {
+   "label": {
+    "zh": "绽放：获得遗珍",
+    "en": "Bloom: a relic"
+   },
+   "note": {
+    "zh": "获得遗珍“真空花朵”，局势结束。",
+    "en": "Grants the Vacuum Flower relic; the situation ends."
+   },
+   "evidence": "events/situation_events.txt:3893-3938 add_relic r_vacuum_flower, destroy_situation"
+  },
+  "situation.2043": {
+   "label": {
+    "zh": "爆炸：星系受损",
+    "en": "Explosion: system devastated"
+   },
+   "note": {
+    "zh": "星系内殖民地+50荒芜度，局势结束。",
+    "en": "Colonies in the system gain 50 devastation; the situation ends."
+   },
+   "evidence": "events/situation_events.txt:3955-4001"
+  },
+  "situation.2040": {
+   "label": {
+    "zh": "寿命耗尽而消散",
+    "en": "Fades when its lifetime ends"
+   },
+   "note": {
+    "zh": "全局25年寿命标记到期后，月度检查使其消散。",
+    "en": "When the 25-year global lifetime flag expires, the monthly check makes it fade."
+   },
+   "evidence": "events/situation_events.txt:2932-2952 and 3821-3876; common/scripted_effects/00_scripted_effects.txt:8708-8712"
+  },
+  "situation.2049": {
+   "label": {
+    "zh": "迪斯科球结局",
+    "en": "Disco Sphere ending"
+   },
+   "note": {
+    "zh": "移除万华镜并结束局势。",
+    "en": "Removes the Kaleidoscope and ends the situation."
+   },
+   "evidence": "events/situation_events.txt:4063-4084"
+  },
+  "situation.2021": {
+   "label": {
+    "zh": "送给他国",
+    "en": "Passed to another empire"
+   },
+   "note": {
+    "zh": "本国局势销毁；目标帝国从头经历（首次为2003，曾拥有则直接2010）。",
+    "en": "Your situation is destroyed; the target starts over (2003 the first time, 2010 if it hosted it before)."
+   },
+   "evidence": "events/situation_events.txt:3322-3371 and 3031-3062"
+  }
  },
  "nodeLabels": {
-  "situation.2003": {"zh": "首都大停电", "en": "Capital blackout"},
-  "situation.2004": {"zh": "他国观测到光幕", "en": "Others see the lights"},
-  "situation.2005": {"zh": "项目过半", "en": "Project at 50%"},
-  "situation.2010": {"zh": "选择喂养方式", "en": "Choose how to feed it"},
-  "situation.2011": {"zh": "再次切断寄生", "en": "Infestation cut off"},
-  "situation.2021": {"zh": "引走万华镜", "en": "Lured away"},
-  "situation.2040": {"zh": "寿命耗尽消散", "en": "Fades away"},
-  "situation.2045": {"zh": "他国：光幕消散", "en": "Others: it faded"},
-  "situation.2042": {"zh": "他国：绽放", "en": "Others: it bloomed"},
-  "situation.2044": {"zh": "他国：爆炸", "en": "Others: it exploded"}
+  "situation.2003": {
+   "zh": "首都大停电",
+   "en": "Capital blackout"
+  },
+  "situation.2004": {
+   "zh": "他国观测到光幕",
+   "en": "Others see the lights"
+  },
+  "situation.2005": {
+   "zh": "项目过半",
+   "en": "Project at 50%"
+  },
+  "situation.2010": {
+   "zh": "选择喂养方式",
+   "en": "Choose how to feed it"
+  },
+  "situation.2011": {
+   "zh": "再次切断寄生",
+   "en": "Infestation cut off"
+  },
+  "situation.2021": {
+   "zh": "引走万华镜",
+   "en": "Lured away"
+  },
+  "situation.2040": {
+   "zh": "寿命耗尽消散",
+   "en": "Fades away"
+  },
+  "situation.2045": {
+   "zh": "他国：光幕消散",
+   "en": "Others: it faded"
+  },
+  "situation.2042": {
+   "zh": "他国：绽放",
+   "en": "Others: it bloomed"
+  },
+  "situation.2044": {
+   "zh": "他国：爆炸",
+   "en": "Others: it exploded"
+  }
  },
  "notes": [
-  {"doc": "situation.2003", "kind": "review", "zh": "开局隐藏事件1999以30%概率决定本局是否出现万华镜（需复仇女神DLC）；中期之后每五年随机检查（权重50/200）由2000选择宿主：人类玩家帝国5、玩家邻国3、AI帝国1，0–360天后到达。", "en": "Hidden 1999 decides at game start (30%) whether the Kaleidoscope can appear (Nemesis DLC); after mid-game a five-year random pulse (weight 50/200) runs 2000, which picks the host: a human player's empire 5, a player's neighbour 3, an AI empire 1, arriving after 0-360 days."},
-  {"doc": "situations:situation_kaleidoscope", "kind": "review", "zh": "不喂养不增长进度；少量喂养每月+0.5，大量喂养+1.5。宿主更换首都时万华镜随之移动（2050）；宿主被灭亡时，未装行星护盾的征服者接手，否则消散（2060）。", "en": "Starving adds no progress; feeding adds 0.5/month, overfeeding 1.5. It follows the host's capital when the capital moves (2050); if the host is destroyed, an unshielded conqueror inherits it, otherwise it fades (2060)."}
+  {
+   "doc": "situation.2003",
+   "kind": "review",
+   "zh": "开局隐藏事件1999以30%概率决定本局是否出现万华镜（需复仇女神DLC）；中期之后每五年随机检查（权重50/200）由2000选择宿主：人类玩家帝国5、玩家邻国3、AI帝国1，0–360天后到达。",
+   "en": "Hidden 1999 decides at game start (30%) whether the Kaleidoscope can appear (Nemesis DLC); after mid-game a five-year random pulse (weight 50/200) runs 2000, which picks the host: a human player's empire 5, a player's neighbour 3, an AI empire 1, arriving after 0-360 days."
+  },
+  {
+   "doc": "situations:situation_kaleidoscope",
+   "kind": "review",
+   "zh": "不喂养不增长进度；少量喂养每月+0.5，大量喂养+1.5。宿主更换首都时万华镜随之移动（2050）；宿主被灭亡时，未装行星护盾的征服者接手，否则消散（2060）。",
+   "en": "Starving adds no progress; feeding adds 0.5/month, overfeeding 1.5. It follows the host's capital when the capital moves (2050); if the host is destroyed, an unshielded conqueror inherits it, otherwise it fades (2060)."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "Opus 5.5 (c7a-society)",
-  "scope": {"zh": "整条万华镜故事：开局与五年检查入口、首次停电项目、局势与喂养、每月插曲、四种结局、间谍行动转移、宿主更换首都/被灭亡、迪斯科球。", "en": "Whole Kaleidoscope story: game-start and five-year entry, first blackout project, situation and feeding, monthly interludes, four endings, espionage hand-off, capital move/host destruction, Disco Sphere."},
-  "sources": ["events/situation_events.txt", "common/situations/01_narrative_situations.txt", "common/special_projects/00_projects_nemesis.txt", "common/espionage_operation_types/operations.txt", "common/megastructures/01_dyson_sphere.txt", "common/on_actions/00_on_actions.txt", "common/situations/02_deficit_situations.txt", "common/scripted_effects/00_scripted_effects.txt"],
-  "uncertain": ["The value scripts kaleidoscope_good_ending_chances / kaleidoscope_negative_events_value / kaleidoscope_positive_events_value were not traced in common/script_values; the guide gives only base weights."],
-  "merged": ["event-situation-2060", "event-situation-2020", "event-situation-2049"],
+  "scope": {
+   "zh": "整条万华镜故事：开局与五年检查入口、首次停电项目、局势与喂养、每月插曲、四种结局、间谍行动转移、宿主更换首都/被灭亡、迪斯科球。",
+   "en": "Whole Kaleidoscope story: game-start and five-year entry, first blackout project, situation and feeding, monthly interludes, four endings, espionage hand-off, capital move/host destruction, Disco Sphere."
+  },
+  "sources": [
+   "events/situation_events.txt",
+   "common/situations/01_narrative_situations.txt",
+   "common/special_projects/00_projects_nemesis.txt",
+   "common/espionage_operation_types/operations.txt",
+   "common/megastructures/01_dyson_sphere.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/situations/02_deficit_situations.txt",
+   "common/scripted_effects/00_scripted_effects.txt"
+  ],
+  "uncertain": [
+   "The value scripts kaleidoscope_good_ending_chances / kaleidoscope_negative_events_value / kaleidoscope_positive_events_value were not traced in common/script_values; the guide gives only base weights."
+  ],
+  "merged": [
+   "event-situation-2060",
+   "event-situation-2020",
+   "event-situation-2049"
+  ],
   "guide": "public/summaries/event-situation-2000.md"
+ },
+ "placeholders": {
+  "GetKaleidoscopeMood": {
+   "zh": "平静",
+   "en": "calm",
+   "note": {
+    "zh": "游戏里这里会出现万华镜的心情描述。",
+    "en": "In the game, the mood of the Kaleidoscope appears here."
+   }
+  },
+  "kaleidoscope_new_owner.GetName": {
+   "zh": "那个帝国",
+   "en": "that empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "kaleidoscope_system.GetName": {
+   "zh": "这个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现附近恒星系的名称。",
+    "en": "In the game, the name of the nearby star system appears here."
+   }
+  },
+  "root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "target.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

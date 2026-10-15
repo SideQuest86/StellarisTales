@@ -3,53 +3,107 @@
  "category": "rifts",
  "bridges": [
   {
-   "from": "astral_rift.20", "choice": "astral_rift.20.a", "to": "astral_rift.30", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "from": "astral_rift.20",
+   "choice": "astral_rift.20.a",
+   "to": "astral_rift.30",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
    "evidence": "events/astral_rifts_0_events.txt:585-589 set_next_astral_rift_event { id = astral_rift.25 on_roll_failed = astral_rift.30 fail_probability = @default_failure_probability (0.015 per roll) }"
   },
   {
-   "from": "astral_rift.20", "choice": "astral_rift.20.b", "to": "astral_rift.30", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "from": "astral_rift.20",
+   "choice": "astral_rift.20.b",
+   "to": "astral_rift.30",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
    "evidence": "events/astral_rifts_0_events.txt:609-613 on_roll_failed = astral_rift.30"
   },
   {
-   "from": "astral_rift.20", "choice": "astral_rift.20.c", "to": "astral_rift.30", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "from": "astral_rift.20",
+   "choice": "astral_rift.20.c",
+   "to": "astral_rift.30",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
    "evidence": "events/astral_rifts_0_events.txt:621-625 on_roll_failed = astral_rift.30"
   }
  ],
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["astral_rift.25", "astral_rift.30"],
-   "label": {"zh": "突破或失败", "en": "Breakthrough or failure"},
-   "note": {"zh": "世界议会之后的阶段要么取得突破（25 击退入侵者），要么在某次掷骰时以每次 1.5% 的基础概率失败（30 荒废）。", "en": "After the World Council the stage either breaks through (25, the Invaders are repelled) or fails on a roll, with a base 1.5% chance per roll (30, Devastation)."}
+   "members": [
+    "astral_rift.25",
+    "astral_rift.30"
+   ],
+   "label": {
+    "zh": "突破或失败",
+    "en": "Breakthrough or failure"
+   },
+   "note": {
+    "zh": "世界议会之后的阶段要么取得突破（25 击退入侵者），要么在某次掷骰时以每次 1.5% 的基础概率失败（30 荒废）。",
+    "en": "After the World Council the stage either breaks through (25, the Invaders are repelled) or fails on a roll, with a base 1.5% chance per roll (30, Devastation)."
+   }
   }
  ],
  "endings": {
   "astral_rift.16": {
-   "label": {"zh": "抛弃先祖", "en": "Ancestors abandoned"},
-   "note": {"zh": "探索结束，获得大量星界丝缕与凝聚力；360 天后收到怪异通讯（50）。", "en": "The exploration ends with a large astral thread and unity reward; 360 days later a strange transmission arrives (50)."},
+   "label": {
+    "zh": "抛弃先祖",
+    "en": "Ancestors abandoned"
+   },
+   "note": {
+    "zh": "探索结束，获得大量星界丝缕与凝聚力；360 天后收到怪异通讯（50）。",
+    "en": "The exploration ends with a large astral thread and unity reward; 360 days later a strange transmission arrives (50)."
+   },
    "evidence": "events/astral_rifts_0_events.txt:513-534"
   },
   "astral_rift.25": {
-   "label": {"zh": "击退入侵者：带回一位领袖", "en": "Invaders repelled: a leader joins"},
-   "note": {"zh": "选择一位裂隙扭曲的科学官、指挥官或行政官；随后探索结束，立即触发“先祖之魂”（40），360 天后收到怪异通讯（50）。", "en": "Choose a Rift Warped scientist, commander or official; the exploration then ends, Spirit of our Ancestors (40) follows at once and a strange transmission (50) 360 days later."},
+   "label": {
+    "zh": "击退入侵者：带回一位领袖",
+    "en": "Invaders repelled: a leader joins"
+   },
+   "note": {
+    "zh": "选择一位裂隙扭曲的科学官、指挥官或行政官；随后探索结束，立即触发“先祖之魂”（40），360 天后收到怪异通讯（50）。",
+    "en": "Choose a Rift Warped scientist, commander or official; the exploration then ends, Spirit of our Ancestors (40) follows at once and a strange transmission (50) 360 days later."
+   },
    "evidence": "events/astral_rifts_0_events.txt:665-768"
   },
   "astral_rift.30": {
-   "label": {"zh": "荒废：先祖败亡", "en": "Devastation: ancestors fall"},
-   "note": {"zh": "失败分支：选择带走难民、接受贵族（获得一名行政官）或保存/索取档案；探索结束，随后“先祖之魂”（40）与 360 天后的怪异通讯（50）。", "en": "Failure branch: take refugees, accept the noble's offer (an official leader) or preserve/claim the library; the exploration ends, then Spirit of our Ancestors (40) and, 360 days later, the strange transmission (50)."},
+   "label": {
+    "zh": "荒废：先祖败亡",
+    "en": "Devastation: ancestors fall"
+   },
+   "note": {
+    "zh": "失败分支：选择带走难民、接受贵族（获得一名行政官）或保存/索取档案；探索结束，随后“先祖之魂”（40）与 360 天后的怪异通讯（50）。",
+    "en": "Failure branch: take refugees, accept the noble's offer (an official leader) or preserve/claim the library; the exploration ends, then Spirit of our Ancestors (40) and, 360 days later, the strange transmission (50)."
+   },
    "evidence": "events/astral_rifts_0_events.txt:771-951"
   },
   "astral_rift.57": {
-   "label": {"zh": "通讯中断", "en": "Transmission ends"},
-   "note": {"zh": "来自裂隙彼端的声音称“很快会找到你们”后中断；这段通讯没有后续选项。", "en": "The voice from beyond the rifts says it will soon find the empire, then falls silent; the transmission has no further options."},
+   "label": {
+    "zh": "通讯中断",
+    "en": "Transmission ends"
+   },
+   "note": {
+    "zh": "来自裂隙彼端的声音称“很快会找到你们”后中断；这段通讯没有后续选项。",
+    "en": "The voice from beyond the rifts says it will soon find the empire, then falls silent; the transmission has no further options."
+   },
    "evidence": "events/astral_rifts_0_events.txt:1219-1237"
   }
  },
  "nodeLabels": {
-  "astral_rift.10": {"zh": "星光先锋", "en": "Starlight Vanguard"}
+  "astral_rift.10": {
+   "zh": "星光先锋",
+   "en": "Starlight Vanguard"
+  }
  },
  "notes": [
   {
@@ -85,10 +139,25 @@
    "zh": "已核对裂隙定义、生成来源（裂隙世界起源）、1–57 全部事件、失败分支 30 与 360 天后的通讯链；失败事件 30 已并入本篇。",
    "en": "Checked the rift definition, its origin spawn, every event 1–57, failure branch 30 and the 360-day transmission chain; failure event 30 is now part of this story."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt", "events/origin_events_astral_planes.txt", "common/scripted_loc/09_scripted_loc_astral_planes.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_0_events.txt",
+   "events/origin_events_astral_planes.txt",
+   "common/scripted_loc/09_scripted_loc_astral_planes.txt"
+  ],
   "uncertain": [
    "Text variants keyed by description_* rift flags (gestalt, machine, hive, lithoid/synthetic, arc-site completed) are shown as unresolved conditions by the V4 condition model."
   ],
   "guide": "public/summaries/rift-riftworld.md"
+ },
+ "placeholders": {
+  "this.capital_scope.GetName": {
+   "zh": "另一个",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现另一个星系的名称。",
+    "en": "In the game, the name of the other system appears here."
+   }
+  }
  }
 }

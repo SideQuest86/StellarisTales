@@ -13,5 +13,23 @@
    "common/on_actions/00_on_actions.txt:576-592"
   ],
   "guide": "public/summaries/event-envoy-events-4.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "event_envoy.GetName": {
+   "zh": "这位使者",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现使者的名字。",
+    "en": "In the game, the envoy's name appears here."
+   }
+  }
  }
 }

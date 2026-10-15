@@ -208,5 +208,79 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-anomaly-5007.md"
+ },
+ "placeholders": {
+  "NewBaldarak.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗气态巨行星的名字。",
+    "en": "In the game, this gas giant's name appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "我们的舰队",
+   "en": "our fleet",
+   "note": {
+    "zh": "游戏里这里会出现你的舰队名称。",
+    "en": "In the game, your fleet's name appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "朋友",
+   "en": "friend",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesName": {
+   "zh": "朋友",
+   "en": "friend",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesNamePlural": {
+   "zh": "朋友们",
+   "en": "friends",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "anomaly.5009": {
+   "Root.GetSpeciesName": {
+    "zh": "各位",
+    "en": "dear",
+    "note": {
+     "zh": "游戏里这里会出现你的物种名称。",
+     "en": "In the game, your species' name appears here."
+    }
+   }
+  },
+  "anomaly.5011": {
+   "Root.Owner.GetSpeciesName": {
+    "zh": "各位",
+    "en": "dear",
+    "note": {
+     "zh": "游戏里这里会出现你的物种名称。",
+     "en": "In the game, your species' name appears here."
+    }
+   }
+  },
+  "anomaly.5016": {
+   "Root.GetName": {
+    "zh": "我们的护卫舰队",
+    "en": "our escort fleet",
+    "note": {
+     "zh": "游戏里这里会出现护送我们的舰队名称。",
+     "en": "In the game, the name of the escorting fleet appears here."
+    }
+   }
+  }
  }
 }

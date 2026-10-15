@@ -4,67 +4,208 @@
  "category": "society",
  "dialogues": {
   "colony.10015": {
-   "states": {"start": ["colony.10015.a.question", "colony.10015.b.question", "colony.10015.c.question", "colony.10015.a", "colony.10015.b"]},
+   "states": {
+    "start": [
+     "colony.10015.a.question",
+     "colony.10015.b.question",
+     "colony.10015.c.question",
+     "colony.10015.a",
+     "colony.10015.b"
+    ]
+   },
    "transitions": {},
-   "exits": ["colony.10015.a", "colony.10015.b"],
+   "exits": [
+    "colony.10015.a",
+    "colony.10015.b"
+   ],
    "evidence": "events/colony_events_3.txt:10766-10792: a/b/c.question are is_dialog_only with response_text; colony.10015.a (send a colonist) calls 10016, colony.10015.b (refuse) calls 10017. No question prerequisites."
   },
   "colony.10026": {
-   "states": {"start": ["colony.10026.a.question", "colony.10026.b.question", "colony.10026.c.question", "colony.10026.a", "colony.10026.b"]},
+   "states": {
+    "start": [
+     "colony.10026.a.question",
+     "colony.10026.b.question",
+     "colony.10026.c.question",
+     "colony.10026.a",
+     "colony.10026.b"
+    ]
+   },
    "transitions": {},
-   "exits": ["colony.10026.a", "colony.10026.b"],
+   "exits": [
+    "colony.10026.a",
+    "colony.10026.b"
+   ],
    "evidence": "events/colony_events_3.txt:10925-10973: three is_dialog_only questions; colony.10026.a enables A_CRYPTIC_ESSENCE_PROJECT, colony.10026.b calls 10027."
   }
  },
  "endings": {
   "colony.10081": {
-   "label": {"zh": "最佳结局：永朽之暗离去", "en": "Best ending: the Dark Immortal departs"},
-   "note": {"zh": "三项试炼全部通过并要求它永远离开；阿纳萨里加入殖民地（500人口）并获得“统一未来”修正。", "en": "All three trials passed and you asked it to leave forever; the Anathari join the colony (500 pops) with the \"A Unified Future\" modifier."},
+   "label": {
+    "zh": "最佳结局：永朽之暗离去",
+    "en": "Best ending: the Dark Immortal departs"
+   },
+   "note": {
+    "zh": "三项试炼全部通过并要求它永远离开；阿纳萨里加入殖民地（500人口）并获得“统一未来”修正。",
+    "en": "All three trials passed and you asked it to leave forever; the Anathari join the colony (500 pops) with the \"A Unified Future\" modifier."
+   },
    "evidence": "events/colony_events_3.txt:11394-11414 (10080.a -> 10081 days 90 random 40); 11451-11474 add_modifier happy_anathari, create_pop_group size 500."
   },
   "colony.10082": {
-   "label": {"zh": "结局：阿纳萨里被抹除", "en": "Ending: the Anathari are erased"},
-   "note": {"zh": "通过试炼后选择消灭阿纳萨里；永朽之暗照办。", "en": "After passing the trials you asked for the Anathari to be eradicated; the Dark Immortal complies."},
+   "label": {
+    "zh": "结局：阿纳萨里被抹除",
+    "en": "Ending: the Anathari are erased"
+   },
+   "note": {
+    "zh": "通过试炼后选择消灭阿纳萨里；永朽之暗照办。",
+    "en": "After passing the trials you asked for the Anathari to be eradicated; the Dark Immortal complies."
+   },
    "evidence": "events/colony_events_3.txt:11417-11435 (10080.b -> 10082 days 90 random 40); 10082 has no further event."
   },
   "colony.10086": {
-   "label": {"zh": "结局：强攻击败永朽之暗", "en": "Ending: the Dark Immortal destroyed by force"},
-   "note": {"zh": "拒绝试炼直接进攻，或试炼失败后支付1000能量背水一战；阿纳萨里加入殖民地（500人口）。", "en": "Reached by refusing the trials and attacking, or by paying 1000 energy after a failed trial; the Anathari join the colony (500 pops)."},
+   "label": {
+    "zh": "结局：强攻击败永朽之暗",
+    "en": "Ending: the Dark Immortal destroyed by force"
+   },
+   "note": {
+    "zh": "拒绝试炼直接进攻，或试炼失败后支付1000能量背水一战；阿纳萨里加入殖民地（500人口）。",
+    "en": "Reached by refusing the trials and attacking, or by paying 1000 energy after a failed trial; the Anathari join the colony (500 pops)."
+   },
    "evidence": "events/colony_events_3.txt:11083-11087 (10035.b), 11506-11524 (10085.a, 1000 energy), 11562-11575 create_pop_group size 500."
   },
   "colony.10087": {
-   "label": {"zh": "结局：沦为仆从", "en": "Ending: becoming thralls"},
-   "note": {"zh": "试炼失败后选择效忠永朽之暗；阿纳萨里消亡，星球+50荒废度并获得“永朽之暗所在”修正。", "en": "After a failed trial you pledge yourselves to the Dark Immortal; the Anathari fade away, the planet takes +50 devastation and the \"Dark Immortal's Presence\" modifier."},
+   "label": {
+    "zh": "结局：沦为仆从",
+    "en": "Ending: becoming thralls"
+   },
+   "note": {
+    "zh": "试炼失败后选择效忠永朽之暗；阿纳萨里消亡，星球+50荒废度并获得“永朽之暗所在”修正。",
+    "en": "After a failed trial you pledge yourselves to the Dark Immortal; the Anathari fade away, the planet takes +50 devastation and the \"Dark Immortal's Presence\" modifier."
+   },
    "evidence": "events/colony_events_3.txt:11525-11537 (10085.b -> 10087 days 90 random 40); 11591-11595 add_planet_devastation 50, dark_immortal_control."
   },
   "colony.10090": {
-   "label": {"zh": "坏结局：万物当有终", "en": "Bad ending: All Life Must End"},
-   "note": {"zh": "随机结局之一：50%人口死亡，+50荒废度。", "en": "One of the random endings: 50% of the population dies and +50 devastation."},
+   "label": {
+    "zh": "坏结局：万物当有终",
+    "en": "Bad ending: All Life Must End"
+   },
+   "note": {
+    "zh": "随机结局之一：50%人口死亡，+50荒废度。",
+    "en": "One of the random endings: 50% of the population dies and +50 devastation."
+   },
    "evidence": "events/colony_events_3.txt:11611-11619 immediate add_planet_devastation 50, kill_pop_group 0.50; reached through random_list from 10010.b (60), 10020.a (60), 10030.a (50), 10085.c (30)."
   },
   "colony.10095": {
-   "label": {"zh": "好结局：巧合还是命运？", "en": "Good ending: Coincidence or Fate?"},
-   "note": {"zh": "随机结局之一：+10荒废度，获得“鲜花之庭的残余”修正。", "en": "One of the random endings: +10 devastation and the \"Remnants of the Court of Blossoms\" modifier."},
+   "label": {
+    "zh": "好结局：巧合还是命运？",
+    "en": "Good ending: Coincidence or Fate?"
+   },
+   "note": {
+    "zh": "随机结局之一：+10荒废度，获得“鲜花之庭的残余”修正。",
+    "en": "One of the random endings: +10 devastation and the \"Remnants of the Court of Blossoms\" modifier."
+   },
    "evidence": "events/colony_events_3.txt:11648-11674; reached through random_list from 10010.b (40), 10020.a (40), 10030.a (50), 10085.c (70)."
   }
  },
  "nodeLabels": {
-  "colony.10000": {"zh": "脚印与失踪", "en": "Footprints and disappearances"},
-  "colony.10010": {"zh": "置之不理：失踪加剧", "en": "Ignored: disappearances escalate"},
-  "colony.10015": {"zh": "初见坦佩里翁", "en": "Meeting Tamperion"},
-  "colony.10017": {"zh": "拒绝派人", "en": "Refusing to send anyone"},
-  "colony.10026": {"zh": "再见坦佩里翁", "en": "Tamperion again"},
-  "colony.10027": {"zh": "心生怀疑", "en": "Doubt"},
-  "colony.10035": {"zh": "永朽之暗的挑战", "en": "The Dark Immortal's challenge"},
-  "colony.10085": {"zh": "试炼失败", "en": "Trials failed"}
+  "colony.10000": {
+   "zh": "脚印与失踪",
+   "en": "Footprints and disappearances"
+  },
+  "colony.10010": {
+   "zh": "置之不理：失踪加剧",
+   "en": "Ignored: disappearances escalate"
+  },
+  "colony.10015": {
+   "zh": "初见坦佩里翁",
+   "en": "Meeting Tamperion"
+  },
+  "colony.10017": {
+   "zh": "拒绝派人",
+   "en": "Refusing to send anyone"
+  },
+  "colony.10026": {
+   "zh": "再见坦佩里翁",
+   "en": "Tamperion again"
+  },
+  "colony.10027": {
+   "zh": "心生怀疑",
+   "en": "Doubt"
+  },
+  "colony.10035": {
+   "zh": "永朽之暗的挑战",
+   "en": "The Dark Immortal's challenge"
+  },
+  "colony.10085": {
+   "zh": "试炼失败",
+   "en": "Trials failed"
+  }
  },
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "全部30个事件与2个特殊项目：入口、选项、延时、随机权重、结局均已对照源文件。", "en": "All 30 events and 2 special projects: entry, options, delays, random weights and endings checked against the source."},
-  "sources": ["events/colony_events_3.txt:10587-11675", "common/special_projects/00_projects_3.txt:2037-2080", "common/on_actions/00_on_actions.txt:3743-3795"],
-  "uncertain": ["The on_action random_events pool selection rule (whether the event trigger is checked before or after the weighted pick) is engine behaviour not visible in script; the guide only states the weight 15 and the 150-weight empty entry."],
+  "scope": {
+   "zh": "全部30个事件与2个特殊项目：入口、选项、延时、随机权重、结局均已对照源文件。",
+   "en": "All 30 events and 2 special projects: entry, options, delays, random weights and endings checked against the source."
+  },
+  "sources": [
+   "events/colony_events_3.txt:10587-11675",
+   "common/special_projects/00_projects_3.txt:2037-2080",
+   "common/on_actions/00_on_actions.txt:3743-3795"
+  ],
+  "uncertain": [
+   "The on_action random_events pool selection rule (whether the event trigger is checked before or after the weighted pick) is engine behaviour not visible in script; the guide only states the weight 15 and the 150-weight empty entry."
+  ],
   "guide": "public/summaries/event-colony-10000.md"
+ },
+ "placeholders": {
+  "Owner.GetSpeciesNameInsult": {
+   "zh": "小东西",
+   "en": "creature",
+   "note": {
+    "zh": "游戏里这里会出现对你的物种的称呼。",
+    "en": "In the game, a name for your species appears here."
+   }
+  },
+  "Owner.GetSpeciesNamePlural": {
+   "zh": "同胞",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "Owner.GetSpeciesNamePluralInsult": {
+   "zh": "小家伙",
+   "en": "creatures",
+   "note": {
+    "zh": "游戏里这里会出现对你的物种的称呼。",
+    "en": "In the game, a name for your species appears here."
+   }
+  },
+  "Owner.Species.GetHandName": {
+   "zh": "手",
+   "en": "hand",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的手的称呼。",
+    "en": "In the game, your species' hand appears here."
+   }
+  },
+  "Owner.Species.GetMouthName": {
+   "zh": "嘴",
+   "en": "mouth",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的嘴的称呼。",
+    "en": "In the game, your species' mouth appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

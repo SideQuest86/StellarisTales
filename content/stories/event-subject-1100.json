@@ -128,5 +128,47 @@
    "event-subject-1140"
   ],
   "guide": "public/summaries/event-subject-1100.md"
+ },
+ "placeholders": {
+  "admiral_democracy": {
+   "zh": "这位领袖",
+   "en": "the leader",
+   "note": {
+    "zh": "游戏里这里会出现这位民主派领袖的称呼。",
+    "en": "In the game, the title of this democratic leader appears here."
+   }
+  },
+  "admiral_oligarchy.GetName": {
+   "zh": "这位寡头",
+   "en": "the oligarch",
+   "note": {
+    "zh": "游戏里这里会出现这位寡头的称呼。",
+    "en": "In the game, the title of this oligarch appears here."
+   }
+  },
+  "overlord_empire.Capital.GetName": {
+   "zh": "宗主国首都",
+   "en": "overlord's capital",
+   "note": {
+    "zh": "游戏里这里会出现宗主国首都的名称。",
+    "en": "In the game, the name of the overlord's capital appears here."
+   }
+  },
+  "overlord_empire.GetName": {
+   "zh": "宗主国",
+   "en": "overlord",
+   "note": {
+    "zh": "游戏里这里会出现宗主国的名称。",
+    "en": "In the game, the name of the overlord appears here."
+   }
+  },
+  "subject_empire.GetName": {
+   "zh": "帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现附庸帝国的名称。",
+    "en": "In the game, the name of the vassal empire appears here."
+   }
+  }
  }
 }

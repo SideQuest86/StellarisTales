@@ -683,5 +683,31 @@
    "Rewards, relics and the secrets artifact action are gated by Ancient Relics (has_ancrel / minor artifacts); the no-DLC experience was read from script, not checked in game."
   ],
   "guide": "public/summaries/vultaum.md"
+ },
+ "placeholders": {
+  "From.From.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "leading_vultaum_research_scientist.GetName": {
+   "zh": "这位科学家",
+   "en": "the lead scientist",
+   "note": {
+    "zh": "游戏里这里会出现这位科学家的名字。",
+    "en": "In the game, this scientist's name appears here."
+   }
+  }
  }
 }

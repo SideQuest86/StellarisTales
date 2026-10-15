@@ -222,5 +222,79 @@
    },
    "evidence": "events/aquatics_events.txt:418; common/special_projects/00_projects_leviathans.txt:499"
   }
+ },
+ "placeholders": {
+  "From.GetAdj": {
+   "zh": "外星",
+   "en": "alien",
+   "note": {
+    "zh": "游戏里这里会出现外星的形容词。",
+    "en": "In the game, the alien adjective appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "我们的帝国",
+   "en": "our empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Owner.GetNecromancersLower": {
+   "zh": "死灵法师",
+   "en": "necromancers",
+   "note": {
+    "zh": "游戏里这里会出现你的死灵法师。",
+    "en": "In the game, your necromancers appear here."
+   }
+  },
+  "Owner.GetNecromancersUpper": {
+   "zh": "死灵法师",
+   "en": "necromancers",
+   "note": {
+    "zh": "游戏里这里会出现你的死灵法师。",
+    "en": "In the game, your necromancers appear here."
+   }
+  },
+  "This.Owner.GetSpeciesEarNamePlural": {
+   "zh": "耳朵",
+   "en": "ears",
+   "note": {
+    "zh": "游戏里这里会出现你们的耳朵。",
+    "en": "In the game, your ears appear here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "aquatics.180": {
+   "From.GetName": {
+    "zh": "这个",
+    "en": "nearby",
+    "note": {
+     "zh": "游戏里这里会出现附近星系的名称。",
+     "en": "In the game, the nearby system's name appears here."
+    }
+   }
+  },
+  "aquatics.215": {
+   "Root.GetName": {
+    "zh": "我们的舰船",
+    "en": "ship",
+    "note": {
+     "zh": "游戏里这里会出现这艘舰船的名称。",
+     "en": "In the game, this ship's name appears here."
+    }
+   }
+  },
+  "aquatics.305": {
+   "From.GetName": {
+    "zh": "这个",
+    "en": "nearby",
+    "note": {
+     "zh": "游戏里这里会出现附近星系的名称。",
+     "en": "In the game, the nearby system's name appears here."
+    }
+   }
+  }
  }
 }

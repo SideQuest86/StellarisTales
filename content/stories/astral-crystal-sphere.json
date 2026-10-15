@@ -1,49 +1,110 @@
 {
  "id": "astral-crystal-sphere",
  "family": {
-  "title": {"zh": "水晶球体", "en": "The Crystal Sphere"},
+  "title": {
+   "zh": "水晶球体",
+   "en": "The Crystal Sphere"
+  },
   "category": "rifts",
   "start": "astral_planes.10",
   "members": [
-   "astral_planes.10", "astral_planes.15", "astral_planes.20", "astral_planes.25", "astral_planes.30",
-   "astral_planes.35", "situations:situation_study_crystal_sphere", "situations:situation_destroy_crystal_sphere",
-   "astral_situation.1", "astral_situation.5"
+   "astral_planes.10",
+   "astral_planes.15",
+   "astral_planes.20",
+   "astral_planes.25",
+   "astral_planes.30",
+   "astral_planes.35",
+   "situations:situation_study_crystal_sphere",
+   "situations:situation_destroy_crystal_sphere",
+   "astral_situation.1",
+   "astral_situation.5"
   ]
  },
  "category": "rifts",
  "bridges": [
-  {"from": "astral_planes.30", "choice": "astral_planes.30.a", "to": "astral_planes.15", "conditional": true,
-   "label": {"zh": "之后研究出“裂隙探球”时", "en": "Once the Rift Sphere technology is researched later"},
-   "evidence": "events/astral_planes_events.txt:1033-1047 astral_planes.30 sets country flag crystal_sphere_event_delayed; :1049-1065 astral_planes.35 (on_tech_increased, common/on_actions/00_on_actions.txt:2707) fires astral_planes.15 once last_increased_tech = tech_rift_sphere with that flag set"},
-  {"from": "astral_situation.5", "choice": "EXCELLENT", "to": "astral_rifts:crystal", "conditional": false,
-   "label": {"zh": "球体消失，原地出现“晶体裂隙”", "en": "The sphere vanishes and the Crystal Rift appears in its place"},
-   "evidence": "events/astral_planes_situation_events.txt:50-76 astral_situation.5 option: event_target:crystal_sphere_system = { spawn_astral_rift = { id = crystal ... } }; rift definition common/astral_rifts/00_astral_rifts.txt:118"}
+  {
+   "from": "astral_planes.30",
+   "choice": "astral_planes.30.a",
+   "to": "astral_planes.15",
+   "conditional": true,
+   "label": {
+    "zh": "之后研究出“裂隙探球”时",
+    "en": "Once the Rift Sphere technology is researched later"
+   },
+   "evidence": "events/astral_planes_events.txt:1033-1047 astral_planes.30 sets country flag crystal_sphere_event_delayed; :1049-1065 astral_planes.35 (on_tech_increased, common/on_actions/00_on_actions.txt:2707) fires astral_planes.15 once last_increased_tech = tech_rift_sphere with that flag set"
+  },
+  {
+   "from": "astral_situation.5",
+   "choice": "EXCELLENT",
+   "to": "astral_rifts:crystal",
+   "conditional": false,
+   "label": {
+    "zh": "球体消失，原地出现“晶体裂隙”",
+    "en": "The sphere vanishes and the Crystal Rift appears in its place"
+   },
+   "evidence": "events/astral_planes_situation_events.txt:50-76 astral_situation.5 option: event_target:crystal_sphere_system = { spawn_astral_rift = { id = crystal ... } }; rift definition common/astral_rifts/00_astral_rifts.txt:118"
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["situations:situation_study_crystal_sphere", "situations:situation_destroy_crystal_sphere"],
-   "label": {"zh": "研究或摧毁水晶球体", "en": "Study or destroy the Crystal Sphere"},
-   "note": {"zh": "15 的两个选项各开始一个情境：研究（→ 水晶裂隙，可继续探索）或摧毁（→ 球体碎成材料）。两个情境都需要科技“裂隙探球”才有进度；若期间失去水晶球所在的星系（astral_planes.20 设置 has_lost_crystal_sphere），情境中止。", "en": "The two options of 15 each start a situation: study (→ the Crystal Rift, which can then be explored) or destroy (→ the sphere is shattered into materials). Both situations make no progress without the Rift Sphere technology; losing the sphere's system (astral_planes.20 sets has_lost_crystal_sphere) aborts them."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "situations:situation_study_crystal_sphere",
+    "situations:situation_destroy_crystal_sphere"
+   ],
+   "label": {
+    "zh": "研究或摧毁水晶球体",
+    "en": "Study or destroy the Crystal Sphere"
+   },
+   "note": {
+    "zh": "15 的两个选项各开始一个情境：研究（→ 水晶裂隙，可继续探索）或摧毁（→ 球体碎成材料）。两个情境都需要科技“裂隙探球”才有进度；若期间失去水晶球所在的星系（astral_planes.20 设置 has_lost_crystal_sphere），情境中止。",
+    "en": "The two options of 15 each start a situation: study (→ the Crystal Rift, which can then be explored) or destroy (→ the sphere is shattered into materials). Both situations make no progress without the Rift Sphere technology; losing the sphere's system (astral_planes.20 sets has_lost_crystal_sphere) aborts them."
+   }
+  }
  ],
  "endings": {
   "astral_situation.1": {
-   "label": {"zh": "水晶球体被毁", "en": "Crystal Sphere Destroyed"},
-   "note": {"zh": "获得 100 星界丝缕、500 稀有水晶与 500 奇异气体、修正 destroy_sphere_modifier（3600 天）和标本“水晶球体碎片”；排外或狂暴灭绝者另得凝聚力。球体被毁，此后不再有晶体裂隙。", "en": "100 astral threads, 500 rare crystals and 500 exotic gases, modifier destroy_sphere_modifier (3600 days) and the specimen “crystal sphere fragments”; xenophobes and homicidal empires also get unity. The sphere is gone and there will be no Crystal Rift."},
-   "evidence": "events/astral_planes_situation_events.txt:3-48"},
+   "label": {
+    "zh": "水晶球体被毁",
+    "en": "Crystal Sphere Destroyed"
+   },
+   "note": {
+    "zh": "获得 100 星界丝缕、500 稀有水晶与 500 奇异气体、修正 destroy_sphere_modifier（3600 天）和标本“水晶球体碎片”；排外或狂暴灭绝者另得凝聚力。球体被毁，此后不再有晶体裂隙。",
+    "en": "100 astral threads, 500 rare crystals and 500 exotic gases, modifier destroy_sphere_modifier (3600 days) and the specimen “crystal sphere fragments”; xenophobes and homicidal empires also get unity. The sphere is gone and there will be no Crystal Rift."
+   },
+   "evidence": "events/astral_planes_situation_events.txt:3-48"
+  },
   "astral_situation.5": {
-   "label": {"zh": "研究结束：晶体裂隙出现", "en": "The Study Is Over: the Crystal Rift appears"},
-   "note": {"zh": "按球体上的指示布置气体与星界丝缕后，球体消失，在水晶球星系生成晶体裂隙（见《晶体裂隙》）。", "en": "After arranging gases and astral threads as the sphere's instructions say, the sphere vanishes and the Crystal Rift appears in the crystal sphere system (see “The Crystal Rift”)."},
-   "evidence": "events/astral_planes_situation_events.txt:50-76"}
+   "label": {
+    "zh": "研究结束：晶体裂隙出现",
+    "en": "The Study Is Over: the Crystal Rift appears"
+   },
+   "note": {
+    "zh": "按球体上的指示布置气体与星界丝缕后，球体消失，在水晶球星系生成晶体裂隙（见《晶体裂隙》）。",
+    "en": "After arranging gases and astral threads as the sphere's instructions say, the sphere vanishes and the Crystal Rift appears in the crystal sphere system (see “The Crystal Rift”)."
+   },
+   "evidence": "events/astral_planes_situation_events.txt:50-76"
+  }
  },
  "nodeLabels": {
-  "astral_planes.30": {"zh": "奇怪的球体（尚无探球科技）", "en": "A Strange Sphere (no Rift Sphere yet)"}
+  "astral_planes.30": {
+   "zh": "奇怪的球体（尚无探球科技）",
+   "en": "A Strange Sphere (no Rift Sphere yet)"
+  }
  },
  "notes": [
-  {"doc": "astral_planes.15", "kind": "review",
+  {
+   "doc": "astral_planes.15",
+   "kind": "review",
    "zh": "球体只送一次（全局标记 crystal_sphere_sent）。每年脉冲检查 astral_planes.10：游戏已过中期 1 年以上、至少一个国家完成 5 次裂隙探索；然后在已有“裂隙探球”且完成 ≥3 次探索的国家中，按每国的随机骰（裂隙世界起源减半，AI 加倍）与探索次数、游戏年数比较，取完成探索最多者；球体生成在其最靠近首都的、没有天然虫洞的己方星系（游牧帝国则在己方航站所在星系），10 天 + 随机 350 天后触发 15。",
-   "en": "The sphere is sent only once (global flag crystal_sphere_sent). The yearly pulse checks astral_planes.10: more than a year of mid-game has passed and at least one country has completed 5 rift explorations; among countries with the Rift Sphere technology and ≥3 completed explorations, a per-country random roll (halved for Riftworld, doubled for AI) is compared with the exploration count and game years, and the country with the most explorations is chosen; the sphere appears in its owned system closest to the capital without a natural wormhole (nomads: the system of an owned waystation), and 15 fires 10 days plus up to 350 random days later."},
-  {"doc": "astral_planes.25", "kind": "review",
+   "en": "The sphere is sent only once (global flag crystal_sphere_sent). The yearly pulse checks astral_planes.10: more than a year of mid-game has passed and at least one country has completed 5 rift explorations; among countries with the Rift Sphere technology and ≥3 completed explorations, a per-country random roll (halved for Riftworld, doubled for AI) is compared with the exploration count and game years, and the country with the most explorations is chosen; the sphere appears in its owned system closest to the capital without a natural wormhole (nomads: the system of an owned waystation), and 15 fires 10 days plus up to 350 random days later."
+  },
+  {
+   "doc": "astral_planes.25",
+   "kind": "review",
    "zh": "若水晶球所在的星系易手（on_system_gained / on_system_lost），25 把球体交给新主人：已有“裂隙探球”则直接触发 15，否则触发 30，等研究出探球后由 35 再触发 15。",
-   "en": "If the sphere's system changes hands (on_system_gained / on_system_lost), 25 gives the sphere to the new owner: with the Rift Sphere technology it fires 15 at once, otherwise 30, and 35 fires 15 once the technology is researched."}
+   "en": "If the sphere's system changes hands (on_system_gained / on_system_lost), 25 gives the sphere to the new owner: with the Rift Sphere technology it fires 15 at once, otherwise 30, and 35 fires 15 once the technology is researched."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -53,8 +114,26 @@
    "zh": "已核对 astral_planes.10/15/20/25/30/35、两个情境与 astral_situation.1/5；原先分散的三个触发器故事（10、25、35）已并入。",
    "en": "Checked astral_planes.10/15/20/25/30/35, both situations and astral_situation.1/5; the formerly separate trigger stories (10, 25, 35) are merged."
   },
-  "sources": ["events/astral_planes_events.txt", "events/astral_planes_situation_events.txt", "common/situations/06_astral_planes_situations.txt", "common/on_actions/00_on_actions.txt", "common/scripted_variables"],
-  "uncertain": ["球体生成国的随机骰比较式（astral_planes.10:792-802）按字面转述。 / The roll comparison for choosing the recipient (astral_planes.10:792-802) is paraphrased literally."],
+  "sources": [
+   "events/astral_planes_events.txt",
+   "events/astral_planes_situation_events.txt",
+   "common/situations/06_astral_planes_situations.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/scripted_variables"
+  ],
+  "uncertain": [
+   "球体生成国的随机骰比较式（astral_planes.10:792-802）按字面转述。 / The roll comparison for choosing the recipient (astral_planes.10:792-802) is paraphrased literally."
+  ],
   "guide": "public/summaries/astral-crystal-sphere.md"
+ },
+ "placeholders": {
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你首都所在星球的名称。",
+    "en": "In the game, the name of your capital's planet appears here."
+   }
+  }
  }
 }

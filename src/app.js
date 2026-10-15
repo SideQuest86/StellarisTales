@@ -1,3 +1,5 @@
+import { GENERIC_NOTE, SCRIPTED_NOTE, installNameTooltips } from "./name-tooltip.js";
+import { guideElement } from "./markdown.js";
 import { storyMap } from "./story-map.js";
 import { FlowSurface } from "./flow-surface.js";
 import { ArchiveScene } from "./archive-scene.js";
@@ -66,6 +68,7 @@ try {
   profile = JSON.parse(localStorage.getItem("st-profile") || "{}");
   profileNames = JSON.parse(localStorage.getItem("st-profile-names") || "{}");
 } catch {}
+installNameTooltips();
 const T = (zh, en) => (lang === "en" ? en : zh);
 const media = matchMedia("(prefers-reduced-motion: reduce)"),
   reduced = () => reducedPreference || media.matches;
@@ -81,7 +84,7 @@ function local(value) {
 // game's own wording for the reading profile; engine names use the doc's neutral, scope-aware wording. Inserted
 // names are wrapped in private-use markers so the reader can show them as annotations, not as original prose.
 let names = {}, namesLoading = null;
-const OPEN = "", CLOSE = "";
+const OPEN = "\uE000", CLOSE = "\uE001";
 function loadNames() {
   namesLoading ||= json("stories/names.json").then((n) => (names = n)).catch(() => { namesLoading = null; });
   return namesLoading;
@@ -98,17 +101,61 @@ function scriptedName(def, depth) {
   const text = pick || fallback || def.default || def.variants.at(-1)?.text;
   return fill(local(text), depth + 1);
 }
+function nameNote(own, scripted) {
+  const n = own?.note || (scripted ? SCRIPTED_NOTE : GENERIC_NOTE);
+  return String(local(n)).replace(/[\uE000-\uE002]/g, "");
+}
+const TITLE_WORDS = [
+  "Science Officer", "Officer", "Admiral", "General", "Captain", "Commander", "Governor", "Doctor", "Dr\\.", "Professor",
+  "Envoy", "Ambassador", "Lieutenant", "Director", "Chancellor", "Knight", "Sir", "Dame", "Spymaster",
+  "Operation", "Arkship", "Asteroid", "the planet", "Emissary", "Councilor", "science ship", "Survey Unit",
+  "行动", "方舟", "议员", "使节",
+  "科学专员", "专员", "博士", "将军", "舰长", "总督", "上将", "元帅", "教授", "特使", "大使", "指挥官", "主任",
+].join("|");
 function fill(s, depth = 0) {
-  return String(s || "").replace(/\[([^\[\]]+)\]/g, (match, key) => {
+  const wrap = (text, note) => OPEN + note + "\uE002" + text + CLOSE;
+  return String(s || "").replace(/(\b(?:the|a|an)\s+)?\[([^\[\]]+)\]([\u3400-\u9fff]{1,6})?/gi, (match, art, key, after, offset, whole) => {
     if (depth > 3) return "";
+    let text, note;
     const own = chapter?.names?.[key];
-    if (own) return OPEN + local(own) + CLOSE;
     const tail = key.split("|")[0].split(".").at(-1);
-    if (names[tail]) return OPEN + scriptedName(names[tail], depth) + CLOSE;
-    if (/Plural/.test(tail)) return OPEN + T("他们", "they") + CLOSE;
-    if (/Name/.test(tail)) return OPEN + T("某处", "somewhere") + CLOSE;
-    return OPEN + T("……", "…") + CLOSE;
-  });
+    if (own) { text = local(own); note = nameNote(own, false); }
+    else if (names[tail]) { text = scriptedName(names[tail], depth).replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, ""); note = nameNote(null, true); }
+    else {
+      text = /Plural/.test(tail) ? T("他们", "they") : /Name/.test(tail) ? T("这个名字", "this name") : T("……", "…");
+      note = nameNote(null, false);
+    }
+    let lead = art || "", trail = after || "";
+    if (lang === "en") {
+      if (lead && /^(the|our|this|that|your|their|these|those)\b/i.test(text)) lead = "";
+      const before = whole.slice(0, offset);
+      if ((!lead) && /^[a-z]/.test(text) && (!before.trim() || /[.!?…]["”’']?\s*$/.test(before))) text = text[0].toUpperCase() + text.slice(1);
+      else if (lead && (!before.trim() || /[.!?…]["”’']?\s*$/.test(before)) && /^[a-z]/.test(lead)) lead = lead[0].toUpperCase() + lead.slice(1);
+    } else if (trail) {
+      // 我们的帝国[帝国] -> drop the repeated noun
+      for (let n = Math.min(trail.length, 6); n >= 2; n--) {
+        if (text.endsWith(trail.slice(0, n))) { trail = trail.slice(n); break; }
+      }
+    }
+    return lead + wrap(text, note) + trail;
+  }).replace(/([Tt]hey) (has|is|was|does)\b/g, (_, pronoun, verb) =>
+    // The game picks he/she with a singular verb; the neutral "they" needs the plural form.
+    `${pronoun} ${{ has: "have", is: "are", was: "were", does: "do" }[verb]}`)
+    // A title before a name placeholder ("Science Officer [Root.GetLeaderName]", "科学专员[…]"): the title itself
+    // carries the annotation instead of reading "Science Officer the leader".
+    .replace(new RegExp(`(${TITLE_WORDS})\\s?\\uE000([^\\uE002]*)\\uE002[^\\uE001]*\\uE001`, "gi"), (_, title, note) => OPEN + note + "" + title + CLOSE)
+    // "the [X] species" with X = "this species": drop the repeated noun; "[X]s" after a phrase ending in s.
+    .replace(/([\s])(\w+) \2\b/g, "$1$2")
+    .replace(/ss\b/g, "s")
+    // "[X]'s bodyguard" with X = "our": a possessive determiner takes no 's; zh "我们的[的]".
+    .replace(/(\b(?:our|their|your|its))['’]s\b/gi, "$1")
+    .replace(/的的/g, "的")
+    // Two substitutions side by side ("[Root.GetRulerTitle] [Root.GetRulerName]") name one person: a second phrase
+    // that brings its own determiner ("the ruler", "这位统治者") stands alone, otherwise they join ("our" + "ruler").
+    .replace(/([^]*)([^]*)(\s?)([^]*)([^]*)/g, (_, n1, t1, gap, n2, t2) =>
+      OPEN + n2 + "" + (/^(the|our|this|that|a|an|your|their|这|那|我们)/i.test(t2) ? t2 : t1 + gap + t2) + CLOSE)
+    // Sentence starts (also after a merge or a dropped article): capitalise the phrase.
+    .replace(/(^|[.!?]["”’']?\s+)([^]*)([a-z])/g, (_, lead, note, c) => lead + OPEN + note + "" + c.toUpperCase());
 }
 function prose(s, keepMarks = false) {
   const text = fill(String(s || ""))
@@ -116,11 +163,11 @@ function prose(s, keepMarks = false) {
     .replace(/£([^£]+)£/g, "")
     .replace(/\$[^$]+\$/g, lang === "zh" ? "……" : "…")
     .replace(/<[^>]*>/g, "");
-  return keepMarks ? text : text.replace(/[]/g, "");
+  return keepMarks ? text : text.replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, "");
 }
 const paragraph = (s) => esc(prose(s, true))
-  .replace(//g, `<span class="game-name" title="${esc(T("由游戏按存档填入的名称", "Name filled in by the game from the save"))}">`)
-  .replace(//g, "</span>")
+  .replace(/\uE000([^\uE002\uE001]*)\uE002/g, (_, note) => `<span class="game-name" tabindex="0" role="note" data-note="${note}">`)
+  .replace(/\uE001/g, "</span>")
   .replace(/\n/g, "<br>");
 function toast(s) {
   $("#toast").textContent = s;
@@ -176,7 +223,7 @@ function showSelection(story, column, index) {
   $("#selected-excerpt").textContent = prose(local(story.excerpt));
   $("#story-number").textContent = String(index + 1).padStart(2, "0");
   $("#story-total").textContent = `/ ${columns[column].stories.length}`;
-  for (const b of $("#categories").children) {
+  for (const b of $("#categories").querySelectorAll("[data-category]")) {
     b.classList.toggle("active", Number(b.dataset.category) === column);
     b.setAttribute(
       "aria-pressed",
@@ -620,9 +667,7 @@ function renderChapter(preservePosition = false) {
     const download=document.createElement('a');
     download.href=asset(dossier.summary.path); download.download='';
     download.textContent=T('下载 Markdown','Download Markdown');
-    const text=document.createElement('div');
-    text.style.whiteSpace='pre-wrap'; text.style.lineHeight='1.85';
-    text.textContent=dossier.summary.text;
+    const text=guideElement(dossier.summary.text,lang,{show:T('显示英文 / Show English','Show Chinese / 显示中文'),hide:T('仅当前语言','Current language only')});
     notesBox.append(heading,download,text);
     $('.chapter-document').append(notesBox);
   }
@@ -709,7 +754,7 @@ function renderChapter(preservePosition = false) {
     "",
     `#story=${encodeURIComponent(story.id)}&chapter=${encodeURIComponent(r.id)}`,
   );
-  document.title = prose(local(story.title)) + T(" · 群星", " · Stellaris Tales");
+  document.title = prose(local(story.title)) + " · Stellaris Tales";
   if (!reduced() && chapterChanged)
     $(".chapter-document").animate(
       [
@@ -753,8 +798,9 @@ function renderChrome() {
   // Catalogue bar: index, localized category name and its story count.
   $("#categories").innerHTML = CATEGORIES.map(
     (_, i) =>
-      `<button type="button" data-category="${i}" class="${i === selectedColumn ? "active" : ""}" aria-pressed="${i === selectedColumn}"><small>${String(i + 1).padStart(2, "0")}</small><span>${esc(t(`cat.${CATEGORIES[i][0]}`))}<em>${esc(t("catalogue.count", { n: columns[i].stories.length }))}</em></span></button>`,
-  ).join("");
+      `<button type="button" data-category="${i}" class="${i === selectedColumn ? "active" : ""}" aria-pressed="${i === selectedColumn}"><span>${esc(t(`cat.${CATEGORIES[i][0]}`))}<em>${esc(t("catalogue.count", { n: columns[i].stories.length }))}</em></span></button>`,
+  ).join("") +
+    `<button type="button" id="museum-open" class="catalogue-museum" aria-label="${esc(t("header.museumLabel"))}"><span aria-hidden="true">◇</span><span>${esc(t("header.museum"))}</span></button>`;
 }
 function renderSearch() {
   if (!stories.length) return;
@@ -957,7 +1003,10 @@ async function showMuseum(focusKey) {
     toast(T("博物天枢暂时无法打开。", "The Grand Archive could not be opened.") + " " + e.message);
   }
 }
-$("#museum-open").onclick = () => { location.hash = "museum"; };
+// The entry lives in the re-rendered catalogue nav, so the click is delegated on the nav itself.
+$("#categories").addEventListener("click", (e) => {
+  if (e.target.closest("#museum-open")) location.hash = "museum";
+});
 function parseHash() {
   const q = new URLSearchParams(location.hash.slice(1));
   if (location.hash.startsWith("#museum")) return showMuseum(q.get("museum") || undefined);

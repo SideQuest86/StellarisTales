@@ -88,5 +88,31 @@
    "common/special_projects/00_projects_3.txt:1687"
   ],
   "guide": "public/summaries/event-galactic-features-387.md"
+ },
+ "placeholders": {
+  "FromFrom.System.GetName": {
+   "zh": "那个星系",
+   "en": "that system",
+   "note": {
+    "zh": "游戏里这里会出现那个星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "tiyanki_graveyard_system.GetName": {
+   "zh": "这个星系",
+   "en": "graveyard",
+   "note": {
+    "zh": "游戏里这里会出现缇扬奇坟场所在星系的名称。",
+    "en": "In the game, the name of the Tiyanki graveyard system appears here."
+   }
+  },
+  "tiyanki_no_contact.GetName": {
+   "zh": "未知物种",
+   "en": "unknown species",
+   "note": {
+    "zh": "游戏里这里会出现尚未接触的物种名称。",
+    "en": "In the game, the name of the species not yet contacted appears here."
+   }
+  }
  }
 }

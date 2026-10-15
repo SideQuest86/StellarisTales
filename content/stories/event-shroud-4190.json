@@ -52,5 +52,31 @@
    "common/patrons/psionic_auras/00_auras.txt (on_start → check_psionic_suppression_eligibility)"
   ],
   "guide": "public/summaries/event-shroud-4190.md"
+ },
+ "placeholders": {
+  "event_target:mindwarden_enclave_country.GetName": {
+   "zh": "那个飞地",
+   "en": "the enclave",
+   "note": {
+    "zh": "游戏里这里会出现这个飞地的名称。",
+    "en": "In the game, the name of this enclave appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "那个源头",
+   "en": "the source",
+   "note": {
+    "zh": "游戏里这里会出现灵能源头的名称。",
+    "en": "In the game, the name of the psionic source appears here."
+   }
+  }
  }
 }

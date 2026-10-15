@@ -79,5 +79,47 @@
   "merged": [
    "event-bio-819"
   ]
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那一派",
+   "en": "faction",
+   "note": {
+    "zh": "游戏里这里会出现这一派的名称。",
+    "en": "In the game, the name of this faction appears here."
+   }
+  },
+  "From.Target.GetName": {
+   "zh": "第三方",
+   "en": "the third party",
+   "note": {
+    "zh": "游戏里这里会出现第三方的名称。",
+    "en": "In the game, the name of the third party appears here."
+   }
+  },
+  "Owner.GetAdj": {
+   "zh": "我们的",
+   "en": "ours",
+   "note": {
+    "zh": "游戏里这里会出现我们的形容词。",
+    "en": "In the game, our adjective appears here."
+   }
+  },
+  "Target.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "Target.GetSpeciesName": {
+   "zh": "人员",
+   "en": "personnel",
+   "note": {
+    "zh": "游戏里这里会出现这些人员的称呼。",
+    "en": "In the game, the term for these personnel appears here."
+   }
+  }
  }
 }

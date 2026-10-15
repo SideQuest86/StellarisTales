@@ -18,5 +18,23 @@
   "uncertain": [
    "The exact condition under which shroud.728 is excluded (modifier factor 0 at 2988-2992) combines leader_class = scientist and has_trait = maimed inside a NOT; the compiler marks the 50% as modified."
   ]
+ },
+ "placeholders": {
+  "This.GetClass": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现我们的飞船类别词。",
+    "en": "In the game, the word for our ship class appears here."
+   }
+  },
+  "This.GetName": {
+   "zh": "飞行员",
+   "en": "pilot",
+   "note": {
+    "zh": "游戏里这里会出现驾驶员的名字。",
+    "en": "In the game, the pilot's name appears here."
+   }
+  }
  }
 }

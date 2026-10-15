@@ -89,5 +89,83 @@
    "federations2.702 carries weight 40 of about 122 in the pool, so it is far from rare."
   ],
   "guide": "public/summaries/site-site-ruins-of-shallash.md"
+ },
+ "placeholders": {
+  "From.System.GetName": {
+   "zh": "某个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "Root.Leader.GetName": {
+   "zh": "领袖",
+   "en": "leader",
+   "note": {
+    "zh": "游戏里这里会出现你的领袖的名字。",
+    "en": "In the game, your leader's name appears here."
+   }
+  },
+  "Root.Leader.GetTitle": {
+   "zh": "这位",
+   "en": "the",
+   "note": {
+    "zh": "游戏里这里会出现领袖的称谓。",
+    "en": "In the game, your leader's title appears here."
+   }
+  },
+  "Root.Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "fanatic_xenophobe_fe.GetName": {
+   "zh": "那个物种",
+   "en": "that species",
+   "note": {
+    "zh": "游戏里这里会出现另一个物种的名称。",
+    "en": "In the game, the name of the other species appears here."
+   }
+  },
+  "fanatic_xenophobe_fe.GetSpeciesName": {
+   "zh": "那个",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现另一个物种的名称。",
+    "en": "In the game, the name of the other species appears here."
+   }
+  },
+  "fanatic_xenophobe_fe.GetSpeciesNamePlural": {
+   "zh": "那些种族",
+   "en": "the other peoples",
+   "note": {
+    "zh": "游戏里这里会出现另一个物种的复数名称。",
+    "en": "In the game, the plural name of the other species appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "federations2.4": {
+   "Root.Leader.GetName": {
+    "zh": "领袖",
+    "en": "leader",
+    "note": {
+     "zh": "游戏里这里会出现你的领袖的名字。",
+     "en": "In the game, your leader's name appears here."
+    }
+   },
+   "Root.Leader.GetTitle": {
+    "zh": "这位",
+    "en": "the",
+    "note": {
+     "zh": "游戏里这里会出现领袖的称谓。",
+     "en": "In the game, your leader's title appears here."
+    }
+   }
+  }
  }
 }

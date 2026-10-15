@@ -3,40 +3,227 @@
  "category": "society",
  "titleFrom": "colony.3005",
  "bridges": [
-  {"from": "colony.3021", "choice": "colony.3021.b", "to": "colony.3031", "conditional": true, "external": true,
-   "label": {"zh": "“只做贸易”：此后每五年一次跨次元贸易检查", "en": "'Just trade': the five-yearly inter-dimensional trade check follows"},
-   "evidence": "events/colony_events_3.txt:1822-1834 3021.b sets dportal_trader and the dportal_trade_normal modifier; events/colony_events_3.txt:2007-2080 hidden 3029/3030 test it and fire 3031/3032 (story event-colony-3029)."},
-  {"from": "colony.3024", "choice": "colony.3024.a", "to": "colony.3031", "conditional": true, "external": true,
-   "label": {"zh": "对话到底后选择通商：此后每五年一次贸易检查", "en": "After the full conversation, agree to trade: the five-yearly trade check follows"},
-   "evidence": "events/colony_events_3.txt:1976-2003 3024.a sets dportal_trader and dportal_trade_normal; 2007-2080 as above (story event-colony-3029)."},
-  {"from": "colony.3050", "to": "colony.3051", "conditional": true, "external": true,
-   "label": {"zh": "恶魔军队登陆后，若殖民地防守失败", "en": "If the colony's defenders lose the ground battle against the demon armies"},
-   "evidence": "common/on_actions/00_on_actions.txt:885 on_colony_defenders_lose -> colony.3051 (story event-colony-3051); 3050 lands the armies."},
-  {"from": "colony.9815", "to": "colony.9820", "conditional": true, "external": true,
-   "label": {"zh": "击毁那支“熟悉的舰队”后", "en": "After the 'familiar fleet' is destroyed"},
-   "evidence": "events/colony_events_3.txt:7772-7790 9815.BATTLESTATIONS creates the portal invaders' fleet flagged B_world_fleet; common/on_actions/00_on_actions.txt:1668 on_fleet_destroyed_perp -> colony.9820 (story event-colony-9820)."}
+  {
+   "from": "colony.3021",
+   "choice": "colony.3021.b",
+   "to": "colony.3031",
+   "conditional": true,
+   "external": true,
+   "label": {
+    "zh": "“只做贸易”：此后每五年一次跨次元贸易检查",
+    "en": "'Just trade': the five-yearly inter-dimensional trade check follows"
+   },
+   "evidence": "events/colony_events_3.txt:1822-1834 3021.b sets dportal_trader and the dportal_trade_normal modifier; events/colony_events_3.txt:2007-2080 hidden 3029/3030 test it and fire 3031/3032 (story event-colony-3029)."
+  },
+  {
+   "from": "colony.3024",
+   "choice": "colony.3024.a",
+   "to": "colony.3031",
+   "conditional": true,
+   "external": true,
+   "label": {
+    "zh": "对话到底后选择通商：此后每五年一次贸易检查",
+    "en": "After the full conversation, agree to trade: the five-yearly trade check follows"
+   },
+   "evidence": "events/colony_events_3.txt:1976-2003 3024.a sets dportal_trader and dportal_trade_normal; 2007-2080 as above (story event-colony-3029)."
+  },
+  {
+   "from": "colony.3050",
+   "to": "colony.3051",
+   "conditional": true,
+   "external": true,
+   "label": {
+    "zh": "恶魔军队登陆后，若殖民地防守失败",
+    "en": "If the colony's defenders lose the ground battle against the demon armies"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:885 on_colony_defenders_lose -> colony.3051 (story event-colony-3051); 3050 lands the armies."
+  },
+  {
+   "from": "colony.9815",
+   "to": "colony.9820",
+   "conditional": true,
+   "external": true,
+   "label": {
+    "zh": "击毁那支“熟悉的舰队”后",
+    "en": "After the 'familiar fleet' is destroyed"
+   },
+   "evidence": "events/colony_events_3.txt:7772-7790 9815.BATTLESTATIONS creates the portal invaders' fleet flagged B_world_fleet; common/on_actions/00_on_actions.txt:1668 on_fleet_destroyed_perp -> colony.9820 (story event-colony-9820)."
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["colony.3006", "colony.3007", "colony.3008", "colony.3009", "colony.9800"],
-   "label": {"zh": "项目完成后的五种次元（10/10/10/10/5）", "en": "Five dimensions after the portal project (10/10/10/10/5)"},
-   "note": {"zh": "权重见 common/special_projects/00_projects_3.txt:811-851；负质量（9800）在AI、特定起源或母星为人造/城市等类型时权重为0，并且每局只出现一次（b_world_intrudes）。", "en": "Weights per common/special_projects/00_projects_3.txt:811-851; Negative Mass (9800) is zeroed for AI empires, some origins and artificial/city-type home planets, and only once per game (b_world_intrudes)."}},
-  {"kind": "exclusive", "members": ["colony.3050", "colony.3055", "colony.3060"],
-   "label": {"zh": "骑士之路的结局（15无事 / 25 / 40 / 20）", "en": "Knights route outcomes (15 nothing / 25 / 40 / 20)"},
-   "note": {"zh": "3600–4500天后随机其一；3050在禁止破坏性玩法时权重为0。", "en": "One of them fires after 3600-4500 days; 3050 is zeroed when disruptive gameplay is blocked."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.3006",
+    "colony.3007",
+    "colony.3008",
+    "colony.3009",
+    "colony.9800"
+   ],
+   "label": {
+    "zh": "项目完成后的五种次元（10/10/10/10/5）",
+    "en": "Five dimensions after the portal project (10/10/10/10/5)"
+   },
+   "note": {
+    "zh": "权重见 common/special_projects/00_projects_3.txt:811-851；负质量（9800）在AI、特定起源或母星为人造/城市等类型时权重为0，并且每局只出现一次（b_world_intrudes）。",
+    "en": "Weights per common/special_projects/00_projects_3.txt:811-851; Negative Mass (9800) is zeroed for AI empires, some origins and artificial/city-type home planets, and only once per game (b_world_intrudes)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "colony.3050",
+    "colony.3055",
+    "colony.3060"
+   ],
+   "label": {
+    "zh": "骑士之路的结局（15无事 / 25 / 40 / 20）",
+    "en": "Knights route outcomes (15 nothing / 25 / 40 / 20)"
+   },
+   "note": {
+    "zh": "3600–4500天后随机其一；3050在禁止破坏性玩法时权重为0。",
+    "en": "One of them fires after 3600-4500 days; 3050 is zeroed when disruptive gameplay is blocked."
+   }
+  }
  ],
  "notes": [
-  {"doc": "colony.3005", "kind": "review", "zh": "殖民地2年（权重8/958）或3年（5/739）时的随机事件，也可由荒原飞地（enclave.5170）触发；限非AI、非首都、非母星的原殖民地，每国一次（dportal_country）。选项只是启用“探测位面传送门”特殊项目并添加研究区矿藏。", "en": "Random colony event at 2 years (weight 8/958) or 3 years (5/739), also fired by enclave.5170; only for non-AI owners, non-capital non-homeworld original colonies, once per country (dportal_country). Its only option enables the portal special project and adds a research-zone deposit."},
-  {"doc": "colony.3006", "kind": "review", "zh": "选项由帝国决定：科学（非唯灵）、祈祷/灵能祈祷（唯灵）、投石（非唯灵且封建）、骑士（有毒骑士起源）、保留传送门（总是可选）。", "en": "Options depend on the empire: science (non-spiritualist), prayer / psionic prayer (spiritualist), rocks (non-spiritualist feudal realm), knights (Toxic Knights origin), and always 'keep the portal'."},
-  {"doc": "colony.3009", "kind": "review", "zh": "镜面次元：一段线性的对话（3020→3024），在3021可选“只做贸易”提前结束；两条路都会设置贸易标记，其后续是故事 event-colony-3029。", "en": "Mirror dimension: a linear conversation (3020 to 3024); at 3021 'just trade' ends it early. Both paths set the trade flag whose continuation is the story event-colony-3029."},
-  {"doc": "colony.3008", "kind": "review", "zh": "太虚：1825–3650天后再次触发窥探虚空（3040），启动 NULLVOID_PROJECT，完成后得到3041。", "en": "Null void: after 1825-3650 days 3040 offers the NULLVOID_PROJECT; its completion shows 3041."}
+  {
+   "doc": "colony.3005",
+   "kind": "review",
+   "zh": "殖民地2年（权重8/958）或3年（5/739）时的随机事件，也可由荒原飞地（enclave.5170）触发；限非AI、非首都、非母星的原殖民地，每国一次（dportal_country）。选项只是启用“探测位面传送门”特殊项目并添加研究区矿藏。",
+   "en": "Random colony event at 2 years (weight 8/958) or 3 years (5/739), also fired by enclave.5170; only for non-AI owners, non-capital non-homeworld original colonies, once per country (dportal_country). Its only option enables the portal special project and adds a research-zone deposit."
+  },
+  {
+   "doc": "colony.3006",
+   "kind": "review",
+   "zh": "选项由帝国决定：科学（非唯灵）、祈祷/灵能祈祷（唯灵）、投石（非唯灵且封建）、骑士（有毒骑士起源）、保留传送门（总是可选）。",
+   "en": "Options depend on the empire: science (non-spiritualist), prayer / psionic prayer (spiritualist), rocks (non-spiritualist feudal realm), knights (Toxic Knights origin), and always 'keep the portal'."
+  },
+  {
+   "doc": "colony.3009",
+   "kind": "review",
+   "zh": "镜面次元：一段线性的对话（3020→3024），在3021可选“只做贸易”提前结束；两条路都会设置贸易标记，其后续是故事 event-colony-3029。",
+   "en": "Mirror dimension: a linear conversation (3020 to 3024); at 3021 'just trade' ends it early. Both paths set the trade flag whose continuation is the story event-colony-3029."
+  },
+  {
+   "doc": "colony.3008",
+   "kind": "review",
+   "zh": "太虚：1825–3650天后再次触发窥探虚空（3040），启动 NULLVOID_PROJECT，完成后得到3041。",
+   "en": "Null void: after 1825-3650 days 3040 offers the NULLVOID_PROJECT; its completion shows 3041."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-13",
   "reviewer": "r2-society",
-  "scope": {"zh": "传送门事件链全部：3005、项目、3006–3012、3020–3024、3040/3041、3050/3055/3060、9800–9815及负质量事件链卡；后续故事通过跨故事连接指向 event-colony-3029、-3051、-9820。", "en": "The whole portal chain: 3005, the projects, 3006-3012, 3020-3024, 3040/3041, 3050/3055/3060, 9800-9815 and the Negative Mass chain card; continuations link out to event-colony-3029, -3051 and -9820."},
-  "sources": ["events/colony_events_3.txt:1175-2005", "events/colony_events_3.txt:7586-7790", "common/special_projects/00_projects_3.txt:803-930", "common/on_actions/00_on_actions.txt:885, 1668, 3766, 3819", "events/overlord_enclaves_events.txt:9926"],
-  "uncertain": ["Details of NULLVOID_PROJECT on_success and 3050/3055/3060 contents were read only for structure, not every reward."],
+  "scope": {
+   "zh": "传送门事件链全部：3005、项目、3006–3012、3020–3024、3040/3041、3050/3055/3060、9800–9815及负质量事件链卡；后续故事通过跨故事连接指向 event-colony-3029、-3051、-9820。",
+   "en": "The whole portal chain: 3005, the projects, 3006-3012, 3020-3024, 3040/3041, 3050/3055/3060, 9800-9815 and the Negative Mass chain card; continuations link out to event-colony-3029, -3051 and -9820."
+  },
+  "sources": [
+   "events/colony_events_3.txt:1175-2005",
+   "events/colony_events_3.txt:7586-7790",
+   "common/special_projects/00_projects_3.txt:803-930",
+   "common/on_actions/00_on_actions.txt:885, 1668, 3766, 3819",
+   "events/overlord_enclaves_events.txt:9926"
+  ],
+  "uncertain": [
+   "Details of NULLVOID_PROJECT on_success and 3050/3055/3060 contents were read only for structure, not every reward."
+  ],
   "guide": "public/summaries/event-colony-3005.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Root.Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.Owner.Species.GetName": {
+   "zh": "我们的同胞",
+   "en": "our people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.Owner.Species.GetNamePlural": {
+   "zh": "同胞",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "cloned_physicist.GetName": {
+   "zh": "这位物理学家",
+   "en": "the physicist",
+   "note": {
+    "zh": "游戏里这里会出现这位物理学家的名字。",
+    "en": "In the game, this physicist's name appears here."
+   }
+  },
+  "doomslayer_knight.GetFirstName": {
+   "zh": "末日杀手",
+   "en": "Doomslayer",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "doomslayer_knight.GetHisHer": {
+   "zh": "此人",
+   "en": "their",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的代词。",
+    "en": "In the game, this knight's pronoun appears here."
+   }
+  },
+  "doomslayer_knight.GetName": {
+   "zh": "末日杀手",
+   "en": "the Doomslayer",
+   "note": {
+    "zh": "游戏里这里会出现这位骑士的名字。",
+    "en": "In the game, this knight's name appears here."
+   }
+  },
+  "root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "colony.9810": {
+   "Root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire",
+    "note": {
+     "zh": "游戏里这里会出现你的帝国名称。",
+     "en": "In the game, your empire's name appears here."
+    }
+   }
+  }
  }
 }

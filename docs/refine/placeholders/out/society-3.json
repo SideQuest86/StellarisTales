@@ -1,0 +1,381 @@
+{
+  "event-fircon-1440": {
+    "placeholders": {
+      "From.Owner.Capital.GetName": {"zh": "那个帝国的首都", "en": "the other empire's capital", "note": {"zh": "游戏里这里会出现另一个帝国首都的名称。", "en": "In the game, the name of the other empire's capital appears here."}},
+      "FromFrom.Owner.Capital.GetName": {"zh": "另一颗星球", "en": "another world", "note": {"zh": "游戏里这里会出现另一颗星球的名称。", "en": "In the game, the name of another world appears here."}},
+      "FromFromFrom.Owner.Capital.GetName": {"zh": "第三颗星球", "en": "a third world", "note": {"zh": "游戏里这里会出现第三颗星球的名称。", "en": "In the game, the name of a third world appears here."}},
+      "FromFromFromFrom.Owner.Capital.GetName": {"zh": "第四颗星球", "en": "a fourth world", "note": {"zh": "游戏里这里会出现第四颗星球的名称。", "en": "In the game, the name of a fourth world appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Four different worlds appear in one story; they are given distinct phrases to avoid confusion."]
+  },
+  "event-fircon-1465": {},
+  "event-fircon-1495": {},
+  "event-fircon-2000": {
+    "placeholders": {
+      "pre_ftl_species.GetName": {"zh": "该物种", "en": "native", "note": {"zh": "游戏里这里会出现这个前FTL物种的名称。", "en": "In the game, the name of the pre-FTL species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-2010": {
+    "placeholders": {
+      "pre_ftl_species.GetNamePlural": {"zh": "生物", "en": "creatures", "note": {"zh": "游戏里这里会出现这个前FTL物种的复数名称。", "en": "In the game, the plural name of the pre-FTL species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'from planet [pre_ftl_planet]' reads 'from planet this planet'; the planet phrase cannot drop the word 'planet' without changing game text."]
+  },
+  "event-fircon-2500": {},
+  "event-fircon-2510": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "当地势力", "en": "the local power", "note": {"zh": "游戏里这里会出现这个前FTL势力的名称。", "en": "In the game, the name of this pre-FTL power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-2520": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "当地势力", "en": "the local power", "note": {"zh": "游戏里这里会出现这个前FTL势力的名称。", "en": "In the game, the name of this pre-FTL power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-2530": {},
+  "event-fircon-2540": {},
+  "event-fircon-2550": {},
+  "event-fircon-2600": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "当地势力", "en": "the local power", "note": {"zh": "游戏里这里会出现这个前FTL势力的名称。", "en": "In the game, the name of this pre-FTL power appears here."}},
+      "from.owner.GetSpeciesName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现发射方物种的形容词。", "en": "In the game, the adjective for the launching species appears here."}},
+      "from.owner.GetSpeciesAdj": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现发射方物种的形容词。", "en": "In the game, the adjective for the launching species appears here."}},
+      "from.owner.capital_scope.GetName": {"zh": "首都", "en": "the capital", "note": {"zh": "游戏里这里会出现发射方首都的名称。", "en": "In the game, the name of the launching empire's capital appears here."}},
+      "from.owner.GetName": {"zh": "发射方帝国", "en": "the launching empire", "note": {"zh": "游戏里这里会出现发射任务的帝国名称。", "en": "In the game, the name of the empire that launched the mission appears here."}},
+      "fromfrom.owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "fromfromfrom.owner.GetName": {"zh": "第三个帝国", "en": "a third empire", "note": {"zh": "游戏里这里会出现第三个帝国的名称。", "en": "In the game, the name of a third empire appears here."}},
+      "fromfromfrom.owner.GetSpeciesName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个物种的形容词。", "en": "In the game, the adjective for this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Several different empires and species appear in one story; distinct phrases are used. 'Local' is used for the species of the launching empire."]
+  },
+  "event-fircon-5000": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "from.solar_system.GetName": {"zh": "这个", "en": "affected", "note": {"zh": "游戏里这里会出现受影响星系的名称。", "en": "In the game, the name of the affected star system appears here."}},
+      "capital_star.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现首都所在恒星的名称。", "en": "In the game, the name of the capital's star appears here."}},
+      "event_target:solarpunk_country.GetSpeciesAdj": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {
+      "fircon.5015": {"From.GetName": {"zh": "这个", "en": "nearby", "note": {"zh": "游戏里这里会出现附近星系的名称。", "en": "In the game, the name of the nearby star system appears here."}}},
+      "fircon.5036": {"From.solar_system.GetName": {"zh": "这个", "en": "affected", "note": {"zh": "游戏里这里会出现受影响星系的名称。", "en": "In the game, the name of the affected star system appears here."}}},
+      "fircon.5040": {"From.GetName": {"zh": "这个", "en": "central", "note": {"zh": "游戏里这里会出现中心星系的名称。", "en": "In the game, the name of the central star system appears here."}}}
+    },
+    "issues": ["'in the [system] system' needs an adjective, so 'nearby', 'central' and 'affected' stand in for the system name in those sentences."]
+  },
+  "event-fircon-6000": {
+    "placeholders": {
+      "non_believers_country.GetSpeciesNamePlural": {"zh": "他们", "en": "people", "note": {"zh": "游戏里这里会出现这个物种的复数名称。", "en": "In the game, the plural name of this species appears here."}},
+      "non_believers_country.GetSpeciesName": {"zh": "他们", "en": "people", "note": {"zh": "游戏里这里会出现这个物种的名称。", "en": "In the game, the name of this species appears here."}},
+      "non_believers_country.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {
+      "fircon.6000": {"non_believers_planet.GetName": {"zh": "这颗星球", "en": "the homeworld", "note": {"zh": "游戏里这里会出现这颗行星的名称。", "en": "In the game, the name of this planet appears here."}}},
+      "fircon.6025": {"non_believers_planet.GetName": {"zh": "这颗星球", "en": "planet", "note": {"zh": "游戏里这里会出现这颗行星的名称。", "en": "In the game, the name of this planet appears here."}}}
+    },
+    "issues": ["'Hollow [planet]' reads awkwardly in fircon.6025; 'planet' is used there instead."]
+  },
+  "event-fircon-7500": {
+    "placeholders": {
+      "Root.GetSpeciesNamePlural": {"zh": "我们的同胞", "en": "our people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "Species.GetEarNamePlural": {"zh": "耳朵", "en": "ears", "note": {"zh": "游戏里这里会出现你们物种耳朵的名称。", "en": "In the game, the name of your species' ears appears here."}},
+      "pre_ftl_country.GetSpeciesAdj": {"zh": "当地人", "en": "natives", "note": {"zh": "游戏里这里会出现这个前FTL物种的名称。", "en": "In the game, the name of the pre-FTL species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-7505": {
+    "placeholders": {
+      "pre_ftl_country.GetSpeciesNamePlural": {"zh": "当地人", "en": "natives", "note": {"zh": "游戏里这里会出现这个前FTL物种的复数名称。", "en": "In the game, the plural name of the pre-FTL species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-7510": {},
+  "event-fircon-8000": {
+    "placeholders": {
+      "owner.GetAdj": {"zh": "帝国", "en": "imperial", "note": {"zh": "游戏里这里会出现你的帝国的形容词。", "en": "In the game, your empire's adjective appears here."}},
+      "owner.GetRulerName": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现你的统治者的称谓。", "en": "In the game, your ruler's title appears here."}},
+      "owner.GetRulerTitle": {"zh": "最敬爱的", "en": "beloved", "note": {"zh": "游戏里这里会出现你的统治者的敬称。", "en": "In the game, a form of address for your ruler appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-8025": {
+    "placeholders": {
+      "freeport_country.GetName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个帝国的形容词。", "en": "In the game, the adjective for this empire appears here."}},
+      "freeport_species.GetAdj": {"zh": "当地人", "en": "local", "note": {"zh": "游戏里这里会出现这个物种的形容词。", "en": "In the game, the adjective for this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-8030": {
+    "placeholders": {
+      "sweet_country.GetName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个帝国的形容词。", "en": "In the game, the adjective for this empire appears here."}},
+      "sweet_species.GetName": {"zh": "当地人", "en": "natives", "note": {"zh": "游戏里这里会出现这个物种的复数名称。", "en": "In the game, the plural name of this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-8035": {
+    "placeholders": {
+      "landgrab_country.GetName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个帝国的形容词。", "en": "In the game, the adjective for this empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-8040": {
+    "placeholders": {
+      "fruitful_coop_country.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-8045": {
+    "placeholders": {
+      "space_slavers_country.GetName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个帝国的形容词。", "en": "In the game, the adjective for this empire appears here."}},
+      "space_slavers_species.GetName": {"zh": "当地人", "en": "native", "note": {"zh": "游戏里这里会出现这个物种的名称。", "en": "In the game, the name of this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'a large group of native [pre-FTL plural]' may read awkwardly."]
+  },
+  "event-fircon-8050": {
+    "placeholders": {
+      "preftl_slavers_country.GetName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个帝国的形容词。", "en": "In the game, the adjective for this empire appears here."}},
+      "preftl_slavers_species.GetName": {"zh": "当地人", "en": "natives", "note": {"zh": "游戏里这里会出现这个物种的复数名称。", "en": "In the game, the plural name of this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-8055": {
+    "placeholders": {
+      "preftl_hagglers_country.GetName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个帝国的形容词。", "en": "In the game, the adjective for this empire appears here."}},
+      "preftl_hagglers_species.GetName": {"zh": "当地人", "en": "natives", "note": {"zh": "游戏里这里会出现这个物种的复数名称。", "en": "In the game, the plural name of this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Pressure the [country] into better deals' reads 'Pressure the local into better deals'."]
+  },
+  "event-fircon-8060": {},
+  "event-fircon-8500": {},
+  "event-fircon-8515": {
+    "placeholders": {
+      "preftl_lone_drone_species.GetName": {"zh": "个体", "en": "individual", "note": {"zh": "游戏里这里会出现这个子个体的名称。", "en": "In the game, the name of this individual drone appears here."}},
+      "preftl_lone_drone_species.GetNamePlural": {"zh": "他们", "en": "drones", "note": {"zh": "游戏里这里会出现这个物种的复数名称。", "en": "In the game, the plural name of this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-8530": {
+    "placeholders": {
+      "preftl_different_flavors_species.GetNamePlural": {"zh": "当地人", "en": "natives", "note": {"zh": "游戏里这里会出现这个物种的复数名称。", "en": "In the game, the plural name of this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-fircon-8565": {
+    "placeholders": {
+      "preftl_invasives_species.GetNamePlural": {"zh": "当地人", "en": "natives", "note": {"zh": "游戏里这里会出现这个物种的复数名称。", "en": "In the game, the plural name of this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'We confronted the [planet] diplomats' reads 'the this planet diplomats'; the planet phrase cannot be reused for both 'diplomats' and 'popular on'."]
+  },
+  "event-first-contact-1": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'in the [system] system' reads 'in the this system system' where the system name is used with the word 'system' in the text; the title 'Encounter in [system]' reads correctly."]
+  },
+  "event-first-contact-100": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-103": {
+    "placeholders": {
+      "This.ContactCountry.GetAdj": {"zh": "蜂巢", "en": "hive", "note": {"zh": "游戏里这里会出现这个外星群体的形容词。", "en": "In the game, the adjective for this alien group appears here."}},
+      "This.ContactCountry.GetGovernmentName": {"zh": "集体", "en": "collective", "note": {"zh": "游戏里这里会出现这个外星群体的政府名称。", "en": "In the game, the government name of this alien group appears here."}},
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the individual [species] of the species'' phrase keeps the generic 'the species' form for the species' own adjective."]
+  },
+  "event-first-contact-104": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-1100": {
+    "placeholders": {
+      "contact_country.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-1105": {
+    "placeholders": {
+      "contact_country.GetAdj": {"zh": "未知", "en": "unknown", "note": {"zh": "游戏里这里会出现这个外星势力的形容词。", "en": "In the game, the adjective for this alien power appears here."}},
+      "contact_country.GetName": {"zh": "集体", "en": "collective", "note": {"zh": "游戏里这里会出现这个外星群体的名称。", "en": "In the game, the name of this alien group appears here."}},
+      "contact_country.GetSpeciesEarNamePlural": {"zh": "耳朵", "en": "ears", "note": {"zh": "游戏里这里会出现这个外星物种耳朵的名称。", "en": "In the game, the name of this alien species' ears appears here."}},
+      "contact_country.GetSpeciesOrganNamePlural": {"zh": "器官", "en": "organs", "note": {"zh": "游戏里这里会出现这个外星物种器官的名称。", "en": "In the game, the name of this alien species' organs appears here."}},
+      "contact_country.GetSpeciesHandNamePlural": {"zh": "手", "en": "hands", "note": {"zh": "游戏里这里会出现这个外星物种手的名称。", "en": "In the game, the name of this alien species' hands appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-1110": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知", "en": "unknown", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}},
+      "contact_country.GetAdj": {"zh": "未知", "en": "unknown", "note": {"zh": "游戏里这里会出现这个外星势力的形容词。", "en": "In the game, the adjective for this alien power appears here."}},
+      "contact_country.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'identify the [name] as the civilisation' reads awkwardly where the working name is 'unknown'."]
+  },
+  "event-first-contact-1120": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Envoy [leader]' reads 'Our Envoy the leader' because the leader name is a role phrase."]
+  },
+  "event-first-contact-200": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}},
+      "From.Owner.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'within the [our empire]' reads 'within the our empire' and needs a fix on the page side."]
+  },
+  "event-first-contact-250": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "This.ContactCountry.Species.GetClass": {"zh": "未知", "en": "unknown", "note": {"zh": "游戏里这里会出现这个外星物种的分类。", "en": "In the game, the class of this alien species appears here."}},
+      "This.ContactCountry.Species.GetClassPlural": {"zh": "无人机", "en": "drones", "note": {"zh": "游戏里这里会出现这个外星物种的复数分类。", "en": "In the game, the plural class of this alien species appears here."}},
+      "From.Owner.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "From.Owner.Species.GetClass": {"zh": "未知", "en": "unknown", "note": {"zh": "游戏里这里会出现这个外星物种的分类。", "en": "In the game, the class of this alien species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the [unknown] aliens' is used because the species class is not known to the site; 'the other empire machines' may read awkwardly."]
+  },
+  "event-first-contact-355": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}},
+      "This.ContactCountry.GetSpeciesNamePlural": {"zh": "外星人", "en": "aliens", "note": {"zh": "游戏里这里会出现这个外星物种的复数名称。", "en": "In the game, the plural name of this alien species appears here."}},
+      "riddles_leader_1.GetFirstName": {"zh": "这位军官", "en": "the officer", "note": {"zh": "游戏里这里会出现这位军官的名字。", "en": "In the game, the name of this officer appears here."}},
+      "riddles_leader_1.Species.GetHandNamePlural": {"zh": "手", "en": "hands", "note": {"zh": "游戏里这里会出现这位军官物种手的名称。", "en": "In the game, the name of this officer's species' hands appears here."}},
+      "riddles_leader_2.GetFirstName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的名字。", "en": "In the game, the name of this scientist appears here."}},
+      "riddles_leader_2.Species.GetEarNamePlural": {"zh": "耳朵", "en": "ears", "note": {"zh": "游戏里这里会出现这位科学家物种耳朵的名称。", "en": "In the game, the name of this scientist's species' ears appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Our envoy [leader] pauses' is not fixed here: the leader phrase is a role phrase and reads awkwardly after 'Our envoy'."]
+  },
+  "event-first-contact-375": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}},
+      "This.ContactCountry.GetSpeciesNamePlural": {"zh": "外星人", "en": "aliens", "note": {"zh": "游戏里这里会出现这个外星物种的复数名称。", "en": "In the game, the plural name of this alien species appears here."}},
+      "This.ContactCountry.GetSpeciesName": {"zh": "外星", "en": "alien", "note": {"zh": "游戏里这里会出现这个外星物种的名称。", "en": "In the game, the name of this alien species appears here."}},
+      "This.Owner.GetSpeciesEarNamePlural": {"zh": "耳朵", "en": "ears", "note": {"zh": "游戏里这里会出现你的物种耳朵的名称。", "en": "In the game, the name of your species' ears appears here."}},
+      "Owner.GetSpeciesHandNamePlural": {"zh": "手", "en": "hands", "note": {"zh": "游戏里这里会出现你的物种手的名称。", "en": "In the game, the name of your species' hands appears here."}},
+      "contact_country.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-385": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "this.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetGovernmentName": {"zh": "集体", "en": "collective", "note": {"zh": "游戏里这里会出现这个外星群体的政府名称。", "en": "In the game, the government name of this alien group appears here."}},
+      "This.ContactCountry.GetSpeciesNamePlural": {"zh": "外星人", "en": "aliens", "note": {"zh": "游戏里这里会出现这个外星物种的复数名称。", "en": "In the game, the plural name of this alien species appears here."}},
+      "This.ContactCountry.GetSpeciesName": {"zh": "外星", "en": "alien", "note": {"zh": "游戏里这里会出现这个外星物种的名称。", "en": "In the game, the name of this alien species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the aliens we first encountered in the [system] system' reads 'in the this system system'."]
+  },
+  "event-first-contact-395": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}},
+      "This.ContactCountry.GetSpeciesNamePlural": {"zh": "外星人", "en": "aliens", "note": {"zh": "游戏里这里会出现这个外星物种的复数名称。", "en": "In the game, the plural name of this alien species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-405": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}},
+      "This.ContactCountry.GetSpeciesHandNamePlural": {"zh": "手", "en": "hands", "note": {"zh": "游戏里这里会出现这个外星物种手的名称。", "en": "In the game, the name of this alien species' hands appears here."}},
+      "This.ContactCountry.GetSpeciesNamePlural": {"zh": "外星人", "en": "aliens", "note": {"zh": "游戏里这里会出现这个外星物种的复数名称。", "en": "In the game, the plural name of this alien species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Our envoy [leader] sent to investigate' reads awkwardly because the leader phrase is a role phrase."]
+  },
+  "event-first-contact-420": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}},
+      "This.Owner.GetSpeciesEarNamePlural": {"zh": "耳朵", "en": "ears", "note": {"zh": "游戏里这里会出现你的物种耳朵的名称。", "en": "In the game, the name of your species' ears appears here."}},
+      "contacted_hummers.GetName": {"zh": "接触过的物种", "en": "contacted species", "note": {"zh": "游戏里这里会出现这个已接触物种的名称。", "en": "In the game, the name of this contacted species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-435": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetSpeciesNamePlural": {"zh": "外星人", "en": "aliens", "note": {"zh": "游戏里这里会出现这个外星物种的复数名称。", "en": "In the game, the plural name of this alien species appears here."}},
+      "encountered_country.GetSpeciesAdj": {"zh": "漩涡", "en": "swirling", "note": {"zh": "游戏里这里会出现这个外星物种的形容词。", "en": "In the game, the adjective for this alien species appears here."}},
+      "encountered_country.GetSpeciesNamePlural": {"zh": "外星人", "en": "aliens", "note": {"zh": "游戏里这里会出现这个外星物种的复数名称。", "en": "In the game, the plural name of this alien species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-480": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.ContactCountry.GetRealName": {"zh": "这个文明", "en": "civilisation", "note": {"zh": "游戏里这里会出现这个外星文明的真实名称。", "en": "In the game, the real name of this alien civilisation appears here."}},
+      "contact_country.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "Owner.GetSpeciesName": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种的称呼。", "en": "In the game, a form of address for your species appears here."}},
+      "Owner.GetSpeciesOrganName": {"zh": "心", "en": "hearts", "note": {"zh": "游戏里这里会出现你的物种器官的名称。", "en": "In the game, the name of your species' organ appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-5000": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-first-contact-5005": {
+    "placeholders": {
+      "This.ContactCountry.GetName": {"zh": "未知外星人", "en": "unknown aliens", "note": {"zh": "游戏里这里会出现这个外星势力的代称。", "en": "In the game, the working name of this alien power appears here."}},
+      "This.Owner.GetSpeciesEarNamePlural": {"zh": "耳朵", "en": "ears", "note": {"zh": "游戏里这里会出现你的物种耳朵的名称。", "en": "In the game, the name of your species' ears appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  }
+}

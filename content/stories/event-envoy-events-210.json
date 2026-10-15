@@ -13,5 +13,79 @@
    "common/on_actions/00_on_actions.txt:576-592"
   ],
   "guide": "public/summaries/event-envoy-events-210.md"
+ },
+ "placeholders": {
+  "Root.GetAdj": {
+   "zh": "本国",
+   "en": "domestic",
+   "note": {
+    "zh": "游戏里这里会出现我国的形容词。",
+    "en": "In the game, the adjective for our nation appears here."
+   }
+  },
+  "Root.GetGovernmentName": {
+   "zh": "该政府",
+   "en": "government",
+   "note": {
+    "zh": "游戏里这里会出现我们政府的名称。",
+    "en": "In the game, the name of our government appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这个帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "envoy_country.Capital.GetName": {
+   "zh": "那个首都",
+   "en": "the foreign capital",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国首都的名称。",
+    "en": "In the game, the name of the foreign capital appears here."
+   }
+  },
+  "envoy_country.GetAdj": {
+   "zh": "外国",
+   "en": "foreign",
+   "note": {
+    "zh": "游戏里这里会出现使者所属国家的形容词。",
+    "en": "In the game, the adjective for the envoy's home empire appears here."
+   }
+  },
+  "envoy_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "envoy_country.GetSpeciesAdj": {
+   "zh": "异族",
+   "en": "alien",
+   "note": {
+    "zh": "游戏里这里会出现那个物种的形容词。",
+    "en": "In the game, the adjective for that species appears here."
+   }
+  },
+  "envoy_country.GetSpeciesNamePluralCompliment": {
+   "zh": "姑娘",
+   "en": "ladies",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的称呼。",
+    "en": "In the game, the form of address for that species appears here."
+   }
+  },
+  "event_envoy.GetName": {
+   "zh": "这位使者",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现使者的名字。",
+    "en": "In the game, the envoy's name appears here."
+   }
+  }
  }
 }

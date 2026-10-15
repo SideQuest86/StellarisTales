@@ -109,5 +109,15 @@
   "uncertain": [
    "calc_patron_paragon_roll_chance = 1 + attunement points ÷ 100 (floored); the attunement scale in play is engine-side."
   ]
+ },
+ "placeholders": {
+  "root.species.GetHandNamePlural": {
+   "zh": "手",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现你们这个族群的劳作之手的称呼。",
+    "en": "In the game, the name for your people's working hands appears here."
+   }
+  }
  }
 }

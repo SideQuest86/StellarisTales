@@ -2,31 +2,78 @@
  "id": "rift-genesis",
  "category": "rifts",
  "groups": [
-  {"kind": "exclusive", "members": ["astral_rift.2305", "astral_rift.2310"],
-   "label": {"zh": "第一项赐福", "en": "First blessing"},
-   "note": {"zh": "力量（强壮）或知识（天资聪颖），决定新物种的第一个特质。", "en": "Might (Strong) or knowledge (Natural Intellectuals) decides the new species' first trait."}},
-  {"kind": "exclusive", "members": ["astral_rift.2320", "astral_rift.2325"],
-   "label": {"zh": "第二项赐福", "en": "Second blessing"},
-   "note": {"zh": "勤奋（无产者）或创新/直感（足智多谋）；两篇标题都是“去往繁星”，之后再选“循规蹈矩”（保守主义）或“勇于挑战”（仰望星空）。", "en": "Diligence (Proles) or creativity/intuition (Ingenious); both are titled “To the Stars”, followed by “Preserve the old ways” (Conservative) or “Challenge every frontier” (Starborn)."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.2305",
+    "astral_rift.2310"
+   ],
+   "label": {
+    "zh": "第一项赐福",
+    "en": "First blessing"
+   },
+   "note": {
+    "zh": "力量（强壮）或知识（天资聪颖），决定新物种的第一个特质。",
+    "en": "Might (Strong) or knowledge (Natural Intellectuals) decides the new species' first trait."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.2320",
+    "astral_rift.2325"
+   ],
+   "label": {
+    "zh": "第二项赐福",
+    "en": "Second blessing"
+   },
+   "note": {
+    "zh": "勤奋（无产者）或创新/直感（足智多谋）；两篇标题都是“去往繁星”，之后再选“循规蹈矩”（保守主义）或“勇于挑战”（仰望星空）。",
+    "en": "Diligence (Proles) or creativity/intuition (Ingenious); both are titled “To the Stars”, followed by “Preserve the old ways” (Conservative) or “Challenge every frontier” (Starborn)."
+   }
+  }
  ],
  "endings": {
   "astral_rift.2315": {
-   "label": {"zh": "销毁“创世神”", "en": "Genesis deactivated"},
-   "note": {"zh": "拒绝游戏，用电磁脉冲关闭全息空间，带回其处理器核心；获得合金与大量星界丝缕，探索结束。", "en": "Refusing the game, an EMP dissolves the hologram and its processor core is brought back; alloys and a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:1145-1170"},
+   "label": {
+    "zh": "销毁“创世神”",
+    "en": "Genesis deactivated"
+   },
+   "note": {
+    "zh": "拒绝游戏，用电磁脉冲关闭全息空间，带回其处理器核心；获得合金与大量星界丝缕，探索结束。",
+    "en": "Refusing the game, an EMP dissolves the hologram and its processor core is brought back; alloys and a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:1145-1170"
+  },
   "astral_rift.2330": {
-   "label": {"zh": "新生命", "en": "New Life"},
-   "note": {"zh": "模拟结束，按三次选择塑造的新物种真实出现，被安置在离裂隙最近的己方殖民地上；获得大量星界丝缕（格式塔帝国另得社会学研究与“创世洞见”）。探索结束。", "en": "The simulation ends and the species shaped by the three choices appears for real, settled on the empire's colony nearest the rift; a large astral thread reward (gestalt empires also gain society research and Genesis Insight). The exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:1378-1446"}
+   "label": {
+    "zh": "新生命",
+    "en": "New Life"
+   },
+   "note": {
+    "zh": "模拟结束，按三次选择塑造的新物种真实出现，被安置在离裂隙最近的己方殖民地上；获得大量星界丝缕（格式塔帝国另得社会学研究与“创世洞见”）。探索结束。",
+    "en": "The simulation ends and the species shaped by the three choices appears for real, settled on the empire's colony nearest the rift; a large astral thread reward (gestalt empires also gain society research and Genesis Insight). The exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:1378-1446"
+  }
  },
  "nodeLabels": {
-  "astral_rift.2320": {"zh": "去往繁星（勤奋）", "en": "To the Stars (diligence)"},
-  "astral_rift.2325": {"zh": "去往繁星（创新）", "en": "To the Stars (creativity)"}
+  "astral_rift.2320": {
+   "zh": "去往繁星（勤奋）",
+   "en": "To the Stars (diligence)"
+  },
+  "astral_rift.2325": {
+   "zh": "去往繁星（创新）",
+   "en": "To the Stars (creativity)"
+  }
  },
  "notes": [
-  {"doc": "astral_rifts:genesis", "kind": "review",
+  {
+   "doc": "astral_rifts:genesis",
+   "kind": "review",
    "zh": "抽取权重 1；若银河中已有帝国正在探索“创世”（全局标记 genesis_rift_being_explored，由 2398/2399 在探索开始/结束时设置/清除），或帝国没有可居住的殖民地，则为 0。",
-   "en": "Draw weight 1; 0 while any empire is exploring a Genesis rift (global flag genesis_rift_being_explored, set/cleared by 2398/2399 at exploration start/end) or if the empire has no habitable colony."}
+   "en": "Draw weight 1; 0 while any empire is exploring a Genesis rift (global flag genesis_rift_being_explored, set/cleared by 2398/2399 at exploration start/end) or if the empire has no habitable colony."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -36,8 +83,22 @@
    "zh": "已核对裂隙定义（全局锁定与殖民地条件）、2300–2330 全部事件、物种特质叠加与 2398/2399 锁定事件。",
    "en": "Checked the rift definition (global lock and colony condition), every event 2300–2330, the stacked species traits and the 2398/2399 lock events."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt", "common/on_actions/00_on_actions.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_2_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/rift-genesis.md"
+ },
+ "placeholders": {
+  "genesis_new_species_selected_planet.GetName": {
+   "zh": "新世界",
+   "en": "the new world",
+   "note": {
+    "zh": "游戏里这里会出现那个新世界的名称。",
+    "en": "In the game, the name of that new world appears here."
+   }
+  }
  }
 }

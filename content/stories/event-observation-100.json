@@ -43,5 +43,47 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-observation-100.md"
+ },
+ "placeholders": {
+  "missing_scientist.GetHeSheCap": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现这位科学家的名字。",
+    "en": "In the game, this scientist's name appears here."
+   }
+  },
+  "missing_scientist.GetHimHerCap": {
+   "zh": "此人",
+   "en": "them",
+   "note": {
+    "zh": "游戏里这里会按性别出现对应的代词。",
+    "en": "In the game, a pronoun matching this scientist's gender appears here."
+   }
+  },
+  "missing_scientist.GetHisHer": {
+   "zh": "此人",
+   "en": "their",
+   "note": {
+    "zh": "游戏里这里会按性别出现对应的代词。",
+    "en": "In the game, a pronoun matching this scientist's gender appears here."
+   }
+  },
+  "pre_ftl_country.GetName": {
+   "zh": "这个前FTL文明",
+   "en": "the pre-FTL civilisation",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL文明的名称。",
+    "en": "In the game, the name of the pre-FTL civilisation appears here."
+   }
+  },
+  "pre_ftl_planet.GetPlanetHabitt": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  }
  }
 }

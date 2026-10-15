@@ -125,6 +125,37 @@ NAMES = {  # neutral wording for names the engine fills in from the save; shown 
 }
 
 
+GRAMMAR = {'GetHasHave', 'GetIsAre', 'GetWasWere', 'GetClass'}
+PRONOUNS = {'GetHisHer', 'GetHerHis', 'GetHisHerCap', 'GetSheHe', 'GetHeShe', 'GetSheHeCap', 'GetHeSheCap', 'GetHimHer',
+            'GetHerHim', 'GetHimselfHerself'}
+NOTE_SUBJECT = {  # what the game names at this spot, by scope role (wording for the hover note)
+    'country-root': ('你的帝国', "your empire's"), 'country': ('相关帝国', "the empire's"), 'planet': ('这颗星球', "the planet's"),
+    'system': ('这个星系', "the system's"), 'star': ('这颗恒星', "the star's"), 'fleet': ('这支舰队', "the fleet's"),
+    'ship': ('这艘舰船', "the ship's"), 'leader': ('这位人物', "the character's"), 'species': ('这个物种', "the species'"),
+    'federation': ('该联邦', "the federation's"),
+}
+NOTE_TAIL = {'GetSpeciesName': 'species', 'GetSpeciesNamePlural': 'species', 'GetNamePlural': 'species',
+             'GetSpeciesAdj': 'species', 'GetRulerName': 'leader', 'GetRegnalName': 'leader', 'GetLeaderName': 'leader',
+             'GetFirstName': 'leader', 'GetRealName': 'leader', 'GetTitle': 'leader', 'GetStarName': 'star',
+             'GetFleetName': 'fleet', 'GetHomeWorldName': 'planet'}
+
+
+def name_note(tail, role):
+    """A short, natural explanation of a display-time substitution (shown on hover, focus and tap)."""
+    if tail in PRONOUNS:
+        return {'zh': '游戏会按这位人物的性别选用代词。', 'en': 'The game picks the pronoun that fits this character.'}
+    if tail in GRAMMAR:
+        return {'zh': '游戏会按语法选用这个词。', 'en': 'The game picks this word to fit the grammar.'}
+    if tail == 'GetRulerTitle':
+        return {'zh': '游戏会按政体显示统治者的头衔。', 'en': "The game shows the ruler's title for your government."}
+    kind = NOTE_TAIL.get(tail) or role
+    subject = NOTE_SUBJECT.get(kind)
+    if subject:
+        noun = '名字' if kind == 'leader' else '名称'
+        return {'zh': f'游戏里这里会出现{subject[0]}的{noun}。', 'en': f"In the game, {subject[1]} name appears here."}
+    return {'zh': '游戏会在这里填入存档中的名称。', 'en': 'The game fills in a name from your save here.'}
+
+
 def scope_of(chain, root_scope, anomaly=False):
     """Scope type at the end of a placeholder chain like Root.Owner.Capital (heuristic; for wording only)."""
     kind, rooted = root_scope, True
@@ -674,9 +705,30 @@ class Compiler:
                     out[key] = concept
                 continue
             kind, rooted = scope_of(parts[:-1], root_scope, anomaly=r['kind'] == 'ship_event')
-            wording = NAMES.get((tail, 'country-root' if kind == 'country' and rooted else kind)) or NAMES.get((tail, None))
-            if wording:
-                out[key] = {'zh': wording[0], 'en': wording[1]}
+            role = 'country-root' if kind == 'country' and rooted else kind
+            wording = NAMES.get((tail, role)) or NAMES.get((tail, None))
+            entry = {'zh': wording[0], 'en': wording[1]} if wording else {'zh': '这个名字', 'en': 'this name', 'default': True}
+            out[key] = {**entry, 'note': name_note(tail, role)}
+        return out
+
+    @staticmethod
+    def reviewed_names(fragment, rid, names):
+        """Per-story reviewed wording for placeholders (fragment `placeholders`, per-doc `placeholderDocs`) over the
+        neutral defaults. Only keys the doc actually uses are kept; the original token stays in the text."""
+        story = fragment.get('placeholders', {})
+        doc = fragment.get('placeholderDocs', {}).get(rid, {})
+        out = {}
+        for key, wording in names.items():
+            chosen = doc.get(key) or story.get(key)
+            if chosen:
+                merged = {k: chosen[k] for k in ('zh', 'en') if chosen.get(k)}
+                merged = {**wording, **merged}
+                note = chosen.get('note') or wording.get('note')
+                if note:
+                    merged['note'] = note
+                out[key] = merged
+            else:
+                out[key] = wording
         return out
 
     def profile_options(self):
@@ -969,6 +1021,8 @@ class Compiler:
                     chapters[rid]['notes'] = self.notes[rid]
                 if rid in self.unreachable:
                     chapters[rid]['unreachable'] = self.unreachable[rid]
+                if chapters[rid].get('names'):
+                    chapters[rid] = {**chapters[rid], 'names': self.reviewed_names(fragment, rid, chapters[rid]['names'])}
             details[sid] = {'story': story, 'chapters': [chapters[d] for d in ordered_docs]}
             stories.append(entry)
         for sid, d in details.items():
@@ -1116,6 +1170,28 @@ class Compiler:
                 Compiler.local_groups(v, ids)
         return node
 
+    LOC_REF = re.compile(r'\$([A-Za-z_][\w.]*)\$')
+
+    def expand_ref(self, text, lang, depth=0):
+        """Expand $KEY$ localisation references the way the game does (trait, resource, concept names). Runtime
+        values ($COUNT$, $REQUIRED$ …) have no localisation entry and are left for the reader."""
+        def sub(m):
+            entry = self.loc.get(m.group(1))
+            value = entry.get(lang) if entry else None
+            if not value or depth > 3:
+                return m.group(0)
+            return self.expand_ref(value, lang, depth + 1)
+        return self.LOC_REF.sub(sub, text) if '$' in text else text
+
+    def expand_refs(self, node):
+        if isinstance(node, dict):
+            if set(node) >= {'zh', 'en'} and isinstance(node.get('zh'), str) and isinstance(node.get('en'), str):
+                return {**node, 'zh': self.expand_ref(node['zh'], 'zh'), 'en': self.expand_ref(node['en'], 'en')}
+            return {k: self.expand_refs(v) for k, v in node.items()}
+        if isinstance(node, list):
+            return [self.expand_refs(v) for v in node]
+        return node
+
     def write(self, stories, details, mapping):
         out = ROOT / 'public/stories'
         for sid, d in details.items():
@@ -1123,14 +1199,16 @@ class Compiler:
             summary = ROOT / 'public/summaries' / f'{sid}.md'
             if summary.is_file():
                 d['summary'] = {'text': summary.read_text(encoding='utf-8-sig'), 'path': f'summaries/{sid}.md'}
+            d['chapters'] = self.expand_refs(d['chapters'])
+            d['story'] = self.expand_refs(d['story'])
             dump(out / f'{sid}.json', d)
         stories.sort(key=lambda s: (s['kind'] not in ('origin', 'family'), -s['chapters'], s['id']))
         # The catalogue needs only identities and art at first paint; excerpts and the record map load later.
         dump(out / 'index.json', {'version': 4, 'gameVersion': self.version,
                                   'stories': [{k: v for k, v in s.items() if k != 'excerpt'} for s in stories]})
-        dump(out / 'excerpts.json', {s['id']: s['excerpt'] for s in stories})
+        dump(out / 'excerpts.json', {s['id']: self.expand_refs(s['excerpt']) for s in stories})
         dump(out / 'records.json', mapping)
-        dump(out / 'names.json', self.compile_names())
+        dump(out / 'names.json', self.expand_refs(self.compile_names()))
         dump(out / 'profile.json', self.profile_options())
         dump(out / 'glyphs.json', {'zh': self.common_glyphs(details)})
         keep = {s['id'] + '.json' for s in stories} | {'index.json', 'excerpts.json', 'records.json', 'names.json', 'profile.json', 'glyphs.json'}

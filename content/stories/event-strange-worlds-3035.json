@@ -60,5 +60,31 @@
    "event-strange-worlds-3055"
   ],
   "guide": "public/summaries/event-strange-worlds-3035.md"
+ },
+ "placeholders": {
+  "event_target:pre_ftl_country.GetName": {
+   "zh": "当地势力",
+   "en": "the local power",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL势力的名称。",
+    "en": "In the game, the name of this pre-FTL power appears here."
+   }
+  },
+  "event_target:pre_ftl_planet.Owner.GetSpeciesAdj": {
+   "zh": "当地",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL物种的形容词。",
+    "en": "In the game, the adjective for this pre-FTL species appears here."
+   }
+  },
+  "event_target:pre_ftl_planet.Owner.GetSpeciesName": {
+   "zh": "当地人",
+   "en": "locals",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL物种的复数名称。",
+    "en": "In the game, the plural name of this pre-FTL species appears here."
+   }
+  }
  }
 }

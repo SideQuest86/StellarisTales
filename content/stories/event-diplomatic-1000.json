@@ -36,5 +36,151 @@
    "各项目的成本与时限、1020–1024 对话的效果未逐项展开。 / Project costs and the 1020–1024 dialog effects were not expanded."
   ],
   "guide": "public/summaries/event-diplomatic-1000.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "From.GetSpeciesName": {
+   "zh": "对方",
+   "en": "other species",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的名称。",
+    "en": "In the game, the name of the other species appears here."
+   }
+  },
+  "From.GetSpeciesNamePlural": {
+   "zh": "外星人",
+   "en": "other species",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的复数名称。",
+    "en": "In the game, the plural name of the other species appears here."
+   }
+  },
+  "From.Owner.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "From.Owner.GetSpeciesName": {
+   "zh": "敌方",
+   "en": "enemy",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的名称。",
+    "en": "In the game, the name of the other empire's species appears here."
+   }
+  },
+  "From.Owner.GetSpeciesNamePlural": {
+   "zh": "对方",
+   "en": "other species",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的复数名称。",
+    "en": "In the game, the plural name of the other empire's species appears here."
+   }
+  },
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "destroyed_ship_1.GetName": {
+   "zh": "一艘",
+   "en": "first ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘舰船的名称。",
+    "en": "In the game, the name of this ship appears here."
+   }
+  },
+  "destroyed_ship_2.GetName": {
+   "zh": "另一艘",
+   "en": "second ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘舰船的名称。",
+    "en": "In the game, the name of this ship appears here."
+   }
+  },
+  "exercise_admiral.GetName": {
+   "zh": "这位将军",
+   "en": "the officer",
+   "note": {
+    "zh": "游戏里这里会出现指挥这次演习的军官的名字。",
+    "en": "In the game, the name of the officer leading the exercise appears here."
+   }
+  },
+  "exercise_fleet.GetName": {
+   "zh": "这支舰队",
+   "en": "fleet",
+   "note": {
+    "zh": "游戏里这里会出现这支舰队的名称。",
+    "en": "In the game, the name of this fleet appears here."
+   }
+  },
+  "exercise_location.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "exercise_neighbor.GetName": {
+   "zh": "邻国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现邻国的名称。",
+    "en": "In the game, the name of the neighboring empire appears here."
+   }
+  },
+  "exercise_neighbor.GetSpeciesName": {
+   "zh": "对方",
+   "en": "enemy",
+   "note": {
+    "zh": "游戏里这里会出现邻国物种的名称。",
+    "en": "In the game, the name of the neighboring species appears here."
+   }
+  },
+  "exercise_neighbor.GetSpeciesNamePlural": {
+   "zh": "对方",
+   "en": "neighboring species",
+   "note": {
+    "zh": "游戏里这里会出现邻国物种的复数名称。",
+    "en": "In the game, the plural name of the neighboring species appears here."
+   }
+  },
+  "exercise_officer.GetName": {
+   "zh": "这位军官",
+   "en": "the officer",
+   "note": {
+    "zh": "游戏里这里会出现这位军官的名字。",
+    "en": "In the game, the name of this officer appears here."
+   }
+  },
+  "exercise_system.GetName": {
+   "zh": "某个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of the star system appears here."
+   }
+  }
  }
 }

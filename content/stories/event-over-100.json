@@ -13,5 +13,23 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-over-100.md"
+ },
+ "placeholders": {
+  "from.GetAdj": {
+   "zh": "该国",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现友邦的形容词形式。",
+    "en": "In the game, the ally's adjective appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "那个友邦",
+   "en": "the ally",
+   "note": {
+    "zh": "游戏里这里会出现友邦的名称。",
+    "en": "In the game, the name of our ally appears here."
+   }
+  }
  }
 }

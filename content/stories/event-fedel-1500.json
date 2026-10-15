@@ -18,5 +18,31 @@
    "论文胜出的具体计分规则未展开。 / The thesis scoring rule was not expanded."
   ],
   "guide": "public/summaries/event-fedel-1500.md"
+ },
+ "placeholders": {
+  "Root.GetAllianceName": {
+   "zh": "联盟",
+   "en": "alliance",
+   "note": {
+    "zh": "游戏里这里会出现联盟的名称。",
+    "en": "In the game, the name of the alliance appears here."
+   }
+  },
+  "ruler.GetHerHis": {
+   "zh": "此人",
+   "en": "their",
+   "note": {
+    "zh": "游戏里这里会出现这位统治者的代词。",
+    "en": "In the game, this ruler's pronoun appears here."
+   }
+  },
+  "winning_thesis.GetName": {
+   "zh": "研究团体",
+   "en": "research group",
+   "note": {
+    "zh": "游戏里这里会出现这个研究团体的名称。",
+    "en": "In the game, the name of this research group appears here."
+   }
+  }
  }
 }

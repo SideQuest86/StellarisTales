@@ -13,5 +13,39 @@
    "common/on_actions/00_on_actions.txt:576-592"
   ],
   "guide": "public/summaries/event-envoy-events-220.md"
+ },
+ "placeholders": {
+  "event_envoy.GetName": {
+   "zh": "这位使者",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现使者的名字。",
+    "en": "In the game, the envoy's name appears here."
+   }
+  },
+  "offended_party.GetAdj": {
+   "zh": "被冒犯的",
+   "en": "offended",
+   "note": {
+    "zh": "游戏里这里会出现被冒犯一方的形容词。",
+    "en": "In the game, the adjective for the offended side appears here."
+   }
+  },
+  "offended_party.GetName": {
+   "zh": "被冒犯的一方",
+   "en": "the offended party",
+   "note": {
+    "zh": "游戏里这里会出现被冒犯一方的名称。",
+    "en": "In the game, the name of the offended side appears here."
+   }
+  },
+  "offended_party.GetSpeciesNamePluralInsult": {
+   "zh": "生物",
+   "en": "creatures",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的侮辱性称呼。",
+    "en": "In the game, an insulting name for their species appears here."
+   }
+  }
  }
 }

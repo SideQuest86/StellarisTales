@@ -14,5 +14,31 @@
    "events/on_action_events_3.txt:38"
   ],
   "guide": "public/summaries/event-cara-4040.md"
+ },
+ "placeholders": {
+  "party_host.GetNamePlural": {
+   "zh": "东道主",
+   "en": "the hosts",
+   "note": {
+    "zh": "游戏里这里会出现派对主人所属物种的名称。",
+    "en": "In the game, the name of the party host's species appears here."
+   }
+  },
+  "pleased_planet.owner.Species.GetNamePlural": {
+   "zh": "当地居民",
+   "en": "local people",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球上的物种名称。",
+    "en": "In the game, the name of this planet's species appears here."
+   }
+  },
+  "welcome_fleet.owner.Species.GetNamePlural": {
+   "zh": "来访者",
+   "en": "visitors",
+   "note": {
+    "zh": "游戏里这里会出现来访舰队所属物种的名称。",
+    "en": "In the game, the name of the visiting fleet's species appears here."
+   }
+  }
  }
 }

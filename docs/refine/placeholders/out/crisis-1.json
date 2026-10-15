@@ -1,0 +1,169 @@
+{
+  "behemoth-fury": {
+    "placeholders": {
+      "behemoth_winner.GetName": {"zh": "这头巨兽", "en": "the behemoth", "note": {"zh": "游戏里这里会出现获胜巨兽的名称。", "en": "In the game, the name of the winning behemoth appears here."}},
+      "event_target:voidspawn_spawn_location.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "cetana": {
+    "placeholders": {
+      "synth_queen_lost_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "From.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "你们这些人", "en": "your people", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "Root.GetRulerTitle": {"zh": "我们的统治者", "en": "our ruler", "note": {"zh": "游戏里这里会出现你的统治者的称号。", "en": "In the game, your ruler's title appears here."}},
+      "event_target:gifted_system_2.GetName": {"zh": "那个星系", "en": "that system", "note": {"zh": "游戏里这里会出现另一个星系的名称。", "en": "In the game, the name of the other system appears here."}},
+      "event_target:gifted_habitable_system_2.GetName": {"zh": "那个星系", "en": "that system", "note": {"zh": "游戏里这里会出现另一个星系的名称。", "en": "In the game, the name of the other system appears here."}},
+      "Root.synth_queen_freed_pops": {"zh": "大量", "en": "many", "note": {"zh": "游戏里这里会出现被解放人口的数量。", "en": "In the game, the number of freed population appears here."}},
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "event_target:synth_queen_databank_location.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "GetPsychicNounPlural": {"zh": "灵能者", "en": "psychics", "note": {"zh": "游戏里这里会出现灵能者的复数称呼。", "en": "In the game, the plural word for psychics appears here."}},
+      "event_target:psi_defeated_synth_queen.GetName": {"zh": "这支舰队", "en": "the fleet", "note": {"zh": "游戏里这里会出现这支舰队的名称。", "en": "In the game, the name of this fleet appears here."}},
+      "solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "fromfrom.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "apostate_site_planet.GetName": {"zh": "另一颗星球", "en": "the other planet", "note": {"zh": "游戏里这里会出现另一颗星球的名称。", "en": "In the game, the name of the other planet appears here."}},
+      "this.solar_system.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}}
+    },
+    "placeholderDocs": {
+      "crisis.10130": {
+        "Root.GetRulerTitle": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的统治者的称呼前缀。", "en": "In the game, the prefix of your ruler's title appears here."}},
+        "ruler.GetRegnalName": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现你的统治者的称号。", "en": "In the game, your ruler's title appears here."}}
+      }
+    },
+    "issues": ["'Raid [star] Outpost' in the special project title reads 'Raid star Outpost'.", "event_target:synth_queen_animator_of_clay_leader_price keeps 'the leader' next to 'our ruler'; the doll line reads oddly."]
+  },
+  "contingency": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "From.GetName": {"zh": "那颗机械星球", "en": "that machine world", "note": {"zh": "游戏里这里会出现那颗机械星球的名称。", "en": "In the game, the name of that machine world appears here."}},
+      "From.solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "From.GetSpeciesName": {"zh": "机械族", "en": "machine species", "note": {"zh": "游戏里这里会出现这个机械物种的名称。", "en": "In the game, the name of this machine species appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "我们这些人", "en": "our kind", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "Root.Owner.GetSpeciesNamePlural": {"zh": "我们这些人", "en": "our kind", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "infil_planet.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "infil_planet2.GetName": {"zh": "另一颗星球", "en": "the other planet", "note": {"zh": "游戏里这里会出现另一颗星球的名称。", "en": "In the game, the name of the other planet appears here."}},
+      "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}},
+      "Root.GetSpeciesName": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.GetRulerTitle": {"zh": "我们的统治者", "en": "our ruler", "note": {"zh": "游戏里这里会出现你的统治者的称号。", "en": "In the game, your ruler's title appears here."}},
+      "scientist.GetName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现这位科学官的名字。", "en": "In the game, this science officer's name appears here."}},
+      "admiral.GetName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现指挥官的称呼。", "en": "In the game, the commander's name appears here."}}
+    },
+    "placeholderDocs": {
+      "crisis.2095": {
+        "Root.GetRulerTitle": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的统治者的称呼前缀。", "en": "In the game, the prefix of your ruler's title appears here."}},
+        "ruler.GetRegnalName": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现你的统治者的称号。", "en": "In the game, your ruler's title appears here."}}
+      }
+    },
+    "issues": ["'Commander' and 'Scientist' precede the officer and commander placeholders; in crisis.2303 'Commander in person' and 'military unit in person' read awkwardly.", "crisis.2095 uses the ruler pair twice; the second 'bodyguard' reference reads 'our's bodyguard' with the document override.", "'the Machine World' appears after the From.GetName phrase in crisis.2037; the entity is a machine world."]
+  },
+  "cosmogenesis": {
+    "placeholders": {
+      "root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "root.location.getName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "cosmogenesis_empire.GetName": {"zh": "对方帝国", "en": "rival empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "capital_scope.GetName": {"zh": "首都", "en": "capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}},
+      "From.GetName": {"zh": "对方帝国", "en": "rival empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "你们", "en": "ones", "note": {"zh": "游戏里这里会出现你的物种复数称呼。", "en": "In the game, the plural word for your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The rival empire is used for both the empire key and From.GetName, which probably refer to one empire."]
+  },
+  "defenders-of-the-galaxy": {},
+  "galactic-hyperthermia": {
+    "placeholders": {
+      "event_target:hyperthermia_empire.gh_crisis_core_var": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个核心星系的名称。", "en": "In the game, the name of this core system appears here."}},
+      "crucible_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "crucible_builders.GetName": {"zh": "建造者", "en": "builders", "note": {"zh": "游戏里这里会出现这些建造者的名称。", "en": "In the game, the name of these builders appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "galactic-nemesis": {
+    "placeholders": {
+      "Root.GetSpeciesAdj": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "这些人", "en": "our kind", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "Root.GetSpeciesName": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.Species.GetName": {"zh": "我们的物种", "en": "our", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "that empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "crisis_country.GetName": {"zh": "另一个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "crisis_country.GetSpeciesName": {"zh": "另一族", "en": "other species", "note": {"zh": "游戏里这里会出现另一个物种的名称。", "en": "In the game, the name of the other species appears here."}},
+      "crisis_sphere_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "From.GetSpeciesNamePlural": {"zh": "对方", "en": "the other people", "note": {"zh": "游戏里这里会出现对方物种的复数名称。", "en": "In the game, the other species' plural name appears here."}},
+      "sphere_destroyers.GetName": {"zh": "毁灭者", "en": "destroyers", "note": {"zh": "游戏里这里会出现毁灭者的名称。", "en": "In the game, the name of these destroyers appears here."}},
+      "sphere_builders.GetName": {"zh": "建造者", "en": "builders", "note": {"zh": "游戏里这里会出现这些建造者的名称。", "en": "In the game, the name of these builders appears here."}},
+      "custodian.GetName": {"zh": "它", "en": "the custodian", "note": {"zh": "游戏里这里会出现星海监管人的名称。", "en": "In the game, the name of the Galactic Custodian appears here."}},
+      "new_crisis.GetName": {"zh": "敌人", "en": "the foe", "note": {"zh": "游戏里这里会出现这个敌人的名称。", "en": "In the game, the name of this foe appears here."}},
+      "new_crisis.GetSpeciesName": {"zh": "敌人", "en": "foe", "note": {"zh": "游戏里这里会出现这个敌人的物种名称。", "en": "In the game, the species name of this foe appears here."}},
+      "former_crisis.GetName": {"zh": "这一势力", "en": "this faction", "note": {"zh": "游戏里这里会出现这一势力的名称。", "en": "In the game, the name of this faction appears here."}},
+      "former_crisis.GetSpeciesNamePlural": {"zh": "前敌人", "en": "the former foes", "note": {"zh": "游戏里这里会出现前敌人的复数名称。", "en": "In the game, the plural name of the former foes appears here."}},
+      "gal_emperor.GetRulerTitle": {"zh": "皇帝", "en": "emperor", "note": {"zh": "游戏里这里会出现星海皇帝的称号。", "en": "In the game, the title of the galactic emperor appears here."}},
+      "gal_emperor.Capital.GetName": {"zh": "对方首都", "en": "their capital", "note": {"zh": "游戏里这里会出现对方首都的名称。", "en": "In the game, the name of their capital appears here."}},
+      "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}},
+      "destroyed_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'we [species]' in crisis.4140 reads 'we our kind have known'.", "'Galactic Custodian' and 'Senate' lines use 'it' for the custodian."]
+  },
+  "gray-tempest": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "nanite_swarm_planet.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "goo_slayer.GetName": {"zh": "这支舰队", "en": "the fleet", "note": {"zh": "游戏里这里会出现这支舰队的名称。", "en": "In the game, this fleet's name appears here."}},
+      "From.GetName": {"zh": "另一个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "From.GetSpeciesName": {"zh": "对方", "en": "other species", "note": {"zh": "游戏里这里会出现对方物种的名称。", "en": "In the game, the name of the other species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'The other species scientists' reads awkwardly in graygoo.11."]
+  },
+  "prethoryn-scourge": {
+    "placeholders": {
+      "crisis_country.GetName": {"zh": "另一个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "sentinel_fallen_empire.GetName": {"zh": "失落帝国", "en": "fallen empire", "note": {"zh": "游戏里这里会出现这个失落帝国的名称。", "en": "In the game, the name of this fallen empire appears here."}},
+      "sentinel_fallen_empire.GetSpeciesNamePlural": {"zh": "古老种族", "en": "ancient peoples", "note": {"zh": "游戏里这里会出现这些古老种族的复数名称。", "en": "In the game, the plural name of these ancient peoples appears here."}},
+      "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}},
+      "queen_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "queen_system_1.GetName": {"zh": "邻近的", "en": "neighboring star", "note": {"zh": "游戏里这里会出现邻近恒星系的名称。", "en": "In the game, the name of the neighboring star system appears here."}},
+      "battle_system.GetName": {"zh": "另一个", "en": "other star", "note": {"zh": "游戏里这里会出现另一个恒星系的名称。", "en": "In the game, the name of the other star system appears here."}},
+      "feral_prethoryn_system.GetName": {"zh": "远方的", "en": "remote star", "note": {"zh": "游戏里这里会出现远方恒星系的名称。", "en": "In the game, the name of the remote star system appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}},
+      "get.telepaths.plural": {"zh": "灵能者", "en": "telepaths", "note": {"zh": "游戏里这里会出现灵能者的复数称呼。", "en": "In the game, the plural word for telepaths appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Science Officer [name]' precedes the leader placeholder in crisis.105.", "Four systems in this story need distinct phrases; 'in the other star system' and 'in the remote star system' are the best available."]
+  },
+  "unbidden": {
+    "placeholders": {
+      "extradimensional_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "second_portal_system.GetName": {"zh": "邻近的", "en": "neighboring star", "note": {"zh": "游戏里这里会出现邻近恒星系的名称。", "en": "In the game, the name of the neighboring star system appears here."}},
+      "third_portal_system.GetName": {"zh": "另一个", "en": "other star", "note": {"zh": "游戏里这里会出现另一个恒星系的名称。", "en": "In the game, the name of the other star system appears here."}},
+      "crisis_country.GetName": {"zh": "另一个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "portal_killer.GetName": {"zh": "这支舰队", "en": "the fleet", "note": {"zh": "游戏里这里会出现这支舰队的名称。", "en": "In the game, this fleet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["crisis.1008 reads 'across the this planet' with the current phrase."]
+  },
+  "war-in-heaven": {
+    "placeholders": {
+      "FirstSleeper.GetName": {"zh": "先醒的帝国", "en": "the first empire", "note": {"zh": "游戏里这里会出现先醒帝国的名称。", "en": "In the game, the name of the first awakened empire appears here."}},
+      "SecondSleeper.GetName": {"zh": "后醒的帝国", "en": "the second empire", "note": {"zh": "游戏里这里会出现后醒帝国的名称。", "en": "In the game, the name of the second awakened empire appears here."}},
+      "FirstSleeper.GetSpeciesName": {"zh": "先醒种族", "en": "the first species", "note": {"zh": "游戏里这里会出现先醒种族的名称。", "en": "In the game, the name of the first awakened species appears here."}},
+      "From.GetName": {"zh": "宿敌帝国", "en": "the rival empire", "note": {"zh": "游戏里这里会出现宿敌帝国的名称。", "en": "In the game, the name of the rival empire appears here."}},
+      "from.GetName": {"zh": "宿敌帝国", "en": "the rival empire", "note": {"zh": "游戏里这里会出现宿敌帝国的名称。", "en": "In the game, the name of the rival empire appears here."}},
+      "From.GetSpeciesName": {"zh": "宿敌种族", "en": "rival species", "note": {"zh": "游戏里这里会出现宿敌种族的名称。", "en": "In the game, the name of the rival species appears here."}},
+      "fallen_empire_hive_control.GetName": {"zh": "蜂巢", "en": "the hive", "note": {"zh": "游戏里这里会出现这个蜂巢的名称。", "en": "In the game, the name of this hive appears here."}},
+      "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}},
+      "WarInHeavenFEOne.GetName": {"zh": "胜出的帝国", "en": "the winning empire", "note": {"zh": "游戏里这里会出现胜出帝国的名称。", "en": "In the game, the name of the winning empire appears here."}},
+      "WarInHeavenFETwo.GetName": {"zh": "落败的帝国", "en": "the losing empire", "note": {"zh": "游戏里这里会出现落败帝国的名称。", "en": "In the game, the name of the losing empire appears here."}},
+      "WarInHeavenFEOne.GetSpeciesName": {"zh": "胜出种族", "en": "the winning species", "note": {"zh": "游戏里这里会出现胜出种族的名称。", "en": "In the game, the name of the winning species appears here."}},
+      "RemainingAwakened.GetName": {"zh": "尚存的觉醒者", "en": "the remaining awakened", "note": {"zh": "游戏里这里会出现尚存觉醒者的名称。", "en": "In the game, the name of the remaining awakened empire appears here."}},
+      "gal_emperor.GetRulerTitle": {"zh": "皇帝", "en": "emperor", "note": {"zh": "游戏里这里会出现星海皇帝的称号。", "en": "In the game, the title of the galactic emperor appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'ancient [rival species] rivals' reads 'ancient rival species rivals' in war_in_heaven.4.", "'the winning empire have' uses a plural verb in the source text; the verb agreement is left unchanged."]
+  }
+}

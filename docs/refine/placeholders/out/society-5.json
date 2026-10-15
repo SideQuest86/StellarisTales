@@ -1,0 +1,458 @@
+{
+  "event-mega-201": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现被覆盖星球的名称。", "en": "In the game, the name of the encased planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["English title reads 'Ecumenopolis: this planet Encased'; the title may need its own wording."]
+  },
+  "event-observation-0": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-100": {
+    "placeholders": {
+      "missing_scientist.GetHeSheCap": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的名字。", "en": "In the game, this scientist's name appears here."}},
+      "missing_scientist.GetHisHer": {"zh": "此人", "en": "their", "note": {"zh": "游戏里这里会按性别出现对应的代词。", "en": "In the game, a pronoun matching this scientist's gender appears here."}},
+      "missing_scientist.GetHimHerCap": {"zh": "此人", "en": "them", "note": {"zh": "游戏里这里会按性别出现对应的代词。", "en": "In the game, a pronoun matching this scientist's gender appears here."}},
+      "pre_ftl_planet.GetPlanetHabitt": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Verb agreement ('the scientist was/were taking part') depends on the GetWasWere key, which is outside this worksheet.", "observation.108 Chinese repeats the same pronoun phrase for two different references."]
+  },
+  "event-observation-1000": {
+    "placeholders": {
+      "abducted_scientist.GetHeSheCap": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的名字。", "en": "In the game, this scientist's name appears here."}},
+      "abducted_scientist.GetHisHer": {"zh": "此人", "en": "their", "note": {"zh": "游戏里这里会按性别出现对应的代词。", "en": "In the game, a pronoun matching this scientist's gender appears here."}},
+      "pre_ftl_country.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_country.GetSpeciesName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_country.TechProgressPercentage": {"zh": "这一数值", "en": "this value", "note": {"zh": "游戏里这里会出现具体的百分比数值。", "en": "In the game, the exact percentage appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The percentage slot reads as '+this value% Technological Progression'; a number-aware rendering would read better."]
+  },
+  "event-observation-1100": {
+    "placeholders": {
+      "pre_ftl_country.GetSpeciesName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_country.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_country.TechProgressPercentage": {"zh": "这一数值", "en": "this value", "note": {"zh": "游戏里这里会出现具体的百分比数值。", "en": "In the game, the exact percentage appears here."}},
+      "pre_ftl_country.Owner.GetSpeciesName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The percentage slot reads as '+this value% Technological Progression'."]
+  },
+  "event-observation-1200": {
+    "placeholders": {
+      "pre_ftl_country.GetSpeciesName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_country.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "Root.GetSpeciesName": {"zh": "我们", "en": "our", "note": {"zh": "游戏里这里会出现你们的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位领袖", "en": "our leader", "note": {"zh": "游戏里这里会出现科学专员的名字。", "en": "In the game, the science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Science Officer our leader' reads awkwardly because the title precedes the placeholder."]
+  },
+  "event-observation-1300": {
+    "placeholders": {
+      "pre_ftl_country.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-1400": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-1500": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-200": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {
+      "special_projects:SHUTTLE_INTERCEPTED": {
+        "pre_ftl_country.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-observation-2011": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_planet.Owner.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-2014": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_country.TechProgressPercentage": {"zh": "这一数值", "en": "this value", "note": {"zh": "游戏里这里会出现具体的百分比数值。", "en": "In the game, the exact percentage appears here."}},
+      "pre_ftl_planet.Owner.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The percentage slot reads as '+this value% Technological Progression'."]
+  },
+  "event-observation-2016": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_species.GetName": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-2018": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_species.GetName": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-2020": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_species.GetName": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_species.GetNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {
+      "observation.2020": {
+        "pre_ftl_species.GetName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-observation-2022": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_species.GetName": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_species.GetNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-2029": {
+    "placeholders": {
+      "pre_ftl_species.GetNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_species.GetName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {
+      "observation.2036": {
+        "pre_ftl_species.GetName": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-observation-300": {
+    "placeholders": {
+      "Root.GetSpeciesName": {"zh": "本族", "en": "our", "note": {"zh": "游戏里这里会出现你们的物种名称。", "en": "In the game, your species' name appears here."}},
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-3138": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Assumes From is an empire; if it is a planet the phrase must change."]
+  },
+  "event-observation-3140": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Assumes From is an empire; if it is a planet the phrase must change."]
+  },
+  "event-observation-3142": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Assumes From is an empire; if it is a planet the phrase must change."]
+  },
+  "event-observation-3144": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-3146": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-3148": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-3150": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-3152": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-observation-6": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-preftl-10156": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-preftl-10160": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-preftl-10250": {
+    "placeholders": {
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-preftl-espionage-2": {
+    "placeholders": {
+      "rogue_agent_country.GetSpeciesName": {"zh": "当地人", "en": "native", "note": {"zh": "游戏里这里会出现当地人的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "rogue_agent_spymaster.GetName": {"zh": "这位间谍首脑", "en": "the spymaster", "note": {"zh": "游戏里这里会出现这位间谍首脑的名字。", "en": "In the game, this spymaster's name appears here."}},
+      "rogue_agent_spymaster.GetHerHim": {"zh": "此人", "en": "them", "note": {"zh": "游戏里这里会按性别出现对应的代词。", "en": "In the game, a pronoun matching this spymaster's gender appears here."}},
+      "rogue_agent_spymaster.GetHisHerCap": {"zh": "此人", "en": "Their", "note": {"zh": "游戏里这里会按性别出现对应的代词。", "en": "In the game, a pronoun matching this spymaster's gender appears here."}},
+      "rogue_agent_spymaster.GetSheHe": {"zh": "此人", "en": "they", "note": {"zh": "游戏里这里会按性别出现对应的代词。", "en": "In the game, a pronoun matching this spymaster's gender appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "你们的同类", "en": "one of your kind", "note": {"zh": "游戏里这里会出现你们物种的名称。", "en": "In the game, your species' name appears here."}},
+      "Root.GetSpeciesName": {"zh": "我们", "en": "our", "note": {"zh": "游戏里这里会出现你们的物种名称。", "en": "In the game, your species' name appears here."}},
+      "From.Owner.GetSpeciesName": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现当地的物种名称。", "en": "In the game, the local species' name appears here."}},
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "prelude_to_war_country.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "From.From.Owner.GetSpeciesName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "great_pyramid_country.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "great_pyramid_country.GetSpeciesName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {
+      "preftl_espionage.1023": {
+        "rogue_agent_spymaster.GetHerHim": {"zh": "此人", "en": "their", "note": {"zh": "游戏里这里会按性别出现对应的代词。", "en": "In the game, a pronoun matching this spymaster's gender appears here."}}
+      },
+      "preftl_espionage.1021": {
+        "rogue_agent_spymaster.GetSheHe": {"zh": "此人", "en": "the spymaster", "note": {"zh": "游戏里这里会出现这位间谍首脑的称谓。", "en": "In the game, this spymaster's title appears here."}}
+      }
+    },
+    "issues": ["'Our Spymaster ... [name]' and 'named [name]' constructions read redundantly because the spymaster phrase repeats the title.", "The Root.Owner.GetSpeciesName phrase 'one of your kind' depends on the speaker being the rogue agent."]
+  },
+  "event-preftl-operation-1000": {
+    "placeholders": {
+      "from.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "target.GetSpeciesName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "From.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation this' reads awkwardly; operation-name placeholders need a better wording."]
+  },
+  "event-preftl-operation-1015": {
+    "placeholders": {
+      "target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "from.target.GetAdj": {"zh": "那个帝国的", "en": "the other empire's", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "from.target.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation this' reads awkwardly; operation-name placeholders need a better wording."]
+  },
+  "event-preftl-operation-1025": {
+    "placeholders": {
+      "target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "this.GetName": {"zh": "我们的特工", "en": "our operatives", "note": {"zh": "游戏里这里会出现你的特工的名称。", "en": "In the game, the name of your operatives appears here."}},
+      "this.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-preftl-operation-1035": {
+    "placeholders": {
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_country.TechProgressPercentage": {"zh": "这一数值", "en": "this value", "note": {"zh": "游戏里这里会出现具体的百分比数值。", "en": "In the game, the exact percentage appears here."}},
+      "this.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Our Spymaster [name]' reads redundantly; the spymaster phrase is kept as the existing one."]
+  },
+  "event-preftl-operation-1045": {
+    "placeholders": {
+      "from.GetName": {"zh": "我们的特工", "en": "our operatives", "note": {"zh": "游戏里这里会出现你的特工的名称。", "en": "In the game, the name of your operatives appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}},
+      "pre_ftl_country.TechProgressPercentage": {"zh": "这一数值", "en": "this value", "note": {"zh": "游戏里这里会出现具体的百分比数值。", "en": "In the game, the exact percentage appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-preftl-operation-1060": {
+    "placeholders": {
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}},
+      "target.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "From.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}},
+      "infiltrated_country_species.GetClass": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的种类名称。", "en": "In the game, the local species class appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation this' reads awkwardly; operation-name placeholders need a better wording."]
+  },
+  "event-preftl-operation-3000": {
+    "placeholders": {
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "from.target.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-preftl-operation-3010": {
+    "placeholders": {
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation this' reads awkwardly; operation-name placeholders need a better wording."]
+  },
+  "event-preftl-operation-3020": {
+    "placeholders": {
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation this' reads awkwardly; operation-name placeholders need a better wording."]
+  },
+  "event-preftl-operation-3030": {
+    "placeholders": {
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation this' reads awkwardly; operation-name placeholders need a better wording."]
+  },
+  "event-preftl-operation-3040": {
+    "placeholders": {
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation this' reads awkwardly; operation-name placeholders need a better wording."]
+  },
+  "event-preftl-operation-3050": {
+    "placeholders": {
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}},
+      "from.target.GetSpeciesName": {"zh": "土著", "en": "native", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "from.owner.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "from.target.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Spymaster the leader' reads awkwardly because the title precedes the placeholder; the leader phrase is kept."]
+  },
+  "event-preftl-operation-3060": {
+    "placeholders": {
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}},
+      "from.target.GetSpeciesNamePlural": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "from.target.GetSpeciesName": {"zh": "土著", "en": "natives", "note": {"zh": "游戏里这里会出现当地原住民的物种名称。", "en": "In the game, the name of the local species appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "pre_ftl_country.GetName": {"zh": "这个前FTL文明", "en": "the pre-FTL civilisation", "note": {"zh": "游戏里这里会出现这个前FTL文明的名称。", "en": "In the game, the name of the pre-FTL civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Spymaster the leader' reads awkwardly because the title precedes the placeholder."]
+  },
+  "event-preftl-operation-3100": {
+    "placeholders": {
+      "from.GetName": {"zh": "本次", "en": "this", "note": {"zh": "游戏里这里会出现本次行动的名称。", "en": "In the game, the operation's name appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'The Operation this' reads awkwardly; operation-name placeholders need a better wording."]
+  },
+  "event-preftl-operation-3105": {
+    "placeholders": {
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "from.target.species.GetHandNamePlural": {"zh": "手", "en": "hands", "note": {"zh": "游戏里这里会出现这些生物的肢体名称。", "en": "In the game, the name of their limbs appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-shroud-1100": {
+    "placeholders": {
+      "Owner.GetSpeciesHandNamePlural": {"zh": "双手", "en": "hands", "note": {"zh": "游戏里这里会出现这些生物的肢体名称。", "en": "In the game, the name of their limbs appears here."}},
+      "root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "RefugeeEscapedCrisis.GetName": {"zh": "那场危机", "en": "the crisis", "note": {"zh": "游戏里这里会出现那场危机的名称。", "en": "In the game, the name of the crisis appears here."}},
+      "RefugeeEscapedFrom.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "RefugeeEscapedFrom.GetSpeciesName": {"zh": "那个", "en": "other", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "Root.GetSpeciesName": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你们的物种名称。", "en": "In the game, your species' name appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你们的物种名称。", "en": "In the game, your species' name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The 'other' phrase for the refugee species' empire may collide with 'the other empire' in the same story."]
+  },
+  "event-shroud-2750": {
+    "placeholders": {
+      "This.GetSpeciesNamePlural": {"zh": "同类", "en": "our kind", "note": {"zh": "游戏里这里会出现我们物种的名称。", "en": "In the game, our species' name appears here."}},
+      "origin_unplugged_assimilator_empire.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "Root.Patron:the_composer_of_strands.GetPreCommunicationName": {"zh": "此实体", "en": "entity", "note": {"zh": "游戏里这里会出现这个实体的临时称呼。", "en": "In the game, the temporary name of this entity appears here."}},
+      "Owner.GetAdjective": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现我们物种的形容词。", "en": "In the game, our species' adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Owner.GetSpeciesNamePlural' phrase 'kin' and 'Some kin...' is ambiguous; the grammar of the species plural needs checking.", "'From.GetSpeciesName' mechanotype phrase cannot be expressed as a single noun without the species word."]
+  },
+  "event-shroud-5010": {
+    "placeholders": {
+      "first_neighbor.GetAdjective": {"zh": "甲", "en": "first", "note": {"zh": "游戏里这里会出现第一个文明的名称。", "en": "In the game, the name of the first civilisation appears here."}},
+      "second_neighbor.GetAdjective": {"zh": "乙", "en": "second", "note": {"zh": "游戏里这里会出现第二个文明的名称。", "en": "In the game, the name of the second civilisation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-situation-1125": {
+    "placeholders": {
+      "Target.GetAdj": {"zh": "这对", "en": "the", "note": {"zh": "游戏里这里会出现这对双星的形容词。", "en": "In the game, the adjective for this twin star pair appears here."}},
+      "Target.GetName": {"zh": "这颗恒星", "en": "star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}},
+      "Target.capital_scope.Solar_System.GetName": {"zh": "此", "en": "star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this star system's name appears here."}},
+      "Target.capital_star.GetName": {"zh": "这颗", "en": "this", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}},
+      "From.target.capital_star.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}},
+      "capital_star.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}},
+      "This.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}},
+      "star_infesters.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "target.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'The light of the the twin stars' and 'Our star, star' phrasing is awkward; the star placeholders need a better form.", "'life-giving this star' reads awkwardly because the placeholder is a planet-star mismatch."]
+  }
+}

@@ -18,5 +18,23 @@
    "Spawn needs has_shroud_dlc (host_has_dlc \"Shadows of the Shroud\", common/scripted_triggers); no matching folder exists in this install's dlc directory, so whether these anomalies can spawn here depends on the host's DLC ownership."
   ],
   "guide": "public/summaries/anomaly-orbital-resonance-cat.md"
+ },
+ "placeholders": {
+  "from.From.System.GetName": {
+   "zh": "另一个",
+   "en": "other star",
+   "note": {
+    "zh": "游戏里这里会出现另一个恒星系的名称。",
+    "en": "In the game, the name of another star system appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  }
  }
 }

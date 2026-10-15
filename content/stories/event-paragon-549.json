@@ -49,5 +49,39 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-paragon-549.md"
+ },
+ "placeholders": {
+  "From.GetAge": {
+   "zh": "高龄",
+   "en": "advanced years",
+   "note": {
+    "zh": "游戏里这里会出现逝者的年龄。",
+    "en": "In the game, the age of the deceased appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "本人",
+   "en": "themself",
+   "note": {
+    "zh": "游戏里这里会出现逝者的名字。",
+    "en": "In the game, the name of the deceased appears here."
+   }
+  },
+  "From.GetYearsOfService": {
+   "zh": "多年",
+   "en": "many years",
+   "note": {
+    "zh": "游戏里这里会出现逝者服务的年数。",
+    "en": "In the game, the years of service of the deceased appear here."
+   }
+  },
+  "From.Species.GetName": {
+   "zh": "该物种",
+   "en": "creature",
+   "note": {
+    "zh": "游戏里这里会出现逝者所属物种的名称。",
+    "en": "In the game, the species of the deceased appears here."
+   }
+  }
  }
 }

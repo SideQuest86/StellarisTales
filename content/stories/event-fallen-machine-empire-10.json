@@ -291,5 +291,55 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-fallen-machine-empire-10.md"
+ },
+ "placeholders": {
+  "FallenEmpireTaskOrigin.GetName": {
+   "zh": "堕落帝国",
+   "en": "the fallen empire",
+   "note": {
+    "zh": "游戏里这里会出现发出任务的堕落帝国名称。",
+    "en": "In the game, the name of the fallen empire issuing the task appears here."
+   }
+  },
+  "FallenEmpireTaskPlanetTarget.GetName": {
+   "zh": "目标星球",
+   "en": "the target world",
+   "note": {
+    "zh": "游戏里这里会出现目标星球的名称。",
+    "en": "In the game, the name of the target world appears here."
+   }
+  },
+  "FallenEmpireTaskTarget.GetName": {
+   "zh": "目标",
+   "en": "the target",
+   "note": {
+    "zh": "游戏里这里会出现任务目标的名称。",
+    "en": "In the game, the name of the task target appears here."
+   }
+  },
+  "FallenEmpireTaskTarget.GetSpeciesAdj": {
+   "zh": "敌方",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现任务目标的形容词。",
+    "en": "In the game, the adjective for the task target appears here."
+   }
+  },
+  "Root.GetSpeciesAdj": {
+   "zh": "生物",
+   "en": "organic",
+   "note": {
+    "zh": "游戏里这里会出现你们物种的形容词。",
+    "en": "In the game, the adjective for your species appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "你们",
+   "en": "you",
+   "note": {
+    "zh": "游戏里这里会出现你们物种的名称。",
+    "en": "In the game, the name of your species appears here."
+   }
+  }
  }
 }

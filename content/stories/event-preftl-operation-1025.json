@@ -35,5 +35,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-preftl-operation-1025.md"
+ },
+ "placeholders": {
+  "target.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "我们的特工",
+   "en": "our operatives",
+   "note": {
+    "zh": "游戏里这里会出现你的特工的名称。",
+    "en": "In the game, the name of your operatives appears here."
+   }
+  },
+  "this.GetSpeciesNamePlural": {
+   "zh": "土著",
+   "en": "natives",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  }
  }
 }

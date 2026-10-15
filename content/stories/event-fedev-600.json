@@ -43,5 +43,23 @@
    "common/special_projects"
   ],
   "guide": "public/summaries/event-fedev-600.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这个殖民地",
+   "en": "this colony",
+   "note": {
+    "zh": "游戏里这里会出现这个殖民地的名称。",
+    "en": "In the game, the name of this colony appears here."
+   }
+  },
+  "From.GetSpeciesNamePlural": {
+   "zh": "同胞",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的复数名称。",
+    "en": "In the game, the plural name of this species appears here."
+   }
+  }
  }
 }

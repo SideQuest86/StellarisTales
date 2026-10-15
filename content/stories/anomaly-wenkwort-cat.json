@@ -18,5 +18,31 @@
    "生成权重段未完整读取。 / The spawn_chance block was not fully read."
   ],
   "guide": "public/summaries/anomaly-wenkwort-cat.md"
+ },
+ "placeholders": {
+  "Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都的名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "event_target:wenkwort_rellrait.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗邻近星球的名称。",
+    "en": "In the game, the name of that nearby planet appears here."
+   }
+  },
+  "from.System.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现那个恒星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  }
  }
 }

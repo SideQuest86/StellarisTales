@@ -74,5 +74,39 @@
    "event-nomads-550",
    "event-nomads-565"
   ]
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那艘敌舰",
+   "en": "the enemy ship",
+   "note": {
+    "zh": "游戏里这里会出现那艘敌舰的名称。",
+    "en": "In the game, the enemy ship's name appears here."
+   }
+  },
+  "Root.Species.GetMouthName": {
+   "zh": "嘴巴",
+   "en": "mouth",
+   "note": {
+    "zh": "游戏里这里会出现该物种对嘴的称呼。",
+    "en": "In the game, this species' word for mouth appears here."
+   }
+  },
+  "Species.GetName": {
+   "zh": "物种",
+   "en": "species",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的名称。",
+    "en": "In the game, this species' name appears here."
+   }
+  },
+  "capital_scope.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  }
  }
 }

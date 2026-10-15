@@ -1,24 +1,78 @@
 {
  "id": "event-colony-mod-3",
  "family": {
-  "title": {"zh": "地震！", "en": "Earthquake!"},
+  "title": {
+   "zh": "地震！",
+   "en": "Earthquake!"
+  },
   "category": "society",
   "start": "colony_mod.161",
-  "members": ["colony_mod.3", "colony_mod.21", "colony_mod.22", "colony_mod.23"]
+  "members": [
+   "colony_mod.3",
+   "colony_mod.21",
+   "colony_mod.22",
+   "colony_mod.23"
+  ]
  },
  "titleFrom": "colony_mod.3",
  "endings": {
-  "colony_mod.21": {"label": {"zh": "损伤：深坑", "en": "Damage: a deep sinkhole"}, "note": {"zh": "随机一处矿藏被“深坑”障碍阻挡。", "en": "A random deposit is blocked by a Deep Sinkhole."}, "evidence": "events/colony_events_3.txt:438-455"},
-  "colony_mod.22": {"label": {"zh": "意外收获：新矿脉", "en": "Windfall: new mineral seams"}, "note": {"zh": "获得一笔矿物。", "en": "Grants minerals."}, "evidence": "events/colony_events_3.txt:457-479"},
-  "colony_mod.23": {"label": {"zh": "安然无恙", "en": "No damage"}, "note": {"zh": "没有效果。", "en": "No effect."}, "evidence": "events/colony_events_3.txt:481-496"}
+  "colony_mod.21": {
+   "label": {
+    "zh": "损伤：深坑",
+    "en": "Damage: a deep sinkhole"
+   },
+   "note": {
+    "zh": "随机一处矿藏被“深坑”障碍阻挡。",
+    "en": "A random deposit is blocked by a Deep Sinkhole."
+   },
+   "evidence": "events/colony_events_3.txt:438-455"
+  },
+  "colony_mod.22": {
+   "label": {
+    "zh": "意外收获：新矿脉",
+    "en": "Windfall: new mineral seams"
+   },
+   "note": {
+    "zh": "获得一笔矿物。",
+    "en": "Grants minerals."
+   },
+   "evidence": "events/colony_events_3.txt:457-479"
+  },
+  "colony_mod.23": {
+   "label": {
+    "zh": "安然无恙",
+    "en": "No damage"
+   },
+   "note": {
+    "zh": "没有效果。",
+    "en": "No effect."
+   },
+   "evidence": "events/colony_events_3.txt:481-496"
+  }
  },
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "不稳定构造殖民地事件与三份随机损伤报告，从合并的修正事件故事中拆出。", "en": "The unstable-tectonics colony event and its three random damage reports, split out of the merged modifier-event story."},
-  "sources": ["events/colony_events_3.txt:396-496", "events/colony_events_3.txt:1001-1008"],
+  "scope": {
+   "zh": "不稳定构造殖民地事件与三份随机损伤报告，从合并的修正事件故事中拆出。",
+   "en": "The unstable-tectonics colony event and its three random damage reports, split out of the merged modifier-event story."
+  },
+  "sources": [
+   "events/colony_events_3.txt:396-496",
+   "events/colony_events_3.txt:1001-1008"
+  ],
   "uncertain": [],
   "guide": "public/summaries/event-colony-mod-3.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

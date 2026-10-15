@@ -50,5 +50,103 @@
    "common/espionage_operation_types/operations.txt"
   ],
   "guide": "public/summaries/event-operation-4000.md"
+ },
+ "placeholders": {
+  "crisis_beacon_crisis_country.GetName": {
+   "zh": "那个作乱帝国",
+   "en": "the rogue empire",
+   "note": {
+    "zh": "游戏里这里会出现发动灾厄的帝国名称。",
+    "en": "In the game, the name of the empire that set off the crisis appears here."
+   }
+  },
+  "crisis_beacon_crisis_system.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "crisis_beacon_option_1.GetName": {
+   "zh": "这场危机",
+   "en": "the crisis",
+   "note": {
+    "zh": "游戏里这里会出现这场危机的名称。",
+    "en": "In the game, the name of this crisis appears here."
+   }
+  },
+  "crisis_beacon_option_2.GetName": {
+   "zh": "这场危机",
+   "en": "the crisis",
+   "note": {
+    "zh": "游戏里这里会出现这场危机的名称。",
+    "en": "In the game, the name of this crisis appears here."
+   }
+  },
+  "crisis_beacon_option_3.GetName": {
+   "zh": "这场危机",
+   "en": "the crisis",
+   "note": {
+    "zh": "游戏里这里会出现这场危机的名称。",
+    "en": "In the game, the name of this crisis appears here."
+   }
+  },
+  "crisis_beacon_target_country.GetAdj": {
+   "zh": "该国",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现该帝国的形容词形式。",
+    "en": "In the game, that empire's adjective appears here."
+   }
+  },
+  "crisis_beacon_target_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现目标帝国的名称。",
+    "en": "In the game, the name of the target empire appears here."
+   }
+  },
+  "from.spynetwork.leader.GetName": {
+   "zh": "本人",
+   "en": "personally",
+   "note": {
+    "zh": "游戏里这里会出现间谍首脑的名字。",
+    "en": "In the game, the spymaster's name appears here."
+   }
+  },
+  "raider_khanate.GetName": {
+   "zh": "这个可汗国",
+   "en": "the khanate",
+   "note": {
+    "zh": "游戏里这里会出现这个可汗国的名称。",
+    "en": "In the game, the khanate's name appears here."
+   }
+  },
+  "spynetwork.leader.GetName": {
+   "zh": "本人",
+   "en": "personally",
+   "note": {
+    "zh": "游戏里这里会出现间谍首脑的名字。",
+    "en": "In the game, the spymaster's name appears here."
+   }
+  },
+  "target.GetAdj": {
+   "zh": "该国",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现目标帝国的形容词形式。",
+    "en": "In the game, the target empire's adjective appears here."
+   }
+  },
+  "target.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现目标帝国的名称。",
+    "en": "In the game, the name of the target empire appears here."
+   }
+  }
  }
 }

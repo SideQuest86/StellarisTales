@@ -4,20 +4,41 @@
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["astral_rift.1615", "astral_rift.1616"],
-   "label": {"zh": "是否灭绝主义帝国", "en": "Exterminator empire or not"},
-   "note": {"zh": "1605、1610、1611 之后，灭绝主义（is_homicidal）帝国进入 1616“够了”，只能拒绝；其他帝国进入 1615“外交机会”。", "en": "After 1605, 1610 or 1611, exterminator (is_homicidal) empires reach 1616 “Enough” and can only refuse; all others reach 1615 “Diplomatic Opportunity”."}
+   "members": [
+    "astral_rift.1615",
+    "astral_rift.1616"
+   ],
+   "label": {
+    "zh": "是否灭绝主义帝国",
+    "en": "Exterminator empire or not"
+   },
+   "note": {
+    "zh": "1605、1610、1611 之后，灭绝主义（is_homicidal）帝国进入 1616“够了”，只能拒绝；其他帝国进入 1615“外交机会”。",
+    "en": "After 1605, 1610 or 1611, exterminator (is_homicidal) empires reach 1616 “Enough” and can only refuse; all others reach 1615 “Diplomatic Opportunity”."
+   }
   }
  ],
  "endings": {
   "astral_rift.1620": {
-   "label": {"zh": "新友谊：镜像帝国", "en": "New Friendship: the mirrored empire"},
-   "note": {"zh": "与镜像帝国建立友好关系，此后可跨越裂隙贸易；获得 10 年“新友谊”与社会学研究（格式塔帝国另得“破碎大使”）。探索结束。", "en": "Friendly relations with the mirrored empire, with trade across the rift now possible; 10 years of New Friendship and society research (gestalt empires also gain Fractured Ambassadors). The exploration ends."},
+   "label": {
+    "zh": "新友谊：镜像帝国",
+    "en": "New Friendship: the mirrored empire"
+   },
+   "note": {
+    "zh": "与镜像帝国建立友好关系，此后可跨越裂隙贸易；获得 10 年“新友谊”与社会学研究（格式塔帝国另得“破碎大使”）。探索结束。",
+    "en": "Friendly relations with the mirrored empire, with trade across the rift now possible; 10 years of New Friendship and society research (gestalt empires also gain Fractured Ambassadors). The exploration ends."
+   },
    "evidence": "events/astral_rifts_1_events.txt:3616-3682"
   },
   "astral_rift.1625": {
-   "label": {"zh": "敌意：拒绝镜像帝国", "en": "Enmity: the mirror spurned"},
-   "note": {"zh": "拒绝或无视对方的提议；获得凝聚力与星界丝缕，探索结束。", "en": "Their offer is spurned or ignored; unity and astral threads; the exploration ends."},
+   "label": {
+    "zh": "敌意：拒绝镜像帝国",
+    "en": "Enmity: the mirror spurned"
+   },
+   "note": {
+    "zh": "拒绝或无视对方的提议；获得凝聚力与星界丝缕，探索结束。",
+    "en": "Their offer is spurned or ignored; unity and astral threads; the exploration ends."
+   },
    "evidence": "events/astral_rifts_1_events.txt:3684-3749"
   }
  },
@@ -37,8 +58,40 @@
    "zh": "已核对裂隙定义、探索开始时创建镜像帝国的 1699（on_astral_rift_exploration_start）、1600–1625 全部事件、1620 调用的 astral_planes.1690 与探索结束时的清理 1698。",
    "en": "Checked the rift definition, the mirrored-empire creation 1699 (on_astral_rift_exploration_start), every event 1600–1625, astral_planes.1690 called from 1620 and the cleanup 1698 at exploration end."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt", "common/on_actions/00_on_actions.txt"],
-  "uncertain": ["The text variants depend on rift flags explorer_is_* written by 1699, which the V4 condition model shows as unresolved conditions."],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_1_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "The text variants depend on rift flags explorer_is_* written by 1699, which the V4 condition model shows as unresolved conditions."
+  ],
   "guide": "public/summaries/rift-station.md"
+ },
+ "placeholders": {
+  "final_mirrored_empire.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of that empire appears here."
+   }
+  },
+  "mirrored_empire.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of that empire appears here."
+   }
+  },
+  "mirrored_empire.GetSpeciesNamePlural": {
+   "zh": "那些物种",
+   "en": "the other species",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国物种的复数名称。",
+    "en": "In the game, the plural name of that empire's species appears here."
+   }
+  }
  }
 }

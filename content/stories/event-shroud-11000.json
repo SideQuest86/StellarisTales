@@ -216,5 +216,71 @@
   "uncertain": [
    "The chance per month (calc_greater_patron_roll_chance = 1 + 3 × mid-game years passed, max 100) is read from the script value; how the engine evaluates mid_game_years_passed before mid-game was not tested."
   ]
+ },
+ "placeholders": {
+  "Root.Patron:whisperers_in_the_void.GetPreCommunicationName": {
+   "zh": "这个实体",
+   "en": "the entity",
+   "note": {
+    "zh": "游戏里这里会出现这个强大实体的名称。",
+    "en": "In the game, the name of this powerful entity appears here."
+   }
+  },
+  "accord_creation_world.GetName": {
+   "zh": "这个造物",
+   "en": "this creation",
+   "note": {
+    "zh": "游戏里这里会出现这件新造物的名称。",
+    "en": "In the game, the name of this new creation appears here."
+   }
+  },
+  "capital_scope.solar_system.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "event_target:mindwarden_enclave_country.GetName": {
+   "zh": "那个飞地",
+   "en": "the enclave",
+   "note": {
+    "zh": "游戏里这里会出现这个飞地的名称。",
+    "en": "In the game, the name of this enclave appears here."
+   }
+  },
+  "event_target:the_reckoning_observer_target.GetName": {
+   "zh": "目标",
+   "en": "the target",
+   "note": {
+    "zh": "游戏里这里会出现清算的目标名称。",
+    "en": "In the game, the name of the target of the reckoning appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "那个源头",
+   "en": "the source",
+   "note": {
+    "zh": "游戏里这里会出现灵能源头的名称。",
+    "en": "In the game, the name of the psionic source appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "这个帝国",
+   "en": "the empire",
+   "note": {
+    "zh": "游戏里这里会出现这个帝国的名称。",
+    "en": "In the game, the name of this empire appears here."
+   }
+  }
  }
 }

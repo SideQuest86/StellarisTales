@@ -65,5 +65,267 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-unrest-50.md"
+ },
+ "placeholders": {
+  "From.GetAdj": {
+   "zh": "外国",
+   "en": "foreign",
+   "note": {
+    "zh": "游戏里这里会出现外国的形容词。",
+    "en": "In the game, the adjective for the foreign power appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "Owner.GetGovernmentName": {
+   "zh": "我们的政府",
+   "en": "government",
+   "note": {
+    "zh": "游戏里这里会出现我们政府的名称。",
+    "en": "In the game, the name of our government appears here."
+   }
+  },
+  "Root.GetGovernmentName": {
+   "zh": "机器",
+   "en": "machine",
+   "note": {
+    "zh": "游戏里这里会出现你们的机器政府的名称。",
+    "en": "In the game, the name of your machine government appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Root.GetRulerName": {
+   "zh": "本人",
+   "en": "in person",
+   "note": {
+    "zh": "游戏里这里会出现统治者的名字。",
+    "en": "In the game, the ruler's name appears here."
+   }
+  },
+  "Root.Owner.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.Target.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "Target.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "Target.System.GetName": {
+   "zh": "这个",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "capital_scope.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现我们首都的名称。",
+    "en": "In the game, the name of our capital appears here."
+   }
+  },
+  "exiled_rebel.GetName": {
+   "zh": "一个声音",
+   "en": "a voice",
+   "note": {
+    "zh": "游戏里这里会出现流亡叛乱者的称呼。",
+    "en": "In the game, the form of address for the exiled rebel appears here."
+   }
+  },
+  "join_revolt_planet.GetName": {
+   "zh": "一颗邻近星球",
+   "en": "a neighboring world",
+   "note": {
+    "zh": "游戏里这里会出现邻近星球的名称。",
+    "en": "In the game, the name of a neighboring world appears here."
+   }
+  },
+  "new_owner_empire.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "old_owner.GetAdj": {
+   "zh": "旧",
+   "en": "former",
+   "note": {
+    "zh": "游戏里这里会出现旧压迫者的形容词。",
+    "en": "In the game, the adjective for the former oppressors appears here."
+   }
+  },
+  "old_owner.GetName": {
+   "zh": "旧主",
+   "en": "old master",
+   "note": {
+    "zh": "游戏里这里会出现旧压迫者的称呼。",
+    "en": "In the game, the name for the former oppressor appears here."
+   }
+  },
+  "rebel_empire.GetName": {
+   "zh": "叛乱帝国",
+   "en": "rebel empire",
+   "note": {
+    "zh": "游戏里这里会出现叛乱帝国的名称。",
+    "en": "In the game, the name of the rebel empire appears here."
+   }
+  },
+  "rebel_planet.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "rebellion_species.GetAdj": {
+   "zh": "叛乱",
+   "en": "rebel",
+   "note": {
+    "zh": "游戏里这里会出现叛乱者的形容词。",
+    "en": "In the game, the adjective for the rebels appears here."
+   }
+  },
+  "rebellion_species.GetNamePlural": {
+   "zh": "异见者",
+   "en": "dissidents",
+   "note": {
+    "zh": "游戏里这里会出现叛乱个体的复数名称。",
+    "en": "In the game, the plural name of the rebel individuals appears here."
+   }
+  },
+  "revolt_situation.owner.GetName": {
+   "zh": "当局",
+   "en": "the hesitant authorities",
+   "note": {
+    "zh": "游戏里这里会出现当局的名称。",
+    "en": "In the game, the name of the authorities appears here."
+   }
+  },
+  "revolt_situation.target.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "situations:situation_planetary_revolt": {
+   "owner.GetGovernmentName": {
+    "zh": "我们的政府",
+    "en": "government",
+    "note": {
+     "zh": "游戏里这里会出现我们政府的名称。",
+     "en": "In the game, the name of our government appears here."
+    }
+   }
+  },
+  "unrest.4000": {
+   "owner.GetGovernmentName": {
+    "zh": "我们的政府",
+    "en": "government",
+    "note": {
+     "zh": "游戏里这里会出现我们政府的名称。",
+     "en": "In the game, the name of our government appears here."
+    }
+   },
+   "target.GetName": {
+    "zh": "那颗星球",
+    "en": "that planet",
+    "note": {
+     "zh": "游戏里这里会出现那颗星球的名称。",
+     "en": "In the game, the name of that planet appears here."
+    }
+   }
+  },
+  "unrest.4060": {
+   "from.GetAdj": {
+    "zh": "外国",
+    "en": "foreign",
+    "note": {
+     "zh": "游戏里这里会出现外国的形容词。",
+     "en": "In the game, the adjective for the foreign power appears here."
+    }
+   },
+   "from.GetGovernmentName": {
+    "zh": "政府",
+    "en": "government",
+    "note": {
+     "zh": "游戏里这里会出现外国政府的名称。",
+     "en": "In the game, the name of the foreign government appears here."
+    }
+   },
+   "from.GetName": {
+    "zh": "那个帝国",
+    "en": "the other empire",
+    "note": {
+     "zh": "游戏里这里会出现那个帝国的名称。",
+     "en": "In the game, the name of the other empire appears here."
+    }
+   },
+   "target.GetName": {
+    "zh": "那颗星球",
+    "en": "that planet",
+    "note": {
+     "zh": "游戏里这里会出现那颗星球的名称。",
+     "en": "In the game, the name of that planet appears here."
+    }
+   }
+  },
+  "unrest.4200": {
+   "target.GetName": {
+    "zh": "那颗星球",
+    "en": "that planet",
+    "note": {
+     "zh": "游戏里这里会出现那颗星球的名称。",
+     "en": "In the game, the name of that planet appears here."
+    }
+   }
+  },
+  "unrest.4300": {
+   "target.GetName": {
+    "zh": "那颗星球",
+    "en": "that planet",
+    "note": {
+     "zh": "游戏里这里会出现那颗星球的名称。",
+     "en": "In the game, the name of that planet appears here."
+    }
+   }
+  }
  }
 }

@@ -95,5 +95,39 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-first-contact-critters-35.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "帝国",
+   "en": "imperial",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国的形容词。",
+    "en": "In the game, your empire's adjective appears here."
+   }
+  },
+  "Root.GetSpeciesAdj": {
+   "zh": "帝国",
+   "en": "imperial",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国的形容词。",
+    "en": "In the game, your empire's adjective appears here."
+   }
+  },
+  "This.ContactCountry.GetName": {
+   "zh": "未知天体",
+   "en": "unknown object",
+   "note": {
+    "zh": "游戏里这里会出现这个未知天体的代称。",
+    "en": "In the game, the working name of this unknown object appears here."
+   }
+  },
+  "This.System.GetName": {
+   "zh": "这个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现附近恒星系的名称。",
+    "en": "In the game, the name of the nearby star system appears here."
+   }
+  }
  }
 }

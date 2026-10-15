@@ -14,5 +14,23 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-nomads-4105.md"
+ },
+ "placeholders": {
+  "nomad_harvested_system.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "nomad_harvesting_deposits_country.GetName": {
+   "zh": "那个采收帝国",
+   "en": "the harvesting empire",
+   "note": {
+    "zh": "游戏里这里会出现正在采收资源的游牧帝国名称。",
+    "en": "In the game, the name of the nomadic empire harvesting the deposits appears here."
+   }
+  }
  }
 }

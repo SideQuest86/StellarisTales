@@ -34,5 +34,59 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/anomaly-irregular-energy-cat.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗恒星",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都的名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.GetLeaderName": {
+   "zh": "这位",
+   "en": "the officer",
+   "note": {
+    "zh": "游戏里这里会出现科学官的名字。",
+    "en": "In the game, the science officer's name appears here."
+   }
+  },
+  "crazy_science_officer.GetHerselfHimself": {
+   "zh": "自己",
+   "en": "themselves",
+   "note": {
+    "zh": "游戏里这里会出现这位科学官自己的称呼。",
+    "en": "In the game, this officer's self-reference appears here."
+   }
+  },
+  "crazy_science_officer.GetName": {
+   "zh": "这位",
+   "en": "the officer",
+   "note": {
+    "zh": "游戏里这里会出现这位科学官的名字。",
+    "en": "In the game, this science officer's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "distar.1073": {
+   "From.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  }
  }
 }

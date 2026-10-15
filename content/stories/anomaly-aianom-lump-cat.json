@@ -20,5 +20,67 @@
    "The categories are marked should_ai_use = yes (an AI-oriented anomaly category, in contrast to should_ai_and_humans_use used by e.g. living_metal_category); the exact engine semantics of the flag were not verified in the files."
   ],
   "guide": "public/summaries/anomaly-aianom-lump-cat.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "aianom.1": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  },
+  "aianom.2": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  },
+  "aianom.3": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  },
+  "aianom.4": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  },
+  "aianom.5": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  }
  }
 }

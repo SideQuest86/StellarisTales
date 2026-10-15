@@ -1,46 +1,110 @@
 {
  "id": "rift-crystal",
  "family": {
-  "title": {"zh": "晶体裂隙", "en": "The Crystal Rift"},
+  "title": {
+   "zh": "晶体裂隙",
+   "en": "The Crystal Rift"
+  },
   "category": "rifts",
   "start": "astral_rifts:crystal",
-  "members": ["astral_rifts:crystal"]
+  "members": [
+   "astral_rifts:crystal"
+  ]
  },
  "category": "rifts",
  "bridges": [
-  {"from": "astral_planes.45", "choice": "INTERESTING", "to": "astral_planes.3000", "conditional": true,
-   "label": {"zh": "舰队穿过奇异虫洞进入“无形异使”星系时", "en": "When a fleet passes through the strange wormhole into the Formless system"},
-   "evidence": "common/on_actions/00_on_actions.txt:4144-4148 on_entering_strange_wormhole -> astral_planes.3000 (events/astral_planes_events.txt:1875-1906: from has star flag formless_system, fromfrom has crystal_sphere_system; fire_only_once)"}
+  {
+   "from": "astral_planes.45",
+   "choice": "INTERESTING",
+   "to": "astral_planes.3000",
+   "conditional": true,
+   "label": {
+    "zh": "舰队穿过奇异虫洞进入“无形异使”星系时",
+    "en": "When a fleet passes through the strange wormhole into the Formless system"
+   },
+   "evidence": "common/on_actions/00_on_actions.txt:4144-4148 on_entering_strange_wormhole -> astral_planes.3000 (events/astral_planes_events.txt:1875-1906: from has star flag formless_system, fromfrom has crystal_sphere_system; fire_only_once)"
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["astral_rift.1005", "astral_rift.1010"],
-   "label": {"zh": "用人工智能解读或用电磁脉冲夺回控制", "en": "Decode with A.I. or take control with an E.M.P."},
-   "note": {"zh": "1000：用人工智能检测隐藏规律（→ 1005 家园）；或花 1000 能量币对锚链释放电磁脉冲（→ 1010 重获控制）。1010 之后可再提供人工智能支援（→ 1006 家园，难度较高，汇入同一主线 1015）或趁机逃离（→ 1025）。", "en": "1000: use A.I. to look for hidden patterns (→ 1005 Home), or spend 1000 energy on an E.M.P. through the anchor cord (→ 1010 Taking Control). After 1010 you may add A.I. assistance (→ 1006 Home, higher difficulty, rejoining the main line at 1015) or escape at once (→ 1025)."}},
-  {"kind": "exclusive", "members": ["astral_planes.45", "astral_rift.1030"],
-   "label": {"zh": "打开传送门或封印它", "en": "Open the doorway or seal it"},
-   "note": {"zh": "1020：打开传送门（立即结束探索，2 天后隐藏事件 1095 在银河核心生成形态之系统并以天然虫洞取代这个裂隙所在位置，再过 1 天触发 astral_planes.45 “古怪虫洞”）；或在掌握虫洞稳定科技并花 500 星界丝缕后封印它（→ 1030，该星系获得矿藏 d_crystal_rift）。", "en": "1020: open the doorway (the exploration ends at once; 2 days later hidden event 1095 spawns the Formless system at the galactic core, replaces the rift with a natural wormhole, destroys the rift, and one day later fires astral_planes.45 “Strange Wormhole”); or, with Wormhole Stabilization and 500 astral threads, seal it (→ 1030, the system gains the deposit d_crystal_rift)."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.1005",
+    "astral_rift.1010"
+   ],
+   "label": {
+    "zh": "用人工智能解读或用电磁脉冲夺回控制",
+    "en": "Decode with A.I. or take control with an E.M.P."
+   },
+   "note": {
+    "zh": "1000：用人工智能检测隐藏规律（→ 1005 家园）；或花 1000 能量币对锚链释放电磁脉冲（→ 1010 重获控制）。1010 之后可再提供人工智能支援（→ 1006 家园，难度较高，汇入同一主线 1015）或趁机逃离（→ 1025）。",
+    "en": "1000: use A.I. to look for hidden patterns (→ 1005 Home), or spend 1000 energy on an E.M.P. through the anchor cord (→ 1010 Taking Control). After 1010 you may add A.I. assistance (→ 1006 Home, higher difficulty, rejoining the main line at 1015) or escape at once (→ 1025)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_planes.45",
+    "astral_rift.1030"
+   ],
+   "label": {
+    "zh": "打开传送门或封印它",
+    "en": "Open the doorway or seal it"
+   },
+   "note": {
+    "zh": "1020：打开传送门（立即结束探索，2 天后隐藏事件 1095 在银河核心生成形态之系统并以天然虫洞取代这个裂隙所在位置，再过 1 天触发 astral_planes.45 “古怪虫洞”）；或在掌握虫洞稳定科技并花 500 星界丝缕后封印它（→ 1030，该星系获得矿藏 d_crystal_rift）。",
+    "en": "1020: open the doorway (the exploration ends at once; 2 days later hidden event 1095 spawns the Formless system at the galactic core, replaces the rift with a natural wormhole, destroys the rift, and one day later fires astral_planes.45 “Strange Wormhole”); or, with Wormhole Stabilization and 500 astral threads, seal it (→ 1030, the system gains the deposit d_crystal_rift)."
+   }
+  }
  ],
  "endings": {
   "astral_rift.1025": {
-   "label": {"zh": "逃离", "en": "Escape"},
-   "note": {"zh": "撤回锚缆逃走：大量凝聚力与大量星界丝缕；探索结束。", "en": "The anchor cable is retracted and the Sphere escapes: a large unity income and a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_1_events.txt:340-364"},
+   "label": {
+    "zh": "逃离",
+    "en": "Escape"
+   },
+   "note": {
+    "zh": "撤回锚缆逃走：大量凝聚力与大量星界丝缕；探索结束。",
+    "en": "The anchor cable is retracted and the Sphere escapes: a large unity income and a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:340-364"
+  },
   "astral_rift.1030": {
-   "label": {"zh": "封印", "en": "The Seal"},
-   "note": {"zh": "永久封印这个危险；该星系获得矿藏 d_crystal_rift；探索结束。花费 500 星界丝缕且需虫洞稳定科技。", "en": "The danger is sealed permanently; the system gains deposit d_crystal_rift; the exploration ends. Costs 500 astral threads and needs Wormhole Stabilization."},
-   "evidence": "events/astral_rifts_1_events.txt:313-338, 366-382"},
+   "label": {
+    "zh": "封印",
+    "en": "The Seal"
+   },
+   "note": {
+    "zh": "永久封印这个危险；该星系获得矿藏 d_crystal_rift；探索结束。花费 500 星界丝缕且需虫洞稳定科技。",
+    "en": "The danger is sealed permanently; the system gains deposit d_crystal_rift; the exploration ends. Costs 500 astral threads and needs Wormhole Stabilization."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:313-338, 366-382"
+  },
   "astral_planes.45": {
-   "label": {"zh": "古怪虫洞：通往形态之系统", "en": "Strange Wormhole: the way to the Formless system"},
-   "note": {"zh": "打开传送门的后果：裂隙被销毁，探索帝国获得国家标记 opened_wormhole_to_formless_system，星系中出现通往银河核心形态之系统的天然虫洞，并设置全局标记 strange_wormholes_locked。此事件本身是任何帝国舰队首次进入水晶球星系虫洞时的通用遭遇（on_entering_system_fleet，00_on_actions.txt:1047），这里只是打开者的那一次。", "en": "Consequence of opening the doorway: the rift is destroyed, the explorer gets country flag opened_wormhole_to_formless_system, a natural wormhole to the Formless system at the galactic core appears, and global flag strange_wormholes_locked is set. The event itself is the generic first-encounter event for any fleet entering the crystal-sphere-system wormhole (on_entering_system_fleet, 00_on_actions.txt:1047); here it is the opener's encounter."},
-   "evidence": "events/astral_rifts_1_events.txt:284-296, 384-440; events/astral_planes_events.txt:1067-1130"}
+   "label": {
+    "zh": "古怪虫洞：通往形态之系统",
+    "en": "Strange Wormhole: the way to the Formless system"
+   },
+   "note": {
+    "zh": "打开传送门的后果：裂隙被销毁，探索帝国获得国家标记 opened_wormhole_to_formless_system，星系中出现通往银河核心形态之系统的天然虫洞，并设置全局标记 strange_wormholes_locked。此事件本身是任何帝国舰队首次进入水晶球星系虫洞时的通用遭遇（on_entering_system_fleet，00_on_actions.txt:1047），这里只是打开者的那一次。",
+    "en": "Consequence of opening the doorway: the rift is destroyed, the explorer gets country flag opened_wormhole_to_formless_system, a natural wormhole to the Formless system at the galactic core appears, and global flag strange_wormholes_locked is set. The event itself is the generic first-encounter event for any fleet entering the crystal-sphere-system wormhole (on_entering_system_fleet, 00_on_actions.txt:1047); here it is the opener's encounter."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:284-296, 384-440; events/astral_planes_events.txt:1067-1130"
+  }
  },
  "notes": [
-  {"doc": "astral_rifts:crystal", "kind": "review",
+  {
+   "doc": "astral_rifts:crystal",
+   "kind": "review",
    "zh": "这个裂隙不会随机抽取（randomized = no，flags = crystal_rift）：它只由“研究水晶球”情境完成时的事件 astral_situation.5 在水晶球星系中生成（astral_planes_situation_events.txt:61-71，common/situations/06_astral_planes_situations.txt:268）。",
-   "en": "This rift is never drawn randomly (randomized = no, flags = crystal_rift): it is spawned in the crystal sphere system only by astral_situation.5 when the “Study the Crystal Sphere” situation completes (astral_planes_situation_events.txt:61-71, common/situations/06_astral_planes_situations.txt:268)."},
-  {"doc": "astral_rift.1000", "kind": "review",
+   "en": "This rift is never drawn randomly (randomized = no, flags = crystal_rift): it is spawned in the crystal sphere system only by astral_situation.5 when the “Study the Crystal Sphere” situation completes (astral_planes_situation_events.txt:61-71, common/situations/06_astral_planes_situations.txt:268)."
+  },
+  {
+   "doc": "astral_rift.1000",
+   "kind": "review",
    "zh": "探球被另一侧的存在抓住、收回装置失效，因此第一章没有“放弃”的选项；只能解读数据或用电磁脉冲夺回控制。",
-   "en": "Something on the far side holds the Sphere and its retraction device is disabled, so the first chapter has no “abandon” option; only decoding the data or an E.M.P. to regain control."}
+   "en": "Something on the far side holds the Sphere and its retraction device is disabled, so the first chapter has no “abandon” option; only decoding the data or an E.M.P. to regain control."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -50,8 +114,32 @@
    "zh": "已核对裂隙定义与 1000–1095 全部事件、资源门槛、隐藏事件 1095 与 astral_planes.45，以及裂隙的生成来源（水晶球情境）。",
    "en": "Checked the rift definition and every event 1000–1095 with resource gates, hidden event 1095, astral_planes.45 and the rift's spawn source (the crystal sphere situation)."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt", "events/astral_planes_events.txt", "events/astral_planes_situation_events.txt", "common/on_actions/00_on_actions.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_1_events.txt",
+   "events/astral_planes_events.txt",
+   "events/astral_planes_situation_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/rift-crystal.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this system's name appears here."
+   }
+  },
+  "solar_system.GetName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this system's name appears here."
+   }
+  }
  }
 }

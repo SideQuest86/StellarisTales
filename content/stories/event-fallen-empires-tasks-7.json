@@ -85,5 +85,55 @@
    "event-fallen-empires-tasks-11",
    "event-fallen-empires-tasks-13"
   ]
+ },
+ "placeholders": {
+  "FallenEmpireTaskOrigin.GetName": {
+   "zh": "堕落帝国",
+   "en": "the fallen empire",
+   "note": {
+    "zh": "游戏里这里会出现堕落帝国的名称。",
+    "en": "In the game, the name of the fallen empire appears here."
+   }
+  },
+  "FallenEmpireTaskTarget.GetName": {
+   "zh": "那个帝国",
+   "en": "rogue empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of that empire appears here."
+   }
+  },
+  "FallenEmpireTaskTarget.GetSpeciesName": {
+   "zh": "那个物种",
+   "en": "rogue species",
+   "note": {
+    "zh": "游戏里这里会出现那个物种的名称。",
+    "en": "In the game, the name of that species appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "对方",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现对方帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "From.GetSpeciesName": {
+   "zh": "生物",
+   "en": "creature",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的名称。",
+    "en": "In the game, the name of the other empire's species appears here."
+   }
+  },
+  "From.GetSpeciesNamePluralCompliment": {
+   "zh": "公民",
+   "en": "citizens",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的称呼。",
+    "en": "In the game, the form of address for the other empire's species appears here."
+   }
+  }
  }
 }

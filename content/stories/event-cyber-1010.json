@@ -20,5 +20,23 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-cyber-1010.md"
+ },
+ "placeholders": {
+  "most_populous.GetName": {
+   "zh": "该物种",
+   "en": "this species",
+   "note": {
+    "zh": "游戏里这里会出现人口最多的物种的名称。",
+    "en": "In the game, the name of the most populous species appears here."
+   }
+  },
+  "sky_megacorp.GetName": {
+   "zh": "企业",
+   "en": "corporation",
+   "note": {
+    "zh": "游戏里这里会出现这家企业的名称。",
+    "en": "In the game, the name of this corporation appears here."
+   }
+  }
  }
 }

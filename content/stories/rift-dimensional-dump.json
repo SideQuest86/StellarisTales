@@ -2,38 +2,90 @@
  "id": "rift-dimensional-dump",
  "category": "rifts",
  "bridges": [
-  {"from": "astral_rift.2205", "to": "astral_rift.2220", "conditional": true,
-   "label": {"zh": "救助路线下“干掉他”而本阶段失败时", "en": "If the stage fails after “Dispatch” on the rescue route"},
-   "evidence": "events/astral_rifts_2_events.txt:596-610: the second option named astral_rift.2205.a (trigger has_astral_rift_flag = dimensional_dump_help) sets set_next_astral_rift_event { id = astral_rift.2210 on_roll_failed = astral_rift.2220 }; the first same-named option (recover-gear route, :585-595) has no fallback. Bridge has no `choice` because both options share the key and a choice key would bind to the first one."}
+  {
+   "from": "astral_rift.2205",
+   "to": "astral_rift.2220",
+   "conditional": true,
+   "label": {
+    "zh": "救助路线下“干掉他”而本阶段失败时",
+    "en": "If the stage fails after “Dispatch” on the rescue route"
+   },
+   "evidence": "events/astral_rifts_2_events.txt:596-610: the second option named astral_rift.2205.a (trigger has_astral_rift_flag = dimensional_dump_help) sets set_next_astral_rift_event { id = astral_rift.2210 on_roll_failed = astral_rift.2220 }; the first same-named option (recover-gear route, :585-595) has no fallback. Bridge has no `choice` because both options share the key and a choice key would bind to the first one."
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["astral_rift.2210", "astral_rift.2220"],
-   "label": {"zh": "干掉外星人：得手或伤亡", "en": "Dispatching the alien: done or fatalities"},
-   "note": {"zh": "在救助路线（2200.a）上选择“干掉他”时，本阶段要么突破（2210），要么以每次掷骰 1.5% 的基础概率失败，外星人先开枪，科学家遇难（2220）；拿装备路线（2200.b）没有这个失败后备。", "en": "On the rescue route (2200.a), “Dispatch the individual” either breaks through (2210) or fails at a base 1.5% per roll: the alien shoots first and the scientist dies (2220); the gear route (2200.b) has no such fallback."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.2210",
+    "astral_rift.2220"
+   ],
+   "label": {
+    "zh": "干掉外星人：得手或伤亡",
+    "en": "Dispatching the alien: done or fatalities"
+   },
+   "note": {
+    "zh": "在救助路线（2200.a）上选择“干掉他”时，本阶段要么突破（2210），要么以每次掷骰 1.5% 的基础概率失败，外星人先开枪，科学家遇难（2220）；拿装备路线（2200.b）没有这个失败后备。",
+    "en": "On the rescue route (2200.a), “Dispatch the individual” either breaks through (2210) or fails at a base 1.5% per roll: the alien shoots first and the scientist dies (2220); the gear route (2200.b) has no such fallback."
+   }
+  }
  ],
  "endings": {
   "astral_rift.2210": {
-   "label": {"zh": "干掉外星人：回收废料", "en": "Alien dispatched: salvage"},
-   "note": {"zh": "处决外星人后回收有价值的废料：矿物、合金与中量星界丝缕（拿装备路线另得大量工程研究），探索结束。", "en": "After killing the alien the crew salvages the dump: minerals, alloys and a medium astral thread reward (the gear route also gives major engineering research); the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:639-693"},
+   "label": {
+    "zh": "干掉外星人：回收废料",
+    "en": "Alien dispatched: salvage"
+   },
+   "note": {
+    "zh": "处决外星人后回收有价值的废料：矿物、合金与中量星界丝缕（拿装备路线另得大量工程研究），探索结束。",
+    "en": "After killing the alien the crew salvages the dump: minerals, alloys and a medium astral thread reward (the gear route also gives major engineering research); the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:639-693"
+  },
   "astral_rift.2220": {
-   "label": {"zh": "遭受伤亡：科学家遇难", "en": "Fatalities Sustained"},
-   "note": {"zh": "失败分支：外星人杀死人质与数名船员，科学家也在其中；获得合金与大量星界丝缕，探索结束。", "en": "Failure branch: the alien kills the hostage and several crew, the scientist among them; alloys and a large astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:715-742"},
+   "label": {
+    "zh": "遭受伤亡：科学家遇难",
+    "en": "Fatalities Sustained"
+   },
+   "note": {
+    "zh": "失败分支：外星人杀死人质与数名船员，科学家也在其中；获得合金与大量星界丝缕，探索结束。",
+    "en": "Failure branch: the alien kills the hostage and several crew, the scientist among them; alloys and a large astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:715-742"
+  },
   "astral_rift.2230": {
-   "label": {"zh": "迷路垃圾工成为指挥官", "en": "The lost junker becomes a commander"},
-   "note": {"zh": "谈判成功（2215 → 2225）后带回这位迷路的垃圾工，探索结束；360 天后其训练完成，作为技能 6、带“裂隙扭曲”的指挥官加入。", "en": "After successful negotiation (2215 → 2225) the lost junker comes home with the crew and the exploration ends; 360 days later their training is complete and they join as a skill-6 commander with Rift Warped."},
-   "evidence": "events/astral_rifts_2_events.txt:744-803 (exiled commander, country_event 2230 days=360, finish_astral_rift); 805-835"}
+   "label": {
+    "zh": "迷路垃圾工成为指挥官",
+    "en": "The lost junker becomes a commander"
+   },
+   "note": {
+    "zh": "谈判成功（2215 → 2225）后带回这位迷路的垃圾工，探索结束；360 天后其训练完成，作为技能 6、带“裂隙扭曲”的指挥官加入。",
+    "en": "After successful negotiation (2215 → 2225) the lost junker comes home with the crew and the exploration ends; 360 days later their training is complete and they join as a skill-6 commander with Rift Warped."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:744-803 (exiled commander, country_event 2230 days=360, finish_astral_rift); 805-835"
+  }
  },
  "nodeLabels": {
-  "astral_rift.2205": {"zh": "漂浮躯体：劫持人质", "en": "Floating Body: the hostage"},
-  "astral_rift.2210": {"zh": "漂浮躯体：处决", "en": "Floating Body: dispatched"},
-  "astral_rift.2230": {"zh": "训练完成", "en": "Training complete"}
+  "astral_rift.2205": {
+   "zh": "漂浮躯体：劫持人质",
+   "en": "Floating Body: the hostage"
+  },
+  "astral_rift.2210": {
+   "zh": "漂浮躯体：处决",
+   "en": "Floating Body: dispatched"
+  },
+  "astral_rift.2230": {
+   "zh": "训练完成",
+   "en": "Training complete"
+  }
  },
  "notes": [
-  {"doc": "astral_rift.2205", "kind": "review",
+  {
+   "doc": "astral_rift.2205",
+   "kind": "review",
    "zh": "原文差异：拿装备路线的英文是外星人抓起焊枪劫持一名工程人员，中文却与救助路线相同（医疗人员、靴中武器）。“试试谈判”仅限非“非友好”帝国。",
-   "en": "Localisation difference: on the gear route the English has the alien grab a welding torch and an engineer; the Chinese repeats the rescue-route text (a medic, a weapon from the boot). “Attempt to negotiate” requires a not-unfriendly empire."}
+   "en": "Localisation difference: on the gear route the English has the alien grab a welding torch and an engineer; the Chinese repeats the rescue-route text (a medic, a weapon from the boot). “Attempt to negotiate” requires a not-unfriendly empire."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -43,8 +95,23 @@
    "zh": "已核对裂隙定义与 2200–2230 全部事件，补上救助路线 2205 的失败分支 2220（原为独立故事）。",
    "en": "Checked the rift definition and every event 2200–2230; added the rescue-route failure fallback 2220 of 2205 (formerly a separate story)."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt"],
-  "uncertain": ["The failure bridge is attached to the doc rather than to the specific (second) option instance of astral_rift.2205.a, because bridges cannot address duplicate option keys (see ledger Requests)."],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_2_events.txt"
+  ],
+  "uncertain": [
+   "The failure bridge is attached to the doc rather than to the specific (second) option instance of astral_rift.2205.a, because bridges cannot address duplicate option keys (see ledger Requests)."
+  ],
   "guide": "public/summaries/rift-dimensional-dump.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这位飞行员",
+   "en": "the pilot",
+   "note": {
+    "zh": "游戏里这里会出现这位飞行员的名字。",
+    "en": "In the game, the name of this pilot appears here."
+   }
+  }
  }
 }

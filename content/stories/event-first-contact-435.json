@@ -97,5 +97,39 @@
    "437 另有 on_post_communications_established 触发（00_on_actions.txt:2268），未并入本篇的另一入口。 / 437 also has an on_action entry (00_on_actions.txt:2268)."
   ],
   "guide": "public/summaries/event-first-contact-435.md"
+ },
+ "placeholders": {
+  "This.ContactCountry.GetName": {
+   "zh": "未知外星人",
+   "en": "unknown aliens",
+   "note": {
+    "zh": "游戏里这里会出现这个外星势力的代称。",
+    "en": "In the game, the working name of this alien power appears here."
+   }
+  },
+  "This.ContactCountry.GetSpeciesNamePlural": {
+   "zh": "外星人",
+   "en": "aliens",
+   "note": {
+    "zh": "游戏里这里会出现这个外星物种的复数名称。",
+    "en": "In the game, the plural name of this alien species appears here."
+   }
+  },
+  "encountered_country.GetSpeciesAdj": {
+   "zh": "漩涡",
+   "en": "swirling",
+   "note": {
+    "zh": "游戏里这里会出现这个外星物种的形容词。",
+    "en": "In the game, the adjective for this alien species appears here."
+   }
+  },
+  "encountered_country.GetSpeciesNamePlural": {
+   "zh": "外星人",
+   "en": "aliens",
+   "note": {
+    "zh": "游戏里这里会出现这个外星物种的复数名称。",
+    "en": "In the game, the plural name of this alien species appears here."
+   }
+  }
  }
 }

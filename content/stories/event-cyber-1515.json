@@ -13,5 +13,31 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-cyber-1515.md"
+ },
+ "placeholders": {
+  "Ruler.GetName": {
+   "zh": "领袖",
+   "en": "leader",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的名字。",
+    "en": "In the game, your ruler's name appears here."
+   }
+  },
+  "Ruler.GetTitle": {
+   "zh": "这位",
+   "en": "the",
+   "note": {
+    "zh": "游戏里这里会出现统治者的称谓。",
+    "en": "In the game, your ruler's title appears here."
+   }
+  },
+  "Species.GetAdj": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  }
  }
 }

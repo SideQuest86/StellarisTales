@@ -53,5 +53,55 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/site-zevox-digsite.md"
+ },
+ "placeholders": {
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.Planet.GetName": {
+   "zh": "这颗卫星",
+   "en": "this moon",
+   "note": {
+    "zh": "游戏里这里会出现这颗卫星的名称。",
+    "en": "In the game, the name of this moon appears here."
+   }
+  },
+  "Root.Planet.Orbit.GetName": {
+   "zh": "母星",
+   "en": "the parent planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗卫星所绕行的行星的名称。",
+    "en": "In the game, the name of the planet this moon orbits appears here."
+   }
+  },
+  "Root.solar_system.GetName": {
+   "zh": "某个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of the star system appears here."
+   }
+  },
+  "new_robot_country.GetName": {
+   "zh": "起义势力",
+   "en": "rebellion",
+   "note": {
+    "zh": "游戏里这里会出现这支起义势力的名称。",
+    "en": "In the game, the name of this rebellion appears here."
+   }
+  }
  }
 }

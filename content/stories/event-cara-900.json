@@ -39,5 +39,39 @@
    "common/on_actions/00_on_actions.txt:1416"
   ],
   "guide": "public/summaries/event-cara-900.md"
+ },
+ "placeholders": {
+  "From.From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "From.GetAdj": {
+   "zh": "敌对",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现敌对一方的形容词。",
+    "en": "In the game, the adjective for the rival side appears here."
+   }
+  },
+  "cara_home_new_location.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "caravaneer_home_country.GetName": {
+   "zh": "行商帝国",
+   "en": "caravaneer empire",
+   "note": {
+    "zh": "游戏里这里会出现行商一方的国家名称。",
+    "en": "In the game, the name of the caravaneers' empire appears here."
+   }
+  }
  }
 }

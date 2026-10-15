@@ -34,5 +34,35 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/anomaly-origin-asteroid-category.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗小行星",
+   "en": "this asteroid",
+   "note": {
+    "zh": "游戏里这里会出现这颗小行星的名称。",
+    "en": "In the game, this asteroid's name appears here."
+   }
+  },
+  "Root.GetLeaderName": {
+   "zh": "这位",
+   "en": "the officer",
+   "note": {
+    "zh": "游戏里这里会出现科学官的名字。",
+    "en": "In the game, the science officer's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "anomaly.1": {
+   "From.GetName": {
+    "zh": "它",
+    "en": "this one",
+    "note": {
+     "zh": "游戏里这里会出现这颗小行星的名称。",
+     "en": "In the game, this asteroid's name appears here."
+    }
+   }
+  }
  }
 }

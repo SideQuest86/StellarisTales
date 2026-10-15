@@ -568,5 +568,63 @@
    "Site-specific pools (e.g. engineered species, ocean sites, Genius Caeli, fungus dig) change which incidents are possible at a given site; they are noted in the site guides, not modelled here."
   ],
   "guide": "public/summaries/archaeology-incidents.md"
+ },
+ "placeholders": {
+  "From.Leader.GetName": {
+   "zh": "这位考古学家",
+   "en": "the archaeologist",
+   "note": {
+    "zh": "游戏里这里会出现首席考古学家的名字。",
+    "en": "In the game, the chief archaeologist's name appears here."
+   }
+  },
+  "Root.GetLeaderName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现你的科学专员的名字。",
+    "en": "In the game, your science officer's name appears here."
+   }
+  },
+  "Root.Owner.GetHomeWorldName": {
+   "zh": "我们的母星",
+   "en": "our homeworld",
+   "note": {
+    "zh": "游戏里这里会出现你的母星的名字。",
+    "en": "In the game, your homeworld's name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesMouthName": {
+   "zh": "口腔",
+   "en": "mouth",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的口腔称呼。",
+    "en": "In the game, your species' mouth name appears here."
+   }
+  },
+  "dead_scientist.GetName": {
+   "zh": "这位同事",
+   "en": "the colleague",
+   "note": {
+    "zh": "游戏里这里会出现这位同事的名字。",
+    "en": "In the game, this colleague's name appears here."
+   }
+  },
+  "owner.GetSpeciesName": {
+   "zh": "生物",
+   "en": "creature",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的通称。",
+    "en": "In the game, your species' general name appears here."
+   }
+  },
+  "root.leader.GetName": {
+   "zh": "这位考古学家",
+   "en": "the archaeologist",
+   "note": {
+    "zh": "游戏里这里会出现首席考古学家的名字。",
+    "en": "In the game, the chief archaeologist's name appears here."
+   }
+  }
  }
 }

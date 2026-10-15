@@ -1,209 +1,527 @@
 {
  "id": "unbidden",
- "include": ["observer.34", "observer.35", "observer.36", "observer.37", "observer.38", "observer.39", "observer.40"],
- "hubs": ["crisis.1000"],
+ "include": [
+  "observer.34",
+  "observer.35",
+  "observer.36",
+  "observer.37",
+  "observer.38",
+  "observer.39",
+  "observer.40"
+ ],
+ "hubs": [
+  "crisis.1000"
+ ],
  "bridges": [
   {
-   "from": "crisis.1007", "to": "observer.34",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.1007",
+   "to": "observer.34",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_2.txt:301 hidden crisis.1000 fires observer.34; events/observer_events.txt:621-634 reuses crisis.1007.name/desc"
   },
   {
-   "from": "crisis.1010", "to": "custodian.51", "conditional": true,
-   "label": {"zh": "若有银河监管人：入侵开始30天后其向共同体成员发表宣告", "en": "If there is a Galactic Custodian: its address to Community members 30 days after the invasion begins"},
+   "from": "crisis.1010",
+   "to": "custodian.51",
+   "conditional": true,
+   "label": {
+    "zh": "若有银河监管人：入侵开始30天后其向共同体成员发表宣告",
+    "en": "If there is a Galactic Custodian: its address to Community members 30 days after the invasion begins"
+   },
    "evidence": "events/crisis_events_2.txt:307-315 crisis.1000 sends custodian.50 to the Custodian after 30 days; events/nemesis_custodian_events.txt:654-668"
   },
   {
-   "from": "crisis.1010", "to": "custodian.53", "conditional": true,
-   "label": {"zh": "若你是银河监管人：受威胁的成员国求援", "en": "If you are the Galactic Custodian: a threatened member pleads for help"},
+   "from": "crisis.1010",
+   "to": "custodian.53",
+   "conditional": true,
+   "label": {
+    "zh": "若你是银河监管人：受威胁的成员国求援",
+    "en": "If you are the Galactic Custodian: a threatened member pleads for help"
+   },
    "evidence": "events/nemesis_custodian_events.txt:669-688"
   },
   {
-   "from": "crisis.1010", "to": "emperor.91", "conditional": true,
-   "label": {"zh": "若有银河帝皇：30天后帝皇的宣告", "en": "If there is a Galactic Emperor: the Emperor's address 30 days later"},
+   "from": "crisis.1010",
+   "to": "emperor.91",
+   "conditional": true,
+   "label": {
+    "zh": "若有银河帝皇：30天后帝皇的宣告",
+    "en": "If there is a Galactic Emperor: the Emperor's address 30 days later"
+   },
    "evidence": "events/crisis_events_2.txt:316-321 crisis.1000 sends emperor.90 after 30 days; events/nemesis_emperor_events.txt:990-1004"
   },
   {
-   "from": "crisis.1010", "to": "emperor.93", "conditional": true,
-   "label": {"zh": "若你是银河帝皇：成员国求援", "en": "If you are the Galactic Emperor: a member pleads for help"},
+   "from": "crisis.1010",
+   "to": "emperor.93",
+   "conditional": true,
+   "label": {
+    "zh": "若你是银河帝皇：成员国求援",
+    "en": "If you are the Galactic Emperor: a member pleads for help"
+   },
    "evidence": "events/nemesis_emperor_events.txt:1005-1024"
   },
   {
-   "from": "crisis.1010", "to": "crisis.1050", "conditional": true,
-   "label": {"zh": "此后可随时联络破界者（可重复的通讯，非剧情进程）", "en": "From now on you may contact the Unbidden (repeatable communication, not a story step)"},
+   "from": "crisis.1010",
+   "to": "crisis.1050",
+   "conditional": true,
+   "label": {
+    "zh": "此后可随时联络破界者（可重复的通讯，非剧情进程）",
+    "en": "From now on you may contact the Unbidden (repeatable communication, not a story step)"
+   },
    "evidence": "events/crisis_events_2.txt:790-792 crisis.1010 establishes communications; crisis.1050 (L1039-1181) fired by on_custom_diplomacy (common/on_actions/00_on_actions.txt:711) when FROM is the Unbidden"
   },
   {
-   "from": "crisis.1010", "to": "crisis.1011", "conditional": true,
-   "label": {"zh": "每当异次元舰队把一处殖民地轰炸至毁灭（可重复）", "en": "Whenever extradimensional bombardment wipes out one of your colonies (repeatable)"},
+   "from": "crisis.1010",
+   "to": "crisis.1011",
+   "conditional": true,
+   "label": {
+    "zh": "每当异次元舰队把一处殖民地轰炸至毁灭（可重复）",
+    "en": "Whenever extradimensional bombardment wipes out one of your colonies (repeatable)"
+   },
    "evidence": "events/crisis_events_2.txt:800-917 crisis.1011 (on_planet_bombarded, common/on_actions/00_on_actions.txt:2160) requires planet_devastation >= 100 by an extradimensional country and destroys the colony"
   },
   {
-   "from": "crisis.1010", "to": "crisis.1110", "conditional": true,
-   "label": {"zh": "破界者占据银河15%或超过90个星系后（隐藏事件1100，平均12个月）：第二道传送门", "en": "Once the Unbidden hold 15% of the galaxy or over 90 systems (hidden crisis.1100, MTTH 12 months): a second portal"},
+   "from": "crisis.1010",
+   "to": "crisis.1110",
+   "conditional": true,
+   "label": {
+    "zh": "破界者占据银河15%或超过90个星系后（隐藏事件1100，平均12个月）：第二道传送门",
+    "en": "Once the Unbidden hold 15% of the galaxy or over 90 systems (hidden crisis.1100, MTTH 12 months): a second portal"
+   },
    "evidence": "events/crisis_events_2.txt:1275-1505 crisis.1100 (Unbidden country, fire_only_once, MTTH 12 months, endgame_crisis_large_size_trigger) spawns the Aberrant and sends crisis.1110 after 1 day"
   },
   {
-   "from": "crisis.1010", "to": "crisis.1013", "conditional": true,
-   "label": {"zh": "摧毁破界者传送门，且没有其他传送门存留", "en": "Destroy the Unbidden portal while no other portal remains"},
+   "from": "crisis.1010",
+   "to": "crisis.1013",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁破界者传送门，且没有其他传送门存留",
+    "en": "Destroy the Unbidden portal while no other portal remains"
+   },
    "evidence": "events/crisis_events_2.txt:920-974 crisis.1012 (on_ship_destroyed_victim, 00_on_actions.txt:1406; fire_only_once) sends crisis.1013 to every playable empire when no second portal appeared or the second and third are already destroyed"
   },
   {
-   "from": "crisis.1010", "to": "crisis.1016", "conditional": true,
-   "label": {"zh": "摧毁破界者传送门，但其他传送门仍在", "en": "Destroy the Unbidden portal while other portals remain"},
+   "from": "crisis.1010",
+   "to": "crisis.1016",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁破界者传送门，但其他传送门仍在",
+    "en": "Destroy the Unbidden portal while other portals remain"
+   },
    "evidence": "events/crisis_events_2.txt:975-986 crisis.1012 else_if branch: a second portal exists and neither the second nor third has been destroyed; sends crisis.1016"
   },
   {
-   "from": "crisis.1013", "to": "observer.35",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.1013",
+   "to": "observer.35",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_2.txt:959 observer.35 is fired in the same final-portal branch; events/observer_events.txt:636-650"
   },
   {
-   "from": "crisis.1013", "to": "crisis.1250", "conditional": true,
-   "label": {"zh": "若摧毁者是人类玩家：10–20天后俘获“术士”（遗珍）", "en": "If the destroyer is a human player: a Warlock is captured 10–20 days later (relic)"},
+   "from": "crisis.1013",
+   "to": "crisis.1250",
+   "conditional": true,
+   "label": {
+    "zh": "若摧毁者是人类玩家：10–20天后俘获“术士”（遗珍）",
+    "en": "If the destroyer is a human player: a Warlock is captured 10–20 days later (relic)"
+   },
    "evidence": "events/crisis_events_2.txt:951-957 inside FROM (the portal killer) with is_ai = no: crisis.1250 days=10 random=10; crisis.1250 (L3897-3910) adds r_unbidden_warlock"
   },
   {
-   "from": "crisis.1110", "to": "observer.36",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.1110",
+   "to": "observer.36",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_2.txt:1485 crisis.1100 fires observer.36; events/observer_events.txt:652-666"
   },
   {
-   "from": "crisis.1110", "to": "crisis.1051", "conditional": true,
-   "label": {"zh": "此后可随时联络背道者（可重复的通讯）", "en": "From now on you may contact the Aberrant (repeatable communication)"},
+   "from": "crisis.1110",
+   "to": "crisis.1051",
+   "conditional": true,
+   "label": {
+    "zh": "此后可随时联络背道者（可重复的通讯）",
+    "en": "From now on you may contact the Aberrant (repeatable communication)"
+   },
    "evidence": "events/crisis_events_2.txt:1635-1640 crisis.1110 establishes communications with the Aberrant; crisis.1051 (L1184-1233) fired by on_custom_diplomacy (00_on_actions.txt:712)"
   },
   {
-   "from": "crisis.1110", "to": "crisis.1112", "conditional": true,
-   "label": {"zh": "破界者与背道者首次交战（舰队被歼灭时检查）", "en": "The Unbidden and the Aberrant clash for the first time (checked when a fleet is destroyed)"},
+   "from": "crisis.1110",
+   "to": "crisis.1112",
+   "conditional": true,
+   "label": {
+    "zh": "破界者与背道者首次交战（舰队被歼灭时检查）",
+    "en": "The Unbidden and the Aberrant clash for the first time (checked when a fleet is destroyed)"
+   },
    "evidence": "events/crisis_events_2.txt:1666-1697 crisis.1111 (on_fleet_destroyed_perp, 00_on_actions.txt:1634; fire_only_once) requires one extradimensional faction destroying the other's fleet; sets extradimensionals_fight and sends crisis.1112 to default empires"
   },
   {
-   "from": "crisis.1112", "to": "crisis.1210", "conditional": true,
-   "label": {"zh": "两派交战后（隐藏事件1200，平均40个月）：第三道传送门", "en": "After the factions have fought (hidden crisis.1200, MTTH 40 months): a third portal"},
+   "from": "crisis.1112",
+   "to": "crisis.1210",
+   "conditional": true,
+   "label": {
+    "zh": "两派交战后（隐藏事件1200，平均40个月）：第三道传送门",
+    "en": "After the factions have fought (hidden crisis.1200, MTTH 40 months): a third portal"
+   },
    "evidence": "events/crisis_events_2.txt:1871-2102 crisis.1200 (Aberrant country, fire_only_once, MTTH 40 months) requires extradimensionals_fight and a surviving Unbidden country; spawns the Vehement inside Unbidden space and sends crisis.1210 after 1 day"
   },
   {
-   "from": "crisis.1110", "to": "crisis.1116", "conditional": true,
-   "label": {"zh": "摧毁第二道传送门，且第一、第三道均已摧毁", "en": "Destroy the second portal after the first and third are already destroyed"},
+   "from": "crisis.1110",
+   "to": "crisis.1116",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁第二道传送门，且第一、第三道均已摧毁",
+    "en": "Destroy the second portal after the first and third are already destroyed"
+   },
    "evidence": "events/crisis_events_2.txt:1738-1796 crisis.1115 (on_ship_destroyed_victim, 00_on_actions.txt:1407; fire_only_once) sends crisis.1116 when extradimensional_first_portal_destroyed and extradimensional_third_portal_destroyed are set"
   },
   {
-   "from": "crisis.1110", "to": "crisis.1117", "conditional": true,
-   "label": {"zh": "摧毁第二道传送门，其他传送门仍被视为存在", "en": "Destroy the second portal while another portal is still counted"},
+   "from": "crisis.1110",
+   "to": "crisis.1117",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁第二道传送门，其他传送门仍被视为存在",
+    "en": "Destroy the second portal while another portal is still counted"
+   },
    "evidence": "events/crisis_events_2.txt:1797-1804 crisis.1115 else branch sends crisis.1117 (sets extradimensional_second_portal_destroyed)"
   },
   {
-   "from": "crisis.1116", "to": "observer.37",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.1116",
+   "to": "observer.37",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_2.txt:1751 crisis.1115 fires observer.37 (text crisis.1116.desc.b, events/observer_events.txt:668-681)"
   },
   {
-   "from": "crisis.1210", "to": "observer.38",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.1210",
+   "to": "observer.38",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_2.txt:2085 crisis.1200 fires observer.38; events/observer_events.txt:683-697"
   },
   {
-   "from": "crisis.1210", "to": "crisis.1052", "conditional": true,
-   "label": {"zh": "此后可随时联络狂热者（可重复的通讯）", "en": "From now on you may contact the Vehement (repeatable communication)"},
+   "from": "crisis.1210",
+   "to": "crisis.1052",
+   "conditional": true,
+   "label": {
+    "zh": "此后可随时联络狂热者（可重复的通讯）",
+    "en": "From now on you may contact the Vehement (repeatable communication)"
+   },
    "evidence": "events/crisis_events_2.txt:2232-2237 crisis.1210 establishes communications with the Vehement; crisis.1052 (L1236-1270) fired by on_custom_diplomacy (00_on_actions.txt:713)"
   },
   {
-   "from": "crisis.1210", "to": "crisis.1216", "conditional": true,
-   "label": {"zh": "摧毁第三道传送门，且第一、第二道均已摧毁", "en": "Destroy the third portal after the first and second are already destroyed"},
+   "from": "crisis.1210",
+   "to": "crisis.1216",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁第三道传送门，且第一、第二道均已摧毁",
+    "en": "Destroy the third portal after the first and second are already destroyed"
+   },
    "evidence": "events/crisis_events_2.txt:2286-2344 crisis.1215 (on_ship_destroyed_victim, 00_on_actions.txt:1408; fire_only_once) sends crisis.1216 when the first and second portals are destroyed"
   },
   {
-   "from": "crisis.1210", "to": "crisis.1217", "conditional": true,
-   "label": {"zh": "摧毁第三道传送门，其他传送门仍在", "en": "Destroy the third portal while another portal remains"},
+   "from": "crisis.1210",
+   "to": "crisis.1217",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁第三道传送门，其他传送门仍在",
+    "en": "Destroy the third portal while another portal remains"
+   },
    "evidence": "events/crisis_events_2.txt:2345-2352 crisis.1215 else branch sends crisis.1217 (sets extradimensional_third_portal_destroyed)"
   },
   {
-   "from": "crisis.1216", "to": "observer.39",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.1216",
+   "to": "observer.39",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_2.txt:2299 crisis.1215 fires observer.39 (text crisis.1216.desc.b, events/observer_events.txt:699-712)"
   },
   {
-   "from": "crisis.1013", "to": "crisis.1271", "conditional": true,
-   "label": {"zh": "最后一个异次元势力覆灭（无传送门、无行星且舰船少于20艘时于年度检查中移除）", "en": "The last extradimensional faction is destroyed (removed by the yearly check once portals are gone, no planets and under 20 ships)"},
+   "from": "crisis.1013",
+   "to": "crisis.1271",
+   "conditional": true,
+   "label": {
+    "zh": "最后一个异次元势力覆灭（无传送门、无行星且舰船少于20艘时于年度检查中移除）",
+    "en": "The last extradimensional faction is destroyed (removed by the yearly check once portals are gone, no planets and under 20 ships)"
+   },
    "evidence": "events/crisis_events_2.txt:2418-2515 crisis.1254 (on_yearly_pulse, 00_on_actions.txt:235) destroys the factions; crisis.1270 (on_country_destroyed, 00_on_actions.txt:3608; L3185-3240) fires when no other extradimensional country remains and sends crisis.1271"
   },
   {
-   "from": "crisis.1116", "to": "crisis.1271", "conditional": true,
-   "label": {"zh": "最后一个异次元势力覆灭", "en": "The last extradimensional faction is destroyed"},
+   "from": "crisis.1116",
+   "to": "crisis.1271",
+   "conditional": true,
+   "label": {
+    "zh": "最后一个异次元势力覆灭",
+    "en": "The last extradimensional faction is destroyed"
+   },
    "evidence": "events/crisis_events_2.txt:3185-3240 crisis.1270 -> crisis.1271"
   },
   {
-   "from": "crisis.1216", "to": "crisis.1271", "conditional": true,
-   "label": {"zh": "最后一个异次元势力覆灭", "en": "The last extradimensional faction is destroyed"},
+   "from": "crisis.1216",
+   "to": "crisis.1271",
+   "conditional": true,
+   "label": {
+    "zh": "最后一个异次元势力覆灭",
+    "en": "The last extradimensional faction is destroyed"
+   },
    "evidence": "events/crisis_events_2.txt:3185-3240 crisis.1270 -> crisis.1271"
   },
   {
-   "from": "crisis.1271", "to": "observer.40",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.1271",
+   "to": "observer.40",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_2.txt:3212 crisis.1270 fires observer.40; events/observer_events.txt:714-727"
   }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["crisis.1007", "crisis.1008"],
-   "label": {"zh": "开场按情报等级二选一", "en": "Opening depends on intel"},
-   "note": {"zh": "对入侵起点星系拥有高情报的帝国直接收到“破界者”；其余帝国先收到“星系能源波动”，30天后才确认威胁。", "en": "Empires with high intel on the breach system receive The Unbidden at once; the others first receive Galactic Power Surge and identify the threat 30 days later."}},
-  {"kind": "exclusive", "members": ["crisis.1013", "crisis.1016"],
-   "label": {"zh": "破界者传送门被毁", "en": "The Unbidden portal falls"},
-   "note": {"zh": "按其他传送门是否仍在，二者择一。", "en": "One of the two, depending on whether other portals remain."}},
-  {"kind": "exclusive", "members": ["crisis.1116", "crisis.1117"],
-   "label": {"zh": "第二道传送门被毁", "en": "The second portal falls"},
-   "note": {"zh": "按第一、第三道传送门是否均已摧毁，二者择一。", "en": "One of the two, depending on whether the first and third portals are both destroyed."}},
-  {"kind": "exclusive", "members": ["crisis.1216", "crisis.1217"],
-   "label": {"zh": "第三道传送门被毁", "en": "The third portal falls"},
-   "note": {"zh": "按第一、第二道传送门是否均已摧毁，二者择一。", "en": "One of the two, depending on whether the first and second portals are both destroyed."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.1007",
+    "crisis.1008"
+   ],
+   "label": {
+    "zh": "开场按情报等级二选一",
+    "en": "Opening depends on intel"
+   },
+   "note": {
+    "zh": "对入侵起点星系拥有高情报的帝国直接收到“破界者”；其余帝国先收到“星系能源波动”，30天后才确认威胁。",
+    "en": "Empires with high intel on the breach system receive The Unbidden at once; the others first receive Galactic Power Surge and identify the threat 30 days later."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.1013",
+    "crisis.1016"
+   ],
+   "label": {
+    "zh": "破界者传送门被毁",
+    "en": "The Unbidden portal falls"
+   },
+   "note": {
+    "zh": "按其他传送门是否仍在，二者择一。",
+    "en": "One of the two, depending on whether other portals remain."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.1116",
+    "crisis.1117"
+   ],
+   "label": {
+    "zh": "第二道传送门被毁",
+    "en": "The second portal falls"
+   },
+   "note": {
+    "zh": "按第一、第三道传送门是否均已摧毁，二者择一。",
+    "en": "One of the two, depending on whether the first and third portals are both destroyed."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.1216",
+    "crisis.1217"
+   ],
+   "label": {
+    "zh": "第三道传送门被毁",
+    "en": "The third portal falls"
+   },
+   "note": {
+    "zh": "按第一、第二道传送门是否均已摧毁，二者择一。",
+    "en": "One of the two, depending on whether the first and second portals are both destroyed."
+   }
+  }
  ],
  "endings": {
   "crisis.1271": {
-   "label": {"zh": "胜利：击退入侵", "en": "Victory: the invasion is defeated"},
-   "note": {"zh": "最后一个异次元势力覆灭后，所有帝国收到此报告。脚本中没有入侵者获胜的结局事件。", "en": "Sent to every empire when the last extradimensional faction is gone. The scripts contain no ending event for an invader victory."},
+   "label": {
+    "zh": "胜利：击退入侵",
+    "en": "Victory: the invasion is defeated"
+   },
+   "note": {
+    "zh": "最后一个异次元势力覆灭后，所有帝国收到此报告。脚本中没有入侵者获胜的结局事件。",
+    "en": "Sent to every empire when the last extradimensional faction is gone. The scripts contain no ending event for an invader victory."
+   },
    "evidence": "events/crisis_events_2.txt:3185-3240 crisis.1270 sets extradimensional_invasion_defeated, end_crisis, sends crisis.1271"
   }
  },
  "nodeLabels": {
-  "crisis.1007": {"zh": "开场：传送门开启（高情报）", "en": "Opening: the breach (high intel)"},
-  "crisis.1008": {"zh": "开场：能源波动（低情报）", "en": "Opening: a power surge (low intel)"},
-  "crisis.1010": {"zh": "截获的信号", "en": "The intercepted signal"},
-  "crisis.1050": {"zh": "联络破界者（可重复）", "en": "Contact the Unbidden (repeatable)"},
-  "crisis.1051": {"zh": "联络背道者（可重复）", "en": "Contact the Aberrant (repeatable)"},
-  "crisis.1052": {"zh": "联络狂热者（可重复）", "en": "Contact the Vehement (repeatable)"},
-  "crisis.1011": {"zh": "殖民地被毁（可重复）", "en": "A colony lost (repeatable)"},
-  "crisis.1110": {"zh": "第二道传送门：背道者", "en": "Second portal: the Aberrant"},
-  "crisis.1112": {"zh": "两派交战", "en": "The factions clash"},
-  "crisis.1210": {"zh": "第三道传送门：狂热者", "en": "Third portal: the Vehement"},
-  "crisis.1271": {"zh": "胜利", "en": "Victory"},
-  "observer.34": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.35": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.36": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.37": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.38": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.39": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.40": {"zh": "观察者副本", "en": "Observer copy"}
+  "crisis.1007": {
+   "zh": "开场：传送门开启（高情报）",
+   "en": "Opening: the breach (high intel)"
+  },
+  "crisis.1008": {
+   "zh": "开场：能源波动（低情报）",
+   "en": "Opening: a power surge (low intel)"
+  },
+  "crisis.1010": {
+   "zh": "截获的信号",
+   "en": "The intercepted signal"
+  },
+  "crisis.1050": {
+   "zh": "联络破界者（可重复）",
+   "en": "Contact the Unbidden (repeatable)"
+  },
+  "crisis.1051": {
+   "zh": "联络背道者（可重复）",
+   "en": "Contact the Aberrant (repeatable)"
+  },
+  "crisis.1052": {
+   "zh": "联络狂热者（可重复）",
+   "en": "Contact the Vehement (repeatable)"
+  },
+  "crisis.1011": {
+   "zh": "殖民地被毁（可重复）",
+   "en": "A colony lost (repeatable)"
+  },
+  "crisis.1110": {
+   "zh": "第二道传送门：背道者",
+   "en": "Second portal: the Aberrant"
+  },
+  "crisis.1112": {
+   "zh": "两派交战",
+   "en": "The factions clash"
+  },
+  "crisis.1210": {
+   "zh": "第三道传送门：狂热者",
+   "en": "Third portal: the Vehement"
+  },
+  "crisis.1271": {
+   "zh": "胜利",
+   "en": "Victory"
+  },
+  "observer.34": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.35": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.36": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.37": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.38": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.39": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.40": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  }
  },
  "notes": [
-  {"doc": "crisis.1050", "kind": "review",
+  {
+   "doc": "crisis.1050",
+   "kind": "review",
    "zh": "外交界面中的可重复通讯。灵能物种与机械帝国/机械物种看到的开场白和可选回应不同。",
-   "en": "A repeatable diplomacy screen. Psionic species and machine empires or mechanical species see different greetings and replies."},
-  {"doc": "crisis.1250", "kind": "review",
+   "en": "A repeatable diplomacy screen. Psionic species and machine empires or mechanical species see different greetings and replies."
+  },
+  {
+   "doc": "crisis.1250",
+   "kind": "review",
    "zh": "只有第一道（破界者）传送门的分支明确在摧毁者作用域内发送本事件；第二、第三道传送门的对应调用写在异次元国家自身作用域（crisis_events_2.txt:1772-1778、2320-2326），玩家能否因此收到本事件未经实机验证。",
-   "en": "Only the first-portal branch sends this event inside the destroyer's scope; for the second and third portals the call sits in the extradimensional country's own scope (crisis_events_2.txt:1772-1778, 2320-2326), so whether a player receives it there was not verified in play."}
+   "en": "Only the first-portal branch sends this event inside the destroyer's scope; for the second and third portals the call sits in the extradimensional country's own scope (crisis_events_2.txt:1772-1778, 2320-2326), so whether a player receives it there was not verified in play."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c5b-crisis (Opus 5.5)",
-  "scope": {"zh": "完整核对 crisis_events_2.txt 全部可见事件（三道传送门、交战、摧毁分支、外交、结局）及观察者副本与监管人/帝皇宣告。", "en": "Checked every visible event of crisis_events_2.txt (three portals, the factions' clash, destruction branches, diplomacy, ending) plus observer copies and Custodian/Emperor announcements."},
-  "sources": ["events/crisis_events_2.txt", "events/crisis_trigger_events.txt", "events/observer_events.txt", "events/nemesis_custodian_events.txt", "events/nemesis_emperor_events.txt", "common/on_actions/00_on_actions.txt", "common/special_projects/06_projects_nomads.txt"],
+  "scope": {
+   "zh": "完整核对 crisis_events_2.txt 全部可见事件（三道传送门、交战、摧毁分支、外交、结局）及观察者副本与监管人/帝皇宣告。",
+   "en": "Checked every visible event of crisis_events_2.txt (three portals, the factions' clash, destruction branches, diplomacy, ending) plus observer copies and Custodian/Emperor announcements."
+  },
+  "sources": [
+   "events/crisis_events_2.txt",
+   "events/crisis_trigger_events.txt",
+   "events/observer_events.txt",
+   "events/nemesis_custodian_events.txt",
+   "events/nemesis_emperor_events.txt",
+   "common/on_actions/00_on_actions.txt",
+   "common/special_projects/06_projects_nomads.txt"
+  ],
   "uncertain": [
    "crisis.1250 (The Warlock) for the second/third portal: the script calls it in the extradimensional country's scope (L1772-1778, L2320-2326); only the first-portal case is clearly sent to the human destroyer.",
    "crisis.1012/1115/1215 branch conditions assume the portal set; e.g. destroying the second portal when no third portal ever opened yields crisis.1117 ('other portals remain'). Recorded as scripted, not simplified.",
    "crisis.1008/crisis.1009 and other low-intel paths converge on crisis.1010; the war developments are attached to crisis.1010 because both openings reach it."
   ],
   "guide": "public/summaries/unbidden.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "crisis_country.GetName": {
+   "zh": "另一个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "extradimensional_system.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现那个恒星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "portal_killer.GetName": {
+   "zh": "这支舰队",
+   "en": "the fleet",
+   "note": {
+    "zh": "游戏里这里会出现这支舰队的名称。",
+    "en": "In the game, this fleet's name appears here."
+   }
+  },
+  "second_portal_system.GetName": {
+   "zh": "邻近的",
+   "en": "neighboring star",
+   "note": {
+    "zh": "游戏里这里会出现邻近恒星系的名称。",
+    "en": "In the game, the name of the neighboring star system appears here."
+   }
+  },
+  "third_portal_system.GetName": {
+   "zh": "另一个",
+   "en": "other star",
+   "note": {
+    "zh": "游戏里这里会出现另一个恒星系的名称。",
+    "en": "In the game, the name of the other star system appears here."
+   }
+  }
  }
 }

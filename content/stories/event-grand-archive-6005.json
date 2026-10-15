@@ -71,5 +71,39 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-grand-archive-6005.md"
+ },
+ "placeholders": {
+  "event_target:pirate_system.GetName": {
+   "zh": "这个星系",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现海盗所在星系的名称。",
+    "en": "In the game, the name of the pirate star system appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "treasure_trove_pirate_ship.GetName": {
+   "zh": "这艘舰船",
+   "en": "the ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘海盗舰船的名称。",
+    "en": "In the game, the name of this pirate ship appears here."
+   }
+  }
  }
 }

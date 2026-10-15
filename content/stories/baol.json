@@ -1,98 +1,363 @@
 {
  "id": "baol",
  "family": {
-  "title": {"zh": "最后的巴奥", "en": "The Last Baol"},
+  "title": {
+   "zh": "最后的巴奥",
+   "en": "The Last Baol"
+  },
   "category": "precursors",
   "start": "ancrel.2000",
   "members": [
-   "ancrel.2000", "archaeological_site_types:grunur_digsite_1", "ancrel.2001", "ancrel.2002", "event_chains:baol_chain",
-   "special_projects:BAOL_COLONY_1", "ancrel.2003", "archaeological_site_types:baol_digsite_1", "ancrel.2004", "ancrel.2005", "ancrel.2006",
-   "special_projects:BAOL_COLONY_2", "ancrel.2007", "archaeological_site_types:baol_digsite_2", "ancrel.2008", "ancrel.2009", "ancrel.2010", "ancrel.2011",
-   "special_projects:BAOL_COLONY_3", "ancrel.2012", "archaeological_site_types:baol_digsite_3", "ancrel.2013", "ancrel.2024", "ancrel.2014",
-   "ancrel.2015", "special_projects:THE_LAST_BAOL", "ancrel.2016", "ancrel.2017", "ancrel.2018", "ancrel.2019", "ancrel.2020", "ancrel.2021",
-   "ancrel.2022", "ancrel.2023", "observer.85", "special_projects:BAOL_SECRETS", "ancrel.10300",
-   "ancrel.2025", "ancrel.2026", "ancrel.2027"
+   "ancrel.2000",
+   "archaeological_site_types:grunur_digsite_1",
+   "ancrel.2001",
+   "ancrel.2002",
+   "event_chains:baol_chain",
+   "special_projects:BAOL_COLONY_1",
+   "ancrel.2003",
+   "archaeological_site_types:baol_digsite_1",
+   "ancrel.2004",
+   "ancrel.2005",
+   "ancrel.2006",
+   "special_projects:BAOL_COLONY_2",
+   "ancrel.2007",
+   "archaeological_site_types:baol_digsite_2",
+   "ancrel.2008",
+   "ancrel.2009",
+   "ancrel.2010",
+   "ancrel.2011",
+   "special_projects:BAOL_COLONY_3",
+   "ancrel.2012",
+   "archaeological_site_types:baol_digsite_3",
+   "ancrel.2013",
+   "ancrel.2024",
+   "ancrel.2014",
+   "ancrel.2015",
+   "special_projects:THE_LAST_BAOL",
+   "ancrel.2016",
+   "ancrel.2017",
+   "ancrel.2018",
+   "ancrel.2019",
+   "ancrel.2020",
+   "ancrel.2021",
+   "ancrel.2022",
+   "ancrel.2023",
+   "observer.85",
+   "special_projects:BAOL_SECRETS",
+   "ancrel.10300",
+   "ancrel.2025",
+   "ancrel.2026",
+   "ancrel.2027"
   ],
   "sources": []
  },
  "category": "precursors",
  "bridges": [
-  {"from": "ancrel.2015", "to": "special_projects:BAOL_SECRETS", "conditional": true,
-   "label": {"zh": "可选：另行花费750稀有文物开启秘密研究", "en": "Optional: start the secrets research for 750 minor artifacts"},
-   "evidence": "events/ancient_relics_arcsite_events_1.txt:1685 hidden ancrel.2014 sets last_baol_system and schedules ancrel.2015 after 10 days; common/artifact_actions/artifact_actions.txt:781 artifact_baol_research requires last_baol_system (750 minor artifacts), enables BAOL_SECRETS and fires ancrel.10040"},
-  {"from": "ancrel.2022", "to": "ancrel.2025", "conditional": true,
-   "label": {"zh": "激活遗珍后：在普通星球颁布“巴奥生命播种”", "en": "After activating the relic: Baol life-seeding on a natural world"},
-   "evidence": "events/ancient_relics_arcsite_events_1.txt:2024 add_relic r_the_last_baol; common/relics/relics.txt:1072 activation sets relic_last_baol_activated + not_activated_baol; common/decisions/05_ancient_relics_decisions.txt:72-127 decision_baol_life_seed (720 days, non-artificial non-gaia world) fires ancrel.2025"},
-  {"from": "ancrel.2022", "to": "ancrel.2026", "conditional": true,
-   "label": {"zh": "激活遗珍后：在盖亚星球颁布强化决议", "en": "After activating the relic: life-enhancing on a Gaia world"},
-   "evidence": "common/decisions/05_ancient_relics_decisions.txt:145-210 decision_baol_life_seed_enhance (Gaia world, relic_last_baol_activated) fires ancrel.2026"},
-  {"from": "ancrel.2022", "to": "ancrel.2027", "conditional": true,
-   "label": {"zh": "激活遗珍后：在人造星球颁布生命播种", "en": "After activating the relic: life-seeding on an artificial world"},
-   "evidence": "common/decisions/05_ancient_relics_decisions.txt:216-275 decision_baol_life_seed_artificial (720 days, artificial world) fires ancrel.2027"},
-  {"from": "ancrel.2023", "to": "ancrel.2025", "conditional": true,
-   "label": {"zh": "激活遗珍后：在普通星球颁布“巴奥生命播种”", "en": "After activating the relic: Baol life-seeding on a natural world"},
-   "evidence": "events/ancient_relics_arcsite_events_1.txt:2058 add_relic r_the_last_baol (every option); same decision chain as from ancrel.2022"},
-  {"from": "ancrel.2023", "to": "ancrel.2026", "conditional": true,
-   "label": {"zh": "激活遗珍后：在盖亚星球颁布强化决议", "en": "After activating the relic: life-enhancing on a Gaia world"},
-   "evidence": "common/decisions/05_ancient_relics_decisions.txt:145-210"},
-  {"from": "ancrel.2023", "to": "ancrel.2027", "conditional": true,
-   "label": {"zh": "激活遗珍后：在人造星球颁布生命播种", "en": "After activating the relic: life-seeding on an artificial world"},
-   "evidence": "common/decisions/05_ancient_relics_decisions.txt:216-275"}
+  {
+   "from": "ancrel.2015",
+   "to": "special_projects:BAOL_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "可选：另行花费750稀有文物开启秘密研究",
+    "en": "Optional: start the secrets research for 750 minor artifacts"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:1685 hidden ancrel.2014 sets last_baol_system and schedules ancrel.2015 after 10 days; common/artifact_actions/artifact_actions.txt:781 artifact_baol_research requires last_baol_system (750 minor artifacts), enables BAOL_SECRETS and fires ancrel.10040"
+  },
+  {
+   "from": "ancrel.2022",
+   "to": "ancrel.2025",
+   "conditional": true,
+   "label": {
+    "zh": "激活遗珍后：在普通星球颁布“巴奥生命播种”",
+    "en": "After activating the relic: Baol life-seeding on a natural world"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:2024 add_relic r_the_last_baol; common/relics/relics.txt:1072 activation sets relic_last_baol_activated + not_activated_baol; common/decisions/05_ancient_relics_decisions.txt:72-127 decision_baol_life_seed (720 days, non-artificial non-gaia world) fires ancrel.2025"
+  },
+  {
+   "from": "ancrel.2022",
+   "to": "ancrel.2026",
+   "conditional": true,
+   "label": {
+    "zh": "激活遗珍后：在盖亚星球颁布强化决议",
+    "en": "After activating the relic: life-enhancing on a Gaia world"
+   },
+   "evidence": "common/decisions/05_ancient_relics_decisions.txt:145-210 decision_baol_life_seed_enhance (Gaia world, relic_last_baol_activated) fires ancrel.2026"
+  },
+  {
+   "from": "ancrel.2022",
+   "to": "ancrel.2027",
+   "conditional": true,
+   "label": {
+    "zh": "激活遗珍后：在人造星球颁布生命播种",
+    "en": "After activating the relic: life-seeding on an artificial world"
+   },
+   "evidence": "common/decisions/05_ancient_relics_decisions.txt:216-275 decision_baol_life_seed_artificial (720 days, artificial world) fires ancrel.2027"
+  },
+  {
+   "from": "ancrel.2023",
+   "to": "ancrel.2025",
+   "conditional": true,
+   "label": {
+    "zh": "激活遗珍后：在普通星球颁布“巴奥生命播种”",
+    "en": "After activating the relic: Baol life-seeding on a natural world"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:2058 add_relic r_the_last_baol (every option); same decision chain as from ancrel.2022"
+  },
+  {
+   "from": "ancrel.2023",
+   "to": "ancrel.2026",
+   "conditional": true,
+   "label": {
+    "zh": "激活遗珍后：在盖亚星球颁布强化决议",
+    "en": "After activating the relic: life-enhancing on a Gaia world"
+   },
+   "evidence": "common/decisions/05_ancient_relics_decisions.txt:145-210"
+  },
+  {
+   "from": "ancrel.2023",
+   "to": "ancrel.2027",
+   "conditional": true,
+   "label": {
+    "zh": "激活遗珍后：在人造星球颁布生命播种",
+    "en": "After activating the relic: life-seeding on an artificial world"
+   },
+   "evidence": "common/decisions/05_ancient_relics_decisions.txt:216-275"
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["ancrel.2022", "ancrel.2023"],
-   "label": {"zh": "最后的巴奥：两种结局", "en": "The last Baol: two endings"},
-   "labels": [{"zh": "告诉它族人仍以某种形式存在", "en": "Tell it its kin live on in a sense"}, {"zh": "拔掉插头", "en": "Pull the plug"}],
-   "note": {"zh": "两种结局都给予遗珍“最后的巴奥”。", "en": "Both endings grant the relic The Last Baol."}},
-  {"kind": "exclusive", "members": ["ancrel.2025", "ancrel.2026", "ancrel.2027"],
-   "label": {"zh": "遗珍激活后的三种星球决议", "en": "Three planet decisions after activating the relic"},
-   "note": {"zh": "激活遗珍（消耗凝聚力、有冷却）后，按目标星球类型只能颁布其中一种；每次激活可用一次。",
-            "en": "After activating the relic (unity cost, cooldown) one decision applies depending on the planet type; one use per activation."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.2022",
+    "ancrel.2023"
+   ],
+   "label": {
+    "zh": "最后的巴奥：两种结局",
+    "en": "The last Baol: two endings"
+   },
+   "labels": [
+    {
+     "zh": "告诉它族人仍以某种形式存在",
+     "en": "Tell it its kin live on in a sense"
+    },
+    {
+     "zh": "拔掉插头",
+     "en": "Pull the plug"
+    }
+   ],
+   "note": {
+    "zh": "两种结局都给予遗珍“最后的巴奥”。",
+    "en": "Both endings grant the relic The Last Baol."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "ancrel.2025",
+    "ancrel.2026",
+    "ancrel.2027"
+   ],
+   "label": {
+    "zh": "遗珍激活后的三种星球决议",
+    "en": "Three planet decisions after activating the relic"
+   },
+   "note": {
+    "zh": "激活遗珍（消耗凝聚力、有冷却）后，按目标星球类型只能颁布其中一种；每次激活可用一次。",
+    "en": "After activating the relic (unity cost, cooldown) one decision applies depending on the planet type; one use per activation."
+   }
+  }
  ],
  "nodeLabels": {
-  "ancrel.2001": {"zh": "格鲁努尔的战争记录", "en": "Grunur war records"},
-  "ancrel.2002": {"zh": "第一处巴奥殖民地坐标", "en": "Coordinates of a Baol colony"},
-  "ancrel.2004": {"zh": "燃烧弹造成的大灭绝", "en": "Firebombing and mass extinction"},
-  "ancrel.2005": {"zh": "植物型蜂巢思维", "en": "A plantoid hive mind"},
-  "ancrel.2006": {"zh": "第二处殖民地坐标", "en": "Coordinates of the second colony"},
-  "ancrel.2008": {"zh": "给幼苗的教学记录", "en": "Lessons for saplings"},
-  "ancrel.2009": {"zh": "巴奥的起源", "en": "Origins of the Baol"},
-  "ancrel.2010": {"zh": "格鲁努尔对巴奥的轻蔑", "en": "Grunur contempt for the Baol"},
-  "ancrel.2011": {"zh": "第三处殖民地坐标", "en": "Coordinates of the third colony"},
-  "ancrel.2013": {"zh": "退化的蜂巢器官", "en": "Diminished hive organs"},
-  "ancrel.2024": {"zh": "失去蜂巢意识", "en": "Loss of the hive mind"},
-  "observer.85": {"zh": "观察者模式通知", "en": "Observer-mode notice"}
+  "ancrel.2001": {
+   "zh": "格鲁努尔的战争记录",
+   "en": "Grunur war records"
+  },
+  "ancrel.2002": {
+   "zh": "第一处巴奥殖民地坐标",
+   "en": "Coordinates of a Baol colony"
+  },
+  "ancrel.2004": {
+   "zh": "燃烧弹造成的大灭绝",
+   "en": "Firebombing and mass extinction"
+  },
+  "ancrel.2005": {
+   "zh": "植物型蜂巢思维",
+   "en": "A plantoid hive mind"
+  },
+  "ancrel.2006": {
+   "zh": "第二处殖民地坐标",
+   "en": "Coordinates of the second colony"
+  },
+  "ancrel.2008": {
+   "zh": "给幼苗的教学记录",
+   "en": "Lessons for saplings"
+  },
+  "ancrel.2009": {
+   "zh": "巴奥的起源",
+   "en": "Origins of the Baol"
+  },
+  "ancrel.2010": {
+   "zh": "格鲁努尔对巴奥的轻蔑",
+   "en": "Grunur contempt for the Baol"
+  },
+  "ancrel.2011": {
+   "zh": "第三处殖民地坐标",
+   "en": "Coordinates of the third colony"
+  },
+  "ancrel.2013": {
+   "zh": "退化的蜂巢器官",
+   "en": "Diminished hive organs"
+  },
+  "ancrel.2024": {
+   "zh": "失去蜂巢意识",
+   "en": "Loss of the hive mind"
+  },
+  "observer.85": {
+   "zh": "观察者模式通知",
+   "en": "Observer-mode notice"
+  }
  },
  "notes": [
-  {"doc": "ancrel.2000", "kind": "review",
+  {
+   "doc": "ancrel.2000",
+   "kind": "review",
    "zh": "开场：需要《远古遗物》；非AI帝国勘察巴奥星域（precursor_baol_1 星系，非太阳系）中一颗非恒星、非气态巨行星/熔岩星球、无异常与遗址的天体时，on_survey_planet 以权重15抽中；全游戏一次（fire_only_once 与全局 baol_started），且该帝国不能已有其他先驱者开场。",
-   "en": "Opening: needs Ancient Relics; drawn (weight 15) from on_survey_planet when a non-AI empire surveys a non-star, non-gas-giant, non-molten body without anomaly or site in a precursor_baol_1 system (not Sol); once per galaxy (fire_only_once, global baol_started) and only without another precursor opening."},
-  {"doc": "special_projects:BAOL_COLONY_1", "kind": "review",
+   "en": "Opening: needs Ancient Relics; drawn (weight 15) from on_survey_planet when a non-AI empire surveys a non-star, non-gas-giant, non-molten body without anomaly or site in a precursor_baol_1 system (not Sol); once per galaxy (fire_only_once, global baol_started) and only without another precursor opening."
+  },
+  {
+   "doc": "special_projects:BAOL_COLONY_1",
+   "kind": "review",
    "zh": "三个殖民地调查项目都是30天、需科研船与科学家；坐标由上一处的最后阶段在3–10跳内选出（找不到则放宽范围）。",
-   "en": "The three colony investigations are 30-day projects needing a science ship and scientist; each location is picked 3–10 jumps away by the previous final stage (with a wider fallback)."},
-  {"doc": "ancrel.2015", "kind": "review",
+   "en": "The three colony investigations are 30-day projects needing a science ship and scientist; each location is picked 3–10 jumps away by the previous final stage (with a wider fallback)."
+  },
+  {
+   "doc": "ancrel.2015",
+   "kind": "review",
    "zh": "第三处遗址最后阶段（2024）回应后，若尚无全局 last_baol_system_discovered，隐藏的 2014 生成“最后的巴奥”星系（无位置则30天后重试），10天后出现此信号。",
-   "en": "After the third site's final stage (2024), if no last_baol_system_discovered exists, hidden 2014 spawns the Last Baol system (retry after 30 days) and this signal follows 10 days later."},
-  {"doc": "ancrel.2019", "kind": "review",
+   "en": "After the third site's final stage (2024), if no last_baol_system_discovered exists, hidden 2014 spawns the Last Baol system (retry after 30 days) and this signal follows 10 days later."
+  },
+  {
+   "doc": "ancrel.2019",
+   "kind": "review",
    "zh": "“和我们说说你自己”与“巴奥身上发生了什么”是只显示回应的对话选项（is_dialog_only），可反复询问；之后才进入 2021。",
-   "en": "'Tell us about yourself' and 'What happened to the Baol?' are dialogue-only questions (is_dialog_only) that can be asked before moving on to 2021."}
+   "en": "'Tell us about yourself' and 'What happened to the Baol?' are dialogue-only questions (is_dialog_only) that can be asked before moving on to 2021."
+  }
  ],
  "endings": {
-  "ancrel.2022": {"label": {"zh": "结局：让它安息", "en": "Ending: letting it rest"}, "note": {"zh": "获得遗珍“最后的巴奥”。", "en": "Grants the relic The Last Baol."}, "evidence": "events/ancient_relics_arcsite_events_1.txt:2006-2039"},
-  "ancrel.2023": {"label": {"zh": "结局：拔掉插头", "en": "Ending: pulling the plug"}, "note": {"zh": "同样获得遗珍“最后的巴奥”。", "en": "Also grants the relic The Last Baol."}, "evidence": "events/ancient_relics_arcsite_events_1.txt:2041-2092"},
-  "ancrel.10300": {"label": {"zh": "秘密研究结果", "en": "Secrets research result"}, "note": {"zh": "表观遗传学触发器或地表重塑科技，或社会学研究；加地貌改造速度修正。", "en": "Epigenetic Triggers or Terrestrial Sculpting, or society research; plus a terraforming speed modifier."}, "evidence": "events/ancient_relics_arcsite_events_2.txt:7487"}
+  "ancrel.2022": {
+   "label": {
+    "zh": "结局：让它安息",
+    "en": "Ending: letting it rest"
+   },
+   "note": {
+    "zh": "获得遗珍“最后的巴奥”。",
+    "en": "Grants the relic The Last Baol."
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:2006-2039"
+  },
+  "ancrel.2023": {
+   "label": {
+    "zh": "结局：拔掉插头",
+    "en": "Ending: pulling the plug"
+   },
+   "note": {
+    "zh": "同样获得遗珍“最后的巴奥”。",
+    "en": "Also grants the relic The Last Baol."
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:2041-2092"
+  },
+  "ancrel.10300": {
+   "label": {
+    "zh": "秘密研究结果",
+    "en": "Secrets research result"
+   },
+   "note": {
+    "zh": "表观遗传学触发器或地表重塑科技，或社会学研究；加地貌改造速度修正。",
+    "en": "Epigenetic Triggers or Terrestrial Sculpting, or society research; plus a terraforming speed modifier."
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:7487"
+  }
  },
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "C2 precursor review (Claude Opus 5.5)",
-  "scope": {"zh": "整条故事：开场、格鲁努尔遗址、三处巴奥殖民地项目与遗址阶段、最后的巴奥星系生成、对话与两种结局、秘密研究、遗珍激活后的三种决议；中英文正文已读。",
-            "en": "Whole story: opening, the Grunur site, three Baol colony projects and their sites, the Last Baol system spawn, the dialogue and its two endings, secrets research and the three post-relic decisions; both languages read."},
-  "sources": ["events/ancient_relics_arcsite_events_1.txt", "common/archaeological_site_types/01_precursor_arc_sites.txt",
-              "common/special_projects/00_projects_ancient_relics.txt", "common/solar_system_initializers/ancient_relics_initializers.txt",
-              "common/artifact_actions/artifact_actions.txt", "common/decisions/05_ancient_relics_decisions.txt", "common/relics/relics.txt",
-              "events/ancient_relics_arcsite_events_2.txt", "common/on_actions/00_on_actions.txt", "localisation/simp_chinese", "localisation/english"],
-  "uncertain": ["The decision notifications 2025–2027 were folded into this story (they were separate one-card stories); they can repeat with each relic activation."],
+  "scope": {
+   "zh": "整条故事：开场、格鲁努尔遗址、三处巴奥殖民地项目与遗址阶段、最后的巴奥星系生成、对话与两种结局、秘密研究、遗珍激活后的三种决议；中英文正文已读。",
+   "en": "Whole story: opening, the Grunur site, three Baol colony projects and their sites, the Last Baol system spawn, the dialogue and its two endings, secrets research and the three post-relic decisions; both languages read."
+  },
+  "sources": [
+   "events/ancient_relics_arcsite_events_1.txt",
+   "common/archaeological_site_types/01_precursor_arc_sites.txt",
+   "common/special_projects/00_projects_ancient_relics.txt",
+   "common/solar_system_initializers/ancient_relics_initializers.txt",
+   "common/artifact_actions/artifact_actions.txt",
+   "common/decisions/05_ancient_relics_decisions.txt",
+   "common/relics/relics.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/on_actions/00_on_actions.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [
+   "The decision notifications 2025–2027 were folded into this story (they were separate one-card stories); they can repeat with each relic activation."
+  ],
   "guide": "public/summaries/baol.md"
+ },
+ "placeholders": {
+  "Root.GetSpeciesName": {
+   "zh": "朋友",
+   "en": "friend",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.GetStarName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名字。",
+    "en": "In the game, this system's name appears here."
+   }
+  },
+  "first_grunur_site.GetName": {
+   "zh": "那处遗址",
+   "en": "that site",
+   "note": {
+    "zh": "游戏里这里会出现那处遗址的名称。",
+    "en": "In the game, that site's name appears here."
+   }
+  },
+  "last_baol_neighbor.GetName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名字。",
+    "en": "In the game, this system's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "ancrel.2025": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名字。",
+     "en": "In the game, this planet's name appears here."
+    }
+   }
+  },
+  "ancrel.2026": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名字。",
+     "en": "In the game, this planet's name appears here."
+    }
+   }
+  }
  }
 }

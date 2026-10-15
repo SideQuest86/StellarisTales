@@ -654,5 +654,135 @@
   "uncertain": [
    "4205 has five conditional greeting texts (first contact / return / return-to-menu / End of the Cycle variants); the reader shows them by its generic condition model, not by conversation state."
   ]
+ },
+ "placeholders": {
+  "FROM.GetName": {
+   "zh": "那个城邦",
+   "en": "that enclave",
+   "note": {
+    "zh": "游戏里这里会出现那个城邦的名称。",
+    "en": "In the game, that enclave's name appears here."
+   }
+  },
+  "event_target:mindwarden_enclave_country.GetName": {
+   "zh": "这个城邦",
+   "en": "the enclave",
+   "note": {
+    "zh": "游戏里这里会出现灵督城邦的名称。",
+    "en": "In the game, the Mindwarden enclave's name appears here."
+   }
+  },
+  "event_target:mindwarden_enclave_country.GetSpeciesName": {
+   "zh": "这个城邦",
+   "en": "the enclave",
+   "note": {
+    "zh": "游戏里这里会出现这个城邦的名称。",
+    "en": "In the game, the name of this enclave appears here."
+   }
+  },
+  "event_target:mindwarden_enclave_country.GetSpeciesNamePlural": {
+   "zh": "同族",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现这个城邦的人民的称呼。",
+    "en": "In the game, the name of this enclave's people appears here."
+   }
+  },
+  "event_target:mindwarden_enclave_country.species.GetNamePlural": {
+   "zh": "他们",
+   "en": "people",
+   "note": {
+    "zh": "游戏里这里会出现这个城邦的人民的称呼。",
+    "en": "In the game, the name of this enclave's people appears here."
+   }
+  },
+  "event_target:raid_target_1.GetName": {
+   "zh": "第一个目标",
+   "en": "first target",
+   "note": {
+    "zh": "游戏里这里会出现第一个袭击目标的名称。",
+    "en": "In the game, the first raid target's name appears here."
+   }
+  },
+  "event_target:raid_target_2.GetName": {
+   "zh": "第二个目标",
+   "en": "second target",
+   "note": {
+    "zh": "游戏里这里会出现第二个袭击目标的名称。",
+    "en": "In the game, the second raid target's name appears here."
+   }
+  },
+  "event_target:raid_target_3.GetName": {
+   "zh": "第三个目标",
+   "en": "third target",
+   "note": {
+    "zh": "游戏里这里会出现第三个袭击目标的名称。",
+    "en": "In the game, the third raid target's name appears here."
+   }
+  },
+  "event_target:raid_target_4.GetName": {
+   "zh": "第四个目标",
+   "en": "fourth target",
+   "note": {
+    "zh": "游戏里这里会出现第四个袭击目标的名称。",
+    "en": "In the game, the fourth raid target's name appears here."
+   }
+  },
+  "event_target:shroudwalker_enclave_country.GetName": {
+   "zh": "那个城邦",
+   "en": "that enclave",
+   "note": {
+    "zh": "游戏里这里会出现那个城邦的名称。",
+    "en": "In the game, that enclave's name appears here."
+   }
+  },
+  "mercenary_fleet.GetName": {
+   "zh": "这支舰队",
+   "en": "the fleet",
+   "note": {
+    "zh": "游戏里这里会出现佣兵舰队的名称。",
+    "en": "In the game, the mercenary fleet's name appears here."
+   }
+  },
+  "mindwarden_destroyer.GetName": {
+   "zh": "这支舰队",
+   "en": "the fleet",
+   "note": {
+    "zh": "游戏里这里会出现摧毁城邦的舰队名称。",
+    "en": "In the game, the name of the fleet that destroyed the enclave appears here."
+   }
+  },
+  "mindwarden_enclave_country.GetName": {
+   "zh": "这个城邦",
+   "en": "the enclave",
+   "note": {
+    "zh": "游戏里这里会出现灵督城邦的名称。",
+    "en": "In the game, the Mindwarden enclave's name appears here."
+   }
+  },
+  "root.GetName": {
+   "zh": "领袖",
+   "en": "leader",
+   "note": {
+    "zh": "游戏里这里会出现领袖的名字。",
+    "en": "In the game, the leader's name appears here."
+   }
+  },
+  "root.GetTitle": {
+   "zh": "这位",
+   "en": "the",
+   "note": {
+    "zh": "游戏里这里会出现领袖的称谓。",
+    "en": "In the game, the leader's title appears here."
+   }
+  },
+  "shroudwalker_enclave_country.GetName": {
+   "zh": "另一个城邦",
+   "en": "the rival enclave",
+   "note": {
+    "zh": "游戏里这里会出现另一个城邦的名称。",
+    "en": "In the game, the other enclave's name appears here."
+   }
+  }
  }
 }

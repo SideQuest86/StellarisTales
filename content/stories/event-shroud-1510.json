@@ -13,5 +13,23 @@
    "common/scripted_effects/psionic_auras_scripted_effects.txt:118-136 (trigger_aura_clashing_event)"
   ],
   "guide": "public/summaries/event-shroud-1510.md"
+ },
+ "placeholders": {
+  "from.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "那个星系",
+   "en": "the other star",
+   "note": {
+    "zh": "游戏里这里会出现附近另一个星系的名称。",
+    "en": "In the game, the name of the nearby other star system appears here."
+   }
+  }
  }
 }

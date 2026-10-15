@@ -23,5 +23,23 @@
    "zh": "审阅注：本事件不属于任何剧情线；它在首次接触检定失败时由随机池抽取。",
    "en": "Review note: this event belongs to no storyline; it is drawn from a pool when a first-contact roll fails."
   }
- ]
+ ],
+ "placeholders": {
+  "This.ContactCountry.GetName": {
+   "zh": "未知外星人",
+   "en": "unknown aliens",
+   "note": {
+    "zh": "游戏里这里会出现这个外星势力的代称。",
+    "en": "In the game, the working name of this alien power appears here."
+   }
+  },
+  "This.Owner.GetSpeciesEarNamePlural": {
+   "zh": "耳朵",
+   "en": "ears",
+   "note": {
+    "zh": "游戏里这里会出现你的物种耳朵的名称。",
+    "en": "In the game, the name of your species' ears appears here."
+   }
+  }
+ }
 }

@@ -19,5 +19,31 @@
    "disco_molluscoid_miners_cat spawn modifier `factor = 0` with `from.owner = { NOR = { is_gestalt fanatic_xenophobe mol6 } }` blocks every other empire; whether this is intended cannot be verified from the files."
   ],
   "guide": "public/summaries/anomaly-disco-molluscoid-miners-cat.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你首都所在星球的名称。",
+    "en": "In the game, the name of your capital's planet appears here."
+   }
+  },
+  "molluscoid_miners_species.GetName": {
+   "zh": "软体生物",
+   "en": "the molluscoids",
+   "note": {
+    "zh": "游戏里这里会出现这个新物种的名称。",
+    "en": "In the game, the name of this new species appears here."
+   }
+  }
  }
 }

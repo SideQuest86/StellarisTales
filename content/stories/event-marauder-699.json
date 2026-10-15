@@ -40,5 +40,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-marauder-699.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "our empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "border_system.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "marauder_neighbor.GetName": {
+   "zh": "那个邻国",
+   "en": "the neighboring empire",
+   "note": {
+    "zh": "游戏里这里会出现邻国的名称。",
+    "en": "In the game, the neighboring empire's name appears here."
+   }
+  }
  }
 }

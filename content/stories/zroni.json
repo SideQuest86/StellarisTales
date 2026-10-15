@@ -1,79 +1,226 @@
 {
  "id": "zroni",
  "family": {
-  "title": {"zh": "泽珞族", "en": "The Zroni"},
+  "title": {
+   "zh": "泽珞族",
+   "en": "The Zroni"
+  },
   "category": "precursors",
   "start": "ancrel.1",
   "members": [
-   "ancrel.1", "archaeological_site_types:zroni_digsite_1", "ancrel.2", "ancrel.3", "ancrel.4",
-   "archaeological_site_types:zroni_digsite_2", "ancrel.5", "ancrel.6",
-   "archaeological_site_types:zroni_digsite_3", "ancrel.7", "ancrel.8",
-   "archaeological_site_types:zroni_digsite_4", "ancrel.9", "ancrel.10",
-   "archaeological_site_types:zroni_digsite_5", "ancrel.11", "ancrel.12", "ancrel.13", "ancrel.14",
-   "archaeological_site_types:zroni_digsite_6", "ancrel.15", "ancrel.16", "ancrel.17", "ancrel.18", "ancrel.19",
-   "special_projects:ZRONI_SECRETS", "ancrel.10350", "ancrel.7006"
+   "ancrel.1",
+   "archaeological_site_types:zroni_digsite_1",
+   "ancrel.2",
+   "ancrel.3",
+   "ancrel.4",
+   "archaeological_site_types:zroni_digsite_2",
+   "ancrel.5",
+   "ancrel.6",
+   "archaeological_site_types:zroni_digsite_3",
+   "ancrel.7",
+   "ancrel.8",
+   "archaeological_site_types:zroni_digsite_4",
+   "ancrel.9",
+   "ancrel.10",
+   "archaeological_site_types:zroni_digsite_5",
+   "ancrel.11",
+   "ancrel.12",
+   "ancrel.13",
+   "ancrel.14",
+   "archaeological_site_types:zroni_digsite_6",
+   "ancrel.15",
+   "ancrel.16",
+   "ancrel.17",
+   "ancrel.18",
+   "ancrel.19",
+   "special_projects:ZRONI_SECRETS",
+   "ancrel.10350",
+   "ancrel.7006"
   ],
   "sources": []
  },
  "category": "precursors",
  "bridges": [
-  {"from": "ancrel.13", "choice": "ancrel.13.a", "to": "archaeological_site_types:zroni_digsite_6", "conditional": true,
-   "label": {"zh": "母星系生成后可前往泽珞发掘", "en": "The home system spawns; Zron can be excavated"},
-   "evidence": "events/ancient_relics_arcsite_events_1.txt:403-412 option ancrel.13.a fires hidden ancrel.14 unless Zrocursor_system_discovered; ancrel.14 (417-455) spawns initializer Zrocursor_system (retry 30 days) whose homeworld creates zroni_digsite_6 (common/solar_system_initializers/ancient_relics_initializers.txt:179, 416)"},
-  {"from": "ancrel.13", "choice": "ancrel.13.a", "to": "special_projects:ZRONI_SECRETS", "conditional": true,
-   "label": {"zh": "可选：另行花费750稀有文物开启秘密研究", "en": "Optional: start the secrets research for 750 minor artifacts"},
-   "evidence": "ancrel.14 (events/ancient_relics_arcsite_events_1.txt:425) sets last_zroni_system; common/artifact_actions/artifact_actions.txt:812 artifact_zroni_research requires it (750 minor artifacts), enables ZRONI_SECRETS and fires ancrel.10040"},
-  {"from": "ancrel.19", "choice": "ancrel.19.a", "to": "ancrel.7006", "conditional": true,
-   "label": {"zh": "获得遗珍后：激活灵能档案（可重复）", "en": "With the relic: activate the Psionic Archive (repeatable)"},
-   "evidence": "events/ancient_relics_arcsite_events_1.txt:576 add_relic r_zro_crystal; common/relics/relics.txt:1024 r_zro_crystal active effect fires ancrel.7006 (events/ancient_relics_arcsite_events_1.txt:6917)"}
+  {
+   "from": "ancrel.13",
+   "choice": "ancrel.13.a",
+   "to": "archaeological_site_types:zroni_digsite_6",
+   "conditional": true,
+   "label": {
+    "zh": "母星系生成后可前往泽珞发掘",
+    "en": "The home system spawns; Zron can be excavated"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:403-412 option ancrel.13.a fires hidden ancrel.14 unless Zrocursor_system_discovered; ancrel.14 (417-455) spawns initializer Zrocursor_system (retry 30 days) whose homeworld creates zroni_digsite_6 (common/solar_system_initializers/ancient_relics_initializers.txt:179, 416)"
+  },
+  {
+   "from": "ancrel.13",
+   "choice": "ancrel.13.a",
+   "to": "special_projects:ZRONI_SECRETS",
+   "conditional": true,
+   "label": {
+    "zh": "可选：另行花费750稀有文物开启秘密研究",
+    "en": "Optional: start the secrets research for 750 minor artifacts"
+   },
+   "evidence": "ancrel.14 (events/ancient_relics_arcsite_events_1.txt:425) sets last_zroni_system; common/artifact_actions/artifact_actions.txt:812 artifact_zroni_research requires it (750 minor artifacts), enables ZRONI_SECRETS and fires ancrel.10040"
+  },
+  {
+   "from": "ancrel.19",
+   "choice": "ancrel.19.a",
+   "to": "ancrel.7006",
+   "conditional": true,
+   "label": {
+    "zh": "获得遗珍后：激活灵能档案（可重复）",
+    "en": "With the relic: activate the Psionic Archive (repeatable)"
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:576 add_relic r_zro_crystal; common/relics/relics.txt:1024 r_zro_crystal active effect fires ancrel.7006 (events/ancient_relics_arcsite_events_1.txt:6917)"
+  }
  ],
  "nodeLabels": {
-  "ancrel.4": {"zh": "灵能档案：虚境与集体做梦", "en": "Psionic Archive: the Shroud and mass dreaming"},
-  "ancrel.6": {"zh": "借虚境跳跃散布银河", "en": "Psionic jumps across the galaxy"},
-  "ancrel.7": {"zh": "神力的代价：黑洞膨胀", "en": "The price of godhood: a growing black hole"},
-  "ancrel.8": {"zh": "“神圣者”与“拯救者”", "en": "The Divine and the Saviors"},
-  "ancrel.10": {"zh": "虚境中诞生的实体", "en": "Entities born in the Shroud"},
-  "ancrel.12": {"zh": "战争的进程", "en": "The course of the war"},
-  "ancrel.13": {"zh": "泽珞尘与母星坐标", "en": "Zro dust and the homeworld's location"},
-  "ancrel.16": {"zh": "“神圣者”陷入疯狂", "en": "The Divine driven to madness"},
-  "ancrel.17": {"zh": "终结循环的计划", "en": "The plan to end the cycle"},
-  "ancrel.18": {"zh": "泽珞族的结局", "en": "The fate of the Zroni"},
-  "ancrel.19": {"zh": "带走有感知的水晶", "en": "Taking the sapient crystal"}
+  "ancrel.4": {
+   "zh": "灵能档案：虚境与集体做梦",
+   "en": "Psionic Archive: the Shroud and mass dreaming"
+  },
+  "ancrel.6": {
+   "zh": "借虚境跳跃散布银河",
+   "en": "Psionic jumps across the galaxy"
+  },
+  "ancrel.7": {
+   "zh": "神力的代价：黑洞膨胀",
+   "en": "The price of godhood: a growing black hole"
+  },
+  "ancrel.8": {
+   "zh": "“神圣者”与“拯救者”",
+   "en": "The Divine and the Saviors"
+  },
+  "ancrel.10": {
+   "zh": "虚境中诞生的实体",
+   "en": "Entities born in the Shroud"
+  },
+  "ancrel.12": {
+   "zh": "战争的进程",
+   "en": "The course of the war"
+  },
+  "ancrel.13": {
+   "zh": "泽珞尘与母星坐标",
+   "en": "Zro dust and the homeworld's location"
+  },
+  "ancrel.16": {
+   "zh": "“神圣者”陷入疯狂",
+   "en": "The Divine driven to madness"
+  },
+  "ancrel.17": {
+   "zh": "终结循环的计划",
+   "en": "The plan to end the cycle"
+  },
+  "ancrel.18": {
+   "zh": "泽珞族的结局",
+   "en": "The fate of the Zroni"
+  },
+  "ancrel.19": {
+   "zh": "带走有感知的水晶",
+   "en": "Taking the sapient crystal"
+  }
  },
  "notes": [
-  {"doc": "ancrel.1", "kind": "review",
+  {
+   "doc": "ancrel.1",
+   "kind": "review",
    "zh": "开场：需要《远古遗物》；非AI帝国勘察泽珞星域（precursor_zroni_1 星系）中一颗无异常、无遗址、未殖民的宜居星球时，on_survey_planet 以权重35抽中；全游戏只触发一次（fire_only_once 与全局 zroni_started），且该帝国不能已有其他先驱者开场。",
-   "en": "Opening: needs Ancient Relics; drawn (weight 35) from on_survey_planet when a non-AI empire surveys an anomaly-free, site-free, uncolonised habitable world in a precursor_zroni_1 system; fires once per galaxy (fire_only_once, global zroni_started) and only if the empire has no other precursor opening."},
-  {"doc": "archaeological_site_types:zroni_digsite_2", "kind": "review",
+   "en": "Opening: needs Ancient Relics; drawn (weight 35) from on_survey_planet when a non-AI empire surveys an anomaly-free, site-free, uncolonised habitable world in a precursor_zroni_1 system; fires once per galaxy (fire_only_once, global zroni_started) and only if the empire has no other precursor opening."
+  },
+  {
+   "doc": "archaeological_site_types:zroni_digsite_2",
+   "kind": "review",
    "zh": "前一处遗址最后阶段的 immediate 用 zroni_digsite_spawn_effect 在3–15跳内找一个可到达的宜居星球放置下一处遗址；五处遗址严格依次出现。",
-   "en": "The previous site's final stage uses zroni_digsite_spawn_effect in its immediate block to place the next site on a reachable habitable world 3–15 jumps away; the five sites appear strictly in sequence."},
-  {"doc": "archaeological_site_types:zroni_digsite_6", "kind": "review",
+   "en": "The previous site's final stage uses zroni_digsite_spawn_effect in its immediate block to place the next site on a reachable habitable world 3–15 jumps away; the five sites appear strictly in sequence."
+  },
+  {
+   "doc": "archaeological_site_types:zroni_digsite_6",
+   "kind": "review",
    "zh": "泽珞（Zron）由母星系初始化器在系统生成时创建，不需要前一处遗址的标志；五个阶段，最后获得遗珍“灵能档案”。",
-   "en": "Zron is created by the home-system initializer when the system spawns and needs no chain flag; five stages, ending with the Psionic Archive relic."},
-  {"doc": "ancrel.7006", "kind": "review",
+   "en": "Zron is created by the home-system initializer when the system spawns and needs no chain flag; five stages, ending with the Psionic Archive relic."
+  },
+  {
+   "doc": "ancrel.7006",
+   "kind": "review",
    "zh": "每次激活三选一：统治者提升1级（技能未满10）、1800天军事修正或1800天治国修正；两段正文随机其一。",
-   "en": "Each activation offers one of three requests: the ruler gains a level (below skill 10), a 1800-day martial modifier, or a 1800-day state modifier; one of two texts is shown."}
+   "en": "Each activation offers one of three requests: the ruler gains a level (below skill 10), a 1800-day martial modifier, or a 1800-day state modifier; one of two texts is shown."
+  }
  ],
  "endings": {
-  "ancrel.19": {"label": {"zh": "终章：带走灵能档案", "en": "Finale: the Psionic Archive"},
-                "note": {"zh": "18 已设置 zroni_completed；19 给予遗珍与大量文物。", "en": "18 already set zroni_completed; 19 grants the relic and a large artifact reward."},
-                "evidence": "events/ancient_relics_arcsite_events_1.txt:530-580"},
-  "ancrel.10350": {"label": {"zh": "秘密研究结果", "en": "Secrets research result"},
-                   "note": {"zh": "灵能理论研究选项与进度（或社会学研究），并获得灵能研究修正。", "en": "Psionic Theory option and progress (or society research), plus a psionics research modifier."},
-                   "evidence": "events/ancient_relics_arcsite_events_2.txt:7607"}
+  "ancrel.19": {
+   "label": {
+    "zh": "终章：带走灵能档案",
+    "en": "Finale: the Psionic Archive"
+   },
+   "note": {
+    "zh": "18 已设置 zroni_completed；19 给予遗珍与大量文物。",
+    "en": "18 already set zroni_completed; 19 grants the relic and a large artifact reward."
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:530-580"
+  },
+  "ancrel.10350": {
+   "label": {
+    "zh": "秘密研究结果",
+    "en": "Secrets research result"
+   },
+   "note": {
+    "zh": "灵能理论研究选项与进度（或社会学研究），并获得灵能研究修正。",
+    "en": "Psionic Theory option and progress (or society research), plus a psionics research modifier."
+   },
+   "evidence": "events/ancient_relics_arcsite_events_2.txt:7607"
+  }
  },
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "C2 precursor review (Claude Opus 5.5)",
-  "scope": {"zh": "整条故事：开场触发、六处遗址的阶段定义与顺序、遗址生成效果、母星系生成、秘密研究、遗珍与激活事件；中英文正文已读。",
-            "en": "Whole story: opening trigger, the six sites' stage definitions and order, site-spawn effect, home-system spawn, secrets research, relic and its activation event; both languages read."},
-  "sources": ["events/ancient_relics_arcsite_events_1.txt", "common/archaeological_site_types/01_precursor_arc_sites.txt",
-              "common/scripted_effects/00_scripted_effects.txt", "common/solar_system_initializers/ancient_relics_initializers.txt",
-              "common/artifact_actions/artifact_actions.txt", "common/special_projects/00_projects_ancient_relics.txt",
-              "events/ancient_relics_arcsite_events_2.txt", "common/relics/relics.txt", "common/on_actions/00_on_actions.txt",
-              "localisation/simp_chinese", "localisation/english"],
-  "uncertain": ["ancrel.5 and ancrel.6 use the localisation keys zroni_digsite_5 / zroni_digsite_6 as titles, so site 2's stages are titled 'Zroni Core World' and 'Zron' in game; kept as original text."],
+  "scope": {
+   "zh": "整条故事：开场触发、六处遗址的阶段定义与顺序、遗址生成效果、母星系生成、秘密研究、遗珍与激活事件；中英文正文已读。",
+   "en": "Whole story: opening trigger, the six sites' stage definitions and order, site-spawn effect, home-system spawn, secrets research, relic and its activation event; both languages read."
+  },
+  "sources": [
+   "events/ancient_relics_arcsite_events_1.txt",
+   "common/archaeological_site_types/01_precursor_arc_sites.txt",
+   "common/scripted_effects/00_scripted_effects.txt",
+   "common/solar_system_initializers/ancient_relics_initializers.txt",
+   "common/artifact_actions/artifact_actions.txt",
+   "common/special_projects/00_projects_ancient_relics.txt",
+   "events/ancient_relics_arcsite_events_2.txt",
+   "common/relics/relics.txt",
+   "common/on_actions/00_on_actions.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [
+   "ancrel.5 and ancrel.6 use the localisation keys zroni_digsite_5 / zroni_digsite_6 as titles, so site 2's stages are titled 'Zroni Core World' and 'Zron' in game; kept as original text."
+  ],
   "guide": "public/summaries/zroni.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Root.GetRulerName": {
+   "zh": "统治者",
+   "en": "ruler",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的名字。",
+    "en": "In the game, your ruler's name appears here."
+   }
+  },
+  "Root.GetRulerTitle": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的称谓。",
+    "en": "In the game, your ruler's title appears here."
+   }
+  }
  }
 }

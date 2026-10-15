@@ -949,5 +949,47 @@
    "event-bio-405",
    "event-bio-410"
   ]
+ },
+ "placeholders": {
+  "Owner.GetSpeciesAdj": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "Owner.Leader.GetTitle": {
+   "zh": "这位",
+   "en": "leader",
+   "note": {
+    "zh": "游戏里这里会出现你的领袖的称谓。",
+    "en": "In the game, your leader's title appears here."
+   }
+  },
+  "event_target:genius_geneticist.GetName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现这位科学家的名字。",
+    "en": "In the game, this scientist's name appears here."
+   }
+  },
+  "event_target:rogue_geneticist.GetName": {
+   "zh": "这位基因学家",
+   "en": "the geneticist",
+   "note": {
+    "zh": "游戏里这里会出现这位基因学家的名字。",
+    "en": "In the game, this geneticist's name appears here."
+   }
+  },
+  "owner.species.GetHandNamePlural": {
+   "zh": "手",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的手的复数称呼。",
+    "en": "In the game, the plural of your species' hands appears here."
+   }
+  }
  }
 }

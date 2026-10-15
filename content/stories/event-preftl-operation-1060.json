@@ -36,5 +36,47 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-preftl-operation-1060.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "本次",
+   "en": "this",
+   "note": {
+    "zh": "游戏里这里会出现本次行动的名称。",
+    "en": "In the game, the operation's name appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "本次",
+   "en": "this",
+   "note": {
+    "zh": "游戏里这里会出现本次行动的名称。",
+    "en": "In the game, the operation's name appears here."
+   }
+  },
+  "infiltrated_country_species.GetClass": {
+   "zh": "土著",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的种类名称。",
+    "en": "In the game, the local species class appears here."
+   }
+  },
+  "pre_ftl_country.GetName": {
+   "zh": "这个前FTL文明",
+   "en": "the pre-FTL civilisation",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL文明的名称。",
+    "en": "In the game, the name of the pre-FTL civilisation appears here."
+   }
+  },
+  "target.GetSpeciesNamePlural": {
+   "zh": "土著",
+   "en": "natives",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  }
  }
 }

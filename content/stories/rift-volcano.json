@@ -2,36 +2,88 @@
  "id": "rift-volcano",
  "category": "rifts",
  "bridges": [
-  {"from": "astral_rift.1915", "choice": "astral_rift.1915.b", "to": "astral_rift.1935", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:5054-5058 set_next_astral_rift_event { id = astral_rift.1930 on_roll_failed = astral_rift.1935 fail_probability = @default_failure_probability }; 1935 trigger requires a non-wilderness explorer (:5207-5209)"},
-  {"from": "astral_rift.1925", "choice": "astral_rift.1925.b", "to": "astral_rift.1935", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
-   "evidence": "events/astral_rifts_1_events.txt:5123-5127 on_roll_failed = astral_rift.1935"}
+  {
+   "from": "astral_rift.1915",
+   "choice": "astral_rift.1915.b",
+   "to": "astral_rift.1935",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:5054-5058 set_next_astral_rift_event { id = astral_rift.1930 on_roll_failed = astral_rift.1935 fail_probability = @default_failure_probability }; 1935 trigger requires a non-wilderness explorer (:5207-5209)"
+  },
+  {
+   "from": "astral_rift.1925",
+   "choice": "astral_rift.1925.b",
+   "to": "astral_rift.1935",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
+   "evidence": "events/astral_rifts_1_events.txt:5123-5127 on_roll_failed = astral_rift.1935"
+  }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["astral_rift.1930", "astral_rift.1935"],
-   "label": {"zh": "摧毁方尖碑：突破或失败", "en": "Destroying the obelisk: breakthrough or failure"},
-   "note": {"zh": "选择摧毁方尖碑后，本阶段要么突破（1930，碑碎、囚徒获释），要么在某次掷骰时以每次 1.5% 的基础概率失败（1935，探球满是烟灰，科学家殒命）。", "en": "After choosing to destroy the obelisk the stage either breaks through (1930: the obelisk shatters and the prisoners go free) or fails on a roll, base 1.5% per roll (1935: the Sphere returns full of ash and the scientist is lost)."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.1930",
+    "astral_rift.1935"
+   ],
+   "label": {
+    "zh": "摧毁方尖碑：突破或失败",
+    "en": "Destroying the obelisk: breakthrough or failure"
+   },
+   "note": {
+    "zh": "选择摧毁方尖碑后，本阶段要么突破（1930，碑碎、囚徒获释），要么在某次掷骰时以每次 1.5% 的基础概率失败（1935，探球满是烟灰，科学家殒命）。",
+    "en": "After choosing to destroy the obelisk the stage either breaks through (1930: the obelisk shatters and the prisoners go free) or fails on a roll, base 1.5% per roll (1935: the Sphere returns full of ash and the scientist is lost)."
+   }
+  }
  ],
  "endings": {
   "astral_rift.1920": {
-   "label": {"zh": "取回：紧急撤离", "en": "Retrieval: emergency exit"},
-   "note": {"zh": "拉动锚链逃离，一只附着的漂浮生物在本维度化为纯星界物质；获得中量星界丝缕，探索结束。", "en": "The anchor pulls the Sphere out; a clinging floater dissolves into pure astral material in our dimension; a medium astral thread reward; the exploration ends."},
-   "evidence": "events/astral_rifts_1_events.txt:5081-5099"},
+   "label": {
+    "zh": "取回：紧急撤离",
+    "en": "Retrieval: emergency exit"
+   },
+   "note": {
+    "zh": "拉动锚链逃离，一只附着的漂浮生物在本维度化为纯星界物质；获得中量星界丝缕，探索结束。",
+    "en": "The anchor pulls the Sphere out; a clinging floater dissolves into pure astral material in our dimension; a medium astral thread reward; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:5081-5099"
+  },
   "astral_rift.1941": {
-   "label": {"zh": "不祥访客：恢复平衡或被诅咒", "en": "Ominous Visitor: balance or curse"},
-   "note": {"zh": "方尖碑被毁 2160 天（6 年）后，其熔岩主人要求补偿：同意“恢复平衡”则 6 年内每年失去一个人口（并获该修正）；拒绝则首都受 6 年“尖塔的诅咒”。", "en": "2160 days (six years) after the obelisk falls, its molten owner demands amends: “Restore the Balance” costs one pop each year for six years (with that modifier); refusing curses the capital with Obelisk's Curse for six years."},
-   "evidence": "events/astral_rifts_1_events.txt:5185-5192 (country_event 1940 days=2160); 5248-5363"},
+   "label": {
+    "zh": "不祥访客：恢复平衡或被诅咒",
+    "en": "Ominous Visitor: balance or curse"
+   },
+   "note": {
+    "zh": "方尖碑被毁 2160 天（6 年）后，其熔岩主人要求补偿：同意“恢复平衡”则 6 年内每年失去一个人口（并获该修正）；拒绝则首都受 6 年“尖塔的诅咒”。",
+    "en": "2160 days (six years) after the obelisk falls, its molten owner demands amends: “Restore the Balance” costs one pop each year for six years (with that modifier); refusing curses the capital with Obelisk's Curse for six years."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:5185-5192 (country_event 1940 days=2160); 5248-5363"
+  },
   "astral_rift.1955": {
-   "label": {"zh": "牺牲：六百岁的科学家", "en": "Sacrifice: the 600-year-old scientist"},
-   "note": {"zh": "失败分支 1935 一年后，科学家以 600 多岁、不死之身归来（1950），又一年后被发现在秘密把人口送回裂隙：处决，或放任（获得“尖塔的诅咒”特质，任议员时每年失去一个人口）。", "en": "A year after failure branch 1935 the scientist returns over 600 years old and immortal (1950); a year later they are caught secretly sending people back through the rift: dispose of them, or let them continue (gaining the Obelisk's Curse trait, which kills one pop a year while they sit on the council)."},
-   "evidence": "events/astral_rifts_1_events.txt:5211-5244 (1935: exiled clone, country_event 1950 days=360); 5368-5475; common/traits/12_astral_planes_traits.txt:46-72 (on_gained_effect -> 1960)"}
+   "label": {
+    "zh": "牺牲：六百岁的科学家",
+    "en": "Sacrifice: the 600-year-old scientist"
+   },
+   "note": {
+    "zh": "失败分支 1935 一年后，科学家以 600 多岁、不死之身归来（1950），又一年后被发现在秘密把人口送回裂隙：处决，或放任（获得“尖塔的诅咒”特质，任议员时每年失去一个人口）。",
+    "en": "A year after failure branch 1935 the scientist returns over 600 years old and immortal (1950); a year later they are caught secretly sending people back through the rift: dispose of them, or let them continue (gaining the Obelisk's Curse trait, which kills one pop a year while they sit on the council)."
+   },
+   "evidence": "events/astral_rifts_1_events.txt:5211-5244 (1935: exiled clone, country_event 1950 days=360); 5368-5475; common/traits/12_astral_planes_traits.txt:46-72 (on_gained_effect -> 1960)"
+  }
  },
  "notes": [
-  {"doc": "astral_rift.1935", "kind": "review",
+  {
+   "doc": "astral_rift.1935",
+   "kind": "review",
    "zh": "失败事件 1935 自身要求探索帝国不是“荒野”帝国（无法牺牲人口）；对荒野帝国，这个后备事件不满足触发条件。",
-   "en": "Failure event 1935 itself requires the explorer not to be a Wilderness empire (it cannot sacrifice pops); for Wilderness empires this fallback's trigger is not met."}
+   "en": "Failure event 1935 itself requires the explorer not to be a Wilderness empire (it cannot sacrifice pops); for Wilderness empires this fallback's trigger is not met."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -41,8 +93,24 @@
    "zh": "已核对裂隙定义与 1900–1960 全部事件、1940/1950/1955 的延时后续与诅咒特质；补上 1915.b/1925.b 的失败分支 1935（原为独立故事）。",
    "en": "Checked the rift definition and every event 1900–1960, the delayed follow-ups 1940/1950/1955 and the curse trait; added the failure branch 1935 of 1915.b/1925.b (formerly a separate story)."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_1_events.txt", "common/traits/12_astral_planes_traits.txt"],
-  "uncertain": ["What the engine does when the on_roll_failed fallback 1935 cannot fire (Wilderness explorer) was not verified; presumably the stage continues normally."],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_1_events.txt",
+   "common/traits/12_astral_planes_traits.txt"
+  ],
+  "uncertain": [
+   "What the engine does when the on_roll_failed fallback 1935 cannot fire (Wilderness explorer) was not verified; presumably the stage continues normally."
+  ],
   "guide": "public/summaries/rift-volcano.md"
+ },
+ "placeholders": {
+  "from.GetName": {
+   "zh": "此人",
+   "en": "they",
+   "note": {
+    "zh": "游戏里这里会出现这个人的名字。",
+    "en": "In the game, the name of this person appears here."
+   }
+  }
  }
 }

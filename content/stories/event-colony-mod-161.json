@@ -1,29 +1,68 @@
 {
  "id": "event-colony-mod-161",
  "family": {
-  "title": {"zh": "磁力奇迹", "en": "Magnetic Miracle"},
+  "title": {
+   "zh": "磁力奇迹",
+   "en": "Magnetic Miracle"
+  },
   "category": "society",
   "start": "colony_mod.161",
-  "members": ["colony_mod.16", "colony_mod.17", "special_projects:MAGNETIC_PLANET_RESEARCH_PROJECT", "colony_mod.18"]
+  "members": [
+   "colony_mod.16",
+   "colony_mod.17",
+   "special_projects:MAGNETIC_PLANET_RESEARCH_PROJECT",
+   "colony_mod.18"
+  ]
  },
  "titleFrom": "colony_mod.16",
  "endings": {
   "colony_mod.18": {
-   "label": {"zh": "谜团揭晓：永久的磁力奇迹", "en": "Mystery revealed: a permanent Magnetic Miracle"},
-   "note": {"zh": "研究项目完成后，该星球获得永久的“磁力奇迹”修正，并不再触发本事件。", "en": "After the project the planet keeps the Magnetic Miracle modifier permanently and no longer triggers these events."},
+   "label": {
+    "zh": "谜团揭晓：永久的磁力奇迹",
+    "en": "Mystery revealed: a permanent Magnetic Miracle"
+   },
+   "note": {
+    "zh": "研究项目完成后，该星球获得永久的“磁力奇迹”修正，并不再触发本事件。",
+    "en": "After the project the planet keeps the Magnetic Miracle modifier permanently and no longer triggers these events."
+   },
    "evidence": "events/colony_events_3.txt:880-898 set_carrier_flag magnetic_mystery_solved, add_modifier magnetic_research_boost days -1; 00_projects_3.txt:672-684."
   }
  },
  "notes": [
-  {"doc": "colony_mod.16", "kind": "review", "zh": "审阅注：磁力奇迹（16）与磁力破坏（17）是同一殖民地一周年检查的 50/50 互斥结果。每次发生都使帝国计数加一；计数达到3时，该次事件的选项才开启“调查磁场之谜”项目（colony_events_3.txt:789-818、847-876）。", "en": "Review note: Magnetic Miracle (16) and Magnetic Disruption (17) are 50/50 alternatives of the same first-anniversary check. Each occurrence adds 1 to an empire counter; only when the counter is 3 does that event's option open the research project (colony_events_3.txt:789-818, 847-876)."}
+  {
+   "doc": "colony_mod.16",
+   "kind": "review",
+   "zh": "审阅注：磁力奇迹（16）与磁力破坏（17）是同一殖民地一周年检查的 50/50 互斥结果。每次发生都使帝国计数加一；计数达到3时，该次事件的选项才开启“调查磁场之谜”项目（colony_events_3.txt:789-818、847-876）。",
+   "en": "Review note: Magnetic Miracle (16) and Magnetic Disruption (17) are 50/50 alternatives of the same first-anniversary check. Each occurrence adds 1 to an empire counter; only when the counter is 3 does that event's option open the research project (colony_events_3.txt:789-818, 847-876)."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "从编译器把六类“星球修正殖民地事件”合并成的一个故事中拆出：此处只含强力磁场事件（16、17、项目、18）。入口为隐藏分派器 colony_mod.161。", "en": "Split out of the compiler's single story that merged six independent planet-modifier colony events: this story holds only the strong-magnetic-field events (16, 17, project, 18), entered through the hidden dispatcher colony_mod.161."},
-  "sources": ["events/colony_events_3.txt:764-898", "events/colony_events_3.txt:919-1034", "common/special_projects/00_projects_3.txt:671-684", "common/on_actions/00_on_actions.txt:3719-3724"],
-  "uncertain": ["check_variable value = 3 is read as 'counter equals 3' following the script comment; whether the engine treats it as >= 3 is not visible in script."],
+  "scope": {
+   "zh": "从编译器把六类“星球修正殖民地事件”合并成的一个故事中拆出：此处只含强力磁场事件（16、17、项目、18）。入口为隐藏分派器 colony_mod.161。",
+   "en": "Split out of the compiler's single story that merged six independent planet-modifier colony events: this story holds only the strong-magnetic-field events (16, 17, project, 18), entered through the hidden dispatcher colony_mod.161."
+  },
+  "sources": [
+   "events/colony_events_3.txt:764-898",
+   "events/colony_events_3.txt:919-1034",
+   "common/special_projects/00_projects_3.txt:671-684",
+   "common/on_actions/00_on_actions.txt:3719-3724"
+  ],
+  "uncertain": [
+   "check_variable value = 3 is read as 'counter equals 3' following the script comment; whether the engine treats it as >= 3 is not visible in script."
+  ],
   "guide": "public/summaries/event-colony-mod-161.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

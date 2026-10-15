@@ -787,5 +787,245 @@
    "Identity-situation cross-track switches are described, not drawn (reading simplification, see suppress evidence)."
   ],
   "guide": "public/summaries/origin_unplugged.md"
+ },
+ "placeholders": {
+  "capital_scope.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "creator_species.GetAdj": {
+   "zh": "原始",
+   "en": "original",
+   "note": {
+    "zh": "游戏里这里会出现创造者的形容词。",
+    "en": "In the game, the creators' adjective appears here."
+   }
+  },
+  "creators_planet.solar_system.GetName": {
+   "zh": "这个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现附近星系的名称。",
+    "en": "In the game, the nearby system's name appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "fromfrom.GetClassAdj": {
+   "zh": "原始",
+   "en": "pristine",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的形容词。",
+    "en": "In the game, this planet's adjective appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "machine_legacy_taken_planet.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, that planet's name appears here."
+   }
+  },
+  "origin_unplugged_assimilator_empire.GetAdj": {
+   "zh": "同化",
+   "en": "assimilator",
+   "note": {
+    "zh": "游戏里这里会出现同化帝国的形容词。",
+    "en": "In the game, the assimilator empire's adjective appears here."
+   }
+  },
+  "origin_unplugged_assimilator_empire.GetName": {
+   "zh": "同化帝国",
+   "en": "assimilator empire",
+   "note": {
+    "zh": "游戏里这里会出现同化帝国的名称。",
+    "en": "In the game, the assimilator empire's name appears here."
+   }
+  },
+  "origin_unplugged_assimilator_empire.GetSpeciesAdj": {
+   "zh": "同化",
+   "en": "assimilator",
+   "note": {
+    "zh": "游戏里这里会出现同化帝国的形容词。",
+    "en": "In the game, the assimilator empire's adjective appears here."
+   }
+  },
+  "origin_unplugged_creators_planet.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "origin_unplugged_machine_legacy_core.GetName": {
+   "zh": "这个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现附近星系的名称。",
+    "en": "In the game, the nearby system's name appears here."
+   }
+  },
+  "origin_unplugged_machine_legacy_core_planet.GetClassAdj": {
+   "zh": "敌对",
+   "en": "hostile",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的形容词。",
+    "en": "In the game, this planet's adjective appears here."
+   }
+  },
+  "origin_unplugged_machine_legacy_core_planet.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "origin_unplugged_maker_planet.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "origin_unplugged_pre_ftl_planet.GetName": {
+   "zh": "前FTL",
+   "en": "pre-FTL",
+   "note": {
+    "zh": "游戏里这里会出现这颗前FTL星球的名称。",
+    "en": "In the game, this pre-FTL planet's name appears here."
+   }
+  },
+  "owner.GetSpeciesHandNamePlural": {
+   "zh": "手",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现该物种的手的称呼。",
+    "en": "In the game, this species' word for hands appears here."
+   }
+  },
+  "owner.species.GetRemnantNamePlural": {
+   "zh": "遗骸",
+   "en": "remains",
+   "note": {
+    "zh": "游戏里这里会出现这些遗骸的称呼。",
+    "en": "In the game, the word for these remains appears here."
+   }
+  },
+  "persistent": {
+   "zh": "持续",
+   "en": "persistent",
+   "note": {
+    "zh": "游戏里这里会出现这个状态的词。",
+    "en": "In the game, this status word appears here."
+   }
+  },
+  "planet.GetClassAdj": {
+   "zh": "原始",
+   "en": "primitive",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的形容词。",
+    "en": "In the game, this planet's adjective appears here."
+   }
+  },
+  "planet.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, that planet's name appears here."
+   }
+  },
+  "target.GetAdj": {
+   "zh": "目标",
+   "en": "target",
+   "note": {
+    "zh": "游戏里这里会出现目标族群的形容词。",
+    "en": "In the game, the target species' adjective appears here."
+   }
+  },
+  "target.GetName": {
+   "zh": "目标族群",
+   "en": "target species",
+   "note": {
+    "zh": "游戏里这里会出现目标族群的名称。",
+    "en": "In the game, the target species' name appears here."
+   }
+  },
+  "target.GetSpeciesAdj": {
+   "zh": "目标族群的",
+   "en": "target-species",
+   "note": {
+    "zh": "游戏里这里会出现目标族群的形容词。",
+    "en": "In the game, the target species' adjective appears here."
+   }
+  },
+  "target.capital_scope.GetName": {
+   "zh": "目标首都",
+   "en": "the target capital",
+   "note": {
+    "zh": "游戏里这里会出现目标族群首都的名称。",
+    "en": "In the game, the target species' capital's name appears here."
+   }
+  },
+  "unplugged_empire.GetName": {
+   "zh": "该帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "持续": {
+   "zh": "持续",
+   "en": "persistent",
+   "note": {
+    "zh": "游戏里这里会出现这个状态的词。",
+    "en": "In the game, this status word appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "unplugged.2300": {
+   "from.GetName": {
+    "zh": "这个",
+    "en": "nearby",
+    "note": {
+     "zh": "游戏里这里会出现附近星系的名称。",
+     "en": "In the game, the nearby system's name appears here."
+    }
+   }
+  },
+  "unplugged.2495": {
+   "from.GetName": {
+    "zh": "这个",
+    "en": "nearby",
+    "note": {
+     "zh": "游戏里这里会出现附近星系的名称。",
+     "en": "In the game, the nearby system's name appears here."
+    }
+   }
+  }
  }
 }

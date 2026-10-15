@@ -36,5 +36,31 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/enclave-leader-departure.md"
+ },
+ "placeholders": {
+  "FROM.GetName": {
+   "zh": "那个城邦",
+   "en": "that enclave",
+   "note": {
+    "zh": "游戏里这里会出现那个城邦的名称。",
+    "en": "In the game, that enclave's name appears here."
+   }
+  },
+  "root.GetName": {
+   "zh": "领袖",
+   "en": "leader",
+   "note": {
+    "zh": "游戏里这里会出现领袖的名字。",
+    "en": "In the game, the leader's name appears here."
+   }
+  },
+  "root.GetTitle": {
+   "zh": "这位",
+   "en": "the",
+   "note": {
+    "zh": "游戏里这里会出现领袖的称谓。",
+    "en": "In the game, the leader's title appears here."
+   }
+  }
  }
 }

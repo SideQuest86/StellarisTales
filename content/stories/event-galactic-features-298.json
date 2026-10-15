@@ -40,5 +40,23 @@
    "common/on_actions/00_on_actions.txt:1142"
   ],
   "guide": "public/summaries/event-galactic-features-298.md"
+ },
+ "placeholders": {
+  "Root.GetLeaderName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现科学专员的名字。",
+    "en": "In the game, the science officer's name appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "你们",
+   "en": "you",
+   "note": {
+    "zh": "游戏里这里会出现你们物种的名称。",
+    "en": "In the game, the name of your species appears here."
+   }
+  }
  }
 }

@@ -1,0 +1,1 @@
+﻿All three items done and verified (verify-refine-reader.mjs passes; unit tests pass). Screenshots in verification/refine-reader-*.png. Coordinator must add <link rel=stylesheet href=./src/reader-extras.css> to index.html.

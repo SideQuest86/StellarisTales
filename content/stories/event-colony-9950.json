@@ -2,20 +2,68 @@
  "id": "event-colony-9950",
  "category": "society",
  "endings": {
-  "colony.9960": {"label": {"zh": "结局：观光平台", "en": "Ending: viewing platforms"}, "note": {"zh": "花200合金建观景平台升级观光修正，或不建。", "en": "Spend 200 alloys to upgrade the tourism modifier, or decline."}, "evidence": "events/colony_events_3.txt:9674-9715."},
-  "colony.9970": {"label": {"zh": "结局：扩展成功", "en": "Ending: expansion succeeds"}, "note": {"zh": "精炼修正升级。", "en": "The refining modifier is upgraded."}, "evidence": "events/colony_events_3.txt:9762-9787."},
-  "colony.9975": {"label": {"zh": "结局：扩展失败", "en": "Ending: expansion fails"}, "note": {"zh": "精炼修正换为矿物版本。", "en": "The refining modifier becomes a minerals version."}, "evidence": "events/colony_events_3.txt:9789-9813."}
+  "colony.9960": {
+   "label": {
+    "zh": "结局：观光平台",
+    "en": "Ending: viewing platforms"
+   },
+   "note": {
+    "zh": "花200合金建观景平台升级观光修正，或不建。",
+    "en": "Spend 200 alloys to upgrade the tourism modifier, or decline."
+   },
+   "evidence": "events/colony_events_3.txt:9674-9715."
+  },
+  "colony.9970": {
+   "label": {
+    "zh": "结局：扩展成功",
+    "en": "Ending: expansion succeeds"
+   },
+   "note": {
+    "zh": "精炼修正升级。",
+    "en": "The refining modifier is upgraded."
+   },
+   "evidence": "events/colony_events_3.txt:9762-9787."
+  },
+  "colony.9975": {
+   "label": {
+    "zh": "结局：扩展失败",
+    "en": "Ending: expansion fails"
+   },
+   "note": {
+    "zh": "精炼修正换为矿物版本。",
+    "en": "The refining modifier becomes a minerals version."
+   },
+   "evidence": "events/colony_events_3.txt:9789-9813."
+  }
  },
- "nodeLabels": {"event_chains:stratovent_world_chain": {"zh": "事件链概览", "en": "Event chain overview"}},
+ "nodeLabels": {
+  "event_chains:stratovent_world_chain": {
+   "zh": "事件链概览",
+   "en": "Event chain overview"
+  }
+ },
  "notes": [
-  {"doc": "colony.9965", "kind": "review", "zh": "审阅注：安放炸药成功率50%；采矿公会可交给公会处理，成功率75%；也可放弃。", "en": "Review note: setting the charges succeeds 50%; Mining Guilds can let the guild handle it at 75%; or decline."}
+  {
+   "doc": "colony.9965",
+   "kind": "review",
+   "zh": "审阅注：安放炸药成功率50%；采矿公会可交给公会处理，成功率75%；也可放弃。",
+   "en": "Review note: setting the charges succeeds 50%; Mining Guilds can let the guild handle it at 75%; or decline."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "平流层喷口全部6个事件、研究项目与事件链概览。", "en": "All 6 Stratospheric Vents events, the project and the chain overview."},
-  "sources": ["events/colony_events_3.txt:9540-9813", "common/special_projects/00_projects_3.txt:1872-1884", "common/event_chains/00_event_chains.txt:381", "common/on_actions/00_on_actions.txt:3771"],
+  "scope": {
+   "zh": "平流层喷口全部6个事件、研究项目与事件链概览。",
+   "en": "All 6 Stratospheric Vents events, the project and the chain overview."
+  },
+  "sources": [
+   "events/colony_events_3.txt:9540-9813",
+   "common/special_projects/00_projects_3.txt:1872-1884",
+   "common/event_chains/00_event_chains.txt:381",
+   "common/on_actions/00_on_actions.txt:3771"
+  ],
   "uncertain": [],
   "guide": "public/summaries/event-colony-9950.md"
  }

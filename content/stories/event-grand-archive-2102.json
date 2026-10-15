@@ -43,5 +43,39 @@
    "events/grand_archive_events.txt"
   ],
   "guide": "public/summaries/event-grand-archive-2102.md"
+ },
+ "placeholders": {
+  "from.GetName": {
+   "zh": "那个",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现那个星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "invaded_system.GetName": {
+   "zh": "这个",
+   "en": "home",
+   "note": {
+    "zh": "游戏里这里会出现我们自己的星系的名称。",
+    "en": "In the game, the name of our own star system appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "我们的帝国",
+   "en": "the empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "this.GetSpeciesName": {
+   "zh": "我们",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的所属名称。",
+    "en": "In the game, the name of your species' space appears here."
+   }
+  }
  }
 }

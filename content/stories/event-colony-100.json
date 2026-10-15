@@ -186,5 +186,55 @@
    "event-colony-114"
   ],
   "guide": "public/summaries/event-colony-100.md"
+ },
+ "placeholders": {
+  "From.From.GetName": {
+   "zh": "另一颗星球",
+   "en": "another planet",
+   "note": {
+    "zh": "游戏里这里会出现另一颗星球的名称。",
+    "en": "In the game, the name of another planet appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Root.Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesName": {
+   "zh": "我们的同类",
+   "en": "our kind",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesNamePlural": {
+   "zh": "我们的同类",
+   "en": "our kind",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  }
  }
 }

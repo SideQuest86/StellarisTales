@@ -3,38 +3,74 @@
  "category": "rifts",
  "bridges": [
   {
-   "from": "astral_rift.115", "choice": "astral_rift.115.a", "to": "astral_rift.120", "conditional": true,
-   "label": {"zh": "本阶段探索失败时", "en": "If this stage fails"},
+   "from": "astral_rift.115",
+   "choice": "astral_rift.115.a",
+   "to": "astral_rift.120",
+   "conditional": true,
+   "label": {
+    "zh": "本阶段探索失败时",
+    "en": "If this stage fails"
+   },
    "evidence": "events/astral_rifts_0_events.txt:1344-1350 set_next_astral_rift_event { id = astral_rift.125 on_roll_failed = astral_rift.120 fail_probability = @default_failure_probability }"
   }
  ],
  "groups": [
   {
    "kind": "exclusive",
-   "members": ["astral_rift.125", "astral_rift.120"],
-   "label": {"zh": "破解终端：突破或失败", "en": "Hacking: breakthrough or failure"},
-   "note": {"zh": "选择破解终端后，本阶段要么突破得到“公式”（125），要么在某次掷骰时以每次 1.5% 的基础概率失败，科学家被封入泡沫材料（120）。", "en": "After choosing to hack the terminal the stage either breaks through to “A Formula” (125) or fails on a roll (base 1.5% per roll) and the scientist is entombed (120)."}
+   "members": [
+    "astral_rift.125",
+    "astral_rift.120"
+   ],
+   "label": {
+    "zh": "破解终端：突破或失败",
+    "en": "Hacking: breakthrough or failure"
+   },
+   "note": {
+    "zh": "选择破解终端后，本阶段要么突破得到“公式”（125），要么在某次掷骰时以每次 1.5% 的基础概率失败，科学家被封入泡沫材料（120）。",
+    "en": "After choosing to hack the terminal the stage either breaks through to “A Formula” (125) or fails on a roll (base 1.5% per roll) and the scientist is entombed (120)."
+   }
   }
  ],
  "endings": {
   "astral_rift.125": {
-   "label": {"zh": "公式：程序空间", "en": "A Formula: Procedural Space"},
-   "note": {"zh": "探索结束，获得“程序空间”修正。", "en": "The exploration ends with the Procedural Space modifier."},
+   "label": {
+    "zh": "公式：程序空间",
+    "en": "A Formula: Procedural Space"
+   },
+   "note": {
+    "zh": "探索结束，获得“程序空间”修正。",
+    "en": "The exploration ends with the Procedural Space modifier."
+   },
    "evidence": "events/astral_rifts_0_events.txt:1409-1415"
   },
   "astral_rift.130": {
-   "label": {"zh": "拆解终端：星界丝缕", "en": "Stripped for parts: astral threads"},
-   "note": {"zh": "探索结束，获得大量星界丝缕。", "en": "The exploration ends with a large astral thread reward."},
+   "label": {
+    "zh": "拆解终端：星界丝缕",
+    "en": "Stripped for parts: astral threads"
+   },
+   "note": {
+    "zh": "探索结束，获得大量星界丝缕。",
+    "en": "The exploration ends with a large astral thread reward."
+   },
    "evidence": "events/astral_rifts_0_events.txt:1428-1434"
   },
   "astral_rift.140": {
-   "label": {"zh": "被活埋的科学家归来", "en": "The entombed scientist returns"},
-   "note": {"zh": "失败分支 120 中科学家被放逐、探索结束；1800 天后科学家归来，获得材料或粒子专长及“裂隙扭曲”特质。", "en": "In failure branch 120 the scientist is exiled and the exploration ends; 1800 days later the scientist returns with a Materials or Particles expertise and the Rift Warped trait."},
+   "label": {
+    "zh": "被活埋的科学家归来",
+    "en": "The entombed scientist returns"
+   },
+   "note": {
+    "zh": "失败分支 120 中科学家被放逐、探索结束；1800 天后科学家归来，获得材料或粒子专长及“裂隙扭曲”特质。",
+    "en": "In failure branch 120 the scientist is exiled and the exploration ends; 1800 days later the scientist returns with a Materials or Particles expertise and the Rift Warped trait."
+   },
    "evidence": "events/astral_rifts_0_events.txt:1377-1396 (exile_leader_as, country_event 135 days=1800, finish_astral_rift); 1437-1492 (135 hidden); 1494-1536"
   }
  },
  "nodeLabels": {
-  "astral_rift.140": {"zh": "科学家归来", "en": "The scientist returns"}
+  "astral_rift.140": {
+   "zh": "科学家归来",
+   "en": "The scientist returns"
+  }
  },
  "review": {
   "status": "reviewed",
@@ -44,8 +80,29 @@
    "zh": "已核对裂隙定义与 100–140 全部事件，补上 115.a 的失败分支 120（原为独立故事）及其 1800 天后的归来事件。",
    "en": "Checked the rift definition and every event 100–140; added the failure branch 120 of 115.a (formerly a separate story) and its 1800-day return event."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_0_events.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_0_events.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/rift-corridors.md"
+ },
+ "placeholders": {
+  "Root.Leader.GetHeSheCap": {
+   "zh": "此人",
+   "en": "they",
+   "note": {
+    "zh": "游戏里这里会显示这位领袖的称谓。",
+    "en": "In the game, this leader's pronoun appears here."
+   }
+  },
+  "Root.Leader.IsAre": {
+   "zh": "是",
+   "en": "are",
+   "note": {
+    "zh": "游戏里这里会显示与领袖的称谓搭配的动词。",
+    "en": "In the game, a verb matching the leader's pronoun appears here."
+   }
+  }
  }
 }

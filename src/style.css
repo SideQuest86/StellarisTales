@@ -3,20 +3,20 @@
    compositor runs them); no always-on backdrop-filter over the WebGL canvas —
    frosted glass is rendered inside WebGL or pre-blurred into textures. */
 
-/* Local fallbacks sized to the web fonts' average advance, so the swap from a
+/* Local fallbacks sized to the web fonts' average advance (measured in Chrome: Newsreader / Georgia = 0.917, Noto Sans SC / Segoe UI = 1.043), so the swap from a
    fallback to the downloaded face barely reflows (font-display: swap). */
 @font-face {
   font-family: "ST Serif Fallback";
   src: local("Georgia");
-  size-adjust: 95%;
-  ascent-override: 93%;
-  descent-override: 30%;
+  size-adjust: 92%;
+  ascent-override: 80%;
+  descent-override: 29%;
   line-gap-override: 0%;
 }
 @font-face {
   font-family: "ST Sans Fallback";
   src: local("Segoe UI"), local("Helvetica Neue"), local("Arial");
-  size-adjust: 102%;
+  size-adjust: 104%;
 }
 
 :root {
@@ -33,10 +33,20 @@
   --gold-2: #b99b62;
   --teal: #7cc4bd;
   --bronze: #c49a5a;
-  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "ST Sans Fallback", system-ui, sans-serif;
+  /* Typography roles (docs/FONTS.md). --font-title: display serif; --font-body: reading serif (EN) / CJK serif (ZH);
+     --font-ui: sans for controls, labels and numbers. --serif / --sans are kept as aliases. */
+  --font-ui: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "ST Sans Fallback", system-ui, sans-serif;
   --serif-zh: "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif;
-  --serif-en: "Source Serif 4", "Source Serif Pro", "ST Serif Fallback", Georgia, "Noto Serif SC", serif;
-  --serif: var(--serif-zh);
+  --serif-en: "Newsreader", "ST Serif Fallback", Georgia, "Noto Serif SC", serif;
+  --font-title: var(--serif-zh);
+  --font-body: var(--serif-zh);
+  --sans: var(--font-ui);
+  --serif: var(--font-body);
+  /* Reading measure: 60-75 characters EN, 32-40 CJK characters; line heights by language. */
+  --measure: 36em;
+  --lh-body: 1.9;
+  --text-body: 19px;
+  --text-ui: 13px;
   --mono: ui-monospace, "Cascadia Mono", Consolas, "SFMono-Regular", monospace;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
@@ -51,7 +61,11 @@
   -webkit-text-size-adjust: 100%;
 }
 :root:lang(en) {
+  --font-title: var(--serif-en);
+  --font-body: var(--serif-en);
   --serif: var(--serif-en);
+  --measure: 29em; /* Newsreader averages 0.41em per character (measured): about 70 characters */
+  --lh-body: 1.64;
 }
 * {
   box-sizing: border-box;
@@ -149,30 +163,15 @@ input {
   stroke-width: 1.2;
 }
 .brand-type {
-  display: grid;
-  line-height: 1;
-}
-.brand-type b {
-  font: 600 22px/1 var(--sans);
-  letter-spacing: 0.16em;
-}
-.brand-type small {
-  font-size: 10px;
-  letter-spacing: 0.32em;
-  color: var(--dim);
-  margin: 5px 0 4px;
-}
-.brand-type i {
-  font: 300 15px/1 var(--sans);
-  font-style: normal;
-  letter-spacing: 0.55em;
-  color: var(--ink-2);
+  font: 500 clamp(19px, 1.5vw, 24px) / 1 var(--font-title);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 .catalogue {
   flex: 1;
   min-width: 0;
   display: flex;
-  justify-content: center;
+  justify-content: safe center;
   gap: clamp(4px, 1.1vw, 18px);
   overflow-x: auto;
   scrollbar-width: none;
@@ -229,6 +228,16 @@ input {
 }
 .catalogue button.active::after {
   transform: scaleX(1);
+}
+.catalogue .catalogue-museum {
+  grid-template-columns: auto auto;
+  column-gap: 6px;
+  align-items: center;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+.catalogue .catalogue-museum > span:last-child {
+  font-size: 13px;
 }
 .header-actions {
   display: flex;
@@ -510,6 +519,10 @@ input {
 }
 #reading-content {
   max-width: 680px;
+}
+#reading-content .narrative p,
+#reading-content .dialogue-reply {
+  max-width: var(--measure);
 }
 .chapter-art {
   display: none;
@@ -1587,9 +1600,7 @@ input {
   flex: 1;
   min-width: 0;
 }
-.music-overline {
-  display: none;
-}
+
 .playing-track button {
   display: flex;
   align-items: center;
@@ -1889,12 +1900,6 @@ dialog::backdrop {
   :root {
     --masthead: 80px;
   }
-  .brand-type small {
-    display: none;
-  }
-  .brand-type b {
-    font-size: 19px;
-  }
   .catalogue button > small,
   .catalogue button > span em {
     display: none;
@@ -1938,13 +1943,8 @@ dialog::backdrop {
   .brand svg {
     width: 22px;
   }
-  .brand-type b {
-    font-size: 16px;
-    letter-spacing: 0.12em;
-  }
-  .brand-type i {
-    font-size: 11px;
-    letter-spacing: 0.4em;
+  .brand-type {
+    font-size: 18px;
   }
   .header-actions {
     margin-left: auto;
@@ -2002,6 +2002,7 @@ dialog::backdrop {
     font-size: 13px;
     line-height: 1.75;
     margin-bottom: 12px;
+    min-height: 3.5em; /* two clamped lines reserved: no jump when the story data arrives */
   }
   .access {
     width: 100%;
@@ -2209,9 +2210,6 @@ dialog::backdrop {
   }
 }
 @media (max-width: 400px) {
-  .brand-type i {
-    display: none;
-  }
   .header-actions button {
     font-size: 11px;
   }
@@ -2230,6 +2228,7 @@ dialog::backdrop {
   }
   #selected-excerpt {
     -webkit-line-clamp: 1;
+    min-height: 1.75em;
   }
   .row-counter b {
     font-size: 36px;
@@ -2371,3 +2370,10 @@ body.museum-open .gpu-hint {
     opacity: 0;
   }
 }
+
+/* Soundtrack: vocal / instrumental tag in the playlist, and a quiet cue while autoplay waits for a first gesture. */
+.track-version { margin-left: .5em; font: 500 .72em/1 var(--font-ui, sans-serif); letter-spacing: .04em; opacity: .62; white-space: nowrap; }
+.music-player.autoplay-blocked #play-pause { animation: play-cue 2.4s ease-in-out 3; }
+@keyframes play-cue { 50% { box-shadow: 0 0 0 4px rgba(120, 220, 205, .22); } }
+html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none; }
+@media (prefers-reduced-motion: reduce) { .music-player.autoplay-blocked #play-pause { animation: none; } }

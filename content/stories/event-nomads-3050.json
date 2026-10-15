@@ -44,5 +44,31 @@
   "merged": [
    "event-nomads-3051"
   ]
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现罪犯被转移到的地点名称。",
+    "en": "In the game, the name of the place the criminals are moved to appears here."
+   }
+  },
+  "pickup_planet.owner.GetName": {
+   "zh": "派出方帝国",
+   "en": "the sending empire",
+   "note": {
+    "zh": "游戏里这里会出现派出方帝国的名称。",
+    "en": "In the game, the name of the sending empire appears here."
+   }
+  },
+  "prisoner_disposal_issuer.GetName": {
+   "zh": "委托方",
+   "en": "the client",
+   "note": {
+    "zh": "游戏里这里会出现委托这项任务的一方名称。",
+    "en": "In the game, the name of the party that commissioned this job appears here."
+   }
+  }
  }
 }

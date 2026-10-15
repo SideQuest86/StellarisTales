@@ -177,5 +177,23 @@
    "zh": "开局事件（game_start.txt:550）：启动“快速人格保存”（数字化）局势与事件链；人口耗尽前须采用合成传统。",
    "en": "Game-start event (events/game_start.txt:550): starts the digitization situation and the Synthetic Fertility chain; the synthetics tradition must be adopted before the pops run out."
   }
- ]
+ ],
+ "placeholders": {
+  "From.GetRulerName": {
+   "zh": "我们的",
+   "en": "ruler",
+   "note": {
+    "zh": "游戏里这里会出现统治者的称号的前半部分。",
+    "en": "In the game, the first half of the ruler's title appears here."
+   }
+  },
+  "From.GetRulerTitle": {
+   "zh": "统治者",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现统治者的称号的后半部分。",
+    "en": "In the game, the second half of the ruler's title appears here."
+   }
+  }
+ }
 }

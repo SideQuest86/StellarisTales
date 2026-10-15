@@ -1247,5 +1247,239 @@
    "zh": "审阅注：若银河中尚无虚空虫国家，此事件会创建它，并启动通用的“虚空虫行为”局势；该局势及其后的“虚空虫疫”属于独立故事，此处只作链接。",
    "en": "Review note: if no voidworm country exists yet this event creates one, which starts the generic Voidworms Behavior situation; that situation and the later voidworm plague are a separate story, linked rather than merged."
   }
- ]
+ ],
+ "placeholders": {
+  "FROM.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "FromFrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "FromFromFrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "FromFromFromFrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "Leader.GetName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现这位科学家的名字。",
+    "en": "In the game, this scientist's name appears here."
+   }
+  },
+  "Leader.Species.GetHandName": {
+   "zh": "手",
+   "en": "hand",
+   "note": {
+    "zh": "游戏里这里会出现该物种的手的称呼。",
+    "en": "In the game, this species' word for hand appears here."
+   }
+  },
+  "This.GetLastAcquiredSpecimenName": {
+   "zh": "标本",
+   "en": "specimen",
+   "note": {
+    "zh": "游戏里这里会出现刚获得的标本的名称。",
+    "en": "In the game, the name of the specimen just acquired appears here."
+   }
+  },
+  "This.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "This.Species.GetHandNamePlural": {
+   "zh": "手下",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现手下的称呼。",
+    "en": "In the game, the word for crew appears here."
+   }
+  },
+  "black_needle_base.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "event_target:treasure_planet_candidate_1.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "event_target:treasure_planet_candidate_2.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "event_target:treasure_planet_candidate_3.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "event_target:treasure_planet_candidate_4.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "fallen_empire.GetRealName": {
+   "zh": "堕落帝国",
+   "en": "the fallen empire",
+   "note": {
+    "zh": "游戏里这里会出现堕落帝国的名称。",
+    "en": "In the game, the fallen empire's name appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "gateway_to_ness_treasure_system.GetName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this system's name appears here."
+   }
+  },
+  "root.GetSpeciesNamePlural": {
+   "zh": "同族",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现我们这一族的复数称呼。",
+    "en": "In the game, the plural name of our kind appears here."
+   }
+  },
+  "root.GetSpeciesOrganName": {
+   "zh": "身体",
+   "en": "body",
+   "note": {
+    "zh": "游戏里这里会出现这个部位的称呼。",
+    "en": "In the game, the word for this body part appears here."
+   }
+  },
+  "smeegibb_shelter.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "我们的帝国",
+   "en": "our empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "this.species.GetRemnantNamePlural": {
+   "zh": "遗骸",
+   "en": "remains",
+   "note": {
+    "zh": "游戏里这里会出现这些遗骸的称呼。",
+    "en": "In the game, the word for these remains appears here."
+   }
+  },
+  "traitor_leader.GetClass": {
+   "zh": "节点",
+   "en": "node",
+   "note": {
+    "zh": "游戏里这里会出现这个节点的类别称呼。",
+    "en": "In the game, the word for this node's class appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "grand_archive.8205": {
+   "FROM.GetName": {
+    "zh": "这个",
+    "en": "nearby",
+    "note": {
+     "zh": "游戏里这里会出现附近星系的名称。",
+     "en": "In the game, the nearby system's name appears here."
+    }
+   }
+  },
+  "grand_archive.8285": {
+   "gateway_to_ness_treasure_system.GetName": {
+    "zh": "这个",
+    "en": "nearby",
+    "note": {
+     "zh": "游戏里这里会出现附近星系的名称。",
+     "en": "In the game, the nearby system's name appears here."
+    }
+   }
+  },
+  "special_projects:TREASURE_HUNTERS_CHART_PIECE_3_PROJECT": {
+   "this.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, this planet's name appears here."
+    }
+   }
+  }
+ }
 }

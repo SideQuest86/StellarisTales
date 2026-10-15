@@ -16,5 +16,95 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/anomaly-ast-wavelengths-1-cat.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这块小行星",
+   "en": "this asteroid",
+   "note": {
+    "zh": "游戏里这里会出现这块小行星的名称。",
+    "en": "In the game, this asteroid's name appears here."
+   }
+  },
+  "Owner.GetNecromancersUpper": {
+   "zh": "这支舰队",
+   "en": "the fleet",
+   "note": {
+    "zh": "游戏里这里会出现你派出的舰队名称。",
+    "en": "In the game, the name of the fleet you send appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这块小行星",
+   "en": "this asteroid",
+   "note": {
+    "zh": "游戏里这里会出现这块小行星的名称。",
+    "en": "In the game, this asteroid's name appears here."
+   }
+  },
+  "rock_brain.GetName": {
+   "zh": "这颗小行星的大脑",
+   "en": "the asteroid's mind",
+   "note": {
+    "zh": "游戏里这里会出现这颗小行星的意识名称。",
+    "en": "In the game, the name of this asteroid's mind appears here."
+   }
+  },
+  "rock_fallen_empire.GetRealName": {
+   "zh": "这个词",
+   "en": "this word",
+   "note": {
+    "zh": "游戏里这里会出现这段外星语言中的一个词。",
+    "en": "In the game, a word of the alien language appears here."
+   }
+  },
+  "rock_scientist.GetName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现负责研究的科学家的名字。",
+    "en": "In the game, the name of the research scientist appears here."
+   }
+  },
+  "rock_sun.GetName": {
+   "zh": "这颗恒星",
+   "en": "this star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "anomaly.130": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  },
+  "anomaly.75": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  },
+  "anomaly.80": {
+   "Root.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   }
+  }
  }
 }

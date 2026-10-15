@@ -64,5 +64,15 @@
    "The site definition is in the base-game file while the trigger event sits in the Ancient Relics file; ancrel.15010 itself does not check has_ancrel."
   ],
   "guide": "public/summaries/event-ancrel-15010.md"
+ },
+ "placeholders": {
+  "Root.GetLeaderName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现你的科学家的名字。",
+    "en": "In the game, your scientist's name appears here."
+   }
+  }
  }
 }

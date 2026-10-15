@@ -52,5 +52,39 @@
    "events/nemesis_operations_events_2.txt"
   ],
   "guide": "public/summaries/event-operation-6200.md"
+ },
+ "placeholders": {
+  "privateer_system.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "target.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现目标帝国的名称。",
+    "en": "In the game, the name of the target empire appears here."
+   }
+  },
+  "target_country.GetAdj": {
+   "zh": "该国",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现该帝国的形容词形式。",
+    "en": "In the game, that empire's adjective appears here."
+   }
+  },
+  "target_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现该帝国的名称。",
+    "en": "In the game, the name of that empire appears here."
+   }
+  }
  }
 }

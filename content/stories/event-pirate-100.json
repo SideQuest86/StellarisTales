@@ -23,5 +23,23 @@
    "Which DLC owns the Bemat Thalassocracy was not traced."
   ],
   "guide": "public/summaries/event-pirate-100.md"
+ },
+ "placeholders": {
+  "thalassocracy_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现执行封锁的帝国名称。",
+    "en": "In the game, the name of the empire enforcing the blockade appears here."
+   }
+  },
+  "thalassocracy_target_system.GetName": {
+   "zh": "这个星系",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  }
  }
 }

@@ -26,5 +26,31 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-strange-worlds-3065.md"
+ },
+ "placeholders": {
+  "Owner.GetSpeciesHandName": {
+   "zh": "控制",
+   "en": "hand",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的控制权词语。",
+    "en": "In the game, a word for control appears here."
+   }
+  },
+  "event_target:pre_ftl_country.GetName": {
+   "zh": "当地势力",
+   "en": "the local power",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL势力的名称。",
+    "en": "In the game, the name of this pre-FTL power appears here."
+   }
+  },
+  "event_target:pre_ftl_planet.Owner.GetSpeciesNamePlural": {
+   "zh": "当地人",
+   "en": "locals",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL物种的复数名称。",
+    "en": "In the game, the plural name of this pre-FTL species appears here."
+   }
+  }
  }
 }

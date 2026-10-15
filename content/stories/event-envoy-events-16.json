@@ -16,5 +16,55 @@
   "uncertain": [
    "Which option leads to 18 and which to 19 follows the compiled edges; the effects inside 18/19 were not read in detail."
   ]
+ },
+ "placeholders": {
+  "dispute_loser.GetAdj": {
+   "zh": "对立",
+   "en": "opposing",
+   "note": {
+    "zh": "游戏里这里会出现对立一方的形容词。",
+    "en": "In the game, the adjective for the opposing side appears here."
+   }
+  },
+  "dispute_loser.GetName": {
+   "zh": "对立一方",
+   "en": "the opposing side",
+   "note": {
+    "zh": "游戏里这里会出现对立一方的名称。",
+    "en": "In the game, the name of the opposing side appears here."
+   }
+  },
+  "dispute_loser_envoy.GetName": {
+   "zh": "这位使者",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现这位使者的名字。",
+    "en": "In the game, this envoy's name appears here."
+   }
+  },
+  "dispute_winner.GetAdj": {
+   "zh": "对方",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现对方的形容词。",
+    "en": "In the game, the adjective for the other side appears here."
+   }
+  },
+  "dispute_winner.GetName": {
+   "zh": "另一方",
+   "en": "the other side",
+   "note": {
+    "zh": "游戏里这里会出现另一方的名称。",
+    "en": "In the game, the name of the other side appears here."
+   }
+  },
+  "dispute_winner_envoy.GetName": {
+   "zh": "另一位使者",
+   "en": "the other envoy",
+   "note": {
+    "zh": "游戏里这里会出现另一位使者的名字。",
+    "en": "In the game, the other envoy's name appears here."
+   }
+  }
  }
 }

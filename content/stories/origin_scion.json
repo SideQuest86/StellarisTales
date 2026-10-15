@@ -166,5 +166,127 @@
    "zh": "殖民补给：接受或拒绝；拒绝进入226。",
    "en": "Colonisation supplies: accept or refuse; refusing leads to 226 (events/origin_events_1.txt:949-1040)."
   }
- ]
+ ],
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "同族",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现我们这一族的复数称呼。",
+    "en": "In the game, the plural name of our kind appears here."
+   }
+  },
+  "desired_leader.GetName": {
+   "zh": "本人",
+   "en": "in person",
+   "note": {
+    "zh": "游戏里这里会出现这位领袖的名字。",
+    "en": "In the game, this leader's name appears here."
+   }
+  },
+  "desired_leader.GetTitle": {
+   "zh": "领袖",
+   "en": "leader",
+   "note": {
+    "zh": "游戏里这里会出现这位领袖的称号。",
+    "en": "In the game, this leader's title appears here."
+   }
+  },
+  "fe_species.GetAdj": {
+   "zh": "异族",
+   "en": "alien",
+   "note": {
+    "zh": "游戏里这里会出现异族的形容词。",
+    "en": "In the game, the other species' adjective appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这艘舰船",
+   "en": "the ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘舰船的名称。",
+    "en": "In the game, this ship's name appears here."
+   }
+  },
+  "fromfrom.GetClassAdj": {
+   "zh": "原始",
+   "en": "pristine",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的形容词。",
+    "en": "In the game, this planet's adjective appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "fromfrom.solar_system.GetName": {
+   "zh": "这个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现附近星系的名称。",
+    "en": "In the game, the nearby system's name appears here."
+   }
+  },
+  "overlord.GetAdj": {
+   "zh": "宗主国",
+   "en": "overlord",
+   "note": {
+    "zh": "游戏里这里会出现宗主国的形容词。",
+    "en": "In the game, the overlord's adjective appears here."
+   }
+  },
+  "overlord.GetName": {
+   "zh": "宗主国",
+   "en": "overlord",
+   "note": {
+    "zh": "游戏里这里会出现宗主国的称呼。",
+    "en": "In the game, the overlord's name appears here."
+   }
+  },
+  "scion_master.Capital.GetName": {
+   "zh": "他们的首都",
+   "en": "their capital",
+   "note": {
+    "zh": "游戏里这里会出现对方首都的名称。",
+    "en": "In the game, the other side's capital's name appears here."
+   }
+  },
+  "scion_master.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "scion_master.GetSpeciesName": {
+   "zh": "异族",
+   "en": "alien",
+   "note": {
+    "zh": "游戏里这里会出现异族的称呼。",
+    "en": "In the game, the word for the other species appears here."
+   }
+  },
+  "spi_fallen_empire.GetName": {
+   "zh": "堕落帝国",
+   "en": "fallen empire",
+   "note": {
+    "zh": "游戏里这里会出现那个堕落帝国的名称。",
+    "en": "In the game, the fallen empire's name appears here."
+   }
+  }
+ }
 }

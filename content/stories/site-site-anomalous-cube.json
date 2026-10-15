@@ -24,5 +24,23 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/site-site-anomalous-cube.md"
+ },
+ "placeholders": {
+  "Owner.GetAnomalousCubeEnemy": {
+   "zh": "敌对帝国",
+   "en": "the hostile empire",
+   "note": {
+    "zh": "游戏里这里会出现敌对帝国的名称。",
+    "en": "In the game, the hostile empire's name appears here."
+   }
+  },
+  "event_target:anomalous_cube_scientist.GetName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现这位科学家的名字。",
+    "en": "In the game, this scientist's name appears here."
+   }
+  }
  }
 }

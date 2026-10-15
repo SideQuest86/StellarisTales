@@ -14,5 +14,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-action-14.md"
+ },
+ "placeholders": {
+  "From.From.From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "Root.GetSpeciesSpawnNamePlural": {
+   "zh": "后代",
+   "en": "offspring",
+   "note": {
+    "zh": "游戏里这里会出现我们后代的种类名称。",
+    "en": "In the game, the name of our offspring appears here."
+   }
+  },
+  "conquered_primitive_species.GetNamePlural": {
+   "zh": "土著",
+   "en": "natives",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  }
  }
 }

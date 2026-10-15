@@ -1,0 +1,407 @@
+{
+  "event-situation-150": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "FromFrom.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Owner.GetAdj": {"zh": "帝国", "en": "imperial", "note": {"zh": "游戏里这里会出现你的帝国的形容词。", "en": "In the game, your empire's adjective appears here."}},
+      "saved_owner.GetResearchers": {"zh": "科学家", "en": "scientists", "note": {"zh": "游戏里这里会出现你的研究人员的名称。", "en": "In the game, the name of your researchers appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-situation-200": {
+    "placeholders": {
+      "Root.complex_drones_cost": {"zh": "所需数量", "en": "the required amount", "note": {"zh": "游戏里这里会出现所需的能量数量。", "en": "In the game, the required amount of energy appears here."}},
+      "Root.complex_drones_counter_100": {"zh": "若干", "en": "some", "note": {"zh": "游戏里这里会出现受保护的子个体数量。", "en": "In the game, the number of protected drones appears here."}},
+      "Root.energy_cost": {"zh": "维持费用", "en": "the upkeep", "note": {"zh": "游戏里这里会出现每100个人口的能量维持费用。", "en": "In the game, the energy upkeep per 100 pop appears here."}},
+      "Root.simple_drones_cost": {"zh": "所需数量", "en": "the required amount", "note": {"zh": "游戏里这里会出现所需的能量数量。", "en": "In the game, the required amount of energy appears here."}},
+      "Root.simple_drones_counter_100": {"zh": "若干", "en": "some", "note": {"zh": "游戏里这里会出现受保护的低级子个体数量。", "en": "In the game, the number of protected simple drones appears here."}},
+      "Root.total_drones_cost": {"zh": "所需数量", "en": "the required amount", "note": {"zh": "游戏里这里会出现所需的能量数量。", "en": "In the game, the required amount of energy appears here."}},
+      "Root.total_drones_counter_100": {"zh": "若干", "en": "some", "note": {"zh": "游戏里这里会出现受保护的子个体数量。", "en": "In the game, the number of protected drones appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["These are numeric values from the save; the phrases are generic stand-ins, so 'Spend energy the required amount' reads as a template."]
+  },
+  "event-situation-2000": {
+    "placeholders": {
+      "root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "GetKaleidoscopeMood": {"zh": "平静", "en": "calm", "note": {"zh": "游戏里这里会出现万华镜的心情描述。", "en": "In the game, the mood of the Kaleidoscope appears here."}},
+      "kaleidoscope_system.GetName": {"zh": "这个", "en": "nearby", "note": {"zh": "游戏里这里会出现附近恒星系的名称。", "en": "In the game, the name of the nearby star system appears here."}},
+      "target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "kaleidoscope_new_owner.GetName": {"zh": "那个帝国", "en": "that empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The lone sentence '[mood].' is a fragment whose wording depends on the save."]
+  },
+  "event-situation-5": {
+    "placeholders": {
+      "This.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Owner.Species.GetClass": {"zh": "小", "en": "small", "note": {"zh": "游戏里这里会出现这种生物的体型描述。", "en": "In the game, the size of these creatures appears here."}},
+      "Owner.Species.GetSpawnNamePlural": {"zh": "生物", "en": "creatures", "note": {"zh": "游戏里这里会出现这种生物的复数名称。", "en": "In the game, the plural name of these creatures appears here."}},
+      "Owner.Species.GetRemnantNamePlural": {"zh": "遗骸", "en": "remnants", "note": {"zh": "游戏里这里会出现遗骸的名称。", "en": "In the game, the name of these remnants appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'adorable [size] creatures' reads well only with a small size word; the size phrase is a generic choice."]
+  },
+  "event-situation-500": {
+    "placeholders": {
+      "gravity_well_station.GetName": {"zh": "这座空间站", "en": "the station", "note": {"zh": "游戏里这里会出现这座空间站的名称。", "en": "In the game, the name of this station appears here."}},
+      "From.Target.GetName": {"zh": "这座空间站", "en": "station", "note": {"zh": "游戏里这里会出现这座空间站的名称。", "en": "In the game, the name of this station appears here."}},
+      "Target.GetName": {"zh": "这座空间站", "en": "station", "note": {"zh": "游戏里这里会出现这座空间站的名称。", "en": "In the game, the name of this station appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-specialist-1100": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-specialist-500": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-strange-worlds-3000": {
+    "placeholders": {
+      "event_target:pre_ftl_planet.Owner.GetSpeciesName": {"zh": "当地人", "en": "local", "note": {"zh": "游戏里这里会出现这个前FTL物种的形容词。", "en": "In the game, the adjective for this pre-FTL species appears here."}},
+      "event_target:caravaneer_fleet3_country.GetSpeciesName": {"zh": "外来", "en": "wandering", "note": {"zh": "游戏里这里会出现这个外来物种的形容词。", "en": "In the game, the adjective for this visiting species appears here."}},
+      "event_target:pre_ftl_country.GetName": {"zh": "当地势力", "en": "the local power", "note": {"zh": "游戏里这里会出现这个前FTL势力的名称。", "en": "In the game, the name of this pre-FTL power appears here."}},
+      "Owner.GetSpeciesName": {"zh": "诸位", "en": "friends", "note": {"zh": "游戏里这里会出现对你物种的称呼。", "en": "In the game, a form of address for your species appears here."}},
+      "event_target:nomad01_country.GetName": {"zh": "游牧者", "en": "nomads", "note": {"zh": "游戏里这里会出现这个游牧群体的名称。", "en": "In the game, the name of this nomadic group appears here."}},
+      "Owner.GetSpeciesNamePlural": {"zh": "人们", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "event_target:caravaneer_home_country.GetName": {"zh": "故土", "en": "home realm", "note": {"zh": "游戏里这里会出现这个游牧群体的故土名称。", "en": "In the game, the name of this group's home realm appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the [local] mythology' and 'lead the [local] into a new golden age' read awkwardly with one phrase."]
+  },
+  "event-strange-worlds-3035": {
+    "placeholders": {
+      "event_target:pre_ftl_planet.Owner.GetSpeciesAdj": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个前FTL物种的形容词。", "en": "In the game, the adjective for this pre-FTL species appears here."}},
+      "event_target:pre_ftl_country.GetName": {"zh": "当地势力", "en": "the local power", "note": {"zh": "游戏里这里会出现这个前FTL势力的名称。", "en": "In the game, the name of this pre-FTL power appears here."}},
+      "event_target:pre_ftl_planet.Owner.GetSpeciesName": {"zh": "当地人", "en": "locals", "note": {"zh": "游戏里这里会出现这个前FTL物种的复数名称。", "en": "In the game, the plural name of this pre-FTL species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the angry [locals] locals' is a doubled noun in the game text."]
+  },
+  "event-strange-worlds-3065": {
+    "placeholders": {
+      "event_target:pre_ftl_planet.Owner.GetSpeciesNamePlural": {"zh": "当地人", "en": "locals", "note": {"zh": "游戏里这里会出现这个前FTL物种的复数名称。", "en": "In the game, the plural name of this pre-FTL species appears here."}},
+      "Owner.GetSpeciesHandName": {"zh": "控制", "en": "hand", "note": {"zh": "游戏里这里会出现你的物种的控制权词语。", "en": "In the game, a word for control appears here."}},
+      "event_target:pre_ftl_country.GetName": {"zh": "当地势力", "en": "the local power", "note": {"zh": "游戏里这里会出现这个前FTL势力的名称。", "en": "In the game, the name of this pre-FTL power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-subject-1": {
+    "placeholders": {
+      "subject_empire.Capital.GetName": {"zh": "那颗星球", "en": "that world", "note": {"zh": "游戏里这里会出现附庸帝国首都所在星球的名称。", "en": "In the game, the name of the vassal empire's capital world appears here."}},
+      "subject_empire.GetName": {"zh": "帝国", "en": "empire", "note": {"zh": "游戏里这里会出现附庸帝国的名称。", "en": "In the game, the name of the vassal empire appears here."}},
+      "overlord_empire.Capital.GetName": {"zh": "宗主国首都", "en": "overlord's capital", "note": {"zh": "游戏里这里会出现宗主国首都的名称。", "en": "In the game, the name of the overlord's capital appears here."}},
+      "overlord_empire.GetName": {"zh": "宗主帝国", "en": "home empire", "note": {"zh": "游戏里这里会出现宗主帝国的名称。", "en": "In the game, the name of the overlord empire appears here."}},
+      "pirate_system.GetName": {"zh": "这个", "en": "nearby", "note": {"zh": "游戏里这里会出现附近恒星系的名称。", "en": "In the game, the name of the nearby star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'our vassal [empire]' reads 'our vassal empire'; the vassal's name is a role phrase."]
+  },
+  "event-subject-100": {
+    "placeholders": {
+      "subject_empire.GetName": {"zh": "我们的附庸", "en": "our vassal", "note": {"zh": "游戏里这里会出现附庸帝国的称呼。", "en": "In the game, the name for the vassal empire appears here."}},
+      "overlord_empire.GetName": {"zh": "宗主帝国", "en": "home empire", "note": {"zh": "游戏里这里会出现宗主帝国的名称。", "en": "In the game, the name of the overlord empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-subject-1001": {
+    "placeholders": {
+      "Root.GetRulerTitle": {"zh": "最敬爱的", "en": "beloved", "note": {"zh": "游戏里这里会出现你的统治者的敬称。", "en": "In the game, a form of address for your ruler appears here."}},
+      "Root.GetRulerName": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现你的统治者的称谓。", "en": "In the game, your ruler's title appears here."}},
+      "subject_empire.GetName": {"zh": "附庸国", "en": "vassal state", "note": {"zh": "游戏里这里会出现附庸国的名称。", "en": "In the game, the name of the vassal state appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the government in [vassal]' reads 'in vassal state'."]
+  },
+  "event-subject-1050": {
+    "placeholders": {
+      "overlord_empire.GetName": {"zh": "宗主国", "en": "overlord", "note": {"zh": "游戏里这里会出现宗主国的名称。", "en": "In the game, the name of the overlord appears here."}},
+      "subject_empire.GetName": {"zh": "附庸", "en": "vassal", "note": {"zh": "游戏里这里会出现附庸的名称。", "en": "In the game, the name of the vassal appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-subject-1100": {
+    "placeholders": {
+      "admiral_oligarchy.GetName": {"zh": "这位寡头", "en": "the oligarch", "note": {"zh": "游戏里这里会出现这位寡头的称呼。", "en": "In the game, the title of this oligarch appears here."}},
+      "admiral_democracy": {"zh": "这位领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现这位民主派领袖的称呼。", "en": "In the game, the title of this democratic leader appears here."}},
+      "subject_empire.GetName": {"zh": "帝国", "en": "empire", "note": {"zh": "游戏里这里会出现附庸帝国的名称。", "en": "In the game, the name of the vassal empire appears here."}},
+      "overlord_empire.GetName": {"zh": "宗主国", "en": "overlord", "note": {"zh": "游戏里这里会出现宗主国的名称。", "en": "In the game, the name of the overlord appears here."}},
+      "overlord_empire.Capital.GetName": {"zh": "宗主国首都", "en": "overlord's capital", "note": {"zh": "游戏里这里会出现宗主国首都的名称。", "en": "In the game, the name of the overlord's capital appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the leader' is used for the democratic admiral; the oligarch uses 'the oligarch' to keep them apart."]
+  },
+  "event-subject-2001": {
+    "placeholders": {
+      "overlord_empire.GetName": {"zh": "宗主国", "en": "overlord", "note": {"zh": "游戏里这里会出现宗主国的名称。", "en": "In the game, the name of the overlord appears here."}},
+      "overlord_empire.Capital.GetName": {"zh": "宗主国首都", "en": "overlord's capital", "note": {"zh": "游戏里这里会出现宗主国首都的名称。", "en": "In the game, the name of the overlord's capital appears here."}},
+      "subject_empire.GetName": {"zh": "附庸国", "en": "vassal state", "note": {"zh": "游戏里这里会出现附庸国的名称。", "en": "In the game, the name of the vassal state appears here."}},
+      "overlord_empire.GetAdj": {"zh": "伟大的", "en": "great", "note": {"zh": "游戏里这里会出现宗主国的形容词。", "en": "In the game, the adjective for the overlord appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-subject-2050": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-subject-2100": {
+    "placeholders": {
+      "Root.GetSpeciesNamePlural": {"zh": "人们", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "overlord_empire.GetName": {"zh": "宗主国", "en": "overlord", "note": {"zh": "游戏里这里会出现宗主国的名称。", "en": "In the game, the name of the overlord appears here."}},
+      "subject_empire.GetName": {"zh": "附庸国", "en": "vassal state", "note": {"zh": "游戏里这里会出现附庸国的名称。", "en": "In the game, the name of the vassal state appears here."}},
+      "Root.GetSpeciesAdj": {"zh": "帝国", "en": "imperial", "note": {"zh": "游戏里这里会出现你的帝国的形容词。", "en": "In the game, your empire's adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'our overlord [overlord]' reads 'our overlord overlord' in subject.2120."]
+  },
+  "event-subject-3001": {
+    "placeholders": {
+      "overlord_empire.GetAdj": {"zh": "宗主国", "en": "overlord", "note": {"zh": "游戏里这里会出现宗主国的形容词。", "en": "In the game, the adjective for the overlord appears here."}},
+      "overlord_empire.GetName": {"zh": "宗主国", "en": "overlord", "note": {"zh": "游戏里这里会出现宗主国的名称。", "en": "In the game, the name of the overlord appears here."}},
+      "subject_empire.GetName": {"zh": "附庸国", "en": "vassal state", "note": {"zh": "游戏里这里会出现附庸国的名称。", "en": "In the game, the name of the vassal state appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-subject-3050": {
+    "placeholders": {
+      "overlord_empire.Capital.GetName": {"zh": "宗主国首都", "en": "overlord's capital", "note": {"zh": "游戏里这里会出现宗主国首都的名称。", "en": "In the game, the name of the overlord's capital appears here."}},
+      "overlord_empire.GetName": {"zh": "宗主国", "en": "overlord", "note": {"zh": "游戏里这里会出现宗主国的名称。", "en": "In the game, the name of the overlord appears here."}},
+      "subject_empire.GetName": {"zh": "附庸国", "en": "vassal state", "note": {"zh": "游戏里这里会出现附庸国的名称。", "en": "In the game, the name of the vassal state appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Pilgrims on [capital]' reads 'Pilgrims on overlord's capital'."]
+  },
+  "event-subject-50": {
+    "placeholders": {
+      "overlord_empire.Capital.GetName": {"zh": "宗主国首都", "en": "overlord's capital", "note": {"zh": "游戏里这里会出现宗主国首都的名称。", "en": "In the game, the name of the overlord's capital appears here."}},
+      "subject_empire.Capital.GetName": {"zh": "附庸国首都", "en": "vassal's capital", "note": {"zh": "游戏里这里会出现附庸国首都的名称。", "en": "In the game, the name of the vassal's capital appears here."}},
+      "subject_empire.GetName": {"zh": "附庸国", "en": "vassal state", "note": {"zh": "游戏里这里会出现附庸国的名称。", "en": "In the game, the name of the vassal state appears here."}},
+      "targeted_starbase.GetName": {"zh": "这座恒星基地", "en": "the starbase", "note": {"zh": "游戏里这里会出现这座恒星基地的名称。", "en": "In the game, the name of this starbase appears here."}},
+      "overlord_empire.GetName": {"zh": "宗主国", "en": "overlord", "note": {"zh": "游戏里这里会出现宗主国的名称。", "en": "In the game, the name of the overlord appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-synth-1505": {
+    "placeholders": {
+      "owner.species.GetNamePlural": {"zh": "人们", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-synth-1510": {
+    "placeholders": {
+      "owner.species.GetNamePlural": {"zh": "人们", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-synth-1515": {
+    "placeholders": {
+      "From.GetRulerName": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现这位统治者的称谓。", "en": "In the game, the title of this ruler appears here."}},
+      "From.GetRulerTitle": {"zh": "", "en": "beloved", "note": {"zh": "游戏里这里会出现这位统治者的敬称。", "en": "In the game, a form of address for this ruler appears here."}},
+      "owner.species.GetNamePlural": {"zh": "人们", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The Chinese title phrase is left empty so that the name reads '最高领袖统治者的信任'; the page must handle an empty zh title."]
+  },
+  "event-synth-1520": {
+    "placeholders": {
+      "From.GetSpeciesAdj": {"zh": "合成", "en": "synthetic", "note": {"zh": "游戏里这里会出现这个物种的形容词。", "en": "In the game, the adjective for this species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-synth-1525": {
+    "placeholders": {
+      "owner.species.GetNamePlural": {"zh": "人们", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-synth-320": {
+    "placeholders": {
+      "root.owner.GetSpeciesName": {"zh": "普通", "en": "typical", "note": {"zh": "游戏里这里会出现你的物种的名称。", "en": "In the game, the name of your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-synth-360": {
+    "placeholders": {
+      "roboticist.GetNamePlural": {"zh": "研究员", "en": "roboticists", "note": {"zh": "游戏里这里会出现这类研究员的复数名称。", "en": "In the game, the plural name of these researchers appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-synth-630": {
+    "placeholders": {
+      "root.GetSpeciesAdj": {"zh": "合成", "en": "synthetic", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, the adjective for your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "pre-ftl-ages": {
+    "placeholders": {
+      "From.GetName": {"zh": "当地势力", "en": "local power", "note": {"zh": "游戏里这里会出现这个前FTL势力的名称。", "en": "In the game, the name of this pre-FTL power appears here."}},
+      "From.Capital.GetStarName": {"zh": "这个", "en": "nearby", "note": {"zh": "游戏里这里会出现附近恒星的名称。", "en": "In the game, the name of the nearby star appears here."}},
+      "event_target:current_uprising.GetName": {"zh": "起义势力", "en": "uprising", "note": {"zh": "游戏里这里会出现起义势力的名称。", "en": "In the game, the name of the uprising appears here."}},
+      "event_target:current_uprising.Capital.GetStarName": {"zh": "这个", "en": "central", "note": {"zh": "游戏里这里会出现起义势力中心恒星的名称。", "en": "In the game, the name of the uprising's central star appears here."}},
+      "root.GetName": {"zh": "帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, the name of your empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "pre-ftl-new-world-order": {
+    "placeholders": {
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "pre-ftl-plague": {
+    "placeholders": {
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Owner.GetName": {"zh": "帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, the name of your empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "pre-ftl-singularity": {
+    "placeholders": {
+      "from.owner.GetSpeciesAdj": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现这个物种的形容词。", "en": "In the game, the adjective for this species appears here."}},
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "Target.Owner.GetName": {"zh": "当地势力", "en": "the local power", "note": {"zh": "游戏里这里会出现这个前FTL势力的名称。", "en": "In the game, the name of this pre-FTL power appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-alloys-deficit": {
+    "placeholders": {
+      "Owner.GetFinancialAdvisorAgencyCap": {"zh": "我们的财务顾问", "en": "our financial advisor", "note": {"zh": "游戏里这里会出现你的财务顾问机构的名称。", "en": "In the game, the name of your financial advisory office appears here."}},
+      "robots_planet.recycled_robots": {"zh": "若干", "en": "some", "note": {"zh": "游戏里这里会出现被回收的机器人数量。", "en": "In the game, the number of recycled robots appears here."}},
+      "robots_planet.total_alloys_gained": {"zh": "若干", "en": "some", "note": {"zh": "游戏里这里会出现获得的合金数量。", "en": "In the game, the amount of alloys gained appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-consumer-goods-deficit": {
+    "placeholders": {
+      "Root.Owner.GetName": {"zh": "帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, the name of your empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-energy-deficit": {
+    "placeholders": {
+      "Owner.GetFinancialAdvisorAgencyCap": {"zh": "我们的财务顾问", "en": "our financial advisor", "note": {"zh": "游戏里这里会出现你的财务顾问机构的名称。", "en": "In the game, the name of your financial advisory office appears here."}},
+      "kaleidoscope_new_owner.GetName": {"zh": "那个帝国", "en": "that empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-exotic-gases-deficit": {
+    "placeholders": {
+      "Owner.GetFinancialAdvisorAgencyCap": {"zh": "我们的财务顾问", "en": "our financial advisor", "note": {"zh": "游戏里这里会出现你的财务顾问机构的名称。", "en": "In the game, the name of your financial advisory office appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-food-deficit": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-initiate-storm": {
+    "placeholders": {
+      "target.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, the name of this star appears here."}},
+      "target.solar_system.GetName": {"zh": "这个", "en": "nearby", "note": {"zh": "游戏里这里会出现附近恒星系的名称。", "en": "In the game, the name of the nearby star system appears here."}},
+      "storm_researcher.GetName": {"zh": "首席研究员", "en": "the lead researcher", "note": {"zh": "游戏里这里会出现首席研究员的名称。", "en": "In the game, the name of the lead researcher appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-mineral-deficit": {
+    "placeholders": {
+      "Owner.GetFinancialAdvisorAgencyCap": {"zh": "我们的财务顾问", "en": "our financial advisor", "note": {"zh": "游戏里这里会出现你的财务顾问机构的名称。", "en": "In the game, the name of your financial advisory office appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-nanotech-consume-planet": {
+    "placeholders": {
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.GetName": {"zh": "那颗星球", "en": "that world", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this world appears here."}},
+      "outraged_FE.GetName": {"zh": "愤怒的帝国", "en": "outraged empire", "note": {"zh": "游戏里这里会出现这个愤怒的帝国的名称。", "en": "In the game, the name of this outraged empire appears here."}},
+      "From.GetAdjective": {"zh": "他们的", "en": "their", "note": {"zh": "游戏里这里会出现这个帝国的形容词。", "en": "In the game, the adjective for this empire appears here."}},
+      "fallen_empire_hive_control.GetName": {"zh": "蜂巢控制", "en": "hive control", "note": {"zh": "游戏里这里会出现这个新名称。", "en": "In the game, the new name for this empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'In [species] space, fleets are gathering' still reads 'In the species space' because the species phrase is not replaced in that sentence."]
+  },
+  "situation-situation-paperclips": {
+    "placeholders": {
+      "Owner.paperclips_current_amount": {"zh": "数量", "en": "the amount", "note": {"zh": "游戏里这里会出现当前库存数量。", "en": "In the game, the current stock amount appears here."}},
+      "Owner.paperclips_once_again": {"zh": "目标", "en": "the target", "note": {"zh": "游戏里这里会出现当前产出目标。", "en": "In the game, the current production target appears here."}},
+      "owner.situation_paperclips_timer": {"zh": "截止日期", "en": "the due date", "note": {"zh": "游戏里这里会出现交付日期。", "en": "In the game, the delivery date appears here."}},
+      "capital_star.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, the name of this star appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-rare-crystals-deficit": {
+    "placeholders": {
+      "Owner.GetFinancialAdvisorAgencyCap": {"zh": "我们的财务顾问", "en": "our financial advisor", "note": {"zh": "游戏里这里会出现你的财务顾问机构的名称。", "en": "In the game, the name of your financial advisory office appears here."}},
+      "Root.Owner.GetName": {"zh": "帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, the name of your empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-terravore-consume-planet": {
+    "placeholders": {
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}},
+      "From.GetName": {"zh": "殖民地", "en": "the colony", "note": {"zh": "游戏里这里会出现这个殖民地的名称。", "en": "In the game, the name of this colony appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-toxify-world": {
+    "placeholders": {
+      "target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, the name of this planet appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-situation-volatile-motes-deficit": {
+    "placeholders": {
+      "Owner.GetFinancialAdvisorAgencyCap": {"zh": "我们的财务顾问", "en": "our financial advisor", "note": {"zh": "游戏里这里会出现你的财务顾问机构的名称。", "en": "In the game, the name of your financial advisory office appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "situation-voidworm-country-situation": {
+    "placeholders": {
+      "this.GetName": {"zh": "帝国", "en": "empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, the name of your empire appears here."}},
+      "infected_planet_pop.species.GetName": {"zh": "人们", "en": "people", "note": {"zh": "游戏里这里会出现这个物种的名称。", "en": "In the game, the name of this species appears here."}},
+      "Root.GetSpeciesAdj": {"zh": "帝国", "en": "imperial", "note": {"zh": "游戏里这里会出现你的帝国的形容词。", "en": "In the game, your empire's adjective appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "人们", "en": "people", "note": {"zh": "游戏里这里会出现你的物种的复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  }
+}

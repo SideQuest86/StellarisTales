@@ -67,5 +67,23 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/anomaly-gen-derelict-ship-cat.md"
+ },
+ "placeholders": {
+  "Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都的名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.GetLeaderName": {
+   "zh": "这位",
+   "en": "the officer",
+   "note": {
+    "zh": "游戏里这里会出现科学官的名字。",
+    "en": "In the game, the science officer's name appears here."
+   }
+  }
  }
 }

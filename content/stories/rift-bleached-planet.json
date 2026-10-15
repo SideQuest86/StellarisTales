@@ -2,30 +2,74 @@
  "id": "rift-bleached-planet",
  "category": "rifts",
  "groups": [
-  {"kind": "exclusive", "members": ["astral_rift.2510", "astral_rift.2515"],
-   "label": {"zh": "撤回探球或准备接触", "en": "Retreat to the Sphere or prepare for contact"},
-   "note": {"zh": "2505：返回探球（2510，从高处观察石质生物）或留在地面准备接触（2515，近距离观察）。", "en": "2505: retreat to the Sphere (2510, watching the rock creatures from above) or stay on the ground prepared for contact (2515, close observation)."}},
-  {"kind": "exclusive", "members": ["astral_rift.2535", "astral_rift.2540"],
-   "label": {"zh": "直视黑星或撤离", "en": "Stare at the dark star or retreat"},
-   "note": {"zh": "2520 的两个选项（继续观测 / 背过身去）都汇入 2535；2530.a 观测黑星（难度 +2）也进入 2535，2530.b 撤离则进入 2540。", "en": "Both options of 2520 (continue observing / turn away) lead to 2535; 2530.a (observe the dark star, difficulty +2) also reaches 2535, while 2530.b (retreat) reaches 2540."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.2510",
+    "astral_rift.2515"
+   ],
+   "label": {
+    "zh": "撤回探球或准备接触",
+    "en": "Retreat to the Sphere or prepare for contact"
+   },
+   "note": {
+    "zh": "2505：返回探球（2510，从高处观察石质生物）或留在地面准备接触（2515，近距离观察）。",
+    "en": "2505: retreat to the Sphere (2510, watching the rock creatures from above) or stay on the ground prepared for contact (2515, close observation)."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "astral_rift.2535",
+    "astral_rift.2540"
+   ],
+   "label": {
+    "zh": "直视黑星或撤离",
+    "en": "Stare at the dark star or retreat"
+   },
+   "note": {
+    "zh": "2520 的两个选项（继续观测 / 背过身去）都汇入 2535；2530.a 观测黑星（难度 +2）也进入 2535，2530.b 撤离则进入 2540。",
+    "en": "Both options of 2520 (continue observing / turn away) lead to 2535; 2530.a (observe the dark star, difficulty +2) also reaches 2535, while 2530.b (retreat) reaches 2540."
+   }
+  }
  ],
  "endings": {
   "astral_rift.2535": {
-   "label": {"zh": "黑光盲症：领袖受启示", "en": "Black Light Blinded: the leader receives the message"},
-   "note": {"zh": "大量星界丝缕；科学家获得特质 leader_trait_spark_of_genius_2（若尚无）与 leader_trait_black_light_blinded；探索结束。2520.b “背过身去”会设置标记 ordered_turn_away，只改变本事件的正文。", "en": "A large astral thread reward; the scientist gains leader_trait_spark_of_genius_2 (if lacking) and leader_trait_black_light_blinded; the exploration ends. 2520.b “Turn away!” sets flag ordered_turn_away, which only changes the text of this event."},
-   "evidence": "events/astral_rifts_2_events.txt:2415-2468, 2320-2324"},
+   "label": {
+    "zh": "黑光盲症：领袖受启示",
+    "en": "Black Light Blinded: the leader receives the message"
+   },
+   "note": {
+    "zh": "大量星界丝缕；科学家获得特质 leader_trait_spark_of_genius_2（若尚无）与 leader_trait_black_light_blinded；探索结束。2520.b “背过身去”会设置标记 ordered_turn_away，只改变本事件的正文。",
+    "en": "A large astral thread reward; the scientist gains leader_trait_spark_of_genius_2 (if lacking) and leader_trait_black_light_blinded; the exploration ends. 2520.b “Turn away!” sets flag ordered_turn_away, which only changes the text of this event."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:2415-2468, 2320-2324"
+  },
   "astral_rift.2540": {
-   "label": {"zh": "进一步观测：安全撤离", "en": "Further Observation: a safe retreat"},
-   "note": {"zh": "大量星界丝缕；该星球获得物理矿藏 d_physics_10；探索结束。", "en": "A large astral thread reward; the planet gains the physics deposit d_physics_10; the exploration ends."},
-   "evidence": "events/astral_rifts_2_events.txt:2470-2497"}
+   "label": {
+    "zh": "进一步观测：安全撤离",
+    "en": "Further Observation: a safe retreat"
+   },
+   "note": {
+    "zh": "大量星界丝缕；该星球获得物理矿藏 d_physics_10；探索结束。",
+    "en": "A large astral thread reward; the planet gains the physics deposit d_physics_10; the exploration ends."
+   },
+   "evidence": "events/astral_rifts_2_events.txt:2470-2497"
+  }
  },
  "notes": [
-  {"doc": "astral_rifts:bleached_planet", "kind": "review",
+  {
+   "doc": "astral_rifts:bleached_planet",
+   "kind": "review",
    "zh": "抽取权重 1，无条件；不产出遗珍，没有失败分支（00_astral_rifts.txt:333-342）。",
-   "en": "Draw weight 1, no conditions; no relic and no failure branch (00_astral_rifts.txt:333-342)."},
-  {"doc": "astral_rift.2530", "kind": "review",
+   "en": "Draw weight 1, no conditions; no relic and no failure branch (00_astral_rifts.txt:333-342)."
+  },
+  {
+   "doc": "astral_rift.2530",
+   "kind": "review",
    "zh": "2530 可从 2510.b、2515.b 或 2525.a 到达；2525（生物地理学）给一项生物研究选项但使后续难度 +2。",
-   "en": "2530 is reached from 2510.b, 2515.b or 2525.a; 2525 (Bio-Geology) gives a biology research option but raises later difficulty by 2."}
+   "en": "2530 is reached from 2510.b, 2515.b or 2525.a; 2525 (Bio-Geology) gives a biology research option but raises later difficulty by 2."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -35,7 +79,10 @@
    "zh": "已核对裂隙定义与 2500–2540 全部事件、标记 ordered_turn_away 与难度修正。",
    "en": "Checked the rift definition and every event 2500–2540, the flag ordered_turn_away and the difficulty modifiers."
   },
-  "sources": ["common/astral_rifts/00_astral_rifts.txt", "events/astral_rifts_2_events.txt"],
+  "sources": [
+   "common/astral_rifts/00_astral_rifts.txt",
+   "events/astral_rifts_2_events.txt"
+  ],
   "uncertain": [],
   "guide": "public/summaries/rift-bleached-planet.md"
  }

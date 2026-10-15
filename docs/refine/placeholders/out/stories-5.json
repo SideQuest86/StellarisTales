@@ -1,0 +1,512 @@
+{
+  "event-marauder-4": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个掠夺者帝国", "en": "the marauder empire", "note": {"zh": "游戏里这里会出现那个掠夺者帝国的名称。", "en": "In the game, the marauder empire's name appears here."}},
+      "marauder_killer.GetName": {"zh": "那个敌对帝国", "en": "the hostile empire", "note": {"zh": "游戏里这里会出现消灭它们的帝国名称。", "en": "In the game, the name of the empire that destroyed them appears here."}},
+      "raider_khanate.GetName": {"zh": "这个可汗国", "en": "the khanate", "note": {"zh": "游戏里这里会出现这个可汗国的名称。", "en": "In the game, the khanate's name appears here."}},
+      "attacked_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Ruler lines '[Title] [Name]' (marauder.502, marauder.508) would show the same word twice; needs one phrase or site-side handling.", "Self-introduction 'I am [ruler], Great Khan' renders as 'I am the leader'."]
+  },
+  "event-marauder-505": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个可汗国", "en": "the khanate", "note": {"zh": "游戏里这里会出现这个可汗国的名称。", "en": "In the game, the khanate's name appears here."}},
+      "great_khan.GetName": {"zh": "这位领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现大可汗的名字。", "en": "In the game, the Great Khan's name appears here."}},
+      "khan_death_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "khan_destroyer.GetName": {"zh": "那个敌对帝国", "en": "the hostile empire", "note": {"zh": "游戏里这里会出现击败大可汗的帝国名称。", "en": "In the game, the name of the empire that defeated the Khan appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Great Khan the leader of the khanate' reads awkwardly in marauder.508; the name slot needs a neater phrase."]
+  },
+  "event-marauder-511": {
+    "placeholders": {
+      "great_khan.GetName": {"zh": "这位领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现大可汗的名字。", "en": "In the game, the Great Khan's name appears here."}},
+      "raider_khanate.GetName": {"zh": "这个可汗国", "en": "the khanate", "note": {"zh": "游戏里这里会出现这个可汗国的名称。", "en": "In the game, the khanate's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-marauder-699": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "marauder_neighbor.GetName": {"zh": "那个邻国", "en": "the neighboring empire", "note": {"zh": "游戏里这里会出现邻国的名称。", "en": "In the game, the neighboring empire's name appears here."}},
+      "border_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-marauder-85": {
+    "placeholders": {
+      "encountered_marauder.GetName": {"zh": "这股掠夺势力", "en": "the raiders", "note": {"zh": "游戏里这里会出现遭遇的掠夺势力名称。", "en": "In the game, the name of the raider force you met appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-mega-9000": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-mega-9003": {
+    "placeholders": {
+      "From.GetName": {"zh": "这里", "en": "this location", "note": {"zh": "游戏里这里会出现这个地点的名称。", "en": "In the game, the name of this location appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-mega-9006": {
+    "placeholders": {
+      "From.GetName": {"zh": "这里", "en": "this location", "note": {"zh": "游戏里这里会出现这个地点的名称。", "en": "In the game, the name of this location appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-mega-9010": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个黑洞", "en": "this black hole", "note": {"zh": "游戏里这里会出现这个黑洞的名称。", "en": "In the game, the black hole's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-namarian-3": {
+    "placeholders": {
+      "Root.GetSpeciesAdj": {"zh": "诸位", "en": "your people", "note": {"zh": "游戏里这里会出现你的族群称呼。", "en": "In the game, your people's name appears here."}},
+      "Root.GetRulerName": {"zh": "阁下", "en": "your majesty", "note": {"zh": "游戏里这里会出现你的统治者的称呼。", "en": "In the game, your ruler's name appears here."}},
+      "contact_empire.GetName": {"zh": "这个帝国", "en": "the contacted empire", "note": {"zh": "游戏里这里会出现你接触的帝国名称。", "en": "In the game, the name of the empire you are in contact with appears here."}},
+      "other_empire.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现另一个帝国的名称。", "en": "In the game, the name of the other empire appears here."}},
+      "other_empire.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现另一个帝国的形容词形式。", "en": "In the game, the other empire's adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'[Root.GetSpeciesAdj]' as a form of address needs a vocative; 'your people' is used as an approximation."]
+  },
+  "event-necroids-200": {
+    "placeholders": {
+      "mortal_initiate.GetName": {"zh": "献祭者", "en": "initiate", "note": {"zh": "游戏里这里会出现即将献祭的个体的称呼。", "en": "In the game, the name of the individual being sacrificed appears here."}},
+      "mortal_initiate.GetNamePlural": {"zh": "献祭者", "en": "initiates", "note": {"zh": "游戏里这里会出现新近浮现的这一类个体的复数称呼。", "en": "In the game, the plural name of this newly emerged group appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-necroids-201": {
+    "placeholders": {
+      "mortal_initiate.GetName": {"zh": "献祭者", "en": "initiate", "note": {"zh": "游戏里这里会出现即将献祭的个体的称呼。", "en": "In the game, the name of the individual being sacrificed appears here."}},
+      "mortal_initiate.GetNamePlural": {"zh": "献祭者", "en": "initiates", "note": {"zh": "游戏里这里会出现新近浮现的这一类个体的复数称呼。", "en": "In the game, the plural name of this newly emerged group appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-necroids-202": {
+    "placeholders": {
+      "mortal_initiate.GetName": {"zh": "献祭者", "en": "initiate", "note": {"zh": "游戏里这里会出现即将献祭的个体的称呼。", "en": "In the game, the name of the individual being sacrificed appears here."}},
+      "mortal_initiate.GetNamePlural": {"zh": "献祭者", "en": "initiates", "note": {"zh": "游戏里这里会出现这一轮献祭者的复数称呼。", "en": "In the game, the plural name of this cycle's initiates appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-necroids-255": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-necroids-310": {
+    "placeholders": {
+      "root.GetNecromancersLower": {"zh": "死灵师", "en": "necromancers", "note": {"zh": "游戏里这里会出现你们这群死灵师的名称。", "en": "In the game, the name of your necromancer group appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-1590": {
+    "placeholders": {
+      "fromfrom.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-3036": {
+    "placeholders": {
+      "dropoff_planet.solar_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "dropoff_planet.owner.GetName": {"zh": "接收方帝国", "en": "the receiving empire", "note": {"zh": "游戏里这里会出现接收方帝国的名称。", "en": "In the game, the name of the receiving empire appears here."}},
+      "pickup_planet.owner.GetName": {"zh": "派出方帝国", "en": "the sending empire", "note": {"zh": "游戏里这里会出现派出方帝国的名称。", "en": "In the game, the name of the sending empire appears here."}},
+      "diplomatic_support_issuer.GetName": {"zh": "支持方帝国", "en": "the supporting empire", "note": {"zh": "游戏里这里会出现提供外交支持的帝国名称。", "en": "In the game, the name of the empire giving diplomatic support appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-3050": {
+    "placeholders": {
+      "pickup_planet.owner.GetName": {"zh": "派出方帝国", "en": "the sending empire", "note": {"zh": "游戏里这里会出现派出方帝国的名称。", "en": "In the game, the name of the sending empire appears here."}},
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现罪犯被转移到的地点名称。", "en": "In the game, the name of the place the criminals are moved to appears here."}},
+      "prisoner_disposal_issuer.GetName": {"zh": "委托方", "en": "the client", "note": {"zh": "游戏里这里会出现委托这项任务的一方名称。", "en": "In the game, the name of the party that commissioned this job appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-3060": {
+    "placeholders": {
+      "root.solar_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-3095": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个文明", "en": "the people", "note": {"zh": "游戏里这里会出现你们遇到的文明名称。", "en": "In the game, the name of the civilization you met appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-4105": {
+    "placeholders": {
+      "nomad_harvested_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "nomad_harvesting_deposits_country.GetName": {"zh": "那个采收帝国", "en": "the harvesting empire", "note": {"zh": "游戏里这里会出现正在采收资源的游牧帝国名称。", "en": "In the game, the name of the nomadic empire harvesting the deposits appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-4700": {
+    "placeholders": {
+      "event_target:player_country.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'We [species plural] are living...' still reads 'We the species'; no clean single phrase found."]
+  },
+  "event-nomads-4750": {
+    "placeholders": {
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现被吞食的星球名称。", "en": "In the game, the name of the planet being consumed appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-4800": {
+    "placeholders": {
+      "Target.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现被侵蚀的星球名称。", "en": "In the game, the name of the planet being subsumed appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-50": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-6005": {
+    "placeholders": {
+      "event_target:contract_issuer.GetName": {"zh": "委托方", "en": "the client", "note": {"zh": "游戏里这里会出现委托这项合同的一方名称。", "en": "In the game, the name of the party that commissioned this contract appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-6020": {
+    "placeholders": {
+      "event_target:contract_issuer.GetName": {"zh": "委托方", "en": "the client", "note": {"zh": "游戏里这里会出现委托这项合同的一方名称。", "en": "In the game, the name of the party that commissioned this contract appears here."}},
+      "arkship_cargo_leader.GetName": {"zh": "这位负责人", "en": "the leader", "note": {"zh": "游戏里这里会出现这位货舱负责人的称呼。", "en": "In the game, the name of this cargo leader appears here."}}
+    },
+    "placeholderDocs": {
+      "nomads.6050": {
+        "event_target:contract_issuer.GetName": {"zh": "我们曾经的", "en": "our former", "note": {"zh": "游戏里这里会出现我们逃离的那个帝国的名称。", "en": "In the game, the name of the empire you fled from appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-nomads-6055": {
+    "placeholders": {
+      "event_target:contract_issuer.GetName": {"zh": "委托方", "en": "the client", "note": {"zh": "游戏里这里会出现委托这项合同的一方名称。", "en": "In the game, the name of the party that commissioned this contract appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-6060": {
+    "placeholders": {
+      "event_target:contract_issuer.GetName": {"zh": "委托方", "en": "the client", "note": {"zh": "游戏里这里会出现委托这项合同的一方名称。", "en": "In the game, the name of the party that commissioned this contract appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-6065": {
+    "placeholders": {
+      "event_target:contract_issuer.GetName": {"zh": "委托方", "en": "the client", "note": {"zh": "游戏里这里会出现委托这项合同的一方名称。", "en": "In the game, the name of the party that commissioned this contract appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-6070": {
+    "placeholders": {
+      "event_target:contract_issuer.GetName": {"zh": "委托方", "en": "the client", "note": {"zh": "游戏里这里会出现委托这项合同的一方名称。", "en": "In the game, the name of the party that commissioned this contract appears here."}},
+      "event_target:reputation_noticed_empire.GetName": {"zh": "观察方", "en": "the observing empire", "note": {"zh": "游戏里这里会出现注意到我们表现的帝国名称。", "en": "In the game, the name of the empire that noticed your performance appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-6075": {
+    "placeholders": {
+      "event_target:contract_issuer.GetName": {"zh": "委托方", "en": "the client", "note": {"zh": "游戏里这里会出现委托这项合同的一方名称。", "en": "In the game, the name of the party that commissioned this contract appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-nomads-8010": {
+    "placeholders": {
+      "target_waystation.GetName": {"zh": "这座驿站", "en": "the waystation", "note": {"zh": "游戏里这里会出现这座驿站的名称。", "en": "In the game, the name of this waystation appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现发动袭击的帝国名称。", "en": "In the game, the name of the empire behind the attack appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-operation-1000": {
+    "placeholders": {
+      "spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现目标帝国的名称。", "en": "In the game, the name of the target empire appears here."}},
+      "from.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "from.target.GetAdj": {"zh": "当地", "en": "local", "note": {"zh": "游戏里这里会出现当地的形容词形式。", "en": "In the game, the local adjective appears here."}},
+      "from.target.GetName": {"zh": "目标", "en": "target", "note": {"zh": "游戏里这里会出现目标实体的名称。", "en": "In the game, the name of the target entity appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Spymaster personally' reads awkwardly where the name is followed by a verb phrase such as 'under Spymaster'."]
+  },
+  "event-operation-1020": {
+    "placeholders": {
+      "root.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现目标帝国的形容词形式。", "en": "In the game, the target empire's adjective appears here."}},
+      "root.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现目标帝国的名称。", "en": "In the game, the name of the target empire appears here."}},
+      "spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现目标帝国的形容词形式。", "en": "In the game, the target empire's adjective appears here."}},
+      "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "fromfrom.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "fromfrom.target.GetName": {"zh": "那个研究机构", "en": "the research facility", "note": {"zh": "游戏里这里会出现这个研究机构的名称。", "en": "In the game, the name of this research facility appears here."}},
+      "fromfrom.target.GetSpeciesAdj": {"zh": "当地人", "en": "native", "note": {"zh": "游戏里这里会出现当地人的形容词形式。", "en": "In the game, the native adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation unnamed' needs a real operation code name from the game; the placeholder cannot supply it."]
+  },
+  "event-operation-2000": {
+    "placeholders": {
+      "root.target.owner.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "target.GetName": {"zh": "这座恒星基地", "en": "the starbase", "note": {"zh": "游戏里这里会出现这座恒星基地的名称。", "en": "In the game, the name of this starbase appears here."}},
+      "target.owner.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "target.owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现这座基地所属帝国的名称。", "en": "In the game, the name of the empire owning this starbase appears here."}},
+      "target.solar_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "sabotaged_starbase.GetName": {"zh": "这座恒星基地", "en": "the starbase", "note": {"zh": "游戏里这里会出现被破坏的恒星基地名称。", "en": "In the game, the name of the sabotaged starbase appears here."}},
+      "sabotaged_starbase_owner.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "sabotaged_starbase_owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "sabotaged_starbase_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "luckycatch_country.GetName": {"zh": "那个敌国", "en": "the rival empire", "note": {"zh": "游戏里这里会出现那个敌国的名称。", "en": "In the game, the name of that rival empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Title 'Approaching Target in the star' is awkward; the title reads better with 'this system'."]
+  },
+  "event-operation-3000": {
+    "placeholders": {
+      "event_target:smear_option_1.GetName": {"zh": "这个候选帝国", "en": "the candidate empire", "note": {"zh": "游戏里这里会出现候选目标帝国的名称。", "en": "In the game, the name of the candidate empire appears here."}},
+      "root.target.GetName": {"zh": "目标帝国", "en": "the target", "note": {"zh": "游戏里这里会出现目标帝国的名称。", "en": "In the game, the name of the target empire appears here."}},
+      "root.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现目标帝国的形容词形式。", "en": "In the game, the target empire's adjective appears here."}},
+      "smear_option_1.GetName": {"zh": "第一种手段", "en": "option one", "note": {"zh": "游戏里这里会出现第一种诋毁手段的名称。", "en": "In the game, the name of the first smear option appears here."}},
+      "smear_option_2.GetName": {"zh": "第二种手段", "en": "option two", "note": {"zh": "游戏里这里会出现第二种诋毁手段的名称。", "en": "In the game, the name of the second smear option appears here."}},
+      "smear_option_3.GetName": {"zh": "第三种手段", "en": "option three", "note": {"zh": "游戏里这里会出现第三种诋毁手段的名称。", "en": "In the game, the name of the third smear option appears here."}},
+      "root.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "smear_campaign_recipient.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现诋毁对象帝国的形容词形式。", "en": "In the game, the adjective of the empire being smeared appears here."}},
+      "smear_campaign_recipient.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现诋毁对象帝国的名称。", "en": "In the game, the name of the empire being smeared appears here."}},
+      "smear_campaign_recipient.species.GetAdj": {"zh": "该族", "en": "their", "note": {"zh": "游戏里这里会出现该族群的形容词形式。", "en": "In the game, the adjective of that people appears here."}},
+      "from.target.GetName": {"zh": "被指控方", "en": "the accused", "note": {"zh": "游戏里这里会出现被指控一方的名称。", "en": "In the game, the name of the accused party appears here."}},
+      "fromfrom.GetAdj": {"zh": "神秘的", "en": "anonymous", "note": {"zh": "游戏里这里会出现发起诋毁的神秘一方的形容词形式。", "en": "In the game, the adjective of the unknown instigator appears here."}},
+      "smear_campaign_target.GetName": {"zh": "那个目标", "en": "the target", "note": {"zh": "游戏里这里会出现被诋毁的一方的名称。", "en": "In the game, the name of the party being smeared appears here."}},
+      "smear_campaign_target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "smear_campaign_instigator.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现发起诋毁一方的形容词形式。", "en": "In the game, the adjective of the party that started the smear appears here."}},
+      "smear_campaign_instigator.GetName": {"zh": "始作俑者", "en": "the instigator", "note": {"zh": "游戏里这里会出现发起诋毁的一方名称。", "en": "In the game, the name of the party that started the smear appears here."}},
+      "smear_campaign_recipient.leader.GetName": {"zh": "这位领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现该帝国领袖的名字。", "en": "In the game, the name of that empire's leader appears here."}},
+      "from.GetName": {"zh": "那个指控方", "en": "the accuser", "note": {"zh": "游戏里这里会出现提出指控的一方名称。", "en": "In the game, the name of the party making the accusation appears here."}},
+      "from.GetAdj": {"zh": "该国", "en": "rival", "note": {"zh": "游戏里这里会出现提出指控一方的形容词形式。", "en": "In the game, the adjective of the accusing party appears here."}},
+      "hostile_infiltration_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "hostile_infiltration_country.GetName": {"zh": "那个敌对帝国", "en": "the hostile empire", "note": {"zh": "游戏里这里会出现这个敌对帝国的名称。", "en": "In the game, the name of this hostile empire appears here."}},
+      "scandalous_insult_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "scandalous_insult_country.GetName": {"zh": "那个侮辱方", "en": "the insulting empire", "note": {"zh": "游戏里这里会出现发表侮辱言论的帝国名称。", "en": "In the game, the name of the empire that made the insult appears here."}},
+      "insidious_plot_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "insidious_plot_country.GetName": {"zh": "那个阴谋方", "en": "the plotting empire", "note": {"zh": "游戏里这里会出现正在策划阴谋的帝国名称。", "en": "In the game, the name of the empire plotting against us appears here."}},
+      "insidious_plot_spynetwork.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国情报网的形容词形式。", "en": "In the game, the adjective of that empire's spy network appears here."}},
+      "insidious_plot_spynetwork.GetName": {"zh": "这个情报网", "en": "the spy network", "note": {"zh": "游戏里这里会出现我方情报网所在地的名称。", "en": "In the game, the name of the location of our spy network appears here."}},
+      "insidious_plot_spymaster.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Spymaster personally' reads awkwardly in 'under Spymaster [name]' phrasing; a phrase with a role name would be better if the game ever allows it.", "Two-slot line 'the other leader the leader' (smear_campaign_recipient.leader) remains unresolved."]
+  },
+  "event-operation-4000": {
+    "placeholders": {
+      "crisis_beacon_option_1.GetName": {"zh": "这场危机", "en": "the crisis", "note": {"zh": "游戏里这里会出现这场危机的名称。", "en": "In the game, the name of this crisis appears here."}},
+      "crisis_beacon_option_2.GetName": {"zh": "这场危机", "en": "the crisis", "note": {"zh": "游戏里这里会出现这场危机的名称。", "en": "In the game, the name of this crisis appears here."}},
+      "crisis_beacon_option_3.GetName": {"zh": "这场危机", "en": "the crisis", "note": {"zh": "游戏里这里会出现这场危机的名称。", "en": "In the game, the name of this crisis appears here."}},
+      "spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现目标帝国的形容词形式。", "en": "In the game, the target empire's adjective appears here."}},
+      "target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现目标帝国的名称。", "en": "In the game, the name of the target empire appears here."}},
+      "crisis_beacon_crisis_country.GetName": {"zh": "那个作乱帝国", "en": "the rogue empire", "note": {"zh": "游戏里这里会出现发动灾厄的帝国名称。", "en": "In the game, the name of the empire that set off the crisis appears here."}},
+      "crisis_beacon_crisis_system.GetName": {"zh": "这个星系", "en": "the star", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, the name of this star system appears here."}},
+      "crisis_beacon_target_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "crisis_beacon_target_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现目标帝国的名称。", "en": "In the game, the name of the target empire appears here."}},
+      "from.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "raider_khanate.GetName": {"zh": "这个可汗国", "en": "the khanate", "note": {"zh": "游戏里这里会出现这个可汗国的名称。", "en": "In the game, the khanate's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-operation-5000": {
+    "placeholders": {
+      "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "from.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "from.spynetwork.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现行动目标帝国的名称。", "en": "In the game, the name of the target empire appears here."}},
+      "fromfrom.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "fromfrom.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现行动目标帝国的名称。", "en": "In the game, the name of the target empire appears here."}},
+      "fromfrom.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "fromfrom.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Operation unnamed' needs a real operation code name from the game; the placeholder cannot supply it."]
+  },
+  "event-operation-5005": {
+    "placeholders": {
+      "from.GetName": {"zh": "那个指控方", "en": "the accuser", "note": {"zh": "游戏里这里会出现提出指控的一方名称。", "en": "In the game, the name of the party making the accusation appears here."}},
+      "from.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现行动所在帝国的名称。", "en": "In the game, the name of the empire where the operation takes place appears here."}},
+      "snuffedout_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "snuffedout_country.GetName": {"zh": "那个敌国", "en": "the rival empire", "note": {"zh": "游戏里这里会出现那个敌国的名称。", "en": "In the game, the name of that rival empire appears here."}},
+      "fromfrom.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "hostile_infiltration_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "hostile_infiltration_country.GetName": {"zh": "那个敌对帝国", "en": "the hostile empire", "note": {"zh": "游戏里这里会出现这个敌对帝国的名称。", "en": "In the game, the name of this hostile empire appears here."}}
+    },
+    "placeholderDocs": {
+      "operation.5005": {
+        "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}}
+      },
+      "operation.5035": {
+        "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}}
+      }
+    },
+    "issues": ["Operation names are not supplied by the placeholder; 'Operation unnamed' is a stand-in and the game's code name is not available here."]
+  },
+  "event-operation-5010": {
+    "placeholders": {
+      "from.GetName": {"zh": "那个指控方", "en": "the accuser", "note": {"zh": "游戏里这里会出现提出指控的一方名称。", "en": "In the game, the name of the party making the accusation appears here."}},
+      "from.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现行动所在帝国的名称。", "en": "In the game, the name of the empire where the operation takes place appears here."}},
+      "snuffedout_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "snuffedout_country.GetName": {"zh": "那个敌国", "en": "the rival empire", "note": {"zh": "游戏里这里会出现那个敌国的名称。", "en": "In the game, the name of that rival empire appears here."}},
+      "fromfrom.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "fromfrom.target.GetName": {"zh": "那个目标", "en": "the target", "note": {"zh": "游戏里这里会出现行动目标的名称。", "en": "In the game, the name of the operation's target appears here."}},
+      "hostile_infiltration_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "hostile_infiltration_country.GetName": {"zh": "那个敌对帝国", "en": "the hostile empire", "note": {"zh": "游戏里这里会出现这个敌对帝国的名称。", "en": "In the game, the name of this hostile empire appears here."}}
+    },
+    "placeholderDocs": {
+      "operation.5010": {
+        "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}}
+      },
+      "operation.5035": {
+        "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-operation-5015": {
+    "placeholders": {
+      "from.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现行动所在帝国的名称。", "en": "In the game, the name of the empire where the operation takes place appears here."}},
+      "fromfrom.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "fromfrom.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "fromfrom.target.GetName": {"zh": "那个目标", "en": "the target", "note": {"zh": "游戏里这里会出现行动目标的名称。", "en": "In the game, the name of the operation's target appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-operation-5020": {
+    "placeholders": {
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'This particular [species] [individual]' still reads 'the species' in English; no single phrase fits both slots."]
+  },
+  "event-operation-5025": {
+    "placeholders": {
+      "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "toxic_field_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "toxic_field_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "event_target:toxic_field_operation.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "fromfromfrom.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-operation-5030": {
+    "placeholders": {
+      "excess_noise_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "excess_noise_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "fromfromfrom.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "event_target:excess_noise_operation.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-operation-5040": {
+    "placeholders": {
+      "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "from.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "from.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "fromfrom.target.GetName": {"zh": "那个目标", "en": "the target", "note": {"zh": "游戏里这里会出现行动目标的名称。", "en": "In the game, the name of the operation's target appears here."}},
+      "fromfrom.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "fromfrom.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-operation-5045": {
+    "placeholders": {
+      "from.spynetwork.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "from.target.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "from.target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "hostile_infiltration_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "hostile_infiltration_country.GetName": {"zh": "那个敌对帝国", "en": "the hostile empire", "note": {"zh": "游戏里这里会出现这个敌对帝国的名称。", "en": "In the game, the name of this hostile empire appears here."}},
+      "from.GetName": {"zh": "那个指控方", "en": "the accuser", "note": {"zh": "游戏里这里会出现提出指控的一方名称。", "en": "In the game, the name of the party making the accusation appears here."}},
+      "from.GetAdj": {"zh": "该国", "en": "rival", "note": {"zh": "游戏里这里会出现提出指控一方的形容词形式。", "en": "In the game, the adjective of the accusing party appears here."}},
+      "insidious_plot_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "insidious_plot_country.GetName": {"zh": "那个阴谋方", "en": "the plotting empire", "note": {"zh": "游戏里这里会出现正在策划阴谋的帝国名称。", "en": "In the game, the name of the empire plotting against us appears here."}},
+      "insidious_plot_spynetwork.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国情报网的形容词形式。", "en": "In the game, the adjective of that empire's spy network appears here."}},
+      "insidious_plot_spynetwork.GetName": {"zh": "这个情报网", "en": "the spy network", "note": {"zh": "游戏里这里会出现我方情报网所在地的名称。", "en": "In the game, the name of the location of our spy network appears here."}},
+      "insidious_plot_spymaster.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Get your house in order, personally!' reads awkwardly for the spymaster in operation.5045."]
+  },
+  "event-operation-5050": {
+    "placeholders": {
+      "from.GetName": {"zh": "那个指控方", "en": "the accuser", "note": {"zh": "游戏里这里会出现提出指控的一方名称。", "en": "In the game, the name of the party making the accusation appears here."}},
+      "from.target.GetName": {"zh": "这座", "en": "local", "note": {"zh": "游戏里这里会出现该恒星基地的名称。", "en": "In the game, the name of this starbase appears here."}},
+      "from.target.owner.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "from.target.owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "hostile_infiltration_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}},
+      "hostile_infiltration_country.GetName": {"zh": "那个敌对帝国", "en": "the hostile empire", "note": {"zh": "游戏里这里会出现这个敌对帝国的名称。", "en": "In the game, the name of this hostile empire appears here."}}
+    },
+    "placeholderDocs": {
+      "operation.5050": {
+        "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-operation-5055": {
+    "placeholders": {
+      "from.GetName": {"zh": "未命名", "en": "unnamed", "note": {"zh": "游戏里这里会出现这项行动的代号。", "en": "In the game, the code name of this operation appears here."}},
+      "operation.leader.GetName": {"zh": "本人", "en": "personally", "note": {"zh": "游戏里这里会出现间谍首脑的名字。", "en": "In the game, the spymaster's name appears here."}},
+      "target_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现该帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "target_country.GetAdj": {"zh": "该国", "en": "other", "note": {"zh": "游戏里这里会出现该帝国的形容词形式。", "en": "In the game, that empire's adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-operation-6000": {
+    "placeholders": {
+      "target.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现目标帝国的名称。", "en": "In the game, the name of the target empire appears here."}},
+      "operation_target.GetName": {"zh": "这位官员", "en": "the official", "note": {"zh": "游戏里这里会出现这位官员的名字。", "en": "In the game, this official's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["Person-name slots ('by the name of [name]') read as 'by the name of the official'; a real name cannot be supplied."]
+  }
+}

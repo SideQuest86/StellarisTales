@@ -33,5 +33,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-fedel-500.md"
+ },
+ "placeholders": {
+  "GetPsychicNounPlural": {
+   "zh": "灵能者",
+   "en": "psychics",
+   "note": {
+    "zh": "游戏里这里会出现灵能者的复数称呼。",
+    "en": "In the game, the plural name of psychics appears here."
+   }
+  },
+  "Root.GetAllianceName": {
+   "zh": "联盟",
+   "en": "alliance",
+   "note": {
+    "zh": "游戏里这里会出现联盟的名称。",
+    "en": "In the game, the name of the alliance appears here."
+   }
+  },
+  "winning_country.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  }
  }
 }

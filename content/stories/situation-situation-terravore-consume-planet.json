@@ -18,5 +18,23 @@
    "610 之后的堕落帝国分支条件只按调用图读取。 / The Fallen Empire branches after 610 were read from the call graph."
   ],
   "guide": "public/summaries/situation-situation-terravore-consume-planet.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "殖民地",
+   "en": "the colony",
+   "note": {
+    "zh": "游戏里这里会出现这个殖民地的名称。",
+    "en": "In the game, the name of this colony appears here."
+   }
+  },
+  "Target.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

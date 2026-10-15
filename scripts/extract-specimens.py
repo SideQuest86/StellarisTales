@@ -336,6 +336,14 @@ for r in archive['rarities']:  # short rarity names where the game defines them
     if short['zh'] or short['en']:
         archive['rarities'][r] = short
 
+# Reviewed display wording for engine placeholders (natural phrase + hover note per key; the original text is kept).
+reviewed = ROOT / 'content/museum/placeholders.json'
+if reviewed.exists():
+    wording = json.loads(reviewed.read_text(encoding='utf-8'))
+    for s in specimens:
+        if wording.get(s['key']):
+            s['placeholders'] = wording[s['key']]
+
 out = {'version': 1, 'source': 'common/specimens/specimens.txt', 'archive': archive,
        'counts': {'specimens': len(specimens), 'byType': collections.Counter(s['type'] for s in specimens),
                   'byRarity': collections.Counter(s['rarity'] for s in specimens),

@@ -1,0 +1,165 @@
+{
+  "astral-crystal-sphere": {
+    "placeholders": {
+      "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你首都所在星球的名称。", "en": "In the game, the name of your capital's planet appears here."}}
+    },
+    "issues": []
+  },
+  "astral-formless": {
+    "placeholders": {
+      "Root.Target.GetName": {"zh": "目标", "en": "target", "note": {"zh": "游戏里这里会出现这个目标恒星系的名称。", "en": "In the game, the name of this target star system appears here."}},
+      "this.species.GetHandNamePlural": {"zh": "双手", "en": "hands", "note": {"zh": "游戏里这里会出现一个身体部位的复数名称。", "en": "In the game, the plural name of a body part appears here."}}
+    },
+    "issues": ["crystal_sphere_system.GetName reads 'in the this system system' in astral_planes.50; kept the phrase, text-level rephrase needed."]
+  },
+  "astral-rift-in-space": {
+    "placeholders": {
+      "FromFrom.GetName": {"zh": "另一个", "en": "other", "note": {"zh": "游戏里这里会出现另一个星系的名称。", "en": "In the game, the name of the other system appears here."}}
+    },
+    "issues": []
+  },
+  "event-astral-planes-210": {},
+  "event-astral-planes-6005": {
+    "placeholders": {
+      "FromFromFromFrom.System.GetName": {"zh": "那个星系", "en": "that system", "note": {"zh": "游戏里这里会出现那个星系的名称。", "en": "In the game, the name of that system appears here."}}
+    },
+    "issues": []
+  },
+  "event-astral-planes-6029": {
+    "placeholders": {
+      "this.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "issues": ["'across the [owner.GetName]' reads 'across the our empire' in EN; text-level rephrase needed."]
+  },
+  "event-astral-planes-6095": {
+    "placeholders": {
+      "FromFromFrom.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of that empire appears here."}}
+    },
+    "issues": []
+  },
+  "rift-advisor": {},
+  "rift-bleached-planet": {},
+  "rift-cleaning-drones": {
+    "placeholders": {
+      "explorer.GetName": {"zh": "这位探险者", "en": "the explorer", "note": {"zh": "游戏里这里会出现这位探险者的名字。", "en": "In the game, the name of this explorer appears here."}}
+    },
+    "issues": []
+  },
+  "rift-corridors": {
+    "placeholders": {
+      "Root.Leader.GetHeSheCap": {"zh": "此人", "en": "they", "note": {"zh": "游戏里这里会显示这位领袖的称谓。", "en": "In the game, this leader's pronoun appears here."}},
+      "Root.Leader.IsAre": {"zh": "是", "en": "are", "note": {"zh": "游戏里这里会显示与领袖的称谓搭配的动词。", "en": "In the game, a verb matching the leader's pronoun appears here."}}
+    },
+    "issues": []
+  },
+  "rift-crystal": {
+    "placeholders": {
+      "solar_system.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}},
+      "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名称。", "en": "In the game, this system's name appears here."}}
+    },
+    "issues": ["'in the [X] System' reads 'in the this system System' in EN, and 'the [X] system' in astral_planes.45 doubles as well; text-level rephrase needed.", "Explorer.GetHomeWorldName's EN 'this was our Homeworld, the homeworld' reads doubled."]
+  },
+  "rift-desert-ruins": {
+    "placeholders": {
+      "This.freeze_time_left_1540": {"zh": "若干", "en": "a few", "note": {"zh": "游戏里这里会出现剩余的小时数。", "en": "In the game, the number of hours left appears here."}},
+      "This.freeze_time_left_1555": {"zh": "若干", "en": "a few", "note": {"zh": "游戏里这里会出现剩余的小时数。", "en": "In the game, the number of hours left appears here."}}
+    },
+    "issues": []
+  },
+  "rift-dimensional-dump": {
+    "placeholders": {
+      "From.GetName": {"zh": "这位飞行员", "en": "the pilot", "note": {"zh": "游戏里这里会出现这位飞行员的名字。", "en": "In the game, the name of this pilot appears here."}}
+    },
+    "issues": ["astral_rift_dimensional_dump_leader_loc.GetName is used as 'The alien's name is [X]'; no clean role phrase fits, so the leader phrase is kept."]
+  },
+  "rift-entangled-dark-matter": {
+    "issues": ["Explorer.GetSpeciesNamePlural reads 'We are the species.' in astral_rift.2410; kept the standard phrase."]
+  },
+  "rift-garden": {
+    "placeholders": {
+      "from.GetName": {"zh": "这位殖民者", "en": "the colonist", "note": {"zh": "游戏里这里会出现这位殖民者的名字。", "en": "In the game, the name of this colonist appears here."}}
+    },
+    "issues": []
+  },
+  "rift-genesis": {
+    "placeholders": {
+      "genesis_new_species_selected_planet.GetName": {"zh": "新世界", "en": "the new world", "note": {"zh": "游戏里这里会出现那个新世界的名称。", "en": "In the game, the name of that new world appears here."}}
+    },
+    "issues": []
+  },
+  "rift-interdimensional-circus": {
+    "placeholders": {
+      "explorer.species.GetHandNamePlural": {"zh": "双手", "en": "hands", "note": {"zh": "游戏里这里会出现你的物种身体部位的复数名称。", "en": "In the game, the plural name of a body part of your species appears here."}}
+    },
+    "issues": []
+  },
+  "rift-library": {
+    "placeholders": {
+      "Explorer.num_authorized_fractal_seeds": {"zh": "若干", "en": "some", "note": {"zh": "游戏里这里会出现你获得的分形之种的数量。", "en": "In the game, the number of Fractal Seeds you have appears here."}}
+    },
+    "issues": []
+  },
+  "rift-microverse": {},
+  "rift-psionic-stranger": {
+    "placeholders": {
+      "From.Explorer.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "Explorer.GetName": {"zh": "这个集体", "en": "the collective", "note": {"zh": "游戏里这里会出现这个集体的名称。", "en": "In the game, the name of this collective appears here."}}
+    },
+    "issues": []
+  },
+  "rift-research-lab": {
+    "placeholders": {
+      "From.GetName": {"zh": "这台无人机", "en": "the drone", "note": {"zh": "游戏里这里会出现这台无人机的名称。", "en": "In the game, the name of this drone appears here."}},
+      "FromFrom.solar_system.GetName": {"zh": "另一个", "en": "other", "note": {"zh": "游戏里这里会出现另一个星系的名称。", "en": "In the game, the name of the other system appears here."}}
+    },
+    "issues": []
+  },
+  "rift-riftworld": {
+    "placeholders": {
+      "this.capital_scope.GetName": {"zh": "另一个", "en": "other", "note": {"zh": "游戏里这里会出现另一个星系的名称。", "en": "In the game, the name of the other system appears here."}}
+    },
+    "issues": ["explorer.GetName is used in 'X Day will be celebrated'; no clean role phrase fits, so the placeholder is left unchanged."]
+  },
+  "rift-rockworms": {
+    "placeholders": {
+      "From.GetName": {"zh": "这位殖民者", "en": "the colonist", "note": {"zh": "游戏里这里会出现这位殖民者的名字。", "en": "In the game, the name of this colonist appears here."}}
+    },
+    "issues": []
+  },
+  "rift-siege-on-paradise": {
+    "placeholders": {
+      "Explorer.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, your empire's name appears here."}},
+      "Explorer.GetSpeciesHandName": {"zh": "手", "en": "hand", "note": {"zh": "游戏里这里会出现领袖种族的一个身体部位。", "en": "In the game, a body part of the leader's species appears here."}}
+    },
+    "issues": []
+  },
+  "rift-station": {
+    "placeholders": {
+      "mirrored_empire.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of that empire appears here."}},
+      "mirrored_empire.GetSpeciesNamePlural": {"zh": "那些物种", "en": "the other species", "note": {"zh": "游戏里这里会出现那个帝国物种的复数名称。", "en": "In the game, the plural name of that empire's species appears here."}},
+      "final_mirrored_empire.GetName": {"zh": "那个帝国", "en": "other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, the name of that empire appears here."}}
+    },
+    "issues": ["'with [final_mirrored_empire.GetName]' reads 'with other empire' in EN (no article); text-level rephrase may be needed."]
+  },
+  "rift-tiny-planet": {},
+  "rift-tower": {
+    "placeholders": {
+      "From.GetName": {"zh": "这位领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现这位领袖的名字。", "en": "In the game, the name of this leader appears here."}}
+    },
+    "issues": []
+  },
+  "rift-tropical-habitat": {},
+  "rift-volcano": {
+    "placeholders": {
+      "from.GetName": {"zh": "此人", "en": "they", "note": {"zh": "游戏里这里会出现这个人的名字。", "en": "In the game, the name of this person appears here."}}
+    },
+    "issues": []
+  },
+  "rift-vortex": {
+    "placeholders": {
+      "explorer.GetSpeciesHandName": {"zh": "手臂", "en": "arm", "note": {"zh": "游戏里这里会出现你的物种的一个身体部位。", "en": "In the game, a body part of your species appears here."}}
+    },
+    "issues": []
+  },
+  "rift-windswept-planet": {}
+}

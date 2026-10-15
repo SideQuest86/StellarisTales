@@ -1,0 +1,236 @@
+{
+  "anomaly-storms-prec-one": {
+    "placeholders": {
+      "FromFrom.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}},
+      "Root.GetFleetName": {"zh": "这艘舰船", "en": "the ship", "note": {"zh": "游戏里这里会出现这艘科学船的舰名。", "en": "In the game, this science ship's name appears here."}},
+      "FromFrom.Leader.GetName": {"zh": "那位领袖", "en": "that leader", "note": {"zh": "游戏里这里会出现先前那位领袖的名字。", "en": "In the game, the name of the earlier leader appears here."}},
+      "Root.GetName": {"zh": "这艘舰船", "en": "the ship", "note": {"zh": "游戏里这里会出现你的舰船的名字。", "en": "In the game, your ship's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-prec-wm-one": {
+    "placeholders": {
+      "wm_digsite_A.GetName": {"zh": "第一处遗址", "en": "the first site", "note": {"zh": "游戏里这里会出现第一处遗址的名称。", "en": "In the game, the name of the first dig site appears here."}},
+      "wm_digsite_B.GetName": {"zh": "第二处遗址", "en": "the second site", "note": {"zh": "游戏里这里会出现第二处遗址的名称。", "en": "In the game, the name of the second dig site appears here."}},
+      "wm_digsite_C.GetName": {"zh": "第三处遗址", "en": "the third site", "note": {"zh": "游戏里这里会出现第三处遗址的名称。", "en": "In the game, the name of the third dig site appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The three dig sites are numbered because the worksheet gives them no distinct names; check against the save."]
+  },
+  "archaeology-incidents": {
+    "placeholders": {
+      "Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学专员的名字。", "en": "In the game, your science officer's name appears here."}},
+      "Root.Owner.GetHomeWorldName": {"zh": "我们的母星", "en": "our homeworld", "note": {"zh": "游戏里这里会出现你的母星的名字。", "en": "In the game, your homeworld's name appears here."}},
+      "Root.Owner.GetSpeciesMouthName": {"zh": "口腔", "en": "mouth", "note": {"zh": "游戏里这里会出现你的物种的口腔称呼。", "en": "In the game, your species' mouth name appears here."}},
+      "owner.GetSpeciesName": {"zh": "生物", "en": "creature", "note": {"zh": "游戏里这里会出现你的物种的通称。", "en": "In the game, your species' general name appears here."}},
+      "From.Leader.GetName": {"zh": "这位考古学家", "en": "the archaeologist", "note": {"zh": "游戏里这里会出现首席考古学家的名字。", "en": "In the game, the chief archaeologist's name appears here."}},
+      "root.leader.GetName": {"zh": "这位考古学家", "en": "the archaeologist", "note": {"zh": "游戏里这里会出现首席考古学家的名字。", "en": "In the game, the chief archaeologist's name appears here."}},
+      "dead_scientist.GetName": {"zh": "这位同事", "en": "the colleague", "note": {"zh": "游戏里这里会出现这位同事的名字。", "en": "In the game, this colleague's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["In en, 'Science Officer the scientist' reads awkwardly; the title should be dropped in display.", "The mouthwash phrase in ancrel.4021 relies on the en word 'mouth' attaching to 'wash'."]
+  },
+  "baol": {
+    "placeholders": {
+      "Owner.GetTerraformerPlural": {"zh": "改造团队", "en": "terraformers", "note": {"zh": "游戏里这里会出现你的改造团队的称呼。", "en": "In the game, your terraformers appear here."}},
+      "first_grunur_site.GetName": {"zh": "那处遗址", "en": "that site", "note": {"zh": "游戏里这里会出现那处遗址的名称。", "en": "In the game, that site's name appears here."}},
+      "Root.GetStarName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "Root.GetSpeciesName": {"zh": "朋友", "en": "friend", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "last_baol_neighbor.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}}
+    },
+    "placeholderDocs": {
+      "ancrel.2025": {
+        "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+      },
+      "ancrel.2026": {
+        "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "cybrex": {
+    "placeholders": {
+      "Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学专员的名字。", "en": "In the game, your science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["In en, 'Science Officer the scientist' reads awkwardly; the title should be dropped in display."]
+  },
+  "event-ancrel-10030": {
+    "placeholders": {
+      "From.Owner.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-ancrel-15010": {
+    "placeholders": {
+      "Root.GetLeaderName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现你的科学家的名字。", "en": "In the game, your scientist's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-ancrel-4008": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-ancrel-6049": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-ancrel-6098": {
+    "placeholders": {
+      "Root.GetSpeciesNamePlural": {"zh": "朋友们", "en": "friends", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, the plural name of your species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-ancrel-6150": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "event-ancrel-6499": {
+    "placeholders": {
+      "this.GetLastReceivedRelic": {"zh": "这件遗珍", "en": "this relic", "note": {"zh": "游戏里这里会出现这件遗珍的名称。", "en": "In the game, the name of this relic appears here."}},
+      "this.GetLastLostRelic": {"zh": "这件遗珍", "en": "this relic", "note": {"zh": "游戏里这里会出现这件遗珍的名称。", "en": "In the game, the name of this relic appears here."}},
+      "victim.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名称。", "en": "In the game, that empire's name appears here."}},
+      "From.GetSpeciesNamePlural": {"zh": "他们", "en": "people", "note": {"zh": "游戏里这里会出现那个帝国人民的称呼。", "en": "In the game, the name of that empire's people appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the capital [From.GetName]' in ancrel.6505 reads 'our great capital the other empire'."]
+  },
+  "first-league": {
+    "placeholders": {
+      "FromFrom.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "irassian": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "precursor-assistance": {
+    "placeholders": {
+      "Root.GetSpeciesAdj": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.Owner.GetPrecursorCiv": {"zh": "先驱者", "en": "Precursor", "note": {"zh": "游戏里这里会出现先驱者文明的名称。", "en": "In the game, the Precursor civilization's name appears here."}},
+      "controller.GetIndividualNamePluralCap": {"zh": "回收单位", "en": "retrieval units", "note": {"zh": "游戏里这里会出现回收单位的称呼。", "en": "In the game, the retrieval units' name appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "朋友们", "en": "friends", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, the plural name of your species appears here."}},
+      "artifact_seller.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现出售文物的帝国的名称。", "en": "In the game, the name of the empire selling the artifact appears here."}},
+      "artifact_seller.GetSpeciesAdj": {"zh": "他们的", "en": "their", "note": {"zh": "游戏里这里会出现那个帝国的物种形容词。", "en": "In the game, that empire's species adjective appears here."}},
+      "artifact_giver.GetName": {"zh": "友邦", "en": "the friendly empire", "note": {"zh": "游戏里这里会出现赠送文物的友邦的名称。", "en": "In the game, the name of the friendly empire giving the artifact appears here."}},
+      "artifact_giver.GetSpeciesAdj": {"zh": "友邦的", "en": "friendly", "note": {"zh": "游戏里这里会出现友邦的物种形容词。", "en": "In the game, the friendly empire's species adjective appears here."}},
+      "collector_home.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {
+      "precursor.314": {
+        "Root.GetSpeciesAdj": {"zh": "各位", "en": "dear", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}}
+      }
+    },
+    "issues": ["The artifact-seller and artifact-giver empires are distinct; keep them distinct in the same story.", "Root.GetSpeciesAdj in precursor.301 gives 'No our units' in en."]
+  },
+  "site-ancient-battle-site": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-asteroid-vault-1": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-broken-world-digsite": {
+    "placeholders": {
+      "Root.GetAdj": {"zh": "我方", "en": "our", "note": {"zh": "游戏里这里会出现你的物种形容词。", "en": "In the game, your species' adjective appears here."}},
+      "eldritch_location.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the our notion' reads awkwardly in en."]
+  },
+  "site-city-of-bones": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-endless-expanse-digsite": {
+    "placeholders": {
+      "Root.Owner.GetSpeciesName": {"zh": "我们", "en": "we", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-from-the-ashes-site": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-inferno-temple-site": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-it-was-aliens-site": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-larion-digsite": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-last-thought-site": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-mutation-vats": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-omnirelic-site": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-rubricator-digsite": {
+    "placeholders": {
+      "Root.GetSpeciesOrganNamePlural": {"zh": "身体", "en": "bodies", "note": {"zh": "游戏里这里会出现你的身体的称呼。", "en": "In the game, your bodies appear here."}},
+      "Owner.GetNecromancersUpper": {"zh": "死灵术士", "en": "necromancers", "note": {"zh": "游戏里这里会出现你的死灵术士的称呼。", "en": "In the game, your necromancers appear here."}},
+      "Owner.GetNecromancersLower": {"zh": "死灵术士", "en": "necromancers", "note": {"zh": "游戏里这里会出现你的死灵术士的称呼。", "en": "In the game, your necromancers appear here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-site-abandoned-bio-lab": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-absolute-zero": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-ancient-robot-world": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-site-anomalous-cube": {
+    "placeholders": {
+      "event_target:anomalous_cube_scientist.GetName": {"zh": "这位科学家", "en": "the scientist", "note": {"zh": "游戏里这里会出现这位科学家的名字。", "en": "In the game, this scientist's name appears here."}},
+      "Owner.GetAnomalousCubeEnemy": {"zh": "敌对帝国", "en": "the hostile empire", "note": {"zh": "游戏里这里会出现敌对帝国的名称。", "en": "In the game, the hostile empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-site-chronicles-of-dendrus": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-command-center": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-cut-to-fit": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-debris-belt": {
+    "placeholders": {
+      "Root.Owner.GetResearchers": {"zh": "研究员", "en": "researchers", "note": {"zh": "游戏里这里会出现你的研究员的称呼。", "en": "In the game, your researchers appear here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-site-deja-vu-dig": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-deserted-mining-facility": {
+    "placeholders": {
+      "Root.Owner.GetTechnicianPlural_lower": {"zh": "技术员", "en": "technicians", "note": {"zh": "游戏里这里会出现你的技术员的称呼。", "en": "In the game, your technicians appear here."}},
+      "Owner.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国的名称。", "en": "In the game, your empire's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-site-ebb-and-flow": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-echoes-inside": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-engineered-species": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-fossilized-jellyfish": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-fumongus-dig": {
+    "placeholders": {
+      "dead_scientist.GetName": {"zh": "这位同事", "en": "the colleague", "note": {"zh": "游戏里这里会出现这位同事的名字。", "en": "In the game, this colleague's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-site-georadiation-terraforming": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-grand-herald": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-green-skies": {
+    "placeholders": {
+      "Fromfrom.getName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, this system's name appears here."}},
+      "Leader.getHerHim": {"zh": "这位领袖", "en": "the leader", "note": {"zh": "游戏里这里会出现这位领袖的名字。", "en": "In the game, this leader's name appears here."}},
+      "Leader.getHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的团队的称呼。", "en": "In the game, this leader's crew appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-site-hidden-lab-a": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-hive-coral": {"placeholders": {}, "placeholderDocs": {}, "issues": []},
+  "site-site-ice-trauma": {
+    "placeholders": {
+      "owner.capital_scope.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名字。", "en": "In the game, your capital's name appears here."}},
+      "absconded_archaeologist.GetName": {"zh": "那位考古学家", "en": "the other archaeologist", "note": {"zh": "游戏里这里会出现那位考古学家的名字。", "en": "In the game, that archaeologist's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "site-site-krazura-dig": {"placeholders": {}, "placeholderDocs": {}, "issues": []}
+}

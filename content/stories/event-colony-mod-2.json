@@ -1,26 +1,78 @@
 {
  "id": "event-colony-mod-2",
  "family": {
-  "title": {"zh": "泰坦巨兽", "en": "Titanic Life"},
+  "title": {
+   "zh": "泰坦巨兽",
+   "en": "Titanic Life"
+  },
   "category": "society",
   "start": "colony_mod.161",
-  "members": ["colony_mod.2", "special_projects:titanic_life_study_normal", "special_projects:titanic_life_study_nice", "special_projects:titanic_life_study_mean", "colony_mod.101", "colony_mod.102"]
+  "members": [
+   "colony_mod.2",
+   "special_projects:titanic_life_study_normal",
+   "special_projects:titanic_life_study_nice",
+   "special_projects:titanic_life_study_mean",
+   "colony_mod.101",
+   "colony_mod.102"
+  ]
  },
  "titleFrom": "colony_mod.2",
  "endings": {
-  "colony_mod.101": {"label": {"zh": "研究成功：可招募泰坦巨兽", "en": "Study succeeds: Titanic Beasts can be recruited"}, "note": {"zh": "监视版本（亲外）另清除星球上的泰坦巨兽障碍。", "en": "The Monitoring (xenophile) version also clears the planet's Titanic Life blockers."}, "evidence": "events/colony_events_3.txt:283-322; the second EXCELLENT option requires carrier flag nice_titan_study set by colony_mod.2.c."},
-  "colony_mod.102": {"label": {"zh": "研究失败：巨兽暴动", "en": "Study fails: the titans rampage"}, "note": {"zh": "生成敌对的泰坦巨兽陆军，星球进入驱逐清洗状态，直到这些陆军被消灭。", "en": "Hostile titan armies spawn and the planet is set to displacement purge until they are killed."}, "evidence": "events/colony_events_3.txt:324-373; colony_mod.103 (hidden, 375-394) clears the purge type when a titanic_guardian_army dies."}
+  "colony_mod.101": {
+   "label": {
+    "zh": "研究成功：可招募泰坦巨兽",
+    "en": "Study succeeds: Titanic Beasts can be recruited"
+   },
+   "note": {
+    "zh": "监视版本（亲外）另清除星球上的泰坦巨兽障碍。",
+    "en": "The Monitoring (xenophile) version also clears the planet's Titanic Life blockers."
+   },
+   "evidence": "events/colony_events_3.txt:283-322; the second EXCELLENT option requires carrier flag nice_titan_study set by colony_mod.2.c."
+  },
+  "colony_mod.102": {
+   "label": {
+    "zh": "研究失败：巨兽暴动",
+    "en": "Study fails: the titans rampage"
+   },
+   "note": {
+    "zh": "生成敌对的泰坦巨兽陆军，星球进入驱逐清洗状态，直到这些陆军被消灭。",
+    "en": "Hostile titan armies spawn and the planet is set to displacement purge until they are killed."
+   },
+   "evidence": "events/colony_events_3.txt:324-373; colony_mod.103 (hidden, 375-394) clears the purge type when a titanic_guardian_army dies."
+  }
  },
  "notes": [
-  {"doc": "colony_mod.2", "kind": "review", "zh": "审阅注：三种研究互为替代——普通（3500，成功70%）、亲外的“监视”（5000，成功90%）、排外或蜂巢的“解剖”（2500，成功50%，并立即获得“美味巨兽”类修正）。拒绝则无事发生。", "en": "Review note: three alternative studies — normal (3500, 70% success), xenophile Monitoring (5000, 90%), xenophobe/hive Necropsies (2500, 50%, plus an immediate 'Delicious Titans'-type modifier). Declining ends the story."}
+  {
+   "doc": "colony_mod.2",
+   "kind": "review",
+   "zh": "审阅注：三种研究互为替代——普通（3500，成功70%）、亲外的“监视”（5000，成功90%）、排外或蜂巢的“解剖”（2500，成功50%，并立即获得“美味巨兽”类修正）。拒绝则无事发生。",
+   "en": "Review note: three alternative studies — normal (3500, 70% success), xenophile Monitoring (5000, 90%), xenophobe/hive Necropsies (2500, 50%, plus an immediate 'Delicious Titans'-type modifier). Declining ends the story."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "泰坦巨兽殖民地事件、三个研究项目与两种结果，从合并的修正事件故事中拆出。", "en": "The Titanic Life colony event, its three study projects and two results, split out of the merged modifier-event story."},
-  "sources": ["events/colony_events_3.txt:150-394", "events/colony_events_3.txt:980-999", "common/special_projects/00_projects_3.txt:602-669"],
+  "scope": {
+   "zh": "泰坦巨兽殖民地事件、三个研究项目与两种结果，从合并的修正事件故事中拆出。",
+   "en": "The Titanic Life colony event, its three study projects and two results, split out of the merged modifier-event story."
+  },
+  "sources": [
+   "events/colony_events_3.txt:150-394",
+   "events/colony_events_3.txt:980-999",
+   "common/special_projects/00_projects_3.txt:602-669"
+  ],
   "uncertain": [],
   "guide": "public/summaries/event-colony-mod-2.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

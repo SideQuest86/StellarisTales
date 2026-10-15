@@ -30,5 +30,63 @@
    "common/on_actions/00_on_actions.txt:576-592"
   ],
   "guide": "public/summaries/event-envoy-events-7.md"
+ },
+ "placeholders": {
+  "From.GetAdj": {
+   "zh": "敌方",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现对方的形容词。",
+    "en": "In the game, the adjective for the other side appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "市民",
+   "en": "citizens",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "event_envoy.GetName": {
+   "zh": "这位使者",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现使者的名字。",
+    "en": "In the game, the envoy's name appears here."
+   }
+  },
+  "other_species_nation.GetAdj": {
+   "zh": "外国",
+   "en": "foreign",
+   "note": {
+    "zh": "游戏里这里会出现另一方物种的形容词。",
+    "en": "In the game, the adjective for the other species appears here."
+   }
+  },
+  "third_party.GetName": {
+   "zh": "邻国",
+   "en": "neighboring nation",
+   "note": {
+    "zh": "游戏里这里会出现第三方国家的名称。",
+    "en": "In the game, the name of the third-party nation appears here."
+   }
+  },
+  "third_party.GetSpeciesNamePlural": {
+   "zh": "当地人",
+   "en": "locals",
+   "note": {
+    "zh": "游戏里这里会出现第三方国家的物种名称。",
+    "en": "In the game, the species name of the third-party nation appears here."
+   }
+  }
  }
 }

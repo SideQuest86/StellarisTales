@@ -1,74 +1,208 @@
 {
  "id": "event-situation-150",
  "family": {
-  "title": {"zh": "白雪异变", "en": "Unusual Snow"},
+  "title": {
+   "zh": "白雪异变",
+   "en": "Unusual Snow"
+  },
   "category": "society",
   "start": "situation.150",
   "members": [
-   "situation.150", "situations:situation_living_snow", "situation.155", "situation.160", "situation.165",
-   "situation.170", "situation.175", "situation.180", "situation.185", "situation.190", "situation.195"
+   "situation.150",
+   "situations:situation_living_snow",
+   "situation.155",
+   "situation.160",
+   "situation.165",
+   "situation.170",
+   "situation.175",
+   "situation.180",
+   "situation.185",
+   "situation.190",
+   "situation.195"
   ]
  },
  "suppress": [
-  {"from": "situations:situation_living_snow", "to": "situation.180", "evidence": "Re-anchored under 165: the outcome is decided by the approach that 165 locks (common/situations/01_narrative_situations.txt:6-16; events/situation_events.txt:547-550)."},
-  {"from": "situations:situation_living_snow", "to": "situation.185", "evidence": "Re-anchored under 165, see the 180 entry."}
+  {
+   "from": "situations:situation_living_snow",
+   "to": "situation.180",
+   "evidence": "Re-anchored under 165: the outcome is decided by the approach that 165 locks (common/situations/01_narrative_situations.txt:6-16; events/situation_events.txt:547-550)."
+  },
+  {
+   "from": "situations:situation_living_snow",
+   "to": "situation.185",
+   "evidence": "Re-anchored under 165, see the 180 entry."
+  }
  ],
  "bridges": [
   {
-   "from": "situation.165", "to": "situation.180", "conditional": true,
-   "label": {"zh": "进度满100%，锁定方式为“把它们全融了”", "en": "At 100% with the locked approach 'Melt it. All.'"},
+   "from": "situation.165",
+   "to": "situation.180",
+   "conditional": true,
+   "label": {
+    "zh": "进度满100%，锁定方式为“把它们全融了”",
+    "en": "At 100% with the locked approach 'Melt it. All.'"
+   },
    "evidence": "common/situations/01_narrative_situations.txt:6-16 on_progress_complete: current_situation_approach = situation_snow_hostile -> situation.180, else situation.185; 165 after sets path_locked (events/situation_events.txt:547-550) and both approaches' allow require NOT path_locked unless already selected (01_narrative_situations.txt:51-58, 90-97)"
   },
   {
-   "from": "situation.165", "to": "situation.185", "conditional": true,
-   "label": {"zh": "进度满100%，锁定方式为“平静地观测它”", "en": "At 100% with the locked approach 'Observe it Peacefully'"},
+   "from": "situation.165",
+   "to": "situation.185",
+   "conditional": true,
+   "label": {
+    "zh": "进度满100%，锁定方式为“平静地观测它”",
+    "en": "At 100% with the locked approach 'Observe it Peacefully'"
+   },
    "evidence": "common/situations/01_narrative_situations.txt:6-16 (else branch -> situation.185)"
   },
   {
-   "from": "situation.180", "choice": "situation.180.A", "to": "situation.190", "conditional": true,
-   "label": {"zh": "若雪的军队攻占殖民地", "en": "If the snow's armies seize the colony"},
+   "from": "situation.180",
+   "choice": "situation.180.A",
+   "to": "situation.190",
+   "conditional": true,
+   "label": {
+    "zh": "若雪的军队攻占殖民地",
+    "en": "If the snow's armies seize the colony"
+   },
    "evidence": "180.A creates the Living Snow faction with 6 ice armies on the planet (events/situation_events.txt:635-659); common/on_actions/00_on_actions.txt:877-884 on_colony_defenders_lose -> situation.190, whose trigger needs the attacker to have flag living_snow (situation_events.txt:737-739)"
   },
   {
-   "from": "situation.185", "choice": "situation.185.B", "to": "situation.190", "conditional": true,
-   "label": {"zh": "若雪的军队攻占殖民地", "en": "If the snow's armies seize the colony"},
+   "from": "situation.185",
+   "choice": "situation.185.B",
+   "to": "situation.190",
+   "conditional": true,
+   "label": {
+    "zh": "若雪的军队攻占殖民地",
+    "en": "If the snow's armies seize the colony"
+   },
    "evidence": "185.B creates the same faction and armies (events/situation_events.txt:690-713); on_colony_defenders_lose -> situation.190 (00_on_actions.txt:877-884)"
   },
   {
-   "from": "situation.190", "to": "situation.195", "conditional": true,
-   "label": {"zh": "约5–6年后，若雪仍控制该星球", "en": "1800–2160 days later, if the snow still holds the planet"},
+   "from": "situation.190",
+   "to": "situation.195",
+   "conditional": true,
+   "label": {
+    "zh": "约5–6年后，若雪仍控制该星球",
+    "en": "1800–2160 days later, if the snow still holds the planet"
+   },
    "evidence": "situation.190 immediate schedules carrier_event situation.195 days 1800 random 360 (events/situation_events.txt:741-746); 195 trigger: the planet's controller is still the saved living_snow country (situation_events.txt:765-768)"
   }
  ],
  "groups": [
   {
-   "kind": "exclusive", "members": ["situation.180", "situation.185"],
-   "label": {"zh": "100%时的结果取决于锁定的方式", "en": "The 100% outcome depends on the locked approach"}
+   "kind": "exclusive",
+   "members": [
+    "situation.180",
+    "situation.185"
+   ],
+   "label": {
+    "zh": "100%时的结果取决于锁定的方式",
+    "en": "The 100% outcome depends on the locked approach"
+   }
   },
   {
-   "kind": "parallel", "members": ["situation.160", "situation.170", "situation.175"],
-   "label": {"zh": "第二阶段（25–80%）的每月随机事件", "en": "Monthly random events in stage 2 (25-80%)"},
-   "note": {"zh": "权重：无事120、160为20（仅“把它们全融了”时）、170为15、175为10（观测时×2）。160与170共用一个标记，至多发生其一；175至多一次。", "en": "Weights: nothing 120, 160 20 (hostile only), 170 15, 175 10 (x2 when observing). 160 and 170 share one flag, so at most one of them happens; 175 at most once."}
+   "kind": "parallel",
+   "members": [
+    "situation.160",
+    "situation.170",
+    "situation.175"
+   ],
+   "label": {
+    "zh": "第二阶段（25–80%）的每月随机事件",
+    "en": "Monthly random events in stage 2 (25-80%)"
+   },
+   "note": {
+    "zh": "权重：无事120、160为20（仅“把它们全融了”时）、170为15、175为10（观测时×2）。160与170共用一个标记，至多发生其一；175至多一次。",
+    "en": "Weights: nothing 120, 160 20 (hostile only), 170 15, 175 10 (x2 when observing). 160 and 170 share one flag, so at most one of them happens; 175 at most once."
+   }
   }
  ],
  "endings": {
-  "situation.195": {"label": {"zh": "星球冰封", "en": "The planet freezes"}, "note": {"zh": "殖民地被摧毁，星球变为冰冻世界并留下研究矿藏。", "en": "The colony is destroyed; the planet becomes frozen and gains research deposits."}, "evidence": "events/situation_events.txt:754-799"}
+  "situation.195": {
+   "label": {
+    "zh": "星球冰封",
+    "en": "The planet freezes"
+   },
+   "note": {
+    "zh": "殖民地被摧毁，星球变为冰冻世界并留下研究矿藏。",
+    "en": "The colony is destroyed; the planet becomes frozen and gains research deposits."
+   },
+   "evidence": "events/situation_events.txt:754-799"
+  }
  },
  "nodeLabels": {
-  "situation.180": {"zh": "雪的通讯（战争）", "en": "Snow speaks (war)"},
-  "situation.185": {"zh": "雪的通讯（可让地）", "en": "Snow speaks (land or war)"}
+  "situation.180": {
+   "zh": "雪的通讯（战争）",
+   "en": "Snow speaks (war)"
+  },
+  "situation.185": {
+   "zh": "雪的通讯（可让地）",
+   "en": "Snow speaks (land or war)"
+  }
  },
  "notes": [
-  {"doc": "situation.150", "kind": "review", "zh": "殖民地满4年或5年时的随机殖民地事件（权重6/189、6/194），仅限非AI、非格式塔帝国的非首都沙漠殖民地，每局一次。", "en": "Random colony event when a colony turns 4 or 5 years old (weights 6/189, 6/194); only non-capital desert colonies of non-AI, non-gestalt empires; fires once."},
-  {"doc": "situation.190", "kind": "review", "zh": "若在195发生前夺回星球，195的条件不再满足，故事无事件地结束。", "en": "If the planet is retaken before 195 fires, 195's trigger fails and the story ends without a further window."}
+  {
+   "doc": "situation.150",
+   "kind": "review",
+   "zh": "殖民地满4年或5年时的随机殖民地事件（权重6/189、6/194），仅限非AI、非格式塔帝国的非首都沙漠殖民地，每局一次。",
+   "en": "Random colony event when a colony turns 4 or 5 years old (weights 6/189, 6/194); only non-capital desert colonies of non-AI, non-gestalt empires; fires once."
+  },
+  {
+   "doc": "situation.190",
+   "kind": "review",
+   "zh": "若在195发生前夺回星球，195的条件不再满足，故事无事件地结束。",
+   "en": "If the planet is retaken before 195 fires, 195's trigger fails and the story ends without a further window."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "Opus 5.5 (c7a-society)",
-  "scope": {"zh": "白雪异变完整故事：开端、两个阶段事件、三种随机事件、按锁定方式的两种结局、战争后的殖民地失陷与冰封。", "en": "Whole Unusual Snow story: opening, two stage events, three random events, the two outcomes by locked approach, and the post-war colony loss and freeze."},
-  "sources": ["events/situation_events.txt", "common/situations/01_narrative_situations.txt", "common/on_actions/00_on_actions.txt"],
-  "merged": ["event-situation-190"],
+  "scope": {
+   "zh": "白雪异变完整故事：开端、两个阶段事件、三种随机事件、按锁定方式的两种结局、战争后的殖民地失陷与冰封。",
+   "en": "Whole Unusual Snow story: opening, two stage events, three random events, the two outcomes by locked approach, and the post-war colony loss and freeze."
+  },
+  "sources": [
+   "events/situation_events.txt",
+   "common/situations/01_narrative_situations.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "merged": [
+   "event-situation-190"
+  ],
   "guide": "public/summaries/event-situation-150.md"
+ },
+ "placeholders": {
+  "FromFrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Owner.GetAdj": {
+   "zh": "帝国",
+   "en": "imperial",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国的形容词。",
+    "en": "In the game, your empire's adjective appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "Target.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

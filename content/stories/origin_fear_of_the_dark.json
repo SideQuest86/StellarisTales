@@ -488,5 +488,139 @@
    "zh": "中期脉冲（on_mid_game_pulse → 6140）25天后；若分离主义星球仍在境内，则提供项目“确认发现”。",
    "en": "Mid-game pulse (common/on_actions/00_on_actions.txt:316 -> 6140) 25 days later; offers the Confirm Findings project if the separatist planet is still within borders."
   }
- ]
+ ],
+ "placeholders": {
+  "From.GetAdj": {
+   "zh": "外星",
+   "en": "alien",
+   "note": {
+    "zh": "游戏里这里会出现外星的形容词。",
+    "en": "In the game, the alien adjective appears here."
+   }
+  },
+  "From.GetClassName": {
+   "zh": "星球",
+   "en": "world",
+   "note": {
+    "zh": "游戏里这里会出现这类星球的名称。",
+    "en": "In the game, the name of this kind of world appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "From.GetSpeciesNamePluralInsult": {
+   "zh": "外星人",
+   "en": "aliens",
+   "note": {
+    "zh": "游戏里这里会出现对外星人的称呼。",
+    "en": "In the game, the word for aliens appears here."
+   }
+  },
+  "From.Target.GetClassAdj": {
+   "zh": "严酷的",
+   "en": "harsh",
+   "note": {
+    "zh": "游戏里这里会出现这类星球的形容词。",
+    "en": "In the game, the adjective for this kind of world appears here."
+   }
+  },
+  "From.Target.GetClassName": {
+   "zh": "这颗星球",
+   "en": "world",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的类型名称。",
+    "en": "In the game, this planet's type name appears here."
+   }
+  },
+  "FromFrom.GetName": {
+   "zh": "这场",
+   "en": "present",
+   "note": {
+    "zh": "游戏里这里会出现这场战争的名称。",
+    "en": "In the game, the name of this war appears here."
+   }
+  },
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Target.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "capital_star.GetName": {
+   "zh": "这颗恒星",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, this star's name appears here."
+   }
+  },
+  "fotd_Leader.GetHerHisCap": {
+   "zh": "其",
+   "en": "Their",
+   "note": {
+    "zh": "游戏里这里会出现这位领袖的物主代词。",
+    "en": "In the game, the leader's possessive pronoun appears here."
+   }
+  },
+  "fotd_seperatist_planet.Owner.GetSpeciesNamePluralInsult": {
+   "zh": "叛徒",
+   "en": "traitors",
+   "note": {
+    "zh": "游戏里这里会出现对方对这群人的称呼。",
+    "en": "In the game, the other side's name for these people appears here."
+   }
+  },
+  "fotd_seperatist_planet.owner.GetSpecesName": {
+   "zh": "该物种",
+   "en": "the species",
+   "note": {
+    "zh": "游戏里这里会出现该物种的名称。",
+    "en": "In the game, the species' name appears here."
+   }
+  },
+  "home_planet.GetName": {
+   "zh": "我们的母星",
+   "en": "our homeworld",
+   "note": {
+    "zh": "游戏里这里会出现你们母星的名称。",
+    "en": "In the game, your homeworld's name appears here."
+   }
+  },
+  "overlord.GetName": {
+   "zh": "宗主国",
+   "en": "overlord",
+   "note": {
+    "zh": "游戏里这里会出现宗主国的称呼。",
+    "en": "In the game, the overlord's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "origin.6085": {
+   "FromFrom.GetName": {
+    "zh": "这场战争",
+    "en": "present war",
+    "note": {
+     "zh": "游戏里这里会出现这场战争的名称。",
+     "en": "In the game, the name of this war appears here."
+    }
+   }
+  }
+ }
 }

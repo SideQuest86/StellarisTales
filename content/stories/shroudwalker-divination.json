@@ -187,5 +187,71 @@
    "Each prophecy's own gate (one-time empire flag, progress thresholds such as >=10/15/50%, population or colony requirements) is summarised in the guide, not modelled as edge conditions.",
    "enclave.5090.c (xenophobe refusal) is scripted to lead to enclave.5100 like an acceptance; probably a game-script slip, recorded as is."
   ]
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现你的星球的名字。",
+    "en": "In the game, the name of your planet appears here."
+   }
+  },
+  "divination_situation.GetName": {
+   "zh": "这项预言",
+   "en": "divination",
+   "note": {
+    "zh": "游戏里这里会出现这项预言的名称。",
+    "en": "In the game, the name of this divination appears here."
+   }
+  },
+  "hero_redivivus.GetName": {
+   "zh": "这位英雄",
+   "en": "the hero",
+   "note": {
+    "zh": "游戏里这里会出现这位英雄的名字。",
+    "en": "In the game, this hero's name appears here."
+   }
+  },
+  "root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现你的星球的名字。",
+    "en": "In the game, the name of your planet appears here."
+   }
+  },
+  "root.GetSpeciesName": {
+   "zh": "同胞",
+   "en": "kin",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "root.species.GetHandNamePlural": {
+   "zh": "双手",
+   "en": "hands",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的双手的称呼。",
+    "en": "In the game, this species' hands appear here."
+   }
+  },
+  "shattered_frontier_governor.GetName": {
+   "zh": "这位总督",
+   "en": "the governor",
+   "note": {
+    "zh": "游戏里这里会出现这位总督的名字。",
+    "en": "In the game, this governor's name appears here."
+   }
+  },
+  "shroudwalker_enclave_country.GetName": {
+   "zh": "这个城邦",
+   "en": "the enclave",
+   "note": {
+    "zh": "游戏里这里会出现预言城邦的名称。",
+    "en": "In the game, the name of the divining enclave appears here."
+   }
+  }
  }
 }

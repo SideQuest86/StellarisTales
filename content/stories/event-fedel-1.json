@@ -34,5 +34,39 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-fedel-1.md"
+ },
+ "placeholders": {
+  "Root.GetAllianceName": {
+   "zh": "联盟",
+   "en": "alliance",
+   "note": {
+    "zh": "游戏里这里会出现联盟的名称。",
+    "en": "In the game, the name of the alliance appears here."
+   }
+  },
+  "rival_chosen_country.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "rival_chosen_leader.GetRulerTitle": {
+   "zh": "对手",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现对手的称谓。",
+    "en": "In the game, the rival's title appears here."
+   }
+  },
+  "winning_country.GetName": {
+   "zh": "那个帝国",
+   "en": "other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  }
  }
 }

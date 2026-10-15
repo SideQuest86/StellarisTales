@@ -31,5 +31,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-action-12.md"
+ },
+ "placeholders": {
+  "From.From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "primitive_civ.Capital.GetStarName": {
+   "zh": "此",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this star system's name appears here."
+   }
+  },
+  "primitive_civ.GetName": {
+   "zh": "这个前FTL文明",
+   "en": "the pre-FTL civilisation",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL文明的名称。",
+    "en": "In the game, the name of the pre-FTL civilisation appears here."
+   }
+  }
  }
 }

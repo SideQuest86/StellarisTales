@@ -1,0 +1,269 @@
+{
+  "event-uplift-7500": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这批原住民所在星球的名字。", "en": "In the game, the name of the natives' planet appears here."}},
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名字。", "en": "In the game, the name of this planet appears here."}},
+      "Root.Owner.GetSpeciesNamePlural": {"zh": "这个物种", "en": "our species", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["uplift.7520 en: 'the [Root.Owner.GetName]'s' renders as 'the our empire's'", "uplift.7525 en: 'recognize us [species] as similar' reads awkwardly with 'our species'"]
+  },
+  "event-utopia-1": {
+    "placeholders": {
+      "ringworld_builder.GetName": {"zh": "建造方", "en": "the builder", "note": {"zh": "游戏里这里会出现建造这座环形世界的帝国的名字。", "en": "In the game, the name of the empire that built the ring world appears here."}},
+      "From.From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现提出请求的帝国的名字。", "en": "In the game, the name of the empire making the request appears here."}},
+      "From.GetName": {"zh": "东道主帝国", "en": "the host empire", "note": {"zh": "游戏里这里会出现接待我们研究团队的帝国的名字。", "en": "In the game, the name of the empire hosting our research team appears here."}},
+      "From.GetSpeciesName": {"zh": "东道主", "en": "host", "note": {"zh": "游戏里这里会出现该帝国主体物种的名字。", "en": "In the game, the name of the host empire's species appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["ringworld_builder and From.GetName may be the same empire; check whether the phrases should match"]
+  },
+  "event-utopia-2000": {
+    "placeholders": {
+      "From.From.GetName": {"zh": "这个", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, the name of this system appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}},
+      "From.GetSpeciesName": {"zh": "那个物种", "en": "other", "note": {"zh": "游戏里这里会出现那个帝国物种的名字。", "en": "In the game, the name of the other empire's species appears here."}},
+      "Root.GetSpeciesName": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的物种名称。", "en": "In the game, your species' name appears here."}},
+      "ringworld_system.GetName": {"zh": "这个", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, the name of this system appears here."}},
+      "completed_ringworld_system.GetName": {"zh": "这个", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, the name of this system appears here."}}
+    },
+    "placeholderDocs": {
+      "utopia.2017": {
+        "From.GetName": {"zh": "这个", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, the name of this system appears here."}}
+      }
+    },
+    "issues": ["'the [From.GetSpeciesName] Ring World' title becomes 'Other Ring World'", "Root.GetSpeciesName en 'the our species' reads wrongly", "en 'the this system' for 'the [X] system' templates"]
+  },
+  "event-utopia-2500": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}},
+      "owner.GetSpeciesHandName": {"zh": "这只手", "en": "this hand", "note": {"zh": "游戏里这里会出现你的物种手部的名称。", "en": "In the game, your species' hand name appears here."}},
+      "pop_cat_ruler.GetNamePlural": {"zh": "统治者", "en": "rulers", "note": {"zh": "游戏里这里会出现统治者这一人口类别的名称。", "en": "In the game, the name of the ruler population group appears here."}},
+      "pop_cat_specialist.GetNamePlural": {"zh": "专家", "en": "specialists", "note": {"zh": "游戏里这里会出现专家这一人口类别的名称。", "en": "In the game, the name of the specialist population group appears here."}},
+      "pop_cat_worker.GetNamePlural": {"zh": "工人", "en": "workers", "note": {"zh": "游戏里这里会出现工人这一人口类别的名称。", "en": "In the game, the name of the worker population group appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["en 'a metallic this hand' reads awkwardly (cyber.2100)", "en 'the the species' doubled article in utopia.2500 lines using the species placeholder"]
+  },
+  "event-utopia-2550": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}},
+      "From.GetRulerName": {"zh": "那位", "en": "who", "note": {"zh": "游戏里这里会出现那个帝国统治者的名字。", "en": "In the game, the name of the other empire's ruler appears here."}},
+      "From.GetRulerTitle": {"zh": "统治者", "en": "the ruler", "note": {"zh": "游戏里这里会出现那个帝国统治者的头衔。", "en": "In the game, the other empire's ruler title appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-utopia-2600": {
+    "placeholders": {
+      "Root.GetSpeciesNamePlural": {"zh": "同类", "en": "species", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "root.GetSpeciesNamePlural": {"zh": "同类", "en": "species", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "psionic_leader.GetName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现这位领袖的名字。", "en": "In the game, the name of this leader appears here."}},
+      "GetPsychicNoun": {"zh": "灵能者", "en": "psychic", "note": {"zh": "游戏里这里会出现灵能者这一称呼。", "en": "In the game, the word for a psychic appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["utopia.2650 en: 'The the species species' style doubling from Root.GetSpeciesName ('the species')", "utopia.2606 en: 'they has been identified' grammar comes from the pronoun token"]
+  },
+  "event-utopia-29": {
+    "placeholders": {
+      "dysonsphere_builder.GetName": {"zh": "建造方", "en": "the builder", "note": {"zh": "游戏里这里会出现建造戴森球的帝国的名字。", "en": "In the game, the name of the empire building the Dyson Sphere appears here."}},
+      "dyson_sphere_neighbor.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}},
+      "dysonsphere_builder.GetRulerTitle": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现建造方统治者的头衔。", "en": "In the game, the title of the builder's ruler appears here."}},
+      "dysonsphere_builder.GetRulerName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现建造方统治者的名字。", "en": "In the game, the name of the builder's ruler appears here."}},
+      "dyson_sphere_neighbor.GetRulerTitle": {"zh": "对方", "en": "other", "note": {"zh": "游戏里这里会出现另一方统治者的头衔。", "en": "In the game, the title of the other empire's ruler appears here."}},
+      "dyson_sphere_neighbor.GetRulerName": {"zh": "统治者本人", "en": "ruler in person", "note": {"zh": "游戏里这里会出现另一方统治者的名字。", "en": "In the game, the name of the other empire's ruler appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the builder are building' grammar in utopia.30 depends on the plural verb of the text"]
+  },
+  "event-utopia-4000": {
+    "placeholders": {
+      "From.From.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, the name of this system appears here."}},
+      "From.GetAdj": {"zh": "对方", "en": "their", "note": {"zh": "游戏里这里会出现另一方的形容词形式。", "en": "In the game, the other empire's adjective form appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {
+      "utopia.2011": {
+        "From.GetName": {"zh": "这个", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, the name of this system appears here."}}
+      }
+    },
+    "issues": ["'[X]星系' with zh '这个星系' may double 星系 in utopia.4002 lines"]
+  },
+  "event-utopia-4100": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {
+      "utopia.2015": {
+        "From.GetName": {"zh": "这个", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, the name of this system appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "event-utopia-50": {
+    "placeholders": {
+      "ointment_name.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这款精华的产地星系名称。", "en": "In the game, the name of the star system where this essence comes from appears here."}},
+      "target_country.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}},
+      "target_country.GetSpeciesNamePlural": {"zh": "同类", "en": "species", "note": {"zh": "游戏里这里会出现那个帝国物种的复数名称。", "en": "In the game, the plural name of the other empire's species appears here."}},
+      "fountain_of_youth_country.GetName": {"zh": "被指控方", "en": "the accused empire", "note": {"zh": "游戏里这里会出现被指控帝国的名字。", "en": "In the game, the name of the accused empire appears here."}},
+      "fountain_of_youth_country.GetSpeciesNamePlural": {"zh": "同类", "en": "species", "note": {"zh": "游戏里这里会出现被指控帝国物种的复数名称。", "en": "In the game, the plural name of the accused empire's species appears here."}},
+      "volunteer_leader.GetName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现这位科学家的名字。", "en": "In the game, the name of this scientist appears here."}},
+      "abducted_leader.GetName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现这位物理学家的名字。", "en": "In the game, the name of this physicist appears here."}},
+      "abducted_leader.GetHerHisCap": {"zh": "其", "en": "their", "note": {"zh": "游戏里这里会出现这位物理学家的所有格形式。", "en": "In the game, the possessive form for this physicist appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["volunteer_leader en 'in person's brain' reads awkwardly", "ointment zh '这个星系星系' may double the noun in some lines"]
+  },
+  "event-utopia-80": {
+    "placeholders": {
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "great-khan": {
+    "placeholders": {
+      "raider_khanate.GetName": {"zh": "汗国", "en": "the khanate", "note": {"zh": "游戏里这里会出现这个汗国的名字。", "en": "In the game, the name of this khanate appears here."}},
+      "From.GetName": {"zh": "那个势力", "en": "the faction", "note": {"zh": "游戏里这里会出现那个势力的名字。", "en": "In the game, the name of that faction appears here."}},
+      "raider_khanate.GetRulerTitle": {"zh": "大可汗", "en": "Great Khan", "note": {"zh": "游戏里这里会出现汗国统治者的头衔。", "en": "In the game, the title of the khanate's ruler appears here."}},
+      "raider_khanate.GetRulerName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现汗国统治者的名字。", "en": "In the game, the name of the khanate's ruler appears here."}},
+      "great_khan.GetName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现大可汗的名字。", "en": "In the game, the name of the Great Khan appears here."}},
+      "khan_destroyer.GetName": {"zh": "那艘舰船", "en": "ship", "note": {"zh": "游戏里这里会出现击毁大可汗旗舰的那艘舰船的名字。", "en": "In the game, the name of the ship that destroyed the Great Khan's flagship appears here."}},
+      "marauder_heir.GetName": {"zh": "各路继承者", "en": "heirs", "note": {"zh": "游戏里这里会出现争夺大可汗之位的继承者们的名称。", "en": "In the game, the name of the rival heirs appears here."}},
+      "marauder_rally_point.GetName": {"zh": "集结点", "en": "rally point", "note": {"zh": "游戏里这里会出现集结地点的名称。", "en": "In the game, the name of the rally point appears here."}},
+      "aspiring_khan.GetSpeciesNameInsult": {"zh": "篡位者", "en": "usurper", "note": {"zh": "游戏里这里会出现对这位野心家的称呼。", "en": "In the game, the term used for this aspiring khan appears here."}},
+      "awakened_horde.GetName": {"zh": "另一支势力", "en": "rival faction", "note": {"zh": "游戏里这里会出现控制那座太空居所的势力的名字。", "en": "In the game, the name of the faction that controlled the void dwelling appears here."}},
+      "new_satrapy.GetName": {"zh": "这个辖地", "en": "satrapy", "note": {"zh": "游戏里这里会出现新归顺辖地的名字。", "en": "In the game, the name of the newly submitted satrapy appears here."}},
+      "capital_star.GetName": {"zh": "这个星系", "en": "this system", "note": {"zh": "游戏里这里会出现这个星系的名字。", "en": "In the game, the name of this system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'the [From.GetSpeciesName] Khanate' lines use 'the species' phrasing that can read as a species title"]
+  },
+  "paragon-renowned-aturion": {},
+  "paragon-renowned-borin": {},
+  "paragon-renowned-gia-zumon": {},
+  "paragon-renowned-jynn": {
+    "placeholders": {
+      "Root.GetName": {"zh": "本人", "en": "the leader", "note": {"zh": "游戏里这里会出现这位领袖的名字。", "en": "In the game, the name of this leader appears here."}},
+      "Root.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的所有格形式。", "en": "In the game, the possessive form for this leader appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "paragon-renowned-kai-sha": {
+    "placeholders": {
+      "Root.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的所有格形式。", "en": "In the game, the possessive form for this leader appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "paragon-renowned-lysator-syng": {
+    "placeholders": {
+      "event_target:renowned_xenophile1.GetName": {"zh": "这位探索者", "en": "the explorer", "note": {"zh": "游戏里这里会出现发现这批宝藏的人物的名字。", "en": "In the game, the name of the character who found this treasure appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "paragon-renowned-nasuz-demetor": {
+    "placeholders": {
+      "Root.GetName": {"zh": "本人", "en": "the leader", "note": {"zh": "游戏里这里会出现这位档案员的名字。", "en": "In the game, the name of this archivist appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["en 'the leader the Archivist' doubles the role; the game's name and title pattern needs a neutral form"]
+  },
+  "paragon-renowned-nona": {
+    "placeholders": {
+      "event_target:renowned_xenophile2.GetName": {"zh": "这位探索者", "en": "the explorer", "note": {"zh": "游戏里这里会出现发现这支船队的人物的名字。", "en": "In the game, the name of the character who found this convoy appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["paragon.40220 zh: '一位这位领袖曾经的伙伴' stacks the leader phrase with a classifier"]
+  },
+  "paragon-renowned-qla-minder": {
+    "placeholders": {
+      "Root.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位行政官的所有格形式。", "en": "In the game, the possessive form for this official appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "paragon-renowned-shuladun": {
+    "placeholders": {
+      "Root.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的所有格形式。", "en": "In the game, the possessive form for this leader appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "paragon-renowned-ulastar": {
+    "placeholders": {
+      "Root.GetName": {"zh": "本人", "en": "the leader", "note": {"zh": "游戏里这里会出现这位神秘人的名字。", "en": "In the game, the name of this mystic appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["en 'the leader the Mystic' doubles the role in paragon.41510"]
+  },
+  "paragon-renowned-uld-dagr": {
+    "placeholders": {
+      "Root.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位大法官的所有格形式。", "en": "In the game, the possessive form for this judge appears here."}},
+      "Root.GetHisHerCap": {"zh": "他们", "en": "Their", "note": {"zh": "游戏里这里会出现这位大法官的所有格形式。", "en": "In the game, the possessive form for this judge appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "paragon-renowned-vas-the-gilded": {
+    "placeholders": {
+      "Root.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的所有格形式。", "en": "In the game, the possessive form for this leader appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "paragon-renowned-vyctor-jariden": {
+    "placeholders": {
+      "Root.GetHisHerCap": {"zh": "他们", "en": "Their", "note": {"zh": "游戏里这里会出现这位男爵的所有格形式。", "en": "In the game, the possessive form for this baron appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "paragon-renowned-xondar": {
+    "placeholders": {
+      "Root.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的所有格形式。", "en": "In the game, the possessive form for this leader appears here."}},
+      "event_target:renowned_materialist1.GetName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现这位舰队司令的名字。", "en": "In the game, the name of this fleet admiral appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["en 'Admiral in person' is a stopgap for the admiral's name"]
+  },
+  "paragon-renowned-zosira-ktun": {
+    "placeholders": {
+      "Root.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的所有格形式。", "en": "In the game, the possessive form for this leader appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "the-shroud": {
+    "placeholders": {
+      "Root.GetSpeciesNamePlural": {"zh": "同类", "en": "species", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "fallen_empire.GetSpeciesNamePlural": {"zh": "同类", "en": "species", "note": {"zh": "游戏里这里会出现失落帝国物种的复数名称。", "en": "In the game, the plural name of the fallen empire's species appears here."}},
+      "GetPsychicNoun": {"zh": "灵能者", "en": "psychic", "note": {"zh": "游戏里这里会出现灵能者这一称呼。", "en": "In the game, the word for a psychic appears here."}},
+      "GetPsychicNounPlural": {"zh": "灵能者们", "en": "psychics", "note": {"zh": "游戏里这里会出现灵能者的复数称呼。", "en": "In the game, the plural word for psychics appears here."}},
+      "GetIndividualPlural": {"zh": "同胞", "en": "people", "note": {"zh": "游戏里这里会出现这群人的称呼。", "en": "In the game, the word for this group of people appears here."}},
+      "From.GetName": {"zh": "那个帝国", "en": "the other empire", "note": {"zh": "游戏里这里会出现那个帝国的名字。", "en": "In the game, the name of the other empire appears here."}},
+      "chosen_one.GetName": {"zh": "祂", "en": "this being", "note": {"zh": "游戏里这里会出现这个永续存在的名字。", "en": "In the game, the name of this immortal being appears here."}},
+      "chosen_one.GetRegnalName": {"zh": "本人", "en": "in person", "note": {"zh": "游戏里这里会出现这位统治者的名字。", "en": "In the game, the name of this ruler appears here."}},
+      "chosen_one.GetRulerTitle": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现这位统治者的头衔。", "en": "In the game, the title of this ruler appears here."}},
+      "leader_1.GetTitle": {"zh": "第一位", "en": "the first", "note": {"zh": "游戏里这里会出现第一位领袖的称谓。", "en": "In the game, the title of the first leader appears here."}},
+      "leader_1.GetName": {"zh": "领袖", "en": "leader", "note": {"zh": "游戏里这里会出现第一位领袖的名字。", "en": "In the game, the name of the first leader appears here."}},
+      "leader_2.GetTitle": {"zh": "第二位", "en": "the second", "note": {"zh": "游戏里这里会出现第二位领袖的称谓。", "en": "In the game, the title of the second leader appears here."}},
+      "leader_2.GetName": {"zh": "领袖", "en": "leader", "note": {"zh": "游戏里这里会出现第二位领袖的名字。", "en": "In the game, the name of the second leader appears here."}},
+      "leader_3.GetTitle": {"zh": "第三位", "en": "the third", "note": {"zh": "游戏里这里会出现第三位领袖的称谓。", "en": "In the game, the title of the third leader appears here."}},
+      "leader_3.GetName": {"zh": "领袖", "en": "leader", "note": {"zh": "游戏里这里会出现第三位领袖的名字。", "en": "In the game, the name of the third leader appears here."}},
+      "leader_4.GetTitle": {"zh": "第四位", "en": "the fourth", "note": {"zh": "游戏里这里会出现第四位领袖的称谓。", "en": "In the game, the title of the fourth leader appears here."}},
+      "leader_4.GetName": {"zh": "领袖", "en": "leader", "note": {"zh": "游戏里这里会出现第四位领袖的名字。", "en": "In the game, the name of the fourth leader appears here."}},
+      "leader_target.GetTitle": {"zh": "这位", "en": "the", "note": {"zh": "游戏里这里会出现这位领袖的称谓。", "en": "In the game, the title of this leader appears here."}},
+      "leader_target.GetName": {"zh": "领袖", "en": "leader", "note": {"zh": "游戏里这里会出现这位领袖的名字。", "en": "In the game, the name of this leader appears here."}},
+      "devoured_leader.GetTitle": {"zh": "这位", "en": "the", "note": {"zh": "游戏里这里会出现这位领袖的称谓。", "en": "In the game, the title of this leader appears here."}},
+      "devoured_leader.GetName": {"zh": "领袖", "en": "leader", "note": {"zh": "游戏里这里会出现这位领袖的名字。", "en": "In the game, the name of this leader appears here."}},
+      "chosen_leader.GetHerHis": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的所有格形式。", "en": "In the game, the possessive form for this leader appears here."}},
+      "lavish_leader.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位领袖的所有格形式。", "en": "In the game, the possessive form for this leader appears here."}},
+      "previous_chosen_leader.GetHisHer": {"zh": "他们", "en": "their", "note": {"zh": "游戏里这里会出现这位前任选定领袖的所有格形式。", "en": "In the game, the possessive form for this former chosen leader appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["chosen_one_species.GetAdj en 'the species' psychic' reads awkwardly in utopia.3401", "leader_1 to leader_4 share the name 'leader' and differ only by title", "'[GetPsychicNoun] of our [GetPsychicNounPlural]' phrasing in utopia.3320 is approximate"]
+  }
+}

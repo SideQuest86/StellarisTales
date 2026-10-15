@@ -31,5 +31,39 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/situation-situation-paperclips.md"
+ },
+ "placeholders": {
+  "Owner.paperclips_current_amount": {
+   "zh": "数量",
+   "en": "the amount",
+   "note": {
+    "zh": "游戏里这里会出现当前库存数量。",
+    "en": "In the game, the current stock amount appears here."
+   }
+  },
+  "Owner.paperclips_once_again": {
+   "zh": "目标",
+   "en": "the target",
+   "note": {
+    "zh": "游戏里这里会出现当前产出目标。",
+    "en": "In the game, the current production target appears here."
+   }
+  },
+  "capital_star.GetName": {
+   "zh": "这颗恒星",
+   "en": "this star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, the name of this star appears here."
+   }
+  },
+  "owner.situation_paperclips_timer": {
+   "zh": "截止日期",
+   "en": "the due date",
+   "note": {
+    "zh": "游戏里这里会出现交付日期。",
+    "en": "In the game, the delivery date appears here."
+   }
+  }
  }
 }

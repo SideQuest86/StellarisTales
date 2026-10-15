@@ -91,5 +91,63 @@
    "The overlord-side origin (origin_imperial_vassal_overlord) is an alias of this origin card in common/governments/civics/00_origins.txt; hidden AI setup 5710 and the opinion modifiers were not traced."
   ],
   "guide": "public/summaries/origin_imperial_vassal.md"
+ },
+ "placeholders": {
+  "Root.Overlord.Capital.GetName": {
+   "zh": "宗主国的首都",
+   "en": "the overlord's capital",
+   "note": {
+    "zh": "游戏里这里会出现宗主国首都的名称。",
+    "en": "In the game, the overlord's capital's name appears here."
+   }
+  },
+  "Root.Overlord.GetName": {
+   "zh": "宗主国",
+   "en": "overlord",
+   "note": {
+    "zh": "游戏里这里会出现宗主国的称呼。",
+    "en": "In the game, the overlord's name appears here."
+   }
+  },
+  "new_subject_target.GetAdj": {
+   "zh": "附庸",
+   "en": "vassal",
+   "note": {
+    "zh": "游戏里这里会出现附庸的称呼。",
+    "en": "In the game, the word for vassal appears here."
+   }
+  },
+  "new_subject_target.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "overlord_heir.GetFirstName": {
+   "zh": "这位继承人",
+   "en": "the heir",
+   "note": {
+    "zh": "游戏里这里会出现这位继承人的名字。",
+    "en": "In the game, this heir's name appears here."
+   }
+  },
+  "overlord_heir.GetName": {
+   "zh": "继承人",
+   "en": "heir",
+   "note": {
+    "zh": "游戏里这里会出现这位继承人的名字。",
+    "en": "In the game, this heir's name appears here."
+   }
+  },
+  "previous_overlord.GetName": {
+   "zh": "前宗主国",
+   "en": "former overlord",
+   "note": {
+    "zh": "游戏里这里会出现前宗主国的名称。",
+    "en": "In the game, the former overlord's name appears here."
+   }
+  }
  }
 }

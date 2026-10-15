@@ -13,5 +13,31 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-fedev-499.md"
+ },
+ "placeholders": {
+  "fed_founder_1.GetName": {
+   "zh": "一方",
+   "en": "first",
+   "note": {
+    "zh": "游戏里这里会出现第一方的名称。",
+    "en": "In the game, the name of the first party appears here."
+   }
+  },
+  "fed_founder_1.GetSpeciesName": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "fed_founder_2.GetName": {
+   "zh": "另一方",
+   "en": "second",
+   "note": {
+    "zh": "游戏里这里会出现第二方的名称。",
+    "en": "In the game, the name of the second party appears here."
+   }
+  }
  }
 }

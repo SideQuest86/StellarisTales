@@ -15,5 +15,23 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-necroids-202.md"
+ },
+ "placeholders": {
+  "mortal_initiate.GetName": {
+   "zh": "献祭者",
+   "en": "initiate",
+   "note": {
+    "zh": "游戏里这里会出现即将献祭的个体的称呼。",
+    "en": "In the game, the name of the individual being sacrificed appears here."
+   }
+  },
+  "mortal_initiate.GetNamePlural": {
+   "zh": "献祭者",
+   "en": "initiates",
+   "note": {
+    "zh": "游戏里这里会出现这一轮献祭者的复数称呼。",
+    "en": "In the game, the plural name of this cycle's initiates appears here."
+   }
+  }
  }
 }

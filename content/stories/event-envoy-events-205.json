@@ -13,5 +13,31 @@
    "common/on_actions/00_on_actions.txt:576-592"
   ],
   "guide": "public/summaries/event-envoy-events-205.md"
+ },
+ "placeholders": {
+  "envoy_country.GetAdj": {
+   "zh": "外国",
+   "en": "foreign",
+   "note": {
+    "zh": "游戏里这里会出现使者所属国家的形容词。",
+    "en": "In the game, the adjective for the envoy's home empire appears here."
+   }
+  },
+  "envoy_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "event_envoy.GetName": {
+   "zh": "这位使者",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现使者的名字。",
+    "en": "In the game, the envoy's name appears here."
+   }
+  }
  }
 }

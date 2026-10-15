@@ -2,13 +2,61 @@
  "id": "event-colony-3001",
  "category": "society",
  "endings": {
-  "colony.3002": {"label": {"zh": "结果：流浪的卫星基地（90%）", "en": "Result: a rogue moonbase (90%)"}, "note": {"zh": "工程研究奖励、暗物质开采科技进度，卫星获得暗物质矿藏。", "en": "Engineering research, Dark Matter mining tech progress and a dark matter deposit on the moon."}, "evidence": "events/colony_events_3.txt:1096-1135; ROGUEMOON_PROJECT on_success random_list 90/10 (00_projects_3.txt:786-801)."},
-  "colony.3003": {"label": {"zh": "结果：次元旅者（10%）", "en": "Result: dimensional travelers (10%)"}, "note": {"zh": "物理研究奖励与跃迁引擎科技进度。", "en": "Physics research and Jump Drive tech progress."}, "evidence": "events/colony_events_3.txt:1137-1173."}
+  "colony.3002": {
+   "label": {
+    "zh": "结果：流浪的卫星基地（90%）",
+    "en": "Result: a rogue moonbase (90%)"
+   },
+   "note": {
+    "zh": "工程研究奖励、暗物质开采科技进度，卫星获得暗物质矿藏。",
+    "en": "Engineering research, Dark Matter mining tech progress and a dark matter deposit on the moon."
+   },
+   "evidence": "events/colony_events_3.txt:1096-1135; ROGUEMOON_PROJECT on_success random_list 90/10 (00_projects_3.txt:786-801)."
+  },
+  "colony.3003": {
+   "label": {
+    "zh": "结果：次元旅者（10%）",
+    "en": "Result: dimensional travelers (10%)"
+   },
+   "note": {
+    "zh": "物理研究奖励与跃迁引擎科技进度。",
+    "en": "Physics research and Jump Drive tech progress."
+   },
+   "evidence": "events/colony_events_3.txt:1137-1173."
+  }
  },
  "review": {
-  "status": "reviewed", "date": "2026-10-12", "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "流浪卫星事件、研究项目与两个随机结果。", "en": "The Rogue Moon event, its project and both random results."},
-  "sources": ["events/colony_events_3.txt:1036-1173", "common/special_projects/00_projects_3.txt:786-801", "common/on_actions/00_on_actions.txt:3765, 3818"],
-  "uncertain": [], "guide": "public/summaries/event-colony-3001.md"
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {
+   "zh": "流浪卫星事件、研究项目与两个随机结果。",
+   "en": "The Rogue Moon event, its project and both random results."
+  },
+  "sources": [
+   "events/colony_events_3.txt:1036-1173",
+   "common/special_projects/00_projects_3.txt:786-801",
+   "common/on_actions/00_on_actions.txt:3765, 3818"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-3001.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "event_target:roguemoon.Planet.GetName": {
+   "zh": "这颗卫星",
+   "en": "this moon",
+   "note": {
+    "zh": "游戏里这里会出现这颗神秘卫星的名称。",
+    "en": "In the game, the name of this moon appears here."
+   }
+  }
  }
 }

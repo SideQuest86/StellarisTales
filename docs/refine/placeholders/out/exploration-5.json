@@ -1,0 +1,391 @@
+{
+  "anomaly-star-resonance-cat": {
+    "placeholders": {
+      "root.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}},
+      "From.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}},
+      "Owner.GetSpeciesNamePlural": {"zh": "我们这些人", "en": "our kind", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The worksheet gives 'the corona of' as the context; a star is assumed for both keys, so check that the planet/star reading in anomaly.6740 is right."]
+  },
+  "anomaly-station-asteroid-category": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗小行星", "en": "this asteroid", "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+    },
+    "placeholderDocs": {
+      "anomaly.40": {
+        "From.GetName": {"zh": "它", "en": "this one", "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+      }
+    },
+    "issues": ["anomaly.40 begins 'asteroid [name]', so 'asteroid this one' is awkward."]
+  },
+  "anomaly-stolen-ship-cat": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗小行星", "en": "this asteroid", "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-anom-polychromatic": {
+    "placeholders": {
+      "from.solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-anom-travellers": {
+    "placeholders": {
+      "from.solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-anom-triplets": {
+    "placeholders": {
+      "from.solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-cosmic-sludge": {
+    "placeholders": {
+      "from.solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-displaced-tiyanki": {
+    "placeholders": {
+      "solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "this.solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-eviscerated-fauna": {
+    "placeholders": {
+      "from.solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-gasgiant-category": {
+    "placeholders": {
+      "FromFrom.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "FromFromFrom.GetName": {"zh": "这场风暴", "en": "the storm", "note": {"zh": "游戏里这里会出现这场风暴的名称。", "en": "In the game, this storm's name appears here."}},
+      "trapped_in_storm.GetName": {"zh": "被困舰船", "en": "the trapped ship", "note": {"zh": "游戏里这里会出现被困舰船的名称。", "en": "In the game, the name of the trapped ship appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-storms-shattered-sattelite": {
+    "placeholders": {
+      "from.solar_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-strange-signal-category": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.Owner.GetSpeciesNamePlural": {"zh": "我们这些人", "en": "our kind", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "Root.Owner.Leader.GetTitle": {"zh": "我们的", "en": "our", "note": {"zh": "游戏里这里会出现你的统治者的称呼前缀。", "en": "In the game, the prefix of your ruler's title appears here."}},
+      "Root.Owner.Leader.GetName": {"zh": "统治者", "en": "ruler", "note": {"zh": "游戏里这里会出现你的统治者的称号。", "en": "In the game, your ruler's title appears here."}},
+      "shakespeare.GetName": {"zh": "这位剧作家", "en": "the playwright", "note": {"zh": "游戏里这里会出现这位剧作家的名字。", "en": "In the game, this playwright's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Root.Owner.Leader' title and name are split into two keys so that 'our ruler' reads correctly in both languages."]
+  },
+  "anomaly-subglacial-vibrations-cat": {
+    "placeholders": {
+      "from.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-sun-rays-cat": {
+    "placeholders": {
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Science Officer' precedes the leader placeholder in anomaly.4040."]
+  },
+  "anomaly-sun-teapot-cat": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗恒星", "en": "this star", "note": {"zh": "游戏里这里会出现这颗恒星的名称。", "en": "In the game, this star's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["anomaly.4060 reads 'circling the star this star'.", "'We [species plural]' in anomaly.4062 keeps the current phrase because no phrase fits 'what we ... know'."]
+  },
+  "anomaly-supermassive-giant-cat": {
+    "placeholders": {
+      "from.GetName": {"zh": "这颗气态巨行星", "en": "this gas giant", "note": {"zh": "游戏里这里会出现这颗气态巨行星的名称。", "en": "In the game, this gas giant's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-survival-pod-warm-cat": {
+    "placeholders": {
+      "from.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "from.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "scru_species.GetClass": {"zh": "身影", "en": "figure", "note": {"zh": "游戏里这里会出现这位幸存者的称呼。", "en": "In the game, the word for this survivor appears here."}},
+      "scru_species.GetMouthName": {"zh": "嘴", "en": "mouth", "note": {"zh": "游戏里这里会出现这位幸存者的嘴部称呼。", "en": "In the game, this survivor's mouth appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-tectonic-icebreaker-category": {},
+  "anomaly-temporal-prism-cat": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-terminal-gasgiant-category": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗气态巨行星", "en": "this gas giant", "note": {"zh": "游戏里这里会出现这颗气态巨行星的名称。", "en": "In the game, this gas giant's name appears here."}},
+      "CollisionLocation.GetName": {"zh": "这颗气态巨行星", "en": "this gas giant", "note": {"zh": "游戏里这里会出现这颗气态巨行星的名称。", "en": "In the game, this gas giant's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-terrestial-telescope-category": {},
+  "anomaly-the-imitator-category": {},
+  "anomaly-the-judge-cat": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗小行星", "en": "this asteroid", "note": {"zh": "游戏里这里会出现这颗小行星的名称。", "en": "In the game, this asteroid's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Our scientist' in anomaly.9002 is followed by the placeholder; reads 'our scientist, the officer'."]
+  },
+  "anomaly-the-lonely-bot-category": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-time-loop-world": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-tomb-world-cat": {
+    "placeholders": {
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "From.From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "science_leader.GetName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Science Officer' precedes the leader placeholders in anomaly.2005-level text."]
+  },
+  "anomaly-tox-mat-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的科学船", "en": "our science ship", "note": {"zh": "游戏里这里会出现你的科学船的舰名。", "en": "In the game, your science ship's name appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}}
+    },
+    "placeholderDocs": {
+      "anomalies:TOX_MAT_CAT": {
+        "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "anomaly-tox-planet-cat": {
+    "placeholders": {},
+    "placeholderDocs": {},
+    "issues": ["anomaly.4105 begins 'The planet [name]', so the current 'this planet' reads 'The planet this planet'."]
+  },
+  "anomaly-tox-purple-rain-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-tox-structures-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}},
+      "Root.Owner.GetSpeciesNamePlural": {"zh": "我们这些人", "en": "our kind", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-transmitter-cat": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-trop-biology-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-trop-conditions-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-trop-pets-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的科学船", "en": "our science ship", "note": {"zh": "游戏里这里会出现你的科学船的舰名。", "en": "In the game, your science ship's name appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}},
+      "Root.Owner.GetSpeciesSpawnNamePlural": {"zh": "幼体", "en": "spawn", "note": {"zh": "游戏里这里会出现你的物种幼体的复数名称。", "en": "In the game, the plural name of your species' spawn appears here."}}
+    },
+    "placeholderDocs": {
+      "anomalies:TROP_PETS_CAT": {
+        "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "anomaly-trop-woods-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的科学船", "en": "our science ship", "note": {"zh": "游戏里这里会出现你的科学船的舰名。", "en": "In the game, your science ship's name appears here."}},
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}}
+    },
+    "placeholderDocs": {
+      "anomalies:TROP_WOODS_CAT": {
+        "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "issues": []
+  },
+  "anomaly-tutorial-cat": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-uhb-ancient-ruins-1-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-uhb-buoy-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的帝国", "en": "our empire", "note": {"zh": "游戏里这里会出现你的帝国名称。", "en": "In the game, your empire's name appears here."}},
+      "Root.Owner.GetSpeciesAdj": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.GetSpeciesAdj": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.GetRulerTitle": {"zh": "我们的统治者", "en": "our ruler", "note": {"zh": "游戏里这里会出现你的统治者的称号。", "en": "In the game, your ruler's title appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-unique-system-battle-cat": {},
+  "anomaly-vapor-plumes-cat": {
+    "placeholders": {
+      "from.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-vending-machine-cat": {
+    "placeholders": {
+      "From.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-wat-planet-cat": {
+    "placeholders": {
+      "Root.GetName": {"zh": "我们的科学船", "en": "our science ship", "note": {"zh": "游戏里这里会出现你的科学船的舰名。", "en": "In the game, your science ship's name appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "From.From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}}
+    },
+    "placeholderDocs": {
+      "anomalies:WAT_PLANET_CAT": {
+        "Root.GetName": {"zh": "这颗星球", "en": "this planet", "note": {"zh": "游戏里这里会出现这颗星球的名称。", "en": "In the game, this planet's name appears here."}}
+      }
+    },
+    "issues": ["'Science Officer' precedes the leader placeholder in several sentences."]
+  },
+  "anomaly-wenkwort-cat": {
+    "placeholders": {
+      "event_target:wenkwort_rellrait.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗邻近星球的名称。", "en": "In the game, the name of that nearby planet appears here."}},
+      "from.System.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "anomaly-writing-uninhabitable-category": {},
+  "dessanu-consonance": {
+    "placeholders": {
+      "candidate_gateway_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "lcluster_factory_system.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "Root.GetSpeciesNamePlural": {"zh": "你们这些人", "en": "your people", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "Root.Owner.GetSpeciesNamePlural": {"zh": "你们这些人", "en": "your people", "note": {"zh": "游戏里这里会出现你的物种复数名称。", "en": "In the game, your species' plural name appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}},
+      "goo_slayer.GetName": {"zh": "这支舰队", "en": "the fleet", "note": {"zh": "游戏里这里会出现这支舰队的名称。", "en": "In the game, this fleet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["The Dessanu lines address the player's species directly; 'your people' is used for the addressed species."]
+  },
+  "event-anomaly-1193": {
+    "placeholders": {
+      "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  },
+  "event-anomaly-142": {
+    "placeholders": {
+      "Root.Owner.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}},
+      "Root.Owner.GetSpeciesName": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.GetSpeciesAdj": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.GetLeaderName": {"zh": "这位", "en": "the officer", "note": {"zh": "游戏里这里会出现科学官的名字。", "en": "In the game, the science officer's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["'Science Officer' precedes the leader placeholder in anomaly.167."]
+  },
+  "event-anomaly-2574": {},
+  "event-anomaly-3095": {
+    "placeholders": {
+      "Root.GetSpeciesAdj": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}},
+      "Root.GetRulerTitle": {"zh": "我们的统治者", "en": "our ruler", "note": {"zh": "游戏里这里会出现你的统治者的称号。", "en": "In the game, your ruler's title appears here."}},
+      "Root.Capital.GetName": {"zh": "我们的首都", "en": "our capital", "note": {"zh": "游戏里这里会出现你的首都的名称。", "en": "In the game, your capital's name appears here."}},
+      "From.From.GetName": {"zh": "那颗星球", "en": "that planet", "note": {"zh": "游戏里这里会出现那颗星球的名称。", "en": "In the game, that planet's name appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": ["anomaly.3105 reads 'our empire's our ruler' because the empire and ruler placeholders both appear in one sentence."]
+  },
+  "event-anomaly-3115": {
+    "placeholders": {
+      "From.GetName": {"zh": "这个", "en": "star", "note": {"zh": "游戏里这里会出现那个恒星系的名称。", "en": "In the game, the name of that star system appears here."}},
+      "Root.GetSpeciesAdj": {"zh": "本族", "en": "native", "note": {"zh": "游戏里这里会出现你的物种的形容词。", "en": "In the game, your species' adjective appears here."}}
+    },
+    "placeholderDocs": {},
+    "issues": []
+  }
+}

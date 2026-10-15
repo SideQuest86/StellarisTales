@@ -140,5 +140,31 @@
    "The two wordings of the colony-destruction tooltip differ for machine-only colonies; the script adds no other restriction."
   ],
   "guide": "public/summaries/site-rubricator-digsite.md"
+ },
+ "placeholders": {
+  "Owner.GetNecromancersLower": {
+   "zh": "死灵术士",
+   "en": "necromancers",
+   "note": {
+    "zh": "游戏里这里会出现你的死灵术士的称呼。",
+    "en": "In the game, your necromancers appear here."
+   }
+  },
+  "Owner.GetNecromancersUpper": {
+   "zh": "死灵术士",
+   "en": "necromancers",
+   "note": {
+    "zh": "游戏里这里会出现你的死灵术士的称呼。",
+    "en": "In the game, your necromancers appear here."
+   }
+  },
+  "Root.GetSpeciesOrganNamePlural": {
+   "zh": "身体",
+   "en": "bodies",
+   "note": {
+    "zh": "游戏里这里会出现你的身体的称呼。",
+    "en": "In the game, your bodies appear here."
+   }
+  }
  }
 }

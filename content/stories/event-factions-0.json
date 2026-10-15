@@ -15,5 +15,23 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-factions-0.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "派系",
+   "en": "faction",
+   "note": {
+    "zh": "游戏里这里会出现这个派系的名称。",
+    "en": "In the game, the name of this faction appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesAdj": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  }
  }
 }

@@ -14,5 +14,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-fallen-empires-tasks-1.md"
+ },
+ "placeholders": {
+  "FallenEmpireTaskOrigin.GetName": {
+   "zh": "堕落帝国",
+   "en": "the fallen empire",
+   "note": {
+    "zh": "游戏里这里会出现发来通讯的堕落帝国名称。",
+    "en": "In the game, the name of the fallen empire sending this message appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "你们",
+   "en": "you",
+   "note": {
+    "zh": "游戏里这里会出现你们物种的名称。",
+    "en": "In the game, the name of your species appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "你们的种群",
+   "en": "your kind",
+   "note": {
+    "zh": "游戏里这里会出现你们物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  }
  }
 }

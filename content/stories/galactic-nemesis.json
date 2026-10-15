@@ -461,5 +461,167 @@
    "Engine stage build times are the megastructure base (3600 days per stage); modifiers were not modelled."
   ],
   "guide": "public/summaries/galactic-nemesis.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "that empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of that empire appears here."
+   }
+  },
+  "From.GetSpeciesNamePlural": {
+   "zh": "对方",
+   "en": "the other people",
+   "note": {
+    "zh": "游戏里这里会出现对方物种的复数名称。",
+    "en": "In the game, the other species' plural name appears here."
+   }
+  },
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都的名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.GetSpeciesAdj": {
+   "zh": "本族",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "本族",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "这些人",
+   "en": "our kind",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, your species' plural name appears here."
+   }
+  },
+  "Root.Species.GetName": {
+   "zh": "我们的物种",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "crisis_country.GetName": {
+   "zh": "另一个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "crisis_country.GetSpeciesName": {
+   "zh": "另一族",
+   "en": "other species",
+   "note": {
+    "zh": "游戏里这里会出现另一个物种的名称。",
+    "en": "In the game, the name of the other species appears here."
+   }
+  },
+  "crisis_sphere_system.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现那个恒星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "custodian.GetName": {
+   "zh": "它",
+   "en": "the custodian",
+   "note": {
+    "zh": "游戏里这里会出现星海监管人的名称。",
+    "en": "In the game, the name of the Galactic Custodian appears here."
+   }
+  },
+  "destroyed_system.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现那个恒星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "former_crisis.GetName": {
+   "zh": "这一势力",
+   "en": "this faction",
+   "note": {
+    "zh": "游戏里这里会出现这一势力的名称。",
+    "en": "In the game, the name of this faction appears here."
+   }
+  },
+  "former_crisis.GetSpeciesNamePlural": {
+   "zh": "前敌人",
+   "en": "the former foes",
+   "note": {
+    "zh": "游戏里这里会出现前敌人的复数名称。",
+    "en": "In the game, the plural name of the former foes appears here."
+   }
+  },
+  "gal_emperor.Capital.GetName": {
+   "zh": "对方首都",
+   "en": "their capital",
+   "note": {
+    "zh": "游戏里这里会出现对方首都的名称。",
+    "en": "In the game, the name of their capital appears here."
+   }
+  },
+  "gal_emperor.GetRulerTitle": {
+   "zh": "皇帝",
+   "en": "emperor",
+   "note": {
+    "zh": "游戏里这里会出现星海皇帝的称号。",
+    "en": "In the game, the title of the galactic emperor appears here."
+   }
+  },
+  "new_crisis.GetName": {
+   "zh": "敌人",
+   "en": "the foe",
+   "note": {
+    "zh": "游戏里这里会出现这个敌人的名称。",
+    "en": "In the game, the name of this foe appears here."
+   }
+  },
+  "new_crisis.GetSpeciesName": {
+   "zh": "敌人",
+   "en": "foe",
+   "note": {
+    "zh": "游戏里这里会出现这个敌人的物种名称。",
+    "en": "In the game, the species name of this foe appears here."
+   }
+  },
+  "sphere_builders.GetName": {
+   "zh": "建造者",
+   "en": "builders",
+   "note": {
+    "zh": "游戏里这里会出现这些建造者的名称。",
+    "en": "In the game, the name of these builders appears here."
+   }
+  },
+  "sphere_destroyers.GetName": {
+   "zh": "毁灭者",
+   "en": "destroyers",
+   "note": {
+    "zh": "游戏里这里会出现毁灭者的名称。",
+    "en": "In the game, the name of these destroyers appears here."
+   }
+  }
  }
 }

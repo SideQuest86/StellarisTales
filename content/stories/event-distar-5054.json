@@ -166,5 +166,47 @@
    "The text of the four dialogue options in distar.5064/5072 was not read line by line; only the options and the project/abort effects were checked."
   ],
   "guide": "public/summaries/event-distar-5054.md"
+ },
+ "placeholders": {
+  "From.GetSpeciesName": {
+   "zh": "那个物种",
+   "en": "the other species",
+   "note": {
+    "zh": "游戏里这里会出现入侵者的物种名称。",
+    "en": "In the game, the name of the invading species appears here."
+   }
+  },
+  "FromFromFrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名字。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现你的星球的名字。",
+    "en": "In the game, the name of your planet appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "我们人民",
+   "en": "our people",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "cache_killers.GetSpeciesName": {
+   "zh": "那个物种",
+   "en": "the other species",
+   "note": {
+    "zh": "游戏里这里会出现袭击者的物种名称。",
+    "en": "In the game, the name of the attacking species appears here."
+   }
+  }
  }
 }

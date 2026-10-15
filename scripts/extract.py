@@ -353,6 +353,20 @@ def import_game(game):
         for t in r['titles']+r['descriptions']+[o['label'] for o in r['options']]+[x for o in r['options'] for x in o.get('responses',[])]:
             for lang in ('zh','en'):
                 tokens.update(m.strip("'") for m in re.findall(r"\[('?concept_[^\]\[|]+'?)\]",t.get(lang,'') or ''))
+    # $KEY$ references inside those texts and inside the included strings (the game expands them from its own
+    # localisation; the story compiler does the same), followed transitively.
+    ref=re.compile(r'\$([A-Za-z_][\w.]*)\$')
+    texts=[t.get(lang,'') or '' for r in records for t in r['titles']+r['descriptions']+[o['label'] for o in r['options']]+[x for o in r['options'] for x in o.get('responses',[])+o.get('tooltips',[])] for lang in ('zh','en')]
+    found={m for s in texts for m in ref.findall(s)}
+    for _ in range(4):
+        new={k for k in found if k not in tokens and (k in loc['en'] or k in loc['zh'])}
+        if not new:break
+        tokens|=new
+        found={m for k in new for lang in loc for m in ref.findall(loc[lang].get(k,'') or '')}
+    for _ in range(4):
+        new={m for k in tokens for lang in loc for m in ref.findall(loc[lang].get(k,'') or '') if (m in loc['en'] or m in loc['zh']) and m not in tokens}
+        if not new:break
+        tokens|=new
     dump(ROOT/'public/data/script-loc.json',{k:{lang:re.sub(r'§.','',loc[lang].get(k,'')) for lang in loc} for k in sorted(tokens) if k in loc['en'] or k in loc['zh']})
     def category(r):
         s=(r['source']+' '+r['id']).lower()

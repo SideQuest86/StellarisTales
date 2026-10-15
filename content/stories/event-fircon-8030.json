@@ -14,5 +14,23 @@
    "events/on_action_events_2.txt"
   ],
   "guide": "public/summaries/event-fircon-8030.md"
+ },
+ "placeholders": {
+  "sweet_country.GetName": {
+   "zh": "当地",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这个帝国的形容词。",
+    "en": "In the game, the adjective for this empire appears here."
+   }
+  },
+  "sweet_species.GetName": {
+   "zh": "当地人",
+   "en": "natives",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的复数名称。",
+    "en": "In the game, the plural name of this species appears here."
+   }
+  }
  }
 }

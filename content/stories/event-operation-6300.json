@@ -35,5 +35,31 @@
    "events/nemesis_operations_events_2.txt"
   ],
   "guide": "public/summaries/event-operation-6300.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "帝国",
+   "en": "the Imperium",
+   "note": {
+    "zh": "游戏里这里会出现执行引渡的帝国名称。",
+    "en": "In the game, the name of the empire that carried out the extradition appears here."
+   }
+  },
+  "target.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现目标帝国的名称。",
+    "en": "In the game, the name of the target empire appears here."
+   }
+  },
+  "target_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现该帝国的名称。",
+    "en": "In the game, the name of that empire appears here."
+   }
+  }
  }
 }

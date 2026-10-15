@@ -106,5 +106,51 @@
    "zh": "倒计时链：61 →（约3150±900天）65 → 70 → 75 → 76；其中70的选项c可解锁方舟登船（旗标 doomsday_embark_unlocked）。76 对只有一颗星球的AI帝国有80%概率触发“登船完成”（nomads.4710，origin_events_1.txt:2405-2425）；玩家则通过游牧决定“登船”（common/decisions/15_nomads_dlc_decisions.txt:261）进入4710。无论如何，260±80天后触发80“终结”。",
    "en": "The countdown: 61 -> (3150+-900 days each) 65 -> 70 -> 75 -> 76. Option c of 70 can unlock embarkation (flag doomsday_embark_unlocked). for an AI empire with a single planet 76 has an 80% chance to fire Embarkation Complete (nomads.4710); players reach 4710 through the Nomads embarkation decision (common/decisions/15_nomads_dlc_decisions.txt:261). In any case 76 fires 80 The End after 260+-80 days (events/origin_events_1.txt:2183-2430)."
   }
- ]
+ ],
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "doomsday_owner.GetName": {
+   "zh": "那个帝国",
+   "en": "that empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, that empire's name appears here."
+   }
+  },
+  "event_target:player_country.GetName": {
+   "zh": "我们的帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "nomads.4710": {
+   "from.GetName": {
+    "zh": "那个附庸",
+    "en": "the new subject",
+    "note": {
+     "zh": "游戏里这里会出现新附庸的名称。",
+     "en": "In the game, the new subject's name appears here."
+    }
+   }
+  }
+ }
 }

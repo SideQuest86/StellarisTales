@@ -15,5 +15,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-observation-2014.md"
+ },
+ "placeholders": {
+  "pre_ftl_country.GetName": {
+   "zh": "这个前FTL文明",
+   "en": "the pre-FTL civilisation",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL文明的名称。",
+    "en": "In the game, the name of the pre-FTL civilisation appears here."
+   }
+  },
+  "pre_ftl_country.TechProgressPercentage": {
+   "zh": "这一数值",
+   "en": "this value",
+   "note": {
+    "zh": "游戏里这里会出现具体的百分比数值。",
+    "en": "In the game, the exact percentage appears here."
+   }
+  },
+  "pre_ftl_planet.Owner.GetSpeciesNamePlural": {
+   "zh": "土著",
+   "en": "natives",
+   "note": {
+    "zh": "游戏里这里会出现当地原住民的物种名称。",
+    "en": "In the game, the name of the local species appears here."
+   }
+  }
  }
 }

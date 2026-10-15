@@ -112,5 +112,43 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-utopia-4000.md"
+ },
+ "placeholders": {
+  "From.From.GetName": {
+   "zh": "这个星系",
+   "en": "this system",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名字。",
+    "en": "In the game, the name of this system appears here."
+   }
+  },
+  "From.GetAdj": {
+   "zh": "对方",
+   "en": "their",
+   "note": {
+    "zh": "游戏里这里会出现另一方的形容词形式。",
+    "en": "In the game, the other empire's adjective form appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名字。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "utopia.2011": {
+   "From.GetName": {
+    "zh": "这个",
+    "en": "this system",
+    "note": {
+     "zh": "游戏里这里会出现这个星系的名字。",
+     "en": "In the game, the name of this system appears here."
+    }
+   }
+  }
  }
 }

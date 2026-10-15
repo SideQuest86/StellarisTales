@@ -441,5 +441,105 @@
    "zh": "“自由的代价”：每个玩家的中期脉冲（on_mid_game_pulse → 隐藏5045）；两条路线——放任（5200起）或特别委员会项目（5205起）。",
    "en": "The Cost of Freedom: mid-game pulse (hidden 5045 -> every playable Broken Shackles country); two routes: let it run (5200 onward) or the special committee project (5205 onward) (events/origin_events_broken_shackles.txt:2175-2245)."
   }
- ]
+ ],
+ "placeholders": {
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.owner.capital_scope.GetName": {
+   "zh": "那颗星球",
+   "en": "that world",
+   "note": {
+    "zh": "游戏里这里会出现奴隶主所在星球的名称。",
+    "en": "In the game, the slavers' world name appears here."
+   }
+  },
+  "This.ContactCountry.GetRealName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现接触到的帝国的名称。",
+    "en": "In the game, the name of the empire we contacted appears here."
+   }
+  },
+  "clerk.GetIcon": {
+   "zh": "新增",
+   "en": "new",
+   "note": {
+    "zh": "游戏里这里会出现这类岗位的图标。",
+    "en": "In the game, this job type's icon appears here."
+   }
+  },
+  "clerk.GetNamePlural": {
+   "zh": "文员",
+   "en": "clerk",
+   "note": {
+    "zh": "游戏里这里会出现岗位名称的复数形式。",
+    "en": "In the game, the plural job name appears here."
+   }
+  },
+  "engineering_shackled_species.GetAdj": {
+   "zh": "熟练的",
+   "en": "skilled",
+   "note": {
+    "zh": "游戏里这里会出现被奴役物种的形容词。",
+    "en": "In the game, the captive species' adjective appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "origin.5140": {
+   "From.GetName": {
+    "zh": "那个帝国",
+    "en": "the other empire",
+    "note": {
+     "zh": "游戏里这里会出现那个帝国的名称。",
+     "en": "In the game, that empire's name appears here."
+    }
+   }
+  },
+  "origin.5145": {
+   "From.GetName": {
+    "zh": "那个帝国",
+    "en": "the other empire",
+    "note": {
+     "zh": "游戏里这里会出现那个帝国的名称。",
+     "en": "In the game, that empire's name appears here."
+    }
+   }
+  },
+  "origin.5205": {
+   "Root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire",
+    "note": {
+     "zh": "游戏里这里会出现你的帝国名称。",
+     "en": "In the game, your empire's name appears here."
+    }
+   }
+  },
+  "origin.5510": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, this planet's name appears here."
+    }
+   }
+  }
+ }
 }

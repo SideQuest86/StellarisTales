@@ -2,14 +2,63 @@
  "id": "event-colony-mod-30",
  "category": "society",
  "endings": {
-  "colony_mod.32": {"label": {"zh": "报告：损失", "en": "Report: damage"}, "note": {"zh": "+12荒废度，随机一处矿藏被活火山阻挡。", "en": "+12 devastation and an active-volcano blocker on a random deposit."}, "evidence": "events/colony_events_3.txt:10514-10518, 10523-10549."},
-  "colony_mod.33": {"label": {"zh": "报告：奇迹般的收获", "en": "Report: a remarkable windfall"}, "note": {"zh": "获得稀有晶体。", "en": "Grants rare crystals."}, "evidence": "events/colony_events_3.txt:10551-10569."},
-  "colony_mod.34": {"label": {"zh": "报告：无损失", "en": "Report: no damage"}, "note": {"zh": "无效果。", "en": "No effect."}, "evidence": "events/colony_events_3.txt:10571-10585."}
+  "colony_mod.32": {
+   "label": {
+    "zh": "报告：损失",
+    "en": "Report: damage"
+   },
+   "note": {
+    "zh": "+12荒废度，随机一处矿藏被活火山阻挡。",
+    "en": "+12 devastation and an active-volcano blocker on a random deposit."
+   },
+   "evidence": "events/colony_events_3.txt:10514-10518, 10523-10549."
+  },
+  "colony_mod.33": {
+   "label": {
+    "zh": "报告：奇迹般的收获",
+    "en": "Report: a remarkable windfall"
+   },
+   "note": {
+    "zh": "获得稀有晶体。",
+    "en": "Grants rare crystals."
+   },
+   "evidence": "events/colony_events_3.txt:10551-10569."
+  },
+  "colony_mod.34": {
+   "label": {
+    "zh": "报告：无损失",
+    "en": "Report: no damage"
+   },
+   "note": {
+    "zh": "无效果。",
+    "en": "No effect."
+   },
+   "evidence": "events/colony_events_3.txt:10571-10585."
+  }
  },
  "review": {
-  "status": "reviewed", "date": "2026-10-12", "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "黑曜岩湖星球的火山喷发事件与三份随机报告（隐藏入口 colony_mod.30）。", "en": "The Obsidian Lakes eruption event and its three random reports (hidden entry colony_mod.30)."},
-  "sources": ["events/colony_events_3.txt:10460-10585", "common/on_actions/00_on_actions.txt:3722"],
-  "uncertain": [], "guide": "public/summaries/event-colony-mod-30.md"
+  "status": "reviewed",
+  "date": "2026-10-12",
+  "reviewer": "c7b-society (Opus 5.5)",
+  "scope": {
+   "zh": "黑曜岩湖星球的火山喷发事件与三份随机报告（隐藏入口 colony_mod.30）。",
+   "en": "The Obsidian Lakes eruption event and its three random reports (hidden entry colony_mod.30)."
+  },
+  "sources": [
+   "events/colony_events_3.txt:10460-10585",
+   "common/on_actions/00_on_actions.txt:3722"
+  ],
+  "uncertain": [],
+  "guide": "public/summaries/event-colony-mod-30.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

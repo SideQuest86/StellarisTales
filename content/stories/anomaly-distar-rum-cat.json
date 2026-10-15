@@ -48,5 +48,63 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/anomaly-distar-rum-cat.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "我们的科学船",
+   "en": "our science ship",
+   "note": {
+    "zh": "游戏里这里会出现你的科学船的舰名。",
+    "en": "In the game, your science ship's name appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "我们的物种",
+   "en": "our species",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "我们的物种",
+   "en": "our species",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的复数名称。",
+    "en": "In the game, the plural name of your species appears here."
+   }
+  },
+  "Root.Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你首都所在星球的名称。",
+    "en": "In the game, the name of your capital's planet appears here."
+   }
+  },
+  "rum_nation.Capital.GetName": {
+   "zh": "那个帝国的首都",
+   "en": "their capital",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国首都的名称。",
+    "en": "In the game, the name of that empire's capital appears here."
+   }
+  },
+  "rum_nation.GetSpeciesNamePlural": {
+   "zh": "那些物种",
+   "en": "the other species",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国物种的复数名称。",
+    "en": "In the game, the plural name of that empire's species appears here."
+   }
+  }
  }
 }

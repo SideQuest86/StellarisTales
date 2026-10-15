@@ -74,5 +74,71 @@
    "The hidden utility events (wilderness.5/10/100/150/300/310/500) convert planets and districts and have no windows; only their purpose was read."
   ],
   "guide": "public/summaries/origin_wilderness.md"
+ },
+ "placeholders": {
+  "GetRootsBlockerName": {
+   "zh": "腹地",
+   "en": "hinterland",
+   "note": {
+    "zh": "游戏里这里会出现这片腹地的名称。",
+    "en": "In the game, the name of this hinterland appears here."
+   }
+  },
+  "from.GetClassAdj": {
+   "zh": "新",
+   "en": "new",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的形容词。",
+    "en": "In the game, this planet's adjective appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "root.GetHomeWorldName": {
+   "zh": "我们的母星",
+   "en": "our homeworld",
+   "note": {
+    "zh": "游戏里这里会出现你们母星的名称。",
+    "en": "In the game, your homeworld's name appears here."
+   }
+  },
+  "root.capital_scope.GetClassAdj": {
+   "zh": "旧",
+   "en": "old",
+   "note": {
+    "zh": "游戏里这里会出现旧星球的形容词。",
+    "en": "In the game, the old planet's adjective appears here."
+   }
+  },
+  "roots_planet.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, that planet's name appears here."
+   }
+  },
+  "target.GetAdj": {
+   "zh": "目标",
+   "en": "target",
+   "note": {
+    "zh": "游戏里这里会出现目标空间的形容词。",
+    "en": "In the game, the target space's adjective appears here."
+   }
+  },
+  "target.GetSpeciesAdj": {
+   "zh": "目标",
+   "en": "target",
+   "note": {
+    "zh": "游戏里这里会出现目标族群的形容词。",
+    "en": "In the game, the target species' adjective appears here."
+   }
+  }
  }
 }

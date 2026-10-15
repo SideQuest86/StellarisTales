@@ -16,5 +16,23 @@
    "是否有引擎启用未验证；很可能是遗留内容。 / Engine-side enabling not verified; probably legacy."
   ],
   "guide": "public/summaries/project-robot-cleaners-project.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这艘舰船",
+   "en": "this ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘舰船的名字。",
+    "en": "In the game, this ship's name appears here."
+   }
+  },
+  "Root.GetLeaderName": {
+   "zh": "这位科学家",
+   "en": "the scientist",
+   "note": {
+    "zh": "游戏里这里会出现你的科学专员的名字。",
+    "en": "In the game, your science officer's name appears here."
+   }
+  }
  }
 }

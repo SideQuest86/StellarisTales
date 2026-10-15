@@ -65,5 +65,31 @@
    "The fleet order initiate_cosmic_storm_order appears in the script files only inside the situation definition (the order itself is engine-side), so the exact start cannot be verified in the files."
   ],
   "guide": "public/summaries/situation-situation-initiate-storm.md"
+ },
+ "placeholders": {
+  "storm_researcher.GetName": {
+   "zh": "首席研究员",
+   "en": "the lead researcher",
+   "note": {
+    "zh": "游戏里这里会出现首席研究员的名称。",
+    "en": "In the game, the name of the lead researcher appears here."
+   }
+  },
+  "target.GetName": {
+   "zh": "这颗恒星",
+   "en": "this star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的名称。",
+    "en": "In the game, the name of this star appears here."
+   }
+  },
+  "target.solar_system.GetName": {
+   "zh": "这个",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现附近恒星系的名称。",
+    "en": "In the game, the name of the nearby star system appears here."
+   }
+  }
  }
 }

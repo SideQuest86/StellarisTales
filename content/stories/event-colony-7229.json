@@ -2,22 +2,97 @@
  "id": "event-colony-7229",
  "category": "society",
  "endings": {
-  "colony.7265": {"label": {"zh": "结局：冰川期终结，变为海洋星球", "en": "Ending: the ice age ends; an ocean world"}, "note": {"zh": "星球类型变为海洋，获得海床矿藏；水生主要物种另得凝聚力。", "en": "The planet becomes an ocean world with a mineral seabed deposit; aquatic main species also gain unity."}, "evidence": "events/colony_events_3.txt:10150-10190 change_pc = pc_ocean."},
-  "colony.7260": {"label": {"zh": "结局：气候稳定", "en": "Ending: the climate is stabilized"}, "note": {"zh": "仅环保主义公民性可走的紧急状态路线，项目完成后移除融化与紧急修正。", "en": "The Environmentalist-only emergency route; the project removes the melting and emergency modifiers."}, "evidence": "events/colony_events_3.txt:9970-9992 (7240.b requires civic_environmentalist), 10118-10148; 00_projects_3.txt:1913-1935."},
-  "colony.7250": {"label": {"zh": "结局：解冻的病原体", "en": "Ending: an unfrozen pathogen"}, "note": {"zh": "钻探后的60%结果（仅非机械帝国）：消毒（一人死亡）或隔离（720天远古瘟疫修正）。", "en": "The 60% drilling result (non-machine empires only): sanitize (one pop dies) or quarantine (ancient plague for 720 days)."}, "evidence": "events/colony_events_3.txt:10043-10046, 10065-10099."},
-  "colony.7255": {"label": {"zh": "结局：极地财富", "en": "Ending: polar riches"}, "note": {"zh": "钻探后的40%结果：获得晶体冰川矿藏。", "en": "The 40% drilling result: a crystalline glacier deposit."}, "evidence": "events/colony_events_3.txt:10043-10046, 10101-10116."}
+  "colony.7265": {
+   "label": {
+    "zh": "结局：冰川期终结，变为海洋星球",
+    "en": "Ending: the ice age ends; an ocean world"
+   },
+   "note": {
+    "zh": "星球类型变为海洋，获得海床矿藏；水生主要物种另得凝聚力。",
+    "en": "The planet becomes an ocean world with a mineral seabed deposit; aquatic main species also gain unity."
+   },
+   "evidence": "events/colony_events_3.txt:10150-10190 change_pc = pc_ocean."
+  },
+  "colony.7260": {
+   "label": {
+    "zh": "结局：气候稳定",
+    "en": "Ending: the climate is stabilized"
+   },
+   "note": {
+    "zh": "仅环保主义公民性可走的紧急状态路线，项目完成后移除融化与紧急修正。",
+    "en": "The Environmentalist-only emergency route; the project removes the melting and emergency modifiers."
+   },
+   "evidence": "events/colony_events_3.txt:9970-9992 (7240.b requires civic_environmentalist), 10118-10148; 00_projects_3.txt:1913-1935."
+  },
+  "colony.7250": {
+   "label": {
+    "zh": "结局：解冻的病原体",
+    "en": "Ending: an unfrozen pathogen"
+   },
+   "note": {
+    "zh": "钻探后的60%结果（仅非机械帝国）：消毒（一人死亡）或隔离（720天远古瘟疫修正）。",
+    "en": "The 60% drilling result (non-machine empires only): sanitize (one pop dies) or quarantine (ancient plague for 720 days)."
+   },
+   "evidence": "events/colony_events_3.txt:10043-10046, 10065-10099."
+  },
+  "colony.7255": {
+   "label": {
+    "zh": "结局：极地财富",
+    "en": "Ending: polar riches"
+   },
+   "note": {
+    "zh": "钻探后的40%结果：获得晶体冰川矿藏。",
+    "en": "The 40% drilling result: a crystalline glacier deposit."
+   },
+   "evidence": "events/colony_events_3.txt:10043-10046, 10101-10116."
+  }
  },
  "notes": [
-  {"doc": "colony.7230", "kind": "review", "zh": "审阅注：隐藏事件 colony.7229 在殖民地满两年时被抽中（权重8）后，固定在3600天（约十年）后才弹出本事件。研究项目有720天期限，超时失败同样会导致“巨大的洪泛区”。", "en": "Review note: the hidden colony.7229 is picked at the second anniversary (weight 8) and fires this event exactly 3600 days (about ten years) later. The research project has a 720-day limit; failing it also leads to Vast Floodplains."},
-  {"doc": "colony.7247", "kind": "review", "zh": "审阅注：选择“永霜冻土已经遭受了太多的痛苦”只获得凝聚力，故事在此结束。", "en": "Review note: \"The permafrost has suffered enough\" only grants unity and ends the story."}
+  {
+   "doc": "colony.7230",
+   "kind": "review",
+   "zh": "审阅注：隐藏事件 colony.7229 在殖民地满两年时被抽中（权重8）后，固定在3600天（约十年）后才弹出本事件。研究项目有720天期限，超时失败同样会导致“巨大的洪泛区”。",
+   "en": "Review note: the hidden colony.7229 is picked at the second anniversary (weight 8) and fires this event exactly 3600 days (about ten years) later. The research project has a 720-day limit; failing it also leads to Vast Floodplains."
+  },
+  {
+   "doc": "colony.7247",
+   "kind": "review",
+   "zh": "审阅注：选择“永霜冻土已经遭受了太多的痛苦”只获得凝聚力，故事在此结束。",
+   "en": "Review note: \"The permafrost has suffered enough\" only grants unity and ends the story."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c7b-society (Opus 5.5)",
-  "scope": {"zh": "冰川危机全部10个事件（含隐藏入口7229）与两个研究项目。", "en": "All 10 Glacial Crisis events (incl. hidden entry 7229) and both research projects."},
-  "sources": ["events/colony_events_3.txt:9816-10190", "common/special_projects/00_projects_3.txt:1886-1935", "common/on_actions/00_on_actions.txt:3775"],
+  "scope": {
+   "zh": "冰川危机全部10个事件（含隐藏入口7229）与两个研究项目。",
+   "en": "All 10 Glacial Crisis events (incl. hidden entry 7229) and both research projects."
+  },
+  "sources": [
+   "events/colony_events_3.txt:9816-10190",
+   "common/special_projects/00_projects_3.txt:1886-1935",
+   "common/on_actions/00_on_actions.txt:3775"
+  ],
   "uncertain": [],
   "guide": "public/summaries/event-colony-7229.md"
+ },
+ "placeholders": {
+  "flooding_planet.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "planet.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
  }
 }

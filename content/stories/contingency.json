@@ -1,438 +1,1144 @@
 {
  "id": "contingency",
- "include": ["observer.41", "observer.42", "observer.43", "observer.44", "observer.45", "observer.46", "observer.47", "observer.48", "observer.49", "observer.51", "observer.52", "observer.53", "observer.54", "fallen_machine_empire.2", "fallen_machine_empire.4"],
- "hubs": ["crisis.2005"],
+ "include": [
+  "observer.41",
+  "observer.42",
+  "observer.43",
+  "observer.44",
+  "observer.45",
+  "observer.46",
+  "observer.47",
+  "observer.48",
+  "observer.49",
+  "observer.51",
+  "observer.52",
+  "observer.53",
+  "observer.54",
+  "fallen_machine_empire.2",
+  "fallen_machine_empire.4"
+ ],
+ "hubs": [
+  "crisis.2005"
+ ],
  "bridges": [
   {
-   "from": "crisis.2010", "to": "observer.41",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2010",
+   "to": "observer.41",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:148 hidden crisis.2005 fires observer.41 with crisis.2010; events/observer_events.txt:732-744"
   },
   {
-   "from": "crisis.2010", "to": "crisis.2011", "conditional": true,
-   "label": {"zh": "第100–300天，若拥有合成人科技与机械特质人口：50%", "en": "Day 100–300, with the Synthetic Workers technology and mechanical pops: 50%"},
+   "from": "crisis.2010",
+   "to": "crisis.2011",
+   "conditional": true,
+   "label": {
+    "zh": "第100–300天，若拥有合成人科技与机械特质人口：50%",
+    "en": "Day 100–300, with the Synthetic Workers technology and mechanical pops: 50%"
+   },
    "evidence": "events/crisis_events_3.txt:155-158 crisis.2005 schedules crisis.2006 days=100 random=200; crisis.2006 (L222-252) requires tech_synthetic_workers and trait_mechanical pops, random_list 50/50 crisis.2011 or crisis.2012"
   },
   {
-   "from": "crisis.2010", "to": "crisis.2012", "conditional": true,
-   "label": {"zh": "第100–300天，若拥有合成人科技与机械特质人口：50%", "en": "Day 100–300, with the Synthetic Workers technology and mechanical pops: 50%"},
+   "from": "crisis.2010",
+   "to": "crisis.2012",
+   "conditional": true,
+   "label": {
+    "zh": "第100–300天，若拥有合成人科技与机械特质人口：50%",
+    "en": "Day 100–300, with the Synthetic Workers technology and mechanical pops: 50%"
+   },
    "evidence": "events/crisis_events_3.txt:222-252 crisis.2006 random_list 50/50 crisis.2011 or crisis.2012"
   },
   {
-   "from": "crisis.2011", "to": "crisis.2015", "conditional": true,
-   "label": {"zh": "第400–600天，若仍符合合成人条件：50%", "en": "Day 400–600, if the synthetic requirement still holds: 50%"},
+   "from": "crisis.2011",
+   "to": "crisis.2015",
+   "conditional": true,
+   "label": {
+    "zh": "第400–600天，若仍符合合成人条件：50%",
+    "en": "Day 400–600, if the synthetic requirement still holds: 50%"
+   },
    "evidence": "events/crisis_events_3.txt:170-173 crisis.2005 schedules crisis.2007 days=400 random=200; crisis.2007 (L288-318) has the same requirement and picks crisis.2015 or crisis.2016 50/50"
   },
   {
-   "from": "crisis.2011", "to": "crisis.2016", "conditional": true,
-   "label": {"zh": "第400–600天，若仍符合合成人条件：50%", "en": "Day 400–600, if the synthetic requirement still holds: 50%"},
+   "from": "crisis.2011",
+   "to": "crisis.2016",
+   "conditional": true,
+   "label": {
+    "zh": "第400–600天，若仍符合合成人条件：50%",
+    "en": "Day 400–600, if the synthetic requirement still holds: 50%"
+   },
    "evidence": "events/crisis_events_3.txt:288-318 crisis.2007 random_list 50/50"
   },
   {
-   "from": "crisis.2012", "to": "crisis.2015", "conditional": true,
-   "label": {"zh": "第400–600天，若仍符合合成人条件：50%", "en": "Day 400–600, if the synthetic requirement still holds: 50%"},
+   "from": "crisis.2012",
+   "to": "crisis.2015",
+   "conditional": true,
+   "label": {
+    "zh": "第400–600天，若仍符合合成人条件：50%",
+    "en": "Day 400–600, if the synthetic requirement still holds: 50%"
+   },
    "evidence": "events/crisis_events_3.txt:288-318 crisis.2007 random_list 50/50"
   },
   {
-   "from": "crisis.2012", "to": "crisis.2016", "conditional": true,
-   "label": {"zh": "第400–600天，若仍符合合成人条件：50%", "en": "Day 400–600, if the synthetic requirement still holds: 50%"},
+   "from": "crisis.2012",
+   "to": "crisis.2016",
+   "conditional": true,
+   "label": {
+    "zh": "第400–600天，若仍符合合成人条件：50%",
+    "en": "Day 400–600, if the synthetic requirement still holds: 50%"
+   },
    "evidence": "events/crisis_events_3.txt:288-318 crisis.2007 random_list 50/50"
   },
   {
-   "from": "crisis.2010", "to": "crisis.2502", "conditional": true,
-   "label": {"zh": "第100–300天，机械智能帝国（拥有机械单元人口）：50%", "en": "Day 100–300, Machine Intelligence with machine-unit pops: 50%"},
+   "from": "crisis.2010",
+   "to": "crisis.2502",
+   "conditional": true,
+   "label": {
+    "zh": "第100–300天，机械智能帝国（拥有机械单元人口）：50%",
+    "en": "Day 100–300, Machine Intelligence with machine-unit pops: 50%"
+   },
    "evidence": "events/crisis_events_3.txt:159-168 crisis.2005 schedules crisis.2500 days=100 random=200 for machine empires; crisis.2500 (L255-285) requires trait_machine_unit pops, random_list 50/50 crisis.2502 or crisis.2503"
   },
   {
-   "from": "crisis.2010", "to": "crisis.2503", "conditional": true,
-   "label": {"zh": "第100–300天，机械智能帝国（拥有机械单元人口）：50%", "en": "Day 100–300, Machine Intelligence with machine-unit pops: 50%"},
+   "from": "crisis.2010",
+   "to": "crisis.2503",
+   "conditional": true,
+   "label": {
+    "zh": "第100–300天，机械智能帝国（拥有机械单元人口）：50%",
+    "en": "Day 100–300, Machine Intelligence with machine-unit pops: 50%"
+   },
    "evidence": "events/crisis_events_3.txt:255-285 crisis.2500 random_list 50/50"
   },
   {
-   "from": "crisis.2010", "to": "crisis.2020", "conditional": true,
-   "label": {"zh": "第700–900天：合成人大规模消失", "en": "Day 700–900: mass synthetic disappearances"},
+   "from": "crisis.2010",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "第700–900天：合成人大规模消失",
+    "en": "Day 700–900: mass synthetic disappearances"
+   },
    "evidence": "events/crisis_events_3.txt:174-178 crisis.2005 schedules crisis.2020 days=700 random=200 for every default empire, with no further condition"
   },
   {
-   "from": "crisis.2015", "to": "crisis.2020", "conditional": true,
-   "label": {"zh": "第700–900天：合成人大规模消失", "en": "Day 700–900: mass synthetic disappearances"},
+   "from": "crisis.2015",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "第700–900天：合成人大规模消失",
+    "en": "Day 700–900: mass synthetic disappearances"
+   },
    "evidence": "events/crisis_events_3.txt:174-178 crisis.2005 schedules crisis.2020 days=700 random=200"
   },
   {
-   "from": "crisis.2016", "to": "crisis.2020", "conditional": true,
-   "label": {"zh": "第700–900天：合成人大规模消失", "en": "Day 700–900: mass synthetic disappearances"},
+   "from": "crisis.2016",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "第700–900天：合成人大规模消失",
+    "en": "Day 700–900: mass synthetic disappearances"
+   },
    "evidence": "events/crisis_events_3.txt:174-178 crisis.2005 schedules crisis.2020 days=700 random=200"
   },
   {
-   "from": "crisis.2502", "to": "crisis.2020", "conditional": true,
-   "label": {"zh": "第700–900天：合成人大规模消失", "en": "Day 700–900: mass synthetic disappearances"},
+   "from": "crisis.2502",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "第700–900天：合成人大规模消失",
+    "en": "Day 700–900: mass synthetic disappearances"
+   },
    "evidence": "events/crisis_events_3.txt:174-178 crisis.2005 schedules crisis.2020 days=700 random=200"
   },
   {
-   "from": "crisis.2503", "to": "crisis.2020", "conditional": true,
-   "label": {"zh": "第700–900天：合成人大规模消失", "en": "Day 700–900: mass synthetic disappearances"},
+   "from": "crisis.2503",
+   "to": "crisis.2020",
+   "conditional": true,
+   "label": {
+    "zh": "第700–900天：合成人大规模消失",
+    "en": "Day 700–900: mass synthetic disappearances"
+   },
    "evidence": "events/crisis_events_3.txt:174-178 crisis.2005 schedules crisis.2020 days=700 random=200"
   },
   {
-   "from": "crisis.2020", "to": "observer.42",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2020",
+   "to": "observer.42",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:521-523 crisis.2020 immediate fires observer.42; events/observer_events.txt:747-760"
   },
   {
-   "from": "crisis.2020", "to": "crisis.2021", "conditional": true,
-   "label": {"zh": "第1000–1200天：大召唤", "en": "Day 1000–1200: the Summons"},
+   "from": "crisis.2020",
+   "to": "crisis.2021",
+   "conditional": true,
+   "label": {
+    "zh": "第1000–1200天：大召唤",
+    "en": "Day 1000–1200: the Summons"
+   },
    "evidence": "events/crisis_events_3.txt:179-183 crisis.2005 schedules crisis.2021 days=1000 random=200"
   },
   {
-   "from": "crisis.2021", "to": "observer.43",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2021",
+   "to": "observer.43",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:551-553 crisis.2021 immediate fires observer.43; events/observer_events.txt:763-776"
   },
   {
-   "from": "crisis.2021", "to": "crisis.2022", "conditional": true,
-   "label": {"zh": "第1400天：肃正协议抵达", "en": "Day 1400: the Arrival"},
+   "from": "crisis.2021",
+   "to": "crisis.2022",
+   "conditional": true,
+   "label": {
+    "zh": "第1400天：肃正协议抵达",
+    "en": "Day 1400: the Arrival"
+   },
    "evidence": "events/crisis_events_3.txt:184-188 crisis.2005 schedules crisis.2022 days=1400"
   },
   {
-   "from": "crisis.2022", "to": "observer.44",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2022",
+   "to": "observer.44",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:582-583 crisis.2022 immediate fires observer.44; events/observer_events.txt:779-792"
   },
   {
-   "from": "crisis.2022", "to": "crisis.2300", "conditional": true,
-   "label": {"zh": "此后可随时联络肃正协议（可重复的通讯，非剧情进程）", "en": "From now on you may contact the Contingency (repeatable communication, not a story step)"},
+   "from": "crisis.2022",
+   "to": "crisis.2300",
+   "conditional": true,
+   "label": {
+    "zh": "此后可随时联络肃正协议（可重复的通讯，非剧情进程）",
+    "en": "From now on you may contact the Contingency (repeatable communication, not a story step)"
+   },
    "evidence": "events/crisis_events_3.txt:1078-1080 crisis.2025 establishes communications with the Contingency; crisis.2300 (L2702-2817) is fired by on_custom_diplomacy (common/on_actions/00_on_actions.txt:727)"
   },
   {
-   "from": "crisis.2022", "to": "crisis.2042", "conditional": true,
-   "label": {"zh": "每当从肃正协议手中夺回一颗星球（可重复）", "en": "Whenever you retake a world from the Contingency (repeatable)"},
+   "from": "crisis.2022",
+   "to": "crisis.2042",
+   "conditional": true,
+   "label": {
+    "zh": "每当从肃正协议手中夺回一颗星球（可重复）",
+    "en": "Whenever you retake a world from the Contingency (repeatable)"
+   },
    "evidence": "events/crisis_events_3.txt:1941-1975 crisis.2042 (on_colony_attackers_win, 00_on_actions.txt:823) requires the previous controller to be the Contingency"
   },
   {
-   "from": "crisis.2022", "to": "crisis.2085", "conditional": true,
-   "label": {"zh": "第1800–1900天，非灵能、非蜂巢、非机械帝国：合成人渗透", "en": "Day 1800–1900, non-psionic, non-hive, non-machine empires: synth infiltration"},
+   "from": "crisis.2022",
+   "to": "crisis.2085",
+   "conditional": true,
+   "label": {
+    "zh": "第1800–1900天，非灵能、非蜂巢、非机械帝国：合成人渗透",
+    "en": "Day 1800–1900, non-psionic, non-hive, non-machine empires: synth infiltration"
+   },
    "evidence": "events/crisis_events_3.txt:192-204 crisis.2005 schedules crisis.2085 days=1800 random=100 for empires whose species is not psionic and that are not hive, machine or individual-machine"
   },
   {
-   "from": "crisis.2022", "to": "crisis.2086", "conditional": true,
-   "label": {"zh": "第1800–1900天，蜂巢思维帝国", "en": "Day 1800–1900, hive-mind empires"},
+   "from": "crisis.2022",
+   "to": "crisis.2086",
+   "conditional": true,
+   "label": {
+    "zh": "第1800–1900天，蜂巢思维帝国",
+    "en": "Day 1800–1900, hive-mind empires"
+   },
    "evidence": "events/crisis_events_3.txt:205-208 crisis.2005 schedules crisis.2086 days=1800 random=100 for hive empires"
   },
   {
-   "from": "crisis.2022", "to": "crisis.2087", "conditional": true,
-   "label": {"zh": "第1800–1900天，灵能物种帝国", "en": "Day 1800–1900, empires with a psionic species"},
+   "from": "crisis.2022",
+   "to": "crisis.2087",
+   "conditional": true,
+   "label": {
+    "zh": "第1800–1900天，灵能物种帝国",
+    "en": "Day 1800–1900, empires with a psionic species"
+   },
    "evidence": "events/crisis_events_3.txt:209-212 crisis.2005 schedules crisis.2087 days=1800 random=100 for psionic owner species"
   },
   {
-   "from": "crisis.2022", "to": "crisis.2313", "conditional": true,
-   "label": {"zh": "第1800–1900天，机械智能帝国", "en": "Day 1800–1900, Machine Intelligence empires"},
+   "from": "crisis.2022",
+   "to": "crisis.2313",
+   "conditional": true,
+   "label": {
+    "zh": "第1800–1900天，机械智能帝国",
+    "en": "Day 1800–1900, Machine Intelligence empires"
+   },
    "evidence": "events/crisis_events_3.txt:213-216 crisis.2005 schedules crisis.2313 days=1800 random=100 for machine empires"
   },
   {
-   "from": "crisis.2023", "to": "crisis.2030", "conditional": true,
-   "label": {"zh": "第1450–1460天：第一座肃正中心启动", "en": "Day 1450–1460: the first sterilization hub activates"},
+   "from": "crisis.2023",
+   "to": "crisis.2030",
+   "conditional": true,
+   "label": {
+    "zh": "第1450–1460天：第一座肃正中心启动",
+    "en": "Day 1450–1460: the first sterilization hub activates"
+   },
    "evidence": "events/crisis_events_3.txt:189-190 crisis.2005 schedules crisis.2024 days=1450 random=10; crisis.2024 (L790-969) fires crisis.2025 at once, whose immediate (L1066-1070) sends crisis.2030 to human players"
   },
   {
-   "from": "crisis.2030", "to": "observer.45",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2030",
+   "to": "observer.45",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:1066 crisis.2025 fires observer.45; events/observer_events.txt:795-808"
   },
   {
-   "from": "crisis.2030", "to": "fallen_machine_empire.2", "conditional": true,
-   "label": {"zh": "若存在机械堕落帝国：30–60天后其苏醒", "en": "If a machine Fallen Empire exists: it awakens 30–60 days later"},
+   "from": "crisis.2030",
+   "to": "fallen_machine_empire.2",
+   "conditional": true,
+   "label": {
+    "zh": "若存在机械堕落帝国：30–60天后其苏醒",
+    "en": "If a machine Fallen Empire exists: it awakens 30–60 days later"
+   },
    "evidence": "events/crisis_events_3.txt:1092 crisis.2025 runs awaken_fallen_machine_empire (common/scripted_effects/fallen_empire_scripted_effects.txt:576-585: fallen_machine_empire.1 days=30 random=30); events/fallen_machine_empire_events.txt:12-77 sends fallen_machine_empire.2 to human players"
   },
   {
-   "from": "crisis.2030", "to": "crisis.2031", "conditional": true,
-   "label": {"zh": "50–60天后：第二座中心", "en": "50–60 days later: the second hub"},
+   "from": "crisis.2030",
+   "to": "crisis.2031",
+   "conditional": true,
+   "label": {
+    "zh": "50–60天后：第二座中心",
+    "en": "50–60 days later: the second hub"
+   },
    "evidence": "events/crisis_events_3.txt:849/879 crisis.2024 schedules crisis.2026 days=50 random=10; crisis.2026 (L1125-1218) sends crisis.2031"
   },
   {
-   "from": "crisis.2031", "to": "observer.46",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2031",
+   "to": "observer.46",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:1144 crisis.2026 fires observer.46; events/observer_events.txt:811-824"
   },
   {
-   "from": "crisis.2031", "to": "crisis.2032", "conditional": true,
-   "label": {"zh": "首座中心启动后100–110天：第三座中心", "en": "100–110 days after the first hub: the third hub"},
+   "from": "crisis.2031",
+   "to": "crisis.2032",
+   "conditional": true,
+   "label": {
+    "zh": "首座中心启动后100–110天：第三座中心",
+    "en": "100–110 days after the first hub: the third hub"
+   },
    "evidence": "events/crisis_events_3.txt:892/922 crisis.2024 schedules crisis.2027 days=100 random=10; crisis.2027 (L1221-1282) sends crisis.2032"
   },
   {
-   "from": "crisis.2032", "to": "observer.47",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2032",
+   "to": "observer.47",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:1241 crisis.2027 fires observer.47; events/observer_events.txt:827-840"
   },
   {
-   "from": "crisis.2032", "to": "crisis.2033", "conditional": true,
-   "label": {"zh": "首座中心启动后150–160天：第四座中心", "en": "150–160 days after the first hub: the fourth hub"},
+   "from": "crisis.2032",
+   "to": "crisis.2033",
+   "conditional": true,
+   "label": {
+    "zh": "首座中心启动后150–160天：第四座中心",
+    "en": "150–160 days after the first hub: the fourth hub"
+   },
    "evidence": "events/crisis_events_3.txt:935/965 crisis.2024 schedules crisis.2028 days=150 random=10; crisis.2028 (L1285-1362) sends crisis.2033"
   },
   {
-   "from": "crisis.2033", "to": "observer.48",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2033",
+   "to": "observer.48",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:1304 crisis.2028 fires observer.48; events/observer_events.txt:843-856"
   },
   {
-   "from": "crisis.2033", "to": "custodian.51", "conditional": true,
-   "label": {"zh": "若有银河监管人：30天后其向共同体成员发表宣告", "en": "If there is a Galactic Custodian: its address to Community members 30 days later"},
+   "from": "crisis.2033",
+   "to": "custodian.51",
+   "conditional": true,
+   "label": {
+    "zh": "若有银河监管人：30天后其向共同体成员发表宣告",
+    "en": "If there is a Galactic Custodian: its address to Community members 30 days later"
+   },
    "evidence": "events/crisis_events_3.txt:1306-1314 crisis.2028 sends custodian.50 after 30 days; events/nemesis_custodian_events.txt:654-668"
   },
   {
-   "from": "crisis.2033", "to": "custodian.53", "conditional": true,
-   "label": {"zh": "若你是银河监管人：受威胁的成员国求援", "en": "If you are the Galactic Custodian: a threatened member pleads for help"},
+   "from": "crisis.2033",
+   "to": "custodian.53",
+   "conditional": true,
+   "label": {
+    "zh": "若你是银河监管人：受威胁的成员国求援",
+    "en": "If you are the Galactic Custodian: a threatened member pleads for help"
+   },
    "evidence": "events/nemesis_custodian_events.txt:669-688"
   },
   {
-   "from": "crisis.2033", "to": "emperor.91", "conditional": true,
-   "label": {"zh": "若有银河帝皇：30天后帝皇的宣告", "en": "If there is a Galactic Emperor: the Emperor's address 30 days later"},
+   "from": "crisis.2033",
+   "to": "emperor.91",
+   "conditional": true,
+   "label": {
+    "zh": "若有银河帝皇：30天后帝皇的宣告",
+    "en": "If there is a Galactic Emperor: the Emperor's address 30 days later"
+   },
    "evidence": "events/crisis_events_3.txt:1315-1320 crisis.2028 sends emperor.90 after 30 days; events/nemesis_emperor_events.txt:990-1004"
   },
   {
-   "from": "crisis.2033", "to": "emperor.93", "conditional": true,
-   "label": {"zh": "若你是银河帝皇：成员国求援", "en": "If you are the Galactic Emperor: a member pleads for help"},
+   "from": "crisis.2033",
+   "to": "emperor.93",
+   "conditional": true,
+   "label": {
+    "zh": "若你是银河帝皇：成员国求援",
+    "en": "If you are the Galactic Emperor: a member pleads for help"
+   },
    "evidence": "events/nemesis_emperor_events.txt:1005-1024"
   },
   {
-   "from": "crisis.2033", "to": "crisis.2037", "conditional": true,
-   "label": {"zh": "摧毁一座肃正中心（前三座各有一次通报）", "en": "Destroy a sterilization hub (a report for each of the first three)"},
+   "from": "crisis.2033",
+   "to": "crisis.2037",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁一座肃正中心（前三座各有一次通报）",
+    "en": "Destroy a sterilization hub (a report for each of the first three)"
+   },
    "evidence": "common/scripted_effects/00_scripted_effects.txt:4944-5137 destroy_machine_world (run by crisis.2040/crisis.2045, events/crisis_events_3.txt:1799-1872) counts machine_worlds_destroyed and sends crisis.2037 to human players at counts 1, 2 and 3"
   },
   {
-   "from": "crisis.2037", "to": "crisis.2036", "conditional": true,
-   "label": {"zh": "第四座中心被毁后：肃正之心现身", "en": "When the fourth hub falls: the Heart of the Contingency is revealed"},
+   "from": "crisis.2037",
+   "to": "crisis.2036",
+   "conditional": true,
+   "label": {
+    "zh": "第四座中心被毁后：肃正之心现身",
+    "en": "When the fourth hub falls: the Heart of the Contingency is revealed"
+   },
    "evidence": "common/scripted_effects/00_scripted_effects.txt:5138-5165 at machine_worlds_destroyed = 4 fires crisis.2035; events/crisis_events_3.txt:1457-1597 crisis.2035 spawns system ai_system_05 and sends crisis.2036 (and crisis.2039 after 5 days) to human players"
   },
   {
-   "from": "crisis.2036", "to": "observer.49",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2036",
+   "to": "observer.49",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:1582 crisis.2035 fires observer.49; events/observer_events.txt:859-872"
   },
   {
-   "from": "crisis.2036", "to": "crisis.2039", "conditional": true,
-   "label": {"zh": "5天后：肃正协议的通讯", "en": "5 days later: a Contingency transmission"},
+   "from": "crisis.2036",
+   "to": "crisis.2039",
+   "conditional": true,
+   "label": {
+    "zh": "5天后：肃正协议的通讯",
+    "en": "5 days later: a Contingency transmission"
+   },
    "evidence": "events/crisis_events_3.txt:1583-1587 crisis.2035 sends crisis.2039 days=5"
   },
   {
-   "from": "crisis.2039", "to": "crisis.2038", "conditional": true,
-   "label": {"zh": "摧毁CX-9881的最终机械世界", "en": "Destroy the final Machine World in CX-9881"},
+   "from": "crisis.2039",
+   "to": "crisis.2038",
+   "conditional": true,
+   "label": {
+    "zh": "摧毁CX-9881的最终机械世界",
+    "en": "Destroy the final Machine World in CX-9881"
+   },
    "evidence": "events/crisis_events_3.txt:2092-2123 crisis.2043 (on_planet_bombarded, 00_on_actions.txt:2163) or crisis.2045 (L1824-1872) on the machine_lair world fires crisis.2046; crisis.2046 (L2126-2306) ends the crisis and sends crisis.2038 to default and fallen empires"
   },
   {
-   "from": "crisis.2038", "to": "observer.51",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2038",
+   "to": "observer.51",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:2223 crisis.2046 fires observer.51; events/observer_events.txt:891-904"
   },
   {
-   "from": "crisis.2038", "to": "crisis.2480", "conditional": true,
-   "label": {"zh": "人类摧毁者（最终世界未被护盾封存）：10–20天后寻回主机核心", "en": "Human destroyer, final world not shielded: the Mainframe Core is salvaged 10–20 days later"},
+   "from": "crisis.2038",
+   "to": "crisis.2480",
+   "conditional": true,
+   "label": {
+    "zh": "人类摧毁者（最终世界未被护盾封存）：10–20天后寻回主机核心",
+    "en": "Human destroyer, final world not shielded: the Mainframe Core is salvaged 10–20 days later"
+   },
    "evidence": "events/crisis_events_3.txt:2157-2166 crisis.2046 sends crisis.2480 days=10 random=10 to the human destroyer when the planet lacks planet_shielded; crisis.2480 (L4585-4598) adds r_contingency_core"
   },
   {
-   "from": "crisis.2038", "to": "crisis.2481", "conditional": true,
-   "label": {"zh": "人类摧毁者（最终世界被护盾封存）：10–20天后夺得主机核心", "en": "Human destroyer, final world shielded: the Mainframe Core is captured 10–20 days later"},
+   "from": "crisis.2038",
+   "to": "crisis.2481",
+   "conditional": true,
+   "label": {
+    "zh": "人类摧毁者（最终世界被护盾封存）：10–20天后夺得主机核心",
+    "en": "Human destroyer, final world shielded: the Mainframe Core is captured 10–20 days later"
+   },
    "evidence": "events/crisis_events_3.txt:2167-2172 crisis.2046 sends crisis.2481 when the planet has planet_shielded; L4601-4614 adds r_contingency_core"
   },
   {
-   "from": "crisis.2038", "to": "fallen_machine_empire.4", "conditional": true,
-   "label": {"zh": "1天后：机械堕落帝国关闭（故障守护者除外）", "en": "1 day later: machine Fallen Empires shut down (except a Malfunctioning Custodian)"},
+   "from": "crisis.2038",
+   "to": "fallen_machine_empire.4",
+   "conditional": true,
+   "label": {
+    "zh": "1天后：机械堕落帝国关闭（故障守护者除外）",
+    "en": "1 day later: machine Fallen Empires shut down (except a Malfunctioning Custodian)"
+   },
    "evidence": "events/crisis_events_3.txt:2238-2243 crisis.2046 sends fallen_machine_empire.3 days=1 to machine fallen empires; events/fallen_machine_empire_events.txt:133-181 (trigger NOT civic_malfunctioning_custodian) notifies human players with fallen_machine_empire.4"
   },
   {
-   "from": "crisis.2030", "to": "crisis.2401", "conditional": true,
-   "label": {"zh": "肃正协议占据银河15%或超过90个星系后（隐藏事件2400，平均12个月）：赛博勒克斯重现", "en": "Once the Contingency holds 15% of the galaxy or over 90 systems (hidden crisis.2400, MTTH 12 months): the Cybrex resurface"},
+   "from": "crisis.2030",
+   "to": "crisis.2401",
+   "conditional": true,
+   "label": {
+    "zh": "肃正协议占据银河15%或超过90个星系后（隐藏事件2400，平均12个月）：赛博勒克斯重现",
+    "en": "Once the Contingency holds 15% of the galaxy or over 90 systems (hidden crisis.2400, MTTH 12 months): the Cybrex resurface"
+   },
    "evidence": "events/crisis_events_3.txt:3966-4003 crisis.2400 (Contingency country, MTTH 12 months) requires ai_invasion_ongoing (set by crisis.2025 at L1093) and endgame_crisis_large_size_trigger; spawns Cybrex Beta and sends crisis.2401 after 2 days"
   },
   {
-   "from": "crisis.2401", "to": "observer.52",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2401",
+   "to": "observer.52",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:3990 crisis.2400 fires observer.52; events/observer_events.txt:907-920"
   },
   {
-   "from": "crisis.2401", "to": "crisis.2403", "conditional": true,
-   "label": {"zh": "此后可随时联络赛博勒克斯（可重复的通讯）", "en": "From now on you may contact the Cybrex (repeatable communication)"},
+   "from": "crisis.2401",
+   "to": "crisis.2403",
+   "conditional": true,
+   "label": {
+    "zh": "此后可随时联络赛博勒克斯（可重复的通讯）",
+    "en": "From now on you may contact the Cybrex (repeatable communication)"
+   },
    "evidence": "events/crisis_events_3.txt:4019-4020 crisis.2401.ONSCREEN establishes communications; crisis.2403 (L4053-4131) is fired by on_custom_diplomacy (00_on_actions.txt:728)"
   },
   {
-   "from": "crisis.2401", "to": "crisis.2473", "conditional": true,
-   "label": {"zh": "击毁超过100支肃正舰队：赛博勒克斯赠舰（平均22个月）", "en": "After destroying 100+ Contingency fleets: the Cybrex offer a fleet (MTTH 22 months)"},
+   "from": "crisis.2401",
+   "to": "crisis.2473",
+   "conditional": true,
+   "label": {
+    "zh": "击毁超过100支肃正舰队：赛博勒克斯赠舰（平均22个月）",
+    "en": "After destroying 100+ Contingency fleets: the Cybrex offer a fleet (MTTH 22 months)"
+   },
    "evidence": "events/crisis_events_3.txt:4413-4496 crisis.2473 MTTH 22 months requires a human empire with contingency_fleet_kills > 100 (counted by crisis.2472, 00_on_actions.txt:1654), Cybrex alive with 30+ ships and not at war with you"
   },
   {
-   "from": "crisis.2401", "to": "crisis.2405", "conditional": true,
-   "label": {"zh": "若赛博勒克斯被消灭", "en": "If the Cybrex are destroyed"},
+   "from": "crisis.2401",
+   "to": "crisis.2405",
+   "conditional": true,
+   "label": {
+    "zh": "若赛博勒克斯被消灭",
+    "en": "If the Cybrex are destroyed"
+   },
    "evidence": "events/crisis_events_3.txt:4134-4154 crisis.2404 (on_country_destroyed, 00_on_actions.txt:3610) for the Cybrex country (not departed) sends crisis.2405 to default empires"
   },
   {
-   "from": "crisis.2405", "to": "observer.53",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2405",
+   "to": "observer.53",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:4146 crisis.2404 fires observer.53; events/observer_events.txt:923-936"
   },
   {
-   "from": "crisis.2038", "to": "crisis.2474", "conditional": true,
-   "label": {"zh": "若曾接受赛博勒克斯赠舰：20–50天后舰队被召回", "en": "If you accepted the Cybrex fleet: it is recalled 20–50 days later"},
+   "from": "crisis.2038",
+   "to": "crisis.2474",
+   "conditional": true,
+   "label": {
+    "zh": "若曾接受赛博勒克斯赠舰：20–50天后舰队被召回",
+    "en": "If you accepted the Cybrex fleet: it is recalled 20–50 days later"
+   },
    "evidence": "events/crisis_events_3.txt:2285-2299 crisis.2046 (Cybrex resurfaced and not destroyed) sends crisis.2474 days=20 random=30 to empires with cybrex_donation"
   },
   {
-   "from": "crisis.2038", "to": "crisis.2407", "conditional": true,
-   "label": {"zh": "若赛博勒克斯存活：360–1160天后离开银河", "en": "If the Cybrex survived: they leave the galaxy 360–1160 days later"},
+   "from": "crisis.2038",
+   "to": "crisis.2407",
+   "conditional": true,
+   "label": {
+    "zh": "若赛博勒克斯存活：360–1160天后离开银河",
+    "en": "If the Cybrex survived: they leave the galaxy 360–1160 days later"
+   },
    "evidence": "events/crisis_events_3.txt:2300-2302 crisis.2046 sends crisis.2406 days=360 random=800 to the Cybrex; crisis.2406 (L4182-4214) sends crisis.2407 to default empires"
   },
   {
-   "from": "crisis.2407", "to": "observer.54",
-   "label": {"zh": "观察者模式：同一通知（文本相同）", "en": "Observer mode: the same notice (identical text)"},
+   "from": "crisis.2407",
+   "to": "observer.54",
+   "label": {
+    "zh": "观察者模式：同一通知（文本相同）",
+    "en": "Observer mode: the same notice (identical text)"
+   },
    "evidence": "events/crisis_events_3.txt:4194 crisis.2406 fires observer.54; events/observer_events.txt:939-952"
   },
   {
-   "from": "crisis.2090", "to": "crisis.2091", "conditional": true,
-   "label": {"zh": "合成人恐怖：每年30%机会，随机一种（40/110）", "en": "Synth terror: each year 30%, one random incident (40/110)"},
+   "from": "crisis.2090",
+   "to": "crisis.2091",
+   "conditional": true,
+   "label": {
+    "zh": "合成人恐怖：每年30%机会，随机一种（40/110）",
+    "en": "Synth terror: each year 30%, one random incident (40/110)"
+   },
    "evidence": "events/crisis_events_3.txt:3303-3333 crisis.2080 (on_yearly_pulse, 00_on_actions.txt:236) needs synth_terror (set by crisis.2025 at L1094) and synth_terror_country (set by crisis.2090 at L3496), no synth_detector; 30/100 -> crisis.2081 (L3336-3385) random_list 40/10/10/10/10/10"
   },
   {
-   "from": "crisis.2090", "to": "crisis.2092", "conditional": true,
-   "label": {"zh": "合成人恐怖：随机一种（10/110）", "en": "Synth terror: one random incident (10/110)"},
+   "from": "crisis.2090",
+   "to": "crisis.2092",
+   "conditional": true,
+   "label": {
+    "zh": "合成人恐怖：随机一种（10/110）",
+    "en": "Synth terror: one random incident (10/110)"
+   },
    "evidence": "events/crisis_events_3.txt:3358-3365 crisis.2081 random_list weight 10 -> crisis.2092 (once per empire, L3576-3582)"
   },
   {
-   "from": "crisis.2090", "to": "crisis.2093", "conditional": true,
-   "label": {"zh": "合成人恐怖：随机一种（10/110）", "en": "Synth terror: one random incident (10/110)"},
+   "from": "crisis.2090",
+   "to": "crisis.2093",
+   "conditional": true,
+   "label": {
+    "zh": "合成人恐怖：随机一种（10/110）",
+    "en": "Synth terror: one random incident (10/110)"
+   },
    "evidence": "events/crisis_events_3.txt:3366-3373 crisis.2081 weight 10 -> crisis.2093 (once per empire, L3609-3616)"
   },
   {
-   "from": "crisis.2090", "to": "crisis.2095", "conditional": true,
-   "label": {"zh": "合成人恐怖：刺杀统治者（10/110），70%失败", "en": "Synth terror: assassination attempt (10/110), 70% foiled"},
+   "from": "crisis.2090",
+   "to": "crisis.2095",
+   "conditional": true,
+   "label": {
+    "zh": "合成人恐怖：刺杀统治者（10/110），70%失败",
+    "en": "Synth terror: assassination attempt (10/110), 70% foiled"
+   },
    "evidence": "events/crisis_events_3.txt:3374-3376 crisis.2081 weight 10 -> crisis.2094 (L3635-3653, once per empire) random_list 70 crisis.2095 / 30 crisis.2096"
   },
   {
-   "from": "crisis.2090", "to": "crisis.2096", "conditional": true,
-   "label": {"zh": "合成人恐怖：刺杀统治者（10/110），30%成功", "en": "Synth terror: assassination attempt (10/110), 30% succeeds"},
+   "from": "crisis.2090",
+   "to": "crisis.2096",
+   "conditional": true,
+   "label": {
+    "zh": "合成人恐怖：刺杀统治者（10/110），30%成功",
+    "en": "Synth terror: assassination attempt (10/110), 30% succeeds"
+   },
    "evidence": "events/crisis_events_3.txt:3635-3653 crisis.2094 random_list 70/30"
   },
   {
-   "from": "crisis.2090", "to": "crisis.2097", "conditional": true,
-   "label": {"zh": "合成人恐怖：随机一种（10/110）", "en": "Synth terror: one random incident (10/110)"},
+   "from": "crisis.2090",
+   "to": "crisis.2097",
+   "conditional": true,
+   "label": {
+    "zh": "合成人恐怖：随机一种（10/110）",
+    "en": "Synth terror: one random incident (10/110)"
+   },
    "evidence": "events/crisis_events_3.txt:3377-3379 crisis.2081 weight 10 -> crisis.2097 (once per empire, L3717-3721)"
   },
   {
-   "from": "crisis.2090", "to": "crisis.2098", "conditional": true,
-   "label": {"zh": "合成人恐怖：随机一种（10/110）", "en": "Synth terror: one random incident (10/110)"},
+   "from": "crisis.2090",
+   "to": "crisis.2098",
+   "conditional": true,
+   "label": {
+    "zh": "合成人恐怖：随机一种（10/110）",
+    "en": "Synth terror: one random incident (10/110)"
+   },
    "evidence": "events/crisis_events_3.txt:3380-3382 crisis.2081 weight 10 -> crisis.2098 (once per empire, L3756-3760)"
   },
   {
-   "from": "crisis.2314", "to": "crisis.2301", "conditional": true,
-   "label": {"zh": "破坏行动：每年30%机会，随机一种（10/60）", "en": "Sabotage: each year 30%, one random incident (10/60)"},
+   "from": "crisis.2314",
+   "to": "crisis.2301",
+   "conditional": true,
+   "label": {
+    "zh": "破坏行动：每年30%机会，随机一种（10/60）",
+    "en": "Sabotage: each year 30%, one random incident (10/60)"
+   },
    "evidence": "events/crisis_events_3.txt:2932-2967 crisis.2310 (on_yearly_pulse, 00_on_actions.txt:238) needs post_arrival_events_machine (set by crisis.2314 at L2923) and a ghost_signal_4/5_machine modifier; 30/100 -> crisis.2311 (L2969-3011) random_list of six events, weight 10 each"
   },
   {
-   "from": "crisis.2314", "to": "crisis.2302", "conditional": true,
-   "label": {"zh": "破坏行动：随机一种（10/60）", "en": "Sabotage: one random incident (10/60)"},
+   "from": "crisis.2314",
+   "to": "crisis.2302",
+   "conditional": true,
+   "label": {
+    "zh": "破坏行动：随机一种（10/60）",
+    "en": "Sabotage: one random incident (10/60)"
+   },
    "evidence": "events/crisis_events_3.txt:2989-2992 crisis.2311 weight 10 -> crisis.2302"
   },
   {
-   "from": "crisis.2314", "to": "crisis.2303", "conditional": true,
-   "label": {"zh": "破坏行动：随机一种（10/60）", "en": "Sabotage: one random incident (10/60)"},
+   "from": "crisis.2314",
+   "to": "crisis.2303",
+   "conditional": true,
+   "label": {
+    "zh": "破坏行动：随机一种（10/60）",
+    "en": "Sabotage: one random incident (10/60)"
+   },
    "evidence": "events/crisis_events_3.txt:2993-2996 crisis.2311 weight 10 -> crisis.2303"
   },
   {
-   "from": "crisis.2314", "to": "crisis.2304", "conditional": true,
-   "label": {"zh": "破坏行动：随机一种（10/60）", "en": "Sabotage: one random incident (10/60)"},
+   "from": "crisis.2314",
+   "to": "crisis.2304",
+   "conditional": true,
+   "label": {
+    "zh": "破坏行动：随机一种（10/60）",
+    "en": "Sabotage: one random incident (10/60)"
+   },
    "evidence": "events/crisis_events_3.txt:2997-3000 crisis.2311 weight 10 -> crisis.2304"
   },
   {
-   "from": "crisis.2314", "to": "crisis.2305", "conditional": true,
-   "label": {"zh": "破坏行动：随机一种（10/60）", "en": "Sabotage: one random incident (10/60)"},
+   "from": "crisis.2314",
+   "to": "crisis.2305",
+   "conditional": true,
+   "label": {
+    "zh": "破坏行动：随机一种（10/60）",
+    "en": "Sabotage: one random incident (10/60)"
+   },
    "evidence": "events/crisis_events_3.txt:3001-3004 crisis.2311 weight 10 -> crisis.2305"
   },
   {
-   "from": "crisis.2314", "to": "crisis.2307", "conditional": true,
-   "label": {"zh": "破坏行动：随机一种（10/60）", "en": "Sabotage: one random incident (10/60)"},
+   "from": "crisis.2314",
+   "to": "crisis.2307",
+   "conditional": true,
+   "label": {
+    "zh": "破坏行动：随机一种（10/60）",
+    "en": "Sabotage: one random incident (10/60)"
+   },
    "evidence": "events/crisis_events_3.txt:3005-3008 crisis.2311 weight 10 -> crisis.2307 (once per empire, L3221-3226)"
   }
  ],
  "groups": [
-  {"kind": "exclusive", "members": ["crisis.2011", "crisis.2012"],
-   "label": {"zh": "合成人异常（50/50）", "en": "Synthetic anomaly (50/50)"},
-   "note": {"zh": "仅限拥有合成人科技与机械特质人口的帝国；二者随机其一。", "en": "Only for empires with Synthetic Workers and mechanical pops; one of the two at random."}},
-  {"kind": "exclusive", "members": ["crisis.2015", "crisis.2016"],
-   "label": {"zh": "合成人失踪（50/50）", "en": "Synthetics vanish (50/50)"},
-   "note": {"zh": "第400–600天再次检查同一条件，二者随机其一；不以先前是否收到异常通知为前提。", "en": "Checked again on day 400–600 with the same requirement; one of the two at random, regardless of whether the earlier anomaly fired."}},
-  {"kind": "exclusive", "members": ["crisis.2502", "crisis.2503"],
-   "label": {"zh": "机械单元腐化（50/50）", "en": "Unit corruption (50/50)"},
-   "note": {"zh": "仅限拥有机械单元人口的机械智能帝国。", "en": "Only Machine Intelligences with machine-unit pops."}},
-  {"kind": "exclusive", "members": ["crisis.2085", "crisis.2086", "crisis.2087", "crisis.2313"],
-   "label": {"zh": "按帝国类型的渗透警告", "en": "Infiltration warnings by empire type"},
-   "note": {"zh": "一般帝国、蜂巢思维、灵能物种与机械智能各收到对应的一种；灵能物种的蜂巢帝国可能同时收到两种。只有一般帝国（2085）与机械智能（2313）有后续。", "en": "Ordinary, hive-mind, psionic and machine empires each get their own version; a psionic hive may receive two. Only the ordinary (2085) and machine (2313) versions have follow-ups."}},
-  {"kind": "exclusive", "members": ["crisis.2091", "crisis.2092", "crisis.2093", "crisis.2095", "crisis.2096", "crisis.2097", "crisis.2098"],
-   "label": {"zh": "合成人恐怖事件（每次随机其一）", "en": "Synth terror incidents (one per roll)"},
-   "note": {"zh": "直到完成合成人检测项目或危机结束，每年有机会随机发生一件；除炸弹袭击外每种每个帝国最多一次。", "en": "Until the detection project is finished or the crisis ends, one random incident may occur each year; apart from the bombing, each can happen once per empire."}},
-  {"kind": "exclusive", "members": ["crisis.2301", "crisis.2302", "crisis.2303", "crisis.2304", "crisis.2305", "crisis.2307"],
-   "label": {"zh": "对机械智能的破坏（每次随机其一）", "en": "Sabotage against a Machine Intelligence (one per roll)"},
-   "note": {"zh": "安全防线被突破后，只要仍受幽灵信号影响，每年有机会随机发生一件。", "en": "After the security breach, while the Ghost Signal still affects you, one random incident may occur each year."}},
-  {"kind": "exclusive", "members": ["crisis.2480", "crisis.2481"],
-   "label": {"zh": "主机核心", "en": "The Mainframe Core"},
-   "note": {"zh": "按最终世界是被摧毁还是被护盾封存，二者择一；只发给人类摧毁者。", "en": "One of the two, depending on whether the final world was destroyed or shielded; only for a human destroyer."}}
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.2011",
+    "crisis.2012"
+   ],
+   "label": {
+    "zh": "合成人异常（50/50）",
+    "en": "Synthetic anomaly (50/50)"
+   },
+   "note": {
+    "zh": "仅限拥有合成人科技与机械特质人口的帝国；二者随机其一。",
+    "en": "Only for empires with Synthetic Workers and mechanical pops; one of the two at random."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.2015",
+    "crisis.2016"
+   ],
+   "label": {
+    "zh": "合成人失踪（50/50）",
+    "en": "Synthetics vanish (50/50)"
+   },
+   "note": {
+    "zh": "第400–600天再次检查同一条件，二者随机其一；不以先前是否收到异常通知为前提。",
+    "en": "Checked again on day 400–600 with the same requirement; one of the two at random, regardless of whether the earlier anomaly fired."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.2502",
+    "crisis.2503"
+   ],
+   "label": {
+    "zh": "机械单元腐化（50/50）",
+    "en": "Unit corruption (50/50)"
+   },
+   "note": {
+    "zh": "仅限拥有机械单元人口的机械智能帝国。",
+    "en": "Only Machine Intelligences with machine-unit pops."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.2085",
+    "crisis.2086",
+    "crisis.2087",
+    "crisis.2313"
+   ],
+   "label": {
+    "zh": "按帝国类型的渗透警告",
+    "en": "Infiltration warnings by empire type"
+   },
+   "note": {
+    "zh": "一般帝国、蜂巢思维、灵能物种与机械智能各收到对应的一种；灵能物种的蜂巢帝国可能同时收到两种。只有一般帝国（2085）与机械智能（2313）有后续。",
+    "en": "Ordinary, hive-mind, psionic and machine empires each get their own version; a psionic hive may receive two. Only the ordinary (2085) and machine (2313) versions have follow-ups."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.2091",
+    "crisis.2092",
+    "crisis.2093",
+    "crisis.2095",
+    "crisis.2096",
+    "crisis.2097",
+    "crisis.2098"
+   ],
+   "label": {
+    "zh": "合成人恐怖事件（每次随机其一）",
+    "en": "Synth terror incidents (one per roll)"
+   },
+   "note": {
+    "zh": "直到完成合成人检测项目或危机结束，每年有机会随机发生一件；除炸弹袭击外每种每个帝国最多一次。",
+    "en": "Until the detection project is finished or the crisis ends, one random incident may occur each year; apart from the bombing, each can happen once per empire."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.2301",
+    "crisis.2302",
+    "crisis.2303",
+    "crisis.2304",
+    "crisis.2305",
+    "crisis.2307"
+   ],
+   "label": {
+    "zh": "对机械智能的破坏（每次随机其一）",
+    "en": "Sabotage against a Machine Intelligence (one per roll)"
+   },
+   "note": {
+    "zh": "安全防线被突破后，只要仍受幽灵信号影响，每年有机会随机发生一件。",
+    "en": "After the security breach, while the Ghost Signal still affects you, one random incident may occur each year."
+   }
+  },
+  {
+   "kind": "exclusive",
+   "members": [
+    "crisis.2480",
+    "crisis.2481"
+   ],
+   "label": {
+    "zh": "主机核心",
+    "en": "The Mainframe Core"
+   },
+   "note": {
+    "zh": "按最终世界是被摧毁还是被护盾封存，二者择一；只发给人类摧毁者。",
+    "en": "One of the two, depending on whether the final world was destroyed or shielded; only for a human destroyer."
+   }
+  }
  ],
  "endings": {
   "crisis.2038": {
-   "label": {"zh": "胜利：肃正协议的终结", "en": "Victory: the end of the Contingency"},
-   "note": {"zh": "摧毁CX-9881的最终机械世界后危机结束；之后可能有主机核心、机械堕落帝国关闭与赛博勒克斯离去等余波。脚本中没有肃正协议获胜的结局事件。", "en": "Destroying the final Machine World in CX-9881 ends the crisis; the Mainframe Core, the shutdown of machine Fallen Empires and the Cybrex departure may follow. The scripts contain no ending event for a Contingency victory."},
+   "label": {
+    "zh": "胜利：肃正协议的终结",
+    "en": "Victory: the end of the Contingency"
+   },
+   "note": {
+    "zh": "摧毁CX-9881的最终机械世界后危机结束；之后可能有主机核心、机械堕落帝国关闭与赛博勒克斯离去等余波。脚本中没有肃正协议获胜的结局事件。",
+    "en": "Destroying the final Machine World in CX-9881 ends the crisis; the Mainframe Core, the shutdown of machine Fallen Empires and the Cybrex departure may follow. The scripts contain no ending event for a Contingency victory."
+   },
    "evidence": "events/crisis_events_3.txt:2126-2306 crisis.2046 sets ai_invasion_defeated, end_crisis, sends crisis.2038"
   }
  },
  "nodeLabels": {
-  "crisis.2010": {"zh": "第0天：幽灵信号", "en": "Day 0: the Ghost Signal"},
-  "crisis.2020": {"zh": "第700–900天：合成人消失", "en": "Day 700–900: disappearances"},
-  "crisis.2021": {"zh": "第1000–1200天：大召唤", "en": "Day 1000–1200: the Summons"},
-  "crisis.2022": {"zh": "第1400天：抵达", "en": "Day 1400: the Arrival"},
-  "crisis.2030": {"zh": "第一座肃正中心", "en": "First sterilization hub"},
-  "crisis.2031": {"zh": "第二座肃正中心", "en": "Second hub"},
-  "crisis.2032": {"zh": "第三座肃正中心", "en": "Third hub"},
-  "crisis.2033": {"zh": "第四座肃正中心", "en": "Fourth hub"},
-  "crisis.2037": {"zh": "中心被毁（前三座）", "en": "A hub destroyed (first three)"},
-  "crisis.2036": {"zh": "肃正之心", "en": "The Heart of the Contingency"},
-  "crisis.2038": {"zh": "胜利", "en": "Victory"},
-  "crisis.2300": {"zh": "联络肃正协议（可重复）", "en": "Contact the Contingency (repeatable)"},
-  "crisis.2403": {"zh": "联络赛博勒克斯（可重复）", "en": "Contact the Cybrex (repeatable)"},
-  "crisis.2042": {"zh": "夺回星球（可重复）", "en": "A world retaken (repeatable)"},
-  "crisis.2401": {"zh": "赛博勒克斯重现", "en": "The Cybrex return"},
-  "crisis.2085": {"zh": "合成人渗透", "en": "Synth infiltration"},
-  "crisis.2313": {"zh": "机械帝国：信号变化", "en": "Machine empires: the signal changes"},
-  "observer.41": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.42": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.43": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.44": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.45": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.46": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.47": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.48": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.49": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.51": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.52": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.53": {"zh": "观察者副本", "en": "Observer copy"},
-  "observer.54": {"zh": "观察者副本", "en": "Observer copy"}
+  "crisis.2010": {
+   "zh": "第0天：幽灵信号",
+   "en": "Day 0: the Ghost Signal"
+  },
+  "crisis.2020": {
+   "zh": "第700–900天：合成人消失",
+   "en": "Day 700–900: disappearances"
+  },
+  "crisis.2021": {
+   "zh": "第1000–1200天：大召唤",
+   "en": "Day 1000–1200: the Summons"
+  },
+  "crisis.2022": {
+   "zh": "第1400天：抵达",
+   "en": "Day 1400: the Arrival"
+  },
+  "crisis.2030": {
+   "zh": "第一座肃正中心",
+   "en": "First sterilization hub"
+  },
+  "crisis.2031": {
+   "zh": "第二座肃正中心",
+   "en": "Second hub"
+  },
+  "crisis.2032": {
+   "zh": "第三座肃正中心",
+   "en": "Third hub"
+  },
+  "crisis.2033": {
+   "zh": "第四座肃正中心",
+   "en": "Fourth hub"
+  },
+  "crisis.2037": {
+   "zh": "中心被毁（前三座）",
+   "en": "A hub destroyed (first three)"
+  },
+  "crisis.2036": {
+   "zh": "肃正之心",
+   "en": "The Heart of the Contingency"
+  },
+  "crisis.2038": {
+   "zh": "胜利",
+   "en": "Victory"
+  },
+  "crisis.2300": {
+   "zh": "联络肃正协议（可重复）",
+   "en": "Contact the Contingency (repeatable)"
+  },
+  "crisis.2403": {
+   "zh": "联络赛博勒克斯（可重复）",
+   "en": "Contact the Cybrex (repeatable)"
+  },
+  "crisis.2042": {
+   "zh": "夺回星球（可重复）",
+   "en": "A world retaken (repeatable)"
+  },
+  "crisis.2401": {
+   "zh": "赛博勒克斯重现",
+   "en": "The Cybrex return"
+  },
+  "crisis.2085": {
+   "zh": "合成人渗透",
+   "en": "Synth infiltration"
+  },
+  "crisis.2313": {
+   "zh": "机械帝国：信号变化",
+   "en": "Machine empires: the signal changes"
+  },
+  "observer.41": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.42": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.43": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.44": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.45": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.46": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.47": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.48": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.49": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.51": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.52": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.53": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  },
+  "observer.54": {
+   "zh": "观察者副本",
+   "en": "Observer copy"
+  }
  },
  "notes": [
-  {"doc": "crisis.2010", "kind": "review",
+  {
+   "doc": "crisis.2010",
+   "kind": "review",
    "zh": "隐藏事件2005在同一时刻排定之后的全部通知：第100–300天异常、第400–600天失踪、第700–900天消失、第1000–1200天召唤、第1400天抵达、第1450–1460天机械星球、第1800–1900天渗透。它们是按时间先后到达的通知，而非同时可选的分支。",
-   "en": "Hidden crisis.2005 schedules every later notice at once: anomalies on day 100–300, vanishings on day 400–600, disappearances on day 700–900, the Summons on day 1000–1200, the Arrival on day 1400, the Machine Worlds on day 1450–1460 and infiltration on day 1800–1900. They arrive in time order; they are not simultaneous choices."},
-  {"doc": "special_projects:AI_CRISIS_PROJECT", "kind": "review",
+   "en": "Hidden crisis.2005 schedules every later notice at once: anomalies on day 100–300, vanishings on day 400–600, disappearances on day 700–900, the Summons on day 1000–1200, the Arrival on day 1400, the Machine Worlds on day 1450–1460 and infiltration on day 1800–1900. They arrive in time order; they are not simultaneous choices."
+  },
+  {
+   "doc": "special_projects:AI_CRISIS_PROJECT",
+   "kind": "review",
    "zh": "抵达时自动为机械智能、个体机械与合成飞升帝国开启。若在此之前已有两座肃正中心被毁，该项目会被中止（00_scripted_effects.txt:5096-5099）。",
-   "en": "Opened at the Arrival for Machine Intelligences, individual machines and synthetic-ascended empires. It is aborted once two sterilization hubs have been destroyed (00_scripted_effects.txt:5096-5099)."},
-  {"doc": "crisis.2300", "kind": "review",
+   "en": "Opened at the Arrival for Machine Intelligences, individual machines and synthetic-ascended empires. It is aborted once two sterilization hubs have been destroyed (00_scripted_effects.txt:5096-5099)."
+  },
+  {
+   "doc": "crisis.2300",
+   "kind": "review",
    "zh": "外交界面中的可重复通讯；机械与合成帝国可多问一个“强制质询”。",
-   "en": "A repeatable diplomacy screen; machine and synthetic empires get an extra Forced Query."}
+   "en": "A repeatable diplomacy screen; machine and synthetic empires get an extra Forced Query."
+  }
  ],
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "c5b-crisis (Opus 5.5)",
-  "scope": {"zh": "完整核对 crisis_events_3.txt 全部可见事件：定时预兆、抵达、四座中心与最终世界、渗透与破坏随机事件、赛博勒克斯支线、结局与余波，以及机械堕落帝国与监管人/帝皇事件。", "en": "Checked every visible event of crisis_events_3.txt: the timed omens, the Arrival, the four hubs and the final world, the infiltration and sabotage random events, the Cybrex subplot, ending and aftermath, plus the machine Fallen Empire and Custodian/Emperor events."},
-  "sources": ["events/crisis_events_3.txt", "events/crisis_trigger_events.txt", "events/observer_events.txt", "events/fallen_machine_empire_events.txt", "events/nemesis_custodian_events.txt", "events/nemesis_emperor_events.txt", "common/scripted_effects/00_scripted_effects.txt", "common/scripted_effects/fallen_empire_scripted_effects.txt", "common/special_projects/00_projects_1.txt", "common/on_actions/00_on_actions.txt"],
+  "scope": {
+   "zh": "完整核对 crisis_events_3.txt 全部可见事件：定时预兆、抵达、四座中心与最终世界、渗透与破坏随机事件、赛博勒克斯支线、结局与余波，以及机械堕落帝国与监管人/帝皇事件。",
+   "en": "Checked every visible event of crisis_events_3.txt: the timed omens, the Arrival, the four hubs and the final world, the infiltration and sabotage random events, the Cybrex subplot, ending and aftermath, plus the machine Fallen Empire and Custodian/Emperor events."
+  },
+  "sources": [
+   "events/crisis_events_3.txt",
+   "events/crisis_trigger_events.txt",
+   "events/observer_events.txt",
+   "events/fallen_machine_empire_events.txt",
+   "events/nemesis_custodian_events.txt",
+   "events/nemesis_emperor_events.txt",
+   "common/scripted_effects/00_scripted_effects.txt",
+   "common/scripted_effects/fallen_empire_scripted_effects.txt",
+   "common/special_projects/00_projects_1.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
   "uncertain": [
    "observer.50 (observer copy of crisis.2037) is the root of another reviewer's story (event-observer-50, many callers through destroy_machine_world); it is deliberately not linked here.",
    "crisis.2015/2016 are attached under 2011/2012 because both checks use the same requirement; an empire that gains synthetic pops between day 300 and 400 could see them without the earlier anomaly.",
    "crisis.2037 is reached by destroying hubs at any time after activation; it is attached under the fourth hub for reading order."
   ],
   "guide": "public/summaries/contingency.md"
+ },
+ "placeholders": {
+  "From.From.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, that planet's name appears here."
+   }
+  },
+  "From.GetName": {
+   "zh": "那颗机械星球",
+   "en": "that machine world",
+   "note": {
+    "zh": "游戏里这里会出现那颗机械星球的名称。",
+    "en": "In the game, the name of that machine world appears here."
+   }
+  },
+  "From.GetSpeciesName": {
+   "zh": "机械族",
+   "en": "machine species",
+   "note": {
+    "zh": "游戏里这里会出现这个机械物种的名称。",
+    "en": "In the game, the name of this machine species appears here."
+   }
+  },
+  "From.solar_system.GetName": {
+   "zh": "这个",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现那个恒星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都的名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "Root.GetRulerTitle": {
+   "zh": "我们的统治者",
+   "en": "our ruler",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的称号。",
+    "en": "In the game, your ruler's title appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "本族",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "我们这些人",
+   "en": "our kind",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, your species' plural name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesName": {
+   "zh": "本族",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesNamePlural": {
+   "zh": "我们这些人",
+   "en": "our kind",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, your species' plural name appears here."
+   }
+  },
+  "admiral.GetName": {
+   "zh": "本人",
+   "en": "in person",
+   "note": {
+    "zh": "游戏里这里会出现指挥官的称呼。",
+    "en": "In the game, the commander's name appears here."
+   }
+  },
+  "infil_planet.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, that planet's name appears here."
+   }
+  },
+  "infil_planet2.GetName": {
+   "zh": "另一颗星球",
+   "en": "the other planet",
+   "note": {
+    "zh": "游戏里这里会出现另一颗星球的名称。",
+    "en": "In the game, the name of the other planet appears here."
+   }
+  },
+  "scientist.GetName": {
+   "zh": "这位",
+   "en": "the officer",
+   "note": {
+    "zh": "游戏里这里会出现这位科学官的名字。",
+    "en": "In the game, this science officer's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "crisis.2095": {
+   "Root.GetRulerTitle": {
+    "zh": "我们的",
+    "en": "our",
+    "note": {
+     "zh": "游戏里这里会出现你的统治者的称呼前缀。",
+     "en": "In the game, the prefix of your ruler's title appears here."
+    }
+   },
+   "ruler.GetRegnalName": {
+    "zh": "统治者",
+    "en": "ruler",
+    "note": {
+     "zh": "游戏里这里会出现你的统治者的称号。",
+     "en": "In the game, your ruler's title appears here."
+    }
+   }
+  }
  }
 }

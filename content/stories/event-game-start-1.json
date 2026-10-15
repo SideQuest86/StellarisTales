@@ -250,5 +250,55 @@
    "event-country-18",
    "event-country-20"
   ]
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "附近",
+   "en": "nearby",
+   "note": {
+    "zh": "游戏里这里会出现附近星系的名称。",
+    "en": "In the game, the name of the nearby star system appears here."
+   }
+  },
+  "Root.GetStarName": {
+   "zh": "这个",
+   "en": "the star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星所在星系的名称。",
+    "en": "In the game, the name of this star's system appears here."
+   }
+  },
+  "anomaly_system.GetName": {
+   "zh": "那个星系",
+   "en": "remote",
+   "note": {
+    "zh": "游戏里这里会出现那个星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  },
+  "modified_probe_system.GetName": {
+   "zh": "偏远",
+   "en": "outlying",
+   "note": {
+    "zh": "游戏里这里会出现偏远星系的名称。",
+    "en": "In the game, the name of the outlying star system appears here."
+   }
+  },
+  "salvager_system.GetName": {
+   "zh": "这个星系",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "space_probe.GetStarName": {
+   "zh": "那个",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现那个星系的名称。",
+    "en": "In the game, the name of that star system appears here."
+   }
+  }
  }
 }

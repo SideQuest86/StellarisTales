@@ -26,5 +26,47 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/site-site-the-library.md"
+ },
+ "placeholders": {
+  "FromFrom.Planet.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "Owner.GetSpeciesRemnantName": {
+   "zh": "遗骸",
+   "en": "skeleton",
+   "note": {
+    "zh": "游戏里这里会出现这具遗骸的种类。",
+    "en": "In the game, the kind of remains found appears here."
+   }
+  },
+  "Root.Owner.Species.GetName": {
+   "zh": "我们的同类",
+   "en": "member of the species",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  },
+  "curator_enclave_country.GetName": {
+   "zh": "帝国",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现这个帝国的名称。",
+    "en": "In the game, the name of this empire appears here."
+   }
+  },
+  "curator_poi.GetName": {
+   "zh": "某个",
+   "en": "distant",
+   "note": {
+    "zh": "游戏里这里会出现这个恒星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  }
  }
 }

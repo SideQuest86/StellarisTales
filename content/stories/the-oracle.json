@@ -1,40 +1,108 @@
 {
  "id": "the-oracle",
  "family": {
-  "title": {"zh": "神谕", "en": "The Oracle"},
+  "title": {
+   "zh": "神谕",
+   "en": "The Oracle"
+  },
   "category": "precursors",
   "start": "ancrel.4031",
-  "members": ["ancrel.4031", "archaeological_site_types:oracle_digsite", "ancrel.4032", "ancrel.4033", "ancrel.4034", "ancrel.4035", "ancrel.4036", "ancrel.4038"],
+  "members": [
+   "ancrel.4031",
+   "archaeological_site_types:oracle_digsite",
+   "ancrel.4032",
+   "ancrel.4033",
+   "ancrel.4034",
+   "ancrel.4035",
+   "ancrel.4036",
+   "ancrel.4038"
+  ],
   "sources": []
  },
  "category": "precursors",
  "nodeLabels": {
-  "ancrel.4036": {"zh": "与神谕对话（可招募）", "en": "Speaking with the Oracle (recruitable)"},
-  "ancrel.4038": {"zh": "再次确认：解雇或招募", "en": "Second chance: dismiss or recruit"}
+  "ancrel.4036": {
+   "zh": "与神谕对话（可招募）",
+   "en": "Speaking with the Oracle (recruitable)"
+  },
+  "ancrel.4038": {
+   "zh": "再次确认：解雇或招募",
+   "en": "Second chance: dismiss or recruit"
+  }
  },
  "notes": [
-  {"doc": "ancrel.4031", "kind": "review",
+  {
+   "doc": "ancrel.4031",
+   "kind": "review",
    "zh": "开场：需要《远古遗物》。非AI帝国清除丛林、毒藻、深坑、流沙、沼泽或冰川类障碍时（on_blocker_cleared），隐藏的 ancrel.4030（events/ancient_relics_arcsite_events_1.txt:4828）以 5/5/95 在神谕、哨兵与无事件之间抽取；神谕全银河一次。1天后出现此事件，可建立遗址或不理会。",
-   "en": "Opening: needs Ancient Relics. When a non-AI empire clears a jungle, kelp, sinkhole, quicksand, swamp or glacier blocker (on_blocker_cleared), hidden ancrel.4030 (events/ancient_relics_arcsite_events_1.txt:4828) draws Oracle / Sentinels / nothing at 5/5/95; the Oracle happens once per galaxy. This event follows a day later; the site may be created or ignored."},
-  {"doc": "ancrel.4035", "kind": "review",
+   "en": "Opening: needs Ancient Relics. When a non-AI empire clears a jungle, kelp, sinkhole, quicksand, swamp or glacier blocker (on_blocker_cleared), hidden ancrel.4030 (events/ancient_relics_arcsite_events_1.txt:4828) draws Oracle / Sentinels / nothing at 5/5/95; the Oracle happens once per galaxy. This event follows a day later; the site may be created or ignored."
+  },
+  {
+   "doc": "ancrel.4035",
+   "kind": "review",
    "zh": "两个选择：唤醒神谕 → 1天后 4036；或直接拿走1000合金、3500工程学研究与500影响力，故事结束。",
-   "en": "Two choices: wake the Oracle → 4036 a day later; or take 1000 alloys, 3500 engineering research and 500 influence and end the story."},
-  {"doc": "ancrel.4036", "kind": "review",
+   "en": "Two choices: wake the Oracle → 4036 a day later; or take 1000 alloys, 3500 engineering research and 500 influence and end the story."
+  },
+  {
+   "doc": "ancrel.4036",
+   "kind": "review",
    "zh": "领袖招募窗口：前五个回应只显示回复（is_dialog_only）；“解雇”1天后到 4038；“招募”（狂热排外与噬杀蜂群不可用）把神谕作为“知名”官员领袖加入。",
-   "en": "Leader-recruit window: the first five answers only show replies (is_dialog_only); dismissing leads to 4038 a day later; recruiting (not for fanatic xenophobes or devouring swarms) adds the Oracle as a renowned official."}
+   "en": "Leader-recruit window: the first five answers only show replies (is_dialog_only); dismissing leads to 4038 a day later; recruiting (not for fanatic xenophobes or devouring swarms) adds the Oracle as a renowned official."
+  }
  ],
  "endings": {
-  "ancrel.4038": {"label": {"zh": "解雇神谕或最终招募", "en": "Dismiss or finally recruit the Oracle"}, "note": {"zh": "解雇得到合金、工程学研究与影响力；招募同 4036。", "en": "Dismissal gives alloys, engineering research and influence; recruitment as in 4036."}, "evidence": "events/ancient_relics_arcsite_events_1.txt:5282-5370"}
+  "ancrel.4038": {
+   "label": {
+    "zh": "解雇神谕或最终招募",
+    "en": "Dismiss or finally recruit the Oracle"
+   },
+   "note": {
+    "zh": "解雇得到合金、工程学研究与影响力；招募同 4036。",
+    "en": "Dismissal gives alloys, engineering research and influence; recruitment as in 4036."
+   },
+   "evidence": "events/ancient_relics_arcsite_events_1.txt:5282-5370"
+  }
  },
  "review": {
   "status": "reviewed",
   "date": "2026-10-12",
   "reviewer": "C2 precursor review (Claude Opus 5.5)",
-  "scope": {"zh": "整条故事：4030 分派与条件、遗址四阶段、唤醒或拿取资源、招募/解雇对话；中英文正文已读。",
-            "en": "Whole story: the 4030 dispatcher and its conditions, the four site stages, waking the Oracle or taking resources, the recruit/dismiss dialogue; both languages read."},
-  "sources": ["events/ancient_relics_arcsite_events_1.txt", "common/archaeological_site_types/02_ancient_relics_arc_sites.txt", "common/on_actions/00_on_actions.txt",
-              "localisation/simp_chinese", "localisation/english"],
-  "uncertain": ["ancrel.4031 has six location-specific texts chosen by a carrier flag set in the hidden dispatcher; the compiled conditions show them as alternatives."],
+  "scope": {
+   "zh": "整条故事：4030 分派与条件、遗址四阶段、唤醒或拿取资源、招募/解雇对话；中英文正文已读。",
+   "en": "Whole story: the 4030 dispatcher and its conditions, the four site stages, waking the Oracle or taking resources, the recruit/dismiss dialogue; both languages read."
+  },
+  "sources": [
+   "events/ancient_relics_arcsite_events_1.txt",
+   "common/archaeological_site_types/02_ancient_relics_arc_sites.txt",
+   "common/on_actions/00_on_actions.txt",
+   "localisation/simp_chinese",
+   "localisation/english"
+  ],
+  "uncertain": [
+   "ancrel.4031 has six location-specific texts chosen by a carrier flag set in the hidden dispatcher; the compiled conditions show them as alternatives."
+  ],
   "guide": "public/summaries/the-oracle.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "我们的帝国",
+   "en": "our empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "ancrel.4031": {
+   "Root.GetName": {
+    "zh": "这颗星球",
+    "en": "this planet",
+    "note": {
+     "zh": "游戏里这里会出现这颗星球的名称。",
+     "en": "In the game, the name of this planet appears here."
+    }
+   }
+  }
  }
 }

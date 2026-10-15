@@ -32,5 +32,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-cstorms-8500.md"
+ },
+ "placeholders": {
+  "from.GetClassName": {
+   "zh": "恒星",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现这颗恒星的类别名称。",
+    "en": "In the game, the type of this star appears here."
+   }
+  },
+  "from.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "from.solar_system.GetName": {
+   "zh": "这个",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球所在星系的名称。",
+    "en": "In the game, the name of this planet's star system appears here."
+   }
+  }
  }
 }

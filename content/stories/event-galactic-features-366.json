@@ -42,5 +42,23 @@
    "events/galactic_features_events.txt:2869-3010,3109-3300"
   ],
   "guide": "public/summaries/event-galactic-features-366.md"
+ },
+ "placeholders": {
+  "tiyanki_killer.GetName": {
+   "zh": "这支舰队",
+   "en": "fleet",
+   "note": {
+    "zh": "游戏里这里会出现击杀缇扬奇的舰队名称。",
+    "en": "In the game, the name of the fleet that killed the Tiyanki appears here."
+   }
+  },
+  "tiyanki_system.GetName": {
+   "zh": "这个星系",
+   "en": "home",
+   "note": {
+    "zh": "游戏里这里会出现缇扬奇母星系的名称。",
+    "en": "In the game, the name of the Tiyanki home system appears here."
+   }
+  }
  }
 }

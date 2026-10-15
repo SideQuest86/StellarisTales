@@ -143,5 +143,87 @@
    "zh": "七处圣地全部完成后的汇总事件；之后300天出现2105，再过1800天出现2115。",
    "en": "The summary event once all seven sites are done; 2105 follows 300 days later, then 2115 after another 1800 days."
   }
- ]
+ ],
+ "placeholders": {
+  "GetRulerName": {
+   "zh": "统治者",
+   "en": "ruler",
+   "note": {
+    "zh": "游戏里这里会出现统治者的名字。",
+    "en": "In the game, the ruler's name appears here."
+   }
+  },
+  "GetRulerTitle": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现统治者的称号。",
+    "en": "In the game, the ruler's title appears here."
+   }
+  },
+  "Owner.Capital.GetName": {
+   "zh": "这艘舰船",
+   "en": "the ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘方舟舰的名称。",
+    "en": "In the game, this Arkship's name appears here."
+   }
+  },
+  "Root.Owner.GetRulerName": {
+   "zh": "统治者",
+   "en": "ruler",
+   "note": {
+    "zh": "游戏里这里会出现统治者的名字。",
+    "en": "In the game, the ruler's name appears here."
+   }
+  },
+  "Root.Owner.GetRulerTitle": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现统治者的称号。",
+    "en": "In the game, the ruler's title appears here."
+   }
+  },
+  "fromfrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "fromfromfrom.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "mechsiah_plug_scientist.GetName": {
+   "zh": "本人",
+   "en": "himself",
+   "note": {
+    "zh": "游戏里这里会出现首席科学官的名字。",
+    "en": "In the game, the head scientist's name appears here."
+   }
+  },
+  "sacred_eye_scientist.GetName": {
+   "zh": "本人",
+   "en": "himself",
+   "note": {
+    "zh": "游戏里这里会出现首席科学官的名字。",
+    "en": "In the game, the head scientist's name appears here."
+   }
+  },
+  "this.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗圣地星球的名称。",
+    "en": "In the game, this sacred planet's name appears here."
+   }
+  }
+ }
 }

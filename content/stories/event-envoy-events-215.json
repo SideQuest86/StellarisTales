@@ -13,5 +13,31 @@
    "common/on_actions/00_on_actions.txt:576-592"
   ],
   "guide": "public/summaries/event-envoy-events-215.md"
+ },
+ "placeholders": {
+  "event_envoy.GetName": {
+   "zh": "这位使者",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现使者的名字。",
+    "en": "In the game, the envoy's name appears here."
+   }
+  },
+  "provider_country.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "provider_country.GetSpeciesNamePlural": {
+   "zh": "其他物种",
+   "en": "the other species",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国所属物种的复数名称。",
+    "en": "In the game, the plural name of that empire's species appears here."
+   }
+  }
  }
 }

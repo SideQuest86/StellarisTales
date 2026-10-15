@@ -33,5 +33,31 @@
    "The elevation mechanic (necrophage_elevation_chamber, necro_apprentice job) lives in buildings and jobs; only the announcement window is an event."
   ],
   "guide": "public/summaries/origin_necrophage.md"
+ },
+ "placeholders": {
+  "Root.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现你的首都名称。",
+    "en": "In the game, your capital's name appears here."
+   }
+  },
+  "necro_apprentice.GetNamePlural": {
+   "zh": "学徒",
+   "en": "apprentices",
+   "note": {
+    "zh": "游戏里这里会出现学徒的复数称呼。",
+    "en": "In the game, the plural word for apprentices appears here."
+   }
+  },
+  "necrophage_species.GetNamePlural": {
+   "zh": "食尸者",
+   "en": "necrophages",
+   "note": {
+    "zh": "游戏里这里会出现食尸者的复数称呼。",
+    "en": "In the game, the plural word for necrophages appears here."
+   }
+  }
  }
 }

@@ -20,5 +20,23 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-cyber-1005.md"
+ },
+ "placeholders": {
+  "Owner.GetAdjective": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国形容词。",
+    "en": "In the game, your empire's adjective appears here."
+   }
+  },
+  "Species.GetName": {
+   "zh": "我们的物种",
+   "en": "species",
+   "note": {
+    "zh": "游戏里这里会出现你的物种名称。",
+    "en": "In the game, your species' name appears here."
+   }
+  }
  }
 }

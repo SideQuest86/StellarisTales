@@ -98,5 +98,71 @@
    "event-fircon-2610"
   ],
   "guide": "public/summaries/event-fircon-2600.md"
+ },
+ "placeholders": {
+  "from.owner.GetName": {
+   "zh": "发射方帝国",
+   "en": "the launching empire",
+   "note": {
+    "zh": "游戏里这里会出现发射任务的帝国名称。",
+    "en": "In the game, the name of the empire that launched the mission appears here."
+   }
+  },
+  "from.owner.GetSpeciesAdj": {
+   "zh": "当地",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现发射方物种的形容词。",
+    "en": "In the game, the adjective for the launching species appears here."
+   }
+  },
+  "from.owner.GetSpeciesName": {
+   "zh": "当地",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现发射方物种的形容词。",
+    "en": "In the game, the adjective for the launching species appears here."
+   }
+  },
+  "from.owner.capital_scope.GetName": {
+   "zh": "首都",
+   "en": "the capital",
+   "note": {
+    "zh": "游戏里这里会出现发射方首都的名称。",
+    "en": "In the game, the name of the launching empire's capital appears here."
+   }
+  },
+  "fromfrom.owner.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现另一个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "fromfromfrom.owner.GetName": {
+   "zh": "第三个帝国",
+   "en": "a third empire",
+   "note": {
+    "zh": "游戏里这里会出现第三个帝国的名称。",
+    "en": "In the game, the name of a third empire appears here."
+   }
+  },
+  "fromfromfrom.owner.GetSpeciesName": {
+   "zh": "当地",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这个物种的形容词。",
+    "en": "In the game, the adjective for this species appears here."
+   }
+  },
+  "pre_ftl_country.GetName": {
+   "zh": "当地势力",
+   "en": "the local power",
+   "note": {
+    "zh": "游戏里这里会出现这个前FTL势力的名称。",
+    "en": "In the game, the name of this pre-FTL power appears here."
+   }
+  }
  }
 }

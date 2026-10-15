@@ -3,14 +3,24 @@
  "category": "rifts",
  "endings": {
   "astral_planes.210": {
-   "label": {"zh": "科学家返回：被“终末”吞没的星系", "en": "Scientist Returns: a galaxy lost to the End"},
-   "note": {"zh": "单事件：探索者回到被“终末”吞没的星系，立刻获得特质“创伤”和“裂隙扭曲”（事件的 immediate 即授予，选项只是确认）。每个国家只会看到一次。", "en": "A single event: the explorer returns to a galaxy lost to the End and at once gains the traits traumatized and rift-warped (granted in the immediate block; the option only acknowledges). Seen once per country."},
-   "evidence": "events/astral_planes_events.txt:1574-1606"}
+   "label": {
+    "zh": "科学家返回：被“终末”吞没的星系",
+    "en": "Scientist Returns: a galaxy lost to the End"
+   },
+   "note": {
+    "zh": "单事件：探索者回到被“终末”吞没的星系，立刻获得特质“创伤”和“裂隙扭曲”（事件的 immediate 即授予，选项只是确认）。每个国家只会看到一次。",
+    "en": "A single event: the explorer returns to a galaxy lost to the End and at once gains the traits traumatized and rift-warped (granted in the immediate block; the option only acknowledges). Seen once per country."
+   },
+   "evidence": "events/astral_planes_events.txt:1574-1606"
+  }
  },
  "notes": [
-  {"doc": "astral_planes.210", "kind": "review",
+  {
+   "doc": "astral_planes.210",
+   "kind": "review",
    "zh": "触发：on_astral_rift_exploration_complete（00_on_actions.txt:5013）。条件：国家带有标记 end_of_the_cycle_reckoning（“终结周期”危机中帝国被毁后，由该危机的事件设置）且尚未出现过本事件（astral_planes_210_happened）。设置该标记的事件不在本类别内。",
-   "en": "Trigger: on_astral_rift_exploration_complete (00_on_actions.txt:5013). Conditions: the country has the flag end_of_the_cycle_reckoning (set by events of the End of the Cycle crisis after the empire was destroyed) and has not had this event (astral_planes_210_happened). The events that set that flag are outside this category."}
+   "en": "Trigger: on_astral_rift_exploration_complete (00_on_actions.txt:5013). Conditions: the country has the flag end_of_the_cycle_reckoning (set by events of the End of the Cycle crisis after the empire was destroyed) and has not had this event (astral_planes_210_happened). The events that set that flag are outside this category."
+  }
  ],
  "review": {
   "status": "reviewed",
@@ -20,8 +30,13 @@
    "zh": "已核对 astral_planes.210 及其 on_action 条目；未追查设置 end_of_the_cycle_reckoning 的危机事件（不属于 C4）。",
    "en": "Checked astral_planes.210 and its on_action entry; the crisis events that set end_of_the_cycle_reckoning were not traced (outside C4)."
   },
-  "sources": ["events/astral_planes_events.txt", "common/on_actions/00_on_actions.txt"],
-  "uncertain": ["end_of_the_cycle_reckoning 的设置位置未核对。 / Where end_of_the_cycle_reckoning is set was not checked."],
+  "sources": [
+   "events/astral_planes_events.txt",
+   "common/on_actions/00_on_actions.txt"
+  ],
+  "uncertain": [
+   "end_of_the_cycle_reckoning 的设置位置未核对。 / Where end_of_the_cycle_reckoning is set was not checked."
+  ],
   "guide": "public/summaries/event-astral-planes-210.md"
  }
 }

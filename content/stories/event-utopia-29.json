@@ -13,5 +13,55 @@
    "common/on_actions/00_on_actions.txt"
   ],
   "guide": "public/summaries/event-utopia-29.md"
+ },
+ "placeholders": {
+  "dyson_sphere_neighbor.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名字。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "dyson_sphere_neighbor.GetRulerName": {
+   "zh": "统治者本人",
+   "en": "ruler in person",
+   "note": {
+    "zh": "游戏里这里会出现另一方统治者的名字。",
+    "en": "In the game, the name of the other empire's ruler appears here."
+   }
+  },
+  "dyson_sphere_neighbor.GetRulerTitle": {
+   "zh": "对方",
+   "en": "other",
+   "note": {
+    "zh": "游戏里这里会出现另一方统治者的头衔。",
+    "en": "In the game, the title of the other empire's ruler appears here."
+   }
+  },
+  "dysonsphere_builder.GetName": {
+   "zh": "建造方",
+   "en": "the builder",
+   "note": {
+    "zh": "游戏里这里会出现建造戴森球的帝国的名字。",
+    "en": "In the game, the name of the empire building the Dyson Sphere appears here."
+   }
+  },
+  "dysonsphere_builder.GetRulerName": {
+   "zh": "本人",
+   "en": "in person",
+   "note": {
+    "zh": "游戏里这里会出现建造方统治者的名字。",
+    "en": "In the game, the name of the builder's ruler appears here."
+   }
+  },
+  "dysonsphere_builder.GetRulerTitle": {
+   "zh": "统治者",
+   "en": "ruler",
+   "note": {
+    "zh": "游戏里这里会出现建造方统治者的头衔。",
+    "en": "In the game, the title of the builder's ruler appears here."
+   }
+  }
  }
 }

@@ -16,5 +16,55 @@
    "federations2.1各选项的效果未逐项核对。 / Effects of each federations2.1 option not checked one by one."
   ],
   "guide": "public/summaries/anomaly-strange-signal-category.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, this planet's name appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesName": {
+   "zh": "本族",
+   "en": "native",
+   "note": {
+    "zh": "游戏里这里会出现你的物种的形容词。",
+    "en": "In the game, your species' adjective appears here."
+   }
+  },
+  "Root.Owner.GetSpeciesNamePlural": {
+   "zh": "我们这些人",
+   "en": "our kind",
+   "note": {
+    "zh": "游戏里这里会出现你的物种复数名称。",
+    "en": "In the game, your species' plural name appears here."
+   }
+  },
+  "Root.Owner.Leader.GetName": {
+   "zh": "统治者",
+   "en": "ruler",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的称号。",
+    "en": "In the game, your ruler's title appears here."
+   }
+  },
+  "Root.Owner.Leader.GetTitle": {
+   "zh": "我们的",
+   "en": "our",
+   "note": {
+    "zh": "游戏里这里会出现你的统治者的称呼前缀。",
+    "en": "In the game, the prefix of your ruler's title appears here."
+   }
+  },
+  "shakespeare.GetName": {
+   "zh": "这位剧作家",
+   "en": "the playwright",
+   "note": {
+    "zh": "游戏里这里会出现这位剧作家的名字。",
+    "en": "In the game, this playwright's name appears here."
+   }
+  }
  }
 }

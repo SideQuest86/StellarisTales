@@ -120,5 +120,231 @@
    "event-marauder-151",
    "event-marauder-70"
   ]
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  },
+  "From.GetSpeciesName": {
+   "zh": "掠夺者",
+   "en": "marauder",
+   "note": {
+    "zh": "游戏里这里会出现掠夺者的物种名称。",
+    "en": "In the game, the name of the marauder species appears here."
+   }
+  },
+  "From.GetSpeciesNamePlural": {
+   "zh": "掠夺者们",
+   "en": "marauders",
+   "note": {
+    "zh": "游戏里这里会出现掠夺者的复数名称。",
+    "en": "In the game, the plural name of the marauders appears here."
+   }
+  },
+  "Root.GetName": {
+   "zh": "你们",
+   "en": "empire",
+   "note": {
+    "zh": "游戏里这里会出现你的帝国名称。",
+    "en": "In the game, your empire's name appears here."
+   }
+  },
+  "Root.GetSpeciesName": {
+   "zh": "你们",
+   "en": "your",
+   "note": {
+    "zh": "游戏里这里会出现你们物种的名称。",
+    "en": "In the game, the name of your species appears here."
+   }
+  },
+  "Root.GetSpeciesNamePlural": {
+   "zh": "外乡人",
+   "en": "outlanders",
+   "note": {
+    "zh": "游戏里这里会出现掠夺者对你们物种的称呼。",
+    "en": "In the game, the marauders' form of address for your species appears here."
+   }
+  },
+  "Root.Species.GetSpawnNamePlural": {
+   "zh": "后世",
+   "en": "future",
+   "note": {
+    "zh": "游戏里这里会出现后世的称呼。",
+    "en": "In the game, the word for future generations appears here."
+   }
+  },
+  "Root.Species.GetSpeciesName": {
+   "zh": "真正的外乡人",
+   "en": "outlander",
+   "note": {
+    "zh": "游戏里这里会出现你们物种的单数称呼。",
+    "en": "In the game, the singular form of address for your species appears here."
+   }
+  },
+  "current_marauder_diplomacy.GetName": {
+   "zh": "氏族",
+   "en": "clan",
+   "note": {
+    "zh": "游戏里这里会出现当前的掠夺者氏族名称。",
+    "en": "In the game, the name of the current marauder clan appears here."
+   }
+  },
+  "encountered_marauder.GetName": {
+   "zh": "掠夺者",
+   "en": "Marauders",
+   "note": {
+    "zh": "游戏里这里会出现遭遇的掠夺者的名称。",
+    "en": "In the game, the name of the encountered marauders appears here."
+   }
+  },
+  "encountered_marauder.GetSpeciesName": {
+   "zh": "他们的",
+   "en": "their",
+   "note": {
+    "zh": "游戏里这里会出现遭遇的掠夺者的所属名称。",
+    "en": "In the game, the name of the encountered marauders' territory appears here."
+   }
+  },
+  "encountered_marauder.GetSpeciesNamePlural": {
+   "zh": "战士",
+   "en": "warriors",
+   "note": {
+    "zh": "游戏里这里会出现遭遇的掠夺者的复数称呼。",
+    "en": "In the game, the plural name the encountered marauders use for themselves appears here."
+   }
+  },
+  "marauder_country_1.GetName": {
+   "zh": "对手",
+   "en": "rival",
+   "note": {
+    "zh": "游戏里这里会出现对手的名称。",
+    "en": "In the game, the name of the rival appears here."
+   }
+  },
+  "marauder_country_1.GetSpeciesName": {
+   "zh": "精英",
+   "en": "elite",
+   "note": {
+    "zh": "游戏里这里会出现佣兵的单数称呼。",
+    "en": "In the game, the singular name of the mercenaries appears here."
+   }
+  },
+  "marauder_country_1.GetSpeciesNamePlural": {
+   "zh": "佣兵",
+   "en": "mercenaries",
+   "note": {
+    "zh": "游戏里这里会出现佣兵的复数名称。",
+    "en": "In the game, the plural name of the mercenaries appears here."
+   }
+  },
+  "marauder_country_2.GetSpeciesName": {
+   "zh": "蛮兵",
+   "en": "brute",
+   "note": {
+    "zh": "游戏里这里会出现蛮兵的单数名称。",
+    "en": "In the game, the singular name of the brutes appears here."
+   }
+  },
+  "marauder_country_2.GetSpeciesNamePlural": {
+   "zh": "蛮兵",
+   "en": "brutes",
+   "note": {
+    "zh": "游戏里这里会出现蛮兵的复数名称。",
+    "en": "In the game, the plural name of the brutes appears here."
+   }
+  },
+  "marauder_country_3.GetName": {
+   "zh": "盟友",
+   "en": "ally",
+   "note": {
+    "zh": "游戏里这里会出现盟友的名称。",
+    "en": "In the game, the name of the ally appears here."
+   }
+  },
+  "marauder_country_3.GetSpeciesNamePlural": {
+   "zh": "激进分子",
+   "en": "radicals",
+   "note": {
+    "zh": "游戏里这里会出现激进一派的复数名称。",
+    "en": "In the game, the plural name of the radical faction appears here."
+   }
+  },
+  "marauder_species.GetName": {
+   "zh": "老练",
+   "en": "veteran",
+   "note": {
+    "zh": "游戏里这里会出现雇佣兵的所属称呼。",
+    "en": "In the game, the word for the hired marauder species appears here."
+   }
+  },
+  "marauder_species.GetNamePlural": {
+   "zh": "老兵",
+   "en": "veterans",
+   "note": {
+    "zh": "游戏里这里会出现雇佣兵的复数名称。",
+    "en": "In the game, the plural name of the hired veterans appears here."
+   }
+  },
+  "marauder_system.GetName": {
+   "zh": "邻近",
+   "en": "neighboring",
+   "note": {
+    "zh": "游戏里这里会出现邻近恒星系的名称。",
+    "en": "In the game, the name of the neighboring star system appears here."
+   }
+  },
+  "preliminary_target.GetName": {
+   "zh": "猎物",
+   "en": "prey",
+   "note": {
+    "zh": "游戏里这里会出现预定袭击目标的名称。",
+    "en": "In the game, the name of the planned raid target appears here."
+   }
+  },
+  "raid_target_1.GetName": {
+   "zh": "第一个目标",
+   "en": "first target",
+   "note": {
+    "zh": "游戏里这里会出现第一个袭击目标的名称。",
+    "en": "In the game, the name of the first raid target appears here."
+   }
+  },
+  "raid_target_2.GetName": {
+   "zh": "第二个目标",
+   "en": "second target",
+   "note": {
+    "zh": "游戏里这里会出现第二个袭击目标的名称。",
+    "en": "In the game, the name of the second raid target appears here."
+   }
+  },
+  "raid_target_3.GetName": {
+   "zh": "第三个目标",
+   "en": "third target",
+   "note": {
+    "zh": "游戏里这里会出现第三个袭击目标的名称。",
+    "en": "In the game, the name of the third raid target appears here."
+   }
+  },
+  "raid_target_4.GetName": {
+   "zh": "第四个目标",
+   "en": "fourth target",
+   "note": {
+    "zh": "游戏里这里会出现第四个袭击目标的名称。",
+    "en": "In the game, the name of the fourth raid target appears here."
+   }
+  },
+  "random_fallen_empire.GetName": {
+   "zh": "堕落帝国",
+   "en": "fallen empire",
+   "note": {
+    "zh": "游戏里这里会出现随机选择的堕落帝国名称。",
+    "en": "In the game, the name of a randomly chosen fallen empire appears here."
+   }
+  }
  }
 }

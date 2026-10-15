@@ -15,5 +15,23 @@
    "common/scripted_variables/10_scripted_variables_nomads.txt"
   ],
   "guide": "public/summaries/event-arkship-1160.md"
+ },
+ "placeholders": {
+  "Root.GetName": {
+   "zh": "这艘",
+   "en": "this ship",
+   "note": {
+    "zh": "游戏里这里会出现这艘舰船的名称。",
+    "en": "In the game, this ship's name appears here."
+   }
+  },
+  "solar_system.GetName": {
+   "zh": "此",
+   "en": "star",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, this star system's name appears here."
+   }
+  }
  }
 }

@@ -107,5 +107,43 @@
    "event-country-52",
    "event-country-53"
   ]
+ },
+ "placeholders": {
+  "From.From.GetName": {
+   "zh": "那颗星球",
+   "en": "that planet",
+   "note": {
+    "zh": "游戏里这里会出现那颗星球的名称。",
+    "en": "In the game, the name of that planet appears here."
+   }
+  },
+  "Root.Owner.Capital.GetName": {
+   "zh": "我们的首都",
+   "en": "our capital",
+   "note": {
+    "zh": "游戏里这里会出现我们首都的名称。",
+    "en": "In the game, the name of our capital appears here."
+   }
+  },
+  "This.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  }
+ },
+ "placeholderDocs": {
+  "special_projects:TARBLAC_PROCUREMENT": {
+   "This.GetName": {
+    "zh": "这里",
+    "en": "here",
+    "note": {
+     "zh": "游戏里这里会出现这颗海洋星球的名称。",
+     "en": "In the game, the name of this ocean world appears here."
+    }
+   }
+  }
  }
 }

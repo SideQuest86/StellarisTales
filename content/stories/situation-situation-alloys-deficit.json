@@ -18,5 +18,31 @@
    "情境的开始由引擎判定，脚本里看不到。 / The start of the situation is engine-side and not visible in the scripts."
   ],
   "guide": "public/summaries/situation-situation-alloys-deficit.md"
+ },
+ "placeholders": {
+  "Owner.GetFinancialAdvisorAgencyCap": {
+   "zh": "我们的财务顾问",
+   "en": "our financial advisor",
+   "note": {
+    "zh": "游戏里这里会出现你的财务顾问机构的名称。",
+    "en": "In the game, the name of your financial advisory office appears here."
+   }
+  },
+  "robots_planet.recycled_robots": {
+   "zh": "若干",
+   "en": "some",
+   "note": {
+    "zh": "游戏里这里会出现被回收的机器人数量。",
+    "en": "In the game, the number of recycled robots appears here."
+   }
+  },
+  "robots_planet.total_alloys_gained": {
+   "zh": "若干",
+   "en": "some",
+   "note": {
+    "zh": "游戏里这里会出现获得的合金数量。",
+    "en": "In the game, the amount of alloys gained appears here."
+   }
+  }
  }
 }

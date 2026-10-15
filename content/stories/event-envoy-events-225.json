@@ -13,5 +13,47 @@
    "common/on_actions/00_on_actions.txt:576-592"
   ],
   "guide": "public/summaries/event-envoy-events-225.md"
+ },
+ "placeholders": {
+  "Root.GetAdj": {
+   "zh": "我方",
+   "en": "domestic",
+   "note": {
+    "zh": "游戏里这里会出现我方的形容词。",
+    "en": "In the game, the adjective for our side appears here."
+   }
+  },
+  "event_envoy.GetHerselfHimself": {
+   "zh": "他们自己",
+   "en": "themselves",
+   "note": {
+    "zh": "游戏里这里会出现使者本人的称谓。",
+    "en": "In the game, the envoy's own reflexive form appears here."
+   }
+  },
+  "event_envoy.GetName": {
+   "zh": "这位使者",
+   "en": "the envoy",
+   "note": {
+    "zh": "游戏里这里会出现使者的名字。",
+    "en": "In the game, the envoy's name appears here."
+   }
+  },
+  "scandal_empire.GetAdj": {
+   "zh": "该国",
+   "en": "foreign",
+   "note": {
+    "zh": "游戏里这里会出现那个国家的形容词。",
+    "en": "In the game, the adjective for that empire appears here."
+   }
+  },
+  "scandal_empire.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现那个帝国的名称。",
+    "en": "In the game, the name of the other empire appears here."
+   }
+  }
  }
 }

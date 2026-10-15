@@ -14,5 +14,31 @@
   ],
   "uncertain": [],
   "guide": "public/summaries/event-planet-destruction-800.md"
+ },
+ "placeholders": {
+  "From.GetName": {
+   "zh": "这颗星球",
+   "en": "this planet",
+   "note": {
+    "zh": "游戏里这里会出现这颗星球的名称。",
+    "en": "In the game, the name of this planet appears here."
+   }
+  },
+  "FromFrom.GetName": {
+   "zh": "那座巨构",
+   "en": "the megastructure",
+   "note": {
+    "zh": "游戏里这里会出现释放毒流的巨构名称。",
+    "en": "In the game, the name of the megastructure releasing the toxic stream appears here."
+   }
+  },
+  "FromFrom.Owner.GetName": {
+   "zh": "那个帝国",
+   "en": "the other empire",
+   "note": {
+    "zh": "游戏里这里会出现摧毁这颗星球的帝国名称。",
+    "en": "In the game, the name of the empire that destroyed this planet appears here."
+   }
+  }
  }
 }

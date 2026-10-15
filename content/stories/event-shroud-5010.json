@@ -28,5 +28,23 @@
    "common/scripted_triggers/08_scripted_triggers_shroud.txt (is_secret_societies_empire)"
   ],
   "guide": "public/summaries/event-shroud-5010.md"
+ },
+ "placeholders": {
+  "first_neighbor.GetAdjective": {
+   "zh": "甲",
+   "en": "first",
+   "note": {
+    "zh": "游戏里这里会出现第一个文明的名称。",
+    "en": "In the game, the name of the first civilisation appears here."
+   }
+  },
+  "second_neighbor.GetAdjective": {
+   "zh": "乙",
+   "en": "second",
+   "note": {
+    "zh": "游戏里这里会出现第二个文明的名称。",
+    "en": "In the game, the name of the second civilisation appears here."
+   }
+  }
  }
 }

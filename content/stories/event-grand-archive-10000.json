@@ -55,5 +55,31 @@
    "common/inline_scripts/grand_archive/mutations/unique_mutation_trigger_check_case.txt"
   ],
   "guide": "public/summaries/event-grand-archive-10000.md"
+ },
+ "placeholders": {
+  "From.GetShipCategoryName": {
+   "zh": "样本",
+   "en": "specimen",
+   "note": {
+    "zh": "游戏里这里会出现这类生物的类别名称。",
+    "en": "In the game, the category name of this creature appears here."
+   }
+  },
+  "FromFrom.solar_system.GetName": {
+   "zh": "这个星系",
+   "en": "local",
+   "note": {
+    "zh": "游戏里这里会出现这个星系的名称。",
+    "en": "In the game, the name of this star system appears here."
+   }
+  },
+  "FromFromFrom.GetShipSizeName": {
+   "zh": "巨型生物",
+   "en": "giant",
+   "note": {
+    "zh": "游戏里这里会出现这种生物的体型名称。",
+    "en": "In the game, the size name of this creature appears here."
+   }
+  }
  }
 }
