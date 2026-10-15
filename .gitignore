@@ -17,3 +17,7 @@ verification/museum/sheet-*.png
 # Refinement 2026-10: screenshots and regenerable worksheets stay local (scripts/refine/*)
 verification/refine/*.png
 docs/refine/placeholders/work/
+verification/images/
+# Effects build input (regenerable from the game: python scripts/effects_data.py)
+public/data/effects-data.json
+verification/effects/

@@ -174,7 +174,7 @@ function showExhibit(key, keepFocus = false) {
   panel.innerHTML = `
     <button class="museum-close museum-detail-close" data-close-detail aria-label="${esc(T("关闭展品", "Close exhibit"))}">×</button>
     <div class="museum-stage rarity-${s.rarity}">
-      <img class="museum-stage-image" src="${esc(data.asset(s.icon.url))}" alt="${esc(label(s.name))}" width="100" height="100">
+      <img class="museum-stage-image" src="${esc(data.asset(s.icon.url.replace(/^museum\/img\//, "museum/img-hd/")))}" alt="${esc(label(s.name))}" width="100" height="100" decoding="async">
       ${model ? `<div class="museum-viewer" tabindex="0" role="img" aria-label="${esc(T("可旋转、缩放的三维模型：拖动旋转，滚轮或 +/- 缩放，方向键旋转", "Rotatable 3D model: drag to rotate, wheel or +/- to zoom, arrow keys to rotate"))}"></div>
         <div class="museum-view-toggle" role="group"><button data-view="3d" aria-pressed="true">${esc(T("三维模型", "3D model"))}</button><button data-view="image" aria-pressed="false">${esc(T("原版图像", "Original image"))}</button></div>` : ""}
     </div>

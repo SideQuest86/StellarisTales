@@ -1,5 +1,6 @@
 import { GENERIC_NOTE, SCRIPTED_NOTE, installNameTooltips } from "./name-tooltip.js";
 import { guideElement } from "./markdown.js";
+import { renderEffects, bindEffects } from "./effects-panel.js";
 import { storyMap } from "./story-map.js";
 import { FlowSurface } from "./flow-surface.js";
 import { ArchiveScene } from "./archive-scene.js";
@@ -659,8 +660,9 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}" alt="" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("故事的间奏", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   showSpecimenLinks(r.id);
+  showEffects(story, r.id, r.choices);
   const remembered=trail.at(-1);
   if(remembered?.chapter===chapter.id && remembered.reading===readingIndex && remembered.choice!==undefined){
     const index=r.choices.findIndex(option=>option.key===remembered.choice);
@@ -987,6 +989,37 @@ function showSpecimenLinks(docId) {
   };
   if (specimenMap) return add();
   json("museum/by-doc.json").then((m) => { specimenMap = m; add(); }).catch(() => { specimenMap = {}; });
+}
+// Gameplay effects (public/effects/<story>.json, scripts/compile-effects.py, docs/EFFECTS.md): loaded per story and
+// shown in collapsed panels — under each choice's outcome, at the end of the document, and the origin's starting
+// effects on an origin's first document. Labels pass through prose() so save-dependent names read naturally.
+const effectsCache = new Map();
+function storyEffects(id) {
+  if (!effectsCache.has(id)) {
+    effectsCache.set(id, json(`effects/${id}.json`).catch(() => ({})));
+    if (effectsCache.size > 6) effectsCache.delete(effectsCache.keys().next().value);
+  }
+  return effectsCache.get(id);
+}
+async function showEffects(story, docId, choices) {
+  const data = await storyEffects(story.id);
+  const article = document.querySelector(".chapter-document");
+  if (!article || article.dataset.doc !== docId || article.querySelector(".fx")) return;
+  const opts = { lang, T, esc: (s) => esc(prose(String(s ?? ""))) };
+  const entry = data.docs?.[docId] || {};
+  for (const button of article.querySelectorAll("[data-choice]")) {
+    const effects = entry.choices?.[choices[Number(button.dataset.choice)]?.index];
+    const html = effects?.length ? renderEffects(effects, opts) : "";
+    const target = button.parentElement.querySelector(".choice-response");
+    if (html && target) target.insertAdjacentHTML("beforeend", html);
+  }
+  let block = "";
+  if (data.origin && docId === story.start) block += renderEffects(data.origin, { ...opts, title: T("起源 · 开局效果", "Origin · starting effects") });
+  if (entry.doc) block += renderEffects(entry.doc, opts);
+  if (!block) return;
+  const end = article.querySelector(".specimen-links, .chapter-end");
+  end ? end.insertAdjacentHTML("beforebegin", block) : article.insertAdjacentHTML("beforeend", block);
+  bindEffects(article);
 }
 // 博物天枢 · Grand Archive specimen museum: loaded on first use (#museum or #museum=<specimen key>).
 let museum = null;

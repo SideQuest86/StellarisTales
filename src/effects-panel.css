@@ -1,0 +1,38 @@
+/* Gameplay-effects panel (src/effects-panel.js): collapsed by default, quiet, same teal archive language. */
+.fx { margin: var(--s-4, 16px) 0 0; border: 1px solid var(--line, #2d4549); border-radius: 6px; background: color-mix(in srgb, var(--panel, #0d2229) 82%, transparent); font-family: var(--font-ui, system-ui, sans-serif); font-size: var(--text-ui, 13px); color: var(--ink-2, #b9cbc5); }
+.fx-sum { display: flex; align-items: center; gap: var(--s-2, 8px); min-height: 44px; padding: 0 var(--s-3, 12px); cursor: pointer; color: var(--dim, #86a29f); list-style: none; letter-spacing: 0.02em; }
+.fx-sum::-webkit-details-marker { display: none; }
+.fx-sum::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform 0.15s ease; flex: none; }
+.fx[open] > .fx-sum::before { transform: rotate(45deg); }
+.fx-sum:hover, .fx-sum:focus-visible { color: var(--ink, #dbe5df); }
+.fx-sum:focus-visible { outline: 2px solid var(--teal, #7cc4bd); outline-offset: -2px; border-radius: 6px; }
+.fx-count { margin-left: auto; min-width: 22px; padding: 1px 7px; border-radius: 10px; border: 1px solid var(--line-2, #3d5a5c); text-align: center; font-size: 12px; color: var(--faint, #6f8b88); font-variant-numeric: tabular-nums; }
+.fx-body { padding: 0 var(--s-3, 12px) var(--s-3, 12px); border-top: 1px solid var(--line, #2d4549); }
+.fx-note { margin: var(--s-3, 12px) 0 var(--s-2, 8px); color: var(--faint, #6f8b88); font-size: 12px; line-height: 1.5; }
+.fx-skipped { margin-bottom: 0; }
+.fx-sec + .fx-sec { margin-top: var(--s-3, 12px); }
+.fx-h { margin: 0 0 var(--s-1, 4px); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--gold-2, #b99b62); text-transform: none; }
+.fx-list { list-style: none; margin: 0; padding: 0; }
+.fx-sub { margin: 2px 0 2px var(--s-3, 12px); padding-left: var(--s-3, 12px); border-left: 1px solid var(--line, #2d4549); }
+.fx-list.is-clipped { max-height: 21em; overflow: hidden; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
+.fx-item { padding: 3px 0; line-height: 1.55; }
+.fx-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.fx-text { color: var(--ink, #dbe5df); overflow-wrap: anywhere; }
+.fx-chip { display: inline-block; padding: 0 6px; border-radius: 3px; border: 1px solid var(--line-2, #3d5a5c); font-size: 11px; line-height: 1.6; color: var(--dim, #86a29f); white-space: nowrap; }
+.fx-time.is-perm { color: var(--teal, #7cc4bd); border-color: color-mix(in srgb, var(--teal, #7cc4bd) 45%, transparent); }
+.fx-chance { color: var(--gold, #d8bb84); border-color: color-mix(in srgb, var(--gold, #d8bb84) 45%, transparent); font-variant-numeric: tabular-nums; }
+.fx-hidden { opacity: 0.8; }
+.fx-target { color: var(--faint, #6f8b88); font-size: 12px; }
+.fx-stats { list-style: none; margin: 2px 0 0 var(--s-3, 12px); padding: 0; color: var(--dim, #86a29f); font-size: 12px; }
+.fx-stats b { color: var(--ink-2, #b9cbc5); font-weight: 600; font-variant-numeric: tabular-nums; }
+.fx-item.is-cond > .fx-line .fx-text { color: var(--ink-2, #b9cbc5); }
+.fx-item.is-game-text > .fx-line .fx-text { font-family: var(--font-body, serif); font-style: italic; color: var(--ink-2, #b9cbc5); }
+.fx-notetext { display: block; margin-top: 2px; color: var(--dim, #86a29f); font-size: 12px; }
+.fx-more { color: var(--faint, #6f8b88); font-size: 12px; }
+.fx-bullets .fx-level-1 { padding-left: var(--s-4, 16px); }
+.fx-bullets .fx-item::before { content: "·"; margin-right: 6px; color: var(--faint, #6f8b88); }
+.fx-showall { margin: var(--s-1, 4px) 0 0; min-height: 40px; padding: 0 var(--s-3, 12px); background: none; border: 1px solid var(--line-2, #3d5a5c); border-radius: 4px; color: var(--ink-2, #b9cbc5); font: inherit; cursor: pointer; }
+.fx-showall:hover, .fx-showall:focus-visible { color: var(--ink, #dbe5df); border-color: var(--teal, #7cc4bd); }
+@media (max-width: 480px) { .fx { margin-inline: 0; } .fx-line { gap: 2px 6px; } }
+@media (prefers-reduced-motion: reduce) { .fx-sum::before { transition: none; } }
+html.reduced-motion .fx-sum::before { transition: none; }

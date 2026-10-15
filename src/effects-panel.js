@@ -1,0 +1,164 @@
+// Gameplay-effects panel: renders the structured effects produced by scripts/effects.py / origin_effects.py
+// (docs/EFFECTS.md) as a compact, collapsed-by-default <details>. Pure string rendering: the caller owns placement and
+// passes { lang, T, esc }. Nothing here invents values — every label arrives bilingual from the data.
+//
+//   renderEffects(effects, { lang, T, esc, title? }) -> html ("" when there is nothing to show)
+//     effects: [entry...]                               one choice / one block
+//              { immediate?, after?, sections? }        a document (event, project, site, situation …)
+//              { bullets?, variants?, effects? }        an origin (starting benefits)
+//   bindEffects(root) -> unbind                          delegated: "show all" on long lists; no other JS is needed
+//   countEffects(effects) -> number                      itemised entries (what the summary counts)
+
+const DEFAULT_ESC = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const KIND = {
+  resource: ["资源", "Resource"], resource_mult: ["资源", "Resource"], modifier: ["修正", "Modifier"], modifier_remove: ["移除修正", "Modifier removed"],
+  trait: ["特质", "Trait"], trait_remove: ["失去特质", "Trait lost"], technology: ["科技", "Technology"], tech_choice: ["科技", "Technology"],
+  research: ["研究", "Research"], ship: ["舰船", "Ship"], fleet: ["舰队", "Fleet"], army: ["陆军", "Army"], leader: ["领袖", "Leader"],
+  pop: ["人口", "Pops"], planet: ["星球", "Planet"], deposit: ["资源点", "Deposit"], building: ["建筑", "Building"],
+  opinion: ["态度", "Opinion"], project: ["专项", "Project"], relic: ["遗珍", "Relic"], specimen: ["标本", "Specimen"],
+  policy: ["政策", "Policy"], ethic: ["信仰", "Ethic"], tooltip: ["游戏说明", "Game text"], generic: ["其他", "Other"],
+};
+const GROUPS = new Set(["if", "else", "random", "random_list", "random_option", "repeat", "scripted"]);
+
+const pick = (label, lang) => (label && (label[lang] || label.en || label.zh)) || "";
+const isList = (v) => Array.isArray(v) && v.length > 0;
+
+function leaves(list) {
+  let n = 0;
+  for (const e of list || []) {
+    if (e.kind === "more" || e.unhandled) continue;
+    if (e.effects && e.effects.length) n += leaves(e.effects);
+    else if (!GROUPS.has(e.kind)) n += 1;
+  }
+  return n;
+}
+function unhandled(list) {
+  let n = 0;
+  for (const e of list || []) n += (e.unhandled ? 1 : 0) + unhandled(e.effects);
+  return n;
+}
+
+export function countEffects(effects) {
+  if (!effects) return 0;
+  if (Array.isArray(effects)) return leaves(effects);
+  let n = 0;
+  for (const k of ["immediate", "after", "effects"]) n += leaves(effects[k]);
+  for (const s of effects.sections || []) n += leaves(s.effects);
+  if (effects.bullets) n += (effects.bullets.en || effects.bullets.zh || []).length;
+  return n;
+}
+
+function duration(d, T) {
+  if (!d) return "";
+  if (d === "permanent") return T("永久", "Permanent");
+  if (d.scaled) return T("时长由游戏计算", "Duration set by the game");
+  for (const [k, zh, en] of [["days", "天", "day"], ["months", "个月", "month"], ["years", "年", "year"]]) {
+    if (d[k] != null) return T(`${d[k]} ${zh}`, `${d[k]} ${en}${d[k] === 1 ? "" : "s"}`);
+  }
+  return "";
+}
+
+const VAGUE_TARGET = /事件来源|来源的来源|上一层对象|此前保存的对象|目标对象|事件来源链/;
+
+function entryHtml(e, ctx, depth) {
+  const { lang, T, esc } = ctx;
+  if (e.kind === "more") return `<li class="fx-item fx-more">${esc(pick(e.label, lang))}</li>`;
+  if (e.unhandled) return "";
+  const kind = KIND[e.kind];
+  const chips = [];
+  if (kind && e.kind !== "if" && !GROUPS.has(e.kind)) chips.push(`<span class="fx-chip fx-kind-${esc(e.kind)}">${esc(T(kind[0], kind[1]))}</span>`);
+  if (e.duration) chips.push(`<span class="fx-chip fx-time${e.duration === "permanent" ? " is-perm" : ""}">${esc(duration(e.duration, T))}</span>`);
+  // "Hidden" once per group (its children are hidden too), not on every line.
+  if (e.hidden && !ctx.inHidden) chips.push(`<span class="fx-chip fx-hidden" title="${esc(T("游戏界面不会显示这条效果", "The game does not show this effect"))}">${esc(T("隐藏", "Hidden"))}</span>`);
+  if (e.chance && e.chance.percent != null && e.kind === "random_option") chips.push(`<span class="fx-chip fx-chance">${esc(e.chance.percent + "%")}</span>`);
+  // Script-internal scopes ("the event source", "a target saved earlier") tell a reader nothing: only named targets
+  // (capital, ruler, a ship just created …) are shown.
+  const targetText = e.target ? pick(e.target, "zh") : "";
+  const target = e.target && !VAGUE_TARGET.test(targetText) ? `<span class="fx-target">${esc(T("对象：", "On: "))}${esc(pick(e.target, lang))}</span>` : "";
+  const stats = isList(e.stats)
+    ? `<ul class="fx-stats">${e.stats.map((s) => `<li>${esc(pick(s.label, lang))} <b>${esc(s.text)}</b></li>`).join("")}</ul>`
+    : "";
+  const label = esc(pick(e.label, lang));
+  const note = e.note ? `<span class="fx-notetext">${esc(pick(e.note, lang))}</span>` : "";
+  const cls = ["fx-item", `fx-${e.kind}`, e.kind === "tooltip" ? "is-game-text" : "", e.conditional || GROUPS.has(e.kind) ? "is-cond" : ""].filter(Boolean).join(" ");
+  let kids = "";
+  if (isList(e.effects)) {
+    const inner = e.effects.map((c) => entryHtml(c, e.hidden ? { ...ctx, inHidden: true } : ctx, depth + 1)).join("");
+    kids = inner ? `<ul class="fx-list fx-sub">${inner}</ul>` : "";
+    if (!inner && e.kind !== "scripted") return "";
+  }
+  return `<li class="${cls}"><span class="fx-line">${chips.join("")}<span class="fx-text">${label}</span>${target}</span>${note}${stats}${kids}</li>`;
+}
+
+function listHtml(list, ctx) {
+  const inner = (list || []).map((e) => entryHtml(e, ctx, 0)).join("");
+  return inner ? `<ul class="fx-list">${inner}</ul>` : "";
+}
+
+function section(title, list, ctx) {
+  const html = listHtml(list, ctx);
+  return html ? `<section class="fx-sec"><h4 class="fx-h">${ctx.esc(title)}</h4>${html}</section>` : "";
+}
+
+function bulletsHtml(b, ctx) {
+  const items = (b && (b[ctx.lang] || b.en || b.zh)) || [];
+  if (!items.length) return "";
+  return `<ul class="fx-list fx-bullets">${items.map((x) => `<li class="fx-item fx-level-${x.level || 0}"><span class="fx-text">${ctx.esc(x.text)}</span></li>`).join("")}</ul>`;
+}
+
+export function renderEffects(effects, opts = {}) {
+  const lang = opts.lang === "en" ? "en" : "zh";
+  const T = opts.T || ((zh, en) => (lang === "en" ? en : zh));
+  const esc = opts.esc || DEFAULT_ESC;
+  const ctx = { lang, T, esc };
+  if (!effects || (Array.isArray(effects) && !effects.length)) return "";
+  let body = "";
+  let skipped = 0;
+  if (Array.isArray(effects)) {
+    body = listHtml(effects, ctx);
+    skipped = unhandled(effects);
+  } else {
+    if (effects.bullets) {
+      body += `<section class="fx-sec"><h4 class="fx-h">${esc(T("开局效果（游戏原文）", "Starting benefits (game text)"))}</h4>${bulletsHtml(effects.bullets, ctx)}</section>`;
+    }
+    for (const v of effects.variants || []) {
+      const when = v.when ? pick(v.when, lang) : "";
+      body += `<section class="fx-sec"><h4 class="fx-h">${esc(when ? T("在以下情况：", "When: ") + when : T("另一种开局", "Alternative start"))}</h4>${bulletsHtml(v.bullets, ctx)}</section>`;
+    }
+    if (effects.effects) body += section(effects.bullets ? T("具体数值", "Numbers behind it") : T("效果", "Effects"), effects.effects, ctx);
+    body += section(T("立即发生", "Immediately"), effects.immediate, ctx);
+    body += section(T("事件结束后", "After the event"), effects.after, ctx);
+    for (const s of effects.sections || []) body += section(pick(s.label, lang), s.effects, ctx);
+    skipped = unhandled(effects.immediate) + unhandled(effects.after) + (effects.sections || []).reduce((n, s) => n + unhandled(s.effects), 0) + unhandled(effects.effects);
+  }
+  if (!body) return "";
+  const n = countEffects(effects);
+  const title = opts.title || T("游戏内效果", "Gameplay effects");
+  const tail = skipped ? `<p class="fx-note fx-skipped">${esc(T(`另有 ${skipped} 项效果未逐条整理，请见游戏脚本。`, `${skipped} more effects are not itemised; see the game script.`))}</p>` : "";
+  return `<details class="fx"><summary class="fx-sum"><span class="fx-sum-t">${esc(title)}</span>${n ? `<span class="fx-count">${n}</span>` : ""}</summary>`
+    + `<div class="fx-body"><p class="fx-note">${esc(T("来自游戏文件的静态解读，不模拟具体存档；标明“概率”的结果以基础权重计算。", "Read statically from the game files; no save is simulated. Chances use the base weights."))}</p>${body}${tail}</div></details>`;
+}
+
+// Delegated, idempotent: none of the markup needs JS to open (native <details> is keyboard-accessible).
+// Long lists (> 12 items) start clipped; the "show all" button un-clips them.
+export function bindEffects(root) {
+  if (!root || root.__fxBound) return () => {};
+  root.__fxBound = true;
+  const onToggle = (ev) => {
+    const d = ev.target;
+    if (!d || !d.classList || !d.classList.contains("fx") || !d.open) return;
+    d.querySelectorAll(".fx-list").forEach((ul) => {
+      if (ul.dataset.fxClip || ul.children.length <= 12) return;
+      ul.dataset.fxClip = "1";
+      ul.classList.add("is-clipped");
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "fx-showall";
+      b.textContent = (document.documentElement.lang || "").startsWith("en") ? `Show all ${ul.children.length}` : `显示全部 ${ul.children.length} 项`;
+      b.addEventListener("click", () => { ul.classList.remove("is-clipped"); b.remove(); });
+      ul.after(b);
+    });
+  };
+  root.addEventListener("toggle", onToggle, true);
+  return () => { root.removeEventListener("toggle", onToggle, true); root.__fxBound = false; };
+}

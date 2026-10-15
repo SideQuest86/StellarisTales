@@ -587,3 +587,10 @@ V3：新增public/summaries/origin_treasure_hunters.md，人工整合胶囊—�
 - Placeholders: compiler defaults + hover notes; 12 parallel Haiku reviewers covered 1,159/1,159 stories with placeholders and 121/121 specimens; 3,058 reviewed story entries in fragments; central reader rules for articles, titles, pairs, possessives, agreement; accessible tooltip (src/name-tooltip.js). $KEY$ references expanded from the game's localisation.
 - Site name exactly "Stellaris Tales"; decorative subtitles removed; Grand Archive entry in the category navigation (first on phones). Fonts Newsreader / Noto Serif SC / Noto Sans SC (OFL); Anthropic Serif not licensed for third-party web use as far as could be found.
 - Soundtrack defaults to Faster Than Light (vocal), one-time first-gesture fallback when autoplay is blocked, saved pause/mute respected.
+
+## 2026-10-15 Refinement round 2 (images, placeholders, effects, polish; budget ≤ 40 weekly points)
+
+- Images: Real-ESRGAN x4plus chosen over Lanczos, realesr-general-x4v3 and SwinIR after side-by-side comparisons (docs/IMAGES.md); ×2 event pictures, ×3 specimen icons, originals kept, manifests, lazy srcset; 3D atlas unchanged.
+- Placeholders: nested scripted names, concept links, mechanical phrases (Haiku passes), omit support; generic fallbacks ~1,900 → 2.
+- Effects: extractor over all 11,703 records (99.1 % of effect uses handled), per-story lazy files, collapsed panels, origin starting effects; spot-checked anomaly.150 (add_zro weights 16/4/1) and origin_void_dwellers against the game files.
+- Polish: less-is-more removals, spacing scale, faster transitions, contrast.

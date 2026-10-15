@@ -528,10 +528,16 @@ export class ArchiveScene {
     if (!path) return Promise.resolve(null);
     let pending = this.art.images.get(path);
     if (!pending) {
-      const img = new Image();
-      img.decoding = "async";
-      img.src = this.asset(path);
-      pending = img.decode().then(() => img, () => null);
+      // The close-up face is a fixed-size canvas (FACE_PX), so the ×2 super-resolved derivative (public/art-hd,
+      // docs/IMAGES.md) only sharpens the drawing; the original is the fallback when no derivative exists.
+      const decode = (src) => {
+        const img = new Image();
+        img.decoding = "async";
+        img.src = this.asset(src);
+        return img.decode().then(() => img);
+      };
+      const hd = /^art\//.test(path) ? path.replace(/^art\//, "art-hd/") : null;
+      pending = (hd ? decode(hd).catch(() => decode(path)) : decode(path)).catch(() => null);
       this.art.images.set(path, pending);
       if (this.art.images.size > 8) this.art.images.delete(this.art.images.keys().next().value);
     }

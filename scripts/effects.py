@@ -164,7 +164,7 @@ ROOT_SCOPE = {'country': L('我们的帝国', 'our empire'), 'ship': L('这艘�
               'pop': L('这些人口', 'this pop group')}
 SCOPE_NAMES = {
     'owner': L('所属帝国', 'the owning empire'), 'controller': L('控制者', 'the controller'), 'space_owner': L('星系所属帝国', "the system's owner"),
-    'from': L('事件来源方', 'the source (FROM)'), 'fromfrom': L('来源的来源方', 'the source of the source'),
+    'from': L('事件来源方', 'the event source'), 'fromfrom': L('来源的来源方', 'the source of the source'),
     'prev': L('上一层对象', 'the previous scope'), 'capital_scope': L('首都星球', 'the capital planet'),
     'solar_system': L('所在星系', 'the solar system'), 'planet': L('所在星球', 'the planet'), 'leader': L('领袖', 'the leader'),
     'ruler': L('统治者', 'the ruler'), 'heir': L('继承人', 'the heir'), 'species': L('物种', 'the species'),
@@ -194,7 +194,7 @@ def scope_label(key, ctx, root_scope):
     if k in SCOPE_NAMES:
         return SCOPE_NAMES[k]
     if FROMS.match(k):
-        return L('事件来源方链上的对象', 'an object up the event source chain (FROM)')
+        return L('事件来源链上的对象', 'an object up the event-source chain')
     if k.startswith('event_target:'):
         return L('此前保存的对象', 'a target saved earlier')
     if k.startswith('global_event_target:'):
@@ -253,6 +253,9 @@ def atom_label(n, ctx):
         return L(t[0] if yes else '不满足：' + t[0], t[1] if yes else 'not: ' + t[1])
     if low == 'always':
         return L('总是', 'always')
+    if low.endswith('_dlc') or low in ('host_has_dlc', 'has_dlc'):
+        dlc = humanize(re.sub(r'_dlc$', '', low)) if low.endswith('_dlc') else val.strip('"')
+        return L(f'已安装「{dlc}」资料片' if yes else f'未安装「{dlc}」资料片', f'the {dlc} DLC is installed' if yes else f'the {dlc} DLC is not installed')
     if low == 'is_ai':
         return L('由电脑控制' if yes else '由玩家控制', 'controlled by the AI' if yes else 'controlled by a player')
     if low.startswith('is_') and val in ('yes', 'no'):
@@ -353,7 +356,7 @@ def entry(kind, label, node=None, st=None, **kw):
             e['hidden'] = True
         if st.via:
             e['via'] = st.via
-        if node is not None:
+        if node is not None and not st.via:
             e['source'] = st.source(node)
     return e
 
@@ -378,7 +381,48 @@ def _walk(nodes, ctx, st):
         elif low != 'else':
             prev_if = None
         out += res
+    return merge_tech_chains(out)
+
+
+def merge_tech_chains(entries):
+    """add_tech_option_exclusive_effect called repeatedly = "the first of these technologies not yet known is given"."""
+    out = []
+    for e in entries:
+        part = _exclusive_tech(e)
+        if part and out and out[-1].get('kind') == 'tech_choice' and out[-1].get('target') == e.get('target') and out[-1].get('hidden') == e.get('hidden'):
+            out[-1]['techs'] += part[0]
+            out[-1]['names'] += part[1]
+        elif part:
+            out.append({'kind': 'tech_choice', 'techs': part[0], 'names': part[1], 'target': e.get('target'), 'hidden': e.get('hidden'),
+                        'via': 'add_tech_option_exclusive_effect'})
+        else:
+            out.append(e)
+    for e in out:
+        if e.get('kind') == 'tech_choice':
+            names = e['names']
+            e['label'] = L('从下列科技中获得第一个尚未掌握的：' + '、'.join(n['zh'] for n in names[:8]) + ('…' if len(names) > 8 else ''),
+                           'Gains the first of these technologies you do not know yet: ' + ', '.join(n['en'] for n in names[:8]) + ('…' if len(names) > 8 else ''))
+            e['options'] = len(names)
+            for k in [k for k, v in e.items() if v is None]:
+                del e[k]
     return out
+
+
+def _exclusive_tech(e):
+    """-> ([tech keys], [name dicts]) for one add_tech_option_exclusive_effect entry (raw `if` or already merged)."""
+    if e.get('kind') == 'tech_choice':
+        return list(e['techs']), list(e['names'])
+    if e.get('kind') == 'if' and e.get('via') == 'add_tech_option_exclusive_effect' and len(e.get('effects') or []) == 1:
+        inner = e['effects'][0]
+        if inner.get('kind') == 'technology' and inner.get('tech'):
+            return [inner['tech']], [nm_cache(inner)]
+    return None
+
+
+def nm_cache(inner):
+    m = re.search(r'"(.+)"', inner['label']['en'])
+    z = re.search(r'「(.+)」', inner['label']['zh'])
+    return L(z[1] if z else inner['tech'], m[1] if m else inner['tech'])
 
 
 def _children(v, ctx, st):
@@ -476,7 +520,7 @@ def g_random_list(n, ctx, st):
         mods = any(y['k'] == 'modifier' for y in x['v'])
         kids = _walk([y for y in x['v'] if y['k'] != 'modifier'], ctx, st)
         options.append({'weight': w[1] if w[0] == 'num' else None, 'adjusted': mods, 'effects': kids, 'node': x})
-    if not options:
+    if not options or not any(o['effects'] for o in options):  # only event chaining / bookkeeping inside: nothing to show
         return []
     total = sum(o['weight'] for o in options if o['weight'] is not None)
     all_numeric = all(o['weight'] is not None for o in options)
@@ -530,6 +574,8 @@ def g_tooltip(n, ctx, st):
     key = v if isinstance(v, str) else next((x['v'] for x in v if x['k'] == 'text' and isinstance(x['v'], str)), None)
     kids = _walk([x for x in v if x['k'] != 'text'], ctx, st) if isinstance(v, list) else []
     name = ctx.name(key) if key else None
+    if name and re.search(r'\$[^$]*\$', name['en'] + name['zh']):  # template with parameters filled in by the UI
+        name = None
     ctx.count('handled', n['k'].lower())
     out = []
     if name:
@@ -576,6 +622,10 @@ def scripted(n, ctx, st):
     # `via` marks the scripted effect an inner entry came from; inner entries keep their own hidden/target flags.
     if not kids:
         return []
+    if not ctx.name(name):  # no game wording for the effect itself: show what it does, not its internal name
+        for k in kids:
+            k.setdefault('via', name)
+        return kids
     return [entry('scripted', label, n, st, name=name, effects=kids, via=None)]
 
 
@@ -657,7 +707,10 @@ def h_add_modifier(n, ctx, st):
     name = nm(ctx, key)
     stats = modifier_stats(ctx, key, mult[1] if mult and mult[0] == 'num' else None)
     label = L(f'获得修正「{name["zh"]}」，{dl["zh"]}', f'Gains the "{name["en"]}" modifier, {dl["en"]}')
-    return [entry('modifier', label, n, st, modifier=key, duration=d, stats=stats, name=name)]
+    tip = ctx.modifiers.get(key, {}).get('stats', {}).get('custom_tooltip')
+    note = ctx.name(tip) if isinstance(tip, str) else None
+    return [entry('modifier', label, n, st, modifier=key, duration=d, stats=stats or None, name=name, note=note,
+                  definition=ctx.modifiers.get(key, {}).get('source'))]
 
 
 def h_remove_modifier(n, ctx, st):
@@ -994,10 +1047,9 @@ def h_set_policy(n, ctx, st):
 
 
 def h_tooltip_params(n, ctx, st):
-    p = params_of(n) if isinstance(n['v'], list) else {}
-    key = p.get('description')
-    name = ctx.name(key) if isinstance(key, str) else None
-    return [entry('tooltip', name, n, st, key=key, gameText=True)] if name else []
+    # UI scaffolding: tooltip templates whose numbers the interface fills in (archaeology roll tables etc.)
+    ctx.count('skipped', 'custom_tooltip_with_params')
+    return []
 
 
 def h_locked_random(n, ctx, st):
@@ -1022,6 +1074,38 @@ HANDLERS = {
     'modify_species': h_modify_species, 'add_attunement': h_attunement, 'pop_force_add_ethic': h_pop_ethic, 'set_policy': h_set_policy,
     'custom_tooltip_with_params': h_tooltip_params, 'locked_random_list': h_locked_random,
 }
+SIMPLE_PLAIN.update({
+    'country_remove_ethic': ('ethic', '失去一项信仰', 'Loses an ethic'), 'remove_relic': ('relic', '失去一件遗珍', 'Loses a relic'),
+    'copy_random_tech_from': ('technology', '随机习得对方已有的一项科技', 'Learns a random technology from the other party'),
+    'copy_techs_from': ('technology', '习得对方已有的科技', 'Learns technologies from the other party'),
+    'delete_ship': ('ship', '该舰船被移除', 'The ship is removed'), 'damage_ship': ('ship', '舰船受损', 'The ship takes damage'),
+    'ruin_building': ('building', '建筑沦为废墟', 'The building is ruined'), 'set_capital': ('planet', '该星球成为首都', 'The planet becomes the capital'),
+    'clear_planet_modifiers': ('modifier', '清除星球上的修正', 'Planet modifiers are cleared'),
+    'abort_situation': ('project', '该情势被中止', 'The situation is aborted'), 'join_alliance': ('generic', '加入一个联盟', 'Joins an alliance'),
+    'remove_patron': ('generic', '解除赞助关系', 'The patron relationship ends'), 'add_claims': ('planet', '获得领土宣称', 'Gains territorial claims'),
+    'create_army_transport': ('army', '出现一艘陆军运输舰', 'An army transport appears'), 'remove_army': ('army', '陆军被移除', 'An army is removed'),
+    'clear_blocker': ('deposit', '清除阻挡物', 'A blocker is cleared'), 'dismantle': ('generic', '设施被拆除', 'The installation is dismantled'),
+    'refuse_covenant': ('generic', '拒绝契约', 'Refuses the covenant'), 'accept_covenant': ('generic', '接受契约', 'Accepts the covenant'),
+    'establish_communications': ('generic', '建立通讯', 'Communications are established'),
+    'create_research_station': ('building', '建成一座研究站', 'A research station is built'),
+    'create_balanced_fleet': ('fleet', '创建一支舰队', 'A new fleet is created'), 'cancel_contract': ('project', '取消契约', 'A contract is cancelled'),
+    'set_planet_size': ('planet', '星球尺寸改变', 'The planet size changes'), 'set_star_class': ('planet', '恒星类型改变', 'The star class changes'),
+    'change_background_ethic': ('ethic', '人口的信仰倾向改变', "The pops' ethic leanings change"),
+    'kill_assigned_pop_amount': ('pop', '一些在岗人口被消灭', 'Some assigned pops are killed'),
+})
+SIMPLE_NUM.update({
+    'add_favors': ('opinion', '恩惠', 'Favors'), 'add_threat': ('generic', '威胁值', 'Threat'), 'add_loyalty': ('generic', '忠诚度', 'Loyalty'),
+    'add_federation_experience': ('generic', '联邦经验', 'Federation experience'), 'add_static_war_exhaustion': ('generic', '战争疲劳', 'War exhaustion'),
+    'set_awareness': ('generic', '觉察度设为', 'Awareness set to'), 'add_intel_report': ('generic', '情报报告', 'Intel reports'),
+})
+SKIP_EXACT.update({
+    'set_crisis_sound', 'stop_crisis_sound', 'refresh_auto_generated_ship_designs', 'set_agreement_terms', 'set_agreement_preset',
+    'reroll_random', 'set_variable_to_random_value', 'floor_variable', 'log_error', 'set_spawn_system_batch', 'enable_on_market',
+    'set_resource_converter', 'add_seen_bypass_type', 'auto_follow_fleet', 'set_disable_at_health', 'add_ship_design',
+    'export_resource_income_to_variable', 'set_patron_first_contact_state', 'set_pre_ftl_age', 'set_immortal', 'reroll_deposits',
+    'set_planet_purge_type', 'clear_planet_purge_type', 'set_living_standard', 'set_council_position_to_council',
+    'remove_notification_modifier', 'add_notification_modifier', 'complex_trigger_modifier', 'set_federation_type',
+    'set_federation_law', 'last_created_system', 'orbital_station', 'mining_station', 'set_attunement', 'prevprev', 'country_list_tooltip'})
 for _k in SIMPLE_OBJ:
     if _k != 'set_policy':
         HANDLERS[_k] = h_simple_obj(_k)
@@ -1096,7 +1180,7 @@ def describe_record(record, ctx):
     st = State(text, file, base_line, scope)
 
     def run(nodes, scope_override=None):
-        return _walk(nodes, ctx, st.child(scope=scope_override or scope))
+        return trim(_walk(nodes, ctx, st.child(scope=scope_override or scope)))
     doc = {}
     sections = []
     if kind.endswith('event') or kind == 'event':
@@ -1112,7 +1196,7 @@ def describe_record(record, ctx):
                 eff = run(option_nodes[i])
             else:  # inherited options (base event): script only, no line numbers
                 try:
-                    eff = describe_effects(parse(o['script']), None, ctx, scope, file=record['source'])
+                    eff = trim(describe_effects(parse(o['script']), None, ctx, scope, file=record['source']))
                 except ValueError:
                     eff = []
             choices.append(eff or None)
@@ -1150,6 +1234,34 @@ def describe_record(record, ctx):
     if stat:
         sections.append({'id': 'while_active', 'label': L('情势持续期间', 'While the situation lasts'), 'effects': stat})
     return {'doc': {'sections': sections} if sections else None, 'choices': []}
+
+
+BUDGET = 60
+
+
+def trim(effects, budget=BUDGET):
+    """Keep the first `budget` leaf entries (document order); say how many were left out."""
+    left = [budget]
+    omitted = [0]
+
+    def go(items):
+        out = []
+        for e in items:
+            if e.get('effects'):
+                kids = go(e['effects'])
+                if kids:
+                    out.append({**e, 'effects': kids})
+            elif left[0] > 0:
+                left[0] -= 1
+                out.append(e)
+            else:
+                omitted[0] += 1
+        return out
+    res = go(effects or [])
+    if omitted[0]:
+        res.append({'kind': 'more', 'omitted': omitted[0],
+                    'label': L(f'……另有 {omitted[0]} 项效果未列出（见游戏脚本）', f'... and {omitted[0]} more effects not listed (see the game script)')})
+    return res
 
 
 def count_leaves(effects):

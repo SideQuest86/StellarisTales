@@ -68,6 +68,17 @@ if ($LASTEXITCODE -ne 0) { throw 'Extraction failed' }
 & $storyPython scripts/compile-stories.py
 ```
 
+Gameplay effects (reader panel, docs/EFFECTS.md) are compiled separately, after the stories and whenever the game
+changes (needs the installation; CI does not run it):
+
+```powershell
+& $storyPython scripts/effects_data.py       # build input public/data/effects-data.json (not committed), ≈25 s
+& $storyPython scripts/compile-effects.py    # public/effects/<story>.json (lazy per story) + coverage.json
+```
+
+Images: super-resolved derivatives in `public/art-hd/` and `public/museum/img-hd/` (`scripts/images/batch.py`,
+docs/IMAGES.md); originals stay in `public/art/` and `public/museum/img/`.
+
 OST import is separate: `scripts/import-ost.py --game <game-path>` with the same interpreter. Inspect one source record with `scripts/inspect-source.py crisis.8045` or another exact record ID. For unresolved semantics consult original surrounding definitions, not just extracted links.
 
 ## Verification

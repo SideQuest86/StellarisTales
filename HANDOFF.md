@@ -85,6 +85,21 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 - Checks added: `scripts/verify-refine-reader.mjs`, `verify-refine-chrome.mjs`, `verify-refine-audio.mjs`,
   `scripts/refine/sample-render.mjs story:chapter …`; tests `tests/markdown.test.mjs`, `tests/audio.test.mjs`.
 
+## Refinement round 2 (2026-10-15: images, placeholders, effects, polish)
+
+- Images: Real-ESRGAN x4plus (BSD-3) ×2 derivatives for all 618 event pictures (`public/art-hd/`, used for the
+  close-up canvas and 2x `srcset`) and ×3 for all 258 specimen icons (`public/museum/img-hd/`, museum detail);
+  originals untouched (rollback = remove the folders/markup), manifests with sources/settings/sha256, 3D atlas still on
+  originals (bounded GPU memory). Comparison and licences: docs/IMAGES.md.
+- Placeholders: nested scripted-text placeholders now worded (reviewed in content/chronology/scripted-names.json);
+  typed concept links resolve to the game's names; 81 mechanical phrases reworded; slots may be omitted where the
+  sentence reads naturally without them. Generic "这个名字/this name" occurrences: ~1,900 → 2 (static count).
+- Effects: `scripts/effects.py`, `origin_effects.py`, `effects_data.py`, `compile-effects.py` → `public/effects/`;
+  panel `src/effects-panel.js/.css` (collapsed `<details>` under each choice's outcome, at the document end, and the
+  origin's starting effects). Coverage: 6,060 of 8,751 story documents have effects, 56 of 58 origins; 0.9 % of effect
+  uses unhandled (counted in the panel). Model, limits, coverage table: docs/EFFECTS.md. Check: `scripts/verify-effects.mjs`.
+- Polish: redundant hints/labels removed, spacing scale, transitions ≤ 0.2 s, AA contrast (docs/refine/progress-polish.md).
+
 ## Next work
 
 1. Optional improvements: render the first chapter before the reader animation to hide the open-click frame;

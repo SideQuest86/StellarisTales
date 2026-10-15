@@ -1,4 +1,4 @@
-"""Build-time game data for the effects extractor (scripts/effects.py), from the read-only game install.
+﻿"""Build-time game data for the effects extractor (scripts/effects.py), from the read-only game install.
 
   python scripts/effects_data.py [--game D:/Living/Steam/steamapps/common/Stellaris]
 
@@ -60,16 +60,19 @@ def main():
             if m:
                 loc[lang][m[1]] = m[2].replace('\\n', '\n').replace('\\"', '"')
 
-    def expand(key, lang, seen=()):
+    def expand_raw(key, lang, seen=()):
         value = loc[lang].get(key, '')
 
         def sub(m):
             k = m[1].split('|')[0]
-            return expand(k, lang, seen + (key,)) if k in loc[lang] and k not in seen and len(seen) < 8 else m[0]
+            return expand_raw(k, lang, seen + (key,)) if k in loc[lang] and k not in seen and len(seen) < 8 else m[0]
         value = re.sub(r'\$([^$\n]+)\$', sub, value)
         value = re.sub(r"\['([\w:]+)',\s*([^\]]+)\]", lambda m: m[2].strip(), value)
-        value = re.sub(r"\['([\w:]+)'\]", lambda m: expand(m[1], lang, seen + (key,)) if m[1] in loc[lang] and len(seen) < 8 else m[1], value)
-        return strip(value).strip()
+        value = re.sub(r"\['([\w:]+)'\]", lambda m: expand_raw(m[1], lang, seen + (key,)) if m[1] in loc[lang] and len(seen) < 8 else m[1], value)
+        return value
+
+    def expand(key, lang):
+        return strip(expand_raw(key, lang)).strip()
 
     def parsed(name):
         data, origin = files[name]
@@ -169,8 +172,8 @@ def main():
     out_loc = {}
     keys = set(loc['en']) | set(loc['zh'])
     for t in sorted(used):
-        for k in (t, t.upper(), 'mod_' + t, 'MOD_' + t.upper(), t + '_desc', t + '_name', t.upper() + '_DESC'):
-            if k in keys and k not in out_loc:
+        for k in (t, t.upper(), 'mod_' + t, 'MOD_' + t.upper()):
+            if k in keys and k not in out_loc and not k.endswith(('.desc', '.name', '.title')):  # story texts live in the story data
                 out_loc[k] = {'zh': expand(k, 'zh'), 'en': expand(k, 'en')}
     for k in sorted(keys):  # tooltips of custom_tooltip / game effect text are referenced with their own keys
         if k.startswith('origin_') and k not in out_loc and ('effects' in k or 'tooltip' in k):
