@@ -15,7 +15,7 @@ owner = {sid: g['id'] for g in groups for sid in g['stories']}
 outs = {}
 rendered = {}
 # Latest review per story wins: rendered- (first), rendered2- (independent second), rendered3- (residual).
-for pattern in ('rendered-*.json', 'rendered2-*.json', 'rendered3-*.json'):
+for pattern in ('rendered-*.json', 'rendered2-*.json', 'rendered3-*.json', 'rendered4-*.json'):
     for f in sorted((ROOT / 'docs/refine/placeholders/out').glob(pattern)):
         if f.name == 'rendered-specimens.json':
             continue

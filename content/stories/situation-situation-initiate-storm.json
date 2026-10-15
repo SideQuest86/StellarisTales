@@ -91,5 +91,43 @@
     "en": "In the game, the name of the nearby star system appears here."
    }
   }
+ },
+ "placeholderDocs": {
+  "cstorms.2000": {
+   "GetGatherStormOverfeedTTFirst": {
+    "zh": "粒子风暴、重力风暴或星尘风暴",
+    "en": "Particle Storm"
+   },
+   "GetGatherStormOverfeedTTSecond": {
+    "zh": "",
+    "en": ", Gravity Storm or Stardust Storm",
+    "omit": [
+     "zh"
+    ]
+   },
+   "GetGatherStormOverfeedTTThird": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   },
+   "GetGatherStormSuperchargeTTSecond": {
+    "zh": "",
+    "en": ", Magnetic Storm or Electric Storm",
+    "omit": [
+     "zh"
+    ]
+   },
+   "GetGatherStormSuperchargeTTThird": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
+   }
+  }
  }
 }

@@ -114,9 +114,33 @@
  },
  "placeholderDocs": {
   "colony.3051": {
+   "doomslayer_knight.GetFirstName": {
+    "zh": "这位黑暗骑士",
+    "en": "the dark knight",
+    "note": {
+     "zh": "游戏里这里会出现这位骑士的名字。",
+     "en": "In the game, the knight's name appears here."
+    }
+   },
    "doomslayer_knight.GetHimHer": {
     "zh": "自己",
-    "en": "them"
+    "en": "their"
+   },
+   "doomslayer_knight.GetName": {
+    "zh": "这位黑暗骑士",
+    "en": "the dark knight",
+    "note": {
+     "zh": "游戏里这里会出现这位骑士的名字。",
+     "en": "In the game, the knight's name appears here."
+    }
+   },
+   "doomslayer_knight.GetTitle": {
+    "zh": "",
+    "en": "",
+    "omit": [
+     "en",
+     "zh"
+    ]
    },
    "fromfrom.solar_system.GetName": {
     "zh": "这个",

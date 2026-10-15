@@ -253,6 +253,31 @@ class EffectTests(unittest.TestCase):
         self.assertNotIn('specific condition', lab['en'])
         self.assertTrue(lab['detail'])
 
+    def test_no_raw_keyword_condition_labels_and_origins_complete(self):
+        import effects_coverage as C
+        import effects_cond as K
+        if not (ROOT / 'public/effects/coverage.json').exists():
+            self.skipTest('run scripts/compile-effects.py first')
+        C.run()
+        self.assertEqual(K.KEYWORD_FALLBACK, {})  # every trigger key has a game sentence, a hand template or reviewed wording
+        cov = json.loads((ROOT / 'public/effects/coverage.json').read_text(encoding='utf-8'))
+        self.assertEqual(cov['origin stories'], cov['origins with benefits'])
+        self.assertEqual(cov['withoutEffects']['other'], [])
+
+    def test_reviewed_wording_negation_and_loc_names(self):
+        lab = E.cond_label(parse('is_tankbound_empire = no'), CTX)
+        self.assertEqual(lab['zh'], '没有「罐中之体」国民理念')
+        self.assertEqual(lab['en'], 'does not have the "Tankbound" civic')
+        lab = E.cond_label(parse('has_cycle_of_growth = yes'), CTX)
+        self.assertEqual((lab['zh'], lab['en']), ('处于「增长」轮回', 'is in the Cycle of Growth'))
+
+    def test_no_placeholder_noun_for_unnamed_objects(self):
+        import effects_coverage as C
+        if not (ROOT / 'public/effects').exists():
+            self.skipTest('run scripts/compile-effects.py first')
+        r = C.filler_report()
+        self.assertEqual(r['labels'], 0, r['examples'])
+
     def test_coverage_floor_over_every_record(self):
         total = unhandled = docs = 0
         ctx = E.load_ctx()

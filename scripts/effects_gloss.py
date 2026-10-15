@@ -73,7 +73,6 @@ BOOL_COND.update({
     'has_any_ethic': ('信奉某种特定信仰', 'holds one of the listed ethics'),
     'is_exact_same_species': ('是同一物种', 'is the same species'),
     'has_active_tradition': ('已启用某项传统', 'has an active tradition'),
-    'has_monthly_income': ('每月收入达到某一水平', 'monthly income reaches a given level'),
     'has_notification_modifier': ('带有提示修正', 'has a notification modifier'),
 })
 TIME_COND = {'years_passed': ('游戏已进行了一定年数', 'the game has run for a certain number of years'),

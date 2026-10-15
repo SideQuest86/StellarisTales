@@ -37,6 +37,9 @@ test("leftover $KEY$ references: progress counters read naturally, undefined key
   assert.equal(cleanRefs("轨道上有$COUNT$/$REQUIRED$舰船。", "zh"), "轨道上有所需数量的舰船。");
   assert.equal(cleanRefs("Reward:\n$mandate_influence_reward_t3$", "en"), "Reward:\n");
   assert.equal(cleanRefs("request one $building_upload_center$ to act", "en"), "request one to act");
+  assert.equal(cleanRefs("within $@max_jumps$ jumps", "en"), "within a number of jumps");
+  const zh = plainNames(fillNames("从轨道上将[X.GetName]彻底毁灭", { lang: "zh", chapterNames: names }));
+  assert.equal(zh, "从轨道上将这颗星球彻底毁灭");
 });
 test("determiner + adjective before a phrase that brings its own determiner", () => {
   assert.equal(fill("on the tropical [X.GetName] we landed"), "on the tropical planet we landed");

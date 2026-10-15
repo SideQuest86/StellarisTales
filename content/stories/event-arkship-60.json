@@ -29,8 +29,22 @@
  "placeholderDocs": {
   "arkship.60": {
    "Root.GetName": {
-    "zh": "方舟",
-    "en": "this ship"
+    "zh": "",
+    "en": "this arkship",
+    "omit": [
+     "zh"
+    ],
+    "note": {
+     "zh": "游戏里这里会出现这艘方舟舰的舰名。",
+     "en": "In the game, the arkship's name appears here."
+    },
+    "variants": [
+     {
+      "lang": "zh",
+      "after": "号方舟舰",
+      "text": "某"
+     }
+    ]
    }
   }
  }

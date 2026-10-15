@@ -169,6 +169,8 @@ def main():
     for o in origins.values():
         used.update(filter(None, [o['description']] + [s['description'] for s in o['swaps']] + list(o['modifier'])))
     used.update(origins)
+    import effects_labels
+    used.update(effects_labels.LOC_KEYS)  # names the reviewed condition wording quotes
     out_loc = {}
     keys = set(loc['en']) | set(loc['zh'])
     for t in sorted(used):

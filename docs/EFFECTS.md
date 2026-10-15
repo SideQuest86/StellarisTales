@@ -221,6 +221,10 @@ Classified as bookkeeping / technical (not itemised in the panel; `scripts/effec
 
 Template placeholders (inline-script parameters such as `$POP_GROUP$`, not effects): `$pop_group$` (11).
 
+Origins: 58 origin stories, 58 with an `origin` entry (`origin_endbringers` and `origin_doomsday` get theirs from the hidden start events); documents classified `other`: 0.
+
+Partly described documents: 42 (the itemised list is trimmed at 60 leaves and says how many effects were left out; 9408 effects in total, almost all archaeology / discovery failure pools of the same shape): `strange_worlds.3085` (1313), `strange_worlds.3020` (1312), `strange_worlds.3045` (1310), `observation.4` (1310), `crisis.7516` (786), `strange_worlds.3015` (705), `origin.51` (298), `observation.108` (244), `observation.1406` (233), `observation.207` (231), `fircon.1510` (186), `fircon.6037` (112), `preftl.2160` (109), `terra.60` (108), `utopia.3320` (103), `shroud.8610` (103), `observation.103` (95), `observation.105` (93), `observation.109` (92), `nomads.610` (57), `nomads.620` (57), `nomads.4705` (55), `anomaly.8000` (52), `ancrel.11020` (50), `astral_planes.3070` (49), `nomads.4710` (45), `crisis.6001` (39), `leviathans.1018` (36), `nomads.700` (32), `colony.105` (26), `colony.104` (23), `preftl.180` (23), `operation.2005` (20), `preftl.1105` (16), `preftl.2136` (15), `utopia.2501` (15), `fircon.1520` (15), `crisis.8045` (12), `first_contact.285` (9), `astral_rift.1565` (8), `fircon.1300` (7), `federations.10401` (4).
+
 Story documents without an effects entry (2704 distinct, from `public/effects/coverage.json`):
 
 | Class | Documents |
@@ -238,7 +242,7 @@ Story documents without an effects entry (2704 distinct, from `public/effects/co
 
 Label language check (`label_language_report`, over `public/effects/*.json`): Chinese labels with Latin words 0 (0 words; placeholders in `[...]` / `$...$` and FTL, AI, DNA, L-Gate, roman numerals excluded); English labels with raw script keys 0 (0 occurrences).
 
-Condition wording: generic "specific condition" phrase 0 (target 0); "earlier story condition" (internal variables, flags, saved targets only) 3125; "depending on progress" 500.
+Condition wording: generic "specific condition" phrase 0 (target 0); "earlier story condition" (internal variables, flags, saved targets only) 3125; "depending on progress" 500. Reviewed wording used 5993 times for 522 keys (`docs/EFFECTS-LABELS.md`); labels with a placeholder noun for an unnamed object 0 (target 0); raw key-word fallback 0 times for 0 keys (target 0).
 
 Most frequent handled / skipped keys:
 

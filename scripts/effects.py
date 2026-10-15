@@ -392,7 +392,7 @@ def cond_label(nodes, ctx, mode='and'):
             parts.append(cond_label(n['v'], ctx))
         elif isinstance(n['v'], list) and (k.startswith(('any_', 'count_')) or k in ('num_owned_planets',)):
             inner = cond_label([x for x in n['v'] if x['k'] not in ('count',)], ctx)
-            zhn, enn = G.NOUNS.get(re.sub(r'^(any|count)_', '', k)) or (G.zh_words(re.sub(r'^(any|count)_', '', k)) or G.OBJECT[0], G.OBJECT[1])
+            zhn, enn = G.NOUNS.get(re.sub(r'^(any|count)_', '', k)) or (G.zh_words(re.sub(r'^(any|count)_', '', k)) or '对象', 'object')
             p = L(f'存在满足条件的{zhn}：{inner["zh"]}', f'there is a matching {enn}: {inner["en"]}')
             if inner.get('detail'):
                 p['detail'] = inner['detail']

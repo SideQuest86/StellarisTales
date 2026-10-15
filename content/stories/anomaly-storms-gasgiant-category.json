@@ -67,9 +67,16 @@
     "zh": "这艘飞船",
     "en": "the ship",
     "note": {
-     "zh": "游戏里这里会出现这艘被困飞船的名称。",
-     "en": "In the game, the trapped ship's name appears here."
-    }
+     "zh": "游戏里这里会出现这艘飞船的舰名。",
+     "en": "In the game, the ship's name appears here."
+    },
+    "variants": [
+     {
+      "lang": "en",
+      "before": "alternate ",
+      "text": "the ship's"
+     }
+    ]
    },
    "FromFromFrom.GetName": {
     "zh": "这场风暴",

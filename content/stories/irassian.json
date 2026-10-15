@@ -594,8 +594,11 @@
  "placeholderDocs": {
   "precursor.1521": {
    "From.From.GetPlanetMoon": {
-    "zh": "上将整颗行星",
-    "en": "planet"
+    "zh": "",
+    "en": "planet",
+    "omit": [
+     "zh"
+    ]
    }
   },
   "precursor.1551": {

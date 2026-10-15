@@ -83,6 +83,14 @@
  },
  "placeholderDocs": {
   "anomaly.7115": {
+   "From.GetName": {
+    "zh": "我们的科学船",
+    "en": "our science ship",
+    "note": {
+     "zh": "游戏里这里会出现你的科学船的舰名。",
+     "en": "In the game, your science ship's name appears here."
+    }
+   },
    "Root.GetLeaderName": {
     "zh": "科学家",
     "en": "the scientist",
@@ -94,11 +102,15 @@
    "intemporal_leader.GetName": {
     "zh": "科学家",
     "en": "the scientist",
+    "note": {
+     "zh": "游戏里这里会出现这位科学家的名字。",
+     "en": "In the game, the scientist's name appears here."
+    },
     "variants": [
      {
       "lang": "en",
-      "before": "junior ",
-      "text": "scientist"
+      "before": "Owner.GetScientist] ",
+      "text": "field scientist"
      }
     ]
    },
@@ -111,7 +123,14 @@
     "note": {
      "zh": "游戏里这里会出现动词词尾。",
      "en": "In the game, the verb ending appears here."
-    }
+    },
+    "variants": [
+     {
+      "lang": "en",
+      "before": "want",
+      "text": ""
+     }
+    ]
    },
    "leader.GetSXX": {
     "zh": "",

@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from effects import load_ctx, describe_record  # noqa: E402
+from effects import load_ctx, describe_record, flat  # noqa: E402
 from origin_effects import describe_origin  # noqa: E402
 from effects_more import SCOPES as SCOPE_KEYS  # noqa: E402
 
@@ -59,7 +59,7 @@ def main():
         old.unlink()
     stats = collections.Counter()
     empty = collections.Counter()
-    no_record, other = [], []
+    no_record, other, partial = [], [], []
     seen = set()
     for s in stories:
         d = json.loads((ROOT / 'public/stories' / f"{s['id']}.json").read_text(encoding='utf-8'))
@@ -87,6 +87,9 @@ def main():
                 if why == 'other':
                     other.append({'id': c['id'], 'kind': r['kind'], 'reason': detail})
             if entry:
+                omitted = sum(e.get('omitted', 0) for p in ([entry.get('doc', {}).get('immediate'), entry.get('doc', {}).get('after')] + [s2['effects'] for s2 in entry.get('doc', {}).get('sections', [])] + list(entry.get('choices') or [])) for e in flat(p) if e.get('kind') == 'more')
+                if omitted and c['id'] not in {x['id'] for x in partial}:
+                    partial.append({'id': c['id'], 'omitted': omitted})
                 docs[c['id']] = entry
                 stats['docs with effects'] += 1
         payload = {'docs': docs} if docs else {}
@@ -103,7 +106,7 @@ def main():
             stats['story files'] += 1
     stats['bytes'] = sum(f.stat().st_size for f in out_dir.glob('*.json'))
     out = dict(stats)
-    out['withoutEffects'] = {'distinctDocuments': sum(empty.values()), 'byClass': dict(empty), 'noRecord': no_record, 'other': other}
+    out['withoutEffects'] = {'distinctDocuments': sum(empty.values()), 'byClass': dict(empty), 'noRecord': no_record, 'other': other, 'partial': partial}
     (out_dir / 'coverage.json').write_text(json.dumps(out, indent=1), encoding='utf-8')
     print(out['withoutEffects']['byClass'], 'other:', len(other), 'no-record sample:', no_record[:5])
     print(dict(stats))

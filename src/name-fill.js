@@ -12,7 +12,7 @@ const TITLE_WORDS = [
   "Operation", "Arkship", "Asteroid", "planet", "Emissary", "Councilor", "science ship", "Survey Unit", "Scientist",
   "Head Researcher", "Lead Scientist", "科学家", "科学官",
   "行动", "方舟", "议员", "使节",
-  "科学专员", "专员", "博士", "将军", "舰长", "总督", "上将", "元帅", "教授", "特使", "大使", "指挥官", "主任",
+  "科学专员", "专员", "博士", "将军", "舰长", "总督", "元帅", "教授", "特使", "大使", "指挥官", "主任",
 ].join("|");
 const TITLE_RE = new RegExp(`(${TITLE_WORDS})\\s?\\uE000([^\\uE002]*)\\uE002[^\\uE001]*\\uE001`, "gi");
 const SPAN = "\\uE000[^\\uE002]*\\uE002[^\\uE001]*\\uE001";
@@ -121,6 +121,8 @@ export function fillNames(s, opts) {
 export function cleanRefs(s, lang) {
   return String(s || "")
     .replace(/\$COUNT\$\s*\/\s*\$REQUIRED\$\s?/g, lang === "en" ? "the required number of " : "所需数量的")
+    // Script values ($@name$) are numbers the game computes: a neutral quantity, never a raw token.
+    .replace(/\$@[^$\s]+\$/g, lang === "en" ? "a number of" : "若干")
     .replace(/\$[A-Za-z_@][\w.@|]*\$/g, "")
     .replace(/[ \t]{2,}/g, " ")
     .replace(/\n{3,}/g, "\n\n")

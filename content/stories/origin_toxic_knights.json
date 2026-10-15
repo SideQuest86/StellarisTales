@@ -542,7 +542,14 @@
   "toxoids.7006": {
    "questing_knight_1.GetName": {
     "zh": "骑士",
-    "en": "the knight"
+    "en": "the knight",
+    "variants": [
+     {
+      "lang": "zh",
+      "before": "被放逐的骑士",
+      "text": "本人"
+     }
+    ]
    }
   },
   "toxoids.7010": {
@@ -577,6 +584,89 @@
     ]
    }
   },
+  "toxoids.7025": {
+   "questing_knight_A.GetFirstName": {
+    "zh": "前者",
+    "en": "the first knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knights ",
+      "text": "the first"
+     }
+    ]
+   },
+   "questing_knight_A.GetName": {
+    "zh": "前者",
+    "en": "the first knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Tales tell of the Knight ",
+      "text": "first knight"
+     }
+    ]
+   },
+   "questing_knight_B.GetFirstName": {
+    "zh": "后者",
+    "en": "the second knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "] and ",
+      "text": "the second"
+     }
+    ]
+   }
+  },
+  "toxoids.7030": {
+   "questing_knight_A.GetFirstName": {
+    "zh": "前者",
+    "en": "the first knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knights ",
+      "text": "the first"
+     }
+    ]
+   },
+   "questing_knight_B.GetFirstName": {
+    "zh": "后者",
+    "en": "the second knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "] and ",
+      "text": "the second"
+     }
+    ]
+   }
+  },
+  "toxoids.7035": {
+   "questing_knight_A.GetFirstName": {
+    "zh": "前者",
+    "en": "the first knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knights ",
+      "text": "the first"
+     }
+    ]
+   },
+   "questing_knight_B.GetFirstName": {
+    "zh": "后者",
+    "en": "the second knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "] and ",
+      "text": "the second"
+     }
+    ]
+   }
+  },
   "toxoids.7040": {
    "Root.GetSpeciesAdj": {
     "zh": "该族",
@@ -597,18 +687,52 @@
      "en": "In the game, the knight type's icon appears here."
     }
    },
+   "questing_knight_A.GetFirstName": {
+    "zh": "前者",
+    "en": "the first knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knights ",
+      "text": "the first"
+     }
+    ]
+   },
    "questing_knight_A.Species.GetRemnantName": {
     "zh": "遗骸",
     "en": "skeleton"
+   },
+   "questing_knight_B.GetFirstName": {
+    "zh": "后者",
+    "en": "the second knight",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "] and ",
+      "text": "the second"
+     }
+    ]
    }
   },
   "toxoids.7050": {
    "GetYear": {
     "zh": "那一",
-    "en": "the Visit"
+    "en": "the visit",
+    "note": {
+     "zh": "游戏里这里会出现当时的游戏年份。",
+     "en": "In the game, the year of the visit appears here."
+    }
    }
   },
   "toxoids.7060": {
+   "Root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire",
+    "note": {
+     "zh": "游戏里这里会出现你的帝国的名称。",
+     "en": "In the game, your empire's name appears here."
+    }
+   },
    "knight.GetIcon": {
     "zh": "",
     "en": "",
@@ -620,6 +744,83 @@
      "zh": "游戏里这里会显示骑士的类型图标。",
      "en": "In the game, the knight type's icon appears here."
     }
+   }
+  },
+  "toxoids.7080": {
+   "questing_knight_4.GetName": {
+    "zh": "这位王牌",
+    "en": "the champion",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knight ",
+      "text": "the champion knight"
+     },
+     {
+      "lang": "en",
+      "before": "champion, knight ",
+      "text": "the unbeaten knight"
+     }
+    ]
+   },
+   "questing_knight_42.GetName": {
+    "zh": "第一位挑战者",
+    "en": "the first challenger",
+    "variants": [
+     {
+      "lang": "en",
+      "before": ", knight ",
+      "text": "the first challenger knight"
+     }
+    ]
+   },
+   "questing_knight_43.GetName": {
+    "zh": "第二位挑战者",
+    "en": "the second challenger",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knight ",
+      "text": "the second challenger knight"
+     }
+    ]
+   },
+   "questing_knight_44.GetFirstName": {
+    "zh": "第三位挑战者",
+    "en": "the third challenger",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "sibling, knight ",
+      "text": "the third challenger knight"
+     }
+    ]
+   }
+  },
+  "toxoids.7085": {
+   "questing_knight_4.GetName": {
+    "zh": "这位王牌",
+    "en": "the champion",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knight ",
+      "text": "the champion knight"
+     }
+    ]
+   }
+  },
+  "toxoids.7090": {
+   "questing_knight_4.GetName": {
+    "zh": "这位王牌",
+    "en": "the champion",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knight ",
+      "text": "the champion knight"
+     }
+    ]
    }
   },
   "toxoids.7095": {
@@ -634,12 +835,30 @@
      "zh": "游戏里这里会显示骑士的类型图标。",
      "en": "In the game, the knight type's icon appears here."
     }
+   },
+   "questing_knight_4.GetName": {
+    "zh": "这位王牌",
+    "en": "the champion",
+    "variants": [
+     {
+      "lang": "en",
+      "before": "Knight ",
+      "text": "the champion knight"
+     }
+    ]
    }
   },
   "toxoids.7120": {
    "questing_squire_10.GetName": {
     "zh": "扈从",
-    "en": "the squire"
+    "en": "the squire",
+    "variants": [
+     {
+      "lang": "zh",
+      "before": "扈从",
+      "text": "本人"
+     }
+    ]
    }
   },
   "toxoids.7130": {
@@ -660,9 +879,9 @@
     "en": "the squire",
     "variants": [
      {
-      "lang": "en",
-      "before": "And so ",
-      "text": ""
+      "lang": "zh",
+      "before": "扈从",
+      "text": "本人"
      }
     ]
    }
@@ -695,7 +914,20 @@
   "toxoids.7195": {
    "questing_knight_15.GetName": {
     "zh": "骑士",
-    "en": "the knight"
+    "en": "the knight",
+    "variants": [
+     {
+      "lang": "zh",
+      "after": "这位默默无闻",
+      "text": "他"
+     }
+    ]
+   }
+  },
+  "toxoids.7200": {
+   "questing_knight_15.GetHerselfHimself": {
+    "zh": "其",
+    "en": "themselves"
    }
   },
   "toxoids.7220": {
@@ -709,6 +941,16 @@
     "note": {
      "zh": "游戏里这里会显示骑士的类型图标。",
      "en": "In the game, the knight type's icon appears here."
+    }
+   }
+  },
+  "toxoids.7225": {
+   "Root.GetName": {
+    "zh": "我们的帝国",
+    "en": "our empire",
+    "note": {
+     "zh": "游戏里这里会出现你的帝国的名称。",
+     "en": "In the game, your empire's name appears here."
     }
    }
   },
@@ -745,6 +987,32 @@
     "note": {
      "zh": "游戏里这里会出现另一位骑士。",
      "en": "In the game, another knight appears here."
+    }
+   }
+  },
+  "toxoids.7300": {
+   "questing_knight_15.GetName": {
+    "zh": "另一位骑士",
+    "en": "the other knight",
+    "note": {
+     "zh": "游戏里这里会出现另一位骑士的名字。",
+     "en": "In the game, the other knight's name appears here."
+    }
+   },
+   "questing_knight_8.GetFirstName": {
+    "zh": "归来的骑士",
+    "en": "the returned knight",
+    "note": {
+     "zh": "游戏里这里会出现这位骑士的名字。",
+     "en": "In the game, the knight's name appears here."
+    }
+   },
+   "questing_knight_8.GetName": {
+    "zh": "归来的骑士",
+    "en": "the returned knight",
+    "note": {
+     "zh": "游戏里这里会出现这位骑士的名字。",
+     "en": "In the game, the knight's name appears here."
     }
    }
   },

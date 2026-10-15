@@ -95,7 +95,7 @@ def main():
     # Independent second review (rendered2-*.json, Sonnet): wording applied last; its exception list replaces the
     # first review's for every story it confirmed (only original-text faults remain).
     second = {}
-    for f in sorted((BASE / 'out').glob('rendered2-*.json')) + sorted((BASE / 'out').glob('rendered3-*.json')):
+    for f in sorted((BASE / 'out').glob('rendered2-*.json')) + sorted((BASE / 'out').glob('rendered3-*.json')) + sorted((BASE / 'out').glob('rendered4-*.json')):
         for sid, r in json.loads(f.read_text(encoding='utf-8')).items():
             if r.get('reviewed'):
                 second[sid] = r

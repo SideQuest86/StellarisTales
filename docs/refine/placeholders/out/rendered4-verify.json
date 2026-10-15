@@ -1,0 +1,255 @@
+{
+"shroudwalker-divination": {"docs": {
+ "enclave.5522": {
+  "shattered_frontier_planet.GetName": {"zh":"那个殖民地","en":"that colony","note":{"zh":"游戏里这里会出现你的某个殖民地的名称。","en":"In the game, the name of one of your colonies appears here."}},
+  "root.GetName": {"zh":"我们的帝国","en":"our empire","note":{"zh":"游戏里这里会出现你的帝国的名称。","en":"In the game, your empire's name appears here."}}
+ },
+ "enclave.5550": {
+  "shattered_frontier_planet.GetName": {"zh":"那颗星球","en":"that world","variants":[{"lang":"en","before":"though it is not your ","text":"world"},{"lang":"zh","before":"尽管那不是你的","text":"星球"}],"note":{"zh":"游戏里这里会出现你的某个殖民地的名称。","en":"In the game, the name of one of your colonies appears here."}}
+ }
+ }, "exceptions": ["enclave.5200: game text: 'the hero's' brainwave' has a doubled possessive in the original"], "reviewed": true},
+"event-anomaly-3095": {"docs": {
+ "anomaly.3099": {
+  "Root.GetSpeciesAdj": {"zh":"我们的","en":"our","variants":[{"lang":"en","before":"rendezvous ","text":"with our"}],"note":{"zh":"游戏里这里会出现你的物种的名称。","en":"In the game, your species' name appears here."}}
+ }
+ }, "exceptions": ["anomaly.3099: game text: en 'to be a rendezvous' is garbled in the original"], "reviewed": true},
+"project-establish-communications": {"docs": {
+ "special_projects:ESTABLISH_COMMUNICATIONS": {
+  "Prev.From.GetName": {"zh":"未知者","en":"the unknown population","note":{"zh":"游戏里这里会出现这个种群的代号。","en":"In the game, this population's code name appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"site-it-was-aliens-site": {"docs": {
+ "ancrel.106": {
+  "arc_anomaly_planet.GetName": {"zh":"这个星系的另一颗星球","en":"another planet in this system","note":{"zh":"游戏里这里会出现同一星系中另一颗星球的名称。","en":"In the game, the name of another planet in the same system appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"site-omnirelic-site": {"docs": {
+ "ancrel.6000": {
+  "planet_option_1.GetName": {"zh":"第一个殖民地","en":"the first colony","note":{"zh":"游戏里这里会出现你的某个殖民地的名称。","en":"In the game, the name of one of your colonies appears here."}},
+  "planet_option_2.GetName": {"zh":"第二个殖民地","en":"the second colony","note":{"zh":"游戏里这里会出现你的某个殖民地的名称。","en":"In the game, the name of one of your colonies appears here."}},
+  "planet_option_3.GetName": {"zh":"第三个殖民地","en":"the third colony","note":{"zh":"游戏里这里会出现你的某个殖民地的名称。","en":"In the game, the name of one of your colonies appears here."}},
+  "planet_option_4.GetName": {"zh":"第四个殖民地","en":"the fourth colony","note":{"zh":"游戏里这里会出现你的某个殖民地的名称。","en":"In the game, the name of one of your colonies appears here."}},
+  "planet_option_5.GetName": {"zh":"第五个殖民地","en":"the fifth colony","note":{"zh":"游戏里这里会出现你的某个殖民地的名称。","en":"In the game, the name of one of your colonies appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"event-colony-3051": {"docs": {
+ "colony.3051": {
+  "doomslayer_knight.GetName": {"zh":"这位黑暗骑士","en":"the dark knight","note":{"zh":"游戏里这里会出现这位骑士的名字。","en":"In the game, the knight's name appears here."}},
+  "doomslayer_knight.GetFirstName": {"zh":"这位黑暗骑士","en":"the dark knight","note":{"zh":"游戏里这里会出现这位骑士的名字。","en":"In the game, the knight's name appears here."}},
+  "doomslayer_knight.GetTitle": {"zh":"","en":"","omit":["zh","en"]},
+  "doomslayer_knight.GetHimHer": {"zh":"自己","en":"their"}
+ }
+ }, "exceptions": [], "reviewed": true},
+"event-marauder-4": {"docs": {
+ "marauder.5": {
+  "marauder_killer.GetName": {"zh":"进攻的帝国","en":"the attacking empire","note":{"zh":"游戏里这里会出现消灭掠夺者的帝国的名称。","en":"In the game, the name of the empire that destroyed the marauders appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"event-operation-3000": {"docs": {
+ "operation.3001": {
+  "smear_campaign_recipient.GetAdj": {"zh":"对方","en":"the other empire's","note":{"zh":"游戏里这里会出现被我们挑拨的那个帝国的名称。","en":"In the game, the name of the empire we are turning against the target appears here."}},
+  "smear_campaign_recipient.species.GetAdj": {"zh":"该族","en":"that empire's","variants":[{"lang":"en","before":"Fabricated news that ","text":"the other empire's"}],"note":{"zh":"游戏里这里会出现那个帝国主体物种的名称。","en":"In the game, the name of that empire's species appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"event-action-38": {"docs": {
+ "action.38": {
+  "From.GetName": {"zh":"那个帝国","en":"the other empire","note":{"zh":"游戏里这里会出现战胜你的帝国的名称。","en":"In the game, the name of the empire that defeated you appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"anomaly-intemporal-orb-cat": {"docs": {
+ "anomaly.7115": {
+  "From.GetName": {"zh":"我们的科学船","en":"our science ship","note":{"zh":"游戏里这里会出现你的科学船的舰名。","en":"In the game, your science ship's name appears here."}},
+  "intemporal_leader.GetSXX": {"zh":"","en":"s","omit":["zh"],"variants":[{"lang":"en","before":"want","text":""}],"note":{"zh":"游戏里这里会出现动词词尾。","en":"In the game, the verb ending appears here."}},
+  "intemporal_leader.GetName": {"zh":"科学家","en":"the scientist","variants":[{"lang":"en","before":"Owner.GetScientist] ","text":"field scientist"}],"note":{"zh":"游戏里这里会出现这位科学家的名字。","en":"In the game, the scientist's name appears here."}}
+ }
+ }, "exceptions": ["anomaly.7115: game text: duplicated character in the Chinese (被被吸入)", "anomaly.7115: game text: \"a hour\" (wrong article in the original)"], "reviewed": true},
+"anomaly-distar-phase-cat": {"docs": {
+ "distar.255": {
+  "phaseshift_planet.GetName": {"zh":"这颗星球","en":"the phase-shifting planet","variants":[{"lang":"en","before":"acquired planet ","text":""},{"lang":"en","before":"Now that ","text":"The Veil"},{"lang":"en","before":"preventing ","after":" from phase-shifting","text":"The Veil"},{"lang":"zh","before":"新获得的星球","text":""},{"lang":"zh","before":"既然","text":"面纱"}],"note":{"zh":"游戏里这里会出现这颗星球的名称。","en":"In the game, the planet's name appears here."}}
+ },
+ "distar.258": {
+  "phaseshift_planet.GetName": {"zh":"这颗星球","en":"the phase-shifting planet","variants":[{"lang":"en","before":"the planet ","text":"phase-shifting planet"},{"lang":"zh","before":"我们在","after":"星系内","text":"这个"}],"note":{"zh":"游戏里这里会出现这颗星球的名称。","en":"In the game, the planet's name appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"irassian": {"docs": {
+ "precursor.1521": {
+  "From.From.GetPlanetMoon": {"zh":"","en":"planet","omit":["zh"]}
+ }
+ }, "exceptions": ["precursor.1521: site limitation: zh '从轨道上将[行星]彻底毁灭' - the rank-title rule reads 上将 as a general's title and drops the object, so the Chinese sentence shows no object (the game text itself is fine)"], "reviewed": true},
+"precursor-assistance": {"docs": {
+ "precursor.311": {
+  "Root.GetSpeciesNamePlural": {"zh":"你们","en":"your people","note":{"zh":"游戏里这里会出现你的物种的复数名称。","en":"In the game, your species' plural name appears here."}},
+  "artifact_seller.GetSpeciesAdj": {"zh":"该国的","en":"its","note":{"zh":"游戏里这里会出现那个帝国的物种名称。","en":"In the game, that empire's species name appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"anomaly-distar-nanosand-cat": {"docs": {
+ "distar.280": {
+  "From.GetName": {"zh":"这颗星球","en":"this planet","variants":[{"lang":"en","before":"terraform the surface ","text":"of this planet"}],"note":{"zh":"游戏里这里会出现这颗星球的名称。","en":"In the game, the planet's name appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"anomaly-mountain-uninhabitable-category": {"docs": {
+ "anomaly.6915": {
+  "Owner.GetBrainName": {"zh":"中枢意识","en":"central mind","note":{"zh":"游戏里这里会出现你的集体意识的称呼。","en":"In the game, the name of your collective mind appears here."}}
+ }
+ }, "exceptions": ["anomaly.6915: game text: the en line ends mid-sentence ('we find a')"], "reviewed": true},
+"anomaly-mysterious-ringing-category": {"docs": {}, "exceptions": [], "reviewed": true},
+"anomaly-storms-gasgiant-category": {"docs": {
+ "anomaly.6860": {
+  "FromFrom.GetName": {"zh":"这艘飞船","en":"the ship","variants":[{"lang":"en","before":"alternate ","text":"the ship's"}],"note":{"zh":"游戏里这里会出现这艘飞船的舰名。","en":"In the game, the ship's name appears here."}}
+ }
+ }, "exceptions": ["anomaly.6855: game text: zh has a stray sentence-initial 们 and the spaced 更—加—有趣", "anomaly.6860: game text: \"Communications with ... was\" (verb agreement)"], "reviewed": true},
+"anomaly-storms-prec-one": {"docs": {
+ "cstorms.2170": {
+  "controller.GetScientistCapital": {"zh":"我们的研究人员","en":"our researchers","note":{"zh":"游戏里这里会出现你的科研人员的称呼。","en":"In the game, the name for your research staff appears here."}}
+ }
+ }, "exceptions": ["cstorms.2170: game text: 'the a very particular pattern'"], "reviewed": true},
+"project-the-cradle-of-souls-fc-project": {"docs": {}, "exceptions": [], "reviewed": true},
+"project-the-eater-of-world-fc-project": {"docs": {}, "exceptions": [], "reviewed": true},
+"origin_fear_of_the_dark": {"docs": {
+ "origin.6006": {
+  "fotd_Leader.GetName": {"zh":"这位领袖","en":"the leader","variants":[{"lang":"en","before":"Commander ","text":"the commander"}],"note":{"zh":"游戏里这里会出现这位领袖的名字。","en":"In the game, the leader's name appears here."}}
+ }
+ }, "exceptions": ["origin.6006: game text: 'Add [leader] as an Commander' (a/an)"], "reviewed": true},
+"origin_legendary_leader": {"docs": {
+ "paragon.5340": {
+  "Root.Owner.Ruler.GetTitle": {"zh":"我们的统治者","en":"our leaders","note":{"zh":"游戏里这里会出现你的统治者的头衔。","en":"In the game, your ruler's title appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"origin_shroud_forged": {"docs": {
+ "shroud_forged.220": {
+  "Owner.GetHomeWorldName": {"zh":"母星","en":"the homeworld","variants":[{"lang":"en","before":"homeworld of ","text":"origin"},{"lang":"zh","before":"我们母星","text":""}],"note":{"zh":"游戏里这里会出现你的母星的名称。","en":"In the game, your homeworld's name appears here."}}
+ },
+ "shroud_forged.225": {
+  "Owner.GetHomeWorldName": {"zh":"母星","en":"the homeworld","variants":[{"lang":"en","before":"homeworld of ","text":"origin"},{"lang":"zh","before":"我们母星","text":""}],"note":{"zh":"游戏里这里会出现你的母星的名称。","en":"In the game, your homeworld's name appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"origin_toxic_knights": {"docs": {
+ "toxoids.7006": {
+  "questing_knight_1.GetName": {"zh":"骑士","en":"the knight","variants":[{"lang":"zh","before":"被放逐的骑士","text":"本人"}]}
+ },
+ "toxoids.7025": {
+  "questing_knight_A.GetName": {"zh":"前者","en":"the first knight","variants":[{"lang":"en","before":"Tales tell of the Knight ","text":"first knight"}]},
+  "questing_knight_A.GetFirstName": {"zh":"前者","en":"the first knight","variants":[{"lang":"en","before":"Knights ","text":"the first"}]},
+  "questing_knight_B.GetFirstName": {"zh":"后者","en":"the second knight","variants":[{"lang":"en","before":"] and ","text":"the second"}]}
+ },
+ "toxoids.7030": {
+  "questing_knight_A.GetFirstName": {"zh":"前者","en":"the first knight","variants":[{"lang":"en","before":"Knights ","text":"the first"}]},
+  "questing_knight_B.GetFirstName": {"zh":"后者","en":"the second knight","variants":[{"lang":"en","before":"] and ","text":"the second"}]}
+ },
+ "toxoids.7035": {
+  "questing_knight_A.GetFirstName": {"zh":"前者","en":"the first knight","variants":[{"lang":"en","before":"Knights ","text":"the first"}]},
+  "questing_knight_B.GetFirstName": {"zh":"后者","en":"the second knight","variants":[{"lang":"en","before":"] and ","text":"the second"}]}
+ },
+ "toxoids.7040": {
+  "questing_knight_A.GetFirstName": {"zh":"前者","en":"the first knight","variants":[{"lang":"en","before":"Knights ","text":"the first"}]},
+  "questing_knight_B.GetFirstName": {"zh":"后者","en":"the second knight","variants":[{"lang":"en","before":"] and ","text":"the second"}]}
+ },
+ "toxoids.7050": {
+  "GetYear": {"zh":"那一","en":"the visit","note":{"zh":"游戏里这里会出现当时的游戏年份。","en":"In the game, the year of the visit appears here."}}
+ },
+ "toxoids.7060": {
+  "Root.GetName": {"zh":"我们的帝国","en":"our empire","note":{"zh":"游戏里这里会出现你的帝国的名称。","en":"In the game, your empire's name appears here."}}
+ },
+ "toxoids.7225": {
+  "Root.GetName": {"zh":"我们的帝国","en":"our empire","note":{"zh":"游戏里这里会出现你的帝国的名称。","en":"In the game, your empire's name appears here."}}
+ },
+ "toxoids.7080": {
+  "questing_knight_4.GetName": {"zh":"这位王牌","en":"the champion","variants":[{"lang":"en","before":"Knight ","text":"the champion knight"},{"lang":"en","before":"champion, knight ","text":"the unbeaten knight"}]},
+  "questing_knight_42.GetName": {"zh":"第一位挑战者","en":"the first challenger","variants":[{"lang":"en","before":", knight ","text":"the first challenger knight"}]},
+  "questing_knight_43.GetName": {"zh":"第二位挑战者","en":"the second challenger","variants":[{"lang":"en","before":"Knight ","text":"the second challenger knight"}]},
+  "questing_knight_44.GetFirstName": {"zh":"第三位挑战者","en":"the third challenger","variants":[{"lang":"en","before":"sibling, knight ","text":"the third challenger knight"}]}
+ },
+ "toxoids.7085": {
+  "questing_knight_4.GetName": {"zh":"这位王牌","en":"the champion","variants":[{"lang":"en","before":"Knight ","text":"the champion knight"}]}
+ },
+ "toxoids.7090": {
+  "questing_knight_4.GetName": {"zh":"这位王牌","en":"the champion","variants":[{"lang":"en","before":"Knight ","text":"the champion knight"}]}
+ },
+ "toxoids.7095": {
+  "questing_knight_4.GetName": {"zh":"这位王牌","en":"the champion","variants":[{"lang":"en","before":"Knight ","text":"the champion knight"}]}
+ },
+ "toxoids.7120": {
+  "questing_squire_10.GetName": {"zh":"扈从","en":"the squire","variants":[{"lang":"zh","before":"扈从","text":"本人"}]}
+ },
+ "toxoids.7130": {
+  "questing_squire_10.GetName": {"zh":"扈从","en":"the squire","variants":[{"lang":"zh","before":"扈从","text":"本人"}]}
+ },
+ "toxoids.7195": {
+  "questing_knight_15.GetName": {"zh":"骑士","en":"the knight","variants":[{"lang":"zh","after":"这位默默无闻","text":"他"}]}
+ },
+ "toxoids.7200": {
+  "questing_knight_15.GetHerselfHimself": {"zh":"其","en":"themselves"}
+ },
+ "toxoids.7300": {
+  "questing_knight_8.GetName": {"zh":"归来的骑士","en":"the returned knight","note":{"zh":"游戏里这里会出现这位骑士的名字。","en":"In the game, the knight's name appears here."}},
+  "questing_knight_8.GetFirstName": {"zh":"归来的骑士","en":"the returned knight","note":{"zh":"游戏里这里会出现这位骑士的名字。","en":"In the game, the knight's name appears here."}},
+  "questing_knight_15.GetName": {"zh":"另一位骑士","en":"the other knight","note":{"zh":"游戏里这里会出现另一位骑士的名字。","en":"In the game, the other knight's name appears here."}}
+ }
+ }, "exceptions": ["toxoids.7265: game text: archaic verb forms ('hast', 'seemeth', 'art', 'shalt') mixed with a modern pronoun"], "reviewed": true},
+"site-site-deserted-mining-facility": {"docs": {}, "exceptions": [], "reviewed": true},
+"event-bio-1": {"docs": {}, "exceptions": ["bio.220: needs a proper name: 'by the name of <name>' needs a personal name, a role phrase repeats the noun", "bio.300: needs a proper name: 'a scientist by the name of <name>' needs a personal name, a role phrase repeats the noun", "bio.350: game text: '100 Presapient Pops is created' (verb agreement)"], "reviewed": true},
+"event-colony-3005": {"docs": {}, "exceptions": ["colony.9810: needs a proper name: 'lead physics unit <name>' and 'physics specialized drone <name>' need a unit name"], "reviewed": true},
+"event-colony-50": {"docs": {}, "exceptions": ["colony.52: game text: stray full stop after the placeholder ('the <people>. aliens on ...')"], "reviewed": true},
+"event-colony-9820": {"docs": {
+ "colony.9821": {
+  "cloned_physicist.GetName": {"zh":"这位物理学家","en":"the physicist","variants":[{"lang":"en","after":"s unique ID","text":"the physicist'"}],"note":{"zh":"游戏里这里会出现这位物理学家的名字。","en":"In the game, the physicist's name appears here."}}
+ }
+ }, "exceptions": ["colony.9821: game text: 'until <homeworld>-Betas erasure' lacks the apostrophe"], "reviewed": true},
+"event-federations3-120": {"docs": {}, "exceptions": ["federations3.121: needs a proper name: 'such as designate <planet>' expects a designation right after 'designate'", "federations3.131: needs a proper name: 'at designate <planet>' expects a designation right after 'designate'"], "reviewed": true},
+"event-federations3-2200": {"docs": {}, "exceptions": [], "reviewed": true},
+"event-galcom-62": {"docs": {}, "exceptions": ["event_chains:market_founding_chain: game text: no space between 'benefit.' and the sentence that follows", "event_chains:market_relocation_chain: game text: no space between 'benefit.' and the sentence that follows", "galcom.64: game text: doubled 的 (星系的的市场总部)", "galcom.65: game text: doubled 的 (星系的的市场总部)"], "reviewed": true},
+"event-specialist-1100": {"docs": {}, "exceptions": ["specialist.1200-1280: game text: 'an dilapidated' typo"], "reviewed": true},
+"event-specialist-500": {"docs": {}, "exceptions": [], "reviewed": true},
+"event-subject-1100": {"docs": {}, "exceptions": [], "reviewed": true},
+"event-cara-3010": {"docs": {}, "exceptions": [], "reviewed": true},
+"situation-situation-initiate-storm": {"docs": {
+ "cstorms.2000": {
+  "GetGatherStormSuperchargeTTSecond": {"zh":"","en":", Magnetic Storm or Electric Storm","omit":["zh"]},
+  "GetGatherStormSuperchargeTTThird": {"zh":"","en":"","omit":["zh","en"]},
+  "GetGatherStormOverfeedTTFirst": {"zh":"粒子风暴、重力风暴或星尘风暴","en":"Particle Storm"},
+  "GetGatherStormOverfeedTTSecond": {"zh":"","en":", Gravity Storm or Stardust Storm","omit":["zh"]},
+  "GetGatherStormOverfeedTTThird": {"zh":"","en":"","omit":["zh","en"]}
+ }
+ }, "exceptions": ["situations:situation_initiate_storm: game text: 'seed a Electric Storm' article", "cstorms.2015: game text: 'bloated of state' typo"], "reviewed": true},
+"event-action-1": {"docs": {}, "exceptions": [], "reviewed": true},
+"event-arkship-60": {"docs": {
+ "arkship.60": {
+  "Root.GetName": {"zh":"","en":"this arkship","omit":["zh"],"variants":[{"lang":"zh","after":"号方舟舰","text":"某"}],"note":{"zh":"游戏里这里会出现这艘方舟舰的舰名。","en":"In the game, the arkship's name appears here."}}
+ }
+ }, "exceptions": ["arkship.60: game text: English 'symbionts who's designated rest area' should be 'whose'"], "reviewed": true},
+"event-arkship-700": {"docs": {}, "exceptions": [], "reviewed": true},
+"event-bio-3200": {"docs": {}, "exceptions": [], "reviewed": true},
+"event-envoy-events-215": {"docs": {
+ "envoy_events.215": {
+  "event_envoy.GetEnvoyLocation": {"zh":"该联邦","en":"the federation","note":{"zh":"游戏里这里会出现使者所驻机构的名称。","en":"In the game, the name of the body the envoy serves appears here."}}
+ }
+ }, "exceptions": [], "reviewed": true},
+"event-game-start-10": {"docs": {}, "exceptions": ["fallen_empires.8: game text: the tooltip has a line break instead of a full stop between 'Ends rivalry with <empire>' and '<our empire> loses any claims', so the two names run together"], "reviewed": true},
+"event-namarian-3": {"docs": {}, "exceptions": ["namarian.21: needs a proper name: 'the one named <planet>' expects a proper name"], "reviewed": true},
+"event-nomads-4700": {"docs": {}, "exceptions": ["nomads.4705: site data: the jump range ('within $@arkship_subject_settle_outpost_range$ jumps', 4 in the game) is a scripted number the page does not have, so 'within jumps' lacks it"], "reviewed": true},
+"event-operation-2000": {"docs": {
+ "operation.2005": {
+  "sabotaged_starbase_owner.GetAdj": {"zh":"该国","en":"the other empire's","note":{"zh":"游戏里这里会出现那个帝国的名称。","en":"In the game, the other empire's name appears here."}}
+ },
+ "espionage.1040": {
+  "luckycatch_country.GetAdj": {"zh":"该国","en":"the rival empire's","note":{"zh":"游戏里这里会出现那个敌对帝国的名称。","en":"In the game, the rival empire's name appears here."}}
+ }
+ }, "exceptions": ["operation.2005: game text: 'struck a a successful blow' (doubled article)", "espionage.1040: game text: 'We have have trapped' (doubled word)"], "reviewed": true},
+"event-operation-5015": {"docs": {
+ "operation.5016": {
+  "fromfrom.target.GetAdj": {"zh":"该国","en":"the target's","note":{"zh":"游戏里这里会出现目标帝国的名称。","en":"In the game, the target empire's name appears here."}}
+ }
+ }, "exceptions": ["operation.5016: game text: 'a worthy adversary us' is missing 'to'"], "reviewed": true},
+"event-operation-6000": {"docs": {}, "exceptions": ["operation.6010: needs a proper name: 'by the name of <official>' expects a proper name"], "reviewed": true},
+"the-shroud": {"docs": {
+ "utopia.3192": {"GetBrainName": {"zh":"中枢意识","en":"central mind","note":{"zh":"游戏里这里会出现你的集体意识的称呼。","en":"In the game, the name of your collective mind appears here."}}},
+ "utopia.3333": {"GetBrainName": {"zh":"中枢意识","en":"central mind","note":{"zh":"游戏里这里会出现你的集体意识的称呼。","en":"In the game, the name of your collective mind appears here."}}},
+ "utopia.3334": {"GetBrainName": {"zh":"中枢意识","en":"central mind","note":{"zh":"游戏里这里会出现你的集体意识的称呼。","en":"In the game, the name of your collective mind appears here."}}},
+ "utopia.3340": {"GetBrainName": {"zh":"中枢意识","en":"central mind","note":{"zh":"游戏里这里会出现你的集体意识的称呼。","en":"In the game, the name of your collective mind appears here."}}},
+ "utopia.3304": {"GetTelepathSwapPluralWithIcon": {"zh":"灵能者","en":"telepaths"}},
+ "utopia.3305": {"GetTelepathSwapPluralWithIcon": {"zh":"灵能者","en":"telepaths"}},
+ "utopia.3306": {"GetTelepathSwapPluralWithIcon": {"zh":"灵能者","en":"telepaths"}},
+ "utopia.3307": {"GetTelepathSwapPluralWithIcon": {"zh":"灵能者","en":"telepaths"}},
+ "utopia.2658": {"GetTelepathSwapPluralWithIcon": {"zh":"灵能者","en":"telepaths"}}
+ }, "exceptions": ["utopia.3304/3305/3306/3307/2658: site data: the scripted-number tokens ('$@telepath_..|0=+$') stay in the text because the page has no value for them"], "reviewed": true}
+}

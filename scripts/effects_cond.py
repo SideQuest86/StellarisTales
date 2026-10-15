@@ -12,8 +12,11 @@ Order of sources for one condition `key op value` / `key = { args }`:
 from __future__ import annotations
 import re
 import effects_gloss as G
+import effects_labels as LB
 
 UNKNOWN_WORDS = set()
+KEYWORD_FALLBACK = {}  # trigger key -> uses of the raw key-word phrasing (must stay empty: every key has reviewed wording)
+REVIEWED = {}  # trigger key -> uses of the reviewed wording (effects_labels.py)
 OPW = {'>': ('超过', 'more than'), '>=': ('至少', 'at least'), '<': ('少于', 'fewer than'), '<=': ('至多', 'at most'), '=': ('为', 'exactly'), '!=': ('不是', 'not')}
 NUM_TEMPLATES = {  # key -> (zh, en) with {op} and {n}
     'num_owned_planets': ('拥有{op}{n}颗星球', 'owns {op} {n} planets'), 'years_passed': ('游戏已进行{op}{n}年', 'the game has run {op} {n} years'),
@@ -62,7 +65,7 @@ def value_text(ctx, v, op='='):
         lab = scope_label(s.split('.')[0], ctx, 'country') if not s.startswith(('event_target', 'global_event_target')) else None
         if lab:
             return lab['zh'], lab['en'], 'ref'
-        return '相关对象', 'a related target', 'ref'
+        return '另一方', 'another party', 'ref'
     n = nm(ctx, s)
     return f'「{n["zh"]}」', f'"{n["en"]}"', 'name'
 
@@ -186,13 +189,47 @@ def trigger_label(k, v, op, ctx):
     detail = [f'{k} {op or "="} {primary if primary is not None else "{...}"}']
     out = _from_game(low, args, primary, op or '=', ctx)
     if out is None:
+        out = _from_labels(low, args, primary, op or '=', ctx, v, neg)
+        if out is not None:
+            REVIEWED[low] = REVIEWED.get(low, 0) + 1
+            neg = False
+    if out is None:
         out = _from_words(low, k, args, primary, op or '=', ctx, v)
+        if out is not None:
+            KEYWORD_FALLBACK[low] = KEYWORD_FALLBACK.get(low, 0) + 1
     if out is None:
         return None
     zh, en = out
     if neg:
         zh, en = negate_phrase(zh, en)
     return {'zh': zh, 'en': en, 'detail': detail}
+
+
+def _from_labels(low, args, primary, op, ctx, v, neg):
+    if low not in LB.LABELS:
+        return None
+    names, num = [], None
+    for a, val in args.items():
+        if a in SPECIAL_ARGS:
+            continue
+        if a in ('value', 'amount', 'count', 'level', 'num', 'percentage', 'lvl', 'tier'):
+            num = num or value_text(ctx, val)
+            continue
+        t = value_text(ctx, val)
+        if t and t[2] in ('name', 'num', 'ref') and t[0] != f'「{G.OBJECT[0]}」':
+            names.append(t)
+    if any(t[2] != 'ref' for t in names):
+        names = [t for t in names if t[2] != 'ref']
+    if primary not in (None, 'yes', 'no'):
+        t = value_text(ctx, primary)
+        if t and t[2] == 'num':
+            num = t
+        elif t and t[0] != f'「{G.OBJECT[0]}」':
+            names.append(t)
+    nm_ = ('、'.join(t[0] for t in names), ', '.join(t[1] for t in names)) if names else None
+    nu = (num[0], num[1]) if num else None
+    ow = OPW.get(op or '=', OPW['='])
+    return LB.render(low, ctx, nm_, nu, ow, neg)
 
 
 def _from_game(low, args, primary, op, ctx):
