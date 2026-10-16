@@ -47,7 +47,7 @@ try {
 
   await check("story opens from a link with readable text", async () => {
     await page.goto(base + "#story=cybrex", { waitUntil: "domcontentloaded" });
-    await page.waitForSelector("#reader:not([hidden]) .chapter-document", { timeout: 30000 });
+    await page.waitForSelector("#reader:not([hidden]):not(.prewarm) .chapter-document", { timeout: 30000 });
     const text = await readerText(page);
     assert.ok(text.length > 200, "text too short");
     assert.doesNotMatch(text, /\[[A-Za-z_.]+\]|\$[A-Z_]+\$|§/, "raw game token in the text");
@@ -160,6 +160,25 @@ try {
   await context.close();
 }
 
+await check("a link opened while the start-up warm-up is due (slow download) still opens the story", async () => {
+  const ends = [];
+  for (const delay of [900, 2400]) {
+    const run = await open();
+    try {
+      await run.page.route("**/stories/cybrex.json", async (route) => { await new Promise((r) => setTimeout(r, 1800)); await route.continue(); });
+      await run.page.goto(base, { waitUntil: "domcontentloaded" });
+      await run.page.waitForSelector("#open-story");
+      await run.page.waitForTimeout(delay);
+      await run.page.goto(base + "#story=cybrex", { waitUntil: "domcontentloaded" });
+      await run.page.waitForSelector("#reader:not([hidden]):not(.prewarm) .chapter-document[data-doc='precursor.2000'] #reading-back", { state: "attached", timeout: 30000 });
+      ends.push(delay);
+    } finally {
+      await run.context.close();
+    }
+  }
+  return `opened after ${ends.join(" / ")} ms`;
+});
+
 const phone = await open({ width: 390, height: 844 }, { isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
 try {
   await check("phone layout (390 px): archive, reader and museum without horizontal overflow", async () => {
@@ -169,7 +188,7 @@ try {
     await settle(phone.page, 1200);
     const a = await overflow();
     await phone.page.goto(base + "#story=cybrex", { waitUntil: "domcontentloaded" });
-    await phone.page.waitForSelector("#reader:not([hidden]) .chapter-document", { timeout: 30000 });
+    await phone.page.waitForSelector("#reader:not([hidden]):not(.prewarm) .chapter-document", { timeout: 30000 });
     await settle(phone.page);
     const r = await overflow();
     const tap = await phone.page.locator("#reading-back").boundingBox();

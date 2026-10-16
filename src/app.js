@@ -234,8 +234,17 @@ function useDossier(data) {
   docMap = new Map(data.chapters.map((c) => [c.id, c]));
   storyFlagSet = storyFlags(data);
 }
+// Openings in flight (prewarmReader never starts while one is pending and yields to any that begins).
+let openings = 0, pendingOpenings = 0;
+function beginOpening() {
+  openings++;
+  pendingOpenings++;
+  let ended = false;
+  return () => { if (!ended) { ended = true; pendingOpenings--; } };
+}
 async function openStory(id, start) {
   const ticket = ++readerTicket;
+  const end = beginOpening();
   try {
     const [data] = await Promise.all([loadStory(id), loadNames()]);
     if (ticket !== readerTicket) return;
@@ -251,6 +260,8 @@ async function openStory(id, start) {
     renderChapter();
   } catch (e) {
     toast(e.message);
+  } finally {
+    end();
   }
 }
 // Reading progress (src/progress.js): saved after navigation / choices / assumptions, restored via "Continue reading".
@@ -305,6 +316,7 @@ function resumeProgress(restored) {
   const { state, stories } = restored;
   const last = state.trail.at(-1);
   const ticket = ++readerTicket;
+  const end = beginOpening();
   return loadNames().then(() => {
     if (ticket !== readerTicket) return;
     visitedChapters.clear();
@@ -319,7 +331,7 @@ function resumeProgress(restored) {
     openingReader = $("#reader").hidden;
     setReader(true);
     renderChapter();
-  }).catch((e) => toast(e.message));
+  }).catch((e) => toast(e.message)).finally(end);
 }
 function restartProgress() {
   progress.clear();
@@ -340,6 +352,14 @@ function restartProgress() {
 })();
 // A direct link to exactly the document the saved trail ends on is the reader's own refresh: restore the trail.
 async function openFromLink(storyId, chapterId) {
+  const end = beginOpening();
+  try {
+    return await linkOpening(storyId, chapterId);
+  } finally {
+    end();
+  }
+}
+async function linkOpening(storyId, chapterId) {
   const saved = progress.load();
   if (saved && saved.trail.at(-1).story === storyId) {
     const restored = await restoreProgress(saved);
@@ -357,7 +377,8 @@ async function openFromLink(storyId, chapterId) {
 // the selected story is rendered into the reader while it is inert and fully transparent (.prewarm), laid out and
 // painted for one frame, then hidden and emptied — no navigation, history, title, scene or saved-progress side
 // effects. The story map follows in the next idle period the same way. Skipped if a story is opened meanwhile (a real
-// opening takes the reader over: setReader drops .prewarm and the tickets no longer match).
+// opening takes the reader over: setReader drops .prewarm). It never touches readerTicket, so it cannot cancel an
+// opening that is still waiting for its story to download.
 let prewarming = false, prewarmed = false;
 const idleOnce = () => new Promise((resolve) => (window.requestIdleCallback ? requestIdleCallback(() => resolve(), { timeout: 3000 }) : setTimeout(resolve, 200)));
 const painted = () => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
@@ -379,11 +400,11 @@ async function prewarmReader() {
     [data] = await Promise.all([loadStory(selected.id), loadNames()]);
   } catch { return; }
   await quietMoment();
-  if (prewarmed || dossier || !$("#reader").hidden) return;
+  if (prewarmed || dossier || pendingOpenings || !$("#reader").hidden) return;
   const reader = $("#reader");
   prewarming = prewarmed = true;
-  const ticket = ++readerTicket;
-  const own = () => ticket === readerTicket;
+  const mark = openings;
+  const own = () => mark === openings && !pendingOpenings;
   const doc = data.chapters.find((c) => c.id === data.story.start) || data.chapters[0];
   const show = () => { reader.classList.add("prewarm"); reader.inert = true; reader.hidden = false; };
   const hide = () => { reader.hidden = true; reader.classList.remove("prewarm"); };
@@ -429,7 +450,6 @@ async function prewarmReader() {
       $("#flow-surface").hidden = true; // the next opening shows its own map once it is built
     }
   }
-  if (own()) readerTicket++;
   window.__readerWarmup = timing;
 }
 function closeReader() {

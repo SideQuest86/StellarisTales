@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.6.1 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.6.2 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: see "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -40,10 +40,10 @@ evidence from earlier rounds and is not updated.
   is uploaded, so nothing deploys. The same smoke step runs in `ci.yml` on every push. Smoke covers: story opening,
   a choice + continuing + Back, progress restored after a reload, full-text search to an exact document and to a
   specimen, five repeated museum opens (constant model size, or the image fallback without WebGL), images, the 390 px
-  phone layout, and no page errors / failed requests. Run locally: `node scripts/serve.mjs --dist` then
+  phone layout, a link opened during the start-up warm-up on a slow download, and no page errors / failed requests. Run locally: `node scripts/serve.mjs --dist` then
   `STELLARIS_PLAYWRIGHT_PATH=… STELLARIS_BROWSER_CHANNEL=chrome node scripts/smoke.mjs`.
 - **Tests (2026-10-16):** Node 89 (`node --test tests/*.test.mjs`), Python 45 (`python -m unittest discover -s tests
-  -p 'test_*.py'`), all passing. Browser suites passing locally: smoke 10/10, verify-museum-viewer 7 (+ every model with
+  -p 'test_*.py'`), all passing. Browser suites passing locally: smoke 11/11, verify-prewarm 24/24, verify-museum-viewer 7 (+ every model with
   `ALL=1`), verify-progress 12, verify-search 16, verify-a11y, verify-refine-reader (test race fixed 2026-10-16),
   verify-refine-chrome, verify-reader-v4, verify-effects, verify-images, verify-reading-walk (48 stories / 198 documents). Frame timing: `scripts/verify-frame-spikes.mjs` (below).
 - **Round 3 (2026-10-16) changes:**
@@ -64,7 +64,7 @@ evidence from earlier rounds and is not updated.
     yuht_audio_console with other seeds were no better; the four lowest-IoU models stay as they are.
 - **Frame timing (2026-10-16; `scripts/verify-frame-spikes.mjs`, headed Chrome, RTX 5070 Laptop, 60 Hz display,
   8 runs per scenario, worst frame per run, same session; before = `verification/ui/frame-spikes-baseline.json`
-  (v4.6.0 code), after = `verification/ui/frame-spikes.json` (v4.6.1)):**
+  (v4.6.0 code), after = `verification/ui/frame-spikes.json` (v4.6.1; re-measured on v4.6.2, unchanged)):**
 
   | Scenario | before p50 / max | after p50 / max |
   | --- | --- | --- |
@@ -82,7 +82,8 @@ evidence from earlier rounds and is not updated.
   1.5 s without input), the selected story's opening document is rendered into the reader while it is inert and
   transparent, painted once and removed; the map follows in the next quiet moment. Opening a story also computes the
   map's tree during the opening animation (`FlowSurface.prepare`) so the map frame only lays it out. Browsing the
-  archive during start-up stays at one frame (4 runs, max 17 ms; the warm-up waits for quiet). Measured and reverted:
+  archive during start-up stays at one frame (4 runs, max 17 ms; the warm-up waits for quiet).
+  The warm-up never touches `readerTicket` and yields to any opening in flight (v4.6.2 fixes a v4.6.1 race in which a link opened on a slow connection during the warm-up stayed closed; `scripts/verify-prewarm.mjs`, 24 openings around the warm-up with a slow download, and a smoke check guard it). Measured and reverted:
   focusing the title after paint, skipping the post-render scroll write, `content-visibility` below the fold
   (`frame-spikes-a.json`, `-b.json`). Remaining: a first opening still takes 2 frames (33 ms) and occasionally 3;
   Desktop only — phones were emulated for layout, not measured.

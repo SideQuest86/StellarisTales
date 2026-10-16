@@ -1,3 +1,8 @@
+v4.6.2 — 2026-10-16
+
+Fix: a story opened by link in the first seconds after loading, on a slow connection, could stay closed (the
+start-up preparation from v4.6.1 took over its turn). The preparation now always gives way to an opening.
+
 v4.6.1 — 2026-10-16
 
 Smoother first story: the reader and its story map are prepared once in a quiet moment after the archive loads, so

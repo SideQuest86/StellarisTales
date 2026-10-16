@@ -1,90 +1,86 @@
 {
- "measuredAt": "2026-10-16T10:32:04.404Z",
+ "measuredAt": "2026-10-16T11:12:55.210Z",
  "headless": false,
- "reps": 8,
+ "reps": 6,
  "url": "http://127.0.0.1:4173/",
  "note": "Desktop Chrome (headed, discrete GPU unless HEADLESS). Not a physical phone.",
  "scenarios": {
   "open cold": {
    "maxFrameMs": {
-    "p50": 49.9,
-    "max": 50.1,
+    "p50": 33.5,
+    "max": 49.9,
     "runs": [
-     50,
+     49.9,
      33.4,
-     50,
-     33.3,
-     50.1,
-     33.4,
-     33.3,
-     49.9
+     33.5,
+     33.5,
+     47.6,
+     33.4
     ]
    },
    "actionPhaseMaxMs": {
     "p50": 33.4,
-    "max": 50
+    "max": 49.9
    },
    "laterPhaseMaxMs": {
     "p50": 33.4,
-    "max": 50.1
+    "max": 33.5
    },
    "pooledFrameMs": {
-    "frames": 717,
+    "frames": 539,
     "p50": 16.7,
     "p95": 16.9,
     "p99": 33.4
    },
-   "framesOver25ms": 3,
+   "framesOver25ms": 4,
    "longestLoafMedianSplit": {
-    "task": 50.1,
+    "task": 51,
     "raf": 4.4,
-    "layout": 9.2
+    "layout": 8.9
    },
    "worstLoaf": {
-    "at": 3845.300000011921,
-    "duration": 65.2999999821186,
+    "at": 3846.199999988079,
+    "duration": 69.40000000596046,
     "blocking": 0,
-    "task": 51.599999994039536,
-    "raf": 4.4000000059604645,
-    "layout": 9.299999982118607,
+    "task": 55.900000005960464,
+    "raf": 4.5999999940395355,
+    "layout": 8.900000005960464,
     "scripts": [
      {
       "fn": "Response.json.then",
       "url": "app.js",
-      "ms": 34.9,
-      "forcedLayout": 31.9
+      "ms": 36,
+      "forcedLayout": 32.8
      }
     ]
    }
   },
   "chapter": {
    "maxFrameMs": {
-    "p50": 16.9,
-    "max": 17,
+    "p50": 17,
+    "max": 17.1,
     "runs": [
-     16.8,
-     16.8,
      16.9,
-     16.8,
      17,
-     16.9,
-     16.8,
-     16.9
+     17.1,
+     17,
+     17,
+     17
     ]
    },
    "actionPhaseMaxMs": {
-    "p50": 16.8,
-    "max": 16.9
+    "p50": 17,
+    "max": 17.1
    },
    "laterPhaseMaxMs": {
-    "p50": 16.8,
+    "p50": 17,
     "max": 17
    },
    "pooledFrameMs": {
-    "frames": 765,
+    "frames": 572,
     "p50": 16.7,
     "p95": 16.8,
-    "p99": 16.8
+    "p99": 17
    },
    "framesOver25ms": 0,
    "longestLoafMedianSplit": {
@@ -99,14 +95,12 @@
     "p50": 16.9,
     "max": 17,
     "runs": [
-     16.9,
-     16.8,
-     16.9,
-     16.9,
      16.8,
      17,
      16.8,
-     16.8
+     16.8,
+     16.9,
+     16.9
     ]
    },
    "actionPhaseMaxMs": {
@@ -118,7 +112,7 @@
     "max": 17
    },
    "pooledFrameMs": {
-    "frames": 733,
+    "frames": 551,
     "p50": 16.7,
     "p95": 16.8,
     "p99": 16.9
@@ -134,28 +128,26 @@
   "open warm": {
    "maxFrameMs": {
     "p50": 16.9,
-    "max": 16.9,
+    "max": 17.1,
     "runs": [
+     16.8,
      16.9,
+     16.8,
+     17.1,
      16.9,
-     16.9,
-     16.9,
-     16.9,
-     16.9,
-     16.9,
-     16.8
+     17
     ]
    },
    "actionPhaseMaxMs": {
     "p50": 16.8,
-    "max": 16.9
+    "max": 17
    },
    "laterPhaseMaxMs": {
     "p50": 16.9,
-    "max": 16.9
+    "max": 17.1
    },
    "pooledFrameMs": {
-    "frames": 727,
+    "frames": 544,
     "p50": 16.7,
     "p95": 16.8,
     "p99": 16.9
@@ -171,28 +163,26 @@
   "open other": {
    "maxFrameMs": {
     "p50": 16.9,
-    "max": 16.9,
+    "max": 17.1,
     "runs": [
      16.9,
      16.9,
-     16.9,
-     16.9,
      16.8,
+     17.1,
      16.9,
-     16.8,
      16.9
     ]
    },
    "actionPhaseMaxMs": {
     "p50": 16.8,
-    "max": 16.9
+    "max": 17.1
    },
    "laterPhaseMaxMs": {
     "p50": 16.9,
     "max": 16.9
    },
    "pooledFrameMs": {
-    "frames": 736,
+    "frames": 554,
     "p50": 16.7,
     "p95": 16.8,
     "p99": 16.9
@@ -208,51 +198,49 @@
   "long chapter": {
    "maxFrameMs": {
     "p50": 33.4,
-    "max": 33.5,
+    "max": 33.4,
     "runs": [
      33.3,
      33.4,
+     33.4,
      33.3,
      33.4,
-     33.5,
-     33.3,
-     33.3,
      33.4
     ]
    },
    "actionPhaseMaxMs": {
     "p50": 33.3,
-    "max": 33.5
+    "max": 33.4
    },
    "laterPhaseMaxMs": {
     "p50": 33.3,
     "max": 33.4
    },
    "pooledFrameMs": {
-    "frames": 984,
+    "frames": 733,
     "p50": 16.7,
     "p95": 16.8,
     "p99": 33.3
    },
-   "framesOver25ms": 1,
+   "framesOver25ms": 2,
    "longestLoafMedianSplit": {
-    "task": 35.6,
-    "raf": 11.5,
+    "task": 38.7,
+    "raf": 15.3,
     "layout": 0.4
    },
    "worstLoaf": {
-    "at": 14424.800000011921,
-    "duration": 54.599999994039536,
+    "at": 14435.699999988079,
+    "duration": 56.900000005960464,
     "blocking": 0,
-    "task": 38.30000001192093,
-    "raf": 15.899999976158142,
-    "layout": 0.4000000059604645,
+    "task": 41.099999994039536,
+    "raf": 15.5,
+    "layout": 0.30000001192092896,
     "scripts": [
      {
       "fn": "Response.json.then",
       "url": "app.js",
-      "ms": 24.1,
-      "forcedLayout": 18.2
+      "ms": 24.4,
+      "forcedLayout": 18
      }
     ]
    }
@@ -260,103 +248,99 @@
   "open reload": {
    "maxFrameMs": {
     "p50": 33.3,
-    "max": 33.3,
+    "max": 33.4,
     "runs": [
      33.3,
      33.3,
      33.3,
+     33.4,
      33.3,
-     33.3,
-     33.3,
-     33.3,
-     16.9
+     33.4
     ]
    },
    "actionPhaseMaxMs": {
     "p50": 33.3,
-    "max": 33.3
+    "max": 33.4
    },
    "laterPhaseMaxMs": {
-    "p50": 16.8,
-    "max": 16.9
+    "p50": 16.9,
+    "max": 17
    },
    "pooledFrameMs": {
-    "frames": 738,
+    "frames": 551,
     "p50": 16.7,
     "p95": 16.8,
-    "p99": 16.9
+    "p99": 33.3
    },
    "framesOver25ms": 1,
    "longestLoafMedianSplit": {
     "task": 37.8,
-    "raf": 4.2,
-    "layout": 11.8
+    "raf": 4.3,
+    "layout": 12.1
    },
    "worstLoaf": {
-    "at": 3759.0999999940395,
-    "duration": 58.099999994039536,
+    "at": 3764.300000011921,
+    "duration": 56.80000001192093,
     "blocking": 0,
-    "task": 42.099999994039536,
-    "raf": 4.5,
-    "layout": 11.5,
+    "task": 40.900000005960464,
+    "raf": 4.199999988079071,
+    "layout": 11.700000017881393,
     "scripts": [
      {
       "fn": "Response.json.then",
       "url": "app.js",
-      "ms": 23.6,
-      "forcedLayout": 21
+      "ms": 23.5,
+      "forcedLayout": 20.8
      }
     ]
    }
   },
   "open settled": {
    "maxFrameMs": {
-    "p50": 33.4,
+    "p50": 33.6,
     "max": 50,
     "runs": [
-     33.3,
+     33.4,
      33.6,
-     33.3,
+     33.4,
      50,
-     33.4,
-     33.4,
-     33.4,
-     50
+     49.9,
+     33.4
     ]
    },
    "actionPhaseMaxMs": {
-    "p50": 33.4,
-    "max": 50
+    "p50": 33.3,
+    "max": 33.4
    },
    "laterPhaseMaxMs": {
-    "p50": 33.4,
+    "p50": 33.6,
     "max": 50
    },
    "pooledFrameMs": {
-    "frames": 720,
+    "frames": 536,
     "p50": 16.7,
     "p95": 16.9,
     "p99": 33.4
    },
-   "framesOver25ms": 3,
+   "framesOver25ms": 4,
    "longestLoafMedianSplit": {
-    "task": 47.7,
-    "raf": 4.4,
-    "layout": 9.1
+    "task": 44.5,
+    "raf": 4.6,
+    "layout": 9.5
    },
    "worstLoaf": {
-    "at": 4374.300000011921,
-    "duration": 69.19999998807907,
-    "blocking": 0,
-    "task": 55.69999998807907,
-    "raf": 4.4000000059604645,
-    "layout": 9.099999994039536,
+    "at": 4975.299999982119,
+    "duration": 65.59999999403954,
+    "blocking": 0.3,
+    "task": 35.30000001192093,
+    "raf": 0.4000000059604645,
+    "layout": 29.899999976158142,
     "scripts": [
      {
-      "fn": "Response.json.then",
+      "fn": "TimerHandler:setTimeout",
       "url": "app.js",
-      "ms": 33.1,
-      "forcedLayout": 30.2
+      "ms": 20.1,
+      "forcedLayout": 0
      }
     ]
    }
