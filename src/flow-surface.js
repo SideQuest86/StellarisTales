@@ -113,6 +113,12 @@ export class FlowSurface {
   }
 
   // ---------------------------------------------------------------- data
+  /** Build (and cache) a story's tree ahead of update(), e.g. in idle time while the reader opens. */
+  prepare(story, chapters, dossier) {
+    const key = dossier || story;
+    if (!story.tree && !story.flow && !dossier?.tree) return;
+    if (!trees.has(key)) trees.set(key, compactTree(toTree(dossier || { story, chapters })));
+  }
   update(story, chapters, current, visited, language, prose, trail = [], dossier) {
     // Trees are cached per loaded dossier (or story object when no dossier is passed).
     const key = dossier || story;

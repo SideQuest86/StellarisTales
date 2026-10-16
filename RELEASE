@@ -1,3 +1,8 @@
+v4.6.1 — 2026-10-16
+
+Smoother first story: the reader and its story map are prepared once in a quiet moment after the archive loads, so
+opening the first story no longer stalls the animation as long (worst frame about 50 → 33 ms on a 60 Hz display).
+
 v4.6.0 — 2026-10-16
 
 Reading progress is kept: after a refresh or a later visit, "Continue reading" returns to the same document with

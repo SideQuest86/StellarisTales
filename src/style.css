@@ -2420,3 +2420,6 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
   .search-hit { gap: 8px; }
   .hit-type { min-width: 30px; padding: 1px 4px; }
 }
+/* Reader warm-up (prewarmReader in app.js): laid out and painted once in idle time, transparent and inert. */
+#reader.prewarm { opacity: 0.002 !important; pointer-events: none !important; }
+#reader.prewarm #flow-surface { opacity: 1; transition: none; }

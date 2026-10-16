@@ -214,6 +214,7 @@ $("#previous-category").onclick = () => navigate("lane", -1);
 $("#next-category").onclick = () => navigate("lane", 1);
 $("#open-story").onclick = () => openStory(selected.id);
 function setReader(open) {
+  $("#reader").classList.remove("prewarm"); // a real opening or closing ends any idle warm-up render
   document.body.classList.toggle("reader-open", open);
   // [UI] animated enter/exit; the map fades out with the card instead of vanishing.
   revealReader($("#reader"), open, reduced());
@@ -349,6 +350,87 @@ async function openFromLink(storyId, chapterId) {
     }
   }
   return openStory(storyId, chapterId);
+}
+// The first story opened in a page used to cost one ~50 ms frame (60 Hz desktop: 50–83 ms) while later openings,
+// even of other stories, take a single frame: the reader's first layout (styles, fonts and text runs used nowhere
+// else) is a once-per-page cost. Pay it in idle time instead: once the archive has settled, the opening document of
+// the selected story is rendered into the reader while it is inert and fully transparent (.prewarm), laid out and
+// painted for one frame, then hidden and emptied — no navigation, history, title, scene or saved-progress side
+// effects. The story map follows in the next idle period the same way. Skipped if a story is opened meanwhile (a real
+// opening takes the reader over: setReader drops .prewarm and the tickets no longer match).
+let prewarming = false, prewarmed = false;
+const idleOnce = () => new Promise((resolve) => (window.requestIdleCallback ? requestIdleCallback(() => resolve(), { timeout: 3000 }) : setTimeout(resolve, 200)));
+const painted = () => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+// Each warm-up slice waits for a quiet moment: idle time and no input for 1.5 s (so it never lands in the middle of
+// browsing the archive, whose motion continues briefly after each input).
+let lastInput = 0;
+for (const type of ["pointerdown", "pointermove", "keydown", "wheel", "touchstart"]) addEventListener(type, () => { lastInput = performance.now(); }, { passive: true, capture: true });
+async function quietMoment() {
+  for (;;) {
+    const wait = 1500 - (performance.now() - lastInput);
+    if (wait <= 0) { await idleOnce(); if (performance.now() - lastInput >= 1500) return; }
+    else await new Promise((resolve) => setTimeout(resolve, wait));
+  }
+}
+async function prewarmReader() {
+  if (prewarmed || dossier || !$("#reader").hidden || !selected) return;
+  let data;
+  try {
+    [data] = await Promise.all([loadStory(selected.id), loadNames()]);
+  } catch { return; }
+  await quietMoment();
+  if (prewarmed || dossier || !$("#reader").hidden) return;
+  const reader = $("#reader");
+  prewarming = prewarmed = true;
+  const ticket = ++readerTicket;
+  const own = () => ticket === readerTicket;
+  const doc = data.chapters.find((c) => c.id === data.story.start) || data.chapters[0];
+  const show = () => { reader.classList.add("prewarm"); reader.inert = true; reader.hidden = false; };
+  const hide = () => { reader.hidden = true; reader.classList.remove("prewarm"); };
+  const timing = { story: data.story.id };
+  // Slice 1: the document. Rendering is synchronous and the reading state is restored right after it, so only the
+  // markup stays (transparent and inert) until it has been painted once.
+  let t0 = performance.now();
+  try {
+    show();
+    useDossier(data);
+    chapter = docMap.get(doc.id);
+    trail = [{ story: data.story.id, chapter: chapter.id }];
+    saveSuspended = true;
+    renderChapter();
+    reader.querySelector(".chapter-document")?.getBoundingClientRect();
+  } catch (e) {
+    console.warn("reader warm-up skipped", e);
+  } finally {
+    prewarming = false;
+    dossier = null; chapter = null; trail = [];
+    visitedChapters.clear();
+    readingChapterId = null;
+    docMap = new Map();
+  }
+  timing.documentMs = Math.round(performance.now() - t0);
+  await painted();
+  if (own()) { hide(); $("#reading-content").innerHTML = ""; }
+  // Slice 2 (next quiet moment): the story map, also a first-use cost.
+  await quietMoment();
+  if (own() && data.story.tree) {
+    t0 = performance.now();
+    try {
+      show();
+      flowSurface.update(data.story, data.chapters, doc.id, new Set([doc.id]), lang, prose, [{ story: data.story.id, chapter: doc.id }]);
+      $("#flow-surface").getBoundingClientRect();
+    } catch (e) {
+      console.warn("map warm-up skipped", e);
+    }
+    timing.mapMs = Math.round(performance.now() - t0);
+    await painted();
+    if (own()) {
+      hide();
+      $("#flow-surface").hidden = true; // the next opening shows its own map once it is built
+    }
+  }
+  if (own()) readerTicket++;
+  window.__readerWarmup = timing;
 }
 function closeReader() {
   flushProgress();
@@ -634,7 +716,7 @@ function renderChapter(preservePosition = false) {
     })];
     if (dialogueStep<steps.length-1) r.next=[];
   }
-  scene?.setChapterArt(chapter.image, chapter.title);
+  if (!prewarming) scene?.setChapterArt(chapter.image, chapter.title);
   // Scroll offsets come from the passive scroll listener: reading or writing scrollTop here would force a
   // synchronous layout of the half-built reader (a second full layout in the opening frame).
   const scrollPosition = panelScroll;
@@ -757,8 +839,13 @@ function renderChapter(preservePosition = false) {
   const updateFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail);
   const ticket = readerTicket;
   const later = (f) => () => { if (ticket === readerTicket) f(); };
-  if (reduced() || !story.tree) updateFlow();
-  else if (openingReader) setTimeout(later(updateFlow), 600);
+  if (prewarming) {} // the invisible warm-up render (prewarmReader) leaves the map alone
+  else if (reduced() || !story.tree) updateFlow();
+  else if (openingReader) {
+    // The tree is computed in an idle moment of the opening animation, so the map's own frame only lays it out.
+    (window.requestIdleCallback || ((f) => setTimeout(f, 200)))(later(() => flowSurface.prepare(story, readable)), { timeout: 450 });
+    setTimeout(later(updateFlow), 600);
+  }
   else (window.requestIdleCallback || ((f) => setTimeout(f, 50)))(later(updateFlow), { timeout: 250 });
   openingReader = false;
   if(chapter.dialogue?.textProfiles){
@@ -797,6 +884,7 @@ function renderChapter(preservePosition = false) {
       renderChapter(true);
       $("#reading-select")?.focus({ preventScroll: true });
     };
+  if (prewarming) return;
   if (chapterChanged) $("#reader-title").focus({ preventScroll: true });
   history.replaceState(
     null,
@@ -1059,7 +1147,7 @@ document.addEventListener("keydown", (e) => {
     if (!$("#playlist").hidden) {
       $("#playlist").hidden = true;
       $("#playlist-toggle").setAttribute("aria-expanded", "false");
-    } else if (!$("#reader").hidden && !$("#search-dialog").open) closeReader();
+    } else if (!$("#reader").hidden && !$("#reader").classList.contains("prewarm") && !$("#search-dialog").open) closeReader();
   }
   if (
     e.key === "/" &&
@@ -1201,7 +1289,7 @@ try {
   parseHash();
   if (!location.hash.startsWith("#story=") && !location.hash.startsWith("#record=")) refreshContinue();
   // After the archive has settled, prepare Chinese glyphs so the first story opens without a long layout frame.
-  setTimeout(() => warmGlyphs(json), 2500);
+  setTimeout(() => idleOnce().then(prewarmReader).then(() => warmGlyphs(json)), 1200);
 } catch (e) {
   $("#selected-title").textContent = T("档案暂时无法连接", "Archive unavailable");
   $("#selected-excerpt").textContent = e.message;

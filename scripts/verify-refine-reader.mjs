@@ -49,9 +49,11 @@ try {
       step("node click handled", await page.evaluate(() => location.hash));
     }
   }
-  // 3. Reader text stays selectable.
+  // 3. Reader text stays selectable. (Same-document hash change: the document is re-rendered, possibly the same one,
+  // so let that render finish before measuring the paragraph — otherwise the drag runs over replaced text.)
   await page.goto(`${base}#story=${story}`, { waitUntil: "networkidle" });
   await page.waitForSelector(".narrative p");
+  await page.waitForTimeout(900);
   const p = page.locator(".narrative p").first();
   const pb = await p.boundingBox();
   await page.mouse.move(pb.x + 2, pb.y + 4);

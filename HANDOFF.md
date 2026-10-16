@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.6.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.6.1 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: see "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -44,8 +44,8 @@ evidence from earlier rounds and is not updated.
   `STELLARIS_PLAYWRIGHT_PATH=… STELLARIS_BROWSER_CHANNEL=chrome node scripts/smoke.mjs`.
 - **Tests (2026-10-16):** Node 89 (`node --test tests/*.test.mjs`), Python 45 (`python -m unittest discover -s tests
   -p 'test_*.py'`), all passing. Browser suites passing locally: smoke 10/10, verify-museum-viewer 7 (+ every model with
-  `ALL=1`), verify-progress 12, verify-search 16, verify-a11y, verify-refine-reader, verify-reader-v4, verify-effects,
-  verify-images. Frame timing: `scripts/verify-frame-spikes.mjs` (below).
+  `ALL=1`), verify-progress 12, verify-search 16, verify-a11y, verify-refine-reader (test race fixed 2026-10-16),
+  verify-refine-chrome, verify-reader-v4, verify-effects, verify-images, verify-reading-walk (48 stories / 198 documents). Frame timing: `scripts/verify-frame-spikes.mjs` (below).
 - **Round 3 (2026-10-16) changes:**
   - Museum viewer: each model normalised once at load (fixes the 1.6 → 2.449 → 1.6 size alternation on reopening),
     de-duplicated downloads, last-opened exhibit always wins, cache of 3 disposed correctly; opening view per model
@@ -62,14 +62,30 @@ evidence from earlier rounds and is not updated.
     for Latin text, no prefix search; single Chinese characters only match titles.
   - Weakest 3D matches inspected (docs/museum/MODELS.md "Re-run 2026-10-16"): three re-generations of
     yuht_audio_console with other seeds were no better; the four lowest-IoU models stay as they are.
-- **Frame timing (2026-10-16, `verification/ui/frame-spikes.json`; headed Chrome, RTX 5070 Laptop, 60 Hz display,
-  6 runs each, worst frame per run):** chapter change 17 ms (p50 and max — no dropped frame; the historical 47 ms is
-  gone), Back 17 ms, reopening a story 17 ms, long document (148 KB, The Shroud) 33 ms (max 50), opening from a link:
-  cold 50 ms (max 83), after reload 50 ms (max 50), after the glyph warm-up 50 ms (max 67). Diagnosis (Chrome trace,
-  Long Animation Frame attribution): the opening frame is the first layout of the new document — about 45–55 ms of
-  which ~25 ms is CJK text shaping; scripts take ~5 ms. Three attempts (focusing the title after paint; skipping the
-  post-render scroll write; `content-visibility` for blocks below the fold) were measured and reverted: they moved
-  the layout into one frame or made it worse. Desktop only: phones were emulated for layout, not measured.
+- **Frame timing (2026-10-16; `scripts/verify-frame-spikes.mjs`, headed Chrome, RTX 5070 Laptop, 60 Hz display,
+  8 runs per scenario, worst frame per run, same session; before = `verification/ui/frame-spikes-baseline.json`
+  (v4.6.0 code), after = `verification/ui/frame-spikes.json` (v4.6.1)):**
+
+  | Scenario | before p50 / max | after p50 / max |
+  | --- | --- | --- |
+  | first opening, ~4 s after load (opening frame) | 50 / 67 ms | 33 / 50 ms |
+  | first opening after a reload (opening frame) | 50 / 67 ms | 33 / 33 ms |
+  | first opening once the page has settled (opening frame) | 50 / 50 ms | 33 / 50 ms |
+  | story map built ~0.6 s after a first opening | 50 / 50 ms | 33 / 50 ms |
+  | long document (148 KB, The Shroud) | 33 / 33 ms | 33 / 33 ms |
+  | chapter change · Back · reopening · opening another story | 17 / 17 ms | 17 / 17 ms |
+
+  The historical 76 ms (open) / 47 ms (chapter change) no longer occur. Diagnosis (Chrome traces, Long Animation
+  Frame attribution): the first story opened in a page paid a one-time cost (first layout and paint of the reader and
+  of the story map: styles, fonts and text runs used nowhere else, ~45–55 ms); any later opening — even of another
+  story — takes one frame. Fix (v4.6.1, `prewarmReader` in src/app.js): after start-up, in a quiet moment (idle and
+  1.5 s without input), the selected story's opening document is rendered into the reader while it is inert and
+  transparent, painted once and removed; the map follows in the next quiet moment. Opening a story also computes the
+  map's tree during the opening animation (`FlowSurface.prepare`) so the map frame only lays it out. Browsing the
+  archive during start-up stays at one frame (4 runs, max 17 ms; the warm-up waits for quiet). Measured and reverted:
+  focusing the title after paint, skipping the post-render scroll write, `content-visibility` below the fold
+  (`frame-spikes-a.json`, `-b.json`). Remaining: a first opening still takes 2 frames (33 ms) and occasionally 3;
+  Desktop only — phones were emulated for layout, not measured.
 - **Limits:** no physical phone test; no native-speaker proofread; faults in the game's own text are kept as shipped
   (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions.
 - Live: v4.6.0 (`186a3e58`), published by the gated workflow (smoke 10/10 on bundled Chromium in CI) and verified live 2026-10-16 with local Chrome: smoke 10/10, verify-museum-viewer 7, verify-progress 12, verify-search 16, verify-a11y (0 page errors). Frame-timing attempts that were reverted: `verification/ui/frame-spikes-a.json`, `-b.json`.

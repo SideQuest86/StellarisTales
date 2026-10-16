@@ -77,7 +77,9 @@ async function measure(page, action, settle = 1500) {
   const raw = await page.evaluate(() => { window.__spikes.on = false; return window.__spikes; });
   const intervals = raw.t.slice(1).map((t, i) => t - raw.t[i]);
   const worst = raw.loaf.slice().sort((a, b) => b.duration - a.duration)[0] || null;
-  return { intervals, maxFrame: intervals.length ? Math.max(...intervals) : 0, loaf: raw.loaf, worst };
+  // Phases: the action's own frames (first 500 ms) and what follows (the story map is built ~600 ms after opening).
+  const phase = (from, to) => Math.max(0, ...raw.t.slice(1).map((t, i) => [t - raw.t[0], t - raw.t[i]]).filter(([at]) => at > from && at <= to).map(([, d]) => d));
+  return { intervals, maxFrame: intervals.length ? Math.max(...intervals) : 0, actionFrame: phase(0, 500), laterFrame: phase(500, 1e9), loaf: raw.loaf, worst };
 }
 const openLink = (page, hash) => async () => {
   await page.evaluate((h) => { location.hash = h; }, hash);
@@ -99,6 +101,9 @@ for (let i = 0; i < reps; i++) {
   add("back", await measure(page, () => page.locator("#reading-back").click()));
   await closeReader(page);
   add("open warm", await measure(page, openLink(page, "#story=cybrex")));
+  await closeReader(page);
+  // A story not opened before in this page (the reader itself is warm): per-text cost vs first-use cost.
+  add("open other", await measure(page, openLink(page, "#story=curators")));
   await closeReader(page);
   add("long chapter", await measure(page, async () => {
     await openLink(page, "#story=the-shroud&chapter=utopia.3200")();
@@ -128,12 +133,15 @@ for (const [name, list] of Object.entries(runs)) {
   const parts = (key) => pct(list.map((r) => r.worst?.[key] || 0), 50);
   report.scenarios[name] = {
     maxFrameMs: { p50: pct(list.map((r) => r.maxFrame), 50), max: +Math.max(...list.map((r) => r.maxFrame)).toFixed(1), runs: list.map((r) => +r.maxFrame.toFixed(1)) },
+    actionPhaseMaxMs: { p50: pct(list.map((r) => r.actionFrame), 50), max: +Math.max(...list.map((r) => r.actionFrame)).toFixed(1) },
+    laterPhaseMaxMs: { p50: pct(list.map((r) => r.laterFrame), 50), max: +Math.max(...list.map((r) => r.laterFrame)).toFixed(1) },
     pooledFrameMs: { frames: pooled.length, p50: pct(pooled, 50), p95: pct(pooled, 95), p99: pct(pooled, 99) },
     framesOver25ms: pct(list.map((r) => r.intervals.filter((v) => v > 25).length), 50),
     longestLoafMedianSplit: { task: parts("task"), raf: parts("raf"), layout: parts("layout") },
     worstLoaf: worst,
   };
-  console.log(name.padEnd(13), JSON.stringify(report.scenarios[name].maxFrameMs), "split", JSON.stringify(report.scenarios[name].longestLoafMedianSplit));
+  const s = report.scenarios[name];
+  console.log(name.padEnd(13), "max", JSON.stringify(s.maxFrameMs.runs), "| action p50/max", s.actionPhaseMaxMs.p50, s.actionPhaseMaxMs.max, "| later p50/max", s.laterPhaseMaxMs.p50, s.laterPhaseMaxMs.max);
 }
 await mkdir(dirname(output), { recursive: true });
 await writeFile(output, JSON.stringify(report, null, 1));

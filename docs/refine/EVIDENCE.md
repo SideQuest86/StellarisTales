@@ -31,7 +31,7 @@ Not possible from here: a physical phone test (emulation only) and a native-spea
 | 2 Progress | Saved, validated, reconciled, restored incl. cross-story paths; direct links do not invent history; storage failures tolerated | `node scripts/verify-progress.mjs` (12 checks); `tests/progress.test.mjs` (8) |
 | 3 Search | Body text, choices, effects, specimens; exact navigation; index loaded on demand; escaped snippets | `node scripts/verify-search.mjs` (16 checks, text-only and effect-only probes in zh/en); `tests/search.test.mjs` (10) |
 | 4 Museum presentation | Flat models face-on; Reset; weakest models re-run, no benefit | docs/museum/MODELS.md "Viewer and re-run"; `verification/museum/opening-views.json` |
-| 5 Frame spikes | Fresh baseline, trace diagnosis, attempts measured and reverted | `node scripts/verify-frame-spikes.mjs` → `verification/ui/frame-spikes.json` (+ `-baseline.json`); HANDOFF "Frame timing" |
+| 5 Frame spikes | Fresh baseline; one-time reader/map cost found by trace and moved to a quiet idle warm-up (v4.6.1): first opening 50 → 33 ms p50, map frame 50 → 33 ms; browsing during start-up unaffected | `node scripts/verify-frame-spikes.mjs` → `verification/ui/frame-spikes.json` vs `-baseline.json` (same session, 8 runs); HANDOFF "Frame timing" |
 | 6 Release gate | Browser smoke checks block deployment; fails 5/10 against the previous release | `scripts/smoke.mjs`; `.github/workflows/pages.yml`, `ci.yml`; HANDOFF "Current status" |
 
 Decision (user, 2026-10-15): the 81 faults in the game's own text are kept exactly as shipped (no display-time correction); they stay listed in docs/refine/placeholders/LEDGER.md as known game-text issues.
