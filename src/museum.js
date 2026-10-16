@@ -167,8 +167,8 @@ function showExhibit(key, keepFocus = false) {
     <button class="museum-close museum-detail-close" data-close-detail aria-label="${esc(T("关闭展品", "Close exhibit"))}">×</button>
     <div class="museum-stage rarity-${s.rarity}">
       <img class="museum-stage-image" src="${esc(data.asset(s.icon.url.replace(/^museum\/img\//, "museum/img-hd/")))}" data-original="${esc(data.asset(s.icon.url))}" onerror="if(this.dataset.original&&this.src!==this.dataset.original){this.src=this.dataset.original}" alt="${esc(label(s.name))}" width="100" height="100" decoding="async">
-      ${model ? `<div class="museum-viewer" tabindex="0" role="img" aria-label="${esc(T("可旋转、缩放的三维模型：拖动旋转，滚轮或 +/- 缩放，方向键旋转", "Rotatable 3D model: drag to rotate, wheel or +/- to zoom, arrow keys to rotate"))}"></div>
-        <div class="museum-view-toggle" role="group"><button data-view="3d" aria-pressed="true">${esc(T("三维模型", "3D model"))}</button><button data-view="image" aria-pressed="false">${esc(T("原版图像", "Original image"))}</button></div>` : ""}
+      ${model ? `<div class="museum-viewer" tabindex="0" role="img" aria-label="${esc(T("可旋转、缩放的三维模型：拖动旋转，滚轮或 +/- 缩放，方向键旋转，0 复位", "Rotatable 3D model: drag to rotate, wheel or +/- to zoom, arrow keys to rotate, 0 to reset"))}"></div>
+        <div class="museum-view-toggle" role="group"><button data-view="3d" aria-pressed="true">${esc(T("三维模型", "3D model"))}</button><button data-view="image" aria-pressed="false">${esc(T("原版图像", "Original image"))}</button><button data-reset-view title="${esc(T("回到初始视角（0）", "Back to the opening view (0)"))}">${esc(T("复位", "Reset"))}</button></div>` : ""}
     </div>
     <p class="museum-disclaimer">${esc(model
       ? T("非官方三维诠释：由游戏中 100×100 像素的标本图标自动生成，看不到的面不是官方设定。", "Unofficial 3D interpretation generated from the game's 100×100 px specimen icon; unseen surfaces are not canonical.")
@@ -203,6 +203,7 @@ async function mountViewer(panel, model, s) {
     const { ExhibitViewer } = await import("./museum-viewer.js");
     if (state.open !== s.key) return;
     viewer ||= new ExhibitViewer({ reduced });
+    window.__museumViewer = () => viewer.diagnostics();
     await viewer.show(el, data.asset(model.file), model);
     el.classList.add("ready");
   } catch (e) {
@@ -242,6 +243,11 @@ function onClick(e) {
   if (t.closest("[data-toggle3d]")) { state.only3d = !state.only3d; hideExhibit(); render(); root.querySelector("[data-toggle3d]")?.focus(); return; }
   const ex = t.closest(".museum-exhibit");
   if (ex) return showExhibit(ex.dataset.key);
+  if (t.closest("[data-reset-view]")) {
+    root.querySelector('[data-view="3d"]')?.click();
+    viewer?.resetView();
+    return;
+  }
   const v = t.closest("[data-view]");
   if (v) {
     const three = v.dataset.view === "3d";
