@@ -72,7 +72,7 @@ evidence from earlier rounds and is not updated.
   the layout into one frame or made it worse. Desktop only: phones were emulated for layout, not measured.
 - **Limits:** no physical phone test; no native-speaker proofread; faults in the game's own text are kept as shipped
   (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions.
-- Live: (filled in after the release is verified)
+- Live: v4.6.0 (`186a3e58`), published by the gated workflow (smoke 10/10 on bundled Chromium in CI) and verified live 2026-10-16 with local Chrome: smoke 10/10, verify-museum-viewer 7, verify-progress 12, verify-search 16, verify-a11y (0 page errors). Frame-timing attempts that were reverted: `verification/ui/frame-spikes-a.json`, `-b.json`.
 
 ## History: state on 2026-10-13 (v4.0.2)
 

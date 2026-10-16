@@ -1,0 +1,216 @@
+{
+ "measuredAt": "2026-10-16T09:19:15.584Z",
+ "headless": false,
+ "reps": 5,
+ "url": "http://127.0.0.1:4173/",
+ "note": "Desktop Chrome (headed, discrete GPU unless HEADLESS). Not a physical phone.",
+ "scenarios": {
+  "open cold": {
+   "maxFrameMs": {
+    "p50": 50.1,
+    "max": 83.3,
+    "runs": [
+     66.6,
+     83.3,
+     50,
+     50.1,
+     50.1
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 452,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 50.1
+   },
+   "framesOver25ms": 3,
+   "longestLoafMedianSplit": {
+    "task": 36.2,
+    "raf": 4.4,
+    "layout": 25.9
+   },
+   "worstLoaf": {
+    "at": 3867.4000000059605,
+    "duration": 98.59999999403954,
+    "blocking": 0,
+    "task": 65.19999998807907,
+    "raf": 7.5,
+    "layout": 25.900000005960464,
+    "scripts": [
+     {
+      "fn": "Response.json.then",
+      "url": "app.js",
+      "ms": 5.5,
+      "forcedLayout": 0.2
+     }
+    ]
+   }
+  },
+  "chapter": {
+   "maxFrameMs": {
+    "p50": 16.9,
+    "max": 17,
+    "runs": [
+     16.9,
+     16.9,
+     16.9,
+     16.9,
+     17
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 478,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "back": {
+   "maxFrameMs": {
+    "p50": 16.9,
+    "max": 17,
+    "runs": [
+     16.9,
+     17,
+     17,
+     16.9,
+     16.9
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 457,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "open warm": {
+   "maxFrameMs": {
+    "p50": 16.9,
+    "max": 17,
+    "runs": [
+     16.9,
+     16.9,
+     16.9,
+     16.9,
+     17
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 453,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "long chapter": {
+   "maxFrameMs": {
+    "p50": 33.4,
+    "max": 33.4,
+    "runs": [
+     33.4,
+     33.4,
+     33.3,
+     33.3,
+     33.4
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 614,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 33.3
+   },
+   "framesOver25ms": 2,
+   "longestLoafMedianSplit": {
+    "task": 20.7,
+    "raf": 19,
+    "layout": 5.2
+   },
+   "worstLoaf": {
+    "at": 11973.899999976158,
+    "duration": 60.10000002384186,
+    "blocking": 0,
+    "task": 26.100000023841858,
+    "raf": 18.69999998807907,
+    "layout": 15.300000011920929,
+    "scripts": [
+     {
+      "fn": "Response.json.then",
+      "url": "app.js",
+      "ms": 6.7,
+      "forcedLayout": 0.2
+     },
+     {
+      "fn": "FrameRequestCallback",
+      "url": "app.js",
+      "ms": 18.4,
+      "forcedLayout": 18.4
+     }
+    ]
+   }
+  },
+  "open reload": {
+   "maxFrameMs": {
+    "p50": 33.4,
+    "max": 50.1,
+    "runs": [
+     50.1,
+     33.3,
+     33.4,
+     33.4,
+     33.4
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 460,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 33.4
+   },
+   "framesOver25ms": 2,
+   "longestLoafMedianSplit": {
+    "task": 46.9,
+    "raf": 4.3,
+    "layout": 7.8
+   },
+   "worstLoaf": {
+    "at": 3787.9000000059605,
+    "duration": 67.30000001192093,
+    "blocking": 0,
+    "task": 55,
+    "raf": 4.199999988079071,
+    "layout": 8.100000023841858,
+    "scripts": [
+     {
+      "fn": "IdleRequestCallback",
+      "url": "",
+      "ms": 5.9,
+      "forcedLayout": 5.6
+     }
+    ]
+   }
+  }
+ }
+}

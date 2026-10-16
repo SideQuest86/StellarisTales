@@ -36,3 +36,4 @@ Stop rule: checkpoint at 57 % weekly (34 points), never exceed 63 % (40 points).
 
 Stop rule: checkpoint at 67 % weekly (34 points), never exceed 73 % (40 points). A weekly reset does not renew this budget.
 | 2026-10-16 ~10:00 | 33 % | 11 % | items 1-3 and 6 done, 4 inspected, 5 measured/diagnosed; CI green incl. smoke gate; before release v4.6.0. **Round-3 total: <1 point of 40** |
+| 2026-10-16 ~10:25 | 33 % | 11 % | released v4.6.0 (186a3e58) through the gated workflow; live checks passed (smoke, museum viewer, progress, search, a11y). **Round-3 total: <1 point of 40** (weekly 33 % at start and end) |
