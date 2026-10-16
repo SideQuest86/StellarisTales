@@ -29,6 +29,13 @@ export async function warmGlyphs(load) {
   host.style.cssText = "position:fixed;left:0;top:0;width:640px;visibility:hidden;pointer-events:none;contain:layout paint style;z-index:-1";
   document.body.append(host);
   const progress = (window.__glyphWarmup = { started: performance.now(), laidOut: 0, done: false });
+  // Request every font slice the warm-up needs at once (the browser downloads them in parallel; on a slow connection
+  // a batch-by-batch wait took ~9 s instead of ~5 s), then lay the glyphs out slice by slice in idle time.
+  const loads = FACES.map((face) => {
+    host.style.font = face.font;
+    const resolved = getComputedStyle(host).font;
+    return { face, resolved, ready: document.fonts.load(resolved, glyphs.slice(0, face.count)).catch(() => {}) };
+  });
   // Every face the reader uses at least once (local system fonts also pay a first-use cost on Windows).
   for (const family of STACKS) {
     for (const weight of [400, 500, 600]) {
@@ -38,17 +45,12 @@ export async function warmGlyphs(load) {
       host.getBoundingClientRect();
     }
   }
-  for (const face of FACES) {
-    host.style.font = face.font;
-    const resolved = getComputedStyle(host).font;
+  for (const { face, resolved, ready } of loads) {
+    host.style.font = resolved;
     const text = glyphs.slice(0, face.count);
+    await ready; // a failed slice only means the fallback face is used
     for (let i = 0; i < text.length; ) {
       const batch = text.slice(i, i + CHUNK * 4);
-      try {
-        await document.fonts.load(resolved, batch);
-      } catch {
-        /* a failed subset only means the fallback face is used */
-      }
       const end = i + batch.length;
       while (i < end) {
         const deadline = await idle();

@@ -1,0 +1,334 @@
+{
+ "measuredAt": "2026-10-16T12:02:32.630Z",
+ "headless": false,
+ "reps": 6,
+ "url": "http://127.0.0.1:4173/",
+ "note": "Desktop Chrome (headed, discrete GPU unless HEADLESS). Not a physical phone.",
+ "scenarios": {
+  "open cold": {
+   "maxFrameMs": {
+    "p50": 33.4,
+    "max": 50.1,
+    "runs": [
+     50,
+     50.1,
+     33.3,
+     33.3,
+     33.3,
+     33.4
+    ]
+   },
+   "actionPhaseMaxMs": {
+    "p50": 33.3,
+    "max": 50
+   },
+   "laterPhaseMaxMs": {
+    "p50": 33.3,
+    "max": 50.1
+   },
+   "pooledFrameMs": {
+    "frames": 605,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 33.3
+   },
+   "framesOver25ms": 2,
+   "longestLoafMedianSplit": {
+    "task": 34.6,
+    "raf": 0.5,
+    "layout": 29.9
+   },
+   "worstLoaf": {
+    "at": 6740.5999999940395,
+    "duration": 65.90000000596046,
+    "blocking": 0.4,
+    "task": 34.599999994039536,
+    "raf": 0.5,
+    "layout": 30.80000001192093,
+    "scripts": [
+     {
+      "fn": "TimerHandler:setTimeout",
+      "url": "app.js",
+      "ms": 19.2,
+      "forcedLayout": 0
+     }
+    ]
+   }
+  },
+  "chapter": {
+   "maxFrameMs": {
+    "p50": 16.8,
+    "max": 17,
+    "runs": [
+     17,
+     16.8,
+     16.8,
+     16.8,
+     16.8,
+     16.9
+    ]
+   },
+   "actionPhaseMaxMs": {
+    "p50": 16.8,
+    "max": 16.8
+   },
+   "laterPhaseMaxMs": {
+    "p50": 16.8,
+    "max": 17
+   },
+   "pooledFrameMs": {
+    "frames": 574,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.8
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "back": {
+   "maxFrameMs": {
+    "p50": 16.9,
+    "max": 19.6,
+    "runs": [
+     16.9,
+     16.9,
+     16.9,
+     19.6,
+     16.8,
+     16.8
+    ]
+   },
+   "actionPhaseMaxMs": {
+    "p50": 16.8,
+    "max": 16.9
+   },
+   "laterPhaseMaxMs": {
+    "p50": 16.9,
+    "max": 19.6
+   },
+   "pooledFrameMs": {
+    "frames": 550,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "open warm": {
+   "maxFrameMs": {
+    "p50": 16.9,
+    "max": 17,
+    "runs": [
+     16.9,
+     16.8,
+     17,
+     16.9,
+     16.9,
+     16.8
+    ]
+   },
+   "actionPhaseMaxMs": {
+    "p50": 16.8,
+    "max": 16.9
+   },
+   "laterPhaseMaxMs": {
+    "p50": 16.9,
+    "max": 17
+   },
+   "pooledFrameMs": {
+    "frames": 541,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "open other": {
+   "maxFrameMs": {
+    "p50": 16.9,
+    "max": 16.9,
+    "runs": [
+     16.9,
+     16.8,
+     16.9,
+     16.8,
+     16.9,
+     16.8
+    ]
+   },
+   "actionPhaseMaxMs": {
+    "p50": 16.8,
+    "max": 16.9
+   },
+   "laterPhaseMaxMs": {
+    "p50": 16.9,
+    "max": 16.9
+   },
+   "pooledFrameMs": {
+    "frames": 649,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.8
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "long chapter": {
+   "maxFrameMs": {
+    "p50": 33.3,
+    "max": 33.3,
+    "runs": [
+     33.3,
+     33.3,
+     33.3,
+     33.3,
+     16.8,
+     33.3
+    ]
+   },
+   "actionPhaseMaxMs": {
+    "p50": 33.3,
+    "max": 33.3
+   },
+   "laterPhaseMaxMs": {
+    "p50": 16.9,
+    "max": 33.3
+   },
+   "pooledFrameMs": {
+    "frames": 1007,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 1,
+   "longestLoafMedianSplit": {
+    "task": 36,
+    "raf": 15.5,
+    "layout": 0.3
+   },
+   "worstLoaf": {
+    "at": 17419.69999998808,
+    "duration": 55.599999994039536,
+    "blocking": 0,
+    "task": 39.80000001192093,
+    "raf": 15.5,
+    "layout": 0.29999998211860657,
+    "scripts": [
+     {
+      "fn": "Response.json.then",
+      "url": "app.js",
+      "ms": 22.9,
+      "forcedLayout": 17.3
+     }
+    ]
+   }
+  },
+  "open reload": {
+   "maxFrameMs": {
+    "p50": 16.8,
+    "max": 17.1,
+    "runs": [
+     17.1,
+     17,
+     16.8,
+     16.8,
+     16.8,
+     16.8
+    ]
+   },
+   "actionPhaseMaxMs": {
+    "p50": 16.8,
+    "max": 17.1
+   },
+   "laterPhaseMaxMs": {
+    "p50": 16.8,
+    "max": 17
+   },
+   "pooledFrameMs": {
+    "frames": 614,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "open settled": {
+   "maxFrameMs": {
+    "p50": 33.4,
+    "max": 33.4,
+    "runs": [
+     33.4,
+     33.3,
+     33.4,
+     33.4,
+     33.3,
+     33.4
+    ]
+   },
+   "actionPhaseMaxMs": {
+    "p50": 33.3,
+    "max": 33.4
+   },
+   "laterPhaseMaxMs": {
+    "p50": 33.4,
+    "max": 33.4
+   },
+   "pooledFrameMs": {
+    "frames": 607,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 33.3
+   },
+   "framesOver25ms": 2,
+   "longestLoafMedianSplit": {
+    "task": 37.9,
+    "raf": 4.2,
+    "layout": 12.7
+   },
+   "worstLoaf": {
+    "at": 7259.300000011921,
+    "duration": 64.30000001192093,
+    "blocking": 0,
+    "task": 34.30000001192093,
+    "raf": 0.5,
+    "layout": 29.5,
+    "scripts": [
+     {
+      "fn": "TimerHandler:setTimeout",
+      "url": "app.js",
+      "ms": 19.2,
+      "forcedLayout": 0
+     }
+    ]
+   }
+  }
+ }
+}

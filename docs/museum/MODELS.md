@@ -82,6 +82,13 @@ items (maps, blueprints, panels) open edge-on in the viewer.
   `verification/museum/candidates/`, not shipped): IoU 0.446 / 0.443 / 0.436 vs 0.441 shipped, visually the same slab
   for 7 and 1234 and worse for 99 — no benefit, so the shipped model stays. `generate-models-v2.py` now takes `--seed`
   and `--candidate` (writes only to verification/, manifest untouched).
+- Second pass, same day: seeds 7 / 1234 for the other three and `--mvmap b` for yuht_audio_console. Silhouette IoU
+  (shipped → candidates): black_needle_ceremonial_sword 0.38 → 0.329 / 0.392; massive_metatarsal 0.396 → 0.377 /
+  **0.442**; crystal_nest_fragments 0.483 → 0.433 / 0.492; yuht_audio_console 0.441 → 0.446 (map b). Visual
+  comparison (icon + four turns, shipped row above candidate row): `verification/museum/rerun-2026-10-16.png`.
+  **Shipped: massive_metatarsal seed 1234** (clear silhouette gain, same or better from every side; manifest entry
+  carries the candidate's settings, seed and a `review` note; the seed-2026 model stays in git history for rollback).
+  The others look the same as the shipped models and were not replaced.
 
 ## Known limits
 

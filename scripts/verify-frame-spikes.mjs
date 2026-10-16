@@ -63,6 +63,12 @@ async function newPage() {
   const context = await browser.newContext(contextOptions);
   await context.addInitScript(recorder);
   const page = await context.newPage();
+  // STELLARIS_NETWORK=slow: 120 ms latency, 4 MB/s down (roughly the live site from here), applied before loading.
+  if (process.env.STELLARIS_NETWORK === "slow") {
+    const cdp = await context.newCDPSession(page);
+    await cdp.send("Network.enable");
+    await cdp.send("Network.emulateNetworkConditions", { offline: false, latency: 120, downloadThroughput: 4 * 1024 * 1024, uploadThroughput: 1024 * 1024 });
+  }
   page.on("pageerror", (e) => console.error("pageerror", e.message));
   return { context, page };
 }

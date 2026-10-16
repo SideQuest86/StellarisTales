@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.6.2 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.6.3 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: see "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -60,33 +60,47 @@ evidence from earlier rounds and is not updated.
     loaded per query after the dialog opens (first search ≈0.3 MB gzip); results typed (Title/Text/Choice/Effect/
     Specimen), snippets escaped then highlighted, open the exact document or exhibit. Limits: whole-word (stem) match
     for Latin text, no prefix search; single Chinese characters only match titles.
-  - Weakest 3D matches inspected (docs/museum/MODELS.md "Re-run 2026-10-16"): three re-generations of
-    yuht_audio_console with other seeds were no better; the four lowest-IoU models stay as they are.
+  - Weakest 3D matches re-generated with the existing local pipeline (`generate-models-v2.py --candidate --seed …`,
+    docs/museum/MODELS.md "Viewer and re-run"): 8 candidates for the four lowest-IoU models, compared with the icon
+    and four turns (`verification/museum/rerun-2026-10-16.png`). Shipped where it benefits: massive_metatarsal
+    (seed 1234, silhouette IoU 0.396 → 0.442, same or better from every side; provenance in the manifest entry,
+    previous model in git history). Not shipped: sword (0.38 → 0.392) and crystal fragments (0.483 → 0.492), visually
+    the same; yuht_audio_console (0.441 → ≤ 0.446 over 4 tries incl. the other view mapping), the same slab.
 - **Frame timing (2026-10-16; `scripts/verify-frame-spikes.mjs`, headed Chrome, RTX 5070 Laptop, 60 Hz display,
-  8 runs per scenario, worst frame per run, same session; before = `verification/ui/frame-spikes-baseline.json`
-  (v4.6.0 code), after = `verification/ui/frame-spikes.json` (v4.6.1; re-measured on v4.6.2, unchanged)):**
+  worst frame per run, before and after measured in the same session against a local copy of the v4.6.0 code):**
 
-  | Scenario | before p50 / max | after p50 / max |
+  | Scenario (opening frame unless noted) | before p50 / max | after p50 / max |
   | --- | --- | --- |
-  | first opening, ~4 s after load (opening frame) | 50 / 67 ms | 33 / 50 ms |
-  | first opening after a reload (opening frame) | 50 / 67 ms | 33 / 33 ms |
-  | first opening once the page has settled (opening frame) | 50 / 50 ms | 33 / 50 ms |
+  | first opening, ~4 s after load | 50 / 67 ms | 33 / 50 ms |
+  | first opening after a reload | 50 / 67 ms | 33 / 33 ms |
+  | first opening once the page has settled | 50 / 50 ms | 33 / 33 ms |
   | story map built ~0.6 s after a first opening | 50 / 50 ms | 33 / 50 ms |
+  | slow network (120 ms, 4 MB/s): first opening ~6 s after load | 50 / 50 ms | 33 / 50 ms |
+  | slow network: first opening after a reload | 33 / 50 ms | 17 / 17 ms |
+  | slow network: first opening once settled | 50 / 50 ms | 33 / 33 ms |
   | long document (148 KB, The Shroud) | 33 / 33 ms | 33 / 33 ms |
   | chapter change · Back · reopening · opening another story | 17 / 17 ms | 17 / 17 ms |
 
-  The historical 76 ms (open) / 47 ms (chapter change) no longer occur. Diagnosis (Chrome traces, Long Animation
-  Frame attribution): the first story opened in a page paid a one-time cost (first layout and paint of the reader and
-  of the story map: styles, fonts and text runs used nowhere else, ~45–55 ms); any later opening — even of another
-  story — takes one frame. Fix (v4.6.1, `prewarmReader` in src/app.js): after start-up, in a quiet moment (idle and
-  1.5 s without input), the selected story's opening document is rendered into the reader while it is inert and
-  transparent, painted once and removed; the map follows in the next quiet moment. Opening a story also computes the
-  map's tree during the opening animation (`FlowSurface.prepare`) so the map frame only lays it out. Browsing the
-  archive during start-up stays at one frame (4 runs, max 17 ms; the warm-up waits for quiet).
-  The warm-up never touches `readerTicket` and yields to any opening in flight (v4.6.2 fixes a v4.6.1 race in which a link opened on a slow connection during the warm-up stayed closed; `scripts/verify-prewarm.mjs`, 24 openings around the warm-up with a slow download, and a smoke check guard it). Measured and reverted:
-  focusing the title after paint, skipping the post-render scroll write, `content-visibility` below the fold
-  (`frame-spikes-a.json`, `-b.json`). Remaining: a first opening still takes 2 frames (33 ms) and occasionally 3;
-  Desktop only — phones were emulated for layout, not measured.
+  Files: `verification/ui/frame-spikes.json` / `-baseline.json` (local, 6–8 runs), `frame-spikes-slow.json` /
+  `-slow-baseline.json` (slow network, 6 runs). With the historical tool (`scripts/verify-ui-perf.mjs`, which
+  produced the 76 / 47 ms figures on a 170 Hz display; 3 rounds each, same session, 60 Hz): chapter change 17 ms and
+  Back 17 ms on both builds (historically 47 / 18 ms — fixed before this round); "open story" after browsing the
+  archive 50–67 ms on v4.6.0 and 50–67 ms on the new build in that tool, where the worst frame is no longer the
+  opening but the new story's map build ~0.6 s later, once the card has settled (25 ms script + 30 ms layout;
+  `perf-old-*.json`, `perf-new-*.json`).
+  Diagnosis (Chrome traces, Long Animation Frame attribution): the first story opened in a page paid a one-time cost
+  (first layout and paint of the reader and the story map: styles, fonts and text runs used nowhere else, ~45–55 ms);
+  later openings, even of other stories, take one frame. Fixes: (1) `prewarmReader`/`prewarmSample` in src/app.js —
+  in quiet moments after start-up (idle and 1.5 s without input) a built-in sample document (no download needed),
+  then the selected story's opening document and its map, are rendered into the reader while it is inert and
+  transparent, painted once and removed; the warm-up never touches `readerTicket` and yields to any opening in
+  flight (v4.6.2 fixed a v4.6.1 race; guarded by `scripts/verify-prewarm.mjs` and a smoke check); (2) the opened
+  story's map tree is computed during the opening animation (`FlowSurface.prepare`); (3) the glyph warm-up requests
+  all font slices at once (slow network: done after ~5.8 s instead of ~9.3 s). Browsing the archive during start-up
+  stays at one frame (4 runs, max 17 ms). Measured and reverted: focusing the title after paint, skipping the
+  post-render scroll write, `content-visibility` below the fold (`frame-spikes-a.json`, `-b.json`). Remaining: a
+  first opening takes 2 frames (33 ms), sometimes 3; the first map build after opening a not-yet-warmed story is
+  2–3 frames. Desktop only — phones were emulated for layout, not measured.
 - **Limits:** no physical phone test; no native-speaker proofread; faults in the game's own text are kept as shipped
   (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions.
 - Live: v4.6.2 (`50c6931e`), published by the gated workflow (smoke 11/11 on bundled Chromium in CI; Archive CI green) and verified live 2026-10-16 with local Chrome: smoke 11/11, verify-prewarm 24/24, verify-progress 12, verify-search 16, verify-museum-viewer 7, verify-refine-reader; live frame timing (4 runs, real network): first opening after reload 33 ms, once settled 33 ms (max 50), ~4 s after a cold load 50 ms (the warm-up has usually not run yet), chapter change / Back / later openings 17 ms. Earlier today: v4.6.0 (`186a3e58`), v4.6.1 (`6b1823e2`, superseded: warm-up race). Reverted frame-timing attempts: `verification/ui/frame-spikes-a.json`, `-b.json`.

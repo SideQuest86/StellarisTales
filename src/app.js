@@ -393,6 +393,35 @@ async function quietMoment() {
     else await new Promise((resolve) => setTimeout(resolve, wait));
   }
 }
+// First stage, needing no download: the reader's own structure (eyebrow, title, subtitle, reading context, prose with
+// an annotated name, choices, continuation, end controls) with neutral sample text in both scripts, so an opening
+// soon after start-up — before the selected story has even been fetched — no longer pays the first-use cost.
+function sampleReaderMarkup() {
+  const zh = "星海之间的旧档案在灯下缓缓展开，记录着航行、发现与抉择。研究人员逐页核对，把每一次远航的见闻整理成册。";
+  const en = "Old records unfold under the lamp: voyages, discoveries and choices, checked page by page and bound into a volume.";
+  const para = (s) => `<section><p>${esc(s)} <span class="game-name" tabindex="0" role="note" data-note="">${esc(T("我们的科学船", "our science ship"))}</span></p></section>`;
+  const button = (label) => `<div class="choice"><button class="choice-button" data-choice="0" aria-expanded="false"><span class="choice-symbol">◇</span><span>${esc(label)}</span><b>→</b></button><div class="choice-response" hidden></div></div>`;
+  return `<article class="chapter-document" data-doc=""><div class="chapter-eyebrow"><span>${esc(T("故事开端", "Opening"))}</span><button id="reading-back" disabled>${esc(T("← 上一步", "← Back"))}</button></div>`
+    + `<h1 id="reader-title" tabindex="-1">${esc(T("档案", "Archive"))}</h1><p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(lang === "zh" ? en.slice(0, 40) : zh.slice(0, 12))}</p>`
+    + `${profileSummary()}<div class="narrative">${para(T(zh, en))}${para(T(en, zh))}</div>`
+    + `<section class="choices"><div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>${button(T(zh.slice(0, 18), en.slice(0, 50)))}${button(T(en.slice(0, 40), zh.slice(0, 14)))}</section>`
+    + `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div><button class="next-chapter"><span>${esc(T("档案", "Archive"))}</span><small>${esc(T("继续", "Continue"))} →</small></button></section>`
+    + `<div class="chapter-end"><span class="reading-complete">${esc(T("选择一个回应", "Choose a response"))}</span><button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+}
+const warmReader = $("#reader");
+const showWarm = () => { warmReader.classList.add("prewarm"); warmReader.inert = true; warmReader.hidden = false; };
+const hideWarm = () => { warmReader.hidden = true; warmReader.classList.remove("prewarm"); };
+async function prewarmSample() {
+  await quietMoment();
+  if (prewarmed || dossier || pendingOpenings || !warmReader.hidden) return;
+  const mark = openings, t0 = performance.now();
+  showWarm();
+  $("#reading-content").innerHTML = sampleReaderMarkup();
+  warmReader.querySelector(".chapter-document")?.getBoundingClientRect();
+  window.__readerWarmup = { sampleMs: Math.round(performance.now() - t0) };
+  await painted();
+  if (mark === openings && !pendingOpenings) { hideWarm(); $("#reading-content").innerHTML = ""; }
+}
 async function prewarmReader() {
   if (prewarmed || dossier || !$("#reader").hidden || !selected) return;
   let data;
@@ -408,7 +437,7 @@ async function prewarmReader() {
   const doc = data.chapters.find((c) => c.id === data.story.start) || data.chapters[0];
   const show = () => { reader.classList.add("prewarm"); reader.inert = true; reader.hidden = false; };
   const hide = () => { reader.hidden = true; reader.classList.remove("prewarm"); };
-  const timing = { story: data.story.id };
+  const timing = { ...window.__readerWarmup, story: data.story.id };
   // Slice 1: the document. Rendering is synchronous and the reading state is restored right after it, so only the
   // markup stays (transparent and inert) until it has been painted once.
   let t0 = performance.now();
@@ -1309,7 +1338,12 @@ try {
   parseHash();
   if (!location.hash.startsWith("#story=") && !location.hash.startsWith("#record=")) refreshContinue();
   // After the archive has settled, prepare Chinese glyphs so the first story opens without a long layout frame.
-  setTimeout(() => idleOnce().then(prewarmReader).then(() => warmGlyphs(json)), 1200);
+  // Idle warm-ups after start-up: Chinese glyphs (src/glyph-warmup.js) and, in quiet moments, the reader (sample
+  // document first, then the selected story's opening document and map).
+  setTimeout(() => {
+    warmGlyphs(json);
+    idleOnce().then(prewarmSample).then(prewarmReader);
+  }, 1200);
 } catch (e) {
   $("#selected-title").textContent = T("档案暂时无法连接", "Archive unavailable");
   $("#selected-excerpt").textContent = e.message;

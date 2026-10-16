@@ -1,3 +1,9 @@
+v4.6.3 — 2026-10-16
+
+Opening a story soon after the page loads is smoother on slower connections too: the reader is prepared without
+waiting for any download, and the Chinese font slices are fetched together instead of one batch at a time. Grand
+Archive: the Massive Metatarsal has a re-generated model that follows the specimen's icon more closely.
+
 v4.6.2 — 2026-10-16
 
 Fix: a story opened by link in the first seconds after loading, on a slow connection, could stay closed (the
