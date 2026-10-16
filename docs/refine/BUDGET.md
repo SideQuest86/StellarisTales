@@ -39,3 +39,4 @@ Stop rule: checkpoint at 67 % weekly (34 points), never exceed 73 % (40 points).
 | 2026-10-16 ~10:25 | 33 % | 11 % | released v4.6.0 (186a3e58) through the gated workflow; live checks passed (smoke, museum viewer, progress, search, a11y). **Round-3 total: <1 point of 40** (weekly 33 % at start and end) |
 | 2026-10-16 ~11:30 | 34 % | 15 % | released v4.6.1 (reader/map warm-up: first opening 50 -> 33 ms) and v4.6.2 (warm-up race fix); live checks passed. **Round-3 total: 1 point of 40** |
 | 2026-10-16 ~12:35 | 34 % | 17 % | released v4.6.3 (network-free warm-up, parallel font slices, metatarsal re-generated); live checks passed. **Round-3 total: 1 point of 40** |
+| 2026-10-16 ~13:45 | 35 % | 20 % | released v4.6.4 (two more re-generated models); post-v4.6.3 map-frame experiments measured and reverted; live checks passed. **Round-3 total: 2 points of 40** |

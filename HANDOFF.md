@@ -110,6 +110,7 @@ evidence from earlier rounds and is not updated.
   ~33 ms of SVG label text shaping for a story whose map has not been built yet.
 - **Limits:** no physical phone test; no native-speaker proofread; faults in the game's own text are kept as shipped
   (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions.
+- Live: v4.6.4 (`e8aae10a`), published by the gated workflow (CI green) and verified live 2026-10-16: smoke 11/11, verify-museum-viewer 7, verify-prewarm 24/24; live manifest serves the three re-generated models (sword seed 4242, crystal fragments seed 99, metatarsal seed 1234). Front-end code identical to v4.6.3, whose live verification follows.
 - Live: v4.6.3 (`8f289f15`), published by the gated workflow (smoke 11/11 on bundled Chromium in CI; Archive CI green) and verified live 2026-10-16 with local Chrome: smoke 11/11, verify-prewarm 24/24, verify-museum-viewer 7, verify-progress 12, verify-search 16; live frame timing over the real network (5 runs, `verification/ui/frame-spikes-live.json`): first opening ~4 s after a cold load 33 ms p50 (max 50; v4.6.2 live: 50), after a reload 17 ms p50 (max 33), once settled 33 ms (max 50), chapter change / Back / later openings 17 ms. Earlier today: v4.6.0 (`186a3e58`), v4.6.1 (`6b1823e2`, superseded: warm-up race), v4.6.2 (`50c6931e`). Reverted frame-timing attempts: `verification/ui/frame-spikes-a.json`, `-b.json`.
 
 ## History: state on 2026-10-13 (v4.0.2)
