@@ -1,6 +1,6 @@
 # Stellaris Tales — start here
 
-Updated 2026-10-13 (Opus 5.5). This file takes precedence over older progress claims in CodexDoc.md, README.md and
+Updated 2026-10-16 (Opus 5.5). This file takes precedence over older progress claims in CodexDoc.md, README.md and
 verification/README.md. Source files and fresh observations remain authoritative.
 
 ## Read in this order
@@ -27,7 +27,54 @@ motion, catalogue at the top, original art on closed cards, card extraction into
 side, frosted geometric reveals, Detroit-style flow map of actual chosen paths and alternatives on the left card;
 keyboard access, responsive layout, reduced motion; smooth on Windows using the local GPU.
 
-## Current state (2026-10-13)
+## Current status — authoritative (updated 2026-10-16)
+
+This section is the single source for version, status and test counts. Everything below "History" is dated
+evidence from earlier rounds and is not updated.
+
+- **Version:** v4.6.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+  (verification of the live build: see "Live:" line at the end of this section).
+- **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
+- **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
+  smoke checks `scripts/smoke.mjs` (bundled Chromium, headless); any failure stops the job before the Pages artifact
+  is uploaded, so nothing deploys. The same smoke step runs in `ci.yml` on every push. Smoke covers: story opening,
+  a choice + continuing + Back, progress restored after a reload, full-text search to an exact document and to a
+  specimen, five repeated museum opens (constant model size, or the image fallback without WebGL), images, the 390 px
+  phone layout, and no page errors / failed requests. Run locally: `node scripts/serve.mjs --dist` then
+  `STELLARIS_PLAYWRIGHT_PATH=… STELLARIS_BROWSER_CHANNEL=chrome node scripts/smoke.mjs`.
+- **Tests (2026-10-16):** Node 89 (`node --test tests/*.test.mjs`), Python 45 (`python -m unittest discover -s tests
+  -p 'test_*.py'`), all passing. Browser suites passing locally: smoke 10/10, verify-museum-viewer 7 (+ every model with
+  `ALL=1`), verify-progress 12, verify-search 16, verify-a11y, verify-refine-reader, verify-reader-v4, verify-effects,
+  verify-images. Frame timing: `scripts/verify-frame-spikes.mjs` (below).
+- **Round 3 (2026-10-16) changes:**
+  - Museum viewer: each model normalised once at load (fixes the 1.6 → 2.449 → 1.6 size alternation on reopening),
+    de-duplicated downloads, last-opened exhibit always wins, cache of 3 disposed correctly; opening view per model
+    (manifest `view` override; flat models face the camera — `verification/museum/opening-views.json`, 43 flat models);
+    Reset button and `0` key.
+  - Reading progress: `src/progress.js` (versioned `st-progress`, validated, reconciled with current stories,
+    storage failures tolerated); "Continue reading" + "Start over" next to the archive's open button; direct links
+    restore only the reader's own last document, otherwise open fresh without touching saved progress. Not saved:
+    the dialogue step/state inside multi-step conversations (restored documents start the conversation again).
+  - Search: `src/search.js` + `scripts/build-search-index.mjs` (run by the build; output `public/search/` is not
+    committed): bilingual inverted index over document text, titles, choices, effect labels and specimens, 32 shards
+    loaded per query after the dialog opens (first search ≈0.3 MB gzip); results typed (Title/Text/Choice/Effect/
+    Specimen), snippets escaped then highlighted, open the exact document or exhibit. Limits: whole-word (stem) match
+    for Latin text, no prefix search; single Chinese characters only match titles.
+  - Weakest 3D matches inspected (docs/museum/MODELS.md "Re-run 2026-10-16"): three re-generations of
+    yuht_audio_console with other seeds were no better; the four lowest-IoU models stay as they are.
+- **Frame timing (2026-10-16, `verification/ui/frame-spikes.json`; headed Chrome, RTX 5070 Laptop, 60 Hz display,
+  6 runs each, worst frame per run):** chapter change 17 ms (p50 and max — no dropped frame; the historical 47 ms is
+  gone), Back 17 ms, reopening a story 17 ms, long document (148 KB, The Shroud) 33 ms (max 50), opening from a link:
+  cold 50 ms (max 83), after reload 50 ms (max 50), after the glyph warm-up 50 ms (max 67). Diagnosis (Chrome trace,
+  Long Animation Frame attribution): the opening frame is the first layout of the new document — about 45–55 ms of
+  which ~25 ms is CJK text shaping; scripts take ~5 ms. Three attempts (focusing the title after paint; skipping the
+  post-render scroll write; `content-visibility` for blocks below the fold) were measured and reverted: they moved
+  the layout into one frame or made it worse. Desktop only: phones were emulated for layout, not measured.
+- **Limits:** no physical phone test; no native-speaker proofread; faults in the game's own text are kept as shipped
+  (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions.
+- Live: (filled in after the release is verified)
+
+## History: state on 2026-10-13 (v4.0.2)
 
 - Git: everything is committed on `main` at https://github.com/SideQuest86/StellarisTales (Archive CI on every push).
 - **Live: https://sidequest86.github.io/StellarisTales/ serves release v4.0.2 (`c0b8f203`, tag `v4.0.2`; v4.0.1 performance numbers below were re-measured live).** Verified v4.0.2 live: 1,388 stories, reader 13/13, walk 48 stories / 198 documents / 41 reversals / 0 errors, UI capture 50/50. Earlier v4.0.1 live run
@@ -50,7 +97,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
   the next idle period). No physical phone or other GPU tested; narrow layouts verified by emulation only.
 - Tests: 32 Node + 10 Python.
 
-## 博物天枢 · Grand Archive museum (added 2026-10-14)
+## History: 博物天枢 · Grand Archive museum (2026-10-14, v4.1.x)
 
 - Read `docs/museum/GRAND-ARCHIVE.md` (verified mechanics), `docs/museum/MODELS.md` (3D generation workflow, tool
   environment `D:/Saving/Living/CodexProjects/st-tools/`), `docs/museum/BUDGET.md` (task budget ledger).
@@ -65,9 +112,9 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 - Possible improvements: regenerate the weakest fits (lowest `silhouetteIoU`: black_needle_ceremonial_sword,
   massive_metatarsal, yuht_audio_console, crystal_nest_fragments) with another seed; flat items (maps, blueprints,
   panels such as star_mall_map, kuurian_cybrex_blueprints) open edge-on — a per-model opening angle in the manifest
-  would fix that.
+  would fix that. (Both done 2026-10-16, round 3: opening views; re-runs not better.)
 
-## Refinement 2026-10 (Markdown guides, placeholders, typography, navigation, audio)
+## History: refinement round 1 (2026-10-15, v4.2.0: Markdown guides, placeholders, typography, navigation, audio)
 
 - **Live: v4.2.0 (`175c028c`) at https://sidequest86.github.io/StellarisTales/**; verified live 2026-10-15 with
   verify-refine-reader / -chrome / -audio and verify-reader-v4 (all passed, 0 page errors). Locally also verify-museum
@@ -85,7 +132,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 - Checks added: `scripts/verify-refine-reader.mjs`, `verify-refine-chrome.mjs`, `verify-refine-audio.mjs`,
   `scripts/refine/sample-render.mjs story:chapter …`; tests `tests/markdown.test.mjs`, `tests/audio.test.mjs`.
 
-## Refinement round 2 (2026-10-15: images, placeholders, effects, polish)
+## History: refinement round 2 (2026-10-15, v4.3.0–v4.5.4: images, placeholders, effects, polish)
 
 - **Live: v4.5.4 (`e19a281e`)**, verified live 2026-10-15 (verify-images, verify-a11y, verify-layout-sweep, verify-effects, verify-refine-chrome, verify-reader-v4). Evidence index: docs/refine/EVIDENCE.md; UI copy: docs/refine/UI-COPY.md.
 - User decision 2026-10-15: faults in the game's own text (81, LEDGER.md) are kept as shipped — no display-time correction.
@@ -139,7 +186,8 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 
 ## Next work
 
-1. Optional improvements: render the first chapter before the reader animation to hide the open-click frame;
+1. Optional improvements: reduce the ~50 ms first layout when a document opens (see Frame timing above; e.g. lay out
+   the selected story in idle time before the click); prefix search for Latin words; save multi-step dialogue state;
    collapse "thank-you" windows that only return to an enclave menu (r3-inherit request); merge
    event-anomaly-4036 into anomaly-sun-rays-cat (r3-integrate request); larger close-up on tall viewports.
 

@@ -1,0 +1,258 @@
+{
+ "measuredAt": "2026-10-16T09:33:56.148Z",
+ "headless": false,
+ "reps": 6,
+ "url": "http://127.0.0.1:4173/",
+ "note": "Desktop Chrome (headed, discrete GPU unless HEADLESS). Not a physical phone.",
+ "scenarios": {
+  "open cold": {
+   "maxFrameMs": {
+    "p50": 50.1,
+    "max": 83.2,
+    "runs": [
+     83.2,
+     50.1,
+     49.9,
+     66.7,
+     50,
+     50
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 538,
+    "p50": 16.7,
+    "p95": 16.9,
+    "p99": 50
+   },
+   "framesOver25ms": 4,
+   "longestLoafMedianSplit": {
+    "task": 56.5,
+    "raf": 4.8,
+    "layout": 12.6
+   },
+   "worstLoaf": {
+    "at": 4101.300000011921,
+    "duration": 97.7999999821186,
+    "blocking": 27.8,
+    "task": 71.09999999403954,
+    "raf": 4.299999982118607,
+    "layout": 22.400000005960464,
+    "scripts": [
+     {
+      "fn": "Response.json.then",
+      "url": "app.js",
+      "ms": 51.1,
+      "forcedLayout": 45.7
+     }
+    ]
+   }
+  },
+  "chapter": {
+   "maxFrameMs": {
+    "p50": 17,
+    "max": 17.1,
+    "runs": [
+     17,
+     17,
+     17.1,
+     16.9,
+     16.8,
+     17.1
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 574,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "back": {
+   "maxFrameMs": {
+    "p50": 16.9,
+    "max": 17,
+    "runs": [
+     16.8,
+     16.9,
+     16.9,
+     16.9,
+     17,
+     16.8
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 551,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "open warm": {
+   "maxFrameMs": {
+    "p50": 16.9,
+    "max": 17.1,
+    "runs": [
+     16.9,
+     16.9,
+     16.8,
+     16.9,
+     16.8,
+     17.1
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 547,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.9
+   },
+   "framesOver25ms": 0,
+   "longestLoafMedianSplit": {
+    "task": 0,
+    "raf": 0,
+    "layout": 0
+   },
+   "worstLoaf": null
+  },
+  "long chapter": {
+   "maxFrameMs": {
+    "p50": 33.4,
+    "max": 50,
+    "runs": [
+     33.4,
+     50,
+     33.3,
+     33.3,
+     33.5,
+     33.3
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 735,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 33.3
+   },
+   "framesOver25ms": 2,
+   "longestLoafMedianSplit": {
+    "task": 43.4,
+    "raf": 15.8,
+    "layout": 0.4
+   },
+   "worstLoaf": {
+    "at": 11987.799999982119,
+    "duration": 67.09999999403954,
+    "blocking": 0,
+    "task": 47.5,
+    "raf": 18.80000001192093,
+    "layout": 0.7999999821186066,
+    "scripts": [
+     {
+      "fn": "Response.json.then",
+      "url": "app.js",
+      "ms": 27.4,
+      "forcedLayout": 20.4
+     }
+    ]
+   }
+  },
+  "open reload": {
+   "maxFrameMs": {
+    "p50": 50,
+    "max": 50.1,
+    "runs": [
+     50,
+     33.4,
+     33.3,
+     50.1,
+     33.5,
+     50.1
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 556,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 33.3
+   },
+   "framesOver25ms": 1,
+   "longestLoafMedianSplit": {
+    "task": 53.9,
+    "raf": 4.4,
+    "layout": 7.9
+   },
+   "worstLoaf": {
+    "at": 3760,
+    "duration": 68.5,
+    "blocking": 1.5,
+    "task": 56,
+    "raf": 4.5999999940395355,
+    "layout": 7.9000000059604645,
+    "scripts": [
+     {
+      "fn": "Response.json.then",
+      "url": "app.js",
+      "ms": 39,
+      "forcedLayout": 36.4
+     }
+    ]
+   }
+  },
+  "open settled": {
+   "maxFrameMs": {
+    "p50": 50.1,
+    "max": 66.7,
+    "runs": [
+     50,
+     50.1,
+     66.7,
+     50,
+     50.1,
+     50
+    ]
+   },
+   "pooledFrameMs": {
+    "frames": 540,
+    "p50": 16.7,
+    "p95": 16.9,
+    "p99": 50
+   },
+   "framesOver25ms": 3,
+   "longestLoafMedianSplit": {
+    "task": 59.9,
+    "raf": 4.6,
+    "layout": 11.9
+   },
+   "worstLoaf": {
+    "at": 5345.899999976158,
+    "duration": 84.10000002384186,
+    "blocking": 15.5,
+    "task": 73.7000000178814,
+    "raf": 4.9000000059604645,
+    "layout": 5.5,
+    "scripts": [
+     {
+      "fn": "Response.json.then",
+      "url": "app.js",
+      "ms": 55.1,
+      "forcedLayout": 49.9
+     }
+    ]
+   }
+  }
+ }
+}

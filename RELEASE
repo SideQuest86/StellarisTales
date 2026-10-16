@@ -1,3 +1,12 @@
+v4.6.0 — 2026-10-16
+
+Reading progress is kept: after a refresh or a later visit, "Continue reading" returns to the same document with
+its path, choices and history (including steps into other stories); "Start over" clears it. Search now finds words
+in the stories' text, choices, gameplay effects and Grand Archive specimens, shows where they occur, and opens that
+exact document or exhibit. Grand Archive: a model keeps its size and framing however often it is reopened; flat
+specimens such as maps and blueprints open facing the viewer; a Reset control returns to the opening view.
+Releases now pass browser smoke checks before they are published.
+
 v4.5.4 — 2026-10-15
 
 Shorter, plainer interface text throughout; a last round of name wording where a verb or article had to agree with

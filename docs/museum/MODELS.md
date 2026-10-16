@@ -68,6 +68,21 @@ the icon: p10 0.66, median 0.83, p90 0.93; below 0.5: black_needle_ceremonial_sw
 yuht_audio_console, crystal_nest_fragments — still recognisable, candidates for a re-run with another seed. Thin flat
 items (maps, blueprints, panels) open edge-on in the viewer.
 
+## Viewer and re-run (2026-10-16)
+
+- Opening view (`src/museum-view.js`): a manifest entry may carry `"view": {"azimuth", "elevation", "distance"}`
+  (degrees; azimuth 0 = the icon side +X). Without it, a model whose thinnest extent is under 0.3 of its longest faces
+  the camera along that axis; all others keep the three-quarter view. Every model's extents and opening view:
+  `verification/museum/opening-views.json` (43 flat: 41 thin along X, 2 along Z — kuurian_cybrex_blueprints and
+  star_mall_map, which opened edge-on and now open face-on; screenshots `verification/museum/opening/`). No model
+  needed a manual `view`. Reset button / `0` key return to the opening view. Check: `node scripts/verify-museum-viewer.mjs`.
+- Weakest matches re-inspected (icon + four turns): black_needle_ceremonial_sword, massive_metatarsal and
+  crystal_nest_fragments read correctly (their low IoU comes from thin or diagonal silhouettes). yuht_audio_console
+  (hologram over a console) was re-generated with `--candidate --seed 7 / 1234 / 99` (outputs in
+  `verification/museum/candidates/`, not shipped): IoU 0.446 / 0.443 / 0.436 vs 0.441 shipped, visually the same slab
+  for 7 and 1234 and worse for 99 — no benefit, so the shipped model stays. `generate-models-v2.py` now takes `--seed`
+  and `--candidate` (writes only to verification/, manifest untouched).
+
 ## Known limits
 
 - One 100 px view per specimen: depth, thickness and the back are inferred. Flat objects (posters, plaques, books)

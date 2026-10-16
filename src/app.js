@@ -295,7 +295,8 @@ function renderContinue() {
   const last = pendingProgress.state.trail.at(-1);
   const story = pendingProgress.stories.get(last.story);
   const doc = story.chapters.find((c) => c.id === last.chapter);
-  const label = `${prose(local(story.story.title))} · ${prose(local(doc.title)) || T("插曲", "Interlude")}`;
+  const storyTitle = prose(local(story.story.title)), docTitle = prose(local(doc.title)) || T("插曲", "Interlude");
+  const label = docTitle === storyTitle ? storyTitle : `${storyTitle} · ${docTitle}`;
   box.querySelector("[data-continue]").innerHTML = `<span>${esc(T("继续阅读", "Continue reading"))}</span><small>${esc(label)}</small>`;
   box.querySelector("[data-restart]").textContent = T("重新开始", "Start over");
 }

@@ -23,4 +23,15 @@ Each claim with the command that proves it (run from the project root; browser c
 
 Not possible from here: a physical phone test (emulation only) and a native-speaker proofread of the wording.
 
+## Round 3 (2026-10-16, release v4.6.0)
+
+| Goal item | Claim | Evidence |
+| --- | --- | --- |
+| 1 Museum viewer | Normalised once; A-B-A, rotation, reset, rapid switching, slow download, bounded cache | `node scripts/verify-museum-viewer.mjs` (7 checks; `ALL=1` opens all 258 models); `tests/museum-view.test.mjs` |
+| 2 Progress | Saved, validated, reconciled, restored incl. cross-story paths; direct links do not invent history; storage failures tolerated | `node scripts/verify-progress.mjs` (12 checks); `tests/progress.test.mjs` (8) |
+| 3 Search | Body text, choices, effects, specimens; exact navigation; index loaded on demand; escaped snippets | `node scripts/verify-search.mjs` (16 checks, text-only and effect-only probes in zh/en); `tests/search.test.mjs` (10) |
+| 4 Museum presentation | Flat models face-on; Reset; weakest models re-run, no benefit | docs/museum/MODELS.md "Viewer and re-run"; `verification/museum/opening-views.json` |
+| 5 Frame spikes | Fresh baseline, trace diagnosis, attempts measured and reverted | `node scripts/verify-frame-spikes.mjs` → `verification/ui/frame-spikes.json` (+ `-baseline.json`); HANDOFF "Frame timing" |
+| 6 Release gate | Browser smoke checks block deployment; fails 5/10 against the previous release | `scripts/smoke.mjs`; `.github/workflows/pages.yml`, `ci.yml`; HANDOFF "Current status" |
+
 Decision (user, 2026-10-15): the 81 faults in the game's own text are kept exactly as shipped (no display-time correction); they stay listed in docs/refine/placeholders/LEDGER.md as known game-text issues.
