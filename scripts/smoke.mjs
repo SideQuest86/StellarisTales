@@ -19,7 +19,10 @@ async function check(name, fn) {
     console.log("✔", name, detail || "");
   } catch (e) {
     failed++;
-    console.log("✘", name, "—", e.message.split("\n")[0]);
+    const why = e.message.split("\n")[0];
+    console.log("✘", name, "—", why);
+    // GitHub Actions: an annotation per failed check (readable on the run page without opening the log).
+    if (process.env.GITHUB_ACTIONS) console.log(`::error title=Smoke check failed::${name} — ${why.replace(/[\r\n%]/g, " ")}`);
   }
 }
 async function open(viewport = { width: 1440, height: 900 }, extra = {}) {
