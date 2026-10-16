@@ -108,6 +108,7 @@ evidence from earlier rounds and is not updated.
   time (`measureText` 24 → 4 ms in a CPU profile, but the opening frame got worse), building the selected story's
   map whenever the archive pauses on it. CPU profile and traces of the button path: the remaining map frame is
   ~33 ms of SVG label text shaping for a story whose map has not been built yet.
+- **User decisions (2026-10-16):** the 60 Hz same-session before/after comparisons are accepted as the frame-timing evidence (the historical 76 / 47 ms were measured on the laptop's 170 Hz panel, which was not active; no 170 Hz rerun); item 5 stops at the shipped v4.6.3 result, with the residual first-map-build frame (2–3 frames at 60 Hz, ~0.6 s after opening, card settled) documented rather than pursued further.
 - **Limits:** no physical phone test; no native-speaker proofread; faults in the game's own text are kept as shipped
   (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions.
 - Live: v4.6.4 (`e8aae10a`), published by the gated workflow (CI green) and verified live 2026-10-16: smoke 11/11, verify-museum-viewer 7, verify-prewarm 24/24; live manifest serves the three re-generated models (sword seed 4242, crystal fragments seed 99, metatarsal seed 1234). Front-end code identical to v4.6.3, whose live verification follows.

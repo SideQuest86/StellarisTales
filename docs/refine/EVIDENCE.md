@@ -35,3 +35,5 @@ Not possible from here: a physical phone test (emulation only) and a native-spea
 | 6 Release gate | Browser smoke checks block deployment; fails 5/10 against the previous release | `scripts/smoke.mjs`; `.github/workflows/pages.yml`, `ci.yml`; HANDOFF "Current status" |
 
 Decision (user, 2026-10-15): the 81 faults in the game's own text are kept exactly as shipped (no display-time correction); they stay listed in docs/refine/placeholders/LEDGER.md as known game-text issues.
+
+Decision (user, 2026-10-16): 60 Hz same-session frame-timing comparisons accepted (170 Hz panel not active, no rerun); item 5 stops at the v4.6.3 result with the residual first map build documented.
