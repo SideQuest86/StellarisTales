@@ -9,6 +9,7 @@ import {
 } from "node:fs/promises";
 import { resolve, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { execFileSync } from "node:child_process";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const output = resolve("dist");
 if (output !== join(root, "dist"))
@@ -31,6 +32,9 @@ for (const file of ["loaders/GLTFLoader.js", "controls/OrbitControls.js", "utils
   await mkdir(dirname("dist/vendor/addons/" + file), { recursive: true });
   await writeFile("dist/vendor/addons/" + file, source.replace(/from ['"]three['"]/g, "from '../../three.module.js'"));
 }
+// Full-text search index (public/search/, deterministic) is regenerated before public/ is copied.
+if (!process.env.SKIP_SEARCH_INDEX)
+  execFileSync(process.execPath, ["scripts/build-search-index.mjs"], { stdio: "inherit" });
 await cp("src", "dist/src", { recursive: true });
 await cp("public", "dist", { recursive: true });
 const html = (await readFile("index.html", "utf8")).replaceAll(

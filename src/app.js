@@ -2,6 +2,7 @@ import { installNameTooltips } from "./name-tooltip.js";
 import { fillNames, cleanRefs } from "./name-fill.js";
 import { guideElement } from "./markdown.js";
 import { renderEffects, bindEffects } from "./effects-panel.js";
+import { createSearch } from "./search.js";
 import { storyMap } from "./story-map.js";
 import { FlowSurface } from "./flow-surface.js";
 import { ArchiveScene } from "./archive-scene.js";
@@ -11,6 +12,7 @@ import { SoundtrackPlayer } from "./audio-player.js";
 import { t, setLanguage, applyStaticText } from "./i18n.js";
 import { revealReader } from "./reader-motion.js";
 import { warmGlyphs } from "./glyph-warmup.js";
+import * as progress from "./progress.js";
 import {
   evaluate, resolveBody, resolveChoices, resolveEdges, pathFlags, storyFlags,
   impliedFacts, applyFacts, describe,
@@ -234,6 +236,7 @@ async function openStory(id, start) {
     useDossier(data);
     chapter = docMap.get(start || data.story.start) || data.chapters[0];
     trail = [{ story: id, chapter: chapter.id }];
+    saveSuspended = true; // a fresh opening leaves the saved progress alone until the reader navigates further
     scene?.selectStory(id);
     openingReader = $("#reader").hidden;
     setReader(true);
@@ -242,7 +245,105 @@ async function openStory(id, start) {
     toast(e.message);
   }
 }
+// Reading progress (src/progress.js): saved after navigation / choices / assumptions, restored via "Continue reading".
+let saveSuspended = false, saveTimer = 0, pendingProgress = null;
+function persist() {
+  if (saveSuspended || !dossier || !trail.length) return;
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(flushProgress, 250);
+}
+function flushProgress() {
+  if (!saveTimer) return;
+  clearTimeout(saveTimer);
+  saveTimer = 0;
+  if (saveSuspended || !dossier || !trail.length) return;
+  progress.save({ trail, assumptions, visited: [...visitedChapters] });
+}
+addEventListener("pagehide", flushProgress);
+document.addEventListener("visibilitychange", () => { if (document.hidden) flushProgress(); });
+// Loads the stories a saved trail touches and reconciles it with them; null when nothing valid remains.
+async function restoreProgress(saved) {
+  if (!saved) return null;
+  const ids = [...new Set(saved.trail.map((s) => s.story))];
+  const map = new Map();
+  try {
+    await Promise.all(ids.map(async (id) => map.set(id, await loadStory(id))));
+  } catch { return undefined; } // offline / transient: keep the saved data, show nothing
+  const state = progress.reconcile(saved, map);
+  return state && { state, stories: map };
+}
+async function refreshContinue() {
+  const saved = progress.load();
+  const restored = await restoreProgress(saved);
+  if (restored === null && saved) progress.clear(); // every step is gone: discard silently
+  pendingProgress = restored || null;
+  renderContinue();
+  return pendingProgress;
+}
+function renderContinue() {
+  const box = $("#continue-reading");
+  if (!box) return;
+  box.hidden = !pendingProgress;
+  if (!pendingProgress) return;
+  const last = pendingProgress.state.trail.at(-1);
+  const story = pendingProgress.stories.get(last.story);
+  const doc = story.chapters.find((c) => c.id === last.chapter);
+  const label = `${prose(local(story.story.title))} · ${prose(local(doc.title)) || T("插曲", "Interlude")}`;
+  box.querySelector("[data-continue]").innerHTML = `<span>${esc(T("继续阅读", "Continue reading"))}</span><small>${esc(label)}</small>`;
+  box.querySelector("[data-restart]").textContent = T("重新开始", "Start over");
+}
+function resumeProgress(restored) {
+  const { state, stories } = restored;
+  const last = state.trail.at(-1);
+  const ticket = ++readerTicket;
+  return loadNames().then(() => {
+    if (ticket !== readerTicket) return;
+    visitedChapters.clear();
+    for (const id of state.visited) visitedChapters.add(id);
+    assumptions = { ...state.assumptions };
+    trail = state.trail.map((s) => ({ ...s }));
+    useDossier(stories.get(last.story));
+    chapter = docMap.get(last.chapter);
+    readingChapterId = null; // force the choice / reading position of the last step to be re-read from the trail
+    saveSuspended = false;
+    scene?.selectStory(last.story);
+    openingReader = $("#reader").hidden;
+    setReader(true);
+    renderChapter();
+  }).catch((e) => toast(e.message));
+}
+function restartProgress() {
+  progress.clear();
+  clearTimeout(saveTimer);
+  saveTimer = 0;
+  pendingProgress = null;
+  renderContinue();
+}
+(function buildContinue() {
+  const box = document.createElement("div");
+  box.id = "continue-reading";
+  box.className = "continue-reading";
+  box.hidden = true;
+  box.innerHTML = `<button type="button" class="continue-link" data-continue></button><button type="button" class="continue-restart" data-restart></button>`;
+  $("#open-story").after(box);
+  box.querySelector("[data-continue]").onclick = () => pendingProgress && resumeProgress(pendingProgress);
+  box.querySelector("[data-restart]").onclick = () => { restartProgress(); $("#open-story").focus(); };
+})();
+// A direct link to exactly the document the saved trail ends on is the reader's own refresh: restore the trail.
+async function openFromLink(storyId, chapterId) {
+  const saved = progress.load();
+  if (saved && saved.trail.at(-1).story === storyId) {
+    const restored = await restoreProgress(saved);
+    if (restored) {
+      const last = restored.state.trail.at(-1);
+      const want = chapterId || restored.stories.get(storyId).story.start;
+      if (last.chapter === want) return resumeProgress(restored);
+    }
+  }
+  return openStory(storyId, chapterId);
+}
 function closeReader() {
+  flushProgress();
   readerTicket++;
   setReader(false);
   dossier = null;
@@ -250,6 +351,7 @@ function closeReader() {
   trail = [];
   history.replaceState(null, "", "#");
   document.title = t("site.title"); // [UI]
+  refreshContinue();
   $("#open-story").focus();
 }
 $("#close-reader").onclick = closeReader;
@@ -275,7 +377,7 @@ async function goChapter(id, storyId, back = false, sets = null) {
     if (ticket !== readerTicket) return;
     const target = data.chapters.find((c) => c.id === id);
     if (!target) return;
-    if (!back) trail.push({ story: data.story.id, chapter: id, ...(sets?.length ? { sets } : {}) });
+    if (!back) { trail.push({ story: data.story.id, chapter: id, ...(sets?.length ? { sets } : {}) }); saveSuspended = false; }
     // Cross-dossier references keep their own route rules and return history.
     if (data !== dossier) useDossier(data);
     chapter = target;
@@ -469,6 +571,7 @@ function renderBody(r, ctx) {
 function renderChapter(preservePosition = false) {
   const chapterChanged = readingChapterId !== chapter.id;
   visitedChapters.add(chapter.id);
+  persist();
   if (readingChapterId !== chapter.id) {
     readingIndex = trail.at(-1)?.chapter===chapter.id ? (trail.at(-1).reading ?? 0) : 0;
     for(const step of [...trail].reverse()){
@@ -588,7 +691,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 上一步", "← Back"))}</button></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 上一步", "← Back"))}</button>${trail.length > 1 ? `<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button>` : ""}</div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   showSpecimenLinks(r.id);
   showEffects(story, r.id, r.choices);
   const remembered=trail.at(-1);
@@ -723,6 +826,7 @@ function switchLanguage() {
       columns[selectedColumn].stories.indexOf(selected),
     );
   if (chapter) renderChapter(true);
+  renderContinue();
   renderSearch();
   document.dispatchEvent(new CustomEvent("st-language", { detail: lang }));
 }
@@ -740,9 +844,52 @@ function renderChrome() {
   ).join("") +
     `<button type="button" id="museum-open" class="catalogue-museum" aria-label="${esc(t("header.museumLabel"))}"><span aria-hidden="true">◇</span><span>${esc(t("header.museum"))}</span></button>`;
 }
+// Full-text search (src/search.js): story bodies, choices, names, effects and specimens. The index loads on the first
+// open of the dialog; if it cannot load, the dialog falls back to the title/excerpt filter below.
+function storyRowHtml(s, chip = "", extra = "") {
+  const column = CATEGORIES.findIndex((c) => c[0] === s.category);
+  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${chip}${esc(T(`${s.chapters} 篇`, `${s.chapters} docs`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
+}
+const fullSearch = createSearch({
+  base: "", getLang: () => lang, T, esc, prose, fetchJson: json,
+  fetchBytes: async (p) => {
+    const r = await fetch(asset(p));
+    if (!r.ok) throw new Error("search shard");
+    return new Uint8Array(await r.arrayBuffer());
+  },
+  getStories: () => stories, storyTitle: (s) => local(s.title), storyRow: storyRowHtml,
+});
+let searchSeq = 0, searchFallback = false;
+async function renderFullSearch() {
+  const seq = ++searchSeq;
+  $("#search-count").textContent = T("搜索中…", "Searching…");
+  let r;
+  try {
+    r = await fullSearch.search(searchText, searchPage);
+  } catch {
+    if (seq !== searchSeq) return;
+    searchFallback = true;
+    return renderSearch();
+  }
+  if (seq !== searchSeq) return;
+  searchPage = r.page;
+  $("#search-count").textContent = T(`${r.total} 条结果`, `${r.total} results`);
+  $("#search-results").innerHTML = r.html || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
+  $("#search-page").textContent = `${r.page + 1} / ${r.pages}`;
+  $("#search-previous").disabled = r.page === 0;
+  $("#search-next").disabled = r.page === r.pages - 1;
+  const shown = $("#search-results").children.length;
+  await r.enrich($("#search-results"));
+  if (seq !== searchSeq) return;
+  const dropped = shown - $("#search-results").children.length;
+  if (dropped > 0) $("#search-count").textContent = T(`${r.total - dropped} 条结果`, `${r.total - dropped} results`);
+  if (!$("#search-results").children.length) $("#search-results").innerHTML = `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
+}
 function renderSearch() {
   if (!stories.length) return;
-  const words = searchText.toLowerCase().trim().split(/\s+/).filter(Boolean),
+  if (searchText.trim() && !searchFallback) return renderFullSearch();
+  searchSeq++;
+  const words =searchText.toLowerCase().trim().split(/\s+/).filter(Boolean),
     filtered = stories.filter(
       (s) =>
         s.visible &&
@@ -770,6 +917,7 @@ function renderSearch() {
   $("#search-next").disabled = searchPage === pages - 1;
 }
 $("#search-open").onclick = () => {
+  fullSearch.preload();
   renderSearch();
   $("#search-dialog").showModal();
   $("#search-input").focus();
@@ -779,7 +927,7 @@ $("#search-input").oninput = (e) => {
   searchText = e.target.value;
   searchPage = 0;
   clearTimeout(renderSearch.timer);
-  renderSearch.timer = setTimeout(renderSearch, 100);
+  renderSearch.timer = setTimeout(renderSearch, 120);
 };
 $("#search-previous").onclick = () => {
   searchPage--;
@@ -795,6 +943,14 @@ document.addEventListener("click", (e) => {
     const n = Number(category.dataset.category);
     if (scene) scene.selectCategory(n);
     else showSelection(columns[n].stories[0], n, 0);
+    return;
+  }
+  const hit = e.target.closest("[data-hash]");
+  if (hit) {
+    // Full-text search result: an exact chapter (#story=…&chapter=…) or a museum exhibit (#museum=…).
+    $("#search-dialog").close();
+    if (location.hash === hit.dataset.hash) parseHash();
+    else location.hash = hit.dataset.hash;
     return;
   }
   const open = e.target.closest("[data-open]");
@@ -856,6 +1012,7 @@ document.addEventListener("click", (e) => {
     if(step?.chapter===chapter.id){
       if(open){step.choice=source.key;step.choiceIndex=Number(choice.dataset.choiceSource);step.reading=readingIndex;}
       else if(step.choice===source.key){delete step.choice;delete step.choiceIndex;delete step.reading;}
+      persist();
     }
     if(open)for(const other of document.querySelectorAll('.choice-button')){
       if(other===choice)continue;
@@ -878,6 +1035,12 @@ document.addEventListener("click", (e) => {
     trail.pop();
     const step = trail.at(-1);
     goChapter(step.chapter, step.story, true);
+  }
+  if (e.target.closest("#reading-restart") && trail.length > 1) {
+    const first = trail[0];
+    restartProgress();
+    openStory(first.story, first.chapter);
+    return;
   }
   if (e.target.closest(".chapter-directory-link")) toggleContents(true);
   if (e.target.closest("#contents-close")) toggleContents(false);
@@ -980,10 +1143,10 @@ function parseHash() {
   const q = new URLSearchParams(location.hash.slice(1));
   if (location.hash.startsWith("#museum")) return showMuseum(q.get("museum") || undefined);
   museum?.closeMuseum();
-  if (q.has("story")) openStory(q.get("story"), q.get("chapter"));
+  if (q.has("story")) openFromLink(q.get("story"), q.get("chapter"));
   else if (location.hash.startsWith("#record=")) {
     const id = decodeURIComponent(location.hash.slice(8));
-    loadRecords().then(() => { if (recordToStory[id]) openStory(recordToStory[id], id); }).catch((e) => toast(e.message));
+    loadRecords().then(() => { if (recordToStory[id]) return openFromLink(recordToStory[id], id); }).catch((e) => toast(e.message));
   } else if (dossier) closeReader();
 }
 window.addEventListener("hashchange", parseHash);
@@ -1027,6 +1190,7 @@ try {
   });
   showSelection(columns[2].stories[0], 2, 0);
   parseHash();
+  if (!location.hash.startsWith("#story=") && !location.hash.startsWith("#record=")) refreshContinue();
   // After the archive has settled, prepare Chinese glyphs so the first story opens without a long layout frame.
   setTimeout(() => warmGlyphs(json), 2500);
 } catch (e) {
