@@ -88,14 +88,25 @@ try {
     return `restored ${at}, Back → ${first}`;
   });
 
-  await check("full-text search finds body text and opens the exact document", async () => {
+  // Opens search on the archive and waits until a result row shows the matched text (the dialog's state is reported
+  // with a failure).
+  async function searchFor(query, hitSelector, textPattern) {
+    await page.goto(base + "#", { waitUntil: "domcontentloaded" });
+    await page.waitForSelector("#search-open");
     await page.locator("#search-open").click();
-    await page.locator("#search-input").fill("follicle");
-    const hit = page.locator("#search-results [data-hash]").first();
-    await hit.waitFor({ timeout: 30000 });
+    await page.locator("#search-input").fill(query);
+    try {
+      // Rows are rendered first and their snippets filled in afterwards: wait for the matched text, not just the row.
+      await page.waitForFunction(([sel, src]) => [...document.querySelectorAll(sel)].some((r) => new RegExp(src, "i").test(r.textContent)), [hitSelector, textPattern.source], { timeout: 30000 });
+    } catch (e) {
+      throw new Error(`${e.message.split("\n")[0]} | ${await page.evaluate(() => `count: ${document.querySelector("#search-count")?.textContent}; results: ${document.querySelector("#search-results")?.innerHTML.replace(/\s+/g, " ").slice(0, 300)}`)}`);
+    }
+    return page.locator(hitSelector).filter({ hasText: textPattern }).first();
+  }
+
+  await check("full-text search finds body text and opens the exact document", async () => {
+    const hit = await searchFor("follicle", "#search-results [data-hash]", /follicle/i);
     const target = new URLSearchParams((await hit.getAttribute("data-hash")).slice(1)).get("chapter");
-    const snippet = await hit.innerText();
-    assert.match(snippet, /follicle/i);
     await hit.click();
     await page.waitForFunction((d) => document.querySelector(".chapter-document")?.dataset.doc === d, target, { timeout: 30000 });
     await page.keyboard.press("Escape");
@@ -104,15 +115,19 @@ try {
   });
 
   await check("search finds a specimen and opens its exhibit", async () => {
-    await page.locator("#search-open").click();
-    await page.locator("#search-input").fill("Acidic Spores");
-    const hit = page.locator('#search-results [data-hash="#museum=acidic_spores"]');
-    await hit.waitFor({ timeout: 30000 });
+    const hit = await searchFor("Acidic Spores", '#search-results [data-hash="#museum=acidic_spores"]', /\S/);
+    await page.waitForTimeout(800); // snippets are filled in after the rows
+    const text = await page.locator("#search-results").textContent();
+    assert.doesNotMatch(text, /这个名字|this name/i, "a snippet shows the generic placeholder wording");
     await hit.click();
     await page.waitForSelector("#museum.open .museum-detail:not([hidden])", { timeout: 30000 });
   });
 
   await check("museum: repeated exhibit opens keep the model's size (or fall back to the image)", async () => {
+    if (!(await page.locator("#museum.open .museum-exhibit").count())) {
+      await page.goto(base + "#museum", { waitUntil: "domcontentloaded" });
+      await page.waitForSelector("#museum.open .museum-exhibit", { timeout: 30000 });
+    }
     const keys = await page.locator(".museum-exhibit").evaluateAll((els) => els.filter((e) => e.querySelector(".museum-3d-badge")).slice(0, 2).map((e) => e.dataset.key));
     const sizes = [];
     for (const key of [keys[0], keys[1], keys[0], keys[1], keys[0]]) {

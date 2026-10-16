@@ -104,6 +104,13 @@ function prose(s, keepMarks = false) {
     .replace(/<[^>]*>/g, "");
   return keepMarks ? text : text.replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, "");
 }
+// Plain text of another document's (or a specimen's) game text, worded with that document's own reviewed names
+// (search snippets): prose() uses the open chapter's names.
+function proseWith(s, chapterNames) {
+  const text = cleanRefs(fillNames(String(s || ""), { lang, chapterNames, names, evaluate, ctx: { profile, assumptions } }), lang)
+    .replace(/§./g, "").replace(/£([^£]+)£/g, "").replace(/<[^>]*>/g, "");
+  return text.replace(/[^]*/g, "").replace(//g, "").replace(//g, "");
+}
 const paragraph = (s) => esc(prose(s, true))
   .replace(/\uE000([^\uE002\uE001]*)\uE002/g, (_, note) => `<span class="game-name" tabindex="0" role="note" data-note="${note}">`)
   .replace(/\uE001/g, "</span>")
@@ -851,7 +858,7 @@ function storyRowHtml(s, chip = "", extra = "") {
   return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${chip}${esc(T(`${s.chapters} 篇`, `${s.chapters} docs`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
 }
 const fullSearch = createSearch({
-  base: "", getLang: () => lang, T, esc, prose, fetchJson: json,
+  base: "", getLang: () => lang, T, esc, prose, proseWith, fetchJson: json,
   fetchBytes: async (p) => {
     const r = await fetch(asset(p));
     if (!r.ok) throw new Error("search shard");
@@ -918,6 +925,7 @@ function renderSearch() {
 }
 $("#search-open").onclick = () => {
   fullSearch.preload();
+  loadNames(); // snippets word save-dependent names like the reader
   renderSearch();
   $("#search-dialog").showModal();
   $("#search-input").focus();

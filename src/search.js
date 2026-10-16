@@ -417,6 +417,8 @@ export function createSearch(env) {
           if (r.kind === "story") continue;
           const el = container.querySelector(`[data-row="${i}"]`);
           if (!el) continue;
+          // Snippets use the hit's own reviewed names (a chapter's names, a specimen's placeholders), not the open chapter's.
+          const own = (t, names) => (env.proseWith ? env.proseWith(t, names) : env.prose(t));
           jobs.push((async () => {
             let found;
             if (r.kind === "specimen") {
@@ -424,11 +426,11 @@ export function createSearch(env) {
               const s = sp?.specimens?.find((x) => x.key === r.key);
               if (!s) return;
               const f = [];
-              for (const [type, v] of [["name", s.name], ["text", s.short], ["text", s.details]]) for (const l of ["zh", "en"]) if (v?.[l]) f.push({ type, lang: l, text: env.prose(v[l]) });
+              for (const [type, v] of [["name", s.name], ["text", s.short], ["text", s.details]]) for (const l of ["zh", "en"]) if (v?.[l]) f.push({ type, lang: l, text: own(v[l], s.placeholders) });
               found = bestSnippet(f, groups, lang);
               // A name match would only repeat the title: show the specimen's short description instead.
               if (found?.type === "name") {
-                const short = env.prose(s.short?.[lang] || s.short?.zh || s.short?.en || "");
+                const short = own(s.short?.[lang] || s.short?.zh || s.short?.en || "", s.placeholders);
                 if (short) found = { ...found, snippet: { text: short.length > 140 ? short.slice(0, 140) + "…" : short, needles: found.needles } };
               }
             } else {
@@ -438,7 +440,7 @@ export function createSearch(env) {
               const eff = await once(effectCache, r.story.id, () => env.fetchJson(`effects/${r.story.id}.json`));
               const edoc = eff?.docs?.[chapter.id];
               const fx = chapter.id === r.story.start ? { ...edoc, origin: eff?.origin } : edoc;
-              found = bestSnippet(chapterFields(chapter, fx, env.prose), groups, lang);
+              found = bestSnippet(chapterFields(chapter, fx, (t) => own(t, chapter.names)), groups, lang);
             }
             if (found === null) { el.remove(); return; } // bigram false positive: the phrase is not in the text
             if (found.snippet) {
