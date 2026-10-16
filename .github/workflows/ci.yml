@@ -48,6 +48,12 @@ jobs:
         run: node scripts/review-summary.mjs >> "$GITHUB_STEP_SUMMARY"
       - name: Build
         run: node scripts/build.mjs
+      - name: Browser smoke checks (the same gate as the release workflow)
+        run: |
+          mkdir -p /tmp/pw && (cd /tmp/pw && npm init -y > /dev/null && npm install --silent --no-audit --no-fund playwright@1.62.1 && npx playwright install --with-deps chromium)
+          node scripts/serve.mjs --port 4173 &
+          sleep 2
+          STELLARIS_PLAYWRIGHT_PATH=/tmp/pw/node_modules/playwright/index.mjs node scripts/smoke.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: stellaris-tales-site

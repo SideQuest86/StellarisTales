@@ -39,6 +39,9 @@ ap.add_argument('--guidance', type=float, default=5.0, help='classifier-free gui
 ap.add_argument('--hq', action='store_true', help='quality preset: Hunyuan3D-2 full DiT, 50 steps, octree 380, 40k faces, 2048 texture')
 ap.add_argument('--mv', action='store_true', help='multi-view: Zero123++ views (scripts/museum/novel-views.py) -> Hunyuan3D-2mv shape + multi-view texture')
 ap.add_argument('--mvmap', default='a', help="a: left=az90 right=az270; b: left=az270 right=az90 (Zero123++ azimuths)")
+ap.add_argument('--seed', type=int, default=2026)
+ap.add_argument('--candidate', action='store_true',
+                help='write verification/museum/candidates/<key>-s<seed>.glb + .json only; shipped model and manifest unchanged')
 args = ap.parse_args()
 if args.hq:
     args.repo, args.variant, args.steps, args.octree, args.faces, args.texture = 'tencent/Hunyuan3D-2', 'hunyuan3d-dit-v2-0', 50, 380, 40000, 2048
@@ -287,7 +290,7 @@ for key in keys:
     else:
         image_in = big
     mesh = shapegen(image=image_in, num_inference_steps=args.steps, octree_resolution=args.octree, num_chunks=20000, guidance_scale=args.guidance,
-                    generator=torch.manual_seed(2026), output_type='trimesh')[0]
+                    generator=torch.manual_seed(args.seed), output_type='trimesh')[0]
     print(f'  {key}: shape in {time.time() - t1:.1f}s ({len(mesh.faces)} faces)', flush=True)
     mesh = FloaterRemover()(mesh)
     mesh = DegenerateFaceRemover()(mesh)
@@ -316,6 +319,9 @@ for key in keys:
             axis, angle = np.array([0, 1.0, 0]), np.pi
         out.apply_transform(trimesh.transformations.rotation_matrix(angle, axis))
     glb = out.export(file_type='glb')
+    if args.candidate:
+        out_dir = ROOT / 'verification/museum/candidates'
+        out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / f'{key}.glb').write_bytes(glb)
     # Meshopt compression (gltfpack 1.3 -cc: quantized, EXT_meshopt_compression; texture kept as JPEG).
     gltfpack = TOOLS / 'gltfpack/gltfpack.exe'
@@ -331,13 +337,19 @@ for key in keys:
         'generator': f'Real-ESRGAN x4plus (BSD-3) + {args.repo.split("/")[-1]} shape (Tencent Hunyuan non-commercial community licence) + icon projection, scripts/museum/generate-models-v2.py' + (' --hq' if args.hq else ''),
         'licenceNote': 'Shape model licence: Tencent Hunyuan 3D 2.0 community licence (non-commercial; territory excludes EU, UK, South Korea).',
         'settings': {'upscale': 'RealESRGAN_x4plus 100->400 px', 'shape': f'{args.repo} {args.variant}', 'steps': args.steps, 'guidance': args.guidance,
-                     'octree': args.octree, 'seed': 2026, 'faces': args.faces, 'texture': args.texture,
+                     'octree': args.octree, 'seed': args.seed, 'faces': args.faces, 'texture': args.texture,
                      'view': view + (' mirrored' if mirror else ''), 'silhouetteIoU': round(float(iou), 3),
                      **({'multiView': f'Zero123++ v1.2 (sudo-ai, Apache-2.0) 6 views, map {args.mvmap}', 'viewsIoU': view_fit} if views else {}),
                      'device': torch.cuda.get_device_name(0)},
         'compression': 'EXT_meshopt_compression (gltfpack 1.3 -cc)' if (TOOLS / 'gltfpack/gltfpack.exe').exists() else None,
         'date': datetime.date.today().isoformat(), 'seconds': round(time.time() - t1, 1), 'status': 'generated', 'canonical': False,
     }
+    if args.candidate:
+        (out_dir / f'{key}.glb').replace(out_dir / f'{key}-s{args.seed}.glb')
+        (out_dir / f'{key}-s{args.seed}.json').write_text(json.dumps(entry, ensure_ascii=False, indent=1), encoding='utf-8')
+        print(f"{key}: candidate seed {args.seed}, IoU {entry['settings']['silhouetteIoU']}", flush=True)
+        out_dir = ROOT / 'public/museum/models'
+        continue
     manifest['models'] = [m for m in manifest['models'] if m['key'] != key] + [entry]
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     print(f"{key}: {entry['triangles']} tris, {entry['bytes'] // 1024} KB, view {entry['settings']['view']} IoU {entry['settings']['silhouetteIoU']}, {entry['seconds']} s", flush=True)

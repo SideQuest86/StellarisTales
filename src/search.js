@@ -426,6 +426,11 @@ export function createSearch(env) {
               const f = [];
               for (const [type, v] of [["name", s.name], ["text", s.short], ["text", s.details]]) for (const l of ["zh", "en"]) if (v?.[l]) f.push({ type, lang: l, text: env.prose(v[l]) });
               found = bestSnippet(f, groups, lang);
+              // A name match would only repeat the title: show the specimen's short description instead.
+              if (found?.type === "name") {
+                const short = env.prose(s.short?.[lang] || s.short?.zh || s.short?.en || "");
+                if (short) found = { ...found, snippet: { text: short.length > 140 ? short.slice(0, 140) + "…" : short, needles: found.needles } };
+              }
             } else {
               const data = await once(storyCache, r.story.id, () => env.fetchJson(`stories/${r.story.id}.json`));
               const chapter = data?.chapters?.find((c) => c.id === meta.ids[r.doc]);
