@@ -4069,7 +4069,7 @@
   {
    "key": "black_needle_ceremonial_sword",
    "file": "museum/models/black_needle_ceremonial_sword.glb",
-   "bytes": 911736,
+   "bytes": 985200,
    "triangles": 40000,
    "pipeline": "v3",
    "source": {
@@ -4089,20 +4089,21 @@
     "steps": 50,
     "guidance": 5.0,
     "octree": 380,
-    "seed": 2026,
+    "seed": 4242,
     "faces": 40000,
     "texture": 2048,
     "view": "+z",
-    "silhouetteIoU": 0.38,
+    "silhouetteIoU": 0.404,
     "multiView": "Zero123++ v1.2 (sudo-ai, Apache-2.0) 6 views, map a",
-    "viewsIoU": 0.364,
+    "viewsIoU": 0.356,
     "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
    },
    "compression": "EXT_meshopt_compression (gltfpack 1.3 -cc)",
-   "date": "2026-10-14",
-   "seconds": 133.6,
+   "date": "2026-10-16",
+   "seconds": 139.3,
    "status": "generated",
-   "canonical": false
+   "canonical": false,
+   "review": "2026-10-16: re-generated with seed 4242 (silhouette IoU 0.38 -> 0.404; hilt closer to the icon; compared with icon + four turns, verification/museum/rerun-2026-10-16b.png); previous seed-2026 model in git history"
   },
   {
    "key": "caeli_core_conspiracy_specimen",
@@ -4183,7 +4184,7 @@
   {
    "key": "crystal_nest_fragments",
    "file": "museum/models/crystal_nest_fragments.glb",
-   "bytes": 719956,
+   "bytes": 777700,
    "triangles": 40000,
    "pipeline": "v3",
    "source": {
@@ -4203,20 +4204,21 @@
     "steps": 50,
     "guidance": 5.0,
     "octree": 380,
-    "seed": 2026,
+    "seed": 99,
     "faces": 40000,
     "texture": 2048,
-    "view": "+z",
-    "silhouetteIoU": 0.483,
+    "view": "+x",
+    "silhouetteIoU": 0.503,
     "multiView": "Zero123++ v1.2 (sudo-ai, Apache-2.0) 6 views, map a",
-    "viewsIoU": 0.569,
+    "viewsIoU": 0.618,
     "device": "NVIDIA GeForce RTX 5070 Laptop GPU"
    },
    "compression": "EXT_meshopt_compression (gltfpack 1.3 -cc)",
-   "date": "2026-10-14",
-   "seconds": 134.3,
+   "date": "2026-10-16",
+   "seconds": 141.4,
    "status": "generated",
-   "canonical": false
+   "canonical": false,
+   "review": "2026-10-16: re-generated with seed 99 (silhouette IoU 0.483 -> 0.503; the two fragments read as a separate pair as in the icon; verification/museum/rerun-2026-10-16b.png); previous seed-2026 model in git history"
   },
   {
    "key": "crystallized_cutholoid_eye",

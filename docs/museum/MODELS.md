@@ -89,6 +89,12 @@ items (maps, blueprints, panels) open edge-on in the viewer.
   **Shipped: massive_metatarsal seed 1234** (clear silhouette gain, same or better from every side; manifest entry
   carries the candidate's settings, seed and a `review` note; the seed-2026 model stays in git history for rollback).
   The others look the same as the shipped models and were not replaced.
+- Third pass: seeds 99 / 4242 for the remaining three. black_needle_ceremonial_sword 0.311 / **0.404**;
+  crystal_nest_fragments **0.503** / 0.466; yuht_audio_console 0.436 / 0.447. Comparison:
+  `verification/museum/rerun-2026-10-16b.png`. **Shipped: black_needle_ceremonial_sword seed 4242** (swept hilt closer
+  to the icon) and **crystal_nest_fragments seed 99** (the two fragments read as a separate pair, as in the icon).
+  yuht_audio_console stays: seven attempts (seeds 7, 99, 1234, 2027 map b, 4242 …) all give the same slab-and-panel
+  shape (IoU 0.436–0.447 vs 0.441); a hologram is outside what the shape model reconstructs from one icon.
 
 ## Known limits
 

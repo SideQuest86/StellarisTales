@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.6.3 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.6.4 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: see "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -61,11 +61,13 @@ evidence from earlier rounds and is not updated.
     Specimen), snippets escaped then highlighted, open the exact document or exhibit. Limits: whole-word (stem) match
     for Latin text, no prefix search; single Chinese characters only match titles.
   - Weakest 3D matches re-generated with the existing local pipeline (`generate-models-v2.py --candidate --seed …`,
-    docs/museum/MODELS.md "Viewer and re-run"): 8 candidates for the four lowest-IoU models, compared with the icon
-    and four turns (`verification/museum/rerun-2026-10-16.png`). Shipped where it benefits: massive_metatarsal
-    (seed 1234, silhouette IoU 0.396 → 0.442, same or better from every side; provenance in the manifest entry,
-    previous model in git history). Not shipped: sword (0.38 → 0.392) and crystal fragments (0.483 → 0.492), visually
-    the same; yuht_audio_console (0.441 → ≤ 0.446 over 4 tries incl. the other view mapping), the same slab.
+    docs/museum/MODELS.md "Viewer and re-run"): 14 candidates for the four lowest-IoU models, each compared with the
+    icon and four turns (`verification/museum/rerun-2026-10-16.png`, `-16b.png`). Shipped (3 of 4, provenance and a
+    `review` note in each manifest entry, previous models in git history): massive_metatarsal seed 1234 (silhouette
+    IoU 0.396 → 0.442), black_needle_ceremonial_sword seed 4242 (0.38 → 0.404, hilt closer to the icon),
+    crystal_nest_fragments seed 99 (0.483 → 0.503, the two fragments read as a pair). Not shipped:
+    yuht_audio_console — seven attempts give the same slab-and-panel (0.436–0.447 vs 0.441); a hologram is outside
+    what the shape model reconstructs from one icon.
 - **Frame timing (2026-10-16; `scripts/verify-frame-spikes.mjs`, headed Chrome, RTX 5070 Laptop, 60 Hz display,
   worst frame per run, before and after measured in the same session against a local copy of the v4.6.0 code):**
 
@@ -101,6 +103,11 @@ evidence from earlier rounds and is not updated.
   post-render scroll write, `content-visibility` below the fold (`frame-spikes-a.json`, `-b.json`). Remaining: a
   first opening takes 2 frames (33 ms), sometimes 3; the first map build after opening a not-yet-warmed story is
   2–3 frames. Desktop only — phones were emulated for layout, not measured.
+  Also tried after v4.6.3 and reverted (same-dist A/B, 6 runs, opening frame p50: v4.6.3 33 ms vs 50 ms with the
+  changes): splitting the map build over two frames (map frame 33 → 50 ms), warming the map's character widths in idle
+  time (`measureText` 24 → 4 ms in a CPU profile, but the opening frame got worse), building the selected story's
+  map whenever the archive pauses on it. CPU profile and traces of the button path: the remaining map frame is
+  ~33 ms of SVG label text shaping for a story whose map has not been built yet.
 - **Limits:** no physical phone test; no native-speaker proofread; faults in the game's own text are kept as shipped
   (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions.
 - Live: v4.6.3 (`8f289f15`), published by the gated workflow (smoke 11/11 on bundled Chromium in CI; Archive CI green) and verified live 2026-10-16 with local Chrome: smoke 11/11, verify-prewarm 24/24, verify-museum-viewer 7, verify-progress 12, verify-search 16; live frame timing over the real network (5 runs, `verification/ui/frame-spikes-live.json`): first opening ~4 s after a cold load 33 ms p50 (max 50; v4.6.2 live: 50), after a reload 17 ms p50 (max 33), once settled 33 ms (max 50), chapter change / Back / later openings 17 ms. Earlier today: v4.6.0 (`186a3e58`), v4.6.1 (`6b1823e2`, superseded: warm-up race), v4.6.2 (`50c6931e`). Reverted frame-timing attempts: `verification/ui/frame-spikes-a.json`, `-b.json`.
