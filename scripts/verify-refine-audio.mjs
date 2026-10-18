@@ -16,6 +16,8 @@ const state = (page) => page.evaluate(() => ({
   src: document.getElementById("ost-audio").src,
   label: document.getElementById("play-pause").getAttribute("aria-label"),
 }));
+// Autoplay waits until the page has finished loading (covers, fonts): allow for it.
+const playingSoon = (page) => page.waitForFunction(() => [...document.querySelectorAll("audio")].some((a) => !a.paused), null, { timeout: 25000 }).catch(() => {});
 const open = async (browser, prefs, label) => {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const page = await ctx.newPage();
@@ -35,6 +37,7 @@ const run = async (args, fn) => {
 
 await run(["--autoplay-policy=no-user-gesture-required"], async (browser) => {
   const a = await open(browser, {}, "a");
+  await playingSoon(a.page);
   const s = await state(a.page);
   assert.equal(s.title, FTL); assert.equal(s.playing, 1); assert.equal(s.audios, 1);
   assert.ok(s.src.includes("02_fasterthanlight_bonus"));
@@ -45,7 +48,7 @@ await run(["--autoplay-policy=no-user-gesture-required"], async (browser) => {
   await a.page.click("#play-pause"); await a.page.waitForTimeout(300);
   assert.equal((await state(a.page)).playing, 0);
   assert.equal(await a.page.evaluate(() => localStorage.getItem("st-music-paused")), "1");
-  await a.page.reload({ waitUntil: "load" }); await a.page.waitForTimeout(1500);
+  await a.page.reload({ waitUntil: "load" }); await a.page.waitForTimeout(4000);
   assert.equal((await state(a.page)).playing, 0);
   step("explicit pause is remembered across a reload");
   await a.ctx.close();
@@ -58,6 +61,7 @@ await run(["--autoplay-policy=no-user-gesture-required"], async (browser) => {
   step("saved mute (volume 0) stays silent");
   await m.ctx.close();
   const d = await open(browser, { "st-track-id": "08_alphacentauri" }, "d");
+  await playingSoon(d.page);
   const ds = await state(d.page);
   assert.equal(ds.title, "Alpha Centauri"); assert.equal(ds.playing, 1);
   step("d: saved other track wins", ds.title);

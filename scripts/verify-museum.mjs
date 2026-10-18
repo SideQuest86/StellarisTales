@@ -49,9 +49,14 @@ try {
   await page.locator(".museum-search").fill("");
   step("search narrows by bilingual name/description", `"星" → ${searched}`);
 
-  await page.locator("[data-toggle3d]").click();
-  assert.equal(await page.locator(".museum-exhibit").count(), manifest.models.length);
-  step("3D-only filter lists exactly the generated models", `${manifest.models.length}`);
+  if (manifest.models.length < 258) {
+    await page.locator("[data-toggle3d]").click();
+    assert.equal(await page.locator(".museum-exhibit").count(), manifest.models.length);
+    step("3D-only filter lists exactly the generated models", `${manifest.models.length}`);
+  } else {
+    assert.equal(await page.locator("[data-toggle3d], .museum-3d-badge").count(), 0);
+    step("every specimen has a model: no 3D filter or badges", `${manifest.models.length}`);
+  }
 
   // Keyboard: arrow navigation and Enter to open.
   await page.locator(".museum-exhibit").first().focus();

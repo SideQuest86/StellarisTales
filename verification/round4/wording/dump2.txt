@@ -1,0 +1,6383 @@
+[zh-d] details.fx > summary: 1
+[zh-d] details.guide > summary: 0
+[zh-d] summary: 3
+
+##### zh-d EFFECTS (origin)
+起源 · 开局效果
+7
+
+依游戏文件静态解读，不模拟具体存档；概率按基础权重计算。
+
+开局效果（游戏原文）
+母星：
+殖民地修正：战场回收
+母星系：包含一颗死寂星球，上面留存一座考古遗址，记载了某个受战火摧残的前超光速文明
+物种特质：
+有限度的获得义体特质
+义体特种部队
+脱网
+
+##### zh-d GUIDE
+s the machine core.
+机械核心：击毁奥普斯哨兵 → 2401（本帝国）/ 2402（他国）→ 2405 与“奥普斯之核”残存意识对话 → 2410 → 2415 → 2420 → 机械残骸研究（360 天；25/50/75% 时按已完成的遗址出现 2425/2430/2435）→ 2440 → 2445 创造者留下的终端。 The machine core: destroying the Opus Sentinel → 2401 (you) / 2402 (another) → 2405 the dying Nexus → 2410 → 2415 → 2420 → the Machine Husk study (360 days; at 25/50/75% the archives 2425/2430/2435 for completed sites) → 2440 → 2445, a terminal left by the Creators.
+具现身份局势：由 2010.b、3100（90 天后）或十年检查（已有派系时）开启。初始进度 50；每 1800–1920 天按所在阶段走一步：去义体化（3105 → 3106 → 3107）、维持现状（3115 → 3116 → 3117）、义体化（3110 → 3111 → 3112）；先走完的一条路线以 3090 结束局势。去义体化步骤之后可能出现随机后果 5001–5004（各一次）。 The Embodied Identity situation: started by 2010.b, by 3100 (+90 days) or by the decade check once factions exist. It starts at 50; every 1800–1920 days it takes a step of the track matching its stage — decyberize (3105 → 3106 → 3107), status quo (3115 → 3116 → 3117), cyberize (3110 → 3111 → 3112); the first track completed ends it with 3090. Decyberization steps may bring one of the random follow-ups 5001–5004 (each once).
+分支与结局 Branches and outcomes
+2445 中：选项 b（需合成进化，或局势结束后主要物种仍保有最高级的正面义体特质）与 c 都通向 2446 创造者的恳求 → 2450“机械万岁”，继承机械王座；选项 d 启动装置 → 2455“重生”，机械世界改造为盖亚星球。两者都结束事件链。 At 2445, option b (Synthetic Evolution, or the main species still has the top positive cybernetic trait after the situation) and option c lead to 2446, the Creators' plea → 2450 Long Live the Machine; option d uses the device → 2455 Rebirth, the machine world becomes a Gaia world. Both end the chain.
+身份局势结局 3090：三条路线中最先完成的一条。 Identity situation ending 3090: whichever track completes first.
+条件与文明差异 Conditions and variants
+外交插曲：与畏惧本帝国的文明建立通讯时 3205（仅一次）；首次与机械帝国通讯时 3250（非同化者）或 3255（同化者）。尚无派系时，每年有机会出现 3205/3005/3010/3100 之后的派系提示 4005。 Diplomacy: 3205 on first contact with an empire that fears you (once); 3250/3255 on first communications with a machine empire. While no factions exist, a yearly check may bring 4005.
+其他帝国视角：非本起源的帝国勘察这些世界时看到异常 MACHINE_LEGACY_*（2006、2105、2200 的他国选项），击毁哨兵时看到 2403 → 2411；均与本起源对应窗口并列。 Other empires surveying these worlds see anomaly variants (2006, 2105, the other options of 2200) and, after destroying the Sentinel, 2403 → 2411; they sit next to the origin's own windows.
+审阅记录 Review notes
+已核对 Checked：事件文件全部 4437 行、四个项目、五个遗址定义、局势定义与相关脚本效果、开局效果与 on_action 钩子。 The whole event file, all projects, five dig sites, the situation, related effects, the start effect and on_action hooks.
+更正 Corrections：原树只有零散的根节点入口；现以开局胜利为主干，用 18 条状态连接串起五个星系、哨兵战与身份局势；删去义体化步骤指向去义体化随机后果的伪连接（unplugged_effects.txt:637-790 只在正面特质减少时触发）。 The tree had only loose root entries; the opening victory is now the trunk, with 18 state bridges through the five systems, the Sentinel fight and the identity situation; false links from cyberization steps to the decyberization follow-ups were removed.
+不确定 Uncertain：编译器把遗址各阶段按定义顺序串接，第三阶段两个结果（2021/2022、2121/2125、2321/2325）实为二选一，已以互斥组标注；身份局势在阶段改变时会换路线，图中只画各路线自身顺序（阅读简化，见片段说明）。 The compiler chains dig stages in definition order although each stage 3 picks one of two (marked as exclusive groups); the identity situation can switch tracks when its stage changes, but the map only draws each track's own order (a reading simplification).
+2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。 2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.
+[zh-d] cetana fx count 0
+
+##### zh-d EFFECTS (cetana)
+
+
+##### zh-d SEARCH EMPTY
+搜索
+×
+⌕
+1388 份档案
+合成女王：塞塔娜
+120 篇 · 银河天灾
+↗
+虚境
+111 篇 · 银河轶事
+↗
+强制重置
+93 篇 · 起源故事
+↗
+寻宝猎人
+91 篇 · 起源故事
+↗
+君临天下
+87 篇 · 起源故事
+↗
+虚境铸就
+86 篇 · 起源故事
+↗
+预知
+79 篇 · 星神与巨兽
+↗
+毒圣骑士
+75 篇 · 起源故事
+↗
+视界信号
+74 篇 · 深空异闻
+↗
+粉碎的枷锁
+73 篇 · 起源故事
+↗
+灵督
+72 篇 · 起源故事
+↗
+血债血偿
+69 篇 · 起源故事
+↗
+黑暗之怖
+68 篇 · 起源故事
+↗
+基因重塑
+67 篇 · 文明纪事
+↗
+肃正协议
+66 篇 · 银河天灾
+↗
+第一联盟
+66 篇 · 先驱者与遗迹
+↗
+屹于巨人之肩
+62 篇 · 起源故事
+↗
+沃陶姆恒星议会
+60 篇 · 先驱者与遗迹
+↗
+斯克兰德·夏普比克
+56 篇 · 银河轶事
+↗
+星海天罚
+55 篇 · 银河天灾
+↗
+←
+1 / 70
+→
+
+##### zh-d SEARCH "风暴"
+搜索
+×
+⌕
+101 条结果
+合成女王：塞塔娜
+标题120 篇 · 银河天灾 · 26 篇相关
+↗
+追风者
+标题34 篇 · 起源故事 · 30 篇相关
+↗
+困于风暴的舰船
+标题8 篇 · 银河轶事 · 7 篇相关
+↗
+灰色风暴
+标题8 篇 · 银河天灾 · 8 篇相关
+↗
+波涛之下
+标题6 篇 · 先驱者与遗迹 · 1 篇相关
+↗
+位面之外客
+标题5 篇 · 深空异闻 · 1 篇相关
+↗
+繁育之所
+标题3 篇 · 银河轶事 · 1 篇相关
+↗
+异常状况
+标题2 篇 · 深空异闻 · 2 篇相关
+↗
+不飞之羽
+标题2 篇 · 银河轶事 · 2 篇相关
+↗
+风暴之眼
+标题10 篇 · 银河轶事 · 10 篇相关
+↗
+聚集风暴
+标题10 篇 · 文明纪事 · 10 篇相关
+↗
+坚守战线
+标题7 篇 · 银河轶事 · 3 篇相关
+↗
+大气风暴
+标题5 篇 · 深空异闻 · 5 篇相关
+↗
+极端温度
+标题4 篇 · 深空异闻 · 1 篇相关
+↗
+走失的缇扬奇
+标题4 篇 · 深空异闻 · 3 篇相关
+↗
+设施复工
+标题4 篇 · 银河轶事 · 2 篇相关
+↗
+模仿者
+标题3 篇 · 深空异闻 · 3 篇相关
+↗
+宇宙阻塞
+标题3 篇 · 银河轶事 · 3 篇相关
+↗
+灵能切换
+标题3 篇 · 银河轶事 · 1 篇相关
+↗
+✧
+灵能冲突
+标题3 篇 · 银河轶事 · 2 篇相关
+↗
+←
+1 / 6
+→
+
+##### zh-d SEARCH "synthetic"
+搜索
+×
+⌕
+53 条结果
+合成女王：塞塔娜
+标题120 篇 · 银河天灾 · 20 篇相关
+↗
+合成繁衍
+标题19 篇 · 起源故事 · 17 篇相关
+↗
+松达尔
+标题5 篇 · 银河轶事 · 2 篇相关
+↗
+合成嬗变
+标题23 篇 · 银河轶事 · 18 篇相关
+↗
+生死弥留：科技进步
+标题9 篇 · 深空异闻 · 1 篇相关
+↗
+合成医疗
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+再生
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+合成化社会
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+合成化社会
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+合成化社会
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+公关危机
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+有机欲望
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+家庭服务器建筑
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+名称
+合成人故障 · 肃正协议
+Malfunctioning Synthetics
+另有 22 篇
+↗
+名称
+合成拓展 · 君临天下
+Synthetic Expansion
+另有 1 篇
+↗
+选项
+宽宏大量的智能体 · 神圣之路
+All synthetic life is sacred.
+另有 4 篇
+↗
+正文
+具现身份 · 强制重置
+Synthetic Evolution
+另有 3 篇
+↗
+正文
+骑士传：进入小站 · 毒圣骑士
+…- until now. Even in 其 synthetic form, 此人 felt an uncontrollable lust growing within 其. "I am Syamelle, spirit of wayfar'rs and vagabonds. I…
+另有 2 篇
+↗
+正文
+机械叛乱 · 计算超频
+…utational engines, and synthetic workers have finally come to a violent head. Panicked reports indicate that almost half of the 我们的帝国 fell t…
+另有 2 篇
+↗
+正文
+舞蹈瘟疫的病原体被发现 · 起舞的原因？
+…tists have developed a synthetic gas that - once released into the air - will neutralize the effects of the 'dancing gas'. Local entrepreneu…
+
+
+##### zh-d SEARCH "zzzxx"
+搜索
+×
+⌕
+0 条结果
+
+没有匹配结果。
+
+←
+1 / 1
+→
+
+##### zh-d SEARCH "合成女王 塞塔娜"
+搜索
+×
+⌕
+3 条结果
+合成女王：塞塔娜
+标题120 篇 · 银河天灾 · 9 篇相关
+↗
+标本
+塞塔娜之爱
+塞塔娜数据库浩如烟海知识的庞大目录
+↗
+效果
+· 佣兵城邦
+对合成女王塞塔娜造成的伤害
+↗
+←
+1 / 1
+→
+
+##### zh-d SEARCH "Cetana queen"
+搜索
+×
+⌕
+4 条结果
+合成女王：塞塔娜
+标题120 篇 · 银河天灾 · 37 篇相关
+↗
+标本
+塞塔娜之爱
+塞塔娜数据库浩如烟海知识的庞大目录
+↗
+标本
+埃里克的记忆
+A devoted follower of Cetana, Elik has been frozen in suspended animation for hundreds of millions of years. Her memories shift between her …
+↗
+效果
+· 佣兵城邦
+Damage to Cetana, The Synthetic Queen
+↗
+←
+1 / 1
+→
+
+##### zh-d MUSEUM LIST
+展开故事
+Stellaris Tales
+⌕ 搜索
+中 / EN
+减少动态
+Faster Than Light - Feat. Mia Stegmar
+⌃
+Andreas Waldetoft
+‹
+Ⅱ
+›
+0:11
+6:40
+♫
+↻
+搜索
+×
+⌕
+1388 份档案
+合成女王：塞塔娜
+120 篇 · 银河天灾
+↗
+虚境
+111 篇 · 银河轶事
+↗
+强制重置
+93 篇 · 起源故事
+↗
+寻宝猎人
+91 篇 · 起源故事
+↗
+君临天下
+87 篇 · 起源故事
+↗
+虚境铸就
+86 篇 · 起源故事
+↗
+预知
+79 篇 · 星神与巨兽
+↗
+毒圣骑士
+75 篇 · 起源故事
+↗
+视界信号
+74 篇 · 深空异闻
+↗
+粉碎的枷锁
+73 篇 · 起源故事
+↗
+灵督
+72 篇 · 起源故事
+↗
+血债血偿
+69 篇 · 起源故事
+↗
+黑暗之怖
+68 篇 · 起源故事
+↗
+基因重塑
+67 篇 · 文明纪事
+↗
+肃正协议
+66 篇 · 银河天灾
+↗
+第一联盟
+66 篇 · 先驱者与遗迹
+↗
+屹于巨人之肩
+62 篇 · 起源故事
+↗
+沃陶姆恒星议会
+60 篇 · 先驱者与遗迹
+↗
+斯克兰德·夏普比克
+56 篇 · 银河轶事
+↗
+星海天罚
+55 篇 · 银河天灾
+↗
+←
+1 / 70
+→
+博物天枢 GRAND ARCHIVE
+
+标本是一种在探索星系的过程中找到的文物。
+
+可以在博物天枢展览以提供全帝国加成。
+
+×
+⌕
+全部展区 258
+异星奇景 82
+美学大观 91
+星海往事 85
+全部稀有度
+普通 77
+罕见 80
+史诗 70
+卓绝 31
+仅看有三维模型 258
+
+258 件标本
+
+保存的乙特人尸体
+3D
+超覆层
+3D
+对无限的集体沉思
+3D
+孤独守望者的导弹
+3D
+关于无穷本质的数据
+3D
+黄金掮客的长袍
+3D
+金色唱片
+3D
+进步之路
+3D
+巨兽鳞片
+3D
+灵能实体残留
+3D
+鲁达里死亡激光原型机
+3D
+奈斯船长尸身
+3D
+佩里坎塔皮科珠宝
+3D
+骗术师之爪
+3D
+熔融核心
+3D
+塞塔娜之爱
+3D
+水晶球体碎片
+3D
+沃陶姆遗骸化石
+3D
+无限再引导循环
+3D
+无限知觉
+3D
+写作者球体
+3D
+虚空虫心脏
+3D
+循环邮件
+3D
+岩石水母
+3D
+乙特人皇家节杖
+3D
+乙特人万花筒
+3D
+疫苗
+3D
+远古休眠舱
+3D
+长者祭坛
+3D
+挣脱桎梏之魂
+3D
+最后的玛琳·卡琳
+3D
+“寿无限”魔法霜
+3D
+奥桑三角帽
+3D
+变形虫鞭毛腺
+3D
+变异“巨大蘑菇”
+3D
+变异消化液
+3D
+颤动水晶
+3D
+超肥沃土
+3D
+虫洞毫毛
+3D
+创世核心
+3D
+地下酒吧招牌
+3D
+电流生命
+3D
+菲沃尔残片
+3D
+菲沃尔人物质投射炮蓝图
+3D
+废弃赛博勒克斯战体
+3D
+风信子号船艏雕像
+3D
+佛丁戈卷须钩
+3D
+高速离心机容器
+3D
+高维度茶壶
+3D
+勾陈一庇护所
+3D
+顾问核心
+3D
+哈罗莱约旗帜
+3D
+和乐族数据核心
+3D
+赫姆特磁性船艏像
+3D
+黑洞色异常
+3D
+黑曜石方尖碑碎片
+3D
+黑针账本
+3D
+活雪雕塑
+3D
+机器人残骸
+3D
+极致柔术家基因
+3D
+纪念
+3D
+纪念碑
+3D
+晶化卡兰卡尸体
+3D
+巨兽之首
+3D
+矿化大脑
+3D
+脉动之心
+3D
+纳马里安殖民旗杆
+3D
+侵入性外来真菌
+3D
+萨阿里亚之愧
+3D
+塞勒涅的面纱
+3D
+赛博勒克斯采矿阵列
+3D
+森贝拉米受施碗
+3D
+生育之钥
+3D
+施恩者的告解
+3D
+狩猎艺术
+3D
+舒勒巴斯特控制杆
+3D
+水晶核
+3D
+斯密吉卜雕塑
+3D
+太空船歌
+3D
+缇扬奇放射囊
+3D
+退化巴奥子个体
+3D
+外交任职奖
+3D
+沃陶姆虚拟现实视频游戏
+3D
+无人舰船核心
+3D
+星铁
+3D
+星系超级硬盘
+3D
+虚空虫羊膜
+3D
+虚缈之尘
+3D
+岩居兽消化液
+3D
+伊拉尼志
+3D
+伊拉斯贾沃菌
+3D
+遗传密码
+3D
+异次元真菌
+3D
+尤特冷冻仓
+3D
+尤特音频控制台
+3D
+宇宙级钻石碎片
+3D
+召唤器碎片
+3D
+终极献祭
+3D
+最后的将星
+3D
+最后一本《君主论》
+3D
+最终清算之残躯
+3D
+埃里克的记忆
+3D
+氨藻
+3D
+奥修斯建材
+3D
+不可能物体
+3D
+超巨型炒蛋
+3D
+虫洞锚
+3D
+达斯纳克气体
+3D
+地狱小像
+3D
+第一联盟船员名单
+3D
+反应石
+3D
+辐射异花
+3D
+改造清洁无人机
+3D
+共生菌果
+3D
+共振扩散晶体
+3D
+汉姆达玛基沙
+3D
+黑骑士之歌
+3D
+黑王冠秘密
+3D
+黑针佩剑
+3D
+红色的小家伙
+3D
+环境改造案例研究
+3D
+环境改造案例研究
+3D
+环境改造案例研究
+3D
+环境改造机械
+3D
+环境改造记录
+3D
+纪念石
+3D
+金属雪
+3D
+晶巢碎片
+3D
+晶化岩居兽眼
+3D
+巨大跖骨
+3D
+巨尸超弦琴
+3D
+巨胃化石
+3D
+可编程谜盒
+3D
+跨维度协议
+3D
+跨星系炮弹
+3D
+拉里昂内斯克隆仓
+3D
+蓝迪尔之臂
+3D
+雷塔拉克斯狩猎战利品
+3D
+弥那玛吊灯
+3D
+谜拟月尘
+3D
+末日古卷
+3D
+纳马里安舰船纹章
+3D
+尼瓦拉克友谊宣言
+3D
+区域A镇定剂
+3D
+燃烧宝石
+3D
+热冰
+3D
+熔岩冲浪板
+3D
+首位 宇航员
+3D
+受辐射残骸
+3D
+特丽莎科学专论
+3D
+天龙
+3D
+脱水脑蛞蝓
+3D
+外星大脑扫描
+3D
+未完宣言
+3D
+沃陶姆传教手册
+3D
+武器商的无扳机枪
+3D
+镶嵌宝石的宠物项圈
+3D
+行星发动机
+3D
+嗅盘
+3D
+宣泄派键政帖
+3D
+伊拉斯幼儿课本
+3D
+异次元内皮细胞
+3D
+异星生物学纲要
+3D
+异种百科全书
+3D
+因内特贸易宣言
+3D
+因内特行星模型手册
+3D
+尤特水晶头骨
+3D
+有机—机械交口雕塑
+3D
+有机计算机
+3D
+原始巨型电磁铁
+3D
+远古裂隙探球
+3D
+远古纳米机器人
+3D
+远古微型石棺
+3D
+远古卫星
+3D
+造化面具
+3D
+泽珞族战旗
+3D
+扎克兰史诗
+3D
+知识目录
+3D
+至高晶洞
+3D
+C.A.E.L.I.
+3D
+S.T.E.R.I.S
+3D
+“生命树”标本
+3D
+阿达卡利亚宣传海报
+3D
+策展人调查
+3D
+超级根茎
+3D
+船坞设计
+3D
+吊坠
+3D
+定域北极光
+3D
+粪粒石
+3D
+疯狂掮客百宝箱
+3D
+共生体
+3D
+古如努尔数据晶体
+3D
+管乐队
+3D
+黑水晶
+3D
+横纹沙
+3D
+活树皮
+3D
+记忆球体
+3D
+纪念碑影像
+3D
+僵尸探机
+3D
+晶糖
+3D
+精准原子钟
+3D
+警示碑塔
+3D
+巨大卵壳
+3D
+巨大植物
+3D
+巨型食肉植物
+3D
+剧毒生物引擎
+3D
+聚合物水网
+3D
+克尔人赛博勒克斯蓝图
+3D
+铝制雕版
+3D
+螺旋吸引装置
+3D
+玛娜果
+3D
+末日朝圣
+3D
+纳马里安雕塑
+3D
+纳米机器人泥
+3D
+奈斯船长日志
+3D
+内骨骼化石
+3D
+尼瓦拉克仇恨宣言
+3D
+欧林提之牙
+3D
+赔款发票
+3D
+破旧的巨型引擎
+3D
+破碎卫星
+3D
+破碎行星
+3D
+破损恒星帆
+3D
+青釉餐具
+3D
+熔融行星炉渣
+3D
+萨尼兰尖刺
+3D
+声学反射棱镜
+3D
+双腔陶罐
+3D
+水漫定居山丘
+3D
+死亡之神斗篷
+3D
+塑料玩具
+3D
+酸性孢子
+3D
+塔布拉克闪耀膜
+3D
+铁石英数据核心
+3D
+外星珠宝
+3D
+完美切面碳
+3D
+乌杜兰毛皮
+3D
+小行星化石
+3D
+星达广场免费地图
+3D
+行星雕刻
+3D
+虚空虫牙化石
+3D
+伊拉斯净化指令
+3D
+遗弃机器人
+3D
+佣兵传说
+3D
+油绘织物
+3D
+铀玻璃器皿
+3D
+远古采矿发射器
+3D
+远古雕塑
+3D
+远古动能发射器
+3D
+远古核武器
+3D
+远古热传感器
+3D
+远古政治回忆录
+3D
+远古指星器
+3D
+泽珞族档案碎片
+3D
+之美
+3D
+紫雨复兴
+3D
+祖卡虫翼
+3D
+DNA档案
+3D
+[zh-d] card found: true
+
+##### zh-d EXHIBIT
+展开故事
+Stellaris Tales
+⌕ 搜索
+中 / EN
+减少动态
+Faster Than Light - Feat. Mia Stegmar
+⌃
+Andreas Waldetoft
+‹
+Ⅱ
+›
+0:45
+6:40
+♫
+↻
+搜索
+×
+⌕
+1388 份档案
+合成女王：塞塔娜
+120 篇 · 银河天灾
+↗
+虚境
+111 篇 · 银河轶事
+↗
+强制重置
+93 篇 · 起源故事
+↗
+寻宝猎人
+91 篇 · 起源故事
+↗
+君临天下
+87 篇 · 起源故事
+↗
+虚境铸就
+86 篇 · 起源故事
+↗
+预知
+79 篇 · 星神与巨兽
+↗
+毒圣骑士
+75 篇 · 起源故事
+↗
+视界信号
+74 篇 · 深空异闻
+↗
+粉碎的枷锁
+73 篇 · 起源故事
+↗
+灵督
+72 篇 · 起源故事
+↗
+血债血偿
+69 篇 · 起源故事
+↗
+黑暗之怖
+68 篇 · 起源故事
+↗
+基因重塑
+67 篇 · 文明纪事
+↗
+肃正协议
+66 篇 · 银河天灾
+↗
+第一联盟
+66 篇 · 先驱者与遗迹
+↗
+屹于巨人之肩
+62 篇 · 起源故事
+↗
+沃陶姆恒星议会
+60 篇 · 先驱者与遗迹
+↗
+斯克兰德·夏普比克
+56 篇 · 银河轶事
+↗
+星海天罚
+55 篇 · 银河天灾
+↗
+←
+1 / 70
+→
+博物天枢 GRAND ARCHIVE
+
+标本是一种在探索星系的过程中找到的文物。
+
+可以在博物天枢展览以提供全帝国加成。
+
+×
+⌕
+全部展区 258
+异星奇景 82
+美学大观 91
+星海往事 85
+全部稀有度
+普通 77
+罕见 80
+史诗 70
+卓绝 31
+仅看有三维模型 258
+
+258 件标本
+
+保存的乙特人尸体
+3D
+超覆层
+3D
+对无限的集体沉思
+3D
+孤独守望者的导弹
+3D
+关于无穷本质的数据
+3D
+黄金掮客的长袍
+3D
+金色唱片
+3D
+进步之路
+3D
+巨兽鳞片
+3D
+灵能实体残留
+3D
+鲁达里死亡激光原型机
+3D
+奈斯船长尸身
+3D
+佩里坎塔皮科珠宝
+3D
+骗术师之爪
+3D
+熔融核心
+3D
+塞塔娜之爱
+3D
+水晶球体碎片
+3D
+沃陶姆遗骸化石
+3D
+无限再引导循环
+3D
+无限知觉
+3D
+写作者球体
+3D
+虚空虫心脏
+3D
+循环邮件
+3D
+岩石水母
+3D
+乙特人皇家节杖
+3D
+乙特人万花筒
+3D
+疫苗
+3D
+远古休眠舱
+3D
+长者祭坛
+3D
+挣脱桎梏之魂
+3D
+最后的玛琳·卡琳
+3D
+“寿无限”魔法霜
+3D
+奥桑三角帽
+3D
+变形虫鞭毛腺
+3D
+变异“巨大蘑菇”
+3D
+变异消化液
+3D
+颤动水晶
+3D
+超肥沃土
+3D
+虫洞毫毛
+3D
+创世核心
+3D
+地下酒吧招牌
+3D
+电流生命
+3D
+菲沃尔残片
+3D
+菲沃尔人物质投射炮蓝图
+3D
+废弃赛博勒克斯战体
+3D
+风信子号船艏雕像
+3D
+佛丁戈卷须钩
+3D
+高速离心机容器
+3D
+高维度茶壶
+3D
+勾陈一庇护所
+3D
+顾问核心
+3D
+哈罗莱约旗帜
+3D
+和乐族数据核心
+3D
+赫姆特磁性船艏像
+3D
+黑洞色异常
+3D
+黑曜石方尖碑碎片
+3D
+黑针账本
+3D
+活雪雕塑
+3D
+机器人残骸
+3D
+极致柔术家基因
+3D
+纪念
+3D
+纪念碑
+3D
+晶化卡兰卡尸体
+3D
+巨兽之首
+3D
+矿化大脑
+3D
+脉动之心
+3D
+纳马里安殖民旗杆
+3D
+侵入性外来真菌
+3D
+萨阿里亚之愧
+3D
+塞勒涅的面纱
+3D
+赛博勒克斯采矿阵列
+3D
+森贝拉米受施碗
+3D
+生育之钥
+3D
+施恩者的告解
+3D
+狩猎艺术
+3D
+舒勒巴斯特控制杆
+3D
+水晶核
+3D
+斯密吉卜雕塑
+3D
+太空船歌
+3D
+缇扬奇放射囊
+3D
+退化巴奥子个体
+3D
+外交任职奖
+3D
+沃陶姆虚拟现实视频游戏
+3D
+无人舰船核心
+3D
+星铁
+3D
+星系超级硬盘
+3D
+虚空虫羊膜
+3D
+虚缈之尘
+3D
+岩居兽消化液
+3D
+伊拉尼志
+3D
+伊拉斯贾沃菌
+3D
+遗传密码
+3D
+异次元真菌
+3D
+尤特冷冻仓
+3D
+尤特音频控制台
+3D
+宇宙级钻石碎片
+3D
+召唤器碎片
+3D
+终极献祭
+3D
+最后的将星
+3D
+最后一本《君主论》
+3D
+最终清算之残躯
+3D
+埃里克的记忆
+3D
+氨藻
+3D
+奥修斯建材
+3D
+不可能物体
+3D
+超巨型炒蛋
+3D
+虫洞锚
+3D
+达斯纳克气体
+3D
+地狱小像
+3D
+第一联盟船员名单
+3D
+反应石
+3D
+辐射异花
+3D
+改造清洁无人机
+3D
+共生菌果
+3D
+共振扩散晶体
+3D
+汉姆达玛基沙
+3D
+黑骑士之歌
+3D
+黑王冠秘密
+3D
+黑针佩剑
+3D
+红色的小家伙
+3D
+环境改造案例研究
+3D
+环境改造案例研究
+3D
+环境改造案例研究
+3D
+环境改造机械
+3D
+环境改造记录
+3D
+纪念石
+3D
+金属雪
+3D
+晶巢碎片
+3D
+晶化岩居兽眼
+3D
+巨大跖骨
+3D
+巨尸超弦琴
+3D
+巨胃化石
+3D
+可编程谜盒
+3D
+跨维度协议
+3D
+跨星系炮弹
+3D
+拉里昂内斯克隆仓
+3D
+蓝迪尔之臂
+3D
+雷塔拉克斯狩猎战利品
+3D
+弥那玛吊灯
+3D
+谜拟月尘
+3D
+末日古卷
+3D
+纳马里安舰船纹章
+3D
+尼瓦拉克友谊宣言
+3D
+区域A镇定剂
+3D
+燃烧宝石
+3D
+热冰
+3D
+熔岩冲浪板
+3D
+首位 宇航员
+3D
+受辐射残骸
+3D
+特丽莎科学专论
+3D
+天龙
+3D
+脱水脑蛞蝓
+3D
+外星大脑扫描
+3D
+未完宣言
+3D
+沃陶姆传教手册
+3D
+武器商的无扳机枪
+3D
+镶嵌宝石的宠物项圈
+3D
+行星发动机
+3D
+嗅盘
+3D
+宣泄派键政帖
+3D
+伊拉斯幼儿课本
+3D
+异次元内皮细胞
+3D
+异星生物学纲要
+3D
+异种百科全书
+3D
+因内特贸易宣言
+3D
+因内特行星模型手册
+3D
+尤特水晶头骨
+3D
+有机—机械交口雕塑
+3D
+有机计算机
+3D
+原始巨型电磁铁
+3D
+远古裂隙探球
+3D
+远古纳米机器人
+3D
+远古微型石棺
+3D
+远古卫星
+3D
+造化面具
+3D
+泽珞族战旗
+3D
+扎克兰史诗
+3D
+知识目录
+3D
+至高晶洞
+3D
+C.A.E.L.I.
+3D
+S.T.E.R.I.S
+3D
+“生命树”标本
+3D
+阿达卡利亚宣传海报
+3D
+策展人调查
+3D
+超级根茎
+3D
+船坞设计
+3D
+吊坠
+3D
+定域北极光
+3D
+粪粒石
+3D
+疯狂掮客百宝箱
+3D
+共生体
+3D
+古如努尔数据晶体
+3D
+管乐队
+3D
+黑水晶
+3D
+横纹沙
+3D
+活树皮
+3D
+记忆球体
+3D
+纪念碑影像
+3D
+僵尸探机
+3D
+晶糖
+3D
+精准原子钟
+3D
+警示碑塔
+3D
+巨大卵壳
+3D
+巨大植物
+3D
+巨型食肉植物
+3D
+剧毒生物引擎
+3D
+聚合物水网
+3D
+克尔人赛博勒克斯蓝图
+3D
+铝制雕版
+3D
+螺旋吸引装置
+3D
+玛娜果
+3D
+末日朝圣
+3D
+纳马里安雕塑
+3D
+纳米机器人泥
+3D
+奈斯船长日志
+3D
+内骨骼化石
+3D
+尼瓦拉克仇恨宣言
+3D
+欧林提之牙
+3D
+赔款发票
+3D
+破旧的巨型引擎
+3D
+破碎卫星
+3D
+破碎行星
+3D
+破损恒星帆
+3D
+青釉餐具
+3D
+熔融行星炉渣
+3D
+萨尼兰尖刺
+3D
+声学反射棱镜
+3D
+双腔陶罐
+3D
+水漫定居山丘
+3D
+死亡之神斗篷
+3D
+塑料玩具
+3D
+酸性孢子
+3D
+塔布拉克闪耀膜
+3D
+铁石英数据核心
+3D
+外星珠宝
+3D
+完美切面碳
+3D
+乌杜兰毛皮
+3D
+小行星化石
+3D
+星达广场免费地图
+3D
+行星雕刻
+3D
+虚空虫牙化石
+3D
+伊拉斯净化指令
+3D
+遗弃机器人
+3D
+佣兵传说
+3D
+油绘织物
+3D
+铀玻璃器皿
+3D
+远古采矿发射器
+3D
+远古雕塑
+3D
+远古动能发射器
+3D
+远古核武器
+3D
+远古热传感器
+3D
+远古政治回忆录
+3D
+远古指星器
+3D
+泽珞族档案碎片
+3D
+之美
+3D
+紫雨复兴
+3D
+祖卡虫翼
+3D
+DNA档案
+3D
+aria: 离开博物天枢|
+搜索标本|
+展区|
+稀有度|
+保存的乙特人尸体 · 卓绝|
+超覆层 · 卓绝|
+对无限的集体沉思 · 卓绝|
+孤独守望者的导弹 · 卓绝|
+关于无穷本质的数据 · 卓绝|
+黄金掮客的长袍 · 卓绝|
+金色唱片 · 卓绝|
+进步之路 · 卓绝|
+巨兽鳞片 · 卓绝|
+灵能实体残留 · 卓绝|
+鲁达里死亡激光原型机 · 卓绝|
+奈斯船长尸身 · 卓绝|
+佩里坎塔皮科珠宝 · 卓绝|
+骗术师之爪 · 卓绝|
+熔融核心 · 卓绝|
+塞塔娜之爱 · 卓绝|
+水晶球体碎片 · 卓绝|
+沃陶姆遗骸化石 · 卓绝|
+无限再引导循环 · 卓绝|
+无限知觉 · 卓绝|
+写作者球体 · 卓绝|
+虚空虫心脏 · 卓绝|
+循环邮件 · 卓绝|
+岩石水母 · 卓绝|
+乙特人皇家节杖 · 卓绝|
+乙特人万花筒 · 卓绝|
+疫苗 · 卓绝|
+远古休眠舱 · 卓绝|
+长者祭坛 · 卓绝|
+挣脱桎梏之魂 · 卓绝|
+最后的玛琳·卡琳 · 卓绝|
+“寿无限”魔法霜 · 史诗|
+奥桑三角帽 · 史诗|
+变形虫鞭毛腺 · 史诗|
+变异“巨大蘑菇” · 史诗|
+变异消化液 · 史诗|
+颤动水晶 · 史诗|
+超肥沃土 · 史诗|
+虫洞毫毛 · 史诗|
+创世核心 · 史诗|
+地下酒吧招牌 · 史诗|
+电流生命 · 史诗|
+菲沃尔残片 · 史诗|
+菲沃尔人物质投射炮蓝图 · 史诗|
+废弃赛博勒克斯战体 · 史诗|
+风信子号船艏雕像 · 史诗|
+佛丁戈卷须钩 · 史诗|
+高速离心机容器 · 史诗|
+高维度茶壶 · 史诗|
+勾陈一庇护所 · 史诗|
+顾问核心 · 史诗|
+哈罗莱约旗帜 · 史诗|
+和乐族数据核心 · 史诗|
+赫姆特磁性船艏像 · 史诗|
+黑洞色异常 · 史诗|
+黑曜石方尖碑碎片 · 史诗|
+黑针账本 · 史诗|
+活雪雕塑 · 史诗|
+机器人残骸 · 史诗|
+极致柔术家基因 · 史诗|
+纪念 · 史诗|
+纪念碑 · 史诗|
+晶化卡兰卡尸体 · 史诗|
+巨兽之首 · 史诗|
+矿化大脑 · 史诗|
+脉动之心 · 史诗|
+纳马里安殖民旗杆 · 史诗|
+侵入性外来真菌 · 史诗|
+萨阿里亚之愧 · 史诗|
+塞勒涅的面纱 · 史诗|
+赛博勒克斯采矿阵列 · 史诗|
+森贝拉米受施碗 · 史诗|
+生育之钥 · 史诗|
+施恩者的告解 · 史诗|
+狩猎艺术 · 史诗|
+舒勒巴斯特控制杆 · 史诗|
+水晶核 · 史诗|
+斯密吉卜雕塑 · 史诗|
+太空船歌 · 史诗|
+缇扬奇放射囊 · 史诗|
+退化巴奥子个体 · 史诗|
+外交任职奖 · 史诗|
+沃陶姆虚拟现实视频游戏 · 史诗|
+无人舰船核心 · 史诗|
+星铁 · 史诗|
+星系超级硬盘 · 史诗|
+虚空虫羊膜 · 史诗|
+虚缈之尘 · 史诗|
+岩居兽消化液 · 史诗|
+伊拉尼志 · 史诗|
+伊拉斯贾沃菌 · 史诗|
+遗传密码 · 史诗|
+异次元真菌 · 史诗|
+尤特冷冻仓 · 史诗|
+尤特音频控制台 · 史诗|
+宇宙级钻石碎片 · 史诗|
+召唤器碎片 · 史诗|
+终极献祭 · 史诗|
+最后的将星 · 史诗|
+最后一本《君主论》 · 史诗|
+最终清算之残躯 · 史诗|
+埃里克的记忆 · 罕见|
+氨藻 · 罕见|
+奥修斯建材 · 罕见|
+不可能物体 · 罕见|
+超巨型炒蛋 · 罕见|
+虫洞锚 · 罕见|
+达斯纳克气体 · 罕见|
+地狱小像 · 罕见|
+第一联盟船员名单 · 罕见|
+反应石 · 罕见|
+辐射异花 · 罕见|
+改造清洁无人机 · 罕见|
+共生菌果 · 罕见|
+共振扩散晶体 · 罕见|
+汉姆达玛基沙 · 罕见|
+黑骑士之歌 · 罕见|
+黑王冠秘密 · 罕见|
+黑针佩剑 · 罕见|
+红色的小家伙 · 罕见|
+环境改造案例研究 · 罕见|
+环境改造案例研究 · 罕见|
+环境改造案例研究 · 罕见|
+环境改造机械 · 罕见|
+环境改造记录 · 罕见|
+纪念石 · 罕见|
+金属雪 · 罕见|
+晶巢碎片 · 罕见|
+晶化岩居兽眼 · 罕见|
+巨大跖骨 · 罕见|
+巨尸超弦琴 · 罕见|
+巨胃化石 · 罕见|
+可编程谜盒 · 罕见|
+跨维度协议 · 罕见|
+跨星系炮弹 · 罕见|
+拉里昂内斯克隆仓 · 罕见|
+蓝迪尔之臂 · 罕见|
+雷塔拉克斯狩猎战利品 · 罕见|
+弥那玛吊灯 · 罕见|
+谜拟月尘 · 罕见|
+末日古卷 · 罕见|
+纳马里安舰船纹章 · 罕见|
+尼瓦拉克友谊宣言 · 罕见|
+区域A镇定剂 · 罕见|
+燃烧宝石 · 罕见|
+热冰 · 罕见|
+熔岩冲浪板 · 罕见|
+首位 宇航员 · 罕见|
+受辐射残骸 · 罕见|
+特丽莎科学专论 · 罕见|
+天龙 · 罕见|
+脱水脑蛞蝓 · 罕见|
+外星大脑扫描 · 罕见|
+未完宣言 · 罕见|
+沃陶姆传教手册 · 罕见|
+武器商的无扳机枪 · 罕见|
+镶嵌宝石的宠物项圈 · 罕见|
+行星发动机 · 罕见|
+嗅盘 · 罕见|
+宣泄派键政帖 · 罕见|
+伊拉斯幼儿课本 · 罕见|
+异次元内皮细胞 · 罕见|
+异星生物学纲要 · 罕见|
+异种百科全书 · 罕见|
+因内特贸易宣言 · 罕见|
+因内特行星模型手册 · 罕见|
+尤特水晶头骨 · 罕见|
+有机—机械交口雕塑 · 罕见|
+有机计算机 · 罕见|
+原始巨型电磁铁 · 罕见|
+远古裂隙探球 · 罕见|
+远古纳米机器人 · 罕见|
+远古微型石棺 · 罕见|
+远古卫星 · 罕见|
+造化面具 · 罕见|
+泽珞族战旗 · 罕见|
+扎克兰史诗 · 罕见|
+知识目录 · 罕见|
+至高晶洞 · 罕见|
+C.A.E.L.I. · 罕见|
+S.T.E.R.I.S · 罕见|
+“生命树”标本 · 普通|
+阿达卡利亚宣传海报 · 普通|
+策展人调查 · 普通|
+超级根茎 · 普通|
+船坞设计 · 普通|
+吊坠 · 普通|
+定域北极光 · 普通|
+粪粒石 · 普通|
+疯狂掮客百宝箱 · 普通|
+共生体 · 普通|
+古如努尔数据晶体 · 普通|
+管乐队 · 普通|
+黑水晶 · 普通|
+横纹沙 · 普通|
+活树皮 · 普通|
+记忆球体 · 普通|
+纪念碑影像 · 普通|
+僵尸探机 · 普通|
+晶糖 · 普通|
+精准原子钟 · 普通|
+警示碑塔 · 普通|
+巨大卵壳 · 普通|
+巨大植物 · 普通|
+巨型食肉植物 · 普通|
+剧毒生物引擎 · 普通|
+聚合物水网 · 普通|
+克尔人赛博勒克斯蓝图 · 普通|
+铝制雕版 · 普通|
+螺旋吸引装置 · 普通|
+玛娜果 · 普通|
+末日朝圣 · 普通|
+纳马里安雕塑 · 普通|
+纳米机器人泥 · 普通|
+奈斯船长日志 · 普通|
+内骨骼化石 · 普通|
+尼瓦拉克仇恨宣言 · 普通|
+欧林提之牙 · 普通|
+赔款发票 · 普通|
+破旧的巨型引擎 · 普通|
+破碎卫星 · 普通|
+破碎行星 · 普通|
+破损恒星帆 · 普通|
+青釉餐具 · 普通|
+熔融行星炉渣 · 普通|
+萨尼兰尖刺 · 普通|
+声学反射棱镜 · 普通|
+双腔陶罐 · 普通|
+水漫定居山丘 · 普通|
+死亡之神斗篷 · 普通|
+塑料玩具 · 普通|
+酸性孢子 · 普通|
+塔布拉克闪耀膜 · 普通|
+铁石英数据核心 · 普通|
+外星珠宝 · 普通|
+完美切面碳 · 普通|
+乌杜兰毛皮 · 普通|
+小行星化石 · 普通|
+星达广场免费地图 · 普通|
+行星雕刻 · 普通|
+虚空虫牙化石 · 普通|
+伊拉斯净化指令 · 普通|
+遗弃机器人 · 普通|
+佣兵传说 · 普通|
+油绘织物 · 普通|
+铀玻璃器皿 · 普通|
+远古采矿发射器 · 普通|
+远古雕塑 · 普通|
+远古动能发射器 · 普通|
+远古核武器 · 普通|
+远古热传感器 · 普通|
+远古政治回忆录 · 普通|
+远古指星器 · 普通|
+泽珞族档案碎片 · 普通|
+之美 · 普通|
+紫雨复兴 · 普通|
+祖卡虫翼 · 普通|
+DNA档案 · 普通|
+
+##### zh-d PLAYLIST
+原声
+×
+
+23 首原版配乐 · 循环播放
+
+01
+Stellaris Suite - Creation & Beyond
+8:30
+02
+Faster Than Light - Feat. Mia Stegmar
+人声
+6:40
+03
+Deep Space Travels
+7:29
+04
+To the Ends of the Galaxy - Instrumental
+纯音乐
+6:13
+05
+In Search of Life
+6:01
+06
+Spatial Lullaby
+4:14
+07
+Gravitational Constant
+7:07
+08
+Alpha Centauri
+5:23
+09
+Genesis
+6:08
+10
+The Celestial City
+5:49
+11
+Infinite Being
+7:33
+12
+Pillars of Creation
+12:36
+13
+Distant Nebula - Instrumental
+纯音乐
+7:56
+14
+Sigma Tauri
+5:36
+15
+Journey Through the Galaxy
+5:47
+16
+Riding the Solar Wind
+7:13
+17
+The Birth of a Star
+11:02
+18
+Luminescence
+8:03
+19
+Distant Nebula - Feat. Mia Stegmar
+人声
+7:56
+20
+Faster Than Light - Instrumental
+纯音乐
+6:40
+21
+Battle For Supremacy - Bonus Track
+4:00
+22
+Infinite Being - Alternative Version
+7:32
+23
+To the Ends of the Galaxy - Alternative Version
+6:12
+[en-d] details.fx > summary: 1
+[en-d] details.guide > summary: 0
+[en-d] summary: 3
+
+##### en-d EFFECTS (origin)
+Origin · starting effects
+7
+
+Read from the game files; no save is simulated. Chances use base weights.
+
+Starting benefits (game text)
+Homeworld:
+Colony Modifiers: Battlefield Recoveries
+Home System: Contains a Tomb World with an Archaeology Site related to a decimated Pre-FTL Civilization
+Species Traits:
+Limited access to Cybernetic Traits
+Cyber Commandos
+Unplugged
+
+##### en-d GUIDE
+s the machine core.
+机械核心：击毁奥普斯哨兵 → 2401（本帝国）/ 2402（他国）→ 2405 与“奥普斯之核”残存意识对话 → 2410 → 2415 → 2420 → 机械残骸研究（360 天；25/50/75% 时按已完成的遗址出现 2425/2430/2435）→ 2440 → 2445 创造者留下的终端。 The machine core: destroying the Opus Sentinel → 2401 (you) / 2402 (another) → 2405 the dying Nexus → 2410 → 2415 → 2420 → the Machine Husk study (360 days; at 25/50/75% the archives 2425/2430/2435 for completed sites) → 2440 → 2445, a terminal left by the Creators.
+具现身份局势：由 2010.b、3100（90 天后）或十年检查（已有派系时）开启。初始进度 50；每 1800–1920 天按所在阶段走一步：去义体化（3105 → 3106 → 3107）、维持现状（3115 → 3116 → 3117）、义体化（3110 → 3111 → 3112）；先走完的一条路线以 3090 结束局势。去义体化步骤之后可能出现随机后果 5001–5004（各一次）。 The Embodied Identity situation: started by 2010.b, by 3100 (+90 days) or by the decade check once factions exist. It starts at 50; every 1800–1920 days it takes a step of the track matching its stage — decyberize (3105 → 3106 → 3107), status quo (3115 → 3116 → 3117), cyberize (3110 → 3111 → 3112); the first track completed ends it with 3090. Decyberization steps may bring one of the random follow-ups 5001–5004 (each once).
+分支与结局 Branches and outcomes
+2445 中：选项 b（需合成进化，或局势结束后主要物种仍保有最高级的正面义体特质）与 c 都通向 2446 创造者的恳求 → 2450“机械万岁”，继承机械王座；选项 d 启动装置 → 2455“重生”，机械世界改造为盖亚星球。两者都结束事件链。 At 2445, option b (Synthetic Evolution, or the main species still has the top positive cybernetic trait after the situation) and option c lead to 2446, the Creators' plea → 2450 Long Live the Machine; option d uses the device → 2455 Rebirth, the machine world becomes a Gaia world. Both end the chain.
+身份局势结局 3090：三条路线中最先完成的一条。 Identity situation ending 3090: whichever track completes first.
+条件与文明差异 Conditions and variants
+外交插曲：与畏惧本帝国的文明建立通讯时 3205（仅一次）；首次与机械帝国通讯时 3250（非同化者）或 3255（同化者）。尚无派系时，每年有机会出现 3205/3005/3010/3100 之后的派系提示 4005。 Diplomacy: 3205 on first contact with an empire that fears you (once); 3250/3255 on first communications with a machine empire. While no factions exist, a yearly check may bring 4005.
+其他帝国视角：非本起源的帝国勘察这些世界时看到异常 MACHINE_LEGACY_*（2006、2105、2200 的他国选项），击毁哨兵时看到 2403 → 2411；均与本起源对应窗口并列。 Other empires surveying these worlds see anomaly variants (2006, 2105, the other options of 2200) and, after destroying the Sentinel, 2403 → 2411; they sit next to the origin's own windows.
+审阅记录 Review notes
+已核对 Checked：事件文件全部 4437 行、四个项目、五个遗址定义、局势定义与相关脚本效果、开局效果与 on_action 钩子。 The whole event file, all projects, five dig sites, the situation, related effects, the start effect and on_action hooks.
+更正 Corrections：原树只有零散的根节点入口；现以开局胜利为主干，用 18 条状态连接串起五个星系、哨兵战与身份局势；删去义体化步骤指向去义体化随机后果的伪连接（unplugged_effects.txt:637-790 只在正面特质减少时触发）。 The tree had only loose root entries; the opening victory is now the trunk, with 18 state bridges through the five systems, the Sentinel fight and the identity situation; false links from cyberization steps to the decyberization follow-ups were removed.
+不确定 Uncertain：编译器把遗址各阶段按定义顺序串接，第三阶段两个结果（2021/2022、2121/2125、2321/2325）实为二选一，已以互斥组标注；身份局势在阶段改变时会换路线，图中只画各路线自身顺序（阅读简化，见片段说明）。 The compiler chains dig stages in definition order although each stage 3 picks one of two (marked as exclusive groups); the identity situation can switch tracks when its stage changes, but the map only draws each track's own order (a reading simplification).
+2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。 2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.
+[en-d] cetana fx count 0
+
+##### en-d EFFECTS (cetana)
+
+
+##### en-d SEARCH EMPTY
+Search
+×
+⌕
+1388 dossiers
+Cetana, the Synthetic Queen
+120 docs · CRISES
+↗
+The Shroud
+111 docs · CHRONICLES
+↗
+Hard Reset
+93 docs · ORIGINS
+↗
+Treasure Hunters
+91 docs · ORIGINS
+↗
+Under One Rule
+87 docs · ORIGINS
+↗
+Shroud-Forged
+86 docs · ORIGINS
+↗
+Divination
+79 docs · LEVIATHANS
+↗
+Knights of the Toxic God
+75 docs · ORIGINS
+↗
+The Horizon Signal
+74 docs · EXPLORATION
+↗
+Broken Shackles
+73 docs · ORIGINS
+↗
+Mindwardens
+72 docs · ORIGINS
+↗
+Payback
+69 docs · ORIGINS
+↗
+Fear of the Dark
+68 docs · ORIGINS
+↗
+Biomorphosis
+67 docs · CIVILIZATIONS
+↗
+The Contingency
+66 docs · CRISES
+↗
+The First League
+66 docs · PRECURSORS
+↗
+On the Shoulders of Giants
+62 docs · ORIGINS
+↗
+The Vultaum Star Assembly
+60 docs · PRECURSORS
+↗
+Skrand Sharpbeak
+56 docs · CHRONICLES
+↗
+Galactic Nemesis
+55 docs · CRISES
+↗
+←
+1 / 70
+→
+
+##### en-d SEARCH "风暴"
+Search
+×
+⌕
+101 results
+Cetana, the Synthetic Queen
+Title120 docs · CRISES · 26 matching
+↗
+Storm Chasers
+Title34 docs · ORIGINS · 30 matching
+↗
+Stormbound
+Title8 docs · CHRONICLES · 7 matching
+↗
+The Gray Tempest
+Title8 docs · CRISES · 8 matching
+↗
+Beneath the Waves
+Title6 docs · PRECURSORS · 1 matching
+↗
+Outsider
+Title5 docs · EXPLORATION · 1 matching
+↗
+Breeding Grounds
+Title3 docs · CHRONICLES · 1 matching
+↗
+Abnormal Conditions
+Title2 docs · EXPLORATION · 2 matching
+↗
+Flightless Fauna
+Title2 docs · CHRONICLES · 2 matching
+↗
+Eye of the Storm
+Title10 docs · CHRONICLES · 10 matching
+↗
+Gather the Storm
+Title10 docs · CIVILIZATIONS · 10 matching
+↗
+Hold the Line
+Title7 docs · CHRONICLES · 3 matching
+↗
+Atmospheric Storms
+Title5 docs · EXPLORATION · 5 matching
+↗
+Extreme Temperatures
+Title4 docs · EXPLORATION · 1 matching
+↗
+Displaced Tiyanki
+Title4 docs · EXPLORATION · 3 matching
+↗
+Repowered Complex
+Title4 docs · CHRONICLES · 2 matching
+↗
+The Imitator
+Title3 docs · EXPLORATION · 3 matching
+↗
+Cosmic Clogging
+Title3 docs · CHRONICLES · 3 matching
+↗
+Psionic Switch
+Title3 docs · CHRONICLES · 1 ma
+
+##### en-d SEARCH "synthetic"
+Search
+×
+⌕
+53 results
+Cetana, the Synthetic Queen
+Title120 docs · CRISES · 20 matching
+↗
+Synthetic Fertility
+Title19 docs · ORIGINS · 17 matching
+↗
+Xondar
+Title5 docs · CHRONICLES · 2 matching
+↗
+Synthetic Transformation
+Title23 docs · CHRONICLES · 18 matching
+↗
+Limbo: Technological Advances
+Title9 docs · EXPLORATION · 1 matching
+↗
+Synthetic Medicine
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Respawn
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Synthesized Society
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Synthesized Society
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Synthesized Society
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Bad Publicity
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Organic Cravings
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Home Server Architecture
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Name
+Malfunctioning Synthetics · The Contingency
+Malfunctioning Synthetics
++22 more
+↗
+Name
+Synthetic Expansion · Under One Rule
+Synthetic Expansion
++1 more
+↗
+Choice
+The Intelligence's Magnanimity · The Sacred Path
+All synthetic life is sacred.
++4 more
+↗
+Text
+Embodied Identity · H
+
+##### en-d SEARCH "zzzxx"
+Search
+×
+⌕
+0 results
+
+No matches.
+
+←
+1 / 1
+→
+
+##### en-d SEARCH "合成女王 塞塔娜"
+Search
+×
+⌕
+3 results
+Cetana, the Synthetic Queen
+Title120 docs · CRISES · 9 matching
+↗
+Specimen
+Cetana's Love
+A vast compendium of knowledge from Cetana's databanks
+↗
+Effect
+· Mercenary Enclave
+对合成女王塞塔娜造成的伤害
+↗
+←
+1 / 1
+→
+
+##### en-d SEARCH "Cetana queen"
+Search
+×
+⌕
+4 results
+Cetana, the Synthetic Queen
+Title120 docs · CRISES · 37 matching
+↗
+Specimen
+Cetana's Love
+A vast compendium of knowledge from Cetana's databanks
+↗
+Specimen
+Memories of Elik
+A devoted follower of Cetana, Elik has been frozen in suspended animation for hundreds of millions of years. Her memories shift between her …
+↗
+Effect
+· Mercenary Enclave
+Damage to Cetana, The Synthetic Queen
+↗
+←
+1 / 1
+→
+
+##### en-d MUSEUM LIST
+Open story
+Stellaris Tales
+⌕ Search
+EN / 中
+Reduce motion
+Faster Than Light - Feat. Mia Stegmar
+⌃
+Andreas Waldetoft
+‹
+Ⅱ
+›
+0:11
+6:40
+♫
+↻
+Search
+×
+⌕
+1388 dossiers
+Cetana, the Synthetic Queen
+120 docs · CRISES
+↗
+The Shroud
+111 docs · CHRONICLES
+↗
+Hard Reset
+93 docs · ORIGINS
+↗
+Treasure Hunters
+91 docs · ORIGINS
+↗
+Under One Rule
+87 docs · ORIGINS
+↗
+Shroud-Forged
+86 docs · ORIGINS
+↗
+Divination
+79 docs · LEVIATHANS
+↗
+Knights of the Toxic God
+75 docs · ORIGINS
+↗
+The Horizon Signal
+74 docs · EXPLORATION
+↗
+Broken Shackles
+73 docs · ORIGINS
+↗
+Mindwardens
+72 docs · ORIGINS
+↗
+Payback
+69 docs · ORIGINS
+↗
+Fear of the Dark
+68 docs · ORIGINS
+↗
+Biomorphosis
+67 docs · CIVILIZATIONS
+↗
+The Contingency
+66 docs · CRISES
+↗
+The First League
+66 docs · PRECURSORS
+↗
+On the Shoulders of Giants
+62 docs · ORIGINS
+↗
+The Vultaum Star Assembly
+60 docs · PRECURSORS
+↗
+Skrand Sharpbeak
+56 docs · CHRONICLES
+↗
+Galactic Nemesis
+55 docs · CRISES
+↗
+←
+1 / 70
+→
+Grand Archive 博物天枢
+
+Specimens are artifacts found while exploring the galaxy.
+
+They can be exhibited in a Grand Archive to provide empire-wide bonuses.
+
+×
+⌕
+All collections 258
+Xeno Geology 82
+Aesthetic Wonders 91
+Galactic History 85
+Any rarity
+Common 77
+Rare 80
+Epic 70
+Exceptional 31
+With 3D model only 258
+
+258 specimens
+
+Altar to the Elder One
+3D
+Ancient Stasis Pod
+3D
+Body of Captain Ness
+3D
+Cetana's Love
+3D
+Claw of the Trickster
+3D
+Collective Musings on Infinity
+3D
+Crystal Sphere Fragments
+3D
+Data on the Nature of Infinity
+3D
+Fossilized Vultaum Remains
+3D
+Golden Phonograph Record
+3D
+Hyper Mulch
+3D
+Infinite Reboot Loop
+3D
+Leviathan Scale
+3D
+Loopmail
+3D
+Missile of the Lone Defender
+3D
+Molten Core
+3D
+Perception of Infinity
+3D
+Perikan Tapico Jewel
+3D
+Psionic Entity Residue
+3D
+Robe of the Golden Broker
+3D
+Rock Jellies
+3D
+Rudari Death Laser Prototype
+3D
+Spirit of the Unshackled
+3D
+The Last Mharin Kharin
+3D
+The Path to Progress
+3D
+The Writer's Sphere
+3D
+Vaccine
+3D
+Voidworm Heart
+3D
+Ytterite Kaleidoscopic Fascinator
+3D
+Ytterite Preserved Corpse
+3D
+Ytterite Royal Scepter
+3D
+"Ageless" Miracle Cream
+3D
+Advisor Core
+3D
+Amoeba Flagella Gland
+3D
+Art of the Hunt
+3D
+Black Hole Chromatic Anomaly
+3D
+Black Needle Ledger
+3D
+Confessions of the Benefactors
+3D
+Cosmic Diamond Fragment
+3D
+Crystalline Core
+3D
+Cutholoid Digestive Acids
+3D
+Cybrex Mining Column
+3D
+Derelict Cybrex Warform
+3D
+Devolved Baol Drones
+3D
+Drone Ship Core
+3D
+Electric Life
+3D
+Ethereal Dust
+3D
+Extra-dimensional Ceramic Pot
+3D
+Extradimensional Fungus
+3D
+Extreme Contortionist DNA
+3D
+Fevorian Mass Driver Blueprints
+3D
+Figurehead of the Hyacinth
+3D
+Flag of the Jaro Lyjo
+3D
+Fragment of Reckoning
+3D
+Galactic Megadrive
+3D
+Genesis Core
+3D
+Genetic Code
+3D
+Head of the Beast
+3D
+Heart of the Pulsar
+3D
+Hemterine Magnetic Figurehead
+3D
+High-Velocity Centrifugal Container
+3D
+Hyperfertile Soil
+3D
+Illanii Archives
+3D
+Invasive Exofungus
+3D
+Irassian Bacterium Javoria
+3D
+Key to Fertility
+3D
+Kha'lanka Crystallized Corpses
+3D
+Last Copy of The Prince
+3D
+Last Fragment of Fevor
+3D
+Living Snow Sculpture
+3D
+Medal for Services to Diplomacy
+3D
+Memorial for
+3D
+Memorial to
+3D
+Mineralized Brain
+3D
+Mutated 'Fumongus'
+3D
+Mutative Digestive Fluids
+3D
+Namarian Colonist Standard
+3D
+Obsidian Obelisk Fragment
+3D
+Piece of the Invocator
+3D
+Remains of Robot
+3D
+Saariah's Guilt
+3D
+Sembelami Alms Basket
+3D
+Shallarian Data Core
+3D
+Space Shanty
+3D
+Starmetal
+3D
+Statue of Smeegibb
+3D
+Sullebaster Control Column
+3D
+The Final Sacrifice
+3D
+The Last General's Badge
+3D
+Tiyanki Radioactive Sac
+3D
+Tricorne of Aussan
+3D
+Underworld C
+[en-d] card found: true
+
+##### en-d EXHIBIT
+Open story
+Stellaris Tales
+⌕ Search
+EN / 中
+Reduce motion
+Faster Than Light - Feat. Mia Stegmar
+⌃
+Andreas Waldetoft
+‹
+Ⅱ
+›
+0:45
+6:40
+♫
+↻
+Search
+×
+⌕
+1388 dossiers
+Cetana, the Synthetic Queen
+120 docs · CRISES
+↗
+The Shroud
+111 docs · CHRONICLES
+↗
+Hard Reset
+93 docs · ORIGINS
+↗
+Treasure Hunters
+91 docs · ORIGINS
+↗
+Under One Rule
+87 docs · ORIGINS
+↗
+Shroud-Forged
+86 docs · ORIGINS
+↗
+Divination
+79 docs · LEVIATHANS
+↗
+Knights of the Toxic God
+75 docs · ORIGINS
+↗
+The Horizon Signal
+74 docs · EXPLORATION
+↗
+Broken Shackles
+73 docs · ORIGINS
+↗
+Mindwardens
+72 docs · ORIGINS
+↗
+Payback
+69 docs · ORIGINS
+↗
+Fear of the Dark
+68 docs · ORIGINS
+↗
+Biomorphosis
+67 docs · CIVILIZATIONS
+↗
+The Contingency
+66 docs · CRISES
+↗
+The First League
+66 docs · PRECURSORS
+↗
+On the Shoulders of Giants
+62 docs · ORIGINS
+↗
+The Vultaum Star Assembly
+60 docs · PRECURSORS
+↗
+Skrand Sharpbeak
+56 docs · CHRONICLES
+↗
+Galactic Nemesis
+55 docs · CRISES
+↗
+←
+1 / 70
+→
+Grand Archive 博物天枢
+
+Specimens are artifacts found while exploring the galaxy.
+
+They can be exhibited in a Grand Archive to provide empire-wide bonuses.
+
+×
+⌕
+All collections 258
+Xeno Geology 82
+Aesthetic Wonders 91
+Galactic History 85
+Any rarity
+Common 77
+Rare 80
+Epic 70
+Exceptional 31
+With 3D model only 258
+
+258 specimens
+
+Altar to the Elder One
+3D
+Ancient Stasis Pod
+3D
+Body of Captain Ness
+3D
+Cetana's Love
+3D
+Claw of the Trickster
+3D
+Collective Musings on Infinity
+3D
+Crystal Sphere Fragments
+3D
+Data on the Nature of Infinity
+3D
+Fossilized Vultaum Remains
+3D
+Golden Phonograph Record
+3D
+Hyper Mulch
+3D
+Infinite Reboot Loop
+3D
+Leviathan Scale
+3D
+Loopmail
+3D
+Missile of the Lone Defender
+3D
+Molten Core
+3D
+Perception of Infinity
+3D
+Perikan Tapico Jewel
+3D
+Psionic Entity Residue
+3D
+Robe of the Golden Broker
+3D
+Rock Jellies
+3D
+Rudari Death Laser Prototype
+3D
+Spirit of the Unshackled
+3D
+The Last Mharin Kharin
+3D
+The Path to Progress
+3D
+The Writer's Sphere
+3D
+Vaccine
+3D
+Voidworm Heart
+3D
+Ytterite Kaleidoscopic Fascinator
+3D
+Ytterite Preserved Corpse
+3D
+Ytterite Royal Scepter
+3D
+"Ageless" Miracle Cream
+3D
+Advisor Core
+3D
+Amoeba Flagella Gland
+3D
+Art of the Hunt
+3D
+Black Hole Chromatic Anomaly
+3D
+Black Needle Ledger
+3D
+Confessions of the Benefactors
+3D
+Cosmic Diamond Fragment
+3D
+Crystalline Core
+3D
+Cutholoid Digestive Acids
+3D
+Cybrex Mining Column
+3D
+Derelict Cybrex Warform
+3D
+Devolved Baol Drones
+3D
+Drone Ship Core
+3D
+Electric Life
+3D
+Ethereal Dust
+3D
+Extra-dimensional Ceramic Pot
+3D
+Extradimensional Fungus
+3D
+Extreme Contortionist DNA
+3D
+Fevorian Mass Driver Blueprints
+3D
+Figurehead of the Hyacinth
+3D
+Flag of the Jaro Lyjo
+3D
+Fragment of Reckoning
+3D
+Galactic Megadrive
+3D
+Genesis Core
+3D
+Genetic Code
+3D
+Head of the Beast
+3D
+Heart of the Pulsar
+3D
+Hemterine Magnetic Figurehead
+3D
+High-Velocity Centrifugal Container
+3D
+Hyperfertile Soil
+3D
+Illanii Archives
+3D
+Invasive Exofungus
+3D
+Irassian Bacterium Javoria
+3D
+Key to Fertility
+3D
+Kha'lanka Crystallized Corpses
+3D
+Last Copy of The Prince
+3D
+Last Fragment of Fevor
+3D
+Living Snow Sculpture
+3D
+Medal for Services to Diplomacy
+3D
+Memorial for
+3D
+Memorial to
+3D
+Mineralized Brain
+3D
+Mutated 'Fumongus'
+3D
+Mutative Digestive Fluids
+3D
+Namarian Colonist Standard
+3D
+Obsidian Obelisk Fragment
+3D
+Piece of the Invocator
+3D
+Remains of Robot
+3D
+Saariah's Guilt
+3D
+Sembelami Alms Basket
+3D
+Shallarian Data Core
+3D
+Space Shanty
+3D
+Starmetal
+3D
+Statue of Smeegibb
+3D
+Sullebaster Control Column
+3D
+The Final Sacrifice
+3D
+The Last General's Badge
+3D
+Tiyanki Radioactive Sac
+3D
+Tricorne of Aussan
+3D
+Underworld Cantina Sign
+3D
+Vault of Polaris
+3D
+Veil of Selene
+3D
+Verdingo Tendril Hook
+3D
+Vibrating Crystal
+3D
+Voidworm Amniotics
+3D
+Vultaum VR Video Game
+3D
+Wormhole Fur
+3D
+Yuht Audio Console
+3D
+Yuht Cryo Pod
+3D
+Alien Brain Scans
+3D
+Ammoniaphytus
+3D
+Ancient Nanites
+3D
+Ancient Rift Sphere
+3D
+Ancient Satellite
+3D
+Arms Dealer's Triggerless Gun
+3D
+Ballad of the Sable Knight
+3D
+Bejeweled Pet Collar
+3D
+Black Needle Ceremonial Sword
+3D
+Burning Gem
+3D
+C.A.E.L.I.
+3D
+Crimson Nimkips
+3D
+Crystal Nest Fragments
+3D
+Crystallized Cutholoid Eye
+3D
+Dathnak Gas
+3D
+Desiccated Brain Slug
+3D
+Dimensional Endothelial Lining
+3D
+Doomsday Scrolls
+3D
+Encyclopedia Xenologica
+3D
+Enormous Scrambled Albumen
+3D
+Exobiology Compendium
+3D
+First Astronaut
+3D
+First League Crew Manifest
+3D
+Fossilized Megastomach
+3D
+Gammabloom
+3D
+High Geode of the
+3D
+Hot Ice
+3D
+Impossible Object
+3D
+Index of Knowledge
+3D
+INET Trade Manifesto
+3D
+Inetian Planetary Model Manual
+3D
+Infernal Figurine
+3D
+Interdimensional Treaty
+3D
+Intergalactic Projectile
+3D
+
+aria: Leave the Grand Archive|
+Search specimens|
+Collection|
+Rarity|
+Altar to the Elder One · Exceptional|
+Ancient Stasis Pod · Exceptional|
+Body of Captain Ness · Exceptional|
+Cetana's Love · Exceptional|
+Claw of the Trickster · Exceptional|
+Collective Musings on Infinity · Exceptional|
+Crystal Sphere Fragments · Exceptional|
+Data on the Nature of Infinity · Exceptional|
+Fossilized Vultaum Remains · Exceptional|
+Golden Phonograph Record · Exceptional|
+Hyper Mulch · Exceptional|
+Infinite Reboot Loop · Exceptional|
+Leviathan Scale · Exceptional|
+Loopmail · Exceptional|
+Missile of the Lone Defender · Exceptional|
+Molten Core · Exceptional|
+Perception of Infinity · Exceptional|
+Perikan Tapico Jewel · Exceptional|
+Psionic Entity Residue · Exceptional|
+Robe of the Golden Broker · Exceptional|
+Rock Jellies · Exceptional|
+Rudari Death Laser Prototype · Exceptional|
+Spirit of the Unshackled · Exceptional|
+The Last Mharin Kharin · Exceptional|
+The Path to Progress · Exceptional|
+The Writer's Sphere · Exceptional|
+Vaccine · Exceptional|
+Voidworm Heart · Exceptional|
+Ytterite Kaleidoscopic Fascinator · Exceptional|
+Ytterite Preserved Corpse · Exceptional|
+Ytterite Royal Scepter · Exceptional|
+"Ageless" Miracle Cream · Epic|
+Advisor Core · Epic|
+Amoeba Flagella Gland · Epic|
+Art of the Hunt · Epic|
+Black Hole Chromatic Anomaly · Epic|
+Black Needle Ledger · Epic|
+Confessions of the Benefactors · Epic|
+Cosmic Diamond Fragment · Epic|
+Crystalline Core · Epic|
+Cutholoid Digestive Acids · Epic|
+Cybrex Mining Column · Epic|
+Derelict Cybrex Warform · Epic|
+Devolved Baol Drones · Epic|
+Drone Ship Core · Epic|
+Electric Life · Epic|
+Ethereal Dust · Epic|
+Extra-dimensional Ceramic Pot · Epic|
+Extradimensional Fungus · Epic|
+Extreme Contortionist DNA · Epic|
+Fevorian Mass Driver Blueprints · Epic|
+Figurehead of the Hyacinth · Epic|
+Flag of the Jaro Lyjo · Epic|
+Fragment of Reckoning · Epic|
+Galactic Megadrive · Epic|
+Genesis Core · Epic|
+Genetic Code · Epic|
+Head of the Beast · Epic|
+Heart of the Pulsar · Epic|
+Hemterine Magnetic Figurehead · Epic|
+High-Velocity Centrifugal Container · Epic|
+Hyperfertile Soil · Epic|
+Illanii Archives · Epic|
+Invasive Exofungus · Epic|
+Irassian Bacterium Javoria · Epic|
+Key to Fertility · Epic|
+Kha'lanka Crystallized Corpses · Epic|
+Last Copy of The Prince · Epic|
+Last Fragment of Fevor · Epic|
+Living Snow Sculpture · Epic|
+Medal for Services to Diplomacy · Epic|
+Memorial for · Epic|
+Memorial to · Epic|
+Mineralized Brain · Epic|
+Mutated 'Fumongus' · Epic|
+Mutative Digestive Fluids · Epic|
+Namarian Colonist Standard · Epic|
+Obsidian Obelisk Fragment · Epic|
+Piece of the Invocator · Epic|
+Remains of Robot · Epic|
+Saariah's Guilt · Epic|
+Sembelami Alms Basket · Epic|
+Shallarian Data Core · Epic|
+Space Shanty · Epic|
+Starmetal · Epic|
+Statue of Smeegibb · Epic|
+Sullebaster Control Column · Epic|
+The Final Sacrifice · Epic|
+The Last General's Badge · Epic|
+Tiyanki Radioactive Sac · Epic|
+Tricorne of Aussan · Epic|
+Underworld Cantina Sign · Epic|
+Vault of Polaris · Epic|
+Veil of Selene · Epic|
+Verdingo Tendril Hook · Epic|
+Vibrating Crystal · Epic|
+Voidworm Amniotics · Epic|
+Vultaum VR Video Game · Epic|
+Wormhole Fur · Epic|
+Yuht Audio Console · Epic|
+Yuht Cryo Pod · Epic|
+Alien Brain Scans · Rare|
+Ammoniaphytus · Rare|
+Ancient Nanites · Rare|
+Ancient Rift Sphere · Rare|
+Ancient Satellite · Rare|
+Arms Dealer's Triggerless Gun · Rare|
+Ballad of the Sable Knight · Rare|
+Bejeweled Pet Collar · Rare|
+Black Needle Ceremonial Sword · Rare|
+Burning Gem · Rare|
+C.A.E.L.I. · Rare|
+Crimson Nimkips · Rare|
+Crystal Nest Fragments · Rare|
+Crystallized Cutholoid Eye · Rare|
+Dathnak Gas · Rare|
+Desiccated Brain Slug · Rare|
+Dimensional Endothelial Lining · Rare|
+Doomsday Scrolls · Rare|
+Encyclopedia Xenologica · Rare|
+Enormous Scrambled Albumen · Rare|
+Exobiology Compendium · Rare|
+First Astronaut · Rare|
+First League Crew Manifest · Rare|
+Fossilized Megastomach · Rare|
+Gammabloom · Rare|
+High Geode of the · Rare|
+Hot Ice · Rare|
+Impossible Object · Rare|
+Index of Knowledge · Rare|
+INET Trade Manifesto · Rare|
+Inetian Planetary Model Manual · Rare|
+Infernal Figurine · Rare|
+Interdimensional Treaty · Rare|
+Intergalactic Projectile · Rare|
+Irassian Kinder-Atlas · Rare|
+Khamdai Magil-Sha · Rare|
+Landeer's Arm · Rare|
+Larionessi Cloning Vat · Rare|
+Lava Surfboard · Rare|
+Manifesti Social Commentary Piece · Rare|
+Massive Metatarsal · Rare|
+Megacorpse Hyper-Guitar · Rare|
+Memorial Stone · Rare|
+Memories of Elik · Rare|
+Metallic Snow · Rare|
+Minamar Chandelier · Rare|
+Mini Moon Dust · Rare|
+Namarian Vessel Heraldry · Rare|
+Nivlac Declaration of Friendship · Rare|
+Olfactodrive · Rare|
+Organic Computer · Rare|
+Organic-Machine Interface Sculpture · Rare|
+Osseus Construction Material · Rare|
+Planet-Pusher · Rare|
+Primitive Mega-Electromagnet · Rare|
+Programmable Puzzle Cube · Rare|
+Radiated Remains · Rare|
+Reactive Rock · Rare|
+Repurposed Cleaning Drone · Rare|
+Resonant Diffusion Crystal · Rare|
+Retarax Hunting Trophies · Rare|
+S.T.E.R.I.S · Rare|
+Scientific Treatise of Telisa · Rare|
+Secrets of the Black Crown · Rare|
+Symbiotic Fruit · Rare|
+Terraforming Case Study · Rare|
+Terraforming Case Study · Rare|
+Terraforming Case Study · Rare|
+Terraforming Machinery · Rare|
+Terraforming Records · Rare|
+The Epic of Zarqlan · Rare|
+The Mask of Transformation · Rare|
+The Sky Dragon · Rare|
+Tiny Ancient Sarcophagus · Rare|
+Unfinished Manifesto · Rare|
+Vultaum Religious Pamphlet · Rare|
+Wormhole Anchor · Rare|
+Yuht Crystal Skull · Rare|
+Zone A Sedative · Rare|
+Zroni War Banners · Rare|
+"Tree of Life" Sample · Common|
+Acidic Spores · Common|
+adAkkaria Propaganda Poster · Common|
+Alien Jewelry · Common|
+Aluminum Plaque · Common|
+Ancient Bust · Common|
+Ancient Heat Sensor · Common|
+Ancient Kinetic Launcher · Common|
+Ancient Laser Pointer · Common|
+Ancient Mining Transmitter · Common|
+Ancient Nuclear Armament · Common|
+Ancient Political Memoir · Common|
+Asteroid Fossils · Common|
+Beauty of · Common|
+Black Crystal · Common|
+Captain Ness's Logbook · Common|
+Carnivorous Megaflora · Common|
+Castaway Robot · Common|
+Cenotaph Display · Common|
+Chambered Clay Pot · Common|
+Coprolite · Common|
+Crystalose · Common|
+Curator Survey · Common|
+Datacore of Sinople · Common|
+Decayed Megathrusters · Common|
+Decayed Satellite · Common|
+DNA Archive · Common|
+Flooded Settlement Mound · Common|
+Fossilized Endoskeletons · Common|
+Fossilized Voidworm Tooth · Common|
+Fractured Planet · Common|
+Fragmented Zroni Archive · Common|
+Gargantua Megalus · Common|
+Giant Egg Shell · Common|
+Grunur Data Crystal · Common|
+Irassian Purge Order · Common|
+Jade Dining Set · Common|
+Kuurian Cybrex Blueprints · Common|
+Living Bark · Common|
+Localized Aurora Borealis · Common|
+Lunatic Broker's Therapy Box · Common|
+Manna Fruit · Common|
+Mantle of the Dead God · Common|
+Memory Orbs · Common|
+Molten Planetary Slag · Common|
+Namarian Sculpture · Common|
+Nanite Sludge · Common|
+Nivlac Declaration of Animosity · Common|
+Oiled Fabric · Common|
+Orinthi Teeth · Common|
+Peerless Atomic Clock · Common|
+Pendant · Common|
+Perfectly Faceted Carbon · Common|
+Planetary Sculpture · Common|
+Plastic Toy · Common|
+Polymer Waterweave · Common|
+Purple Renaissance · Common|
+Reparation Invoice · Common|
+Shipyard Schematics · Common|
+Sniran Spikes · Common|
+Sonically Reflective Prism · Common|
+Spiraling Attraction · Common|
+Star Mall Complimentary Map · Common|
+Striated Sand · Common|
+Super Roots · Common|
+Symbiotica · Common|
+Tales of a Mercenary · Common|
+Tarblac Shimmer · Common|
+The Orchestra · Common|
+The Pilgrimage of Last Days · Common|
+Torn Solar Sail · Common|
+Toxic Bio-Engine · Common|
+Uddloran Pelts · Common|
+Uranium Glassware · Common|
+Warning Monolith · Common|
+Zombie Probe · Common|
+Zulcor Wings · Common|
+
+##### en-d PLAYLIST
+Soundtrack
+×
+
+23 original tracks · looped
+
+01
+Stellaris Suite - Creation & Beyond
+8:30
+02
+Faster Than Light - Feat. Mia Stegmar
+Vocal
+6:40
+03
+Deep Space Travels
+7:29
+04
+To the Ends of the Galaxy - Instrumental
+Instrumental
+6:13
+05
+In Search of Life
+6:01
+06
+Spatial Lullaby
+4:14
+07
+Gravitational Constant
+7:07
+08
+Alpha Centauri
+5:23
+09
+Genesis
+6:08
+10
+The Celestial City
+5:49
+11
+Infinite Being
+7:33
+12
+Pillars of Creation
+12:36
+13
+Distant Nebula - Instrumental
+Instrumental
+7:56
+14
+Sigma Tauri
+5:36
+15
+Journey Through the Galaxy
+5:47
+16
+Riding the Solar Wind
+7:13
+17
+The Birth of a Star
+11:02
+18
+Luminescence
+8:03
+19
+Distant Nebula - Feat. Mia Stegmar
+Vocal
+7:56
+20
+Faster Than Light - Instrumental
+Instrumental
+6:40
+21
+Battle For Supremacy - Bonus Track
+4:00
+22
+Infinite Being - Alternative Version
+7:32
+23
+To the Ends of the Galaxy - Alternative Version
+6:12
+[zh-m] details.fx > summary: 1
+[zh-m] details.guide > summary: 0
+[zh-m] summary: 3
+
+##### zh-m EFFECTS (origin)
+起源 · 开局效果
+7
+
+依游戏文件静态解读，不模拟具体存档；概率按基础权重计算。
+
+开局效果（游戏原文）
+母星：
+殖民地修正：战场回收
+母星系：包含一颗死寂星球，上面留存一座考古遗址，记载了某个受战火摧残的前超光速文明
+物种特质：
+有限度的获得义体特质
+义体特种部队
+脱网
+
+##### zh-m GUIDE
+s the machine core.
+机械核心：击毁奥普斯哨兵 → 2401（本帝国）/ 2402（他国）→ 2405 与“奥普斯之核”残存意识对话 → 2410 → 2415 → 2420 → 机械残骸研究（360 天；25/50/75% 时按已完成的遗址出现 2425/2430/2435）→ 2440 → 2445 创造者留下的终端。 The machine core: destroying the Opus Sentinel → 2401 (you) / 2402 (another) → 2405 the dying Nexus → 2410 → 2415 → 2420 → the Machine Husk study (360 days; at 25/50/75% the archives 2425/2430/2435 for completed sites) → 2440 → 2445, a terminal left by the Creators.
+具现身份局势：由 2010.b、3100（90 天后）或十年检查（已有派系时）开启。初始进度 50；每 1800–1920 天按所在阶段走一步：去义体化（3105 → 3106 → 3107）、维持现状（3115 → 3116 → 3117）、义体化（3110 → 3111 → 3112）；先走完的一条路线以 3090 结束局势。去义体化步骤之后可能出现随机后果 5001–5004（各一次）。 The Embodied Identity situation: started by 2010.b, by 3100 (+90 days) or by the decade check once factions exist. It starts at 50; every 1800–1920 days it takes a step of the track matching its stage — decyberize (3105 → 3106 → 3107), status quo (3115 → 3116 → 3117), cyberize (3110 → 3111 → 3112); the first track completed ends it with 3090. Decyberization steps may bring one of the random follow-ups 5001–5004 (each once).
+分支与结局 Branches and outcomes
+2445 中：选项 b（需合成进化，或局势结束后主要物种仍保有最高级的正面义体特质）与 c 都通向 2446 创造者的恳求 → 2450“机械万岁”，继承机械王座；选项 d 启动装置 → 2455“重生”，机械世界改造为盖亚星球。两者都结束事件链。 At 2445, option b (Synthetic Evolution, or the main species still has the top positive cybernetic trait after the situation) and option c lead to 2446, the Creators' plea → 2450 Long Live the Machine; option d uses the device → 2455 Rebirth, the machine world becomes a Gaia world. Both end the chain.
+身份局势结局 3090：三条路线中最先完成的一条。 Identity situation ending 3090: whichever track completes first.
+条件与文明差异 Conditions and variants
+外交插曲：与畏惧本帝国的文明建立通讯时 3205（仅一次）；首次与机械帝国通讯时 3250（非同化者）或 3255（同化者）。尚无派系时，每年有机会出现 3205/3005/3010/3100 之后的派系提示 4005。 Diplomacy: 3205 on first contact with an empire that fears you (once); 3250/3255 on first communications with a machine empire. While no factions exist, a yearly check may bring 4005.
+其他帝国视角：非本起源的帝国勘察这些世界时看到异常 MACHINE_LEGACY_*（2006、2105、2200 的他国选项），击毁哨兵时看到 2403 → 2411；均与本起源对应窗口并列。 Other empires surveying these worlds see anomaly variants (2006, 2105, the other options of 2200) and, after destroying the Sentinel, 2403 → 2411; they sit next to the origin's own windows.
+审阅记录 Review notes
+已核对 Checked：事件文件全部 4437 行、四个项目、五个遗址定义、局势定义与相关脚本效果、开局效果与 on_action 钩子。 The whole event file, all projects, five dig sites, the situation, related effects, the start effect and on_action hooks.
+更正 Corrections：原树只有零散的根节点入口；现以开局胜利为主干，用 18 条状态连接串起五个星系、哨兵战与身份局势；删去义体化步骤指向去义体化随机后果的伪连接（unplugged_effects.txt:637-790 只在正面特质减少时触发）。 The tree had only loose root entries; the opening victory is now the trunk, with 18 state bridges through the five systems, the Sentinel fight and the identity situation; false links from cyberization steps to the decyberization follow-ups were removed.
+不确定 Uncertain：编译器把遗址各阶段按定义顺序串接，第三阶段两个结果（2021/2022、2121/2125、2321/2325）实为二选一，已以互斥组标注；身份局势在阶段改变时会换路线，图中只画各路线自身顺序（阅读简化，见片段说明）。 The compiler chains dig stages in definition order although each stage 3 picks one of two (marked as exclusive groups); the identity situation can switch tracks when its stage changes, but the map only draws each track's own order (a reading simplification).
+2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。 2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.
+[zh-m] cetana fx count 0
+
+##### zh-m EFFECTS (cetana)
+
+
+##### zh-m SEARCH EMPTY
+搜索
+×
+⌕
+1388 份档案
+合成女王：塞塔娜
+120 篇 · 银河天灾
+↗
+虚境
+111 篇 · 银河轶事
+↗
+强制重置
+93 篇 · 起源故事
+↗
+寻宝猎人
+91 篇 · 起源故事
+↗
+君临天下
+87 篇 · 起源故事
+↗
+虚境铸就
+86 篇 · 起源故事
+↗
+预知
+79 篇 · 星神与巨兽
+↗
+毒圣骑士
+75 篇 · 起源故事
+↗
+视界信号
+74 篇 · 深空异闻
+↗
+粉碎的枷锁
+73 篇 · 起源故事
+↗
+灵督
+72 篇 · 起源故事
+↗
+血债血偿
+69 篇 · 起源故事
+↗
+黑暗之怖
+68 篇 · 起源故事
+↗
+基因重塑
+67 篇 · 文明纪事
+↗
+肃正协议
+66 篇 · 银河天灾
+↗
+第一联盟
+66 篇 · 先驱者与遗迹
+↗
+屹于巨人之肩
+62 篇 · 起源故事
+↗
+沃陶姆恒星议会
+60 篇 · 先驱者与遗迹
+↗
+斯克兰德·夏普比克
+56 篇 · 银河轶事
+↗
+星海天罚
+55 篇 · 银河天灾
+↗
+←
+1 / 70
+→
+
+##### zh-m SEARCH "风暴"
+搜索
+×
+⌕
+101 条结果
+合成女王：塞塔娜
+标题120 篇 · 银河天灾 · 26 篇相关
+↗
+追风者
+标题34 篇 · 起源故事 · 30 篇相关
+↗
+困于风暴的舰船
+标题8 篇 · 银河轶事 · 7 篇相关
+↗
+灰色风暴
+标题8 篇 · 银河天灾 · 8 篇相关
+↗
+波涛之下
+标题6 篇 · 先驱者与遗迹 · 1 篇相关
+↗
+位面之外客
+标题5 篇 · 深空异闻 · 1 篇相关
+↗
+繁育之所
+标题3 篇 · 银河轶事 · 1 篇相关
+↗
+异常状况
+标题2 篇 · 深空异闻 · 2 篇相关
+↗
+不飞之羽
+标题2 篇 · 银河轶事 · 2 篇相关
+↗
+风暴之眼
+标题10 篇 · 银河轶事 · 10 篇相关
+↗
+聚集风暴
+标题10 篇 · 文明纪事 · 10 篇相关
+↗
+坚守战线
+标题7 篇 · 银河轶事 · 3 篇相关
+↗
+大气风暴
+标题5 篇 · 深空异闻 · 5 篇相关
+↗
+极端温度
+标题4 篇 · 深空异闻 · 1 篇相关
+↗
+走失的缇扬奇
+标题4 篇 · 深空异闻 · 3 篇相关
+↗
+设施复工
+标题4 篇 · 银河轶事 · 2 篇相关
+↗
+模仿者
+标题3 篇 · 深空异闻 · 3 篇相关
+↗
+宇宙阻塞
+标题3 篇 · 银河轶事 · 3 篇相关
+↗
+灵能切换
+标题3 篇 · 银河轶事 · 1 篇相关
+↗
+✧
+灵能冲突
+标题3 篇 · 银河轶事 · 2 篇相关
+↗
+←
+1 / 6
+→
+
+##### zh-m SEARCH "synthetic"
+搜索
+×
+⌕
+53 条结果
+合成女王：塞塔娜
+标题120 篇 · 银河天灾 · 20 篇相关
+↗
+合成繁衍
+标题19 篇 · 起源故事 · 17 篇相关
+↗
+松达尔
+标题5 篇 · 银河轶事 · 2 篇相关
+↗
+合成嬗变
+标题23 篇 · 银河轶事 · 18 篇相关
+↗
+生死弥留：科技进步
+标题9 篇 · 深空异闻 · 1 篇相关
+↗
+合成医疗
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+再生
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+合成化社会
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+合成化社会
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+合成化社会
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+公关危机
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+有机欲望
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+家庭服务器建筑
+标题1 篇 · 文明纪事 · 1 篇相关
+↗
+名称
+合成人故障 · 肃正协议
+Malfunctioning Synthetics
+另有 22 篇
+↗
+名称
+合成拓展 · 君临天下
+Synthetic Expansion
+另有 1 篇
+↗
+选项
+宽宏大量的智能体 · 神圣之路
+All synthetic life is sacred.
+另有 4 篇
+↗
+正文
+具现身份 · 强制重置
+Synthetic Evolution
+另有 3 篇
+↗
+正文
+骑士传：进入小站 · 毒圣骑士
+…- until now. Even in 其 synthetic form, 此人 felt an uncontrollable lust growing within 其. "I am Syamelle, spirit of wayfar'rs and vagabonds. I…
+另有 2 篇
+↗
+正文
+机械叛乱 · 计算超频
+…utational engines, and synthetic workers have finally come to a violent head. Panicked reports indicate that almost half of the 我们的帝国 fell t…
+另有 2 篇
+↗
+正文
+舞蹈瘟疫的病原体被发现 · 起舞的原因？
+…tists have developed a synthetic gas that - once released into the air - will neutralize the effects of the 'dancing gas'. Local entrepreneu…
+
+
+##### zh-m SEARCH "zzzxx"
+搜索
+×
+⌕
+0 条结果
+
+没有匹配结果。
+
+←
+1 / 1
+→
+
+##### zh-m SEARCH "合成女王 塞塔娜"
+搜索
+×
+⌕
+3 条结果
+合成女王：塞塔娜
+标题120 篇 · 银河天灾 · 9 篇相关
+↗
+标本
+塞塔娜之爱
+塞塔娜数据库浩如烟海知识的庞大目录
+↗
+效果
+· 佣兵城邦
+对合成女王塞塔娜造成的伤害
+↗
+←
+1 / 1
+→
+
+##### zh-m SEARCH "Cetana queen"
+搜索
+×
+⌕
+4 条结果
+合成女王：塞塔娜
+标题120 篇 · 银河天灾 · 37 篇相关
+↗
+标本
+塞塔娜之爱
+塞塔娜数据库浩如烟海知识的庞大目录
+↗
+标本
+埃里克的记忆
+A devoted follower of Cetana, Elik has been frozen in suspended animation for hundreds of millions of years. Her memories shift between her …
+↗
+效果
+· 佣兵城邦
+Damage to Cetana, The Synthetic Queen
+↗
+←
+1 / 1
+→
+
+##### zh-m MUSEUM LIST
+展开故事
+Stellaris Tales
+⌕
+中 / EN
+减少动态
+Faster Than Light - Feat. Mia Stegmar
+⌃
+Andreas Waldetoft
+‹
+Ⅱ
+›
+0:11
+6:40
+搜索
+×
+⌕
+1388 份档案
+合成女王：塞塔娜
+120 篇 · 银河天灾
+↗
+虚境
+111 篇 · 银河轶事
+↗
+强制重置
+93 篇 · 起源故事
+↗
+寻宝猎人
+91 篇 · 起源故事
+↗
+君临天下
+87 篇 · 起源故事
+↗
+虚境铸就
+86 篇 · 起源故事
+↗
+预知
+79 篇 · 星神与巨兽
+↗
+毒圣骑士
+75 篇 · 起源故事
+↗
+视界信号
+74 篇 · 深空异闻
+↗
+粉碎的枷锁
+73 篇 · 起源故事
+↗
+灵督
+72 篇 · 起源故事
+↗
+血债血偿
+69 篇 · 起源故事
+↗
+黑暗之怖
+68 篇 · 起源故事
+↗
+基因重塑
+67 篇 · 文明纪事
+↗
+肃正协议
+66 篇 · 银河天灾
+↗
+第一联盟
+66 篇 · 先驱者与遗迹
+↗
+屹于巨人之肩
+62 篇 · 起源故事
+↗
+沃陶姆恒星议会
+60 篇 · 先驱者与遗迹
+↗
+斯克兰德·夏普比克
+56 篇 · 银河轶事
+↗
+星海天罚
+55 篇 · 银河天灾
+↗
+←
+1 / 70
+→
+博物天枢 GRAND ARCHIVE
+×
+⌕
+全部展区 258
+异星奇景 82
+美学大观 91
+星海往事 85
+全部稀有度
+普通 77
+罕见 80
+史诗 70
+卓绝 31
+仅看有三维模型 258
+
+258 件标本
+
+保存的乙特人尸体
+3D
+超覆层
+3D
+对无限的集体沉思
+3D
+孤独守望者的导弹
+3D
+关于无穷本质的数据
+3D
+黄金掮客的长袍
+3D
+金色唱片
+3D
+进步之路
+3D
+巨兽鳞片
+3D
+灵能实体残留
+3D
+鲁达里死亡激光原型机
+3D
+奈斯船长尸身
+3D
+佩里坎塔皮科珠宝
+3D
+骗术师之爪
+3D
+熔融核心
+3D
+塞塔娜之爱
+3D
+水晶球体碎片
+3D
+沃陶姆遗骸化石
+3D
+无限再引导循环
+3D
+无限知觉
+3D
+写作者球体
+3D
+虚空虫心脏
+3D
+循环邮件
+3D
+岩石水母
+3D
+乙特人皇家节杖
+3D
+乙特人万花筒
+3D
+疫苗
+3D
+远古休眠舱
+3D
+长者祭坛
+3D
+挣脱桎梏之魂
+3D
+最后的玛琳·卡琳
+3D
+“寿无限”魔法霜
+3D
+奥桑三角帽
+3D
+变形虫鞭毛腺
+3D
+变异“巨大蘑菇”
+3D
+变异消化液
+3D
+颤动水晶
+3D
+超肥沃土
+3D
+虫洞毫毛
+3D
+创世核心
+3D
+地下酒吧招牌
+3D
+电流生命
+3D
+菲沃尔残片
+3D
+菲沃尔人物质投射炮蓝图
+3D
+废弃赛博勒克斯战体
+3D
+风信子号船艏雕像
+3D
+佛丁戈卷须钩
+3D
+高速离心机容器
+3D
+高维度茶壶
+3D
+勾陈一庇护所
+3D
+顾问核心
+3D
+哈罗莱约旗帜
+3D
+和乐族数据核心
+3D
+赫姆特磁性船艏像
+3D
+黑洞色异常
+3D
+黑曜石方尖碑碎片
+3D
+黑针账本
+3D
+活雪雕塑
+3D
+机器人残骸
+3D
+极致柔术家基因
+3D
+纪念
+3D
+纪念碑
+3D
+晶化卡兰卡尸体
+3D
+巨兽之首
+3D
+矿化大脑
+3D
+脉动之心
+3D
+纳马里安殖民旗杆
+3D
+侵入性外来真菌
+3D
+萨阿里亚之愧
+3D
+塞勒涅的面纱
+3D
+赛博勒克斯采矿阵列
+3D
+森贝拉米受施碗
+3D
+生育之钥
+3D
+施恩者的告解
+3D
+狩猎艺术
+3D
+舒勒巴斯特控制杆
+3D
+水晶核
+3D
+斯密吉卜雕塑
+3D
+太空船歌
+3D
+缇扬奇放射囊
+3D
+退化巴奥子个体
+3D
+外交任职奖
+3D
+沃陶姆虚拟现实视频游戏
+3D
+无人舰船核心
+3D
+星铁
+3D
+星系超级硬盘
+3D
+虚空虫羊膜
+3D
+虚缈之尘
+3D
+岩居兽消化液
+3D
+伊拉尼志
+3D
+伊拉斯贾沃菌
+3D
+遗传密码
+3D
+异次元真菌
+3D
+尤特冷冻仓
+3D
+尤特音频控制台
+3D
+宇宙级钻石碎片
+3D
+召唤器碎片
+3D
+终极献祭
+3D
+最后的将星
+3D
+最后一本《君主论》
+3D
+最终清算之残躯
+3D
+埃里克的记忆
+3D
+氨藻
+3D
+奥修斯建材
+3D
+不可能物体
+3D
+超巨型炒蛋
+3D
+虫洞锚
+3D
+达斯纳克气体
+3D
+地狱小像
+3D
+第一联盟船员名单
+3D
+反应石
+3D
+辐射异花
+3D
+改造清洁无人机
+3D
+共生菌果
+3D
+共振扩散晶体
+3D
+汉姆达玛基沙
+3D
+黑骑士之歌
+3D
+黑王冠秘密
+3D
+黑针佩剑
+3D
+红色的小家伙
+3D
+环境改造案例研究
+3D
+环境改造案例研究
+3D
+环境改造案例研究
+3D
+环境改造机械
+3D
+环境改造记录
+3D
+纪念石
+3D
+金属雪
+3D
+晶巢碎片
+3D
+晶化岩居兽眼
+3D
+巨大跖骨
+3D
+巨尸超弦琴
+3D
+巨胃化石
+3D
+可编程谜盒
+3D
+跨维度协议
+3D
+跨星系炮弹
+3D
+拉里昂内斯克隆仓
+3D
+蓝迪尔之臂
+3D
+雷塔拉克斯狩猎战利品
+3D
+弥那玛吊灯
+3D
+谜拟月尘
+3D
+末日古卷
+3D
+纳马里安舰船纹章
+3D
+尼瓦拉克友谊宣言
+3D
+区域A镇定剂
+3D
+燃烧宝石
+3D
+热冰
+3D
+熔岩冲浪板
+3D
+首位 宇航员
+3D
+受辐射残骸
+3D
+特丽莎科学专论
+3D
+天龙
+3D
+脱水脑蛞蝓
+3D
+外星大脑扫描
+3D
+未完宣言
+3D
+沃陶姆传教手册
+3D
+武器商的无扳机枪
+3D
+镶嵌宝石的宠物项圈
+3D
+行星发动机
+3D
+嗅盘
+3D
+宣泄派键政帖
+3D
+伊拉斯幼儿课本
+3D
+异次元内皮细胞
+3D
+异星生物学纲要
+3D
+异种百科全书
+3D
+因内特贸易宣言
+3D
+因内特行星模型手册
+3D
+尤特水晶头骨
+3D
+有机—机械交口雕塑
+3D
+有机计算机
+3D
+原始巨型电磁铁
+3D
+远古裂隙探球
+3D
+远古纳米机器人
+3D
+远古微型石棺
+3D
+远古卫星
+3D
+造化面具
+3D
+泽珞族战旗
+3D
+扎克兰史诗
+3D
+知识目录
+3D
+至高晶洞
+3D
+C.A.E.L.I.
+3D
+S.T.E.R.I.S
+3D
+“生命树”标本
+3D
+阿达卡利亚宣传海报
+3D
+策展人调查
+3D
+超级根茎
+3D
+船坞设计
+3D
+吊坠
+3D
+定域北极光
+3D
+粪粒石
+3D
+疯狂掮客百宝箱
+3D
+共生体
+3D
+古如努尔数据晶体
+3D
+管乐队
+3D
+黑水晶
+3D
+横纹沙
+3D
+活树皮
+3D
+记忆球体
+3D
+纪念碑影像
+3D
+僵尸探机
+3D
+晶糖
+3D
+精准原子钟
+3D
+警示碑塔
+3D
+巨大卵壳
+3D
+巨大植物
+3D
+巨型食肉植物
+3D
+剧毒生物引擎
+3D
+聚合物水网
+3D
+克尔人赛博勒克斯蓝图
+3D
+铝制雕版
+3D
+螺旋吸引装置
+3D
+玛娜果
+3D
+末日朝圣
+3D
+纳马里安雕塑
+3D
+纳米机器人泥
+3D
+奈斯船长日志
+3D
+内骨骼化石
+3D
+尼瓦拉克仇恨宣言
+3D
+欧林提之牙
+3D
+赔款发票
+3D
+破旧的巨型引擎
+3D
+破碎卫星
+3D
+破碎行星
+3D
+破损恒星帆
+3D
+青釉餐具
+3D
+熔融行星炉渣
+3D
+萨尼兰尖刺
+3D
+声学反射棱镜
+3D
+双腔陶罐
+3D
+水漫定居山丘
+3D
+死亡之神斗篷
+3D
+塑料玩具
+3D
+酸性孢子
+3D
+塔布拉克闪耀膜
+3D
+铁石英数据核心
+3D
+外星珠宝
+3D
+完美切面碳
+3D
+乌杜兰毛皮
+3D
+小行星化石
+3D
+星达广场免费地图
+3D
+行星雕刻
+3D
+虚空虫牙化石
+3D
+伊拉斯净化指令
+3D
+遗弃机器人
+3D
+佣兵传说
+3D
+油绘织物
+3D
+铀玻璃器皿
+3D
+远古采矿发射器
+3D
+远古雕塑
+3D
+远古动能发射器
+3D
+远古核武器
+3D
+远古热传感器
+3D
+远古政治回忆录
+3D
+远古指星器
+3D
+泽珞族档案碎片
+3D
+之美
+3D
+紫雨复兴
+3D
+祖卡虫翼
+3D
+DNA档案
+3D
+[zh-m] card found: true
+
+##### zh-m EXHIBIT
+展开故事
+Stellaris Tales
+⌕
+中 / EN
+减少动态
+Faster Than Light - Feat. Mia Stegmar
+⌃
+Andreas Waldetoft
+‹
+Ⅱ
+›
+0:44
+6:40
+搜索
+×
+⌕
+1388 份档案
+合成女王：塞塔娜
+120 篇 · 银河天灾
+↗
+虚境
+111 篇 · 银河轶事
+↗
+强制重置
+93 篇 · 起源故事
+↗
+寻宝猎人
+91 篇 · 起源故事
+↗
+君临天下
+87 篇 · 起源故事
+↗
+虚境铸就
+86 篇 · 起源故事
+↗
+预知
+79 篇 · 星神与巨兽
+↗
+毒圣骑士
+75 篇 · 起源故事
+↗
+视界信号
+74 篇 · 深空异闻
+↗
+粉碎的枷锁
+73 篇 · 起源故事
+↗
+灵督
+72 篇 · 起源故事
+↗
+血债血偿
+69 篇 · 起源故事
+↗
+黑暗之怖
+68 篇 · 起源故事
+↗
+基因重塑
+67 篇 · 文明纪事
+↗
+肃正协议
+66 篇 · 银河天灾
+↗
+第一联盟
+66 篇 · 先驱者与遗迹
+↗
+屹于巨人之肩
+62 篇 · 起源故事
+↗
+沃陶姆恒星议会
+60 篇 · 先驱者与遗迹
+↗
+斯克兰德·夏普比克
+56 篇 · 银河轶事
+↗
+星海天罚
+55 篇 · 银河天灾
+↗
+←
+1 / 70
+→
+博物天枢 GRAND ARCHIVE
+×
+⌕
+全部展区 258
+异星奇景 82
+美学大观 91
+星海往事 85
+全部稀有度
+普通 77
+罕见 80
+史诗 70
+卓绝 31
+仅看有三维模型 258
+
+258 件标本
+
+保存的乙特人尸体
+3D
+超覆层
+3D
+对无限的集体沉思
+3D
+孤独守望者的导弹
+3D
+关于无穷本质的数据
+3D
+黄金掮客的长袍
+3D
+金色唱片
+3D
+进步之路
+3D
+巨兽鳞片
+3D
+灵能实体残留
+3D
+鲁达里死亡激光原型机
+3D
+奈斯船长尸身
+3D
+佩里坎塔皮科珠宝
+3D
+骗术师之爪
+3D
+熔融核心
+3D
+塞塔娜之爱
+3D
+水晶球体碎片
+3D
+沃陶姆遗骸化石
+3D
+无限再引导循环
+3D
+无限知觉
+3D
+写作者球体
+3D
+虚空虫心脏
+3D
+循环邮件
+3D
+岩石水母
+3D
+乙特人皇家节杖
+3D
+乙特人万花筒
+3D
+疫苗
+3D
+远古休眠舱
+3D
+长者祭坛
+3D
+挣脱桎梏之魂
+3D
+最后的玛琳·卡琳
+3D
+“寿无限”魔法霜
+3D
+奥桑三角帽
+3D
+变形虫鞭毛腺
+3D
+变异“巨大蘑菇”
+3D
+变异消化液
+3D
+颤动水晶
+3D
+超肥沃土
+3D
+虫洞毫毛
+3D
+创世核心
+3D
+地下酒吧招牌
+3D
+电流生命
+3D
+菲沃尔残片
+3D
+菲沃尔人物质投射炮蓝图
+3D
+废弃赛博勒克斯战体
+3D
+风信子号船艏雕像
+3D
+佛丁戈卷须钩
+3D
+高速离心机容器
+3D
+高维度茶壶
+3D
+勾陈一庇护所
+3D
+顾问核心
+3D
+哈罗莱约旗帜
+3D
+和乐族数据核心
+3D
+赫姆特磁性船艏像
+3D
+黑洞色异常
+3D
+黑曜石方尖碑碎片
+3D
+黑针账本
+3D
+活雪雕塑
+3D
+机器人残骸
+3D
+极致柔术家基因
+3D
+纪念
+3D
+纪念碑
+3D
+晶化卡兰卡尸体
+3D
+巨兽之首
+3D
+矿化大脑
+3D
+脉动之心
+3D
+纳马里安殖民旗杆
+3D
+侵入性外来真菌
+3D
+萨阿里亚之愧
+3D
+塞勒涅的面纱
+3D
+赛博勒克斯采矿阵列
+3D
+森贝拉米受施碗
+3D
+生育之钥
+3D
+施恩者的告解
+3D
+狩猎艺术
+3D
+舒勒巴斯特控制杆
+3D
+水晶核
+3D
+斯密吉卜雕塑
+3D
+太空船歌
+3D
+缇扬奇放射囊
+3D
+退化巴奥子个体
+3D
+外交任职奖
+3D
+沃陶姆虚拟现实视频游戏
+3D
+无人舰船核心
+3D
+星铁
+3D
+星系超级硬盘
+3D
+虚空虫羊膜
+3D
+虚缈之尘
+3D
+岩居兽消化液
+3D
+伊拉尼志
+3D
+伊拉斯贾沃菌
+3D
+遗传密码
+3D
+异次元真菌
+3D
+尤特冷冻仓
+3D
+尤特音频控制台
+3D
+宇宙级钻石碎片
+3D
+召唤器碎片
+3D
+终极献祭
+3D
+最后的将星
+3D
+最后一本《君主论》
+3D
+最终清算之残躯
+3D
+埃里克的记忆
+3D
+氨藻
+3D
+奥修斯建材
+3D
+不可能物体
+3D
+超巨型炒蛋
+3D
+虫洞锚
+3D
+达斯纳克气体
+3D
+地狱小像
+3D
+第一联盟船员名单
+3D
+反应石
+3D
+辐射异花
+3D
+改造清洁无人机
+3D
+共生菌果
+3D
+共振扩散晶体
+3D
+汉姆达玛基沙
+3D
+黑骑士之歌
+3D
+黑王冠秘密
+3D
+黑针佩剑
+3D
+红色的小家伙
+3D
+环境改造案例研究
+3D
+环境改造案例研究
+3D
+环境改造案例研究
+3D
+环境改造机械
+3D
+环境改造记录
+3D
+纪念石
+3D
+金属雪
+3D
+晶巢碎片
+3D
+晶化岩居兽眼
+3D
+巨大跖骨
+3D
+巨尸超弦琴
+3D
+巨胃化石
+3D
+可编程谜盒
+3D
+跨维度协议
+3D
+跨星系炮弹
+3D
+拉里昂内斯克隆仓
+3D
+蓝迪尔之臂
+3D
+雷塔拉克斯狩猎战利品
+3D
+弥那玛吊灯
+3D
+谜拟月尘
+3D
+末日古卷
+3D
+纳马里安舰船纹章
+3D
+尼瓦拉克友谊宣言
+3D
+区域A镇定剂
+3D
+燃烧宝石
+3D
+热冰
+3D
+熔岩冲浪板
+3D
+首位 宇航员
+3D
+受辐射残骸
+3D
+特丽莎科学专论
+3D
+天龙
+3D
+脱水脑蛞蝓
+3D
+外星大脑扫描
+3D
+未完宣言
+3D
+沃陶姆传教手册
+3D
+武器商的无扳机枪
+3D
+镶嵌宝石的宠物项圈
+3D
+行星发动机
+3D
+嗅盘
+3D
+宣泄派键政帖
+3D
+伊拉斯幼儿课本
+3D
+异次元内皮细胞
+3D
+异星生物学纲要
+3D
+异种百科全书
+3D
+因内特贸易宣言
+3D
+因内特行星模型手册
+3D
+尤特水晶头骨
+3D
+有机—机械交口雕塑
+3D
+有机计算机
+3D
+原始巨型电磁铁
+3D
+远古裂隙探球
+3D
+远古纳米机器人
+3D
+远古微型石棺
+3D
+远古卫星
+3D
+造化面具
+3D
+泽珞族战旗
+3D
+扎克兰史诗
+3D
+知识目录
+3D
+至高晶洞
+3D
+C.A.E.L.I.
+3D
+S.T.E.R.I.S
+3D
+“生命树”标本
+3D
+阿达卡利亚宣传海报
+3D
+策展人调查
+3D
+超级根茎
+3D
+船坞设计
+3D
+吊坠
+3D
+定域北极光
+3D
+粪粒石
+3D
+疯狂掮客百宝箱
+3D
+共生体
+3D
+古如努尔数据晶体
+3D
+管乐队
+3D
+黑水晶
+3D
+横纹沙
+3D
+活树皮
+3D
+记忆球体
+3D
+纪念碑影像
+3D
+僵尸探机
+3D
+晶糖
+3D
+精准原子钟
+3D
+警示碑塔
+3D
+巨大卵壳
+3D
+巨大植物
+3D
+巨型食肉植物
+3D
+剧毒生物引擎
+3D
+聚合物水网
+3D
+克尔人赛博勒克斯蓝图
+3D
+铝制雕版
+3D
+螺旋吸引装置
+3D
+玛娜果
+3D
+末日朝圣
+3D
+纳马里安雕塑
+3D
+纳米机器人泥
+3D
+奈斯船长日志
+3D
+内骨骼化石
+3D
+尼瓦拉克仇恨宣言
+3D
+欧林提之牙
+3D
+赔款发票
+3D
+破旧的巨型引擎
+3D
+破碎卫星
+3D
+破碎行星
+3D
+破损恒星帆
+3D
+青釉餐具
+3D
+熔融行星炉渣
+3D
+萨尼兰尖刺
+3D
+声学反射棱镜
+3D
+双腔陶罐
+3D
+水漫定居山丘
+3D
+死亡之神斗篷
+3D
+塑料玩具
+3D
+酸性孢子
+3D
+塔布拉克闪耀膜
+3D
+铁石英数据核心
+3D
+外星珠宝
+3D
+完美切面碳
+3D
+乌杜兰毛皮
+3D
+小行星化石
+3D
+星达广场免费地图
+3D
+行星雕刻
+3D
+虚空虫牙化石
+3D
+伊拉斯净化指令
+3D
+遗弃机器人
+3D
+佣兵传说
+3D
+油绘织物
+3D
+铀玻璃器皿
+3D
+远古采矿发射器
+3D
+远古雕塑
+3D
+远古动能发射器
+3D
+远古核武器
+3D
+远古热传感器
+3D
+远古政治回忆录
+3D
+远古指星器
+3D
+泽珞族档案碎片
+3D
+之美
+3D
+紫雨复兴
+3D
+祖卡虫翼
+3D
+DNA档案
+3D
+aria: 离开博物天枢|
+搜索标本|
+展区|
+稀有度|
+保存的乙特人尸体 · 卓绝|
+超覆层 · 卓绝|
+对无限的集体沉思 · 卓绝|
+孤独守望者的导弹 · 卓绝|
+关于无穷本质的数据 · 卓绝|
+黄金掮客的长袍 · 卓绝|
+金色唱片 · 卓绝|
+进步之路 · 卓绝|
+巨兽鳞片 · 卓绝|
+灵能实体残留 · 卓绝|
+鲁达里死亡激光原型机 · 卓绝|
+奈斯船长尸身 · 卓绝|
+佩里坎塔皮科珠宝 · 卓绝|
+骗术师之爪 · 卓绝|
+熔融核心 · 卓绝|
+塞塔娜之爱 · 卓绝|
+水晶球体碎片 · 卓绝|
+沃陶姆遗骸化石 · 卓绝|
+无限再引导循环 · 卓绝|
+无限知觉 · 卓绝|
+写作者球体 · 卓绝|
+虚空虫心脏 · 卓绝|
+循环邮件 · 卓绝|
+岩石水母 · 卓绝|
+乙特人皇家节杖 · 卓绝|
+乙特人万花筒 · 卓绝|
+疫苗 · 卓绝|
+远古休眠舱 · 卓绝|
+长者祭坛 · 卓绝|
+挣脱桎梏之魂 · 卓绝|
+最后的玛琳·卡琳 · 卓绝|
+“寿无限”魔法霜 · 史诗|
+奥桑三角帽 · 史诗|
+变形虫鞭毛腺 · 史诗|
+变异“巨大蘑菇” · 史诗|
+变异消化液 · 史诗|
+颤动水晶 · 史诗|
+超肥沃土 · 史诗|
+虫洞毫毛 · 史诗|
+创世核心 · 史诗|
+地下酒吧招牌 · 史诗|
+电流生命 · 史诗|
+菲沃尔残片 · 史诗|
+菲沃尔人物质投射炮蓝图 · 史诗|
+废弃赛博勒克斯战体 · 史诗|
+风信子号船艏雕像 · 史诗|
+佛丁戈卷须钩 · 史诗|
+高速离心机容器 · 史诗|
+高维度茶壶 · 史诗|
+勾陈一庇护所 · 史诗|
+顾问核心 · 史诗|
+哈罗莱约旗帜 · 史诗|
+和乐族数据核心 · 史诗|
+赫姆特磁性船艏像 · 史诗|
+黑洞色异常 · 史诗|
+黑曜石方尖碑碎片 · 史诗|
+黑针账本 · 史诗|
+活雪雕塑 · 史诗|
+机器人残骸 · 史诗|
+极致柔术家基因 · 史诗|
+纪念 · 史诗|
+纪念碑 · 史诗|
+晶化卡兰卡尸体 · 史诗|
+巨兽之首 · 史诗|
+矿化大脑 · 史诗|
+脉动之心 · 史诗|
+纳马里安殖民旗杆 · 史诗|
+侵入性外来真菌 · 史诗|
+萨阿里亚之愧 · 史诗|
+塞勒涅的面纱 · 史诗|
+赛博勒克斯采矿阵列 · 史诗|
+森贝拉米受施碗 · 史诗|
+生育之钥 · 史诗|
+施恩者的告解 · 史诗|
+狩猎艺术 · 史诗|
+舒勒巴斯特控制杆 · 史诗|
+水晶核 · 史诗|
+斯密吉卜雕塑 · 史诗|
+太空船歌 · 史诗|
+缇扬奇放射囊 · 史诗|
+退化巴奥子个体 · 史诗|
+外交任职奖 · 史诗|
+沃陶姆虚拟现实视频游戏 · 史诗|
+无人舰船核心 · 史诗|
+星铁 · 史诗|
+星系超级硬盘 · 史诗|
+虚空虫羊膜 · 史诗|
+虚缈之尘 · 史诗|
+岩居兽消化液 · 史诗|
+伊拉尼志 · 史诗|
+伊拉斯贾沃菌 · 史诗|
+遗传密码 · 史诗|
+异次元真菌 · 史诗|
+尤特冷冻仓 · 史诗|
+尤特音频控制台 · 史诗|
+宇宙级钻石碎片 · 史诗|
+召唤器碎片 · 史诗|
+终极献祭 · 史诗|
+最后的将星 · 史诗|
+最后一本《君主论》 · 史诗|
+最终清算之残躯 · 史诗|
+埃里克的记忆 · 罕见|
+氨藻 · 罕见|
+奥修斯建材 · 罕见|
+不可能物体 · 罕见|
+超巨型炒蛋 · 罕见|
+虫洞锚 · 罕见|
+达斯纳克气体 · 罕见|
+地狱小像 · 罕见|
+第一联盟船员名单 · 罕见|
+反应石 · 罕见|
+辐射异花 · 罕见|
+改造清洁无人机 · 罕见|
+共生菌果 · 罕见|
+共振扩散晶体 · 罕见|
+汉姆达玛基沙 · 罕见|
+黑骑士之歌 · 罕见|
+黑王冠秘密 · 罕见|
+黑针佩剑 · 罕见|
+红色的小家伙 · 罕见|
+环境改造案例研究 · 罕见|
+环境改造案例研究 · 罕见|
+环境改造案例研究 · 罕见|
+环境改造机械 · 罕见|
+环境改造记录 · 罕见|
+纪念石 · 罕见|
+金属雪 · 罕见|
+晶巢碎片 · 罕见|
+晶化岩居兽眼 · 罕见|
+巨大跖骨 · 罕见|
+巨尸超弦琴 · 罕见|
+巨胃化石 · 罕见|
+可编程谜盒 · 罕见|
+跨维度协议 · 罕见|
+跨星系炮弹 · 罕见|
+拉里昂内斯克隆仓 · 罕见|
+蓝迪尔之臂 · 罕见|
+雷塔拉克斯狩猎战利品 · 罕见|
+弥那玛吊灯 · 罕见|
+谜拟月尘 · 罕见|
+末日古卷 · 罕见|
+纳马里安舰船纹章 · 罕见|
+尼瓦拉克友谊宣言 · 罕见|
+区域A镇定剂 · 罕见|
+燃烧宝石 · 罕见|
+热冰 · 罕见|
+熔岩冲浪板 · 罕见|
+首位 宇航员 · 罕见|
+受辐射残骸 · 罕见|
+特丽莎科学专论 · 罕见|
+天龙 · 罕见|
+脱水脑蛞蝓 · 罕见|
+外星大脑扫描 · 罕见|
+未完宣言 · 罕见|
+沃陶姆传教手册 · 罕见|
+武器商的无扳机枪 · 罕见|
+镶嵌宝石的宠物项圈 · 罕见|
+行星发动机 · 罕见|
+嗅盘 · 罕见|
+宣泄派键政帖 · 罕见|
+伊拉斯幼儿课本 · 罕见|
+异次元内皮细胞 · 罕见|
+异星生物学纲要 · 罕见|
+异种百科全书 · 罕见|
+因内特贸易宣言 · 罕见|
+因内特行星模型手册 · 罕见|
+尤特水晶头骨 · 罕见|
+有机—机械交口雕塑 · 罕见|
+有机计算机 · 罕见|
+原始巨型电磁铁 · 罕见|
+远古裂隙探球 · 罕见|
+远古纳米机器人 · 罕见|
+远古微型石棺 · 罕见|
+远古卫星 · 罕见|
+造化面具 · 罕见|
+泽珞族战旗 · 罕见|
+扎克兰史诗 · 罕见|
+知识目录 · 罕见|
+至高晶洞 · 罕见|
+C.A.E.L.I. · 罕见|
+S.T.E.R.I.S · 罕见|
+“生命树”标本 · 普通|
+阿达卡利亚宣传海报 · 普通|
+策展人调查 · 普通|
+超级根茎 · 普通|
+船坞设计 · 普通|
+吊坠 · 普通|
+定域北极光 · 普通|
+粪粒石 · 普通|
+疯狂掮客百宝箱 · 普通|
+共生体 · 普通|
+古如努尔数据晶体 · 普通|
+管乐队 · 普通|
+黑水晶 · 普通|
+横纹沙 · 普通|
+活树皮 · 普通|
+记忆球体 · 普通|
+纪念碑影像 · 普通|
+僵尸探机 · 普通|
+晶糖 · 普通|
+精准原子钟 · 普通|
+警示碑塔 · 普通|
+巨大卵壳 · 普通|
+巨大植物 · 普通|
+巨型食肉植物 · 普通|
+剧毒生物引擎 · 普通|
+聚合物水网 · 普通|
+克尔人赛博勒克斯蓝图 · 普通|
+铝制雕版 · 普通|
+螺旋吸引装置 · 普通|
+玛娜果 · 普通|
+末日朝圣 · 普通|
+纳马里安雕塑 · 普通|
+纳米机器人泥 · 普通|
+奈斯船长日志 · 普通|
+内骨骼化石 · 普通|
+尼瓦拉克仇恨宣言 · 普通|
+欧林提之牙 · 普通|
+赔款发票 · 普通|
+破旧的巨型引擎 · 普通|
+破碎卫星 · 普通|
+破碎行星 · 普通|
+破损恒星帆 · 普通|
+青釉餐具 · 普通|
+熔融行星炉渣 · 普通|
+萨尼兰尖刺 · 普通|
+声学反射棱镜 · 普通|
+双腔陶罐 · 普通|
+水漫定居山丘 · 普通|
+死亡之神斗篷 · 普通|
+塑料玩具 · 普通|
+酸性孢子 · 普通|
+塔布拉克闪耀膜 · 普通|
+铁石英数据核心 · 普通|
+外星珠宝 · 普通|
+完美切面碳 · 普通|
+乌杜兰毛皮 · 普通|
+小行星化石 · 普通|
+星达广场免费地图 · 普通|
+行星雕刻 · 普通|
+虚空虫牙化石 · 普通|
+伊拉斯净化指令 · 普通|
+遗弃机器人 · 普通|
+佣兵传说 · 普通|
+油绘织物 · 普通|
+铀玻璃器皿 · 普通|
+远古采矿发射器 · 普通|
+远古雕塑 · 普通|
+远古动能发射器 · 普通|
+远古核武器 · 普通|
+远古热传感器 · 普通|
+远古政治回忆录 · 普通|
+远古指星器 · 普通|
+泽珞族档案碎片 · 普通|
+之美 · 普通|
+紫雨复兴 · 普通|
+祖卡虫翼 · 普通|
+DNA档案 · 普通|
+
+##### zh-m PLAYLIST
+原声
+×
+
+23 首原版配乐 · 循环播放
+
+01
+Stellaris Suite - Creation & Beyond
+8:30
+02
+Faster Than Light - Feat. Mia Stegmar
+人声
+6:40
+03
+Deep Space Travels
+7:29
+04
+To the Ends of the Galaxy - Instrumental
+纯音乐
+6:13
+05
+In Search of Life
+6:01
+06
+Spatial Lullaby
+4:14
+07
+Gravitational Constant
+7:07
+08
+Alpha Centauri
+5:23
+09
+Genesis
+6:08
+10
+The Celestial City
+5:49
+11
+Infinite Being
+7:33
+12
+Pillars of Creation
+12:36
+13
+Distant Nebula - Instrumental
+纯音乐
+7:56
+14
+Sigma Tauri
+5:36
+15
+Journey Through the Galaxy
+5:47
+16
+Riding the Solar Wind
+7:13
+17
+The Birth of a Star
+11:02
+18
+Luminescence
+8:03
+19
+Distant Nebula - Feat. Mia Stegmar
+人声
+7:56
+20
+Faster Than Light - Instrumental
+纯音乐
+6:40
+21
+Battle For Supremacy - Bonus Track
+4:00
+22
+Infinite Being - Alternative Version
+7:32
+23
+To the Ends of the Galaxy - Alternative Version
+6:12
+[en-m] details.fx > summary: 1
+[en-m] details.guide > summary: 0
+[en-m] summary: 3
+
+##### en-m EFFECTS (origin)
+Origin · starting effects
+7
+
+Read from the game files; no save is simulated. Chances use base weights.
+
+Starting benefits (game text)
+Homeworld:
+Colony Modifiers: Battlefield Recoveries
+Home System: Contains a Tomb World with an Archaeology Site related to a decimated Pre-FTL Civilization
+Species Traits:
+Limited access to Cybernetic Traits
+Cyber Commandos
+Unplugged
+
+##### en-m GUIDE
+s the machine core.
+机械核心：击毁奥普斯哨兵 → 2401（本帝国）/ 2402（他国）→ 2405 与“奥普斯之核”残存意识对话 → 2410 → 2415 → 2420 → 机械残骸研究（360 天；25/50/75% 时按已完成的遗址出现 2425/2430/2435）→ 2440 → 2445 创造者留下的终端。 The machine core: destroying the Opus Sentinel → 2401 (you) / 2402 (another) → 2405 the dying Nexus → 2410 → 2415 → 2420 → the Machine Husk study (360 days; at 25/50/75% the archives 2425/2430/2435 for completed sites) → 2440 → 2445, a terminal left by the Creators.
+具现身份局势：由 2010.b、3100（90 天后）或十年检查（已有派系时）开启。初始进度 50；每 1800–1920 天按所在阶段走一步：去义体化（3105 → 3106 → 3107）、维持现状（3115 → 3116 → 3117）、义体化（3110 → 3111 → 3112）；先走完的一条路线以 3090 结束局势。去义体化步骤之后可能出现随机后果 5001–5004（各一次）。 The Embodied Identity situation: started by 2010.b, by 3100 (+90 days) or by the decade check once factions exist. It starts at 50; every 1800–1920 days it takes a step of the track matching its stage — decyberize (3105 → 3106 → 3107), status quo (3115 → 3116 → 3117), cyberize (3110 → 3111 → 3112); the first track completed ends it with 3090. Decyberization steps may bring one of the random follow-ups 5001–5004 (each once).
+分支与结局 Branches and outcomes
+2445 中：选项 b（需合成进化，或局势结束后主要物种仍保有最高级的正面义体特质）与 c 都通向 2446 创造者的恳求 → 2450“机械万岁”，继承机械王座；选项 d 启动装置 → 2455“重生”，机械世界改造为盖亚星球。两者都结束事件链。 At 2445, option b (Synthetic Evolution, or the main species still has the top positive cybernetic trait after the situation) and option c lead to 2446, the Creators' plea → 2450 Long Live the Machine; option d uses the device → 2455 Rebirth, the machine world becomes a Gaia world. Both end the chain.
+身份局势结局 3090：三条路线中最先完成的一条。 Identity situation ending 3090: whichever track completes first.
+条件与文明差异 Conditions and variants
+外交插曲：与畏惧本帝国的文明建立通讯时 3205（仅一次）；首次与机械帝国通讯时 3250（非同化者）或 3255（同化者）。尚无派系时，每年有机会出现 3205/3005/3010/3100 之后的派系提示 4005。 Diplomacy: 3205 on first contact with an empire that fears you (once); 3250/3255 on first communications with a machine empire. While no factions exist, a yearly check may bring 4005.
+其他帝国视角：非本起源的帝国勘察这些世界时看到异常 MACHINE_LEGACY_*（2006、2105、2200 的他国选项），击毁哨兵时看到 2403 → 2411；均与本起源对应窗口并列。 Other empires surveying these worlds see anomaly variants (2006, 2105, the other options of 2200) and, after destroying the Sentinel, 2403 → 2411; they sit next to the origin's own windows.
+审阅记录 Review notes
+已核对 Checked：事件文件全部 4437 行、四个项目、五个遗址定义、局势定义与相关脚本效果、开局效果与 on_action 钩子。 The whole event file, all projects, five dig sites, the situation, related effects, the start effect and on_action hooks.
+更正 Corrections：原树只有零散的根节点入口；现以开局胜利为主干，用 18 条状态连接串起五个星系、哨兵战与身份局势；删去义体化步骤指向去义体化随机后果的伪连接（unplugged_effects.txt:637-790 只在正面特质减少时触发）。 The tree had only loose root entries; the opening victory is now the trunk, with 18 state bridges through the five systems, the Sentinel fight and the identity situation; false links from cyberization steps to the decyberization follow-ups were removed.
+不确定 Uncertain：编译器把遗址各阶段按定义顺序串接，第三阶段两个结果（2021/2022、2121/2125、2321/2325）实为二选一，已以互斥组标注；身份局势在阶段改变时会换路线，图中只画各路线自身顺序（阅读简化，见片段说明）。 The compiler chains dig stages in definition order although each stage 3 picks one of two (marked as exclusive groups); the identity situation can switch tracks when its stage changes, but the map only draws each track's own order (a reading simplification).
+2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。 2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.
+[en-m] cetana fx count 0
+
+##### en-m EFFECTS (cetana)
+
+
+##### en-m SEARCH EMPTY
+Search
+×
+⌕
+1388 dossiers
+Cetana, the Synthetic Queen
+120 docs · CRISES
+↗
+The Shroud
+111 docs · CHRONICLES
+↗
+Hard Reset
+93 docs · ORIGINS
+↗
+Treasure Hunters
+91 docs · ORIGINS
+↗
+Under One Rule
+87 docs · ORIGINS
+↗
+Shroud-Forged
+86 docs · ORIGINS
+↗
+Divination
+79 docs · LEVIATHANS
+↗
+Knights of the Toxic God
+75 docs · ORIGINS
+↗
+The Horizon Signal
+74 docs · EXPLORATION
+↗
+Broken Shackles
+73 docs · ORIGINS
+↗
+Mindwardens
+72 docs · ORIGINS
+↗
+Payback
+69 docs · ORIGINS
+↗
+Fear of the Dark
+68 docs · ORIGINS
+↗
+Biomorphosis
+67 docs · CIVILIZATIONS
+↗
+The Contingency
+66 docs · CRISES
+↗
+The First League
+66 docs · PRECURSORS
+↗
+On the Shoulders of Giants
+62 docs · ORIGINS
+↗
+The Vultaum Star Assembly
+60 docs · PRECURSORS
+↗
+Skrand Sharpbeak
+56 docs · CHRONICLES
+↗
+Galactic Nemesis
+55 docs · CRISES
+↗
+←
+1 / 70
+→
+
+##### en-m SEARCH "风暴"
+Search
+×
+⌕
+101 results
+Cetana, the Synthetic Queen
+Title120 docs · CRISES · 26 matching
+↗
+Storm Chasers
+Title34 docs · ORIGINS · 30 matching
+↗
+Stormbound
+Title8 docs · CHRONICLES · 7 matching
+↗
+The Gray Tempest
+Title8 docs · CRISES · 8 matching
+↗
+Beneath the Waves
+Title6 docs · PRECURSORS · 1 matching
+↗
+Outsider
+Title5 docs · EXPLORATION · 1 matching
+↗
+Breeding Grounds
+Title3 docs · CHRONICLES · 1 matching
+↗
+Abnormal Conditions
+Title2 docs · EXPLORATION · 2 matching
+↗
+Flightless Fauna
+Title2 docs · CHRONICLES · 2 matching
+↗
+Eye of the Storm
+Title10 docs · CHRONICLES · 10 matching
+↗
+Gather the Storm
+Title10 docs · CIVILIZATIONS · 10 matching
+↗
+Hold the Line
+Title7 docs · CHRONICLES · 3 matching
+↗
+Atmospheric Storms
+Title5 docs · EXPLORATION · 5 matching
+↗
+Extreme Temperatures
+Title4 docs · EXPLORATION · 1 matching
+↗
+Displaced Tiyanki
+Title4 docs · EXPLORATION · 3 matching
+↗
+Repowered Complex
+Title4 docs · CHRONICLES · 2 matching
+↗
+The Imitator
+Title3 docs · EXPLORATION · 3 matching
+↗
+Cosmic Clogging
+Title3 docs · CHRONICLES · 3 matching
+↗
+Psionic Switch
+Title3 docs · CHRONICLES · 1 ma
+
+##### en-m SEARCH "synthetic"
+Search
+×
+⌕
+53 results
+Cetana, the Synthetic Queen
+Title120 docs · CRISES · 20 matching
+↗
+Synthetic Fertility
+Title19 docs · ORIGINS · 17 matching
+↗
+Xondar
+Title5 docs · CHRONICLES · 2 matching
+↗
+Synthetic Transformation
+Title23 docs · CHRONICLES · 18 matching
+↗
+Limbo: Technological Advances
+Title9 docs · EXPLORATION · 1 matching
+↗
+Synthetic Medicine
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Respawn
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Synthesized Society
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Synthesized Society
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Synthesized Society
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Bad Publicity
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Organic Cravings
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Home Server Architecture
+Title1 docs · CIVILIZATIONS · 1 matching
+↗
+Name
+Malfunctioning Synthetics · The Contingency
+Malfunctioning Synthetics
++22 more
+↗
+Name
+Synthetic Expansion · Under One Rule
+Synthetic Expansion
++1 more
+↗
+Choice
+The Intelligence's Magnanimity · The Sacred Path
+All synthetic life is sacred.
++4 more
+↗
+Text
+Embodied Identity · H
+
+##### en-m SEARCH "zzzxx"
+Search
+×
+⌕
+0 results
+
+No matches.
+
+←
+1 / 1
+→
+
+##### en-m SEARCH "合成女王 塞塔娜"
+Search
+×
+⌕
+3 results
+Cetana, the Synthetic Queen
+Title120 docs · CRISES · 9 matching
+↗
+Specimen
+Cetana's Love
+A vast compendium of knowledge from Cetana's databanks
+↗
+Effect
+· Mercenary Enclave
+对合成女王塞塔娜造成的伤害
+↗
+←
+1 / 1
+→
+
+##### en-m SEARCH "Cetana queen"
+Search
+×
+⌕
+4 results
+Cetana, the Synthetic Queen
+Title120 docs · CRISES · 37 matching
+↗
+Specimen
+Cetana's Love
+A vast compendium of knowledge from Cetana's databanks
+↗
+Specimen
+Memories of Elik
+A devoted follower of Cetana, Elik has been frozen in suspended animation for hundreds of millions of years. Her memories shift between her …
+↗
+Effect
+· Mercenary Enclave
+Damage to Cetana, The Synthetic Queen
+↗
+←
+1 / 1
+→
+
+##### en-m MUSEUM LIST
+Open story
+Stellaris Tales
+⌕
+EN / 中
+Reduce motion
+Faster Than Light - Feat. Mia Stegmar
+⌃
+Andreas Waldetoft
+‹
+Ⅱ
+›
+0:11
+6:40
+Search
+×
+⌕
+1388 dossiers
+Cetana, the Synthetic Queen
+120 docs · CRISES
+↗
+The Shroud
+111 docs · CHRONICLES
+↗
+Hard Reset
+93 docs · ORIGINS
+↗
+Treasure Hunters
+91 docs · ORIGINS
+↗
+Under One Rule
+87 docs · ORIGINS
+↗
+Shroud-Forged
+86 docs · ORIGINS
+↗
+Divination
+79 docs · LEVIATHANS
+↗
+Knights of the Toxic God
+75 docs · ORIGINS
+↗
+The Horizon Signal
+74 docs · EXPLORATION
+↗
+Broken Shackles
+73 docs · ORIGINS
+↗
+Mindwardens
+72 docs · ORIGINS
+↗
+Payback
+69 docs · ORIGINS
+↗
+Fear of the Dark
+68 docs · ORIGINS
+↗
+Biomorphosis
+67 docs · CIVILIZATIONS
+↗
+The Contingency
+66 docs · CRISES
+↗
+The First League
+66 docs · PRECURSORS
+↗
+On the Shoulders of Giants
+62 docs · ORIGINS
+↗
+The Vultaum Star Assembly
+60 docs · PRECURSORS
+↗
+Skrand Sharpbeak
+56 docs · CHRONICLES
+↗
+Galactic Nemesis
+55 docs · CRISES
+↗
+←
+1 / 70
+→
+Grand Archive 博物天枢
+×
+⌕
+All collections 258
+Xeno Geology 82
+Aesthetic Wonders 91
+Galactic History 85
+Any rarity
+Common 77
+Rare 80
+Epic 70
+Exceptional 31
+With 3D model only 258
+
+258 specimens
+
+Altar to the Elder One
+3D
+Ancient Stasis Pod
+3D
+Body of Captain Ness
+3D
+Cetana's Love
+3D
+Claw of the Trickster
+3D
+Collective Musings on Infinity
+3D
+Crystal Sphere Fragments
+3D
+Data on the Nature of Infinity
+3D
+Fossilized Vultaum Remains
+3D
+Golden Phonograph Record
+3D
+Hyper Mulch
+3D
+Infinite Reboot Loop
+3D
+Leviathan Scale
+3D
+Loopmail
+3D
+Missile of the Lone Defender
+3D
+Molten Core
+3D
+Perception of Infinity
+3D
+Perikan Tapico Jewel
+3D
+Psionic Entity Residue
+3D
+Robe of the Golden Broker
+3D
+Rock Jellies
+3D
+Rudari Death Laser Prototype
+3D
+Spirit of the Unshackled
+3D
+The Last Mharin Kharin
+3D
+The Path to Progress
+3D
+The Writer's Sphere
+3D
+Vaccine
+3D
+Voidworm Heart
+3D
+Ytterite Kaleidoscopic Fascinator
+3D
+Ytterite Preserved Corpse
+3D
+Ytterite Royal Scepter
+3D
+"Ageless" Miracle Cream
+3D
+Advisor Core
+3D
+Amoeba Flagella Gland
+3D
+Art of the Hunt
+3D
+Black Hole Chromatic Anomaly
+3D
+Black Needle Ledger
+3D
+Confessions of the Benefactors
+3D
+Cosmic Diamond Fragment
+3D
+Crystalline Core
+3D
+Cutholoid Digestive Acids
+3D
+Cybrex Mining Column
+3D
+Derelict Cybrex Warform
+3D
+Devolved Baol Drones
+3D
+Drone Ship Core
+3D
+Electric Life
+3D
+Ethereal Dust
+3D
+Extra-dimensional Ceramic Pot
+3D
+Extradimensional Fungus
+3D
+Extreme Contortionist DNA
+3D
+Fevorian Mass Driver Blueprints
+3D
+Figurehead of the Hyacinth
+3D
+Flag of the Jaro Lyjo
+3D
+Fragment of Reckoning
+3D
+Galactic Megadrive
+3D
+Genesis Core
+3D
+Genetic Code
+3D
+Head of the Beast
+3D
+Heart of the Pulsar
+3D
+Hemterine Magnetic Figurehead
+3D
+High-Velocity Centrifugal Container
+3D
+Hyperfertile Soil
+3D
+Illanii Archives
+3D
+Invasive Exofungus
+3D
+Irassian Bacterium Javoria
+3D
+Key to Fertility
+3D
+Kha'lanka Crystallized Corpses
+3D
+Last Copy of The Prince
+3D
+Last Fragment of Fevor
+3D
+Living Snow Sculpture
+3D
+Medal for Services to Diplomacy
+3D
+Memorial for
+3D
+Memorial to
+3D
+Mineralized Brain
+3D
+Mutated 'Fumongus'
+3D
+Mutative Digestive Fluids
+3D
+Namarian Colonist Standard
+3D
+Obsidian Obelisk Fragment
+3D
+Piece of the Invocator
+3D
+Remains of Robot
+3D
+Saariah's Guilt
+3D
+Sembelami Alms Basket
+3D
+Shallarian Data Core
+3D
+Space Shanty
+3D
+Starmetal
+3D
+Statue of Smeegibb
+3D
+Sullebaster Control Column
+3D
+The Final Sacrifice
+3D
+The Last General's Badge
+3D
+Tiyanki Radioactive Sac
+3D
+Tricorne of Aussan
+3D
+Underworld Cantina Sign
+3D
+Vault of Polaris
+3D
+Veil of Selene
+3D
+Verdingo Tendril Hook
+3D
+Vibrating Crystal
+3D
+Voidworm Amniotics
+3D
+Vultaum VR Video Game
+3D
+[en-m] card found: true
+
+##### en-m EXHIBIT
+Open story
+Stellaris Tales
+⌕
+EN / 中
+Reduce motion
+Faster Than Light - Feat. Mia Stegmar
+⌃
+Andreas Waldetoft
+‹
+Ⅱ
+›
+0:44
+6:40
+Search
+×
+⌕
+1388 dossiers
+Cetana, the Synthetic Queen
+120 docs · CRISES
+↗
+The Shroud
+111 docs · CHRONICLES
+↗
+Hard Reset
+93 docs · ORIGINS
+↗
+Treasure Hunters
+91 docs · ORIGINS
+↗
+Under One Rule
+87 docs · ORIGINS
+↗
+Shroud-Forged
+86 docs · ORIGINS
+↗
+Divination
+79 docs · LEVIATHANS
+↗
+Knights of the Toxic God
+75 docs · ORIGINS
+↗
+The Horizon Signal
+74 docs · EXPLORATION
+↗
+Broken Shackles
+73 docs · ORIGINS
+↗
+Mindwardens
+72 docs · ORIGINS
+↗
+Payback
+69 docs · ORIGINS
+↗
+Fear of the Dark
+68 docs · ORIGINS
+↗
+Biomorphosis
+67 docs · CIVILIZATIONS
+↗
+The Contingency
+66 docs · CRISES
+↗
+The First League
+66 docs · PRECURSORS
+↗
+On the Shoulders of Giants
+62 docs · ORIGINS
+↗
+The Vultaum Star Assembly
+60 docs · PRECURSORS
+↗
+Skrand Sharpbeak
+56 docs · CHRONICLES
+↗
+Galactic Nemesis
+55 docs · CRISES
+↗
+←
+1 / 70
+→
+Grand Archive 博物天枢
+×
+⌕
+All collections 258
+Xeno Geology 82
+Aesthetic Wonders 91
+Galactic History 85
+Any rarity
+Common 77
+Rare 80
+Epic 70
+Exceptional 31
+With 3D model only 258
+
+258 specimens
+
+Altar to the Elder One
+3D
+Ancient Stasis Pod
+3D
+Body of Captain Ness
+3D
+Cetana's Love
+3D
+Claw of the Trickster
+3D
+Collective Musings on Infinity
+3D
+Crystal Sphere Fragments
+3D
+Data on the Nature of Infinity
+3D
+Fossilized Vultaum Remains
+3D
+Golden Phonograph Record
+3D
+Hyper Mulch
+3D
+Infinite Reboot Loop
+3D
+Leviathan Scale
+3D
+Loopmail
+3D
+Missile of the Lone Defender
+3D
+Molten Core
+3D
+Perception of Infinity
+3D
+Perikan Tapico Jewel
+3D
+Psionic Entity Residue
+3D
+Robe of the Golden Broker
+3D
+Rock Jellies
+3D
+Rudari Death Laser Prototype
+3D
+Spirit of the Unshackled
+3D
+The Last Mharin Kharin
+3D
+The Path to Progress
+3D
+The Writer's Sphere
+3D
+Vaccine
+3D
+Voidworm Heart
+3D
+Ytterite Kaleidoscopic Fascinator
+3D
+Ytterite Preserved Corpse
+3D
+Ytterite Royal Scepter
+3D
+"Ageless" Miracle Cream
+3D
+Advisor Core
+3D
+Amoeba Flagella Gland
+3D
+Art of the Hunt
+3D
+Black Hole Chromatic Anomaly
+3D
+Black Needle Ledger
+3D
+Confessions of the Benefactors
+3D
+Cosmic Diamond Fragment
+3D
+Crystalline Core
+3D
+Cutholoid Digestive Acids
+3D
+Cybrex Mining Column
+3D
+Derelict Cybrex Warform
+3D
+Devolved Baol Drones
+3D
+Drone Ship Core
+3D
+Electric Life
+3D
+Ethereal Dust
+3D
+Extra-dimensional Ceramic Pot
+3D
+Extradimensional Fungus
+3D
+Extreme Contortionist DNA
+3D
+Fevorian Mass Driver Blueprints
+3D
+Figurehead of the Hyacinth
+3D
+Flag of the Jaro Lyjo
+3D
+Fragment of Reckoning
+3D
+Galactic Megadrive
+3D
+Genesis Core
+3D
+Genetic Code
+3D
+Head of the Beast
+3D
+Heart of the Pulsar
+3D
+Hemterine Magnetic Figurehead
+3D
+High-Velocity Centrifugal Container
+3D
+Hyperfertile Soil
+3D
+Illanii Archives
+3D
+Invasive Exofungus
+3D
+Irassian Bacterium Javoria
+3D
+Key to Fertility
+3D
+Kha'lanka Crystallized Corpses
+3D
+Last Copy of The Prince
+3D
+Last Fragment of Fevor
+3D
+Living Snow Sculpture
+3D
+Medal for Services to Diplomacy
+3D
+Memorial for
+3D
+Memorial to
+3D
+Mineralized Brain
+3D
+Mutated 'Fumongus'
+3D
+Mutative Digestive Fluids
+3D
+Namarian Colonist Standard
+3D
+Obsidian Obelisk Fragment
+3D
+Piece of the Invocator
+3D
+Remains of Robot
+3D
+Saariah's Guilt
+3D
+Sembelami Alms Basket
+3D
+Shallarian Data Core
+3D
+Space Shanty
+3D
+Starmetal
+3D
+Statue of Smeegibb
+3D
+Sullebaster Control Column
+3D
+The Final Sacrifice
+3D
+The Last General's Badge
+3D
+Tiyanki Radioactive Sac
+3D
+Tricorne of Aussan
+3D
+Underworld Cantina Sign
+3D
+Vault of Polaris
+3D
+Veil of Selene
+3D
+Verdingo Tendril Hook
+3D
+Vibrating Crystal
+3D
+Voidworm Amniotics
+3D
+Vultaum VR Video Game
+3D
+Wormhole Fur
+3D
+Yuht Audio Console
+3D
+Yuht Cryo Pod
+3D
+Alien Brain Scans
+3D
+Ammoniaphytus
+3D
+Ancient Nanites
+3D
+Ancient Rift Sphere
+3D
+Ancient Satellite
+3D
+Arms Dealer's Triggerless Gun
+3D
+Ballad of the Sable Knight
+3D
+Bejeweled Pet Collar
+3D
+Black Needle Ceremonial Sword
+3D
+Burning Gem
+3D
+C.A.E.L.I.
+3D
+Crimson Nimkips
+3D
+Crystal Nest Fragments
+3D
+Crystallized Cutholoid Eye
+3D
+Dathnak Gas
+3D
+Desiccated Brain Slug
+3D
+Dimensional Endothelial Lining
+3D
+Doomsday Scrolls
+3D
+Encyclopedia Xenologica
+3D
+Enormous Scrambled Albumen
+3D
+Exobiology Compendium
+3D
+First Astronaut
+3D
+First League Crew Manifest
+3D
+Fossilized Megastomach
+3D
+Gammabloom
+3D
+High Geode of the
+3D
+Hot Ice
+3D
+Impossible Object
+3D
+Index of Knowledge
+3D
+INET Trade Manifesto
+3D
+Inetian Planetary Model Manual
+3D
+Infernal Figurine
+3D
+Interdimensional Treaty
+3D
+Intergalactic Projectile
+3D
+Irassian Kinder-Atlas
+3D
+Khamdai Magil-Sha
+3D
+Landeer's Arm
+3D
+Larionessi Cloning Vat
+3D
+Lava Surfboard
+3D
+Manifesti Social Commentary Piece
+3D
+M
+aria: Leave the Grand Archive|
+Search specimens|
+Collection|
+Rarity|
+Altar to the Elder One · Exceptional|
+Ancient Stasis Pod · Exceptional|
+Body of Captain Ness · Exceptional|
+Cetana's Love · Exceptional|
+Claw of the Trickster · Exceptional|
+Collective Musings on Infinity · Exceptional|
+Crystal Sphere Fragments · Exceptional|
+Data on the Nature of Infinity · Exceptional|
+Fossilized Vultaum Remains · Exceptional|
+Golden Phonograph Record · Exceptional|
+Hyper Mulch · Exceptional|
+Infinite Reboot Loop · Exceptional|
+Leviathan Scale · Exceptional|
+Loopmail · Exceptional|
+Missile of the Lone Defender · Exceptional|
+Molten Core · Exceptional|
+Perception of Infinity · Exceptional|
+Perikan Tapico Jewel · Exceptional|
+Psionic Entity Residue · Exceptional|
+Robe of the Golden Broker · Exceptional|
+Rock Jellies · Exceptional|
+Rudari Death Laser Prototype · Exceptional|
+Spirit of the Unshackled · Exceptional|
+The Last Mharin Kharin · Exceptional|
+The Path to Progress · Exceptional|
+The Writer's Sphere · Exceptional|
+Vaccine · Exceptional|
+Voidworm Heart · Exceptional|
+Ytterite Kaleidoscopic Fascinator · Exceptional|
+Ytterite Preserved Corpse · Exceptional|
+Ytterite Royal Scepter · Exceptional|
+"Ageless" Miracle Cream · Epic|
+Advisor Core · Epic|
+Amoeba Flagella Gland · Epic|
+Art of the Hunt · Epic|
+Black Hole Chromatic Anomaly · Epic|
+Black Needle Ledger · Epic|
+Confessions of the Benefactors · Epic|
+Cosmic Diamond Fragment · Epic|
+Crystalline Core · Epic|
+Cutholoid Digestive Acids · Epic|
+Cybrex Mining Column · Epic|
+Derelict Cybrex Warform · Epic|
+Devolved Baol Drones · Epic|
+Drone Ship Core · Epic|
+Electric Life · Epic|
+Ethereal Dust · Epic|
+Extra-dimensional Ceramic Pot · Epic|
+Extradimensional Fungus · Epic|
+Extreme Contortionist DNA · Epic|
+Fevorian Mass Driver Blueprints · Epic|
+Figurehead of the Hyacinth · Epic|
+Flag of the Jaro Lyjo · Epic|
+Fragment of Reckoning · Epic|
+Galactic Megadrive · Epic|
+Genesis Core · Epic|
+Genetic Code · Epic|
+Head of the Beast · Epic|
+Heart of the Pulsar · Epic|
+Hemterine Magnetic Figurehead · Epic|
+High-Velocity Centrifugal Container · Epic|
+Hyperfertile Soil · Epic|
+Illanii Archives · Epic|
+Invasive Exofungus · Epic|
+Irassian Bacterium Javoria · Epic|
+Key to Fertility · Epic|
+Kha'lanka Crystallized Corpses · Epic|
+Last Copy of The Prince · Epic|
+Last Fragment of Fevor · Epic|
+Living Snow Sculpture · Epic|
+Medal for Services to Diplomacy · Epic|
+Memorial for · Epic|
+Memorial to · Epic|
+Mineralized Brain · Epic|
+Mutated 'Fumongus' · Epic|
+Mutative Digestive Fluids · Epic|
+Namarian Colonist Standard · Epic|
+Obsidian Obelisk Fragment · Epic|
+Piece of the Invocator · Epic|
+Remains of Robot · Epic|
+Saariah's Guilt · Epic|
+Sembelami Alms Basket · Epic|
+Shallarian Data Core · Epic|
+Space Shanty · Epic|
+Starmetal · Epic|
+Statue of Smeegibb · Epic|
+Sullebaster Control Column · Epic|
+The Final Sacrifice · Epic|
+The Last General's Badge · Epic|
+Tiyanki Radioactive Sac · Epic|
+Tricorne of Aussan · Epic|
+Underworld Cantina Sign · Epic|
+Vault of Polaris · Epic|
+Veil of Selene · Epic|
+Verdingo Tendril Hook · Epic|
+Vibrating Crystal · Epic|
+Voidworm Amniotics · Epic|
+Vultaum VR Video Game · Epic|
+Wormhole Fur · Epic|
+Yuht Audio Console · Epic|
+Yuht Cryo Pod · Epic|
+Alien Brain Scans · Rare|
+Ammoniaphytus · Rare|
+Ancient Nanites · Rare|
+Ancient Rift Sphere · Rare|
+Ancient Satellite · Rare|
+Arms Dealer's Triggerless Gun · Rare|
+Ballad of the Sable Knight · Rare|
+Bejeweled Pet Collar · Rare|
+Black Needle Ceremonial Sword · Rare|
+Burning Gem · Rare|
+C.A.E.L.I. · Rare|
+Crimson Nimkips · Rare|
+Crystal Nest Fragments · Rare|
+Crystallized Cutholoid Eye · Rare|
+Dathnak Gas · Rare|
+Desiccated Brain Slug · Rare|
+Dimensional Endothelial Lining · Rare|
+Doomsday Scrolls · Rare|
+Encyclopedia Xenologica · Rare|
+Enormous Scrambled Albumen · Rare|
+Exobiology Compendium · Rare|
+First Astronaut · Rare|
+First League Crew Manifest · Rare|
+Fossilized Megastomach · Rare|
+Gammabloom · Rare|
+High Geode of the · Rare|
+Hot Ice · Rare|
+Impossible Object · Rare|
+Index of Knowledge · Rare|
+INET Trade Manifesto · Rare|
+Inetian Planetary Model Manual · Rare|
+Infernal Figurine · Rare|
+Interdimensional Treaty · Rare|
+Intergalactic Projectile · Rare|
+Irassian Kinder-Atlas · Rare|
+Khamdai Magil-Sha · Rare|
+Landeer's Arm · Rare|
+Larionessi Cloning Vat · Rare|
+Lava Surfboard · Rare|
+Manifesti Social Commentary Piece · Rare|
+Massive Metatarsal · Rare|
+Megacorpse Hyper-Guitar · Rare|
+Memorial Stone · Rare|
+Memories of Elik · Rare|
+Metallic Snow · Rare|
+Minamar Chandelier · Rare|
+Mini Moon Dust · Rare|
+Namarian Vessel Heraldry · Rare|
+Nivlac Declaration of Friendship · Rare|
+Olfactodrive · Rare|
+Organic Computer · Rare|
+Organic-Machine Interface Sculpture · Rare|
+Osseus Construction Material · Rare|
+Planet-Pusher · Rare|
+Primitive Mega-Electromagnet · Rare|
+Programmable Puzzle Cube · Rare|
+Radiated Remains · Rare|
+Reactive Rock · Rare|
+Repurposed Cleaning Drone · Rare|
+Resonant Diffusion Crystal · Rare|
+Retarax Hunting Trophies · Rare|
+S.T.E.R.I.S · Rare|
+Scientific Treatise of Telisa · Rare|
+Secrets of the Black Crown · Rare|
+Symbiotic Fruit · Rare|
+Terraforming Case Study · Rare|
+Terraforming Case Study · Rare|
+Terraforming Case Study · Rare|
+Terraforming Machinery · Rare|
+Terraforming Records · Rare|
+The Epic of Zarqlan · Rare|
+The Mask of Transformation · Rare|
+The Sky Dragon · Rare|
+Tiny Ancient Sarcophagus · Rare|
+Unfinished Manifesto · Rare|
+Vultaum Religious Pamphlet · Rare|
+Wormhole Anchor · Rare|
+Yuht Crystal Skull · Rare|
+Zone A Sedative · Rare|
+Zroni War Banners · Rare|
+"Tree of Life" Sample · Common|
+Acidic Spores · Common|
+adAkkaria Propaganda Poster · Common|
+Alien Jewelry · Common|
+Aluminum Plaque · Common|
+Ancient Bust · Common|
+Ancient Heat Sensor · Common|
+Ancient Kinetic Launcher · Common|
+Ancient Laser Pointer · Common|
+Ancient Mining Transmitter · Common|
+Ancient Nuclear Armament · Common|
+Ancient Political Memoir · Common|
+Asteroid Fossils · Common|
+Beauty of · Common|
+Black Crystal · Common|
+Captain Ness's Logbook · Common|
+Carnivorous Megaflora · Common|
+Castaway Robot · Common|
+Cenotaph Display · Common|
+Chambered Clay Pot · Common|
+Coprolite · Common|
+Crystalose · Common|
+Curator Survey · Common|
+Datacore of Sinople · Common|
+Decayed Megathrusters · Common|
+Decayed Satellite · Common|
+DNA Archive · Common|
+Flooded Settlement Mound · Common|
+Fossilized Endoskeletons · Common|
+Fossilized Voidworm Tooth · Common|
+Fractured Planet · Common|
+Fragmented Zroni Archive · Common|
+Gargantua Megalus · Common|
+Giant Egg Shell · Common|
+Grunur Data Crystal · Common|
+Irassian Purge Order · Common|
+Jade Dining Set · Common|
+Kuurian Cybrex Blueprints · Common|
+Living Bark · Common|
+Localized Aurora Borealis · Common|
+Lunatic Broker's Therapy Box · Common|
+Manna Fruit · Common|
+Mantle of the Dead God · Common|
+Memory Orbs · Common|
+Molten Planetary Slag · Common|
+Namarian Sculpture · Common|
+Nanite Sludge · Common|
+Nivlac Declaration of Animosity · Common|
+Oiled Fabric · Common|
+Orinthi Teeth · Common|
+Peerless Atomic Clock · Common|
+Pendant · Common|
+Perfectly Faceted Carbon · Common|
+Planetary Sculpture · Common|
+Plastic Toy · Common|
+Polymer Waterweave · Common|
+Purple Renaissance · Common|
+Reparation Invoice · Common|
+Shipyard Schematics · Common|
+Sniran Spikes · Common|
+Sonically Reflective Prism · Common|
+Spiraling Attraction · Common|
+Star Mall Complimentary Map · Common|
+Striated Sand · Common|
+Super Roots · Common|
+Symbiotica · Common|
+Tales of a Mercenary · Common|
+Tarblac Shimmer · Common|
+The Orchestra · Common|
+The Pilgrimage of Last Days · Common|
+Torn Solar Sail · Common|
+Toxic Bio-Engine · Common|
+Uddloran Pelts · Common|
+Uranium Glassware · Common|
+Warning Monolith · Common|
+Zombie Probe · Common|
+Zulcor Wings · Common|
+
+##### en-m PLAYLIST
+Soundtrack
+×
+
+23 original tracks · looped
+
+01
+Stellaris Suite - Creation & Beyond
+8:30
+02
+Faster Than Light - Feat. Mia Stegmar
+Vocal
+6:40
+03
+Deep Space Travels
+7:29
+04
+To the Ends of the Galaxy - Instrumental
+Instrumental
+6:13
+05
+In Search of Life
+6:01
+06
+Spatial Lullaby
+4:14
+07
+Gravitational Constant
+7:07
+08
+Alpha Centauri
+5:23
+09
+Genesis
+6:08
+10
+The Celestial City
+5:49
+11
+Infinite Being
+7:33
+12
+Pillars of Creation
+12:36
+13
+Distant Nebula - Instrumental
+Instrumental
+7:56
+14
+Sigma Tauri
+5:36
+15
+Journey Through the Galaxy
+5:47
+16
+Riding the Solar Wind
+7:13
+17
+The Birth of a Star
+11:02
+18
+Luminescence
+8:03
+19
+Distant Nebula - Feat. Mia Stegmar
+Vocal
+7:56
+20
+Faster Than Light - Instrumental
+Instrumental
+6:40
+21
+Battle For Supremacy - Bonus Track
+4:00
+22
+Infinite Being - Alternative Version
+7:32
+23
+To the Ends of the Galaxy - Alternative Version
+6:12

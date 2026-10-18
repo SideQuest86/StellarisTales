@@ -128,7 +128,7 @@ try {
       await page.goto(base + "#museum", { waitUntil: "domcontentloaded" });
       await page.waitForSelector("#museum.open .museum-exhibit", { timeout: 30000 });
     }
-    const keys = await page.locator(".museum-exhibit").evaluateAll((els) => els.filter((e) => e.querySelector(".museum-3d-badge")).slice(0, 2).map((e) => e.dataset.key));
+    const keys = await page.locator(".museum-exhibit").evaluateAll((els) => { const badged = els.filter((e) => e.querySelector(".museum-3d-badge")); return (badged.length ? badged : els).slice(0, 2).map((e) => e.dataset.key); }); // no badge once every specimen has a model
     const sizes = [];
     for (const key of [keys[0], keys[1], keys[0], keys[1], keys[0]]) {
       await page.locator(`.museum-exhibit[data-key="${key}"]`).click();
@@ -170,13 +170,70 @@ await check("a link opened while the start-up warm-up is due (slow download) sti
       await run.page.waitForSelector("#open-story");
       await run.page.waitForTimeout(delay);
       await run.page.goto(base + "#story=cybrex", { waitUntil: "domcontentloaded" });
-      await run.page.waitForSelector("#reader:not([hidden]):not(.prewarm) .chapter-document[data-doc='precursor.2000'] #reading-back", { state: "attached", timeout: 30000 });
+      await run.page.waitForSelector("#reader:not([hidden]):not(.prewarm) .chapter-document[data-doc='precursor.2000']", { state: "attached", timeout: 30000 });
       ends.push(delay);
     } finally {
       await run.context.close();
     }
   }
   return `opened after ${ends.join(" / ")} ms`;
+});
+
+await check("closing while a story is still downloading cancels it; browser Back closes a story opened from the archive", async () => {
+  const run = await open();
+  try {
+    const { page } = run;
+    await page.route("**/stories/cybrex.json", async (route) => { await new Promise((r) => setTimeout(r, 2000)); await route.continue(); });
+    await page.goto(base, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector("#open-story");
+    await page.evaluate(() => { location.hash = "story=cybrex"; });
+    await page.waitForTimeout(300);
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(3000);
+    assert.ok(await page.locator("#reader").evaluate((r) => r.hidden || r.classList.contains("prewarm")), "the reader opened after Escape");
+    await page.locator("#open-story").click();
+    await page.waitForSelector("#reader:not([hidden]):not(.prewarm) .chapter-document", { timeout: 30000 });
+    await settle(page);
+    await page.goBack();
+    await page.waitForFunction(() => document.querySelector("#reader").hidden, null, { timeout: 10000 });
+    assert.ok(page.url().startsWith(base), `Back left the site: ${page.url()}`);
+    return "cancelled; Back closed the reader";
+  } finally {
+    await run.context.close();
+  }
+});
+
+await check("a specimen link from a chapter opens its exhibit; closing the museum returns to that chapter", async () => {
+  const run = await open();
+  try {
+    const { page } = run;
+    await page.goto(base + "#story=site-asteroid-vault-1&chapter=ancrel.103", { waitUntil: "domcontentloaded" });
+    await page.waitForSelector("#reader:not([hidden]):not(.prewarm) .specimen-links a", { timeout: 30000 });
+    await page.locator(".specimen-links a").first().click();
+    await page.waitForSelector("#museum.open .museum-detail:not([hidden])", { timeout: 30000 });
+    await page.keyboard.press("Escape"); // exhibit
+    await page.keyboard.press("Escape"); // museum
+    await page.waitForSelector("#reader:not([hidden]):not(.prewarm) .chapter-document[data-doc='ancrel.103']", { timeout: 30000 });
+    return "ancrel.103 → exhibit → ancrel.103";
+  } finally {
+    await run.context.close();
+  }
+});
+
+await check("landscape phone (844×390): the open-story control is not covered", async () => {
+  const run = await open({ width: 844, height: 390 }, { isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
+  try {
+    await run.page.goto(base, { waitUntil: "domcontentloaded" });
+    await run.page.waitForSelector("#open-story");
+    await settle(run.page, 1200);
+    const hit = await run.page.evaluate(() => {
+      const r = document.querySelector("#open-story").getBoundingClientRect();
+      return document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2)?.closest("#open-story") ? "ok" : document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2)?.id || "other";
+    });
+    assert.equal(hit, "ok", `centre of the control is covered by ${hit}`);
+  } finally {
+    await run.context.close();
+  }
 });
 
 const phone = await open({ width: 390, height: 844 }, { isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
@@ -191,13 +248,13 @@ try {
     await phone.page.waitForSelector("#reader:not([hidden]):not(.prewarm) .chapter-document", { timeout: 30000 });
     await settle(phone.page);
     const r = await overflow();
-    const tap = await phone.page.locator("#reading-back").boundingBox();
+    const tap = await phone.page.locator("#close-reader").boundingBox();
     await phone.page.goto(base + "#museum", { waitUntil: "domcontentloaded" });
     await phone.page.waitForSelector("#museum.open .museum-exhibit", { timeout: 30000 });
     await settle(phone.page);
     const m = await overflow();
     assert.ok(a <= 0 && r <= 0 && m <= 0, `overflow archive ${a}, reader ${r}, museum ${m}`);
-    assert.ok(tap && tap.height >= 24, "Back control too small to tap");
+    assert.ok(tap && tap.height >= 24, "Close control too small to tap");
     return `overflow ${a}/${r}/${m} px`;
   });
   await check("no page errors or failed requests (phone)", async () => { assert.deepEqual(phone.problems, []); });

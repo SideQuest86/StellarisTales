@@ -1,4 +1,4 @@
-﻿// Browser check for reading-progress persistence (src/progress.js). Requires a running preview
+// Browser check for reading-progress persistence (src/progress.js). Requires a running preview
 // (default http://127.0.0.1:4173/). Playwright path: STELLARIS_PLAYWRIGHT_PATH or the bundled runtime.
 import assert from "node:assert/strict";
 import { pathToFileURL } from "node:url";
@@ -79,7 +79,7 @@ try {
     await page.waitForFunction((h) => location.hash === h, history[i]);
     await doc(page);
   }
-  assert.equal(await page.locator("#reading-back").isDisabled(), true);
+  assert.equal((await page.locator("#reading-back").count()) === 0, true);
   assert.equal((await chosenKeys(page)).length, 1, "choice still selected on the first step");
   step("refresh on link restores trail; Back walks the history; choice selected");
 
@@ -108,7 +108,7 @@ try {
   await page.reload({ waitUntil: "networkidle" });
   await page.locator("#continue-reading [data-continue]").click();
   await doc(page);
-  while (!(await page.locator("#reading-back").isDisabled())) { await page.click("#reading-back"); await page.waitForTimeout(250); }
+  while (!((await page.locator("#reading-back").count()) === 0)) { await page.click("#reading-back"); await page.waitForTimeout(250); }
   await doc(page);
   const before = await page.evaluate(() => document.querySelector(".choice.chosen .choice-button").dataset.choiceSource);
   const other = page.locator(`.choice-button:not([aria-disabled=true]):not([data-choice-source="${before}"])`).first();
@@ -133,7 +133,7 @@ try {
   await page.reload({ waitUntil: "networkidle" });
   await doc(page);
   await settle(page);
-  assert.equal(await page.locator("#reading-back").isDisabled(), true, "no invented history");
+  assert.equal((await page.locator("#reading-back").count()) === 0, true, "no invented history");
   assert.equal(JSON.stringify(await stored(page)), savedBefore, "saved progress untouched");
   step("foreign direct link opens fresh, progress untouched");
   // ...until the reader navigates further from it.
@@ -177,7 +177,7 @@ try {
     await page.locator("#continue-reading [data-continue]").click();
     await doc(page);
     assert.equal(await hash(page), "#story=curators&chapter=leviathans.502");
-    assert.equal(await page.locator("#reading-back").isDisabled(), true);
+    assert.equal((await page.locator("#reading-back").count()) === 0, true);
     step("tampered data ignored; stale steps truncated");
 
     // 8. 390 px layout.

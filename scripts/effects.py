@@ -158,7 +158,7 @@ def amount(num, percent=False, signed=True):
     return None, {'scaled': True, 'unit': 'percent' if percent else 'flat', 'expression': num[1]}
 
 
-SCALED = L('（数值由游戏按存档情况计算）', ' (scaled by the game)')
+SCALED = L('（随存档而定）', ' (depends on the save)')
 DUR_UNITS = (('days', 'day', '天'), ('months', 'month', '个月'), ('years', 'year', '年'))
 
 
@@ -245,6 +245,24 @@ def generic_cond(k, v, op='='):
     return {'zh': zh, 'en': en, 'detail': [f'{k} {op} {v if not isinstance(v, list) else "{...}"}']}
 
 
+def if_label(when):
+    """'If: X' prefix only when X does not already read as a clause of its own (满足…时 / if …)."""
+    zh, en = when['zh'], when['en']
+    zh = zh if zh.endswith('时') or zh.startswith('未满足') else '如果：' + zh
+    en = en[:1].upper() + en[1:] if en.startswith(('if ', 'when ', 'while ', 'at ', 'unless ')) else 'If: ' + en
+    return L(zh, en)
+
+
+def not_label(inner):
+    """Negation: short clauses read '未满足 X' / 'unless X'; long ones keep the bracketed form."""
+    zh, en = inner['zh'], inner['en']
+    if len(en) > 60 or len(zh) > 30:
+        return L('不满足（' + zh + '）', 'not (' + en + ')')
+    nzh = '未' + zh.removesuffix('时') if zh.startswith('满足') else '未满足：' + zh
+    nen = 'unless ' + (en[3:] if en.startswith('if ') else en)
+    return L(nzh, nen)
+
+
 def negate(zh, en):
     nzh = '不' + zh if zh.startswith(('是', '具有', '可以', '处于', '由')) else '不满足：' + zh
     for a, b in (('is ', 'is not '), ('has ', 'does not have '), ('can ', 'cannot ')):
@@ -267,7 +285,7 @@ def atom_label(n, ctx):
             return cond_label(v, ctx)
         if low == 'nand':
             inner = cond_label(v, ctx)
-            r = L('不满足（' + inner['zh'] + '）', 'not (' + inner['en'] + ')')
+            r = not_label(inner)
             if inner.get('detail'):
                 r['detail'] = inner['detail']
             return r
@@ -384,7 +402,7 @@ def cond_label(nodes, ctx, mode='and'):
             continue
         if k in ('not', 'nor') and isinstance(n['v'], list):
             inner = cond_label(n['v'], ctx, 'or' if k == 'nor' else 'and')
-            parts.append(L('不满足（' + inner['zh'] + '）', 'not (' + inner['en'] + ')'))
+            parts.append(not_label(inner))
         elif k == 'or' and isinstance(n['v'], list):
             inner = cond_label(n['v'], ctx, 'or')
             parts.append(L('（' + inner['zh'] + '）', '(' + inner['en'] + ')'))
@@ -603,7 +621,7 @@ def g_if(n, ctx, st):
     when = cond_label(limit, ctx)
     if not kids:
         return []
-    return [entry('if', L('如果：' + when['zh'], 'If: ' + when['en']), n, st, effects=kids, when=when, conditional=True)]
+    return [entry('if', if_label(when), n, st, effects=kids, when=when, conditional=True)]
 
 
 def g_hidden(n, ctx, st):
@@ -647,10 +665,9 @@ def g_random_list(n, ctx, st):
     for o in options:
         pct = round(o['weight'] / total * 100, 1) if all_numeric and total else None
         c = {'weight': o['weight'], 'of': total if all_numeric else None, 'percent': pct, 'adjusted': o['adjusted']}
-        suffix_zh = f'（基础权重 {o["weight"]:g}/{total:g}' + ('，概率会被条件调整）' if o['adjusted'] else '）') if pct is not None else '（权重由游戏计算）'
-        suffix_en = f' (base weight {o["weight"]:g} of {total:g}' + ('; chances adjusted by conditions)' if o['adjusted'] else ')') if pct is not None else ' (weight computed by the game)'
-        out.append(entry('random_option', L(f'约 {pct:g}% 的概率' + suffix_zh if pct is not None else '一种可能' + suffix_zh,
-                                             (f'About {pct:g}% chance' if pct is not None else 'One possible outcome') + suffix_en),
+        adj_zh, adj_en = ('（受条件调整）', ' (adjusted by conditions)') if o['adjusted'] else ('', '')
+        out.append(entry('random_option', L((f'约 {pct:g}%' if pct is not None else '一种可能') + adj_zh,
+                                             (f'About {pct:g}%' if pct is not None else 'One possible outcome') + adj_en),
                          o['node'], st, chance={k: v2 for k, v2 in c.items() if v2 is not None}, effects=o['effects'], conditional=True))
     return [entry('random_list', L('以下结果之一随机发生：', 'One of these happens at random:'), n, st, effects=out, conditional=True)]
 
@@ -690,7 +707,7 @@ def g_switch(n, ctx, st):
                 when = atom_label({'k': var, 'v': x['k']}, ctx)
                 if when['zh'] == G.SPECIFIC[0] or when['zh'] == G.STORY[0]:
                     when = dict(when, zh='按具体情形' if when['zh'] == G.SPECIFIC[0] else when['zh'], en='in this case' if when['en'] == G.SPECIFIC[1] else when['en'])
-            out.append(entry('if', L('如果：' + when['zh'], 'If: ' + when['en']), x, st, effects=kids, when=when, conditional=True))
+            out.append(entry('if', if_label(when), x, st, effects=kids, when=when, conditional=True))
     return out
 
 
@@ -767,6 +784,8 @@ def h_add_resource(n, ctx, st):
     for x in n['v']:
         if x['k'] in ('mult', 'desc', 'show_message'):
             continue
+        if not re.fullmatch(r'\w+', x['k']):  # parser debris from an inline @\[ ... ] expression, not a resource
+            continue
         num = to_num(x['v'], ctx)
         txt, extra = amount(num)
         rn = res_name(ctx, x['k'])
@@ -787,20 +806,24 @@ def h_monthly_mult(n, ctx, st):
     num = to_num(p['value'], ctx)
     lo = to_num(p['min'], ctx) if 'min' in p else None
     hi = to_num(p['max'], ctx) if 'max' in p else None
-    bounds_zh = bounds_en = ''
-    if lo and lo[0] == 'num':
-        bounds_zh += f'，至少 {lo[1]:g}'
-        bounds_en += f', at least {lo[1]:g}'
-    if hi and hi[0] == 'num' and hi[1] < 1e6:
-        bounds_zh += f'，至多 {hi[1]:g}'
-        bounds_en += f', at most {hi[1]:g}'
+    lo_v = lo[1] if lo and lo[0] == 'num' else None
+    hi_v = hi[1] if hi and hi[0] == 'num' and hi[1] < 1e6 else None
+    if lo_v is not None and hi_v is not None:
+        bounds_zh, bounds_en = f'（{lo_v:g} 至 {hi_v:g}）', f' ({lo_v:g} to {hi_v:g})'
+    elif lo_v is not None:
+        bounds_zh, bounds_en = f'（至少 {lo_v:g}）', f' (at least {lo_v:g})'
+    elif hi_v is not None:
+        bounds_zh, bounds_en = f'（至多 {hi_v:g}）', f' (at most {hi_v:g})'
+    else:
+        bounds_zh = bounds_en = ''
     if num[0] == 'num':
-        zh = f'获得{rn["zh"]}：相当于每月产出的 {num[1]:g} 倍{bounds_zh}'
-        en = f'Gains {rn["en"]}: {num[1]:g}x your monthly income{bounds_en}'
+        n_ = num[1]
+        zh = f'{rn["zh"]} +{n_:g} 个月产出{bounds_zh}'
+        en = f'{rn["en"]} +{n_:g} month{"" if n_ == 1 else "s"} of income{bounds_en}'
         extra = {'monthlyMultiple': num[1]}
     else:
-        zh = f'获得{rn["zh"]}{SCALED["zh"]}{bounds_zh}'
-        en = f'Gains {rn["en"]}{SCALED["en"]}{bounds_en}'
+        zh = f'{rn["zh"]}：若干个月产出{bounds_zh}'
+        en = f'{rn["en"]}: some months of income{bounds_en}'
         extra = {'scaled': True}
     return [entry('resource', L(zh, en), n, st, resource=p['resource'], unit='monthly-income-multiple', min=lo[1] if lo and lo[0] == 'num' else None,
                   max=hi[1] if hi and hi[0] == 'num' else None, **extra)]
@@ -905,7 +928,8 @@ def h_opinion(n, ctx, st):
 def h_create_ship(n, ctx, st):
     p = params_of(n)
     design = p.get('design')
-    name = nm(ctx, design) if isinstance(design, str) else None
+    # a design that is only a script reference (last_created_design, event_target:x …) has no name worth showing
+    name = nm(ctx, design) if isinstance(design, str) and re.fullmatch(r'\w+', design) and not design.startswith('last_created') else None
     which = f'「{name["zh"]}」' if name else ''
     whichen = f' "{name["en"]}"' if name else ''
     return [entry('ship', L(f'出现一艘新舰船{which}', f'A new ship appears{whichen}'), n, st, design=design if isinstance(design, str) else None)]

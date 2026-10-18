@@ -1,0 +1,243 @@
+{
+ "museumEscape": {
+  "rows": [
+   [
+    "cold #museum",
+    {
+     "open": true,
+     "hash": "#museum",
+     "active": "museum-search",
+     "inMuseum": true
+    }
+   ],
+   [
+    "Escape on cold open",
+    {
+     "open": false,
+     "hash": "",
+     "active": "BODY",
+     "inMuseum": false
+    }
+   ],
+   [
+    "reopen via hash",
+    {
+     "open": true,
+     "hash": "#museum",
+     "active": "museum-search",
+     "inMuseum": true
+    }
+   ],
+   [
+    "Escape after reopen",
+    {
+     "open": false,
+     "hash": "",
+     "active": "BODY",
+     "inMuseum": false
+    }
+   ],
+   [
+    "via nav button",
+    {
+     "open": true,
+     "hash": "#museum",
+     "active": "museum-search",
+     "inMuseum": true
+    }
+   ],
+   [
+    "exhibit open",
+    {
+     "open": true,
+     "hash": "#museum",
+     "active": "museum-close museum-detail-close",
+     "inMuseum": true
+    }
+   ],
+   [
+    "Esc1",
+    {
+     "open": true,
+     "hash": "#museum",
+     "active": "museum-exhibit rarity-exceptional active",
+     "inMuseum": true
+    }
+   ],
+   [
+    "Esc2",
+    {
+     "open": false,
+     "hash": "",
+     "active": "BODY",
+     "inMuseum": false
+    }
+   ],
+   [
+    "Esc3",
+    {
+     "open": false,
+     "hash": "",
+     "active": "BODY",
+     "inMuseum": false
+    }
+   ]
+  ],
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ },
+ "glbAbortRetry": {
+  "rows": [
+   [
+    "blocked",
+    {
+     "viewer": "none",
+     "txt": "",
+     "diag": null,
+     "panel": true
+    }
+   ],
+   [
+    "other exhibit after unblock",
+    {
+     "viewer": "museum-viewer ready",
+     "txt": "",
+     "diag": "./museum/models/hyper_mulch.glb",
+     "panel": true
+    }
+   ],
+   [
+    "retry first",
+    {
+     "viewer": "museum-viewer ready",
+     "txt": "",
+     "diag": "./museum/models/ytterite_preserved_corpse.glb",
+     "panel": true
+    }
+   ]
+  ],
+  "log": {
+   "errors": [],
+   "console": [
+    "Failed to load resource: net::ERR_FAILED"
+   ],
+   "failed": [
+    "museum/models/ytterite_preserved_corpse.glb"
+   ]
+  }
+ },
+ "shardAbort": {
+  "a": {
+   "open": false,
+   "txt": "",
+   "toast": "博物天枢暂时无法打开。 Failed to fetch"
+  },
+  "b": {
+   "open": true,
+   "n": 258
+  },
+  "log": {
+   "errors": [],
+   "console": [
+    "Failed to load resource: net::ERR_FAILED"
+   ],
+   "failed": [
+    "museum/specimens.json"
+   ]
+  }
+ },
+ "imageFontAbort": {
+  "s": {
+   "title": "功率骤增",
+   "brokenImgs": 1,
+   "firstBroken": [
+    {
+     "alt": "群星原声专辑封面",
+     "w": 40,
+     "h": 40,
+     "cls": ""
+    }
+   ]
+  },
+  "log": {
+   "errors": [],
+   "failedN": 243
+  }
+ },
+ "fastChapters": {
+  "rows": [
+   [
+    "after 5 fast next",
+    {
+     "hash": "#story=cetana&chapter=crisis.8020",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "crisis.8020",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 478,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    }
+   ],
+   [
+    "after 3 fast back",
+    {
+     "hash": "#story=cetana&chapter=crisis.8035",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "crisis.8035",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 544,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    },
+    "#story=cetana&chapter=crisis.8035"
+   ],
+   [
+    "after reload at link",
+    {
+     "hash": "#story=cetana&chapter=crisis.8035",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "crisis.8035",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 544,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    },
+    false
+   ],
+   [
+    "continue shown",
+    true
+   ],
+   [
+    "goBack",
+    "about:blank"
+   ]
+  ],
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ }
+}

@@ -1,4 +1,5 @@
 import { t, language } from "./i18n.js";
+import { isConstrained, networkQuiet } from "./glyph-warmup.js";
 
 export const nextTrack = (index, direction, count) =>
   (((index + direction) % count) + count) % count;
@@ -135,7 +136,7 @@ export class SoundtrackPlayer {
     );
     this.audio.addEventListener("error", () => {
       this.updatePlaying();
-      notify(t("music.loadFailed"));
+      this.showFailure(t("music.loadFailed"));
     });
     this.select(this.index, false, false);
     this.autoplay();
@@ -164,19 +165,34 @@ export class SoundtrackPlayer {
   /** Try to start on entry; if the browser refuses, wait once for a real gesture. */
   async autoplay() {
     if (!shouldAutoplay({ paused: read("st-music-paused") === "1", volume: this.audio.volume })) return;
-    if (await this.play(false)) return;
-    this.armGesture();
+    // Do not compete with covers/fonts: slow links wait for a gesture, others for a quiet network.
+    if (isConstrained()) return this.armGesture();
+    // A first gesture while the page is still loading starts the music at once (no hint shown while waiting).
+    this.armGesture(false);
+    await networkQuiet();
+    if (!this.gestureArmed) return; // a gesture already started it
+    if (read("st-music-paused") === "1" || !this.audio.paused) return this.disarmGesture?.();
+    if (await this.play(false)) return this.disarmGesture?.();
+    $("music-player").classList.add("autoplay-blocked");
   }
-  armGesture() {
+  /** Visible failure message in the player itself (artist line) plus the toast; cleared when a track is selected. */
+  showFailure(message) {
+    const line = $("track-artist");
+    line.textContent = message;
+    line.setAttribute("role", "alert");
+    $("music-player").classList.add("load-failed");
+    this.notify(message);
+  }
+  armGesture(hint = true) {
     if (this.gestureArmed) return;
     this.gestureArmed = true;
-    $("music-player").classList.add("autoplay-blocked");
+    if (hint) $("music-player").classList.add("autoplay-blocked");
     const events = ["pointerdown", "keydown", "touchend"];
-    const disarm = () => {
+    const disarm = (this.disarmGesture = () => {
       for (const name of events) document.removeEventListener(name, handler, true);
       this.gestureArmed = false;
       $("music-player").classList.remove("autoplay-blocked");
-    };
+    });
     const handler = (e) => {
       if (e.type === "keydown" && !isEligibleKey(e.key)) return;
       disarm();
@@ -204,6 +220,8 @@ export class SoundtrackPlayer {
     this.audio.src = this.asset(track.url);
     $("track-title").textContent = track.title;
     $("track-artist").textContent = track.artist;
+    $("track-artist").removeAttribute("role");
+    $("music-player").classList.remove("load-failed");
     $("duration").textContent = time(track.duration);
     $("elapsed").textContent = "0:00";
     $("music-seek").value = "0";
@@ -230,7 +248,9 @@ export class SoundtrackPlayer {
         await this.audio.play();
         ok = true;
       } catch (e) {
-        if (ticket === this.ticket && e.name !== "AbortError" && userInitiated) this.notify(t("music.playFailed"));
+        if (ticket === this.ticket && e.name !== "AbortError" && userInitiated)
+          if (this.audio.error || e.name === "NotSupportedError") this.showFailure(t("music.loadFailed"));
+          else this.notify(t("music.playFailed"));
       }
       if (this.pending === run) this.pending = null;
       this.updatePlaying();

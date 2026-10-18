@@ -1,0 +1,371 @@
+{
+ "measuredAt": "2026-10-18T20:02:44.304Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "chrome 155.0.8059.80",
+ "headed": true,
+ "url": "http://127.0.0.1:4192/",
+ "reps": 3,
+ "seconds": 16,
+ "result": {
+  "desktop": [
+   {
+    "buttonVisibleMs": 145,
+    "coversReadyMs": 699,
+    "dcl": 128.89999997615814,
+    "load": 471.39999997615814,
+    "fcp": 160,
+    "taskMs": 2402,
+    "scriptMs": 404,
+    "layoutMs": 1434,
+    "styleMs": 25,
+    "heapMB": 8.7,
+    "nodes": 841,
+    "listeners": 134,
+    "requests": 237,
+    "bytes": 16046064,
+    "byExt": {
+     "document": {
+      "n": 1,
+      "bytes": 9734
+     },
+     "css": {
+      "n": 3,
+      "bytes": 59659
+     },
+     "js": {
+      "n": 21,
+      "bytes": 2389175
+     },
+     "stylesheet": {
+      "n": 1,
+      "bytes": 124685
+     },
+     "json": {
+      "n": 8,
+      "bytes": 2076804
+     },
+     "webp": {
+      "n": 88,
+      "bytes": 1177266
+     },
+     "woff2": {
+      "n": 112,
+      "bytes": 7127725
+     },
+     "mp3": {
+      "n": 1,
+      "bytes": 3080192
+     },
+     "svg": {
+      "n": 2,
+      "bytes": 824
+     }
+    },
+    "decode": {
+     "decodeImageMs": 173,
+     "resizeMs": 0,
+     "gpuRasterMs": 72,
+     "decodeCount": 88
+    },
+    "frames": {
+     "frames": 683,
+     "n": 683,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 305.9,
+     "over20": 9,
+     "over34": 5,
+     "loafN": 2,
+     "loafMax": 328,
+     "loafTop": [
+      {
+       "at": 130.5,
+       "d": 327.5999999642372,
+       "block": 260.7,
+       "scripts": [
+        {
+         "fn": "Response.json.then",
+         "url": "app.js",
+         "ms": 43.8,
+         "fl": 9
+        },
+        {
+         "fn": "FrameRequestCallback",
+         "url": "",
+         "ms": 265.1,
+         "fl": 0
+        }
+       ]
+      },
+      {
+       "at": 14.5,
+       "d": 92.79999995231628,
+       "block": 19.2,
+       "scripts": []
+      }
+     ],
+     "longtaskN": 2,
+     "longtaskMax": 267
+    },
+    "textures": 3,
+    "geometries": 5,
+    "atlas": {
+     "bytes": 16777216,
+     "hi": 29,
+     "lo": 87,
+     "capacity": {
+      "hi": 36,
+      "lo": 256
+     },
+     "bitmaps": 40
+    },
+    "framesDrawn": 153
+   },
+   {
+    "buttonVisibleMs": 269,
+    "coversReadyMs": 428,
+    "dcl": 127,
+    "load": 209.5,
+    "fcp": 108,
+    "taskMs": 2133,
+    "scriptMs": 154,
+    "layoutMs": 1442,
+    "styleMs": 24,
+    "heapMB": 8.5,
+    "nodes": 1048,
+    "listeners": 134,
+    "requests": 237,
+    "bytes": 16177158,
+    "byExt": {
+     "document": {
+      "n": 1,
+      "bytes": 9734
+     },
+     "css": {
+      "n": 3,
+      "bytes": 59659
+     },
+     "js": {
+      "n": 21,
+      "bytes": 2389175
+     },
+     "stylesheet": {
+      "n": 1,
+      "bytes": 124685
+     },
+     "json": {
+      "n": 8,
+      "bytes": 2076804
+     },
+     "webp": {
+      "n": 88,
+      "bytes": 1177266
+     },
+     "woff2": {
+      "n": 112,
+      "bytes": 7127747
+     },
+     "svg": {
+      "n": 2,
+      "bytes": 824
+     },
+     "mp3": {
+      "n": 1,
+      "bytes": 3211264
+     }
+    },
+    "decode": {
+     "decodeImageMs": 118,
+     "resizeMs": 0,
+     "gpuRasterMs": 71,
+     "decodeCount": 88
+    },
+    "frames": {
+     "frames": 692,
+     "n": 692,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 64.6,
+     "over20": 5,
+     "over34": 4,
+     "loafN": 2,
+     "loafMax": 79,
+     "loafTop": [
+      {
+       "at": 13.700000047683716,
+       "d": 78.69999998807907,
+       "block": 22,
+       "scripts": []
+      },
+      {
+       "at": 129.20000004768372,
+       "d": 73.89999997615814,
+       "block": 16.9,
+       "scripts": [
+        {
+         "fn": "Response.json.then",
+         "url": "app.js",
+         "ms": 31.2,
+         "fl": 8.1
+        },
+        {
+         "fn": "FrameRequestCallback",
+         "url": "",
+         "ms": 34.1,
+         "fl": 0
+        }
+       ]
+      }
+     ],
+     "longtaskN": 0,
+     "longtaskMax": 0
+    },
+    "textures": 3,
+    "geometries": 5,
+    "atlas": {
+     "bytes": 16777216,
+     "hi": 29,
+     "lo": 87,
+     "capacity": {
+      "hi": 36,
+      "lo": 256
+     },
+     "bitmaps": 40
+    },
+    "framesDrawn": 153
+   },
+   {
+    "buttonVisibleMs": 159,
+    "coversReadyMs": 494,
+    "dcl": 169.0999999642372,
+    "load": 280,
+    "fcp": 124,
+    "taskMs": 2213,
+    "scriptMs": 173,
+    "layoutMs": 1439,
+    "styleMs": 27,
+    "heapMB": 10.9,
+    "nodes": 971,
+    "listeners": 134,
+    "requests": 237,
+    "bytes": 17356796,
+    "byExt": {
+     "document": {
+      "n": 1,
+      "bytes": 9734
+     },
+     "css": {
+      "n": 3,
+      "bytes": 59659
+     },
+     "js": {
+      "n": 21,
+      "bytes": 2389175
+     },
+     "stylesheet": {
+      "n": 1,
+      "bytes": 124685
+     },
+     "json": {
+      "n": 8,
+      "bytes": 2076804
+     },
+     "webp": {
+      "n": 88,
+      "bytes": 1177266
+     },
+     "woff2": {
+      "n": 112,
+      "bytes": 7127737
+     },
+     "mp3": {
+      "n": 1,
+      "bytes": 4390912
+     },
+     "svg": {
+      "n": 2,
+      "bytes": 824
+     }
+    },
+    "decode": {
+     "decodeImageMs": 177,
+     "resizeMs": 0,
+     "gpuRasterMs": 65,
+     "decodeCount": 88
+    },
+    "frames": {
+     "frames": 685,
+     "n": 685,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 94.1,
+     "over20": 7,
+     "over34": 5,
+     "loafN": 3,
+     "loafMax": 100,
+     "loafTop": [
+      {
+       "at": 173.69999998807907,
+       "d": 99.89999997615814,
+       "block": 43.3,
+       "scripts": [
+        {
+         "fn": "Response.json.then",
+         "url": "app.js",
+         "ms": 34.4,
+         "fl": 8.7
+        },
+        {
+         "fn": "FrameRequestCallback",
+         "url": "",
+         "ms": 57,
+         "fl": 0
+        }
+       ]
+      },
+      {
+       "at": 12.5,
+       "d": 95.09999996423721,
+       "block": 32.7,
+       "scripts": []
+      },
+      {
+       "at": 1606,
+       "d": 76.09999996423721,
+       "block": 21.2,
+       "scripts": [
+        {
+         "fn": "IdleRequestCallback",
+         "url": "app.js",
+         "ms": 38.1,
+         "fl": 29.4
+        },
+        {
+         "fn": "FrameRequestCallback",
+         "url": "",
+         "ms": 6.2,
+         "fl": 6.1
+        }
+       ]
+      }
+     ],
+     "longtaskN": 2,
+     "longtaskMax": 96
+    },
+    "textures": 3,
+    "geometries": 5,
+    "atlas": {
+     "bytes": 16777216,
+     "hi": 29,
+     "lo": 87,
+     "capacity": {
+      "hi": 36,
+      "lo": 256
+     },
+     "bitmaps": 40
+    },
+    "framesDrawn": 151
+   }
+  ]
+ }
+}

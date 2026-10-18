@@ -1,0 +1,732 @@
+{
+ "rapidOpenEscape": {
+  "bad": [],
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  },
+  "final": {
+   "hash": "",
+   "readerHidden": true,
+   "bodyOpen": false,
+   "doc": null,
+   "hudInert": false,
+   "catInert": false,
+   "readerInert": true,
+   "prewarm": false,
+   "museumOpen": false,
+   "active": "open-story",
+   "nodes": 341,
+   "readerOpacity": "1",
+   "readerDisplay": "none"
+  }
+ },
+ "openDifferentFast": {
+  "crashed": "page.click: Timeout 30000ms exceeded."
+ },
+ "memory": {
+  "sample": [
+   {
+    "i": 0,
+    "heapMB": 7.91,
+    "nodes": 401,
+    "listeners": 135
+   },
+   {
+    "i": 5,
+    "heapMB": 8.33,
+    "nodes": 400,
+    "listeners": 140
+   },
+   {
+    "i": 10,
+    "heapMB": 8.61,
+    "nodes": 400,
+    "listeners": 145
+   },
+   {
+    "i": 15,
+    "heapMB": 8.62,
+    "nodes": 400,
+    "listeners": 150
+   },
+   {
+    "i": 20,
+    "heapMB": 8.65,
+    "nodes": 400,
+    "listeners": 155
+   },
+   {
+    "i": 25,
+    "heapMB": 8.68,
+    "nodes": 400,
+    "listeners": 160
+   },
+   {
+    "i": 30,
+    "heapMB": 8.7,
+    "nodes": 400,
+    "listeners": 165
+   }
+  ],
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ },
+ "directLinks": {
+  "rows": [
+   [
+    "cold story",
+    {
+     "hash": "#story=cetana&chapter=crisis.8035",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "crisis.8035",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 529,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    }
+   ],
+   [
+    "story->story",
+    {
+     "hash": "#story=the-shroud&chapter=utopia.2655",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "utopia.2655",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 476,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    },
+    "虚境"
+   ],
+   [
+    "story->museum",
+    {
+     "hash": "#museum",
+     "readerHidden": true,
+     "bodyOpen": false,
+     "doc": "utopia.2655",
+     "hudInert": false,
+     "catInert": false,
+     "readerInert": true,
+     "prewarm": false,
+     "museumOpen": true,
+     "active": "museum-search",
+     "nodes": 2062,
+     "readerOpacity": "1",
+     "readerDisplay": "none"
+    }
+   ],
+   [
+    "museum->story",
+    {
+     "hash": "#story=cetana&chapter=crisis.8035",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "crisis.8035",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 2131,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    }
+   ],
+   [
+    "back1",
+    {
+     "hash": "#museum",
+     "readerHidden": true,
+     "bodyOpen": false,
+     "doc": "crisis.8035",
+     "hudInert": false,
+     "catInert": false,
+     "readerInert": true,
+     "prewarm": false,
+     "museumOpen": true,
+     "active": "museum-search",
+     "nodes": 2131,
+     "readerOpacity": "1",
+     "readerDisplay": "none"
+    }
+   ],
+   [
+    "back2",
+    {
+     "hash": "#story=the-shroud&chapter=utopia.2655",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "utopia.2655",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 2062,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    }
+   ],
+   [
+    "fwd",
+    {
+     "hash": "#museum",
+     "readerHidden": true,
+     "bodyOpen": false,
+     "doc": "utopia.2655",
+     "hudInert": false,
+     "catInert": false,
+     "readerInert": true,
+     "prewarm": false,
+     "museumOpen": true,
+     "active": "museum-search",
+     "nodes": 2062,
+     "readerOpacity": "1",
+     "readerDisplay": "none"
+    }
+   ],
+   [
+    "bad story",
+    {
+     "hash": "#story=does-not-exist",
+     "readerHidden": true,
+     "bodyOpen": false,
+     "doc": "utopia.2655",
+     "hudInert": false,
+     "catInert": false,
+     "readerInert": true,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "open-story",
+     "nodes": 2062,
+     "readerOpacity": "1",
+     "readerDisplay": "none"
+    },
+    "未能载入，请稍后重试。"
+   ],
+   [
+    "bad museum key",
+    {
+     "hash": "#museum=nonexistent-key",
+     "readerHidden": true,
+     "bodyOpen": false,
+     "doc": "utopia.2655",
+     "hudInert": false,
+     "catInert": false,
+     "readerInert": true,
+     "prewarm": false,
+     "museumOpen": true,
+     "active": "museum-open",
+     "nodes": 2062,
+     "readerOpacity": "1",
+     "readerDisplay": "none"
+    },
+    "未能载入，请稍后重试。"
+   ],
+   [
+    "bad chapter",
+    {
+     "hash": "#story=cetana&chapter=crisis.8035",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "crisis.8035",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 2131,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    },
+    "未能载入，请稍后重试。"
+   ]
+  ],
+  "log": {
+   "errors": [],
+   "console": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "failed": []
+  }
+ },
+ "museumRapid": {
+  "keysLast": "captain_ness_body",
+  "last": {
+   "v": "./museum/models/captain_ness_body.glb",
+   "active": "captain_ness_body",
+   "ready": true
+  },
+  "cyc": [
+   {
+    "open": true,
+    "hash": "#museum"
+   },
+   {
+    "open": false,
+    "hash": ""
+   },
+   {
+    "open": true,
+    "hash": "#museum"
+   },
+   {
+    "open": true,
+    "hash": "#museum"
+   },
+   {
+    "open": true,
+    "hash": "#museum"
+   },
+   {
+    "open": true,
+    "hash": "#museum"
+   },
+   {
+    "open": true,
+    "hash": "#museum"
+   },
+   {
+    "open": true,
+    "hash": "#museum"
+   },
+   {
+    "open": true,
+    "hash": "#museum"
+   },
+   {
+    "open": true,
+    "hash": "#museum"
+   }
+  ],
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ },
+ "loadFailures": {
+  "afterFail": {
+   "hash": "#story=cetana",
+   "readerHidden": true,
+   "bodyOpen": false,
+   "doc": null,
+   "hudInert": false,
+   "catInert": false,
+   "readerInert": true,
+   "prewarm": false,
+   "museumOpen": false,
+   "active": "BODY",
+   "nodes": 342,
+   "readerOpacity": "1",
+   "readerDisplay": "none"
+  },
+  "toastA": "Failed to fetch",
+  "afterRecovery": {
+   "hash": "#story=cetana&chapter=crisis.8035",
+   "readerHidden": false,
+   "bodyOpen": true,
+   "doc": "crisis.8035",
+   "hudInert": true,
+   "catInert": true,
+   "readerInert": false,
+   "prewarm": false,
+   "museumOpen": false,
+   "active": "reader-title",
+   "nodes": 501,
+   "readerOpacity": "1",
+   "readerDisplay": "block"
+  },
+  "viewerMsg": "undefined | ",
+  "log": {
+   "errors": [],
+   "console": [
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED"
+   ],
+   "failed": [
+    "stories/cetana.json",
+    "museum/models/ytterite_preserved_corpse.glb"
+   ]
+  }
+ },
+ "storageFail": {
+  "throw": {
+   "ok": false,
+   "err": "page.click: Timeout 30000ms exceeded.",
+   "errors": [],
+   "console": [],
+   "st": {
+    "hash": "#story=horizon-signal&chapter=akx.9000",
+    "readerHidden": false,
+    "bodyOpen": true,
+    "doc": "akx.9000",
+    "hudInert": true,
+    "catInert": true,
+    "readerInert": false,
+    "prewarm": false,
+    "museumOpen": false,
+    "active": "reader-title",
+    "nodes": 477,
+    "readerOpacity": "1",
+    "readerDisplay": "block"
+   },
+   "title": "视界信号"
+  },
+  "corrupt": {
+   "ok": false,
+   "err": "page.click: Timeout 30000ms exceeded.",
+   "errors": [],
+   "console": [],
+   "st": {
+    "hash": "#story=horizon-signal&chapter=akx.9000",
+    "readerHidden": false,
+    "bodyOpen": true,
+    "doc": "akx.9000",
+    "hudInert": true,
+    "catInert": true,
+    "readerInert": false,
+    "prewarm": false,
+    "museumOpen": false,
+    "active": "reader-title",
+    "nodes": 477,
+    "readerOpacity": "1",
+    "readerDisplay": "block"
+   },
+   "title": "视界信号"
+  },
+  "full": {
+   "ok": false,
+   "err": "page.click: Timeout 30000ms exceeded.",
+   "errors": [],
+   "console": [],
+   "st": {
+    "hash": "#story=horizon-signal&chapter=akx.9000",
+    "readerHidden": false,
+    "bodyOpen": true,
+    "doc": "akx.9000",
+    "hudInert": true,
+    "catInert": true,
+    "readerInert": false,
+    "prewarm": false,
+    "museumOpen": false,
+    "active": "reader-title",
+    "nodes": 477,
+    "readerOpacity": "1",
+    "readerDisplay": "block"
+   },
+   "title": "视界信号"
+  }
+ },
+ "audioFail": {
+  "blocked": {
+   "label": "播放音乐",
+   "text": "▶",
+   "toast": "点击播放开始。",
+   "title": "Faster Than Light - Feat. Mia Stegmar"
+  },
+  "afterNext": {
+   "label": "播放音乐",
+   "toast": "点击播放开始。"
+  },
+  "autoplayRefused": {
+   "label": "播放音乐",
+   "toast": "点击播放开始。"
+  },
+  "log": {
+   "errors": [],
+   "console": [
+    "Failed to load resource: net::ERR_FAILED"
+   ],
+   "failed": [
+    "music/02_fasterthanlight_bonus_featuringmiastegmar.mp3"
+   ]
+  },
+  "log2": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ },
+ "resizeDuringOpen": {
+  "crashed": "page.click: Timeout 30000ms exceeded."
+ },
+ "reducedMotion": {
+  "crashed": "page.click: Timeout 30000ms exceeded."
+ },
+ "touch": {
+  "rows": [
+   {
+    "hash": "#story=horizon-signal&chapter=akx.9000",
+    "readerHidden": false,
+    "bodyOpen": true,
+    "doc": "akx.9000",
+    "hudInert": true,
+    "catInert": true,
+    "readerInert": false,
+    "prewarm": false,
+    "museumOpen": false,
+    "active": "reader-title",
+    "nodes": 478,
+    "readerOpacity": "1",
+    "readerDisplay": "block"
+   },
+   "true",
+   "close tap failed page.tap: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#clos",
+   {
+    "hash": "#story=horizon-signal&chapter=akx.9000",
+    "readerHidden": false,
+    "bodyOpen": true,
+    "doc": "akx.9000",
+    "hudInert": true,
+    "catInert": true,
+    "readerInert": false,
+    "prewarm": false,
+    "museumOpen": false,
+    "active": "chapter-toggle",
+    "nodes": 477,
+    "readerOpacity": "1",
+    "readerDisplay": "block"
+   }
+  ],
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ },
+ "langProfileMidSearch": {
+  "rows": [
+   [
+    "search count zh",
+    "441 条结果"
+   ],
+   [
+    "after lang switch",
+    "441 results",
+    true,
+    "search-input"
+   ],
+   [
+    "after result click",
+    {
+     "hash": "#story=origin_legendary_leader&chapter=origin-intro%3Aorigin_legendary_leader",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "origin-intro:origin_legendary_leader",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 810,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    },
+    false
+   ],
+   [
+    "reader lang",
+    "Under One Rule",
+    "君临天下",
+    {
+     "hash": "#story=origin_legendary_leader&chapter=origin-intro%3Aorigin_legendary_leader",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "origin-intro:origin_legendary_leader",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-language",
+     "nodes": 810,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    }
+   ],
+   [
+    "rapid lang",
+    {
+     "hash": "#story=origin_legendary_leader&chapter=origin-intro%3Aorigin_legendary_leader",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "origin-intro:origin_legendary_leader",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-language",
+     "nodes": 810,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    },
+    "zh-CN"
+   ]
+  ],
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ },
+ "slowNetworkRace": {
+  "raceFinal": {
+   "hash": "#story=the-shroud&chapter=utopia.2655",
+   "readerHidden": false,
+   "bodyOpen": true,
+   "doc": "utopia.2655",
+   "hudInert": true,
+   "catInert": true,
+   "readerInert": false,
+   "prewarm": false,
+   "museumOpen": false,
+   "active": "reader-title",
+   "nodes": 475,
+   "readerOpacity": "1",
+   "readerDisplay": "block"
+  },
+  "title": "虚境",
+  "closedBeforeLoad": {
+   "hash": "#story=cetana&chapter=crisis.8035",
+   "readerHidden": false,
+   "bodyOpen": true,
+   "doc": "crisis.8035",
+   "hudInert": true,
+   "catInert": true,
+   "readerInert": false,
+   "prewarm": false,
+   "museumOpen": false,
+   "active": "reader-title",
+   "nodes": 544,
+   "readerOpacity": "1",
+   "readerDisplay": "block"
+  },
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ },
+ "keyboardNav": {
+  "rows": [
+   [
+    "opened",
+    {
+     "hash": "#story=horizon-signal&chapter=akx.9000",
+     "readerHidden": false,
+     "bodyOpen": true,
+     "doc": "akx.9000",
+     "hudInert": true,
+     "catInert": true,
+     "readerInert": false,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "reader-title",
+     "nodes": 478,
+     "readerOpacity": "1",
+     "readerDisplay": "block"
+    }
+   ],
+   [
+    "tabs",
+    [
+     "BUTTON",
+     "choice-button",
+     "SUMMARY",
+     "playlist-toggle",
+     "track-previous",
+     "play-pause",
+     "track-next",
+     "music-seek",
+     "music-volume",
+     "reader-open",
+     "skip-link",
+     "brand",
+     "BUTTON",
+     "BUTTON",
+     "BUTTON",
+     "BUTTON",
+     "BUTTON",
+     "BUTTON",
+     "flow-viewport",
+     "[object SVGAnimatedString]",
+     "close-reader",
+     "reader-language",
+     "BUTTON",
+     "choice-button",
+     "SUMMARY"
+    ]
+   ],
+   [
+    "after esc",
+    {
+     "hash": "",
+     "readerHidden": true,
+     "bodyOpen": false,
+     "doc": "akx.9000",
+     "hudInert": false,
+     "catInert": false,
+     "readerInert": true,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "open-story",
+     "nodes": 478,
+     "readerOpacity": "1",
+     "readerDisplay": "none"
+    }
+   ],
+   [
+    "slash search",
+    true
+   ],
+   [
+    "esc search",
+    {
+     "hash": "",
+     "readerHidden": true,
+     "bodyOpen": false,
+     "doc": "akx.9000",
+     "hudInert": false,
+     "catInert": false,
+     "readerInert": true,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "open-story",
+     "nodes": 597,
+     "readerOpacity": "1",
+     "readerDisplay": "none"
+    },
+    false
+   ]
+  ],
+  "log": {
+   "errors": [],
+   "console": [],
+   "failed": []
+  }
+ }
+}

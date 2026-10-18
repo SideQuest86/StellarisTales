@@ -1,0 +1,839 @@
+{
+ "measuredAt": "2026-10-18T20:10:56.055Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "msedge 155.0.4283.62",
+ "headed": true,
+ "url": "http://127.0.0.1:4192/",
+ "reps": 3,
+ "seconds": 55,
+ "result": {
+  "profile": "desktop",
+  "steps": {
+   "open story (first this page / later)": {
+    "first": {
+     "frames": 400,
+     "n": 400,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 105.9,
+     "over20": 4,
+     "over34": 3,
+     "loafN": 2,
+     "loafMax": 106,
+     "loafTop": [
+      {
+       "at": 4179.199999988079,
+       "d": 106.39999997615814,
+       "block": 0,
+       "scripts": []
+      },
+      {
+       "at": 4525.399999976158,
+       "d": 63.60000002384186,
+       "block": 13.5,
+       "scripts": [
+        {
+         "fn": "TimerHandler:setTimeout",
+         "url": "",
+         "ms": 20.7,
+         "fl": 0
+        }
+       ]
+      }
+     ],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 405,
+     "scriptMs": 107,
+     "layoutMs": 83,
+     "styleMs": 45,
+     "heapMB": 10.2,
+     "nodes": 1770,
+     "listeners": 135,
+     "requests": 32,
+     "bytes": 543195,
+     "byExt": {
+      "json": {
+       "n": 2,
+       "bytes": 189313
+      },
+      "svg": {
+       "n": 2,
+       "bytes": 824
+      },
+      "webp": {
+       "n": 27,
+       "bytes": 301390
+      },
+      "woff2": {
+       "n": 1,
+       "bytes": 51668
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 429,
+      "n": 429,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 47,
+      "over20": 1,
+      "over34": 1,
+      "loafN": 1,
+      "loafMax": 52,
+      "loafTop": [
+       {
+        "at": 20849.80000001192,
+        "d": 52.19999998807907,
+        "block": 0,
+        "scripts": [
+         {
+          "fn": "parseHash",
+          "url": "app.js",
+          "ms": 23.3,
+          "fl": 20.1
+         }
+        ]
+       }
+      ],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 350,
+      "scriptMs": 74,
+      "layoutMs": 23,
+      "styleMs": 54,
+      "heapMB": 13.2,
+      "nodes": 5356,
+      "listeners": 137,
+      "requests": 20,
+      "bytes": 195592,
+      "byExt": {
+       "svg": {
+        "n": 2,
+        "bytes": 824
+       },
+       "webp": {
+        "n": 18,
+        "bytes": 194768
+       }
+      }
+     },
+     {
+      "frames": 431,
+      "n": 431,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 17.7,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 279,
+      "scriptMs": 61,
+      "layoutMs": 13,
+      "styleMs": 41,
+      "heapMB": 13.2,
+      "nodes": 8930,
+      "listeners": 139,
+      "requests": 19,
+      "bytes": 188198,
+      "byExt": {
+       "svg": {
+        "n": 2,
+        "bytes": 824
+       },
+       "webp": {
+        "n": 17,
+        "bytes": 187374
+       }
+      }
+     }
+    ]
+   },
+   "chapter change": {
+    "first": {
+     "frames": 260,
+     "n": 260,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 17.6,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 103,
+     "scriptMs": 29,
+     "layoutMs": 8,
+     "styleMs": 7,
+     "heapMB": 9.6,
+     "nodes": 1958,
+     "listeners": 136,
+     "requests": 1,
+     "bytes": 412,
+     "byExt": {
+      "svg": {
+       "n": 1,
+       "bytes": 412
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 261,
+      "n": 261,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.5,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 103,
+      "scriptMs": 23,
+      "layoutMs": 2,
+      "styleMs": 6,
+      "heapMB": 14.1,
+      "nodes": 5545,
+      "listeners": 138,
+      "requests": 1,
+      "bytes": 412,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       }
+      }
+     },
+     {
+      "frames": 260,
+      "n": 260,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 11.7,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 73,
+      "scriptMs": 19,
+      "layoutMs": 1,
+      "styleMs": 4,
+      "heapMB": 12.7,
+      "nodes": 9119,
+      "listeners": 140,
+      "requests": 1,
+      "bytes": 412,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       }
+      }
+     }
+    ]
+   },
+   "back": {
+    "first": {
+     "frames": 257,
+     "n": 257,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 11.9,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 90,
+     "scriptMs": 25,
+     "layoutMs": 2,
+     "styleMs": 5,
+     "heapMB": 9.7,
+     "nodes": 2114,
+     "listeners": 136,
+     "requests": 1,
+     "bytes": 412,
+     "byExt": {
+      "svg": {
+       "n": 1,
+       "bytes": 412
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 260,
+      "n": 260,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.5,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 106,
+      "scriptMs": 24,
+      "layoutMs": 2,
+      "styleMs": 6,
+      "heapMB": 11.8,
+      "nodes": 5696,
+      "listeners": 138,
+      "requests": 1,
+      "bytes": 412,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       }
+      }
+     },
+     {
+      "frames": 260,
+      "n": 260,
+      "p50": 5.9,
+      "p95": 6.1,
+      "max": 11.8,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 102,
+      "scriptMs": 22,
+      "layoutMs": 2,
+      "styleMs": 5,
+      "heapMB": 12,
+      "nodes": 9270,
+      "listeners": 140,
+      "requests": 1,
+      "bytes": 412,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       }
+      }
+     }
+    ]
+   },
+   "map interaction (wheel+drag)": {
+    "first": {
+     "frames": 242,
+     "n": 242,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 6.1,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 100,
+     "scriptMs": 6,
+     "layoutMs": 1,
+     "styleMs": 1,
+     "heapMB": 10.3,
+     "nodes": 2130,
+     "listeners": 296,
+     "requests": 0,
+     "bytes": 0,
+     "byExt": {}
+    },
+    "later": [
+     {
+      "frames": 243,
+      "n": 243,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.1,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 95,
+      "scriptMs": 5,
+      "layoutMs": 1,
+      "styleMs": 1,
+      "heapMB": 12.3,
+      "nodes": 5707,
+      "listeners": 298,
+      "requests": 0,
+      "bytes": 0,
+      "byExt": {}
+     },
+     {
+      "frames": 245,
+      "n": 245,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 7.4,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 108,
+      "scriptMs": 5,
+      "layoutMs": 1,
+      "styleMs": 1,
+      "heapMB": 12.5,
+      "nodes": 9282,
+      "listeners": 300,
+      "requests": 0,
+      "bytes": 0,
+      "byExt": {}
+     }
+    ]
+   },
+   "close story": {
+    "first": {
+     "frames": 202,
+     "n": 202,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 17.6,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 141,
+     "scriptMs": 34,
+     "layoutMs": 2,
+     "styleMs": 7,
+     "heapMB": 9.1,
+     "nodes": 2114,
+     "listeners": 136,
+     "requests": 10,
+     "bytes": 98157,
+     "byExt": {
+      "svg": {
+       "n": 1,
+       "bytes": 412
+      },
+      "webp": {
+       "n": 9,
+       "bytes": 97745
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 202,
+      "n": 202,
+      "p50": 5.9,
+      "p95": 6.1,
+      "max": 16.3,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 123,
+      "scriptMs": 29,
+      "layoutMs": 1,
+      "styleMs": 8,
+      "heapMB": 12.5,
+      "nodes": 5732,
+      "listeners": 298,
+      "requests": 2,
+      "bytes": 17261,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       },
+       "webp": {
+        "n": 1,
+        "bytes": 16849
+       }
+      }
+     },
+     {
+      "frames": 192,
+      "n": 192,
+      "p50": 5.9,
+      "p95": 11.7,
+      "max": 23.6,
+      "over20": 1,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 116,
+      "scriptMs": 27,
+      "layoutMs": 1,
+      "styleMs": 8,
+      "heapMB": 12.5,
+      "nodes": 9306,
+      "listeners": 300,
+      "requests": 2,
+      "bytes": 17261,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       },
+       "webp": {
+        "n": 1,
+        "bytes": 16849
+       }
+      }
+     }
+    ]
+   },
+   "open other story": {
+    "first": {
+     "frames": 423,
+     "n": 423,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 29.4,
+     "over20": 2,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 424,
+     "scriptMs": 121,
+     "layoutMs": 37,
+     "styleMs": 56,
+     "heapMB": 10.1,
+     "nodes": 2127,
+     "listeners": 136,
+     "requests": 74,
+     "bytes": 1505968,
+     "byExt": {
+      "json": {
+       "n": 2,
+       "bytes": 462654
+      },
+      "svg": {
+       "n": 2,
+       "bytes": 824
+      },
+      "webp": {
+       "n": 67,
+       "bytes": 859146
+      },
+      "woff2": {
+       "n": 3,
+       "bytes": 183344
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 430,
+      "n": 430,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 17.6,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 351,
+      "scriptMs": 78,
+      "layoutMs": 17,
+      "styleMs": 53,
+      "heapMB": 12.4,
+      "nodes": 5701,
+      "listeners": 138,
+      "requests": 26,
+      "bytes": 333369,
+      "byExt": {
+       "webp": {
+        "n": 24,
+        "bytes": 332545
+       },
+       "svg": {
+        "n": 2,
+        "bytes": 824
+       }
+      }
+     },
+     {
+      "frames": 429,
+      "n": 429,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 11.8,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 319,
+      "scriptMs": 74,
+      "layoutMs": 12,
+      "styleMs": 56,
+      "heapMB": 12.2,
+      "nodes": 9279,
+      "listeners": 140,
+      "requests": 27,
+      "bytes": 340763,
+      "byExt": {
+       "webp": {
+        "n": 25,
+        "bytes": 339939
+       },
+       "svg": {
+        "n": 2,
+        "bytes": 824
+       }
+      }
+     }
+    ]
+   },
+   "long chapter (The Shroud utopia.3200)": {
+    "first": {
+     "frames": 416,
+     "n": 416,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 58.8,
+     "over20": 4,
+     "over34": 3,
+     "loafN": 2,
+     "loafMax": 58,
+     "loafTop": [
+      {
+       "at": 15747.899999976158,
+       "d": 57.60000002384186,
+       "block": 7.1,
+       "scripts": [
+        {
+         "fn": "Response.json.then",
+         "url": "app.js",
+         "ms": 46.9,
+         "fl": 33.6
+        }
+       ]
+      },
+      {
+       "at": 16406.5,
+       "d": 52.39999997615814,
+       "block": 1.2,
+       "scripts": []
+      }
+     ],
+     "longtaskN": 1,
+     "longtaskMax": 54,
+     "taskMs": 489,
+     "scriptMs": 94,
+     "layoutMs": 61,
+     "styleMs": 78,
+     "heapMB": 15.1,
+     "nodes": 7064,
+     "listeners": 136,
+     "requests": 34,
+     "bytes": 1845234,
+     "byExt": {
+      "json": {
+       "n": 2,
+       "bytes": 1290315
+      },
+      "svg": {
+       "n": 1,
+       "bytes": 412
+      },
+      "webp": {
+       "n": 26,
+       "bytes": 317943
+      },
+      "woff2": {
+       "n": 5,
+       "bytes": 236564
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 428,
+      "n": 428,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 23.5,
+      "over20": 1,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 363,
+      "scriptMs": 66,
+      "layoutMs": 23,
+      "styleMs": 78,
+      "heapMB": 13.7,
+      "nodes": 10586,
+      "listeners": 138,
+      "requests": 19,
+      "bytes": 217489,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       },
+       "webp": {
+        "n": 18,
+        "bytes": 217077
+       }
+      }
+     },
+     {
+      "frames": 425,
+      "n": 425,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 23.5,
+      "over20": 2,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 371,
+      "scriptMs": 65,
+      "layoutMs": 26,
+      "styleMs": 88,
+      "heapMB": 12.4,
+      "nodes": 13200,
+      "listeners": 140,
+      "requests": 19,
+      "bytes": 217489,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       },
+       "webp": {
+        "n": 18,
+        "bytes": 217077
+       }
+      }
+     }
+    ]
+   },
+   "archive navigation (next story key)": {
+    "first": {
+     "frames": 264,
+     "n": 264,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 6.3,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 90,
+     "scriptMs": 29,
+     "layoutMs": 0,
+     "styleMs": 0,
+     "heapMB": 12.1,
+     "nodes": 6037,
+     "listeners": 136,
+     "requests": 0,
+     "bytes": 0,
+     "byExt": {}
+    },
+    "later": [
+     {
+      "frames": 264,
+      "n": 264,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.6,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 67,
+      "scriptMs": 27,
+      "layoutMs": 1,
+      "styleMs": 0,
+      "heapMB": 13.7,
+      "nodes": 10615,
+      "listeners": 138,
+      "requests": 0,
+      "bytes": 0,
+      "byExt": {}
+     },
+     {
+      "frames": 268,
+      "n": 268,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.1,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 93,
+      "scriptMs": 31,
+      "layoutMs": 1,
+      "styleMs": 0,
+      "heapMB": 12.3,
+      "nodes": 13187,
+      "listeners": 140,
+      "requests": 0,
+      "bytes": 0,
+      "byExt": {}
+     }
+    ]
+   }
+  },
+  "finalHeapMB": 12.3
+ }
+}

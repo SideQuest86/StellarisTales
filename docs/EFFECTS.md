@@ -1,4 +1,4 @@
-# Gameplay effects (what choices and stages DO)
+﻿# Gameplay effects (what choices and stages DO)
 
 Optional, collapsed-by-default panel under a document or a choice that lists the gameplay consequences read from the
 game's own scripts, in both languages. Nothing is simulated and nothing is invented.
@@ -29,7 +29,7 @@ record of `public/data/groups/*.json`:
 | origin (`scripts/origin_effects.py`) | `{id, bullets{zh,en:[{text,level}]}, variants[], effects[], phase:'start'}` |
 
 Entry fields: `kind`, `label{zh,en}`, `value`/`unit` (`flat`, `percent`, `monthly-income-multiple`) or `range` or `scaled`
-(depends on the save: shown as "scaled by the game"), `target{zh,en}` (not "our empire"), `duration`
+(depends on the save: shown as "depends on the save"), `target{zh,en}` (not "our empire"), `duration`
 (`'permanent'` or `{days|months|years}`), `when` + `conditional` (if/else/random), `chance` (`percent`, `weight`,
 `of`, `adjusted`), `hidden` (inside `hidden_effect`), `via` (scripted effect it came from), `source` (`file:line`),
 `effects` (children), `stats` (a modifier's own stats from `common/static_modifiers`), `note` (the modifier's game
@@ -39,7 +39,7 @@ Decisions that matter:
 
 * `add_monthly_resource_mult = { resource value min max }` is a **one-off gain of `value` x the monthly income**,
   clamped to min..max (the game's tooltip is "<Resource> Gained: N"), not a timed income modifier.
-* `random_list` weights are shown as "about N% (base weight w of total)"; options carrying a `modifier` block are
+* `random_list` weights are shown as "About N%" (plus "adjusted by conditions" when a modifier changes them); options carrying a `modifier` block are
   flagged `adjusted` (the real chance depends on conditions). Lists whose options only chain events or set flags are
   dropped.
 * `if/else_if/else` keep their condition label (`when`); `hidden_effect` content is kept and marked `hidden`.
@@ -287,3 +287,4 @@ Most frequent handled / skipped keys:
 | `ship_event` | 597 | skipped |
 | `create_fleet` | 587 | handled |
 <!-- coverage:end -->
+

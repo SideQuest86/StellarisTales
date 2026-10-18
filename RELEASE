@@ -1,3 +1,13 @@
+v4.7.0 — 2026-10-18
+
+Calmer, quicker, sturdier. Continue cards show the picture of the document they lead to; a specimen opened from a
+chapter returns you to that chapter when you close the Grand Archive, and its "From the story" link opens the document
+that awards it. Gameplay effects read more plainly (no repeated chances or script weights, no default targets), guides
+keep their editor notes folded away at the end, and the reader and search drop labels that only stated the obvious.
+Fixes: closing while a story is still downloading now cancels it; the browser's Back closes a story instead of leaving
+the site; landscape phones can reach the open button; English effect lines no longer lose their resource name; network
+and audio failures say so in the page's language. Slow connections and phones load far less before the covers appear
+(emulated phone: covers ready in about half the time), and music there starts on the first tap.
 v4.6.4 — 2026-10-16
 
 Grand Archive: two more re-generated specimen models that follow their icons more closely — the Black Needle

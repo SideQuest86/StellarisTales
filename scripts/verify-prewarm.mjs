@@ -18,8 +18,8 @@ for (const delay of [800, 1200, 1600, 2000, 2400, 2700, 3000, 3300, 3600, 4000, 
     await page.waitForTimeout(delay);
     await page.goto(base + "#story=cybrex", { waitUntil: "domcontentloaded" });
     await page.waitForTimeout(3500);
-    const s = await page.evaluate(() => ({ doc: document.querySelector(".chapter-document")?.dataset.doc, back: !!document.querySelector("#reading-back"), hidden: document.querySelector("#reader").hidden, cls: document.querySelector("#reader").className, inert: document.querySelector("#reader").inert, op: getComputedStyle(document.querySelector("#reader")).opacity, warm: window.__readerWarmup || null, hash: location.hash }));
-    const ok = s.doc === "precursor.2000" && s.back && !s.hidden && !s.cls.includes("prewarm") && !s.inert;
+    const s = await page.evaluate(() => ({ doc: document.querySelector(".chapter-document")?.dataset.doc, controls: !!document.querySelector(".chapter-document [data-profile-open]"), hidden: document.querySelector("#reader").hidden, cls: document.querySelector("#reader").className, inert: document.querySelector("#reader").inert, op: getComputedStyle(document.querySelector("#reader")).opacity, warm: window.__readerWarmup || null, hash: location.hash }));
+    const ok = s.doc === "precursor.2000" && s.controls && !s.hidden && !s.cls.includes("prewarm") && !s.inert;
     if (!ok) bad.push({ delay, w: viewport.width, ...s });
     await ctx.close();
   }

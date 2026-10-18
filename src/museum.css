@@ -67,6 +67,8 @@
   transition: padding-right 0.2s var(--ease-out, ease-out);
 }
 #museum.detail-open .museum-grid { padding-right: calc(min(560px, 46vw) + var(--gutter, 40px)); }
+/* Off-screen exhibits skip layout/paint (258 at once); padding/negative margin keep hover lift and focus ring unclipped. */
+.museum-grid > li { content-visibility: auto; contain-intrinsic-size: auto 136px auto 156px; padding: 5px; margin: -5px; }
 .museum-exhibit {
   position: relative;
   display: grid;

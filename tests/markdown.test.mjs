@@ -1,6 +1,6 @@
 ﻿import test from "node:test";
 import assert from "node:assert/strict";
-import { renderMarkdown, inline, detectLang, hasCJK, safeUrl } from "../src/markdown.js";
+import { renderMarkdown, splitMixed, inline, detectLang, hasCJK, safeUrl } from "../src/markdown.js";
 import { cleanEnglish, cleanChinese } from "../src/name-tooltip.js";
 
 test("block constructs", () => {
@@ -44,3 +44,16 @@ test("name clean-up", () => {
   assert.equal(cleanChinese("我们的帝国帝国"), "我们的帝国");
   assert.equal(cleanChinese("正常的文字"), "正常的文字");
 });
+
+test("review notes are collapsed at the end; mixed lines split per language", () => {
+  const md = "## 如何开始 How it starts\n\n开始于第一个事件。It begins with the first event in the chain.\n\n## 审阅记录 Review notes\n\n- 已核对 / Checked：全部来源。Every source was read in full and compared.\n\n## 分支与结局 Branches\n\n结局很多。";
+  const h = renderMarkdown(md, { lang: "en" });
+  assert.match(h, /<details class="md-review"><summary>Review notes<\/summary>/);
+  assert.ok(h.indexOf("md-review") > h.indexOf("结局很多"));
+  assert.doesNotMatch(h.slice(0, h.indexOf("md-review")), /Every source/);
+  assert.match(h, /data-lang="zh">开始于第一个事件。<\/span> <span[^>]*data-lang="en">It begins/);
+  assert.match(h, /<h4[^>]*data-mixed="1"><span[^>]*data-lang="zh">如何开始<\/span> <span[^>]*data-lang="en">How it starts/);
+  assert.match(renderMarkdown(md, { lang: "zh" }), /<summary>审阅记录<\/summary>/);
+  assert.equal(splitMixed("纯中文没有英文。"), null);
+});
+

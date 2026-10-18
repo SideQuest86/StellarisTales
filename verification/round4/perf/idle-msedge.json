@@ -1,0 +1,55 @@
+{
+ "measuredAt": "2026-10-18T20:13:51.861Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "msedge 155.0.4283.62",
+ "headed": true,
+ "url": "http://127.0.0.1:4192/",
+ "reps": 3,
+ "seconds": 142,
+ "result": {
+  "desktop": {
+   "visibleArchive30s": {
+    "seconds": 30,
+    "rafPerSec": 5.1,
+    "timersPerSec": 2.57,
+    "cpuTaskMsPerSec": 15.4,
+    "scriptMsPerSec": 2.7,
+    "hiddenAtEnd": false,
+    "archiveFramesDrawn": 366
+   },
+   "hiddenTab30s": {
+    "seconds": 30,
+    "rafPerSec": 0,
+    "timersPerSec": 0,
+    "cpuTaskMsPerSec": 1.6,
+    "scriptMsPerSec": 0.2,
+    "hiddenAtEnd": false,
+    "archiveFramesDrawn": 366,
+    "realHidden": true
+   },
+   "heapMB": 7.7
+  },
+  "mobile": {
+   "visibleArchive30s": {
+    "seconds": 30,
+    "rafPerSec": 2.2,
+    "timersPerSec": 1.93,
+    "cpuTaskMsPerSec": 76.9,
+    "scriptMsPerSec": 11.2,
+    "hiddenAtEnd": false,
+    "archiveFramesDrawn": 288
+   },
+   "hiddenTab30s": {
+    "seconds": 30,
+    "rafPerSec": 0,
+    "timersPerSec": 0,
+    "cpuTaskMsPerSec": 4.9,
+    "scriptMsPerSec": 0.6,
+    "hiddenAtEnd": false,
+    "archiveFramesDrawn": 288,
+    "realHidden": true
+   },
+   "heapMB": 7.7
+  }
+ }
+}

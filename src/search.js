@@ -400,8 +400,9 @@ export function createSearch(env) {
       const { esc, T } = env;
       const html = visible.map((r, i) => {
         if (r.kind === "story") {
-          const more = r.count ? ` · ${esc(T(`${r.count} 篇相关`, `${r.count} matching`))}` : "";
-          return env.storyRow(r.story, `<em class="hit-type">${esc(typeLabel("title", lang))}</em>`, more);
+          // A story row is a title match already; only other hit types carry a chip.
+          const more = r.count ? ` · ${esc(T(`${r.count} 篇相关`, `${r.count} ${r.count === 1 ? "chapter matches" : "chapters match"}`))}` : "";
+          return env.storyRow(r.story, "", more);
         }
         const title = (titles[r.doc] || "").trim();
         const type = r.kind === "specimen" ? "specimen" : r.hit.type;
@@ -412,11 +413,12 @@ export function createSearch(env) {
       }).join("");
       const enrich = async (container) => {
         const jobs = [];
-        for (let i = 0; i < visible.length; i++) {
+        const EAGER = 8; // rows enriched at once; the rest wait until they scroll near the viewport (avoids ~30 story JSON fetches)
+        const lazy = [];
+        const run = (i) => {
           const r = visible[i];
-          if (r.kind === "story") continue;
           const el = container.querySelector(`[data-row="${i}"]`);
-          if (!el) continue;
+          if (!el) return;
           // Snippets use the hit's own reviewed names (a chapter's names, a specimen's placeholders), not the open chapter's.
           const own = (t, names) => (env.proseWith ? env.proseWith(t, names) : env.prose(t));
           jobs.push((async () => {
@@ -452,6 +454,21 @@ export function createSearch(env) {
               }
             }
           })().catch(() => {}));
+        };
+        for (let i = 0; i < visible.length; i++) {
+          if (visible[i].kind === "story") continue;
+          if (jobs.length < EAGER || typeof IntersectionObserver === "undefined") run(i);
+          else lazy.push(i);
+        }
+        if (lazy.length) {
+          const io = new IntersectionObserver((entries) => {
+            for (const e of entries) {
+              if (!e.isIntersecting) continue;
+              io.unobserve(e.target);
+              if (e.target.isConnected) run(Number(e.target.dataset.row));
+            }
+          }, { rootMargin: "300px 0px" });
+          for (const i of lazy) { const el = container.querySelector(`[data-row="${i}"]`); if (el) io.observe(el); }
         }
         await Promise.all(jobs);
       };

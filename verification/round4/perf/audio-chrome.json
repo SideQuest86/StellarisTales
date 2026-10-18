@@ -1,0 +1,122 @@
+{
+ "measuredAt": "2026-10-18T20:02:12.918Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "chrome 155.0.8059.80",
+ "headed": true,
+ "url": "http://127.0.0.1:4192/",
+ "reps": 3,
+ "seconds": 18,
+ "result": {
+  "afterLoadNoGesture": {
+   "music": [
+    {
+     "url": "playlist.json",
+     "bytes": 8224,
+     "status": 200
+    },
+    {
+     "url": "cover.webp",
+     "bytes": 60031,
+     "status": 200
+    },
+    {
+     "url": "02_fasterthanlight_bonus_featuringmiastegmar.mp3",
+     "bytes": 4849664,
+     "status": 206
+    }
+   ],
+   "audioState": {
+    "preload": "none",
+    "src": "02_fasterthanlight_bonus_featuringmiastegmar.mp3",
+    "paused": false,
+    "readyState": 4,
+    "buffered": 97.413
+   }
+  },
+  "afterPlay4s": {
+   "state": {
+    "paused": true,
+    "t": 4.1,
+    "buffered": 97,
+    "duration": 400
+   },
+   "music": [
+    {
+     "url": "playlist.json",
+     "bytes": 8224,
+     "status": 200
+    },
+    {
+     "url": "cover.webp",
+     "bytes": 60031,
+     "status": 200
+    },
+    {
+     "url": "02_fasterthanlight_bonus_featuringmiastegmar.mp3",
+     "bytes": 4849664,
+     "status": 206
+    }
+   ]
+  },
+  "playingFrames": {
+   "frames": 851,
+   "n": 851,
+   "p50": 5.9,
+   "p95": 6,
+   "max": 6.6,
+   "over20": 0,
+   "over34": 0,
+   "loafN": 0,
+   "loafMax": 0,
+   "loafTop": [],
+   "longtaskN": 0,
+   "longtaskMax": 0
+  },
+  "playingCost": {
+   "taskMs": 138,
+   "scriptMs": 43,
+   "layoutMs": 0,
+   "styleMs": 0,
+   "heapMB": 9,
+   "nodes": 841,
+   "listeners": 134
+  },
+  "afterPause": {
+   "paused": false,
+   "t": 4.9,
+   "buffered": 97,
+   "duration": 400
+  },
+  "afterNextPlay": {
+   "state": {
+    "paused": true,
+    "t": 0.8,
+    "buffered": 80,
+    "duration": 449
+   },
+   "music": [
+    {
+     "url": "playlist.json",
+     "bytes": 8224,
+     "status": 200
+    },
+    {
+     "url": "cover.webp",
+     "bytes": 60031,
+     "status": 200
+    },
+    {
+     "url": "02_fasterthanlight_bonus_featuringmiastegmar.mp3",
+     "bytes": 4849664,
+     "status": 206
+    },
+    {
+     "url": "03_deepspacetravels.mp3",
+     "bytes": 3145728,
+     "status": 206
+    }
+   ],
+   "totalMusicBytes": 8063647
+  }
+ }
+}

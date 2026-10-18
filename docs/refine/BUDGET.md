@@ -40,3 +40,11 @@ Stop rule: checkpoint at 67 % weekly (34 points), never exceed 73 % (40 points).
 | 2026-10-16 ~11:30 | 34 % | 15 % | released v4.6.1 (reader/map warm-up: first opening 50 -> 33 ms) and v4.6.2 (warm-up race fix); live checks passed. **Round-3 total: 1 point of 40** |
 | 2026-10-16 ~12:35 | 34 % | 17 % | released v4.6.3 (network-free warm-up, parallel font slices, metatarsal re-generated); live checks passed. **Round-3 total: 1 point of 40** |
 | 2026-10-16 ~13:45 | 35 % | 20 % | released v4.6.4 (two more re-generated models); post-v4.6.3 map-frame experiments measured and reverted; live checks passed. **Round-3 total: 2 points of 40** |
+
+## Round 4 (2026-10-18: immersion, cross-platform efficiency, interaction robustness, creative polish) — separate 30-point cap
+
+| When (UTC) | Weekly all-models | 5-hour | Note |
+| --- | ---: | ---: | --- |
+| 2026-10-18 19:55 | 40 % (baseline; resets 2026-10-20 08:00) | 2 % | before round-4 work; shared account counted conservatively (other sessions included) |
+
+Stop rule: checkpoint at 65 % weekly (25 points), never exceed 70 % (30 points). A weekly reset does not renew this budget: after 2026-10-20 08:00 the round total is (last pre-reset reading − 40) plus the post-reset reading.

@@ -37,3 +37,15 @@ Not possible from here: a physical phone test (emulation only) and a native-spea
 Decision (user, 2026-10-15): the 81 faults in the game's own text are kept exactly as shipped (no display-time correction); they stay listed in docs/refine/placeholders/LEDGER.md as known game-text issues.
 
 Decision (user, 2026-10-16): 60 Hz same-session frame-timing comparisons accepted (170 Hz panel not active, no rerun); item 5 stops at the v4.6.3 result with the residual first map build documented.
+
+## Round 4 (2026-10-18, release v4.7.0)
+
+| Goal item | Claim | Evidence |
+| --- | --- | --- |
+| Issue list | Ranked, evidence-backed list from four audits (wording, performance, interaction, design) | `docs/refine/round4/ISSUES.md` and the four audits beside it |
+| 1 Immersion | Generated/UI wording refined, game text untouched; recurring fixes applied across the whole catalogue (effects regenerated for all 1,194 stories) | `docs/refine/round4/wording-fixes.md` (counts after regeneration); `python scripts/effects_coverage.py` (0 unhandled / generic); `node scripts/verify-effects.mjs` |
+| 2 Efficiency | Cold load on an emulated slow phone: covers 50 → 27 s, 11.5 → 6.7 MB; search first query 20 → 11 requests; museum list long task 134 → ~64 ms; desktop unchanged by design | `docs/refine/round4/perf-audit.md`, `perf-fixes.md`; `node scripts/bench/bench.mjs cold|search|museum` (PROFILE=desktop/mobile) → `verification/round4/perf/` |
+| 3 Robustness | D1 cancel during download, D2 landscape reach, D3 Back closes the reader, D4 audio failure visible, D5 localised network error; regressions in the release gate | `docs/refine/round4/interaction-audit.md`; `scripts/smoke.mjs` (14 checks); `scripts/probe/interaction-probe.mjs` (24 scenarios) |
+| 4 Creative | Continue-card pictures; specimen round trip to the awarding chapter; deferred ideas recorded | `docs/refine/round4/design-ideas.md`; smoke "a specimen link from a chapter …" |
+
+Not possible from here: physical phones (emulation only), a real low-end GPU, a native-speaker proofread.

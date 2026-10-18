@@ -60,6 +60,40 @@ function duration(d, T) {
 }
 
 const VAGUE_TARGET = /事件来源|来源的来源|上一层对象|此前保存的对象|目标对象|事件来源链/;
+// The default target is never shown; the capital planet / explorer are the default only when every line of the panel shares it.
+const OWNER_TARGET = "所属帝国";
+const COMMON_TARGET = new Set(["首都星球", "探索者"]);
+
+function leafEntries(list, out) {
+  for (const e of list || []) {
+    if (!e || e.kind === "more" || e.unhandled) continue;
+    if (e.effects && e.effects.length) leafEntries(e.effects, out);
+    else if (!GROUPS.has(e.kind)) out.push(e);
+  }
+  return out;
+}
+function allEntries(effects) {
+  const lists = Array.isArray(effects) ? [effects] : [effects.effects, effects.immediate, effects.after, ...(effects.sections || []).map((s) => s.effects)];
+  return lists.reduce((acc, l) => leafEntries(l, acc), []);
+}
+function sharedTarget(effects) {
+  const leaves = allEntries(effects);
+  if (!leaves.length) return "";
+  const first = leaves[0].target ? pick(leaves[0].target, "zh") : "";
+  return COMMON_TARGET.has(first) && leaves.every((e) => e.target && pick(e.target, "zh") === first) ? first : "";
+}
+function hasChance(list) {
+  for (const e of list || []) {
+    if (!e) continue;
+    if (e.chance || e.kind === "random" || e.kind === "random_list" || e.kind === "random_option") return true;
+    if (hasChance(e.effects)) return true;
+  }
+  return false;
+}
+function anyChance(effects) {
+  if (Array.isArray(effects)) return hasChance(effects);
+  return [effects.effects, effects.immediate, effects.after, ...(effects.sections || []).map((s) => s.effects)].some(hasChance);
+}
 
 function entryHtml(e, ctx, depth) {
   const { lang, T, esc } = ctx;
@@ -67,19 +101,23 @@ function entryHtml(e, ctx, depth) {
   if (e.unhandled) return "";
   const kind = KIND[e.kind];
   const chips = [];
-  if (kind && e.kind !== "if" && !GROUPS.has(e.kind)) chips.push(`<span class="fx-chip fx-kind-${esc(e.kind)}">${esc(T(kind[0], kind[1]))}</span>`);
+  if (kind && e.kind !== "if" && e.kind !== "generic" && !GROUPS.has(e.kind)) chips.push(`<span class="fx-chip fx-kind-${esc(e.kind)}">${esc(T(kind[0], kind[1]))}</span>`);
   if (e.duration) chips.push(`<span class="fx-chip fx-time${e.duration === "permanent" ? " is-perm" : ""}">${esc(duration(e.duration, T))}</span>`);
   // "Hidden" once per group (its children are hidden too), not on every line.
   if (e.hidden && !ctx.inHidden) chips.push(`<span class="fx-chip fx-hidden" title="${esc(T("游戏界面不会显示这条效果", "The game does not show this effect"))}">${esc(T("隐藏", "Hidden"))}</span>`);
-  if (e.chance && e.chance.percent != null && e.kind === "random_option") chips.push(`<span class="fx-chip fx-chance">${esc(e.chance.percent + "%")}</span>`);
+  const chanceChip = e.chance && e.chance.percent != null && e.kind === "random_option";
+  if (chanceChip) chips.push(`<span class="fx-chip fx-chance">${esc(e.chance.percent + "%")}</span>`);
   // Script-internal scopes ("the event source", "a target saved earlier") tell a reader nothing: only named targets
   // (capital, ruler, a ship just created …) are shown.
   const targetText = e.target ? pick(e.target, "zh") : "";
-  const target = e.target && !VAGUE_TARGET.test(targetText) ? `<span class="fx-target">${esc(T("对象：", "On: "))}${esc(pick(e.target, lang))}</span>` : "";
+  const target = e.target && !VAGUE_TARGET.test(targetText) && targetText !== OWNER_TARGET && targetText !== ctx.hideTarget ?`<span class="fx-target">${esc(T("对象：", "On: "))}${esc(pick(e.target, lang))}</span>` : "";
   const stats = isList(e.stats)
     ? `<ul class="fx-stats">${e.stats.map((s) => `<li>${esc(pick(s.label, lang))} <b>${esc(s.text)}</b></li>`).join("")}</ul>`
     : "";
-  const label = esc(pick(e.label, lang));
+  // With the percent chip, "About 30% (adjusted by conditions)" keeps only what the chip does not say.
+  const label = esc(chanceChip
+    ? pick(e.label, lang).replace(/^(约\s*[\d.]+%|About [\d.]+%)\s*/, "").replace(/^（(.*)）$|^\((.*)\)$/, (_, a, b) => a || b)
+    : pick(e.label, lang));
   const note = e.note ? `<span class="fx-notetext">${esc(pick(e.note, lang))}</span>` : "";
   const cls = ["fx-item", `fx-${e.kind}`, e.kind === "tooltip" ? "is-game-text" : "", e.conditional || GROUPS.has(e.kind) ? "is-cond" : ""].filter(Boolean).join(" ");
   let kids = "";
@@ -111,8 +149,8 @@ export function renderEffects(effects, opts = {}) {
   const lang = opts.lang === "en" ? "en" : "zh";
   const T = opts.T || ((zh, en) => (lang === "en" ? en : zh));
   const esc = opts.esc || DEFAULT_ESC;
-  const ctx = { lang, T, esc };
   if (!effects || (Array.isArray(effects) && !effects.length)) return "";
+  const ctx = { lang, T, esc, hideTarget: sharedTarget(effects) };
   let body = "";
   let skipped = 0;
   if (Array.isArray(effects)) {
@@ -140,7 +178,7 @@ export function renderEffects(effects, opts = {}) {
   const title = opts.title || T("游戏内效果", "Gameplay effects");
   const tail = skipped ? `<p class="fx-note fx-skipped">${esc(T(`另有 ${skipped} 项效果未逐条整理，请见游戏脚本。`, `${skipped} more effects are not itemised; see the game script.`))}</p>` : "";
   return `<details class="fx"><summary class="fx-sum"><span class="fx-sum-t">${esc(title)}</span>${n ? `<span class="fx-count">${n}</span>` : ""}</summary>`
-    + `<div class="fx-body"><p class="fx-note">${esc(T("依游戏文件静态解读，不模拟具体存档；概率按基础权重计算。", "Read from the game files; no save is simulated. Chances use base weights."))}</p>${body}${tail}</div></details>`;
+    + `<div class="fx-body">${anyChance(effects) ? `<p class="fx-note">${esc(T("概率为基础值。", "Chances are base values."))}</p>` : ""}${body}${tail}</div></details>`;
 }
 
 // Delegated, idempotent: none of the markup needs JS to open (native <details> is keyboard-accessible).

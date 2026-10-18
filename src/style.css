@@ -752,6 +752,38 @@ input {
 .next-chapter:hover {
   background: #c0b97808;
 }
+/* The picture of the document the card leads to, quietly at its right edge. */
+.next-chapter.has-art {
+  min-height: 64px;
+  padding-right: 104px;
+}
+.next-art {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 80px;
+  height: 48px;
+  object-fit: cover;
+  transform: translateY(-50%);
+  border: 1px solid var(--line);
+  opacity: 0.62;
+  filter: saturate(0.8);
+  transition: opacity 0.2s var(--ease-out), filter 0.2s var(--ease-out);
+}
+.next-chapter:hover .next-art,
+.next-chapter:focus-visible .next-art {
+  opacity: 1;
+  filter: none;
+}
+@media (max-width: 700px) {
+  .next-chapter.has-art {
+    padding-right: 84px;
+  }
+  .next-art {
+    width: 64px;
+    height: 40px;
+  }
+}
 .chapter-end {
   margin-top: var(--s-6);
   padding-top: var(--s-2);
@@ -2241,6 +2273,27 @@ dialog::backdrop {
     font-size: 36px;
   }
   .flow-key {
+    display: none;
+  }
+}
+/* Landscape phones (about 390 px tall): the selection sits under the masthead so its "open" row stays clear of the
+   category arrows at the bottom. */
+@media (max-height: 520px) and (min-width: 701px) {
+  .selection {
+    top: calc(var(--masthead) + 4px);
+  }
+  #selected-title {
+    margin: 6px 0 8px;
+    font-size: 26px;
+  }
+  #selected-excerpt {
+    display: none;
+  }
+  .access {
+    padding: 10px 2px;
+  }
+  /* The graphics-adapter notice would cover the selected story here; it is advice for desktop adapters anyway. */
+  .gpu-hint {
     display: none;
   }
 }

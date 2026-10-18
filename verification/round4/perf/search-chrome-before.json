@@ -1,0 +1,319 @@
+{
+ "measuredAt": "2026-10-18T20:17:23.354Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "chrome 155.0.8059.80",
+ "headed": false,
+ "url": "http://127.0.0.1:4195/",
+ "reps": 3,
+ "seconds": 14,
+ "result": {
+  "open": {
+   "frames": 350,
+   "n": 350,
+   "p50": 5.9,
+   "p95": 6,
+   "max": 23.6,
+   "over20": 1,
+   "over34": 0,
+   "loafN": 0,
+   "loafMax": 0,
+   "loafTop": [],
+   "longtaskN": 0,
+   "longtaskMax": 0,
+   "requests": 21,
+   "bytes": 562749,
+   "byExt": {
+    "json": {
+     "n": 2,
+     "bytes": 391170
+    },
+    "webp": {
+     "n": 19,
+     "bytes": 171579
+    }
+   },
+   "taskMs": 133,
+   "scriptMs": 32,
+   "layoutMs": 26,
+   "styleMs": 3,
+   "heapMB": 10.1,
+   "nodes": 1031,
+   "listeners": 134
+  },
+  "firstQuery": {
+   "ms": 158,
+   "frames": 23,
+   "n": 23,
+   "p50": 5.9,
+   "p95": 6.3,
+   "max": 23.4,
+   "over20": 1,
+   "over34": 0,
+   "loafN": 0,
+   "loafMax": 0,
+   "loafTop": [],
+   "longtaskN": 0,
+   "longtaskMax": 0,
+   "requests": 20,
+   "bytes": 356445,
+   "byExt": {
+    "bin": {
+     "n": 1,
+     "bytes": 141906
+    },
+    "json": {
+     "n": 17,
+     "bytes": 181753
+    },
+    "webp": {
+     "n": 2,
+     "bytes": 32786
+    }
+   },
+   "shardsLoaded": 1,
+   "taskMs": 56,
+   "scriptMs": 3,
+   "layoutMs": 17,
+   "styleMs": 1,
+   "heapMB": 13.9,
+   "nodes": 1290,
+   "listeners": 134
+  },
+  "typing": [
+   {
+    "word": "federation",
+    "keys": [
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 138
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 134.4
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 129.4
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 143.1
+     },
+     {
+      "syncMs": 0.2,
+      "resultUpdateMs": 131.8
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 129.5
+     },
+     {
+      "syncMs": 0.2,
+      "resultUpdateMs": 127.3
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 129.3
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 129.2
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 129.7
+     }
+    ],
+    "frames": 291,
+    "n": 291,
+    "p50": 5.9,
+    "p95": 6,
+    "max": 11.8,
+    "over20": 0,
+    "over34": 0,
+    "loafN": 0,
+    "loafMax": 0,
+    "loafTop": [],
+    "longtaskN": 0,
+    "longtaskMax": 0,
+    "requests": 63,
+    "bytes": 3562966,
+    "byExt": {
+     "bin": {
+      "n": 8,
+      "bytes": 1182141
+     },
+     "webp": {
+      "n": 29,
+      "bytes": 339059
+     },
+     "json": {
+      "n": 26,
+      "bytes": 2041766
+     }
+    }
+   },
+   {
+    "word": "ancient relics",
+    "keys": [
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 131.7
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 125
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 129.3
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 129.7
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 135.7
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 129.4
+     },
+     {
+      "syncMs": 0.2,
+      "resultUpdateMs": 123.5
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 128.8
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 124.1
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 123.6
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 122.3
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 125.4
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 124.9
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 0.1
+     }
+    ],
+    "frames": 406,
+    "n": 406,
+    "p50": 5.9,
+    "p95": 6,
+    "max": 11.8,
+    "over20": 0,
+    "over34": 0,
+    "loafN": 0,
+    "loafMax": 0,
+    "loafTop": [],
+    "longtaskN": 0,
+    "longtaskMax": 0,
+    "requests": 63,
+    "bytes": 3770325,
+    "byExt": {
+     "bin": {
+      "n": 4,
+      "bytes": 615789
+     },
+     "webp": {
+      "n": 19,
+      "bytes": 220750
+     },
+     "json": {
+      "n": 40,
+      "bytes": 2933786
+     }
+    }
+   },
+   {
+    "word": "psionic",
+    "keys": [
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 124.4
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 122.4
+     },
+     {
+      "syncMs": 0,
+      "resultUpdateMs": 125.3
+     },
+     {
+      "syncMs": 0.2,
+      "resultUpdateMs": 128.8
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 125.7
+     },
+     {
+      "syncMs": 0.1,
+      "resultUpdateMs": 123.1
+     },
+     {
+      "syncMs": 0.2,
+      "resultUpdateMs": 132.7
+     }
+    ],
+    "frames": 200,
+    "n": 200,
+    "p50": 5.9,
+    "p95": 6,
+    "max": 6.1,
+    "over20": 0,
+    "over34": 0,
+    "loafN": 0,
+    "loafMax": 0,
+    "loafTop": [],
+    "longtaskN": 0,
+    "longtaskMax": 0,
+    "requests": 25,
+    "bytes": 592505,
+    "byExt": {
+     "webp": {
+      "n": 23,
+      "bytes": 293696
+     },
+     "bin": {
+      "n": 2,
+      "bytes": 298809
+     }
+    }
+   }
+  ],
+  "typingSummary": {
+   "syncMs": {
+    "n": 31,
+    "p50": 0.1,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "resultUpdateMs": {
+    "n": 31,
+    "p50": 128.8,
+    "p95": 138,
+    "max": 143.1
+   }
+  },
+  "totalShardBytes": 2629815
+ }
+}

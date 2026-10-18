@@ -1,0 +1,243 @@
+{
+ "measuredAt": "2026-10-18T21:31:54.549Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "chrome 155.0.8059.80",
+ "headed": true,
+ "url": "http://127.0.0.1:4197/",
+ "reps": 2,
+ "seconds": 68,
+ "result": {
+  "mobile": [
+   {
+    "buttonVisibleMs": 2189,
+    "coversReadyMs": 27034,
+    "dcl": 16954.400000035763,
+    "load": 16962.30000001192,
+    "fcp": 2116,
+    "taskMs": 10036,
+    "scriptMs": 2487,
+    "layoutMs": 1015,
+    "styleMs": 371,
+    "heapMB": 10.1,
+    "nodes": 886,
+    "listeners": 137,
+    "requests": 141,
+    "bytes": 6696547,
+    "byExt": {
+     "document": {
+      "n": 1,
+      "bytes": 9734
+     },
+     "css": {
+      "n": 3,
+      "bytes": 61384
+     },
+     "js": {
+      "n": 21,
+      "bytes": 2399370
+     },
+     "stylesheet": {
+      "n": 1,
+      "bytes": 124685
+     },
+     "woff2": {
+      "n": 30,
+      "bytes": 1763380
+     },
+     "json": {
+      "n": 5,
+      "bytes": 1457791
+     },
+     "svg": {
+      "n": 1,
+      "bytes": 412
+     },
+     "webp": {
+      "n": 79,
+      "bytes": 879791
+     }
+    },
+    "decode": {
+     "decodeImageMs": 57,
+     "resizeMs": 0,
+     "gpuRasterMs": 85,
+     "decodeCount": 60
+    },
+    "frames": {
+     "frames": 4655,
+     "n": 4655,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 546.8,
+     "over20": 19,
+     "over34": 9,
+     "loafN": 5,
+     "loafMax": 1837,
+     "loafTop": [
+      {
+       "at": 230.5,
+       "d": 1836.5,
+       "block": 299.7,
+       "scripts": []
+      },
+      {
+       "at": 19018.200000047684,
+       "d": 544.5999999642372,
+       "block": 492.2,
+       "scripts": [
+        {
+         "fn": "Response.json.then",
+         "url": "app.js",
+         "ms": 155.8,
+         "fl": 43.7
+        },
+        {
+         "fn": "FrameRequestCallback",
+         "url": "",
+         "ms": 371.4,
+         "fl": 0
+        }
+       ]
+      },
+      {
+       "at": 4790.700000047684,
+       "d": 187.0999999642372,
+       "block": 136.5,
+       "scripts": []
+      }
+     ],
+     "longtaskN": 5,
+     "longtaskMax": 408
+    },
+    "textures": 3,
+    "geometries": 5,
+    "atlas": {
+     "bytes": 16777216,
+     "hi": 26,
+     "lo": 93,
+     "capacity": {
+      "hi": 36,
+      "lo": 256
+     },
+     "bitmaps": 40
+    },
+    "framesDrawn": 353
+   },
+   {
+    "buttonVisibleMs": 2193,
+    "coversReadyMs": 26953,
+    "dcl": 16905.200000047684,
+    "load": 16911.100000023842,
+    "fcp": 2096,
+    "taskMs": 9658,
+    "scriptMs": 2249,
+    "layoutMs": 1046,
+    "styleMs": 374,
+    "heapMB": 8.5,
+    "nodes": 886,
+    "listeners": 137,
+    "requests": 141,
+    "bytes": 6687851,
+    "byExt": {
+     "document": {
+      "n": 1,
+      "bytes": 9734
+     },
+     "css": {
+      "n": 3,
+      "bytes": 61384
+     },
+     "js": {
+      "n": 21,
+      "bytes": 2399370
+     },
+     "stylesheet": {
+      "n": 1,
+      "bytes": 124688
+     },
+     "woff2": {
+      "n": 30,
+      "bytes": 1763389
+     },
+     "json": {
+      "n": 5,
+      "bytes": 1439791
+     },
+     "svg": {
+      "n": 1,
+      "bytes": 412
+     },
+     "webp": {
+      "n": 79,
+      "bytes": 889083
+     }
+    },
+    "decode": {
+     "decodeImageMs": 56,
+     "resizeMs": 0,
+     "gpuRasterMs": 85,
+     "decodeCount": 60
+    },
+    "frames": {
+     "frames": 4672,
+     "n": 4672,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 370.5,
+     "over20": 21,
+     "over34": 10,
+     "loafN": 5,
+     "loafMax": 1857,
+     "loafTop": [
+      {
+       "at": 219.4000000357628,
+       "d": 1857.300000011921,
+       "block": 317,
+       "scripts": []
+      },
+      {
+       "at": 18960.900000035763,
+       "d": 298.5,
+       "block": 245.8,
+       "scripts": [
+        {
+         "fn": "Response.json.then",
+         "url": "app.js",
+         "ms": 151.1,
+         "fl": 39.5
+        },
+        {
+         "fn": "FrameRequestCallback",
+         "url": "",
+         "ms": 128.9,
+         "fl": 0
+        }
+       ]
+      },
+      {
+       "at": 4789.300000011921,
+       "d": 177.4000000357628,
+       "block": 127.1,
+       "scripts": []
+      }
+     ],
+     "longtaskN": 6,
+     "longtaskMax": 430
+    },
+    "textures": 3,
+    "geometries": 5,
+    "atlas": {
+     "bytes": 16777216,
+     "hi": 26,
+     "lo": 93,
+     "capacity": {
+      "hi": 36,
+      "lo": 256
+     },
+     "bitmaps": 40
+    },
+    "framesDrawn": 356
+   }
+  ]
+ }
+}

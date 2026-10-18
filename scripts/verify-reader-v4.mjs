@@ -92,7 +92,7 @@ try {
   // 4. English chrome.
   await page.locator("#reader-language").click();
   await page.waitForFunction(() => document.querySelector(".section-heading span")?.textContent === "Your choices");
-  assert.equal((await page.locator("#reading-back").innerText()).trim(), "← Back");
+  assert.equal((await page.locator("[data-profile-open]").innerText()).trim(), "Empire profile"); // no Back on a page opened by link
   step("English mode shows English reader chrome");
   await page.screenshot({ path: "verification/v4-reader-desktop.png" });
   await page.locator("#reader-language").click();

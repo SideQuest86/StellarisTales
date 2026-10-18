@@ -11,7 +11,7 @@ Rules
 from __future__ import annotations
 import re
 
-STORY = ('满足此前剧情设定的条件时', 'if an earlier story condition holds')
+STORY = ('满足前置条件时', 'if an earlier condition holds')
 PROGRESS = ('按调查进度', 'depending on progress')
 SPECIFIC = ('满足特定条件时', 'if a specific condition holds')
 OBJECT = ('相关对象', 'a related object')

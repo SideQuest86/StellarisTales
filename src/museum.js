@@ -119,13 +119,13 @@ function render() {
         ${chip("rarity", "all", T("全部稀有度", "Any rarity"))}
         ${RARITY_ORDER.map((r) => chip("rarity", r, label(a.rarities[r]), rarCount(r))).join("")}
       </div>
-      <button class="museum-chip" data-toggle3d aria-pressed="${state.only3d}">${esc(T("仅看有三维模型", "With 3D model only"))} <small>${nModels}</small></button>
+      ${nModels < data.specimens.length ? `<button class="museum-chip" data-toggle3d aria-pressed="${state.only3d}">${esc(T("仅看有三维模型", "With 3D model only"))} <small>${nModels}</small></button>` : ""}
     </div>
     <p class="museum-count" aria-live="polite">${esc(T(`${list.length} 件标本`, `${list.length} specimens`))}</p>
     <ul class="museum-grid" role="list">
       ${list.map((s) => `<li><button class="museum-exhibit rarity-${s.rarity}" data-key="${s.key}" aria-label="${esc(label(s.name))} · ${esc(label(a.rarities[s.rarity]))}">
         <span class="museum-pedestal" aria-hidden="true"><img src="${esc(data.asset(s.icon.url))}" alt="" loading="lazy" decoding="async" width="100" height="100"></span>
-        <span class="museum-name">${esc(label(s.name))}</span>${models[s.key] ? `<span class="museum-3d-badge">3D</span>` : ""}
+        <span class="museum-name">${esc(label(s.name))}</span>${models[s.key] && nModels < data.specimens.length ? `<span class="museum-3d-badge">3D</span>` : ""}
       </button></li>`).join("")}
     </ul>
     <aside class="museum-detail" hidden aria-live="polite"></aside>`;
@@ -140,7 +140,7 @@ function formatEffect(e) {
 
 function acquisitionHtml(s) {
   if (!s.acquisition.length) return `<p class="museum-note">${esc(T("原版脚本中没有任何事件、效果或奖励池给予此标本。", "No event, effect or reward pool in the shipped scripts awards this specimen."))}</p>`;
-  const kind = { give_specimen: T("事件给予", "Given by"), event_specimen: T("事件声明", "Declared by event"), random_pool: T("随机奖励池", "Random reward pool") };
+  const kind = { give_specimen: T("来自故事", "From the story"), event_specimen: T("来自事件", "From an event"), random_pool: T("随机奖励", "Random reward") };
   const seen = new Set();
   return `<ul class="museum-acq">${s.acquisition.filter((a) => {
     const k = (a.story || a.from) + a.kind;
@@ -149,7 +149,7 @@ function acquisitionHtml(s) {
     return true;
   }).slice(0, 12).map((a) => {
     const where = a.story
-      ? `<a href="#story=${encodeURIComponent(a.story)}" data-story="${esc(a.story)}">${esc(label(a.title))}</a>`
+      ? `<a href="#story=${encodeURIComponent(a.story)}${a.from ? `&chapter=${encodeURIComponent(a.from)}` : ""}" data-story="${esc(a.story)}">${esc(label(a.title))}</a>`
       : `<span>${esc(label(a.label) || T("游戏机制", "Game mechanic"))}</span>`;
     return `<li><small>${esc(kind[a.kind] || a.kind)}</small> ${where}</li>`;
   }).join("")}</ul>`;
@@ -179,7 +179,7 @@ function showExhibit(key, keepFocus = false) {
       <p class="museum-other-lang" lang="${lang() === "zh" ? "en" : "zh-CN"}">${esc(lang() === "zh" ? s.name.en : s.name.zh)}</p>
       <div class="museum-desc"><p>${gameText(raw(s.short), s)}</p><p>${gameText(raw(s.details), s)}</p></div>
       <h3>${esc(T("展览效果", "While exhibited"))}</h3>
-      <p class="museum-note">${esc(T("在博物天枢展出时生效；数值为基础值，会乘以展区产出加成（如“着重展区”政策：重点展区 +50%，其余 −25%）。", "Applies while exhibited in a Grand Archive; values are base values, multiplied by the collection's output bonus (e.g. Exhibition Focus: +50% for the focused collection, −25% for the others)."))}</p>
+      <p class="museum-note">${esc(T("展出时生效；基础值，随展区加成变化。", "Active while exhibited; base values, scaled by the collection bonus."))}</p>
       <ul class="museum-effects">${s.effects.map(formatEffect).join("")}</ul>
       <h3>${esc(T("获得方式", "How it is acquired"))}</h3>
       ${acquisitionHtml(s)}
@@ -257,7 +257,9 @@ function onClick(e) {
     return;
   }
   const story = t.closest("[data-story]");
-  if (story) { e.preventDefault(); closeMuseum(); location.hash = `story=${encodeURIComponent(story.dataset.story)}`; }
+  // The link's own #story=…&chapter=… address opens the awarding document; app.js closes the museum on that hash
+  // change (closing it first would count as leaving the museum and return to the story it was opened from).
+  if (story) return;
 }
 
 function onInput(e) {

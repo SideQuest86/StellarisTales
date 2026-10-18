@@ -27,10 +27,58 @@ motion, catalogue at the top, original art on closed cards, card extraction into
 side, frosted geometric reveals, Detroit-style flow map of actual chosen paths and alternatives on the left card;
 keyboard access, responsive layout, reduced motion; smooth on Windows using the local GPU.
 
-## Current status — authoritative (updated 2026-10-16)
+## Current status — authoritative (updated 2026-10-18)
 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
+
+- **Version:** v4.7.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+  (verification of the live build: "Live:" line at the end of this section).
+- **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
+- **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
+  smoke checks `scripts/smoke.mjs` (bundled Chromium, headless); any failure stops the job before the Pages artifact
+  is uploaded. The same smoke step runs in `ci.yml` on every push. Smoke (14 checks) covers: story opening, a choice +
+  continuing + Back, progress restored after a reload, full-text search to an exact document and to a specimen, five
+  repeated museum opens, images, a link opened during the start-up warm-up on a slow download, Escape while a story is
+  still downloading + browser Back closing a story opened from the archive, a specimen link and back to its chapter,
+  the 844×390 landscape archive, the 390 px phone layout, and no page errors / failed requests.
+  Run locally: `node scripts/serve.mjs --dist` then `STELLARIS_PLAYWRIGHT_PATH=… STELLARIS_BROWSER_CHANNEL=chrome node scripts/smoke.mjs`.
+- **Tests (2026-10-18):** Node 91 (`node --test tests/*.test.mjs`), Python 45 (`python -m unittest discover -s tests`),
+  all passing. Browser suites passing locally: smoke 14/14, verify-prewarm 24/24, verify-museum-viewer 7, verify-museum
+  (268 checks), verify-progress 12, verify-search 16, verify-effects, verify-a11y, verify-refine-reader,
+  verify-refine-chrome, verify-refine-audio, verify-reader-v4.
+- **Round 4 (2026-10-18): review and improvement.** Ranked issue list with evidence: `docs/refine/round4/ISSUES.md`
+  (from four audits in the same folder: wording, performance, interaction, design). Changes:
+  - Correctness: Escape / leaving the address while a story is still downloading cancels that opening (it used to open
+    anyway); a story opened from the archive gets a history entry, so the browser's / Android's Back closes it instead of
+    leaving the site; offline / blocked requests show the localised "could not load" message instead of "Failed to
+    fetch"; audio load failures show in the player; landscape phones (≈390 px tall): the open row is no longer under the
+    category arrows and the graphics-adapter notice no longer covers the story; English effect lines no longer lose their
+    resource name (4,646 lines of parser debris removed).
+  - Efficiency (measurements: `docs/refine/round4/perf-audit.md`, `perf-fixes.md`, `verification/round4/perf/`):
+    slow / metered connections and small touch screens warm only the 600 most frequent CJK glyphs after the network goes
+    quiet, and the soundtrack waits for a first gesture there; elsewhere autoplay waits until the page has loaded
+    (a click before that starts it at once). Emulated phone (390×844 DPR3, 4× CPU, ~1.6 Mbit/s): covers ready 50 s → 27 s,
+    transfer 11.5 → 6.7 MB, requests 200 → 141. Desktop cold load unchanged on purpose (full font warm-up kept for
+    opening smoothness; 16.3 MB / 237 requests raw, GitHub Pages compresses JS/JSON). Search snippets fetch only the
+    stories of the first 8 rows, the rest as they scroll into view (first query 20 → 11 requests); debounce 120 → 60 ms.
+    Museum list: `content-visibility` on tiles (open long task 134 → ~64 ms).
+  - Wording (`docs/refine/round4/wording-audit.md`, `wording-fixes.md`): effects panels — plain condition phrases, no
+    "If: if", no repeated chance labels or script weights, default targets hidden, note only where chances appear;
+    guides — editor review notes collapsed at the end, mixed zh/en lines follow the language toggle; reader — no "No
+    empire set" bar, no disabled Back on a first page, no stock "Continue reading" caption; search — no "Title" chip,
+    one English unit ("chapters"), pager hidden on a single page; museum — no "3D" badge / filter while every specimen
+    has a model, shorter exhibit note, plainer acquisition labels. Game text untouched (user decision 2026-10-15).
+  - Creative: continue cards show the picture of the document they lead to (or the other story's cover); a specimen
+    link remembers the chapter it came from — closing the museum (or Back) returns there, and the museum's "From the
+    story" link opens the awarding document rather than the story's first. Deferred ideas: `docs/refine/round4/design-ideas.md`
+    (end-of-route recap, number keys for choices, "met in your reading" pips in the museum, cross-story breadcrumb).
+- **Limits:** no physical phone (all mobile figures are emulation); no native-speaker proofread; real low-end GPU,
+  minimised-window background state and compressed transfer sizes not measured locally; faults in the game's own text
+  are kept as shipped (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions. Not changed:
+  first story opening of a session still 2–3 frames (round 3 decision), first archive frame after a cold load.
+
+## History: refinement round 3 (2026-10-16, v4.6.0–v4.6.4: museum viewer, progress, search, frame timing, release gate)
 
 - **Version:** v4.6.4 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: see "Live:" line at the end of this section).

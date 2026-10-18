@@ -37,7 +37,7 @@ class EffectTests(unittest.TestCase):
         self.assertEqual(len(out), 1)
         e = out[0]
         self.assertEqual((e['kind'], e['resource'], e['monthlyMultiple'], e['min']), ('resource', 'engineering_research', 12.0, 250.0))
-        self.assertIn('12x', e['label']['en'])
+        self.assertIn('+12 months of income', e['label']['en'])
         self.assertIn('12', e['label']['zh'])
         self.assertNotIn('duration', e)
 
@@ -210,8 +210,8 @@ class EffectTests(unittest.TestCase):
     def test_internal_conditions_are_generic_with_hidden_detail(self):
         for script in ('check_variable = { which = first_contact_skill_var value > 3 }', 'is_same_value = event_target:contact', 'has_country_flag = seen_it'):
             lab = E.cond_label(parse(script), CTX)
-            self.assertEqual(lab['zh'], '满足此前剧情设定的条件时')
-            self.assertEqual(lab['en'], 'if an earlier story condition holds')
+            self.assertEqual(lab['zh'], '满足前置条件时')
+            self.assertEqual(lab['en'], 'if an earlier condition holds')
             self.assertTrue(lab['detail'])
         lab = E.cond_label(parse('is_site_current_stage_score > 3'), CTX)
         self.assertEqual((lab['zh'], lab['en']), ('按调查进度', 'depending on progress'))

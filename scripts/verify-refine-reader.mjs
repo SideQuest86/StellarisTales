@@ -84,7 +84,7 @@ try {
   g.on("pageerror", (e) => gerr.push(e.message));
   await g.goto(`${base}#story=${story}`, { waitUntil: "networkidle" });
   await g.waitForSelector(".story-summary");
-  await g.locator(".story-summary summary").click();
+  await g.locator(".story-summary > summary").click();
   const guide = await g.evaluate(() => ({ h: document.querySelectorAll(".md-guide h3,.md-guide h4,.md-guide h5").length, p: document.querySelectorAll(".md-guide p").length, scripts: document.querySelectorAll(".md-guide script,.md-guide img").length, pre: getComputedStyle(document.querySelector(".md-guide")).whiteSpace }));
   assert.ok(guide.h + guide.p > 0 && guide.scripts === 0 && guide.pre !== "pre-wrap", JSON.stringify(guide));
   step("markdown guide rendered", JSON.stringify(guide));

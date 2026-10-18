@@ -15,3 +15,9 @@
 .name-tip.show { opacity: 1; }
 html.reduced-motion .name-tip { transition: none; }
 @media (prefers-reduced-motion: reduce) { .name-tip { transition: none; } }
+
+/* Review notes: editor/maintenance record, collapsed and quiet at the end of the guide. */
+.md-review { margin: 1.6em 0 .4em; padding-top: .6em; border-top: 1px solid rgba(255, 255, 255, .1); opacity: .78; font-size: .92em; }
+.md-review > summary { cursor: pointer; padding: .3em 0; min-height: 32px; }
+.md-review > summary:hover { opacity: 1; }
+.md-guide [data-lang] + [data-lang] { margin-inline-start: .2em; }

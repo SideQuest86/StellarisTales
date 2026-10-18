@@ -7,12 +7,27 @@ import { renderEffects, countEffects } from "../src/effects-panel.js";
 const fx = JSON.parse(readFileSync(new URL("./fixtures/effects-samples.json", import.meta.url), "utf8"));
 const opts = (lang) => ({ lang, T: (zh, en) => (lang === "en" ? en : zh) });
 
-test("collapsed by default, one summary, note about static reading", () => {
+test("collapsed by default, one summary; base-value note only with a random item", () => {
   const h = renderEffects(fx.choice, opts("en"));
   assert.match(h, /^<details class="fx"><summary/);
   assert.doesNotMatch(h, /<details class="fx" open/);
-  assert.match(h, /no save is simulated/);
-  assert.match(renderEffects(fx.choice, opts("zh")), /不模拟具体存档/);
+  assert.doesNotMatch(h, /no save is simulated/);
+  const r = renderEffects(fx.random, opts("en"));
+  assert.match(r, /Chances are base values/);
+  assert.match(renderEffects(fx.random, opts("zh")), /概率为基础值/);
+  assert.doesNotMatch(renderEffects([{ kind: "resource", label: { zh: "a", en: "a" } }], opts("en")), /base values/);
+});
+
+test("default targets are hidden; unusual ones stay; shared capital/explorer hidden only panel-wide", () => {
+  const own = { zh: "所属帝国", en: "the owning empire" };
+  const cap = { zh: "首都星球", en: "the capital planet" };
+  const ship = { zh: "一艘舰船", en: "a ship" };
+  const L = (t, target) => ({ kind: "resource", label: { zh: "a", en: "a" }, target });
+  assert.doesNotMatch(renderEffects([L(1, own), L(2, ship)], opts("en")), /the owning empire/);
+  assert.match(renderEffects([L(1, own), L(2, ship)], opts("en")), /a ship/);
+  assert.doesNotMatch(renderEffects([L(1, cap), L(2, cap)], opts("en")), /capital planet/);
+  assert.match(renderEffects([L(1, cap), L(2, own)], opts("en")), /capital planet/);
+  assert.doesNotMatch(renderEffects([{ kind: "generic", label: { zh: "x", en: "x" } }], opts("en")), /fx-kind-generic/);
 });
 
 test("both languages come from the data labels", () => {

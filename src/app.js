@@ -122,8 +122,9 @@ function toast(s) {
   toast.timer = setTimeout(() => $("#toast").classList.remove("show"), 3500);
 }
 async function json(path) {
-  const r = await fetch(asset(path));
-  if (!r.ok) throw new Error(T("未能载入，请稍后重试。", "Could not load. Please try again."));
+  const failed = () => new Error(T("未能载入，请稍后重试。", "Could not load. Please try again."));
+  const r = await fetch(asset(path)).catch(() => { throw failed(); }); // offline / blocked: same message as an HTTP error
+  if (!r.ok) throw failed();
   return r.json();
 }
 const cache = new Map();
@@ -164,7 +165,7 @@ function showSelection(story, column, index) {
   selected = story;
   selectedColumn = column;
   $("#category-label").textContent = categoryName(column);
-  $("#chapter-count").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "document" : "documents"}`);
+  $("#chapter-count").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
   $("#selected-title").textContent = prose(local(story.title));
   $("#selected-excerpt").textContent = prose(local(story.excerpt));
   $("#story-number").textContent = String(index + 1).padStart(2, "0");
@@ -351,18 +352,23 @@ function restartProgress() {
   box.querySelector("[data-restart]").onclick = () => { restartProgress(); $("#open-story").focus(); };
 })();
 // A direct link to exactly the document the saved trail ends on is the reader's own refresh: restore the trail.
+// Escape (or leaving the #story= address) while a story is still downloading cancels that opening.
+function cancelOpening() {
+  if (pendingOpenings) readerTicket++;
+}
 async function openFromLink(storyId, chapterId) {
   const end = beginOpening();
   try {
-    return await linkOpening(storyId, chapterId);
+    return await linkOpening(storyId, chapterId, readerTicket);
   } finally {
     end();
   }
 }
-async function linkOpening(storyId, chapterId) {
+async function linkOpening(storyId, chapterId, ticket) {
   const saved = progress.load();
   if (saved && saved.trail.at(-1).story === storyId) {
     const restored = await restoreProgress(saved);
+    if (ticket !== readerTicket) return; // cancelled or overtaken while the saved path loaded
     if (restored) {
       const last = restored.state.trail.at(-1);
       const want = chapterId || restored.stories.get(storyId).story.start;
@@ -401,7 +407,7 @@ function sampleReaderMarkup() {
   const en = "Old records unfold under the lamp: voyages, discoveries and choices, checked page by page and bound into a volume.";
   const para = (s) => `<section><p>${esc(s)} <span class="game-name" tabindex="0" role="note" data-note="">${esc(T("我们的科学船", "our science ship"))}</span></p></section>`;
   const button = (label) => `<div class="choice"><button class="choice-button" data-choice="0" aria-expanded="false"><span class="choice-symbol">◇</span><span>${esc(label)}</span><b>→</b></button><div class="choice-response" hidden></div></div>`;
-  return `<article class="chapter-document" data-doc=""><div class="chapter-eyebrow"><span>${esc(T("故事开端", "Opening"))}</span><button id="reading-back" disabled>${esc(T("← 上一步", "← Back"))}</button></div>`
+  return `<article class="chapter-document" data-doc=""><div class="chapter-eyebrow"><span>${esc(T("故事开端", "Opening"))}</span></div>`
     + `<h1 id="reader-title" tabindex="-1">${esc(T("档案", "Archive"))}</h1><p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(lang === "zh" ? en.slice(0, 40) : zh.slice(0, 12))}</p>`
     + `${profileSummary()}<div class="narrative">${para(T(zh, en))}${para(T(en, zh))}</div>`
     + `<section class="choices"><div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>${button(T(zh.slice(0, 18), en.slice(0, 50)))}${button(T(en.slice(0, 40), zh.slice(0, 14)))}</section>`
@@ -481,6 +487,7 @@ async function prewarmReader() {
   }
   window.__readerWarmup = timing;
 }
+let steppingBack = false;
 function closeReader() {
   flushProgress();
   readerTicket++;
@@ -488,7 +495,11 @@ function closeReader() {
   dossier = null;
   chapter = null;
   trail = [];
-  history.replaceState(null, "", "#");
+  if (history.state?.reader) {
+    // Step back over the entry pushed when the reader opened; the hashchange this causes is not a navigation.
+    steppingBack = true;
+    history.back();
+  } else history.replaceState(null, "", "#");
   document.title = t("site.title"); // [UI]
   refreshContinue();
   $("#open-story").focus();
@@ -563,10 +574,17 @@ function edgeCaption(e) {
     if (delay) parts.push(delay);
   }
   if (e.story && e.story !== dossier.story.id) parts.push(T("进入另一则故事", "Leads into another story"));
-  return parts.join(" · ") || T("继续阅读", "Continue reading");
+  return parts.join(" · ");
+}
+// The picture of the document a card leads to (or the other story's cover), when it differs from the current one.
+function edgeArt(e) {
+  const other = e.story && e.story !== dossier.story.id;
+  const image = other ? storyById.get(e.story)?.image : docMap.get(e.target)?.image;
+  return image && image !== chapter?.image ? `<img class="next-art" src="${asset(image)}" alt="" loading="lazy" decoding="async">` : "";
 }
 function edgeButton(e) {
-  return `<button class="next-chapter" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span>${esc(titleFor(e.target, e.story))}</span><small>${esc(edgeCaption(e))} →</small></button>`;
+  const art = edgeArt(e);
+  return `<button class="next-chapter${art ? " has-art" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}>${art}<span>${esc(titleFor(e.target, e.story))}</span><small>${((c) => (c ? esc(c) + " " : ""))(edgeCaption(e))}→</small></button>`;
 }
 function edgeButtons(edges) {
   const seen = new Set();
@@ -639,7 +657,7 @@ function profileSummary() {
     });
   const assumed = Object.keys(assumptions).length;
   const chips = facts.map((f) => `<b>${esc(f)}</b>`).join("") + (assumed ? `<b>${esc(T(`${assumed} 项情境假设`, `${assumed} assumed condition${assumed > 1 ? "s" : ""}`))}</b>` : "");
-  return `<div class="reading-context"><span>${esc(T("阅读设定", "Reading as"))}</span>${chips || `<i>${esc(T("未指定文明", "No empire set"))}</i>`}<button data-profile-open aria-expanded="${profileOpen}">${esc(T("文明设定", "Empire profile"))}</button>${facts.length || assumed ? `<button data-profile-reset>${esc(T("重置", "Reset"))}</button>` : ""}</div>${profileOpen ? profilePanel() : ""}`;
+  return `<div class="reading-context">${chips ? `<span>${esc(T("阅读设定", "Reading as"))}</span>${chips}` : ""}<button data-profile-open aria-expanded="${profileOpen}">${esc(T("文明设定", "Empire profile"))}</button>${facts.length || assumed ? `<button data-profile-reset>${esc(T("重置", "Reset"))}</button>` : ""}</div>${profileOpen ? profilePanel() : ""}`;
 }
 function profilePanel() {
   if (!profileOptions) return `<div class="profile-panel"><p>${esc(T("正在载入……", "Loading…"))}</p></div>`;
@@ -656,7 +674,7 @@ function profilePanel() {
   axes.push(`<label><span>${esc(T("政体", "Authority"))}</span><select data-profile-set="authorities">${option("", T("未指定", "Unspecified"), !auth)}${profileOptions.authorities.map((a) => option(a.key, local(a.label), a.key === auth)).join("")}</select></label>`);
   const origin = profileOptions.origins.find((o) => profile[o.key])?.key || "";
   axes.push(`<label><span>${esc(T("起源", "Origin"))}</span><select data-profile-set="origins">${option("", T("未指定", "Unspecified"), !origin)}${profileOptions.origins.map((o) => option(o.key, local(o.label), o.key === origin)).join("")}</select></label>`);
-  return `<div class="profile-panel"><p>${esc(T("设定后，所有文档按此一致显示文明相关文本与选项；未指定项显示全部可能。非存档模拟。", "Once set, all documents show empire-dependent text and options consistently; unspecified traits show every possibility. Not a save simulation."))}</p>${axes.join("")}</div>`;
+  return `<div class="profile-panel"><p>${esc(T("按所选文明显示相关文本与选项；未设定的项显示全部可能。", "Text and options follow the empire set here; anything unset shows every possibility."))}</p>${axes.join("")}</div>`;
 }
 function setProfileGroup(list, key) {
   for (const item of list) delete profile[item.key];
@@ -780,12 +798,12 @@ function renderChapter(preservePosition = false) {
   );
   const story = dossier.story;
   $("#dossier-title").textContent = prose(local(story.title));
-  $("#dossier-size").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "document" : "documents"}`);
+  $("#dossier-size").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
   const readable = dossier.chapters;
   const node = treeNodeFor(r.id);
   const via = node?.via;
   const entryCaption = via?.kind === "entry" && via.triggers?.length ? T("触发：", "Trigger: ") + via.triggers.map(local).join(T("；", "; ")) : "";
-  const caption = entryCaption || (node?.parent === "n0" ? T("故事开端", "Opening") : T("当前篇章", "Current document"));
+  const caption = entryCaption || (node?.parent === "n0" ? T("故事开端", "Opening") : T("当前篇章", "Current chapter"));
   // How the story continues from here.
   const nextEdges = resolveEdges(r.next, ctx);
   let nextReading;
@@ -830,7 +848,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span><button id="reading-back" ${trail.length < 2 ? "disabled" : ""}>${esc(T("← 上一步", "← Back"))}</button>${trail.length > 1 ? `<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button>` : ""}</div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span>${trail.length > 1 ? `<button id="reading-back">${esc(T("← 上一步", "← Back"))}</button>` : ""}${trail.length > 1 ? `<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button>` : ""}</div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   showSpecimenLinks(r.id);
   showEffects(story, r.id, r.choices);
   const remembered=trail.at(-1);
@@ -886,6 +904,7 @@ function renderChapter(preservePosition = false) {
   // building it once the card rests keeps both the click frame and the extraction animation free of map work.
   // Chapter changes update it in the next idle period, so the new text and the map's relayout do not share a frame.
   const updateFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail);
+  const freshOpen = openingReader;
   const ticket = readerTicket;
   const later = (f) => () => { if (ticket === readerTicket) f(); };
   if (prewarming) {} // the invisible warm-up render (prewarmReader) leaves the map alone
@@ -935,11 +954,11 @@ function renderChapter(preservePosition = false) {
     };
   if (prewarming) return;
   if (chapterChanged) $("#reader-title").focus({ preventScroll: true });
-  history.replaceState(
-    null,
-    "",
-    `#story=${encodeURIComponent(story.id)}&chapter=${encodeURIComponent(r.id)}`,
-  );
+  // A reader opened from the archive gets its own history entry, so the browser's Back closes it (closeReader steps
+  // back over it); one opened by a #story= / #record= link already has the link's entry. Chapters replace it.
+  const address = `#story=${encodeURIComponent(story.id)}&chapter=${encodeURIComponent(r.id)}`;
+  if (freshOpen && !/^#(story|record)=/.test(location.hash)) history.pushState({ reader: 1 }, "", address);
+  else history.replaceState(history.state, "", address);
   document.title = prose(local(story.title)) + " · Stellaris Tales";
   if (!reduced() && chapterChanged)
     $(".chapter-document").animate(
@@ -993,7 +1012,14 @@ function renderChrome() {
 // open of the dialog; if it cannot load, the dialog falls back to the title/excerpt filter below.
 function storyRowHtml(s, chip = "", extra = "") {
   const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${chip}${esc(T(`${s.chapters} 篇`, `${s.chapters} docs`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
+  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${chip}${esc(T(`${s.chapters} 篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
+}
+// The pager only shows when there is more than one page of results.
+function pager(page, pages) {
+  $(".search-pager").hidden = pages <= 1;
+  $("#search-page").textContent = `${page + 1} / ${pages}`;
+  $("#search-previous").disabled = page === 0;
+  $("#search-next").disabled = page >= pages - 1;
 }
 const fullSearch = createSearch({
   base: "", getLang: () => lang, T, esc, prose, proseWith, fetchJson: json,
@@ -1020,9 +1046,7 @@ async function renderFullSearch() {
   searchPage = r.page;
   $("#search-count").textContent = T(`${r.total} 条结果`, `${r.total} results`);
   $("#search-results").innerHTML = r.html || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
-  $("#search-page").textContent = `${r.page + 1} / ${r.pages}`;
-  $("#search-previous").disabled = r.page === 0;
-  $("#search-next").disabled = r.page === r.pages - 1;
+  pager(r.page, r.pages);
   const shown = $("#search-results").children.length;
   await r.enrich($("#search-results"));
   if (seq !== searchSeq) return;
@@ -1046,20 +1070,18 @@ function renderSearch() {
     );
   const pages = Math.max(1, Math.ceil(filtered.length / 20));
   searchPage = Math.min(searchPage, pages - 1);
-  $("#search-count").textContent = T(`${filtered.length} 份档案`, `${filtered.length} dossiers`);
+  $("#search-count").textContent = T(`${filtered.length} 个故事`, `${filtered.length} ${filtered.length === 1 ? "story" : "stories"}`);
   $("#search-results").innerHTML =
     filtered
       .slice(searchPage * 20, searchPage * 20 + 20)
       .map(
         (s) => {
           const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${esc(T(`${s.chapters} 篇`, `${s.chapters} docs`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
+          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${esc(T(`${s.chapters} 篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
         },
       )
       .join("") || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
-  $("#search-page").textContent = `${searchPage + 1} / ${pages}`;
-  $("#search-previous").disabled = searchPage === 0;
-  $("#search-next").disabled = searchPage === pages - 1;
+  pager(searchPage, pages);
 }
 $("#search-open").onclick = () => {
   fullSearch.preload();
@@ -1073,7 +1095,7 @@ $("#search-input").oninput = (e) => {
   searchText = e.target.value;
   searchPage = 0;
   clearTimeout(renderSearch.timer);
-  renderSearch.timer = setTimeout(renderSearch, 120);
+  renderSearch.timer = setTimeout(renderSearch, 60);
 };
 $("#search-previous").onclick = () => {
   searchPage--;
@@ -1197,6 +1219,7 @@ document.addEventListener("keydown", (e) => {
       $("#playlist").hidden = true;
       $("#playlist-toggle").setAttribute("aria-expanded", "false");
     } else if (!$("#reader").hidden && !$("#reader").classList.contains("prewarm") && !$("#search-dialog").open) closeReader();
+    else if (!$("#search-dialog").open) cancelOpening();
   }
   if (
     e.key === "/" &&
@@ -1216,7 +1239,7 @@ function showSpecimenLinks(docId) {
     if (!entry || !article || article.querySelector(".specimen-links")) return;
     const box = document.createElement("aside");
     box.className = "specimen-links";
-    box.innerHTML = `<small>${esc(T("博物天枢 · 此文档给予的标本", "Grand Archive · specimens from this document"))}</small>` +
+    box.innerHTML = `<small>${esc(T("博物天枢 · 本篇所得标本", "Grand Archive · specimens from this chapter"))}</small>` +
       entry.specimens.map((key) => {
         const [zh, en] = (entry.names[key] || "|").split("|");
         return `<a href="#museum=${encodeURIComponent(key)}"><img src="${asset(`museum/img/${key}.webp`)}" alt="" width="36" height="36" loading="lazy">${esc(lang === "en" ? en || zh : zh || en)}</a>`;
@@ -1260,21 +1283,29 @@ async function showEffects(story, docId, choices) {
 }
 // 博物天枢 · Grand Archive specimen museum: loaded on first use (#museum or #museum=<specimen key>).
 let museum = null;
+// The document a specimen link was followed from: closing the museum returns to it (with its saved path).
+let museumReturn = null;
 async function showMuseum(focusKey) {
   try {
     museum ||= await import("./museum.js");
     if (dossier) {
+      museumReturn = { story: dossier.story.id, chapter: chapter.id };
       // closeReader() resets the hash; keep the museum address (#museum=<key>) for sharing and back navigation.
       const hash = location.hash;
       closeReader();
       history.replaceState(null, "", hash);
-    }
+    } else if (!document.body.classList.contains("museum-open")) museumReturn = null;
     await museum.openMuseum({
       asset,
       focusKey,
       closeTo: () => {
-        if (location.hash.startsWith("#museum")) history.replaceState(null, "", "#");
         scene?.wake(); // the archive stops drawing while the museum covers it
+        const from = museumReturn;
+        museumReturn = null;
+        if (!location.hash.startsWith("#museum")) return; // left by a link: that link decides what opens
+        if (!from) return history.replaceState(null, "", "#");
+        history.replaceState(null, "", `#story=${encodeURIComponent(from.story)}&chapter=${encodeURIComponent(from.chapter)}`);
+        openFromLink(from.story, from.chapter);
       },
     });
   } catch (e) {
@@ -1286,6 +1317,10 @@ $("#categories").addEventListener("click", (e) => {
   if (e.target.closest("#museum-open")) location.hash = "museum";
 });
 function parseHash() {
+  if (steppingBack) {
+    steppingBack = false;
+    if (!/^#(story|record|museum)/.test(location.hash)) return;
+  }
   const q = new URLSearchParams(location.hash.slice(1));
   if (location.hash.startsWith("#museum")) return showMuseum(q.get("museum") || undefined);
   museum?.closeMuseum();
@@ -1294,6 +1329,7 @@ function parseHash() {
     const id = decodeURIComponent(location.hash.slice(8));
     loadRecords().then(() => { if (recordToStory[id]) return openFromLink(recordToStory[id], id); }).catch((e) => toast(e.message));
   } else if (dossier) closeReader();
+  else cancelOpening();
 }
 window.addEventListener("hashchange", parseHash);
 try {
