@@ -83,6 +83,8 @@ evidence from earlier rounds and is not updated.
   not a page leak; museum-failure toast localised; playlist failure retried on play; a same-session A/B against v4.6.4
   found the continue-card pictures cost 20–40 ms on opening frames — they now load after the text settles (A/B
   afterwards equal or better than v4.6.4 on every step).
+- Live: v4.7.1 (`ece5d6e9`), gated workflow green, verified live 2026-10-18: smoke 15/15, verify-refine-audio,
+  verify-museum-viewer 7. Locally also verify-gpu (discrete, integrated and faked integrated/software tiers: all ok).
 - Live: v4.7.0 (`59bada4d`), published by the gated workflow (Archive CI and Publish green) and verified live
   2026-10-18 with local Chrome: smoke 14/14, verify-progress 12, verify-search 16, verify-effects, verify-museum-viewer 7.
 
