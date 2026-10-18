@@ -30,3 +30,16 @@ background tab 0 rAF/s; storage failures, image/GLB/font failures recover; reduc
 
 Not testable here: physical phones (all mobile numbers are emulation), a real low-end GPU, compressed transfer sizes on the
 local server (GitHub Pages compresses JS/JSON), a truly minimised window, real touch pinch.
+
+## Follow-up after v4.7.0 (2026-10-18)
+
+Re-test of the released build: [interaction-retest.md](interaction-retest.md) (D1–D4 confirmed fixed; Back/Forward,
+museum return, profile changes mid-reading, branching backtrack across a reload all correct). Outcomes:
+
+| Item | Finding | Resolution |
+| --- | --- | --- |
+| R1 "DOM leak" (+~370 nodes, +1 listener per open/close) | Heap snapshot: the detached `chapter-document` articles are retained only by "(Global handles) / DevTools console" — the ElementHandles that Playwright's `waitForSelector` returns. With `locator().waitFor()` (no handles) 12 open/close cycles leave no detached articles and listeners go 134 → 135. | Probe artefact, not a page leak; no change. Probes should use `locator().waitFor()` for leak counts. |
+| R2 museum data failure toasts "Failed to fetch" | `app.js` appended the browser's English message | Localised message only (`app.js` showMuseum) |
+| R3 player never recovers after `playlist.json` fails | playlist fetched once at boot | Pressing play retries the playlist (`app.js` startSoundtrack); checked: blocked → retry → plays one stream |
+| Opening regression from continue-card pictures | Same-session A/B against v4.6.4 (headed Chrome, 170 Hz, 3 reps × 2): first opening max 100/124 vs 88/82 ms, opening another story 59/59 vs 35/41 ms — full-size event art decoded on the opening frames | Pictures get their source after the text and map settle (idle, 1.1 s after an opening / 0.35 s after a chapter change). Re-run: first opening 82/71 vs 100/77 ms, another story 35/35 vs 47/35, chapter change 18/12 vs 24/18 (`verification/round4/perf/story-chrome-ab-*.json`) |
+| Ending dead end (design #2, simplified) | 526 endings stopped the reading | An ending offers the next story of its archive row (with its cover); smoke check added |

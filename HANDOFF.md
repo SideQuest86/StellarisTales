@@ -32,19 +32,19 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.7.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.7.1 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
   smoke checks `scripts/smoke.mjs` (bundled Chromium, headless); any failure stops the job before the Pages artifact
-  is uploaded. The same smoke step runs in `ci.yml` on every push. Smoke (14 checks) covers: story opening, a choice +
+  is uploaded. The same smoke step runs in `ci.yml` on every push. Smoke (15 checks) covers: story opening, a choice +
   continuing + Back, progress restored after a reload, full-text search to an exact document and to a specimen, five
   repeated museum opens, images, a link opened during the start-up warm-up on a slow download, Escape while a story is
   still downloading + browser Back closing a story opened from the archive, a specimen link and back to its chapter,
-  the 844×390 landscape archive, the 390 px phone layout, and no page errors / failed requests.
+  an ending leading on to the next story, the 844×390 landscape archive, the 390 px phone layout, and no page errors / failed requests.
   Run locally: `node scripts/serve.mjs --dist` then `STELLARIS_PLAYWRIGHT_PATH=… STELLARIS_BROWSER_CHANNEL=chrome node scripts/smoke.mjs`.
 - **Tests (2026-10-18):** Node 91 (`node --test tests/*.test.mjs`), Python 45 (`python -m unittest discover -s tests`),
-  all passing. Browser suites passing locally: smoke 14/14, verify-prewarm 24/24, verify-museum-viewer 7, verify-museum
+  all passing. Browser suites passing locally: smoke 15/15, verify-prewarm 24/24, verify-museum-viewer 7, verify-museum
   (268 checks), verify-progress 12, verify-search 16, verify-effects, verify-a11y, verify-refine-reader,
   verify-refine-chrome, verify-refine-audio, verify-reader-v4.
 - **Round 4 (2026-10-18): review and improvement.** Ranked issue list with evidence: `docs/refine/round4/ISSUES.md`
@@ -71,12 +71,20 @@ evidence from earlier rounds and is not updated.
     has a model, shorter exhibit note, plainer acquisition labels. Game text untouched (user decision 2026-10-15).
   - Creative: continue cards show the picture of the document they lead to (or the other story's cover); a specimen
     link remembers the chapter it came from — closing the museum (or Back) returns there, and the museum's "From the
-    story" link opens the awarding document rather than the story's first. Deferred ideas: `docs/refine/round4/design-ideas.md`
+    story" link opens the awarding document rather than the story's first; an ending offers the next story of its
+    archive row (v4.7.1). Deferred ideas: `docs/refine/round4/design-ideas.md`
     (end-of-route recap, number keys for choices, "met in your reading" pips in the museum, cross-story breadcrumb).
 - **Limits:** no physical phone (all mobile figures are emulation); no native-speaker proofread; real low-end GPU,
   minimised-window background state and compressed transfer sizes not measured locally; faults in the game's own text
   are kept as shipped (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions. Not changed:
   first story opening of a session still 2–3 frames (round 3 decision), first archive frame after a cold load.
+- **v4.7.1 follow-up (2026-10-18):** re-test of v4.7.0 (`docs/refine/round4/interaction-retest.md`, outcomes in
+  `ISSUES.md` "Follow-up"): the reported per-cycle DOM growth is Playwright's retained element handles (heap snapshot),
+  not a page leak; museum-failure toast localised; playlist failure retried on play; a same-session A/B against v4.6.4
+  found the continue-card pictures cost 20–40 ms on opening frames — they now load after the text settles (A/B
+  afterwards equal or better than v4.6.4 on every step).
+- Live: v4.7.0 (`59bada4d`), published by the gated workflow (Archive CI and Publish green) and verified live
+  2026-10-18 with local Chrome: smoke 14/14, verify-progress 12, verify-search 16, verify-effects, verify-museum-viewer 7.
 
 ## History: refinement round 3 (2026-10-16, v4.6.0–v4.6.4: museum viewer, progress, search, frame timing, release gate)
 

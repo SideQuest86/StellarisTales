@@ -1,0 +1,24 @@
+{
+ "rtDom": {
+  "before": {
+   "choices": [
+    "choice-button|false|◇研究它。→",
+    "choice-button|false|◇摧毁它。→"
+   ],
+   "next": [
+    "next-chapter|hid|研究水晶球体→",
+    "next-chapter|hid|摧毁水晶球体→"
+   ]
+  },
+  "after": {
+   "choices": [
+    "choice-button|true|◇研究它。→",
+    "choice-button|false|◇摧毁它。→"
+   ],
+   "next": [
+    "next-chapter|vis|研究水晶球体→",
+    "next-chapter|hid|摧毁水晶球体→"
+   ]
+  }
+ }
+}

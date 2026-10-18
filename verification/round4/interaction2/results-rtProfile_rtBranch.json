@@ -1,0 +1,129 @@
+{
+ "rtProfile": {
+  "rows": [
+   {
+    "label": "open",
+    "doc": "astral_planes.15",
+    "chips": "文明设定",
+    "backEnabled": true,
+    "choices": 2,
+    "hash": "#story=astral-crystal-sphere&chapter=astral_planes.15",
+    "prof": null
+   },
+   {
+    "label": "ch2",
+    "doc": "situations:situation_study_crystal_sphere",
+    "chips": "文明设定",
+    "backEnabled": true,
+    "choices": 0,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_study_crystal_sphere",
+    "prof": null
+   },
+   {
+    "label": "profile changed mid-reading",
+    "doc": "situations:situation_study_crystal_sphere",
+    "chips": "阅读设定\n唯物主义\n文明设定\n重置",
+    "backEnabled": true,
+    "choices": 0,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_study_crystal_sphere",
+    "prof": "{\"ethic_materialist\":true}"
+   },
+   {
+    "label": "second change",
+    "doc": "situations:situation_study_crystal_sphere",
+    "chips": "阅读设定\n唯物主义\n狂热平等主义\n文明设定\n重置",
+    "backEnabled": true,
+    "choices": 0,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_study_crystal_sphere",
+    "prof": "{\"ethic_materialist\":true,\"ethic_egalitarian\":true,\"ethic_fanatic_egalitarian\":true}"
+   },
+   {
+    "label": "after back",
+    "doc": "astral_planes.15",
+    "chips": "阅读设定\n唯物主义\n狂热平等主义\n文明设定\n重置",
+    "backEnabled": true,
+    "choices": 2,
+    "hash": "#story=astral-crystal-sphere&chapter=astral_planes.15",
+    "prof": "{\"ethic_materialist\":true,\"ethic_egalitarian\":true,\"ethic_fanatic_egalitarian\":true}"
+   },
+   {
+    "label": "profile changed after backtrack",
+    "doc": "astral_planes.15",
+    "chips": "阅读设定\n狂热平等主义\n狂热唯物主义\n文明设定\n重置",
+    "backEnabled": true,
+    "choices": 2,
+    "hash": "#story=astral-crystal-sphere&chapter=astral_planes.15",
+    "prof": "{\"ethic_egalitarian\":true,\"ethic_fanatic_egalitarian\":true,\"ethic_materialist\":true,\"ethic_fanatic_materialist\":true}"
+   },
+   {
+    "label": "forward again",
+    "doc": "situations:situation_study_crystal_sphere",
+    "chips": "阅读设定\n狂热平等主义\n狂热唯物主义\n文明设定\n重置",
+    "backEnabled": true,
+    "choices": 0,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_study_crystal_sphere",
+    "prof": "{\"ethic_egalitarian\":true,\"ethic_fanatic_egalitarian\":true,\"ethic_materialist\":true,\"ethic_fanatic_materialist\":true}"
+   },
+   {
+    "continueShown": false
+   },
+   {
+    "label": "after reload+continue",
+    "doc": "situations:situation_study_crystal_sphere",
+    "chips": "阅读设定\n狂热平等主义\n狂热唯物主义\n文明设定\n重置",
+    "backEnabled": true,
+    "choices": 0,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_study_crystal_sphere",
+    "prof": "{\"ethic_egalitarian\":true,\"ethic_fanatic_egalitarian\":true,\"ethic_materialist\":true,\"ethic_fanatic_materialist\":true}"
+   },
+   {
+    "label": "reset",
+    "doc": "situations:situation_study_crystal_sphere",
+    "chips": "文明设定",
+    "backEnabled": true,
+    "choices": 0,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_study_crystal_sphere",
+    "prof": "{}"
+   }
+  ],
+  "errors": []
+ },
+ "rtBranch": {
+  "rows": [
+   {
+    "step": "open",
+    "doc": "astral_planes.15",
+    "back": true,
+    "hash": "#story=astral-crystal-sphere&chapter=astral_planes.15",
+    "st": []
+   },
+   {
+    "step": "A->next",
+    "doc": "situations:situation_study_crystal_sphere",
+    "back": true,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_study_crystal_sphere",
+    "st": "{\"v\":1,\"savedAt\":1792360091516,\"trail\":[{\"story\":\"astral-crystal-sphere\",\"chapter\":\"astral_planes.15\",\"choice\":\"astral_planes.15.a\",\"choiceIndex\":0,\"reading\":0},{\"story\":\"astral-crystal-sphere\",\"chapter\":\"situations:situation_study_crystal_sphere\"}],\"assumptions\":{},\"visited\":[\"astral_planes.15\",\"situations:situation_study_crystal_sphere\"]}"
+   },
+   {
+    "step": "back",
+    "doc": "astral_planes.15",
+    "back": true,
+    "hash": "#story=astral-crystal-sphere&chapter=astral_planes.15",
+    "st": "{\"v\":1,\"savedAt\":1792360092763,\"trail\":[{\"story\":\"astral-crystal-sphere\",\"chapter\":\"astral_planes.15\",\"choice\":\"astral_planes.15.a\",\"choiceIndex\":0,\"reading\":0}],\"assumptions\":{},\"visited\":[\"astral_planes.15\",\"situations:situation_study_crystal_sphere\"]}"
+   },
+   {
+    "step": "B->next",
+    "doc": "situations:situation_destroy_crystal_sphere",
+    "back": true,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_destroy_crystal_sphere",
+    "st": "{\"v\":1,\"savedAt\":1792360094522,\"trail\":[{\"story\":\"astral-crystal-sphere\",\"chapter\":\"astral_planes.15\",\"choice\":\"astral_planes.15.b\",\"choiceIndex\":1,\"reading\":0},{\"story\":\"astral-crystal-sphere\",\"chapter\":\"situations:situation_destroy_crystal_sphere\"}],\"assumptions\":{},\"visited\":[\"astral_planes.15\",\"situations:situation_study_crystal_sphere\",\"situations:situation_destroy_crystal_sphere\"]}"
+   }
+  ],
+  "expected": "situations:situation_destroy_crystal_sphere",
+  "shown": false,
+  "dbg": {
+   "st-position": "10",
+   "st-progress": "{\"v\":1,\"savedAt\":1792360096860,\"trail\":[{\"story\":\"astral-crystal-sphere\",\"chapter\":\"astral_planes.15\",\"choice\":\"astral_planes.15.b\",\"choiceIndex\":1,\"reading\":0},{\"story\":\"astral-crystal-sphere\",\"chapter\":\"situations:situation_destroy_crystal_sphere\"}],\"assumptions\":{},\"visited\":[\"astral_planes.15\",\"situations:situation_study_crystal_sphere\",\"situations:situation_destroy_crystal_sphere\"]}"
+  }
+ }
+}

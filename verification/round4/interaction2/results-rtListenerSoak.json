@@ -1,0 +1,49 @@
+{
+ "rtListenerSoak": {
+  "sample": [
+   {
+    "i": 0,
+    "listeners": 135,
+    "nodes": 1096,
+    "heap": 7.9
+   },
+   {
+    "i": 20,
+    "listeners": 155,
+    "nodes": 8531,
+    "heap": 8.7
+   },
+   {
+    "i": 40,
+    "listeners": 175,
+    "nodes": 15974,
+    "heap": 8.8
+   },
+   {
+    "i": 60,
+    "listeners": 195,
+    "nodes": 23411,
+    "heap": 8.9
+   },
+   {
+    "i": 80,
+    "listeners": 215,
+    "nodes": 30851,
+    "heap": 8.9
+   },
+   {
+    "i": 100,
+    "listeners": 235,
+    "nodes": 38291,
+    "heap": 9
+   },
+   {
+    "i": 120,
+    "listeners": 255,
+    "nodes": 45731,
+    "heap": 9
+   }
+  ],
+  "errors": []
+ }
+}

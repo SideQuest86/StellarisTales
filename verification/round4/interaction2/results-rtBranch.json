@@ -1,0 +1,46 @@
+{
+ "rtBranch": {
+  "rows": [
+   {
+    "step": "open",
+    "doc": "astral_planes.15",
+    "back": true,
+    "hash": "#story=astral-crystal-sphere&chapter=astral_planes.15",
+    "st": []
+   },
+   {
+    "step": "A->next",
+    "doc": "situations:situation_study_crystal_sphere",
+    "back": true,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_study_crystal_sphere",
+    "st": "{\"v\":1,\"savedAt\":1792360151076,\"trail\":[{\"story\":\"astral-crystal-sphere\",\"chapter\":\"astral_planes.15\",\"choice\":\"astral_planes.15.a\",\"choiceIndex\":0,\"reading\":0},{\"story\":\"astral-crystal-sphere\",\"chapter\":\"situations:situation_study_crystal_sphere\"}],\"assumptions\":{},\"visited\":[\"astral_planes.15\",\"situations:situation_study_crystal_sphere\"]}"
+   },
+   {
+    "step": "back",
+    "doc": "astral_planes.15",
+    "back": true,
+    "hash": "#story=astral-crystal-sphere&chapter=astral_planes.15",
+    "st": "{\"v\":1,\"savedAt\":1792360152354,\"trail\":[{\"story\":\"astral-crystal-sphere\",\"chapter\":\"astral_planes.15\",\"choice\":\"astral_planes.15.a\",\"choiceIndex\":0,\"reading\":0}],\"assumptions\":{},\"visited\":[\"astral_planes.15\",\"situations:situation_study_crystal_sphere\"]}"
+   },
+   {
+    "step": "B->next",
+    "doc": "situations:situation_destroy_crystal_sphere",
+    "back": true,
+    "hash": "#story=astral-crystal-sphere&chapter=situations%3Asituation_destroy_crystal_sphere",
+    "st": "{\"v\":1,\"savedAt\":1792360154132,\"trail\":[{\"story\":\"astral-crystal-sphere\",\"chapter\":\"astral_planes.15\",\"choice\":\"astral_planes.15.b\",\"choiceIndex\":1,\"reading\":0},{\"story\":\"astral-crystal-sphere\",\"chapter\":\"situations:situation_destroy_crystal_sphere\"}],\"assumptions\":{},\"visited\":[\"astral_planes.15\",\"situations:situation_study_crystal_sphere\",\"situations:situation_destroy_crystal_sphere\"]}"
+   }
+  ],
+  "expected": "situations:situation_destroy_crystal_sphere",
+  "viaLink": "situations:situation_destroy_crystal_sphere",
+  "chain0": [
+   "situations:situation_destroy_crystal_sphere"
+  ],
+  "label": "继续阅读水晶球体 · 摧毁水晶球体",
+  "restored": "situations:situation_destroy_crystal_sphere",
+  "chain": [
+   "situations:situation_destroy_crystal_sphere",
+   "astral_planes.15"
+  ],
+  "errors": []
+ }
+}

@@ -220,6 +220,22 @@ await check("a specimen link from a chapter opens its exhibit; closing the museu
   }
 });
 
+await check("an ending leads on to the next story of its row", async () => {
+  const run = await open();
+  try {
+    const { page } = run;
+    await page.goto(base + "#story=origin_unplugged&chapter=unplugged.3090", { waitUntil: "domcontentloaded" });
+    const next = page.locator("#reader:not([hidden]):not(.prewarm) .chapter-end .ending-next");
+    await next.waitFor({ timeout: 30000 });
+    const id = await next.getAttribute("data-open");
+    await next.click();
+    await page.waitForFunction((s) => location.hash.startsWith(`#story=${s}&`), id, { timeout: 30000 });
+    return `origin_unplugged → ${id}`;
+  } finally {
+    await run.context.close();
+  }
+});
+
 await check("landscape phone (844×390): the open-story control is not covered", async () => {
   const run = await open({ width: 844, height: 390 }, { isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
   try {

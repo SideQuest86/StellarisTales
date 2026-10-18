@@ -576,11 +576,20 @@ function edgeCaption(e) {
   if (e.story && e.story !== dossier.story.id) parts.push(T("进入另一则故事", "Leads into another story"));
   return parts.join(" · ");
 }
+// At an ending: the next story of the same archive row, so a finished route leads on instead of stopping.
+function endingNext(story) {
+  const col = columns.find((c) => c.stories.some((s) => s.id === story.id));
+  const at = col ? col.stories.findIndex((s) => s.id === story.id) : -1;
+  const next = at >= 0 ? col.stories[at + 1] : null;
+  if (!next) return "";
+  const art = next.image ? `<img class="next-art" data-src="${asset(next.image)}" alt="" decoding="async">` : "";
+  return `<button class="next-chapter ending-next${art ? " has-art" : ""}" data-open="${esc(next.id)}">${art}<span>${esc(prose(local(next.title)))}</span><small>${esc(T("下一则故事", "Next story"))} →</small></button>`;
+}
 // The picture of the document a card leads to (or the other story's cover), when it differs from the current one.
 function edgeArt(e) {
   const other = e.story && e.story !== dossier.story.id;
   const image = other ? storyById.get(e.story)?.image : docMap.get(e.target)?.image;
-  return image && image !== chapter?.image ? `<img class="next-art" src="${asset(image)}" alt="" loading="lazy" decoding="async">` : "";
+  return image && image !== chapter?.image ? `<img class="next-art" data-src="${asset(image)}" alt="" decoding="async">` : "";
 }
 function edgeButton(e) {
   const art = edgeArt(e);
@@ -808,7 +817,7 @@ function renderChapter(preservePosition = false) {
   const nextEdges = resolveEdges(r.next, ctx);
   let nextReading;
   if (chapter.ending && !nextEdges.length) {
-    nextReading = `<div class="reading-ending"><strong>${esc(local(chapter.ending.label))}</strong><p>${esc(local(chapter.ending.note))}</p></div>`;
+    nextReading = `<div class="reading-ending"><strong>${esc(local(chapter.ending.label))}</strong><p>${esc(local(chapter.ending.note))}</p></div>${endingNext(story)}`;
   } else if (r.choices.length) {
     nextReading = `<span class="reading-complete">${esc(T("选择一个回应", "Choose a response"))}</span>`;
   } else if (!nextEdges.length) {
@@ -915,6 +924,15 @@ function renderChapter(preservePosition = false) {
     setTimeout(later(updateFlow), 600);
   }
   else (window.requestIdleCallback || ((f) => setTimeout(f, 50)))(later(updateFlow), { timeout: 250 });
+  // Continue-card pictures are full event art scaled down: decoding them on the opening or chapter-change frames cost
+  // 20–40 ms (A/B, verification/round4/perf/story-chrome-ab-*.json), so they arrive once the text and map have settled.
+  if (!prewarming)
+    setTimeout(later(() => (window.requestIdleCallback || ((f) => setTimeout(f, 50)))(later(() => {
+      for (const img of document.querySelectorAll(".chapter-document .next-art[data-src]")) {
+        img.src = img.dataset.src;
+        img.removeAttribute("data-src");
+      }
+    }), { timeout: 1500 })), freshOpen ? 1100 : 350);
   openingReader = false;
   if(chapter.dialogue?.textProfiles){
     const picker=document.createElement('label');picker.className='reading-picker';
@@ -1309,7 +1327,8 @@ async function showMuseum(focusKey) {
       },
     });
   } catch (e) {
-    toast(T("博物天枢暂时无法打开。", "The Grand Archive could not be opened.") + " " + e.message);
+    console.warn(e); // the browser's own message ("Failed to fetch") is English-only and says nothing more
+    toast(T("博物天枢暂时无法打开，请稍后重试。", "The Grand Archive could not be opened. Please try again."));
   }
 }
 // The entry lives in the re-rendered catalogue nav, so the click is delegated on the nav itself.
@@ -1386,9 +1405,22 @@ try {
   $("#open-story").textContent = T("重新连接", "Reconnect");
   $("#open-story").onclick = () => location.reload();
 }
-try {
-  new SoundtrackPlayer(await json("music/playlist.json"), asset, toast);
-} catch (e) {
-  $("#track-title").textContent = T("原声音乐暂时未能加载", "The soundtrack could not be loaded");
-  toast(e.message);
+// The soundtrack; if its playlist cannot load, pressing play tries again (the network may be back by then).
+async function startSoundtrack() {
+  try {
+    new SoundtrackPlayer(await json("music/playlist.json"), asset, toast);
+    return true;
+  } catch (e) {
+    $("#track-title").textContent = T("原声音乐暂时未能加载", "The soundtrack could not be loaded");
+    toast(e.message);
+    return false;
+  }
+}
+if (!(await startSoundtrack())) {
+  const retry = async (e) => {
+    e.stopImmediatePropagation();
+    $("#play-pause").removeEventListener("click", retry, true);
+    if (!(await startSoundtrack())) $("#play-pause").addEventListener("click", retry, true);
+  };
+  $("#play-pause").addEventListener("click", retry, true);
 }

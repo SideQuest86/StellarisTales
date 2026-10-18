@@ -1,0 +1,78 @@
+{
+ "rtPendingBack": {
+  "rows": [
+   {
+    "how": "back",
+    "mid": {
+     "hash": "",
+     "len": 2,
+     "url": "http://127.0.0.1:4198/"
+    },
+    "after": {
+     "hash": "",
+     "len": 2,
+     "url": "about:blank",
+     "left": true
+    },
+    "errors": []
+   },
+   {
+    "how": "backForward",
+    "mid": {
+     "hash": "",
+     "len": 2,
+     "url": "http://127.0.0.1:4198/"
+    },
+    "after": {
+     "hash": "",
+     "len": 2,
+     "url": "http://127.0.0.1:4198/",
+     "readerHidden": true,
+     "bodyOpen": false,
+     "doc": null,
+     "hudInert": false,
+     "catInert": false,
+     "readerInert": true,
+     "prewarm": false,
+     "museumOpen": false,
+     "active": "BODY",
+     "nodes": 342,
+     "readerOpacity": "1",
+     "readerDisplay": "none"
+    },
+    "errors": []
+   },
+   {
+    "how": "escapeThenBack",
+    "mid": {
+     "hash": "",
+     "len": 2,
+     "url": "http://127.0.0.1:4198/"
+    },
+    "after": {
+     "hash": "",
+     "len": 2,
+     "url": "about:blank",
+     "left": true
+    },
+    "errors": []
+   }
+  ]
+ },
+ "rtMuseumFail": {
+  "toast": "博物天枢暂时无法打开。 Failed to fetch",
+  "failed": [
+   "museum/specimens.json",
+   "museum/by-doc.json"
+  ]
+ },
+ "rtPlaylistThenPlay": {
+  "toast0": "未能载入，请稍后重试。",
+  "st": {
+   "label": "播放音乐",
+   "paused": true,
+   "toast": "未能载入，请稍后重试。"
+  },
+  "errors": []
+ }
+}

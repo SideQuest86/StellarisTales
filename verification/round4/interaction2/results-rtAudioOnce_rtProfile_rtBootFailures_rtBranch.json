@@ -1,0 +1,128 @@
+{
+ "rtAudioOnce": {
+  "rows": [
+   {
+    "mode": "earlyClick",
+    "a": {
+     "play": 1,
+     "playing": 1,
+     "srcs": [
+      "_bonus_featuringmiastegmar.mp3"
+     ],
+     "audios": 1,
+     "paused": false,
+     "t": 2.625855
+    },
+    "mp3": [
+     "_bonus_featuringmiastegmar.mp3"
+    ],
+    "toast": "",
+    "errors": []
+   },
+   {
+    "mode": "noClick",
+    "a": {
+     "play": 1,
+     "playing": 1,
+     "srcs": [
+      "_bonus_featuringmiastegmar.mp3"
+     ],
+     "audios": 1,
+     "paused": false,
+     "t": 2.423434
+    },
+    "mp3": [
+     "_bonus_featuringmiastegmar.mp3"
+    ],
+    "toast": "",
+    "errors": []
+   },
+   {
+    "mode": "earlyThenLater",
+    "a": {
+     "play": 1,
+     "playing": 1,
+     "srcs": [
+      "_bonus_featuringmiastegmar.mp3"
+     ],
+     "audios": 1,
+     "paused": false,
+     "t": 4.518896
+    },
+    "mp3": [
+     "_bonus_featuringmiastegmar.mp3"
+    ],
+    "toast": "",
+    "errors": []
+   }
+  ]
+ },
+ "rtProfile": {
+  "crashed": "locator.isEnabled: Timeout 30000ms exceeded."
+ },
+ "rtBootFailures": {
+  "rows": [
+   {
+    "name": "index.json",
+    "r": {
+     "btn": "重新连接",
+     "toast": "",
+     "play": "播放音乐",
+     "title": "档案暂时无法连接"
+    },
+    "retry": {
+     "clicked": true,
+     "btn": "展开故事 ↗",
+     "readerHidden": true,
+     "count": 9
+    },
+    "errors": [],
+    "console": [
+     "Failed to load resource: net::ERR_FAILED"
+    ]
+   },
+   {
+    "name": "playlist.json",
+    "r": {
+     "btn": "展开故事 ↗",
+     "toast": "未能载入，请稍后重试。",
+     "play": "播放音乐",
+     "title": "视界信号"
+    },
+    "retry": {
+     "clicked": true,
+     "btn": "展开故事 ↗",
+     "readerHidden": false,
+     "count": 9
+    },
+    "errors": [],
+    "console": [
+     "Failed to load resource: net::ERR_FAILED"
+    ]
+   },
+   {
+    "name": "both",
+    "r": {
+     "btn": "重新连接",
+     "toast": "未能载入，请稍后重试。",
+     "play": "播放音乐",
+     "title": "档案暂时无法连接"
+    },
+    "retry": {
+     "clicked": true,
+     "btn": "展开故事 ↗",
+     "readerHidden": true,
+     "count": 9
+    },
+    "errors": [],
+    "console": [
+     "Failed to load resource: net::ERR_FAILED",
+     "Failed to load resource: net::ERR_FAILED"
+    ]
+   }
+  ]
+ },
+ "rtBranch": {
+  "crashed": "page.waitForSelector: Timeout 30000ms exceeded."
+ }
+}

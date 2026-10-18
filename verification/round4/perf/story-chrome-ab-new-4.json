@@ -1,0 +1,865 @@
+{
+ "measuredAt": "2026-10-18T21:56:03.877Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "chrome 155.0.8059.80",
+ "headed": true,
+ "url": "http://127.0.0.1:4197/",
+ "reps": 3,
+ "seconds": 56,
+ "result": {
+  "profile": "desktop",
+  "steps": {
+   "open story (first this page / later)": {
+    "first": {
+     "frames": 403,
+     "n": 403,
+     "p50": 5.9,
+     "p95": 6.2,
+     "max": 70.7,
+     "over20": 5,
+     "over34": 4,
+     "loafN": 3,
+     "loafMax": 77,
+     "loafTop": [
+      {
+       "at": 4821.300000011921,
+       "d": 76.5,
+       "block": 26.2,
+       "scripts": [
+        {
+         "fn": "TimerHandler:setTimeout",
+         "url": "",
+         "ms": 26,
+         "fl": 0
+        }
+       ]
+      },
+      {
+       "at": 4449.600000023842,
+       "d": 72.80000001192093,
+       "block": 0,
+       "scripts": []
+      },
+      {
+       "at": 4207.700000047684,
+       "d": 56.299999952316284,
+       "block": 2.8,
+       "scripts": [
+        {
+         "fn": "Response.json.then",
+         "url": "app.js",
+         "ms": 47,
+         "fl": 42.4
+        }
+       ]
+      }
+     ],
+     "longtaskN": 1,
+     "longtaskMax": 55,
+     "taskMs": 548,
+     "scriptMs": 150,
+     "layoutMs": 98,
+     "styleMs": 58,
+     "heapMB": 10.7,
+     "nodes": 1786,
+     "listeners": 135,
+     "requests": 35,
+     "bytes": 567236,
+     "byExt": {
+      "json": {
+       "n": 2,
+       "bytes": 185331
+      },
+      "svg": {
+       "n": 2,
+       "bytes": 824
+      },
+      "webp": {
+       "n": 30,
+       "bytes": 329413
+      },
+      "woff2": {
+       "n": 1,
+       "bytes": 51668
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 425,
+      "n": 425,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 47,
+      "over20": 3,
+      "over34": 2,
+      "loafN": 1,
+      "loafMax": 52,
+      "loafTop": [
+       {
+        "at": 21272.5,
+        "d": 51.60000002384186,
+        "block": 0,
+        "scripts": [
+         {
+          "fn": "parseHash",
+          "url": "app.js",
+          "ms": 21.1,
+          "fl": 16.3
+         }
+        ]
+       }
+      ],
+      "longtaskN": 1,
+      "longtaskMax": 51,
+      "taskMs": 406,
+      "scriptMs": 88,
+      "layoutMs": 19,
+      "styleMs": 58,
+      "heapMB": 12.1,
+      "nodes": 7207,
+      "listeners": 138,
+      "requests": 20,
+      "bytes": 197108,
+      "byExt": {
+       "svg": {
+        "n": 2,
+        "bytes": 824
+       },
+       "webp": {
+        "n": 18,
+        "bytes": 196284
+       }
+      }
+     },
+     {
+      "frames": 431,
+      "n": 431,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 29.4,
+      "over20": 3,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 394,
+      "scriptMs": 89,
+      "layoutMs": 22,
+      "styleMs": 53,
+      "heapMB": 12.5,
+      "nodes": 9109,
+      "listeners": 141,
+      "requests": 20,
+      "bytes": 197108,
+      "byExt": {
+       "svg": {
+        "n": 2,
+        "bytes": 824
+       },
+       "webp": {
+        "n": 18,
+        "bytes": 196284
+       }
+      }
+     }
+    ]
+   },
+   "chapter change": {
+    "first": {
+     "frames": 263,
+     "n": 263,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 11.8,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 159,
+     "scriptMs": 50,
+     "layoutMs": 8,
+     "styleMs": 11,
+     "heapMB": 10.1,
+     "nodes": 2008,
+     "listeners": 136,
+     "requests": 1,
+     "bytes": 412,
+     "byExt": {
+      "svg": {
+       "n": 1,
+       "bytes": 412
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 260,
+      "n": 260,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 11.7,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 120,
+      "scriptMs": 32,
+      "layoutMs": 2,
+      "styleMs": 8,
+      "heapMB": 13.1,
+      "nodes": 7429,
+      "listeners": 139,
+      "requests": 1,
+      "bytes": 412,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       }
+      }
+     },
+     {
+      "frames": 259,
+      "n": 259,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 17.6,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 116,
+      "scriptMs": 30,
+      "layoutMs": 2,
+      "styleMs": 9,
+      "heapMB": 13.4,
+      "nodes": 9331,
+      "listeners": 142,
+      "requests": 1,
+      "bytes": 412,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       }
+      }
+     }
+    ]
+   },
+   "back": {
+    "first": {
+     "frames": 255,
+     "n": 255,
+     "p50": 5.9,
+     "p95": 6.1,
+     "max": 11.8,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 127,
+     "scriptMs": 37,
+     "layoutMs": 3,
+     "styleMs": 11,
+     "heapMB": 11.5,
+     "nodes": 2396,
+     "listeners": 137,
+     "requests": 1,
+     "bytes": 412,
+     "byExt": {
+      "svg": {
+       "n": 1,
+       "bytes": 412
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 260,
+      "n": 260,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 11.8,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 135,
+      "scriptMs": 30,
+      "layoutMs": 3,
+      "styleMs": 9,
+      "heapMB": 12.2,
+      "nodes": 5812,
+      "listeners": 139,
+      "requests": 1,
+      "bytes": 412,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       }
+      }
+     },
+     {
+      "frames": 254,
+      "n": 254,
+      "p50": 5.9,
+      "p95": 6.1,
+      "max": 17.6,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 132,
+      "scriptMs": 29,
+      "layoutMs": 3,
+      "styleMs": 9,
+      "heapMB": 12.5,
+      "nodes": 9467,
+      "listeners": 142,
+      "requests": 1,
+      "bytes": 412,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       }
+      }
+     }
+    ]
+   },
+   "map interaction (wheel+drag)": {
+    "first": {
+     "frames": 242,
+     "n": 242,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 6.2,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 124,
+     "scriptMs": 7,
+     "layoutMs": 2,
+     "styleMs": 2,
+     "heapMB": 12,
+     "nodes": 2411,
+     "listeners": 297,
+     "requests": 0,
+     "bytes": 0,
+     "byExt": {}
+    },
+    "later": [
+     {
+      "frames": 244,
+      "n": 244,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.9,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 111,
+      "scriptMs": 5,
+      "layoutMs": 1,
+      "styleMs": 2,
+      "heapMB": 12.7,
+      "nodes": 5823,
+      "listeners": 299,
+      "requests": 0,
+      "bytes": 0,
+      "byExt": {}
+     },
+     {
+      "frames": 243,
+      "n": 243,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.9,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 117,
+      "scriptMs": 6,
+      "layoutMs": 1,
+      "styleMs": 1,
+      "heapMB": 12.9,
+      "nodes": 9478,
+      "listeners": 302,
+      "requests": 0,
+      "bytes": 0,
+      "byExt": {}
+     }
+    ]
+   },
+   "close story": {
+    "first": {
+     "frames": 202,
+     "n": 202,
+     "p50": 5.9,
+     "p95": 6.1,
+     "max": 17.7,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 191,
+     "scriptMs": 45,
+     "layoutMs": 4,
+     "styleMs": 10,
+     "heapMB": 9.7,
+     "nodes": 2164,
+     "listeners": 136,
+     "requests": 10,
+     "bytes": 98157,
+     "byExt": {
+      "svg": {
+       "n": 1,
+       "bytes": 412
+      },
+      "webp": {
+       "n": 9,
+       "bytes": 97745
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 206,
+      "n": 206,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 17.4,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 157,
+      "scriptMs": 37,
+      "layoutMs": 2,
+      "styleMs": 10,
+      "heapMB": 13.6,
+      "nodes": 5848,
+      "listeners": 299,
+      "requests": 2,
+      "bytes": 17261,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       },
+       "webp": {
+        "n": 1,
+        "bytes": 16849
+       }
+      }
+     },
+     {
+      "frames": 204,
+      "n": 204,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 17.7,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 158,
+      "scriptMs": 36,
+      "layoutMs": 2,
+      "styleMs": 9,
+      "heapMB": 12.2,
+      "nodes": 9503,
+      "listeners": 302,
+      "requests": 2,
+      "bytes": 17261,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       },
+       "webp": {
+        "n": 1,
+        "bytes": 16849
+       }
+      }
+     }
+    ]
+   },
+   "open other story": {
+    "first": {
+     "frames": 423,
+     "n": 423,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 35.3,
+     "over20": 4,
+     "over34": 1,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 582,
+     "scriptMs": 171,
+     "layoutMs": 37,
+     "styleMs": 77,
+     "heapMB": 10.1,
+     "nodes": 2921,
+     "listeners": 136,
+     "requests": 74,
+     "bytes": 1504861,
+     "byExt": {
+      "json": {
+       "n": 2,
+       "bytes": 461547
+      },
+      "svg": {
+       "n": 2,
+       "bytes": 824
+      },
+      "webp": {
+       "n": 67,
+       "bytes": 859146
+      },
+      "woff2": {
+       "n": 3,
+       "bytes": 183344
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 429,
+      "n": 429,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 23.5,
+      "over20": 1,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 443,
+      "scriptMs": 109,
+      "layoutMs": 19,
+      "styleMs": 68,
+      "heapMB": 13.4,
+      "nodes": 5859,
+      "listeners": 139,
+      "requests": 26,
+      "bytes": 333369,
+      "byExt": {
+       "webp": {
+        "n": 24,
+        "bytes": 332545
+       },
+       "svg": {
+        "n": 2,
+        "bytes": 824
+       }
+      }
+     },
+     {
+      "frames": 428,
+      "n": 428,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 23.5,
+      "over20": 1,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 420,
+      "scriptMs": 103,
+      "layoutMs": 21,
+      "styleMs": 72,
+      "heapMB": 12.7,
+      "nodes": 10256,
+      "listeners": 142,
+      "requests": 26,
+      "bytes": 333369,
+      "byExt": {
+       "webp": {
+        "n": 24,
+        "bytes": 332545
+       },
+       "svg": {
+        "n": 2,
+        "bytes": 824
+       }
+      }
+     }
+    ]
+   },
+   "long chapter (The Shroud utopia.3200)": {
+    "first": {
+     "frames": 405,
+     "n": 405,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 76.5,
+     "over20": 4,
+     "over34": 4,
+     "loafN": 3,
+     "loafMax": 60,
+     "loafTop": [
+      {
+       "at": 16770.400000035763,
+       "d": 59.69999998807907,
+       "block": 0,
+       "scripts": [
+        {
+         "fn": "TimerHandler:setTimeout",
+         "url": "",
+         "ms": 26.7,
+         "fl": 0
+        }
+       ]
+      },
+      {
+       "at": 16848.80000001192,
+       "d": 56.5,
+       "block": 4.7,
+       "scripts": []
+      },
+      {
+       "at": 16158.700000047684,
+       "d": 53.09999996423721,
+       "block": 2.8,
+       "scripts": [
+        {
+         "fn": "Response.json.then",
+         "url": "app.js",
+         "ms": 42.5,
+         "fl": 31
+        }
+       ]
+      }
+     ],
+     "longtaskN": 2,
+     "longtaskMax": 58,
+     "taskMs": 659,
+     "scriptMs": 123,
+     "layoutMs": 74,
+     "styleMs": 116,
+     "heapMB": 13.3,
+     "nodes": 6997,
+     "listeners": 137,
+     "requests": 33,
+     "bytes": 1828001,
+     "byExt": {
+      "json": {
+       "n": 2,
+       "bytes": 1286772
+      },
+      "svg": {
+       "n": 1,
+       "bytes": 412
+      },
+      "webp": {
+       "n": 25,
+       "bytes": 304252
+      },
+      "woff2": {
+       "n": 5,
+       "bytes": 236565
+      }
+     }
+    },
+    "later": [
+     {
+      "frames": 425,
+      "n": 425,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 35.1,
+      "over20": 3,
+      "over34": 1,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 467,
+      "scriptMs": 93,
+      "layoutMs": 24,
+      "styleMs": 96,
+      "heapMB": 13.4,
+      "nodes": 10716,
+      "listeners": 140,
+      "requests": 19,
+      "bytes": 217489,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       },
+       "webp": {
+        "n": 18,
+        "bytes": 217077
+       }
+      }
+     },
+     {
+      "frames": 426,
+      "n": 426,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 23.7,
+      "over20": 2,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 447,
+      "scriptMs": 92,
+      "layoutMs": 22,
+      "styleMs": 104,
+      "heapMB": 13.2,
+      "nodes": 15206,
+      "listeners": 143,
+      "requests": 19,
+      "bytes": 217489,
+      "byExt": {
+       "svg": {
+        "n": 1,
+        "bytes": 412
+       },
+       "webp": {
+        "n": 18,
+        "bytes": 217077
+       }
+      }
+     }
+    ]
+   },
+   "archive navigation (next story key)": {
+    "first": {
+     "frames": 262,
+     "n": 262,
+     "p50": 5.9,
+     "p95": 6,
+     "max": 6.1,
+     "over20": 0,
+     "over34": 0,
+     "loafN": 0,
+     "loafMax": 0,
+     "loafTop": [],
+     "longtaskN": 0,
+     "longtaskMax": 0,
+     "taskMs": 89,
+     "scriptMs": 38,
+     "layoutMs": 1,
+     "styleMs": 0,
+     "heapMB": 14.8,
+     "nodes": 7025,
+     "listeners": 137,
+     "requests": 0,
+     "bytes": 0,
+     "byExt": {}
+    },
+    "later": [
+     {
+      "frames": 267,
+      "n": 267,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.2,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 94,
+      "scriptMs": 35,
+      "layoutMs": 1,
+      "styleMs": 0,
+      "heapMB": 13.4,
+      "nodes": 10744,
+      "listeners": 140,
+      "requests": 0,
+      "bytes": 0,
+      "byExt": {}
+     },
+     {
+      "frames": 266,
+      "n": 266,
+      "p50": 5.9,
+      "p95": 6,
+      "max": 6.1,
+      "over20": 0,
+      "over34": 0,
+      "loafN": 0,
+      "loafMax": 0,
+      "loafTop": [],
+      "longtaskN": 0,
+      "longtaskMax": 0,
+      "taskMs": 93,
+      "scriptMs": 38,
+      "layoutMs": 1,
+      "styleMs": 0,
+      "heapMB": 13.1,
+      "nodes": 15234,
+      "listeners": 143,
+      "requests": 0,
+      "bytes": 0,
+      "byExt": {}
+     }
+    ]
+   }
+  },
+  "finalHeapMB": 13.2
+ }
+}

@@ -770,6 +770,9 @@ input {
   filter: saturate(0.8);
   transition: opacity 0.2s var(--ease-out), filter 0.2s var(--ease-out);
 }
+.next-art:not([src]) {
+  opacity: 0;
+}
 .next-chapter:hover .next-art,
 .next-chapter:focus-visible .next-art {
   opacity: 1;
