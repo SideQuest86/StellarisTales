@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.7.2 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.7.3 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -80,6 +80,7 @@ evidence from earlier rounds and is not updated.
   first story opening of a session still 2–3 frames (round 3 decision); the first archive frame after a cold load is
   shorter (v4.7.2) but still ~170 ms on the very first load (texture uploads). Untested: physical phones, Safari /
   Firefox (Playwright's WebKit / Firefox builds would need a download; not installed), low-end GPUs, native proofread.
+- **v4.7.3 (2026-10-18):** Archive CI on v4.7.2 caught a race in the smoke check "closing while a story is still downloading": on the slow runner Escape came before the app had started, and start-up then opened the linked story. The check now waits for the archive; the app also drops a pending #story address when Escape comes before start-up.
 - **v4.7.2 / coverage (2026-10-18):** the archive scene compiles its programs before its first frame (`warmUp` in
   `src/archive-scene.js`; it used to draw first and compile synchronously inside that frame — audit #3). Same-session
   cold loads (headed Chrome, desktop, 4 each, `verification/round4/perf/cold-chrome-frame-*.json`): worst frame of the

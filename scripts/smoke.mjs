@@ -186,6 +186,8 @@ await check("closing while a story is still downloading cancels it; browser Back
     await page.route("**/stories/cybrex.json", async (route) => { await new Promise((r) => setTimeout(r, 2000)); await route.continue(); });
     await page.goto(base, { waitUntil: "domcontentloaded" });
     await page.waitForSelector("#open-story");
+    // The app must be running (index loaded) — on a slow CI runner an Escape before that has nothing to cancel yet.
+    await page.waitForFunction(() => document.querySelector("#selected-title")?.textContent.trim(), null, { timeout: 30000 });
     await page.evaluate(() => { location.hash = "story=cybrex"; });
     await page.waitForTimeout(300);
     await page.keyboard.press("Escape");

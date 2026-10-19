@@ -1237,7 +1237,11 @@ document.addEventListener("keydown", (e) => {
       $("#playlist").hidden = true;
       $("#playlist-toggle").setAttribute("aria-expanded", "false");
     } else if (!$("#reader").hidden && !$("#reader").classList.contains("prewarm") && !$("#search-dialog").open) closeReader();
-    else if (!$("#search-dialog").open) cancelOpening();
+    else if (!$("#search-dialog").open) {
+      // Before the archive has loaded, the story address is still waiting to be opened by start-up: drop it.
+      if (!stories.length && /^#(story|record)=/.test(location.hash)) history.replaceState(null, "", "#");
+      cancelOpening();
+    }
   }
   if (
     e.key === "/" &&
