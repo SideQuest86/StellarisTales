@@ -81,7 +81,8 @@ evidence from earlier rounds and is not updated.
   shorter (v4.7.2) but still ~170 ms on the very first load (texture uploads). Engines: Chrome and Edge (all suites);
   WebKit (Playwright build, downloaded with the user's approval 2026-10-18 — approximates Safari, is not Safari): smoke
   15/15 live (`STELLARIS_ENGINE=webkit node scripts/smoke.mjs`); Firefox: Playwright's build does not start on this
-  machine (Windows "side-by-side configuration" error, a missing system runtime) — untested. Untested: physical phones,
+  machine (Windows SideBySide: "Dependent Assembly mozglue … could not be found", also after a forced reinstall) — untested.
+  Interaction sweep on the released v4.7.3 (44 scenarios, live, 0 page errors): `docs/refine/round4/interaction-final.md`. Untested: physical phones,
   low-end GPUs, native-speaker proofread.
 - **Final benchmark matrix (v4.7.3, desktop / DPR 2 / phone emulation / Edge; every scenario):**
   `docs/refine/round4/perf-final.md` (audit baseline vs final; `node scripts/bench/summary.mjs`).

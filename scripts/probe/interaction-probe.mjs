@@ -1,4 +1,4 @@
-﻿// Adversarial interaction probe (round 4). Usage: node scripts/probe/interaction-probe.mjs [scenario...]
+// Adversarial interaction probe (round 4). Usage: node scripts/probe/interaction-probe.mjs [scenario...]
 // Needs: node scripts/serve.mjs --port 4193. Writes verification/round4/interaction/results.json + screenshots.
 import { pathToFileURL } from "node:url";
 import { mkdir, writeFile } from "node:fs/promises";
@@ -52,7 +52,8 @@ const scenarios = {
     }
     await wait(page, 1500);
     const s = await state(page);
-    if (!s.readerHidden || s.bodyOpen || s.hudInert || s.catInert) bad.push(["stuck after Escape-race", s]);
+    // The idle warm-up (transparent, inert .prewarm render) may be running at this moment: not a stuck reader.
+    if ((!s.readerHidden && !s.prewarm) || s.bodyOpen || s.hudInert || s.catInert) bad.push(["stuck after Escape-race", s]);
     // reverse: Escape at various delays then check the story is not reopened later (late load)
     await page.screenshot({ path: `${out}/rapid-open-escape.png` });
     await context.close();
