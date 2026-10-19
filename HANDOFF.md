@@ -96,6 +96,8 @@ evidence from earlier rounds and is not updated.
   not a page leak; museum-failure toast localised; playlist failure retried on play; a same-session A/B against v4.6.4
   found the continue-card pictures cost 20–40 ms on opening frames — they now load after the text settles (A/B
   afterwards equal or better than v4.6.4 on every step).
+- Live: v4.7.3 (`062253c3`), Archive CI and Publish green, verified live 2026-10-18: smoke 15/15, verify-prewarm 24/24,
+  verify-gpu (all tiers ok); live archive-scene.js carries the compile-first start-up. v4.7.2 (`57e503cc`) was published too.
 - Live: v4.7.1 (`ece5d6e9`), gated workflow green, verified live 2026-10-18: smoke 15/15, verify-refine-audio,
   verify-museum-viewer 7. Locally also verify-gpu (discrete, integrated and faked integrated/software tiers: all ok).
 - Live: v4.7.0 (`59bada4d`), published by the gated workflow (Archive CI and Publish green) and verified live

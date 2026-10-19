@@ -48,3 +48,4 @@ Stop rule: checkpoint at 67 % weekly (34 points), never exceed 73 % (40 points).
 | 2026-10-18 19:55 | 40 % (baseline; resets 2026-10-20 08:00) | 2 % | before round-4 work; shared account counted conservatively (other sessions included) |
 
 Stop rule: checkpoint at 65 % weekly (25 points), never exceed 70 % (30 points). A weekly reset does not renew this budget: after 2026-10-20 08:00 the round total is (last pre-reset reading − 40) plus the post-reset reading.| 2026-10-18 ~22:25 | 42 % | 16 % | released v4.7.0 (59bada4d) and v4.7.1 (ece5d6e9) through the gated workflow; live checks passed. **Round-4 total: 2 points of 30** (shared account counted) |
+| 2026-10-19 ~00:35 | 42 % | 18 % | released v4.7.2 (57e503cc, compile-first archive start-up) and v4.7.3 (062253c3, early-Escape race); whole-catalogue layout sweep; every suite re-run live. **Round-4 total: 2 points of 30** |
