@@ -84,6 +84,10 @@ evidence from earlier rounds and is not updated.
   machine (Windows SideBySide: "Dependent Assembly mozglue … could not be found", also after a forced reinstall) — untested.
   Interaction sweep on the released v4.7.3 (44 scenarios, live, 0 page errors): `docs/refine/round4/interaction-final.md`. Untested: physical phones,
   low-end GPUs, native-speaker proofread.
+- **Before / after visuals (v4.6.4 code and its effects data vs v4.7.3, same steps and viewports):** 13 surfaces — archive,
+  landscape archive, reader opening, continue cards, effects panels (choice zh / en, origin), guide end, ending, search,
+  museum list, exhibit, phone reader — in `verification/round4/before-after/sheet-1..4.jpg`
+  (`scripts/probe/before-after.mjs` + `before-after-sheet.py`). Reviewed: every difference is an intended round-4 change.
 - **Final benchmark matrix (v4.7.3, desktop / DPR 2 / phone emulation / Edge; every scenario):**
   `docs/refine/round4/perf-final.md` (audit baseline vs final; `node scripts/bench/summary.mjs`).
 - **v4.7.3 (2026-10-18):** Archive CI on v4.7.2 caught a race in the smoke check "closing while a story is still downloading": on the slow runner Escape came before the app had started, and start-up then opened the linked story. The check now waits for the archive; the app also drops a pending #story address when Escape comes before start-up.
