@@ -1,0 +1,12 @@
+{
+ "measuredAt": "2026-10-19T00:40:27.555Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "chrome 155.0.8059.80",
+ "headed": true,
+ "url": "http://127.0.0.1:4195/",
+ "reps": 2,
+ "seconds": 38,
+ "result": {
+  "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-toggle3d]')\u001b[22m\n\n    at Object.museum (D:\\Saving\\Living\\CodexProjects\\StellarisTales\\scripts\\bench\\bench.mjs:224:41)\n    at async file:///D:/Saving/Living/CodexProjects/StellarisTales/scripts/bench/bench.mjs:319:18"
+ }
+}

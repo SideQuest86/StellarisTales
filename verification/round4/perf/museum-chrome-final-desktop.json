@@ -1,0 +1,270 @@
+{
+ "measuredAt": "2026-10-19T00:58:07.763Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "chrome 155.0.8059.80",
+ "headed": true,
+ "url": "http://127.0.0.1:4195/",
+ "reps": 2,
+ "seconds": 64,
+ "result": {
+  "openList": {
+   "frames": 423,
+   "n": 423,
+   "p50": 5.9,
+   "p95": 6,
+   "max": 94.1,
+   "over20": 4,
+   "over34": 3,
+   "loafN": 2,
+   "loafMax": 88,
+   "loafTop": [
+    {
+     "at": 4309.099999964237,
+     "d": 88.30000001192093,
+     "block": 37.3,
+     "scripts": [
+      {
+       "fn": "Response.json.then",
+       "url": "museum.js",
+       "ms": 32.4,
+       "fl": 18.5
+      }
+     ]
+    },
+    {
+     "at": 4418.599999964237,
+     "d": 60.10000002384186,
+     "block": 0,
+     "scripts": []
+    }
+   ],
+   "longtaskN": 1,
+   "longtaskMax": 63,
+   "requests": 126,
+   "bytes": 1623400,
+   "byExt": {
+    "js": {
+     "n": 1,
+     "bytes": 17526
+    },
+    "svg": {
+     "n": 1,
+     "bytes": 412
+    },
+    "css": {
+     "n": 1,
+     "bytes": 9453
+    },
+    "json": {
+     "n": 2,
+     "bytes": 991540
+    },
+    "webp": {
+     "n": 121,
+     "bytes": 604469
+    }
+   },
+   "taskMs": 289,
+   "scriptMs": 17,
+   "layoutMs": 70,
+   "styleMs": 9,
+   "heapMB": 10.2,
+   "nodes": 3387,
+   "listeners": 138,
+   "exhibits": 258,
+   "imgs": 258
+  },
+  "scrollList": {
+   "frames": 256,
+   "n": 256,
+   "p50": 5.9,
+   "p95": 6.1,
+   "max": 29.4,
+   "over20": 2,
+   "over34": 0,
+   "loafN": 0,
+   "loafMax": 0,
+   "loafTop": [],
+   "longtaskN": 0,
+   "longtaskMax": 0
+  },
+  "visible3d": 258,
+  "sequence": [
+   {
+    "key": "ytterite_preserved_corpse",
+    "loadMs": 312,
+    "maxFrame": 111.8,
+    "p95": 11.8,
+    "loafMax": 105,
+    "bytes": 955508,
+    "requests": 10,
+    "geometries": 1,
+    "textures": 2,
+    "cached": 1,
+    "heapMB": 12
+   },
+   {
+    "key": "ytterite_kaleidoscopic_fascinator",
+    "loadMs": 92,
+    "maxFrame": 17.6,
+    "p95": 6,
+    "loafMax": 0,
+    "bytes": 679217,
+    "requests": 3,
+    "geometries": 2,
+    "textures": 3,
+    "cached": 2,
+    "heapMB": 10.4
+   },
+   {
+    "key": "advisor_core",
+    "loadMs": 107,
+    "maxFrame": 23.5,
+    "p95": 6,
+    "loafMax": 0,
+    "bytes": 753357,
+    "requests": 3,
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "heapMB": 11
+   },
+   {
+    "key": "sullebaster_control_column",
+    "loadMs": 109,
+    "maxFrame": 23.5,
+    "p95": 6,
+    "loafMax": 0,
+    "bytes": 1117606,
+    "requests": 3,
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "heapMB": 11.4
+   },
+   {
+    "key": "fragment_of_reckoning",
+    "loadMs": 111,
+    "maxFrame": 17.6,
+    "p95": 6.1,
+    "loafMax": 0,
+    "bytes": 709861,
+    "requests": 3,
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "heapMB": 10.6
+   },
+   {
+    "key": "memorial_stone",
+    "loadMs": 95,
+    "maxFrame": 17.6,
+    "p95": 6.1,
+    "loafMax": 0,
+    "bytes": 533393,
+    "requests": 3,
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "heapMB": 11
+   },
+   {
+    "key": "sky_dragon",
+    "loadMs": 106,
+    "maxFrame": 23.5,
+    "p95": 6.1,
+    "loafMax": 0,
+    "bytes": 718721,
+    "requests": 3,
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "heapMB": 11.5
+   },
+   {
+    "key": "zroni_war_banners",
+    "loadMs": 110,
+    "maxFrame": 17.6,
+    "p95": 6.2,
+    "loafMax": 0,
+    "bytes": 774703,
+    "requests": 3,
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "heapMB": 11.9
+   },
+   {
+    "key": "peerless_atomic_clock",
+    "loadMs": 96,
+    "maxFrame": 17.7,
+    "p95": 6.1,
+    "loafMax": 0,
+    "bytes": 793049,
+    "requests": 3,
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "heapMB": 10.8
+   },
+   {
+    "key": "sniran_spikes",
+    "loadMs": 96,
+    "maxFrame": 17.8,
+    "p95": 6,
+    "loafMax": 0,
+    "bytes": 876823,
+    "requests": 3,
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "heapMB": 11.2
+   }
+  ],
+  "modelsSummary": {
+   "loadMs": {
+    "n": 10,
+    "p50": 107,
+    "p95": 312,
+    "max": 312
+   },
+   "maxFrame": {
+    "n": 10,
+    "p50": 17.8,
+    "p95": 111.8,
+    "max": 111.8
+   },
+   "bytes": {
+    "n": 10,
+    "p50": 774703,
+    "p95": 1117606,
+    "max": 1117606
+   }
+  },
+  "afterClose": {
+   "viewer": {
+    "geometries": 3,
+    "textures": 4,
+    "cached": 3,
+    "url": "./museum/models/sniran_spikes.glb"
+   },
+   "heapBeforeMB": 7.5,
+   "heapAfterGcMB": 10.5,
+   "idle5s": {
+    "seconds": 5,
+    "rafPerSec": 0,
+    "timersPerSec": 0,
+    "cpuTaskMsPerSec": 20.5,
+    "scriptMsPerSec": 2.1,
+    "hiddenAtEnd": false,
+    "archiveFramesDrawn": 142
+   }
+  },
+  "secondPass": {
+   "geometries": 3,
+   "textures": 4,
+   "cached": 3,
+   "heapAfterGcMB": 10.7
+  }
+ }
+}

@@ -7,10 +7,12 @@
 import assert from "node:assert/strict";
 import { pathToFileURL } from "node:url";
 
-const { chromium } = await import(pathToFileURL(process.env.STELLARIS_PLAYWRIGHT_PATH).href);
+// STELLARIS_ENGINE=firefox|webkit runs the same checks on Playwright's Firefox / WebKit builds (default chromium).
+const engine = process.env.STELLARIS_ENGINE || "chromium";
+const playwright = await import(pathToFileURL(process.env.STELLARIS_PLAYWRIGHT_PATH).href);
 const base = process.env.STELLARIS_PREVIEW_URL || "http://127.0.0.1:4173/";
-const channel = process.env.STELLARIS_BROWSER_CHANNEL || undefined;
-const browser = await chromium.launch({ channel, headless: true, args: ["--enable-unsafe-swiftshader"] });
+const channel = engine === "chromium" ? process.env.STELLARIS_BROWSER_CHANNEL || undefined : undefined;
+const browser = await playwright[engine].launch({ channel, headless: true, args: engine === "chromium" ? ["--enable-unsafe-swiftshader"] : [] });
 let passed = 0, failed = 0;
 async function check(name, fn) {
   try {
@@ -26,10 +28,16 @@ async function check(name, fn) {
   }
 }
 async function open(viewport = { width: 1440, height: 900 }, extra = {}) {
+  if (engine === "firefox") delete extra.isMobile; // not supported by Playwright's Firefox
   const context = await browser.newContext({ viewport, ...extra });
   const page = await context.newPage();
   const problems = [];
-  page.on("pageerror", (e) => problems.push("pageerror: " + e.message));
+  page.on("pageerror", (e) => {
+    // WebKit reports a same-origin fetch cut off by the next page.goto as "… due to access control checks" (every
+    // resource here is same-origin, so a real CORS failure cannot occur).
+    if (engine === "webkit" && /due to access control checks/.test(e.message)) return;
+    problems.push("pageerror: " + e.message);
+  });
   page.on("response", (r) => {
     if (r.status() >= 400 && /\.(json|webp|png|jpg|js|css|glb|bin)(\?|$)/.test(r.url())) problems.push(`${r.status()} ${r.url().replace(base, "")}`);
   });
@@ -149,13 +157,20 @@ try {
     await page.keyboard.press("Escape"); await page.keyboard.press("Escape");
     await page.goto(base + "#story=cybrex", { waitUntil: "domcontentloaded" });
     await page.waitForSelector(".chapter-art img", { state: "attached", timeout: 30000 });
-    await page.evaluate(() => document.querySelector(".chapter-art").scrollIntoView());
-    await page.waitForFunction(() => { const i = document.querySelector(".chapter-art img"); return i.complete && i.naturalWidth > 0; }, null, { timeout: 30000 });
+    // On wide screens the reader's art copy is display:none (the card shows the picture), so engines differ on whether
+    // its lazy image ever loads; check that the picture itself decodes instead.
+    const art = await page.evaluate(async () => {
+      const a = document.querySelector(".chapter-art"), src = a.querySelector("img").currentSrc || a.querySelector("img").src;
+      if (getComputedStyle(a).display === "none") { const i = new Image(); i.src = src; await i.decode(); return i.naturalWidth; }
+      a.scrollIntoView();
+      return 0;
+    });
+    if (!art) await page.waitForFunction(() => { const i = document.querySelector(".chapter-art img"); return i.complete && i.naturalWidth > 0; }, null, { timeout: 30000 });
     assert.ok(icons.filter(Boolean).length >= 6, `museum icons loaded: ${icons.filter(Boolean).length}/12`);
     return `museum icons ${icons.filter(Boolean).length}/12`;
   });
 
-  await check("no page errors or failed requests (desktop)", async () => { assert.deepEqual(problems, []); });
+  await check("no page errors or failed requests (desktop)", async () => { assert.deepEqual(problems, [], problems.join(" | ").slice(0, 400)); });
 } finally {
   await context.close();
 }
@@ -275,7 +290,7 @@ try {
     assert.ok(tap && tap.height >= 24, "Close control too small to tap");
     return `overflow ${a}/${r}/${m} px`;
   });
-  await check("no page errors or failed requests (phone)", async () => { assert.deepEqual(phone.problems, []); });
+  await check("no page errors or failed requests (phone)", async () => { assert.deepEqual(phone.problems, [], phone.problems.join(" | ").slice(0, 400)); });
 } finally {
   await phone.context.close();
 }

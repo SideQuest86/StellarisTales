@@ -1,0 +1,489 @@
+{
+ "measuredAt": "2026-10-19T00:54:14.155Z",
+ "emulation": "desktop browser; mobile profile is emulation only (no physical phone)",
+ "browser": "chrome 155.0.8059.80",
+ "headed": true,
+ "url": "http://127.0.0.1:4195/",
+ "reps": 2,
+ "seconds": 16,
+ "result": {
+  "open": {
+   "frames": 360,
+   "n": 360,
+   "p50": 5.9,
+   "p95": 6.2,
+   "max": 188.2,
+   "over20": 6,
+   "over34": 2,
+   "loafN": 2,
+   "loafMax": 186,
+   "loafTop": [
+    {
+     "at": 5237.800000011921,
+     "d": 185.69999998807907,
+     "block": 134.4,
+     "scripts": [
+      {
+       "fn": "handler",
+       "url": "audio-player.js",
+       "ms": 5.7,
+       "fl": 0
+      },
+      {
+       "fn": "BUTTON#search-open.onclick",
+       "url": "app.js",
+       "ms": 161.1,
+       "fl": 148.7
+      }
+     ]
+    },
+    {
+     "at": 5438.399999976158,
+     "d": 90,
+     "block": 0,
+     "scripts": []
+    }
+   ],
+   "longtaskN": 1,
+   "longtaskMax": 182,
+   "requests": 27,
+   "bytes": 5878127,
+   "byExt": {
+    "mp3": {
+     "n": 1,
+     "bytes": 5046272
+    },
+    "json": {
+     "n": 2,
+     "bytes": 391170
+    },
+    "woff2": {
+     "n": 4,
+     "bytes": 268694
+    },
+    "webp": {
+     "n": 19,
+     "bytes": 171579
+    },
+    "svg": {
+     "n": 1,
+     "bytes": 412
+    }
+   },
+   "taskMs": 1040,
+   "scriptMs": 261,
+   "layoutMs": 175,
+   "styleMs": 27,
+   "heapMB": 10.4,
+   "nodes": 1032,
+   "listeners": 134
+  },
+  "firstQuery": {
+   "ms": 337,
+   "frames": 20,
+   "n": 20,
+   "p50": 5.9,
+   "p95": 11.7,
+   "max": 11.7,
+   "over20": 0,
+   "over34": 0,
+   "loafN": 0,
+   "loafMax": 0,
+   "loafTop": [],
+   "longtaskN": 2,
+   "longtaskMax": 146,
+   "requests": 13,
+   "bytes": 174448,
+   "byExt": {
+    "bin": {
+     "n": 1,
+     "bytes": 141662
+    },
+    "json": {
+     "n": 8,
+     "bytes": 0
+    },
+    "woff2": {
+     "n": 2,
+     "bytes": 0
+    },
+    "webp": {
+     "n": 2,
+     "bytes": 32786
+    }
+   },
+   "shardsLoaded": 1,
+   "taskMs": 314,
+   "scriptMs": 17,
+   "layoutMs": 138,
+   "styleMs": 3,
+   "heapMB": 14.3,
+   "nodes": 1285,
+   "listeners": 134
+  },
+  "typing": [
+   {
+    "word": "federation",
+    "keys": [
+     {
+      "syncMs": 1,
+      "resultUpdateMs": 89.1
+     },
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 131
+     },
+     {
+      "syncMs": 0.7,
+      "resultUpdateMs": 125.9
+     },
+     {
+      "syncMs": 0.8,
+      "resultUpdateMs": 61.1
+     },
+     {
+      "syncMs": 0.9,
+      "resultUpdateMs": 131.5
+     },
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 133.9
+     },
+     {
+      "syncMs": 1.8,
+      "resultUpdateMs": 78.2
+     },
+     {
+      "syncMs": 0.7,
+      "resultUpdateMs": 117
+     },
+     {
+      "syncMs": 0.4,
+      "resultUpdateMs": 129.2
+     },
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 138.3
+     }
+    ],
+    "frames": 201,
+    "n": 201,
+    "p50": 5.9,
+    "p95": 29.4,
+    "max": 117.6,
+    "over20": 12,
+    "over34": 10,
+    "loafN": 8,
+    "loafMax": 118,
+    "loafTop": [
+     {
+      "at": 9722.399999976158,
+      "d": 118.10000002384186,
+      "block": 16.3,
+      "scripts": [
+       {
+        "fn": "Response.arrayBuffer.then",
+        "url": "app.js",
+        "ms": 47.9,
+        "fl": 0
+       }
+      ]
+     },
+     {
+      "at": 9470.599999964237,
+      "d": 100.5,
+      "block": 3.7,
+      "scripts": [
+       {
+        "fn": "Response.arrayBuffer.then",
+        "url": "app.js",
+        "ms": 46.6,
+        "fl": 0
+       }
+      ]
+     },
+     {
+      "at": 10892.899999976158,
+      "d": 63.30000001192093,
+      "block": 6.7,
+      "scripts": [
+       {
+        "fn": "Response.arrayBuffer.then",
+        "url": "app.js",
+        "ms": 53.4,
+        "fl": 0
+       }
+      ]
+     }
+    ],
+    "longtaskN": 6,
+    "longtaskMax": 77,
+    "requests": 58,
+    "bytes": 3403081,
+    "byExt": {
+     "bin": {
+      "n": 8,
+      "bytes": 1174759
+     },
+     "woff2": {
+      "n": 4,
+      "bytes": 326468
+     },
+     "webp": {
+      "n": 30,
+      "bytes": 354402
+     },
+     "json": {
+      "n": 16,
+      "bytes": 1547452
+     }
+    }
+   },
+   {
+    "word": "ancient relics",
+    "keys": [
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 77
+     },
+     {
+      "syncMs": 0.5,
+      "resultUpdateMs": 80.9
+     },
+     {
+      "syncMs": 0.8,
+      "resultUpdateMs": 131.2
+     },
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 120.1
+     },
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 150.6
+     },
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 118.6
+     },
+     {
+      "syncMs": 0.7,
+      "resultUpdateMs": 84
+     },
+     {
+      "syncMs": 0.7,
+      "resultUpdateMs": 86.5
+     },
+     {
+      "syncMs": 0.8,
+      "resultUpdateMs": 85.4
+     },
+     {
+      "syncMs": 0.4,
+      "resultUpdateMs": 80.7
+     },
+     {
+      "syncMs": 0.4,
+      "resultUpdateMs": 76
+     },
+     {
+      "syncMs": 0.7,
+      "resultUpdateMs": 73
+     },
+     {
+      "syncMs": 0.7,
+      "resultUpdateMs": 87.2
+     },
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 93
+     }
+    ],
+    "frames": 304,
+    "n": 304,
+    "p50": 5.9,
+    "p95": 17.9,
+    "max": 117.7,
+    "over20": 15,
+    "over34": 9,
+    "loafN": 6,
+    "loafMax": 122,
+    "loafTop": [
+     {
+      "at": 13996.199999988079,
+      "d": 122.19999998807907,
+      "block": 49.5,
+      "scripts": [
+       {
+        "fn": "TimerHandler:setTimeout",
+        "url": "",
+        "ms": 22.5,
+        "fl": 0
+       }
+      ]
+     },
+     {
+      "at": 12225.599999964237,
+      "d": 80.90000003576279,
+      "block": 3.1,
+      "scripts": [
+       {
+        "fn": "Response.arrayBuffer.then",
+        "url": "app.js",
+        "ms": 50.6,
+        "fl": 0
+       }
+      ]
+     },
+     {
+      "at": 12438.899999976158,
+      "d": 79.40000003576279,
+      "block": 0,
+      "scripts": [
+       {
+        "fn": "Response.arrayBuffer.then",
+        "url": "app.js",
+        "ms": 44.2,
+        "fl": 0
+       }
+      ]
+     }
+    ],
+    "longtaskN": 3,
+    "longtaskMax": 105,
+    "requests": 42,
+    "bytes": 1533590,
+    "byExt": {
+     "bin": {
+      "n": 4,
+      "bytes": 615110
+     },
+     "woff2": {
+      "n": 3,
+      "bytes": 180469
+     },
+     "webp": {
+      "n": 19,
+      "bytes": 220750
+     },
+     "json": {
+      "n": 16,
+      "bytes": 517261
+     }
+    }
+   },
+   {
+    "word": "psionic",
+    "keys": [
+     {
+      "syncMs": 0.5,
+      "resultUpdateMs": 73.6
+     },
+     {
+      "syncMs": 0.6,
+      "resultUpdateMs": 77.5
+     },
+     {
+      "syncMs": 0.8,
+      "resultUpdateMs": 75.2
+     },
+     {
+      "syncMs": 0.3,
+      "resultUpdateMs": 119.9
+     },
+     {
+      "syncMs": 1,
+      "resultUpdateMs": 79.6
+     },
+     {
+      "syncMs": 1,
+      "resultUpdateMs": 78.5
+     },
+     {
+      "syncMs": 0.7,
+      "resultUpdateMs": 125.4
+     }
+    ],
+    "frames": 157,
+    "n": 157,
+    "p50": 5.9,
+    "p95": 17.6,
+    "max": 64.7,
+    "over20": 6,
+    "over34": 4,
+    "loafN": 3,
+    "loafMax": 63,
+    "loafTop": [
+     {
+      "at": 15928.899999976158,
+      "d": 62.69999998807907,
+      "block": 0,
+      "scripts": [
+       {
+        "fn": "Response.arrayBuffer.then",
+        "url": "app.js",
+        "ms": 45.3,
+        "fl": 0
+       }
+      ]
+     },
+     {
+      "at": 15408.599999964237,
+      "d": 57.200000047683716,
+      "block": 0,
+      "scripts": [
+       {
+        "fn": "Response.arrayBuffer.then",
+        "url": "app.js",
+        "ms": 39.5,
+        "fl": 0
+       }
+      ]
+     },
+     {
+      "at": 15223.800000011921,
+      "d": 52.59999996423721,
+      "block": 0,
+      "scripts": [
+       {
+        "fn": "TimerHandler:setTimeout",
+        "url": "",
+        "ms": 12,
+        "fl": 0
+       }
+      ]
+     }
+    ],
+    "longtaskN": 1,
+    "longtaskMax": 50,
+    "requests": 22,
+    "bytes": 539265,
+    "byExt": {
+     "webp": {
+      "n": 20,
+      "bytes": 247559
+     },
+     "bin": {
+      "n": 2,
+      "bytes": 291706
+     }
+    }
+   }
+  ],
+  "typingSummary": {
+   "syncMs": {
+    "n": 31,
+    "p50": 0.7,
+    "p95": 1,
+    "max": 1.8
+   },
+   "resultUpdateMs": {
+    "n": 31,
+    "p50": 87.2,
+    "p95": 138.3,
+    "max": 150.6
+   }
+  },
+  "totalShardBytes": 2614407
+ }
+}

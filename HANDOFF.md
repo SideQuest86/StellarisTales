@@ -78,8 +78,13 @@ evidence from earlier rounds and is not updated.
   minimised-window background state and compressed transfer sizes not measured locally; faults in the game's own text
   are kept as shipped (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions. Not changed:
   first story opening of a session still 2–3 frames (round 3 decision); the first archive frame after a cold load is
-  shorter (v4.7.2) but still ~170 ms on the very first load (texture uploads). Untested: physical phones, Safari /
-  Firefox (Playwright's WebKit / Firefox builds would need a download; not installed), low-end GPUs, native proofread.
+  shorter (v4.7.2) but still ~170 ms on the very first load (texture uploads). Engines: Chrome and Edge (all suites);
+  WebKit (Playwright build, downloaded with the user's approval 2026-10-18 — approximates Safari, is not Safari): smoke
+  15/15 live (`STELLARIS_ENGINE=webkit node scripts/smoke.mjs`); Firefox: Playwright's build does not start on this
+  machine (Windows "side-by-side configuration" error, a missing system runtime) — untested. Untested: physical phones,
+  low-end GPUs, native-speaker proofread.
+- **Final benchmark matrix (v4.7.3, desktop / DPR 2 / phone emulation / Edge; every scenario):**
+  `docs/refine/round4/perf-final.md` (audit baseline vs final; `node scripts/bench/summary.mjs`).
 - **v4.7.3 (2026-10-18):** Archive CI on v4.7.2 caught a race in the smoke check "closing while a story is still downloading": on the slow runner Escape came before the app had started, and start-up then opened the linked story. The check now waits for the archive; the app also drops a pending #story address when Escape comes before start-up.
 - **v4.7.2 / coverage (2026-10-18):** the archive scene compiles its programs before its first frame (`warmUp` in
   `src/archive-scene.js`; it used to draw first and compile synchronously inside that frame — audit #3). Same-session

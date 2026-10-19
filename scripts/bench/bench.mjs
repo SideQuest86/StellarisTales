@@ -221,7 +221,8 @@ async function museum(browser, profile = "desktop") {
   await page.evaluate(async () => { const el = document.querySelector(".museum-grid")?.closest("[class*=museum]") ; const sc = [...document.querySelectorAll("*")].find((e) => e.scrollHeight > e.clientHeight + 400 && getComputedStyle(e).overflowY !== "visible" && e.closest("#museum, .museum")) || document.scrollingElement; for (let i = 0; i < 30; i++) { sc.scrollTop += 600; await new Promise((r) => setTimeout(r, 50)); } sc.scrollTop = 0; });
   out.scrollList = await frames(page);
   // 3D only filter, then open 10 models in sequence
-  await page.locator("[data-toggle3d]").click(); await page.waitForTimeout(500);
+  // (v4.7.0+: the filter is hidden while every specimen has a model)
+  if (await page.locator("[data-toggle3d]").count()) { await page.locator("[data-toggle3d]").click(); await page.waitForTimeout(500); }
   const keys = await page.$$eval(".museum-exhibit", (els) => els.map((e) => e.dataset.key));
   out.visible3d = keys.length;
   const picks = keys.filter((_, i) => i % Math.max(1, Math.floor(keys.length / 10)) === 0).slice(0, 10);
@@ -314,7 +315,9 @@ const version = browser.version();
 for (const n of names) {
   const t0 = Date.now();
   let result;
-  try { result = await table[n](browser); } catch (e) { result = { error: String(e.stack || e) }; console.error(n, "failed", e.message); }
+  // SCENARIO_PROFILE=dpr2|mobile runs story / search / museum / audio under that profile (cold and idle pick their own).
+  const scenarioProfile = !["cold", "idle"].includes(n) && process.env.SCENARIO_PROFILE;
+  try { result = await (scenarioProfile ? table[n](browser, scenarioProfile) : table[n](browser)); } catch (e) { result = { error: String(e.stack || e) }; console.error(n, "failed", e.message); }
   const file = `${outDir}/${n}-${channel}${tag}.json`;
   await writeFile(file, JSON.stringify({ measuredAt: new Date().toISOString(), emulation: "desktop browser; mobile profile is emulation only (no physical phone)", browser: `${channel} ${version}`, headed, url: base, reps, seconds: Math.round((Date.now() - t0) / 1000), result }, null, 1));
   console.log(n, "->", file);
