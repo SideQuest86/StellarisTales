@@ -1,3 +1,9 @@
+v4.7.2 — 2026-10-18
+
+Smoother first moment: the archive compiles its graphics before drawing its first frame instead of inside it, so the
+page no longer stalls for a fraction of a second as it appears (worst start-up frame about 280 → 170 ms on the first
+load, 80 → 60 ms on later ones; covers appear no later).
+
 v4.7.1 — 2026-10-18
 
 An ending now leads on to the next story of its archive row. Continue-card pictures arrive just after the text, so

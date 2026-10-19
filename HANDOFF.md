@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.7.1 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.7.2 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -77,7 +77,19 @@ evidence from earlier rounds and is not updated.
 - **Limits:** no physical phone (all mobile figures are emulation); no native-speaker proofread; real low-end GPU,
   minimised-window background state and compressed transfer sizes not measured locally; faults in the game's own text
   are kept as shipped (user decision 2026-10-15, LEDGER.md); 3D models are unofficial reconstructions. Not changed:
-  first story opening of a session still 2–3 frames (round 3 decision), first archive frame after a cold load.
+  first story opening of a session still 2–3 frames (round 3 decision); the first archive frame after a cold load is
+  shorter (v4.7.2) but still ~170 ms on the very first load (texture uploads). Untested: physical phones, Safari /
+  Firefox (Playwright's WebKit / Firefox builds would need a download; not installed), low-end GPUs, native proofread.
+- **v4.7.2 / coverage (2026-10-18):** the archive scene compiles its programs before its first frame (`warmUp` in
+  `src/archive-scene.js`; it used to draw first and compile synchronously inside that frame — audit #3). Same-session
+  cold loads (headed Chrome, desktop, 4 each, `verification/round4/perf/cold-chrome-frame-*.json`): worst frame of the
+  first load 282 → 170 ms, later loads 76–82 → 59–65 ms, covers ready 467–728 → 457–625 ms. Validated with smoke 15/15,
+  verify-gpu (discrete / integrated / faked tiers, idle / hidden / covered drawing, reduced motion), verify-a11y,
+  verify-prewarm 24/24, verify-images. Whole-catalogue layout sweep of v4.7.1 (`scripts/verify-layout-full.mjs`, now
+  resumable with `LAYOUT_WIDTHS` / `LAYOUT_FROM`): every story (opening document, first choice and effects panels opened)
+  and every exhibit at 1600×1000 and 390×844 — 0 layout failures, 0 page errors; one transient 20 s timeout
+  (event-cyber-220 at 390 px) that opens normally on re-check. Every browser suite re-run against the live v4.7.1:
+  search 16, effects, progress 12, refine-reader, refine-chrome, a11y, images, prewarm 24/24, reader-v4 — all passing.
 - **v4.7.1 follow-up (2026-10-18):** re-test of v4.7.0 (`docs/refine/round4/interaction-retest.md`, outcomes in
   `ISSUES.md` "Follow-up"): the reported per-cycle DOM growth is Playwright's retained element handles (heap snapshot),
   not a page leak; museum-failure toast localised; playlist failure retried on play; a same-session A/B against v4.6.4

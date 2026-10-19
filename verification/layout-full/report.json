@@ -1,6 +1,8 @@
 {
- "pages": 3292,
- "failures": [],
+ "pages": 1265,
+ "failures": [
+  "390 event-cyber-220: did not open: page.waitForSelector: Timeout 20000ms exceeded."
+ ],
  "errors": [],
- "shots": 83
+ "shots": 33
 }

@@ -314,14 +314,17 @@ export class ArchiveScene {
     container.__scene = this;
     this.bind();
     this.resize();
-    this.wake();
     this.warmUp();
   }
-  /** Compile every program off the critical path (KHR_parallel_shader_compile when available). */
+  /** Compile every program off the critical path (KHR_parallel_shader_compile when available). The first frame waits
+   *  for the scene's programs (at most 1.2 s): drawing it earlier compiled them synchronously inside that frame
+   *  (a 265 ms animation-frame callback on a cold load, docs/refine/round4/perf-audit.md #3). */
   warmUp() {
-    const run = async () => {
+    const scene = this.renderer.compileAsync(this.scene, this.camera).catch(() => {});
+    Promise.race([scene, new Promise((resolve) => setTimeout(resolve, 1200))]).then(() => this.wake());
+    const snapshot = async () => {
       try {
-        await this.renderer.compileAsync(this.scene, this.camera);
+        await scene;
         // The snapshot pass renders into a target: compile that program variant there.
         const target = this.snapshotTarget(0);
         const previous = this.renderer.getRenderTarget();
@@ -331,7 +334,7 @@ export class ArchiveScene {
         await pending;
       } catch {}
     };
-    (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(run);
+    (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(snapshot);
   }
 
   // ------------------------------------------------------------ materials

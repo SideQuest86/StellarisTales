@@ -14,10 +14,13 @@ const specimens = JSON.parse(await readFile("public/museum/specimens.json", "utf
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const report = { pages: 0, failures: [], errors: [], shots: 0 };
 const fail = (where, what) => { report.failures.push(`${where}: ${what}`); console.log("✗", where, what); };
-for (const [vw, vh] of [[1600, 1000], [390, 844]]) {
+// Resume a partial run: LAYOUT_WIDTHS=390 LAYOUT_FROM=400 checks only that width from that story index on.
+const widths = (process.env.LAYOUT_WIDTHS || "1600,390").split(",").map(Number);
+const from = Number(process.env.LAYOUT_FROM) || 0;
+for (const [vw, vh] of [[1600, 1000], [390, 844]].filter(([w]) => widths.includes(w))) {
   const page = await browser.newPage({ viewport: { width: vw, height: vh } });
   page.on("pageerror", (e) => report.errors.push(`${vw} ${page.url()}: ${e.message}`));
-  for (let i = 0; i < stories.length; i++) {
+  for (let i = from; i < stories.length; i++) {
     const s = stories[i], lang = i % 10 === 0 ? "en" : "zh";
     try {
       await page.goto(base, { waitUntil: "domcontentloaded" });
