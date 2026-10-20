@@ -90,6 +90,7 @@ evidence from earlier rounds and is not updated.
   verify-prewarm 24/24). NOT yet done: live verification of v4.8.0, the full suite (verify-museum, verify-gpu headed,
   verify-images, webkit smoke) on the final tree, and the adversarial review workflow (stopped before its review phase).
   verify-gpu's earlier failure was traced to real pointer input on the test window (21 instrumented runs pass).
+  Archive CI on b994a574 FAILS (Publish passed and deployed v4.8.0): "public/stories differs from a fresh compile of content/" — changed generated files: . Fix first next session: restore them (`git checkout b994a574~1 -- <files>`) or run scripts/compile-stories.py, then re-run CI.
   Open work, not started or stopped mid-way: phone-audit fixes (docs/refine/round5/phone-audit.md); story-map fixes
   (docs/refine/round5/map-audit.md: tiny viewport / fit clamp, truncated captions, map vs reader titles, legend);
   self-hosted CJK font subsets (user approved the download; agent stopped mid-way — scripts/fonts/build-subsets.py
