@@ -1,7 +1,6 @@
 # 异常能源放射 / Irregular Energy Emissions
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1265-1291; events/distant_stars_events_2.txt:2598 (distar.1070); common/solar_system_initializers/distant_stars_initializers.txt:4955 (star_crazy_fallback_system); common/special_projects/00_projects_distant_stars.txt:1127-1172 (STAR_CRAZY); events/distant_stars_events_2.txt:2727/2755/2800 (distar.1071-1073)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@ No ethics-based differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1265-1291; events/distant_stars_events_2.txt:2598 (distar.1070); common/solar_system_initializers/distant_stars_initializers.txt:4955 (star_crazy_fallback_system); common/special_projects/00_projects_distant_stars.txt:1127-1172 (STAR_CRAZY); events/distant_stars_events_2.txt:2727/2755/2800 (distar.1071-1073)
 已核对异常、distar.1070–1073、STAR_CRAZY 与后备星系初始化。树结构正确。事件链 star_crazy_chain（“能量辐射”）的计数名与此故事相关，但没有任何脚本开启它，见 chain-star-crazy-chain。
 
 Checked the anomaly, distar.1070–1073, STAR_CRAZY and the fallback initializer. Tree correct. The event chain star_crazy_chain ("Energy Emissions") is named for this story but no script starts it; see chain-star-crazy-chain.

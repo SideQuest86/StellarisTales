@@ -50,7 +50,9 @@ const CJK_RE = /[㐀-鿿豈-﫿]/g;
 export function splitMixed(text) {
   const s = String(text);
   if (!hasCJK(s) || !/[A-Za-z]{3}/.test(s)) return null;
-  const re = /(?<=[㐀-鿿豈-﫿。！？）；：])\s*(?=[A-Za-z"“(\[]|\d+'s)/g;
+  // The English half may start with bold/italic markers ("…）。 **Five chained sites**: …").
+  // … or follow a slash ("…。 / The first option …").
+  const re = /(?<=[㐀-鿿豈-﫿。！？）；：*])\s*(?:\/\s*)?(?=\*{0,2}(?:[A-Za-z"“(\[]|\d+'s))/g;
   let m;
   while ((m = re.exec(s))) {
     if (!m[0]) re.lastIndex++; // zero-width match: step on
@@ -59,7 +61,9 @@ export function splitMixed(text) {
     const tail = s.slice(m.index + m[0].length).trim();
     const latin = (tail.match(/[A-Za-z]/g) || []).length;
     const cjk = (tail.match(CJK_RE) || []).length;
-    if (latin >= 12 && cjk * 4 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(head.replace(/`[^`]*`/g, ""))) return [head, tail];
+    // The English half must be (nearly) free of Chinese: an English name inside the Chinese sentence ("：Ex Gravitas（1200 → …）
+    // → 3 天后“静待揭晓”…") is not the boundary, and splitting there hid the rest of the Chinese line.
+    if (latin >= 12 && cjk * 25 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(head.replace(/`[^`]*`/g, ""))) return [head, tail];
   }
   return null;
 }
@@ -126,12 +130,42 @@ export function renderMarkdown(md, opts = {}) {
   return main.join("\n");
 }
 
+/** Wrap Chinese runs that are not already inside a zh-CN element in <span lang="zh-CN"> (English page: WCAG 3.1.2). */
+export function markCJK(root) {
+  const run = /[㐀-鿿豈-﫿][㐀-鿿豈-﫿　-〿＀-￯\s]*/g;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) if (hasCJK(n.nodeValue) && !n.parentElement.closest('[lang="zh-CN"]')) nodes.push(n);
+  for (const node of nodes) {
+    const frag = document.createDocumentFragment();
+    const text = node.nodeValue;
+    let last = 0;
+    for (const m of text.matchAll(run)) {
+      if (m.index > last) frag.append(text.slice(last, m.index));
+      const span = document.createElement("span");
+      span.lang = "zh-CN";
+      span.textContent = m[0].replace(/\s+$/, "");
+      frag.append(span);
+      last = m.index + span.textContent.length;
+    }
+    if (last < text.length) frag.append(text.slice(last));
+    node.replaceWith(frag);
+  }
+}
+
 /** Build the guide element with a language toggle: current language first-class, the other on request. */
 export function guideElement(md, lang, labels) {
   const root = document.createElement("div");
   root.className = "md-guide";
   root.dataset.show = lang;
   root.innerHTML = renderMarkdown(md, { lang });
+  // A section whose heading is followed by another heading of the same or a higher level (or nothing) is empty: the
+  // guide audit keeps every template heading in the source, the reader does not need to see the empty ones.
+  for (const h of [...root.querySelectorAll(":scope > h3, :scope > h4, :scope > h5")]) {
+    const next = h.nextElementSibling;
+    if (!next || next.matches("details.md-review") || (/^H[3-5]$/.test(next.tagName) && next.tagName <= h.tagName)) h.remove();
+  }
+  if (lang === "en") markCJK(root);
   const has = (l) => root.querySelector(`[data-lang="${l}"]`);
   const other = lang === "zh" ? "en" : "zh";
   if (has("zh") && has("en")) {

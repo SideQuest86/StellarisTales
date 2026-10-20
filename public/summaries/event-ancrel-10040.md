@@ -1,6 +1,6 @@
 # 特殊项目解锁 / Special Project Unlocked
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_2.txt:6684；common/artifact_actions/artifact_actions.txt:582–838 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -20,9 +20,9 @@ Each of the nine "secrets research" artifact actions of the classic precursors (
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。 / None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_2.txt:6684；common/artifact_actions/artifact_actions.txt:582–838
 - 已核对：ancrel.10040 的脚本与9个调用的行动；中英文正文已读。
 - Checked: the script of ancrel.10040 and the nine calling actions; both languages read.

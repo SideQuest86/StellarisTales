@@ -1,8 +1,6 @@
 # 无形异使 / The Formless
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:1871–3496`（3000–3170）；`events/astral_planes_situation_events.txt:78–169`；`common/situations/06_astral_planes_situations.txt:357–525`；`common/solar_system_initializers/astral_planes_initializers.txt:2–260`
-- 审阅 Reviewed：2026-10-13（全篇 whole story；原先分散的触发器故事 3000、3010、3050、3065、3110、3120、3170 已并入 / the former trigger stories merged in）
 
 ## 如何开始 How it starts
 
@@ -50,6 +48,8 @@ The Formless system sits at the galactic core and can only be entered through th
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story；原先分散的触发器故事 3000、3010、3050、3065、3110、3120、3170 已并入 / the former trigger stories merged in）
+- 来源 Sources：`events/astral_planes_events.txt:1871–3496`（3000–3170）；`events/astral_planes_situation_events.txt:78–169`；`common/situations/06_astral_planes_situations.txt:357–525`；`common/solar_system_initializers/astral_planes_initializers.txt:2–260`
 - 已核对：上述事件与情境、无形者系统初始化（侦察舰队、国家变量）、`on_actions`（entering_strange_wormhole、fleet_destroyed_victim、custom_diplomacy、country_attacked、leader_death、entering_battle、country_destroyed）与 `schedule_next_formless_reward`（3600 天）。更正：编译器把 3000、3010（信使）、3050、3065、3110、3120、3170 各作为独立故事；现合为一个家族，补了 7 条桥接与 3 个互斥组。
 - 不确定：三种异维度存在的名称与国家类型 `extradimensional(_2/_3)` 的对应取自 3110.e/f/g 的本地化；时间线事件 `timeline.65` 与遗珍“永恒王座”的效果未核对（不属于 C4）。
 

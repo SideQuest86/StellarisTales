@@ -1,6 +1,6 @@
 # 误作美食 / Mistaken for Food
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/scripted_effects/espionage_event_effects.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -26,4 +26,6 @@ gestalt -> gestalt (not machine targets).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/scripted_effects/espionage_event_effects.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：5020 与池权重；“低风险池调用 5030”记为不确定。

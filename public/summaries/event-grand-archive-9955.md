@@ -1,6 +1,6 @@
 # 人工繁育 / Artificial Breeding
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ On the first fauna capture of a Primal Calling empire, hidden 9955 fires 9960.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：9955、9960、9970。

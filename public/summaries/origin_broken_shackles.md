@@ -1,9 +1,6 @@
 # 粉碎的枷锁 / Broken Shackles
 
-- 分类 Category：起源 Origins · DLC：First Contact · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_broken_shackles.txt`、`common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:61-127`、`common/on_actions/00_on_actions.txt`、`common/resolutions/00_resolutions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：First Contact
 
 ## 如何开始 How it starts
 
@@ -30,6 +27,9 @@ At game start hidden origin.110 creates the crashed slaver ship site (visible on
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_broken_shackles.txt`、`common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:61-127`、`common/on_actions/00_on_actions.txt`、`common/resolutions/00_resolutions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：全部 4997–5525 事件与遗址、on_action 钩子、议案钩子。 All events and the site, on_action and resolution hooks.
 - 更正 Corrections：三处母星事件接在事件链“寻找家园”之后（由勘测触发的隐藏门卫事件 4997–4999）；所有状态入口加标签；开战三窗口并列。 The home world events attach to the Finding Home chain (survey gatekeepers 4997-4999); all entries labelled; three war windows grouped.
 - 不确定 Uncertain：自由的代价的权重/分组取自编译树。 Cost of Freedom weights taken from the compiled tree.

@@ -1,8 +1,6 @@
 # 旧版编码 / An Old Code（负相物质·后篇 / Negative Mass, part two）
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链与叙事局势 colony chain + narrative situation
-- 来源 Sources：`events/colony_events_3.txt:7579–8909` · `common/situations/01_narrative_situations.txt:1661–1817` · `common/on_actions/00_on_actions.txt:1668` · 前篇 prologue `common/special_projects/00_projects_3.txt:803–845`
-- 审阅 Reviewed：2026-10-13（c7b-society；r2-society 完成）· 状态 Status：已审阅 reviewed
 
 ## 如何开始 How it starts
 
@@ -39,6 +37,8 @@ Summary in English: the summit's four answers all start the situation *Plight of
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society；r2-society 完成）· 状态 Status：已审阅 reviewed
+- 来源 Sources：`events/colony_events_3.txt:7579–8909` · `common/situations/01_narrative_situations.txt:1661–1817` · `common/on_actions/00_on_actions.txt:1668` · 前篇 prologue `common/special_projects/00_projects_3.txt:803–845`
 - 已核对 Checked：9800–9880 全部脚本、局势定义（初始进度、月进度修正、三个方案的 potential、四个阶段的 on_first_enter、on_fail/on_progress_complete）、`on_fleet_destroyed_perp`、DPORTAL_PROJECT 的随机权重。
 - 合并 Merged：原独立故事 event-colony-9885（9885，`on_colony_defenders_win`）与 event-colony-9889（隐藏 9889 → 9890，`on_colony_attackers_win`）是 9880 地面战的两种结果（00_on_actions.txt:834、868 注释即写明“Negative Mass”），现作为本篇的互斥分支。/ The former single-page stories 9885 and 9889/9890 are the two results of 9880's ground battle and are merged here as exclusive branches.
 - 审阅改动 Changes：按局势实际进度方向加入 12 条审阅连接（第二阶段→第一阶段→成功；第四阶段→失败；反悔→第二阶段）；把成功结局下由通用“开局建筑”效果带出的 3 个起源事件连接标为伪连接并抑制；登记 9821 自由问答（按帝国类型选回答）与 9840 选项文字变体；标注两个结局与互斥组。

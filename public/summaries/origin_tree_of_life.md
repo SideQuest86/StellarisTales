@@ -1,9 +1,6 @@
 # 生命之树 / Tree of Life
 
-- 分类 Category：起源 Origins · DLC：Utopia · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_3.txt:8-128`、`common/governments/civics/00_origins.txt:2758-2793`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Utopia
 
 ## 如何开始 How it starts
 
@@ -24,5 +21,8 @@ No narrative opening: the card gives the homeworld a Tree of Life deposit; new c
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_3.txt:8-128`、`common/governments/civics/00_origins.txt:2758-2793`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.3001–3004、3010。 Events 3001-3004 and 3010.
 - 更正 Corrections：入口加标签。 Entry labelled.

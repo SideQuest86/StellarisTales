@@ -1,6 +1,5 @@
-# 在[planet.GetName]上缴获遗珍 / Relic Seized on [planet.GetName]
-
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_2.txt:1912–2040（ancrel.6499、6500、6505）；common/on_actions/00_on_actions.txt:818 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+# 在星球上缴获遗珍 / Relic Seized on a Planet
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -24,5 +23,7 @@ With weight 10 of 110 (x6.67 for a plunder war goal, x15 for the Barbaric Despoi
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_2.txt:1912–2040（ancrel.6499、6500、6505）；common/on_actions/00_on_actions.txt:818
 - 已核对：ancrel.6499、6500、6505 的脚本与 on_colony_attackers_win 调用点；中英文正文已读。
 - Checked: the scripts of ancrel.6499, 6500 and 6505 and the on_colony_attackers_win call site; both languages read.

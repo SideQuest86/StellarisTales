@@ -1,6 +1,6 @@
 # 损毁反应堆 / Ruined Reactors
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:114；events/extreme_frontiers_events.txt:3215 · DLC：脚本条件 has_shroud_dlc（Shroud 相关内容） script condition has_shroud_dlc · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：脚本条件 has_shroud_dlc（Shroud 相关内容） script condition has_shroud_dlc
 
 ## 如何开始 How it starts
 
@@ -28,13 +28,13 @@ A nuclear plant that suffered a serious containment failure over 10,000 years ag
 
 ## 分支与结局 Branches and outcomes
 
-
 ## 条件与文明差异 Conditions and variants
 
-- 无特殊的文明差异。 / No empire-specific variants beyond the reward wording.
 - 掷骰失败时使用通用事件池 all_random_events（见“考古遗址：发掘意外”）。 / Failed rolls use the generic pool all_random_events (see "Archaeological Sites: excavation incidents").
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:114；events/extreme_frontiers_events.txt:3215
 - 已核对：遗址定义（common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:114）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/12_extreme_frontiers_arc_sites.txt:114) with its stage order and conditions, every stage event script, and how the site appears; both languages read.

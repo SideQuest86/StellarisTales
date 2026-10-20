@@ -1,7 +1,6 @@
 # 奇怪的图案 / Peculiar Patterns
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1293-1351; events/distant_stars_events_2.txt:3238 (distar.1090); events/distant_stars_events_2.txt:3294 (distar.1095); events/distant_stars_events_2.txt:3552 (distar.2010)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ distar.1095 has an Evolutionary Predators option; 1090's picture follows planet 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1293-1351; events/distant_stars_events_2.txt:3238 (distar.1090); events/distant_stars_events_2.txt:3294 (distar.1095); events/distant_stars_events_2.txt:3552 (distar.2010)
 已核对异常与三个结果事件。草稿显示 p=1.00*，实为按星球类型的条件分配，已加互斥组说明。30天后的 story.1 / story.5 为共享报告，不属于本故事。
 
 Checked the anomaly and the three results. The draft shows p=1.00*; it is a planet-class split, documented with an exclusive group. story.1 / story.5 after 30 days are shared reports.

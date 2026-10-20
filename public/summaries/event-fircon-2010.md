@@ -1,7 +1,5 @@
-# 天上正在下[pre_ftl_species.GetNamePlural]！ / It's Raining [pre_ftl_species.GetNamePlural]!
-
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/first_contact_dlc_events.txt:4815-4939`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）
+# 天上正在下原始物种！ / It's Raining Pre-FTL Species!
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -31,5 +29,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/first_contact_dlc_events.txt:4815-4939`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）
 - 已核对：触发、正文与选项条件。
   Checked: trigger, text and option conditions.

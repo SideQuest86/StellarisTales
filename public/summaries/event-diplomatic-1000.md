@@ -1,7 +1,5 @@
 # 舰队演习 / Fleet Maneuvers
 - 分类 Category：文明纪事 Society (C7) · 外交事件 diplomatic event
-- 来源 Sources：`events/diplomatic_events_2.txt:13-1100` · `common/special_projects (FLEET_MANEUVERS_*_PROJECT)`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,6 +20,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/diplomatic_events_2.txt:13-1100` · `common/special_projects (FLEET_MANEUVERS_*_PROJECT)`
 - 已核对 Checked：根 1000 触发条件与项目、各结果事件。/ Trigger, projects and result events.
 - 审阅改动 Changes：结构与草稿一致；补充了触发条件。/ Matches; trigger conditions added.
 - 不确定 Uncertain：各项目的成本与时限、1020–1024 对话的效果未逐项展开。 / Project costs and the 1020–1024 dialog effects were not expanded.

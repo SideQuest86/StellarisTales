@@ -1,9 +1,6 @@
 # 星耀天堡 / Starlit Citadel
 
-- 分类 Category：起源 Origins · DLC：BioGenesis · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/biogenesis_origin_events.txt:1883-2520`、`common/special_projects/05_projects_biogenesis.txt`、`common/scripted_effects/biogenesis_effects.txt:59`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：BioGenesis
 
 ## 如何开始 How it starts
 
@@ -27,5 +24,8 @@ About 360 days after start bio.2005 starts the *Siege of the Citadel* chain; hid
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/biogenesis_origin_events.txt:1883-2520`、`common/special_projects/05_projects_biogenesis.txt`、`common/scripted_effects/biogenesis_effects.txt:59`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：bio.2005–2040 与项目钩子。 Events 2005-2040 and project hooks.
 - 更正 Corrections：六个入口加标签，互斥组与结局标注。 Six entries labelled, exclusive group and ending marked.

@@ -1,8 +1,6 @@
 # 古怪读数 / Odd Readings
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:56-74` · `events/anomaly_events_3.txt:274-546 (4015-4018)` · `events/anomaly_events_3.txt:2643-2727 (4085-4086)` · `common/special_projects/00_projects_3.txt:217-248` · `events/failures.txt:270-295` · `common/on_actions/00_on_actions.txt:2265-2269`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -34,6 +32,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:56-74` · `events/anomaly_events_3.txt:274-546 (4015-4018)` · `events/anomaly_events_3.txt:2643-2727 (4085-4086)` · `common/special_projects/00_projects_3.txt:217-248` · `events/failures.txt:270-295` · `common/on_actions/00_on_actions.txt:2265-2269`
 - 已核对 Checked：类别、4015–4018、4085/4086、项目、失败事件与通讯建立回调。  
   Category, 4015–4018, 4085/4086, project, failure event and the communications on_action.
 - 更正 Corrections：新增4015三个“打开/展出”选项到4017的状态连接（亵渎遗体的后果），原来缺失。  

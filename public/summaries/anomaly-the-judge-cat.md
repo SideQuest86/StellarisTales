@@ -1,8 +1,6 @@
 # 辐射激增 / Radiation Spikes
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:851-876` · `events/anomaly_events_4.txt:5193-5292 (9000-9002)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:851-876` · `events/anomaly_events_4.txt:5193-5292 (9000-9002)`
 - 已核对 Checked：类别与9000–9002。  
   Category and 9000–9002.
 - 覆盖 Coverage：4 个文档全部核对 / all 4 docs checked.

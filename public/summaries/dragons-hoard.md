@@ -1,6 +1,6 @@
 # 龙之宝藏 / Dragon's Hoard
 
-- 分类 Category：巨兽与城邦 · 来源 Sources：events/leviathans_events_1.txt:8764-9001（660-665）; common/special_projects/00_projects_leviathans.txt:430-448; common/on_actions/00_on_actions.txt:1884, :4251 · DLC：利维坦 Leviathans · 审阅 Reviewed 2026-10-13
+- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 在以太巨龙守护的“宝藏”小行星上建成采矿站（on_building_mining_station → 隐藏 660），或所在星系易主（on_system_gained → 隐藏 662）。隐藏事件分别为骸骨和龙蛋排期（1天 + 最多约50年随机）。
@@ -19,5 +19,8 @@ A mining station on the Hoard planet (or a change of system ownership) schedules
 665 的文本随蜂巢/机器帝国变化。
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/leviathans_events_1.txt:8764-9001（660-665）; common/special_projects/00_projects_leviathans.txt:430-448; common/on_actions/00_on_actions.txt:1884, :4251
 合并 event-leviathans-660 / -662。已核对触发、项目参数和结局。完整。
 Merged two one-doc stories; checked triggers, project parameters and outcomes. Complete.

@@ -1,7 +1,6 @@
 # 加密通讯 / Encrypted Transmission
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1498-1532; events/distant_stars_events_2.txt:6871 (distar.2045); common/special_projects/00_projects_distant_stars.txt:1450 (GATEWAY_INTERFERENCE); events/distant_stars_events_2.txt:6902 (distar.2046)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -23,12 +22,10 @@ Try or leave.
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1498-1532; events/distant_stars_events_2.txt:6871 (distar.2045); common/special_projects/00_projects_distant_stars.txt:1450 (GATEWAY_INTERFERENCE); events/distant_stars_events_2.txt:6902 (distar.2046)
 已核对异常、distar.2045–2046 与项目。树结构正确。30天后的通用接触报告 story.5 是共享事件，不属于本故事。
 
 Checked the anomaly, distar.2045–2046 and the project. Tree correct. The generic contact report story.5 30 days later is a shared helper, not part of this story.

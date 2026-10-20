@@ -1,6 +1,6 @@
 # 失去联络 / Contact Lost
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/scripted_effects/espionage_event_effects.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -26,4 +26,6 @@ regular -> regular (weight 2), regular -> gestalt (weight 1).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/scripted_effects/espionage_event_effects.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：5000-5002、espionage.1040 的触发与事件池权重。

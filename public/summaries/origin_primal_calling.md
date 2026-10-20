@@ -1,9 +1,6 @@
 # 野性呼唤 / Primal Calling
 
-- 分类 Category：起源 Origins · DLC：Grand Archive · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/origin_events_grand_archive.txt:7-1962`、`events/grand_archive_events.txt:173-211`（7010、9970 见同文件）、`common/situations/11_grand_archive_situations.txt:505-690`、`events/colony_events_3.txt:989`、`common/on_actions/00_on_actions.txt:59,419,478,1168,1436,2178,2560,3721`、`common/governments/civics/00_origins.txt:695-743`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -50,6 +47,9 @@ After that there is no single main line, but several branches each started by ga
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/origin_events_grand_archive.txt:7-1962`、`events/grand_archive_events.txt:173-211`（7010、9970 见同文件）、`common/situations/11_grand_archive_situations.txt:505-690`、`events/colony_events_3.txt:989`、`common/on_actions/00_on_actions.txt:59,419,478,1168,1436,2178,2560,3721`、`common/governments/civics/00_origins.txt:695-743`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：上列事件全文、局势定义与全部 on_action 钩子。 All listed events, the situation definition and every on_action hook.
 - 更正 Corrections：通用提亚基首次接触（first_contact_critters.15）曾因其后续经过计数事件 200 而被整体并入本起源；现将 200 标为共享枢纽，接触事件回到独立故事，三个里程碑改为本起源的入口。通用“虚空虫行为”局势与虚空虫疫移出（与寻宝猎人同）。
   The generic Tiyanki first contact had been absorbed into this origin through the shared counter 200; 200 is now a hub, the contact is its own story again, and the three milestones are entries of this origin. The generic Voidworms Behavior situation and plague were moved out (as for Treasure Hunters).

@@ -1,6 +1,6 @@
 # 最后的原住民被绑架 / Last primitives abducted
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/on_action_events_2.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ Owners of the observation post, the planet and the abductor each get 123 where r
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/on_action_events_2.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：action.122 的三个通知分支与 action.123 的选项。

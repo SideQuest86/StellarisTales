@@ -1,7 +1,6 @@
 # 轨道小行星 / Asteroid in Orbit
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:461; events/anomaly_events_1.txt:4577 (anomaly.660); events/anomaly_events_4.txt:3124 (anomaly.6875)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.660 has a second option only for the Lithoid origin (asteroid_thrusters 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:461; events/anomaly_events_1.txt:4577 (anomaly.660); events/anomaly_events_4.txt:3124 (anomaly.6875)
 已核对异常与两个事件；编译树正确（p=0.50* 即因战略资源条件而被修改的权重）。
 
 Checked the anomaly and both events; the compiled tree is correct (p=0.50* is the weight modified by the strategic-resource condition).

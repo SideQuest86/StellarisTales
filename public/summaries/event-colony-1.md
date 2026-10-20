@@ -1,7 +1,6 @@
 # 迁徙森林 / Migrating Forests
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_1.txt:12-557`；`common/special_projects/00_projects_1.txt:248-266`；`common/on_actions/00_on_actions.txt:3753,3804,862`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_1.txt:12-557`；`common/special_projects/00_projects_1.txt:248-266`；`common/on_actions/00_on_actions.txt:3753,3804,862`
 - 已核对：入口、项目启用条件、各事件的触发标志与延迟、与 on_action 的衔接（5）。
   Checked: entry, project enabling, flag triggers and delays of every follow-up, the on_action link to 5.
 - 更正：草稿把 colony.5 当作独立故事，现作为4的结尾并入。

@@ -1,7 +1,6 @@
 # 古神神殿 / Shrines to the Old Gods
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：events/anomaly_events_1.txt:1735-1880 (anomaly.140, chain start; story anomaly-ast-shrine-1-cat); common/event_chains (old_gods_chain, counter shrines_searched max 3); events/anomaly_events_1.txt:1927 (anomaly.142); events/anomaly_events_1.txt:1970 (anomaly.143); events/anomaly_events_1.txt:2013 (anomaly.144); common/on_actions/00_on_actions.txt:1015-1017 (on_entering_system_fleet); common/special_projects/00_projects_2.txt:114 (OLD_GODS_*_PROJECT); events/anomaly_events_1.txt:2056 (anomaly.165); events/anomaly_events_1.txt:2097 (anomaly.166); events/anomaly_events_1.txt:2138 (anomaly.167); events/anomaly_events_1.txt:2179 (anomaly.168)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.140, which starts the chain, has a different option for fanatic spiritua
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：events/anomaly_events_1.txt:1735-1880 (anomaly.140, chain start; story anomaly-ast-shrine-1-cat); common/event_chains (old_gods_chain, counter shrines_searched max 3); events/anomaly_events_1.txt:1927 (anomaly.142); events/anomaly_events_1.txt:1970 (anomaly.143); events/anomaly_events_1.txt:2013 (anomaly.144); common/on_actions/00_on_actions.txt:1015-1017 (on_entering_system_fleet); common/special_projects/00_projects_2.txt:114 (OLD_GODS_*_PROJECT); events/anomaly_events_1.txt:2056 (anomaly.165); events/anomaly_events_1.txt:2097 (anomaly.166); events/anomaly_events_1.txt:2138 (anomaly.167); events/anomaly_events_1.txt:2179 (anomaly.168)
 已核对 anomaly.140、142–144、165–168、三个项目与事件链。修正：草稿把三座神殿拆成三个各自以共享的 anomaly.168 收尾的故事；现合为一个以事件链“古神神殿”为起点的故事，三座神殿作为并行组，门控 anomaly.168。anomaly.140 属另一故事（c3b），仅作入口说明。
 
 Checked anomaly.140, 142-144, 165-168, the three projects and the chain. Correction: the draft made three separate stories that all end in the shared anomaly.168; they are now one story starting from the chain "Shrines to the Old Gods" with the three shrines as a parallel group gating anomaly.168. anomaly.140 belongs to another story (c3b) and is only described as the entry.

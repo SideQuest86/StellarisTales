@@ -1,8 +1,6 @@
 # 与[Root.Patron:whisperers_in_the_void.GetPreCommunicationName]通灵 / Commune with the [Root.Patron:whisperers_in_the_void.GetPreCommunicationName]
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/04_projects_shroud.txt` · `events/shroud_events.txt` · `common/patrons/patron_types.txt` · `common/scripted_effects/shroud_shadows_scripted_effects.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/04_projects_shroud.txt` · `events/shroud_events.txt` · `common/patrons/patron_types.txt` · `common/scripted_effects/shroud_shadows_scripted_effects.txt`
 - 已对照4040/4045/4046/11110/11111/11120/11130原文与复仇项目脚本。  
   Compared the originals of 4040/4045/4046/11110/11111/11120/11130 and the revenge project scripts.
 - 合并：_HIVE与_ROBOT故事并入本故事。  

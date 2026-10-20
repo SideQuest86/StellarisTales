@@ -1,7 +1,4 @@
-# [From.GetSpeciesAdj]社会转变 / [From.GetSpeciesAdj] Societal Shift
-- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:5882-5928` · `common/on_actions/00_on_actions.txt:5096-5106` · `events/first_contact_dlc_situation_events.txt:189-212`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 原始文明社会转变 / Pre-FTL Societal Shift- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -21,5 +18,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:5882-5928` · `common/on_actions/00_on_actions.txt:5096-5106` · `events/first_contact_dlc_situation_events.txt:189-212`
 - 已核对 Checked：脚本触发、权重与冷却。/ Trigger, weight and cooldown.
 - 审阅改动 Changes：原为 3138 等隐藏根+通知两页；现保留通知为文档、隐藏根折叠。/ The hidden root is folded into the notification.

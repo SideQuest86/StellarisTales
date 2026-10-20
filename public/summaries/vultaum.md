@@ -1,6 +1,6 @@
 ﻿# 沃陶姆恒星议会 / The Vultaum Star Assembly
 
-- 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:17–1200；common/anomalies/96_anomaly_categories_precursors.txt:5–703；common/special_projects/00_projects_1.txt:821–1145；common/artifact_actions/artifact_actions.txt:682；common/special_projects/00_projects_ancient_relics.txt:190、219；events/ancient_relics_arcsite_events_2.txt:7016–7483；common/relics/relics.txt:1206 · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者 Precursors · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -52,6 +52,8 @@ A non-AI empire surveying a planet (not a star, no anomaly) in the Vultaum regio
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/precursor_events.txt:17–1200；common/anomalies/96_anomaly_categories_precursors.txt:5–703；common/special_projects/00_projects_1.txt:821–1145；common/artifact_actions/artifact_actions.txt:682；common/special_projects/00_projects_ancient_relics.txt:190、219；events/ancient_relics_arcsite_events_2.txt:7016–7483；common/relics/relics.txt:1206
 - 已核对：precursor.1（17–77）与 on_survey_planet 权重（00_on_actions.txt:1183）；vultaum_1–11_cat 生成条件；十一个项目（00_projects_1.txt:821–1110，均180天，skill 行已注释）；报告计数与 97/98/99（805–889）；100–102、母星项目（1114）；artifact_vultaum_research（682）；VULTAUM_SECRETS/_2；10100、10110–10113；r_reality_perforator 与 105。十一份报告与秘密事件中英文已读，V3 的逐篇结论经复核成立。
 - 结构修正：异常改为开场之后的并行分支；删除开场选项的提示性重复边；秘密研究与遗珍激活改为母星结果后的可选分支（带证据的桥）；V3 的公开/压制概率标注保留；观察者通知与未使用异常加注。
 - 不确定：开场的实际概率取决于其他可用勘察事件；无DLC表现仅按脚本推断。

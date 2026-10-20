@@ -1,7 +1,6 @@
 # 战争之鼓 / The Drums of War
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：events/first_contact_NPC_country_types_events.txt:1325-1360
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -25,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/first_contact_NPC_country_types_events.txt:1325-1360
 - 已核对：触发条件、选项效果；编译树与脚本一致。
   Checked: trigger conditions and option effects; the compiled tree matches the script.
 - 不确定：marauder.502 及其后续属于大汗危机故事，由其他审阅者负责。

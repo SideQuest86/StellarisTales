@@ -1,7 +1,6 @@
 # 外星人活动 / Alien Activity
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1221-1235; events/distant_stars_events_2.txt:2351 (distar.1060)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Xenophile: inspire or keep quiet; xenophobe: denounce or keep quiet; others: "Gr
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1221-1235; events/distant_stars_events_2.txt:2351 (distar.1060)
 已核对异常与 distar.1060。30天后的通用接触报告 story.5 是共享事件，不属于本故事。
 
 Checked the anomaly and distar.1060. The generic contact report story.5 30 days later is a shared helper, not part of this story.

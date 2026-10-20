@@ -1,8 +1,6 @@
 # 意外之友 / An Unexpected Friend（孤独的机器人 · The Lonely Bot）
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:2840–3116` · `common/special_projects/00_projects_nemesis.txt:574–614` · `common/on_actions/00_on_actions.txt:3745` · 前因 prior `events/anomaly_events_2.txt:1045`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -29,5 +27,7 @@ English: the robot's ancient factory decays ~10–15 years after colonisation; r
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:2840–3116` · `common/special_projects/00_projects_nemesis.txt:574–614` · `common/on_actions/00_on_actions.txt:3745` · 前因 prior `events/anomaly_events_2.txt:1045`
 - 已核对 Checked：5000–5020 脚本、两个项目、矿藏定义、放置矿藏的 anomaly.2580。编译草稿结构正确。
 - 未改结构；标注两个结局与入口注释。建议协调者在 anomaly.2580 与本篇之间加跨故事连接（台账请求）。/ Structure unchanged; a cross-story link from anomaly.2580 is requested in the ledger.

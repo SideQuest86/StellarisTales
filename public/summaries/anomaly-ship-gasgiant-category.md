@@ -1,7 +1,6 @@
 # 气态巨行星飞船 / Gas Giant Ship
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:728; events/anomaly_events_2.txt:710 (anomaly.2560); common/special_projects/00_projects_1.txt (GAS_GIANT_SHIP_PROJECT); events/anomaly_events_2.txt:741 (anomaly.2561); events/anomaly_events_2.txt:781 (anomaly.2562)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:728; events/anomaly_events_2.txt:710 (anomaly.2560); common/special_projects/00_projects_1.txt (GAS_GIANT_SHIP_PROJECT); events/anomaly_events_2.txt:741 (anomaly.2561); events/anomaly_events_2.txt:781 (anomaly.2562)
 已核对异常定义、项目与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition, the project and every outcome event; the compiled tree is correct, no change needed.

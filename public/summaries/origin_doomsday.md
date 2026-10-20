@@ -1,9 +1,6 @@
 # 末日将临 / Doomsday
 
 - 分类 Category：起源 Origins · DLC：Federations / Nomads（登船部分）· 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_1.txt:2128-2935`、`events/nomads_events.txt`（nomads.4710）
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 
 ## 如何开始 How it starts
 
@@ -27,6 +24,8 @@ Hidden origin.60 marks the capital as doomed (modifier doomsday_1); 5 days later
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：`events/origin_events_1.txt:2128-2935`、`events/nomads_events.txt`（nomads.4710）
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.60–95 全部事件。 All events 60-95.
 - 更正 Corrections：补充“新家园”入口标签、终局报告的互斥组与结局标注。 Added the entry label, the end-report group and endings.
 - 不确定 Uncertain：nomads.4710 属于游牧内容。 nomads.4710 belongs to Nomads content.

@@ -1,8 +1,6 @@
 # 德萨努协和国 / The Dessanu Consonance
 
-- 分类 Category: 探索 Exploration · 来源 Sources: `events/gray_goo_events.txt:754-2135`, `events/distant_stars_events_3.txt:1110-1135, 1375-1378`, `events/observer_events.txt:1130-1155` · 远星（Distant Stars）DLC · 审阅 Reviewed 2026-10-13 (c5b-crisis)
-
-> 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,5 +27,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13 (c5b-crisis)
+- 来源 Sources：`events/gray_goo_events.txt:754-2135`, `events/distant_stars_events_3.txt:1110-1135, 1375-1378`, `events/observer_events.txt:1130-1155` · 远星（Distant Stars）DLC
+- 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
 - 由原“星团的秘密”拆出。通讯屏幕是 on_custom_diplomacy 的可重复菜单，已标注而没有穿插进主线。
 - 未追踪：`dessanu_gift` 修正的来源；问答树的其余后果。

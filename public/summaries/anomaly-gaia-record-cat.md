@@ -1,8 +1,6 @@
 # 破釜沉舟 / Rubiconian Shores
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1098-1114` · `events/anomaly_events_2.txt` · `common/special_projects/` · `common/event_chains/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1098-1114` · `events/anomaly_events_2.txt` · `common/special_projects/` · `common/event_chains/`
 - 已对照类别脚本与树；漂流战场事件链属另一故事。  
   Compared category script and tree; the Drifting Battlefield chain is a separate story.
 - 覆盖 Coverage：全部7个文档。 / All 7 docs.

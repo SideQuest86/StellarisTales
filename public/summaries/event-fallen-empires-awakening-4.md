@@ -1,6 +1,6 @@
 # 星河守护者 / Guardians of the Galaxy
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/scripted_effects/fallen_empire_scripted_effects.txt:587-623; events/fallen_empire_awakening_events.txt:331-423; events/fallen_empire_awakening_events.txt:425-578; events/observer_events.txt:1278 · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ The picture differs depending on whether the guardian is a hive mind.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/scripted_effects/fallen_empire_scripted_effects.txt:587-623; events/fallen_empire_awakening_events.txt:331-423; events/fallen_empire_awakening_events.txt:425-578; events/observer_events.txt:1278
 - 修正：fallen_empires_awakening.0 是 is_test_event 的测试事件，原草稿据此生成了虚假的故事 event-fallen-empires-awakening-0；现将其吸收为本故事的隐藏成员，使该虚假故事消失（其结果文档已在本树和“天堂之战”中）。
   Correction: fallen_empires_awakening.0 is an is_test_event debug event, from which the draft built a false story event-fallen-empires-awakening-0; it is now absorbed as a hidden member here so the false story disappears (its outcome docs are already in this tree and in War in Heaven).
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

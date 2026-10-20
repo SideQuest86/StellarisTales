@@ -79,7 +79,7 @@ test("escaping and empty input", () => {
 test("unhandled entries are counted, not shown", () => {
   const list = [{ kind: "resource", label: { zh: "a", en: "a" } }, { kind: "unhandled", unhandled: true, label: { zh: "b", en: "b" } }];
   const h = renderEffects(list, opts("en"));
-  assert.match(h, /1 more effects are not itemised/);
+  assert.match(h, /1 more effect is not itemized/);
   assert.equal(countEffects(list), 1);
 });
 

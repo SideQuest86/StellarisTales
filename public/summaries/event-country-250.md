@@ -1,6 +1,6 @@
 # 追寻风信子号 / The Hunt for the Hyacinth
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/country_events_1.txt:3774-4364; common/event_chains/00_event_chains.txt:307; common/special_projects (BOARD_HYACINTH); common/solar_system_initializers (hyacinth_system) · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Human player, the human_2 flag, not the Broken Shackles origin.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/country_events_1.txt:3774-4364; common/event_chains/00_event_chains.txt:307; common/special_projects (BOARD_HYACINTH); common/solar_system_initializers (hyacinth_system)
 - 核对 country_events_1.txt 3774-4364；把五个碎片故事（251/252/253/254/259）并入同一故事。
   Checked country_events_1.txt 3774-4364; five fragment pseudo-stories (251/252/253/254/259) merged into one story.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

@@ -1,8 +1,6 @@
 # 维度锁正在失稳 / Dimensional Lock Is Destabilizing
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:1697–1733`；`common/astral_actions/astral_planes_actions.txt:578`；`common/defines/00_defines.txt:588–592`
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -36,6 +34,8 @@ The two options are exclusive and both end the event.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`events/astral_planes_events.txt:1697–1733`；`common/astral_actions/astral_planes_actions.txt:578`；`common/defines/00_defines.txt:588–592`
 - 已核对：事件、行动定义与 defines。它不是裂隙探索的一部分，因此保持单事件故事。
 - 不确定：到期前 30 天提醒与 `on_dimensional_lock_expired` 的先后在脚本中不可见；事件文字（“正在失稳”）与 on_action 注释（“到期时触发”）措辞略有出入。
 

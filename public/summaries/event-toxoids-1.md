@@ -1,6 +1,6 @@
 # 无情的工业家 / Relentless Industrialists
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/toxoids_events.txt, common/situations/01_toxoid_situations.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ toxoids.5 开启情境（初始进度50，双向）。态度：不作为/随它�
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/toxoids_events.txt, common/situations/01_toxoid_situations.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：toxoids.1-35 与情境。

@@ -1,6 +1,6 @@
 # 神谕 / The Oracle
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_1.txt:4826–5370；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2185；common/on_actions/00_on_actions.txt:2502–2506 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -32,6 +32,8 @@ The site's four stages: 4032 the station's people lived by an oracle's prophecie
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/ancient_relics_arcsite_events_1.txt:4826–5370；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2185；common/on_actions/00_on_actions.txt:2502–2506
 - 已核对：on_blocker_cleared、ancrel.4030 的条件与权重、4031–4038 脚本、oracle_digsite 定义；中英文正文已读。遗址掷骰失败可能引发通用发掘意外（另见“考古遗址：发掘意外”）。
 - 修正：补充开场触发说明（入口事件没有显示触发方式）、对话与结局注释。V3 关于 4030 是神谕/哨兵随机分派、两者独立的结论经复核成立。
 

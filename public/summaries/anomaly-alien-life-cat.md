@@ -1,7 +1,6 @@
 # 外星生命 / Alien Life
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1406-1422; events/distant_stars_events_2.txt:3645 (distar.2020)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Hive minds get their own text.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1406-1422; events/distant_stars_events_2.txt:3645 (distar.2020)
 已核对异常与 distar.2020。
 
 Checked the anomaly and distar.2020.

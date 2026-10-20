@@ -1,10 +1,6 @@
 # 银河之星 / The Galatron
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/caravaneer_events.txt:4131-4356`; `common/relics/relics.txt:405-452`; `common/war_goals/00_war_goals.txt:1680-1683,2028-2043`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -32,6 +28,9 @@ The text of 970 has 11 variants (cara.970.1–11.desc).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/caravaneer_events.txt:4131-4356`; `common/relics/relics.txt:405-452`; `common/war_goals/00_war_goals.txt:1680-1683,2028-2043`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了遗物定义、三个事件与战争目标调用；cara.960 为隐藏脉冲，只在评注中说明。
 
 The relic definition, the three events and the war-goal callers were checked; cara.960 is a hidden pulse mentioned only here.

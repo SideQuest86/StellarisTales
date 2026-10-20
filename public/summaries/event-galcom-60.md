@@ -1,7 +1,6 @@
 # 异次元体实验方法 / Extradimensional Experimentation
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/galactic_community_events.txt:611-656`；`events/federations_events_1.txt:65-183`；`events/on_action_events_2.txt:718`；`common/on_actions/00_on_actions.txt:4392,4408`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -22,11 +21,10 @@
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。
-  None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/galactic_community_events.txt:611-656`；`events/federations_events_1.txt:65-183`；`events/on_action_events_2.txt:718`；`common/on_actions/00_on_actions.txt:4392,4408`
 - 已核对：galcom.60 的分派与 on_action 来源。
   Checked: the galcom.60 dispatch and on_action sources.
 - 说明：federations.10020 同时由决议 effect 直接发出（00_resolutions.txt:1678）。

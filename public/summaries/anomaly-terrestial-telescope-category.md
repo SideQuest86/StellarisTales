@@ -1,8 +1,6 @@
 # 天文望远镜 / Terrestrial Telescopes
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:181-195` · `events/cosmic_storms_events_1.txt:32-115` · `events/cosmic_storms_events_1.txt:2710-2730`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:181-195` · `events/cosmic_storms_events_1.txt:32-115` · `events/cosmic_storms_events_1.txt:2710-2730`
 - 已对照类别脚本、cstorms.5/1600与1605。  
   Compared the category script, cstorms.5/1600 and 1605.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

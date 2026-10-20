@@ -1,7 +1,5 @@
 # 色彩语言学 / Colorful Linguistics
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件「色彩语言学」first_contact.5070）
-- 来源 Sources：`events/first_contact_events.txt:7171–7369` · `common/first_contact/00_first_contact.txt:644–677, 2131–2168`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,5 +21,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:7171–7369` · `common/first_contact/00_first_contact.txt:644–677, 2131–2168`
 - 已核对 Checked：5070–5073 脚本与阶段。
 - 审阅改动 Changes：并入 5070（根）、5072、5073 到原 5071 篇。/ 5070 (root), 5072 and 5073 joined the old 5071 story.

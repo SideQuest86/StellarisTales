@@ -1,7 +1,6 @@
 # 发现环境改造候选 / Terraforming Candidate Discovered
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/on_actions/00_on_actions.txt:1133 (on_survey_planet → anomaly.2574); events/anomaly_events_2.txt:868 (anomaly.2574); events/anomaly_events_2.txt:905 (anomaly.2575)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Text and options vary with tech_climate_restoration, a Dyson sphere and wilderne
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/on_actions/00_on_actions.txt:1133 (on_survey_planet → anomaly.2574); events/anomaly_events_2.txt:868 (anomaly.2574); events/anomaly_events_2.txt:905 (anomaly.2575)
 已核对 on_action 与两个事件；编译树正确。
 
 Checked the on_action and both events; the compiled tree is correct.

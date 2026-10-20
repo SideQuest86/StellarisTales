@@ -1,7 +1,6 @@
 # 轨道残骸 / Orbital Debris
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/99_anomaly_categories_ai.txt:2; events/anomaly_events_AI.txt:12 (aianom.1); events/anomaly_events_AI.txt:70 (aianom.2); events/anomaly_events_AI.txt:128 (aianom.3); events/anomaly_events_AI.txt:186 (aianom.4); events/anomaly_events_AI.txt:244 (aianom.5)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/99_anomaly_categories_ai.txt:2; events/anomaly_events_AI.txt:12 (aianom.1); events/anomaly_events_AI.txt:70 (aianom.2); events/anomaly_events_AI.txt:128 (aianom.3); events/anomaly_events_AI.txt:186 (aianom.4); events/anomaly_events_AI.txt:244 (aianom.5)
 已核对异常定义与全部结果事件；编译树正确，无需改动。奖励等级的随机抽取发生在隐藏效果中，不是文档。
 
 Checked the anomaly definition and every outcome event; the compiled tree is correct. The reward-tier roll happens in a hidden effect, not in a doc.

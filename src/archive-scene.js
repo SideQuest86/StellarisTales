@@ -1,5 +1,6 @@
 import * as THREE from "../vendor/three.module.js";
 import { CoverAtlas } from "./cover-atlas.js";
+import { t } from "./i18n.js";
 import {
   wrap,
   damp,
@@ -153,6 +154,7 @@ export class ArchiveScene {
     this.lift = { value: PREVIEW_LIFT, velocity: 0 };
     this.outgoing = [];
     this.frame = 0;
+    this.compiled = false; // set by warmUp(): the loop starts once the programs are linked (or after 1.2 s)
     this.timer = 0; // pending timeout of a frame-rate-capped frame
     this.last = 0;
     this.lastDraw = 0;
@@ -184,7 +186,11 @@ export class ArchiveScene {
     this.renderer.debug.checkShaderErrors = /[?&]debug\b/.test(location.search);
     this.renderer.info.autoReset = true;
     this.canvas = this.renderer.domElement;
-    this.canvas.tabIndex = 0;
+    this.canvas.tabIndex = 0; // arrow keys and Enter are handled on the canvas itself, so it stays a (named) tab stop
+    this.canvas.setAttribute("role", "group");
+    const nameCanvas = () => this.canvas.setAttribute("aria-label", t("scene.label", null, document.documentElement.lang === "en" ? "en" : "zh"));
+    nameCanvas();
+    new MutationObserver(nameCanvas).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
     container.append(this.canvas);
 
     this.scene = new THREE.Scene();
@@ -321,7 +327,10 @@ export class ArchiveScene {
    *  (a 265 ms animation-frame callback on a cold load, docs/refine/round4/perf-audit.md #3). */
   warmUp() {
     const scene = this.renderer.compileAsync(this.scene, this.camera).catch(() => {});
-    Promise.race([scene, new Promise((resolve) => setTimeout(resolve, 1200))]).then(() => this.wake());
+    Promise.race([scene, new Promise((resolve) => setTimeout(resolve, 1200))]).then(() => {
+      this.compiled = true;
+      this.wake();
+    });
     const snapshot = async () => {
       try {
         await scene;
@@ -395,6 +404,14 @@ export class ArchiveScene {
       depthTest: false,
       depthWrite: false,
     });
+  }
+
+  /** The story lists: the scene is built (renderer, programs, atlas) while the index still downloads. */
+  setColumns(columns) {
+    this.columns = columns;
+    this.memories = columns.map(() => 0);
+    this.dirty = true;
+    this.wake();
   }
 
   // ------------------------------------------------------------ selection
@@ -855,7 +872,8 @@ export class ArchiveScene {
     }
     // Inside tick() the loop decides on the next frame itself: a second request here would start a parallel loop
     // that draws the scene again in the same display frame (measured: up to 18 draws per displayed frame before 2026-10-13; atlas uploads call wake() from draw()).
-    if (!this.frame && !this.ticking && !document.hidden && !this.lost) {
+    // Not before the programs are linked: the first draw would wait for them synchronously (a ~100 ms frame, measured).
+    if (!this.frame && !this.ticking && !document.hidden && !this.lost && this.compiled && this.columns.length) {
       this.last = performance.now();
       this.frame = requestAnimationFrame((t) => this.tick(t));
     }

@@ -1,7 +1,4 @@
-# [From.GetName]恒星系 / The [From.GetName] System
-- 分类 Category：文明纪事 Society (C7) · 星系事件 system event
-- 来源 Sources：`events/federations_events_2.txt:145-168` · `common/on_actions/00_on_actions.txt:908`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 卫星过多的恒星系 / The Too-Many-Moons System- 分类 Category：文明纪事 Society (C7) · 星系事件 system event
 
 ## 如何开始 How it starts
 
@@ -21,5 +18,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/federations_events_2.txt:145-168` · `common/on_actions/00_on_actions.txt:908`
 - 已核对 Checked：触发与条件。/ Trigger and conditions.
 - 审阅改动 Changes：无结构改动。/ No structural change.

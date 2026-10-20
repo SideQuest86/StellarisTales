@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
   clean, stem, terms, parseQuery, hashTerm, SHARDS, FIELD, parseShard, decodePostings, intersect, groupByStory,
-  highlight, makeSnippet, bestSnippet, effectLabels, SearchIndex,
+  highlight, makeSnippet, bestSnippet, effectLabels, SearchIndex, shardOf, withinOne, needlesOf,
 } from "../src/search.js";
 import { buildSearchIndex } from "../scripts/build-search-index.mjs";
 
@@ -30,7 +30,26 @@ test("parseQuery: groups, stop words, cjk runs", () => {
   assert.deepEqual(g.map((x) => [x.kind, x.literal]), [["latin", "tempests"], ["cjk", "神秘风暴"]]);
   assert.deepEqual(g[1].terms, ["神秘", "秘风", "风暴"]);
   assert.deepEqual(parseQuery("a"), []);
-  assert.deepEqual(parseQuery("风")[0].terms, []);
+  assert.deepEqual(parseQuery("风")[0].terms, ["风"], "a lone character is a unigram term");
+});
+
+test("parseQuery partial: only the last Latin word of 3+ letters becomes a prefix group", () => {
+  const g = parseQuery("crisis bea", { partial: true });
+  assert.deepEqual(g.map((x) => !!x.prefix), [false, true]);
+  assert.deepEqual(parseQuery("crisis bea").map((x) => !!x.prefix), [false, false], "not partial by default");
+  assert.ok(!parseQuery("crisis be", { partial: true }).some((x) => x.prefix), "two letters / stop words stay exact");
+  assert.ok(!parseQuery("crisis 风", { partial: true }).some((x) => x.prefix));
+});
+
+test("withinOne: one substitution, insertion, deletion or transposition", () => {
+  assert.ok(withinOne("beacon", "beacon") && withinOne("beacon", "beacn") && withinOne("beacon", "beaccon") && withinOne("beacon", "beacin") && withinOne("beacon", "baecon"));
+  assert.ok(!withinOne("beacon", "bacon1x") && !withinOne("beacon", "bcaeon") && !withinOne("beacon", "beac"));
+});
+
+test("shardOf keeps every term with the same first two letters in one shard", () => {
+  assert.equal(shardOf("leviathan"), shardOf("levant"));
+  assert.ok(shardOf("虫") < SHARDS && shardOf("风暴") < SHARDS);
+  assert.equal(shardOf("2200"), hashTerm("22"));
 });
 
 test("highlight escapes everything and marks matches only", () => {
@@ -100,7 +119,7 @@ async function fixture() {
   const ch = (id, title, text, choice, resp) => ({ id, title, texts: [text], sections: [], choices: [{ label: choice, responses: resp ? [resp] : [] }] });
   await writeFile(join(dir, "stories/alpha.json"), JSON.stringify({ chapters: [
     ch("a.1", { zh: "古老遗迹", en: "Ancient Ruins" }, { zh: "[Root.GetName]发现了§Y神秘§!风暴", en: "[Root.GetName] found a <script>&</script> tempest" }, { zh: "调查", en: "Investigate" }),
-    ch("a.2", { zh: "第二章", en: "Chapter Two" }, { zh: "无", en: "Nothing" }, { zh: "离开", en: "Leave" }, { zh: "舰队出发", en: "The fleet departs" }),
+    ch("a.2", { zh: "第二章", en: "Chapter Two" }, { zh: "无虫", en: "Nothing" }, { zh: "离开", en: "Leave" }, { zh: "舰队出发", en: "The fleet departs; a leviathan beacon crisis" }),
   ] }));
   await writeFile(join(dir, "stories/beta.json"), JSON.stringify({ chapters: [ch("b.1", { zh: "乙一", en: "Beta One" }, { zh: "空", en: "Empty" }, { zh: "好", en: "Fine" })] }));
   await writeFile(join(dir, "effects/alpha.json"), JSON.stringify({ docs: { "a.2": { choices: [[{ kind: "resource", label: { zh: "获得能量", en: "Gain energy credits" } }]] } } }));
@@ -138,8 +157,28 @@ test("generator is deterministic and the index answers queries through SearchInd
     assert.deepEqual(await run("corrosive"), [[3, "text"]]);
     assert.deepEqual(await run("investigate"), [[0, "choice"]]);
     assert.equal(si.storyIndex(2), 1);
-    assert.equal(hashTerm("tempest"), hashTerm("tempest"));
-    assert.ok(decodePostings(parseShard(a.get(`s${hashTerm("tempest")}.bin`)).get("tempest")).docs[0] === 0);
+    assert.ok(decodePostings(parseShard(a.get(`s${shardOf("tempest")}.bin`)).get("tempest")).docs[0] === 0);
+    // prefix: the last word may be partial; earlier words stay exact
+    const runP = async (q) => (await si.lookup(parseQuery(q, { partial: true }))).map((h) => h.doc).sort();
+    assert.deepEqual(await runP("leviath"), [1]);
+    assert.deepEqual(await runP("leviathans"), [1], "inflected full word still matches via its stem");
+    assert.deepEqual(await runP("crisis bea"), [1]);
+    assert.deepEqual(await runP("beac crisis"), [], "only the last word is a prefix");
+    assert.deepEqual(await runP("zzz"), []);
+    // single CJK character reaches body text (and titles); common-character fallback is the reader's job
+    const uni = async (q) => (await si.lookup(parseQuery(q))).map((h) => [h.doc, h.type]).sort((x, y) => x[0] - y[0]);
+    assert.deepEqual(await uni("虫"), [[1, "text"]]);
+    assert.deepEqual(await uni("遗"), [[0, "name"]]);
+    // typo: one edit, length >= 5, only with approx
+    assert.deepEqual(await run("leviathn"), [], "no typo tolerance by default");
+    const near = await si.lookup(parseQuery("leviathn"), { approx: true });
+    assert.deepEqual(near.map((h) => h.doc), [1]);
+    assert.equal(near.approx, true);
+    assert.deepEqual(needlesOf(near.groups), ["leviathan"], "highlights the matched word, not the typo");
+    assert.equal((await si.lookup(parseQuery("beacn"), { approx: true })).approx, true);
+    assert.equal((await si.lookup(parseQuery("beac"), { approx: true })).length, 0, "words under 5 letters are never corrected");
+    assert.equal((await si.lookup(parseQuery("leviathan"), { approx: true })).approx, false, "exact hits are not marked approximate");
+    assert.equal((await si.lookup(parseQuery("xylophone"), { approx: true })).length, 0);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }

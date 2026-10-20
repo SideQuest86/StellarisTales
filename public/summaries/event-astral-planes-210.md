@@ -1,8 +1,6 @@
 # 科学家返回 / Scientist Returns
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:1574–1606`；`common/on_actions/00_on_actions.txt:5013`
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@ No branches.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`events/astral_planes_events.txt:1574–1606`；`common/on_actions/00_on_actions.txt:5013`
 - 已核对：事件与 `on_actions` 条目。未追查设置 `end_of_the_cycle_reckoning` 的危机事件（不属于 C4）。
 
 - Checked: the event and its `on_actions` entry. The crisis events that set `end_of_the_cycle_reckoning` were not traced (outside C4).

@@ -1,6 +1,6 @@
 # 激进信徒 / Radical Cult
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/country_events_1.txt:2240-3772; events/country_events_2.txt:17-66; common/event_chains/00_event_chains.txt:157-186; common/on_actions/00_on_actions.txt:981-986,1573,1615-1616,2042-2045; common/special_projects/00_projects_1.txt:2728-2775 · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Non-gestalt, human player, not nomadic; spiritualists double the weight, materia
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/country_events_1.txt:2240-3772; events/country_events_2.txt:17-66; common/event_chains/00_event_chains.txt:157-186; common/on_actions/00_on_actions.txt:981-986,1573,1615-1616,2042-2045; common/special_projects/00_projects_1.txt:2728-2775
 - 逐段对照 country_events_1.txt 2240-3772、on_action 钩子与特殊项目；11个碎片故事并入。
   Compared country_events_1.txt 2240-3772, the on_action hooks and the special projects segment by segment; 11 fragment pseudo-stories merged.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

@@ -1,7 +1,5 @@
 # 频率问题 / A Problem of Frequencies
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件「频率问题」first_contact.415）
-- 来源 Sources：`events/first_contact_events.txt:7411–7586` · `common/special_projects/00_projects_nemesis.txt:63–75` · `common/first_contact/00_first_contact.txt:567–602, 1975–2052`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -25,5 +23,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:7411–7586` · `common/special_projects/00_projects_nemesis.txt:63–75` · `common/first_contact/00_first_contact.txt:567–602, 1975–2052`
 - 已核对 Checked：415–425、项目 UNIVERSAL_TRANSLATOR_PROJECT、四个嗡鸣者阶段。
 - 审阅改动 Changes：并入 415 与 425（原 event-first-contact-425），连接阶段；420→项目→422。/ Merged 415 and 425 (previous event-first-contact-425 story) and linked the project.

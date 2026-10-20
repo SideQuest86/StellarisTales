@@ -1,7 +1,6 @@
 # 自由落体 / Free Fall
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/situation_events.txt:806-1573`；`common/situations/01_narrative_situations.txt:626-838`（局势「重力井」）；`common/on_actions/00_on_actions.txt:504`（on_five_year_random_pulse_country）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/situation_events.txt:806-1573`；`common/situations/01_narrative_situations.txt:626-838`（局势「重力井」）；`common/on_actions/00_on_actions.txt:504`（on_five_year_random_pulse_country）
 - 已核对：500–597 全部事件、局势定义（初始值、阶段、每月进度与引力、方式、每月事件权重、on_progress_complete/on_fail）。
   Checked: all events 500–597 and the situation definition (initial value, stages, monthly progress and pull, approaches, monthly weights, on_progress_complete / on_fail).
 - 更正 Corrections：590 由局势卡下改接在 580 之后（只有经过不归阶段才会到 100%）；兵变后 513 的连接注明延迟。

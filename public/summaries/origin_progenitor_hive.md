@@ -1,9 +1,6 @@
 # 始祖蜂巢 / Progenitor Hive
 
-- 分类 Category：起源 Origins · DLC：Overlord · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_3.txt:346-883`、`common/on_actions/01_planet_destruction.txt`、`common/governments/civics/00_origins.txt:1444-1478`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Overlord
 
 ## 如何开始 How it starts
 
@@ -26,5 +23,8 @@ No narrative opening. The card weakens ships (-50% speed, evasion, fire rate, ac
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_3.txt:346-883`、`common/on_actions/01_planet_destruction.txt`、`common/governments/civics/00_origins.txt:1444-1478`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.3200–3270。 Events 3200-3270.
 - 更正 Corrections：入口加标签与互斥组。 Entries labelled and grouped.

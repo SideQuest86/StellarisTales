@@ -1,11 +1,7 @@
 # 魂灵之月窠 / Cradle of Souls
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/shroud_events.txt:11193-11201 (shroud.4600)`; `events/shroud_events.txt:11203-11219 (shroud.4605/4610)`; `common/patrons/patron_types.txt:317 (covenant_event)`; `common/inline_scripts/shroud/patron_covenant_proposition_event.txt`; `common/inline_scripts/shroud/patron_covenant_confirmation_event.txt`; `common/inline_scripts/shroud/patron_covenant_formed_event.txt`; `common/inline_scripts/shroud/accept_covenant.txt`; `common/scripted_variables/09_scripted_variables_shroud.txt:163 (@covenant_confirmation_time_days = 360)`; `events/utopia_on_action_events.txt:3320-3348 (utopia.2679), 3435 (2681), 3593 (2682)`; `common/special_projects/04_projects_shroud.txt:572-585 (SHROUD_SHAPING_PROJECT)`; `events/shroud_events.txt:8162-8305 (3500/3510)`
 - DLC：Shadows of the Shroud
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ Proposal/formed texts vary for machine, robot, hive and other empires; formed op
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`events/shroud_events.txt:11193-11201 (shroud.4600)`; `events/shroud_events.txt:11203-11219 (shroud.4605/4610)`; `common/patrons/patron_types.txt:317 (covenant_event)`; `common/inline_scripts/shroud/patron_covenant_proposition_event.txt`; `common/inline_scripts/shroud/patron_covenant_confirmation_event.txt`; `common/inline_scripts/shroud/patron_covenant_formed_event.txt`; `common/inline_scripts/shroud/accept_covenant.txt`; `common/scripted_variables/09_scripted_variables_shroud.txt:163 (@covenant_confirmation_time_days = 360)`; `events/utopia_on_action_events.txt:3320-3348 (utopia.2679), 3435 (2681), 3593 (2682)`; `common/special_projects/04_projects_shroud.txt:572-585 (SHROUD_SHAPING_PROJECT)`; `events/shroud_events.txt:8162-8305 (3500/3510)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 阅读 shroud_events.txt 11193-11201、11203-11219 处的内联调用与三份 patron_covenant_* 内联脚本、accept_covenant、utopia.2679–2682、塑造虚境项目与 3500/3510。结构确认无误：立约后两条时间线（立即的立约事件、360天后的确认）并行，确认/弃约/自寻出路互斥；“自寻出路”与天选者事件为五个契约共享的后续。
 
 Read the inline calls at shroud_events.txt 11193-11201 and 11203-11219, the three patron_covenant_* inline scripts, accept_covenant, utopia.2679–2682, the Shaping the Shroud project and 3500/3510. The compiled structure is right: after the covenant two timelines run (immediate formed event, confirmation 360 days later); confirm / renounce / forge-own-path are exclusive; forge-own-path and the Chosen events are shared continuations of all five covenants.

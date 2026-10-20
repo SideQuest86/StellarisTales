@@ -1,8 +1,6 @@
 # 漂浮珍宝 / Floating Value
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/92_anomaly_categories_federations.txt:28-48` · `events/federations_events_3.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/92_anomaly_categories_federations.txt:28-48` · `events/federations_events_3.txt`
 - 已对照类别脚本与树。  
   Compared the category script and the tree.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

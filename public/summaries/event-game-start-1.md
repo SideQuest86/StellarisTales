@@ -1,6 +1,6 @@
 # 亚光速探测器 / Sublight Exploration Probes
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/country_events_1.txt:11-1328; events/game_start.txt:15; events/country_events_2.txt:10-68; common/event_chains/00_event_chains.txt:124-133; common/on_actions/00_on_actions.txt:981-986,1573,1615-1616,2042-2045 · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Human players only; country.258 requires a story flag or an existing contact. Bu
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/country_events_1.txt:11-1328; events/game_start.txt:15; events/country_events_2.txt:10-68; common/event_chains/00_event_chains.txt:124-133; common/on_actions/00_on_actions.txt:981-986,1573,1615-1616,2042-2045
 - 对照 country_events_1.txt 与 country_events_2.txt、事件链定义与 on_action 钩子核对了全部事件；把原先散落的 country.2/6/9/11/14/16/18/20 各个“故事”并入此故事，并删去了把开局闸门当成大杂烩的旧结构；其他开局故事（激进信徒、浪迹星涯、大灭绝）各自成故事。
   Checked every event against country_events_1.txt, country_events_2.txt, the chain definition and the on_action hooks; the previously scattered country.2/6/9/11/14/16/18/20 pseudo-stories are merged here and the old catch-all opening-gate structure is removed; the other opening stories (Radical Cult, Wanderlust, Mass Extinction) are separate stories.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

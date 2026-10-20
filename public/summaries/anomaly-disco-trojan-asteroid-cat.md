@@ -1,7 +1,6 @@
 # 未知内部 / Unknown Insides
 
-- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar) · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1535-1555; events/distant_stars_events_2.txt:6933 (distar.3000); events/distant_stars_events_2.txt:6968/6987 (distar.3001/3002); events/distant_stars_events_2.txt:7027-7114 (distar.3003, 3004); common/special_projects/00_projects_distant_stars.txt:693 (trojan_asteroid_project); events/distant_stars_events_2.txt:7117 (distar.3005)
+- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar)
 
 ## 如何开始 How it starts
 
@@ -29,10 +28,10 @@ The two options lead to exclusive results; the probe route also involves the dro
 
 无文明差异选项。
 
-No empire-specific options.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1535-1555; events/distant_stars_events_2.txt:6933 (distar.3000); events/distant_stars_events_2.txt:6968/6987 (distar.3001/3002); events/distant_stars_events_2.txt:7027-7114 (distar.3003, 3004); common/special_projects/00_projects_distant_stars.txt:693 (trojan_asteroid_project); events/distant_stars_events_2.txt:7117 (distar.3005)
 已核对异常、distar.3000–3005 与项目。树结构正确；3004 为隐藏生成舰队事件。
 
 Checked the anomaly, distar.3000–3005 and the project. Tree correct; 3004 is a hidden fleet-spawn event.

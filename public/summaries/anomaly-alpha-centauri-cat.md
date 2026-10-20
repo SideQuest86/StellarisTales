@@ -1,8 +1,6 @@
 # 稳态 / Stasis
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:550-578` · `common/solar_system_initializers/sol_initializers.txt:386-440, 495-545, 1694-1745, 2407-2460, 4396-4460` · `events/anomaly_events_4.txt:1694-1758 (6745, 6750)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:550-578` · `common/solar_system_initializers/sol_initializers.txt:386-440, 495-545, 1694-1745, 2407-2460, 4396-4460` · `events/anomaly_events_4.txt:1694-1758 (6745, 6750)`
 - 已核对 Checked：类别、五处初始化器调用、6745/6750。  
   Category, the five initializer calls, 6745/6750.
 - 覆盖 Coverage：3 个文档全部核对 / all 3 docs checked.

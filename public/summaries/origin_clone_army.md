@@ -1,9 +1,6 @@
 # 克隆大军 / Clone Army
 
 - 分类 Category：起源 Origins · DLC：（核心/Humanoids 以外，按游戏文件未核对）· 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/clone_army_events.txt`、`common/inline_scripts/game_start/origin_clone_army.txt`、`common/special_projects/00_projects_3.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 
 ## 如何开始 How it starts
 
@@ -29,6 +26,8 @@ Start setup (hidden clones.1-3) fixes the clone population rules; 1095 (+0-720) 
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：`events/clone_army_events.txt`、`common/inline_scripts/game_start/origin_clone_army.txt`、`common/special_projects/00_projects_3.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：clones.1–30 全部事件、遗址与项目钩子。 All events clones.1-30, the site and project hooks.
 - 更正 Corrections：补充互斥组、并列项目与结局标注。 Added the exclusive group, the parallel projects and endings.
 - 不确定 Uncertain：DLC 归属未核对。 DLC attribution not checked.

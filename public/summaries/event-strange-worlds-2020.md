@@ -1,6 +1,6 @@
 # 致命变异 / Fatal Mutations
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/strange_worlds_events.txt:2883-3023; common/on_actions/00_on_actions.txt:2739 on_tech_increased · DLC: BioGenesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -16,10 +16,10 @@ strange_worlds.2030 "Fatal Mutations": a society research reward; every organic 
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/strange_worlds_events.txt:2883-3023; common/on_actions/00_on_actions.txt:2739 on_tech_increased
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

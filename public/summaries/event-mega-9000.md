@@ -1,6 +1,6 @@
 # 巨型艺术设施 / Mega Art Installation
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/megastructure_events_1.txt、common/megastructures/08_mega_art_installation.txt、common/on_actions/00_on_actions.txt（on_megastructure_built / on_megastructure_upgraded / on_entering_system_first_time）· DLC：Megacorp（按本地化文件名）· 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -30,6 +30,7 @@ You place and start a Mega Art Installation inside your borders (common/megastru
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：events/megastructure_events_1.txt、common/megastructures/08_mega_art_installation.txt、common/on_actions/00_on_actions.txt（on_megastructure_built / on_megastructure_upgraded / on_entering_system_first_time）· DLC：Megacorp（按本地化文件名）· 审阅 Reviewed 2026-10-13
 - 已核对 Checked：common/megastructures/08_mega_art_installation.txt 各阶段 on_build_complete，common/on_actions/00_on_actions.txt 的 on_megastructure_* 与 on_entering_system_first_time 列表，events/megastructure_events_1.txt 中各事件的 trigger/option。
 - 更正 Corrections：原先每个阶段、通知与废墟事件各自成为一个单页故事；现合并为同一巨型结构的故事，阶段按建造顺序连接。 Previously every stage, notice and ruin event was its own one-card story; they are merged and ordered by construction.
 - 不确定 Uncertain：废墟如何被放置（星系初始化器/事件的星标记）未逐一追踪。 How ruins are placed on the map (system initializers / star flags) was not traced one by one.

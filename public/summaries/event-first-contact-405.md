@@ -1,7 +1,5 @@
 # 明显的敌意 / Apparent Hostility
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件「明显的敌意」first_contact.400）
-- 来源 Sources：`events/first_contact_events.txt:6137–6432` · `common/first_contact/00_first_contact.txt:529–565, 1857–1972`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -25,5 +23,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:6137–6432` · `common/first_contact/00_first_contact.txt:529–565, 1857–1972`
 - 已核对 Checked：400–411 与 500 的调用、default_apparent_hostility_* 四个阶段、第二阶段条目。
 - 审阅改动 Changes：原 405 篇只含 405/406；现并入 400、410、411 并连接阶段。/ The old story held only 405/406; 400, 410 and 411 are now included with stage bridges. 500/505 are kept in the Monstrous Noises story (shared helper).

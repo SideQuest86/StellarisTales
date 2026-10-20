@@ -1,11 +1,7 @@
 # 奥伏戎 / Ouw'ron
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`common/on_actions/00_on_actions.txt:428 (on_yearly_pulse_country → shroud.12000)`; `events/shroud_events.txt:18696-18838 (12000)`; `events/shroud_events.txt:18840-19560 (12010-12060)`; `events/shroud_events.txt:19201-19352 (12045)`; `events/shroud_events.txt:19707-19760 (12130)`; `common/script_values/07_script_values_shroud.txt (calc_patron_paragon_roll_chance)`; `common/scripted_variables/09_scripted_variables_shroud.txt:255`; `common/traits/17_shroud_leader_traits.txt:452-500`
 - DLC：Shadows of the Shroud
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ Ouw'ron's text differs if we have a blinded leader; Koborok'Ra has two opening v
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`common/on_actions/00_on_actions.txt:428 (on_yearly_pulse_country → shroud.12000)`; `events/shroud_events.txt:18696-18838 (12000)`; `events/shroud_events.txt:18840-19560 (12010-12060)`; `events/shroud_events.txt:19201-19352 (12045)`; `events/shroud_events.txt:19707-19760 (12130)`; `common/script_values/07_script_values_shroud.txt (calc_patron_paragon_roll_chance)`; `common/scripted_variables/09_scripted_variables_shroud.txt:255`; `common/traits/17_shroud_leader_traits.txt:452-500`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了 12000 的分支：它不是 if/else 链，而是五个独立的 if，每个成功后 break，因此一年至多一位；编译草稿中的条件组即为互斥组。修正：把仅由克罗南触发的 event-shroud-12130（12045）并入本故事并以条件连接接到“招募”之后。12155 与轮回之终末故事共享。
 
 Checked the branching of 12000: not an if/else chain but five independent ifs, each with break on success, so at most one leader per year; the draft condition group is the exclusive group. Correction: event-shroud-12130 (12045), triggered only by Kronen, is merged here and linked after "Enlist". 12155 is shared with the End of the Cycle story.

@@ -1,5 +1,6 @@
-// Browser check of the 2026-10 chrome refinement: site name, brand, museum entry inside the top navigation,
-// fonts in use, layout shift during font loading, and screenshots (archive, reader, guide box, museum, playlist)
+// Browser check of the 2026-10 chrome refinement: site name, brand, museum entry inside the top navigation (opens by
+// click and keyboard, survives a reopen during its closing fade), fonts in use, layout shift during font loading, and
+// screenshots (archive, reader, guide box, museum, playlist)
 // at 1600x1000 and 390x844 in both languages. Requires a preview (scripts/serve.mjs --dist) and
 // STELLARIS_PLAYWRIGHT_PATH. Headless by default; HEADED=1 opens windows (use STELLARIS_WINDOW_POSITION=-1900,20).
 // Writes verification/refine/chrome-*.png.
@@ -16,9 +17,11 @@ const browser = await chromium.launch({ channel: "chrome", headless: !headed, ar
 const step = (name, detail = "") => console.log("OK", name, detail);
 const errors = [];
 const viewports = { desktop: { width: 1600, height: 1000 }, phone: { width: 390, height: 844 } };
+let at = "";
 try {
   for (const [vname, viewport] of Object.entries(viewports)) {
     for (const lang of ["zh", "en"]) {
+      at = `${vname}-${lang}`;
       const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1, hasTouch: vname === "phone" });
       const page = await ctx.newPage();
       page.on("pageerror", (e) => errors.push(`${vname}/${lang}: ${e.message}`));
@@ -86,6 +89,20 @@ try {
       step(`${tag}: museum opens by click and by keyboard`);
       await page.evaluate(() => (location.hash = ""));
       await page.waitForFunction(() => !document.body.classList.contains("museum-open"), null, { timeout: 8000 });
+      // reopened during the closing fade (just after the close above, and as a keyboard user does: Escape returns focus
+      // to the entry, Enter at once): the fade must not hide the museum that opened again, and it closes again
+      await page.locator("#museum-open").focus();
+      await page.keyboard.press("Enter");
+      await page.waitForFunction(() => document.body.classList.contains("museum-open"), null, { timeout: 15000 });
+      await page.keyboard.press("Escape");
+      assert.equal(await page.evaluate(() => document.activeElement?.id), "museum-open", "Escape returns focus to the museum entry");
+      await page.keyboard.press("Enter");
+      await page.waitForFunction(() => document.body.classList.contains("museum-open"), null, { timeout: 15000 });
+      await page.waitForTimeout(500);
+      assert.equal(await page.evaluate(() => document.querySelector("#museum").hidden), false, "museum reopened during its closing fade stays shown");
+      await page.evaluate(() => (location.hash = ""));
+      await page.waitForFunction(() => !document.body.classList.contains("museum-open"), null, { timeout: 8000 });
+      step(`${tag}: museum reopened right after closing`);
       // language switch keeps the entry and its handler
       await page.locator("#language").click();
       await page.waitForTimeout(500);
@@ -126,6 +143,9 @@ try {
   }
   assert.deepEqual(errors, [], errors.join("\n"));
   console.log("PASS verify-refine-chrome");
+} catch (e) {
+  console.error(`FAIL verify-refine-chrome at ${at}`);
+  throw e;
 } finally {
   await browser.close();
 }

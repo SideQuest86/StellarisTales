@@ -1,7 +1,5 @@
 # 支票就位！ / Ready Your Checkbooks!
 - 分类 Category：文明纪事 Society (C7) · 联邦领袖挑战 federation leadership challenge
-- 来源 Sources：`events/federations_election_events.txt:2962-3600` · `common/federation_laws/13_challenge_type.txt:202-318` · `common/on_actions/00_on_actions.txt:3560-3568`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,5 +21,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/federations_election_events.txt:2962-3600` · `common/federation_laws/13_challenge_type.txt:202-318` · `common/on_actions/00_on_actions.txt:3560-3568`
 - 已核对 Checked：根事件 900、899–906 脚本。/ Root 900 and scripts 899–906.
 - 审阅改动 Changes：结构与草稿一致；补充了触发与出价规则。/ Matches the draft; trigger and bidding rule added.

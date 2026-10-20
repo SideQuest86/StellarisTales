@@ -1,7 +1,5 @@
 # 审讯完毕 / Interrogations Complete
 - 分类 Category：文明纪事 Society (C7) · 首次接触：对方完成接触后的通知 reverse-contact notice
-- 来源 Sources：`events/first_contact_events.txt:8194-8286` · `common/scripted_effects/first_contact_effects.txt:167-215` · `common/first_contact/00_first_contact.txt:1325-1425`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:8194-8286` · `common/scripted_effects/first_contact_effects.txt:167-215` · `common/first_contact/00_first_contact.txt:1325-1425`
 - 已核对 Checked：脚本、finish_first_contact_effect 的反向分支、对应的敌对收尾阶段。/ Script, the reverse branch of finish_first_contact_effect and the matching hostile end stage.
 - 审阅改动 Changes：无结构改动；此事件是 event-first-contact-250 篇中 285 审讯完成 的“对方先通话”版本。/ It is the “other side talked first” version of 285 审讯完成 in the event-first-contact-250 story.

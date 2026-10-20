@@ -1,6 +1,6 @@
 # 相互毁灭 / Mutual Assured Destruction
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/unique_system_events.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -12,12 +12,12 @@ on_entering_system_first_time（common/on_actions/00_on_actions.txt:939）触发
 
 ## 分支与结局 Branches and outcomes
 
-- 无。
-
 ## 条件与文明差异 Conditions and variants
 
 - 每个国家首次进入。
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/unique_system_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：unique.130。

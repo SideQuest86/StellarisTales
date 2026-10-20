@@ -1,7 +1,6 @@
 # 坠毁的飞船 / Crashed Ship
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:8; events/anomaly_events_1.txt:259 (anomaly.35); events/anomaly_events_1.txt:470 (anomaly.65)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:8; events/anomaly_events_1.txt:259 (anomaly.35); events/anomaly_events_1.txt:470 (anomaly.65)
 已核对；编译树正确。
 
 Checked; the compiled tree is correct.

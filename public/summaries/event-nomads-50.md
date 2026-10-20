@@ -1,8 +1,5 @@
-# [GetStartingDrivePluralCap]启用 / [GetStartingDrivePluralCap] Engaged
-
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Nomads · 来源 Sources：`events/nomads_events_1.txt:1704-1812`、`common/event_chains/00_event_chains_nomads.txt:5-17`、`common/scripted_effects/01_start_of_game_effects.txt:188`、`common/scripted_effects/nomads_effects.txt:6170-6310`、`common/on_actions/00_on_actions.txt:779,1177,1259,1497` · 审阅 Reviewed 2026-10-13
+# 起始驱动启用 / Starting Drives Engaged
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Nomads
 
 ## 如何开始 How it starts
 
@@ -30,6 +27,9 @@ Only non-AI nomadic empires (nomads_events_1.txt:1737-1740).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/nomads_events_1.txt:1704-1812`、`common/event_chains/00_event_chains_nomads.txt:5-17`、`common/scripted_effects/01_start_of_game_effects.txt:188`、`common/scripted_effects/nomads_effects.txt:6170-6310`、`common/on_actions/00_on_actions.txt:779,1177,1259,1497`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 这些隐藏的完成事件不是可读文档，故未列入树。

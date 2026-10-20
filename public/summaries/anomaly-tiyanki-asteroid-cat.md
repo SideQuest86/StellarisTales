@@ -1,8 +1,6 @@
 # 活体小行星 / Living Asteroid
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:618-632` · `common/solar_system_initializers/hostile_system_initializers.txt:3300-3410 (hostile_init_21)` · `events/anomaly_events_4.txt:3875-3910 (7100)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:618-632` · `common/solar_system_initializers/hostile_system_initializers.txt:3300-3410 (hostile_init_21)` · `events/anomaly_events_4.txt:3875-3910 (7100)`
 - 已核对 Checked：类别、初始化器与7100。  
   Category, initializer and 7100.
 - 覆盖 Coverage：2 个文档全部核对 / all 2 docs checked.

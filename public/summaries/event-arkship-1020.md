@@ -1,6 +1,6 @@
 # 方舟被毁的通知 / A Grievous Loss (arkship destroyed)
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nomads_arkship_events.txt, common/on_actions/00_on_actions.txt, common/special_projects/06_projects_nomads.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -27,6 +27,8 @@ Hidden arkship.1020 runs when an arkship is disabled (on_ship_disabled) and bran
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nomads_arkship_events.txt, common/on_actions/00_on_actions.txt, common/special_projects/06_projects_nomads.txt
 - 已核对 Checked：1000/1005/1010/1015/1020/1021/1022/1025/1026/1027 的触发（nomads_arkship_events.txt:4708-5600）。
 - 局限 Scope：被劫掠分支（国策 arkship_raid_*）与恢复项目只作概述，没有可读事件文本；故事内的三个文档并列，因为它们是同一次击毁从不同视角看到的结果。
   The three docs are parallel: the same destruction seen from the victim, the attacker and the wreck.

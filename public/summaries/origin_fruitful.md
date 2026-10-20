@@ -1,9 +1,6 @@
 # 硕果协作 / Fruitful Partnership
 
-- 分类 Category：起源 Origins · DLC：Plantoids · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_5.txt:1-1300`、`common/special_projects/00_projects_plantoids.txt`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Plantoids
 
 ## 如何开始 How it starts
 
@@ -29,6 +26,9 @@ The scripted story is short; the rest are independent events fired by gameplay s
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_5.txt:1-1300`、`common/special_projects/00_projects_plantoids.txt`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.7000–7710 窗口与钩子。 Windows 7000-7710 and hooks.
 - 更正 Corrections：所有状态入口加标签，互斥组标注。 Entries labelled, exclusive groups marked.
 - 不确定 Uncertain：隐藏的种子机制事件仅读取了触发钩子。 Hidden seed mechanics read for hooks only.

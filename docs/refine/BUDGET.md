@@ -50,3 +50,11 @@ Stop rule: checkpoint at 67 % weekly (34 points), never exceed 73 % (40 points).
 Stop rule: checkpoint at 65 % weekly (25 points), never exceed 70 % (30 points). A weekly reset does not renew this budget: after 2026-10-20 08:00 the round total is (last pre-reset reading − 40) plus the post-reset reading.| 2026-10-18 ~22:25 | 42 % | 16 % | released v4.7.0 (59bada4d) and v4.7.1 (ece5d6e9) through the gated workflow; live checks passed. **Round-4 total: 2 points of 30** (shared account counted) |
 | 2026-10-19 ~00:35 | 42 % | 18 % | released v4.7.2 (57e503cc, compile-first archive start-up) and v4.7.3 (062253c3, early-Escape race); whole-catalogue layout sweep; every suite re-run live. **Round-4 total: 2 points of 30** |
 | 2026-10-19 ~01:15 | 43 % | 1 % (new window) | final benchmark matrix (desktop / DPR 2 / phone emulation / Edge), WebKit smoke 15/15 live, Firefox not startable here; CI green. **Round-4 total: 3 points of 30** |
+
+## Round 5 (2026-10-19, user: "We still got 57% to use, go ahead towards 90%") — open-ended improvement
+
+| When (UTC) | Weekly all-models | 5-hour | Note |
+| --- | ---: | ---: | --- |
+| 2026-10-19 18:37 | 43 % (resets 2026-10-20 08:00) | 4 % | start; target: stop by 90 % weekly. AI proofread pass (user choice) already running |
+| 2026-10-20 06:44 | 55 % (resets 2026-10-20 08:00) | 4 % (new window) | round-5 wave 1 integrated (proofread, guides, search, a11y, perf patch, reading memory, guide links); wave 2 running (fonts, models, effects residuals, phone and map audits); user: use the 5-hour window too |
+| 2026-10-20 07:50 | 58 % (resets 08:00) | ~16 % | v4.8.0 gated locally and pushed; work stopped before the weekly reset as asked. Round 5 used ~15 points of weekly allowance (43 % → ~58 %) |

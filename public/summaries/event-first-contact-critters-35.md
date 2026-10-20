@@ -1,7 +1,5 @@
 # 晶态实体 / Crystalline Entities
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（晶体 crystals_stage_1/2）
-- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:516–654` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:127–165` · `common/special_projects/00_projects_2.txt:530–560`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:516–654` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:127–165` · `common/special_projects/00_projects_2.txt:530–560`
 - 已核对 Checked：30、35、story.205/207、两个项目与阶段。/ Events, projects, stages.
 - 审阅改动 Changes：并 30 入 35 篇。/ 30 joined 35.

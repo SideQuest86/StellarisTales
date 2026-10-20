@@ -1,7 +1,6 @@
 # 天选民 / The Chosen
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/first_contact_dlc_events.txt:6491-6657`；`common/on_actions/00_on_actions.txt:765`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/first_contact_dlc_events.txt:6491-6657`；`common/on_actions/00_on_actions.txt:765`
 - 已核对：触发、通信与宣战效果、on_action 衔接。
   Checked: triggers, the comms and war effects, the on_action link.
 - 更正：3510 与 3515 原为两个孤立故事，现合并。

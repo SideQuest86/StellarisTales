@@ -1,6 +1,6 @@
 # 走私人口 / Smuggle Population
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/espionage_operation_types/operations.txt:690-768; events/biogenesis_events.txt:6419-7020 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ bio.915 text has four versions: by smuggled amount (over 4 means detected) and b
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/espionage_operation_types/operations.txt:690-768; events/biogenesis_events.txt:6419-7020
 - 修正：草稿把三个阶段事件列为三个并列入口；现按行动定义串成顺序阶段，标题改用行动名称。
   Correction: the draft listed the three stages as parallel entries; they now follow the operation's stage order, titled with the operation name.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

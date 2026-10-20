@@ -1,8 +1,6 @@
 # 星系热症 / Galactic Hyperthermia
 
-- 分类 Category: 天灾 Crisis · 来源 Sources: `events/infernals_crisis_events.txt`, `common/situations/13_infernal_situations.txt:689-862`, `common/crisis_levels/00_crisis_levels.txt:707-835`, `common/megastructures/22_galactic_crucible.txt`, `common/special_projects/00_projects_infernals.txt:1-48, 220-231` · 地狱（Infernals）DLC · 审阅 Reviewed 2026-10-13 (c5b-crisis)
-
-> 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
+- 分类 Category：天灾 Crisis
 
 ## 如何开始 How it starts
 
@@ -33,6 +31,9 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13 (c5b-crisis)
+- 来源 Sources：`events/infernals_crisis_events.txt`, `common/situations/13_infernal_situations.txt:689-862`, `common/crisis_levels/00_crisis_levels.txt:707-835`, `common/megastructures/22_galactic_crucible.txt`, `common/special_projects/00_projects_infernals.txt:1-48, 220-231` · 地狱（Infernals）DLC
+- 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
 - 将原先 8 个独立的 `event-infernals-*` 草稿合并为一个家族 `galactic-hyperthermia`；等级链用桥接（标记 + 熔炉阶段，行号见片段）连接，因为调用图看不见“危机等级 on_unlock”和“熔炉升级设置标记”。
 - 移除了 1055 经 `hyperthermia_galaxy_effect → destroy_machine_world` 到 `crisis.2037/2035/2046`、`observer.50` 的副作用连线。
 - 未映射：隐藏的熵晶体奖励事件（`infernals.2000-2020`）；倒计时的具体时间取决于占领的核心星系数。

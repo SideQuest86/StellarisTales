@@ -1,10 +1,6 @@
 # 行商联盟 / Caravansary Caravan Coalition
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/caravaneer_events.txt:12-330`; `events/caravaneer_events.txt:465-1290`; `events/caravaneer_events.txt:5639-5672`; `common/scripted_effects/caravaneer_scripted_effects.txt:1-8`; `common/on_actions/00_on_actions.txt:731-732`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -32,6 +28,9 @@ The main menu has three greeting texts plus variants for "entered from a fleet s
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/caravaneer_events.txt:12-330`; `events/caravaneer_events.txt:465-1290`; `events/caravaneer_events.txt:5639-5672`; `common/scripted_effects/caravaneer_scripted_effects.txt:1-8`; `common/on_actions/00_on_actions.txt:731-732`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了菜单脚本、价格、权重和 AI 访问条件；cara.101 并入本故事；行商币是内部变量 owned_cc_var。
 
 Menu script, prices, weights and the AI visit condition were checked; cara.101 is merged here; CaravanCoinz is the internal variable owned_cc_var.

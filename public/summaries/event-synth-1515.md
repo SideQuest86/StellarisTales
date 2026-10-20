@@ -1,7 +1,6 @@
 # 合成化社会 / Synthesized Society
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：events/machine_age_situation_events_2.txt:2644-2738
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -25,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/machine_age_situation_events_2.txt:2644-2738
 - 说明：这十个最终事件（cyber/synth 1505–1525）不在任何审阅者的分配列表中，作为连带内容一并审阅。
   Note: these ten final events (cyber/synth 1505-1525) are in no reviewer's assignment list and were reviewed as part of the same chains.
 - 已核对：触发条件、选项效果；编译树与脚本一致。

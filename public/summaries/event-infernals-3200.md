@@ -1,11 +1,7 @@
 # 熔融核心 / Molten Core
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/infernals_1_events.txt:6007-6060`; `common/on_actions/00_on_actions.txt:3725-3740 (on_colony_1_year_old: weight 20 each of a 510 list, with the Strange Worlds events)`
 - DLC：Infernals Species Pack
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -27,12 +23,11 @@ One of two.
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/infernals_1_events.txt:6007-6060`; `common/on_actions/00_on_actions.txt:3725-3740 (on_colony_1_year_old: weight 20 each of a 510 list, with the Strange Worlds events)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了触发池与两个选项。
 
 Trigger pool and both options were checked.

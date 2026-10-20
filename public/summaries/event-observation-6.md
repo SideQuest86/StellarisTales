@@ -1,7 +1,5 @@
 # 小行星被摧毁 / Asteroid Destroyed
 - 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:381-475` · `common/on_actions/00_on_actions.txt:1620`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:381-475` · `common/on_actions/00_on_actions.txt:1620`
 - 已核对 Checked：观察 6、7，以及 8/9 的调用。/ Observation.6 and callers.
 - 审阅改动 Changes：并未改动结构（三个入口事件为互斥条件）。/ No structural change; three exclusive entries.

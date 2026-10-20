@@ -1,8 +1,6 @@
 # 停泊 / Parked
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:947-963` · `events/anomaly_events_2.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:947-963` · `events/anomaly_events_2.txt`
 - 已对照3030原文。  
   Compared the original of 3030.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

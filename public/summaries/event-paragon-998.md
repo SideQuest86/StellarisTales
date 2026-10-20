@@ -1,6 +1,6 @@
 # 异质性倾向 / Idiosyncratic Tendencies
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/paragon_events.txt:4165-4800; common/on_actions/00_on_actions.txt (on_decade_pulse_country) · DLC: Paragon · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Paragon
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Paragon DLC; default country type.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/paragon_events.txt:4165-4800; common/on_actions/00_on_actions.txt (on_decade_pulse_country)
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

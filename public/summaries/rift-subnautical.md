@@ -1,8 +1,6 @@
 # 深海之下 / Subnautical
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:53`；`events/astral_rifts_0_events.txt:1943–2326`（500–537）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ Drawn by weight from the explorer's rift pool: weight 1. Because it can award th
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:53`；`events/astral_rifts_0_events.txt:1943–2326`（500–537）
 - 已核对：裂隙定义与遗珍锁定；500–537 每个事件的选项条件、难度修正与奖励。没有失败分支或延时后续；编译结构正确，补充互斥说明（515/516）与三个结局。
 - 不确定：505.b 在国家作用域检查 `has_aquatic_trait`，具体判定的物种（主物种）由引擎决定，未进一步核实。
 

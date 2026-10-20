@@ -1,7 +1,4 @@
-# 吞噬[Target.GetName] / Consume [Target.GetName]
-- 分类 Category：文明纪事 Society (C7) · 岩石蜂群情境 lithoid swarm situation
-- 来源 Sources：`common/situations/02_strategic_situations.txt:833-900` · `common/decisions/02_special_decisions.txt:1763` · `events/colony_events_3.txt (colony.185 / colony.190)`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 吞噬目标星球 / Consume the Target Planet- 分类 Category：文明纪事 Society (C7) · 岩石蜂群情境 lithoid swarm situation
 
 ## 如何开始 How it starts
 
@@ -22,6 +19,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`common/situations/02_strategic_situations.txt:833-900` · `common/decisions/02_special_decisions.txt:1763` · `events/colony_events_3.txt (colony.185 / colony.190)`
 - 已核对 Checked：情境定义、决定、colony.185/190、610 及后续事件的触发。/ Situation, decision and the triggers of 185/190/610 and follow-ups.
 - 审阅改动 Changes：结构与草稿一致。/ Matches the draft.
 - 不确定 Uncertain：610 之后的堕落帝国分支条件只按调用图读取。 / The Fallen Empire branches after 610 were read from the call graph.

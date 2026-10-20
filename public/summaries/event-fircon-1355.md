@@ -1,7 +1,6 @@
 # 无知会传染 / Ignorance is Contagious
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/first_contact_dlc_events.txt:2746-2918`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -33,5 +32,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/first_contact_dlc_events.txt:2746-2918`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）
 - 已核对：触发、思潮条件与延迟。
   Checked: trigger, ethic conditions and delays.

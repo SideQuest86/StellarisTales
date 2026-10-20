@@ -1,7 +1,6 @@
 # 聚集风暴 / Gather the Storm
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`common/situations/07_cosmic_storms_situations.txt:5-400`；`events/cosmic_storms_situation_events.txt:6-443`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,5 +28,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`common/situations/07_cosmic_storms_situations.txt:5-400`；`events/cosmic_storms_situation_events.txt:6-443`
 - 已核对：取向的潜在条件（potential）与标志、完成时的 if/else 链、中止条件。
   Checked: the approach potentials and flags, the completion if/else chain, the abort condition.

@@ -1,7 +1,6 @@
 # 恒星异常现象 / Unusual Star Stuff
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：events/anomaly_events_3.txt:815-925 (anomaly.4035, chain start; story anomaly-sun-rays-cat); events/anomaly_events_3.txt:925-1060 (anomaly.4036); common/on_actions/00_on_actions.txt:1023 (on_entering_system_fleet); events/anomaly_events_3.txt:1062 (anomaly.4037); events/failures.txt:456 (anomaly_failure.4037); common/special_projects/00_projects_3.txt:94 (ODD_STAR_PROJECT); events/anomaly_events_3.txt:1097 (anomaly.4038)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.4038's options are exclusive by the current power tech (fission / fusion
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：events/anomaly_events_3.txt:815-925 (anomaly.4035, chain start; story anomaly-sun-rays-cat); events/anomaly_events_3.txt:925-1060 (anomaly.4036); common/on_actions/00_on_actions.txt:1023 (on_entering_system_fleet); events/anomaly_events_3.txt:1062 (anomaly.4037); events/failures.txt:456 (anomaly_failure.4037); common/special_projects/00_projects_3.txt:94 (ODD_STAR_PROJECT); events/anomaly_events_3.txt:1097 (anomaly.4038)
 已核对 anomaly.4035–4038、anomaly_failure.4037、ODD_STAR_PROJECT 与 on_action 钩子（1023）。草稿把成功与落空拆成两个起点（anomaly.4037 的 p=0.40、anomaly_failure.4037 的 p=0.60）；实际是两个候选系统各自独立的判定，必定会找到一次。现合为一个以事件链“恒星异常现象”为起点的故事。
 
 Checked anomaly.4035-4038, anomaly_failure.4037, ODD_STAR_PROJECT and the on_action hook (1023). The draft showed success and miss as two entries (anomaly.4037 p=0.40, anomaly_failure.4037 p=0.60); in fact the two candidate systems roll independently and the star is always found once. They are now one story starting from the chain "Unusual Star Stuff".

@@ -1,8 +1,6 @@
 # 分析死亡的太空生物 / Analyze Dead Space Creatures
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/00_projects_1.txt:2-24` · `events/anomaly_events_2.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/00_projects_1.txt:2-24` · `events/anomaly_events_2.txt`
 - 全部文本检索只有项目定义与事件本身；可能是遗留内容。  
   Text search finds only the project definition and the event itself; probably legacy content.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

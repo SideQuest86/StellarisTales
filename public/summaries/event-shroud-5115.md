@@ -1,11 +1,7 @@
 # 天选 / The Chosen
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/shroud_events.txt:13879-13935`; `common/on_actions/00_on_actions.txt:5801-5817 (on_shroud_delve random 100)`
 - DLC：Shadows of the Shroud
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ The text is one of four by chosen patron (Composer/Eater/Cradle/Instrument); the
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`events/shroud_events.txt:13879-13935`; `common/on_actions/00_on_actions.txt:5801-5817 (on_shroud_delve random 100)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 标题原为脚本本地化 [GetChosenPatron]，改用开局事件 shroud.5105 的原标题“天选”。它是天选开局链的后续（跨故事）。
 
 The title is scripted localisation [GetChosenPatron]; the original title of the opening event shroud.5105 ("The Chosen") is used instead. It continues the Chosen opening chain (cross-story).

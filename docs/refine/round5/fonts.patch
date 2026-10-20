@@ -1,0 +1,333 @@
+diff --git a/index.html b/index.html
+--- a/index.html
++++ b/index.html
+@@ -13,23 +13,28 @@
+     <title>Stellaris Tales</title>
+     <link rel="icon" href="./public/mark.svg" />
+     <!--
+-      Fonts: Google Fonts serves unicode-range slices, so a page downloads only the
+-      CJK/Latin subsets it actually renders. The stylesheet is non-blocking (print →
+-      all swap): first paint uses metric-matched local fallbacks and never waits for a
+-      third-party host (it may be unreachable, e.g. in mainland China).
++      Fonts: the Chinese faces (Noto Serif SC 400/600, Noto Sans SC 400/500) are self-hosted subsets in public/fonts/
++      (scripts/fonts/build-subsets.py, SIL OFL, docs/refine/round5/fonts.md): three unicode-range tiers per face, so a page
++      fetches only the tiers whose characters it shows (swap: first paint uses metric-matched local fallbacks). fonts.css is
++      the only render-blocking font request and is local; the first tier of the faces a first paint uses is preloaded.
++      Newsreader (Latin, English reading text) still comes from Google Fonts, non-blocking (print → all swap): if that host
++      is unreachable (e.g. in mainland China) the page falls back to Georgia and loses nothing else.
+     -->
++    <link rel="preload" href="./public/fonts/noto-sans-sc-400-t1.woff2" as="font" type="font/woff2" crossorigin />
++    <link rel="preload" href="./public/fonts/noto-serif-sc-400-t1.woff2" as="font" type="font/woff2" crossorigin />
++    <link rel="stylesheet" href="./public/fonts/fonts.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+       rel="stylesheet"
+-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
++      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
+       media="print"
+       onload="this.media='all'"
+     />
+     <noscript
+       ><link
+         rel="stylesheet"
+-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
++        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
+     /></noscript>
+     <link rel="stylesheet" href="./src/style.css" />
+     <link rel="stylesheet" href="./src/reader-extras.css" />
+diff --git a/src/glyph-warmup.js b/src/glyph-warmup.js
+--- a/src/glyph-warmup.js
++++ b/src/glyph-warmup.js
+@@ -2,8 +2,8 @@
+ // 0.04 ms (font subset lookup, shaping, glyph metrics); later layouts of the same character are nearly free. A story's
+ // first chapter has hundreds of distinct characters, so opening the first story used to block one frame for 40–60 ms.
+ // During idle time this lays out the archive's most frequent characters (stories/glyphs.json, written by the
+-// compiler) in the reader's main faces, a few dozen characters per idle slice, after the matching font subsets have
+-// loaded. Skipped when the browser asks to save data.
++// compiler) in the reader's main faces, a few dozen characters per idle slice, after the matching font tiers have
++// loaded (public/fonts: tier 1 and 2 of a face cover exactly these characters). Skipped when the browser asks to save data.
+ const FACES = [
+   { font: "400 19px var(--serif-zh)", count: 3000 }, // narrative
+   { font: "400 17px var(--serif-zh)", count: 3000 }, // choices
+@@ -17,10 +17,10 @@
+   { font: "400 11px var(--sans)", count: 800 }, // story map: captions
+ ];
+ // ---------------------------------------------------------------------------------------------------------------
+-// Rare characters live in font slices the warm-up above does not fetch. A slice that arrives after the page was laid
+-// out re-lays out every text on the page ("fonts changed": a 40–70 ms frame, seen on 8 of 12 stories opened in a
+-// session), so the slices a story needs are requested before its first layout; openStory / goChapter wait for them
+-// for at most 150 ms, the story map for at most 600 ms (a slow link falls back to the usual swap).
++// Rare characters live in the third font tier, which the warm-up above does not fetch. A font file that arrives after the
++// page was laid out re-lays out every text on the page ("fonts changed": a 40–70 ms frame), so the tiers a story needs are
++// requested before its first layout; openStory / goChapter wait for them for at most 150 ms, the story map for at most
++// 600 ms (a slow link falls back to the usual swap).
+ /** The Chinese strings of a value ({zh, en} pairs anywhere inside), each cut to `max` characters. */
+ export function zhStrings(value, max = 400, out = [], depth = 0) {
+   if (!value || typeof value !== "object" || depth > 7) return out;
+@@ -114,12 +114,6 @@
+     setTimeout(poll, 400);
+   });
+ }
+-/** Resolves once the page knows the Noto web fonts (their @font-face rules are in), or after `maxMs`. */
+-async function fontsDeclared(maxMs = 10000) {
+-  const started = performance.now();
+-  const declared = () => { for (const face of document.fonts) if (face.family.includes("Noto Serif SC")) return true; return false; };
+-  while (!declared() && performance.now() - started < maxMs) await new Promise((resolve) => setTimeout(resolve, 100));
+-}
+ const idle = () => new Promise((resolve) => (window.requestIdleCallback ? requestIdleCallback(resolve, { timeout: 4000 }) : setTimeout(() => resolve(null), 120)));
+ 
+ /** `before` (optional, async): runs before the glyphs are laid out, e.g. to fetch the font slices the first story needs (a slice that arrives later resets the warmed state of its face). */
+@@ -128,10 +122,9 @@
+   if (connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || "")) return;
+   const slim = isConstrained();
+   if (slim) await networkQuiet(2500, 30000); // let covers finish first on slow links
+-  // The web-font stylesheet (Google Fonts, non-blocking) can arrive after this starts: document.fonts.load() then resolves at
+-  // once for a family that is not declared yet, and the glyphs would be laid out in a system fallback instead of the web font
+-  // (measured: the first two faces were warmed in SimSun, so the first real chapter still paid ~30 ms of first-use costs).
+-  await fontsDeclared();
++  // The Noto @font-face rules are in public/fonts/fonts.css, a render-blocking stylesheet: they are declared before this module
++  // runs, so document.fonts.load() always finds the family. (With the former non-blocking Google stylesheet it could resolve at
++  // once for an undeclared family and the first faces were warmed in a system fallback, ~30 ms of first-use costs paid later.)
+   let glyphs;
+   try {
+     glyphs = (await load("stories/glyphs.json")).zh || "";
+diff --git a/docs/FONTS.md b/docs/FONTS.md
+--- a/docs/FONTS.md
++++ b/docs/FONTS.md
+@@ -1,17 +1,17 @@
+-﻿# Fonts
+-
+-All fonts load from Google Fonts CSS (unicode-range slices, `display=swap`, non-blocking `media=print` swap in index.html). No font files are stored in the repo.
+-
+-| Role | Font | Licence | Source | Where used |
+-|---|---|---|---|---|
+-| Title + body, English | Newsreader (variable, opsz 6-72, 400/500/600, italic 400) | SIL OFL 1.1 | https://fonts.google.com/specimen/Newsreader | `--font-title`, `--font-body` when `lang=en`: brand, headings, reader text, guides, museum, playlist, search |
+-| Title + body, Chinese | Noto Serif SC (400/600) | SIL OFL 1.1 | https://fonts.google.com/noto/specimen/Noto+Serif+SC | `--font-title`, `--font-body` when `lang=zh` |
+-| UI, both languages | Noto Sans SC (400/500) | SIL OFL 1.1 | https://fonts.google.com/noto/specimen/Noto+Sans+SC | `--font-ui`: nav, buttons, labels, numbers |
+-
+-Replaced: Source Serif 4 (OFL), dropped in favour of Newsreader (calmer, sharper humanist serif at reading sizes).
+-
+-Anthropic Serif: a web search found no public licence for third-party web use; it is treated as proprietary and not used.
+-
+-Fallbacks: `ST Serif Fallback` (Georgia, size-adjust 92%, measured Newsreader/Georgia = 0.917 at 19px) and `ST Sans Fallback` (Segoe UI/Helvetica/Arial, size-adjust 104%, measured Noto Sans SC/Segoe UI = 1.043). Measured layout shift while fonts load: 0.002-0.005 (limit 0.02).
+-
++﻿# Fonts
++
++The Chinese faces (Noto Serif SC 400/600, Noto Sans SC 400/500) are self-hosted: subset woff2 files in `public/fonts/` (2.66 MB in 12 files, three disjoint `unicode-range` tiers per face, `font-display: swap`), declared in `public/fonts/fonts.css` (linked from index.html) and built by `scripts/fonts/build-subsets.py` (sources, hashes and measurements: docs/refine/round5/fonts.md; licence texts: `public/fonts/OFL.txt`). Newsreader (English) still loads from Google Fonts CSS (non-blocking `media=print` swap in index.html).
++
++| Role | Font | Licence | Source | Where used |
++|---|---|---|---|---|
++| Title + body, English | Newsreader (variable, opsz 6-72, 400/500/600, italic 400) | SIL OFL 1.1 | https://fonts.google.com/specimen/Newsreader | `--font-title`, `--font-body` when `lang=en`: brand, headings, reader text, guides, museum, playlist, search |
++| Title + body, Chinese | Noto Serif SC (400/600), self-hosted subset | SIL OFL 1.1 | https://github.com/google/fonts/tree/main/ofl/notoserifsc | `--font-title`, `--font-body` when `lang=zh` |
++| UI, both languages | Noto Sans SC (400/500), self-hosted subset | SIL OFL 1.1 | https://github.com/google/fonts/tree/main/ofl/notosanssc | `--font-ui`: nav, buttons, labels, numbers |
++
++Replaced: Source Serif 4 (OFL), dropped in favour of Newsreader (calmer, sharper humanist serif at reading sizes).
++
++Anthropic Serif: a web search found no public licence for third-party web use; it is treated as proprietary and not used.
++
++Fallbacks: `ST Serif Fallback` (Georgia, size-adjust 92%, measured Newsreader/Georgia = 0.917 at 19px) and `ST Sans Fallback` (Segoe UI/Helvetica/Arial, size-adjust 104%, measured Noto Sans SC/Segoe UI = 1.043). Measured layout shift while fonts load: 0.002-0.005 (limit 0.02).
++
+ Measure: `--measure` 36em ZH (about 35 CJK characters), 29em EN (about 70 characters), applied to reader paragraphs and dialogue. Line height 1.9 ZH / 1.64 EN.
+diff --git a/docs/IMAGES.md b/docs/IMAGES.md
+--- a/docs/IMAGES.md
++++ b/docs/IMAGES.md
+@@ -1,95 +1,95 @@
+-# Images: super-resolution derivatives
+-
+-Event pictures and museum icons ship at the game's native size. For sharp close-ups on high-DPI screens there are
+-**derivative** HD copies produced locally and offline (no service, no upload of game art). Originals are never modified.
+-Rollback: delete `public/art-hd/` and `public/museum/img-hd/`, and revert the two `<img>` markups (app.js `chapter-art`,
+-museum.js `museum-stage-image`).
+-
+-## Model choice
+-
+-| Model | Code licence | Weight licence / source | sha256 | Verdict |
+-|---|---|---|---|---|
+-| **Real-ESRGAN x4plus** | BSD-3-Clause (xinntao/Real-ESRGAN) | BSD-3 release asset `RealESRGAN_x4plus.pth` | 4fa0d38905f75aa... see below | **chosen** |
+-| realesr-general-x4v3 | BSD-3-Clause | release v0.2.5.0 asset | 8dc7edb9ac80cccc... (full below) | compared; adds grit/noise-like texture |
+-| SwinIR-M real-world x4 GAN | Apache-2.0 (JingyunLiang/SwinIR) | release v0.0 asset | b9afb61e65e04eb7... | compared; near-identical, 10x slower, tiling needed |
+-| HAT / DAT | Apache-2.0 | weights hosted on Drive/HF, not fetched | n/a | not evaluated (heavier, no clear gain expected for 450x150 art) |
+-| OpenModelDB community 4x models | mixed (many CC-BY-NC or unstated) | varies | n/a | **rejected**: non-commercial or unclear terms |
+-
+-Licences are as stated in each project's LICENSE file at the time of writing (not re-checked online this session).
+-Full hashes (weights live outside the repo in `D:/Saving/Living/CodexProjects/st-tools/weights/`):
+-
+-- RealESRGAN_x4plus.pth `4FA0D38905F75AC06EB49A7951B426670021BE3018265FD191D2125DF9D682F1`
+-  (https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth)
+-- realesr-general-x4v3.pth `8DC7EDB9AC80CCDC30C3A5DCA6616509367F05FBC184AD95B731F05BECE96292`
+-  (https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesr-general-x4v3.pth)
+-- 003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth `B9AFB61E65E04EB7F8ABA5095D070BBE9AF28DF76ACD0C9405AEB33B814BCFC6`
+-  (https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth)
+-
+-### Comparison (verification/images/, `scripts/images/compare.py`)
+-
+-Seven art pictures (dark, high-edge "text-like" ornament, bright, median, two 828x358 origin pictures, one 220x115) and four
+-transparent specimen icons on dark and light backgrounds; each against Lanczos x2/x3, with 6x nearest-neighbour crops.
+-All three SR models keep composition and colour. Lanczos is visibly soft. realesr-general-x4v3 sharpens most but adds
+-crunchy grain in dark gradients; SwinIR is equal to x4plus visually but slow. **x4plus** gives clean edges, smooth dark
+-gradients (no banding or invented noise) and the most faithful flat painterly shading, so it was chosen.
+-
+-## Pipeline (`scripts/images/`)
+-
+-`sr_lib.py` (model load via spandrel, RGBA handling), `compare.py`, `batch.py`, `measure.mjs`. Run with the st-tools venv:
+-`../st-tools/venv/Scripts/python.exe -I scripts/images/batch.py [art|icons]`.
+-Event art: x4 SR, then area-downscale to x2, WebP q82 method 6. Icons: transparent pixels get the nearest opaque colour
+-before SR (no halo), x4 then area-downscale to x3 (300x300), alpha taken from the original and Lanczos-resized, WebP q88
+-with lossless alpha. Manifests with source, game source, model, settings, sha256: `public/art-hd/manifest.json`,
+-`public/museum/img-hd/manifest.json`.
+-
+-## Delivery
+-
+-- Reader chapter art (shown on narrow screens only): `srcset="art/x.webp 1x, art-hd/x.webp 2x"`, `loading="lazy"`.
+-  Phones at DPR 1 keep the original.
+-- Museum detail image (200 CSS px): HD icon (300 px) as `src`.
+-- The 3D archive texture atlas (`src/cover-atlas.js`) keeps using the small originals (bounded GPU memory); it is unchanged.
+-
+-Measured (headless Chrome, 390 px phone for the reader): opening one story at DPR 1 transfers the originals only; at DPR 2/3 it
+-adds one HD file, 13.9 KB. Opening one exhibit adds 13.1 KB (HD icon). Whole-set added size: art-hd 13.9 MB (618 files,
+-max 65.8 KB, mean 22.5 KB), img-hd 5.2 MB (258 files, max 144 KB), fetched only on demand.
+-
+-## Coverage
+-
+-| Group | Count | Processed | Note |
+-|---|---|---|---|
+-| `public/art/*.webp` event pictures (559 450x150, 53 220x115, 6 828x358) | 618 | 618 -> x2 | the coordinator survey said 623; 618 files exist |
+-| `public/museum/img/*.webp` icons 100x100 RGBA | 258 | 258 -> x3 | |
+-| `public/museum/ui/*` game textures | 5 | 0 | UI chrome, not shown large |
+-| `public/music/cover.webp` 600x600 | 1 | 0 | already large enough |
+-| `public/mark.svg` | 1 | 0 | vector |
+-
+-## Licences by asset class
+-
+-| Asset class | Source | Licence / basis | Notes |
+-| --- | --- | --- | --- |
+-| Event pictures, specimen icons, museum UI textures, album cover | Stellaris game files (Paradox Interactive), read-only local installation | Paradox content, shown unmodified as in the rest of this fan archive; derivatives are resolution changes only | originals kept in `public/art`, `public/museum/img` |
+-| Super-resolved derivatives (`public/art-hd`, `public/museum/img-hd`) | produced locally by `scripts/images/batch.py` | same basis as the originals; tool: Real-ESRGAN code BSD-3-Clause, weights BSD-3 (sha256 in this file) | no upload, no paid service |
+-| 3D specimen models (`public/museum/models`) | generated locally (Zero123++ Apache-2.0, Hunyuan3D-2mv Tencent community licence) | unofficial interpretations authorised by the user; `licenceNote` per model in the manifest | see docs/museum/MODELS.md |
+-| Fonts | Google Fonts (Newsreader, Noto Serif SC, Noto Sans SC) | SIL Open Font License 1.1 | see docs/FONTS.md |
+-| `public/mark.svg` | drawn for this site | project's own | vector, never upscaled |
+-
+-## Reproducibility and rollback (verified 2026-10-15)
+-
+-- Re-running `python scripts/images/batch.py icons` (st-tools venv, RTX 5070, 383 s) reproduced all 258 icons and the
+-  manifest byte-for-byte (no changes in git).
+-- Rollback: `scripts/verify-rollback.mjs` against a build without `art-hd/` and `museum/img-hd/` — desktop close-up,
+-  DPR-2 phone `srcset` and museum detail all fall back to the originals, 0 page errors (the museum image has an
++# Images: super-resolution derivatives
++
++Event pictures and museum icons ship at the game's native size. For sharp close-ups on high-DPI screens there are
++**derivative** HD copies produced locally and offline (no service, no upload of game art). Originals are never modified.
++Rollback: delete `public/art-hd/` and `public/museum/img-hd/`, and revert the two `<img>` markups (app.js `chapter-art`,
++museum.js `museum-stage-image`).
++
++## Model choice
++
++| Model | Code licence | Weight licence / source | sha256 | Verdict |
++|---|---|---|---|---|
++| **Real-ESRGAN x4plus** | BSD-3-Clause (xinntao/Real-ESRGAN) | BSD-3 release asset `RealESRGAN_x4plus.pth` | 4fa0d38905f75aa... see below | **chosen** |
++| realesr-general-x4v3 | BSD-3-Clause | release v0.2.5.0 asset | 8dc7edb9ac80cccc... (full below) | compared; adds grit/noise-like texture |
++| SwinIR-M real-world x4 GAN | Apache-2.0 (JingyunLiang/SwinIR) | release v0.0 asset | b9afb61e65e04eb7... | compared; near-identical, 10x slower, tiling needed |
++| HAT / DAT | Apache-2.0 | weights hosted on Drive/HF, not fetched | n/a | not evaluated (heavier, no clear gain expected for 450x150 art) |
++| OpenModelDB community 4x models | mixed (many CC-BY-NC or unstated) | varies | n/a | **rejected**: non-commercial or unclear terms |
++
++Licences are as stated in each project's LICENSE file at the time of writing (not re-checked online this session).
++Full hashes (weights live outside the repo in `D:/Saving/Living/CodexProjects/st-tools/weights/`):
++
++- RealESRGAN_x4plus.pth `4FA0D38905F75AC06EB49A7951B426670021BE3018265FD191D2125DF9D682F1`
++  (https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth)
++- realesr-general-x4v3.pth `8DC7EDB9AC80CCDC30C3A5DCA6616509367F05FBC184AD95B731F05BECE96292`
++  (https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesr-general-x4v3.pth)
++- 003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth `B9AFB61E65E04EB7F8ABA5095D070BBE9AF28DF76ACD0C9405AEB33B814BCFC6`
++  (https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth)
++
++### Comparison (verification/images/, `scripts/images/compare.py`)
++
++Seven art pictures (dark, high-edge "text-like" ornament, bright, median, two 828x358 origin pictures, one 220x115) and four
++transparent specimen icons on dark and light backgrounds; each against Lanczos x2/x3, with 6x nearest-neighbour crops.
++All three SR models keep composition and colour. Lanczos is visibly soft. realesr-general-x4v3 sharpens most but adds
++crunchy grain in dark gradients; SwinIR is equal to x4plus visually but slow. **x4plus** gives clean edges, smooth dark
++gradients (no banding or invented noise) and the most faithful flat painterly shading, so it was chosen.
++
++## Pipeline (`scripts/images/`)
++
++`sr_lib.py` (model load via spandrel, RGBA handling), `compare.py`, `batch.py`, `measure.mjs`. Run with the st-tools venv:
++`../st-tools/venv/Scripts/python.exe -I scripts/images/batch.py [art|icons]`.
++Event art: x4 SR, then area-downscale to x2, WebP q82 method 6. Icons: transparent pixels get the nearest opaque colour
++before SR (no halo), x4 then area-downscale to x3 (300x300), alpha taken from the original and Lanczos-resized, WebP q88
++with lossless alpha. Manifests with source, game source, model, settings, sha256: `public/art-hd/manifest.json`,
++`public/museum/img-hd/manifest.json`.
++
++## Delivery
++
++- Reader chapter art (shown on narrow screens only): `srcset="art/x.webp 1x, art-hd/x.webp 2x"`, `loading="lazy"`.
++  Phones at DPR 1 keep the original.
++- Museum detail image (200 CSS px): HD icon (300 px) as `src`.
++- The 3D archive texture atlas (`src/cover-atlas.js`) keeps using the small originals (bounded GPU memory); it is unchanged.
++
++Measured (headless Chrome, 390 px phone for the reader): opening one story at DPR 1 transfers the originals only; at DPR 2/3 it
++adds one HD file, 13.9 KB. Opening one exhibit adds 13.1 KB (HD icon). Whole-set added size: art-hd 13.9 MB (618 files,
++max 65.8 KB, mean 22.5 KB), img-hd 5.2 MB (258 files, max 144 KB), fetched only on demand.
++
++## Coverage
++
++| Group | Count | Processed | Note |
++|---|---|---|---|
++| `public/art/*.webp` event pictures (559 450x150, 53 220x115, 6 828x358) | 618 | 618 -> x2 | the coordinator survey said 623; 618 files exist |
++| `public/museum/img/*.webp` icons 100x100 RGBA | 258 | 258 -> x3 | |
++| `public/museum/ui/*` game textures | 5 | 0 | UI chrome, not shown large |
++| `public/music/cover.webp` 600x600 | 1 | 0 | already large enough |
++| `public/mark.svg` | 1 | 0 | vector |
++
++## Licences by asset class
++
++| Asset class | Source | Licence / basis | Notes |
++| --- | --- | --- | --- |
++| Event pictures, specimen icons, museum UI textures, album cover | Stellaris game files (Paradox Interactive), read-only local installation | Paradox content, shown unmodified as in the rest of this fan archive; derivatives are resolution changes only | originals kept in `public/art`, `public/museum/img` |
++| Super-resolved derivatives (`public/art-hd`, `public/museum/img-hd`) | produced locally by `scripts/images/batch.py` | same basis as the originals; tool: Real-ESRGAN code BSD-3-Clause, weights BSD-3 (sha256 in this file) | no upload, no paid service |
++| 3D specimen models (`public/museum/models`) | generated locally (Zero123++ Apache-2.0, Hunyuan3D-2mv Tencent community licence) | unofficial interpretations authorised by the user; `licenceNote` per model in the manifest | see docs/museum/MODELS.md |
++| Fonts | Newsreader (Google Fonts CSS); Noto Serif SC, Noto Sans SC (self-hosted subsets in `public/fonts`, OFL.txt next to them) | SIL Open Font License 1.1 | see docs/FONTS.md, docs/refine/round5/fonts.md |
++| `public/mark.svg` | drawn for this site | project's own | vector, never upscaled |
++
++## Reproducibility and rollback (verified 2026-10-15)
++
++- Re-running `python scripts/images/batch.py icons` (st-tools venv, RTX 5070, 383 s) reproduced all 258 icons and the
++  manifest byte-for-byte (no changes in git).
++- Rollback: `scripts/verify-rollback.mjs` against a build without `art-hd/` and `museum/img-hd/` — desktop close-up,
++  DPR-2 phone `srcset` and museum detail all fall back to the originals, 0 page errors (the museum image has an
+   `onerror` fallback to the original; the close-up canvas falls back in `archive-scene.js`).
+-
+-## Licence files checked at the source (2026-10-15)
+-
+-| Component | LICENSE fetched from | Result |
+-| --- | --- | --- |
+-| Real-ESRGAN (code; weights released under it) | raw.githubusercontent.com/xinntao/Real-ESRGAN/master/LICENSE | BSD 3-Clause, © 2021 Xintao Wang |
+-| Newsreader | raw.githubusercontent.com/google/fonts/main/ofl/newsreader/OFL.txt | SIL OFL 1.1, © The Newsreader Project Authors |
+-| Noto Serif SC | raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/OFL.txt | SIL OFL 1.1, © 2012 Google Inc. |
+-| Noto Sans SC | raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt | SIL OFL 1.1, © 2014–2021 Adobe (Reserved Font Name "Source") |
+-| gltfpack / meshoptimizer (3D model compression) | raw.githubusercontent.com/zeux/meshoptimizer/master/LICENSE.md | MIT, © Arseny Kapoulkine |
+-
+-Game-derived images keep Paradox Interactive's ownership (the archive's existing basis); no third-party image
++
++## Licence files checked at the source (2026-10-15)
++
++| Component | LICENSE fetched from | Result |
++| --- | --- | --- |
++| Real-ESRGAN (code; weights released under it) | raw.githubusercontent.com/xinntao/Real-ESRGAN/master/LICENSE | BSD 3-Clause, © 2021 Xintao Wang |
++| Newsreader | raw.githubusercontent.com/google/fonts/main/ofl/newsreader/OFL.txt | SIL OFL 1.1, © The Newsreader Project Authors |
++| Noto Serif SC | raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/OFL.txt | SIL OFL 1.1, © 2012 Google Inc. |
++| Noto Sans SC | raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt | SIL OFL 1.1, © 2014–2021 Adobe (Reserved Font Name "Source") |
++| gltfpack / meshoptimizer (3D model compression) | raw.githubusercontent.com/zeux/meshoptimizer/master/LICENSE.md | MIT, © Arseny Kapoulkine |
++
++Game-derived images keep Paradox Interactive's ownership (the archive's existing basis); no third-party image
+ assets are used.
+diff --git a/public/THIRD_PARTY_NOTICES.txt b/public/THIRD_PARTY_NOTICES.txt
+--- a/public/THIRD_PARTY_NOTICES.txt
++++ b/public/THIRD_PARTY_NOTICES.txt
+@@ -24,4 +24,6 @@
+ 
+ Three.js is distributed under MIT; see vendor/THREE-LICENSE.txt in the built website.
+ 
++Noto Serif SC and Noto Sans SC are included as subsets (fonts/*.woff2) under the SIL Open Font License 1.1; see fonts/OFL.txt in the built website.
++
+ Stellaris text, art, audio and trademarks belong to their respective rights holders. This unofficial project is not affiliated with Paradox Interactive.

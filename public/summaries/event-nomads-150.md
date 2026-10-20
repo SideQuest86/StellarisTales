@@ -1,6 +1,6 @@
 # 太空城邦：冠军之铸现场秀！ / Enclave: Champion's Forge Live!
 
-- 分类 Category: C6 巨兽与城邦 / C6 Leviathans and enclaves · 来源 Sources: events/nomads_events_1.txt:2382-3700; events/nomads_events_1.txt:8108-9310; common/on_actions/00_on_actions.txt:724,4010-4014,1754,1697,843,1176; common/scripted_effects/nomads_effects.txt:592,647 · DLC: Nomads (has_nomads_dlc) · 审阅 Reviewed 2026-10-12
+- 分类 Category：C6 巨兽与城邦 / C6 Leviathans and enclaves · DLC: Nomads (has_nomads_dlc)
 
 ## 如何开始 How it starts
 
@@ -33,6 +33,8 @@ Fanatic Purifiers only get the "Xeno scum" reply; the contact text depends on wh
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/nomads_events_1.txt:2382-3700; events/nomads_events_1.txt:8108-9310; common/on_actions/00_on_actions.txt:724,4010-4014,1754,1697,843,1176; common/scripted_effects/nomads_effects.txt:592,647
 - 修正：草稿把联络菜单、比武开幕/歇战（event-nomads-250）、比武结果（275）、城邦被毁（400）、拒绝联络（155）以及四位英杰的个人事件（1510、1524、4000、4300、1556、3002）拆成十一个故事；它们共享城邦标记、比武事件链和英杰雇佣标记，现合并为一个城邦故事。类别改为 C6（城邦）。
   Correction: the draft split the contact menu, tournament opening/abandonment (event-nomads-250), results (275), destruction (400), refusal (155) and four paragons' personal events (1510, 1524, 4000, 4300, 1556, 3002) into eleven stories; they share the enclave flags, the tournament chain and the paragon hiring flags, so they are one enclave story. Category changed to C6 (enclave).
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

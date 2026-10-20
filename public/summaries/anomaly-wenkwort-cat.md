@@ -1,8 +1,6 @@
 # 行星花园 / Planetscape Garden
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/92_anomaly_categories_federations.txt:50-60` · `events/federations_events_3.txt:95` · `common/special_projects/00_projects_federations.txt:397-420` · `common/event_chains/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/92_anomaly_categories_federations.txt:50-60` · `events/federations_events_3.txt:95` · `common/special_projects/00_projects_federations.txt:397-420` · `common/event_chains/`
 - 已对照项目与启用处；事件链本身是另一故事。  
   Compared the project and its enabler; the event chain itself is another story.
 - 覆盖 Coverage：全部5个文档。 / All 5 docs.

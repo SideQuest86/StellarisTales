@@ -1,6 +1,6 @@
 # 天灾信标 / Crisis Beacon
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -23,4 +23,6 @@ Crisis Beacon needs an ongoing crisis and no recent use; three stages at the hig
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：操作类型与 operation.4000-4010。

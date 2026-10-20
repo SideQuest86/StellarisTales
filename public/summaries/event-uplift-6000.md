@@ -1,6 +1,6 @@
 # 提升前智慧生物 / Uplifting pre-sapients
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/uplifting_events.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -23,4 +23,6 @@ Surveying an unowned planet with non-sapient pops fires 6000; the uplift itself 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/uplifting_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：uplift.6000-7215 与 on_action。更正：6000 与 6010 两个故事原先互不相连，现并为一个。

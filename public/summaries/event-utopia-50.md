@@ -1,6 +1,6 @@
 # 青春之泉 / 科学枢纽后续事件 / Fountain of Youth (Science Nexus follow-ups)
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/megastructure_events_1.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -31,6 +31,8 @@ Random (90 nothing / 30 / 30 / 30), the event arrives 60-120 days later:
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/megastructure_events_1.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：utopia.50-64、100-108 的触发、选项、权重与延迟；on_decade_pulse 调用。编译树正确，其中 59/60 与 62 的权重标注已核对。
   Weights and options verified; the compiled tree is right.
 - 不确定 Uncertain：utopia.62 的实际可达性（见上）。 Practical reachability of utopia.62 (see above).

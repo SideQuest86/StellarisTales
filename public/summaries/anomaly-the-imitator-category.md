@@ -1,8 +1,6 @@
 # 模仿者 / The Imitator
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:197-210` · `events/cosmic_storms_events_1.txt:96-112` · `events/cosmic_storms_events_1.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:197-210` · `events/cosmic_storms_events_1.txt:96-112` · `events/cosmic_storms_events_1.txt`
 - 已对照类别脚本、cstorms.5条目与1550/1555。  
   Compared the category script, the cstorms.5 entry and 1550/1555.
 - 覆盖 Coverage：全部3个文档。 / All 3 docs.

@@ -10,9 +10,10 @@ import { readFile, writeFile, mkdir, readdir, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { FIELD, FORMAT, SHARDS, clean, terms, hashTerm, writeVarint, effectLabels } from "../src/search.js";
+import { FIELD, FORMAT, SHARDS, clean, indexTerms, shardOf, writeVarint, effectLabels } from "../src/search.js";
 
-const readJson = async (p) => JSON.parse(await readFile(p, "utf8"));
+const UNI_DF = 0.05;
+const readJson =async (p) => JSON.parse(await readFile(p, "utf8"));
 const both = (v) => (v && typeof v === "object" ? [v.zh, v.en] : [v]).filter((x) => typeof x === "string" && x);
 
 export async function buildSearchIndex({ publicDir }) {
@@ -21,7 +22,7 @@ export async function buildSearchIndex({ publicDir }) {
   const docs = []; // Map term -> mask, per doc
   const addDoc = (fields) => {
     const m = new Map();
-    for (const [bit, strings] of fields) for (const s of strings) for (const t of terms(clean(s))) m.set(t, (m.get(t) || 0) | bit);
+    for (const [bit, strings] of fields) for (const s of strings) for (const t of indexTerms(clean(s))) m.set(t, (m.get(t) || 0) | bit);
     docs.push(m);
   };
   for (const story of index.stories) {
@@ -65,8 +66,11 @@ export async function buildSearchIndex({ publicDir }) {
   // Invert.
   const inv = new Map();
   docs.forEach((m, doc) => { for (const [t, mask] of m) { let l = inv.get(t); if (!l) inv.set(t, (l = [])); l.push(doc, mask); } });
-  const shardTerms = Array.from({ length: SHARDS }, () => []);
-  for (const t of [...inv.keys()].sort()) shardTerms[hashTerm(t)].push(t);
+  // Unigrams of very common characters (in more than UNI_DF of all documents) would be a quarter of the index and match
+  // everything: they are not stored; such a query falls back to a chapter-title scan in the reader.
+  for (const [t, l] of inv) if (t.length === 1 && /[㐀-鿿]/.test(t) && l.length / 2 > Math.max(50, docs.length * UNI_DF)) inv.delete(t);
+  const shardTerms =Array.from({ length: SHARDS }, () => []);
+  for (const t of [...inv.keys()].sort()) shardTerms[shardOf(t)].push(t);
   const enc = new TextEncoder();
   const files = new Map();
   shardTerms.forEach((list, k) => {

@@ -1,6 +1,6 @@
 # 环境改造 / Terraforming
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/terraforming_events.txt:133–518（隐藏随机池 terra.10）、520–1640、events/strange_worlds_terraforming_events.txt、common/on_actions/00_on_actions.txt:2118（on_terraforming_complete）· 部分结果需要 DLC：霸主、植物人物种包、远古遗物、生物起源 · 审阅 Reviewed 2026-10-12
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -34,6 +34,8 @@ When a planet finishes terraforming, hidden terra.10 (once per planet, not relic
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/terraforming_events.txt:133–518（隐藏随机池 terra.10）、520–1640、events/strange_worlds_terraforming_events.txt、common/on_actions/00_on_actions.txt:2118（on_terraforming_complete）· 部分结果需要 DLC：霸主、植物人物种包、远古遗物、生物起源
 - 已核对 Checked：terra.10 的全部权重与排除条件、各结果事件、ENLIGHTEN_RADIO 项目、site_tombworld_weapon_cache（权重0，只由 terra.90 创建）、strange_worlds.1010 → 1035（3600天）。
 - 更正 Corrections：故事原以第一项“过剩的环境改造设备”为题，实为整个改造完成随机池；改为游戏原文“环境改造”，并把全部结果标为互斥组。
   The story was titled after its first outcome; it is the whole pool, now titled "Terraforming" (game text) with an exclusive group.

@@ -1,8 +1,6 @@
 # 舰队紧急召回 / Emergency Fleet Recall
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord
-- 来源 Sources：events/overlord_enclaves_events.txt:352（enclave.27）, :400（enclave.29）; common/on_actions/00_on_actions.txt:1378
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 佣兵城邦的空间站卷入战斗时（on_entering_battle → 隐藏 enclave.27），城邦收回已出租的军舰；若租用方本身不是攻击者，1天后向其发送本通知。
@@ -14,7 +12,8 @@ One window: the contract is ended under "clause 285b.15", the fleet returns home
 
 ## 分支与结局 Branches and outcomes
 
-本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
-
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:352（enclave.27）, :400（enclave.29）; common/on_actions/00_on_actions.txt:1378
 已核对触发条件、退款效果与变体文本。覆盖完整。Checked trigger, refund and text variants. Coverage complete.

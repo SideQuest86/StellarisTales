@@ -1,7 +1,5 @@
 # 通讯建立 / Communications Established
 - 分类 Category：文明纪事 Society (C7) · 首次接触收尾页 shared first-contact ending
-- 来源 Sources：`events/first_contact_events.txt:1467-1556` · `common/first_contact/00_first_contact.txt:1039-1133`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:1467-1556` · `common/first_contact/00_first_contact.txt:1039-1133`
 - 已核对 Checked：脚本与两个通用收尾阶段（含 103/104 的并列权重）。/ Script and both generic end stages including the weight-50 siblings 103/104.
 - 审阅改动 Changes：无结构改动（共享收尾页，作为独立篇保留）。/ No structural change; kept as a shared closing page.

@@ -1,9 +1,6 @@
 # 可汗后裔 / Heirs of the Khan
 
-- 分类 Category：起源 Origins · DLC：Nomads · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/nomads_events_1.txt:3695-5950`、`events/marauder_events.txt`、`common/missions/missions/02_contracts.txt`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Nomads
 
 ## 如何开始 How it starts
 
@@ -27,6 +24,9 @@ No fixed opening: hidden nomads.500 rolls roughly every 200 days (hunters 506, a
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/nomads_events_1.txt:3695-5950`、`events/marauder_events.txt`、`common/missions/missions/02_contracts.txt`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：nomads.500–756 的专属窗口、on_action 与任务钩子。 Origin windows nomads.500-756, hooks and missions.
 - 更正 Corrections：入口加标签；明确通用猎手/委托属其他故事。 Entries labelled; generic hunter/contract content noted as elsewhere.
 - 不确定 Uncertain：掠夺者后续窗口不在本故事内。 The Marauder follow-ups are not part of this story.

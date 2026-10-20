@@ -1,11 +1,7 @@
 # 灵能光环逼近 / Psionic Aura Approaches
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/shroud_events.txt:9122-9251 (4190/4191/4195)`; `common/scripted_effects/psionic_auras_scripted_effects.txt:250-302`; `common/patrons/psionic_auras/00_auras.txt (on_start → check_psionic_suppression_eligibility)`
 - DLC：Shadows of the Shroud
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ Non-psionic empires see 4190: scientists describe spreading energy flows; if in 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`events/shroud_events.txt:9122-9251 (4190/4191/4195)`; `common/scripted_effects/psionic_auras_scripted_effects.txt:250-302`; `common/patrons/psionic_auras/00_auras.txt (on_start → check_psionic_suppression_eligibility)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 修正：4190 与 4191 是同一触发的互斥版本，原草稿分为两张卡；现合并为一个故事并加互斥组。
 
 Correction: 4190 and 4191 are exclusive variants of one trigger, split into two cards in the draft; merged with an exclusive group.

@@ -1,7 +1,6 @@
 # 废弃聚落 / Abandoned Settlements
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:611-645; events/distant_stars_events_1.txt:5301 (distar.170); common/special_projects/00_projects_distant_stars.txt:211 (BRAINSLUG_PROJECT); events/distant_stars_events_1.txt:5388 (distar.171); events/distant_stars_events_1.txt:5441 (distar.172); events/distant_stars_events_1.txt:5731/5775 (distar.174/175)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ distar.170 has a machine text; Evolutionary Predators have a dedicated option.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:611-645; events/distant_stars_events_1.txt:5301 (distar.170); common/special_projects/00_projects_distant_stars.txt:211 (BRAINSLUG_PROJECT); events/distant_stars_events_1.txt:5388 (distar.171); events/distant_stars_events_1.txt:5441 (distar.172); events/distant_stars_events_1.txt:5731/5775 (distar.174/175)
 已核对异常、distar.170–175 与项目。树结构正确；174/175 为隐藏效果事件，不是篇章。
 
 Checked the anomaly, distar.170–175 and the project. Tree correct; 174/175 are hidden effect events, not chapters.

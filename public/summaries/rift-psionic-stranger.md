@@ -1,8 +1,6 @@
 # 灵能陌生人 / Psionic Stranger
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:422`；`events/astral_rifts_3_events.txt:2161–2772`（3200–3292）
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -42,6 +40,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no conditions, no failu
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:422`；`events/astral_rifts_3_events.txt:2161–2772`（3200–3292）
 - 已核对：3200–3292 全部事件（`astral_rifts_3_events.txt`）与 `update_zrony_storyline_flags`。编译结构正确；补充互斥组、结局、说明。泽洛族故事线本身不属于此故事。
 
 - Checked: all events 3200–3292 and `update_zrony_storyline_flags`. Compiled structure was correct; added exclusive groups, endings and notes. The Zroni storyline itself is not part of this story.

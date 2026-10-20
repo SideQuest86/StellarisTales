@@ -1,8 +1,6 @@
 # 策展人 / Curators
 
 - 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans（部分选项需银河典藏 Grand Archive、远星 Distant Stars 等）
-- 来源 Sources：events/leviathans_events_1.txt:4772（499）, :4801（501）, :4814（502）, :4882（500 菜单 menu）, :5389–7951（服务 services 504–600）, :7985（4000）, :8111–9396（4100–4117）, :9795–10051（592–597）; events/observer_events.txt:181; common/on_actions/00_on_actions.txt:721–722, :1373, :1399
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 1. 首次接触完成、“通讯已建立”或银河典藏相关事件后，经隐藏事件 leviathans.501 显示“与策展人的第一次接触”（502）。正文区分是否已见过其他策展人分部；只有一个确认选项。
@@ -32,6 +30,9 @@
 Homicidal empires get different option words and no services; Galactic Curators empires gain extra trust at first contact.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/leviathans_events_1.txt:4772（499）, :4801（501）, :4814（502）, :4882（500 菜单 menu）, :5389–7951（服务 services 504–600）, :7985（4000）, :8111–9396（4100–4117）, :9795–10051（592–597）; events/observer_events.txt:181; common/on_actions/00_on_actions.txt:721–722, :1373, :1399
 - 已核对 499/501/502/500 全部选项条件、各服务与返回、4000 的前置标记、592–597 的接收者与条件。
 - 更正（相对V3）：V3 范围 500–600 误把通用的“通讯已建立”（leviathans.98）与十年通讯扩散（leviathans.560）收入本故事；现改为明确成员，98 设为独立故事（hub）。保留并补证 V3 的“502 → 再次联络 → 500”桥接。新增“攻击后斥责”的条件连接。
 - 档案员离去（605）已移至“攻击[城邦]”故事。

@@ -1,7 +1,5 @@
-# 从[Target.GetName]采收纳米机器人 / Extract Nanites from [Target.GetName]
-
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：common/situations/08_machine_age_situations.txt:2001-2077
+# 从目标星球采收纳米机器人 / Extract Nanites from the Target Planet
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -25,6 +23,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/situations/08_machine_age_situations.txt:2001-2077
 - 已核对：触发条件、选项效果；编译树与脚本一致。
   Checked: trigger conditions and option effects; the compiled tree matches the script.
 - 不确定：colony.195/200 的内容属于行星吞噬系列（colony_events_3），本审阅只核对局势定义与启动决议。

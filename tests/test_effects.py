@@ -242,9 +242,9 @@ class EffectTests(unittest.TestCase):
         self.assertEqual(K.UNKNOWN_WORDS, set())
 
     def test_conditions_use_arguments_and_game_names(self):
-        for script, zh, en in (('num_owned_planets > 5', '拥有超过5颗星球', 'owns more than 5 planets'),
+        for script, zh, en in (('num_owned_planets > 5', '拥有超过 5 颗星球', 'owns more than 5 planets'),
                                ('has_technology = tech_lasers_1', '已研究「红激光发射器」', 'has researched "Red Lasers"'),
-                               ('years_passed > 30', '游戏已进行超过30年', 'the game has run more than 30 years')):
+                               ('years_passed > 30', '游戏已进行超过 30 年', 'the game has run more than 30 years')):
             lab = E.cond_label(parse(script), CTX)
             self.assertEqual((lab['zh'], lab['en']), (zh, en))
         lab = E.cond_label(parse('has_building = building_research_lab_1'), CTX)  # the game's own sentence: "Has Building: $BUILDING$"

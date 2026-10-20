@@ -1,7 +1,6 @@
 # 漂流的战场 / Drifting Battlefield
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：events/anomaly_events_2.txt:3016-3085 (anomaly.3113, chain start; story anomaly-gaia-record-cat); events/anomaly_events_2.txt:3086 (anomaly.3114); events/anomaly_events_2.txt:3255 (anomaly.3115); common/special_projects/00_projects_2.txt:709 (WRECKED_FLEET_2); events/anomaly_events_2.txt:3306 (anomaly.3116); events/anomaly_events_2.txt:3388 (anomaly.3120); events/anomaly_events_2.txt:3470 (anomaly.3121); common/on_actions/00_on_actions.txt:991-992 (on_entering_system_fleet); common/on_actions/00_on_actions.txt:1631 (on_fleet_destroyed_perp)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ anomaly.3120's reward depends on whether tech_cruisers is already known.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：events/anomaly_events_2.txt:3016-3085 (anomaly.3113, chain start; story anomaly-gaia-record-cat); events/anomaly_events_2.txt:3086 (anomaly.3114); events/anomaly_events_2.txt:3255 (anomaly.3115); common/special_projects/00_projects_2.txt:709 (WRECKED_FLEET_2); events/anomaly_events_2.txt:3306 (anomaly.3116); events/anomaly_events_2.txt:3388 (anomaly.3120); events/anomaly_events_2.txt:3470 (anomaly.3121); common/on_actions/00_on_actions.txt:991-992 (on_entering_system_fleet); common/on_actions/00_on_actions.txt:1631 (on_fleet_destroyed_perp)
 已核对 anomaly.3113–3121、WRECKED_FLEET_2 与 on_action 钩子（991、992、1631）。修正：草稿把“海盗暗涌”“剿灭海盗”“漂流的舰队”作为三个互不相连的故事；现合为一个以事件链“漂流的战场”为起点的故事，用审阅连接还原两条路线与击毁海盗基地。前半段（信号、项目、链开启）属于 c3b 的 anomaly-gaia-record-cat。
 
 Checked anomaly.3113-3121, WRECKED_FLEET_2 and the on_action hooks (991, 992, 1631). Correction: the draft treated 'Of Pirates Current', 'Of Pirates Destroyed' and 'Of Fleets Drifting' as three unconnected stories; they are now one story starting from the chain "Drifting Battlefield" with reviewed links restoring the two routes and the base destruction. The first half (signal, project, chain start) belongs to c3b's anomaly-gaia-record-cat.

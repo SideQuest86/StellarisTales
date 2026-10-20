@@ -1,9 +1,6 @@
 # 灵督 / Mindwardens
 
-- 分类 Category：起源 Origins · DLC：Shadows of the Shroud · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/origin_events_shadows_shroud.txt:1-3521`、`events/shroud_events.txt:9255-9380,14891-15760`（城邦菜单）、`events/game_start.txt:440-443`、`common/special_projects/04_projects_shroud.txt:487-596`、`common/first_contact/02_first_contact_unique_stories.txt:239-267`、`common/patrons/psionic_auras/00_auras.txt:2101-2109`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Shadows of the Shroud
 
 ## 如何开始 How it starts
 
@@ -41,6 +38,9 @@ Hidden 6000 at game start creates a hidden psionic state, the Exiled, with a buf
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/origin_events_shadows_shroud.txt:1-3521`、`events/shroud_events.txt:9255-9380,14891-15760`（城邦菜单）、`events/game_start.txt:440-443`、`common/special_projects/04_projects_shroud.txt:487-596`、`common/first_contact/02_first_contact_unique_stories.txt:239-267`、`common/patrons/psionic_auras/00_auras.txt:2101-2109`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：起源文件全部事件、城邦菜单入口、相关项目、首次接触阶段、光环与建筑钩子。 Every event of the origin file, the enclave menu entry, projects, first-contact stages, aura and building hooks.
 - 更正 Corrections：原先仅有 6050 一个入口，其余 20 余处以根节点孤立入口出现；现以五个入口与 23 条状态连接组织为一棵树。城邦服务菜单（约 38 个窗口）移出本起源为独立故事；删去 6110 指向守护者与商队首次接触后续的伪连接。
   Only 6050 had been an entry and 20+ docs floated at the root; now five entries and 23 state bridges form one tree. The enclave menu (~38 windows) is a separate story; false links from 6110 to guardian/caravaneer follow-ups removed.

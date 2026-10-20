@@ -1,6 +1,6 @@
 # 搭载代表团 / Delegates on Board
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/nomads_events_1.txt:11557-11755; common/missions/missions/02_contracts.txt; common/on_actions/00_on_actions.txt:1086-1092 · DLC: Nomads · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Nomads
 
 ## 如何开始 How it starts
 
@@ -22,10 +22,10 @@ The nomad takes a diplomatic escort contract: when its arkship reaches the picku
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/nomads_events_1.txt:11557-11755; common/missions/missions/02_contracts.txt; common/on_actions/00_on_actions.txt:1086-1092
 - 修正：草稿把同一份合约的两站拆成两个故事；现按合约顺序连接。
   Correction: the draft split the two legs of one contract into two stories; they are now linked in contract order.
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

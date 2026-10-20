@@ -1,9 +1,6 @@
 # 屹于巨人之肩 / On the Shoulders of Giants
 
-- 分类 Category：起源 Origins · DLC：Federations · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_2.txt:785-3060`、`common/archaeological_site_types/03_federations_arc_sites.txt:62-489`、`common/special_projects/00_projects_federations.txt`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Federations
 
 ## 如何开始 How it starts
 
@@ -34,6 +31,9 @@ At game start hidden origin.1199 creates the Ex Gravitas site on a moon or rocky
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_2.txt:785-3060`、`common/archaeological_site_types/03_federations_arc_sites.txt:62-489`、`common/special_projects/00_projects_federations.txt`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：全部 1199–1420 事件、七处遗址定义、项目、on_action 钩子。 All events 1199-1420, the seven site definitions, projects and hooks.
 - 更正 Corrections：黑暗秘密第三/四阶段由编译器串成一条链，现改为五选一并抑制错误的阶段边；补上各个“舰队抵达”类状态连接（1340→1345、1350→1351、1351→1355、1385→1390、1395→1400）。
   The compiler chained Dark Secret stage-3/4 alternatives; now five-way exclusive with the false stage edges suppressed; fleet-arrival links added.

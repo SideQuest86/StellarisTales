@@ -1,8 +1,6 @@
 # 巨塔 / The Tower
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:69`；`events/astral_rifts_0_events.txt:2333–2822`（600–696）；`common/on_actions/00_on_actions.txt:2394`（on_leader_death）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立故事 event-astral-rift-695 已并入 / former standalone story event-astral-rift-695 merged in）
 
 ## 如何开始 How it starts
 
@@ -42,6 +40,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立故事 event-astral-rift-695 已并入 / former standalone story event-astral-rift-695 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:69`；`events/astral_rifts_0_events.txt:2333–2822`（600–696）；`common/on_actions/00_on_actions.txt:2394`（on_leader_death）
 - 已核对：裂隙定义；600–696 全部事件；615.a 的 360 天延时（`astral_rifts_0_events.txt:2596–2602`）；691 两个选项；`on_leader_death` → 695 → 696 的条件（`00_on_actions.txt:2394`，`astral_rifts_0_events.txt:2776–2796`）。
 - 修正：V3 迁移的桥接（691.b → 696）正确，补齐证据；隐藏事件 695 原为独立故事的入口，现通过故事族成员并入本篇，避免同一葬礼出现在两张卡片上。本裂隙没有失败分支。
 

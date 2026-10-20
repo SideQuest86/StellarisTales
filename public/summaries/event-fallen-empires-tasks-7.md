@@ -1,6 +1,6 @@
 # 来自堕落帝国的任务：制止错误行为 / Task: Stop Atrocities
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/fallen_empire_tasks_events.txt:955-1390; common/on_actions/00_on_actions.txt:599 · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -22,6 +22,8 @@ fallen_empires_tasks.8: accepting (a) starts the "Task: Stop Atrocities" chain w
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/fallen_empire_tasks_events.txt:955-1390; common/on_actions/00_on_actions.txt:599
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

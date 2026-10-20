@@ -1,8 +1,6 @@
 # 最后的逃亡者 / Final Escapee
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:5208–5393`（6095–6105）；`common/on_actions/00_on_actions.txt:5023–5026`
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -38,6 +36,8 @@ Each completed rift exploration (`on_astral_rift_exploration_complete`) has a 1-
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`events/astral_planes_events.txt:5208–5393`（6095–6105）；`common/on_actions/00_on_actions.txt:5023–5026`
 - 已核对：6095 / 6100 / 6105 与 `on_actions` 随机事件项；编译结构正确（图上的 p=0.05 与脚本不符：玩家为 1/50，AI 为 1/50 再乘 1/21）。
 
 - Checked: 6095 / 6100 / 6105 and the `on_actions` random-event entry; the compiled structure is correct (the p=0.05 shown on the graph does not match the script: 1/50 for a player, 1/50 times 1/21 for an AI).

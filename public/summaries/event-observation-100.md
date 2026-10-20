@@ -1,7 +1,5 @@
 # 科学家失踪 / Missing Scientist
 - 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:579-1383` · `events/observation_events.txt:999-1069` · `common/special_projects/00_projects_1.txt:736-760` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -24,5 +22,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:579-1383` · `events/observation_events.txt:999-1069` · `common/special_projects/00_projects_1.txt:736-760` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：根事件 observation.100，101–112、3205 全部脚本，项目 EXTRACT_MISSING_SCIENTIST，观察池权重。/ Root, all scripts 101–112 and 3205, the project and pool weights.
 - 审阅改动 Changes：隐藏根 100 折叠进入口；补充了各延时、随机权重和项目条件。结构与编译草稿一致，无需桥接。/ The hidden root is folded into the entry; delays, weights and project conditions documented. The compiled structure matched the source; no bridges needed.

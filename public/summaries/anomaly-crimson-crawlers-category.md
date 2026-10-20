@@ -1,8 +1,6 @@
 # 猩红地表 / Crimson Coverage
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:52-95` · `events/cosmic_storms_events_1.txt` · `common/special_projects/03_projects_cosmic_storms.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:52-95` · `events/cosmic_storms_events_1.txt` · `common/special_projects/03_projects_cosmic_storms.txt`
 - 已对照类别脚本、1255/1260。  
   Compared the category script and 1255/1260.
 - 覆盖 Coverage：全部4个文档。 / All 4 docs.

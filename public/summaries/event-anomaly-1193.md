@@ -1,7 +1,6 @@
 # 生死弥留：科技进步 / Limbo: Technological Advances
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：events/anomaly_events_1.txt:5435 (anomaly.1193); events/anomaly_events_1.txt:5452 (anomaly.1194); common/special_projects/00_projects_3.txt:939 (LIMBO_2_PROJECT); events/anomaly_events_1.txt:5406 (anomaly.1190); common/on_actions/00_on_actions.txt:2693 (on_tech_increased → anomaly.1193); events/anomaly_events_1.txt:4991 (anomaly.186 option b sets limbo_downloaded)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ anomaly.1194's option a is unavailable under ai_outlawed; nomad empires take the
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：events/anomaly_events_1.txt:5435 (anomaly.1193); events/anomaly_events_1.txt:5452 (anomaly.1194); common/special_projects/00_projects_3.txt:939 (LIMBO_2_PROJECT); events/anomaly_events_1.txt:5406 (anomaly.1190); common/on_actions/00_on_actions.txt:2693 (on_tech_increased → anomaly.1193); events/anomaly_events_1.txt:4991 (anomaly.186 option b sets limbo_downloaded)
 已核对 anomaly.1193/1194、LIMBO_2_PROJECT 的 if/else 结果链与编译树；树正确。这是“生死弥留”故事（c3b 的 anomaly-barr-base-cat）的另一入口：同一个项目与同样的结果文档也出现在那个故事里。
 
 Checked anomaly.1193/1194, the if/else result chain of LIMBO_2_PROJECT and the compiled tree; the tree is correct. This is an alternative entry to the Limbo story (c3b's anomaly-barr-base-cat): the same project and result docs also appear in that story.

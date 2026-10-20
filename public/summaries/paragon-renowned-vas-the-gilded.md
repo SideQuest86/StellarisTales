@@ -1,6 +1,6 @@
 # 万人迷沃斯 / Vas the Gilded
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/paragon_events_4.txt:1250-1340、3283-3305, 3309-3344、1728–1866（paragon.41234）、15–160（paragon.40000/40001）· DLC：典范 Galactic Paragons · 审阅 Reviewed 2026-10-12
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -33,6 +33,8 @@ Renowned leader lottery: each decade hidden paragon.40000 (Paragon, player, not 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/paragon_events_4.txt:1250-1340、3283-3305, 3309-3344、1728–1866（paragon.41234）、15–160（paragon.40000/40001）· DLC：典范 Galactic Paragons
 - 已核对 Checked：40000/40001 抽签与权重（01_script_values_paragon.txt ethic_leader_randomizer）、招募事件全部选项、ethic_leader_hire_effect 设置领袖标记、41234 的分派与权重、后续事件的触发条件、选项与项目。
 - 更正 Corrections：原先十六名领袖的招募对话被合成一个故事（按抽签器），而所有后续故事又被合成另一个故事；现按人物拆分，每人一则故事，招募后接各自的后续。
   The lottery-based story and the follow-up story were split into one story per leader.

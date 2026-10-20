@@ -1,8 +1,6 @@
 # 空白天地 / Whiteout
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:80`；`events/astral_rifts_0_events.txt:2829–3026`（700–730）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -34,6 +32,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:80`；`events/astral_rifts_0_events.txt:2829–3026`（700–730）
 - 已核对：裂隙定义；700–730 每个事件的选项、难度与奖励。没有失败分支或延时后续；编译结构正确，仅补充结局说明。
 
 - Checked: rift definition; options, difficulties and rewards of every event 700–730. No failure branch or delayed follow-up; the compiled structure was correct; only the ending was added.

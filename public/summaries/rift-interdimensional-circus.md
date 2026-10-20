@@ -1,8 +1,6 @@
 # 娱乐中枢 / Entertainment Nexus
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:377`；`events/astral_rifts_2_events.txt:4463–5122`（2900–2985）
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -44,6 +42,8 @@ All finish the exploration with a large astral thread reward.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:377`；`events/astral_rifts_2_events.txt:4463–5122`（2900–2985）
 - 已核对：2900–2985 全部事件。编译结构正确；补充互斥组、结局、说明。
 
 - Checked: all events 2900–2985. Compiled structure was correct; added the exclusive group, endings and notes.

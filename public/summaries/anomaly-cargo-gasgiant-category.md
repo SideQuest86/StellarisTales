@@ -1,7 +1,6 @@
 # 货舱 / Cargo Pod
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:328; events/anomaly_events_1.txt:3913 (anomaly.305); events/anomaly_events_4.txt:3081 (anomaly.6865); events/anomaly_events_4.txt:3110 (anomaly.6870)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.305's option b is for non-gestalt empires only and option d needs Ancien
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:328; events/anomaly_events_1.txt:3913 (anomaly.305); events/anomaly_events_4.txt:3081 (anomaly.6865); events/anomaly_events_4.txt:3110 (anomaly.6870)
 已核对异常定义、项目与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition, the project and every outcome event; the compiled tree is correct, no change needed.

@@ -1,9 +1,6 @@
 # 复国孑遗 / Remnants
 
-- 分类 Category：起源 Origins · DLC：Federations / Ancient Relics · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_3.txt:150-267`、`common/deposits/01_blocker_deposits.txt:1449`、`common/governments/civics/00_origins.txt:1875-1910`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Federations / Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -25,5 +22,8 @@ No narrative opening: the card turns the homeworld into a relic world (pc_relic)
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_3.txt:150-267`、`common/deposits/01_blocker_deposits.txt:1449`、`common/governments/civics/00_origins.txt:1875-1910`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.3100–3101。 Events 3100-3101.
 - 更正 Corrections：入口加标签。 Entries labelled.

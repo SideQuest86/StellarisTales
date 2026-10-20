@@ -1,8 +1,6 @@
 # 火山位面 / Volcanic Plane
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:244`；`events/astral_rifts_1_events.txt:4888–5527`（1900–1960）；`common/traits/12_astral_planes_traits.txt:46–72`
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1935 已并入 / former standalone failure event 1935 merged in）
 
 ## 如何开始 How it starts
 
@@ -44,6 +42,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1935 已并入 / former standalone failure event 1935 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:244`；`events/astral_rifts_1_events.txt:4888–5527`（1900–1960）；`common/traits/12_astral_planes_traits.txt:46–72`
 - 已核对：裂隙定义；1900–1960 全部事件；1915.b/1925.b 的 `on_roll_failed = astral_rift.1935`（`astral_rifts_1_events.txt:5054–5058, 5123–5127`）；1930 → 1940（2160 天）→ 1941 → 1945（每年）；1935 → 1950（360 天）→ 1955（360 天）→ 特质触发的 1960（每年）。
 - 修正：编译图漏掉失败分支，1935/1950/1955 曾是独立故事；已用两条桥接并入，标注互斥。
 - 不确定：荒野帝国探索时若失败后备 1935 无法触发，引擎如何处理未核实。

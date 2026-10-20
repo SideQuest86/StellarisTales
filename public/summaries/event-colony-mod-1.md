@@ -1,8 +1,6 @@
 # 这里发生了什么事？ / What Happened Here?
 
 - 分类 Category：文明纪事 Society (C7) · 星球修正殖民地事件 planet-modifier colony event
-- 来源 Sources：`events/colony_events_3.txt:9–148` · 分派器 dispatcher `:971–978` · `common/on_actions/00_on_actions.txt:3721`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -32,6 +30,8 @@ At the colony's first anniversary the hidden dispatcher colony_mod.161 fires thi
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:9–148` · 分派器 dispatcher `:971–978` · `common/on_actions/00_on_actions.txt:3721`
 - 已核对 Checked：事件 1/6/7/8/9 的触发、描述条件、`random_list` 权重与延时；分派器中的辐照块。/ Triggers, text conditions, weights, delays and the dispatcher block.
 - 审阅改动 Changes：从编译器合并的“磁力奇迹”故事中拆出为独立故事（入口仍为分派器 colony_mod.161）。/ Split out of the merged modifier-event story; still entered through colony_mod.161.
 - 注释 Commentary：概述为审阅者撰写。/ Summaries are reviewer commentary.

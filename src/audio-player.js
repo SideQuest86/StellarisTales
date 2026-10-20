@@ -113,10 +113,13 @@ export class SoundtrackPlayer {
     $("music-seek").oninput = (e) => {
       if (Number.isFinite(this.audio.duration))
         this.audio.currentTime = (Number(e.target.value) / 1000) * this.audio.duration;
+      if (Number.isFinite(this.audio.duration))
+        e.target.setAttribute("aria-valuetext", `${time(this.audio.currentTime)} / ${time(this.audio.duration)}`);
     };
     this.audio.addEventListener("timeupdate", () => {
       if (!Number.isFinite(this.audio.duration)) return;
       $("elapsed").textContent = time(this.audio.currentTime);
+      $("music-seek").setAttribute("aria-valuetext", `${time(this.audio.currentTime)} / ${time(this.audio.duration)}`);
       $("music-seek").value = String((this.audio.currentTime / this.audio.duration) * 1000);
       const now = Date.now();
       if (!this.audio.paused && now - this.lastSaved > 5000) {
@@ -126,6 +129,7 @@ export class SoundtrackPlayer {
     });
     this.audio.addEventListener("loadedmetadata", () => {
       $("duration").textContent = time(this.audio.duration);
+      $("music-seek").setAttribute("aria-valuetext", `${time(this.audio.currentTime)} / ${time(this.audio.duration)}`);
       if (this.resumeAt > 0 && this.resumeAt < this.audio.duration - 5) this.audio.currentTime = this.resumeAt;
       this.resumeAt = 0;
     });

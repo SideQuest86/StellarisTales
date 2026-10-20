@@ -1,7 +1,6 @@
 # 可疑先知 / Suspicious Prophet
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/strange_worlds_observation_events.txt:8-418`；`common/on_actions/00_on_actions.txt:195`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/strange_worlds_observation_events.txt:8-418`；`common/on_actions/00_on_actions.txt:195`
 - 已核对：分派条件、延迟与分支。
   Checked: dispatcher conditions, delays and branches.
 - 说明：占用观测事件链标志（has_ongoing_observation_event_chain）。

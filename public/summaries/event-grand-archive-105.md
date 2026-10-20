@@ -1,6 +1,6 @@
 # 重力陷阱 / Gravity Snares
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ Hidden 105 fires when Gravity Wells is the last researched tech: creates the Gra
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：105、7210、7220 的触发，以及 100-120 的捕获机制。

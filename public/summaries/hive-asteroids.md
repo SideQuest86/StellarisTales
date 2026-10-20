@@ -1,6 +1,6 @@
 # 晶态小行星 / Crystalline Asteroids（蜂巢小行星 Hive Asteroids）
 
-- 分类 Category：巨兽与城邦 · 来源 Sources: events/leviathans_events_2.txt:4479-5085; common/special_projects/00_projects_leviathans.txt:134-156; common/on_actions/00_on_actions.txt:913 · DLC：利维坦 Leviathans · 审阅 Reviewed 2026-10-13
+- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 首次进入蜂巢星系：3202“晶态小行星”（仅玩家）。
@@ -18,4 +18,7 @@ First entry into the hive system fires 3202.
 虚空蜂巢（civic_void_hive）有不同文本与选项。
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/leviathans_events_2.txt:4479-5085; common/special_projects/00_projects_leviathans.txt:134-156; common/on_actions/00_on_actions.txt:913
 合并 event-leviathans-3202 / -3203 / -3210。完整。 Merged three stories; complete.

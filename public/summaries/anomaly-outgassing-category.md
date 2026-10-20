@@ -1,8 +1,6 @@
 # 气体释放 / Outgassing
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/103_anomaly_categories_infernals.txt:46-61` · `events/infernals_1_events.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/103_anomaly_categories_infernals.txt:46-61` · `events/infernals_1_events.txt`
 - 已对照类别脚本（46-61）与事件infernals.1001的选项文本。  
   Compared the category script (46-61) and the option texts of event infernals.1001.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

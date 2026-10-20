@@ -1,6 +1,6 @@
 # 完整收藏 / A Complete Collection
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:8924-9129 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -22,10 +22,10 @@ bio.3310: the assimilated one announces our genome has been secured (Familiar Fa
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:8924-9129
 - 已核对 bio.3305.a 的 random_list 权重（L9032-9044）与两种通讯的效果。
   Checked the random_list weights of bio.3305.a (L9032-9044) and both transmissions.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

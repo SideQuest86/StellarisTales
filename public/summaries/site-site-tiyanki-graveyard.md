@@ -1,6 +1,6 @@
 # 缇扬奇乱坟岗 / Tiyanki Grave Mound
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:304；events/ancient_relics_arcsite_events_2.txt:9924；common/solar_system_initializers/hostile_system_initializers.txt:3381 · DLC：基础游戏遗址定义；事件在 ancrel 文件 Base-game site definition; events in the ancrel files · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：基础游戏遗址定义；事件在 ancrel 文件 Base-game site definition; events in the ancrel files
 
 ## 如何开始 How it starts
 
@@ -37,6 +37,8 @@ A "planet" built entirely of dead Tiyanki; the dig follows a flesh labyrinth to 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:304；events/ancient_relics_arcsite_events_2.txt:9924；common/solar_system_initializers/hostile_system_initializers.txt:3381
 - 已核对：遗址定义（common/archaeological_site_types/00_base_game_arc_sites.txt:304）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/00_base_game_arc_sites.txt:304) with its stage order and conditions, every stage event script, and how the site appears; both languages read.
 - 结构修正：最后一个阶段事件 ancrel.14500 是隐藏的随机分派，草稿把它的几个互斥结局错排成连续阶段；现改为最后可见阶段之后的互斥分支。

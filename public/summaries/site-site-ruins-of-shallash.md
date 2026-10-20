@@ -1,6 +1,6 @@
 # 被毁灭的恒星系 / Ruined Star System
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:14；events/federations_events_2.txt:173；common/solar_system_initializers/federations_initializers.txt:2346 · DLC：《联邦》Federations（事件 federations2.*；遗址定义在基础游戏文件） Federations events; site definition in the base-game file · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《联邦》Federations（事件 federations2.*；遗址定义在基础游戏文件） Federations events; site definition in the base-game file
 
 ## 如何开始 How it starts
 
@@ -35,6 +35,8 @@ The ruins of the Shallarians, a peaceful people able to sculpt whole star system
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:14；events/federations_events_2.txt:173；common/solar_system_initializers/federations_initializers.txt:2346
 - 已核对：遗址定义（common/archaeological_site_types/00_base_game_arc_sites.txt:14）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/00_base_game_arc_sites.txt:14) with its stage order and conditions, every stage event script, and how the site appears; both languages read.
 - 结构修正：最后一个阶段事件 federations2.5 是隐藏的随机分派，草稿把它的几个互斥结局错排成连续阶段；现改为最后可见阶段之后的互斥分支。

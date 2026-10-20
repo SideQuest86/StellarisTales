@@ -1,11 +1,7 @@
 # 灵能压制已被拆解 / Psionic Suppression Dismantled
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/shroud_events.txt:313-563 (shroud.60/65/70/75 → 80)`; `common/on_actions/00_on_actions.txt (on_system_gained, on_system_controller_changed, on_becoming_subject, on_subject_integrated)`
 - DLC：Shadows of the Shroud
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ No text variants.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`events/shroud_events.txt:313-563 (shroud.60/65/70/75 → 80)`; `common/on_actions/00_on_actions.txt (on_system_gained, on_system_controller_changed, on_becoming_subject, on_subject_integrated)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 修正：原草稿把同一窗口拆成四张卡（event-shroud-60/65/70/75）；现合并为一个故事，四个入口作为互不相同的触发方式。
 
 Correction: the draft split the same window into four cards (event-shroud-60/65/70/75); now one story whose four entries are different triggers.

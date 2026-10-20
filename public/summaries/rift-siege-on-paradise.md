@@ -1,8 +1,6 @@
 # 天堂围攻 / Siege on Paradise
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:392`（裂隙定义 rift definition）；`events/astral_rifts_3_events.txt:11–1583`（3000–3099）；`common/inline_scripts/astral_rift/3060_tech_option.txt`
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -70,6 +68,8 @@ The Grunur route:
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:392`（裂隙定义 rift definition）；`events/astral_rifts_3_events.txt:11–1583`（3000–3099）；`common/inline_scripts/astral_rift/3060_tech_option.txt`
 - 已核对：裂隙定义与权重；3000–3099 全部事件的选项条件、费用、`set_next_astral_rift_event` 目标、`finish_astral_rift`、延时后续 3047（720+720 天）与 3098→3099（1800+720 天）；3060 内联选项脚本。本裂隙没有 `on_roll_failed` 失败分支。
 - 修正：编译草稿结构正确；新增三组互斥说明（按巴奥事件链二选一）、八个结局标注和 3060 选项说明。
 - 不确定：描述标记驱动的文本变体尚未被条件模型解析（见台账 Requests）。

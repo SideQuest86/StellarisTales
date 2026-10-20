@@ -1,6 +1,6 @@
 # 从天而降的死亡 / Death From Above
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/on_action_events_2.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ The council asks whether to forbid or allow surrender; either choice sets the po
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/on_action_events_2.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：action.601 触发条件与 action.600 的政策效果。

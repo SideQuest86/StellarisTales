@@ -1,9 +1,7 @@
 # 视界信号 / The Horizon Signal
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`events/horizonsignal_events.txt`（akx.8000–akx.10030）· `common/special_projects/00_projects_horizonsignal.txt` · `common/event_chains/00_event_chains_horizonsignal.txt` · `common/technology/00_horizonsignal_tech.txt` · `common/buildings/12_event_buildings.txt:43-85` · `common/on_actions/00_on_actions.txt`
 - DLC：“视界信号”故事包（本地安装为 `dlc013_horizon_signal`；事件脚本本身没有 DLC 检查）/ Horizon Signal story pack (installed as `dlc013_horizon_signal`; the event scripts contain no DLC check)
-- 审阅 Reviewed：2026-10-12（c3b-exploration）
 
 ## 如何开始 How it starts
 
@@ -44,6 +42,8 @@ At game start a weighted random roll (4 of 20, roughly one game in five) runs hi
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c3b-exploration）
+- 来源 Sources：`events/horizonsignal_events.txt`（akx.8000–akx.10030）· `common/special_projects/00_projects_horizonsignal.txt` · `common/event_chains/00_event_chains_horizonsignal.txt` · `common/technology/00_horizonsignal_tech.txt` · `common/buildings/12_event_buildings.txt:43-85` · `common/on_actions/00_on_actions.txt`
 - 已核对 Checked：完整阅读 `horizonsignal_events.txt` 第1–3896行、全部项目、事件链、科技与建筑定义及相关 on_action（`00_on_actions.txt:25-28, 1000-1003, 1040, 1300, 1650-1651, 2384, 2957, 3044`）。/ Whole event file, projects, chains, technology, building and on_action hooks read.
 - 本轮更正 Corrections：保留 V3 的18条神殿→插曲连接并改写为触发条件标签；新增朔望号被击毁后的三种结果（9318）、“注定相会”指挥官死亡（9330）、圣仆再临（9610）的状态连接；移除仅观察者模式可见的 observer.70/71/72；标注并行插曲与随机互斥组。/ Kept the 18 V3 temple→episode bridges with trigger labels; added the 9318 outcomes, 9330 and 9610 links; removed observer-mode notifications; annotated the parallel episodes and random exclusive groups.
 - 不确定 Uncertain：akx.8888 是调试测试事件（`is_test_event = yes`），仍显示为次要入口；9600.d 的 `default_hide_option` 按“窗口关闭时默认选项”理解。/ akx.8888 is a debug event still shown as a secondary entry; `default_hide_option` read as the dismissed-window default.

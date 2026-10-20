@@ -1,6 +1,6 @@
 # 秋菊号的线索 / Clues of the Chrysanthemum
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/nomads_events_1.txt:17902-18195; events/game_start.txt:689; common/archaeological_site_types/15_nomads_arc_sites.txt:4; common/on_actions/00_on_actions.txt:1093-1094 · DLC: Nomads · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Nomads
 
 ## 如何开始 How it starts
 
@@ -22,10 +22,10 @@ Option b in 9000 only logs the signal (the chain is begun, but nothing advances 
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/nomads_events_1.txt:17902-18195; events/game_start.txt:689; common/archaeological_site_types/15_nomads_arc_sites.txt:4; common/on_actions/00_on_actions.txt:1093-1094
 - 修正：草稿把起点9000放在“游戏开始”杂项故事里，并把9005、9010分成两个故事；现按事件链合并。
   Correction: the draft put the opening 9000 inside the game-start catch-all and split 9005 and 9010 into two stories; they are now one chain.
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

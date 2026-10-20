@@ -1,10 +1,6 @@
 # 奇怪的联系 / Strange Contacts
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C7 文明纪事 / Society
-- 来源 Sources：`events/shroud_events.txt:13096-13290 (5000/5010-5013)`; `common/on_actions/00_on_actions.txt (on_game_start_country → 5000; on_post_communications_established → 5010)`; `common/scripted_triggers/08_scripted_triggers_shroud.txt (is_secret_societies_empire)`
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -26,12 +22,11 @@ The two events happen in sequence (not exclusive); 5012's option rolls the secre
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`events/shroud_events.txt:13096-13290 (5000/5010-5013)`; `common/on_actions/00_on_actions.txt (on_game_start_country → 5000; on_post_communications_established → 5010)`; `common/scripted_triggers/08_scripted_triggers_shroud.txt (is_secret_societies_empire)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 修正：草稿把 5013 与 5012 作为互斥入口；脚本中 5011 先发 5013、再在下一次接触时发 5012，已加顺序连接。分类改为 C7（国民理念/派系与首次接触）。
 
 Correction: the draft showed 5013 and 5012 as exclusive entries; 5011 sends 5013 first and 5012 on the next contact, so a sequence link was added. Category changed to C7 (civic/factions and first contact).

@@ -1,7 +1,6 @@
 # 成因奇怪的山脉 / Strange Mountain Formation
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:673; events/anomaly_events_2.txt:158 (anomaly.2520); common/special_projects/00_projects_1.txt (GIGANTIC_SKELETON_PROJECT); events/anomaly_events_2.txt:210 (anomaly.2521); events/anomaly_events_2.txt:283 (anomaly.2522); common/special_projects/00_projects_3.txt (GIGANTIC_SKELETON_RESURRECTION_PROJECT); events/anomaly_events_2.txt:322 (anomaly.2523); events/anomaly_events_4.txt:3487 (anomaly.6905); common/special_projects/00_projects_3.txt (CRACK_THE_EGG); events/anomaly_events_4.txt:3552 (anomaly.6910); events/anomaly_events_4.txt:3605 (anomaly.6915)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ The two starting results are exclusive; 2520's project results 2521 / 2522 are e
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:673; events/anomaly_events_2.txt:158 (anomaly.2520); common/special_projects/00_projects_1.txt (GIGANTIC_SKELETON_PROJECT); events/anomaly_events_2.txt:210 (anomaly.2521); events/anomaly_events_2.txt:283 (anomaly.2522); common/special_projects/00_projects_3.txt (GIGANTIC_SKELETON_RESURRECTION_PROJECT); events/anomaly_events_2.txt:322 (anomaly.2523); events/anomaly_events_4.txt:3487 (anomaly.6905); common/special_projects/00_projects_3.txt (CRACK_THE_EGG); events/anomaly_events_4.txt:3552 (anomaly.6910); events/anomaly_events_4.txt:3605 (anomaly.6915)
 已核对异常、全部事件与四个项目；编译树正确（包括 2520 选项a与终结者选项指向同一项目的重复边），无需改动。
 
 Checked the anomaly, every event and the four projects; the compiled tree is correct (including the repeated edge where 2520's standard and terminator options point to the same project), no change needed.

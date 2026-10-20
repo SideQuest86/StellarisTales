@@ -1,7 +1,6 @@
 # L-星门线索 / L-Gate Insight
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/99_anomaly_categories_ai.txt:112; events/anomaly_events_AI.txt:425 (aianom.11); common/scripted_effects/00_scripted_effects.txt:3243 (generate_lcluster_clue)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/99_anomaly_categories_ai.txt:112; events/anomaly_events_AI.txt:425 (aianom.11); common/scripted_effects/00_scripted_effects.txt:3243 (generate_lcluster_clue)
 已核对异常与 aianom.11；编译树正确，外链 distar.10904 属 L-星团故事 event-distar-13080。
 
 Checked the anomaly and aianom.11; the compiled tree is correct and the external link distar.10904 belongs to the L-Cluster story event-distar-13080.

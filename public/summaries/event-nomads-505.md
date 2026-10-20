@@ -1,6 +1,6 @@
 # 熟悉的猎兵 / Familiar Hunters
 
-- 分类 Category: C1 起源 / C1 Origins · 来源 Sources: events/nomads_events_1.txt:3701-5100 · DLC: Nomads · 审阅 Reviewed 2026-10-12
+- 分类 Category：C1 起源 / C1 Origins · DLC: Nomads
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ The texts and options of both dialogues depend on flags left by earlier bargains
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/nomads_events_1.txt:3701-5100
 - 类别改为 C1：触发条件要求可汗后裔起源（nomads.500 L3706）。修正：草稿把550、565分成独立故事。建议起源负责人在“可汗后裔”导读中链接此故事。
   Category changed to C1: the trigger requires the Heirs of the Khan origin (nomads.500 L3706). Correction: the draft split 550 and 565 into separate stories. The origin reviewer may link this story from the Heirs of the Khan guide.
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

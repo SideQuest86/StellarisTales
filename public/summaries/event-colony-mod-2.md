@@ -1,8 +1,6 @@
 # 泰坦巨兽 / Titanic Life
 
 - 分类 Category：文明纪事 Society (C7) · 星球修正殖民地事件 planet-modifier colony event
-- 来源 Sources：`events/colony_events_3.txt:150–394` · 分派器 dispatcher `:980–999` · `common/special_projects/00_projects_3.txt:602–669`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -30,5 +28,7 @@ At the first anniversary the dispatcher finds *Titanic Life* on the planet. Prim
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:150–394` · 分派器 dispatcher `:980–999` · `common/special_projects/00_projects_3.txt:602–669`
 - 已核对 Checked：事件 2/101/102/103、三个项目的 `on_success` 权重、分派器的泰坦巨兽块。/ Events, the three projects' weights and the dispatcher block.
 - 审阅改动 Changes：从合并的“磁力奇迹”故事中拆出为独立故事。/ Split out of the merged modifier-event story.

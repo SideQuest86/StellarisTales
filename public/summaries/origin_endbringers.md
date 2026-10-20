@@ -1,9 +1,6 @@
 # 终末使者 / Endbringers
 
-- 分类 Category：起源 Origins · DLC：Shadows of the Shroud · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_shadows_shroud.txt:3523-5286`、`common/situations/13_shroud_situations.txt:729-1196`、`common/archaeological_site_types/14_shroud_arc_sites.txt`、`common/traditions/01_psionics_shroud.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Shadows of the Shroud
 
 ## 如何开始 How it starts
 
@@ -32,6 +29,9 @@ At game start hidden shroud.8000 spawns the shrouded world; 30 days later 8010 c
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_shadows_shroud.txt:3523-5286`、`common/situations/13_shroud_situations.txt:729-1196`、`common/archaeological_site_types/14_shroud_arc_sites.txt`、`common/traditions/01_psionics_shroud.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：8000–8800 事件、三个局势定义、遗址、传统钩子。 Events 8000-8800, the situations, the site and the tradition hook.
 - 更正 Corrections：把通用的“终末之环”局势、最终清算事件链、“恐惧之景”月度事件、通用灵能飞升结果（utopia.2602）从本起源剪出；补充 灵能传统→8310 与 突破虚境→深入试炼 的连接。
   Cut the generic End of the Cycle situation, Reckoning chains, dread events and the generic ascension result; added tradition -> 8310 and breach -> delve trial links.

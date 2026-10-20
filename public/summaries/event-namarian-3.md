@@ -1,6 +1,6 @@
 # 银河游牧民 / Galactic Nomads
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/namarian_events.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -33,6 +33,8 @@ The fleet is created by namarian.1, travels rim -> midpoint -> end point (namari
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/namarian_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：namarian.1-10、20/21、30、40/41、499-530、95-105 的触发与分派；20/40/15（战争任务）等隐藏事件未全部展开。
 - 更正 Corrections：五个独立故事（3、8、10、30、99）并为一个“银河游牧民”；首次接触之前的“经由 finish_first_contact_effect 的广泛外链”只是编译器的展开，实际上只有 namarian.10。
   Five separate stories merged; the many first_contact.* callers shown for namarian.10 are an artefact of finish_first_contact_effect.

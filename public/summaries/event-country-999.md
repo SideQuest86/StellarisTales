@@ -1,6 +1,6 @@
 # 发现彗星 / Comet Sighted
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/country_events_2.txt:70-339 · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ See the option triggers: superstitious beliefs, fanatic ethics, machine empire, 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/country_events_2.txt:70-339
 - 逐项核对了 country_events_2.txt 70-339 的描述变体、选项条件与 after 块。
   Checked the description variants, option triggers and the after block in country_events_2.txt 70-339.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

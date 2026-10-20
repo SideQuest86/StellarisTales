@@ -1,6 +1,6 @@
 # 诋毁运动 / Smear Campaign
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -27,4 +27,6 @@ Smear Campaign needs a target with more than three contacts (not a Fallen Empire
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：操作类型、operation.3000-3020、3005 的分派（nemesis_operations_events_1.txt:2105-2184）。

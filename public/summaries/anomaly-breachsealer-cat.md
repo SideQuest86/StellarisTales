@@ -1,8 +1,6 @@
 # 发现宇宙裂口 / Universe Breach Detected
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:792-802` · `common/solar_system_initializers/special_system_initializers.txt:3538-3600 (breachsealer_system)` · `events/anomaly_events_4.txt:4867-4951 (7200)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:792-802` · `common/solar_system_initializers/special_system_initializers.txt:3538-3600 (breachsealer_system)` · `events/anomaly_events_4.txt:4867-4951 (7200)`
 - 已核对 Checked：类别、初始化器与7200。  
   Category, initializer and 7200.
 - 覆盖 Coverage：2 个文档全部核对 / all 2 docs checked.

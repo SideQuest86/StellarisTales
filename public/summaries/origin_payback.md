@@ -1,9 +1,6 @@
 # 血债血偿 / Payback
 
-- 分类 Category：起源 Origins · DLC：First Contact · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_4.txt:1-3620`、`common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:1-59`、`common/special_projects`、`common/deposits/09_first_contact_deposits.txt:70-85`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：First Contact
 
 ## 如何开始 How it starts
 
@@ -31,6 +28,9 @@ At game start hidden origin.4000 creates the dig site and debris at the capital;
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_4.txt:1-3620`、`common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:1-59`、`common/special_projects`、`common/deposits/09_first_contact_deposits.txt:70-85`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：全部 4000–4936 事件窗口、遗址与项目定义、on_action 钩子、事件链计数。 All 4000-4936 windows, the site and projects, on_action hooks and chain counters.
 - 更正 Corrections：遗址在清理项目后才可见（新增连接）；债务战斗→4020/4025；复仇结局与诊所事件接入各自事件链；移除误并入的宇宙风暴“坚守战线”遗址（cstorms.1270，原因是其触发条件在 if 中提到本起源）与通用“起源升级”路由 origin.112/113（连带破碎枷锁遗址）。
   The dig site only opens after the cleanup project (new link); fights -> 4020/4025; revenge endings and clinic events attached to their chains; removed the cosmic-storm Hold the Line site (cstorms.1270 mentions the origin inside an if) and the generic uplift routers origin.112/113 (which dragged in the Broken Shackles site).

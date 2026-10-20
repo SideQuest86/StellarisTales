@@ -1,8 +1,6 @@
 # 金属泥潭 / Metallic Puddles
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:6655–6866` · `common/special_projects/00_projects_1.txt:3578–3598` · `common/on_actions/00_on_actions.txt:3770`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -28,4 +26,6 @@ At the second anniversary (weight 8) on a continental, tropical or savanna colon
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:6655–6866` · `common/special_projects/00_projects_1.txt:3578–3598` · `common/on_actions/00_on_actions.txt:3770`
 已核对 9295–9301 全部脚本、项目与随机池。编译草稿正确；仅标注结局与汇合说明。/ All scripts, the project and the pool checked; draft correct.

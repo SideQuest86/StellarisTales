@@ -1,9 +1,6 @@
 # 红巨星 / Red Giant
 
-- 分类 Category：起源 Origins · DLC：Infernals Species Pack · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/infernals_1_events.txt:5-143, 750-2075, 4409-5756`、`events/origin_events_infernal.txt`、`common/situations/13_infernal_situations.txt:1-499`、`common/special_projects/00_projects_infernals.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Infernals Species Pack
 
 ## 如何开始 How it starts
 
@@ -29,6 +26,9 @@ At game start infernals.10 makes the home star an unstable red giant and fires i
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/infernals_1_events.txt:5-143, 750-2075, 4409-5756`、`events/origin_events_infernal.txt`、`common/situations/13_infernal_situations.txt:1-499`、`common/special_projects/00_projects_infernals.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：infernals.9000–9002、45–160、2105–2160 及局势、项目。 Events and the situation.
 - 更正 Corrections：此前树内只有起源卡——在 origin-families.json 中补上 infernals.45–160 与 2105–2160 的范围；剔除通用的熔岩漩涡异常；补充 115 → 2151 / 2121 连接、局势结果互斥组、阶段并列。
   Previously only the card was in the tree; added the missing event ranges, excluded the generic Lava Whirlpool anomaly, added the 115 -> 2151 / 2121 links, the outcome group and stage states.

@@ -1,8 +1,6 @@
 # 维度垃圾场 / Dimensional Dump
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:282`；`events/astral_rifts_2_events.txt:513–835`（2200–2230）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 2220 已并入 / former standalone failure event 2220 merged in）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 2220 已并入 / former standalone failure event 2220 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:282`；`events/astral_rifts_2_events.txt:513–835`（2200–2230）
 - 已核对：裂隙定义；2200–2230 全部事件；2205 中两个同名选项“干掉他”只有救助路线版本带 `on_roll_failed = astral_rift.2220`（`astral_rifts_2_events.txt:596–610`）；2225 → 2230 的 360 天延时。
 - 修正：编译图漏掉失败分支，2220 曾是独立故事；已用桥接并入。由于两个选项键相同，桥接挂在文档上而非具体选项（见台账 Requests）。
 

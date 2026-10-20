@@ -1,6 +1,6 @@
 # 困于风暴的舰船 / Stormbound
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/cosmic_storms_events_1.txt:1726-2036; common/on_actions/00_on_actions.txt:5404-5439; common/special_projects/03_projects_cosmic_storms.txt (project_cosmic_storms_stormbound) · DLC: Cosmic Storms · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Cosmic Storms
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Cosmic Storms DLC; research station, science ship and storm positions, all via o
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/cosmic_storms_events_1.txt:1726-2036; common/on_actions/00_on_actions.txt:5404-5439; common/special_projects/03_projects_cosmic_storms.txt (project_cosmic_storms_stormbound)
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

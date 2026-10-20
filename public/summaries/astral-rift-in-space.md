@@ -1,8 +1,6 @@
 # 空间裂隙 / A Rift in Space
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:637–706, 1157–1515, 3825–3960`；`events/astral_planes_situation_events.txt:171–465`；`common/situations/06_astral_planes_situations.txt:1–148`
-- 审阅 Reviewed：2026-10-13（全篇 whole story；原先的触发器故事 7、118、119、5055、5060 已并入 / the former trigger stories merged in）
 
 ## 如何开始 How it starts
 
@@ -48,6 +46,8 @@ This is the introduction to astral rifts: when a rift appears in (or is brought 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story；原先的触发器故事 7、118、119、5055、5060 已并入 / the former trigger stories merged in）
+- 来源 Sources：`events/astral_planes_events.txt:637–706, 1157–1515, 3825–3960`；`events/astral_planes_situation_events.txt:171–465`；`common/situations/06_astral_planes_situations.txt:1–148`
 - 已核对：上述事件、情境定义、`on_actions` 条目、`rift_in_space_event_probability` 脚本值。更正：编译器把 7、118、119、5055、5060 当作互不相干的独立故事；现在合为一个家族，并补两条桥接（2005、120）与互斥组。
 - 不确定：“什么都不发生”的权重按脚本字面解读（base 100 − 情境进度 − 20），未验证引擎对 `situation_progress` 单位的处理。
 

@@ -1,9 +1,6 @@
 # 先辈子弟 / Scion
 
-- 分类 Category：起源 Origins · DLC：Federations · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_1.txt:18-1436`、`common/solar_system_initializers/federations_initializers.txt`、`common/war_goals/00_war_goals.txt`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Federations
 
 ## 如何开始 How it starts
 
@@ -28,6 +25,9 @@ At game start hidden origin.5 fixes the fallen-empire overlord (spawning a small
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_1.txt:18-1436`、`common/solar_system_initializers/federations_initializers.txt`、`common/war_goals/00_war_goals.txt`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.5–54、200–226 全部事件及钩子。 All events 5-54 and 200-226 and hooks.
 - 更正 Corrections：入口加标签；战争干预→收回舰队连接；干预与圣世界互斥组。 Entries labelled; war-help links; exclusive groups.
 - origin.24 以 `base = origin.21` 继承标题与文本，事件继承修复后已有窗口并列于 21。 origin.24 inherits 21's title and text via `base` and now has its window beside 21.

@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.7.3 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.8.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -84,6 +84,39 @@ evidence from earlier rounds and is not updated.
   machine (Windows SideBySide: "Dependent Assembly mozglue … could not be found", also after a forced reinstall) — untested.
   Interaction sweep on the released v4.7.3 (44 scenarios, live, 0 page errors): `docs/refine/round4/interaction-final.md`. Untested: physical phones,
   low-end GPUs, native-speaker proofread.
+- **CHECKPOINT 2026-10-20 07:50 UTC — round 5 paused at the weekly limit reset (user: "stop when the limit is reset").**
+  v4.8.0 pushed through the gated workflow after a local gate on the final tree (full build incl. search index rebuild;
+  node 103/103; smoke 15/15, verify-round5 6/6, verify-search 24, verify-refine-chrome, verify-a11y, verify-museum-viewer 7,
+  verify-prewarm 24/24). NOT yet done: live verification of v4.8.0, the full suite (verify-museum, verify-gpu headed,
+  verify-images, webkit smoke) on the final tree, and the adversarial review workflow (stopped before its review phase).
+  verify-gpu's earlier failure was traced to real pointer input on the test window (21 instrumented runs pass).
+  Open work, not started or stopped mid-way: phone-audit fixes (docs/refine/round5/phone-audit.md); story-map fixes
+  (docs/refine/round5/map-audit.md: tiny viewport / fit clamp, truncated captions, map vs reader titles, legend);
+  self-hosted CJK font subsets (user approved the download; agent stopped mid-way — scripts/fonts/build-subsets.py
+  untracked, no patch yet); second museum model pass (stopped; candidates only); search: -ies/-es prefix stems
+  (src/search.js:212 one-line fix proposed), titles with deleted placeholders in search rows, 404s for stories without
+  effects files.
+- **Round 5 (2026-10-19, v4.8.0; user: use the remaining weekly allowance on worthwhile improvements):**
+  - Reading memory: `src/seen.js` (`st-seen`, every chapter ever opened per story, capped, storage failures tolerated;
+    tests/seen.test.mjs) → archive panel "已读 n/N · n of N read"; Grand Archive marks specimens awarded by chapters the
+    reader has opened (museum/by-doc.json × st-seen) with a "阅读中遇到 · Met while reading" filter chip.
+  - Number keys 1–9 pick the n-th visible choice / continue card in the reader (not in fields, map, search, museum); the
+    key shows on hover / keyboard focus with a fine pointer.
+  - Guides: `src/guide-links.js` turns event ids into chapter-title buttons (own story; other stories via records.json;
+    unresolvable ids such as hidden events stay, dimmed); empty sections hidden; the zh/en line splitter no longer hides
+    Chinese text (old rule: 1,744 of 2,311 splits put Chinese into the hidden English half; now 0 of 2,347);
+    `scripts/guides/cleanup.py` moved disclaimers / Reviewed / Sources / editor notes into the folded review section
+    (1,388 guides); 5 guides gained English, 83 titles lost raw tokens (docs/refine/round5/guides-*.md).
+  - Search (`docs/refine/round5/search.md`): Latin prefix search on the last word, single Chinese characters in body text,
+    one-edit typo fallback marked "相近结果 / Close matches", ranking by title exactness; index +6 % gzip.
+  - First opening (`docs/refine/round5/perf-opening.md`, same-session A/B): click on the selected story worst frame p50
+    41 → 12 ms, after browsing to an unwarmed story 106 → 41 ms, link opening 77 → 47 ms; map built progressively
+    around the current chapter; scene draws only after its programs link (the v4.7.2 gate had not taken effect).
+  - Accessibility (`docs/refine/round5/a11y-audit.md`, `a11y-fixes.md`): names, lang on Chinese runs in English mode,
+    contrast ≥ 4.5:1, touch targets, slider value text, forced-colors cues, live regions.
+  - Wording: AI proofread of UI and generated wording in both languages (docs/refine/round4/proofread.md) — not a
+    native-speaker review.
+  - Museum: 15 weakest models re-run (30 candidates), 2 shipped (docs/museum/MODELS.md "2026-10-19 pass").
 - **Before / after visuals (v4.6.4 code and its effects data vs v4.7.3, same steps and viewports):** 13 surfaces — archive,
   landscape archive, reader opening, continue cards, effects panels (choice zh / en, origin), guide end, ending, search,
   museum list, exhibit, phone reader — in `verification/round4/before-after/sheet-1..4.jpg`

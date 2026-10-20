@@ -1,6 +1,6 @@
 # 有毒的改造候选 / Toxic terraforming candidate
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/toxoids_events.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -20,4 +20,6 @@ toxoids.500：非游牧国家；唯一选项“有趣”——该星球若选“
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/toxoids_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：toxoids.499 / 500。

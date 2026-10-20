@@ -1,8 +1,6 @@
 # 存在主义耗散 / Existentialist Dissipation
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:119-137` · `events/cosmic_storms_events_1.txt:32-115` · `events/anomaly_events_cosmic_storms.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:119-137` · `events/cosmic_storms_events_1.txt:32-115` · `events/anomaly_events_cosmic_storms.txt`
 - 已对照类别脚本、cstorms.5与5025。  
   Compared the category script, cstorms.5 and 5025.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

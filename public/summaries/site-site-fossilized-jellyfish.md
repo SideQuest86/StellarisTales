@@ -1,6 +1,6 @@
 # 星罗群岛 / Dotted Archipelago
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1252；events/ancient_relics_arcsite_events_2.txt:5368 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -33,6 +33,8 @@ Clusters of round islands with identical tunnel layouts dot an ocean world; they
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1252；events/ancient_relics_arcsite_events_2.txt:5368
 - 已核对：遗址定义（common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1252）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1252) with its stage order and conditions, every stage event script, and how the site appears; both languages read.
 - 结构修正：最后一个阶段事件 ancrel.9366 是隐藏的随机分派，草稿把它的几个互斥结局错排成连续阶段；现改为最后可见阶段之后的互斥分支。

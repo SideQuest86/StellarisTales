@@ -1,10 +1,6 @@
 # 异种净化承诺 / Xenopurge Mandate
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`common/event_chains/00_mandate_chains.txt:29`; `localisation/english/mandates_l_english.yml`; `common/static_modifiers/01_static_modifiers.txt:237`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -32,6 +28,9 @@ There are 20 sibling mandate chains (mining, research, purge, shipwright, fiscal
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`common/event_chains/00_mandate_chains.txt:29`; `localisation/english/mandates_l_english.yml`; `common/static_modifiers/01_static_modifiers.txt:237`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 检索了安装目录下全部脚本与本地化，未发现启动者或计数器推进者；标记为 unreachable（遗留内容）。引擎代码是否仍在启动承诺无法从脚本判断。
 
 All scripts and localisation in the install were searched; no starter or counter-advancer exists, so the card is flagged unreachable (legacy content). Whether engine code still starts mandates cannot be seen in script.

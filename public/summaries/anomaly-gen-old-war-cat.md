@@ -1,8 +1,6 @@
 # 钢之追寻 / A Feel For Steel
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:76-108` · `events/anomaly_events_3.txt:547-673 (4020)` · `events/anomaly_events_3.txt:4918-5013 (4165-4166)` · `common/special_projects/00_projects_3.txt:452-475` · `events/failures.txt:323-341` · `common/scripted_effects/00_scripted_effects.txt:3291-3312`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -36,6 +34,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:76-108` · `events/anomaly_events_3.txt:547-673 (4020)` · `events/anomaly_events_3.txt:4918-5013 (4165-4166)` · `common/special_projects/00_projects_3.txt:452-475` · `events/failures.txt:323-341` · `common/scripted_effects/00_scripted_effects.txt:3291-3312`
 - 已核对 Checked：类别、4020、4165/4166、项目、失败事件与 pop_lcluster_event 效果。  
   Category, 4020, 4165/4166, the project, failure event and the pop_lcluster_event effect.
 - 更正 Corrections：判定 distar.9000 为共享的L星门线索通知（由15个不同结果事件调用），不属于本故事。  

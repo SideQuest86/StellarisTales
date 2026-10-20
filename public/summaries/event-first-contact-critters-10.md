@@ -1,7 +1,5 @@
 # 怪异热源 / Weird Heat Blobs
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（提亚奇 tiyanki_stage_1 → tiyanki_stage_2）
-- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:114–338` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:45–83` · `common/scripted_effects/first_contact_effects.txt:89–656`
-- 审阅 Reviewed：2026-10-13（c7b-society 第一阶段；r2-society 第二阶段；协调合并 coordinator merge）
 
 ## 如何开始 How it starts
 
@@ -23,6 +21,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society 第一阶段；r2-society 第二阶段；协调合并 coordinator merge）
+- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:114–338` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:45–83` · `common/scripted_effects/first_contact_effects.txt:89–656`
 - 已核对 Checked：事件 10 与 15、两个阶段定义、15 的四类选项、共享的 finish_first_contact_effect。/ Events 10 and 15, both stage definitions, 15's option groups, the shared finish effect.
 - 更正 Corrections：编译器从共享的 finish_first_contact_effect 画出的九个外链（商队、掠夺者、纳玛里安、first_contact.11xx、galactic_features.387）不是本故事的后续，已移除。/ Nine external links drawn from the shared finish effect were suppressed.
 - 合并 Merge（2026-10-13）：15 原为单独故事 event-first-contact-critters-15，现作为第二阶段并入；旧注释“15 属于原始呼唤篇”已过时（grand_archive.200 已作为共享节点处理）。/ 15 was a separate story and is now stage 2 here; the old note placing it in the Primal Calling story was stale.

@@ -1,8 +1,6 @@
 # 不应拒绝的交易 / A Deal We Should Not Refuse
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord（需“大可汗”出现）
-- 来源 Sources：events/overlord_enclaves_events.txt:3667（enclave.2045）, :3776（enclave.2050）, :3816（enclave.2051）; common/on_actions/00_on_actions.txt:273
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 每两年检查一次：大可汗（觉醒掠夺者）存在且未死，并有某个佣兵城邦的舰队未出租。若该城邦所在星系属于 AI，可汗直接雇走舰队，不出现窗口；若属于玩家，则该玩家收到本通知。
@@ -19,5 +17,8 @@ The enclave reports the Khan's offer and asks for a counter-hire within two mont
 - 检查（隐藏 enclave.2051）：若舰队仍未被租用，主力舰队交给可汗1510天并跟随可汗舰队。The hidden check gives the still-unleased main fleet to the Khan for 1510 days.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:3667（enclave.2045）, :3776（enclave.2050）, :3816（enclave.2051）; common/on_actions/00_on_actions.txt:273
 已核对触发条件、AI/玩家分支、三个选项的延迟与 enclave.2051 效果。覆盖完整。
 Checked trigger, AI/player split, the three options' delays and enclave.2051. Coverage complete.

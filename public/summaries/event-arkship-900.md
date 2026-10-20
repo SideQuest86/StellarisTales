@@ -1,6 +1,6 @@
 # 驿站已开工 / Waystation Constructed
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nomads_arkship_events.txt（arkship.900 → arkship.905）、common/on_actions/00_on_actions.txt:5922 · 游牧帝国内容 nomad content · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ A nomad empire builds a waystation in our system: once (then toasts); exterminat
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nomads_arkship_events.txt（arkship.900 → arkship.905）、common/on_actions/00_on_actions.txt:5922 · 游牧帝国内容 nomad content
 - 已核对 Checked：on_action 调用、arkship.900 的触发条件、一次性/三年标记与 arkship.905 的选项。

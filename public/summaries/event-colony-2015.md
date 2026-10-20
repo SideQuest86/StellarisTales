@@ -1,7 +1,6 @@
 # 古怪工厂 / An Odd Factor
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_2.txt:2360-2584`；`common/on_actions/00_on_actions.txt:3763,3815`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -24,11 +23,10 @@
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。
-  None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_2.txt:2360-2584`；`common/on_actions/00_on_actions.txt:3763,3815`
 - 已核对：触发、随机权重、两次绑架的触发标志与均值、选项效果。
   Checked: trigger, random weights, trigger flags and means of both kidnappings, option effects.
 - 更正：2016、2017、2019 原为各自孤立的故事，现并入（标志衔接）。

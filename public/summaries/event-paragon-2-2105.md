@@ -1,11 +1,7 @@
 # 卓越个体 / Exceptional Individuals
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/paragon_events_2.txt:723`; `common/on_actions/00_on_actions.txt:2714`
 - DLC：Galactic Paragons
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ Text and options differ for xenophobes and non-xenophobes; gestalt consciousness
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/paragon_events_2.txt:723`; `common/on_actions/00_on_actions.txt:2714`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 对照脚本核实了触发、两个互斥选项与效果；它是知名领袖事件（paragon.998 / 41234，由其他审阅者负责）的前置通知。
 
 Trigger, the two exclusive options and the effect were checked against the script; it is the prerequisite notice for the Renowned Leader events (paragon.998 / 41234, owned by another reviewer).

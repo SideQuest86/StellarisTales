@@ -1,8 +1,6 @@
 # 意外矿层 / Unexpected Mineral Seams
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain（开发者注释 "Greed is Bad"）
-- 来源 Sources：`events/colony_events_3.txt:4633–5150` · `common/on_actions/00_on_actions.txt:2841、2928、2945、3769、3820`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -34,6 +32,8 @@ English: the deeper (and more expensive) you dig, the richer the deposits — un
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:4633–5150` · `common/on_actions/00_on_actions.txt:2841、2928、2945、3769、3820`
 - 已核对 Checked：9050–9095 全部脚本（含隐藏回调 9080/9082/9095 及其 on_action）、四档能量费用与延时。
 - 合并 Merged：原独立故事 event-colony-9080（9080 隐藏 → 9081）是本链海妖战斗的结果，现以家族方式并入，并从 9075、9090 加审阅连接。/ The former story event-colony-9080 is merged via a family and two reviewed bridges.
 - 审阅改动 Changes：标注两个结局与三条审阅注释（同名选项分流、海妖三种下场、安全第一退出）。

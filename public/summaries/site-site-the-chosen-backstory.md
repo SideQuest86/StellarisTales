@@ -1,6 +1,6 @@
 # 废弃观测站 / Abandoned Observation Outpost
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:129；events/arcsite_events.txt:1313；common/solar_system_initializers/special_system_initializers.txt:3353 · DLC：《初次接触》First Contact（遗址定义 07_first_contact_dlc_arc_sites） · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《初次接触》First Contact（遗址定义 07_first_contact_dlc_arc_sites）
 
 ## 如何开始 How it starts
 
@@ -32,10 +32,11 @@ The data crystals are the Prophetess Ithikarios' "record of the Charynoi people"
 
 ## 条件与文明差异 Conditions and variants
 
-- 无特殊的文明差异。 / No empire-specific variants beyond the reward wording.
 - 掷骰失败时使用多个遗址共用的事件池 space_station_random_events（轨道遗址）。 / Failed rolls draw from the pool space_station_random_events, shared by several sites (orbital sites).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:129；events/arcsite_events.txt:1313；common/solar_system_initializers/special_system_initializers.txt:3353
 - 已核对：遗址定义（common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:129）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/07_first_contact_dlc_arc_sites.txt:129) with its stage order and conditions, every stage event script, and how the site appears; both languages read.

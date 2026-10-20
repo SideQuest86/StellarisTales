@@ -355,9 +355,102 @@ input {
   border-radius: 50%;
   background: var(--dim);
 }
-.selection-eyebrow span:last-child {
+.selection-eyebrow #chapter-count,
+.selection-eyebrow #read-count {
   color: var(--dim);
   letter-spacing: 0.04em;
+}
+/* Number keys 1–9 pick a choice / continue card (app.js readerActions); the key shows on hover or keyboard focus. */
+@media (hover: hover) and (pointer: fine) {
+  .chapter-document :is(.choice-button, .next-chapter, .reading-next)[data-key]:is(:hover, :focus-visible)::after {
+    content: attr(data-key);
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    padding: 0 5px;
+    font: 10px/16px var(--mono);
+    color: var(--gold);
+    background: var(--bg, #0b1a1f);
+    border: 1px solid #c9b07a66;
+    pointer-events: none;
+  }
+}
+.chapter-document :is(.choice-button, .reading-next) {
+  position: relative;
+}
+/* Specimens a story can award (app.js storySpecimens): small rarity-ringed icons under the excerpt. */
+.story-specimens {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -8px 0 18px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--dim);
+}
+.story-specimens span {
+  margin-right: 4px;
+}
+.story-specimen {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--rarity, #8fd8c6);
+  border-radius: 50%;
+  background: #08151acc;
+  opacity: 0.85;
+  pointer-events: auto; /* the archive HUD passes pointers through to the scene; its controls opt back in */
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+.story-specimen:hover,
+.story-specimen:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+.story-specimen img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.story-specimen.rarity-common { --rarity: #8fd8c6; }
+.story-specimen.rarity-rare { --rarity: #6fb6ea; }
+.story-specimen.rarity-epic { --rarity: #b394ec; }
+.story-specimen.rarity-exceptional { --rarity: #e5c37a; }
+@media (max-height: 520px) and (min-width: 701px) {
+  .story-specimens { display: none; }
+}
+/* "← From <story>" on the first chapter after crossing into another story (app.js fromChip). */
+.from-chip {
+  min-height: 0;
+  max-width: 16rem;
+  margin-left: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: inherit;
+  color: var(--dim);
+  letter-spacing: inherit;
+}
+.from-chip:hover,
+.from-chip:focus-visible {
+  color: var(--gold);
+}
+/* Guide document links (src/guide-links.js): read like the guide's text, open the chapter like a map node. */
+.guide-doc {
+  display: inline;
+  min-height: 0; /* buttons are 44 px tall elsewhere; this one is a word in a sentence */
+  padding: 0;
+  font: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  color: var(--gold);
+  border-bottom: 1px dotted #c9b07a88;
+  cursor: pointer;
+}
+.guide-doc:hover,
+.guide-doc:focus-visible {
+  border-bottom-style: solid;
 }
 #selected-title {
   margin: 16px 0 14px;
@@ -468,7 +561,8 @@ input {
 #reader:has(#flow-surface.card-ready) .reader-left {
   opacity: 1;
 }
-.reader-left h2 {
+.reader-left h2,
+.reader-left #dossier-title {
   margin: 0 0 4px;
   font: 600 18px/1.35 var(--serif);
   letter-spacing: 0.04em;
@@ -875,13 +969,19 @@ input {
   font-size: 14px;
   color: var(--ink-2);
 }
+#reader-language {
+  min-width: 44px;
+  padding: 0 8px;
+}
 .story-summary summary {
+  min-height: 24px;
   cursor: pointer;
   color: var(--gold);
   letter-spacing: 0.04em;
 }
 .story-summary a {
   display: inline-block;
+  min-height: 24px;
   margin: 12px 0;
   font-size: 12px;
   color: var(--dim);
@@ -1406,7 +1506,7 @@ input {
   color: #8fc0bb;
 }
 .flow-key .key-other {
-  color: #5e7774;
+  color: #7d9a96;
 }
 .flow-key .key-other::before {
   border-top-style: dotted;
@@ -1709,7 +1809,7 @@ input {
   min-width: 30px;
 }
 input[type="range"] {
-  height: 3px;
+  height: 24px; /* hit area (WCAG 2.5.8); the native track stays thin */
   cursor: pointer;
 }
 .volume {
@@ -2000,9 +2100,13 @@ dialog::backdrop {
   .header-actions button {
     font-size: 12px;
     padding: 0 4px;
+    min-width: 44px;
   }
   #search-open > span:last-child {
     display: none;
+  }
+  .brand {
+    min-height: 24px;
   }
   #motion {
     max-width: 70px;
@@ -2435,7 +2539,7 @@ body.museum-open .gpu-hint {
 }
 
 /* Soundtrack: vocal / instrumental tag in the playlist, and a quiet cue while autoplay waits for a first gesture. */
-.track-version { margin-left: .5em; font: 500 .72em/1 var(--font-ui, sans-serif); letter-spacing: .04em; opacity: .62; white-space: nowrap; }
+.track-version { margin-left: .5em; font: 500 .72em/1 var(--font-ui, sans-serif); letter-spacing: .04em; opacity: .85; white-space: nowrap; }
 .music-player.autoplay-blocked #play-pause { animation: play-cue 2.4s ease-in-out 3; }
 @keyframes play-cue { 50% { box-shadow: 0 0 0 4px rgba(120, 220, 205, .22); } }
 html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none; }
@@ -2479,3 +2583,8 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 /* Reader warm-up (prewarmReader in app.js): laid out and painted once in idle time, transparent and inert. */
 #reader.prewarm { opacity: 0.002 !important; pointer-events: none !important; }
 #reader.prewarm #flow-surface { opacity: 1; transition: none; }
+
+/* Forced colors: pressed toggles keep a non-colour cue. */
+@media (forced-colors: active) {
+  [aria-pressed="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+}

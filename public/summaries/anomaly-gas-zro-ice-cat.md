@@ -1,8 +1,6 @@
 # 冰冻冰巨星 / Ice Ice Giant
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:360-382` · `events/anomaly_events_1.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:360-382` · `events/anomaly_events_1.txt`
 - 已对照150原文。  
   Compared the original of 150.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

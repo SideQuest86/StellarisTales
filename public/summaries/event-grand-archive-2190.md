@@ -1,6 +1,6 @@
 # 星际寄生虫 / Galactic Parasites
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ Hidden 2190 runs when hostile Voidworms bombard a planet with the invasion stanc
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt
 - 已核对 Checked：2190 / 2195 的触发、标记与正文条件；紧接的 2200 为每次轰炸的隐藏结算（杀死人口）。 Checked 2190/2195; 2200 is the hidden per-bombardment pop kill.

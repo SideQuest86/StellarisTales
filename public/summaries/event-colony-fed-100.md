@@ -1,8 +1,6 @@
 # 蓝荷计划 / Project Blue Lotus（不可能的凹地 Impossible Corrie）
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:3382–3702` · `common/special_projects/00_projects_federations.txt:373–394` · `common/on_actions/00_on_actions.txt:3793、3842`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -35,5 +33,7 @@ At the second (weight 3) or third (weight 4) anniversary the pool can pick *Impo
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:3382–3702` · `common/special_projects/00_projects_federations.txt:373–394` · `common/on_actions/00_on_actions.txt:3793、3842`
 - 已核对 Checked：colony_fed.100–120 全部脚本、项目期限与 `on_fail`、两个随机池权重。编译草稿结构正确。
 - 审阅改动 Changes：标题改用 105「蓝荷计划」（项目与开发者注释均称 "PROJECT BLUE LOTUS"）；标注四个结局与 115 的审阅注释。

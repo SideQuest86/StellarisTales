@@ -1,7 +1,6 @@
 # 不明吊舱 / Unidentified Drop Pods
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:3803-3945 (distar_pod_system); common/anomalies/95_anomaly_categories_distant_stars.txt:784-799; events/distant_stars_events_1.txt:8972 (distar.245); events/distant_stars_events_1.txt:9037 (distar.246); events/distant_stars_events_1.txt:9183/9210 (distar.247/248)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@ distar.246's outcomes are exclusive: recruit, analyse (247), destroy/dismantle (
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:3803-3945 (distar_pod_system); common/anomalies/95_anomaly_categories_distant_stars.txt:784-799; events/distant_stars_events_1.txt:8972 (distar.245); events/distant_stars_events_1.txt:9037 (distar.246); events/distant_stars_events_1.txt:9183/9210 (distar.247/248)
 已核对初始化、异常与 distar.245–248。树结构正确；欢迎选项通过通用领袖招募效果（focus.46，共享）完成。
 
 Checked the initializer, anomaly and distar.245–248. Tree correct; the welcome option uses the generic leader-hire effect (focus.46, shared).

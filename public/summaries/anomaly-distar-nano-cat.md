@@ -1,7 +1,6 @@
 # 灰蛊 / Gray Goo
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:98-122; events/distant_stars_events_1.txt:1171 (distar.40); common/scripted_effects/00_scripted_effects.txt:3243-3278 (generate_lcluster_clue)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -25,10 +24,10 @@ Single outcome; no random branch.
 
 无文明差异的选项。
 
-No empire-specific option differences.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:98-122; events/distant_stars_events_1.txt:1171 (distar.40); common/scripted_effects/00_scripted_effects.txt:3243-3278 (generate_lcluster_clue)
 已核对异常定义与 distar.40。
 
 Checked the anomaly definition and distar.40.

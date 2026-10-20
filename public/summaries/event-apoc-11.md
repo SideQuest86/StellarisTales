@@ -1,11 +1,7 @@
 # 星门建设完成 / Gateway Constructed
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/apocalypse_events.txt:232-262,298-345`; `common/megastructures/05_gateways.txt:3-318`
 - DLC：Apocalypse
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ No empire variants; the Galactic Doorstep origin (doorstep_gateway) uses a diffe
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/apocalypse_events.txt:232-262,298-345`; `common/megastructures/05_gateways.txt:3-318`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 对照 05_gateways.txt 的三个 on_build_complete 与 apoc.11/13/14 的触发；原先的 event-apoc-14 并入本条。
 
 The three on_build_complete hooks in 05_gateways.txt and the triggers of apoc.11/13/14 were checked; the former event-apoc-14 is merged here.

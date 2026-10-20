@@ -1,7 +1,5 @@
 # 绑架提议 / Abduction Proposal
 - 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:2447-2725` · `common/special_projects (ABDUCT_SCIENTIST_PROJECT)` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,6 +20,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:2447-2725` · `common/special_projects (ABDUCT_SCIENTIST_PROJECT)` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：根 1000、1001 及项目结果事件。/ Root 1000, 1001 and project results.
 - 审阅改动 Changes：结构与草稿一致。/ Matches the draft.
 - 不确定 Uncertain：项目 ABDUCT_SCIENTIST_PROJECT 的成本/时限未在此展开。 / The project’s cost and limit were not expanded.

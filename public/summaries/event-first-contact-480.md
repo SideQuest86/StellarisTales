@@ -1,7 +1,5 @@
 # 诗歌 / Poetry
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件「诗歌」first_contact.450）
-- 来源 Sources：`events/first_contact_events.txt:6738–7170, 8017–8030` · `common/first_contact/00_first_contact.txt:678–704, 2169–2243`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -27,6 +25,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:6738–7170, 8017–8030` · `common/first_contact/00_first_contact.txt:678–704, 2169–2243`
 - 已核对 Checked：450–490、462 脚本及五个诗歌阶段、第二阶段条目。
 - 审阅改动 Changes：原 event-first-contact-475/480/485/490 四篇单页合并入本篇，450 为根。/ The four single-event stories 475, 480, 485 and 490 are merged here under root 450.
 - 不确定 Uncertain：各结局的好感修正数值在 opinion_modifiers 中，未逐项核对。/ Opinion modifier values not checked.

@@ -1,6 +1,5 @@
-# 来自[FallenEmpireTaskOrigin.GetName]的通讯 / Communication from [FallenEmpireTaskOrigin.GetName]
-
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/fallen_empire_tasks_events.txt:11-211; common/on_actions/00_on_actions.txt:597 · 审阅 Reviewed 2026-10-13
+# 来自堕落帝国的通讯 / Communication from a Fallen Empire
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -22,6 +21,8 @@ Options a and b are exclusive.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/fallen_empire_tasks_events.txt:11-211; common/on_actions/00_on_actions.txt:597
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

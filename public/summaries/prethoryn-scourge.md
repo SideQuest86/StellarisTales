@@ -1,8 +1,6 @@
 # 索林原虫：银河之外 / The Prethoryn Scourge
 
-- 分类 Category: 天灾 Crisis · 来源 Sources: `events/crisis_events_1.txt`, `events/crisis_trigger_events.txt:9-375`, `events/observer_events.txt:507-616`, `common/special_projects/00_projects_1.txt:3235-3263`, `common/relics/relics.txt:785-837` · 审阅 Reviewed 2026-10-12 (c5b-crisis)
-
-> 以下为审阅者导读（评注），不是游戏原文；原文见各篇章。 / Reviewer commentary, not game text.
+- 分类 Category：天灾 Crisis
 
 ## 如何开始 How it starts
 
@@ -36,6 +34,9 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12 (c5b-crisis)
+- 来源 Sources：`events/crisis_events_1.txt`, `events/crisis_trigger_events.txt:9-375`, `events/observer_events.txt:507-616`, `common/special_projects/00_projects_1.txt:3235-3263`, `common/relics/relics.txt:785-837`
+- 以下为审阅者导读（评注），不是游戏原文；原文见各篇章。 / Reviewer commentary, not game text.
 - 已核对 Checked: crisis_events_1.txt 全部可见事件及隐藏路由（L15-4329）、触发器与 on_action 调用（00_on_actions.txt:90, 233, 709-710, 1411, 1418, 1635, 3607）、项目与遗珍、观察者副本（文本与玩家窗口相同，挂在对应篇章下）。
 - 更正 Corrections: 107 原被误挂在 105 之后——它其实发给其他帝国，现为项目的互斥结果；三个预兆、先锋、主力的连接标签补上隐藏事件与平均时间；补齐哨兵、虫后、育母虫后、结局余波的连接，消除全部“次要入口”。
 - 不确定 Uncertain: MTTH 为引擎平均值，实际间隔会变化；仅凭“心灵融合”能沟通的帝国在 crisis.16 不匹配任何描述条件，实机表现未验证。

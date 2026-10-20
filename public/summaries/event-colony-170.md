@@ -1,7 +1,6 @@
 # 轨道残骸 / Orbital Debris
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_1.txt:4011-4230`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,5 +26,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_1.txt:4011-4230`
 - 已核对：触发、延迟、修正条件、项目结果。
   Checked: trigger, delays, modifier conditions, project outcomes.

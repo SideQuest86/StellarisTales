@@ -1,10 +1,5 @@
-# 无礼的[envoy_source.GetAdj]特使 / Insulting [envoy_source.GetAdj] Envoy
-
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
+# 无礼的特使 / Insulting Envoy
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/envoy_events.txt:15-285`; `common/on_actions/00_on_actions.txt:576-592`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -26,12 +21,11 @@ No branches.
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/envoy_events.txt:15-285`; `common/on_actions/00_on_actions.txt:576-592`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了脚本触发和选项；与同一列表中的其他事件互相独立。
 
 Trigger and options were checked against the script; independent of the other events in the same list.

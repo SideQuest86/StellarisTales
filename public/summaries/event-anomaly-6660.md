@@ -1,8 +1,6 @@
 # 反常情况 / Abnormal Conditions
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`events/anomaly_events_4.txt:1087-1250` · `common/on_actions/00_on_actions.txt:1143-1144`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`events/anomaly_events_4.txt:1087-1250` · `common/on_actions/00_on_actions.txt:1143-1144`
 - 已对照两个事件原文与on_action。合并为一个故事，原event-anomaly-6661不再单独存在。  
   Compared both originals and the on_action. Merged into one story; event-anomaly-6661 no longer exists separately.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

@@ -1,7 +1,5 @@
 # 殖民地启动 / Colony Startup
 - 分类 Category：文明纪事 Society (C7) · 游牧者合同的追踪卡片 Nomads contract tracking card
-- 来源 Sources：`common/missions/missions/02_contracts.txt:3320-3493` · `common/event_chains/00_event_chains_nomads.txt:490-500` · `common/special_projects/06_projects_nomads.txt:1327`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -17,9 +15,9 @@
 
 ## 条件与文明差异 Conditions and variants
 
-无。 / None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`common/missions/missions/02_contracts.txt:3320-3493` · `common/event_chains/00_event_chains_nomads.txt:490-500` · `common/special_projects/06_projects_nomads.txt:1327`
 - 已核对 Checked：合同定义（触发、接受时的效果、成功奖励）与事件链卡片定义。/ Contract definition (issuer, on_accept, rewards) and the chain card.
 - 审阅改动 Changes：结构无改动（单卡片）；补充了合同来源与奖励。/ No structural change; contract origin and rewards added.

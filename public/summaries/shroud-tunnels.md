@@ -1,8 +1,6 @@
 # 虚境隧道 / Shroud Tunnel
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord
-- 来源 Sources：events/overlord_enclaves_events.txt:22（enclave.100）, :7723（enclave.4200）, :7963（enclave.4250）, :12158–12690（6000–6025）; common/on_actions/00_on_actions.txt:930, :4126–4137; common/starbase_buildings/00_starbase_buildings.txt:1185, :1193; common/solar_system_initializers/overlord_initializers.txt:595; common/scripted_effects/enclave_effects.txt:510
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 虚境隧道的总枢纽随虚境行者城邦星系生成；各地节点由向虚境行者购得许可后建造的“虚境信标”产生。首次有舰船进入含隧道的星系时，出现“飘忽不定的甬道”（enclave.100；“虚境导师”起源或已自建隧道者除外）。
@@ -23,9 +21,10 @@ The tunnel nexus is created with the Shroudwalker enclave's system; nodes come f
 
 ## 分支与结局 Branches and outcomes
 
-本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
-
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:22（enclave.100）, :7723（enclave.4200）, :7963（enclave.4250）, :12158–12690（6000–6025）; common/on_actions/00_on_actions.txt:930, :4126–4137; common/starbase_buildings/00_starbase_buildings.txt:1185, :1193; common/solar_system_initializers/overlord_initializers.txt:595; common/scripted_effects/enclave_effects.txt:510
 - 已核对随机表权重、6005→6010 的30天延迟与条件、6020→6025 的180天延迟、信标建筑的完成/摧毁回调。
 - 更正：草稿把这些事件拆成六个互不相关的一页故事；现按同一触发表组织。Correction: six unrelated one-page stories regrouped by their shared trigger table.
 - 覆盖完整。Coverage complete.

@@ -1,8 +1,6 @@
 # 薄冰 / Thin Ice
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:716-741` · `events/anomaly_events_4.txt:4348-4508 (3145-3165)` · `common/special_projects/00_projects_3.txt:1767-1786`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:716-741` · `events/anomaly_events_4.txt:4348-4508 (3145-3165)` · `common/special_projects/00_projects_3.txt:1767-1786`
 - 已核对 Checked：类别、3145/3150/3165、隐藏3155/3160与项目。  
   Category, 3145/3150/3165, hidden 3155/3160 and the project.
 - 覆盖 Coverage：5 个文档全部核对 / all 5 docs checked.

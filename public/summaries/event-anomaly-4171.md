@@ -1,8 +1,6 @@
 # 失败 / Failure
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`events/anomaly_events_3.txt:5114-5160` · `events/failures.txt:490`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`events/anomaly_events_3.txt:5114-5160` · `events/failures.txt:490`
 - 已对照原文。  
   Compared the originals.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

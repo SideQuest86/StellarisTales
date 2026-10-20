@@ -1,6 +1,6 @@
 # 罕见特质 / Rare Trait
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:8484-8922 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -22,10 +22,10 @@ Agreeing gives the fragment's species that trait and pleases it; refusing disple
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:8484-8922
 - 已核对特质筛选、两选项效果与清理。
   Checked trait selection, both options and the clean-up.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

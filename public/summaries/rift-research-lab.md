@@ -1,8 +1,6 @@
 # 废弃设施 / Abandoned Complex
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:255`；`events/astral_rifts_2_events.txt:11–341`（2000–2045）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -46,6 +44,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:255`；`events/astral_rifts_2_events.txt:11–341`（2000–2045）
 - 已核对：裂隙定义；2000–2045 全部事件；2020.b 的 `on_roll_failed = astral_rift.2030`（`astral_rifts_2_events.txt:139–143`）；2030 的 `after` 中 30 天后的 2045。
 - 修正：编译图漏掉失败桥接；已补 2020.b → 2030，标注 2035/2030 互斥，并为 2045 标注结局。
 

@@ -1,8 +1,6 @@
 # 舰队合约到期 / Fleet Contract Ended
 
 - 分类 Category：巨兽与城邦 Leviathans & enclaves · DLC：霸主 Overlord（灵督变体需相应起源）
-- 来源 Sources：events/overlord_enclaves_events.txt:3937（enclave.2059）, :3979（enclave.2060）; events/shroud_events.txt:19269（shroud.6878）; common/on_actions/00_on_actions.txt:1837
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 从佣兵城邦租用的舰队合约到期时（on_fleet_contract_expired），隐藏事件 enclave.2059 检查租用方为玩家、出租方为佣兵城邦后，向租用方发出通知。
@@ -23,6 +21,9 @@ One notice, chosen by enclave type (exclusive):
 仅玩家租用方会收到；AI 无通知。Only player clients receive it.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:3937（enclave.2059）, :3979（enclave.2060）; events/shroud_events.txt:19269（shroud.6878）; common/on_actions/00_on_actions.txt:1837
 - 已核对 enclave.2059 的 if/else、两份通知的选项，以及 on_action 位置。Checked the if/else in enclave.2059, both notices' options and the on_action.
 - 更正：草稿把灵督城邦的整套联络菜单（约40个窗口）嵌入本故事；已用 suppress 断开，并在台账中请求为该菜单建立独立故事族，届时应删除这些 suppress 以恢复跨故事链接。
   Correction: the draft embedded the whole Mindwarden contact menu (~40 windows); those edges are suppressed pending a Mindwarden-menu family (ledger request 3), after which the suppressions should be removed.

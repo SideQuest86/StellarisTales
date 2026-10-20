@@ -1,8 +1,6 @@
 # 冰川危机 / Glacial Crisis
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:9816–10190` · `common/special_projects/00_projects_3.txt:1886–1935` · `common/on_actions/00_on_actions.txt:3775`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -35,6 +33,8 @@ English outline: the warming world can be studied (720-day project) or ignored. 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:9816–10190` · `common/special_projects/00_projects_3.txt:1886–1935` · `common/on_actions/00_on_actions.txt:3775`
 - 已核对 Checked：7229–7265 全部脚本、两个项目（含 720 天期限与 `on_fail`）、`on_colony_2_years_old` 随机池。编译草稿结构与源文件一致。
 - 审阅改动 Changes：标注四个结局与两条审阅注释（十年延时、保护永冻土的退出）。
 - 注释 Commentary：概述为审阅者撰写。

@@ -1,7 +1,5 @@
 # 邀请 / The Invitation（异星晚宴 Xeno Dinner Party）
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件「邀请」first_contact.1120）
-- 来源 Sources：`events/first_contact_events.txt:8287–8870` · `common/first_contact/00_first_contact.txt:705–738, 2244–2420`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -26,5 +24,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:8287–8870` · `common/first_contact/00_first_contact.txt:705–738, 2244–2420`
 - 已核对 Checked：1120–1165 脚本，9 个晚宴阶段，第二阶段条目。
 - 审阅改动 Changes：把 1120 与 1125–1165 九个单页并成一棵树（原各自为篇），按选项连接阶段，并标出互斥结局组。/ The ten events (formerly one story each plus the entry in the stage-2 pile) are now one tree; mutually exclusive endings are grouped.

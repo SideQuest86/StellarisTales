@@ -1,6 +1,6 @@
 # 浪迹星涯 / Wanderlust
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/country_events_2.txt:341-1868; events/game_start.txt:15; common/event_chains/00_event_chains_2.txt:12-41 · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Paying needs 150 energy and pacifist/materialist ethics; xenophobes get their ow
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/country_events_2.txt:341-1868; events/game_start.txt:15; common/event_chains/00_event_chains_2.txt:12-41
 - 对照 country_events_2.txt 341-1868 与三条事件链定义，补上了原先看不见的“进入星系”衔接，并把7个碎片故事并入。
   Checked country_events_2.txt 341-1868 and the three chain definitions; added the otherwise invisible "enter the system" links and merged seven fragment pseudo-stories.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

@@ -1,8 +1,6 @@
 # 大陆上的发现 / Continental Findings
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:353-389` · `events/anomaly_events_3.txt:2730-3272 (4095-4104)` · `events/anomaly_events_3.txt:3539-3718 (4115-4117)` · `events/anomaly_events_3.txt:4185-4274 (4150-4151)` · `common/special_projects/00_projects_3.txt:251-298, 322-348, 426-449` · `events/failures.txt:298-341`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -46,6 +44,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:353-389` · `events/anomaly_events_3.txt:2730-3272 (4095-4104)` · `events/anomaly_events_3.txt:3539-3718 (4115-4117)` · `events/anomaly_events_3.txt:4185-4274 (4150-4151)` · `common/special_projects/00_projects_3.txt:251-298, 322-348, 426-449` · `events/failures.txt:298-341`
 - 已核对 Checked：类别定义与全部结果事件、三个特殊项目、失败事件。  
   Category, all outcome events, three special projects and failure events.
 - 更正 Corrections：标注四选一的权重与修正，以及项目成功/失败的互斥结果。  

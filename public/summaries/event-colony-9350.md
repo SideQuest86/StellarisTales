@@ -1,8 +1,6 @@
 # 密弥库蚁活动 / Myrmeku Activity
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:7078–7577` · `common/special_projects/00_projects_3.txt:1843` · `common/on_actions/00_on_actions.txt:3821`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -31,5 +29,7 @@ English outline: the Myrmeku attack the colony and start eating memory chips. Fo
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:7078–7577` · `common/special_projects/00_projects_3.txt:1843` · `common/on_actions/00_on_actions.txt:3821`
 - 已核对 Checked：9350–9380 全部脚本、延时、`is_robot_empire` 定义与研究项目（易主时项目中止）。编译草稿结构正确。
 - 审阅改动 Changes：标注两个结局与两条审阅注释（引走退出、害虫防治的延时差异）；事件链概览卡片仅作说明。隐藏事件 9385（星球易主时清理修正）不在阅读树中。

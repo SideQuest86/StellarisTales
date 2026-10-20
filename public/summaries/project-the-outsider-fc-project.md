@@ -1,8 +1,6 @@
 # 位面之外客 / Outsider
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/04_projects_shroud.txt` · `events/shroud_events.txt` · `common/inline_scripts/shroud/minor_patron_first_contact_end_event.txt` · `common/patrons/patron_types.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/04_projects_shroud.txt` · `events/shroud_events.txt` · `common/inline_scripts/shroud/minor_patron_first_contact_end_event.txt` · `common/patrons/patron_types.txt`
 - 已对照common/special_projects/04_projects_shroud.txt、events/shroud_events.txt与inline脚本minor_patron_first_contact_start/end_event。  
   Compared %s, %s and the minor_patron_first_contact_start/end_event inline scripts.
 - 合并：原有的_HIVE与_ROBOT故事是同一接触项目的帝国类型版本，现并入本故事。  

@@ -1,6 +1,6 @@
 # 招募线人 / Acquire Asset
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -23,4 +23,6 @@ The operation Acquire Asset has three stages (45 influence, 6 energy upkeep, one
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：行动类型定义与 operation.1000-1006。 Checked the operation type and 1000-1006.

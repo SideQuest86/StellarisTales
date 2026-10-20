@@ -1,8 +1,6 @@
 # 天选 / The Chosen
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Shadows of the Shroud · 来源 Sources：`events/shroud_events.txt:13711-13877`、`events/game_start.txt:646-651`、`common/scripted_triggers/08_scripted_triggers_shroud.txt:205` · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Shadows of the Shroud
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,9 @@ AI weights: the Eater of Worlds is x2 and the Cradle of Souls x0 for homicidal e
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/shroud_events.txt:13711-13877`、`events/game_start.txt:646-651`、`common/scripted_triggers/08_scripted_triggers_shroud.txt:205`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 此前账本认为 5100/5105/5110 属于 event-game-start-1（C8b）；实际 event-game-start-1 是“亚光速探测器”，不含这些事件，它们在本故事中。事件 5115（首次深入虚境）是 event-shroud-5115（c8a）。

@@ -1,8 +1,5 @@
-# 调查[Prev.From.GetName] / Investigate [Prev.From.GetName]
-
+# 调查来源 / Investigate the Source
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/00_projects_1.txt:2956-3000`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +23,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/00_projects_1.txt:2956-3000`
 - 已对照项目脚本。  
   Compared the project script.
 - 覆盖 Coverage：全部1个文档。 / All 1 docs.

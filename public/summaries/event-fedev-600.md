@@ -1,7 +1,6 @@
 # 即将进行的试点：物流重构 / Upcoming Trial: Logistics Remodelling
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/federations_events_1.txt:2872-3306`；`common/on_actions/00_on_actions.txt:305`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,5 +28,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/federations_events_1.txt:2872-3306`；`common/on_actions/00_on_actions.txt:305`
 - 已核对：触发、611 衔接、项目与结果。
   Checked: trigger, the 611 link, project and outcomes.

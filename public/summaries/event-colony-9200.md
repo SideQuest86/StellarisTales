@@ -1,9 +1,7 @@
 # 隐藏地库 / Hidden Vault
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain（开发者注释名 "Ancient Manufactorium"）
-- 来源 Sources：`events/colony_events_3.txt:5152–6653` · `common/special_projects/00_projects_3.txt:1753–1765` · `common/on_actions/00_on_actions.txt:3856`
 - DLC：事件触发器中没有 DLC 检查 / no DLC check in the triggers
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -37,6 +35,8 @@ On the colony's fourth anniversary (`on_colony_4_years_old`) the pool can pick c
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:5152–6653` · `common/special_projects/00_projects_3.txt:1753–1765` · `common/on_actions/00_on_actions.txt:3856`
 - 已核对 Checked：colony.9200–9290 的触发、全部选项条件与效果、所有 `days`/`random` 延时；ANCIENT_MANUFACTORIUM_PROJECT 的 `on_success`；`on_colony_4_years_old` 随机池。编译草稿与源文件一致。/ All triggers, option gates, effects and delays; the project's `on_success`; the on_action pool. The compiled draft matched the source.
 - 审阅改动 Changes：标注两个结局（9202、9290）并为 9250 的“拆解”退出与链中重复的殖民地状态检查加注。/ Two endings labelled; notes on the 9250 dismantle exit and on the repeated colony-state checks.
 - 不确定 Uncertain：最终矿藏的具体数值取决于途中设置的 `manufactorium_*` 标记，未逐项追踪矿藏定义。/ Final deposit values depend on path flags; deposit definitions were not traced in detail.

@@ -1,6 +1,6 @@
 # 心胜于物 / Mind Over Matter
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/utopia_on_action_events.txt:1339–1982、common/traditions/01_psionics.txt:1–135、common/scripted_effects/shroud_shadows_scripted_effects.txt:10–110, 4068 起、events/observer_events.txt · DLC：乌托邦 Utopia · 审阅 Reviewed 2026-10-12
+- 分类 Category：银河轶事 C8 stories · DLC：乌托邦 Utopia
 
 ## 如何开始 How it starts
 
@@ -34,6 +34,8 @@ Adopting the *Psionic Traditions* (requires the *Mind Over Matter* ascension per
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/utopia_on_action_events.txt:1339–1982、common/traditions/01_psionics.txt:1–135、common/scripted_effects/shroud_shadows_scripted_effects.txt:10–110, 4068 起、events/observer_events.txt
 - 已核对 Checked：01_psionics.txt 传统前置与 on_enabled 调用（2600、2650、2655、2658）；2600–2608、2650–2652 事件块；mind_over_matter_immediate、add_latent_psionic_trait、turn_main_species_to_psionic 脚本效果；2605 的 MTTH 与按帝国类型的分派。
   Checked tradition prerequisites and calls, all event blocks, the scripted effects and 2605's MTTH dispatch.
 - 更正 Corrections：原先“心胜于物”“灵能者被识别”“大觉醒”是三个互不相连的故事；按灵能传统树（同一容器）的顺序合并，2605 的三个版本放在“灵能潜势”阶段下并标为互斥；“虚境”以条件连接相接，作为单独故事。

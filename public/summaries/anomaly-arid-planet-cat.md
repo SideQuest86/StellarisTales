@@ -1,8 +1,6 @@
 # 干燥的废土 / Arid Wastes
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:497-510` · `events/anomaly_events_3.txt:5016-5098 (4170)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:497-510` · `events/anomaly_events_3.txt:5016-5098 (4170)`
 - 已核对 Checked：类别与4170。  
   Category and 4170.
 - 覆盖 Coverage：2 个文档全部核对 / all 2 docs checked.

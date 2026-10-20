@@ -1,6 +1,6 @@
 # 不和谐音 / Wrong Note
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:4335-4341; events/biogenesis_events.txt:9642-9676; events/fallen_empire_awakening_events.txt:456-475 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -22,10 +22,10 @@ Single outcome: war.
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:4335-4341; events/biogenesis_events.txt:9642-9676; events/fallen_empire_awakening_events.txt:456-475
 - 已核对 on_action 的作用域说明（root=否决者，from=提案者）与宣战效果。控制碎片觉醒的“合一”公告 bio.3400 属于天灾类故事，此处不重复。
   Checked the on_action scope comment (root = vetoer, from = proposer) and the war declaration. The Control fragment's awakening announcement Unity bio.3400 belongs to a crisis-category story and is not repeated here.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

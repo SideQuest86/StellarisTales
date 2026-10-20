@@ -1,6 +1,6 @@
 # 银河帝国的崛起 / Rise of the Galactic Imperium
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_emperor_events.txt, common/resolutions/01_resolutions_nemesis.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -26,6 +26,8 @@ Passing resolution_custodian_form_empire or resolution_awakened_galactic_empire 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_emperor_events.txt, common/resolutions/01_resolutions_nemesis.txt
 - 已核对 Checked：emperor.1-10、51、52、71、72 的触发与调用点；两个决议的事件调用。
 - 更正 Corrections：原故事的根是测试事件 499，实际起点是决议；帝国舰队 / 军团 / 安全局的成立（emperor.50 / 55 / 70）是之后的法案，另见“帝国议会的法案”。
   The old root was the test event 499; the real start is the resolution.

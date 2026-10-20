@@ -1,11 +1,7 @@
 # 巨像计划 / Colossus Project
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/apocalypse_events.txt:372-760`; `common/special_projects/00_projects_apocalypse.txt:1-40`; `common/ascension_perks/00_ascension_perks.txt:1068-1090`
 - DLC：Apocalypse
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ The text of apoc.110 differs for ordinary / machine / hive empires; weapon optio
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/apocalypse_events.txt:372-760`; `common/special_projects/00_projects_apocalypse.txt:1-40`; `common/ascension_perks/00_ascension_perks.txt:1068-1090`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对天赋、专项和三个事件；apoc.130 / observer.69 仅是对他国的通知。
 
 Perk, project and the three events were checked; apoc.130 / observer.69 are only notices for other empires.

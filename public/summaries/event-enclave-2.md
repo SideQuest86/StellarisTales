@@ -1,8 +1,6 @@
 # 佣兵城邦基金会 / Mercenary Enclave Foundation
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord
-- 来源 Sources：events/overlord_enclaves_events.txt:76（enclave.2）, :203（enclave.21）, :2179（enclave.275）, :2817–3325（enclave.2000–2025）; common/situations/03_AI_empire_situations.txt:275; common/scripted_effects/enclave_effects.txt:8; common/on_actions/00_on_actions.txt:4806
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 帝国下令让一支舰队独立为佣兵城邦时（on_establish_mercenary_enclave）出现本窗口，说明需投入能量（生物舰船为食物）、合金与影响力，换取股份与分红。佣兵城邦只会以这种方式在开局后诞生（enclave_effects.txt:5 注释）。
@@ -26,6 +24,9 @@ Shown when an empire orders a fleet to become an independent mercenary enclave; 
 Situation progress depends on enclave rank, Galactic Community resolutions and Lord of War; enclave.2 is aborted for the Mindwardens origin.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:76（enclave.2）, :203（enclave.21）, :2179（enclave.275）, :2817–3325（enclave.2000–2025）; common/situations/03_AI_empire_situations.txt:275; common/scripted_effects/enclave_effects.txt:8; common/on_actions/00_on_actions.txt:4806
 - 已核对 enclave.2 选项与费用、enclave.21/22、create_mercenary_enclave_country、分红局势定义与 enclave.275 权重。
 - 注意：分红发给“资助者”，通常是建立者（城邦建在其领土内），但若星系易主则随之改变。Dividends go to the patron, usually the founder, but follow the system's owner.
 - 覆盖完整。Coverage complete.

@@ -1,7 +1,5 @@
 # 谜语人 / Speaking in Riddles
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件「谜语人」first_contact.350）
-- 来源 Sources：`events/first_contact_events.txt:4908–5180` · `common/first_contact/00_first_contact.txt:453–486, 1544–1581`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:4908–5180` · `common/first_contact/00_first_contact.txt:453–486, 1544–1581`
 - 已核对 Checked：350–358 全部脚本、default_stage_2 条目、两个谜语收尾阶段（`00_first_contact.txt:1544–1581`）。/ Scripts 350–358, the stage-2 entry and both end-stage definitions.
 - 审阅改动 Changes：原先 355 单独成篇，350 混在“难以捉摸的外星人”中；现用阶段连接把 350→355 串成一棵树并并入本篇（story event-first-contact-355 现含 350）。/ 355 used to be a separate story and 350 sat in the stage-2 pile; a stage bridge now links 350 → 355 and both live here.
 - 注意 Note：阶段完成后的触发是“进度检定”，成功才触发该事件；失败时按 on_roll_failed 的随机池处理（谜语收尾阶段失败池为 no_events 之外的设置见阶段定义）。/ A stage fires its event only when its progress roll succeeds; failures go through the stage’s on_roll_failed pool.

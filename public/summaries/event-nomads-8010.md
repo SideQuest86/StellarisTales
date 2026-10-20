@@ -1,6 +1,6 @@
 # 夺取驿站 / Seize Waystation
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/espionage_operation_types/operations.txt:1370-1450; events/nomads_events_1.txt:17555-17855 · DLC: Nomads · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Nomads
 
 ## 如何开始 How it starts
 
@@ -22,10 +22,10 @@ Approaching the Target 8010 -> Systems Compromised 8015 -> Waystation Heist 8020
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/espionage_operation_types/operations.txt:1370-1450; events/nomads_events_1.txt:17555-17855
 - 修正：草稿把三个阶段事件并列为入口；现按行动定义排序，标题改用行动名。
   Correction: the three stage events were parallel entries; they now follow the operation's stages, titled by the operation name.
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

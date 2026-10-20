@@ -1,8 +1,6 @@
 # 矿群 / Mineral Cluster
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:838-930` · `events/anomaly_events_2.txt` · `common/special_projects/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:838-930` · `events/anomaly_events_2.txt` · `common/special_projects/`
 - 已对照类别脚本838-930与events/anomaly_events_2.txt中3000/3012/3086-3089的原文。  
   Compared category script 838-930 and the originals of 3000, 3012, 3086-3089.
 - story.5为共享联络报告枢纽，不属于本故事。  

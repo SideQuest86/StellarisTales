@@ -1,8 +1,6 @@
 # 球体 / The Orb
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:743-764` · `events/anomaly_events_4.txt:4059-4343 (7105-7120)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:743-764` · `events/anomaly_events_4.txt:4059-4343 (7105-7120)`
 - 已核对 Checked：类别与7105–7120全部事件（含36000天延迟）。  
   Category and events 7105–7120, including the 36,000-day delay.
 - 覆盖 Coverage：5 个文档全部核对 / all 5 docs checked.

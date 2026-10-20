@@ -1,8 +1,6 @@
 # 潜在发现 / Cold Hard Potential
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:222-277` · `events/anomaly_events_3.txt:1948-2006 (4055)` · `events/anomaly_events_3.txt:2347-2530 (4075-4077)` · `events/anomaly_events_3.txt:3720-3739 (4120)` · `events/anomaly_events_3.txt:4096-4181 (4140-4141)` · `common/special_projects/00_projects_3.txt:400-423` · `events/failures.txt:323-341`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -38,6 +36,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:222-277` · `events/anomaly_events_3.txt:1948-2006 (4055)` · `events/anomaly_events_3.txt:2347-2530 (4075-4077)` · `events/anomaly_events_3.txt:3720-3739 (4120)` · `events/anomaly_events_3.txt:4096-4181 (4140-4141)` · `common/special_projects/00_projects_3.txt:400-423` · `events/failures.txt:323-341`
 - 已核对 Checked：类别与全部结果事件、项目、失败事件。  
   Category, all outcomes, the project and failure event.
 - 覆盖 Coverage：10 个文档全部核对 / all 10 docs checked.

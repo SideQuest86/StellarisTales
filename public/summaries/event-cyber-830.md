@@ -1,7 +1,6 @@
 # 义体风湿 / Shivers
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/machine_age_situation_events_1.txt:3894-4096`；`common/on_actions/00_on_actions.txt`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -24,10 +23,9 @@
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。
-  None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/machine_age_situation_events_1.txt:3894-4096`；`common/on_actions/00_on_actions.txt`
 - 已核对：触发、项目与 835 的衔接。
   Checked: trigger, project and the 835 link.

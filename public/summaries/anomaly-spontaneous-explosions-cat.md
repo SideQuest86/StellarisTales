@@ -1,8 +1,6 @@
 # 自发爆炸 / Spontaneous Explosions
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/101_anomaly_categories_astral_planes.txt:95-120` · `events/astral_planes_events.txt` · `common/special_projects/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/101_anomaly_categories_astral_planes.txt:95-120` · `events/astral_planes_events.txt` · `common/special_projects/`
 - 已对照类别脚本与树。  
   Compared the category script and the tree.
 - 覆盖 Coverage：全部8个文档。 / All 8 docs.

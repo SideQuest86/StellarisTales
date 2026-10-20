@@ -1,5 +1,5 @@
 # 传送门 / The Doorway
-- 分类 Category: society (colony) · 来源 Sources: events/colony_events_3.txt:1175-2005, 7586-7790; common/special_projects/00_projects_3.txt:803-936; common/on_actions/00_on_actions.txt:3766, 3819, 885, 1668 · 审阅 Reviewed 2026-10-13 (r2-society)
+- 分类 Category：society (colony)
 
 ## 如何开始 How it starts
 - 中文：`colony.3005` 是殖民地满2年（权重 8/958）或3年（5/739）时的随机殖民地事件（on_actions:3766、3819），也可由荒原飞地事件 enclave.5170 直接触发（overlord_enclaves_events.txt:9926）。条件：非AI、非首都、非母星的原殖民地，非栖息地/环世界，该国此前没有触发过（`dportal_country`，每国一次）。唯一选项启用特殊项目 `DPORTAL_PROJECT`（1500，物理科技）并添加研究区矿藏。
@@ -22,6 +22,9 @@
 - 3006 的正文和选项随唯灵、有毒骑士起源、封建领地而变；9810/9815 随机械/蜂巢/普通帝国而变；3020–3024 有机械版选项。 / Texts and options vary with spiritualist, Toxic Knights origin, feudal realm, and machine/hive/regular status.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13 (r2-society)
+- 来源 Sources：events/colony_events_3.txt:1175-2005, 7586-7790; common/special_projects/00_projects_3.txt:803-936; common/on_actions/00_on_actions.txt:3766, 3819, 885, 1668
 - 已核对 Checked: events/colony_events_3.txt 1175-2005 (3005–3024 options, flags, delays) and 7586-7790 (9800–9815); special projects DPORTAL_*, NULLVOID_PROJECT; the callers of 3005 (two on_action pools, enclave.5170) and cross-story entries 3031, 3051, 9820.
 - 更正 Corrections: this chain had been swept into the Shroudwalker story (event-enclave-300); it is now its own colony story.
 - 不确定 Uncertain: rewards inside 3050/3055/3060 and NULLVOID_PROJECT were checked for structure only; the developer comment at colony_events_3.txt:7587 calls DPORTAL part of the "Rogue Moon" chain but no script call connects them.

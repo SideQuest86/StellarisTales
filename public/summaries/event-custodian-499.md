@@ -1,8 +1,6 @@
 # 指派星海监管人 / Galactic Custodian Appointed
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Nemesis · 来源 Sources：`events/nemesis_custodian_events.txt:12-130`、`events/nemesis_custodian_events.txt:157-340`、`events/nemesis_custodian_events.txt:405-456`、`events/nemesis_custodian_events.txt:459-471`、`events/nemesis_custodian_events.txt:615-651`、`events/nemesis_custodian_events.txt:739-776`、`common/resolutions/01_resolutions_nemesis.txt:683-722,866-893,2149-2235,2570-2612`、`common/on_actions/00_on_actions.txt:3603-3606,4727-4731` · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,9 @@ Windows differ by whether the viewer is the custodian himself (is_same_value = f
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/nemesis_custodian_events.txt:12-130`、`events/nemesis_custodian_events.txt:157-340`、`events/nemesis_custodian_events.txt:405-456`、`events/nemesis_custodian_events.txt:459-471`、`events/nemesis_custodian_events.txt:615-651`、`events/nemesis_custodian_events.txt:739-776`、`common/resolutions/01_resolutions_nemesis.txt:683-722,866-893,2149-2235,2570-2612`、`common/on_actions/00_on_actions.txt:3603-3606,4727-4731`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 合并说明：event-custodian-14/16/100/30/40 原为同一循环的碎片（各自只有结束事件或 GDF 通知），已并入本故事；custodian.499 是永不触发的测试事件。

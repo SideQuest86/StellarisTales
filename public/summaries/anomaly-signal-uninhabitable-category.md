@@ -1,7 +1,6 @@
 # 微弱的信号 / Weak Signal
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:442; events/anomaly_events_1.txt:4363 (anomaly.625); events/anomaly_events_1.txt:4403 (anomaly.630)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.630's main option text changes for homicidal empires.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:442; events/anomaly_events_1.txt:4363 (anomaly.625); events/anomaly_events_1.txt:4403 (anomaly.630)
 已核对异常定义与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition and every outcome event; the compiled tree is correct, no change needed.

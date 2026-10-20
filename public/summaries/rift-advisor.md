@@ -1,8 +1,6 @@
 # 顾问 / The Advisor
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:91`；`events/astral_rifts_0_events.txt:3033–3481`（800–845）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:91`；`events/astral_rifts_0_events.txt:3033–3481`（800–845）
 - 已核对：裂隙定义；800–845 全部事件的选项与奖励；815 的放逐与 1800 天后 835 → 840；825/830/840 对 845 的调用。没有失败分支；编译结构正确，补充结局、节点标签和说明。
 - 评注：845 是游戏 UI 顾问的玩笑式收尾，原文保留在本篇中。
 

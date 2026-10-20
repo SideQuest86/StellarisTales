@@ -1,7 +1,5 @@
 # 恐怖噪音 / Monstrous Noises
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件「恐怖噪音」first_contact.365）
-- 来源 Sources：`events/first_contact_events.txt:5182–5613, 7992–8045` · `common/first_contact/00_first_contact.txt:488–527, 1584–1740`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -27,6 +25,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:5182–5613, 7992–8045` · `common/first_contact/00_first_contact.txt:488–527, 1584–1740`
 - 已核对 Checked：365–379、500/505 脚本，阶段 default_stage_2 条目与 default_monstrous_noises_* 四个阶段，权重及零权重条件。
 - 审阅改动 Changes：把 365 与 370/375–379 并成一篇（原 event-first-contact-375 仅含 375–377）；用阶段桥连接 365→370/378/379 与 370→375–377，并标出互斥结局。/ Previously only 375–377 formed a story and 365 sat in the stage-2 pile; stage bridges now give one tree.
 - 不确定 Uncertain：阶段检定公式与失败池在引擎内。/ Roll formula is engine code.

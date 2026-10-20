@@ -7,7 +7,7 @@
 export const FIELD = { name: 1, text: 2, choice: 4, effect: 8 };
 export const WEIGHT = { name: 10, choice: 3.2, text: 3, effect: 1.5 };
 export const SHARDS = 32;
-export const FORMAT = 1;
+export const FORMAT = 2;
 
 const STOP = new Set(
   "a an and are as at be but by for from had has have he her his i if in into is it its me my no not of on or our she so that the their them then there these they this to us was we were what when which who will with you your".split(" "),
@@ -50,20 +50,32 @@ export function terms(text) {
 
 // A query is a list of required groups. A Latin word is one group; a CJK run is one group whose bigrams must all
 // occur (and whose literal text is verified against the chapter when its snippet is built).
-export function parseQuery(q) {
+// A lone CJK character is a unigram term (the index stores unigrams as well as bigrams). With `partial`, the last
+// word is still being typed: when it is a Latin word of 3+ letters it becomes a prefix group (see SearchIndex).
+export function parseQuery(q, { partial = false } = {}) {
   const s = String(q ?? "").toLowerCase();
   const groups = [];
-  for (const m of s.matchAll(new RegExp(`${LATIN.source}|${CJK.source}`, "gu"))) {
+  const all = [...s.matchAll(new RegExp(`${LATIN.source}|${CJK.source}`, "gu"))];
+  all.forEach((m, mi) => {
     const w = m[0];
     if (/^[㐀-鿿]+$/.test(w)) {
-      groups.push({ kind: "cjk", literal: w, terms: w.length > 1 ? [...new Set(terms(w))] : [] });
+      groups.push({ kind: "cjk", literal: w, terms: w.length > 1 ? [...new Set(terms(w))] : [w] });
     } else {
       const plain = w.replace(/'s$/, "");
-      if (STOP.has(plain) || (plain.length < 2 && !/\d/.test(plain))) continue;
-      groups.push({ kind: "latin", literal: plain, terms: [stem(plain)] });
+      if (STOP.has(plain) || (plain.length < 2 && !/\d/.test(plain))) return;
+      const g = { kind: "latin", literal: plain, terms: [stem(plain)] };
+      if (partial && mi === all.length - 1 && plain.length >= 3) g.prefix = true;
+      groups.push(g);
     }
-  }
+  });
   return groups;
+}
+
+// Index terms of a document string: terms() plus a unigram per CJK character (single-character queries).
+export function indexTerms(text) {
+  const out = terms(text);
+  for (const m of String(text ?? "").matchAll(CJK)) for (const ch of m[0]) out.push(ch);
+  return out;
 }
 
 export function hashTerm(term) {
@@ -73,6 +85,26 @@ export function hashTerm(term) {
     h = Math.imul(h, 0x01000193) >>> 0;
   }
   return h % SHARDS;
+}
+// Latin terms are sharded by their first two characters, so every term sharing a 2+ letter prefix lives in ONE shard
+// (prefix search = scan that shard's sorted term list; no extra structure, no duplicated postings). CJK terms hash whole.
+export function shardOf(term) {
+  return hashTerm(/^[\p{Script=Latin}0-9]/u.test(term) ? term.slice(0, 2) : term);
+}
+
+// One edit (substitute / insert / delete / adjacent transposition) apart.
+export function withinOne(a, b) {
+  if (a === b) return true;
+  const d = a.length - b.length;
+  if (d > 1 || d < -1) return false;
+  let i = 0;
+  while (i < a.length && i < b.length && a[i] === b[i]) i++;
+  if (d === 0) {
+    if (a.slice(i + 1) === b.slice(i + 1)) return true;
+    return a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2);
+  }
+  const [l, s] = d > 0 ? [a, b] : [b, a];
+  return l.slice(i + 1) === s.slice(i);
 }
 
 // ---- varint helpers (shared by generator and reader) ----
@@ -152,22 +184,56 @@ export class SearchIndex {
     }
     return lo;
   }
-  // Documents containing every group. -> Map(doc -> { score, fields, best }) ; fields: union of matched fields
-  async lookup(groups) {
+  // Documents containing every group. A prefix group (last word being typed) matches any indexed term starting with
+  // it; with `approx` a Latin word of 5+ letters that matches nothing is replaced by terms one edit away (same first
+  // two letters, or those two swapped). The result array carries `.groups` (the groups actually matched, for snippet
+  // needles) and `.approx` (true when a typo correction was used).
+  async lookup(groups, { approx = false } = {}) {
     if (!this.meta) await this.load();
-    const needed = [...new Set(groups.flatMap((g) => g.terms))];
-    if (!needed.length) return [];
-    const shardIds = [...new Set(needed.map(hashTerm))];
-    const loaded = await Promise.all(shardIds.map((k) => this.shard(k).then((m) => [k, m])));
-    const byShard = new Map(loaded);
+    const empty = (eff = groups) => Object.assign([], { groups: eff, approx: false });
+    const swap = (w) => (w.length > 1 ? w[1] + w[0] + w.slice(2) : w);
+    const ids = new Set();
+    for (const g of groups) {
+      if (g.kind === "latin") {
+        ids.add(shardOf(g.terms[0]));
+        if (approx) ids.add(shardOf(swap(g.terms[0])));
+      } else for (const t of g.terms) ids.add(shardOf(t));
+    }
+    if (!ids.size) return empty();
+    const byShard = new Map(await Promise.all([...ids].map((k) => this.shard(k).then((m) => [k, m]))));
+    const bySize = (m) => (a, b) => m.get(b).length - m.get(a).length || (a < b ? -1 : 1);
+    const eff = [];
+    let fixed = false;
+    for (const g of groups) {
+      if (g.kind !== "latin") { eff.push(g); continue; }
+      const s = g.terms[0], sh = byShard.get(shardOf(s));
+      let terms = [];
+      if (g.prefix) {
+        for (const t of sh.keys()) if (t.startsWith(s)) terms.push(t);
+        terms = terms.sort(bySize(sh)).slice(0, PREFIX_MAX);
+      } else if (sh.has(s)) terms = [s];
+      if (terms.length) { eff.push(g.prefix ? { ...g, terms, any: true, needles: [g.literal, s] } : g); continue; }
+      if (approx && g.literal.length >= 5) {
+        const near = [];
+        for (const k of new Set([shardOf(s), shardOf(swap(s))])) {
+          for (const t of byShard.get(k).keys()) if (t !== s && Math.abs(t.length - s.length) <= 1 && withinOne(s, t)) near.push([t, byShard.get(k)]);
+        }
+        near.sort((a, b) => b[1].get(b[0]).length - a[1].get(a[0]).length || (a[0] < b[0] ? -1 : 1));
+        const cands = near.slice(0, 8).map((x) => x[0]);
+        if (cands.length) { eff.push({ ...g, terms: cands, any: true, approx: true, needles: cands }); fixed = true; continue; }
+      }
+      eff.push(g);
+    }
+    if (approx && !fixed) return empty(eff);
     const lists = new Map();
-    for (const t of needed) {
-      const bytes = byShard.get(hashTerm(t)).get(t);
+    for (const t of new Set(eff.flatMap((g) => g.terms))) {
+      const bytes = byShard.get(shardOf(t))?.get(t);
       lists.set(t, bytes ? decodePostings(bytes) : null);
     }
-    return intersect(groups, lists, this.meta.spStart);
+    return Object.assign(intersect(eff, lists), { groups: eff, approx: fixed });
   }
 }
+const PREFIX_MAX = 16;
 
 // Intersect per-term postings. A group with several bigrams needs all of them in the same document. Per document
 // the result keeps the fields where *every* group matched at once (proximity proxy) and the best-weighted field.
@@ -177,6 +243,16 @@ export function intersect(groups, lists) {
   const docMasks = [];
   for (const g of per) {
     let acc = null;
+    if (g.any) { // any of the terms (prefix expansion / typo candidates)
+      acc = new Map();
+      for (const t of g.terms) {
+        const l = lists.get(t);
+        if (l) for (let i = 0; i < l.docs.length; i++) acc.set(l.docs[i], (acc.get(l.docs[i]) || 0) | l.masks[i]);
+      }
+      if (!acc.size) return [];
+      docMasks.push(acc);
+      continue;
+    }
     for (const t of g.terms) {
       const l = lists.get(t);
       if (!l) return [];
@@ -272,7 +348,7 @@ export function highlight(text, needles, esc) {
 // Literal strings to highlight / verify for a parsed query (a Latin word also matches its inflections by prefix of
 // the stem, e.g. "tempest" marks "tempests").
 export function needlesOf(groups) {
-  return [...new Set(groups.flatMap((g) => (g.kind === "latin" ? [g.literal, g.terms[0]] : [g.literal])))];
+  return [...new Set(groups.flatMap((g) => (g.needles ? g.needles : g.kind === "latin" ? [g.literal, g.terms[0]] : [g.literal])))];
 }
 
 // The chapter's searchable fields as plain (cleaned) strings, per language, in display priority.
@@ -322,6 +398,7 @@ export function effectLabels(node, out = []) {
 export function bestSnippet(fields, groups, lang) {
   const needles = needlesOf(groups);
   const cjk = groups.filter((g) => g.kind === "cjk").map((g) => g.literal);
+  // (callers pass the lookup's effective groups, so prefix / approximate groups carry their own needles)
   const hay = fields.map((f) => ({ ...f, low: f.text.toLowerCase() }));
   if (cjk.length && !cjk.every((c) => hay.some((f) => f.low.includes(c)))) return null;
   const order = { name: 0, choice: 1, text: 2, effect: 3 };
@@ -366,34 +443,61 @@ export function createSearch(env) {
       const lang = env.getLang();
       await index.load(lang);
       const titles = await index.loadTitles(lang);
-      const groups = parseQuery(query);
+      const raw = String(query);
+      let groups = parseQuery(query, { partial: !/\s$/.test(raw) });
       const stories = env.getStories();
       const byId = new Map(stories.map((s) => [s.id, s]));
-      const words = String(query).toLowerCase().trim().split(/\s+/).filter(Boolean);
+      const norm = raw.toLowerCase().trim().replace(/\s+/g, " ");
+      const words = norm.split(" ").filter(Boolean);
       const titleHit = (s) =>
         s.visible && words.every((w) => `${s.title.zh} ${s.title.en} ${s.excerpt?.zh || ""} ${s.excerpt?.en || ""}`.toLowerCase().includes(w));
+      // Title ranking: exact title > title prefix > any other match.
+      const titleRank = (t) => { t = String(t || "").toLowerCase().replace(/\s+/g, " ").trim(); return t === norm ? 2 : t && t.startsWith(norm) ? 1 : 0; };
+      const meta = index.meta;
+      const build = (docHits) => {
+        const rows = [];
+        const chapterHits = docHits.filter((h) => h.doc < meta.spStart);
+        const grouped = groupByStory(chapterHits, (d) => index.storyIndex(d));
+        const seen = new Set();
+        for (const s of stories) {
+          if (!titleHit(s)) continue;
+          seen.add(s.id);
+          const rank = Math.max(titleRank(s.title.zh), titleRank(s.title.en));
+          rows.push({ kind: "story", story: s, score: [50, 90, 130][rank], count: 0 });
+        }
+        for (const g of grouped) {
+          const id = meta.stories[g.story], story = byId.get(id);
+          if (!story || !story.visible) continue;
+          if (seen.has(id)) { rows.find((r) => r.story === story).count = g.count; continue; }
+          const nameHit = g.best.fields & FIELD.name ? [0, 30, 80][titleRank(titles[g.best.doc])] : 0;
+          rows.push({ kind: "doc", story, doc: g.best.doc, hit: g.best, score: g.score + nameHit, count: g.count });
+        }
+        for (const h of docHits) {
+          if (h.doc < meta.spStart) continue;
+          const nameHit = h.fields & FIELD.name ? [0, 30, 80][titleRank(titles[h.doc])] : 0;
+          rows.push({ kind: "specimen", doc: h.doc, key: meta.spKeys[h.doc - meta.spStart], score: h.score + (h.type === "name" ? 4 : 0) + nameHit, hit: h });
+        }
+        rows.sort((a, b) => b.score - a.score);
+        return rows;
+      };
       let docHits = [];
-      const indexable = groups.some((g) => g.terms.length);
-      if (indexable) docHits = await index.lookup(groups);
-      else if (groups.length) {
-        // A lone CJK character has no bigram: scan chapter titles instead.
+      if (groups.some((g) => g.terms.length)) docHits = await index.lookup(groups);
+      if (!docHits.length && groups.length && groups.every((g) => g.kind === "cjk" && g.literal.length === 1)) {
+        // A very common character has no unigram postings (see build-search-index.mjs): scan chapter titles instead.
         const lit = groups.map((g) => g.literal);
         titles.forEach((tt, doc) => { if (lit.every((l) => tt.toLowerCase().includes(l))) docHits.push({ doc, score: WEIGHT.name * 2, type: "name", fields: FIELD.name }); });
       }
-      const meta = index.meta;
-      const chapterHits = docHits.filter((h) => h.doc < meta.spStart);
-      const rows = [];
-      const grouped = groupByStory(chapterHits, (d) => index.storyIndex(d));
-      const seen = new Set();
-      for (const s of stories) if (titleHit(s)) { seen.add(s.id); rows.push({ kind: "story", story: s, score: 100, count: 0 }); }
-      for (const g of grouped) {
-        const id = meta.stories[g.story], story = byId.get(id);
-        if (!story || !story.visible) continue;
-        if (seen.has(id)) { rows.find((r) => r.story === story).count = g.count; continue; }
-        rows.push({ kind: "doc", story, doc: g.best.doc, hit: g.best, score: g.score, count: g.count });
+      // A single CJK character matches a very large share of the text: keep the best-scoring documents (titles first).
+      const CAP = 400;
+      const capped = (h) => (groups.some((g) => g.kind === "cjk" && g.literal.length === 1) && h.length > CAP ? h.sort((a, b) => b.score - a.score || a.doc - b.doc).slice(0, CAP) : h);
+      let eff = docHits.groups || groups;      docHits = capped(docHits);
+      let rows = build(docHits), approx = false;
+      // Typo tolerance only when nothing matched at all (including story titles).
+      if (!rows.length && groups.some((g) => g.kind === "latin" && g.literal.length >= 5)) {
+        const near = await index.lookup(groups, { approx: true });
+        if (near.length) { docHits = near; eff = near.groups; groups = near.groups; approx = true; rows = build(docHits); }
       }
-      for (const h of docHits) if (h.doc >= meta.spStart) rows.push({ kind: "specimen", doc: h.doc, key: meta.spKeys[h.doc - meta.spStart], score: h.score + (h.type === "name" ? 4 : 0), hit: h });
-      rows.sort((a, b) => b.score - a.score);
+      groups = eff;
       const pages = Math.max(1, Math.ceil(rows.length / PAGE));
       const p = Math.min(Math.max(0, page), pages - 1);
       const visible = rows.slice(p * PAGE, p * PAGE + PAGE);
@@ -472,7 +576,9 @@ export function createSearch(env) {
         }
         await Promise.all(jobs);
       };
-      return { total: rows.length, pages, page: p, html, enrich };
+      // `countText(n)` is the result-count line; approximate (typo-corrected) results say so.
+      const countText = (n) => T(`${n} 条结果`, `${n} ${n === 1 ? "result" : "results"}`) + (approx ? T(" · 相近结果", " · Close matches") : "");
+      return { total: rows.length, pages, page: p, html, enrich, approx, countText };
     },
   };
 }

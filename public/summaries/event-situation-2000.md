@@ -1,7 +1,6 @@
 # 万华镜 / The Kaleidoscope
 
 - 分类 Category：文明纪事 Society (C7) · DLC：复仇女神 Nemesis（脚本检查 `has_nemesis`）· 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/situation_events.txt:2828-4178`；`common/situations/01_narrative_situations.txt:1253-1659`；`common/special_projects/00_projects_nemesis.txt:618-689`；`common/espionage_operation_types/operations.txt:1224-1290`；`common/megastructures/01_dyson_sphere.txt:1043-1135, 1137-1272`；`common/on_actions/00_on_actions.txt:22, 286-289, 3445-3448, 3603-3621`；`common/situations/02_deficit_situations.txt:37-42`
 
 ## 如何开始 How it starts
 
@@ -47,6 +46,7 @@
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：`events/situation_events.txt:2828-4178`；`common/situations/01_narrative_situations.txt:1253-1659`；`common/special_projects/00_projects_nemesis.txt:618-689`；`common/espionage_operation_types/operations.txt:1224-1290`；`common/megastructures/01_dyson_sphere.txt:1043-1135, 1137-1272`；`common/on_actions/00_on_actions.txt:22, 286-289, 3445-3448, 3603-3621`；`common/situations/02_deficit_situations.txt:37-42`
 - 已核对：入口（00_on_actions 第22行开局1999、第288行五年检查2000）、2002 首次/再次分流、两个特殊项目、局势定义的进度/接近方式/月度事件/on_progress_complete 权重、2001 寿命与心情、四种结局、间谍行动阶段、迁都与灭亡回调、迪斯科球巨构。
   Checked: entries (00_on_actions line 22 game-start 1999, line 288 five-year 2000), the 2002 first/again split, both special projects, the situation's progress/approaches/monthly events/on_progress_complete weights, 2001 lifetime and mood, all four endings, the espionage stages, capital-move and destruction callbacks, the Disco Sphere megastructure.
 - 更正 Corrections：原草稿把同一故事拆成三张卡（2000 五年入口、2060 灭亡回调、2020/2021 间谍行动），另把 2049 单独成卡；现合并为一个故事族，并用审阅连接把间谍行动挂在局势下、把 2049 接在 2048 的改造选择后、把 2025 接在送出行动后。

@@ -1,7 +1,6 @@
 # 迷路灵魂 / Lost Soul
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:887; events/anomaly_events_4.txt:2015 (anomaly.6786); events/anomaly_events_4.txt:2043 (ship_event anomaly.6787, 5 days); events/anomaly_events_4.txt:2054 (anomaly.6787)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:887; events/anomaly_events_4.txt:2015 (anomaly.6786); events/anomaly_events_4.txt:2043 (ship_event anomaly.6787, 5 days); events/anomaly_events_4.txt:2054 (anomaly.6787)
 已核对异常定义与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition and every outcome event; the compiled tree is correct, no change needed.

@@ -1,8 +1,6 @@
 # 古战场 / Ancient Battlefield
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:644-652` · `common/solar_system_initializers/unique_system_initializers.txt:493-570, 683-735, 930-1025` · `events/unique_system_events.txt:1107-1124 (unique.125)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:644-652` · `common/solar_system_initializers/unique_system_initializers.txt:493-570, 683-735, 930-1025` · `events/unique_system_events.txt:1107-1124 (unique.125)`
 - 已核对 Checked：类别、三处初始化器与 unique.125。  
   Category, the three initializers and unique.125.
 - 覆盖 Coverage：2 个文档全部核对 / all 2 docs checked.

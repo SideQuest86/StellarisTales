@@ -1,10 +1,6 @@
 # 屏障星球 / Shielded World
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/galactic_features_events.txt:150-710`; `common/on_actions/00_on_actions.txt:1142`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -32,6 +28,9 @@ See the reader.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/galactic_features_events.txt:150-710`; `common/on_actions/00_on_actions.txt:1142`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了触发、选项、专项和随机分支（权重带修正，标 *）。
 
 Trigger, options, project and the random branches (weights modified, marked *) were checked.

@@ -169,11 +169,11 @@ def duration(params, ctx, default_permanent=True):
             num = to_num(v, ctx)
             if num[0] == 'num':
                 if num[1] < 0:
-                    return 'permanent', L('永久', 'permanent')
+                    return 'permanent', L('永久', 'permanently')
                 n = int(num[1]) if num[1] == int(num[1]) else num[1]
                 return {key: n}, L(f'持续 {n} {zh}', f'for {n} {en}{"s" if n != 1 else ""}')
             return {'scaled': True}, L('持续时间由游戏计算', 'for a game-computed duration')
-    return ('permanent', L('永久', 'permanent')) if default_permanent else (None, None)
+    return ('permanent', L('永久', 'permanently')) if default_permanent else (None, None)
 
 
 def params_of(node):
@@ -232,7 +232,7 @@ def scope_label(key, ctx, root_scope):
         labels = [scope_label(p, ctx, root_scope) for p in parts]
         labels = [l for l in labels if l]
         if labels:
-            return L(' 的 '.join(l['zh'] for l in reversed(labels)), ' of '.join(l['en'] for l in reversed(labels)))
+            return L('的'.join(l['zh'] for l in labels), ' of '.join(l['en'] for l in reversed(labels)))
     return None
 
 
@@ -257,14 +257,14 @@ def not_label(inner):
     """Negation: short clauses read '未满足 X' / 'unless X'; long ones keep the bracketed form."""
     zh, en = inner['zh'], inner['en']
     if len(en) > 60 or len(zh) > 30:
-        return L('不满足（' + zh + '）', 'not (' + en + ')')
+        return L('未满足（' + zh + '）', 'not (' + en + ')')
     nzh = '未' + zh.removesuffix('时') if zh.startswith('满足') else '未满足：' + zh
     nen = 'unless ' + (en[3:] if en.startswith('if ') else en)
     return L(nzh, nen)
 
 
 def negate(zh, en):
-    nzh = '不' + zh if zh.startswith(('是', '具有', '可以', '处于', '由')) else '不满足：' + zh
+    nzh = '不' + zh if zh.startswith(('是', '具有', '可以', '处于', '由')) else '未满足：' + zh
     for a, b in (('is ', 'is not '), ('has ', 'does not have '), ('can ', 'cannot ')):
         if en.startswith(a):
             return nzh, b + en[len(a):]
@@ -272,9 +272,11 @@ def negate(zh, en):
 
 
 DLC_NAMES = {'first_contact': ('首次接触', 'First Contact'), 'paragon': ('典范', 'Paragon'), 'astral_planes': ('星界', 'Astral Planes'),
-             'shroud': ('虚境', 'Shroud'), 'nomads': ('游牧', 'Nomads'), 'grand_archive': ('大档案馆', 'Grand Archive'),
+             'shroud': ('虚境', 'Shroud'), 'nomads': ('游牧民族', 'Nomads'), 'grand_archive': ('大档案馆', 'Grand Archive'),
              'machine_age': ('机械纪元', 'Machine Age'), 'biogenesis': ('生物起源', 'Biogenesis'), 'overlord': ('霸主', 'Overlord'),
-             'cosmic_storms': ('宇宙风暴', 'Cosmic Storms'), 'federations': ('联邦', 'Federations'), 'infernals': ('炼狱', 'Infernals')}
+             'cosmic_storms': ('宇宙风暴', 'Cosmic Storms'), 'federations': ('联邦', 'Federations'), 'infernals': ('炼狱', 'Infernals'),
+             'distant_stars': ('遥远恒星', 'Distant Stars'), 'ancient_relics_story_pack': ('远古遗物', 'Ancient Relics'), 'ancient_relics': ('远古遗物', 'Ancient Relics'), 'leviathans': ('利维坦', 'Leviathans'),
+             'lithoids': ('石质生命', 'Lithoids'), 'nemesis': ('复仇女神', 'Nemesis'), 'megacorp': ('巨型企业', 'Megacorp'), 'toxoids': ('毒质人', 'Toxoids')}
 
 
 def atom_label(n, ctx):
@@ -345,7 +347,7 @@ def atom_label(n, ctx):
         'has_tradition': ('拥有传统「{o}」', 'has the "{o}" tradition'), 'has_modifier': ('带有修正「{o}」', 'has the "{o}" modifier'),
         'has_deposit': ('带有资源点「{o}」', 'has the "{o}" deposit'), 'has_policy': ('已启用政策「{o}」', 'has the "{o}" policy'),
         'is_planet_class': ('星球类型为「{o}」', 'planet class is "{o}"'), 'is_species_class': ('物种类别为「{o}」', 'species class is "{o}"'),
-        'has_special_project': ('进行着专项「{o}」', 'has the "{o}" special project'),
+        'has_special_project': ('进行着特殊项目「{o}」', 'has the "{o}" special project'),
         'is_star_class': ('恒星类型为「{o}」', 'star class is "{o}"'), 'has_resource': ('持有「{o}」', 'holds "{o}"'),
         'has_pre_ftl_age': ('前星际文明处于「{o}」', 'the pre-FTL age is "{o}"'), 'has_relic': ('拥有遗珍「{o}」', 'has the "{o}" relic'),
         'is_ship_size': ('舰船规格为「{o}」', 'ship size is "{o}"'), 'is_deposit_type': ('资源点类型为「{o}」', 'deposit type is "{o}"'),
@@ -358,6 +360,10 @@ def atom_label(n, ctx):
     }
     if low in table and not isinstance(v, list):
         a, b = table[low]
+        if low == 'is_same_species' and isinstance(val, str) and val.strip('"') in SCOPE_NAMES:
+            sp = SCOPE_NAMES[val.strip('"')]
+            a, b = '与{o}同一物种', 'is the same species as {o}'
+            obj = sp
         t = (a.format(o=obj['zh']), b.format(o=obj['en']))
         if yes:
             return L(*t)
@@ -366,10 +372,10 @@ def atom_label(n, ctx):
     if low == 'always':
         return L('总是', 'always')
     if low.endswith('_dlc') or low in ('host_has_dlc', 'has_dlc'):
-        raw = re.sub(r'^has_', '', low[:-4]) if low.endswith('_dlc') else re.sub(r'\W+', '_', val.strip('"').lower())
+        raw = re.sub(r'^has_', '', low[:-4]) if low.endswith('_dlc') and low not in ('host_has_dlc', 'has_dlc') else re.sub(r'\W+', '_', val.strip('"').lower())
         dz, de = DLC_NAMES.get(raw, (None, None))
         if dz is None:
-            dz, de = G.OBJECT[0], humanize(raw)
+            dz, de = G.OBJECT[0], humanize(raw).title()
         return L(f'已安装「{dz}」资料片' if yes else f'未安装「{dz}」资料片', f'the {de} DLC is installed' if yes else f'the {de} DLC is not installed')
     if low == 'is_ai':
         return L('由电脑控制' if yes else '由玩家控制', 'controlled by the AI' if yes else 'controlled by a player')
@@ -425,7 +431,7 @@ def cond_label(nodes, ctx, mode='and'):
         if (p['zh'], p['en']) not in seen:
             seen.add((p['zh'], p['en']))
             uniq.append(p)
-    zh, en = (' 或 ', ' or ') if mode == 'or' else ('，且 ', ', and ')
+    zh, en = ('或', ' or ') if mode == 'or' else ('，且', ', and ')
     out = L(zh.join(p['zh'] for p in uniq), en.join(p['en'] for p in uniq))
     detail = [d for p in parts for d in p.get('detail', [])]
     if detail:
@@ -682,9 +688,9 @@ def g_while(n, ctx, st):
     if not kids:
         return []
     num = to_num(count, ctx) if count is not None else None
-    times = f'{num[1]:g} 次' if num and num[0] == 'num' else '若干次'
+    times = f' {num[1]:g} 次' if num and num[0] == 'num' else '若干次'
     timesen = f'{num[1]:g} times' if num and num[0] == 'num' else 'several times'
-    return [entry('repeat', L(f'重复 {times}：', f'Repeated {timesen}:'), n, st, effects=kids, conditional=bool(not num or num[0] != 'num'))]
+    return [entry('repeat', L(f'重复{times}：', f'Repeated {timesen}:'), n, st, effects=kids, conditional=bool(not num or num[0] != 'num'))]
 
 
 def g_switch(n, ctx, st):
@@ -875,6 +881,9 @@ def h_trait(add, ruler=False):
         key = n['v'] if isinstance(n['v'], str) else params_of(n).get('trait')
         if not isinstance(key, str):
             return None
+        tok = token_phrase(key)
+        if tok and tok['en'] == 'a random one':
+            return [entry('trait' if add else 'trait_remove', L('获得一项随机特质' if add else '失去一项随机特质', 'Gains a random trait' if add else 'Loses a random trait'), n, st, trait=key)]
         name = nm(ctx, key)
         zh = ('获得' if add else '失去') + f'特质「{name['zh']}」'
         en = ('Gains' if add else 'Loses') + f' the "{name["en"]}" trait'
@@ -931,7 +940,7 @@ def h_create_ship(n, ctx, st):
     # a design that is only a script reference (last_created_design, event_target:x …) has no name worth showing
     name = nm(ctx, design) if isinstance(design, str) and re.fullmatch(r'\w+', design) and not design.startswith('last_created') else None
     which = f'「{name["zh"]}」' if name else ''
-    whichen = f' "{name["en"]}"' if name else ''
+    whichen = f' ("{name["en"]}")' if name else ''
     return [entry('ship', L(f'出现一艘新舰船{which}', f'A new ship appears{whichen}'), n, st, design=design if isinstance(design, str) else None)]
 
 
@@ -973,6 +982,8 @@ def h_add_deposit(n, ctx, st):
     key = n['v'] if isinstance(n['v'], str) else params_of(n).get('deposit_type') or params_of(n).get('type')
     if not isinstance(key, str):
         return None
+    if key == 'random' or key.startswith('random_'):
+        return [entry('deposit', L('新增一个随机资源点', 'Adds a random deposit'), n, st, deposit=key)]
     name = nm(ctx, key)
     return [entry('deposit', L(f'新增资源点「{name['zh']}」', f'Adds the "{name["en"]}" deposit'), n, st, deposit=key)]
 
@@ -987,7 +998,7 @@ def h_enable_project(n, ctx, st):
     if not isinstance(key, str):
         return None
     name = nm(ctx, key)
-    return [entry('project', L(f'开启专项「{name["zh"]}」', f'Starts the "{name["en"]}" special project'), n, st, project=key)]
+    return [entry('project', L(f'开启特殊项目「{name["zh"]}」', f'Starts the "{name["en"]}" special project'), n, st, project=key)]
 
 
 def h_specimen(n, ctx, st):
@@ -1043,6 +1054,27 @@ def h_add_x(kind, zh, en):
     return f
 
 
+def token_phrase(o):
+    """A script token (scope names, random*) used where an object key is expected: a natural phrase, never a quoted key."""
+    if o in SCOPE_NAMES:
+        return {'zh': SCOPE_NAMES[o]['zh'], 'en': SCOPE_NAMES[o]['en']}
+    if o == 'random' or o.startswith('random_'):
+        return {'zh': '随机', 'en': 'a random one'}
+    return None
+
+
+def zh_token(zh, phrase):
+    if phrase == '随机':
+        return zh.replace('「{o}」', '（随机）')
+    return zh.replace('「{o}」', phrase)
+
+
+def en_token(en, phrase):
+    if phrase == 'a random one':
+        return en.replace(' ("{o}")', '').replace('the "{o}"', 'a random').replace('"{o}"', 'a random one')
+    return en.replace('"{o}"', phrase)
+
+
 def first_obj(n, keys=('type', 'building', 'deposit', 'key', 'name', 'policy', 'tech', 'ethic', 'contract', 'initializer', 'civic', 'species', 'district', 'district_type')):
     if isinstance(n['v'], str):
         return n['v']
@@ -1071,7 +1103,7 @@ SIMPLE_PLAIN = {  # no object name in the sentence
     'exile_leader_as': ('leader', '该领袖被放逐', 'The leader is exiled'), 'destroy_situation': ('project', '该情势被终止', 'The situation is ended'),
     'create_species': ('pop', '出现一个新物种', 'A new species appears'), 'create_country': ('generic', '出现一个新的国家', 'A new country appears'),
     'create_starbase': ('planet', '建成一座星港', 'A starbase is built'), 'clone_leader': ('leader', '该领袖被复制', 'The leader is cloned'),
-    'delete_fleet': ('fleet', '该舰队被移除', 'The fleet is removed'), 'abort_special_project': ('project', '专项被中止', 'The special project is aborted'),
+    'delete_fleet': ('fleet', '该舰队被移除', 'The fleet is removed'), 'abort_special_project': ('project', '特殊项目被中止', 'The special project is aborted'),
     'remove_pop_amount': ('pop', '人口减少', 'Population decreases'), 'change_government': ('generic', '政府形态发生变化', "The government's authority or civics change"),
     'destroy_espionage_operation': ('generic', '间谍行动被终止', 'The espionage operation ends'),
 }
@@ -1093,7 +1125,7 @@ SIMPLE_PLAIN.update({
     'remove_opinion_modifier': ('opinion', '移除一项态度修正', 'An opinion modifier is removed'),
     'prevent_anomaly': ('generic', '该处不会再出现异常现象', 'Anomalies no longer appear here'),
     'add_anomaly': ('generic', '出现一处异常现象', 'An anomaly appears'),
-    'enable_patron_first_contact_project': ('project', '开启一个首次接触专项', 'Starts a first-contact project'),
+    'enable_patron_first_contact_project': ('project', '开启一个首次接触特殊项目', 'Starts a first-contact project'),
     'change_planet_size': ('planet', '星球尺寸改变', 'The planet size changes'),
     'change_dominant_species': ('pop', '主导物种改变', 'The dominant species changes'),
     'kill_pop_group': ('pop', '一部分人口被消灭', 'Part of the population is killed'),
@@ -1134,6 +1166,9 @@ def h_simple_obj(key):
         o = first_obj(n)
         if not o:
             return None
+        tok = token_phrase(o)
+        if tok:
+            return [entry(kind, L(zh_token(zh, tok['zh']), en_token(en, tok['en'])), n, st, object=o)]
         name = nm(ctx, o)
         return [entry(kind, L(zh.format(o=name['zh']), en.format(o=name['en'])), n, st, object=o)]
     return f
@@ -1430,7 +1465,7 @@ def trim(effects, budget=BUDGET):
     res = go(effects or [])
     if omitted[0]:
         res.append({'kind': 'more', 'omitted': omitted[0],
-                    'label': L(f'……另有 {omitted[0]} 项效果未列出（见游戏脚本）', f'... and {omitted[0]} more effects not listed (see the game script)')})
+                    'label': L(f'……另有 {omitted[0]} 项效果未列出（见游戏脚本）', f'… and {omitted[0]} more effects not listed (see the game script)')})
     return res
 
 

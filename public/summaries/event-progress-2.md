@@ -1,6 +1,6 @@
 # 发现外星生命 / The Discovery of Alien Life
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/progress_events.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -20,4 +20,6 @@ on_survey_planet（common/on_actions/00_on_actions.txt:1139）触发 progress.2�
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/progress_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：progress.2 的选项与后续。

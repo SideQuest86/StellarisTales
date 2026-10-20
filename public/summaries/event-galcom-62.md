@@ -1,7 +1,5 @@
-# [galactic_market_station_system.GetName]泛星系贸易市场总部被拆除 / [galactic_market_station_system.GetName] Stripped of Galactic Market Headquarters
-
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/galactic_community_events.txt:701-775,1213-1500`；`events/on_action_events_2.txt:131-420`；`common/on_actions/00_on_actions.txt:4419`；`common/resolutions/00_resolutions.txt:13706`
+# 泛星系贸易市场总部被拆除 / Galactic Market Headquarters Stripped
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -22,11 +20,10 @@
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。
-  None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/galactic_community_events.txt:701-775,1213-1500`；`events/on_action_events_2.txt:131-420`；`common/on_actions/00_on_actions.txt:4419`；`common/resolutions/00_resolutions.txt:13706`
 - 已核对：入口 on_action、提名期延迟、候选判定与结果事件。
   Checked: entry on_actions, the nomination delays, candidate tests and result events.
 - 更正：galcom.64 原为单独故事，与 62 共用 action.101，现并入。

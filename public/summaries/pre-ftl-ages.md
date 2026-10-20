@@ -1,7 +1,5 @@
 # 科技进步 / Technological Progression
 - 分类 Category：文明纪事 Society (C7) · 前FTL文明发展情境 pre-FTL development situation
-- 来源 Sources：`common/situations/03_AI_empire_situations.txt:1-400` · `events/first_contact_dlc_situation_events.txt:12-1130` · `common/on_actions/00_on_actions.txt:140-200, 563-575`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,6 +21,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`common/situations/03_AI_empire_situations.txt:1-400` · `events/first_contact_dlc_situation_events.txt:12-1130` · `common/on_actions/00_on_actions.txt:140-200, 563-575`
 - 已核对 Checked：情境定义（进度、倍率、月度事件）、preftl.0 的时代分派、各时代事件。/ Situation definition, the preftl.0 age dispatch and the age events.
 - 审阅改动 Changes：未改变编译结构（时代事件均为情境的条件子项）；加入了顺序说明。/ Structure unchanged; sequential ordering documented.
 - 不确定 Uncertain：机器人起义与 awareness.920 的入口条件只按调用图读取。 / The robotic-uprising and awareness.920 entry conditions were read from the call graph only.

@@ -1,8 +1,6 @@
 # 虚境行者城邦被毁 / Shroudwalker Enclave Destroyed
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord
-- 来源 Sources：events/overlord_enclaves_events.txt:7493（enclave.430）, :7535（enclave.435）, :7564（enclave.440）; events/observer_events.txt:1605（observer.95）; common/on_actions/00_on_actions.txt:1425
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 虚境行者城邦空间站被击毁时（on_ship_destroyed_victim → 隐藏 enclave.430）。When the Shroudwalker station is destroyed.
@@ -13,12 +11,11 @@ One notice per viewpoint: the destroyer (enclave.435) finds the station almost e
 
 ## 分支与结局 Branches and outcomes
 
-本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
-
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:7493（enclave.430）, :7535（enclave.435）, :7564（enclave.440）; events/observer_events.txt:1605（observer.95）; common/on_actions/00_on_actions.txt:1425
 已核对接收者与效果。覆盖完整。Coverage complete.
 （评注：435 中“其余成员去向不明”为原文，本档案不作推测。Commentary: where the others went is left unexplained in the source.）

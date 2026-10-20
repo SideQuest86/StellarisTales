@@ -1,6 +1,6 @@
 # 丰富化石 / Plentiful Fossils
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:429；events/arcsite_events.txt:587 · DLC：基础游戏 Base game（遗址定义与事件 arcsite_events） · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：基础游戏 Base game（遗址定义与事件 arcsite_events）
 
 ## 如何开始 How it starts
 
@@ -30,10 +30,11 @@ Large fossil deposits suggest engineered species. The first three stages each as
 
 ## 条件与文明差异 Conditions and variants
 
-- 无特殊的文明差异。 / No empire-specific variants beyond the reward wording.
 - 掷骰失败时使用本遗址专属的事件池 site_engineered_species_random_events：8055、8075、8110、8090–8093（敌对野生动物）、4078（火灾）、8210。 / Failed rolls draw from this site's own pool site_engineered_species_random_events: 8055, 8075, 8110, 8090-8093 (hostile wildlife), 4078 (fire), 8210.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:429；events/arcsite_events.txt:587
 - 已核对：遗址定义（common/archaeological_site_types/00_base_game_arc_sites.txt:429）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/00_base_game_arc_sites.txt:429) with its stage order and conditions, every stage event script, and how the site appears; both languages read.

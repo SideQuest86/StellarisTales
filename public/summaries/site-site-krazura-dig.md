@@ -1,6 +1,6 @@
 # 古都遗址 / Ancient Capital Site
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:532；events/arcsite_events.txt:1500 · DLC：基础游戏 Base game（遗址定义与事件 arcsite_events） · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：基础游戏 Base game（遗址定义与事件 arcsite_events）
 
 ## 如何开始 How it starts
 
@@ -39,5 +39,7 @@ The ancient capital of the Krazura, an avian civilisation of dimensional refugee
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:532；events/arcsite_events.txt:1500
 - 已核对：遗址定义（common/archaeological_site_types/00_base_game_arc_sites.txt:532）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/00_base_game_arc_sites.txt:532) with its stage order and conditions, every stage event script, and how the site appears; both languages read.

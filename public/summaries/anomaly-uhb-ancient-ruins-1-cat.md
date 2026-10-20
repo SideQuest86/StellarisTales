@@ -1,8 +1,6 @@
 # 碑塔 / Monoliths
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:235-254` · `events/anomaly_events_1.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:235-254` · `events/anomaly_events_1.txt`
 - 已对照120/121原文。注意120.b的触发含 is_gestalt = no 于NOR内，即实际只对群体意识开放（按脚本字面）。  
   Compared the originals of 120/121. Note that 120.b has is_gestalt = no inside a NOR, so literally it is open only to gestalt empires.
 - 覆盖 Coverage：全部3个文档。 / All 3 docs.

@@ -1,9 +1,6 @@
 # 义体信条 / Cybernetic Creed
 
-- 分类 Category：起源 Origins · DLC：Machine Age · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_machine_age.txt:1-1520`、`common/situations/08_machine_age_situations.txt:1-170`、`common/traditions/01_cybernetics.txt`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Machine Age
 
 ## 如何开始 How it starts
 
@@ -28,6 +25,9 @@ About 30 days after start machine_age.2150 forms the Creeds. A two-year pulse (h
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_machine_age.txt:1-1520`、`common/situations/08_machine_age_situations.txt:1-170`、`common/traditions/01_cybernetics.txt`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：machine_age.90–2230 全部事件与局势。 All events 90-2230 and the situation.
 - 更正 Corrections：入口加标签，随机组与结局标注。 Entries labelled; random group and endings marked.
 - 不确定 Uncertain：1010 选项细节仅取自编译树。 Option detail of 1010 from the compiled tree only.

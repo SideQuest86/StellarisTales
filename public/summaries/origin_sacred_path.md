@@ -1,9 +1,6 @@
 # 神圣之路 / The Sacred Path
 
-- 分类 Category：起源 Origins · DLC：Nomads · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/nomads_origin_events.txt:1-1652`、`common/special_projects`、`common/event_chains`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Nomads
 
 ## 如何开始 How it starts
 
@@ -30,6 +27,9 @@ At game start hidden nomads.2000 fires 2005 *The Ancestral Star Charts* after 5 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/nomads_origin_events.txt:1-1652`、`common/special_projects`、`common/event_chains`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：2000–2140 全部事件与八个神圣遗址项目。 All events 2000-2140 and the eight sacred-site projects.
 - 更正 Corrections：七处圣地标为并列（需完成7处，门槛 2100）；2015 标为独立支线；结局标注。 Seven sites grouped as parallel with gate 2100; 2015 noted as independent; endings marked.
 - 不确定 Uncertain：2120/2125 的选项条件取自编译树。 Option conditions of 2120/2125 taken from the compiled tree.

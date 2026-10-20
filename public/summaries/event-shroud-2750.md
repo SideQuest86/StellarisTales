@@ -1,7 +1,5 @@
 # 心灵升华 / Psionic Ascension（突破荫蔽 Breach the Shroud）
 - 分类 Category：文明纪事 Society (C7) · 心灵传统情境 psionic tradition situation（入口 shroud.2750）
-- 来源 Sources：`events/shroud_situation_events.txt:758–829, 3808–4255` · `common/situations/13_shroud_situations.txt:1–400` · `common/traditions/01_psionics_shroud.txt` · `common/on_actions/00_on_actions.txt:5289–5340`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/shroud_situation_events.txt:758–829, 3808–4255` · `common/situations/13_shroud_situations.txt:1–400` · `common/traditions/01_psionics_shroud.txt` · `common/on_actions/00_on_actions.txt:5289–5340`
 - 已核对 Checked：2750–2810、shroud.2200 与四个池（`on_actions`）、情境定义、传统启用、28 个池事件的正文与选项。
 - 审阅改动 Changes：原来 28 个池事件各自成篇（event-shroud-2300…2640），而它们都只是同一情境的随机事件池；现并入本篇，用情境到各事件的桥标出阈值、池权重与路线加成，并按池分为互斥组。/ The 28 pool events used to be separate one-event stories; they are chapters of this situation and are now grouped by pool with thresholds and approach multipliers.
 - 不确定 Uncertain：2760/2780 的效果与 utopia.2602/2652 未逐项展开。

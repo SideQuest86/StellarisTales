@@ -24,15 +24,20 @@ const raw = (x) => x?.[lang()] || x?.en || x?.zh || "";
 // Titles: a save-dependent name inside a specimen name (e.g. "[planet] Hyper Mulch") is left out.
 const label = (x) => (x?.[lang()] || x?.en || x?.zh || "").replace(/§[A-Za-z!]|£\w+£/g, "").replace(/\s*\[[^\]]+\]\s*/g, " ").replace(/\s+/g, " ").trim();
 
-let data = null, models = {}, root = null, state = { type: "all", rarity: "all", query: "", only3d: false, open: null };
-let viewer = null, opener = null, onClose = null, building = null;
+let data = null, models = {}, root = null, state = { type: "all", rarity: "all", query: "", only3d: false, onlyMet: false, open: null };
+// Specimens the reader has met: awarded by a chapter they have opened (app.js passes them in; empty without reading).
+let met = new Set();
+let viewer = null, opener = null, onClose = null, building = null, hiding = 0;
 const RARITY_ORDER = ["common", "rare", "epic", "exceptional"];
 
-export async function openMuseum({ asset, closeTo, focusKey } = {}) {
+export async function openMuseum({ asset, closeTo, focusKey, metKeys } = {}) {
   onClose = closeTo;
+  met = metKeys || new Set();
+  if (!met.size) state.onlyMet = false;
   opener = document.activeElement;
   // One build even when two opens overlap (e.g. a hash change while the data is still downloading).
   await (building ||= build(asset).catch((e) => { building = null; throw e; }));
+  clearTimeout(hiding); // a close still fading out (closeMuseum) must not hide the museum opened now
   root.hidden = false;
   document.body.classList.add("museum-open");
   requestAnimationFrame(() => root.classList.add("open"));
@@ -47,7 +52,7 @@ export function closeMuseum() {
   root.classList.remove("open");
   document.body.classList.remove("museum-open");
   const done = () => { root.hidden = true; };
-  reduced() ? done() : setTimeout(done, 260);
+  reduced() ? done() : (hiding = setTimeout(done, 260));
   opener?.focus?.({ preventScroll: true });
   onClose?.();
 }
@@ -87,6 +92,7 @@ function filtered() {
     (state.type === "all" || s.type === state.type) &&
     (state.rarity === "all" || s.rarity === state.rarity) &&
     (!state.only3d || models[s.key]) &&
+    (!state.onlyMet || met.has(s.key)) &&
     (!q || [s.name.zh, s.name.en, s.short.zh, s.short.en, s.key].some((t) => (t || "").toLowerCase().includes(q))),
   ).sort((a, b) => RARITY_ORDER.indexOf(b.rarity) - RARITY_ORDER.indexOf(a.rarity) || label(a.name).localeCompare(label(b.name), lang()));
 }
@@ -116,19 +122,20 @@ function render() {
         ${Object.entries(a.types).map(([k, v]) => chip("type", k, label(v), typeCount(k))).join("")}
       </div>
       <div class="museum-chips" role="group" aria-label="${esc(T("稀有度", "Rarity"))}">
-        ${chip("rarity", "all", T("全部稀有度", "Any rarity"))}
+        ${chip("rarity", "all", T("全部稀有度", "All rarities"))}
         ${RARITY_ORDER.map((r) => chip("rarity", r, label(a.rarities[r]), rarCount(r))).join("")}
       </div>
       ${nModels < data.specimens.length ? `<button class="museum-chip" data-toggle3d aria-pressed="${state.only3d}">${esc(T("仅看有三维模型", "With 3D model only"))} <small>${nModels}</small></button>` : ""}
+      ${met.size ? `<button class="museum-chip museum-chip-met" data-togglemet aria-pressed="${state.onlyMet}"><i aria-hidden="true"></i>${esc(T("阅读中遇到", "Met while reading"))} <small>${met.size}</small></button>` : ""}
     </div>
-    <p class="museum-count" aria-live="polite">${esc(T(`${list.length} 件标本`, `${list.length} specimens`))}</p>
+    <p class="museum-count" aria-live="polite">${esc(T(`${list.length} 件标本`, `${list.length} ${list.length === 1 ? "specimen" : "specimens"}`))}</p>
     <ul class="museum-grid" role="list">
-      ${list.map((s) => `<li><button class="museum-exhibit rarity-${s.rarity}" data-key="${s.key}" aria-label="${esc(label(s.name))} · ${esc(label(a.rarities[s.rarity]))}">
+      ${list.map((s) => `<li><button class="museum-exhibit rarity-${s.rarity}${met.has(s.key) ? " met" : ""}" data-key="${s.key}" aria-label="${esc(label(s.name))} · ${esc(label(a.rarities[s.rarity]))}${met.has(s.key) ? esc(T(" · 阅读中遇到", " · met while reading")) : ""}">
         <span class="museum-pedestal" aria-hidden="true"><img src="${esc(data.asset(s.icon.url))}" alt="" loading="lazy" decoding="async" width="100" height="100"></span>
         <span class="museum-name">${esc(label(s.name))}</span>${models[s.key] && nModels < data.specimens.length ? `<span class="museum-3d-badge">3D</span>` : ""}
       </button></li>`).join("")}
     </ul>
-    <aside class="museum-detail" hidden aria-live="polite"></aside>`;
+    <aside class="museum-detail" hidden></aside>`;
 }
 
 function formatEffect(e) {
@@ -163,8 +170,9 @@ function showExhibit(key, keepFocus = false) {
   const panel = $(".museum-detail", root);
   const model = models[key];
   panel.hidden = false;
+  panel.setAttribute("aria-label", label(s.name)); // focus moves to Close: the name gives context, no live region
   panel.innerHTML = `
-    <button class="museum-close museum-detail-close" data-close-detail aria-label="${esc(T("关闭展品", "Close exhibit"))}">×</button>
+    <button class="museum-close museum-detail-close" data-close-detail aria-label="${esc(T("关闭标本", "Close specimen"))}">×</button>
     <div class="museum-stage rarity-${s.rarity}">
       <img class="museum-stage-image" src="${esc(data.asset(s.icon.url.replace(/^museum\/img\//, "museum/img-hd/")))}" data-original="${esc(data.asset(s.icon.url))}" onerror="if(this.dataset.original&&this.src!==this.dataset.original){this.src=this.dataset.original}" alt="${esc(label(s.name))}" width="100" height="100" decoding="async">
       ${model ? `<div class="museum-viewer" tabindex="0" role="img" aria-label="${esc(T("可旋转、缩放的三维模型：拖动旋转，滚轮或 +/- 缩放，方向键旋转，0 复位", "Rotatable 3D model: drag to rotate, wheel or +/- to zoom, arrow keys to rotate, 0 to reset"))}"></div>
@@ -185,7 +193,7 @@ function showExhibit(key, keepFocus = false) {
       ${acquisitionHtml(s)}
       <details class="museum-sources"><summary>${esc(T("来源与模型信息", "Sources and model information"))}</summary>
         <p>${esc(s.source)} · ${esc(s.icon.source)}</p>
-        ${model ? `<p>${esc(T("模型", "Model"))}: ${esc(model.file)} · ${esc(model.generator)} · ${esc(model.triangles)} ${esc(T("个三角面", "triangles"))} · ${esc(Math.round(model.bytes / 1024))} KB · <a href="${esc(data.asset(model.file))}" download>${esc(T("下载 GLB", "Download GLB"))}</a></p>` : ""}
+        ${model ? `<p>${esc(T("模型：", "Model: "))}${esc(model.file)} · ${esc(model.generator)} · ${esc(model.triangles)} ${esc(T("个三角面", "triangles"))} · ${esc(Math.round(model.bytes / 1024))} KB · <a href="${esc(data.asset(model.file))}" download>${esc(T("下载 GLB", "Download GLB"))}</a></p>` : ""}
       </details>
     </div>`;
   root.classList.add("detail-open");
@@ -212,7 +220,7 @@ async function mountViewer(panel, model, s) {
     img.classList.remove("behind");
     panel.querySelector(".museum-view-toggle")?.remove();
     const note = $(".museum-disclaimer", panel);
-    if (note) note.textContent = T("三维模型未能加载，显示原版图像。", "The 3D model could not be loaded — showing the original image.");
+    if (note) note.textContent = T("三维模型未能载入，显示原版图像。", "The 3D model could not be loaded — showing the original image.");
     console.warn("museum model failed", model.file, e);
   }
 }
@@ -240,6 +248,7 @@ function onClick(e) {
   }
   const f = t.closest("[data-filter]");
   if (f) { state[f.dataset.filter] = f.dataset.value; hideExhibit(); render(); root.querySelector(`[data-filter="${f.dataset.filter}"][data-value="${f.dataset.value}"]`)?.focus(); return; }
+  if (t.closest("[data-togglemet]")) { state.onlyMet = !state.onlyMet; hideExhibit(); render(); root.querySelector("[data-togglemet]")?.focus(); return; }
   if (t.closest("[data-toggle3d]")) { state.only3d = !state.only3d; hideExhibit(); render(); root.querySelector("[data-toggle3d]")?.focus(); return; }
   const ex = t.closest(".museum-exhibit");
   if (ex) return showExhibit(ex.dataset.key);

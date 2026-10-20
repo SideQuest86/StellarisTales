@@ -1,6 +1,6 @@
 # 哨兵 / The Sentinels
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_1.txt:4826–4965、5706–6724；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2228；common/special_projects/00_projects_ancient_relics.txt:418–523；common/on_actions/00_on_actions.txt:840、866、882、3304 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -40,6 +40,8 @@ Shares the Oracle's entry: clearing a jungle, kelp, swamp or glacier blocker let
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/ancient_relics_arcsite_events_1.txt:4826–4965、5706–6724；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2228；common/special_projects/00_projects_ancient_relics.txt:418–523；common/on_actions/00_on_actions.txt:840、866、882、3304
 - 已核对：4030 条件、4051–4068 与 4075–4077 脚本、DESTROY_SENTINELS/SECRET_TOMB/REPLICATE/REPURPOSE 项目、四个 on_action 回调；中英文正文已读。
 - 修正：保留 V3 的战斗回调桥，并补上从 4058“让它们闭嘴”开战的两条桥（V3 漏掉）；补互斥组与注释。火灾事件 4078 并入“考古遗址：发掘意外”。
 - 不确定：地面战结果取决于实际战斗，图中只表示可能的回调。

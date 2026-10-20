@@ -1,8 +1,6 @@
 # 被雕琢的小行星 / An Asteroid, Carved
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:297-330` · `events/anomaly_events_1.txt:1746-1860` · `common/event_chains/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:297-330` · `events/anomaly_events_1.txt:1746-1860` · `common/event_chains/`
 - 已对照事件140的选项脚本（1746-1860）。  
   Checked the option script of event 140 (1746-1860).
 - 覆盖 Coverage：全部3个文档。 / All 3 docs.

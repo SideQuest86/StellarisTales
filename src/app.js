@@ -11,8 +11,10 @@ import { SoundtrackPlayer } from "./audio-player.js";
 // [UI] chrome dictionary + reader enter/exit (src/i18n.js, src/reader-motion.js)
 import { t, setLanguage, applyStaticText } from "./i18n.js";
 import { revealReader } from "./reader-motion.js";
-import { warmGlyphs } from "./glyph-warmup.js";
+import { warmGlyphs, loadFontsWithin, docFontParts, mapFontParts } from "./glyph-warmup.js";
 import * as progress from "./progress.js";
+import { createSeen } from "./seen.js";
+import { linkGuide } from "./guide-links.js";
 import {
   evaluate, resolveBody, resolveChoices, resolveEdges, pathFlags, storyFlags,
   impliedFacts, applyFacts, describe,
@@ -166,6 +168,8 @@ function showSelection(story, column, index) {
   selectedColumn = column;
   $("#category-label").textContent = categoryName(column);
   $("#chapter-count").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
+  readMark(story);
+  storySpecimens(story);
   $("#selected-title").textContent = prose(local(story.title));
   $("#selected-excerpt").textContent = prose(local(story.excerpt));
   $("#story-number").textContent = String(index + 1).padStart(2, "0");
@@ -248,6 +252,8 @@ async function openStory(id, start) {
   const end = beginOpening();
   try {
     const [data] = await Promise.all([loadStory(id), loadNames()]);
+    // Rare characters: their font slices are requested before the first layout (a late slice re-lays out the whole page).
+    await loadFontsWithin(docFontParts(data.chapters.find((c) => c.id === (start || data.story.start)) || data.chapters[0], lang), 150);
     if (ticket !== readerTicket) return;
     visitedChapters.clear();
     assumptions = {};
@@ -281,6 +287,15 @@ function flushProgress() {
 }
 addEventListener("pagehide", flushProgress);
 document.addEventListener("visibilitychange", () => { if (document.hidden) flushProgress(); });
+// Every chapter ever opened, per story (src/seen.js): "Read 3 of 12" on the archive, specimens met in the Grand Archive.
+const seen = createSeen();
+addEventListener("pagehide", () => seen.flush());
+document.addEventListener("visibilitychange", () => { if (document.hidden) seen.flush(); });
+function readMark(story) {
+  const n = story ? Math.min(seen.count(story.id), story.chapters) : 0;
+  $("#read-count").hidden = $("#read-sep").hidden = !n;
+  if (n) $("#read-count").textContent = n >= story.chapters ? T("已读完", "All read") : T(`已读 ${n}/${story.chapters}`, `${n} of ${story.chapters} read`);
+}
 // Loads the stories a saved trail touches and reconciles it with them; null when nothing valid remains.
 async function restoreProgress(saved) {
   if (!saved) return null;
@@ -485,6 +500,7 @@ async function prewarmReader() {
       $("#flow-surface").hidden = true; // the next opening shows its own map once it is built
     }
   }
+  timing.runs = (window.__readerWarmup?.runs || 0) + 1;
   window.__readerWarmup = timing;
 }
 let steppingBack = false;
@@ -492,6 +508,7 @@ function closeReader() {
   flushProgress();
   readerTicket++;
   setReader(false);
+  readMark(selected); // chapters read just now count on the archive panel
   dossier = null;
   chapter = null;
   trail = [];
@@ -527,6 +544,8 @@ async function goChapter(id, storyId, back = false, sets = null) {
     if (ticket !== readerTicket) return;
     const target = data.chapters.find((c) => c.id === id);
     if (!target) return;
+    await loadFontsWithin(docFontParts(target, lang), 150);
+    if (ticket !== readerTicket) return;
     if (!back) { trail.push({ story: data.story.id, chapter: id, ...(sets?.length ? { sets } : {}) }); saveSuspended = false; }
     // Cross-dossier references keep their own route rules and return history.
     if (data !== dossier) useDossier(data);
@@ -538,7 +557,7 @@ async function goChapter(id, storyId, back = false, sets = null) {
 }
 function titleFor(id, storyId) {
   const c = docMap.get(id);
-  if (c) return prose(local(c.title)) || T("篇章", "Document");
+  if (c) return prose(local(c.title)) || T("篇章", "Chapter");
   const other = storyById.get(storyId || recordToStory[id]);
   return other ? prose(local(other.title)) : T("继续", "Continue");
 }
@@ -553,13 +572,13 @@ function delayText(delays) {
   }
   if (!low && !high) return "";
   const range = high > low ? `${Math.round(low)}–${Math.round(high)}` : `${Math.round(low)}`;
-  return T(`约${range}天后`, `about ${range} days later`);
+  return T(`约 ${range} 天后`, `after about ${range} days`);
 }
 function edgeCaption(e) {
   const parts = [];
   if (e.label) parts.push(prose(local(e.label)));
   else if (e.kind === "random" && e.chance != null)
-    parts.push(T(`随机结果 · 基础约${Math.round(e.chance * 100)}%`, `Random outcome · base ~${Math.round(e.chance * 100)}%`) + (e.modified ? T("（受条件修正）", " (modified)") : ""));
+    parts.push(T(`随机结果 · 基础约 ${Math.round(e.chance * 100)}%`, `Random outcome · base about ${Math.round(e.chance * 100)}%`) + (e.modified ? T("（受条件调整）", " (adjusted by conditions)") : ""));
   else if (e.kind === "research") parts.push(T("研究完成后", "When the research completes"));
   else if (e.kind === "project") parts.push(T("项目结束后", "When the project ends"));
   else if (e.kind === "failure") parts.push(T("失败时", "On failure"));
@@ -730,13 +749,14 @@ function renderBody(r, ctx) {
     const text = paragraph(local(part.text));
     if (part.status !== null || !part.when) return text;
     const label = describe(part.when, lang, profileNames);
-    return `<span class="variant-piece"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(T("若", "If"))}：${esc(label)}</button>${text}</span>`;
+    return `<span class="variant-piece"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(T("若：", "If: "))}${esc(label)}</button>${text}</span>`;
   }).join("")}</p></section>`).join("");
   return { html, tabs, passage };
 }
 function renderChapter(preservePosition = false) {
   const chapterChanged = readingChapterId !== chapter.id;
   visitedChapters.add(chapter.id);
+  if (!prewarming) seen.mark(dossier.story.id, chapter.id);
   persist();
   if (readingChapterId !== chapter.id) {
     readingIndex = trail.at(-1)?.chapter===chapter.id ? (trail.at(-1).reading ?? 0) : 0;
@@ -854,10 +874,10 @@ function renderChapter(preservePosition = false) {
   const unreachable = chapter.unreachable ? `<aside class="review-note unreachable-note"><small>${esc(T("审阅结论 · 原版脚本中无法自然触发", "Review finding · not reachable in the shipped script"))}</small><p>${esc(local(chapter.unreachable))}</p></aside>` : "";
   const notes = unreachable + (chapter.notes || []).map((n) => `<aside class="review-note"><small>${esc(T("审阅注释 · 非游戏原文", "Reviewer note · not game text"))}</small><p>${esc(local(n))}</p></aside>`).join("");
   const alsoIn = (chapter.alsoIn || []).filter((id) => storyById.has(id));
-  const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此文档也出现在：", "This document also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
+  const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此篇章也出现在：", "This chapter also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span>${trail.length > 1 ? `<button id="reading-back">${esc(T("← 上一步", "← Back"))}</button>` : ""}${trail.length > 1 ? `<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button>` : ""}</div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span>${fromChip()}${trail.length > 1 ? `<button id="reading-back">${esc(T("← 上一步", "← Back"))}</button>` : ""}${trail.length > 1 ? `<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button>` : ""}</div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   showSpecimenLinks(r.id);
   showEffects(story, r.id, r.choices);
   const remembered=trail.at(-1);
@@ -870,12 +890,13 @@ function renderChapter(preservePosition = false) {
     const notesBox=document.createElement('details');
     notesBox.className='story-summary';
     const heading=document.createElement('summary');
-    heading.textContent=T('故事导读 · 含剧透','Story reading notes · Spoilers');
+    heading.textContent=T('故事导读 · 含剧透','Reading guide · Spoilers');
     const download=document.createElement('a');
     download.href=asset(dossier.summary.path); download.download='';
     download.textContent=T('下载 Markdown','Download Markdown');
     const text=guideElement(dossier.summary.text,lang,{show:T('显示英文','Show Chinese'),hide:T('仅显示中文','English only')});
     notesBox.append(heading,download,text);
+    notesBox.addEventListener('toggle',()=>{if(notesBox.open&&!notesBox.dataset.linked){notesBox.dataset.linked='1';linkGuideDocs(text,story,dossier.chapters);}});
     $('.chapter-document').append(notesBox);
   }
   $("#chapter-list").innerHTML = story.tree ? '' :
@@ -895,7 +916,7 @@ function renderChapter(preservePosition = false) {
   }
   if(chapter.dialogue?.responseProfiles){
     const picker=document.createElement('label');picker.className='reading-picker';
-    const profileLabel=local(chapter.dialogue.profileLabel)||T('对话物种','Speaker');
+    const profileLabel=local(chapter.dialogue.profileLabel)||T('对话物种','Dialogue species');
     picker.innerHTML=`<span>${esc(profileLabel)}</span><select aria-label="${esc(profileLabel)}">${chapter.dialogue.responseProfiles.map((profile,i)=>`<option value="${i}" ${i===dialogueProfile?'selected':''}>${esc(local(profile.label))}</option>`).join('')}</select>`;
     document.querySelector('.narrative').before(picker);
     if(chapter.dialogue.profileLabel){
@@ -921,7 +942,10 @@ function renderChapter(preservePosition = false) {
   else if (openingReader) {
     // The tree is computed in an idle moment of the opening animation, so the map's own frame only lays it out.
     (window.requestIdleCallback || ((f) => setTimeout(f, 200)))(later(() => flowSurface.prepare(story, readable)), { timeout: 450 });
-    setTimeout(later(updateFlow), 600);
+    const mapFonts = loadFontsWithin(mapFontParts(story, readable, lang), 600); // requested now, awaited when the map is built
+    // The map fills in slices (FlowSurface.fillNodes) instead of one 60–100 ms frame.
+    const openFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail, undefined, { progressive: true });
+    setTimeout(later(() => mapFonts.then(later(openFlow))), 600);
   }
   else (window.requestIdleCallback || ((f) => setTimeout(f, 50)))(later(updateFlow), { timeout: 250 });
   // Continue-card pictures are full event art scaled down: decoding them on the opening or chapter-change frames cost
@@ -1051,7 +1075,7 @@ const fullSearch = createSearch({
 let searchSeq = 0, searchFallback = false;
 async function renderFullSearch() {
   const seq = ++searchSeq;
-  $("#search-count").textContent = T("搜索中…", "Searching…");
+  $("#search-count").textContent = T("搜索中……", "Searching…");
   let r;
   try {
     r = await fullSearch.search(searchText, searchPage);
@@ -1062,14 +1086,14 @@ async function renderFullSearch() {
   }
   if (seq !== searchSeq) return;
   searchPage = r.page;
-  $("#search-count").textContent = T(`${r.total} 条结果`, `${r.total} results`);
+  $("#search-count").textContent = r.countText(r.total); // "· 相近结果 / Close matches" for typo-tolerant results
   $("#search-results").innerHTML = r.html || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
   pager(r.page, r.pages);
   const shown = $("#search-results").children.length;
   await r.enrich($("#search-results"));
   if (seq !== searchSeq) return;
   const dropped = shown - $("#search-results").children.length;
-  if (dropped > 0) $("#search-count").textContent = T(`${r.total - dropped} 条结果`, `${r.total - dropped} results`);
+  if (dropped > 0) $("#search-count").textContent = r.countText(r.total - dropped);
   if (!$("#search-results").children.length) $("#search-results").innerHTML = `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
 }
 function renderSearch() {
@@ -1217,7 +1241,7 @@ document.addEventListener("click", (e) => {
     flowSurface.update(dossier.story, dossier.chapters, chapter.id, visitedChapters, lang, prose, trail);
     return;
   }
-  if (e.target.closest("#reading-back") && trail.length > 1) {
+  if (e.target.closest("#reading-back, #from-story") && trail.length > 1) {
     trail.pop();
     const step = trail.at(-1);
     goChapter(step.chapter, step.story, true);
@@ -1250,7 +1274,31 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault();
     $("#search-open").click();
   }
+  // 1–9 pick the n-th visible choice or continue card while reading (not in fields, the map, search or the museum).
+  if (/^[1-9]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey && !e.isComposing && readingKeys(e.target)) {
+    const action = readerActions()[Number(e.key) - 1];
+    if (action) {
+      e.preventDefault();
+      action.focus({ preventScroll: true });
+      action.click();
+    }
+  }
 });
+const readingKeys = (target) =>
+  !$("#reader").hidden && !$("#reader").classList.contains("prewarm") && !$("#search-dialog").open &&
+  !document.body.classList.contains("museum-open") && !target.closest?.("input, textarea, select, [contenteditable], .flow-viewport, #playlist");
+const ACTIONS = ".choice-button:not([aria-disabled=true]), .next-chapter, .reading-next";
+const readerActions = () =>
+  [...document.querySelectorAll(`.chapter-document :is(${ACTIONS})`)].filter((b) => b.offsetParent && !b.closest(".story-summary"));
+// The key of a card shows on hover / keyboard focus (CSS: fine pointers only).
+for (const type of ["pointerover", "focusin"])
+  document.addEventListener(type, (e) => {
+    const b = e.target.closest?.(`.chapter-document :is(${ACTIONS})`);
+    if (!b) return;
+    const n = readerActions().indexOf(b) + 1;
+    if (n >= 1 && n <= 9) b.dataset.key = n;
+    else delete b.dataset.key;
+  });
 // Documents that award a Grand Archive specimen link to its exhibit (museum/by-doc.json, written by
 // scripts/extract-specimens.py; loaded once, on the first chapter that is rendered).
 let specimenMap = null;
@@ -1303,6 +1351,48 @@ async function showEffects(story, docId, choices) {
   end ? end.insertAdjacentHTML("beforebegin", block) : article.insertAdjacentHTML("beforeend", block);
   bindEffects(article);
 }
+// On the first chapter after crossing into another story: "← From <that story>", stepping back like Back.
+function fromChip() {
+  const prev = trail.length > 1 && trail.at(-2).story !== trail.at(-1).story ? storyById.get(trail.at(-2).story) : null;
+  if (!prev) return "";
+  const title = prose(local(prev.title));
+  return `<button class="from-chip" id="from-story" type="button" title="${esc(title)}">${esc(T(`← 来自《${title}》`, `← From “${title}”`))}</button>`;
+}
+// Specimens a story can award (museum/by-story.json): up to four icons on the archive panel, each opening its exhibit.
+let byStory = null;
+function storySpecimens(story) {
+  const box = $("#story-specimens");
+  if (!box) return;
+  const fill = () => {
+    if (selected !== story) return;
+    const list = (byStory?.[story.id] || []).slice(0, 4);
+    box.hidden = !list.length;
+    box.innerHTML = list.length ? `<span>${esc(T("藏有标本", "Specimens"))}</span>` + list.map(([key, names, rarity]) => {
+      const [zh, en] = names.split("|"), name = lang === "en" ? en || zh : zh || en;
+      return `<a class="story-specimen rarity-${esc(rarity)}" href="#museum=${encodeURIComponent(key)}" title="${esc(name)}" aria-label="${esc(T("标本：", "Specimen: ") + name)}"><img src="${asset(`museum/img/${key}.webp`)}" alt="" width="28" height="28" loading="lazy" decoding="async"></a>`;
+    }).join("") : "";
+  };
+  if (byStory) return fill();
+  box.hidden = true;
+  (storySpecimens.loading ||= json("museum/by-story.json").catch(() => ({}))).then((m) => { byStory = m; fill(); });
+}
+// Guide ids -> chapter buttons (src/guide-links.js); ids of other stories resolve through records.json when it loads.
+function linkGuideDocs(root, story, chapters) {
+  const run = () => linkGuide(root, {
+    storyId: story.id, chapters, title: (c) => prose(local(c?.title)),
+    other: (id) => { const sid = recordToStory?.[id]; const s = sid && sid !== story.id && storyById.get(sid); return s ? { story: sid, label: prose(local(s.title)) } : null; },
+  });
+  loadRecords().then(run, run);
+}
+// Specimens awarded by chapters the reader has opened (museum/by-doc.json × st-seen).
+async function metSpecimens() {
+  const docs = seen.docs();
+  if (!docs.size) return new Set();
+  specimenMap ||= await json("museum/by-doc.json").catch(() => ({}));
+  const met = new Set();
+  for (const [doc, entry] of Object.entries(specimenMap)) if (docs.has(doc)) for (const key of entry.specimens) met.add(key);
+  return met;
+}
 // 博物天枢 · Grand Archive specimen museum: loaded on first use (#museum or #museum=<specimen key>).
 let museum = null;
 // The document a specimen link was followed from: closing the museum returns to it (with its saved path).
@@ -1317,9 +1407,11 @@ async function showMuseum(focusKey) {
       closeReader();
       history.replaceState(null, "", hash);
     } else if (!document.body.classList.contains("museum-open")) museumReturn = null;
+    const metKeys = await metSpecimens();
     await museum.openMuseum({
       asset,
       focusKey,
+      metKeys,
       closeTo: () => {
         scene?.wake(); // the archive stops drawing while the museum covers it
         const from = museumReturn;
@@ -1337,7 +1429,12 @@ async function showMuseum(focusKey) {
 }
 // The entry lives in the re-rendered catalogue nav, so the click is delegated on the nav itself.
 $("#categories").addEventListener("click", (e) => {
-  if (e.target.closest("#museum-open")) location.hash = "museum";
+  const entry = e.target.closest("#museum-open");
+  if (!entry) return;
+  location.hash = "museum";
+  // Once built, the museum's (hidden) section is #museum: Chrome then clears focus on this fragment navigation, and
+  // closing the museum could not return focus to the entry. Keep it there; the museum records it as its opener.
+  entry.focus({ preventScroll: true });
 });
 function parseHash() {
   if (steppingBack) {
@@ -1356,7 +1453,23 @@ function parseHash() {
 }
 window.addEventListener("hashchange", parseHash);
 try {
-  const data = await json("stories/index.json");
+  // The scene (renderer, atlas, shader programs: ~55 ms of script, then the programs link on the GPU process) does not
+  // need the story lists: it is built while the index downloads and receives them afterwards. Nothing is drawn before both exist.
+  const indexLoading = json("stories/index.json");
+  indexLoading.catch(() => {}); // the await below reports a failure; this only avoids an unhandled-rejection event
+  let sceneEarly = null, sceneError = null; // `scene` itself is set once the story lists are in, so nothing else sees a half-ready scene
+  try {
+    sceneEarly = new ArchiveScene($("#scene"), {
+      columns: [],
+      onSelect: showSelection,
+      onOpen: (s) => openStory(s.id),
+      reduced,
+      asset,
+    });
+  } catch (e) {
+    sceneError = e;
+  }
+  const data = await indexLoading;
   stories = data.stories;
   for (const s of stories) s.excerpt ||= { zh: "", en: "" };
   storyById = new Map(stories.map((s) => [s.id, s]));
@@ -1375,13 +1488,9 @@ try {
   renderChrome(); // [UI] also builds the catalogue bar
   $("#archive-count").textContent = "";
   try {
-    scene = new ArchiveScene($("#scene"), {
-      columns,
-      onSelect: showSelection,
-      onOpen: (s) => openStory(s.id),
-      reduced,
-      asset,
-    });
+    if (sceneError) throw sceneError;
+    scene = sceneEarly;
+    scene.setColumns(columns);
     window.__archiveDiagnostics = () => scene.diagnostics();
     // Integrated or software adapter: dismissible notice on how to move the browser to the discrete GPU.
     showAdapterHint(scene.gpu, { t });
@@ -1400,8 +1509,17 @@ try {
   // Idle warm-ups after start-up: Chinese glyphs (src/glyph-warmup.js) and, in quiet moments, the reader (sample
   // document first, then the selected story's opening document and map).
   setTimeout(() => {
-    warmGlyphs(json);
-    idleOnce().then(prewarmSample).then(prewarmReader);
+    const glyphsWarmed = warmGlyphs(json, async () => {
+      // The selected story is what is opened first: its rare font slices arrive before the glyph warm-up, not in the middle of it.
+      const [data] = await Promise.all([loadStory(selected.id), loadNames()]);
+      const first = data.chapters.find((c) => c.id === data.story.start) || data.chapters[0];
+      await loadFontsWithin([...docFontParts(first, lang), ...mapFontParts(data.story, data.chapters, lang)], 4000);
+    });
+    // The reader is warmed as before (sample document, then the first story), and once more after the glyph warm-up: its
+    // thousands of glyphs in a dozen faces push part of what the first render warmed out of Chrome's font caches (measured: the
+    // first click on the selected story then paid ~40 ms of layout instead of ~15), the second render puts it back.
+    const early = idleOnce().then(prewarmSample).then(prewarmReader).catch(() => {});
+    Promise.all([early, glyphsWarmed.catch(() => {})]).then(() => { prewarmed = false; }).then(idleOnce).then(prewarmReader);
   }, 1200);
 } catch (e) {
   $("#selected-title").textContent = T("档案暂时无法连接", "Archive unavailable");
@@ -1415,7 +1533,7 @@ async function startSoundtrack() {
     new SoundtrackPlayer(await json("music/playlist.json"), asset, toast);
     return true;
   } catch (e) {
-    $("#track-title").textContent = T("原声音乐暂时未能加载", "The soundtrack could not be loaded");
+    $("#track-title").textContent = T("原声音乐暂时未能载入", "The soundtrack could not be loaded");
     toast(e.message);
     return false;
   }

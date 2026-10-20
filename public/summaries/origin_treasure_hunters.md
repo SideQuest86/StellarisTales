@@ -1,10 +1,6 @@
 # 寻宝猎人 / Treasure Hunters
 
-- 分类 Category：起源 Origins · DLC：Grand Archive · 审阅 Reviewed 2026-10-12（V4 源文件复核；沿用并核对 V3 的对话与读法）
-- 来源 Sources：`events/origin_events_grand_archive.txt:1964-7434`、`events/grand_archive_events.txt:6273-6669`、`common/special_projects/04_projects_grand_archive.txt:236-719`、`common/situations/11_grand_archive_situations.txt:315-503`、`common/archaeological_site_types/11_grand_archive_arc_sites.txt:2-43`、`common/megastructures/05_gateways.txt:526-623`、`common/megastructures/20_grand_archive.txt:156-159`、`common/relics/grand_archive_relics.txt:897-1035`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文；原文见各章节。
-> This guide is reviewer commentary, not game text; the original text is in each chapter.
+- 分类 Category：起源 Origins · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -68,6 +64,10 @@ The main line follows the five stages of the chart; every step needs a player ac
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12（V4 源文件复核；沿用并核对 V3 的对话与读法）
+- 来源 Sources：`events/origin_events_grand_archive.txt:1964-7434`、`events/grand_archive_events.txt:6273-6669`、`common/special_projects/04_projects_grand_archive.txt:236-719`、`common/situations/11_grand_archive_situations.txt:315-503`、`common/archaeological_site_types/11_grand_archive_arc_sites.txt:2-43`、`common/megastructures/05_gateways.txt:526-623`、`common/megastructures/20_grand_archive.txt:156-159`、`common/relics/grand_archive_relics.txt:897-1035`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文；原文见各章节。
+- This guide is reviewer commentary, not game text; the original text is in each chapter.
 - 已核对 Checked：上列源文件全部相关事件、项目、局势、遗址、巨构与 on_action 钩子；V3 的对话状态（8025、8205、8245、8410、8570）与 8580 七种读法仍与源文件一致。
   All events, projects, the situation, the dig site, megastructures and on_action hooks listed above; V3 dialogue states (8025, 8205, 8245, 8410, 8570) and the seven 8580 readings still match the source.
 - 更正 Corrections：将通用虚空虫局势与瘟疫移出本起源（设为独立故事并链接）；删去 2006 → 原始呼唤专属事件的不可能链接；删去四处事件链卡片的“重启”伪连接；把珍宝馆、珍宝藏库、博物天枢、虚空虫遗骸支线从根节点下的孤立入口改挂到真正的前置节点；补上交易、主线、审判后日谈三个结局与互斥组。

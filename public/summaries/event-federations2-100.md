@@ -1,7 +1,5 @@
 # 联邦舰队 / The Federation Fleet
 - 分类 Category：文明纪事 Society (C7) · 联邦（军事型）事件 federation (military) event
-- 来源 Sources：`events/federations_events_2.txt:2429-3700` · `common/special_projects/00_projects_federations.txt:860-900` · `common/on_actions/00_on_actions.txt:491-500`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,5 +21,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/federations_events_2.txt:2429-3700` · `common/special_projects/00_projects_federations.txt:860-900` · `common/on_actions/00_on_actions.txt:491-500`
 - 已核对 Checked：100–121 的脚本，项目 military_joint_project，112 的 on_action 触发。/ Scripts 100–121, the project and the 112 on_action.
 - 审阅改动 Changes：结构与草稿一致；补充条件与清点规则。/ Structure matches; conditions and tally added.

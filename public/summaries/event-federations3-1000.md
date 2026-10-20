@@ -1,7 +1,6 @@
 # 地下室位移 / Basement Shift
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/federations_events_3.txt:454-1320`；`common/on_actions/00_on_actions.txt:2958`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -25,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/federations_events_3.txt:454-1320`；`common/on_actions/00_on_actions.txt:2958`
 - 已核对：触发条件、概率、阶段结果。
   Checked: trigger conditions, probabilities, stage results.
 - 说明：结局引向的 ancrel.* 事件属于远古遗物故事，由其他审阅者负责。

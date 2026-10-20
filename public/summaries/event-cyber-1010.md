@@ -1,7 +1,6 @@
 # 售卖天空 / For Sale: The Sky
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/machine_age_situation_events_1.txt:4474-4734`；`common/on_actions/00_on_actions.txt`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -31,5 +30,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/machine_age_situation_events_1.txt:4474-4734`；`common/on_actions/00_on_actions.txt`
 - 已核对：触发、选项与1015衔接。
   Checked: trigger, options and the 1015 link.

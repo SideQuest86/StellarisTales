@@ -1,7 +1,6 @@
 # 天然虫洞 / Natural Wormhole
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/on_actions/00_on_actions.txt:1238 (on_system_survey → distar.13060); events/distant_stars_events_3.txt:2288 (distar.13060); events/apocalypse_events.txt (apoc.5, the ship-survey version)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Fires only when the system was not surveyed by a ship; when a ship surveys it, a
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/on_actions/00_on_actions.txt:1238 (on_system_survey → distar.13060); events/distant_stars_events_3.txt:2288 (distar.13060); events/apocalypse_events.txt (apoc.5, the ship-survey version)
 已核对 on_action 与事件。它是 apoc.5“天然虫洞”的“外国领土内”重复版本（on_actions 注释：apoc.5 duplicate），两者互斥；本次不改动 apoc.5 所在故事（不属本人负责）。
 
 Checked the on_action and the event. It is the 'foreign territory' duplicate of apoc.5 "Natural Wormhole" (on_actions comment: apoc.5 duplicate) and the two are mutually exclusive; the apoc.5 story was not touched (not owned by this reviewer).

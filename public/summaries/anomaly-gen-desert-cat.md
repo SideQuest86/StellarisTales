@@ -1,8 +1,6 @@
 # 沙丘 / Dunes
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:965-998` · `events/anomaly_events_1.txt` · `common/special_projects/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:965-998` · `events/anomaly_events_1.txt` · `common/special_projects/`
 - 已对照类别脚本965-998与树。  
   Compared category script 965-998 and the tree.
 - 覆盖 Coverage：全部8个文档。 / All 8 docs.

@@ -1,6 +1,6 @@
 # 神秘堡垒 / The Enigmatic Fortress
 
-- 分类 Category：巨兽与城邦 · 来源 Sources：events/leviathans_events_2.txt:2838-3904, :3071（2105）; common/special_projects/00_projects_leviathans.txt:158-306; common/on_actions/00_on_actions.txt:914, :1453, :2047 · DLC：利维坦 Leviathans · 审阅 Reviewed 2026-10-13
+- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 - 玩家舰队首次进入堡垒星系且仍有未瘫痪的超大型空间站时，出现提示 2105。 The first player ship entering the fortress system gets warning 2105 while an active XL station remains.
@@ -23,5 +23,8 @@
 格式塔意识：2099 的选项 c.gesta 直接给予科研加成与科技进度、清除堡垒并启动庆典，无需项目。 Gestalt Consciousness gets an immediate reward at 2099 without projects.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/leviathans_events_2.txt:2838-3904, :3071（2105）; common/special_projects/00_projects_leviathans.txt:158-306; common/on_actions/00_on_actions.txt:914, :1453, :2047
 已核对：三个入口（on_actions 行号如上）、所有项目的 same_option_group_as 与时限、各事件的 hidden_effect 去向和失败分支。原先两个重复故事（event-leviathans-2099 / -2100）合并为本家族。不确定：same_option_group_as 的引擎细节（是否隐藏同组项目）按“互斥”呈现。
 Checked: entry on_actions, project option groups and time limits, every event's outcome. The two duplicate stories were merged. Uncertain: engine handling of same_option_group_as (shown as exclusive).

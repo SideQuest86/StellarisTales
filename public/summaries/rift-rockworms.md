@@ -1,8 +1,6 @@
 # 岩蠹 / Rockworms
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:233`；`events/astral_rifts_1_events.txt:4320–4881`（1800–1890）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1830 已并入 / former standalone failure event 1830 merged in）
 
 ## 如何开始 How it starts
 
@@ -50,6 +48,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1830 已并入 / former standalone failure event 1830 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:233`；`events/astral_rifts_1_events.txt:4320–4881`（1800–1890）
 - 已核对：裂隙定义；1800–1890 全部事件；1815.a/1816.a 的 `on_roll_failed = astral_rift.1830`（`astral_rifts_1_events.txt:4482–4486, 4577–4581`）；1830 的死亡、克隆放逐与 360 天后的 1890。
 - 修正：编译图漏掉失败分支，1830/1890 曾是独立故事；已用两条桥接并入，并标注互斥与两篇“生吞”的区别。
 

@@ -1,8 +1,6 @@
 # 跨次元贸易 / Inter-Dimensional Trade
 
 - 分类 Category：文明纪事 Society (C7) · 重复插曲 recurring interlude
-- 来源 Sources：`events/colony_events_3.txt:2007–2420` · 前因 prior `:1825–2001` · `common/on_actions/00_on_actions.txt:282`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -31,5 +29,7 @@ The Doorway (colony.3005, in another story) can open a portal to a mirror dimens
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:2007–2420` · 前因 prior `:1825–2001` · `common/on_actions/00_on_actions.txt:282`
 - 已核对 Checked：3029–3033 全部脚本、权重与危机计数。故事属于“传送门”镜像结果的后续；该前篇目前在 event-enclave-300（台账请求移回 C7）。
 - 审阅改动 Changes：3033 登记为自由呼叫对话，标注终章与两条注释。/ 3033 registered as a free-call dialogue; finale and notes added.

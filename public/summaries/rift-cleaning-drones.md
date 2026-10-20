@@ -1,8 +1,6 @@
 # 化学废土 / Chemical Wasteland
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:344`；`events/astral_rifts_2_events.txt:2505–3152`（2600–2675）
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ All six endings finish the exploration with a large astral thread reward: 2650 d
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:344`；`events/astral_rifts_2_events.txt:2505–3152`（2600–2675）
 - 已核对：裂隙定义；2600–2675 全部事件与选项条件（`astral_rifts_2_events.txt:2505–3152`）。编译结构正确；补充并行组、结局、说明。2698（殖民副作用）未并入。
 
 - Checked: rift definition; all events and option conditions 2600–2675. Compiled structure was correct; added the parallel group, endings and notes. 2698 (colonization side effect) not merged.

@@ -1,7 +1,6 @@
 # 地底文明 / Subterranean Civilization
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_1.txt:559-2183`；`common/special_projects/00_projects_1.txt:297-329`；`common/on_actions/00_on_actions.txt:862-883`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -37,6 +36,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_1.txt:559-2183`；`common/special_projects/00_projects_1.txt:297-329`；`common/on_actions/00_on_actions.txt:862-883`
 - 已核对：入口、三个项目、战争与失败的 on_action 衔接、三个池的标志与均值、75/76 的触发变量。
   Checked: entry, the three projects, the on_action links for victory and defeat, flags and means of the three pools, the trigger variable of 75/76.
 - 更正：草稿把56、57及60–75拆成互不相连的单窗口故事；现全部并入，用标志衔接（bridge）。

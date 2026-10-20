@@ -1,6 +1,6 @@
 # 第一联盟 / The First League
 
-- 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:2127–3388；common/anomalies/96_anomaly_categories_precursors.txt:1305–2222；common/special_projects/00_projects_1.txt:1431–1840；common/artifact_actions/artifact_actions.txt:744；common/special_projects/00_projects_ancient_relics.txt:249；events/ancient_relics_arcsite_events_2.txt:6773；common/solar_system_initializers/prescripted_species_systems.txt:1608 · DLC：文物奖励与秘密研究需《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者 Precursors · DLC：文物奖励与秘密研究需《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -52,6 +52,8 @@ A non-AI empire surveying a planet (not a star, no anomaly) in the First League 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/precursor_events.txt:2127–3388；common/anomalies/96_anomaly_categories_precursors.txt:1305–2222；common/special_projects/00_projects_1.txt:1431–1840；common/artifact_actions/artifact_actions.txt:744；common/special_projects/00_projects_ancient_relics.txt:249；events/ancient_relics_arcsite_events_2.txt:6773；common/solar_system_initializers/prescripted_species_systems.txt:1608
 - 已核对：precursor.1000（2127–2187）与 on_survey_planet 权重（00_on_actions.txt:1185）；league_1–14_cat；十四个项目（00_projects_1.txt:1431–1805）；1097–1100；1101–1102；母星项目（1809）；artifact_league_research（744）；LEAGUE_SECRETS（249）；10200（6773）；哈本尼斯之泽初始化器。十四份报告、总部报告与秘密报告中英文已逐篇读过。
 - 结构修正：异常改为开场后的并行分支（含报告的地图标签）；删除提示性重复边；秘密研究改为母星结果后的可选分支；观察者通知、未使用异常与路由标志错配加注。
 - 不确定：开场实际概率取决于其他可用勘察事件；第二个集齐线索的帝国会再生成一个哈本尼斯之泽（按脚本推断），未在游戏中验证；无DLC表现仅按脚本推断。

@@ -1,6 +1,6 @@
 # 永恒合唱 / The Eternal Chorus
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nomads_arkship_events.txt, common/missions/missions/02_contracts.txt, common/special_projects/06_projects_nomads.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -32,6 +32,8 @@ arkship.140 needs: no Eternal Chorus running anywhere, non-gestalt owner, not do
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nomads_arkship_events.txt, common/missions/missions/02_contracts.txt, common/special_projects/06_projects_nomads.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：arkship.140-150、合同 contract_eternal_chorus（02_contracts.txt:4938-5038）、项目 ARKSHIP_ETERNAL_CHORUS_PROJECT（06_projects_nomads.txt:1793-1819）与 on_action 调用。
 - 更正 Corrections：原先 140、141、142、150 是四个互不相连的单页故事；它们是同一条合同链的四个时刻，现合并为一个故事。
   Four unconnected one-card stories were the moments of one contract chain and are merged.

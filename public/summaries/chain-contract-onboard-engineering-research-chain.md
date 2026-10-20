@@ -1,11 +1,7 @@
 # 远程工程学研究 / Remote Engineering Research
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`common/missions/missions/02_contracts.txt:2801-2806`; `common/event_chains/00_event_chains_nomads.txt:460`; `common/inline_scripts/contracts/OnboardResearchContract.txt`; `common/inline_scripts/special_projects/onboard_research_contract_project.txt`
 - DLC：Nomads
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ The three research contracts share one template.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`common/missions/missions/02_contracts.txt:2801-2806`; `common/event_chains/00_event_chains_nomads.txt:460`; `common/inline_scripts/contracts/OnboardResearchContract.txt`; `common/inline_scripts/special_projects/onboard_research_contract_project.txt`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 对照契约定义、内联脚本、专项与事件钩子核实了发布/接受条件、完成方式、奖励与失败处理；事件链卡片是模型中唯一的可读文档（任务、专项与钩子事件不是文档），因此本导读承载结构。
 
 The issue/accept conditions, completion mechanism, rewards and failure handling were checked against the mission, inline scripts, special projects and hook events; the chain card is the only readable doc in the model (missions, projects and hook events are not docs), so this guide carries the structure.

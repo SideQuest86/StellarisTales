@@ -1,9 +1,6 @@
 # 毒圣骑士 / Knights of the Toxic God
 
-- 分类 Category：起源 Origins · DLC：Toxoids · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/toxoids_events.txt:572-3890`、`common/situations/01_toxoid_situations.txt:190-365`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Toxoids
 
 ## 如何开始 How it starts
 
@@ -32,6 +29,9 @@ At game start hidden toxoids.7000 starts the *Quest for the Toxic God* situation
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/toxoids_events.txt:572-3890`、`common/situations/01_toxoid_situations.txt:190-365`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：局势全部阶段、7000–8110 事件、on_action 钩子。 All situation stages, events 7000-8110 and on_action hooks.
 - 更正 Corrections：封印星系三种入口与击败毒圣的连接（原先为孤立入口）；要塞线入口加标签。 The three sealed-system entries and the defeat links (previously floating entries); keep entries labelled.
 - 不确定 Uncertain：中段传说（7055–7225）的选项细节取自编译树。 Option details of the middle tales are taken from the compiled tree.

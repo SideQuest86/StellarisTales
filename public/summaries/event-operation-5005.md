@@ -1,6 +1,6 @@
 # 特工受惊 / Operative Spooked
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/scripted_effects/espionage_event_effects.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -26,4 +26,6 @@ regular -> regular.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/scripted_effects/espionage_event_effects.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：5005 的选项与 5035-5037 的衔接；5035 及 espionage.1070-1073 是共享文档（属于侦测链）。 5035-5037 and espionage.1070-1073 are shared docs of the detection chain.

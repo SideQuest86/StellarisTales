@@ -1,6 +1,6 @@
 # 水晶帝国 / Crystalline Empire
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/central_crystal_events.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -28,5 +28,7 @@ At game start a 1% roll (only when a human has a void-dweller origin) sets centr
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/central_crystal_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：central.1-72 的触发、on_action 与委托事件。
 - 更正 Corrections：五个独立故事（2、19、50、60、70）并为一个，菜单 20 作为共享枢纽。 Five stories merged around the shared menu 20.

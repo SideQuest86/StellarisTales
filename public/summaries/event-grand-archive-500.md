@@ -1,6 +1,6 @@
 # 策展人：收藏奖励 / Curators: collection rewards
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ If the Curators are destroyed, hidden 500 creates a stand-in country so the loop
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：4100-4121、500、4110/4115（五年脉冲的联络）及各阶段事件的触发与选项。
 - 更正 Corrections：编译器把 4105/4106/4107 互相连成环；现改为 4121→4105→4106→4107 的先后顺序，循环写在说明中。
   The compiler looped 4105/4106/4107 into each other; now 4121 -> 4105 -> 4106 -> 4107 in stage order.

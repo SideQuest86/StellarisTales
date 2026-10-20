@@ -1,10 +1,6 @@
 # 代理人战争准备遭曝光 / Proxy Warmongering Revealed
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/shroud_events.txt:13509-13709 (5050-5060)`; `common/on_actions/00_on_actions.txt (on_proxy_war_started → 5050; on_war_beginning → 5051)`
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -32,6 +28,9 @@ Both texts vary by Galactic Community membership.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`events/shroud_events.txt:13509-13709 (5050-5060)`; `common/on_actions/00_on_actions.txt (on_proxy_war_started → 5050; on_war_beginning → 5051)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 补充并行组说明双方视角。
 
 Added a parallel group for the two perspectives.

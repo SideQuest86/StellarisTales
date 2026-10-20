@@ -1,7 +1,4 @@
-# [pre_ftl_planet.GetName]：植入体功能失常 / [pre_ftl_planet.GetName]: Implant Malfunctions
-- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:3137-3430` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 原始星球：植入体功能失常 / Pre-FTL Planet: Implant Malfunctions- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -22,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:3137-3430` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：根 1200 与 1201–1205。/ Root 1200 and 1201–1205.
 - 审阅改动 Changes：结构与草稿一致。/ Matches the draft.

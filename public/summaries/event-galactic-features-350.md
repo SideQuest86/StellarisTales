@@ -1,10 +1,6 @@
 # 遭遇环形世界 / Ring World Encountered
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/galactic_features_events.txt:704-772`; `common/on_actions/00_on_actions.txt:910`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -26,12 +22,11 @@ On screen / ignore; the dialogue options are replies only.
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/galactic_features_events.txt:704-772`; `common/on_actions/00_on_actions.txt:910`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了触发条件和通讯建立。
 
 Trigger conditions and the communication set-up checked.

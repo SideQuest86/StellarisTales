@@ -1,7 +1,6 @@
 # 四十二年零三天 / 42 Years and 3 Days
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1179-1219; events/distant_stars_events_2.txt:2129 (distar.1045); events/distant_stars_events_2.txt:225-310 (distar.310); events/distant_stars_events_2.txt:313-640 (distar.311-335)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@ distar.330 has xenophobe/xenophile wordings.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1179-1219; events/distant_stars_events_2.txt:2129 (distar.1045); events/distant_stars_events_2.txt:225-310 (distar.310); events/distant_stars_events_2.txt:313-640 (distar.311-335)
 已核对异常、distar.1045、310–335。树结构正确；补充结果权重说明。若帝国正在进行“L星团”事件链（l_cluster_chain，需《遥远繁星》），结果增加一条线索（共需7条）；集齐时触发 distar.10904“L星门见解汇集”（另一故事）。
 
 Checked the anomaly, distar.1045 and 310–335. Tree correct; documented the outcome weighting. If the empire is running the L-Cluster event chain (l_cluster_chain, Distant Stars), the result adds one clue (7 needed); completing the count fires distar.10904 "L-Gate Insights Gathered" (a separate story).

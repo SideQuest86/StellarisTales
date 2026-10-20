@@ -1,6 +1,6 @@
 # 帝国议会的法案与干预 / Imperial laws and interventions
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_emperor_events.txt, common/resolutions/01_resolutions_nemesis.txt, common/on_actions/00_on_actions.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Each event is attached to its resolution being passed; the defence event runs wh
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_emperor_events.txt, common/resolutions/01_resolutions_nemesis.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：emperor.50-70、350-374 的触发与调用点（决议与 on_war_beginning）。
 - 更正 Corrections：emperor.495（测试事件，trigger = always = no）曾是“特许状”的根，真实触发是帝国特许状决议；十一个单页故事并为一个。
   The test event 495 was the old root of the charter story; the real trigger is the charter resolution.

@@ -1,11 +1,10 @@
 # 可能的居民 / Possible Inhabitants
 
-- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar) · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1614-1643; events/distant_stars_events_2.txt:8052 (distar.3030); common/special_projects/00_projects_distant_stars.txt:770/806/826 (molluscoid_miners_project_1-3); events/distant_stars_events_2.txt:8102 (distar.3031); events/distant_stars_events_2.txt:8166/8236 (distar.3032/3033)
+- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar)
 
 ## 如何开始 How it starts
 
-无战略资源的沙漠、干旱或草原星球可能生成（3级，权重2）——但第二个修正写作 factor 0 对 NOR{格式塔、狂热排外、mol6头像} 生效，即只有格式塔、狂热排外或使用 mol6 头像的帝国才可能遇到。这看起来与预期相反，记录为原文现状。
+无战略资源的沙漠、干旱或草原星球可能生成（3级，权重2）——但第二个修正写作 factor 0 对 NOR{格式塔、狂热排外、mol6头像} 生效，即只有格式塔、狂热排外或使用 mol6 头像的帝国才可能遇到。
 
 Can spawn on desert, arid or savannah planets without strategic resources (level 3, weight 2) — but the second modifier applies factor 0 to NOR {gestalt, fanatic xenophobe, mol6 portrait}, so only gestalts, fanatic xenophobes or mol6-portrait empires can get it. This looks inverted but is recorded as written.
 
@@ -29,6 +28,9 @@ Evolutionary Predators who do not value others get an extra option.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1614-1643; events/distant_stars_events_2.txt:8052 (distar.3030); common/special_projects/00_projects_distant_stars.txt:770/806/826 (molluscoid_miners_project_1-3); events/distant_stars_events_2.txt:8102 (distar.3031); events/distant_stars_events_2.txt:8166/8236 (distar.3032/3033)
+- 编辑备注 Editor note：这看起来与预期相反，记录为原文现状。
 已核对异常、distar.3030–3033 与三个项目。树结构正确。生成条件的反向 NOR 写法照原文记录，未擅自“修正”。
 
 Checked the anomaly, distar.3030–3033 and the three projects. Tree correct. The inverted-looking NOR spawn modifier is recorded as written, not "fixed".

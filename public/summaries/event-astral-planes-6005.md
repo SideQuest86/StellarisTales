@@ -1,8 +1,6 @@
 # 不稳定星界细缝 / Astral Scar Instability
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:4005–4165`（6005–6009）；`common/special_projects/02_projects_astral_planes.txt:25–51`；`common/on_actions/00_on_actions.txt:1167`（on_survey_planet）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -36,6 +34,8 @@ When a science ship surveys an Astral Scar, hidden event astral_planes.6005 chec
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`events/astral_planes_events.txt:4005–4165`（6005–6009）；`common/special_projects/02_projects_astral_planes.txt:25–51`；`common/on_actions/00_on_actions.txt:1167`（on_survey_planet）
 - 已核对：on_survey_planet 触发、6005 的条件与 80/20 随机、项目时长与时限、6006 两个选项、6007/6008/6009 的效果，以及微型宇宙裂隙定义中的权重修正（`00_astral_rifts.txt:139–152`）。
 - 修正：编译图只显示项目分支；`spawn_astral_rift`/`split_astral_scar` 的定向生成没有进入调用图，已补 6008 → “微型宇宙”裂隙的跨故事链接，并标注项目成功/超时互斥。
 

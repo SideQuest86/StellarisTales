@@ -1,7 +1,6 @@
 # 丰饶计划 / Project Cornucopia
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：events/federations_events_1.txt:13-27
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -25,5 +24,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/federations_events_1.txt:13-27
 - 已核对：触发条件、选项效果；编译树与脚本一致。
   Checked: trigger conditions and option effects; the compiled tree matches the script.

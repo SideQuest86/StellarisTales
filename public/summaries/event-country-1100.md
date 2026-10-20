@@ -1,6 +1,6 @@
 # 大灭绝 / Mass Extinction
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/country_events_2.txt:1875-3158; events/game_start.txt:15; common/event_chains/00_event_chains_2.txt:45-52; common/special_projects/00_projects_2.txt (MASSEX_*) · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Non-gestalt, not Life Seeded, not nomadic; young, void dweller and shattered rin
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/country_events_2.txt:1875-3158; events/game_start.txt:15; common/event_chains/00_event_chains_2.txt:45-52; common/special_projects/00_projects_2.txt (MASSEX_*)
 - 对照 country_events_2.txt 1875-3158 与事件链计数；补上了“舰队进入”衔接并把碎片故事并入。
   Checked country_events_2.txt 1875-3158 and the chain counter; added the "fleet enters" links and merged the fragment pseudo-story.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

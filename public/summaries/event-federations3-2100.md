@@ -1,7 +1,6 @@
 # 共振信号 / A Resonating Signal
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/federations_events_3.txt:1321-2286`；`common/on_actions/00_on_actions.txt:4324`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/federations_events_3.txt:1321-2286`；`common/on_actions/00_on_actions.txt:4324`
 - 已核对：2100/2102 触发、入口分流、项目链。
   Checked: 2100/2102 triggers, the entry split, the project chain.
 - 未逐阶段核对：遗址阶段的随机分布。

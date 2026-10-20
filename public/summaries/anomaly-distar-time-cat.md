@@ -1,7 +1,6 @@
 # 舰船碎片 / Ship Fragments
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:175-203; events/distant_stars_events_1.txt:2409 (distar.60); events/distant_stars_events_1.txt:2454-2716 (distar.61-67); events/distant_stars_events_1.txt:2762 (distar.68)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -29,10 +28,10 @@ distar.65's two options lead to the exclusive endings 67 / 68.
 
 无文明差异选项。
 
-No empire-specific options.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:175-203; events/distant_stars_events_1.txt:2409 (distar.60); events/distant_stars_events_1.txt:2454-2716 (distar.61-67); events/distant_stars_events_1.txt:2762 (distar.68)
 已核对异常与 distar.60–68。树结构与延时正确；补充两种结局与互斥说明。30天后的通用接触报告 story.5 是共享事件，不属于本故事。
 
 Checked the anomaly and distar.60–68. Tree and delays are correct; added the two endings. The generic contact report story.5 30 days later is a shared helper, not part of this story.

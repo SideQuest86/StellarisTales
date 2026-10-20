@@ -1,9 +1,6 @@
 # 生体生体荒野 / Wilderness
 
 - 分类 Category：起源 Origins · DLC：（生体荒野，按游戏文件未核对）· 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_wilderness.txt`、`common/on_actions/00_on_actions.txt`、`common/espionage_operation_types/operations.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 
 ## 如何开始 How it starts
 
@@ -25,6 +22,8 @@ There is no narrative opening: wilderness.100 only sets up the wilderness planet
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：`events/origin_events_wilderness.txt`、`common/on_actions/00_on_actions.txt`、`common/espionage_operation_types/operations.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：wilderness.1xxx–4xxx 窗口与钩子。 Windows and hooks.
 - 更正 Corrections：入口标签与结局标注。 Entry labels and the ending.
 - 不确定 Uncertain：隐藏工具事件仅读其用途。 Utility events read for purpose only.

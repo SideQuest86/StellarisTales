@@ -1,7 +1,6 @@
 # 推进力学支持者宣言 / Propulsion Proponent Proclamation
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/first_contact_dlc_events.txt:4228-4704`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）；`common/scripted_effects/pre_ftl_scripted_effects.txt:3087`（achieve_ftl_effect）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/first_contact_dlc_events.txt:4228-4704`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）；`common/scripted_effects/pre_ftl_scripted_effects.txt:3087`（achieve_ftl_effect）
 - 已核对：触发、全部延迟（500/1000/1000/1000 天）与分支。
   Checked: trigger, all delays (500/1000/1000/1000 days) and branches.
 - 更正：1520 的“成为太空国家”效果内含起源开局效果（克隆大军、控制论信条等），编译器据此连到这些起源故事，属于假连接，已用 suppress 移除；保留到 preftl.1111 与科技进步局势的跨故事连接。

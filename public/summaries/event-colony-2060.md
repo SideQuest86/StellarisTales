@@ -1,7 +1,6 @@
 # 采掘蘑菇 / Mushroom Picking
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_2.txt:4524-4835`；`common/on_actions/00_on_actions.txt:3774`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_2.txt:4524-4835`；`common/on_actions/00_on_actions.txt:3774`
 - 已核对：触发、三个主选项、两条线的延迟与随机权重。
   Checked: trigger, the three main options, delays and random weights of both lines.
 - 不确定：这些标志来自 Fumongus 发掘点故事（其他审阅者负责）。

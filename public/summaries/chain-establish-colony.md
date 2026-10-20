@@ -1,7 +1,5 @@
 # 建立第一个殖民地 / Establish First Colony
 - 分类 Category：文明纪事 Society (C7) · 事件链卡片 event-chain card
-- 来源 Sources：`common/event_chains/00_event_chains.txt:169-178` · `events/progress_events.txt:931`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -17,9 +15,9 @@
 
 ## 条件与文明差异 Conditions and variants
 
-无。/ None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`common/event_chains/00_event_chains.txt:169-178` · `events/progress_events.txt:931`
 - 已核对 Checked：全仓库搜索 establish_colony 的所有引用。/ A repository-wide search for establish_colony.
 - 审阅改动 Changes：标记为“未被使用”。/ Marked as unused.

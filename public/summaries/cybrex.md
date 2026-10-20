@@ -1,6 +1,6 @@
 # 赛博勒克斯 / The Cybrex
 
-- 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:4483–5683；common/anomalies/96_anomaly_categories_precursors.txt:2943–3661；common/special_projects/00_projects_1.txt:2180–2508；common/artifact_actions/artifact_actions.txt:713；common/special_projects/00_projects_ancient_relics.txt:279；events/ancient_relics_arcsite_events_2.txt:6915 · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者 Precursors · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -48,6 +48,8 @@ A non-AI empire's science ship surveying a planet in the Cybrex region (systems 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/precursor_events.txt:4483–5683；common/anomalies/96_anomaly_categories_precursors.txt:2943–3661；common/special_projects/00_projects_1.txt:2180–2508；common/artifact_actions/artifact_actions.txt:713；common/special_projects/00_projects_ancient_relics.txt:279；events/ancient_relics_arcsite_events_2.txt:6915
 - 已核对：开场 trigger/immediate（precursor_events.txt:4483–4543）、on_survey_planet 权重（00_on_actions.txt:1187）、十一种异常的生成条件与 on_success、十一个项目（00_projects_1.txt:2180–2473）、报告的计数与路由 2103/2098/2099（5282–5365）、2100–2102、母星项目（2477）、artifact_cybrex_research（artifact_actions.txt:713）、CYBREX_SECRETS 与 10250；十一份报告的中英文已逐篇读过（V3 逐篇摘要经复核仍成立：例如2031英文为“至少”五万年、2056英文为俘虏）。
 - 结构修正：异常卡片改为开场之后的并行子节点（依据其生成条件）；删除开场选项中仅为提示的事件链重复边；秘密研究不再是无序入口，而是两种母星结果之后的可选分支；观察者通知加注。
 - 不确定：开场的实际触发概率取决于同时满足条件的其他勘察事件；无DLC时的界面表现仅按脚本推断。

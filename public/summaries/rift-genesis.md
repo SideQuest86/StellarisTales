@@ -1,8 +1,6 @@
 # 创世 / Genesis
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:293`；`events/astral_rifts_2_events.txt:843–1508`（2300–2330、2398、2399）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -38,6 +36,8 @@ Drawn by weight from the explorer's rift pool: weight 1, or 0 while any empire i
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:293`；`events/astral_rifts_2_events.txt:843–1508`（2300–2330、2398、2399）
 - 已核对：裂隙定义与两个权重修正；2300 中创建原始物种并选定目标行星；2305/2310/2320/2325/2330 依次叠加的特质；2398/2399 在 on_astral_rift_exploration_start/complete 中的锁定（`common/on_actions/00_on_actions.txt:4990, 5016`）。没有失败分支；编译结构正确，补充互斥组、结局与节点标签。
 
 - Checked: the rift definition and its two weight modifiers; the primitive species and target planet created in 2300; the traits stacked by 2305/2310/2320/2325/2330; the 2398/2399 lock on on_astral_rift_exploration_start/complete (`common/on_actions/00_on_actions.txt:4990, 5016`). No failure branch; the compiled structure was correct; exclusive groups, endings and node labels added.

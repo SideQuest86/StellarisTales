@@ -1,6 +1,5 @@
-# 对[From.GetName]的观测终止 / Observation of [From.GetName] Ceases
-
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/infernals_1_events.txt:468-520; common/on_actions/01_planet_destruction.txt:194-199 on_destroy_planet_with_PLANET_KILLER_SMELTER; events/planet_destruction_events.txt:2967-3093 · DLC: Infernals · 审阅 Reviewed 2026-10-13
+# 对星球的观测终止 / Observation of the Planet Ceases
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Infernals
 
 ## 如何开始 How it starts
 
@@ -22,6 +21,8 @@ Needs the Infernals DLC Planet Smelter Colossus.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/infernals_1_events.txt:468-520; common/on_actions/01_planet_destruction.txt:194-199 on_destroy_planet_with_PLANET_KILLER_SMELTER; events/planet_destruction_events.txt:2967-3093
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

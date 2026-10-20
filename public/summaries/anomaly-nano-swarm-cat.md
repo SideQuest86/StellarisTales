@@ -1,8 +1,6 @@
 # 荒芜的沙漠 / Deserted Desert
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:513-525` · `common/solar_system_initializers/special_system_initializers.txt:1139-1200 (parvus_system)` · `events/anomaly_events_4.txt:1258-1542 (6700-6720)` · `common/special_projects/00_projects_3.txt:1173-1238` · `common/event_chains/00_event_chains.txt:396-400` · `common/scripted_effects/00_scripted_effects.txt:3243-3290`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -34,6 +32,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:513-525` · `common/solar_system_initializers/special_system_initializers.txt:1139-1200 (parvus_system)` · `events/anomaly_events_4.txt:1258-1542 (6700-6720)` · `common/special_projects/00_projects_3.txt:1173-1238` · `common/event_chains/00_event_chains.txt:396-400` · `common/scripted_effects/00_scripted_effects.txt:3243-3290`
 - 已核对 Checked：类别、帕尔乌斯初始化器、6700–6720、三个项目、事件链与L星门线索效果。  
   Category, Parvus initializer, 6700–6720, three projects, chain and the L-Gate clue effect.
 - 更正 Corrections：6710 原挂在6705之后对所有选项生效；其触发条件要求 studied_nanite_swarm（仅6705.b设置），改为只从“继续研究”连接。  

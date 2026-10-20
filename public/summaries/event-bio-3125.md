@@ -1,6 +1,6 @@
 # 过于平静 / Too Quiet
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:7534-7734; common/on_actions/00_on_actions.txt:3144 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Pacifist and militarist (or homicidal) empires get their own replies; the text h
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:7534-7734; common/on_actions/00_on_actions.txt:3144
 - 已核对触发条件、对手选择、计时与结果消息；结果只以消息呈现，不是事件窗口。
   Checked trigger, opponent selection, timer and outcome messages; outcomes are messages, not event windows.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

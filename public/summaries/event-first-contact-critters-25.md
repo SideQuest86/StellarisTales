@@ -1,7 +1,5 @@
 # 太空变形虫 / Space Amoebas
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（变形虫 amoeba_stage_1/2）
-- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:344–415` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:86–124` · `common/special_projects/00_projects_2.txt:498–528`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,5 +20,7 @@ A、B、C 互斥（按本方伦理出现）；项目无时限（timelimit −1�
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:344–415` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:86–124` · `common/special_projects/00_projects_2.txt:498–528`
 - 已核对 Checked：20、25、story.105/107、两个项目与阶段定义。/ Events, projects and stages.
 - 审阅改动 Changes：并 20 入 25 篇，用阶段桥连接。/ 20 joined 25 with a stage bridge.

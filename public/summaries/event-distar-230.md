@@ -1,7 +1,6 @@
 # 鼠人族起源 / Ketling Origins
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:2938-3590 (ratling_1_1/1_2/1_3); common/on_actions/00_on_actions.txt:1008; events/distant_stars_events_1.txt:7297 (distar.230); common/anomalies/95_anomaly_categories_distant_stars.txt:741-765; events/distant_stars_events_1.txt:7380 (distar.231); events/distant_stars_events_1.txt:7425 (distar.232); events/distant_stars_events_1.txt:7560 (distar.233); common/special_projects/00_projects_distant_stars.txt:240-610 (KETLING_PROJECT_1-6); events/distant_stars_events_1.txt:7838 (distar.234); events/distant_stars_events_1.txt:7917 (distar.235); common/on_actions/00_on_actions.txt:837; events/distant_stars_events_1.txt:8074-8165 (distar.325, 236); events/distant_stars_events_1.txt:8543 (distar.237); common/event_chains/00_event_chains_distant_stars.txt:19
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -39,6 +38,8 @@ distar.230/233/234/237 have xenophobe/Terminator (etc.) wordings; some distar.23
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:2938-3590 (ratling_1_1/1_2/1_3); common/on_actions/00_on_actions.txt:1008; events/distant_stars_events_1.txt:7297 (distar.230); common/anomalies/95_anomaly_categories_distant_stars.txt:741-765; events/distant_stars_events_1.txt:7380 (distar.231); events/distant_stars_events_1.txt:7425 (distar.232); events/distant_stars_events_1.txt:7560 (distar.233); common/special_projects/00_projects_distant_stars.txt:240-610 (KETLING_PROJECT_1-6); events/distant_stars_events_1.txt:7838 (distar.234); events/distant_stars_events_1.txt:7917 (distar.235); common/on_actions/00_on_actions.txt:837; events/distant_stars_events_1.txt:8074-8165 (distar.325, 236); events/distant_stars_events_1.txt:8543 (distar.237); common/event_chains/00_event_chains_distant_stars.txt:19
 已核对三个初始化、on_entering_system_fleet、distar.230–237（含隐藏 232/325/236）、六个项目、事件链和 on_colony_attackers_win。修正：草稿把“残毁首都”异常和 distar.235 拆成独立故事；现并入本故事，并加审阅连接“首都异常”和“入侵鼠人星球”；六个研究项目标为同组互斥。
 
 Checked the three initializers, on_entering_system_fleet, distar.230–237 (incl. hidden 232/325/236), the six projects, the event chain and on_colony_attackers_win. Correction: the draft kept the Ruined Capital anomaly and distar.235 as separate stories; both are now part of this story with reviewed links, and the six projects are an exclusive option group.

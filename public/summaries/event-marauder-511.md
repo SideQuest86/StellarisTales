@@ -1,6 +1,6 @@
 # 大可汗之死 / The Death of the Great Khan
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/marauder_events.txt, common/on_actions/00_on_actions.txt, common/scripted_effects/marauder_scripted_effects.txt · DLC：Marauders · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Marauders
 
 ## 如何开始 How it starts
 
@@ -27,6 +27,8 @@ Three entries lead to the same notice 513:
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/marauder_events.txt, common/on_actions/00_on_actions.txt, common/scripted_effects/marauder_scripted_effects.txt
 - 已核对 Checked：511、512、513、514、600、711、712 的触发与分派。
 - 更正 Corrections：marauder.711（领袖死亡补漏）原是独立故事，其后果与 511 相同，现并入。
   The 711 failsafe story is merged because it ends in the same 513.

@@ -1,9 +1,6 @@
 # 电弧焊机 / Arc Welders
 
-- 分类 Category：起源 Origins · DLC：Machine Age · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_machine_age.txt:2300-2420`、`common/megastructures/17_orbital_arc_furnace.txt`、`common/governments/civics/00_origins.txt:941-981`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Machine Age
 
 ## 如何开始 How it starts
 
@@ -25,5 +22,8 @@ No narrative opening: the origin card gives an extra arc furnace limit and fixed
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_machine_age.txt:2300-2420`、`common/megastructures/17_orbital_arc_furnace.txt`、`common/governments/civics/00_origins.txt:941-981`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：machine_age.3400–3405 与熔炉钩子。 Events 3400-3405 and the furnace hook.
 - 更正 Corrections：入口加标签。 Entries labelled.

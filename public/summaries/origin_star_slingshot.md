@@ -1,9 +1,6 @@
 # 射向星际 / Slingshot to the Stars
 
-- 分类 Category：起源 Origins · DLC：Overlord · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_3.txt:885-1207`、`common/archaeological_site_types/06_overlord_arc_sites.txt:17-86`、`events/game_start.txt:333`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Overlord
 
 ## 如何开始 How it starts
 
@@ -25,5 +22,8 @@ Hidden origin.3500 turns the closest ordinary star system into a pulsar, spawns 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_3.txt:885-1207`、`common/archaeological_site_types/06_overlord_arc_sites.txt:17-86`、`events/game_start.txt:333`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.3500–3540 与遗址定义。 Events 3500-3540 and the site definition.
 - 更正 Corrections：补充前哨站入口标签与结局标注。 Added the outpost entry label and the ending.

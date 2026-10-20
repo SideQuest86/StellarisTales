@@ -1,7 +1,6 @@
 # 异常能源示数 / Unusual Energy Readings
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:415; events/anomaly_events_1.txt:4296 (anomaly.610); events/anomaly_events_1.txt:4339 (anomaly.615); events/anomaly_events_1.txt:4542 (anomaly.655); events/distant_stars_events_2.txt:2070 (distar.1040)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:415; events/anomaly_events_1.txt:4296 (anomaly.610); events/anomaly_events_1.txt:4339 (anomaly.615); events/anomaly_events_1.txt:4542 (anomaly.655); events/distant_stars_events_2.txt:2070 (distar.1040)
 已核对异常定义、项目与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition, the project and every outcome event; the compiled tree is correct, no change needed.

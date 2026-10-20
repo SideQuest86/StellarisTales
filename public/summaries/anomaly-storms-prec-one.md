@@ -1,9 +1,7 @@
 # 远古信号：阿达卡利亚公约 / Ancient Signals: the adAkkaria Convention
 
-- 分类 Category：先驱者 Precursors（审阅改定；编译默认为深空异闻）
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:30-49` · `events/precursor_events_cosmic_storms.txt:1800-4717` · `common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:346-620` · `common/special_projects/03_projects_cosmic_storms.txt:125-193` · `common/solar_system_initializers/cosmic_storm_initializers.txt:68-161` · `common/on_actions/00_on_actions.txt:1180-1192`
+- 分类 Category：先驱者 Precursors
 - DLC：宇宙风暴 Cosmic Storms（先驱者定义 `01_precursor_civilizations_cosmic_storms.txt:10-17` 要求 `has_cosmic_storms_dlc`）；远古遗物 Ancient Relics 时部分奖励改为稀有文物
-- 审阅 Reviewed：2026-10-12（c3b-exploration）
 
 ## 如何开始 How it starts
 
@@ -35,6 +33,9 @@ The anomaly never spawns on its own. If the galaxy includes the adAkkaria precur
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c3b-exploration）
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:30-49` · `events/precursor_events_cosmic_storms.txt:1800-4717` · `common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:346-620` · `common/special_projects/03_projects_cosmic_storms.txt:125-193` · `common/solar_system_initializers/cosmic_storm_initializers.txt:68-161` · `common/on_actions/00_on_actions.txt:1180-1192`
+- 编辑备注 Editor note：审阅改定；编译默认为深空异闻（原位于分类行）
 - 已核对 Checked：异常定义、cstorms.200–2355 全部事件（含隐藏 240、2179、2230）、四处遗址与三个项目、星系初始化器、`on_survey_planet` 权重、稀有文物行动。/ All definitions listed above.
 - 本轮更正 Corrections：分类改为先驱者；将通用的空间站考古意外 ancrel.8200–8203、8215 标为枢纽（与已是枢纽的 8040/8045/8055/8070/8210 一致）；标注两组互斥分支、两个结局与五段同窗对话。/ Category set to precursors; generic dig incidents made hubs; exclusive branches, endings and in-window dialogues annotated.
 - 不确定 Uncertain：`on_survey_planet` 随机事件在所选事件条件不满足时是否重掷属于引擎行为；“秘密”研究在另一故事中，仅以注释链接。/ Engine re-roll behaviour unknown; the Secrets epilogue is linked by note only.

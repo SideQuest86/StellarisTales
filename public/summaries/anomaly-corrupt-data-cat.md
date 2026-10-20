@@ -1,7 +1,6 @@
 # 调查数据损坏 / Corrupt Survey Data
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1237-1263; events/distant_stars_events_2.txt:2469 (distar.1065)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ The picture follows the fake planet's class.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1237-1263; events/distant_stars_events_2.txt:2469 (distar.1065)
 已核对异常与 distar.1065（remove_planet）。30天后的通用接触报告 story.5 是共享事件，不属于本故事。
 
 Checked the anomaly and distar.1065 (remove_planet). The generic contact report story.5 30 days later is a shared helper, not part of this story.

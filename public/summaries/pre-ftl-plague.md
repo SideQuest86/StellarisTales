@@ -1,7 +1,5 @@
 # 人畜共患瘟疫 / Zoonotic Plague
 - 分类 Category：文明纪事 Society (C7) · 前FTL观察情境 pre-FTL observation situation（入口 preftl.2001）
-- 来源 Sources：`events/first_contact_dlc_situation_events.txt:3010–4970` · `common/situations/04_first_contact_dlc_situations.txt:370–582` · `common/on_actions/00_on_actions.txt:140–200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -25,6 +23,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_dlc_situation_events.txt:3010–4970` · `common/situations/04_first_contact_dlc_situations.txt:370–582` · `common/on_actions/00_on_actions.txt:140–200`
 - 已核对 Checked：preftl.2000–2090 全部脚本（含 2002/2003/2005 分派）、情境定义、观察池入口。
 - 审阅改动 Changes：把阶段三/结局的隐藏标志分派用审阅桥画成真实顺序（原先全部挂在情境下），并抑制了情境到这些事件的直连边；标出每月随机插曲。/ The flag-based hidden dispatch is now shown as reviewed bridges, with the direct situation edges suppressed.
 - 不确定 Uncertain：灵性者等特殊选项（2025.a、2026.a）对后续标志的细节只按名称读取。

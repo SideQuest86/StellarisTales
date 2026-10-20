@@ -1,7 +1,4 @@
-# [pre_ftl_planet.GetName]：思潮更迭 / [pre_ftl_planet.GetName]: Ethic Changes
-- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:3432-3642` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 原始星球：思潮更迭 / Pre-FTL Planet: Ethic Changes- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -21,5 +18,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:3432-3642` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：根 1300 的随机、1301 的 switch。/ The root’s random list and 1301’s switch.
 - 审阅改动 Changes：无结构改动。/ No change.

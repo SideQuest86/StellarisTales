@@ -1,6 +1,6 @@
 # 声名鹊起 / A Growing Reputation
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/nomads_events_1.txt:16912-16993; events/nomads_events_1.txt:15716-15763 · DLC: Nomads · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Nomads
 
 ## 如何开始 How it starts
 
@@ -22,6 +22,8 @@ One window; the options only have immediate effects, no follow-up window.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/nomads_events_1.txt:16912-16993; events/nomads_events_1.txt:15716-15763
 - 已核对抽取路径与触发条件。这些合约插曲彼此独立，不合并为一个故事。
   Checked the draw path and trigger. These contract incidents are independent and are not merged into one story.
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

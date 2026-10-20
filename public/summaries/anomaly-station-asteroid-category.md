@@ -1,7 +1,6 @@
 # 废弃空间站 / Abandoned Station
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:166; events/anomaly_events_1.txt:285 (anomaly.40); events/anomaly_events_4.txt:2464 (anomaly.6810); events/anomaly_events_4.txt:2572 (anomaly.6815); events/anomaly_events_4.txt:2640 (anomaly.6820)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.40's description and options depend on whether the asteroid is inside th
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:166; events/anomaly_events_1.txt:285 (anomaly.40); events/anomaly_events_4.txt:2464 (anomaly.6810); events/anomaly_events_4.txt:2572 (anomaly.6815); events/anomaly_events_4.txt:2640 (anomaly.6820)
 已核对。anomaly.6810 选项a内部的 50/50 随机是效果而非文档，编译树不显示，已加注释。
 
 Checked. The 50/50 random inside anomaly.6810 option a is an effect rather than a doc, so the tree does not show it; a note was added.

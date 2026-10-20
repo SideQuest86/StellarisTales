@@ -1,6 +1,6 @@
 # 劫掠者雇佣舰队 / Marauder mercenaries
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/marauder_events.txt, common/on_actions/00_on_actions.txt, common/scripted_triggers/02_scripted_triggers_marauders.txt · DLC：Marauders · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Marauders
 
 ## 如何开始 How it starts
 
@@ -23,4 +23,6 @@ One clan is drawn (30/30/30, 80 nothing); every human empire in contact gets its
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/marauder_events.txt, common/on_actions/00_on_actions.txt, common/scripted_triggers/02_scripted_triggers_marauders.txt
 - 已核对 Checked：marauder.85-88 与 has_marauder_event 触发器中的菜单列表。

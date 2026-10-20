@@ -1,8 +1,6 @@
 # 虚境行者城邦 / Shroudwalker Enclave
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord（部分服务需“虚境”“星界”相关内容）
-- 来源 Sources：events/overlord_enclaves_events.txt:6756（enclave.400）, :6795（enclave.404）, :6820（enclave.405 菜单 menu）, :7226–7485（410–425）, :12711（7000）, :12810–13318（7050–7255）; events/shroud_events.txt:17388–18347（shroud.5300–5355）; common/situations/01_overlord_situations.txt:226; common/on_actions/00_on_actions.txt:742, :4960–4966; common/special_projects/04_projects_shroud.txt:899
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 可重复使用的联络菜单 enclave.405：首次接触完成或“通讯已建立”后经 enclave.404 打开，之后每次外交联络经 enclave.400 打开。另有“引见”（enclave.7000）：采纳“大觉醒”传统（灵能或虚境版本）360–1080天后，若尚未联络，虚境行者主动问候并建立通讯。
@@ -31,6 +29,9 @@ Repeatable menu enclave.405, opened via enclave.404 after first contact and via 
 Greetings differ for first/return visits and psionic ascension. Hostile or homicidal empires, the Mindwardens origin, friends of the Mindwardens (trust ≥100) and empires covenanted with the End of the Cycle are refused service.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:6756（enclave.400）, :6795（enclave.404）, :6820（enclave.405 菜单 menu）, :7226–7485（410–425）, :12711（7000）, :12810–13318（7050–7255）; events/shroud_events.txt:17388–18347（shroud.5300–5355）; common/situations/01_overlord_situations.txt:226; common/on_actions/00_on_actions.txt:742, :4960–4966; common/special_projects/04_projects_shroud.txt:899
 - 已核对 405 全部选项条件、各服务窗口、shroud.5300 子菜单、洞见局势定义与 on_action 随机表、探秘仪式项目的随机结果。
 - 更正：草稿中本菜单在四个故事里重复，并吞入占卜、他人故事事件与十二个庇护者初次接触；现拆为本故事、“预知”与跨故事链接。“洞见”四种结果原本是四个孤立的一页故事，现按局势完成时的互斥随机组接回。
 - 事件继承修复后 shroud.5300 成为独立页面，5325/5330 付费后经 5326 回到它；原先为避免误边而设的 10 条 suppress 已删除（树中只剩回指）。

@@ -1,7 +1,5 @@
 # 新世界秩序 / New World Order
 - 分类 Category：文明纪事 Society (C7) · 前FTL观察情境 pre-FTL observation situation
-- 来源 Sources：`events/first_contact_dlc_situation_events.txt:6394-7640` · `common/situations/04_first_contact_dlc_situations.txt:765-900` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,6 +21,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_dlc_situation_events.txt:6394-7640` · `common/situations/04_first_contact_dlc_situations.txt:765-900` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：情境定义与 2166–2205 事件。/ Situation and events 2166–2205.
 - 审阅改动 Changes：结构与编译草稿一致，补充入口池、阶段配对和路线。/ Structure matches the draft; entry pool, stage pairs and approaches added.
 - 不确定 Uncertain：路线对各结局奖励的细节只读取了选项标志。 / Approach rewards were only read from option flags.

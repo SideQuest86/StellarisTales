@@ -1,8 +1,6 @@
 # 褪色行星 / Bleached Planet
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:333`；`events/astral_rifts_2_events.txt:2162–2497`（2500–2540）
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ Both finish the exploration with a large astral thread reward.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:333`；`events/astral_rifts_2_events.txt:2162–2497`（2500–2540）
 - 已核对：2500–2540 全部事件。编译结构正确；补充互斥组、结局、说明。
 
 - Checked: all events 2500–2540. Compiled structure was correct; added exclusive groups, endings and notes.

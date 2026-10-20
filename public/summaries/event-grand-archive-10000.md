@@ -1,6 +1,6 @@
 # 先进可控变异：独特变异计划 / Advanced Controlled Mutations: unique mutation projects
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt, common/inline_scripts/grand_archive/mutations/unique_mutation_trigger_check_case.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -27,6 +27,8 @@ Two kill lines: destroying an Elder Tiyanki or a Voidspawn fires 10055 / 10075 (
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt, common/inline_scripts/grand_archive/mutations/unique_mutation_trigger_check_case.txt
 - 已核对 Checked：grand_archive.10000-10080 的触发、阈值与调用的 on_action；inline_script unique_mutation_trigger_check_case。
 - 更正 Corrections：原先 10000、10055、10075 分成三个故事，现并为同一系列；结构（触发→项目→科技）本就正确。
   The three stories are merged into one series; the compiled trigger->project->tech structure was already right.

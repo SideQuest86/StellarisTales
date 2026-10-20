@@ -1,6 +1,6 @@
 # 蹀血星球 / The World is Bleeding
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/strange_worlds_events.txt:7-250; common/on_actions/00_on_actions.txt:3838 on_colony_3_years_old (random 20/739) · DLC: BioGenesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -22,6 +22,8 @@ a and b are exclusive: a is the treatment and research line (20 -> 25), b the ke
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/strange_worlds_events.txt:7-250; common/on_actions/00_on_actions.txt:3838 on_colony_3_years_old (random 20/739)
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

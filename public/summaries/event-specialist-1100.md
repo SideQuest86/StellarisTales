@@ -1,7 +1,5 @@
 # 发现资源 / Resource Discovery
 - 分类 Category：文明纪事 Society (C7) · 专业型附庸（勘探者）specialist subject (Prospectorium)
-- 来源 Sources：`events/overlord_specialist_events.txt:329-700` · `common/special_projects (PROSPECTORIUM_RESOURCE_DISCOVERY_*)` · `common/on_actions/00_on_actions.txt:408`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,6 +19,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/overlord_specialist_events.txt:329-700` · `common/special_projects (PROSPECTORIUM_RESOURCE_DISCOVERY_*)` · `common/on_actions/00_on_actions.txt:408`
 - 已核对 Checked：根 1100、1150、各项目与结果事件。/ Root 1100, 1150, the projects and results.
 - 审阅改动 Changes：结构与草稿一致。/ Matches the draft.
 - 不确定 Uncertain：各项目的成本与产出细节未逐项展开。 / Project costs and yields were not expanded.

@@ -1,6 +1,6 @@
 # 宜居星球调查 / Habitable Worlds Survey
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/country_events_1.txt:1330-2238; common/event_chains/00_event_chains.txt:135-155; common/on_actions/00_on_actions.txt:1138; common/special_projects/00_projects_1.txt (*_PROCUREMENT) · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Human player, non-gestalt, non-nomadic; the second part also needs surveyed plan
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/country_events_1.txt:1330-2238; common/event_chains/00_event_chains.txt:135-155; common/on_actions/00_on_actions.txt:1138; common/special_projects/00_projects_1.txt (*_PROCUREMENT)
 - 核对了 country_events_1.txt 1330-2238、事件链计数上限与勘测 on_action；两个原先独立的故事（调查、采样）通过 museum_of_exobiology 旗标连成一个。
   Checked country_events_1.txt 1330-2238, the chain counter maxima and the survey on_action; the two formerly separate stories (survey and procurement) are joined through the museum_of_exobiology flag.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

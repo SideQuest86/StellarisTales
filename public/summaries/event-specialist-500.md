@@ -1,7 +1,5 @@
 # 古怪的传感器读数 / Abnormal Sensor Readings
 - 分类 Category：文明纪事 Society (C7) · 专业型附庸（学者）specialist subject (Scholarium)
-- 来源 Sources：`events/overlord_specialist_events.txt:115-330` · `common/scripted_effects/overlord_effects.txt` · `common/on_actions/00_on_actions.txt:407`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/overlord_specialist_events.txt:115-330` · `common/scripted_effects/overlord_effects.txt` · `common/on_actions/00_on_actions.txt:407`
 - 已核对 Checked：根 500、900、项目与四个结果事件。/ Root, 900, project and four results.
 - 审阅改动 Changes：结构与草稿一致。/ Matches the draft.

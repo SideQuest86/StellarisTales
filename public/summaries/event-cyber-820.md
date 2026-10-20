@@ -1,7 +1,6 @@
 # 激进外表 / Radical Image
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/machine_age_situation_events_1.txt:3637-3890`；`common/on_actions/00_on_actions.txt`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,5 +28,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/machine_age_situation_events_1.txt:3637-3890`；`common/on_actions/00_on_actions.txt`
 - 已核对：触发、概率、后续事件。
   Checked: trigger, probabilities, follow-ups.

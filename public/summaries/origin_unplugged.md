@@ -1,9 +1,6 @@
 # 强制重置 / Hard Reset
 
-- 分类 Category：起源 Origins · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/unplugged_events.txt:1-4437`、`common/special_projects/04_projects_unplugged.txt:1-99`、`common/archaeological_site_types/12_unplugged_arc_sites.txt:1-249`、`common/situations/12_unplugged_situations.txt`、`common/scripted_effects/unplugged_effects.txt`、`common/scripted_effects/01_start_of_game_effects.txt:4651`（开局生成机械帝国）、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins
 
 ## 如何开始 How it starts
 
@@ -44,6 +41,9 @@ The card: the civilisation has just been cut off from the machine network that a
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/unplugged_events.txt:1-4437`、`common/special_projects/04_projects_unplugged.txt:1-99`、`common/archaeological_site_types/12_unplugged_arc_sites.txt:1-249`、`common/situations/12_unplugged_situations.txt`、`common/scripted_effects/unplugged_effects.txt`、`common/scripted_effects/01_start_of_game_effects.txt:4651`（开局生成机械帝国）、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：事件文件全部 4437 行、四个项目、五个遗址定义、局势定义与相关脚本效果、开局效果与 on_action 钩子。 The whole event file, all projects, five dig sites, the situation, related effects, the start effect and on_action hooks.
 - 更正 Corrections：原树只有零散的根节点入口；现以开局胜利为主干，用 18 条状态连接串起五个星系、哨兵战与身份局势；删去义体化步骤指向去义体化随机后果的伪连接（`unplugged_effects.txt:637-790` 只在正面特质减少时触发）。
   The tree had only loose root entries; the opening victory is now the trunk, with 18 state bridges through the five systems, the Sentinel fight and the identity situation; false links from cyberization steps to the decyberization follow-ups were removed.

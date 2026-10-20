@@ -1,7 +1,4 @@
-# 技术启蒙：[pre_ftl_planet.GetName]上的挫折 / Technological Development: Setback on [pre_ftl_planet.GetName]
-- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:4255-4312` · `common/on_actions/00_on_actions.txt:563-575`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 技术启蒙：原始星球上的挫折 / Technological Development: Setback on a Pre-FTL Planet- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -21,5 +18,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:4255-4312` · `common/on_actions/00_on_actions.txt:563-575`
 - 已核对 Checked：脚本触发、效果与池权重。/ Trigger, effect and pool weight.
 - 审阅改动 Changes：无结构改动（独立插曲）。/ No structural change; standalone interlude.

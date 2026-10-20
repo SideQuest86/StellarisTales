@@ -1,10 +1,6 @@
 # 行商：堂吉被摧毁 / Caravaneers: Tungle Destroyed
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/caravaneer_events.txt:3715-4130`; `common/on_actions/00_on_actions.txt:1416`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -32,6 +28,9 @@ No empire variants.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/caravaneer_events.txt:3715-4130`; `common/on_actions/00_on_actions.txt:1416`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了触发、收件人选择和重建循环。
 
 Trigger, recipient selection and the re-establishment loop were checked.

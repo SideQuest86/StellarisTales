@@ -1,8 +1,6 @@
 # 水晶球体 / The Crystal Sphere
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:744–1065`；`events/astral_planes_situation_events.txt:1–76`；`common/situations/06_astral_planes_situations.txt:150–355`
-- 审阅 Reviewed：2026-10-13（全篇 whole story；原先的触发器故事 10、25、35 已并入 / the former trigger stories merged in）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ Yearly check `astral_planes.10`: over a year into mid-game and at least one coun
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story；原先的触发器故事 10、25、35 已并入 / the former trigger stories merged in）
+- 来源 Sources：`events/astral_planes_events.txt:744–1065`；`events/astral_planes_situation_events.txt:1–76`；`common/situations/06_astral_planes_situations.txt:150–355`
 - 已核对：10/15/20/25/30/35，两个情境，`astral_situation.1/5`，相关 `on_actions`。更正：三个触发器被当作独立故事（10、25、35）；已合并，并补桥接 30 → 15 与 5 → 晶体裂隙。
 - 不确定：随机骰的比较式按字面转述（`astral_planes.10:792–802`）。
 

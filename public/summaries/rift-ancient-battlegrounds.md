@@ -1,8 +1,6 @@
 # 次元冲突 / Dimensional Conflict
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:22`；`events/astral_rifts_0_events.txt:1543–1735`（200–225）；`events/astral_planes_events.txt:252–363`（遗珍锁定 relic lock）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -38,6 +36,8 @@ The rift type is drawn by weight from the explorer's pool: weight 1, or 0 for no
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:22`；`events/astral_rifts_0_events.txt:1543–1735`（200–225）；`events/astral_planes_events.txt:252–363`（遗珍锁定 relic lock）
 - 已核对：裂隙定义与权重修正、遗珍锁定/解锁事件、200–225 全部事件的选项与奖励。本裂隙没有失败分支或延时后续。编译结构正确，补充两个结局与两条说明。
 
 - Checked: the rift definition and weight modifiers, the relic lock/unlock events, and all options and rewards of 200–225. No failure branch or delayed follow-up. The compiled structure was correct; two endings and two notes added.

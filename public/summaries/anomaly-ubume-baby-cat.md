@@ -1,8 +1,6 @@
 # 奇怪的残骸 / Strange Debris
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:634-642` · `common/solar_system_initializers/special_system_initializers.txt:1670-1760 (ghost_ship_system_initializer_01)` · `events/anomaly_events_4.txt:2103-2367 (6791-6795)` · `common/special_projects/00_projects_3.txt:1632-1662` · `common/on_actions/00_on_actions.txt:403-406`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:634-642` · `common/solar_system_initializers/special_system_initializers.txt:1670-1760 (ghost_ship_system_initializer_01)` · `events/anomaly_events_4.txt:2103-2367 (6791-6795)` · `common/special_projects/00_projects_3.txt:1632-1662` · `common/on_actions/00_on_actions.txt:403-406`
 - 已核对 Checked：类别、初始化器、6791–6795、两个项目与年度回调。  
   Category, initializer, 6791–6795, both projects and the yearly on_action.
 - 更正 Corrections：把原先独立的故事 event-anomaly-6793（年度检查触发的灵能后续）并入本故事：6793 只对遇见过乌布梅、当时不是灵能、后来成为灵能的帝国触发，是本异常的直接后续。  

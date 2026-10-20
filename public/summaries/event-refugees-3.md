@@ -1,8 +1,5 @@
-# [Root.GetSpeciesName]难民抵达 / [Root.GetSpeciesName] Refugees Arrive
-
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · 来源 Sources：`events/refugee_events.txt:10-258`、`common/scripted_effects/refugee_effects.txt:1-130,236-262`、`common/on_actions/00_on_actions.txt:2176,3326` · 审阅 Reviewed 2026-10-13
+# 难民抵达 / Refugees Arrive
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -30,6 +27,9 @@ The receiving empire needs planets with at least 0.2 habitability for the specie
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/refugee_events.txt:10-258`、`common/scripted_effects/refugee_effects.txt:1-130,236-262`、`common/on_actions/00_on_actions.txt:2176,3326`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 合并说明：event-refugees-5 与本故事以同一个窗口 refugees.1 为根（危机轰炸路径），已并入。

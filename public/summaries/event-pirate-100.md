@@ -1,8 +1,5 @@
-# 土匪在[thalassocracy_target_system.GetName]的封锁 / Brigands' Blockade at [thalassocracy_target_system.GetName]
-
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Federations / Utopia (Bemat Thalassocracy) · 来源 Sources：`common/on_actions/00_on_actions.txt:293-304`、`common/on_actions/00_on_actions.txt:763`、`events/pirate_events.txt:2196-2425` · 审阅 Reviewed 2026-10-13
+# 土匪在目标星系的封锁 / Brigands' Blockade at the Target System
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Federations / Utopia (Bemat Thalassocracy)
 
 ## 如何开始 How it starts
 
@@ -30,6 +27,9 @@ Three body versions: regular, machine, hive.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`common/on_actions/00_on_actions.txt:293-304`、`common/on_actions/00_on_actions.txt:763`、`events/pirate_events.txt:2196-2425`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 未确定 Open: Which DLC owns the Bemat Thalassocracy was not traced.

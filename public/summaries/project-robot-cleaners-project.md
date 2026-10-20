@@ -1,8 +1,6 @@
 # 遗留的机械 / The Machines Left Behind
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/00_projects_3.txt:301-320` · `events/anomaly_events_3.txt:3387`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/00_projects_3.txt:301-320` · `events/anomaly_events_3.txt:3387`
 - 已对照项目与注释行。  
   Compared the project and the commented line.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

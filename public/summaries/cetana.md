@@ -1,10 +1,6 @@
 # 合成女王：塞塔娜 / Cetana, the Synthetic Queen
 
-- 分类 Category：天灾 Crisis · DLC：机械时代 Machine Age · 审阅 Reviewed 2026-10-12（c5a）
-- 来源 Sources：`events/machine_age_crisis_events.txt`（crisis.8005–11030、20000–24250）、`common/situations/08_machine_age_situations.txt:607-802`、`common/special_projects/04_projects_machine_age.txt:70-441`、`common/scripted_effects/02_machine_age_effects.txt`、`common/on_actions/00_on_actions.txt`、`common/event_chains/00_event_chains_machine_age.txt`、`common/archaeological_site_types/10_machine_age_arc_sites.txt`，以及虚境入口 `events/shroud_events.txt`、`events/utopia_shroud_events.txt`、`events/shroud_forged_events.txt`。
-
-> 本导读全文均为审阅者的说明，不是游戏原文；原文（双语）在阅读器中。时间、权重与条件均来自脚本，行号见审阅台账 `content/chronology/review/c5a-cetana.md`。
-> Everything in this guide is reviewer commentary, not game text; the bilingual originals are in the reader. Timings, weights and conditions come from the scripts; line numbers are in the ledger `content/chronology/review/c5a-cetana.md`.
+- 分类 Category：天灾 Crisis · DLC：机械时代 Machine Age
 
 ## 如何开始 How it starts
 
@@ -103,6 +99,10 @@ War starts only by declaring it from her contact menu (needs the completed inves
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12（c5a）
+- 来源 Sources：`events/machine_age_crisis_events.txt`（crisis.8005–11030、20000–24250）、`common/situations/08_machine_age_situations.txt:607-802`、`common/special_projects/04_projects_machine_age.txt:70-441`、`common/scripted_effects/02_machine_age_effects.txt`、`common/on_actions/00_on_actions.txt`、`common/event_chains/00_event_chains_machine_age.txt`、`common/archaeological_site_types/10_machine_age_arc_sites.txt`，以及虚境入口 `events/shroud_events.txt`、`events/utopia_shroud_events.txt`、`events/shroud_forged_events.txt`。
+- 本导读全文均为审阅者的说明，不是游戏原文；原文（双语）在阅读器中。时间、权重与条件均来自脚本，行号见审阅台账 `content/chronology/review/c5a-cetana.md`。
+- Everything in this guide is reviewer commentary, not game text; the bilingual originals are in the reader. Timings, weights and conditions come from the scripts; line numbers are in the ledger `content/chronology/review/c5a-cetana.md`.
 - 已逐段读取上述全部来源（行号见台账），对照中英文本。Every source above was read in full (line numbers in the ledger) and compared in both languages.
 - 结构修正：去除观察者模式事件与经由AI版本折叠出的假连接；8020不再接在第二次演说之后；倒计时按50%/80%/100%排列；调查进度线（9000→9010）在前，惩戒与礼物按阶梯排列；四座信标为并行组并以21000为门；补上此前孤立的袭击、战时、遗珍与虚境入口章节。Structural fixes: removed the observer-mode event and false links folded through the AI version; 8020 no longer follows the second address; the doomclock reads 50%/80%/100%; the progress line comes first and retaliations/gifts read as ladders; the four beacons are a parallel group gated by 21000; previously orphaned raid, wartime, relic and Shroud chapters are attached.
 - 原文差异：8315中文“数以百计地死去”对英文“Millions died”；8320中文“从她的首都启航”对英文“departed for her capital”。网站保留两份原文。Translation differences: 8315 ("by the hundreds" vs "Millions died") and 8320 ("from her capital" vs "for her capital"); both originals are kept.

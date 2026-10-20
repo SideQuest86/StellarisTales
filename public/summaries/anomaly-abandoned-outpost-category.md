@@ -1,7 +1,6 @@
 # 废弃观测站 / Abandoned Observation Post
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:141-198 (big_rip_system); common/anomalies/95_anomaly_categories_distant_stars.txt:1101-1113; events/distant_stars_events_2.txt:1992 (distar.1030); common/special_projects/00_projects_distant_stars.txt:1073 (BIG_RIP); events/distant_stars_events_2.txt:2026 (distar.1031)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ distar.1031 has a xenophobe-only option with the same effects.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:141-198 (big_rip_system); common/anomalies/95_anomaly_categories_distant_stars.txt:1101-1113; events/distant_stars_events_2.txt:1992 (distar.1030); common/special_projects/00_projects_distant_stars.txt:1073 (BIG_RIP); events/distant_stars_events_2.txt:2026 (distar.1031)
 已核对初始化、异常、distar.1030–1031 与项目。树结构正确。lcluster_clue_desc_2 只影响 distar.9000 的文本。
 
 Checked initializer, anomaly, distar.1030–1031 and the project. Tree correct. lcluster_clue_desc_2 only affects distar.9000's text.

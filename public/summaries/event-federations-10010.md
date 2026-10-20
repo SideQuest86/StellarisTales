@@ -1,7 +1,6 @@
 # 自我升华 / Greater Than Ourselves
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/federations_events_1.txt:28-62,564-700`；`common/resolutions/00_resolutions.txt:4185,4213`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,5 +26,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/federations_events_1.txt:28-62,564-700`；`common/resolutions/00_resolutions.txt:4185,4213`
 - 已核对：决议 effect 的触发与延迟、两窗口条件。
   Checked: the resolution effect triggers and delay, the conditions of both windows.

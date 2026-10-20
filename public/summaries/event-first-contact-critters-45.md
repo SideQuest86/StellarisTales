@@ -1,7 +1,5 @@
 # 古代采矿无人机 / Ancient Mining Drones
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（无人机 drones_stage_1/2）
-- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:655–742` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:168–206` · `common/special_projects/00_projects_2.txt:562–576`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:655–742` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:168–206` · `common/special_projects/00_projects_2.txt:562–576`
 - 已核对 Checked：40、45、story.305、项目与阶段。/ Events, project, stages.
 - 审阅改动 Changes：并 40 入 45 篇。/ 40 joined 45.

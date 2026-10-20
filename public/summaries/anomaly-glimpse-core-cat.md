@@ -1,7 +1,6 @@
 # 核心一瞥 / A Glimpse of the Core
 
-- 分类 Category：深空异闻 Exploration · DLC：Shadows of the Shroud（has_shroud_dlc） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/103_anomaly_categories_extreme_frontiers.txt:116; events/extreme_frontiers_events.txt:291 (extreme_frontiers.150); common/special_projects/05_projects_extreme_frontiers.txt (PURIFY_CORE_PROJECT); events/extreme_frontiers_events.txt:333 (extreme_frontiers.155)
+- 分类 Category：深空异闻 Exploration · DLC：Shadows of the Shroud（has_shroud_dlc）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Single result extreme_frontiers.150 "Organic Core": option a enables project PUR
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/103_anomaly_categories_extreme_frontiers.txt:116; events/extreme_frontiers_events.txt:291 (extreme_frontiers.150); common/special_projects/05_projects_extreme_frontiers.txt (PURIFY_CORE_PROJECT); events/extreme_frontiers_events.txt:333 (extreme_frontiers.155)
 已核对异常定义、项目与结果事件；编译树正确，无需改动。生成需要 has_shroud_dlc；本机 dlc 目录中未见对应 DLC，能否生成取决于主机的 DLC。
 
 Checked the anomaly definition, the project and the result event; the compiled tree is correct, no change needed. Spawning needs has_shroud_dlc; no matching DLC folder exists in the local dlc directory, so spawning depends on the host's DLC.

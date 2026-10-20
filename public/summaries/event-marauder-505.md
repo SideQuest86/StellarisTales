@@ -1,6 +1,6 @@
 # 大可汗战败 / The Great Khan defeated
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/marauder_events.txt, common/on_actions/00_on_actions.txt · DLC：Marauders · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Marauders
 
 ## 如何开始 How it starts
 
@@ -25,6 +25,8 @@ Hidden marauder.505 runs when the Great Khan's fleet is wiped out for the first 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/marauder_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：marauder.505-508、523、524 的触发与分派。
 - 不确定 Uncertain：523 中 exists = from 的 from 在脚本里是 505 的发起国；未能从文件独立证实 524 的具体出现条件（when 'from' no longer exists）。
   The exact scope of 'from' in marauder.523 was not verified.

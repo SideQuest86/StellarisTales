@@ -1,8 +1,6 @@
 # 恼人的特使 / A Most Irritating Envoy
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · 来源 Sources：`events/envoy_events.txt:549-740`、`common/on_actions/00_on_actions.txt:500`、`events/overlord_enclaves_events.txt:7690-7720` · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,9 @@ AI leanings: B is likelier for authoritarian, xenophobe or militarist empires an
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/envoy_events.txt:549-740`、`common/on_actions/00_on_actions.txt:500`、`events/overlord_enclaves_events.txt:7690-7720`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 本故事是“重复发生的小事件”，没有更长的剧情线。

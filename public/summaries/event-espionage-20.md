@@ -1,7 +1,5 @@
-# [root.GetPreFTLUpper]星球建立间谍网 / Spy Network Established on [root.GetPreFTLUpper] World
-
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/nemesis_espionage_events.txt:163-398`
+# 原始文明星球建立间谍网 / Spy Network Established on a Pre-FTL World
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -25,5 +23,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/nemesis_espionage_events.txt:163-398`
 - 已核对：espionage.20 链与窗口触发。
   Checked: the espionage.20 chain and window triggers.

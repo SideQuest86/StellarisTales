@@ -1,7 +1,6 @@
 # 有脉搏的星球 / A Planet with a Pulse
 
-- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）或 Biogenesis（has_biogenesis_dlc） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:1178 (guardians_init_hatchling; egg planet 1230-1238); common/on_actions/00_on_actions.txt:1306 (on_colonized → distar.5000); common/on_actions/00_on_actions.txt:103 (on_monthly_pulse → distar.5001); events/distant_stars_events_3.txt:15-340 (distar.5000-5006); events/distant_stars_events_3.txt:491 (distar.5007); events/distant_stars_events_3.txt:553 (distar.5013); events/distant_stars_events_3.txt:685 (distar.5014, 5015); events/distant_stars_events_3.txt:775 (distar.5011); common/on_actions/00_on_actions.txt:1006; events/distant_stars_events_3.txt:815 (distar.5009); common/on_actions/00_on_actions.txt:1655; events/distant_stars_events_3.txt:971 (distar.5016); events/distant_stars_events_3.txt:1045 (distar.5012)
+- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）或 Biogenesis（has_biogenesis_dlc）
 
 ## 如何开始 How it starts
 
@@ -39,6 +38,8 @@ The notices (5003/5005/5007/5013) go only to the egg planet's or system's owner 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:1178 (guardians_init_hatchling; egg planet 1230-1238); common/on_actions/00_on_actions.txt:1306 (on_colonized → distar.5000); common/on_actions/00_on_actions.txt:103 (on_monthly_pulse → distar.5001); events/distant_stars_events_3.txt:15-340 (distar.5000-5006); events/distant_stars_events_3.txt:491 (distar.5007); events/distant_stars_events_3.txt:553 (distar.5013); events/distant_stars_events_3.txt:685 (distar.5014, 5015); events/distant_stars_events_3.txt:775 (distar.5011); common/on_actions/00_on_actions.txt:1006; events/distant_stars_events_3.txt:815 (distar.5009); common/on_actions/00_on_actions.txt:1655; events/distant_stars_events_3.txt:971 (distar.5016); events/distant_stars_events_3.txt:1045 (distar.5012)
 已核对初始化器、on_colonized/on_monthly_pulse/on_entering_system_fleet/on_fleet_destroyed_perp 触发与 distar.5000–5016。修正：草稿把 5003/5005/5007/5013 都挂在 5010 下并归为同一互斥组，且把进入、击毁、复原各作独立故事（event-distar-5001/5009/5011/5014）；现合为一个以 distar.5010 为起点的故事，用审阅连接还原顺序（5003→5005→5007→5011→5009）并把 5013 作为与 5005 互斥的分支。distar.5000/5001/5002/5004/5006/5008/5014 是隐藏事件，不作为章节。
 
 Checked the initializer, the on_colonized / on_monthly_pulse / on_entering_system_fleet / on_fleet_destroyed_perp hooks and distar.5000-5016. Correction: the draft hung 5003/5005/5007/5013 all under 5010 as one exclusive group and made entering, killing and restoring separate stories (event-distar-5001/5009/5011/5014); they are now one story from distar.5010 with reviewed links restoring the order (5003 → 5005 → 5007 → 5011 → 5009), with 5013 as the branch exclusive with 5005. distar.5000/5001/5002/5004/5006/5008/5014 are hidden events, not chapters.

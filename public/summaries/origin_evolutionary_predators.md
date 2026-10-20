@@ -1,9 +1,6 @@
 # 演化猎手 / Evolutionary Predators
 
-- 分类 Category：起源 Origins · DLC：BioGenesis · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/biogenesis_origin_events.txt:1-1260`、`common/situations/12_biogenesis_situations.txt`、`common/espionage_operation_types/operations.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：BioGenesis
 
 ## 如何开始 How it starts
 
@@ -25,6 +22,9 @@ Hidden bio.1000 starts the *Adaptive Evolution* situation.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/biogenesis_origin_events.txt:1-1260`、`common/situations/12_biogenesis_situations.txt`、`common/espionage_operation_types/operations.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：bio.1000–1065 与行动阶段。 Events bio.1000-1065 and the operation stages.
 - 更正 Corrections：行动三阶段连接与入口标签。 Operation stage links and entry labels.
 - 不确定 Uncertain：收获/净化人口机制（bio.1010–1025）未读。 Harvest/purge mechanics not read.

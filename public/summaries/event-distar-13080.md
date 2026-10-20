@@ -1,7 +1,6 @@
 # L-星团 / The L-Cluster
 
-- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-13（r2-mixed 完成 reviewed）
-- 来源 Sources：events/distant_stars_events_3.txt:2366-2410 (distar.13080); events/apocalypse_events.txt:80-98 (apoc.3, same chain start); common/event_chains/00_event_chains_distant_stars.txt:25 (l_cluster_chain, max 7 clues); common/scripted_effects/00_scripted_effects.txt:3243 (generate_lcluster_clue); common/scripted_effects/00_scripted_effects.txt:3291 (pop_lcluster_event); events/distant_stars_events_3.txt:1141 (distar.9000); events/distant_stars_events_3.txt:1280 (distar.10904); common/on_actions/00_on_actions.txt:2698 (distar.10903); events/distant_stars_events_3.txt:1196-1303 (distar.10900-10905); common/special_projects/00_projects_distant_stars.txt:650 (LCLUSTER_PROJECT); events/distant_stars_events_3.txt:1331-1428 (distar.10950); events/distant_stars_events_3.txt:1109-1129 (distar.8000); events/distant_stars_events_3.txt:1812-2142 (distar.13000-13035); events/distant_stars_events_3.txt:1498-1566 (distar.10955/10956)
+- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -39,6 +38,8 @@ distar.13030's taming option is disallowed for homicidal and fanatic xenophobe e
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（r2-mixed 完成 reviewed）
+- 来源 Sources：events/distant_stars_events_3.txt:2366-2410 (distar.13080); events/apocalypse_events.txt:80-98 (apoc.3, same chain start); common/event_chains/00_event_chains_distant_stars.txt:25 (l_cluster_chain, max 7 clues); common/scripted_effects/00_scripted_effects.txt:3243 (generate_lcluster_clue); common/scripted_effects/00_scripted_effects.txt:3291 (pop_lcluster_event); events/distant_stars_events_3.txt:1141 (distar.9000); events/distant_stars_events_3.txt:1280 (distar.10904); common/on_actions/00_on_actions.txt:2698 (distar.10903); events/distant_stars_events_3.txt:1196-1303 (distar.10900-10905); common/special_projects/00_projects_distant_stars.txt:650 (LCLUSTER_PROJECT); events/distant_stars_events_3.txt:1331-1428 (distar.10950); events/distant_stars_events_3.txt:1109-1129 (distar.8000); events/distant_stars_events_3.txt:1812-2142 (distar.13000-13035); events/distant_stars_events_3.txt:1498-1566 (distar.10955/10956)
 已核对 distar.8000–13080 的相关事件、事件链、线索脚本效果、on_action 和 LCLUSTER_PROJECT / TAME_LDRAGON_PROJECT。修正：草稿把“打开星团”“线索”“龙之季后续”“邻国预警”分成七个互不相连的故事；现合为一个从 distar.13080 开始的故事，并按真实顺序用审阅连接串起（链→线索→7条线索→研究→项目→结局→龙之季）。灰色风暴（graygoo.1）与灰雾帝国（graygoo.100）属其他故事，仅作外链。
 
 Checked the related events of distar.8000-13080, the event chain, the clue script effects, the on_actions and LCLUSTER_PROJECT / TAME_LDRAGON_PROJECT. Correction: the draft split opening, clues, the dragon aftermath and the neighbour warning into seven unconnected stories; they are now one story from distar.13080 with reviewed links in the real order (chain → clues → 7 clues → research → project → outcome → dragon season). The Gray Tempest (graygoo.1) and gray goo empire (graygoo.100) belong to other stories and appear only as external links.

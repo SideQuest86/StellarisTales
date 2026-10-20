@@ -1,6 +1,6 @@
 # 前智慧原住民与殖民地 / Pre-sapient natives and colonies
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/uplifting_events.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -23,4 +23,6 @@ Each fires on its own mean time for human owners of colonies with non-sapient po
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/uplifting_events.txt
 - 已核对 Checked：uplift.7500-7525。更正：四个单页故事并为一个。

@@ -1,6 +1,6 @@
 # 环形世界施工意外 / Ring World construction incidents
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/megastructure_events_1.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -27,6 +27,8 @@ One of three at random (30/30/30; zero for the third if machine empire or mechan
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/megastructure_events_1.txt
 - 已核对 Checked：utopia.20-28 的触发、random_list 权重及延迟（lines 417-640）。编译树正确。
   Compiled tree and weights verified.
 - 本故事发生在“环形世界”（见该故事）建造期间，但由独立的隐藏事件触发，不是建造阶段事件的后续。

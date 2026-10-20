@@ -1,6 +1,6 @@
 # 银河帝国的终结 / End of the Galactic Imperium
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_emperor_events.txt, common/war_goals/02_event_war_goals.txt, common/on_actions/00_on_actions.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -27,6 +27,8 @@ The result events fire from the civil-war war goals; the Community restoration w
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_emperor_events.txt, common/war_goals/02_event_war_goals.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：emperor.150-401 与战争目标、on_action 调用点。
 - 更正 Corrections：原先按视角拆成 11 个故事（150、200、300、400…），现按结果合并；叛乱起点 emperor.101-108 属于“煽动叛乱”行动故事（另一审阅者）。
   Split perspective stories merged by outcome; emperor.101-108 stay in the operation story (another reviewer).

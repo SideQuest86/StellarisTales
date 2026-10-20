@@ -1,7 +1,5 @@
 # 政治热点 / The Political Frontier
 - 分类 Category：文明纪事 Society (C7) · 派系事件 faction event
-- 来源 Sources：`events/faction_events.txt:472-608` · `common/on_actions/00_on_actions.txt:3728, 3750`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/faction_events.txt:472-608` · `common/on_actions/00_on_actions.txt:3728, 3750`
 - 已核对 Checked：3000 脚本与池权重。/ Script and pool weight.
 - 审阅改动 Changes：结构与草稿一致。/ Matches the draft.

@@ -1,6 +1,6 @@
 # 基因重塑 / Biomorphosis
 
-- 分类 Category: C7 文明纪事 / C7 Society · 来源 Sources: common/ascension_perks/00_ascension_paths.txt:11-35; events/biogenesis_events.txt:8-958; common/situations/12_biogenesis_situations.txt:8-322 (hive version from L326); common/on_actions/00_on_actions.txt:5544-5716; events/biogenesis_events.txt:960-5430 (random events) · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C7 文明纪事 / C7 Society · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -55,6 +55,8 @@ Taking the Engineered Evolution ascension perk with BioGenesis fires hidden bio.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/ascension_perks/00_ascension_paths.txt:11-35; events/biogenesis_events.txt:8-958; common/situations/12_biogenesis_situations.txt:8-322 (hive version from L326); common/on_actions/00_on_actions.txt:5544-5716; events/biogenesis_events.txt:960-5430 (random events)
 - 已核对：飞升天赋入口、bio.1–bio.40、两种情势定义（阶段、进度修正、路线、on_monthly）、八个插曲 on_action 列表及53个插曲的触发条件与后续调用。
   Checked: the perk entry, bio.1-bio.40, both situation definitions (stages, progress modifiers, approaches, on_monthly), the eight interlude on_action lists, and the triggers and follow-up calls of all 53 interludes.
 - 修正：原草稿把53个插曲各自列为“银河轶事”中的独立单页故事；它们是该情势的情势事件（situation = this，只由情势的 on_monthly 调用），现并入本故事，作为按路线分组的并行随机插曲。完成事件 bio.20/bio.40 原挂在情势下，与阶段一并列；现改为第三阶段之后。类别由 C8 改为 C7（情势）。

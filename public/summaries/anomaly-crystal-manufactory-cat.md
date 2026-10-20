@@ -1,8 +1,6 @@
 # 古代工厂 / Ancient Manufactory
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1116-1124` · `events/anomaly_events_2.txt:3550-3790` · `common/special_projects/00_projects_2.txt:780-885`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1116-1124` · `events/anomaly_events_2.txt:3550-3790` · `common/special_projects/00_projects_2.txt:780-885`
 - 已对照项目脚本780-885与事件3126-3129原文。  
   Compared the project script and events 3126-3129.
 - 覆盖 Coverage：全部8个文档。 / All 8 docs.

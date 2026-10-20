@@ -1,8 +1,6 @@
 # 佣兵城邦 / Mercenary Enclave
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord
-- 来源 Sources：events/overlord_enclaves_events.txt:514（enclave.200）, :561（enclave.204）, :586（enclave.205 菜单 menu）, :1009–2358（服务 services 210–285）, :2629–2794（290–299）, :3325–3619（2030–2040）; common/on_actions/00_on_actions.txt:740; common/scripted_effects/first_contact_effects.txt:544; events/leviathans_events_1.txt:265
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 这是一个可重复使用的联络菜单，不是线性剧情。菜单 enclave.205 在三种情况下打开：
@@ -32,6 +30,9 @@ The menu has no ending; destruction is the separate story "Mercenary Enclave Des
 Most services require trust thresholds (10-50), cooldowns or not-yet-bought flags; nomads cannot buy garrisons; bio-ship empires pay food instead of energy for upgrades.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:514（enclave.200）, :561（enclave.204）, :586（enclave.205 菜单 menu）, :1009–2358（服务 services 210–285）, :2629–2794（290–299）, :3325–3619（2030–2040）; common/on_actions/00_on_actions.txt:740; common/scripted_effects/first_contact_effects.txt:544; events/leviathans_events_1.txt:265
 - 已逐项核对 205 的全部选项、各服务窗口的选项与后续调用、290–299 的接收者。Checked every 205 option, each service's options and follow-ups, recipients of 290–299.
 - 更正：草稿中同一菜单出现在五个故事（200、204、建立、可汗交易、合约到期）里；现合并为本故事族，其他故事改为跨故事链接。
   Correction: the draft copied this menu into five stories; it is now one family and the others cross-link to it.

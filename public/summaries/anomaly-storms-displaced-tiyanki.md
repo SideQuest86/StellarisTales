@@ -1,8 +1,6 @@
 # 走失的缇扬奇 / Displaced Tiyanki
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:312-324` · `events/anomaly_events_cosmic_storms.txt` · `events/cosmic_storms_events_1.txt:336-372`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:312-324` · `events/anomaly_events_cosmic_storms.txt` · `events/cosmic_storms_events_1.txt:336-372`
 - 已对照类别脚本、cstorms.5/10随机列表与5090/5095。  
   Compared the category script, the random list of cstorms.5/10 and 5090/5095.
 - 覆盖 Coverage：全部4个文档。 / All 4 docs.

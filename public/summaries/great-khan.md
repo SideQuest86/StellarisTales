@@ -1,6 +1,6 @@
 # 大可汗 / The Great Khan
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/marauder_events.txt:7204-9792; events/marauder_events.txt:10239-10306; events/observer_events.txt:279-460; events/nomads_events_1.txt:6127; common/on_actions/00_on_actions.txt:824-825,1412-1414 · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -34,6 +34,8 @@ The awakening windows (501/526) are exclusive; the four succession outcomes are 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/marauder_events.txt:7204-9792; events/marauder_events.txt:10239-10306; events/observer_events.txt:279-460; events/nomads_events_1.txt:6127; common/on_actions/00_on_actions.txt:824-825,1412-1414
 - 修正：草稿把觉醒（event-marauder-525）、战死与继承（509）、攻占（503）、归顺（555）、解放（515）分成五个故事，并把大可汗通讯混在掠夺者通讯菜单里；现合并为一条以大可汗为中心的故事，按觉醒→征服→死亡→继承排列。
   Correction: the draft split the awakening (event-marauder-525), death in battle and succession (509), conquest (503), submission (555) and liberation (515) into five stories and mixed the Khan's contact into the marauder menu; they are now one Great Khan story ordered awakening -> conquest -> death -> succession.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

@@ -1,8 +1,6 @@
 # 微型宇宙 / The Microverse
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:139`；`events/astral_rifts_1_events.txt:629–868`（1200–1235）；`events/astral_planes_events.txt:4118–4136`（astral_planes.6008）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -42,6 +40,8 @@ Two sources: a random draw from the explorer's pool (weight 0.5, or 0 once the e
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:139`；`events/astral_rifts_1_events.txt:629–868`（1200–1235）；`events/astral_planes_events.txt:4118–4136`（astral_planes.6008）
 - 已核对：裂隙定义及权重修正、astral_planes.6008 的定向生成、1200–1235 全部事件。没有失败分支；编译结构正确。
 - 结构说明：本篇定义为故事族（成员为裂隙卡），使“不稳定星界细缝”篇中 6008 → 本裂隙的审阅链接显示为跨故事链接，而不是把本篇并入那一篇。
 

@@ -1,6 +1,6 @@
 # 可汗之死 / Death of the Khan
 
-- 分类 Category: C1 起源 / C1 Origins · 来源 Sources: events/nomads_events_1.txt:5561-5760; common/on_actions/00_on_actions.txt:2369 · DLC: Nomads · 审阅 Reviewed 2026-10-12
+- 分类 Category：C1 起源 / C1 Origins · DLC: Nomads
 
 ## 如何开始 How it starts
 
@@ -22,10 +22,10 @@ a: follow tradition, give up the subjects and become the marauders' overlord aga
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/nomads_events_1.txt:5561-5760; common/on_actions/00_on_actions.txt:2369
 - 类别改为 C1（起源专属）。
   Category changed to C1 (origin-specific).
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

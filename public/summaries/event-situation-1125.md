@@ -1,7 +1,6 @@
 # 吞噬恒星 / Consume Star
 
-- 分类 Category：文明纪事 Society (C7) · 间谍行动 espionage operation · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`common/espionage_operation_types/operations.txt:1133-1222`；`events/situation_events.txt:5380-5770`；`common/situations/01_narrative_situations.txt:1135-1251`；`common/special_projects/00_projects_leviathans.txt:508-534`；`common/scripted_effects/00_scripted_effects.txt:5994-5996`（噬星者战利品）
+- 分类 Category：文明纪事 Society (C7) · 间谍行动 espionage operation
 
 ## 如何开始 How it starts
 
@@ -32,6 +31,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`common/espionage_operation_types/operations.txt:1133-1222`；`events/situation_events.txt:5380-5770`；`common/situations/01_narrative_situations.txt:1135-1251`；`common/special_projects/00_projects_leviathans.txt:508-534`；`common/scripted_effects/00_scripted_effects.txt:5994-5996`（噬星者战利品）
 - 已核对：行动定义（费用、前提、三阶段）、1125–1180 全部事件（含隐藏 1155/1165/1175）、局势定义（阶段、方式、进度）、治愈项目。
   Checked: the operation definition (cost, requirements, three stages), all events 1125–1180 (including hidden 1155/1165/1175), the situation definition (stages, approaches, progress) and the cure project.
 - 更正 Corrections：草稿把三个行动阶段列为三个并列入口，现按行动阶段顺序串联；结局补充“治愈”分支说明（无窗口）。

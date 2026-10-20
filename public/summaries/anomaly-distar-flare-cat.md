@@ -1,7 +1,6 @@
 # 超强耀斑 / Superflare
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:1740-1827 (superflare_system); common/anomalies/95_anomaly_categories_distant_stars.txt:30-42; events/distant_stars_events_1.txt:213-390 (distar.5-10); common/special_projects/00_projects_distant_stars.txt:4-31 (SUPERFLARE_PROJECT); common/on_actions/00_on_actions.txt:1301
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ distar.7 has two texts: with a colony it describes the emergency shield, without
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:1740-1827 (superflare_system); common/anomalies/95_anomaly_categories_distant_stars.txt:30-42; events/distant_stars_events_1.txt:213-390 (distar.5-10); common/special_projects/00_projects_distant_stars.txt:4-31 (SUPERFLARE_PROJECT); common/on_actions/00_on_actions.txt:1301
 已核对初始化、异常、distar.5–10、项目和 on_colonized。修正：草稿把异常（2篇）和耀斑殖民链（4篇）拆成两个故事；现合并，并用审阅连接表示“殖民卫星后”。耀斑链不要求先调查异常，但 distar.7 文本引用了本异常的冰冻星球。
 
 Checked initializer, anomaly, distar.5–10, the project and on_colonized. Correction: the draft split the anomaly (2 docs) and the flare chain (4 docs); merged with a reviewed "after colonising the moon" link. The flare chain does not require the anomaly, but distar.7 refers to this anomaly's frozen planet.

@@ -1,7 +1,6 @@
 # 原始机器人 / Rudimentary Robots
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:1651-1738 (primitive_robot_system); common/anomalies/95_anomaly_categories_distant_stars.txt:82-96; events/distant_stars_events_1.txt:465-497 (distar.25); events/distant_stars_events_1.txt:499-1167 (distar.2599, 26-37); common/special_projects/00_projects_distant_stars.txt:35-83 (PRIMITIVE_ROBOT_PROJECT, RETROVIRUS_PROJECT); common/on_actions/00_on_actions.txt:835, 865, 1302
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -43,6 +42,8 @@ distar.26.a needs no AI ban and a non-gestalt empire; distar.26.c only with outl
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:1651-1738 (primitive_robot_system); common/anomalies/95_anomaly_categories_distant_stars.txt:82-96; events/distant_stars_events_1.txt:465-497 (distar.25); events/distant_stars_events_1.txt:499-1167 (distar.2599, 26-37); common/special_projects/00_projects_distant_stars.txt:35-83 (PRIMITIVE_ROBOT_PROJECT, RETROVIRUS_PROJECT); common/on_actions/00_on_actions.txt:835, 865, 1302
 已核对星系初始化、异常定义、distar.25–37、两个项目和三个 on_action 回调。修正：编译草稿把异常（2篇）与殖民链（12篇）及 distar.34/37 拆成四个独立故事；现合并为一个以异常为根的故事，并用审阅连接表示“殖民后”和两种战斗结果。注意：殖民链不要求先调查异常，连接只表示自然的游戏顺序。distar.34/37 的 on_action 作用域按 00_on_actions.txt 注释理解。
 
 Checked the system initializer, anomaly definition, distar.25–37, both projects and the three on_action callbacks. Correction: the draft split the anomaly (2 docs), the colony chain (12 docs) and distar.34/37 into four stories; they are now one story rooted at the anomaly, with reviewed links for "after colonisation" and the two combat results. The colony chain does not require the anomaly to be investigated; the link expresses the natural play order. Scopes of distar.34/37 follow the comments in 00_on_actions.txt.

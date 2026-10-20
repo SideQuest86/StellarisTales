@@ -1,8 +1,6 @@
 # 灰色风暴 / The Gray Tempest
 
-- 分类 Category: 天灾 Crisis · 来源 Sources: `events/gray_goo_events.txt:11-629, 2913-2934`, `events/distant_stars_events_3.txt:1110-1135, 1330-1425`, `events/observer_events.txt:1100-1128` · 远星（Distant Stars）DLC · 审阅 Reviewed 2026-10-13 (c5b-crisis)
-
-> 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
+- 分类 Category：天灾 Crisis
 
 ## 如何开始 How it starts
 
@@ -27,5 +25,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13 (c5b-crisis)
+- 来源 Sources：`events/gray_goo_events.txt:11-629, 2913-2934`, `events/distant_stars_events_3.txt:1110-1135, 1330-1425`, `events/observer_events.txt:1100-1128` · 远星（Distant Stars）DLC
+- 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
 - 原草稿把整个 L 星团的“星团的秘密”（风暴、德萨努协和国、小灰、空星团、龙）混为一个 59 文档的故事。现拆为：本篇（风暴）、`dessanu-consonance`、`lcluster-gray`。L 星门开启本身及龙季不属于本篇（归探索线路）。
 - 不确定：风暴获胜或持续蔓延没有对应的可读事件；`timeline.64` 是时间线记录，不是故事文档。

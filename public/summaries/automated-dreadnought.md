@@ -1,6 +1,6 @@
 # 自动无畏战舰 / Automated Dreadnought
 
-- 分类 Category：巨兽与城邦 · 来源 Sources: events/leviathans_events_2.txt:4221-4477; common/on_actions/00_on_actions.txt:912, :1398 · DLC：利维坦 Leviathans · 审阅 Reviewed 2026-10-13
+- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 首次进入守卫星系：3100“自动无畏战舰”（每帝国一次）。
@@ -20,4 +20,7 @@ First entry into the guarded system fires 3100.
 机器帝国使用不同描述文本；灵跃引擎决定舰型。
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/leviathans_events_2.txt:4221-4477; common/on_actions/00_on_actions.txt:912, :1398
 合并 event-leviathans-3100 / -3101。完整。 Merged two stories; complete.

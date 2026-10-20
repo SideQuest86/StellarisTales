@@ -1,7 +1,6 @@
 # 死寂星球 / Tomb World
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1353-1404; events/distant_stars_events_2.txt:3349 (distar.2005); common/special_projects/00_projects_distant_stars.txt:1204 (WEAPONS_TESTING); events/distant_stars_events_2.txt:3381 (distar.2006); events/distant_stars_events_2.txt:3575 (distar.2015)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ distar.2015 has a Terminator text and machine option plus an Evolutionary Predat
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1353-1404; events/distant_stars_events_2.txt:3349 (distar.2005); common/special_projects/00_projects_distant_stars.txt:1204 (WEAPONS_TESTING); events/distant_stars_events_2.txt:3381 (distar.2006); events/distant_stars_events_2.txt:3575 (distar.2015)
 已核对异常、distar.2005/2006/2015 与项目。树结构正确；加互斥组说明。30天后的通用接触报告 story.5 是共享事件，不属于本故事。
 
 Checked the anomaly, distar.2005/2006/2015 and the project. Tree correct; exclusive group added. The generic contact report story.5 30 days later is a shared helper, not part of this story.

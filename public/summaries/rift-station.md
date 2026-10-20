@@ -1,8 +1,6 @@
 # 怪异空间站 / Strange Station
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:202`；`events/astral_rifts_1_events.txt:3285–3985`（1600–1625、1690、1698、1699）；`common/on_actions/00_on_actions.txt:4984–4992`
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -36,6 +34,8 @@ Drawn by weight from the explorer's rift pool: weight 1, or 0 if a mirrored empi
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:202`；`events/astral_rifts_1_events.txt:3285–3985`（1600–1625、1690、1698、1699）；`common/on_actions/00_on_actions.txt:4984–4992`
 - 已核对：裂隙定义与权重修正；on_astral_rift_exploration_start 的 1699（创建镜像帝国）与 on_astral_rift_exploration_complete 的 1698；1600–1625 全部事件；1620 对 astral_planes.1690 的调用。没有失败分支；编译结构正确，补充互斥组、结局与说明。
 
 - Checked: the rift definition and its weight modifiers; 1699 on on_astral_rift_exploration_start (creating the mirror) and 1698 on on_astral_rift_exploration_complete; every event 1600–1625; the call to astral_planes.1690 from 1620. No failure branch; the compiled structure was correct; exclusive group, endings and a note added.

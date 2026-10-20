@@ -1,7 +1,6 @@
 # 废弃地形改造设备 / Abandoned Terraforming Equipment
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_1.txt:2185-3175`；`common/on_actions/00_on_actions.txt:832,864,880,3758,3810`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_1.txt:2185-3175`；`common/on_actions/00_on_actions.txt:832,864,880,3758,3810`
 - 已核对：触发、项目、四个结果、变异体入侵的标志与三个 on_action 衔接、102/103/109 的触发标志。
   Checked: trigger, projects, four outcomes, mutant-invasion flags and the three on_action links, trigger flags of 102/103/109.
 - 更正：108、113、114、102、103 原为孤立的单窗口故事，现并入。

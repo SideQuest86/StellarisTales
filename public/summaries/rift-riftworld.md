@@ -1,8 +1,6 @@
 # 残毁行星 / Ruined Planet
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes · 起源 Origin：裂隙世界 Riftworld
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:1`；`events/astral_rifts_0_events.txt:11–1237`（1–57）；`events/origin_events_astral_planes.txt:12–65`（生成 spawn）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 30 已并入 / former standalone failure event 30 merged in）
 
 ## 如何开始 How it starts
 
@@ -52,6 +50,8 @@ This rift is not in the random pool: only the Riftworld origin creates it at gam
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 30 已并入 / former standalone failure event 30 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:1`；`events/astral_rifts_0_events.txt:11–1237`（1–57）；`events/origin_events_astral_planes.txt:12–65`（生成 spawn）
 - 已核对：裂隙定义（`randomized = no`）、起源生成脚本、1–57 每个事件的选项条件/费用/难度修正、20 的 `on_roll_failed = astral_rift.30`（`astral_rifts_0_events.txt:585–625`）、25/30 的 `after` 与 50 的 360 天延时。
 - 修正：编译图漏掉了失败分支（源图没有读取 `set_next_astral_rift_event` 块内的 `on_roll_failed`），30 曾被编成独立故事。已用三条桥接（20.a/b/c → 30）并入，并标注 25/30 互斥。
 - 不确定：描述标记驱动的文本变体未被条件模型解析。

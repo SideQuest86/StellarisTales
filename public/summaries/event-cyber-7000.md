@@ -1,8 +1,6 @@
 # 创世计划完成 / Genesis Project Complete
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Machine Age · 来源 Sources：`events/machine_age_events.txt:9-70`、`events/machine_age_events.txt:66-95`、`events/machine_age_events.txt:100-240`、`events/machine_age_events.txt:241-275`、`common/on_actions/00_on_actions.txt:1321-1322,2079` · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Machine Age
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,9 @@ All three need is_guided_sapience_empire; 7000 also needs a non-artificial plane
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/machine_age_events.txt:9-70`、`events/machine_age_events.txt:66-95`、`events/machine_age_events.txt:100-240`、`events/machine_age_events.txt:241-275`、`common/on_actions/00_on_actions.txt:1321-1322,2079`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 合并说明：event-cyber-7001 与 event-cyber-7020 是同一创世计划流程的另外两个入口，已并入。

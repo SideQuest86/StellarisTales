@@ -1,7 +1,5 @@
 # 野蛮迹象 / Signs of Barbarism
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（marauders_stage_1/2）
-- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:743-839` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:209-247`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:743-839` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:209-247`
 - 已核对 Checked：50、55与两个阶段定义。/ Both events and stage definitions.
 - 审阅改动 Changes：并 55 入本篇。/ 55 merged into this story.

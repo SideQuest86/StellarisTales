@@ -1,11 +1,7 @@
 # 计算超频 / Computational Overclocking
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/synthetic_dawn_events.txt:320-440,1307-1480,1485-2540`; `common/situations/02_strategic_situations.txt:578-710`; `common/on_actions/00_on_actions.txt:298,3132-3133`
 - DLC：Synthetic Dawn
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ The nomadic-originator branch (nomads.20) was removed from this story; some even
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/synthetic_dawn_events.txt:320-440,1307-1480,1485-2540`; `common/situations/02_strategic_situations.txt:578-710`; `common/on_actions/00_on_actions.txt:298,3132-3133`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了十年脉冲与阈值、情势定义、八个每月事件的挂接和起义战争结局；原先的 event-syndaw-1200 / -1205 并入本故事。
 
 Checked the decade pulse and thresholds, the situation definition, the hooks of the eight monthly events and the uprising war outcomes; the former event-syndaw-1200 / -1205 are merged here.

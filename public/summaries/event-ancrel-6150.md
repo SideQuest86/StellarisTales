@@ -1,6 +1,6 @@
 # 屏障星球 / Shielded Planet
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_2.txt:1171–1500（ancrel.6150–6185）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:227、270；common/relics/relics.txt:239、309；common/on_actions/00_on_actions.txt:1154–1155；common/solar_system_initializers/ancient_relics_initializers.txt:5 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -29,10 +29,10 @@ The relic can be activated: ancrel.7007 "Miniature Galaxy" (time runs faster ins
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。 / None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_2.txt:1171–1500（ancrel.6150–6185）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:227、270；common/relics/relics.txt:239、309；common/on_actions/00_on_actions.txt:1154–1155；common/solar_system_initializers/ancient_relics_initializers.txt:5
 - 已核对：ancrel.6150、6151、6155–6185 的脚本，两个遗址定义，初始化器 relic_system_1 的标志，r_galaxy 遗珍与 ancrel.7007，on_survey_planet 调用点；中英文正文已读。
 - Checked: the scripts of ancrel.6150, 6151, 6155-6185, both site definitions, the flags in the initializer relic_system_1, the relic r_galaxy and ancrel.7007, and the on_survey_planet call site; both languages read.
 - 修正：原先 event-ancrel-6150 与 event-ancrel-6151 是两个几乎一样的重复故事，event-ancrel-7007 是孤立的一张卡；现合并为一个故事，6150/6151 标为互斥的两个入口，7007 作为遗珍激活并入。

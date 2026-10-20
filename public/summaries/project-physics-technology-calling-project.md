@@ -1,8 +1,6 @@
 # 知识的召唤 / Calling of Knowledge
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/04_projects_shroud.txt` · `common/patrons/callings/00_callings.txt` · `common/inline_scripts/shroud/patron_calling_special_project.txt` · `events/shroud_events.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/04_projects_shroud.txt` · `common/patrons/callings/00_callings.txt` · `common/inline_scripts/shroud/patron_calling_special_project.txt` · `events/shroud_events.txt`
 - 已对照三个项目脚本、inline脚本与召唤定义。三个文档是同一机制的三个变体，不是连续剧情。  
   Compared the three project scripts, the inline script and the calling definition. The three docs are variants of one mechanism, not a sequence.
 - 覆盖 Coverage：全部3个文档。 / All 3 docs.

@@ -1,8 +1,6 @@
 # 失落帝国行为 / Fallen Empire Behavior
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · 来源 Sources：`events/game_start.txt:1706-1722`、`common/situations/03_AI_empire_situations.txt:618-660`、`events/fallen_empire_events.txt:90-190`、`events/fallen_empire_events.txt:190-450` · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,9 @@ The conditions for each warning are listed above.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/game_start.txt:1706-1722`、`common/situations/03_AI_empire_situations.txt:618-660`、`events/fallen_empire_events.txt:90-190`、`events/fallen_empire_events.txt:190-450`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 编译器曾把 4–8 显示为各30%概率的并列随机项；已更正为顺序匹配。

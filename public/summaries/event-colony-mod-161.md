@@ -1,8 +1,6 @@
 # 磁力奇迹 / Magnetic Miracle
 
 - 分类 Category：文明纪事 Society (C7) · 星球修正殖民地事件 planet-modifier colony event
-- 来源 Sources：`events/colony_events_3.txt:764–898`（事件）· `:919–1034`（分派器 colony_mod.161）· `common/special_projects/00_projects_3.txt:671–684` · `common/on_actions/00_on_actions.txt:3721`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@ When a colony turns one year old, the hidden dispatcher colony_mod.161 runs. If 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:764–898`（事件）· `:919–1034`（分派器 colony_mod.161）· `common/special_projects/00_projects_3.txt:671–684` · `common/on_actions/00_on_actions.txt:3721`
 - 已核对 Checked：分派器 colony_mod.161 的全部 `if … break = yes` 块、事件 16/17/18、项目定义与 `on_colony_1_year_old`。/ The dispatcher's `if … break` blocks, events 16/17/18, the project and the on_action.
 - 审阅改动 Changes：编译草稿把分派器能触发的六种互不相关的星球修正事件（磁场、辐照、泰坦巨兽、地震、彗星、致幻大气）合成一个“磁力奇迹”故事。现拆为六个故事：本故事（event-colony-mod-161）只保留磁场事件；其他见 event-colony-mod-1/2/3/4/5。泰坦巨兽在“原始呼唤”起源下改走 grand_archive.1010，属于该起源故事。/ The draft merged six unrelated modifier events behind one dispatcher; split into six stories. The Primal Calling titanic-life variant (grand_archive.1010) belongs to that origin's story.
 - 不确定 Uncertain：`check_variable value = 3` 按脚本注释理解为“计数等于3”；引擎是否按“≥3”处理在脚本中不可见。/ Read as "counter equals 3"; engine semantics not visible in script.

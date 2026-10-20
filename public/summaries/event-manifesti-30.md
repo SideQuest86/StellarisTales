@@ -1,7 +1,5 @@
 # 噤声消散 / A Hush Descends
 - 分类 Category：文明纪事 Society (C7) · 派系事件 faction event
-- 来源 Sources：`events/faction_events.txt:1859-1925` · `common/pop_faction_types/00_manifesti.txt:409-421`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,5 +19,7 @@ A / B 互斥。/ A and B are exclusive.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/faction_events.txt:1859-1925` · `common/pop_faction_types/00_manifesti.txt:409-421`
 - 已核对 Checked：脚本与调用。/ Script and callers.
 - 审阅改动 Changes：结构无改动。/ No structural change.

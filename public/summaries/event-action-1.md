@@ -1,6 +1,6 @@
 # 第一次接触 / First Contact
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/on_action_events_1.txt:10-3437,3985-4141,4265-4340; common/on_actions/00_on_actions.txt:2265-2271 on_post_communications_established; events/first_contact_events.txt:10373-10377 · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ action.11 needs both sides not day_0, the other a default or enclave country, an
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/on_action_events_1.txt:10-3437,3985-4141,4265-4340; common/on_actions/00_on_actions.txt:2265-2271 on_post_communications_established; events/first_contact_events.txt:10373-10377
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

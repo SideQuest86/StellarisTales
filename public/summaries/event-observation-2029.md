@@ -1,7 +1,4 @@
-# [pre_ftl_planet.GetName]上的思潮变化 / Ethical changes on [pre_ftl_planet.GetName]
-- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:4671-5761` · `common/on_actions/00_on_actions.txt:563-575`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 原始星球上的思潮变化 / Ethical changes on a Pre-FTL Planet- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -23,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:4671-5761` · `common/on_actions/00_on_actions.txt:563-575`
 - 已核对 Checked：守门员 2029 与 2030–2043 的触发、效果与池。/ Gatekeeper and all sub-events.
 - 审阅改动 Changes：将 14 个并列入口标为互斥组，并写明守门员。/ The 14 parallel entries are annotated as one exclusive group behind the gatekeeper.

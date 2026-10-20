@@ -1,6 +1,6 @@
 # 研究军事方面的应用 / Find Military Applications
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/artifact_actions/artifact_actions.txt:352–406；events/ancient_relics_arcsite_events_2.txt:6371 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -24,5 +24,7 @@ ancrel.10010 "What aspect shall we focus on?" Four exclusive choices, each a 180
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/artifact_actions/artifact_actions.txt:352–406；events/ancient_relics_arcsite_events_2.txt:6371
 - 已核对：行动定义与 ancrel.10010 的脚本；中英文正文已读。
 - Checked: the action definition and the script of ancrel.10010; both languages read.

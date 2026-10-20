@@ -1,10 +1,6 @@
 # 行商：本地特许权 / Caravaneers: Local Franchise
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/caravaneer_events.txt:4448-4527`; `common/on_actions/00_on_actions.txt:443-451`; `events/on_action_events_3.txt:38`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -32,6 +28,9 @@ The accept option requires the refugees_allowed policy.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/caravaneer_events.txt:4448-4527`; `common/on_actions/00_on_actions.txt:443-451`; `events/on_action_events_3.txt:38`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了脚本触发、冷却旗标与选项效果；它与同一池里的其他事件相互独立。
 
 Trigger, cooldown flags and option effects were checked against the script; it is independent of the other events of the same pool.

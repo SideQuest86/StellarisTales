@@ -1,7 +1,6 @@
 # 远古船坞 / Ancient Shipyard
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:603; events/anomaly_events_2.txt:569 (anomaly.2550); common/special_projects/00_projects_1.txt (AUTOMATED_SHIPYARD_PROJECT); events/anomaly_events_2.txt:609 (anomaly.2551); events/anomaly_events_2.txt:673 (anomaly.2552)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Project results 2551/2552 are exclusive.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:603; events/anomaly_events_2.txt:569 (anomaly.2550); common/special_projects/00_projects_1.txt (AUTOMATED_SHIPYARD_PROJECT); events/anomaly_events_2.txt:609 (anomaly.2551); events/anomaly_events_2.txt:673 (anomaly.2552)
 已核对异常定义、项目与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition, the project and every outcome event; the compiled tree is correct, no change needed.

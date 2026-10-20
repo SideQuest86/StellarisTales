@@ -1,7 +1,6 @@
 # 不可能的有机体 / Impossible Organism
 
-- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar) · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1557-1584; events/distant_stars_events_2.txt:7136 (distar.3010); common/special_projects/00_projects_distant_stars.txt:728/748 (impossible_organism_project_1/2); events/distant_stars_events_2.txt:7180-7252 (distar.3011-3013); events/distant_stars_events_2.txt:7475 (distar.3014); events/distant_stars_events_2.txt:7637 (distar.3016); events/distant_stars_events_2.txt:7798 (distar.3017)
+- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar)
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ distar.3011 has a xenophobe wording; distar.3013's accept options split xenophil
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1557-1584; events/distant_stars_events_2.txt:7136 (distar.3010); common/special_projects/00_projects_distant_stars.txt:728/748 (impossible_organism_project_1/2); events/distant_stars_events_2.txt:7180-7252 (distar.3011-3013); events/distant_stars_events_2.txt:7475 (distar.3014); events/distant_stars_events_2.txt:7637 (distar.3016); events/distant_stars_events_2.txt:7798 (distar.3017)
 已核对异常、distar.3010–3017 与两个项目。树结构正确（3014 的汇合以 ref 节点表示）；补充结局。
 
 Checked the anomaly, distar.3010–3017 and both projects. Tree correct (3014 convergence shown as refs); endings added.

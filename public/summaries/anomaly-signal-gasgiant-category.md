@@ -1,7 +1,6 @@
 # 气态巨行星信号 / Gas Giant Signal
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:710; events/anomaly_events_4.txt:10 (anomaly.5000); common/special_projects/00_projects_1.txt (GAS_GIANT_SIGNAL); events/anomaly_events_4.txt:42 (anomaly.5001); events/anomaly_events_4.txt:72 (anomaly.5002); events/anomaly_events_4.txt:93 (anomaly.5003); common/special_projects/00_projects_1.txt (GAS_GIANT_RELOCATION); events/anomaly_events_4.txt:160 (anomaly.5004); events/anomaly_events_4.txt:202 (anomaly.5005); events/anomaly_events_4.txt:223 (anomaly.5006)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.5006's option a depends on whether the owner is of the Baldarak species.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:710; events/anomaly_events_4.txt:10 (anomaly.5000); common/special_projects/00_projects_1.txt (GAS_GIANT_SIGNAL); events/anomaly_events_4.txt:42 (anomaly.5001); events/anomaly_events_4.txt:72 (anomaly.5002); events/anomaly_events_4.txt:93 (anomaly.5003); common/special_projects/00_projects_1.txt (GAS_GIANT_RELOCATION); events/anomaly_events_4.txt:160 (anomaly.5004); events/anomaly_events_4.txt:202 (anomaly.5005); events/anomaly_events_4.txt:223 (anomaly.5006)
 已核对异常、anomaly.5000–5006、两个项目；编译树正确，无需改动。
 
 Checked the anomaly, anomaly.5000-5006 and both projects; the compiled tree is correct, no change needed.

@@ -1,7 +1,6 @@
 # 商品统合 / Commodities Consolidation
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`common/situations/08_machine_age_situations.txt:1459-1542`；`events/machine_age_events_2.txt:224-700`；`common/on_actions/00_on_actions.txt:57`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,5 +28,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`common/situations/08_machine_age_situations.txt:1459-1542`；`events/machine_age_events_2.txt:224-700`；`common/on_actions/00_on_actions.txt:57`
 - 已核对：开启条件、取向、失败回调、配额循环与两个结果。
   Checked: start condition, approaches, failure callback, quota loop and both results.

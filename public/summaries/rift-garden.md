@@ -1,8 +1,6 @@
 # 花园 / The Garden
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:170`；`events/astral_rifts_1_events.txt:1438–2488`（1400–1465）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1405、1415、1430、1435 已并入 / former standalone failure events merged in）
 
 ## 如何开始 How it starts
 
@@ -60,6 +58,8 @@ The most branching rift; the core question is to burn or not:
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1405、1415、1430、1435 已并入 / former standalone failure events merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:170`；`events/astral_rifts_1_events.txt:1438–2488`（1400–1465）
 - 已核对：裂隙定义与遗珍锁定；1400–1465 全部事件；九处 `on_roll_failed`（1400.b→1405、1405.a→1415、1410.b→1430、1425.c/1430.b/1435.b→1445、1440.b/1455.a/1456.a→1435，见各桥接证据行号）；1445 的科学家死亡、克隆放逐与 1800 天后的 1465。
 - 修正：V3 只记录了花园的部分失败分支；V4 源图仍漏读块内 `on_roll_failed`，1405/1415/1430/1435 曾被编成四个独立故事。已用九条桥接全部并入，并以互斥组说明成功/失败配对。
 

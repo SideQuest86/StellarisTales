@@ -1,6 +1,6 @@
 # C.A.R.E交互界面 / The C.A.R.E Interactive Interface
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_1.txt:3219；common/on_actions/00_on_actions.txt:839 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -20,10 +20,10 @@ Disassembling the interface: the species' pops are killed, the planet changes ha
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。 / None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_1.txt:3219；common/on_actions/00_on_actions.txt:839
 - 已核对：ancrel.2068 的脚本与 on_colony_attackers_win 调用点；中英文正文已读。
 - Checked: the script of ancrel.2068 and the on_colony_attackers_win call site; both languages read.
 - 不确定：“行星机械校准器”遗址 planetary_mechanocalibrator 与 C.A.R.E 防御协议的触发（ancrel.2050–2060）属于另一个故事，本故事只含结局事件。

@@ -1,9 +1,6 @@
 # 帝国封邑 / Imperial Fiefdom
 
 - 分类 Category：起源 Origins · DLC：Federations（帝国封邑，按游戏文件未核对）· 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_3.txt:1541-2520`、`common/scripted_effects/01_start_of_game_effects.txt`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 
 ## 如何开始 How it starts
 
@@ -27,6 +24,8 @@ At game start hidden origin.5700 sets up the overlord and vassals; a player vass
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：`events/origin_events_3.txt:1541-2520`、`common/scripted_effects/01_start_of_game_effects.txt`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.5700–5760 全部事件。 All events 5700-5760.
 - 更正 Corrections：补充 5725 → 5735 的连接、入口标签、邀请互斥组。 Added the 5725 -> 5735 link, labels and the offers group.
 - 不确定 Uncertain：AI 设置事件 5710 未追溯。 AI setup 5710 not traced.

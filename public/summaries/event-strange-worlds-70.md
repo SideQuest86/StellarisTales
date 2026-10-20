@@ -1,6 +1,6 @@
 # 怪异沙子 / Strange Sands
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/strange_worlds_events.txt:787-1185; common/on_actions/00_on_actions.txt:3731 on_colony_1_year_old (random 20/510) · DLC: BioGenesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -22,6 +22,8 @@ In 85, a (90) and b (95) are exclusive.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/strange_worlds_events.txt:787-1185; common/on_actions/00_on_actions.txt:3731 on_colony_1_year_old (random 20/510)
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

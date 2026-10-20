@@ -1,8 +1,6 @@
 # 坚守战线 / Hold the Line
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Cosmic Storms · 来源 Sources：`common/on_actions/00_on_actions.txt:5419-5427`、`events/cosmic_storms_events_1.txt:28-140`、`events/cosmic_storms_events_1.txt:1410-1455`、`events/cosmic_storms_events_1.txt:1457-1730`、`common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:626-681` · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Cosmic Storms
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,9 @@ The compiler shows entry p=0.00*: that is base weight 0 raised to 1 only for a n
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`common/on_actions/00_on_actions.txt:5419-5427`、`events/cosmic_storms_events_1.txt:28-140`、`events/cosmic_storms_events_1.txt:1410-1455`、`events/cosmic_storms_events_1.txt:1457-1730`、`common/archaeological_site_types/10_cosmic_storms_arc_sites.txt:626-681`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - 同一抽取中的其他结果（异常 STORMS_ANOM_*、望远镜 cstorms.1600、模仿者类别）属于其他故事。

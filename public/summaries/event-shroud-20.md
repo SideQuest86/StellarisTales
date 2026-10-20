@@ -1,11 +1,7 @@
 # 灵能响应 / Psionic Responses
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`common/on_actions/00_on_actions.txt:5801-5817 (on_shroud_delve)`; `events/shroud_events.txt:25-81 (shroud.2 song roll)`; `events/shroud_events.txt:191-211 (shroud.20)`; `events/shroud_events.txt:15993-16226 (7099-7121)`
 - DLC：Shadows of the Shroud
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ The decline options of 7120/7121 differ for machine empires; 7120's accept optio
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`common/on_actions/00_on_actions.txt:5801-5817 (on_shroud_delve)`; `events/shroud_events.txt:25-81 (shroud.2 song roll)`; `events/shroud_events.txt:191-211 (shroud.20)`; `events/shroud_events.txt:15993-16226 (7099-7121)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对 shroud.2 的掷骰、shroud.20 的触发与 7099–7121 的 after 链；编译结构正确（顺序链+末端互斥）。仅补充互斥组与节点标签。
 
 Checked the shroud.2 roll, the shroud.20 trigger and the after-chain 7099–7121; the compiled structure (sequence plus exclusive end) is correct. Only an exclusive group and node labels were added.

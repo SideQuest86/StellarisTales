@@ -1,8 +1,6 @@
 # 无法解释的旋转 / Unexplainable Rotations
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`events/anomaly_events_4.txt:3130-3300` · `common/on_actions/00_on_actions.txt:1873-1887` · `common/special_projects/00_projects_3.txt:1533`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`events/anomaly_events_4.txt:3130-3300` · `common/on_actions/00_on_actions.txt:1873-1887` · `common/special_projects/00_projects_3.txt:1533`
 - 已对照原文。合并：原event-anomaly-6885并入。  
   Compared the originals. Merged: former event-anomaly-6885 is part of this story.
 - 覆盖 Coverage：全部4个文档。 / All 4 docs.

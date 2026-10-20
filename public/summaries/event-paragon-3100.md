@@ -1,11 +1,7 @@
 # 艾克萨凯德斯 / Exakeides
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/paragon_events_3.txt:1713-3000`; `common/event_chains/00_event_chains_paragon.txt:11`; `common/solar_system_initializers/paragon_initializers.txt:466,796`; `common/on_actions/00_on_actions.txt:935,960-962,1670`; `common/special_projects/01_projects_paragon.txt`
 - DLC：Galactic Paragons
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ The upbringing options of 3114 depend on empire ethics (xenophile/xenophobe/paci
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/paragon_events_3.txt:1713-3000`; `common/event_chains/00_event_chains_paragon.txt:11`; `common/solar_system_initializers/paragon_initializers.txt:466,796`; `common/on_actions/00_on_actions.txt:935,960-962,1670`; `common/special_projects/01_projects_paragon.txt`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了 events/paragon_events_3.txt:1713-3000 全部事件、专项、事件链定义（common/event_chains/00_event_chains_paragon.txt:11）和 common/solar_system_initializers/paragon_initializers.txt:466,796。原先的6张卡（3100、3120、3125、3130、3144、3149）并为一条故事，三处幻视地点共用的 3135→3141 合为一条路径。
 
 Checked all events, projects and the event-chain definition (common/event_chains/00_event_chains_paragon.txt:11) in events/paragon_events_3.txt:1713-3000 and the initializers (common/solar_system_initializers/paragon_initializers.txt:466,796). The former six cards (3100, 3120, 3125, 3130, 3144, 3149) are merged into one story; the shared 3135→3141 tail of the three vision sites is now a single path.

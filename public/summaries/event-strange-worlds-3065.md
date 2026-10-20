@@ -1,7 +1,6 @@
 # 轨道异常现象 / Orbital Anomaly
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/strange_worlds_observation_events.txt:751-993`；`common/on_actions/00_on_actions.txt:197`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,5 +26,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/strange_worlds_observation_events.txt:751-993`；`common/on_actions/00_on_actions.txt:197`
 - 已核对：分派条件与延迟。
   Checked: dispatcher conditions and delays.

@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/reader-extras.css" />
     <link rel="stylesheet" href="./src/effects-panel.css" />
+    <!-- The archive index is the first request the app script makes: start it with the page, not after the script has loaded. -->
+    <link rel="preload" href="./public/stories/index.json" as="fetch" crossorigin />
     <!-- The 3D engine is discovered late through app.js → archive-scene.js; fetch it in parallel. -->
     <link rel="modulepreload" href="./vendor/three.module.js" />
     <link rel="modulepreload" href="./vendor/three.core.js" />
@@ -49,7 +51,7 @@
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#archive-hud" data-i18n="archive.open">展开故事</a>
+    <a class="skip-link" href="#archive-hud" data-i18n="archive.skip">跳到故事选择</a>
     <header class="masthead">
       <a href="#" class="brand" data-i18n-aria="brand.home" aria-label="Stellaris Tales 首页"
         ><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 36 31H4Z M20 12v25 M8 25h24" /></svg
@@ -59,7 +61,7 @@
       >
       <nav id="categories" class="catalogue" data-i18n-aria="catalogue.label" aria-label="故事类别"></nav>
       <div class="header-actions">
-        <button id="search-open" type="button"><span aria-hidden="true">⌕</span> <span data-i18n="header.search">搜索</span></button
+        <button id="search-open" type="button" data-i18n-aria="header.search" aria-label="搜索"><span aria-hidden="true">⌕</span> <span data-i18n="header.search">搜索</span></button
         ><button id="language" type="button" data-i18n="header.language" data-i18n-aria="header.languageLabel" aria-label="切换为英文">中 / EN</button
         ><button id="motion" type="button" aria-pressed="false" data-i18n="motion.reduce">减少动态</button>
       </div>
@@ -72,10 +74,11 @@
       <div class="archive-hud" id="archive-hud">
         <div class="selection">
           <div class="selection-eyebrow">
-            <span id="category-label">深空异闻</span><i aria-hidden="true"></i><span id="chapter-count"></span>
+            <span id="category-label">深空异闻</span><i aria-hidden="true"></i><span id="chapter-count"></span><i aria-hidden="true" id="read-sep" hidden></i><span id="read-count" hidden></span>
           </div>
           <h1 id="selected-title" data-i18n="archive.loadingTitle">载入中</h1>
           <p id="selected-excerpt"></p>
+          <div id="story-specimens" class="story-specimens" hidden></div>
           <button id="open-story" class="access" type="button"
             ><span data-i18n="archive.open">展开故事</span> <span aria-hidden="true">↗</span></button
           >
@@ -83,8 +86,8 @@
         <div class="navigation">
           <div class="row-navigation">
             <div class="row-counter"><b id="story-number">01</b><span id="story-total">/ —</span></div>
-            <button id="previous-story" type="button" data-i18n-aria="archive.previousStory" aria-label="上一份故事">↑</button
-            ><button id="next-story" type="button" data-i18n-aria="archive.nextStory" aria-label="下一份故事">↓</button>
+            <button id="previous-story" type="button" data-i18n-aria="archive.previousStory" aria-label="上一则故事">↑</button
+            ><button id="next-story" type="button" data-i18n-aria="archive.nextStory" aria-label="下一则故事">↓</button>
           </div>
           <div class="lane-navigation">
             <button id="previous-category" type="button" data-i18n-aria="archive.previousCategory" aria-label="上一个类别">←</button
@@ -96,7 +99,7 @@
     </main>
     <section id="reader" hidden aria-labelledby="reader-title" data-i18n-aria="reader.label">
       <div class="reader-left">
-        <h2 id="dossier-title"></h2>
+        <p id="dossier-title"></p>
         <span id="dossier-size"></span>
       </div>
       <aside id="flow-surface" hidden data-i18n-aria="reader.routeLabel" aria-label="档案剧情路线"></aside>
@@ -116,7 +119,7 @@
       <div class="playing-track">
         <img id="album-cover" data-i18n-alt="music.cover" alt="群星原声专辑封面" width="43" height="43" />
         <div>
-          <button id="playlist-toggle" type="button" aria-expanded="false">
+          <button id="playlist-toggle" type="button" aria-expanded="false" aria-controls="playlist">
             <span id="track-title">Faster Than Light - Feat. Mia Stegmar</span><span aria-hidden="true">⌃</span></button
           ><small id="track-artist"></small>
         </div>
@@ -169,7 +172,7 @@
       <div id="search-results"></div>
       <div class="search-pager">
         <button id="search-previous" type="button" data-i18n-aria="search.previous" aria-label="上一页">←</button
-        ><span id="search-page"></span
+        ><span id="search-page" aria-live="polite"></span
         ><button id="search-next" type="button" data-i18n-aria="search.next" aria-label="下一页">→</button>
       </div>
     </dialog>

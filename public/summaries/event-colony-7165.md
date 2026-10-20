@@ -1,8 +1,6 @@
 # 麻烦的小动物 / Troublesome Critters
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地插曲 colony interlude
-- 来源 Sources：`events/colony_events_3.txt:10192–10455` · `events/anomaly_events_4.txt:4570–4590` · `common/on_actions/00_on_actions.txt:3905–3912`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -25,8 +23,8 @@ At the tenth anniversary (weight 10) for empires that own desertling fauna (set 
 
 ## 条件与文明差异 Conditions and variants
 
-无文明身份差异。/ None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:10192–10455` · `events/anomaly_events_4.txt:4570–4590` · `common/on_actions/00_on_actions.txt:3905–3912`
 已核对 7165、7170、7175、隐藏 7180 与入口条件；编译草稿正确。异常故事中的直接后续 7166 与本篇选项相同，但属于该异常故事。/ Draft correct; the anomaly-scheduled twin 7166 stays in the anomaly story.

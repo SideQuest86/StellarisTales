@@ -1,11 +1,7 @@
 # 虚境住民 / A Presence in the Shroud
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`common/on_actions/00_on_actions.txt:388 (on_monthly_pulse_country → shroud.11000)`; `events/shroud_events.txt:17892-17974 (11000/11001)`; `events/shroud_events.txt:8402-8427 (4040)`; `events/shroud_events.txt:8933-9044 (4135)`; `events/shroud_events.txt:11370-11426 (4715)`; `common/scripted_effects/shroud_shadows_scripted_effects.txt:2376-2436 (accept_end_of_the_cycle)`; `common/situations/13_shroud_situations.txt:559-727`; `common/script_values/07_script_values_shroud.txt:795-801`; `common/patrons/psionic_auras/00_auras.txt:966-1193`; `events/shroud_events.txt:12682-13075 (4950-4972)`; `common/patrons/patron_types.txt:996-1050 (Creation accord → 4935)`; `common/resolutions/05_resolutions_shroud.txt (focus: malevolent aura → 12160)`; `events/shroud_events.txt:18496-18610 (11240/11245/11250)`; `events/shroud_events.txt:19919-19930 (12160)`
 - DLC：Shadows of the Shroud
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ After the covenant (state-triggered, all conditional links): when the Aura of th
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`common/on_actions/00_on_actions.txt:388 (on_monthly_pulse_country → shroud.11000)`; `events/shroud_events.txt:17892-17974 (11000/11001)`; `events/shroud_events.txt:8402-8427 (4040)`; `events/shroud_events.txt:8933-9044 (4135)`; `events/shroud_events.txt:11370-11426 (4715)`; `common/scripted_effects/shroud_shadows_scripted_effects.txt:2376-2436 (accept_end_of_the_cycle)`; `common/situations/13_shroud_situations.txt:559-727`; `common/script_values/07_script_values_shroud.txt:795-801`; `common/patrons/psionic_auras/00_auras.txt:966-1193`; `events/shroud_events.txt:12682-13075 (4950-4972)`; `common/patrons/patron_types.txt:996-1050 (Creation accord → 4935)`; `common/resolutions/05_resolutions_shroud.txt (focus: malevolent aura → 12160)`; `events/shroud_events.txt:18496-18610 (11240/11245/11250)`; `events/shroud_events.txt:19919-19930 (12160)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 阅读 11000/11001、4040、4135、4715、4950–4972、11240–11250、12160 原文与 accept_end_of_the_cycle、end_of_the_cycle 局势、end_aura 定义、创造协约与“焦点：恶毒光环”决议。修正：将原本分散的 event-shroud-4950、-4935、-11250、-12160、-11240 并入本故事，并用带证据的条件连接挂到立约之后，不再作为无前因的独立卡片；局势、阶段事件、4955 与 12155 与灵督终末者起源/奥伏戎故事共享，不独占。
 
 Read 11000/11001, 4040, 4135, 4715, 4950–4972, 11240–11250 and 12160 together with accept_end_of_the_cycle, the end_of_the_cycle situation, the end_aura definition, the Creation accord and the "Focus: Malevolent Aura" resolution. Correction: the scattered draft stories event-shroud-4950, -4935, -11250, -12160 and -11240 are merged here and attached after the covenant with evidence-backed conditional links instead of standing as cards without a cause; the situation, its stage events, 4955 and 12155 are shared with the Endbringers origin / Ouw'ron stories, not owned.

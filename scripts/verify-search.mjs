@@ -62,6 +62,23 @@ const probes = {
   textZh: { term: textZh.phrase, ...textZh }, effZh: { term: effZh.phrase, ...effZh },
 };
 console.log("probes", JSON.stringify(probes));
+// Round 5 probes: prefix, two-word partial, single CJK character, typo, no result.
+const allTerms = [...termDocs.keys()];
+const latinWord = (t) => /^[a-z]{5,}$/.test(t);
+const prefixQ = textEn[0].slice(0, textEn[0].length - 2);
+const sibling = allTerms.find((t) => latinWord(t) && t !== textEn[0] && termDocs.get(t).docs.includes(textEn[1].docs[0]) && termDocs.get(t).masks[termDocs.get(t).docs.indexOf(textEn[1].docs[0])] & FIELD.text);
+const typoQ = (() => {
+  const w = textEn[0];
+  for (let i = 3; i < w.length - 1; i++) {
+    const q = w.slice(0, i) + w.slice(i + 1);
+    if (!allTerms.some((t) => t.startsWith(q)) && !titleBlob.includes(q)) return q;
+  }
+  throw new Error("no typo probe");
+})();
+const rareZh = [...termDocs].filter(([t, p]) => /^[㐀-鿿]$/.test(t) && p.docs.length >= 1 && p.docs.length <= 3 && p.masks.every((m) => m === FIELD.text) && p.docs[0] < meta.spStart && !titleBlob.includes(t)).sort((a, b) => a[0].localeCompare(b[0]))[7];
+const titleZh = await json("search/titles-zh.json");
+const titleChar = [...new Set(titleZh.slice(0, meta.spStart).join(""))].find((c) => /^[㐀-鿿]$/.test(c) && termDocs.get(c) && termDocs.get(c).docs.length > 8 && termDocs.get(c).docs.length < 150 && termDocs.get(c).masks.some((m) => m & FIELD.name) && termDocs.get(c).masks.some((m) => !(m & FIELD.name)));
+console.log("round5 probes", JSON.stringify({ prefixQ, of: textEn[0], sibling, typoQ, rareZh: rareZh?.[0], titleChar }));
 const spec = (await json("museum/specimens.json")).specimens.find((s) => /^[A-Za-z ]{8,}$/.test(s.name.en));
 
 // ---- browser ----
@@ -98,7 +115,7 @@ try {
     await page.waitForFunction(() => document.querySelectorAll("#search-results .search-story").length >= 20);
     const t0 = Date.now();
     await page.locator("#search-input").fill(q);
-    await page.waitForFunction((q) => document.querySelector("#search-input").value === q && /(results|条结果|No matches|没有匹配)/.test(document.querySelector("#search-count").textContent) , q);
+    await page.waitForFunction((q) => document.querySelector("#search-input").value === q && /(results?|条结果|No matches|没有匹配)/.test(document.querySelector("#search-count").textContent) , q);
     await page.waitForFunction(() => !document.querySelector("#search-results .hit-snip:empty") || !document.querySelector("#search-results .search-hit"), null, { timeout: 8000 }).catch(() => {});
     latencies.push(Date.now() - t0);
     return page.locator("#search-results .search-hit");
@@ -164,6 +181,40 @@ try {
   assert.equal(await page.locator("#search-results img[src=x]").count(), 0);
   step("hostile query is inert");
 
+  // ---- round 5: prefix, partial last word, single CJK character, typo fallback, no result ----
+  await page.goto(base, { waitUntil: "networkidle" });
+  await page.locator("#search-open").click();
+  const markOf = async (row) => (await row.locator(".hit-snip mark").allInnerTexts()).join("|").toLowerCase();
+  let row5 = await expectHit("en", prefixQ, "text", probes.textEn);
+  assert.ok((await markOf(row5)).includes(prefixQ), "prefix is highlighted");
+  step("Latin prefix finds the longer word", `${prefixQ} -> ${textEn[0]}`);
+  row5 = await expectHit("en", `${sibling} ${prefixQ}`, "text", probes.textEn);
+  step("two words, partial last word", `${sibling} ${prefixQ}`);
+  await search(`${prefixQ} ${sibling}`);
+  assert.equal(await page.locator(`#search-results .search-hit[data-hash*=${JSON.stringify(encodeURIComponent(probes.textEn.chapter))}]`).count(), 0, "earlier words stay exact");
+  step("a partial word that is not last stays exact");
+  row5 = await expectHit("en", typoQ, "text", probes.textEn);
+  assert.ok((await markOf(row5)).includes(textEn[0]), "approximate match highlights the real word: " + (await markOf(row5)));
+  const countLine = await page.locator("#search-count").innerText();
+  step("typo fallback finds the word", `${typoQ} -> ${textEn[0]}; count line "${countLine}"${/Close matches|相近结果/.test(countLine) ? "" : " (note needs the app.js countText patch)"}`);
+  await search("qzxjvwk");
+  assert.equal(await page.locator("#search-results .search-hit").count(), 0);
+  assert.ok(await page.locator("#search-results .empty").count(), "empty-state message");
+  assert.ok(!/Close matches|相近结果/.test(await page.locator("#search-count").innerText()), "no-result is not 'close matches'");
+  step("nonsense query shows the empty state");
+  await search("fleet");
+  assert.ok((await page.locator("#search-results .search-hit").count()) > 0 && !/Close matches|相近结果/.test(await page.locator("#search-count").innerText()), "exact results are not marked approximate");
+  step("exact results are not marked approximate");
+  const zhChapter = { chapter: meta.ids[rareZh[1].docs[0]] };
+  await page.locator("#search-input").fill(rareZh[0]);
+  await page.waitForSelector(`#search-results .search-hit[data-hash*=${JSON.stringify(encodeURIComponent(zhChapter.chapter))}]`, { timeout: 8000 });
+  row5 = await expectHit("en", rareZh[0], "text", zhChapter);
+  step("single Chinese character reaches body text", rareZh[0]);
+  await search(titleChar);
+  const first = page.locator("#search-results .search-story").first();
+  assert.ok((await first.getAttribute("class")).includes("search-hit") ? (await first.locator(".hit-type").getAttribute("data-type")) === "name" : true, "title matches come first");
+  step("single character: titles first", titleChar);
+
   // latency (index warm): repeat queries and time them in-page
   await page.goto(base, { waitUntil: "networkidle" });
   await page.locator("#search-open").click();
@@ -181,7 +232,7 @@ try {
       input.dispatchEvent(new Event("input"));
       await new Promise((r) => setTimeout(r, 120)); // debounce
       const t1 = performance.now();
-      while (!/(results|条结果|No matches|没有匹配)/.test(document.querySelector("#search-count").textContent)) await new Promise((r) => setTimeout(r, 5));
+      while (!/(results?|条结果|No matches|没有匹配)/.test(document.querySelector("#search-count").textContent)) await new Promise((r) => setTimeout(r, 5));
       res.push({ q, ms: Math.round(performance.now() - t1) });
     }
     await new Promise((r) => setTimeout(r, 300));

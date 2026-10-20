@@ -1,8 +1,6 @@
 # 迅速荒漠化 / Rapid Desertification
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:766-790` · `events/anomaly_events_4.txt:4513-4865 (7135-7155)` · `common/special_projects/00_projects_3.txt:1937-1989` · `events/colony_events_3.txt:10194-10458 (colony.7160-7180)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -34,6 +32,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:766-790` · `events/anomaly_events_4.txt:4513-4865 (7135-7155)` · `common/special_projects/00_projects_3.txt:1937-1989` · `events/colony_events_3.txt:10194-10458 (colony.7160-7180)`
 - 已核对 Checked：类别、7135–7155、两个项目、colony.7160–7180（含隐藏7180）。  
   Category, 7135–7155, both projects and colony.7160–7180 including hidden 7180.
 - 覆盖 Coverage：13 个文档全部核对 / all 13 docs checked.

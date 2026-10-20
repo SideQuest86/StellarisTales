@@ -1,5 +1,5 @@
 # 谜题一角，转瞬即逝（被解体的云团）/ Pieces of an Ephemeral Puzzle (The Dismembered Cloud)
-- 分类 Category: society (federation joint operation) · 来源 Sources: events/federations_events_3.txt:786-1312; common/special_projects/00_projects_federations.txt:421-462; common/on_actions/00_on_actions.txt:1903 · DLC: Federations · 审阅 Reviewed 2026-10-13 (r2-society)
+- 分类 Category：society (federation joint operation) · DLC: Federations
 
 ## 如何开始 How it starts
 - 中文：隐藏飞船事件 `federations3.2000`：建成研究站时由 `on_building_research_station` 以 5/105 权重抽到，或由荒原飞地 `enclave.4150` 触发。要求：联邦类型为默认或研究型；联邦尚未完成、近期（7200天内）也没有进行过本事件；至少一名成员不在战争中且有 `tech_sensors_2`；没有成员正处于该事件链。触发后该飞船所属国成为协调国，给每个成员随机一种颜色标记（只影响2010的正文），在每个成员首都生成云团，并向每个成员发出 **2001**。
@@ -19,6 +19,9 @@
 - 2010 正文有十种颜色变体（红、黄、绿、蓝、靛、粉、灰、橙、棕、青）；AI 的选择按人格加权。 / 2010's text has ten colour variants; AI choices are weighted by personality.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13 (r2-society)
+- 来源 Sources：events/federations_events_3.txt:786-1312; common/special_projects/00_projects_federations.txt:421-462; common/on_actions/00_on_actions.txt:1903
 - 已核对 Checked: hidden 2000, 2001, project definition, 2010-2017, 2020 in federations_events_3.txt; on_actions and enclave callers.
 - 更正 Corrections: story had no recorded entry; the real entry (2000) and its conditions are documented in a note. Finale events are marked as an exclusive group and given endings.
 - 不确定 Uncertain: 2000's ship owner as coordinator follows the script (discloud_coordinator = owner); other federation types are excluded by 2000's trigger.

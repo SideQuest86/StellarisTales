@@ -1,6 +1,6 @@
 # 生态系统升级 / Ecosystem Upgrade
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:7844-8179 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Environmentalist empires cannot accept and only refuse angrily; Planetscaper emp
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:7844-8179
 - 已核对两窗口的条件选项与随机结果权重。
   Checked conditional options of both windows and the random result weights.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

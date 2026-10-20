@@ -1,8 +1,6 @@
 # 太空城邦：艺术家联盟 / Enclave: The Artisan Troupe
 
 - 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
-- 来源 Sources：events/leviathans_events_1.txt:3051（285）, :3080–3372（290/295/301）, :3152（300 菜单 menu）, :3447–4512（304–345）, :4522（350）, :4559–4710（351–354）; events/observer_events.txt:245–261; common/on_actions/00_on_actions.txt:719–720, :1372, :1578, :1644
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 首次接触完成或“通讯已建立”后，经隐藏事件 290 显示艺术家联盟的问候（295）；若我们此前攻击过他们，则改为“拒不回应”（301）。此后每次外交联络经 285 打开菜单（300）。菜单可反复使用。
@@ -23,6 +21,9 @@ After first contact, hidden 290 shows the greeting 295 (or 'no answer' 301 if we
 Homicidal empires only get 'Xeno scum'; gestalts cannot hold the festival; nomads build the college on a waystation.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/leviathans_events_1.txt:3051（285）, :3080–3372（290/295/301）, :3152（300 菜单 menu）, :3447–4512（304–345）, :4522（350）, :4559–4710（351–354）; events/observer_events.txt:245–261; common/on_actions/00_on_actions.txt:719–720, :1372, :1578, :1644
 - 已核对菜单全部选项条件、赞助循环（311 权重与修正、各信的后续排期）、盛典随机表（10/10/5/75）、攻击与被毁的分派。
 - 更正：草稿把问候（-290）、菜单（-285）、被毁通知（-351）和摧毁者通知（-354）拆成四个故事；现合并为一个城邦故事。赞助来信之间的 ↺ 表示“下一封信”循环，不是同一次选择的连续结果。
 - 覆盖完整。Coverage complete.

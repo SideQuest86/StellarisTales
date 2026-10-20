@@ -1,6 +1,6 @@
 # 环形世界建造方的请求 / Ring World builder request
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/megastructure_events_1.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -32,6 +32,8 @@ Random event (MTTH 3600 days, megastructure_events_1.txt:13-63): you are a fanat
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/megastructure_events_1.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：utopia.1–6 全部触发、选项与延迟（megastructure_events_1.txt:13-414）。编译树与源码一致，无更正。
   Tree matches the source; no correction needed.
 - 不确定 Uncertain：default_hide_option 在游戏界面中的具体显示规则未在文件中说明。 How default_hide_option is displayed in game is not documented in the files.

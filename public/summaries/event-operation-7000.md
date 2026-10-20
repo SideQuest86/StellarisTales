@@ -1,6 +1,6 @@
 # 信息收集 / Gather Information
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ Single-stage operation (20 influence, 4 energy upkeep, one at a time).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：operation.7000 的抽签与标记（nemesis_operations_events_1.txt:5051-5200）；未逐一核对 18 个选项的情报效果。 The 18 options' intel effects were not audited one by one.

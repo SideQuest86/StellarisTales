@@ -162,8 +162,8 @@ LABELS = {
     'exotic_gas_candidate': ('适合产出奇异气体', 'is an exotic gas candidate'), 'rare_crystal_candidate': ('适合产出稀有水晶', 'is a rare crystal candidate'),
     'volatile_motes_candidate': ('适合产出挥发微粒', 'is a volatile motes candidate'), 'food_candidate': ('适合产出食物', 'is a food candidate'),
     'can_obtain_volatile_motes': ('能够获得挥发微粒', 'can obtain volatile motes'), 'can_obtain_rare_crystals': ('能够获得稀有水晶', 'can obtain rare crystals'),
-    'has_any_megastructure': ('拥有任意巨型建筑', 'has any megastructure'), 'owns_lgate_megastructure': ('拥有L星门巨型建筑', 'owns an L-Gate megastructure'),
-    'lgate_enabled': ('L星门已启用', 'the L-Gate is enabled'), 'is_scripted_terraforming': ('正在进行剧情设定的环境改造', 'is undergoing scripted terraforming'),
+    'has_any_megastructure': ('拥有任意巨型建筑', 'has any megastructure'), 'owns_lgate_megastructure': ('拥有L-星门巨型建筑', 'owns an L-Gate megastructure'),
+    'lgate_enabled': ('L-星门已启用', 'the L-Gate is enabled'), 'is_scripted_terraforming': ('正在进行剧情设定的环境改造', 'is undergoing scripted terraforming'),
     'is_terraforming': ('正在进行环境改造', 'is being terraformed'), 'has_planetary_shield_building': ('有行星护盾建筑', 'has a planetary shield building'),
     'has_anvil_building': ('有「铁砧」建筑', 'has an anvil building'), 'has_orbital_station': ('有轨道空间站', 'has an orbital station'),
     'is_orbital_ring': ('是轨道环', 'is an orbital ring'), 'has_orbital_bombardment': ('正在遭受轨道轰炸', 'is under orbital bombardment'),
@@ -332,8 +332,8 @@ LABELS = {
     'has_espionage_category': ('间谍行动类别为{o}', 'the espionage category is {o}'), 'has_espionage_type': ('间谍行动为{o}', 'the espionage operation is {o}'),
     'has_sabotage_starbase_valid_target': ('有可破坏的星港目标', 'has a valid starbase sabotage target'), 'has_envoy_task': ('使节任务为{o}', 'the envoy task is {o}'),
     'has_event_chain': ('正在进行事件链{o}', 'is running the {o} event chain'), 'has_active_event': ('有一个进行中的事件', 'has an active event'),
-    'has_curator_event': ('有策展人事件', 'has a curator event'), 'has_failed_special_project_in_log': ('记录中有失败的专项{o}', 'the log has the failed project {o}'),
-    'is_researching_special_project': ('正在研究专项{o}', 'is researching the {o} special project'), 'is_researching_technology': ('正在研究科技{o}', 'is researching {o}'),
+    'has_curator_event': ('有策展人事件', 'has a curator event'), 'has_failed_special_project_in_log': ('记录中有失败的特殊项目{o}', 'the log has the failed project {o}'),
+    'is_researching_special_project': ('正在研究特殊项目{o}', 'is researching the {o} special project'), 'is_researching_technology': ('正在研究科技{o}', 'is researching {o}'),
     'last_increased_tech': ('最近提升的科技是{o}', 'the last technology increased is {o}'), 'is_last_increased_tech_rare': ('最近提升的是稀有科技', 'the last technology increased is rare'),
     'is_last_increased_tech_repeatable': ('最近提升的是可重复科技', 'the last technology increased is repeatable'),
     'is_last_increased_tech_category': ('最近提升的科技类别是{o}', 'the last technology increased is in the {o} category'),
@@ -343,7 +343,7 @@ LABELS = {
     'has_point_of_interest': ('有一处关注点', 'has a point of interest'), 'has_contract': ('有合约{o}', 'has the {o} contract'),
     'has_contract_of_category': ('有{o}类合约', 'has a {o} contract'), 'count_available_contracts': ('可用合约数量{op}{n}', 'available contracts: {op} {n}'),
     'count_issued_contracts': ('已发出的合约数量{op}{n}', 'issued contracts: {op} {n}'), 'has_term_value': ('条款内容为{o}', 'the term is {o}'),
-    'cruise_favoring_side_approach': ('巡航方针偏向一方', 'the cruise approach favours one side'),
+    'cruise_favoring_side_approach': ('巡航方针偏向一方', 'the cruise approach favors one side'),
     'has_accessible_precursor_system': ('有可前往的先驱者星系{o}', 'has the accessible precursor system {o}'),
     'has_mercenary_enclave_reached_lvl': ('雇佣兵飞地已达到等级{n}', 'the mercenary enclave has reached level {n}'),
     'has_cybernetics': ('拥有义体', 'has cybernetics'), 'has_met_primitives': ('已遇到原始文明', 'has met primitive civilizations'),
@@ -433,21 +433,31 @@ NO_OBJECT = {  # wording used when the game gives the condition's object no name
 
 ZH_NEG = (('是', '不是'), ('拥有', '没有'), ('能够', '无法'), ('处于', '不处于'), ('使用', '不使用'), ('正在', '没有在'), ('已', '尚未'), ('位于', '不位于'),
           ('属于', '不属于'), ('受', '不受'), ('重视', '不重视'), ('适合', '不适合'), ('可以', '不可以'), ('可', '不可'), ('含有', '不含有'), ('被', '没有被'),
-          ('有', '没有'), ('统治权柄为', '统治权柄不是'), ('物种', '并非：物种'), ('领袖', '并非：领袖'), ('起源', '起源不是'), ('星港', '并非：星港'), ('不', '并非：不'))
+          ('有', '没有'), ('统治权柄为', '统治权柄不是'), ('物种', '未满足：物种'), ('领袖', '未满足：领袖'), ('起源', '起源不是'), ('星港', '未满足：星港'), ('不', '未满足：不'))
 EN_NEG = (('is ', 'is not '), ('has ', 'does not have '), ('can ', 'cannot '), ('uses ', 'does not use '), ('owns ', 'does not own '), ('values ', 'does not value '),
           ('prefers ', 'does not prefer '), ('contains ', 'does not contain '), ('allows ', 'does not allow '), ('blocks ', 'does not block '),
           ('will ', 'will not '), ('are ', 'are not '), ('the ', 'it is not the case that the '), ('a ', 'it is not the case that a '))
 
 
 def negate(zh, en):
-    nz = next((b + zh[len(a):] for a, b in ZH_NEG if zh.startswith(a) and not b.startswith('并非')), None)
+    nz = next((b + zh[len(a):] for a, b in ZH_NEG if zh.startswith(a) and not b.startswith('未满足')), None)
     if nz is None:
-        nz = '并非：' + zh
+        nz = '未满足：' + zh
     ne = next((b + en[len(a):] for a, b in EN_NEG if en.startswith(a)), None)
     return nz, ne or 'not: ' + en
 
 
 LOC_KEYS = sorted({k for v in LABELS.values() for t in v[:2] for k in re.findall(r'\{((?:civic|origin|ap|tr|dlc)_[a-z0-9_]+)\}', t)})
+
+
+_QUOTED = re.compile(r'(「[^」]*」)')
+_NUM_CJK = re.compile(r'(?<=\d)(?=[\u4e00-\u9fff])|(?<=[\u4e00-\u9fff])(?=\d)')
+
+
+def num_space(zh):
+    """Chinese label text: a space between a number and the Chinese around it (the project's "N 个月" convention); names in 「」 are left alone."""
+    parts = _QUOTED.split(zh)
+    return ''.join(p if i % 2 else _NUM_CJK.sub(' ', p) for i, p in enumerate(parts))
 
 
 def render(key, ctx, names, num, opw, neg):
@@ -470,4 +480,4 @@ def render(key, ctx, names, num, opw, neg):
     zh, en = out
     if neg:
         zh, en = negate(zh, en)
-    return zh, en
+    return num_space(zh), en

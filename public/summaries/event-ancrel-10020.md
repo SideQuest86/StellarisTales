@@ -1,6 +1,6 @@
 # 研究民用方面的应用 / Find Peaceful Applications
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/artifact_actions/artifact_actions.txt:408–460；events/ancient_relics_arcsite_events_2.txt:6448 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -24,5 +24,7 @@ ancrel.10020 "What aspect shall we focus on?" Exclusive choices shown by empire 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/artifact_actions/artifact_actions.txt:408–460；events/ancient_relics_arcsite_events_2.txt:6448
 - 已核对：行动定义与 ancrel.10020 的脚本；中英文正文已读。
 - Checked: the action definition and the script of ancrel.10020; both languages read.

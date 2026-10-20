@@ -1,6 +1,6 @@
 # 岩居方舟吞噬行星 / Arkship lithoid world-devouring
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nomads_events_1.txt, common/situations/14_nomads_situations.txt, common/on_actions/02_component_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -20,4 +20,6 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nomads_events_1.txt, common/situations/14_nomads_situations.txt, common/on_actions/02_component_on_actions.txt
 - 已核对 Checked：触发事件与情境定义（14_nomads_situations.txt）；行星被毁后的堕落帝国反应属其他故事。

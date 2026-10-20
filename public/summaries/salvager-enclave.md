@@ -1,8 +1,6 @@
 # 打捞者城邦 / Salvager Enclave
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord
-- 来源 Sources：events/overlord_enclaves_events.txt:4174（enclave.300）, :4202（enclave.304）, :4227（enclave.305 菜单 menu）, :4550–6643（服务 services 310–365）, :12754（enclave.7005）; common/on_actions/00_on_actions.txt:741, :2703
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 可重复使用的联络菜单 enclave.305：首次接触完成或“通讯已建立”后经 enclave.304 打开，之后每次外交联络经 enclave.300 打开。另有“引见”：玩家研究战列舰、5级恒星基地、巨型工程或（非虚空居民）栖息地科技且尚未接触时，打捞者主动问候并赠送合金（enclave.7005）。
@@ -27,6 +25,9 @@ Repeatable contact menu enclave.305, opened via enclave.304 after first contact 
 Greetings vary by first/return visit, scavenger empires and past organic scrapping; services have trust thresholds and cooldowns.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:4174（enclave.300）, :4202（enclave.304）, :4227（enclave.305 菜单 menu）, :4550–6643（服务 services 310–365）, :12754（enclave.7005）; common/on_actions/00_on_actions.txt:741, :2703
 - 已核对 305 全部选项与各服务的后续调用、延迟（360、336、346、365）。
 - 更正：草稿中菜单重复于两个故事（300/304），且经“面纱旅人”把虚境行者城邦的全部内容（含预知事件、虚境庇护者事件）嵌入；现均为跨故事链接。
   Correction: the menu was duplicated (300/304) and embedded the whole Shroudwalker content through the Veilfarer question; now cross-links.

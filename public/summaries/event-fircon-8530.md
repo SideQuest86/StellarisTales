@@ -1,7 +1,6 @@
 # 政府的特色 / Flavors of Government
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/first_contact_dlc_events.txt:10144-10700`；`common/on_actions/00_on_actions.txt:468, 538-560`（on_five_year_random_pulse_pre_ftl）；`events/on_action_events_2.txt:3146-3179`（action.620/621）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -35,5 +34,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/first_contact_dlc_events.txt:10144-10700`；`common/on_actions/00_on_actions.txt:468, 538-560`（on_five_year_random_pulse_pre_ftl）；`events/on_action_events_2.txt:3146-3179`（action.620/621）
 - 已核对：分派权重修正、四个开场、选项与延迟。
   Checked: dispatcher weight modifiers, the four openings, options and delays.

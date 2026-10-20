@@ -1,7 +1,6 @@
 # 温顺好生养 / Tractable and Fertile
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/first_contact_dlc_events.txt:1113-1304`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -33,5 +32,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/first_contact_dlc_events.txt:1113-1304`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）
 - 已核对：1255 触发、1256/1257 文本与效果、360 天延迟、观测事件锁定/解锁。
   Checked: 1255 trigger, 1256/1257 text and effects, 360-day delay, observation-event lock/unlock.

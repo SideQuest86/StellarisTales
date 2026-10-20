@@ -1,6 +1,6 @@
 # 合成嬗变 / Synthetic Transformation
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：common/traditions/01_synthetics.txt:1–129、events/utopia_on_action_events.txt:882–1286、common/special_projects/00_projects_utopia.txt:34–64、common/situations/08_machine_age_situations.txt:1543–1775、events/machine_age_situation_events_2.txt:13–1768 · DLC：乌托邦 / 机械时代 Utopia / The Machine Age · 审阅 Reviewed 2026-10-12
+- 分类 Category：银河轶事 C8 stories · DLC：乌托邦 / 机械时代 Utopia / The Machine Age
 
 ## 如何开始 How it starts
 
@@ -38,6 +38,8 @@ Adopting the *Synthetics* traditions: with *The Machine Age* the *Synthesization
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/traditions/01_synthetics.txt:1–129、events/utopia_on_action_events.txt:882–1286、common/special_projects/00_projects_utopia.txt:34–64、common/situations/08_machine_age_situations.txt:1543–1775、events/machine_age_situation_events_2.txt:13–1768
 - 已核对 Checked：传统 on_enabled 与 tradition_swap、utopia.2550–2558、SYNTHETIC_EVOLUTION_PROJECT、局势定义、synth.1–5、100–405、2、4、500–525 的触发与调度。
 - 更正 Corrections：月度事件原本全部挂在局势根部，现按调度与进度门槛移到对应阶段之后；完成事件移到第四阶段之后；入口与互斥结果分组。
   Monthly events re-parented; completion moved after stage 4; exclusive groups added.

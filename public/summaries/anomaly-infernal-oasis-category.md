@@ -1,8 +1,6 @@
 # 地狱绿洲 / Infernal Oasis
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/103_anomaly_categories_infernals.txt:33-44` · `events/infernals_1_events.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/103_anomaly_categories_infernals.txt:33-44` · `events/infernals_1_events.txt`
 - 已对照类别脚本与事件文本。  
   Compared the category script and the event text.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

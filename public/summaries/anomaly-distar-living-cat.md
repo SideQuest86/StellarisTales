@@ -1,7 +1,6 @@
 # 彷徨海 / Haunting Sea
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:2612-2700 (living_planet_system); common/anomalies/95_anomaly_categories_distant_stars.txt:704-716; events/distant_stars_events_1.txt:5880 (distar.190); common/special_projects/00_projects_distant_stars.txt:1606 (STUDY_LIVING_SEA); events/distant_stars_events_1.txt:6004 (distar.191); events/distant_stars_events_1.txt:6045 (distar.192); events/distant_stars_events_1.txt:6128 (distar.193); events/distant_stars_events_1.txt:6196 (distar.194); events/distant_stars_events_1.txt:6255/6285 (distar.195/196); events/distant_stars_events_1.txt:6310-6379 (distar.1999/199); common/on_actions/00_on_actions.txt:1512, 1933, 4188
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ distar.190 has normal, machine and hive texts (gestalts are unaffected and do no
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:2612-2700 (living_planet_system); common/anomalies/95_anomaly_categories_distant_stars.txt:704-716; events/distant_stars_events_1.txt:5880 (distar.190); common/special_projects/00_projects_distant_stars.txt:1606 (STUDY_LIVING_SEA); events/distant_stars_events_1.txt:6004 (distar.191); events/distant_stars_events_1.txt:6045 (distar.192); events/distant_stars_events_1.txt:6128 (distar.193); events/distant_stars_events_1.txt:6196 (distar.194); events/distant_stars_events_1.txt:6255/6285 (distar.195/196); events/distant_stars_events_1.txt:6310-6379 (distar.1999/199); common/on_actions/00_on_actions.txt:1512, 1933, 4188
 已核对初始化、异常、distar.190–196、项目与两个前哨守门事件。树结构正确；STUDY_LIVING_SEA 及其后续也出现在 c3b 的 event-distar-1999（前哨路径），见账本 Requests。
 
 Checked the initializer, anomaly, distar.190–196, the project and the outpost gatekeepers. The tree is correct; STUDY_LIVING_SEA and its follow-ups also appear in c3b's event-distar-1999 (outpost path), see ledger Requests.

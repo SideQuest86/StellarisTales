@@ -1,8 +1,6 @@
 # 与心声通灵 / Commune with the Voice
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/04_projects_shroud.txt` · `common/situations/13_shroud_situations.txt` · `events/shroud_situation_events.txt` · `events/origin_events_shadows_shroud.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/04_projects_shroud.txt` · `common/situations/13_shroud_situations.txt` · `events/shroud_situation_events.txt` · `events/origin_events_shadows_shroud.txt`
 - 已对照项目脚本、shroud.2840与shroud.8400/8410。  
   Compared the project script, shroud.2840 and shroud.8400/8410.
 - 单文档项目故事：未添加从shroud.2840的连接，否则会把本项目并入另一位审阅者的起源故事。见请求。  

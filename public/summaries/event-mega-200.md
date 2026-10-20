@@ -1,7 +1,4 @@
-# §H都市星球§!：已覆盖[Root.GetName] / §HEcumenopolis§!: [Root.GetName] Encased
-- 分类 Category：文明纪事 Society (C7) · 巨型企业/决定事件 megacorp / decision event
-- 来源 Sources：`events/megacorp_events.txt:86-123` · `common/decisions/02_special_decisions.txt:1011`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 都市星球：已覆盖 / Ecumenopolis: Encased- 分类 Category：文明纪事 Society (C7) · 巨型企业/决定事件 megacorp / decision event
 
 ## 如何开始 How it starts
 
@@ -21,6 +18,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/megacorp_events.txt:86-123` · `common/decisions/02_special_decisions.txt:1011`
 - 已核对 Checked：200 的触发与 distar.198 的关系。/ The trigger and its relation to distar.198.
 - 审阅改动 Changes：无结构改动。/ No structural change.
 - 不确定 Uncertain：distar.198 属于遥远群星篇，这里只作为次入口。 / distar.198 belongs to the Distant Stars material.

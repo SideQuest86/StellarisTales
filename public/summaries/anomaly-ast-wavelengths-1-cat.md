@@ -1,8 +1,6 @@
 # 小行星电波 / Asteroid Waves
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1-65` · `events/anomaly_events_1.txt` · `events/anomaly_events_2.txt` · `common/special_projects/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1-65` · `events/anomaly_events_1.txt` · `events/anomaly_events_2.txt` · `common/special_projects/`
 - 已对照类别脚本1-65与树；项目REANIMATE_ROCK_BRAIN由galactic_features.385.reanimated引出，树已显示。  
   Compared category script 1-65 and the tree; REANIMATE_ROCK_BRAIN is reached through galactic_features.385.reanimated, shown in the tree.
 - 覆盖 Coverage：全部12个文档。 / All 12 docs.

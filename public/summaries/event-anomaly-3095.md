@@ -1,7 +1,6 @@
 # 星际绑架者 / The Ransomeers
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：events/anomaly_events_2.txt:2395-2560 (anomaly.3094, chain start; story anomaly-uhb-buoy-cat); events/anomaly_events_2.txt:2561 (anomaly.3095); events/anomaly_events_2.txt:2592 (anomaly.3096); events/anomaly_events_2.txt:2612 (anomaly.3097); events/anomaly_events_2.txt:2679-2767 (anomaly.3098-3100); events/anomaly_events_2.txt:2768-2906 (anomaly.3101-3105); common/on_actions/00_on_actions.txt:983 (on_entering_system_fleet); common/on_actions/00_on_actions.txt:1577 (on_fleet_destroyed_victim); common/on_actions/00_on_actions.txt:1630 (on_fleet_destroyed_perp)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ Several event names contain [Root.GetSpeciesAdj] and follow the captives' specie
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：events/anomaly_events_2.txt:2395-2560 (anomaly.3094, chain start; story anomaly-uhb-buoy-cat); events/anomaly_events_2.txt:2561 (anomaly.3095); events/anomaly_events_2.txt:2592 (anomaly.3096); events/anomaly_events_2.txt:2612 (anomaly.3097); events/anomaly_events_2.txt:2679-2767 (anomaly.3098-3100); events/anomaly_events_2.txt:2768-2906 (anomaly.3101-3105); common/on_actions/00_on_actions.txt:983 (on_entering_system_fleet); common/on_actions/00_on_actions.txt:1577 (on_fleet_destroyed_victim); common/on_actions/00_on_actions.txt:1630 (on_fleet_destroyed_perp)
 已核对 anomaly.3094–3105 与三个 on_action 钩子（983 进入、1577 他人击毁、1630 自己击毁）。修正：草稿把“进入系统”“他人击毁”“自己击毁”作为三个互不相连的故事；现合为一个以事件链“星际绑架者”为起点的故事，用审阅连接还原三种进展，并加互斥组。前半段（浮标、SOS、俘虏通话、链开启）属于 c3b 的 anomaly-uhb-buoy-cat。
 
 Checked anomaly.3094-3105 and the three on_action hooks (983 entering, 1577 destroyed by another, 1630 destroyed by you). Correction: the draft treated 'entering the system', 'destroyed by another' and 'destroyed by you' as three unconnected stories; they are now one story starting from the chain "The Ransomeers" with reviewed links restoring the three paths, plus exclusive groups. The first half (buoy, SOS, captive talk, chain start) belongs to c3b's anomaly-uhb-buoy-cat.

@@ -1,8 +1,6 @@
 # 但它们实在太可爱了！ / But They're Cute!
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:155-178` · `events/cosmic_storms_events_1.txt` · `common/special_projects/03_projects_cosmic_storms.txt` · `common/event_chains/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:155-178` · `events/cosmic_storms_events_1.txt` · `common/special_projects/03_projects_cosmic_storms.txt` · `common/event_chains/`
 - 已对照类别脚本、1500/1505/1515/1520与项目脚本。  
   Compared the category script, 1500/1505/1515/1520 and the project script.
 - 覆盖 Coverage：全部8个文档。 / All 8 docs.

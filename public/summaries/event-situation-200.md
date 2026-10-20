@@ -1,7 +1,6 @@
 # 恒星耀斑 / Solar Flare
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/situation_events.txt:1575-2826`；`common/situations/01_narrative_situations.txt:840-1047`（局势「地磁风暴」）；`common/on_actions/00_on_actions.txt`（on_colony_25_years_old 随机殖民地事件池）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -39,6 +38,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/situation_events.txt:1575-2826`；`common/situations/01_narrative_situations.txt:840-1047`（局势「地磁风暴」）；`common/on_actions/00_on_actions.txt`（on_colony_25_years_old 随机殖民地事件池）
 - 已核对：200–299 全部事件、隐藏分派 214/289、局势定义（阶段、方式、每月事件与权重、on_progress_complete、on_abort）。
   Checked: all events 200–299, hidden routers 214/289, and the situation definition (stages, approaches, monthly pool and weights, on_progress_complete, on_abort).
 - 更正 Corrections：草稿把三个“风暴之后”结局挂在 202 下（经隐藏计时事件），现改挂在局势卡下并注明按损伤阶段互斥；299 的边注明需要护理所；203 注明生物战利品条件。

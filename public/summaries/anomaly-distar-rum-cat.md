@@ -1,7 +1,6 @@
 # 熟悉的化合物 / Familiar Compounds
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:303-356; events/distant_stars_events_1.txt:3699 (distar.90); events/distant_stars_events_1.txt:3726 (distar.91); events/distant_stars_events_1.txt:3771/3806 (distar.92/93)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ As above.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:303-356; events/distant_stars_events_1.txt:3699 (distar.90); events/distant_stars_events_1.txt:3726 (distar.91); events/distant_stars_events_1.txt:3771/3806 (distar.92/93)
 已核对异常、distar.90–93。草稿把 90/91 显示为50%随机，实为条件互斥（*表示修正）；已加互斥组说明。
 
 Checked the anomaly and distar.90–93. The draft shows 90/91 as 50% random; they are condition-exclusive (marked * as modified); exclusive groups added.

@@ -1,7 +1,6 @@
 # 沉默巨兽 / Silent Behemoth
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:238-281; events/distant_stars_events_1.txt:3494 (distar.80); events/distant_stars_events_1.txt:3562-3633 (distar.81-82); common/on_actions/00_on_actions.txt:836
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@ distar.80 has an extra Evolutionary Predators origin option (situation progress 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:238-281; events/distant_stars_events_1.txt:3494 (distar.80); events/distant_stars_events_1.txt:3562-3633 (distar.81-82); common/on_actions/00_on_actions.txt:836
 已核对异常定义（含 on_spawn）、distar.80–82 与 on_colony_attackers_win。修正：草稿把 distar.82 作为独立故事；现以审阅连接接在异常结果之后。
 
 Checked the anomaly (incl. on_spawn), distar.80–82 and on_colony_attackers_win. Correction: distar.82 was a separate story in the draft; it now follows the anomaly result via a reviewed link.

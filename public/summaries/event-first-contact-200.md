@@ -1,7 +1,5 @@
 # 数据挖掘成功 / Data Delve Successful（入侵路线 hacking route）
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件 first_contact.200）
-- 来源 Sources：`events/first_contact_events.txt:1984–2378` · `common/first_contact/00_first_contact.txt:771–935`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -27,6 +25,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:1984–2378` · `common/first_contact/00_first_contact.txt:771–935`
 - 已核对 Checked：200–220 与入侵主/收尾阶段。
 - 审阅改动 Changes：并 205、206、210、215、216、220 到本篇（原 event-first-contact-200 仅含 200–216）。/ 220 (formerly its own story) joins this tree.
 - 不确定 Uncertain：220 里按标记（steal_physics/society/engineering）偷科技的标记来源未在此展开。/ Where the steal_* flags are set was not traced.

@@ -24,6 +24,7 @@ const esc = (s) =>
 const ZOOM_MIN = 0.3;
 const ZOOM_MAX = 1.8;
 const PAD = 28;
+const SLICE_MS = 8; // time budget of one slice of a progressive map build
 const trees = new WeakMap();
 
 // Text fitting without layout: per-character advances are measured once per font
@@ -36,16 +37,27 @@ function charWidths(font) {
   if (!table) advances.set(font, (table = new Map()));
   return table;
 }
+// CJK ideographs and kana are full-width in the UI fonts (advance = 1 em, also in the system fallbacks), so they need
+// no measurement. This also keeps canvas measureText away from the one-character lookahead of fitLines, which used to
+// request a web-font slice for a character that is never drawn and then re-laid out the whole page when it arrived.
+const fullWidth = (ch) => {
+  const c = ch.codePointAt(0);
+  return (c >= 0x4e00 && c <= 0x9fff) || (c >= 0x3400 && c <= 0x4dbf) || (c >= 0x3041 && c <= 0x30ff) || (c >= 0xf900 && c <= 0xfaff) || (c >= 0x20000 && c <= 0x2ebef);
+};
 function measurer(font) {
   measureContext ??= document.createElement("canvas").getContext("2d");
   const table = charWidths(font);
+  const em = Number(/(\d+(?:\.\d+)?)px/.exec(font)?.[1]) || 0;
   return (text) => {
     let width = 0;
     for (const ch of String(text)) {
       let w = table.get(ch);
       if (w === undefined) {
-        measureContext.font = font;
-        w = measureContext.measureText(ch).width;
+        if (em && fullWidth(ch)) w = em;
+        else {
+          measureContext.font = font;
+          w = measureContext.measureText(ch).width;
+        }
         table.set(ch, w);
       }
       width += w;
@@ -119,7 +131,8 @@ export class FlowSurface {
     if (!story.tree && !story.flow && !dossier?.tree) return;
     if (!trees.has(key)) trees.set(key, compactTree(toTree(dossier || { story, chapters })));
   }
-  update(story, chapters, current, visited, language, prose, trail = [], dossier) {
+  /** `options.progressive`: a story that has just opened draws its nodes in slices of a few ms (see fillNodes). */
+  update(story, chapters, current, visited, language, prose, trail = [], dossier, options = {}) {
     // Trees are cached per loaded dossier (or story object when no dossier is passed).
     const key = dossier || story;
     const storyChanged = this.story?.id !== story.id || this.sourceKey !== key;
@@ -149,7 +162,7 @@ export class FlowSurface {
     for (const id of this.path.nodes) for (let n = this.tree.nodes.get(id)?.parent; n; n = this.tree.nodes.get(n)?.parent) next.delete(n);
     const foldsChanged = !this.built || next.size !== this.collapsed.size || [...next].some((id) => !this.collapsed.has(id));
     this.collapsed = next;
-    if (!this.built || foldsChanged || languageChanged) this.render(storyChanged);
+    if (!this.built || foldsChanged || languageChanged) this.render(storyChanged, storyChanged && !!options.progressive);
     else this.paintState();
     if (this.followCurrent) this.focusCurrent(!storyChanged);
   }
@@ -183,8 +196,9 @@ export class FlowSurface {
   }
 
   // ---------------------------------------------------------------- render
-  render(fresh) {
+  render(fresh, progressive = false) {
     const tree = this.tree;
+    this.fillToken = (this.fillToken || 0) + 1; // any pending slices of an earlier build stop here
     const titleFont = `500 13px ${getComputedStyle(document.documentElement).getPropertyValue("--sans") || "sans-serif"}`;
     const captionFont = `400 11px ${getComputedStyle(document.documentElement).getPropertyValue("--sans") || "sans-serif"}`;
     this.fonts = { titleFont, captionFont };
@@ -201,16 +215,22 @@ export class FlowSurface {
     this.size = { w: Math.ceil(bounds.width + PAD * 2), h: Math.ceil(bounds.height + PAD * 2) };
     const rebuilt = !this.built || this.builtLanguage !== this.language;
     if (rebuilt) this.buildShell();
+    // The shell is still empty here: reading its size costs one small layout, and the view can then be placed in the same
+    // pass as the nodes. A transform that changes after the nodes were laid out makes Blink re-lay out every SVG text
+    // (scaled font) and repaint it: a second full pass of 30–60 ms right after the first.
+    if (rebuilt && !this.lastSize && this.viewport.clientWidth) this.lastSize = [Math.round(this.viewport.clientWidth), Math.round(this.viewport.clientHeight)];
     this.svg.setAttribute("width", this.size.w);
     this.svg.setAttribute("height", this.size.h);
     this.svg.setAttribute("viewBox", `${this.origin.x} ${this.origin.y} ${this.size.w} ${this.size.h}`);
     const edges = [];
     const joins = [];
     const nodes = [];
+    const queued = [];
     const visibleNode = (id) => this.layout.nodes.get(id)?.x !== undefined;
     for (const node of tree.nodes.values()) {
       if (!visibleNode(node.id) || node.type === "forest") continue;
-      nodes.push(this.nodeMarkup(node, this.layout.nodes.get(node.id)));
+      if (progressive) queued.push(node);
+      else nodes.push(this.nodeMarkup(node, this.layout.nodes.get(node.id)));
       const parent = tree.nodes.get(node.parent);
       if (!parent || parent.type === "forest" || !visibleNode(parent.id)) continue;
       const a = this.layout.nodes.get(parent.id), b = this.layout.nodes.get(node.id);
@@ -239,6 +259,7 @@ export class FlowSurface {
     this.edgeElements = [...this.edgeLayer.children];
     this.svg.setAttribute("aria-label", this.local(this.story.title));
     this.paintState();
+    if (progressive) this.fillNodes(queued);
     if (anchorScreen) {
       // Keep the anchor fixed on screen while folds change.
       const moved = this.layout.nodes.get(this.currentNode);
@@ -260,7 +281,7 @@ export class FlowSurface {
             <button type="button" data-flow-zoom="-0.15" aria-label="${esc(t("map.zoomOut"))}" title="${esc(t("map.zoomOut"))}">−</button><small data-flow-scale>100%</small><button type="button" data-flow-zoom="0.15" aria-label="${esc(t("map.zoomIn"))}" title="${esc(t("map.zoomIn"))}">+</button><button type="button" data-flow-fit aria-label="${esc(t("map.fit"))}" title="${esc(t("map.fit"))}"><span aria-hidden="true">⊡</span></button><button type="button" data-flow-current aria-label="${esc(t("map.locate"))}" title="${esc(t("map.locate"))}"><span aria-hidden="true">◎</span></button>
           </div>
         </div>
-        <div class="flow-viewport" tabindex="0" aria-label="${esc(t("map.viewport"))}" aria-roledescription="${esc(t("map.title"))}">
+        <div class="flow-viewport" tabindex="0" role="group" aria-label="${esc(t("map.viewport"))}" aria-roledescription="${esc(t("map.title"))}">
           <svg class="flow-svg" role="group" xmlns="${SVG}"><g class="flow-connections"></g><g class="flow-joins"></g><path class="flow-link-preview" d="" visibility="hidden"/><g class="flow-nodes"></g></svg>
         </div>
         <div class="flow-key" aria-hidden="true"><span class="key-current">${esc(t("map.keyCurrent"))}</span><span class="key-path">${esc(t("map.keyPath"))}</span><span class="key-read">${esc(t("map.keyRead"))}</span><span class="key-other">${esc(t("map.keyOther"))}</span><span class="key-ref">${esc(t("map.keyRef"))}</span></div>
@@ -412,28 +433,72 @@ export class FlowSurface {
     const caption = fitLines(node.caption, b.w - 22, this.fonts.captionFont, 1)[0] || "";
     return `<g class="flow-node group ${esc(node.type)}${folded ? " folded" : ""}" data-node="${esc(node.id)}" role="group" tabindex="-1" aria-label="${esc(node.caption)}" transform="translate(${x} ${b.y})"><title>${esc(node.caption)}</title><rect class="flow-box" width="${b.w}" height="${b.h}" rx="${b.h / 2}"/><text class="flow-caption" x="${b.w / 2}" y="${b.h / 2 + 4}" text-anchor="middle">${esc(caption)}</text>${badge}</g>`;
   }
+  /** Draw the node boxes in slices, nearest to the current page first. The first layout of a story's labels costs
+   *  ~0.3 ms per character not seen before in that font (shaping, then glyph bounds when painting): one pass over a
+   *  whole map was a 60–100 ms frame. Each slice stops after SLICE_MS (script + layout), the next one follows in the
+   *  next animation frame; an update() that rebuilds the map (fold, language, other story) cancels the rest. */
+  fillNodes(list) {
+    const token = this.fillToken;
+    const from = this.layout.nodes.get(this.currentNode);
+    const distance = (node) => {
+      const b = this.layout.nodes.get(node.id);
+      const dx = b.x - (from?.x ?? 0), dy = (b.y - (from?.y ?? 0)) * 1.8;
+      return dx * dx + dy * dy;
+    };
+    const queue = list.map((node) => [distance(node), node]).sort((a, b) => a[0] - b[0]).map((entry) => entry[1]);
+    // The nodes keep the tree's order in the DOM (reading order for assistive technology, Tab order): each one is put in
+    // before the next later node that is already there.
+    const position = new Map(list.map((node, i) => [node.id, i]));
+    const scratch = document.createElementNS(SVG, "g");
+    const slice = () => {
+      if (token !== this.fillToken) return;
+      const started = performance.now();
+      do {
+        const batch = queue.splice(0, 2);
+        for (const node of batch) {
+          scratch.innerHTML = this.nodeMarkup(node, this.layout.nodes.get(node.id));
+          const el = scratch.firstElementChild;
+          let before = null;
+          for (let i = position.get(node.id) + 1; i < list.length && !before; i++) before = this.nodeElements.get(list[i].id) || null;
+          this.nodeLayer.insertBefore(el, before);
+          this.nodeElements.set(node.id, el);
+          this.paintNode(node.id, el, this.path);
+          if (node.id === (this.focusNode && this.nodeElements.has(this.focusNode) ? this.focusNode : this.currentNode)) el.setAttribute("tabindex", "0");
+        }
+        this.svg.getBoundingClientRect(); // lay this batch out now, so the slice's cost is known
+      } while (queue.length && performance.now() - started < SLICE_MS);
+      if (queue.length) requestAnimationFrame(slice);
+      else {
+        this.nodeElements = new Map(list.filter((node) => this.nodeElements.has(node.id)).map((node) => [node.id, this.nodeElements.get(node.id)]));
+        this.paintState();
+      }
+    };
+    requestAnimationFrame(slice);
+  }
+  /** Route/visited classes of one node. */
+  paintNode(id, el, path) {
+    const node = this.tree.nodes.get(id);
+    const doc = node.doc;
+    const isCurrent = id === this.currentNode;
+    const onPath = path.nodes.has(id);
+    const visited = doc ? this.visited.has(doc) : node.type === "refset" ? node.items.some((i) => this.visited.has(i.doc)) : onPath;
+    el.classList.toggle("current", isCurrent);
+    el.classList.toggle("path", onPath && !isCurrent);
+    el.classList.toggle("visited", !onPath && visited);
+    el.classList.toggle("unread", !onPath && !visited && !isCurrent);
+    if (isCurrent) el.setAttribute("aria-current", "step");
+    else el.removeAttribute("aria-current");
+    if (node.type === "refset")
+      for (const item of el.querySelectorAll("[data-item]"))
+        item.classList.toggle("path", path.items.has(`${id}|${item.dataset.item}`));
+  }
   /** Route/visited classes only: no DOM rebuild while reading. */
   paintState() {
     if (!this.nodeElements) return;
     const path = this.path;
     this.stats.textContent = t("map.stats", { n: this.tree.docCount, r: [...this.visited].filter((id) => this.tree.primary.has(id)).length });
     if (this.captionLine) this.captionLine.textContent = this.docTitle(this.current);
-    for (const [id, el] of this.nodeElements) {
-      const node = this.tree.nodes.get(id);
-      const doc = node.doc;
-      const isCurrent = id === this.currentNode;
-      const onPath = path.nodes.has(id);
-      const visited = doc ? this.visited.has(doc) : node.type === "refset" ? node.items.some((i) => this.visited.has(i.doc)) : onPath;
-      el.classList.toggle("current", isCurrent);
-      el.classList.toggle("path", onPath && !isCurrent);
-      el.classList.toggle("visited", !onPath && visited);
-      el.classList.toggle("unread", !onPath && !visited && !isCurrent);
-      if (isCurrent) el.setAttribute("aria-current", "step");
-      else el.removeAttribute("aria-current");
-      if (node.type === "refset")
-        for (const item of el.querySelectorAll("[data-item]"))
-          item.classList.toggle("path", path.items.has(`${id}|${item.dataset.item}`));
-    }
+    for (const [id, el] of this.nodeElements) this.paintNode(id, el, path);
     for (const el of this.edgeElements) el.classList.toggle("traversed", path.edges.has(el.dataset.edge));
     for (const el of this.joinLayer.children) {
       const [from, to] = (el.dataset.join || "").split(">");

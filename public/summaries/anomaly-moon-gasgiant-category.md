@@ -1,7 +1,6 @@
 # 潜力巨大的卫星 / Promising Moon
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:229; events/anomaly_events_1.txt:4181 (anomaly.340); events/anomaly_events_4.txt:2814 (anomaly.6840)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.340's picture changes for bio-ship empires.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:229; events/anomaly_events_1.txt:4181 (anomaly.340); events/anomaly_events_4.txt:2814 (anomaly.6840)
 已核对。草稿把 anomaly.6840 显示为 p=0.00*（基础权重），实际是按有无光环 +10 的权重，已用互斥组说明。
 
 Checked. The draft shows anomaly.6840 as p=0.00* (its base weight); the real weight is +10 depending on the ring, documented with an exclusive group.

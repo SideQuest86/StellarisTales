@@ -1,8 +1,6 @@
 # 机械结构 / The Mechanism
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:266`；`events/astral_rifts_2_events.txt:348–506`（2100–2125）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 2120 已并入 / former standalone failure event 2120 merged in）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ Drawn by weight from the explorer's rift pool: weight 1. Because it can award Th
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 2120 已并入 / former standalone failure event 2120 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:266`；`events/astral_rifts_2_events.txt:348–506`（2100–2125）
 - 已核对：裂隙定义与遗珍锁定；2100–2125 全部事件；2115.a 的 `on_roll_failed = astral_rift.2120`（`astral_rifts_2_events.txt:447–451`）。
 - 修正：编译图漏掉失败分支，2120 曾是独立故事；已用桥接并入并标注互斥。
 

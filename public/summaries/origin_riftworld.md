@@ -1,9 +1,6 @@
 # 裂隙当空 / Riftworld
 
-- 分类 Category：起源 Origins · DLC：Astral Planes · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_astral_planes.txt:1-410`、`common/situations/06_astral_planes_situations.txt`、`common/archaeological_site_types/09_astral_planes_arc_sites.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Astral Planes
 
 ## 如何开始 How it starts
 
@@ -26,6 +23,9 @@ Hidden astral_planes.2100 creates the Ancient Crater site (2120) and schedules 1
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_astral_planes.txt:1-410`、`common/situations/06_astral_planes_situations.txt`、`common/archaeological_site_types/09_astral_planes_arc_sites.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：astral_planes.2100–2155 与局势、遗址定义。 Events 2100-2155, the situation and the site.
 - 更正 Corrections：入口加标签，补充随机组与结局标注。 Entries labelled; random group and endings marked.
 - 不确定 Uncertain：局势与通用星界故事共用。 The situation is shared with the generic Astral Planes content.

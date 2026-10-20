@@ -1,8 +1,6 @@
 # 商人城邦 / Trader Enclave（雪拉企业、里甘商业交易所、穆塔根商人公会）
 
 - 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
-- 来源 Sources：events/leviathans_events_1.txt:377（100）, :422–438（101/102）, :506–786（105–107 菜单 menus）, :929–2041（121–135）, :2404–2466（150–152）, :2501–2854（155–163）, :2905–2939（170/171）; common/scripted_variables/00_scripted_variables.txt:293; common/on_actions/00_on_actions.txt:93, :409, :715–718, :1371
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 三家商人城邦共用同一套菜单结构（脚本注释 leviathans_events_1.txt:359）。首次接触完成或“通讯已建立”后显示“与[城邦]的第一次接触”（102，正文分三家）。此后每次外交联络经隐藏事件 100 打开对应城邦的菜单——雪拉企业（105）、里甘商业交易所（106）或穆塔根商人公会（107）。可重复使用，不是线性剧情。
@@ -24,6 +22,9 @@ The three trader enclaves share one menu design. After first contact, 102 introd
 Homicidal empires cannot trade; gestalts and Worker Cooperatives get special consultant wording.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/leviathans_events_1.txt:377（100）, :422–438（101/102）, :506–786（105–107 菜单 menus）, :929–2041（121–135）, :2404–2466（150–152）, :2501–2854（155–163）, :2905–2939（170/171）; common/scripted_variables/00_scripted_variables.txt:293; common/on_actions/00_on_actions.txt:93, :409, :715–718, :1371
 - 已核对 100/101 路由、三份菜单的选项与条件、资源窗口与续约、顾问、攻击反应、拒绝与能量取消。
 - 更正：草稿把三家菜单、首次接触（event-leviathans-101）、攻击反应（-155）、三份拒绝（-157/-160/-163）、能量取消（-170）拆成七个故事；现合并为一个商人城邦故事，城邦被毁仍为独立故事。
 - 覆盖完整。Coverage complete.

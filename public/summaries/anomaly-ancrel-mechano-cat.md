@@ -1,8 +1,6 @@
 # 行星规模的机器 / A Planetary Machine
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/93_anomaly_categories_ancient_relics.txt:37-52` · `common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1565-1625` · `events/ancient_relics_arcsite_events_1.txt` · `common/special_projects/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/93_anomaly_categories_ancient_relics.txt:37-52` · `common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1565-1625` · `events/ancient_relics_arcsite_events_1.txt` · `common/special_projects/`
 - 已对照类别脚本、遗址定义与树。遗址失败时的挖掘事故是共享枢纽（ancrel.82xx）。  
   Compared the category script, the site definition and the tree. Dig incidents on failed rolls are shared hubs (ancrel.82xx).
 - 覆盖 Coverage：全部21个文档。 / All 21 docs.

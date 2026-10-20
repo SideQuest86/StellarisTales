@@ -1,7 +1,6 @@
 # 废弃外星平台 / Deserted Star Platform
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:5-72 (star_lifting_system); common/anomalies/95_anomaly_categories_distant_stars.txt:1087-1099; events/distant_stars_events_2.txt:1744 (distar.1020); common/special_projects/00_projects_distant_stars.txt:1016/1046 (STAR_LIFTING, STAR_LIFTING_WEAPONS); events/distant_stars_events_2.txt:1808 (distar.1021); events/distant_stars_events_2.txt:1857 (distar.1022)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ distar.1021.b (mocking molluscs) is hidden from molluscoid species.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:5-72 (star_lifting_system); common/anomalies/95_anomaly_categories_distant_stars.txt:1087-1099; events/distant_stars_events_2.txt:1744 (distar.1020); common/special_projects/00_projects_distant_stars.txt:1016/1046 (STAR_LIFTING, STAR_LIFTING_WEAPONS); events/distant_stars_events_2.txt:1808 (distar.1021); events/distant_stars_events_2.txt:1857 (distar.1022)
 已核对初始化、异常、distar.1020–1022 与两个项目。树结构正确。30天后的通用接触报告 story.5 是共享事件，不属于本故事。
 
 Checked initializer, anomaly, distar.1020–1022 and both projects. Tree correct. The generic contact report story.5 30 days later is a shared helper, not part of this story.

@@ -1,6 +1,6 @@
 # 奥术解密 / Arcane Deciphering
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/artifact_actions/artifact_actions.txt:5–58（artifact_arcane_deciphering）；events/ancient_relics_arcsite_events_2.txt:6106–6200（ancrel.10000–10003） · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -20,14 +20,15 @@ The action also sets the achievement flag arcana_achievement for players.
 
 ## 分支与结局 Branches and outcomes
 
-- 四个结果互斥，由 ancrel.10000 的 random_list 抽取；第四个没有可读文本。 / The four results are exclusive, drawn by the random_list of ancrel.10000; the fourth has no readable text.
+- 四个结果互斥，由 ancrel.10000 的 random_list 抽取。 / The four results are exclusive, drawn by the random_list of ancrel.10000.
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。 / None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/artifact_actions/artifact_actions.txt:5–58（artifact_arcane_deciphering）；events/ancient_relics_arcsite_events_2.txt:6106–6200（ancrel.10000–10003）
+- 编辑备注 Editor note：第四个没有可读文本。 / The fourth result has no readable text.
 - 已核对：行动定义与 ancrel.10000–10003 的脚本；中英文正文已读。
 - Checked: the action definition and the scripts of ancrel.10000-10003; both languages read.
 - 修正：原先 10001/10002/10003 被当成三个互不相关的入口；现标明它们是同一次掷骰的互斥结果。

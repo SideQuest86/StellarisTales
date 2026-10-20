@@ -1,9 +1,6 @@
 # 黑暗之怖 / Fear of the Dark
 
-- 分类 Category：起源 Origins · DLC：First Contact · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_3.txt:2556-6540`、`common/situations/04_first_contact_dlc_situations.txt`、`common/special_projects/00_projects_first_contact_dlc.txt`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：First Contact
 
 ## 如何开始 How it starts
 
@@ -30,6 +27,9 @@ There is no fixed opening event: game start only builds the separatist planet. E
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_3.txt:2556-6540`、`common/situations/04_first_contact_dlc_situations.txt`、`common/special_projects/00_projects_first_contact_dlc.txt`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：6000–6275 事件、两个局势、四个对策项目、on_action 与传统钩子。 Events 6000-6275, both situations, the four countermeasure projects and the hooks.
 - 更正 Corrections：通用的接触报告（story.1–8）与传统/飞升父事件（bio.170/175/180、utopia.2700/2703）仍显示在树中（编译器会把只通向本起源的根并入），但已标注为通用事件；所有状态入口加标签。保留 V3 已核对的猎手线与最后的赠礼连接。 The generic contact reports and tradition parents still appear in the tree (the compiler absorbs roots whose outcomes all belong to the origin) but are marked as generic; all state entries labelled; the V3-verified hunters and Last Gift bridges are kept.
 - 不确定 Uncertain：6125/6130/6135 对应的危机仅按事件编号识别。 The crisis behind 6125/6130/6135 is identified by id only.

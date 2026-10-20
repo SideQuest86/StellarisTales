@@ -1,6 +1,6 @@
 # 血肉苦弱 / The Flesh is Weak
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：common/traditions/01_cybernetics.txt:1–141、events/utopia_on_action_events.txt:322–726、common/special_projects/00_projects_utopia.txt:1–32、common/situations/08_machine_age_situations.txt:806–1455、events/machine_age_situation_events_1.txt · DLC：乌托邦 / 机械时代 Utopia / The Machine Age · 审阅 Reviewed 2026-10-13（r2-mixed）
+- 分类 Category：银河轶事 C8 stories · DLC：乌托邦 / 机械时代 Utopia / The Machine Age
 
 ## 如何开始 How it starts
 
@@ -52,6 +52,8 @@ Adopting the *Cybernetics* traditions picks one of three versions by DLC and emp
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13（r2-mixed）
+- 来源 Sources：common/traditions/01_cybernetics.txt:1–141、events/utopia_on_action_events.txt:322–726、common/special_projects/00_projects_utopia.txt:1–32、common/situations/08_machine_age_situations.txt:806–1455、events/machine_age_situation_events_1.txt
 - 已核对 Checked：传统 on_enabled 分派、utopia.2500–2510、FLESH_IS_WEAK_PROJECT、两个局势定义（阶段、on_monthly、完成、阻塞条件）、cyber.1–6/20–22/100–430/500–525、cyber.2002–2400。
 - 更正 Corrections：月度剧情事件原本全部挂在局势根部，现按进度门槛移到对应阶段之后；完成事件移到第四阶段之后；三个入口与对手事件标为互斥。
   Monthly story events were re-parented after their stages; completion moved after stage 4; exclusive groups added.

@@ -1,8 +1,6 @@
 # 热带奇谭 / Tropical Oddities
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:1-14` · `events/anomaly_events_3.txt:16-63 (4000)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:1-14` · `events/anomaly_events_3.txt:16-63 (4000)`
 - 已核对 Checked：类别与4000。  
   Category and 4000.
 - 覆盖 Coverage：2 个文档全部核对 / all 2 docs checked.

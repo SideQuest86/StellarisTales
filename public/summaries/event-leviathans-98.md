@@ -1,6 +1,6 @@
 # 城邦建立通讯 / Enclave Establishes Communications
 
-- 分类 Category：巨兽与城邦 Leviathans & enclaves (C6) · 来源 Sources：`events/leviathans_events_1.txt:226-274`（leviathans.97 / 98）· `common/scripted_effects/first_contact_effects.txt:63-71` · `common/on_actions/00_on_actions.txt`（on_decade_pulse_country → leviathans.560）· 审阅 Reviewed 2026-10-12 (C6)，导读 2026-10-13
+- 分类 Category：巨兽与城邦 Leviathans & enclaves (C6)
 
 ## 如何开始 How it starts
 
@@ -23,5 +23,6 @@
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：`events/leviathans_events_1.txt:226-274`（leviathans.97 / 98）· `common/scripted_effects/first_contact_effects.txt:63-71` · `common/on_actions/00_on_actions.txt`（on_decade_pulse_country → leviathans.560）· 审阅 Reviewed 2026-10-12 (C6)，导读 2026-10-13
 - C6 审阅（2026-10-12）：把 leviathans.98 定为共享入口并独立成篇（此前它被误放在策展人故事里，并嵌入 event-first-contact-1 与 origin_mindwardens）；六个问候以条件桥接连接，证据见片段。/ Made a shared entry and its own story (it had been inside the Curators range and embedded in two other stories); six greetings bridged with evidence.
 - 导读（2026-10-13，协调者）：此前缺少导读；已核对 `leviathans_events_1.txt:226-274` 的 leviathans.97/98 原文脚本后撰写。首次接触效果与十年脉冲的行号引自审阅片段，未逐行复核。/ The guide was missing; written after checking the leviathans.97/98 script; the first-contact effect and decade-pulse line numbers are cited from the fragment and were not re-checked line by line.

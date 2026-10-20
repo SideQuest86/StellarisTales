@@ -1,7 +1,4 @@
-# 毒化[target.GetName] / Toxify [target.GetName]
-- 分类 Category：文明纪事 Society (C7) · 极端边疆情境 extreme-frontiers situation
-- 来源 Sources：`common/situations/13_extreme_frontiers_situations.txt:1-90` · `common/decisions/14_extreme_frontiers_decisions.txt:95` · `events/extreme_frontiers_events.txt (2000/2005/2010)`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 毒化目标星球 / Toxify the Target Planet- 分类 Category：文明纪事 Society (C7) · 极端边疆情境 extreme-frontiers situation
 
 ## 如何开始 How it starts
 
@@ -22,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`common/situations/13_extreme_frontiers_situations.txt:1-90` · `common/decisions/14_extreme_frontiers_decisions.txt:95` · `events/extreme_frontiers_events.txt (2000/2005/2010)`
 - 已核对 Checked：情境、决定与 2000/2005/2010。/ Situation, decision and events.
 - 审阅改动 Changes：结构与草稿一致。/ Matches the draft.

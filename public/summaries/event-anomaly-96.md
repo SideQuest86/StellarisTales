@@ -1,7 +1,6 @@
 # 地球大陆 / Terra Firma
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：events/anomaly_events_1.txt:1010-1075 (anomaly.95 option b, chain start; story anomaly-ast-debris-field-1-cat); events/anomaly_events_1.txt:1083 (anomaly.96); events/anomaly_events_1.txt:1301-1340 (anomaly.105 option b); events/anomaly_events_1.txt:1357 (anomaly.106); common/on_actions/00_on_actions.txt:1020-1021 (on_entering_system_fleet); common/event_chains/00_event_chains_2.txt:56 (find_sol_chain)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Xenophobes discard the specimen aluminium_plaque in anomaly.96's option; the pic
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：events/anomaly_events_1.txt:1010-1075 (anomaly.95 option b, chain start; story anomaly-ast-debris-field-1-cat); events/anomaly_events_1.txt:1083 (anomaly.96); events/anomaly_events_1.txt:1301-1340 (anomaly.105 option b); events/anomaly_events_1.txt:1357 (anomaly.106); common/on_actions/00_on_actions.txt:1020-1021 (on_entering_system_fleet); common/event_chains/00_event_chains_2.txt:56 (find_sol_chain)
 已核对 anomaly.95/96/105/106、事件链与两个 on_action 钩子（1020、1021）。草稿把两个版本拆成两个只含一个文档的故事；现合为一个以事件链“太阳坐标”为起点的故事，两个文档均由进入系统触发。
 
 Checked anomaly.95/96/105/106, the chain and the two on_action hooks (1020, 1021). The draft made two one-doc stories of the two versions; they are now one story starting from the chain "Solar Coordinates", both docs triggered by entering the system.

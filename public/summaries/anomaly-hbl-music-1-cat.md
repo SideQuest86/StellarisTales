@@ -1,8 +1,6 @@
 # 深夜天籁 / What Hums in the Night
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:332-358` · `events/anomaly_events_1.txt` · `events/anomaly_events_2.txt:2049-2070`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:332-358` · `events/anomaly_events_1.txt` · `events/anomaly_events_2.txt:2049-2070`
 - 已对照类别脚本与3080原文（2049-2070）。  
   Compared category script and the original of 3080 (2049-2070).
 - 覆盖 Coverage：全部3个文档。 / All 3 docs.

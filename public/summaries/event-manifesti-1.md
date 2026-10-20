@@ -1,7 +1,5 @@
 # 狂欢的反对派 / Carnival Protestors
 - 分类 Category：文明纪事 Society (C7) · 派系事件 faction event
-- 来源 Sources：`events/faction_events.txt:975-1860` · `common/on_actions/00_on_actions.txt:3952`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,5 +21,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/faction_events.txt:975-1860` · `common/on_actions/00_on_actions.txt:3952`
 - 已核对 Checked：1、5、10、15、20、25 的主要脚本与触发。/ Main scripts and triggers.
 - 审阅改动 Changes：结构与草稿一致（含事件链卡片）。/ Matches the draft including the chain card.

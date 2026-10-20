@@ -1,9 +1,6 @@
 # 追风者 / Storm Chasers
 
-- 分类 Category：起源 Origins · DLC：Cosmic Storms · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_cosmic_storms.txt`、`common/situations/07_cosmic_storms_situations.txt:431-600`、`common/missions/missions/00_missions_cosmic_storms.txt`、`common/special_projects/03_projects_cosmic_storms.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Cosmic Storms
 
 ## 如何开始 How it starts
 
@@ -29,6 +26,9 @@ At game start hidden cstorms.3101 starts the Stormfall situation. After mid-game
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_cosmic_storms.txt`、`common/situations/07_cosmic_storms_situations.txt:431-600`、`common/missions/missions/00_missions_cosmic_storms.txt`、`common/special_projects/03_projects_cosmic_storms.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：cstorms.3100–3235、300–331、风暴降临局势、任务钩子、on_action。 Events, the situation, mission hooks and on_actions.
 - 更正 Corrections：六项挑战原为孤立入口，现挂在“风暴热”事件链下并标注并列与门槛 3215。 The six challenges were floating entries; now under the Storm Fever chain as a parallel group with gate 3215.
 - 不确定 Uncertain：任务定义只读取了事件钩子。 Mission definitions read only for event hooks.

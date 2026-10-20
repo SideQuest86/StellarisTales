@@ -1,7 +1,6 @@
 # 发大财的冒险 / Lucrative Adventures
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/overlord_subject_events.txt:13-360`；`common/on_actions/00_on_actions.txt:521-535`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,5 +28,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/overlord_subject_events.txt:13-360`；`common/on_actions/00_on_actions.txt:521-535`
 - 已核对：派发条件、选项与概率、跨故事 pirate.50（共享海盗事件）。
   Checked: dispatcher conditions, options and odds, the cross-story pirate.50 (a shared pirate event).

@@ -1,8 +1,6 @@
 # 多普勒效应 / Doppler Effect
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1070-1096` · `events/anomaly_events_2.txt` · `common/event_chains/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1070-1096` · `events/anomaly_events_2.txt` · `common/event_chains/`
 - 已对照类别脚本与树；赎金客事件链本身不属于本故事。  
   Compared category script and tree; the Ransomeers chain itself is outside this story.
 - 覆盖 Coverage：全部8个文档。 / All 8 docs.

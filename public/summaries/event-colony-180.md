@@ -1,7 +1,6 @@
 # 小行星来袭 / Asteroid Sighted
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_1.txt:4231-4520`；`common/on_actions/00_on_actions.txt:1619,3759,3811`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_1.txt:4231-4520`；`common/on_actions/00_on_actions.txt:1619,3759,3811`
 - 已核对：触发、舰队创建与到达效果、on_action 对 181 的调用、182/183 的结果。
   Checked: trigger, fleet creation and arrival effect, the on_action call to 181, results of 182/183.
 - 更正：181（隐藏）并入，182 作为击毁结局接在180之后。

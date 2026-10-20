@@ -1,6 +1,6 @@
 # 核心阴谋 / A Core Conspiracy
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nomads_arkship_events.txt, common/situations/14_nomads_situations.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -36,6 +36,8 @@ arkship.700 needs a non-gestalt, non-individual-machine owner, no other nomad na
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nomads_arkship_events.txt, common/situations/14_nomads_situations.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：arkship.700-800 的触发、选项与进度阈值（nomads_arkship_events.txt:2911-4012）、情境定义（14_nomads_situations.txt:770-944）。
 - 更正 Corrections：编译器把情境的阶段按文件顺序连成 716→705→710→721，实际是以起点为中心的两个相反方向（S.T.E.R.I.S. 705→716，C.A.E.L.I. 710→721），已用 suppress/bridges 改正，并把每月阈值事件挂到情境下并标明阈值。
   The compiler chained the stages in file order; they are two opposite sides, fixed with suppress and bridges.

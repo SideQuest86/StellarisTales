@@ -1,7 +1,6 @@
 # 二重身 / Doppelgangers
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:1978-2065 (old_foes_system); common/on_actions/00_on_actions.txt:1150; events/distant_stars_events_1.txt:4044-4092 (distar.130); common/anomalies/95_anomaly_categories_distant_stars.txt:501-517; events/distant_stars_events_1.txt:4095 (distar.131)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -25,10 +24,10 @@ Single outcome; no random branch.
 
 无文明差异的选项。
 
-No empire-specific option differences.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:1978-2065 (old_foes_system); common/on_actions/00_on_actions.txt:1150; events/distant_stars_events_1.txt:4044-4092 (distar.130); common/anomalies/95_anomaly_categories_distant_stars.txt:501-517; events/distant_stars_events_1.txt:4095 (distar.131)
 已核对异常定义与 distar.131。
 
 Checked the anomaly definition and distar.131.

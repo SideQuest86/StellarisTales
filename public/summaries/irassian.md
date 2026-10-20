@@ -1,6 +1,6 @@
 # 伊拉斯协约国 / The Irassian Concordat
 
-- 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:3397–4474；common/anomalies/96_anomaly_categories_precursors.txt:2223–2942；common/special_projects/00_projects_1.txt:1846–2174；common/artifact_actions/artifact_actions.txt:556；common/special_projects/00_projects_ancient_relics.txt:130；events/ancient_relics_arcsite_events_2.txt:6543 · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者 Precursors · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -52,6 +52,8 @@ A non-AI empire surveying a planet (not a star, no anomaly) in the Irassian regi
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/precursor_events.txt:3397–4474；common/anomalies/96_anomaly_categories_precursors.txt:2223–2942；common/special_projects/00_projects_1.txt:1846–2174；common/artifact_actions/artifact_actions.txt:556；common/special_projects/00_projects_ancient_relics.txt:130；events/ancient_relics_arcsite_events_2.txt:6543
 - 已核对：precursor.1500（3397–3457）与 on_survey_planet 权重（00_on_actions.txt:1186）；irassian_1–11_cat；十一个项目（00_projects_1.txt:1846–2140）；1597–1600；1601–1602 与母星项目（2143）；artifact_irassian_research（556）；IRASSIAN_SECRETS（130）；9001（6543）。十一份报告、母星报告与秘密报告中英文已读。
 - 结构修正：异常改为开场后的并行分支（含报告的地图标签）；删除提示性重复边；秘密研究改为母星结果后的可选分支；观察者通知、未使用异常与路由标志错配加注。
 - 不确定：开场实际概率；第二个集齐线索的帝国会再生成一个伊拉斯星系（按脚本推断），未在游戏中验证；无DLC表现仅按脚本推断。

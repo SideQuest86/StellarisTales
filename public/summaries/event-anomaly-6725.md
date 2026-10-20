@@ -1,8 +1,6 @@
 # 准备不足 / Underprepared
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`events/anomaly_events_4.txt:1545-1572`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`events/anomaly_events_4.txt:1545-1572`
 - 已对照原文。属anomaly-nano-swarm-cat的后果之一，未桥接以免吸收本故事。  
   Compared the original. A consequence of anomaly-nano-swarm-cat; not bridged to avoid absorbing this story.
 - 覆盖 Coverage：全部1个文档。 / All 1 docs.

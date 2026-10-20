@@ -1,6 +1,6 @@
 # 重要议程 / Vital Agenda
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:9131-9314; common/on_actions/00_on_actions.txt:4327-4385 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -22,10 +22,10 @@ When the resolution passes or fails, hidden bio.3335 / bio.3340 clear the demand
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:9131-9314; common/on_actions/00_on_actions.txt:4327-4385
 - 已核对两步触发与表决结果的处理；草稿入口 bio.3330 正确，触发说明已补全。
   Checked the two-step trigger and the vote handling; the draft entry bio.3330 is correct, its trigger is now explained.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

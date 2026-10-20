@@ -1,7 +1,5 @@
 # 派系已建立 / Faction Founded
 - 分类 Category：文明纪事 Society (C7) · 派系事件 faction event
-- 来源 Sources：`events/faction_events.txt:12-220` · `common/pop_faction_types/00_pyrolatry.txt:344`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/faction_events.txt:12-220` · `common/pop_faction_types/00_pyrolatry.txt:344`
 - 已核对 Checked：0 与 1 的脚本，派系 on_create 调用。/ Scripts 0 and 1 and the on_create callers.
 - 审阅改动 Changes：结构无改动。/ No structural change.

@@ -1,6 +1,6 @@
 # 缇扬奇猎杀 / Tiyanki kills
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/galactic_features_events.txt, events/galactic_community_events.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -20,4 +20,6 @@ on_fleet_destroyed_perp（common/on_actions/00_on_actions.txt:1664）触发 gala
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/galactic_features_events.txt, events/galactic_community_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：381、385、galcom.107。

@@ -1,8 +1,6 @@
 # 求救信号 / Distress Signal
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:32-54` · `events/anomaly_events_3.txt:104-271 (4010-4012)` · `common/special_projects/00_projects_3.txt:2-42` · `events/failures.txt:137-160, 579-600`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:32-54` · `events/anomaly_events_3.txt:104-271 (4010-4012)` · `common/special_projects/00_projects_3.txt:2-42` · `events/failures.txt:137-160, 579-600`
 - 已核对 Checked：类别、4010–4012、项目随机表与两个失败事件。  
   Category, 4010–4012, the project random list and both failure events.
 - 覆盖 Coverage：7 个文档全部核对 / all 7 docs checked.

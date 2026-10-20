@@ -1,6 +1,6 @@
 # 石中低语 / Whispers in the Stone
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_1.txt:3387–3600（ancrel.4008、4000–4005）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2087；common/on_actions/00_on_actions.txt:2699 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -33,5 +33,7 @@ Failed rolls use the generic pool where the special event "Methane Gas Explosion
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_1.txt:3387–3600（ancrel.4008、4000–4005）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2087；common/on_actions/00_on_actions.txt:2699
 - 已核对：ancrel.4008、4000–4005 的脚本，遗址定义 lithoids_digsite（权重0、最多一处），on_tech_increased 调用点；中英文正文已读。
 - Checked: the scripts of ancrel.4008 and 4000-4005, the site definition lithoids_digsite (weight 0, at most one) and the on_tech_increased call site; both languages read.

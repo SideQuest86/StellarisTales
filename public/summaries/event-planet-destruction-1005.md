@@ -1,6 +1,5 @@
-# 对[From.GetName]的观测终止 / Observation of [From.GetName] Ceases
-
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/planet_destruction_events.txt:2967-3140; common/on_actions/01_planet_destruction.txt:182 on_destroy_planet_with_PLANET_KILLER_MAW; events/planet_destruction_events.txt:49-57 · 审阅 Reviewed 2026-10-13
+# 对星球的观测终止 / Observation of the Planet Ceases
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -16,10 +15,10 @@ The text varies: you destroyed the world yourself, it was shattered, shielded or
 
 ## 条件与文明差异 Conditions and variants
 
-本导读未单列条件差异；条件随各事件在上文说明，阅读器按文明设定显示可能的版本。/ This guide does not list conditions separately; they are described with each event above, and the reader shows the possible variants for the chosen empire profile.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/planet_destruction_events.txt:2967-3140; common/on_actions/01_planet_destruction.txt:182 on_destroy_planet_with_PLANET_KILLER_MAW; events/planet_destruction_events.txt:49-57
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

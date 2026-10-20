@@ -1,9 +1,6 @@
 # 合成繁衍 / Synthetic Fertility
 
-- 分类 Category：起源 Origins · DLC：Machine Age · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_machine_age.txt:1522-2300`、`common/situations/08_machine_age_situations.txt:339-600`、`common/traditions/01_synthetics.txt`、`events/game_start.txt:550`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Machine Age
 
 ## 如何开始 How it starts
 
@@ -30,6 +27,9 @@ Game-start event machine_age.3100 starts the digitization situation and the chai
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/origin_events_machine_age.txt:1522-2300`、`common/situations/08_machine_age_situations.txt:339-600`、`common/traditions/01_synthetics.txt`、`events/game_start.txt:550`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：machine_age.3100–3326 全部事件、两个局势、传统钩子。 Events 3100-3326, both situations and the tradition hook.
 - 更正 Corrections：加入两种出路的互斥组与结局标注；保留 V3 已核对的科技台阶连接。 Added the exclusive ways out and endings; V3-verified tech-step bridges kept.
 - 不确定 Uncertain：synth.5xx 五个版本的条件取自编译树。 Conditions of the five synth.5xx versions from the compiled tree.

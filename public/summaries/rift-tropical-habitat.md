@@ -1,8 +1,6 @@
 # 热带栖息地 / Tropical Habitat
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:411`；`events/astral_rifts_3_events.txt:1591–2154`（3100–3155、3140）
-- 审阅 Reviewed：2026-10-13（全篇 whole story；原独立的失败事件 3140 已并入 / former standalone failure event 3140 merged in）
 
 ## 如何开始 How it starts
 
@@ -44,6 +42,8 @@ All endings finish the exploration.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story；原独立的失败事件 3140 已并入 / former standalone failure event 3140 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:411`；`events/astral_rifts_3_events.txt:1591–2154`（3100–3155、3140）
 - 已核对：3100–3155、3140、3190。修正：编译图漏掉失败分支，3140 曾是独立故事；已用桥接并入并标注互斥。3190（联络后续好感）未并入。
 
 - Checked: 3100–3155, 3140, 3190. Correction: the compiled graph missed the failure branch and 3140 had been a separate story; merged with a bridge and marked exclusive. 3190 (post-contact opinion) not merged.

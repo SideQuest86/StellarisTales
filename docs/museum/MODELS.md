@@ -106,3 +106,11 @@ items (maps, blueprints, panels) open edge-on in the viewer.
   github.com/zeux/meshoptimizer releases): quantized geometry + EXT_meshopt_compression, decoded in the viewer by
   three's `meshopt_decoder.module.js` (copied to `dist/vendor/addons/libs/` by the build). v3 models: ~1.6 MB → ~0.85 MB
   (most of the rest is the 2048² JPEG texture). Visual check after compression: unchanged (contact sheet).
+
+## 2026-10-19 pass
+
+Fifteen weakest un-re-run models by silhouette IoU (terraforming_machinery 0.528 up to khalanka_crystallized_corpses 0.63) were re-generated as candidates with seeds 7 and 1234 (`--mv --candidate`, map a; `verification/museum/candidates/`). GPU: 30 runs, 1 h 46 min (about 3.5 min each, RTX 5070 uncontended). Comparison sheets (shipped row above candidate rows, icon + four turns, rendered from the GLBs in headless Chrome): `verification/museum/rerun-2026-10-19a.png` (terraforming_machinery, wormhole_anchor, fragmented_zroni_archive, castaway_robot, orinthi_teeth), `-19b.png` (namarian_colonist_standard, sniran_spikes, saariah_guilt, torn_solar_sail, tree_of_life_sample), `-19c.png` (doomsday_scrolls, gargantua_megalus, ancient_nuclear_armament, veil_of_selene, khalanka_crystallized_corpses).
+
+IoU shipped -> seed 7 / seed 1234: terraforming 0.528 -> 0.546 / 0.538; wormhole_anchor 0.545 -> 0.561 / 0.593; fragmented_zroni_archive 0.554 -> 0.556 / 0.599; castaway_robot 0.554 -> 0.562 / 0.556; orinthi_teeth 0.566 -> 0.527 / 0.600; namarian 0.579 -> 0.625 / 0.615; sniran_spikes 0.593 -> **0.683** / 0.630; saariah_guilt 0.597 -> 0.636 / 0.623; torn_solar_sail 0.603 -> 0.653 / 0.601; tree_of_life_sample 0.606 -> 0.663 / 0.690; doomsday_scrolls 0.612 -> 0.586 / 0.586; gargantua_megalus 0.613 -> **0.696** / 0.653; ancient_nuclear_armament 0.616 -> 0.680 / 0.664; veil_of_selene 0.627 -> 0.597 / 0.597; khalanka 0.630 -> 0.680 / 0.598.
+
+**Shipped: sniran_spikes seed 7, gargantua_megalus seed 7** (IoU gain and visibly closer to the icon from most turns; manifest `review` notes). All others look the same or worse from the other sides (IoU gains of 0.01-0.06 came with no visible improvement, ancient_nuclear_armament seed 7 broke apart) and stay. Viewer check: `verify-museum-viewer.mjs` with ALL=1 passed (8 checks, 258 opening views, no page errors).

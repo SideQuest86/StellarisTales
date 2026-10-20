@@ -1,6 +1,6 @@
 # 双星往事 / A Tale of Two Planets
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/cosmic_storms_events_1.txt:957-1348; common/on_actions/00_on_actions.txt:3723; common/special_projects/03_projects_cosmic_storms.txt:357-431; common/scripted_variables/07_scripted_variables_cosmic_storms.txt:24 · DLC: Cosmic Storms · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Cosmic Storms
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Needs the Cosmic Storms DLC; colonies with an owner only.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/cosmic_storms_events_1.txt:957-1348; common/on_actions/00_on_actions.txt:3723; common/special_projects/03_projects_cosmic_storms.txt:357-431; common/scripted_variables/07_scripted_variables_cosmic_storms.txt:24
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

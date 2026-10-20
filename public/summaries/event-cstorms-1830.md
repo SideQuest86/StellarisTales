@@ -1,6 +1,6 @@
 # 行商舰队：拉奇工业公司 / Caravan Fleet: The Racket Industrial Enterprise
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/cosmic_storms_events_1.txt:4263-4343; common/on_actions/00_on_actions.txt:5439 · DLC: Cosmic Storms · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Cosmic Storms
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Needs the Cosmic Storms DLC and contact with the Caravaneers.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/cosmic_storms_events_1.txt:4263-4343; common/on_actions/00_on_actions.txt:5439
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

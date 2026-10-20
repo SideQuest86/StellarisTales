@@ -1,7 +1,6 @@
 # 峰值读数 / Spiky Readings
 
-- 分类 Category：深空异闻 Exploration · DLC：Galactic Paragons（has_paragon_dlc） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/100_anomaly_categories_paragon.txt:6 (paragon_beholder_category); events/paragon_events.txt:103 (paragon.3); events/paragon_events.txt:135 (paragon.4); events/paragon_events.txt:226 (paragon.5); events/paragon_events.txt:255 (paragon.10); events/paragon_events.txt:283 (paragon.11); events/paragon_events.txt:307 (paragon.15); events/paragon_events.txt:336 (paragon.20); events/paragon_events.txt:360 (paragon.25); events/paragon_events.txt:383 (paragon.26); events/paragon_events.txt:409 (paragon.30); events/paragon_events.txt:506 (paragon.1); common/special_projects/01_projects_paragon.txt (BEFRIENDING_BEHOLDER_PRESAPIENTS, WHISPER_TEMPLE_STUDY, WHISPER_TEMPLE_ENERGY); events/paragon_events.txt:1-100 (paragon.100-102)
+- 分类 Category：深空异闻 Exploration · DLC：Galactic Paragons（has_paragon_dlc）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ paragon.4's options are gated by militarist, xenophobe, spiritualist, pacifist a
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/100_anomaly_categories_paragon.txt:6 (paragon_beholder_category); events/paragon_events.txt:103 (paragon.3); events/paragon_events.txt:135 (paragon.4); events/paragon_events.txt:226 (paragon.5); events/paragon_events.txt:255 (paragon.10); events/paragon_events.txt:283 (paragon.11); events/paragon_events.txt:307 (paragon.15); events/paragon_events.txt:336 (paragon.20); events/paragon_events.txt:360 (paragon.25); events/paragon_events.txt:383 (paragon.26); events/paragon_events.txt:409 (paragon.30); events/paragon_events.txt:506 (paragon.1); common/special_projects/01_projects_paragon.txt (BEFRIENDING_BEHOLDER_PRESAPIENTS, WHISPER_TEMPLE_STUDY, WHISPER_TEMPLE_ENERGY); events/paragon_events.txt:1-100 (paragon.100-102)
 已核对异常定义、paragon.1–30、100–102 与三个项目；编译树（含 60/40 与 80/20 的两组随机）与源文件一致，无需改动。
 
 Checked the anomaly definition, paragon.1-30, 100-102 and the three projects; the compiled tree (including the two random groups 60/40 and 80/20) matches the source, no change needed.

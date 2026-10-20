@@ -14,8 +14,8 @@ const KIND = {
   resource: ["资源", "Resource"], resource_mult: ["资源", "Resource"], modifier: ["修正", "Modifier"], modifier_remove: ["移除修正", "Modifier removed"],
   trait: ["特质", "Trait"], trait_remove: ["失去特质", "Trait lost"], technology: ["科技", "Technology"], tech_choice: ["科技", "Technology"],
   research: ["研究", "Research"], ship: ["舰船", "Ship"], fleet: ["舰队", "Fleet"], army: ["陆军", "Army"], leader: ["领袖", "Leader"],
-  pop: ["人口", "Pops"], planet: ["星球", "Planet"], deposit: ["资源点", "Deposit"], building: ["建筑", "Building"],
-  opinion: ["态度", "Opinion"], project: ["专项", "Project"], relic: ["遗珍", "Relic"], specimen: ["标本", "Specimen"],
+  pop: ["人口", "Pop"], planet: ["星球", "Planet"], deposit: ["资源点", "Deposit"], building: ["建筑", "Building"],
+  opinion: ["态度", "Opinion"], project: ["特殊项目", "Special project"], relic: ["遗珍", "Relic"], specimen: ["标本", "Specimen"],
   policy: ["政策", "Policy"], ethic: ["信仰", "Ethic"], tooltip: ["游戏说明", "Game text"], generic: ["其他", "Other"],
 };
 const GROUPS = new Set(["if", "else", "random", "random_list", "random_option", "repeat", "scripted"]);
@@ -176,7 +176,7 @@ export function renderEffects(effects, opts = {}) {
   if (!body) return "";
   const n = countEffects(effects);
   const title = opts.title || T("游戏内效果", "Gameplay effects");
-  const tail = skipped ? `<p class="fx-note fx-skipped">${esc(T(`另有 ${skipped} 项效果未逐条整理，请见游戏脚本。`, `${skipped} more effects are not itemised; see the game script.`))}</p>` : "";
+  const tail = skipped ? `<p class="fx-note fx-skipped">${esc(T(`另有 ${skipped} 项效果未逐条整理，请见游戏脚本。`, `${skipped} more ${skipped === 1 ? "effect is" : "effects are"} not itemized; see the game script.`))}</p>` : "";
   return `<details class="fx"><summary class="fx-sum"><span class="fx-sum-t">${esc(title)}</span>${n ? `<span class="fx-count">${n}</span>` : ""}</summary>`
     + `<div class="fx-body">${anyChance(effects) ? `<p class="fx-note">${esc(T("概率为基础值。", "Chances are base values."))}</p>` : ""}${body}${tail}</div></details>`;
 }

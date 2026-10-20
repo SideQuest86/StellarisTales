@@ -1,7 +1,6 @@
 # 一个崭新的联邦 / A New Federation
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：events/federations_events_1.txt:2738-2866
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -25,5 +24,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/federations_events_1.txt:2738-2866
 - 已核对：触发条件、选项效果；编译树与脚本一致。
   Checked: trigger conditions and option effects; the compiled tree matches the script.

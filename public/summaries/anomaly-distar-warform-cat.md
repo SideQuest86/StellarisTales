@@ -1,7 +1,6 @@
 # 神秘构造 / Mysterious Construct
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:589-609; events/distant_stars_events_1.txt:4551 (distar.155); common/special_projects/00_projects_distant_stars.txt:174 (RECOVER_WARFORM_PROJECT); events/distant_stars_events_1.txt:4610 (distar.156); events/distant_stars_events_1.txt:4766 (distar.157); events/distant_stars_events_1.txt:4782-5208 (distar.158-166); events/distant_stars_events_1.txt:5211 (distar.167)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ AI-outlawing empires can only let it corrode; machine intelligences get .machi w
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:589-609; events/distant_stars_events_1.txt:4551 (distar.155); common/special_projects/00_projects_distant_stars.txt:174 (RECOVER_WARFORM_PROJECT); events/distant_stars_events_1.txt:4610 (distar.156); events/distant_stars_events_1.txt:4766 (distar.157); events/distant_stars_events_1.txt:4782-5208 (distar.158-166); events/distant_stars_events_1.txt:5211 (distar.167)
 已核对异常、distar.155–167 与 RECOVER_WARFORM_PROJECT。草稿树结构正确（对话循环以 ref 节点表示）；补充重复标题的地图标签、项目互斥与两种结局。
 
 Checked the anomaly, distar.155–167 and RECOVER_WARFORM_PROJECT. The draft tree was structurally correct (the conversation convergence uses ref nodes); added map labels for repeated titles, the project exclusivity and the two endings.

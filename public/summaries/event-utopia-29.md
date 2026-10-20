@@ -1,6 +1,6 @@
 # 独眼漫步者（戴森球外交事件） / The One-Eyed Wanderer (Dyson Sphere diplomacy)
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/megastructure_events_1.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -26,6 +26,8 @@ Hidden utopia.29 runs from on_megastructure_upgrade_begin when a Dyson Sphere si
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/megastructure_events_1.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：utopia.29-40 的全部触发与选项（lines 645-1352）。编译树与源码一致；原先的 utopia.29 只作为隐藏入口，根设为 utopia.30（带 35% 与延迟标注）。
   Tree matches the source.
 - 它发生于戴森球（见该故事）刚开工时，但独立于其建造阶段事件。 It happens when the Dyson Sphere is started but is independent of its stage events.

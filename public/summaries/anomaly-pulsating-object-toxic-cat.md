@@ -1,7 +1,6 @@
 # 悸动之物 / Pulsating Object
 
-- 分类 Category：深空异闻 Exploration · DLC：Shadows of the Shroud（has_shroud_dlc） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/103_anomaly_categories_extreme_frontiers.txt:7; events/extreme_frontiers_events.txt:9 (extreme_frontiers.100)
+- 分类 Category：深空异闻 Exploration · DLC：Shadows of the Shroud（has_shroud_dlc）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Single outcome; no random branch and no further chapter.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/103_anomaly_categories_extreme_frontiers.txt:7; events/extreme_frontiers_events.txt:9 (extreme_frontiers.100)
 已核对异常定义与结果事件；编译树正确，无需改动。生成需要 has_shroud_dlc；本机 dlc 目录中未见对应 DLC，能否生成取决于主机的 DLC。
 
 Checked the anomaly definition and the result event; the compiled tree is correct, no change needed. Spawning needs has_shroud_dlc; no matching DLC folder exists in the local dlc directory, so spawning depends on the host's DLC.

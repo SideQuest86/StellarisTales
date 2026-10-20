@@ -1,7 +1,5 @@
 # 不寻常的太空船 / Unusual Spacefarers
 - 分类 Category：文明纪事 Society (C7) · 事件链卡片 event-chain card
-- 来源 Sources：`common/event_chains/00_event_chains.txt:313-317` · `events/namarian_events.txt:945-1600`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -17,9 +15,9 @@
 
 ## 条件与文明差异 Conditions and variants
 
-无。/ None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`common/event_chains/00_event_chains.txt:313-317` · `events/namarian_events.txt:945-1600`
 - 已核对 Checked：全仓库搜索 nomads_observation_chain 的引用。/ A repository-wide search for nomads_observation_chain.
 - 审阅改动 Changes：标记为“未被启动”。/ Marked as never begun.

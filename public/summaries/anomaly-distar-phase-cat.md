@@ -1,7 +1,6 @@
 # 相变星球 / Phased Planet
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:3947 (distar_phaseshift_system); common/on_actions/00_on_actions.txt:11 (distar.252); events/distant_stars_events_1.txt:9485 (distar.252); common/on_actions/00_on_actions.txt:1152; events/distant_stars_events_1.txt:9655-9686 (distar.256); common/anomalies/95_anomaly_categories_distant_stars.txt:801-862; events/distant_stars_events_1.txt:9268 (distar.250); events/distant_stars_events_1.txt:9318 (distar.251); events/distant_stars_events_1.txt:9387 (distar.302); events/distant_stars_events_1.txt:9451 (distar.303); common/on_actions/00_on_actions.txt:1934, 4189; events/distant_stars_events_1.txt:9568-9603 (distar.254); events/distant_stars_events_1.txt:9606 (distar.255); common/special_projects/00_projects_distant_stars.txt:617 (PHASESHIFT_PROJECT); events/distant_stars_events_1.txt:9505 (distar.253); events/distant_stars_events_1.txt:9689 (distar.258)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ distar.251 has two texts by shift direction; distar.302 two texts by whether the
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:3947 (distar_phaseshift_system); common/on_actions/00_on_actions.txt:11 (distar.252); events/distant_stars_events_1.txt:9485 (distar.252); common/on_actions/00_on_actions.txt:1152; events/distant_stars_events_1.txt:9655-9686 (distar.256); common/anomalies/95_anomaly_categories_distant_stars.txt:801-862; events/distant_stars_events_1.txt:9268 (distar.250); events/distant_stars_events_1.txt:9318 (distar.251); events/distant_stars_events_1.txt:9387 (distar.302); events/distant_stars_events_1.txt:9451 (distar.303); common/on_actions/00_on_actions.txt:1934, 4189; events/distant_stars_events_1.txt:9568-9603 (distar.254); events/distant_stars_events_1.txt:9606 (distar.255); common/special_projects/00_projects_distant_stars.txt:617 (PHASESHIFT_PROJECT); events/distant_stars_events_1.txt:9505 (distar.253); events/distant_stars_events_1.txt:9689 (distar.258)
 已核对初始化、distar.250–258、302、303、项目、on_survey_planet、on_building_starbase_outpost 与 on_starbase_transfer。修正：草稿把异常、星系占领后的项目链（event-distar-254）和后到者通知（event-distar-256）拆成三个故事；现合并，异常结果标为条件互斥，并以审阅连接表示“占领星系后”。
 
 Checked the initializer, distar.250–258, 302, 303, the project and the on_survey_planet / on_building_starbase_outpost / on_starbase_transfer hooks. Correction: the draft split the anomaly, the system-claim project chain (event-distar-254) and the late-surveyor notice (event-distar-256) into three stories; merged, with the anomaly results marked as condition-exclusive and reviewed links for "after claiming the system".

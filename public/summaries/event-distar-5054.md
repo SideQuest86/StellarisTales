@@ -1,7 +1,6 @@
 # 神秘容器 / The Enigmatic Cache
 
-- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：events/distant_stars_events_2.txt:4776-4960 (distar.2050, 20501 setup); events/distant_stars_events_2.txt:4960 (distar.5054); common/on_actions/00_on_actions.txt:1805 (on_fleet_auto_move_arrival → 5054, 5061); events/distant_stars_events_2.txt:4998 (distar.5057); common/special_projects/00_projects_distant_stars.txt (ENIGMATIC_CACHE_PROJECT); events/distant_stars_events_2.txt:5054 (distar.5058); events/distant_stars_events_2.txt:5083 (distar.5052); events/distant_stars_events_2.txt:5286 (distar.5056); events/distant_stars_events_2.txt:5333 (distar.5059); events/distant_stars_events_2.txt:5381 (distar.5053); events/distant_stars_events_2.txt:5726 (distar.5060); events/distant_stars_events_2.txt:5913-5942 (distar.5061, 5062); events/distant_stars_events_2.txt:5963 (distar.5064); common/special_projects/00_projects_distant_stars.txt (ENIGMATIC_UPLIFTING, ENIGMATIC_REPAIR); events/distant_stars_events_2.txt:6017-6600 (distar.5066-5074); events/distant_stars_events_2.txt:6601 (distar.5070); events/distant_stars_events_2.txt:6725 (distar.5077); events/distant_stars_events_2.txt:6764 (distar.5078)
+- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -39,6 +38,8 @@ Enigmatic Ascension is unavailable to wilderness empires; xenophobe empires get 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：events/distant_stars_events_2.txt:4776-4960 (distar.2050, 20501 setup); events/distant_stars_events_2.txt:4960 (distar.5054); common/on_actions/00_on_actions.txt:1805 (on_fleet_auto_move_arrival → 5054, 5061); events/distant_stars_events_2.txt:4998 (distar.5057); common/special_projects/00_projects_distant_stars.txt (ENIGMATIC_CACHE_PROJECT); events/distant_stars_events_2.txt:5054 (distar.5058); events/distant_stars_events_2.txt:5083 (distar.5052); events/distant_stars_events_2.txt:5286 (distar.5056); events/distant_stars_events_2.txt:5333 (distar.5059); events/distant_stars_events_2.txt:5381 (distar.5053); events/distant_stars_events_2.txt:5726 (distar.5060); events/distant_stars_events_2.txt:5913-5942 (distar.5061, 5062); events/distant_stars_events_2.txt:5963 (distar.5064); common/special_projects/00_projects_distant_stars.txt (ENIGMATIC_UPLIFTING, ENIGMATIC_REPAIR); events/distant_stars_events_2.txt:6017-6600 (distar.5066-5074); events/distant_stars_events_2.txt:6601 (distar.5070); events/distant_stars_events_2.txt:6725 (distar.5077); events/distant_stars_events_2.txt:6764 (distar.5078)
 已核对 distar.2050/20501、5052–5078、三个项目、on_action 钩子（1805、2048、838）与升格结果权重。修正：草稿把“发现实体”“归来”“被击毁”“飞升中止”拆成四个互不相连的故事，并把三种项目结果显示为 33/11/56%（这是修正前的平均值）；现合为以 distar.5057 为起点的故事，用审阅连接串起并加互斥组说明真实权重。distar.5052/5054/5055/5056/5060/5061/5066/5075/5076 是隐藏事件，不作为章节。
 
 Checked distar.2050/20501, 5052-5078, the three projects, the on_action hooks (1805, 2048, 838) and the uplift result weights. Correction: the draft split 'Alien Entity Identified', 'Returns', 'Destroyed' and 'Ascension Terminated' into four unconnected stories and showed the three project results as 33/11/56% (an average); they are now one story from distar.5057 with reviewed links and an exclusive group stating the real weights. distar.5052/5054/5055/5056/5060/5061/5066/5075/5076 are hidden events, not chapters.

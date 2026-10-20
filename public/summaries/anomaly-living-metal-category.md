@@ -1,7 +1,6 @@
 # 奇特的撞击坑 / Peculiar Crater
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:772; events/anomaly_events_2.txt:984 (anomaly.2576)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:772; events/anomaly_events_2.txt:984 (anomaly.2576)
 已核对；编译树正确。该异常通向活金属科技，但该科技本身不属于本故事。
 
 Checked; the compiled tree is correct. The anomaly leads to the living-metal technology, which is not itself part of this story.

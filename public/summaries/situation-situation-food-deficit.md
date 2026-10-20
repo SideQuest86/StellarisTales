@@ -1,7 +1,5 @@
 # 食物短缺 / Food Shortages
 - 分类 Category：文明纪事 Society (C7) · 资源赤字情境 resource-deficit situation
-- 来源 Sources：`common/situations/02_deficit_situations.txt:815` · `events/situation_deficit_events.txt` · `common/scripted_effects/first_contact_dlc_effects.txt:2960-3020`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,6 +21,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`common/situations/02_deficit_situations.txt:815` · `events/situation_deficit_events.txt` · `common/scripted_effects/first_contact_dlc_effects.txt:2960-3020`
 - 已核对 Checked：情境定义、阶段惩罚、进度公式、路线，以及阶段四和破产事件。/ Situation definition, stage penalties, progress formula, approaches and the stage-4 and bankruptcy events.
 - 审阅改动 Changes：编译结构正确（情境 → 阶段四事件 → 破产事件）；补充了共同机制与本资源的路线。/ The compiled structure was correct; the shared mechanism and this resource’s approaches are documented.
 - 不确定 Uncertain：情境的开始由引擎判定，脚本里看不到。 / The start of the situation is engine-side and not visible in the scripts.

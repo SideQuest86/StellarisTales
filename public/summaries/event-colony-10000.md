@@ -1,9 +1,7 @@
 # 鲜花之庭 / A Court of Blossoms
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:10587–11675` · `common/special_projects/00_projects_3.txt:2037–2080` · `common/on_actions/00_on_actions.txt:3772`
 - DLC：事件触发器中没有 DLC 检查 / no DLC check in the event triggers
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -48,6 +46,8 @@ On the colony's second anniversary (`on_colony_2_years_old`) the random pool can
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:10587–11675` · `common/special_projects/00_projects_3.txt:2037–2080` · `common/on_actions/00_on_actions.txt:3772`
 - 已核对 Checked：colony.10000–10095 全部脚本（选项、`days`/`random` 延时、`random_list` 权重、立即效果），两个特殊项目的 `on_success`，以及 `on_colony_2_years_old` 随机池。编译草稿的结构与源文件一致，无需桥接或抑制。/ All event scripts, both projects' `on_success`, and the on_action pool; the compiled draft already matched the source, so no bridges or suppressions were needed.
 - 审阅改动 Changes：故事标题取自 10015「鲜花之庭」（开发者注释与随机池注释均以此命名此链）；两次会谈登记为自由问答（问题仅对话，退出选项推进剧情）；标注六个结局。/ Title taken from 10015 (the chain's name in developer comments); the two audiences registered as free-question dialogues; six endings labelled.
 - 不确定 Uncertain：随机池的抽取规则（先检查事件触发器还是先按权重抽取）属于引擎行为，脚本中不可见。/ The engine's pool-selection rule is not visible in script.

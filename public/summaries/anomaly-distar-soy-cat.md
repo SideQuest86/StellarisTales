@@ -1,7 +1,6 @@
 # 杂草丛生的遗迹 / Overgrown Ruins
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:864-898; events/distant_stars_events_1.txt:9799 (distar.260); events/distant_stars_events_1.txt:9832 (distar.261); events/distant_stars_events_1.txt:9980 (distar.262); common/on_actions/00_on_actions.txt:1307
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@ distar.261's option wording varies: default "Disturbing", fanatic authoritarian 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:864-898; events/distant_stars_events_1.txt:9799 (distar.260); events/distant_stars_events_1.txt:9832 (distar.261); events/distant_stars_events_1.txt:9980 (distar.262); common/on_actions/00_on_actions.txt:1307
 已核对异常定义（含 on_spawn distar.260）、distar.261、distar.262 与 on_colonized。修正：distar.262 在草稿中是独立故事；现以审阅连接接在异常结果之后。distar.262 不要求先调查异常（标记在生成时设置）。
 
 Checked the anomaly (incl. on_spawn distar.260), distar.261, distar.262 and on_colonized. Correction: distar.262 was a separate story; it now follows the anomaly result through a reviewed link. It does not require the anomaly to be researched (the flag is set on spawn).

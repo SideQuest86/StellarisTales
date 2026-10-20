@@ -33,7 +33,7 @@ def numeric_label(low, op, val, ctx):
     if not t or not vt or vt[2] != 'num':
         return None
     ow = OPW.get(op or '=', OPW['='])
-    return {'zh': t[0].format(op=ow[0], n=vt[0]), 'en': t[1].format(op=ow[1], n=vt[1]), 'detail': [f'{low} {op or "="} {val}']}
+    return {'zh': LB.num_space(t[0].format(op=ow[0], n=vt[0])), 'en': t[1].format(op=ow[1], n=vt[1]), 'detail': [f'{low} {op or "="} {val}']}
 SPECIAL_ARGS = ('limit', 'trigger', 'potential')
 PH = re.compile(r'\$([A-Za-z_]+)(?:\|[^$]*)?\$')
 NUMLIKE = re.compile(r'^-?\d+(?:\.\d+)?$')
@@ -138,7 +138,7 @@ def negate_phrase(zh, en):
     elif zh.startswith(('是', '使用', '具有', '处于', '由')):
         nz = '不' + zh
     else:
-        nz = '不满足：' + zh
+        nz = '未满足：' + zh
     for a, b in (('is an ', 'is not an '), ('is a ', 'is not a '), ('is ', 'is not '), ('has ', 'does not have '), ('can ', 'cannot '), ('uses ', 'does not use ')):
         if en.startswith(a):
             return nz, b + en[len(a):]
@@ -242,7 +242,7 @@ def _from_game(low, args, primary, op, ctx):
         text = fill_template(spec, args, primary, op, ctx)
         if text is None:
             return None
-        res.append(text)
+        res.append(re.sub(r'(?<=[\u4e00-\u9fff]) (?=[\u4e00-\u9fff])', '', text) if lang == 'zh' else text)  # the game pads its $PLACEHOLDER$s with spaces
     # "Is Owned by X" with value `no`: the caller negates
     return res[0], res[1]
 
@@ -270,15 +270,13 @@ def _from_words(low, k, args, primary, op, ctx, v):
         if names:
             pz += '：' + '、'.join(t[0] for t in names)
             pe += ': ' + ', '.join(t[1] for t in names)
-        return pz, pe
+        return LB.num_space(pz), pe
     if numeric:
         vt = value_text(ctx, primary)
         ow = OPW.get(op, OPW['='])
         if vt is None:
             return None
-        if vt[2] == 'name':
-            return f'{zh}{ow[0]}{vt[0]}', f'{en} {ow[1]} {vt[1]}'
-        return f'{zh}{ow[0]}{vt[0]}', f'{en} {ow[1]} {vt[1]}'
+        return LB.num_space(f'{zh}{ow[0]}{vt[0]}'), f'{en} {ow[1]} {vt[1]}'
     if primary in ('yes', 'no') or primary is None:
         return _lead_phrases(zh, en, lead)
     vt = value_text(ctx, primary)
@@ -303,4 +301,4 @@ def galaxy_setup_label(v, ctx):
     if vt is None:
         return None
     ow = OPW.get(val.get('op') or '=', OPW['='])
-    return {'zh': f'银河设置中，{zh}{ow[0]}{vt[0]}', 'en': f'galaxy setup: {en} {ow[1]} {vt[1]}', 'detail': [f'check_galaxy_setup_value {setting} {val.get("op") or "="} {val["v"]}']}
+    return {'zh': LB.num_space(f'银河设置中，{zh}{ow[0]}{vt[0]}'), 'en': f'galaxy setup: {en} {ow[1]} {vt[1]}', 'detail': [f'check_galaxy_setup_value {setting} {val.get("op") or "="} {val["v"]}']}

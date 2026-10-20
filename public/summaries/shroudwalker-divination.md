@@ -1,8 +1,6 @@
 # 预知 / Divination（虚境行者的占卜仪式 The Shroudwalkers' rite）
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord
-- 来源 Sources：events/overlord_enclaves_events.txt:7380（enclave.415）, :7585（enclave.4100）, :7397（enclave.416）, :8064–12157（预言事件 prophecies enclave.5000–5576）, :7627/:7677（4150/4151）; common/situations/01_overlord_situations.txt:5, :116; common/on_actions/00_on_actions.txt:4932–4958; common/special_projects/00_projects_overlord.txt
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 在“虚境行者城邦”菜单询问“我们的命运将会如何？”并付费（enclave.410.b，同一时间只能进行一次占卜，且有冷却）后，“预知仪式开始”（enclave.415）。
@@ -38,6 +36,9 @@ After asking the Shroudwalkers about our fate and paying (enclave.410.b; one div
 Gates differ (e.g. All Too Lucid needs a non-AI, non-gestalt empire with >400 pops and several colonies; Rupture needs ≥50%). Many windows have gestalt/machine variants. The sign aborts if the Shroudwalkers are gone or hostile.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:7380（enclave.415）, :7585（enclave.4100）, :7397（enclave.416）, :8064–12157（预言事件 prophecies enclave.5000–5576）, :7627/:7677（4150/4151）; common/situations/01_overlord_situations.txt:5, :116; common/on_actions/00_on_actions.txt:4932–4958; common/special_projects/00_projects_overlord.txt
 - 已核对 enclave.4100 随机表、两个局势定义（月进度、修正、on_monthly 随机表、完成/失败）、4个强制抽取路由、所有预言路由的前置与各链主要分支、延迟。
 - 更正：草稿把整个占卜嵌在打捞者和虚境行者菜单的四个副本中，并把“门扉”等其他故事的整条事件链吞入；现为独立故事，借用事件以跨故事链接表示（hub）。心灵异常生成的异常现象以审阅注说明，未建桥接（桥接会破坏这些异常现象的独立故事，见台账请求）。
 - 不确定：各预言前置以文字概括，未逐一建模为边条件。

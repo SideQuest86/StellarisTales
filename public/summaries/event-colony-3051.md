@@ -1,8 +1,6 @@
 # 恶魔入侵 / Daemonic Incursion
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链的结局 colony chain ending
-- 来源 Sources：`events/colony_events_3.txt:1319–1358、2423–2768` · `common/on_actions/00_on_actions.txt:877–890`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -25,4 +23,6 @@ Its cause is in another story (The Doorway, colony.3005): a Toxic Knights empire
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:1319–1358、2423–2768` · `common/on_actions/00_on_actions.txt:877–890`
 已核对 3006 的骑士选项权重、3050、3051 与 on_action。抑制了 3 条来自通用开局建筑效果的起源事件伪连接。前篇应与“传送门”一起移回 C7（台账请求）。/ Three false links from the generic start-of-game effect suppressed; prologue relocation requested.

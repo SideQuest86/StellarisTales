@@ -1,6 +1,6 @@
 # 深思熟虑 / Think Carefully
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:1068-1069; events/biogenesis_events.txt:7071-7210 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ The English text calls it the "Final Thought system"; the system name is localis
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:1068-1069; events/biogenesis_events.txt:7071-7210
 - 已核对两事件的触发、标记与选项效果；重复出现用回到自身的连接表示。
   Checked triggers, flags and options of both events; the repetition is shown as a link back to bio.3005.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

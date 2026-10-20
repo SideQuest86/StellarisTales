@@ -1,7 +1,6 @@
 # 离开家园 / Leaving Home
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/98_anomaly_categories_tutorial.txt:1 (TUTORIAL_CAT); events/tutorial_events.txt:2351 (tutorial.52, 53, 54); events/advisor_events.txt:406-471 (advisor.1 adds the anomaly)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ tutorial.52 is not used for gestalt or nomadic countries; the rest vary with eth
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/98_anomaly_categories_tutorial.txt:1 (TUTORIAL_CAT); events/tutorial_events.txt:2351 (tutorial.52, 53, 54); events/advisor_events.txt:406-471 (advisor.1 adds the anomaly)
 已核对异常与三个教程事件。教程事件被编译器排除是设计选择（NON_STORY_SOURCES），故不改动；见请求。
 
 Checked the anomaly and the three tutorial events. The compiler excluding the tutorial events is a design choice (NON_STORY_SOURCES), so nothing was changed; see the requests.

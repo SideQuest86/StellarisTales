@@ -1,8 +1,6 @@
 # 清除 / Crackdown
 
 - 分类 Category：文明纪事 Society (C7) · 星球修正殖民地事件 planet-modifier colony event
-- 来源 Sources：`events/colony_events_3.txt:533–621` · 分派器 dispatcher `:1022–1032` · `common/special_projects/00_projects_3.txt:567–586`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -30,5 +28,7 @@ At the first anniversary the dispatcher fires this event 30–120 days later on 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:533–621` · 分派器 dispatcher `:1022–1032` · `common/special_projects/00_projects_3.txt:567–586`
 - 已核对 Checked：事件 5/10/11、项目 `on_success` 权重 75/25、分派器块。/ Events, project weights and the dispatcher block.
 - 审阅改动 Changes：从合并的“磁力奇迹”故事中拆出为独立故事。/ Split out of the merged modifier-event story.

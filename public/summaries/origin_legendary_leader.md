@@ -1,9 +1,6 @@
 # 君临天下 / Under One Rule
 
-- 分类 Category：起源 Origins · DLC：Galactic Paragons · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/origin_events_paragon.txt:1-5277`、`common/situations/05_paragon_situations.txt:872-1290`、`common/council_agendas/00_council_agendas.txt:143-212`、`common/council_agendas/00_council_agendas_ethics.txt`、`events/game_start.txt:522-526`、`common/on_actions/00_on_actions.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Galactic Paragons
 
 ## 如何开始 How it starts
 
@@ -37,6 +34,9 @@ A dictatorship united by a legendary ruler, the Luminary. Hidden 5000 at game st
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/origin_events_paragon.txt:1-5277`、`common/situations/05_paragon_situations.txt:872-1290`、`common/council_agendas/00_council_agendas.txt:143-212`、`common/council_agendas/00_council_agendas_ethics.txt`、`events/game_start.txt:522-526`、`common/on_actions/00_on_actions.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：事件文件全部窗口与隐藏路由、三个局势定义、相关议程、开局与 on_action 钩子。 All windows and hidden routers, three situations, related agendas, start and on_action hooks.
 - 更正 Corrections：原树只有 5004 一个入口，其余 30 处以根节点孤立入口出现；现以 8 个入口、19 条状态连接组织，并补互斥组与 5 个结局。地图标签沿用游戏中的“光耀者”称呼（V3 曾写作“启明者”）。
   Only 5004 was an entry and 30 docs floated at the root; now 8 entries, 19 state bridges, exclusive groups and five endings. Map labels use the game's term for the Luminary.

@@ -1,6 +1,6 @@
 # 次等者的饰品 / Trinkets from our Lessers
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt, common/inline_scripts/grand_archive/collection/homicidal_collection_reward_event.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -25,6 +25,8 @@ Hidden 4130 runs on contact, specimen acquisition and exhibit unlocking: a homic
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt, common/inline_scripts/grand_archive/collection/homicidal_collection_reward_event.txt
 - 已核对 Checked：4130 的阶段判断、inline_script 模板（事件在每个阶段中相同）、on_action 触发点。
 - 更正 Corrections：编译器把九个事件互相连成一团（因为 after 每次再调用 4130）；现改为三列（按政体）× 三阶段的顺序。
   The compiler linked all nine events to each other because every event re-fires 4130; replaced by three civic columns of three stages.

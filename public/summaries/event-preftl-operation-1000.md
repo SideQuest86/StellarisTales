@@ -1,7 +1,4 @@
-# [from.GetName]：特工准备就绪 / [from.GetName]: Operatives Ready
-- 分类 Category：文明纪事 Society (C7) · 间谍行动结局（前FTL）pre-FTL espionage operation finale
-- 来源 Sources：`events/first_contact_dlc_operations_events.txt:28-253` · `common/espionage_operation_types/pre_ftl_operations.txt:597-745` · `common/scripted_effects/espionage_event_effects.txt:2840-2906` · `common/scripted_effects/first_contact_dlc_effects.txt:3093-3130`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 间谍网络：特工准备就绪 / Spy Network: Operatives Ready- 分类 Category：文明纪事 Society (C7) · 间谍行动结局（前FTL）pre-FTL espionage operation finale
 
 ## 如何开始 How it starts
 
@@ -21,5 +18,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_dlc_operations_events.txt:28-253` · `common/espionage_operation_types/pre_ftl_operations.txt:597-745` · `common/scripted_effects/espionage_event_effects.txt:2840-2906` · `common/scripted_effects/first_contact_dlc_effects.txt:3093-3130`
 - 已核对 Checked：终结事件、行动类型、成功度判定与对应章节定义。/ Finale, operation type, success rule and chapter definitions.
 - 审阅改动 Changes：原编译草稿结构正确；补充了行动背景、成功度规则与各档位。/ The compiled structure was correct; operation background, the success rule and tiers added.

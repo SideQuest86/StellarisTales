@@ -1,6 +1,6 @@
 # 虚空虫巢穴被毁 / Voidworm homes destroyed
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -26,5 +26,7 @@ Hidden 2050 (on_fleet_destroyed_perp, last fleet) and 2051 (on_ship_destroyed_pe
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt
 - 已核对 Checked：grand_archive.2050-2054 的触发与效果。
 - 更正 Corrections：两个只含隐藏路由的故事（2050 / 2051）并为一个。 The two router-only stories are merged.

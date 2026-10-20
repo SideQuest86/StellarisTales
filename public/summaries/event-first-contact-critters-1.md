@@ -1,7 +1,5 @@
 # 有规律的信号 / Structured Signals
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（飞地 enclave_stage_1）
-- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:14–114` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:4–42` · `common/scripted_effects/first_contact_effects.txt:9–160`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:14–114` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:4–42` · `common/scripted_effects/first_contact_effects.txt:9–160`
 - 已核对 Checked：飞地首次接触事件 1、5，阶段定义，set_first_contact_starting_stage 中的飞地分支。/ Events 1 and 5, both stages, the enclave branch of the starting-stage effect.
 - 审阅改动 Changes：把 5 并入 1（原 event-first-contact-critters-5 不再单列）。/ 5 merged into 1.

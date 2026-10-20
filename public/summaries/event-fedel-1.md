@@ -1,7 +1,5 @@
 # 竞技场之战 / The Arena
 - 分类 Category：文明纪事 Society (C7) · 联邦领袖挑战 federation leadership challenge
-- 来源 Sources：`events/federations_election_events.txt:15-720` · `common/federation_laws/13_challenge_type.txt:4-106` · `common/on_actions/00_on_actions.txt:3560-3568`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,5 +21,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/federations_election_events.txt:15-720` · `common/federation_laws/13_challenge_type.txt:4-106` · `common/on_actions/00_on_actions.txt:3560-3568`
 - 已核对 Checked：根 1、2、5 与 10/15/16。/ Roots 1, 2, 5 and 10/15/16.
 - 审阅改动 Changes：结构与草稿一致；补充了能力值与权重规则。/ Matches; ability and weighting rules added.

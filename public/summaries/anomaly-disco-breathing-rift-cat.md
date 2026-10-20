@@ -1,7 +1,6 @@
 # 光学现象 / Light Phenomenon
 
-- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar) · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1690-1709; events/distant_stars_events_2.txt:8959 (distar.3060); common/special_projects/00_projects_distant_stars.txt:888 (breathing_rift_project); events/distant_stars_events_2.txt:8998/9037 (distar.3061/3062); events/distant_stars_events_2.txt:9082 (distar.3064)
+- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar)
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ A loop: 3061/3062 can repeat until 3064 closes the rift; each roll is exclusive.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1690-1709; events/distant_stars_events_2.txt:8959 (distar.3060); common/special_projects/00_projects_distant_stars.txt:888 (breathing_rift_project); events/distant_stars_events_2.txt:8998/9037 (distar.3061/3062); events/distant_stars_events_2.txt:9082 (distar.3064)
 已核对异常、distar.3060–3064 与项目。树结构正确（循环以 ref 表示）。
 
 Checked the anomaly, distar.3060–3064 and the project. Tree correct (the loop uses refs).

@@ -1,7 +1,6 @@
 # 哈宾特统一星球国 / Habinte Unified Worlds
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/first_contact_dlc_events.txt:6658-7560`；`common/on_actions/00_on_actions.txt:474,801,1050-1053,1163,1956,2174,2616`；`common/anomalies/02_anomaly_categories.txt:713`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/first_contact_dlc_events.txt:6658-7560`；`common/on_actions/00_on_actions.txt:474,801,1050-1053,1163,1956,2174,2616`；`common/anomalies/02_anomaly_categories.txt:713`
 - 已核对：每个入口的 on_action、星旗标志（system_01/02、revealed、mad）、观测与愤怒链、5050 触发与选项。
   Checked: each entry on_action, the star flags (system_01/02, revealed, mad), the observation and anger chains, 5050 trigger and options.
 - 更正：原本是 5000/5005/5015/5020/5034/5040/5050 七个孤立的单窗口故事；现合成一条，用标志衔接。

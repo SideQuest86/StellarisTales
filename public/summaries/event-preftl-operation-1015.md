@@ -1,7 +1,4 @@
-# 准备拉拢[target.GetName] / Ready to Sway the [target.GetName]
-- 分类 Category：文明纪事 Society (C7) · 间谍行动结局（前FTL）pre-FTL espionage operation finale
-- 来源 Sources：`events/first_contact_dlc_operations_events.txt:256-545` · `common/espionage_operation_types/pre_ftl_operations.txt:449-596` · `common/scripted_effects/espionage_event_effects.txt:2840-2906` · `common/scripted_effects/first_contact_dlc_effects.txt:3093-3130`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 准备拉拢目标 / Ready to Sway the Target- 分类 Category：文明纪事 Society (C7) · 间谍行动结局（前FTL）pre-FTL espionage operation finale
 
 ## 如何开始 How it starts
 
@@ -21,6 +18,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_dlc_operations_events.txt:256-545` · `common/espionage_operation_types/pre_ftl_operations.txt:449-596` · `common/scripted_effects/espionage_event_effects.txt:2840-2906` · `common/scripted_effects/first_contact_dlc_effects.txt:3093-3130`
 - 已核对 Checked：终结事件、行动类型、成功度判定与对应章节定义。/ Finale, operation type, success rule and chapter definitions.
 - 审阅改动 Changes：原编译草稿结构正确；补充了行动背景、成功度规则与各档位。/ The compiled structure was correct; operation background, the success rule and tiers added.
 - 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。

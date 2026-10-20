@@ -1,6 +1,6 @@
 # 银河市场 / Galactic Market access
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/on_action_events_2.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ action.115 enables the market and sets has_market_access; one text for xenophobe
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/on_action_events_2.txt
 - 已核对 Checked：action.105 与 action.115；galcom.60 在故事 event-galcom-60（另一审阅者）中。

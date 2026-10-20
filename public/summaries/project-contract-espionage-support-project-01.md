@@ -1,7 +1,6 @@
 # 部署间谍卫星 / Deploy Spy Satellite
 
-- 分类 Category：项目 Project · DLC：游牧民内容 Nomad content（06_projects_nomads.txt） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/special_projects/06_projects_nomads.txt:1047 (CONTRACT_ESPIONAGE_SUPPORT_PROJECT_01); common/missions/missions/02_contracts.txt:313, 470, 630 (contract_espionage_support missions); common/scripted_effects/nomads_effects.txt:5826 (generate_additional_espionage_support_project); common/event_chains/00_event_chains_nomads.txt:376 (contract_espionage_support_chain)
+- 分类 Category：项目 Project · DLC：游牧民内容 Nomad content（06_projects_nomads.txt）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/special_projects/06_projects_nomads.txt:1047 (CONTRACT_ESPIONAGE_SUPPORT_PROJECT_01); common/missions/missions/02_contracts.txt:313, 470, 630 (contract_espionage_support missions); common/scripted_effects/nomads_effects.txt:5826 (generate_additional_espionage_support_project); common/event_chains/00_event_chains_nomads.txt:376 (contract_espionage_support_chain)
 已核对项目定义与启用来源。故事只有一个项目文档；所属的契约事件链是另一个故事 chain-contract-espionage-support-chain（c7b），见请求。
 
 Checked the project definition and where it is enabled. The story is one project doc; the contract chain it belongs to is another story, chain-contract-espionage-support-chain (c7b), see the requests.

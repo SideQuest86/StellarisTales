@@ -1,5 +1,5 @@
 # 虚空虫行为与虚空虫疫 / Voidworms Behavior and the Voidworm Plague
-- 分类 Category: society (situation) · 来源 Sources: common/situations/11_grand_archive_situations.txt:6-312; events/grand_archive_events.txt:732-847, 1535-1710, 1808-2650; common/inline_scripts/grand_archive/voidworm_crisis_random_events.txt · DLC: Grand Archive · 审阅 Reviewed 2026-10-13 (r2-society)
+- 分类 Category：society (situation) · DLC: Grand Archive
 
 ## 如何开始 How it starts
 - 中文：虚空虫国家被创建时（`create_voidworms_country`，grand_archive_effects.txt:25-57）自动启动国家局势 `voidworm_country_situation`——银河生成时的虚空虫星系初始化器、五年脉冲 `grand_archive.1005`（权重 1/5）、`grand_archive.8310` 都可能创建它。它只有一个阶段、一种方式“无所事事”，进度恒为0；真正的内容在它的每月事件里。
@@ -29,6 +29,9 @@
 - 2310 的文本随是否已与虚空虫国家通讯、是否有免疫科技而变；2420/2430/2445 对机械、格式塔等有排除条件。 / 2310's text varies with contact and immunity; 2420/2430/2445 have species and ethic exclusions.
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13 (r2-society)
+- 来源 Sources：common/situations/11_grand_archive_situations.txt:6-312; events/grand_archive_events.txt:732-847, 1535-1710, 1808-2650; common/inline_scripts/grand_archive/voidworm_crisis_random_events.txt
 - 已核对 Checked: the situation definitions (6-312), the inline random-event script, 2055/2065/2300/2305/2310/2460/2500 and the 24xx events, create/end crisis effects, and the nest-destruction event 2051; callers via callers.py.
 - 更正 Corrections: grouped the 9 random stage events into three approach pools (the compiler listed them as one flat set); added the cross-story bridge to the 2051 eradication story.
 - 不确定 Uncertain: the numeric start chance (script values) and the reward details of each 24xx option were not evaluated. 冻结虫 (situation_frenzied_voidworms) and 破坏 (situation_sabotage) belong to the origin story, not here.

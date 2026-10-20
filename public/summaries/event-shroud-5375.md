@@ -1,11 +1,7 @@
 # 虚境封印 / Shroud Seal
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C6 巨兽与城邦 / Leviathans & enclaves
-- 来源 Sources：`events/shroud_events.txt:14854-14889`; `common/on_actions/00_on_actions.txt (on_megastructure_built → 5375)`
 - DLC：Shadows of the Shroud
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -27,12 +23,11 @@ Only option: "Goodbye".
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`events/shroud_events.txt:14854-14889`; `common/on_actions/00_on_actions.txt (on_megastructure_built → 5375)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 原标题为空（继承行虚者菜单窗口），故用巨型建筑原名“虚境封印”作标题。分类改为 C6：它是行虚者城邦对玩家行为的反应，建议 C6 的行虚者城邦故事链接到此卡。
 
 The title is empty (inherited from the Shroudwalker menu window), so the megastructure name "Shroud Seal" is used. Category changed to C6: it is the Shroudwalker Enclave's reaction; the C6 Shroudwalker story may link here.

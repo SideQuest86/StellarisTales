@@ -1,7 +1,6 @@
 # 战争迹象 / Signs of Battle
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:586; events/anomaly_events_2.txt:357 (anomaly.2530); common/special_projects/00_projects_1.txt (BATTLE_WRECKAGE_PROJECT); events/anomaly_events_2.txt:402 (anomaly.2531); events/anomaly_events_2.txt:439 (anomaly.2532)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Project results 2531/2532 are exclusive; project failure has no follow-up (empty
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:586; events/anomaly_events_2.txt:357 (anomaly.2530); common/special_projects/00_projects_1.txt (BATTLE_WRECKAGE_PROJECT); events/anomaly_events_2.txt:402 (anomaly.2531); events/anomaly_events_2.txt:439 (anomaly.2532)
 已核对异常定义、项目与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition, the project and every outcome event; the compiled tree is correct, no change needed.

@@ -1,6 +1,5 @@
-# 在[Root.GetName]发现化石 / Fossils Discovered on [Root.GetName]
-
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_2.txt:407–620（ancrel.6049、6050–6070）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:109；common/on_actions/00_on_actions.txt:3779、3824、3862、3885 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+# 在殖民地发现化石 / Fossils Discovered on a Colony
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -20,9 +19,9 @@ The option "Curious" creates the site site_hunting_ground (five stages, small ar
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。 / None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_2.txt:407–620（ancrel.6049、6050–6070）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:109；common/on_actions/00_on_actions.txt:3779、3824、3862、3885
 - 已核对：ancrel.6049、6050–6070 的脚本与遗址定义（权重0）；on_colony_N_years_old 的权重行；中英文正文已读。
 - Checked: the scripts of ancrel.6049 and 6050-6070, the site definition (weight 0) and the weight lines of on_colony_N_years_old; both languages read.

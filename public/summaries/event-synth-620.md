@@ -1,7 +1,6 @@
 # 有机欲望 / Organic Cravings
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/machine_age_situation_events_2.txt:1902-1993`；`common/on_actions/00_on_actions.txt`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/machine_age_situation_events_2.txt:1902-1993`；`common/on_actions/00_on_actions.txt`
 - 已核对：来源池与权重、触发条件、选项分支与目标事件。
   Checked: source pool and weights, trigger conditions, option branches and target events.
 - 未逐行核对选项的数值收益，只记录其性质（修正名、资源、标志）。

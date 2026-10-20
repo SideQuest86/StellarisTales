@@ -1,7 +1,6 @@
 # 能量辐射 / Energy Emissions
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/event_chains/00_event_chains_distant_stars.txt:47-55
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -17,18 +16,12 @@ Only the title and description "Energy Emissions"; no story events. Its name rel
 
 ## 分支与结局 Branches and outcomes
 
-无。
-
-None.
-
 ## 条件与文明差异 Conditions and variants
-
-无。
-
-None.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/event_chains/00_event_chains_distant_stars.txt:47-55
 已核对定义并检索 star_crazy_chain / corrupt_data_investigated 的全部引用（只在定义与本地化中出现）。保留为独立的一页定义卡，不并入任何故事。
 
 Checked the definition and searched all references to star_crazy_chain / corrupt_data_investigated (only the definition and localisation). Kept as a standalone one-card definition, not merged into any story.

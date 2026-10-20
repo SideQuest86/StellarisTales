@@ -1,8 +1,6 @@
 # 新殖民地 / A New Colony
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`events/anomaly_events_4.txt` · `common/special_projects/00_projects_1.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -32,6 +30,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`events/anomaly_events_4.txt` · `common/special_projects/00_projects_1.txt`
 - 已对照events/anomaly_events_4.txt:265-1010的全部触发、旗标与项目；原先11个独立故事（5007、5009、5011、5017-5019、5022-5026）现合并为一个，加入12条带旗标/平均时间的审阅连接。  
   Checked all triggers, flags and projects in events/anomaly_events_4.txt:265-1010; the former 11 separate stories (5007, 5009, 5011, 5017-5019, 5022-5026) are merged into one with 12 reviewed flag / mean-time bridges.
 - 5006（移居）属c3a的故事，未在此连接。  

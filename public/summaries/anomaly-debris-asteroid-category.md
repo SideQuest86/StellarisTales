@@ -1,7 +1,6 @@
 # 覆盖着残骸 / Covered in Debris
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:69; events/anomaly_events_1.txt:216 (anomaly.30); events/anomaly_events_4.txt:2377 (anomaly.6800)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:69; events/anomaly_events_1.txt:216 (anomaly.30); events/anomaly_events_4.txt:2377 (anomaly.6800)
 已核对；编译树正确。pop_lcluster_event 属 L 星团线索的共享效果，不属于本故事。
 
 Checked; the compiled tree is correct. pop_lcluster_event is the shared L-Cluster clue effect, not part of this story.

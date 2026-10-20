@@ -1,8 +1,5 @@
-# [城邦]被摧毁 / [From.GetName] Destroyed（商人城邦 Trader Enclaves）
-
+# 商人城邦被摧毁 / Trader Enclave Destroyed
 - 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
-- 来源 Sources：events/leviathans_events_1.txt:2052（140）, :2123–2330（141–144）; events/observer_events.txt:197–229（observer.8–10）; common/on_actions/00_on_actions.txt:1400
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 某商人城邦（雪拉企业、里甘商业交易所或穆塔根商人公会）的总部空间站被击毁时（on_ship_destroyed_victim → 隐藏 leviathans.140）。
@@ -15,7 +12,8 @@ One notice per viewpoint: the destroyer gets 141 (large resource haul); others i
 
 ## 分支与结局 Branches and outcomes
 
-本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
-
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/leviathans_events_1.txt:2052（140）, :2123–2330（141–144）; events/observer_events.txt:197–229（observer.8–10）; common/on_actions/00_on_actions.txt:1400
 已核对 140 的接收者分派与各通知的文本条件。覆盖完整。Coverage complete.

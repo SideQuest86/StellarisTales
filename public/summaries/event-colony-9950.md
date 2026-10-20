@@ -1,8 +1,6 @@
 # 平流层喷口 / Stratospheric Vents
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:9540–9813` · `common/special_projects/00_projects_3.txt:1872–1884` · `common/event_chains/00_event_chains.txt:381` · `common/on_actions/00_on_actions.txt:3771`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -26,4 +24,6 @@ At the second anniversary (weight 8) on a world with the *Stratospheric Vents* m
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:9540–9813` · `common/special_projects/00_projects_3.txt:1872–1884` · `common/event_chains/00_event_chains.txt:381` · `common/on_actions/00_on_actions.txt:3771`
 已核对 9950–9975、项目与随机池；编译草稿正确；标注三个结局。事件链概览卡片仅作说明。/ Draft correct; endings labelled.

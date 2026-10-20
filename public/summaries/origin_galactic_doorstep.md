@@ -1,9 +1,6 @@
 # 繁星门阶 / Galactic Doorstep
 
 - 分类 Category：起源 Origins · DLC：Federations（星门）· 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_2.txt:9-783`、`common/archaeological_site_types`、`common/megastructures/05_gateways.txt`、`common/special_projects`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 
 ## 如何开始 How it starts
 
@@ -30,5 +27,7 @@ At game start hidden origin.1001 places a ruined gateway in the home system and 
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：`events/origin_events_2.txt:9-783`、`common/archaeological_site_types`、`common/megastructures/05_gateways.txt`、`common/special_projects`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.1001–1050 全部事件、遗址、星门巨构钩子。 Events 1001-1050, the site and the gateway hook.
 - 更正 Corrections：补充随机组、结局标注、时间说明；保留 V3 已核对的三条连接。 Added the random group, endings and timings; V3-verified bridges kept.

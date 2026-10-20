@@ -1,7 +1,4 @@
-# 小行星正在接近[pre_ftl_planet.GetName] / Asteroid Approaching [pre_ftl_planet.GetName]
-- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:19-380` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 小行星正在接近原始星球 / Asteroid Approaching Pre-FTL Planet- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -22,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:19-380` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：根 observation.0、1、2、3、4、5、10 的脚本及舰队创建逻辑。/ Roots 0–5 and 10.
 - 审阅改动 Changes：编译草稿结构已核对；补充触发条件与隐藏分发事件。/ Structure confirmed; trigger conditions and hidden dispatchers documented.

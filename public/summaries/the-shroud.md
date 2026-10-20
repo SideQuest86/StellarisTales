@@ -1,6 +1,6 @@
 # 虚境 / The Shroud
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/utopia_shroud_events.txt（utopia.3000–3402）、events/utopia_on_action_events.txt:1985–2431, 2493–3928、common/special_projects/00_projects_utopia.txt:67–129、common/traditions/01_psionics.txt:57–135、common/on_actions/00_on_actions.txt:352–356, 725–726 · DLC：乌托邦 Utopia · 审阅 Reviewed 2026-10-12
+- 分类 Category：银河轶事 C8 stories · DLC：乌托邦 Utopia
 
 ## 如何开始 How it starts
 
@@ -48,6 +48,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/utopia_shroud_events.txt（utopia.3000–3402）、events/utopia_on_action_events.txt:1985–2431, 2493–3928、common/special_projects/00_projects_utopia.txt:67–129、common/traditions/01_psionics.txt:57–135、common/on_actions/00_on_actions.txt:352–356, 725–726
 - 已核对 Checked：utopia.2655–2686（传统事件、项目回调、契约确认与等级检查，阈值 utopia_on_action_events.txt:5–8 为20/50/90/150），utopia.3000–3402 全部事件块，隐藏分派 3002/2659（权重10×10、20、10）、3303（守护者加权，终末基础权重2且受危机等级与 no_end_of_cycle 修正）、3330（MTTH 15年，冷却标记3600天）、恩赐脚本效果 shroud_scripted_effects.txt:869 起；on_custom_diplomacy / on_monthly_pulse_country 调用；“虚境之影”DLC判定 00_scripted_triggers.txt:487。
   Checked all of the above blocks, routers, weights and on_action calls.
 - 更正 Corrections：旧标题“虚境的低语”不是游戏原文，改为原文“虚境”；起点由无序的次级入口改为 utopia.2655；“突入虚境”项目与降灵会、契约等级事件（原为4个单页故事）并入；补充副作用、契约等级、天选之帝与清算吞噬行星的条件连接。

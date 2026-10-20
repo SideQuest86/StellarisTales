@@ -1,7 +1,6 @@
 # 核心炸弹 / Nuclear Bomb
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_1.txt:3513-3622`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -20,10 +19,9 @@
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。
-  None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_1.txt:3513-3622`
 - 已核对：触发标志（wasteland_nuclear_bomb）、项目与两个结果。
   Checked: trigger flags (wasteland_nuclear_bomb), project and both results.

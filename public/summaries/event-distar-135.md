@@ -1,7 +1,6 @@
 # 拾荒者 / The Scavenger
 
-- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:2066 (scavenger_system); events/distant_stars_events_1.txt:4138 (distar.135); common/on_actions/00_on_actions.txt:1004; events/distant_stars_events_1.txt:4208 (distar.137); common/on_actions/00_on_actions.txt:1460
+- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@ distar.137's options split into non-default country types, the standard option a
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:2066 (scavenger_system); events/distant_stars_events_1.txt:4138 (distar.135); common/on_actions/00_on_actions.txt:1004; events/distant_stars_events_1.txt:4208 (distar.137); common/on_actions/00_on_actions.txt:1460
 已核对初始化器、两个 on_action 触发（1004 进入、1460 击毁）与 distar.135/137。草稿把进入事件与击毁事件作为两个独立故事；现合为一个以 distar.135 为起点的故事，用一条审阅连接表示击毁。distar.136 是隐藏的巡逻事件（on_fleet_auto_move_arrival），不属于叙事。
 
 Checked the initializer, the two on_action hooks (1004 entering, 1460 destroyed) and distar.135/137. The draft treated the entry event and the destroy event as separate stories; they are now one story starting at distar.135 with a reviewed link for the kill. distar.136 is a hidden patrol event (on_fleet_auto_move_arrival), not part of the narrative.

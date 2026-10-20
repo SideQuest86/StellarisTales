@@ -1,6 +1,6 @@
 # 发现先驱 / Precursor Discovery
 
-- 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:5685–7190；common/on_actions/00_on_actions.txt:485–491；common/special_projects/00_projects_1.txt:3448–3577；common/artifact_actions/artifact_actions.txt:843；common/scripted_effects/00_scripted_effects.txt:768；common/scripted_effects/nomads_effects.txt:6753 · DLC：稀有文物行动需《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者 Precursors · DLC：稀有文物行动需《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -42,6 +42,8 @@ A shared "catch-up" mechanism for the five classic precursors (source comment: P
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/precursor_events.txt:5685–7190；common/on_actions/00_on_actions.txt:485–491；common/special_projects/00_projects_1.txt:3448–3577；common/artifact_actions/artifact_actions.txt:843；common/scripted_effects/00_scripted_effects.txt:768；common/scripted_effects/nomads_effects.txt:6753
 - 已核对：301–320 全部脚本、五年脉冲随机表、五个 ARTIFACT_FOUND 项目、collector_surrenders_artifact 与 spawn_precursor_anomaly_effect、artifact_precursor_clue；中英文正文已读。
 - 修正：V3 的标题“先驱者：遗失的线索”是自拟的，现改用入口事件 precursor.301 的原标题；补充并行组（五种途径）与两个互斥组；明确这些事件不属于沃陶姆或任何单一先驱者（V3 曾把 1–499 误归沃陶姆）。
 - 不确定：301 常规正文的选择方式不可从脚本预测。

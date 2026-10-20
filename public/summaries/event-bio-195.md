@@ -1,6 +1,6 @@
 # 突变：政府改革？ / Mutation: Government Reformation?
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/traditions/01_mutation.txt:49-62; events/biogenesis_events.txt:3466 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ These trees are normally adopted through the Biomorphosis completion event bio.4
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/traditions/01_mutation.txt:49-62; events/biogenesis_events.txt:3466
 - 已核对传统 on_enabled 的蜂巢分支与 bio.195 的选项效果。
   Checked the hive branch of the tradition on_enabled and the option effects of bio.195.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

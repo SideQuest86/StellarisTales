@@ -1,7 +1,5 @@
 # 辐射泄露 / Radiation Leak
 - 分类 Category：文明纪事 Society (C7) · 考古插曲 archaeological interlude
-- 来源 Sources：`events/federations_events_2.txt:501-524` · `common/scripted_effects/archaeology_event_effects.txt`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -17,10 +15,10 @@
 
 ## 条件与文明差异 Conditions and variants
 
-无。/ None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/federations_events_2.txt:501-524` · `common/scripted_effects/archaeology_event_effects.txt`
 - 已核对 Checked：触发调用与效果。/ Callers and effect.
 - 审阅改动 Changes：无结构改动。/ No structural change.
 - 不确定 Uncertain：该事件被多个遗址的随机池调用，完整遗址名单见调用图。 / Many sites call this event; see the call graph for the full list.

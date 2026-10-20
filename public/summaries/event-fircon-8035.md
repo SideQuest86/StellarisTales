@@ -1,7 +1,6 @@
 # 抢地运动 / Land Grabs
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/first_contact_dlc_events.txt:9128-9184`；`common/on_actions/00_on_actions.txt:468, 538-560`（on_five_year_random_pulse_pre_ftl）；`events/on_action_events_2.txt:3146-3179`（action.620/621）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -31,5 +30,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/first_contact_dlc_events.txt:9128-9184`；`common/on_actions/00_on_actions.txt:468, 538-560`（on_five_year_random_pulse_pre_ftl）；`events/on_action_events_2.txt:3146-3179`（action.620/621）
 - 已核对：触发与选项花费条件。
   Checked: trigger and option cost conditions.

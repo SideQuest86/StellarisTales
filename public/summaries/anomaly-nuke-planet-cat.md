@@ -1,8 +1,6 @@
 # 末日之冬 / The Winter of the Fallen
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:456-479` · `events/anomaly_events_3.txt:4277-4916 (4155-4163)` · `common/special_projects/00_projects_3.txt:478-529` · `events/failures.txt:344-453`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -38,6 +36,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:456-479` · `events/anomaly_events_3.txt:4277-4916 (4155-4163)` · `common/special_projects/00_projects_3.txt:478-529` · `events/failures.txt:344-453`
 - 已核对 Checked：类别、4155–4163、两个项目、三个失败事件（含问答选项条件）。  
   Category, 4155–4163, both projects and the three failure events, including option conditions.
 - 覆盖 Coverage：15 个文档全部核对 / all 15 docs checked.

@@ -1,8 +1,6 @@
 # 天体星仪 / Celestial Orrery
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:804-813` · `common/solar_system_initializers/sol_initializers.txt:3659-3695 (init_sol_geocentric)` · `events/anomaly_events_4.txt:4956-5021 (8000)`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:804-813` · `common/solar_system_initializers/sol_initializers.txt:3659-3695 (init_sol_geocentric)` · `events/anomaly_events_4.txt:4956-5021 (8000)`
 - 已核对 Checked：类别、初始化器与8000（含 destroy_star_system 效果）。  
   Category, initializer and 8000, including the destroy_star_system effect.
 - 更正 Corrections：移除拆解选项通过通用效果 destroy_star_system 引出的天灾/观察者链接（应急协议机械世界计数等，仅在相关天灾存在时适用），它们不是本异常的后续。  

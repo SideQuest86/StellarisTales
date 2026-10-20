@@ -1,7 +1,6 @@
 # 未知信号 / Unknown Signal
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：events/distant_stars_events_2.txt:15-135 (distar.290 game start); common/solar_system_initializers/distant_stars_initializers.txt:3659-3800 (distar_sealed_1_1/1_2); common/on_actions/00_on_actions.txt:1009-1010; events/distant_stars_events_1.txt:8773 (distar.240); events/distant_stars_events_1.txt:8811 (distar.242); events/distant_stars_events_1.txt:8895 (distar.243); common/on_actions/00_on_actions.txt:1462; common/anomalies/95_anomaly_categories_distant_stars.txt:767-782; events/distant_stars_events_1.txt:8924 (distar.244)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ distar.242 has four texts: signal already received (normal / psionic species / g
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：events/distant_stars_events_2.txt:15-135 (distar.290 game start); common/solar_system_initializers/distant_stars_initializers.txt:3659-3800 (distar_sealed_1_1/1_2); common/on_actions/00_on_actions.txt:1009-1010; events/distant_stars_events_1.txt:8773 (distar.240); events/distant_stars_events_1.txt:8811 (distar.242); events/distant_stars_events_1.txt:8895 (distar.243); common/on_actions/00_on_actions.txt:1462; common/anomalies/95_anomaly_categories_distant_stars.txt:767-782; events/distant_stars_events_1.txt:8924 (distar.244)
 已核对 distar.290、两个星系初始化、两个 on_entering_system_fleet 触发、on_ship_destroyed_perp、异常定义与 distar.240–244。修正：草稿把入口信号、灵能实体、实体被毁和异常分成四个独立故事；现合为一个以 distar.240 为起点的故事，用三条审阅连接表示进入、击毁和勘察。
 
 Checked distar.290, both system initializers, the on_entering_system_fleet triggers, on_ship_destroyed_perp, the anomaly and distar.240–244. Correction: the draft split the entry signal, the entity, its death and the anomaly into four stories; they are now one story starting at distar.240 with three reviewed links (enter, destroy, survey).

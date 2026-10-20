@@ -1,7 +1,6 @@
 # 间谍网已建立 / Spy Network Established
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/nemesis_espionage_events.txt:12-160`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -25,5 +24,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/nemesis_espionage_events.txt:12-160`
 - 已核对：espionage.1 的链顺序与各窗口触发。
   Checked: the chain order of espionage.1 and each window's trigger.

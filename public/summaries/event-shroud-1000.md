@@ -1,7 +1,6 @@
 # 实验测试 / Experimental Testing
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`common/situations/13_shroud_situations.txt`；`events/shroud_situation_events.txt:12-260`；`common/on_actions/00_on_actions.txt:69,4710`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,5 +26,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`common/situations/13_shroud_situations.txt`；`events/shroud_situation_events.txt:12-260`；`common/on_actions/00_on_actions.txt:69,4710`
 - 已核对：启动条件、局势定义与取向锁定、完成后的循环。
   Checked: start condition, situation definition and approach locks, the loop after completion.

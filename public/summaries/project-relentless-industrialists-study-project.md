@@ -1,8 +1,6 @@
 # 安全辐射化的秘密 / The Secret to Safer Radiation
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/00_projects_3.txt:1735-1752` · `common/policies/00_policies.txt:5281` · `events/toxoids_events.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/00_projects_3.txt:1735-1752` · `common/policies/00_policies.txt:5281` · `events/toxoids_events.txt`
 - 已对照项目、政策与toxoids事件。  
   Compared the project, the policy and the toxoids event.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

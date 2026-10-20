@@ -1,11 +1,7 @@
 # 失去单位 / Unit Lost
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/synthetic_dawn_events.txt:12-218`; `common/on_actions/00_on_actions.txt:5153-5159`
 - DLC：Synthetic Dawn
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ No branches.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/synthetic_dawn_events.txt:12-218`; `common/on_actions/00_on_actions.txt:5153-5159`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了三个事件与被注释的 syndaw.10/11；已标为无法自然到达。同类的合成人版本在 events/on_action_events_1.txt:7068 起（不在本清单）。
 
 Checked the three events and the commented-out syndaw.10/11; marked as not naturally reachable. The synthetic-empire counterparts start at events/on_action_events_1.txt:7068 (not in this list).

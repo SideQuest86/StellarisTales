@@ -1,6 +1,6 @@
 # 孤独守卫者 / Lone Defender
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/unique_system_events.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -20,4 +20,6 @@ a 研究残骸（工程研究）；b 改名为“Lone Defender”（获得团结
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/unique_system_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：unique.135。

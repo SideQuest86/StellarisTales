@@ -1,8 +1,6 @@
 # 高等水生类 / Advanced Aquatics
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Aquatics Species Pack · 来源 Sources：`events/aquatics_events.txt:11-24`、`common/ascension_perks/00_ascension_perks.txt:910-930` · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Aquatics Species Pack
 
 ## 如何开始 How it starts
 
@@ -24,12 +22,11 @@ No branches.
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/aquatics_events.txt:11-24`、`common/ascension_perks/00_ascension_perks.txt:910-930`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

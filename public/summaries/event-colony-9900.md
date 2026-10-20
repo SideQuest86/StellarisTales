@@ -1,8 +1,6 @@
 # 晨间打卡缺席 / Missed The Morning Check-in（静滞监狱 · Stasis Prison）
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:9073–9540` · `common/special_projects/00_projects_3.txt:1787–1806` · `common/on_actions/00_on_actions.txt:3882`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -29,4 +27,6 @@ At the fifth anniversary (weight 3) on a large, non-artificial colony that has a
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:9073–9540` · `common/special_projects/00_projects_3.txt:1787–1806` · `common/on_actions/00_on_actions.txt:3882`
 已核对 9900–9930 全部脚本、项目与随机池；编译草稿正确；标注三个随机结局与 9915 的四种处置。/ Draft correct; endings and the four choices annotated.

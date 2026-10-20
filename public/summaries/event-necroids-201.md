@@ -1,8 +1,5 @@
-# 祭献已毕：[root.GetAdj]其乐融融 / A Sacrifice Made: [root.GetAdj] Harmony
-
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Necroids · 来源 Sources：`events/necroids_events_2.txt:81-146`、`common/edicts/03_sacrifices.txt:148-258`、`common/scripted_effects/00_scripted_effects.txt:5239` · 审阅 Reviewed 2026-10-13
+# 祭献已毕：其乐融融 / A Sacrifice Made: Harmony
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC：Necroids
 
 ## 如何开始 How it starts
 
@@ -30,6 +27,9 @@ The wording uses the empire adjective ([root.GetAdj]).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/necroids_events_2.txt:81-146`、`common/edicts/03_sacrifices.txt:148-258`、`common/scripted_effects/00_scripted_effects.txt:5239`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

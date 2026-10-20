@@ -1,7 +1,5 @@
-# [rogue_agent_planet.GetName]：反叛特工 / [rogue_agent_planet.GetName]: Rogue Agent
-
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/first_contact_dlc_espionage_events.txt:10-1040`
+# 原始星球：反叛特工 / Pre-FTL Planet: Rogue Agent
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,6 +27,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/first_contact_dlc_espionage_events.txt:10-1040`
 - 已核对：分派权重与修正、三条线的入口条件与分支。
   Checked: dispatcher weights and modifiers, entry conditions and branches of the three lines.
 - 未逐行核对：各选项的数值效果。

@@ -1,11 +1,7 @@
 # 斯克兰德·夏普比克 / Skrand Sharpbeak
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`common/megastructures/05_gateways.txt:433-476`; `events/paragon_events_3.txt:28-520`; `events/paragon_events_3.txt:584-1707`; `events/paragon_events_3.txt:3305-3420`; `common/on_actions/00_on_actions.txt:637-648`; `common/static_modifiers/19_static_modifiers_paragon.txt`; `common/situations/05_paragon_situations.txt`
 - DLC：Galactic Paragons
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ In 3003, "help repair" is closed to gestalts and fanatic xenophobes and "seize i
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`common/megastructures/05_gateways.txt:433-476`; `events/paragon_events_3.txt:28-520`; `events/paragon_events_3.txt:584-1707`; `events/paragon_events_3.txt:3305-3420`; `common/on_actions/00_on_actions.txt:637-648`; `common/static_modifiers/19_static_modifiers_paragon.txt`; `common/situations/05_paragon_situations.txt`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了入口（common/megastructures/05_gateways.txt、events/paragon_events_3.txt:28-520、3305-3420）、脉冲（00_on_actions.txt:637-648；events 1691-1707）、各后续事件的触发与效果（584-1612）、静态修正（common/static_modifiers/19_static_modifiers_paragon.txt）。原先的10张卡（3901、3010、3020、3030、3040、3050、3060、3070、3080、3090）并为一条故事；星门“重新激活”通知 apoc.10/12 留在 event-apoc-10。
 
 Checked the entrances (common/megastructures/05_gateways.txt, events/paragon_events_3.txt:28-520, 3305-3420), the pulse (00_on_actions.txt:637-648; events 1691-1707), every follow-up's trigger and effects (584-1612) and the static modifiers (common/static_modifiers/19_static_modifiers_paragon.txt). The former ten cards (3901, 3010, 3020, 3030, 3040, 3050, 3060, 3070, 3080, 3090) are merged into one story; the gateway "Reactivated" notices apoc.10/12 stay in event-apoc-10.

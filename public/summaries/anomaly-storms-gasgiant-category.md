@@ -1,7 +1,6 @@
 # 大气风暴 / Atmospheric Storms
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:279; events/anomaly_events_1.txt:4114 (anomaly.330); events/anomaly_events_4.txt:2972 (anomaly.6855); common/special_projects/00_projects_3.txt (RESCUE_STORM); events/anomaly_events_4.txt:3022 (anomaly.6860)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.6855's description varies by gestalt status and bio ships; 6860 gives ge
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:279; events/anomaly_events_1.txt:4114 (anomaly.330); events/anomaly_events_4.txt:2972 (anomaly.6855); common/special_projects/00_projects_3.txt (RESCUE_STORM); events/anomaly_events_4.txt:3022 (anomaly.6860)
 已核对。草稿将 anomaly.6855 显示为 p=0.00*（基础权重），实为取决于科学船数量的条件权重，已用互斥组说明。
 
 Checked. The draft shows anomaly.6855 as p=0.00* (its base weight); the real weight depends on the science-ship count, documented with an exclusive group.

@@ -1,6 +1,6 @@
 # 掠袭 / Raiding
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/marauder_events.txt:4290-6390; events/marauder_events.txt:6388-6674; common/on_actions/00_on_actions.txt:92,95,241,1583,2166 · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -32,6 +32,8 @@ The three endings are exclusive; afterwards a cooldown applies (raid_cooldown) a
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/marauder_events.txt:4290-6390; events/marauder_events.txt:6388-6674; common/on_actions/00_on_actions.txt:92,95,241,1583,2166
 - 修正：草稿把索贡（event-marauder-100）、掠袭得手（103）、放弃（113）、被毁（115）、受雇来袭（150）分成五个故事；它们共享 raid_ongoing / under_marauder_attack / raid_target_of 标记，属于同一次掠袭的开头与收场，现合并，并按窗口接收方注明视角。
   Correction: the draft split the tribute demand (event-marauder-100), the raid hit (103), abandonment (113), destruction (115) and the hired-raid warning (150) into five stories; they share the raid_ongoing / under_marauder_attack / raid_target_of flags as the start and end of one raid, so they are merged, with each window's recipient noted.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

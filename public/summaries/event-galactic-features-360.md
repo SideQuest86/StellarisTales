@@ -1,10 +1,6 @@
 # 恶臭的后代 / Effluvial Offspring
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/galactic_features_events.txt:774-940`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -20,10 +16,6 @@ The notice galactic_features.361 has options by ethic (fanatic pacifist / balanc
 
 ## 分支与结局 Branches and outcomes
 
-无。
-
-None.
-
 ## 条件与文明差异 Conditions and variants
 
 选项因伦理而异。
@@ -32,6 +24,9 @@ Options differ by ethic.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/galactic_features_events.txt:774-940`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了云强度变量与四种子代。
 
 The cloud-strength variable and the four offspring were checked.

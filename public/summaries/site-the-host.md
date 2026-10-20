@@ -1,6 +1,6 @@
 # 地下洞穴 / Subterranean Hollows
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1820；events/ancient_relics_arcsite_events_1.txt:3265 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -24,7 +24,6 @@ The giant spiralling hollows in the crust are the fossil of a huge arthropod, an
 
 ## 分支与结局 Branches and outcomes
 
-
 ## 条件与文明差异 Conditions and variants
 
 - 终章对虫群帝国与演化猎手各有一条专属回应。 / The finale has extra answers for Hive-minds (swarm) and Evolutionary Predators.
@@ -32,5 +31,7 @@ The giant spiralling hollows in the crust are the fossil of a huge arthropod, an
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1820；events/ancient_relics_arcsite_events_1.txt:3265
 - 已核对：遗址定义（common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1820）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1820) with its stage order and conditions, every stage event script, and how the site appears; both languages read.

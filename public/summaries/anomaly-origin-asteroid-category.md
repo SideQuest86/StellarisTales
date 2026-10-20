@@ -1,7 +1,6 @@
 # 未知起源 / Unknown Origin
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:33; events/anomaly_events_1.txt:15 (anomaly.1); events/anomaly_events_1.txt:146 (anomaly.15); events/distant_stars_events_1.txt:7265 (distar.225)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ distar.225 needs Distant Stars.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:33; events/anomaly_events_1.txt:15 (anomaly.1); events/anomaly_events_1.txt:146 (anomaly.15); events/distant_stars_events_1.txt:7265 (distar.225)
 已核对。草稿显示 anomaly.1 为 p=0.50*、distar.225 为 p=0.00*，均为被修改的基础权重，已用互斥组说明。
 
 Checked. The draft shows anomaly.1 as p=0.50* and distar.225 as p=0.00*, both modified base weights, documented with an exclusive group.

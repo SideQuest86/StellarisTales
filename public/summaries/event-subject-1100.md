@@ -1,7 +1,6 @@
 # 争吵的指挥官 / The Bickering Commanders
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/overlord_subject_events.txt:1465-2470`；`common/on_actions/00_on_actions.txt:521-535,4793-4799`；`common/scripted_effects/overlord_effects.txt:1-60`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/overlord_subject_events.txt:1465-2470`；`common/on_actions/00_on_actions.txt:521-535,4793-4799`；`common/scripted_effects/overlord_effects.txt:1-60`
 - 已核对：派发条件、1115 → 1117 → on_action → 1142 的计数循环。
   Checked: dispatcher conditions and the 1115 -> 1117 -> on_action -> 1142 counting loop.
 - 更正：1120–1140 原为五个互不相连的单窗口故事，现并入。

@@ -1,6 +1,6 @@
 # 岩居兽灭绝决议 / Cutholoid Eradication resolution
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -24,5 +24,7 @@ Once the resolution resolution_cutholoid_eradication is active, three hidden eve
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt
 - 已核对 Checked：3102–3106 与清理事件的触发条件。
 - 更正 Corrections：三条只含隐藏路由的单页故事并为一个。 Three single-notice stories are merged into one.

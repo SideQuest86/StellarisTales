@@ -1,8 +1,6 @@
 # 星界奇迹 / Astralnomical Marvel
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:4435–4920`（6029–6059）；`common/on_actions/00_on_actions.txt:3845, 3865, 3888, 5017`
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -44,6 +42,8 @@ Each chapter follows the last by 180 days plus up to 120 random days.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`events/astral_planes_events.txt:4435–4920`（6029–6059）；`common/on_actions/00_on_actions.txt:3845, 3865, 3888, 5017`
 - 已核对：6029–6059 全部事件及其 `on_actions` 条目、相关静态修正。编译结构正确；补充互斥组、结局、说明。
 - 不确定：6050 / 6055 是否清除 `widening_divide_N` 修正，在这些事件中未见。
 

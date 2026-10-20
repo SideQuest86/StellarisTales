@@ -1,6 +1,6 @@
 # 泽珞族 / The Zroni
 
-- 分类 Category：先驱者 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_1.txt:14–580、6917；common/archaeological_site_types/01_precursor_arc_sites.txt:4–261；common/scripted_effects/00_scripted_effects.txt:7758；common/solar_system_initializers/ancient_relics_initializers.txt:179；common/artifact_actions/artifact_actions.txt:812；common/relics/relics.txt:1024 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -48,6 +48,8 @@ Six sites appear strictly in order; each last stage places the next one 3–15 j
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/ancient_relics_arcsite_events_1.txt:14–580、6917；common/archaeological_site_types/01_precursor_arc_sites.txt:4–261；common/scripted_effects/00_scripted_effects.txt:7758；common/solar_system_initializers/ancient_relics_initializers.txt:179；common/artifact_actions/artifact_actions.txt:812；common/relics/relics.txt:1024
 - 已核对：ancrel.1–19、六处遗址的阶段定义、zroni_digsite_spawn_effect、Zrocursor_system 初始化器、artifact_zroni_research、ZRONI_SECRETS 与 10350、r_zro_crystal 与 7006；中英文正文已读。
 - 结构修正：前往泽珞与秘密研究的桥改为挂在 ancrel.13 的回应上并附证据；原为独立单页故事的遗珍激活 7006 并入本故事；补充阶段标签与说明。
 

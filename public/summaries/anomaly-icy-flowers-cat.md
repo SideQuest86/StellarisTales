@@ -1,8 +1,6 @@
 # 寒冷的发现 / A Cold Discovery
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:832-847` · `events/anomaly_events_4.txt:5110-5189 (2010-2020)` · `common/special_projects/00_projects_3.txt:2014-2035`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:832-847` · `events/anomaly_events_4.txt:5110-5189 (2010-2020)` · `common/special_projects/00_projects_3.txt:2014-2035`
 - 已核对 Checked：类别、2010/2015/2020与项目。  
   Category, 2010/2015/2020 and the project.
 - 覆盖 Coverage：5 个文档全部核对 / all 5 docs checked.

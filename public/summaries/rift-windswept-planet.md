@@ -1,8 +1,6 @@
 # 风扫行星 / Windswept Planet
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:355`；`events/astral_rifts_2_events.txt:3247–3915`（2700–2790）
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -48,6 +46,8 @@ Evolutionary Predators have an exclusive option in each outcome giving the match
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:355`；`events/astral_rifts_2_events.txt:3247–3915`（2700–2790）
 - 已核对：2700–2790 全部事件（`astral_rifts_2_events.txt:3247–3915`）。编译结构正确；补充互斥组、结局、说明。2750 的第四选项与 2745 共用选项键。
 
 - Checked: all events 2700–2790. Compiled structure was correct; added exclusive groups, endings and notes. The fourth option of 2750 shares its key with 2745.

@@ -1,7 +1,6 @@
 # 神秘迷宫 / The Mysterious Labyrinth
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13（r2-society）
-- 来源 Sources：`events/situation_events.txt:8-393`；`common/situations/01_narrative_situations.txt:149-347`；`common/on_actions/00_on_actions.txt`（on_colony_4/5_years_old 随机殖民地事件池）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -40,6 +39,8 @@ A bidirectional situation: progress starts at 50% and moves up or down; the appr
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13（r2-society）
+- 来源 Sources：`events/situation_events.txt:8-393`；`common/situations/01_narrative_situations.txt:149-347`；`common/on_actions/00_on_actions.txt`（on_colony_4/5_years_old 随机殖民地事件池）
 - 已核对：事件 5–55 与局势定义（初始值、双向、阶段定义顺序 stage_3/2/1/2_alt/3_alt、各方式进度、on_fail 与 on_progress_complete 分支、21 个月计时）。
   Checked: events 5–55 and the situation definition (initial value, bidirectional, stage order stage_3/2/1/2_alt/3_alt, progress per approach, on_fail and on_progress_complete branches, the 21-month timer).
 - 更正 Corrections：草稿按阶段定义顺序把 25→15→10→40→45 串成一条线，并把五个结局都挂在局势卡下。现以审阅连接表达两个方向（局势→40→45→50/55；局势→10→15→20/30；局势→25）。

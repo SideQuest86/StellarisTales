@@ -1,7 +1,5 @@
 # 发现节点意识 / Nodal Consciousness Discovered
 - 分类 Category：文明纪事 Society (C7) · 前FTL观察情境 pre-FTL observation situation
-- 来源 Sources：`events/first_contact_dlc_situation_events.txt:4971-6370` · `common/situations/04_first_contact_dlc_situations.txt:583-764` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,6 +21,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_dlc_situation_events.txt:4971-6370` · `common/situations/04_first_contact_dlc_situations.txt:583-764` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：情境定义、2100–2165 事件的触发与路线条件。/ Situation definition and events 2100–2165.
 - 审阅改动 Changes：原编译草稿结构正确，补充了入口池、路线与结局概率。/ The compiled structure was correct; entry pool, approaches and outcome odds added.
 - 不确定 Uncertain：各月度小事件对路线的精确要求（2115、2125、2130、2135、2145）只按条件标志读取。 / The exact approach requirements of the monthly events were only read from their flag conditions.

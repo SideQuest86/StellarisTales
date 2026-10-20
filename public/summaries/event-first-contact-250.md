@@ -1,7 +1,5 @@
 # 外星飞船被俘获！ / Alien Ship Captured!（敌对首次接触 hostile first contact）
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件 first_contact.250）
-- 来源 Sources：`events/first_contact_events.txt:2379–5410` · `common/first_contact/00_first_contact.txt:1134–1545`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -25,5 +23,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:2379–5410` · `common/first_contact/00_first_contact.txt:1134–1545`
 - 已核对 Checked：250–332 脚本、敌对飞船/系统阶段、五个“敌对收尾”阶段。
 - 审阅改动 Changes：原 250（夺船）与 320（绑架）两篇并为一棵树（270/280 的“再试一次”本来就通向绑架），并把共享收尾 285/290/295 收为章节；1100/1105/1110 作为反向接触单页保留。/ The separate ship-capture and abduction stories (250 and 320) are now one tree because the retry options lead from one to the other; the shared end events 285/290/295 are chapters.

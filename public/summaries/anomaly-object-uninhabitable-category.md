@@ -1,7 +1,6 @@
 # 未知物体 / Unidentified Object
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:693; events/anomaly_events_2.txt:482 (anomaly.2540); common/special_projects/00_projects_1.txt (TRANSLATE_MURAL_PROJECT); events/anomaly_events_2.txt:511 (anomaly.2541); events/anomaly_events_2.txt:537 (anomaly.2542)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:693; events/anomaly_events_2.txt:482 (anomaly.2540); common/special_projects/00_projects_1.txt (TRANSLATE_MURAL_PROJECT); events/anomaly_events_2.txt:511 (anomaly.2541); events/anomaly_events_2.txt:537 (anomaly.2542)
 已核对异常定义、项目与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition, the project and every outcome event; the compiled tree is correct, no change needed.

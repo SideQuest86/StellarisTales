@@ -1,7 +1,4 @@
-# 圣地：§R受玷污§! / Consecrated Worlds: §RProfaned§!
-- 分类 Category：文明纪事 Society (C7) · 升华天赋事件 ascension-perk event
-- 来源 Sources：`events/megacorp_events.txt:32-83` · `common/on_actions/00_on_actions.txt:4230`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 圣地：受玷污 / Consecrated Worlds: Profaned- 分类 Category：文明纪事 Society (C7) · 升华天赋事件 ascension-perk event
 
 ## 如何开始 How it starts
 
@@ -21,5 +18,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/megacorp_events.txt:32-83` · `common/on_actions/00_on_actions.txt:4230`
 - 已核对 Checked：触发、条件与效果。/ Trigger, conditions and effect.
 - 审阅改动 Changes：无结构改动。/ No change.

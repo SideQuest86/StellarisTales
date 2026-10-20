@@ -1,8 +1,6 @@
 # 余波求助信号 / Aftermath Distress Signal
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:249-262` · `events/cosmic_storms_events_1.txt:216-241` · `events/anomaly_events_cosmic_storms.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:249-262` · `events/cosmic_storms_events_1.txt:216-241` · `events/anomaly_events_cosmic_storms.txt`
 - 已对照类别脚本、cstorms.10与5050。  
   Compared the category script, cstorms.10 and 5050.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

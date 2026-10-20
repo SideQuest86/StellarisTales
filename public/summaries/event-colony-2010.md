@@ -1,7 +1,6 @@
 # 思维转变 / A Change of Heart
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_2.txt:1987-2358`；`common/on_actions/00_on_actions.txt:3814,3855,3877`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,5 +26,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_2.txt:1987-2358`；`common/on_actions/00_on_actions.txt:3814,3855,3877`
 - 已核对：触发、四个选项、40/60 随机与结果选项。
   Checked: trigger, the four options, the 40/60 split and the result options.

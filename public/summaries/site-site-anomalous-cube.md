@@ -1,6 +1,6 @@
 # 异常立方体 / Anomalous Cube
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/12_strange_worlds_arc_sites.txt:58；events/strange_worlds_events.txt:3027 · DLC：脚本文件 12_strange_worlds_arc_sites.txt（事件需 has_biogenesis_dlc） strange-worlds script files (events need has_biogenesis_dlc) · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：脚本文件 12_strange_worlds_arc_sites.txt（事件需 has_biogenesis_dlc） strange-worlds script files (events need has_biogenesis_dlc)
 
 ## 如何开始 How it starts
 
@@ -28,10 +28,11 @@ A colossal cube of Living Metal. Inside, a molluscoid commander left two recordi
 
 ## 条件与文明差异 Conditions and variants
 
-- 无特殊的文明差异。 / No empire-specific variants beyond the reward wording.
 - 本遗址的 on_roll_failed 把事件池参数设为 no_events（不存在同名事件池），所以掷骰失败不会触发随机意外。 / The site passes RANDOM_EVENTS = no_events to its roll-failure effect (no pool of that name exists), so a failed roll triggers no incident.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/12_strange_worlds_arc_sites.txt:58；events/strange_worlds_events.txt:3027
 - 已核对：遗址定义（common/archaeological_site_types/12_strange_worlds_arc_sites.txt:58）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/12_strange_worlds_arc_sites.txt:58) with its stage order and conditions, every stage event script, and how the site appears; both languages read.

@@ -1,7 +1,5 @@
 # 个体化方案 / Suggestions of Individuality（蜂巢遇常规帝国）
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件 first_contact.380）
-- 来源 Sources：`events/first_contact_events.txt:5614–5770` · `common/first_contact/00_first_contact.txt:383–407, 1741–1779`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,5 +21,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:5614–5770` · `common/first_contact/00_first_contact.txt:383–407, 1741–1779`
 - 已核对 Checked：380、385 与两个收尾阶段。
 - 审阅改动 Changes：并 380 入 385 篇。/ 380 joins the 385 story.

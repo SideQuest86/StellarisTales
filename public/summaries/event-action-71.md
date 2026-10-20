@@ -1,6 +1,6 @@
 # 合成领袖已损坏 / Synth Leader Out of Commission
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/on_action_events_1.txt:7064-7236; common/on_actions/00_on_actions.txt:5165-5168 on_synth_leader_malfunction · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -16,6 +16,8 @@ The four windows are exclusive; each kills one matching mechanical leader (no ev
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/on_action_events_1.txt:7064-7236; common/on_actions/00_on_actions.txt:5165-5168 on_synth_leader_malfunction
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

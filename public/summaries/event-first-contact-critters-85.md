@@ -1,7 +1,5 @@
 # 虚空之云 / Void Clouds
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（虚空云 void_clouds_stage_1/2）
-- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:1070–1163` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:373–411` · `common/special_projects/00_projects_2.txt:578–594`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_NPC_country_types_events.txt:1070–1163` · `common/first_contact/01_first_contact_space_fauna_and_NPCs.txt:373–411` · `common/special_projects/00_projects_2.txt:578–594`
 - 已核对 Checked：80、85、story.405、项目与阶段。/ Events, project, stages.
 - 审阅改动 Changes：并 80 入 85 篇。/ 80 joined 85.

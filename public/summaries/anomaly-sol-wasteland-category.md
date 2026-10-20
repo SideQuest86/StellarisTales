@@ -1,7 +1,6 @@
 # 核废墟 / Nuclear Wasteland
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:762; events/galactic_features_events.txt:110 (galactic_features.104); common/solar_system_initializers/sol_initializers.txt:3448
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:762; events/galactic_features_events.txt:110 (galactic_features.104); common/solar_system_initializers/sol_initializers.txt:3448
 已核对异常、初始化器与事件；编译树正确。
 
 Checked the anomaly, initializer and event; the compiled tree is correct.

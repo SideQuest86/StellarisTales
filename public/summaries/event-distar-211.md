@@ -1,7 +1,6 @@
 # 族母 / The Matriarch
 
-- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:2702 (elderly_tiyanki_system); events/distant_stars_events_1.txt:6536 (distar.211); common/on_actions/00_on_actions.txt:1005; events/distant_stars_events_1.txt:6600 (distar.212); common/on_actions/00_on_actions.txt:1461; common/special_projects/00_projects_distant_stars.txt:1500 (REANIMATE_TIYANKI_MATRIARCH); events/galactic_community_events.txt:1161 (galcom.110)
+- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ Linear encounter → (optionally) kill; the four kill options are mutually exclu
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:2702 (elderly_tiyanki_system); events/distant_stars_events_1.txt:6536 (distar.211); common/on_actions/00_on_actions.txt:1005; events/distant_stars_events_1.txt:6600 (distar.212); common/on_actions/00_on_actions.txt:1461; common/special_projects/00_projects_distant_stars.txt:1500 (REANIMATE_TIYANKI_MATRIARCH); events/galactic_community_events.txt:1161 (galcom.110)
 已核对初始化器、on_action（1005 进入、1461 击毁）、distar.210–218、复活项目与 galcom.110。草稿把进入事件 distar.211 与击杀事件 distar.212 作为两个独立故事；现合为以 distar.211 为起点的一个故事，用审阅连接表示击杀。distar.210 是隐藏的巡逻事件，不属于叙事。
 
 Checked the initializer, the on_action hooks (1005 entering, 1461 destroyed), distar.210–218, the reanimation project and galcom.110. The draft treated the entry event distar.211 and the kill event distar.212 as separate stories; they are now one story starting at distar.211 with a reviewed link for the kill. distar.210 is a hidden patrol event, not part of the narrative.

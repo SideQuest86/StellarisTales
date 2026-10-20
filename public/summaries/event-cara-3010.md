@@ -1,10 +1,6 @@
 # 行商舰队：拉奇工业公司 / Caravan Fleet: The Racket Industrial Enterprise
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/caravaneer_events.txt:2834-3700`; `common/on_actions/00_on_actions.txt:1114-1117,1656`
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -32,6 +28,9 @@ Deal product and cost are produced by the scripted localisation GetFleet3DealPro
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/caravaneer_events.txt:2834-3700`; `common/on_actions/00_on_actions.txt:1114-1117,1656`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对了行程、国境触发、首次接触入口、最后一次报价与被歼灭处理；三支车队的脚本逐行相同，仅数字不同。原先分开的3张卡（3002、3020、3250）并入本故事。
 
 Route, border trigger, first-contact entry, last offer and destruction handling were checked; the three fleets use identical scripts with different numbers. The former three cards (3002, 3020, 3250) are merged here.

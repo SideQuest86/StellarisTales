@@ -1,6 +1,6 @@
 # 虚空虫 / Voidworms
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt, common/first_contact/01_first_contact_space_fauna_and_NPCs.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -29,6 +29,8 @@ First contact with the Voidworms: stage 1 grand_archive.2000, whose option moves
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt, common/first_contact/01_first_contact_space_fauna_and_NPCs.txt
 - 已核对 Checked：首次接触定义、2000/2005/2015、VOIDWORMS_PROJECT 的完成事件。
 - 更正 Corrections：“众声喧哗”2000 与“虚空虫”2005 是同一次首次接触的两个阶段，现并为一个故事；2006（备用的最终阶段）与 2015 同时属于“寻宝者”起源故事。
   2000 and 2005 are two stages of one first contact and are merged; 2006 (stand-alone final stage) and 2015 are shared with the Treasure Hunters origin story.

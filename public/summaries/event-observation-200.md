@@ -1,7 +1,4 @@
-# 穿梭机坠毁在[pre_ftl_planet.GetName] / Shuttle Crash on [pre_ftl_planet.GetName]
-- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:1388-2250` · `events/observation_events.txt:1709-1751` · `common/special_projects/00_projects_1.txt:695-735` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 穿梭机坠毁在原始星球 / Shuttle Crash on a Pre-FTL Planet- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -23,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:1388-2250` · `events/observation_events.txt:1709-1751` · `common/special_projects/00_projects_1.txt:695-735` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：根 observation.200，201–212、3210 脚本，项目 SHUTTLE_INTERCEPTED，池权重。/ Root, scripts, project and pool weight.
 - 审阅改动 Changes：结构与草稿一致；补充了触发条件、权重与项目要求。/ Structure matched the draft; conditions, weights and project requirements added.

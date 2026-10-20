@@ -1,7 +1,6 @@
 # 星海共同体 / A Galactic Community
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/galactic_community_events.txt:14-340,458-608`；`common/on_actions/00_on_actions.txt:247,299,4400`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/galactic_community_events.txt:14-340,458-608`；`common/on_actions/00_on_actions.txt:247,299,4400`
 - 已核对：galcom.1/3/20 的条件、点票逻辑、重试周期、16 的来源。
   Checked: conditions of galcom.1/3/20, the tally logic, the retry period and sources of 16.
 - 更正：galcom.14（十年脉冲）和 galcom.50（议会成立）原为单独故事，现并入。

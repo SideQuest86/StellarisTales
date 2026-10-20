@@ -1,7 +1,6 @@
 # 异常的读数 / Heavy Readings
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:124-146; events/distant_stars_events_1.txt:1210 (distar.45); common/special_projects/00_projects_distant_stars.txt:88-112 (DARK_FLOW_PROJECT); events/distant_stars_events_1.txt:1247 (distar.46)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -25,10 +24,10 @@ Linear; no branches.
 
 无文明差异选项。
 
-No empire-specific options.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:124-146; events/distant_stars_events_1.txt:1210 (distar.45); common/special_projects/00_projects_distant_stars.txt:88-112 (DARK_FLOW_PROJECT); events/distant_stars_events_1.txt:1247 (distar.46)
 已核对异常、distar.45–46 与项目。树结构正确。
 
 Checked the anomaly, distar.45–46 and the project. Tree correct.

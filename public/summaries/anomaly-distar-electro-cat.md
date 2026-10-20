@@ -1,7 +1,6 @@
 # 网状构造 / Webwork
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:283-301; events/distant_stars_events_1.txt:3637 (distar.85)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Xenophobes only see the "Disturbing" option; same effects.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:283-301; events/distant_stars_events_1.txt:3637 (distar.85)
 已核对异常定义与 distar.85。
 
 Checked the anomaly definition and distar.85.

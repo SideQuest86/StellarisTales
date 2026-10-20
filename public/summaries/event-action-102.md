@@ -1,6 +1,6 @@
 # 银河市场：站点搬迁 / Galactic Market: station moved
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/on_action_events_2.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -23,4 +23,6 @@ Hidden action.102 runs when a system containing the Galactic Market station is l
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/on_action_events_2.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：action.102 的三个分支与 action.103。

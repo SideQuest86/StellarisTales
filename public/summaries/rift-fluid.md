@@ -1,8 +1,6 @@
 # 流体 / The Fluid
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:154`；`events/astral_rifts_1_events.txt:875–1431`（1300–1330）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1330 已并入 / former standalone failure event 1330 merged in）
 
 ## 如何开始 How it starts
 
@@ -42,6 +40,8 @@ Drawn by weight from the explorer's rift pool: weight 1. Because it can award th
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1330 已并入 / former standalone failure event 1330 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:154`；`events/astral_rifts_1_events.txt:875–1431`（1300–1330）
 - 已核对：裂隙定义与遗珍锁定；1300–1330 全部事件；1315.b/1316.b 的 `on_roll_failed = astral_rift.1330`（`astral_rifts_1_events.txt:1157–1161, 1270–1274`）；1330 的 `kill_leader` 与 `destroy_fleet`。
 - 修正：编译图漏掉失败分支，1330 曾是独立故事；已用两条桥接并入，标注 1325/1330 互斥，并说明两篇“舱室”的差别。
 

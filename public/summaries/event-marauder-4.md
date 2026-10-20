@@ -1,6 +1,5 @@
-# [From.GetName]的末日 / The End of the [From.GetName]
-
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/marauder_events.txt:330-1065; events/marauder_events.txt:3596-3676; events/nomads_events_1.txt:6803; common/on_actions/00_on_actions.txt:1409 · 审阅 Reviewed 2026-10-12
+# 掠夺者氏族的末日 / The End of the Marauder Clan
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ marauder.7 differs by clan; the refugee text has a version for artificial worlds
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/marauder_events.txt:330-1065; events/marauder_events.txt:3596-3676; events/nomads_events_1.txt:6803; common/on_actions/00_on_actions.txt:1409
 - 已核对 marauder.4 的各接收方条件与延迟；结构与草稿一致，补充了视角标签。
   Checked the recipients and delays in marauder.4; the structure matches the draft, with perspective labels added.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

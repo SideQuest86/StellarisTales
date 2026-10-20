@@ -1,6 +1,5 @@
-# 被[patrol_drone]拘押 / Apprehended by patrol drones
-
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/scripted_effects/espionage_event_effects.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+# 被巡逻无人机拘押 / Apprehended by patrol drones
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -26,4 +25,6 @@ regular -> gestalt; gestalt -> gestalt (not for machine owners); low-stakes pool
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/scripted_effects/espionage_event_effects.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：5010、5011 与事件池条件。

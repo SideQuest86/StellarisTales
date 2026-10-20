@@ -1,8 +1,6 @@
 # 令人疑惑的宇宙射线 / Confounding Cosmic Rays
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:168-197` · `events/anomaly_events_3.txt:819-1322 (4035-4040)` · `common/special_projects/00_projects_3.txt:94-114` · `events/failures.txt:456-473` · `common/event_chains/00_event_chains_3.txt:1-11` · `common/on_actions/00_on_actions.txt:1023`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -32,6 +30,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:168-197` · `events/anomaly_events_3.txt:819-1322 (4035-4040)` · `common/special_projects/00_projects_3.txt:94-114` · `events/failures.txt:456-473` · `common/event_chains/00_event_chains_3.txt:1-11` · `common/on_actions/00_on_actions.txt:1023`
 - 已核对 Checked：类别、4035/4040、隐藏4036的40/60与计数逻辑、4037/4038、项目与失败事件。  
   Category, 4035/4040, hidden 4036 (40/60 and the counter), 4037/4038, project and failure event.
 - 更正 Corrections：补上从4035到寻星结果的状态连接；这些文档同时出现在由4036触发的故事 event-anomaly-4036（C3a）中。  

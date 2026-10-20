@@ -1,8 +1,6 @@
 # 轨道垃圾场 / Junkyard Orbit
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
-- 来源 Sources：`events/colony_events_3.txt:6868–7076` · `common/special_projects/00_projects_3.txt:1809–1841` · `common/on_actions/00_on_actions.txt:3880`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -28,4 +26,6 @@ At the fifth anniversary (weight 3) on a non-artificial colony; once per empire.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:6868–7076` · `common/special_projects/00_projects_3.txt:1809–1841` · `common/on_actions/00_on_actions.txt:3880`
 已核对 9310–9335 全部脚本、两个项目（期限与 `on_fail`）与随机池；编译草稿正确，仅标注结局。/ Draft correct; endings labelled.

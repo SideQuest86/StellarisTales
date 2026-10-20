@@ -1,6 +1,6 @@
 # 银河帝国的战争结果 / Galactic Imperium war results
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/on_action_events_2.txt, common/on_actions/00_on_actions.txt, common/war_goals/02_event_war_goals.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -25,6 +25,8 @@ Events in on_war_won / on_war_lost: they fire for a human war leader when the wa
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/on_action_events_2.txt, common/on_actions/00_on_actions.txt, common/war_goals/02_event_war_goals.txt
 - 已核对 Checked：action.150-158 的触发（157、156 为注释掉的夺取王座战争）。
 - 更正 Corrections：七个单页故事并为一个；帝国内战本身的后续通知见“银河帝国的终结”。
   Seven one-card stories merged; the civil war aftermath is in 'End of the Galactic Imperium'.

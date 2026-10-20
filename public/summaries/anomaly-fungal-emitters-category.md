@@ -1,7 +1,6 @@
 # 怪异辐射 / Strange Emissions
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:832; events/anomaly_events_4.txt:1769 (anomaly.6755); common/special_projects/00_projects_3.txt (FOLLOWING_FUNGI_PROJECT); events/anomaly_events_4.txt:1898 (anomaly.6770); events/anomaly_events_4.txt:1956 (anomaly.6780); common/event_chains/00_event_chains.txt:360 (fumongus_chain); events/anomaly_events_4.txt:1813 (anomaly.6760); common/special_projects/00_projects_3.txt (MUSHROOMING_NETWORK_PROJECT); events/anomaly_events_4.txt:1982 (anomaly.6785); events/anomaly_events_4.txt:1849 (anomaly.6765); common/solar_system_initializers/special_system_initializers.txt:1646 (fumongus_spawned); events/ancient_relics_arcsite_events_2.txt:9628-9744 (fumongus_active/resolved/dismantled)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:832; events/anomaly_events_4.txt:1769 (anomaly.6755); common/special_projects/00_projects_3.txt (FOLLOWING_FUNGI_PROJECT); events/anomaly_events_4.txt:1898 (anomaly.6770); events/anomaly_events_4.txt:1956 (anomaly.6780); common/event_chains/00_event_chains.txt:360 (fumongus_chain); events/anomaly_events_4.txt:1813 (anomaly.6760); common/special_projects/00_projects_3.txt (MUSHROOMING_NETWORK_PROJECT); events/anomaly_events_4.txt:1982 (anomaly.6785); events/anomaly_events_4.txt:1849 (anomaly.6765); common/solar_system_initializers/special_system_initializers.txt:1646 (fumongus_spawned); events/ancient_relics_arcsite_events_2.txt:9628-9744 (fumongus_active/resolved/dismantled)
 已核对异常、6755–6785、三个项目与福蒙格斯标志。草稿把三个结果显示为 p=0.33*（平均值），实际按任务状态互斥，已加互斥组说明。福蒙格斯系统本身（异常 ALPHA_CENTAURI_CAT、考古遗址、殖民事件）属于其他故事（c3b 的 anomaly-alpha-centauri-cat 等），这里只是通向它的线索。
 
 Checked the anomaly, 6755-6785, the three projects and the Fumongus flags. The draft shows the three results at p=0.33* (an average); in reality they are exclusive by quest state, now stated by an exclusive group. The Fumongus system itself (anomaly ALPHA_CENTAURI_CAT, the archaeological site, colony events) belongs to other stories (e.g. c3b's anomaly-alpha-centauri-cat); this story is only the breadcrumb leading to it.

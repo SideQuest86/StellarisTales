@@ -1,8 +1,6 @@
 # 火山喷发！ / Eruption!
 
 - 分类 Category：文明纪事 Society (C7) · 星球修正殖民地事件 planet-modifier colony event
-- 来源 Sources：`events/colony_events_3.txt:10460–10585` · `common/on_actions/00_on_actions.txt:3722`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -20,8 +18,8 @@ At the first anniversary the hidden colony_mod.30 fires *Eruption!* within 0–3
 
 ## 条件与文明差异 Conditions and variants
 
-无。/ None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:10460–10585` · `common/on_actions/00_on_actions.txt:3722`
 已核对隐藏入口、事件与随机权重；编译草稿正确。与 colony_mod.161 分派的其他修正事件同类但独立（不同入口）。/ Draft correct; independent of the colony_mod.161 dispatcher.

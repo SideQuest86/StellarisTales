@@ -1,6 +1,6 @@
 # 破坏恒星基地设施 / Sabotage Starbase Facility
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt · DLC：Nemesis · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
 
 ## 如何开始 How it starts
 
@@ -24,4 +24,6 @@ Sabotage Starbase Facility needs a target starbase with non-shipyard modules or 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nemesis_operations_events_1.txt, common/espionage_operation_types/operations.txt
 - 已核对 Checked：操作类型、operation.2000-2010。

@@ -1,11 +1,7 @@
 # 灵督城邦 / Mindwarden Enclave
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C6 巨兽与城邦 / Leviathans & enclaves
-- 来源 Sources：`events/shroud_events.txt:9235-10840 (shroud.4195-4350)`; `events/shroud_events.txt:10656-10752 (4285/4286/4295)`; `events/shroud_events.txt:10842-11062 (4400-4410)`; `events/shroud_events.txt:14897-15805 (6850-6881)`; `common/solar_system_initializers/mindwarden_initializers.txt:8-150`; `common/scripted_effects/first_contact_effects.txt:702-718`; `common/on_actions/00_on_actions.txt:744`; `common/scripted_effects/shroud_shadows_scripted_effects.txt:4482-4508`; `events/origin_events_shadows_shroud.txt:3046-3079 (6827)`
 - DLC：Shadows of the Shroud（星系生成器要求 has_shroud_dlc / initializer requires has_shroud_dlc）
-- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ The raid option sends 4246 (with communications) or 4247 (no contact) to the rai
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：`events/shroud_events.txt:9235-10840 (shroud.4195-4350)`; `events/shroud_events.txt:10656-10752 (4285/4286/4295)`; `events/shroud_events.txt:10842-11062 (4400-4410)`; `events/shroud_events.txt:14897-15805 (6850-6881)`; `common/solar_system_initializers/mindwarden_initializers.txt:8-150`; `common/scripted_effects/first_contact_effects.txt:702-718`; `common/on_actions/00_on_actions.txt:744`; `common/scripted_effects/shroud_shadows_scripted_effects.txt:4482-4508`; `events/origin_events_shadows_shroud.txt:3046-3079 (6827)`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 逐段阅读 shroud_events.txt 9235–10840、10842–11062、14897–15805，mindwarden_initializers.txt，first_contact_effects.txt 702–718，00_on_actions.txt 744，shroud_shadows_scripted_effects.txt 4482–4508，origin_events_shadows_shroud.txt 3046–3079。修正：把原草稿中独立的 event-shroud-4285、event-shroud-4295、event-shroud-4400 并入本城邦故事（共享 attacked_mindwardens / enclave_destroyed 状态，且 4295 本身在城邦窗口中显示）；删除“返回”选项扇出到其他问候的伪连接；6851–6853 以 base 继承主菜单选项，事件继承修复后编译器已自动显示（含 4205.i → 6855），因此删除了为 6851 手工补的连接，只保留注释；4246/4247 标注为被袭方所见。分类改为 C6（太空城邦入口）。灵督起源（C1）的建城事件 6825/6827 链接到本故事。
 
 Read shroud_events.txt 9235–10840, 10842–11062 and 14897–15805, mindwarden_initializers.txt, first_contact_effects.txt 702–718, 00_on_actions.txt 744, shroud_shadows_scripted_effects.txt 4482–4508 and origin_events_shadows_shroud.txt 3046–3079. Corrections: the draft stories event-shroud-4285, event-shroud-4295 and event-shroud-4400 are merged into this enclave story (shared attacked_mindwardens / enclave_destroyed state; 4295 is itself shown in the enclave window); the false fan-out of "back" options to other greetings is suppressed; 6851–6853 inherit the main-menu options via base; since the inheritance fix the compiler shows them itself (including 4205.i -> 6855), so the hand-made 6851 link was removed and only the notes kept; 4246/4247 are marked as seen by the raided empire. Category changed to C6 (space enclave entry). The Mindwardens origin (C1) founding events 6825/6827 link here.

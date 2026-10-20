@@ -1,6 +1,6 @@
 # 侦测到游牧帝国 / Nomadic Empire Sighted
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nomads_arkship_events.txt（arkship.870 → arkship.875）、common/on_actions/00_on_actions.txt:1121 · 游牧帝国内容 nomad content · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,6 @@ The first time a nomad fleet enters our open borders (not at war) we get this we
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nomads_arkship_events.txt（arkship.870 → arkship.875）、common/on_actions/00_on_actions.txt:1121 · 游牧帝国内容 nomad content
 - 已核对 Checked：on_action 调用、arkship.870 的触发条件、一次性/三年标记与 arkship.875 的选项。

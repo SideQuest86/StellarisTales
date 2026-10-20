@@ -1,6 +1,6 @@
 # 虚空中的梦魇 / Horror in the Void
 
-- 分类 Category：巨兽与城邦 · 来源 Sources: events/leviathans_events_2.txt:3906-4219; common/on_actions/00_on_actions.txt:911, :1397 · DLC：利维坦 Leviathans · 审阅 Reviewed 2026-10-13
+- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 首次进入标有梦魇的黑洞星系：隐藏 3000 生成位面梦魇（初始瘫痪，8天后苏醒），进入者收到 3001。
@@ -16,4 +16,7 @@ First entry into the Horror's black-hole system spawns it (disabled for 8 days) 
 3004 描述与奖励依是否拥有 tech_jump_drive_1 / tech_psi_jump_drive_1 而异。
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/leviathans_events_2.txt:3906-4219; common/on_actions/00_on_actions.txt:911, :1397
 合并 event-leviathans-3000 / -3002。完整。 Merged two stories; complete.

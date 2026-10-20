@@ -1,6 +1,6 @@
 # 远古机器人星球 / Ancient Robot World
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:194；events/ancient_relics_arcsite_events_2.txt:8641；common/solar_system_initializers/special_system_initializers.txt:2024 · DLC：《远古遗物》Ancient Relics（事件在 ancrel 文件；遗址定义在基础游戏文件） Ancient Relics events; site definition in the base-game file · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics（事件在 ancrel 文件；遗址定义在基础游戏文件） Ancient Relics events; site definition in the base-game file
 
 ## 如何开始 How it starts
 
@@ -42,6 +42,8 @@ A lifeless planet crowded with billions of drones, ringed by over ten thousand c
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:194；events/ancient_relics_arcsite_events_2.txt:8641；common/solar_system_initializers/special_system_initializers.txt:2024
 - 已核对：遗址定义（common/archaeological_site_types/00_base_game_arc_sites.txt:194）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/00_base_game_arc_sites.txt:194) with its stage order and conditions, every stage event script, and how the site appears; both languages read.
 - 原先 12060、12065 是两个孤立的单事件故事；它们是进入该系统前后的战斗通知，现并入本故事作为开端。

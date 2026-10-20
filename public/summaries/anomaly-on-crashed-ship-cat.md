@@ -1,7 +1,6 @@
 # 失事地点 / Crash Site
 
-- 分类 Category：深空异闻 Exploration · DLC：上古遗物 Ancient Relics（ancrel 考古事件 archaeology events） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:928 (on_crashed_ship_cat); events/anomaly_events_4.txt:3853 (anomaly.7030); common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2473 (site_rage_sage_dig, 4 stages); events/ancient_relics_arcsite_events_2.txt:9753-9890 (ancrel.14001-14006); events/ancient_relics_random_site_events.txt:1430-1640 (ancrel.8200-8215, shared failures)
+- 分类 Category：深空异闻 Exploration · DLC：上古遗物 Ancient Relics（ancrel 考古事件 archaeology events）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ The site is visible only to non-gestalt empires; the failure events have text va
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:928 (on_crashed_ship_cat); events/anomaly_events_4.txt:3853 (anomaly.7030); common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2473 (site_rage_sage_dig, 4 stages); events/ancient_relics_arcsite_events_2.txt:9753-9890 (ancrel.14001-14006); events/ancient_relics_random_site_events.txt:1430-1640 (ancrel.8200-8215, shared failures)
 已核对异常、anomaly.7030、遗址定义与 ancrel.14001–14006。修正：编译器把无名阶段的事件全部列为遗址的并列子节点，现用审阅连接还原 14001→14002→14003→14006，并抑制并列的假边；ancrel.8200–8203 / 8215 是所有飞船/空间站类遗址共用的失败事故，标为枢纽。
 
 Checked the anomaly, anomaly.7030, the site definition and ancrel.14001-14006. Correction: the compiler lists the events of unnamed stages as parallel children of the site; reviewed links now restore 14001 → 14002 → 14003 → 14006 and the false parallel edges are suppressed; ancrel.8200-8203 / 8215 are failure incidents shared by all spaceship and station sites and are marked as hubs.

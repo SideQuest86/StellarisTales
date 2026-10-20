@@ -1,7 +1,6 @@
 # 轨道高速妖 / Orbital Speed Demon
 
-- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar) · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1664-1688; events/distant_stars_events_2.txt:8492 (distar.3050); events/distant_stars_events_2.txt:8532 (distar.3051); common/special_projects/00_projects_distant_stars.txt:847/867 (speed_demon_open_box_project, speed_demon_learn_more_project); events/distant_stars_events_2.txt:8585 (distar.3055); events/distant_stars_events_2.txt:8700 (distar.3056); events/distant_stars_events_2.txt:8769 (distar.3057)
+- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar)
 
 ## 如何开始 How it starts
 
@@ -31,6 +30,8 @@ distar.3056: sell for non-gestalts, irradiate for gestalts.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1664-1688; events/distant_stars_events_2.txt:8492 (distar.3050); events/distant_stars_events_2.txt:8532 (distar.3051); common/special_projects/00_projects_distant_stars.txt:847/867 (speed_demon_open_box_project, speed_demon_learn_more_project); events/distant_stars_events_2.txt:8585 (distar.3055); events/distant_stars_events_2.txt:8700 (distar.3056); events/distant_stars_events_2.txt:8769 (distar.3057)
 已核对异常、distar.3050–3057 与两个项目。树结构正确。
 
 Checked the anomaly, distar.3050–3057 and both projects. Tree correct.

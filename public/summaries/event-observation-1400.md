@@ -1,7 +1,4 @@
-# [pre_ftl_planet.GetName]上的核战迫在眉睫 / Nuclear Escalation on [pre_ftl_planet.GetName]
-- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
-- 来源 Sources：`events/observation_events.txt:3644-4105` · `common/on_actions/00_on_actions.txt:140-200`
-- 审阅 Reviewed：2026-10-13（c7b-society）
+# 原始星球上的核战迫在眉睫 / Nuclear Escalation on a Pre-FTL Planet- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -23,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/observation_events.txt:3644-4105` · `common/on_actions/00_on_actions.txt:140-200`
 - 已核对 Checked：根 1400、1401、3215、1402。/ Root 1400, 1401, 3215, 1402.
 - 审阅改动 Changes：结构与草稿一致；说明隐藏根的两条路。/ Structure matches; the two hidden-root paths documented.

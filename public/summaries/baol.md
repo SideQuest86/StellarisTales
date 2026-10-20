@@ -1,6 +1,6 @@
 # 最后的巴奥 / The Last Baol
 
-- 分类 Category：先驱者 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_1.txt:1187–2405；common/archaeological_site_types/01_precursor_arc_sites.txt:264–412；common/special_projects/00_projects_ancient_relics.txt:2–102、309；common/artifact_actions/artifact_actions.txt:781；common/decisions/05_ancient_relics_decisions.txt:72–290；common/relics/relics.txt:1072 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -48,6 +48,8 @@ Strictly sequential; each site's last stage gives the next coordinates:
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/ancient_relics_arcsite_events_1.txt:1187–2405；common/archaeological_site_types/01_precursor_arc_sites.txt:264–412；common/special_projects/00_projects_ancient_relics.txt:2–102、309；common/artifact_actions/artifact_actions.txt:781；common/decisions/05_ancient_relics_decisions.txt:72–290；common/relics/relics.txt:1072
 - 已核对：2000–2027 全部脚本、四处遗址定义的阶段顺序、三个殖民地项目、2014 星系生成、artifact_baol_research、BAOL_SECRETS 与 10300、遗珍 r_the_last_baol 与三项决议；中英文正文已读。
 - 结构修正：秘密研究桥改写为带证据的可选分支；原为独立单页故事的三个决议通知（2025–2027）并入本故事，作为遗珍激活后的可选后续；补充互斥组、阶段标签与对话说明。V3 关于 2024 位于 2013 与 2015 之间的结论经复核成立。
 - 不确定：无。

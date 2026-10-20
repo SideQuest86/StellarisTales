@@ -92,7 +92,7 @@ try {
   await page.route("**/museum/models/*.glb", (r) => r.abort());
   await page.evaluate(() => { location.hash = "#"; });
   await page.goto(`${base}#museum=${manifest.models[0].key}`, { waitUntil: "domcontentloaded" });
-  await page.waitForFunction(() => /未能加载|could not be loaded/.test(document.querySelector(".museum-disclaimer")?.textContent || ""), null, { timeout: 30000 });
+  await page.waitForFunction(() => /未能载入|could not be loaded/.test(document.querySelector(".museum-disclaimer")?.textContent || ""), null, { timeout: 30000 });
   assert.ok(await page.locator(".museum-stage-image:not(.behind)").isVisible());
   step("a failed model load falls back to the original image with a note");
   await page.unroute("**/museum/models/*.glb");

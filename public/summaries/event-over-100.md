@@ -1,6 +1,6 @@
 # 中继器网道 / Hyper Relay network
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/megastructure_events_1.txt, common/on_actions/00_on_actions.txt · DLC：Overlord · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Overlord
 
 ## 如何开始 How it starts
 
@@ -21,4 +21,6 @@ on_capitals_connected fires over.100 for the relay owner when two capitals are l
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/megastructure_events_1.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：on_action 调用、事件三个正文变体与选项。 Checked the on_action, the three text variants and options.

@@ -1,6 +1,6 @@
 # 隐形场现形 / Chameleon Field Exposed
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_2.txt:605–687（ancrel.6098/6099）、760–940（遗址与6130）、1015–1119（6131–6133）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:164；common/relics/relics.txt:507、623；common/on_actions/00_on_actions.txt:246 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -34,6 +34,8 @@ The relic can then be activated at will (see below).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_2.txt:605–687（ancrel.6098/6099）、760–940（遗址与6130）、1015–1119（6131–6133）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:164；common/relics/relics.txt:507、623；common/on_actions/00_on_actions.txt:246
 - 已核对：ancrel.6098、6099、6100–6130、6131–6133 的脚本、遗址定义、遗珍定义与 on_yearly_pulse 调用点；中英文正文已读。
 - Checked: the scripts of ancrel.6098, 6099, 6100-6130 and 6131-6133, the site and relic definitions and the on_yearly_pulse call site; both languages read.
 - 修正：原先“扎克兰的信徒”（6131–6133，遗珍激活）是一个孤立的小故事；现作为本故事的尾声并入。

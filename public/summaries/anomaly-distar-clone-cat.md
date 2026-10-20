@@ -1,7 +1,6 @@
 # 可疑的舱体 / Murky Vats
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/utopia_initializers.txt:818-849 (ring_world_init_01); common/anomalies/95_anomaly_categories_distant_stars.txt:205-219; events/distant_stars_events_1.txt:2803 (distar.70); events/distant_stars_events_1.txt:2928 (distar.71); events/distant_stars_events_1.txt:3273 (distar.72); common/special_projects/00_projects_distant_stars.txt:146 (CRYO_CLONES_PROJECT); common/on_actions/00_on_actions.txt:1304
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ distar.70.a is closed to plain machine intelligences (no Terminator/Assimilator/
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/utopia_initializers.txt:818-849 (ring_world_init_01); common/anomalies/95_anomaly_categories_distant_stars.txt:205-219; events/distant_stars_events_1.txt:2803 (distar.70); events/distant_stars_events_1.txt:2928 (distar.71); events/distant_stars_events_1.txt:3273 (distar.72); common/special_projects/00_projects_distant_stars.txt:146 (CRYO_CLONES_PROJECT); common/on_actions/00_on_actions.txt:1304
 已核对初始化、异常、distar.70–72、CRYO_CLONES_PROJECT 和 on_colonized。修正：distar.72 在草稿中是独立故事；现以两条按选项限定的审阅连接接在 distar.70.b / no_room 之后。
 
 Checked initializer, anomaly, distar.70–72, CRYO_CLONES_PROJECT and on_colonized. Correction: distar.72 was a separate story; it now follows distar.70.b / no_room through two choice-specific reviewed links.

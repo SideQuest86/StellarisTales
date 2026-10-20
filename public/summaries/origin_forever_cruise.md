@@ -1,9 +1,6 @@
 # 永恒巡游 / Forever Cruise
 
-- 分类 Category：起源 Origins · DLC：Nomads · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/nomads_events_1.txt:6020-7560`、`common/situations/14_nomads_situations.txt:1-560`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Nomads
 
 ## 如何开始 How it starts
 
@@ -25,6 +22,9 @@ No fixed order: stage events fire the first time a stage is entered. Low to high
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/nomads_events_1.txt:6020-7560`、`common/situations/14_nomads_situations.txt:1-560`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：局势全部阶段与钩子、nomads.1000–1255。 All situation stages and hooks, nomads.1000-1255.
 - 更正 Corrections：阶段按进度状态标注并列；两个结局标注。 Stages marked as states; endings marked.
 - 不确定 Uncertain：1055/1255 的随机条件未读。 Conditions of 1055 / 1255 not read.

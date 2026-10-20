@@ -1,7 +1,6 @@
 # 那里有生命存在吗？ / Is There Life In There?
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/first_contact_dlc_events.txt:7595-8171`；`common/special_projects/00_projects_first_contact_dlc.txt:353-410`；`common/on_actions/00_on_actions.txt:468, 538-560`（on_five_year_random_pulse_pre_ftl）；`events/on_action_events_2.txt:3146-3179`（action.620/621）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -37,6 +36,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/first_contact_dlc_events.txt:7595-8171`；`common/special_projects/00_projects_first_contact_dlc.txt:353-410`；`common/on_actions/00_on_actions.txt:468, 538-560`（on_five_year_random_pulse_pre_ftl）；`events/on_action_events_2.txt:3146-3179`（action.620/621）
 - 已核对：6000–6038 全部事件、项目定义（80天、期限1080、成功/失败权重）、守军胜负回调与延迟。
   Checked: all events 6000-6038, the project (80 days, 1080 limit, success/failure weights), the defender win/lose callbacks and delays.
 - 更正：原“滚回地下！”（6034）与“曾为天人，今为尘土”（6036）为独立卡片，实为 6030 入侵战争的两种结局，已并入并接在 6030 之后。

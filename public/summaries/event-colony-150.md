@@ -1,7 +1,6 @@
 # 地下避难所 / Underground Vault
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_1.txt:3177-3511`；`common/on_actions/00_on_actions.txt:833,881,3783,3827`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_1.txt:3177-3511`；`common/on_actions/00_on_actions.txt:833,881,3783,3827`
 - 已核对：触发、项目、三个结果、入侵标志与 on_action 衔接。
   Checked: trigger, project, three outcomes, invasion flags and on_action links.
 - 更正：154、158 并入；它们原为孤立单窗口故事。

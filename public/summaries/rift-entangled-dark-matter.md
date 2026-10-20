@@ -1,8 +1,6 @@
 # 纠缠的暗物质 / Entangled Dark Matter
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:322`；`events/astral_rifts_2_events.txt:1515–2154`（2400–2450）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 2435 已并入 / former standalone failure event 2435 merged in）
 
 ## 如何开始 How it starts
 
@@ -54,6 +52,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 2435 已并入 / former standalone failure event 2435 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:322`；`events/astral_rifts_2_events.txt:1515–2154`（2400–2450）
 - 已核对：裂隙定义；2400–2450 全部事件；2415 中两个同名选项“献出科学家”，只有第一个（非灵能者）带 `on_roll_failed = astral_rift.2435`（`astral_rifts_2_events.txt:1721–1740`）；2445 → 2450（3600+360 天）。
 - 修正：编译图漏掉失败分支，2435 曾是独立故事；已用桥接并入，标注互斥组与各结局。
 - 不确定：2435 正文描述科学家自尽，但脚本未移除该领袖；按脚本原样记录。

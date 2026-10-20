@@ -1,6 +1,6 @@
 # 星河赘瘤 / Galactic Excrescence
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:9316-9607; common/on_actions/00_on_actions.txt:4239,4261 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Eager Explorer, Fruitful Partnership or Star Slingshot empires get the reply "Bu
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:9316-9607; common/on_actions/00_on_actions.txt:4239,4261
 - 修正：草稿把完成结局 bio.3360（event-bio-3365）和经由重新取得星系触发的 bio.3355（event-bio-3370）列为两个独立故事；它们都检查本事件设置的 tasked_with_removing 标记，现并入同一任务。
   Correction: the draft listed Clarity bio.3360 (event-bio-3365) and the regain path to Headache bio.3355 (event-bio-3370) as separate stories; both check the tasked_with_removing flag set here and are now part of this task.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

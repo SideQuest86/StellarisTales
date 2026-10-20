@@ -1,6 +1,6 @@
 # 强者生存 / Survival of the Strongest
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:7232-7532; common/on_actions/00_on_actions.txt:1597 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Militarist empires get an extra reply, "A worthy challenge!"; all replies have t
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:7232-7532; common/on_actions/00_on_actions.txt:1597
 - 修正：草稿把成功结局 bio.3120 作为独立故事 event-bio-3115；它由舰队被毁的 on_action 触发，属于同一挑战，现以条件连接并入。
   Correction: the draft made the success outcome bio.3120 a separate story (event-bio-3115); it is fired by the fleet-destroyed on_action for this same challenge and is now a conditional branch here.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

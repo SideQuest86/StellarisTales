@@ -1,7 +1,6 @@
 # 联邦主教会议 / Federation Ecumenical Council
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/federations_events_3.txt:2287-3100`；`common/on_actions/00_on_actions.txt:3531`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,5 +28,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/federations_events_3.txt:2287-3100`；`common/on_actions/00_on_actions.txt:3531`
 - 已核对：触发、延迟、每轮随机与结局条件。
   Checked: trigger, delays, per-round randomness and ending conditions.

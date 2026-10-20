@@ -1,8 +1,6 @@
 # 不可能的轨道 / Improbable Orbit
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:279-297` · `events/anomaly_events_3.txt:2009-2181 (4060-4062)` · `common/special_projects/00_projects_3.txt:117-158` · `common/on_actions/00_on_actions.txt:4946-4957`
-- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-12（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/02_anomaly_categories.txt:279-297` · `events/anomaly_events_3.txt:2009-2181 (4060-4062)` · `common/special_projects/00_projects_3.txt:117-158` · `common/on_actions/00_on_actions.txt:4946-4957`
 - 已核对 Checked：类别、4060–4062与项目（含唯心主义的不同权重）。  
   Category, 4060–4062 and the project, including the spiritualist weights.
 - 覆盖 Coverage：5 个文档全部核对 / all 5 docs checked.

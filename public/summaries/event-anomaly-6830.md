@@ -1,8 +1,6 @@
 # 水晶的呼唤 / Call for Crystals
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`events/anomaly_events_4.txt:2700-2812` · `common/on_actions/00_on_actions.txt:1873-1887`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`events/anomaly_events_4.txt:2700-2812` · `common/on_actions/00_on_actions.txt:1873-1887`
 - 已对照原文。前置结局6825属另一审阅者的异常故事，未桥接。  
   Compared the original. The prior outcome 6825 belongs to another reviewer's anomaly story and is not bridged.
 - 覆盖 Coverage：全部1个文档。 / All 1 docs.

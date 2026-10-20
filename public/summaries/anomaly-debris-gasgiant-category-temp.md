@@ -1,7 +1,6 @@
 # 维克塔·泽沃尼亚号 / The Vechtar Zavonia
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1056-1085; events/distant_stars_events_2.txt:685 (distar.1000); common/special_projects/00_projects_distant_stars.txt:963 (GENERATION_SHIP); events/distant_stars_events_2.txt:734 (distar.1001); common/solar_system_initializers/distant_stars_initializers.txt:73 (vechtar_zavonia_system); common/event_chains/00_event_chains_distant_stars.txt:36-45; common/on_actions/00_on_actions.txt:1007; events/distant_stars_events_2.txt:814 (distar.1002); common/special_projects/00_projects_distant_stars.txt:988 (HIDDEN_PLANET); events/distant_stars_events_2.txt:875 (distar.1003); events/distant_stars_events_2.txt:1024 (distar.1004); events/distant_stars_events_2.txt:1045-1100 (distar.1007, 1010); events/distant_stars_events_2.txt:1105-1369 (distar.1005-1013); common/on_actions/00_on_actions.txt:2199; events/distant_stars_events_2.txt:1575-1661 (distar.1015, 1016); common/on_actions/00_on_actions.txt:1303; events/distant_stars_events_2.txt:1692 (distar.1014)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ distar.1006.c "You will not harm them!" is for fungoid empires only; distar.1005
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1056-1085; events/distant_stars_events_2.txt:685 (distar.1000); common/special_projects/00_projects_distant_stars.txt:963 (GENERATION_SHIP); events/distant_stars_events_2.txt:734 (distar.1001); common/solar_system_initializers/distant_stars_initializers.txt:73 (vechtar_zavonia_system); common/event_chains/00_event_chains_distant_stars.txt:36-45; common/on_actions/00_on_actions.txt:1007; events/distant_stars_events_2.txt:814 (distar.1002); common/special_projects/00_projects_distant_stars.txt:988 (HIDDEN_PLANET); events/distant_stars_events_2.txt:875 (distar.1003); events/distant_stars_events_2.txt:1024 (distar.1004); events/distant_stars_events_2.txt:1045-1100 (distar.1007, 1010); events/distant_stars_events_2.txt:1105-1369 (distar.1005-1013); common/on_actions/00_on_actions.txt:2199; events/distant_stars_events_2.txt:1575-1661 (distar.1015, 1016); common/on_actions/00_on_actions.txt:1303; events/distant_stars_events_2.txt:1692 (distar.1014)
 已核对异常、distar.1000–1016、两个项目、事件链及 on_entering_system_fleet / on_building_starbase_outpost / on_colony_zero_pops / on_colonized。修正：草稿把一条故事拆成五个（异常、event-distar-1002、1007、1014、1015）；现合并为以异常为根的故事，并以审阅连接表示进入隐藏星系、沃尔舰队轰炸致人口归零、殖民 Paridayda。
 
 Checked the anomaly, distar.1000–1016, both projects, the event chain and the on_entering_system_fleet / on_building_starbase_outpost / on_colony_zero_pops / on_colonized hooks. Correction: the draft split one story into five (the anomaly, event-distar-1002, 1007, 1014, 1015); merged with reviewed links for entering the hidden system, the Vol bombardment and colonising Paridayda.

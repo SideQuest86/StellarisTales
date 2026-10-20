@@ -1,7 +1,5 @@
 # 遭遇 / Encounter（首次接触主线 the main first-contact line）
 - 分类 Category：文明纪事 Society (C7) · 首次接触 first contact（入口事件 first_contact.1）
-- 来源 Sources：`events/first_contact_events.txt:11–1313, 1557–1699, 1955–1983` · `common/first_contact/00_first_contact.txt:1–768, 937–1038` · `common/first_contact/99_README_FIRST_CONTACT.txt`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:11–1313, 1557–1699, 1955–1983` · `common/first_contact/00_first_contact.txt:1–768, 937–1038` · `common/first_contact/99_README_FIRST_CONTACT.txt`
 - 已核对 Checked：first_contact.1、5–25、50、60、101、102、1020、105 脚本；default_stage_1/2 阶段全部条件与权重；base_contact_set；各 set_first_contact_stage 调用。/ Scripts and stage definitions.
 - 审阅改动 Changes：把 event-first-contact-1、-5、-50（以及 101/102/105/1020 四个提前收尾）并为一条主线；各特殊故事线拆为独立篇章（355、375、405、420、435、480、5071、1120、5085、385、395、200、250），不再混在“难以捉摸的外星人”里。/ Stories 1, 5 and 50 and four early-ending singles are merged into one main line; each special storyline has its own story.
 - 请求 Request：leviathans.98 是特殊首次接触事件 → 隐藏的 leviathans.97 的 720 天后续，归利维坦篇所有。/ leviathans.98 is a delayed follow-up of the special contacts and belongs to the leviathan stories.

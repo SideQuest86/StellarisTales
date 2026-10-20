@@ -1,8 +1,6 @@
 # 黑暗中的彩虹 / Rainbow in the Dark
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1040-1068` · `events/anomaly_events_2.txt:1977-2047`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/01_anomaly_categories.txt:1040-1068` · `events/anomaly_events_2.txt:1977-2047`
 - 已对照类别脚本与3075原文。  
   Compared category script and the original of 3075.
 - 覆盖 Coverage：全部3个文档。 / All 3 docs.

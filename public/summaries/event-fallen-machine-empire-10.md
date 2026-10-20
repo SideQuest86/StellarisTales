@@ -1,6 +1,6 @@
 # 看守者的任务 / Tasks of the machine Custodian
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/fallen_machine_empire_events.txt, common/event_chains/00_fallen_empire_chains.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -34,6 +34,8 @@ While a machine Fallen Empire (the Custodian Project) is in contact and enigmati
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/fallen_machine_empire_events.txt, common/event_chains/00_fallen_empire_chains.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：fallen_machine_empire.10-74 的触发、选项、计时与结果；事件链定义（common/event_chains/00_fallen_empire_chains.txt）。
 - 更正 Corrections：十九个单页故事（含四个只有链概览页的）并为一个“看守者的任务”，每个任务内的任务→结果按顺序连接；觉醒/关闭（fallen_machine_empire.1-4）属于“应急预案”故事。
   Nineteen one-card stories are merged; the awakening/shutdown events 1-4 belong to the Contingency story.

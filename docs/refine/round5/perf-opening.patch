@@ -1,0 +1,494 @@
+--- a/index.html
++++ b/index.html
+@@ -34,6 +34,8 @@
+     <link rel="stylesheet" href="./src/style.css" />
+     <link rel="stylesheet" href="./src/reader-extras.css" />
+     <link rel="stylesheet" href="./src/effects-panel.css" />
++    <!-- The archive index is the first request the app script makes: start it with the page, not after the script has loaded. -->
++    <link rel="preload" href="./public/stories/index.json" as="fetch" crossorigin />
+     <!-- The 3D engine is discovered late through app.js → archive-scene.js; fetch it in parallel. -->
+     <link rel="modulepreload" href="./vendor/three.module.js" />
+     <link rel="modulepreload" href="./vendor/three.core.js" />
+--- a/src/archive-scene.js
++++ b/src/archive-scene.js
+@@ -154,6 +154,7 @@
+     this.lift = { value: PREVIEW_LIFT, velocity: 0 };
+     this.outgoing = [];
+     this.frame = 0;
++    this.compiled = false; // set by warmUp(): the loop starts once the programs are linked (or after 1.2 s)
+     this.timer = 0; // pending timeout of a frame-rate-capped frame
+     this.last = 0;
+     this.lastDraw = 0;
+@@ -326,7 +327,10 @@
+    *  (a 265 ms animation-frame callback on a cold load, docs/refine/round4/perf-audit.md #3). */
+   warmUp() {
+     const scene = this.renderer.compileAsync(this.scene, this.camera).catch(() => {});
+-    Promise.race([scene, new Promise((resolve) => setTimeout(resolve, 1200))]).then(() => this.wake());
++    Promise.race([scene, new Promise((resolve) => setTimeout(resolve, 1200))]).then(() => {
++      this.compiled = true;
++      this.wake();
++    });
+     const snapshot = async () => {
+       try {
+         await scene;
+@@ -402,6 +406,14 @@
+     });
+   }
+ 
++  /** The story lists: the scene is built (renderer, programs, atlas) while the index still downloads. */
++  setColumns(columns) {
++    this.columns = columns;
++    this.memories = columns.map(() => 0);
++    this.dirty = true;
++    this.wake();
++  }
++
+   // ------------------------------------------------------------ selection
+   get current() {
+     const col = this.columns[wrap(this.selection.lane, this.columns.length)];
+@@ -860,7 +872,8 @@
+     }
+     // Inside tick() the loop decides on the next frame itself: a second request here would start a parallel loop
+     // that draws the scene again in the same display frame (measured: up to 18 draws per displayed frame before 2026-10-13; atlas uploads call wake() from draw()).
+-    if (!this.frame && !this.ticking && !document.hidden && !this.lost) {
++    // Not before the programs are linked: the first draw would wait for them synchronously (a ~100 ms frame, measured).
++    if (!this.frame && !this.ticking && !document.hidden && !this.lost && this.compiled && this.columns.length) {
+       this.last = performance.now();
+       this.frame = requestAnimationFrame((t) => this.tick(t));
+     }
+--- a/src/flow-surface.js
++++ b/src/flow-surface.js
+@@ -24,6 +24,7 @@
+ const ZOOM_MIN = 0.3;
+ const ZOOM_MAX = 1.8;
+ const PAD = 28;
++const SLICE_MS = 8; // time budget of one slice of a progressive map build
+ const trees = new WeakMap();
+ 
+ // Text fitting without layout: per-character advances are measured once per font
+@@ -36,16 +37,27 @@
+   if (!table) advances.set(font, (table = new Map()));
+   return table;
+ }
++// CJK ideographs and kana are full-width in the UI fonts (advance = 1 em, also in the system fallbacks), so they need
++// no measurement. This also keeps canvas measureText away from the one-character lookahead of fitLines, which used to
++// request a web-font slice for a character that is never drawn and then re-laid out the whole page when it arrived.
++const fullWidth = (ch) => {
++  const c = ch.codePointAt(0);
++  return (c >= 0x4e00 && c <= 0x9fff) || (c >= 0x3400 && c <= 0x4dbf) || (c >= 0x3041 && c <= 0x30ff) || (c >= 0xf900 && c <= 0xfaff) || (c >= 0x20000 && c <= 0x2ebef);
++};
+ function measurer(font) {
+   measureContext ??= document.createElement("canvas").getContext("2d");
+   const table = charWidths(font);
++  const em = Number(/(\d+(?:\.\d+)?)px/.exec(font)?.[1]) || 0;
+   return (text) => {
+     let width = 0;
+     for (const ch of String(text)) {
+       let w = table.get(ch);
+       if (w === undefined) {
+-        measureContext.font = font;
+-        w = measureContext.measureText(ch).width;
++        if (em && fullWidth(ch)) w = em;
++        else {
++          measureContext.font = font;
++          w = measureContext.measureText(ch).width;
++        }
+         table.set(ch, w);
+       }
+       width += w;
+@@ -119,7 +131,8 @@
+     if (!story.tree && !story.flow && !dossier?.tree) return;
+     if (!trees.has(key)) trees.set(key, compactTree(toTree(dossier || { story, chapters })));
+   }
+-  update(story, chapters, current, visited, language, prose, trail = [], dossier) {
++  /** `options.progressive`: a story that has just opened draws its nodes in slices of a few ms (see fillNodes). */
++  update(story, chapters, current, visited, language, prose, trail = [], dossier, options = {}) {
+     // Trees are cached per loaded dossier (or story object when no dossier is passed).
+     const key = dossier || story;
+     const storyChanged = this.story?.id !== story.id || this.sourceKey !== key;
+@@ -149,7 +162,7 @@
+     for (const id of this.path.nodes) for (let n = this.tree.nodes.get(id)?.parent; n; n = this.tree.nodes.get(n)?.parent) next.delete(n);
+     const foldsChanged = !this.built || next.size !== this.collapsed.size || [...next].some((id) => !this.collapsed.has(id));
+     this.collapsed = next;
+-    if (!this.built || foldsChanged || languageChanged) this.render(storyChanged);
++    if (!this.built || foldsChanged || languageChanged) this.render(storyChanged, storyChanged && !!options.progressive);
+     else this.paintState();
+     if (this.followCurrent) this.focusCurrent(!storyChanged);
+   }
+@@ -183,8 +196,9 @@
+   }
+ 
+   // ---------------------------------------------------------------- render
+-  render(fresh) {
++  render(fresh, progressive = false) {
+     const tree = this.tree;
++    this.fillToken = (this.fillToken || 0) + 1; // any pending slices of an earlier build stop here
+     const titleFont = `500 13px ${getComputedStyle(document.documentElement).getPropertyValue("--sans") || "sans-serif"}`;
+     const captionFont = `400 11px ${getComputedStyle(document.documentElement).getPropertyValue("--sans") || "sans-serif"}`;
+     this.fonts = { titleFont, captionFont };
+@@ -201,16 +215,22 @@
+     this.size = { w: Math.ceil(bounds.width + PAD * 2), h: Math.ceil(bounds.height + PAD * 2) };
+     const rebuilt = !this.built || this.builtLanguage !== this.language;
+     if (rebuilt) this.buildShell();
++    // The shell is still empty here: reading its size costs one small layout, and the view can then be placed in the same
++    // pass as the nodes. A transform that changes after the nodes were laid out makes Blink re-lay out every SVG text
++    // (scaled font) and repaint it: a second full pass of 30–60 ms right after the first.
++    if (rebuilt && !this.lastSize && this.viewport.clientWidth) this.lastSize = [Math.round(this.viewport.clientWidth), Math.round(this.viewport.clientHeight)];
+     this.svg.setAttribute("width", this.size.w);
+     this.svg.setAttribute("height", this.size.h);
+     this.svg.setAttribute("viewBox", `${this.origin.x} ${this.origin.y} ${this.size.w} ${this.size.h}`);
+     const edges = [];
+     const joins = [];
+     const nodes = [];
++    const queued = [];
+     const visibleNode = (id) => this.layout.nodes.get(id)?.x !== undefined;
+     for (const node of tree.nodes.values()) {
+       if (!visibleNode(node.id) || node.type === "forest") continue;
+-      nodes.push(this.nodeMarkup(node, this.layout.nodes.get(node.id)));
++      if (progressive) queued.push(node);
++      else nodes.push(this.nodeMarkup(node, this.layout.nodes.get(node.id)));
+       const parent = tree.nodes.get(node.parent);
+       if (!parent || parent.type === "forest" || !visibleNode(parent.id)) continue;
+       const a = this.layout.nodes.get(parent.id), b = this.layout.nodes.get(node.id);
+@@ -239,6 +259,7 @@
+     this.edgeElements = [...this.edgeLayer.children];
+     this.svg.setAttribute("aria-label", this.local(this.story.title));
+     this.paintState();
++    if (progressive) this.fillNodes(queued);
+     if (anchorScreen) {
+       // Keep the anchor fixed on screen while folds change.
+       const moved = this.layout.nodes.get(this.currentNode);
+@@ -412,28 +433,72 @@
+     const caption = fitLines(node.caption, b.w - 22, this.fonts.captionFont, 1)[0] || "";
+     return `<g class="flow-node group ${esc(node.type)}${folded ? " folded" : ""}" data-node="${esc(node.id)}" role="group" tabindex="-1" aria-label="${esc(node.caption)}" transform="translate(${x} ${b.y})"><title>${esc(node.caption)}</title><rect class="flow-box" width="${b.w}" height="${b.h}" rx="${b.h / 2}"/><text class="flow-caption" x="${b.w / 2}" y="${b.h / 2 + 4}" text-anchor="middle">${esc(caption)}</text>${badge}</g>`;
+   }
++  /** Draw the node boxes in slices, nearest to the current page first. The first layout of a story's labels costs
++   *  ~0.3 ms per character not seen before in that font (shaping, then glyph bounds when painting): one pass over a
++   *  whole map was a 60–100 ms frame. Each slice stops after SLICE_MS (script + layout), the next one follows in the
++   *  next animation frame; an update() that rebuilds the map (fold, language, other story) cancels the rest. */
++  fillNodes(list) {
++    const token = this.fillToken;
++    const from = this.layout.nodes.get(this.currentNode);
++    const distance = (node) => {
++      const b = this.layout.nodes.get(node.id);
++      const dx = b.x - (from?.x ?? 0), dy = (b.y - (from?.y ?? 0)) * 1.8;
++      return dx * dx + dy * dy;
++    };
++    const queue = list.map((node) => [distance(node), node]).sort((a, b) => a[0] - b[0]).map((entry) => entry[1]);
++    // The nodes keep the tree's order in the DOM (reading order for assistive technology, Tab order): each one is put in
++    // before the next later node that is already there.
++    const position = new Map(list.map((node, i) => [node.id, i]));
++    const scratch = document.createElementNS(SVG, "g");
++    const slice = () => {
++      if (token !== this.fillToken) return;
++      const started = performance.now();
++      do {
++        const batch = queue.splice(0, 2);
++        for (const node of batch) {
++          scratch.innerHTML = this.nodeMarkup(node, this.layout.nodes.get(node.id));
++          const el = scratch.firstElementChild;
++          let before = null;
++          for (let i = position.get(node.id) + 1; i < list.length && !before; i++) before = this.nodeElements.get(list[i].id) || null;
++          this.nodeLayer.insertBefore(el, before);
++          this.nodeElements.set(node.id, el);
++          this.paintNode(node.id, el, this.path);
++          if (node.id === (this.focusNode && this.nodeElements.has(this.focusNode) ? this.focusNode : this.currentNode)) el.setAttribute("tabindex", "0");
++        }
++        this.svg.getBoundingClientRect(); // lay this batch out now, so the slice's cost is known
++      } while (queue.length && performance.now() - started < SLICE_MS);
++      if (queue.length) requestAnimationFrame(slice);
++      else {
++        this.nodeElements = new Map(list.filter((node) => this.nodeElements.has(node.id)).map((node) => [node.id, this.nodeElements.get(node.id)]));
++        this.paintState();
++      }
++    };
++    requestAnimationFrame(slice);
++  }
++  /** Route/visited classes of one node. */
++  paintNode(id, el, path) {
++    const node = this.tree.nodes.get(id);
++    const doc = node.doc;
++    const isCurrent = id === this.currentNode;
++    const onPath = path.nodes.has(id);
++    const visited = doc ? this.visited.has(doc) : node.type === "refset" ? node.items.some((i) => this.visited.has(i.doc)) : onPath;
++    el.classList.toggle("current", isCurrent);
++    el.classList.toggle("path", onPath && !isCurrent);
++    el.classList.toggle("visited", !onPath && visited);
++    el.classList.toggle("unread", !onPath && !visited && !isCurrent);
++    if (isCurrent) el.setAttribute("aria-current", "step");
++    else el.removeAttribute("aria-current");
++    if (node.type === "refset")
++      for (const item of el.querySelectorAll("[data-item]"))
++        item.classList.toggle("path", path.items.has(`${id}|${item.dataset.item}`));
++  }
+   /** Route/visited classes only: no DOM rebuild while reading. */
+   paintState() {
+     if (!this.nodeElements) return;
+     const path = this.path;
+     this.stats.textContent = t("map.stats", { n: this.tree.docCount, r: [...this.visited].filter((id) => this.tree.primary.has(id)).length });
+     if (this.captionLine) this.captionLine.textContent = this.docTitle(this.current);
+-    for (const [id, el] of this.nodeElements) {
+-      const node = this.tree.nodes.get(id);
+-      const doc = node.doc;
+-      const isCurrent = id === this.currentNode;
+-      const onPath = path.nodes.has(id);
+-      const visited = doc ? this.visited.has(doc) : node.type === "refset" ? node.items.some((i) => this.visited.has(i.doc)) : onPath;
+-      el.classList.toggle("current", isCurrent);
+-      el.classList.toggle("path", onPath && !isCurrent);
+-      el.classList.toggle("visited", !onPath && visited);
+-      el.classList.toggle("unread", !onPath && !visited && !isCurrent);
+-      if (isCurrent) el.setAttribute("aria-current", "step");
+-      else el.removeAttribute("aria-current");
+-      if (node.type === "refset")
+-        for (const item of el.querySelectorAll("[data-item]"))
+-          item.classList.toggle("path", path.items.has(`${id}|${item.dataset.item}`));
+-    }
++    for (const [id, el] of this.nodeElements) this.paintNode(id, el, path);
+     for (const el of this.edgeElements) el.classList.toggle("traversed", path.edges.has(el.dataset.edge));
+     for (const el of this.joinLayer.children) {
+       const [from, to] = (el.dataset.join || "").split(">");
+--- a/src/glyph-warmup.js
++++ b/src/glyph-warmup.js
+@@ -9,7 +9,77 @@
+   { font: "400 17px var(--serif-zh)", count: 3000 }, // choices
+   { font: "600 clamp(30px, 2.5vw, 40px) var(--serif-zh)", count: 900 }, // reader title
+   { font: "400 14px var(--sans)", count: 900 }, // commentary notes
++  { font: "400 12px var(--sans)", count: 400 }, // eyebrow, headings, continue cards (small print)
++  { font: "500 12px var(--sans)", count: 200 }, // other-language subtitle
++  { font: "400 16px var(--serif-zh)", count: 600 }, // continue cards: titles
++  { font: "600 18px var(--serif-zh)", count: 300 }, // story title under the card
++  { font: "500 13px var(--sans)", count: 1000 }, // story map: node titles (SVG text)
++  { font: "400 11px var(--sans)", count: 800 }, // story map: captions
+ ];
++// ---------------------------------------------------------------------------------------------------------------
++// Rare characters live in font slices the warm-up above does not fetch. A slice that arrives after the page was laid
++// out re-lays out every text on the page ("fonts changed": a 40–70 ms frame, seen on 8 of 12 stories opened in a
++// session), so the slices a story needs are requested before its first layout; openStory / goChapter wait for them
++// for at most 150 ms, the story map for at most 600 ms (a slow link falls back to the usual swap).
++/** The Chinese strings of a value ({zh, en} pairs anywhere inside), each cut to `max` characters. */
++export function zhStrings(value, max = 400, out = [], depth = 0) {
++  if (!value || typeof value !== "object" || depth > 7) return out;
++  if (Array.isArray(value)) {
++    for (const item of value) zhStrings(item, max, out, depth + 1);
++    return out;
++  }
++  if (typeof value.zh === "string") out.push(value.zh.slice(0, max));
++  for (const [key, item] of Object.entries(value)) if (key !== "zh" && key !== "en") zhStrings(item, max, out, depth + 1);
++  return out;
++}
++/** Distinct Han characters of some strings. */
++export function hanChars(strings) {
++  const seen = new Set();
++  for (const text of strings)
++    for (let i = 0; i < text.length; i++) {
++      const c = text.charCodeAt(i);
++      if (c >= 0x3400 && (c <= 0x4dbf || (c >= 0x4e00 && c <= 0x9fff) || (c >= 0xf900 && c <= 0xfaff))) seen.add(text[i]);
++    }
++  return [...seen].join("");
++}
++/** Request the font slices for [[weight, "--serif" | "--sans", text], …]; resolves when they are loaded (never rejects). */
++export function loadFonts(parts) {
++  if (!document.fonts?.load) return Promise.resolve();
++  const style = getComputedStyle(document.documentElement);
++  return Promise.all(
++    parts.filter(([, , text]) => text).map(([weight, variable, text]) => document.fonts.load(`${weight} 16px ${style.getPropertyValue(variable) || "serif"}`, text).catch(() => {})),
++  );
++}
++/** loadFonts(), but never longer than `ms`. */
++export function loadFontsWithin(parts, ms) {
++  let timer;
++  return Promise.race([loadFonts(parts), new Promise((resolve) => (timer = setTimeout(resolve, ms)))]).finally(() => clearTimeout(timer));
++}
++/** Font slices for one document: reading text and choices (serif), title (serif 600), commentary (sans). English shows Han only in the subtitle. */
++export function docFontParts(chapter, lang) {
++  const title = chapter.title?.zh || "";
++  if (lang === "en") return [[500, "--sans", hanChars([title])]];
++  const { title: _title, notes, unreachable, ...rest } = chapter;
++  return [
++    [400, "--serif", hanChars(zhStrings(rest, Infinity))],
++    [600, "--serif", hanChars([title])],
++    [400, "--sans", hanChars(zhStrings([notes, unreachable]))],
++  ];
++}
++/** Font slices for a story map (labels are cut to what fits a node: titles and captions, sans 13 / 11 px). */
++export function mapFontParts(story, chapters, lang) {
++  if (lang === "en") return [];
++  const text = hanChars([...zhStrings(story.tree, 28), ...zhStrings(story.nodeLabels, 28), ...chapters.map((c) => (c.title?.zh || "").slice(0, 28))]);
++  return [[500, "--sans", text], [400, "--sans", text]];
++}
++
++// Every non-Han symbol the interface draws (reader chrome, story map, effects panels), and the faces it draws them in.
++const SYMBOLS = "·×–—’“”…›←→↗↩↻−∥≈⊡▾◇◈◎⚄✓✧⤢、。《》（），：；？！";
++const SYMBOL_FACES = [
++  "500 13px var(--sans)", "italic 400 11px var(--sans)", "400 11px var(--sans)", "400 19px var(--serif-zh)", "400 17px var(--serif-zh)",
++  "400 14px var(--sans)", "400 12px var(--sans)", "500 12px var(--sans)", "400 13px var(--sans)", "400 12.88px var(--sans)",
++  "400 16px var(--serif-zh)", "400 19px var(--serif-en)", "400 17px var(--serif-en)", "400 11px var(--mono)", "400 10.5px var(--mono)",
++];
+ const STACKS = ["var(--serif-zh)", "var(--serif-en)", "var(--sans)", "var(--mono)", "Georgia, serif"];
+ const CHUNK = 40;
+ 
+@@ -44,19 +114,34 @@
+     setTimeout(poll, 400);
+   });
+ }
++/** Resolves once the page knows the Noto web fonts (their @font-face rules are in), or after `maxMs`. */
++async function fontsDeclared(maxMs = 10000) {
++  const started = performance.now();
++  const declared = () => { for (const face of document.fonts) if (face.family.includes("Noto Serif SC")) return true; return false; };
++  while (!declared() && performance.now() - started < maxMs) await new Promise((resolve) => setTimeout(resolve, 100));
++}
+ const idle = () => new Promise((resolve) => (window.requestIdleCallback ? requestIdleCallback(resolve, { timeout: 4000 }) : setTimeout(() => resolve(null), 120)));
+ 
+-export async function warmGlyphs(load) {
++/** `before` (optional, async): runs before the glyphs are laid out, e.g. to fetch the font slices the first story needs (a slice that arrives later resets the warmed state of its face). */
++export async function warmGlyphs(load, before) {
+   const connection = navigator.connection;
+   if (connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || "")) return;
+   const slim = isConstrained();
+   if (slim) await networkQuiet(2500, 30000); // let covers finish first on slow links
++  // The web-font stylesheet (Google Fonts, non-blocking) can arrive after this starts: document.fonts.load() then resolves at
++  // once for a family that is not declared yet, and the glyphs would be laid out in a system fallback instead of the web font
++  // (measured: the first two faces were warmed in SimSun, so the first real chapter still paid ~30 ms of first-use costs).
++  await fontsDeclared();
+   let glyphs;
+   try {
+     glyphs = (await load("stories/glyphs.json")).zh || "";
+   } catch {
+     return;
+   }
++  if (!slim)
++    try {
++      await before?.();
++    } catch {}
+   const host = document.createElement("div");
+   host.setAttribute("aria-hidden", "true");
+   host.style.cssText = "position:fixed;left:0;top:0;width:640px;visibility:hidden;pointer-events:none;contain:layout paint style;z-index:-1";
+@@ -76,6 +161,17 @@
+       await idle();
+       host.style.font = `${weight} 15px ${family}`;
+       host.textContent = "Aa Zz 0123 —…“”《》，。中文档案";
++      host.getBoundingClientRect();
++    }
++  }
++  // Symbols and punctuation outside the Han ranges (← → ◇ ∥ ↩ ↻ ⚄ …) come from a system fallback font on most machines, and
++  // the first use of each one in each face asks the OS for a font: 2–20 ms apiece (the ↩ of a reference node costs ~15 ms in
++  // the story map alone). Each is laid out once in every face the reader and the map use, ahead of time.
++  for (const font of slim ? SYMBOL_FACES.slice(0, 5) : SYMBOL_FACES) {
++    await idle();
++    host.style.font = font;
++    for (const ch of SYMBOLS) {
++      host.textContent = ch;
+       host.getBoundingClientRect();
+     }
+   }
+--- a/src/app.js
++++ b/src/app.js
+@@ -11,7 +11,7 @@
+ // [UI] chrome dictionary + reader enter/exit (src/i18n.js, src/reader-motion.js)
+ import { t, setLanguage, applyStaticText } from "./i18n.js";
+ import { revealReader } from "./reader-motion.js";
+-import { warmGlyphs } from "./glyph-warmup.js";
++import { warmGlyphs, loadFontsWithin, docFontParts, mapFontParts } from "./glyph-warmup.js";
+ import * as progress from "./progress.js";
+ import { createSeen } from "./seen.js";
+ import { linkGuide } from "./guide-links.js";
+@@ -251,6 +251,8 @@
+   const end = beginOpening();
+   try {
+     const [data] = await Promise.all([loadStory(id), loadNames()]);
++    // Rare characters: their font slices are requested before the first layout (a late slice re-lays out the whole page).
++    await loadFontsWithin(docFontParts(data.chapters.find((c) => c.id === (start || data.story.start)) || data.chapters[0], lang), 150);
+     if (ticket !== readerTicket) return;
+     visitedChapters.clear();
+     assumptions = {};
+@@ -497,6 +499,7 @@
+       $("#flow-surface").hidden = true; // the next opening shows its own map once it is built
+     }
+   }
++  timing.runs = (window.__readerWarmup?.runs || 0) + 1;
+   window.__readerWarmup = timing;
+ }
+ let steppingBack = false;
+@@ -540,6 +543,8 @@
+     if (ticket !== readerTicket) return;
+     const target = data.chapters.find((c) => c.id === id);
+     if (!target) return;
++    await loadFontsWithin(docFontParts(target, lang), 150);
++    if (ticket !== readerTicket) return;
+     if (!back) { trail.push({ story: data.story.id, chapter: id, ...(sets?.length ? { sets } : {}) }); saveSuspended = false; }
+     // Cross-dossier references keep their own route rules and return history.
+     if (data !== dossier) useDossier(data);
+@@ -936,7 +941,10 @@
+   else if (openingReader) {
+     // The tree is computed in an idle moment of the opening animation, so the map's own frame only lays it out.
+     (window.requestIdleCallback || ((f) => setTimeout(f, 200)))(later(() => flowSurface.prepare(story, readable)), { timeout: 450 });
+-    setTimeout(later(updateFlow), 600);
++    const mapFonts = loadFontsWithin(mapFontParts(story, readable, lang), 600); // requested now, awaited when the map is built
++    // The map fills in slices (FlowSurface.fillNodes) instead of one 60–100 ms frame.
++    const openFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail, undefined, { progressive: true });
++    setTimeout(later(() => mapFonts.then(later(openFlow))), 600);
+   }
+   else (window.requestIdleCallback || ((f) => setTimeout(f, 50)))(later(updateFlow), { timeout: 250 });
+   // Continue-card pictures are full event art scaled down: decoding them on the opening or chapter-change frames cost
+@@ -1414,7 +1422,23 @@
+ }
+ window.addEventListener("hashchange", parseHash);
+ try {
+-  const data = await json("stories/index.json");
++  // The scene (renderer, atlas, shader programs: ~55 ms of script, then the programs link on the GPU process) does not
++  // need the story lists: it is built while the index downloads and receives them afterwards. Nothing is drawn before both exist.
++  const indexLoading = json("stories/index.json");
++  indexLoading.catch(() => {}); // the await below reports a failure; this only avoids an unhandled-rejection event
++  let sceneEarly = null, sceneError = null; // `scene` itself is set once the story lists are in, so nothing else sees a half-ready scene
++  try {
++    sceneEarly = new ArchiveScene($("#scene"), {
++      columns: [],
++      onSelect: showSelection,
++      onOpen: (s) => openStory(s.id),
++      reduced,
++      asset,
++    });
++  } catch (e) {
++    sceneError = e;
++  }
++  const data = await indexLoading;
+   stories = data.stories;
+   for (const s of stories) s.excerpt ||= { zh: "", en: "" };
+   storyById = new Map(stories.map((s) => [s.id, s]));
+@@ -1433,13 +1457,9 @@
+   renderChrome(); // [UI] also builds the catalogue bar
+   $("#archive-count").textContent = "";
+   try {
+-    scene = new ArchiveScene($("#scene"), {
+-      columns,
+-      onSelect: showSelection,
+-      onOpen: (s) => openStory(s.id),
+-      reduced,
+-      asset,
+-    });
++    if (sceneError) throw sceneError;
++    scene = sceneEarly;
++    scene.setColumns(columns);
+     window.__archiveDiagnostics = () => scene.diagnostics();
+     // Integrated or software adapter: dismissible notice on how to move the browser to the discrete GPU.
+     showAdapterHint(scene.gpu, { t });
+@@ -1458,8 +1478,17 @@
+   // Idle warm-ups after start-up: Chinese glyphs (src/glyph-warmup.js) and, in quiet moments, the reader (sample
+   // document first, then the selected story's opening document and map).
+   setTimeout(() => {
+-    warmGlyphs(json);
+-    idleOnce().then(prewarmSample).then(prewarmReader);
++    const glyphsWarmed = warmGlyphs(json, async () => {
++      // The selected story is what is opened first: its rare font slices arrive before the glyph warm-up, not in the middle of it.
++      const [data] = await Promise.all([loadStory(selected.id), loadNames()]);
++      const first = data.chapters.find((c) => c.id === data.story.start) || data.chapters[0];
++      await loadFontsWithin([...docFontParts(first, lang), ...mapFontParts(data.story, data.chapters, lang)], 4000);
++    });
++    // The reader is warmed as before (sample document, then the first story), and once more after the glyph warm-up: its
++    // thousands of glyphs in a dozen faces push part of what the first render warmed out of Chrome's font caches (measured: the
++    // first click on the selected story then paid ~40 ms of layout instead of ~15), the second render puts it back.
++    const early = idleOnce().then(prewarmSample).then(prewarmReader).catch(() => {});
++    Promise.all([early, glyphsWarmed.catch(() => {})]).then(() => { prewarmed = false; }).then(idleOnce).then(prewarmReader);
+   }, 1200);
+ } catch (e) {
+   $("#selected-title").textContent = T("档案暂时无法连接", "Archive unavailable");

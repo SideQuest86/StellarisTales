@@ -1,6 +1,6 @@
 # 碎片环带 / Debris Belt
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:484；events/arcsite_events.txt:1177；common/solar_system_initializers/special_system_initializers.txt:2681 · DLC：基础游戏 Base game（遗址定义 00_base_game_arc_sites） · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：基础游戏 Base game（遗址定义 00_base_game_arc_sites）
 
 ## 如何开始 How it starts
 
@@ -30,10 +30,11 @@ The asteroid belt is the wreckage of Odryskan habitats; a tiny "space cabin" hol
 
 ## 条件与文明差异 Conditions and variants
 
-- 无特殊的文明差异。 / No empire-specific variants beyond the reward wording.
 - 掷骰失败时使用多个遗址共用的事件池 space_station_random_events（轨道遗址）。 / Failed rolls draw from the pool space_station_random_events, shared by several sites (orbital sites).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/00_base_game_arc_sites.txt:484；events/arcsite_events.txt:1177；common/solar_system_initializers/special_system_initializers.txt:2681
 - 已核对：遗址定义（common/archaeological_site_types/00_base_game_arc_sites.txt:484）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/00_base_game_arc_sites.txt:484) with its stage order and conditions, every stage event script, and how the site appears; both languages read.

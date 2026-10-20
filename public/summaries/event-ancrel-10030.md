@@ -1,6 +1,6 @@
 # 巨型艺术设施：完工 / Mega Art Installation: Perfection
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_2.txt:6552；common/megastructures/08_mega_art_installation.txt:347（mega_art_installation_4）、518（mega_art_installation_restored_2） · DLC：《远古遗物》Ancient Relics；巨型结构 megastructure 文件 mega_art_installation · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics；巨型结构 megastructure 文件 mega_art_installation
 
 ## 如何开始 How it starts
 
@@ -24,5 +24,7 @@ The text has versions by empire (xenophobe, homicidal and others): the greatness
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_2.txt:6552；common/megastructures/08_mega_art_installation.txt:347（mega_art_installation_4）、518（mega_art_installation_restored_2）
 - 已核对：ancrel.10030 的脚本与两个调用点；中英文正文已读。
 - Checked: the script of ancrel.10030 and both call sites; both languages read.

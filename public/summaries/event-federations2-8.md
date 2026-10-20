@@ -1,7 +1,5 @@
 # 起舞的原因？ / A Cause to Dance?
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件 colony event
-- 来源 Sources：`events/federations_events_2.txt:606-1000` · `common/special_projects/00_projects_federations.txt:325-380` · `common/on_actions/00_on_actions.txt:3855-3880`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -22,5 +20,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/federations_events_2.txt:606-1000` · `common/special_projects/00_projects_federations.txt:325-380` · `common/on_actions/00_on_actions.txt:3855-3880`
 - 已核对 Checked：脚本、两个项目与池权重。/ Scripts, both projects and the pool weight.
 - 审阅改动 Changes：结构与草稿一致，补充了触发条件。/ Structure matches; trigger conditions added.

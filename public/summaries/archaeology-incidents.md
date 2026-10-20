@@ -1,6 +1,6 @@
 # 考古遗址：发掘意外 / Archaeological Sites: excavation incidents
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_random_site_events.txt:15–1153、1584；common/scripted_effects/archaeology_event_effects.txt:59–112、332–504；events/ancient_relics_arcsite_events_1.txt:3612、4548、6727 · DLC：考古遗址机制属《远古遗物》Ancient Relics（稀有文物奖励需该DLC）· 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者与考古 Precursors · DLC：考古遗址机制属《远古遗物》Ancient Relics（稀有文物奖励需该DLC）· 审阅 Reviewed 2026-10-12
 
 > 说明（审阅注释）：游戏没有为这组事件命名，标题借用界面原文“考古遗址 / Archaeological Sites”。这些事件不是任何一处遗址的剧情章节，而是所有使用通用事件池的遗址共享的随机插曲。
 
@@ -44,6 +44,7 @@ Incidents are unordered; only one appears at a time and it pauses the site:
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：events/ancient_relics_random_site_events.txt:15–1153、1584；common/scripted_effects/archaeology_event_effects.txt:59–112、332–504；events/ancient_relics_arcsite_events_1.txt:3612、4548、6727
 - 已核对：standard_archaeological_site_on_roll_failed（59–112）、all_random_events 与六个子池、space_station_random_events；ancient_relics_random_site_events.txt 中 8000–8110、8210、13030 的脚本；4006、4021、4078 的脚本与一次性标志；中英文正文已读。
 - 结构修正：原草稿把每个意外事件编成一个孤立故事（event-ancrel-8000 等），现合并为一个故事族，按陷阱组标为互斥，整体标为无序事件池；遗址故事不再把它们当作章节。
 - 2026-10-13 补充：轨道事件池的 8200–8203、8215 现并入本故事（此前在三处轨道遗址故事里各自出现）；真菌僵尸 8300–8315 与面具事件 15006–15008 属各自遗址的专属池，留在对应遗址故事中。

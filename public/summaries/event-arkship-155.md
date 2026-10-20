@@ -1,6 +1,6 @@
 # 外交使节 / A Diplomatic Overture
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nomads_arkship_events.txt, common/missions/missions/02_contracts.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -32,6 +32,8 @@ arkship.155 needs a non-gestalt, non-homicidal owner with an official, and a con
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nomads_arkship_events.txt, common/missions/missions/02_contracts.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：arkship.155-175、合同 contract_arkship_diplomatic_envoy（02_contracts.txt:5413-5499）、on_action 调用与权重修正。
 - 更正 Corrections：155、156、160 原是三个独立单页故事，且 165/170/175 通过合同参数传递被漏掉；现合并为一个故事。
   155, 156 and 160 were separate one-card stories; they are merged with 165/170/175.

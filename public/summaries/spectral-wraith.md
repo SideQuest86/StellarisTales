@@ -1,6 +1,6 @@
 # 魑魅魍魉 / The Wraith
 
-- 分类 Category：巨兽与城邦 · 来源 Sources: events/leviathans_events_2.txt:2400-2835; common/on_actions/00_on_actions.txt:312, :1025, :1149, :1645 · DLC：利维坦 Leviathans · 审阅 Reviewed 2026-10-13
+- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 勘测带标记的脉冲星行星：2010“光谱发条”，撤去标记并使行星“孕育幽魂”。
@@ -18,5 +18,8 @@ Surveying the flagged pulsar planet fires 2010 and starts the germination.
 格式塔意识使用不同的描述文本（2010、2012、2014）。
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/leviathans_events_2.txt:2400-2835; common/on_actions/00_on_actions.txt:312, :1025, :1149, :1645
 合并 event-leviathans-2010 / -2011 / -2014 / -2061。频率同步修正的具体效果未核对（不确定）。
 Four one-doc stories merged; effect of the frequency-sync modifier not verified (uncertain).

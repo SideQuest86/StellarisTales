@@ -1,7 +1,6 @@
 # 太空碎片 / Space Debris
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（仅 distar.1055 分支 only the distar.1055 branch） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:347; events/distant_stars_events_2.txt:2283 (distar.1055); common/special_projects/00_projects_distant_stars.txt (THE_CUBE); events/distant_stars_events_2.txt:2315 (distar.1056); events/anomaly_events_1.txt:4049 (anomaly.320)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（仅 distar.1055 分支 only the distar.1055 branch）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ distar.1055 depends on humans existing in the galaxy; it cannot appear for human
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:347; events/distant_stars_events_2.txt:2283 (distar.1055); common/special_projects/00_projects_distant_stars.txt (THE_CUBE); events/distant_stars_events_2.txt:2315 (distar.1056); events/anomaly_events_1.txt:4049 (anomaly.320)
 已核对。草稿将 distar.1055 显示为 p=0.00*（基础权重），实际取决于人类是否存在，已用互斥组说明。
 
 Checked. The draft shows distar.1055 as p=0.00* (its base weight); the real weight depends on whether humans exist, documented with an exclusive group.

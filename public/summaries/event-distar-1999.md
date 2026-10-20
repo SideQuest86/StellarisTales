@@ -1,8 +1,6 @@
 # 研究智慧海洋 / Study The Living Sea
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`events/distant_stars_events_1.txt:6324-6380` · `common/on_actions/00_on_actions.txt:1512,1933,4188` · `common/special_projects/00_projects_distant_stars.txt:1605`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`events/distant_stars_events_1.txt:6324-6380` · `common/on_actions/00_on_actions.txt:1512,1933,4188` · `common/special_projects/00_projects_distant_stars.txt:1605`
 - 已对照distar.1999/199/190。同一尾段也在c3a的anomaly-distar-living-cat中（见请求）。  
   Compared distar.1999/199/190. The same tail is also part of c3a's anomaly-distar-living-cat (see Requests).
 - 覆盖 Coverage：全部7个文档。 / All 7 docs.

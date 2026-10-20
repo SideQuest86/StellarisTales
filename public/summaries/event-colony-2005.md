@@ -1,7 +1,6 @@
 # 波涛之下 / From Beneath the Waves
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_2.txt:1439-1986`；`common/special_projects/00_projects_3.txt:550`；`common/on_actions/00_on_actions.txt:3761,3813`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,5 +26,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_2.txt:1439-1986`；`common/special_projects/00_projects_3.txt:550`；`common/on_actions/00_on_actions.txt:3761,3813`
 - 已核对：触发、选项分支、项目随机权重。
   Checked: trigger, option branches, project random weights.

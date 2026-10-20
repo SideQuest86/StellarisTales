@@ -1,7 +1,6 @@
 # 玛琳·卡琳：花之魅力 / Mharin Kharin: Floral Fascination
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/colony_events_2.txt:553-1282`；`common/on_actions/00_on_actions.txt:3756,3807`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -33,5 +32,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/colony_events_2.txt:553-1282`；`common/on_actions/00_on_actions.txt:3756,3807`
 - 已核对：触发、每个延迟与选项、三个项目与四种结局。
   Checked: trigger, every delay and option, the three projects and four endings.

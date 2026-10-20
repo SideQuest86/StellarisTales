@@ -1,8 +1,6 @@
 # 沙漠废墟 / Desert Ruins
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:186`；`events/astral_rifts_1_events.txt:2489–3278`（1500–1565）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -48,6 +46,8 @@ A time-loop puzzle: a wrong button “kills” the scientist and the loop restar
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:186`；`events/astral_rifts_1_events.txt:2489–3278`（1500–1565）
 - 已核对：裂隙定义与遗珍锁定；1500–1565 全部事件；`time_passed` 的设置（1510）与递增（1535、1545、1560），1560 的 `time_passed < 3` 分支，以及 1565 的奖励分档。没有 `on_roll_failed` 失败分支；编译结构正确（1560 的两个结果已标为条件分支），补充互斥组、结局、节点标签与谜题说明。
 
 - Checked: rift definition and relic lock; every event 1500–1565; how `time_passed` is set (1510) and incremented (1535, 1545, 1560), the `time_passed < 3` branch of 1560 and the reward tiers of 1565. No `on_roll_failed` fallback; the compiled structure was correct (the two outcomes of 1560 already appear as a conditional branch); exclusive group, endings, node labels and a puzzle note added.

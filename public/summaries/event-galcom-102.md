@@ -1,7 +1,5 @@
-# 缇扬奇进入[Root.GetSpeciesName]领土 / Tiyanki In [Root.GetSpeciesName] Space
-
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/galactic_community_events.txt:847-1159`；`common/resolutions/00_resolutions.txt:12809`；`common/on_actions/00_on_actions.txt:115-116,1034`
+# 缇扬奇进入我方领土 / Tiyanki In Our Territory
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,6 +27,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/galactic_community_events.txt:847-1159`；`common/resolutions/00_resolutions.txt:12809`；`common/on_actions/00_on_actions.txt:115-116,1034`
 - 已核对：三条触发路径与清理事件。
   Checked: the three trigger paths and the clean-up event.
 - 更正：103 和 108 原为各自孤立的故事，现并入。

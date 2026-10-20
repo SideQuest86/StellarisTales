@@ -1,6 +1,6 @@
 # 掠夺者帝国 / Marauder Empires
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/marauder_events.txt:12-228 (contact router marauder.1); events/marauder_events.txt:230-329; events/marauder_events.txt:1066-3800; common/on_actions/00_on_actions.txt:729,96,2385,2423 · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -32,6 +32,8 @@ The three marauder clans (marauder_1/2/3) have different lines and mercenary ros
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/marauder_events.txt:12-228 (contact router marauder.1); events/marauder_events.txt:230-329; events/marauder_events.txt:1066-3800; common/on_actions/00_on_actions.txt:729,96,2385,2423
 - 修正：草稿把发现事件（event-marauder-2）、初次通讯（event-marauder-15）、合同到期（event-marauder-151）和指挥官替换（event-marauder-70）分成四个故事，并把大可汗与掠袭的对话混入此菜单；现合并为一个通讯枢纽，大可汗/掠袭对话归各自故事。
   Corrections: the draft split the sighting (event-marauder-2), greeting (event-marauder-15), contract end (event-marauder-151) and commander replacement (event-marauder-70) into four stories and mixed the Great Khan and raid dialogues into this menu; they are now one hub, with the Khan and raid dialogues in their own stories.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

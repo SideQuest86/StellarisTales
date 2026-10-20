@@ -1,11 +1,7 @@
 # 遗弃星门 / Abandoned Gateway
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
 - 分类 Category：C8 银河轶事 / Galactic miscellany
-- 来源 Sources：`events/apocalypse_events.txt:6-51`; `events/apocalypse_events.txt:145-230,264-296`; `common/megastructures/05_gateways.txt:321-480`
 - DLC：Apocalypse
-- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
 
 ## 如何开始 How it starts
 
@@ -33,6 +29,9 @@ apoc.10 has four text variants (number of active gateways; did not repair / has 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：`events/apocalypse_events.txt:6-51`; `events/apocalypse_events.txt:145-230,264-296`; `common/megastructures/05_gateways.txt:321-480`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 核对 events/apocalypse_events.txt 与 common/megastructures/05_gateways.txt 的触发和升级链；原先的 event-apoc-10 并入本条；paragon.3000 属斯克兰德的故事。
 
 Triggers and upgrade chain in events/apocalypse_events.txt and common/megastructures/05_gateways.txt were checked; the former event-apoc-10 is merged here; paragon.3000 belongs to the Skrand story.

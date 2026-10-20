@@ -1,8 +1,6 @@
 # 永恒合唱 / The Eternal Chorus
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/special_projects/06_projects_nomads.txt:3294` · `events/nomads_arkship_events.txt:2099-2240`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/special_projects/06_projects_nomads.txt:3294` · `events/nomads_arkship_events.txt:2099-2240`
 - 已对照事件与项目；后续arkship.1属方舟故事。  
   Compared the event and the project; arkship.1 onward belongs to the arkship story.
 - 覆盖 Coverage：全部1个文档。 / All 1 docs.

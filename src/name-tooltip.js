@@ -1,6 +1,6 @@
 // Substitution helpers + a single reusable, accessible tooltip for `.game-name` spans.
 export const GENERIC_NOTE = { zh: "这里是游戏按存档填入的名称。", en: "The game fills in this name from your save." };
-export const SCRIPTED_NOTE = { zh: "按你的档案设定选用的游戏原文。", en: "The game's own wording, chosen for your reading profile." };
+export const SCRIPTED_NOTE = { zh: "按你的文明设定选用的游戏原文。", en: "The game's own wording, chosen for your reading profile." };
 
 const ARTICLE = "(?:the|a|an|this|that|our|your|their|his|her|its|my)";
 

@@ -1,8 +1,6 @@
 # 袖珍行星 / Tiny Planet
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:366`；`events/astral_rifts_2_events.txt:3922–4456`（2800–2890）
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ Exclusive endings: 2830 (society deposit d_society_10), 2835 (country flag tidal
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:366`；`events/astral_rifts_2_events.txt:3922–4456`（2800–2890）
 - 已核对：2800–2890 全部事件、条件与标记的下游决议。编译结构正确；补充互斥组与结局。
 
 - Checked: all events 2800–2890, conditions and the downstream decisions of the flags. Compiled structure was correct; added exclusive groups and endings.

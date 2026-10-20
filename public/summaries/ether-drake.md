@@ -1,6 +1,6 @@
 # 以太巨龙 / Ether Drake
 
-- 分类 Category：巨兽与城邦 · 来源 Sources：events/leviathans_events_1.txt:7973-8710（610, 640-655）, :9004-9202（670, 675）; common/special_projects/00_projects_leviathans.txt:450-474; common/on_actions/00_on_actions.txt:998, :1641-1643, :2893 · DLC：利维坦 Leviathans · 审阅 Reviewed 2026-10-13
+- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 玩家（或堕落帝国）的舰队首次进入有以太巨龙的守护者星系：610 “遭遇以太巨龙”（每个帝国一次）。
@@ -20,5 +20,8 @@ The first fleet of a default or fallen empire entering the Drake's system gets 6
 “天龙起源”（Here Be Dragons）有专用 610 文本；格式塔意识使用不同的 649/650 选项。巨龙宝库小行星见“龙之宝藏”故事。
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/leviathans_events_1.txt:7973-8710（610, 640-655）, :9004-9202（670, 675）; common/special_projects/00_projects_leviathans.txt:450-474; common/on_actions/00_on_actions.txt:998, :1641-1643, :2893
 合并 event-leviathans-610 / -648 / -650 / -670 四个单文档故事。追击与休眠的隐藏事件只在概要层面阅读（不确定）。
 Four one-doc stories merged. Hidden pursuit/hibernation events 640-655 were read at summary level only (uncertain).

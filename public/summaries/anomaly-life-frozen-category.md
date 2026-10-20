@@ -1,7 +1,6 @@
 # 生命迹象 / Life Signs
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:526; events/anomaly_events_2.txt:42 (anomaly.2510); common/special_projects/00_projects_1.txt (SEA_EXPEDITION_PROJECT); events/anomaly_events_2.txt:90 (anomaly.2512); events/anomaly_events_2.txt:141 (anomaly.2513); events/anomaly_events_4.txt:3369 (anomaly.6900)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ The project in 2510 depends on machine-empire status; 2512 has a machine descrip
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:526; events/anomaly_events_2.txt:42 (anomaly.2510); common/special_projects/00_projects_1.txt (SEA_EXPEDITION_PROJECT); events/anomaly_events_2.txt:90 (anomaly.2512); events/anomaly_events_2.txt:141 (anomaly.2513); events/anomaly_events_4.txt:3369 (anomaly.6900)
 已核对异常定义、项目与全部结果事件；编译树正确，无需改动。
 
 Checked the anomaly definition, the project and every outcome event; the compiled tree is correct, no change needed.

@@ -1,8 +1,6 @@
 # 海盗空间站被摧毁 / Pirate Station Raided
 
-> 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
-
-- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · 来源 Sources：`common/on_actions/00_on_actions.txt:1649`、`events/pirate_events.txt:1243-1330`、`events/pirate_events.txt:1329-1522`、`events/pirate_events.txt:1524-1560` · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,9 @@ Loot tiers and years as above; the Black Needle bonus needs the Treasure Hunters
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`common/on_actions/00_on_actions.txt:1649`、`events/pirate_events.txt:1243-1330`、`events/pirate_events.txt:1329-1522`、`events/pirate_events.txt:1524-1560`
+- 本文为人工审阅导读（评注），不是游戏原文；原文见阅读器。 / Reviewer guide (commentary), not original game text; the original text is in the reader.
 - 已对照游戏文件核对入口、触发、选项与结果；行号均为游戏文件的真实行号。
   Entry, trigger, options and outcomes were checked against the game files; line numbers are real game-file lines.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

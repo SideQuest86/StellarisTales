@@ -1,7 +1,5 @@
 # 穿梭机 / The Shuttle（审判 The Trial）
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件「穿梭机」first_contact.5080）
-- 来源 Sources：`events/first_contact_events.txt:7370–7986` · `common/first_contact/00_first_contact.txt:739–765, 2460–2577`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -25,5 +23,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:7370–7986` · `common/first_contact/00_first_contact.txt:739–765, 2460–2577`
 - 已核对 Checked：5080–5095 全脚本，6 个审判阶段，第二阶段条目。
 - 审阅改动 Changes：并 5080（根）、5085、5090、5095 为一篇。/ 5080 (root), 5085, 5090, 5095 merged into one tree.

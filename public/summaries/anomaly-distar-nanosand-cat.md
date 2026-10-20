@@ -1,7 +1,6 @@
 # 金属沙子 / Metallic Sands
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:970-998; events/distant_stars_events_1.txt:10221 (distar.280)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ Xenophobes only get "Disconcerting" without the nanites. The picture changes wit
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:970-998; events/distant_stars_events_1.txt:10221 (distar.280)
 已核对异常定义与 distar.280。
 
 Checked the anomaly definition and distar.280.

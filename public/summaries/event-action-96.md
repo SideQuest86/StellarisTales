@@ -1,6 +1,6 @@
 # 银河市场的诞生 / Birth of the Galactic Market
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/on_action_events_2.txt, common/resolutions/00_resolutions.txt, common/event_chains/00_event_chains_3.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -24,5 +24,7 @@ Passing the founding resolution fires action.96 on the proposer.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/on_action_events_2.txt, common/resolutions/00_resolutions.txt, common/event_chains/00_event_chains_3.txt
 - 已核对 Checked：action.96-99、104、1000、1005、101 的触发与分派；市场搬迁 action.102/103 与接入 action.105/115 见相邻故事。
 - 说明 Note：设立/失败的页面由故事 event-galcom-62（另一审阅者）持有，这里只保留提议阶段。 The establishment/failure pages belong to event-galcom-62.

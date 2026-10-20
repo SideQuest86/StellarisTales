@@ -1,7 +1,6 @@
 # 残骸场 / Debris Field
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1115-1177; events/distant_stars_events_2.txt:2851 (distar.1080); common/special_projects/00_projects_distant_stars.txt:1177 (ICE_ALIEN); events/distant_stars_events_2.txt:2937 (distar.1081); common/on_actions/00_on_actions.txt:101; events/distant_stars_events_2.txt:3050-3131 (distar.1082); events/distant_stars_events_2.txt:3134/3163 (distar.1083/1084); common/on_actions/00_on_actions.txt:2697; events/distant_stars_events_2.txt:3208 (distar.1085); events/distant_stars_events_2.txt:2176 (distar.1050); events/distant_stars_events_2.txt:3326 (distar.2000)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ Cloning decides distar.1080's text and options; Evolutionary Predators have extr
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1115-1177; events/distant_stars_events_2.txt:2851 (distar.1080); common/special_projects/00_projects_distant_stars.txt:1177 (ICE_ALIEN); events/distant_stars_events_2.txt:2937 (distar.1081); common/on_actions/00_on_actions.txt:101; events/distant_stars_events_2.txt:3050-3131 (distar.1082); events/distant_stars_events_2.txt:3134/3163 (distar.1083/1084); common/on_actions/00_on_actions.txt:2697; events/distant_stars_events_2.txt:3208 (distar.1085); events/distant_stars_events_2.txt:2176 (distar.1050); events/distant_stars_events_2.txt:3326 (distar.2000)
 已核对异常权重与修正、distar.1050、1080–1085、2000、ICE_ALIEN 及 on_tech_increased / on_monthly_pulse。修正：草稿把“冰层中的外星生命体”（event-distar-1085）与“阿兹詹虫逃跑了”（event-distar-1082）分成独立故事；现以审阅连接并入（储存DNA→研究克隆后；劳工/动物园→每月检查）。30天后的通用接触报告 story.5 是共享事件，不属于本故事。
 
 Checked the weights and modifiers, distar.1050, 1080–1085, 2000, ICE_ALIEN and on_tech_increased / on_monthly_pulse. Correction: "Ice Alien" (event-distar-1085) and "Azizians on the loose!" (event-distar-1082) were separate stories; they are now joined by reviewed links (stored DNA → after Cloning; laborers/zoo → monthly check). The generic contact report story.5 30 days later is a shared helper, not part of this story.

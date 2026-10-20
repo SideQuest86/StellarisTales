@@ -1,7 +1,6 @@
 # 措辞强烈的来信 / A Strongly Worded Letter
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/federations_events_1.txt:184-1700`；`common/resolutions/00_resolutions.txt`；`common/on_actions/00_on_actions.txt:620`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -45,6 +44,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/federations_events_1.txt:184-1700`；`common/resolutions/00_resolutions.txt`；`common/on_actions/00_on_actions.txt:620`
 - 已核对：每个事件的触发决议（行号见 bridges 证据）、10400 的触发、10401 的选项门槛。
   Checked: the triggering resolution of each event (lines in the bridge evidence), the trigger of 10400, the option gates of 10401.
 - 更正：10个违规窗口原为孤立的单窗口故事，现汇入同一封信。

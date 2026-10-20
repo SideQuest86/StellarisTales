@@ -1,6 +1,6 @@
 # 坠毁的飞船 / The Crashed Ship
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/06_overlord_arc_sites.txt:131；events/unique_system_events.txt:435；common/solar_system_initializers/unique_system_initializers.txt:452 · DLC：《霸主》Overlord（脚本文件 06_overlord_arc_sites） Overlord · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《霸主》Overlord（脚本文件 06_overlord_arc_sites） Overlord
 
 ## 如何开始 How it starts
 
@@ -38,6 +38,8 @@ A crashed, empty ship holds Unit-305's log of experiments with the Shroud and a 
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/06_overlord_arc_sites.txt:131；events/unique_system_events.txt:435；common/solar_system_initializers/unique_system_initializers.txt:452
 - 已核对：遗址定义（common/archaeological_site_types/06_overlord_arc_sites.txt:131）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/06_overlord_arc_sites.txt:131) with its stage order and conditions, every stage event script, and how the site appears; both languages read.
 - 2026-10-13 r3-inherit：事件继承修复后复查：unique.70–100 继承 unique.70 的标题（抟土之塑师）；树与导读的分支一致，导读补上缺失的标题。

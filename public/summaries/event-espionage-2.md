@@ -1,7 +1,6 @@
 # 特工再次露面 / An Operative Resurfaces
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/nemesis_espionage_events.txt:399-460,488-1095,1214-1700,2214-2705`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -27,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/nemesis_espionage_events.txt:399-460,488-1095,1214-1700,2214-2705`
 - 已核对：espionage.2 的权重与修正、1000 触发、1001 选项与延迟、1081/1082 来源。
   Checked: espionage.2 weights and modifiers, 1000 trigger, 1001 options and delays, sources of 1081/1082.
 - 未逐条核对：1005–1022 内部选项的数值效果。

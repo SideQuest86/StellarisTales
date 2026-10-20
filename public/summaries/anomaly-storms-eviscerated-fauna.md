@@ -1,8 +1,6 @@
 # 异物 / Foreign Object
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:297-309` · `events/anomaly_events_cosmic_storms.txt` · `events/cosmic_storms_events_1.txt:300-335`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -28,6 +26,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/102_anomaly_categories_cosmic_storms.txt:297-309` · `events/anomaly_events_cosmic_storms.txt` · `events/cosmic_storms_events_1.txt:300-335`
 - 已对照类别脚本、cstorms.10条目与5080/5085。  
   Compared the category script, the cstorms.10 entry and 5080/5085.
 - 覆盖 Coverage：全部4个文档。 / All 4 docs.

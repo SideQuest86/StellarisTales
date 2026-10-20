@@ -1,8 +1,6 @@
 # 佣兵城邦被摧毁 / Mercenary Enclave Destroyed
 
 - 分类 Category：巨兽与城邦 · DLC：霸主 Overlord
-- 来源 Sources：events/overlord_enclaves_events.txt:239（enclave.23）, :297（enclave.25）, :320（enclave.26）, :284（enclave.24）; common/on_actions/00_on_actions.txt:1423
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 佣兵城邦的空间站被击毁时（on_ship_destroyed_victim → 隐藏 enclave.23）。
@@ -17,7 +15,8 @@ One notice per viewpoint (exclusive):
 
 ## 分支与结局 Branches and outcomes
 
-本导读未单列分支与结局；分支随各事件在上文说明，互斥结果在阅读器中以“择一”框显示。/ This guide does not list branches separately; they are described with each event above, and exclusive outcomes are boxed in the reader.
-
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/overlord_enclaves_events.txt:239（enclave.23）, :297（enclave.25）, :320（enclave.26）, :284（enclave.24）; common/on_actions/00_on_actions.txt:1423
 已核对 enclave.23 的接收者筛选、两份通知及选项条件。覆盖完整。Checked recipients, both notices and option conditions. Coverage complete.

@@ -1,7 +1,5 @@
 # 联邦团结暨领导力盛典 / A Celebration of Unity and Leadership
 - 分类 Category：文明纪事 Society (C7) · 联邦（霸权型）事件 federation (hegemony) event
-- 来源 Sources：`events/federations_events_2.txt:887-2430` · `common/special_projects/00_projects_federations.txt:455-640` · `common/on_actions/00_on_actions.txt:491-500`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -24,6 +22,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/federations_events_2.txt:887-2430` · `common/special_projects/00_projects_federations.txt:455-640` · `common/on_actions/00_on_actions.txt:491-500`
 - 已核对 Checked：50、51、52、53、54、55、56 的脚本，两个联邦项目，纪念碑/代表团事件的触发。/ Scripts of 50–56, both federation projects, and monument/delegation triggers.
 - 审阅改动 Changes：结构与草稿一致；补充了触发条件、投票规则与失败路径。/ Structure matches the draft; trigger conditions, voting rule and failure path added.
 - 不确定 Uncertain：57–62 的文本变体取决于联邦标志，只读取了触发条件，没有逐条展开。 / The 57–62 text variants depend on federation flags and were not expanded line by line.

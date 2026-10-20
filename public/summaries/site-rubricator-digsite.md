@@ -1,6 +1,6 @@
 # 誊录仪 / The Rubricator
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_1.txt:3851（ancrel.4012）、3915–4047（遗址与4018）、4233–4660（4019–4024、40182）、4334–4490（4120–4123）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2136；common/on_actions/00_on_actions.txt:1011、1028 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -47,6 +47,8 @@ If the site planet is a colony, 4018's after block starts a 720-day timer: hidde
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_1.txt:3851（ancrel.4012）、3915–4047（遗址与4018）、4233–4660（4019–4024、40182）、4334–4490（4120–4123）；common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2136；common/on_actions/00_on_actions.txt:1011、1028
 - 已核对：ancrel.4012、4013–4017、4018、4019、4022、4023、4024、40181/40182、4120、4020、4121–4123、4026 的脚本，遗址定义与初始化器，on_entering_system_fleet 与 on_fleet_destroyed_perp 的调用点，两条事件链的文本；中英文正文已读。
 - Checked: the scripts of ancrel.4012, 4013-4017, 4018, 4019, 4022, 4023, 4024, 40181/40182, 4120, 4020, 4121-4123 and 4026, the site definition and initializer, the on_entering_system_fleet and on_fleet_destroyed_perp call sites and both chain texts; both languages read.
 - 修正：原先把“抵达誊录仪星球”（4012）、“龙扑来”（4024）和“夏尔德之死”（4120/4020/4121/4122）当作三个孤立的小故事，并让龙的后续看似接在遗址之后；现合并为一个故事：4012 → 遗址 → 4018 → 4019/4023/4024，夏尔德之死作为不依赖顺序的结局族。

@@ -1,8 +1,6 @@
 # 尼玛星球 / Nemma World
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain（首个事件「不稳地面 Unsteady Ground」）
-- 来源 Sources：`events/colony_events_3.txt:3704–4235` · `common/special_projects/00_projects_3.txt:1103–1171` · `common/event_chains/00_event_chains.txt:366` · `common/on_actions/00_on_actions.txt:3768`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -33,6 +31,8 @@ On the second anniversary the pool picks *Unsteady Ground* at weight 8 for a con
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:3704–4235` · `common/special_projects/00_projects_3.txt:1103–1171` · `common/event_chains/00_event_chains.txt:366` · `common/on_actions/00_on_actions.txt:3768`
 - 已核对 Checked：全部事件与五个项目的成本/工期，`random_list` 权重与 `turtle_amount` 计数，事件链 `abort_trigger`（失去该星球时中止）。/ All events, the five projects, weights and the counter; the chain aborts if the planet is lost.
 - 审阅改动 Changes：标题改用事件链名称「尼玛星球」；标注两个结局、三条审阅注释；事件链概览卡片仅作说明，不是剧情步骤。/ Title from the event-chain name; endings and notes added; the chain overview card is informational, not a plot step.
 - 不确定 Uncertain：编译图不画自循环（9020→9020、9025→9025），已在注释中说明。/ Self-loops are not drawn; described in notes.

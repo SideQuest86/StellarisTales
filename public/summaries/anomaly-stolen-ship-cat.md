@@ -1,7 +1,6 @@
 # 武装舰船 / Armed Vessel
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1470-1496; events/distant_stars_events_2.txt:6783 (distar.2040); common/special_projects/00_projects_distant_stars.txt:1426 (INVISIBLE_DEATH); events/distant_stars_events_2.txt:6839 (distar.2041)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -23,12 +22,10 @@ Send a team or decline.
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1470-1496; events/distant_stars_events_2.txt:6783 (distar.2040); common/special_projects/00_projects_distant_stars.txt:1426 (INVISIBLE_DEATH); events/distant_stars_events_2.txt:6839 (distar.2041)
 已核对异常、distar.2040–2041 与项目。树结构正确。30天后的通用接触报告 story.5 是共享事件，不属于本故事。
 
 Checked the anomaly, distar.2040–2041 and the project. Tree correct. The generic contact report story.5 30 days later is a shared helper, not part of this story.

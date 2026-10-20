@@ -1,9 +1,6 @@
 # 虚境铸就 / Shroud-Forged
 
-- 分类 Category：起源 Origins · DLC：未核对 DLC not checked · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/shroud_forged_events.txt`、`common/situations/03_origin_situations.txt:1-340`、`common/special_projects/00_projects_origins.txt:1-59`、`common/decisions/02_special_decisions.txt:2690-2860`、`common/buildings/12_event_buildings.txt:433-498`、`events/game_start.txt:424`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：未核对 DLC not checked
 
 ## 如何开始 How it starts
 
@@ -34,6 +31,9 @@ At game start the hidden shroud_forged.1 sets up the rift on the capital and sta
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/shroud_forged_events.txt`、`common/situations/03_origin_situations.txt:1-340`、`common/special_projects/00_projects_origins.txt:1-59`、`common/decisions/02_special_decisions.txt:2690-2860`、`common/buildings/12_event_buildings.txt:433-498`、`events/game_start.txt:424`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：全部事件窗口、局势阶段与结局、三个特殊项目、决定、建筑钩子与 on_action 入口。 All event windows, situation stages/endings, three projects, decisions, building hooks and on_action entries.
 - 更正 Corrections：补充物现引擎入口 30→39、背叛路线的 312→330/320 连接；阶段以并列（状态）标注；入口加了可读标签。 Added the 30->39, 312->330/320 links; stages annotated as states; entries labelled.
 - 不确定 Uncertain：编译树把阶段事件串成链（编译器限制）；月度随机事件的排除规则在 inline_script 中未读。 Compiled tree chains the stage events (compiler limitation); the random-event exclusion script was not read.

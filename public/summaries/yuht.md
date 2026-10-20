@@ -1,6 +1,6 @@
 ﻿# 尤特帝国 / The Yuht Empire
 
-- 分类 Category：先驱者 Precursors · 来源 Sources：events/precursor_events.txt:1209–2118；common/anomalies/96_anomaly_categories_precursors.txt:704–1304；common/special_projects/00_projects_1.txt:1151–1425；common/artifact_actions/artifact_actions.txt:587；common/special_projects/00_projects_ancient_relics.txt:160；events/ancient_relics_arcsite_events_2.txt:6659；events/megastructure_events_1.txt:4673–4777；common/special_projects/00_projects_overlord.txt:5 · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics；贾巴蒂尼数据缓存需《四海皆臣》Overlord · 审阅 Reviewed 2026-10-12
+- 分类 Category：先驱者 Precursors · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics；贾巴蒂尼数据缓存需《四海皆臣》Overlord
 
 ## 如何开始 How it starts
 
@@ -52,6 +52,8 @@ A non-AI empire surveying a planet (not a star, no anomaly) in the Yuht region (
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/precursor_events.txt:1209–2118；common/anomalies/96_anomaly_categories_precursors.txt:704–1304；common/special_projects/00_projects_1.txt:1151–1425；common/artifact_actions/artifact_actions.txt:587；common/special_projects/00_projects_ancient_relics.txt:160；events/ancient_relics_arcsite_events_2.txt:6659；events/megastructure_events_1.txt:4673–4777；common/special_projects/00_projects_overlord.txt:5
 - 已核对：precursor.500 与 on_survey_planet 权重（00_on_actions.txt:1184）；yuht_1–9_cat 生成条件；九个项目（均180天，skill 行已注释）；报告计数与 597/598/599（1856–1937）；600–602 与母星项目（00_projects_1.txt:1394）；artifact_yuht_research（587）、YUHT_SECRETS、10050；over.50、YUHT_JABBARDEENI_CACHE、over.60。九份报告、母星报告、秘密报告与数据缓存三页中英文已读。
 - 合并：原独立导读“贾巴蒂尼数据缓存”（story-f639c6105c7b7386.md）的内容已并入本文并删除旧文件；该支线在树中位于 601 之下（after 中带 has_overlord_dlc 检查的延时调度）。
 - 结构修正：异常改为开场后的并行分支；删除提示性重复边；秘密研究改为两种母星结果之后的可选分支；观察者通知与未使用异常加注。

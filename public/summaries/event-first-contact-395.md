@@ -1,7 +1,5 @@
 # 遭遇非机器人 / Non-Robotics Encountered（机械遇有机）
 - 分类 Category：文明纪事 Society (C7) · 首次接触阶段链 first-contact stage chain（首个事件 first_contact.390）
-- 来源 Sources：`events/first_contact_events.txt:5771–6136` · `common/first_contact/00_first_contact.txt:409–451, 1780–1856`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,5 +21,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_events.txt:5771–6136` · `common/first_contact/00_first_contact.txt:409–451, 1780–1856`
 - 已核对 Checked：390、395、397 与四个收尾阶段。
 - 审阅改动 Changes：并 390、397 入 395 篇。/ 390 and 397 joined the 395 story.

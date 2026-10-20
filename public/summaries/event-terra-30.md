@@ -1,6 +1,6 @@
 # 以错为鉴 / Learning From Mistakes
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/terraforming_events.txt:688–797、common/on_actions/00_on_actions.txt:2507（on_blocker_cleared）· 审阅 Reviewed 2026-10-12
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -22,4 +22,5 @@ A single event; the reward advances the next terraforming tech (20% / 40% / 80%)
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：events/terraforming_events.txt:688–797、common/on_actions/00_on_actions.txt:2507（on_blocker_cleared）· 审阅 Reviewed 2026-10-12
 - 已核对 Checked：触发条件、选项效果、调用它的 on_action。与“环境改造”完成随机池（terra.10）无调用关系，保持独立。

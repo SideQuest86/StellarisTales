@@ -1,7 +1,6 @@
 # 飞行器结构 / Aerostat Structures
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/00_anomaly_categories.txt:309; events/anomaly_events_1.txt:3971 (anomaly.310); events/anomaly_events_1.txt:4010 (anomaly.315)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ anomaly.310 has an Evolutionary Predators-only option.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/00_anomaly_categories.txt:309; events/anomaly_events_1.txt:3971 (anomaly.310); events/anomaly_events_1.txt:4010 (anomaly.315)
 已核对异常定义与两个结果事件；编译树正确，无需改动。
 
 Checked the anomaly and both results; the compiled tree is correct, no change needed.

@@ -1,8 +1,6 @@
 # 晶体裂隙 / The Crystal Rift
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:118`；`events/astral_rifts_1_events.txt:11–440`（1000–1095）；`events/astral_planes_events.txt:1067`（45）
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -42,6 +40,8 @@ Not a randomly drawn rift (`randomized = no`, flag `crystal_rift`): it is spawne
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:118`；`events/astral_rifts_1_events.txt:11–440`（1000–1095）；`events/astral_planes_events.txt:1067`（45）
 - 已核对：1000–1095、astral_planes.45、on_entering_system_fleet 条目与生成来源。编译结构正确；改为自有家族以保留来自水晶球情境的跨故事链接；补充互斥组、结局、说明。
 
 - Checked: 1000–1095, astral_planes.45, the on_entering_system_fleet entry and the spawn source. Compiled structure was correct; made a family so the cross-story link from the crystal sphere situation stays a link; added exclusive groups, endings and notes.

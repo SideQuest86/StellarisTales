@@ -1,8 +1,6 @@
 # 无限神机 / The Infinity Machine
 
 - 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
-- 来源 Sources：events/leviathans_events_2.txt:1185（1030）, :1367–1662（1039–1041）, :1665–2395（1050–1065）; common/special_projects/00_projects_leviathans.txt:309–428; common/event_chains/00_event_chains_leviathans.txt:7; common/on_actions/00_on_actions.txt:999, :1640
-- 审阅 Reviewed 2026-10-12（C6）
 
 ## 如何开始 How it starts
 玩家舰队进入无限神机所在星系（通常环绕卡冈都亚黑洞）时出现“无限方程”（1030）。若“视界信号”剧情已开启（worm_events_available），本故事不会触发——那时神机改由视界信号剧情处理。
@@ -29,6 +27,9 @@ A player fleet entering the Machine's system triggers "The Infinity Equation" (1
 1030 文本按是否在其黑洞星系变化；1040 文本按破坏/已研究/战斗三种情形变化；格式塔在1052、1061中获得不同科技。
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-12（C6）
+- 来源 Sources：events/leviathans_events_2.txt:1185（1030）, :1367–1662（1039–1041）, :1665–2395（1050–1065）; common/special_projects/00_projects_leviathans.txt:309–428; common/event_chains/00_event_chains_leviathans.txt:7; common/on_actions/00_on_actions.txt:999, :1640
 - 已核对 1030 触发与延迟、四个项目的天数与随机权重、1051 选项条件、1062 的标记分流、1039/1040 的通知接收者。
 - 更正：随机表中“失败”与“秘密”两条都指向1062，编译器只显示一条（25%），实际合计50%，已用组说明；1041 原被画成本帝国的后续，实为发给他国的通知，已 suppress 并作为独立入口；补上战斗击毁入口与策展人链接。确认V3结论“拒绝研究不会跳到帮助分支”。
 - 覆盖完整。Coverage complete.

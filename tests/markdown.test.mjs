@@ -55,5 +55,10 @@ test("review notes are collapsed at the end; mixed lines split per language", ()
   assert.match(h, /<h4[^>]*data-mixed="1"><span[^>]*data-lang="zh">如何开始<\/span> <span[^>]*data-lang="en">How it starts/);
   assert.match(renderMarkdown(md, { lang: "zh" }), /<summary>审阅记录<\/summary>/);
   assert.equal(splitMixed("纯中文没有英文。"), null);
+  // An English name inside the Chinese half is not the boundary; bold markers may open the English half.
+  const [zh, en] = splitMixed("**五处遗址依次连锁**：Ex Gravitas（1200 → 1205）→ 3 天后“静待揭晓”（1220–1235）→ “深埋”。 **Five chained sites**: Ex Gravitas -> Something Waiting -> Buried Deep.");
+  assert.match(zh, /静待揭晓.*深埋/);
+  assert.match(en, /^\*\*Five chained sites/);
+  assert.deepEqual(splitMixed("**游戏中期之后（五年脉冲）**： **After mid-game (five-year pulse)**:"), ["**游戏中期之后（五年脉冲）**：", "**After mid-game (five-year pulse)**:"]);
 });
 

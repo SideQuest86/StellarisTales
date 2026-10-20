@@ -1,9 +1,6 @@
 # 宇宙黎明 / Cosmic Dawn
 
-- 分类 Category：起源 Origins · DLC：Infernals Species Pack · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/infernals_1_events.txt:2408-3953`、`common/situations/13_infernal_situations.txt:501-687`、`common/inline_scripts/game_start/volcanic_world_setup.txt`、`common/deposits/15_infernals_deposits.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：Infernals Species Pack
 
 ## 如何开始 How it starts
 
@@ -27,6 +24,9 @@ At start the homeworld is volcanic with most of its people in stasis pods; infer
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/infernals_1_events.txt:2408-3953`、`common/situations/13_infernal_situations.txt:501-687`、`common/inline_scripts/game_start/volcanic_world_setup.txt`、`common/deposits/15_infernals_deposits.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：infernals.2500–2585、局势、三个异常类别、两个项目。 Events 2500-2585, the situation, three anomaly categories and two projects.
 - 更正 Corrections：此前树内只有起源卡——补上 infernals.2500–2585 范围；补充 2520 → 异常的连接、阶段并列与互斥组。
   Previously only the card was present; added the event range, the 2520 -> anomaly links, stage states and exclusive groups.

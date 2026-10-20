@@ -1,7 +1,6 @@
 # 阿达卡利亚公约的秘密 / Secrets of the AdAkkaria Convention
 
-- 分类 Category：项目 Project · DLC：Cosmic Storms（project_adakkaria_secrets_of） · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/special_projects/03_projects_cosmic_storms.txt:195 (project_adakkaria_secrets_of); events/precursor_events_cosmic_storms.txt (cstorms.2365); common/artifact_actions/artifact_actions.txt:669 (artifact_adakkaria_research)
+- 分类 Category：项目 Project · DLC：Cosmic Storms（project_adakkaria_secrets_of）
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ cstorms.2365's text differs for gestalt empires.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/special_projects/03_projects_cosmic_storms.txt:195 (project_adakkaria_secrets_of); events/precursor_events_cosmic_storms.txt (cstorms.2365); common/artifact_actions/artifact_actions.txt:669 (artifact_adakkaria_research)
 已核对项目、cstorms.2365 与神器行动入口；编译树正确。
 
 Checked the project, cstorms.2365 and the artifact-action entry; the compiled tree is correct.

@@ -1,7 +1,6 @@
 # 行星际飞行 / Interplanetary Flight
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/first_contact_dlc_events.txt:5972-6489`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）；`common/on_actions/00_on_actions.txt`（on_fleet_enter_orbit → fircon.2610）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/first_contact_dlc_events.txt:5972-6489`；common/on_actions/00_on_actions.txt:140-201（每月观测事件池）；`events/first_contact_dlc_situation_events.txt:316-376`（preftl.50）；`common/on_actions/00_on_actions.txt`（on_fleet_enter_orbit → fircon.2610）
 - 已核对：2600–2635 全部事件、飞船行动队列与入轨回调。
   Checked: all events 2600-2635, the ship's action queue and the orbit callback.
 - 更正：原“达阵”2610/2615 为独立卡片，现并入本故事，接在 2635 与 2620 的灵能选项之后。

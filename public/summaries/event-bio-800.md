@@ -1,6 +1,6 @@
 # 准备入侵 / Prepare Invasion
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/espionage_operation_types/operations.txt:1300-1368; events/biogenesis_events.txt:5951-6172; events/biogenesis_events.txt:6174-6417; common/on_actions/00_on_actions.txt:2620 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -31,6 +31,8 @@ bio.825 is shown to the target (victim) empire, a different perspective from the
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/espionage_operation_types/operations.txt:1300-1368; events/biogenesis_events.txt:5951-6172; events/biogenesis_events.txt:6174-6417; common/on_actions/00_on_actions.txt:2620
 - 修正：草稿把三个阶段事件并列为三个入口，并把 bio.825 作为独立故事 event-bio-819；现按行动定义串成三阶段，并以带条件的连接接上开战后的入侵。
   Corrections: the draft showed the three stage events as three parallel entries and bio.825 as a separate story event-bio-819; the stages now follow the operation definition, and the war-time invasion is a conditional link.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

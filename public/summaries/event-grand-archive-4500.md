@@ -1,6 +1,6 @@
 # 失去博物天枢 / Grand Archive Lost
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt, common/megastructures/20_grand_archive.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -31,6 +31,8 @@ The Grand Archive megastructure is lost through one of several hidden dispatcher
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt, common/megastructures/20_grand_archive.txt
 - 已核对 Checked：4500-4580 的触发、on_action 调用点和 20_grand_archive.txt:195。
 - 更正 Corrections：七个只含隐藏路由的单页故事（4500、4501、4540、4545、4550、4570、4580）并为一个“失去博物天枢”。
   Seven router-only stories are merged into one.

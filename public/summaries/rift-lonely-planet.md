@@ -1,8 +1,6 @@
 # 孵化之地 / Hatching Ground
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:128`；`events/astral_rifts_1_events.txt:439–622`（1100–1125）
-- 审阅 Reviewed：2026-10-12（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -34,6 +32,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:128`；`events/astral_rifts_1_events.txt:439–622`（1100–1125）
 - 已核对：裂隙定义；1100–1125 全部事件的选项条件与奖励。没有失败分支；编译结构正确，补充两个结局与选项说明。
 
 - Checked: rift definition; option conditions and rewards of every event 1100–1125. No failure branch; the compiled structure was correct; two endings and an option note added.

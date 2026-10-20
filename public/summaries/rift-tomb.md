@@ -1,8 +1,6 @@
 # 孤独物体 / Lone Object
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:222`；`events/astral_rifts_1_events.txt:3991–4313`（1700–1725）
-- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1725 已并入 / former standalone failure event 1725 merged in）
 
 ## 如何开始 How it starts
 
@@ -40,6 +38,8 @@ Drawn by weight from the explorer's rift pool, weight 1, no extra conditions (`0
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（全篇 whole story；原独立的失败事件 1725 已并入 / former standalone failure event 1725 merged in）
+- 来源 Sources：`common/astral_rifts/00_astral_rifts.txt:222`；`events/astral_rifts_1_events.txt:3991–4313`（1700–1725）
 - 已核对：裂隙定义；1700–1725 全部事件；三处 `on_roll_failed = astral_rift.1725`（`astral_rifts_1_events.txt:4051–4055, 4095–4099, 4144–4148`）；1725 生成敌对国家与舰队的效果。
 - 修正：编译图漏掉失败分支，1725 曾是独立故事；已用三条桥接并入并标注 1720/1725 互斥。
 

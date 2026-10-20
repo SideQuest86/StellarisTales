@@ -1,7 +1,6 @@
 # 补给船残骸 / Supply Ship Wreckage
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:2-28; events/distant_stars_events_1.txt:15 (distar.1); events/distant_stars_events_1.txt:99 (distar.2); events/distant_stars_events_1.txt:175 (distar.3)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@ distar.2 has a machine text. In the original, distar.1's "nocontact" text uses t
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:2-28; events/distant_stars_events_1.txt:15 (distar.1); events/distant_stars_events_1.txt:99 (distar.2); events/distant_stars_events_1.txt:175 (distar.3)
 已核对异常与 distar.1–3。树结构正确。
 
 Checked the anomaly and distar.1–3. Tree correct.

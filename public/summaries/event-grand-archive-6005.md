@@ -1,6 +1,6 @@
 # 珍宝藏库 / Treasure Troves
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt · DLC：Grand Archive · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
 
 ## 如何开始 How it starts
 
@@ -27,6 +27,8 @@ On the decade pulse a mid-game, non-Treasure-Hunters empire rolls (acquired spec
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/grand_archive_events.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：6000-6040、on_action 触发点、项目 TREASURE_TROVE_PIRATES 的成功/失败。
 - 更正 Corrections：6020（海盗伏击）、6030（击败海盗）原为独立单页故事，并入同一条藏库故事。
   Pirate Ambush and Pirates Defeated were separate stories and are merged.

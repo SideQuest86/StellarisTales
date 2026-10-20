@@ -1,7 +1,6 @@
 # 遗弃星门 / Abandoned Gateway
 
-- 分类 Category：探索 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/on_actions/00_on_actions.txt:1239 (on_system_survey → distar.13070); events/distant_stars_events_3.txt:2323 (distar.13070); events/apocalypse_events.txt (apoc.1, the ship-survey version)
+- 分类 Category：探索 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ The text varies with whether an L-Gate was seen before.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/on_actions/00_on_actions.txt:1239 (on_system_survey → distar.13070); events/distant_stars_events_3.txt:2323 (distar.13070); events/apocalypse_events.txt (apoc.1, the ship-survey version)
 已核对 on_action 与事件。它是 apoc.1 的“外国领土内”重复版本；不属于L-星团故事（L-星门由 distar.13080 / apoc.3 处理）。
 
 Checked the on_action and the event. It is the 'foreign territory' duplicate of apoc.1; it is not part of the L-Cluster story (L-Gates are handled by distar.13080 / apoc.3).

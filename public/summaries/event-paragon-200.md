@@ -1,6 +1,6 @@
 # 太空创生家艾莎琳 / Astrocreator Azaryn
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/paragon_events.txt:920-2560; common/special_projects (UNKNOWN_COMMS_PROJECT, AZARYNS_BACTERIA_PROJECT, AZARYNS_RAFFLESIA_PROJECT, NUCLEUS_SAMPLE_STOLEN); common/on_actions/00_on_actions.txt (on_five_year_pulse_country, on_terraforming_complete) · DLC: Paragon · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Paragon
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ The three quiz answers set which modifier is earned; the player may refuse or ha
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/paragon_events.txt:920-2560; common/special_projects (UNKNOWN_COMMS_PROJECT, AZARYNS_BACTERIA_PROJECT, AZARYNS_RAFFLESIA_PROJECT, NUCLEUS_SAMPLE_STOLEN); common/on_actions/00_on_actions.txt (on_five_year_pulse_country, on_terraforming_complete)
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

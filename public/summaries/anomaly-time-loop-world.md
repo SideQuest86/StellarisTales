@@ -1,7 +1,6 @@
 # 屏障星球 / Shielded World
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar） · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:199-292 (time_loop_world_system); common/anomalies/95_anomaly_categories_distant_stars.txt:1457-1468; events/distant_stars_events_2.txt:3730 (distar.2030); common/special_projects/00_projects_distant_stars.txt:1232/1257 (MEND_SHIELD, STOP_TIME_LOOP); events/distant_stars_events_2.txt:3801-3872 (distar.2031, 2034, 2035); events/distant_stars_events_2.txt:3917/3946 (distar.2032/2033); events/distant_stars_events_2.txt:4380 (distar.2038); common/on_actions/00_on_actions.txt:1936; events/distant_stars_events_2.txt:3873 (distar.2036)
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）
 
 ## 如何开始 How it starts
 
@@ -35,6 +34,8 @@ In distar.2033 the lizards use portrait rep12 if the player species already uses
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/solar_system_initializers/distant_stars_initializers.txt:199-292 (time_loop_world_system); common/anomalies/95_anomaly_categories_distant_stars.txt:1457-1468; events/distant_stars_events_2.txt:3730 (distar.2030); common/special_projects/00_projects_distant_stars.txt:1232/1257 (MEND_SHIELD, STOP_TIME_LOOP); events/distant_stars_events_2.txt:3801-3872 (distar.2031, 2034, 2035); events/distant_stars_events_2.txt:3917/3946 (distar.2032/2033); events/distant_stars_events_2.txt:4380 (distar.2038); common/on_actions/00_on_actions.txt:1936; events/distant_stars_events_2.txt:3873 (distar.2036)
 已核对初始化、异常、distar.2030–2038、两个项目与 on_building_starbase_outpost。修正：distar.2036 在草稿中是独立故事；现以审阅连接接在修复护盾之后。
 
 Checked the initializer, anomaly, distar.2030–2038, both projects and on_building_starbase_outpost. Correction: distar.2036 was a separate story; it now follows the shield repair through a reviewed link.

@@ -1,9 +1,6 @@
 # 失落行星 / Lost Colony
 
-- 分类 Category：起源 Origins · DLC：基础游戏 · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`common/governments/civics/00_origins.txt:2865-2888`、`events/origin_events_1.txt:2935-2963`、`events/on_action_events_1.txt:1985-3300`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
+- 分类 Category：起源 Origins · DLC：基础游戏
 
 ## 如何开始 How it starts
 
@@ -17,13 +14,12 @@ The greeting variants for meeting the parent empire live in generic first-contac
 
 ## 分支与结局 Branches and outcomes
 
-无。 None.
-
 ## 条件与文明差异 Conditions and variants
-
-可选条件见起源卡。 Requirements are on the origin card.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`common/governments/civics/00_origins.txt:2865-2888`、`events/origin_events_1.txt:2935-2963`、`events/on_action_events_1.txt:1985-3300`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：起源定义、开局设置与全部事件目录中对该起源的引用。 The origin definition, its start setup and every reference to the origin in the events folder.
 - 结论 Result：卡片型起源，没有专属事件窗口。 A card-only origin with no origin-specific windows.

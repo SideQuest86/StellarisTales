@@ -1,7 +1,6 @@
 # 地表读数 / Surface Pings
 
-- 分类 Category：深空异闻 Exploration · 审阅 Reviewed：2026-10-13（已审阅 reviewed）
-- 来源 Sources：common/anomalies/99_anomaly_categories_ai.txt:74; events/anomaly_events_AI.txt:351 (aianom.8); events/anomaly_events_AI.txt:376 (aianom.9); events/anomaly_events_AI.txt:401 (aianom.10)
+- 分类 Category：深空异闻 Exploration
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@ No empire differences.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（已审阅 reviewed）
+- 来源 Sources：common/anomalies/99_anomaly_categories_ai.txt:74; events/anomaly_events_AI.txt:351 (aianom.8); events/anomaly_events_AI.txt:376 (aianom.9); events/anomaly_events_AI.txt:401 (aianom.10)
 已核对异常定义与全部结果事件；编译树正确，无需改动。奖励等级的随机抽取发生在隐藏效果中，不是文档。
 
 Checked the anomaly definition and every outcome event; the compiled tree is correct. The reward-tier roll happens in a hidden effect, not in a doc.

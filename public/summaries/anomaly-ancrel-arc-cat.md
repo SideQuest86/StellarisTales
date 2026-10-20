@@ -1,8 +1,6 @@
 # 外星遗址 / Alien Site
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/93_anomaly_categories_ancient_relics.txt:23-35` · `events/ancient_relics_arcsite_events_1.txt:900-930` · `common/archaeological_site_types/02_ancient_relics_arc_sites.txt`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/93_anomaly_categories_ancient_relics.txt:23-35` · `events/ancient_relics_arcsite_events_1.txt:900-930` · `common/archaeological_site_types/02_ancient_relics_arc_sites.txt`
 - 已对照类别脚本与添加处；遗址it_was_aliens_site的阶段属另一审阅者。  
   Compared the category script and the spawn site; the it_was_aliens_site stages belong to another reviewer.
 - 覆盖 Coverage：全部2个文档。 / All 2 docs.

@@ -1,8 +1,6 @@
 # 肃正协议 / The Contingency
 
-- 分类 Category: 天灾 Crisis · 来源 Sources: `events/crisis_events_3.txt`, `events/crisis_trigger_events.txt:204-275`, `common/scripted_effects/00_scripted_effects.txt:4944-5167`, `events/fallen_machine_empire_events.txt:12-194`, `events/observer_events.txt:729-952` · 审阅 Reviewed 2026-10-12 (c5b-crisis)
-
-> 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
+- 分类 Category：天灾 Crisis
 
 ## 如何开始 How it starts
 
@@ -31,6 +29,9 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12 (c5b-crisis)
+- 来源 Sources：`events/crisis_events_3.txt`, `events/crisis_trigger_events.txt:204-275`, `common/scripted_effects/00_scripted_effects.txt:4944-5167`, `events/fallen_machine_empire_events.txt:12-194`, `events/observer_events.txt:729-952`
+- 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
 - 已核对 Checked: crisis_events_3.txt 全部可见事件与隐藏路由（L12-4857）、`destroy_machine_world` 计数（00_scripted_effects.txt:4944-5167）、on_action 调用（00_on_actions.txt:236-238, 727-728, 823, 1654, 2162-2163, 3610）、机械堕落帝国事件、观察者副本（observer.50 属另一审阅者的故事，未链接）。
 - 更正 Corrections: V3 连接保留但改为绝对天数标签；补齐抵达后的全部支线、渗透/破坏随机事件、赛博勒克斯与结局余波，消除全部“次要入口”。
 - 不确定 Uncertain: 2015/2016 挂在 2011/2012 之下（同一条件两次检查），若帝国在第300–400天之间才获得合成人，可能只见到后者；中心被毁可发生于启动后任何时间，为阅读顺序挂在第四座之下。

@@ -1,7 +1,6 @@
 # 嬗变 / Transformation
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`common/situations/08_machine_age_situations.txt:1779-2000`；`events/machine_age_situation_events_3.txt:27-944`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -31,5 +30,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`common/situations/08_machine_age_situations.txt:1779-2000`；`events/machine_age_situation_events_3.txt:27-944`
 - 已核对：阶段入口、每月事件的门槛与标志、4400/4490/4005 的衔接。
   Checked: stage entries, thresholds and flags of the monthly events, the 4400/4490/4005 link.

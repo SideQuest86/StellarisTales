@@ -1,7 +1,6 @@
 # 外星机器 / Alien Machine
 
-- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar) · 审阅 Reviewed：2026-10-12（已审阅 reviewed）
-- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1645-1662; events/distant_stars_events_2.txt:8256 (distar.3040); events/distant_stars_events_2.txt:8344/8386 (distar.3041/3042); events/distant_stars_events_2.txt:8461 (distar.3043)
+- 分类 Category：深空异闻 Exploration · DLC：无DLC检查（定义位于《遥远繁星》文件中，但类别与事件都不检查 has_distar）/ no DLC check (defined in the Distant Stars files, but neither category nor events test has_distar)
 
 ## 如何开始 How it starts
 
@@ -23,12 +22,10 @@ The lever results 3041/3042 are exclusive, decided by whether a suitable system 
 
 ## 条件与文明差异 Conditions and variants
 
-无。
-
-None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（已审阅 reviewed）
+- 来源 Sources：common/anomalies/95_anomaly_categories_distant_stars.txt:1645-1662; events/distant_stars_events_2.txt:8256 (distar.3040); events/distant_stars_events_2.txt:8344/8386 (distar.3041/3042); events/distant_stars_events_2.txt:8461 (distar.3043)
 已核对异常与 distar.3040–3043。树结构正确；distar.3043 复用了通用虫洞发现文本（apoc.5.a 选项）。
 
 Checked the anomaly and distar.3040–3043. Tree correct; distar.3043 reuses the generic wormhole discovery wording (option apoc.5.a).

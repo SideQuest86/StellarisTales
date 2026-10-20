@@ -1,8 +1,6 @@
 # 星界行动 / Astral Actions
 
 - 分类 Category：星界裂隙 Astral rifts (C4) · DLC：星界位面 Astral Planes
-- 来源 Sources：`events/astral_planes_events.txt:1242–1262`；`common/on_actions/00_on_actions.txt:2717`
-- 审阅 Reviewed：2026-10-13（全篇 whole story）
 
 ## 如何开始 How it starts
 
@@ -30,6 +28,8 @@ No branches.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（全篇 whole story）
+- 来源 Sources：`events/astral_planes_events.txt:1242–1262`；`common/on_actions/00_on_actions.txt:2717`
 - 已核对：事件与 `on_actions` 条目；单事件故事。
 
 - Checked: the event and its `on_actions` entry; a one-event story.

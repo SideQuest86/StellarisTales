@@ -1,6 +1,6 @@
 # 给和平一个机会 / Give Peace a Chance
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:7736-7842; common/on_actions/00_on_actions.txt:2619 · DLC: BioGenesis · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: BioGenesis
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Militarist or unfriendly empires and pacifist empires get their own replies.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：common/on_actions/00_on_actions.txt:595-614 on_five_year_random_pulse_country_fe_list (weight 30 of 980); events/biogenesis_events.txt:7736-7842; common/on_actions/00_on_actions.txt:2619
 - 已核对触发、十年计时与两种结果消息。
   Checked trigger, ten-year timer and the two outcome messages.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

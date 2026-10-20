@@ -360,6 +360,17 @@ for s in specimens:
     for a in s['acquisition']:
         if a.get('story') and a['kind'] in ('give_specimen', 'event_specimen') and s['key'] not in by_doc[a['from']]:
             by_doc[a['from']].append(s['key'])
+# Story -> specimens it can award (archive selection panel, src/app.js): same rule as by-doc, keyed by story;
+# entries are [key, "zh|en" name, rarity], rarest first.
+RARITY_RANK = {'exceptional': 0, 'epic': 1, 'rare': 2, 'common': 3}
+by_story = collections.defaultdict(list)
+for s in specimens:
+    for a in s['acquisition']:
+        if a.get('story') and a['kind'] in ('give_specimen', 'event_specimen') and s['key'] not in [x[0] for x in by_story[a['story']]]:
+            by_story[a['story']].append([s['key'], s['name']['zh'] + '|' + s['name']['en'], s['rarity']])
+for entries in by_story.values():
+    entries.sort(key=lambda x: (RARITY_RANK.get(x[2], 9), x[1]))
+(ROOT / 'public/museum/by-story.json').write_text(json.dumps(dict(sorted(by_story.items())), ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 (ROOT / 'public/museum/by-doc.json').write_text(json.dumps({k: {'specimens': v, 'names': {x: by_key[x]['name']['zh'] + '|' + by_key[x]['name']['en'] for x in v}} for k, v in sorted(by_doc.items())}, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 
 # ---------------------------------------------------------------- readable inventory ---

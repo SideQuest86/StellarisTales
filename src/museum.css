@@ -106,6 +106,17 @@
 .rarity-epic { --rarity: #b394ec; }
 .rarity-exceptional { --rarity: #e5c37a; }
 .museum-name { max-width: 100%; font: 13px/1.4 var(--serif); text-align: center; overflow-wrap: anywhere; }
+/* Specimens met while reading (a chapter that awards them was opened): a small gold diamond, named in the aria-label. */
+.museum-exhibit.met::after,
+.museum-chip-met i { content: ""; width: 6px; height: 6px; background: var(--gold, #c9b07a); transform: rotate(45deg); opacity: 0.85; }
+.museum-exhibit.met::after { position: absolute; top: 9px; left: 12px; }
+.museum-chip-met i { display: inline-block; margin: 0 7px 1px 1px; vertical-align: middle; }
+@media (forced-colors: active) { .museum-exhibit.met::after, .museum-chip-met i { background: CanvasText; } }
+/* Forced colors: pressed chips and focused exhibits must differ without relying on background/border colour. */
+@media (forced-colors: active) {
+  .museum-chip[aria-pressed="true"] { outline: 2px solid Highlight; outline-offset: -2px; text-decoration: underline; }
+  .museum-exhibit:focus-visible, .museum-exhibit.active { outline: 2px solid Highlight; outline-offset: 2px; }
+}
 .museum-3d-badge { position: absolute; top: 6px; right: 6px; padding: 1px 5px; border: 1px solid var(--teal, #6fd6c3); border-radius: 3px; font: 10px var(--mono); color: var(--teal, #6fd6c3); }
 .museum-detail {
   position: absolute;

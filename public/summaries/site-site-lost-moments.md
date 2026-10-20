@@ -1,6 +1,6 @@
 # 永不遗忘 / Never Forget
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1402；events/federations_events_1.txt:2377；common/solar_system_initializers/federations_initializers.txt:180 · DLC：《远古遗物》Ancient Relics；初始化器在 federations 文件 (initializer in a Federations file) · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics；初始化器在 federations 文件 (initializer in a Federations file)
 
 ## 如何开始 How it starts
 
@@ -24,13 +24,13 @@ A beacon pulses from deep underground; the closer the team gets, the stronger th
 
 ## 分支与结局 Branches and outcomes
 
-
 ## 条件与文明差异 Conditions and variants
 
-- 无特殊的文明差异。 / No empire-specific variants beyond the reward wording.
 - 掷骰失败时使用多个遗址共用的事件池 site_echoes_inside_random_events（与“内部回响”相同）。 / Failed rolls draw from the pool site_echoes_inside_random_events, shared by several sites (the same as The Echoes Inside).
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1402；events/federations_events_1.txt:2377；common/solar_system_initializers/federations_initializers.txt:180
 - 已核对：遗址定义（common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1402）的阶段顺序与条件、各阶段事件脚本、出现方式；中英文正文已读。
 - Checked: the site definition (common/archaeological_site_types/02_ancient_relics_arc_sites.txt:1402) with its stage order and conditions, every stage event script, and how the site appears; both languages read.

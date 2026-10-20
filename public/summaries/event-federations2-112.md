@@ -1,7 +1,5 @@
 # 已成功消灭目标 / Target Successfully Eliminated
 - 分类 Category：文明纪事 Society (C7) · 联邦（军事型）事件 federation (military) event
-- 来源 Sources：`events/federations_events_2.txt:3258-3296` · `common/on_actions/00_on_actions.txt:1666`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -17,9 +15,9 @@
 
 ## 条件与文明差异 Conditions and variants
 
-无。/ None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/federations_events_2.txt:3258-3296` · `common/on_actions/00_on_actions.txt:1666`
 - 已核对 Checked：112 的触发条件与效果。/ Trigger and effect.
 - 审阅改动 Changes：无结构改动；说明它是 federations2.100 篇的一部分。/ No structural change; it belongs to the federations2.100 exercise.

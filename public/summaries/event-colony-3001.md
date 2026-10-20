@@ -1,8 +1,5 @@
-# [星球]的神秘卫星 / The Mysterious Moon of [Root.GetName]
-
+# 殖民地的神秘卫星 / The Mysterious Moon of a Colony
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件 colony event（开发者注释 "Rogue moon"）
-- 来源 Sources：`events/colony_events_3.txt:1036–1173` · `common/special_projects/00_projects_3.txt:786–801` · `common/on_actions/00_on_actions.txt:3765、3818`
-- 审阅 Reviewed：2026-10-12（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -23,8 +20,8 @@ At the second or third anniversary (weight 10 each), on a colony that has a non-
 
 ## 条件与文明差异 Conditions and variants
 
-无。/ None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-12（c7b-society）
+- 来源 Sources：`events/colony_events_3.txt:1036–1173` · `common/special_projects/00_projects_3.txt:786–801` · `common/on_actions/00_on_actions.txt:3765、3818`
 已核对事件、项目与两个随机池。编译草稿正确；标注两个结局。注意：开发者注释称 DPORTAL_PROJECT 属于“始于 colony.3001 的流浪卫星链”，但脚本中两者没有调用关系——“传送门”是独立的殖民地事件（colony.3005，目前在另一个故事中）。/ Draft correct. A developer comment links the Doorway portal to this chain, but no script call connects them.

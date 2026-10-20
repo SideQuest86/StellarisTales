@@ -1,6 +1,6 @@
 # 超磁化行星核心 / Hyper-Magnetized Planetary Core
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/cosmic_storms_events_1.txt:2765-2847; common/on_actions/00_on_actions.txt:5432 · DLC: Cosmic Storms · 审阅 Reviewed 2026-10-13
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Cosmic Storms
 
 ## 如何开始 How it starts
 
@@ -28,6 +28,8 @@ Cosmic Storms DLC; once per country.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/cosmic_storms_events_1.txt:2765-2847; common/on_actions/00_on_actions.txt:5432
 - 已核对入口、触发、选项与结果。
   Checked the entry, trigger, options and outcomes.
 - （以上为审阅者撰写的说明，不是游戏原文；原文见阅读页。）

@@ -1,6 +1,6 @@
 # 大翻修 / The Grand Refurbishment
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：events/nomads_arkship_events.txt, common/situations/14_nomads_situations.txt, common/on_actions/00_on_actions.txt · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -32,6 +32,8 @@ arkship.1300 needs an arkship colony older than 25 years, no running refurbishme
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/nomads_arkship_events.txt, common/situations/14_nomads_situations.txt, common/on_actions/00_on_actions.txt
 - 已核对 Checked：arkship.1300-1380 的触发与选项（nomads_arkship_events.txt:8332-9708）、情境阶段与进度（14_nomads_situations.txt:1225-1448）。
 - 更正 Corrections：阶段链 1305→1310→1315 本就正确（文件顺序即实际顺序）；原先 12 件每月随机事件全挂在情境下，现按其 current_stage 限制挂到对应阶段。
   The stage chain was correct; the 12 monthly pool events were all under the situation and are now placed under their stages.

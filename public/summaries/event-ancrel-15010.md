@@ -1,6 +1,6 @@
 # 林冠传信 / Message in the Canopy
 
-- 分类 Category：先驱者与考古 Precursors · 来源 Sources：events/ancient_relics_arcsite_events_2.txt:10357–10650（ancrel.15010、15000–15008）；common/archaeological_site_types/00_base_game_arc_sites.txt:251；common/scripted_effects/archaeology_event_effects.txt:1075；common/on_actions/00_on_actions.txt:3780 · DLC：《远古遗物》Ancient Relics · 审阅 Reviewed 2026-10-13
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics
 
 ## 如何开始 How it starts
 
@@ -24,10 +24,10 @@ The option "Curious" creates the site site_transformation_dig (four stages): 150
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。 / None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/ancient_relics_arcsite_events_2.txt:10357–10650（ancrel.15010、15000–15008）；common/archaeological_site_types/00_base_game_arc_sites.txt:251；common/scripted_effects/archaeology_event_effects.txt:1075；common/on_actions/00_on_actions.txt:3780
 - 已核对：ancrel.15010、15000–15008 的脚本，遗址定义 site_transformation_dig 与专属池 site_transformation_random_events（只含15006–15008），on_colony_2_years_old 的权重行；中英文正文已读。
 - Checked: the scripts of ancrel.15010 and 15000-15008, the site definition site_transformation_dig with its own pool site_transformation_random_events (15006-15008 only) and the weight line in on_colony_2_years_old; both languages read.
 - 不确定：遗址定义位于基础游戏文件，但触发事件在远古遗物文件中，具体 DLC 限制只有 15010 本身未检查 has_ancrel。

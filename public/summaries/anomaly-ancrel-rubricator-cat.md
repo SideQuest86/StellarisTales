@@ -1,8 +1,6 @@
 # 武器痕迹 / Weapon Trails
 
 - 分类 Category：深空异闻 Exploration (C3)
-- 来源 Sources：`common/anomalies/93_anomaly_categories_ancient_relics.txt:5-21` · `events/ancient_relics_events.txt` · `common/event_chains/`
-- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
 
 ## 如何开始 How it starts
 
@@ -26,6 +24,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed
+- 来源 Sources：`common/anomalies/93_anomaly_categories_ancient_relics.txt:5-21` · `events/ancient_relics_events.txt` · `common/event_chains/`
 - 已对照类别脚本与树；红字抄写员事件链本身是另一故事。  
   Compared the category script and tree; the Rubricator chain itself is another story.
 - 覆盖 Coverage：全部5个文档。 / All 5 docs.

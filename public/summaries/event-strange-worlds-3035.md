@@ -1,7 +1,6 @@
 # 遗落之物 / What We Left Behind
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/strange_worlds_observation_events.txt:419-701`；`common/on_actions/00_on_actions.txt:195,5540`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -29,6 +28,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/strange_worlds_observation_events.txt:419-701`；`common/on_actions/00_on_actions.txt:195,5540`
 - 已核对：分派条件、选项与标志、3055 的 on_action 衔接。
   Checked: dispatcher conditions, options and flags, the on_action link to 3055.
 - 更正：3055（服务终止）原为孤立故事，其触发标志由3045.b设置，现并入。

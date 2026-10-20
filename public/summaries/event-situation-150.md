@@ -1,7 +1,6 @@
 # 白雪异变 / Unusual Snow
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-12
-- 来源 Sources：`events/situation_events.txt:397-799`；`common/situations/01_narrative_situations.txt:1-147`；`common/on_actions/00_on_actions.txt:877-884`（以及 on_colony_4/5_years_old 随机殖民地事件池）
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -41,6 +40,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：`events/situation_events.txt:397-799`；`common/situations/01_narrative_situations.txt:1-147`；`common/on_actions/00_on_actions.txt:877-884`（以及 on_colony_4/5_years_old 随机殖民地事件池）
 - 已核对：150–195 全部事件、局势定义（阶段、权重、接近方式与锁定、on_progress_complete 分支）、on_colony_defenders_lose 回调与 195 的延时和条件。
   Checked: all events 150–195, the situation definition (stages, weights, approaches and lock, on_progress_complete branch), the on_colony_defenders_lose callback and 195's delay and trigger.
 - 更正 Corrections：草稿把 180/185 挂在局势卡下与 155 并列，现改接在 165 之后（由 165 锁定的方式决定）；原独立卡片 `event-situation-190`（殖民地丢失/无尽冰雪）是本故事的战争后续，已并入并用条件连接接在 180/185 的开战选项后。

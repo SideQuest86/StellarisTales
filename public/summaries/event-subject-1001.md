@@ -1,7 +1,6 @@
 # 战争狂热 / War Fever
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/overlord_subject_events.txt:1029-1182`；`common/on_actions/00_on_actions.txt:521-535`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -24,10 +23,9 @@
 
 ## 条件与文明差异 Conditions and variants
 
-- 无。
-  None.
-
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/overlord_subject_events.txt:1029-1182`；`common/on_actions/00_on_actions.txt:521-535`
 - 已核对：派发条件与延迟。
   Checked: dispatcher conditions and delays.

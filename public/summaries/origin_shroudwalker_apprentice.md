@@ -1,9 +1,6 @@
 # 虚境导师 / Teachers of the Shroud
 
 - 分类 Category：起源 Origins · DLC：Overlord（虚境行者飞地）· 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/origin_events_3.txt:1209-1540`、`common/on_actions/00_on_actions.txt`、`events/overlord_enclaves_events.txt`
-
-> 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 
 ## 如何开始 How it starts
 
@@ -27,5 +24,7 @@ Hidden origin.5600 introduces the Shroudwalker enclave, shroud-forms some planet
 
 ## 审阅记录 Review notes
 
+- 来源 Sources：`events/origin_events_3.txt:1209-1540`、`common/on_actions/00_on_actions.txt`、`events/overlord_enclaves_events.txt`
+- 本导读是审阅者的说明文字，不是游戏原文。 This guide is reviewer commentary, not game text.
 - 已核对 Checked：origin.5600–5625 与钩子。 Events 5600-5625 and hooks.
 - 更正 Corrections：入口标签。 Entry labels.

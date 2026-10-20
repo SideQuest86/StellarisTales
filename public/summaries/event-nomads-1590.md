@@ -1,6 +1,6 @@
 # 过去的碎片 / Fragments of the Past
 
-- 分类 Category: C8 银河轶事 / C8 Galactic miscellany · 来源 Sources: events/nomads_events_1.txt:9311-9960; common/special_projects/06_projects_nomads.txt:2933-3000; common/event_chains/00_event_chains_nomads.txt:430; common/on_actions/00_on_actions.txt:1084-1085,2402 · DLC: Nomads · 审阅 Reviewed 2026-10-12
+- 分类 Category：C8 银河轶事 / C8 Galactic miscellany · DLC: Nomads
 
 ## 如何开始 How it starts
 
@@ -29,6 +29,8 @@ View of Home has a separate text for human species.
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12
+- 来源 Sources：events/nomads_events_1.txt:9311-9960; common/special_projects/06_projects_nomads.txt:2933-3000; common/event_chains/00_event_chains_nomads.txt:430; common/on_actions/00_on_actions.txt:1084-1085,2402
 - 修正：草稿把1590/1610/1605/1630分成四个故事，且没有起点1585；现以事件链为一个故事，按进入星系次数与记忆标记排列。
   Correction: the draft split 1590/1610/1605/1630 into four stories without the opening 1585; the chain is now one story ordered by visits and memory flags.
 - 注：本文件的行号取自游戏文件本身；编译数据中该文件记录的行号有偏移（见账本请求）。

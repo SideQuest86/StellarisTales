@@ -1,7 +1,5 @@
 # 稳步进展 / Steady Progress
 - 分类 Category：文明纪事 Society (C7) · 首次接触随机插曲 first-contact random interlude
-- 来源 Sources：`events/first_contact_random_events.txt:590-609` · `common/scripted_effects/first_contact_effects.txt:1257-1795`
-- 审阅 Reviewed：2026-10-13（c7b-society）
 
 ## 如何开始 How it starts
 
@@ -21,5 +19,7 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed：2026-10-13（c7b-society）
+- 来源 Sources：`events/first_contact_random_events.txt:590-609` · `common/scripted_effects/first_contact_effects.txt:1257-1795`
 - 已核对 Checked：脚本、scripted effect 中各池的权重与零权重条件、standard_first_contact_on_roll_failed。/ Script, per-pool weights and exclusions, and the roll-failure wrapper.
 - 审阅改动 Changes：无结构改动（独立插曲页）；补充了触发池与条件。/ No structural change; trigger pools and conditions added.

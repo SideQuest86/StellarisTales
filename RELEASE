@@ -1,3 +1,14 @@
+v4.8.0 — 2026-10-19
+
+Smoother first opening: a story opened from the archive now appears in a single frame in most cases, and its map fills in
+quietly around the current chapter. The archive remembers what you have read ("3 of 12 read"), and the Grand Archive
+marks specimens you have met while reading, with a filter for them. Number keys 1–9 pick a choice or continue card.
+Story guides read in chapter titles instead of event numbers — each title opens its chapter — and no longer hide part of
+their Chinese text; editor notes, sources and empty sections are folded away, and five guides gained their English half.
+Search finds words as you type them (prefixes), single Chinese characters and near-misses ("Close matches"). Plainer
+wording across effects and the interface (an AI proofread pass in both languages), better screen-reader names, contrast
+and touch targets, and two re-generated specimen models (Sniran Spikes, Gargantua Megalus).
+
 v4.7.3 — 2026-10-18
 
 Escape pressed while a linked story is still starting up (slow devices) now also keeps it closed.

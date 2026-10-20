@@ -1,6 +1,6 @@
 # 噬星者 / Stellar Devourer
 
-- 分类 Category：巨兽与城邦 · 来源 Sources：events/leviathans_events_2.txt:13-1171; common/special_projects/00_projects_leviathans.txt:1-50; common/on_actions/00_on_actions.txt:996, :1012-1013, :1452 · DLC：利维坦 Leviathans · 审阅 Reviewed 2026-10-13
+- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 第一个舰队进入带有噬星者标记的星系时（leviathans.999“缩小的恒星”），星系行星获得低温修正，7天后噬星者及其所属国家生成（leviathans.1000）。其他玩家在别处看到它时收到 leviathans.1001（每帝国一次）。
@@ -21,5 +21,8 @@ The first fleet entering the flagged system gets 999; 7 days later 1000 spawns t
 格式塔意识使用不同的 1016/1017 描述；其余分支与文明无关。
 
 ## 审阅记录 Review notes
+
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：events/leviathans_events_2.txt:13-1171; common/special_projects/00_projects_leviathans.txt:1-50; common/on_actions/00_on_actions.txt:996, :1012-1013, :1452
 已核对 999/1000/1001/1016/1017/1018 全部选项与项目定义。合并了原先三个单文档故事（event-leviathans-999 / -1001 / -1016）。隐藏的战斗与温度事件 1005–1015 未建模（不确定）。
 Checked all options and project definitions; three one-doc stories were merged. Hidden combat/temperature events 1005-1015 are not modelled (uncertain).

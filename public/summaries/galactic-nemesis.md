@@ -1,8 +1,6 @@
 # 星海天罚 / Galactic Nemesis
 
-- 分类 Category: 天灾（玩家天灾路线）Crisis (player crisis path) · DLC: 天灾降临 Nemesis · 来源 Sources: `events/nemesis_crisis_events.txt`, `events/nemesis_crisis_endgame.txt`, `common/crisis_levels/00_crisis_levels.txt:16-223`, `common/special_projects/00_projects_nemesis.txt`, `common/megastructures/12_crisis_sphere.txt`, `common/resolutions/01_resolutions_nemesis.txt` · 审阅 Reviewed 2026-10-12 (c5b-crisis)
-
-> 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
+- 分类 Category：天灾（玩家天灾路线）Crisis (player crisis path) · DLC: 天灾降临 Nemesis
 
 ## 如何开始 How it starts
 
@@ -29,6 +27,9 @@ Taking the Galactic Nemesis perk; level 1 sends *The Universe Shall Tremble* and
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12 (c5b-crisis)
+- 来源 Sources：`events/nemesis_crisis_events.txt`, `events/nemesis_crisis_endgame.txt`, `common/crisis_levels/00_crisis_levels.txt:16-223`, `common/special_projects/00_projects_nemesis.txt`, `common/megastructures/12_crisis_sphere.txt`, `common/resolutions/01_resolutions_nemesis.txt`
+- 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
 - 已核对 Checked: 两个事件文件全部可见事件、等级定义与项目旗标、引擎各阶段的 on_build_complete（12_crisis_sphere.txt:60-182）、宣告/废止决议（01_resolutions_nemesis.txt:55-91, 330-341, 455-461, 617-628）、吞星 on_action（01_planet_destruction.txt:110）。
 - 更正 Corrections: 原起点误为“宣告星系危机”（4100，他国视角）；改为第一级 4140，并把 nemesis_crisis_endgame.txt 并入本族（原有8个以太相引擎小故事 event-crisis-6000/6005/6006/6007/6050/6099/6200/6205 现均归入此处）；修正 6101 原挂在夺取事件下的错误（它发给建造者）；移除最终摧毁星系误连到肃正协议的连接。
 - 不确定 Uncertain: 4100/4105 亦用于对其他嗜杀帝国或大可汗的决议；引擎工期修正未建模。

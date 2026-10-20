@@ -1,7 +1,6 @@
 # 万爪之母 / The Many-Tentacled One
 
-- 分类 Category：文明纪事 Society (C7) · 审阅 Reviewed 2026-10-13
-- 来源 Sources：`events/first_contact_dlc_events.txt:511-1108`；`common/first_contact/02_first_contact_unique_stories.txt:177-232`；`common/on_actions/00_on_actions.txt:505`；`common/scripted_effects/first_contact_effects.txt:1818-1836`；`common/special_projects/00_projects_first_contact_dlc.txt:286-325`
+- 分类 Category：文明纪事 Society (C7)
 
 ## 如何开始 How it starts
 
@@ -33,6 +32,8 @@
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：`events/first_contact_dlc_events.txt:511-1108`；`common/first_contact/02_first_contact_unique_stories.txt:177-232`；`common/on_actions/00_on_actions.txt:505`；`common/scripted_effects/first_contact_effects.txt:1818-1836`；`common/special_projects/00_projects_first_contact_dlc.txt:286-325`
 - 已核对：fircon.1200 触发、三阶段与失败池、1212 选项条件、项目权重、思乡事件延迟。
   Checked: fircon.1200 trigger, the three stages and the failure pool, 1212 option conditions, the project weights, the homesickness delays.
 - 更正：1210、1211、1220、1221 原为各自孤立的单窗口故事，1212 只含后半段；现合并成一条首次接触故事。

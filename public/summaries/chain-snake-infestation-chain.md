@@ -1,6 +1,6 @@
 # 阴险的蛇类 / Insidious Ophidians
 
-- 分类 Category：银河轶事 C8 stories · 来源 Sources：common/event_chains/ · 审阅 Reviewed 2026-10-13
+- 分类 Category：银河轶事 C8 stories
 
 ## 如何开始 How it starts
 
@@ -12,12 +12,10 @@
 
 ## 分支与结局 Branches and outcomes
 
-- 无。
-
 ## 条件与文明差异 Conditions and variants
-
-- 无。
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-13
+- 来源 Sources：common/event_chains/
 - 已核对 Checked：事件链定义。

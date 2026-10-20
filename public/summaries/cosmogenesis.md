@@ -1,8 +1,6 @@
 # 宇宙创生 / Cosmogenesis
 
-- 分类 Category: 天灾（玩家天灾路线）Crisis (player crisis path) · DLC: 机械纪元 Machine Age · 来源 Sources: `events/machine_age_crisis_events.txt:15-3953`, `common/crisis_levels/00_crisis_levels.txt:375-531`, `common/crisis_paths/00_cosmogenesis_paths.txt`, `common/scripted_effects/02_machine_age_effects.txt:15-90` · 审阅 Reviewed 2026-10-12 (c5b-crisis)
-
-> 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
+- 分类 Category：天灾（玩家天灾路线）Crisis (player crisis path) · DLC: 机械纪元 Machine Age
 
 ## 如何开始 How it starts
 
@@ -31,6 +29,9 @@ Taking the Cosmogenesis ascension perk starts this player crisis path; level 1 s
 
 ## 审阅记录 Review notes
 
+- 审阅 Reviewed 2026-10-12 (c5b-crisis)
+- 来源 Sources：`events/machine_age_crisis_events.txt:15-3953`, `common/crisis_levels/00_crisis_levels.txt:375-531`, `common/crisis_paths/00_cosmogenesis_paths.txt`, `common/scripted_effects/02_machine_age_effects.txt:15-90`
+- 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
 - 已核对 Checked: 7100–7545 全部事件、等级条件与 on_unlock、等级科技、课题随机表权重与修正、视界刺针 on_build_complete（16_cosmogenesis_needle.txt:57-85）、刺针抵达 on_action（02_component_on_actions.txt:32-39）。
 - 更正 Corrections: V3 的等级连接保留并补全条件；新增课题组、最后通牒（中止分支）、刺针与结局链、凝练机支线；移除胜利摧毁恒星时误连到肃正协议“机械星球被摧毁”的连接。
 - 不确定 Uncertain: 先进逻辑的获取速率未建模；凝练机事件多为他国视角。
