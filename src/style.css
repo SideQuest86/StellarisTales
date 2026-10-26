@@ -214,6 +214,7 @@ input {
   display: grid;
   grid-template-columns: auto auto;
   align-items: baseline;
+  align-content: center; /* one line now (no count under the name): on the masthead's centre line, like Search */
   column-gap: 7px;
   padding: 8px var(--tab-pad) 10px;
   min-height: 48px;
@@ -232,9 +233,10 @@ input {
 :root:lang(en) .catalogue button > span {
   letter-spacing: 0.015em;
 }
-/* The size of the category: a quiet tabular figure under its name, not a second label in code type. */
+/* The size of the category: a quiet tabular figure under its name, not a second label in code type. Not shown: the
+   masthead reads as the archive's contents, and the open category's size is the counter by the arrows ("01 / 307"). */
 .catalogue button > span em {
-  display: block;
+  display: none;
   margin-top: 4px;
   font: normal 11px/1 var(--font-ui);
   font-variant-numeric: lining-nums tabular-nums;
@@ -246,7 +248,7 @@ input {
   position: absolute;
   left: var(--tab-pad);
   right: var(--tab-pad);
-  bottom: 4px;
+  bottom: 8px;
   height: 1px;
   background: var(--gold);
   transform: scaleX(0);
