@@ -151,3 +151,9 @@ are marked lang="en" like the parallel title; probe: 0 italic Chinese elements, 
 
 Forced colors (v4.17.11, scratchpad forced-colors.mjs): text keeps its backplates and focus rings show (Highlight), but the
 reading column lay over the visible wall once the darkening gradients were dropped; .reader-panel now takes Canvas there.
+
+Short screens (v4.17.12, scratchpad archive-collide.mjs over 10 sizes from 568 x 320 to 932 x 430, both languages): the phone
+layout's selection stack reached into the category rail at every height up to 400 px (the desktop short layout already dropped the
+teaser; the phone one now does too, with a 24 px title, and below 340 px the eyebrow that repeats the rail's active tab), and the
+short desktop layout's fixed card span let the card run 10-12 px off the left at aspects below 2 (now max(7.6, 15.5 / aspect),
+unchanged from aspect 2.04 up). After: 0 of 20 problems; the card-fit sizes identical.

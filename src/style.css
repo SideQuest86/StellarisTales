@@ -3763,6 +3763,21 @@ dialog::backdrop {
   #reader-title {
     font-size: 22px;
   }
+  /* The archive's selection stacks up from the player; on a short screen (a small phone held sideways, a window zoomed to
+     200 %) it reached the category rail. As in the short desktop layout: no teaser, a smaller title. */
+  #selected-title {
+    margin: 6px 0 8px;
+    font-size: 24px;
+  }
+  #selected-excerpt {
+    display: none;
+  }
+}
+/* Shorter still (568 x 320): the selection's category line repeats the rail's active tab right above it. */
+@media (max-width: 700px) and (max-height: 340px) {
+  .selection-eyebrow {
+    display: none;
+  }
 }
 @media (max-height: 760px) and (min-width: 701px) {
   :root {

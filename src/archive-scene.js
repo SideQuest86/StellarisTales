@@ -1059,7 +1059,8 @@ export class ArchiveScene {
     // there the card is drawn a little smaller, clear of the screen's edge, and higher, level with the text. `portrait` is 1
     // up to aspect 0.9 and 0 from 1.3 (every landscape screen keeps its framing).
     const portrait = mobile ? 0 : THREE.MathUtils.clamp((1.3 - aspect) / 0.4, 0, 1);
-    const detailSpan = mobile ? browseSpan : short ? 7.6 : Math.max(6.6, THREE.MathUtils.lerp(12.2, 13.4, portrait) / aspect);
+    // (Short screens below aspect ~2, such as a 1280 x 720 window zoomed to 150 %, need a little more: the card ran off the left.)
+    const detailSpan = mobile ? browseSpan : short ? Math.max(7.6, 15.5 / aspect) : Math.max(6.6, THREE.MathUtils.lerp(12.2, 13.4, portrait) / aspect);
     const span = THREE.MathUtils.lerp(browseSpan, detailSpan, pose);
     const px = mobile ? 0.5 : THREE.MathUtils.lerp(0.31, short ? 0.205 : this.width < 1100 ? 0.245 : 0.262, pose);
     const py = mobile ? THREE.MathUtils.lerp(0.36, 0.3, pose) : THREE.MathUtils.lerp(0.47, 0.515 - 0.09 * portrait, pose);
