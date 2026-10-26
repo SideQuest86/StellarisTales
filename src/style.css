@@ -131,6 +131,10 @@ input {
 [hidden] {
   display: none !important;
 }
+/* Focus returned by script after a tap or click (app.js returnFocus): no ring until a key is pressed. */
+.quiet-focus:focus-visible {
+  outline: none;
+}
 /* English visitor, before app.js has put the page's words into English (index.html): the Chinese markup text stays unseen. */
 .i18n-pending :is([data-i18n], #category-label) {
   visibility: hidden;

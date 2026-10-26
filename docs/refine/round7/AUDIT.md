@@ -87,3 +87,9 @@ the link preview. A first visit was captured step by step (desktop en, phone zh;
 persona judges (competition judge, Chinese phone reader, English laptop reader) with two verifiers: 4 of 17 confirmed and
 applied (Previous chapter label, map card bottom fade, map hint wording, search count nowrap); the rest were taste or ran
 into deliberate decisions (counter, arrows, autoplay, rail centring, protected game text).
+
+## Journey re-run on live v4.16.0 (v4.16.1)
+
+Same three personas and two verifiers over a fresh live capture: 1 of 18 confirmed (the focus ring drawn around "Open story" after a
+tap or click returns from the reader; now only after keyboard input, app.js returnFocus / .quiet-focus). Everything else was taste,
+a repeat of earlier rejections or against deliberate decisions: the first-visit journey has converged.

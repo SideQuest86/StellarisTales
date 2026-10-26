@@ -308,6 +308,20 @@ function beginOpening() {
   let ended = false;
   return () => { if (!ended) { ended = true; pendingOpenings--; } };
 }
+// Focus goes back to "Open story" when the reader closes, so keyboard and screen-reader users land where they left. After a
+// tap or a click its ring is not drawn (it read as an error box around the row) until a key is pressed.
+let pointerLast = false;
+addEventListener("pointerdown", () => { pointerLast = true; }, { capture: true, passive: true });
+addEventListener("keydown", () => {
+  pointerLast = false;
+  document.querySelector(".quiet-focus")?.classList.remove("quiet-focus");
+}, { capture: true });
+function returnFocus() {
+  const open = $("#open-story");
+  open.classList.toggle("quiet-focus", pointerLast);
+  open.addEventListener("blur", () => open.classList.remove("quiet-focus"), { once: true });
+  open.focus({ preventScroll: true });
+}
 async function openStory(id, start) {
   const ticket = ++readerTicket;
   const end = beginOpening();
@@ -425,7 +439,7 @@ function restartProgress() {
   box.innerHTML = `<button type="button" class="continue-link" data-continue></button><button type="button" class="continue-restart" data-restart></button>`;
   $("#open-story").after(box);
   box.querySelector("[data-continue]").onclick = () => pendingProgress && resumeProgress(pendingProgress);
-  box.querySelector("[data-restart]").onclick = () => { restartProgress(); $("#open-story").focus(); };
+  box.querySelector("[data-restart]").onclick = () => { restartProgress(); returnFocus(); };
 })();
 // A direct link to exactly the document the saved trail ends on is the reader's own refresh: restore the trail.
 // Escape (or leaving the #story= address) while a story is still downloading cancels that opening.
@@ -587,7 +601,7 @@ function closeReader() {
   } else history.replaceState(null, "", "#");
   document.title = t("site.title"); // [UI]
   refreshContinue();
-  $("#open-story").focus();
+  returnFocus();
 }
 $("#close-reader").onclick = closeReader;
 // Last known scroll offset of the reader text; -1 when unknown (after the reader was hidden).
