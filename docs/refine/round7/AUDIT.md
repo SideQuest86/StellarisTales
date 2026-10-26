@@ -93,3 +93,13 @@ into deliberate decisions (counter, arrows, autoplay, rail centring, protected g
 Same three personas and two verifiers over a fresh live capture: 1 of 18 confirmed (the focus ring drawn around "Open story" after a
 tap or click returns from the reader; now only after keyboard input, app.js returnFocus / .quiet-focus). Everything else was taste,
 a repeat of earlier rejections or against deliberate decisions: the first-visit journey has converged.
+
+## Sustained reading (v4.16.2)
+
+One session captured on live v4.16.1 (scratchpad sustained.mjs: The Horizon Signal, four chapters page by page, a choice, Previous
+chapter, close and resume, an ending and its next story; desktop en, phone zh) and walked by three personas (Chinese phone
+commuter, English evening reader, book typographer) with two verifiers: 2 of 15 confirmed and applied (an ending's effects
+below its next-story card; Previous chapter under a route's dead end), plus the coordinator's own: Continue reading without the
+story's name twice. Not applied: hiding the arrow of a choice that unfolds nothing (once the ending follows the choices, the
+turned arrow points at it), promoting Continue reading over Open story, the ending note's tone (project wording across every
+ending; a content task), auto-scrolling an opened choice, guarding Start over.
