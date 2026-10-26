@@ -4,7 +4,7 @@ The Chinese faces are self-hosted (since round 6, 2026-10-25): 12 subset woff2 f
 
 | Role | Font | Licence | Source | Where used |
 |---|---|---|---|---|
-| Title + body, English | Newsreader (variable, opsz 6-72, 400/500/600, italic 400), from Google Fonts | SIL OFL 1.1 | https://fonts.google.com/specimen/Newsreader | `--font-title`, `--font-body` when `lang=en`: brand, headings, reader text, guides, museum, playlist, search |
+| Title + body, English | Newsreader (variable, opsz 6-72, wght 400-600, roman + italic), self-hosted (public/fonts/newsreader-*.woff2, src/newsreader.css; built from github.com/productiontype/Newsreader v1.003 by st-tools/subset-newsreader.py: Latin-1, general punctuation, arrows and math signs; 95 + 105 KB) | SIL OFL 1.1 (public/fonts/OFL-Newsreader.txt) | https://github.com/productiontype/Newsreader | `--font-title`, `--font-body` when `lang=en`: brand, headings, reader text, guides, museum, playlist, search |
 | Title + body, Chinese | Noto Serif SC (400/600), self-hosted subset | SIL OFL 1.1 | https://github.com/google/fonts/tree/main/ofl/notoserifsc | `--font-title`, `--font-body` when `lang=zh` |
 | UI, both languages | Noto Sans SC (400/500), self-hosted subset | SIL OFL 1.1 | https://github.com/google/fonts/tree/main/ofl/notosanssc | `--font-ui`: nav, buttons, labels, numbers |
 

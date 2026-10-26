@@ -1,3 +1,10 @@
+v4.16.0 — 2026-10-26
+
+A first visit opens in the visitor's own language: browsers that prefer Chinese get Chinese, all others English (the
+中 / EN switch still remembers a choice). Newsreader, the English reading face, is now served by the site itself (two variable
+font files, about the size Google sent), so English reads in Newsreader everywhere, including where Google Fonts cannot be
+reached, and no third-party host is contacted. Link previews describe the site in both languages.
+
 v4.15.5 — 2026-10-26
 
 Edge states: a link to a story the archive does not have says so ("This story is not in the archive" / "档案里没有这则故事")

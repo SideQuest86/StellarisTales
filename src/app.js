@@ -46,7 +46,7 @@ const CATEGORIES = [
   ["society", "文明纪事", "CIVILIZATIONS"],
   ["stories", "银河轶事", "CHRONICLES"],
 ];
-let lang = "zh",
+let lang = document.documentElement.lang === "en" ? "en" : "zh", // set before first paint by index.html (stored choice, else the browser)
   reducedPreference = false,
   scene,
   stories = [],
@@ -69,7 +69,7 @@ let profile = {},
   storyFlagSet = new Set(),
   docMap = new Map();
 try {
-  lang = localStorage.getItem("st-language") || "zh";
+  lang = localStorage.getItem("st-language") || (document.documentElement.lang === "en" ? "en" : "zh"); // index.html: the browser's language
   reducedPreference = localStorage.getItem("st-motion") === "reduced";
   profile = JSON.parse(localStorage.getItem("st-profile") || "{}");
   profileNames = JSON.parse(localStorage.getItem("st-profile-names") || "{}");
