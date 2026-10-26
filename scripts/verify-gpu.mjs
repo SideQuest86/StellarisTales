@@ -119,7 +119,7 @@ async function run(name, { force, query = "", expect }) {
 
   // Graphics notice: shown only for integrated / software adapters, bilingual, dismissible, remembered.
   const hint = page.locator("#gpu-hint");
-  // The notice folds into its "i" chip a few seconds after it appears (src/gpu.js): open it from the chip first.
+  // The notice starts as its "i" chip (src/gpu.js): open it from the chip first.
   const openHint = async () => {
     if (await hint.evaluate((h) => h.classList.contains("is-chip"))) {
       await hint.locator(".gpu-hint-chip").click();

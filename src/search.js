@@ -512,7 +512,7 @@ export function createSearch(env) {
         const title = (titles[r.doc] || "").trim();
         const type = r.kind === "specimen" ? "specimen" : r.hit.type;
         const go = r.kind === "specimen" ? museumHash(r.key) : hashFor(r.story.id, meta.ids[r.doc]);
-        const head = r.kind === "specimen" ? esc(title || r.key) : `${title ? esc(title) + " · " : ""}<span>${esc(env.prose(env.storyTitle(r.story)))}</span>`;
+        const head = r.kind === "specimen" ? esc(title || r.key) : `${title ? esc(title) + " · " : ""}<span>${esc(env.storyTitle(r.story))}</span>`;
         const more = r.count > 1 ? `<small class="hit-more">${esc(T(`另有${r.count - 1}篇`, `+${r.count - 1} more`))}</small>` : "";
         return `<button class="search-story search-hit" data-hash="${esc(go)}" data-row="${i}"><em class="hit-type" data-type="${esc(type)}">${esc(typeLabel(type, lang))}</em><span><b>${head}</b><small class="hit-snip"></small>${more}</span><i>↗</i></button>`;
       }).join("");

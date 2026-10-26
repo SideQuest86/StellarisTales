@@ -1,3 +1,11 @@
+v4.13.3 — 2026-10-26
+
+Fixes from a review of the v4.11-v4.13 changes: touch tablets keep the player's volume control (it hid until a hover that
+touch screens never send); the "press play" cue keeps full strength while a story is open; every panel under a chapter's
+list sits the same distance below its rule; the graphics notice opened from its "i" folds back when you return to the
+archive instead of staying pinned until dismissed; search's chapter rows name a story as everywhere else ("the other
+empire", not "this name").
+
 v4.13.2 — 2026-10-26
 
 Large monitors: the reading column grows with the window (x1.1 from 1760x900, x1.22 from 2200x1100, x1.32 from 2800x1400),

@@ -1171,7 +1171,7 @@ const fullSearch = createSearch({
     if (!r.ok) throw new Error("search shard");
     return new Uint8Array(await r.arrayBuffer());
   },
-  getStories: () => stories, storyTitle: (s) => local(s.title), storyRow: storyRowHtml,
+  getStories: () => stories, storyTitle: (s) => storyName(s), storyRow: storyRowHtml,
 });
 let searchSeq = 0, searchFallback = false;
 async function renderFullSearch() {

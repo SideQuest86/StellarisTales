@@ -1439,6 +1439,7 @@ input {
 /* Under a ruled list (the choices or the continue cards) with nothing else at the chapter's end, the panel needs no rule of
    its own: one line 30 px above, not two with a band between them. */
 :is(.choices, .continuation) + .chapter-end:not(:has(> :not(.chapter-directory-link))) + :is(.fx, .story-summary, details.review-note) {
+  margin-top: 30px;
   border-top-color: transparent;
 }
 :is(.fx-sum, .story-summary > summary, details.review-note > summary) {
@@ -2899,14 +2900,19 @@ input[type="range"] {
   align-items: center;
   gap: 10px;
   color: var(--dim);
-  opacity: 0;
   transition: opacity 0.25s var(--ease-out);
 }
-.music-player:hover .volume,
-.volume:focus-within {
-  opacity: 1;
+/* Out of sight until the pointer is on the player — only where there is a pointer that hovers (tablets keep it). */
+@media (hover: hover) {
+  .volume {
+    opacity: 0;
+  }
+  .music-player:hover .volume,
+  .volume:focus-within {
+    opacity: 1;
+  }
 }
-.reader-open .music-player > :not(.seek, .volume) {
+.reader-open .music-player:not(.autoplay-blocked) > :not(.seek, .volume) {
   opacity: 0.6;
   transition: opacity 0.3s var(--ease-out);
 }

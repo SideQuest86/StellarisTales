@@ -194,6 +194,11 @@ export function showAdapterHint(gpu, { t, parent = document.body, delay = 1200 }
   };
   chip.addEventListener("click", () => swap(false, { focus: true }));
   hint.classList.add("is-chip");
+  // Opened from the chip, the card folds back into it when the visitor returns to browsing (a press on the 3D archive), so
+  // reading the steps never pins a card over the archive; × and Escape still dismiss it for good.
+  document.addEventListener("pointerdown", (e) => {
+    if (hint.isConnected && !hint.classList.contains("is-chip") && e.target.closest?.("#scene")) swap(true);
+  }, { passive: true });
   // Wording set while the notice waited to be shown follows a language switch made in the meantime.
   const relabel = () => {
     hint.setAttribute("aria-label", t("gpu.label"));
