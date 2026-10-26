@@ -65,7 +65,12 @@
       // Apply stored preferences before first paint: no flash of the wrong language or motion.
       try {
         var stored = localStorage.getItem("st-language");
-        if (stored === "en") document.documentElement.lang = "en";
+        if (stored === "en") {
+          document.documentElement.lang = "en";
+          // The markup's words are Chinese until app.js translates them: keep them out of sight until then (3 s at most).
+          document.documentElement.classList.add("i18n-pending");
+          setTimeout(function () { document.documentElement.classList.remove("i18n-pending"); }, 3000);
+        }
         if (localStorage.getItem("st-motion") === "reduced") document.documentElement.classList.add("reduced-motion");
       } catch (e) {}
     </script>
@@ -140,7 +145,7 @@
         <img id="album-cover" data-i18n-alt="music.cover" alt="群星原声专辑封面" width="43" height="43" />
         <div>
           <button id="playlist-toggle" type="button" aria-expanded="false" aria-controls="playlist">
-            <span id="track-title">Faster Than Light - Feat. Mia Stegmar</span><span class="caret" aria-hidden="true"></span></button
+            <span id="track-title">Faster Than Light</span><span class="caret" aria-hidden="true"></span></button
           ><small id="track-artist"></small>
         </div>
       </div>

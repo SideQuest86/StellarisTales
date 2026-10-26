@@ -1,3 +1,8 @@
+v4.12.10 — 2026-10-26
+
+An English visitor no longer sees the page's Chinese words ("载入中", "展开故事") for the first half second: the page
+speaks the visitor's language as soon as it runs, and until then its words stay out of sight.
+
 v4.12.9 — 2026-10-26
 
 Publishing only: the release gate's "closing while a story is still downloading" check waits until the download has

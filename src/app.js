@@ -1569,6 +1569,13 @@ function parseHash() {
   else cancelOpening();
 }
 window.addEventListener("hashchange", parseHash);
+// index.html ships the Chinese words: the page's own text goes into the visitor's language as soon as the app runs, not
+// after the archive index has downloaded (an English visitor read "载入中 / 展开故事" for the first half second).
+setLanguage(lang);
+applyStaticText();
+applyMotion();
+$("#category-label").textContent = categoryName(2);
+document.documentElement.classList.remove("i18n-pending");
 try {
   // The scene (renderer, atlas, shader programs: ~55 ms of script, then the programs link on the GPU process) does not
   // need the story lists: it is built while the index downloads and receives them afterwards. Nothing is drawn before both exist.

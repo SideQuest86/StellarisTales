@@ -131,6 +131,10 @@ input {
 [hidden] {
   display: none !important;
 }
+/* English visitor, before app.js has put the page's words into English (index.html): the Chinese markup text stays unseen. */
+.i18n-pending :is([data-i18n], #category-label) {
+  visibility: hidden;
+}
 ::selection {
   background: #bb9f68;
   color: #0a191d;
