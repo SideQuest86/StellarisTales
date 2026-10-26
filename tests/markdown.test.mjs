@@ -18,6 +18,11 @@ test("inline constructs", () => {
   assert.match(inline("[x](#sec)"), /href="#sec" rel="noopener noreferrer">x/);
   assert.doesNotMatch(inline("[x](./a.md)"), /target/);
 });
+test("a bilingual heading's separator belongs to neither half", () => {
+  const h = renderMarkdown("# 强制重置 / Forced Reset");
+  assert.match(h, /<span lang="zh-CN" data-lang="zh">强制重置<\/span> <span lang="en" data-lang="en">Forced Reset<\/span>/);
+  assert.match(renderMarkdown("## 如何开始 How it starts"), /data-lang="zh">如何开始<\/span> <span lang="en" data-lang="en">How it starts</);
+});
 test("XSS", () => {
   for (const bad of ['<script>alert(1)</script>', '[x](javascript:alert(1))', '[x](data:text/html,hi)', '<img src=x onerror=alert(1)>', '![i](http://e.com/a.png)', '[a"onmouseover="x](http://e.com)', '[x](http://e.com/"onclick="y)', '`<b>`']) {
     const h = renderMarkdown(bad);

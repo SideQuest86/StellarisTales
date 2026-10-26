@@ -94,7 +94,8 @@ export function renderMarkdown(md, opts = {}) {
       const level = Math.min(5, 2 + m[1].length);
       if (REVIEW_HEADING.test(m[2])) { out = review; reviewDepth = m[1].length; i++; continue; }
       if (reviewDepth && m[1].length <= reviewDepth) { out = main; reviewDepth = 0; }
-      const parts = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)\s+([A-Za-z][^㐀-鿿]*)$/.exec(m[2]);  // "如何开始 How it starts"
+      // "如何开始 How it starts", "强制重置 / Forced Reset": the separator between the halves belongs to neither.
+      const parts = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)\s+(?:[/|｜·]\s+)?([A-Za-z][^㐀-鿿]*)$/.exec(m[2]);
       out.push(parts
         ? `<h${level} class="md-block" data-mixed="1"><span lang="zh-CN" data-lang="zh">${inline(parts[1])}</span> <span lang="en" data-lang="en">${inline(parts[2])}</span></h${level}>`
         : `<h${level} class="md-block"${langAttr(m[2])} data-mixed="1">${inline(m[2])}</h${level}>`);
