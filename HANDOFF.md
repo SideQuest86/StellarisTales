@@ -96,6 +96,7 @@ evidence from earlier rounds and is not updated.
   centred endings, .reader-trail line) and archive / museum / search (archive.md). Checks: font --check, node 109/109,
   smoke 15/15, verify-round5, verify-refine-reader, verify-reader-v4, verify-a11y.
   The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
+- Live: v4.10.0 (`378d14b5`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15.
 - Live: v4.9.0 (`654a79dc`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15 (one transient failure right after deploy, re-run clean), /fonts/*.woff2 served.
 - **CHECKPOINT 2026-10-20 07:50 UTC — round 5 paused at the weekly limit reset (user: "stop when the limit is reset").**
   v4.8.0 pushed through the gated workflow after a local gate on the final tree (full build incl. search index rebuild;
