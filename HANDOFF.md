@@ -92,6 +92,7 @@ evidence from earlier rounds and is not updated.
   story-map redesign (full-size dialog, two-line nodes, merged duplicate link sets, legend, overview; map.md); phone and
   reader chrome (phone.md). Checks: node 108/108, smoke 15/15, verify-round5, verify-refine-reader, verify-a11y.
   The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
+- Live: v4.9.0 (`654a79dc`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15 (one transient failure right after deploy, re-run clean), /fonts/*.woff2 served.
 - **CHECKPOINT 2026-10-20 07:50 UTC — round 5 paused at the weekly limit reset (user: "stop when the limit is reset").**
   v4.8.0 pushed through the gated workflow after a local gate on the final tree (full build incl. search index rebuild;
   node 103/103; smoke 15/15, verify-round5 6/6, verify-search 24, verify-refine-chrome, verify-a11y, verify-museum-viewer 7,
