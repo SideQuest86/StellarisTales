@@ -25,3 +25,5 @@ Priorities, by impact on reading:
 
 ## Log
 - 2026-10-25: assessment; typography step 1 started (src/app.js paragraph(), src/style.css .narrative / .pb / #reader-title).
+- 2026-10-25: step 1 committed (a0e9b2f0): .pb paragraph gaps, zh justify + text-spacing-trim + hanging punctuation, palt titles, hairline rule, subtitle without placeholder fragments, calm effects chips (gold chance number), search hit-type labels aligned. Not released yet (RELEASE untouched).
+- 2026-10-25: agents running: story-map redesign (docs/refine/round6/map.md), phone + reader chrome (phone.md), self-hosted CJK fonts (fonts.md). Next: review their screenshots critically, integrate, light checks, release v4.9.0, verify live; then guide typography, archive panel, museum detail polish.

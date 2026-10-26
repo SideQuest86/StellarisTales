@@ -61,8 +61,15 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
     const parts = tokenize(node.nodeValue, ids, spaces, other);
     if (parts.every((p) => typeof p === "string")) continue;
     const frag = doc.createDocumentFragment();
+    let glue = null; // a link and the closing punctuation right after it stay on one line (no "，" at a line start)
     for (const p of parts) {
-      if (typeof p === "string") { frag.append(p); continue; }
+      if (typeof p === "string") {
+        const m = glue && /^[，。、；：！？）」』”’》〉…,.;:!?)]+/.exec(p);
+        if (m) { glue.append(m[0]); glue.classList.add("tight"); frag.append(p.slice(m[0].length)); }
+        else frag.append(p);
+        glue = null;
+        continue;
+      }
       if (p.muted) {
         const span = doc.createElement("span");
         span.className = "guide-id";
@@ -77,7 +84,10 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
       b.dataset.story = p.story || storyId;
       b.title = p.id;
       b.textContent = (p.story ? p.label : title(byId.get(p.id))) || p.raw;
-      frag.append(b);
+      glue = doc.createElement("span");
+      glue.className = "guide-glue";
+      glue.append(b);
+      frag.append(glue);
       linked++;
     }
     node.replaceWith(frag);

@@ -444,13 +444,19 @@ input {
   font: inherit;
   line-height: inherit;
   text-align: inherit;
-  color: var(--gold);
-  border-bottom: 1px dotted #c9b07a88;
+  color: #d2ddd6; /* a chapter title in the sentence: the text's own colour, marked by its underline, not a sea of gold */
+  border-bottom: 1px solid #c9b07a66;
   cursor: pointer;
+}
+/* A link followed by closing punctuation is one unit, so the punctuation never starts a line (guide-links.js). */
+.guide-glue.tight {
+  display: inline-block;
+  max-width: 100%;
 }
 .guide-doc:hover,
 .guide-doc:focus-visible {
-  border-bottom-style: solid;
+  color: var(--gold);
+  border-bottom-color: var(--gold);
 }
 #selected-title {
   margin: 16px 0 14px;
@@ -1005,10 +1011,33 @@ input {
 /* Commentary notes stay visually distinct from original game text. */
 .story-summary > div,
 .reader-note {
-  font: 14px/1.85 var(--sans) !important;
-  color: #a9bcb6;
-  border-left: 2px dotted #5f7a75;
-  padding-left: 14px;
+  font: 15px/1.9 var(--sans) !important;
+  color: #b4c6c0;
+  border-left: 1px solid #5f7a7566;
+  padding-left: 18px;
+}
+/* The guide reads as a companion essay: quiet gold section labels, airy lists. */
+.story-summary .md-guide h3 {
+  margin: 0.6em 0 0.8em;
+  font: 600 18px/1.4 var(--serif);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.story-summary .md-guide :is(h4, h5) {
+  margin: 1.5em 0 0.5em;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--gold-2, #b99b62);
+}
+.story-summary .md-guide :is(ul, ol) {
+  padding-left: 1.3em;
+}
+.story-summary .md-guide li + li {
+  margin-top: 0.45em;
+}
+.story-summary .md-guide li::marker {
+  color: #6f8b88;
 }
 /* Names the game fills in from a save: part of the prose, so only a quiet tint. */
 .game-name {
