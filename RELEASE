@@ -1,3 +1,9 @@
+v4.13.2 — 2026-10-26
+
+Large monitors: the reading column grows with the window (x1.1 from 1760x900, x1.22 from 2200x1100, x1.32 from 2800x1400),
+drawn as one piece so every size keeps its proportion. At 2560x1440 the text was 19 px in a 550 px column beside a 1250 px
+map card; it now reads at about 23 px in a 670 px column.
+
 v4.13.1 — 2026-10-26
 
 From the round-7 design panel: the archive's teaser no longer stops on a clipped "…" — its last line fades out, like text

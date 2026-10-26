@@ -738,8 +738,9 @@ input {
   right: 0;
   bottom: 0;
   width: 50%;
-  /* The reading column (--col) sits centred in the right half when there is room, and otherwise keeps its side margins. */
-  padding: calc(var(--masthead) - 8px) max(clamp(24px, 5vw, 96px), calc((50vw - var(--col)) / 2)) 40px max(clamp(24px, 4vw, 72px), calc((50vw - var(--col)) / 2));
+  /* The reading column (--col, drawn at --rz) sits centred in the right half when there is room, and otherwise keeps its
+     side margins. */
+  padding: calc(var(--masthead) - 8px) max(clamp(24px, 5vw, 96px), calc((50vw - var(--col) * var(--rz, 1)) / 2)) 40px max(clamp(24px, 4vw, 72px), calc((50vw - var(--col) * var(--rz, 1)) / 2));
   overflow-y: auto;
   overscroll-behavior: contain;
   pointer-events: auto;
@@ -792,6 +793,28 @@ input {
 }
 #reading-content {
   max-width: var(--col);
+}
+/* Large monitors: the map card grows with the window (it is drawn in 3D), the page beside it grew nowhere — 19 px text in a
+   550 px column next to a 1250 px card at 2560 px. The reading column (toolbar and text) is drawn larger as one piece, so
+   every size keeps its proportion to the others. */
+.reader-toolbar,
+#reading-content {
+  zoom: var(--rz, 1);
+}
+@media (min-width: 1760px) and (min-height: 900px) {
+  :root {
+    --rz: 1.1;
+  }
+}
+@media (min-width: 2200px) and (min-height: 1100px) {
+  :root {
+    --rz: 1.22;
+  }
+}
+@media (min-width: 2800px) and (min-height: 1400px) {
+  :root {
+    --rz: 1.32;
+  }
 }
 #reading-content .narrative p,
 #reading-content .dialogue-reply {
