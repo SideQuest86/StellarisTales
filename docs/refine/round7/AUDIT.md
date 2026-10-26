@@ -79,3 +79,11 @@ Three lenses over states the audits never saw (opened profile, effects, playlist
 search, expanded map), two verifiers: 6 confirmed, 4 applied (profile panel, playlist figures, Chinese guide headings, phone
 disclaimer wrap) plus a heading-split fix found in the screenshots. Not applied: the opened GPU card's typography (an on-demand
 technical notice that folds back), the Chinese search note 'slant' (it is the Kai face; font synthesis is off).
+
+## First-visit journey (v4.15.3-v4.15.4)
+
+Share card (public/share-card.jpg, 1200x630, scripts/share-card.mjs) and apple-touch-icon replace the soundtrack cover as
+the link preview. A first visit was captured step by step (desktop en, phone zh; scratchpad journey.mjs) and walked by three
+persona judges (competition judge, Chinese phone reader, English laptop reader) with two verifiers: 4 of 17 confirmed and
+applied (Previous chapter label, map card bottom fade, map hint wording, search count nowrap); the rest were taste or ran
+into deliberate decisions (counter, arrows, autoplay, rail centring, protected game text).

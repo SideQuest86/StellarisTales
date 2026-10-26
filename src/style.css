@@ -2237,8 +2237,8 @@ html.reduced-motion .map-expanded .flow-surface-map {
 /* On the card the map is a window onto a larger drawing: its edges fade out instead of slicing a node or a caption mid-word.
    (The expanded map has room and keeps hard edges; while the viewport has keyboard focus its ring must stay whole.) */
 #flow-surface:not(.map-expanded) .flow-viewport:not(:focus-visible) {
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent), linear-gradient(transparent, #000 20px, #000 calc(100% - 20px), transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent), linear-gradient(transparent, #000 20px, #000 calc(100% - 20px), transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent), linear-gradient(transparent, #000 20px, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent), linear-gradient(transparent, #000 20px, #000 calc(100% - 48px), transparent);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
@@ -4074,6 +4074,9 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 .hit-snip { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
 .hit-snip:empty { display: none; }
 .hit-more { margin-top: 2px; }
+.search-story .nw {
+  white-space: nowrap; /* "24篇相关" moves to the next line whole, never leaving "关" alone */
+}
 .search-hit mark { padding: 0; color: var(--ink); background: #68775a66; border-bottom: 1px solid var(--gold); }
 @media (max-width: 700px) {
   .hit-type { width: 72px; } /* the thumbnails are 72 px wide here */

@@ -154,7 +154,7 @@ export const UI = {
   "map.keyFold": { zh: "已折叠，点击展开", en: "Folded, click to open" },
   "map.keyChance": { zh: "几率（≈ 受条件调整）", en: "Chance (≈ adjusted by conditions)" },
   "map.help": { zh: "图例", en: "Key" },
-  "map.hint": { zh: "拖动平移 · 滚轮缩放 · 0 总览 · Esc 关闭", en: "Drag to pan · scroll to zoom · 0 overview · Esc to close" },
+  "map.hint": { zh: "拖动平移 · 滚轮缩放 · 按 0 看全图 · Esc 关闭", en: "Drag to pan · scroll to zoom · press 0 to fit · Esc to close" },
   "map.reading": { zh: "正在阅读", en: "Reading" },
   "map.overview": { zh: "总览", en: "Overview" },
   "map.cases": { zh: "{n} 种情形", en: "{n} cases" },
