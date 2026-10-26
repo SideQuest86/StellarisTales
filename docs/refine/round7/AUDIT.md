@@ -59,3 +59,11 @@ nine applied: the reading column fades at the player as at the toolbar; the word
 card caption as a quiet italic name; a larger English ending note; Kai lines at 0.02em and Chinese panel titles 16 px; lighter
 guide sub-heads; the Chinese archive teaser at 16.5 px; the guide's language switch as an underlined line; legible exhibit
 view words. Round 3's yield (one finding above impact 3) marks the polish as converged; further rounds were not run.
+
+## First load (live, 2026-10-26)
+
+Cold cache, 390x844. Fast 4G (9 Mbps, 60 ms, CPU x2): first story title at 1.6 s (zh) / 1.7 s (en), LCP 0.6 s. Slow mobile
+(1.6 Mbps, 150 ms, CPU x4): title at 7.8 s / 8.4 s. The index is preloaded and arrives at 3.4 s; the title waits for
+three.js (408 KB), because app.js imports archive-scene.js statically, while four CJK font files (700 KB) share the line.
+Option, not done: import archive-scene.js dynamically so the selection text shows when the index arrives (about 3.5 s on
+slow mobile) and the 3D wall joins after; it touches the start-up order, so it waits for a decision.
