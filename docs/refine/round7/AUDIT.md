@@ -130,3 +130,12 @@ build of v4.17.3): 2 of 15 confirmed, each reported by all three personas: the i
 (now the italic section voice, Kai in Chinese, note as an italic aside) and the centred "Continue the conversation" read as a
 button (now on the replies' edge). Not applied: the effects count, the trail's Start over, restoring the scroll position on resume,
 reveal motion after a choice.
+
+## Journey on live v4.17.8; tablet portrait (v4.17.9)
+
+The first-visit journey re-run on live v4.17.8 (three personas, two verifiers): 0 of 18 confirmed. A lens no round had used, tablet
+portrait (768 x 1024, 820 x 1180, 1024 x 1366), found the opened card overlapping the reading column: frameCamera capped the
+detail span at 11, so on aspects below about 1.1 the card took about 60 % of the width while the column starts at 46 % (overlap
+63 / 91 / 94 px, 5 px on a square 1000 x 1000 window; the card clipped at the left). The cap is gone; portrait aspects (blended
+from 0.9 to 1.3) draw the card a little smaller and higher. Measured (scratchpad card-fit.mjs, #flow-surface right edge against
+the narrative's left): 38-41 px clear on the portrait sizes, 36 px on the square, every landscape size identical to before.
