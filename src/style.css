@@ -998,6 +998,19 @@ input {
   background: #0f2523;
   color: var(--ink);
 }
+/* Chinese has no italic, and font-synthesis is off: the lines English sets in italics (section headings, the scene line,
+   route notes, panel titles, "Next story", the map's name, search notes, the museum's section line and view words) are set
+   in Kai (楷体), the brush hand Chinese books use where Latin ones use italics; Song where no Kai face is installed. */
+:root:lang(zh) :is(.section-heading, .chapter-eyebrow, .reading-complete, .next-chapter.ending-next small, .reader-left span,
+  .fx-sum, .story-summary > summary, details.review-note > summary, .review-note small, .flow-title, .hit-type,
+  .profile-toggle, .museum-text h3, .museum-view-toggle button, .museum-count) {
+  font-family: "KaiTi", "STKaiti", "Kaiti SC", "Kaiti TC", "BiauKai", var(--serif-zh);
+  letter-spacing: 0.04em;
+}
+/* Kai draws smaller in its em than Song: the section lines take a pixel more. */
+:root:lang(zh) :is(.section-heading, .reading-complete) {
+  font-size: 16px;
+}
 /* "Your choices" / "The story continues": a quiet italic line whose rule fades out like a line drawn with a dry pen. */
 .section-heading {
   display: flex;
@@ -1040,6 +1053,13 @@ input {
 }
 .choice-button:not([aria-disabled="true"]):hover {
   background: #c4b07b0d;
+}
+:root:lang(en) .choice-button {
+  padding-block: 11px;
+  line-height: 1.55;
+}
+:root:lang(en) :is(.choice-symbol, .choice-button b) {
+  line-height: 1.55;
 }
 .choice-button > span:nth-child(2) {
   min-width: 0;
@@ -1139,6 +1159,11 @@ input {
   font: 13px/1.55 var(--sans);
   letter-spacing: 0.01em;
   color: #9fb5af; /* between --dim and --ink-2: a condition you can read, still quieter than the title above it */
+}
+/* English: the condition under a card's title is its subtitle, in the book's italic (a base chance stays a sans figure). */
+:root:lang(en) .next-chapter:not(.ending-next) small {
+  font: italic 14.5px/1.5 var(--serif-en);
+  letter-spacing: 0;
 }
 .next-chance {
   min-width: 3.4ch;
@@ -1288,6 +1313,16 @@ input {
   color: var(--gold);
   text-wrap: balance;
 }
+:root:lang(en) .reading-ending strong {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 0.01em;
+}
+/* A name in a Chinese ending ("帕里戴达被焚毁" around "Paridayda") gets Newsreader's Latin, not the CJK face's wide one. */
+:root:lang(zh) .reading-ending strong {
+  font-family: var(--serif-en);
+  letter-spacing: 0.04em;
+}
 .reading-ending p {
   max-width: 30em;
   margin: 10px auto 0;
@@ -1355,6 +1390,11 @@ input {
 .story-summary {
   margin-top: 30px;
   font-size: 14px;
+}
+/* Under a ruled list (the choices or the continue cards) with nothing else at the chapter's end, the panel needs no rule of
+   its own: one line 30 px above, not two with a band between them. */
+:is(.choices, .continuation) + .chapter-end:not(:has(> :not(.chapter-directory-link))) + :is(.fx, .story-summary, details.review-note) {
+  border-top-color: transparent;
 }
 :is(.fx-sum, .story-summary > summary, details.review-note > summary) {
   min-height: 46px;
@@ -1454,9 +1494,9 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
 }
 .story-summary .md-guide :is(h4, h5) {
   margin: 1.5em 0 0.5em;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   color: var(--gold-2, #b99b62);
 }
 .story-summary .md-guide :is(ul, ol) {
@@ -2008,9 +2048,8 @@ html.reduced-motion .map-expanded .flow-surface-map {
   border-bottom: 1px solid #ffffff12;
 }
 .map-expanded .flow-title {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font: italic 15px/1.2 var(--serif);
+  letter-spacing: 0;
   white-space: nowrap;
 }
 .map-expanded .flow-story {
@@ -2026,13 +2065,16 @@ html.reduced-motion .map-expanded .flow-surface-map {
 .flow-stats {
   min-width: 0;
   overflow: hidden;
-  font: 11px var(--mono);
-  letter-spacing: 0.04em;
+  font: 12.5px var(--sans);
+  letter-spacing: 0.01em;
   color: var(--dim);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* "Story map": the card's name in the book's italic. */
 .flow-title {
+  font: italic 14px/1.2 var(--serif);
+  letter-spacing: 0;
   white-space: nowrap;
 }
 @media (max-width: 700px) {
@@ -2261,7 +2303,7 @@ html.reduced-motion .map-expanded .flow-surface-map {
 .map-expanded .flow-hint {
   display: block;
   flex: none;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--dim);
   white-space: nowrap;
 }
@@ -2271,7 +2313,7 @@ html.reduced-motion .map-expanded .flow-surface-map {
   order: 2;
   padding: 0;
   border: 0;
-  font-size: 11px;
+  font-size: 12px;
 }
 .map-expanded .flow-foot .key-symbols {
   display: contents;
@@ -3549,6 +3591,20 @@ dialog::backdrop {
   :root {
     --masthead: 72px;
     --player: 64px;
+  }
+  /* The caption under the card clears the player on 720 px laptops ("120 chapters" sat on its edge). */
+  .reader-left {
+    top: calc(var(--card-top, 60vh) + var(--card-height, 0px) + 8px);
+  }
+  .reader-left h2,
+  .reader-left #dossier-title {
+    font-size: 17px;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+  .reader-left span {
+    font-size: 13px;
+    line-height: 1.3;
   }
   .selection {
     top: 31%;

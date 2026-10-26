@@ -220,7 +220,7 @@ function showSelection(story, column, index) {
   selected = story;
   selectedColumn = column;
   $("#category-label").textContent = categoryName(column);
-  $("#chapter-count").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
+  $("#chapter-count").textContent = T(`${story.chapters}篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
   readMark(story);
   storySpecimens(story);
   $("#selected-title").textContent = storyName(story);
@@ -902,7 +902,7 @@ function renderChapter(preservePosition = false) {
   );
   const story = dossier.story;
   $("#dossier-title").textContent = storyName(story);
-  $("#dossier-size").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
+  $("#dossier-size").textContent = T(`${story.chapters}篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
   const readable = dossier.chapters;
   const node = treeNodeFor(r.id);
   const via = node?.via;
@@ -968,8 +968,8 @@ function renderChapter(preservePosition = false) {
   // it is, so the note's own "Review note:" prefix is dropped), engine ids in <code>.
   const reviewNote = (label, value, extra = "") =>
     `<details class="review-note${extra}"><summary>${esc(label)}</summary><p${value?.[lang] ? "" : ` lang="${lang === "en" ? "zh-CN" : "en"}"`}>${markIds(noteBody(local(value)), esc)}</p></details>`;
-  const unreachable = chapter.unreachable ? reviewNote(T("审阅结论 · 原版脚本中无法自然触发", "Review finding · not reachable in the shipped script"), chapter.unreachable, " unreachable-note") : "";
-  const notes = unreachable + (chapter.notes || []).map((n) => reviewNote(T("审阅注释 · 非游戏原文", "Reviewer note · not game text"), n)).join("");
+  const unreachable = chapter.unreachable ? reviewNote(T("审阅结论（原版脚本中无法自然触发）", "Review finding · not reachable in the shipped script"), chapter.unreachable, " unreachable-note") : "";
+  const notes = unreachable + (chapter.notes || []).map((n) => reviewNote(T("审阅注释（非游戏原文）", "Reviewer note · not game text"), n)).join("");
   const alsoIn = (chapter.alsoIn || []).filter((id) => storyById.has(id));
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此篇章也出现在：", "This chapter also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(storyName(storyById.get(id)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
@@ -987,7 +987,7 @@ function renderChapter(preservePosition = false) {
     const notesBox=document.createElement('details');
     notesBox.className='story-summary';
     const heading=document.createElement('summary');
-    heading.textContent=T('故事导读 · 含剧透','Reading guide · Spoilers');
+    heading.textContent=T('故事导读（含剧透）','Reading guide · Spoilers');
     const download=document.createElement('a');
     download.href=asset(dossier.summary.path); download.download='';
     download.textContent=T('下载 Markdown','Download Markdown');
@@ -1155,7 +1155,7 @@ function renderChrome() {
 // open of the dialog; if it cannot load, the dialog falls back to the title/excerpt filter below.
 function storyRowHtml(s, chip = "", extra = "") {
   const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${chip}${esc(T(`${s.chapters} 篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
+  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${chip}${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
 }
 // The pager only shows when there is more than one page of results.
 function pager(page, pages) {
@@ -1220,7 +1220,7 @@ function renderSearch() {
       .map(
         (s) => {
           const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${esc(T(`${s.chapters} 篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
+          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
         },
       )
       .join("") || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;

@@ -4,7 +4,8 @@
 .md-guide h3, .md-guide h4, .md-guide h5 { margin: 1.1em 0 .4em; font-family: inherit; }
 .md-guide p, .md-guide blockquote { margin: .6em 0; }
 .md-guide blockquote { padding-left: .9em; border-left: 2px solid rgba(120, 200, 190, .45); opacity: .9; }
-.md-guide code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; padding: 0 .3em; background: rgba(255, 255, 255, .08); border-radius: 2px; }
+/* Engine ids stay in code type (they are ids, not words) but without a chip: no box in the middle of a sentence. */
+.md-guide code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; padding: 0; color: var(--dim, #86a29f); background: none; }
 .md-guide[data-show="zh"] [data-lang="en"], .md-guide[data-show="en"] [data-lang="zh"] { display: none; }
 .md-guide[data-show="zh"] [data-lang="en"][data-mixed], .md-guide[data-show="en"] [data-lang="zh"][data-mixed] { display: revert; }
 .md-lang-toggle { min-height: 40px; padding: 0 .9em; margin: .4em 0; font: inherit; font-size: .85em; color: inherit; background: none; border: 1px solid rgba(120, 200, 190, .4); border-radius: 2px; cursor: pointer; }

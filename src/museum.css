@@ -95,7 +95,7 @@
 .museum-chip[aria-pressed="true"] small { color: var(--gold-2); }
 /* A rarity chip's key: the hollow diamond of the pedestal frames, in the rarity's colour. */
 .museum-key { display: inline-block; width: 7px; height: 7px; margin: 0 8px 1px 0; border: 1.5px solid var(--rarity, #8fd8c6); vertical-align: middle; transform: rotate(45deg); }
-.museum-count { margin: 10px var(--gutter, 40px) 0; font: 500 12.5px var(--font-ui); letter-spacing: 0.08em; font-variant-numeric: lining-nums tabular-nums; color: var(--dim); }
+.museum-count { margin: 10px var(--gutter, 40px) 0; font: italic 14px var(--serif); letter-spacing: 0; color: var(--dim); }
 .museum-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
