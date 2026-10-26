@@ -1089,7 +1089,7 @@ input {
    in Kai (楷体), the brush hand Chinese books use where Latin ones use italics; Song where no Kai face is installed. */
 :root:lang(zh) :is(.section-heading, .chapter-eyebrow, .reading-complete, .next-chapter.ending-next small, .reader-left span,
   .fx-sum, .story-summary > summary, details.review-note > summary, .review-note small, .flow-title, .hit-type,
-  .profile-toggle, .museum-text h3, .museum-view-toggle button, .museum-count) {
+  .profile-toggle, .museum-text h3, .museum-view-toggle button, .museum-count, .flow-investigations > small) {
   font-family: "KaiTi", "STKaiti", "Kaiti SC", "Kaiti TC", "BiauKai", var(--serif-zh);
   letter-spacing: 0.02em;
 }
@@ -1097,7 +1097,7 @@ input {
   font-size: 16px;
 }
 /* Kai draws smaller in its em than Song: the section lines take a pixel more. */
-:root:lang(zh) :is(.section-heading, .reading-complete) {
+:root:lang(zh) :is(.section-heading, .reading-complete, .flow-investigations > small) {
   font-size: 16px;
 }
 /* "Your choices" / "The story continues": a quiet italic line whose rule fades out like a line drawn with a dry pen. */
@@ -1200,6 +1200,12 @@ input {
 }
 .choice-response .reading-complete {
   padding: 6px 0;
+  text-align: left;
+}
+/* A conversation's status ("Continue the conversation") belongs to the replies above it: on their edge, not centred like a
+   route's last line, where it read as a button. */
+.chapter-end > .reading-complete[data-dialogue-status] {
+  padding: 10px 0 14px;
   text-align: left;
 }
 /* Continue cards: a title over its caption, then (when there is one) the base chance of a random outcome as a figure,
@@ -1391,13 +1397,20 @@ input {
 .route-back:focus-visible {
   color: var(--gold);
 }
-.flow-outcomes > small,
-.flow-investigations > small {
+.flow-outcomes > small {
   display: block;
   margin: 18px 0 2px;
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--gold);
+}
+/* Investigations in any order ("Optional storm-phase encounters · 1 of 2 read"): titled in the voice of "The story
+   continues", not as a tracker's gold label; the note under it is an aside. */
+.flow-investigations > small {
+  display: block;
+  margin: 18px 0 2px;
+  font: italic 15px/1.5 var(--serif);
+  color: var(--gold-2);
 }
 /* The end of a route is set like the last page of a chapter: a short rule, the ending's name, its note, centred; the next
    story of the same shelf follows as a card of its own. */
@@ -1962,7 +1975,7 @@ details.review-note > :last-child {
 }
 .flow-investigations > p {
   margin: 4px 0 6px;
-  font: 13px/1.7 var(--sans);
+  font: italic 14.5px/1.65 var(--serif);
   color: var(--dim);
 }
 .reading-next.visited span {

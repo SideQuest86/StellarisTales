@@ -122,3 +122,11 @@ A second sustained read (Cetana, scratchpad sustained2.mjs) showed the effects p
 "Continue the conversation" line. The effects and specimen panels now always follow .chapter-end (v4.16.2 did it for endings
 only), which is also the order style.css's single-rule spacing expects: under continue cards the panel had drawn its own rule
 17 px below the last card's (live vs local, horizon-signal akx.9315).
+
+## Sustained reading, second story (v4.17.4)
+
+The same three personas and two verifiers over a Cetana session (dialogues, optional encounters, a conversational ending; local
+build of v4.17.3): 2 of 15 confirmed, each reported by all three personas: the investigations panel read as a quest tracker
+(now the italic section voice, Kai in Chinese, note as an italic aside) and the centred "Continue the conversation" read as a
+button (now on the replies' edge). Not applied: the effects count, the trail's Start over, restoring the scroll position on resume,
+reveal motion after a choice.
