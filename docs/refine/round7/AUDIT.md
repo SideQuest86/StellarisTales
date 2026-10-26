@@ -182,3 +182,12 @@ Keyboard-only sustained read (live v4.17.15, both languages, scratchpad keyboard
 Previous chapter each put focus on the chapter title (#reader-title), the new chapter starts at the top, the first choice is 3 Tabs
 from the title, its number key opens it, the continue card is the next Tab, Escape returns focus to Open story with a visible ring;
 the skip link reaches the selection from the masthead. No focus lost to <body>, no page errors. Nothing to change.
+
+## Reading guides (v4.17.16)
+
+The opt-in guides (1,389, "Reading guide · Spoilers") showed both languages on either page wherever a line's English half began with
+an event number after " / " (splitMixed only accepted a letter there) and bold bilingual item titles stayed whole. Now a digit may
+open the English half after the slash or after a Chinese full stop and space (the English-tail checks unchanged), and a bold lead is
+split like a heading. Two-language blocks still shown whole: 361 -> 115 of 2,872 (scratchpad guide-split-stats.mjs; the rest have
+English names inside the Chinese sentence). Noto Sans SC's ’ is a 0.42 em CJK form: English pages now take U+2018-201D from a
+local() Latin face first ("ST Latin Quotes"): 7.5 -> 3.6 px in the guide link "I’m Through" (map labels share the face).

@@ -68,3 +68,18 @@ test("review notes are collapsed at the end; mixed lines split per language", ()
   assert.deepEqual(splitMixed("**游戏中期之后（五年脉冲）**： **After mid-game (five-year pulse)**:"), ["**游戏中期之后（五年脉冲）**：", "**After mid-game (five-year pulse)**:"]);
 });
 
+test("an English half that opens with an event number splits after the guides' slash only", () => {
+  const line = "9005：科研船与科学家在坐标处消失，获得大量物理研究。320–360天后 9010“谜团重现”：信号点名第二位领袖。/ 9005: the science ship vanishes with its scientist, leaving a large physics reward.";
+  const [zh, en] = splitMixed(line);
+  assert.match(zh, /谜团重现.*第二位领袖。$/);
+  assert.match(en, /^9005: the science ship/);
+  assert.equal(splitMixed("约320–360天后 9010“谜团重现”：信号点名第二位领袖。"), null);
+  assert.deepEqual(splitMixed("275只在缺少推进器2科技时出现。   275 only appears when the empire lacks Thrusters II."), ["275只在缺少推进器2科技时出现。", "275 only appears when the empire lacks Thrusters II."]);
+  assert.equal(splitMixed("信号点名第二位领袖。 9010“谜团重现”：再过 30 天出发。"), null);
+  // A bold lead naming the item in both languages belongs to both halves.
+  const h = renderMarkdown(`1. **第一位领袖消失 The first leader is lost.** ${line}`);
+  assert.match(h, /<strong><span[^>]*data-lang="zh">第一位领袖消失<\/span> <span[^>]*data-lang="en">The first leader is lost\.<\/span><\/strong>/);
+  assert.match(h, /data-lang="en">9005: the science ship/);
+  assert.doesNotMatch(h.slice(h.lastIndexOf('data-lang="en"')), /科研船/);
+});
+

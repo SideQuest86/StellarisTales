@@ -18,6 +18,14 @@
   src: local("Segoe UI"), local("Helvetica Neue"), local("Arial");
   size-adjust: 104%;
 }
+/* English pages: curly quotes and apostrophes in the sans come from the system's Latin face, not Noto Sans SC, whose ’ is
+   a wide CJK form ("I’ m Through" on the story map and in the guides). Chinese pages keep their full-width quotes. */
+@font-face {
+  font-family: "ST Latin Quotes";
+  src: local("Segoe UI"), local("Helvetica Neue"), local("Roboto"), local("Arial");
+  unicode-range: U+2018-2019, U+201C-201D;
+  size-adjust: 104%;
+}
 
 :root {
   --bg: #08151a;
@@ -75,6 +83,8 @@
   text-spacing-trim: space-first;
 }
 :root:lang(en) {
+  --font-ui: "ST Latin Quotes", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "ST Sans Fallback", system-ui, sans-serif;
+  --sans: var(--font-ui);
   --font-title: var(--serif-en);
   --font-body: var(--serif-en);
   --serif: var(--serif-en);

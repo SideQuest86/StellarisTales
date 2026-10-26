@@ -52,14 +52,19 @@ export function splitMixed(text) {
   const s = String(text);
   if (!hasCJK(s) || !/[A-Za-z]{3}/.test(s)) return null;
   // The English half may start with bold/italic markers ("…）。 **Five chained sites**: …").
-  // … or follow a slash ("…。 / The first option …").
-  const re = /(?<=[㐀-鿿豈-﫿。！？）；：*])\s*(?:\/\s*)?(?=\*{0,2}(?:[A-Za-z"“(\[]|\d+'s))/g;
+  // … or follow a slash ("…。 / The first option …"), and after a slash it may open with an event number ("…。/ 9005: the
+  // science ship …"; without the slash a number belongs to the Chinese sentence: "320–360天后 9010“谜团重现”").
+  const re = /(?<=[㐀-鿿豈-﫿。！？）；：*])\s*(?:\/\s*)?(?=\*{0,2}(?:[A-Za-z"“(\[]|\d))/g;
   let m;
   while ((m = re.exec(s))) {
     if (!m[0]) re.lastIndex++; // zero-width match: step on
     if (!m.index) continue;
     const head = s.slice(0, m.index).trim();
     const tail = s.slice(m.index + m[0].length).trim();
+    // (or after a Chinese full stop and a space: "…出现。   275 only appears when …"; the checks below still require an
+    // English tail, so "。9010“谜团重现”…" stays whole)
+    const afterStop = "。！？".includes(s[m.index - 1]) && /\s/.test(m[0]);
+    if (/^\*{0,2}\d/.test(tail) && !/^\*{0,2}\d+'s/.test(tail) && !m[0].includes("/") && !afterStop) continue;
     const latin = (tail.match(/[A-Za-z]/g) || []).length;
     const cjk = (tail.match(CJK_RE) || []).length;
     // The English half must be (nearly) free of Chinese: an English name inside the Chinese sentence ("：Ex Gravitas（1200 → …）
@@ -69,9 +74,19 @@ export function splitMixed(text) {
   return null;
 }
 
-const bilingual = (text, lead = "") => {
-  const parts = splitMixed(text);
-  if (!parts) return null;
+const HEADING_PAIR = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)(?:\s*[/|｜·]\s*|\s+)([A-Za-z][^㐀-鿿]*)$/;
+const bilingual = (text) => {
+  // A bold lead that names the item in both languages ("**第一位领袖消失 The first leader is lost.** 9005：… / 9005: …")
+  // belongs to both halves: it is split like a heading, the rest of the line as usual.
+  let lead = "", body = text;
+  const bold = /^\*\*([^*]+)\*\*\s*/.exec(text);
+  const pair = bold && HEADING_PAIR.exec(bold[1].trim());
+  if (pair) {
+    lead = `<strong><span lang="zh-CN" data-lang="zh">${inline(pair[1])}</span> <span lang="en" data-lang="en">${inline(pair[2])}</span></strong> `;
+    body = text.slice(bold[0].length);
+  }
+  const parts = splitMixed(body);
+  if (!parts) return lead ? lead + inline(body) : null;
   return `${lead}<span lang="zh-CN" data-lang="zh">${inline(parts[0])}</span> <span lang="en" data-lang="en">${inline(parts[1])}</span>`;
 };
 
@@ -96,7 +111,7 @@ export function renderMarkdown(md, opts = {}) {
       if (reviewDepth && m[1].length <= reviewDepth) { out = main; reviewDepth = 0; }
       // "如何开始 How it starts", "强制重置 / Forced Reset": the separator between the halves belongs to neither.
       // (No space is needed before the separator after a full-width bracket: "（第 0–1095 天）/ The storm".)
-      const parts = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)(?:\s*[/|｜·]\s*|\s+)([A-Za-z][^㐀-鿿]*)$/.exec(m[2]);
+      const parts = HEADING_PAIR.exec(m[2]);
       out.push(parts
         ? `<h${level} class="md-block" data-mixed="1"><span lang="zh-CN" data-lang="zh">${inline(parts[1])}</span> <span lang="en" data-lang="en">${inline(parts[2])}</span></h${level}>`
         : `<h${level} class="md-block"${langAttr(m[2])} data-mixed="1">${inline(m[2])}</h${level}>`);
