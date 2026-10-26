@@ -115,6 +115,10 @@ function proseWith(s, chapterNames) {
     .replace(/§./g, "").replace(/£([^£]+)£/g, "").replace(/<[^>]*>/g, "");
   return text.replace(/[^]*/g, "").replace(//g, "").replace(//g, "");
 }
+// A title outside the open chapter (captions, slates, lists, links): the game's names filled in with that story's or
+// chapter's own wording, not the open chapter's. A story's title uses its index entry's reviewed `names`.
+const titleWith = (title, chapterNames) => typeset(proseWith(local(title), chapterNames));
+const storyName = (s) => { const entry = storyById.get(s?.id) || s; return titleWith(entry?.title, entry?.names); };
 // A short first line that starts with a hyphen ("-警告：具有挑战性的起源") is typeset as a line of its own (.lead-line), words and
 // hyphen kept; the text below it follows as a paragraph.
 const paragraph = (s) => {
@@ -219,7 +223,7 @@ function showSelection(story, column, index) {
   $("#chapter-count").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
   readMark(story);
   storySpecimens(story);
-  $("#selected-title").textContent = prose(local(story.title));
+  $("#selected-title").textContent = storyName(story);
   showExcerpt(story);
   $("#story-number").textContent = String(index + 1).padStart(2, "0");
   $("#story-total").textContent = `/ ${columns[column].stories.length}`;
@@ -373,7 +377,7 @@ function renderContinue() {
   const last = pendingProgress.state.trail.at(-1);
   const story = pendingProgress.stories.get(last.story);
   const doc = story.chapters.find((c) => c.id === last.chapter);
-  const storyTitle = prose(local(story.story.title)), docTitle = prose(local(doc.title)) || T("插曲", "Interlude");
+  const storyTitle = storyName(story.story), docTitle = titleWith(doc.title, doc.names) || T("插曲", "Interlude");
   const label = docTitle === storyTitle ? storyTitle : `${storyTitle} · ${docTitle}`;
   box.querySelector("[data-continue]").innerHTML = `<span>${esc(T("继续阅读", "Continue reading"))}</span><small>${esc(label)}</small>`;
   box.querySelector("[data-restart]").textContent = T("重新开始", "Start over");
@@ -607,9 +611,9 @@ async function goChapter(id, storyId, back = false, sets = null) {
 }
 function titleFor(id, storyId) {
   const c = docMap.get(id);
-  if (c) return prose(local(c.title)) || T("篇章", "Chapter");
+  if (c) return titleWith(c.title, c.names) || T("篇章", "Chapter");
   const other = storyById.get(storyId || recordToStory[id]);
-  return other ? prose(local(other.title)) : T("继续", "Continue");
+  return other ? storyName(other) : T("继续", "Continue");
 }
 function delayText(delays) {
   if (!delays?.length) return "";
@@ -651,7 +655,7 @@ function endingNext(story) {
   const next = at >= 0 ? col.stories[at + 1] : null;
   if (!next) return "";
   const art = next.image ? `<img class="next-art" data-src="${asset(next.image)}" alt="" decoding="async">` : "";
-  return `<button class="next-chapter ending-next${art ? " has-art" : ""}" data-open="${esc(next.id)}"><span class="next-text"><small>${esc(T("下一则故事", "Next story"))}</small><span class="next-title">${esc(prose(local(next.title)))}</span></span>${art}<b aria-hidden="true">→</b></button>`;
+  return `<button class="next-chapter ending-next${art ? " has-art" : ""}" data-open="${esc(next.id)}"><span class="next-text"><small>${esc(T("下一则故事", "Next story"))}</small><span class="next-title">${esc(storyName(next))}</span></span>${art}<b aria-hidden="true">→</b></button>`;
 }
 // The picture of the document a card leads to (or the other story's cover), when it differs from the current one.
 function edgeArt(e) {
@@ -883,7 +887,7 @@ function renderChapter(preservePosition = false) {
     })];
     if (dialogueStep<steps.length-1) r.next=[];
   }
-  if (!prewarming) scene?.setChapterArt(chapter.image, chapter.title);
+  if (!prewarming) scene?.setChapterArt(chapter.image, chapter.title, { heading: prose(local(chapter.title)) });
   // Scroll offsets come from the passive scroll listener: reading or writing scrollTop here would force a
   // synchronous layout of the half-built reader (a second full layout in the opening frame).
   const scrollPosition = panelScroll;
@@ -897,7 +901,7 @@ function renderChapter(preservePosition = false) {
       ) === i,
   );
   const story = dossier.story;
-  $("#dossier-title").textContent = prose(local(story.title));
+  $("#dossier-title").textContent = storyName(story);
   $("#dossier-size").textContent = T(`${story.chapters} 篇`, `${story.chapters} ${story.chapters === 1 ? "chapter" : "chapters"}`);
   const readable = dossier.chapters;
   const node = treeNodeFor(r.id);
@@ -966,7 +970,7 @@ function renderChapter(preservePosition = false) {
   const unreachable = chapter.unreachable ? reviewNote(T("审阅结论 · 原版脚本中无法自然触发", "Review finding · not reachable in the shipped script"), chapter.unreachable, " unreachable-note") : "";
   const notes = unreachable + (chapter.notes || []).map((n) => reviewNote(T("审阅注释 · 非游戏原文", "Reviewer note · not game text"), n)).join("");
   const alsoIn = (chapter.alsoIn || []).filter((id) => storyById.has(id));
-  const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此篇章也出现在：", "This chapter also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
+  const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此篇章也出现在：", "This chapter also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(storyName(storyById.get(id)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
     `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}">${trail.length > 1 ? `<div class="reader-trail"><button id="reading-back">${esc(T("← 上一步", "← Back"))}</button>${fromChip()}<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button></div>` : ""}<div class="chapter-eyebrow"><span>${esc(caption)}</span></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${profileSummary(/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] && !/\[[^\]]*\]|\$[^$]*\$/.test(r.title[lang === "zh" ? "en" : "zh"]) /* a title with a name the game fills in would read as a fragment ("WE, THE") */ ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : "")}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol" aria-hidden="true">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b aria-hidden="true">→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${continuation ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${continuation}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
@@ -1095,7 +1099,7 @@ function renderChapter(preservePosition = false) {
   const address = `#story=${encodeURIComponent(story.id)}&chapter=${encodeURIComponent(r.id)}`;
   if (freshOpen && !/^#(story|record)=/.test(location.hash)) history.pushState({ reader: 1 }, "", address);
   else history.replaceState(history.state, "", address);
-  document.title = prose(local(story.title)) + " · Stellaris Tales";
+  document.title = storyName(story) + " · Stellaris Tales";
   if (!reduced() && chapterChanged)
     $(".chapter-document").animate(
       [
@@ -1150,7 +1154,7 @@ function renderChrome() {
 // open of the dialog; if it cannot load, the dialog falls back to the title/excerpt filter below.
 function storyRowHtml(s, chip = "", extra = "") {
   const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${chip}${esc(T(`${s.chapters} 篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
+  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${chip}${esc(T(`${s.chapters} 篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
 }
 // The pager only shows when there is more than one page of results.
 function pager(page, pages) {
@@ -1215,7 +1219,7 @@ function renderSearch() {
       .map(
         (s) => {
           const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(prose(local(s.title)))}</b><small>${esc(T(`${s.chapters} 篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
+          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${esc(T(`${s.chapters} 篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
         },
       )
       .join("") || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
@@ -1448,7 +1452,7 @@ async function showEffects(story, docId, choices) {
 function fromChip() {
   const prev = trail.length > 1 && trail.at(-2).story !== trail.at(-1).story ? storyById.get(trail.at(-2).story) : null;
   if (!prev) return "";
-  const title = prose(local(prev.title));
+  const title = storyName(prev);
   return `<button class="from-chip" id="from-story" type="button" title="${esc(title)}">${esc(T(`来自《${title}》`, `From “${title}”`))}</button>`;
 }
 // Specimens a story can award (museum/by-story.json): up to four icons on the archive panel, each opening its exhibit.
@@ -1472,8 +1476,8 @@ function storySpecimens(story) {
 // Guide ids -> chapter buttons (src/guide-links.js); ids of other stories resolve through records.json when it loads.
 function linkGuideDocs(root, story, chapters) {
   const run = () => linkGuide(root, {
-    storyId: story.id, chapters, title: (c) => prose(local(c?.title)),
-    other: (id) => { const sid = recordToStory?.[id]; const s = sid && sid !== story.id && storyById.get(sid); return s ? { story: sid, label: prose(local(s.title)) } : null; },
+    storyId: story.id, chapters, title: (c) => titleWith(c?.title, c?.names),
+    other: (id) => { const sid = recordToStory?.[id]; const s = sid && sid !== story.id && storyById.get(sid); return s ? { story: sid, label: storyName(s) } : null; },
   });
   loadRecords().then(run, run);
 }
@@ -1602,6 +1606,8 @@ try {
   try {
     if (sceneError) throw sceneError;
     scene = sceneEarly;
+    // Slates for stories without a picture set the title as the caption does ("Victory against the other empire").
+    scene.storyTitle = (s, l) => (l === lang ? storyName(s) : "");
     scene.setColumns(columns);
     window.__archiveDiagnostics = () => scene.diagnostics();
     // Integrated or software adapter: dismissible notice on how to move the browser to the discrete GPU.

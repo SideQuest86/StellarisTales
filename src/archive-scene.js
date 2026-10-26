@@ -451,8 +451,14 @@ export class ArchiveScene {
     const index = wrap(lane, this.columns.length);
     return (entry[which] = {
       key: `title:${story.id}:${this.lang}`,
-      source: { title: slateTitle(story.title, this.lang) || t("cat.fallback", null, this.lang), kicker: kickerOf(this.columns[index], this.lang), lang: this.lang, tint: TINTS[index % TINTS.length] },
+      source: { title: this.slateText(story, this.lang) || t("cat.fallback", null, this.lang), kicker: kickerOf(this.columns[index], this.lang), lang: this.lang, tint: TINTS[index % TINTS.length] },
     });
+  }
+  /** A story's slate title: the app's display wording (`storyTitle`: the game's names filled in, typeset) when it has one
+   *  for this language, else the data title with its placeholders elided. */
+  slateText(story, lang) {
+    const shown = this.storyTitle?.(story, lang);
+    return slateTitle(shown ? { [lang]: shown } : story.title, lang);
   }
   setSelection(lane, row) {
     if (this.selection.lane === lane && this.selection.row === row) return;
@@ -534,8 +540,9 @@ export class ArchiveScene {
   setChapterArt(image, title, meta = {}) {
     const lang = pageLanguage();
     const story = this.current;
-    // Without a picture the face carries a typographic slate (cover-atlas.js): the chapter's title, else the story's.
-    const text = slateTitle(title, lang) || slateTitle(story.title, lang) || t("cat.fallback", null, lang);
+    // Without a picture the face carries a typographic slate (cover-atlas.js): the chapter's title as the reader sets it
+    // (meta.heading: the game's names filled in), else the chapter's data title, else the story's.
+    const text = slateTitle({ [lang]: meta.heading }, lang) || slateTitle(title, lang) || this.slateText(story, lang) || t("cat.fallback", null, lang);
     const source = image || story.image || null;
     // Keyed by doc identity (both languages), so history survives a language switch.
     const key = `${source}|${title?.zh || ""}|${title?.en || ""}`;

@@ -1,6 +1,6 @@
 {
-  "base": "http://127.0.0.1:4171/",
-  "startedAt": "2026-10-20T07:29:33.579Z",
+  "base": "http://127.0.0.1:4161/",
+  "startedAt": "2026-10-26T05:40:08.388Z",
   "runs": [
     {
       "name": "discrete",
@@ -9,14 +9,14 @@
       "kind": "discrete",
       "tier": "high",
       "forced": null,
-      "probeMs": 5.4,
+      "probeMs": 71.4,
       "pixelRatio": 1,
       "maxPixelRatio": 1,
       "antialias": true,
       "idleFramesIn2s": 0,
-      "breathingFps": 170.33333333333334,
-      "breathingStopsAfterS": 6.1,
-      "motionFps": 167.3,
+      "breathingFps": 171,
+      "breathingStopsAfterS": 6,
+      "motionFps": 169.6,
       "hiddenFramesIn1500ms": 0,
       "museumFramesIn1500ms": 0,
       "reducedHoverFrames": 0
@@ -28,21 +28,21 @@
       "kind": "integrated",
       "tier": "low",
       "forced": null,
-      "probeMs": 10.2,
+      "probeMs": 43.4,
       "pixelRatio": 1,
       "maxPixelRatio": 1,
       "antialias": false,
       "idleFramesIn2s": 0,
       "breathingFps": 34.333333333333336,
-      "breathingStopsAfterS": 6.1,
-      "motionFps": 56,
+      "breathingStopsAfterS": 6,
+      "motionFps": 56.5,
       "hiddenFramesIn1500ms": 0,
       "museumFramesIn1500ms": 0,
       "hintCollapsedBox": {
-        "x": 1072.0625,
+        "x": 1404.0625,
         "y": 96,
-        "width": 360,
-        "height": 68
+        "width": 28,
+        "height": 28
       },
       "hintZh": "正在使用集成显卡\n×\n已改用省电画质 · 如何改用独立显卡？\nIntel(R) Graphics\n\n浏览器正在用集成显卡绘制本页，已自动改用省电画质。若电脑有独立显卡（如 NVIDIA GeForce RTX），可让浏览器改用它：\n\nWindows：设置 → 系统 → 屏幕 → 显示卡，在“应用的自定义选项”中选择浏览器，将 GPU 首选项设为“高性能”，然后重启浏览器。\n或在 Chrome / Edge 地址栏打开下面的地址，把“Force High Performance GPU”设为“已启用”（Enabled）并重启浏览器（耗电会增加）： chrome://flags/#force-high-performance-gpu",
       "hintEn": "Running on integrated graphics\n×\nLighter mode is on · How to use the discrete GPU?\nIntel(R) Graphics\n\nYour browser is using integrated graphics, so a lighter mode is on. If this computer has a discrete GPU (such as an NVIDIA GeForce RTX), you can switch the browser to it:\n\nWindows: Settings → System → Display → Graphics. Under \"Custom options for apps\" pick your browser, set its GPU preference to \"High performance\", then restart the browser.\nOr open this address in Chrome / Edge, set \"Force High Performance GPU\" to Enabled and relaunch (uses more battery): chrome://flags/#force-high-performance-gpu",
@@ -51,7 +51,7 @@
         "x": 16,
         "y": 120,
         "width": 358,
-        "height": 68
+        "height": 72
       },
       "reducedHoverFrames": 0
     },
@@ -62,21 +62,21 @@
       "kind": "integrated",
       "tier": "low",
       "forced": "integrated",
-      "probeMs": 6.1,
+      "probeMs": 82.4,
       "pixelRatio": 1,
       "maxPixelRatio": 1,
       "antialias": false,
       "idleFramesIn2s": 0,
-      "breathingFps": 34.333333333333336,
+      "breathingFps": 34,
       "breathingStopsAfterS": 6.1,
-      "motionFps": 56.1,
+      "motionFps": 56.6,
       "hiddenFramesIn1500ms": 0,
       "museumFramesIn1500ms": 0,
       "hintCollapsedBox": {
-        "x": 1072.0625,
+        "x": 1404.0625,
         "y": 96,
-        "width": 360,
-        "height": 68
+        "width": 28,
+        "height": 28
       },
       "hintZh": "正在使用集成显卡\n×\n已改用省电画质 · 如何改用独立显卡？\nNVIDIA GeForce RTX 5070 Laptop GPU\n\n浏览器正在用集成显卡绘制本页，已自动改用省电画质。若电脑有独立显卡（如 NVIDIA GeForce RTX），可让浏览器改用它：\n\nWindows：设置 → 系统 → 屏幕 → 显示卡，在“应用的自定义选项”中选择浏览器，将 GPU 首选项设为“高性能”，然后重启浏览器。\n或在 Chrome / Edge 地址栏打开下面的地址，把“Force High Performance GPU”设为“已启用”（Enabled）并重启浏览器（耗电会增加）： chrome://flags/#force-high-performance-gpu",
       "hintEn": "Running on integrated graphics\n×\nLighter mode is on · How to use the discrete GPU?\nNVIDIA GeForce RTX 5070 Laptop GPU\n\nYour browser is using integrated graphics, so a lighter mode is on. If this computer has a discrete GPU (such as an NVIDIA GeForce RTX), you can switch the browser to it:\n\nWindows: Settings → System → Display → Graphics. Under \"Custom options for apps\" pick your browser, set its GPU preference to \"High performance\", then restart the browser.\nOr open this address in Chrome / Edge, set \"Force High Performance GPU\" to Enabled and relaunch (uses more battery): chrome://flags/#force-high-performance-gpu",
@@ -85,7 +85,7 @@
         "x": 16,
         "y": 120,
         "width": 358,
-        "height": 68
+        "height": 72
       },
       "reducedHoverFrames": 0
     },
@@ -96,21 +96,21 @@
       "kind": "software",
       "tier": "minimal",
       "forced": "software",
-      "probeMs": 8.4,
+      "probeMs": 64.1,
       "pixelRatio": 1,
       "maxPixelRatio": 1,
       "antialias": false,
       "idleFramesIn2s": 0,
       "breathingFps": 0,
       "breathingStopsAfterS": 0,
-      "motionFps": 33.5,
+      "motionFps": 34.9,
       "hiddenFramesIn1500ms": 0,
       "museumFramesIn1500ms": 0,
       "hintCollapsedBox": {
-        "x": 1072.0625,
+        "x": 1404.0625,
         "y": 96,
-        "width": 360,
-        "height": 68
+        "width": 28,
+        "height": 28
       },
       "hintZh": "显卡加速不可用\n×\n已改用最低画质 · 如何开启图形加速？\nNVIDIA GeForce RTX 5070 Laptop GPU\n\n浏览器正在以软件方式绘制本页，已改用最低画质。可在浏览器设置的“系统”页开启硬件加速，然后重启浏览器。",
       "hintEn": "No graphics acceleration\n×\nLightest mode is on · How to turn on acceleration?\nNVIDIA GeForce RTX 5070 Laptop GPU\n\nYour browser is drawing this page in software, so the lightest mode is on. Turn on hardware acceleration in the browser's System settings, then restart.",
@@ -119,7 +119,7 @@
         "x": 16,
         "y": 120,
         "width": 358,
-        "height": 68
+        "height": 72
       },
       "reducedHoverFrames": 0
     }
@@ -145,19 +145,19 @@
       "run": "discrete",
       "name": "breathing frame rate (cap high)",
       "ok": true,
-      "detail": 170.3
+      "detail": 171
     },
     {
       "run": "discrete",
       "name": "breathing fades and the loop stops",
       "ok": true,
-      "detail": 6.1
+      "detail": 6
     },
     {
       "run": "discrete",
       "name": "motion frame rate",
       "ok": true,
-      "detail": 167.3
+      "detail": 169.6
     },
     {
       "run": "discrete",
@@ -224,13 +224,13 @@
       "run": "integrated",
       "name": "breathing fades and the loop stops",
       "ok": true,
-      "detail": 6.1
+      "detail": 6
     },
     {
       "run": "integrated",
       "name": "motion frame rate",
       "ok": true,
-      "detail": 56
+      "detail": 56.5
     },
     {
       "run": "integrated",
@@ -271,10 +271,10 @@
       "ok": true,
       "detail": {
         "hint": {
-          "x": 1072.0625,
+          "x": 1404.0625,
           "y": 96,
-          "width": 360,
-          "height": 68
+          "width": 28,
+          "height": 28
         },
         "selectionTop": 328.6875
       }
@@ -312,7 +312,7 @@
           "x": 16,
           "y": 120,
           "width": 358,
-          "height": 68
+          "height": 72
         },
         "categoriesBottom": 92
       }
@@ -343,7 +343,7 @@
       "run": "fake-integrated",
       "name": "breathing frame rate (cap low)",
       "ok": true,
-      "detail": 34.3
+      "detail": 34
     },
     {
       "run": "fake-integrated",
@@ -355,7 +355,7 @@
       "run": "fake-integrated",
       "name": "motion frame rate",
       "ok": true,
-      "detail": 56.1
+      "detail": 56.6
     },
     {
       "run": "fake-integrated",
@@ -396,10 +396,10 @@
       "ok": true,
       "detail": {
         "hint": {
-          "x": 1072.0625,
+          "x": 1404.0625,
           "y": 96,
-          "width": 360,
-          "height": 68
+          "width": 28,
+          "height": 28
         },
         "selectionTop": 328.6875
       }
@@ -437,7 +437,7 @@
           "x": 16,
           "y": 120,
           "width": 358,
-          "height": 68
+          "height": 72
         },
         "categoriesBottom": 92
       }
@@ -480,7 +480,7 @@
       "run": "fake-software",
       "name": "motion frame rate",
       "ok": true,
-      "detail": 33.5
+      "detail": 34.9
     },
     {
       "run": "fake-software",
@@ -521,10 +521,10 @@
       "ok": true,
       "detail": {
         "hint": {
-          "x": 1072.0625,
+          "x": 1404.0625,
           "y": 96,
-          "width": 360,
-          "height": 68
+          "width": 28,
+          "height": 28
         },
         "selectionTop": 328.6875
       }
@@ -562,7 +562,7 @@
           "x": 16,
           "y": 120,
           "width": 358,
-          "height": 68
+          "height": 72
         },
         "categoriesBottom": 92
       }
@@ -575,6 +575,6 @@
     }
   ],
   "errors": [],
-  "finishedAt": "2026-10-20T07:32:28.123Z",
+  "finishedAt": "2026-10-26T05:43:05.323Z",
   "knownErrors": []
 }

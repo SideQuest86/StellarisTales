@@ -119,6 +119,14 @@ async function run(name, { force, query = "", expect }) {
 
   // Graphics notice: shown only for integrated / software adapters, bilingual, dismissible, remembered.
   const hint = page.locator("#gpu-hint");
+  // The notice folds into its "i" chip a few seconds after it appears (src/gpu.js): open it from the chip first.
+  const openHint = async () => {
+    if (await hint.evaluate((h) => h.classList.contains("is-chip"))) {
+      await hint.locator(".gpu-hint-chip").click();
+      await page.waitForFunction(() => document.querySelector("#gpu-hint.show:not(.is-chip)"), null, { timeout: 3000 });
+    }
+    await hint.locator("summary").click();
+  };
   const shown = await hint.isVisible().catch(() => false);
   check(name, "notice shown only where it helps", shown === expect.hint, shown);
   if (shown) {
@@ -126,7 +134,7 @@ async function run(name, { force, query = "", expect }) {
     const selection = await page.locator(".selection").boundingBox();
     check(name, "collapsed notice clears the selected story", result.hintCollapsedBox.y + result.hintCollapsedBox.height < selection.y, { hint: result.hintCollapsedBox, selectionTop: selection.y });
     await page.screenshot({ path: `${out}/hint-${name}-collapsed.png` });
-    await hint.locator("summary").click();
+    await openHint();
     result.hintZh = (await hint.innerText()).trim();
     await page.screenshot({ path: `${out}/hint-${name}-zh.png` });
     await page.locator("#language").click();
@@ -160,7 +168,7 @@ async function run(name, { force, query = "", expect }) {
     const catalogue = await page.locator("#categories").boundingBox();
     check(name, "notice fits a 390 px window below the categories", box && box.x >= 0 && box.x + box.width <= 390 && box.y >= catalogue.y + catalogue.height, { box, categoriesBottom: catalogue.y + catalogue.height });
     await page.screenshot({ path: `${out}/hint-${name}-390.png` });
-    await page.locator("#gpu-hint summary").click();
+    await openHint();
     await page.screenshot({ path: `${out}/hint-${name}-390-open.png` });
     await page.locator(".gpu-hint-close").click();
   }

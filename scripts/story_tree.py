@@ -1088,6 +1088,16 @@ class Compiler:
                     names = self.reviewed_names(fragment, rid, c.get('names') or {}, used)
                     if names:
                         chapters[rid] = {**c, 'names': names}
+            # The title's placeholders in the chapters' reviewed wording (index only), so a caption, slate or list outside
+            # the story reads "Victory against the other empire" (app.js storyName), not the engine fallback "this name".
+            title_names = {}
+            for key in sorted(set(PLACEHOLDER.findall(' '.join(title.values())))):
+                own = next((chapters[d]['names'][key] for d in [start, *ordered_docs]
+                            if d in chapters and key in (chapters[d].get('names') or {})), None)
+                if own and not own.get('default'):
+                    title_names[key] = {k: v for k, v in own.items() if k != 'note'}
+            if title_names:
+                entry['names'] = title_names
             details[sid] = {'story': story, 'chapters': [chapters[d] for d in ordered_docs]}
             stories.append(entry)
         for sid, d in details.items():
@@ -1270,7 +1280,8 @@ class Compiler:
         stories.sort(key=lambda s: (s['kind'] not in ('origin', 'family'), -s['chapters'], s['id']))
         # The catalogue needs only identities and art at first paint; excerpts and the record map load later.
         dump(out / 'index.json', {'version': 4, 'gameVersion': self.version,
-                                  'stories': [{k: v for k, v in s.items() if k != 'excerpt'} for s in stories]})
+                                  'stories': [{k: self.expand_refs(v) if k == 'names' else v for k, v in s.items() if k != 'excerpt'}
+                                              for s in stories]})
         dump(out / 'excerpts.json', {s['id']: self.expand_refs(s['excerpt']) for s in stories})
         dump(out / 'records.json', mapping)
         dump(out / 'names.json', self.expand_refs(self.compile_names()))
