@@ -1,3 +1,8 @@
+v4.12.9 — 2026-10-26
+
+Publishing only: the release gate's "closing while a story is still downloading" check waits until the download has
+started before pressing Escape (a busy runner failed it once, holding back v4.12.8, which this release publishes).
+
 v4.12.8 — 2026-10-26
 
 Grand Archive exhibits: "3D model / Original image / Reset" are quiet italic words on the stage instead of boxed buttons,

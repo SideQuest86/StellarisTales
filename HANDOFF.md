@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.12.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.12.9 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -109,6 +109,14 @@ evidence from earlier rounds and is not updated.
   Checks: node 125/125, smoke 15/15, verify-reader-v4, -refine-audio, -a11y, -refine-reader; verify-gpu forced cases pass
   (its real-adapter case depends on which GPU headless Chrome is given). Screens: verification/round6/quiet/.
   Live 2026-10-26 06:08 UTC: Publish + Archive CI green on b9b6de3e; scripts/smoke.mjs against the live site 15/15.
+  v4.12.1-v4.12.9 (2026-10-26, same direction): italic parallel title (.reader-subtitle) and quiet empire-profile toggle;
+  no empty band under a wordless choice (.choice-response:empty); number-key hint on keyboard focus only; next-story card
+  and route notes as italic ruled lines; masthead without per-category counts (centred labels); museum filters stay in
+  rows with an exhibit open, shorter search hint; guide headings "中文 / English" drop the slash (markdown.js); player at
+  60% while a story is open; longer fade under the reader toolbar and at the map card's edges; readable continuation
+  conditions; italic search match notes; dim reader language switch; museum view toggles as italic words, "While
+  exhibited" as an italic section line. Tried and reverted: typeset() in guides (the CJK-first sans draws curly quotes
+  full-width). smoke.mjs: the download-cancel check waits for the request (CI flake on bcde69d0).
   The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
 - Live: v4.10.0 (`378d14b5`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15.
 - Live: v4.9.0 (`654a79dc`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15 (one transient failure right after deploy, re-run clean), /fonts/*.woff2 served.

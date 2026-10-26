@@ -198,13 +198,17 @@ await check("closing while a story is still downloading cancels it; browser Back
   const run = await open();
   try {
     const { page } = run;
-    await page.route("**/stories/cybrex.json", async (route) => { await new Promise((r) => setTimeout(r, 2000)); await route.continue(); });
+    let requested;
+    const inFlight = new Promise((resolve) => (requested = resolve));
+    await page.route("**/stories/cybrex.json", async (route) => { requested(); await new Promise((r) => setTimeout(r, 2000)); await route.continue(); });
     await page.goto(base, { waitUntil: "domcontentloaded" });
     await page.waitForSelector("#open-story");
     // The app must be running (index loaded) — on a slow CI runner an Escape before that has nothing to cancel yet.
     await page.waitForFunction(() => document.querySelector("#selected-title")?.textContent.trim(), null, { timeout: 30000 });
     await page.evaluate(() => { location.hash = "story=cybrex"; });
-    await page.waitForTimeout(300);
+    // Escape while the story's download is in flight: a fixed 300 ms could still fall before it started on a busy runner.
+    await Promise.race([inFlight, page.waitForTimeout(10000)]);
+    await page.waitForTimeout(150);
     await page.keyboard.press("Escape");
     await page.waitForTimeout(3000);
     assert.ok(await page.locator("#reader").evaluate((r) => r.hidden || r.classList.contains("prewarm")), "the reader opened after Escape");
