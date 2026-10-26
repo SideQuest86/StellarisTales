@@ -690,6 +690,18 @@ export class ArchiveScene {
     const story = this.current;
     const cover = this.cover(story, this.selection.lane);
     const tile = this.coverAtlas.get(cover.key, cover.source, true, this.tileOut);
+    // The selected card's picture arriving after its slab (a first visit, a cold cache) develops through the frosted
+    // reveal from the plain face, instead of popping in. Only when no reveal is running and motion is allowed.
+    const to = this.reveal.toInfo.value;
+    if (!this.developing && to.x > 0.5 && to.y < 0.5 && tile[4] > 0.5 && this.art.progress >= 1 && !this.reduced()) {
+      this.developing = true;
+      this.setFaceSide("from", { texture: this.snapshot() });
+      this.reveal.revealDir.value = 1;
+      this.art.progress = 0;
+      this.art.duration = 1.1;
+      this.reveal.revealProgress.value = 0;
+      this.developing = false;
+    }
     for (const side of ["from", "to"]) {
       if (this.reveal[`${side}Info`].value.x < 0.5) continue;
       this.reveal[`${side}Cover`].value.set(tile[0], tile[1], tile[2], tile[3]);

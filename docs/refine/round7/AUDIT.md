@@ -157,3 +157,8 @@ layout's selection stack reached into the category rail at every height up to 40
 teaser; the phone one now does too, with a 24 px title, and below 340 px the eyebrow that repeats the rail's active tab), and the
 short desktop layout's fixed card span let the card run 10-12 px off the left at aspects below 2 (now max(7.6, 15.5 / aspect),
 unchanged from aspect 2.04 up). After: 0 of 20 problems; the card-fit sizes identical.
+
+First paint (v4.17.13): the journey judges' 'blank slabs, then it pops in' was rejected for the wall's deliberate late load, but the
+selected card's own cover did switch from its plain face to the art in one frame. refreshActiveCover now starts the frosted reveal
+from a snapshot of the plain face when that tile first becomes ready (tier 0 -> 1) and no reveal is running; checked with the
+cover delayed 2.5 s (scratchpad develop-probe.mjs): reveal 0 -> 1 over 1.1 s; none with reduced motion.
