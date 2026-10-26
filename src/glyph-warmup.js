@@ -2,8 +2,11 @@
 // 0.04 ms (font subset lookup, shaping, glyph metrics); later layouts of the same character are nearly free. A story's
 // first chapter has hundreds of distinct characters, so opening the first story used to block one frame for 40–60 ms.
 // During idle time this lays out the archive's most frequent characters (stories/glyphs.json, written by the
-// compiler) in the reader's main faces, a few dozen characters per idle slice, after the matching font subsets have
-// loaded. Skipped when the browser asks to save data.
+// compiler) in the reader's main faces, a few dozen characters per idle slice, after the matching font files have
+// loaded. The Chinese faces are self-hosted (public/fonts, @font-face in src/fonts.css), cut into three unicode-range tiers
+// per face: tier 1 holds ASCII, the interface's characters and the first ~1,000 glyphs.json entries, tier 2 the rest of the
+// 3,500 most frequent characters, tier 3 the rare ones (names, effect labels). So `document.fonts.load()` for the first
+// 600–1,000 glyphs fetches one file per face and for 3,000 glyphs two. Skipped when the browser asks to save data.
 const FACES = [
   { font: "400 19px var(--serif-zh)", count: 3000 }, // narrative
   { font: "400 17px var(--serif-zh)", count: 3000 }, // choices
@@ -17,10 +20,10 @@ const FACES = [
   { font: "400 11px var(--sans)", count: 800 }, // story map: captions
 ];
 // ---------------------------------------------------------------------------------------------------------------
-// Rare characters live in font slices the warm-up above does not fetch. A slice that arrives after the page was laid
-// out re-lays out every text on the page ("fonts changed": a 40–70 ms frame, seen on 8 of 12 stories opened in a
-// session), so the slices a story needs are requested before its first layout; openStory / goChapter wait for them
-// for at most 150 ms, the story map for at most 600 ms (a slow link falls back to the usual swap).
+// Tier 2 of the faces the warm-up lays out in only up to 1,000 glyphs, and tier 3 of every face, are files the warm-up above
+// does not fetch. A font file that arrives after the page was laid out re-lays out every text on the page ("fonts changed":
+// a 40–70 ms frame), so the files a story needs are requested before its first layout; openStory / goChapter wait for
+// them for at most 150 ms, the story map for at most 600 ms (a slow link falls back to the usual swap).
 /** The Chinese strings of a value ({zh, en} pairs anywhere inside), each cut to `max` characters. */
 export function zhStrings(value, max = 400, out = [], depth = 0) {
   if (!value || typeof value !== "object" || depth > 7) return out;
@@ -42,7 +45,7 @@ export function hanChars(strings) {
     }
   return [...seen].join("");
 }
-/** Request the font slices for [[weight, "--serif" | "--sans", text], …]; resolves when they are loaded (never rejects). */
+/** Request the font files (tiers) holding the characters of [[weight, "--serif" | "--sans", text], …]; resolves when they are loaded (never rejects). */
 export function loadFonts(parts) {
   if (!document.fonts?.load) return Promise.resolve();
   const style = getComputedStyle(document.documentElement);
@@ -55,7 +58,7 @@ export function loadFontsWithin(parts, ms) {
   let timer;
   return Promise.race([loadFonts(parts), new Promise((resolve) => (timer = setTimeout(resolve, ms)))]).finally(() => clearTimeout(timer));
 }
-/** Font slices for one document: reading text and choices (serif), title (serif 600), commentary (sans). English shows Han only in the subtitle. */
+/** Font files for one document: reading text and choices (serif), title (serif 600), commentary (sans). English shows Han only in the subtitle. */
 export function docFontParts(chapter, lang) {
   const title = chapter.title?.zh || "";
   if (lang === "en") return [[500, "--sans", hanChars([title])]];
@@ -66,7 +69,7 @@ export function docFontParts(chapter, lang) {
     [400, "--sans", hanChars(zhStrings([notes, unreachable]))],
   ];
 }
-/** Font slices for a story map (labels are cut to what fits a node: titles and captions, sans 13 / 11 px). */
+/** Font files for a story map (labels are cut to what fits a node: titles and captions, sans 13 / 11 px). */
 export function mapFontParts(story, chapters, lang) {
   if (lang === "en") return [];
   const text = hanChars([...zhStrings(story.tree, 28), ...zhStrings(story.nodeLabels, 28), ...chapters.map((c) => (c.title?.zh || "").slice(0, 28))]);
@@ -114,23 +117,25 @@ export function networkQuiet(quietMs = 1500, maxMs = 20000) {
     setTimeout(poll, 400);
   });
 }
-/** Resolves once the page knows the Noto web fonts (their @font-face rules are in), or after `maxMs`. */
-async function fontsDeclared(maxMs = 10000) {
+/** Resolves once the page knows the Noto web fonts (their @font-face rules are in), or after `maxMs`. The rules are in
+ *  src/fonts.css, a local render-blocking stylesheet, so this returns at the first check; it stays as a guard. */
+async function fontsDeclared(maxMs = 4000) {
   const started = performance.now();
   const declared = () => { for (const face of document.fonts) if (face.family.includes("Noto Serif SC")) return true; return false; };
   while (!declared() && performance.now() - started < maxMs) await new Promise((resolve) => setTimeout(resolve, 100));
 }
 const idle = () => new Promise((resolve) => (window.requestIdleCallback ? requestIdleCallback(resolve, { timeout: 4000 }) : setTimeout(() => resolve(null), 120)));
 
-/** `before` (optional, async): runs before the glyphs are laid out, e.g. to fetch the font slices the first story needs (a slice that arrives later resets the warmed state of its face). */
+/** `before` (optional, async): runs before the glyphs are laid out, e.g. to fetch the font files the first story needs (a file that arrives later resets the warmed state of its face). */
 export async function warmGlyphs(load, before) {
   const connection = navigator.connection;
   if (connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || "")) return;
   const slim = isConstrained();
   if (slim) await networkQuiet(2500, 30000); // let covers finish first on slow links
-  // The web-font stylesheet (Google Fonts, non-blocking) can arrive after this starts: document.fonts.load() then resolves at
-  // once for a family that is not declared yet, and the glyphs would be laid out in a system fallback instead of the web font
-  // (measured: the first two faces were warmed in SimSun, so the first real chapter still paid ~30 ms of first-use costs).
+  // Until the @font-face rules are declared, document.fonts.load() resolves at once for the family and the glyphs would be
+  // laid out in a system fallback instead of the web font (measured with the former non-blocking Google Fonts stylesheet: the
+  // first two faces were warmed in SimSun, so the first real chapter still paid ~30 ms of first-use costs). The self-hosted
+  // rules live in the blocking src/fonts.css, so this does not wait; only a failed stylesheet would make it wait up to 4 s.
   await fontsDeclared();
   let glyphs;
   try {
@@ -147,8 +152,8 @@ export async function warmGlyphs(load, before) {
   host.style.cssText = "position:fixed;left:0;top:0;width:640px;visibility:hidden;pointer-events:none;contain:layout paint style;z-index:-1";
   document.body.append(host);
   const progress = (window.__glyphWarmup = { started: performance.now(), laidOut: 0, done: false });
-  // Request every font slice the warm-up needs at once (the browser downloads them in parallel; on a slow connection
-  // a batch-by-batch wait took ~9 s instead of ~5 s), then lay the glyphs out slice by slice in idle time.
+  // Request every font file the warm-up needs at once (the browser downloads them in parallel; on a slow connection
+  // a batch-by-batch wait took ~9 s instead of ~5 s), then lay the glyphs out a few dozen at a time in idle time.
   const faces = slim ? [{ ...FACES[0], count: 600 }] : FACES; // constrained: one face, most frequent 600 glyphs
   const loads = faces.map((face) => {
     host.style.font = face.font;
@@ -178,7 +183,7 @@ export async function warmGlyphs(load, before) {
   for (const { face, resolved, ready } of loads) {
     host.style.font = resolved;
     const text = glyphs.slice(0, face.count);
-    await ready; // a failed slice only means the fallback face is used
+    await ready; // a failed file only means the fallback face is used
     for (let i = 0; i < text.length; ) {
       const batch = text.slice(i, i + CHUNK * 4);
       const end = i + batch.length;

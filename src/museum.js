@@ -46,6 +46,23 @@ export async function openMuseum({ asset, closeTo, focusKey, metKeys } = {}) {
   else $(".museum-search", root).focus({ preventScroll: true });
 }
 
+export const isOpen = () => !!root && !root.hidden && document.body.classList.contains("museum-open");
+
+// The address names the open exhibit (#museum=<key>) and app.js calls this when it changes without a click here
+// (browser / Android Back or Forward, a search result, a link): the exhibit follows the address, no history is touched.
+export function syncExhibit(key) {
+  if (!isOpen()) return;
+  if (key) {
+    if (state.open === key) return;
+    showExhibit(key);
+    root.querySelector(`.museum-exhibit[data-key="${key}"]`)?.scrollIntoView({ block: "nearest" });
+  } else if (state.open) {
+    const open = state.open;
+    hideExhibit();
+    root.querySelector(`.museum-exhibit[data-key="${open}"]`)?.focus({ preventScroll: true });
+  }
+}
+
 export function closeMuseum() {
   if (!root || root.hidden) return;
   hideExhibit();
@@ -237,21 +254,40 @@ function hideExhibit() {
   root?.classList.remove("detail-open");
 }
 
+// History, mirroring the reader (app.js closeReader): an exhibit opened by a tap pushes its own entry (#museum=<key>,
+// state.museumDetail) so Back closes the exhibit first and the museum second. Closing by × / Escape / a filter steps
+// back over that entry rather than leaving a duplicate; an exhibit that arrived with the address (link, search result,
+// reload) has no entry of its own and only rewrites the address.
+function openExhibit(key) {
+  const entering = !state.open;
+  showExhibit(key);
+  if (state.open !== key) return;
+  const address = `#museum=${encodeURIComponent(key)}`;
+  if (entering && !history.state?.museumDetail) history.pushState({ museumDetail: 1 }, "", address);
+  else history.replaceState(history.state, "", address);
+}
+function closeExhibit() {
+  if (!state.open) return;
+  hideExhibit();
+  if (history.state?.museumDetail) history.back(); // app.js: the address change finds the exhibit already closed
+  else if (location.hash.startsWith("#museum=")) history.replaceState(history.state, "", "#museum");
+}
+
 function onClick(e) {
   const t = e.target;
   if (t.closest("[data-close]")) return closeMuseum();
   if (t.closest("[data-close-detail]")) {
     const key = state.open;
-    hideExhibit();
+    closeExhibit();
     root.querySelector(`.museum-exhibit[data-key="${key}"]`)?.focus({ preventScroll: true });
     return;
   }
   const f = t.closest("[data-filter]");
-  if (f) { state[f.dataset.filter] = f.dataset.value; hideExhibit(); render(); root.querySelector(`[data-filter="${f.dataset.filter}"][data-value="${f.dataset.value}"]`)?.focus(); return; }
-  if (t.closest("[data-togglemet]")) { state.onlyMet = !state.onlyMet; hideExhibit(); render(); root.querySelector("[data-togglemet]")?.focus(); return; }
-  if (t.closest("[data-toggle3d]")) { state.only3d = !state.only3d; hideExhibit(); render(); root.querySelector("[data-toggle3d]")?.focus(); return; }
+  if (f) { state[f.dataset.filter] = f.dataset.value; closeExhibit(); render(); root.querySelector(`[data-filter="${f.dataset.filter}"][data-value="${f.dataset.value}"]`)?.focus(); return; }
+  if (t.closest("[data-togglemet]")) { state.onlyMet = !state.onlyMet; closeExhibit(); render(); root.querySelector("[data-togglemet]")?.focus(); return; }
+  if (t.closest("[data-toggle3d]")) { state.only3d = !state.only3d; closeExhibit(); render(); root.querySelector("[data-toggle3d]")?.focus(); return; }
   const ex = t.closest(".museum-exhibit");
-  if (ex) return showExhibit(ex.dataset.key);
+  if (ex) return openExhibit(ex.dataset.key);
   if (t.closest("[data-reset-view]")) {
     root.querySelector('[data-view="3d"]')?.click();
     viewer?.resetView();
@@ -275,7 +311,7 @@ function onInput(e) {
   if (!e.target.classList.contains("museum-search")) return;
   state.query = e.target.value;
   const pos = e.target.selectionStart;
-  hideExhibit();
+  closeExhibit();
   render();
   const input = $(".museum-search", root);
   input.focus();
@@ -285,7 +321,7 @@ function onInput(e) {
 function onKey(e) {
   if (e.key === "Escape") {
     e.stopPropagation();
-    if (state.open) { const key = state.open; hideExhibit(); root.querySelector(`.museum-exhibit[data-key="${key}"]`)?.focus(); }
+    if (state.open) { const key = state.open; closeExhibit(); root.querySelector(`.museum-exhibit[data-key="${key}"]`)?.focus(); }
     else closeMuseum();
     return;
   }

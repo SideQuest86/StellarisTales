@@ -70,7 +70,8 @@ max 65.8 KB, mean 22.5 KB), img-hd 5.2 MB (258 files, max 144 KB), fetched only 
 | Event pictures, specimen icons, museum UI textures, album cover | Stellaris game files (Paradox Interactive), read-only local installation | Paradox content, shown unmodified as in the rest of this fan archive; derivatives are resolution changes only | originals kept in `public/art`, `public/museum/img` |
 | Super-resolved derivatives (`public/art-hd`, `public/museum/img-hd`) | produced locally by `scripts/images/batch.py` | same basis as the originals; tool: Real-ESRGAN code BSD-3-Clause, weights BSD-3 (sha256 in this file) | no upload, no paid service |
 | 3D specimen models (`public/museum/models`) | generated locally (Zero123++ Apache-2.0, Hunyuan3D-2mv Tencent community licence) | unofficial interpretations authorised by the user; `licenceNote` per model in the manifest | see docs/museum/MODELS.md |
-| Fonts | Google Fonts (Newsreader, Noto Serif SC, Noto Sans SC) | SIL Open Font License 1.1 | see docs/FONTS.md |
+| Fonts: Noto Serif SC, Noto Sans SC (self-hosted subsets, `public/fonts/*.woff2`) | variable TTFs downloaded unmodified from github.com/google/fonts (`ofl/notoserifsc`, `ofl/notosanssc`) on 2026-10-25, cut to static 400/600 and 400/500 and subset by `scripts/fonts/build-subsets.py`; sha256 and blob ids in `public/fonts/OFL.txt` and docs/refine/round6/fonts.md | SIL Open Font License 1.1: modification and redistribution allowed with the licence text and copyright notices, which ship as `public/fonts/OFL.txt` (the Sans copyright names the Reserved Font Name "Source"; the subsets keep the family name "Noto Sans SC", not "Source") | see docs/FONTS.md |
+| Fonts: Newsreader (English reading text) | Google Fonts CSS, served by Google | SIL Open Font License 1.1 | see docs/FONTS.md |
 | `public/mark.svg` | drawn for this site | project's own | vector, never upscaled |
 
 ## Reproducibility and rollback (verified 2026-10-15)
@@ -87,8 +88,8 @@ max 65.8 KB, mean 22.5 KB), img-hd 5.2 MB (258 files, max 144 KB), fetched only 
 | --- | --- | --- |
 | Real-ESRGAN (code; weights released under it) | raw.githubusercontent.com/xinntao/Real-ESRGAN/master/LICENSE | BSD 3-Clause, © 2021 Xintao Wang |
 | Newsreader | raw.githubusercontent.com/google/fonts/main/ofl/newsreader/OFL.txt | SIL OFL 1.1, © The Newsreader Project Authors |
-| Noto Serif SC | raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/OFL.txt | SIL OFL 1.1, © 2012 Google Inc. |
-| Noto Sans SC | raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt | SIL OFL 1.1, © 2014–2021 Adobe (Reserved Font Name "Source") |
+| Noto Serif SC | raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/OFL.txt (copy of 2026-10-25: 4350 bytes, git blob `94d1bf7b…`, sha256 `5E0DA210…`, equal to the file GitHub lists) | SIL OFL 1.1, © 2012 Google Inc.; the font's own notice: © 2017–2024 Adobe |
+| Noto Sans SC | raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt (copy of 2026-10-25: 4388 bytes, git blob `1c9f4328…`, sha256 `1C05C68C…`, equal to the file GitHub lists) | SIL OFL 1.1, © 2014–2021 Adobe (Reserved Font Name "Source") |
 | gltfpack / meshoptimizer (3D model compression) | raw.githubusercontent.com/zeux/meshoptimizer/master/LICENSE.md | MIT, © Arseny Kapoulkine |
 
 Game-derived images keep Paradox Interactive's ownership (the archive's existing basis); no third-party image

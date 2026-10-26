@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.8.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.9.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -84,6 +84,14 @@ evidence from earlier rounds and is not updated.
   machine (Windows SideBySide: "Dependent Assembly mozglue … could not be found", also after a forced reinstall) — untested.
   Interaction sweep on the released v4.7.3 (44 scenarios, live, 0 page errors): `docs/refine/round4/interaction-final.md`. Untested: physical phones,
   low-end GPUs, native-speaker proofread.
+- **Round 6 (2026-10-25/26, v4.9.0; user goal: "make it look and read nicer", competition-grade):** plan and log in
+  docs/refine/round6/PLAN.md. Body typography (app.js paragraph(): blank lines → `.pb` measured gaps; zh justify,
+  text-spacing-trim, strict line breaking, hanging punctuation; palt titles; en oldstyle numerals); calm effects chips and
+  search hit labels; guide as companion essay with quiet links (link + closing punctuation glued); self-hosted CJK subset
+  fonts (public/fonts, src/fonts.css, scripts/fonts/build-subsets.py --check before each release; docs/refine/round6/fonts.md);
+  story-map redesign (full-size dialog, two-line nodes, merged duplicate link sets, legend, overview; map.md); phone and
+  reader chrome (phone.md). Checks: node 108/108, smoke 15/15, verify-round5, verify-refine-reader, verify-a11y.
+  The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
 - **CHECKPOINT 2026-10-20 07:50 UTC — round 5 paused at the weekly limit reset (user: "stop when the limit is reset").**
   v4.8.0 pushed through the gated workflow after a local gate on the final tree (full build incl. search index rebuild;
   node 103/103; smoke 15/15, verify-round5 6/6, verify-search 24, verify-refine-chrome, verify-a11y, verify-museum-viewer 7,

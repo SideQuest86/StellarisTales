@@ -1,12 +1,12 @@
 ﻿# Fonts
 
-All fonts load from Google Fonts CSS (unicode-range slices, `display=swap`, non-blocking `media=print` swap in index.html). No font files are stored in the repo.
+The Chinese faces are self-hosted (since round 6, 2026-10-25): 12 subset woff2 files in `public/fonts/` (2.66 MB in all; three disjoint `unicode-range` tiers per face and weight, `font-display: swap`), declared in `src/fonts.css` (linked first in index.html; urls `../fonts/*`), built by `scripts/fonts/build-subsets.py` (`--check` fails when site text has characters the build does not cover; re-run the build after changing story, summary, effect or museum text). Sources, hashes, tier sizes and measurements: docs/refine/round6/fonts.md; licence text: `public/fonts/OFL.txt`. Newsreader (English reading text) still loads from Google Fonts CSS (non-blocking `media=print` swap in index.html).
 
 | Role | Font | Licence | Source | Where used |
 |---|---|---|---|---|
-| Title + body, English | Newsreader (variable, opsz 6-72, 400/500/600, italic 400) | SIL OFL 1.1 | https://fonts.google.com/specimen/Newsreader | `--font-title`, `--font-body` when `lang=en`: brand, headings, reader text, guides, museum, playlist, search |
-| Title + body, Chinese | Noto Serif SC (400/600) | SIL OFL 1.1 | https://fonts.google.com/noto/specimen/Noto+Serif+SC | `--font-title`, `--font-body` when `lang=zh` |
-| UI, both languages | Noto Sans SC (400/500) | SIL OFL 1.1 | https://fonts.google.com/noto/specimen/Noto+Sans+SC | `--font-ui`: nav, buttons, labels, numbers |
+| Title + body, English | Newsreader (variable, opsz 6-72, 400/500/600, italic 400), from Google Fonts | SIL OFL 1.1 | https://fonts.google.com/specimen/Newsreader | `--font-title`, `--font-body` when `lang=en`: brand, headings, reader text, guides, museum, playlist, search |
+| Title + body, Chinese | Noto Serif SC (400/600), self-hosted subset | SIL OFL 1.1 | https://github.com/google/fonts/tree/main/ofl/notoserifsc | `--font-title`, `--font-body` when `lang=zh` |
+| UI, both languages | Noto Sans SC (400/500), self-hosted subset | SIL OFL 1.1 | https://github.com/google/fonts/tree/main/ofl/notosanssc | `--font-ui`: nav, buttons, labels, numbers |
 
 Replaced: Source Serif 4 (OFL), dropped in favour of Newsreader (calmer, sharper humanist serif at reading sizes).
 

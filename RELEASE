@@ -1,3 +1,13 @@
+v4.9.0 — 2026-10-26
+
+Reads like a book. Paragraphs are set with measured breaks instead of empty lines, Chinese text is justified with
+compressed punctuation, and titles use proportional punctuation. The Chinese typefaces are now served by the site itself
+(Noto Serif SC and Noto Sans SC, in the intended weights), so they look the same everywhere and load in a third of the
+bytes. The story map opens full-size with two-line chapters, a complete legend and an overview of even the largest
+stories; repeated branches are merged. Story guides read as companion essays. Effects and search labels are quieter. On
+phones the reader's header is compact, the Grand Archive's exhibits have their own history step (Back closes the exhibit
+first), and landscape phones get far more reading space.
+
 v4.8.0 — 2026-10-19
 
 Smoother first opening: a story opened from the archive now appears in a single frame in most cases, and its map fills in

@@ -150,9 +150,14 @@ function applyMotion() {
   if(reduced())for(const selector of ['#selected-title','.chapter-document'])$(selector)?.getAnimations().forEach(animation=>animation.cancel());
   document.documentElement.classList.toggle("reduced-motion", reduced());
   $("#motion").setAttribute("aria-pressed", String(reduced()));
-  $("#motion").textContent = reduced() ? T("动态已减少", "Motion reduced") : T("减少动态", "Reduce motion");
+  // One short line in the phone masthead ("Reduce motion" wrapped onto two lines there); the state is aria-pressed too.
+  $("#motion").textContent = phone.matches
+    ? reduced() ? T("动态已减少", "Motion off") : T("减少动态", "Less motion")
+    : reduced() ? T("动态已减少", "Motion reduced") : T("减少动态", "Reduce motion");
   scene?.wake();
 }
+const phone = matchMedia("(max-width: 700px)");
+phone.addEventListener("change", applyMotion);
 $("#motion").onclick = () => {
   reducedPreference = !reducedPreference;
   remember("st-motion", reducedPreference ? "reduced" : "full");
@@ -166,6 +171,26 @@ applyMotion();
 function categoryName(column) {
   return lang === "en" ? CATEGORIES[column][2] : CATEGORIES[column][1];
 }
+// The category rail scrolls sideways when its tabs do not fit (phones, landscape): a fade at the clipped end says so
+// (.catalogue.fade-start / .fade-end), and the selected category is scrolled into the middle.
+const rail = $("#categories");
+let railColumn = -1;
+function railEdges() {
+  const room = rail.scrollWidth - rail.clientWidth;
+  rail.classList.toggle("fade-end", room > 2 && rail.scrollLeft < room - 2);
+  rail.classList.toggle("fade-start", room > 2 && rail.scrollLeft > 2);
+}
+function centerRail() {
+  const tab = rail.querySelector(".active");
+  if (!tab) return;
+  if (rail.scrollWidth > rail.clientWidth + 2) {
+    const r = rail.getBoundingClientRect(), b = tab.getBoundingClientRect();
+    rail.scrollTo({ left: rail.scrollLeft + (b.left + b.width / 2) - (r.left + r.width / 2), behavior: reduced() ? "auto" : "smooth" });
+  }
+  railEdges();
+}
+rail.addEventListener("scroll", railEdges, { passive: true });
+addEventListener("resize", railEdges);
 function showSelection(story, column, index) {
   selected = story;
   selectedColumn = column;
@@ -184,6 +209,7 @@ function showSelection(story, column, index) {
       String(Number(b.dataset.category) === column),
     );
   }
+  if (column !== railColumn && rail.querySelector(".active")) { railColumn = column; centerRail(); }
   if (!reduced()) {
     $("#selected-title")
       .getAnimations()
@@ -426,8 +452,8 @@ function sampleReaderMarkup() {
   const para = (s) => `<section><p>${esc(s)} <span class="game-name" tabindex="0" role="note" data-note="">${esc(T("我们的科学船", "our science ship"))}</span></p></section>`;
   const button = (label) => `<div class="choice"><button class="choice-button" data-choice="0" aria-expanded="false"><span class="choice-symbol">◇</span><span>${esc(label)}</span><b>→</b></button><div class="choice-response" hidden></div></div>`;
   return `<article class="chapter-document" data-doc=""><div class="chapter-eyebrow"><span>${esc(T("故事开端", "Opening"))}</span></div>`
-    + `<h1 id="reader-title" tabindex="-1">${esc(T("档案", "Archive"))}</h1><p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(lang === "zh" ? en.slice(0, 40) : zh.slice(0, 12))}</p>`
-    + `${profileSummary()}<div class="narrative">${para(T(zh, en))}${para(T(en, zh))}</div>`
+    + `<h1 id="reader-title" tabindex="-1">${esc(T("档案", "Archive"))}</h1>`
+    + `${profileSummary(`<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(lang === "zh" ? en.slice(0, 40) : zh.slice(0, 12))}</p>`)}<div class="narrative">${para(T(zh, en))}${para(T(en, zh))}</div>`
     + `<section class="choices"><div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>${button(T(zh.slice(0, 18), en.slice(0, 50)))}${button(T(en.slice(0, 40), zh.slice(0, 14)))}</section>`
     + `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div><button class="next-chapter"><span>${esc(T("档案", "Archive"))}</span><small>${esc(T("继续", "Continue"))} →</small></button></section>`
     + `<div class="chapter-end"><span class="reading-complete">${esc(T("选择一个回应", "Choose a response"))}</span><button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
@@ -678,7 +704,9 @@ let profileOptions = null, profileOpen = false;
 function loadProfileOptions() {
   return json("stories/profile.json").then((p) => (profileOptions = p)).catch(() => null);
 }
-function profileSummary() {
+// The head of a document under its title: the other-language subtitle (passed in) with the "Empire profile" toggle
+// beside it on one line — a quiet text button, not a row of its own — then the active profile as chips, then the panel.
+function profileSummary(subtitle = "") {
   const facts = Object.entries(profile)
     .filter(([key, value]) => (value || !key.startsWith("ethic_fanatic_")) && !(key.startsWith("ethic_") && profile[key.replace("ethic_", "ethic_fanatic_")]))
     .map(([key, value]) => {
@@ -688,10 +716,11 @@ function profileSummary() {
     });
   const assumed = Object.keys(assumptions).length;
   const chips = facts.map((f) => `<b>${esc(f)}</b>`).join("") + (assumed ? `<b>${esc(T(`${assumed} 项情境假设`, `${assumed} assumed condition${assumed > 1 ? "s" : ""}`))}</b>` : "");
-  return `<div class="reading-context">${chips ? `<span>${esc(T("阅读设定", "Reading as"))}</span>${chips}` : ""}<button data-profile-open aria-expanded="${profileOpen}">${esc(T("文明设定", "Empire profile"))}</button>${facts.length || assumed ? `<button data-profile-reset>${esc(T("重置", "Reset"))}</button>` : ""}</div>${profileOpen ? profilePanel() : ""}`;
+  const context = chips ? `<div class="reading-context"><span>${esc(T("阅读设定", "Reading as"))}</span>${chips}<button data-profile-reset>${esc(T("重置", "Reset"))}</button></div>` : "";
+  return `<div class="reader-meta">${subtitle}<button type="button" class="profile-toggle" data-profile-open aria-expanded="${profileOpen}"${profileOpen ? ' aria-controls="profile-panel"' : ""}>${esc(T("文明设定", "Empire profile"))}</button></div>${context}${profileOpen ? profilePanel() : ""}`;
 }
 function profilePanel() {
-  if (!profileOptions) return `<div class="profile-panel"><p>${esc(T("正在载入……", "Loading…"))}</p></div>`;
+  if (!profileOptions) return `<div class="profile-panel" id="profile-panel"><p>${esc(T("正在载入……", "Loading…"))}</p></div>`;
   const option = (value, label, selected) => `<option value="${esc(value)}"${selected ? " selected" : ""}>${esc(label)}</option>`;
   const axes = [];
   for (let i = 0; i < profileOptions.ethics.length; i += 2) {
@@ -705,7 +734,7 @@ function profilePanel() {
   axes.push(`<label><span>${esc(T("政体", "Authority"))}</span><select data-profile-set="authorities">${option("", T("未指定", "Unspecified"), !auth)}${profileOptions.authorities.map((a) => option(a.key, local(a.label), a.key === auth)).join("")}</select></label>`);
   const origin = profileOptions.origins.find((o) => profile[o.key])?.key || "";
   axes.push(`<label><span>${esc(T("起源", "Origin"))}</span><select data-profile-set="origins">${option("", T("未指定", "Unspecified"), !origin)}${profileOptions.origins.map((o) => option(o.key, local(o.label), o.key === origin)).join("")}</select></label>`);
-  return `<div class="profile-panel"><p>${esc(T("按所选文明显示相关文本与选项；未设定的项显示全部可能。", "Text and options follow the empire set here; anything unset shows every possibility."))}</p>${axes.join("")}</div>`;
+  return `<div class="profile-panel" id="profile-panel"><p>${esc(T("按所选文明显示相关文本与选项；未设定的项显示全部可能。", "Text and options follow the empire set here; anything unset shows every possibility."))}</p>${axes.join("")}</div>`;
 }
 function setProfileGroup(list, key) {
   for (const item of list) delete profile[item.key];
@@ -880,7 +909,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此篇章也出现在：", "This chapter also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span>${fromChip()}${trail.length > 1 ? `<button id="reading-back">${esc(T("← 上一步", "← Back"))}</button>` : ""}${trail.length > 1 ? `<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button>` : ""}</div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] && !/\[[^\]]*\]|\$[^$]*\$/.test(r.title[lang === "zh" ? "en" : "zh"]) /* a title with a name the game fills in would read as a fragment ("WE, THE") */ ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : ""}${profileSummary()}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span>${fromChip()}${trail.length > 1 ? `<button id="reading-back">${esc(T("← 上一步", "← Back"))}</button>` : ""}${trail.length > 1 ? `<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button>` : ""}</div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${profileSummary(/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] && !/\[[^\]]*\]|\$[^$]*\$/.test(r.title[lang === "zh" ? "en" : "zh"]) /* a title with a name the game fills in would read as a fragment ("WE, THE") */ ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : "")}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   showSpecimenLinks(r.id);
   showEffects(story, r.id, r.choices);
   const remembered=trail.at(-1);
@@ -1045,6 +1074,7 @@ function renderChrome() {
   // [UI] Static chrome comes from src/i18n.js (data-i18n attributes in index.html).
   setLanguage(lang);
   applyStaticText();
+  applyMotion(); // the static text above resets the motion button's label
   if (!columns.length) return;
   // Catalogue bar: index, localized category name and its story count.
   $("#categories").innerHTML = CATEGORIES.map(
@@ -1052,6 +1082,7 @@ function renderChrome() {
       `<button type="button" data-category="${i}" class="${i === selectedColumn ? "active" : ""}" aria-pressed="${i === selectedColumn}"><span>${esc(t(`cat.${CATEGORIES[i][0]}`))}<em>${esc(t("catalogue.count", { n: columns[i].stories.length }))}</em></span></button>`,
   ).join("") +
     `<button type="button" id="museum-open" class="catalogue-museum" aria-label="${esc(t("header.museumLabel"))}"><span aria-hidden="true">◇</span><span>${esc(t("header.museum"))}</span></button>`;
+  railEdges();
 }
 // Full-text search (src/search.js): story bodies, choices, names, effects and specimens. The index loads on the first
 // open of the dialog; if it cannot load, the dialog falls back to the title/excerpt filter below.
@@ -1400,6 +1431,7 @@ async function metSpecimens() {
 let museum = null;
 // The document a specimen link was followed from: closing the museum returns to it (with its saved path).
 let museumReturn = null;
+let museumLeave = null; // what to do once the browser has stepped back over an exhibit's history entry (see closeTo)
 async function showMuseum(focusKey) {
   try {
     museum ||= await import("./museum.js");
@@ -1420,9 +1452,18 @@ async function showMuseum(focusKey) {
         const from = museumReturn;
         museumReturn = null;
         if (!location.hash.startsWith("#museum")) return; // left by a link: that link decides what opens
-        if (!from) return history.replaceState(null, "", "#");
-        history.replaceState(null, "", `#story=${encodeURIComponent(from.story)}&chapter=${encodeURIComponent(from.chapter)}`);
-        openFromLink(from.story, from.chapter);
+        const leave = () => {
+          if (!from) return history.replaceState(null, "", "#");
+          history.replaceState(null, "", `#story=${encodeURIComponent(from.story)}&chapter=${encodeURIComponent(from.chapter)}`);
+          openFromLink(from.story, from.chapter);
+        };
+        if (history.state?.museumDetail) {
+          // An exhibit opened by a tap has its own entry (museum.js): step back over it first, as closeReader does, then
+          // leave. The address change that follows is this step, not a navigation (parseHash runs `leave` instead).
+          museumLeave = leave;
+          setTimeout(() => { if (museumLeave === leave) { museumLeave = null; leave(); } }, 600); // no address change came
+          history.back();
+        } else leave();
       },
     });
   } catch (e) {
@@ -1440,12 +1481,21 @@ $("#categories").addEventListener("click", (e) => {
   entry.focus({ preventScroll: true });
 });
 function parseHash() {
+  if (museumLeave) {
+    const leave = museumLeave;
+    museumLeave = null;
+    return leave();
+  }
   if (steppingBack) {
     steppingBack = false;
     if (!/^#(story|record|museum)/.test(location.hash)) return;
   }
   const q = new URLSearchParams(location.hash.slice(1));
-  if (location.hash.startsWith("#museum")) return showMuseum(q.get("museum") || undefined);
+  if (location.hash.startsWith("#museum")) {
+    // Already open: the exhibit just follows the address (Back / Forward, a search result), nothing is rebuilt.
+    if (museum?.isOpen()) return museum.syncExhibit(q.get("museum") || null);
+    return showMuseum(q.get("museum") || undefined);
+  }
   museum?.closeMuseum();
   if (q.has("story")) openFromLink(q.get("story"), q.get("chapter"));
   else if (location.hash.startsWith("#record=")) {

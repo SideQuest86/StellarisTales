@@ -1,7 +1,7 @@
 // Story tree model + tidy layout for the reader's flow map.
 //
 // Renderer contract (mirrors docs/STORY-MODEL-V4.md):
-//   node = { id, type: 'doc'|'ref'|'refset'|'parallel'|'exclusive'|'fork'|'appendix'|'forest',
+//   node = { id, type: 'doc'|'ref'|'refset'|'parallel'|'exclusive'|'fork'|'appendix'|'shared'|'forest',
 //            doc?, ref?, parent, children:[], via:{kind, option, optionIndex, label, group,
 //            chance, modified, delay, when, triggers, secondary, required}, gate?, gateRef? }
 // `toTree(dossier)` is the single adapter: V4 `story.tree` is normalised directly
@@ -428,8 +428,105 @@ export function compactTree(tree) {
     only.via = { ...only.via, ...node.via, kind: "option" };
     tree.nodes.delete(node.id);
   }
+  mergeLinkSets(tree);
+  groupSharedCaptions(tree, counter);
   tree.compacted = true;
   return tree;
+}
+
+/**
+ * One row per target page in a link set; the chances of a page that is listed more than once become a range
+ * ({chance: [low, high]}), and `count` says how many entries the row stands for.
+ */
+export function dedupeItems(items) {
+  const rows = new Map();
+  for (const item of items) {
+    const chance = item.via?.chance ?? (Array.isArray(item.chance) ? item.chance[0] : item.chance);
+    const high = Array.isArray(item.chance) ? item.chance[1] : chance;
+    const row = rows.get(item.doc);
+    if (!row) {
+      rows.set(item.doc, { doc: item.doc, ref: item.ref, via: item.via, count: item.count || 1, chance: chance == null ? null : [chance, high], modified: !!(item.modified || item.via?.modified) });
+      continue;
+    }
+    row.count += item.count || 1;
+    row.modified ||= !!(item.modified || item.via?.modified);
+    if (chance != null) row.chance = row.chance ? [Math.min(row.chance[0], chance), Math.max(row.chance[1], high)] : [chance, high];
+  }
+  return [...rows.values()];
+}
+
+/** Link sets: dedupe the rows of each, then merge sibling sets that list the same pages into one set with a case count. */
+function mergeLinkSets(tree) {
+  for (const node of tree.nodes.values()) if (node.type === "refset") node.items = dedupeItems(node.items);
+  // A plain set that is left with one target is just a link back.
+  for (const node of tree.nodes.values()) {
+    if (node.type !== "refset" || node.exclusive || node.items.length !== 1) continue;
+    const [item] = node.items;
+    const via = { ...item.via, ...node.via };
+    if (!node.via?.kind || node.via.kind === "ref") via.kind = item.via?.kind ?? via.kind;
+    Object.assign(node, { type: "ref", doc: item.doc, ref: item.ref, via, count: item.count });
+    delete node.items;
+  }
+  for (const parent of [...tree.nodes.values()]) {
+    const sets = parent.children.map((id) => tree.nodes.get(id)).filter((child) => child?.type === "refset");
+    if (sets.length < 2) continue;
+    const groups = new Map();
+    for (const set of sets) {
+      const key = [set.exclusive ? "x" : "s", set.via?.label ? JSON.stringify(set.via.label) : "", set.via?.option ?? "", set.items.map((item) => item.doc).join("|")].join("#");
+      groups.set(key, [...(groups.get(key) || []), set]);
+    }
+    for (const list of groups.values()) {
+      if (list.length < 2) continue;
+      const [head, ...rest] = list;
+      head.cases = list.reduce((n, set) => n + (set.cases || 1), 0);
+      head.items = dedupeItems(list.flatMap((set) => set.items)).map((row) => ({ ...row, count: 1 }));
+      const gone = new Set(rest.map((set) => set.id));
+      parent.children = parent.children.filter((id) => !gone.has(id));
+      for (const id of gone) tree.nodes.delete(id);
+    }
+  }
+}
+
+/**
+ * Three or more sibling chapters that share the same "how you get here" text (an authored label, "another way in", the
+ * same trigger or a plain random outcome) hang under one caption node ("text ×N") instead of repeating it on every box.
+ */
+function groupSharedCaptions(tree, counter) {
+  const keyOf = (node) => {
+    const via = node.via || {};
+    if (node.type !== "doc" || node.gate || via.kind === "option" || via.kind === "return") return null;
+    if (via.label) return `L${JSON.stringify(via.label)}`;
+    if (via.secondary) return "S";
+    if (via.triggers?.length) return `T${JSON.stringify(via.triggers[0])}`;
+    if (via.kind === "random") return "R";
+    return null;
+  };
+  for (const parent of [...tree.nodes.values()]) {
+    if (parent.type !== "doc" || parent.children.length < 3) continue;
+    const byKey = new Map();
+    for (const id of parent.children) {
+      const key = keyOf(tree.nodes.get(id));
+      if (key) byKey.set(key, [...(byKey.get(key) || []), id]);
+    }
+    for (const members of byKey.values()) {
+      if (members.length < 3) continue;
+      const first = tree.nodes.get(members[0]);
+      const id = `h${counter++}`;
+      const at = parent.children.indexOf(members[0]);
+      const set = new Set(members);
+      parent.children = parent.children.filter((child) => !set.has(child));
+      parent.children.splice(at, 0, id);
+      const via = first.via || {};
+      tree.nodes.set(id, {
+        id,
+        type: "shared",
+        parent: parent.id,
+        children: members,
+        via: { kind: "shared", label: via.label, secondary: via.secondary, triggers: via.triggers, random: via.kind === "random" && !via.label, count: members.length },
+      });
+      for (const member of members) tree.nodes.get(member).parent = id;
+    }
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -483,7 +580,7 @@ function findChild(tree, from, doc, choice) {
         const optionMatch = !choice || child.via?.option === choice || parent.via?.option === choice;
         if (optionMatch) return { node: childId, hops: path };
         fallback ??= { node: childId, hops: path };
-      } else if (["parallel", "exclusive", "fork"].includes(child.type)) frontier.push({ id: childId, hops: path });
+      } else if (["parallel", "exclusive", "fork", "shared"].includes(child.type)) frontier.push({ id: childId, hops: path });
     }
   }
   return fallback;
@@ -494,19 +591,21 @@ function findChild(tree, from, doc, choice) {
 // Leaf-only families of six or more become compact railed lists; independent
 // entry trees are packed into wrapped rows instead of one endless line.
 export const NODE = {
-  doc: { w: 188, h: 56 },
-  ref: { w: 158, h: 34 },
-  refsetRow: 18,
+  doc: { w: 208, h: 48 },
+  ref: { w: 184, h: 34 },
+  refset: { w: 208, head: 30 },
+  refsetRow: 19,
   refsetMax: 4,
-  group: { h: 24 },
+  group: { h: 24, maxW: 300 },
 };
-const SIBLING_GAP = 14;
-const SUBTREE_GAP = 26;
-const LEVEL_GAP = 34;
+const SIBLING_GAP = 16;
+const SUBTREE_GAP = 28;
+const LEVEL_GAP = 38;
 const BUNDLE_MIN = 6;
 const BUNDLE_GAP = { x: 22, y: 10, rail: 16 };
 const FOREST_GAP = { x: 72, y: 84 };
 
+/** Default box of a node. The renderer passes `options.size` to layoutTree to size nodes by their wrapped text. */
 export function nodeSize(node, measure) {
   switch (node.type) {
     case "doc":
@@ -515,12 +614,12 @@ export function nodeSize(node, measure) {
       return { ...NODE.ref };
     case "refset": {
       const rows = Math.min(node.items.length, NODE.refsetMax) + (node.items.length > NODE.refsetMax ? 1 : 0);
-      return { w: NODE.ref.w + 18, h: 24 + rows * NODE.refsetRow };
+      return { w: NODE.refset.w, h: NODE.refset.head + rows * NODE.refsetRow + 4 };
     }
     case "forest":
       return { w: 0, h: 0 };
     default:
-      return { w: Math.max(34, Math.min(230, measure(node.caption || "") + 30)), h: NODE.group.h };
+      return { w: Math.max(34, Math.min(NODE.group.maxW, measure(node.caption || "") + 30)), h: NODE.group.h };
   }
 }
 
@@ -578,6 +677,7 @@ export function hiddenCount(tree, id) {
 
 /**
  * @param options.measure (text) => px width of a group caption
+ * @param options.size (node) => {w, h} box of a node (text-aware), or nothing for the default box
  * @param options.maxRowWidth wrap width for independent entry trees
  * @param options.collapsed Set of folded node ids (their descendants are omitted)
  * @returns {nodes: Map(id → {x (centre), y (top), w, h, row?, col?}), bundled: Set, bounds}
@@ -590,7 +690,7 @@ export function layoutTree(tree, options = {}) {
   const bundles = new Map();
   const visit = (id) => {
     const node = tree.nodes.get(id);
-    box.set(id, nodeSize(node, measure));
+    box.set(id, options.size?.(node) || nodeSize(node, measure));
     const children = kids(id).map((c) => tree.nodes.get(c));
     if (node.type !== "forest" && children.length >= BUNDLE_MIN && children.every((k) => !kids(k.id).length && !k.gate)) {
       const cols = Math.max(1, Math.min(6, Math.ceil(Math.sqrt(children.length / 1.6))));
