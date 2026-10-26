@@ -192,6 +192,9 @@ input {
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
+:root:lang(zh) .brand-type {
+  font-family: var(--serif-en); /* the Latin wordmark in its own face in both languages */
+}
 .catalogue {
   --tab-pad: clamp(3px, 0.45vw, 8px);
   flex: 1;
@@ -582,8 +585,10 @@ input {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-shadow: 0 1px 10px #031014;
-  /* The teaser does not stop on a clipped "…": its last line fades out towards its end, like text running on beyond the
-     panel (1lh = one line of the teaser; the lines above stay whole). */
+}
+/* A teaser the clamp has cut (app.js .is-clipped) does not stop on a clipped "…": its last line fades out towards its end,
+   like text running on beyond the panel (1lh = one line of the teaser; the lines above stay whole). */
+#selected-excerpt.is-clipped {
   -webkit-mask: linear-gradient(#000, #000) top / 100% calc(100% - 1lh) no-repeat,
     linear-gradient(90deg, #000 45%, transparent 97%) bottom / 100% 1lh no-repeat;
   mask: linear-gradient(#000, #000) top / 100% calc(100% - 1lh) no-repeat,
@@ -593,6 +598,13 @@ input {
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0;
+}
+@media (min-width: 701px) {
+  :root:lang(zh) #selected-excerpt {
+    font-size: 16.5px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
 }
 /* Tall screens have room for the teaser's third line. */
 @media (min-height: 860px) and (min-width: 701px) {
@@ -736,9 +748,9 @@ input {
 .reader-left h2,
 .reader-left #dossier-title {
   margin: 0 0 4px;
-  font: 600 19px/1.35 var(--serif);
-  letter-spacing: 0.04em;
-  color: var(--ink);
+  font: italic 400 16px/1.35 var(--serif);
+  letter-spacing: 0;
+  color: var(--ink-2);
   text-shadow: 0 2px 12px #031014;
 }
 .reader-left span {
@@ -762,6 +774,9 @@ input {
   scrollbar-width: thin;
   scrollbar-color: #45625d transparent;
   background: linear-gradient(90deg, #08151a00 0%, #08151add 9%, #08151af7 22%, var(--bg) 40%);
+  /* Text leaving the column over the player fades out, as it does under the toolbar, instead of being sliced mid-line. */
+  -webkit-mask-image: linear-gradient(#000 calc(100% - 32px), transparent);
+  mask-image: linear-gradient(#000 calc(100% - 32px), transparent);
 }
 .reader-toolbar {
   position: sticky;
@@ -816,19 +831,21 @@ input {
 #reading-content {
   zoom: var(--rz, 1);
 }
-@media (min-width: 1760px) and (min-height: 900px) {
-  :root {
-    --rz: 1.1;
+@supports (zoom: 1.1) {
+  @media (min-width: 1760px) and (min-height: 900px) {
+    :root {
+      --rz: 1.1;
+    }
   }
-}
-@media (min-width: 2200px) and (min-height: 1100px) {
-  :root {
-    --rz: 1.22;
+  @media (min-width: 2200px) and (min-height: 1100px) {
+    :root {
+      --rz: 1.22;
+    }
   }
-}
-@media (min-width: 2800px) and (min-height: 1400px) {
-  :root {
-    --rz: 1.32;
+  @media (min-width: 2800px) and (min-height: 1400px) {
+    :root {
+      --rz: 1.32;
+    }
   }
 }
 #reading-content .narrative p,
@@ -1070,7 +1087,10 @@ input {
   .fx-sum, .story-summary > summary, details.review-note > summary, .review-note small, .flow-title, .hit-type,
   .profile-toggle, .museum-text h3, .museum-view-toggle button, .museum-count) {
   font-family: "KaiTi", "STKaiti", "Kaiti SC", "Kaiti TC", "BiauKai", var(--serif-zh);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+}
+:root:lang(zh) :is(.fx-sum, .story-summary > summary, details.review-note > summary) {
+  font-size: 16px;
 }
 /* Kai draws smaller in its em than Song: the section lines take a pixel more. */
 :root:lang(zh) :is(.section-heading, .reading-complete) {
@@ -1401,6 +1421,10 @@ input {
   text-wrap: balance; /* centred: balanced lines, no two-character widow */
   line-break: strict;
 }
+:root:lang(en) .reading-ending p {
+  font-size: 17px;
+  line-height: 1.7;
+}
 /* After an ending, the next story: a ruled line like the continue cards, its label an italic line, not a boxed caption. */
 .ending-next {
   width: 100%;
@@ -1573,10 +1597,10 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
 }
 .story-summary .md-guide h4 {
   margin: 1.7em 0 0.5em;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   letter-spacing: 0.01em;
-  color: var(--ink);
+  color: var(--ink-2);
 }
 .story-summary .md-guide h5 {
   margin: 1.2em 0 0.4em;
@@ -3695,7 +3719,7 @@ dialog::backdrop {
   }
   .reader-left h2,
   .reader-left #dossier-title {
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.25;
     margin-bottom: 2px;
   }

@@ -49,3 +49,13 @@ exhibit stage clear of its close button; the active exhibit as a glowing pedesta
 when nothing is filtered. Not applied: hiding the archive's lane arrows (they show the wall's spatial model), the caption
 on the logo's edge (it belongs to the card), larger map node captions (needs the JS text fitting changed in step), search's
 'Name' tag moved into the meta line, the dialogue-foot spacing rework.
+
+## Round 3 and a review of round 2 (v4.14.1)
+
+Review of b5051492..HEAD (four reviewers, three verifiers): 3 low findings fixed: the shown exhibit is announced
+(aria-current) and underlined, not marked by colour alone; the teaser fades only when the clamp cut it (.is-clipped, set from
+scrollHeight); the large-monitor --rz steps only under @supports (zoom). Audit round 3: 19 of 54 confirmed, one of impact 4;
+nine applied: the reading column fades at the player as at the toolbar; the wordmark in Newsreader on the Chinese page; the
+card caption as a quiet italic name; a larger English ending note; Kai lines at 0.02em and Chinese panel titles 16 px; lighter
+guide sub-heads; the Chinese archive teaser at 16.5 px; the guide's language switch as an underlined line; legible exhibit
+view words. Round 3's yield (one finding above impact 3) marks the polish as converged; further rounds were not run.

@@ -215,7 +215,15 @@ function showExcerpt(story) {
   tag.hidden = !lead;
   tag.textContent = lead ? lead.lead : "";
   body.textContent = lead ? lead.rest : text;
+  markClipped();
 }
+// The teaser's fade (style.css #selected-excerpt.is-clipped) only where the line clamp has cut it.
+function markClipped() {
+  const body = $("#selected-excerpt");
+  requestAnimationFrame(() => body.classList.toggle("is-clipped", body.scrollHeight > body.clientHeight + 1));
+}
+addEventListener("resize", markClipped);
+document.fonts?.ready.then(markClipped);
 function showSelection(story, column, index) {
   selected = story;
   selectedColumn = column;

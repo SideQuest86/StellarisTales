@@ -215,7 +215,11 @@ function showExhibit(key, keepFocus = false) {
       </details>
     </div>`;
   root.classList.add("detail-open");
-  for (const b of root.querySelectorAll(".museum-exhibit")) b.classList.toggle("active", b.dataset.key === key);
+  for (const b of root.querySelectorAll(".museum-exhibit")) {
+    b.classList.toggle("active", b.dataset.key === key);
+    if (b.dataset.key === key) b.setAttribute("aria-current", "true");
+    else b.removeAttribute("aria-current");
+  }
   if (!keepFocus) $(".museum-detail-close", panel).focus({ preventScroll: true });
   if (model) mountViewer(panel, model, s);
   else disposeViewer();
