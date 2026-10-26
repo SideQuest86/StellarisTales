@@ -13,6 +13,8 @@ const TIERS = {
   lo: { w: 128, h: 43, cols: 16, rows: 16, top: 9 * 150 + 2 },
 };
 const BITMAP_CACHE = 40;
+/** A card's art fades in over this long the first time any tile of it is drawn (archive-scene.js passes the fraction). */
+export const FADE_MS = 450;
 
 export class CoverAtlas {
   constructor(renderer, asset, wake) {
@@ -36,6 +38,8 @@ export class CoverAtlas {
     this.queue = [];
     this.inflight = 0;
     this.ready = []; // decoded sources waiting for a GPU blit
+    this.shownAt = new Map(); // key → time its first tile (either tier) was blitted: the hi tile replacing a lo one does not fade again
+    this.fadingUntil = 0;
     this.bitmaps = new Map(); // key → Promise<ImageBitmap|HTMLCanvasElement>
     this.blit = {
       scene: new THREE.Scene(),
@@ -56,16 +60,16 @@ export class CoverAtlas {
     document.fonts?.addEventListener?.("loadingdone", this.onFonts);
   }
   /**
-   * Request a tile; returns [u, v, su, sv, tier] where tier is 2 (hi), 1 (lo) or
-   * 0 (not ready: the shader shows the card's plain label panel).
+   * Request a tile; returns [u, v, su, sv, tier, shownAt] where tier is 2 (hi), 1 (lo) or
+   * 0 (not ready: the shader shows the card's plain label panel), and shownAt is when the card's art first appeared.
    * `source` is {image} or a typographic slate {title, kicker, lang, tint} for stories without original art.
    */
   get(key, source, wantHi, out) {
     const hi = wantHi ? this.slot("hi", key, source) : null;
-    if (hi?.ready) return write(out, hi.uv, 2);
+    if (hi?.ready) return write(out, hi.uv, 2, this.shownAt.get(key));
     const lo = this.slot("lo", key, source);
-    if (lo?.ready) return write(out, lo.uv, 1);
-    return write(out, null, 0);
+    if (lo?.ready) return write(out, lo.uv, 1, this.shownAt.get(key));
+    return write(out, null, 0, 0);
   }
   slot(tierName, key, source) {
     const tier = this.tiers[tierName];
@@ -183,6 +187,11 @@ export class CoverAtlas {
       slot.ready = true;
       slot.queued = false;
       slot.stack = bitmap.stack || null;
+      if (!this.shownAt.has(slot.key)) {
+        const now = performance.now();
+        this.shownAt.set(slot.key, now);
+        this.fadingUntil = now + FADE_MS;
+      }
       this.loaded++;
       changed = true;
     }
@@ -241,7 +250,7 @@ export class CoverAtlas {
   }
 }
 
-function write(out, uv, tier) {
+function write(out, uv, tier, shownAt = 0) {
   if (uv) {
     out[0] = uv[0];
     out[1] = uv[1];
@@ -249,6 +258,7 @@ function write(out, uv, tier) {
     out[3] = uv[3];
   } else out[0] = out[1] = out[2] = out[3] = 0;
   out[4] = tier;
+  out[5] = shownAt;
   return out;
 }
 

@@ -162,3 +162,9 @@ First paint (v4.17.13): the journey judges' 'blank slabs, then it pops in' was r
 selected card's own cover did switch from its plain face to the art in one frame. refreshActiveCover now starts the frosted reveal
 from a snapshot of the plain face when that tile first becomes ready (tier 0 -> 1) and no reveal is running; checked with the
 cover delayed 2.5 s (scratchpad develop-probe.mjs): reveal 0 -> 1 over 1.1 s; none with reduced motion.
+
+Wall covers (v4.17.14): the atlas records when a card's art first appears (cover-atlas.js shownAt; the hi tile replacing a lo one
+keeps that time) and the wall passes the fade fraction where the shader took the tier (0 no art, 0..1 fading, the extracted
+card 1/2 = full); frames keep coming until the last fade ends (fadingUntil). Measured on a first load (diagnostics fadingCovers,
+sampled every 50 ms): cards mid-fade from 271 ms, up to 109 at once, none at the end; none with reduced motion. verify-gpu: all
+tiers pass (idle draws nothing, the loop stops, breathing 171 / motion 169 fps discrete).

@@ -1,5 +1,5 @@
 import * as THREE from "../vendor/three.module.js";
-import { CoverAtlas, drawSlate, slateReady, slateStackNow, slateTitle } from "./cover-atlas.js";
+import { CoverAtlas, FADE_MS, drawSlate, slateReady, slateStackNow, slateTitle } from "./cover-atlas.js";
 import { t } from "./i18n.js";
 import {
   wrap,
@@ -77,8 +77,11 @@ vec3 archiveFace(vec2 uv, vec4 cover, float tier, float tint, out float artMask)
   vec2 bandUv = vec2((uv.x - INSET_X) / (1.0 - 2.0 * INSET_X), (uv.y - BAND_BOTTOM) / (BAND_TOP - BAND_BOTTOM));
   float inBand = step(0.0, bandUv.x) * step(bandUv.x, 1.0) * step(0.0, bandUv.y) * step(bandUv.y, 1.0);
   // Explicit LOD: the atlas has no mipmaps, and the reveal samples it inside a loop.
-  vec3 art = tier > 0.5 ? textureLod(coverAtlas, cover.xy + clamp(bandUv, 0.0, 1.0) * cover.zw, 0.0).rgb : mix(panel, tintColor * 0.42, 0.5);
-  artMask = inBand * step(0.5, tier);
+  // tier: 0 no art yet; the wall passes how far the art has faded in (0..1), the extracted card 1 or 2 (full art).
+  float shown = smoothstep(0.0, 1.0, clamp(tier, 0.0, 1.0));
+  vec3 plain = mix(panel, tintColor * 0.42, 0.5);
+  vec3 art = tier > 0.0 ? mix(plain, textureLod(coverAtlas, cover.xy + clamp(bandUv, 0.0, 1.0) * cover.zw, 0.0).rgb, shown) : plain;
+  artMask = inBand * shown;
   return mix(panel, art, inBand);
 }
 `;
@@ -272,7 +275,7 @@ export class ArchiveScene {
       this.scene.add(mesh);
     }
     this.cells = new Int32Array(count * 2); // visible instance → lane,row
-    this.tileOut = new Float32Array(5);
+    this.tileOut = new Float32Array(6); // u, v, su, sv, tier, shownAt (cover-atlas.js get)
 
     // The extracted card: its own body and a face that runs the frosted reveal.
     this.active = new THREE.Group();
@@ -1035,7 +1038,8 @@ export class ArchiveScene {
     const breathingOn = this.breathing > 0.0005 || (canBreathe && sinceInput < 1.2);
     // Covered: the close-up reader fills a narrow screen, or the museum sits over the archive.
     const covered = (this.width < 700 && this.detailTarget === 1 && this.detail.value > 0.98) || document.body.classList.contains("museum-open");
-    const tiles = this.coverAtlas.ready.length > 0;
+    // Tiles waiting for their blit, or covers still fading in on the wall.
+    const tiles = this.coverAtlas.ready.length > 0 || (!reduced && now < this.coverAtlas.fadingUntil);
     const animating = moving || revealing || pulsing || breathingOn;
     // Frame-rate caps of the adapter tier; only the idle motion left uses the lower idle cap.
     const fps = moving || revealing || pulsing || tiles ? this.quality.maxFps : this.quality.idleFps || this.quality.maxFps;
@@ -1099,6 +1103,8 @@ export class ArchiveScene {
   draw(time) {
     const d = this.detail.value;
     const pose = this.frameCamera(d);
+    const reduced = this.isReduced, clock = performance.now(); // the covers' fade-in (cover-atlas.js shownAt)
+    let fading = 0;
     this.projScreen.multiplyMatrices(this.camera.projectionMatrix, this.camera.matrixWorldInverse);
     this.frustum.setFromProjectionMatrix(this.projScreen);
     while (this.pulses.length && time - this.pulses[0].time > 3) this.pulses.shift();
@@ -1136,12 +1142,16 @@ export class ArchiveScene {
         this.coverAtlas.get(cover.key, cover.source, near, tile);
         covers[n * 4] = tile[0]; covers[n * 4 + 1] = tile[1]; covers[n * 4 + 2] = tile[2]; covers[n * 4 + 3] = tile[3];
         const dl = lane - this.lane.value, dr = row - this.row.value;
-        infos[n * 3] = tile[4]; infos[n * 3 + 1] = tintIndex; infos[n * 3 + 2] = Math.exp(-dl * dl * 0.3 - dr * dr * 0.01);
+        // How far the card's art has faded in (0 to 1; the shader's "tier" slot), at once with reduced motion.
+        const shown = tile[4] > 0.5 ? (reduced ? 1 : Math.min(1, Math.max(0.001, (clock - tile[5]) / FADE_MS))) : 0;
+        if (shown > 0 && shown < 1) fading++;
+        infos[n * 3] = shown; infos[n * 3 + 1] = tintIndex; infos[n * 3 + 2] = Math.exp(-dl * dl * 0.3 - dr * dr * 0.01);
         this.cells[n * 2] = lane;
         this.cells[n * 2 + 1] = row;
         n++;
       }
     this.body.count = this.faces.count = n;
+    this.fadingCovers = fading; // diagnostics()
     for (const [attribute, size] of [[this.instanceMatrix, 16], [this.body.instanceColor, 3], [this.coverUV, 4], [this.coverInfo, 3]]) {
       attribute.clearUpdateRanges();
       attribute.addUpdateRange(0, Math.max(1, n) * size);
@@ -1262,6 +1272,7 @@ export class ArchiveScene {
       detail: this.detail.value,
       selectedY: this.active.position.y,
       coverReveal: this.reveal.revealProgress.value,
+      fadingCovers: this.fadingCovers || 0,
       artTransition: this.art.progress,
       imageCovers: this.coverAtlas.loaded,
       atlas: this.coverAtlas.stats(),
