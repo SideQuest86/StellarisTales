@@ -22,7 +22,7 @@
    "to": "first_contact.5085",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：审判：等待（对方主动）(难度5) / 审判：等待（对方谨慎）(难度7)",
+    "zh": "进入阶段：审判：等待（对方主动）（难度5） / 审判：等待（对方谨慎）（难度7）",
     "en": "Stage: the trial: the wait (proactive) (difficulty 5) / the trial: the wait (cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:7482 set_first_contact_stage = default_trial_wait_proactive; common/first_contact/00_*.txt:2476 fires first_contact.5085; first_contact_events.txt:7485 set_first_contact_stage = default_trial_wait_cautious; common/first_contact/00_*.txt:2495 fires first_contact.5085",
@@ -33,7 +33,7 @@
    "to": "first_contact.5090",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：审判：方式（对方主动）(难度5) / 审判：方式（对方谨慎）(难度7)",
+    "zh": "进入阶段：审判：方式（对方主动）（难度5） / 审判：方式（对方谨慎）（难度7）",
     "en": "Stage: the trial: the method (proactive) (difficulty 5) / the trial: the method (cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:7603 set_first_contact_stage = default_trial_method_proactive; common/first_contact/00_*.txt:2514 fires first_contact.5090; first_contact_events.txt:7606 set_first_contact_stage = default_trial_method_cautious; common/first_contact/00_*.txt:2533 fires first_contact.5090",
@@ -44,7 +44,7 @@
    "to": "first_contact.5095",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：审判：裁决（对方主动）(难度5) / 审判：裁决（对方谨慎）(难度7)",
+    "zh": "进入阶段：审判：裁决（对方主动）（难度5） / 审判：裁决（对方谨慎）（难度7）",
     "en": "Stage: the trial: the verdict (proactive) (difficulty 5) / the trial: the verdict (cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:7735 set_first_contact_stage = default_trial_verdict_proactive; common/first_contact/00_*.txt:2552 fires first_contact.5095; first_contact_events.txt:7738 set_first_contact_stage = default_trial_verdict_cautious; common/first_contact/00_*.txt:2571 fires first_contact.5095",
@@ -55,7 +55,7 @@
    "to": "first_contact.5095",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：审判：裁决（对方主动）(难度5) / 审判：裁决（对方谨慎）(难度7)",
+    "zh": "进入阶段：审判：裁决（对方主动）（难度5） / 审判：裁决（对方谨慎）（难度7）",
     "en": "Stage: the trial: the verdict (proactive) (difficulty 5) / the trial: the verdict (cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:7815 set_first_contact_stage = default_trial_verdict_proactive; common/first_contact/00_*.txt:2552 fires first_contact.5095; first_contact_events.txt:7818 set_first_contact_stage = default_trial_verdict_cautious; common/first_contact/00_*.txt:2571 fires first_contact.5095",
@@ -66,7 +66,7 @@
    "to": "first_contact.5095",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：审判：裁决（对方主动）(难度5) / 审判：裁决（对方谨慎）(难度7)",
+    "zh": "进入阶段：审判：裁决（对方主动）（难度5） / 审判：裁决（对方谨慎）（难度7）",
     "en": "Stage: the trial: the verdict (proactive) (difficulty 5) / the trial: the verdict (cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:7895 set_first_contact_stage = default_trial_verdict_proactive; common/first_contact/00_*.txt:2552 fires first_contact.5095; first_contact_events.txt:7898 set_first_contact_stage = default_trial_verdict_cautious; common/first_contact/00_*.txt:2571 fires first_contact.5095",

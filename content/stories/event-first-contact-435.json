@@ -23,7 +23,7 @@
    "to": "first_contact.440",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：章鱼人收尾阶段（坚持，对方主动）(难度8) / 章鱼人收尾阶段（坚持，对方谨慎）(难度10)",
+    "zh": "进入阶段：章鱼人收尾阶段（坚持，对方主动）（难度8） / 章鱼人收尾阶段（坚持，对方谨慎）（难度10）",
     "en": "Stage: octopodes end stage (persevered, proactive) (difficulty 8) / octopodes end stage (persevered, cautious) (difficulty 10)"
    },
    "evidence": "first_contact_events.txt:6614 set_first_contact_stage = default_octopodes_no_action_end_stage_proactive; common/first_contact/00_*.txt:2104 fires first_contact.440; first_contact_events.txt:6617 set_first_contact_stage = default_octopodes_no_action_end_stage_cautious; common/first_contact/00_*.txt:2123 fires first_contact.440",
@@ -34,7 +34,7 @@
    "to": "first_contact.435",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：章鱼人收尾阶段（拨款，对方主动）(难度5) / 章鱼人收尾阶段（拨款，对方谨慎）(难度7)",
+    "zh": "进入阶段：章鱼人收尾阶段（拨款，对方主动）（难度5） / 章鱼人收尾阶段（拨款，对方谨慎）（难度7）",
     "en": "Stage: octopodes end stage (funded, proactive) (difficulty 5) / octopodes end stage (funded, cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:6643 set_first_contact_stage = default_octopodes_end_stage_proactive; common/first_contact/00_*.txt:2066 fires first_contact.435; first_contact_events.txt:6646 set_first_contact_stage = default_octopodes_end_stage_cautious; common/first_contact/00_*.txt:2085 fires first_contact.435",

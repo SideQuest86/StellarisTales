@@ -21,7 +21,7 @@
    "to": "first_contact.395",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：机械遇蜂巢收尾（对方主动）(难度7) / 机械遇蜂巢收尾（对方谨慎）(难度7)",
+    "zh": "进入阶段：机械遇蜂巢收尾（对方主动）（难度7） / 机械遇蜂巢收尾（对方谨慎）（难度7）",
     "en": "Stage: machine meets hive end stage (proactive) (difficulty 7) / machine meets hive end stage (cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:5884 set_first_contact_stage = machine_meets_hive_end_stage_proactive; common/first_contact/00_*.txt:1791 fires first_contact.395; first_contact_events.txt:5896 set_first_contact_stage = machine_meets_hive_end_stage_cautious; common/first_contact/00_*.txt:1829 fires first_contact.395",
@@ -32,7 +32,7 @@
    "to": "first_contact.397",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：机械遇常规帝国收尾（对方主动）(难度7) / 机械遇常规帝国收尾（对方谨慎）(难度7)",
+    "zh": "进入阶段：机械遇常规帝国收尾（对方主动）（难度7） / 机械遇常规帝国收尾（对方谨慎）（难度7）",
     "en": "Stage: machine meets regular empire end stage (proactive) (difficulty 7) / machine meets regular empire end stage (cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:5887 set_first_contact_stage = machine_meets_default_end_stage_proactive; common/first_contact/00_*.txt:1810 fires first_contact.397; first_contact_events.txt:5899 set_first_contact_stage = machine_meets_default_end_stage_cautious; common/first_contact/00_*.txt:1847 fires first_contact.397",

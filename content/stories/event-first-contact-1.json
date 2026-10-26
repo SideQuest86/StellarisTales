@@ -34,7 +34,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "zh": "进入阶段：敌对同种族收尾阶段（难度3）",
     "en": "Stage: hostile same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:200 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
@@ -45,7 +45,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "zh": "进入阶段：同种族收尾阶段（难度3）",
     "en": "Stage: same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:237 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
@@ -56,7 +56,7 @@
    "to": "first_contact.102",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:245 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
@@ -67,7 +67,7 @@
    "to": "first_contact.1020",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:245 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
@@ -78,7 +78,7 @@
    "to": "first_contact.105",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "zh": "进入阶段：双方蜂巢收尾阶段（难度7）",
     "en": "Stage: both-hive-minds end stage (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:258 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
@@ -89,7 +89,7 @@
    "to": "first_contact.50",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:261 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
@@ -100,7 +100,7 @@
    "to": "first_contact.60",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:261 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
@@ -111,7 +111,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "zh": "进入阶段：敌对同种族收尾阶段（难度3）",
     "en": "Stage: hostile same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:544 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
@@ -122,7 +122,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "zh": "进入阶段：同种族收尾阶段（难度3）",
     "en": "Stage: same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:584 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
@@ -133,7 +133,7 @@
    "to": "first_contact.102",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:592 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
@@ -144,7 +144,7 @@
    "to": "first_contact.1020",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:592 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
@@ -155,7 +155,7 @@
    "to": "first_contact.105",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "zh": "进入阶段：双方蜂巢收尾阶段（难度7）",
     "en": "Stage: both-hive-minds end stage (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:605 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
@@ -166,7 +166,7 @@
    "to": "first_contact.50",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:608 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
@@ -177,7 +177,7 @@
    "to": "first_contact.60",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:608 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
@@ -188,7 +188,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "zh": "进入阶段：敌对同种族收尾阶段（难度3）",
     "en": "Stage: hostile same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:836 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
@@ -199,7 +199,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "zh": "进入阶段：同种族收尾阶段（难度3）",
     "en": "Stage: same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:896 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
@@ -210,7 +210,7 @@
    "to": "first_contact.102",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:904 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
@@ -221,7 +221,7 @@
    "to": "first_contact.1020",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:904 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
@@ -232,7 +232,7 @@
    "to": "first_contact.105",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "zh": "进入阶段：双方蜂巢收尾阶段（难度7）",
     "en": "Stage: both-hive-minds end stage (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:917 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
@@ -243,7 +243,7 @@
    "to": "first_contact.50",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:920 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
@@ -254,7 +254,7 @@
    "to": "first_contact.60",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:920 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
@@ -265,7 +265,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "zh": "进入阶段：敌对同种族收尾阶段（难度3）",
     "en": "Stage: hostile same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:993 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
@@ -276,7 +276,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "zh": "进入阶段：同种族收尾阶段（难度3）",
     "en": "Stage: same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:1029 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
@@ -287,7 +287,7 @@
    "to": "first_contact.102",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:1036 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
@@ -298,7 +298,7 @@
    "to": "first_contact.1020",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:1036 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
@@ -309,7 +309,7 @@
    "to": "first_contact.105",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "zh": "进入阶段：双方蜂巢收尾阶段（难度7）",
     "en": "Stage: both-hive-minds end stage (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:1047 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
@@ -320,7 +320,7 @@
    "to": "first_contact.50",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:1050 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
@@ -331,7 +331,7 @@
    "to": "first_contact.60",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:1050 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",
@@ -342,7 +342,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：敌对同种族收尾阶段(难度3)",
+    "zh": "进入阶段：敌对同种族收尾阶段（难度3）",
     "en": "Stage: hostile same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:1123 set_first_contact_stage = default_end_stage_hostile_same_species; common/first_contact/00_*.txt:968 fires first_contact.101",
@@ -353,7 +353,7 @@
    "to": "first_contact.101",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：同种族收尾阶段(难度3)",
+    "zh": "进入阶段：同种族收尾阶段（难度3）",
     "en": "Stage: same-species end stage (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:1159 set_first_contact_stage = default_end_stage_same_species; common/first_contact/00_*.txt:948 fires first_contact.101",
@@ -364,7 +364,7 @@
    "to": "first_contact.102",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:1166 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:995 fires first_contact.102",
@@ -375,7 +375,7 @@
    "to": "first_contact.1020",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方机械收尾阶段(难度6)",
+    "zh": "进入阶段：双方机械收尾阶段（难度6）",
     "en": "Stage: both-machines end stage (difficulty 6)"
    },
    "evidence": "first_contact_events.txt:1166 set_first_contact_stage = default_end_stage_both_machines; common/first_contact/00_*.txt:1010 fires first_contact.1020",
@@ -386,7 +386,7 @@
    "to": "first_contact.105",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：双方蜂巢收尾阶段(难度7)",
+    "zh": "进入阶段：双方蜂巢收尾阶段（难度7）",
     "en": "Stage: both-hive-minds end stage (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:1178 set_first_contact_stage = default_end_stage_both_hive_minds; common/first_contact/00_*.txt:1030 fires first_contact.105",
@@ -397,7 +397,7 @@
    "to": "first_contact.50",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:1181 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:364 fires first_contact.50",
@@ -408,7 +408,7 @@
    "to": "first_contact.60",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：第二阶段：抽取一条故事线(难度7)",
+    "zh": "进入阶段：第二阶段：抽取一条故事线（难度7）",
     "en": "Stage: Stage 2: a storyline is drawn (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:1181 set_first_contact_stage = default_stage_2; common/first_contact/00_*.txt:380 fires first_contact.60",

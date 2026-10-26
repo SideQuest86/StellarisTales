@@ -20,3 +20,7 @@ approach names Organized Meditation / 组织冥想 and Distribute Zro / 分发�
 Render check: every chapter whose ending note (r8) or card caption (r9) changed was opened by link in both languages (241
 checks, 482 opens, local build of v4.17.4): no page errors; the 16 texts not on the page are by design (ending blocks are only
 shown where a chapter does not continue, 13; captions of edges the reading context filters, 3).
+
+Punctuation (v4.17.6): in the Chinese of ending labels / notes, card captions and group labels / notes, half-width ( ) , ; : ! ?
+touching Chinese became full-width (paired brackets when they enclose or follow Chinese; digits and ratios untouched); 100
+texts in 18 fragments, by a deterministic script (scratchpad zh-punct.mjs), applied in place by JSON path.

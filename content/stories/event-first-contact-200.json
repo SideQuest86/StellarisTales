@@ -25,7 +25,7 @@
    "to": "first_contact.220",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：入侵收尾阶段(难度1)",
+    "zh": "进入阶段：入侵收尾阶段（难度1）",
     "en": "Stage: hacking end stage (difficulty 1)"
    },
    "evidence": "first_contact_events.txt:2005 set_first_contact_stage = default_end_stage_hacking; common/first_contact/00_*.txt:927 fires first_contact.220",
@@ -36,7 +36,7 @@
    "to": "first_contact.220",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：入侵收尾阶段(难度1)",
+    "zh": "进入阶段：入侵收尾阶段（难度1）",
     "en": "Stage: hacking end stage (difficulty 1)"
    },
    "evidence": "first_contact_events.txt:2041 set_first_contact_stage = default_end_stage_hacking; common/first_contact/00_*.txt:927 fires first_contact.220",

@@ -23,7 +23,7 @@
    "to": "first_contact.405",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：表面敌意收尾阶段（回应过）(难度5)",
+    "zh": "进入阶段：表面敌意收尾阶段（回应过）（难度5）",
     "en": "Stage: apparent hostility end stage (we mimicked) (difficulty 5)"
    },
    "evidence": "first_contact_events.txt:6166 set_first_contact_stage = default_apparent_hostility_end_stage; common/first_contact/00_*.txt:1875 fires first_contact.405; first_contact_events.txt:6169 set_first_contact_stage = default_apparent_hostility_end_stage; common/first_contact/00_*.txt:1875 fires first_contact.405",
@@ -34,7 +34,7 @@
    "to": "first_contact.406",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：表面敌意收尾阶段（回应过）(难度5)",
+    "zh": "进入阶段：表面敌意收尾阶段（回应过）（难度5）",
     "en": "Stage: apparent hostility end stage (we mimicked) (difficulty 5)"
    },
    "evidence": "first_contact_events.txt:6166 set_first_contact_stage = default_apparent_hostility_end_stage; common/first_contact/00_*.txt:1888 fires first_contact.406; first_contact_events.txt:6169 set_first_contact_stage = default_apparent_hostility_end_stage; common/first_contact/00_*.txt:1888 fires first_contact.406",
@@ -45,7 +45,7 @@
    "to": "first_contact.410",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：表面敌意收尾阶段（无视，对方主动）(难度5) / 表面敌意收尾阶段（无视，对方谨慎）(难度7)",
+    "zh": "进入阶段：表面敌意收尾阶段（无视，对方主动）（难度5） / 表面敌意收尾阶段（无视，对方谨慎）（难度7）",
     "en": "Stage: apparent hostility end stage (ignored, proactive) (difficulty 5) / apparent hostility end stage (ignored, cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:6188 set_first_contact_stage = default_apparent_hostility_no_action_end_stage_proactive; common/first_contact/00_*.txt:1912 fires first_contact.410; first_contact_events.txt:6191 set_first_contact_stage = default_apparent_hostility_no_action_end_stage_cautious; common/first_contact/00_*.txt:1950 fires first_contact.410",
@@ -56,7 +56,7 @@
    "to": "first_contact.411",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：表面敌意收尾阶段（无视，对方主动）(难度5) / 表面敌意收尾阶段（无视，对方谨慎）(难度7)",
+    "zh": "进入阶段：表面敌意收尾阶段（无视，对方主动）（难度5） / 表面敌意收尾阶段（无视，对方谨慎）（难度7）",
     "en": "Stage: apparent hostility end stage (ignored, proactive) (difficulty 5) / apparent hostility end stage (ignored, cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:6188 set_first_contact_stage = default_apparent_hostility_no_action_end_stage_proactive; common/first_contact/00_*.txt:1926 fires first_contact.411; first_contact_events.txt:6191 set_first_contact_stage = default_apparent_hostility_no_action_end_stage_cautious; common/first_contact/00_*.txt:1964 fires first_contact.411",

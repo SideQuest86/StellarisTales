@@ -23,7 +23,7 @@
    "to": "first_contact.425",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：嗡鸣者收尾阶段（坚持，对方主动）(难度8) / 嗡鸣者收尾阶段（坚持，对方谨慎）(难度10)",
+    "zh": "进入阶段：嗡鸣者收尾阶段（坚持，对方主动）（难度8） / 嗡鸣者收尾阶段（坚持，对方谨慎）（难度10）",
     "en": "Stage: hummers end stage (persevered, proactive) (difficulty 8) / hummers end stage (persevered, cautious) (difficulty 10)"
    },
    "evidence": "first_contact_events.txt:6460 set_first_contact_stage = default_hummers_no_action_end_stage_proactive; common/first_contact/00_*.txt:2024 fires first_contact.425; first_contact_events.txt:6463 set_first_contact_stage = default_hummers_no_action_end_stage_cautious; common/first_contact/00_*.txt:2043 fires first_contact.425",
@@ -34,7 +34,7 @@
    "to": "first_contact.420",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：嗡鸣者收尾阶段（拨款，对方主动）(难度5) / 嗡鸣者收尾阶段（拨款，对方谨慎）(难度7)",
+    "zh": "进入阶段：嗡鸣者收尾阶段（拨款，对方主动）（难度5） / 嗡鸣者收尾阶段（拨款，对方谨慎）（难度7）",
     "en": "Stage: hummers end stage (funded, proactive) (difficulty 5) / hummers end stage (funded, cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:6489 set_first_contact_stage = default_hummers_end_stage_proactive; common/first_contact/00_*.txt:1986 fires first_contact.420; first_contact_events.txt:6492 set_first_contact_stage = default_hummers_end_stage_cautious; common/first_contact/00_*.txt:2005 fires first_contact.420",

@@ -82,7 +82,7 @@
     "en": "Unstable Spacetime: one of three (non-nomadic empires only)"
    },
    "note": {
-    "zh": "每个 50 权重：55 在裂隙星系生成一颗有前FTL文明的星球；60 在最近的己方殖民地凭空出现一个新物种；65 使最近己方殖民地的时间加速 360 天。另有一个“什么都不发生”的权重 = max(0, 80 − 情境进度)，情境越接近完成，越不可能落空；每 360 天重试一次，直至任一事件触发过（国家标记 has_triggered_rift_in_space_unique_event）。",
+    "zh": "每个 50 权重：55 在裂隙星系生成一颗有前FTL文明的星球；60 在最近的己方殖民地凭空出现一个新物种；65 使最近己方殖民地的时间加速 360 天。另有一个“什么都不发生”的权重 = max（0, 80 − 情境进度），情境越接近完成，越不可能落空；每 360 天重试一次，直至任一事件触发过（国家标记 has_triggered_rift_in_space_unique_event）。",
     "en": "Each has weight 50: 55 spawns a pre-FTL planet in the rift's system; 60 materialises a new species among the nearest owned colony's pops; 65 accelerates time on the nearest owned colony for 360 days. A fourth “nothing” entry has weight max(0, 80 − situation progress), so the closer the situation is to completion the less likely it fizzles; the roll repeats every 360 days until one has fired (country flag has_triggered_rift_in_space_unique_event)."
    }
   }

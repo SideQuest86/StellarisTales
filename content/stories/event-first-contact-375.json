@@ -27,7 +27,7 @@
    "to": "first_contact.378",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声收尾阶段（未回应，对方主动）(难度5) / 怪声收尾阶段（未回应，对方谨慎）(难度7)",
+    "zh": "进入阶段：怪声收尾阶段（未回应，对方主动）（难度5） / 怪声收尾阶段（未回应，对方谨慎）（难度7）",
     "en": "Stage: monstrous noises end stage (no reply, proactive) (difficulty 5) / monstrous noises end stage (no reply, cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:5217 set_first_contact_stage = default_monstrous_noises_no_action_end_stage_proactive; common/first_contact/00_*.txt:1676 fires first_contact.378; first_contact_events.txt:5220 set_first_contact_stage = default_monstrous_noises_no_action_end_stage_cautious; common/first_contact/00_*.txt:1715 fires first_contact.378",
@@ -38,7 +38,7 @@
    "to": "first_contact.379",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声收尾阶段（未回应，对方主动）(难度5) / 怪声收尾阶段（未回应，对方谨慎）(难度7)",
+    "zh": "进入阶段：怪声收尾阶段（未回应，对方主动）（难度5） / 怪声收尾阶段（未回应，对方谨慎）（难度7）",
     "en": "Stage: monstrous noises end stage (no reply, proactive) (difficulty 5) / monstrous noises end stage (no reply, cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:5217 set_first_contact_stage = default_monstrous_noises_no_action_end_stage_proactive; common/first_contact/00_*.txt:1690 fires first_contact.379; first_contact_events.txt:5220 set_first_contact_stage = default_monstrous_noises_no_action_end_stage_cautious; common/first_contact/00_*.txt:1729 fires first_contact.379",
@@ -49,7 +49,7 @@
    "to": "first_contact.370",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声：对方回应通知(难度0)",
+    "zh": "进入阶段：怪声：对方回应通知（难度0）",
     "en": "Stage: monstrous noises: their reaction arrives (difficulty 0)"
    },
    "evidence": "first_contact_events.txt:5227 set_first_contact_stage = default_monstrous_noises_notification_stage; common/first_contact/00_*.txt:1596 fires first_contact.370; first_contact_events.txt:5230 set_first_contact_stage = default_monstrous_noises_notification_stage; common/first_contact/00_*.txt:1596 fires first_contact.370",
@@ -60,7 +60,7 @@
    "to": "first_contact.375",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "zh": "进入阶段：怪声收尾阶段（回应过）（难度3）",
     "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:5310 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1620 fires first_contact.375",
@@ -71,7 +71,7 @@
    "to": "first_contact.376",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "zh": "进入阶段：怪声收尾阶段（回应过）（难度3）",
     "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:5310 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1637 fires first_contact.376",
@@ -82,7 +82,7 @@
    "to": "first_contact.377",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "zh": "进入阶段：怪声收尾阶段（回应过）（难度3）",
     "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:5310 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1651 fires first_contact.377",
@@ -93,7 +93,7 @@
    "to": "first_contact.375",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "zh": "进入阶段：怪声收尾阶段（回应过）（难度3）",
     "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:5314 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1620 fires first_contact.375",
@@ -104,7 +104,7 @@
    "to": "first_contact.376",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "zh": "进入阶段：怪声收尾阶段（回应过）（难度3）",
     "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:5314 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1637 fires first_contact.376",
@@ -115,7 +115,7 @@
    "to": "first_contact.377",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：怪声收尾阶段（回应过）(难度3)",
+    "zh": "进入阶段：怪声收尾阶段（回应过）（难度3）",
     "en": "Stage: monstrous noises end stage (we answered) (difficulty 3)"
    },
    "evidence": "first_contact_events.txt:5314 set_first_contact_stage = default_monstrous_noises_end_stage; common/first_contact/00_*.txt:1651 fires first_contact.377",

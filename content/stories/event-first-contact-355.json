@@ -23,7 +23,7 @@
    "to": "first_contact.355",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：谜语收尾阶段（对方主动）(难度5) / 谜语收尾阶段（对方谨慎）(难度7)",
+    "zh": "进入阶段：谜语收尾阶段（对方主动）（难度5） / 谜语收尾阶段（对方谨慎）（难度7）",
     "en": "Stage: riddles end stage (other side proactive) (difficulty 5) / riddles end stage (other side cautious) (difficulty 7)"
    },
    "evidence": "first_contact_events.txt:4938 set_first_contact_stage = default_end_stage_riddles_proactive; common/first_contact/00_*.txt:1555 fires first_contact.355; first_contact_events.txt:4941 set_first_contact_stage = default_end_stage_riddles_cautious; common/first_contact/00_*.txt:1574 fires first_contact.355",
