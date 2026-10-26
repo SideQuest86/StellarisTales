@@ -4,14 +4,14 @@
 .md-guide h3, .md-guide h4, .md-guide h5 { margin: 1.1em 0 .4em; font-family: inherit; }
 .md-guide p, .md-guide blockquote { margin: .6em 0; }
 .md-guide blockquote { padding-left: .9em; border-left: 2px solid rgba(120, 200, 190, .45); opacity: .9; }
-.md-guide code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; padding: 0 .3em; background: rgba(255, 255, 255, .08); border-radius: 3px; }
+.md-guide code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; padding: 0 .3em; background: rgba(255, 255, 255, .08); border-radius: 2px; }
 .md-guide[data-show="zh"] [data-lang="en"], .md-guide[data-show="en"] [data-lang="zh"] { display: none; }
 .md-guide[data-show="zh"] [data-lang="en"][data-mixed], .md-guide[data-show="en"] [data-lang="zh"][data-mixed] { display: revert; }
-.md-lang-toggle { min-height: 40px; padding: 0 .9em; margin: .4em 0; font: inherit; font-size: .85em; color: inherit; background: none; border: 1px solid rgba(120, 200, 190, .4); border-radius: 4px; cursor: pointer; }
+.md-lang-toggle { min-height: 40px; padding: 0 .9em; margin: .4em 0; font: inherit; font-size: .85em; color: inherit; background: none; border: 1px solid rgba(120, 200, 190, .4); border-radius: 2px; cursor: pointer; }
 
 .game-name { cursor: help; }
 .game-name:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
-.name-tip { position: fixed; left: 0; top: 0; z-index: 9999; max-width: min(280px, calc(100vw - 16px)); padding: .5em .75em; font: 13px/1.5 system-ui, sans-serif; color: #e8f4f1; background: rgba(8, 24, 28, .96); border: 1px solid rgba(120, 200, 190, .45); border-radius: 6px; pointer-events: none; opacity: 0; transition: opacity .12s; }
+.name-tip { position: fixed; left: 0; top: 0; z-index: 9999; max-width: min(280px, calc(100vw - 16px)); padding: .5em .75em; font: 13px/1.5 system-ui, sans-serif; color: #e8f4f1; background: rgba(8, 24, 28, .96); border: 1px solid rgba(120, 200, 190, .45); border-radius: 2px; pointer-events: none; opacity: 0; transition: opacity .12s; }
 .name-tip.show { opacity: 1; }
 html.reduced-motion .name-tip { transition: none; }
 @media (prefers-reduced-motion: reduce) { .name-tip { transition: none; } }
@@ -21,3 +21,10 @@ html.reduced-motion .name-tip { transition: none; }
 .md-review > summary { cursor: pointer; padding: .3em 0; min-height: 32px; }
 .md-review > summary:hover { opacity: 1; }
 .md-guide [data-lang] + [data-lang] { margin-inline-start: .2em; }
+
+/* A hyphen-led first line of the game text ("-警告：具有挑战性的起源", leadLine() in typeset.js) stands on its own line: in the
+   reader above the paragraph, in the archive between the title and the teaser (outside the teaser's line clamp). */
+.lead-line { display: block; margin: 0 0 .9em; font: 500 .68em/1.5 var(--sans, system-ui, sans-serif); letter-spacing: .08em; color: var(--gold-2, #b99b62); text-align: left; }
+#selected-lead { max-width: var(--sel-measure); margin: 0 0 6px; font-size: 12px; text-shadow: 0 1px 10px #031014; }
+#selected-lead[hidden] { display: none; }
+@media (max-height: 520px) and (min-width: 701px) { #selected-lead { display: none; } }

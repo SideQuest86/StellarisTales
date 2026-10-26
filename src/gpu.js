@@ -119,17 +119,22 @@ export function createRenderer(THREE, { antialias = true, ...parameters } = {}) 
 }
 
 // ------------------------------------------------------------ hint
-const HINT_KEY = "st-gpu-hint";
+const HINT_KEY = "st-gpu-hint"; // "dismissed" (× / Escape: never again) or "chip" (it has collapsed once: later visits start collapsed)
 /**
  * Dismissible notice when the page draws on an integrated (Windows) or software adapter. Steps are shown only where
  * they apply: the Windows graphics setting on Windows, the browser flag in Chrome and Edge (not in embedded apps).
  * Text comes from i18n.js via data-i18n, so a language switch updates it. Dismissal is remembered.
+ * The notice is advice, not content: a few seconds after it appears (longer while it is being read) it shrinks to a small
+ * "i" chip whose tooltip is its title and whose click opens it again, so on the most common laptops the second thing a
+ * newcomer reads is not a technical notice. Later visits start as the chip.
  */
-export function showAdapterHint(gpu, { t, parent = document.body, delay = 1200 } = {}) {
+export function showAdapterHint(gpu, { t, parent = document.body, delay = 1200, collapseAfter = 6000 } = {}) {
   if (!gpu || (gpu.kind !== "integrated" && gpu.kind !== "software")) return null;
+  let stored = "";
   try {
-    if (localStorage.getItem(HINT_KEY) === "dismissed") return null;
+    stored = localStorage.getItem(HINT_KEY) || "";
   } catch {}
+  if (stored === "dismissed") return null;
   const ua = navigator.userAgent;
   const windows = /Windows/.test(navigator.userAgentData?.platform || ua);
   const chromium = /Chrome\//.test(ua) && !/Electron\//.test(ua);
@@ -144,9 +149,12 @@ export function showAdapterHint(gpu, { t, parent = document.body, delay = 1200 }
   hint.setAttribute("aria-label", t("gpu.label"));
   const flag = `${edge ? "edge" : "chrome"}://flags/#force-high-performance-gpu`;
   const text = (key, tag = "span") => `<${tag} data-i18n="${key}">${t(key)}</${tag}>`;
-  // Collapsed to two lines (title + disclosure) so it never covers the selected story; the steps open on demand.
+  const titleKey = integrated ? "gpu.title" : "gpu.softwareTitle";
+  // Collapsed to two lines (title + disclosure) so it never covers the selected story; the steps open on demand. The chip
+  // (shown only in the collapsed state, CSS) is the notice's small form.
   hint.innerHTML = `
-    <div class="gpu-hint-head">${text(integrated ? "gpu.title" : "gpu.softwareTitle", "strong")}
+    <button type="button" class="gpu-hint-chip" aria-expanded="false" data-i18n-aria="gpu.label" aria-label="${t("gpu.label")}" data-i18n-title="${titleKey}" title="${t(titleKey)}"><span aria-hidden="true">i</span></button>
+    <div class="gpu-hint-head">${text(titleKey, "strong")}
       <button type="button" class="gpu-hint-close" data-i18n-aria="gpu.close" aria-label="${t("gpu.close")}">×</button></div>
     <details><summary>${text(integrated ? "gpu.more" : "gpu.softwareMore")}</summary>
       <small class="gpu-hint-adapter"></small>
@@ -171,10 +179,43 @@ export function showAdapterHint(gpu, { t, parent = document.body, delay = 1200 }
       close();
     }
   });
+  // Card <-> chip: fade out, swap the form while it is invisible, fade in (opacity only, like the notice's own entrance).
+  const chip = hint.querySelector(".gpu-hint-chip");
+  let timer = 0;
+  const swap = (toChip, { focus = false } = {}) => {
+    clearTimeout(timer);
+    hint.classList.remove("show");
+    timer = setTimeout(() => {
+      if (!hint.isConnected) return;
+      hint.classList.toggle("is-chip", toChip);
+      chip.setAttribute("aria-expanded", String(!toChip));
+      requestAnimationFrame(() => hint.classList.add("show"));
+      if (focus) hint.querySelector("summary")?.focus({ preventScroll: true });
+    }, 200);
+  };
+  const busy = () => hint.matches(":hover") || hint.contains(document.activeElement) || hint.querySelector("details")?.open;
+  let opened = false; // the visitor opened it from the chip: it stays open until dismissed
+  const collapseLater = (ms) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      if (!hint.isConnected || opened || hint.classList.contains("is-chip")) return;
+      if (busy()) return collapseLater(2500);
+      try {
+        localStorage.setItem(HINT_KEY, "chip");
+      } catch {}
+      swap(true);
+    }, ms);
+  };
+  chip.addEventListener("click", () => {
+    opened = true;
+    swap(false, { focus: true });
+  });
+  if (stored === "chip") hint.classList.add("is-chip");
   // After the first frames: the notice never competes with the archive's first paint.
   setTimeout(() => {
     parent.append(hint);
     requestAnimationFrame(() => hint.classList.add("show"));
+    if (stored !== "chip") collapseLater(collapseAfter);
   }, delay);
   return hint;
 }

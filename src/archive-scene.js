@@ -1,5 +1,5 @@
 import * as THREE from "../vendor/three.module.js";
-import { CoverAtlas } from "./cover-atlas.js";
+import { CoverAtlas, drawSlate, slateReady, slateStackNow, slateTitle } from "./cover-atlas.js";
 import { t } from "./i18n.js";
 import {
   wrap,
@@ -41,6 +41,13 @@ const INSET_X = 0.018,
 export const CARD_BAND = { top: INSET_Y, height: BAND_H }; // fractions of the face, from the top
 const FACE_PX = { w: 1024, h: 752 };
 const TINTS = ["#5d7a73", "#557b7a", "#857f61", "#66738a", "#7c6b5f", "#61786a", "#6a8a82", "#687a80"];
+const pageLanguage = () => (document.documentElement.lang === "en" ? "en" : "zh");
+/** The small category line of a typographic slate: the page language's category name (capitals in English). */
+function kickerOf(column, lang) {
+  const label = t(`cat.${column?.id}`, null, lang);
+  const name = label === `cat.${column?.id}` ? (lang === "en" ? column?.en : column?.title) || "" : label;
+  return lang === "en" ? name.toUpperCase() : name;
+}
 const HIGHLIGHT = new THREE.Color("#c2ab72");
 const BACKGROUND = 0x08151a;
 // Camera: browse looks down onto the rows so their art band reads; detail turns
@@ -188,9 +195,18 @@ export class ArchiveScene {
     this.canvas = this.renderer.domElement;
     this.canvas.tabIndex = 0; // arrow keys and Enter are handled on the canvas itself, so it stays a (named) tab stop
     this.canvas.setAttribute("role", "group");
-    const nameCanvas = () => this.canvas.setAttribute("aria-label", t("scene.label", null, document.documentElement.lang === "en" ? "en" : "zh"));
+    this.lang = pageLanguage();
+    this.covers = new WeakMap(); // story → {art | zh | en: {key, source}}: what its closed card asks the atlas for
+    const nameCanvas = () => this.canvas.setAttribute("aria-label", t("scene.label", null, this.lang));
     nameCanvas();
-    new MutationObserver(nameCanvas).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    new MutationObserver(() => {
+      if (pageLanguage() === this.lang) return;
+      this.lang = pageLanguage();
+      nameCanvas();
+      this.wake(); // typographic slates are keyed by language: the closed cards ask for the new ones
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    // Newsreader (Google Fonts) may land after the first English slate was set in the self-hosted stand-in.
+    document.fonts?.addEventListener?.("loadingdone", () => this.restyleSlate());
     container.append(this.canvas);
 
     this.scene = new THREE.Scene();
@@ -423,11 +439,20 @@ export class ArchiveScene {
     const col = this.columns[wrap(lane, this.columns.length)];
     return col.stories[wrap(row, col.stories.length)];
   }
-  coverSource(story, lane) {
-    return story.image ? { image: story.image } : { title: story.title?.zh || story.title?.en || "", lane: wrap(lane, this.columns.length) };
-  }
-  coverKey(story) {
-    return story.image || `title:${story.id}`;
+  /** What a closed card asks the atlas for in its art band: the story's picture or, without one, its typographic slate in
+   *  the page language (a new key per language, so a language switch fetches the new slates). Cached per story (no
+   *  allocation per card per frame). */
+  cover(story, lane) {
+    let entry = this.covers.get(story);
+    if (!entry) this.covers.set(story, (entry = {}));
+    const which = story.image ? "art" : this.lang;
+    if (entry[which]) return entry[which];
+    if (story.image) return (entry.art = { key: story.image, source: { image: story.image } });
+    const index = wrap(lane, this.columns.length);
+    return (entry[which] = {
+      key: `title:${story.id}:${this.lang}`,
+      source: { title: slateTitle(story.title, this.lang) || t("cat.fallback", null, this.lang), kicker: kickerOf(this.columns[index], this.lang), lang: this.lang, tint: TINTS[index % TINTS.length] },
+    });
   }
   setSelection(lane, row) {
     if (this.selection.lane === lane && this.selection.row === row) return;
@@ -507,24 +532,24 @@ export class ArchiveScene {
   // ------------------------------------------------------------ chapter art
   /** Chapter (doc) changes run the frosted geometric reveal on the extracted card. */
   setChapterArt(image, title, meta = {}) {
-    const lang = document.documentElement.lang === "en" ? "en" : "zh";
-    const clean = (s) => String(s || "").replace(/§./g, "").replace(/\[[^\]]*\]/g, "").replace(/\$[^$]*\$/g, "");
-    const text = clean(title?.[lang] || title?.zh || title?.en);
+    const lang = pageLanguage();
     const story = this.current;
+    // Without a picture the face carries a typographic slate (cover-atlas.js): the chapter's title, else the story's.
+    const text = slateTitle(title, lang) || slateTitle(story.title, lang) || t("cat.fallback", null, lang);
     const source = image || story.image || null;
     // Keyed by doc identity (both languages), so history survives a language switch.
     const key = `${source}|${title?.zh || ""}|${title?.en || ""}`;
     const column = this.columns[wrap(this.selection.lane, this.columns.length)];
-    const kicker = meta.category || (lang === "en" ? column?.en : column?.title) || "";
+    const kicker = meta.category || kickerOf(column, lang);
     const lane = wrap(this.selection.lane, this.columns.length);
     if (this.art.key === key) {
       // Same doc in another language: redraw the face in place, no transition.
       if (this.art.lang !== lang && this.detailTarget && !this.art.pendingDetail) {
         this.art.lang = lang;
         const token = ++this.art.token;
-        this.loadImage(source).then((img) => {
+        this.faceInputs(source, { lang, title: text, kicker }).then(({ img, stack }) => {
           if (token !== this.art.token) return;
-          this.drawDetail(this.art.which, { img, text, kicker, story, lane });
+          this.drawDetail(this.art.which, { img, stack, text, kicker, lang, story, lane });
           this.art.textures[this.art.which].needsUpdate = true;
           this.wake();
         });
@@ -539,12 +564,25 @@ export class ArchiveScene {
     if (history.length > 24) history.shift();
     this.art.key = key;
     const token = ++this.art.token;
-    this.loadImage(source).then((img) => {
+    this.faceInputs(source, { lang, title: text, kicker }).then(({ img, stack }) => {
       if (token !== this.art.token) return;
-      this.art.pendingDetail = { img, text, kicker, story, lane, dir: back ? -1 : 1 };
+      this.art.pendingDetail = { img, stack, text, kicker, lang, story, lane, dir: back ? -1 : 1 };
       this.wake();
     });
-  }  loadImage(path) {
+  }
+  /** A chapter face's inputs: its picture, or (none) the faces its typographic slate is set in, loaded before any drawing. */
+  faceInputs(source, slate) {
+    return this.loadImage(source).then((img) => (img ? { img } : slateReady(slate).then((stack) => ({ img: null, stack }))));
+  }
+  /** A face a slate stood in for (Newsreader) has loaded since: set the visible slate again, in place. */
+  restyleSlate() {
+    const drawn = this.art?.slate;
+    if (!drawn || drawn.stack === slateStackNow(drawn.lang)) return;
+    this.drawDetail(drawn.index, { ...drawn.spec, stack: undefined });
+    this.art.textures[drawn.index].needsUpdate = true;
+    this.wake();
+  }
+  loadImage(path) {
     if (!path) return Promise.resolve(null);
     let pending = this.art.images.get(path);
     if (!pending) {
@@ -563,7 +601,9 @@ export class ArchiveScene {
     }
     return pending;
   }
-  drawDetail(index, { img, text, kicker, lane }) {
+  drawDetail(index, spec) {
+    const { img, stack, text, kicker, lane } = spec;
+    const lang = spec.lang || pageLanguage();
     const canvas = this.art.canvases[index];
     const c = canvas.getContext("2d");
     const { w, h } = FACE_PX;
@@ -612,9 +652,14 @@ export class ArchiveScene {
       c.imageSmoothingQuality = "high";
       c.drawImage(img, sx, sy, sw, sh, bx, by, bw, bh);
     } else {
-      c.fillStyle = "#13262b";
-      c.fillRect(bx, by, bw, bh);
+      // No picture: the typographic slate, in the page language (cover-atlas.js drawSlate). The reader's own heading is
+      // the exact title (it has the game's names filled in); the data title, placeholders elided, is the fallback.
+      const heading = this.detailTarget ? document.querySelector("#reader-title")?.textContent.trim() : "";
+      drawSlate(c, bx, by, bw, bh, { title: heading || text, kicker, lang, tint: TINTS[lane % TINTS.length], stack });
     }
+    this.art.slate = img ? null : { index, spec, lang, stack: stack || slateStackNow(lang) };
+    // The map overlay's "Event image" toggle has nothing to show for a slate: styling can hide it on `.no-art`.
+    (this.flowElement ??= document.querySelector("#flow-surface"))?.classList.toggle("no-art", !img);
     c.strokeStyle = "#d9c08a55";
     c.strokeRect(bx + 0.5, by + 0.5, bw - 1, bh - 1);
     // No text on the face: the reader panel carries the title, and the map covers this panel.
@@ -636,7 +681,8 @@ export class ArchiveScene {
   }
   refreshActiveCover() {
     const story = this.current;
-    const tile = this.coverAtlas.get(this.coverKey(story), this.coverSource(story, this.selection.lane), true, this.tileOut);
+    const cover = this.cover(story, this.selection.lane);
+    const tile = this.coverAtlas.get(cover.key, cover.source, true, this.tileOut);
     for (const side of ["from", "to"]) {
       if (this.reveal[`${side}Info`].value.x < 0.5) continue;
       this.reveal[`${side}Cover`].value.set(tile[0], tile[1], tile[2], tile[3]);
@@ -1058,7 +1104,8 @@ export class ArchiveScene {
         colors[n * 3] = tmpColor.r; colors[n * 3 + 1] = tmpColor.g; colors[n * 3 + 2] = tmpColor.b;
         const story = this.storyAt(lane, row);
         const near = Math.abs(l) <= 2 && r >= -4 && r <= 3;
-        this.coverAtlas.get(this.coverKey(story), this.coverSource(story, lane), near, tile);
+        const cover = this.cover(story, lane);
+        this.coverAtlas.get(cover.key, cover.source, near, tile);
         covers[n * 4] = tile[0]; covers[n * 4 + 1] = tile[1]; covers[n * 4 + 2] = tile[2]; covers[n * 4 + 3] = tile[3];
         const dl = lane - this.lane.value, dr = row - this.row.value;
         infos[n * 3] = tile[4]; infos[n * 3 + 1] = tintIndex; infos[n * 3 + 2] = Math.exp(-dl * dl * 0.3 - dr * dr * 0.01);

@@ -14,7 +14,8 @@ async function openMap(page) {
   await page.goto(`${base}#story=${story}`, { waitUntil: "networkidle" });
   await page.waitForSelector(".chapter-document", { state: "attached", timeout: 20000 });
   if (!(await page.locator(".flow-viewport:visible").count())) {
-    await page.locator(".chapter-directory-link, #flow-open, [data-flow-open]").first().click().catch(() => {});
+    // Phones reach the map from the toolbar's "Story map" (#chapter-toggle); the chapter-foot link is no longer shown.
+    await page.locator("#chapter-toggle:visible, .chapter-directory-link:visible, #flow-open, [data-flow-open]").first().click().catch(() => {});
   }
   await page.waitForSelector(".flow-viewport", { state: "visible", timeout: 10000 });
 }

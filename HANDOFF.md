@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.10.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.11.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -95,6 +95,12 @@ evidence from earlier rounds and is not updated.
   reading.js describe() without placeholders, random groups bracketed with chances, duplicate continuation cards removed,
   centred endings, .reader-trail line) and archive / museum / search (archive.md). Checks: font --check, node 109/109,
   smoke 15/15, verify-round5, verify-refine-reader, verify-reader-v4, verify-a11y.
+  v4.11.0 (2026-10-26): critique fixes (docs/refine/round6/critique.md → text.md, visual.md, placeholder.md): src/typeset.js
+  display-time typesetting (words unchanged), lead lines, review-note details, typographic slates for 59 picture-less
+  stories (cover-atlas.js drawSlate), newcomer lede, GPU notice chip, unified foot panels, museum phone overflow, map captions
+  at word boundaries. Font subsets rebuilt (--check ok). Checks: node 125/125, smoke 15/15, verify-round5, -refine-reader,
+  -reader-v4, -a11y, -search 24. Known follow-up: scripts/verify-gpu.mjs times out clicking the GPU notice once it has
+  collapsed to its chip (test needs to expand the chip first); not part of the release gate.
   The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
 - Live: v4.10.0 (`378d14b5`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15.
 - Live: v4.9.0 (`654a79dc`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15 (one transient failure right after deploy, re-run clean), /fonts/*.woff2 served.

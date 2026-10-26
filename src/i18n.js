@@ -190,6 +190,7 @@ export const UI = {
   "doc.origin": { zh: "起源", en: "Origin" },
   "map.appendix": { zh: "相关记录", en: "Related records" },
   "map.stats": { zh: "{n} 篇 · 已读 {r}", en: "{n} chapters · {r} read" },
+  "map.stats1": { zh: "{n} 篇 · 已读 {r}", en: "{n} chapter · {r} read" },
   "map.measures": { zh: "措施已读 {r}/{n}", en: "{r}/{n} measures read" },
   "map.measuresNote": { zh: "成功需完成全部措施且仍拥有母星。", en: "Success requires all measures and keeping the homeworld." },
   "map.unread": { zh: "未读：", en: "Unread: " },

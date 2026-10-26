@@ -72,11 +72,32 @@ function measurer(font) {
 // Line-break rules (kinsoku): no closing punctuation at the start of a line, no opening bracket at its end.
 const NO_START = new Set([..."，。、；：！？）】》」』”’…％"]);
 const NO_END = new Set([..."（【《「『“‘"]);
+const SPACES = new RegExp("[\\s\\u2060]+", "g");
+const LETTER = /[\p{L}\p{N}]/u, HAN_KANA = /[぀-ヿ㐀-鿿＀-￯]/;
+const latinLetter = (c) => !!c && LETTER.test(c) && !HAN_KANA.test(c);
+/** The truncated last line: cut at a CJK character or a Latin word boundary (never inside a Latin word, unless the line is a
+ *  single long word), without trailing separators or an unmatched opening bracket before the ellipsis. */
+function ellipsize(chars, start, end) {
+  let cut = end;
+  if (latinLetter(chars[cut - 1]) && latinLetter(chars[cut])) {
+    let space = cut - 1;
+    while (space > start && chars[space] !== " ") space--;
+    if (space > start) cut = space;
+  }
+  let text = chars.slice(start, cut).join("");
+  const open = (text.match(/[(（\[]/g) || []).length, close = (text.match(/[)）\]]/g) || []).length;
+  if (open > close) {
+    const at = Math.max(text.lastIndexOf("("), text.lastIndexOf("（"), text.lastIndexOf("["));
+    if (at > 0) text = text.slice(0, at);
+  }
+  text = text.replace(/[\s(（[,，;:—–-]+$/, "");
+  return (text || chars.slice(start, cut).join("").trimEnd()) + "…";
+}
 /** Fit text into `width` (a number, or one width per line), on up to `lines` lines, with an ellipsis. */
 function fitLines(text, width, font, lines = 1) {
   const measure = measurer(font);
   const ellipsis = measure("…");
-  const chars = [...String(text || "").replace(/\s+/g, " ").trim()];
+  const chars = [...String(text || "").replace(SPACES, " ").trim()]; // (the typeset dash's thin spaces count as spaces here)
   const limit = (i) => (Array.isArray(width) ? width[Math.min(i, width.length - 1)] : width);
   const out = [];
   let start = 0;
@@ -97,7 +118,7 @@ function fitLines(text, width, font, lines = 1) {
     }
     if (last) {
       while (end > start && used + ellipsis > room) used -= measure(chars[--end]);
-      out.push(chars.slice(start, end).join("").trimEnd() + "…");
+      out.push(ellipsize(chars, start, end));
       start = chars.length;
       break;
     }
@@ -772,7 +793,7 @@ export class FlowSurface {
   paintState() {
     if (!this.nodeElements) return;
     const path = this.path;
-    this.stats.textContent = t("map.stats", { n: this.tree.docCount, r: [...this.visited].filter((id) => this.tree.primary.has(id)).length });
+    this.stats.textContent = t(this.tree.docCount === 1 ? "map.stats1" : "map.stats", { n: this.tree.docCount, r: [...this.visited].filter((id) => this.tree.primary.has(id)).length });
     if (this.storyName) this.storyName.textContent = this.local(this.story.title);
     if (this.captionLine) this.captionLine.textContent = this.docTitle(this.current);
     for (const [id, el] of this.nodeElements) this.paintNode(id, el, path);

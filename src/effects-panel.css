@@ -1,13 +1,9 @@
 /* Gameplay-effects panel (src/effects-panel.js): collapsed by default, quiet, same teal archive language. */
-.fx { margin: var(--s-4, 16px) 0 0; border: 1px solid var(--line, #2d4549); border-radius: 6px; background: color-mix(in srgb, var(--panel, #0d2229) 82%, transparent); font-family: var(--font-ui, system-ui, sans-serif); font-size: var(--text-ui, 13px); color: var(--ink-2, #b9cbc5); }
-.fx-sum { display: flex; align-items: center; gap: var(--s-2, 8px); min-height: 44px; padding: 0 var(--s-3, 12px); cursor: pointer; color: var(--dim, #86a29f); list-style: none; letter-spacing: 0.02em; }
-.fx-sum::-webkit-details-marker { display: none; }
-.fx-sum::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform 0.15s ease; flex: none; }
-.fx[open] > .fx-sum::before { transform: rotate(45deg); }
-.fx-sum:hover, .fx-sum:focus-visible { color: var(--ink, #dbe5df); }
-.fx-sum:focus-visible { outline: 2px solid var(--teal, #7cc4bd); outline-offset: -2px; border-radius: 6px; }
-.fx-count { margin-left: auto; min-width: 22px; padding: 1px 7px; border-radius: 10px; border: 1px solid var(--line-2, #3d5a5c); text-align: center; font-size: 12px; color: var(--faint, #6f8b88); font-variant-numeric: tabular-nums; }
-.fx-body { padding: 0 var(--s-3, 12px) var(--s-3, 12px); border-top: 1px solid var(--line, #2d4549); }
+/* The box (hairline, square, wash), the summary row (48 px, 18 px inset) and the chevron are the foot-panel recipe shared with the
+   reading guide and the reviewer notes: see ":is(.fx, .story-summary, details.review-note)" in style.css. Only what is the effects panel's own is here. */
+.fx { margin: var(--s-4, 16px) 0 0; font-family: var(--font-ui, system-ui, sans-serif); font-size: var(--text-ui, 13px); }
+.fx-count { margin-left: auto; min-width: 22px; padding: 1px 7px; border-radius: 2px; border: 1px solid var(--line-2, #3d5a5c); text-align: center; font-size: 12px; color: var(--faint, #6f8b88); font-variant-numeric: tabular-nums; }
+.fx-body { padding: 0 18px 16px; border-top: 1px solid var(--line, #2d4549); }
 .fx-note { margin: var(--s-3, 12px) 0 var(--s-2, 8px); color: var(--faint, #6f8b88); font-size: 12px; line-height: 1.5; }
 .fx-skipped { margin-bottom: 0; }
 .fx-sec + .fx-sec { margin-top: var(--s-3, 12px); }
@@ -33,7 +29,7 @@
 .fx-more { color: var(--faint, #6f8b88); font-size: 12px; }
 .fx-bullets .fx-level-1 { padding-left: var(--s-4, 16px); }
 .fx-bullets .fx-item::before { content: "·"; margin-right: 6px; color: var(--faint, #6f8b88); }
-.fx-showall { margin: var(--s-1, 4px) 0 0; min-height: 40px; padding: 0 var(--s-3, 12px); background: none; border: 1px solid var(--line-2, #3d5a5c); border-radius: 4px; color: var(--ink-2, #b9cbc5); font: inherit; cursor: pointer; }
+.fx-showall { margin: var(--s-1, 4px) 0 0; min-height: 40px; padding: 0 var(--s-3, 12px); background: none; border: 1px solid var(--line-2, #3d5a5c); border-radius: 2px; color: var(--ink-2, #b9cbc5); font: inherit; cursor: pointer; }
 .fx-showall:hover, .fx-showall:focus-visible { color: var(--ink, #dbe5df); border-color: var(--teal, #7cc4bd); }
 @media (max-width: 480px) { .fx { margin-inline: 0; } .fx-line { gap: 2px 6px; } }
 @media (prefers-reduced-motion: reduce) { .fx-sum::before { transition: none; } }

@@ -51,11 +51,14 @@ export class CoverAtlas {
     };
     this.blit.scene.add(new THREE.Mesh(new THREE.PlaneGeometry(1, 1), this.blit.material));
     this.cleared = false;
+    // Newsreader (Google Fonts) can arrive after the first slates were set in the self-hosted stand-in: redraw those.
+    this.onFonts = () => this.restyle();
+    document.fonts?.addEventListener?.("loadingdone", this.onFonts);
   }
   /**
    * Request a tile; returns [u, v, su, sv, tier] where tier is 2 (hi), 1 (lo) or
    * 0 (not ready: the shader shows the card's plain label panel).
-   * `source` is {image} or {title, lane} for stories without original art.
+   * `source` is {image} or a typographic slate {title, kicker, lang, tint} for stories without original art.
    */
   get(key, source, wantHi, out) {
     const hi = wantHi ? this.slot("hi", key, source) : null;
@@ -90,6 +93,8 @@ export class CoverAtlas {
         rect: [px, SIZE - py - tier.h, tier.w, tier.h], // GL viewport, origin bottom-left
         uv: [(px + 0.5) / SIZE, (SIZE - py - tier.h + 0.5) / SIZE, (tier.w - 1) / SIZE, (tier.h - 1) / SIZE],
         ready: false,
+        queued: true,
+        stack: null, // the font stack a slate was last drawn with
         frame: this.frame,
       };
       tier.slots.set(key, slot);
@@ -105,7 +110,7 @@ export class CoverAtlas {
       const slot = this.queue.shift();
       if (slot.dead) continue;
       this.inflight++;
-      this.decode(slot.key, slot.source)
+      this.decode(slot)
         .then((bitmap) => {
           if (!slot.dead && bitmap) this.ready.push({ slot, bitmap });
           this.wake();
@@ -117,14 +122,16 @@ export class CoverAtlas {
         });
     }
   }
-  decode(key, source) {
+  decode(slot) {
+    const { key, source } = slot;
+    // A slate is set once the faces it needs have loaded, and drawn per tier at that tier's size: a few hundred
+    // microseconds, so nothing is cached (the canvas is freed after its blit).
+    if (!source.image) return slateReady(source).then((stack) => slateCard(source, TIERS[slot.tier], stack));
     let pending = this.bitmaps.get(key);
     if (!pending) {
-      pending = source.image
-        ? fetch(this.asset(source.image))
-            .then((r) => (r.ok ? r.blob() : Promise.reject(new Error(r.status))))
-            .then((blob) => createImageBitmap(blob, { imageOrientation: "flipY" }))
-        : Promise.resolve(titleCard(source));
+      pending = fetch(this.asset(source.image))
+        .then((r) => (r.ok ? r.blob() : Promise.reject(new Error(r.status))))
+        .then((blob) => createImageBitmap(blob, { imageOrientation: "flipY" }));
       this.bitmaps.set(key, pending);
       // Dropping the reference is enough: a bitmap may still be queued for the
       // other tier's blit, so it is never closed here (GC reclaims it).
@@ -174,6 +181,8 @@ export class CoverAtlas {
       renderer.render(this.blit.scene, this.blit.camera);
       texture.dispose();
       slot.ready = true;
+      slot.queued = false;
+      slot.stack = bitmap.stack || null;
       this.loaded++;
       changed = true;
     }
@@ -193,9 +202,23 @@ export class CoverAtlas {
       for (const slot of tier.slots.values()) {
         if (!slot.ready) continue;
         slot.ready = false;
+        slot.queued = true;
         this.queue.push(slot);
       }
     this.pump();
+  }
+  /** A face a slate stood in for has loaded since it was drawn: set those slates again (their tiles stay valid until the new one lands). */
+  restyle() {
+    let again = false;
+    const english = slateStackNow("en"); // only the English slates can change: Chinese ones are always the self-hosted face
+    for (const tier of Object.values(this.tiers))
+      for (const slot of tier.slots.values()) {
+        if (!slot.ready || slot.queued || slot.source.image || slot.source.lang !== "en" || slot.stack === english) continue;
+        slot.queued = true;
+        this.queue.push(slot);
+        again = true;
+      }
+    if (again) this.pump();
   }
   get pending() {
     return this.queue.length + this.ready.length + this.inflight;
@@ -210,6 +233,7 @@ export class CoverAtlas {
     };
   }
   dispose() {
+    document.fonts?.removeEventListener?.("loadingdone", this.onFonts);
     this.target.dispose();
     this.blit.material.dispose();
     for (const pending of this.bitmaps.values()) pending.then((b) => b?.close?.()).catch(() => {});
@@ -228,33 +252,218 @@ function write(out, uv, tier) {
   return out;
 }
 
-// Stories without original art get an honest typographic label, not invented art.
-const TITLE_COLORS = ["#20363a", "#22383a", "#2b3530", "#232f3b", "#302d2b", "#24362f", "#253a37", "#28323a"];
-function titleCard({ title, lane = 0 }) {
+// -----------------------------------------------------------------------------------------------------------------------
+// Typographic slate: what a story without an event picture shows where the art would be (59 of 1,388). Honest typography on
+// the archive's own panel, never invented imagery: a lane-tinted dark ground, ledger rules, a gold hairline frame, the
+// category as a small gold kicker and the title in the page language, set in the site's faces. It is drawn on a 448x150
+// design grid (the 3:1 banner) at whatever size its target has: the 448x150 and 128x43 atlas tiles here, and the band of the
+// reader's card in archive-scene.js. Canvas text uses only faces that have loaded, so slateReady() comes first.
+const DESIGN_W = 448,
+  DESIGN_H = 150;
+const SERIF_ZH = '"Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif';
+const SERIF_EN = '"Newsreader", "Noto Serif SC", serif';
+const SANS = '"Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+const GOLD = "#d8bb84";
+const NO_START = "，。、！？：；）」』》〉】〕”’…·,.!?:;)]}%—–"; // closing marks never begin a line
+const NO_END = "（「『《〈【〔“‘([{"; // opening marks never end one
+const hasFace = (family, status) => {
+  if (document.fonts) for (const face of document.fonts) if (face.family.includes(family) && (!status || face.status === status)) return true;
+  return false;
+};
+
+/** The serif stack a slate can use right now: Newsreader once it has loaded (English), else the self-hosted Noto Serif SC. */
+export const slateStackNow = (lang) => (lang === "en" && hasFace("Newsreader", "loaded") ? SERIF_EN : SERIF_ZH);
+
+/** The title a slate sets: the page language's (the other language if missing), with the game's placeholders elided. */
+export function slateTitle(title, lang) {
+  const raw = title?.[lang] || (lang === "en" ? title?.zh : title?.en) || "";
+  const text = String(raw).replace(/§./g, "").replace(/\[[^\]]*\]/g, "…").replace(/\$[^$]*\$/g, "").replace(/\s+/g, " ").trim();
+  return /^[…\s]*$/.test(text) ? "" : text;
+}
+
+/** Resolves with the serif stack to draw with once the faces the slate's letters need have loaded (2.5 s cap; never rejects). */
+export async function slateReady({ lang = "zh", title = "", kicker = "" }) {
+  const fonts = document.fonts;
+  if (!fonts?.load) return slateStackNow(lang);
+  const within = (jobs) => Promise.race([Promise.allSettled(jobs), new Promise((resolve) => setTimeout(resolve, 2500))]);
+  const kickerFace = fonts.load(`500 12px ${SANS}`, kicker || " ");
+  const cjk = /[^\u0000-ɏ -⁯]/.test(title);
+  if (lang === "en" && hasFace("Newsreader")) {
+    await within([kickerFace, fonts.load('600 30px "Newsreader"', title || " "), cjk ? fonts.load(`600 30px ${SERIF_ZH}`, title) : null]);
+    if (hasFace("Newsreader", "loaded")) return SERIF_EN;
+  }
+  await within([kickerFace, fonts.load(`600 30px ${SERIF_ZH}`, title || " ")]);
+  return SERIF_ZH;
+}
+
+/** A slate as a canvas of an atlas tier's size. */
+function slateCard(spec, tier, stack) {
   const canvas = document.createElement("canvas");
-  canvas.width = 448;
-  canvas.height = 150;
-  const c = canvas.getContext("2d");
-  c.fillStyle = TITLE_COLORS[((lane % 8) + 8) % 8];
-  c.fillRect(0, 0, 448, 150);
-  c.strokeStyle = "#5f7d7466";
-  c.lineWidth = 1;
-  for (let x = 0; x < 448; x += 28) {
-    c.beginPath();
-    c.moveTo(x + 0.5, 0);
-    c.lineTo(x + 0.5, 150);
-    c.stroke();
-  }
-  c.fillStyle = "#cdb88a";
-  c.fillRect(24, 34, 3, 82);
-  c.fillStyle = "#dfe6dc";
-  const text = title || "";
-  let size = 30;
-  c.font = `500 ${size}px "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif`;
-  while (c.measureText(text).width > 380 && size > 16) {
-    size -= 2;
-    c.font = `500 ${size}px "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif`;
-  }
-  c.fillText(text, 44, 75 + size / 3, 384);
+  canvas.width = tier.w;
+  canvas.height = tier.h;
+  drawSlate(canvas.getContext("2d", { alpha: false }), 0, 0, tier.w, tier.h, { ...spec, stack });
+  canvas.stack = stack;
   return canvas;
 }
+
+/** Lines of `text` that fit `maxW` in the context's current font: Latin words stay whole, Han breaks between characters,
+ *  closing marks hang on the previous line, and the lines are balanced (the narrowest width that needs no extra line). */
+function wrapText(c, text, maxW) {
+  const tokens = text.match(/[A-Za-z0-9À-ɏ][A-Za-z0-9À-ɏ'’.\-:_]*|\s+|[\s\S]/gu) || [];
+  const widths = tokens.map((token) => c.measureText(token).width);
+  const pack = (limit) => {
+    const lines = [];
+    let line = "", lineW = 0, gap = 0, prev = "", prevW = 0;
+    tokens.forEach((token, i) => {
+      if (/^\s/.test(token)) {
+        gap = widths[i];
+        return;
+      }
+      if (line && lineW + gap + widths[i] > limit && !NO_START.includes(token)) {
+        let carry = "";
+        if (NO_END.includes(prev)) {
+          line = line.slice(0, -prev.length);
+          carry = prev;
+        }
+        lines.push(line.trimEnd());
+        line = carry;
+        lineW = carry ? prevW : 0;
+        gap = 0;
+      }
+      if (line && gap) line += " ";
+      line += token;
+      lineW += gap + widths[i];
+      gap = 0;
+      prev = token;
+      prevW = widths[i];
+    });
+    if (line) lines.push(line);
+    return lines;
+  };
+  const first = pack(maxW);
+  if (first.length < 2) return first;
+  let lo = Math.max(maxW / first.length, ...widths.filter((_, i) => !/^\s/.test(tokens[i]))), hi = maxW;
+  for (let i = 0; i < 12; i++) {
+    const mid = (lo + hi) / 2;
+    if (pack(mid).length <= first.length) hi = mid;
+    else lo = mid;
+  }
+  return pack(hi);
+}
+
+/** The largest size (30 down to 17) at which the title sets in two lines (three when small) inside `maxW`; " / " joins two titles. */
+function setTitle(c, text, fontAt, maxW) {
+  const parts = text.split(/\s+\/\s+/).filter(Boolean);
+  let set = null;
+  for (const size of [30, 27, 24, 21, 19, 17]) {
+    c.font = fontAt(size);
+    const lines = parts.flatMap((part) => wrapText(c, part, maxW));
+    set = { size, lines };
+    if (lines.length <= (size >= 24 ? 2 : 3) && lines.every((line) => c.measureText(line).width <= maxW * 1.05)) return set;
+  }
+  set.lines = set.lines.slice(0, 3);
+  return set;
+}
+
+/**
+ * Draw the slate into the rectangle (x, y, w, h) of a 2D context. `stack` is the serif stack from slateReady(); it falls back
+ * to whatever has loaded. Hairlines are one target pixel wide whatever the size; the ledger rules and frame corners drop out
+ * of the small atlas tiles, where they would only shimmer.
+ */
+export function drawSlate(c, x, y, w, h, { title = "", kicker = "", lang = "zh", tint = "#5d7a73", stack }) {
+  const s = w / DESIGN_W, hair = 1 / s, serif = stack || slateStackNow(lang), detail = s >= 0.6;
+  const cjk = lang !== "en" || /[　-鿿＀-￯]/.test(title);
+  const alpha = (hex, a) => hex + Math.round(a * 255).toString(16).padStart(2, "0");
+  c.save();
+  c.beginPath();
+  c.rect(x, y, w, h);
+  c.clip();
+  c.translate(x, y + (h - DESIGN_H * s) / 2);
+  c.scale(s, s);
+  if ("textRendering" in c) c.textRendering = "geometricPrecision";
+  // Ground: the archive's panel, washed with the lane's tint from the top left, with a faint teal lamp behind the lettering.
+  c.fillStyle = "#0a191e";
+  c.fillRect(-2, -2, DESIGN_W + 4, DESIGN_H + 4);
+  const wash = c.createLinearGradient(0, 0, DESIGN_W, DESIGN_H);
+  wash.addColorStop(0, alpha(tint, 0.5));
+  wash.addColorStop(0.6, alpha(tint, 0.16));
+  wash.addColorStop(1, alpha(tint, 0.06));
+  c.fillStyle = wash;
+  c.fillRect(-2, -2, DESIGN_W + 4, DESIGN_H + 4);
+  const lamp = c.createRadialGradient(224, 72, 0, 224, 72, 210);
+  lamp.addColorStop(0, "rgba(124,196,189,0.11)");
+  lamp.addColorStop(1, "rgba(124,196,189,0)");
+  c.fillStyle = lamp;
+  c.fillRect(-2, -2, DESIGN_W + 4, DESIGN_H + 4);
+  c.lineWidth = hair;
+  if (detail) {
+    c.strokeStyle = "rgba(159,183,173,0.06)";
+    c.beginPath();
+    for (let ry = 12.5; ry < DESIGN_H; ry += 10) {
+      c.moveTo(0, ry);
+      c.lineTo(DESIGN_W, ry);
+    }
+    c.stroke();
+  }
+  // Gold hairline frame; corner brackets on the larger sizes.
+  c.strokeStyle = alpha(GOLD, 0.26);
+  c.strokeRect(9, 9, DESIGN_W - 18, DESIGN_H - 18);
+  if (detail) {
+    c.strokeStyle = alpha(GOLD, 0.8);
+    c.lineWidth = hair * 1.5;
+    c.beginPath();
+    for (const [cx, cy, dx, dy] of [[9, 9, 1, 1], [DESIGN_W - 9, 9, -1, 1], [9, DESIGN_H - 9, 1, -1], [DESIGN_W - 9, DESIGN_H - 9, -1, -1]]) {
+      c.moveTo(cx + dx * 13, cy);
+      c.lineTo(cx, cy);
+      c.lineTo(cx, cy + dy * 13);
+    }
+    c.stroke();
+  }
+  // Lettering block, centred a little above the middle (the cards behind it in the archive hide the lower half).
+  const text = title.trim();
+  const titleSet = text ? setTitle(c, text, (px) => `600 ${px}px ${serif}`, 336) : { size: 30, lines: [] };
+  const lineH = titleSet.size * (cjk ? 1.32 : 1.2);
+  const KICKER = 12, GAP = 8, RULE = 5, GAP_TITLE = 14;
+  const block = KICKER + GAP + RULE + (titleSet.lines.length ? GAP_TITLE + lineH * titleSet.lines.length : 0);
+  const top = (DESIGN_H - block) / 2 - 2;
+  if (kicker) {
+    const size = lang === "en" ? 10.5 : 11.5, track = size * (lang === "en" ? 0.26 : 0.42);
+    c.font = `500 ${size}px ${SANS}`;
+    c.textAlign = "left";
+    c.textBaseline = "alphabetic";
+    c.fillStyle = GOLD;
+    const chars = [...kicker], widths = chars.map((ch) => c.measureText(ch).width);
+    let cx = 224 - (widths.reduce((a, b) => a + b, 0) + track * (chars.length - 1)) / 2;
+    chars.forEach((ch, i) => {
+      c.fillText(ch, cx, top + KICKER / 2 + size * 0.36);
+      cx += widths[i] + track;
+    });
+  }
+  const ry = top + KICKER + GAP + RULE / 2;
+  c.strokeStyle = alpha(GOLD, 0.6);
+  c.lineWidth = hair;
+  c.beginPath();
+  c.moveTo(224 - 44, ry);
+  c.lineTo(224 - 8, ry);
+  c.moveTo(224 + 8, ry);
+  c.lineTo(224 + 44, ry);
+  c.stroke();
+  c.fillStyle = GOLD;
+  c.beginPath();
+  c.moveTo(224, ry - 3);
+  c.lineTo(227, ry);
+  c.lineTo(224, ry + 3);
+  c.lineTo(221, ry);
+  c.closePath();
+  c.fill();
+  if (titleSet.lines.length) {
+    c.font = `600 ${titleSet.size}px ${serif}`;
+    c.textAlign = "center";
+    c.textBaseline = "alphabetic";
+    c.fillStyle = "#e8eee9";
+    const first = top + KICKER + GAP + RULE + GAP_TITLE;
+    titleSet.lines.forEach((line, i) => c.fillText(line, 224, first + lineH * (i + 0.5) + titleSet.size * 0.36));
+  }
+  c.restore();
+}
+

@@ -32,6 +32,19 @@ export function tokenize(text, ids, spaces, other = () => null) {
   return out;
 }
 
+const CJK_EDGE = new RegExp("[\\u3400-\\u9fff\\u3000-\\u303f\\uff00-\\uffef]");
+/** A document id that the source wrote with a space on a Chinese side ("路线以 origin.1199 结束局势") loses that one space: the
+ *  link already reads as its own word and the space would show as a glue gap. Spaces beside Latin text stay. */
+export function trimGlueSpaces(parts) {
+  return parts.map((p, i) => {
+    if (typeof p !== "string") return p;
+    let s = p;
+    if (typeof parts[i + 1] === "object" && s.length > 1 && s.endsWith(" ") && CJK_EDGE.test(s.at(-2))) s = s.slice(0, -1);
+    if (typeof parts[i - 1] === "object" && s.length > 1 && s.startsWith(" ") && CJK_EDGE.test(s[1])) s = s.slice(1);
+    return s;
+  });
+}
+
 /** Namespaces of a story's numeric document ids, most frequent first ("origin" for origin.1199 …). */
 export function namespaces(ids) {
   const count = new Map();
@@ -58,7 +71,7 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
   }
   let linked = 0;
   for (const node of nodes) {
-    const parts = tokenize(node.nodeValue, ids, spaces, other);
+    const parts = trimGlueSpaces(tokenize(node.nodeValue, ids, spaces, other));
     if (parts.every((p) => typeof p === "string")) continue;
     const frag = doc.createDocumentFragment();
     let glue = null; // a link and the closing punctuation right after it stay on one line (no "，" at a line start)

@@ -15,6 +15,7 @@ import { warmGlyphs, loadFontsWithin, docFontParts, mapFontParts } from "./glyph
 import * as progress from "./progress.js";
 import { createSeen } from "./seen.js";
 import { linkGuide } from "./guide-links.js";
+import { typeset, leadLine, markIds, noteBody } from "./typeset.js";
 import {
   evaluate, resolveBody, resolveChoices, resolveEdges, pathFlags, storyFlags,
   impliedFacts, applyFacts, describe,
@@ -104,7 +105,8 @@ function prose(s, keepMarks = false) {
     .replace(/§./g, "")
     .replace(/£([^£]+)£/g, "")
     .replace(/<[^>]*>/g, "");
-  return keepMarks ? text : text.replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, "");
+  // Display typesetting (src/typeset.js): curly quotes, dashes, ellipses; never the words. Search snippets use proseWith().
+  return typeset(keepMarks ? text : text.replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, ""));
 }
 // Plain text of another document's (or a specimen's) game text, worded with that document's own reviewed names
 // (search snippets): prose() uses the open chapter's names.
@@ -113,7 +115,13 @@ function proseWith(s, chapterNames) {
     .replace(/§./g, "").replace(/£([^£]+)£/g, "").replace(/<[^>]*>/g, "");
   return text.replace(/[^]*/g, "").replace(//g, "").replace(//g, "");
 }
-const paragraph = (s) => esc(prose(s, true))
+// A short first line that starts with a hyphen ("-警告：具有挑战性的起源") is typeset as a line of its own (.lead-line), words and
+// hyphen kept; the text below it follows as a paragraph.
+const paragraph = (s) => {
+  const text = prose(s, true), lead = leadLine(text);
+  return (lead ? `<span class="lead-line">${esc(lead.lead)}</span>` : "") + paragraphBody(lead ? lead.rest : text);
+};
+const paragraphBody = (text) => esc(text)
   .replace(/\uE000([^\uE002\uE001]*)\uE002/g, (_, note) => `<span class="game-name" tabindex="0" role="note" data-note="${note}">`)
   .replace(/\uE001/g, "</span>")
   // A blank line in the game text is a paragraph break: typeset it as a measured gap (.pb), not as an empty line.
@@ -191,6 +199,19 @@ function centerRail() {
 }
 rail.addEventListener("scroll", railEdges, { passive: true });
 addEventListener("resize", railEdges);
+// The teaser under the title. A hyphen-led first line ("-警告：具有挑战性的起源") is its own line above the teaser, outside the
+// line clamp, instead of running into the first sentence.
+function showExcerpt(story) {
+  const text = prose(local(story.excerpt)), lead = leadLine(text), body = $("#selected-excerpt");
+  let tag = $("#selected-lead");
+  if (!tag) {
+    tag = Object.assign(document.createElement("p"), { id: "selected-lead", className: "lead-line" });
+    body.before(tag);
+  }
+  tag.hidden = !lead;
+  tag.textContent = lead ? lead.lead : "";
+  body.textContent = lead ? lead.rest : text;
+}
 function showSelection(story, column, index) {
   selected = story;
   selectedColumn = column;
@@ -199,7 +220,7 @@ function showSelection(story, column, index) {
   readMark(story);
   storySpecimens(story);
   $("#selected-title").textContent = prose(local(story.title));
-  $("#selected-excerpt").textContent = prose(local(story.excerpt));
+  showExcerpt(story);
   $("#story-number").textContent = String(index + 1).padStart(2, "0");
   $("#story-total").textContent = `/ ${columns[column].stories.length}`;
   for (const b of $("#categories").querySelectorAll("[data-category]")) {
@@ -881,7 +902,9 @@ function renderChapter(preservePosition = false) {
   const readable = dossier.chapters;
   const node = treeNodeFor(r.id);
   const via = node?.via;
-  const entryCaption = via?.kind === "entry" && via.triggers?.length ? T("触发：", "Trigger: ") + via.triggers.map(local).join(T("；", "; ")) : "";
+  // "Trigger: Triggered by game state" says it twice: no prefix when the trigger label already says "triggered".
+  const triggers = via?.kind === "entry" && via.triggers?.length ? via.triggers.map(local).join(T("；", "; ")) : "";
+  const entryCaption = !triggers ? "" : /^(触发|Triggered)/i.test(triggers) ? triggers : T("触发：", "Trigger: ") + triggers;
   const caption = entryCaption || (node?.parent === "n0" ? T("故事开端", "Opening") : T("当前篇章", "Current chapter"));
   // How the story continues from here.
   const nextEdges = resolveEdges(r.next, ctx);
@@ -936,8 +959,12 @@ function renderChapter(preservePosition = false) {
   const continuation = edgeButtons(nextEdges) + listButtons(shared);
   const body = renderBody(r, ctx);
   const sections = r.sections.filter((t, i, a) => local(t) && !r.texts.some((x) => local(x) === local(t)) && a.findIndex((v) => local(v) === local(t)) === i);
-  const unreachable = chapter.unreachable ? `<aside class="review-note unreachable-note"><small>${esc(T("审阅结论 · 原版脚本中无法自然触发", "Review finding · not reachable in the shipped script"))}</small><p>${esc(local(chapter.unreachable))}</p></aside>` : "";
-  const notes = unreachable + (chapter.notes || []).map((n) => `<aside class="review-note"><small>${esc(T("审阅注释 · 非游戏原文", "Reviewer note · not game text"))}</small><p>${esc(local(n))}</p></aside>`).join("");
+  // Reviewer commentary names engine ids and script lines: a closed, quiet <details> in the UI language (the label says what
+  // it is, so the note's own "Review note:" prefix is dropped), engine ids in <code>.
+  const reviewNote = (label, value, extra = "") =>
+    `<details class="review-note${extra}"><summary>${esc(label)}</summary><p${value?.[lang] ? "" : ` lang="${lang === "en" ? "zh-CN" : "en"}"`}>${markIds(noteBody(local(value)), esc)}</p></details>`;
+  const unreachable = chapter.unreachable ? reviewNote(T("审阅结论 · 原版脚本中无法自然触发", "Review finding · not reachable in the shipped script"), chapter.unreachable, " unreachable-note") : "";
+  const notes = unreachable + (chapter.notes || []).map((n) => reviewNote(T("审阅注释 · 非游戏原文", "Reviewer note · not game text"), n)).join("");
   const alsoIn = (chapter.alsoIn || []).filter((id) => storyById.has(id));
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此篇章也出现在：", "This chapter also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
@@ -1561,7 +1588,7 @@ try {
   // Excerpts are not needed to draw the archive; fetch them right after the first paint.
   json("stories/excerpts.json").then((excerpts) => {
     for (const s of stories) s.excerpt = excerpts[s.id] || s.excerpt;
-    if (selected) $("#selected-excerpt").textContent = prose(local(selected.excerpt));
+    if (selected) showExcerpt(selected);
     if ($("#search-dialog").open) renderSearch();
   }).catch(() => {});
   columns = CATEGORIES.map(([id, title, en]) => ({

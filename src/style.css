@@ -69,6 +69,10 @@
   background: var(--bg);
   color: var(--ink);
   -webkit-text-size-adjust: 100%;
+  /* CJK next to Latin letters or digits gets its hairline of space everywhere (cards, captions, choices, museum, search), not
+     only in the narrative; fullwidth punctuation is trimmed the same way. */
+  text-autospace: normal;
+  text-spacing-trim: space-first;
 }
 :root:lang(en) {
   --font-title: var(--serif-en);
@@ -383,6 +387,41 @@ input {
   background: radial-gradient(closest-side, #061216e0 0%, #061216ad 58%, #06121600 100%);
   pointer-events: none;
 }
+/* What the site is, in the one line it already has (the page description): for a newcomer, above the category eyebrow. Gone
+   once the visitor has read a chapter (index.html marks <html class="st-returning"> from "st-seen"), and until the first
+   story is on screen, so a wrong-language first paint never flashes. */
+.selection .lede {
+  max-width: var(--sel-measure);
+  margin: 0 0 14px;
+  font: 13px/1.6 var(--font-ui);
+  letter-spacing: 0.03em;
+  color: var(--dim);
+  text-wrap: balance;
+  text-shadow: 0 1px 10px #031014;
+  transition: opacity 0.2s var(--ease-out);
+}
+:root:lang(en) .selection .lede {
+  letter-spacing: 0.01em;
+}
+.st-returning .selection .lede {
+  display: none;
+}
+.selection:has(#chapter-count:empty) .lede {
+  visibility: hidden; /* its line stays reserved: nothing moves when the first story arrives */
+}
+/* While the archive index is on its way: no dangling separator after the category, and the open row is plainly not ready. */
+.selection-eyebrow:has(#chapter-count:empty) > i:first-of-type {
+  display: none;
+}
+.selection:has(#chapter-count:empty) .access:has(> [data-i18n="archive.open"]) {
+  opacity: 0.35;
+  pointer-events: none;
+}
+@media (max-height: 520px) and (min-width: 701px) {
+  .selection .lede {
+    display: none; /* landscape phones keep their 390 px for the story itself */
+  }
+}
 .selection-eyebrow {
   display: flex;
   flex-wrap: wrap;
@@ -430,7 +469,7 @@ input {
     color: var(--gold);
     background: var(--bg, #0b1a1f);
     border: 1px solid #c9b07a66;
-    border-radius: 3px;
+    border-radius: 2px;
     pointer-events: none;
   }
 }
@@ -508,7 +547,7 @@ input {
   line-height: inherit;
   text-align: inherit;
   color: #d2ddd6; /* a chapter title in the sentence: the text's own colour, marked by its underline, not a sea of gold */
-  border-bottom: 1px solid #c9b07a66;
+  border-bottom: 1px solid #c9b07a33; /* a guide carries 100+ of these: a whisper of a rule, gold only on hover / focus */
   cursor: pointer;
 }
 /* A link followed by closing punctuation is one unit, so the punctuation never starts a line (guide-links.js). */
@@ -1312,41 +1351,95 @@ input {
     height: 46px;
   }
 }
-@media (min-width: 701px) {
-  /* On wide screens the map already lives on the card. */
-  .chapter-directory-link {
-    display: none !important;
-  }
-}
+/* The map is reached from the card (wide screens) or from the toolbar's "Story map" (phones); the lone link above the guide
+   only repeated it, right-aligned and ruleless. Kept in the markup (app.js delegates its click), never shown. */
 .chapter-directory-link {
-  display: block;
-  margin: 12px 0 0 auto;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  color: var(--dim);
+  display: none !important;
+}
+@media (max-height: 520px) {
+  .flow-stats { display: none; } /* landscape phones: the map's chapter counter costs a line of reading space */
+}
+/* A story without a picture shows its typographic slate (cover-atlas.js drawSlate): nothing to open as an event image. */
+#flow-surface.no-art [data-flow-image] {
+  display: none;
+}
+/* The panels at the foot of a chapter, effects (.fx), reading guide (.story-summary) and reviewer notes (details.review-note),
+   are ONE box (hairline, square, the guide's wash) opened by ONE chevron, so they read as one family. */
+:is(.fx, .story-summary, details.review-note) {
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #0c1f2466;
+  color: var(--ink-2);
 }
 .story-summary {
   margin-top: 30px;
-  padding: 16px 18px;
-  border: 1px solid var(--line);
-  background: #0c1f2466;
   font-size: 14px;
+}
+:is(.fx-sum, .story-summary > summary, details.review-note > summary) {
+  min-height: 48px;
+  padding: 0 18px;
+  font: 500 13px/1.4 var(--font-ui);
+  letter-spacing: 0.04em;
   color: var(--ink-2);
 }
-#reader-language {
-  min-width: 44px;
-  padding: 0 8px;
+:is(.fx-sum, .story-summary > summary, details.review-note > summary):is(:hover, :focus-visible) {
+  color: var(--ink);
 }
-.story-summary summary {
-  min-height: 24px;
+:is(.fx-sum, .story-summary > summary, details.review-note > summary):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+}
+/* The guide's content sits inside the box on the same 18 px inset as the summary's label. */
+.story-summary > :not(summary) {
+  margin-inline: 18px;
+}
+.story-summary > :last-child {
+  margin-bottom: 18px;
+}
+/* One disclosure glyph for every <details>: a thin chevron, right when closed and down when open (the effects panel's own). */
+:is(.fx-sum, .story-summary > summary, details.review-note > summary, .gpu-hint summary, .museum-sources > summary, .md-review > summary) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
   cursor: pointer;
-  color: var(--gold);
-  letter-spacing: 0.04em;
+}
+:is(.fx-sum, .story-summary > summary, details.review-note > summary, .gpu-hint summary, .museum-sources > summary, .md-review > summary)::-webkit-details-marker {
+  display: none;
+}
+:is(.fx-sum, .story-summary > summary, details.review-note > summary, .gpu-hint summary, .museum-sources > summary, .md-review > summary)::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid var(--gold-2);
+  border-bottom: 1.5px solid var(--gold-2);
+  transform: rotate(-45deg);
+  transition: transform 0.2s var(--ease-out), border-color 0.18s;
+}
+:is(.fx-sum, .story-summary > summary, details.review-note > summary, .gpu-hint summary, .museum-sources > summary, .md-review > summary):is(:hover, :focus-visible)::before,
+details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > summary, .gpu-hint summary, .museum-sources > summary, .md-review > summary)::before {
+  border-color: var(--gold);
+}
+details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > summary, .gpu-hint summary, .museum-sources > summary, .md-review > summary)::before {
+  transform: rotate(45deg);
+}
+#reader-language {
+  position: relative;
+  min-width: 24px; /* WCAG 2.5.8 floor on its own box; the label is right-aligned inside it */
+  padding: 0;
+  text-align: right; /* the label ends on the column rule, like "Back" starts on its left edge */
+}
+#reader-language::before {
+  content: "";
+  position: absolute;
+  inset: -2px -13px; /* the 44 px touch target reaches past the text, not into the layout */
 }
 .story-summary a {
   display: inline-block;
   min-height: 24px;
-  margin: 12px 0;
+  margin-block: 0 12px;
   font-size: 12px;
   color: var(--dim);
   text-decoration: underline;
@@ -1409,7 +1502,7 @@ input {
   font-weight: 400;
   padding: 3px 10px;
   border: 1px solid #4a6862;
-  border-radius: 999px;
+  border-radius: 2px;
   color: var(--ink-2);
   background: #0f262780;
 }
@@ -1445,10 +1538,16 @@ input {
   inset: -10px -12px;
 }
 .profile-toggle::after {
-  content: "▾";
+  /* the same drawn chevron as the foot panels' (pointing down: it opens downward) */
+  content: "";
   display: inline-block;
-  margin-left: 6px;
-  font-size: 10px;
+  width: 6px;
+  height: 6px;
+  margin: 0 1px 3px 8px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  vertical-align: middle;
+  transform: rotate(45deg);
   transition: transform 0.2s var(--ease-out);
 }
 .profile-toggle[aria-expanded="true"] {
@@ -1456,7 +1555,8 @@ input {
   border-bottom-color: #d8bb8470;
 }
 .profile-toggle[aria-expanded="true"]::after {
-  transform: rotate(180deg);
+  margin-bottom: 0;
+  transform: rotate(225deg);
 }
 /* Empire profile: compact grid of selects, collapsed until asked for. */
 .profile-panel {
@@ -1517,7 +1617,7 @@ input {
   color: #9dd3cc;
   vertical-align: 0.2em;
   border: 1px solid #4f7f78;
-  border-radius: 3px;
+  border-radius: 2px;
   background: #0d2a2a;
 }
 @media (max-width: 700px) {
@@ -1529,25 +1629,47 @@ input {
   color: var(--gold) !important;
   border-color: var(--gold-2);
 }
-/* Reviewer commentary: visibly not game text. */
+/* Reviewer commentary: visibly not game text. The shared foot-panel box (above), marked by a thin teal edge and a teal label. */
 .review-note {
   margin: 22px 0;
-  padding: 14px 16px 12px;
-  border: 1px dashed #5c7a74;
-  border-left: 3px solid #7cc4bd;
-  background: #0b1f2299;
+  box-shadow: inset 2px 0 0 #7cc4bd99;
+}
+aside.review-note {
+  padding: 14px 18px 12px;
+}
+.review-note small,
+details.review-note > summary {
+  font: 500 11px/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  color: var(--teal);
 }
 .review-note small {
   display: block;
   margin-bottom: 6px;
-  font: 500 11px var(--sans);
-  letter-spacing: 0.12em;
-  color: var(--teal);
+}
+details.review-note > summary:is(:hover, :focus-visible) {
+  color: #a6e2dc;
+}
+details.review-note > :not(summary) {
+  margin-inline: 18px;
+}
+details.review-note > :last-child {
+  margin-bottom: 16px;
 }
 .review-note p {
   margin: 0;
   font: 14px/1.8 var(--sans);
   color: #b0c4be;
+}
+.review-note code {
+  padding: 0;
+  font: 12px/1.6 var(--mono);
+  color: var(--ink-2);
+  background: none;
+  overflow-wrap: anywhere;
+}
+:root:lang(en) :is(.chapter-eyebrow, .review-note small, details.review-note > summary) {
+  text-transform: uppercase;
 }
 /* Specimens a document awards — links into the Grand Archive museum (original icons). */
 .specimen-links {
@@ -1558,7 +1680,7 @@ input {
   margin: 18px 0 6px;
   padding: 10px 14px;
   border: 1px solid #c2ab7240;
-  border-radius: 4px;
+  border-radius: 2px;
   background: #0d222966;
 }
 .specimen-links small {
@@ -1847,7 +1969,7 @@ body.map-overlay #reader {
 .map-expanded .flow-surface-map {
   background: radial-gradient(120% 100% at 50% 0%, #0b262b 0%, #081c21 52%, #061418 100%);
   border: 1px solid #c9b07a59;
-  border-radius: 6px;
+  border-radius: 2px;
   box-shadow: 0 28px 90px #000c;
   overflow: hidden;
   animation: map-rise 0.26s var(--ease-out) both;
@@ -1948,6 +2070,19 @@ html.reduced-motion .map-expanded .flow-surface-map {
 .flow-viewport.dragging {
   cursor: grabbing;
 }
+/* On the card the map is a window onto a larger drawing: its edges fade out instead of slicing a node or a caption mid-word.
+   (The expanded map has room and keeps hard edges; while the viewport has keyboard focus its ring must stay whole.) */
+#flow-surface:not(.map-expanded) .flow-viewport:not(:focus-visible) {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent), linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent), linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+@media (max-height: 520px) {
+  .flow-stats {
+    display: none; /* the counter was cut mid-word ("93 c…") in a toolbar this short */
+  }
+}
 .flow-svg {
   position: absolute;
   left: 0;
@@ -1999,7 +2134,7 @@ html.reduced-motion .map-expanded .flow-surface-map {
   font-size: 22px;
   color: var(--gold);
   border: 1px solid #c9b07a59;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 .map-expanded .flow-controls .flow-overlay-close:hover {
   background: #c9b07a1f;
@@ -2174,7 +2309,7 @@ html.reduced-motion .map-expanded .flow-surface-map {
   padding: 11px 14px 12px;
   background: #0a1d22;
   border: 1px solid var(--line-2);
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: 0 16px 44px #000b;
 }
 .flow-help .flow-key {
@@ -2521,29 +2656,50 @@ html.reduced-motion .map-expanded .flow-surface-map {
   height: 42px;
   object-fit: cover;
   border: 1px solid #65787255;
+  background: #0f2328; /* the cover's slot, dark, until the cover arrives */
+}
+/* No broken-image icon / clipped alt text while the playlist (which names the cover) is still on its way: an empty slot. */
+.playing-track > img:not([src]) {
+  content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
 }
 .playing-track > div {
   flex: 1;
   min-width: 0;
 }
 
+/* The title and its caret are one unit: the caret sits right after the title (it used to be thrown to the far edge of the
+   column, 180-350 px away, where it read as a stray "^"). */
 .playing-track button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  width: 100%;
+  gap: 8px;
+  max-width: 100%;
   min-height: 24px;
   font-size: 14px;
   text-align: left;
 }
 .playing-track button > span:first-child {
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .playing-track button > span:last-child {
-  margin-left: auto;
+  flex: none;
   color: var(--gold);
+}
+/* The caret is drawn (a rotated corner, like the disclosure chevron), not a font glyph: it points up while the list is shut
+   (it opens upward) and down once it is open. */
+.playing-track .caret {
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid currentColor;
+  border-left: 1.5px solid currentColor;
+  transform: translateY(2px) rotate(45deg);
+  transition: transform 0.2s var(--ease-out);
+}
+#playlist-toggle[aria-expanded="true"] .caret {
+  transform: translateY(-2px) rotate(225deg);
 }
 .playing-track small {
   display: block;
@@ -3358,9 +3514,13 @@ dialog::backdrop {
   .selection {
     top: 31%;
   }
+  /* Two lines, as on taller screens: one line cut the teaser mid-clause ("…what appears to…"). */
   #selected-excerpt {
-    -webkit-line-clamp: 1;
-    min-height: 1.75em;
+    -webkit-line-clamp: 2;
+    min-height: 3.7em;
+  }
+  :root:lang(en) #selected-excerpt {
+    min-height: 3.2em;
   }
   .row-counter b {
     font-size: 36px;
@@ -3520,6 +3680,36 @@ dialog::backdrop {
 body.reader-open .gpu-hint,
 body.museum-open .gpu-hint {
   display: none;
+}
+/* The collapsed form (src/gpu.js, a few seconds after the notice appears): a 28 px "i" whose tooltip is the notice's title;
+   a click opens the notice again. */
+.gpu-hint-chip {
+  display: none;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  place-items: center;
+  font: italic 600 15px/1 var(--serif-en);
+  color: var(--gold-2);
+}
+.gpu-hint-chip::after {
+  content: "";
+  position: absolute;
+  inset: -8px; /* a 44 px touch target around the 28 px chip */
+}
+.gpu-hint.is-chip {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+}
+.gpu-hint.is-chip > :not(.gpu-hint-chip) {
+  display: none;
+}
+.gpu-hint.is-chip .gpu-hint-chip {
+  display: grid;
 }
 .gpu-hint-head {
   display: flex;
