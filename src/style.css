@@ -1084,6 +1084,13 @@ input {
   background: #0f2523;
   color: var(--ink);
 }
+/* Chinese has no italic, so nothing Chinese stands in italic: Chrome already refuses to slant a face that has none
+   (font-synthesis: none, above), but WebKit's fallback can still draw a slanted Song where no Kai face is installed (as on
+   most iPhones and iPads). Latin text marked lang="en" (the parallel title, the soundtrack's names) keeps its italic, and
+   so does an element holding it (the player's button, a playlist row), whose own Chinese parts are set upright here. */
+:root:lang(zh) :not(:lang(en)):not(:has(> :lang(en))) {
+  font-style: normal !important;
+}
 /* Chinese has no italic, and font-synthesis is off: the lines English sets in italics (section headings, the scene line,
    route notes, panel titles, "Next story", the map's name, search notes, the museum's section line and view words) are set
    in Kai (楷体), the brush hand Chinese books use where Latin ones use italics; Song where no Kai face is installed. */

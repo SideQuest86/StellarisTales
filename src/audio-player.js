@@ -80,7 +80,7 @@ export class SoundtrackPlayer {
     for (const [i, track] of this.tracks.entries()) {
       const button = document.createElement("button");
       button.dataset.track = i;
-      button.innerHTML = `<span class="track-number">${String(i + 1).padStart(2, "0")}</span><span class="track-name"></span><small>${time(track.duration)}</small>`;
+      button.innerHTML = `<span class="track-number">${String(i + 1).padStart(2, "0")}</span><span class="track-name" lang="en"></span><small>${time(track.duration)}</small>`;
       button.querySelector(".track-name").textContent = track.title;
       button.onclick = () => this.select(i, true, true);
       $("track-list").append(button);

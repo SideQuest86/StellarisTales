@@ -139,3 +139,12 @@ detail span at 11, so on aspects below about 1.1 the card took about 60 % of the
 63 / 91 / 94 px, 5 px on a square 1000 x 1000 window; the card clipped at the left). The cap is gone; portrait aspects (blended
 from 0.9 to 1.3) draw the card a little smaller and higher. Measured (scratchpad card-fit.mjs, #flow-surface right edge against
 the narrative's left): 38-41 px clear on the portrait sizes, 36 px on the square, every landscape size identical to before.
+
+## Viewports and engines (v4.17.10)
+
+A viewport sweep (scratchpad viewport-sweep.mjs: 14 sizes from 320 x 568 to 2560 x 1440, both languages; a page wider than the
+screen, the selection off-screen, anything over the reading text by elementFromPoint) found nothing in Chrome or WebKit (Firefox
+did not start on this machine). WebKit screenshots showed Chinese voice lines slanted: 17 kinds of element carry Chinese text in a
+computed italic (zh-italic-probe.mjs); Chrome keeps them upright by font-synthesis: none, WebKit's fallback slanted them where no
+Kai face exists. A rule now sets Chinese upright (:root:lang(zh) :not(:lang(en)):not(:has(> :lang(en)))), the soundtrack names
+are marked lang="en" like the parallel title; probe: 0 italic Chinese elements, English italics unchanged in both engines.
