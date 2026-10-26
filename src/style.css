@@ -387,28 +387,6 @@ input {
   background: radial-gradient(closest-side, #061216e0 0%, #061216ad 58%, #06121600 100%);
   pointer-events: none;
 }
-/* What the site is, in the one line it already has (the page description): for a newcomer, above the category eyebrow. Gone
-   once the visitor has read a chapter (index.html marks <html class="st-returning"> from "st-seen"), and until the first
-   story is on screen, so a wrong-language first paint never flashes. */
-.selection .lede {
-  max-width: var(--sel-measure);
-  margin: 0 0 14px;
-  font: 13px/1.6 var(--font-ui);
-  letter-spacing: 0.03em;
-  color: var(--dim);
-  text-wrap: balance;
-  text-shadow: 0 1px 10px #031014;
-  transition: opacity 0.2s var(--ease-out);
-}
-:root:lang(en) .selection .lede {
-  letter-spacing: 0.01em;
-}
-.st-returning .selection .lede {
-  display: none;
-}
-.selection:has(#chapter-count:empty) .lede {
-  visibility: hidden; /* its line stays reserved: nothing moves when the first story arrives */
-}
 /* While the archive index is on its way: no dangling separator after the category, and the open row is plainly not ready. */
 .selection-eyebrow:has(#chapter-count:empty) > i:first-of-type {
   display: none;
@@ -416,11 +394,6 @@ input {
 .selection:has(#chapter-count:empty) .access:has(> [data-i18n="archive.open"]) {
   opacity: 0.35;
   pointer-events: none;
-}
-@media (max-height: 520px) and (min-width: 701px) {
-  .selection .lede {
-    display: none; /* landscape phones keep their 390 px for the story itself */
-  }
 }
 .selection-eyebrow {
   display: flex;
@@ -741,10 +714,8 @@ input {
   text-shadow: 0 2px 12px #031014;
 }
 .reader-left span {
-  font: 11px var(--mono);
-  letter-spacing: 0.12em;
+  font: italic 14px/1.4 var(--serif);
   color: var(--dim);
-  text-transform: uppercase;
 }
 .reader-panel {
   position: absolute;
@@ -851,11 +822,10 @@ input {
 .reader-trail button:focus-visible {
   color: var(--gold);
 }
+/* The scene the chapter opens on ("When a fleet enters a system"), set like a book's running line: italic, not a label. */
 .chapter-eyebrow {
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.14em;
-  color: var(--gold);
+  font: italic 16px/1.5 var(--serif);
+  color: var(--gold-2);
 }
 #reader-title {
   margin: 18px 0 6px;
@@ -1015,19 +985,14 @@ input {
   background: #0f2523;
   color: var(--ink);
 }
-/* "Your choices" / "The story continues": a quiet label whose rule fades out like a line drawn with a dry pen. */
+/* "Your choices" / "The story continues": a quiet italic line whose rule fades out like a line drawn with a dry pen. */
 .section-heading {
   display: flex;
   align-items: center;
   gap: 16px;
   margin: var(--s-6) 0 var(--s-2);
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font: italic 15px/1.5 var(--serif);
   color: var(--gold-2);
-}
-:root:lang(en) .section-heading {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
 }
 .section-heading i {
   flex: 1;
@@ -1364,12 +1329,13 @@ input {
   display: none;
 }
 /* The panels at the foot of a chapter, effects (.fx), reading guide (.story-summary) and reviewer notes (details.review-note),
-   are ONE box (hairline, square, the guide's wash) opened by ONE chevron, so they read as one family. */
+   are ONE family: a ruled line in the text's measure (no box), an italic title and ONE chevron, like the choices above. */
 :is(.fx, .story-summary, details.review-note) {
   padding: 0;
-  border: 1px solid var(--line);
+  border: 0;
+  border-top: 1px solid var(--line);
   border-radius: 0;
-  background: #0c1f2466;
+  background: none;
   color: var(--ink-2);
 }
 .story-summary {
@@ -1377,11 +1343,19 @@ input {
   font-size: 14px;
 }
 :is(.fx-sum, .story-summary > summary, details.review-note > summary) {
-  min-height: 48px;
-  padding: 0 18px;
-  font: 500 13px/1.4 var(--font-ui);
-  letter-spacing: 0.04em;
-  color: var(--ink-2);
+  min-height: 46px;
+  padding: 0;
+  font: italic 15px/1.4 var(--serif);
+  letter-spacing: 0;
+  color: var(--dim);
+}
+.fx > .fx-body {
+  padding-inline: 0;
+  border-top: 0;
+}
+.fx .fx-count {
+  border: 0;
+  padding: 0;
 }
 :is(.fx-sum, .story-summary > summary, details.review-note > summary):is(:hover, :focus-visible) {
   color: var(--ink);
@@ -1390,9 +1364,9 @@ input {
   outline: 2px solid var(--gold);
   outline-offset: -2px;
 }
-/* The guide's content sits inside the box on the same 18 px inset as the summary's label. */
+/* The guide's content keeps the text's edges, like its title. */
 .story-summary > :not(summary) {
-  margin-inline: 18px;
+  margin-inline: 0;
 }
 .story-summary > :last-child {
   margin-bottom: 18px;
@@ -1629,19 +1603,19 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
   color: var(--gold) !important;
   border-color: var(--gold-2);
 }
-/* Reviewer commentary: visibly not game text. The shared foot-panel box (above), marked by a thin teal edge and a teal label. */
+/* Reviewer commentary: visibly not game text. The shared foot-panel line (above), its title in teal. */
 .review-note {
   margin: 22px 0;
-  box-shadow: inset 2px 0 0 #7cc4bd99;
 }
 aside.review-note {
-  padding: 14px 18px 12px;
+  padding: 14px 0 12px;
+  border-top: 1px solid var(--line);
 }
 .review-note small,
 details.review-note > summary {
-  font: 500 11px/1.4 var(--sans);
-  letter-spacing: 0.12em;
-  color: var(--teal);
+  font: italic 14px/1.4 var(--serif);
+  letter-spacing: 0;
+  color: #6fa9a3;
 }
 .review-note small {
   display: block;
@@ -1651,7 +1625,7 @@ details.review-note > summary:is(:hover, :focus-visible) {
   color: #a6e2dc;
 }
 details.review-note > :not(summary) {
-  margin-inline: 18px;
+  margin-inline: 0;
 }
 details.review-note > :last-child {
   margin-bottom: 16px;
@@ -1667,9 +1641,6 @@ details.review-note > :last-child {
   color: var(--ink-2);
   background: none;
   overflow-wrap: anywhere;
-}
-:root:lang(en) :is(.chapter-eyebrow, .review-note small, details.review-note > summary) {
-  text-transform: uppercase;
 }
 /* Specimens a document awards — links into the Grand Archive museum (original icons). */
 .specimen-links {
@@ -2138,6 +2109,17 @@ html.reduced-motion .map-expanded .flow-surface-map {
 }
 .map-expanded .flow-controls .flow-overlay-close:hover {
   background: #c9b07a1f;
+}
+/* On the reader's card the map is a picture of the story until the pointer or keyboard is on it: its controls, counter,
+   key and the picture / expand buttons fade in then (touch screens keep them). The expanded map shows everything. */
+@media (hover: hover) {
+  #flow-surface:not(.map-expanded) :is(.flow-controls, .flow-stats, .flow-key, [data-flow-image], [data-flow-expand]) {
+    opacity: 0;
+    transition: opacity 0.25s var(--ease-out);
+  }
+  #flow-surface:not(.map-expanded):is(:hover, :focus-within) :is(.flow-controls, .flow-stats, .flow-key, [data-flow-image], [data-flow-expand]) {
+    opacity: 1;
+  }
 }
 
 /* Key: the states always, the symbols in the expanded map and in the "?" panel. */
@@ -2629,6 +2611,10 @@ html.reduced-motion .map-expanded .flow-surface-map {
 }
 
 /* ------------------------------------------------------------ player */
+/* The soundtrack is atmosphere, not an application: one quiet line under the page. The piece's name in italics (singer and
+   composer are in its tooltip and the playlist), the transport, and the playing position as the line's own top edge
+   (#music-seek: a hairline that fills with gold). No times, no artist line, no loop label; the volume shows while the
+   pointer is on the player. Times stay in the slider's spoken value and the playlist. */
 .music-player {
   position: fixed;
   left: 0;
@@ -2639,24 +2625,23 @@ html.reduced-motion .map-expanded .flow-surface-map {
   padding: 0 var(--gutter);
   display: flex;
   align-items: center;
-  gap: 26px;
-  border-top: 1px solid #81948530;
-  background: #08151af2;
+  gap: 20px;
+  background: linear-gradient(#07141ae0, #061217f7);
 }
 .playing-track {
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex: 1;
+  gap: 12px;
+  flex: 1 1 0;
   min-width: 0;
-  max-width: 36%;
 }
 .playing-track > img {
-  width: 42px;
-  height: 42px;
+  width: 34px;
+  height: 34px;
   object-fit: cover;
-  border: 1px solid #65787255;
+  border: 1px solid #65787240;
   background: #0f2328; /* the cover's slot, dark, until the cover arrives */
+  opacity: 0.85;
 }
 /* No broken-image icon / clipped alt text while the playlist (which names the cover) is still on its way: an empty slot. */
 .playing-track > img:not([src]) {
@@ -2675,7 +2660,8 @@ html.reduced-motion .map-expanded .flow-surface-map {
   gap: 8px;
   max-width: 100%;
   min-height: 24px;
-  font-size: 14px;
+  font: italic 15px/1.3 var(--serif-en); /* the soundtrack's names are English in both languages */
+  color: #b8c6c0;
   text-align: left;
 }
 .playing-track button > span:first-child {
@@ -2701,69 +2687,119 @@ html.reduced-motion .map-expanded .flow-surface-map {
 #playlist-toggle[aria-expanded="true"] .caret {
   transform: translateY(-2px) rotate(225deg);
 }
+/* The artist line speaks only when a track failed to load (audio-player.js showFailure). */
 .playing-track small {
-  display: block;
+  display: none;
   font-size: 11px;
   color: #6d8c86;
+}
+.load-failed .playing-track small {
+  display: block;
+  color: #d6a37c;
 }
 .transport {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  flex: none;
 }
 .transport button {
-  width: 36px;
+  width: 34px;
   color: var(--gold);
-  font: 26px Georgia, serif;
+  font: 24px Georgia, serif;
 }
 #play-pause {
-  width: 40px;
-  height: 40px;
-  min-height: 40px;
-  font: 14px var(--sans);
-  border: 1px solid #a69b6866;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  font: 13px var(--sans);
+  border: 1px solid #a69b6855;
   border-radius: 50%;
 }
 .playing #play-pause {
-  background: #d8bb8414;
+  background: #d8bb8410;
 }
 .seek {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px; /* a 24 px hit box (WCAG 2.5.8) centred on the player's top edge */
   display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
-  max-width: 360px;
 }
 .seek > span {
-  min-width: 30px;
-  font: 11px var(--mono);
-  color: var(--dim);
-}
-.seek input {
-  width: 100%;
-  min-width: 30px;
+  display: none;
 }
 input[type="range"] {
   height: 24px; /* hit area (WCAG 2.5.8); the native track stays thin */
   cursor: pointer;
 }
+/* --p: the played share, set by audio-player.js. The knob appears on hover and keyboard focus (always on touch screens). */
+#music-seek {
+  --p: 0%;
+  width: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background:
+    linear-gradient(#c9ad74, #c9ad74) 0 50% / var(--p) 1px no-repeat,
+    linear-gradient(#81948538, #81948538) 0 50% / 100% 1px no-repeat;
+}
+#music-seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+#music-seek::-moz-range-thumb {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+#music-seek::-moz-range-track {
+  background: transparent;
+}
+.music-player:hover #music-seek::-webkit-slider-thumb,
+#music-seek:focus-visible::-webkit-slider-thumb {
+  opacity: 1;
+}
+.music-player:hover #music-seek::-moz-range-thumb,
+#music-seek:focus-visible::-moz-range-thumb {
+  opacity: 1;
+}
+@media (hover: none) {
+  #music-seek::-webkit-slider-thumb {
+    opacity: 1;
+  }
+  #music-seek::-moz-range-thumb {
+    opacity: 1;
+  }
+}
+#music-seek:focus-visible {
+  outline-offset: -6px;
+}
 .volume {
   display: flex;
+  flex: 1 1 0;
+  justify-content: flex-end;
   align-items: center;
   gap: 10px;
   color: var(--dim);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease-out);
+}
+.music-player:hover .volume,
+.volume:focus-within {
+  opacity: 1;
 }
 .volume input {
   width: 64px;
-}
-.loop-label {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  color: var(--gold);
-}
-.loop-label small {
-  display: none;
 }
 #playlist {
   position: fixed;
@@ -3094,8 +3130,7 @@ dialog::backdrop {
   .archive-hud {
     --sel-left: 52%;
   }
-  .volume,
-  .loop-label {
+  .volume input {
     display: none;
   }
   .flow-key {
@@ -3107,7 +3142,7 @@ dialog::backdrop {
 @media (max-width: 700px) {
   :root {
     --masthead: 60px;
-    --player: 84px;
+    --player: 60px;
     --gutter: 16px;
   }
   .masthead {
@@ -3379,17 +3414,16 @@ dialog::backdrop {
     display: none;
   }
   .music-player {
-    height: var(--player);
-    padding: 0 var(--gutter) max(24px, env(safe-area-inset-bottom));
+    height: calc(var(--player) + env(safe-area-inset-bottom));
+    padding: 0 var(--gutter) env(safe-area-inset-bottom);
     gap: 8px;
   }
   .playing-track {
-    max-width: none;
     gap: 10px;
   }
   .playing-track > img {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
   }
   .playing-track button {
     position: relative;
@@ -3410,24 +3444,14 @@ dialog::backdrop {
   .transport button {
     width: 36px;
   }
+  /* A finger-sized hit box on the top edge; the line itself stays a hairline. */
   .seek {
-    position: absolute;
-    left: var(--gutter);
-    right: var(--gutter);
-    bottom: max(2px, env(safe-area-inset-bottom));
-    max-width: none;
-    gap: 10px;
+    top: -16px;
   }
-  .seek > span {
-    min-width: 34px;
-    font-size: 12px;
-  }
-  /* A finger-sized hit box for the slider; the native track stays thin. */
   .seek input[type="range"] {
     height: 32px;
   }
-  .volume,
-  .loop-label {
+  .volume {
     display: none;
   }
   #playlist {
@@ -3476,19 +3500,6 @@ dialog::backdrop {
   }
   .music-player {
     padding-bottom: 0;
-  }
-  .seek {
-    position: static;
-    flex: 1;
-  }
-  .seek input[type="range"] {
-    height: 24px;
-  }
-  .playing-track {
-    flex: 0 1 36%;
-  }
-  .playing-track small {
-    display: none;
   }
   .chapter-art {
     display: none;
@@ -3617,14 +3628,6 @@ dialog::backdrop {
   .playing-track > img {
     width: 34px;
     height: 34px;
-  }
-  .playing-track small {
-    display: none;
-  }
-  #play-pause {
-    width: 36px;
-    height: 36px;
-    min-height: 36px;
   }
   #playlist {
     bottom: calc(var(--player) + 8px);

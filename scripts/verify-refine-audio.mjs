@@ -10,7 +10,8 @@ const headed = !!process.env.HEADED;
 const place = headed ? ["--window-position=" + (process.env.STELLARIS_WINDOW_POSITION || "-1900,20")] : [];
 const FTL = "Faster Than Light - Feat. Mia Stegmar";
 const state = (page) => page.evaluate(() => ({
-  title: document.getElementById("track-title").textContent,
+  // The strip shows the piece's name ("Faster Than Light"); the full title leads the toggle's tooltip.
+  title: document.getElementById("playlist-toggle").title.split(" · ")[0],
   playing: [...document.querySelectorAll("audio")].filter((a) => !a.paused).length,
   audios: document.querySelectorAll("audio").length,
   src: document.getElementById("ost-audio").src,

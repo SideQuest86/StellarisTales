@@ -67,9 +67,6 @@
         var stored = localStorage.getItem("st-language");
         if (stored === "en") document.documentElement.lang = "en";
         if (localStorage.getItem("st-motion") === "reduced") document.documentElement.classList.add("reduced-motion");
-        // A visitor who has read a chapter before no longer needs the one-line "what is this" above the story selection.
-        var seen = JSON.parse(localStorage.getItem("st-seen") || "null");
-        if (seen && seen.s && Object.keys(seen.s).length) document.documentElement.classList.add("st-returning");
       } catch (e) {}
     </script>
   </head>
@@ -96,7 +93,6 @@
       <div class="scene-vignette" aria-hidden="true"></div>
       <div class="archive-hud" id="archive-hud">
         <div class="selection">
-          <p class="lede" data-i18n="site.description">完整收录《群星》游戏内的故事文本，附原版配乐。</p>
           <div class="selection-eyebrow">
             <span id="category-label">深空异闻</span><i aria-hidden="true"></i><span id="chapter-count"></span><i aria-hidden="true" id="read-sep" hidden></i><span id="read-count" hidden></span>
           </div>
@@ -164,9 +160,7 @@
         <span aria-hidden="true">♫</span
         ><input id="music-volume" type="range" min="0" max="100" value="28" data-i18n-aria="music.volume" aria-label="音乐音量" />
       </div>
-      <span class="loop-label" data-i18n-title="music.loop" title="专辑循环播放"
-        ><span aria-hidden="true">↻</span><small data-i18n="music.loopShort">专辑循环</small></span
-      ><audio id="ost-audio" preload="none"></audio>
+      <audio id="ost-audio" preload="none"></audio>
     </footer>
     <section id="playlist" hidden data-i18n-aria="music.playlist" aria-label="原声列表">
       <div class="playlist-heading">

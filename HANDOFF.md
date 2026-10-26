@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.11.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.12.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -101,6 +101,13 @@ evidence from earlier rounds and is not updated.
   at word boundaries. Font subsets rebuilt (--check ok). Checks: node 125/125, smoke 15/15, verify-round5, -refine-reader,
   -reader-v4, -a11y, -search 24. Known follow-up: scripts/verify-gpu.mjs times out clicking the GPU notice once it has
   collapsed to its chip (test needs to expand the chip first); not part of the release gate.
+  v4.12.0 (2026-10-26, user: "more immersive, not much system-like text"): lede removed; quiet player (seek = top-edge
+  hairline with --p from audio-player.js paintSeek, no times / artist / loop label, volume on hover; track name without
+  " - Feat."); reader eyebrow only for scene triggers (When/On/At/First contact), italic section headings and foot panels
+  as ruled lines; map-card chrome fades in on hover/focus (hover:hover only); GPU notice starts as the chip (relabels on
+  append). Story titles outside chapters: index.json `names` (story_tree.py, reviewed wording) + app.js storyName/titleWith.
+  Checks: node 125/125, smoke 15/15, verify-reader-v4, -refine-audio, -a11y, -refine-reader; verify-gpu forced cases pass
+  (its real-adapter case depends on which GPU headless Chrome is given). Screens: verification/round6/quiet/.
   The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
 - Live: v4.10.0 (`378d14b5`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15.
 - Live: v4.9.0 (`654a79dc`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15 (one transient failure right after deploy, re-run clean), /fonts/*.woff2 served.

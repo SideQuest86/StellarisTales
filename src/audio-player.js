@@ -111,6 +111,7 @@ export class SoundtrackPlayer {
       write("st-volume", String(this.audio.volume));
     };
     $("music-seek").oninput = (e) => {
+      this.paintSeek();
       if (Number.isFinite(this.audio.duration))
         this.audio.currentTime = (Number(e.target.value) / 1000) * this.audio.duration;
       if (Number.isFinite(this.audio.duration))
@@ -121,6 +122,7 @@ export class SoundtrackPlayer {
       $("elapsed").textContent = time(this.audio.currentTime);
       $("music-seek").setAttribute("aria-valuetext", `${time(this.audio.currentTime)} / ${time(this.audio.duration)}`);
       $("music-seek").value = String((this.audio.currentTime / this.audio.duration) * 1000);
+      this.paintSeek();
       const now = Date.now();
       if (!this.audio.paused && now - this.lastSaved > 5000) {
         this.lastSaved = now;
@@ -207,6 +209,11 @@ export class SoundtrackPlayer {
     };
     for (const name of events) document.addEventListener(name, handler, true);
   }
+  /** The played share on the slider's hairline (style.css #music-seek --p). */
+  paintSeek() {
+    const seek = $("music-seek");
+    seek.style.setProperty("--p", `${Number(seek.value) / 10}%`);
+  }
   togglePlaylist(open = $("playlist").hidden) {
     $("playlist").hidden = !open;
     $("playlist-toggle").setAttribute("aria-expanded", String(open));
@@ -222,13 +229,16 @@ export class SoundtrackPlayer {
     this.audio.pause();
     const track = this.tracks[index];
     this.audio.src = this.asset(track.url);
-    $("track-title").textContent = track.title;
+    // The strip names the piece; the featured singer and the composer are in its tooltip and the playlist.
+    $("track-title").textContent = track.title.split(/\s+-\s+(?=feat)/i)[0];
+    $("playlist-toggle").title = `${track.title} · ${track.artist}`;
     $("track-artist").textContent = track.artist;
     $("track-artist").removeAttribute("role");
     $("music-player").classList.remove("load-failed");
     $("duration").textContent = time(track.duration);
     $("elapsed").textContent = "0:00";
     $("music-seek").value = "0";
+    this.paintSeek();
     for (const b of $("track-list").children) {
       b.classList.toggle("active", Number(b.dataset.track) === index);
       b.setAttribute("aria-current", String(Number(b.dataset.track) === index));

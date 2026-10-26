@@ -124,8 +124,6 @@ export const UI = {
   "music.play": { zh: "播放音乐", en: "Play music" },
   "music.seek": { zh: "音乐进度", en: "Track position" },
   "music.volume": { zh: "音乐音量", en: "Volume" },
-  "music.loop": { zh: "专辑循环播放", en: "Album loops" },
-  "music.loopShort": { zh: "专辑循环", en: "Album loop" },
   "music.playlist": { zh: "原声列表", en: "Soundtrack playlist" },
   "music.playlistTitle": { zh: "原声", en: "Soundtrack" },
   "music.playlistClose": { zh: "关闭音乐列表", en: "Close playlist" },
