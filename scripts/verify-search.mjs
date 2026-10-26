@@ -115,7 +115,7 @@ try {
     await page.waitForFunction(() => document.querySelectorAll("#search-results .search-story").length >= 20);
     const t0 = Date.now();
     await page.locator("#search-input").fill(q);
-    await page.waitForFunction((q) => document.querySelector("#search-input").value === q && /(results?|条结果|No matches|没有匹配)/.test(document.querySelector("#search-count").textContent) , q);
+    await page.waitForFunction((q) => document.querySelector("#search-input").value === q && (/(results?|条结果|No matches|没有匹配)/.test(document.querySelector("#search-count").textContent) || !!document.querySelector("#search-results .empty")), q); // no results: the count line is empty, the list says "No matches."
     await page.waitForFunction(() => !document.querySelector("#search-results .hit-snip:empty") || !document.querySelector("#search-results .search-hit"), null, { timeout: 8000 }).catch(() => {});
     latencies.push(Date.now() - t0);
     return page.locator("#search-results .search-hit");
@@ -232,7 +232,7 @@ try {
       input.dispatchEvent(new Event("input"));
       await new Promise((r) => setTimeout(r, 120)); // debounce
       const t1 = performance.now();
-      while (!/(results?|条结果|No matches|没有匹配)/.test(document.querySelector("#search-count").textContent)) await new Promise((r) => setTimeout(r, 5));
+      while (!/(results?|条结果|No matches|没有匹配)/.test(document.querySelector("#search-count").textContent) && !document.querySelector("#search-results .empty")) await new Promise((r) => setTimeout(r, 5));
       res.push({ q, ms: Math.round(performance.now() - t1) });
     }
     await new Promise((r) => setTimeout(r, 300));

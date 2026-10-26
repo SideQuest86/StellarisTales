@@ -433,6 +433,13 @@ function cancelOpening() {
   if (pendingOpenings) readerTicket++;
 }
 async function openFromLink(storyId, chapterId) {
+  // A link to a story the archive does not have (mistyped, or from an older version) says so, instead of a "could not
+  // load, try again" that no retry can fix; the address returns to the archive.
+  if (storyById.size && !storyById.has(storyId)) {
+    toast(T("档案里没有这则故事。", "This story is not in the archive."));
+    history.replaceState(history.state, "", location.pathname + location.search);
+    return;
+  }
   const end = beginOpening();
   try {
     return await linkOpening(storyId, chapterId, readerTicket);
@@ -1196,14 +1203,14 @@ async function renderFullSearch() {
   }
   if (seq !== searchSeq) return;
   searchPage = r.page;
-  $("#search-count").textContent = r.countText(r.total); // "· 相近结果 / Close matches" for typo-tolerant results
+  $("#search-count").textContent = r.total ? r.countText(r.total) : ""; // "· 相近结果 / Close matches" for typo-tolerant results
   $("#search-results").innerHTML = r.html || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
   pager(r.page, r.pages);
   const shown = $("#search-results").children.length;
   await r.enrich($("#search-results"));
   if (seq !== searchSeq) return;
   const dropped = shown - $("#search-results").children.length;
-  if (dropped > 0) $("#search-count").textContent = r.countText(r.total - dropped);
+  if (dropped > 0) $("#search-count").textContent = r.total - dropped ? r.countText(r.total - dropped) : "";
   if (!$("#search-results").children.length) $("#search-results").innerHTML = `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
 }
 function renderSearch() {
@@ -1222,7 +1229,7 @@ function renderSearch() {
     );
   const pages = Math.max(1, Math.ceil(filtered.length / 20));
   searchPage = Math.min(searchPage, pages - 1);
-  $("#search-count").textContent = T(`${filtered.length} 个故事`, `${filtered.length} ${filtered.length === 1 ? "story" : "stories"}`);
+  $("#search-count").textContent = filtered.length ? T(`${filtered.length} 个故事`, `${filtered.length} ${filtered.length === 1 ? "story" : "stories"}`) : "";
   $("#search-results").innerHTML =
     filtered
       .slice(searchPage * 20, searchPage * 20 + 20)
@@ -1663,6 +1670,7 @@ try {
     Promise.all([early, glyphsWarmed.catch(() => {})]).then(() => { prewarmed = false; }).then(idleOnce).then(prewarmReader);
   }, 1200);
 } catch (e) {
+  $("#category-label").textContent = "";
   $("#selected-title").textContent = T("档案暂时无法连接", "Archive unavailable");
   $("#selected-excerpt").textContent = e.message;
   $("#open-story").textContent = T("重新连接", "Reconnect");
