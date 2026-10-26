@@ -4125,7 +4125,9 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 #reader.prewarm { opacity: 0.002 !important; pointer-events: none !important; }
 #reader.prewarm #flow-surface { opacity: 1; transition: none; }
 
-/* Forced colors: pressed toggles keep a non-colour cue. */
+/* Forced colors: pressed toggles keep a non-colour cue; the reading column, which the wall's darkening gradients (dropped in
+   this mode) used to set apart, lies on the system canvas instead of the busy wall. */
 @media (forced-colors: active) {
   [aria-pressed="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+  .reader-panel { background: Canvas; }
 }

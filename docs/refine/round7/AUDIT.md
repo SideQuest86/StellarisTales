@@ -148,3 +148,6 @@ did not start on this machine). WebKit screenshots showed Chinese voice lines sl
 computed italic (zh-italic-probe.mjs); Chrome keeps them upright by font-synthesis: none, WebKit's fallback slanted them where no
 Kai face exists. A rule now sets Chinese upright (:root:lang(zh) :not(:lang(en)):not(:has(> :lang(en)))), the soundtrack names
 are marked lang="en" like the parallel title; probe: 0 italic Chinese elements, English italics unchanged in both engines.
+
+Forced colors (v4.17.11, scratchpad forced-colors.mjs): text keeps its backplates and focus rings show (Highlight), but the
+reading column lay over the visible wall once the darkening gradients were dropped; .reader-panel now takes Canvas there.
