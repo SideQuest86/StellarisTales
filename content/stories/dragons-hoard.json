@@ -55,8 +55,8 @@
     "en": "The egg hatches"
    },
    "note": {
-    "zh": "生成一支以太幼龙舰队“Scile”（不占舰队容量），设置 hatched_dragon。",
-    "en": "Spawns an Ether hatchling fleet (no fleet capacity) and sets hatched_dragon."
+    "zh": "一支以太幼龙舰队“Scile”出现，且不占用舰队容量。",
+    "en": "An Ether hatchling fleet named Scile appears; it takes no fleet capacity."
    },
    "evidence": "events/leviathans_events_1.txt:8926-8967"
   },
@@ -66,8 +66,8 @@
     "en": "The egg is no longer viable"
    },
    "note": {
-    "zh": "无后续效果。",
-    "en": "No further effect."
+    "zh": "龙蛋已失去活力，之后再无结果。",
+    "en": "The egg is lost; nothing more comes of it."
    },
    "evidence": "events/leviathans_events_1.txt:8969-9001"
   }

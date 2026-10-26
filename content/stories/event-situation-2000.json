@@ -169,8 +169,8 @@
     "en": "Fades when its lifetime ends"
    },
    "note": {
-    "zh": "全局25年寿命标记到期后，月度检查使其消散。",
-    "en": "When the 25-year global lifetime flag expires, the monthly check makes it fade."
+    "zh": "持续二十五年后，该局势自行消散。",
+    "en": "After its 25-year lifetime, the situation fades away."
    },
    "evidence": "events/situation_events.txt:2932-2952 and 3821-3876; common/scripted_effects/00_scripted_effects.txt:8708-8712"
   },
@@ -191,8 +191,8 @@
     "en": "Passed to another empire"
    },
    "note": {
-    "zh": "本国局势销毁；目标帝国从头经历（首次为2003，曾拥有则直接2010）。",
-    "en": "Your situation is destroyed; the target starts over (2003 the first time, 2010 if it hosted it before)."
+    "zh": "本国的局势被销毁；目标帝国从头开始经历，若曾接触过，则直接在其首都出现。",
+    "en": "Your situation is destroyed; the target empire starts it over, or if it has met it before, it appears straight away in its capital."
    },
    "evidence": "events/situation_events.txt:3322-3371 and 3031-3062"
   }

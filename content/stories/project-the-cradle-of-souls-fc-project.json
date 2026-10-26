@@ -75,8 +75,8 @@
     "en": "First contact complete"
    },
    "note": {
-    "zh": "项目完成后触发，记录该赞助者接触状态为completed。",
-    "en": "Fired when the project completes; sets the patron first-contact state to completed."
+    "zh": "项目完成后，与该赞助者的首次接触即告完成。",
+    "en": "When the project completes, first contact with this patron is complete."
    },
    "evidence": "common/special_projects/04_projects_shroud.txt on_success; events/shroud_events.txt"
   }

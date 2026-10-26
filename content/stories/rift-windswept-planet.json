@@ -42,8 +42,8 @@
     "en": "Cutting Winds: the wind prevails"
    },
    "note": {
-    "zh": "解锁培育风生物的能力（国家变量 num_authorized_wind_creatures = 3）；演化猎手起源另得真菌 DNA；探索结束。",
-    "en": "Unlocks incubating wind creatures (country variable num_authorized_wind_creatures = 3); Evolutionary Predators also get fungoid DNA; the exploration ends."
+    "zh": "解锁培育风生物的能力（可授权三只）；演化猎手起源另得真菌 DNA；探索结束。",
+    "en": "Unlocks incubating wind creatures (three authorized); Evolutionary Predators also get fungoid DNA; the exploration ends."
    },
    "evidence": "events/astral_rifts_2_events.txt:3680-3719"
   },
@@ -53,8 +53,8 @@
     "en": "Fungal Bloom: the fungus prevails"
    },
    "note": {
-    "zh": "标本“超维真菌”与修正 extra_dimensional_spores_modifier；演化猎手起源另得鸟类 DNA；探索结束。",
-    "en": "Specimen “extradimensional fungus” and modifier extra_dimensional_spores_modifier; Evolutionary Predators also get avian DNA; the exploration ends."
+    "zh": "标本“超维真菌”与“高维孢子”修正；演化猎手起源另得鸟类 DNA；探索结束。",
+    "en": "Specimen “extradimensional fungus” and the Extra-Dimensional Spores modifier; Evolutionary Predators also get avian DNA; the exploration ends."
    },
    "evidence": "events/astral_rifts_2_events.txt:3721-3750"
   },
@@ -64,8 +64,8 @@
     "en": "A Difficult Compromise"
    },
    "note": {
-    "zh": "该星球获得“社会”矿藏 d_society_10，外加奇异气体、能量与大量星界丝缕；格式塔帝国另得凝聚力；探索结束。非格式塔帝国两天后触发领袖事件 2790。",
-    "en": "The planet gains the society deposit d_society_10, plus exotic gases, energy and a large astral thread reward; gestalt empires also get unity; the exploration ends. Non-gestalt empires get leader event 2790 two days later."
+    "zh": "该星球获得+10社会研究矿藏、奇异气体、能量与大量星界丝缕；格式塔帝国另得团结；探索结束。非格式塔帝国两天后有领袖事件。",
+    "en": "The planet gains a +10 society deposit, exotic gases, energy and many astral threads; gestalt empires also get unity. The exploration ends; non-gestalt empires get a leader event two days later."
    },
    "evidence": "events/astral_rifts_2_events.txt:3753-3819"
   },
@@ -86,8 +86,8 @@
     "en": "A Special Request: the scientist asks for a new duty"
    },
    "note": {
-    "zh": "尾声：调解成功的科学家请求转为使节（得到 reconverted_leader_modifier）或留任。",
-    "en": "Coda: the scientist who brokered the agreement asks to become an envoy (gaining reconverted_leader_modifier) or stays."
+    "zh": "尾声：促成协议的科学家请求转为使节（获得“再转换领袖”修正）或留任。",
+    "en": "Coda: the scientist who brokered the agreement asks to become an envoy (gaining Reconverted Leader) or stays."
    },
    "evidence": "events/astral_rifts_2_events.txt:3865-3915"
   }

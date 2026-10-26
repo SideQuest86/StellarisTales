@@ -56,8 +56,8 @@
     "en": "Observed From Afar"
    },
    "note": {
-    "zh": "该星球获得“社会”矿藏 d_society_10，大量星界丝缕与社会研究；不友善帝国另得凝聚力；探索结束。",
-    "en": "The planet gains the society deposit d_society_10, a large astral thread reward and society research; unfriendly empires also get unity; the exploration ends."
+    "zh": "该星球获得+10社会研究矿藏，大量星界丝缕与社会研究；不友善帝国另得凝聚力；探索结束。",
+    "en": "The planet gains a +10 society deposit, a large astral thread reward and society research; unfriendly empires also get unity; the exploration ends."
    },
    "evidence": "events/astral_rifts_2_events.txt:4287-4350"
   },
@@ -67,8 +67,8 @@
     "en": "Tidal Locking Breakthrough"
    },
    "note": {
-    "zh": "大量星界丝缕与凝聚力；国家标记 tidal_lock_knowledge（decisions/09_astral_planes_decisions.txt:124 与矿藏条件所用）；探索结束。",
-    "en": "A large astral thread reward and unity; country flag tidal_lock_knowledge (used by decisions/09_astral_planes_decisions.txt:124 and a deposit condition); the exploration ends."
+    "zh": "大量星界丝缕与凝聚力；解锁一项潮汐锁定决议及相关矿藏条件；探索结束。",
+    "en": "A large astral thread reward and unity; it enables a tidal-locking decision and a deposit condition; the exploration ends."
    },
    "evidence": "events/astral_rifts_2_events.txt:4352-4380"
   },
@@ -78,8 +78,8 @@
     "en": "Shallow Impact"
    },
    "note": {
-    "zh": "大量星界丝缕；国家标记 can_build_microplanet_memorial（决议 09_astral_planes_decisions.txt:165）；探索结束。",
-    "en": "A large astral thread reward; country flag can_build_microplanet_memorial (decision 09_astral_planes_decisions.txt:165); the exploration ends."
+    "zh": "大量星界丝缕；解锁建造袖珍行星纪念碑的选项；探索结束。",
+    "en": "A large astral thread reward; unlocks the option to build a Microplanet Memorial; the exploration ends."
    },
    "evidence": "events/astral_rifts_2_events.txt:4382-4404"
   },
@@ -89,8 +89,8 @@
     "en": "Model Planet"
    },
    "note": {
-    "zh": "该星球获得矿藏 d_society_15，大量星界丝缕与社会研究；探索结束，3600 天后触发 2890 并移除该矿藏。",
-    "en": "The planet gains deposit d_society_15, a large astral thread reward and society research; the exploration ends and 3600 days later 2890 fires and removes the deposit."
+    "zh": "该星球获得+15社会研究矿藏，并得到大量星界丝缕与社会研究；探索结束。约十年后该矿藏消失。",
+    "en": "The planet gains a +15 society deposit, a large astral thread reward and society research; the exploration ends. About ten years later the deposit is lost."
    },
    "evidence": "events/astral_rifts_2_events.txt:4406-4438"
   },
@@ -100,8 +100,8 @@
     "en": "Tiny Planet Extinction"
    },
    "note": {
-    "zh": "尾声：气候剧变使数据来源中断，d_society_15 被移除。",
-    "en": "Coda: extreme climate shifts end the data stream and d_society_15 is removed."
+    "zh": "极端气候使数据来源中断，+15社会研究矿藏被移除。",
+    "en": "Extreme climate shifts end the data stream, and the +15 society deposit is removed."
    },
    "evidence": "events/astral_rifts_2_events.txt:4429-4456"
   }

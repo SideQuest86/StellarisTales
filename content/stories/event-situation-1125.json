@@ -59,8 +59,8 @@
     "en": "A cure is found"
    },
    "note": {
-    "zh": "隐藏1165把局势方式设为治愈；进度归零后隐藏1175静默结束，不再有窗口。",
-    "en": "Hidden 1165 switches the situation to the cure approach; when progress reaches 0, hidden 1175 ends it silently with no further window."
+    "zh": "局势转入治愈路线；进度归零后悄然结束，不再弹出选择。",
+    "en": "The situation switches to the cure approach; when its progress reaches zero, it ends quietly with no further window."
    },
    "evidence": "common/special_projects/00_projects_leviathans.txt:508-534; events/situation_events.txt:5624-5653, 5738-5760; common/situations/01_narrative_situations.txt:1185-1243"
   }

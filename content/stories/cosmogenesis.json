@@ -349,8 +349,8 @@
     "en": "Possible abort: accept the ultimatum"
    },
    "note": {
-    "zh": "第一个选项设置 cosmogenesis_aborted 并摧毁己方突触凝练机，此后无法达到第四、五级；道歉或拒绝（宣战）则计划继续。",
-    "en": "The first option sets cosmogenesis_aborted and destroys your Synaptic Lathes, blocking levels 4 and 5; apologising or refusing (war) lets the plan continue."
+    "zh": "第一个选项会中止计划并摧毁己方突触凝练机，此后无法达到第四、五级；道歉或拒绝（宣战）则计划继续。",
+    "en": "The first option aborts the plan and destroys your Synaptic Lathes, so levels 4 and 5 can no longer be reached; apologising or refusing (war) lets the plan continue."
    },
    "evidence": "events/machine_age_crisis_events.txt:2620-2655 option a sets cosmogenesis_aborted; 00_crisis_levels.txt:463-466, 508-511 levels 4/5 require NOT cosmogenesis_aborted"
   }

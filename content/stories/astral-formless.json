@@ -180,8 +180,8 @@
     "en": "The Formless destroyed: the wormhole sealed"
    },
    "note": {
-    "zh": "封印期间锚被摧毁：情境中止，无形异使被来自另一位面的侵略者消灭；开启者获得物理研究收入，其在该星系的舰队被撤回或摧毁，星系被摧毁，全局标记 strange_wormhole_closed。",
-    "en": "The anchor is destroyed during the Seal: the situation aborts and the Formless are destroyed by attackers from another dimension; the opener gets physics research income, its fleets there are pulled out or destroyed, the system is destroyed and global flag strange_wormhole_closed is set."
+    "zh": "封印期间锚被摧毁，情境中止；异位面的侵略者消灭无形异使，星系被毁。开启者获得物理研究，其舰队被撤回或摧毁。",
+    "en": "The anchor falls during the Seal. Invaders from another dimension destroy the Formless and the system. The opener gains physics research; its fleets there retreat or are lost."
    },
    "evidence": "events/astral_planes_events.txt:2288-2328"
   },
@@ -191,8 +191,8 @@
     "en": "Subjugation succeeds: the Formless become a subject"
    },
    "note": {
-    "zh": "创建新的“无形异使”国家（裂隙世界起源，民主），把盖亚星球交给它；获得遗珍“永恒王座”（r_eternal_throne），无形异使成为附庸（preset_luminarium）并获修正 pledged_allegiance，国家标记 allied_with_formless。",
-    "en": "A new Formless country (Riftworld origin, democratic) is created and the Gaia planet given to it; the empire gets the relic r_eternal_throne and the Formless become a subject (preset_luminarium) with modifier pledged_allegiance; country flag allied_with_formless."
+    "zh": "新建的无形异使国家（裂隙世界起源，民主）获得盖亚星球，成为你的曙光境附庸并获“兑现效忠诺言”修正；你获得遗珍“永恒王座”。",
+    "en": "A new Formless country (Riftworld origin, democratic) receives the Gaia planet and becomes your Luminarium subject with the Pledged Allegiance modifier. You gain the Eternal Throne relic."
    },
    "evidence": "events/astral_planes_events.txt:2579-2744"
   },
@@ -202,8 +202,8 @@
     "en": "War on the Formless"
    },
    "note": {
-    "zh": "对无形异使的敌意由 3150 隐藏事件落实：它设置 formless_war_state_initiated，生成 2 支 32 艘的防卫舰队并每 360 天再生成 24 艘一支（3151）；若盟友领袖属于攻击者，3155 令其离开（被解雇）。无形异使在敌人全部消失时自毁（3160）。",
-    "en": "Hostility is enacted by hidden event 3150: it sets formless_war_state_initiated, spawns two 32-ship defense fleets and a 24-ship fleet every 360 days (3151); if the allied leader belongs to the attacker 3155 makes the leader leave (fired). The Formless destroy themselves when no hostile playable country remains (3160)."
+    "zh": "无形异使调集两支32艘防卫舰队，每360天增派24艘舰队。盟友领袖若出自攻击者阵营即被解雇。敌人消失后，无形异使自毁。",
+    "en": "The Formless raise two 32-ship defense fleets, then a 24-ship fleet every 360 days. An allied leader from an attacking empire is dismissed. The Formless destroy themselves once no enemies remain."
    },
    "evidence": "events/astral_planes_events.txt:3299-3448; common/on_actions/00_on_actions.txt:3622 (3160 on_country_destroyed), :5116 (3150 on_country_attacked)"
   },
@@ -213,8 +213,8 @@
     "en": "Formless Destroyed (after the Seal)"
    },
    "note": {
-    "zh": "获得遗珍“永恒王座”与 1000 星界丝缕。",
-    "en": "The relic r_eternal_throne and 1000 astral threads."
+    "zh": "获得遗珍“永恒王座”与1000星界丝缕。",
+    "en": "You gain the Eternal Throne relic and 1000 astral threads."
    },
    "evidence": "events/astral_planes_events.txt:3450-3464"
   },
@@ -224,8 +224,8 @@
     "en": "The weakness acquired"
    },
    "note": {
-    "zh": "3115 付出 2000 星界丝缕换取对应修正之后的说明；之后回到 3110 或告别。",
-    "en": "Follows 3115 after 2000 astral threads buy the matching modifier; afterwards back to 3110 or goodbye."
+    "zh": "支付2000星界丝缕即可获得对应修正。随后可回到原选项，或告别离开。",
+    "en": "Paying 2000 astral threads buys the matching modifier. The conversation then returns to the choices or ends with a farewell."
    },
    "evidence": "events/astral_planes_events.txt:3080-3176"
   }

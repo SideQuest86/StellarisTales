@@ -70,8 +70,8 @@
     "en": "Fleet commandeered"
    },
    "note": {
-    "zh": "项目完成后得到古老联盟的主力舰队；事件链计数 battlefield_located +1。",
-    "en": "The project yields the ancient alliance's main fleet; the chain counter battlefield_located +1."
+    "zh": "项目完成后得到古老联盟的主力舰队。",
+    "en": "The project yields the ancient alliance's main fleet."
    },
    "evidence": "events/anomaly_events_2.txt:3306"
   },
@@ -81,8 +81,8 @@
     "en": "Pirates destroyed"
    },
    "note": {
-    "zh": "击毁海盗基地后的奖励（每月矿物，已有或开启 tech_cruisers 研究）。",
-    "en": "Reward for destroying the pirate base (monthly minerals, tech_cruisers progress or option)."
+    "zh": "击毁海盗基地后每月获得矿物，并推进或开启“巡洋舰”研究。",
+    "en": "Destroying the pirate base yields monthly minerals and either advances or unlocks Cruisers research."
    },
    "evidence": "events/anomaly_events_2.txt:3388"
   }

@@ -8,8 +8,8 @@
     "en": "VIR: guidance on or off"
    },
    "note": {
-    "zh": "本帝国自己的顾问 VIR 弹出，询问是否重新开启（或关闭）新手指引；选项会实际改变教程等级。825、830 与科学家归来 840 都以此收尾。",
-    "en": "The empire's own advisor VIR pops up asking to re-enable (or shut down) guidance; the options really change the tutorial level. 825, 830 and the scientist's return 840 all end here."
+    "zh": "本帝国的顾问VIR询问是否重新开启或关闭新手指引，选择会改变教程等级。科学家归来等两个裂隙结局也通向此处。",
+    "en": "The empire's own advisor VIR asks whether to turn guidance back on or off; the choice sets the tutorial level. The scientist's return and two other rift endings lead here."
    },
    "evidence": "events/astral_rifts_0_events.txt:3416-3481 (is_advisor_event, set_tutorial_level); called from 825 :3260, 830 :3281, 840 :3400"
   }

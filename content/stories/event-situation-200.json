@@ -143,8 +143,8 @@
     "en": "All robot pops lost"
    },
    "note": {
-    "zh": "290的所有选项都会消灭该星球全部机器人口；291后局势结束。",
-    "en": "Every option of 290 kills all robot pops on the planet; the situation ends after 291."
+    "zh": "选择任一选项，该星球全部机器人口都会被消灭，局势随之结束。",
+    "en": "Every option kills all robot pops on the planet; the situation then ends."
    },
    "evidence": "events/situation_events.txt:2584-2662"
   },
@@ -154,8 +154,8 @@
     "en": "Good end: radiation-hardened"
    },
    "note": {
-    "zh": "工程研究奖励与永久修正“抗辐射组件”。",
-    "en": "Engineering research and the permanent modifier radiation_hardened_components."
+    "zh": "工程研究奖励与永久修正“防辐射部件”。",
+    "en": "Engineering research and the permanent modifier Radiation-Hardened Components."
    },
    "evidence": "events/situation_events.txt:2664-2702"
   },
@@ -176,8 +176,8 @@
     "en": "Bad end: software damage"
    },
    "note": {
-    "zh": "5年的“软件损伤”修正。",
-    "en": "The software_damage modifier for 5 years."
+    "zh": "5年的“软件故障”修正。",
+    "en": "The Software Damage modifier for 5 years."
    },
    "evidence": "events/situation_events.txt:2738-2768"
   }

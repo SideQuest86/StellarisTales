@@ -75,8 +75,8 @@
     "en": "The Seal"
    },
    "note": {
-    "zh": "永久封印这个危险；该星系获得矿藏 d_crystal_rift；探索结束。花费 500 星界丝缕且需虫洞稳定科技。",
-    "en": "The danger is sealed permanently; the system gains deposit d_crystal_rift; the exploration ends. Costs 500 astral threads and needs Wormhole Stabilization."
+    "zh": "永久封印这个危险；该星系获得+10团结与+10物理研究矿藏；探索结束。花费500星界丝缕，且需“虫洞稳定”科技。",
+    "en": "The danger is sealed permanently; the system gains a +10 unity and a +10 physics deposit; the exploration ends. Costs 500 astral threads and needs Wormhole Stabilization."
    },
    "evidence": "events/astral_rifts_1_events.txt:313-338, 366-382"
   },
@@ -86,8 +86,8 @@
     "en": "Strange Wormhole: the way to the Formless system"
    },
    "note": {
-    "zh": "打开传送门的后果：裂隙被销毁，探索帝国获得国家标记 opened_wormhole_to_formless_system，星系中出现通往银河核心形态之系统的天然虫洞，并设置全局标记 strange_wormholes_locked。此事件本身是任何帝国舰队首次进入水晶球星系虫洞时的通用遭遇（on_entering_system_fleet，00_on_actions.txt:1047），这里只是打开者的那一次。",
-    "en": "Consequence of opening the doorway: the rift is destroyed, the explorer gets country flag opened_wormhole_to_formless_system, a natural wormhole to the Formless system at the galactic core appears, and global flag strange_wormholes_locked is set. The event itself is the generic first-encounter event for any fleet entering the crystal-sphere-system wormhole (on_entering_system_fleet, 00_on_actions.txt:1047); here it is the opener's encounter."
+    "zh": "打开传送门后裂隙被销毁，星系中出现通往银河核心形态之系统的天然虫洞。这是打开者自己的首次遭遇。",
+    "en": "Opening the doorway destroys the rift; a natural wormhole to the Formless system, at the galactic core, appears here. This is the opener's own first encounter."
    },
    "evidence": "events/astral_rifts_1_events.txt:284-296, 384-440; events/astral_planes_events.txt:1067-1130"
   }

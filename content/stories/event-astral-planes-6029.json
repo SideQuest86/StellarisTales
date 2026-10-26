@@ -25,8 +25,8 @@
     "en": "Astral Zeal"
    },
    "note": {
-    "zh": "移除“星界奇观兴趣”与“冲突视景”修正；母国得凝聚力收入与国家修正 astral_zeal_modifier，此后每次完成裂隙探索，隐藏事件 6059 都再给一份凝聚力（on_astral_rift_exploration_complete，00_on_actions.txt:5017）。若是星界疤痕，则不再生成该疤痕上的异常。",
-    "en": "The “Astralnomical interest” and “Conflicting visions” modifiers are removed; the owner gets a unity income and the country modifier astral_zeal_modifier, after which hidden event 6059 grants more unity each time a rift exploration completes (on_astral_rift_exploration_complete, 00_on_actions.txt:5017). For an astral scar the scar no longer generates an anomaly."
+    "zh": "移除“星界兴趣”“冲突的视景”修正；母国得凝聚力收入与“星界狂热”；每完成裂隙探索再得凝聚力；星界疤痕不再生异常。",
+    "en": "Removes the Astralnomical Interest and Conflicting Visions modifiers; the owner gains unity income and Astral Zeal, each completed rift exploration adds more unity; astral scars stop spawning anomalies."
    },
    "evidence": "events/astral_planes_events.txt:4743-4828, 4900-4920"
   },
@@ -36,8 +36,8 @@
     "en": "Debate Curtailed"
    },
    "note": {
-    "zh": "禁止公开讨论：移除兴趣修正，行星得“星界爱好者”修正（物理研究 +20%，裂隙探索速度 +20%），母国得凝聚力收入。",
-    "en": "Public discussion is banned: the interest modifier is removed, the planet gets astral_aficionados_modifier (physics research +20%, rift exploration speed +20%) and the owner a unity income."
+    "zh": "禁止公开讨论：移除兴趣修正，行星获“铁杆星粉”（物理研究+20%，裂隙探索速度+20%），母国得凝聚力收入。",
+    "en": "Public discussion is banned: the interest modifier is removed, the planet gains Astral Aficionados (physics research +20%, rift exploration speed +20%) and the owner gains unity income."
    },
    "evidence": "events/astral_planes_events.txt:4830-4898; common/static_modifiers astral_aficionados_modifier"
   }

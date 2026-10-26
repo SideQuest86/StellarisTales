@@ -90,8 +90,8 @@
     "en": "Planetary Dissection: the pink formula"
    },
    "note": {
-    "zh": "机械或和平主义物种：设置国家标记 formula_pink_opinion_modifier，已有联络的国家好感增加（并通过 on_post_communications_established → 3190 对日后联络的国家生效）；其他物种：获得修正 formula_pink_armies。大量星界丝缕；探索结束。",
-    "en": "Robotic or pacifist species: sets country flag formula_pink_opinion_modifier, countries in contact gain opinion (and later contacts via on_post_communications_established → 3190); other species: modifier formula_pink_armies. A large astral thread reward; the exploration ends."
+    "zh": "机械或和平主义物种：已接触及日后接触的国家好感上升；其他物种：获得“粉色方阵”修正。大量星界丝缕；探索结束。",
+    "en": "Robotic or pacifist species: countries in contact gain a Formula Pink opinion bonus, including later contacts. Other species: the Formula Pink modifier. A large astral thread reward; the exploration ends."
    },
    "evidence": "events/astral_rifts_3_events.txt:2069-2120; common/on_actions/00_on_actions.txt:2273"
   }

@@ -945,7 +945,8 @@ function renderChapter(preservePosition = false) {
   const nextEdges = resolveEdges(r.next, ctx);
   let nextReading;
   if (chapter.ending && !nextEdges.length) {
-    nextReading = `<div class="reading-ending"><strong>${esc(local(chapter.ending.label))}</strong><p>${esc(local(chapter.ending.note))}</p></div>${endingNext(story)}`;
+    const name = local(chapter.ending.label), note = local(chapter.ending.note); // a note that repeats the name is not shown
+    nextReading = `<div class="reading-ending"><strong>${esc(name)}</strong>${note && note !== name ? `<p>${esc(note)}</p>` : ""}</div>${endingNext(story)}`;
   } else if (r.choices.length) {
     nextReading = ""; // the "Your choices" heading above already says it
   } else if (!nextEdges.length) {

@@ -103,3 +103,10 @@ below its next-story card; Previous chapter under a route's dead end), plus the 
 story's name twice. Not applied: hiding the arrow of a choice that unfolds nothing (once the ending follows the choices, the
 turned arrow points at it), promoting Continue reading over Open story, the ending note's tone (project wording across every
 ending; a content task), auto-scrolling an opened choice, guarding Start over.
+
+## Ending notes (v4.17.0)
+
+The sustained-reading judges called the ending note a ledger; 141 of 526 notes held script shorthand (ids, event numbers,
+flags) in the closing position. Rewritten in the game's own names by six Haiku agents, verified by six Sonnet agents against the
+evidence and the localisation, names checked by the coordinator: content/chronology/review/r8-ending-notes.md. The note's
+typography was left as it is (commentary already set smaller and quieter than the text; restyling was judged taste).
