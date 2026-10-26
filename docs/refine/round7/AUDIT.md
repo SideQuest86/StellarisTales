@@ -177,3 +177,8 @@ Chinese card captions text-wrap: balance (pretty does not act on Chinese in Chro
 text-spacing-trim: trim-start on Chinese paragraphs that open with a quote (the stroke on the column's edge); text-wrap: pretty
 on Chinese paragraphs and replies (for engines that apply it to CJK). Not applied: a closing diamond under the text (the choice
 rows below already open with one), the phone toolbar hiding on scroll (risk), the title and choice animations (fit).
+
+Keyboard-only sustained read (live v4.17.15, both languages, scratchpad keyboard-read.mjs): opening a story, the next chapter and
+Previous chapter each put focus on the chapter title (#reader-title), the new chapter starts at the top, the first choice is 3 Tabs
+from the title, its number key opens it, the continue card is the next Tab, Escape returns focus to Open story with a visible ring;
+the skip link reaches the selection from the masthead. No focus lost to <body>, no page errors. Nothing to change.
