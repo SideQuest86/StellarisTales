@@ -134,7 +134,7 @@ function render() {
       <button class="museum-close" data-close aria-label="${esc(T("离开博物天枢", "Leave the Grand Archive"))}">×</button>
     </header>
     <div class="museum-tools">
-      <label class="museum-search-wrap"><span aria-hidden="true">⌕</span><input class="museum-search" type="search" value="${esc(state.query)}" placeholder="${esc(T("搜索标本名称或描述", "Search specimen names or descriptions"))}" aria-label="${esc(T("搜索标本", "Search specimens"))}"></label>
+      <label class="museum-search-wrap"><span aria-hidden="true">⌕</span><input class="museum-search" type="search" value="${esc(state.query)}" placeholder="${esc(T("搜索标本名称或描述", "Search names and descriptions"))}" aria-label="${esc(T("搜索标本", "Search specimens"))}"></label>
       <div class="museum-chips" role="group" aria-label="${esc(T("展区", "Collection"))}">
         ${chip("type", "all", T("全部展区", "All collections"), data.specimens.length)}
         ${Object.entries(a.types).map(([k, v]) => chip("type", k, label(v), typeCount(k))).join("")}

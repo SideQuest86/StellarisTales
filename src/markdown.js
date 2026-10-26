@@ -32,6 +32,7 @@ export function inline(src) {
     return stash(`<a href="${esc(safe)}" rel="noopener noreferrer"${ext ? ' target="_blank"' : ""}>${esc(label)}</a>`);
   });
   s = s.replace(/<[^>]*>/g, ""); // raw HTML dropped
+  // No typeset() here: the guides are set in the CJK-first sans stack, which draws curly quotes full-width ("empire’ s").
   s = esc(s);
   s = s.replace(/\*\*([^*]+)\*\*|__([^_]+)__/g, (_, a, b) => `<strong>${a ?? b}</strong>`);
   s = s.replace(/\*([^*\s][^*]*)\*|(?<![\w])_([^_\s][^_]*)_(?![\w])/g, (_, a, b) => `<em>${a ?? b}</em>`);

@@ -69,10 +69,15 @@
   #museum:not(.detail-open) .museum-search-wrap { grid-column: 1; grid-row: 1 / span 2; align-self: start; margin-top: 4px; }
   #museum:not(.detail-open) .museum-chips { grid-column: 2; }
 }
-@media (min-width: 1400px) and (min-height: 521px) {
-  #museum.detail-open .museum-tools { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 0 32px; }
-  #museum.detail-open .museum-search-wrap { grid-column: 1; grid-row: 1 / span 2; align-self: start; margin-top: 4px; }
-  #museum.detail-open .museum-chips { grid-column: 2; }
+/* With the exhibit open the free part is narrower: the search field on its own line, then each filter group as ONE row
+   (scrolling sideways with a fade where it does not fit) instead of words wrapping one by one under each other. */
+@media (min-width: 701px) and (min-height: 521px) {
+  #museum.detail-open .museum-tools { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px 0; }
+  #museum.detail-open .museum-search-wrap { max-width: 340px; margin-bottom: 6px; }
+  #museum.detail-open .museum-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
+  #museum.detail-open .museum-chips::-webkit-scrollbar { display: none; }
+  #museum.detail-open .museum-chips::after { content: ""; flex: 0 0 20px; }
+  #museum.detail-open .museum-chip { flex: none; }
 }
 .museum-search-wrap { display: flex; align-items: center; gap: 8px; min-width: min(300px, 100%); border-bottom: 1px solid var(--line-2); transition: border-color 0.2s ease, box-shadow 0.2s ease; }
 /* The field draws no outline: its rule turns gold and thickens while the input has focus. */
