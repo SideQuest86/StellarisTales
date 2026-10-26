@@ -29,3 +29,11 @@ layout, phones, secondary surfaces) by Sonnet agents over 38 screenshots and the
   archive's.
 - Landscape-phone card rework (camera framing in archive-scene.js): risky for a rarely used layout.
 - "Reduce motion" in gold: a hover artefact of the capture (computed colour at rest equals Search and EN / 中).
+
+## Design panel (v4.13.1)
+
+Four proposals (book typography, page-turn motion, reading focus, first impression), three judges. Built: the teaser's fade
+(from first impression) and the pause with a gold tick under the title block (from typography). Not built: the small-caps
+incipit (the Google-served Newsreader has no smcp: small-caps width equals normal; synthesis is off), the enlarged lead
+paragraph (a chapter's text is usually one <p> with .pb gaps, so it would enlarge the whole chapter), the invitation line
+(new interface text), the dimmed map card (presses on a deliberate decision), the page-turn JS (low fit).

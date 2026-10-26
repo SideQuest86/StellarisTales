@@ -569,6 +569,12 @@ input {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-shadow: 0 1px 10px #031014;
+  /* The teaser does not stop on a clipped "…": its last line fades out towards its end, like text running on beyond the
+     panel (1lh = one line of the teaser; the lines above stay whole). */
+  -webkit-mask: linear-gradient(#000, #000) top / 100% calc(100% - 1lh) no-repeat,
+    linear-gradient(90deg, #000 45%, transparent 97%) bottom / 100% 1lh no-repeat;
+  mask: linear-gradient(#000, #000) top / 100% calc(100% - 1lh) no-repeat,
+    linear-gradient(90deg, #000 45%, transparent 97%) bottom / 100% 1lh no-repeat;
 }
 :root:lang(en) #selected-excerpt {
   font-size: 16px;
@@ -881,9 +887,25 @@ input {
 .chapter-document > .reader-meta + :is(.reading-context, .profile-panel) {
   margin-top: 10px;
 }
+/* Between the title block and the first line: a measured pause and a short gold tick, the mark a typesetter leaves before a
+   chapter's text, instead of a rule across the column. */
 .narrative {
-  border-top: 1px solid #c4ad7a3d;
-  padding-top: 24px;
+  position: relative;
+  padding-top: 30px;
+}
+.narrative::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 1px;
+  background: #c4ad7a99;
+}
+@media (forced-colors: active) {
+  .narrative::before {
+    background: CanvasText;
+  }
 }
 .narrative section + section {
   margin-top: 0;
