@@ -115,3 +115,10 @@ typography was left as it is (commentary already set smaller and quieter than th
 
 The same shorthand one level up: 179 captions under continue cards, investigation notes and origin openings; 149 rewritten with
 the r8 method (content/chronology/review/r9-caption-shorthand.md).
+
+## Chapter feet (v4.17.3)
+
+A second sustained read (Cetana, scratchpad sustained2.mjs) showed the effects panel between a conversation's replies and its
+"Continue the conversation" line. The effects and specimen panels now always follow .chapter-end (v4.16.2 did it for endings
+only), which is also the order style.css's single-rule spacing expects: under continue cards the panel had drawn its own rule
+17 px below the last card's (live vs local, horizon-signal akx.9315).

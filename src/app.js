@@ -1447,12 +1447,9 @@ function showSpecimenLinks(docId) {
         const [zh, en] = (entry.names[key] || "|").split("|");
         return `<a href="#museum=${encodeURIComponent(key)}"><img src="${asset(`museum/img/${key}.webp`)}" alt="" width="36" height="36" loading="lazy">${esc(lang === "en" ? en || zh : zh || en)}</a>`;
       }).join("");
-    const end = article.querySelector(".chapter-end");
-    if (end?.querySelector(".reading-ending")) {
-      let at = end; // after an ending: below it and its effects (showEffects)
-      while (at.nextElementSibling?.matches(".fx")) at = at.nextElementSibling;
-      at.after(box);
-    } else end ? end.before(box) : article.append(box);
+    let at = article.querySelector(".chapter-end"); // below the chapter's end and its effects (showEffects)
+    while (at?.nextElementSibling?.matches(".fx")) at = at.nextElementSibling;
+    at ? at.after(box) : article.append(box);
   };
   if (specimenMap) return add();
   json("museum/by-doc.json").then((m) => { specimenMap = m; add(); }).catch(() => { specimenMap = {}; });
@@ -1484,11 +1481,10 @@ async function showEffects(story, docId, choices) {
   if (data.origin && docId === story.start) block += renderEffects(data.origin, { ...opts, title: T("起源 · 开局效果", "Origin · starting effects") });
   if (entry.doc) block += renderEffects(entry.doc, opts);
   if (!block) return;
-  // An ending follows the choices directly; the chapter's effects join the panels below it and its next-story card.
-  const ending = article.querySelector(".chapter-end:has(> .reading-ending)");
-  const end = article.querySelector(".specimen-links, .chapter-end");
-  if (ending) ending.insertAdjacentHTML("afterend", block);
-  else end ? end.insertAdjacentHTML("beforebegin", block) : article.insertAdjacentHTML("beforeend", block);
+  // The chapter's end (an ending and its next story, a route's last line, a conversation's status) follows the choices
+  // directly; the effects join the panels below it.
+  const end = article.querySelector(".chapter-end");
+  end ? end.insertAdjacentHTML("afterend", block) : article.insertAdjacentHTML("beforeend", block);
   bindEffects(article);
 }
 // On the first chapter after crossing into another story: "From <that story>" beside Back, stepping back like it.
