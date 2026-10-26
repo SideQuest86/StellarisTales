@@ -16,3 +16,7 @@ removed. Applied in place by JSON path (each file keeps its layout); the evidenc
 Follow-up (v4.17.2): the 33 captions over 20 words or 40 Chinese characters (9 stories; 1,890 captions in all, 95% at most 16
 words) shortened to one line by two Haiku rewriters and two Sonnet verifiers (13 corrections: 'your system', 'transport ship',
 approach names Organized Meditation / 组织冥想 and Distribute Zro / 分发泽珞); each rewriter listed what it left out.
+
+Render check: every chapter whose ending note (r8) or card caption (r9) changed was opened by link in both languages (241
+checks, 482 opens, local build of v4.17.4): no page errors; the 16 texts not on the page are by design (ending blocks are only
+shown where a chapter does not continue, 13; captions of edges the reading context filters, 3).

@@ -682,7 +682,9 @@ function edgeFacts(e) {
 function endingNext(story) {
   const col = columns.find((c) => c.stories.some((s) => s.id === story.id));
   const at = col ? col.stories.findIndex((s) => s.id === story.id) : -1;
-  const next = at >= 0 ? col.stories[at + 1] : null;
+  // The next story along the shelf that this reader has not opened yet (st-seen); the very next one when all have been.
+  const after = at >= 0 ? col.stories.slice(at + 1) : [];
+  const next = after.find((s) => !seen.count(s.id)) || after[0];
   if (!next) return "";
   const art = next.image ? `<img class="next-art" data-src="${asset(next.image)}" alt="" decoding="async">` : "";
   return `<button class="next-chapter ending-next${art ? " has-art" : ""}" data-open="${esc(next.id)}"><span class="next-text"><small>${esc(T("下一则故事", "Next story"))}</small><span class="next-title">${esc(storyName(next))}</span></span>${art}<b aria-hidden="true">→</b></button>`;
