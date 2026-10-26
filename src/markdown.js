@@ -95,7 +95,8 @@ export function renderMarkdown(md, opts = {}) {
       if (REVIEW_HEADING.test(m[2])) { out = review; reviewDepth = m[1].length; i++; continue; }
       if (reviewDepth && m[1].length <= reviewDepth) { out = main; reviewDepth = 0; }
       // "如何开始 How it starts", "强制重置 / Forced Reset": the separator between the halves belongs to neither.
-      const parts = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)\s+(?:[/|｜·]\s+)?([A-Za-z][^㐀-鿿]*)$/.exec(m[2]);
+      // (No space is needed before the separator after a full-width bracket: "（第 0–1095 天）/ The storm".)
+      const parts = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)(?:\s*[/|｜·]\s*|\s+)([A-Za-z][^㐀-鿿]*)$/.exec(m[2]);
       out.push(parts
         ? `<h${level} class="md-block" data-mixed="1"><span lang="zh-CN" data-lang="zh">${inline(parts[1])}</span> <span lang="en" data-lang="en">${inline(parts[2])}</span></h${level}>`
         : `<h${level} class="md-block"${langAttr(m[2])} data-mixed="1">${inline(m[2])}</h${level}>`);

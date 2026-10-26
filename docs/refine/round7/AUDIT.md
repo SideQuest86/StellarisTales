@@ -72,3 +72,10 @@ arrives and the wall joins after, catching up with the selection and an open sto
 Live after v4.15.0 (same profiles): first title 4.1 s (zh) / 4.1 s (en) on slow mobile (was 7.8 / 8.4), 0.86 s / 0.87 s on fast
 4G (was 1.6 / 1.7). Review of 80c5d15b..HEAD: one low finding, kept as a known limit: in Chrome below 128 (legacy zoom) a name
 tooltip on a >= 1760 px monitor can sit off its word; WebKit and current Chrome / Firefox place it correctly (checked at 2560).
+
+## Open states (v4.15.2)
+
+Three lenses over states the audits never saw (opened profile, effects, playlist, GPU card, Chinese guide; phone museum,
+search, expanded map), two verifiers: 6 confirmed, 4 applied (profile panel, playlist figures, Chinese guide headings, phone
+disclaimer wrap) plus a heading-split fix found in the screenshots. Not applied: the opened GPU card's typography (an on-demand
+technical notice that folds back), the Chinese search note 'slant' (it is the Kai face; font synthesis is off).

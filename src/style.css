@@ -1612,6 +1612,16 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
 .story-summary .md-guide h4 + h5 {
   margin-top: 0.5em;
 }
+:root:lang(zh) .story-summary .md-guide h4 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+:root:lang(zh) .story-summary .md-guide h5 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
 .story-summary .md-guide :is(ul, ol) {
   padding-left: 1.3em;
 }
@@ -1707,38 +1717,45 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
   transform: rotate(225deg);
 }
 /* Empire profile: compact grid of selects, collapsed until asked for. */
+/* Empire profile: a ruled band in the reader's voice (italic labels, underlined choices), not a boxed form of bright fields. */
 .profile-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 16px;
+  gap: 8px 24px;
   margin: 10px 0 6px;
-  padding: 14px 16px;
-  border: 1px solid var(--line-2);
-  background: #0c2026;
+  padding: 12px 0;
+  border-block: 1px solid var(--line-2);
   animation: rise-in 0.2s var(--ease-out) both;
 }
 .profile-panel > p {
   grid-column: 1 / -1;
   margin: 0 0 4px;
-  font: 12.5px/1.7 var(--sans);
+  font: italic 14px/1.6 var(--serif);
   color: var(--dim);
 }
 .profile-panel label {
   display: grid;
-  gap: 4px;
+  gap: 2px;
   min-width: 0;
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
+  font: italic 13px/1.4 var(--serif);
   color: var(--dim);
 }
 .profile-panel select {
   width: 100%;
-  min-height: 38px;
-  padding: 6px 10px;
-  font-size: 13px;
+  min-height: 30px;
+  padding: 4px 18px 4px 0;
+  font: 14px/1.4 var(--serif);
   color: var(--ink);
-  background: #0f2523;
-  border: 1px solid #47615c;
+  color-scheme: dark;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%2386a29f' stroke-width='1.4'/%3E%3C/svg%3E") right 2px center / 10px 6px no-repeat;
+  border: 0;
+  border-bottom: 1px solid #47615c;
+  border-radius: 0;
+}
+.profile-panel select:hover {
+  border-bottom-color: var(--gold-2);
 }
 .profile-panel select:focus-visible {
   outline-offset: 1px;
@@ -1748,7 +1765,7 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
     grid-template-columns: 1fr;
   }
   .profile-panel label {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 /* Conditional text inside original passages: a quiet annotation, never game text. */
@@ -3023,7 +3040,7 @@ input[type="range"] {
   font-size: 24px;
 }
 #playlist-description {
-  font-size: 12px;
+  font: italic 13px/1.5 var(--serif-en);
   color: var(--dim);
 }
 #track-list button {
@@ -3039,7 +3056,8 @@ input[type="range"] {
 }
 #track-list .track-number,
 #track-list small {
-  font: 11px var(--mono);
+  font: italic 13px var(--serif-en);
+  font-variant-numeric: tabular-nums;
   color: var(--dim);
 }
 #track-list .track-name {
@@ -4019,7 +4037,7 @@ body.museum-open .gpu-hint {
 }
 
 /* Soundtrack: vocal / instrumental tag in the playlist, and a quiet cue while autoplay waits for a first gesture. */
-.track-version { margin-left: .5em; font: 500 .72em/1 var(--font-ui, sans-serif); letter-spacing: .04em; opacity: .85; white-space: nowrap; }
+.track-version { margin-left: .5em; font: italic 400 .82em/1 var(--serif-en, serif); color: var(--dim); white-space: nowrap; }
 .music-player.autoplay-blocked #play-pause { animation: play-cue 2.4s ease-in-out 3; }
 @keyframes play-cue { 50% { box-shadow: 0 0 0 4px rgba(120, 220, 205, .22); } }
 html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none; }

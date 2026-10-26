@@ -273,6 +273,7 @@ body.museum-open #archive-hud, body.museum-open #categories { visibility: hidden
   .museum-text { margin-top: 22px; }
   .museum-eyebrow { font-size: 12px; }
   .museum-disclaimer { font-size: 12.5px; }
+  :root:lang(en) .museum-disclaimer { text-wrap: pretty; } /* the full stage width, not a balanced narrow column (Chinese keeps balance: no one-character line) */
   .museum-desc p { font-size: 16px; }
   .museum-desc p:first-child { font-size: 17px; }
   :root:lang(en) .museum-desc p { font-size: 16.5px; }
