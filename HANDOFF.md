@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.13.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.13.2 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -120,6 +120,10 @@ evidence from earlier rounds and is not updated.
   v4.12.10: static text translated as soon as app.js runs; html.i18n-pending hides the Chinese markup words for a stored
   English preference (3 s failsafe). v4.13.0: round-7 audit fixes, see docs/refine/round7/AUDIT.md (Kai voice lines for
   zh, italic continuation conditions, tighter English choices, map title, zh counts, search repeat, single closing rule).
+  v4.13.1: archive teaser's last line fades (mask, 1lh) instead of a clipped '…'; .narrative opens with a 28 px gold tick and a
+  pause instead of a full-width rule (design panel, docs/refine/round7/AUDIT.md; small caps impossible: served Newsreader has
+  no smcp). v4.13.2: --rz scales .reader-toolbar and #reading-content with CSS zoom on large monitors (1.1 / 1.22 / 1.32),
+  panel centring uses --col * --rz; name tooltips stay placed (body-level, BCR-based).
   The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
 - Live: v4.10.0 (`378d14b5`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15.
 - Live: v4.9.0 (`654a79dc`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15 (one transient failure right after deploy, re-run clean), /fonts/*.woff2 served.
