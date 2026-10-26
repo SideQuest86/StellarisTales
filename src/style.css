@@ -1414,6 +1414,10 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
   min-width: 24px; /* WCAG 2.5.8 floor on its own box; the label is right-aligned inside it */
   padding: 0;
   text-align: right; /* the label ends on the column rule, like "Back" starts on its left edge */
+  color: var(--dim); /* second to "Back": the way out is the toolbar's one gold word */
+}
+#reader-language:hover {
+  color: var(--gold);
 }
 #reader-language::before {
   content: "";
@@ -3856,16 +3860,14 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 .search-hit > span:nth-child(2) { overflow-wrap: anywhere; }
 /* Hit type ("Text", "Name", "Effect" …): a quiet label in the thumbnail column, so every row's title lines up
    (the column and the gap are the story rows' own: 96 px + 16 px). */
+/* What a hit matched ("Name", "Text"): a quiet italic note in the margin, not a capitals tag. */
 .hit-type {
   flex-shrink: 0;
   width: 96px;
-  font: 500 12px/1.6 var(--font-ui);
-  font-style: normal;
-  letter-spacing: 0.1em;
+  font: italic 14px/1.5 var(--serif);
   text-align: right;
-  color: var(--gold-2, #b99b62);
+  color: var(--dim);
 }
-:root:lang(en) .hit-type { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
 .search-story small .hit-type { display: inline-block; width: auto; margin-right: 8px; text-align: left; }
 .search-hit b span { font-weight: 400; color: var(--dim); }
 .hit-snip { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
