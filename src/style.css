@@ -426,10 +426,13 @@ input {
 .selection-eyebrow #read-count {
   color: var(--teal);
 }
-/* Number keys 1–9 pick a choice / continue card (app.js readerActions); the key shows on hover or keyboard focus,
-   in the place of the card's arrow. */
+/* Number keys 1–9 pick a choice / continue card (app.js readerActions); the key shows to keyboard readers (focus), in the
+   place of the card's arrow. A mouse hover keeps the arrow: no interface box over the story for those who never type. */
 @media (hover: hover) and (pointer: fine) {
-  .chapter-document :is(.choice-button, .next-chapter, .reading-next)[data-key]:is(:hover, :focus-visible)::after {
+  .chapter-document :is(.choice-button, .next-chapter, .reading-next)[data-key]:focus-visible > b {
+    opacity: 0;
+  }
+  .chapter-document :is(.choice-button, .next-chapter, .reading-next)[data-key]:focus-visible::after {
     content: attr(data-key);
     position: absolute;
     top: 50%;
@@ -842,12 +845,16 @@ input {
 #reader-title:focus {
   outline: none;
 }
+/* The title in the other language, like a book's parallel title: italic English under a Chinese title, plain Song under
+   an English one (CJK has no italic). */
 .reader-subtitle {
   margin: 0 0 4px;
-  font: 500 12px/1.6 var(--sans);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font: italic 15px/1.5 var(--serif-en);
   color: var(--dim);
+}
+.reader-subtitle:lang(zh) {
+  font: 14px/1.5 var(--serif-zh);
+  letter-spacing: 0.06em;
 }
 /* Under the title: the other-language subtitle on the left, the empire-profile toggle on the right of the same line
    (app.js profileSummary). Without a subtitle the toggle stands alone, right-aligned. */
@@ -1071,6 +1078,10 @@ input {
 .choice-response {
   padding: 2px 0 18px var(--mark);
   animation: rise-in 0.2s var(--ease-out) both;
+}
+/* A choice the game answers with nothing opens no empty band under it. */
+.choice-response:empty {
+  display: none;
 }
 .choice-response .reading-complete {
   padding: 6px 0;
@@ -1500,11 +1511,14 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
   min-height: 0;
   margin-left: auto;
   padding: 3px 0 2px;
-  font: 500 12px/1.5 var(--sans);
-  letter-spacing: 0.08em;
-  color: var(--gold-2);
+  font: italic 14px/1.5 var(--serif);
+  color: var(--dim);
   white-space: nowrap;
-  border-bottom: 1px solid #b99b6247;
+  border-bottom: 1px solid #86a29f33;
+}
+.profile-toggle:hover {
+  color: var(--gold-2);
+  border-bottom-color: #b99b6247;
 }
 .profile-toggle::before {
   content: "";
