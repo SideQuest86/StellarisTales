@@ -20,8 +20,8 @@
    "to": "first_contact_critters.65",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：pirates_stage_2(难度5)",
-    "en": "Stage: pirates_stage_2 (difficulty 5)"
+    "zh": "遭遇进入下一阶段（难度5）",
+    "en": "The encounter's next stage (difficulty 5)"
    },
    "evidence": "first_contact_NPC_country_types_events.txt:859 set_first_contact_stage = pirates_stage_2; common/first_contact/01_*.txt:282 fires first_contact_critters.65",
    "choice": "WORRYING"

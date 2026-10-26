@@ -111,8 +111,8 @@
     "en": "Monthly random events in stage 2 (25-80%)"
    },
    "note": {
-    "zh": "权重：无事120、160为20（仅“把它们全融了”时）、170为15、175为10（观测时×2）。160与170共用一个标记，至多发生其一；175至多一次。",
-    "en": "Weights: nothing 120, 160 20 (hostile only), 170 15, 175 10 (x2 when observing). 160 and 170 share one flag, so at most one of them happens; 175 at most once."
+    "zh": "权重：无事120，移除问题20（仅敌对时），被雪吞噬15，气候变化10（观测时×2）；前两者互斥，气候变化至多一次。",
+    "en": "Weights: nothing 120; Removal Problems 20 (hostile only); Swallowed by the Snow 15; Climate Change 10 (x2 when observing). First two exclusive; Climate Change once."
    }
   }
  ],

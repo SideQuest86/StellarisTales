@@ -55,8 +55,8 @@
    "to": "fircon.5026",
    "conditional": true,
    "label": {
-    "zh": "建造观测站（隐藏5025，60天后）",
-    "en": "Build an observation station (hidden 5025, 60 days later)"
+    "zh": "建造观测站；60天后出现后续",
+    "en": "Build an observation station; the follow-up comes 60 days later"
    },
    "evidence": "on_building_observation_station -> fircon.5025 (00_on_actions.txt:1956), also via fircon.30 (first_contact_dlc_events.txt:504); 5025 sets observed_solarpunk and fires 5026 after 60 days (7025-7056)"
   },
@@ -65,8 +65,8 @@
    "to": "fircon.5036",
    "conditional": true,
    "label": {
-    "zh": "若入侵或轰炸他们（隐藏5034/5035）",
-    "en": "If they are invaded or bombarded (hidden 5034/5035)"
+    "zh": "若入侵或轰炸他们",
+    "en": "If they are invaded or bombarded"
    },
    "evidence": "on_ground_combat_started -> fircon.5034 (00_on_actions.txt:801), on_planet_bombarded -> 5034 (2174), planet-killer queues -> 5035 (common/on_actions/01_planet_destruction.txt:29-206); 5034 sets up 5035 and the upgrade event 5045 (first_contact_dlc_events.txt:7123-7140); 5035 fires 5036 (7142-7214)"
   },
@@ -96,8 +96,8 @@
    "choice": "fircon.5050.c",
    "conditional": true,
    "label": {
-    "zh": "拒绝请求：触发入侵后果",
-    "en": "Refuse: the invasion aftermath fires"
+    "zh": "拒绝请求：随后出现入侵的后果",
+    "en": "Refuse: the invasion's aftermath follows"
    },
    "evidence": "5050.c fires colony_event 5035 on the capital and the upgrade event 5045 (first_contact_dlc_events.txt:7502-7512)"
   }

@@ -26,8 +26,8 @@
    "to": "infernals.1005",
    "conditional": true,
    "label": {
-    "zh": "项目完成（标记 Lv1）：解锁危机一级",
-    "en": "Project done (flag Lv1): crisis level 1 unlocks"
+    "zh": "“新能量源”项目完成：解锁危机一级",
+    "en": "New Power Source project done: crisis level 1 unlocks"
    },
    "evidence": "common/special_projects/00_projects_infernals.txt:11-14 on_success sets Hyperthermia_Lv1_unlocked; common/crisis_levels/00_crisis_levels.txt:707-726 level 1 allow needs that flag and on_unlock fires infernals.1005 (events/infernals_crisis_events.txt:98)"
   },
@@ -36,8 +36,8 @@
    "to": "infernals.1010",
    "conditional": true,
    "label": {
-    "zh": "建成星系熔炉第1阶段（标记 Lv2）：解锁危机二级",
-    "en": "Crucible stage 1 built (flag Lv2): crisis level 2 unlocks"
+    "zh": "星系熔炉第1阶段建成：解锁危机二级",
+    "en": "Crucible stage 1 built: crisis level 2 unlocks"
    },
    "evidence": "common/megastructures/22_galactic_crucible.txt:174 galactic_crucible_1 sets Hyperthermia_Lv2_unlocked; 00_crisis_levels.txt:729-749 level 2 allow needs it, on_unlock fires infernals.1010"
   },
@@ -46,8 +46,8 @@
    "to": "infernals.1015",
    "conditional": true,
    "label": {
-    "zh": "建成熔炉第2阶段（标记 Lv3）：解锁危机三级",
-    "en": "Crucible stage 2 built (flag Lv3): crisis level 3 unlocks"
+    "zh": "星系熔炉第2阶段建成：解锁危机三级",
+    "en": "Crucible stage 2 built: crisis level 3 unlocks"
    },
    "evidence": "22_galactic_crucible.txt:212 galactic_crucible_2 sets Hyperthermia_Lv3_unlocked; 00_crisis_levels.txt:751-776 level 3 on_unlock fires infernals.1015"
   },
@@ -56,8 +56,8 @@
    "to": "infernals.1025",
    "conditional": true,
    "label": {
-    "zh": "「策划火风暴」后建成熔炉第3阶段（标记 Lv4）：解锁危机四级",
-    "en": "After the Firestorm project, crucible stage 3 (flag Lv4): crisis level 4 unlocks"
+    "zh": "“策划火风暴”后，星系熔炉第3阶段建成：解锁危机四级",
+    "en": "After the Designed Firestorm project, crucible stage 3 built: crisis level 4 unlocks"
    },
    "evidence": "22_galactic_crucible.txt:247-250 galactic_crucible_3 needs Hyperthermia_Lv4_project (set by INF_CRISIS_ENTROPY_EVIL, 00_projects_infernals.txt:29) and sets Lv4_unlocked; 00_crisis_levels.txt:778-805 level 4 needs both flags, on_unlock fires infernals.1025"
   },
@@ -66,8 +66,8 @@
    "to": "infernals.1030",
    "conditional": true,
    "label": {
-    "zh": "建成熔炉第4阶段（标记 Lv5）：解锁危机五级，开始点火竞赛",
-    "en": "Crucible stage 4 built (flag Lv5): crisis level 5 unlocks, the ignition race begins"
+    "zh": "星系熔炉第4阶段建成：解锁危机五级，开始点火竞赛",
+    "en": "Crucible stage 4 built: crisis level 5 unlocks, and the ignition race begins"
    },
    "evidence": "22_galactic_crucible.txt:284-288 galactic_crucible_4 sets Hyperthermia_Lv5_unlocked; 00_crisis_levels.txt:807-835 level 5 on_unlock sets Hyperthermia_ongoing and fires infernals.1030"
   },

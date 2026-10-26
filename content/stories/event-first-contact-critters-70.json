@@ -20,8 +20,8 @@
    "to": "first_contact_critters.75",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：caravaneers_stage_2(难度5)",
-    "en": "Stage: caravaneers_stage_2 (difficulty 5)"
+    "zh": "遭遇进入下一阶段（难度5）",
+    "en": "The encounter's next stage (difficulty 5)"
    },
    "evidence": "first_contact_NPC_country_types_events.txt:994 set_first_contact_stage = caravaneers_stage_2; common/first_contact/01_*.txt:364 fires first_contact_critters.75",
    "choice": "first_contact_critters.70.A"
@@ -31,8 +31,8 @@
    "to": "first_contact_critters.75",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：caravaneers_stage_2(难度5)",
-    "en": "Stage: caravaneers_stage_2 (difficulty 5)"
+    "zh": "遭遇进入下一阶段（难度5）",
+    "en": "The encounter's next stage (difficulty 5)"
    },
    "evidence": "first_contact_NPC_country_types_events.txt:1001 set_first_contact_stage = caravaneers_stage_2; common/first_contact/01_*.txt:364 fires first_contact_critters.75",
    "choice": "first_contact_critters.70.E"

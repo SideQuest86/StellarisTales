@@ -102,8 +102,8 @@
    "to": "distar.10951",
    "conditional": true,
    "label": {
-    "zh": "项目完成：无危机结局（其余全局标志均未设置）",
-    "en": "Project complete: the quiet ending (none of the other global flags set)"
+    "zh": "项目完成，且其他结局条件均未满足",
+    "en": "Project complete, if no other ending applies"
    },
    "evidence": "events/distant_stars_events_3.txt:1380 distar.10950 (hidden, fired by LCLUSTER_PROJECT on_success, common/special_projects/00_projects_distant_stars.txt:667) else-branch fires distar.10951 and distar.10960"
   },

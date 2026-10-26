@@ -24,8 +24,8 @@
    "to": "utopia.4103",
    "conditional": true,
    "label": {
-    "zh": "升级后：哨兵中心建成（spy_orb_1）",
-    "en": "After the next upgrade: Sentry hub built (spy_orb_1)"
+    "zh": "升级后：哨兵中心建成",
+    "en": "After the next upgrade: Sentry Hub built"
    },
    "evidence": "events/megastructure_events_1.txt:2708-2727; common/on_actions/00_on_actions.txt:3703"
   },
@@ -34,8 +34,8 @@
    "to": "utopia.4104",
    "conditional": true,
    "label": {
-    "zh": "升级后：哨兵阵列完工（spy_orb_4）",
-    "en": "After the next upgrade: Sentry Array completed (spy_orb_4)"
+    "zh": "升级后：哨兵阵列完工",
+    "en": "After the next upgrade: Sentry Array completed"
    },
    "evidence": "events/megastructure_events_1.txt:2729-2771; common/on_actions/00_on_actions.txt:3704"
   },
@@ -44,8 +44,8 @@
    "to": "utopia.4102",
    "conditional": true,
    "label": {
-    "zh": "中心建成时：有通讯并有情报的玩家帝国收到通知（隐藏事件4101）",
-    "en": "When the hub is built: human empires with communications/intel get a notice (hidden 4101)"
+    "zh": "中心建成时：有通讯并有情报的玩家帝国收到通知",
+    "en": "When the hub is built: human empires with communications and intel get a notice"
    },
    "evidence": "events/megastructure_events_1.txt:2645-2690 hidden utopia.4101 (spy_orb_1, common/on_actions/00_on_actions.txt:3702) fires 4102 at line 2675"
   },

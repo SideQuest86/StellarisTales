@@ -68,8 +68,8 @@
    "to": "special_projects:INETIAN_PROJECTS_04",
    "conditional": true,
    "label": {
-    "zh": "之后：以神器行动“因内特研究”启动（需 completed_inetian_traders_precursor）",
-    "en": "Afterwards: started by the artifact action Inetian research (needs completed_inetian_traders_precursor)"
+    "zh": "因内特前置研究完成后：启动“探究因内特贸易体的秘密”",
+    "en": "Afterwards, once the Inetian traders precursor is complete: “Delve into the Secrets of the Inetian Traders”"
    },
    "evidence": "common/artifact_actions/artifact_actions.txt:618-648 artifact_inetian_research needs has_country_flag completed_inetian_traders_precursor (set by cstorms.193.a, events/precursor_events_cosmic_storms.txt:1700) and enables INETIAN_PROJECTS_04 at wm_last_storm_shelter"
   }
@@ -89,8 +89,8 @@
     "en": "Three Coordinates sites (any order)"
    },
    "note": {
-    "zh": "每个遗址的最后阶段触发隐藏事件 cstorms.175；只有 pc_arcsite_A、B、C_completed 三个国家标志全部存在时，它才启用项目“机械的用途”。",
-    "en": "The last stage of each site fires hidden cstorms.175; it enables the project only when all three country flags pc_arcsite_A/B/C_completed exist."
+    "zh": "完成每处遗址的最后阶段后计入；三处遗址全部完成后，项目才会开启。",
+    "en": "Finishing each site’s last stage counts; the project opens only once all three sites are finished."
    }
   }
  ],

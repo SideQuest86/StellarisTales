@@ -24,8 +24,8 @@
    "to": "first_contact_critters.35",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：crystals_stage_2(难度3)",
-    "en": "Stage: crystals_stage_2 (difficulty 3)"
+    "zh": "遭遇进入下一阶段（难度3）",
+    "en": "The encounter's next stage (difficulty 3)"
    },
    "evidence": "first_contact_NPC_country_types_events.txt:535 set_first_contact_stage = crystals_stage_2; common/first_contact/01_*.txt:159 fires first_contact_critters.35",
    "choice": "first_contact_critters.30.A"

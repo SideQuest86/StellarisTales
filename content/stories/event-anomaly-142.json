@@ -62,8 +62,8 @@
     "en": "Three shrines, in any order"
    },
    "note": {
-    "zh": "每座神殿的项目完成后各让事件链计数器 shrines_searched +1；三座全部完成（max 3）时，最后完成的那一个才触发 anomaly.168“揭示”（events/anomaly_events_1.txt:2088、2129、2170）。",
-    "en": "Each shrine project adds 1 to the chain counter shrines_searched; only the last of the three (counter complete, max 3) fires anomaly.168 \"Revelation\" (events/anomaly_events_1.txt:2088, 2129, 2170)."
+    "zh": "每座神殿的项目完成后计入一次；三座全部完成后，最后完成的那一座触发“古神：揭示”。",
+    "en": "Each shrine project counts once toward a shared total; when all three are done, the last one triggers Old Gods: Revelation."
    }
   }
  ],

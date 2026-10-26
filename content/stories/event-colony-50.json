@@ -76,8 +76,8 @@
    "to": "colony.60",
    "conditional": true,
    "label": {
-    "zh": "胜利后（战争标记），每月随机",
-    "en": "After victory (war flag), monthly random"
+    "zh": "战争胜利后，每月随机",
+    "en": "After winning the war, a monthly random chance"
    },
    "evidence": "colony.56 immediate sets planet flag seismic_disturbance_war (colony_events_1.txt:925-931); 60-63 trigger on it, MTTH 240 months each (1149-1156, 1326-1335, 1370-1378, 1410-1418)"
   },
@@ -86,8 +86,8 @@
    "to": "colony.61",
    "conditional": true,
    "label": {
-    "zh": "胜利后（战争标记），每月随机",
-    "en": "After victory (war flag), monthly random"
+    "zh": "战争胜利后，每月随机",
+    "en": "After winning the war, a monthly random chance"
    },
    "evidence": "colony.56 immediate sets planet flag seismic_disturbance_war (colony_events_1.txt:925-931); 60-63 trigger on it, MTTH 240 months each (1149-1156, 1326-1335, 1370-1378, 1410-1418)"
   },
@@ -96,8 +96,8 @@
    "to": "colony.62",
    "conditional": true,
    "label": {
-    "zh": "胜利后（战争标记），每月随机",
-    "en": "After victory (war flag), monthly random"
+    "zh": "战争胜利后，每月随机",
+    "en": "After winning the war, a monthly random chance"
    },
    "evidence": "colony.56 immediate sets planet flag seismic_disturbance_war (colony_events_1.txt:925-931); 60-63 trigger on it, MTTH 240 months each (1149-1156, 1326-1335, 1370-1378, 1410-1418)"
   },
@@ -106,8 +106,8 @@
    "to": "colony.63",
    "conditional": true,
    "label": {
-    "zh": "胜利后（战争标记），每月随机",
-    "en": "After victory (war flag), monthly random"
+    "zh": "战争胜利后，每月随机",
+    "en": "After winning the war, a monthly random chance"
    },
    "evidence": "colony.56 immediate sets planet flag seismic_disturbance_war (colony_events_1.txt:925-931); 60-63 trigger on it, MTTH 240 months each (1149-1156, 1326-1335, 1370-1378, 1410-1418)"
   },
@@ -166,8 +166,8 @@
    "to": "colony.69",
    "conditional": true,
    "label": {
-    "zh": "建立沟通后（友好标记），每月随机",
-    "en": "After contact (friendly flag), monthly random"
+    "zh": "建立沟通且关系友好后，每月随机",
+    "en": "Once contact is made and they are friendly, a monthly random chance"
    },
    "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
   },
@@ -176,8 +176,8 @@
    "to": "colony.70",
    "conditional": true,
    "label": {
-    "zh": "建立沟通后（友好标记），每月随机",
-    "en": "After contact (friendly flag), monthly random"
+    "zh": "建立沟通且关系友好后，每月随机",
+    "en": "Once contact is made and they are friendly, a monthly random chance"
    },
    "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
   },
@@ -186,8 +186,8 @@
    "to": "colony.71",
    "conditional": true,
    "label": {
-    "zh": "建立沟通后（友好标记），每月随机",
-    "en": "After contact (friendly flag), monthly random"
+    "zh": "建立沟通且关系友好后，每月随机",
+    "en": "Once contact is made and they are friendly, a monthly random chance"
    },
    "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
   },
@@ -196,8 +196,8 @@
    "to": "colony.72",
    "conditional": true,
    "label": {
-    "zh": "建立沟通后（友好标记），每月随机",
-    "en": "After contact (friendly flag), monthly random"
+    "zh": "建立沟通且关系友好后，每月随机",
+    "en": "Once contact is made and they are friendly, a monthly random chance"
    },
    "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
   },
@@ -206,8 +206,8 @@
    "to": "colony.73",
    "conditional": true,
    "label": {
-    "zh": "建立沟通后（友好标记），每月随机",
-    "en": "After contact (friendly flag), monthly random"
+    "zh": "建立沟通且关系友好后，每月随机",
+    "en": "Once contact is made and they are friendly, a monthly random chance"
    },
    "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
   },
@@ -216,8 +216,8 @@
    "to": "colony.74",
    "conditional": true,
    "label": {
-    "zh": "建立沟通后（友好标记），每月随机",
-    "en": "After contact (friendly flag), monthly random"
+    "zh": "建立沟通且关系友好后，每月随机",
+    "en": "Once contact is made and they are friendly, a monthly random chance"
    },
    "evidence": "colony.51 immediate sets seismic_disturbance_friendly (colony_events_1.txt:681); 69-74 trigger on it, MTTH 240 months each (1726-1734, 1802-1814, 1865-1874, 1935-1947, 1983-1991, 2042-2050)"
   }

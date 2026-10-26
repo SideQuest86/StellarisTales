@@ -20,8 +20,8 @@
    "to": "first_contact_critters.95",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：nomad_stage_2(难度7)",
-    "en": "Stage: nomad_stage_2 (difficulty 7)"
+    "zh": "遭遇进入下一阶段（难度7）",
+    "en": "The encounter's next stage (difficulty 7)"
    },
    "evidence": "first_contact_NPC_country_types_events.txt:1221 set_first_contact_stage = nomad_stage_2; common/first_contact/01_*.txt:446 fires first_contact_critters.95",
    "choice": "first_contact_critters.70.A"

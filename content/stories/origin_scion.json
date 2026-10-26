@@ -27,8 +27,8 @@
     "en": "A greeting from the fallen empire (3 days after start)"
    },
    "origin.21": {
-    "zh": "定期馈赠：科技（隐藏20，约50%）",
-    "en": "Periodic gift: technology (hidden 20, about 50%)"
+    "zh": "定期馈赠：科技（约一半几率）",
+    "en": "Periodic gift: technology (about half the time)"
    },
    "origin.12": {
     "zh": "勘察到圣世界：宗主属于灵性派先辈",
@@ -39,8 +39,8 @@
     "en": "Surveying a Holy World: another fallen empire's"
    },
    "origin.205": {
-    "zh": "每年干预（隐藏200，随机）：任务·交出领袖",
-    "en": "Yearly intervention (hidden 200, random): task, surrender a leader"
+    "zh": "每年随机干预：任务，交出一名领袖",
+    "en": "Yearly intervention, at random: a task to surrender a leader"
    },
    "origin.210": {
     "zh": "每年干预（随机）：奖赏·获得领袖",
@@ -75,8 +75,8 @@
     "en": "The war is over: the fallen empire reclaims its fleet (monthly check)"
    },
    "origin.24": {
-    "zh": "定期馈赠：合金或消费品（隐藏20，约50%）",
-    "en": "Periodic gift: alloys or consumer goods (hidden 20, about 50%)"
+    "zh": "定期馈赠：合金或消费品（约一半几率）",
+    "en": "Periodic gift: alloys or consumer goods (about half the time)"
    }
   },
   "evidence": "events/game_start.txt:304 fires hidden origin.5 (events/origin_events_1.txt:22-170: spawns a mini fallen empire if needed, schedules origin.10 after 3 days and the gift loop origin.20). Hidden 20 (:401-434) repeats itself every scionRewardTimer days and draws 21 (technology) or 24 (resources) at 50/100. common/on_actions/00_on_actions.txt:113 on_monthly_pulse fires 50 (-> 51, :1042-1165) and 30 (-> 54, :1375-1399); on_war_beginning :2607 (29); on_fleet_destroyed_victim :1584 (52); hidden 200 (on_yearly_pulse, :567-711) draws 205/210/215/220/225 (10 of 300 each); hidden 11 (on_survey) -> 12 / 13."

@@ -42,8 +42,8 @@
    "to": "war_in_heaven.4",
    "conditional": true,
    "label": {
-    "zh": "宿敌苏醒720天后起（隐藏事件3，平均1年）：宣战，选择阵营",
-    "en": "From 720 days after the rival awakens (hidden event 3, MTTH 1 year): war is declared, choose a side"
+    "zh": "宿敌苏醒两年后起，可能随机宣战：选择阵营",
+    "en": "Two years after the rival awakens, war may be declared at random: choose a side"
    },
    "evidence": "events/war_in_heaven_events.txt:271-363 war_in_heaven.3 (awakened rival, fleet power > 60000, war_in_heaven_timer of 720 days expired, MTTH 1 year) declares the war and sends war_in_heaven.4 to default empires"
   },
@@ -71,8 +71,8 @@
    "to": "war_in_heaven.13",
    "conditional": true,
    "label": {
-    "zh": "若无银河帝国：监管人、联邦领袖或最强中立国被邀请领导不结盟联盟（隐藏事件12，平均1个月）",
-    "en": "Without a Galactic Imperium: the Custodian, a federation leader or the strongest neutral is asked to lead the Non-Aligned League (hidden event 12, MTTH 1 month)"
+    "zh": "若无银河帝国：监管人、联邦领袖或最强中立国领导不结盟组织",
+    "en": "Without a Galactic Imperium: Custodian, federation leader or strongest neutral leads the Non-Aligned League"
    },
    "evidence": "events/war_in_heaven_events.txt:1245-1470 war_in_heaven.12 (first sleeper, war ongoing, has_galactic_emperor = no) sends war_in_heaven.13 to the Custodian, else a federation leader, else the strongest neutral"
   },

@@ -27,8 +27,8 @@
     "en": "Situation stages (set by progress, can swing both ways)"
    },
    "note": {
-    "zh": "进度双向：≤1 登岸（1005，失败结局）、≤100 愤怒（1050）、≤300 无聊（1100）、≤700 平稳（1150，初始500）、≤900 超负荷（1200）、≤999 紧绷（1250）、满 船员接管（1025，叛乱结局）。每个阶段首次进入时触发一次。",
-    "en": "Progress moves both ways: <=1 Planetfall (1005, the fail ending), <=100 incensed (1050), <=300 bored (1100), <=700 steady (1150, start 500), <=900 overworked (1200), <=999 stressed (1250), full Crew Takeover (1025, the mutiny ending). Each stage event fires the first time its stage is entered (common/situations/14_nomads_situations.txt:44-460)."
+    "zh": "进度双向：≤1时登岸（失败结局），满时船员接管（叛乱结局）；中间：愤怒、无聊、平稳、超负荷、紧绷，各首次进入时出现一次。",
+    "en": "Progress moves both ways. At 1 or less: Planetfall (fail ending). At full: Crew Takeover (mutiny ending). Between: incensed, bored, steady, overworked, stressed, each once on first entry."
    }
   }
  ],

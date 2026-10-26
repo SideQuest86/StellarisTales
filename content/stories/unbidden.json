@@ -87,8 +87,8 @@
    "to": "crisis.1110",
    "conditional": true,
    "label": {
-    "zh": "破界者占据银河15%或超过90个星系后（隐藏事件1100，平均12个月）：第二道传送门",
-    "en": "Once the Unbidden hold 15% of the galaxy or over 90 systems (hidden crisis.1100, MTTH 12 months): a second portal"
+    "zh": "破界者占据银河15%或90个以上星系后，约一年后出现第二道传送门",
+    "en": "Unbidden reaching 15% of the galaxy or 90+ systems: a second portal about a year later"
    },
    "evidence": "events/crisis_events_2.txt:1275-1505 crisis.1100 (Unbidden country, fire_only_once, MTTH 12 months, endgame_crisis_large_size_trigger) spawns the Aberrant and sends crisis.1110 after 1 day"
   },
@@ -165,8 +165,8 @@
    "to": "crisis.1210",
    "conditional": true,
    "label": {
-    "zh": "两派交战后（隐藏事件1200，平均40个月）：第三道传送门",
-    "en": "After the factions have fought (hidden crisis.1200, MTTH 40 months): a third portal"
+    "zh": "两派交战后，约三年：第三道传送门",
+    "en": "After the two factions have fought, about three years later: a third portal"
    },
    "evidence": "events/crisis_events_2.txt:1871-2102 crisis.1200 (Aberrant country, fire_only_once, MTTH 40 months) requires extradimensionals_fight and a surviving Unbidden country; spawns the Vehement inside Unbidden space and sends crisis.1210 after 1 day"
   },

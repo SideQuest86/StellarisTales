@@ -106,8 +106,8 @@
    "to": "arkship.1350",
    "conditional": true,
    "label": {
-    "zh": "阶段三（防御区）内每月 1/17 的几率（进度 ≥ 115；每阶段至多一件）",
-    "en": "In stage 3 (defense): 1/17 chance per month once progress >= 115; at most one per stage"
+    "zh": "阶段三（防御区）每月1/17几率（进度≥115，每阶段至多一件）",
+    "en": "In stage 3 (defense): 1/17 monthly chance once progress reaches 115; at most one per stage"
    },
    "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_military, situation_progress >= 115"
   },
@@ -116,8 +116,8 @@
    "to": "arkship.1355",
    "conditional": true,
    "label": {
-    "zh": "阶段三（防御区）内每月 1/17 的几率（进度 ≥ 115；每阶段至多一件）",
-    "en": "In stage 3 (defense): 1/17 chance per month once progress >= 115; at most one per stage"
+    "zh": "阶段三（防御区）每月1/17几率（进度≥115，每阶段至多一件）",
+    "en": "In stage 3 (defense): 1/17 monthly chance once progress reaches 115; at most one per stage"
    },
    "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_military, situation_progress >= 115"
   },
@@ -126,8 +126,8 @@
    "to": "arkship.1360",
    "conditional": true,
    "label": {
-    "zh": "阶段三（防御区）内每月 1/17 的几率（进度 ≥ 115；每阶段至多一件）",
-    "en": "In stage 3 (defense): 1/17 chance per month once progress >= 115; at most one per stage"
+    "zh": "阶段三（防御区）每月1/17几率（进度≥115，每阶段至多一件）",
+    "en": "In stage 3 (defense): 1/17 monthly chance once progress reaches 115; at most one per stage"
    },
    "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_military, situation_progress >= 115"
   },
@@ -136,8 +136,8 @@
    "to": "arkship.1365",
    "conditional": true,
    "label": {
-    "zh": "阶段四（居住区）内每月 1/17 的几率（进度 ≥ 165；每阶段至多一件）",
-    "en": "In stage 4 (residential): 1/17 chance per month once progress >= 165; at most one per stage"
+    "zh": "阶段四（居住区）每月1/17几率（进度≥165，每阶段至多一件）",
+    "en": "In stage 4 (residential): 1/17 monthly chance once progress reaches 165; at most one per stage"
    },
    "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_city, situation_progress >= 165"
   },
@@ -146,8 +146,8 @@
    "to": "arkship.1370",
    "conditional": true,
    "label": {
-    "zh": "阶段四（居住区）内每月 1/17 的几率（进度 ≥ 165；每阶段至多一件）",
-    "en": "In stage 4 (residential): 1/17 chance per month once progress >= 165; at most one per stage"
+    "zh": "阶段四（居住区）每月1/17几率（进度≥165，每阶段至多一件）",
+    "en": "In stage 4 (residential): 1/17 monthly chance once progress reaches 165; at most one per stage"
    },
    "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_city, situation_progress >= 165"
   },
@@ -156,8 +156,8 @@
    "to": "arkship.1375",
    "conditional": true,
    "label": {
-    "zh": "阶段四（居住区）内每月 1/17 的几率（进度 ≥ 165；每阶段至多一件）",
-    "en": "In stage 4 (residential): 1/17 chance per month once progress >= 165; at most one per stage"
+    "zh": "阶段四（居住区）每月1/17几率（进度≥165，每阶段至多一件）",
+    "en": "In stage 4 (residential): 1/17 monthly chance once progress reaches 165; at most one per stage"
    },
    "evidence": "common/situations/14_nomads_situations.txt:1405-1421 on_monthly random_events (50 none, 10 each); events/nomads_arkship_events.txt trigger current_stage = stage_refurbishment_city, situation_progress >= 165"
   }

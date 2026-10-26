@@ -26,8 +26,8 @@
    "to": "utopia.83",
    "conditional": true,
    "label": {
-    "zh": "升级后：枢纽中心建成（think_tank_1）",
-    "en": "After the next upgrade: Hub built (think_tank_1)"
+    "zh": "升级后：科学枢纽中心建成",
+    "en": "After the next upgrade: Science Nexus Hub built"
    },
    "evidence": "events/megastructure_events_1.txt:2496-2514; common/on_actions/00_on_actions.txt:3706"
   },
@@ -36,8 +36,8 @@
    "to": "utopia.85",
    "conditional": true,
    "label": {
-    "zh": "升级后：研究侧翼第一阶段完成（think_tank_2）",
-    "en": "After the next upgrade: Research wings first stage done (think_tank_2)"
+    "zh": "升级后：科学枢纽研发辅翼第一阶段完成",
+    "en": "After the next upgrade: Science Nexus Research Wings first stage done"
    },
    "evidence": "events/megastructure_events_1.txt:2516-2534; common/on_actions/00_on_actions.txt:3708"
   },
@@ -46,8 +46,8 @@
    "to": "utopia.84",
    "conditional": true,
    "label": {
-    "zh": "升级后：科学枢纽完工（think_tank_3）",
-    "en": "After the next upgrade: Science Nexus completed (think_tank_3)"
+    "zh": "升级后：科学枢纽完工",
+    "en": "After the next upgrade: Science Nexus completed"
    },
    "evidence": "events/megastructure_events_1.txt:2536-2591; common/on_actions/00_on_actions.txt:3707"
   },
@@ -56,8 +56,8 @@
    "to": "utopia.82",
    "conditional": true,
    "label": {
-    "zh": "中心建成时：有通讯并有情报的玩家帝国收到通知（隐藏事件81）",
-    "en": "When the hub is built: human empires with communications/intel get a notice (hidden 81)"
+    "zh": "科学枢纽中心建成时，有通讯和情报的玩家帝国会收到通知",
+    "en": "When the hub is built, player empires with communications and intel get a notice"
    },
    "evidence": "events/megastructure_events_1.txt:2409-2454 hidden utopia.81 (think_tank_1, common/on_actions/00_on_actions.txt:3705) -> every_relation ... utopia.82 (line 2439)"
   },

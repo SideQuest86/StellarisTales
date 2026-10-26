@@ -110,3 +110,8 @@ The sustained-reading judges called the ending note a ledger; 141 of 526 notes h
 flags) in the closing position. Rewritten in the game's own names by six Haiku agents, verified by six Sonnet agents against the
 evidence and the localisation, names checked by the coordinator: content/chronology/review/r8-ending-notes.md. The note's
 typography was left as it is (commentary already set smaller and quieter than the text; restyling was judged taste).
+
+## Continue-card captions (v4.17.1)
+
+The same shorthand one level up: 179 captions under continue cards, investigation notes and origin openings; 149 rewritten with
+the r8 method (content/chronology/review/r9-caption-shorthand.md).

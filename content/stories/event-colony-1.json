@@ -65,8 +65,8 @@
     "en": "Coexistence route: three events, each at most once"
    },
    "note": {
-    "zh": "各自延迟1800+随机5400天，各由自己的标记限定，彼此独立。",
-    "en": "Each fires 1800 days + random 5400 after colony.2, once per own flag; independent."
+    "zh": "各自在最初的殖民地事件数年之后出现，各只一次，彼此独立。",
+    "en": "Each comes some years after the first colony event, once each; they are independent."
    }
   },
   {
@@ -82,8 +82,8 @@
     "en": "Burn route: four delayed events"
    },
    "note": {
-    "zh": "colony.3 同时安排4、6、7、8（1800+随机5400天）。6与7共用标记而互斥（7还需星球没有战略资源）；4为树人入侵。",
-    "en": "colony.3 schedules 4, 6, 7, 8 together (1800 days + random 5400). 6 and 7 share flags and exclude each other (7 also needs no strategic resource); 4 is the tree invasion."
+    "zh": "四项同时安排，数年之后出现；其一为树人入侵。其中两项互斥，且一项要求星球没有战略资源。",
+    "en": "Four are scheduled together, some years later; one is the tree invasion. Two exclude each other; one needs no strategic resource on the planet."
    }
   }
  ],

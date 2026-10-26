@@ -50,8 +50,8 @@
    "to": "archaeological_site_types:site_polaris_seed_vault",
    "conditional": true,
    "label": {
-    "zh": "设置 polaris_seen 后遗址可见",
-    "en": "With polaris_seen set the site becomes visible"
+    "zh": "对勾陈一星系完成最终扫描后，“最后的希望”遗址出现。",
+    "en": "After the final scan of the Polaris system, the One Last Hope site appears."
    },
    "evidence": "events/ancient_relics_arcsite_events_2.txt:9169 ancrel.13000 immediate set_global_flag polaris_seen (trigger: from has country flag polaris_country, on_fleet_destroyed_perp, common/on_actions/00_on_actions.txt:1667); common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2395 visible requires has_global_flag polaris_seen"
   }

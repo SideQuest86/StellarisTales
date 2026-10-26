@@ -21,12 +21,12 @@
     "awareness.920"
    ],
    "label": {
-    "zh": "两个满觉察度入口（另有隐藏的入侵/轰炸入口 awareness.125）",
-    "en": "Two full-awareness entries (plus the hidden invade/bombard entry awareness.125)"
+    "zh": "达到完全觉察，或攻击前超光速星球即可接触",
+    "en": "Contact by full awareness, or by attacking a pre-FTL world"
    },
    "note": {
-    "zh": "910：觉察度升到“完全”时（on_awareness_level_increase → 900）建立通信；920：由前超光速科技进步局势（preftl.41）在已达完全觉察后触发的“监视者”事件。125：对前超光速行星轰炸或入侵时把觉察度设为100并立即建立联系。",
-    "en": "910: when awareness rises to full (on_awareness_level_increase -> 900) comms are established; 920: fired by the pre-FTL tech-progress situation (preftl.41) once full awareness was reached. 125: bombarding or invading a pre-FTL planet sets awareness to 100 and contacts them at once."
+    "zh": "达到完全觉察即建立联系（“暴露！”）；“谁在盯着观察者？”也会建立联系；轰炸或入侵则立即建立联系。",
+    "en": "Full awareness makes contact (“Exposed!”); so does “Who Watches the Watchers?”. Bombarding or invading a pre-FTL planet makes contact at once."
    }
   }
  ],

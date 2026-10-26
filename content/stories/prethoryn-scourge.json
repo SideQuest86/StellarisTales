@@ -27,8 +27,8 @@
    "to": "crisis.13",
    "conditional": true,
    "label": {
-    "zh": "随机延时后（隐藏事件12，平均600个月）：回声接近外缘",
-    "en": "After a random delay (hidden crisis.12, MTTH 600 months): the echoes near the rim"
+    "zh": "随机延时后（约五十年）：回声接近外缘",
+    "en": "After a random delay (about fifty years): the echoes near the rim"
    },
    "evidence": "events/crisis_events_1.txt:87-147 crisis.12 is hidden, fire_only_once, MTTH 600 months, requires global flag prethoryn_subspace_echoes (set by crisis.10 at L56) and fires crisis.13 for every default empire (L142-145)"
   },
@@ -46,8 +46,8 @@
    "to": "crisis.15",
    "conditional": true,
    "label": {
-    "zh": "随机延时后（隐藏事件14，平均120个月）：亚空间信号",
-    "en": "After a random delay (hidden crisis.14, MTTH 120 months): the subspace signal"
+    "zh": "随机延时后（约十年）：亚空间信号",
+    "en": "After a random delay (about ten years): the subspace signal"
    },
    "evidence": "events/crisis_events_1.txt:273-294 crisis.14 hidden, fire_only_once, MTTH 120 months, requires prethoryn_approaching_rim (set by crisis.12 at L103), fires crisis.15 for every default empire"
   },
@@ -56,8 +56,8 @@
    "to": "crisis.18",
    "conditional": true,
    "label": {
-    "zh": "随机延时后（隐藏事件17，平均30个月）：先锋抵达银河边缘",
-    "en": "After a random delay (hidden crisis.17, MTTH 30 months): the vanguard reaches the rim"
+    "zh": "随机延时后（约两年半）：先锋抵达银河边缘",
+    "en": "After a random delay (about two and a half years): the vanguard reaches the rim"
    },
    "evidence": "events/crisis_events_1.txt:364-388 crisis.17 hidden, fire_only_once, MTTH 30 months, requires prethoryn_transmission (set by crisis.14 at L288); spawns the Prethoryn country and fires crisis.18"
   },
@@ -95,8 +95,8 @@
    "to": "crisis.20",
    "conditional": true,
    "label": {
-    "zh": "400–600天后主力抵达（隐藏事件19）",
-    "en": "400–600 days later the main swarm arrives (hidden crisis.19)"
+    "zh": "一年多后，主力虫群抵达",
+    "en": "Over a year later, the main swarm arrives"
    },
    "evidence": "events/crisis_events_1.txt:718-721 crisis.17 schedules crisis.19 days=400 random=200; crisis.19 (L937-953) sets prethoryn_main_invasion and fires crisis.20 for every default empire"
   },
@@ -154,8 +154,8 @@
    "to": "crisis.51",
    "conditional": true,
    "label": {
-    "zh": "虫群占据银河15%或超过90个星系后（隐藏事件50，平均12个月）",
-    "en": "Once the swarm holds 15% of the galaxy or over 90 systems (hidden crisis.50, MTTH 12 months)"
+    "zh": "虫群占据银河15%或超过90个星系，约一年后",
+    "en": "Once the swarm holds 15% of the galaxy or over 90 systems, about a year later"
    },
    "evidence": "events/crisis_events_1.txt:1628-1701 crisis.50 (swarm country, MTTH 12 months) requires prethoryn_main_invasion and endgame_crisis_large_size_trigger (common/scripted_triggers/00_scripted_triggers.txt:1270-1275), spawns the Sentinel system and fires crisis.51 after 1 day"
   },
@@ -193,8 +193,8 @@
    "to": "crisis.78",
    "conditional": true,
    "label": {
-    "zh": "虫群占据银河过半时：哨兵公开解剖资料（隐藏事件77，平均12个月）",
-    "en": "When the swarm holds over half the galaxy: the Sentinels share anatomy files (hidden crisis.77, MTTH 12 months)"
+    "zh": "虫群占据银河过半，一年后哨兵公开解剖资料",
+    "en": "When the swarm holds over half the galaxy, the Sentinels share anatomy files a year later"
    },
    "evidence": "events/crisis_events_1.txt:2107-2139 crisis.77 (Sentinels country, MTTH 12 months) requires ongoing invasion, Sentinel Alpha alive and a swarm with galaxy_percentage > 0.50; sends crisis.78 to all empires"
   },
@@ -222,8 +222,8 @@
    "to": "crisis.101",
    "conditional": true,
    "label": {
-    "zh": "可能发生：隐藏事件100（由虫群国家判定，平均820个月）发现受伤虫后",
-    "en": "May happen: hidden crisis.100 (checked by the swarm, MTTH 820 months) reveals a wounded Queen"
+    "zh": "可能发生：虫群发现一只受伤的虫后（平均约七十年）",
+    "en": "May happen: the swarm finds a wounded Queen, on average after about seventy years"
    },
    "evidence": "events/crisis_events_1.txt:2226-2343 crisis.100 fire_only_once, MTTH 820 months, swarm country with prethoryn_main_invasion and an owned system; fires crisis.101 for every default empire"
   },

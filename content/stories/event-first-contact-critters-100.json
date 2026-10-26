@@ -20,8 +20,8 @@
    "to": "first_contact_critters.105",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：neutrals_stage_2(难度4)",
-    "en": "Stage: neutrals_stage_2 (difficulty 4)"
+    "zh": "遭遇进入下一阶段（难度4）",
+    "en": "The encounter's next stage (difficulty 4)"
    },
    "evidence": "first_contact_NPC_country_types_events.txt:1271 set_first_contact_stage = neutrals_stage_2; common/first_contact/01_*.txt:323 fires first_contact_critters.105",
    "choice": "first_contact_critters.100.a"

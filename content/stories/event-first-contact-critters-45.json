@@ -22,8 +22,8 @@
    "to": "first_contact_critters.45",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：drones_stage_2(难度5)",
-    "en": "Stage: drones_stage_2 (difficulty 5)"
+    "zh": "遭遇进入下一阶段（难度5）",
+    "en": "The encounter's next stage (difficulty 5)"
    },
    "evidence": "first_contact_NPC_country_types_events.txt:674 set_first_contact_stage = drones_stage_2; common/first_contact/01_*.txt:200 fires first_contact_critters.45",
    "choice": "first_contact_critters.40.A"

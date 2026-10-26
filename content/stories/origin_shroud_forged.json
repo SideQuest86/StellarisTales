@@ -132,8 +132,8 @@
     "en": "Situation stages (set by progress, can swing back and forth)"
    },
    "note": {
-    "zh": "局势初始进度1500，处于“平衡”阶段；进度双向变化：<600 受压迫(280)，<1200 受控(270)，到接受阈值为平衡，<2400 不受限(250)，<3000 自由(260)。每个阶段首次进入时触发各自事件，并非固定先后顺序。",
-    "en": "The situation starts at progress 1500 (Balanced) and moves both ways: <600 Oppressed (280), <1200 Controlled (270), up to the acceptance threshold Balanced, <2400 Unrestricted (250), <3000 Free (260). Each stage event fires the first time its stage is entered; they are not a fixed sequence."
+    "zh": "始于1500“平衡”：<600“受压迫”，<1200“受控”，<2400“不受限”，<3000“自由”；双向变动。",
+    "en": "Starts Balanced at 1500 and moves both ways: below 600 Oppressed, below 1200 Controlled, below 2400 Unrestricted, below 3000 Free."
    }
   },
   {

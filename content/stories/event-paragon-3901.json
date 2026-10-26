@@ -141,8 +141,8 @@
    "to": "paragon.3040",
    "conditional": true,
    "label": {
-    "zh": "利爪号研究完成后（studied_talon）才会进入同一轮抽",
-    "en": "Only enters the pulse after the Talon study is finished (studied_talon)"
+    "zh": "利爪号研究“被遗忘的技术”完成后，才进入同一轮抽取",
+    "en": "Only enters the draw after the Talon study, Forgotten Techniques, is finished."
    },
    "evidence": "paragon.3061 sets studied_talon (events/paragon_events_3.txt:1325); paragon.3040 trigger 1089-1093, weight 1 (common/on_actions/00_on_actions.txt:642)"
   },
@@ -151,8 +151,8 @@
    "to": "paragon.3020",
    "conditional": true,
    "label": {
-    "zh": "需要“整合指挥”与“利爪船体”两项修正都已获得；轮抽权重3",
-    "en": "Needs both the integrated_command and talon_hull modifiers; pulse weight 3"
+    "zh": "需已获得“综合指挥体系”与“船体强化”两项升级；抽取权重为3",
+    "en": "Needs both the Integrated Command and Hull Hardening upgrades; weight 3 in the draw."
    },
    "evidence": "paragon.3020 trigger 734-739 (integrated_command from command integration, 906; talon_hull from the Talon study, 1333); weight 3 (00_on_actions.txt:640)"
   },

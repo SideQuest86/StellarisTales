@@ -39,8 +39,8 @@
    "to": "archaeological_site_types:rubricator_digsite",
    "conditional": false,
    "label": {
-    "zh": "设置 discovered_rubricator_planet 后遗址可见，开始发掘",
-    "en": "With discovered_rubricator_planet set the site is visible: start digging"
+    "zh": "发现该星球后，“飞天鼠盗”遗址出现，开始发掘",
+    "en": "Once the planet is discovered, the Kleptomaniac Rats site appears: start digging"
    },
    "evidence": "events/ancient_relics_arcsite_events_1.txt:3857-3911 ancrel.4012 sets discovered_rubricator_planet; common/archaeological_site_types/02_ancient_relics_arc_sites.txt:2146 visible requires has_country_flag discovered_rubricator_planet"
   },
@@ -50,8 +50,8 @@
    "to": "ancrel.4024",
    "conditional": true,
    "label": {
-    "zh": "若再次进入龙所在的星系且龙未被激怒（无 shard_grace / shards_angry）",
-    "en": "Entering the dragon's system again while she is not yet angry (no shard_grace / shards_angry)"
+    "zh": "若再次进入龙所在的星系，且龙尚未愤怒",
+    "en": "Entering the dragon's system again, before she is angry"
    },
    "evidence": "events/ancient_relics_arcsite_events_1.txt:4660-4720 ancrel.4024 (trigger: rubricator_country = owner, neither shards_angry nor shard_grace, our fleet and the dragon ship in rubricator_system); common/on_actions/00_on_actions.txt:1028 on_entering_system_fleet; 4019.a saves rubricator_country"
   }

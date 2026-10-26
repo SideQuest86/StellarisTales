@@ -52,8 +52,8 @@
    "to": "galcom.10",
    "conditional": true,
    "label": {
-    "zh": "不足3票：提案搁置，50年后重试（galcom.20）",
-    "en": "Fewer than 3 aye: shelved, retried 50 years later (galcom.20)"
+    "zh": "不足3票：提案搁置，50年后重试",
+    "en": "Fewer than 3 aye votes: shelved, retried 50 years later"
    },
    "evidence": "galcom.3 else branch: sets galcom_form_failed, fires galcom.10 and schedules galcom.20 after 18000 days, which restarts galcom.2 if conditions hold (galactic_community_events.txt:176-191, 458-520)"
   },
@@ -62,8 +62,8 @@
    "to": "galcom.51",
    "conditional": true,
    "label": {
-    "zh": "首个银河议会成立时（on_galactic_council_established → 隐藏50，5天后）",
-    "en": "When the first Galactic Council is established (on_galactic_council_established -> hidden 50, 5 days later)"
+    "zh": "首个银河议会成立五天后",
+    "en": "Five days after the first Galactic Council is established"
    },
    "evidence": "00_on_actions.txt:4400 -> galcom.50, trigger no first_council_formed flag; fires galcom.51 after 5 days (galactic_community_events.txt:522-608)"
   }

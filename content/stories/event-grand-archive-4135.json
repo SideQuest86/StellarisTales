@@ -357,8 +357,8 @@
    "to": "grand_archive.4140",
    "conditional": true,
    "label": {
-    "zh": "下一阶段：次日再检查，满足第2阶段收藏条件即发",
-    "en": "Next stage: re-checked a day later; fires once the stage 2 collection condition is met"
+    "zh": "下一阶段：次日再检查，收藏达到第2阶段要求后进入",
+    "en": "Next stage: a day later, once the stage 2 collection target is reached"
    },
    "evidence": "events/grand_archive_events.txt:6057-6096 hidden grand_archive.4130 chooses stage 1 / 2 / 3 (if/else_if); every reward event ends by firing 4130 again after 1 day (inline homicidal_collection_reward_event.txt:59-71)"
   },
@@ -367,8 +367,8 @@
    "to": "grand_archive.4145",
    "conditional": true,
    "label": {
-    "zh": "下一阶段：次日再检查，满足第3阶段收藏条件即发",
-    "en": "Next stage: re-checked a day later; fires once the stage 3 collection condition is met"
+    "zh": "下一阶段：次日再检查，收藏达到第3阶段要求后进入",
+    "en": "Next stage: a day later, once the stage 3 collection target is reached"
    },
    "evidence": "events/grand_archive_events.txt:6057-6096 hidden grand_archive.4130 chooses stage 1 / 2 / 3 (if/else_if); every reward event ends by firing 4130 again after 1 day (inline homicidal_collection_reward_event.txt:59-71)"
   },
@@ -377,8 +377,8 @@
    "to": "grand_archive.4141",
    "conditional": true,
    "label": {
-    "zh": "下一阶段：次日再检查，满足第2阶段收藏条件即发",
-    "en": "Next stage: re-checked a day later; fires once the stage 2 collection condition is met"
+    "zh": "下一阶段：次日再检查，收藏达到第2阶段要求后进入",
+    "en": "Next stage: a day later, once the stage 2 collection target is reached"
    },
    "evidence": "events/grand_archive_events.txt:6057-6096 hidden grand_archive.4130 chooses stage 1 / 2 / 3 (if/else_if); every reward event ends by firing 4130 again after 1 day (inline homicidal_collection_reward_event.txt:59-71)"
   },
@@ -387,8 +387,8 @@
    "to": "grand_archive.4146",
    "conditional": true,
    "label": {
-    "zh": "下一阶段：次日再检查，满足第3阶段收藏条件即发",
-    "en": "Next stage: re-checked a day later; fires once the stage 3 collection condition is met"
+    "zh": "下一阶段：次日再检查，收藏达到第3阶段要求后进入",
+    "en": "Next stage: a day later, once the stage 3 collection target is reached"
    },
    "evidence": "events/grand_archive_events.txt:6057-6096 hidden grand_archive.4130 chooses stage 1 / 2 / 3 (if/else_if); every reward event ends by firing 4130 again after 1 day (inline homicidal_collection_reward_event.txt:59-71)"
   },
@@ -397,8 +397,8 @@
    "to": "grand_archive.4142",
    "conditional": true,
    "label": {
-    "zh": "下一阶段：次日再检查，满足第2阶段收藏条件即发",
-    "en": "Next stage: re-checked a day later; fires once the stage 2 collection condition is met"
+    "zh": "下一阶段：次日再检查，收藏达到第2阶段要求后进入",
+    "en": "Next stage: a day later, once the stage 2 collection target is reached"
    },
    "evidence": "events/grand_archive_events.txt:6057-6096 hidden grand_archive.4130 chooses stage 1 / 2 / 3 (if/else_if); every reward event ends by firing 4130 again after 1 day (inline homicidal_collection_reward_event.txt:59-71)"
   },
@@ -407,8 +407,8 @@
    "to": "grand_archive.4147",
    "conditional": true,
    "label": {
-    "zh": "下一阶段：次日再检查，满足第3阶段收藏条件即发",
-    "en": "Next stage: re-checked a day later; fires once the stage 3 collection condition is met"
+    "zh": "下一阶段：次日再检查，收藏达到第3阶段要求后进入",
+    "en": "Next stage: a day later, once the stage 3 collection target is reached"
    },
    "evidence": "events/grand_archive_events.txt:6057-6096 hidden grand_archive.4130 chooses stage 1 / 2 / 3 (if/else_if); every reward event ends by firing 4130 again after 1 day (inline homicidal_collection_reward_event.txt:59-71)"
   }

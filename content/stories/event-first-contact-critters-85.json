@@ -22,8 +22,8 @@
    "to": "first_contact_critters.85",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：void_clouds_stage_2(难度3)",
-    "en": "Stage: void_clouds_stage_2 (difficulty 3)"
+    "zh": "遭遇进入下一阶段（难度3）",
+    "en": "The encounter's next stage (difficulty 3)"
    },
    "evidence": "first_contact_NPC_country_types_events.txt:1089 set_first_contact_stage = void_clouds_stage_2; common/first_contact/01_*.txt:405 fires first_contact_critters.85",
    "choice": "first_contact_critters.80.A"

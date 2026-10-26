@@ -486,8 +486,8 @@
    "to": "crisis.8295",
    "conditional": true,
    "label": {
-    "zh": "随机要求（星系）· 原版无法触发：触发条件要求的gifted_system目标只在该事件自身的immediate中设置",
-    "en": "Random demand (system) · unreachable in the shipped script: its trigger needs event_target:gifted_system, which only its own immediate block sets"
+    "zh": "星系扩张 · 原版中无法触发",
+    "en": "Systematic Expansion · cannot trigger in the shipped game"
    },
    "evidence": "SIT:789-792 on_monthly random_events 10 = crisis.8270 / 90 = nothing (the \"five_year\" comment at E:9756 is stale); 8270 E:9758-9777 needs non-AI, no war, no synth_queen_demands_cooldown, synth_queen_finished_first_demand_chain → 8255 days 180 random 60; 8255 E:9779-9804 rechecks no war/cooldown/conversation, fires on_synth_queen_random_demand_list OA:5277-5285 (5 events, weight 5 each), after 220-day cooldown. 8295 trigger E:10457-10464 requires exists = event_target:gifted_system; saved only at E:10485 (immediate). Whole-install search: no other setter (see ledger)."
   },
@@ -544,8 +544,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "秘密行动 · 90–180天后（因8295无法触发，原版中同样无法到达）",
-    "en": "Covert action · after 90–180 days (unreachable in practice because 8295 cannot fire)"
+    "zh": "星系提取 · 90–180天后；因“星系扩张”无法发生，实际不会出现",
+    "en": "System Extraction · 90–180 days later, but unreachable since Systematic Expansion cannot happen"
    },
    "evidence": "8295.1.a events/machine_age_crisis_events.txt:10647-10659 → 8320 days 90 random 90; 8320 events/machine_age_crisis_events.txt:11166-11190 is scheduled nowhere else."
   },
@@ -878,8 +878,8 @@
    "to": "special_projects:THE_SYNTH_QUEENS_CONVOY_AMBUSH",
    "conditional": true,
    "label": {
-    "zh": "同一次检查生成三支运输船队（之后每年可能增加）：每支船队一个伏击项目（舰队战力≥50000）",
-    "en": "Three convoys spawn with the same check (more may appear yearly): one ambush project per convoy (fleet power ≥ 50,000)"
+    "zh": "同时出现三支船队（之后每年可能再增）；伏击需战力≥50,000",
+    "en": "Three convoys appear at once (more may follow yearly); each ambush needs fleet power ≥ 50,000"
    },
    "evidence": "synth_queen_create_convoy_fleet ×3 in 8049 after E:5666-5670; FX:1772-1781 enables THE_SYNTH_QUEENS_CONVOY_AMBUSH for playable countries with the raids chain; yearly 8135 E:8067-8172 (OA:261); SP:392-418."
   },
@@ -928,8 +928,8 @@
    "to": "crisis.8195",
    "conditional": true,
    "label": {
-    "zh": "战胜后7天：女王警告（已破解通讯频段则不会；5年内最多一次）",
-    "en": "Won the fight: 7 days later her admonition (not after the comm scrambler 9000; at most once per 5 years)"
+    "zh": "胜利：7天后“一个警告”（若已破解其通讯则不会；5年内最多一次）",
+    "en": "Victory: An Admonition 7 days later (not if her comms are cracked; once per 5 years)"
    },
    "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); player won and no synth_queen_comm_scrambler → 8195 days 7 (E:8311-8316, E:8958-8963); 8195 trigger NOR synth_queen_raid_scolding E:9627-9632, after 1800-day timed flag."
   },
@@ -988,8 +988,8 @@
    "to": "crisis.8195",
    "conditional": true,
    "label": {
-    "zh": "战胜后7天：女王警告（已破解通讯频段则不会；5年内最多一次）",
-    "en": "Won the fight: 7 days later her admonition (not after the comm scrambler 9000; at most once per 5 years)"
+    "zh": "胜利：7天后“一个警告”（若已破解其通讯则不会；5年内最多一次）",
+    "en": "Victory: An Admonition 7 days later (not if her comms are cracked; once per 5 years)"
    },
    "evidence": "success → ship_event 8136 E:8174-8200 (hostile) → battle; on_space_battle_over OA:1750-1751 → hidden 8145 E:8270-8380 (convoy) / 8170 E:8922-9041 (outpost); player won and no synth_queen_comm_scrambler → 8195 days 7 (E:8311-8316, E:8958-8963); 8195 trigger NOR synth_queen_raid_scolding E:9627-9632, after 1800-day timed flag."
   },
@@ -1310,8 +1310,8 @@
     "en": "Five random demands"
    },
    "note": {
-    "zh": "每次抽中其中一项（各权重5），每项最多一次，之间至少220天冷却；8295在原版脚本中无法触发。",
-    "en": "One is drawn per selection (weight 5 each), each at most once, with a 220-day cooldown in between; 8295 cannot fire in the shipped script."
+    "zh": "每次抽中其中一项，每项最多一次，相隔至少220天；“星系扩张”无法发生。",
+    "en": "One at a time, each at most once, at least 220 days apart; Systematic Expansion cannot happen."
    }
   },
   {
@@ -1329,8 +1329,8 @@
     "en": "The four real beacons"
    },
    "note": {
-    "zh": "任意顺序；全部完成后才有“被忽视的请求”。空信标（20600）不计入。",
-    "en": "Any order; only when all four are done does \"Unheeded Pleas\" follow. Empty beacons (20600) do not count."
+    "zh": "任意顺序；全部完成后才有“被忽视的请求”。空信标不计入。",
+    "en": "Any order; only when all four are done does \"Unheeded Pleas\" follow. Empty beacons do not count."
    }
   },
   {

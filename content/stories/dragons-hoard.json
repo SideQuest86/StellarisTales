@@ -28,8 +28,8 @@
     "en": "Bones and egg (independent, each 1 day to 50 years later)"
    },
    "note": {
-    "zh": "在宝藏行星建成采矿站时，隐藏事件 660 同时为两者各排期（1天+随机18000天）。一旦行星标记 deboned / deegged，各自只触发一次。若星系易手，隐藏事件 662 重新排期。",
-    "en": "When a mining station is built on the hoard planet, hidden 660 (on_building_mining_station, 00_on_actions.txt:1884) schedules each separately (1 day plus up to 18000 random days). Each fires once per planet (flags deboned/deegged); 662 reschedules them if the system changes hands."
+    "zh": "在宝藏行星上建成采矿站，会为两者各自安排数年后的事件。每颗行星各只发生一次；若星系易手，则重新安排。",
+    "en": "Building a mining station on the hoard planet schedules both events for some years later. Each happens once per planet; if the system changes hands, they are rescheduled."
    }
   },
   {
