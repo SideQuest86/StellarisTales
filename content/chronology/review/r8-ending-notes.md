@@ -16,3 +16,7 @@ astral_planes.1030, distar.5068). Applied as in-place string replacements, so ea
 
 Not changed: 387 endings whose notes were already readable; notes that are short but true ("No effect." under "Report: no
 damage"). The reader no longer shows a note that repeats the ending's name (six endings).
+
+Labels (v4.17.7): of 522 ending labels, 17 named mechanics; two carried bookkeeping that their notes already state and were
+trimmed (grand_archive.2455 "+100 situation progress", leviathans.1018 "(success 70% / failure 30%)"); the rest name story
+things (a research vessel, a deposit) or tell two random outcomes apart by their odds.
