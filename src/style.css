@@ -1245,12 +1245,12 @@ input {
 .reading-next:hover b {
   transform: translate3d(4px, 0, 0);
 }
+/* "This route ends here" / "Continue the conversation": a line in the book's own voice, not a status label. */
 .reading-complete {
   display: block;
   padding: 22px 0;
   text-align: center;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  font: italic 15px/1.5 var(--serif);
   color: var(--dim);
 }
 .flow-outcomes > small,
@@ -1290,29 +1290,26 @@ input {
   text-wrap: balance; /* centred: balanced lines, no two-character widow */
   line-break: strict;
 }
+/* After an ending, the next story: a ruled line like the continue cards, its label an italic line, not a boxed caption. */
 .ending-next {
   width: 100%;
   min-height: 72px;
   margin: 0;
-  padding: 16px 18px;
-  border: 1px solid #c9b07a40;
-  background: #c4b07b08;
+  padding: 16px 0;
+  border-block: 1px solid #c9b07a40;
+  background: none;
 }
 .ending-next::before {
   display: none;
 }
 .ending-next:hover {
-  background: #c4b07b12;
+  background: linear-gradient(90deg, #c4b07b10, #c4b07b00);
   border-color: #c9b07a80;
 }
 .next-chapter.ending-next small {
   margin: 0 0 2px;
-  font: 500 12px/1.5 var(--sans);
-  letter-spacing: 0.14em;
+  font: italic 15px/1.5 var(--serif);
   color: var(--gold-2);
-}
-:root:lang(en) .ending-next small {
-  text-transform: uppercase;
 }
 .ending-next .next-title {
   font-size: 20px;
