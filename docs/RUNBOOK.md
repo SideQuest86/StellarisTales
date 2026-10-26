@@ -97,6 +97,9 @@ node scripts/verify-reader-v4.mjs     # V4 reader: tree navigation, conditions, 
 node scripts/verify-ui-capture.mjs    # catalogue, rows, card extraction, frosted reveals, flow map; screenshots
 node scripts/verify-ui-perf.mjs       # headed Chrome on the real GPU (fails on a software adapter); perf.json
 node scripts/verify-gpu.mjs           # adapter tiers, graphics notice, idle/hidden/covered rendering; verification/gpu/
+node scripts/verify-layout.mjs        # after layout / camera framing / type-style changes: card beside the text (tablets to
+                                      # 1920), selection below the rail on short screens, page width, nothing over the
+                                      # text, no italic Chinese; STELLARIS_ENGINE=webkit for Safari's engine (~80 s each)
 ```
 
 GPU selection (src/gpu.js, evidence in `verification/gpu/README.md`): Chrome/Edge on Windows render every page on the
