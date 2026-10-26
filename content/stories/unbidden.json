@@ -252,8 +252,8 @@
    "to": "crisis.1271",
    "conditional": true,
    "label": {
-    "zh": "最后一个异次元势力覆灭（无传送门、无行星且舰船少于20艘时于年度检查中移除）",
-    "en": "The last extradimensional faction is destroyed (removed by the yearly check once portals are gone, no planets and under 20 ships)"
+    "zh": "最后一个异次元势力覆灭，且已无传送门与星球",
+    "en": "When the last extradimensional faction is destroyed and it has no portals or planets left"
    },
    "evidence": "events/crisis_events_2.txt:2418-2515 crisis.1254 (on_yearly_pulse, 00_on_actions.txt:235) destroys the factions; crisis.1270 (on_country_destroyed, 00_on_actions.txt:3608; L3185-3240) fires when no other extradimensional country remains and sends crisis.1271"
   },

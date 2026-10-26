@@ -11,8 +11,8 @@
    "to": "crisis.8020",
    "conditional": true,
    "label": {
-    "zh": "若风暴吞没你的星系：她出现后1–6天，或第360/720天扩张时；仅限首次演说前",
-    "en": "If the storm engulfs one of your systems: 1–6 days after she appears, or at the 360/720-day expansions; only before the first address"
+    "zh": "若风暴吞没你的星系：她现身后1–6天，或年度扩张时",
+    "en": "If the storm engulfs your system, 1–6 days after she appears or at a yearly expansion"
    },
    "evidence": "synth_queen_wipe_system FX:1178-1196 sends 8020 (days 1 random 5) to a default owner without speech_1; called by synth_queen_spawn (8005, FX:666-751) and the expansions 8010/8015 (events/machine_age_crisis_events.txt:3984-4026). 8020 trigger events/machine_age_crisis_events.txt:4038-4045. May also precede this alert (8035 is day 180, events/machine_age_crisis_events.txt:3975-3980)."
   },
@@ -31,8 +31,8 @@
    "to": "crisis.8039",
    "conditional": false,
    "label": {
-    "zh": "风暴两度扩张、筑起基地后 · 约915天后（危机开始第1095天），女王即将发言",
-    "en": "After two storm expansions and her base-building · about 915 days later (day 1,095 of the crisis), the Queen prepares to speak"
+    "zh": "两次风暴扩张后约两年半，女王即将发言",
+    "en": "About two and a half years later, after two storm expansions, the Queen prepares to speak"
    },
    "evidence": "8005 events/machine_age_crisis_events.txt:3963-3982 schedules 8035 at 180 days and 8010 at 360; 8010→8015 (+360) events/machine_age_crisis_events.txt:3984-4026; 8015→8030 (+360); 8030 events/machine_age_crisis_events.txt:4207-4266 sends 8039 (+15) to every default/fallen/awakened empire."
   },
@@ -87,8 +87,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "第二次演说：若已无失落/觉醒帝国，在下一次年度检查或360天后（取先到者）；若有，它们先与女王开战，最后一个覆灭后的年度检查时",
-    "en": "Second address: with no fallen/awakened empire left, at the next yearly check or after 360 days, whichever comes first; otherwise they go to war with her first and the address comes at the yearly check after the last one falls"
+    "zh": "最后一个堕落或觉醒帝国覆灭后的年度检查时，第二次演说",
+    "en": "The second address comes at the yearly check after the last fallen or awakened empire falls"
    },
    "evidence": "synth_queen_fe_war FX:4048-4079: FE/AFE exist → they declare war (wg_end_threat) and awaken guardians; else 8045 days 360. Global 8043 events/machine_age_crisis_events.txt:4724-4830 on on_yearly_pulse (OA:262) checks speech_1_happened, no speech_2_happened, no FE/AFE → starts the doomclock and sends 8045 to human players. 8045 trigger requires no FE/AFE events/machine_age_crisis_events.txt:4962-4979."
   },
@@ -98,8 +98,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "宗主（失落帝国）随后与女王开战；第二次演说在最后一个失落/觉醒帝国覆灭后的年度检查时（若已无，则360天后）",
-    "en": "Your fallen-empire overlord then goes to war with her; the second address comes at the yearly check after the last fallen/awakened empire falls (360 days if none is left)"
+    "zh": "宗主随后与女王开战；最后一个堕落帝国覆灭后，第二次演说",
+    "en": "Your overlord goes to war with her; the second address follows the last fallen empire's fall"
    },
    "evidence": "8046 after → synth_queen_fe_war events/machine_age_crisis_events.txt:5560-5564, FX:4048-4079; 8043 yearly events/machine_age_crisis_events.txt:4724-4801."
   },
@@ -213,8 +213,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "对话结束21天后：若你仍有调查局势（尚未自行宣战），神秘广播直接给予反制手段",
-    "en": "21 days after the conversation: if your investigation situation is still open (you had not declared war yourself), a mysterious broadcast hands you the countermeasures"
+    "zh": "对话结束21天后，若仍在调查，神秘广播送来反制手段",
+    "en": "Three weeks after the talk, if still investigating, a mysterious broadcast gives countermeasures"
    },
    "evidence": "E:11794-11798 after 8516 days 21; 8516 trigger needs situation_synth_queen_player_facing E:11815-11819; immediate destroys it and sets synth_queen_cannot_yeet_the_fleets + protected_from_queen_storm E:11821-11832."
   },
@@ -579,8 +579,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "已开启调查局势才立即开放第二项研究（并+1进度）；否则等第二次演说结束时开放",
-    "en": "Opens the second study at once (and +1 progress) only if the investigation situation already exists; otherwise it opens when the second address ends"
+    "zh": "若调查已经开始，第二项研究立即开放；否则在第二次演说结束时开放",
+    "en": "The second study opens now if the investigation has begun; otherwise when the second address ends"
    },
    "evidence": "9100.a events/machine_age_crisis_events.txt:12039-12056 IF country_has_situation situation_synth_queen_player_facing → +1 and STORM_2; else tooltip; 9100 immediate sets synth_queen_researched_first_storm_project, which makes the 8045 exits open STORM_2 (FX:4022-4031)."
   },
@@ -1097,8 +1097,8 @@
    "to": "crisis.24100",
    "conditional": true,
    "label": {
-    "zh": "获得联系抟土之塑师的线索；具备虚境通道的帝国可在虚境中支付2000能量与500泽珞联系祂（仅一次）",
-    "en": "This unlocks contact with the Animator of Clay; an empire with Shroud access can reach it there for 2,000 energy and 500 Zro (only once)"
+    "zh": "解锁抟土之塑师；虚境中可付2000能量与500泽珞联系祂一次",
+    "en": "Unlocks the Animator of Clay: in the Shroud, pay 2,000 energy and 500 Zro, once"
    },
    "evidence": "21110 after sets synth_queen_can_contact_the_animator_of_clay events/machine_age_crisis_events.txt:14130-14137. Entry points to 24100, all requiring synth_queen_can_contact_the_animator_of_clay and costing 2000 energy + 500 Zro: Shroud lobby utopia.3000 option animator.shroud (events/utopia_shroud_events.txt:243-275), random Shroud delve event shroud.10 (events/shroud_events.txt:129-189, not Shroud-Forged), Shroud-Forged origin menu shroud_forged.400.h (events/shroud_forged_events.txt:2117-2150) and shroud_forged.700 after 8060.z (L4171-4222). 24100 immediate sets synth_queen_contacted_the_animator_already (E:15061-15063), so only one contact."
   },
@@ -1140,8 +1140,8 @@
    "choice": "crisis.24115.a",
    "conditional": true,
    "label": {
-    "zh": "接受交易后，舰队进入女王泰坦所在星系：泰坦停摆，开放重塑仪式（需运输船，30天）",
-    "en": "After accepting the deal, send a fleet into the titan's system: the titan is disabled and the reshaping ritual opens (transport ship, 30 days)"
+    "zh": "接受交易后，派运输舰至女王泰坦所在星系，即可开放重塑仪式",
+    "en": "After the deal, a transport ship sent to the Queen's titan opens the reshaping ritual"
    },
    "evidence": "24115.a sets synth_queen_took_the_animators_deal events/machine_age_crisis_events.txt:15284-15296; on_entering_system_fleet OA:1059 → hidden 24200 events/machine_age_crisis_events.txt:15338-15373 disables the titan and enables THE_SYNTH_QUEENS_RESHAPING_RITUAL (SP:420-441). Monthly 24000 events/machine_age_crisis_events.txt:14966-15032 aborts the ritual and re-enables the titan if she rebuilds her starbase with no hostile fleet present; re-entering fires 24200 again."
   }

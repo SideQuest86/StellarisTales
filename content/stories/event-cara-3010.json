@@ -23,8 +23,8 @@
    "to": "cara.3251",
    "conditional": true,
    "label": {
-    "zh": "选“以后再说”后，这支车队下次穿越国境时的最后一次报价（间隔至少360天）",
-    "en": "After choosing \"get back to us later\": the last offer when the fleet next crosses the border (at least 360 days apart)"
+    "zh": "选“以后再说”后，这支车队下次穿越国境时给出最后一次报价",
+    "en": "After \"get back to us later\", this fleet's last offer comes at its next border crossing"
    },
    "evidence": "events/caravaneer_events.txt: cara.3250 fleet_event on_crossing_border needs flag cara_fleet3_getback (set by the option), sets a 360-day timer and fires country_event cara.3251"
   }

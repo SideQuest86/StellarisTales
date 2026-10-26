@@ -30,8 +30,8 @@
    "to": "ancrel.6132",
    "conditional": true,
    "label": {
-    "zh": "获得遗珍后：激活“先知之首”，唯心主义堕落帝国仍在时召来其信徒舰队（可重复）",
-    "en": "With the relic: activate the Prophet's severed head; with the spiritualist Fallen Empire still present it summons its zealot fleet (repeatable)"
+    "zh": "有遗珍后，启动“先知之首”；唯心主义堕落帝国尚存时召来信徒舰队",
+    "en": "With the relic, activating the Prophet's head summons zealots while a spiritualist Fallen Empire lives"
    },
    "evidence": "events/ancient_relics_arcsite_events_2.txt:891-936 ancrel.6125 grants add_relic r_severed_head; common/relics/relics.txt:623 active_effect fires ancrel.6131 (events/ancient_relics_arcsite_events_2.txt:1015), which fires 6132 if a fallen_empire_2 Fallen Empire exists, otherwise 6133"
   },

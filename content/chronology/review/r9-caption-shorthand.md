@@ -12,3 +12,7 @@ conditions restored; lengths). Coordinator: 25 substituted names checked against
 ring_world_2_intermediate = Ring World Frame / 环形世界框架); two Ring World captions that lost their stage restored; one
 wording for the eleven first-contact stage captions ("The encounter's next stage (difficulty N)"); the last option letter
 removed. Applied in place by JSON path (each file keeps its layout); the evidence fields are unchanged.
+
+Follow-up (v4.17.2): the 33 captions over 20 words or 40 Chinese characters (9 stories; 1,890 captions in all, 95% at most 16
+words) shortened to one line by two Haiku rewriters and two Sonnet verifiers (13 corrections: 'your system', 'transport ship',
+approach names Organized Meditation / 组织冥想 and Distribute Zro / 分发泽珞); each rewriter listed what it left out.

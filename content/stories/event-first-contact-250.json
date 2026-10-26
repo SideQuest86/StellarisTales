@@ -36,8 +36,8 @@
    "to": "first_contact.285",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：敌对收尾：俘获船员（困难）(难度5) / 敌对收尾：俘获船员（容易）(难度0) / 敌对收尾：俘获船员(难度2)",
-    "en": "Stage: hostile end: crew captured (hard) (difficulty 5) / hostile end: crew captured (easy) (difficulty 0) / hostile end: crew captured (difficulty 2)"
+    "zh": "敌对结局：俘获船员，结果因难度而异",
+    "en": "Hostile ending: the crew is captured; the outcome depends on the difficulty setting"
    },
    "evidence": "first_contact_events.txt:2494 set_first_contact_stage = default_end_stage_hostile_with_crew_hard; common/first_contact/00_*.txt:1376 fires first_contact.285; first_contact_events.txt:2506 set_first_contact_stage = default_end_stage_hostile_with_crew_easy; common/first_contact/00_*.txt:1356 fires first_contact.285; first_contact_events.txt:2518 set_first_contact_stage = default_end_stage_hostile_with_crew_hard; common/first_contact/00_*.txt:1376 fires first_contact.285; first_contact_events.txt:2521 set_first_contact_stage = default_end_stage_hostile_with_crew; common/first_contact/00_*.txt:1336 fires first_contact.285",
    "choice": "first_contact.250.A"
@@ -157,8 +157,8 @@
    "to": "first_contact.285",
    "conditional": true,
    "label": {
-    "zh": "进入阶段：敌对收尾：俘获船员（困难）(难度5) / 敌对收尾：俘获船员（容易）(难度0) / 敌对收尾：俘获船员(难度2)",
-    "en": "Stage: hostile end: crew captured (hard) (difficulty 5) / hostile end: crew captured (easy) (difficulty 0) / hostile end: crew captured (difficulty 2)"
+    "zh": "敌对结局：俘获船员，结果因难度而异",
+    "en": "Hostile ending: the crew is captured; the outcome depends on the difficulty setting"
    },
    "evidence": "first_contact_events.txt:4308 set_first_contact_stage = default_end_stage_hostile_with_crew_hard; common/first_contact/00_*.txt:1376 fires first_contact.285; first_contact_events.txt:4320 set_first_contact_stage = default_end_stage_hostile_with_crew_easy; common/first_contact/00_*.txt:1356 fires first_contact.285; first_contact_events.txt:4332 set_first_contact_stage = default_end_stage_hostile_with_crew_hard; common/first_contact/00_*.txt:1376 fires first_contact.285; first_contact_events.txt:4335 set_first_contact_stage = default_end_stage_hostile_with_crew; common/first_contact/00_*.txt:1336 fires first_contact.285",
    "choice": "first_contact.320.A"

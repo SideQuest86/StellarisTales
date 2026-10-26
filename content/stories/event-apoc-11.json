@@ -19,8 +19,8 @@
    "to": "apoc.11",
    "conditional": true,
    "label": {
-    "zh": "把基址升级为星门（需“星门激活”科技显示该升级、“星门建造”科技允许建造，6000能量+2500合金，1800天）完成时：本国第一座星门",
-    "en": "When the site is upgraded to a gateway (shown with Gateway Activation, allowed with Gateway Construction; 6000 energy + 2500 alloys, 1800 days): the empire's first gateway"
+    "zh": "基址升级为本国首座星门，约需五年",
+    "en": "When the site is upgraded to a gateway, the empire's first, taking about five years"
    },
    "evidence": "common/megastructures/05_gateways.txt:3-217 (gateway_0, build 1080 days, on_build_complete → apoc.14), 219-318 (gateway_final upgrade_from gateway_0, build 1800 days, on_build_complete 313-316 fires apoc.13 and apoc.11); apoc.11 trigger events/apocalypse_events.txt:242-253"
   },
