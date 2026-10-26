@@ -1051,9 +1051,12 @@ export class ArchiveScene {
     this.cameraRight.crossVectors(this.worldUp, direction).normalize();
     this.cameraUp.crossVectors(direction, this.cameraRight).normalize();
     const browseSpan = mobile ? Math.max(12.5, 10.2 / aspect) : Math.max(10.6, (10.6 * 1.55) / aspect);
-    const detailSpan = mobile ? browseSpan : THREE.MathUtils.clamp(12.2 / aspect, 6.6, 11);
+    // Landscape phones (wide but at most 520 px tall): the opened card is drawn smaller and keeps its left edge, so the
+    // reading column beside it (style.css: 58 % there) gets more than a third of the screen.
+    const short = !mobile && this.height <= 520;
+    const detailSpan = mobile ? browseSpan : short ? 7.6 : THREE.MathUtils.clamp(12.2 / aspect, 6.6, 11);
     const span = THREE.MathUtils.lerp(browseSpan, detailSpan, pose);
-    const px = mobile ? 0.5 : THREE.MathUtils.lerp(0.31, this.width < 1100 ? 0.245 : 0.262, pose);
+    const px = mobile ? 0.5 : THREE.MathUtils.lerp(0.31, short ? 0.205 : this.width < 1100 ? 0.245 : 0.262, pose);
     const py = mobile ? THREE.MathUtils.lerp(0.36, 0.3, pose) : THREE.MathUtils.lerp(0.47, 0.515, pose);
     const anchor = this.cameraAim.set(0, 0.6 + pose * 3.5, 0);
     anchor.addScaledVector(this.cameraRight, (0.5 - px) * span * aspect).addScaledVector(this.cameraUp, (py - 0.5) * span);

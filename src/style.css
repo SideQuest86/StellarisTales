@@ -3321,7 +3321,8 @@ dialog::backdrop {
   .archive-hud {
     --sel-left: 52%;
   }
-  .volume input {
+  /* No room for the slider here: the volume keeps its place (it balances the row) but shows nothing, not a lone ♫. */
+  .volume > * {
     display: none;
   }
   .flow-key {
@@ -3779,6 +3780,7 @@ dialog::backdrop {
     display: none; /* its caption sat under the map card, behind the player */
   }
   .reader-panel {
+    width: 58%; /* the card beside it is drawn smaller here (archive-scene.js frameCamera) */
     padding-top: 4px;
     padding-bottom: 24px;
   }
