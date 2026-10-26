@@ -18,9 +18,11 @@
 .fx-item { padding: 3px 0; line-height: 1.55; }
 .fx-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
 .fx-text { color: var(--ink, #dbe5df); overflow-wrap: anywhere; }
-.fx-chip { display: inline-block; padding: 0 6px; border-radius: 3px; border: 1px solid var(--line-2, #3d5a5c); font-size: 11px; line-height: 1.6; color: var(--dim, #86a29f); white-space: nowrap; }
-.fx-time.is-perm { color: var(--teal, #7cc4bd); border-color: color-mix(in srgb, var(--teal, #7cc4bd) 45%, transparent); }
-.fx-chance { color: var(--gold, #d8bb84); border-color: color-mix(in srgb, var(--gold, #d8bb84) 45%, transparent); font-variant-numeric: tabular-nums; }
+/* Kind / duration / hidden labels read as quiet annotations (no boxes); the chance is the one number to see at a glance. */
+.fx-chip { display: inline-block; font-size: 11px; line-height: 1.6; letter-spacing: 0.05em; color: var(--faint, #6f8b88); white-space: nowrap; }
+.fx-chip + .fx-chip::before { content: "·"; margin-right: 8px; color: var(--line-2, #3d5a5c); }
+.fx-time.is-perm { color: var(--teal, #7cc4bd); }
+.fx-chance { font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--gold, #d8bb84); font-variant-numeric: tabular-nums; }
 .fx-hidden { opacity: 0.8; }
 .fx-target { color: var(--faint, #6f8b88); font-size: 12px; }
 .fx-stats { list-style: none; margin: 2px 0 0 var(--s-3, 12px); padding: 0; color: var(--dim, #86a29f); font-size: 12px; }

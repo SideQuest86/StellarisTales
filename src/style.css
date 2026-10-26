@@ -655,6 +655,7 @@ input {
   margin: 18px 0 6px;
   font: 600 clamp(30px, 2.5vw, 40px) / 1.34 var(--serif);
   letter-spacing: 0.03em;
+  font-feature-settings: "palt"; /* proportional CJK punctuation in titles ("合成女王：塞塔娜") */
   text-wrap: balance;
   overflow-wrap: anywhere;
 }
@@ -674,34 +675,47 @@ input {
 }
 .chapter-document > .reader-subtitle + *,
 .chapter-document > h1 + :not(.reader-subtitle) {
-  margin-top: 26px;
+  margin-top: 20px;
 }
 .narrative {
-  border-top: 2px solid #c4ad7a44;
-  padding-top: 26px;
+  border-top: 1px solid #c4ad7a3d;
+  padding-top: 24px;
 }
 .narrative section + section {
-  margin-top: 4px;
+  margin-top: 0;
 }
+/* Body text is set like a book page: Chinese justified with compressed punctuation (text-spacing-trim) and strict line
+   breaking; paragraph breaks in the game text (.pb, app.js paragraph()) are a measured gap rather than an empty line. */
 .narrative p {
-  margin: 0 0 1.15em;
+  margin: 0 0 0.95em;
   font: 400 19px/1.95 var(--serif);
   letter-spacing: 0.02em;
   color: #d4e0da;
+  text-align: justify;
   overflow-wrap: anywhere;
   line-break: strict;
   text-spacing-trim: space-first;
   text-autospace: normal;
+  hanging-punctuation: allow-end;
   font-kerning: normal;
+}
+.pb {
+  display: block;
+  height: 0.75em;
 }
 :root:lang(en) .narrative p {
   font-size: 19px;
   line-height: 1.66;
   letter-spacing: 0;
+  text-align: start;
   overflow-wrap: break-word;
   hyphens: auto;
   text-wrap: pretty;
   font-variant-ligatures: common-ligatures;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+}
+:root:lang(en) .pb {
+  height: 0.6em;
 }
 .dialogue-reply {
   margin: 16px 0;
@@ -2560,17 +2574,17 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 /* Full-text search */
 .search-hit { gap: 12px; }
 .search-hit > span:nth-child(2) { overflow-wrap: anywhere; }
+/* Hit type ("Text", "Name", "Effect" …): a quiet label in the thumbnail column, so every row's title lines up. */
 .hit-type {
   flex-shrink: 0;
-  min-width: 36px;
-  padding: 1px 6px;
-  font: 11px/1.6 var(--mono);
+  width: 96px;
+  font: 11px/1.6 var(--sans);
   font-style: normal;
-  text-align: center;
-  color: var(--gold);
-  border: 1px solid #68775a;
+  letter-spacing: 0.08em;
+  text-align: right;
+  color: var(--gold-2, #b99b62);
 }
-.search-story small .hit-type { display: inline-block; min-width: 0; margin-right: 8px; }
+.search-story small .hit-type { display: inline-block; width: auto; margin-right: 8px; text-align: left; }
 .search-hit b span { font-weight: 400; color: var(--dim); }
 .hit-snip { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
 .hit-snip:empty { display: none; }
@@ -2578,7 +2592,7 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 .search-hit mark { padding: 0; color: var(--ink); background: #68775a66; border-bottom: 1px solid var(--gold); }
 @media (max-width: 480px) {
   .search-hit { gap: 8px; }
-  .hit-type { min-width: 30px; padding: 1px 4px; }
+  .hit-type { width: 72px; }
 }
 /* Reader warm-up (prewarmReader in app.js): laid out and painted once in idle time, transparent and inert. */
 #reader.prewarm { opacity: 0.002 !important; pointer-events: none !important; }
