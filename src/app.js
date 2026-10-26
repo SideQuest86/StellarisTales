@@ -399,7 +399,9 @@ function renderContinue() {
   const story = pendingProgress.stories.get(last.story);
   const doc = story.chapters.find((c) => c.id === last.chapter);
   const storyTitle = storyName(story.story), docTitle = titleWith(doc.title, doc.names) || T("插曲", "Interlude");
-  const label = docTitle === storyTitle ? storyTitle : `${storyTitle} · ${docTitle}`;
+  // A chapter title that already opens with the story's name ("The Horizon Signal: GRAVITY IS DESIRE") stands alone.
+  const named = docTitle.startsWith(storyTitle) && /^(?:$|[\s:：·,，\-–—])/.test(docTitle.slice(storyTitle.length));
+  const label = named ? docTitle : `${storyTitle} · ${docTitle}`;
   box.querySelector("[data-continue]").innerHTML = `<span>${esc(T("继续阅读", "Continue reading"))}</span><small>${esc(label)}</small>`;
   box.querySelector("[data-restart]").textContent = T("重新开始", "Start over");
 }
@@ -947,7 +949,9 @@ function renderChapter(preservePosition = false) {
   } else if (r.choices.length) {
     nextReading = ""; // the "Your choices" heading above already says it
   } else if (!nextEdges.length) {
-    nextReading = `<span class="reading-complete">${esc(T("这条路线到此结束", "This route ends here"))}</span>`;
+    // The way back sits under the line, not a scroll away at the chapter's top.
+    nextReading = `<span class="reading-complete">${esc(T("这条路线到此结束", "This route ends here"))}</span>`
+      + (trail.length > 1 ? `<button type="button" class="route-back">${esc(T("← 上一章", "← Previous chapter"))}</button>` : "");
   } else nextReading = "";
   // Parallel groups (e.g. investigations in any order, N required before the gate).
   const group = story.groups?.find((g) => g.kind === "parallel" && (g.members.includes(r.id) || g.gate === r.id));
@@ -1369,7 +1373,7 @@ document.addEventListener("click", (e) => {
     flowSurface.update(dossier.story, dossier.chapters, chapter.id, visitedChapters, lang, prose, trail);
     return;
   }
-  if (e.target.closest("#reading-back, #from-story") && trail.length > 1) {
+  if (e.target.closest("#reading-back, #from-story, .route-back") && trail.length > 1) {
     trail.pop();
     const step = trail.at(-1);
     goChapter(step.chapter, step.story, true);
@@ -1443,7 +1447,11 @@ function showSpecimenLinks(docId) {
         return `<a href="#museum=${encodeURIComponent(key)}"><img src="${asset(`museum/img/${key}.webp`)}" alt="" width="36" height="36" loading="lazy">${esc(lang === "en" ? en || zh : zh || en)}</a>`;
       }).join("");
     const end = article.querySelector(".chapter-end");
-    end ? end.before(box) : article.append(box);
+    if (end?.querySelector(".reading-ending")) {
+      let at = end; // after an ending: below it and its effects (showEffects)
+      while (at.nextElementSibling?.matches(".fx")) at = at.nextElementSibling;
+      at.after(box);
+    } else end ? end.before(box) : article.append(box);
   };
   if (specimenMap) return add();
   json("museum/by-doc.json").then((m) => { specimenMap = m; add(); }).catch(() => { specimenMap = {}; });
@@ -1475,8 +1483,11 @@ async function showEffects(story, docId, choices) {
   if (data.origin && docId === story.start) block += renderEffects(data.origin, { ...opts, title: T("起源 · 开局效果", "Origin · starting effects") });
   if (entry.doc) block += renderEffects(entry.doc, opts);
   if (!block) return;
+  // An ending follows the choices directly; the chapter's effects join the panels below it and its next-story card.
+  const ending = article.querySelector(".chapter-end:has(> .reading-ending)");
   const end = article.querySelector(".specimen-links, .chapter-end");
-  end ? end.insertAdjacentHTML("beforebegin", block) : article.insertAdjacentHTML("beforeend", block);
+  if (ending) ending.insertAdjacentHTML("afterend", block);
+  else end ? end.insertAdjacentHTML("beforebegin", block) : article.insertAdjacentHTML("beforeend", block);
   bindEffects(article);
 }
 // On the first chapter after crossing into another story: "From <that story>" beside Back, stepping back like it.

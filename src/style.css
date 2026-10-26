@@ -1378,6 +1378,19 @@ input {
   font: italic 15px/1.5 var(--serif);
   color: var(--dim);
 }
+/* Under a route that stops without an ending: the trail's own "Previous chapter", centred under the line. */
+.route-back {
+  display: block;
+  min-height: 32px;
+  margin: -16px auto 0;
+  padding: 0 8px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.route-back:hover,
+.route-back:focus-visible {
+  color: var(--gold);
+}
 .flow-outcomes > small,
 .flow-investigations > small {
   display: block;
