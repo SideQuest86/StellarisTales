@@ -37,3 +37,15 @@ Four proposals (book typography, page-turn motion, reading focus, first impressi
 incipit (the Google-served Newsreader has no smcp: small-caps width equals normal; synthesis is off), the enlarged lead
 paragraph (a chapter's text is usually one <p> with .pb gaps, so it would enlarge the whole chapter), the invitation line
 (new interface text), the dimmed map card (presses on a deliberate decision), the page-turn JS (low fit).
+
+## Round 2 (v4.14.0)
+
+Same six lenses over the v4.13.3 build: 21 confirmed (3 duplicate pairs); 14 applied. The reader's toolbar on the masthead's
+line (the masthead's wash keeps to the left half while reading); the expanded map's symbol key behind "?" at every size and
+its status line gone; English paragraph breaks 0.8em; opening quotation marks hung in the margin (q-open); one closing rule
+after an ending's next-story card; Chinese continuation conditions in Song; guide h4/h5 hierarchy; Chinese eyebrow and tab
+tracking; a larger Chinese parallel title; the card caption without the chapter count; closer foot panels on phones; the
+exhibit stage clear of its close button; the active exhibit as a glowing pedestal; '258 specimens' unseen (still spoken)
+when nothing is filtered. Not applied: hiding the archive's lane arrows (they show the wall's spatial model), the caption
+on the logo's edge (it belongs to the card), larger map node captions (needs the JS text fitting changed in step), search's
+'Name' tag moved into the meta line, the dialogue-foot spacing rework.

@@ -169,6 +169,12 @@ input {
 .masthead > * {
   pointer-events: auto;
 }
+/* While a story is open the masthead's wash keeps to the left half (the logo over the archive): the reader's toolbar sits on
+   the same line in the right half and must not be veiled by it. */
+.reader-open .masthead {
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
 .brand {
   display: flex;
   align-items: center;
@@ -410,6 +416,13 @@ input {
   letter-spacing: 0.14em;
   font-variant-numeric: lining-nums tabular-nums;
   color: var(--gold);
+}
+:root:lang(zh) .selection-eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+:root:lang(zh) .catalogue button > span {
+  letter-spacing: 0.03em;
 }
 :root:lang(en) #category-label {
   text-transform: uppercase;
@@ -729,6 +742,7 @@ input {
   text-shadow: 0 2px 12px #031014;
 }
 .reader-left span {
+  display: none; /* the count is catalogue data: the archive eyebrow and the map header carry it */
   font: italic 14px/1.4 var(--serif);
   color: var(--dim);
 }
@@ -740,7 +754,8 @@ input {
   width: 50%;
   /* The reading column (--col, drawn at --rz) sits centred in the right half when there is room, and otherwise keeps its
      side margins. */
-  padding: calc(var(--masthead) - 8px) max(clamp(24px, 5vw, 96px), calc((50vw - var(--col) * var(--rz, 1)) / 2)) 40px max(clamp(24px, 4vw, 72px), calc((50vw - var(--col) * var(--rz, 1)) / 2));
+  /* The toolbar sits on the masthead's line (level with the logo), not a row below it: the page starts 60 px higher. */
+  padding: max(12px, calc(var(--masthead) / 2 - 28px)) max(clamp(24px, 5vw, 96px), calc((50vw - var(--col) * var(--rz, 1)) / 2)) 40px max(clamp(24px, 4vw, 72px), calc((50vw - var(--col) * var(--rz, 1)) / 2));
   overflow-y: auto;
   overscroll-behavior: contain;
   pointer-events: auto;
@@ -888,7 +903,7 @@ input {
   color: var(--dim);
 }
 .reader-subtitle:lang(zh) {
-  font: 14px/1.5 var(--serif-zh);
+  font: 15.5px/1.5 var(--serif-zh);
   letter-spacing: 0.06em;
 }
 /* Under the title: the other-language subtitle on the left, the empire-profile toggle on the right of the same line
@@ -964,7 +979,12 @@ input {
   font-variant-numeric: oldstyle-nums proportional-nums;
 }
 :root:lang(en) .pb {
-  height: 0.6em;
+  height: 0.8em;
+}
+/* Optical margin: a paragraph that opens with a quotation mark hangs the mark into the margin, so its words keep the
+   column's edge (app.js marks it .q-open; hanging-punctuation exists only in Safari). */
+:root:lang(en) .narrative p.q-open {
+  text-indent: -0.4em;
 }
 /* What a character says in answer to a choice: the game's own text, set like the story and marked by a quiet rule. */
 .dialogue-reply {
@@ -1210,6 +1230,11 @@ input {
   font: italic 14.5px/1.5 var(--serif-en);
   letter-spacing: 0;
 }
+:root:lang(zh) .next-chapter:not(.ending-next) small {
+  font: 14px/1.65 var(--serif-zh);
+  letter-spacing: 0.02em;
+  color: #a9bdb7;
+}
 .next-chance {
   min-width: 3.4ch;
   margin-left: 16px;
@@ -1438,9 +1463,17 @@ input {
 }
 /* Under a ruled list (the choices or the continue cards) with nothing else at the chapter's end, the panel needs no rule of
    its own: one line 30 px above, not two with a band between them. */
-:is(.choices, .continuation) + .chapter-end:not(:has(> :not(.chapter-directory-link))) + :is(.fx, .story-summary, details.review-note) {
+:is(.choices, .continuation) + .chapter-end:not(:has(> :not(.chapter-directory-link))) + :is(.fx, .story-summary, details.review-note),
+.chapter-end:has(> .ending-next) + :is(.fx, .story-summary, details.review-note) {
   margin-top: 30px;
   border-top-color: transparent;
+}
+@media (max-width: 700px) {
+  .story-summary,
+  :is(.choices, .continuation) + .chapter-end:not(:has(> :not(.chapter-directory-link))) + :is(.fx, .story-summary, details.review-note),
+  .chapter-end:has(> .ending-next) + :is(.fx, .story-summary, details.review-note) {
+    margin-top: 20px; /* phones: a closer foot, no empty bands between collapsed panels */
+  }
 }
 :is(.fx-sum, .story-summary > summary, details.review-note > summary) {
   min-height: 46px;
@@ -1538,12 +1571,22 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
   letter-spacing: 0.02em;
   color: var(--ink);
 }
-.story-summary .md-guide :is(h4, h5) {
-  margin: 1.5em 0 0.5em;
-  font-size: 14px;
+.story-summary .md-guide h4 {
+  margin: 1.7em 0 0.5em;
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.story-summary .md-guide h5 {
+  margin: 1.2em 0 0.4em;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--gold-2, #b99b62);
+}
+.story-summary .md-guide h4 + h5 {
+  margin-top: 0.5em;
 }
 .story-summary .md-guide :is(ul, ol) {
   padding-left: 1.3em;
@@ -2336,7 +2379,7 @@ html.reduced-motion .map-expanded .flow-surface-map {
   border-top: 1px solid #ffffff12;
 }
 .map-expanded .flow-status {
-  display: block;
+  display: none; /* the gold node already says where the reader is (the line is aria-hidden) */
   flex: 1 1 0;
   min-width: 0;
   min-height: 20px;
@@ -2364,13 +2407,16 @@ html.reduced-motion .map-expanded .flow-surface-map {
 .map-expanded .flow-foot .key-symbols {
   display: contents;
 }
+/* The symbol key (fourteen glyphs) is behind the map's "?" at every size; the footer keeps the states and the one hint line. */
+.map-expanded .flow-foot .key-symbols {
+  display: none;
+}
+.map-expanded .flow-controls .flow-help-button {
+  display: inline-block;
+}
 @media (max-width: 1100px), (max-height: 760px) {
-  .map-expanded .flow-foot .key-symbols,
   .map-expanded .flow-hint {
     display: none;
-  }
-  .map-expanded .flow-controls .flow-help-button {
-    display: inline-block;
   }
 }
 @media (max-height: 520px) {

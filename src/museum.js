@@ -146,7 +146,7 @@ function render() {
       ${nModels < data.specimens.length ? `<button class="museum-chip" data-toggle3d aria-pressed="${state.only3d}">${esc(T("仅看有三维模型", "With 3D model only"))} <small>${nModels}</small></button>` : ""}
       ${met.size ? `<button class="museum-chip museum-chip-met" data-togglemet aria-pressed="${state.onlyMet}"><i aria-hidden="true"></i>${esc(T("阅读中遇到", "Met while reading"))} <small>${met.size}</small></button>` : ""}
     </div>
-    <p class="museum-count" aria-live="polite">${esc(T(`${list.length} 件标本`, `${list.length} ${list.length === 1 ? "specimen" : "specimens"}`))}</p>
+    <p class="museum-count${list.length === data.specimens.length ? " is-total" : ""}" aria-live="polite">${esc(T(`${list.length} 件标本`, `${list.length} ${list.length === 1 ? "specimen" : "specimens"}`))}</p>
     <ul class="museum-grid" role="list">
       ${list.map((s) => `<li><button class="museum-exhibit rarity-${s.rarity}${met.has(s.key) ? " met" : ""}" data-key="${s.key}" aria-label="${esc(label(s.name))} · ${esc(label(a.rarities[s.rarity]))}${met.has(s.key) ? esc(T(" · 阅读中遇到", " · met while reading")) : ""}">
         <span class="museum-pedestal" aria-hidden="true"><img src="${esc(data.asset(s.icon.url))}" alt="" loading="lazy" decoding="async" width="100" height="100"></span>

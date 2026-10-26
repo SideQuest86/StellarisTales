@@ -96,6 +96,7 @@
 /* A rarity chip's key: the hollow diamond of the pedestal frames, in the rarity's colour. */
 .museum-key { display: inline-block; width: 7px; height: 7px; margin: 0 8px 1px 0; border: 1.5px solid var(--rarity, #8fd8c6); vertical-align: middle; transform: rotate(45deg); }
 .museum-count { margin: 10px var(--gutter, 40px) 0; font: italic 14px var(--serif); letter-spacing: 0; color: var(--dim); }
+.museum-count.is-total { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .museum-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
@@ -129,7 +130,9 @@
   background: transparent;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
-.museum-exhibit:hover, .museum-exhibit:focus-visible, .museum-exhibit.active { border-color: #c2ab7266; background: #0d222980; transform: translate3d(0, -3px, 0); }
+.museum-exhibit:hover, .museum-exhibit:focus-visible { border-color: #c2ab7266; background: #0d222980; transform: translate3d(0, -3px, 0); }
+/* The exhibit on show: its pedestal glows in its rarity's colour, no square box among the frameless diamonds. */
+.museum-exhibit.active .museum-pedestal::before { box-shadow: 0 0 22px -2px var(--rarity, #8fd8c6), inset 0 0 14px -8px var(--rarity, #8fd8c6); }
 .museum-pedestal {
   position: relative;
   display: grid;
@@ -185,7 +188,7 @@
   display: grid;
   place-items: center;
   height: min(380px, 42vh);
-  margin: 8px 0 0;
+  margin: 40px 0 0; /* below the close button, not under it */
   border: 1px solid #c2ab7230;
   background: radial-gradient(ellipse at 50% 70%, color-mix(in srgb, var(--rarity) 22%, transparent) 0%, transparent 62%), #061114;
 }
