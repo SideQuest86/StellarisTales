@@ -755,7 +755,7 @@ input {
   content: "";
   position: absolute;
   inset: calc(100% + 1px) 0 auto;
-  height: 14px;
+  height: 28px;
   background: linear-gradient(var(--bg), #08151a00);
   pointer-events: none;
 }
@@ -1132,9 +1132,9 @@ input {
   color: var(--gold);
 }
 .next-chapter small {
-  font: 12px/1.5 var(--sans);
-  letter-spacing: 0.02em;
-  color: var(--dim);
+  font: 13px/1.55 var(--sans);
+  letter-spacing: 0.01em;
+  color: #9fb5af; /* between --dim and --ink-2: a condition you can read, still quieter than the title above it */
 }
 .next-chance {
   min-width: 3.4ch;
@@ -2057,8 +2057,8 @@ html.reduced-motion .map-expanded .flow-surface-map {
 /* On the card the map is a window onto a larger drawing: its edges fade out instead of slicing a node or a caption mid-word.
    (The expanded map has room and keeps hard edges; while the viewport has keyboard focus its ring must stay whole.) */
 #flow-surface:not(.map-expanded) .flow-viewport:not(:focus-visible) {
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent), linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent), linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent), linear-gradient(transparent, #000 20px, #000 calc(100% - 20px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent), linear-gradient(transparent, #000 20px, #000 calc(100% - 20px), transparent);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
@@ -2809,6 +2809,13 @@ input[type="range"] {
 }
 .music-player:hover .volume,
 .volume:focus-within {
+  opacity: 1;
+}
+.reader-open .music-player > :not(.seek, .volume) {
+  opacity: 0.6;
+  transition: opacity 0.3s var(--ease-out);
+}
+.reader-open .music-player:is(:hover, :focus-within) > :not(.seek, .volume) {
   opacity: 1;
 }
 .volume input {
