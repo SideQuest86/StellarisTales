@@ -108,6 +108,7 @@ evidence from earlier rounds and is not updated.
   append). Story titles outside chapters: index.json `names` (story_tree.py, reviewed wording) + app.js storyName/titleWith.
   Checks: node 125/125, smoke 15/15, verify-reader-v4, -refine-audio, -a11y, -refine-reader; verify-gpu forced cases pass
   (its real-adapter case depends on which GPU headless Chrome is given). Screens: verification/round6/quiet/.
+  Live 2026-10-26 06:08 UTC: Publish + Archive CI green on b9b6de3e; scripts/smoke.mjs against the live site 15/15.
   The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
 - Live: v4.10.0 (`378d14b5`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15.
 - Live: v4.9.0 (`654a79dc`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15 (one transient failure right after deploy, re-run clean), /fonts/*.woff2 served.
