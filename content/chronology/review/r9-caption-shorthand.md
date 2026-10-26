@@ -24,3 +24,7 @@ shown where a chapter does not continue, 13; captions of edges the reading conte
 Punctuation (v4.17.6): in the Chinese of ending labels / notes, card captions and group labels / notes, half-width ( ) , ; : ! ?
 touching Chinese became full-width (paired brackets when they enclose or follow Chinese; digits and ratios untouched); 100
 texts in 18 fragments, by a deterministic script (scratchpad zh-punct.mjs), applied in place by JSON path.
+
+Map labels (v4.17.8): of 642 group labels and 1,076 node labels, 14 named event numbers, arrows or flags; rewritten by one Haiku
+agent, verified by one Sonnet agent (all 14 kept), coordinator: the full chapter name for 2104, and Shard's Chinese name from
+the localisation (rubricator_dragon_poi / scripted_SHARD = 裂爪龙, not 夏尔德 or 裂爪巨龙).
