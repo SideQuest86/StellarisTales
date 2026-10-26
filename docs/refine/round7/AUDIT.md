@@ -65,5 +65,6 @@ view words. Round 3's yield (one finding above impact 3) marks the polish as con
 Cold cache, 390x844. Fast 4G (9 Mbps, 60 ms, CPU x2): first story title at 1.6 s (zh) / 1.7 s (en), LCP 0.6 s. Slow mobile
 (1.6 Mbps, 150 ms, CPU x4): title at 7.8 s / 8.4 s. The index is preloaded and arrives at 3.4 s; the title waits for
 three.js (408 KB), because app.js imports archive-scene.js statically, while four CJK font files (700 KB) share the line.
-Option, not done: import archive-scene.js dynamically so the selection text shows when the index arrives (about 3.5 s on
-slow mobile) and the 3D wall joins after; it touches the start-up order, so it waits for a decision.
+Done in v4.15.0: archive-scene.js is imported dynamically (still modulepreloaded), so the selection text shows when the index
+arrives and the wall joins after, catching up with the selection and an open story. Local, uncompressed: first title 20.1 s
+-> 14.1 s (slow), 3.8 s -> 2.8 s (fast 4G). With three.js delayed 5 s the title shows at 0.2 s and a story link reads at once.

@@ -5,7 +5,6 @@ import { renderEffects, bindEffects } from "./effects-panel.js";
 import { createSearch } from "./search.js";
 import { storyMap } from "./story-map.js";
 import { FlowSurface } from "./flow-surface.js";
-import { ArchiveScene } from "./archive-scene.js";
 import { showAdapterHint } from "./gpu.js";
 import { SoundtrackPlayer } from "./audio-player.js";
 // [UI] chrome dictionary + reader enter/exit (src/i18n.js, src/reader-motion.js)
@@ -1587,22 +1586,21 @@ applyMotion();
 $("#category-label").textContent = categoryName(2);
 document.documentElement.classList.remove("i18n-pending");
 try {
-  // The scene (renderer, atlas, shader programs: ~55 ms of script, then the programs link on the GPU process) does not
-  // need the story lists: it is built while the index downloads and receives them afterwards. Nothing is drawn before both exist.
+  // The 3D archive (three.js, ~400 KB, modulepreloaded in index.html) is not needed to read: the selection, the reader and
+  // search work without it. It is imported beside the story index instead of before the app, so on a slow line the first
+  // story's name shows when the index arrives, and the wall joins when its module does. The scene (renderer, atlas, shader
+  // programs) is built as soon as it arrives and receives the story lists afterwards; `scene` is set only then, so nothing
+  // else sees a half-ready scene.
   const indexLoading = json("stories/index.json");
   indexLoading.catch(() => {}); // the await below reports a failure; this only avoids an unhandled-rejection event
-  let sceneEarly = null, sceneError = null; // `scene` itself is set once the story lists are in, so nothing else sees a half-ready scene
-  try {
-    sceneEarly = new ArchiveScene($("#scene"), {
-      columns: [],
-      onSelect: showSelection,
-      onOpen: (s) => openStory(s.id),
-      reduced,
-      asset,
-    });
-  } catch (e) {
-    sceneError = e;
-  }
+  const sceneLoading = import("./archive-scene.js").then(({ ArchiveScene }) => new ArchiveScene($("#scene"), {
+    columns: [],
+    onSelect: showSelection,
+    onOpen: (s) => openStory(s.id),
+    reduced,
+    asset,
+  }));
+  sceneLoading.catch(() => {});
   const data = await indexLoading;
   stories = data.stories;
   for (const s of stories) s.excerpt ||= { zh: "", en: "" };
@@ -1621,19 +1619,26 @@ try {
   }));
   renderChrome(); // [UI] also builds the catalogue bar
   $("#archive-count").textContent = "";
-  try {
-    if (sceneError) throw sceneError;
-    scene = sceneEarly;
+  sceneLoading.then((built) => {
+    scene = built;
     // Slates for stories without a picture set the title as the caption does ("Victory against the other empire").
     scene.storyTitle = (s, l) => (l === lang ? storyName(s) : "");
     scene.setColumns(columns);
     window.__archiveDiagnostics = () => scene.diagnostics();
+    // Catch up with what happened before the wall arrived: the selected story, and a story opened from a link meanwhile.
+    const reading = document.body.classList.contains("reader-open") && dossier;
+    if (reading || selected) scene.selectStory(reading ? dossier.story.id : selected.id);
+    if (reading) {
+      scene.setDetail(true);
+      scene.canvas.tabIndex = -1;
+      if (chapter) scene.setChapterArt(chapter.image, chapter.title, { heading: prose(local(chapter.title)) });
+    }
     // Integrated or software adapter: dismissible notice on how to move the browser to the discrete GPU.
     showAdapterHint(scene.gpu, { t });
-  } catch (e) {
+  }).catch(() => {
     $("#scene-fallback").hidden = false;
     console.warn("3D archive unavailable; using accessible navigation.");
-  }
+  });
   $("#scene").addEventListener("scene-lost", () => {
     $("#scene-fallback").hidden = false;
     toast(T("三维画面已暂停，分类和搜索仍可使用。", "The 3D view paused. Categories and search still work."));

@@ -1,3 +1,9 @@
+v4.15.0 — 2026-10-26
+
+The first story's name no longer waits for the 3D archive: the wall (three.js, about 400 KB) loads beside the story index
+and joins when it arrives, catching up with whatever was chosen or opened meanwhile. On a slow mobile line the archive's
+text shows seconds sooner; on fast connections the wall arrives as before.
+
 v4.14.1 — 2026-10-26
 
 The reading column fades out at the player as it does under the toolbar, instead of slicing a line; the wordmark is set in
