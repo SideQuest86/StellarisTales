@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { evaluate, resolveBody, resolveChoices, pathFlags, applyFacts, impliedFacts, atomKey } from "../src/reading.js";
+import { evaluate, resolveBody, resolveChoices, pathFlags, applyFacts, impliedFacts, atomKey, describe } from "../src/reading.js";
 
 const gestalt = (value) => ({ type: "identity", key: "ethic_gestalt_consciousness", value });
 const flag = (name, value = true) => ({ type: "flag", name, scope: "country", value });
@@ -79,4 +79,24 @@ test("options: trigger hides, allow disables", () => {
   assert.equal(none[1].allowed, null);
   const evo = resolveChoices(doc, { profile: { origin_evolutionary_predators: true } });
   assert.deepEqual(evo.map((c) => c.key), ["x", "evo", "tech"]);
+});
+
+test("describe names only what has a name and never invents a placeholder", () => {
+  const named = (key, zh, en, value = true) => ({ type: "other", key, arg: "", label: { zh, en }, value });
+  const bare = { type: "other", key: "has_x", arg: "", value: true };
+  const eth = { type: "identity", key: "ethic_xenophobe", value: true };
+  const machine = { type: "identity", key: "is_individual_machine", value: true };
+  assert.equal(describe([[named("a", "探险协议", "Expedition protocol")]], "zh"), "探险协议");
+  assert.equal(describe([[bare]], "zh"), ""); // nothing known: nothing shown
+  assert.equal(describe([[named("a", "甲", "A"), bare]], "en"), "A"); // an unnamed part of a branch is left out
+  assert.equal(describe([[named("a", "甲", "A")], [bare]], "en"), ""); // an unnamed alternative: the condition cannot be stated
+  assert.equal(describe([[bare]], "zh", {}, { fallback: "其他条件" }), "其他条件");
+  assert.equal(describe([[machine]], "zh"), ""); // engine keys are never shown in Chinese…
+  assert.equal(describe([[eth]], "en"), "xenophobe"); // …only a readable ethic / authority / origin key in English
+  assert.equal(describe([[named("a", "甲", "A", false)]], "zh"), "非甲");
+  // repeated and absorbed alternatives collapse ("A · B or A" is "A"); more than `max` alternatives end with "…"
+  const a = named("a", "甲", "A"), b = named("b", "乙", "B"), c = named("c", "丙", "C"), d = named("d", "丁", "D");
+  assert.equal(describe([[a, b], [a], [a]], "en"), "A");
+  assert.equal(describe([[a], [b], [c], [d]], "en"), "A or B or C …");
+  assert.equal(describe([[a], [b], [c], [d]], "zh"), "甲 或 乙 或 丙 等");
 });

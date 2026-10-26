@@ -117,8 +117,9 @@ function filtered() {
 function render() {
   const a = data.archive;
   const list = filtered();
-  const chip = (group, value, text, count) =>
-    `<button class="museum-chip" data-filter="${group}" data-value="${value}" aria-pressed="${state[group] === value}">${esc(text)}${count != null ? ` <small>${count}</small>` : ""}</button>`;
+  // `key`: a rarity chip carries a small frame in the rarity's colour, the same one that frames its pedestals below.
+  const chip = (group, value, text, count, key = "") =>
+    `<button class="museum-chip" data-filter="${group}" data-value="${value}" aria-pressed="${state[group] === value}">${key ? `<i class="museum-key rarity-${key}" aria-hidden="true"></i>` : ""}${esc(text)}${count != null ? ` <small>${count}</small>` : ""}</button>`;
   const typeCount = (t) => data.specimens.filter((s) => s.type === t).length;
   const rarCount = (r) => data.specimens.filter((s) => s.rarity === r).length;
   const nModels = Object.keys(models).length;
@@ -140,7 +141,7 @@ function render() {
       </div>
       <div class="museum-chips" role="group" aria-label="${esc(T("稀有度", "Rarity"))}">
         ${chip("rarity", "all", T("全部稀有度", "All rarities"))}
-        ${RARITY_ORDER.map((r) => chip("rarity", r, label(a.rarities[r]), rarCount(r))).join("")}
+        ${RARITY_ORDER.map((r) => chip("rarity", r, label(a.rarities[r]), rarCount(r), r)).join("")}
       </div>
       ${nModels < data.specimens.length ? `<button class="museum-chip" data-toggle3d aria-pressed="${state.only3d}">${esc(T("仅看有三维模型", "With 3D model only"))} <small>${nModels}</small></button>` : ""}
       ${met.size ? `<button class="museum-chip museum-chip-met" data-togglemet aria-pressed="${state.onlyMet}"><i aria-hidden="true"></i>${esc(T("阅读中遇到", "Met while reading"))} <small>${met.size}</small></button>` : ""}
@@ -159,7 +160,7 @@ function formatEffect(e) {
   const v = e.percent ? `${e.value > 0 ? "+" : ""}${+(e.value * 100).toFixed(2)}%` : `${e.value > 0 ? "+" : ""}${+e.value.toFixed(3)}`;
   const name = label(e.label) || `${(e.modifier || e.resource).replace(/_/g, " ")} ${T("（游戏未提供名称）", "(no game label)")}`;
   const when = e.conditions?.length ? `<span class="museum-cond">${esc(T("条件：", "If: "))}${e.conditions.map((c) => esc(label(c.label))).join(T("，且", ", and "))}</span>` : "";
-  return `<li><b>${esc(v)}</b> ${esc(name)}${e.monthly ? esc(T(" / 月", " / month")) : ""}${when}</li>`;
+  return `<li><b>${esc(v)}</b><span class="museum-eff">${esc(name)}${e.monthly ? esc(T(" / 月", " / month")) : ""}${when}</span></li>`;
 }
 
 function acquisitionHtml(s) {
@@ -198,8 +199,8 @@ function showExhibit(key, keepFocus = false) {
     <p class="museum-disclaimer">${esc(model
       ? T("非官方三维诠释：由游戏中 100×100 像素的标本图标自动生成，看不到的面不是官方设定。", "Unofficial 3D interpretation generated from the game's 100×100 px specimen icon; unseen surfaces are not canonical.")
       : T("尚无三维模型，显示原版图像。", "No 3D model yet — showing the original image."))}</p>
-    <div class="museum-text">
-      <p class="museum-eyebrow">${esc(label(a.types[s.type]))} · ${esc(label(a.rarities[s.rarity]))}</p>
+    <div class="museum-text rarity-${s.rarity}">
+      <p class="museum-eyebrow">${esc(label(a.types[s.type]))} · <span class="museum-rarity">${esc(label(a.rarities[s.rarity]))}</span></p>
       <h2>${esc(label(s.name))}</h2>
       <p class="museum-other-lang" lang="${lang() === "zh" ? "en" : "zh-CN"}">${esc(lang() === "zh" ? s.name.en : s.name.zh)}</p>
       <div class="museum-desc"><p>${gameText(raw(s.short), s)}</p><p>${gameText(raw(s.details), s)}</p></div>

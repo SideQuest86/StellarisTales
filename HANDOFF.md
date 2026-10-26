@@ -32,7 +32,7 @@ keyboard access, responsive layout, reduced motion; smooth on Windows using the 
 This section is the single source for version, status and test counts. Everything below "History" is dated
 evidence from earlier rounds and is not updated.
 
-- **Version:** v4.9.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
+- **Version:** v4.10.0 on `main` (release notes in `RELEASE`). **Live:** https://sidequest86.github.io/StellarisTales/
   (verification of the live build: "Live:" line at the end of this section).
 - **Content:** 1,388 stories, 8,668 readable documents; 258 Grand Archive specimens, each with an unofficial 3D model.
 - **Release gate:** `.github/workflows/pages.yml` runs `npm test`, the category audit, the build and then the browser
@@ -91,6 +91,10 @@ evidence from earlier rounds and is not updated.
   fonts (public/fonts, src/fonts.css, scripts/fonts/build-subsets.py --check before each release; docs/refine/round6/fonts.md);
   story-map redesign (full-size dialog, two-line nodes, merged duplicate link sets, legend, overview; map.md); phone and
   reader chrome (phone.md). Checks: node 108/108, smoke 15/15, verify-round5, verify-refine-reader, verify-a11y.
+  v4.10.0 (2026-10-26): reader journey (docs/refine/round6/reader.md: ruled choice list, --col measure, conditions via
+  reading.js describe() without placeholders, random groups bracketed with chances, duplicate continuation cards removed,
+  centred endings, .reader-trail line) and archive / museum / search (archive.md). Checks: font --check, node 109/109,
+  smoke 15/15, verify-round5, verify-refine-reader, verify-reader-v4, verify-a11y.
   The 2026-10-20 checkpoint below is resolved: Archive CI fixed (stories recompiled), v4.8.0 live.
 - Live: v4.9.0 (`654a79dc`), Publish + Archive CI green, verified live 2026-10-26: smoke 15/15 (one transient failure right after deploy, re-run clean), /fonts/*.woff2 served.
 - **CHECKPOINT 2026-10-20 07:50 UTC — round 5 paused at the weekly limit reset (user: "stop when the limit is reset").**

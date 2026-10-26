@@ -169,7 +169,7 @@ window.addEventListener('focus', applyMotion);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)applyMotion();});
 applyMotion();
 function categoryName(column) {
-  return lang === "en" ? CATEGORIES[column][2] : CATEGORIES[column][1];
+  return t(`cat.${CATEGORIES[column][0]}`); // the localised label the category bar uses ("Civilizations", not "CIVILIZATIONS")
 }
 // The category rail scrolls sideways when its tabs do not fit (phones, landscape): a fade at the clipped end says so
 // (.catalogue.fade-start / .fade-end), and the selected category is scrolled into the middle.
@@ -450,12 +450,12 @@ function sampleReaderMarkup() {
   const zh = "星海之间的旧档案在灯下缓缓展开，记录着航行、发现与抉择。研究人员逐页核对，把每一次远航的见闻整理成册。";
   const en = "Old records unfold under the lamp: voyages, discoveries and choices, checked page by page and bound into a volume.";
   const para = (s) => `<section><p>${esc(s)} <span class="game-name" tabindex="0" role="note" data-note="">${esc(T("我们的科学船", "our science ship"))}</span></p></section>`;
-  const button = (label) => `<div class="choice"><button class="choice-button" data-choice="0" aria-expanded="false"><span class="choice-symbol">◇</span><span>${esc(label)}</span><b>→</b></button><div class="choice-response" hidden></div></div>`;
+  const button = (label) => `<div class="choice"><button class="choice-button" data-choice="0" aria-expanded="false"><span class="choice-symbol" aria-hidden="true">◇</span><span>${esc(label)}</span><b aria-hidden="true">→</b></button><div class="choice-response" hidden></div></div>`;
   return `<article class="chapter-document" data-doc=""><div class="chapter-eyebrow"><span>${esc(T("故事开端", "Opening"))}</span></div>`
     + `<h1 id="reader-title" tabindex="-1">${esc(T("档案", "Archive"))}</h1>`
     + `${profileSummary(`<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(lang === "zh" ? en.slice(0, 40) : zh.slice(0, 12))}</p>`)}<div class="narrative">${para(T(zh, en))}${para(T(en, zh))}</div>`
     + `<section class="choices"><div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>${button(T(zh.slice(0, 18), en.slice(0, 50)))}${button(T(en.slice(0, 40), zh.slice(0, 14)))}</section>`
-    + `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div><button class="next-chapter"><span>${esc(T("档案", "Archive"))}</span><small>${esc(T("继续", "Continue"))} →</small></button></section>`
+    + `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div><button class="next-chapter"><span class="next-text"><span class="next-title">${esc(T("档案", "Archive"))}</span><small>${esc(T("继续", "Continue"))}</small></span><b aria-hidden="true">→</b></button></section>`
     + `<div class="chapter-end"><span class="reading-complete">${esc(T("选择一个回应", "Choose a response"))}</span><button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
 }
 const warmReader = $("#reader");
@@ -603,26 +603,25 @@ function delayText(delays) {
   const range = high > low ? `${Math.round(low)}–${Math.round(high)}` : `${Math.round(low)}`;
   return T(`约 ${range} 天后`, `after about ${range} days`);
 }
-function edgeCaption(e) {
-  const parts = [];
-  if (e.label) parts.push(prose(local(e.label)));
-  else if (e.kind === "random" && e.chance != null)
-    parts.push(T(`随机结果 · 基础约 ${Math.round(e.chance * 100)}%`, `Random outcome · base about ${Math.round(e.chance * 100)}%`) + (e.modified ? T("（受条件调整）", " (adjusted by conditions)") : ""));
-  else if (e.kind === "research") parts.push(T("研究完成后", "When the research completes"));
-  else if (e.kind === "project") parts.push(T("项目结束后", "When the project ends"));
-  else if (e.kind === "failure") parts.push(T("失败时", "On failure"));
-  else if (e.kind === "stage") parts.push(T("下一阶段", "Next stage"));
-  else if (e.kind === "entry") parts.push(T("开端", "Opening"));
+// What a continue card says besides its title: the base chance of a random outcome (a figure, not a sentence), a caption
+// of what is known about the way there (the label, the kind of link, a condition only when it has a real name, another
+// story), and the delay — kept apart so outcomes that share one say it once, on their group (listButtons).
+function edgeFacts(e) {
+  const notes = [];
+  const chance = e.chance != null ? Math.round(e.chance * 100) : null;
+  if (e.label) notes.push(prose(local(e.label)));
+  else if (e.kind === "random" && !e.group) notes.push(T("随机结果 · 基础概率", "Random outcome · base chance") + (e.modified ? T("，受条件调整", ", adjusted by conditions") : ""));
+  else if (e.kind === "research") notes.push(T("研究完成后", "When the research completes"));
+  else if (e.kind === "project") notes.push(T("项目结束后", "When the project ends"));
+  else if (e.kind === "failure") notes.push(T("失败时", "On failure"));
+  else if (e.kind === "stage") notes.push(T("下一阶段", "Next stage"));
+  else if (e.kind === "entry") notes.push(T("开端", "Opening"));
   if (!e.label && e.when) {
     const condition = e.when.map((w) => describe(w, lang, profileNames)).filter(Boolean).join(T("；", "; "));
-    if (condition) parts.push(T("条件：", "If: ") + condition);
+    if (condition) notes.push(T("条件：", "If: ") + condition);
   }
-  if (!e.label) {
-    const delay = delayText(e.delay);
-    if (delay) parts.push(delay);
-  }
-  if (e.story && e.story !== dossier.story.id) parts.push(T("进入另一则故事", "Leads into another story"));
-  return parts.join(" · ");
+  if (e.story && e.story !== dossier.story.id) notes.push(T("进入另一则故事", "Leads into another story"));
+  return { chance, modified: Boolean(e.modified), notes, delay: e.label ? "" : delayText(e.delay) };
 }
 // At an ending: the next story of the same archive row, so a finished route leads on instead of stopping.
 function endingNext(story) {
@@ -631,7 +630,7 @@ function endingNext(story) {
   const next = at >= 0 ? col.stories[at + 1] : null;
   if (!next) return "";
   const art = next.image ? `<img class="next-art" data-src="${asset(next.image)}" alt="" decoding="async">` : "";
-  return `<button class="next-chapter ending-next${art ? " has-art" : ""}" data-open="${esc(next.id)}">${art}<span>${esc(prose(local(next.title)))}</span><small>${esc(T("下一则故事", "Next story"))} →</small></button>`;
+  return `<button class="next-chapter ending-next${art ? " has-art" : ""}" data-open="${esc(next.id)}"><span class="next-text"><small>${esc(T("下一则故事", "Next story"))}</small><span class="next-title">${esc(prose(local(next.title)))}</span></span>${art}<b aria-hidden="true">→</b></button>`;
 }
 // The picture of the document a card leads to (or the other story's cover), when it differs from the current one.
 function edgeArt(e) {
@@ -639,26 +638,43 @@ function edgeArt(e) {
   const image = other ? storyById.get(e.story)?.image : docMap.get(e.target)?.image;
   return image && image !== chapter?.image ? `<img class="next-art" data-src="${asset(image)}" alt="" decoding="async">` : "";
 }
-function edgeButton(e) {
+// A continue card: title (what it leads to) over a caption, the chance of a random outcome as a figure, the picture of the
+// document, and an arrow (a diagonal one when it leaves for another story).
+function edgeButton(e, facts = edgeFacts(e), groupDelay = "") {
   const art = edgeArt(e);
-  return `<button class="next-chapter${art ? " has-art" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}>${art}<span>${esc(titleFor(e.target, e.story))}</span><small>${((c) => (c ? esc(c) + " " : ""))(edgeCaption(e))}→</small></button>`;
+  const cross = Boolean(e.story && e.story !== dossier.story.id);
+  const caption = [...facts.notes, ...(facts.delay && facts.delay !== groupDelay ? [facts.delay] : [])].join(" · ");
+  const chance = facts.chance == null ? ""
+    : `<i class="next-chance" title="${esc(T(`基础概率约 ${facts.chance}%`, `Base chance about ${facts.chance}%`) + (facts.modified ? T("，受条件调整", ", adjusted by conditions") : ""))}">${facts.chance}%</i>`;
+  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(titleFor(e.target, e.story))}</span>${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
 }
-function edgeButtons(edges) {
+// The edges that remain possible, one card per document, edges of one random group listed together.
+function edgeLists(edges) {
   const seen = new Set();
-  const unique = resolveEdges(edges, readingContext()).filter((e) => {
-    if (seen.has(e.target)) return false;
-    seen.add(e.target);
-    return true;
-  });
   const groups = new Map();
-  for (const e of unique) {
+  for (const e of resolveEdges(edges, readingContext())) {
+    if (seen.has(e.target)) continue;
+    seen.add(e.target);
     const key = e.group || `single:${e.target}`;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(e);
   }
-  return [...groups.values()].map((list) => list.length > 1
-    ? `<div class="exclusive-outcomes"><small>${esc(T("以下结果互斥，只会发生其一", "Only one of these outcomes happens"))}</small>${list.map(edgeButton).join("")}</div>`
-    : edgeButton(list[0])).join("");
+  return [...groups.values()];
+}
+// What makes two sets of cards the same set (a random group's own id differs from choice to choice).
+const listsSignature = (lists) => lists.map((list) => list.map((e) => `${e.target}:${e.chance ?? ""}:${(e.sets || []).join(" ")}`).join(",")).join(";");
+function listButtons(lists) {
+  return lists.map((list) => {
+    if (list.length === 1) return edgeButton(list[0]);
+    // Exclusive outcomes: one lead line (the delay they all share says it once there), then a ledger of the possibilities.
+    const facts = list.map(edgeFacts);
+    const delay = facts[0].delay && facts.every((f) => f.delay === facts[0].delay) ? facts[0].delay : "";
+    const lead = T("以下结果互斥，只会发生其一", "Only one of these outcomes happens") + (delay ? " · " + delay : "");
+    return `<div class="exclusive-outcomes${facts.some((f) => f.chance != null) ? " has-chance" : ""}" role="group" aria-label="${esc(lead)}"><small>${esc(lead)}</small>${list.map((e, i) => edgeButton(e, facts[i], delay)).join("")}</div>`;
+  }).join("");
+}
+function edgeButtons(edges) {
+  return listButtons(edgeLists(edges));
 }
 const visitedChapters = new Set();
 const flowSurface = new FlowSurface($("#flow-surface"));
@@ -772,15 +788,17 @@ function renderBody(r, ctx) {
   const passage = passages[passageIndex];
   let tabs = "";
   if (passages.length > 1) {
+    // A tab is named by its condition when that has a name and is its own; otherwise it is simply numbered.
+    const names = passages.map((p) => describe(p.when, lang, profileNames, { max: 2 }));
     tabs = `<div class="reading-tabs" role="group" aria-label="${esc(T("文本版本", "Text version"))}">${passages.map((p, i) => {
-      const label = describe(p.when, lang, profileNames) || T(`版本 ${i + 1}`, `Version ${i + 1}`);
+      const label = names[i] && names.indexOf(names[i]) === names.lastIndexOf(names[i]) ? names[i] : T(`版本 ${i + 1}`, `Version ${i + 1}`);
       return `<button data-passage="${i}" aria-pressed="${i === passageIndex}">${esc(label)}</button>`;
     }).join("")}</div>`;
   }
   const html = (passage?.paragraphs || []).map((para) => `<section><p>${para.parts.map((part) => {
     const text = paragraph(local(part.text));
     if (part.status !== null || !part.when) return text;
-    const label = describe(part.when, lang, profileNames);
+    const label = describe(part.when, lang, profileNames, { fallback: T("其他条件", "other conditions") });
     return `<span class="variant-piece"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(T("若：", "If: "))}${esc(label)}</button>${text}</span>`;
   }).join("")}</p></section>`).join("");
   return { html, tabs, passage };
@@ -871,7 +889,7 @@ function renderChapter(preservePosition = false) {
   if (chapter.ending && !nextEdges.length) {
     nextReading = `<div class="reading-ending"><strong>${esc(local(chapter.ending.label))}</strong><p>${esc(local(chapter.ending.note))}</p></div>${endingNext(story)}`;
   } else if (r.choices.length) {
-    nextReading = `<span class="reading-complete">${esc(T("选择一个回应", "Choose a response"))}</span>`;
+    nextReading = ""; // the "Your choices" heading above already says it
   } else if (!nextEdges.length) {
     nextReading = `<span class="reading-complete">${esc(T("这条路线到此结束", "This route ends here"))}</span>`;
   } else nextReading = "";
@@ -886,21 +904,36 @@ function renderChapter(preservePosition = false) {
     const ended=chapter.dialogue?.exits?.includes(trail.at(-1)?.choice);
     nextReading=`<span class="reading-complete" data-dialogue-status>${ended?T('对话已结束','Conversation complete'):T('继续对话','Continue the conversation')}</span>`;
   }
+  // Where each choice leads. A card the continuation below already offers is not repeated under the choice; and when every
+  // choice leads to the very same outcomes (event-arkship-65: 22 pilots, one race), they are listed once, in the
+  // continuation, instead of once per choice.
+  const outgoingOf = (c) => (c.next.length ? c.next : r.next.filter((e) => !c.terminal || e.sourceKind !== "stage"));
+  const continued = new Set(nextEdges.map((e) => e.target));
+  const ownLists = new Map(r.choices.map((c) => [c, edgeLists(outgoingOf(c).filter((e) => !continued.has(e.target)))]));
+  const first = r.choices.length > 1 ? listsSignature(ownLists.get(r.choices[0])) : "";
+  const shared = first && r.choices.every((c) => listsSignature(ownLists.get(c)) === first) ? ownLists.get(r.choices[0]) : [];
   const responseFor = (c) => {
     const dialogue = (c.responses || []).map(text => `<p class="dialogue-reply">${paragraph(local(text))}</p>`).join('');
     const tooltips = (c.tooltips || []).map(text => `<p class="choice-tooltip">${paragraph(local(text))}</p>`).join('');
-    const outgoing = c.next.length ? c.next : r.next.filter(e => !c.terminal || e.sourceKind !== 'stage');
-    if (outgoing.length) return dialogue + tooltips + edgeButtons(outgoing);
-    if (dialogue || tooltips) return dialogue + tooltips;
-    return c.terminal ? `<span class="reading-complete">${esc(T("这条分支到此结束", "This branch ends here"))}</span>` : nextReading || `<span class="reading-complete">${esc(T("这条分支到此结束", "This branch ends here"))}</span>`;
+    const cards = shared.length ? "" : listButtons(ownLists.get(c));
+    if (cards || dialogue || tooltips) return dialogue + tooltips + cards;
+    if (nextReading.includes("data-dialogue-status")) return nextReading;
+    // Nothing of its own to add: its continuation (or the ending) follows the choices.
+    return outgoingOf(c).length || chapter.ending ? "" : `<span class="reading-complete">${esc(T("这条分支到此结束", "This branch ends here"))}</span>`;
   };
+  // A condition is noted only when it can be named (describe returns "" otherwise).
   const choiceNote = (c) => {
     const notes = [];
-    if (c.visible === null && c.when) notes.push(T("仅在以下情形出现：", "Only when: ") + describe(c.when, lang, profileNames));
-    if (c.allowed === false) notes.push(T("不可选：", "Unavailable: ") + describe(c.allow, lang, profileNames));
-    else if (c.allowed === null && c.allow) notes.push(T("需要：", "Requires: ") + describe(c.allow, lang, profileNames));
+    const when = c.visible === null && c.when ? describe(c.when, lang, profileNames) : "";
+    if (when) notes.push(T("仅在以下情形出现：", "Only when: ") + when);
+    if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (describe(c.allow, lang, profileNames) ? T("：", ": ") + describe(c.allow, lang, profileNames) : ""));
+    else if (c.allowed === null && c.allow) {
+      const need = describe(c.allow, lang, profileNames);
+      if (need) notes.push(T("需要：", "Requires: ") + need);
+    }
     return notes.length ? `<small class="choice-condition">${esc(notes.join(" · "))}</small>` : "";
   };
+  const continuation = edgeButtons(nextEdges) + listButtons(shared);
   const body = renderBody(r, ctx);
   const sections = r.sections.filter((t, i, a) => local(t) && !r.texts.some((x) => local(x) === local(t)) && a.findIndex((v) => local(v) === local(t)) === i);
   const unreachable = chapter.unreachable ? `<aside class="review-note unreachable-note"><small>${esc(T("审阅结论 · 原版脚本中无法自然触发", "Review finding · not reachable in the shipped script"))}</small><p>${esc(local(chapter.unreachable))}</p></aside>` : "";
@@ -909,7 +942,7 @@ function renderChapter(preservePosition = false) {
   const alsoInHtml = alsoIn.length ? `<div class="also-in"><small>${esc(T("此篇章也出现在：", "This chapter also appears in:"))}</small>${alsoIn.map((id) => `<button data-open="${esc(id)}">${esc(prose(local(storyById.get(id).title)))}</button>`).join("")}</div>` : "";
   const readingTabs = chapter.readings?.length > 1 ? (chapter.readings.length <= 5 ? `<div class="reading-tabs" role="group" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<button data-reading="${i}" aria-pressed="${i === readingIndex}">${esc(prose(local(v.label)))}</button>`).join("")}</div>` : `<label class="reading-picker"><span>${esc(T("视角", "Perspective"))}</span><select id="reading-select" aria-label="${esc(T("文明视角", "Perspective"))}">${chapter.readings.map((v, i) => `<option value="${i}" ${i === readingIndex ? "selected" : ""}>${esc(prose(local(v.label)))}</option>`).join("")}</select></label>`) : "";
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}"><div class="chapter-eyebrow"><span>${esc(caption)}</span>${fromChip()}${trail.length > 1 ? `<button id="reading-back">${esc(T("← 上一步", "← Back"))}</button>` : ""}${trail.length > 1 ? `<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button>` : ""}</div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${profileSummary(/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] && !/\[[^\]]*\]|\$[^$]*\$/.test(r.title[lang === "zh" ? "en" : "zh"]) /* a title with a name the game fills in would read as a fragment ("WE, THE") */ ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : "")}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b>→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${nextEdges.length ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${edgeButtons(nextEdges)}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}">${trail.length > 1 ? `<div class="reader-trail"><button id="reading-back">${esc(T("← 上一步", "← Back"))}</button>${fromChip()}<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button></div>` : ""}<div class="chapter-eyebrow"><span>${esc(caption)}</span></div><h1 id="reader-title" tabindex="-1">${esc(prose(local(r.title)) || T("插曲", "Interlude"))}</h1>${profileSummary(/* [UI] other-language title as a quiet subtitle */ r.title?.[lang === "zh" ? "en" : "zh"] && r.title[lang === "zh" ? "en" : "zh"] !== r.title[lang] && !/\[[^\]]*\]|\$[^$]*\$/.test(r.title[lang === "zh" ? "en" : "zh"]) /* a title with a name the game fills in would read as a fragment ("WE, THE") */ ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(r.title[lang === "zh" ? "en" : "zh"].replace(/\[[^\]]*\]|§.|\$[^$]*\$/g, ""))}</p>` : "")}${readingTabs}${body.tabs}<div class="narrative">${body.html}${sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div>${notes}<section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol" aria-hidden="true">◇</span><span>${paragraph(local(c.label) || T("继续", "Continue"))}</span><b aria-hidden="true">→</b></button>${choiceNote(c)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${continuation ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${continuation}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div></article>`;
   showSpecimenLinks(r.id);
   showEffects(story, r.id, r.choices);
   const remembered=trail.at(-1);
@@ -951,9 +984,11 @@ function renderChapter(preservePosition = false) {
     const profileLabel=local(chapter.dialogue.profileLabel)||T('对话物种','Dialogue species');
     picker.innerHTML=`<span>${esc(profileLabel)}</span><select aria-label="${esc(profileLabel)}">${chapter.dialogue.responseProfiles.map((profile,i)=>`<option value="${i}" ${i===dialogueProfile?'selected':''}>${esc(local(profile.label))}</option>`).join('')}</select>`;
     document.querySelector('.narrative').before(picker);
-    if(chapter.dialogue.profileLabel){
+    // The note repeats the select's own word; it is only worth its line when that word is too long for the select to show.
+    const chosenLabel=local(chapter.dialogue.responseProfiles[dialogueProfile].label);
+    if(chapter.dialogue.profileLabel && chosenLabel.length>(lang==='zh'?18:36)){
       const contextNote=document.createElement('p');contextNote.className='dialogue-context-note';
-      contextNote.textContent=local(chapter.dialogue.responseProfiles[dialogueProfile].label);
+      contextNote.textContent=chosenLabel;
       picker.after(contextNote);
     }
     picker.querySelector('select').onchange=event=>{
@@ -1267,11 +1302,8 @@ document.addEventListener("click", (e) => {
     panel.hidden = !open;
     choice.setAttribute("aria-expanded", String(open));
     choice.closest(".choice").classList.toggle("chosen", open);
-    const dialogueStatus=document.querySelector('[data-dialogue-status]');
-    if(dialogueStatus){
-      const ended=open && chapter.dialogue?.exits?.includes(source.key);
-      dialogueStatus.textContent=ended?T('对话已结束','Conversation complete'):T('继续对话','Continue the conversation');
-    }
+    const ended=open && chapter.dialogue?.exits?.includes(source.key);
+    for(const dialogueStatus of document.querySelectorAll('[data-dialogue-status]'))dialogueStatus.textContent=ended?T('对话已结束','Conversation complete'):T('继续对话','Continue the conversation');
     flowSurface.update(dossier.story, dossier.chapters, chapter.id, visitedChapters, lang, prose, trail);
     return;
   }
@@ -1385,12 +1417,12 @@ async function showEffects(story, docId, choices) {
   end ? end.insertAdjacentHTML("beforebegin", block) : article.insertAdjacentHTML("beforeend", block);
   bindEffects(article);
 }
-// On the first chapter after crossing into another story: "← From <that story>", stepping back like Back.
+// On the first chapter after crossing into another story: "From <that story>" beside Back, stepping back like it.
 function fromChip() {
   const prev = trail.length > 1 && trail.at(-2).story !== trail.at(-1).story ? storyById.get(trail.at(-2).story) : null;
   if (!prev) return "";
   const title = prose(local(prev.title));
-  return `<button class="from-chip" id="from-story" type="button" title="${esc(title)}">${esc(T(`← 来自《${title}》`, `← From “${title}”`))}</button>`;
+  return `<button class="from-chip" id="from-story" type="button" title="${esc(title)}">${esc(T(`来自《${title}》`, `From “${title}”`))}</button>`;
 }
 // Specimens a story can award (museum/by-story.json): up to four icons on the archive panel, each opening its exhibit.
 let byStory = null;

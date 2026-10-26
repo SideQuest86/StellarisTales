@@ -27,12 +27,25 @@
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  padding: 22px var(--gutter, 40px) 8px;
+  padding: 26px var(--gutter, 40px) 10px;
 }
-.museum-head h1 { margin: 2px 0 6px; font: 600 clamp(26px, 2.6vw, 38px) / 1.2 var(--serif); }
-.museum-head h1 span { margin-left: 12px; font: 400 13px var(--mono); letter-spacing: 0.18em; color: var(--dim); text-transform: uppercase; }
-.museum-eyebrow { margin: 0; font: 11px var(--mono); letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; }
-.museum-concept { max-width: 760px; margin: 0; font: 14px/1.8 var(--serif); color: var(--ink-2); white-space: pre-line; }
+/* The name in both languages like a plaque: the page's language large, the other in a quiet serif (italic Latin, spaced Hanzi). */
+.museum-head h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 16px;
+  margin: 0 0 12px;
+  font: 600 clamp(28px, 2.6vw, 40px) / 1.2 var(--serif);
+  letter-spacing: 0.05em;
+  font-feature-settings: "palt";
+}
+:root:lang(en) .museum-head h1 { letter-spacing: -0.005em; }
+.museum-head h1 span { font: italic 400 clamp(16px, 1.3vw, 19px) / 1.2 var(--serif-en); letter-spacing: 0.01em; color: var(--dim); text-transform: none; }
+.museum-head h1 span:lang(zh-CN) { font: 400 clamp(15px, 1.2vw, 17px) / 1.2 var(--serif-zh); font-style: normal; letter-spacing: 0.3em; }
+.museum-eyebrow { margin: 0; font: 500 12px/1.4 var(--font-ui); letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; }
+.museum-concept { max-width: 36em; margin: 0; font: 15px/1.85 var(--serif); letter-spacing: 0.01em; color: var(--ink-2); white-space: pre-line; text-wrap: pretty; }
+:root:lang(en) .museum-concept { max-width: 40em; font-size: 16px; line-height: 1.6; letter-spacing: 0; }
 .museum-concept p { margin: 0; }
 .museum-close {
   flex: 0 0 auto;
@@ -45,28 +58,39 @@
   background: #0d222999;
 }
 .museum-close:hover, .museum-close:focus-visible { border-color: var(--gold); color: var(--gold); }
-.museum-tools { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding: 6px var(--gutter, 40px) 4px; }
-.museum-search-wrap { display: flex; align-items: center; gap: 8px; min-width: min(320px, 100%); border-bottom: 1px solid #68775a; }
-.museum-search-wrap span { font: 20px Georgia, serif; color: var(--gold); }
-.museum-search { flex: 1; min-width: 0; padding: 8px 0; border: 0; outline: 0; color: var(--ink); font: 15px var(--sans); background: transparent; }
-.museum-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.museum-chip { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-2); font: 13px var(--sans); background: #0b1d2399; }
-.museum-chip small { color: var(--dim); font: 11px var(--mono); }
-.museum-chip[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); background: #c2ab7218; }
-.museum-count { margin: 4px var(--gutter, 40px) 0; font: 12px var(--mono); color: var(--dim); }
+.museum-tools { display: flex; flex-wrap: wrap; gap: 4px 32px; align-items: center; padding: 12px var(--gutter, 40px) 2px; }
+.museum-search-wrap { display: flex; align-items: center; gap: 8px; min-width: min(300px, 100%); border-bottom: 1px solid var(--line-2); transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+/* The field draws no outline: its rule turns gold and thickens while the input has focus. */
+.museum-search-wrap:focus-within { border-bottom-color: var(--gold); box-shadow: 0 1px 0 var(--gold); }
+.museum-search-wrap span { font: 20px Georgia, serif; color: var(--gold-2); }
+.museum-search-wrap:focus-within span { color: var(--gold); }
+.museum-search { flex: 1; min-width: 0; padding: 8px 0; border: 0; outline: 0; color: var(--ink); font: 15px var(--font-ui); background: transparent; }
+.museum-search::placeholder { color: var(--dim); opacity: 1; }
+/* Filters read as the category bar does: quiet words, the chosen one gold and underlined, the size a small figure. */
+.museum-chips { display: flex; flex-wrap: wrap; gap: 0 20px; }
+.museum-chip { position: relative; min-height: 40px; padding: 6px 1px; border: 0; border-radius: 0; color: var(--ink-2); font: 13.5px/1.3 var(--font-ui); letter-spacing: 0.03em; background: none; transition: color 0.18s ease, box-shadow 0.18s ease; }
+.museum-chip:hover { color: var(--gold); }
+.museum-chip small { margin-left: 3px; color: var(--dim); font: 12px var(--font-ui); letter-spacing: 0.04em; font-variant-numeric: lining-nums tabular-nums; }
+.museum-chip[aria-pressed="true"] { color: var(--gold); box-shadow: inset 0 -1px 0 var(--gold); }
+.museum-chip[aria-pressed="true"] small { color: var(--gold-2); }
+/* A rarity chip's key: the hollow diamond of the pedestal frames, in the rarity's colour. */
+.museum-key { display: inline-block; width: 7px; height: 7px; margin: 0 8px 1px 0; border: 1.5px solid var(--rarity, #8fd8c6); vertical-align: middle; transform: rotate(45deg); }
+.museum-count { margin: 10px var(--gutter, 40px) 0; font: 500 12.5px var(--font-ui); letter-spacing: 0.08em; font-variant-numeric: lining-nums tabular-nums; color: var(--dim); }
 .museum-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
-  gap: 18px 14px;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 20px 14px;
   align-content: start;
   margin: 0;
-  padding: 14px var(--gutter, 40px) 40px;
+  padding: 14px var(--gutter, 40px) 48px;
   overflow-y: auto;
   list-style: none;
   scrollbar-width: thin;
   transition: padding-right 0.2s var(--ease-out, ease-out);
 }
 #museum.detail-open .museum-grid { padding-right: calc(min(560px, 46vw) + var(--gutter, 40px)); }
+/* The open exhibit covers the right of the room: the filter row keeps to the free part (its chips wrap rather than slide under it). */
+#museum.detail-open .museum-tools { padding-right: calc(min(560px, 46vw) + var(--gutter, 40px)); }
 /* Off-screen exhibits skip layout/paint (258 at once); padding/negative margin keep hover lift and focus ring unclipped. */
 .museum-grid > li { content-visibility: auto; contain-intrinsic-size: auto 136px auto 156px; padding: 5px; margin: -5px; }
 .museum-exhibit {
@@ -105,7 +129,8 @@
 .rarity-rare { --rarity: #6fb6ea; }
 .rarity-epic { --rarity: #b394ec; }
 .rarity-exceptional { --rarity: #e5c37a; }
-.museum-name { max-width: 100%; font: 13px/1.4 var(--serif); text-align: center; overflow-wrap: anywhere; }
+.museum-name { max-width: 100%; font: 13.5px/1.45 var(--serif); letter-spacing: 0.01em; font-feature-settings: "palt"; text-align: center; text-wrap: balance; overflow-wrap: anywhere; color: var(--ink-2); transition: color 0.2s ease; }
+.museum-exhibit:hover .museum-name, .museum-exhibit:focus-visible .museum-name, .museum-exhibit.active .museum-name { color: var(--ink); }
 /* Specimens met while reading (a chapter that awards them was opened): a small gold diamond, named in the aria-label. */
 .museum-exhibit.met::after,
 .museum-chip-met i { content: ""; width: 6px; height: 6px; background: var(--gold, #c9b07a); transform: rotate(45deg); opacity: 0.85; }
@@ -125,9 +150,9 @@
   bottom: 0;
   width: min(560px, 46vw);
   overflow-y: auto;
-  padding: 18px 26px 40px;
+  padding: 20px 30px 56px;
   border-left: 1px solid var(--line);
-  background: linear-gradient(90deg, #08151aee, #08151afa 30%);
+  background: linear-gradient(90deg, #08151aee, var(--bg) 30%); /* opaque from 30 %: the museum's own × beneath must not show through */
   animation: museum-in 0.2s var(--ease-out, ease-out);
 }
 @keyframes museum-in { from { opacity: 0; transform: translate3d(24px, 0, 0); } }
@@ -137,7 +162,7 @@
   display: grid;
   place-items: center;
   height: min(380px, 42vh);
-  margin: 6px 0 10px;
+  margin: 8px 0 0;
   border: 1px solid #c2ab7230;
   background: radial-gradient(ellipse at 50% 70%, color-mix(in srgb, var(--rarity) 22%, transparent) 0%, transparent 62%), #061114;
 }
@@ -152,24 +177,43 @@
 .museum-view-toggle button { padding: 3px 9px; border: 1px solid var(--line); border-radius: 3px; color: var(--ink-2); font: 12px var(--sans); background: #08151acc; }
 .museum-view-toggle button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
 .museum-view-toggle [data-reset-view] { margin-left: 6px; }
-.museum-disclaimer { margin: 0 0 12px; font: 11.5px/1.6 var(--sans); color: var(--dim); }
-.museum-text h2 { margin: 4px 0 0; font: 600 26px/1.3 var(--serif); }
+/* Exhibit, top to bottom: the stage and its caption (the 3D note), then a gap, then the text in one rhythm:
+   eyebrow, name, other-language name, description, and the ruled sections (effects, acquisition, sources). */
+.museum-disclaimer { margin: 8px 0 0; font: 12px/1.6 var(--font-ui); letter-spacing: 0.02em; color: var(--dim); }
+.museum-text { margin-top: 28px; }
+/* Type and rarity: the rarity takes the colour of its pedestal frame. */
+.museum-eyebrow .museum-rarity { color: var(--rarity, var(--gold)); }
+.museum-text h2 { margin: 10px 0 2px; font: 600 clamp(26px, 2.1vw, 31px) / 1.25 var(--serif); letter-spacing: 0.03em; font-feature-settings: "palt"; text-wrap: balance; }
+:root:lang(en) .museum-text h2 { letter-spacing: -0.005em; line-height: 1.2; }
 /* The other language's name, like a museum label's second line: quiet italic serif, not code. */
-.museum-other-lang { margin: 0 0 12px; font: italic 15px/1.4 var(--serif-en); letter-spacing: 0.01em; color: var(--dim); }
-.museum-other-lang:lang(zh-CN) { font: 14px/1.5 var(--serif-zh); font-style: normal; letter-spacing: 0.08em; }
-.museum-desc p { margin: 0 0 10px; font: 16px/1.85 var(--serif); color: #d4e0da; }
+.museum-other-lang { margin: 0 0 22px; font: italic 15.5px/1.4 var(--serif-en); letter-spacing: 0.01em; color: var(--dim); }
+.museum-other-lang:lang(zh-CN) { font: 14.5px/1.5 var(--serif-zh); font-style: normal; letter-spacing: 0.1em; }
+/* The first paragraph is the game's one-line description (a standfirst), the next the longer text; set like the reader's body. */
+.museum-desc p { margin: 0 0 0.75em; font: 15.5px/1.95 var(--serif); letter-spacing: 0.02em; color: #d4e0da; text-align: justify; overflow-wrap: anywhere; line-break: strict; text-spacing-trim: space-first; hanging-punctuation: allow-end; }
+.museum-desc p:first-child { margin-bottom: 1em; font-size: 17px; line-height: 1.8; color: var(--ink); }
+.museum-desc p:empty { display: none; }
+:root:lang(en) .museum-desc p { font-size: 16.5px; line-height: 1.62; letter-spacing: 0; text-align: start; overflow-wrap: break-word; hyphens: auto; text-wrap: pretty; font-variant-numeric: oldstyle-nums proportional-nums; }
+:root:lang(en) .museum-desc p:first-child { font-size: 18px; line-height: 1.5; }
 .museum-placeholder { border-bottom: 1px dotted var(--gold); color: var(--gold); }
-.museum-text h3 { margin: 18px 0 6px; font: 500 12px var(--mono); letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; }
-.museum-note { margin: 0 0 8px; font: 12.5px/1.7 var(--sans); color: var(--dim); }
+/* Section labels follow the reader's ruled headings: gold small caps, a hairline running on to the edge. */
+.museum-text h3 { display: flex; align-items: center; gap: 14px; margin: 32px 0 8px; font: 500 12px/1.4 var(--font-ui); letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; }
+.museum-text h3::after { content: ""; flex: 1; height: 1px; background: var(--line-2); }
+.museum-note { margin: 0 0 4px; font: 12.5px/1.7 var(--font-ui); letter-spacing: 0.02em; color: var(--dim); }
 .museum-effects, .museum-acq { margin: 0; padding: 0; list-style: none; }
-.museum-effects li { padding: 6px 0; border-bottom: 1px solid #2d454966; font: 14px/1.6 var(--sans); }
-.museum-effects b { color: #9fe0b8; font-weight: 500; }
-.museum-cond { display: block; font-size: 12px; color: var(--gold); }
-.museum-acq li { padding: 5px 0; font: 14px/1.6 var(--serif); }
-.museum-acq small { display: inline-block; min-width: 84px; font: 11px var(--mono); color: var(--dim); }
-.museum-acq a { color: var(--ink); border-bottom: 1px solid #c2ab7266; text-decoration: none; }
-.museum-acq a:hover, .museum-acq a:focus-visible { color: var(--gold); }
-.museum-sources { margin-top: 18px; font: 12px/1.7 var(--mono); color: var(--dim); }
+/* Effects as a small table: the figure right-aligned in its own column, the name and its condition beside it. */
+.museum-effects li { display: grid; grid-template-columns: 5.6em 1fr; column-gap: 14px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #2d454980; font: 14.5px/1.6 var(--font-ui); }
+.museum-effects b { text-align: right; color: #9fe0b8; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; }
+.museum-eff { min-width: 0; overflow-wrap: anywhere; }
+.museum-cond { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.55; color: var(--gold-2); }
+.museum-acq li { display: grid; grid-template-columns: 6.5em 1fr; column-gap: 14px; align-items: baseline; padding: 8px 0; font: 15px/1.6 var(--serif); }
+.museum-acq small { font: 12px/1.6 var(--font-ui); letter-spacing: 0.06em; color: var(--dim); }
+:root:lang(en) .museum-acq li { grid-template-columns: 8.6em 1fr; }
+:root:lang(en) .museum-acq small { letter-spacing: 0.03em; }
+.museum-acq a { justify-self: start; color: var(--ink); border-bottom: 1px solid #c2ab7266; text-decoration: none; }
+.museum-acq a:hover, .museum-acq a:focus-visible { color: var(--gold); border-bottom-color: var(--gold); }
+.museum-sources { margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--line); font: 12px/1.7 var(--mono); color: var(--dim); }
+.museum-sources summary { min-height: 28px; cursor: pointer; font: 12px/1.7 var(--font-ui); letter-spacing: 0.04em; }
+.museum-sources p { margin: 6px 0 0; overflow-wrap: anywhere; }
 .museum-sources a { color: var(--teal, #6fd6c3); }
 body.museum-open #archive-hud, body.museum-open #categories { visibility: hidden; }
 @media (max-width: 760px) {
@@ -184,24 +228,33 @@ body.museum-open #archive-hud, body.museum-open #categories { visibility: hidden
   .museum-chips { flex: 0 0 calc(100% + 32px); flex-wrap: nowrap; margin: 0 -16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
   .museum-chips::-webkit-scrollbar { display: none; }
   .museum-chips::after { content: ""; flex: 0 0 20px; } /* the last chip scrolls clear of the fade */
-  .museum-chip { flex: none; min-height: 36px; padding: 5px 12px; }
+  .museum-chip { flex: none; min-height: 40px; padding: 6px 2px; }
   .museum-chip small { font-size: 12px; }
+  .museum-head h1 { gap: 0 12px; }
   .museum-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 14px 8px; padding: 10px 16px 30px; }
-  #museum.detail-open .museum-grid { padding-right: 16px; }
+  #museum.detail-open .museum-grid, #museum.detail-open .museum-tools { padding-right: 16px; }
   .museum-name { font-size: 14px; }
   /* The exhibit covers the whole museum: solid, so the grid never shows through the text. */
-  .museum-detail { width: 100%; border-left: 0; padding: 14px 16px 30px; background: var(--bg); }
+  .museum-detail { width: 100%; border-left: 0; padding: 14px 16px 44px; background: var(--bg); }
   .museum-detail-close { top: 10px; right: 12px; }
   .museum-stage { height: 300px; }
+  .museum-text { margin-top: 22px; }
   .museum-eyebrow { font-size: 12px; }
   .museum-disclaimer { font-size: 12.5px; }
+  .museum-desc p { font-size: 16px; }
+  .museum-desc p:first-child { font-size: 17px; }
+  :root:lang(en) .museum-desc p { font-size: 16.5px; }
+  :root:lang(en) .museum-desc p:first-child { font-size: 17.5px; }
+  .museum-effects li { grid-template-columns: 4.8em 1fr; column-gap: 12px; }
+  .museum-acq li { grid-template-columns: 5.6em 1fr; column-gap: 12px; }
   .museum-acq small { font-size: 12px; }
 }
 /* Landscape phones: the head, search and chips become two slim lines so the grid keeps most of the 390 px. */
 @media (max-height: 520px) {
   .museum-head { align-items: center; padding: 6px 16px 0; }
   .museum-head h1 { margin: 0; font-size: 21px; line-height: 1.2; }
-  .museum-head h1 span { margin-left: 10px; font-size: 11px; }
+  .museum-head h1 { gap: 0 10px; }
+  .museum-head h1 span, .museum-head h1 span:lang(zh-CN) { font-size: 13px; }
   .museum-concept { display: none; }
   .museum-close { width: 36px; height: 36px; font-size: 20px; }
   .museum-tools { flex-wrap: nowrap; gap: 10px 14px; padding: 4px 16px; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
@@ -210,7 +263,8 @@ body.museum-open #archive-hud, body.museum-open #categories { visibility: hidden
   .museum-search-wrap { flex: 0 0 210px; min-width: 0; }
   .museum-search { padding: 4px 0; }
   .museum-chips { flex: none; flex-wrap: nowrap; }
-  .museum-chip { flex: none; min-height: 32px; padding: 3px 11px; }
+  .museum-chip { flex: none; min-height: 32px; padding: 3px 2px; }
+  #museum.detail-open .museum-tools { padding-right: 16px; }
   .museum-count { margin: 0; padding: 0 16px; line-height: 1.5; }
   .museum-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px 10px; padding: 6px 16px 20px; }
   .museum-detail { padding: 10px 20px 20px; }

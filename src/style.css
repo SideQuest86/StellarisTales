@@ -44,6 +44,7 @@
   --serif: var(--font-body);
   /* Reading measure: 60-75 characters EN, 32-40 CJK characters; line heights by language. */
   --measure: 36em;
+  --col: 684px; /* the reader column: the measure at the body size (19px), so choices, cards and rules share the text's edges */
   --lh-body: 1.9;
   --text-body: 19px;
   --text-ui: 13px;
@@ -74,6 +75,7 @@
   --font-body: var(--serif-en);
   --serif: var(--serif-en);
   --measure: 29em; /* Newsreader averages 0.41em per character (measured): about 70 characters */
+  --col: 552px;
   --lh-body: 1.64;
 }
 * {
@@ -152,9 +154,9 @@ input {
   padding: 0 var(--gutter);
   display: flex;
   align-items: center;
-  gap: clamp(16px, 2.4vw, 40px);
+  gap: clamp(12px, 1.7vw, 36px);
   pointer-events: none;
-  background: linear-gradient(180deg, #08151ae6 0%, #08151a99 55%, #08151a00 100%);
+  background: linear-gradient(180deg, #08151aeb 0%, #08151ac2 58%, #08151a00 100%);
 }
 .masthead > * {
   pointer-events: auto;
@@ -177,11 +179,12 @@ input {
   white-space: nowrap;
 }
 .catalogue {
+  --tab-pad: clamp(3px, 0.45vw, 8px);
   flex: 1;
   min-width: 0;
   display: flex;
   justify-content: safe center;
-  gap: clamp(4px, 1.1vw, 18px);
+  gap: clamp(0px, 0.4vw, 8px);
   overflow-x: auto;
   scrollbar-width: none;
   overscroll-behavior-x: contain;
@@ -208,7 +211,7 @@ input {
   grid-template-columns: auto auto;
   align-items: baseline;
   column-gap: 7px;
-  padding: 8px 6px 10px;
+  padding: 8px var(--tab-pad) 10px;
   min-height: 48px;
   white-space: nowrap;
   color: #a9bdb7;
@@ -219,21 +222,26 @@ input {
   color: var(--faint);
 }
 .catalogue button > span {
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  font-size: clamp(12px, 0.93vw, 13px);
+  letter-spacing: 0.045em;
 }
+:root:lang(en) .catalogue button > span {
+  letter-spacing: 0.015em;
+}
+/* The size of the category: a quiet tabular figure under its name, not a second label in code type. */
 .catalogue button > span em {
   display: block;
-  font: normal 10px var(--mono);
-  color: var(--faint);
-  letter-spacing: 0.08em;
-  margin-top: 3px;
+  margin-top: 4px;
+  font: normal 11px/1 var(--font-ui);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: #9bb3ae; /* between --dim and --ink-2: the figures sit on the busiest part of the picture */
+  letter-spacing: 0.06em;
 }
 .catalogue button::after {
   content: "";
   position: absolute;
-  left: 6px;
-  right: 6px;
+  left: var(--tab-pad);
+  right: var(--tab-pad);
   bottom: 4px;
   height: 1px;
   background: var(--gold);
@@ -255,11 +263,26 @@ input {
   grid-template-columns: auto auto;
   column-gap: 6px;
   align-items: center;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  margin-left: clamp(2px, 0.5vw, 8px);
+  font-size: clamp(12px, 0.93vw, 13px);
+  letter-spacing: 0.045em;
+}
+/* A hairline sets the museum (a place) apart from the categories (shelves). */
+.catalogue .catalogue-museum::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--tab-pad) * -1 - 4px);
+  top: 50%;
+  width: 1px;
+  height: 18px;
+  background: var(--line-2);
+  transform: translateY(-50%);
 }
 .catalogue .catalogue-museum > span:last-child {
-  font-size: 13px;
+  font-size: clamp(12px, 0.93vw, 13px);
+}
+:root:lang(en) .catalogue .catalogue-museum {
+  letter-spacing: 0.015em;
 }
 .header-actions {
   display: flex;
@@ -339,9 +362,15 @@ input {
   pointer-events: none !important;
   transform: translate3d(0, 14px, 0);
 }
+/* The selection is one column: eyebrow, title, excerpt, specimens, "open" row and the saved-reading row share one measure
+   (--sel-measure) and one left edge (--sel-left), which the category arrows below also take. */
+.archive-hud {
+  --sel-left: 57%;
+  --sel-measure: 27.5rem;
+}
 .selection {
   position: absolute;
-  left: 57%;
+  left: var(--sel-left);
   right: var(--gutter);
   top: 38%;
   max-width: 560px;
@@ -349,20 +378,27 @@ input {
 .selection::before {
   content: "";
   position: absolute;
-  inset: -40px -36px;
+  inset: -56px -56px -44px -64px;
   z-index: -1;
-  background: radial-gradient(closest-side, #061216cc, #06121600);
+  background: radial-gradient(closest-side, #061216e0 0%, #061216ad 58%, #06121600 100%);
   pointer-events: none;
 }
 .selection-eyebrow {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  font: 500 12px/1.6 var(--font-ui);
+  letter-spacing: 0.14em;
+  font-variant-numeric: lining-nums tabular-nums;
   color: var(--gold);
 }
+:root:lang(en) #category-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
 .selection-eyebrow i {
+  align-self: center;
   width: 3px;
   height: 3px;
   border-radius: 50%;
@@ -370,21 +406,31 @@ input {
 }
 .selection-eyebrow #chapter-count,
 .selection-eyebrow #read-count {
+  font-weight: 400;
   color: var(--dim);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
-/* Number keys 1–9 pick a choice / continue card (app.js readerActions); the key shows on hover or keyboard focus. */
+/* What has been read is progress, not a count: the teal accent separates it from the gold category and the dim size. */
+.selection-eyebrow #read-count {
+  color: var(--teal);
+}
+/* Number keys 1–9 pick a choice / continue card (app.js readerActions); the key shows on hover or keyboard focus,
+   in the place of the card's arrow. */
 @media (hover: hover) and (pointer: fine) {
   .chapter-document :is(.choice-button, .next-chapter, .reading-next)[data-key]:is(:hover, :focus-visible)::after {
     content: attr(data-key);
     position: absolute;
-    top: -8px;
-    left: 10px;
-    padding: 0 5px;
-    font: 10px/16px var(--mono);
+    top: 50%;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    transform: translateY(-50%);
+    text-align: center;
+    font: 11px/20px var(--mono);
     color: var(--gold);
     background: var(--bg, #0b1a1f);
     border: 1px solid #c9b07a66;
+    border-radius: 3px;
     pointer-events: none;
   }
 }
@@ -396,13 +442,17 @@ input {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: -8px 0 18px;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--dim);
+  max-width: var(--sel-measure);
+  margin: 0 0 20px;
+  font: 500 12px var(--font-ui);
+  letter-spacing: 0.1em;
+  color: #9bb3ae;
+}
+:root:lang(en) .story-specimens > span {
+  text-transform: uppercase;
 }
 .story-specimens span {
-  margin-right: 4px;
+  margin-right: 6px;
 }
 .story-specimen {
   display: grid;
@@ -433,11 +483,11 @@ input {
 @media (max-height: 520px) and (min-width: 701px) {
   .story-specimens { display: none; }
 }
-/* "← From <story>" on the first chapter after crossing into another story (app.js fromChip). */
+/* "From <story>" on the first chapter after crossing into another story (app.js fromChip), beside Back in .reader-trail. */
 .from-chip {
-  min-height: 0;
-  max-width: 16rem;
-  margin-left: 12px;
+  flex: 0 1 auto;
+  min-width: 0;
+  min-height: 32px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -472,39 +522,61 @@ input {
   border-bottom-color: var(--gold);
 }
 #selected-title {
-  margin: 16px 0 14px;
-  font: 600 clamp(28px, 2.7vw, 44px) / 1.32 var(--serif);
-  letter-spacing: 0.04em;
+  margin: 14px 0 16px;
+  font: 600 clamp(28px, 2.7vw, 44px) / 1.3 var(--serif);
+  letter-spacing: 0.035em;
+  font-feature-settings: "palt"; /* proportional CJK punctuation ("合成女王：塞塔娜") */
   text-wrap: balance;
   overflow-wrap: anywhere;
   text-shadow: 0 2px 14px #031014;
 }
 :root:lang(en) #selected-title {
-  letter-spacing: 0;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
   font-weight: 600;
 }
 #selected-excerpt {
-  margin: 0 0 22px;
-  max-width: 470px;
-  font: 14px/1.85 var(--serif);
+  margin: 0 0 24px;
+  max-width: var(--sel-measure);
+  font: 15px/1.85 var(--serif);
+  letter-spacing: 0.01em;
   color: var(--ink-2);
+  line-break: strict;
+  text-wrap: pretty;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-shadow: 0 1px 10px #031014;
 }
+:root:lang(en) #selected-excerpt {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+/* Tall screens have room for the teaser's third line. */
+@media (min-height: 860px) and (min-width: 701px) {
+  #selected-excerpt {
+    -webkit-line-clamp: 3;
+  }
+}
+/* The one primary control of the panel: a ruled row whose rule and wash brighten on hover. */
 .access {
-  width: min(100%, 400px);
+  width: min(100%, var(--sel-measure));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 2px;
-  border-top: 1px solid #c9b07a88;
-  border-bottom: 1px solid #c9b07a33;
+  padding: 15px 2px 15px 0;
+  border-top: 1px solid #d8bb8499;
+  border-bottom: 1px solid #d8bb8433;
   color: var(--gold);
-  font-size: 15px;
-  letter-spacing: 0.08em;
+  font: 500 15px/1.4 var(--font-ui);
+  letter-spacing: 0.1em;
+  transition: border-color 0.2s var(--ease-out), background-color 0.2s var(--ease-out), color 0.18s;
+}
+.access:hover {
+  border-top-color: var(--gold);
+  background: linear-gradient(90deg, #d8bb8414, #d8bb8400 75%);
 }
 .access span[aria-hidden] {
   font-size: 20px;
@@ -515,9 +587,10 @@ input {
 }
 .navigation {
   position: absolute;
-  left: var(--gutter);
-  right: var(--gutter);
+  left: 0;
+  right: 0;
   bottom: calc(var(--player) + 28px);
+  padding: 0 var(--gutter);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -530,16 +603,19 @@ input {
 .row-counter {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  margin-right: 18px;
+  gap: 8px;
+  margin-right: 16px;
 }
 .row-counter b {
-  font: 300 46px/1 var(--sans);
-  font-variant-numeric: tabular-nums;
+  font: 300 46px/1 var(--font-ui);
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: 0.02em;
 }
 .row-counter span {
-  font: 12px var(--mono);
-  color: var(--dim);
+  font: 500 12px var(--font-ui);
+  letter-spacing: 0.08em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: #9bb3ae;
 }
 .row-navigation button,
 .lane-navigation button {
@@ -547,17 +623,45 @@ input {
   font-size: 22px;
   color: var(--gold);
 }
+/* The category arrows start where the selection's text starts (the arrow glyph sits 11 px inside its 44 px button). */
 .lane-navigation {
+  position: absolute;
+  left: var(--sel-left);
+  bottom: 0;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-right: 20%;
+  margin-left: -11px;
   font-size: 12px;
   letter-spacing: 0.08em;
   color: var(--dim);
 }
 .archive-count {
   display: none;
+}
+/* Big screens: the same column, set a size larger and a little wider. */
+@media (min-width: 1680px) and (min-height: 940px) {
+  .archive-hud {
+    --sel-measure: 31rem;
+  }
+  .selection-eyebrow {
+    font-size: 13px;
+  }
+  #selected-excerpt {
+    font-size: 16px;
+  }
+  :root:lang(en) #selected-excerpt {
+    font-size: 17.5px;
+  }
+  .access {
+    font-size: 16px;
+  }
+}
+/* Mid-height screens (768 p laptops): the column starts a little higher, so its foot stays clear of the category arrows. */
+@media (min-height: 761px) and (max-height: 859px) and (min-width: 701px) {
+  .selection {
+    top: 31%;
+  }
 }
 
 /* ------------------------------------------------------------ reader */
@@ -580,10 +684,19 @@ input {
 #reader:has(#flow-surface.card-ready) .reader-left {
   opacity: 1;
 }
+/* A soft dark pool under the caption: the archive's shelves behind it no longer cut across the title. */
+.reader-left::before {
+  content: "";
+  position: absolute;
+  inset: -24px -64px -20px -30px;
+  z-index: -1;
+  background: radial-gradient(closest-side, #061216f2 0%, #061216e0 58%, #06121600 100%);
+  pointer-events: none;
+}
 .reader-left h2,
 .reader-left #dossier-title {
   margin: 0 0 4px;
-  font: 600 18px/1.35 var(--serif);
+  font: 600 19px/1.35 var(--serif);
   letter-spacing: 0.04em;
   color: var(--ink);
   text-shadow: 0 2px 12px #031014;
@@ -600,7 +713,8 @@ input {
   right: 0;
   bottom: 0;
   width: 50%;
-  padding: calc(var(--masthead) - 8px) clamp(24px, 5vw, 96px) 40px clamp(24px, 4vw, 72px);
+  /* The reading column (--col) sits centred in the right half when there is room, and otherwise keeps its side margins. */
+  padding: calc(var(--masthead) - 8px) max(clamp(24px, 5vw, 96px), calc((50vw - var(--col)) / 2)) 40px max(clamp(24px, 4vw, 72px), calc((50vw - var(--col)) / 2));
   overflow-y: auto;
   overscroll-behavior: contain;
   pointer-events: auto;
@@ -616,10 +730,19 @@ input {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  max-width: 680px;
+  max-width: var(--col);
   min-height: 56px;
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(180deg, var(--bg) 70%, #08151ae6);
+  background: var(--bg);
+}
+/* Text scrolling up under the bar fades out below its rule instead of showing through the bar. */
+.reader-toolbar::after {
+  content: "";
+  position: absolute;
+  inset: calc(100% + 1px) 0 auto;
+  height: 14px;
+  background: linear-gradient(var(--bg), #08151a00);
+  pointer-events: none;
 }
 /* The column's top padding sits above the sticky toolbar: mask it so scrolled text never shows behind the bar. */
 .reader-toolbar::before {
@@ -643,7 +766,7 @@ input {
   display: none;
 }
 #reading-content {
-  max-width: 680px;
+  max-width: var(--col);
 }
 #reading-content .narrative p,
 #reading-content .dialogue-reply {
@@ -653,22 +776,47 @@ input {
   display: none;
 }
 .chapter-document {
-  padding: 34px 0 24px;
+  position: relative;
+  padding: 38px 0 24px;
 }
-.chapter-eyebrow {
+/* Where the reader came from: Back, the story it crossed from (if any) and Start over, in the band above the eyebrow that
+   every chapter leaves free — so the title does not move between the first chapter and the next. */
+.reader-trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  color: var(--gold);
-}
-.chapter-eyebrow button {
+  gap: 4px 18px;
   min-height: 32px;
   font-size: 12px;
   letter-spacing: 0.04em;
+}
+.reader-trail button {
+  min-height: 32px;
+  padding: 0;
+  font-size: 12px;
+  letter-spacing: inherit;
+  white-space: nowrap;
   color: var(--dim);
+}
+.reader-trail #reading-back {
+  color: var(--ink-2);
+}
+.reader-trail .reading-restart {
+  margin-left: auto;
+  opacity: 1;
+}
+.reader-trail button:hover,
+.reader-trail button:focus-visible {
+  color: var(--gold);
+}
+.chapter-eyebrow {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.14em;
+  color: var(--gold);
 }
 #reader-title {
   margin: 18px 0 6px;
@@ -751,11 +899,12 @@ input {
 :root:lang(en) .pb {
   height: 0.6em;
 }
+/* What a character says in answer to a choice: the game's own text, set like the story and marked by a quiet rule. */
 .dialogue-reply {
-  margin: 16px 0;
-  padding-left: 16px;
+  margin: 4px 0 14px;
+  padding-left: 14px;
   border-left: 2px solid #c4ad7a66;
-  font: 400 18px/1.85 var(--serif);
+  font: 400 17.5px/1.85 var(--serif);
   color: var(--ink);
 }
 :root:lang(en) .dialogue-reply {
@@ -768,56 +917,74 @@ input {
   color: var(--dim);
   overflow-wrap: anywhere;
 }
+/* Text versions / perspectives: a row of words, the open one underlined — not a row of buttons. */
 .reading-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 0 22px;
   margin: 0 0 var(--s-5);
 }
 .reading-tabs button {
-  min-height: 38px;
-  padding: 6px 12px;
-  font-size: 13px;
-  line-height: 1.4;
+  min-height: 40px;
+  padding: 4px 0;
+  font: 13px/1.4 var(--sans);
+  letter-spacing: 0.02em;
   color: #95ada6;
-  border: 1px solid transparent;
+  text-decoration: underline transparent 1px;
+  text-underline-offset: 7px;
+  transition: color 0.18s, text-decoration-color 0.18s;
 }
 .reading-tabs button[aria-pressed="true"] {
   color: var(--gold);
-  border-color: #8c815b;
-  background: #c4b07b0b;
+  text-decoration-color: var(--gold-2);
 }
+/* A setting that changes the text (response perspective, earlier events…): a small label and a gold word with an
+   underline and a caret, side by side with its neighbour — not a form control on a ruled row. */
 .reading-picker {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px 16px;
-  margin: 0 0 24px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
-  font-size: 13px;
+  gap: 2px 12px;
+  margin: 0 28px 18px 0;
+  vertical-align: top;
+  font: 12.5px/1.4 var(--sans);
+  letter-spacing: 0.04em;
   color: var(--dim);
 }
+.chapter-document > .reading-picker {
+  margin-top: 16px; /* the same step as under the head's other rows, whichever picker comes first */
+}
 .reading-picker select {
+  appearance: none;
+  -webkit-appearance: none;
   max-width: 100%;
-  min-height: 42px;
-  padding: 8px 12px;
+  min-height: 40px;
+  padding: 6px 24px 6px 2px;
+  border: 0;
+  border-bottom: 1px solid #b99b6266;
+  border-radius: 0;
+  font: 500 14px/1.4 var(--sans);
   color: var(--gold);
-  background: #0f2523;
-  border: 1px solid #6d7153;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23b99b62' stroke-width='1.4'/%3E%3C/svg%3E") no-repeat right 4px center / 10px 6px;
+  cursor: pointer;
+  transition: border-color 0.18s;
+}
+.reading-picker select:hover {
+  border-bottom-color: var(--gold);
 }
 .reading-picker option {
   background: #0f2523;
   color: var(--ink);
 }
+/* "Your choices" / "The story continues": a quiet label whose rule fades out like a line drawn with a dry pen. */
 .section-heading {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: var(--s-6) 0 var(--s-3);
+  margin: var(--s-6) 0 var(--s-2);
   font-size: 12px;
   letter-spacing: 0.16em;
-  color: var(--gold);
+  color: var(--gold-2);
 }
 :root:lang(en) .section-heading {
   text-transform: uppercase;
@@ -826,90 +993,161 @@ input {
 .section-heading i {
   flex: 1;
   height: 1px;
-  background: var(--line-2);
+  background: linear-gradient(90deg, var(--line-2), #3d5a5c00);
 }
+/* Choices are a ruled list in the text's own measure, not a stack of boxes: a diamond, the option, an arrow. The row's
+   wash reaches 10 px past the rules so the words stay on the text's edge. The chosen one fills its diamond and opens its
+   answer underneath, indented to the option's words (--mark). */
 .choices {
+  --mark: 32px;
   counter-reset: choice;
 }
 .choice {
-  margin: var(--s-3) 0;
-  border: 1px solid #3c574f;
-  background: #11292733;
-  transition: border-color 0.2s;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  transition: background-color 0.25s;
 }
-.choice:hover {
-  border-color: #6f8a73;
+.choice:last-child {
+  border-bottom: 1px solid var(--line);
 }
 .choice-button {
-  width: 100%;
+  width: calc(100% + 20px);
+  margin: 0 -10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
-  padding: 15px 18px;
+  padding: 14px 10px;
   text-align: left;
   font: 400 17px/1.75 var(--serif);
+  transition: color 0.18s, background-color 0.18s;
+}
+.choice-button:not([aria-disabled="true"]):hover {
+  background: #c4b07b0d;
+}
+.choice-button > span:nth-child(2) {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .choice-symbol {
-  flex-shrink: 0;
+  flex: none;
+  width: 18px;
+  text-align: center;
   color: var(--gold);
-  font: 18px Georgia, serif;
+  font: 17px/1.75 Georgia, serif;
 }
 .choice-button b {
+  flex: none;
   margin-left: auto;
   font-weight: 400;
+  line-height: 1.75;
   color: #7a9a8e;
-  transition: transform 0.2s var(--ease-out);
+  transition: transform 0.2s var(--ease-out), color 0.18s;
 }
 .choice-button:hover b {
+  color: var(--gold);
   transform: translate3d(3px, 0, 0);
 }
+.choice-button[aria-expanded="true"] b {
+  transform: rotate(90deg);
+}
+.choice-button[aria-expanded="true"]:hover b {
+  transform: rotate(90deg) translate3d(3px, 0, 0);
+}
 .choice.chosen {
-  border-color: var(--gold-2);
-  background: #c9bb6d0a;
+  border-top-color: #c9b07a8c;
+  background: linear-gradient(90deg, #c9b07a17, #c9b07a06 72%, #c9b07a00);
 }
 .choice.chosen .choice-symbol {
-  color: var(--gold);
+  font-size: 0;
+}
+.choice.chosen .choice-symbol::before {
+  content: "◆";
+  font-size: 17px;
 }
 .choice-response {
-  padding: 0 18px 16px;
+  padding: 2px 0 18px var(--mark);
   animation: rise-in 0.2s var(--ease-out) both;
 }
+.choice-response .reading-complete {
+  padding: 6px 0;
+  text-align: left;
+}
+/* Continue cards: a title over its caption, then (when there is one) the base chance of a random outcome as a figure,
+   the picture of the document and an arrow. Rows share the rule between them; the pictures sit at the right, so the
+   titles keep one left edge whether or not a card has a picture. */
 .next-chapter {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  width: calc(100% + 20px);
+  min-height: 52px;
+  margin: 0 -10px;
+  padding: 11px 10px;
+  font: 16px/1.5 var(--serif);
+  text-align: left;
+  transition: background-color 0.18s, color 0.18s;
+}
+.next-chapter::before {
+  content: "";
+  position: absolute;
+  inset: auto 10px 0 10px;
+  height: 1px;
+  background: var(--line);
+}
+.next-chapter:hover {
+  background: #c4b07b0d;
+}
+.next-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  width: 100%;
-  margin: 12px 0;
-  padding: 10px 16px;
-  border-left: 2px solid #9c9b62;
-  font: 16px/1.6 var(--serif);
-  text-align: left;
+  gap: 1px;
+  min-width: 0;
+}
+.next-title {
+  font: 17px/1.45 var(--serif);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  transition: color 0.18s;
+}
+.next-chapter:hover .next-title,
+.next-chapter:focus-visible .next-title {
+  color: var(--gold);
 }
 .next-chapter small {
   font: 12px/1.5 var(--sans);
+  letter-spacing: 0.02em;
   color: var(--dim);
 }
-.next-chapter:hover {
-  background: #c0b97808;
+.next-chance {
+  min-width: 3.4ch;
+  margin-left: 16px;
+  font: normal 600 14px/1 var(--sans);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
 }
-/* The picture of the document the card leads to, quietly at its right edge. */
-.next-chapter.has-art {
-  min-height: 64px;
-  padding-right: 104px;
+.next-chapter > b {
+  margin-left: 16px;
+  font-weight: 400;
+  color: var(--gold-2);
+  transition: transform 0.2s var(--ease-out);
 }
+.next-chapter:hover > b {
+  transform: translate3d(3px, 0, 0);
+}
+.next-chapter.cross:hover > b {
+  transform: translate3d(2px, -2px, 0);
+}
+/* The picture of the document the card leads to; it brightens when the card is under the pointer. */
 .next-art {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  width: 80px;
-  height: 48px;
+  width: 72px;
+  height: 44px;
+  margin-left: 14px;
   object-fit: cover;
-  transform: translateY(-50%);
   border: 1px solid var(--line);
-  opacity: 0.62;
-  filter: saturate(0.8);
+  opacity: 0.78;
+  filter: saturate(0.85);
   transition: opacity 0.2s var(--ease-out), filter 0.2s var(--ease-out);
 }
 .next-art:not([src]) {
@@ -920,19 +1158,47 @@ input {
   opacity: 1;
   filter: none;
 }
+.continuation .next-chapter {
+  min-height: 64px;
+  padding-block: 14px;
+}
+.continuation .next-title {
+  font-size: 18px;
+}
+.continuation .next-art {
+  width: 92px;
+  height: 56px;
+}
+.choice-response .next-chapter {
+  min-height: 48px;
+  padding-block: 9px;
+}
+.choice-response .next-title {
+  font-size: 16px;
+}
+.choice-response .next-art {
+  width: 64px;
+  height: 40px;
+}
 @media (max-width: 700px) {
-  .next-chapter.has-art {
-    padding-right: 84px;
+  .choices {
+    --mark: 28px;
   }
-  .next-art {
+  .choice-button {
+    gap: 10px;
+  }
+  .next-art,
+  .choice-response .next-art {
     width: 64px;
     height: 40px;
   }
+  .continuation .next-art {
+    width: 76px;
+    height: 46px;
+  }
 }
 .chapter-end {
-  margin-top: var(--s-6);
-  padding-top: var(--s-2);
-  border-top: 1px solid var(--line);
+  margin-top: var(--s-5);
 }
 .reading-next {
   width: 100%;
@@ -980,21 +1246,71 @@ input {
   letter-spacing: 0.06em;
   color: var(--gold);
 }
+/* The end of a route is set like the last page of a chapter: a short rule, the ending's name, its note, centred; the next
+   story of the same shelf follows as a card of its own. */
 .reading-ending {
-  margin: 18px 0;
-  padding: 18px 20px;
-  border: 1px solid #8c815b88;
-  background: #c4b07b0a;
+  margin: var(--s-7) auto var(--s-5);
+  text-align: center;
+}
+.reading-ending::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 1px;
+  margin: 0 auto 20px;
+  background: var(--gold-2);
 }
 .reading-ending strong {
   display: block;
-  font: 600 17px/1.5 var(--serif);
+  font: 600 22px/1.4 var(--serif);
+  letter-spacing: 0.06em;
   color: var(--gold);
+  text-wrap: balance;
 }
 .reading-ending p {
-  margin: 8px 0 0;
-  font: 15px/1.8 var(--serif);
+  max-width: 30em;
+  margin: 10px auto 0;
+  font: 15.5px/1.85 var(--serif);
   color: var(--ink-2);
+  text-wrap: balance; /* centred: balanced lines, no two-character widow */
+  line-break: strict;
+}
+.ending-next {
+  width: 100%;
+  min-height: 72px;
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid #c9b07a40;
+  background: #c4b07b08;
+}
+.ending-next::before {
+  display: none;
+}
+.ending-next:hover {
+  background: #c4b07b12;
+  border-color: #c9b07a80;
+}
+.next-chapter.ending-next small {
+  margin: 0 0 2px;
+  font: 500 12px/1.5 var(--sans);
+  letter-spacing: 0.14em;
+  color: var(--gold-2);
+}
+:root:lang(en) .ending-next small {
+  text-transform: uppercase;
+}
+.ending-next .next-title {
+  font-size: 20px;
+}
+.ending-next .next-art {
+  width: 104px;
+  height: 62px;
+}
+@media (max-width: 700px) {
+  .ending-next .next-art {
+    width: 76px;
+    height: 46px;
+  }
 }
 @media (min-width: 701px) {
   /* On wide screens the map already lives on the card. */
@@ -1289,33 +1605,31 @@ input {
   text-decoration-color: #c9b07a55;
   text-underline-offset: 4px;
 }
+/* Outcomes of which only one happens: one bronze bracket, a lead line (with the delay they share), then the possibilities
+   as a ledger — the chance, when the game gives one, is the figure at the right of each. */
 .exclusive-outcomes {
-  margin: 14px 0;
-  padding: 10px 14px 4px;
-  border: 1px solid #6d5c3d;
-  border-left: 3px solid var(--bronze);
-  background: #1e1a1033;
+  margin: 16px 0 8px;
+  padding: 0 0 0 14px;
+  border-left: 2px solid #c49a5a8c;
 }
 .exclusive-outcomes > small {
   display: block;
-  font-size: 12px;
+  padding: 2px 0 4px;
+  font: 500 12px/1.5 var(--sans);
   letter-spacing: 0.06em;
   color: #e1c08b;
 }
-.exclusive-outcomes .next-chapter {
-  margin: 8px 0;
-  border-left-color: #8c7a50;
+.exclusive-outcomes .next-chapter:last-child::before {
+  display: none;
 }
+/* A condition the option needs: an annotation under it, aligned with its words. */
 .choice-condition {
   display: block;
-  padding: 0 18px 12px 50px;
-  margin-top: -6px;
+  margin-top: -8px;
+  padding: 0 0 12px var(--mark, 32px);
   font: 12px/1.6 var(--sans);
+  letter-spacing: 0.02em;
   color: #93aaa3;
-}
-.choice.unavailable {
-  border-style: dashed;
-  background: transparent;
 }
 .choice.unavailable .choice-button {
   opacity: 0.55;
@@ -1327,16 +1641,19 @@ input {
 .choice.unavailable .choice-condition {
   color: #c79a7a;
 }
+/* The game's tooltip for an option: an aside in the interface's own voice, not a box. */
 .choice-tooltip {
-  margin: 10px 0;
-  padding: 8px 12px;
+  margin: 6px 0;
+  padding: 0 0 0 1.4em;
+  text-indent: -1.4em;
   font: 13px/1.7 var(--sans);
   color: #a9c0b9;
-  background: #0b1e2288;
-  border: 1px solid #2f4a4a;
 }
 .choice-tooltip::before {
   content: "ⓘ ";
+  display: inline-block;
+  width: 1.4em;
+  text-indent: 0;
   color: var(--teal);
 }
 .flow-investigations {
@@ -2355,10 +2672,15 @@ dialog {
   width: 660px;
   max-width: calc(100vw - 32px);
   max-height: calc(100dvh - 120px);
-  padding: 28px;
+  padding: 26px 32px 14px;
   color: var(--ink);
-  background: #0f2329;
-  border: 1px solid #456356;
+  background: #0e2227;
+  border: 1px solid var(--line-2);
+  box-shadow: 0 32px 90px -28px #000e;
+}
+/* Anchored near the top, not centred: the box only grows and shrinks at its foot while the results change. */
+#search-dialog {
+  margin-top: clamp(24px, 9vh, 96px);
 }
 dialog[open] {
   animation: rise-in 0.2s var(--ease-out) both;
@@ -2373,53 +2695,108 @@ dialog::backdrop {
 }
 .search-heading h2 {
   margin: 0;
-  font: 600 24px var(--serif);
+  font: 600 22px/1.3 var(--serif);
+  letter-spacing: 0.08em;
+}
+:root:lang(en) .search-heading h2 {
+  letter-spacing: 0;
 }
 .search-heading button {
+  min-width: 44px;
+  margin-right: -12px; /* the 44 px target reaches past the × so it lines up with the content edge */
   font-size: 24px;
 }
 .search-field {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin: 10px 0 18px;
-  padding: 14px 0;
-  border-bottom: 1px solid #68775a;
+  gap: 12px;
+  margin: 10px 0 0;
+  padding: 8px 0 10px;
+  border-bottom: 1px solid var(--line-2);
+  transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+/* The field has no outline of its own: its rule turns gold and thickens while the input has focus. */
+.search-field:focus-within {
+  border-bottom-color: var(--gold);
+  box-shadow: 0 1px 0 var(--gold);
 }
 .search-field span {
-  font: 26px Georgia, serif;
+  font: 24px/1 Georgia, serif;
+  color: var(--gold-2);
+  transition: color 0.2s var(--ease-out);
+}
+.search-field:focus-within span {
   color: var(--gold);
 }
 .search-field input {
   flex: 1;
   min-width: 0;
-  font-size: 16px;
+  padding: 4px 0;
+  font: 400 19px/1.4 var(--serif);
+  letter-spacing: 0.02em;
   color: var(--ink);
   background: none;
   border: 0;
   outline: none;
+  --clear: var(--dim);
+}
+.search-field input:hover {
+  --clear: var(--ink);
+}
+:root:lang(en) .search-field input {
+  font-size: 20px;
+  letter-spacing: 0;
 }
 .search-field input::placeholder {
-  font-size: 13px;
-  color: #718e87;
+  color: var(--dim);
+  opacity: 1;
+}
+/* The browser's clear button, redrawn as a thin cross in the page's own colours. */
+.search-field input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0 -3px 0 8px; /* a 20 px target around a 12 px cross */
+  cursor: pointer;
+  background:
+    linear-gradient(45deg, #0000 46.5%, var(--clear) 46.5% 53.5%, #0000 53.5%) center / 12px 12px no-repeat,
+    linear-gradient(-45deg, #0000 46.5%, var(--clear) 46.5% 53.5%, #0000 53.5%) center / 12px 12px no-repeat;
 }
 #search-count {
-  font-size: 13px;
+  display: block;
+  margin-top: 12px;
+  font: 400 12.5px/1.5 var(--font-ui);
+  letter-spacing: 0.06em;
+  font-variant-numeric: lining-nums tabular-nums;
   color: var(--dim);
 }
+/* The list fades out at its foot, so a row cut by the edge reads as "more below" and not as clipped. */
 #search-results {
   max-height: 50dvh;
-  margin-top: 14px;
+  margin-top: 4px;
+  padding-bottom: 28px;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #45625d transparent;
+  -webkit-mask-image: linear-gradient(#000 calc(100% - 28px), #0000);
+  mask-image: linear-gradient(#000 calc(100% - 28px), #0000);
 }
 .search-story {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 16px;
   width: 100%;
-  padding: 12px 0;
+  padding: 13px 4px 13px 0;
   text-align: left;
-  border-bottom: 1px solid #37534b88;
+  border-bottom: 1px solid #2d454999;
+  transition: background-color 0.2s var(--ease-out);
+}
+.search-story:hover,
+.search-story:focus-visible {
+  background: linear-gradient(90deg, #d8bb8410, #d8bb8400 85%);
 }
 .search-story img,
 .search-no-art {
@@ -2432,6 +2809,7 @@ dialog::backdrop {
   display: grid;
   place-items: center;
   font-size: 20px;
+  color: var(--gold-2);
   background: #1b3434;
 }
 .search-story > span:nth-child(2) {
@@ -2440,35 +2818,71 @@ dialog::backdrop {
 }
 .search-story b {
   display: block;
-  font: 500 15px/1.5 var(--serif);
+  font: 500 16px/1.45 var(--serif);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  transition: color 0.18s;
+}
+:root:lang(en) .search-story b {
+  font-size: 16.5px;
+  letter-spacing: 0;
+}
+.search-story:hover b,
+.search-story:focus-visible b {
+  color: var(--gold);
 }
 .search-story small {
   display: block;
   margin-top: 4px;
-  font-size: 12px;
+  font: 400 12.5px/1.5 var(--font-ui);
+  letter-spacing: 0.03em;
+  font-variant-numeric: lining-nums;
   color: var(--dim);
 }
 .search-story i {
   font-style: normal;
+  font-size: 17px;
+  color: var(--gold-2);
+  opacity: 0.6;
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+.search-story:hover i,
+.search-story:focus-visible i {
+  opacity: 1;
   color: var(--gold);
+  transform: translate3d(2px, -2px, 0);
 }
 .search-pager {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
-  margin-top: 12px;
-  font: 12px var(--mono);
+  gap: 20px;
+  margin-top: 0;
+  padding-top: 2px;
+  border-top: 1px solid var(--line);
+  font: 500 12.5px var(--font-ui);
+  letter-spacing: 0.12em;
+  font-variant-numeric: lining-nums tabular-nums;
   color: var(--dim);
 }
 .search-pager button {
   width: 44px;
-  font-size: 17px;
+  font-size: 18px;
+  color: var(--ink-2);
 }
 .empty {
   padding: 32px 0;
   font-size: 14px;
   color: var(--dim);
+}
+/* No match: a calm line of the page's reading type, centred in the space the list would have had. */
+#search-results .empty {
+  margin: 0;
+  padding: 44px 0 24px;
+  font: 400 16px/1.7 var(--serif);
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--ink-2);
 }
 
 /* ------------------------------------------------------------ toast */
@@ -2521,8 +2935,8 @@ dialog::backdrop {
     padding-left: 28px;
     padding-right: 28px;
   }
-  .selection {
-    left: 52%;
+  .archive-hud {
+    --sel-left: 52%;
   }
   .volume,
   .loop-label {
@@ -2575,6 +2989,7 @@ dialog::backdrop {
     white-space: nowrap; /* app.js shortens the label on phones, so it stays on one line */
   }
   .catalogue {
+    --tab-pad: 8px;
     order: 3;
     flex: 0 0 100%;
     justify-content: flex-start;
@@ -2585,6 +3000,14 @@ dialog::backdrop {
   /* The scrolling row would hide the Grand Archive past the edge; on phones it leads the row instead. */
   .catalogue .catalogue-museum {
     order: -1;
+    margin-left: 0;
+  }
+  .catalogue .catalogue-museum::before {
+    display: none;
+  }
+  .catalogue .catalogue-museum,
+  .catalogue .catalogue-museum > span:last-child {
+    font-size: 13px;
   }
   .catalogue button {
     min-height: 40px;
@@ -2599,6 +3022,9 @@ dialog::backdrop {
   .scene-vignette {
     background: linear-gradient(180deg, #08151a00 30%, #08151acc 62%, #08151a 84%);
   }
+  .archive-hud {
+    --sel-measure: 100%;
+  }
   .selection {
     left: var(--gutter);
     right: var(--gutter);
@@ -2606,8 +3032,13 @@ dialog::backdrop {
     bottom: calc(var(--player) + 84px);
     max-width: none;
   }
+  /* On a phone the column sits over the busiest part of the picture: its own scrim, darkest where the text is. */
   .selection::before {
-    inset: -24px -16px;
+    inset: -72px -16px -24px;
+    background: linear-gradient(180deg, #08151a00 0%, #08151ad9 30%, #08151af0 100%);
+  }
+  .selection-eyebrow {
+    letter-spacing: 0.12em;
   }
   #selected-title {
     font-size: clamp(24px, 7vw, 30px);
@@ -2619,12 +3050,17 @@ dialog::backdrop {
     margin-bottom: 12px;
     min-height: 3.5em; /* two clamped lines reserved: no jump when the story data arrives */
   }
+  :root:lang(en) #selected-excerpt {
+    font-size: 14px;
+    line-height: 1.55;
+    min-height: 3.1em;
+  }
   .access {
     width: 100%;
     max-width: none;
-    padding: 10px 2px;
+    padding: 10px 2px 10px 0;
   }
-    .navigation {
+  .navigation {
     bottom: calc(var(--player) + 14px);
   }
   .row-counter {
@@ -2634,7 +3070,8 @@ dialog::backdrop {
     font-size: 30px;
   }
   .lane-navigation {
-    margin-right: 0;
+    position: static;
+    margin-left: 0;
     gap: 0;
   }
   #reader {
@@ -2707,7 +3144,11 @@ dialog::backdrop {
   }
   /* Reader head, compact: art, eyebrow, title and one subtitle line (profile toggle beside it), then the text. */
   .chapter-document {
-    padding-top: 16px;
+    padding-top: 12px;
+  }
+  .reader-trail {
+    position: static;
+    margin: 0 0 4px;
   }
   #reader-title {
     margin: 10px 0 4px;
@@ -2730,11 +3171,13 @@ dialog::backdrop {
   }
   .choice-button {
     font-size: 16px;
-    padding: 13px 14px;
+    padding: 12px 10px;
+  }
+  .reading-tabs {
+    gap: 0 18px;
   }
   .reading-tabs button {
-    font-size: 12px;
-    padding: 6px 9px;
+    font-size: 13px;
   }
   #flow-surface {
     left: 0;
@@ -2846,8 +3289,11 @@ dialog::backdrop {
     font-size: 12px;
   }
   dialog {
-    padding: 20px;
+    padding: 20px 20px 10px;
     max-height: calc(100dvh - 60px);
+  }
+  #search-dialog {
+    margin-top: 30px;
   }
   .search-story img,
   .search-no-art {
@@ -2975,7 +3421,11 @@ dialog::backdrop {
     pointer-events: none;
   }
   .chapter-document {
-    padding-top: 14px;
+    padding-top: 12px;
+  }
+  .reader-trail {
+    position: static;
+    margin: 0 0 2px;
   }
   #reader-title {
     margin: 8px 0 4px;
@@ -3176,39 +3626,44 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 @media (prefers-reduced-motion: reduce) { .music-player.autoplay-blocked #play-pause { animation: none; } }
 
 /* Reading progress */
-.continue-reading { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; width: min(100%, 400px); margin-top: 10px; }
+/* The saved-reading row is the second line of the ledger the "open" row starts (same measure, same hairline): the story
+   to go on with on the left (label, then where), "start over" quietly on the right. */
+.continue-reading { display: flex; align-items: center; gap: 4px 16px; width: min(100%, var(--sel-measure, 27.5rem)); margin-top: 0; padding: 6px 2px 8px 0; border-bottom: 1px solid #d8bb8433; }
 .continue-reading[hidden] { display: none; }
-.continue-link { flex: 1 1 220px; min-width: 0; min-height: 40px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 4px 0; text-align: left; color: var(--dim); font-size: 13px; letter-spacing: .04em; }
-.continue-link small { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; opacity: .72; }
-.continue-link:hover, .continue-link:focus-visible { color: inherit; }
+.continue-link { flex: 1 1 0; min-width: 0; min-height: 44px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 3px; padding: 4px 0; text-align: left; color: var(--ink-2); font: 500 14px/1.35 var(--font-ui); letter-spacing: .06em; }
+.continue-link small { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 400 12.5px/1.4 var(--font-ui); letter-spacing: .03em; color: var(--dim); }
+.continue-link:hover, .continue-link:focus-visible { color: var(--gold); }
+.continue-reading .continue-restart { flex: 0 0 auto; min-height: 44px; padding: 0 2px; font: 400 12.5px/1.4 var(--font-ui); letter-spacing: .06em; color: var(--dim); opacity: 1; border-bottom: 1px solid transparent; }
+.continue-reading .continue-restart:hover, .continue-reading .continue-restart:focus-visible { color: var(--ink); }
 .continue-restart, .reading-restart { min-height: 32px; padding: 0 4px; font-size: 12px; letter-spacing: .04em; color: var(--dim); opacity: .72; }
 .continue-restart:hover, .reading-restart:hover { opacity: 1; }
-.chapter-eyebrow #reading-back { margin-left: auto; }
 .continue-link:focus-visible, .continue-restart:focus-visible, .reading-restart:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-@media (max-width: 480px) { .continue-link { flex-basis: 100%; } }
 
 /* Full-text search */
-.search-hit { gap: 12px; }
 .search-hit > span:nth-child(2) { overflow-wrap: anywhere; }
-/* Hit type ("Text", "Name", "Effect" …): a quiet label in the thumbnail column, so every row's title lines up. */
+/* Hit type ("Text", "Name", "Effect" …): a quiet label in the thumbnail column, so every row's title lines up
+   (the column and the gap are the story rows' own: 96 px + 16 px). */
 .hit-type {
   flex-shrink: 0;
   width: 96px;
-  font: 11px/1.6 var(--sans);
+  font: 500 12px/1.6 var(--font-ui);
   font-style: normal;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-align: right;
   color: var(--gold-2, #b99b62);
 }
+:root:lang(en) .hit-type { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
 .search-story small .hit-type { display: inline-block; width: auto; margin-right: 8px; text-align: left; }
 .search-hit b span { font-weight: 400; color: var(--dim); }
 .hit-snip { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
 .hit-snip:empty { display: none; }
 .hit-more { margin-top: 2px; }
 .search-hit mark { padding: 0; color: var(--ink); background: #68775a66; border-bottom: 1px solid var(--gold); }
+@media (max-width: 700px) {
+  .hit-type { width: 72px; } /* the thumbnails are 72 px wide here */
+}
 @media (max-width: 480px) {
-  .search-hit { gap: 8px; }
-  .hit-type { width: 72px; }
+  .search-story { gap: 12px; }
 }
 /* Reader warm-up (prewarmReader in app.js): laid out and painted once in idle time, transparent and inert. */
 #reader.prewarm { opacity: 0.002 !important; pointer-events: none !important; }

@@ -151,15 +151,27 @@ export function applyFacts(facts, profile, assumptions) {
   }
 }
 
-/** Readable label of a condition (for tabs / notes), using the game's own names where available. */
-export function describe(dnf, lang, names = {}) {
+/** Readable label of a condition (for tabs / notes), using the game's own names where available.
+ *  Only conditions that have a name are described: an atom without one is left out of its branch, and when any alternative
+ *  has no named atom at all the condition cannot be stated truthfully, so the result is "" (callers show nothing, or the
+ *  `fallback` text where a control needs a label). Repeated alternatives collapse; more than `max` end with "…". */
+export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {}) {
   if (!dnf) return "";
   const word = (zh, en) => (lang === "zh" ? zh : en);
   const atomText = (a) => {
-    const name = a.label?.[lang] || names[a.key]?.[lang] || (a.type === "flag" ? word("此前经历", "earlier events") : null);
-    if (a.type === "identity") return (a.value ? "" : word("非", "not ")) + (name || a.key.replace(/^(ethic|auth|origin|civic)_/, "").replace(/_/g, " "));
-    if (name) return (a.value ? "" : word("非", "not ")) + name;
-    return word("其他条件", "other conditions");
+    const name = a.label?.[lang] || names[a.key]?.[lang] || (a.type === "flag" ? word("此前经历", "earlier events") : null)
+      // An engine key is only readable English: never shown in Chinese, never for anything but an identity fact.
+      || (lang === "en" && a.type === "identity" && /^(ethic|auth|origin|civic)_/.test(a.key) ? a.key.replace(/^(ethic|auth|origin|civic)_/, "").replace(/_/g, " ") : null);
+    return name ? (a.value ? "" : word("非", "not ")) + name : null;
   };
-  return dnf.map((branch) => branch.map(atomText).filter((v, i, all) => all.indexOf(v) === i).join(" · ")).join(word(" 或 ", " or "));
+  const parts = [];
+  for (const branch of dnf) {
+    const atoms = branch.map(atomText).filter((v, i, all) => v && all.indexOf(v) === i);
+    if (!atoms.length) return fallback;
+    parts.push(atoms);
+  }
+  // "A · B or A" is just "A": an alternative that contains another one adds nothing; equal ones collapse.
+  const kept = parts.filter((p, i) => !parts.some((q, j) => j !== i && q.every((v) => p.includes(v)) && (q.length < p.length || j < i)));
+  const branches = kept.map((p) => p.join(" · "));
+  return branches.slice(0, max).join(word(" 或 ", " or ")) + (branches.length > max ? word(" 等", " …") : "") || fallback;
 }
