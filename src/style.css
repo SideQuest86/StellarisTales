@@ -983,6 +983,7 @@ input {
   text-autospace: normal;
   hanging-punctuation: allow-end;
   font-kerning: normal;
+  text-wrap: pretty; /* no two-character last line in Chinese (English sets it below too) */
 }
 .pb {
   display: block;
@@ -1007,6 +1008,11 @@ input {
 :root:lang(en) .narrative p.q-open {
   text-indent: -0.4em;
 }
+/* Chinese: the paragraphs have no first-line indent, so a full-width opening quote at the start read as half a character of
+   indent; its empty half is trimmed (space-first above keeps it for paragraphs that do not open with one). */
+:root:lang(zh) .narrative p.q-open {
+  text-spacing-trim: trim-start;
+}
 /* What a character says in answer to a choice: the game's own text, set like the story and marked by a quiet rule. */
 .dialogue-reply {
   margin: 4px 0 14px;
@@ -1014,6 +1020,7 @@ input {
   border-left: 2px solid #c4ad7a66;
   font: 400 17.5px/1.85 var(--serif);
   color: var(--ink);
+  text-wrap: pretty;
 }
 :root:lang(en) .dialogue-reply {
   line-height: 1.6;
@@ -1147,8 +1154,23 @@ input {
   font: 400 17px/1.75 var(--serif);
   transition: color 0.18s, background-color 0.18s;
 }
-.choice-button:not([aria-disabled="true"]):hover {
-  background: #c4b07b0d;
+/* Hover looks only where there is a hover: on touch screens the last tapped row kept its wash and nudged gold arrow, as if
+   half chosen. Fingers get a brief wash while pressing instead (it fades with the row's transition). */
+@media (hover: hover) {
+  .choice-button:not([aria-disabled="true"]):hover {
+    background: #c4b07b0d;
+  }
+  .choice-button:hover b {
+    color: var(--gold);
+    transform: translate3d(3px, 0, 0);
+  }
+  .choice-button[aria-expanded="true"]:hover b {
+    transform: rotate(90deg) translate3d(3px, 0, 0);
+  }
+}
+.choice-button:not([aria-disabled="true"]):active {
+  background: #c4b07b14;
+  transition-duration: 0s;
 }
 :root:lang(en) .choice-button {
   padding-block: 11px;
@@ -1176,15 +1198,8 @@ input {
   color: #7a9a8e;
   transition: transform 0.2s var(--ease-out), color 0.18s;
 }
-.choice-button:hover b {
-  color: var(--gold);
-  transform: translate3d(3px, 0, 0);
-}
 .choice-button[aria-expanded="true"] b {
   transform: rotate(90deg);
-}
-.choice-button[aria-expanded="true"]:hover b {
-  transform: rotate(90deg) translate3d(3px, 0, 0);
 }
 .choice.chosen {
   border-top-color: #c9b07a8c;
@@ -1271,6 +1286,7 @@ input {
   font: 14px/1.65 var(--serif-zh);
   letter-spacing: 0.02em;
   color: #a9bdb7;
+  text-wrap: balance; /* a caption of two lines splits evenly, not "…或年度扩 / 张时" (pretty does not act on Chinese in Chrome) */
 }
 .next-chance {
   min-width: 3.4ch;

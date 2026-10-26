@@ -168,3 +168,12 @@ keeps that time) and the wall passes the fade fraction where the shader took the
 card 1/2 = full); frames keep coming until the last fade ends (fadingUntil). Measured on a first load (diagnostics fadingCovers,
 sampled every 50 ms): cards mid-fade from 271 ms, up to 109 at once, none at the end; none with reduced motion. verify-gpu: all
 tiers pass (idle draws nothing, the loop stops, breathing 171 / motion 169 fps discrete).
+
+## Design panel 2 (v4.17.15)
+
+Five angles (book designer, motion designer, competition judge, Chinese typographer, phone reading) proposed 10 enhancements, three
+judges scored impact / fit / safety. Applied: choice hover only under (hover: hover) with an :active wash (sticky hover on touch);
+Chinese card captions text-wrap: balance (pretty does not act on Chinese in Chrome 155: a 29 px last line became 169 px of 326);
+text-spacing-trim: trim-start on Chinese paragraphs that open with a quote (the stroke on the column's edge); text-wrap: pretty
+on Chinese paragraphs and replies (for engines that apply it to CJK). Not applied: a closing diamond under the text (the choice
+rows below already open with one), the phone toolbar hiding on scroll (risk), the title and choice animations (fit).
