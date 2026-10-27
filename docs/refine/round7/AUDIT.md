@@ -398,3 +398,15 @@ reference that was its whole content: exactly those 16 texts change (diff of cle
 changed: the metadata line kept whole where it does not split cleanly; a title whose Chinese has a game-filled name shows no
 subtitle (by design); the inline "If: …" badges of text variants when the empire profile is unset; the map card's clipped edge.
 Rounds so far: 10, 8, 7 and 5 reports; confirmed defects falling (round 4: one).
+
+Inspection round 5 (24 random stories, seed 55512027, 60 chapters; phone-zh found nothing): four reports.
+- Map card top node cut (also reported in round 3): centerOn places the current chapter at 56% height, so the chapter above often
+  sat under the card's 20 px top fade with its first line cut. On the card (not expanded) the view now moves down just enough to
+  show that chapter whole when the current one still clears the bottom by 12 px (card-top.mjs, six cards at 1280 x 800: a node
+  cut at the top 6 -> 2; in the other two the chapter above does not fit).
+- Guide splits: "线性。 Linear." stayed whole (an English half needs 12 letters) and showed on the English page; a short English
+  sentence after a Chinese full stop now splits too. "…luxury_limbs。 \"Multi-Limb Coordination\" …" put the script name in the
+  English half: an identifier followed by a Chinese stop and a space (not only " / ") stays with the Chinese. Against v4.17.31
+  over all guide lines: 95 new splits (Linear., See above., A single task.), 43 moved, no Chinese in any changed English half.
+- Not changed: the 404 for stories without an effects file (console only).
+Rounds so far: 10, 8, 7, 5 and 4 reports; confirmed defects 7, 6, 4, 1 and 3 (small).

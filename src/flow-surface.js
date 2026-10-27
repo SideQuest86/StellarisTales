@@ -909,6 +909,18 @@ export class FlowSurface {
     // Slightly below centre: where the reader came from stays in view above.
     const topLevel = this.tree.nodes.get(this.tree.nodes.get(id)?.parent)?.type === "forest";
     this.view.y = h * (topLevel ? 0.3 : 0.56) - (b.y + b.h / 2 - this.origin.y) * k;
+    // On the card, the chapter above (where the reader came from) shows whole when it fits, instead of with its first line
+    // cut at the card's faded top edge; the current chapter stays clear of the bottom.
+    if (!this.expanded) {
+      let pid = this.tree.nodes.get(id)?.parent;
+      while (pid && !this.tree.nodes.get(pid)?.doc) pid = this.tree.nodes.get(pid)?.parent;
+      const pb = pid && this.layout.nodes.get(pid);
+      if (pb) {
+        const top = this.toScreen(0, pb.y).y, bottom = this.toScreen(0, b.y + b.h).y;
+        const dy = Math.min(28 - top, h - 12 - bottom);
+        if (top < 28 && dy > 0) this.view.y += dy;
+      }
+    }
     this.clampView();
     this.applyView(animate);
     return true;

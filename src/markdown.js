@@ -70,8 +70,9 @@ export function splitMixed(text) {
     let tail = s.slice(m.index + m[0].length).trim();
     // "…结束事件链 cs_inetian_chain / a new, unused device": the identifier ends the Chinese half; the slash is the boundary.
     // (also with the Chinese sentence's own stop after it: "…site_fossilized_jellyfish_random_events。 / Failed rolls …")
-    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.-]*`?[。；，]?)\s*\/\s+/.exec(tail);
-    if (idSlash) { head = `${head} ${idSlash[1]}`; tail = tail.slice(idSlash[0].length); }
+    // (or with that stop and a space and no slash: "…选项 luxury_limbs。 "Multi-Limb Coordination" …")
+    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.-]*`?)(?:([。；，]?)\s*\/\s+|([。；])\s+)/.exec(tail);
+    if (idSlash) { head = `${head} ${idSlash[1]}${idSlash[2] || idSlash[3] || ""}`; tail = tail.slice(idSlash[0].length); }
     // (or after a Chinese full stop and a space: "…出现。   275 only appears when …"; the checks below still require an
     // English tail, so "。9010“谜团重现”…" stays whole)
     const afterStop = "。！？".includes(s[m.index - 1]) && /\s/.test(m[0]);
@@ -91,7 +92,9 @@ export function splitMixed(text) {
     // → 3 天后“静待揭晓”…") is not the boundary, and splitting there hid the rest of the Chinese line.
     // (detectLang leaves script identifiers out; so does the check for an English phrase inside the Chinese half)
     const prose = head.replace(/`[^`]*`/g, "").replace(SCRIPT_ID, "");
-    if (latin >= 12 && cjk * 25 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(prose)) {
+    // (a short English sentence after a Chinese full stop is a half too: "线性。 Linear.")
+    const short = afterStop && !cjk && latin >= 3 && /^[A-Z][A-Za-z ,'’-]{1,40}[.!?]$/.test(tail);
+    if ((latin >= 12 || short) && cjk * 25 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(prose)) {
       if (best && !(afterStop && cjk < best.cjk)) continue;
       if (!cjk) return [head, tail];
       best = { cjk, split: [head, tail] };
