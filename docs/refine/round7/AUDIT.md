@@ -410,3 +410,18 @@ Inspection round 5 (24 random stories, seed 55512027, 60 chapters; phone-zh foun
   over all guide lines: 95 new splits (Linear., See above., A single task.), 43 moved, no Chinese in any changed English half.
 - Not changed: the 404 for stories without an effects file (console only).
 Rounds so far: 10, 8, 7, 5 and 4 reports; confirmed defects 7, 6, 4, 1 and 3 (small).
+
+Inspection round 6 (24 random stories, seed 66012027, 51 chapters):
+- shroud.3070 showed four "若：其他条件" chips inline and a line justified across the column before each: renderBody numbers
+  variants whose condition describe() cannot name ("情形一" … / "Case 1" …; named ones keep "If: …") and puts a variant longer
+  than 40 characters on its own line (.variant-block): chips 情形一–四, four blocks, no stretched line.
+- Guide fragment "has_distar）/ no DLC check …" as an English first bullet (anomaly-disco-* guides): idSlash accepts a closing
+  bracket after the identifier before the slash (13 lines move, no Chinese in any English half); metaPair's slash form ignores
+  script ids on the Chinese side, so the metadata line itself now splits ("DLC: no DLC check (…)").
+- A Chinese-only guide shown whole on the English page (event-galactic-features-381) now carries one note, "This guide is
+  written in Chinese only." (.md-lang-note; "这份导读只有英文。" the other way round); no toggle is offered there.
+- Continuation cards sharing a title take the story's curated nodeLabels where present (on copies of the edges). The storm
+  situation has none: its six "风暴袭来" cards are the game's titles, told apart by their captions.
+- Not changed: an astral rift that opens with no text (data); one blank map card seen once; the 404 for stories without
+  effects; a story change keeping the previous story's caption (not reproduced).
+Rounds: reports 10, 8, 7, 5, 4, 8; confirmed and fixed 7, 6, 4, 1, 3, 4 (all small since round 4).

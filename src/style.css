@@ -1853,6 +1853,15 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
 .variant-piece {
   border-bottom: 1px dotted #6f9790;
 }
+/* A paragraph-length variant: its own line, so alternatives read one after another and none is stretched by justification. */
+.variant-piece.variant-block {
+  display: block;
+  margin-top: 0.5em;
+  border-bottom: 0;
+}
+.variant-piece.variant-block:first-child {
+  margin-top: 0;
+}
 .variant-condition {
   display: inline;
   min-height: 0;

@@ -709,7 +709,7 @@ function edgeButton(e, facts = edgeFacts(e), groupDelay = "") {
   const caption = [...facts.notes, ...(facts.delay && facts.delay !== groupDelay ? [facts.delay] : [])].join(" · ");
   const chance = facts.chance == null ? ""
     : `<i class="next-chance" title="${esc(T(`基础概率约 ${facts.chance}%`, `Base chance about ${facts.chance}%`) + (facts.modified ? T("，受条件调整", ", adjusted by conditions") : ""))}">${facts.chance}%</i>`;
-  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(titleFor(e.target, e.story))}</span>${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
+  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(e.titleOverride || titleFor(e.target, e.story))}</span>${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
 }
 // The edges that remain possible, one card per document, edges of one random group listed together.
 function edgeLists(edges) {
@@ -745,8 +745,15 @@ function collapseCross(list) {
   return out;
 }
 function listButtons(lists) {
-  return lists.map((group) => {
-    const list = collapseCross(group);
+  // Cards that would share a title (two chapters both called "风暴校正") take the story map's curated label, written to tell
+  // such chapters apart.
+  const merged = lists.map((group) => collapseCross(group).map((e) => ({ ...e })));
+  const count = new Map();
+  for (const e of merged.flat()) { const t = titleFor(e.target, e.story); count.set(t, (count.get(t) || 0) + 1); }
+  const labels = dossier.story.nodeLabels || {};
+  for (const e of merged.flat())
+    if (count.get(titleFor(e.target, e.story)) > 1 && labels[e.target] && !e.many) e.titleOverride = titleWith(labels[e.target], docMap.get(e.target)?.names);
+  return merged.map((list) => {
     if (list.length === 1) return edgeButton(list[0]);
     // Exclusive outcomes: one lead line (the delay they all share says it once there), then a ledger of the possibilities.
     const facts = list.map(edgeFacts);
@@ -885,11 +892,18 @@ function renderBody(r, ctx) {
   // A piece that is only "ERROR" is the game's scripted-text default for a case it never reaches: not shown (five chapters
   // read "If: other conditions ERROR").
   const fallback = (part) => /^\s*(ERROR|错误)\s*$/i.test(local(part.text) || "");
+  // A variant whose condition has no readable name is numbered ("情形一" / "Case 1"), not "If: other conditions" four times;
+  // a variant as long as a paragraph starts on its own line (alternatives ran together, and the line before each badge was
+  // justified across the column).
+  const cn = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+  let unnamed = 0;
   const html = (passage?.paragraphs || []).map((para) => ({ ...para, parts: para.parts.filter((part) => !fallback(part)) })).filter((para) => para.parts.length).map((para) => `<section><p>${para.parts.map((part) => {
     const text = paragraph(local(part.text));
     if (part.status !== null || !part.when) return text;
-    const label = describe(part.when, lang, profileNames, { fallback: T("其他条件", "other conditions") });
-    return `<span class="variant-piece"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(T("若：", "If: "))}${esc(label)}</button>${text}</span>`;
+    const named = describe(part.when, lang, profileNames);
+    const label = named ? T("若：", "If: ") + named : (unnamed++, T(`情形${cn[unnamed - 1] || unnamed}`, `Case ${unnamed}`));
+    const block = String(local(part.text) || "").length > 40 ? " variant-block" : "";
+    return `<span class="variant-piece${block}"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(label)}</button>${text}</span>`;
   }).join("")}</p></section>`).join("");
   return { html, tabs, passage };
 }
@@ -1086,7 +1100,7 @@ function renderChapter(preservePosition = false) {
     const download=document.createElement('a');
     download.href=asset(dossier.summary.path); download.download='';
     download.textContent=T('下载 Markdown','Download Markdown');
-    const text=guideElement(dossier.summary.text,lang,{show:T('显示英文','Show Chinese'),hide:T('仅显示中文','English only')});
+    const text=guideElement(dossier.summary.text,lang,{show:T('显示英文','Show Chinese'),hide:T('仅显示中文','English only'),only:T('这份导读只有英文。','This guide is written in Chinese only.')});
     notesBox.append(heading,download,text);
     notesBox.addEventListener('toggle',()=>{if(notesBox.open&&!notesBox.dataset.linked){notesBox.dataset.linked='1';linkGuideDocs(text,story,dossier.chapters);}});
     $('.chapter-document').append(notesBox);

@@ -71,7 +71,8 @@ export function splitMixed(text) {
     // "…结束事件链 cs_inetian_chain / a new, unused device": the identifier ends the Chinese half; the slash is the boundary.
     // (also with the Chinese sentence's own stop after it: "…site_fossilized_jellyfish_random_events。 / Failed rolls …")
     // (or with that stop and a space and no slash: "…选项 luxury_limbs。 "Multi-Limb Coordination" …")
-    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.-]*`?)(?:([。；，]?)\s*\/\s+|([。；])\s+)/.exec(tail);
+    // (and with a closing bracket: "…都不检查 has_distar）/ no DLC check …")
+    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.-]*`?)(?:([）)」]?[。；，]?)\s*\/\s+|([。；])\s+)/.exec(tail);
     if (idSlash) { head = `${head} ${idSlash[1]}${idSlash[2] || idSlash[3] || ""}`; tail = tail.slice(idSlash[0].length); }
     // (or after a Chinese full stop and a space: "…出现。   275 only appears when …"; the checks below still require an
     // English tail, so "。9010“谜团重现”…" stays whole)
@@ -117,7 +118,8 @@ function metaPair(value) {
   if (!v) return null;
   if (!/[㐀-鿿]/.test(v)) return /[（）「」《》、，；]/.test(v) ? null : withId(v, v);
   const slash = /^([^/]*[㐀-鿿][^/]*?)\s*\/\s*([^㐀-鿿/（）「」《》]+)$/.exec(v);
-  if (slash && !/[A-Za-z]{4,}/.test(slash[1])) return withId(slash[1].trim(), slash[2].trim());
+  // (script ids on the Chinese side are not English words: "无DLC检查（… has_distar）/ no DLC check (…)")
+  if (slash && !/[A-Za-z]{4,}/.test(slash[1].replace(/[\w-]*[_.][\w.-]*/g, ""))) return withId(slash[1].trim(), slash[2].trim());
   const pair = /^([㐀-鿿《》·\d\s]+?)\s*([A-Za-z][^㐀-鿿（）「」《》、，；]*)$/.exec(v);
   if (pair) return withId(pair[1].trim(), pair[2].trim());
   if (!/[A-Za-z]/.test(v)) return withId(v, "");
@@ -271,7 +273,11 @@ export function guideElement(md, lang, labels) {
   const firstSection = root.querySelector(":scope > h4");
   const has = (l) => [...root.querySelectorAll(`[data-lang="${l}"]`)].some((e) => !e.closest("h3, h4, h5, details.md-review") && (!firstSection || firstSection.compareDocumentPosition(e) & 4));
   const other = lang === "zh" ? "en" : "zh";
-  if (!has(lang) && has(other)) root.dataset.show = "all";
+  if (!has(lang) && has(other)) {
+    root.dataset.show = "all";
+    // (said once, quietly: the reader sees why the guide is in the other language)
+    if (labels?.only) { const note = document.createElement("p"); note.className = "md-lang-note"; note.textContent = labels.only; root.prepend(note); }
+  }
   // A section written only in one language: on the other page its heading steps aside with its text (the toggle shows both).
   const shows = (e, l) => (e.dataset.lang ? e.dataset.lang === l || "mixed" in e.dataset : e.querySelector(`[data-lang="${l}"]`) || !e.querySelector("[data-lang]") && e.textContent.trim());
   for (const h of root.querySelectorAll(":scope > h3, :scope > h4, :scope > h5")) {
