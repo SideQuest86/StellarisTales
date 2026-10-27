@@ -49,8 +49,25 @@ export function trimGlueSpaces(parts) {
  *  Once the id reads as that title, the quote would repeat it: text right after a link loses a quoted name that the link's
  *  label already contains. Any other quote (a choice, a line of dialogue) stays. */
 export function dropEcho(label, text) {
-  const q = /^\s?["“「『]([^"”」』]{1,80})["”」』]/.exec(text);
+  // (a bracketed name too: "12155（奥伏戎的愤怒）")
+  const q = /^\s?["“「『（(]([^"”」』）)]{1,80})["”」』）)]/.exec(text);
   return q && sameName(q[1], label) ? text.slice(q[0].length) : text;
+}
+
+/** In a bold "id name" ("**2006 宗教狂热**", "**1011 碰撞 / 1012 损失舰船**") the guide names the document itself: the written
+ *  name becomes the link and the id goes, instead of the link's own title standing beside it ("宗教狂热宗教狂热", "军阀的崛起
+ *  军阀崛起"). parts: tokenize() output with labels as `text`; only for a text node that is a bold element's whole content. */
+export function foldNamed(parts) {
+  const out = parts.slice();
+  for (let i = 0; i < out.length; i++) {
+    const p = out[i], next = out[i + 1];
+    if (typeof p !== "object" || p.muted || typeof next !== "string") continue;
+    const m = /^\s+([^/（(：:\s][^/（(：:]*?)(\s*\/\s*|$)/.exec(next);
+    if (!m || /^\d/.test(m[1])) continue;
+    out[i] = { ...p, text: m[1].trim() };
+    out[i + 1] = next.slice(m[0].length - m[2].length);
+  }
+  return out.filter((x) => x !== "");
 }
 
 const flat = (s) => String(s ?? "").toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, "");
@@ -162,7 +179,9 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
     // bilingual lead keeps its language spans).
     const prev = node.previousSibling;
     const lead = prev?.nodeType === 1 && /^(STRONG|B|EM|I)$/.test(prev.tagName) && !prev.children.length ? prev : null;
-    const parts = foldEchoes(labelled, () => lead?.textContent || "");
+    // A bold element made of "id name" pairs names its documents itself.
+    const boldIds = /^(STRONG|B)$/.test(node.parentElement?.tagName || "") && node.parentElement.childNodes.length === 1 && typeof labelled[0] === "object";
+    const parts = foldEchoes(boldIds ? foldNamed(labelled) : labelled, () => lead?.textContent || "");
     const frag = doc.createDocumentFragment();
     let glue = null; // a link and the closing punctuation right after it stay on one line (no "，" at a line start)
     for (const p of parts) {

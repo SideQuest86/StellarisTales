@@ -102,50 +102,46 @@ export function splitMixed(text) {
 
 // The metadata line under a guide's title names each thing in both languages ("分类 Category：先驱者与考古 Precursors · DLC：
 // 《远古遗物》Ancient Relics"): each page gets its own half ("分类：先驱者与考古 · DLC：《远古遗物》" / "Category: Precursors · DLC:
-// Ancient Relics"); a value in one language only ("Shadows of the Shroud（has_shroud_dlc）") goes to both.
-// Word by word: Chinese words to one side, Latin ones to the other, neutral ones ("/", "C8" beside Latin) to both; a
-// bracket's content is split the same way. Returns [zh, en], either "" when that language has no words.
-function pairWords(s) {
-  const zh = [], en = [];
-  const spaced = String(s).replace(/([㐀-鿿》」])(?=[A-Za-z(（])/g, "$1 ").replace(/([A-Za-z.)])(?=[《「（㐀-鿿])/g, "$1 ").replace(/([、，；])/g, " $1 ");
-  // Tokens: Chinese (zh), English (en), or neutral (identifiers, numbers, acronyms, symbols: "distar.1055", "C8", "DLC", "&"),
-  // which follow their nearest neighbours: one side when both neighbours are on it, both sides otherwise.
-  const tokens = [];
-  for (const m of spaced.matchAll(/（([^）]*)）|\(([^)]*)\)|\S+/g)) {
-    if (m[1] != null || (m[2] != null && /[㐀-鿿]/.test(m[2]))) { tokens.push({ group: pairWords(m[1] ?? m[2]) }); continue; }
-    const w = m[0];
-    tokens.push({ w, side: /[㐀-鿿]/.test(w) ? "zh" : /[A-Za-z]{2,}/.test(w) && !/[\w][_.][\w]|\d/.test(w) && !/^\W*[A-Z]{2,4}\W*$/.test(w) ? "en" : "" });
-  }
-  const sideAt = (i, step) => { for (let j = i + step; j >= 0 && j < tokens.length; j += step) if (tokens[j].side) return tokens[j].side; return ""; };
-  tokens.forEach((t, i) => {
-    if (t.group) { if (t.group[0]) zh.push(`（${t.group[0]}）`); if (t.group[1]) en.push(`(${t.group[1]})`); return; }
-    const before = sideAt(i, -1), after = sideAt(i, 1);
-    const side = t.side || (before && before === after ? before : "");
-    if (side !== "en") zh.push(t.w);
-    if (side !== "zh") en.push(t.w);
-  });
-  const has = (list, re) => list.some((w) => re.test(w));
-  return [has(zh, /[㐀-鿿]/) ? zh.join(" ").replace(/\s*（/g, "（").replace(/(?<=[㐀-鿿》）])\s+(?=[㐀-鿿《])/g, "") : "", has(en, /[A-Za-z]{2,}/) ? en.join(" ") : ""];
+// Ancient Relics"). The lines are written freely, so only plain shapes are split, each optionally ending in a script id in
+// brackets ("（has_distar）", kept on both sides): "中文 English", "中文 / English", a Latin name (both pages), Chinese alone
+// (Chinese page only). Anything else (notes mixing both languages, two names joined by 或 …) keeps the whole line on both
+// pages. The review date belongs to the review notes and is left out.
+function metaPair(value) {
+  let v = value.trim(), id = "";
+  const idm = /\s*[（(]([\w./:-]*[_.][\w./:-]*)[）)]\s*$/.exec(v);
+  if (idm) { id = idm[1]; v = v.slice(0, idm.index).trim(); }
+  const withId = (zh, en) => [zh && id ? `${zh}（${id}）` : zh, en && id ? `${en} (${id})` : en];
+  if (!v) return null;
+  if (!/[㐀-鿿]/.test(v)) return /[（）「」《》、，；]/.test(v) ? null : withId(v, v);
+  const slash = /^([^/]*[㐀-鿿][^/]*?)\s*\/\s*([^㐀-鿿/（）「」《》]+)$/.exec(v);
+  if (slash && !/[A-Za-z]{4,}/.test(slash[1])) return withId(slash[1].trim(), slash[2].trim());
+  const pair = /^([㐀-鿿《》·\d\s]+?)\s*([A-Za-z][^㐀-鿿（）「」《》、，；]*)$/.exec(v);
+  if (pair) return withId(pair[1].trim(), pair[2].trim());
+  if (!/[A-Za-z]/.test(v)) return withId(v, "");
+  return null;
 }
 export function metaLine(text) {
   if (!/^分类\s*Category\s*[：:]/.test(text)) return null;
   const zh = [], en = [];
-  for (const part of text.split(/\s+·\s+/)) {
-    const m = /^([^：:（(]+)[：:]\s*(.*)$/.exec(part);
-    const [lz, le] = m ? pairWords(m[1]) : ["", ""];
-    // A value already written as "中文 / English" splits at its slash.
-    const value = m ? m[2] : part, slash = /^(.*[㐀-鿿》）].*?)\s*\/\s*([^㐀-鿿]*[A-Za-z][^㐀-鿿]*)$/.exec(value);
-    // (a value with no Chinese is a name both pages show: "DLC：Shadows of the Shroud")
-    const [vz, ve] = slash ? [slash[1].trim(), slash[2].trim()] : !/[㐀-鿿]/.test(value) ? [`\u0003${value}\u0003`, value] : pairWords(value);
-    const label = (l, fallback) => l || (m && !/[㐀-鿿]/.test(m[1]) ? m[1].trim() : fallback);
-    if (vz) zh.push(m ? `${label(lz, "")}：${vz}` : vz);
-    if (ve) en.push(m ? `${label(le, "")}: ${ve}` : ve);
+  for (const part of text.split(/\s*·\s*/)) {
+    if (/^审阅\s*Reviewed\b/.test(part)) continue;
+    const m = /^([^：:（(]+?)\s*[：:]\s*(.*)$/.exec(part);
+    if (!m) {
+      // (a part without a label: "殖民地插曲 colony interlude")
+      const pair = metaPair(part);
+      if (!pair) return null;
+      if (pair[0]) zh.push(pair[0]);
+      if (pair[1]) en.push(pair[1]);
+      continue;
+    }
+    const label = m[1].trim(), lp = /^([㐀-鿿]+)\s+([A-Za-z][A-Za-z ]*)$/.exec(label);
+    const [lz, le] = lp ? [lp[1], lp[2]] : /^[A-Za-z][A-Za-z ]*$/.test(label) ? [label, label] : /^[㐀-鿿]+$/.test(label) ? [label, ""] : [null, null];
+    const pair = lz == null ? null : metaPair(m[2]);
+    if (!pair) return null;
+    if (pair[0]) zh.push(`${lz}：${pair[0]}`);
+    if (pair[1]) en.push(le ? `${le}: ${pair[1]}` : pair[1]);
   }
-  const [z, e] = [zh.join(" · ").replace(/\s+([、，；])\s*/g, "$1"), en.join(" · ").replace(/\s*[、，；]\s*/g, ", ").replace(/,\s*(?=[)·]|$)/g, "")];
-  // Free-form lines do not always split cleanly ("Distant" and "Stars" apart, a bracket left open): then the line stays whole.
-  const balanced = (s) => (s.match(/[（(]/g) || []).length === (s.match(/[）)]/g) || []).length;
-  const clean = !/[㐀-鿿、，；《》]/.test(e) && !/(?<![\w.])(?!DLC\b)[A-Za-z]{4,}(?![\w.])/.test(z.replace(/\u0003[^\u0003]*\u0003|`[^`]*`|[\w-]*[_.][\w.-]*/g, "")) && balanced(z) && balanced(e);
-  return clean ? [z.replace(/\u0003/g, ""), e] : null;
+  return [zh.join(" · "), en.join(" · ")];
 }
 
 const HEADING_PAIR = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)(?:\s*[/|｜·]\s*|\s+)([A-Za-z][^㐀-鿿]*)$/;

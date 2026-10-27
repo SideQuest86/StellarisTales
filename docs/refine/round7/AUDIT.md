@@ -364,3 +364,26 @@ Same workflow, 24 new random stories (seed 99173), 64 chapters; 8 reports, each 
   category value), headings over nothing 0.
 - Not changed: an empty reply after a choice that only leads on (marauder.506; the continuation follows the choices); a
   Chinese-only guide's text on the English page (shown whole on purpose).
+
+Review of 0d63c3fc..b74b2ad0 (v4.17.29; workflow stellaris-review-v4-17-29): 7 confirmed, 0 rejected, all fixed in v4.17.30.
+- collapseCross merged conditional edges with different conditions, flags and delays into one card built from the first edge
+  (event-action-96 c1: "if no galaxy planet" shown for all three, galactic_market_founded never set). Now only edges with a
+  chance and the same kind, condition, flags and delay merge.
+- metaLine's word-by-word split failed on free-form lines in six ways (a stranded 」, "或 Biogenesis" lost, DLC names dropped
+  from the Chinese side, ids moved to one side, repeated names, empty values). Replaced by a strict grammar: per segment
+  "中文 English", "中文 / English", a Latin name (both pages) or Chinese alone (Chinese page), each optionally followed by a script
+  id in brackets (kept on both); labels "分类 Category", "DLC" or Chinese alone; the review date dropped; anything else keeps the
+  whole line. Over 1,353 lines: 1,235 split, 118 whole; an audit of every split finds no Chinese on the English side and no
+  English word on the Chinese side that the English side lacks.
+Inspection round 3 (24 random stories, seed 20261027, 83 chapters; desk-en found nothing):
+- Bold "id name" in guides ("**2006 宗教狂热**", "**2007 军阀崛起**" with the title "军阀的崛起"; 170 in 40 guides) read
+  "宗教狂热宗教狂热": foldNamed (guide-links.js) makes the guide's written name the link inside a bold element made of id-name pairs.
+  Unbolded "id + Chinese" is not folded: of 1,700 such places most continue the sentence ("1050 有专属选项"). dropEcho also drops
+  a bracketed name equal to the link ("12155（奥伏戎的愤怒）").
+- Story-map labels filled with the open chapter's names ("这个名字" for other chapters' placeholders): flow-surface fills each
+  label with the reviewed names of its own chapter (titles) or the chapter it comes from (options, links); app passes mapProse.
+  Six stories' expanded maps (map-names.mjs): generic fillers 32 -> 0 in both languages.
+- Version tabs mixing names and numbers (marauder.20: fifteen tabs) or more than nine: one "Version" picker (#passage-select,
+  the reading-picker style; choosing a conditioned version adopts its condition as the tabs do).
+- Not changed: the map card's top node partly under the card's fading edge (the card is a window onto a larger map); a 404 for
+  the 195 stories without an effects file (console only; avoiding it would cost every session an index request).

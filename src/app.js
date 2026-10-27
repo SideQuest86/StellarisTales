@@ -117,6 +117,9 @@ function proseWith(s, chapterNames) {
 // A title outside the open chapter (captions, slates, lists, links): the game's names filled in with that story's or
 // chapter's own wording, not the open chapter's. A story's title uses its index entry's reviewed `names`.
 const titleWith = (title, chapterNames) => typeset(proseWith(local(title), chapterNames));
+// The story map's words, filled with the reviewed names of the chapter they belong to (flow-surface passes them); without
+// a chapter, the open one's.
+const mapProse = (s, chapterNames) => (chapterNames ? typeset(proseWith(s, chapterNames)) : prose(s));
 const storyName = (s) => { const entry = storyById.get(s?.id) || s; return titleWith(entry?.title, entry?.names); };
 // A short first line that starts with a hyphen ("-警告：具有挑战性的起源") is typeset as a line of its own (.lead-line), words and
 // hyphen kept; the text below it follows as a paragraph.
@@ -572,7 +575,7 @@ async function prewarmReader() {
     t0 = performance.now();
     try {
       show();
-      flowSurface.update(data.story, data.chapters, doc.id, new Set([doc.id]), lang, prose, [{ story: data.story.id, chapter: doc.id }]);
+      flowSurface.update(data.story, data.chapters, doc.id, new Set([doc.id]), lang, mapProse, [{ story: data.story.id, chapter: doc.id }]);
       $("#flow-surface").getBoundingClientRect();
     } catch (e) {
       console.warn("map warm-up skipped", e);
@@ -725,15 +728,18 @@ function edgeLists(edges) {
 const listsSignature = (lists) => lists.map((list) => list.map((e) => `${e.target}:${e.chance ?? ""}:${(e.sets || []).join(" ")}`).join(",")).join(";");
 // Many outcomes of one group leading into the same other story (a dig's 40 possible incidents) read as one card: that
 // story, "one of 40 chapters" and their combined chance. Each card would only repeat the other story's name and "<1%".
+// Only interchangeable outcomes merge: each with a chance, of one kind, condition, flags and delay. (Conditional branches
+// into one story, "if a galaxy planet exists" and "if not", stay apart: one card would show one branch's condition for all.)
 function collapseCross(list) {
+  const key = (e) => (e.story && e.story !== dossier.story.id && e.chance != null ? JSON.stringify([e.story, e.kind, e.when || null, e.sets || null, e.delay || null]) : null);
   const by = new Map();
-  for (const e of list) if (e.story && e.story !== dossier.story.id) by.set(e.story, [...(by.get(e.story) || []), e]);
+  for (const e of list) { const k = key(e); if (k) by.set(k, [...(by.get(k) || []), e]); }
   const out = [], done = new Set();
   for (const e of list) {
-    const many = e.story ? by.get(e.story) : null;
+    const k = key(e), many = k ? by.get(k) : null;
     if (!many || many.length < 3) { out.push(e); continue; }
-    if (done.has(e.story)) continue;
-    done.add(e.story);
+    if (done.has(k)) continue;
+    done.add(k);
     out.push({ ...many[0], many: many.length, label: null, chance: many.every((x) => x.chance != null) ? many.reduce((sum, x) => sum + x.chance, 0) : null });
   }
   return out;
@@ -869,7 +875,9 @@ function renderBody(r, ctx) {
     const named = (i) => names[i] && names.indexOf(names[i]) === names.lastIndexOf(names[i]);
     // Many unnamed versions (a storm of eight kinds, a faction's six) read as one "Version" and their numbers.
     const compact = passages.length > 4 && !passages.some((p, i) => named(i));
-    tabs = `<div class="reading-tabs${compact ? " compact" : ""}" role="group" aria-label="${esc(T("文本版本", "Text version"))}">${compact ? `<span class="reading-tabs-label" aria-hidden="true">${esc(T("版本", "Version"))}</span>` : ""}${passages.map((p, i) => {
+    // Many versions that mix names and numbers (marauder.20: fourteen numbered and "尚武文化 · 此前经历"), or very many: one picker.
+    if ((passages.length > 4 && !compact) || passages.length > 9) tabs = `<label class="reading-picker passage-picker"><span>${esc(T("版本", "Version"))}</span><select id="passage-select" aria-label="${esc(T("文本版本", "Text version"))}">${passages.map((p, i) => `<option value="${i}"${i === passageIndex ? " selected" : ""}>${esc(named(i) ? names[i] : T(`版本 ${i + 1}`, `Version ${i + 1}`))}</option>`).join("")}</select></label>`;
+    else tabs = `<div class="reading-tabs${compact ? " compact" : ""}" role="group" aria-label="${esc(T("文本版本", "Text version"))}">${compact ? `<span class="reading-tabs-label" aria-hidden="true">${esc(T("版本", "Version"))}</span>` : ""}${passages.map((p, i) => {
       const label = named(i) ? names[i] : compact ? String(i + 1) : T(`版本 ${i + 1}`, `Version ${i + 1}`);
       return `<button data-passage="${i}" aria-pressed="${i === passageIndex}"${compact ? ` aria-label="${esc(T(`版本 ${i + 1}`, `Version ${i + 1}`))}"` : ""}>${esc(label)}</button>`;
     }).join("")}</div>`;
@@ -1085,7 +1093,7 @@ function renderChapter(preservePosition = false) {
   }
   $("#chapter-list").innerHTML = story.tree ? '' :
     `<div class="contents-title"><span>${esc(T("剧情脉络", "Story map"))}</span><button id="contents-close" aria-label="${esc(T("关闭剧情脉络", "Close story map"))}">×</button></div>` +
-    storyMap(story, readable, r.id, visitedChapters, lang, prose, trail);
+    storyMap(story, readable, r.id, visitedChapters, lang, mapProse, trail);
   $("#chapter-list").hidden = true;
   for (const [index,choice] of r.choices.entries()) {
     if (!choice.labelVariants?.length) continue;
@@ -1119,7 +1127,7 @@ function renderChapter(preservePosition = false) {
   // When the reader opens, the map stays hidden until the extracted card settles (90 ms delay + 460 ms motion);
   // building it once the card rests keeps both the click frame and the extraction animation free of map work.
   // Chapter changes update it in the next idle period, so the new text and the map's relayout do not share a frame.
-  const updateFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail);
+  const updateFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, mapProse, trail);
   const freshOpen = openingReader;
   const ticket = readerTicket;
   const later = (f) => () => { if (ticket === readerTicket) f(); };
@@ -1130,7 +1138,7 @@ function renderChapter(preservePosition = false) {
     (window.requestIdleCallback || ((f) => setTimeout(f, 200)))(later(() => flowSurface.prepare(story, readable)), { timeout: 450 });
     const mapFonts = loadFontsWithin(mapFontParts(story, readable, lang), 600); // requested now, awaited when the map is built
     // The map fills in slices (FlowSurface.fillNodes) instead of one 60–100 ms frame.
-    const openFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, prose, trail, undefined, { progressive: true });
+    const openFlow = () => flowSurface.update(story, readable, r.id, visitedChapters, lang, mapProse, trail, undefined, { progressive: true });
     setTimeout(later(() => mapFonts.then(later(openFlow))), 600);
   }
   else (window.requestIdleCallback || ((f) => setTimeout(f, 50)))(later(updateFlow), { timeout: 250 });
@@ -1172,6 +1180,14 @@ function renderChapter(preservePosition = false) {
       if (passage?.when) { adopt(passage.when); passageIndex = 0; }
       renderChapter(true);
       document.querySelector("[data-passage]")?.focus({ preventScroll: true });
+    };
+  if ($("#passage-select"))
+    $("#passage-select").onchange = (e) => {
+      const i = Number(e.target.value), passage = resolveBody(chapter, readingContext())[i];
+      passageIndex = i;
+      if (passage?.when) { adopt(passage.when); passageIndex = 0; }
+      renderChapter(true);
+      $("#passage-select")?.focus({ preventScroll: true });
     };
   if ($("#reading-select"))
     $("#reading-select").onchange = (e) => {
@@ -1423,7 +1439,7 @@ document.addEventListener("click", (e) => {
     choice.closest(".choice").classList.toggle("chosen", open);
     const ended=open && chapter.dialogue?.exits?.includes(source.key);
     for(const dialogueStatus of document.querySelectorAll('[data-dialogue-status]'))dialogueStatus.textContent=ended?T('对话已结束','Conversation complete'):T('继续对话','Continue the conversation');
-    flowSurface.update(dossier.story, dossier.chapters, chapter.id, visitedChapters, lang, prose, trail);
+    flowSurface.update(dossier.story, dossier.chapters, chapter.id, visitedChapters, lang, mapProse, trail);
     return;
   }
   if (e.target.closest("#reading-back, #from-story, .route-back") && trail.length > 1) {

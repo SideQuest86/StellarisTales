@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { tokenize, namespaces, dropEcho, foldEchoes } from "../src/guide-links.js";
+import { tokenize, namespaces, dropEcho, foldEchoes, foldNamed } from "../src/guide-links.js";
 
 const ids = new Set(["origin.1199", "origin.1200", "origin.1205", "origin.1310", "story.5", "anomalies:DISTAR"]);
 const spaces = namespaces(ids);
@@ -35,6 +35,17 @@ test("a quoted name that the link already shows is not repeated", () => {
   assert.equal(dropEcho("The Horizon Signal", ' "Send the ship" begins the chain'), ' "Send the ship" begins the chain');
   assert.equal(dropEcho("The Horizon Signal", " fires"), " fires");
   assert.equal(dropEcho("Reaching Into the Rift", ' "Other" fires'), ' "Other" fires');
+  assert.equal(dropEcho("奥伏戎的愤怒", "（奥伏戎的愤怒）。"), "。");
+  assert.equal(dropEcho("C.A.R.E交互界面", "（获得奖励）；"), "（获得奖励）；");
+});
+
+test("a bold 'id name' names its document: the written name is the link", () => {
+  const link = (text) => ({ id: "x.1", raw: "2006", text });
+  const show = (parts) => parts.map((p) => (typeof p === "string" ? p : `[${p.text}]`)).join("");
+  assert.equal(show(foldNamed([link("宗教狂热"), " 宗教狂热"])), "[宗教狂热]");
+  assert.equal(show(foldNamed([link("军阀的崛起"), " 军阀崛起"])), "[军阀崛起]");
+  assert.equal(show(foldNamed([link("碰撞"), " 碰撞 / ", link("损失舰船"), " 损失舰船"])), "[碰撞] / [损失舰船]");
+  assert.equal(show(foldNamed([link("A"), " / ", link("B"), " 联合演习失败"])), "[A] / [联合演习失败]");
 });
 
 test("an id right after the name it would show: the written name becomes the link", () => {

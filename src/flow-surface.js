@@ -439,20 +439,29 @@ export class FlowSurface {
     this.unit = 1;
     this.builtLanguage = this.language;
   }
-  local(value) {
-    return this.prose(value?.[this.language] || value?.zh || value?.en || "");
+  /** Text in the reader's language, the game's names filled in with the reviewed names of `doc` (the chapter the words
+   *  belong to: a node's own chapter for its title, the chapter an option or link comes from for its label). The open
+   *  chapter's names were used for every node, so other chapters' names fell back to "这个名字" / "this name". */
+  local(value, doc) {
+    return this.prose(value?.[this.language] || value?.zh || value?.en || "", doc ? this.tree?.docs.get(doc)?.names || {} : undefined);
+  }
+  /** The chapter a node is reached from (its nearest ancestor with a document). */
+  sourceDoc(node) {
+    let parent = this.tree.nodes.get(node?.parent);
+    while (parent && !parent.doc) parent = this.tree.nodes.get(parent.parent);
+    return parent?.doc;
   }
   /** Title of a chapter on the map: the curated label (it tells apart chapters that share an event name), else the heading. */
   docTitle(doc) {
-    return this.local(this.tree.labels?.[doc] || this.tree.docs.get(doc)?.title) || t("reader.chapter");
+    return this.local(this.tree.labels?.[doc] || this.tree.docs.get(doc)?.title, doc) || t("reader.chapter");
   }
   /** The heading the reader shows for the chapter. */
   docHeading(doc) {
-    return this.local(this.tree.docs.get(doc)?.title);
+    return this.local(this.tree.docs.get(doc)?.title, doc);
   }
   /** Second line of a node: the reader's heading, when it adds something to the curated label. */
   subtitle(node) {
-    const label = this.tree.labels?.[node.doc] ? this.local(this.tree.labels[node.doc]) : "";
+    const label = this.tree.labels?.[node.doc] ? this.local(this.tree.labels[node.doc], node.doc) : "";
     const heading = this.docHeading(node.doc);
     if (!label || !heading || label === heading) return "";
     const a = norm(label), b = norm(heading);
@@ -468,21 +477,21 @@ export class FlowSurface {
     switch (node.type) {
       case "parallel": {
         const base = node.via?.required ? t("map.parallelRequired", { n: node.via.required }) : t("map.parallel");
-        const title = this.local(node.via?.label);
+        const title = this.local(node.via?.label, this.sourceDoc(node));
         return title ? `∥ ${title} · ${base}` : `∥ ${base}`;
       }
       case "exclusive":
       case "refset": {
         if (node.type === "refset" && !node.exclusive) return "";
-        return `${node.via?.random ? "⚄" : "◈"} ${this.local(node.via?.label) || (node.via?.random ? t("map.random") : t("map.exclusive"))}`;
+        return `${node.via?.random ? "⚄" : "◈"} ${this.local(node.via?.label, this.sourceDoc(node)) || (node.via?.random ? t("map.random") : t("map.exclusive"))}`;
       }
       case "fork":
-        return `◇ ${this.local(node.via?.label) || t("map.option")}`;
+        return `◇ ${this.local(node.via?.label, this.sourceDoc(node)) || t("map.option")}`;
       case "appendix":
         return t("map.appendix");
       case "shared": {
         const via = node.via || {};
-        const text = via.label ? this.local(via.label) : via.secondary ? t("map.secondary") : via.triggers?.length ? this.local(via.triggers[0]) : via.random ? t("map.random") : "";
+        const text = via.label ? this.local(via.label, this.sourceDoc(node)) : via.secondary ? t("map.secondary") : via.triggers?.length ? this.local(via.triggers[0], this.sourceDoc(node)) : via.random ? t("map.random") : "";
         return `${via.random && !via.label ? "⚄ " : ""}${text} ×${via.count}`.trim();
       }
       default:
@@ -534,11 +543,12 @@ export class FlowSurface {
   leadText(node) {
     const via = node.via || {};
     const option = this.tree && optionLabel(this.tree, node);
-    if (option) return `◇ ${this.local(option)}`;
-    if (via.label) return this.local(via.label);
+    const from = this.sourceDoc(node);
+    if (option) return `◇ ${this.local(option, from)}`;
+    if (via.label) return this.local(via.label, from);
     if (via.kind === "entry") {
       const trigger = via.triggers?.[0];
-      return via.secondary ? t("map.secondary") : trigger ? this.local(trigger) : t("map.entry");
+      return via.secondary ? t("map.secondary") : trigger ? this.local(trigger, from) : t("map.entry");
     }
     const condition = this.conditionText(via.when);
     if (condition) return t("map.ifCond", { c: condition });
