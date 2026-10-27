@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { renderEffects, countEffects } from "../src/effects-panel.js";
+import { renderEffects, countEffects, tidyEffects } from "../src/effects-panel.js";
 
 // Real structures produced by scripts/effects.py from the game files (python tests/... regenerates: see docs/EFFECTS.md).
 const fx = JSON.parse(readFileSync(new URL("./fixtures/effects-samples.json", import.meta.url), "utf8"));
@@ -86,4 +86,20 @@ test("unhandled entries are counted, not shown", () => {
 test("truncated lists say how much is left out", () => {
   const h = renderEffects([{ kind: "resource", label: { zh: "a", en: "a" } }, { kind: "more", omitted: 5, label: { zh: "……另有 5 项", en: "... and 5 more" } }], opts("en"));
   assert.match(h, /fx-more/);
+});
+
+test("adjacent repeats: a tooltip's echo goes, the same effect twice reads x2, nothing that differs is merged away", () => {
+  const L = (en) => ({ zh: en, en });
+  const tip = { kind: "tooltip", label: L("Improves satisfaction.") };
+  const scripted = { kind: "scripted", label: L("Improves satisfaction."), effects: [{ kind: "project", label: L("Progress changes") }] };
+  assert.deepEqual(tidyEffects([tip, scripted]).map((e) => e.kind), ["tooltip"]); // the tooltip keeps its mark, the details stay
+  assert.equal(tidyEffects([tip, scripted])[0].effects.length, 1);
+  const district = { kind: "planet", label: L("Adds a district"), via: "x" };
+  assert.equal(tidyEffects([district, { ...district }])[0].times, 2);
+  const minerals = { kind: "deposit", label: L('Adds the "+3" deposit'), deposit: "d_minerals_3" };
+  assert.equal(tidyEffects([minerals, { ...minerals, deposit: "d_energy_3" }]).length, 2);
+  const option = { kind: "random_option", label: L("About 33.3%"), chance: { percent: 33.3 }, effects: [{ kind: "resource", label: L("+50") }] };
+  assert.equal(tidyEffects([option, { ...option }, { ...option }]).length, 3);
+  const dlc = { kind: "if", label: L("If: DLC"), effects: [{ kind: "if", label: L("If: DLC"), effects: [district] }] };
+  assert.deepEqual(tidyEffects([dlc])[0].effects.map((e) => e.kind), ["planet"]);
 });

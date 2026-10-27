@@ -23,9 +23,9 @@ const GROUPS = new Set(["if", "else", "random", "random_list", "random_option", 
 const pick = (label, lang) => (label && (label[lang] || label.en || label.zh)) || "";
 const isList = (v) => Array.isArray(v) && v.length > 0;
 
-// Adjacent repeats read as a stutter: a game tooltip followed by the scripted effect it describes (the same words), or two
-// "if" blocks on the same condition. A plain line that only repeats its neighbour goes; same-condition blocks become one.
-// (Random blocks are separate rolls and stay apart.)
+// Adjacent repeats read as a stutter: a game tooltip followed by the scripted effect it describes (the same words), two "if"
+// blocks on the same condition, the same effect twice. The tooltip's echo goes, same-condition blocks become one, a repeated
+// effect reads "×2". (Random options are separate rolls and stay apart; nothing that differs is ever merged away.)
 const words = (l) => (l ? `${l.zh ?? ""}\u0001${l.en ?? ""}` : "");
 function tidy(list) {
   const out = [];
@@ -34,16 +34,16 @@ function tidy(list) {
     while (e && e.kind === "if" && isList(e.effects) && e.effects.some((c) => c && c.kind === "if" && words(c.label) === words(e.label)))
       e = { ...e, effects: e.effects.flatMap((c) => (c && c.kind === "if" && words(c.label) === words(e.label) ? c.effects || [] : [c])) };
     const prev = out[out.length - 1];
-    // The same entry from the same script line twice is one effect. From two lines it is two (two districts, two ships):
-    // one line marked "×2". (Not for random options or condition blocks, where a repeat means something else.)
-    if (prev && e && JSON.stringify({ ...prev, times: undefined }) === JSON.stringify(e)) continue;
+    // The same effect twice in a row is two (two districts, two ships, a scripted effect's two buildings): one line marked
+    // "×2". (Not for random options or condition blocks, where a repeat means something else.)
     const bare = (x) => JSON.stringify(x, (k, v) => (k === "source" || k === "times" ? undefined : v));
     if (prev && e && !GROUPS.has(e.kind) && !isList(e.effects) && bare(prev) === bare(e)) { out[out.length - 1] = { ...prev, times: (prev.times || 1) + 1 }; continue; }
     if (prev && e && !prev.unhandled && !e.unhandled && words(prev.label) && words(prev.label) === words(e.label)) {
       const plain = (x) => !isList(x.effects) && !isList(x.stats) && !x.note && !x.duration && !x.chance;
-      // A plain line repeating a neighbour of another kind (a tooltip and the effect it describes) or of the same script line
-      // goes; a line without a target does not differ from its neighbour by target.
-      const echo = (x, y) => plain(x) && (x.kind !== y.kind || x.source === y.source) && (!x.target || words(x.target) === words(y.target));
+      // A plain line repeating a neighbour of another kind (a game tooltip and the effect it describes) goes; two effects of
+      // one kind with the same words are two effects ("+3" minerals and "+3" energy deposits). A line without a target does
+      // not differ from its neighbour by target.
+      const echo = (x, y) => plain(x) && x.kind !== y.kind && (!x.target || words(x.target) === words(y.target));
       if (echo(e, prev)) continue;
       // (the game's own tooltip keeps its "Game text" mark over the details of the effect it describes)
       if (echo(prev, e)) { out[out.length - 1] = prev.kind === "tooltip" ? { ...e, kind: "tooltip" } : e; continue; }
@@ -53,6 +53,8 @@ function tidy(list) {
   }
   return out;
 }
+
+export { tidy as tidyEffects }; // (tests)
 
 function leaves(list) {
   let n = 0;

@@ -88,6 +88,11 @@ test("several texts without a body are alternatives, read one at a time", () => 
   assert.equal(passages.length, 2); // identical texts are one
   assert.deepEqual(passages.map((p) => p.paragraphs[0].parts[0].text.en), ["Radiant storm.", "Electric storm."]);
   assert.equal(resolveBody({ texts: [t("Only one.")] }, {}).length, 1);
+  // A blank text or list lines: a composed description, read in order without the blanks.
+  const composed = resolveBody({ texts: [t("The cries of the Shroud."), t(""), t("A boon."), t("A curse.")] }, {});
+  assert.equal(composed.length, 1);
+  assert.deepEqual(composed[0].paragraphs.map((p) => p.parts[0].text.en), ["The cries of the Shroud.", "A boon.", "A curse."]);
+  assert.equal(resolveBody({ texts: [t("Factions:"), t("- Our first faction"), t("- Our second faction")] }, {}).length, 1);
 });
 
 test("describe names only what has a name and never invents a placeholder", () => {

@@ -100,11 +100,19 @@ export function storyFlags(dossier) {
 export function resolveBody(doc, ctx) {
   if (!doc.body) {
     // Several texts without a body are the game's alternatives (it shows one: a storm type, a faction, a hive's view): one
-    // passage each, read one at a time instead of run together. Identical ones are one.
-    const seen = new Set();
-    const texts = (doc.texts || []).filter((t) => !seen.has(JSON.stringify(t)) && seen.add(JSON.stringify(t)));
-    if (texts.length > 1) return texts.map((t) => ({ status: null, when: null, paragraphs: [{ parts: [{ text: t, status: true, when: null }] }] }));
-    return [{ status: true, when: null, paragraphs: texts.map((t) => ({ parts: [{ text: t, status: true, when: null }] })) }];
+    // passage each, read one at a time instead of run together; identical ones are one. A blank text or list lines mark a
+    // composed description instead (an intro, a separator, its items: shroud.3011, the Unplugged identity): its parts are
+    // read in order, without the blanks.
+    const blank = (t) => !(String(t?.zh || "").trim() || String(t?.en || "").trim());
+    const listed = (t) => /^\s*[-•*·]\s/.test(t?.en || t?.zh || "");
+    const all = doc.texts || [];
+    const paragraph = (t) => ({ parts: [{ text: t, status: true, when: null }] });
+    if (all.length > 1 && !all.some(blank) && !all.some(listed)) {
+      const seen = new Set();
+      const texts = all.filter((t) => !seen.has(JSON.stringify(t)) && seen.add(JSON.stringify(t)));
+      if (texts.length > 1) return texts.map((t) => ({ status: null, when: null, paragraphs: [paragraph(t)] }));
+    }
+    return [{ status: true, when: null, paragraphs: all.filter((t) => !blank(t)).map(paragraph) }];
   }
   const passages = [];
   for (const passage of doc.body) {

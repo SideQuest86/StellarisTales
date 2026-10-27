@@ -319,3 +319,22 @@ desktop/phone x English/Chinese, and reported 10 items; each was checked here be
 - Not changed: one blank map card seen once (not reproduced); a 404 for a story without an effects file (console only, handled);
   game wording ("Cost a number of Alloys Monthly", three similar "Commune with the Insurmountable One" cards); a "DLC：" colon in
   a guide's English metadata.
+
+Review of c8dca09b..ee43ec5c (v4.17.20-27; three Sonnet reviewers, verifiers; workflow stellaris-review-v4-17-27): markdown and
+guide-links clean; four confirmed in reading/effects/app, all fixed in v4.17.28 (one more claim, same-label "if" blocks merged
+across different stage conditions, was rejected: the panel never shows those conditions, so nothing differs on the page).
+- resolveBody split composed descriptions: 10 of the 177 body-less multi-text docs carry a blank text or list lines (an intro, a
+  separator, its items: shroud.3011/3012/3051/3056, situation.210/213, the Unplugged identity, action.41, pirate.2,
+  grand_archive.6015). Those read in order again, blanks dropped; the other 167 stay one version at a time. Tests for both.
+- tidy() dropped exact duplicates of any kind, so identical random options collapsed (three 33.3% options to one), and its echo
+  rule treated two effects of one kind with one wording as a repeat when neither had a source line (d_minerals_3 and d_energy_3,
+  'Adds the "+3" deposit'). Now: random options and condition blocks are never merged; identical single effects read "×N"
+  (all 452 identical adjacent pairs carry no source line and come through scripted effects, e.g. two Primitive Dwellings); an
+  echo is only a plain line of another kind (a game tooltip and its effect). Property check over all 10,367 effect lists: effects
+  per kind (counting ×N) identical before and after tidy, random options 6,203 = 6,203; panels with a line repeated right after
+  293 -> 84 (the rest are different effects or separate rolls with one wording); 353 lines marked ×N. Unit test added.
+- "Always shown" / "Always available" could mark an option whose condition the empire profile had settled (visible true). Such
+  a condition, like one without a readable name, now makes the shared line "Most of these appear only when: …" with no markers;
+  "Unless marked, …" and the markers remain where every exception is an option without a condition or with its own named one.
+  Over the 540 conditional chapters: per-option "Only when" lines 1,365, shared lines 27, "Always shown" marks 10, most repeats
+  of one line 9; no page errors.
