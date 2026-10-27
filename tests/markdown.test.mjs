@@ -84,6 +84,11 @@ test("an English half that opens with an event number splits after the guides' s
   const [z3, e3] = splitMixed("DLC：“视界信号”故事包（本地安装为 `dlc013_horizon_signal`；事件脚本本身没有 DLC 检查）/ Horizon Signal story pack (the event scripts contain no DLC check)");
   assert.match(z3, /没有 DLC 检查）$/);
   assert.match(e3, /^Horizon Signal story pack/);
+  // A Chinese term quoted near the start of the English half does not stop the split.
+  assert.deepEqual(splitMixed("天灾事件在危机开始时触发。 The \"天灾\" event fires when the crisis begins in earnest and every empire in the galaxy feels it."), ["天灾事件在危机开始时触发。", "The \"天灾\" event fires when the crisis begins in earnest and every empire in the galaxy feels it."]);
+  // A bold bilingual lead over a body in one language: the body keeps its own label.
+  const lead = renderMarkdown("- **第一位领袖消失 The first leader is lost.** 科研船与科学家在坐标处消失，获得大量物理研究。");
+  assert.match(lead, /<\/strong> <span lang="zh-CN" data-lang="zh">科研船/);
   // An identifier ending the Chinese half stays with it; the slash after it is the boundary.
   assert.deepEqual(splitMixed("设置 weather_manipulator_found，并结束事件链 cs_inetian_chain / a new, unused device and a warning."), ["设置 weather_manipulator_found，并结束事件链 cs_inetian_chain", "a new, unused device and a warning."]);
   // A bold lead naming the item in both languages belongs to both halves.

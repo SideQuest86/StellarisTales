@@ -203,3 +203,8 @@ write artefact) visible in the downloaded Markdown: removed.
 Reviewer notes (v4.17.18): rendered after .chapter-end with the other foot panels (style.css already treats details.review-note as
 one of that family and spaces it under an empty chapter end), so the narrative is followed directly by the choices; order now
 chapter-end > fx > specimens > review notes > guide. verify-reader-v4, verify-refine-reader, verify-round5 and smoke pass.
+
+Review of 89126859..bce8486f (four focused reviewers, two verifiers): 2 confirmed, both in markdown.js and fixed in v4.17.19 (a bold
+lead over a one-language body left the body unlabelled, so it showed on both pages; a quoted Chinese term early in an English half
+blocked the split). A broader version of the second fix (quoted terms ignored in the tail's Chinese ratio) produced 481 wrong splits
+and was reverted; final: 344 new or moved splits, none with Chinese in the English half; 78 of 2,878 two-language blocks whole.

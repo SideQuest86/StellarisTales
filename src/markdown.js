@@ -74,7 +74,9 @@ export function splitMixed(text) {
     // An English half is never glued to a Chinese character ("隐藏事件cstorms.10" is one Chinese phrase with an id in it), and
     // it does not run into Chinese at once ("…本身没有 DLC 检查）/ Horizon …": the boundary is the slash).
     if (!m[0] && /[㐀-鿿豈-﫿]/.test(s[m.index - 1])) continue;
-    if (/[㐀-鿿豈-﫿]/.test(tail.replace(/`[^`]*`/g, "").replace(SCRIPT_ID, "").trim().slice(0, 16))) continue;
+    // (a Chinese term quoted inside the English, 'The "天灾" event …', does not count)
+    const early = tail.replace(/`[^`]*`/g, "").replace(/["“「（(\[][^"”」）)\]]{0,24}["”」）)\]]/g, "").replace(SCRIPT_ID, "").trim();
+    if (/[㐀-鿿豈-﫿]/.test(early.slice(0, 16))) continue;
     if (/^\*{0,2}\d/.test(tail) && !/^\*{0,2}\d+'s/.test(tail) && !m[0].includes("/") && !afterStop) continue;
     const latin = (tail.match(/[A-Za-z]/g) || []).length;
     const cjk = (tail.match(CJK_RE) || []).length;
@@ -99,7 +101,8 @@ const bilingual = (text) => {
     body = text.slice(bold[0].length);
   }
   const parts = splitMixed(body);
-  if (!parts) return lead ? lead + inline(body) : null;
+  // A body in one language keeps its own label, so the other language's page hides it.
+  if (!parts) return lead ? lead + (body.trim() ? `<span${langAttr(body)}>${inline(body)}</span>` : "") : null;
   return `${lead}<span lang="zh-CN" data-lang="zh">${inline(parts[0])}</span> <span lang="en" data-lang="en">${inline(parts[1])}</span>`;
 };
 
