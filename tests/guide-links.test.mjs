@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { tokenize, namespaces } from "../src/guide-links.js";
+import { tokenize, namespaces, dropEcho } from "../src/guide-links.js";
 
 const ids = new Set(["origin.1199", "origin.1200", "origin.1205", "origin.1310", "story.5", "anomalies:DISTAR"]);
 const spaces = namespaces(ids);
@@ -25,6 +25,15 @@ test("quantities, years and unknown ids are left alone", () => {
 test("full ids that are no document stay, dimmed", () => {
   const parts = tokenize("hidden origin.9999 fires", ids, spaces);
   assert.deepEqual(parts.filter((p) => typeof p !== "string"), [{ raw: "origin.9999", muted: true }]);
+});
+
+test("a quoted name that the link already shows is not repeated", () => {
+  assert.equal(dropEcho("The Horizon Signal", ' "The Horizon Signal", once per game'), ", once per game");
+  assert.equal(dropEcho("灰蛊风暴", "“灰蛊风暴”触发后"), "触发后");
+  assert.equal(dropEcho("The Horizon Signal: REPRISE", ' "Reprise" names a second leader'), " names a second leader");
+  // A choice or a line of dialogue after the link stays.
+  assert.equal(dropEcho("The Horizon Signal", ' "Send the ship" begins the chain'), ' "Send the ship" begins the chain');
+  assert.equal(dropEcho("The Horizon Signal", " fires"), " fires");
 });
 
 test("text is preserved around links", () => {

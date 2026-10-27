@@ -45,6 +45,15 @@ export function trimGlueSpaces(parts) {
   });
 }
 
+/** The guides name a document by its id and then its quoted title ('akx.9000 "The Horizon Signal"', 'distar.1031“灰蛊风暴”').
+ *  Once the id reads as that title, the quote would repeat it: text right after a link loses a quoted name that the link's
+ *  label already contains. Any other quote (a choice, a line of dialogue) stays. */
+export function dropEcho(label, text) {
+  const q = /^\s?["“「『]([^"”」』]{1,80})["”」』]/.exec(text);
+  const flat = (s) => s.toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, "");
+  return q && flat(q[1]) && flat(label).includes(flat(q[1])) ? text.slice(q[0].length) : text;
+}
+
 /** Namespaces of a story's numeric document ids, most frequent first ("origin" for origin.1199 …). */
 export function namespaces(ids) {
   const count = new Map();
@@ -77,9 +86,10 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
     let glue = null; // a link and the closing punctuation right after it stay on one line (no "，" at a line start)
     for (const p of parts) {
       if (typeof p === "string") {
-        const m = glue && /^[，。、；：！？）」』”’》〉…,.;:!?)]+/.exec(p);
-        if (m) { glue.append(m[0]); glue.classList.add("tight"); frag.append(p.slice(m[0].length)); }
-        else frag.append(p);
+        const s = glue ? dropEcho(glue.textContent, p) : p;
+        const m = glue && /^[，。、；：！？）」』”’》〉…,.;:!?)]+/.exec(s);
+        if (m) { glue.append(m[0]); glue.classList.add("tight"); frag.append(s.slice(m[0].length)); }
+        else frag.append(s);
         glue = null;
         continue;
       }

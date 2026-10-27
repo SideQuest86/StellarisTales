@@ -804,12 +804,15 @@ input {
   min-height: 56px;
   border-bottom: 1px solid var(--line);
   background: var(--bg);
+  /* A few pixels of ground past the column on each side: a disclosure chevron's rotated tip pokes 1.5 px out of the column
+     and showed as a speck beside the bar when scrolled under it. */
+  box-shadow: -4px 0 var(--bg), 4px 0 var(--bg);
 }
 /* Text scrolling up under the bar fades out below its rule instead of showing through the bar. */
 .reader-toolbar::after {
   content: "";
   position: absolute;
-  inset: calc(100% + 1px) 0 auto;
+  inset: calc(100% + 1px) -4px auto;
   height: 28px;
   background: linear-gradient(var(--bg), #08151a00);
   pointer-events: none;
@@ -818,7 +821,7 @@ input {
 .reader-toolbar::before {
   content: "";
   position: absolute;
-  inset: auto 0 100% 0;
+  inset: auto -4px 100% -4px;
   height: 200px;
   background: var(--bg);
   pointer-events: none;

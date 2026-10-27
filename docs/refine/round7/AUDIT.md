@@ -228,3 +228,14 @@ opening when the words are only in the name; a name in the other language (it sa
 on .hit-snip never applied (.search-story small set display: block with higher specificity), so excerpts ran 3-5 lines: fixed.
 makeSnippet starts at a sentence start inside its lead-in window (no ellipsis), else a word start, never on punctuation.
 Museum, specimen and expanded-map screens: nothing to change.
+
+## Guide name echoes (v4.17.22)
+
+Fresh-eyes pass over the chapter's fold-out panels (fresh-panels.mjs: empire profile, gameplay effects, reading guide, an ending;
+1440 en, 390 zh). The guides write a document as id + quoted title (`akx.9000 "The Horizon Signal"`, `distar.1031“灰蛊风暴”`) and
+linkGuide turns the id into a link labelled with that title, so the reader showed the name twice. Source estimate (scratchpad
+guide-dup.py, outside the review sections): 1,977 id + quote pairs whose quote is contained in the chapter's title, 448 other
+quotes after an id (choices, dialogue: kept). dropEcho (guide-links.js, unit-tested) removes a quote that the link's label already
+contains, before the closing-punctuation glue. Rendered check over six guides (guide-echo.mjs): echoes 6 of 52 en and 14 of 96 zh
+links live -> 0 and 0. The reader toolbar's ground and masks now reach 4 px past the column on desktop (a rotated disclosure
+chevron pokes 1.5 px out and left a speck beside the bar: brightest pixel there 517 -> 56); phones keep their 16 px version.
