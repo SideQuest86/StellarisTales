@@ -208,3 +208,12 @@ Review of 89126859..bce8486f (four focused reviewers, two verifiers): 2 confirme
 lead over a one-language body left the body unlabelled, so it showed on both pages; a quoted Chinese term early in an English half
 blocked the split). A broader version of the second fix (quoted terms ignored in the tail's Chinese ratio) produced 481 wrong splits
 and was reverted; final: 344 new or moved splits, none with Chinese in the English half; 78 of 2,878 two-language blocks whole.
+
+## Phone toolbar margins (v4.17.20)
+
+Fresh-eyes screenshots of the live site (scratchpad fresh-eyes.mjs: home, a short and a long chapter, 1440 / 390 / 820 px): on
+phones the sticky .reader-toolbar's ground (and its ::before / ::after) covered only the column, while .chapter-art bleeds into
+the 16 px gutters, so once scrolled the picture showed beside the bar. The bar now casts its --bg sideways (two offset box-shadows,
+so the rule stays column-wide) and the masks run margin to margin. Brightest gutter pixel beside the bar at 390 x 844 (bar-gutter.mjs,
+scrolled 40 and 110 px): 165 live -> 55 (the ground). Desktop and tablet are untouched (the rule sits in the max-width: 700px block).
+Noted, not changed: on touch tablets the card's "Event image" / "Expand" buttons stay over the picture (deliberate: no hover there).

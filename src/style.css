@@ -3554,12 +3554,18 @@ dialog::backdrop {
   .reader-toolbar {
     max-width: none;
     min-height: 52px;
+    /* The chapter picture runs to the screen's edges; the bar's ground does too (the rule stays the column's width), so
+       the picture never slides up beside the bar in the side margins. */
+    box-shadow: calc(var(--gutter) * -1) 0 var(--bg), var(--gutter) 0 var(--bg);
+  }
+  .reader-toolbar::before {
+    inset-inline: calc(var(--gutter) * -1);
   }
   /* Text scrolling up under the bar fades out instead of being cut at the rule. */
   .reader-toolbar::after {
     content: "";
     position: absolute;
-    inset: calc(100% + 1px) 0 auto; /* below the rule, not over it */
+    inset: calc(100% + 1px) calc(var(--gutter) * -1) auto; /* below the rule, not over it; margin to margin */
     height: 14px;
     background: linear-gradient(var(--bg), #08151a00);
     pointer-events: none;
