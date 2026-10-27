@@ -279,3 +279,12 @@ Over the 540 chapters whose options are nearly all conditional or required (scan
 per-option "Only when" lines 1,689 live -> 1,365 (zh 1,364), shared notes 24, exceptions marked 13, most repeats of one line in
 a chapter 48 -> 9; notes naming "earlier events" twice 80 -> 24 (what remains pairs a condition with a separate requirement:
 "Only when: earlier events · Requires: not earlier events"); no page errors.
+
+Shared requirements and placeholders (v4.17.26): the v4.17.25 sharing now covers the "Requires: …" part too (shareOf, same
+thresholds; a second .choices-when line "All of these require: …" / "Unless marked, these require: …"; exceptions without a
+requirement say "Always available"). An option whose condition exists but has no readable name (describe() returns "") is an
+exception that says nothing; v4.17.25 had marked such options "Always shown", which was untrue (13 -> 11 "Always shown" marks over
+the 540 chapters). Grand Archive 4107: 15 repeated "Requires: not earlier events" -> one line; most repeats of a "Requires" line
+in a chapter 15 -> 5. Rendered text pieces that are only "ERROR" (the game's scripted-text default for an unreachable case; 10
+strings in five chapters: colony.2010/2011, grand_archive.4105-4107, e.g. "If: other conditions ERROR") are skipped with any
+paragraph they leave empty (err-check.mjs: shown in 2 of 5 en / 5 of 5 zh chapters live -> 0 / 0; no empty paragraphs).

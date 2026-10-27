@@ -852,7 +852,10 @@ function renderBody(r, ctx) {
       return `<button data-passage="${i}" aria-pressed="${i === passageIndex}">${esc(label)}</button>`;
     }).join("")}</div>`;
   }
-  const html = (passage?.paragraphs || []).map((para) => `<section><p>${para.parts.map((part) => {
+  // A piece that is only "ERROR" is the game's scripted-text default for a case it never reaches: not shown (five chapters
+  // read "If: other conditions ERROR").
+  const fallback = (part) => /^\s*(ERROR|错误)\s*$/i.test(local(part.text) || "");
+  const html = (passage?.paragraphs || []).map((para) => ({ ...para, parts: para.parts.filter((part) => !fallback(part)) })).filter((para) => para.parts.length).map((para) => `<section><p>${para.parts.map((part) => {
     const text = paragraph(local(part.text));
     if (part.status !== null || !part.when) return text;
     const label = describe(part.when, lang, profileNames, { fallback: T("其他条件", "other conditions") });
@@ -987,25 +990,33 @@ function renderChapter(preservePosition = false) {
   // A condition is noted only when it can be named (describe returns "" otherwise). One that every option shares (or nearly
   // every one, in a list of 6+: at most one exception per four) is said once under the heading, not under each option: the
   // Shroud's 49 boons each said "Only when: earlier events". The exceptions are marked (always shown, or their own condition).
-  const whens = r.choices.map((c) => (c.visible === null && c.when ? describe(c.when, lang, profileNames) : ""));
-  const whenCount = new Map();
-  for (const w of whens) if (w) whenCount.set(w, (whenCount.get(w) || 0) + 1);
-  const [commonWhen, commonCount] = [...whenCount].sort((a, b) => b[1] - a[1])[0] || ["", 0];
-  const shown = r.choices.length;
-  const sharedWhen = commonCount >= 3 && (commonCount === shown || (shown >= 6 && shown - commonCount <= commonCount / 4)) ? commonWhen : "";
-  const sharedWhenNote = !sharedWhen ? "" : `<small class="choice-condition choices-when">${esc(commonCount === shown
-    ? T(`以下选项均仅在以下情形出现：${sharedWhen}`, `All of these appear only when: ${sharedWhen}`)
-    : T(`除标注外，以下选项均仅在以下情形出现：${sharedWhen}`, `Unless marked, these appear only when: ${sharedWhen}`))}</small>`;
+  // The same for a requirement ("Requires: …") that the options share. UNNAMED marks a condition that exists but has no name:
+  // it is an exception to a shared one, but nothing is said about it ("always shown" would be untrue).
+  const UNNAMED = "\u0000";
+  const shareOf = (list) => {
+    const count = new Map();
+    for (const w of list) if (w && w !== UNNAMED) count.set(w, (count.get(w) || 0) + 1);
+    const [text, k] = [...count].sort((a, b) => b[1] - a[1])[0] || ["", 0];
+    const n = list.length;
+    return k >= 3 && (k === n || (n >= 6 && n - k <= k / 4)) ? { text, all: k === n } : { text: "", all: false };
+  };
+  const whens = r.choices.map((c) => (c.visible === null && c.when ? describe(c.when, lang, profileNames) || UNNAMED : ""));
+  const needs = r.choices.map((c) => (c.allowed === null && c.allow ? describe(c.allow, lang, profileNames) || UNNAMED : ""));
+  const sharedWhen = shareOf(whens), sharedNeed = shareOf(needs);
+  const sharedWhenNote = (sharedWhen.text ? `<small class="choice-condition choices-when">${esc(sharedWhen.all
+    ? T(`以下选项均仅在以下情形出现：${sharedWhen.text}`, `All of these appear only when: ${sharedWhen.text}`)
+    : T(`除标注外，以下选项均仅在以下情形出现：${sharedWhen.text}`, `Unless marked, these appear only when: ${sharedWhen.text}`))}</small>` : "")
+    + (sharedNeed.text ? `<small class="choice-condition choices-when">${esc(sharedNeed.all
+    ? T(`以下选项均需要：${sharedNeed.text}`, `All of these require: ${sharedNeed.text}`)
+    : T(`除标注外，以下选项均需要：${sharedNeed.text}`, `Unless marked, these require: ${sharedNeed.text}`))}</small>` : "");
   const choiceNote = (c, i) => {
     const notes = [];
-    const when = whens[i];
-    if (sharedWhen && !when) notes.push(T("始终出现", "Always shown"));
-    else if (when && when !== sharedWhen) notes.push(T("仅在以下情形出现：", "Only when: ") + when);
+    const when = whens[i], need = needs[i];
+    if (sharedWhen.text && !when) notes.push(T("始终出现", "Always shown"));
+    else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(T("仅在以下情形出现：", "Only when: ") + when);
     if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (describe(c.allow, lang, profileNames) ? T("：", ": ") + describe(c.allow, lang, profileNames) : ""));
-    else if (c.allowed === null && c.allow) {
-      const need = describe(c.allow, lang, profileNames);
-      if (need) notes.push(T("需要：", "Requires: ") + need);
-    }
+    else if (sharedNeed.text && !need) notes.push(T("始终可选", "Always available"));
+    else if (need && need !== UNNAMED && need !== sharedNeed.text) notes.push(T("需要：", "Requires: ") + need);
     return notes.length ? `<small class="choice-condition">${esc(notes.join(" · "))}</small>` : "";
   };
   const continuation = edgeButtons(nextEdges) + listButtons(shared);
