@@ -387,3 +387,14 @@ Inspection round 3 (24 random stories, seed 20261027, 83 chapters; desk-en found
   the reading-picker style; choosing a conditioned version adopts its condition as the tabs do).
 - Not changed: the map card's top node partly under the card's fading edge (the card is a window onto a larger map); a 404 for
   the 195 stories without an effects file (console only; avoiding it would cost every session an index request).
+
+Review of b74b2ad0..62159c1d (v4.17.30): 1 confirmed, 1 rejected. foldNamed folded the last id of a bold range
+("**2030–2037 伦理变化**" tied the name to 2037 alone): a link that closes a range is left as it was (test added). Rejected: an
+English page hiding a Chinese-only category value (the documented rule: nothing English to show).
+Inspection round 4 (24 random stories, seed 4242027, 54 chapters; phone-zh found nothing): one actionable report. Eight mandate
+chapters per language ended on "奖励：" / "Reward:" because the reward line is a $mandate_..._reward$ reference the game fills and
+the archive leaves out; cleanRefs now drops a short label line (12 characters or fewer, ending in a colon) together with a
+reference that was its whole content: exactly those 16 texts change (diff of cleanRefs over every text and section). Not
+changed: the metadata line kept whole where it does not split cleanly; a title whose Chinese has a game-filled name shows no
+subtitle (by design); the inline "If: …" badges of text variants when the empire profile is unset; the map card's clipped edge.
+Rounds so far: 10, 8, 7 and 5 reports; confirmed defects falling (round 4: one).

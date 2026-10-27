@@ -62,6 +62,8 @@ export function foldNamed(parts) {
   for (let i = 0; i < out.length; i++) {
     const p = out[i], next = out[i + 1];
     if (typeof p !== "object" || p.muted || typeof next !== "string") continue;
+    // (the end of a range, "**2030–2037 伦理变化**", names the whole range, not its last document: left as it was)
+    if (typeof out[i - 1] === "string" && /[–—~-]\s*$/.test(out[i - 1]) && typeof out[i - 2] === "object") continue;
     const m = /^\s+([^/（(：:\s][^/（(：:]*?)(\s*\/\s*|$)/.exec(next);
     if (!m || /^\d/.test(m[1])) continue;
     out[i] = { ...p, text: m[1].trim() };

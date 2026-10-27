@@ -126,6 +126,9 @@ export function fillNames(s, opts) {
  */
 export function cleanRefs(s, lang) {
   return String(s || "")
+    // A short label whose whole content was such a reference ("Reward:\n$mandate_influence_reward_t3$", the mandates) goes
+    // with it, instead of ending the text on an empty "Reward:".
+    .replace(/\n[^\n]{1,12}[：:][ \t]*\n[ \t]*\$[A-Za-z_][\w.|]*\$[ \t]*(?=\n|$)/g, "")
     .replace(/\$COUNT\$\s*\/\s*\$REQUIRED\$\s?/g, lang === "en" ? "the required number of " : "所需数量的")
     // Script values ($@name$) are numbers the game computes: a neutral quantity, never a raw token.
     .replace(/\$@[^$\s]+\$/g, lang === "en" ? "a number of" : "若干")
