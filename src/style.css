@@ -2267,6 +2267,16 @@ html.reduced-motion .map-expanded .flow-surface-map {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* On a tablet held upright the card's bar is about 330 px and cut the counter mid-word ("74 cha…"): under 400 px it steps
+   aside, as on short screens (the expanded map keeps it). The English counter needs a 394 px content box. */
+.flow-surface-toolbar {
+  container-type: inline-size;
+}
+@container (max-width: 400px) {
+  #flow-surface:not(.map-expanded) .flow-stats {
+    display: none;
+  }
+}
 /* "Story map": the card's name in the book's italic. */
 .flow-title {
   font: italic 14px/1.2 var(--serif);
@@ -3035,11 +3045,15 @@ input[type="range"] {
 #music-seek:focus-visible::-moz-range-thumb {
   opacity: 1;
 }
+/* Touch screens have no hover: the knob shows once a piece plays or has begun (at 0 it was a lone gold dot on the screen's
+   edge, read as a stray mark). */
 @media (hover: none) {
-  #music-seek::-webkit-slider-thumb {
+  .playing #music-seek::-webkit-slider-thumb,
+  #music-seek.started::-webkit-slider-thumb {
     opacity: 1;
   }
-  #music-seek::-moz-range-thumb {
+  .playing #music-seek::-moz-range-thumb,
+  #music-seek.started::-moz-range-thumb {
     opacity: 1;
   }
 }

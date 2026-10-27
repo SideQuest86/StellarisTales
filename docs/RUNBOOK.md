@@ -41,7 +41,8 @@ The model is described in [STORY-MODEL-V4.md](STORY-MODEL-V4.md); review process
 V3 monolithic configuration is archived in `content/chronology/v3/` and the V3 compiler in `scripts/v3/` (not used).
 Review tools: `scripts/print-tree.py`, `scripts/callers.py`, `scripts/inspect-source.py`, `scripts/guide-skeleton.py`.
 Compilation is deterministic (identical output for any `PYTHONHASHSEED`); CI recompiles and fails if `public/stories`,
-`public/summaries` or `content` differ from the committed files, so never hand-edit generated JSON. Group ids of
+`public/summaries` or `content` differ from the committed files, so never hand-edit generated JSON. Each story file embeds
+its guide (`public/summaries/<id>.md`): after editing a guide, recompile and commit both. Group ids of
 random/if-chain outcomes are renumbered per story so unrelated graph changes do not rewrite every story file.
 
 ### Parallel review copies

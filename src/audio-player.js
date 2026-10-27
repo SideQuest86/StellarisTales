@@ -213,6 +213,7 @@ export class SoundtrackPlayer {
   paintSeek() {
     const seek = $("music-seek");
     seek.style.setProperty("--p", `${Number(seek.value) / 10}%`);
+    seek.classList.toggle("started", Number(seek.value) > 0);
   }
   togglePlaylist(open = $("playlist").hidden) {
     $("playlist").hidden = !open;

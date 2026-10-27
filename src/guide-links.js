@@ -97,7 +97,8 @@ export function foldEchoes(parts, prevText = () => "") {
     const shut = open && (/^\s?[)）]/.exec(after) || /^\s?[，,；;]\s?/.exec(after));
     if (open && !shut) continue;
     const core = open ? before.slice(0, open.index) : before;
-    const rest = !open ? after : /[)）]/.test(shut[0]) ? after.slice(shut[0].length) : open[0].trimStart() + after.slice(shut[0].length);
+    // (a bracket that stays keeps the space before it: "“Reprise” (the second leader)")
+    const rest = !open ? after : /[)）]/.test(shut[0]) ? after.slice(shut[0].length) : open[0].trimEnd() + after.slice(shut[0].length);
     const q = /(["“「『])([^"”」』]{1,80})(["”」』])\s?$/.exec(core);
     if (q && sameName(q[2], p.text)) {
       i = put(i, core.slice(0, q.index + 1), { ...p, text: q[2] }, q[3] + rest);

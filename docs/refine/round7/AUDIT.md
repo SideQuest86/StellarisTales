@@ -248,3 +248,17 @@ alone in them, else drops "id，" and keeps the note; a plain-text bold/italic n
 (a bilingual lead with language spans is left alone). Names match whole words in Latin and 2+ characters in Chinese (dropEcho now
 uses the same rule: "Other" no longer matches inside "Reaching Into the Rift"). Rendered over eight guides (guide-echo2.mjs):
 links 250 en / 277 zh before and after; links repeating the name written before them 11 / 30 -> 0 / 0.
+
+Review of c8dca09b..1f7850a4 (v4.17.20-23; three focused Sonnet reviewers, one verifier; workflow stellaris-review-guides-search):
+search and toolbar CSS clean; one confirmed in foldEchoes: when a bracket kept a note after the id, the bracket was rebuilt with
+trimStart, so English lost the space before it ("“Reprise”(x)"). Fixed (trimEnd: the space before stays, a space after the bracket
+goes) with two tests. Tablet card counter: .flow-stats was cut with an ellipsis where the card's map bar is narrow (stats-cut.mjs,
+nine viewports x two languages: cut at 768x1024 and 820x1180, bar 323 / 345 px). .flow-surface-toolbar is now an inline-size
+container and the card hides the counter under a 400 px content box (the English counter needs 394): cut 4 -> 0; still shown at
+1024x1366 (431 px bar) and every wider size; the expanded map is unaffected. Touch seek knob: (hover: none) showed the #music-seek
+thumb always, so at 0 it was a lone gold dot on the left edge above the player; paintSeek now marks the slider .started when its
+value is above 0 and touch screens show the knob while .playing or .started (seek-dot.mjs at 390 x 844, brightest pixel at the
+0 position: 535 -> 130, the hairline; at 30 % progress 535 both).
+Archive CI had failed since v4.17.17 (bb7a65d2; the release checks watched only the publish workflow): its compile step found five
+story files still embedding the stray </content> that v4.17.17 removed from their guides. The recompiled files are committed
+(exactly those five change); RUNBOOK says story files embed their guides; the release check now reports the CI badge.

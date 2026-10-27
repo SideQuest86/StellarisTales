@@ -43,6 +43,8 @@ test("an id right after the name it would show: the written name becomes the lin
   assert.equal(show(foldEchoes(["第1000天：大召唤（", link("大召唤"), "）。"])), "第1000天：[大召唤]。");
   assert.equal(show(foldEchoes(["empires see “Reaching Into the Rift” (", link("Reaching Into the Rift"), "),"])), "empires see “[Reaching Into the Rift]”,");
   assert.equal(show(foldEchoes(["或“交织的喜悦”（", link("交织的喜悦"), "，组织者想留下）"])), "或“[交织的喜悦]”（组织者想留下）");
+  assert.equal(show(foldEchoes(["see “Reprise” (", link("The Horizon Signal: REPRISE"), ", the second leader) next"])), "see “[Reprise]” (the second leader) next");
+  assert.equal(show(foldEchoes(["The Horizon Signal (", link("The Horizon Signal"), ", the first) rest"])), "[The Horizon Signal] (the first) rest");
   assert.equal(show(foldEchoes(["a 选项接“超能限制”", link("超能限制"), "、b"])), "a 选项接“[超能限制]”、b");
   assert.equal(show(foldEchoes(["（", link("璞玉浑金"), "）：行星"], () => "璞玉浑金")), "[璞玉浑金^]：行星");
   assert.equal(show(foldEchoes([" (", link("The Summons"), "): the end"], () => "The summons")), "[The Summons^]: the end");
