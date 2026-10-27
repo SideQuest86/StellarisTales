@@ -239,3 +239,12 @@ quotes after an id (choices, dialogue: kept). dropEcho (guide-links.js, unit-tes
 contains, before the closing-punctuation glue. Rendered check over six guides (guide-echo.mjs): echoes 6 of 52 en and 14 of 96 zh
 links live -> 0 and 0. The reader toolbar's ground and masks now reach 4 px past the column on desktop (a rotated disclosure
 chevron pokes 1.5 px out and left a speck beside the bar: brightest pixel there 517 -> 56); phones keep their 16 px version.
+
+Guide echoes, mirror case (v4.17.23): an id right after the name the guide wrote for it. Source estimate (guide-dup2.py,
+guide-dup3.py): of 1,383 ids alone in brackets, 680 follow their own title (499 plain, 114 quoted, 67 bold); 136 more open a
+bracket with other notes ("“交织的喜悦”（336，组织者想留下）") and 57 follow a quoted name directly ("“超能限制”bio.66"). foldEchoes
+(guide-links.js, unit-tested) makes the written name the link (the guide's own words), drops the id with its brackets when it stood
+alone in them, else drops "id，" and keeps the note; a plain-text bold/italic name before the text node becomes the link in place
+(a bilingual lead with language spans is left alone). Names match whole words in Latin and 2+ characters in Chinese (dropEcho now
+uses the same rule: "Other" no longer matches inside "Reaching Into the Rift"). Rendered over eight guides (guide-echo2.mjs):
+links 250 en / 277 zh before and after; links repeating the name written before them 11 / 30 -> 0 / 0.

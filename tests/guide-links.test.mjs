@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { tokenize, namespaces, dropEcho } from "../src/guide-links.js";
+import { tokenize, namespaces, dropEcho, foldEchoes } from "../src/guide-links.js";
 
 const ids = new Set(["origin.1199", "origin.1200", "origin.1205", "origin.1310", "story.5", "anomalies:DISTAR"]);
 const spaces = namespaces(ids);
@@ -34,6 +34,22 @@ test("a quoted name that the link already shows is not repeated", () => {
   // A choice or a line of dialogue after the link stays.
   assert.equal(dropEcho("The Horizon Signal", ' "Send the ship" begins the chain'), ' "Send the ship" begins the chain');
   assert.equal(dropEcho("The Horizon Signal", " fires"), " fires");
+  assert.equal(dropEcho("Reaching Into the Rift", ' "Other" fires'), ' "Other" fires');
+});
+
+test("an id right after the name it would show: the written name becomes the link", () => {
+  const link = (text, id = "origin.1200") => ({ id, raw: "1200", text });
+  const show = (parts) => parts.map((p) => (typeof p === "string" ? p : `[${p.text}${p.lead ? "^" : ""}]`)).join("");
+  assert.equal(show(foldEchoes(["第1000天：大召唤（", link("大召唤"), "）。"])), "第1000天：[大召唤]。");
+  assert.equal(show(foldEchoes(["empires see “Reaching Into the Rift” (", link("Reaching Into the Rift"), "),"])), "empires see “[Reaching Into the Rift]”,");
+  assert.equal(show(foldEchoes(["或“交织的喜悦”（", link("交织的喜悦"), "，组织者想留下）"])), "或“[交织的喜悦]”（组织者想留下）");
+  assert.equal(show(foldEchoes(["a 选项接“超能限制”", link("超能限制"), "、b"])), "a 选项接“[超能限制]”、b");
+  assert.equal(show(foldEchoes(["（", link("璞玉浑金"), "）：行星"], () => "璞玉浑金")), "[璞玉浑金^]：行星");
+  assert.equal(show(foldEchoes([" (", link("The Summons"), "): the end"], () => "The summons")), "[The Summons^]: the end");
+  // A different name before the id keeps the link in its brackets; so does a Latin word that only ends like the title.
+  assert.equal(show(foldEchoes(["招募、分析（", link("守护者"), "）"])), "招募、分析（[守护者]）");
+  assert.equal(show(foldEchoes(["the Rearrival (", link("Arrival"), ")"])), "the Rearrival ([Arrival])");
+  assert.equal(show(foldEchoes(["see “Other” (", link("Reaching Into the Rift"), ")"])), "see “Other” ([Reaching Into the Rift])");
 });
 
 test("text is preserved around links", () => {

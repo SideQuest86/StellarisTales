@@ -50,8 +50,68 @@ export function trimGlueSpaces(parts) {
  *  label already contains. Any other quote (a choice, a line of dialogue) stays. */
 export function dropEcho(label, text) {
   const q = /^\s?["“「『]([^"”」』]{1,80})["”」』]/.exec(text);
-  const flat = (s) => s.toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, "");
-  return q && flat(q[1]) && flat(label).includes(flat(q[1])) ? text.slice(q[0].length) : text;
+  return q && sameName(q[1], label) ? text.slice(q[0].length) : text;
+}
+
+const flat = (s) => String(s ?? "").toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, "");
+const words = (s) => ` ${(String(s ?? "").toLowerCase().match(/[\p{L}\p{N}]+/gu) || []).join(" ")} `;
+// The name is the label, or part of it: a run of whole words in Latin ("Reprise" in "The Horizon Signal: REPRISE", never
+// "Other" in "Reaching Into the Rift"), any 2+ characters in Chinese ("谜团重现" in "视界信号：谜团重现").
+function sameName(name, label) {
+  const a = flat(name), b = flat(label);
+  if (!a || !b) return false;
+  if (a === b) return true;
+  return /[㐀-鿿]/.test(name) ? a.length >= 2 && b.includes(a) : words(label).includes(words(name));
+}
+// Start of the shortest end of `text` that spells `label` (spaces and punctuation aside), or -1; never from inside a Latin word.
+function suffixOf(text, label) {
+  const want = flat(label);
+  if (!want) return -1;
+  for (let k = text.length - 1; k >= 0; k--) {
+    const f = flat(text.slice(k));
+    if (f === want) return /[A-Za-z0-9]/.test(text[k]) && /[A-Za-z0-9]/.test(text[k - 1] || "") ? -1 : k;
+    if (f.length > want.length) return -1;
+  }
+  return -1;
+}
+
+/** The mirror of dropEcho: an id right after the name the guide has just written for it ('大召唤（2021）', '“抵近裂隙”（101）',
+ *  '**璞玉浑金**（4055）', '“超能限制”bio.66') would show that name again as the link. The written name becomes the link (in
+ *  the guide's own words) and the id goes, with its brackets when it stood alone in them ('“交织的喜悦”（336，组织者想留下）' keeps
+ *  "（组织者想留下）"). Link parts carry their label as `text`; prevText() is the text of the element just before the text node
+ *  (a bold name), and such a link comes back with `lead: true` (linkGuide moves it into that element). */
+export function foldEchoes(parts, prevText = () => "") {
+  const out = parts.slice();
+  const put = (i, before, link, after) => {
+    const from = typeof out[i - 1] === "string" ? i - 1 : i;
+    const to = typeof out[i + 1] === "string" ? i + 1 : i;
+    out.splice(from, to - from + 1, before, link, after);
+    return from + 1;
+  };
+  for (let i = 0; i < out.length; i++) {
+    const p = out[i];
+    if (typeof p !== "object" || p.muted || !p.text) continue;
+    const before = typeof out[i - 1] === "string" ? out[i - 1] : "";
+    const after = typeof out[i + 1] === "string" ? out[i + 1] : "";
+    const open = /\s?[（(]\s?$/.exec(before);
+    const shut = open && (/^\s?[)）]/.exec(after) || /^\s?[，,；;]\s?/.exec(after));
+    if (open && !shut) continue;
+    const core = open ? before.slice(0, open.index) : before;
+    const rest = !open ? after : /[)）]/.test(shut[0]) ? after.slice(shut[0].length) : open[0].trimStart() + after.slice(shut[0].length);
+    const q = /(["“「『])([^"”」』]{1,80})(["”」』])\s?$/.exec(core);
+    if (q && sameName(q[2], p.text)) {
+      i = put(i, core.slice(0, q.index + 1), { ...p, text: q[2] }, q[3] + rest);
+      continue;
+    }
+    if (!open) continue;
+    if (!core.trim()) {
+      if (sameName(prevText(), p.text)) i = put(i, core, { ...p, lead: true }, rest);
+      continue;
+    }
+    const k = suffixOf(core, p.text);
+    if (k >= 0) i = put(i, core.slice(0, k), { ...p, text: core.slice(k) }, rest);
+  }
+  return out.filter((x) => x !== "");
 }
 
 /** Namespaces of a story's numeric document ids, most frequent first ("origin" for origin.1199 …). */
@@ -80,8 +140,14 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
   }
   let linked = 0;
   for (const node of nodes) {
-    const parts = trimGlueSpaces(tokenize(node.nodeValue, ids, spaces, other));
-    if (parts.every((p) => typeof p === "string")) continue;
+    const labelled = trimGlueSpaces(tokenize(node.nodeValue, ids, spaces, other)).map((p) =>
+      typeof p === "string" || p.muted ? p : { ...p, text: (p.story ? p.label : title(byId.get(p.id))) || p.raw });
+    if (labelled.every((p) => typeof p === "string")) continue;
+    // A bold or italic name right before the text ('**璞玉浑金**（4055）') can become the link itself (plain text only: a
+    // bilingual lead keeps its language spans).
+    const prev = node.previousSibling;
+    const lead = prev?.nodeType === 1 && /^(STRONG|B|EM|I)$/.test(prev.tagName) && !prev.children.length ? prev : null;
+    const parts = foldEchoes(labelled, () => lead?.textContent || "");
     const frag = doc.createDocumentFragment();
     let glue = null; // a link and the closing punctuation right after it stay on one line (no "，" at a line start)
     for (const p of parts) {
@@ -106,7 +172,8 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
       b.dataset.chapter = p.id;
       b.dataset.story = p.story || storyId;
       b.title = p.id;
-      b.textContent = (p.story ? p.label : title(byId.get(p.id))) || p.raw;
+      b.textContent = p.text;
+      if (p.lead) { b.textContent = lead.textContent; lead.replaceChildren(b); linked++; continue; }
       glue = doc.createElement("span");
       glue.className = "guide-glue";
       glue.append(b);
