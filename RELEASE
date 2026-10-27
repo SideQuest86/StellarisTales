@@ -1,3 +1,10 @@
+v4.17.17 — 2026-10-26
+
+Reading guides: a Chinese paragraph full of script names (on_storm_left_system, cstorms.10) was taken for English, so the
+Chinese page hid it and the English page showed it; 273 such lines are now where they belong, and lines that had been cut at a
+script name ("ASTRAL_SCAR_PROJECT→6001。" as their "English") stay whole or split at their real boundary. Five guides lose a stray
+closing tag that showed in the downloaded Markdown.
+
 v4.17.16 — 2026-10-26
 
 Reading guides speak one language at a time: lines whose English half opens with an event number ("… / 9005: the science

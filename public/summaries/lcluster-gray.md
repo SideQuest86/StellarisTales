@@ -31,4 +31,3 @@
 - 来源 Sources：`common/anomalies/95_anomaly_categories_distant_stars.txt:1713-1735`, `events/gray_goo_events.txt:2136-2887, 2889-2910` · 远星（Distant Stars）DLC
 - 审阅者导读（评注），不是游戏原文。 / Reviewer commentary, not game text.
 - 由原“星团的秘密”拆出。未读：`create_gray_official/warship/army` 的脚本效果。
-</content>

@@ -3,8 +3,12 @@
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 export const hasCJK = (s) => /[㐀-鿿豈-﫿　-〿＀-￯]/.test(s);
+// A script identifier: joined by "_" or "/", or by a dot inside it (cstorms.10, 00_on_actions.txt), not a sentence's full stop.
+const SCRIPT_ID = /[\w-]*(?:[_/]|\.(?=\w))[\w/:-]*(?:\.\w[\w/:-]*)*/g;
 export function detectLang(s) {
-  const text = String(s).replace(/`[^`]*`/g, "");
+  // Script identifiers (on_storm_left_system, common/on_actions/00_on_actions.txt, cstorms.10) are neither language: a Chinese
+  // paragraph full of them is still Chinese.
+  const text = String(s).replace(/`[^`]*`/g, "").replace(SCRIPT_ID, "");
   const cjk = (text.match(/[㐀-鿿豈-﫿]/g) || []).length;
   const latin = (text.match(/[A-Za-z]/g) || []).length;
   if (!cjk && !latin) return "";
@@ -59,17 +63,26 @@ export function splitMixed(text) {
   while ((m = re.exec(s))) {
     if (!m[0]) re.lastIndex++; // zero-width match: step on
     if (!m.index) continue;
-    const head = s.slice(0, m.index).trim();
-    const tail = s.slice(m.index + m[0].length).trim();
+    let head = s.slice(0, m.index).trim();
+    let tail = s.slice(m.index + m[0].length).trim();
+    // "…结束事件链 cs_inetian_chain / a new, unused device": the identifier ends the Chinese half; the slash is the boundary.
+    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.-]*`?)\s*\/\s+/.exec(tail);
+    if (idSlash) { head = `${head} ${idSlash[1]}`; tail = tail.slice(idSlash[0].length); }
     // (or after a Chinese full stop and a space: "…出现。   275 only appears when …"; the checks below still require an
     // English tail, so "。9010“谜团重现”…" stays whole)
     const afterStop = "。！？".includes(s[m.index - 1]) && /\s/.test(m[0]);
+    // An English half is never glued to a Chinese character ("隐藏事件cstorms.10" is one Chinese phrase with an id in it), and
+    // it does not run into Chinese at once ("…本身没有 DLC 检查）/ Horizon …": the boundary is the slash).
+    if (!m[0] && /[㐀-鿿豈-﫿]/.test(s[m.index - 1])) continue;
+    if (/[㐀-鿿豈-﫿]/.test(tail.replace(/`[^`]*`/g, "").replace(SCRIPT_ID, "").trim().slice(0, 16))) continue;
     if (/^\*{0,2}\d/.test(tail) && !/^\*{0,2}\d+'s/.test(tail) && !m[0].includes("/") && !afterStop) continue;
     const latin = (tail.match(/[A-Za-z]/g) || []).length;
     const cjk = (tail.match(CJK_RE) || []).length;
     // The English half must be (nearly) free of Chinese: an English name inside the Chinese sentence ("：Ex Gravitas（1200 → …）
     // → 3 天后“静待揭晓”…") is not the boundary, and splitting there hid the rest of the Chinese line.
-    if (latin >= 12 && cjk * 25 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(head.replace(/`[^`]*`/g, ""))) return [head, tail];
+    // (detectLang leaves script identifiers out; so does the check for an English phrase inside the Chinese half)
+    const prose = head.replace(/`[^`]*`/g, "").replace(SCRIPT_ID, "");
+    if (latin >= 12 && cjk * 25 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(prose)) return [head, tail];
   }
   return null;
 }

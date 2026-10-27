@@ -39,4 +39,3 @@ After choosing the "Defender of the Galaxy" route, level 1 unlocks; you receive 
 - 更正 Corrections: 原树把天灾召唤展开成大量观察者副本与监管人宣告，现改为指向各天灾开场的跨档案链接；各等级与圣骑士事件原为“次要入口”，现按条件接入。
 - 不确定 Uncertain: 召唤权重为基础值；路线天赋选择界面未重读。
 - 覆盖范围 Coverage: 24 篇，全部审阅。
-</content>

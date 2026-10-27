@@ -45,4 +45,3 @@ Choosing the "Behemoth Fury" ascension perk enters this crisis path; level 1 ope
 - 更正 Corrections: 原树只有各等级作为“次要入口”；现按等级条件串成主线，补局势后的胜利检查、虚空之子分支、失败结局；把独立的“巨兽天灾”事件链小故事（chain-behemoth-crisis-chain）并入本族；标出 185/187、175、192、196 是发给其他玩家的通报。
 - 不确定 Uncertain: 局势阶段进度数值未建模；巨兽之卵与茧的建造条件未逐一重读。
 - 覆盖范围 Coverage: 42 篇，全部审阅。
-</content>

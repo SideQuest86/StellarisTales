@@ -191,3 +191,11 @@ open the English half after the slash or after a Chinese full stop and space (th
 split like a heading. Two-language blocks still shown whole: 361 -> 115 of 2,872 (scratchpad guide-split-stats.mjs; the rest have
 English names inside the Chinese sentence). Noto Sans SC's ’ is a 0.42 em CJK form: English pages now take U+2018-201D from a
 local() Latin face first ("ST Latin Quotes"): 7.5 -> 3.6 px in the guide link "I’m Through" (map labels share the face).
+
+Guides, second pass (v4.17.17): detectLang now leaves script identifiers out (SCRIPT_ID: joined by _ or /, or a dot inside), so
+273 Chinese lines dense with them were labelled English (hidden on the Chinese page, shown on the English one) and are now Chinese;
+splitMixed no longer splits where the English half would be glued to a Chinese character, run into Chinese within 16 characters
+(identifiers aside), or start with an identifier that ends the Chinese half before a slash. Against v4.17.16 over every guide line:
+9,730 splits unchanged, 214 new, 154 moved to the real boundary, 68 wrong ones dropped (their 'English' was a fragment such as
+"ASTRAL_SCAR_PROJECT→6001。"); two-language blocks shown whole: 79 of 2,878. Five guides ended with a stray </content> (an agent's
+write artefact) visible in the downloaded Markdown: removed.

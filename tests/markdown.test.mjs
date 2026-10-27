@@ -76,6 +76,16 @@ test("an English half that opens with an event number splits after the guides' s
   assert.equal(splitMixed("约320–360天后 9010“谜团重现”：信号点名第二位领袖。"), null);
   assert.deepEqual(splitMixed("275只在缺少推进器2科技时出现。   275 only appears when the empire lacks Thrusters II."), ["275只在缺少推进器2科技时出现。", "275 only appears when the empire lacks Thrusters II."]);
   assert.equal(splitMixed("信号点名第二位领袖。 9010“谜团重现”：再过 30 天出发。"), null);
+  // Script identifiers do not make the Chinese half English.
+  const [z2, e2] = splitMixed("风暴离开星系时（on_storm_left_system，common/on_actions/00_on_actions.txt:5421）随机事件：75%无事、5%隐藏事件cstorms.5、20%隐藏事件cstorms.10。 When a storm leaves a system (on_storm_left_system) a random event fires: 75% nothing.");
+  assert.match(z2, /cstorms\.10。$/);
+  assert.match(e2, /^When a storm leaves/);
+  // A Latin word inside the Chinese half ("没有 DLC 检查") is not where the English starts.
+  const [z3, e3] = splitMixed("DLC：“视界信号”故事包（本地安装为 `dlc013_horizon_signal`；事件脚本本身没有 DLC 检查）/ Horizon Signal story pack (the event scripts contain no DLC check)");
+  assert.match(z3, /没有 DLC 检查）$/);
+  assert.match(e3, /^Horizon Signal story pack/);
+  // An identifier ending the Chinese half stays with it; the slash after it is the boundary.
+  assert.deepEqual(splitMixed("设置 weather_manipulator_found，并结束事件链 cs_inetian_chain / a new, unused device and a warning."), ["设置 weather_manipulator_found，并结束事件链 cs_inetian_chain", "a new, unused device and a warning."]);
   // A bold lead naming the item in both languages belongs to both halves.
   const h = renderMarkdown(`1. **第一位领袖消失 The first leader is lost.** ${line}`);
   assert.match(h, /<strong><span[^>]*data-lang="zh">第一位领袖消失<\/span> <span[^>]*data-lang="en">The first leader is lost\.<\/span><\/strong>/);

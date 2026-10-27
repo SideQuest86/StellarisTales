@@ -41,4 +41,3 @@ The prerequisite is "Sleepers Awaken": when the first Fallen Empire awakens, ano
 - 覆盖范围 Coverage: 21 篇，全部审阅。
 - 2026-10-13 r3-inherit：事件继承修复（base = 其他事件）后复查：对照游戏文件核对了现在可见的继承标题、选项与分支，结构无需改动。
   2026-10-13 r3-inherit: re-checked after the event-inheritance fix (base = other event): the inherited titles, options and branches now visible in the tree were compared with the game files; no structural change needed.
-</content>
