@@ -21,6 +21,8 @@
 .fx-chance { font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--gold, #d8bb84); font-variant-numeric: tabular-nums; }
 .fx-hidden { opacity: 0.8; }
 .fx-target { color: var(--faint, #6f8b88); font-size: 12px; }
+/* The same effect from two script lines (two districts): one line and its count. */
+.fx-times { color: var(--gold, #d8bb84); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .fx-stats { list-style: none; margin: 2px 0 0 var(--s-3, 12px); padding: 0; color: var(--dim, #86a29f); font-size: 12px; }
 .fx-stats b { color: var(--ink-2, #b9cbc5); font-weight: 600; font-variant-numeric: tabular-nums; }
 .fx-item.is-cond > .fx-line .fx-text { color: var(--ink-2, #b9cbc5); }

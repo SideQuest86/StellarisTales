@@ -91,6 +91,18 @@ test("an English half that opens with an event number splits after the guides' s
   assert.match(lead, /<\/strong> <span lang="zh-CN" data-lang="zh">科研船/);
   // An identifier ending the Chinese half stays with it; the slash after it is the boundary.
   assert.deepEqual(splitMixed("设置 weather_manipulator_found，并结束事件链 cs_inetian_chain / a new, unused device and a warning."), ["设置 weather_manipulator_found，并结束事件链 cs_inetian_chain", "a new, unused device and a warning."]);
+  // A later boundary after a full stop wins when the first one would leave Chinese in the English half; not mid-citation.
+  const care = "2062：a同意→2063→项目FERROPHAGE_CURE→2066（获得奖励）；c离开→2065（对方给“碎片整理器”）；d（灵性）→2064。   2062: a agrees → 2063 → project FERROPHAGE_CURE → 2066 (reward); c leaves → 2065; d (spiritual) → 2064.";
+  assert.match(splitMixed(care)[0], /d（灵性）→2064。$/);
+  assert.match(splitMixed(care)[1], /^2062: a agrees/);
+  assert.deepEqual(splitMixed("来源 Sources：events/leviathans_events_1.txt:3051（285）, :3152（300 菜单 menu）, :3447–4512（304–345）; events/observer_events.txt:245–261")[0], "来源");
+  // A script identifier ending a Chinese sentence is not an English half.
+  assert.equal(splitMixed("冰冻星球可能生成（4级，权重3，全局一次 max_once；需要 has_shroud_dlc）。"), null);
+  // A list item in one language carries its label (it showed on both pages); a neutral one stays unlabelled.
+  const items = renderMarkdown("- 无后续。\n- No follow-up events at all.\n- 2026-10-13");
+  assert.match(items, /<li lang="zh-CN" data-lang="zh">无后续。<\/li>/);
+  assert.match(items, /<li lang="en" data-lang="en">No follow-up/);
+  assert.match(items, /<li>2026-10-13<\/li>/);
   // A bold lead naming the item in both languages belongs to both halves.
   const h = renderMarkdown(`1. **第一位领袖消失 The first leader is lost.** ${line}`);
   assert.match(h, /<strong><span[^>]*data-lang="zh">第一位领袖消失<\/span> <span[^>]*data-lang="en">The first leader is lost\.<\/span><\/strong>/);

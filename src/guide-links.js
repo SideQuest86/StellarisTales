@@ -139,10 +139,24 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
     if (n.parentElement?.closest("a, button, code, .md-review, summary")) continue;
     if (/\d/.test(n.nodeValue)) nodes.push(n);
   }
+  const work = nodes.map((node) => ({ node, labelled: trimGlueSpaces(tokenize(node.nodeValue, ids, spaces, other)).map((p) =>
+    typeof p === "string" || p.muted ? p : { ...p, text: (p.story ? p.label : title(byId.get(p.id))) || p.raw }) }));
+  // Different chapters with one title in the same paragraph would all read alike ("The C.A.R.E Interactive Interface → The
+  // C.A.R.E Interactive Interface → …", the steps of one anomaly): there the links keep the guide's own numbers, and their
+  // tooltip names the title.
+  const blockOf = (n) => n.parentElement?.closest("li, p, h1, h2, h3, h4, h5, h6, td, blockquote") || root;
+  const byBlock = new Map();
+  for (const { node, labelled } of work) {
+    for (const p of labelled) {
+      if (typeof p === "string" || p.muted) continue;
+      const block = byBlock.get(blockOf(node)) || byBlock.set(blockOf(node), new Map()).get(blockOf(node));
+      (block.get(p.text) || block.set(p.text, new Set()).get(p.text)).add(`${p.story || storyId}:${p.id}`);
+    }
+  }
+  for (const { node, labelled } of work)
+    for (const p of labelled) if (typeof p !== "string" && !p.muted && byBlock.get(blockOf(node)).get(p.text).size > 1) [p.alias, p.text] = [p.text, p.raw];
   let linked = 0;
-  for (const node of nodes) {
-    const labelled = trimGlueSpaces(tokenize(node.nodeValue, ids, spaces, other)).map((p) =>
-      typeof p === "string" || p.muted ? p : { ...p, text: (p.story ? p.label : title(byId.get(p.id))) || p.raw });
+  for (const { node, labelled } of work) {
     if (labelled.every((p) => typeof p === "string")) continue;
     // A bold or italic name right before the text ('**璞玉浑金**（4055）') can become the link itself (plain text only: a
     // bilingual lead keeps its language spans).
@@ -172,7 +186,7 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
       b.className = "guide-doc";
       b.dataset.chapter = p.id;
       b.dataset.story = p.story || storyId;
-      b.title = p.id;
+      b.title = p.alias ? `${p.alias} · ${p.id}` : p.id;
       b.textContent = p.text;
       if (p.lead) { b.textContent = lead.textContent; lead.replaceChildren(b); linked++; continue; }
       glue = doc.createElement("span");

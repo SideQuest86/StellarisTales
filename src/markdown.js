@@ -59,7 +59,10 @@ export function splitMixed(text) {
   // … or follow a slash ("…。 / The first option …"), and after a slash it may open with an event number ("…。/ 9005: the
   // science ship …"; without the slash a number belongs to the Chinese sentence: "320–360天后 9010“谜团重现”").
   const re = /(?<=[㐀-鿿豈-﫿。！？）；：*])\s*(?:\/\s*)?(?=\*{0,2}(?:[A-Za-z"“(\[]|\d))/g;
-  let m;
+  // A later boundary after a Chinese full stop beats the first one that passes when it leaves less Chinese in the English
+  // half: "…；d（灵性）→2064。  2062: a agrees …" passed at "；" too (the bracket is skipped by the early check), which put the
+  // last Chinese clause in English. (Only after a full stop: "来源 Sources：…（300 菜单 menu）…" keeps its split at the label.)
+  let m, best = null;
   while ((m = re.exec(s))) {
     if (!m[0]) re.lastIndex++; // zero-width match: step on
     if (!m.index) continue;
@@ -78,15 +81,22 @@ export function splitMixed(text) {
     const early = tail.replace(/`[^`]*`/g, "").replace(/["“「（(\[][^"”」）)\]]{0,24}["”」）)\]]/g, "").replace(SCRIPT_ID, "").trim();
     if (/[㐀-鿿豈-﫿]/.test(early.slice(0, 16))) continue;
     if (/^\*{0,2}\d/.test(tail) && !/^\*{0,2}\d+'s/.test(tail) && !m[0].includes("/") && !afterStop) continue;
-    const latin = (tail.match(/[A-Za-z]/g) || []).length;
+    // (a half that opens with a script identifier counts no identifier letters: "…需要 has_shroud_dlc）。" is one Chinese
+    // sentence, while "来源 Sources：common/…" still splits at its label)
+    const idLed = /^`?[\w-]*(?:[_/]|\.(?=\w))/.test(tail);
+    const latin = ((idLed ? tail.replace(/`[^`]*`/g, "").replace(SCRIPT_ID, "") : tail).match(/[A-Za-z]/g) || []).length;
     const cjk = (tail.match(CJK_RE) || []).length;
     // The English half must be (nearly) free of Chinese: an English name inside the Chinese sentence ("：Ex Gravitas（1200 → …）
     // → 3 天后“静待揭晓”…") is not the boundary, and splitting there hid the rest of the Chinese line.
     // (detectLang leaves script identifiers out; so does the check for an English phrase inside the Chinese half)
     const prose = head.replace(/`[^`]*`/g, "").replace(SCRIPT_ID, "");
-    if (latin >= 12 && cjk * 25 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(prose)) return [head, tail];
+    if (latin >= 12 && cjk * 25 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(prose)) {
+      if (best && !(afterStop && cjk < best.cjk)) continue;
+      if (!cjk) return [head, tail];
+      best = { cjk, split: [head, tail] };
+    }
   }
-  return null;
+  return best ? best.split : null;
 }
 
 const HEADING_PAIR = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)(?:\s*[/|｜·]\s*|\s+)([A-Za-z][^㐀-鿿]*)$/;
@@ -148,7 +158,8 @@ export function renderMarkdown(md, opts = {}) {
         items.push(item);
       }
       const tag = ordered ? "ol" : "ul";
-      out.push(`<${tag}>${items.map((t) => `<li data-mixed="1">${bilingual(t) ?? inline(t)}</li>`).join("")}</${tag}>`);
+      // An item in one language is labelled like a paragraph (the other language's page hides it); "无后续。" showed on both.
+      out.push(`<${tag}>${items.map((t) => { const bi = bilingual(t); return bi ? `<li data-mixed="1">${bi}</li>` : `<li${langAttr(t)}>${inline(t)}</li>`; }).join("")}</${tag}>`);
     } else {
       const buf = [];
       while (i < lines.length && lines[i].trim() && !/^(#{1,6}\s|\s*>|\s*([-*+]|\d+[.)])\s+|\s*(-{3,}|\*{3,})\s*$)/.test(lines[i])) buf.push(lines[i++].trim());
@@ -200,9 +211,24 @@ export function guideElement(md, lang, labels) {
     if (!next || next.matches("details.md-review") || (/^H[3-5]$/.test(next.tagName) && next.tagName <= h.tagName)) h.remove();
   }
   if (lang === "en") markCJK(root);
-  const has = (l) => root.querySelector(`[data-lang="${l}"]`);
+  // Body text in a language (headings and the review notes aside). A guide written only in the other language shows it on
+  // this page too, instead of headings over nothing; the toggle is offered only when both languages have text.
+  // (the metadata list under the title, "分类 Category：…", is not body text)
+  const firstSection = root.querySelector(":scope > h4");
+  const has = (l) => [...root.querySelectorAll(`[data-lang="${l}"]`)].some((e) => !e.closest("h3, h4, h5, details.md-review") && (!firstSection || firstSection.compareDocumentPosition(e) & 4));
   const other = lang === "zh" ? "en" : "zh";
-  if (has("zh") && has("en")) {
+  if (!has(lang) && has(other)) root.dataset.show = "all";
+  // A section written only in one language: on the other page its heading steps aside with its text (the toggle shows both).
+  const shows = (e, l) => (e.dataset.lang ? e.dataset.lang === l || "mixed" in e.dataset : e.querySelector(`[data-lang="${l}"]`) || !e.querySelector("[data-lang]") && e.textContent.trim());
+  for (const h of root.querySelectorAll(":scope > h3, :scope > h4, :scope > h5")) {
+    for (const l of ["zh", "en"]) {
+      let any = false;
+      for (let n = h.nextElementSibling; n && !(/^H[3-5]$/.test(n.tagName) && n.tagName <= h.tagName) && !n.matches("details.md-review"); n = n.nextElementSibling)
+        if (!/^H[3-5]$/.test(n.tagName) && shows(n, l)) { any = true; break; }
+      if (!any) h.dataset[`empty${l === "zh" ? "Zh" : "En"}`] = "";
+    }
+  }
+  if (has(lang) && has(other)) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "md-lang-toggle";

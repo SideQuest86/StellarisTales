@@ -1066,6 +1066,21 @@ input {
   color: var(--gold);
   text-decoration-color: var(--gold-2);
 }
+/* Many unnamed versions: "Version" once, then their numbers (each a 32 px target). */
+.reading-tabs.compact {
+  align-items: center;
+  gap: 0 4px;
+}
+.reading-tabs-label {
+  margin-right: 8px;
+  font: 13px/1.4 var(--sans);
+  letter-spacing: 0.02em;
+  color: var(--dim);
+}
+.reading-tabs.compact button {
+  min-width: 32px;
+  font-variant-numeric: tabular-nums;
+}
 /* A setting that changes the text (response perspective, earlier events…): a small label and a gold word with an
    underline and a caret, side by side with its neighbour — not a form control on a ruled row. */
 .reading-picker {

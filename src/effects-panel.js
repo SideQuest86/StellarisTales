@@ -23,9 +23,40 @@ const GROUPS = new Set(["if", "else", "random", "random_list", "random_option", 
 const pick = (label, lang) => (label && (label[lang] || label.en || label.zh)) || "";
 const isList = (v) => Array.isArray(v) && v.length > 0;
 
+// Adjacent repeats read as a stutter: a game tooltip followed by the scripted effect it describes (the same words), or two
+// "if" blocks on the same condition. A plain line that only repeats its neighbour goes; same-condition blocks become one.
+// (Random blocks are separate rolls and stay apart.)
+const words = (l) => (l ? `${l.zh ?? ""}\u0001${l.en ?? ""}` : "");
+function tidy(list) {
+  const out = [];
+  for (let e of list || []) {
+    // An "if" directly inside an "if" on the same condition adds nothing but a second identical line.
+    while (e && e.kind === "if" && isList(e.effects) && e.effects.some((c) => c && c.kind === "if" && words(c.label) === words(e.label)))
+      e = { ...e, effects: e.effects.flatMap((c) => (c && c.kind === "if" && words(c.label) === words(e.label) ? c.effects || [] : [c])) };
+    const prev = out[out.length - 1];
+    // The same entry from the same script line twice is one effect. From two lines it is two (two districts, two ships):
+    // one line marked "×2". (Not for random options or condition blocks, where a repeat means something else.)
+    if (prev && e && JSON.stringify({ ...prev, times: undefined }) === JSON.stringify(e)) continue;
+    const bare = (x) => JSON.stringify(x, (k, v) => (k === "source" || k === "times" ? undefined : v));
+    if (prev && e && !GROUPS.has(e.kind) && !isList(e.effects) && bare(prev) === bare(e)) { out[out.length - 1] = { ...prev, times: (prev.times || 1) + 1 }; continue; }
+    if (prev && e && !prev.unhandled && !e.unhandled && words(prev.label) && words(prev.label) === words(e.label)) {
+      const plain = (x) => !isList(x.effects) && !isList(x.stats) && !x.note && !x.duration && !x.chance;
+      // A plain line repeating a neighbour of another kind (a tooltip and the effect it describes) or of the same script line
+      // goes; a line without a target does not differ from its neighbour by target.
+      const echo = (x, y) => plain(x) && (x.kind !== y.kind || x.source === y.source) && (!x.target || words(x.target) === words(y.target));
+      if (echo(e, prev)) continue;
+      // (the game's own tooltip keeps its "Game text" mark over the details of the effect it describes)
+      if (echo(prev, e)) { out[out.length - 1] = prev.kind === "tooltip" ? { ...e, kind: "tooltip" } : e; continue; }
+      if (prev.kind === "if" && e.kind === "if") { out[out.length - 1] = { ...prev, effects: [...(prev.effects || []), ...(e.effects || [])] }; continue; }
+    }
+    out.push(e);
+  }
+  return out;
+}
+
 function leaves(list) {
   let n = 0;
-  for (const e of list || []) {
+  for (const e of tidy(list)) {
     if (e.kind === "more" || e.unhandled) continue;
     if (e.effects && e.effects.length) n += leaves(e.effects);
     else if (!GROUPS.has(e.kind)) n += 1;
@@ -65,7 +96,7 @@ const OWNER_TARGET = "所属帝国";
 const COMMON_TARGET = new Set(["首都星球", "探索者"]);
 
 function leafEntries(list, out) {
-  for (const e of list || []) {
+  for (const e of tidy(list)) {
     if (!e || e.kind === "more" || e.unhandled) continue;
     if (e.effects && e.effects.length) leafEntries(e.effects, out);
     else if (!GROUPS.has(e.kind)) out.push(e);
@@ -122,15 +153,16 @@ function entryHtml(e, ctx, depth) {
   const cls = ["fx-item", `fx-${e.kind}`, e.kind === "tooltip" ? "is-game-text" : "", e.conditional || GROUPS.has(e.kind) ? "is-cond" : ""].filter(Boolean).join(" ");
   let kids = "";
   if (isList(e.effects)) {
-    const inner = e.effects.map((c) => entryHtml(c, e.hidden ? { ...ctx, inHidden: true } : ctx, depth + 1)).join("");
+    const inner = tidy(e.effects).map((c) => entryHtml(c, e.hidden ? { ...ctx, inHidden: true } : ctx, depth + 1)).join("");
     kids = inner ? `<ul class="fx-list fx-sub">${inner}</ul>` : "";
     if (!inner && e.kind !== "scripted") return "";
   }
-  return `<li class="${cls}"><span class="fx-line">${chips.join("")}<span class="fx-text">${label}</span>${target}</span>${note}${stats}${kids}</li>`;
+  const times = e.times > 1 ? `<span class="fx-times">×${e.times}</span>` : "";
+  return `<li class="${cls}"><span class="fx-line">${chips.join("")}<span class="fx-text">${label}</span>${times}${target}</span>${note}${stats}${kids}</li>`;
 }
 
 function listHtml(list, ctx) {
-  const inner = (list || []).map((e) => entryHtml(e, ctx, 0)).join("");
+  const inner = tidy(list).map((e) => entryHtml(e, ctx, 0)).join("");
   return inner ? `<ul class="fx-list">${inner}</ul>` : "";
 }
 

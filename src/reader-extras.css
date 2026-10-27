@@ -8,6 +8,8 @@
 .md-guide code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; padding: 0; color: var(--dim, #86a29f); background: none; }
 .md-guide[data-show="zh"] [data-lang="en"], .md-guide[data-show="en"] [data-lang="zh"] { display: none; }
 .md-guide[data-show="zh"] [data-lang="en"][data-mixed], .md-guide[data-show="en"] [data-lang="zh"][data-mixed] { display: revert; }
+/* A heading over a section written only in the other language (guideElement marks it). */
+.md-guide[data-show="zh"] [data-empty-zh], .md-guide[data-show="en"] [data-empty-en] { display: none; }
 /* "Show Chinese": a quiet underlined line above the guide, not a boxed button (24 px target through its ::before). */
 .md-lang-toggle { position: relative; min-height: 24px; padding: 0; margin: 0 0 .6em; font: inherit; font-size: .85em; color: var(--dim, #86a29f); background: none; border: 0; text-decoration: underline; text-decoration-color: #86a29f66; text-underline-offset: 3px; cursor: pointer; }
 .md-lang-toggle::before { content: ""; position: absolute; inset: -8px; }

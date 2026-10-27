@@ -288,3 +288,34 @@ the 540 chapters). Grand Archive 4107: 15 repeated "Requires: not earlier events
 in a chapter 15 -> 5. Rendered text pieces that are only "ERROR" (the game's scripted-text default for an unreachable case; 10
 strings in five chapters: colony.2010/2011, grand_archive.4105-4107, e.g. "If: other conditions ERROR") are skipped with any
 paragraph they leave empty (err-check.mjs: shown in 2 of 5 en / 5 of 5 zh chapters live -> 0 / 0; no empty paragraphs).
+
+## Random-story inspection (v4.17.27)
+
+Four Sonnet inspectors (workflow stellaris-inspect-random, brief scratchpad/audit/INSPECT.md) read 24 random stories, 58 chapters,
+desktop/phone x English/Chinese, and reported 10 items; each was checked here before acting.
+- Alternatives run together (storm situation; also seen in the Rift's astral_rift.5, 12 texts): 177 docs have several texts and
+  no body; every sample checked is a set of alternatives (storm types, factions, hive/machine views, repeat visits). resolveBody
+  now returns one passage per distinct text, so the reader shows one at a time with the existing version tabs; more than four
+  unnamed versions read "Version 1 2 3 …" (.reading-tabs.compact; each button keeps "Version n" as its name). Test updated.
+- One-language guide items on both pages (event-toxoids-499 "无后续。" on the English page): renderMarkdown gave every list item
+  data-mixed and labelled only split ones, so 2,732 items carried no language. One-language items now carry their label; a guide
+  with no body text in the page's language (the metadata list under the title aside) shows whole; a heading whose section has
+  text only in the other language steps aside (data-empty-zh/en). guide-lang.mjs over two samples of 40 guides: visible items in
+  the other language 50 en / 24 zh live -> 0 / 0; headings over nothing 0.
+- "has_shroud_dlc）。" as a guide line's English (anomaly-electric-waters-cat): a half that opens with a script identifier no longer
+  counts the identifier's letters as English (138 such fragments stay in their Chinese sentence). Found on the way: splitMixed took
+  the first passing boundary, "…；d（灵性）→2064。  2062: a agrees …" split at "；"; a later boundary after a full stop now wins when it
+  leaves less Chinese in the English half (37 lines; Chinese characters left in their English halves 120 -> 0; a citation line
+  "来源 Sources：…（300 菜单 menu）…" keeps its split at the label). Over all 13,167 split lines (split-compare.mjs) nothing else moves.
+- Look-alike guide links: about 670 guide lines per language link different chapters sharing one title ("The C.A.R.E
+  Interactive Interface → The C.A.R.E Interactive Interface → …"); within a paragraph such links now keep the guide's own
+  numbers (title in the tooltip). Eight guides (guide-alike.mjs): paragraphs with look-alike links 18 en / 20 zh -> 0.
+- Effects panel repeats (arkship.1075 game text twice; precursor.1 "如果：已安装「远古遗物」资料片" twice): tidy() in effects-panel.js
+  drops a plain line that only echoes a neighbour of another kind (a tooltip and the effect it describes; the tooltip keeps its
+  "Game text" mark) or of the same script line, flattens an "if" inside an "if" on the same condition, merges adjacent same-
+  condition "if" blocks, and shows the same effect from two script lines once with "×2" (two districts are two; random options
+  and condition blocks are never merged). Over all 8,733 rendered panels: a full line repeated right after 293 -> 71 (the rest:
+  random options with equal outcomes), 110 lines marked ×N.
+- Not changed: one blank map card seen once (not reproduced); a 404 for a story without an effects file (console only, handled);
+  game wording ("Cost a number of Alloys Monthly", three similar "Commune with the Insurmountable One" cards); a "DLC：" colon in
+  a guide's English metadata.

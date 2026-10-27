@@ -55,10 +55,10 @@ test("composed passages keep common text and only the matching conditional piece
   assert.deepEqual(known[0].paragraphs.map((p) => p.parts.map((x) => x.text.zh)), [["开头"], ["格式塔"]]);
 });
 
-test("docs without variant structure keep every original paragraph", () => {
+test("docs without variant structure keep every original text, one version each", () => {
   const body = resolveBody({ texts: [{ zh: "一" }, { zh: "二" }] }, { profile: {} });
-  assert.equal(body.length, 1);
-  assert.deepEqual(body[0].paragraphs.map((p) => p.parts[0].text.zh), ["一", "二"]);
+  assert.equal(body.length, 2);
+  assert.deepEqual(body.map((p) => p.paragraphs[0].parts[0].text.zh), ["一", "二"]);
 });
 
 test("an assumption picked once is reused for the same condition on later docs", () => {
@@ -79,6 +79,15 @@ test("options: trigger hides, allow disables", () => {
   assert.equal(none[1].allowed, null);
   const evo = resolveChoices(doc, { profile: { origin_evolutionary_predators: true } });
   assert.deepEqual(evo.map((c) => c.key), ["x", "evo", "tech"]);
+});
+
+test("several texts without a body are alternatives, read one at a time", () => {
+  const t = (en) => ({ zh: en, en });
+  const storm = { texts: [t("Radiant storm."), t("Electric storm."), t("Radiant storm.")] };
+  const passages = resolveBody(storm, {});
+  assert.equal(passages.length, 2); // identical texts are one
+  assert.deepEqual(passages.map((p) => p.paragraphs[0].parts[0].text.en), ["Radiant storm.", "Electric storm."]);
+  assert.equal(resolveBody({ texts: [t("Only one.")] }, {}).length, 1);
 });
 
 test("describe names only what has a name and never invents a placeholder", () => {

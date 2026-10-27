@@ -847,9 +847,12 @@ function renderBody(r, ctx) {
   if (passages.length > 1) {
     // A tab is named by its condition when that has a name and is its own; otherwise it is simply numbered.
     const names = passages.map((p) => describe(p.when, lang, profileNames, { max: 2 }));
-    tabs = `<div class="reading-tabs" role="group" aria-label="${esc(T("文本版本", "Text version"))}">${passages.map((p, i) => {
-      const label = names[i] && names.indexOf(names[i]) === names.lastIndexOf(names[i]) ? names[i] : T(`版本 ${i + 1}`, `Version ${i + 1}`);
-      return `<button data-passage="${i}" aria-pressed="${i === passageIndex}">${esc(label)}</button>`;
+    const named = (i) => names[i] && names.indexOf(names[i]) === names.lastIndexOf(names[i]);
+    // Many unnamed versions (a storm of eight kinds, a faction's six) read as one "Version" and their numbers.
+    const compact = passages.length > 4 && !passages.some((p, i) => named(i));
+    tabs = `<div class="reading-tabs${compact ? " compact" : ""}" role="group" aria-label="${esc(T("文本版本", "Text version"))}">${compact ? `<span class="reading-tabs-label" aria-hidden="true">${esc(T("版本", "Version"))}</span>` : ""}${passages.map((p, i) => {
+      const label = named(i) ? names[i] : compact ? String(i + 1) : T(`版本 ${i + 1}`, `Version ${i + 1}`);
+      return `<button data-passage="${i}" aria-pressed="${i === passageIndex}"${compact ? ` aria-label="${esc(T(`版本 ${i + 1}`, `Version ${i + 1}`))}"` : ""}>${esc(label)}</button>`;
     }).join("")}</div>`;
   }
   // A piece that is only "ERROR" is the game's scripted-text default for a case it never reaches: not shown (five chapters

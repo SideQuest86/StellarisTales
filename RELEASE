@@ -1,3 +1,14 @@
+v4.17.27 — 2026-10-26
+
+Chapters whose game text comes in several versions with no recorded condition (a storm of eight kinds, a faction's six
+replies: 177 chapters) show one version at a time with a small "Version 1 2 3 …" row, instead of running them together as one
+narrative. Reading guides keep to one language better: items written in only one language stay on their own page (they showed
+on both), a guide written only in Chinese shows whole on the English page instead of bare headings, script names are no longer
+cut off as a line's "English" ("has_shroud_dlc）。"), and where one paragraph links several chapters that share a title (the
+steps of one anomaly) the links keep the guide's numbers instead of repeating the title. The gameplay-effects panel no longer
+says the same line twice (a game tooltip and the effect it describes, a condition inside the same condition); the same effect
+from two script lines reads once with "×2".
+
 v4.17.26 — 2026-10-26
 
 A requirement that a list of choices shares is said once too ("Unless marked, these require: …"), with the options it does not
