@@ -338,3 +338,29 @@ across different stage conditions, was rejected: the panel never shows those con
   "Unless marked, …" and the markers remain where every exception is an option without a condition or with its own named one.
   Over the 540 conditional chapters: per-option "Only when" lines 1,365, shared lines 27, "Always shown" marks 10, most repeats
   of one line 9; no page errors.
+
+## Random-story inspection, round 2 (v4.17.29)
+
+Same workflow, 24 new random stories (seed 99173), 64 chapters; 8 reports, each verified here.
+- Look-alike continuation cards (site-asteroid-vault-1: 41 cards, 40 "Archaeological Sites · On failure · Leads into another
+  story · 0%"): a random group's edges into another story are titled by that story (its chapters are not loaded) and 0.02%
+  rounded to 0. collapseCross (app.js) turns 3+ edges of one group into the same other story into one card ("one of N
+  chapters", combined chance); edgeFacts shows chances under 0.5% as "<1%". Corpus: 101 such groups, 1,977 cards fewer; 1,728
+  edges showed "0%". Vault: 41 -> 4 cards.
+- Rift name as text (rift-garden): an astral rift with no description had one section equal to its title; sections equal to
+  the chapter title are skipped (40 chapters).
+- Guide metadata line ("分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics", the first line of 1,353 guides) was
+  labelled by letter count and showed both languages on one page. metaLine (markdown.js, unit-tested) splits it per segment:
+  label and value word by word (identifiers, numbers, acronyms follow their neighbours; brackets recursively; "中文 / English"
+  values at their slash; a value with no Chinese goes to both pages); a split that does not come out clean keeps the line whole
+  (8 of 1,353).
+- Phone guide overflow (site-omnirelic-site: "common/solar_system_initializers/ancient_relics_initializers.txt:642" ran off the
+  screen): .md-guide wraps anywhere.
+- splitMixed: an English half may open with a single quote (event-enclave-2 "'Deal' or 'No deal'."); an identifier followed by
+  the Chinese stop before " / " stays in the Chinese half (site_fossilized_jellyfish_random_events。 / Failed rolls …). Against
+  v4.17.28 over all guide lines: 46 moved, 3 new, no Chinese in any changed English half.
+- Effects kind label repeating the line's first word ("领袖 领袖经验 +200"): omitted when the label opens with it.
+- 40-guide sample (seed 23): other-language items 4 en (all in one Chinese-only guide shown whole) / 1 zh (an English-only
+  category value), headings over nothing 0.
+- Not changed: an empty reply after a choice that only leads on (marauder.506; the continuation follows the choices); a
+  Chinese-only guide's text on the English page (shown whole on purpose).

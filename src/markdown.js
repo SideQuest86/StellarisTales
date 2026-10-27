@@ -58,7 +58,7 @@ export function splitMixed(text) {
   // The English half may start with bold/italic markers ("…）。 **Five chained sites**: …").
   // … or follow a slash ("…。 / The first option …"), and after a slash it may open with an event number ("…。/ 9005: the
   // science ship …"; without the slash a number belongs to the Chinese sentence: "320–360天后 9010“谜团重现”").
-  const re = /(?<=[㐀-鿿豈-﫿。！？）；：*])\s*(?:\/\s*)?(?=\*{0,2}(?:[A-Za-z"“(\[]|\d))/g;
+  const re = /(?<=[㐀-鿿豈-﫿。！？）；：*])\s*(?:\/\s*)?(?=\*{0,2}(?:[A-Za-z"“'‘(\[]|\d))/g;
   // A later boundary after a Chinese full stop beats the first one that passes when it leaves less Chinese in the English
   // half: "…；d（灵性）→2064。  2062: a agrees …" passed at "；" too (the bracket is skipped by the early check), which put the
   // last Chinese clause in English. (Only after a full stop: "来源 Sources：…（300 菜单 menu）…" keeps its split at the label.)
@@ -69,7 +69,8 @@ export function splitMixed(text) {
     let head = s.slice(0, m.index).trim();
     let tail = s.slice(m.index + m[0].length).trim();
     // "…结束事件链 cs_inetian_chain / a new, unused device": the identifier ends the Chinese half; the slash is the boundary.
-    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.-]*`?)\s*\/\s+/.exec(tail);
+    // (also with the Chinese sentence's own stop after it: "…site_fossilized_jellyfish_random_events。 / Failed rolls …")
+    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.-]*`?[。；，]?)\s*\/\s+/.exec(tail);
     if (idSlash) { head = `${head} ${idSlash[1]}`; tail = tail.slice(idSlash[0].length); }
     // (or after a Chinese full stop and a space: "…出现。   275 only appears when …"; the checks below still require an
     // English tail, so "。9010“谜团重现”…" stays whole)
@@ -97,6 +98,54 @@ export function splitMixed(text) {
     }
   }
   return best ? best.split : null;
+}
+
+// The metadata line under a guide's title names each thing in both languages ("分类 Category：先驱者与考古 Precursors · DLC：
+// 《远古遗物》Ancient Relics"): each page gets its own half ("分类：先驱者与考古 · DLC：《远古遗物》" / "Category: Precursors · DLC:
+// Ancient Relics"); a value in one language only ("Shadows of the Shroud（has_shroud_dlc）") goes to both.
+// Word by word: Chinese words to one side, Latin ones to the other, neutral ones ("/", "C8" beside Latin) to both; a
+// bracket's content is split the same way. Returns [zh, en], either "" when that language has no words.
+function pairWords(s) {
+  const zh = [], en = [];
+  const spaced = String(s).replace(/([㐀-鿿》」])(?=[A-Za-z(（])/g, "$1 ").replace(/([A-Za-z.)])(?=[《「（㐀-鿿])/g, "$1 ").replace(/([、，；])/g, " $1 ");
+  // Tokens: Chinese (zh), English (en), or neutral (identifiers, numbers, acronyms, symbols: "distar.1055", "C8", "DLC", "&"),
+  // which follow their nearest neighbours: one side when both neighbours are on it, both sides otherwise.
+  const tokens = [];
+  for (const m of spaced.matchAll(/（([^）]*)）|\(([^)]*)\)|\S+/g)) {
+    if (m[1] != null || (m[2] != null && /[㐀-鿿]/.test(m[2]))) { tokens.push({ group: pairWords(m[1] ?? m[2]) }); continue; }
+    const w = m[0];
+    tokens.push({ w, side: /[㐀-鿿]/.test(w) ? "zh" : /[A-Za-z]{2,}/.test(w) && !/[\w][_.][\w]|\d/.test(w) && !/^\W*[A-Z]{2,4}\W*$/.test(w) ? "en" : "" });
+  }
+  const sideAt = (i, step) => { for (let j = i + step; j >= 0 && j < tokens.length; j += step) if (tokens[j].side) return tokens[j].side; return ""; };
+  tokens.forEach((t, i) => {
+    if (t.group) { if (t.group[0]) zh.push(`（${t.group[0]}）`); if (t.group[1]) en.push(`(${t.group[1]})`); return; }
+    const before = sideAt(i, -1), after = sideAt(i, 1);
+    const side = t.side || (before && before === after ? before : "");
+    if (side !== "en") zh.push(t.w);
+    if (side !== "zh") en.push(t.w);
+  });
+  const has = (list, re) => list.some((w) => re.test(w));
+  return [has(zh, /[㐀-鿿]/) ? zh.join(" ").replace(/\s*（/g, "（").replace(/(?<=[㐀-鿿》）])\s+(?=[㐀-鿿《])/g, "") : "", has(en, /[A-Za-z]{2,}/) ? en.join(" ") : ""];
+}
+export function metaLine(text) {
+  if (!/^分类\s*Category\s*[：:]/.test(text)) return null;
+  const zh = [], en = [];
+  for (const part of text.split(/\s+·\s+/)) {
+    const m = /^([^：:（(]+)[：:]\s*(.*)$/.exec(part);
+    const [lz, le] = m ? pairWords(m[1]) : ["", ""];
+    // A value already written as "中文 / English" splits at its slash.
+    const value = m ? m[2] : part, slash = /^(.*[㐀-鿿》）].*?)\s*\/\s*([^㐀-鿿]*[A-Za-z][^㐀-鿿]*)$/.exec(value);
+    // (a value with no Chinese is a name both pages show: "DLC：Shadows of the Shroud")
+    const [vz, ve] = slash ? [slash[1].trim(), slash[2].trim()] : !/[㐀-鿿]/.test(value) ? [`\u0003${value}\u0003`, value] : pairWords(value);
+    const label = (l, fallback) => l || (m && !/[㐀-鿿]/.test(m[1]) ? m[1].trim() : fallback);
+    if (vz) zh.push(m ? `${label(lz, "")}：${vz}` : vz);
+    if (ve) en.push(m ? `${label(le, "")}: ${ve}` : ve);
+  }
+  const [z, e] = [zh.join(" · ").replace(/\s+([、，；])\s*/g, "$1"), en.join(" · ").replace(/\s*[、，；]\s*/g, ", ").replace(/,\s*(?=[)·]|$)/g, "")];
+  // Free-form lines do not always split cleanly ("Distant" and "Stars" apart, a bracket left open): then the line stays whole.
+  const balanced = (s) => (s.match(/[（(]/g) || []).length === (s.match(/[）)]/g) || []).length;
+  const clean = !/[㐀-鿿、，；《》]/.test(e) && !/(?<![\w.])(?!DLC\b)[A-Za-z]{4,}(?![\w.])/.test(z.replace(/\u0003[^\u0003]*\u0003|`[^`]*`|[\w-]*[_.][\w.-]*/g, "")) && balanced(z) && balanced(e);
+  return clean ? [z.replace(/\u0003/g, ""), e] : null;
 }
 
 const HEADING_PAIR = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)(?:\s*[/|｜·]\s*|\s+)([A-Za-z][^㐀-鿿]*)$/;
@@ -159,7 +208,13 @@ export function renderMarkdown(md, opts = {}) {
       }
       const tag = ordered ? "ol" : "ul";
       // An item in one language is labelled like a paragraph (the other language's page hides it); "无后续。" showed on both.
-      out.push(`<${tag}>${items.map((t) => { const bi = bilingual(t); return bi ? `<li data-mixed="1">${bi}</li>` : `<li${langAttr(t)}>${inline(t)}</li>`; }).join("")}</${tag}>`);
+      out.push(`<${tag}>${items.map((t) => {
+        const meta = metaLine(t);
+        if (meta && meta[0] && meta[1]) return `<li data-mixed="1"><span lang="zh-CN" data-lang="zh">${inline(meta[0])}</span> <span lang="en" data-lang="en">${inline(meta[1])}</span></li>`;
+        if (meta && (meta[0] || meta[1])) return `<li${langAttr(meta[0] || meta[1])}>${inline(meta[0] || meta[1])}</li>`;
+        const bi = bilingual(t);
+        return bi ? `<li data-mixed="1">${bi}</li>` : `<li${langAttr(t)}>${inline(t)}</li>`;
+      }).join("")}</${tag}>`);
     } else {
       const buf = [];
       while (i < lines.length && lines[i].trim() && !/^(#{1,6}\s|\s*>|\s*([-*+]|\d+[.)])\s+|\s*(-{3,}|\*{3,})\s*$)/.test(lines[i])) buf.push(lines[i++].trim());

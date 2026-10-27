@@ -663,7 +663,10 @@ function delayText(delays) {
 // story), and the delay — kept apart so outcomes that share one say it once, on their group (listButtons).
 function edgeFacts(e) {
   const notes = [];
-  const chance = e.chance != null ? Math.round(e.chance * 100) : null;
+  // (a chance under half a percent is "<1%", not "0%": the archaeology incidents are about 0.02% each)
+  const pct = e.chance != null ? e.chance * 100 : null;
+  const chance = pct == null ? null : pct > 0 && pct < 0.5 ? "<1" : Math.round(pct);
+  if (e.many) notes.push(T(`其中一篇（共 ${e.many} 篇）`, `one of ${e.many} chapters`));
   if (e.label) notes.push(prose(local(e.label)));
   else if (e.kind === "random" && !e.group) notes.push(T("随机结果 · 基础概率", "Random outcome · base chance") + (e.modified ? T("，受条件调整", ", adjusted by conditions") : ""));
   else if (e.kind === "research") notes.push(T("研究完成后", "When the research completes"));
@@ -720,8 +723,24 @@ function edgeLists(edges) {
 }
 // What makes two sets of cards the same set (a random group's own id differs from choice to choice).
 const listsSignature = (lists) => lists.map((list) => list.map((e) => `${e.target}:${e.chance ?? ""}:${(e.sets || []).join(" ")}`).join(",")).join(";");
+// Many outcomes of one group leading into the same other story (a dig's 40 possible incidents) read as one card: that
+// story, "one of 40 chapters" and their combined chance. Each card would only repeat the other story's name and "<1%".
+function collapseCross(list) {
+  const by = new Map();
+  for (const e of list) if (e.story && e.story !== dossier.story.id) by.set(e.story, [...(by.get(e.story) || []), e]);
+  const out = [], done = new Set();
+  for (const e of list) {
+    const many = e.story ? by.get(e.story) : null;
+    if (!many || many.length < 3) { out.push(e); continue; }
+    if (done.has(e.story)) continue;
+    done.add(e.story);
+    out.push({ ...many[0], many: many.length, label: null, chance: many.every((x) => x.chance != null) ? many.reduce((sum, x) => sum + x.chance, 0) : null });
+  }
+  return out;
+}
 function listButtons(lists) {
-  return lists.map((list) => {
+  return lists.map((group) => {
+    const list = collapseCross(group);
     if (list.length === 1) return edgeButton(list[0]);
     // Exclusive outcomes: one lead line (the delay they all share says it once there), then a ledger of the possibilities.
     const facts = list.map(edgeFacts);
@@ -1028,7 +1047,8 @@ function renderChapter(preservePosition = false) {
   };
   const continuation = edgeButtons(nextEdges) + listButtons(shared);
   const body = renderBody(r, ctx);
-  const sections = r.sections.filter((t, i, a) => local(t) && !r.texts.some((x) => local(x) === local(t)) && a.findIndex((v) => local(v) === local(t)) === i);
+  // (a section that only repeats the chapter's title, an astral rift's name, is not text: the Garden read "The Garden" twice)
+  const sections = r.sections.filter((t, i, a) => local(t) && local(t) !== local(r.title) && !r.texts.some((x) => local(x) === local(t)) && a.findIndex((v) => local(v) === local(t)) === i);
   // Reviewer commentary names engine ids and script lines: a closed, quiet <details> in the UI language (the label says what
   // it is, so the note's own "Review note:" prefix is dropped), engine ids in <code>.
   const reviewNote = (label, value, extra = "") =>

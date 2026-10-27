@@ -1,6 +1,6 @@
-﻿import test from "node:test";
+import test from "node:test";
 import assert from "node:assert/strict";
-import { renderMarkdown, splitMixed, inline, detectLang, hasCJK, safeUrl } from "../src/markdown.js";
+import { renderMarkdown, splitMixed, inline, detectLang, hasCJK, safeUrl, metaLine } from "../src/markdown.js";
 import { cleanEnglish, cleanChinese } from "../src/name-tooltip.js";
 
 test("block constructs", () => {
@@ -96,6 +96,16 @@ test("an English half that opens with an event number splits after the guides' s
   assert.match(splitMixed(care)[0], /d（灵性）→2064。$/);
   assert.match(splitMixed(care)[1], /^2062: a agrees/);
   assert.deepEqual(splitMixed("来源 Sources：events/leviathans_events_1.txt:3051（285）, :3152（300 菜单 menu）, :3447–4512（304–345）; events/observer_events.txt:245–261")[0], "来源");
+  // The metadata line under a guide's title: each page its own half; identifiers and English-only names on both.
+  assert.deepEqual(metaLine("分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics"), ["分类：先驱者与考古 · DLC：《远古遗物》", "Category: Precursors · DLC: Ancient Relics"]);
+  assert.deepEqual(metaLine("分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（仅 distar.1055 分支 only the distar.1055 branch）"), ["分类：深空异闻 · DLC：《遥远繁星》（仅 distar.1055 分支）", "Category: Exploration · DLC: Distant Stars (only the distar.1055 branch)"]);
+  assert.deepEqual(metaLine("分类 Category：起源 Origins · DLC：Shadows of the Shroud"), ["分类：起源 · DLC：Shadows of the Shroud", "Category: Origins · DLC: Shadows of the Shroud"]);
+  assert.deepEqual(metaLine("分类 Category：巨兽与城邦 Leviathans & enclaves"), ["分类：巨兽与城邦", "Category: Leviathans & enclaves"]);
+  assert.match(renderMarkdown("- 分类 Category：深空异闻 Exploration"), /<li data-mixed="1"><span lang="zh-CN" data-lang="zh">分类：深空异闻<\/span> <span lang="en" data-lang="en">Category: Exploration<\/span><\/li>/);
+  // An English half may open with a single quote ("“成交”或“不成交”。'Deal' or 'No deal'.").
+  assert.deepEqual(splitMixed("佣兵城邦基金会：“成交”或“不成交”。 'Deal' or 'No deal' are the two options here."), ["佣兵城邦基金会：“成交”或“不成交”。", "'Deal' or 'No deal' are the two options here."]);
+  // An identifier with the Chinese sentence's stop before the guides' slash stays Chinese.
+  assert.match(splitMixed("失败的掷骰从本遗址自己的池中抽取 site_fossilized_jellyfish_random_events。 / Failed rolls draw from this site's own pool.")[0], /random_events。$/);
   // A script identifier ending a Chinese sentence is not an English half.
   assert.equal(splitMixed("冰冻星球可能生成（4级，权重3，全局一次 max_once；需要 has_shroud_dlc）。"), null);
   // A list item in one language carries its label (it showed on both pages); a neutral one stays unlabelled.

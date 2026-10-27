@@ -134,7 +134,10 @@ function entryHtml(e, ctx, depth) {
   if (e.unhandled) return "";
   const kind = KIND[e.kind];
   const chips = [];
-  if (kind && e.kind !== "if" && e.kind !== "generic" && !GROUPS.has(e.kind)) chips.push(`<span class="fx-chip fx-kind-${esc(e.kind)}">${esc(T(kind[0], kind[1]))}</span>`);
+  // (no kind label when the line already opens with it: "Leader · Leader experience +200" said it twice)
+  const kindWord = kind ? T(kind[0], kind[1]) : "";
+  const opens = kindWord && pick(e.label, lang).toLowerCase().startsWith(kindWord.toLowerCase());
+  if (kind && !opens && e.kind !== "if" && e.kind !== "generic" && !GROUPS.has(e.kind)) chips.push(`<span class="fx-chip fx-kind-${esc(e.kind)}">${esc(kindWord)}</span>`);
   if (e.duration) chips.push(`<span class="fx-chip fx-time${e.duration === "permanent" ? " is-perm" : ""}">${esc(duration(e.duration, T))}</span>`);
   // "Hidden" once per group (its children are hidden too), not on every line.
   if (e.hidden && !ctx.inHidden) chips.push(`<span class="fx-chip fx-hidden" title="${esc(T("游戏界面不会显示这条效果", "The game does not show this effect"))}">${esc(T("隐藏", "Hidden"))}</span>`);
