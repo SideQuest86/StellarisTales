@@ -440,3 +440,9 @@ seed 77712027, 61 chapters): three actionable.
 - Not changed: a blank map card seen once (third such report, never reproduced); an empty reply after a choice that only leads
   on; the 404 for stories without an effects file.
 Rounds: reports 10, 8, 7, 5, 4, 8, 7; confirmed and fixed 7, 6, 4, 1, 3, 4, 3.
+
+Review of 12f25286..b6680826 (v4.17.34): 2 confirmed, 1 rejected. The English GetName fallback turned script scopes into prose
+("the pre ftl planet", "the capital scope", "the fotd seperatist planet") and doubled a noun ("the planet [phaseshift_planet.GetName]"
+-> "the planet the phaseshift planet"). Now only a scope whose last word is a plain noun (planet, system, leader, ruler, species,
+country/empire -> "that empire", star, fleet, ship, scientist) gives a phrase, the bare noun after a possessive or determiner
+("Our empire friends"); right after its own noun the name is left out; every other scope keeps "this name".

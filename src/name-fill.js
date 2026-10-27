@@ -59,10 +59,16 @@ export function fillNames(s, opts) {
     else if (names[tail] && !names[tail].default && !names[tail].variants.some((v) => local(v.text))) return (art || "") + OMIT + (after || "");
     else if (names[tail]) { text = scripted(names[tail]).replace(/[^]*/g, "").replace(/[]/g, ""); n = note(null, true); }
     else {
-      // (in English a descriptive scope names the thing: "[enclave_country.GetName]" -> "the enclave country", not "this name")
-      const scope = key.split("|")[0].split(".").at(-2) || "";
-      const word = /^[a-z][a-z_]*$/.test(scope) && !/^(root|from|fromfrom|this|prev|prevprev|owner|controller|target)$/.test(scope) ? scope.replace(/_/g, " ") : "";
-      text = /Plural/.test(tail) ? T("他们", "they") : /Name/.test(tail) ? T("这个名字", word ? `the ${word}` : "this name") : T("……", "…");
+      // In English, a scope whose last word is a plain noun names the thing ("[mercenary_enclave_country.GetName]" -> "that
+      // empire", "[pre_ftl_planet.GetName]" -> "the planet"); other scopes keep "this name". Right after its own noun ("the
+      // planet [phaseshift_planet.GetName]") the name is left out: "the planet" already says it.
+      const NOUNS = { planet: "the planet", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist" };
+      const noun = (key.split("|")[0].split(".").at(-2) || "").split("_").at(-1).toLowerCase();
+      if (lang === "en" && /Name/.test(tail) && NOUNS[noun] && new RegExp(`\\b${noun}\\s+$`, "i").test(whole.slice(0, offset) + (art || ""))) return (art || "") + OMIT + (after || "");
+      // (after a possessive or determiner, the bare noun: "Our [contact_empire.GetName] friends" -> "Our empire friends")
+      const det = /\b(our|their|your|its|his|her|my|this|that|these|those)\s+$/i.test(whole.slice(0, offset));
+      const phrase = NOUNS[noun] ? (det ? NOUNS[noun].replace(/^(the|that)\s+/, "") : NOUNS[noun]) : "this name";
+      text = /Plural/.test(tail) ? T("他们", "they") : /Name/.test(tail) ? T("这个名字", phrase) : T("……", "…");
       n = note(null, false);
     }
     let lead = art || "", trail = after || "";
