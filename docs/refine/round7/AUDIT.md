@@ -446,3 +446,10 @@ Review of 12f25286..b6680826 (v4.17.34): 2 confirmed, 1 rejected. The English Ge
 -> "the planet the phaseshift planet"). Now only a scope whose last word is a plain noun (planet, system, leader, ruler, species,
 country/empire -> "that empire", star, fleet, ship, scientist) gives a phrase, the bare noun after a possessive or determiner
 ("Our empire friends"); right after its own noun the name is left out; every other scope keeps "this name".
+
+Inspection round 8 (24 random stories, seed 88812027, 64 chapters; phone-zh and desk-zh found nothing): one actionable.
+describe() put "not" before negated tooltip sentences (operation.5040: "Requires: not We can only run one such secret enterprise
+at a time."; 56 negated sentence labels in choice conditions). A sentence phrased as a constraint (can only, only if, must, cannot,
+只能, 必须 …) now has no "not"; another negated sentence or a pronoun-led label keeps "not" with a lowered first letter (dropping it
+would invert the meaning). Tests added. Not changed: map cards as windows (clipped edges, sparse cards), chapter-level continuation
+cards, tech-name conditions, a title with a game-filled name and no subtitle. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1.

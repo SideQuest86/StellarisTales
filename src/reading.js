@@ -183,7 +183,14 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
       || (lang === "en" && a.type === "identity" && /^(ethic|auth|origin|civic)_/.test(a.key) ? a.key.replace(/^(ethic|auth|origin|civic)_/, "").replace(/_/g, " ") : null);
     if (!name && a.type !== "flag") return null;
     const text = name || word("此前经历", "earlier events");
-    return (a.value || (!name && unnamedFlags.size > 1) ? "" : word("非", "not ")) + text;
+    // A label that is a whole sentence is the game's own tooltip, which already says what is needed ("We can only run one such
+    // secret enterprise at a time."): "not" in front of it read as nonsense.
+    // Only a sentence that states a constraint drops the "not"; a statement keeps it, reading as one clause in English ("not we
+    // have already recruited a leader …"; dropping it there would invert the meaning).
+    const sentence = name && /[.。!！?？]$/.test(String(name).trim()) && String(name).trim().split(/\s+/).length > 3;
+    const constraint = sentence && /\b(can only|only if|only one|must|cannot|can't|may only)\b|只能|必须|不能|仅限|才能/i.test(name);
+    if (!a.value && !constraint && lang === "en" && (sentence ? /^[A-Z][a-z]/ : /^(We|Our|They|Their|It|Its|You|Your)\b/).test(text)) return word("非", "not ") + text[0].toLowerCase() + text.slice(1);
+    return (a.value || constraint || (!name && unnamedFlags.size > 1) ? "" : word("非", "not ")) + text;
   };
   const parts = [];
   for (const branch of dnf) {

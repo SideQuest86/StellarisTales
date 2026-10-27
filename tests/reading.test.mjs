@@ -111,6 +111,10 @@ test("describe names only what has a name and never invents a placeholder", () =
   // Unnamed flags all read "earlier events": one keeps its "not"; several different ones collapse instead of contradicting.
   const flag = (name, value) => ({ type: "flag", scope: "country", name, path: "", value }); // flags carry a name, not a key
   assert.equal(describe([[flag("f1", false)]], "en"), "not earlier events");
+  // A negated tooltip sentence is the game's own wording of the requirement: no "not" in front.
+  assert.equal(describe([[named("t", "同一时间只能进行一项此类秘密事业。", "We can only run one such secret enterprise at a time.", false)]], "en"), "We can only run one such secret enterprise at a time.");
+  // A negated statement keeps its "not" (dropping it would invert the meaning), as one clause.
+  assert.equal(describe([[named("r", "我们已经雇佣过一位领袖。", "We have already recruited a leader from them.", false)]], "en"), "not we have already recruited a leader from them.");
   assert.equal(describe([[flag("f1", false)], [flag("f2", true)]], "en"), "earlier events");
   assert.equal(describe([[flag("f1", true), flag("f2", false)]], "en"), "earlier events");
   assert.equal(describe([[flag("f1", false), named("a", "甲", "A", false)]], "zh"), "非此前经历 · 非甲");
