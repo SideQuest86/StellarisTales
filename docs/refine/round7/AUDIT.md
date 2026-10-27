@@ -217,3 +217,14 @@ the 16 px gutters, so once scrolled the picture showed beside the bar. The bar n
 so the rule stays column-wide) and the masks run margin to margin. Brightest gutter pixel beside the bar at 390 x 844 (bar-gutter.mjs,
 scrolled 40 and 110 px): 165 live -> 55 (the ground). Desktop and tablet are untouched (the rule sits in the max-width: 700px block).
 Noted, not changed: on touch tablets the card's "Event image" / "Expand" buttons stay over the picture (deliberate: no hover there).
+
+## Search excerpts (v4.17.21)
+
+Fresh-eyes pass over the secondary screens (fresh-other.mjs: search, Grand Archive, a specimen, the expanded map; 1440 en and
+390 zh). In search, a chapter row matched by its name showed the name as its excerpt right under the same title. Over 12 queries
+(6 per language, top 8 rows each; scratchpad search-repeat.mjs), chapter rows whose excerpt only repeated their title: 21 of 39 en
+and 30 of 36 zh live -> 0 and 0. contextSnippet (search.js) keeps the Name chip and shows the text's match, or the chapter's
+opening when the words are only in the name; a name in the other language (it says why the row matched) is kept. The 2-line clamp
+on .hit-snip never applied (.search-story small set display: block with higher specificity), so excerpts ran 3-5 lines: fixed.
+makeSnippet starts at a sentence start inside its lead-in window (no ellipsis), else a word start, never on punctuation.
+Museum, specimen and expanded-map screens: nothing to change.

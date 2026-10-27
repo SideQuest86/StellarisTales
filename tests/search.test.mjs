@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
   clean, stem, terms, parseQuery, hashTerm, SHARDS, FIELD, parseShard, decodePostings, intersect, groupByStory,
-  highlight, makeSnippet, bestSnippet, effectLabels, SearchIndex, shardOf, withinOne, needlesOf,
+  highlight, makeSnippet, bestSnippet, contextSnippet, effectLabels, SearchIndex, shardOf, withinOne, needlesOf,
 } from "../src/search.js";
 import { buildSearchIndex } from "../scripts/build-search-index.mjs";
 
@@ -61,6 +61,10 @@ test("highlight escapes everything and marks matches only", () => {
   const snip = makeSnippet("x".repeat(200) + " needle &<> " + "y".repeat(200), ["needle"]);
   assert.ok(snip.text.startsWith("…") && snip.text.includes("needle"));
   assert.ok(!highlight(snip.text, ["needle"], esc).includes("<>"));
+  // A cut starts at a sentence's start (no ellipsis) or a word's, never on punctuation.
+  assert.match(makeSnippet("这是很长的开头部分，没有任何意义的文字。这些粒子已经聚集成一个悬浮在其引力井中的星界裂隙。", ["裂隙"]).text, /^这些粒子/);
+  assert.match(makeSnippet("Something long happened before this point in the text, and then the rift sphere appeared.", ["rift"]).text, /^…[a-z]+ /);
+  assert.doesNotMatch(makeSnippet("Something long happened before this point in the text, and then the rift sphere appeared.", ["rift"]).text, /^…[a-z]{0,3}[^a-z ]/);
 });
 
 function lists(map) {
@@ -103,6 +107,23 @@ test("bestSnippet verifies the literal chinese phrase and shows no raw tokens", 
   const ok = bestSnippet(fields, parseQuery("神秘的风"), "zh");
   assert.equal(ok.type, "text");
   assert.ok(ok.snippet.text.includes("神秘的风"));
+});
+
+test("a name match that only repeats the row's title shows the chapter's text instead", () => {
+  const fields = [
+    { type: "name", lang: "zh", text: "裂隙显现" }, { type: "name", lang: "en", text: "Rift Manifestation" },
+    { type: "text", lang: "zh", text: "一道裂隙在星系边缘出现，传感器读数剧烈波动。" }, { type: "text", lang: "en", text: "A rift has opened at the system's edge." },
+  ];
+  const zh = parseQuery("裂隙");
+  const a = contextSnippet(bestSnippet(fields, zh, "zh"), fields, zh, "zh", "裂隙显现");
+  assert.equal(a.type, "name");
+  assert.match(a.snippet.text, /^一道裂隙在星系边缘/);
+  // Words found only in the name: the chapter's opening in the page's language.
+  const only = parseQuery("显现");
+  assert.match(contextSnippet(bestSnippet(fields, only, "zh"), fields, only, "zh", "裂隙显现").snippet.text, /^一道裂隙/);
+  // A name in the other language says why the row matched: kept.
+  const en = parseQuery("manifestation");
+  assert.equal(contextSnippet(bestSnippet(fields, en, "zh"), fields, en, "zh", "裂隙显现").snippet.text, "Rift Manifestation");
 });
 
 test("effectLabels reads panel labels, stats and bullets only", () => {

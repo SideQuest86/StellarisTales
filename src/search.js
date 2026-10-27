@@ -321,9 +321,17 @@ export function makeSnippet(text, needles, width = 70) {
     if (i >= 0 && (at < 0 || i < at)) { at = i; len = n.length; }
   }
   if (at < 0) return null;
-  const start = Math.max(0, at - Math.floor(width / 3));
+  let start = Math.max(0, at - Math.floor(width / 3)), whole = start === 0;
+  if (start > 0) {
+    // Start where a sentence starts before the match (then no "…"), else at a word's start; never on punctuation.
+    const head = s.slice(start, at);
+    const stops = [...head.matchAll(/[。！？][”’」』）)]?|[.!?][”’")]?\s/g)];
+    if (stops.length) { const m = stops[stops.length - 1]; start += m.index + m[0].length; whole = true; }
+    else if (/\w/.test(s[start - 1]) && /\w/.test(s[start]) && head.includes(" ")) start += head.indexOf(" ") + 1;
+    while (start < at && /[\s，。、；：！？,.;:!?”’」』）)]/.test(s[start])) start++;
+  }
   const end = Math.min(s.length, start + width * 2);
-  return { text: (start > 0 ? "…" : "") + s.slice(start, end) + (end < s.length ? "…" : ""), needles };
+  return { text: (whole ? "" : "…") + s.slice(start, end) + (end < s.length ? "…" : ""), needles };
 }
 
 export function highlight(text, needles, esc) {
@@ -409,6 +417,20 @@ export function bestSnippet(fields, groups, lang) {
   if (!cand.length) return { type: null, snippet: null, needles };
   const top = cand[0].f;
   return { type: top.type, snippet: makeSnippet(top.text, needles.filter((n) => top.low.includes(n))), needles };
+}
+
+// A chapter row whose match is its name would show that name twice (row title, then snippet). When the snippet adds nothing
+// to the title, show where the words occur in the chapter's text instead, or else the chapter's opening.
+export function contextSnippet(found, fields, groups, lang, title) {
+  const flat = (s) => String(s ?? "").replace(/…/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+  if (found?.type !== "name" || !found.snippet || !flat(title).includes(flat(found.snippet.text))) return found;
+  const body = fields.filter((f) => f.type !== "name");
+  const inText = bestSnippet(body, groups, lang);
+  if (inText?.snippet) return { ...found, snippet: inText.snippet };
+  const open = body.find((f) => f.type === "text" && !f.alt && f.lang === lang) || body.find((f) => f.type === "text" && !f.alt);
+  if (!open) return found;
+  const s = open.text.replace(/\s+/g, " ").trim();
+  return { ...found, snippet: { text: s.length > 140 ? s.slice(0, 140) + "…" : s, needles: [] } };
 }
 
 export const TYPE_LABEL = {
@@ -547,7 +569,8 @@ export function createSearch(env) {
               const eff = await once(effectCache, r.story.id, () => env.fetchJson(`effects/${r.story.id}.json`));
               const edoc = eff?.docs?.[chapter.id];
               const fx = chapter.id === r.story.start ? { ...edoc, origin: eff?.origin } : edoc;
-              found = bestSnippet(chapterFields(chapter, fx, (t) => own(t, chapter.names)), groups, lang);
+              const fields = chapterFields(chapter, fx, (t) => own(t, chapter.names));
+              found = contextSnippet(bestSnippet(fields, groups, lang), fields, groups, lang, titles[r.doc]);
             }
             if (found === null) { el.remove(); return; } // bigram false positive: the phrase is not in the text
             if (found.snippet) {
