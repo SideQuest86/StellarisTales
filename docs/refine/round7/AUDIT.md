@@ -425,3 +425,18 @@ Inspection round 6 (24 random stories, seed 66012027, 51 chapters):
 - Not changed: an astral rift that opens with no text (data); one blank map card seen once; the 404 for stories without
   effects; a story change keeping the previous story's caption (not reproduced).
 Rounds: reports 10, 8, 7, 5, 4, 8; confirmed and fixed 7, 6, 4, 1, 3, 4 (all small since round 4).
+
+Review of 62159c1d..12f25286 (v4.17.31-33): both reviewers returned no findings. Inspection round 7 (24 random stories,
+seed 77712027, 61 chapters): three actionable.
+- Condition text was rendered raw (trader-enclaves leviathans.105: "Requires: Requires this Trader Enclave to have: £opinion£
+  Opinion +50 · not … from the [enclave_country.GetName]."): every describe() output in the reader now goes through prose()
+  (said(): icons dropped, names filled), and a requirement whose game label already starts with "Requires"/"需要" gets no second
+  prefix. name-fill's English fallback for an unreviewed GetName names a descriptive scope ("the enclave country"; generic scopes
+  root/from/this/prev/owner/target keep "this name"); texts still falling back to "this name": 1.
+- A guide paragraph made of a Chinese line, its English line and more Chinese without blank lines (event-operation-5015) could
+  not be split and showed the English sentence on the Chinese page: lines of different languages are grouped into their own
+  paragraphs, each labelled.
+- An English-only metadata line ("DLC：Shadows of the Shroud") takes English punctuation (no ideographs: "：" -> ": ").
+- Not changed: a blank map card seen once (third such report, never reproduced); an empty reply after a choice that only leads
+  on; the 404 for stories without an effects file.
+Rounds: reports 10, 8, 7, 5, 4, 8, 7; confirmed and fixed 7, 6, 4, 1, 3, 4, 3.

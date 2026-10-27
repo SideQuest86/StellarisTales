@@ -120,6 +120,9 @@ const titleWith = (title, chapterNames) => typeset(proseWith(local(title), chapt
 // The story map's words, filled with the reviewed names of the chapter they belong to (flow-surface passes them); without
 // a chapter, the open one's.
 const mapProse = (s, chapterNames) => (chapterNames ? typeset(proseWith(s, chapterNames)) : prose(s));
+// A condition in words. Its labels are the game's own tooltips, so they carry icons and names the game fills in ("£opinion£",
+// "[enclave_country.GetName]"): they read through prose() like the text.
+const said = (when, opts) => { const s = describe(when, lang, profileNames, opts); return s ? prose(s) : s; };
 const storyName = (s) => { const entry = storyById.get(s?.id) || s; return titleWith(entry?.title, entry?.names); };
 // A short first line that starts with a hyphen ("-警告：具有挑战性的起源") is typeset as a line of its own (.lead-line), words and
 // hyphen kept; the text below it follows as a paragraph.
@@ -678,7 +681,7 @@ function edgeFacts(e) {
   else if (e.kind === "stage") notes.push(T("下一阶段", "Next stage"));
   else if (e.kind === "entry") notes.push(T("开端", "Opening"));
   if (!e.label && e.when) {
-    const condition = e.when.map((w) => describe(w, lang, profileNames)).filter(Boolean).join(T("；", "; "));
+    const condition = e.when.map((w) => said(w)).filter(Boolean).join(T("；", "; "));
     if (condition) notes.push(T("条件：", "If: ") + condition);
   }
   if (e.story && e.story !== dossier.story.id) notes.push(T("进入另一则故事", "Leads into another story"));
@@ -878,7 +881,7 @@ function renderBody(r, ctx) {
   let tabs = "";
   if (passages.length > 1) {
     // A tab is named by its condition when that has a name and is its own; otherwise it is simply numbered.
-    const names = passages.map((p) => describe(p.when, lang, profileNames, { max: 2 }));
+    const names = passages.map((p) => said(p.when, { max: 2 }));
     const named = (i) => names[i] && names.indexOf(names[i]) === names.lastIndexOf(names[i]);
     // Many unnamed versions (a storm of eight kinds, a faction's six) read as one "Version" and their numbers.
     const compact = passages.length > 4 && !passages.some((p, i) => named(i));
@@ -900,7 +903,7 @@ function renderBody(r, ctx) {
   const html = (passage?.paragraphs || []).map((para) => ({ ...para, parts: para.parts.filter((part) => !fallback(part)) })).filter((para) => para.parts.length).map((para) => `<section><p>${para.parts.map((part) => {
     const text = paragraph(local(part.text));
     if (part.status !== null || !part.when) return text;
-    const named = describe(part.when, lang, profileNames);
+    const named = said(part.when);
     const label = named ? T("若：", "If: ") + named : (unnamed++, T(`情形${cn[unnamed - 1] || unnamed}`, `Case ${unnamed}`));
     const block = String(local(part.text) || "").length > 40 ? " variant-block" : "";
     return `<span class="variant-piece${block}"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(label)}</button>${text}</span>`;
@@ -1046,8 +1049,8 @@ function renderChapter(preservePosition = false) {
     const n = list.length;
     return k >= 3 && (k === n || (n >= 6 && n - k <= k / 4)) ? { text, all: k === n, loose: list.includes(UNNAMED) } : { text: "", all: false, loose: false };
   };
-  const whens = r.choices.map((c) => (!c.when ? "" : c.visible === null ? describe(c.when, lang, profileNames) || UNNAMED : UNNAMED));
-  const needs = r.choices.map((c) => (!c.allow ? "" : c.allowed === null ? describe(c.allow, lang, profileNames) || UNNAMED : c.allowed === false ? MARKED : UNNAMED));
+  const whens = r.choices.map((c) => (!c.when ? "" : c.visible === null ? said(c.when) || UNNAMED : UNNAMED));
+  const needs = r.choices.map((c) => (!c.allow ? "" : c.allowed === null ? said(c.allow) || UNNAMED : c.allowed === false ? MARKED : UNNAMED));
   const sharedWhen = shareOf(whens), sharedNeed = shareOf(needs);
   const sharedWhenNote = (sharedWhen.text ? `<small class="choice-condition choices-when">${esc(sharedWhen.all
     ? T(`以下选项均仅在以下情形出现：${sharedWhen.text}`, `All of these appear only when: ${sharedWhen.text}`)
@@ -1062,9 +1065,9 @@ function renderChapter(preservePosition = false) {
     const when = whens[i], need = needs[i];
     if (sharedWhen.text && !sharedWhen.loose && !when) notes.push(T("始终出现", "Always shown"));
     else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(T("仅在以下情形出现：", "Only when: ") + when);
-    if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (describe(c.allow, lang, profileNames) ? T("：", ": ") + describe(c.allow, lang, profileNames) : ""));
+    if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (said(c.allow) ? T("：", ": ") + said(c.allow) : ""));
     else if (sharedNeed.text && !sharedNeed.loose && !need) notes.push(T("始终可选", "Always available"));
-    else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(T("需要：", "Requires: ") + need);
+    else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(/^(需要|Requires\b)/i.test(need) ? need : T("需要：", "Requires: ") + need); // (the game's own label may already say it)
     return notes.length ? `<small class="choice-condition">${esc(notes.join(" · "))}</small>` : "";
   };
   const continuation = edgeButtons(nextEdges) + listButtons(shared);

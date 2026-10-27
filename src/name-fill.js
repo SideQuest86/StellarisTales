@@ -59,7 +59,10 @@ export function fillNames(s, opts) {
     else if (names[tail] && !names[tail].default && !names[tail].variants.some((v) => local(v.text))) return (art || "") + OMIT + (after || "");
     else if (names[tail]) { text = scripted(names[tail]).replace(/[^]*/g, "").replace(/[]/g, ""); n = note(null, true); }
     else {
-      text = /Plural/.test(tail) ? T("他们", "they") : /Name/.test(tail) ? T("这个名字", "this name") : T("……", "…");
+      // (in English a descriptive scope names the thing: "[enclave_country.GetName]" -> "the enclave country", not "this name")
+      const scope = key.split("|")[0].split(".").at(-2) || "";
+      const word = /^[a-z][a-z_]*$/.test(scope) && !/^(root|from|fromfrom|this|prev|prevprev|owner|controller|target)$/.test(scope) ? scope.replace(/_/g, " ") : "";
+      text = /Plural/.test(tail) ? T("他们", "they") : /Name/.test(tail) ? T("这个名字", word ? `the ${word}` : "this name") : T("……", "…");
       n = note(null, false);
     }
     let lead = art || "", trail = after || "";

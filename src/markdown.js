@@ -214,11 +214,23 @@ export function renderMarkdown(md, opts = {}) {
         if (meta && meta[0] && meta[1]) return `<li data-mixed="1"><span lang="zh-CN" data-lang="zh">${inline(meta[0])}</span> <span lang="en" data-lang="en">${inline(meta[1])}</span></li>`;
         if (meta && (meta[0] || meta[1])) return `<li${langAttr(meta[0] || meta[1])}>${inline(meta[0] || meta[1])}</li>`;
         const bi = bilingual(t);
-        return bi ? `<li data-mixed="1">${bi}</li>` : `<li${langAttr(t)}>${inline(t)}</li>`;
+        // (a line with no Chinese at all takes English punctuation: "DLC：Shadows of the Shroud" -> "DLC: …")
+        const plain = /[㐀-鿿豈-﫿]/.test(t) ? t : t.replace(/：\s*/g, ": ").replace(/，\s*/g, ", ");
+        return bi ? `<li data-mixed="1">${bi}</li>` : `<li${langAttr(plain)}>${inline(plain)}</li>`;
       }).join("")}</${tag}>`);
     } else {
       const buf = [];
       while (i < lines.length && lines[i].trim() && !/^(#{1,6}\s|\s*>|\s*([-*+]|\d+[.)])\s+|\s*(-{3,}|\*{3,})\s*$)/.test(lines[i])) buf.push(lines[i++].trim());
+      // Lines in different languages without a blank line between them (a Chinese line, its English, more Chinese) are
+      // separate paragraphs, each with its own label; joined, the English sentence showed on the Chinese page.
+      const langs = buf.map((l) => detectLang(l));
+      if (buf.length > 1 && new Set(langs.filter(Boolean)).size > 1 && !buf.some((l) => splitMixed(l))) {
+        let group = [], cur = "";
+        const flush = () => { if (group.length) { const t = group.join(" "); out.push(`<p class="md-block"${langAttr(t)}>${inline(t)}</p>`); group = []; } };
+        buf.forEach((l, k) => { const L = langs[k] || cur; if (cur && L && L !== cur) flush(); cur = L || cur; group.push(l); });
+        flush();
+        continue;
+      }
       const text = buf.join(" ");
       const bi = bilingual(text);
       out.push(bi ? `<p class="md-block" data-mixed="1">${bi}</p>` : `<p class="md-block"${langAttr(text)}>${inline(text)}</p>`);
