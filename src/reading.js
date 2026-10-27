@@ -158,11 +158,17 @@ export function applyFacts(facts, profile, assumptions) {
 export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {}) {
   if (!dnf) return "";
   const word = (zh, en) => (lang === "zh" ? zh : en);
+  const isName = (a) => a.label?.[lang] || names[a.key]?.[lang];
+  // Unnamed flags all read "earlier events". One such flag keeps its "not" (a version when it happened, one when it did not);
+  // several different ones would read as nonsense ("not earlier events or earlier events"), so then they all collapse.
+  const unnamedFlags = new Set(dnf.flat().filter((a) => a.type === "flag" && !isName(a)).map((a) => `${a.scope}:${a.name ?? a.key}`));
   const atomText = (a) => {
-    const name = a.label?.[lang] || names[a.key]?.[lang] || (a.type === "flag" ? word("此前经历", "earlier events") : null)
+    const name = a.label?.[lang] || names[a.key]?.[lang]
       // An engine key is only readable English: never shown in Chinese, never for anything but an identity fact.
       || (lang === "en" && a.type === "identity" && /^(ethic|auth|origin|civic)_/.test(a.key) ? a.key.replace(/^(ethic|auth|origin|civic)_/, "").replace(/_/g, " ") : null);
-    return name ? (a.value ? "" : word("非", "not ")) + name : null;
+    if (!name && a.type !== "flag") return null;
+    const text = name || word("此前经历", "earlier events");
+    return (a.value || (!name && unnamedFlags.size > 1) ? "" : word("非", "not ")) + text;
   };
   const parts = [];
   for (const branch of dnf) {

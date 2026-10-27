@@ -1988,6 +1988,11 @@ details.review-note > :last-child {
 .choice.unavailable .choice-button:hover {
   color: inherit;
 }
+/* A condition every option shares, said once under "Your choices" (on the text's edge, not indented to an option's words). */
+.choices > .choices-when {
+  margin: calc(var(--s-2) * -1 + 2px) 0 0;
+  padding: 0 0 10px;
+}
 .choice.unavailable .choice-condition {
   color: #c79a7a;
 }

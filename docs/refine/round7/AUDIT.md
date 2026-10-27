@@ -262,3 +262,20 @@ value is above 0 and touch screens show the knob while .playing or .started (see
 Archive CI had failed since v4.17.17 (bb7a65d2; the release checks watched only the publish workflow): its compile step found five
 story files still embedding the stray </content> that v4.17.17 removed from their guides. The recompiled files are committed
 (exactly those five change); RUNBOOK says story files embed their guides; the release check now reports the CI badge.
+
+## Shared choice conditions (v4.17.25)
+
+Fresh look at structurally unusual chapters (most choices: the Shroud utopia.3200, 49; most dialogue replies: Cetana
+crisis.8060; most sections: the Shroud-Forged situation). describe() names every unnamed flag "earlier events", so 48 of the
+Shroud's 49 boons each carried "Only when: earlier events", and conditions mixing several unnamed flags read as nonsense
+("not earlier events or earlier events", "earlier events · not earlier events"). Two changes:
+- renderChapter finds the most common named condition; when it covers every option (3+), or every option but at most one in
+  four in a list of 6+, it is said once under the heading (.choices-when: "All of these appear only when: …" / "Unless marked,
+  these appear only when: …") and the exceptions are marked ("Always shown", or their own condition).
+- describe() keeps "not" for a single unnamed flag (variant tabs "earlier events" / "not earlier events" stay distinct) but drops
+  it when a condition mixes several different unnamed flags (keyed by scope and name; flag atoms carry no key), so the
+  alternatives collapse to "earlier events". Unit-tested.
+Over the 540 chapters whose options are nearly all conditional or required (scan-cond.mjs / scan-cond2.mjs, in-page navigation):
+per-option "Only when" lines 1,689 live -> 1,365 (zh 1,364), shared notes 24, exceptions marked 13, most repeats of one line in
+a chapter 48 -> 9; notes naming "earlier events" twice 80 -> 24 (what remains pairs a condition with a separate requirement:
+"Only when: earlier events · Requires: not earlier events"); no page errors.

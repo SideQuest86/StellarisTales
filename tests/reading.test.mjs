@@ -94,6 +94,12 @@ test("describe names only what has a name and never invents a placeholder", () =
   assert.equal(describe([[machine]], "zh"), ""); // engine keys are never shown in Chinese…
   assert.equal(describe([[eth]], "en"), "xenophobe"); // …only a readable ethic / authority / origin key in English
   assert.equal(describe([[named("a", "甲", "A", false)]], "zh"), "非甲");
+  // Unnamed flags all read "earlier events": one keeps its "not"; several different ones collapse instead of contradicting.
+  const flag = (name, value) => ({ type: "flag", scope: "country", name, path: "", value }); // flags carry a name, not a key
+  assert.equal(describe([[flag("f1", false)]], "en"), "not earlier events");
+  assert.equal(describe([[flag("f1", false)], [flag("f2", true)]], "en"), "earlier events");
+  assert.equal(describe([[flag("f1", true), flag("f2", false)]], "en"), "earlier events");
+  assert.equal(describe([[flag("f1", false), named("a", "甲", "A", false)]], "zh"), "非此前经历 · 非甲");
   // repeated and absorbed alternatives collapse ("A · B or A" is "A"); more than `max` alternatives end with "…"
   const a = named("a", "甲", "A"), b = named("b", "乙", "B"), c = named("c", "丙", "C"), d = named("d", "丁", "D");
   assert.equal(describe([[a, b], [a], [a]], "en"), "A");
