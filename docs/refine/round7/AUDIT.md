@@ -199,3 +199,7 @@ splitMixed no longer splits where the English half would be glued to a Chinese c
 9,730 splits unchanged, 214 new, 154 moved to the real boundary, 68 wrong ones dropped (their 'English' was a fragment such as
 "ASTRAL_SCAR_PROJECT→6001。"); two-language blocks shown whole: 79 of 2,878. Five guides ended with a stray </content> (an agent's
 write artefact) visible in the downloaded Markdown: removed.
+
+Reviewer notes (v4.17.18): rendered after .chapter-end with the other foot panels (style.css already treats details.review-note as
+one of that family and spaces it under an empty chapter end), so the narrative is followed directly by the choices; order now
+chapter-end > fx > specimens > review notes > guide. verify-reader-v4, verify-refine-reader, verify-round5 and smoke pass.
