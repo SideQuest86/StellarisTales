@@ -585,3 +585,12 @@ guide in both languages (1,388 guides, 37,334 blocks) changed 19 blocks, all suc
 Headquarters", "Flood flood", "Punishment punishment", "the contortionist (Meet the Contortionist)"). Not defects: a one-chapter story's
 map card during the card's flight (its node shows once the card rests), a long map cut at the card's edge (a window), the map's dimmed
 graph until hover. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1.
+
+Inspection round 19 (24 random stories, seed 19112027, 58 chapters; phone-en found nothing). Confirmed 4. An expanded map stayed open
+when the hash opened another story (desk-zh, five stories): FlowSurface.update now collapses it when the story changes. shroud.5055 and
+5060, two perspectives with one title, each linked the other under that title: the group panel's parting words now include the open
+chapter. The guide heading "L-星团 / The L-Cluster" showed both languages on the English page: HEADING_PAIR takes a Latin letter and a hyphen
+before the Chinese name. "…隐藏 enclave.430）。When the Shroudwalker station is destroyed." left the id and the stop in the English half
+(the Chinese page read "…→ 隐藏" and stopped): the id rule also takes a stop followed directly by an English sentence. Not changed: a choice
+labelled ">" (the game's own machine-voice option). Wrong-language blocks unchanged at 36; 0 guide gaps.
+Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1, 4.

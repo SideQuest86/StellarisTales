@@ -1067,11 +1067,12 @@ function renderChapter(preservePosition = false) {
     const done = group.members.filter((m) => visitedChapters.has(m)).length;
     // Members the game gives one title ("Signs of Precursor Activity" ten times) take the story map's label, written to tell them
     // apart ("Signs: Kuur Homeworld"), as the continue cards do; those without one carry their own words where they part.
+    // (a member titled like the open chapter is told apart from it too: two perspectives both called "Proxy Warmongering Revealed")
     const others = group.members.filter((m) => m !== r.id), labels = dossier.story.nodeLabels || {};
-    const titles = new Map(others.map((m) => [m, titleFor(m)]));
-    const labelled = new Set(others.filter((m) => labels[m] && others.some((o) => o !== m && titles.get(o) === titles.get(m))));
+    const titles = new Map([r.id, ...others].map((m) => [m, titleFor(m)]));
+    const labelled = new Set(others.filter((m) => labels[m] && [r.id, ...others].some((o) => o !== m && titles.get(o) === titles.get(m))));
     for (const m of labelled) titles.set(m, titleWith(labels[m], docMap.get(m)?.names));
-    const hints = sameTitleHints(others.filter((m) => !labelled.has(m)));
+    const hints = sameTitleHints([r.id, ...others.filter((m) => !labelled.has(m))]);
     groupPanel = `<div class="flow-investigations"><small>${esc(local(group.label))} · ${esc(T(`已读 ${done} / ${group.members.length}`, `${done} of ${group.members.length} read`))}${group.required ? esc(T(`，需要 ${group.required} 项`, ` · ${group.required} required`)) : ""}</small><p>${esc(local(group.note))}</p>${others.map((m) => `<button class="reading-next${visitedChapters.has(m) ? " visited" : ""}" data-chapter="${esc(m)}"><span>${esc(titles.get(m))}${hints.has(m) ? `<small class="reading-hint">${esc(hints.get(m))}</small>` : ""}</span><b>→</b></button>`).join("")}</div>`;
   }
   if ((chapter.dialogue?.states && dialogueState!=='end') || (chapter.dialogue?.steps && dialogueStep<chapter.dialogue.steps.length-1)) {

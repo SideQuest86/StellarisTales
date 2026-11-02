@@ -101,8 +101,9 @@ function splitOne(text) {
     // (also with the Chinese sentence's own stop after it: "…site_fossilized_jellyfish_random_events。 / Failed rolls …")
     // (or with that stop and a space and no slash: "…选项 luxury_limbs。 "Multi-Limb Coordination" …")
     // (and with a closing bracket: "…都不检查 has_distar）/ no DLC check …")
-    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.–-]*`?)(?:([）)」]?[。；，]?)\s*\/\s+|([。；])\s+)/.exec(tail);
-    if (idSlash) { head = `${head} ${idSlash[1]}${idSlash[2] || idSlash[3] || ""}`; tail = tail.slice(idSlash[0].length); }
+    // (or the stop with no space after it, before an English sentence: "…隐藏 enclave.430）。When the station …")
+    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.–-]*`?)(?:([）)」]?[。；，]?)\s*\/\s+|([。；])\s+|([）)」]?[。；])(?=[A-Z"“]))/.exec(tail);
+    if (idSlash) { head = `${head} ${idSlash[1]}${idSlash[2] || idSlash[3] || idSlash[4] || ""}`; tail = tail.slice(idSlash[0].length); }
     // (or after a Chinese full stop and a space: "…出现。   275 only appears when …"; the checks below still require an
     // English tail, so "。9010“谜团重现”…" stays whole)
     // (or right after the stop, when what follows is a whole English sentence: "见上。See above."; the check is `short`, below)
@@ -204,7 +205,8 @@ export function metaLine(text) {
   return [zh.join(" · "), en.join(" · ")];
 }
 
-const HEADING_PAIR = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)(?:\s*[/|｜·]\s*|\s+)([A-Za-z][^㐀-鿿]*)$/;
+// (a Chinese name may open with a Latin letter: "L-星团 / The L-Cluster")
+const HEADING_PAIR = /^((?:[A-Za-z][\w]*-)?[^A-Za-z]*[㐀-鿿][^A-Za-z]*?)(?:\s*[/|｜·]\s*|\s+)([A-Za-z][^㐀-鿿]*)$/;
 const bilingual = (text) => {
   // A bold lead that names the item in both languages ("**第一位领袖消失 The first leader is lost.** 9005：… / 9005: …")
   // belongs to both halves: it is split like a heading, the rest of the line as usual.

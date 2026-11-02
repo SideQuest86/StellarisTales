@@ -207,6 +207,8 @@ export class FlowSurface {
     // Trees are cached per loaded dossier (or story object when no dossier is passed).
     const key = dossier || story;
     const storyChanged = this.story?.id !== story.id || this.sourceKey !== key;
+    // An expanded map belongs to its story: another story opens on its chapter, not under the last one's map.
+    if (this.expanded && this.story && this.story.id !== story.id) this.setExpanded(false, { focus: false });
     const languageChanged = this.language !== language;
     Object.assign(this, { story, chapters, current, visited, language, prose, trail, sourceKey: key });
     this.element.hidden = !story.tree && !story.flow && !dossier?.tree;

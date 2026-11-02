@@ -70,6 +70,8 @@ test("language detection", () => {
   assert.deepEqual(splitMixed("Title-only variants for Treasure Hunters empires are grouped now. / 宝藏猎人起源时改用这五个窗口。"), ["宝藏猎人起源时改用这五个窗口。", "Title-only variants for Treasure Hunters empires are grouped now."]);
   assert.deepEqual(splitMixed("已解决 Resolved: the title-only variants are grouped with their windows. / 宝藏猎人起源时改用这五个窗口。"), ["已解决：宝藏猎人起源时改用这五个窗口。", "Resolved: the title-only variants are grouped with their windows."]);
   assert.deepEqual(splitMixed("见上。See above."), ["见上。", "See above."]);
+  assert.deepEqual(splitMixed("空间站被击毁时（on_ship_destroyed_victim → 隐藏 enclave.430）。When the Shroudwalker station is destroyed."), ["空间站被击毁时（on_ship_destroyed_victim → 隐藏 enclave.430）。", "When the Shroudwalker station is destroyed."]);
+  assert.match(renderMarkdown("# L-星团 / The L-Cluster"), /<span lang="zh-CN" data-lang="zh">L-星团<\/span> <span lang="en" data-lang="en">The L-Cluster<\/span>/);
   assert.deepEqual(splitMixed("4045“深处的回声”：船员疲惫。选项取决于特质：   4045 Echoes from the Deep: the crew is exhausted."), ["4045“深处的回声”：船员疲惫。选项取决于特质：", "4045 Echoes from the Deep: the crew is exhausted."]);
   assert.deepEqual(splitMixed("需要 Federations 或 Ancient Relics。 Needs Federations or Ancient Relics."), ["需要 Federations 或 Ancient Relics。", "Needs Federations or Ancient Relics."]);
   assert.deepEqual(splitMixed("结局二选一：3230 / 3235（3227 的选项）。 Two endings: 3230 / 3235."), ["结局二选一：3230 / 3235（3227 的选项）。", "Two endings: 3230 / 3235."]);
