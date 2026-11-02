@@ -7,7 +7,7 @@
 
 ## 剧情脉络 Story outline
 
-**违反剥削法（10250）**：共同体得知我们向原始文明分享了科技数据，已违反法案；唯一选项“该死！”，罚款 5000 能量。 / The Community learns of our tech sharing and fines us 5000 energy.
+**违反剥削法（10250）**：共同体得知我们向原始文明分享了科技数据，已违反法案；唯一选项“可恶！”，罚款 5000 能量。 / The Community learns of our tech sharing and fines us 5000 energy.
 
 ## 分支与结局 Branches and outcomes
 

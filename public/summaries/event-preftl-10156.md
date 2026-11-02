@@ -7,7 +7,7 @@
 
 ## 剧情脉络 Story outline
 
-**违反不干涉法（入侵，10157）**：我们对原始文明家园的入侵被星系共同体记录，视为违反决议；唯一选项“该死！”。 / The Galactic Community notes our invasion of the pre-FTL homeworld as a violation; the only option is “Curses!”.
+**违反不干涉法（入侵，10157）**：我们对原始文明家园的入侵被星系共同体记录，视为违反决议；唯一选项“可恶！”。 / The Galactic Community notes our invasion of the pre-FTL homeworld as a violation; the only option is “Curses!”.
 
 ## 分支与结局 Branches and outcomes
 

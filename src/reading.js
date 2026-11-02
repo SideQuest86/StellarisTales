@@ -181,6 +181,25 @@ export function passageTabs(names, other) {
   return own.map((n) => n || other);
 }
 
+/** Words that tell texts apart: each one's opening, or, where it opens like another, the sentence where the two part ("…战斗一开始，…"),
+ *  at most `room` characters of the text's own words. Texts that are the same throughout keep their opening. */
+export function partingWords(texts, room) {
+  const shared = (a, b) => { let k = 0; while (k < a.length && a[k] === b[k]) k++; return k; };
+  const cut = (s, start) => `${start ? "…" : ""}${s.slice(start, start + room).trim()}${start + room < s.length ? "…" : ""}`;
+  return texts.map((s, i) => {
+    const from = Math.max(0, ...texts.map((o, j) => (j === i || o === s ? 0 : shared(s, o))));
+    if (from < room * 0.75) return cut(s, 0);
+    // From the sentence the parting falls in; when that sentence runs long, from just before the parting, at a word's start.
+    let start = 0;
+    for (const m of s.slice(0, from).matchAll(/[。！？.!?：:；;]\s*/g)) start = m.index + m[0].length;
+    if (from - start > room * 0.6) {
+      start = from - Math.floor(room / 4);
+      while (start < from && /\w/.test(s[start - 1] || "") && /\w/.test(s[start])) start++;
+    }
+    return cut(s, start);
+  });
+}
+
 /** Readable label of a condition (for tabs / notes), using the game's own names where available.
  *  Only conditions that have a name are described: an atom without one is left out of its branch, and when any alternative
  *  has no named atom at all the condition cannot be stated truthfully, so the result is "" (callers show nothing, or the

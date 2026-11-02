@@ -140,6 +140,15 @@ test("an English half that opens with an event number splits after the guides' s
   assert.deepEqual(metaLine("分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）"), ["分类：深空异闻 · DLC：《遥远繁星》（has_distar）", "Category: Exploration · DLC: Distant Stars (has_distar)"]);
   // Free-form notes mixing both languages keep the whole line (it shows on both pages).
   assert.equal(metaLine("分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（仅 distar.1055 分支 only the distar.1055 branch）"), null);
+  // An initialism inside a Chinese name is not English: the part goes to the Chinese page alone.
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 星系共同体前FTL决议"), ["分类：文明纪事 · 星系共同体前FTL决议", "Category: Society (C7)"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 星系共同体前FTL决议 galactic community pre-FTL resolution"), ["分类：文明纪事 · 星系共同体前FTL决议", "Category: Society (C7) · galactic community pre-FTL resolution"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 联邦（军事型）事件 federation (military) event"), ["分类：文明纪事 · 联邦（军事型）事件", "Category: Society (C7) · federation (military) event"]);
+  assert.deepEqual(metaLine("分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans / 霸主 Overlord"), ["分类：巨兽与城邦 · DLC：利维坦 / 霸主", "DLC: Leviathans / Overlord"]);
+  assert.deepEqual(metaLine("分类 Category：巨兽与城邦 · DLC：霸主 Overlord（需“大可汗”出现）"), ["分类：巨兽与城邦 · DLC：霸主（需“大可汗”出现）", "DLC: Overlord"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 殖民地事件 colony event（开发者注释 \"Rogue moon\"）"), ["分类：文明纪事 · 殖民地事件（开发者注释 \"Rogue moon\"）", "Category: Society (C7) · colony event"]);
+  // A note with English words in it is not a plain shape: the whole line stays.
+  assert.equal(metaLine("分类 Category：深空异闻 Exploration · 备注（仅此分支 only this branch）"), null);
   assert.equal(metaLine("分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）或 Biogenesis（has_biogenesis_dlc）"), null);
   assert.deepEqual(metaLine("分类 Category：起源 Origins · DLC：Shadows of the Shroud · 审阅 Reviewed 2026-10-13"), ["分类：起源 · DLC：Shadows of the Shroud", "Category: Origins · DLC: Shadows of the Shroud"]);
   assert.deepEqual(metaLine("分类 Category：起源 Origins · DLC：Shadows of the Shroud"), ["分类：起源 · DLC：Shadows of the Shroud", "Category: Origins · DLC: Shadows of the Shroud"]);

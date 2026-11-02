@@ -526,3 +526,15 @@ pattern). Map label "特种行动成败" beside "特别行动" titles. "Reviewer
 note". Also the recurring report of a missing subtitle: titles with a filled name (759 chapters) now get one, in the reviewed wording,
 unless it would be "this name" or a fragment; 27 sampled in both languages read well. The 503 on music/cover.webp in the v4.17.40 live
 smoke was transient (200 three times after). Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4.
+
+Inspection round 12 (24 random stories, seed 12112027, 67 chapters; phone-en found nothing). Confirmed 5. A reply repeating its line in the
+effects panel (fedel.2: a choice's game tooltip is also its effect, kind "tooltip"; withoutSaid() drops it from that list). The picker
+labels of v4.17.39 started inside the shared phrase ("…心思。"): reading.js partingWords() starts at the sentence where the texts part.
+Same-title cards: bio.3305 "信号传输接入" twice, leading to different chapters; the archive has 606 such groups and 169 are covered by the
+map's labels, so the rest now get a quiet line of the chapter's words from the same helper (cards only; the map keeps its labels). The
+guide's metadata line stayed whole in both languages for 111 guides: metaPair now takes an initialism in a Chinese name, a Chinese name
+with brackets then its English, two names joined by " / ", and a Chinese note after a name; 1,242 -> 1,325 of 1,353 split, none of the
+1,242 changed, 0 suspicious by a language check of the new 83; the remaining 28 mix both languages in one note and stay whole. Two guides
+quoted the option 该死！ where the game has 可恶！. A test caught an unbalanced bracket in the new rule ("备注（仅此分支 only this branch）").
+Not defects: a hover tooltip open in a screenshot over a choice's sub-lines (it follows the pointer); map cards cut at the card's edge (a
+window). The v4.17.41 live smoke passed 15/15, so the earlier 503 was transient. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5.

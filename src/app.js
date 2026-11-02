@@ -1,7 +1,7 @@
 import { installNameTooltips } from "./name-tooltip.js";
 import { fillNames, cleanRefs } from "./name-fill.js";
 import { guideElement } from "./markdown.js";
-import { renderEffects, bindEffects } from "./effects-panel.js";
+import { renderEffects, bindEffects, withoutSaid } from "./effects-panel.js";
 import { createSearch } from "./search.js";
 import { storyMap } from "./story-map.js";
 import { FlowSurface } from "./flow-surface.js";
@@ -17,7 +17,7 @@ import { linkGuide } from "./guide-links.js";
 import { typeset, leadLine, markIds, noteBody } from "./typeset.js";
 import {
   evaluate, resolveBody, resolveChoices, resolveEdges, pathFlags, storyFlags,
-  impliedFacts, applyFacts, describe, namedOnly, passageTabs,
+  impliedFacts, applyFacts, describe, namedOnly, passageTabs, partingWords,
 } from "./reading.js";
 const $ = (q) => document.querySelector(q),
   esc = (s) =>
@@ -725,7 +725,7 @@ function edgeButton(e, facts = edgeFacts(e), groupDelay = "") {
   const caption = [...facts.notes, ...(facts.delay && facts.delay !== groupDelay ? [facts.delay] : [])].join(" · ");
   const chance = facts.chance == null ? ""
     : `<i class="next-chance" title="${esc(T(`基础概率约 ${facts.chance}%`, `Base chance about ${facts.chance}%`) + (facts.modified ? T("，受条件调整", ", adjusted by conditions") : ""))}">${facts.chance}%</i>`;
-  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(e.titleOverride || titleFor(e.target, e.story))}</span>${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
+  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(e.titleOverride || titleFor(e.target, e.story))}</span>${e.hint ? `<small>${esc(e.hint)}</small>` : ""}${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
 }
 // The edges that remain possible, one card per document, edges of one random group listed together.
 function edgeLists(edges) {
@@ -769,6 +769,17 @@ function listButtons(lists) {
   const labels = dossier.story.nodeLabels || {};
   for (const e of merged.flat())
     if (count.get(titleFor(e.target, e.story)) > 1 && labels[e.target] && !e.many) e.titleOverride = titleWith(labels[e.target], docMap.get(e.target)?.names);
+  // Those with no such label keep the title, with a quiet line of the chapter's own words where they part ("Incoming Transmission" twice).
+  const alike = new Map();
+  for (const e of merged.flat()) {
+    const t = titleFor(e.target, e.story), doc = docMap.get(e.target);
+    if (count.get(t) > 1 && !e.titleOverride && !e.many && local(doc?.texts?.[0])) (alike.get(t) || alike.set(t, []).get(t)).push(e);
+  }
+  for (const group of alike.values()) {
+    const words = group.map((e) => { const doc = docMap.get(e.target); return proseWith(local(doc.texts[0]), doc.names).replace(/\s+/g, " ").trim(); });
+    if (group.length < 2 || words.every((w) => w === words[0])) continue;
+    partingWords(words, lang === "zh" ? 24 : 44).forEach((hint, i) => { group[i].hint = typeset(hint); });
+  }
   return merged.map((list) => {
     if (list.length === 1) return edgeButton(list[0]);
     // Exclusive outcomes: one lead line (the delay they all share says it once there), then a ledger of the possibilities.
@@ -903,17 +914,7 @@ function renderBody(r, ctx) {
     const count = lang === "zh" ? ["", "", "两", "三", "四", "五", "六", "七", "八", "九"][n] || n : ["", "", "two", "three", "four", "five", "six", "seven", "eight", "nine"][n] || n;
     const telling = T(`${count}种说法之一`, `One of ${count} tellings`);
     // A picker's option is the text's first words; two that open alike show where they part instead.
-    const openings = () => {
-      const all = passages.map((p) => prose(local(p.paragraphs[0]?.parts[0]?.text)).replace(/\s+/g, " ").trim());
-      const room = lang === "zh" ? 24 : 44;
-      const shared = (a, b) => { let k = 0; while (k < a.length && a[k] === b[k]) k++; return k; };
-      return all.map((s, i) => {
-        const from = Math.max(...all.map((o, j) => (j === i ? 0 : shared(s, o))));
-        if (from < room) return s.length > room ? `${s.slice(0, room).trimEnd()}…` : s;
-        const start = Math.max(0, from - Math.floor(room / 4));
-        return `…${s.slice(start, start + room).trim()}${start + room < s.length ? "…" : ""}`;
-      });
-    };
+    const openings = () => partingWords(passages.map((p) => prose(local(p.paragraphs[0]?.parts[0]?.text)).replace(/\s+/g, " ").trim()), lang === "zh" ? 24 : 44);
     if (n > 9 || (labels && n > 4)) { const words = labels ? null : openings(); tabs = `<label class="reading-picker passage-picker"><span>${esc(telling)}</span><select id="passage-select" aria-label="${esc(telling)}">${passages.map((p, i) => `<option value="${i}"${i === passageIndex ? " selected" : ""}>${esc(labels ? labels[i] : `${i + 1}. ${words[i]}`)}</option>`).join("")}</select></label>`; }
     else tabs = `<div class="reading-tabs${labels ? "" : " compact"}" role="group" aria-label="${esc(telling)}">${labels ? "" : `<span class="reading-tabs-label" aria-hidden="true">${esc(telling)}</span>`}${passages.map((p, i) =>
       `<button data-passage="${i}" aria-pressed="${i === passageIndex}"${labels ? "" : ` aria-label="${esc(T(`第${i + 1}种说法`, `Telling ${i + 1}`))}"`}${conditions[i] && labels?.[i]?.toLowerCase() !== conditions[i].toLowerCase() ? ` title="${esc(conditions[i])}"` : ""}>${esc(labels ? labels[i] : String(i + 1))}</button>`).join("")}</div>`;
@@ -1594,7 +1595,9 @@ async function showEffects(story, docId, choices) {
   const opts = { lang, T, esc: (s) => esc(prose(String(s ?? ""))) };
   const entry = data.docs?.[docId] || {};
   for (const button of article.querySelectorAll("[data-choice]")) {
-    const effects = entry.choices?.[choices[Number(button.dataset.choice)]?.index];
+    // (a game tooltip the reply above has just said is not said again in its effects: "竞技场中的战斗即将开始。" twice)
+    const choice = choices[Number(button.dataset.choice)];
+    const effects = withoutSaid(entry.choices?.[choice?.index], (choice?.tooltips || []).map(local));
     const html = effects?.length ? renderEffects(effects, opts) : "";
     const target = button.parentElement.querySelector(".choice-response");
     if (html && target) target.insertAdjacentHTML("beforeend", html);

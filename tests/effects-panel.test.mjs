@@ -1,7 +1,15 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { renderEffects, countEffects, tidyEffects } from "../src/effects-panel.js";
+import { renderEffects, countEffects, tidyEffects, withoutSaid } from "../src/effects-panel.js";
+
+test("a game tooltip the reply has just said is not said again", () => {
+  const tip = { kind: "tooltip", label: { zh: "战斗即将开始。", en: "The battle will begin." } }, other = { kind: "tooltip", label: { zh: "别的话。", en: "Other words." } }, gain = { kind: "gain", label: { zh: "战斗即将开始。", en: "The battle will begin." } };
+  assert.deepEqual(withoutSaid([tip, other, gain], ["战斗即将开始。"]), [other, gain]);
+  assert.deepEqual(withoutSaid([tip], ["The battle will begin."]), []);
+  assert.deepEqual(withoutSaid([tip], []), [tip]);
+  assert.equal(withoutSaid(undefined, ["x"]), undefined);
+});
 
 // Real structures produced by scripts/effects.py from the game files (python tests/... regenerates: see docs/EFFECTS.md).
 const fx = JSON.parse(readFileSync(new URL("./fixtures/effects-samples.json", import.meta.url), "utf8"));

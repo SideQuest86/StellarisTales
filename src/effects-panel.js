@@ -182,6 +182,14 @@ function bulletsHtml(b, ctx) {
   return `<ul class="fx-list fx-bullets">${items.map((x) => `<li class="fx-item fx-level-${x.level || 0}"><span class="fx-text">${ctx.esc(x.text)}</span></li>`).join("")}</ul>`;
 }
 
+/** An effects list without the game tooltips the reader has just read (`said`: the same words, in either language's text). */
+export function withoutSaid(list, said) {
+  if (!Array.isArray(list) || !said?.length) return list;
+  const words = (s) => String(s ?? "").replace(/£[^£]+£|§./g, "").replace(/\s+/g, " ").trim();
+  const seen = new Set(said.map(words).filter(Boolean));
+  return list.filter((e) => !(e?.kind === "tooltip" && [e.label?.zh, e.label?.en].some((t) => seen.has(words(t)))));
+}
+
 export function renderEffects(effects, opts = {}) {
   const lang = opts.lang === "en" ? "en" : "zh";
   const T = opts.T || ((zh, en) => (lang === "en" ? en : zh));

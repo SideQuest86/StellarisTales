@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { evaluate, resolveBody, resolveChoices, pathFlags, applyFacts, impliedFacts, atomKey, describe, namedOnly, passageTabs } from "../src/reading.js";
+import { evaluate, resolveBody, resolveChoices, pathFlags, applyFacts, impliedFacts, atomKey, describe, namedOnly, passageTabs, partingWords } from "../src/reading.js";
 
 const gestalt = (value) => ({ type: "identity", key: "ethic_gestalt_consciousness", value });
 const flag = (name, value = true) => ({ type: "flag", name, scope: "country", value });
@@ -106,6 +106,23 @@ test("the row above alternative texts: its own names, one nameless among them, o
   assert.equal(describe(namedOnly([[plain, hive]], "en"), "en"), "Hive Mind");
   assert.equal(describe(namedOnly([[plain]], "en"), "en"), "");
   assert.equal(namedOnly(null, "en"), null);
+});
+
+test("parting words: the opening, or the sentence where two texts part", () => {
+  assert.deepEqual(partingWords(["Alpha opens here.", "Beta opens there."], 44), ["Alpha opens here.", "Beta opens there."]);
+  // Texts that open alike start at the sentence they part in, not mid-sentence.
+  const shared = "We accepted the communication from the other empire at once. ";
+  const [a, b] = partingWords([`${shared}However, they fell silent.`, `${shared}However, they spoke at length.`], 44);
+  assert.equal(a, "…However, they fell silent.");
+  assert.equal(b, "…However, they spoke at length.");
+  const [z] = partingWords(["竞技场上人人都知道他的心思。战斗一开始，我们的统治者就向反方向跑去。", "竞技场上人人都知道他的心思。战斗一开始，敌人就倒下了。"], 24);
+  assert.equal(z.startsWith("…战斗一开始"), true);
+  // One long sentence: from just before the parting, at a word's start.
+  const long = "The empire has decided after a very long and careful deliberation among all of its many councils to";
+  const [c] = partingWords([`${long} send a fleet.`, `${long} stay at home.`], 44);
+  assert.match(c, /^…[a-z]+ .*send a fleet\.$/);
+  // The same throughout: the opening.
+  assert.deepEqual(partingWords(["Same text.", "Same text."], 44), ["Same text.", "Same text."]);
 });
 
 test("describe names only what has a name and never invents a placeholder", () => {

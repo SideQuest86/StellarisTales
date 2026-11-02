@@ -151,7 +151,25 @@ function metaPair(value) {
   if (slash && !/[A-Za-z]{4,}/.test(slash[1].replace(/[\w-]*[_.][\w.-]*/g, ""))) return withId(slash[1].trim(), slash[2].trim());
   const pair = /^([㐀-鿿《》·\d\s]+?)\s*([A-Za-z][^㐀-鿿（）「」《》、，；]*)$/.exec(v);
   if (pair) return withId(pair[1].trim(), pair[2].trim());
-  if (!/[A-Za-z]/.test(v)) return withId(v, "");
+  // (an initialism in a Chinese name is not English: "星系共同体前FTL决议")
+  const words = (s) => s.replace(/["“「][^"”」]*["”」]/g, "").replace(/[\w-]*[_.][\w.-]*/g, "");
+  if (!/[A-Za-z]/.test(v.replace(/(?<![A-Za-z])[A-Z]{2,5}(?![A-Za-z])/g, ""))) return withId(v, "");
+  // Two names ("利维坦 Leviathans / 霸主 Overlord"), each its own pair.
+  const names = v.split(/\s+\/\s+/);
+  if (names.length > 1) {
+    const each = names.map(metaPair);
+    if (each.every((p) => p && p[0] && p[1])) return withId(each.map((p) => p[0]).join(" / "), each.map((p) => p[1]).join(" / "));
+  }
+  // A Chinese note after the name stays on the Chinese page ("霸主 Overlord（需“大可汗”出现）").
+  const note = /^(.+?)\s*（([^（）]*[㐀-鿿][^（）]*)）$/.exec(v);
+  if (note && !/[a-z]{3,}/.test(words(note[2]))) {
+    const inner = metaPair(note[1]);
+    if (inner && inner[0]) return withId(`${inner[0]}（${note[2]}）`, inner[1]);
+  }
+  // A Chinese name with brackets or an initialism, then its English ("联邦（军事型）事件 federation (military) event").
+  const last = /^(.*[㐀-鿿》）」])\s*([A-Za-z][^㐀-鿿]*)$/.exec(v);
+  const open = (last?.[1].match(/（/g) || []).length, shut = (last?.[1].match(/）/g) || []).length;
+  if (last && open === shut && !/[a-z]{3,}/.test(words(last[1]))) return withId(last[1].trim(), last[2].trim());
   return null;
 }
 export function metaLine(text) {
