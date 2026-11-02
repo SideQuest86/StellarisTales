@@ -1336,6 +1336,11 @@ input {
   color: #9fb5af; /* between --dim and --ink-2: a condition you can read, still quieter than the title above it */
   text-wrap: pretty; /* a wrapped caption does not leave "这个…" alone on its last line */
 }
+/* Chinese: a caption beside a picture breaks between its phrases ("条件：非蜂巢思维 · 进入另一则故事"), not inside a word. */
+:root:lang(zh) .next-chapter small {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
 /* English: the condition under a card's title is its subtitle, in the book's italic (a base chance stays a sans figure). */
 :root:lang(en) .next-chapter:not(.ending-next) small {
   font: italic 14.5px/1.5 var(--serif-en);

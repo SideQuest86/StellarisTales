@@ -1,6 +1,6 @@
 # 独眼漫步者（戴森球外交事件） / The One-Eyed Wanderer (Dyson Sphere diplomacy)
 
-- 分类 Category：银河轶事 C8 stories
+- 分类 Category：银河轶事 Galactic miscellany
 
 ## 如何开始 How it starts
 

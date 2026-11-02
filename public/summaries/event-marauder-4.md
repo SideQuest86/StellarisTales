@@ -1,4 +1,5 @@
-# 掠夺者氏族的末日 / The End of the Marauder Clan
+# 掠夺者氏族的末日 / The End of the Marauder Clan
+
 - 分类 Category：C8 银河轶事 / C8 Galactic miscellany
 
 ## 如何开始 How it starts
@@ -9,10 +10,10 @@ When a marauder clan's last void dwelling (or marauder starbase) is destroyed, o
 
 ## 剧情脉络 Story outline
 
-- 所有玩家收到“[氏族]的末日”marauder.5。允许难民的帝国若有适合该物种的星球，10–20天后可能收到难民抵达 marauder.10。曾雇佣该氏族佣兵的帝国在20–40天后收到“佣兵消失”marauder.76。
-  Every player gets The End of the [clan] marauder.5. Empires allowing refugees with suitable worlds may receive Refugees Arrive marauder.10 after 10-20 days. Empires that hired that clan's mercenaries get Mercenaries Vanish marauder.76 after 20-40 days.
-- 若击毁者雇有佣兵舰队，100–150天后幸存的佣兵前来复仇：击毁者收到 marauder.6（接通讯得到 marauder.7），10天后其他相关帝国收到 marauder.8。可汗后裔起源的玩家5天后收到“寻求复仇”nomads.700，可选择成为大可汗（接“战争之鼓”）。
-  If the destroyer had hired mercenary fleets, the surviving mercenaries come for revenge after 100-150 days: the destroyer gets marauder.6 (answering gives marauder.7), others get marauder.8 ten days later. Heirs of the Khan players get In Search of Revenge nomads.700 after 5 days and may claim the Khanate (leading to The Drums of War).
+- 所有玩家收到 marauder.5。允许难民的帝国若有适合该物种的星球，10–20天后可能收到 marauder.10。曾雇佣该氏族佣兵的帝国在20–40天后收到 marauder.76。
+  Every player gets marauder.5. Empires allowing refugees with suitable worlds may receive marauder.10 after 10-20 days. Empires that hired that clan's mercenaries get marauder.76 after 20-40 days.
+- 若击毁者雇有佣兵舰队，100–150天后幸存的佣兵前来复仇：击毁者收到 marauder.6（接通讯得到 marauder.7），10天后其他相关帝国收到 marauder.8。可汗后裔起源的玩家5天后收到 nomads.700，可选择成为大可汗（接“战争之鼓”）。
+  If the destroyer had hired mercenary fleets, the surviving mercenaries come for revenge after 100-150 days: the destroyer gets marauder.6 (answering gives marauder.7), others get marauder.8 ten days later. Heirs of the Khan players get nomads.700 after 5 days and may claim the Khanate (leading to The Drums of War).
 
 ## 分支与结局 Branches and outcomes
 

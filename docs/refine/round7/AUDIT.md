@@ -690,3 +690,10 @@ quoted title after a titled link in the link's own script (250 Chinese blocks; q
 keep theirs); a space after a Chinese stop before more Chinese. Not defects: "Review notes" (a closed panel); "Case 1 / Case 2"
 near-identical passages (the game's own variants); the tellings selector's numbers. Deferred: link labels in the other language's
 half when both are shown, raw trait / objective ids where the game has no name (effects data), search ordering of title hits.
+
+Surface round 6 (2026-11-02; six inspectors on new samples). Fixed: describe factors atoms every alternative shares (86 conditions;
+a rest of unnamed checks is read as before, so no condition is lost); effect labels drop an engine ceiling of 100000 ("at least
+N"); a game sentence once per effects panel (not inside "Each branch in full"); an opened reply scrolls clear of the player; Chinese
+card captions keep-all; 131 + 1 guide category lines "银河轶事 C8 stories" -> "Galactic miscellany"; marauder-4's names written
+before their ids. Not changed: DLC names in English on the Chinese page (no reviewed Chinese names); per-choice "Only when" lines
+(design); the phone map's first view; search's "Name" chip (deferred).

@@ -1,6 +1,6 @@
 # 破坏恒星基地设施 / Sabotage Starbase Facility
 
-- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
+- 分类 Category：银河轶事 Galactic miscellany · DLC：Nemesis
 
 ## 如何开始 How it starts
 

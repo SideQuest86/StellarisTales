@@ -1,6 +1,6 @@
 # 重力陷阱 / Gravity Snares
 
-- 分类 Category：银河轶事 C8 stories · DLC：Grand Archive
+- 分类 Category：银河轶事 Galactic miscellany · DLC：Grand Archive
 
 ## 如何开始 How it starts
 

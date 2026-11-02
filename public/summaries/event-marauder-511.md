@@ -1,6 +1,6 @@
 # 大可汗之死 / The Death of the Great Khan
 
-- 分类 Category：银河轶事 C8 stories · DLC：Marauders
+- 分类 Category：银河轶事 Galactic miscellany · DLC：Marauders
 
 ## 如何开始 How it starts
 

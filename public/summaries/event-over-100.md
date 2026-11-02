@@ -1,6 +1,6 @@
 # 中继器网道 / Hyper Relay network
 
-- 分类 Category：银河轶事 C8 stories · DLC：Overlord
+- 分类 Category：银河轶事 Galactic miscellany · DLC：Overlord
 
 ## 如何开始 How it starts
 

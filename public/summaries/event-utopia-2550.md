@@ -1,6 +1,6 @@
 # 合成嬗变 / Synthetic Transformation
 
-- 分类 Category：银河轶事 C8 stories · DLC：乌托邦 / 机械时代 Utopia / The Machine Age
+- 分类 Category：银河轶事 Galactic miscellany · DLC：乌托邦 / 机械时代 Utopia / The Machine Age
 
 ## 如何开始 How it starts
 

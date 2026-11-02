@@ -1,6 +1,6 @@
 # 战略指挥中心 / Strategic Coordination Center
 
-- 分类 Category：银河轶事 C8 stories
+- 分类 Category：银河轶事 Galactic miscellany
 
 ## 如何开始 How it starts
 

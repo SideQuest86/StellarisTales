@@ -1,6 +1,6 @@
 # 帝国议会的法案与干预 / Imperial laws and interventions
 
-- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
+- 分类 Category：银河轶事 Galactic miscellany · DLC：Nemesis
 
 ## 如何开始 How it starts
 

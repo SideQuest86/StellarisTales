@@ -1,6 +1,6 @@
 # 青春之泉 / 科学枢纽后续事件 / Fountain of Youth (Science Nexus follow-ups)
 
-- 分类 Category：银河轶事 C8 stories
+- 分类 Category：银河轶事 Galactic miscellany
 
 ## 如何开始 How it starts
 

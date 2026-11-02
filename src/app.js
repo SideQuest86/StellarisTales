@@ -1639,6 +1639,12 @@ document.addEventListener("click", (e) => {
     panel.hidden = !open;
     choice.setAttribute("aria-expanded", String(open));
     choice.closest(".choice").classList.toggle("chosen", open);
+    // An opened reply that would end under the player (a phone) comes up into view, its option still on screen.
+    if (open) requestAnimationFrame(() => {
+      const box = panel.getBoundingClientRect(), limit = ($("#music-player")?.getBoundingClientRect().top || innerHeight) - 16;
+      const by = Math.min(box.bottom - limit, choice.getBoundingClientRect().top - 72);
+      if (by > 0) $(".reader-panel").scrollBy({ top: by, behavior: reduced() ? "auto" : "smooth" });
+    });
     const ended=open && chapter.dialogue?.exits?.includes(source.key);
     for(const dialogueStatus of document.querySelectorAll('[data-dialogue-status]'))dialogueStatus.textContent=ended?T('对话已结束','Conversation complete'):T('继续对话','Continue the conversation');
     flowSurface.update(dossier.story, dossier.chapters, chapter.id, visitedChapters, lang, mapProse, trail);

@@ -1,5 +1,5 @@
 # 被巡逻无人机拘押 / Apprehended by patrol drones
-- 分类 Category：银河轶事 C8 stories · DLC：Nemesis
+- 分类 Category：银河轶事 Galactic miscellany · DLC：Nemesis
 
 ## 如何开始 How it starts
 

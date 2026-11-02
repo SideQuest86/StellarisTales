@@ -21,7 +21,9 @@ const KIND = {
 const GROUPS = new Set(["if", "else", "random", "random_list", "random_option", "repeat", "scripted"]);
 
 // (a name the label left out leaves its spaces: "Trade from  Jobs", "岗位产出的 贸易 +10%")
-const pick = (label, lang) => ((label && (label[lang] || label.en || label.zh)) || "").replace(/([㐀-鿿])[ \t ]+(?=[㐀-鿿])/g, "$1").replace(/[ \t ]{2,}/g, " ");
+const pick = (label, lang) => ((label && (label[lang] || label.en || label.zh)) || "").replace(/([㐀-鿿])[ \t ]+(?=[㐀-鿿])/g, "$1").replace(/[ \t ]{2,}/g, " ")
+  // (an engine ceiling of 100000 bounds nothing a reader meets: "+18 months of income (350 to 100000)" -> "(at least 350)")
+  .replace(/\((\d[\d,]*) to 100000\)/g, "(at least $1)").replace(/（(\d[\d,]*)\s*至\s*100000）/g, "（至少 $1）");
 const isList = (v) => Array.isArray(v) && v.length > 0;
 
 // Adjacent repeats read as a stutter: a game tooltip followed by the scripted effect it describes (the same words), two "if"
@@ -202,6 +204,13 @@ function entryHtml(e, ctx, depth) {
   const { lang, T, esc } = ctx;
   if (e.kind === "more") return `<li class="fx-item fx-more">${esc(pick(e.label, lang))}</li>`;
   if (e.unhandled) return "";
+  // The game's own sentence once per panel: a situation's approaches reuse it under "On failure" / "When progress completes".
+  // (every branch in full shows as it is)
+  if (e.kind === "tooltip" && ctx.said && !ctx.whole) {
+    const words = pick(e.label, lang);
+    if (ctx.said.has(words)) return "";
+    ctx.said.add(words);
+  }
   const kind = KIND[e.kind];
   const chips = [];
   // (no kind label when the line already opens with it: "Leader · Leader experience +200" said it twice)
@@ -271,7 +280,7 @@ export function renderEffects(effects, opts = {}) {
   const T = opts.T || ((zh, en) => (lang === "en" ? en : zh));
   const esc = opts.esc || DEFAULT_ESC;
   if (!effects || (Array.isArray(effects) && !effects.length)) return "";
-  const ctx = { lang, T, esc, hideTarget: sharedTarget(effects) };
+  const ctx = { lang, T, esc, hideTarget: sharedTarget(effects), said: new Set() };
   let body = "";
   let skipped = 0;
   if (Array.isArray(effects)) {

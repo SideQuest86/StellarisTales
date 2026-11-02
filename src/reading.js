@@ -232,6 +232,24 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
   const opposite = (a, b) => key(a) === key(b) && a.value !== b.value;
   if (single.some((a) => single.some((b) => opposite(a, b)))) return fallback;
   if (single.length) dnf = dnf.map((b) => (b.length === 1 ? b : b.filter((a) => !single.some((s) => opposite(s, a)))));
+  // What every alternative shares is said once, then what tells them apart: "(not Storm Chasers · not Treasure Hunters) or
+  // (not Storm Chasers · not Letters of Marque)" reads "not Storm Chasers · (not Treasure Hunters or not Letters of Marque)";
+  // when the rest always holds ("A or B or neither"), only the shared part is said.
+  if (dnf.length > 1) {
+    const sig = (a) => `${key(a)}=${a.value}`;
+    const common = dnf[0].filter((a) => dnf.every((b) => b.some((x) => sig(x) === sig(a))));
+    if (common.length) {
+      let rest = dnf.map((b) => b.filter((a) => !common.some((c) => sig(c) === sig(a))));
+      // (only when both parts have words: a rest of unnamed checks is read as before, its alternatives left out)
+      const head = describe([common], lang, names, { max });
+      const ones = rest.filter((b) => b.length === 1).map((b) => b[0]);
+      if (head && (rest.some((b) => !b.length) || ones.some((a) => ones.some((b) => opposite(a, b))))) return head;
+      rest = rest.map((b) => (b.length === 1 ? b : b.filter((a) => !ones.some((s) => opposite(s, a)))));
+      if (head && rest.some((b) => !b.length)) return head;
+      const tail = head && describe(rest, lang, names, { max });
+      if (tail) return `${head} · ${rest.length > 1 ? (lang === "zh" ? `（${tail}）` : `(${tail})`) : tail}`;
+    }
+  }
   const word = (zh, en) => (lang === "zh" ? zh : en);
   const isName = (a) => a.label?.[lang] || names[a.key]?.[lang];
   // Unnamed flags all read "earlier events". One such flag keeps its "not" (a version when it happened, one when it did not);

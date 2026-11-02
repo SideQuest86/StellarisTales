@@ -1,6 +1,6 @@
 # 虚境 / The Shroud
 
-- 分类 Category：银河轶事 C8 stories · DLC：乌托邦 Utopia
+- 分类 Category：银河轶事 Galactic miscellany · DLC：乌托邦 Utopia
 
 ## 如何开始 How it starts
 
