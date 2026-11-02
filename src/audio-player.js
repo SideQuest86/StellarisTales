@@ -90,6 +90,7 @@ export class SoundtrackPlayer {
       this.renderDescription(e.detail);
       this.renderVersions(e.detail);
       this.updatePlaying();
+      this.nameToggle();
     });
     $("play-pause").onclick = () => {
       if (this.audio.paused) {
@@ -215,6 +216,10 @@ export class SoundtrackPlayer {
     seek.style.setProperty("--p", `${Number(seek.value) / 10}%`);
     seek.classList.toggle("started", Number(seek.value) > 0);
   }
+  // The strip's button opens the playlist: its spoken name says so, then the piece ("Soundtrack playlist: Faster Than Light").
+  nameToggle() {
+    $("playlist-toggle").setAttribute("aria-label", `${t("music.playlist")}${t("music.labelSep")}${$("track-title").textContent}`);
+  }
   togglePlaylist(open = $("playlist").hidden) {
     $("playlist").hidden = !open;
     $("playlist-toggle").setAttribute("aria-expanded", String(open));
@@ -233,6 +238,7 @@ export class SoundtrackPlayer {
     // The strip names the piece; the featured singer and the composer are in its tooltip and the playlist.
     $("track-title").textContent = track.title.split(/\s+-\s+(?=feat)/i)[0];
     $("playlist-toggle").title = `${track.title} · ${track.artist}`;
+    this.nameToggle();
     $("track-artist").textContent = track.artist;
     $("track-artist").removeAttribute("role");
     $("music-player").classList.remove("load-failed");

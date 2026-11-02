@@ -125,6 +125,7 @@ export const UI = {
   "music.seek": { zh: "音乐进度", en: "Track position" },
   "music.volume": { zh: "音乐音量", en: "Volume" },
   "music.playlist": { zh: "原声列表", en: "Soundtrack playlist" },
+  "music.labelSep": { zh: "：", en: ": " },
   "music.playlistTitle": { zh: "原声", en: "Soundtrack" },
   "music.playlistClose": { zh: "关闭音乐列表", en: "Close playlist" },
   "music.defaultTitle": { zh: "群星原声音乐集", en: "Stellaris soundtrack" },

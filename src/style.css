@@ -576,7 +576,6 @@ input {
   margin: 14px 0 16px;
   font: 600 clamp(28px, 2.7vw, 44px) / 1.3 var(--serif);
   letter-spacing: 0.035em;
-  font-feature-settings: "palt"; /* proportional CJK punctuation ("合成女王：塞塔娜") */
   text-wrap: balance;
   overflow-wrap: anywhere;
   text-shadow: 0 2px 14px #031014;
@@ -688,6 +687,13 @@ input {
   width: 44px;
   font-size: 22px;
   color: var(--gold);
+}
+/* The counter and arrows sit on the wall itself (no column behind them on a phone held sideways): a dark halo keeps "/ 307"
+   and the arrows legible over a bright card, as the selection's title has one. */
+.row-counter,
+.row-navigation button,
+.lane-navigation button {
+  text-shadow: 0 1px 2px #031014e6, 0 0 14px #031014;
 }
 /* The category arrows start where the selection's text starts (the arrow glyph sits 11 px inside its 44 px button). */
 .lane-navigation {
@@ -918,7 +924,7 @@ input {
   margin: 18px 0 6px;
   font: 600 clamp(30px, 2.5vw, 40px) / 1.34 var(--serif);
   letter-spacing: 0.03em;
-  font-feature-settings: "palt"; /* proportional CJK punctuation in titles ("合成女王：塞塔娜") */
+  /* Full-width CJK punctuation, as in the text and on the cards ("palt" set the colon of "信号踪迹：这颗星球" at half width, like a Latin one). */
   text-wrap: balance;
   overflow-wrap: anywhere;
 }
@@ -1079,6 +1085,10 @@ input {
 }
 .reading-tabs-label {
   margin-right: 8px;
+  align-self: center;
+}
+.reading-tabs:not(.compact) .reading-tabs-label {
+  margin-right: -8px; /* the named tabs' 22 px gap less: the line leads its names as it leads the numbers */
 }
 /* Its options are the texts' first words: the closed picker stays within the column. */
 .chapter-document > .reading-picker.passage-picker {
@@ -1318,6 +1328,7 @@ input {
   font: 13px/1.55 var(--sans);
   letter-spacing: 0.01em;
   color: #9fb5af; /* between --dim and --ink-2: a condition you can read, still quieter than the title above it */
+  text-wrap: pretty; /* a wrapped caption does not leave "这个…" alone on its last line */
 }
 /* English: the condition under a card's title is its subtitle, in the book's italic (a base chance stays a sans figure). */
 :root:lang(en) .next-chapter:not(.ending-next) small {
@@ -1407,6 +1418,15 @@ input {
     width: 76px;
     height: 46px;
   }
+  /* The tint of a pressed choice or card ends at the column's edge, with the rules, not 6 px from the screen's. */
+  .choice-button,
+  .next-chapter {
+    width: calc(100% + 10px);
+    margin-right: 0;
+  }
+  .next-chapter::before {
+    right: 0;
+  }
 }
 .chapter-end {
   margin-top: var(--s-5);
@@ -1437,6 +1457,7 @@ input {
   margin-top: 2px;
   font: italic 14px/1.5 var(--serif);
   letter-spacing: 0;
+  text-wrap: pretty;
 }
 .reading-next b {
   align-self: center;
@@ -1483,6 +1504,9 @@ input {
   margin: 18px 0 2px;
   font: italic 15px/1.5 var(--serif);
   color: var(--gold-2);
+}
+.flow-investigations > small .nw {
+  white-space: nowrap; /* "已读 1 / 2，需要 2 项" moves to the next line whole, never breaking "需 / 要" */
 }
 /* The end of a route is set like the last page of a chapter: a short rule, the ending's name, its note, centred; the next
    story of the same shelf follows as a card of its own. */
@@ -3759,6 +3783,11 @@ dialog::backdrop {
   .flow-key {
     display: none;
   }
+  /* The full-screen map's zoom, fit, locate and key buttons are fingertip-sized (they were 30 px). */
+  #flow-surface.mobile-open .flow-controls button {
+    min-height: 40px;
+    width: 40px;
+  }
   .music-player {
     height: calc(var(--player) + env(safe-area-inset-bottom));
     padding: 0 var(--gutter) env(safe-area-inset-bottom);
@@ -4230,6 +4259,8 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
   white-space: nowrap; /* "24篇相关" moves to the next line whole, never leaving "关" alone */
 }
 .search-hit mark { padding: 0; color: var(--ink); background: #68775a66; border-bottom: 1px solid var(--gold); }
+/* The words a search result showed, marked once in the chapter it opens (app.js markSearch). */
+mark.search-mark { padding: 0; color: inherit; background: #68775a59; border-bottom: 1px solid var(--gold); border-radius: 1px; }
 @media (max-width: 700px) {
   .hit-type { width: 72px; } /* the thumbnails are 72 px wide here */
 }

@@ -628,3 +628,20 @@ game's own tooltips, and anomaly.4045-4047 share the game's title "Echoes from t
 card titled like the open chapter now carries the next chapter's opening words (as same-titled sibling cards already did). Two
 consecutive rounds without a new confirmed defect: the inspection loop has converged. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1,
 4, 5, 0, 4, 3, 2, 1, 1, 4, 3, 3, 2, 0, 0.
+
+Surface round 1 (2026-11-02; nine inspectors, one per surface: home on desktop and on phones, search, museum, navigation, the six
+longest stories, the story map, accessibility, typography). Fixed: specimen names with a save-dependent name (19 of 258: the
+museum's other-language line and the archive icons' tooltip showed "[EVENT_TARGET_0.GetName]", English titles ended "Beauty of" /
+"Memorial for"; src/name-fill.js specimenName, applied by the museum and, in the build, to museum/by-story.json and by-doc.json);
+the museum's return when come back to by Back from a story it linked to (each museum entry keeps its return, history.state
+museumFrom); the phone map as a layer (own history entry; Back / Escape close it first; a node tap closes it, then opens the
+chapter; the reader closes over it); search keys (Enter, Up / Down), marks in the chapter a result opens, and a leading "The" no
+longer hiding an exact title; cetana's optional encounters (no "branch ends" line above the group's other card); "palt" removed from
+the title faces (the CJK colon set at half width read as a Latin one); fold badges count distinct chapters; the four "Unused
+homeworld anomaly definition" map labels; the telling line on named tabs; phone card tint at the column edge; the group count kept
+whole; captions with text-wrap: pretty; a halo under the archive counter on a landscape phone; the playlist button's spoken name;
+40 px phone map buttons. Not defects: Back leaves the reader rather than stepping through chapters (one entry per reader by design;
+the saved path reopens it); type at 1920 px (the column is already drawn at 1.1x, the computed size does not show zoom); the
+Shroud's "A Vision" badges (the empire profile settles them); title hits opening their story's start; CJK/Latin spacing (Chrome's
+text-autospace is already on). Deferred: home keyboard arrows, specimen names beside the home icons, readable overview labels on
+very large maps, suggestions for an empty search.

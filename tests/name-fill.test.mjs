@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { fillNames, plainNames } from "../src/name-fill.js";
+import { fillNames, plainNames, specimenName } from "../src/name-fill.js";
 
 const names = {
   "X.GetName": { zh: "这颗星球", en: "this planet" },
@@ -118,4 +118,18 @@ test("names the archive cannot know: worded by what the getter names and where i
   assert.equal(f("what to make of [rock_fallen_empire.GetRealName]"), "what to make of that empire");
   // Chinese keeps its neutral wording
   assert.equal(f("我们见到了[contact_empire.GetRulerName]。", "zh"), "我们见到了这个名字。");
+});
+
+test("a specimen's name resolves a save-dependent name only where the title needs it", () => {
+  const ph = { "E.GetName": { zh: "这颗星球", en: "this planet" }, "D.GetName": { zh: "这位卫士", en: "this defender" } };
+  assert.equal(specimenName("Beauty of [E.GetName]", "en", ph), "Beauty of This Planet");
+  assert.equal(specimenName("[E.GetName]之美", "zh", ph), "这颗星球之美");
+  assert.equal(specimenName("Memorial for [D.GetName]", "en", ph), "Memorial for This Defender");
+  assert.equal(specimenName("[E.GetName] Hyper Mulch", "en", ph), "Hyper Mulch");
+  assert.equal(specimenName("Remains of [E.GetName] Robot", "en", ph), "Remains of the Robot");
+  assert.equal(specimenName("Key to [E.GetSpeciesName] Fertility", "en", ph), "Key to Fertility");
+  assert.equal(specimenName("[E.GetName]纪念碑", "zh", ph), "纪念碑");
+  // without a reviewed phrase a dangling preposition goes too; a plain name is untouched
+  assert.equal(specimenName("Memorial to [Q.GetName]", "en"), "Memorial");
+  assert.equal(specimenName("Ytterite Preserved Corpse", "en"), "Ytterite Preserved Corpse");
 });

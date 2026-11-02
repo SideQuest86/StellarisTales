@@ -662,17 +662,23 @@ export function defaultCollapsed(tree, path, current, budget = 90) {
   return collapsed;
 }
 
-/** Number of nodes hidden under a folded node. */
+/**
+ * Chapters hidden under a folded node, each once: a chapter reached by several routes, or linked back to, is not counted again
+ * (the Shroud's contact node said "+302" in a story of 111 chapters). A fold of links only counts its nodes.
+ */
 export function hiddenCount(tree, id) {
   let n = 0;
+  const docs = new Set();
   const visit = (x) => {
     for (const child of tree.nodes.get(x).children) {
-      if (tree.nodes.get(child).type !== "forest") n += 1;
+      const node = tree.nodes.get(child);
+      if (node.type !== "forest") n += 1;
+      if (node.type === "doc") docs.add(node.doc);
       visit(child);
     }
   };
   visit(id);
-  return n;
+  return docs.size || n;
 }
 
 /**

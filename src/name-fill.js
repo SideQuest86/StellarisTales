@@ -171,6 +171,31 @@ export function fillNames(s, opts) {
 }
 
 /**
+ * A Grand Archive specimen's name, whose game text may hold a save-dependent name ("Memorial for [EVENT_TARGET_0.GetName]").
+ * A name the title's grammar needs (the object closing an English title, a Chinese name before 之) becomes the specimen's
+ * reviewed phrase (content/museum/placeholders.json), in the title's case: "Memorial for This Defender", "这颗星球之美". A
+ * name used as a modifier is left out ("[planet] Hyper Mulch" → "Hyper Mulch"; "Remains of [planet] Robot" → "Remains of
+ * the Robot"). Used by the museum and, through scripts/build.mjs, by the specimen links of the archive and the reader.
+ */
+export function specimenName(s, lang, placeholders) {
+  const SMALL = /^(?:a|an|the|of|for|to|in|on|at|and|or)$/i;
+  const caps = (p) => p.replace(/\S+/g, (w, i) => (i && SMALL.test(w) ? w : w[0].toUpperCase() + w.slice(1)));
+  return String(s || "").replace(/§[A-Za-z!]|£\w+£/g, "")
+    .replace(/\s*\[([^\]]+)\]\s*/g, (m, key, at, all) => {
+      const before = all.slice(0, at), after = all.slice(at + m.length), phrase = placeholders?.[key]?.[lang];
+      if (lang === "zh") return /^之/.test(after) && phrase ? phrase : "";
+      const lead = before ? " " : "", trail = after ? " " : "";
+      if (!after && /\b(?:of|for|to|the)$/i.test(before) && phrase) return lead + caps(phrase);
+      if (after && /\bof$/i.test(before)) return lead + "the" + trail;
+      return before && after ? " " : "";
+    })
+    .replace(/\s+(?:of|for|to)(?:\s+the)?$/i, "")
+    .replace(/^之/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
  * $KEY$ references left after compilation (scripts/story_tree.py expands every one the game localises): special-project
  * progress counters the engine fills in ($COUNT$/$REQUIRED$) read as a natural phrase; references the game itself never
  * defines (missing from its localisation; listed in docs/refine/AUDIT.md) are left out instead of showing a token.

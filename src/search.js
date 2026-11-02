@@ -473,8 +473,13 @@ export function createSearch(env) {
       const words = norm.split(" ").filter(Boolean);
       const titleHit = (s) =>
         s.visible && words.every((w) => `${s.title.zh} ${s.title.en} ${s.excerpt?.zh || ""} ${s.excerpt?.en || ""}`.toLowerCase().includes(w));
-      // Title ranking: exact title > title prefix > any other match.
-      const titleRank = (t) => { t = String(t || "").toLowerCase().replace(/\s+/g, " ").trim(); return t === norm ? 2 : t && t.startsWith(norm) ? 1 : 0; };
+      // Title ranking: exact title > title prefix > any other match; an English title's leading article does not count
+      // ("Contingency" is the exact title of "The Contingency", ahead of a chapter called "Contingency Hoard").
+      const titleRank = (t) => {
+        t = String(t || "").toLowerCase().replace(/\s+/g, " ").trim();
+        const bare = /^the /.test(norm) ? t : t.replace(/^the /, "");
+        return t === norm || bare === norm ? 2 : t && (t.startsWith(norm) || bare.startsWith(norm)) ? 1 : 0;
+      };
       const meta = index.meta;
       const build = (docHits) => {
         const rows = [];

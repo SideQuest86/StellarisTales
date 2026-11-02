@@ -37,6 +37,23 @@ if (!process.env.SKIP_SEARCH_INDEX)
   execFileSync(process.execPath, ["scripts/build-search-index.mjs"], { stdio: "inherit" });
 await cp("src", "dist/src", { recursive: true });
 await cp("public", "dist", { recursive: true });
+// Specimen links on the archive and in chapters (museum/by-story.json, by-doc.json, "zh|en" names) read the names the
+// museum shows: a save-dependent name inside one is resolved (src/name-fill.js specimenName), never a raw [token].
+{
+  const { specimenName } = await import("../src/name-fill.js");
+  const { specimens } = JSON.parse(await readFile("dist/museum/specimens.json", "utf8"));
+  const spec = new Map(specimens.map((s) => [s.key, s]));
+  const name = (key, names) => {
+    const s = spec.get(key), [zh, en] = names.split("|");
+    return specimenName(zh, "zh", s?.placeholders) + "|" + specimenName(en, "en", s?.placeholders);
+  };
+  const byStory = JSON.parse(await readFile("dist/museum/by-story.json", "utf8"));
+  for (const list of Object.values(byStory)) for (const item of list) item[1] = name(item[0], item[1]);
+  await writeFile("dist/museum/by-story.json", JSON.stringify(byStory));
+  const byDoc = JSON.parse(await readFile("dist/museum/by-doc.json", "utf8"));
+  for (const entry of Object.values(byDoc)) for (const key of Object.keys(entry.names)) entry.names[key] = name(key, entry.names[key]);
+  await writeFile("dist/museum/by-doc.json", JSON.stringify(byDoc));
+}
 // A story with no gameplay effects gets an empty file, so opening it requests nothing that fails.
 const { stories } = JSON.parse(await readFile("dist/stories/index.json", "utf8"));
 await mkdir("dist/effects", { recursive: true });

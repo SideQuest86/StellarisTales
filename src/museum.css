@@ -41,7 +41,6 @@
   margin: 0 0 12px;
   font: 600 clamp(28px, 2.6vw, 40px) / 1.2 var(--serif);
   letter-spacing: 0.05em;
-  font-feature-settings: "palt";
 }
 :root:lang(en) .museum-head h1 { letter-spacing: -0.005em; }
 .museum-head h1 span { font: italic 400 clamp(16px, 1.3vw, 19px) / 1.2 var(--serif-en); letter-spacing: 0.01em; color: var(--dim); text-transform: none; }
@@ -156,7 +155,7 @@
 .rarity-rare { --rarity: #6fb6ea; }
 .rarity-epic { --rarity: #b394ec; }
 .rarity-exceptional { --rarity: #e5c37a; }
-.museum-name { max-width: 100%; font: 13.5px/1.45 var(--serif); letter-spacing: 0.01em; font-feature-settings: "palt"; text-align: center; text-wrap: balance; overflow-wrap: anywhere; color: var(--ink-2); transition: color 0.2s ease; }
+.museum-name { max-width: 100%; font: 13.5px/1.45 var(--serif); letter-spacing: 0.01em; text-align: center; text-wrap: balance; overflow-wrap: anywhere; color: var(--ink-2); transition: color 0.2s ease; }
 .museum-exhibit:hover .museum-name, .museum-exhibit:focus-visible .museum-name, .museum-exhibit.active .museum-name { color: var(--ink); }
 /* Specimens met while reading (a chapter that awards them was opened): a small gold diamond, named in the aria-label. */
 .museum-exhibit.met::after,
@@ -214,7 +213,7 @@
 .museum-text { margin-top: 28px; }
 /* Type and rarity: the rarity takes the colour of its pedestal frame. */
 .museum-eyebrow .museum-rarity { color: var(--rarity, var(--gold)); }
-.museum-text h2 { margin: 10px 0 2px; font: 600 clamp(26px, 2.1vw, 31px) / 1.25 var(--serif); letter-spacing: 0.03em; font-feature-settings: "palt"; text-wrap: balance; }
+.museum-text h2 { margin: 10px 0 2px; font: 600 clamp(26px, 2.1vw, 31px) / 1.25 var(--serif); letter-spacing: 0.03em; text-wrap: balance; }
 :root:lang(en) .museum-text h2 { letter-spacing: -0.005em; line-height: 1.2; }
 /* The other language's name, like a museum label's second line: quiet italic serif, not code. */
 .museum-other-lang { margin: 0 0 22px; font: italic 15.5px/1.4 var(--serif-en); letter-spacing: 0.01em; color: var(--dim); }

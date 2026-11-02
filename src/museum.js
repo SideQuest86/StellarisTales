@@ -2,7 +2,7 @@
 // never pays for it. Data: museum/specimens.json (game files, scripts/extract-specimens.py) and
 // museum/models/manifest.json (generated, unofficial 3D interpretations). The 3D viewer (museum-viewer.js) is
 // imported only when an exhibit with a model is opened.
-import { fillNames, cleanRefs } from "./name-fill.js";
+import { fillNames, cleanRefs, specimenName } from "./name-fill.js";
 const $ = (s, r = document) => r.querySelector(s);
 const lang = () => (document.documentElement.lang === "en" ? "en" : "zh");
 const T = (zh, en) => (lang() === "en" ? en : zh);
@@ -23,6 +23,8 @@ function gameText(s, spec) {
 const raw = (x) => x?.[lang()] || x?.en || x?.zh || "";
 // Titles: a save-dependent name inside a specimen name (e.g. "[planet] Hyper Mulch") is left out.
 const label = (x) => (x?.[lang()] || x?.en || x?.zh || "").replace(/§[A-Za-z!]|£\w+£/g, "").replace(/\s*\[[^\]]+\]\s*/g, " ").replace(/\s+/g, " ").trim();
+// A specimen's name: a save-dependent name inside it is resolved by src/name-fill.js ("Memorial for This Defender").
+const named = (s, l = lang()) => specimenName(s.name[l] || s.name.en || s.name.zh, l, s.placeholders);
 
 let data = null, models = {}, root = null, state = { type: "all", rarity: "all", query: "", only3d: false, onlyMet: false, open: null };
 // Specimens the reader has met: awarded by a chapter they have opened (app.js passes them in; empty without reading).
@@ -111,7 +113,7 @@ function filtered() {
     (!state.only3d || models[s.key]) &&
     (!state.onlyMet || met.has(s.key)) &&
     (!q || [s.name.zh, s.name.en, s.short.zh, s.short.en, s.key].some((t) => (t || "").toLowerCase().includes(q))),
-  ).sort((a, b) => RARITY_ORDER.indexOf(b.rarity) - RARITY_ORDER.indexOf(a.rarity) || label(a.name).localeCompare(label(b.name), lang()));
+  ).sort((a, b) => RARITY_ORDER.indexOf(b.rarity) - RARITY_ORDER.indexOf(a.rarity) || named(a).localeCompare(named(b), lang()));
 }
 
 function render() {
@@ -148,9 +150,9 @@ function render() {
     </div>
     <p class="museum-count${list.length === data.specimens.length ? " is-total" : ""}" aria-live="polite">${esc(T(`${list.length} 件标本`, `${list.length} ${list.length === 1 ? "specimen" : "specimens"}`))}</p>
     <ul class="museum-grid" role="list">
-      ${list.map((s) => `<li><button class="museum-exhibit rarity-${s.rarity}${met.has(s.key) ? " met" : ""}" data-key="${s.key}" aria-label="${esc(label(s.name))} · ${esc(label(a.rarities[s.rarity]))}${met.has(s.key) ? esc(T(" · 阅读中遇到", " · met while reading")) : ""}">
+      ${list.map((s) => `<li><button class="museum-exhibit rarity-${s.rarity}${met.has(s.key) ? " met" : ""}" data-key="${s.key}" aria-label="${esc(named(s))} · ${esc(label(a.rarities[s.rarity]))}${met.has(s.key) ? esc(T(" · 阅读中遇到", " · met while reading")) : ""}">
         <span class="museum-pedestal" aria-hidden="true"><img src="${esc(data.asset(s.icon.url))}" alt="" loading="lazy" decoding="async" width="100" height="100"></span>
-        <span class="museum-name">${esc(label(s.name))}</span>${models[s.key] && nModels < data.specimens.length ? `<span class="museum-3d-badge">3D</span>` : ""}
+        <span class="museum-name">${esc(named(s))}</span>${models[s.key] && nModels < data.specimens.length ? `<span class="museum-3d-badge">3D</span>` : ""}
       </button></li>`).join("")}
     </ul>
     <aside class="museum-detail" hidden></aside>`;
@@ -188,11 +190,11 @@ function showExhibit(key, keepFocus = false) {
   const panel = $(".museum-detail", root);
   const model = models[key];
   panel.hidden = false;
-  panel.setAttribute("aria-label", label(s.name)); // focus moves to Close: the name gives context, no live region
+  panel.setAttribute("aria-label", named(s)); // focus moves to Close: the name gives context, no live region
   panel.innerHTML = `
     <button class="museum-close museum-detail-close" data-close-detail aria-label="${esc(T("关闭标本", "Close specimen"))}">×</button>
     <div class="museum-stage rarity-${s.rarity}">
-      <img class="museum-stage-image" src="${esc(data.asset(s.icon.url.replace(/^museum\/img\//, "museum/img-hd/")))}" data-original="${esc(data.asset(s.icon.url))}" onerror="if(this.dataset.original&&this.src!==this.dataset.original){this.src=this.dataset.original}" alt="${esc(label(s.name))}" width="100" height="100" decoding="async">
+      <img class="museum-stage-image" src="${esc(data.asset(s.icon.url.replace(/^museum\/img\//, "museum/img-hd/")))}" data-original="${esc(data.asset(s.icon.url))}" onerror="if(this.dataset.original&&this.src!==this.dataset.original){this.src=this.dataset.original}" alt="${esc(named(s))}" width="100" height="100" decoding="async">
       ${model ? `<div class="museum-viewer" tabindex="0" role="img" aria-label="${esc(T("可旋转、缩放的三维模型：拖动旋转，滚轮或 +/- 缩放，方向键旋转，0 复位", "Rotatable 3D model: drag to rotate, wheel or +/- to zoom, arrow keys to rotate, 0 to reset"))}"></div>
         <div class="museum-view-toggle" role="group"><button data-view="3d" aria-pressed="true">${esc(T("三维模型", "3D model"))}</button><button data-view="image" aria-pressed="false">${esc(T("原版图像", "Original image"))}</button><button data-reset-view title="${esc(T("回到初始视角（0）", "Back to the opening view (0)"))}">${esc(T("复位", "Reset"))}</button></div>` : ""}
     </div>
@@ -201,8 +203,8 @@ function showExhibit(key, keepFocus = false) {
       : T("尚无三维模型，显示原版图像。", "No 3D model yet — showing the original image."))}</p>
     <div class="museum-text rarity-${s.rarity}">
       <p class="museum-eyebrow">${esc(label(a.types[s.type]))} · <span class="museum-rarity">${esc(label(a.rarities[s.rarity]))}</span></p>
-      <h2>${esc(label(s.name))}</h2>
-      <p class="museum-other-lang" lang="${lang() === "zh" ? "en" : "zh-CN"}">${esc(lang() === "zh" ? s.name.en : s.name.zh)}</p>
+      <h2>${esc(named(s))}</h2>
+      <p class="museum-other-lang" lang="${lang() === "zh" ? "en" : "zh-CN"}">${esc(named(s, lang() === "zh" ? "en" : "zh"))}</p>
       <div class="museum-desc"><p>${gameText(raw(s.short), s)}</p><p>${gameText(raw(s.details), s)}</p></div>
       <h3>${esc(T("展览效果", "While exhibited"))}</h3>
       <p class="museum-note">${esc(T("展出时生效；基础值，随展区加成变化。", "Active while exhibited; base values, scaled by the collection bonus."))}</p>
@@ -268,7 +270,7 @@ function openExhibit(key) {
   showExhibit(key);
   if (state.open !== key) return;
   const address = `#museum=${encodeURIComponent(key)}`;
-  if (entering && !history.state?.museumDetail) history.pushState({ museumDetail: 1 }, "", address);
+  if (entering && !history.state?.museumDetail) history.pushState({ ...history.state, museumDetail: 1 }, "", address); // (and app.js's museumFrom)
   else history.replaceState(history.state, "", address);
 }
 function closeExhibit() {

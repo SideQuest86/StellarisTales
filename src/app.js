@@ -626,6 +626,7 @@ async function prewarmReader() {
 }
 let steppingBack = false;
 function closeReader() {
+  if (history.state?.map) return closeMap(closeReader); // step back over the phone map's entry first
   flushProgress();
   readerTicket++;
   setReader(false);
@@ -961,7 +962,8 @@ function renderBody(r, ctx) {
     // A picker's option is the text's first words; two that open alike show where they part instead.
     const openings = () => partingWords(passages.map((p) => prose(local(p.paragraphs[0]?.parts[0]?.text)).replace(/\s+/g, " ").trim()), lang === "zh" ? 24 : 44);
     if (n > 9 || (labels && n > 4)) { const words = labels ? null : openings(); tabs = `<label class="reading-picker passage-picker"><span>${esc(telling)}</span><select id="passage-select" aria-label="${esc(telling)}">${passages.map((p, i) => `<option value="${i}"${i === passageIndex ? " selected" : ""}>${esc(labels ? labels[i] : `${i + 1}. ${words[i]}`)}</option>`).join("")}</select></label>`; }
-    else tabs = `<div class="reading-tabs${labels ? "" : " compact"}" role="group" aria-label="${esc(telling)}">${labels ? "" : `<span class="reading-tabs-label" aria-hidden="true">${esc(telling)}</span>`}${passages.map((p, i) =>
+    // (named tabs keep the line too: "Not forced reset / Forced reset" alone under a title read as the page's metadata)
+    else tabs = `<div class="reading-tabs${labels ? "" : " compact"}" role="group" aria-label="${esc(telling)}"><span class="reading-tabs-label" aria-hidden="true">${esc(telling)}</span>${passages.map((p, i) =>
       `<button data-passage="${i}" aria-pressed="${i === passageIndex}"${labels ? "" : ` aria-label="${esc(T(`第${i + 1}种说法`, `Telling ${i + 1}`))}"`}${conditions[i] && labels?.[i]?.toLowerCase() !== conditions[i].toLowerCase() ? ` title="${esc(conditions[i])}"` : ""}>${esc(labels ? labels[i] : String(i + 1))}</button>`).join("")}</div>`;
   }
   // A piece that is only "ERROR" is the game's scripted-text default for a case it never reaches: not shown (five chapters
@@ -1072,6 +1074,10 @@ function renderChapter(preservePosition = false) {
   const caption = setting.length ? setting.map(local).join(T("；", "; ")) : node?.parent === "n0" ? T("故事开端", "Opening") : "";
   // How the story continues from here.
   const nextEdges = resolveEdges(r.next, ctx);
+  // Parallel groups (e.g. investigations in any order, N required before the gate). A chapter whose group offers others
+  // below does not say its route or branch ends there (cetana's two optional storm encounters each said so above the other).
+  const group = story.groups?.find((g) => g.kind === "parallel" && (g.members.includes(r.id) || g.gate === r.id));
+  const groupGoesOn = !!group?.members.some((m) => m !== r.id);
   let nextReading;
   if (chapter.ending && !nextEdges.length) {
     const name = local(chapter.ending.label), note = local(chapter.ending.note); // a note that repeats the name is not shown
@@ -1080,11 +1086,9 @@ function renderChapter(preservePosition = false) {
     nextReading = ""; // the "Your choices" heading above already says it
   } else if (!nextEdges.length) {
     // The way back sits under the line, not a scroll away at the chapter's top.
-    nextReading = `<span class="reading-complete">${esc(T("这条路线到此结束", "This route ends here"))}</span>`
+    nextReading = (groupGoesOn ? "" : `<span class="reading-complete">${esc(T("这条路线到此结束", "This route ends here"))}</span>`)
       + (trail.length > 1 ? `<button type="button" class="route-back">${esc(T("← 上一章", "← Previous chapter"))}</button>` : "");
   } else nextReading = "";
-  // Parallel groups (e.g. investigations in any order, N required before the gate).
-  const group = story.groups?.find((g) => g.kind === "parallel" && (g.members.includes(r.id) || g.gate === r.id));
   let groupPanel = "";
   if (group) {
     const done = group.members.filter((m) => visitedChapters.has(m)).length;
@@ -1096,7 +1100,7 @@ function renderChapter(preservePosition = false) {
     const labelled = new Set(others.filter((m) => labels[m] && [r.id, ...others].some((o) => o !== m && titles.get(o) === titles.get(m))));
     for (const m of labelled) titles.set(m, titleWith(labels[m], docMap.get(m)?.names));
     const hints = sameTitleHints([r.id, ...others.filter((m) => !labelled.has(m))]);
-    groupPanel = `<div class="flow-investigations"><small>${esc(local(group.label))} · ${esc(T(`已读 ${done} / ${group.members.length}`, `${done} of ${group.members.length} read`))}${group.required ? esc(T(`，需要 ${group.required} 项`, ` · ${group.required} required`)) : ""}</small><p>${esc(local(group.note))}</p>${others.map((m) => `<button class="reading-next${visitedChapters.has(m) ? " visited" : ""}" data-chapter="${esc(m)}"><span>${esc(titles.get(m))}${hints.has(m) ? `<small class="reading-hint">${esc(hints.get(m))}</small>` : ""}</span><b>→</b></button>`).join("")}</div>`;
+    groupPanel = `<div class="flow-investigations"><small>${esc(local(group.label))} · <span class="nw">${esc(T(`已读 ${done} / ${group.members.length}`, `${done} of ${group.members.length} read`))}${group.required ? esc(T(`，需要 ${group.required} 项`, ` · ${group.required} required`)) : ""}</span></small><p>${esc(local(group.note))}</p>${others.map((m) => `<button class="reading-next${visitedChapters.has(m) ? " visited" : ""}" data-chapter="${esc(m)}"><span>${esc(titles.get(m))}${hints.has(m) ? `<small class="reading-hint">${esc(hints.get(m))}</small>` : ""}</span><b>→</b></button>`).join("")}</div>`;
   }
   if ((chapter.dialogue?.states && dialogueState!=='end') || (chapter.dialogue?.steps && dialogueStep<chapter.dialogue.steps.length-1)) {
     const ended=chapter.dialogue?.exits?.includes(trail.at(-1)?.choice);
@@ -1117,7 +1121,7 @@ function renderChapter(preservePosition = false) {
     if (cards || dialogue || tooltips) return dialogue + tooltips + cards;
     if (nextReading.includes("data-dialogue-status")) return nextReading;
     // Nothing of its own to add: its continuation (or the ending) follows the choices.
-    return outgoingOf(c).length || chapter.ending ? "" : `<span class="reading-complete">${esc(T("这条分支到此结束", "This branch ends here"))}</span>`;
+    return outgoingOf(c).length || chapter.ending || groupGoesOn ? "" : `<span class="reading-complete">${esc(T("这条分支到此结束", "This branch ends here"))}</span>`;
   };
   // A condition is noted only when it can be named (describe returns "" otherwise). One that every option shares (or nearly
   // every one, in a list of 6+: at most one exception per four) is said once under the heading, not under each option: the
@@ -1272,6 +1276,7 @@ function renderChapter(preservePosition = false) {
     requestAnimationFrame(() => {
       $(".reader-panel").scrollTop = targetScroll;
     });
+  if (searchMarks && !prewarming) setTimeout(later(() => markSearch(story.id, r.id)), freshOpen ? 650 : 60);
   for (const button of document.querySelectorAll("[data-reading]"))
     button.onclick = () => {
       readingIndex = Number(button.dataset.reading);
@@ -1326,8 +1331,32 @@ function renderChapter(preservePosition = false) {
       { duration: 220, easing: "cubic-bezier(.2,.8,.2,1)" },
     );
 }
+// The phone's full-screen story map is a layer of its own with a history entry: Back (the system gesture) and Escape close
+// the map before the reader, and a chapter picked on it opens once the map has closed.
+let mapAfter = null;
+const mapOpen = () => $("#flow-surface").classList.contains("mobile-open");
+function closeMap(then) {
+  if (mapOpen()) flowSurface.show(false);
+  if (history.state?.map) {
+    mapAfter = then || (() => {});
+    history.back();
+  } else then?.();
+}
+window.addEventListener("popstate", () => {
+  if (mapAfter) {
+    const then = mapAfter;
+    mapAfter = null;
+    return then();
+  }
+  if (!history.state?.map && mapOpen()) flowSurface.show(false);
+});
 function toggleContents(force) {
-  if (dossier?.story.tree) { flowSurface.show(force); return; }
+  if (dossier?.story.tree) {
+    if (!(force ?? !mapOpen())) return closeMap();
+    flowSurface.show(true);
+    if (matchMedia("(max-width: 700px)").matches && !history.state?.map) history.pushState({ map: 1 }, "", location.href);
+    return;
+  }
   const open = force ?? $("#chapter-list").hidden;
   $("#chapter-list").hidden = !open;
   $("#chapter-toggle").setAttribute("aria-expanded", String(open));
@@ -1372,6 +1401,34 @@ function renderChrome() {
 function storyRowHtml(s, chip = "", extra = "") {
   const column = CATEGORIES.findIndex((c) => c[0] === s.category);
   return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${chip}${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
+}
+// A chapter opened from a search result marks the words the result showed, once, and brings the first visible one into
+// view (words in a reply that is still closed stay marked for when it opens).
+let searchMarks = null;
+function markSearch(storyId, docId) {
+  const want = searchMarks, root = document.querySelector(".chapter-document");
+  if (!want || !root || want.story !== storyId || want.chapter !== docId) return;
+  searchMarks = null;
+  const re = new RegExp(want.words.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"), "gi");
+  const skip = "mark, select, summary, .story-summary, .fx, .review-note, .reader-trail";
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: (n) => (n.parentElement.closest(skip) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) });
+  const nodes = [];
+  for (let n; (n = walker.nextNode()); ) if (n.nodeValue.match(re)) nodes.push(n);
+  for (const node of nodes) {
+    const text = node.nodeValue, frag = document.createDocumentFragment();
+    let at = 0;
+    for (const m of text.matchAll(re)) {
+      const mark = document.createElement("mark");
+      mark.className = "search-mark";
+      mark.textContent = m[0];
+      frag.append(text.slice(at, m.index), mark);
+      at = m.index + m[0].length;
+    }
+    frag.append(text.slice(at));
+    node.replaceWith(frag);
+  }
+  const first = [...root.querySelectorAll("mark.search-mark")].find((m) => m.getClientRects().length);
+  first?.scrollIntoView({ block: "center", behavior: reduced() ? "auto" : "smooth" });
 }
 // The pager only shows when there is more than one page of results.
 function pager(page, pages) {
@@ -1450,6 +1507,23 @@ $("#search-open").onclick = () => {
   $("#search-input").focus();
 };
 $("#search-close").onclick = () => $("#search-dialog").close();
+// Keys in the dialog: Enter opens the first result; Up / Down walk the results (Up from the first returns to the field).
+$("#search-dialog").addEventListener("keydown", (e) => {
+  if (e.isComposing || !["Enter", "ArrowDown", "ArrowUp"].includes(e.key)) return;
+  const rows = [...$("#search-results").querySelectorAll(".search-story")];
+  const at = rows.indexOf(document.activeElement), field = e.target === $("#search-input");
+  if (e.key === "Enter" && field) {
+    e.preventDefault();
+    clearTimeout(renderSearch.timer);
+    rows[0]?.click();
+  } else if (e.key === "ArrowDown" && (field || at >= 0) && rows[at + 1]) {
+    e.preventDefault();
+    rows[at + 1].focus();
+  } else if (e.key === "ArrowUp" && at >= 0) {
+    e.preventDefault();
+    (rows[at - 1] || $("#search-input")).focus();
+  }
+});
 $("#search-input").oninput = (e) => {
   searchText = e.target.value;
   searchPage = 0;
@@ -1475,6 +1549,9 @@ document.addEventListener("click", (e) => {
   const hit = e.target.closest("[data-hash]");
   if (hit) {
     // Full-text search result: an exact chapter (#story=…&chapter=…) or a museum exhibit (#museum=…).
+    const q = new URLSearchParams(hit.dataset.hash.slice(1));
+    const words = [...new Set([...hit.querySelectorAll(".hit-snip mark")].map((m) => m.textContent.trim()).filter(Boolean))];
+    searchMarks = q.has("story") && words.length ? { story: q.get("story"), chapter: q.get("chapter"), words } : null;
     $("#search-dialog").close();
     if (location.hash === hit.dataset.hash) parseHash();
     else location.hash = hit.dataset.hash;
@@ -1507,9 +1584,12 @@ document.addEventListener("click", (e) => {
   }
   const next = e.target.closest("[data-chapter]");
   if (next) {
-    goChapter(next.dataset.chapter, next.dataset.story, false, next.dataset.sets?.split(" "));
+    const go = () => goChapter(next.dataset.chapter, next.dataset.story, false, next.dataset.sets?.split(" "));
+    if (next.closest("#flow-surface") && mapOpen()) closeMap(go);
+    else go();
     return;
   }
+  if (e.target.closest("#flow-surface [data-flow-close]")) closeMap(); // the map has closed itself; its entry goes too
   const choice = e.target.closest("[data-choice]");
   if (choice) {
     if (choice.getAttribute("aria-disabled") === "true") return;
@@ -1574,7 +1654,8 @@ document.addEventListener("keydown", (e) => {
     if (!$("#playlist").hidden) {
       $("#playlist").hidden = true;
       $("#playlist-toggle").setAttribute("aria-expanded", "false");
-    } else if (!$("#reader").hidden && !$("#reader").classList.contains("prewarm") && !$("#search-dialog").open) closeReader();
+    } else if (mapOpen() && !$("#reader").hidden && !$("#search-dialog").open) closeMap();
+    else if (!$("#reader").hidden && !$("#reader").classList.contains("prewarm") && !$("#search-dialog").open) closeReader();
     else if (!$("#search-dialog").open) {
       // Before the archive has loaded, the story address is still waiting to be opened by start-up: drop it.
       if (!stories.length && /^#(story|record)=/.test(location.hash)) history.replaceState(null, "", "#");
@@ -1720,13 +1801,17 @@ let museumLeave = null; // what to do once the browser has stepped back over an 
 async function showMuseum(focusKey) {
   try {
     museum ||= await import("./museum.js");
+    // A museum entry come back to (Back / Forward, e.g. from a story an exhibit linked to) keeps the return it was opened
+    // with: the reader open now came from the museum, closing the museum must not lead back into it.
+    const state = history.state, stamp = state?.museumFrom;
     if (dossier) {
-      museumReturn = { story: dossier.story.id, chapter: chapter.id };
+      museumReturn = stamp !== undefined ? stamp || null : { story: dossier.story.id, chapter: chapter.id };
       // closeReader() resets the hash; keep the museum address (#museum=<key>) for sharing and back navigation.
       const hash = location.hash;
       closeReader();
-      history.replaceState(null, "", hash);
-    } else if (!document.body.classList.contains("museum-open")) museumReturn = null;
+      history.replaceState(state?.reader ? null : state, "", hash);
+    } else if (!document.body.classList.contains("museum-open")) museumReturn = stamp || null;
+    history.replaceState({ ...history.state, museumFrom: museumReturn || 0 }, "", location.hash);
     const metKeys = await metSpecimens();
     await museum.openMuseum({
       asset,

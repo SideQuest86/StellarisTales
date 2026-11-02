@@ -1,3 +1,18 @@
+v4.17.53 — 2026-11-02
+
+A specimen whose game name holds a save-dependent name reads naturally everywhere: "Memorial for This Defender", "这颗星球之美", "Hyper
+Mulch"; no raw "[EVENT_TARGET_0.GetName]" in the archive's specimen icons or the museum's other-language line. Closing the museum after
+coming Back to it from a story it linked to returns to where the museum was opened, not into that story.
+
+On a phone, the full-screen story map closes with Back or Escape before the story does, and a chapter picked on it opens with the
+map closed; its buttons are fingertip-sized. In search, Enter opens the first result and the arrow keys walk the results; a chapter
+opened from a result marks the words it matched and brings the first into view; "Contingency" finds "The Contingency" first.
+
+Chinese titles keep full-width punctuation ("信号踪迹：这颗星球"). An optional encounter no longer says its branch ends above the
+other encounter's card. A folded branch of the story map counts its chapters once ("+20", not "+302"), and four unused homeworld
+anomalies are named by their place ("Fen Habbanis (not used in the game)"). Named text versions are introduced like numbered ones
+("One of two tellings").
+
 v4.17.52 — 2026-11-02
 
 A continue card titled like the chapter you are reading (a chain whose chapters share one name, such as "Echoes from the Deep") shows
