@@ -103,7 +103,9 @@ function prose(s, keepMarks = false) {
   const text = cleanRefs(fill(String(s || "")), lang)
     .replace(/§./g, "")
     .replace(/£([^£]+)£/g, "")
-    .replace(/<[^>]*>/g, "");
+    .replace(/<[^>]*>/g, "")
+    // (brackets that held only an icon or a computed count say nothing: "头等舱旅客（£pop£ [GetPassengerWorkforce]）")
+    .replace(/\s*[（(]\s*[）)]/g, "");
   // Display typesetting (src/typeset.js): curly quotes, dashes, ellipses; never the words. Search snippets use proseWith().
   return typeset(keepMarks ? text : text.replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, ""));
 }
@@ -133,7 +135,9 @@ function otherTitle(title) {
 const mapProse = (s, chapterNames) => (chapterNames ? typeset(proseWith(s, chapterNames)) : prose(s));
 // A condition in words. Its labels are the game's own tooltips, so they carry icons and names the game fills in ("£opinion£",
 // "[enclave_country.GetName]"): they read through prose() like the text.
-const said = (when, opts) => { const s = describe(when, lang, profileNames, opts); return s ? prose(s) : s; };
+// (a flag with no name is left out: "If: earlier events" told a reader nothing, and an alternative made only of such flags leaves the
+// whole condition unsaid, as describe() does for anything it cannot name)
+const said = (when, opts) => { const s = describe(namedOnly(when, lang, profileNames), lang, profileNames, opts); return s ? prose(s) : s; };
 const storyName = (s) => { const entry = storyById.get(s?.id) || s; return titleWith(entry?.title, entry?.names); };
 // A short first line that starts with a hyphen ("-警告：具有挑战性的起源") is typeset as a line of its own (.lead-line), words and
 // hyphen kept; the text below it follows as a paragraph.
@@ -675,7 +679,7 @@ function delayText(delays) {
   }
   if (!low && !high) return "";
   const range = high > low ? `${Math.round(low)}–${Math.round(high)}` : `${Math.round(low)}`;
-  return T(`约 ${range} 天后`, `after about ${range} days`);
+  return T(`约 ${range} 天后`, `after about ${range} ${range === "1" ? "day" : "days"}`);
 }
 // What a continue card says besides its title: the base chance of a random outcome (a figure, not a sentence), a caption
 // of what is known about the way there (the label, the kind of link, a condition only when it has a real name, another
@@ -722,10 +726,13 @@ function edgeArt(e) {
 function edgeButton(e, facts = edgeFacts(e), groupDelay = "") {
   const art = edgeArt(e);
   const cross = Boolean(e.story && e.story !== dossier.story.id);
-  const caption = [...facts.notes, ...(facts.delay && facts.delay !== groupDelay ? [facts.delay] : [])].join(" · ");
+  // (a caption that ends in the card's own title says it once: "阶段检定失败时随机：食物中毒" under 食物中毒)
+  const title = e.titleOverride || titleFor(e.target, e.story);
+  const notes = facts.notes.map((n) => (n.length > title.length && n.toLowerCase().endsWith(title.toLowerCase()) && /[：:·—–-]\s*$/.test(n.slice(0, -title.length)) ? n.slice(0, -title.length).replace(/\s*[：:·—–-]\s*$/, "") : n)).filter(Boolean);
+  const caption = [...notes, ...(facts.delay && facts.delay !== groupDelay ? [facts.delay] : [])].join(" · ");
   const chance = facts.chance == null ? ""
     : `<i class="next-chance" title="${esc(T(`基础概率约 ${facts.chance}%`, `Base chance about ${facts.chance}%`) + (facts.modified ? T("，受条件调整", ", adjusted by conditions") : ""))}">${facts.chance}%</i>`;
-  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(e.titleOverride || titleFor(e.target, e.story))}</span>${e.hint ? `<small>${esc(e.hint)}</small>` : ""}${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
+  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(title)}</span>${e.hint ? `<small>${esc(e.hint)}</small>` : ""}${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
 }
 // The edges that remain possible, one card per document, edges of one random group listed together.
 function edgeLists(edges) {
@@ -927,14 +934,19 @@ function renderBody(r, ctx) {
   // justified across the column).
   const cn = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
   let unnamed = 0;
-  const html = (passage?.paragraphs || []).map((para) => ({ ...para, parts: para.parts.filter((part) => !fallback(part)) })).filter((para) => para.parts.length).map((para) => `<section><p>${para.parts.map((part) => {
+  // Pieces of one paragraph join as the game joins them; two Latin sentences that meet with no space ("…abandoned.Come now") get one.
+  const join = (parts) => parts.reduce((out, [raw, html], i) => {
+    const prev = i ? String(parts[i - 1][0] || "") : "";
+    return out + (i && /[^\s㐀-鿿　-〿＀-￯]$/.test(prev) && /^[A-Za-z"“‘'(]/.test(String(raw || "")) ? " " : "") + html;
+  }, "");
+  const html = (passage?.paragraphs || []).map((para) => ({ ...para, parts: para.parts.filter((part) => !fallback(part)) })).filter((para) => para.parts.length).map((para) => `<section><p>${join(para.parts.map((part) => {
     const text = paragraph(local(part.text));
-    if (part.status !== null || !part.when) return text;
+    if (part.status !== null || !part.when) return [local(part.text), text];
     const named = said(part.when);
     const label = named ? T("若：", "If: ") + named : (unnamed++, T(`情形${cn[unnamed - 1] || unnamed}`, `Case ${unnamed}`));
     const block = String(local(part.text) || "").length > 40 ? " variant-block" : "";
-    return `<span class="variant-piece${block}"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(label)}</button>${text}</span>`;
-  }).join("")}</p></section>`).join("");
+    return [local(part.text), `<span class="variant-piece${block}"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(label)}</button>${text}</span>`];
+  }))}</p></section>`).join("");
   return { html, tabs, passage };
 }
 function renderChapter(preservePosition = false) {

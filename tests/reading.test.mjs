@@ -121,6 +121,9 @@ test("parting words: the opening, or the sentence where two texts part", () => {
   const long = "The empire has decided after a very long and careful deliberation among all of its many councils to";
   const [c] = partingWords([`${long} send a fleet.`, `${long} stay at home.`], 44);
   assert.match(c, /^…[a-z]+ .*send a fleet\.$/);
+  // An English cut ends at a word's end.
+  const [w] = partingWords(["Thankfully, the starship graveyard on the surface is quiet tonight.", "Something else entirely."], 44);
+  assert.equal(w, "Thankfully, the starship graveyard on the…");
   // The same throughout: the opening.
   assert.deepEqual(partingWords(["Same text.", "Same text."], 44), ["Same text.", "Same text."]);
 });

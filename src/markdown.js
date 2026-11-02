@@ -66,7 +66,11 @@ export function splitMixed(text) {
   }
   // English first ("… grouped with their base windows. / 宝藏猎人起源时改用这五个窗口。").
   const reversed = /^(.*[.!?)])\s+\/\s+([^/]*[㐀-鿿][^/]*[。！？])$/.exec(String(text));
-  if (reversed && detectLang(reversed[1]) === "en" && detectLang(reversed[2]) === "zh") return [reversed[2], reversed[1]];
+  if (reversed && detectLang(reversed[1]) === "en" && detectLang(reversed[2]) === "zh") {
+    // (a bilingual label in front, "已解决 Resolved: …", gives each half its own word)
+    const label = /^([㐀-鿿]+)\s+([A-Z][A-Za-z ]*?)\s*[：:]\s*/.exec(reversed[1]);
+    return label ? [`${label[1]}：${reversed[2]}`, `${label[2]}: ${reversed[1].slice(label[0].length)}`] : [reversed[2], reversed[1]];
+  }
   return splitOne(text);
 }
 function splitOne(text) {
@@ -161,10 +165,14 @@ function metaPair(value) {
     if (each.every((p) => p && p[0] && p[1])) return withId(each.map((p) => p[0]).join(" / "), each.map((p) => p[1]).join(" / "));
   }
   // A Chinese note after the name stays on the Chinese page ("霸主 Overlord（需“大可汗”出现）").
+  // (an English name quoted in the note goes to the English page, in brackets: "（首个事件「返祖现象 Feral Behavior」）" -> Chinese
+  // "（首个事件「返祖现象」）", English "(Feral Behavior)")
   const note = /^(.+?)\s*（([^（）]*[㐀-鿿][^（）]*)）$/.exec(v);
   if (note && !/[a-z]{3,}/.test(words(note[2]))) {
     const inner = metaPair(note[1]);
-    if (inner && inner[0]) return withId(`${inner[0]}（${note[2]}）`, inner[1]);
+    const quoted = [...note[2].matchAll(/["“「]([^"”」]*)["”」]/g)].map((m) => (m[1].match(/[A-Za-z][A-Za-z' -]*[A-Za-z]/g) || []).join(" ")).filter(Boolean);
+    const zhNote = note[2].replace(/「([^」]*[㐀-鿿][^」]*?)\s+[A-Za-z][A-Za-z' -]*」/g, "「$1」");
+    if (inner && inner[0]) return withId(`${inner[0]}（${zhNote}）`, inner[1] && quoted.length ? `${inner[1]} (${quoted.join(", ")})` : inner[1]);
   }
   // A Chinese name with brackets or an initialism, then its English ("联邦（军事型）事件 federation (military) event").
   const last = /^(.*[㐀-鿿》）」])\s*([A-Za-z][^㐀-鿿]*)$/.exec(v);

@@ -37,6 +37,13 @@ if (!process.env.SKIP_SEARCH_INDEX)
   execFileSync(process.execPath, ["scripts/build-search-index.mjs"], { stdio: "inherit" });
 await cp("src", "dist/src", { recursive: true });
 await cp("public", "dist", { recursive: true });
+// A story with no gameplay effects gets an empty file, so opening it requests nothing that fails.
+const { stories } = JSON.parse(await readFile("dist/stories/index.json", "utf8"));
+await mkdir("dist/effects", { recursive: true });
+for (const { id } of stories) {
+  const file = `dist/effects/${id}.json`;
+  if (!(await lstat(file).catch(() => null))) await writeFile(file, "{}\n");
+}
 const html = (await readFile("index.html", "utf8")).replaceAll(
   "./public/",
   "./",

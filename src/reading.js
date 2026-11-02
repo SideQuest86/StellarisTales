@@ -185,7 +185,12 @@ export function passageTabs(names, other) {
  *  at most `room` characters of the text's own words. Texts that are the same throughout keep their opening. */
 export function partingWords(texts, room) {
   const shared = (a, b) => { let k = 0; while (k < a.length && a[k] === b[k]) k++; return k; };
-  const cut = (s, start) => `${start ? "…" : ""}${s.slice(start, start + room).trim()}${start + room < s.length ? "…" : ""}`;
+  // (an English cut ends at a word's end: "…the graveyard on the…", not "…on the su…")
+  const cut = (s, start) => {
+    let end = Math.min(s.length, start + room);
+    if (end < s.length && /\w/.test(s[end - 1]) && /\w/.test(s[end])) { const space = s.lastIndexOf(" ", end); if (space > start + room / 2) end = space; }
+    return `${start ? "…" : ""}${s.slice(start, end).trim()}${end < s.length ? "…" : ""}`;
+  };
   return texts.map((s, i) => {
     const from = Math.max(0, ...texts.map((o, j) => (j === i || o === s ? 0 : shared(s, o))));
     if (from < room * 0.75) return cut(s, 0);

@@ -538,3 +538,15 @@ with brackets then its English, two names joined by " / ", and a Chinese note af
 quoted the option 该死！ where the game has 可恶！. A test caught an unbalanced bracket in the new rule ("备注（仅此分支 only this branch）").
 Not defects: a hover tooltip open in a screenshot over a choice's sub-lines (it follows the pointer); map cards cut at the card's edge (a
 window). The v4.17.41 live smoke passed 15/15, so the earlier 503 was transient. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5.
+
+Inspection round 13 (24 random stories, seed 13112027, 57 chapters): no new reader-facing defect (the 404 for the 195 stories without an
+effects file, the card's flight, a curated map label, a card mid-flight). The 404 was reported in every round, so the build now writes an
+empty effects file for those stories: 13 stories opened, no failed request, no console error.
+Inspection round 14 (seed 14112027, 58 chapters; desk-zh and phone-en found nothing). Confirmed 4: "after about 1 days"; two pieces of one
+paragraph joined without a space ("abandoned.Come now", shroud.12060); a caption ending in its card's title ("阶段检定失败时随机：食物中毒"
+under 食物中毒; case-insensitive for English); "条件：此前经历" on fedev.605's cards: said() now leaves out flags with no name (namedOnly), so
+a condition made only of them goes unsaid, as describe() already did for any unnamed alternative (8 stories, both languages: 0 left).
+Review of v4.17.41-42 (two lenses, each verified): 4 confirmed, 2 rejected. partingWords cut English mid-word ("…on the su…"); situation
+labels kept "()" where prose() removed an icon and a count (prose() now drops empty brackets); metaPair's note rule kept a quoted English
+name on the Chinese side and dropped it from the English (5 colony chains: now "(Feral Behavior)" on the English page); the English-first
+split left "已解决" in the English half. Wrong-language blocks in guides 64 -> 36. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4.

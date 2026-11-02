@@ -68,6 +68,7 @@ test("language detection", () => {
   assert.equal(splitMixed("每国一次；需要 Cosmic Storms DLC。"), null);
   // English first, Chinese second.
   assert.deepEqual(splitMixed("Title-only variants for Treasure Hunters empires are grouped now. / 宝藏猎人起源时改用这五个窗口。"), ["宝藏猎人起源时改用这五个窗口。", "Title-only variants for Treasure Hunters empires are grouped now."]);
+  assert.deepEqual(splitMixed("已解决 Resolved: the title-only variants are grouped with their windows. / 宝藏猎人起源时改用这五个窗口。"), ["已解决：宝藏猎人起源时改用这五个窗口。", "Resolved: the title-only variants are grouped with their windows."]);
   assert.deepEqual(splitMixed("见上。See above."), ["见上。", "See above."]);
   assert.deepEqual(splitMixed("4045“深处的回声”：船员疲惫。选项取决于特质：   4045 Echoes from the Deep: the crew is exhausted."), ["4045“深处的回声”：船员疲惫。选项取决于特质：", "4045 Echoes from the Deep: the crew is exhausted."]);
   assert.deepEqual(splitMixed("需要 Federations 或 Ancient Relics。 Needs Federations or Ancient Relics."), ["需要 Federations 或 Ancient Relics。", "Needs Federations or Ancient Relics."]);
@@ -146,7 +147,8 @@ test("an English half that opens with an event number splits after the guides' s
   assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 联邦（军事型）事件 federation (military) event"), ["分类：文明纪事 · 联邦（军事型）事件", "Category: Society (C7) · federation (military) event"]);
   assert.deepEqual(metaLine("分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans / 霸主 Overlord"), ["分类：巨兽与城邦 · DLC：利维坦 / 霸主", "DLC: Leviathans / Overlord"]);
   assert.deepEqual(metaLine("分类 Category：巨兽与城邦 · DLC：霸主 Overlord（需“大可汗”出现）"), ["分类：巨兽与城邦 · DLC：霸主（需“大可汗”出现）", "DLC: Overlord"]);
-  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 殖民地事件 colony event（开发者注释 \"Rogue moon\"）"), ["分类：文明纪事 · 殖民地事件（开发者注释 \"Rogue moon\"）", "Category: Society (C7) · colony event"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 殖民地事件 colony event（开发者注释 \"Rogue moon\"）"), ["分类：文明纪事 · 殖民地事件（开发者注释 \"Rogue moon\"）", "Category: Society (C7) · colony event (Rogue moon)"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain（首个事件「返祖现象 Feral Behavior」）"), ["分类：文明纪事 · 殖民地事件链（首个事件「返祖现象」）", "Category: Society (C7) · colony event chain (Feral Behavior)"]);
   // A note with English words in it is not a plain shape: the whole line stays.
   assert.equal(metaLine("分类 Category：深空异闻 Exploration · 备注（仅此分支 only this branch）"), null);
   assert.equal(metaLine("分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）或 Biogenesis（has_biogenesis_dlc）"), null);
