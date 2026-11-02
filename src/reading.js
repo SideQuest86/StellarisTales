@@ -166,6 +166,21 @@ export function applyFacts(facts, profile, assumptions) {
   }
 }
 
+/** A condition without the flags that have no name: "earlier events" tells a reader nothing about which text is which. */
+export function namedOnly(dnf, lang, names = {}) {
+  return dnf && dnf.map((branch) => branch.filter((a) => a.type !== "flag" || a.label?.[lang] || names[a.key]?.[lang]));
+}
+
+/** Words for the row above alternative texts. names: each text's readable condition ("" when it has none). A name shared by
+ *  several tells nothing, so it counts as none. Every text with a name keeps it, a single nameless one among them is `other`;
+ *  any more and the row has no words to offer (null: the caller numbers them). */
+export function passageTabs(names, other) {
+  const own = names.map((n) => (n && names.indexOf(n) === names.lastIndexOf(n) ? n : ""));
+  const nameless = own.filter((n) => !n).length;
+  if (nameless > 1 || nameless === own.length) return null;
+  return own.map((n) => n || other);
+}
+
 /** Readable label of a condition (for tabs / notes), using the game's own names where available.
  *  Only conditions that have a name are described: an atom without one is left out of its branch, and when any alternative
  *  has no named atom at all the condition cannot be stated truthfully, so the result is "" (callers show nothing, or the

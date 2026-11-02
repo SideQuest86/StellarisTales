@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { evaluate, resolveBody, resolveChoices, pathFlags, applyFacts, impliedFacts, atomKey, describe } from "../src/reading.js";
+import { evaluate, resolveBody, resolveChoices, pathFlags, applyFacts, impliedFacts, atomKey, describe, namedOnly, passageTabs } from "../src/reading.js";
 
 const gestalt = (value) => ({ type: "identity", key: "ethic_gestalt_consciousness", value });
 const flag = (name, value = true) => ({ type: "flag", name, scope: "country", value });
@@ -93,6 +93,19 @@ test("several texts without a body are alternatives, read one at a time", () => 
   assert.equal(composed.length, 1);
   assert.deepEqual(composed[0].paragraphs.map((p) => p.parts[0].text.en), ["The cries of the Shroud.", "A boon.", "A curse."]);
   assert.equal(resolveBody({ texts: [t("Factions:"), t("- Our first faction"), t("- Our second faction")] }, {}).length, 1);
+});
+
+test("the row above alternative texts: its own names, one nameless among them, otherwise no words", () => {
+  assert.deepEqual(passageTabs(["not Hive Mind", "Hive Mind"], "Other"), ["not Hive Mind", "Hive Mind"]);
+  assert.deepEqual(passageTabs(["", "Machine Intelligence", "Hive Mind"], "Other"), ["Other", "Machine Intelligence", "Hive Mind"]);
+  assert.equal(passageTabs(["not Gestalt Consciousness", "", ""], "Other"), null); // "Version 2 / Version 3" beside a name
+  assert.equal(passageTabs(["", ""], "Other"), null);
+  assert.equal(passageTabs(["A", "A", "B"], "Other"), null); // a shared name tells nothing
+  // Unnamed flags ("earlier events") leave the label; a branch of nothing else then has no name at all.
+  const hive = { type: "identity", key: "h", label: { en: "Hive Mind" }, value: true }, plain = { type: "flag", name: "f", value: false };
+  assert.equal(describe(namedOnly([[plain, hive]], "en"), "en"), "Hive Mind");
+  assert.equal(describe(namedOnly([[plain]], "en"), "en"), "");
+  assert.equal(namedOnly(null, "en"), null);
 });
 
 test("describe names only what has a name and never invents a placeholder", () => {

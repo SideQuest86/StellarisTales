@@ -17,7 +17,7 @@ import { linkGuide } from "./guide-links.js";
 import { typeset, leadLine, markIds, noteBody } from "./typeset.js";
 import {
   evaluate, resolveBody, resolveChoices, resolveEdges, pathFlags, storyFlags,
-  impliedFacts, applyFacts, describe,
+  impliedFacts, applyFacts, describe, namedOnly, passageTabs,
 } from "./reading.js";
 const $ = (q) => document.querySelector(q),
   esc = (s) =>
@@ -882,17 +882,19 @@ function renderBody(r, ctx) {
   const passage = passages[passageIndex];
   let tabs = "";
   if (passages.length > 1) {
-    // A tab is named by its condition when that has a name and is its own; otherwise it is simply numbered.
-    const names = passages.map((p) => said(p.when, { max: 2 }));
-    const named = (i) => names[i] && names.indexOf(names[i]) === names.lastIndexOf(names[i]);
-    // Many unnamed versions (a storm of eight kinds, a faction's six) read as one "Version" and their numbers.
-    const compact = passages.length > 4 && !passages.some((p, i) => named(i));
-    // Many versions that mix names and numbers (marauder.20: fourteen numbered and "尚武文化 · 此前经历"), or very many: one picker.
-    if ((passages.length > 4 && !compact) || passages.length > 9) tabs = `<label class="reading-picker passage-picker"><span>${esc(T("版本", "Version"))}</span><select id="passage-select" aria-label="${esc(T("文本版本", "Text version"))}">${passages.map((p, i) => `<option value="${i}"${i === passageIndex ? " selected" : ""}>${esc(named(i) ? names[i] : T(`版本 ${i + 1}`, `Version ${i + 1}`))}</option>`).join("")}</select></label>`;
-    else tabs = `<div class="reading-tabs${compact ? " compact" : ""}" role="group" aria-label="${esc(T("文本版本", "Text version"))}">${compact ? `<span class="reading-tabs-label" aria-hidden="true">${esc(T("版本", "Version"))}</span>` : ""}${passages.map((p, i) => {
-      const label = named(i) ? names[i] : compact ? String(i + 1) : T(`版本 ${i + 1}`, `Version ${i + 1}`);
-      return `<button data-passage="${i}" aria-pressed="${i === passageIndex}"${compact ? ` aria-label="${esc(T(`版本 ${i + 1}`, `Version ${i + 1}`))}"` : ""}>${esc(label)}</button>`;
-    }).join("")}</div>`;
+    // The game shows one of these texts. A tab says what each depends on where that has a short name of its own ("Hive Mind",
+    // "Not Hive Mind"; a whole sentence is left to the tooltip). Otherwise they are numbered under a line that says what the
+    // numbers are, since bare numbers read as pages to turn. Very many, or many long names: one picker.
+    const n = passages.length;
+    const conditions = passages.map((p) => said(namedOnly(p.when, lang, profileNames), { max: 2 }));
+    const labels = passageTabs(conditions.map((c) => (c.length <= (lang === "zh" ? 16 : 32) ? c : "")), T("其他", "Other"))
+      ?.map((c) => (lang === "en" && c.startsWith("not ") ? "N" + c.slice(1) : c));
+    const count = lang === "zh" ? ["", "", "两", "三", "四", "五", "六", "七", "八", "九"][n] || n : ["", "", "two", "three", "four", "five", "six", "seven", "eight", "nine"][n] || n;
+    const telling = T(`${count}种说法之一`, `One of ${count} tellings`);
+    const opening = (p) => { const s = prose(local(p.paragraphs[0]?.parts[0]?.text)).replace(/\s+/g, " ").trim(); const room = lang === "zh" ? 24 : 44; return s.length > room ? `${s.slice(0, room).trimEnd()}…` : s; };
+    if (n > 9 || (labels && n > 4)) tabs = `<label class="reading-picker passage-picker"><span>${esc(telling)}</span><select id="passage-select" aria-label="${esc(telling)}">${passages.map((p, i) => `<option value="${i}"${i === passageIndex ? " selected" : ""}>${esc(labels ? labels[i] : `${i + 1}. ${opening(p)}`)}</option>`).join("")}</select></label>`;
+    else tabs = `<div class="reading-tabs${labels ? "" : " compact"}" role="group" aria-label="${esc(telling)}">${labels ? "" : `<span class="reading-tabs-label" aria-hidden="true">${esc(telling)}</span>`}${passages.map((p, i) =>
+      `<button data-passage="${i}" aria-pressed="${i === passageIndex}"${labels ? "" : ` aria-label="${esc(T(`第${i + 1}种说法`, `Telling ${i + 1}`))}"`}${conditions[i] && labels?.[i]?.toLowerCase() !== conditions[i].toLowerCase() ? ` title="${esc(conditions[i])}"` : ""}>${esc(labels ? labels[i] : String(i + 1))}</button>`).join("")}</div>`;
   }
   // A piece that is only "ERROR" is the game's scripted-text default for a case it never reaches: not shown (five chapters
   // read "If: other conditions ERROR").
@@ -1192,20 +1194,25 @@ function renderChapter(preservePosition = false) {
         .querySelector(`[data-reading="${readingIndex}"]`)
         ?.focus({ preventScroll: true });
     };
+  // Picking a text remembers what its condition implies, which may hide the others; a condition that implies nothing (several
+  // alternatives, an unnamed flag) hides none. Either way the text the reader picked is the one that opens.
+  const pickPassage = (i) => {
+    const picked = resolveBody(chapter, readingContext())[i];
+    if (picked?.when) adopt(picked.when);
+    const after = resolveBody(chapter, readingContext());
+    const words = (p) => JSON.stringify([p.when, p.paragraphs.map((x) => x.parts.map((y) => y.text))]);
+    const at = picked ? after.findIndex((p) => words(p) === words(picked)) : -1;
+    passageIndex = Math.max(0, at >= 0 ? at : after.findIndex((p) => JSON.stringify(p.when) === JSON.stringify(picked?.when)));
+    renderChapter(true);
+  };
   for (const button of document.querySelectorAll("[data-passage]"))
     button.onclick = () => {
-      const passage = resolveBody(chapter, readingContext())[Number(button.dataset.passage)];
-      passageIndex = Number(button.dataset.passage);
-      if (passage?.when) { adopt(passage.when); passageIndex = 0; }
-      renderChapter(true);
-      document.querySelector("[data-passage]")?.focus({ preventScroll: true });
+      pickPassage(Number(button.dataset.passage));
+      (document.querySelector('[data-passage][aria-pressed="true"]') || document.querySelector("[data-passage]"))?.focus({ preventScroll: true });
     };
   if ($("#passage-select"))
     $("#passage-select").onchange = (e) => {
-      const i = Number(e.target.value), passage = resolveBody(chapter, readingContext())[i];
-      passageIndex = i;
-      if (passage?.when) { adopt(passage.when); passageIndex = 0; }
-      renderChapter(true);
+      pickPassage(Number(e.target.value));
       $("#passage-select")?.focus({ preventScroll: true });
     };
   if ($("#reading-select"))

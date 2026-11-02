@@ -1066,16 +1066,30 @@ input {
   color: var(--gold);
   text-decoration-color: var(--gold-2);
 }
-/* Many unnamed versions: "Version" once, then their numbers (each a 32 px target). */
+/* Texts without names of their own: a book-like line ("One of three tellings"), then their numbers (each a 32 px target). */
 .reading-tabs.compact {
   align-items: center;
   gap: 0 4px;
 }
+.reading-tabs-label,
+.passage-picker > span {
+  font: italic 14px/1.4 var(--serif);
+  letter-spacing: 0;
+  color: var(--dim);
+}
 .reading-tabs-label {
   margin-right: 8px;
-  font: 13px/1.4 var(--sans);
-  letter-spacing: 0.02em;
-  color: var(--dim);
+}
+/* Its options are the texts' first words: the closed picker stays within the column. */
+.chapter-document > .reading-picker.passage-picker {
+  display: flex;
+  max-width: 100%;
+  margin-right: 0;
+}
+.chapter-document > .passage-picker select {
+  flex: 0 1 auto;
+  min-width: 0;
+  text-overflow: ellipsis;
 }
 .reading-tabs.compact button {
   min-width: 32px;

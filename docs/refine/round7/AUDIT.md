@@ -468,3 +468,15 @@ Inspection round 9 (24 random stories, seed 99912027): one actionable so far, th
 "真菌通讯真菌通讯"; dropEcho now drops the label written out as a whole word or phrase. In the real page, 991 distinct teasers walked:
 0 with a placeholder left (11 en / 4 zh ended on a name the 260-character cut went through; now trimmed). Not changed: the transient
 blank map card, the 404 for stories without effects files. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 1.
+
+Inspection round 9, last lens (phone-en): operation.1021's tabs read "not Gestalt Consciousness / Version 2 / Version 3". A census
+of the 1,214 chapters with alternative texts showed mixed rows in 144 and "Version N" throughout; flags with no name ("earlier
+events") also made tab labels. Tabs now come from reading.js passageTabs()/namedOnly(): own short names, one nameless as "Other",
+otherwise numerals under "One of N tellings" (bare numbers read as pages); the name, when there is one, moves to the tooltip.
+Clicking through the row found a worse defect: the handler forced index 0 after adopt(), so a text whose condition implies no fact
+(several branches, an unnamed flag) could never be opened (estimated by script: 820 texts in 361 of the 1,190 chapters that have
+tabs; operation.1021 tab 2 did nothing). pickPassage() now finds the picked text again after adopt(). Checked in the real page on
+desk and phone, en and zh: 8 chapters, every tab tried opens its own text and shows pressed. The picker overflowed the phone column
+(select 393-408 px in 358; the reader panel scrolled sideways and the gutter went): flex at a higher specificity, 358 px now.
+Not changed: picking a named tab still sets the empire profile archive-wide, by design. Round 9 confirmed 2 in all.
+Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2.
