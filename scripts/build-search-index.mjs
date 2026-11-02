@@ -11,6 +11,7 @@ import { existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { FIELD, FORMAT, SHARDS, clean, indexTerms, shardOf, writeVarint, effectLabels } from "../src/search.js";
+import { fillNames, cleanRefs, plainNames, specimenName, titleCaseNames } from "../src/name-fill.js";
 
 const UNI_DF = 0.05;
 const readJson =async (p) => JSON.parse(await readFile(p, "utf8"));
@@ -19,6 +20,14 @@ const both = (v) => (v && typeof v === "object" ? [v.zh, v.en] : [v]).filter((x)
 export async function buildSearchIndex({ publicDir }) {
   const index = await readJson(join(publicDir, "stories/index.json"));
   const stories = [], first = [], ids = [], titleZh = [], titleEn = [];
+  // Display titles name what the game fills in as the reader does (src/name-fill.js): "First Contact with the Curators",
+  // not "First Contact with the" (the placeholder stripped). The index terms keep the plain text.
+  const names = existsSync(join(publicDir, "stories/names.json")) ? await readJson(join(publicDir, "stories/names.json")) : {};
+  const shown = (title, lang, chapterNames) => {
+    const t = title?.[lang] || title?.[lang === "zh" ? "en" : "zh"] || "";
+    const filled = cleanRefs(fillNames(t.replace(/§[A-Za-z!]|£\w+£/g, ""), { lang, chapterNames, names }), lang);
+    return clean(plainNames(lang === "en" ? titleCaseNames(filled) : filled)).trim().replace(/\s+/g, " ");
+  };
   const docs = []; // Map term -> mask, per doc
   const addDoc = (fields) => {
     const m = new Map();
@@ -36,8 +45,8 @@ export async function buildSearchIndex({ publicDir }) {
     first.push(docs.length);
     data.chapters.forEach((c) => {
       ids.push(c.id);
-      titleZh.push(clean(c.title?.zh || c.title?.en || "").trim().replace(/\s+/g, " "));
-      titleEn.push(clean(c.title?.en || c.title?.zh || "").trim().replace(/\s+/g, " "));
+      titleZh.push(shown(c.title, "zh", c.names));
+      titleEn.push(shown(c.title, "en", c.names));
       const text = [...(c.texts || []), ...(c.sections || [])];
       for (const ch of c.choices || []) for (const r of ch.responses || []) text.push(r);
       if (c.ending) text.push(c.ending.label, c.ending.note);
@@ -58,8 +67,8 @@ export async function buildSearchIndex({ publicDir }) {
   if (existsSync(spFile)) {
     for (const s of (await readJson(spFile)).specimens || []) {
       spKeys.push(s.key);
-      titleZh.push(clean(s.name?.zh || s.name?.en || "").trim());
-      titleEn.push(clean(s.name?.en || s.name?.zh || "").trim());
+      titleZh.push(specimenName(s.name?.zh || s.name?.en || "", "zh", s.placeholders));
+      titleEn.push(specimenName(s.name?.en || s.name?.zh || "", "en", s.placeholders));
       addDoc([[FIELD.name, both(s.name)], [FIELD.text, [...both(s.short), ...both(s.details)]]]);
     }
   }

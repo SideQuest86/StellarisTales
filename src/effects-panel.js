@@ -20,7 +20,8 @@ const KIND = {
 };
 const GROUPS = new Set(["if", "else", "random", "random_list", "random_option", "repeat", "scripted"]);
 
-const pick = (label, lang) => (label && (label[lang] || label.en || label.zh)) || "";
+// (a name the label left out leaves its spaces: "Trade from  Jobs", "岗位产出的 贸易 +10%")
+const pick = (label, lang) => ((label && (label[lang] || label.en || label.zh)) || "").replace(/([㐀-鿿])[ \t ]+(?=[㐀-鿿])/g, "$1").replace(/[ \t ]{2,}/g, " ");
 const isList = (v) => Array.isArray(v) && v.length > 0;
 
 // Adjacent repeats read as a stutter: a game tooltip followed by the scripted effect it describes (the same words), two "if"
@@ -30,6 +31,23 @@ const words = (l) => (l ? `${l.zh ?? ""}\u0001${l.en ?? ""}` : "");
 function tidy(list) {
   const out = [];
   for (let e of list || []) {
+    // A roll's options that do the same thing are one option, their chances added ("About 10% · An espionage asset is lost" ten
+    // times); a roll whose every option does the same thing is not a roll: its effect simply happens.
+    if (e && e.kind === "random_list" && isList(e.effects)) {
+      const same = (x) => JSON.stringify(x.effects, (k, v) => (k === "source" ? undefined : v));
+      const merged = [];
+      for (const o of e.effects) {
+        const prev = merged[merged.length - 1];
+        if (prev && o?.kind === "random_option" && prev.kind === "random_option" && prev.chance?.percent != null && o.chance?.percent != null && same(prev) === same(o))
+          merged[merged.length - 1] = { ...prev, chance: { ...prev.chance, percent: +(prev.chance.percent + o.chance.percent).toFixed(1) } };
+        else merged.push(o);
+      }
+      if (merged.length === 1 && merged[0]?.kind === "random_option" && isList(merged[0].effects) && e.effects.length > 1) {
+        out.push(...tidy(merged[0].effects));
+        continue;
+      }
+      if (merged.length < e.effects.length) e = { ...e, effects: merged };
+    }
     // An "if" directly inside an "if" on the same condition adds nothing but a second identical line.
     while (e && e.kind === "if" && isList(e.effects) && e.effects.some((c) => c && c.kind === "if" && words(c.label) === words(e.label)))
       e = { ...e, effects: e.effects.flatMap((c) => (c && c.kind === "if" && words(c.label) === words(e.label) ? c.effects || [] : [c])) };
@@ -147,7 +165,7 @@ function sharedTarget(effects) {
   return COMMON_TARGET.has(first) && leaves.every((e) => e.target && pick(e.target, "zh") === first) ? first : "";
 }
 function hasChance(list) {
-  for (const e of list || []) {
+  for (const e of tidy(list)) {
     if (!e) continue;
     if (e.chance || e.kind === "random" || e.kind === "random_list" || e.kind === "random_option") return true;
     if (hasChance(e.effects)) return true;

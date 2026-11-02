@@ -10,9 +10,9 @@ When a leader dies (on_leader_death) hidden paragon.549 checks (Paragon DLC, or 
 
 ## 剧情脉络 Story outline
 
-按帝国与领袖类型选一个窗口（if/else）：非集群帝国——paragon.550“一位伟大领袖之死”；蜂巢——paragon.571“…永存”（5年“蜂巢/荒野永存”修正）；领袖物种为机器/机械的集群帝国——paragon.570“死亡驱役”（5年虚拟顾问修正）；其余情形无窗口。paragon.550 从若干葬礼中让玩家选择，并给出相应的修正或花费能量。
+按帝国与领袖类型选一个窗口：非集群帝国——paragon.550“一位伟大领袖之死”；蜂巢——paragon.571（5年“蜂巢/荒野永存”修正）；领袖物种为机器/机械的集群帝国——paragon.570“死亡驱役”（5年虚拟顾问修正）；其余情形无窗口。paragon.550 从若干葬礼中让玩家选择，并给出相应的修正或花费能量。
 
-One window by empire and leader type (if / else): non-gestalt - paragon.550 "Death of a Great Leader"; hive - paragon.571 "The ... Endures" (5-year hive/wilderness endures modifier); gestalt with a robot/machine leader species - paragon.570 "Servitude in Death" (5-year virtual advisors modifier); otherwise no window. paragon.550 lets the player pick one of several funerals, each with its own modifier and energy cost.
+One window by empire and leader type: non-gestalt - paragon.550 "Death of a Great Leader"; hive - paragon.571 (5-year hive/wilderness endures modifier); gestalt with a robot/machine leader species - paragon.570 "Servitude in Death" (5-year virtual advisors modifier); otherwise no window. paragon.550 lets the player pick one of several funerals, each with its own modifier and energy cost.
 
 ## 分支与结局 Branches and outcomes
 

@@ -669,3 +669,14 @@ guide lines ending in an empty " / " half; the xondar episode named by its fille
 defects: "TargetList.SwapToTailAndRemoveFromGalaxy" (a machine empire's greeting, the game's own text); a literal "\n" on the
 tablet home (none found); Back leaving the reader (one entry per reader, by design). Deferred: the 820 px tablet header (category
 strip scrolls, museum entry at its end), map label wrapping, quieter continue-card captions, a next-story card under a branch end.
+
+Surface round 4 (2026-11-02; six inspectors: choice conditions, guides, effects, reading on desktop in English and on a phone in
+Chinese, home / search / museum). Fixed: search display titles filled with the chapter's reviewed names and title-cased like the
+reader (titleCaseNames moved verbatim from app.js into name-fill.js; 768 English and 762 Chinese titles, two that were empty);
+identical random options merged with their chances added, a roll of one effect unwrapped (1,012 of 10,631 panels change, rows
+79,988 -> 76,258; the "base values" note only when a chance remains); effect labels lose a left-out name's spaces (also no-break
+spaces); multi-part alternatives bracketed in conditions (118 conditions); an ordinal on options that read alike; the espionage
+map label; two guides (a heading whose English half held Chinese, "选择：/ Choices:", "(if / else)" split at its slash, a placeholder
+name after its link). Not defects: the "8%" card badge (the card's picture loads after the text, by design); "Review notes" (a
+closed panel). Deferred: factoring shared parts out of alternatives ("(A · B · C) or (A · B · D) …"), quieter card captions, a
+next-story card under a branch end, the phone map's first view.

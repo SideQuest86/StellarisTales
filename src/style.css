@@ -1235,6 +1235,12 @@ input {
   min-width: 0;
   overflow-wrap: anywhere;
 }
+/* The ordinal of options that read alike ("The leader personally (2)"): quieter than the words. */
+.choice-nth {
+  font-size: 0.82em;
+  color: var(--dim);
+  font-variant-numeric: tabular-nums;
+}
 .choice-symbol {
   flex: none;
   width: 18px;

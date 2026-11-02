@@ -267,6 +267,7 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
   }
   // "A · B or A" is just "A": an alternative that contains another one adds nothing; equal ones collapse.
   const kept = parts.filter((p, i) => !parts.some((q, j) => j !== i && q.every((v) => p.includes(v)) && (q.length < p.length || j < i)));
-  const branches = kept.map((p) => p.join(" · "));
-  return branches.slice(0, max).join(word(" 或 ", " or ")) + (branches.length > max ? word(" 等", " …") : "") || fallback;
+  // (alternatives of several parts are bracketed, so "or" reads at the right level: "极端和平主义 或（非极端军国主义 · 非极端排外主义）")
+  const branches = kept.map((p) => (kept.length > 1 && p.length > 1 ? word(`（${p.join(" · ")}）`, `(${p.join(" · ")})`) : p.join(" · ")));
+  return branches.slice(0, max).join(word(" 或 ", " or ")).replace(/ 或 （/g, " 或（").replace(/） 或/g, "）或") + (branches.length > max ? word(" 等", " …") : "") || fallback;
 }

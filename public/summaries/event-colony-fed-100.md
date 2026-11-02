@@ -1,4 +1,4 @@
-# 蓝荷计划 / Project Blue Lotus（不可能的凹地 Impossible Corrie）
+# 蓝荷计划（不可能的凹地）/ Project Blue Lotus (Impossible Corrie)
 
 - 分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain
 
@@ -11,7 +11,7 @@ At the second (weight 3) or third (weight 4) anniversary the pool can pick *Impo
 ## 剧情脉络 Story outline
 
 1. **不可能的凹地（100）**：采矿设施周围出现碗状凹地（获得矿藏）→ 45 天 → **蓝荷计划（105）**：发现能嬗变光子的蓝色晶体（格式塔帝国是一台运行独立程序的离群无人机）。
-2. 选择：/ Choices:
+2. 选择 / Choices：
    - 非格式塔：继续研究（花费 420 能量，55 天后）或立即停止实验（40 天后 **过分拥护者 106**，结局）。/ Non-gestalt: continue (420 energy) or stop (→ 106).
    - 格式塔：让它回归系统（40 天后）或摧毁无人机（部分岗位人口死亡，50 天后 **离经叛道的炼金术士 107**，结局）。/ Gestalt: absorb it or purge it (→ 107).
 3. **炼金术运转中（110）**：开启项目 **蓝荷设施**（3500 物理学，1080 天期限）。成功 → **广谱炼金术（115）**（设施升级）；超时失败 → **蓝荷崩溃（111）**。

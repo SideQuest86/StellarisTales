@@ -219,3 +219,16 @@ export function cleanRefs(s, lang) {
 
 /** Plain text of a filled string (markers removed). */
 export const plainNames = (s) => String(s).replace(/[^]*/g, "").replace(/[]/g, "");
+
+/** An English title in title case keeps it where the game fills in a name ("This System Stripped of Galactic Market Headquarters");
+ *  a sentence-case title is left as it is. s: a filled string, its markers in place (app.js titles, the search index). */
+export function titleCaseNames(s) {
+  const small = /^(a|an|the|of|on|in|to|and|or|for|at|by|from|with|into)$/;
+  const own = (s.replace(/[^]*/g, " ").match(/[A-Za-z][\w'’-]*/g) || []).filter((w) => !small.test(w));
+  if (!own.length || !own.every((w) => /^[A-Z]/.test(w))) return s;
+  // (a small word stays small unless the name opens the title or follows its colon: "End of the Other Empire")
+  return s.replace(/()([^]*)/g, (_, sep, t, at) => {
+    const opens = !s.slice(0, at).replace(/[^]*$/, "").replace(/[^]*/g, "x").trim() || /[:：]\s*[^]*$/.test(s.slice(0, at));
+    return sep + t.replace(/[A-Za-z][\w'’-]*/g, (w, i) => (small.test(w) && !(i === 0 && opens) ? w : w[0].toUpperCase() + w.slice(1)));
+  });
+}
