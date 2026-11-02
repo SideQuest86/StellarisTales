@@ -707,3 +707,8 @@ keys on an open choice (they toggle it, by design), situation rows labelled "Spe
 Map framing (flagged in surface rounds 1, 3, 4, 5, 6 and 7): centerOn fits the current chapter's siblings and children to the card's
 width (not below 60%) and centres that span; the phone's full-screen map places a top-level chapter at 14% of its height. The
 phone map keeps its reading scale (fitting a wide tree there made the labels unreadable) and its existing edge fade.
+
+Surface round 8 (2026-11-02; six inspectors on new samples). Fixed: absorption on the worded atoms (checks that read alike, e.g. one
+scoped to the uprising's empire and one to ours), and a factored remainder that always holds leaves the shared part alone (6
+conditions; 4 tautologies hidden). Deferred: spacing of chapter names in a guide's both-languages view, Chinese DLC names, inline
+variant badges after a paragraph's last sentence (shroud.4500), guide links that share one title.

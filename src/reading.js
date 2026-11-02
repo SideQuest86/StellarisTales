@@ -222,7 +222,7 @@ export function partingWords(texts, room) {
  *  Only conditions that have a name are described: an atom without one is left out of its branch, and when any alternative
  *  has no named atom at all the condition cannot be stated truthfully, so the result is "" (callers show nothing, or the
  *  `fallback` text where a control needs a label). Repeated alternatives collapse; more than `max` end with "…". */
-export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {}) {
+export function describe(dnf, lang, names = {}, { fallback = "", max = 3, always } = {}) {
   if (!dnf) return "";
   // "X, or not X and Y" is "X or Y" ("非宇宙天气模型 或 宇宙天气模型 · 非概率流" -> "非宇宙天气模型 或 非概率流"); "X or not X" holds
   // always and says nothing.
@@ -231,7 +231,7 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
   const key = (a) => (a.type === "identity" || a.type === "flag" ? atomKey(a) : `other:${String(a.scope || "").replace(/\//g, ".")}|${a.key}=${a.arg || ""}`);
   // (or one check named alike, stored two ways: "能力增强 或（择优血脉 · 非能力增强）")
   const opposite = (a, b) => (key(a) === key(b) || (!!a.label?.en && a.label.en === b.label?.en && a.label?.zh === b.label?.zh)) && a.value !== b.value;
-  if (single.some((a) => single.some((b) => opposite(a, b)))) return fallback;
+  if (single.some((a) => single.some((b) => opposite(a, b)))) return always ?? fallback;
   if (single.length) dnf = dnf.map((b) => (b.length === 1 ? b : b.filter((a) => !single.some((s) => opposite(s, a)))));
   // What every alternative shares is said once, then what tells them apart: "(not Storm Chasers · not Treasure Hunters) or
   // (not Storm Chasers · not Letters of Marque)" reads "not Storm Chasers · (not Treasure Hunters or not Letters of Marque)";
@@ -247,7 +247,8 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
       if (head && (rest.some((b) => !b.length) || ones.some((a) => ones.some((b) => opposite(a, b))))) return head;
       rest = rest.map((b) => (b.length === 1 ? b : b.filter((a) => !ones.some((s) => opposite(s, a)))));
       if (head && rest.some((b) => !b.length)) return head;
-      const tail = head && describe(rest, lang, names, { max });
+      const tail = head && describe(rest, lang, names, { max, always: "\u0002" });
+      if (tail === "\u0002") return head;
       if (tail) return `${head} · ${rest.length > 1 ? (lang === "zh" ? `（${tail}）` : `(${tail})`) : tail}`;
     }
   }
@@ -286,6 +287,15 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
     atoms.sort((x, y) => Number(/^(?:非|not )/.test(x)) - Number(/^(?:非|not )/.test(y)));
     if (!atoms.length) return fallback;
     parts.push(atoms);
+  }
+  // The same absorption on the words: two checks that read alike (the uprising's empire and ours, "铁心灭绝者") are one.
+  const flip = (s) => (s.startsWith("非") ? s.slice(1) : s.startsWith("not ") ? s.slice(4) : (lang === "zh" ? "非" : "not ") + s);
+  const alone = parts.filter((p) => p.length === 1).map((p) => p[0]);
+  if (alone.some((s) => alone.includes(flip(s)))) return always ?? fallback;
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i].length < 2) continue;
+    parts[i] = parts[i].filter((s) => !alone.includes(flip(s)));
+    if (!parts[i].length) return always ?? fallback;
   }
   // "A · B or A" is just "A": an alternative that contains another one adds nothing; equal ones collapse.
   const kept = parts.filter((p, i) => !parts.some((q, j) => j !== i && q.every((v) => p.includes(v)) && (q.length < p.length || j < i)));
