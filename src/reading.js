@@ -229,7 +229,8 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
   const single = dnf.filter((b) => b.length === 1).map((b) => b[0]);
   // (a scope is written "owner.species" in one place and "owner/species" in its negation)
   const key = (a) => (a.type === "identity" || a.type === "flag" ? atomKey(a) : `other:${String(a.scope || "").replace(/\//g, ".")}|${a.key}=${a.arg || ""}`);
-  const opposite = (a, b) => key(a) === key(b) && a.value !== b.value;
+  // (or one check named alike, stored two ways: "能力增强 或（择优血脉 · 非能力增强）")
+  const opposite = (a, b) => (key(a) === key(b) || (!!a.label?.en && a.label.en === b.label?.en && a.label?.zh === b.label?.zh)) && a.value !== b.value;
   if (single.some((a) => single.some((b) => opposite(a, b)))) return fallback;
   if (single.length) dnf = dnf.map((b) => (b.length === 1 ? b : b.filter((a) => !single.some((s) => opposite(s, a)))));
   // What every alternative shares is said once, then what tells them apart: "(not Storm Chasers · not Treasure Hunters) or
@@ -262,7 +263,8 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
     if (!name && a.type !== "flag") return null;
     // Inline icons are display markup (the game's £trigger_no£ cross); the words are what is read.
     const bare = String(name || "").replace(/£[^£\s]+£\s*/g, "").trim();
-    const text = bare || word("此前经历", "earlier events");
+    // (the profile control says 狂热 for a fanatic ethic; a condition says it the same way, not 极端)
+    const text = (lang === "zh" ? bare.replace(/^极端(军国|和平|排外|亲外|唯心|唯物|威权|平等)主义/, "狂热$1主义") : bare) || word("此前经历", "earlier events");
     // A label that is a whole sentence is the game's own tooltip, which already says what is needed ("We can only run one such
     // secret enterprise at a time."): "not" in front of it read as nonsense.
     // Only a sentence that states a constraint drops the "not"; a statement keeps it, reading as one clause in English ("not we

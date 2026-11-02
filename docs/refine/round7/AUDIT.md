@@ -697,3 +697,9 @@ N"); a game sentence once per effects panel (not inside "Each branch in full"); 
 card captions keep-all; 131 + 1 guide category lines "银河轶事 C8 stories" -> "Galactic miscellany"; marauder-4's names written
 before their ids. Not changed: DLC names in English on the Chinese page (no reviewed Chinese names); per-choice "Only when" lines
 (design); the phone map's first view; search's "Name" chip (deferred).
+
+Surface round 7 (2026-11-02; six inspectors on new samples). Fixed: 极端 -> 狂热 in Chinese ethic labels of conditions (matching the
+profile control; 214 conditions); checks named alike in both languages count as one for absorption (2 tautologies now hidden);
+a leading ellipsis in effect labels; " -> " as "→" in guides (295 places); the hive-asteroids heading. Not changed: map framing on
+the desktop card and the phone (deferred again), search phrase matching, search's "Name" chip, identical card thumbnails, number
+keys on an open choice (they toggle it, by design), situation rows labelled "Special project".

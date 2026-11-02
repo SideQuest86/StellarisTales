@@ -1,4 +1,4 @@
-# 晶态小行星 / Crystalline Asteroids（蜂巢小行星 Hive Asteroids）
+# 晶态小行星（蜂巢小行星）/ Crystalline Asteroids (Hive Asteroids)
 
 - 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
 

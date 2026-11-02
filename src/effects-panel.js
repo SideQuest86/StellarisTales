@@ -23,6 +23,7 @@ const GROUPS = new Set(["if", "else", "random", "random_list", "random_option", 
 // (a name the label left out leaves its spaces: "Trade from  Jobs", "岗位产出的 贸易 +10%")
 const pick = (label, lang) => ((label && (label[lang] || label.en || label.zh)) || "").replace(/([㐀-鿿])[ \t ]+(?=[㐀-鿿])/g, "$1").replace(/[ \t ]{2,}/g, " ")
   // (an engine ceiling of 100000 bounds nothing a reader meets: "+18 months of income (350 to 100000)" -> "(at least 350)")
+  .replace(/^(?:…|\.\.\.)+\s*/, "")
   .replace(/\((\d[\d,]*) to 100000\)/g, "(at least $1)").replace(/（(\d[\d,]*)\s*至\s*100000）/g, "（至少 $1）");
 const isList = (v) => Array.isArray(v) && v.length > 0;
 
