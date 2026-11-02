@@ -561,3 +561,10 @@ the first's index for effects). The map node read "after 1 days" (flow-surface d
 between the number and the unit: singular forms and a no-break space. Not defects: the map card of event-enclave-27 (one node, shown once the
 card rests), the map's faint bottom row and the card edge, a 12 px scrollWidth excess in the reading column with no visible clipping.
 Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3.
+
+Inspection round 16 (24 random stories, seed 16112027, 56 chapters; desk-en, desk-zh and phone-zh found nothing). Confirmed 2, both on
+phone-en. The group panel of a parallel investigation (cybrex "Following the traces") listed ten cards titled "Signs of Precursor
+Activity": it used the bare title where the continue cards use the map's curated labels; it now takes the label for members that share a
+title and, for those without one, the parting words (sameTitleHints, shared with nothing else). Seven of the ten have the same game text,
+so the words alone could not tell them apart: the labels do (10 distinct, desk and phone, both languages). zh "间谍首脑这位领袖": 间谍首脑
+joins the titles that carry a filled-in name. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2.

@@ -67,6 +67,10 @@ test("a/an agrees with the phrase", () => {
   assert.equal(f("We met a [R.GetName]."), "We met an other empire.");
   assert.equal(f("We met an [Q.GetName]."), "We met a fleet.");
 });
+test("zh: a spymaster's title carries the name", () => {
+  const n = { "S.GetName": { zh: "这位领袖", en: "the leader" } };
+  assert.equal(plainNames(fillNames("间谍首脑[S.GetName]开始传来报告。", { lang: "zh", chapterNames: n })), "间谍首脑开始传来报告。");
+});
 test("zh: 其 is already possessive", () => {
   const n = { "E.GetHerHis": { zh: "其", en: "their" } };
   assert.equal(plainNames(fillNames("并未完成[E.GetHerHis]的任务。", { lang: "zh", chapterNames: n })), "并未完成其任务。");

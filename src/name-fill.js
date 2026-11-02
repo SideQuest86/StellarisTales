@@ -12,7 +12,7 @@ const TITLE_WORDS = [
   "Operation", "Arkship", "Asteroid", "planet", "Emissary", "Councilor", "science ship", "Survey Unit", "Scientist",
   "Head Researcher", "Lead Scientist", "科学家", "科学官",
   "行动", "方舟", "议员", "使节",
-  "科学专员", "专员", "博士", "将军", "舰长", "总督", "元帅", "教授", "特使", "大使", "指挥官", "主任",
+  "间谍首脑", "科学专员", "专员", "博士", "将军", "舰长", "总督", "元帅", "教授", "特使", "大使", "指挥官", "主任",
 ].join("|");
 const TITLE_RE = new RegExp(`(${TITLE_WORDS})\\s?\\uE000([^\\uE002]*)\\uE002[^\\uE001]*\\uE001`, "gi");
 const SPAN = "\\uE000[^\\uE002]*\\uE002[^\\uE001]*\\uE001";

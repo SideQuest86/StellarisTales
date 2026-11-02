@@ -799,6 +799,21 @@ function listButtons(lists) {
 function edgeButtons(edges) {
   return listButtons(edgeLists(edges));
 }
+// Chapters listed together that share a title: each one's own words where their texts part (id -> words).
+function sameTitleHints(ids) {
+  const byTitle = new Map(), hints = new Map();
+  for (const id of ids) {
+    const doc = docMap.get(id);
+    if (local(doc?.texts?.[0])) { const t = titleFor(id); (byTitle.get(t) || byTitle.set(t, []).get(t)).push(id); }
+  }
+  for (const group of byTitle.values()) {
+    if (group.length < 2) continue;
+    const words = group.map((id) => { const doc = docMap.get(id); return proseWith(local(doc.texts[0]), doc.names).replace(/\s+/g, " ").trim(); });
+    if (words.every((w) => w === words[0])) continue;
+    partingWords(words, lang === "zh" ? 24 : 44).forEach((hint, i) => hints.set(group[i], typeset(hint)));
+  }
+  return hints;
+}
 const visitedChapters = new Set();
 const flowSurface = new FlowSurface($("#flow-surface"));
 let readingIndex = 0,
@@ -1050,7 +1065,14 @@ function renderChapter(preservePosition = false) {
   let groupPanel = "";
   if (group) {
     const done = group.members.filter((m) => visitedChapters.has(m)).length;
-    groupPanel = `<div class="flow-investigations"><small>${esc(local(group.label))} · ${esc(T(`已读 ${done} / ${group.members.length}`, `${done} of ${group.members.length} read`))}${group.required ? esc(T(`，需要 ${group.required} 项`, ` · ${group.required} required`)) : ""}</small><p>${esc(local(group.note))}</p>${group.members.filter((m) => m !== r.id).map((m) => `<button class="reading-next${visitedChapters.has(m) ? " visited" : ""}" data-chapter="${esc(m)}"><span>${esc(titleFor(m))}</span><b>→</b></button>`).join("")}</div>`;
+    // Members the game gives one title ("Signs of Precursor Activity" ten times) take the story map's label, written to tell them
+    // apart ("Signs: Kuur Homeworld"), as the continue cards do; those without one carry their own words where they part.
+    const others = group.members.filter((m) => m !== r.id), labels = dossier.story.nodeLabels || {};
+    const titles = new Map(others.map((m) => [m, titleFor(m)]));
+    const labelled = new Set(others.filter((m) => labels[m] && others.some((o) => o !== m && titles.get(o) === titles.get(m))));
+    for (const m of labelled) titles.set(m, titleWith(labels[m], docMap.get(m)?.names));
+    const hints = sameTitleHints(others.filter((m) => !labelled.has(m)));
+    groupPanel = `<div class="flow-investigations"><small>${esc(local(group.label))} · ${esc(T(`已读 ${done} / ${group.members.length}`, `${done} of ${group.members.length} read`))}${group.required ? esc(T(`，需要 ${group.required} 项`, ` · ${group.required} required`)) : ""}</small><p>${esc(local(group.note))}</p>${others.map((m) => `<button class="reading-next${visitedChapters.has(m) ? " visited" : ""}" data-chapter="${esc(m)}"><span>${esc(titles.get(m))}${hints.has(m) ? `<small class="reading-hint">${esc(hints.get(m))}</small>` : ""}</span><b>→</b></button>`).join("")}</div>`;
   }
   if ((chapter.dialogue?.states && dialogueState!=='end') || (chapter.dialogue?.steps && dialogueStep<chapter.dialogue.steps.length-1)) {
     const ended=chapter.dialogue?.exits?.includes(trail.at(-1)?.choice);

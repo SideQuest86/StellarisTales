@@ -1431,6 +1431,13 @@ input {
 .reading-next span {
   font: 18px/1.6 var(--serif);
 }
+/* The words that tell same-titled chapters apart, under the title in the book's italic. */
+.reading-next .reading-hint {
+  display: block;
+  margin-top: 2px;
+  font: italic 14px/1.5 var(--serif);
+  letter-spacing: 0;
+}
 .reading-next b {
   align-self: center;
   font-weight: 400;
