@@ -453,3 +453,18 @@ at a time."; 56 negated sentence labels in choice conditions). A sentence phrase
 只能, 必须 …) now has no "not"; another negated sentence or a pronoun-led label keeps "not" with a lowered first letter (dropping it
 would invert the meaning). Tests added. Not changed: map cards as windows (clipped edges, sparse cards), chapter-level continuation
 cards, tech-name conditions, a title with a game-filled name and no subtitle. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1.
+
+Review of v4.17.35-36 (two lenses, each finding verified): 6 confirmed. The English name fallback took its noun from the scope
+whatever the getter (a star's or ruler's name read "the planet", "that empire"); an unknown scope after a noun read "the star
+name"; £trigger_no£ labels ("Cannot be the Galactic Emperor") got a second "not"; title-case labels lost a capital ("not your
+Ladder To The Sky"). Rendering all 957 affected strings then showed the larger defect: showExcerpt() filled the archive teaser
+with the open chapter's names (usually none), so "this name", "the they" and "our the leader" appeared in teasers although 1,144 of
+their 1,199 placeholders had reviewed wording in the story. The compiler now writes the teaser's names into excerpts.json (the
+story files are unchanged); fallback hits in teasers 858 -> 0. The fallback now goes by getter and position (see RELEASE).
+Regressions caught by the old/new render diff before release: "for you, the.", "Our name cloning", "the have become", "per 100
+Telepaths" (a scripted fragment capitalised), "the productivity of people". A full old/new diff over 45,964 strings changed 84,
+40 of them with reviewed wording (doubled spaces, "our the envoy", "not for sale,."; all improvements).
+Inspection round 9 (24 random stories, seed 99912027): one actionable so far, the guide's unquoted "2735 真菌通讯" after its link read
+"真菌通讯真菌通讯"; dropEcho now drops the label written out as a whole word or phrase. In the real page, 991 distinct teasers walked:
+0 with a placeholder left (11 en / 4 zh ended on a name the 260-character cut went through; now trimmed). Not changed: the transient
+blank map card, the 404 for stories without effects files. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 1.

@@ -37,6 +37,11 @@ test("a quoted name that the link already shows is not repeated", () => {
   assert.equal(dropEcho("Reaching Into the Rift", ' "Other" fires'), ' "Other" fires');
   assert.equal(dropEcho("奥伏戎的愤怒", "（奥伏戎的愤怒）。"), "。");
   assert.equal(dropEcho("C.A.R.E交互界面", "（获得奖励）；"), "（获得奖励）；");
+  // the label written out unquoted right after the id is an echo too, but only as a whole word or phrase
+  assert.equal(dropEcho("真菌通讯", " 真菌通讯 → "), " → ");
+  assert.equal(dropEcho("The Horizon Signal", " The Horizon Signal, once per game"), ", once per game");
+  assert.equal(dropEcho("真菌", " 真菌通讯 → "), " 真菌通讯 → ");
+  assert.equal(dropEcho("Signal", " Signals fade"), " Signals fade");
 });
 
 test("a bold 'id name' names its document: the written name is the link", () => {

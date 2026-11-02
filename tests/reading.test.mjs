@@ -115,6 +115,12 @@ test("describe names only what has a name and never invents a placeholder", () =
   assert.equal(describe([[named("t", "同一时间只能进行一项此类秘密事业。", "We can only run one such secret enterprise at a time.", false)]], "en"), "We can only run one such secret enterprise at a time.");
   // A negated statement keeps its "not" (dropping it would invert the meaning), as one clause.
   assert.equal(describe([[named("r", "我们已经雇佣过一位领袖。", "We have already recruited a leader from them.", false)]], "en"), "not we have already recruited a leader from them.");
+  // A label the game marks as a failed requirement, or that opens with a negation, is the requirement already: no second "not".
+  assert.equal(describe([[named("e", "£trigger_no£ 不能成为银河皇帝", "£trigger_no£ Cannot be the Galactic Emperor", false)]], "en"), "Cannot be the Galactic Emperor");
+  assert.equal(describe([[named("e", "£trigger_no£ 不能成为银河皇帝", "£trigger_no£ Cannot be the Galactic Emperor", false)]], "zh"), "不能成为银河皇帝");
+  // A title keeps its capitals ("Your Ladder To The Sky" is an origin's name, not a sentence).
+  assert.equal(describe([[named("o", "通天之梯", "Your Ladder To The Sky", false)]], "en"), "not Your Ladder To The Sky");
+  assert.equal(describe([[named("u", "不朽者", "Undying", false)]], "zh"), "非不朽者");
   assert.equal(describe([[flag("f1", false)], [flag("f2", true)]], "en"), "earlier events");
   assert.equal(describe([[flag("f1", true), flag("f2", false)]], "en"), "earlier events");
   assert.equal(describe([[flag("f1", false), named("a", "甲", "A", false)]], "zh"), "非此前经历 · 非甲");

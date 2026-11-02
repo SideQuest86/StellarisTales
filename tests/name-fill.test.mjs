@@ -72,3 +72,34 @@ test("they-agreement, possessive and zh repeated noun", () => {
   assert.equal(fill("[C.GetName]'s guard"), "Our guard");
   assert.equal(fill("[E.GetName]帝国很强大。", "zh"), "我们的帝国很强大。");
 });
+test("names the archive cannot know: worded by what the getter names and where it stands", () => {
+  const f = (s, lang = "en") => plainNames(fillNames(s, { lang, names: {} }));
+  // a plain name names its scope; other getters name what they say (a ruler, a star), never the scope's noun
+  assert.equal(f("We landed on [pre_ftl_planet.GetName]."), "We landed on the planet.");
+  assert.equal(f("You will serve the [Root.GetRulerTitle], whether you wish to or not."), "You will serve the ruler, whether you wish to or not.");
+  assert.equal(f("in the [atomic_clock_planet.GetStarName] System, near [atomic_clock_planet.GetName]."), "in the System, near the planet.");
+  assert.equal(f("greetings from [contact_empire.GetRulerTitle] [contact_empire.GetRulerName], the commander"), "greetings from the ruler, the commander");
+  // left out after or before the noun that already says it, and as an attribute
+  assert.equal(f("the existence of the star [rock_sun.GetName]."), "the existence of the star.");
+  assert.equal(f("the neighboring [event_target:wandering_planet_origin.GetName] system"), "the neighboring system");
+  assert.equal(f("carrying [Root.GetSpeciesName] refugees"), "carrying refugees");
+  assert.equal(f("a great boon to the [Root.GetAdj] economy."), "a great boon to the economy.");
+  assert.equal(f("[Root.GetSpeciesName] Refugees Arrive"), "Refugees Arrive");
+  assert.equal(f("Recently, the [X.GetSpeciesAdj] have become captivated"), "Recently, the … have become captivated");
+  // a name only called out to goes with its comma; the sentence after it starts with a capital
+  assert.equal(f("We are delighted to meet you, [contact_speaker.GetSpeciesNamePlural]."), "We are delighted to meet you.");
+  assert.equal(f("[Root.GetSpeciesName], we have decided to grace your empire."), "We have decided to grace your empire.");
+  assert.equal(f("[Root.GetSpeciesName]! We greet you."), "We greet you.");
+  assert.equal(f("We have selected an opponent for you, the [unfortunate_country.GetName]."), "We have selected an opponent for you, that empire.");
+  // plurals: subject, object, after a determiner or quantifier
+  assert.equal(f("[X.GetSpeciesNamePlural] are coming."), "They are coming.");
+  assert.equal(f("To increase the productivity of [roboticist.GetNamePlural], managers"), "To increase the productivity of them, managers");
+  assert.equal(f("the warring factions of the [raider_khanate.GetSpeciesNamePlural] have united"), "the warring factions of the people have united");
+  assert.equal(f("These rare [Root.GetSpeciesNamePlural] could"), "These rare people could");
+  assert.equal(f("a shock to many [This.Owner.GetSpeciesNamePlural], it has emerged"), "a shock to many people, it has emerged");
+  // one determiner, never "our the leader"; "this name" keeps its own
+  assert.equal(f("only our [X.GetTitle] [X.Leader.GetName] could"), "only our leader could");
+  assert.equal(f("Our [fromfrom.GetClass] [fromfrom.GetName] has been captured"), "Our this name has been captured");
+  // Chinese keeps its neutral wording
+  assert.equal(f("我们见到了[contact_empire.GetRulerName]。", "zh"), "我们见到了这个名字。");
+});

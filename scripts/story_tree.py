@@ -1050,7 +1050,8 @@ class Compiler:
                 title = bilingual(source['titles'][0])
             title = {lang: v or ('未命名故事' if lang == 'zh' else 'An untitled story') for lang, v in title.items()}
             image = next((chapters[d]['image'] for d in ordered_docs if chapters[d]['image']), None)
-            excerpt = next((t for d in ordered_docs for t in chapters[d]['texts'] if t['zh'] or t['en']), {'zh': '', 'en': ''})
+            excerpt_doc, excerpt = next(((d, t) for d in ordered_docs for t in chapters[d]['texts'] if t['zh'] or t['en']),
+                                        (start, {'zh': '', 'en': ''}))
             entry = {'id': sid, 'title': title, 'category': category, 'kind': kind, 'image': image, 'start': start,
                      'chapters': len(chapters), 'visible': True, 'excerpt': {k: v[:260] for k, v in excerpt.items()}}
             if fragment.get('review'):
@@ -1098,6 +1099,16 @@ class Compiler:
                     title_names[key] = {k: v for k, v in own.items() if k != 'note'}
             if title_names:
                 entry['names'] = title_names
+            # Likewise the teaser (excerpts.json): it is the text of the story's first document, so it reads with that
+            # document's reviewed wording ("our scientists reached the planet"), not the open chapter's or the bare fallback.
+            excerpt_names = {}
+            for key in sorted(set(PLACEHOLDER.findall(' '.join(entry['excerpt'].values())))):
+                own = next((chapters[d]['names'][key] for d in [excerpt_doc, start, *ordered_docs]
+                            if d in chapters and key in (chapters[d].get('names') or {})), None)
+                if own and not own.get('default'):
+                    excerpt_names[key] = {k: v for k, v in own.items() if k != 'note'}
+            if excerpt_names:  # (a copy: the story file keeps its excerpt as it was)
+                entry['excerpt'] = {**entry['excerpt'], 'names': excerpt_names}
             details[sid] = {'story': story, 'chapters': [chapters[d] for d in ordered_docs]}
             stories.append(entry)
         for sid, d in details.items():

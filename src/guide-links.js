@@ -51,7 +51,10 @@ export function trimGlueSpaces(parts) {
 export function dropEcho(label, text) {
   // (a bracketed name too: "12155（奥伏戎的愤怒）")
   const q = /^\s?["“「『（(]([^"”」』）)]{1,80})["”」』）)]/.exec(text);
-  return q && sameName(q[1], label) ? text.slice(q[0].length) : text;
+  if (q && sameName(q[1], label)) return text.slice(q[0].length);
+  // (and the label itself written out unquoted, as a whole word or phrase: "2735 真菌通讯 → 2745 真菌之辩护")
+  const s = /^\s?/.exec(text)[0].length;
+  return label && label.length > 1 && text.startsWith(label, s) && !/^[\p{L}\p{N}]/u.test(text.slice(s + label.length)) ? text.slice(s + label.length) : text;
 }
 
 /** In a bold "id name" ("**2006 宗教狂热**", "**1011 碰撞 / 1012 损失舰船**") the guide names the document itself: the written

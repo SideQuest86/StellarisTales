@@ -59,16 +59,46 @@ export function fillNames(s, opts) {
     else if (names[tail] && !names[tail].default && !names[tail].variants.some((v) => local(v.text))) return (art || "") + OMIT + (after || "");
     else if (names[tail]) { text = scripted(names[tail]).replace(/[^]*/g, "").replace(/[]/g, ""); n = note(null, true); }
     else {
-      // In English, a scope whose last word is a plain noun names the thing ("[mercenary_enclave_country.GetName]" -> "that
-      // empire", "[pre_ftl_planet.GetName]" -> "the planet"); other scopes keep "this name". Right after its own noun ("the
-      // planet [phaseshift_planet.GetName]") the name is left out: "the planet" already says it.
-      const NOUNS = { planet: "the planet", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist" };
-      const noun = (key.split("|")[0].split(".").at(-2) || "").split("_").at(-1).toLowerCase();
-      if (lang === "en" && /Name/.test(tail) && NOUNS[noun] && new RegExp(`\\b${noun}\\s+$`, "i").test(whole.slice(0, offset) + (art || ""))) return (art || "") + OMIT + (after || "");
+      // English wording of a name the archive cannot know, by what the getter names and where it stands:
+      //  - a plain name names its scope when the scope's last word is a plain noun ("[pre_ftl_planet.GetName]" -> "the
+      //    planet", "[mercenary_enclave_country.GetName]" -> "that empire"); a ruler's name or title names the ruler, a star's
+      //    name the star, a species' name the species; anything else reads "this name";
+      //  - right after a noun that already says it ("the star [rock_sun.GetName]"), or right before one as its attribute
+      //    ("the neighboring [X.GetName] system", "carrying [Root.GetSpeciesName] refugees"), the name is left out; so is an
+      //    adjective form before its noun ("the [Root.GetAdj] economy") and a name only called out to ("We are delighted to
+      //    meet you, [X.GetSpeciesNamePlural].", "[Root.GetSpeciesName], we have decided …");
+      //  - a plural reads "they" as a subject, "them" after a preposition, "people" after a determiner or quantifier.
+      const NOUNS = { planet: "the planet", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist", alliance: "the alliance", government: "the government" };
+      const scope = (key.split("|")[0].split(".").at(-2) || "").split("_").at(-1).toLowerCase();
+      const plain = /^Get(?:Full)?Name$/i.test(tail);
+      const noun = plain ? scope : /^GetRuler(?:Name|Title)$|^GetRegnalName$/i.test(tail) ? "ruler" : /^GetLeaderName$/i.test(tail) ? "leader"
+        : /^GetStarName$/i.test(tail) ? "star" : /^GetSpeciesName$/i.test(tail) ? "species" : /^GetAllianceName$/i.test(tail) ? "alliance"
+        : /^GetGovernmentName$/i.test(tail) ? "government" : "";
+      const before = whole.slice(0, offset), prev = before + (art || ""), rest = (after || "") + whole.slice(offset + match.length);
       // (after a possessive or determiner, the bare noun: "Our [contact_empire.GetName] friends" -> "Our empire friends")
-      const det = /\b(our|their|your|its|his|her|my|this|that|these|those)\s+$/i.test(whole.slice(0, offset));
+      const det = /\b(our|their|your|its|his|her|my|this|that|these|those|another|every|each|any|no)\s+$/i.test(before);
+      const PREP = "of|to|for|with|from|by|about|among|against|on|in|at|into|onto|upon|between|towards?|like|than|over|under|near|beyond";
+      const detAdj = new RegExp(`(?:\\b(?:the|our|their|your|its|his|her|my|this|that|these|those)|['’]s)\\s+(?:(?!(?:${PREP})\\b)[a-z][\\w-]*\\s+){1,2}$`, "i").test(before);
+      // The word after a name that reads as an attribute ("[X] refugees"), unless it is a verb or a function word.
+      const STOP = /^\s+(?:is|are|was|were|has|have|had|will|would|can|could|may|might|must|shall|should|do|does|did|and|or|of|to|in|on|at|for|with|from|by|as|that|which|who|whom|whose|than|but|so|seem|seems|appear|appears|remain|remains|themselves|itself)\b/i;
+      if (lang === "en") {
+        const agree = (a) => a.replace(/^(a)n?(?=\s)/i, (x) => (/^\s*[aeiou]/i.test(rest) ? x[0] + "n" : x[0]));
+        const drop = (lead = art || "") => agree(lead) + OMIT + (after || "");
+        const start = !before.trim() || /[.!?…]["”’']?\s*$/.test(before);
+        if (/Name|Adj/.test(tail) && !art && ((/,\s*$/.test(before) && /^\s*[.!?]/.test(rest)) || (start && /^(?:!\s|,\s+(?:we|you|I|let|know|hear|listen|behold)\b)/.test(rest)))) return drop();
+        // (also a title's capitalised noun: "[Root.GetSpeciesName] Refugees Arrive" -> "Refugees Arrive")
+        if ((/Adj/.test(tail) || noun === "species") && /^\s+(?!I\b)[A-Za-z]/.test(rest) && !STOP.test(rest)) return drop();
+        if (/Name$/.test(tail)) {
+          if ((NOUNS[noun] && new RegExp(`\\b${noun}\\s+$`, "i").test(prev)) || (plain && /\b(?:star|world|moon|asteroid|station|colony|system|planet)\s+$/i.test(prev))) return drop();
+          if ((plain || noun === "star") && /^\s+(?:system|planet|star|fleet|ship|world|colony|station|ring world|black hole|nebula|asteroid (?:field|belt))\b/i.test(rest)) {
+            return art || det || detAdj ? drop() : (start ? "The " : "the ") + OMIT;
+          }
+        }
+      }
       const phrase = NOUNS[noun] ? (det ? NOUNS[noun].replace(/^(the|that)\s+/, "") : NOUNS[noun]) : "this name";
-      text = /Plural/.test(tail) ? T("他们", "they") : /Name/.test(tail) ? T("这个名字", phrase) : T("……", "…");
+      const plural = art?.trim() || det || detAdj || /\b(?:many|few|several|all|most|both|other|some)\s+$/i.test(before) ? "people"
+        : new RegExp(`\\b(?:${PREP})\\s+$`, "i").test(before) ? "them" : "they";
+      text = /Plural/.test(tail) ? T("他们", plural) : NOUNS[noun] && lang === "en" ? phrase : /Name/.test(tail) ? T("这个名字", "this name") : T("……", "…");
       n = note(null, false);
     }
     let lead = art || "", trail = after || "";
@@ -118,6 +148,14 @@ export function fillNames(s, opts) {
     // with its own determiner stands alone, otherwise they join ("our" + "ruler").
     .replace(/([^]*)([^]*)(\s?)([^]*)([^]*)/g, (_, n1, t1, gap, n2, t2) =>
       OPEN + n2 + SEP + (/^(?:(?:the|our|this|that|a|an|your|their)\b|这|那|我们)/i.test(t2) || t2.endsWith(t1) || t1.endsWith(t2) || t2.startsWith(t1) ? t2 : t1 + gap + t2) + CLOSE)
+    // A possessive before a phrase that brings its own determiner ("our" + "the leader", after a merge): one determiner.
+    .replace(/\b(our|their|your|its|his|her|my)(\s+)([^]*)(?:the|that)\s+/gi, "$1$2$3")
+    // A name only called out to and left out takes its comma or exclamation mark with it ("…meet you, [X]." -> "…meet you.",
+    // "[X], we have decided" -> "We have decided"); a sentence that now starts after a left-out name starts with a capital.
+    .replace(/,\s*(?=\s*[.!?])/g, "")
+    .replace(/\s+(?=[.,;:!?])/g, "")
+    // (not inside a scripted name: that is a fragment of the sentence around it, "per 100 [telepaths]")
+    .replace(/(^|[.!?]["”’']?\s+)[!,]?\s*([a-z]?)/g, (m, lead, c) => (depth ? m : lead + c.toUpperCase()))
     // Sentence starts (also after a merge or a dropped article): capitalise the phrase.
     .replace(/(^|[.!?]["”’']?\s+)([^]*)([a-z])/g, (_, lead, n, c) => lead + OPEN + n + SEP + c.toUpperCase())
     // An omitted code name after "Operation" ("assigned to Operation [X].") reads as "the operation".

@@ -210,8 +210,10 @@ rail.addEventListener("scroll", railEdges, { passive: true });
 addEventListener("resize", railEdges);
 // The teaser under the title. A hyphen-led first line ("-警告：具有挑战性的起源") is its own line above the teaser, outside the
 // line clamp, instead of running into the first sentence.
+// The teaser reads with its own document's reviewed names (excerpts.json `names`), never the open chapter's. It is the first
+// 260 characters of that document, so a name the cut went through ("… [root.") goes with it.
 function showExcerpt(story) {
-  const text = prose(local(story.excerpt)), lead = leadLine(text), body = $("#selected-excerpt");
+  const text = typeset(proseWith(local(story.excerpt).replace(/\[[^\]]*$/, ""), story.excerpt?.names)), lead = leadLine(text), body = $("#selected-excerpt");
   let tag = $("#selected-lead");
   if (!tag) {
     tag = Object.assign(document.createElement("p"), { id: "selected-lead", className: "lead-line" });
