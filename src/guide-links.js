@@ -54,7 +54,8 @@ export function dropEcho(label, text) {
   if (q && sameName(q[1], label)) return text.slice(q[0].length);
   // (and the label itself written out unquoted, as a whole word or phrase: "2735 真菌通讯 → 2745 真菌之辩护")
   const s = /^\s?/.exec(text)[0].length;
-  return label && label.length > 1 && text.startsWith(label, s) && !/^[\p{L}\p{N}]/u.test(text.slice(s + label.length)) ? text.slice(s + label.length) : text;
+  // (in any case: "3055 blackmail" after a link titled "Blackmail")
+  return label && label.length > 1 && text.slice(s, s + label.length).toLowerCase() === label.toLowerCase() && !/^[\p{L}\p{N}]/u.test(text.slice(s + label.length)) ? text.slice(s + label.length) : text;
 }
 
 /** In a bold "id name" ("**2006 宗教狂热**", "**1011 碰撞 / 1012 损失舰船**") the guide names the document itself: the written
@@ -132,7 +133,17 @@ export function foldEchoes(parts, prevText = () => "") {
       continue;
     }
     const k = suffixOf(core, p.text);
-    if (k >= 0) i = put(i, core.slice(0, k), { ...p, text: core.slice(k) }, rest);
+    if (k >= 0) { i = put(i, core.slice(0, k), { ...p, text: core.slice(k) }, rest); continue; }
+    // (or a shorter English name made of the title's own words, "Spymaster Exposed (3050)" for "The spymaster Exposed": two words
+    // or more, so a stray word is never taken for the name)
+    const tail = /(?:[A-Za-z][\w'’-]*\s+){1,5}[A-Za-z][\w'’-]*$/.exec(core);
+    if (tail) {
+      const ws = tail[0].split(/\s+/);
+      for (let n = ws.length; n >= 2; n--) {
+        const phrase = ws.slice(-n).join(" ");
+        if (sameName(phrase, p.text)) { i = put(i, core.slice(0, core.length - phrase.length), { ...p, text: phrase }, rest); break; }
+      }
+    }
   }
   return out.filter((x) => x !== "");
 }

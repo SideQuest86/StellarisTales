@@ -576,3 +576,12 @@ its link into the link. 29 guides write an id then an emphasized name: 954 links
 at the card's edge (a window); the "Case 1" / "If: not Robot empire" badges before a variant line (the archive's way of showing the game's
 alternatives; they open the reading for that case); the guide's "aid request" before a linked title and a bracket that closes on the
 next line. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1.
+
+Inspection round 18 (24 random stories, seed 18112027, 71 chapters; desk-en and phone-zh found nothing). Confirmed 1, in the opt-in guide
+(event-preftl-operation-3050): "Spymaster Exposed (The spymaster Exposed)" and "Blackmail blackmail". foldEchoes took a written name only
+when it spelled the whole title; it now also takes two or more English words that are all words of the title ("Spymaster Exposed" for "The
+spymaster Exposed"; one word alone never). dropEcho compares a label written out after its link in any case. An old/new render of every
+guide in both languages (1,388 guides, 37,334 blocks) changed 19 blocks, all such echoes ("The First League Headquarters the First League
+Headquarters", "Flood flood", "Punishment punishment", "the contortionist (Meet the Contortionist)"). Not defects: a one-chapter story's
+map card during the card's flight (its node shows once the card rests), a long map cut at the card's edge (a window), the map's dimmed
+graph until hover. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1.

@@ -39,6 +39,7 @@ test("a quoted name that the link already shows is not repeated", () => {
   assert.equal(dropEcho("C.A.R.E交互界面", "（获得奖励）；"), "（获得奖励）；");
   // the label written out unquoted right after the id is an echo too, but only as a whole word or phrase
   assert.equal(dropEcho("真菌通讯", " 真菌通讯 → "), " → ");
+  assert.equal(dropEcho("Blackmail", " blackmail, C abort"), ", C abort");
   assert.equal(dropEcho("The Horizon Signal", " The Horizon Signal, once per game"), ", once per game");
   assert.equal(dropEcho("真菌", " 真菌通讯 → "), " 真菌通讯 → ");
   assert.equal(dropEcho("Signal", " Signals fade"), " Signals fade");
@@ -69,6 +70,9 @@ test("an id right after the name it would show: the written name becomes the lin
   // A different name before the id keeps the link in its brackets; so does a Latin word that only ends like the title.
   assert.equal(show(foldEchoes(["招募、分析（", link("守护者"), "）"])), "招募、分析（[守护者]）");
   assert.equal(show(foldEchoes(["the Rearrival (", link("Arrival"), ")"])), "the Rearrival ([Arrival])");
+  // A shorter English name made of the title's own words is the name too; one word alone is not.
+  assert.equal(show(foldEchoes(["/ Spymaster Exposed (", link("The spymaster Exposed"), "): A carry on"])), "/ [Spymaster Exposed]: A carry on");
+  assert.equal(show(foldEchoes(["the target was Exposed (", link("The spymaster Exposed"), ")"])), "the target was Exposed ([The spymaster Exposed])");
   assert.equal(show(foldEchoes(["see “Other” (", link("Reaching Into the Rift"), ")"])), "see “Other” ([Reaching Into the Rift])");
 });
 
