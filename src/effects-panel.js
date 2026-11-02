@@ -52,6 +52,13 @@ function tidy(list) {
     while (e && e.kind === "if" && isList(e.effects) && e.effects.some((c) => c && c.kind === "if" && words(c.label) === words(e.label)))
       e = { ...e, effects: e.effects.flatMap((c) => (c && c.kind === "if" && words(c.label) === words(e.label) ? c.effects || [] : [c])) };
     const prev = out[out.length - 1];
+    // A condition whose both branches do the same thing is no condition: "If: … Expertise: Propulsion / Otherwise: Expertise:
+    // Propulsion" is the effect.
+    const body = (x) => JSON.stringify(x.effects, (k, v) => (k === "source" ? undefined : v));
+    if (prev && e && prev.kind === "if" && e.kind === "else" && isList(prev.effects) && isList(e.effects) && body(prev) === body(e)) {
+      out.splice(out.length - 1, 1, ...tidy(prev.effects));
+      continue;
+    }
     // The same effect twice in a row is two (two districts, two ships, a scripted effect's two buildings): one line marked
     // "×2". (Not for random options or condition blocks, where a repeat means something else.)
     const bare = (x) => JSON.stringify(x, (k, v) => (k === "source" || k === "times" ? undefined : v));

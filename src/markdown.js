@@ -271,7 +271,8 @@ const REVIEW_HEADING = /^(审阅记录|审阅|Review notes?)(\s|$)/i;
 
 /** Render Markdown to HTML. Headings start at h3 (# -> h3 ... ### and deeper -> h5). opts.lang picks the language of the review summary. */
 export function renderMarkdown(md, opts = {}) {
-  const lines = String(md || "").replace(/\r\n?/g, "\n").split("\n");
+  // (a space after a Chinese stop before more Chinese is a typing slip: "旗标被清除。 契约被取消")
+  const lines = String(md || "").replace(/\r\n?/g, "\n").replace(/([。！？；，、])[ \t]+(?=[㐀-鿿])/g, "$1").split("\n");
   const main = [];
   const review = [];
   let out = main;

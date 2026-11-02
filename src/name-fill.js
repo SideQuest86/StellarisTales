@@ -69,7 +69,8 @@ export function fillNames(s, opts) {
       //    meet you, [X.GetSpeciesNamePlural].", "[Root.GetSpeciesName], we have decided …");
       //  - a plural reads "they" as a subject, "them" after a preposition, "people" after a determiner or quantifier.
       const NOUNS = { planet: "the planet", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist", alliance: "the alliance", government: "the government" };
-      const scope = (key.split("|")[0].split(".").at(-2) || "").split("_").at(-1).toLowerCase();
+      // (the scope's last word, also in camel case: "This.ContactCountry" -> "country")
+      const scope = (key.split("|")[0].split(".").at(-2) || "").split(/_|(?<=[a-z])(?=[A-Z])/).at(-1).toLowerCase();
       const plain = /^Get(?:Full|Real)?Name$/i.test(tail);
       const noun = plain ? scope : /^GetRuler(?:Name|Title)$|^GetRegnalName$/i.test(tail) ? "ruler" : /^GetLeaderName$/i.test(tail) ? "leader"
         : /^GetStarName$/i.test(tail) ? "star" : /^GetSpeciesName$/i.test(tail) ? "species" : /^GetAllianceName$/i.test(tail) ? "alliance"
@@ -78,7 +79,7 @@ export function fillNames(s, opts) {
       // (after a possessive or determiner, the bare noun: "Our [contact_empire.GetName] friends" -> "Our empire friends")
       const det = /\b(our|their|your|its|his|her|my|this|that|these|those|another|every|each|any|no)\s+$/i.test(before);
       const PREP = "of|to|for|with|from|by|about|among|against|on|in|at|into|onto|upon|between|towards?|like|than|over|under|near|beyond";
-      const detAdj = new RegExp(`(?:\\b(?:the|our|their|your|its|his|her|my|this|that|these|those)|['’]s)\\s+(?:(?!(?:${PREP})\\b)[a-z][\\w-]*\\s+){1,2}$`, "i").test(before);
+      const detAdj = new RegExp(`(?:\\b(?:the|an?|our|their|your|its|his|her|my|this|that|these|those)|['’]s)\\s+(?:(?!(?:${PREP})\\b)[a-z][\\w-]*\\s+){1,2}$`, "i").test(before);
       // The word after a name that reads as an attribute ("[X] refugees"), unless it is a verb or a function word.
       const STOP = /^\s+(?:is|are|was|were|has|have|had|will|would|can|could|may|might|must|shall|should|do|does|did|and|or|of|to|in|on|at|for|with|from|by|as|that|which|who|whom|whose|than|but|so|seem|seems|appear|appears|remain|remains|themselves|itself)\b/i;
       if (lang === "en") {
@@ -90,11 +91,13 @@ export function fillNames(s, opts) {
         if ((/Adj/.test(tail) || noun === "species") && /^\s+(?!I\b)[A-Za-z]/.test(rest) && !STOP.test(rest)) return drop();
         if (/Name$/.test(tail)) {
           if ((NOUNS[noun] && new RegExp(`\\b${noun}\\s+$`, "i").test(prev)) || (plain && /\b(?:star|world|moon|asteroid|station|colony|system|planet)\s+$/i.test(prev))) return drop();
-          if ((plain || noun === "star") && /^\s+(?:system|planet|star|fleet|ship|world|colony|station|ring world|black hole|nebula|asteroid (?:field|belt))\b/i.test(rest)) {
+          if ((plain || noun === "star") && /^\s+(?:system|planet|star|fleet|ship|vessel|world|colony|station|ring world|black hole|nebula|asteroid (?:field|belt))\b/i.test(rest)) {
             return art || det || detAdj ? drop() : (start ? "The " : "the ") + OMIT;
           }
         }
       }
+      // (Chinese: a name right before the noun it qualifies is left out, "一艘非军用[X]舰船" -> "一艘非军用舰船")
+      if (lang !== "en" && /Name$/.test(tail) && /^(?:舰船|舰队|飞船|舰只|星系|星球|殖民地|哨站|空间站)/.test(after || "")) return (art || "") + OMIT + after;
       const phrase = NOUNS[noun] ? (det ? NOUNS[noun].replace(/^(the|that)\s+/, "") : NOUNS[noun]) : "this name";
       const plural = art?.trim() || det || detAdj || /\b(?:many|few|several|all|most|both|other|some)\s+$/i.test(before) ? "people"
         : new RegExp(`\\b(?:${PREP})\\s+$`, "i").test(before) ? "them" : "they";

@@ -1078,7 +1078,7 @@ function renderChapter(preservePosition = false) {
     nextReading = ""; // the "Your choices" heading above already says it
   } else if (!nextEdges.length) {
     // The way back sits under the line, not a scroll away at the chapter's top.
-    nextReading = (groupGoesOn ? "" : `<span class="reading-complete">${esc(T("这条路线到此结束", "This route ends here"))}</span>`)
+    nextReading = (groupGoesOn ? "" : `<span class="reading-complete">${esc(T("此后再无记载。", "Nothing further is recorded."))}</span>`)
       + (trail.length > 1 ? `<button type="button" class="route-back">${esc(T("← 上一章", "← Previous chapter"))}</button>` : "");
   } else nextReading = "";
   let groupPanel = "";
@@ -1113,7 +1113,7 @@ function renderChapter(preservePosition = false) {
     if (cards || dialogue || tooltips) return dialogue + tooltips + cards;
     if (nextReading.includes("data-dialogue-status")) return nextReading;
     // Nothing of its own to add: its continuation (or the ending) follows the choices.
-    return outgoingOf(c).length || chapter.ending || groupGoesOn ? "" : `<span class="reading-complete">${esc(T("这条分支到此结束", "This branch ends here"))}</span>`;
+    return outgoingOf(c).length || chapter.ending || groupGoesOn ? "" : `<span class="reading-complete">${esc(T("此后再无记载。", "Nothing further is recorded."))}</span>`;
   };
   // A condition is noted only when it can be named (describe returns "" otherwise). One that every option shares (or nearly
   // every one, in a list of 6+: at most one exception per four) is said once under the heading, not under each option: the
@@ -1148,7 +1148,7 @@ function renderChapter(preservePosition = false) {
     else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(T("仅在以下情形出现：", "Only when: ") + when);
     if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (said(c.allow) ? T("：", ": ") + said(c.allow) : ""));
     else if (sharedNeed.text && !sharedNeed.loose && !need) notes.push(T("始终可选", "Always available"));
-    else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(/^(需要|Requires\b)/i.test(need) ? need : T("需要：", "Requires: ") + need); // (the game's own label may already say it)
+    else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(/^(需要|Requires\b)/i.test(need) || /^[^，。：]{0,10}(需要|必须)/.test(need) ? need : T("需要：", "Requires: ") + need); // (the game's own label may already say it: "探测范围内需要一艘…")
     return notes.length ? `<small class="choice-condition">${esc(notes.join(" · "))}</small>` : "";
   };
   const continuation = edgeButtons(nextEdges) + listButtons(shared);

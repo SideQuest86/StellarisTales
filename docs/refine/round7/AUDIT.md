@@ -680,3 +680,13 @@ map label; two guides (a heading whose English half held Chinese, "选择：/ Ch
 name after its link). Not defects: the "8%" card badge (the card's picture loads after the text, by design); "Review notes" (a
 closed panel). Deferred: factoring shared parts out of alternatives ("(A · B · C) or (A · B · D) …"), quieter card captions, a
 next-story card under a branch end, the phone map's first view.
+
+Surface round 5 (2026-11-02; six inspectors: conditions, guides, effects, reading on desktop in English and on a phone in Chinese,
+home / search / museum). Fixed: the end-of-branch and end-of-route line ("Nothing further is recorded." / "此后再无记载。"); the
+requirement prefix when the game's label already says 需要; name-fill reads a camel-case scope ("This.ContactCountry" -> country),
+counts "a"/"an" as determiners, drops a name before "vessel" and, in Chinese, before 舰船 / 星系 / … (3 fallback strings); positive
+atoms first within an alternative; identical if / else branches in effects folded (144 panels, rows 76,258 -> 72,688); a differing
+quoted title after a titled link in the link's own script (250 Chinese blocks; quoted choices, one-word quotes and links left as ids
+keep theirs); a space after a Chinese stop before more Chinese. Not defects: "Review notes" (a closed panel); "Case 1 / Case 2"
+near-identical passages (the game's own variants); the tellings selector's numbers. Deferred: link labels in the other language's
+half when both are shown, raw trait / objective ids where the game has no name (effects data), search ordering of title hits.

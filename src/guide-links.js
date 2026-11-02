@@ -52,6 +52,16 @@ export function dropEcho(label, text) {
   // (a bracketed name too: "12155（奥伏戎的愤怒）")
   const q = /^\s?["“「『（(]([^"”」』）)]{1,80})["”」』）)]/.exec(text);
   if (q && sameName(q[1], label)) return text.slice(q[0].length);
+  // (a quoted title that differs from the link's, the guide's older name for the same document: 'Spore Connection "Mycelium
+  // Array"', '孢子连接「菌丝阵列」'; a title is short, without sentence punctuation, in title case in English: a quoted choice
+  // or line stays)
+  const t = q && /^\s?["“「『]/.test(q[0]) ? q[1].trim() : "";
+  // (in the link's own script only: in the other language's half a quoted name is that language's name, kept)
+  const han = (s) => /[㐀-鿿]/.test(s);
+  // (and only after a link that reads as a title: a link left as its id, "distar.3040", is named by the quote)
+  const titled = label && !/^(?:[\w-]+[.:])?\d+$/.test(label.trim());
+  const title = t && titled && han(t) === han(label) && t.length <= 32 && !/[。，！？.,!?;；：:]/.test(t) && (han(t) ? t.length >= 2 && t.length <= 10 : t.split(/\s+/).length >= 2 && (t.match(/[A-Za-z]{4,}/g) || []).every((w) => /^[A-Z]/.test(w)));
+  if (title) return text.slice(q[0].length);
   // (and the label itself written out unquoted, as a whole word or phrase: "2735 真菌通讯 → 2745 真菌之辩护")
   const s = /^\s?/.exec(text)[0].length;
   // (in any case: "3055 blackmail" after a link titled "Blackmail")

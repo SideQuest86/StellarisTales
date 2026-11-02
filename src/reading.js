@@ -262,6 +262,8 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
   const parts = [];
   for (const branch of dnf) {
     const atoms = branch.map(atomText).filter((v, i, all) => v && all.indexOf(v) === i);
+    // (what holds first, what does not after: "线圈炮 · 非轨道炮", not "非轨道炮 · 线圈炮")
+    atoms.sort((x, y) => Number(/^(?:非|not )/.test(x)) - Number(/^(?:非|not )/.test(y)));
     if (!atoms.length) return fallback;
     parts.push(atoms);
   }
