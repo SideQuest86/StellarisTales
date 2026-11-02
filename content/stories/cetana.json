@@ -657,8 +657,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "首项风暴研究已完成才开放第二项；仍在研究则完成后由9100开放",
-    "en": "Opens the second study only if the first is already complete; if still in progress, 9100 opens it later"
+    "zh": "首项风暴研究已完成才开放第二项；仍在研究则待其完成后开放",
+    "en": "Opens the second study only if the first is already complete; if still in progress, once it completes"
    },
    "evidence": "synth_queen_give_storm_project FX:4022-4031 (started + researched → STORM_2)."
   },
@@ -681,8 +681,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "首项风暴研究已完成才开放第二项；仍在研究则完成后由9100开放",
-    "en": "Opens the second study only if the first is already complete; if still in progress, 9100 opens it later"
+    "zh": "首项风暴研究已完成才开放第二项；仍在研究则待其完成后开放",
+    "en": "Opens the second study only if the first is already complete; if still in progress, once it completes"
    },
    "evidence": "synth_queen_give_storm_project FX:4022-4031 (started + researched → STORM_2)."
   },
@@ -705,8 +705,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "首项风暴研究已完成才开放第二项；仍在研究则完成后由9100开放",
-    "en": "Opens the second study only if the first is already complete; if still in progress, 9100 opens it later"
+    "zh": "首项风暴研究已完成才开放第二项；仍在研究则待其完成后开放",
+    "en": "Opens the second study only if the first is already complete; if still in progress, once it completes"
    },
    "evidence": "synth_queen_give_storm_project FX:4022-4031 (started + researched → STORM_2)."
   },
@@ -729,8 +729,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "首项风暴研究已完成才开放第二项；仍在研究则完成后由9100开放",
-    "en": "Opens the second study only if the first is already complete; if still in progress, 9100 opens it later"
+    "zh": "首项风暴研究已完成才开放第二项；仍在研究则待其完成后开放",
+    "en": "Opens the second study only if the first is already complete; if still in progress, once it completes"
    },
    "evidence": "synth_queen_give_storm_project FX:4022-4031 (started + researched → STORM_2)."
   },
@@ -868,8 +868,8 @@
    "annotate": true,
    "conditional": true,
    "label": {
-    "zh": "仅当此时已获得风暴防护：立即开放前哨袭击（通常稍后由8048开放）",
-    "en": "Only if you already have storm protection now: outpost raids open at once (normally 8048 opens them later)"
+    "zh": "仅当此时已获得风暴防护：立即开放前哨袭击（通常稍后才开放）",
+    "en": "Only if you already have storm protection now: outpost raids open at once (normally they open later)"
    },
    "evidence": "8047 after events/machine_age_crisis_events.txt:5597-5608 (protected_from_queen_storm → synth_queen_raid_projects FX:4035-4046)."
   },

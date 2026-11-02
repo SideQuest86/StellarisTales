@@ -1,4 +1,4 @@
-# $contract_destroy_station_heirs_heirs$ / $contract_destroy_station_heirs_heirs$
+# 摧毁空间站：继承者 / Destroy Station: The Heirs
 
 - 分类 Category：C8 银河轶事 / Galactic miscellany
 - DLC：Nomads

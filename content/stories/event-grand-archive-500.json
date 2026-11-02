@@ -77,8 +77,8 @@
    "to": "grand_archive.4106",
    "conditional": true,
    "label": {
-    "zh": "下一轮（4100，360–540天后）：达到第2阶段条件",
-    "en": "Next cycle (4100, 360-540 days later): stage 2 reached"
+    "zh": "下一轮（360–540天后）：达到第2阶段条件",
+    "en": "Next cycle (360–540 days later): stage 2 reached"
    },
    "evidence": "events/grand_archive_events.txt:4389-4423 4101 else_if chain; each reward event ends with country_event 4100 (after, lines 4586-4593)"
   },

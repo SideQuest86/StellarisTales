@@ -1,4 +1,4 @@
-# $contract_scientific_observation_internal$ / $contract_scientific_observation_internal$
+# 科学观测：物理学研究 / Scientific Observation: Physics Research
 - 分类 Category：文明纪事 Society (C7) · 游牧者合同的追踪卡片 Nomads contract tracking card
 
 ## 如何开始 How it starts

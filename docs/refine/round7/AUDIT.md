@@ -594,3 +594,12 @@ before the Chinese name. "…隐藏 enclave.430）。When the Shroudwalker stati
 (the Chinese page read "…→ 隐藏" and stopped): the id rule also takes a stop followed directly by an English sentence. Not changed: a choice
 labelled ">" (the game's own machine-voice option). Wrong-language blocks unchanged at 36; 0 guide gaps.
 Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1, 4.
+
+Inspection round 20 (24 random stories, seed 20112027, 58 chapters; phone-en found nothing). Confirmed 3. Three stories (two Nomads
+contract tracking cards and the Heirs contract) had a title key the game never defines ($contract_…$): blank on the archive, "Interlude" in
+the reader, the raw key twice in the guide; reviewed titles in their fragments and guides, and an untitled opening chapter now takes its
+story's title. Captions naming a chapter by its number: of 50 that matched a chapter's number, 3 really did (cetana "9100 opens it later",
+"8048 opens them later"; grand_archive "Next cycle (4100, …)"); reworded in the fragments, the rest are amounts and weights. A stage's
+"(difficulty N)" (50 captions) left the continue cards; the map keeps it. Not changed: "Only when: …" under a choice (the archive's way of
+showing an option's condition), the map card's clipped third line of a long node label (the node clamps; the full label is on the card).
+Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1, 4, 3.
