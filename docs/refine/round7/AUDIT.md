@@ -703,3 +703,7 @@ profile control; 214 conditions); checks named alike in both languages count as 
 a leading ellipsis in effect labels; " -> " as "→" in guides (295 places); the hive-asteroids heading. Not changed: map framing on
 the desktop card and the phone (deferred again), search phrase matching, search's "Name" chip, identical card thumbnails, number
 keys on an open choice (they toggle it, by design), situation rows labelled "Special project".
+
+Map framing (flagged in surface rounds 1, 3, 4, 5, 6 and 7): centerOn fits the current chapter's siblings and children to the card's
+width (not below 60%) and centres that span; the phone's full-screen map places a top-level chapter at 14% of its height. The
+phone map keeps its reading scale (fitting a wide tree there made the labels unreadable) and its existing edge fade.

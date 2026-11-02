@@ -907,11 +907,25 @@ export class FlowSurface {
     const b = this.layout?.nodes.get(id);
     if (!b || !this.viewSize().w) return false;
     const { w, h } = this.viewSize();
+    // On the card and the phone's map, the current chapter's row (it and its siblings) fits the width when a smaller scale
+    // allows (not below 60%): a wide row opened with its outer chapters cut at both edges ("-phase encounters • Any order").
+    let mid = b.x;
+    if (!this.expanded) {
+      // (and the row below it, where the story goes next)
+      const node = this.tree.nodes.get(id), parent = this.tree.nodes.get(node?.parent);
+      const row = [...(parent?.children || [id]), ...(this.collapsed?.has(id) ? [] : node?.children || [])].map((c) => this.layout.nodes.get(c)).filter(Boolean);
+      const left = Math.min(...row.map((r) => r.x - r.w / 2)), right = Math.max(...row.map((r) => r.x + r.w / 2));
+      const fits = (w - 32) / Math.max(1, right - left);
+      if (fits < k) k = Math.max(Math.min(k, 0.6), fits);
+      if ((right - left) * k <= w - 32) mid = (left + right) / 2;
+    }
     this.view.k = k;
-    this.view.x = w / 2 - (b.x - this.origin.x) * k;
+    this.view.x = w / 2 - (mid - this.origin.x) * k;
     // Slightly below centre: where the reader came from stays in view above.
     const topLevel = this.tree.nodes.get(this.tree.nodes.get(id)?.parent)?.type === "forest";
-    this.view.y = h * (topLevel ? 0.3 : 0.56) - (b.y + b.h / 2 - this.origin.y) * k;
+    // (a story's first chapter on the phone's full-screen map sits near its top: nothing comes before it to show above)
+    const high = topLevel && this.element.classList.contains("mobile-open");
+    this.view.y = h * (high ? 0.14 : topLevel ? 0.3 : 0.56) - (b.y + b.h / 2 - this.origin.y) * k;
     // On the card, the chapter above (where the reader came from) shows whole when it fits, instead of with its first line
     // cut at the card's faded top edge; the current chapter stays clear of the bottom.
     if (!this.expanded) {
