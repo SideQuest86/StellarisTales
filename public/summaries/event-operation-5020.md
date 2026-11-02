@@ -18,7 +18,8 @@ gestalt -> gestalt (not machine targets).
 
 ## 分支与结局 Branches and outcomes
 
-- 无后续。
+- 无后续。  
+  No follow-ups.
 
 ## 条件与文明差异 Conditions and variants
 

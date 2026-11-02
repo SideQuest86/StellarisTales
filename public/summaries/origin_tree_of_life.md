@@ -15,6 +15,8 @@ No narrative opening: the card gives the homeworld a Tree of Life deposit; new c
 
 无分支。
 
+No branches.
+
 ## 条件与文明差异 Conditions and variants
 
 仅限蜂巢思维。 Hive minds only.

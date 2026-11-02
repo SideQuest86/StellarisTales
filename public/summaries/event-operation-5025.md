@@ -18,11 +18,13 @@ hive -> hive.
 
 ## 分支与结局 Branches and outcomes
 
-- 5026 与 5027 互斥（项目成功 / 失败）。
+- 5026 与 5027 互斥（项目成功 / 失败）。  
+  5026 and 5027 are mutually exclusive (project success / failure).
 
 ## 条件与文明差异 Conditions and variants
 
-- 仅蜂巢对蜂巢。
+- 仅蜂巢对蜂巢。  
+  Hive against hive only.
 
 ## 审阅记录 Review notes
 

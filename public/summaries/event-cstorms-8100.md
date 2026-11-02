@@ -6,15 +6,20 @@
 
 cstorms.1761（风暴中的殖民地，每国一次）：非岩石帝国选 a 添加“过滤饱和”修正并启动 CLEAR_DUSTY_PIPES_PROJECT；岩石帝国选 b 得矿物与团结。殖民地换主时隐藏 cstorms.8100 为新所有者重启项目并中止旧项目。
 
+cstorms.1761 (a colony in a storm, once per empire): non-rocky empires choose a to add the filter-saturation modifier and start CLEAR_DUSTY_PIPES_PROJECT; rocky empires choose b for minerals and unity. When a colony changes owner, hidden cstorms.8100 restarts the project for the new owner and aborts the old one.
+
 ## 剧情脉络 Story outline
 
 项目成功 → cstorms.1765 “滤网疏通”：水循环改善，可用于全国灌溉；单一选项。
+
+Project succeeds → cstorms.1765 filter cleared: the water cycle improves and can be used for empire-wide irrigation; single option.
 
 ## 分支与结局 Branches and outcomes
 
 ## 条件与文明差异 Conditions and variants
 
-- 岩石帝国没有项目。
+- 岩石帝国没有项目。  
+  Rocky empires have no project.
 
 ## 审阅记录 Review notes
 

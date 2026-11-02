@@ -15,6 +15,8 @@ No window at start. After about 3420 days a non-purifier empire sees necroids.2 
 
 无分支。
 
+No branches.
+
 ## 条件与文明差异 Conditions and variants
 
 蜂巢思维与非蜂巢使用不同文本。 Hive and non-hive text variants.

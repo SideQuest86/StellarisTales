@@ -7,18 +7,27 @@
 The first fleet entering the flagged system gets 999; 7 days later 1000 spawns the Devourer. 1001 is the notice for empires meeting it elsewhere.
 
 ## 剧情脉络 Story outline
-1. 噬星者游荡时，每进入一个星系，隐藏事件 1005 就把高温修正转移到那里（隐藏机制，未建模）。
-2. 被击杀（on_ship_destroyed_perp → 1016）：留下卵鞘和消化器官。选项 a：研究遗骸（项目 STELLARITE_DEAD_PROJECT，60天，科研船）；选项 c：取走卵鞘并开启庆典情境（见庆典故事）——二者互为替代。
-3. 项目完成 → 1017：a 重燃恒星（项目 STELLARITE_STAR_PROJECT，90天）；b 收割能量（每月能量/矿物/影响力加成）。
-4. 恒星项目完成 → 1018，进入时掷 70:30。
+1. 噬星者游荡时，每进入一个星系，隐藏事件 1005 就把高温修正转移到那里（隐藏机制，未建模）。  
+  While the Devourer roams, each time it enters a system, hidden event 1005 moves the high-temperature modifier there (a hidden mechanic, not modelled).
+2. 被击杀（on_ship_destroyed_perp → 1016）：留下卵鞘和消化器官。选项 a：研究遗骸（项目 STELLARITE_DEAD_PROJECT，60天，科研船）；选项 c：取走卵鞘并开启庆典情境（见庆典故事）——二者互为替代。  
+  Killed (on_ship_destroyed_perp → 1016): leaves an egg sac and digestive organs. Option a: study the remains (project STELLARITE_DEAD_PROJECT, 60 days, science ship); option c: take the egg sac and open a celebration situation (see the celebration story). The two are alternatives.
+3. 项目完成 → 1017：a 重燃恒星（项目 STELLARITE_STAR_PROJECT，90天）；b 收割能量（每月能量/矿物/影响力加成）。  
+  Project completed → 1017: a. relight the star (project STELLARITE_STAR_PROJECT, 90 days); b. harvest energy (monthly energy, mineral and influence bonuses).
+4. 恒星项目完成 → 1018，进入时掷 70:30。  
+  Star project completed → 1018; on entry, a 70:30 roll.
 
 ## 分支与结局 Branches and outcomes
-- 成功(70%)：EXCELLENT，母星体积+12，冰冻行星升温，其一成为盖亚世界。
-- 失败(30%)：科学家死亡、舰队被毁；UNFORTUNATE，恒星体积+8，行星只部分改善。
-- 收割能量(1017.b)：持续资源加成，故事结束。
+- 成功(70%)：EXCELLENT，母星体积+12，冰冻行星升温，其一成为盖亚世界。  
+  Success (70%): EXCELLENT; the home world's size +12, the frozen planet warms, and one becomes a Gaia world.
+- 失败(30%)：科学家死亡、舰队被毁；UNFORTUNATE，恒星体积+8，行星只部分改善。  
+  Failure (30%): scientists die and the fleet is destroyed; UNFORTUNATE; the star's size +8, and the planets are only partly improved.
+- 收割能量(1017.b)：持续资源加成，故事结束。  
+  Harvest energy (1017.b): ongoing resource bonus; the story ends.
 
 ## 条件与文明差异 Conditions and variants
 格式塔意识使用不同的 1016/1017 描述；其余分支与文明无关。
+
+Gestalt consciousness sees different 1016/1017 descriptions; the other branches do not depend on civilisation.
 
 ## 审阅记录 Review notes
 

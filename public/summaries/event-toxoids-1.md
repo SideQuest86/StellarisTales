@@ -10,15 +10,22 @@ Accumulating pollution reaches 30: first time -> toxoids.5 and the situation; la
 ## 剧情脉络 Story outline
 
 toxoids.5 开启情境（初始进度50，双向）。态度：不作为/随它去（+2.5/月）、清理（−2.5/月）、拥抱变化。阶段：清理(≤50)、浩劫一(≤80，稳定−10)、浩劫二(≤100，稳定−20；首次进入时随机 1:4：toxoids.15 民众无所谓 / toxoids.10 民众抗议，若种族在墓地世界宜居则10不会出现)。
+
+toxoids.5 opens the situation (initial progress 50, two-way). Attitudes: take no action / let it be (+2.5/month), cleanup (−2.5/month), embrace change. Stages: cleanup (≤50), Catastrophe 1 (≤80, stability −10), Catastrophe 2 (≤100, stability −20; on first entry a random 1 in 4: toxoids.15 populace shrugs / toxoids.10 populace protests; if the species is habitable on Tomb Worlds, 10 does not appear).
+
 结局：进度归零 → toxoids.35 “恢复”；进度满 → 不作为 toxoids.25 “为了进步”（履行中心加强）/ 其他 toxoids.30 “变革的知识”（可制造墓地世界）。
+
+Endings: progress falls to 0 → toxoids.35 "Restored"; progress full → take no action, toxoids.25 "For the Sake of Progress" (the coordination fulfilment centre is strengthened) / others, toxoids.30 "Transformative Knowledge" (can create Tomb Worlds).
 
 ## 分支与结局 Branches and outcomes
 
-- 10 / 15 互斥（随机）；35、25、30 互斥。
+- 10 / 15 互斥（随机）；35、25、30 互斥。  
+  10 / 15 are exclusive (random); 35, 25 and 30 are exclusive.
 
 ## 条件与文明差异 Conditions and variants
 
-- 进入浩劫二后不能再改变态度。
+- 进入浩劫二后不能再改变态度。  
+  Once Catastrophe 2 is entered, the attitude can no longer be changed.
 
 ## 审阅记录 Review notes
 

@@ -12,6 +12,9 @@ export function detectLang(s) {
   const cjk = (text.match(/[㐀-鿿豈-﫿]/g) || []).length;
   const latin = (text.match(/[A-Za-z]/g) || []).length;
   if (!cjk && !latin) return "";
+  // A sentence that ends in a Chinese stop is Chinese, however long the English names in it ("Hired Guns 报酬更高。",
+  // "Cosmic Storms DLC；每国一次。").
+  if (cjk >= 2 && /[。！？]\s*$/.test(text)) return "zh";
   return cjk * 2 >= latin ? "zh" : "en";
 }
 
@@ -53,12 +56,29 @@ const CJK_RE = /[㐀-鿿豈-﫿]/g;
 
 /** "中文。English." -> [zh, en] when a Chinese part is followed by an English part (the guides write both in one line); else null. */
 export function splitMixed(text) {
+  // Several pairs in one line ("中文。 / English. 中文。/ English."): each is split on its own, the halves joined.
+  const pairs = String(text).split(/(?<=[.!?)])\s+(?=[㐀-鿿])/);
+  if (pairs.length > 1) {
+    const split = pairs.map(splitOne);
+    if (split.every(Boolean)) return [split.map((p) => p[0]).join(""), split.map((p) => p[1]).join(" ")];
+  }
+  return splitOne(text);
+}
+function splitOne(text) {
   const s = String(text);
   if (!hasCJK(s) || !/[A-Za-z]{3}/.test(s)) return null;
+  // A list item written on two lines ("- 中文  \n  English") reads as one with a run of spaces where the line broke: the surest
+  // boundary there is.
+  const broke = /\s{3,}/.exec(s);
+  if (broke) {
+    const head = s.slice(0, broke.index).trim(), tail = s.slice(broke.index + broke[0].length).trim();
+    if (detectLang(head) === "zh" && detectLang(tail) === "en") return [head, tail];
+  }
   // The English half may start with bold/italic markers ("…）。 **Five chained sites**: …").
   // … or follow a slash ("…。 / The first option …"), and after a slash it may open with an event number ("…。/ 9005: the
   // science ship …"; without the slash a number belongs to the Chinese sentence: "320–360天后 9010“谜团重现”").
-  const re = /(?<=[㐀-鿿豈-﫿。！？）；：*])\s*(?:\/\s*)?(?=\*{0,2}(?:[A-Za-z"“'‘(\[]|\d))/g;
+  // (a slash may also follow a closing quote: "…只有“明白了” / activating the relic …")
+  const re = /(?:(?<=[㐀-鿿豈-﫿。！？）；：*])\s*(?:\/\s*)?|(?<=[”」])\s*\/\s*)(?=\*{0,2}(?:[A-Za-z"“'‘(\[]|\d))/g;
   // A later boundary after a Chinese full stop beats the first one that passes when it leaves less Chinese in the English
   // half: "…；d（灵性）→2064。  2062: a agrees …" passed at "；" too (the bracket is skipped by the early check), which put the
   // last Chinese clause in English. (Only after a full stop: "来源 Sources：…（300 菜单 menu）…" keeps its split at the label.)
@@ -72,11 +92,12 @@ export function splitMixed(text) {
     // (also with the Chinese sentence's own stop after it: "…site_fossilized_jellyfish_random_events。 / Failed rolls …")
     // (or with that stop and a space and no slash: "…选项 luxury_limbs。 "Multi-Limb Coordination" …")
     // (and with a closing bracket: "…都不检查 has_distar）/ no DLC check …")
-    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.-]*`?)(?:([）)」]?[。；，]?)\s*\/\s+|([。；])\s+)/.exec(tail);
+    const idSlash = /^(`?[\w-]*(?:[_/]|\.(?=\w))[\w/:.–-]*`?)(?:([）)」]?[。；，]?)\s*\/\s+|([。；])\s+)/.exec(tail);
     if (idSlash) { head = `${head} ${idSlash[1]}${idSlash[2] || idSlash[3] || ""}`; tail = tail.slice(idSlash[0].length); }
     // (or after a Chinese full stop and a space: "…出现。   275 only appears when …"; the checks below still require an
     // English tail, so "。9010“谜团重现”…" stays whole)
-    const afterStop = "。！？".includes(s[m.index - 1]) && /\s/.test(m[0]);
+    // (or right after the stop, when what follows is a whole English sentence: "见上。See above."; the check is `short`, below)
+    const afterStop = "。！？".includes(s[m.index - 1]) && (/\s/.test(m[0]) || /^[A-Z][a-z]/.test(tail));
     // An English half is never glued to a Chinese character ("隐藏事件cstorms.10" is one Chinese phrase with an id in it), and
     // it does not run into Chinese at once ("…本身没有 DLC 检查）/ Horizon …": the boundary is the slash).
     if (!m[0] && /[㐀-鿿豈-﫿]/.test(s[m.index - 1])) continue;
@@ -94,8 +115,9 @@ export function splitMixed(text) {
     // (detectLang leaves script identifiers out; so does the check for an English phrase inside the Chinese half)
     const prose = head.replace(/`[^`]*`/g, "").replace(SCRIPT_ID, "");
     // (a short English sentence after a Chinese full stop is a half too: "线性。 Linear.")
-    const short = afterStop && !cjk && latin >= 3 && /^[A-Z][A-Za-z ,'’-]{1,40}[.!?]$/.test(tail);
-    if ((latin >= 12 || short) && cjk * 25 < latin && detectLang(head) === "zh" && !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(prose)) {
+    const short = afterStop && !cjk && latin >= 3 && /^[A-Z][A-Za-z0-9 ,:;/'’-]{1,60}[.!?]$/.test(tail);
+    // (the Chinese half may hold a long English name, "需 First Contact DLC", when a stop or a slash marks the boundary)
+    if ((latin >= 12 || short) && cjk * 25 < latin && detectLang(head) === "zh" && (afterStop || m[0].includes("/") || !/[A-Za-z]{4,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(prose))) {
       if (best && !(afterStop && cjk < best.cjk)) continue;
       if (!cjk) return [head, tail];
       best = { cjk, split: [head, tail] };
@@ -166,6 +188,24 @@ const bilingual = (text) => {
   return `${lead}<span lang="zh-CN" data-lang="zh">${inline(parts[0])}</span> <span lang="en" data-lang="en">${inline(parts[1])}</span>`;
 };
 
+// A table ("| a | b |" over "| --- | --- |"), its cells labelled by language like any other text.
+const TABLE_ROW = /^\s*\|.*\|\s*$/, TABLE_RULE = /^\s*\|[\s:|-]*-[\s:|-]*\|\s*$/;
+const isTable = (lines, i) => TABLE_ROW.test(lines[i] || "") && TABLE_RULE.test(lines[i + 1] || "");
+const tableCells = (line) => line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+// A cell is short, so its halves may be too: "停止实验 / halted", "轰炸 Bombardment（6）" (a number in brackets goes with both).
+const cellParts = (text) => {
+  const slash = /^(.*[㐀-鿿][^/]*?)\s*\/\s*([^㐀-鿿/]+)$/.exec(text);
+  if (slash) return [slash[1], slash[2]];
+  const pair = /^([^A-Za-z]*[㐀-鿿][^A-Za-z]*?)\s+([A-Za-z][^㐀-鿿]*?)\s*([（(][^）)]*[）)])?$/.exec(text);
+  return pair && [pair[1] + (pair[3] || ""), pair[2] + (pair[3] ? ` ${pair[3].replace(/（/, "(").replace(/）/, ")")}` : "")];
+};
+const tableCell = (text, tag) => {
+  const open = `<${tag}${tag === "th" ? ' scope="col"' : ""}>`, parts = cellParts(text);
+  if (parts) return `${open}<span lang="zh-CN" data-lang="zh">${inline(parts[0])}</span> <span lang="en" data-lang="en">${inline(parts[1])}</span></${tag}>`;
+  const label = langAttr(text);
+  return `${open}${bilingual(text) || (label ? `<span${label}>${inline(text)}</span>` : inline(text))}</${tag}>`;
+};
+
 // Editor/maintenance sections of the guides (审阅记录 Review notes …): kept in the Markdown, shown collapsed at the very end.
 const REVIEW_HEADING = /^(审阅记录|审阅|Review notes?)(\s|$)/i;
 
@@ -194,6 +234,12 @@ export function renderMarkdown(md, opts = {}) {
       i++;
     } else if (/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(line)) {
       out.push("<hr>"); i++;
+    } else if (isTable(lines, i)) {
+      const head = tableCells(lines[i]);
+      i += 2;
+      const rows = [];
+      while (i < lines.length && TABLE_ROW.test(lines[i])) rows.push(tableCells(lines[i++]));
+      out.push(`<div class="md-table"><table><thead><tr>${head.map((c) => tableCell(c, "th")).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => tableCell(c, "td")).join("")}</tr>`).join("")}</tbody></table></div>`);
     } else if (/^\s*>/.test(line)) {
       const buf = [];
       while (i < lines.length && /^\s*>/.test(lines[i])) buf.push(lines[i++].replace(/^\s*>\s?/, ""));
@@ -220,7 +266,7 @@ export function renderMarkdown(md, opts = {}) {
       }).join("")}</${tag}>`);
     } else {
       const buf = [];
-      while (i < lines.length && lines[i].trim() && !/^(#{1,6}\s|\s*>|\s*([-*+]|\d+[.)])\s+|\s*(-{3,}|\*{3,})\s*$)/.test(lines[i])) buf.push(lines[i++].trim());
+      while (i < lines.length && lines[i].trim() && !isTable(lines, i) && !/^(#{1,6}\s|\s*>|\s*([-*+]|\d+[.)])\s+|\s*(-{3,}|\*{3,})\s*$)/.test(lines[i])) buf.push(lines[i++].trim());
       // Lines in different languages without a blank line between them (a Chinese line, its English, more Chinese) are
       // separate paragraphs, each with its own label; joined, the English sentence showed on the Chinese page.
       const langs = buf.map((l) => detectLang(l));

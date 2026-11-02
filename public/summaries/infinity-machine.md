@@ -7,24 +7,39 @@
 A player fleet entering the Machine's system triggers "The Infinity Equation" (1030). If the Horizon Signal chain is active, this story does not fire.
 
 ## 剧情脉络 Story outline
-1. 1030：开启“高科技球体”事件链与兴趣点；520–720天后神机开始向黑洞发出信号——“永恒的计算机”（1050，需仍存在且未与之敌对）。
-2. 1050：“很迷人”→ 研究项目“触及球体”（360天，科研船＋科学家）；“没有时间”→ +50影响力，结束。
-3. 项目完成（1051），按理念出现不同选择：
-   - 非格式塔：连接主处理器 → 神机问候（1055）→ 对话（1056，可问它是什么、目的何在、尚武/狂热平等者可抛出“本命题为假”）→ “能帮你们研究吗？”（1060）→ 分配资源 → 黑洞研究项目（1800天）。其余告别选项给影响力。
-   - 唯心：宣布为圣物（获得修正，无后续窗口）。
-   - 唯物或格式塔：骇入项目（720天）。
-   - 尚武：寻找自毁开关 → 破坏项目（需运输船，10天）。
-4. 任何时候若我们的舰队在战斗中击毁神机，也会得到“无限方程”（1040）。
+1. 1030：开启“高科技球体”事件链与兴趣点；520–720天后神机开始向黑洞发出信号——“永恒的计算机”（1050，需仍存在且未与之敌对）。  
+  1. 1030: starts the "Technosphere" event chain and point of interest; 520–720 days later the Machine begins signalling the black hole: "The Constant Calculator" (1050; it must still exist and not be hostile to us).
+2. 1050：“很迷人”→ 研究项目“触及球体”（360天，科研船＋科学家）；“没有时间”→ +50影响力，结束。  
+  2. 1050: "Fascinating" → study project to touch the sphere (360 days, science ship + scientist); no time → +50 influence, ends.
+3. 项目完成（1051），按理念出现不同选择：  
+  3. The project completes (1051); the choice differs by ethic:
+   - 非格式塔：连接主处理器 → 神机问候（1055）→ 对话（1056，可问它是什么、目的何在、尚武/狂热平等者可抛出“本命题为假”）→ “能帮你们研究吗？”（1060）→ 分配资源 → 黑洞研究项目（1800天）。其余告别选项给影响力。  
+     Non-gestalt: connect to the main processor → the Machine greets us (1055) → dialogue (1056; can ask what it is and what its purpose is; militarist or fanatic egalitarians can throw in this proposition is false) → it asks whether it can help your research (1060) → allocate resources → black hole research project (1800 days). The other farewell options give influence.
+   - 唯心：宣布为圣物（获得修正，无后续窗口）。  
+     Spiritualist: declare it sacred (gains a modifier; no later window).
+   - 唯物或格式塔：骇入项目（720天）。  
+     Materialist or gestalt: hacking project (720 days).
+   - 尚武：寻找自毁开关 → 破坏项目（需运输船，10天）。  
+     Militarist: find the self-destruct switch → sabotage project (needs a transport ship, 10 days).
+4. 任何时候若我们的舰队在战斗中击毁神机，也会得到“无限方程”（1040）。  
+  4. At any time, if our fleet destroys the Machine in battle, we also get "The Infinity Equation" (1040).
 
 ## 分支与结局 Branches and outcomes
-- 黑洞研究（互斥随机）：50% 协助成功（1061：换取科技或“自行掌控未知”修正，神机继续运算）；25% 失败、25% 秘密——二者都先显示“完成了”（1062），神机沉入黑洞：失败为“神机消失”（1063，残骸与研究资源），秘密为黑洞化作“庞大古埃”（1065，永久研究加成）。
-- 骇入（互斥随机 50:50，有计算类科技/领袖时成功×10）：成功则神机自毁、我们获得科技（1052）；失败则神机礼貌拒绝（1053）。
-- 破坏或战斗击毁：1040，可拆解获取资源、研究机械主脑或（具备条件时）解锁利维坦科技。
-- 曾遇见神机的其他帝国会在神机被他人摧毁或“释放”时收到通知（1041）。
-- 获得“庞大古埃”秘密并曾向策展人询问神机后，可在策展人菜单分享秘密（跨故事链接）。
+- 黑洞研究（互斥随机）：50% 协助成功（1061：换取科技或“自行掌控未知”修正，神机继续运算）；25% 失败、25% 秘密——二者都先显示“完成了”（1062），神机沉入黑洞：失败为“神机消失”（1063，残骸与研究资源），秘密为黑洞化作“庞大古埃”（1065，永久研究加成）。  
+  Black hole research (mutually exclusive random): 50% assisted success (1061: trades for technology or a self-controlled unknown modifier, and the Machine keeps computing); 25% failure and 25% secret — both first show completed (1062), and the Machine sinks into the black hole: failure is the Machine vanishes (1063; wreckage and research resources); secret turns the black hole into "Pantagruel" (1065; permanent research bonus).
+- 骇入（互斥随机 50:50，有计算类科技/领袖时成功×10）：成功则神机自毁、我们获得科技（1052）；失败则神机礼貌拒绝（1053）。  
+  Hacking (mutually exclusive random 50:50; with a computing technology or a leader, success is ×10): on success the Machine self-destructs and we gain technology (1052); on failure the Machine politely refuses (1053).
+- 破坏或战斗击毁：1040，可拆解获取资源、研究机械主脑或（具备条件时）解锁利维坦科技。  
+  Sabotage or destruction in battle: 1040; can be dismantled for resources, studied as a mechanical master brain, or (when eligible) used to unlock Leviathan technology.
+- 曾遇见神机的其他帝国会在神机被他人摧毁或“释放”时收到通知（1041）。  
+  Other empires that have met the Machine receive a notice when it is destroyed by someone else or released (1041).
+- 获得“庞大古埃”秘密并曾向策展人询问神机后，可在策展人菜单分享秘密（跨故事链接）。  
+  After gaining the "Pantagruel" secret and asking the Curator about the Machine, the secret can be shared from the Curator's menu (cross-story link).
 
 ## 条件与文明差异 Conditions and variants
 1030 文本按是否在其黑洞星系变化；1040 文本按破坏/已研究/战斗三种情形变化；格式塔在1052、1061中获得不同科技。
+
+The text of 1030 changes depending on whether it is in its black hole system; the text of 1040 changes for destruction, already researched, or battle; gestalts gain different technology in 1052 and 1061.
 
 ## 审阅记录 Review notes
 

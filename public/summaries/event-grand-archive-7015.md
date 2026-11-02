@@ -14,7 +14,8 @@ After a first contact, if the Tiyanki were attracted by our Voidlure, 7020 follo
 
 ## 分支与结局 Branches and outcomes
 
-- 无分支。
+- 无分支。  
+  No branches.
 
 ## 条件与文明差异 Conditions and variants
 

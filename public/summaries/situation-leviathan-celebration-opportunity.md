@@ -22,6 +22,8 @@ Each victory event starts the situation on a planet and sets a celebration_* fla
 ## 条件与文明差异 Conditions and variants
 格式塔与否决定 1000/1005；1080 选项受唯物/唯灵限制（1080.a 需非唯物主义，1080.b 需非唯灵，1080.d 需唯灵）；1110 的描述随机器/石质/常规而变。
 
+Gestalt or not decides 1000/1005; the 1080 options are limited by materialist/spiritualist ethics (1080.a needs non-materialist, 1080.b needs non-spiritualist, 1080.d needs spiritualist); the 1110 description varies with robotic, lithoid or ordinary species.
+
 ## 审阅记录 Review notes
 
 - 审阅 Reviewed 2026-10-13

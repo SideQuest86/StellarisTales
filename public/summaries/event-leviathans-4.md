@@ -9,8 +9,12 @@ Any guardian is destroyed.
 ## 剧情脉络 Story outline
 隐藏 leviathans.4 保存击毁系统/国家 → 2天后隐藏 leviathans.6（确认该守护者已无舰队）→ 向有通讯的帝国发 leviathans.5，向观察者发 observer.1。两个窗口只有“确定”。
 
+Hidden leviathans.4 saves the destroyed system or empire → 2 days later hidden leviathans.6 (confirms the guardian has no fleet left) → sends leviathans.5 to empires with communications, and observer.1 to observers. Both windows have only a confirm option.
+
 ## 分支与结局 Branches and outcomes
 无。共用通知，被各个守护者故事复用。
+
+None. A shared notice, reused by each guardian's story.
 
 ## 条件与文明差异 Conditions and variants
 

@@ -9,21 +9,30 @@ Taking the Galactic Nemesis perk; level 1 sends *The Universe Shall Tremble* and
 
 ## 剧情脉络 Story outline
 
-1. **四项研究与五个等级（严格依次）**：每一级开启一项按帝国类型区分的特殊项目（灵能 / 机械 / 虚境铸就 / 蜂巢 / 一般，互斥）；完成项目并累积威胁度（1000、2000、5000、10000）才能升到下一级，升级3天后收到该级事件（4145、4150、4155）。项目报告依次为“鸿景”“力量之井”“来自异界的燃料”“终焉将临”。
-2. **第五级**：离开联邦与共同体；共同体（或银河帝国）被迫通过“宣告危机”决议——你收到 4105/4106，其他玩家收到 4100/4101；若日后被废止，另有 4111/4113 与 4110/4112。5天后“以太相引擎”（6000）在首都星系（游牧帝国为锚站）奠基，再5天得到两艘吞星者（6001）。
-3. **吞星**：第一次吞噬恒星时，其他玩家按情报收到三种通报之一（6180/6181/6182）；若毁灭的星系有圣地，圣地守护者震怒（planet_destruction.610，可能引发堕落帝国苏醒）。
-4. **引擎建造**（每阶段基础3600天）：第一阶段完工（6005，灵能/同类玩家收到“灵能冲击”）→ 第二阶段（6006，全银河警报；180–660天后虚境生物出现 6151）→ 第三阶段（6007；180–660天后第二波 6161；60–1320天后灵能脉冲 6171）→ 最终完工。
-5. **结局**：“始与终”（6050）获胜；1天后其他玩家收到“末日”（6051），所有星系被摧毁。若引擎被毁或星系被占领，建造者/摧毁者/其他玩家分别收到 6101/6102/6103；他国夺取引擎时（6200）可选择摧毁，或在自己也是第五级天灾且失去引擎时接手。
+1. **四项研究与五个等级（严格依次）**：每一级开启一项按帝国类型区分的特殊项目（灵能 / 机械 / 虚境铸就 / 蜂巢 / 一般，互斥）；完成项目并累积威胁度（1000、2000、5000、10000）才能升到下一级，升级3天后收到该级事件（4145、4150、4155）。项目报告依次为“鸿景”“力量之井”“来自异界的燃料”“终焉将临”。  
+  **Four studies and five levels (strictly in order):** each level opens one special project by empire type (psionic / mechanical / Shroud-forged / hive / general; mutually exclusive). Completing the project and accumulating Menace (1,000, 2,000, 5,000 and 10,000) is needed to rise to the next level; three days after the rise, that level's event arrives (4145, 4150, 4155). The project reports are, in order, "The Great Prospect", "Well of Power", "Fuel From Another World" and "The End is Nigh".
+2. **第五级**：离开联邦与共同体；共同体（或银河帝国）被迫通过“宣告危机”决议——你收到 4105/4106，其他玩家收到 4100/4101；若日后被废止，另有 4111/4113 与 4110/4112。5天后“以太相引擎”（6000）在首都星系（游牧帝国为锚站）奠基，再5天得到两艘吞星者（6001）。  
+  **Level 5:** you leave the Federation and the Community; the Community (or the Imperium) is forced to pass the crisis-declaration resolution: you receive 4105/4106 and other players receive 4100/4101; if it is later repealed, 4111/4113 and 4110/4112 follow. Five days later "The Aetherophasic Engine" (6000) is founded in the capital system (for nomad empires, an anchor station), and five days after that you receive two "The Star-Eaters" (6001).
+3. **吞星**：第一次吞噬恒星时，其他玩家按情报收到三种通报之一（6180/6181/6182）；若毁灭的星系有圣地，圣地守护者震怒（planet_destruction.610，可能引发堕落帝国苏醒）。  
+  **Star-eating:** the first time a star is devoured, other players receive one of three notices, according to their intelligence (6180/6181/6182); if the destroyed system holds a holy site, its guardians are enraged (planet_destruction.610), which may wake a Fallen Empire.
+4. **引擎建造**（每阶段基础3600天）：第一阶段完工（6005，灵能/同类玩家收到“灵能冲击”）→ 第二阶段（6006，全银河警报；180–660天后虚境生物出现 6151）→ 第三阶段（6007；180–660天后第二波 6161；60–1320天后灵能脉冲 6171）→ 最终完工。  
+  **Engine construction** (each stage has a base of 3600 days): stage 1 completes (6005; psionic and similar players receive a psionic shockwave notice) → stage 2 (6006; a galaxy-wide alarm; 180–660 days later Shroud entities appear, 6151) → stage 3 (6007; 180–660 days later a second wave, 6161; 60–1320 days later a psionic pulse, 6171) → final completion.
+5. **结局**：“始与终”（6050）获胜；1天后其他玩家收到“末日”（6051），所有星系被摧毁。若引擎被毁或星系被占领，建造者/摧毁者/其他玩家分别收到 6101/6102/6103；他国夺取引擎时（6200）可选择摧毁，或在自己也是第五级天灾且失去引擎时接手。  
+  **Ending:** winning through "A Beginning and an End" (6050); one day later other players receive the doomsday notice (6051) and all systems are destroyed. If the Engine is destroyed or its system occupied, the builders, the destroyers and the other players receive 6101, 6102 and 6103 respectively; when another empire captures the Engine (6200) it may destroy it, or take it over if it is itself a level 5 crisis that has lost its engine.
 
 ## 分支与结局 Branches and outcomes
 
-- 胜利：6050。挫败：6101（引擎成为废墟，可再升级重建）。
-- 互斥：各级项目按帝国类型；宣告者为共同体或帝国；首颗恒星通报三选一；引擎被毁的三种视角。
+- 胜利：6050。挫败：6101（引擎成为废墟，可再升级重建）。  
+  Victory: 6050. Setback: 6101 (the Engine becomes ruins and can be rebuilt by upgrading again).
+- 互斥：各级项目按帝国类型；宣告者为共同体或帝国；首颗恒星通报三选一；引擎被毁的三种视角。  
+  Mutually exclusive: the projects of each level depend on empire type; the declarer is the Community or the Imperium; the first-star notice is one of three; three viewpoints on the Engine being destroyed.
 
 ## 条件与文明差异 Conditions and variants
 
-- 几乎所有正文按灵能、机械（含虚境铸就起源）、蜂巢与一般帝国区分；游牧帝国在第五级与引擎地点上另有文本与条件。
-- “宣告危机”也可被投票用于任何嗜杀帝国，巨兽之怒第五级同样强制通过（见巨兽之怒档案）。
+- 几乎所有正文按灵能、机械（含虚境铸就起源）、蜂巢与一般帝国区分；游牧帝国在第五级与引擎地点上另有文本与条件。  
+  Almost all text is split by psionic, mechanical (including the Shroud-forged origin), hive and general empires; nomad empires have separate text and conditions at level 5 and for the Engine's location.
+- “宣告危机”也可被投票用于任何嗜杀帝国，巨兽之怒第五级同样强制通过（见巨兽之怒档案）。  
+  The crisis declaration can also be voted for any genocidal empire, and the Titan's Wrath likewise forces it through at level 5 (see the Titan's Wrath archive).
 
 ## 审阅记录 Review notes
 

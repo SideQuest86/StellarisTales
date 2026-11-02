@@ -6,6 +6,8 @@
 
 破碎枷锁起源的考古事件为首都未联络的 MSI 国家创建兴趣点并带上此链（origin_events_broken_shackles.txt:1863），在 :1981 结束。故事本体见 origin_broken_shackles。
 
+The Broken Shackles origin's archaeology events create an interest point for the uncontacted MSI nation of the capital and attach this chain (origin_events_broken_shackles.txt:1863), ending at :1981. The story itself is origin_broken_shackles.
+
 ## 剧情脉络 Story outline
 
 概览页没有选项，只描述任务记录。 The card has no options; it only describes the quest-log entry.

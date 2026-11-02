@@ -21,11 +21,11 @@ At the second (weight 3) or third (weight 4) anniversary the pool can pick *Impo
 
 | 结局 Ending | 说明 Note |
 | --- | --- |
-| 过分拥护者（106） | 停止实验，失去矿藏，得少量合金 / halted |
-| 离经叛道的炼金术士（107） | 格式塔清除无人机 / drone purged |
-| 蓝荷崩溃（111） | 项目超时：废墟矿藏、人口死亡 / project timed out |
-| 广谱炼金术（115） | 升级成功；若 50% 隐患未触发则就此结束 / upgraded |
-| 蓝荷自噬（120） | 升级后的 50% 灾难 / later catastrophe |
+| 过分拥护者 Overly-Keen Proponents（106） | 停止实验，失去矿藏，得少量合金 / halted |
+| 离经叛道的炼金术士 Breakaway Alchemist（107） | 格式塔清除无人机 / drone purged |
+| 蓝荷崩溃 Lotus Collapse（111） | 项目超时：废墟矿藏、人口死亡 / project timed out |
+| 广谱炼金术 Full Spectrum Alchemy（115） | 升级成功；若 50% 隐患未触发则就此结束 / upgraded |
+| 蓝荷自噬 Lotus Eats Itself（120） | 升级后的 50% 灾难 / later catastrophe |
 
 ## 条件与文明差异 Conditions and variants
 

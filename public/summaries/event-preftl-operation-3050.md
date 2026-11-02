@@ -2,7 +2,7 @@
 
 ## 如何开始 How it starts
 
-随机插曲池（`espionage_event_effects.txt:2908–3260`）：按‘我方普通/格式塔 × 目标普通/蜂巢’分四个池，池内各项权重 1：普通→普通、格式塔→普通。出现的概率：章节检定失败时 10/400（无外貌改造科技 ×1.5），同一行动 120 天一次。本事件的限制：不用于“提高觉醒度”行动。 / Fired from the roll-failure interlude pool (普通→普通、格式塔→普通): 10-in-400 chance per failed chapter roll, once per 120 days per operation. Restrictions: Never for the increase-awareness operation.
+随机插曲池（`espionage_event_effects.txt:2908–3260`）：按‘我方普通/格式塔 × 目标普通/蜂巢’分四个池，池内各项权重 1：普通→普通、格式塔→普通。出现的概率：章节检定失败时 10/400（无外貌改造科技 ×1.5），同一行动 120 天一次。本事件的限制：不用于“提高觉醒度”行动。 / Fired from the roll-failure interlude pool (regular → regular, gestalt → regular): 10-in-400 chance per failed chapter roll, once per 120 days per operation. Restrictions: Never for the increase-awareness operation.
 
 ## 剧情脉络 Story outline
 

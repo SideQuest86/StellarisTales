@@ -3,7 +3,7 @@
 
 ## 如何开始 How it starts
 
-随机插曲池（`espionage_event_effects.txt:2908–3260`）：按‘我方普通/格式塔 × 目标普通/蜂巢’分四个池，池内各项权重 1：普通→普通 regular → regular。出现的概率：章节检定失败时 10/400（无外貌改造科技 ×1.5），同一行动 120 天一次。本事件的限制：仅在章节≤2且行动类型不是渗透政府/提高觉醒度/散布虚假信息时；目标已有 awareness_risk 标志时权重 ×2；刚触发过则 ×0.1；破碎枷锁起源观察自己的原文明时不出现。 / Fired from the roll-failure interlude pool (普通→普通 regular → regular): 10-in-400 chance per failed chapter roll, once per 120 days per operation. Restrictions: Only in chapter ≤2 and not for infiltrate-government, increase-awareness or spread-disinformation; ×2 if the target carries the awareness-risk flag; ×0.1 if fired recently; never against the Broken Shackles origin’s home species.
+随机插曲池（`espionage_event_effects.txt:2908–3260`）：按‘我方普通/格式塔 × 目标普通/蜂巢’分四个池，池内各项权重 1：普通→普通。出现的概率：章节检定失败时 10/400（无外貌改造科技 ×1.5），同一行动 120 天一次。本事件的限制：仅在章节≤2且行动类型不是渗透政府/提高觉醒度/散布虚假信息时；目标已有 awareness_risk 标志时权重 ×2；刚触发过则 ×0.1；破碎枷锁起源观察自己的原文明时不出现。 / Fired from the roll-failure interlude pool (regular → regular): 10-in-400 chance per failed chapter roll, once per 120 days per operation. Restrictions: Only in chapter ≤2 and not for infiltrate-government, increase-awareness or spread-disinformation; ×2 if the target carries the awareness-risk flag; ×0.1 if fired recently; never against the Broken Shackles origin’s home species.
 
 ## 剧情脉络 Story outline
 

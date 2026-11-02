@@ -14,10 +14,14 @@
 5. 2152“星光见证”：开头→2153（失败）、中段→2154（成功）、结尾→2155（失败）。
 
 ## 分支与结局 Branches and outcomes
-- 成功 Solved：2151 / 2154 / 2156，获得谜码编码/解码科技进度30%及研究加成，堡垒移除并启动庆典情境（见该故事）。
-- 武力 By force：2157，恒星系宜居行星化为废土，其余岩质行星熔融，系内舰队被毁，无研究奖励。
-- 失败 Failure：2114、2132、2153、2155、2160，堡垒修复重启，事件链结束；项目 1A/5A 超时（1080天）也进入 2160。
-- 2101 选项 c（需 can_harvest_parts）直接获得 tech_leviathan_techgenesis 研究选项。
+- 成功 Solved：2151 / 2154 / 2156，获得谜码编码/解码科技进度30%及研究加成，堡垒移除并启动庆典情境（见该故事）。  
+  Solved: 2151 / 2154 / 2156 grant 30% progress on the cipher encoding/decoding tech and a research bonus; the fortress is removed and the celebration situation starts (see that story).
+- 武力 By force：2157，恒星系宜居行星化为废土，其余岩质行星熔融，系内舰队被毁，无研究奖励。  
+  By force: 2157; the system's habitable planets become wastelands, the other rocky planets are melted, fleets in the system are destroyed, and there is no research reward.
+- 失败 Failure：2114、2132、2153、2155、2160，堡垒修复重启，事件链结束；项目 1A/5A 超时（1080天）也进入 2160。  
+  Failure: 2114, 2132, 2153, 2155, 2160; the fortress is repaired and restarts, and the event chain ends. Projects 1A/5A also go to 2160 when they time out (1080 days).
+- 2101 选项 c（需 can_harvest_parts）直接获得 tech_leviathan_techgenesis 研究选项。  
+  Option c of 2101 (needs can_harvest_parts) directly grants the tech_leviathan_techgenesis research option.
 
 ## 条件与文明差异 Conditions and variants
 格式塔意识：2099 的选项 c.gesta 直接给予科研加成与科技进度、清除堡垒并启动庆典，无需项目。 Gestalt Consciousness gets an immediate reward at 2099 without projects.

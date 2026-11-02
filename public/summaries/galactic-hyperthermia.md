@@ -9,25 +9,38 @@
 
 ## 剧情脉络 Story outline
 
-1. **一级**：1000 启用项目「新能量源」(`INF_CRISIS_ENTROPY`)，完成后设置 Lv1 标记 → 危机一级解锁 → `infernals.1005`（结晶成果）；非炎魔（非 infernal）帝国 90 天后得到 1006，并启用项目「热耐性进化」(`INF_THERMOPHILE_ADAPTATION`，完成后加修正）。
-2. **二级**：建成星系熔炉第 1 阶段（标记 Lv2）→ `infernals.1010`（启动导管群）。
-3. **三级**：建成第 2 阶段（Lv3）→ `infernals.1015`（温度将如何提升？）。**二选一**：`策划火风暴` 项目 → 1020，或 `抑制野心`（`意外关联`项目）→ 1021（Hyperthermia_Peaceful，熔炉只能走和平阶段，不会解锁下一级）。
-4. **四级**：「策划火风暴」后建成第 3 阶段（Lv4）→ `infernals.1025`（环绕核心）。
-5. **五级**：建成第 4 阶段（Lv5）→ `infernals.1030`（点火竞赛）：设置 `Hyperthermia_ongoing`，开通通往 6 个核心星系的虫洞，开始「动员」倒计时（`situation_galactic_hyperthermia_timer`）。
-6. **倒计时**：进度到阶段 2 时 `infernals.1035` 开启核心航路，并对其他国家发送 `infernals.1040`；若干古老帝国被拉入（难度 3/4/5/6 分别为 1/2/4/6 次抽取，`infernals_crisis_events.txt:410-434`）。倒计时结束，隐藏事件 `infernals.1041` 让联军宣战，启动「星系火风暴」状况，并给危机国家发 1042、给其他国家发 1043。
-7. **火风暴**：阶段 3 时 1045「与时间赛跑」。进度由危机国家占据的核心星系数量决定（少于 3 个每月 -3，多于 3 个每月 +3）。
+1. **一级**：1000 启用项目「新能量源」(`INF_CRISIS_ENTROPY`)，完成后设置 Lv1 标记 → 危机一级解锁 → `infernals.1005`（结晶成果）；非炎魔（非 infernal）帝国 90 天后得到 1006，并启用项目「热耐性进化」(`INF_THERMOPHILE_ADAPTATION`，完成后加修正）。  
+  **Level 1**: 1000 enables the project New Power Source (`INF_CRISIS_ENTROPY`); when it completes it sets the Lv1 flag → crisis level 1 unlocks → `infernals.1005` (crystallised results); non-infernal empires get 1006 90 days later and enable the project Thermophilic Evolution (`INF_THERMOPHILE_ADAPTATION`, which adds a modifier on completion).
+2. **二级**：建成星系熔炉第 1 阶段（标记 Lv2）→ `infernals.1010`（启动导管群）。  
+  **Level 2**: stage 1 of the galactic crucible is built (flag Lv2) → `infernals.1010` (the conduit array starts up).
+3. **三级**：建成第 2 阶段（Lv3）→ `infernals.1015`（温度将如何提升？）。**二选一**：`策划火风暴` 项目 → 1020，或 `抑制野心`（`意外关联`项目）→ 1021（Hyperthermia_Peaceful，熔炉只能走和平阶段，不会解锁下一级）。  
+  **Level 3**: stage 2 is built (Lv3) → `infernals.1015` (how far will the temperature rise?). **Choose one**: the project Designed Firestorm → 1020, or restrain ambition (the project Unforeseen Correlation) → 1021 (Hyperthermia_Peaceful; the crucible can only follow the peaceful stages and does not unlock the next level).
+4. **四级**：「策划火风暴」后建成第 3 阶段（Lv4）→ `infernals.1025`（环绕核心）。  
+  **Level 4**: after Designed Firestorm, stage 3 of the crucible is built (Lv4) → `infernals.1025` (circling the core).
+5. **五级**：建成第 4 阶段（Lv5）→ `infernals.1030`（点火竞赛）：设置 `Hyperthermia_ongoing`，开通通往 6 个核心星系的虫洞，开始「动员」倒计时（`situation_galactic_hyperthermia_timer`）。  
+  **Level 5**: stage 4 is built (Lv5) → `infernals.1030` (the ignition race): sets `Hyperthermia_ongoing`, opens wormholes to 6 core systems, and starts the mobilisation countdown (`situation_galactic_hyperthermia_timer`).
+6. **倒计时**：进度到阶段 2 时 `infernals.1035` 开启核心航路，并对其他国家发送 `infernals.1040`；若干古老帝国被拉入（难度 3/4/5/6 分别为 1/2/4/6 次抽取，`infernals_crisis_events.txt:410-434`）。倒计时结束，隐藏事件 `infernals.1041` 让联军宣战，启动「星系火风暴」状况，并给危机国家发 1042、给其他国家发 1043。  
+  **Countdown**: when progress reaches stage 2, `infernals.1035` opens the core routes and sends `infernals.1040` to other empires; some ancient empires are drawn in (difficulty 3/4/5/6 gives 1/2/4/6 draws, `infernals_crisis_events.txt:410-434`). When the countdown ends, hidden event `infernals.1041` makes the coalition declare war, starts the situation Galactic Firestorm, and sends 1042 to the crisis empire and 1043 to others.
+7. **火风暴**：阶段 3 时 1045「与时间赛跑」。进度由危机国家占据的核心星系数量决定（少于 3 个每月 -3，多于 3 个每月 +3）。  
+  **Firestorm**: at stage 3, 1045 Race Against Time. Progress depends on the number of core systems held by the crisis empire (fewer than 3: -3 per month; more than 3: +3 per month).
 
 ## 分支与结局 Branches and outcomes
 
-- **发动者获胜** `infernals.1055`：进度满、且是危机国家：胜利（`win = yes`），设置 `Hyperthermia_happened`，银河中的恒星被改造。
-- **他人见证** `infernals.1056`：持有该天赋的另一国在进度满时看到「银河重生」。（两者互斥。）
-- **熔炉被夺**：战争结束时夺得熔炉 → 隐藏 1051 → `infernals.1052`（可选「摧毁」得资源，或「利用」得到和平熔炉）；战争期间夺得 → 隐藏 10530 → `infernals.1053`。夺回自己的熔炉由隐藏的 1054 处理；危机国家被灭由隐藏的 1050 终止状况。
-- 1055 的世界改造会顺带触发“机械世界毁灭”类通知（见天灾「肃正协议」），这是副作用，不属于本故事。
+- **发动者获胜** `infernals.1055`：进度满、且是危机国家：胜利（`win = yes`），设置 `Hyperthermia_happened`，银河中的恒星被改造。  
+  **Crisis empire wins** `infernals.1055`: progress is full and this is the crisis empire: victory (`win = yes`), sets `Hyperthermia_happened`, and the stars of the galaxy are remade.
+- **他人见证** `infernals.1056`：持有该天赋的另一国在进度满时看到「银河重生」。（两者互斥。）  
+  **Others witness** `infernals.1056`: another empire holding this perk sees "Galactic Rebirth" when progress is full. (The two are mutually exclusive.)
+- **熔炉被夺**：战争结束时夺得熔炉 → 隐藏 1051 → `infernals.1052`（可选「摧毁」得资源，或「利用」得到和平熔炉）；战争期间夺得 → 隐藏 10530 → `infernals.1053`。夺回自己的熔炉由隐藏的 1054 处理；危机国家被灭由隐藏的 1050 终止状况。  
+  **Crucible seized**: if taken when the war ends → hidden 1051 → `infernals.1052` (optionally destroy it for resources, or use it to get a peaceful crucible); if taken during the war → hidden 10530 → `infernals.1053`. Reclaiming your own crucible is handled by hidden 1054; if the crisis empire is wiped out, hidden 1050 ends the situation.
+- 1055 的世界改造会顺带触发“机械世界毁灭”类通知（见天灾「肃正协议」），这是副作用，不属于本故事。  
+  The world remaking of 1055 also triggers machine-world destruction notices (see the crisis The Contingency); this is a side effect and does not belong to this story.
 
 ## 条件与文明差异 Conditions and variants
 
-- 选项按是否为蜂群/机械（gestalt）显示 a/b 版本；`is_infernal_empire` 影响是否需要 1006 的适应项目；1055 有炎魔狂信、其他炎魔、通用灭绝者等额外选项。
-- 战争领导者的选择顺序：银河皇帝/监管者（带 anti_hyperthermia_coalition 标记）→ 古老帝国 → 最强联盟国家 → 随机（`infernals_crisis_events.txt:605-698`）。
+- 选项按是否为蜂群/机械（gestalt）显示 a/b 版本；`is_infernal_empire` 影响是否需要 1006 的适应项目；1055 有炎魔狂信、其他炎魔、通用灭绝者等额外选项。  
+  Options show a or b versions depending on whether the empire is gestalt (hive or machine); `is_infernal_empire` determines whether the 1006 adaptation project is needed; 1055 has extra options for infernal zealots, other infernals and generic exterminators.
+- 战争领导者的选择顺序：银河皇帝/监管者（带 anti_hyperthermia_coalition 标记）→ 古老帝国 → 最强联盟国家 → 随机（`infernals_crisis_events.txt:605-698`）。  
+  The order for choosing the war leader: galactic emperor or overseer (with the anti_hyperthermia_coalition flag) → ancient empire → the strongest coalition member → random (`infernals_crisis_events.txt:605-698`).
 
 ## 审阅记录 Review notes
 

@@ -1,3 +1,11 @@
+v4.17.40 — 2026-11-01
+
+Every reading guide now reads whole in both languages. A Chinese sentence with English names in it was taken for English ("Hired Guns
+报酬更高。"), so it vanished from the Chinese page and stood as Chinese on the English one, and lines written in both languages were
+often not told apart; both are fixed. The 12 guides written only in Chinese and the 64 with a section missing English now have
+that English, in the game's own names where it names them. Tables in guides show as tables, not raw "| --- |" lines, and bilingual
+lines no longer start with a small indent.
+
 v4.17.39 — 2026-11-01
 
 A picker's options show where two tellings part when they open alike, instead of the same first words twice. "The the ruler" reads

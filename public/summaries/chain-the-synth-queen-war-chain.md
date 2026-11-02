@@ -6,6 +6,8 @@
 
 合成女王宣战后的追踪链，带计数器（基地、舰队、击杀等）；machine_age_crisis_events.txt:12331-12437 增加计数，结束于 02_machine_age_effects.txt:3557。故事本体见 cetana。
 
+The pursuit chain after the Synth Queen declares war, with counters (bases, fleets, kills, etc.); machine_age_crisis_events.txt:12331-12437 adds the counts and it ends at 02_machine_age_effects.txt:3557. The story itself is in cetana.
+
 ## 剧情脉络 Story outline
 
 概览页没有选项，只描述任务记录。 The card has no options; it only describes the quest-log entry.

@@ -9,21 +9,30 @@
 
 ## 剧情脉络 Story outline
 
-- 110 的选项→ `graygoo.115` 截获的信号；其他国家按是否持有 L 星团线索得到 111 或 112（互斥），再接 116。
-- 之后没有固定顺序，取决于玩家行为：
-  - **通讯**（可重复，非剧情步骤）：`graygoo.120` 开场；121 的问答树（122-126）；`graygoo.119` 再次询问；追问纳米机器到底（126）会使德萨努转为敌对。
-  - **越界**：首次进入工厂星系 `graygoo.160`，要求 60 天内离开 → `graygoo.161`；再次进入 `graygoo.162`。
-  - **冲突**：与其舰船交战 `graygoo.155`；地面攻陷其殖民地 `graygoo.150`（星球化为灰蛊）→ 3 天后 `graygoo.156`。
-  - 敌对后的通讯改为 `graygoo.130`；若持有「德萨努赠礼」修正的国家与其敌对，每月检查后 `graygoo.184` 终止赠礼。
+- 110 的选项→ `graygoo.115` 截获的信号；其他国家按是否持有 L 星团线索得到 111 或 112（互斥），再接 116。  
+  Option of 110 → the signal intercepted by `graygoo.115`; other empires get 111 or 112 depending on whether they hold an L-Cluster clue (mutually exclusive), then 116.
+- 之后没有固定顺序，取决于玩家行为：  
+  Afterwards there is no fixed order; it depends on the player's actions:
+  - **通讯**（可重复，非剧情步骤）：`graygoo.120` 开场；121 的问答树（122-126）；`graygoo.119` 再次询问；追问纳米机器到底（126）会使德萨努转为敌对。  
+    **Communication** (repeatable, not a story step): `graygoo.120` opens; the question-and-answer tree at 121 (122–126); `graygoo.119` asks again; pressing on what the nanomachines really are (126) turns the Dessanu hostile.
+  - **越界**：首次进入工厂星系 `graygoo.160`，要求 60 天内离开 → `graygoo.161`；再次进入 `graygoo.162`。  
+    **Trespassing**: first entry into the factory system `graygoo.160` requires leaving within 60 days → `graygoo.161`; entering again → `graygoo.162`.
+  - **冲突**：与其舰船交战 `graygoo.155`；地面攻陷其殖民地 `graygoo.150`（星球化为灰蛊）→ 3 天后 `graygoo.156`。  
+    **Conflict**: fighting its ships `graygoo.155`; ground assault on one of its colonies `graygoo.150` (the planet turns to Gray Goo), then `graygoo.156` three days later.
+  - 敌对后的通讯改为 `graygoo.130`；若持有「德萨努赠礼」修正的国家与其敌对，每月检查后 `graygoo.184` 终止赠礼。  
+    Once hostile, communication becomes `graygoo.130`; if a country holding the 'Dessanu Gift' modifier is hostile to it, a monthly check ends the gift with `graygoo.184`.
 
 ## 分支与结局 Branches and outcomes
 
-- **结局**：摧毁工厂（隐藏的 `graygoo.180`）→ 击破者 `graygoo.181`，其他玩家 `graygoo.182`，观察者 observer.67；协和国所有人与舰队化为灰尘并销毁国家，盖亚星球变为灰蛊星球。
-- 敌对的来源（160/161/162/155/150/126）互为并列，任一都会设置 `gate_builders_hostility`。
+- **结局**：摧毁工厂（隐藏的 `graygoo.180`）→ 击破者 `graygoo.181`，其他玩家 `graygoo.182`，观察者 observer.67；协和国所有人与舰队化为灰尘并销毁国家，盖亚星球变为灰蛊星球。  
+  **Ending**: destroying the factory (hidden `graygoo.180`) → the destroyer gets `graygoo.181`, other players `graygoo.182`, and observer.67; everyone in the Consonance and its fleets turn to dust, the empire is destroyed, and the Gaia planet becomes a Gray Goo planet.
+- 敌对的来源（160/161/162/155/150/126）互为并列，任一都会设置 `gate_builders_hostility`。  
+  The hostility sources (160/161/162/155/150/126) are parallel; any one of them sets `gate_builders_hostility`.
 
 ## 条件与文明差异 Conditions and variants
 
-- 通讯事件要求 From 为 `gate_builders` 国家，且未处于对话中；`graygoo.120` 与 `130` 按敌对标记二选一。
+- 通讯事件要求 From 为 `gate_builders` 国家，且未处于对话中；`graygoo.120` 与 `130` 按敌对标记二选一。  
+  Communication events require From to be a `gate_builders` country and not in an ongoing conversation; `graygoo.120` and `130` are chosen by the hostility flag, one or the other.
 
 ## 审阅记录 Review notes
 

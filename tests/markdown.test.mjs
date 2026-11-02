@@ -33,10 +33,42 @@ test("XSS", () => {
   assert.equal(safeUrl("JaVaScRiPt:alert(1)"), null);
   assert.equal(safeUrl("vbscript:x"), null);
 });
+test("tables render as tables, each cell labelled by language", () => {
+  const html = renderMarkdown("文字。\n| 结局 Ending | 数 Count |\n| --- | --- |\n| 盛大的成功（10081）。 A grand success. | 60 |\n| 失败。 | 10 |\n\n之后。");
+  assert.match(html, /<div class="md-table"><table>/);
+  assert.match(html, /<th scope="col"><span lang="zh-CN" data-lang="zh">结局<\/span> <span lang="en" data-lang="en">Ending<\/span><\/th>/);
+  assert.match(html, /<td><span lang="zh-CN" data-lang="zh">盛大的成功（10081）。<\/span> <span lang="en" data-lang="en">A grand success\.<\/span><\/td><td>60<\/td>/);
+  assert.match(html, /<td><span lang="zh-CN" data-lang="zh">失败。<\/span><\/td>/);
+  assert.doesNotMatch(html, /\| ---|\|\s*结局/);
+  assert.match(html, /<p class="md-block"[^>]*>文字。<\/p>/);
+  assert.match(html, /<p class="md-block"[^>]*>之后。<\/p>/);
+  // A cell's short halves: a name pair with its number on both sides, and anything after a slash.
+  const cells = renderMarkdown("| 结果 Result | 说明 Note |\n| --- | --- |\n| 轰炸 Bombardment（6） | 停止实验，得少量合金 / halted |\n| 正常 normal | 60 |");
+  assert.match(cells, /<td><span lang="zh-CN" data-lang="zh">轰炸（6）<\/span> <span lang="en" data-lang="en">Bombardment \(6\)<\/span><\/td>/);
+  assert.match(cells, /<span lang="zh-CN" data-lang="zh">停止实验，得少量合金<\/span> <span lang="en" data-lang="en">halted<\/span>/);
+  assert.match(cells, /<span lang="zh-CN" data-lang="zh">正常<\/span> <span lang="en" data-lang="en">normal<\/span>/);
+  // Pipes without a rule row stay text.
+  assert.match(renderMarkdown("| 这不是表格 |"), /<p class="md-block"[^>]*>\| 这不是表格 \|<\/p>/);
+});
+
 test("language detection", () => {
   assert.equal(detectLang("这是一个段落"), "zh");
   assert.equal(detectLang("This is a paragraph about distar.1030"), "en");
   assert.equal(detectLang("12345"), "");
+  // A sentence ending in a Chinese stop is Chinese, however long the English names in it.
+  assert.equal(detectLang("Hired Guns 报酬更高。"), "zh");
+  assert.equal(detectLang("Cosmic Storms DLC；每国一次。"), "zh");
+  // … but a stop alone, with no Chinese words, is not.
+  assert.equal(detectLang("Cosmic Storms DLC。"), "en");
+  // A bilingual line splits at a stop with no space, with a long name in the Chinese half, and pair by pair.
+  assert.deepEqual(splitMixed("见上。See above."), ["见上。", "See above."]);
+  assert.deepEqual(splitMixed("4045“深处的回声”：船员疲惫。选项取决于特质：   4045 Echoes from the Deep: the crew is exhausted."), ["4045“深处的回声”：船员疲惫。选项取决于特质：", "4045 Echoes from the Deep: the crew is exhausted."]);
+  assert.deepEqual(splitMixed("需要 Federations 或 Ancient Relics。 Needs Federations or Ancient Relics."), ["需要 Federations 或 Ancient Relics。", "Needs Federations or Ancient Relics."]);
+  assert.deepEqual(splitMixed("结局二选一：3230 / 3235（3227 的选项）。 Two endings: 3230 / 3235."), ["结局二选一：3230 / 3235（3227 的选项）。", "Two endings: 3230 / 3235."]);
+  assert.deepEqual(splitMixed("需 First Contact DLC，每个帝国一次。 Needs the First Contact DLC, once per country."), ["需 First Contact DLC，每个帝国一次。", "Needs the First Contact DLC, once per country."]);
+  assert.deepEqual(splitMixed("无额外条件，只受限制。 / Only the flag applies. 每个站点一次（flag fc_event_5075 或同类）。/ Once per site."), ["无额外条件，只受限制。每个站点一次（flag fc_event_5075 或同类）。", "Only the flag applies. Once per site."]);
+  assert.deepEqual(splitMixed("远古实验室 / Ancient Biological Lab：研发制剂（研究奖励） / ancient lab: research on biological agents"), ["远古实验室 / Ancient Biological Lab：研发制剂（研究奖励）", "ancient lab: research on biological agents"]);
+  assert.deepEqual(splitMixed("观察者 observer.8–10。 One notice per viewpoint for all empires."), ["观察者 observer.8–10。", "One notice per viewpoint for all empires."]);
   assert.ok(hasCJK("a中"));
   const h = renderMarkdown("中文段落。\n\nEnglish twin.");
   assert.match(h, /data-lang="zh"/);

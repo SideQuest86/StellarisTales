@@ -18,11 +18,13 @@ present in almost every pool.
 
 ## 分支与结局 Branches and outcomes
 
-- 5056 与 5057 互斥。
+- 5056 与 5057 互斥。  
+  5056 and 5057 are mutually exclusive.
 
 ## 条件与文明差异 Conditions and variants
 
-- 目标可能是国家或恒星基地（文本两种）。
+- 目标可能是国家或恒星基地（文本两种）。  
+  The target may be an empire or a starbase (two text versions).
 
 ## 审阅记录 Review notes
 

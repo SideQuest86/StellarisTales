@@ -9,23 +9,34 @@
 
 ## 剧情脉络 Story outline（天数自幽灵信号起 / days after the Ghost Signal）
 
-1. 第100–300天：拥有合成人科技与机械人口的帝国收到合成人异常（2011/2012 随机其一）；机械智能收到单元腐化（2502/2503 随机其一）。
-2. 第400–600天：合成人失踪（2015/2016 随机其一，条件同上）。
-3. 第700–900天：合成人大规模消失（2020）。第1000–1200天：大召唤（2021）。第1400天：抵达（2022）→ 通讯（2023）。抵达时机械/合成帝国开启“屏蔽幽灵信号”项目（完成→2510）；装有智慧作战电脑的舰船10天后故障（2099）。此后可联络肃正协议（2300，可重复），每夺回一颗星球有通报（2042，可重复）。
-4. 第1450–1460天起：四座肃正中心依次启动（2030，+50、+100、+150天：2031/2032/2033）；首座启动30–60天后机械堕落帝国苏醒（若存在）；第四座后监管人/帝皇宣告。
-5. 第1800–1900天：按帝国类型的渗透警告（一般 2085 / 蜂巢 2086 / 灵能 2087 / 机械 2313）。一般帝国120天后发现渗透者（2090），之后每年有机会发生一件合成人恐怖事件（直到完成检测项目 2202→2203）；机械帝国120天后防线被突破（2314），之后每年有机会发生一件破坏事件。
-6. 赛博勒克斯支线：肃正协议占银河15%或超过90个星系后，赛博勒克斯重现（2401→2402），可联络（2403）、可能赠舰（2473），也可能被消灭（2405）。
-7. 摧毁前三座中心各有通报（2037）；第四座被毁后“肃正之心”现身（2036），5天后肃正协议传讯（2039）。
+1. 第100–300天：拥有合成人科技与机械人口的帝国收到合成人异常（2011/2012 随机其一）；机械智能收到单元腐化（2502/2503 随机其一）。  
+  Days 100–300: empires with synthetic technology and a machine population receive a synth anomaly (2011/2012, one at random); machine intelligences receive unit corruption (2502/2503, one at random).
+2. 第400–600天：合成人失踪（2015/2016 随机其一，条件同上）。  
+  Days 400–600: synths go missing (2015/2016, one at random, same conditions as above).
+3. 第700–900天：合成人大规模消失（2020）。第1000–1200天：大召唤（2021）。第1400天：抵达（2022）→ 通讯（2023）。抵达时机械/合成帝国开启“屏蔽幽灵信号”项目（完成→2510）；装有智慧作战电脑的舰船10天后故障（2099）。此后可联络肃正协议（2300，可重复），每夺回一颗星球有通报（2042，可重复）。  
+  Days 700–900: synths disappear on a large scale (2020). Days 1000–1200: the Summons (2021). Day 1400: arrival (2022), then communications (2023). On arrival, machine and synth empires start the project Blocking the Ghost Signal (completion → 2510); ships carrying smart combat computers break down 10 days later (2099). After that the Contingency can be contacted (2300, repeatable), and each planet taken back brings a notice (2042, repeatable).
+4. 第1450–1460天起：四座肃正中心依次启动（2030，+50、+100、+150天：2031/2032/2033）；首座启动30–60天后机械堕落帝国苏醒（若存在）；第四座后监管人/帝皇宣告。  
+  From days 1450–1460: four Contingency centres activate in turn (2030, then +50, +100 and +150 days: 2031/2032/2033); 30–60 days after the first activates, the fallen machine empire wakes (if present); after the fourth, the Overseer or the Emperor declares it.
+5. 第1800–1900天：按帝国类型的渗透警告（一般 2085 / 蜂巢 2086 / 灵能 2087 / 机械 2313）。一般帝国120天后发现渗透者（2090），之后每年有机会发生一件合成人恐怖事件（直到完成检测项目 2202→2203）；机械帝国120天后防线被突破（2314），之后每年有机会发生一件破坏事件。  
+  Days 1800–1900: infiltration warnings by empire type (standard 2085 / hive 2086 / psionic 2087 / machine 2313). Standard empires find an infiltrator 120 days later (2090), and after that each year there is a chance of a synth terror event, until the detection project is completed (2202 → 2203). Machine empires have their defences breached 120 days later (2314), and after that each year there is a chance of a sabotage event.
+6. 赛博勒克斯支线：肃正协议占银河15%或超过90个星系后，赛博勒克斯重现（2401→2402），可联络（2403）、可能赠舰（2473），也可能被消灭（2405）。  
+  Cyberex side branch: once the Contingency holds 15% of the galaxy or more than 90 systems, Cyberex reappears (2401 → 2402); it can be contacted (2403), may gift ships (2473), or may be destroyed (2405).
+7. 摧毁前三座中心各有通报（2037）；第四座被毁后“肃正之心”现身（2036），5天后肃正协议传讯（2039）。  
+  Each of the first three centres destroyed brings a notice (2037); after the fourth is destroyed, The Heart of the Contingency appears (2036), and 5 days later the Contingency sends a message (2039).
 
 ## 分支与结局 Branches and outcomes
 
-- **结局**：摧毁 CX-9881 的最终世界 →“肃正协议的终结”（2038）。余波：人类摧毁者10–20天后得到主机核心（2480 摧毁 / 2481 护盾封存，互斥）；机械堕落帝国关闭（除故障守护者）；受赠舰队被召回、赛博勒克斯离开银河。脚本中没有肃正协议获胜的结局事件。
-- 互斥组：2011/2012、2015/2016、2502/2503、渗透警告按帝国类型、恐怖事件与破坏事件每次随机其一、2095/2096、2308/2309、2480/2481。
+- **结局**：摧毁 CX-9881 的最终世界 →“肃正协议的终结”（2038）。余波：人类摧毁者10–20天后得到主机核心（2480 摧毁 / 2481 护盾封存，互斥）；机械堕落帝国关闭（除故障守护者）；受赠舰队被召回、赛博勒克斯离开银河。脚本中没有肃正协议获胜的结局事件。  
+  **Ending**: destroying the final world of CX-9881 → the end of the Contingency (2038). Aftermath: 10–20 days later the human destroyer receives the host core (2480 destroy / 2481 shield-seal, mutually exclusive); the fallen machine empire closes (except the malfunctioning guardian); the fleets given are recalled and Cyberex leaves the galaxy. The scripts contain no ending event in which the Contingency wins.
+- 互斥组：2011/2012、2015/2016、2502/2503、渗透警告按帝国类型、恐怖事件与破坏事件每次随机其一、2095/2096、2308/2309、2480/2481。  
+  Mutually exclusive groups: 2011/2012, 2015/2016, 2502/2503, infiltration warnings by empire type, terror and sabotage events (one of each drawn at random), 2095/2096, 2308/2309, 2480/2481.
 
 ## 条件与文明差异 Conditions and variants
 
-- 机械智能、合成飞升与个体机械帝国在多数篇章看到不同正文；“屏蔽幽灵信号”项目若在两座中心被毁前未完成会被中止。
-- 恐惧黑暗起源另有起源事件（外部链接）。
+- 机械智能、合成飞升与个体机械帝国在多数篇章看到不同正文；“屏蔽幽灵信号”项目若在两座中心被毁前未完成会被中止。  
+  Machine intelligences, synthetic ascension and individual machine empires see different text in most chapters; the Blocking the Ghost Signal project is aborted if it is not finished before two of the centres are destroyed.
+- 恐惧黑暗起源另有起源事件（外部链接）。  
+  The dark-fearing origin has its own origin event (external link).
 
 ## 审阅记录 Review notes
 

@@ -14,7 +14,8 @@ Owners of the observation post, the planet and the abductor each get 123 where r
 
 ## 分支与结局 Branches and outcomes
 
-- 无后续。
+- 无后续。  
+  No follow-up.
 
 ## 条件与文明差异 Conditions and variants
 

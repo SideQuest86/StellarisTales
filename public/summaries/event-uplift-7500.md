@@ -9,17 +9,22 @@ Each fires on its own mean time for human owners of colonies with non-sapient po
 
 ## 剧情脉络 Story outline
 
-- 7500 “分叉链”：原住民闯入保安区，损坏通货链路，扣300能量（不足则100）。
-- 7510 “活体实验”：研究者要求放宽限制：a 无视（720天低产）/ b 同意（社会研究加成，720天不满；仅非排外）/ c 不在乎（研究+影响力并转为狂热排外；仅排外）。
-- 7520 “躁动不安”：a 温和驱赶（团结，非排外）/ b 暴力驱赶（排外）/ c 追踪去向 → 7525 “遗失与遗忘”：发现古老种子船残骸。
+- 7500 “分叉链”：原住民闯入保安区，损坏通货链路，扣300能量（不足则100）。  
+  7500, the forked chain: natives break into the security zone and damage the currency link, costing 300 energy (100 if there is not enough).
+- 7510 “活体实验”：研究者要求放宽限制：a 无视（720天低产）/ b 同意（社会研究加成，720天不满；仅非排外）/ c 不在乎（研究+影响力并转为狂热排外；仅排外）。  
+  7510 "In Vivo": the researchers ask to relax restrictions: a ignore it (720 days of low output) / b agree (society research bonus, 720 days of unhappiness; non-xenophobes only) / c don't care (research + influence, turns fanatically xenophobic; xenophobes only).
+- 7520 “躁动不安”：a 温和驱赶（团结，非排外）/ b 暴力驱赶（排外）/ c 追踪去向 → 7525 “遗失与遗忘”：发现古老种子船残骸。  
+  7520, restlessness: a drive them off gently (unity; non-xenophobes) / b drive them off by force (xenophobes) / c track where they went → 7525, lost and forgotten: an ancient seed-ship wreck is found.
 
 ## 分支与结局 Branches and outcomes
 
-- 三件独立；各自的选项由伦理限定。
+- 三件独立；各自的选项由伦理限定。  
+  The three are independent; each one's options are limited by ethics.
 
 ## 条件与文明差异 Conditions and variants
 
-- AI 不触发。
+- AI 不触发。  
+  AI empires do not trigger them.
 
 ## 审阅记录 Review notes
 

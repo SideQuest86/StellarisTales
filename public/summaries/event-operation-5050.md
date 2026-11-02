@@ -18,11 +18,13 @@ targeted sabotage operations.
 
 ## 分支与结局 Branches and outcomes
 
-- c 之后进入侦测链。
+- c 之后进入侦测链。  
+  After c, the detection chain begins.
 
 ## 条件与文明差异 Conditions and variants
 
-- 仅针对恒星基地设施的破坏。
+- 仅针对恒星基地设施的破坏。  
+  Only sabotage against starbase facilities.
 
 ## 审阅记录 Review notes
 

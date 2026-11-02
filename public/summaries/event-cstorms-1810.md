@@ -26,6 +26,8 @@ Cosmic Storms DLC。
 
 Cosmic Storms DLC.
 
+宇宙风暴资料片。
+
 ## 审阅记录 Review notes
 
 - 审阅 Reviewed 2026-10-13

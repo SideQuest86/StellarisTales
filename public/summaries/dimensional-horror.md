@@ -9,11 +9,17 @@ First entry into the Horror's black-hole system spawns it (disabled for 8 days) 
 ## 剧情脉络 Story outline
 击毁梦魇（on_ship_destroyed_victim → 隐藏 3002）：6天后 3003“逐出”，选项启用“研究位面裂隙”项目 DIMENSIONAL_HORROR_PROJECT（140天，物理科研）；若击杀者拥有行星，另开启庆典情境。项目完成 → 3004：每月科研加成，没有跳跃引擎者获得 tech_jump_drive_1 的50%进度。
 
+Destroying the Horror (on_ship_destroyed_victim → hidden 3002): after 6 days 3003 "Banished"; the option enables the "Study Dimensional Rifts" project DIMENSIONAL_HORROR_PROJECT (140 days, physics research); if the killer owns a planet, a celebration situation is also opened. Project completed → 3004: a monthly research bonus; empires without a jump drive get 50% progress on tech_jump_drive_1.
+
 ## 分支与结局 Branches and outcomes
 线性；3004 的两个相同名称选项由是否已有跳跃引擎决定。
 
+Linear; the two identically named options in 3004 are decided by whether the empire already has a jump drive.
+
 ## 条件与文明差异 Conditions and variants
 3004 描述与奖励依是否拥有 tech_jump_drive_1 / tech_psi_jump_drive_1 而异。
+
+The 3004 description and rewards vary depending on whether the empire has tech_jump_drive_1 / tech_psi_jump_drive_1.
 
 ## 审阅记录 Review notes
 

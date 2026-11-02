@@ -6,17 +6,23 @@
 
 on_survey_planet（common/on_actions/00_on_actions.txt:1134）触发 toxoids.499（events/toxoids_events.txt:419-455）；每个国家第一次发现才弹出 toxoids.500，之后只有简讯。
 
+on_survey_planet (common/on_actions/00_on_actions.txt:1134) fires toxoids.499 (events/toxoids_events.txt:419-455); toxoids.500 pops up only the first time each country discovers it, after which only a toast message appears.
+
 ## 剧情脉络 Story outline
 
 toxoids.500：非游牧国家；唯一选项“有趣”——该星球若选“排毒”飞升天赋即可改造；有“排毒”天赋者正文不同；荒野帝国另有选项。
 
+toxoids.500: non-nomadic countries; the only option is "Intriguing" — if the planet picks the Detox ascension perk, it can be terraformed; empires with the Detox perk see different text; wilderness empires have another option.
+
 ## 分支与结局 Branches and outcomes
 
-- 无后续。
+- 无后续。  
+  No follow-ups.
 
 ## 条件与文明差异 Conditions and variants
 
-- 游牧国家不触发。
+- 游牧国家不触发。  
+  Nomadic countries do not trigger it.
 
 ## 审阅记录 Review notes
 

@@ -14,7 +14,8 @@ action.115 enables the market and sets has_market_access; one text for xenophobe
 
 ## 分支与结局 Branches and outcomes
 
-- 无分支。
+- 无分支。  
+  No branches.
 
 ## 条件与文明差异 Conditions and variants
 

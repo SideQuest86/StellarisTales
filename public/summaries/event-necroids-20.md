@@ -6,15 +6,20 @@
 
 ap_mechromancy（00_ascension_perks.txt:2462；需要亡灵者DLC的机械帝国）启用时 on_enabled 触发 necroids.20。
 
+Triggered by on_enabled when ap_mechromancy (00_ascension_perks.txt:2462; mechanical empires that need the Necroids DLC) is enabled, firing necroids.20.
+
 ## 剧情脉络 Story outline
 
 单页：可以复活已死亡的利维坦；单一选项。
+
+Single page: lets you revive a dead leviathan; one option.
 
 ## 分支与结局 Branches and outcomes
 
 ## 条件与文明差异 Conditions and variants
 
-- 仅机械帝国。
+- 仅机械帝国。  
+  Mechanical empires only.
 
 ## 审阅记录 Review notes
 

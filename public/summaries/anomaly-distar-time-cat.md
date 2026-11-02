@@ -28,6 +28,8 @@ distar.65's two options lead to the exclusive endings 67 / 68.
 
 无文明差异选项。
 
+No variant options by civilisation.
+
 ## 审阅记录 Review notes
 
 - 审阅 Reviewed：2026-10-12（已审阅 reviewed）

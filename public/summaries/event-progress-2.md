@@ -6,17 +6,23 @@
 
 on_survey_planet（common/on_actions/00_on_actions.txt:1139）触发 progress.2（progress_events.txt:57）。
 
+on_survey_planet (common/on_actions/00_on_actions.txt:1139) triggers progress.2 (progress_events.txt:57).
+
 ## 剧情脉络 Story outline
 
 按帝国类型（普通、荒野、机械、灭绝/仆从/同化机械、风暴追逐者）七种措辞的单页；确认后30天触发 story.3（有危险野兽阻碍）或 story.1。
 
+A single page in seven wordings by empire type (standard, wilderness, machine, extinct/servitor/assimilated machine, storm chaser); 30 days after confirmation, story.3 (hindered by dangerous beasts) or story.1 is triggered.
+
 ## 分支与结局 Branches and outcomes
 
-- 选项只是措辞不同。
+- 选项只是措辞不同。  
+  The options differ only in wording.
 
 ## 条件与文明差异 Conditions and variants
 
-- 每个国家一次。
+- 每个国家一次。  
+  Once per country.
 
 ## 审阅记录 Review notes
 

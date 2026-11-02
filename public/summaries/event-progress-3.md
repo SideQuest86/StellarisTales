@@ -6,15 +6,20 @@
 
 on_colonization_started（common/on_actions/00_on_actions.txt:1269）触发 progress.3（progress_events.txt:401）。
 
+on_colonization_started (common/on_actions/00_on_actions.txt:1269) fires progress.3 (progress_events.txt:401).
+
 ## 剧情脉络 Story outline
 
 单页：陨石撞击般的登陆（风暴追逐者/进化捕食者另有版本）；十种伦理/集体意识回答各一。
+
+A single page: a landing like a meteorite impact (Storm Chasers and Evolutionary Predators have their own versions); one reply each for the ten ethics and gestalt answers.
 
 ## 分支与结局 Branches and outcomes
 
 ## 条件与文明差异 Conditions and variants
 
-- 仅首个殖民地。
+- 仅首个殖民地。  
+  Only the first colony.
 
 ## 审阅记录 Review notes
 

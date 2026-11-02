@@ -15,8 +15,12 @@ A mining station on the Hoard planet (or a change of system ownership) schedules
 ## 分支与结局 Branches and outcomes
 成功孵化（664）；超时失败（665）；放弃龙蛋（663.b）。
 
+Successful hatching (664); failure on timeout (665); abandoning the egg (663.b).
+
 ## 条件与文明差异 Conditions and variants
 665 的文本随蜂巢/机器帝国变化。
+
+The text of 665 varies with hive and machine empires.
 
 ## 审阅记录 Review notes
 

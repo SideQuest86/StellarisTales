@@ -7,17 +7,25 @@
 The first fleet of a default or fallen empire entering the Drake's system gets 610 (once per empire).
 
 ## 剧情脉络 Story outline
-1. 遭遇 610（单选项“不祥”）。
-2. 战斗中巨龙血量在15%–80%之间时：若我们的舰队被毁，隐藏 648 派龙去报复，并给我们 649“龙来了”；若我们紧急跃迁逃离，650 同样通知，龙会追击并袭击我们有空间站的星系（隐藏 651/652/654，未建模）。血量低于16%时龙撤回休眠修复（隐藏 655）。
-3. 击杀（on_fleet_destroyed_perp → 670“屠龙者”）：按能力三选一——300影响力+龙战利品遗物；亡灵师可启动复活项目 REANIMATE_GUARDIAN_DRAGON（1万点，限时1080天，需科学家）→ 675“逝者复生”；能收割DNA者得到DNA标记。指挥官得到“屠龙者”特质，并开启庆典情境（见庆典故事）。
+1. 遭遇 610（单选项“不祥”）。  
+  Encounter 610 (single option: "Ominous").
+2. 战斗中巨龙血量在15%–80%之间时：若我们的舰队被毁，隐藏 648 派龙去报复，并给我们 649“龙来了”；若我们紧急跃迁逃离，650 同样通知，龙会追击并袭击我们有空间站的星系（隐藏 651/652/654，未建模）。血量低于16%时龙撤回休眠修复（隐藏 655）。  
+  During the battle, while the dragon's health is between 15% and 80%: if our fleet is destroyed, hidden event 648 sends the dragon out for revenge and gives us 649 "The Dragon Comes"; if we escape by emergency FTL, 650 also notifies us, and the dragon pursues and attacks systems where we have a station (hidden 651/652/654, not modelled). When its health falls below 16%, the dragon retreats to hibernate and repair (hidden 655).
+3. 击杀（on_fleet_destroyed_perp → 670“屠龙者”）：按能力三选一——300影响力+龙战利品遗物；亡灵师可启动复活项目 REANIMATE_GUARDIAN_DRAGON（1万点，限时1080天，需科学家）→ 675“逝者复生”；能收割DNA者得到DNA标记。指挥官得到“屠龙者”特质，并开启庆典情境（见庆典故事）。  
+  Kill (on_fleet_destroyed_perp → 670 "Dragonslayer"): choose one of three by ability: 300 influence plus a relic from the dragon's loot; reanimators can start the REANIMATE_GUARDIAN_DRAGON project (10000 points, 1080-day limit, requires a scientist) → 675 "Rise Again"; empires that can harvest DNA get a DNA marker. The commander gains the "Dragonslayer" trait and a celebration situation opens (see the celebration story).
 
 ## 分支与结局 Branches and outcomes
-- 屠龙 670（三项互斥，由 can_harvest_dna / is_reanimator 决定）。
-- 复活 675：生成被动的复活大龙舰队。
-- 逃跑/被毁：只产生通知，并让龙追击。
+- 屠龙 670（三项互斥，由 can_harvest_dna / is_reanimator 决定）。  
+  Dragon slaying 670 (three mutually exclusive options, decided by can_harvest_dna / is_reanimator).
+- 复活 675：生成被动的复活大龙舰队。  
+  Revival 675: spawns a passive fleet of revived great dragons.
+- 逃跑/被毁：只产生通知，并让龙追击。  
+  Escape or destruction: only a notice is produced, and the dragon pursues.
 
 ## 条件与文明差异 Conditions and variants
 “天龙起源”（Here Be Dragons）有专用 610 文本；格式塔意识使用不同的 649/650 选项。巨龙宝库小行星见“龙之宝藏”故事。
+
+The Here Be Dragons origin has its own 610 text; gestalt consciousness uses different 649/650 options. For the dragon treasure asteroid, see the Dragon's Hoard story.
 
 ## 审阅记录 Review notes
 

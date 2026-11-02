@@ -10,9 +10,12 @@ At the second anniversary (weight 8) on a world with the *Stratospheric Vents* m
 
 ## 剧情脉络 Story outline
 
-1. **平流层喷口（9950）**：研究喷口 → 开启事件链与项目 **平流层喷口计划**（1200 工程学）；或没时间管（结束）。
-2. **平流层喷口研究完毕（9955）**：喷口对太空兽群很重要。用于观光与研究（非格式塔）→ 700–800 天后 **观光平台（9960）**；改造为气体精炼（非环保主义）→ 700–800 天后 **平流层喷口扩展（9965）**。
-3. **扩展（9965）**：安放炸药 50% 成功；采矿公会 75%；或放弃。成功 **喷口扩展成功（9970）**，失败 **喷口扩展失败（9975）**。
+1. **平流层喷口（9950）**：研究喷口 → 开启事件链与项目 **平流层喷口计划**（1200 工程学）；或没时间管（结束）。  
+   1. **Stratospheric Vents (9950)**: study the vents → opens the event chain and the **Stratospheric Vents Project** (1200 Engineering); or no time to manage it (ends).
+2. **平流层喷口研究完毕（9955）**：喷口对太空兽群很重要。用于观光与研究（非格式塔）→ 700–800 天后 **观光平台（9960）**；改造为气体精炼（非环保主义）→ 700–800 天后 **平流层喷口扩展（9965）**。  
+   2. **Stratospheric Vents Studied (9955)**: the vents matter to the space beast herds. Used for tourism and research (non-gestalt) → after 700–800 days **Stratospheric Vent Platforms (9960)**; converted to gas refining (non-environmentalist) → after 700–800 days **Stratospheric Vent Expansion (9965)**.
+3. **扩展（9965）**：安放炸药 50% 成功；采矿公会 75%；或放弃。成功 **喷口扩展成功（9970）**，失败 **喷口扩展失败（9975）**。  
+   3. **Stratospheric Vent Expansion (9965)**: placing the charges succeeds 50%; Mining Guilds 75%; or abandon. Success **Vent Expansion Success (9970)**, failure **Vent Expansion Failure (9975)**.
 
 ## 分支与结局 Branches and outcomes
 

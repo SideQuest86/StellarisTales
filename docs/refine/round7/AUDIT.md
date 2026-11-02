@@ -493,3 +493,21 @@ design, not a defect. Reported h1 mismatch after a cross-story link: not reprodu
 stories without effects, chapter dead ends that are story ends, a title with a filled name and no subtitle: known. The English page's
 "This guide is written in Chinese only" is real: the site's own test over all 1,389 guides finds 12 Chinese-only, 78 with a section
 without English, 38 with a section without Chinese; next release. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1.
+
+Guide languages. Census by the site's own test (guideElement over all 1,389 guides): 12 Chinese-only, 78 with a section without English,
+38 with a section without Chinese. Six Haiku agents translated in private folders (st-agents/guides-1..6; not review-copies.py, which
+would delete the fragments a guide-only copy lacks, and copies the art and audio). They reported that many assigned sections were
+already bilingual inline: the census was showing a renderer defect, not missing text. detectLang read a Chinese sentence with long
+English names as English ("Hired Guns 报酬更高。", "Cosmic Storms DLC；每国一次。"); splitMixed missed "见上。See above.", one line holding two
+pairs ("中文。 / English. 中文。/ English."), a three-word English name in the Chinese half, a slash after a closing quote, and a list item's
+line break. Fixed, and the agents' duplicates of those sections refused: after the fix 77 guides had real gaps. Merged by guide-merge.py,
+section by section, only where the test still found a gap, every original line kept, the addition in the missing language only: 149
+sections in 76 guides. Name check: 95 quoted names against the game's strings, 3 corrected by hand ("Study Dimensional Rifts",
+"Intriguing", "Gray Tempest"); the other 14 reported differences were my sample's cut. Eight preftl guides had Chinese inside their English
+half (pool names): now English. Result: 0 Chinese-only, 0 sections missing either language. Wrong-language blocks by an old/new render
+of every guide: 129 -> 67, 3 newly (labels inside a Chinese half), the rest mostly metadata lines. A test caught a regression before
+release: loosening the English-name guard split a two-pair line at its last pair only; pairs are now tried first.
+Tables: renderMarkdown had none, so 4 guides (26 rows) showed "| --- | --- |". Now tables, each cell split by language (short halves:
+"停止实验 / halted", "轰炸 Bombardment (6)"); event-colony-fed-100's five ending names gained the game's English titles. Checked in the real
+page, desk and phone, en and zh: no raw pipes, no blank cell, no sideways scroll. A hidden half's margin indented the first line of
+every bilingual line on the other page: removed. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1.

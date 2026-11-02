@@ -18,11 +18,13 @@ regular -> any (not homicidal targets).
 
 ## 分支与结局 Branches and outcomes
 
-- 侦测链为共享文档，结果取决于对方的间谍网络与破译/加密对比。
+- 侦测链为共享文档，结果取决于对方的间谍网络与破译/加密对比。  
+  The detection chain is a shared document; the result depends on the target's spy network and on how its decryption compares with our encryption.
 
 ## 条件与文明差异 Conditions and variants
 
-- 灭绝者目标不会触发此事件。
+- 灭绝者目标不会触发此事件。  
+  Homicidal targets do not trigger this event.
 
 ## 审阅记录 Review notes
 

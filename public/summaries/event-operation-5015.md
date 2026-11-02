@@ -18,11 +18,13 @@ gestalt -> regular.
 
 ## 分支与结局 Branches and outcomes
 
-- 5016 与 a 成功互斥。
+- 5016 与 a 成功互斥。  
+  5016 and a success are mutually exclusive.
 
 ## 条件与文明差异 Conditions and variants
 
-- b 选项需要线人。
+- b 选项需要线人。  
+  Option b needs an informant.
 
 ## 审阅记录 Review notes
 

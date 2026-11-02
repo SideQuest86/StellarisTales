@@ -22,7 +22,7 @@ The only option is acknowledgement; nothing follows.
 
 ## 条件与文明差异 Conditions and variants
 
-Cosmic Storms DLC。
+需要 Cosmic Storms DLC。
 
 Cosmic Storms DLC.
 

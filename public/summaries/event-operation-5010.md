@@ -17,7 +17,8 @@ regular -> gestalt; gestalt -> gestalt (not for machine owners); low-stakes pool
 
 ## 分支与结局 Branches and outcomes
 
-- a 选项三个版本按目标是否友好、是否有间谍网络等条件出现。
+- a 选项三个版本按目标是否友好、是否有间谍网络等条件出现。  
+  Option a has three versions, shown by conditions such as whether the target is friendly and whether it has a spy network.
 
 ## 条件与文明差异 Conditions and variants
 

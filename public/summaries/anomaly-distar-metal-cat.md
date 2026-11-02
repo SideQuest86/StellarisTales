@@ -24,6 +24,8 @@ Single outcome; no random branch.
 
 无文明差异的选项。
 
+No variant options by civilisation.
+
 ## 审阅记录 Review notes
 
 - 审阅 Reviewed：2026-10-12（已审阅 reviewed）

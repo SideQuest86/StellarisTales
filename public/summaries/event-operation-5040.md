@@ -18,11 +18,13 @@ regular -> regular.
 
 ## 分支与结局 Branches and outcomes
 
-- 5041 与 5042 互斥。
+- 5041 与 5042 互斥。  
+  5041 and 5042 are mutually exclusive.
 
 ## 条件与文明差异 Conditions and variants
 
-- 有犯罪类线人时的权重衰减不同（EF:2457-2475）。
+- 有犯罪类线人时的权重衰减不同（EF:2457-2475）。  
+  The weight decay differs when a criminal-type informant is present (EF:2457-2475).
 
 ## 审阅记录 Review notes
 

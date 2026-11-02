@@ -6,15 +6,20 @@
 
 on_entering_system_first_time（common/on_actions/00_on_actions.txt:940）触发 unique.140（events/unique_system_events.txt:1277，只触发一次）：星系带 star_mall 标记，且有非商场舰队进入。
 
+on_entering_system_first_time (common/on_actions/00_on_actions.txt:940) triggers unique.140 (events/unique_system_events.txt:1277, fires only once): the system is flagged star_mall, and a fleet that is not a mall fleet enters.
+
 ## 剧情脉络 Story outline
 
 单页：无人机广播欢迎词；同时命名栖息地为“星际商场”并创建其居民国家，获得标本“星际商场地图”。
+
+A single page: a drone broadcasts a welcome message; it also names the habitat "Star Mall", creates its resident nation, and yields the specimen Star Mall map.
 
 ## 分支与结局 Branches and outcomes
 
 ## 条件与文明差异 Conditions and variants
 
-- 全局只触发一次。
+- 全局只触发一次。  
+  Fires only once globally.
 
 ## 审阅记录 Review notes
 

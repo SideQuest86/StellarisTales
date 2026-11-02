@@ -28,9 +28,12 @@
 
 ## 条件与文明差异 Conditions and variants
 
-- 能否读懂虫群讯息：灵能物种或蜂巢思维物种可读出 crisis.16 原文；crisis.30 的“理解”分支还接受巨兽之怒威胁特质“心灵融合”。
-- 生物舰船帝国看到 crisis.18 的另一段描述。
-- 恐惧黑暗起源在入侵开始与胜利时另有起源事件（外部链接）。
+- 能否读懂虫群讯息：灵能物种或蜂巢思维物种可读出 crisis.16 原文；crisis.30 的“理解”分支还接受巨兽之怒威胁特质“心灵融合”。  
+  Whether the swarm message can be read: psionic or hive-minded species can read the original text of crisis.16; the understanding branch of crisis.30 also accepts the Behemoth Fury menace perk Mind Meld.
+- 生物舰船帝国看到 crisis.18 的另一段描述。  
+  Biological-ship empires see a different passage of crisis.18.
+- 恐惧黑暗起源在入侵开始与胜利时另有起源事件（外部链接）。  
+  The fear-of-the-dark origin has separate origin events at the start of the invasion and at victory (external links).
 
 ## 审阅记录 Review notes
 

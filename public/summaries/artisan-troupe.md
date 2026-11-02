@@ -13,8 +13,10 @@ After first contact, hidden 290 shows the greeting 295 (or 'no answer' 301 if we
 - 艺术学院（340）：城邦星系在我方境内时可建。投资文化中心（345，需曾收到“赞助的回报”）。“告诉我更多”（仅对话）。
 
 ## 分支与结局 Branches and outcomes
-- 攻击艺术家联盟（350）：失去赞助与盛典修正，此后联络不再回应（301）。
-- 空间站被毁（351）：仍有空间站时通报其一被毁（352），最后一座被毁时“艺术家联盟不复存在”（353）；观察者 observer.11/12；摧毁者从残骸获得资源（354）。
+- 攻击艺术家联盟（350）：失去赞助与盛典修正，此后联络不再回应（301）。  
+  Attacking the Artisan Troupe (350): sponsorship and festival modifiers are lost; later contacts go unanswered (301).
+- 空间站被毁（351）：仍有空间站时通报其一被毁（352），最后一座被毁时“艺术家联盟不复存在”（353）；观察者 observer.11/12；摧毁者从残骸获得资源（354）。  
+  Station destroyed (351): while stations remain, a notice reports that one was destroyed (352); when the last one falls, "The Troupe is no more" (353); observers observer.11/12; the destroyer gains resources from the wreckage (354).
 
 ## 条件与文明差异 Conditions and variants
 屠杀主义帝国只有“外星渣滓”；格式塔不能举办盛典；游牧帝国的艺术学院建在中转站上。

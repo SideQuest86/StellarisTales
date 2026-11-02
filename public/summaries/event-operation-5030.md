@@ -18,11 +18,13 @@ machine -> machine.
 
 ## 分支与结局 Branches and outcomes
 
-- 5031 与 5032 互斥。
+- 5031 与 5032 互斥。  
+  5031 and 5032 are mutually exclusive.
 
 ## 条件与文明差异 Conditions and variants
 
-- 仅机械对机械。
+- 仅机械对机械。  
+  Machine versus machine only.
 
 ## 审阅记录 Review notes
 

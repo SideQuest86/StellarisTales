@@ -7,15 +7,22 @@
 Monthly gatekeeper checks; only Teachers of the Shroud empires see a window.
 
 ## 剧情脉络 Story outline
-- 外来危机爆发（偶发危机、维度外来者、普雷索林）且未被击败：enclave.4239 → 4240“最终觉醒”。
-- 玩家自己成为危机（危机等级5）：enclave.4244 → 4245“教育的失败”。（等级2时更早出现警告 4243，属于起源故事。）
-- 两种情形都会销毁虚境行者城邦并设置 shroudwalkers_departed，因此只会发生一次。
+- 外来危机爆发（偶发危机、维度外来者、普雷索林）且未被击败：enclave.4239 → 4240“最终觉醒”。  
+  An external crisis (Contingency, Extradimensionals or Prethoryn) erupts and is not defeated: enclave.4239 → 4240 "Final Awakening".
+- 玩家自己成为危机（危机等级5）：enclave.4244 → 4245“教育的失败”。（等级2时更早出现警告 4243，属于起源故事。）  
+  The player becomes the crisis (crisis level 5): enclave.4244 → 4245 "A Failure of Education". (The earlier warning 4243 at level 2 belongs to the origin story.)
+- 两种情形都会销毁虚境行者城邦并设置 shroudwalkers_departed，因此只会发生一次。  
+  Both cases destroy the Shroudwalker enclave and set shroudwalkers_departed, so this happens only once.
 
 ## 分支与结局 Branches and outcomes
 两个窗口各有两个选项：a 敬畏（20年修正 shroudwalkers_depart_reverence），b 愤怒（shroudwalkers_depart_anger）；之后都获得50零。4245 另设置成就标记。
 
+Both windows have two options: a reverence (20-year modifier shroudwalkers_depart_reverence), b anger (shroudwalkers_depart_anger); both then grant 50 Zro. 4245 also sets an achievement flag.
+
 ## 条件与文明差异 Conditions and variants
 窗口只对 origin_shroudwalker_apprentice 起源的帝国发出；有可汗危机或灰色风暴危机时守门事件不触发。
+
+The windows are sent only to empires with the origin_shroudwalker_apprentice origin; the gatekeeper event does not fire while a Khan crisis or Gray Tempest crisis is active.
 
 ## 审阅记录 Review notes
 

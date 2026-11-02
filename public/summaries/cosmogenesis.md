@@ -9,23 +9,34 @@ Taking the Cosmogenesis ascension perk starts this player crisis path; level 1 s
 
 ## 剧情脉络 Story outline
 
-1. **五个等级（严格依次解锁）**：每级要求上一级的专属科技与累积的先进逻辑——二级 4000、三级 10000、四级 22000（且未放弃）、五级 60000（且至少完成两项无限课题、未放弃、非附庸）。每级解锁新科技（含堕落帝国科技）。
-2. **警告**：到达第三级7天后，狂热唯物堕落帝国（若存在）发来警告；回答不影响进程。
-3. **无限课题**（第四级起可重复研究）：每次随机得到一种现实改写结果——停电、常数取整、超光速、合金延展、营养改变、质量转移、虚境撕裂、稳定的成功、不幸的失败；带全局效果的结果在全银河只出现一次。首次课题30天后，唯物堕落帝国下达最后通牒（仅一次）：放弃（计划中止）、道歉，或拒绝（宣战）。
-4. **第五级**：所有堕落帝国对你宣战；研究“宇宙创生·五”得到建造视界刺针的计划（7125）。
-5. **出发**：视界刺针建成（7400）后逐一造访殖民地让居民登船（7500，游牧帝国为方舟 7501），最后到达首都，“准备深潜”（7510）：就近黑洞（抵达7天后穿越）或银河中心的超大质量黑洞（先完成“计算跃迁矢量”项目）。若刺针被毁（7525），可另建。
-6. **结局**：“前往无限……”（7515）→ 15天后“无穷的彼岸”（7516），帝国获胜并成为堕落帝国；其他帝国1天后读到“穿透奇点”（7517），之后“时间扭曲”（7518）。
+1. **五个等级（严格依次解锁）**：每级要求上一级的专属科技与累积的先进逻辑——二级 4000、三级 10000、四级 22000（且未放弃）、五级 60000（且至少完成两项无限课题、未放弃、非附庸）。每级解锁新科技（含堕落帝国科技）。  
+  **Five levels (strictly in order):** each level requires the previous level's exclusive tech and accumulated advanced logic: level 2 at 4000, level 3 at 10000, level 4 at 22000 (and not abandoned), level 5 at 60000 (with at least two Infinity Theses completed, not abandoned, and not a vassal). Each level unlocks new tech, including Fallen Empire tech.
+2. **警告**：到达第三级7天后，狂热唯物堕落帝国（若存在）发来警告；回答不影响进程。  
+  **Warning:** seven days after reaching level 3, the fanatical materialist Fallen Empire (if present) sends a warning; answering does not affect progress.
+3. **无限课题**（第四级起可重复研究）：每次随机得到一种现实改写结果——停电、常数取整、超光速、合金延展、营养改变、质量转移、虚境撕裂、稳定的成功、不幸的失败；带全局效果的结果在全银河只出现一次。首次课题30天后，唯物堕落帝国下达最后通牒（仅一次）：放弃（计划中止）、道歉，或拒绝（宣战）。  
+  **Infinity Theses** (repeatable from level 4): each completion gives one random reality-rewriting result: Blackout, Constant Rounding, Superlight, Alloy Ductility, Altered Nutrition, Mass Shift, Shroud Tears, Stable Success or Unfortunate Failure. Results with galaxy-wide effects appear only once in the whole galaxy. Thirty days after the first thesis, the materialist Fallen Empire issues its ultimatum (only once): give up (plan aborted), apologise, or refuse (declare war).
+4. **第五级**：所有堕落帝国对你宣战；研究“宇宙创生·五”得到建造视界刺针的计划（7125）。  
+  **Level 5:** all Fallen Empires declare war on you; researching "Cosmogenesis V" gives the plan to build a Horizon Needle (7125).
+5. **出发**：视界刺针建成（7400）后逐一造访殖民地让居民登船（7500，游牧帝国为方舟 7501），最后到达首都，“准备深潜”（7510）：就近黑洞（抵达7天后穿越）或银河中心的超大质量黑洞（先完成“计算跃迁矢量”项目）。若刺针被毁（7525），可另建。  
+  **Departure:** once the Horizon Needle is built (7400), colonies are visited one by one and their population embarks (7500; nomad empires embark on arkships, 7501); finally the capital reaches "Ready to Dive" (7510): the nearest black hole (crossing 7 days after arrival) or the supermassive black hole at the galactic centre (after completing the "Calculate Jump Vector" project). If the needle is destroyed (7525), another can be built.
+6. **结局**：“前往无限……”（7515）→ 15天后“无穷的彼岸”（7516），帝国获胜并成为堕落帝国；其他帝国1天后读到“穿透奇点”（7517），之后“时间扭曲”（7518）。  
+  **Ending:** "Ad Infinitum..." (7515); 15 days later "The Yonder Side of Infinity" (7516): the empire wins and becomes a Fallen Empire; one day later other empires read "Piercing a Singularity" (7517), followed by "Time Warp" (7518).
 
 ## 分支与结局 Branches and outcomes
 
-- 胜利：7516（`win = yes`）。可能的中止：7285 选择第一项（cosmogenesis_aborted，第四、五级不再可用）。
-- 互斥：每项课题一种结果；7510 两个黑洞选项最终都到 7515；7516/7517 是同一时刻的两种视角。
-- 支线：突触凝练机（第一级科技）低人口时可补充或任其崩溃（7540）；他国轰炸制服凝练机（7535）或迁走最后人口后自毁（7530）；先辈子弟起源的导师祝贺（7280）。
+- 胜利：7516（`win = yes`）。可能的中止：7285 选择第一项（cosmogenesis_aborted，第四、五级不再可用）。  
+  Victory: 7516 (`win = yes`). Possible abort: choosing the first option in 7285 (cosmogenesis_aborted; levels 4 and 5 are no longer available).
+- 互斥：每项课题一种结果；7510 两个黑洞选项最终都到 7515；7516/7517 是同一时刻的两种视角。  
+  Mutually exclusive: each thesis gives one outcome; both black-hole options in 7510 lead to 7515 in the end; 7516 and 7517 are two viewpoints of the same moment.
+- 支线：突触凝练机（第一级科技）低人口时可补充或任其崩溃（7540）；他国轰炸制服凝练机（7535）或迁走最后人口后自毁（7530）；先辈子弟起源的导师祝贺（7280）。  
+  Side branches: the Synaptic Lathe (a level 1 tech) can be topped up or left to collapse when its population is low (7540); other empires bombing and subduing the Lathe (7535), or it self-destructs once its last population is moved away (7530); the mentor's congratulations for the origin of the ancestors' heirs (7280).
 
 ## 条件与文明差异 Conditions and variants
 
-- “无穷的彼岸”正文按穿越的黑洞（伤痕、无限神机、终末出口、深渊恐惧、银河中心）、虚境庇护者、毒素骑士起源、能否创造“回形针宇宙”而变化。
-- 生物舰船帝国获得不同舰船科技（02_machine_age_effects.txt）。
+- “无穷的彼岸”正文按穿越的黑洞（伤痕、无限神机、终末出口、深渊恐惧、银河中心）、虚境庇护者、毒素骑士起源、能否创造“回形针宇宙”而变化。  
+  The text of "The Yonder Side of Infinity" varies with the black hole crossed (scars, infinite machine, terminal exit, abyssal dread, galactic centre), with the Shroud protectors, the toxic knight origin, and whether a paperclip universe can be created.
+- 生物舰船帝国获得不同舰船科技（02_machine_age_effects.txt）。  
+  Biological-ship empires receive different ship techs (02_machine_age_effects.txt).
 
 ## 审阅记录 Review notes
 

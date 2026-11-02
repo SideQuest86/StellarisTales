@@ -29,6 +29,14 @@ html.reduced-motion .name-tip { transition: none; }
 .md-review > summary { cursor: pointer; padding: .3em 0; min-height: 32px; }
 .md-review > summary:hover { opacity: 1; }
 .md-guide [data-lang] + [data-lang] { margin-inline-start: .2em; }
+/* (only between two halves that both show: beside a hidden half it indented the first line) */
+.md-guide[data-show="en"] [data-lang="zh"] + [data-lang="en"], .md-guide[data-show="zh"] [data-lang="en"] + [data-lang="zh"] { margin-inline-start: 0; }
+/* A table reads like the guide around it: hairlines between the rows, no boxes. (A column keeps its longest word whole.) */
+.md-table { margin: .8em 0; overflow-x: auto; overflow-wrap: break-word; }
+.md-table table { width: 100%; border-collapse: collapse; font-size: .94em; line-height: 1.65; }
+.md-table th { padding: 0 1em .35em 0; font-weight: 500; text-align: start; vertical-align: bottom; color: var(--dim, #86a29f); border-bottom: 1px solid rgba(255, 255, 255, .16); }
+.md-table td { padding: .45em 1em .45em 0; vertical-align: top; border-bottom: 1px solid rgba(255, 255, 255, .07); }
+.md-table th:last-child, .md-table td:last-child { padding-right: 0; }
 
 /* A hyphen-led first line of the game text ("-警告：具有挑战性的起源", leadLine() in typeset.js) stands on its own line: in the
    reader above the paragraph, in the archive between the title and the teaser (outside the teaser's line clamp). */

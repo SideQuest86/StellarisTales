@@ -6,17 +6,23 @@
 
 方舟舰队对无主行星执行“吞噬”动作时，on_action 触发隐藏 nomads.4750（events/nomads_events_1.txt）：首次抵达则标记行星并开始情境 situation_arkship_lithoid_consume_planet；若取消后返回则清除宽限标记。
 
+When an arkship fleet performs the 'devour' action on an unowned planet, an on_action fires hidden nomads.4750 (events/nomads_events_1.txt): on first arrival it marks the planet and starts the situation situation_arkship_lithoid_consume_planet; if the fleet cancels and comes back, the grace marker is cleared.
+
 ## 剧情脉络 Story outline
 
 情境单阶段（进度0→1000，唯一态度“吞噬”），每月隐藏事件发放资源；方舟离开超过6个月则中止并清除标记；进度满 → 隐藏 nomads.4760 摧毁行星（可能触发被毁神圣世界的反应，见 planet_destruction.610）。
 
+The situation has a single stage (progress 0 → 1000; its only attitude is 'devour'). A monthly hidden event grants resources; if the arkship is away for more than six months, the situation is aborted and the marker cleared; at full progress, hidden nomads.4760 destroys the planet (which may trigger the reaction of a destroyed holy world; see planet_destruction.610).
+
 ## 分支与结局 Branches and outcomes
 
-- 完成 / 中止互斥。
+- 完成 / 中止互斥。  
+  Completing and aborting are mutually exclusive.
 
 ## 条件与文明差异 Conditions and variants
 
-- 仅游牧帝国，目标为无主行星。
+- 仅游牧帝国，目标为无主行星。  
+  Nomad empires only; the target is an unowned planet.
 
 ## 审阅记录 Review notes
 
