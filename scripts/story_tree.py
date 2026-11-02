@@ -1052,6 +1052,18 @@ class Compiler:
             image = next((chapters[d]['image'] for d in ordered_docs if chapters[d]['image']), None)
             excerpt_doc, excerpt = next(((d, t) for d in ordered_docs for t in chapters[d]['texts'] if t['zh'] or t['en']),
                                         (start, {'zh': '', 'en': ''}))
+            # A story whose first entry is a dead end (nothing follows it) while another entry leads on opens on that one, with
+            # its teaser (artisan-troupe opened on a reply that ends the branch). A family's configured start stays.
+            if not (family and self.family_conf[family].get('start') in chapters):
+                kids = [tree['nodes'][k] for k in tree['nodes'][tree['root']].get('children', [])]
+                kids = [n for n in kids if 'ref' not in n and n.get('doc')]
+                first = next((n for n in kids if n['doc'] == start), None)
+                richer = next((n['doc'] for n in kids if n.get('children')), None)
+                if first is not None and not first.get('children') and richer:
+                    start = richer
+                    text = next((t for t in chapters[start]['texts'] if t['zh'] or t['en']), None)
+                    if text:
+                        excerpt_doc, excerpt = start, text
             entry = {'id': sid, 'title': title, 'category': category, 'kind': kind, 'image': image, 'start': start,
                      'chapters': len(chapters), 'visible': True, 'excerpt': {k: v[:260] for k, v in excerpt.items()}}
             if fragment.get('review'):

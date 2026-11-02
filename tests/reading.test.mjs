@@ -95,6 +95,17 @@ test("several texts without a body are alternatives, read one at a time", () => 
   assert.equal(resolveBody({ texts: [t("Factions:"), t("- Our first faction"), t("- Our second faction")] }, {}).length, 1);
 });
 
+test("the game's variants of one option are one button", () => {
+  const a = { zh: "委托一件艺术品。", en: "Commission a work." };
+  const doc = { choices: [{ key: "x.a", label: a, when: [[other(true)]] }, { key: "x.a", label: a, when: [[other(false)]] }, { key: "x.b", label: { zh: "别的", en: "Other" } }] };
+  const shown = resolveChoices(doc, {});
+  assert.deepEqual(shown.map((c) => c.key), ["x.a", "x.b"]);
+  assert.equal(shown[0].index, 0);
+  assert.equal(shown[0].when.length, 2, "either variant's trigger");
+  // Different words under one key stay apart.
+  assert.equal(resolveChoices({ choices: [{ key: "k", label: a }, { key: "k", label: { zh: "另", en: "Else" } }] }, {}).length, 2);
+});
+
 test("the row above alternative texts: its own names, one nameless among them, otherwise no words", () => {
   assert.deepEqual(passageTabs(["not Hive Mind", "Hive Mind"], "Other"), ["not Hive Mind", "Hive Mind"]);
   assert.deepEqual(passageTabs(["", "Machine Intelligence", "Hive Mind"], "Other"), ["Other", "Machine Intelligence", "Hive Mind"]);

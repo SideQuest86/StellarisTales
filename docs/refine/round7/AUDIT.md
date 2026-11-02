@@ -550,3 +550,14 @@ Review of v4.17.41-42 (two lenses, each verified): 4 confirmed, 2 rejected. part
 labels kept "()" where prose() removed an icon and a count (prose() now drops empty brackets); metaPair's note rule kept a quoted English
 name on the Chinese side and dropped it from the English (5 colony chains: now "(Feral Behavior)" on the English page); the English-first
 split left "已解决" in the English half. Wrong-language blocks in guides 64 -> 36. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4.
+
+Inspection round 15 (24 random stories, seed 15112027, 78 chapters; phone-zh and phone-en found nothing). Confirmed 3. artisan-troupe opened
+on leviathans.301, a reply whose one choice ends the branch, while its first contact (leviathans.295, 68 chapters below it) was reachable
+only through the map: the configured start (leviathans.290) is not a chapter, so the first tree entry was used. A census found 16 stories
+opening on a leaf while a root entry leads on; story_tree.py now opens on the first entry that leads on unless a family configures its
+start, and takes the teaser from it: 11 stories changed (5 keep a configured start). leviathans.300/304 showed "我们想委托创作一件艺术品。"
+twice: the game has two variants of option a (same key and words, different triggers); resolveChoices() now joins them (either trigger;
+the first's index for effects). The map node read "after 1 days" (flow-surface delayCaption; v4.17.43 fixed only the cards) and wrapped
+between the number and the unit: singular forms and a no-break space. Not defects: the map card of event-enclave-27 (one node, shown once the
+card rests), the map's faint bottom row and the card edge, a 12 px scrollWidth excess in the reading column with no visible clipping.
+Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3.

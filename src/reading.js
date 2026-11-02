@@ -137,12 +137,24 @@ export function resolveBody(doc, ctx) {
 
 /** Options as the game would show them: hidden if their trigger fails, disabled if `allow` fails. */
 export function resolveChoices(doc, ctx) {
-  return (doc.choices || []).map((choice, index) => {
+  const shown = (doc.choices || []).map((choice, index) => {
     const visible = evaluate(choice.when, ctx);
     const allowed = evaluate(choice.allow, ctx);
     const label = choice.labels?.find((l) => evaluate(l.when, ctx) === true)?.label || choice.label;
     return { ...choice, index, label, visible, allowed };
   }).filter((c) => c.visible !== false);
+  // The game's variants of one option (the same key and words, each under its own trigger) are one button: the reader would see
+  // the same words twice. It shows when either shows and is open when either is.
+  const out = [];
+  for (const c of shown) {
+    const twin = out.find((o) => o.key && o.key === c.key && JSON.stringify(o.label) === JSON.stringify(c.label));
+    if (!twin) { out.push(c); continue; }
+    const either = (a, b) => (a === true || b === true ? true : a === false && b === false ? false : null);
+    twin.visible = either(twin.visible, c.visible);
+    twin.allowed = either(twin.allowed, c.allowed);
+    twin.when = twin.when && c.when ? [...twin.when, ...c.when] : null;
+  }
+  return out;
 }
 
 /** Outgoing edges that remain possible in this context. */

@@ -507,7 +507,8 @@ export class FlowSurface {
       if (!value) continue;
       const spread = Number(first.random) || 0;
       const d = spread ? `${value}–${value + spread}` : `${value}`;
-      return t(unit === "days" ? "map.delay" : unit === "months" ? "map.delayMonths" : "map.delayYears", { d });
+      // (one of a unit is singular: "after 1 day")
+      return t((unit === "days" ? "map.delay" : unit === "months" ? "map.delayMonths" : "map.delayYears") + (d === "1" ? "One" : ""), { d });
     }
     return "";
   }
