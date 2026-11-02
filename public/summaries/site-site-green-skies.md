@@ -1,6 +1,6 @@
 # 绿色天空 / Green Skies
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《宇宙风暴》Cosmic Storms（has_cosmic_storms_dlc） Cosmic Storms
+- 分类 Category：先驱者与考古 Precursors · DLC：《宇宙风暴》Cosmic Storms（has_cosmic_storms_dlc）
 
 ## 如何开始 How it starts
 

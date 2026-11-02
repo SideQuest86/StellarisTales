@@ -1,6 +1,6 @@
 # 瓦格罗人废墟 / Vagrosian Ruins
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《典范》Paragon（脚本文件 08_paragon_arc_sites） Paragon
+- 分类 Category：先驱者与考古 Precursors · DLC：《典范》Paragon（脚本文件 08_paragon_arc_sites）
 
 ## 如何开始 How it starts
 

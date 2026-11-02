@@ -144,13 +144,13 @@ test("an English half that opens with an event number splits after the guides' s
   // Free-form notes mixing both languages keep the whole line (it shows on both pages).
   assert.equal(metaLine("分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（仅 distar.1055 分支 only the distar.1055 branch）"), null);
   // An initialism inside a Chinese name is not English: the part goes to the Chinese page alone.
-  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 星系共同体前FTL决议"), ["分类：文明纪事 · 星系共同体前FTL决议", "Category: Society (C7)"]);
-  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 星系共同体前FTL决议 galactic community pre-FTL resolution"), ["分类：文明纪事 · 星系共同体前FTL决议", "Category: Society (C7) · galactic community pre-FTL resolution"]);
-  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 联邦（军事型）事件 federation (military) event"), ["分类：文明纪事 · 联邦（军事型）事件", "Category: Society (C7) · federation (military) event"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 星系共同体前FTL决议"), ["分类：文明纪事 · 星系共同体前FTL决议", "Category: Society"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 星系共同体前FTL决议 galactic community pre-FTL resolution"), ["分类：文明纪事 · 星系共同体前FTL决议", "Category: Society · galactic community pre-FTL resolution"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 联邦（军事型）事件 federation (military) event"), ["分类：文明纪事 · 联邦（军事型）事件", "Category: Society · federation (military) event"]);
   assert.deepEqual(metaLine("分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans / 霸主 Overlord"), ["分类：巨兽与城邦 · DLC：利维坦 / 霸主", "DLC: Leviathans / Overlord"]);
   assert.deepEqual(metaLine("分类 Category：巨兽与城邦 · DLC：霸主 Overlord（需“大可汗”出现）"), ["分类：巨兽与城邦 · DLC：霸主（需“大可汗”出现）", "DLC: Overlord"]);
-  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 殖民地事件 colony event（开发者注释 \"Rogue moon\"）"), ["分类：文明纪事 · 殖民地事件（开发者注释 \"Rogue moon\"）", "Category: Society (C7) · colony event (Rogue moon)"]);
-  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain（首个事件「返祖现象 Feral Behavior」）"), ["分类：文明纪事 · 殖民地事件链（首个事件「返祖现象」）", "Category: Society (C7) · colony event chain (Feral Behavior)"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 殖民地事件 colony event（开发者注释 \"Rogue moon\"）"), ["分类：文明纪事 · 殖民地事件（开发者注释 \"Rogue moon\"）", "Category: Society · colony event (Rogue moon)"]);
+  assert.deepEqual(metaLine("分类 Category：文明纪事 Society (C7) · 殖民地事件链 colony event chain（首个事件「返祖现象 Feral Behavior」）"), ["分类：文明纪事 · 殖民地事件链（首个事件「返祖现象」）", "Category: Society · colony event chain (Feral Behavior)"]);
   // A note with English words in it is not a plain shape: the whole line stays.
   assert.equal(metaLine("分类 Category：深空异闻 Exploration · 备注（仅此分支 only this branch）"), null);
   assert.equal(metaLine("分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）或 Biogenesis（has_biogenesis_dlc）"), null);
@@ -158,7 +158,10 @@ test("an English half that opens with an event number splits after the guides' s
   assert.deepEqual(metaLine("分类 Category：起源 Origins · DLC：Shadows of the Shroud"), ["分类：起源 · DLC：Shadows of the Shroud", "Category: Origins · DLC: Shadows of the Shroud"]);
   assert.deepEqual(metaLine("分类 Category：巨兽与城邦 Leviathans & enclaves"), ["分类：巨兽与城邦", "Category: Leviathans & enclaves"]);
   assert.match(renderMarkdown("- 分类 Category：深空异闻 Exploration"), /<li data-mixed="1"><span lang="zh-CN" data-lang="zh">分类：深空异闻<\/span> <span lang="en" data-lang="en">Category: Exploration<\/span><\/li>/);
-  // An English half may open with a single quote ("“成交”或“不成交”。'Deal' or 'No deal'.").
+  // The archive's shelf codes are left out ("C8 银河轶事", "Society (C7)"); a DLC named only in English shows on both pages.
+  assert.deepEqual(metaLine("分类 Category：C8 银河轶事 / C8 Galactic miscellany"), ["分类：银河轶事", "Category: Galactic miscellany"]);
+  // A plain label in both languages before a colon splits like a bold one; its text at the last " / " with no Chinese after it.
+  assert.match(renderMarkdown("- 珍宝藏库 / Treasure Trove：真正的宝库：各200 / a real treasure vault: 200 each"), /<span lang="zh-CN" data-lang="zh">珍宝藏库：<\/span><span lang="en" data-lang="en">Treasure Trove: <\/span><span lang="zh-CN" data-lang="zh">真正的宝库：各200<\/span> <span lang="en" data-lang="en">a real treasure vault: 200 each<\/span>/);  assert.match(renderMarkdown("- DLC：Nomads"), /<span lang="zh-CN" data-lang="zh">DLC：Nomads<\/span> <span lang="en" data-lang="en">DLC: Nomads<\/span>/);  // An English half may open with a single quote ("“成交”或“不成交”。'Deal' or 'No deal'.").
   assert.deepEqual(splitMixed("佣兵城邦基金会：“成交”或“不成交”。 'Deal' or 'No deal' are the two options here."), ["佣兵城邦基金会：“成交”或“不成交”。", "'Deal' or 'No deal' are the two options here."]);
   // An identifier with the Chinese sentence's stop before the guides' slash stays Chinese.
   assert.match(splitMixed("失败的掷骰从本遗址自己的池中抽取 site_fossilized_jellyfish_random_events。 / Failed rolls draw from this site's own pool.")[0], /random_events。$/);

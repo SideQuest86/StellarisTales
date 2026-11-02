@@ -1,6 +1,6 @@
 # 远古机器人星球 / Ancient Robot World
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics（事件在 ancrel 文件；遗址定义在基础游戏文件） Ancient Relics events; site definition in the base-game file
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics（事件 ancrel.*；遗址定义在基础游戏文件）
 
 ## 如何开始 How it starts
 

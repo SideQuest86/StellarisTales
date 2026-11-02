@@ -1,6 +1,6 @@
 # 最后思绪 / The Last Thought
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《生物起源》Biogenesis（脚本文件 13_biogenesis_arc_sites） Biogenesis
+- 分类 Category：先驱者与考古 Precursors · DLC：《生物起源》Biogenesis（脚本文件 13_biogenesis_arc_sites）
 
 ## 如何开始 How it starts
 

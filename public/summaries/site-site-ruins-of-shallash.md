@@ -1,6 +1,6 @@
 # 被毁灭的恒星系 / Ruined Star System
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《联邦》Federations（事件 federations2.*；遗址定义在基础游戏文件） Federations events; site definition in the base-game file
+- 分类 Category：先驱者与考古 Precursors · DLC：《联邦》Federations（事件 federations2.*；遗址定义在基础游戏文件）
 
 ## 如何开始 How it starts
 

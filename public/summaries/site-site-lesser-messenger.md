@@ -1,6 +1,6 @@
 # 尘中之信 / Message in the Dust
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics；事件属《联邦》Federations 文件
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics（事件属《联邦》文件）
 
 ## 如何开始 How it starts
 

@@ -1277,6 +1277,10 @@ function renderChapter(preservePosition = false) {
       $(".reader-panel").scrollTop = targetScroll;
     });
   if (searchMarks && !prewarming) setTimeout(later(() => markSearch(story.id, r.id)), freshOpen ? 650 : 60);
+  if (mapPending && !prewarming) {
+    mapPending = false;
+    if (history.state?.map && story.tree) setTimeout(later(() => flowSurface.show(true)), freshOpen ? 700 : 0);
+  }
   for (const button of document.querySelectorAll("[data-reading]"))
     button.onclick = () => {
       readingIndex = Number(button.dataset.reading);
@@ -1349,7 +1353,14 @@ window.addEventListener("popstate", () => {
     return then();
   }
   if (!history.state?.map && mapOpen()) flowSurface.show(false);
+  // Back (or Forward) onto the map's entry, left with the map open (a museum link from it): the map comes back, so no Back
+  // press is spent on an entry that shows nothing new. A reader still opening shows it once its chapter is drawn.
+  else if (history.state?.map && !mapOpen()) {
+    if (dossier?.story.tree && document.body.classList.contains("reader-open")) flowSurface.show(true);
+    else mapPending = true;
+  }
 });
+let mapPending = false;
 function toggleContents(force) {
   if (dossier?.story.tree) {
     if (!(force ?? !mapOpen())) return closeMap();
@@ -1427,7 +1438,9 @@ function markSearch(storyId, docId) {
     frag.append(text.slice(at));
     node.replaceWith(frag);
   }
-  const first = [...root.querySelectorAll("mark.search-mark")].find((m) => m.getClientRects().length);
+  // (a match in the text before one in the title: the title is in view anyway)
+  const marks = [...root.querySelectorAll("mark.search-mark")].filter((m) => m.getClientRects().length);
+  const first = marks.find((m) => !m.closest("h1")) || marks[0];
   first?.scrollIntoView({ block: "center", behavior: reduced() ? "auto" : "smooth" });
 }
 // The pager only shows when there is more than one page of results.
@@ -1668,6 +1681,22 @@ document.addEventListener("keydown", (e) => {
   ) {
     e.preventDefault();
     $("#search-open").click();
+  }
+  // On the archive with nothing focused (after closing a story, or a click on the wall's margin), the arrows browse as they do
+  // on the focused wall (left / right: shelves, up / down: stories) and Enter opens the story shown.
+  // (also from the selection's own buttons, where focus returns when a story closes: arrows do nothing there by default)
+  const idle = document.activeElement === document.body || !document.activeElement;
+  const browsing = !document.body.classList.contains("reader-open") && !document.body.classList.contains("museum-open") &&
+    !document.querySelector("dialog[open]") && $("#playlist").hidden && (idle || document.activeElement.closest("#archive-hud")) && selected;
+  if (browsing && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    const keys = { ArrowLeft: ["lane", -1], ArrowRight: ["lane", 1], ArrowUp: ["row", -1], ArrowDown: ["row", 1] };
+    if (keys[e.key]) {
+      e.preventDefault();
+      navigate(...keys[e.key]);
+    } else if (e.key === "Enter" && idle) {
+      e.preventDefault();
+      openStory(selected.id);
+    }
   }
   // 1–9 pick the n-th visible choice or continue card while reading (not in fields, the map, search or the museum).
   if (/^[1-9]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey && !e.isComposing && readingKeys(e.target)) {

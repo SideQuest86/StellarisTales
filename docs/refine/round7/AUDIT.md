@@ -645,3 +645,15 @@ the saved path reopens it); type at 1920 px (the column is already drawn at 1.1x
 Shroud's "A Vision" badges (the empire profile settles them); title hits opening their story's start; CJK/Latin spacing (Chrome's
 text-autospace is already on). Deferred: home keyboard arrows, specimen names beside the home icons, readable overview labels on
 very large maps, suggestions for an empty search.
+
+Surface round 2 (2026-11-02; seven inspectors: tablets, small phones, reading guides, gameplay effects, regression checks of the
+round-1 navigation and of search / museum, Chinese typography). The round-1 changes held (map layer, museum return, search keys and
+marks, specimen names). Fixed: foldNamed missed a bold "id name" whose space trimGlueSpaces had already taken ("**2049 情势变化**"
+read "局势变换情势变化"; a bare "→" was taken for a name): 132 guide blocks change, every one checked, all for the better; 21 category
+lines that did not split rewritten (28 guides, recompiled); shelf codes left out of metaLine; English-only DLC lines (148) on both
+pages; plain "中文名 / English name：" labels split (wrong-language blocks over all guides 20 -> 11, none newly wrong); effects
+blocks folding to their distinct outcomes ("All branches", 40 of 10,631 panels; the precursor search for a planet showed 76 rows);
+narrower nesting on phones; archive arrow keys; quotes stripped from search; first mark in the text; a phone map entry come back to
+reopens the map. Not changed: touch targets of 24-30 px in the player strip and the guide (the bar is a single line by design);
+the music bar on very short phones; the map card on a 768 px tablet (deferred); bare-number links where one paragraph names several
+chapters of one title (deliberate); text-autospace (already on).

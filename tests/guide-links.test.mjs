@@ -50,6 +50,8 @@ test("a bold 'id name' names its document: the written name is the link", () => 
   const show = (parts) => parts.map((p) => (typeof p === "string" ? p : `[${p.text}]`)).join("");
   assert.equal(show(foldNamed([link("宗教狂热"), " 宗教狂热"])), "[宗教狂热]");
   assert.equal(show(foldNamed([link("军阀的崛起"), " 军阀崛起"])), "[军阀崛起]");
+  // (a Chinese name whose space trimGlueSpaces has already taken)
+  assert.equal(show(foldNamed([link("局势变换"), "情势变化"])), "[情势变化]");
   assert.equal(show(foldNamed([link("碰撞"), " 碰撞 / ", link("损失舰船"), " 损失舰船"])), "[碰撞] / [损失舰船]");
   assert.equal(show(foldNamed([link("A"), " / ", link("B"), " 联合演习失败"])), "[A] / [联合演习失败]");
   // A range's shared name is not the last document's: "2030–2037 伦理变化" keeps both titles.

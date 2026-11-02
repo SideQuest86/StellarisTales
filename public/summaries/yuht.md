@@ -1,6 +1,6 @@
 ﻿# 尤特帝国 / The Yuht Empire
 
-- 分类 Category：先驱者 Precursors · DLC：遗珍、文物奖励与秘密研究需《远古遗物》Ancient Relics；贾巴蒂尼数据缓存需《四海皆臣》Overlord
+- 分类 Category：先驱者 Precursors · DLC：遗珍、文物奖励与秘密研究需《远古遗物》，贾巴蒂尼数据缓存需《四海皆臣》Ancient Relics, Overlord
 
 ## 如何开始 How it starts
 

@@ -1,6 +1,6 @@
 # 有脉搏的星球 / A Planet with a Pulse
 
-- 分类 Category：探索 Exploration · DLC：《遥远繁星》Distant Stars（has_distar）或 Biogenesis（has_biogenesis_dlc）
+- 分类 Category：探索 Exploration · DLC：《遥远繁星》（has_distar）或《生物起源》（has_biogenesis_dlc）Distant Stars or Biogenesis
 
 ## 如何开始 How it starts
 

@@ -1,6 +1,6 @@
 # 毒液池 / Toxic Pools
 
-- 分类 Category：先驱者与考古 Precursors · DLC：脚本条件 has_shroud_dlc（Shroud 相关内容） script condition has_shroud_dlc
+- 分类 Category：先驱者与考古 Precursors · DLC：虚境相关内容 Shroud content（脚本条件 has_shroud_dlc）
 
 ## 如何开始 How it starts
 

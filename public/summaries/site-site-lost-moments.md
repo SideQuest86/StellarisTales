@@ -1,6 +1,6 @@
 # 永不遗忘 / Never Forget
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics；初始化器在 federations 文件 (initializer in a Federations file)
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics（初始化器在《联邦》文件）
 
 ## 如何开始 How it starts
 

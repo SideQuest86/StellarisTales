@@ -119,3 +119,17 @@ test("adjacent repeats: a tooltip's echo goes, the same effect twice reads x2, n
   const dlc = { kind: "if", label: L("If: DLC"), effects: [{ kind: "if", label: L("If: DLC"), effects: [district] }] };
   assert.deepEqual(tidyEffects([dlc])[0].effects.map((e) => e.kind), ["planet"]);
 });
+
+test("a condition block whose deep branches end in the same few effects reads as its outcome, the branches behind a toggle", () => {
+  const L = (s) => ({ zh: s, en: s });
+  const project = (target) => ({ kind: "project", label: L("Starts the Signs project"), target: L(target) });
+  const branch = (cond, kids) => ({ kind: "if", label: L(cond), effects: kids });
+  const tree = [branch("If: running", [branch("If: not nomadic", [branch("On those matching: a planet", [project("a planet")]), project("a planet")]),
+    { kind: "else", label: L("Otherwise"), effects: [branch("On those matching: a starbase", [project("a system")]), project("a system")] }])];
+  const h = renderEffects(tree, opts("en"));
+  assert.match(h, /If: running<\/span><\/span><ul class="fx-list fx-sub"><li class="fx-item fx-project"><span class="fx-line"><span class="fx-chip fx-kind-project">Special project<\/span><span class="fx-text">Starts the Signs project<\/span><\/span><\/li><\/ul><details class="fx-paths">/);
+  assert.equal(countEffects(tree), 1); // one effect, however many paths lead to it
+  assert.equal((h.match(/class="fx-paths"/g) || []).length, 1); // nothing folds again inside "All branches"
+  // Random rolls and shallow blocks are read as they are.
+  assert.doesNotMatch(renderEffects([branch("If: x", [project("a"), project("a"), project("a"), project("a")])], opts("en")), /fx-paths/);
+});

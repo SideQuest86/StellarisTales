@@ -1,6 +1,6 @@
 # 缇扬奇乱坟岗 / Tiyanki Grave Mound
 
-- 分类 Category：先驱者与考古 Precursors · DLC：基础游戏遗址定义；事件在 ancrel 文件 Base-game site definition; events in the ancrel files
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics（基础游戏遗址定义；事件 ancrel.*）
 
 ## 如何开始 How it starts
 

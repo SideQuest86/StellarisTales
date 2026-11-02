@@ -1,6 +1,6 @@
 # 策展人 / Curators
 
-- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans（部分选项需银河典藏 Grand Archive、远星 Distant Stars 等）
+- 分类 Category：巨兽与城邦 Leviathans & enclaves · DLC：《利维坦》Leviathans（部分选项需《银河典藏》《遥远繁星》等）
 
 ## 如何开始 How it starts
 1. 首次接触完成、“通讯已建立”或银河典藏相关事件后，经隐藏事件 leviathans.501 显示“与策展人的第一次接触”（502）。正文区分是否已见过其他策展人分部；只有一个确认选项。

@@ -469,7 +469,8 @@ export function createSearch(env) {
       let groups = parseQuery(query, { partial: !/\s$/.test(raw) });
       const stories = env.getStories();
       const byId = new Map(stories.map((s) => [s.id, s]));
-      const norm = raw.toLowerCase().trim().replace(/\s+/g, " ");
+      // (quotes around a phrase are not part of its words: '"We are' found nothing)
+      const norm = raw.toLowerCase().replace(/(^|\s)["“”‘'「『]+|["“”’'」』]+(?=\s|$)/g, "$1").trim().replace(/\s+/g, " ");
       const words = norm.split(" ").filter(Boolean);
       const titleHit = (s) =>
         s.visible && words.every((w) => `${s.title.zh} ${s.title.en} ${s.excerpt?.zh || ""} ${s.excerpt?.en || ""}`.toLowerCase().includes(w));

@@ -1,6 +1,6 @@
 # 太空碎片 / Space Debris
 
-- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（仅 distar.1055 分支 only the distar.1055 branch）
+- 分类 Category：深空异闻 Exploration · DLC：《遥远繁星》Distant Stars（仅 distar.1055 分支）
 
 ## 如何开始 How it starts
 

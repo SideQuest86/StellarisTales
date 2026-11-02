@@ -60,10 +60,41 @@ function leaves(list) {
   let n = 0;
   for (const e of tidy(list)) {
     if (e.kind === "more" || e.unhandled) continue;
-    if (e.effects && e.effects.length) n += leaves(e.effects);
+    const g = gist(e);
+    if (g) n += g.length;
+    else if (e.effects && e.effects.length) n += leaves(e.effects);
     else if (!GROUPS.has(e.kind)) n += 1;
   }
   return n;
+}
+
+// A condition block whose branches, however deep, end in the same few effects (a scripted search for a planet: "If not
+// nomadic … On those matching … Otherwise … On those matching …", one special project at the end of fifteen paths) reads
+// as its outcome: the effects once each, then every branch in full behind "All branches". Random rolls never fold (each
+// chance is the point). Returns the distinct effects, or null when the block is worth reading as it is.
+const FOLDS = new Set(["if", "else", "scripted"]);
+function gist(e) {
+  if (!e || !FOLDS.has(e.kind) || !isList(e.effects)) return null;
+  let deepest = 0;
+  const found = [];
+  const walk = (list, depth) => {
+    for (const c of tidy(list)) {
+      if (!c || c.kind === "more" || c.unhandled) continue;
+      if (c.kind === "random" || c.kind === "random_list" || c.kind === "random_option") return false;
+      if (isList(c.effects)) { deepest = Math.max(deepest, depth + 1); if (walk(c.effects, depth + 1) === false) return false; }
+      else if (!GROUPS.has(c.kind)) found.push(c);
+    }
+  };
+  if (walk(e.effects, 0) === false || deepest < 2 || found.length < 4) return null;
+  const byKey = new Map();
+  for (const c of found) {
+    const key = JSON.stringify([c.kind, c.label, c.stats, c.duration]);
+    const seen = byKey.get(key);
+    // (one effect on different targets along different paths: the target depends on the path, so it is not named)
+    if (!seen) byKey.set(key, c);
+    else if (seen.target && words(seen.target) !== words(c.target)) byKey.set(key, { ...seen, target: undefined });
+  }
+  return byKey.size * 3 <= found.length ? [...byKey.values()] : null;
 }
 function unhandled(list) {
   let n = 0;
@@ -172,8 +203,14 @@ function entryHtml(e, ctx, depth) {
   const cls = ["fx-item", `fx-${e.kind}`, e.kind === "tooltip" ? "is-game-text" : "", e.conditional || GROUPS.has(e.kind) ? "is-cond" : ""].filter(Boolean).join(" ");
   let kids = "";
   if (isList(e.effects)) {
-    const inner = tidy(e.effects).map((c) => entryHtml(c, e.hidden ? { ...ctx, inHidden: true } : ctx, depth + 1)).join("");
-    kids = inner ? `<ul class="fx-list fx-sub">${inner}</ul>` : "";
+    const sub = e.hidden ? { ...ctx, inHidden: true } : ctx;
+    const g = !ctx.whole && gist(e);
+    // (inside "All branches" every branch shows as it is: nothing folds again)
+    const inner = tidy(e.effects).map((c) => entryHtml(c, g ? { ...sub, whole: true } : sub, depth + 1)).join("");
+    kids = !inner ? "" : g
+      // (several outcomes may not all happen: the line says they are what the branches lead to, not that each one does)
+      ? `<ul class="fx-list fx-sub">${g.length > 1 ? `<li class="fx-item fx-more">${esc(T("各分支中的效果：", "What the branches lead to:"))}</li>` : ""}${g.map((c) => entryHtml(c, sub, depth + 1)).join("")}</ul><details class="fx-paths"><summary>${esc(T("各条分支", "All branches"))}</summary><ul class="fx-list fx-sub fx-whole">${inner}</ul></details>`
+      : `<ul class="fx-list fx-sub">${inner}</ul>`;
     if (!inner && e.kind !== "scripted") return "";
   }
   const times = e.times > 1 ? `<span class="fx-times">×${e.times}</span>` : "";

@@ -1,6 +1,6 @@
 # 烈焰灰烬 / From The Ashes
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《地狱》Infernals（需 has_infernals，遗址文件 14_infernals_arc_sites） Infernals (needs has_infernals)
+- 分类 Category：先驱者与考古 Precursors · DLC：《地狱》Infernals（需 has_infernals，遗址文件 14_infernals_arc_sites）
 
 ## 如何开始 How it starts
 

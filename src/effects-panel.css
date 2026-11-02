@@ -33,6 +33,14 @@
 .fx-bullets .fx-item::before { content: "·"; margin-right: 6px; color: var(--faint, #6f8b88); }
 .fx-showall { margin: var(--s-1, 4px) 0 0; min-height: 40px; padding: 0 var(--s-3, 12px); background: none; border: 1px solid var(--line-2, #3d5a5c); border-radius: 2px; color: var(--ink-2, #b9cbc5); font: inherit; cursor: pointer; }
 .fx-showall:hover, .fx-showall:focus-visible { color: var(--ink, #dbe5df); border-color: var(--teal, #7cc4bd); }
-@media (max-width: 480px) { .fx { margin-inline: 0; } .fx-line { gap: 2px 6px; } }
+/* "All branches": every path of a folded condition block (effects-panel.js gist), behind a quiet disclosure. */
+.fx-paths { margin: 2px 0 0 var(--s-3, 12px); }
+.fx-paths > summary { display: inline-flex; align-items: center; min-height: 32px; list-style: none; cursor: pointer; color: var(--faint, #6f8b88); font-size: 12px; letter-spacing: 0.04em; }
+.fx-paths > summary::-webkit-details-marker { display: none; }
+.fx-paths > summary::before { content: "›"; display: inline-block; width: 10px; margin-right: 4px; transition: transform 0.15s; }
+.fx-paths[open] > summary::before { transform: rotate(90deg); }
+.fx-paths > summary:hover, .fx-paths > summary:focus-visible { color: var(--ink-2, #b9cbc5); }
+/* A phone keeps its column: each level steps in 12 px, not 24. */
+@media (max-width: 480px) { .fx { margin-inline: 0; } .fx-line { gap: 2px 6px; } .fx-sub { margin-left: 2px; padding-left: 10px; } .fx-paths { margin-left: 2px; } }
 @media (prefers-reduced-motion: reduce) { .fx-sum::before { transition: none; } }
 html.reduced-motion .fx-sum::before { transition: none; }

@@ -202,7 +202,9 @@ export function metaLine(text) {
     if (pair[0]) zh.push(`${lz}：${pair[0]}`);
     if (pair[1]) en.push(le ? `${le}: ${pair[1]}` : pair[1]);
   }
-  return [zh.join(" · "), en.join(" · ")];
+  // (the archive's internal shelf codes are not the reader's: "分类：C8 银河轶事" / "Category: Society (C7)")
+  const code = (s) => s.replace(/(^|[：:]\s*)C\d{1,2}\s+(?=\S)/g, "$1").replace(/\s*[（(]C\d{1,2}[）)]/g, "");
+  return [code(zh.join(" · ")), code(en.join(" · "))];
 }
 
 // (a Chinese name may open with a Latin letter: "L-星团 / The L-Cluster")
@@ -213,11 +215,24 @@ const bilingual = (text) => {
   let lead = "", body = text;
   const bold = /^\*\*([^*]+)\*\*\s*/.exec(text);
   const pair = bold && HEADING_PAIR.exec(bold[1].trim());
+  // (and a plain label named in both languages before a colon: "毒性黏液催化 / Toxic Slime Catalyzation：A：… / A: …", 104 lines)
+  const named = !pair && /^([^：/*]*[㐀-鿿][^：/*]*?)\s*\/\s*([A-Za-z][^：/㐀-鿿*]*?)\s*：\s*/.exec(text);
   if (pair) {
     lead = `<strong><span lang="zh-CN" data-lang="zh">${inline(pair[1])}</span> <span lang="en" data-lang="en">${inline(pair[2])}</span></strong> `;
     body = text.slice(bold[0].length);
+  } else if (named) {
+    lead = `<span lang="zh-CN" data-lang="zh">${inline(named[1])}：</span><span lang="en" data-lang="en">${inline(named[2])}: </span>`;
+    body = text.slice(named[0].length);
   }
-  const parts = splitMixed(body);
+  let parts = splitMixed(body);
+  // After a plain label the halves are the text before and after its last " / " with no Chinese after it ("真正的宝库：…各200 /
+  // a real treasure vault: …"); a body that still does not split shows on both pages, whole (marked English, the Chinese page
+  // lost it, label and all).
+  if (!parts && named) {
+    const last = /^(.*[㐀-鿿].*?)\s+\/\s+([A-Za-z0-9"'“‘(][^㐀-鿿]*)$/.exec(body);
+    if (!last) return `${lead}<span>${inline(body)}</span>`;
+    parts = [last[1], last[2]];
+  }
   // A body in one language keeps its own label, so the other language's page hides it.
   if (!parts) return lead ? lead + (body.trim() ? `<span${langAttr(body)}>${inline(body)}</span>` : "") : null;
   return `${lead}<span lang="zh-CN" data-lang="zh">${inline(parts[0])}</span> <span lang="en" data-lang="en">${inline(parts[1])}</span>`;
@@ -294,6 +309,9 @@ export function renderMarkdown(md, opts = {}) {
         const meta = metaLine(t);
         if (meta && meta[0] && meta[1]) return `<li data-mixed="1"><span lang="zh-CN" data-lang="zh">${inline(meta[0])}</span> <span lang="en" data-lang="en">${inline(meta[1])}</span></li>`;
         if (meta && (meta[0] || meta[1])) return `<li${langAttr(meta[0] || meta[1])}>${inline(meta[0] || meta[1])}</li>`;
+        // A DLC named only in English ("DLC：Nomads", 148 guides) is a proper name: both pages show it, each with its colon.
+        const dlc = /^DLC\s*[：:]\s*([^㐀-鿿]+)$/.exec(t);
+        if (dlc) return `<li data-mixed="1"><span lang="zh-CN" data-lang="zh">DLC：${inline(dlc[1])}</span> <span lang="en" data-lang="en">DLC: ${inline(dlc[1])}</span></li>`;
         const bi = bilingual(t);
         // (a line with no Chinese at all takes English punctuation: "DLC：Shadows of the Shroud" -> "DLC: …")
         const plain = /[㐀-鿿豈-﫿]/.test(t) ? t : t.replace(/：\s*/g, ": ").replace(/，\s*/g, ", ");

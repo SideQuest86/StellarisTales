@@ -1,6 +1,6 @@
 # 巨型艺术设施：完工 / Mega Art Installation: Perfection
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics；巨型结构 megastructure 文件 mega_art_installation
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics（巨型结构文件 mega_art_installation）
 
 ## 如何开始 How it starts
 

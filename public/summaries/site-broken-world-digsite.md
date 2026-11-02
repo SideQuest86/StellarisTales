@@ -1,6 +1,6 @@
 # 破损的大门 / The Broken Gates
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《利维坦》Leviathans（脚本文件 04_leviathans_arc_sites） Leviathans
+- 分类 Category：先驱者与考古 Precursors · DLC：《利维坦》Leviathans（脚本文件 04_leviathans_arc_sites）
 
 ## 如何开始 How it starts
 

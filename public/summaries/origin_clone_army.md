@@ -1,6 +1,6 @@
 # 克隆大军 / Clone Army
 
-- 分类 Category：起源 Origins · DLC：（核心/Humanoids 以外，按游戏文件未核对）· 审阅 Reviewed 2026-10-13
+- 分类 Category：起源 Origins · DLC：未按游戏文件核对 not checked against the game files · 审阅 Reviewed 2026-10-13
 
 ## 如何开始 How it starts
 

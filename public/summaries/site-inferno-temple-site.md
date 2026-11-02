@@ -1,6 +1,6 @@
 # 地狱神庙 / Inferno Temple
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《地狱》Infernals（需 has_infernals） Infernals (needs has_infernals)
+- 分类 Category：先驱者与考古 Precursors · DLC：《地狱》Infernals（需 has_infernals）
 
 ## 如何开始 How it starts
 

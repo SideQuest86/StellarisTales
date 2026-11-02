@@ -1,6 +1,6 @@
 # 在恒星帆上 / On Solar Sails
 
-- 分类 Category：深空异闻 Exploration · DLC：上古遗物 Ancient Relics（ancrel 考古事件 archaeology events）
+- 分类 Category：深空异闻 Exploration · DLC：《上古遗物》Ancient Relics（考古事件 ancrel.*）
 
 ## 如何开始 How it starts
 

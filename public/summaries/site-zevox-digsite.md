@@ -1,6 +1,6 @@
 # 坠毁的飞船 / The Crashed Ship
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《霸主》Overlord（脚本文件 06_overlord_arc_sites） Overlord
+- 分类 Category：先驱者与考古 Precursors · DLC：《霸主》Overlord（脚本文件 06_overlord_arc_sites）
 
 ## 如何开始 How it starts
 

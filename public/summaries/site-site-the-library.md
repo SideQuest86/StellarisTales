@@ -1,6 +1,6 @@
 # 图书馆 / The Library
 
-- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics；有《利维坦》时权重×2 (x2 with Leviathans)
+- 分类 Category：先驱者与考古 Precursors · DLC：《远古遗物》Ancient Relics（有《利维坦》时权重×2）
 
 ## 如何开始 How it starts
 
