@@ -621,3 +621,10 @@ game's own text keeps its characters). Not defects: the map card in its flight; 
 chance about 9%"); one caption shared by several cards of one random group (each card's own condition). The v4.17.47 deploy check
 reported its marker missing because the marker was a test's words: the shipped file has the change, and the smoke passed 15/15.
 Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1, 4, 3, 3, 2.
+
+Inspection rounds 23 and 24 (24 random stories each, seeds 23112027 and 24112027; all four lenses). Round 23: nothing confirmed. Round 24:
+nothing confirmed; phone-en raised two items that are not defects: "our pilot winning." / "our pilot losing." on the arkship cards are the
+game's own tooltips, and anomaly.4045-4047 share the game's title "Echoes from the Deep". The second one is improved anyway: a continue
+card titled like the open chapter now carries the next chapter's opening words (as same-titled sibling cards already did). Two
+consecutive rounds without a new confirmed defect: the inspection loop has converged. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1,
+4, 5, 0, 4, 3, 2, 1, 1, 4, 3, 3, 2, 0, 0.

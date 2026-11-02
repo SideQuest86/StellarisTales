@@ -802,6 +802,14 @@ function listButtons(lists) {
     if (group.length < 2 || words.every((w) => w === words[0])) continue;
     partingWords(words, lang === "zh" ? 24 : 44).forEach((hint, i) => { group[i].hint = typeset(hint); });
   }
+  // A card titled like the open chapter ("Echoes from the Deep" three chapters running) would read as a link to itself: it carries
+  // the next chapter's own words where they part from these.
+  const here = chapter?.id;
+  for (const e of merged.flat()) {
+    if (e.hint || e.titleOverride || e.many || e.story && e.story !== dossier.story.id || !here || e.target === here || titleFor(e.target) !== titleFor(here)) continue;
+    const hint = sameTitleHints([here, e.target]).get(e.target);
+    if (hint) e.hint = hint;
+  }
   return merged.map((list) => {
     if (list.length === 1) return edgeButton(list[0]);
     // Exclusive outcomes: one lead line (the delay they all share says it once there), then a ledger of the possibilities.
