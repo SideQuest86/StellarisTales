@@ -218,7 +218,9 @@ const bilingual = (text) => {
   // (and a plain label named in both languages before a colon: "毒性黏液催化 / Toxic Slime Catalyzation：A：… / A: …", 104 lines)
   const named = !pair && /^([^：/*]*[㐀-鿿][^：/*]*?)\s*\/\s*([A-Za-z][^：/㐀-鿿*]*?)\s*：\s*/.exec(text);
   if (pair) {
-    lead = `<strong><span lang="zh-CN" data-lang="zh">${inline(pair[1])}</span> <span lang="en" data-lang="en">${inline(pair[2])}</span></strong> `;
+    // (no space between the halves or after the name: each half of the text brings its own, so the page that shows one
+    // language never reads "这位领袖 2.0 ：…"; two halves shown together are spaced by the stylesheet)
+    lead = `<strong><span lang="zh-CN" data-lang="zh">${inline(pair[1])}</span><span lang="en" data-lang="en">${inline(pair[2])}</span></strong>`;
     body = text.slice(bold[0].length);
   } else if (named) {
     lead = `<span lang="zh-CN" data-lang="zh">${inline(named[1])}：</span><span lang="en" data-lang="en">${inline(named[2])}: </span>`;
@@ -230,12 +232,20 @@ const bilingual = (text) => {
   // lost it, label and all).
   if (!parts && named) {
     const last = /^(.*[㐀-鿿].*?)\s+\/\s+([A-Za-z0-9"'“‘(][^㐀-鿿]*)$/.exec(body);
-    if (!last) return `${lead}<span>${inline(body)}</span>`;
+    if (!last) {
+      // (a text in one language only goes with that half: "前进，征服 / Go forth and conquer：“前进吧，征服吧”")
+      const latin = /[A-Za-z]{3,}/.test(body.replace(/`[^`]*`|[\w-]*[_.][\w.-]*/g, "")), han = /[㐀-鿿]/.test(body);
+      return `${lead}<span${han && !latin ? ' lang="zh-CN" data-lang="zh"' : latin && !han ? ' lang="en" data-lang="en"' : ""}>${inline(body)}</span>`;
+    }
     parts = [last[1], last[2]];
   }
+  // After a bold name: Chinese runs on into its own punctuation ("…2.0（paragon.40910）：…"), else a space; English takes the
+  // colon its Chinese twin has when it has none ("The Leader 2.0: he 'upgrades' himself …").
+  const gapZh = (s) => (pair && !/^[（(：:，,、。；]/.test(s) ? " " : "");
+  const gapEn = (s, zh) => (!pair ? "" : zh != null && /^(?:（[^）]*）)?\s*：/.test(zh) && !/^\s*(?:\([^)]*\)\s*)?[:(]/.test(s) ? ": " : " ");
   // A body in one language keeps its own label, so the other language's page hides it.
-  if (!parts) return lead ? lead + (body.trim() ? `<span${langAttr(body)}>${inline(body)}</span>` : "") : null;
-  return `${lead}<span lang="zh-CN" data-lang="zh">${inline(parts[0])}</span> <span lang="en" data-lang="en">${inline(parts[1])}</span>`;
+  if (!parts) return lead ? lead + (body.trim() ? `<span${langAttr(body)}>${pair ? " " : ""}${inline(body)}</span>` : "") : null;
+  return `${lead}<span lang="zh-CN" data-lang="zh">${gapZh(parts[0])}${inline(parts[0])}</span>${pair ? "" : " "}<span lang="en" data-lang="en">${gapEn(parts[1], parts[0])}${inline(parts[1])}</span>`;
 };
 
 // A table ("| a | b |" over "| --- | --- |"), its cells labelled by language like any other text.

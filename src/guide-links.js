@@ -130,7 +130,7 @@ export function foldEchoes(parts, prevText = () => "") {
     }
     if (!open) continue;
     if (!core.trim()) {
-      if (sameName(prevText(), p.text)) i = put(i, core, { ...p, lead: true }, rest);
+      if (sameName(prevText(p), p.text)) i = put(i, core, { ...p, lead: true }, rest);
       continue;
     }
     const k = suffixOf(core, p.text);
@@ -195,10 +195,19 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
     // A bold or italic name right before the text ('**璞玉浑金**（4055）') can become the link itself (plain text only: a
     // bilingual lead keeps its language spans).
     const prev = node.previousSibling;
-    const lead = prev?.nodeType === 1 && /^(STRONG|B|EM|I)$/.test(prev.tagName) && !prev.children.length ? prev : null;
+    // (or, for text opening one language's half of a line, that language's half of a bold name in both languages before it:
+    // "**高价合金 / Valuable Alloys**（paragon.40920）", 31 lines, read "高价合金 （高价合金）")
+    const host = !prev && node.parentElement?.dataset?.lang ? node.parentElement : null;
+    let before = host?.previousSibling; // (past spaces and the other language's half of the text)
+    while (before && ((before.nodeType === 3 && !before.nodeValue.trim()) || (before.nodeType === 1 && before.dataset?.lang && before.dataset.lang !== host.dataset.lang))) before = before.previousSibling;
+    // (the half the link's title names: the English page links "Population Control Program" though only the Chinese text
+    // carries the id)
+    const halves = before?.nodeType === 1 && /^(STRONG|B)$/.test(before.tagName) ? [...before.children].filter((c) => c.dataset?.lang && !c.children.length) : [];
+    const plain = prev?.nodeType === 1 && /^(STRONG|B|EM|I)$/.test(prev.tagName) && !prev.children.length ? prev : null;
+    const leadFor = (p) => plain || (p && halves.find((h) => sameName(h.textContent, p.text))) || null;
     // A bold element made of "id name" pairs names its documents itself.
     const boldIds = /^(STRONG|B)$/.test(node.parentElement?.tagName || "") && node.parentElement.childNodes.length === 1 && typeof labelled[0] === "object";
-    const parts = foldEchoes(boldIds ? foldNamed(labelled) : labelled, () => lead?.textContent || "");
+    const parts = foldEchoes(boldIds ? foldNamed(labelled) : labelled, (p) => leadFor(p)?.textContent || "");
     const frag = doc.createDocumentFragment();
     let glue = null; // a link and the closing punctuation right after it stay on one line (no "，" at a line start)
     for (const p of parts) {
@@ -224,7 +233,16 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
       b.dataset.story = p.story || storyId;
       b.title = p.alias ? `${p.alias} · ${p.id}` : p.id;
       b.textContent = p.text;
-      if (p.lead) { b.textContent = lead.textContent; lead.replaceChildren(b); linked++; continue; }
+      if (p.lead) {
+        const lead = leadFor(p);
+        b.textContent = lead.textContent;
+        lead.replaceChildren(b);
+        linked++;
+        // (the bracket gone, the text now opens with its colon: the space between the name and it goes too, "名称 ：" -> "名称：")
+        if (lead !== plain && /^[：:，,]/.test(parts.slice(parts.indexOf(p) + 1).find((x) => typeof x === "string") || ""))
+          for (let s = host.previousSibling; s && s !== before; s = s.previousSibling) if (s.nodeType === 3 && !s.nodeValue.trim()) s.nodeValue = "";
+        continue;
+      }
       glue = doc.createElement("span");
       glue.className = "guide-glue";
       glue.append(b);

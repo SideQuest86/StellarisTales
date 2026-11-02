@@ -224,6 +224,14 @@ export function partingWords(texts, room) {
  *  `fallback` text where a control needs a label). Repeated alternatives collapse; more than `max` end with "…". */
 export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {}) {
   if (!dnf) return "";
+  // "X, or not X and Y" is "X or Y" ("非宇宙天气模型 或 宇宙天气模型 · 非概率流" -> "非宇宙天气模型 或 非概率流"); "X or not X" holds
+  // always and says nothing.
+  const single = dnf.filter((b) => b.length === 1).map((b) => b[0]);
+  // (a scope is written "owner.species" in one place and "owner/species" in its negation)
+  const key = (a) => (a.type === "identity" || a.type === "flag" ? atomKey(a) : `other:${String(a.scope || "").replace(/\//g, ".")}|${a.key}=${a.arg || ""}`);
+  const opposite = (a, b) => key(a) === key(b) && a.value !== b.value;
+  if (single.some((a) => single.some((b) => opposite(a, b)))) return fallback;
+  if (single.length) dnf = dnf.map((b) => (b.length === 1 ? b : b.filter((a) => !single.some((s) => opposite(s, a)))));
   const word = (zh, en) => (lang === "zh" ? zh : en);
   const isName = (a) => a.label?.[lang] || names[a.key]?.[lang];
   // Unnamed flags all read "earlier events". One such flag keeps its "not" (a version when it happened, one when it did not);

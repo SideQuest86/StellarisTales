@@ -133,3 +133,12 @@ test("a specimen's name resolves a save-dependent name only where the title need
   assert.equal(specimenName("Memorial to [Q.GetName]", "en"), "Memorial");
   assert.equal(specimenName("Ytterite Preserved Corpse", "en"), "Ytterite Preserved Corpse");
 });
+
+test("a phrase that only repeats the word before it is left out", () => {
+  const names = { "E.GetName": { zh: "帝国", en: "the empire" }, "E.GetRulerTitle": { zh: "统治者", en: "ruler" }, "E.GetRulerName": { zh: "", en: "", omit: ["zh", "en"] } };
+  const f = (s) => plainNames(fillNames(s, { lang: "zh", chapterNames: names }));
+  assert.equal(f("我谨代表[E.GetName]无可争议的统治者——[E.GetRulerTitle][E.GetRulerName]送上问候。"), "我谨代表帝国无可争议的统治者送上问候。");
+  assert.equal(f("我代表[E.GetName]无可争议的统治者[E.GetRulerName][E.GetRulerTitle]。"), "我代表帝国无可争议的统治者。");
+  // (a different word keeps its phrase)
+  assert.equal(f("无可争议的指挥官——[E.GetRulerTitle][E.GetRulerName]带来问候。"), "无可争议的指挥官——统治者带来问候。");
+});

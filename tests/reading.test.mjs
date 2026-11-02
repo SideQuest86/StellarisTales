@@ -183,3 +183,15 @@ test("describe names only what has a name and never invents a placeholder", () =
   assert.equal(describe([[a], [b], [c], [d]], "en"), "A or B or C …");
   assert.equal(describe([[a], [b], [c], [d]], "zh"), "甲 或 乙 或 丙 等");
 });
+
+test("a condition and its own negation: absorbed, and an always-true one says nothing", () => {
+  const atom = (key, zh, value = true) => ({ type: "other", key, label: { zh, en: key }, value });
+  const W = atom("w", "宇宙天气模型"), notW = atom("w", "宇宙天气模型", false), notP = atom("p", "概率流", false);
+  assert.equal(describe([[notW], [W, notP]], "zh"), "非宇宙天气模型 或 非概率流");
+  const T = atom("t", "节约"), notT = atom("t", "节约", false), E = atom("e", "环保主义者"), A = atom("a", "田园绽放");
+  assert.equal(describe([[T], [notT, E], [notT, A]], "zh"), "节约 或 环保主义者 或 田园绽放");
+  assert.equal(describe([[W], [notW]], "zh"), "");
+  // (one scope written two ways: "owner.species" and, in the negation, "owner/species")
+  const C = { ...T, scope: "owner.species" }, notC = { ...notT, scope: "owner/species" };
+  assert.equal(describe([[C], [notC, E]], "zh"), "节约 或 环保主义者");
+});

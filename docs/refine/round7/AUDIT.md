@@ -657,3 +657,15 @@ narrower nesting on phones; archive arrow keys; quotes stripped from search; fir
 reopens the map. Not changed: touch targets of 24-30 px in the player strip and the guide (the bar is a single line by design);
 the music bar on very short phones; the map card on a 768 px tablet (deferred); bare-number links where one paragraph names several
 chapters of one title (deliberate); text-autospace (already on).
+
+Surface round 3 (2026-11-02; six inspectors: guides and effects after round 2, tablets, English typography, reading on desktop in
+Chinese and on a phone in English). Fixed: a filled name repeating the word before it (name-fill, 22 strings over 45,964, all
+doubled words: 统治者——统治者, 小行星小行星, 科研官员科研官员, 恒星恒星, 领袖领袖, 母星母星, 大可汗大可汗); condition absorption in
+describe (X or not-X-and-Y = X or Y; X or not X says nothing; one scope spelled "owner.species" and "owner/species"); effects.py
+pop-ethic share ("All pops shift", "N% of the pops", "N pops") and a single-pass while loop unwrapped (42 effect files
+regenerated); fold wording; bilingual bold names before their chapter id fold into a link on each language's half (31 lines x 2;
+the English page gains the link it lacked); a bold name's halves and the text after it carry their own spacing (no "名称 ："); 12
+guide lines ending in an empty " / " half; the xondar episode named by its filled title; search closes on a hash change. Not
+defects: "TargetList.SwapToTailAndRemoveFromGalaxy" (a machine empire's greeting, the game's own text); a literal "\n" on the
+tablet home (none found); Back leaving the reader (one entry per reader, by design). Deferred: the 820 px tablet header (category
+strip scrolls, museum entry at its end), map label wrapping, quieter continue-card captions, a next-story card under a branch end.

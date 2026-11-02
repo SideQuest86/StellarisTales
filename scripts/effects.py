@@ -688,6 +688,8 @@ def g_while(n, ctx, st):
     if not kids:
         return []
     num = to_num(count, ctx) if count is not None else None
+    if num and num[0] == 'num' and num[1] == 1:
+        return kids  # once is just the effects ("Repeated 1 times:" said nothing)
     times = f' {num[1]:g} 次' if num and num[0] == 'num' else '若干次'
     timesen = f'{num[1]:g} times' if num and num[0] == 'num' else 'several times'
     return [entry('repeat', L(f'重复{times}：', f'Repeated {timesen}:'), n, st, effects=kids, conditional=bool(not num or num[0] != 'num'))]
@@ -1216,9 +1218,20 @@ def h_pop_ethic(n, ctx, st):
     if not isinstance(p.get('ethic'), str):
         return None
     name = nm(ctx, p['ethic'])
-    amt = to_num(p['amount'], ctx) if 'amount' in p else (to_num(p['percentage'], ctx) if 'percentage' in p else None)
-    tail = f' {amt[1]:g}' if amt and amt[0] == 'num' else ''
-    return [entry('pop', L(f'人口转向信仰「{name["zh"]}」{tail}', f'Pops shift to the "{name["en"]}" ethic{tail}'), n, st, ethic=p['ethic'])]
+    # (a number of pops reads as one: "1 pop shifts …", not "Pops shift to the … ethic 1")
+    if 'amount' in p:
+        amt = to_num(p['amount'], ctx)
+        if amt and amt[0] == 'num':
+            k = amt[1]
+            return [entry('pop', L(f'{k:g} 个人口转向信仰「{name["zh"]}」', f'{k:g} pop{"" if k == 1 else "s"} shift{"s" if k == 1 else ""} to the "{name["en"]}" ethic'), n, st, ethic=p['ethic'])]
+    # (a share is a fraction, 1 = 100%: "All pops shift …", "50% of the pops shift …", not "… ethic 1")
+    amt = to_num(p['percentage'], ctx) if 'percentage' in p else None
+    if amt and amt[0] == 'num':
+        pct = amt[1] * 100 if amt[1] <= 1 else amt[1]
+        if pct >= 100:
+            return [entry('pop', L(f'全部人口转向信仰「{name["zh"]}」', f'All pops shift to the "{name["en"]}" ethic'), n, st, ethic=p['ethic'])]
+        return [entry('pop', L(f'{pct:g}% 的人口转向信仰「{name["zh"]}」', f'{pct:g}% of the pops shift to the "{name["en"]}" ethic'), n, st, ethic=p['ethic'])]
+    return [entry('pop', L(f'人口转向信仰「{name["zh"]}」', f'Pops shift to the "{name["en"]}" ethic'), n, st, ethic=p['ethic'])]
 
 
 def h_set_policy(n, ctx, st):

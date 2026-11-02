@@ -209,7 +209,7 @@ function entryHtml(e, ctx, depth) {
     const inner = tidy(e.effects).map((c) => entryHtml(c, g ? { ...sub, whole: true } : sub, depth + 1)).join("");
     kids = !inner ? "" : g
       // (several outcomes may not all happen: the line says they are what the branches lead to, not that each one does)
-      ? `<ul class="fx-list fx-sub">${g.length > 1 ? `<li class="fx-item fx-more">${esc(T("各分支中的效果：", "What the branches lead to:"))}</li>` : ""}${g.map((c) => entryHtml(c, sub, depth + 1)).join("")}</ul><details class="fx-paths"><summary>${esc(T("各条分支", "All branches"))}</summary><ul class="fx-list fx-sub fx-whole">${inner}</ul></details>`
+      ? `<ul class="fx-list fx-sub">${g.length > 1 ? `<li class="fx-item fx-more">${esc(T("依分支不同，有以下一项或几项：", "One or more of these, depending on the branch:"))}</li>` : ""}${g.map((c) => entryHtml(c, sub, depth + 1)).join("")}</ul><details class="fx-paths"><summary>${esc(T("逐条分支", "Each branch in full"))}</summary><ul class="fx-list fx-sub fx-whole">${inner}</ul></details>`
       : `<ul class="fx-list fx-sub">${inner}</ul>`;
     if (!inner && e.kind !== "scripted") return "";
   }

@@ -1890,6 +1890,9 @@ function parseHash() {
     if (!/^#(story|record|museum)/.test(location.hash)) return;
   }
   const q = new URLSearchParams(location.hash.slice(1));
+  // (an address that opens a story or an exhibit while search is open, a link or Back: the reader is what is wanted, not a
+  // dialog left over it)
+  if (/^#(story|record|museum)/.test(location.hash) && $("#search-dialog").open) $("#search-dialog").close();
   if (location.hash.startsWith("#museum")) {
     // Already open: the exhibit just follows the address (Back / Forward, a search result), nothing is rebuilt.
     if (museum?.isOpen()) return museum.syncExhibit(q.get("museum") || null);

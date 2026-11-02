@@ -14,7 +14,7 @@ Renowned leader lottery: each decade hidden paragon.40000 (Paragon, player, not 
 2. 招募后，每十年隐藏事件 paragon.41234 随机挑选一名知名领袖，对此人按10%/10%/80%抽取下面两段故事之一或都不发生，延迟1–1800天；两段都只发生一次，可在不同的十年里先后出现。
    After hiring, every decade paragon.41234 picks a renowned leader; for this one 10% / 10% / 80% (nothing), 1–1800 days later. Each episode fires once; both may happen in different decades.
 
-- **[Root.GetName] 2.0 / [Root.GetName] 2.0**（paragon.40910）：擅自“升级”身体并向舰队广播：支持他（按科技进度给予合成相关奖励）或斥责（条件：合成帝国（非个体机械）不会抽到）。
+- **这位领袖 2.0 / The Leader 2.0**（paragon.40910）：擅自“升级”身体并向舰队广播：支持他（按科技进度给予合成相关奖励）或斥责（条件：合成帝国（非个体机械）不会抽到）。
   he "upgrades" himself and broadcasts it: endorse him (synthetic-tech rewards by progress) or rebuke him.
 - **高价合金 / Valuable Alloys**（paragon.40920）：从传感器数据发现荒芜岩石下的合金：工程船180天项目，完成后获得合金（条件：首都星系内有荒芜行星）。
   sensor data reveals alloys under a barren rock: a 180-day project yields alloys.

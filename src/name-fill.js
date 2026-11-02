@@ -152,6 +152,9 @@ export function fillNames(s, opts) {
     // with its own determiner stands alone, otherwise they join ("our" + "ruler").
     .replace(/([^]*)([^]*)(\s?)([^]*)([^]*)/g, (_, n1, t1, gap, n2, t2) =>
       OPEN + n2 + SEP + (/^(?:(?:the|our|this|that|a|an|your|their)\b|这|那|我们)/i.test(t2) || t2.endsWith(t1) || t1.endsWith(t2) || t2.startsWith(t1) ? t2 : t1 + gap + t2) + CLOSE)
+    // A phrase that only repeats the word right before it ("无可争议的统治者——[title][name]" read "统治者——统治者", "…统治者统治者"):
+    // the game names the person there; with the name left out, the word already says it, so the phrase and its dash go.
+    .replace(new RegExp(`([㐀-鿿]{2,8})(?:——|—)?${OMIT}*${OPEN}[^${SEP}]*${SEP}([^${CLOSE}]+)${CLOSE}`, "g"), (m, before, phrase) => (before.endsWith(phrase) ? before : m))
     // A possessive before a phrase that brings its own determiner ("our" + "the leader", after a merge): one determiner.
     .replace(/\b(the|our|their|your|its|his|her|my)(\s+)([^]*)(?:the|that)\s+/gi, "$1$2$3")
     // A name only called out to and left out takes its comma or exclamation mark with it ("…meet you, [X]." -> "…meet you.",

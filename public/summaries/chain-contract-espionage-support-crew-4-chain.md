@@ -3,7 +3,7 @@
 
 ## 如何开始 How it starts
 
-“永恒巡游”（Forever Cruise）船上的内部合同：由巡游船的 船员 发布（potential_issuer = no），目标星系须可到达；接受时开始本事件链，并在目标星系一颗殖民地上启用特殊项目 CONTRACT_ESPIONAGE_SUPPORT_crew_4_PROJECT（`EspionageSupportCruise.txt`，接受期 1800 天）。 / An internal contract of the Forever Cruise: issued by the cruise’s crew, target system reachable; accepting starts this chain and enables the project CONTRACT_ESPIONAGE_SUPPORT_crew_4_PROJECT at a colony in the target system (EspionageSupportCruise.txt, 1800 days to accept). / 
+“永恒巡游”（Forever Cruise）船上的内部合同：由巡游船的 船员 发布（potential_issuer = no），目标星系须可到达；接受时开始本事件链，并在目标星系一颗殖民地上启用特殊项目 CONTRACT_ESPIONAGE_SUPPORT_crew_4_PROJECT（`EspionageSupportCruise.txt`，接受期 1800 天）。 / An internal contract of the Forever Cruise: issued by the cruise’s crew, target system reachable; accepting starts this chain and enables the project CONTRACT_ESPIONAGE_SUPPORT_crew_4_PROJECT at a colony in the target system (EspionageSupportCruise.txt, 1800 days to accept).
 
 ## 剧情脉络 Story outline
 

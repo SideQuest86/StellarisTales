@@ -130,7 +130,7 @@ test("an English half that opens with an event number splits after the guides' s
   assert.deepEqual(splitMixed("天灾事件在危机开始时触发。 The \"天灾\" event fires when the crisis begins in earnest and every empire in the galaxy feels it."), ["天灾事件在危机开始时触发。", "The \"天灾\" event fires when the crisis begins in earnest and every empire in the galaxy feels it."]);
   // A bold bilingual lead over a body in one language: the body keeps its own label.
   const lead = renderMarkdown("- **第一位领袖消失 The first leader is lost.** 科研船与科学家在坐标处消失，获得大量物理研究。");
-  assert.match(lead, /<\/strong> <span lang="zh-CN" data-lang="zh">科研船/);
+  assert.match(lead, /<\/strong><span lang="zh-CN" data-lang="zh"> 科研船/);
   // An identifier ending the Chinese half stays with it; the slash after it is the boundary.
   assert.deepEqual(splitMixed("设置 weather_manipulator_found，并结束事件链 cs_inetian_chain / a new, unused device and a warning."), ["设置 weather_manipulator_found，并结束事件链 cs_inetian_chain", "a new, unused device and a warning."]);
   // A later boundary after a full stop wins when the first one would leave Chinese in the English half; not mid-citation.
@@ -174,8 +174,8 @@ test("an English half that opens with an event number splits after the guides' s
   assert.match(items, /<li>2026-10-13<\/li>/);
   // A bold lead naming the item in both languages belongs to both halves.
   const h = renderMarkdown(`1. **第一位领袖消失 The first leader is lost.** ${line}`);
-  assert.match(h, /<strong><span[^>]*data-lang="zh">第一位领袖消失<\/span> <span[^>]*data-lang="en">The first leader is lost\.<\/span><\/strong>/);
-  assert.match(h, /data-lang="en">9005: the science ship/);
+  assert.match(h, /<strong><span[^>]*data-lang="zh">第一位领袖消失<\/span><span[^>]*data-lang="en">The first leader is lost\.<\/span><\/strong>/);
+  assert.match(h, /data-lang="en"> 9005: the science ship/);
   assert.doesNotMatch(h.slice(h.lastIndexOf('data-lang="en"')), /科研船/);
 });
 
