@@ -1,7 +1,15 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { renderEffects, countEffects, tidyEffects, withoutSaid } from "../src/effects-panel.js";
+import { renderEffects, countEffects, tidyEffects, withoutSaid, depositName } from "../src/effects-panel.js";
+
+test("a deposit named only by its yield is named by its resource too", () => {
+  const e = { kind: "deposit", deposit: "d_minerals_3" };
+  assert.equal(depositName(e, "新增资源点「+3」", "zh"), "新增资源点「+3 矿物」");
+  assert.equal(depositName(e, 'Adds the "+3" deposit', "en"), 'Adds the "+3 Minerals" deposit');
+  assert.equal(depositName({ kind: "deposit", deposit: "d_ancient_mine" }, "新增资源点「远古矿井」", "zh"), "新增资源点「远古矿井」");
+  assert.equal(depositName({ kind: "gain" }, "x", "en"), "x");
+});
 
 test("a game tooltip the reply has just said is not said again", () => {
   const tip = { kind: "tooltip", label: { zh: "战斗即将开始。", en: "The battle will begin." } }, other = { kind: "tooltip", label: { zh: "别的话。", en: "Other words." } }, gain = { kind: "gain", label: { zh: "战斗即将开始。", en: "The battle will begin." } };

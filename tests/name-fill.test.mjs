@@ -67,6 +67,11 @@ test("a/an agrees with the phrase", () => {
   assert.equal(f("We met a [R.GetName]."), "We met an other empire.");
   assert.equal(f("We met an [Q.GetName]."), "We met a fleet.");
 });
+test("a sentence the game inserts right after a stop gets its space", () => {
+  const n = { "GetEnd": { en: "Our people have no world to offer.", zh: "我们没有可提供的星球。" } };
+  assert.equal(plainNames(fillNames("All stand to benefit.[GetEnd]", { lang: "en", chapterNames: n })), "All stand to benefit. Our people have no world to offer.");
+  assert.equal(plainNames(fillNames("众人皆可受益。[GetEnd]", { lang: "zh", chapterNames: n })), "众人皆可受益。我们没有可提供的星球。");
+});
 test("zh: a spymaster's title carries the name", () => {
   const n = { "S.GetName": { zh: "这位领袖", en: "the leader" } };
   assert.equal(plainNames(fillNames("间谍首脑[S.GetName]开始传来报告。", { lang: "zh", chapterNames: n })), "间谍首脑开始传来报告。");

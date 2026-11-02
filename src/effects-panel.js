@@ -128,6 +128,20 @@ function anyChance(effects) {
   return [effects.effects, effects.immediate, effects.after, ...(effects.sections || []).map((s) => s.effects)].some(hasChance);
 }
 
+// A deposit the game names only by its yield (its icon dropped: "+3") is named by its resource too: "+3 Minerals".
+const RESOURCES = {
+  minerals: ["矿物", "Minerals"], energy: ["能量币", "Energy"], food: ["食物", "Food"], alloys: ["合金", "Alloys"],
+  physics: ["物理学", "Physics"], society: ["社会学", "Society"], engineering: ["工程学", "Engineering"], unity: ["凝聚力", "Unity"],
+  rare_crystals: ["稀有晶体", "Rare Crystals"], exotic_gases: ["奇异气体", "Exotic Gases"], volatile_motes: ["易爆微粒", "Volatile Motes"],
+  trade_value: ["贸易值", "Trade Value"],
+};
+export function depositName(e, label, lang) {
+  const m = e?.kind === "deposit" && /^d_([a-z_]+?)_(\d+)$/.exec(e.deposit || "");
+  const r = m && RESOURCES[m[1]];
+  if (!r) return label;
+  return label.replace(/([「"])([+-]?\d+)([」"])/, (_, a, n, b) => `${a}${n} ${r[lang === "en" ? 1 : 0]}${b}`);
+}
+
 function entryHtml(e, ctx, depth) {
   const { lang, T, esc } = ctx;
   if (e.kind === "more") return `<li class="fx-item fx-more">${esc(pick(e.label, lang))}</li>`;
@@ -153,7 +167,7 @@ function entryHtml(e, ctx, depth) {
   // With the percent chip, "About 30% (adjusted by conditions)" keeps only what the chip does not say.
   const label = esc(chanceChip
     ? pick(e.label, lang).replace(/^(约\s*[\d.]+%|About [\d.]+%)\s*/, "").replace(/^（(.*)）$|^\((.*)\)$/, (_, a, b) => a || b)
-    : pick(e.label, lang));
+    : depositName(e, pick(e.label, lang), lang));
   const note = e.note ? `<span class="fx-notetext">${esc(pick(e.note, lang))}</span>` : "";
   const cls = ["fx-item", `fx-${e.kind}`, e.kind === "tooltip" ? "is-game-text" : "", e.conditional || GROUPS.has(e.kind) ? "is-cond" : ""].filter(Boolean).join(" ");
   let kids = "";

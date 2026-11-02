@@ -603,3 +603,13 @@ story's title. Captions naming a chapter by its number: of 50 that matched a cha
 "(difficulty N)" (50 captions) left the continue cards; the map keeps it. Not changed: "Only when: …" under a choice (the archive's way of
 showing an option's condition), the map card's clipped third line of a long node label (the node clamps; the full label is on the card).
 Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1, 4, 3.
+
+Inspection round 21 (24 random stories, seed 21112027, 62 chapters; desk-zh and phone-en found nothing). Confirmed 3. "…stands to
+benefit.Our people…": the game's text ends a sentence and a scripted name supplies the next with no space; name-fill now gives an inserted
+sentence its space after a stop (old/new render of all 45,964 placeholder strings: 7 changed, all such joins). "This system Stripped of
+Galactic Market Headquarters": a filled name in a title-case English title follows the title's case (small words stay small unless they
+open the title or follow its colon); applied to chapter titles, cards and story names; 27 sampled titles read well, sentence-case titles
+are left. Effects: "新增资源点「+3」" for d_minerals_3 (the game names such deposits by an icon and the yield): about 500 effect rows over 80 deposit
+kinds now say the resource ("+3 Minerals"). Not defects: two first-contact endings with one title (their hints differ: "…These aliens are
+indeed a civilization made…" / "…It turns out that they are indeed a…"); a contract tracking card of one sentence (the game's own); the map's
+right edge (a window). Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1, 4, 3, 3.

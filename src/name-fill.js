@@ -107,6 +107,8 @@ export function fillNames(s, opts) {
       // "a [X]" with X = "other empire" → "an other empire" → keep the article agreeing with the phrase.
       else if (/^an?\s+$/i.test(lead)) lead = lead.replace(/^(a)n?/i, (a) => (/^[aeiou]/i.test(text) ? a[0] + "n" : a[0]));
       const before = whole.slice(0, offset);
+      // (a sentence the game inserts right after a stop gets its space: "…to benefit.[X]" -> "…to benefit. Our people …")
+      if (!lead && /[.!?]["”’']?$/.test(before) && /^["“]?[A-Z][a-z]/.test(text) && /\s/.test(text)) lead = " ";
       const start = !before.trim() || /[.!?…]["”’']?\s*$/.test(before) || /\n\s*["“]?$/.test(before);
       if (!lead && /^[a-z]/.test(text) && start) text = text[0].toUpperCase() + text.slice(1);
       else if (lead && start && /^[a-z]/.test(lead)) lead = lead[0].toUpperCase() + lead.slice(1);
