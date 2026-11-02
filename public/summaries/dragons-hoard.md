@@ -7,10 +7,14 @@
 A mining station on the Hoard planet (or a change of system ownership) schedules the two events separately.
 
 ## 剧情脉络 Story outline
-- 661 “龙之坟墓”（骸骨）：研究（得到龙甲）或磨碎（每月矿物+社会研究）。
-- 663 “龙之后代”（龙蛋）：a 在首都启用“孵化龙蛋”项目（5万点，限时1800天）；b 获得300影响力。
-- 两者互相独立，每颗行星各触发一次（标记 deboned / deegged）。
-- 项目成功 → 664 龙蛋孵化（生成以太幼龙舰队）；失败 → 665 龙蛋已死。
+- 661 “龙之坟墓”（骸骨）：研究（得到龙甲）或磨碎（每月矿物+社会研究）。  
+  661 "Dragon's Hoard, Dragon's Tomb" (the bones): study them (dragon armor) or grind them up (monthly minerals and society research).
+- 663 “龙之后代”（龙蛋）：a 在首都启用“孵化龙蛋”项目（5万点，限时1800天）；b 获得300影响力。  
+  663 "Dragon's Hoard, Dragon's Brood" (the egg): a starts the Drake Egg Incubation project on the capital (50,000 points, 1800-day limit); b gains 300 influence.
+- 两者互相独立，每颗行星各触发一次（标记 deboned / deegged）。  
+  The two are independent, and each fires once per planet (flags deboned / deegged).
+- 项目成功 → 664 龙蛋孵化（生成以太幼龙舰队）；失败 → 665 龙蛋已死。  
+  Project success → 664 "Dragon's Hoard, Dragon Reborn" (spawns an ether drakeling fleet); failure → 665 "Dragon's Hoard, Best Before" (the egg is dead).
 
 ## 分支与结局 Branches and outcomes
 成功孵化（664）；超时失败（665）；放弃龙蛋（663.b）。

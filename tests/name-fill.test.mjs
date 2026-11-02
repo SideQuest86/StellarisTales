@@ -67,6 +67,11 @@ test("a/an agrees with the phrase", () => {
   assert.equal(f("We met a [R.GetName]."), "We met an other empire.");
   assert.equal(f("We met an [Q.GetName]."), "We met a fleet.");
 });
+test("zh: 其 is already possessive", () => {
+  const n = { "E.GetHerHis": { zh: "其", en: "their" } };
+  assert.equal(plainNames(fillNames("并未完成[E.GetHerHis]的任务。", { lang: "zh", chapterNames: n })), "并未完成其任务。");
+  assert.equal(plainNames(fillNames("并未完成[E.GetHerHis]任务。", { lang: "zh", chapterNames: n })), "并未完成其任务。");
+});
 test("they-agreement, possessive and zh repeated noun", () => {
   assert.equal(fill("[P.GetSheHe] has left."), "They have left.");
   assert.equal(fill("[C.GetName]'s guard"), "Our guard");

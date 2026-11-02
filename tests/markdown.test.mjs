@@ -61,6 +61,13 @@ test("language detection", () => {
   // … but a stop alone, with no Chinese words, is not.
   assert.equal(detectLang("Cosmic Storms DLC。"), "en");
   // A bilingual line splits at a stop with no space, with a long name in the Chinese half, and pair by pair.
+  // Chinese words inside an English sentence are not a second pair; a Chinese sentence ending in an English name is not split.
+  const inside = splitMixed("不确定 Uncertain: the reward details were not evaluated at all here. 冻结虫 (situation_frenzied) and 破坏 (situation_sabotage) belong to the origin story, not here.");
+  assert.ok(!inside || !inside[0].includes(" and "), "no English clause in the Chinese half");
+  assert.equal(splitMixed("需要 Cosmic Storms DLC。"), null);
+  assert.equal(splitMixed("每国一次；需要 Cosmic Storms DLC。"), null);
+  // English first, Chinese second.
+  assert.deepEqual(splitMixed("Title-only variants for Treasure Hunters empires are grouped now. / 宝藏猎人起源时改用这五个窗口。"), ["宝藏猎人起源时改用这五个窗口。", "Title-only variants for Treasure Hunters empires are grouped now."]);
   assert.deepEqual(splitMixed("见上。See above."), ["见上。", "See above."]);
   assert.deepEqual(splitMixed("4045“深处的回声”：船员疲惫。选项取决于特质：   4045 Echoes from the Deep: the crew is exhausted."), ["4045“深处的回声”：船员疲惫。选项取决于特质：", "4045 Echoes from the Deep: the crew is exhausted."]);
   assert.deepEqual(splitMixed("需要 Federations 或 Ancient Relics。 Needs Federations or Ancient Relics."), ["需要 Federations 或 Ancient Relics。", "Needs Federations or Ancient Relics."]);

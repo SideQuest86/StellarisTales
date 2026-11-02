@@ -3,7 +3,7 @@
 
 ## 如何开始 How it starts
 
-首次接触阶段进度检定失败时（on_roll_failed → standard_first_contact_on_roll_failed）：先给线索，再有 1/20 概率从阶段指定的事件池里按权重抽一个，同一站点 125 天内最多触发一次（flag first_contact_event_fired）（`first_contact_effects.txt:1257–1294`）。本事件在以下池中：早期事件池 early_fc_random_events（默认第一阶段、掠夺者/海盗/商队/游牧民的第一阶段） 权重2。/ When a stage progress roll fails (on_roll_failed → standard_first_contact_on_roll_failed): clues are added, then a 1-in-20 chance draws one event from the stage’s pool by weight, at most once per 125 days per site. This event sits in: early pool (default stage 1 and the stage 1 of marauders, pirates, caravaneers, nomads) weight 2。
+首次接触阶段进度检定失败时（on_roll_failed → standard_first_contact_on_roll_failed）：先给线索，再有 1/20 概率从阶段指定的事件池里按权重抽一个，同一站点 125 天内最多触发一次（flag first_contact_event_fired）（`first_contact_effects.txt:1257–1294`）。本事件在以下池中：早期事件池 early_fc_random_events（默认第一阶段、掠夺者/海盗/商队/游牧民的第一阶段） 权重2。/ When a stage progress roll fails (on_roll_failed → standard_first_contact_on_roll_failed): clues are added, then a 1-in-20 chance draws one event from the stage’s pool by weight, at most once per 125 days per site. This event sits in: early pool (default stage 1 and the stage 1 of marauders, pirates, caravaneers, nomads) weight 2.
 
 ## 剧情脉络 Story outline
 

@@ -12,7 +12,7 @@ cstorms.1761 (a colony in a storm, once per empire): non-rocky empires choose a 
 
 项目成功 → cstorms.1765 “滤网疏通”：水循环改善，可用于全国灌溉；单一选项。
 
-Project succeeds → cstorms.1765 filter cleared: the water cycle improves and can be used for empire-wide irrigation; single option.
+Project succeeds → cstorms.1765 "Filters Unclogged": the water cycle improves and can be used for empire-wide irrigation; single option.
 
 ## 分支与结局 Branches and outcomes
 

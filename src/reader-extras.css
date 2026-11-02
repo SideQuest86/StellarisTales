@@ -31,6 +31,8 @@ html.reduced-motion .name-tip { transition: none; }
 .md-guide [data-lang] + [data-lang] { margin-inline-start: .2em; }
 /* (only between two halves that both show: beside a hidden half it indented the first line) */
 .md-guide[data-show="en"] [data-lang="zh"] + [data-lang="en"], .md-guide[data-show="zh"] [data-lang="en"] + [data-lang="zh"] { margin-inline-start: 0; }
+/* A situation's mechanics in a foot panel: its names run together as one quiet line. */
+.situation-labels { line-height: 1.9; }
 /* A table reads like the guide around it: hairlines between the rows, no boxes. (A column keeps its longest word whole.) */
 .md-table { margin: .8em 0; overflow-x: auto; overflow-wrap: break-word; }
 .md-table table { width: 100%; border-collapse: collapse; font-size: .94em; line-height: 1.65; }

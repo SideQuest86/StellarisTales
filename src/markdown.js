@@ -60,8 +60,13 @@ export function splitMixed(text) {
   const pairs = String(text).split(/(?<=[.!?)])\s+(?=[㐀-鿿])/);
   if (pairs.length > 1) {
     const split = pairs.map(splitOne);
-    if (split.every(Boolean)) return [split.map((p) => p[0]).join(""), split.map((p) => p[1]).join(" ")];
+    // (every Chinese half a whole sentence: "… were not evaluated. 冻结虫 (id) and 破坏 (id) belong to …" is one English sentence
+    // with Chinese words in it, not a second pair)
+    if (split.every((p) => p && /[。！？）」”]$/.test(p[0].trim()))) return [split.map((p) => p[0]).join(""), split.map((p) => p[1]).join(" ")];
   }
+  // English first ("… grouped with their base windows. / 宝藏猎人起源时改用这五个窗口。").
+  const reversed = /^(.*[.!?)])\s+\/\s+([^/]*[㐀-鿿][^/]*[。！？])$/.exec(String(text));
+  if (reversed && detectLang(reversed[1]) === "en" && detectLang(reversed[2]) === "zh") return [reversed[2], reversed[1]];
   return splitOne(text);
 }
 function splitOne(text) {
@@ -101,6 +106,8 @@ function splitOne(text) {
     // An English half is never glued to a Chinese character ("隐藏事件cstorms.10" is one Chinese phrase with an id in it), and
     // it does not run into Chinese at once ("…本身没有 DLC 检查）/ Horizon …": the boundary is the slash).
     if (!m[0] && /[㐀-鿿豈-﫿]/.test(s[m.index - 1])) continue;
+    // A few words that end in a Chinese stop finish the Chinese sentence, they are not English ("需要 Cosmic Storms DLC。").
+    if (/[。！？]\s*$/.test(tail) && !m[0].includes("/") && tail.split(/\s+/).length <= 5) continue;
     // (a Chinese term quoted inside the English, 'The "天灾" event …', does not count)
     const early = tail.replace(/`[^`]*`/g, "").replace(/["“「（(\[][^"”」）)\]]{0,24}["”」）)\]]/g, "").replace(SCRIPT_ID, "").trim();
     if (/[㐀-鿿豈-﫿]/.test(early.slice(0, 16))) continue;

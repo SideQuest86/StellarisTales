@@ -135,6 +135,8 @@ export function fillNames(s, opts) {
     // "[X]'s bodyguard" with X = "our": a possessive determiner takes no 's; zh "我们的[的]".
     .replace(/(\b(?:our|their|your|its))['’]s\b/gi, "$1")
     .replace(/的的/g, "的")
+    // "其" is already possessive: "[X.GetHerHis]的任务" -> "其任务", not "其的任务".
+    .replace(/([^]*[^]*其)的/g, "$1")
     // "the tropical [X]" with X = "this planet": the sentence already has a determiner, so the phrase drops its own.
     .replace(/\b(the|their|our|its|his|her|your|a|an)\s+([a-z][\w-]*)\s+([^]*)(?:this|that|our|the)\s+/gi, (_, det, adj, n) => `${det} ${adj} ${OPEN}${n}${SEP}`)
     // A frame that only introduces a proper name ("a scientist by the name of [X]", "名叫[X]的间谍首脑"): we never

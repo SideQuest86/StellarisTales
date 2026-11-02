@@ -13,7 +13,7 @@ At the fifth anniversary (weight 3) on a large, non-artificial colony that has a
 1. **晨间打卡缺席（9900）**：大量殖民者失踪（立即一人消失）。花 500 能量植入追踪器（“安心追踪”修正）→ 180–360 天后；或“没有必要恐慌”（“集体自我恐惧”修正）→ 360–720 天后——都到达 **扫描成功（9905）**（正文按先前选择不同）。  
   **Missed The Morning Check-in (9900)**: many colonists go missing (one vanishes at once). Spend 500 energy to implant a tracker (reassured-tracking modifier) → 180–360 days later; or no need to panic (collective self-fear modifier) → 360–720 days later; both reach **Lucky Scan (9905)** (the text differs by the earlier choice).
 2. 项目 **粒子谜题**（科研船+科学家，180 天）→ **待机模式（9910）**：失踪者在卫星上的静滞监狱里 → 60–120 天 → **逃离卫星（9915）**：监狱里还关着大批外星囚犯。  
-  Project **particle puzzle** (science ship + scientist, 180 days) → **Holding Pattern (9910)**: the missing are in the stasis prison on the moon → 60–120 days → **Escape From The Moon (9915)**: the prison also holds large numbers of alien prisoners.
+  Project **Particle Mystery** (science ship + scientist, 180 days) → **Holding Pattern (9910)**: the missing are in the stasis prison on the moon → 60–120 days → **Escape From The Moon (9915)**: the prison also holds large numbers of alien prisoners.
 3. 处置方式见下。  
   Disposal options are listed below.
 

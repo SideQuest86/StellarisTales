@@ -18,7 +18,7 @@ Taking the Galactic Nemesis perk; level 1 sends *The Universe Shall Tremble* and
 4. **引擎建造**（每阶段基础3600天）：第一阶段完工（6005，灵能/同类玩家收到“灵能冲击”）→ 第二阶段（6006，全银河警报；180–660天后虚境生物出现 6151）→ 第三阶段（6007；180–660天后第二波 6161；60–1320天后灵能脉冲 6171）→ 最终完工。  
   **Engine construction** (each stage has a base of 3600 days): stage 1 completes (6005; psionic and similar players receive a psionic shockwave notice) → stage 2 (6006; a galaxy-wide alarm; 180–660 days later Shroud entities appear, 6151) → stage 3 (6007; 180–660 days later a second wave, 6161; 60–1320 days later a psionic pulse, 6171) → final completion.
 5. **结局**：“始与终”（6050）获胜；1天后其他玩家收到“末日”（6051），所有星系被摧毁。若引擎被毁或星系被占领，建造者/摧毁者/其他玩家分别收到 6101/6102/6103；他国夺取引擎时（6200）可选择摧毁，或在自己也是第五级天灾且失去引擎时接手。  
-  **Ending:** winning through "A Beginning and an End" (6050); one day later other players receive the doomsday notice (6051) and all systems are destroyed. If the Engine is destroyed or its system occupied, the builders, the destroyers and the other players receive 6101, 6102 and 6103 respectively; when another empire captures the Engine (6200) it may destroy it, or take it over if it is itself a level 5 crisis that has lost its engine.
+  **Ending:** winning through "A Beginning and an End" (6050); one day later other players receive the notice "The End Times" (6051) and all systems are destroyed. If the Engine is destroyed or its system occupied, the builders, the destroyers and the other players receive 6101, 6102 and 6103 respectively; when another empire captures the Engine (6200) it may destroy it, or take it over if it is itself a level 5 crisis that has lost its engine.
 
 ## 分支与结局 Branches and outcomes
 

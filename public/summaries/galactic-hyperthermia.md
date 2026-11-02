@@ -16,9 +16,9 @@
 3. **三级**：建成第 2 阶段（Lv3）→ `infernals.1015`（温度将如何提升？）。**二选一**：`策划火风暴` 项目 → 1020，或 `抑制野心`（`意外关联`项目）→ 1021（Hyperthermia_Peaceful，熔炉只能走和平阶段，不会解锁下一级）。  
   **Level 3**: stage 2 is built (Lv3) → `infernals.1015` (how far will the temperature rise?). **Choose one**: the project Designed Firestorm → 1020, or restrain ambition (the project Unforeseen Correlation) → 1021 (Hyperthermia_Peaceful; the crucible can only follow the peaceful stages and does not unlock the next level).
 4. **四级**：「策划火风暴」后建成第 3 阶段（Lv4）→ `infernals.1025`（环绕核心）。  
-  **Level 4**: after Designed Firestorm, stage 3 of the crucible is built (Lv4) → `infernals.1025` (circling the core).
+  **Level 4**: after Designed Firestorm, stage 3 of the crucible is built (Lv4) → `infernals.1025` (Surrounding The Core).
 5. **五级**：建成第 4 阶段（Lv5）→ `infernals.1030`（点火竞赛）：设置 `Hyperthermia_ongoing`，开通通往 6 个核心星系的虫洞，开始「动员」倒计时（`situation_galactic_hyperthermia_timer`）。  
-  **Level 5**: stage 4 is built (Lv5) → `infernals.1030` (the ignition race): sets `Hyperthermia_ongoing`, opens wormholes to 6 core systems, and starts the mobilisation countdown (`situation_galactic_hyperthermia_timer`).
+  **Level 5**: stage 4 is built (Lv5) → `infernals.1030` (Race To Ignition): sets `Hyperthermia_ongoing`, opens wormholes to 6 core systems, and starts the mobilisation countdown (`situation_galactic_hyperthermia_timer`).
 6. **倒计时**：进度到阶段 2 时 `infernals.1035` 开启核心航路，并对其他国家发送 `infernals.1040`；若干古老帝国被拉入（难度 3/4/5/6 分别为 1/2/4/6 次抽取，`infernals_crisis_events.txt:410-434`）。倒计时结束，隐藏事件 `infernals.1041` 让联军宣战，启动「星系火风暴」状况，并给危机国家发 1042、给其他国家发 1043。  
   **Countdown**: when progress reaches stage 2, `infernals.1035` opens the core routes and sends `infernals.1040` to other empires; some ancient empires are drawn in (difficulty 3/4/5/6 gives 1/2/4/6 draws, `infernals_crisis_events.txt:410-434`). When the countdown ends, hidden event `infernals.1041` makes the coalition declare war, starts the situation Galactic Firestorm, and sends 1042 to the crisis empire and 1043 to others.
 7. **火风暴**：阶段 3 时 1045「与时间赛跑」。进度由危机国家占据的核心星系数量决定（少于 3 个每月 -3，多于 3 个每月 +3）。  

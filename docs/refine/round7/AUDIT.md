@@ -511,3 +511,18 @@ Tables: renderMarkdown had none, so 4 guides (26 rows) showed "| --- | --- |". N
 "停止实验 / halted", "轰炸 Bombardment (6)"); event-colony-fed-100's five ending names gained the game's English titles. Checked in the real
 page, desk and phone, en and zh: no raw pipes, no blank cell, no sideways scroll. A hidden half's margin indented the first line of
 every bilingual line on the other page: removed. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1.
+
+Review of v4.17.40 (renderer, and at least 40 of the new translated lines against their source; each finding verified): 6 confirmed. One
+regression of mine: splitting a line pair by pair cut Chinese words out of an English sentence (situation-voidworm-country-situation:
+"不确定冻结虫 (…) and 破坏"): every Chinese half must now end as a sentence. English-first lines ("… windows. / 宝藏猎人…。") now split. "需要 Cosmic
+Storms DLC。" no longer splits at the name. The first form of that guard (any half ending in 。) swallowed 15 first-contact lines whose
+English ended "weight 2。": narrowed to five words with no slash, and the typo fixed in 14 guides (wrong-language blocks 67 -> 64). Names: a
+sweep of every id-named chapter in the 86 changed guides gave 78 reports, nearly all on English that predates the translation; by hand, 7
+names changed in 5 guides.
+Inspection round 11 (24 random stories, seed 11112027, 61 chapters), all four lenses reported. Confirmed 4: situations showed their
+`sections` (stage and approach names, difficulty levels) as bare paragraphs: seen independently on desk-en and phone-zh; 94 situations, 858
+sections. They move to a foot panel; anomaly, site and project sections are prose and stay. "其的" from [X.GetHerHis]的 (147 texts with that
+pattern). Map label "特种行动成败" beside "特别行动" titles. "Reviewer note · not game text" read as a system message on 599 chapters: "Editor's
+note". Also the recurring report of a missing subtitle: titles with a filled name (759 chapters) now get one, in the reviewed wording,
+unless it would be "this name" or a fragment; 27 sampled in both languages read well. The 503 on music/cover.webp in the v4.17.40 live
+smoke was transient (200 three times after). Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4.
