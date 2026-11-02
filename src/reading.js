@@ -208,7 +208,7 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3 } = {})
     // as the requirement: a second "not" would invert it.
     const sentence = bare && /[.。!！?？]$/.test(bare) && bare.split(/\s+/).length > 3;
     const constraint = (sentence && /\b(can only|only if|only one|must|cannot|can't|may only)\b|只能|必须|不能|仅限|才能/i.test(bare))
-      || /^\s*£trigger_(?:no|yes)£/.test(String(name || "")) || /^(?:(?:cannot|can't|can not|no|not|never|must not)\b|不能|不可|不是|不得|没有|无法|无可|尚未|未能|未完成|未建立)/i.test(bare);
+      || /^\s*£trigger_(?:no|yes)£/.test(String(name || "")) || /^(?:(?:cannot|can't|can not|no|not|never|must not|is not|does not|do not|has not|have not|are not)\b|不能|不可|不是|不得|没有|无法|无可|尚未|未(?!来|知|央))/i.test(bare);
     // In English the "not" reads as one clause with a pronoun- or article-led statement ("not we have already …"); a title
     // keeps its capitals ("not Your Ladder To The Sky").
     if (!a.value && !constraint && lang === "en" && /^(?:We|Our|They|Their|It|Its|You|Your|The|This|That|These|There|A|An)\s+[a-z]/.test(text)) return word("非", "not ") + text[0].toLowerCase() + text.slice(1);

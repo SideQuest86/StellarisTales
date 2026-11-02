@@ -480,3 +480,16 @@ desk and phone, en and zh: 8 chapters, every tab tried opens its own text and sh
 (select 393-408 px in 358; the reader panel scrolled sideways and the gutter went): flex at a higher specificity, 358 px now.
 Not changed: picking a named tab still sets the empire profile archive-wide, by design. Round 9 confirmed 2 in all.
 Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2.
+
+Review of v4.17.37-38 (three lenses, each finding verified): 4 confirmed, 2 rejected. "The the ruler" (an adjective's "…" and a title
+merged after the article; 14 passages in envoy.220); GetRealName lost its scope noun; picker options identical where two texts share
+their first words (unrest.4200, fallen_empires_tasks.2): options now start where the text parts from its neighbours; 7 negated labels
+open with a negation (census of the 201 negated labels), and "Is NOT cloaked" / "Does not have …" / "未隐形" were missed: is_cloaked=no
+with value false is the tooltip of that very condition, so no "not". Left: a body-part getter with no reviewed wording reads "this
+name" (none reaches a chapter: all carry reviewed wording).
+Inspection round 10 (24 random stories, seed 10112027, 107 chapters; phone-zh and desk-zh found nothing). Triage: the blank map card
+reproduces at about 1.2 s and fills by about 3 s: the card's flight, the map fades in once it rests (#flow-surface.card-ready), by
+design, not a defect. Reported h1 mismatch after a cross-story link: not reproduced (the hidden archive title was read). 404 for
+stories without effects, chapter dead ends that are story ends, a title with a filled name and no subtitle: known. The English page's
+"This guide is written in Chinese only" is real: the site's own test over all 1,389 guides finds 12 Chinese-only, 78 with a section
+without English, 38 with a section without Chinese; next release. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1.

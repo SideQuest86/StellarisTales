@@ -100,6 +100,8 @@ test("names the archive cannot know: worded by what the getter names and where i
   // one determiner, never "our the leader"; "this name" keeps its own
   assert.equal(f("only our [X.GetTitle] [X.Leader.GetName] could"), "only our leader could");
   assert.equal(f("Our [fromfrom.GetClass] [fromfrom.GetName] has been captured"), "Our this name has been captured");
+  assert.equal(f("The [offended_party.GetAdj] [offended_party.GetRulerTitle] expressed dismay"), "The ruler expressed dismay");
+  assert.equal(f("what to make of [rock_fallen_empire.GetRealName]"), "what to make of that empire");
   // Chinese keeps its neutral wording
   assert.equal(f("我们见到了[contact_empire.GetRulerName]。", "zh"), "我们见到了这个名字。");
 });

@@ -134,6 +134,9 @@ test("describe names only what has a name and never invents a placeholder", () =
   // A title keeps its capitals ("Your Ladder To The Sky" is an origin's name, not a sentence).
   assert.equal(describe([[named("o", "通天之梯", "Your Ladder To The Sky", false)]], "en"), "not Your Ladder To The Sky");
   assert.equal(describe([[named("u", "不朽者", "Undying", false)]], "zh"), "非不朽者");
+  assert.equal(describe([[named("c", "未隐形", "Is NOT cloaked", false)]], "en"), "Is NOT cloaked");
+  assert.equal(describe([[named("c", "未隐形", "Is NOT cloaked", false)]], "zh"), "未隐形");
+  assert.equal(describe([[named("f", "未来世界", "Future World", false)]], "zh"), "非未来世界");
   assert.equal(describe([[flag("f1", false)], [flag("f2", true)]], "en"), "earlier events");
   assert.equal(describe([[flag("f1", true), flag("f2", false)]], "en"), "earlier events");
   assert.equal(describe([[flag("f1", false), named("a", "甲", "A", false)]], "zh"), "非此前经历 · 非甲");

@@ -891,8 +891,19 @@ function renderBody(r, ctx) {
       ?.map((c) => (lang === "en" && c.startsWith("not ") ? "N" + c.slice(1) : c));
     const count = lang === "zh" ? ["", "", "两", "三", "四", "五", "六", "七", "八", "九"][n] || n : ["", "", "two", "three", "four", "five", "six", "seven", "eight", "nine"][n] || n;
     const telling = T(`${count}种说法之一`, `One of ${count} tellings`);
-    const opening = (p) => { const s = prose(local(p.paragraphs[0]?.parts[0]?.text)).replace(/\s+/g, " ").trim(); const room = lang === "zh" ? 24 : 44; return s.length > room ? `${s.slice(0, room).trimEnd()}…` : s; };
-    if (n > 9 || (labels && n > 4)) tabs = `<label class="reading-picker passage-picker"><span>${esc(telling)}</span><select id="passage-select" aria-label="${esc(telling)}">${passages.map((p, i) => `<option value="${i}"${i === passageIndex ? " selected" : ""}>${esc(labels ? labels[i] : `${i + 1}. ${opening(p)}`)}</option>`).join("")}</select></label>`;
+    // A picker's option is the text's first words; two that open alike show where they part instead.
+    const openings = () => {
+      const all = passages.map((p) => prose(local(p.paragraphs[0]?.parts[0]?.text)).replace(/\s+/g, " ").trim());
+      const room = lang === "zh" ? 24 : 44;
+      const shared = (a, b) => { let k = 0; while (k < a.length && a[k] === b[k]) k++; return k; };
+      return all.map((s, i) => {
+        const from = Math.max(...all.map((o, j) => (j === i ? 0 : shared(s, o))));
+        if (from < room) return s.length > room ? `${s.slice(0, room).trimEnd()}…` : s;
+        const start = Math.max(0, from - Math.floor(room / 4));
+        return `…${s.slice(start, start + room).trim()}${start + room < s.length ? "…" : ""}`;
+      });
+    };
+    if (n > 9 || (labels && n > 4)) { const words = labels ? null : openings(); tabs = `<label class="reading-picker passage-picker"><span>${esc(telling)}</span><select id="passage-select" aria-label="${esc(telling)}">${passages.map((p, i) => `<option value="${i}"${i === passageIndex ? " selected" : ""}>${esc(labels ? labels[i] : `${i + 1}. ${words[i]}`)}</option>`).join("")}</select></label>`; }
     else tabs = `<div class="reading-tabs${labels ? "" : " compact"}" role="group" aria-label="${esc(telling)}">${labels ? "" : `<span class="reading-tabs-label" aria-hidden="true">${esc(telling)}</span>`}${passages.map((p, i) =>
       `<button data-passage="${i}" aria-pressed="${i === passageIndex}"${labels ? "" : ` aria-label="${esc(T(`第${i + 1}种说法`, `Telling ${i + 1}`))}"`}${conditions[i] && labels?.[i]?.toLowerCase() !== conditions[i].toLowerCase() ? ` title="${esc(conditions[i])}"` : ""}>${esc(labels ? labels[i] : String(i + 1))}</button>`).join("")}</div>`;
   }

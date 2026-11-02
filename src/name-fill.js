@@ -70,7 +70,7 @@ export function fillNames(s, opts) {
       //  - a plural reads "they" as a subject, "them" after a preposition, "people" after a determiner or quantifier.
       const NOUNS = { planet: "the planet", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist", alliance: "the alliance", government: "the government" };
       const scope = (key.split("|")[0].split(".").at(-2) || "").split("_").at(-1).toLowerCase();
-      const plain = /^Get(?:Full)?Name$/i.test(tail);
+      const plain = /^Get(?:Full|Real)?Name$/i.test(tail);
       const noun = plain ? scope : /^GetRuler(?:Name|Title)$|^GetRegnalName$/i.test(tail) ? "ruler" : /^GetLeaderName$/i.test(tail) ? "leader"
         : /^GetStarName$/i.test(tail) ? "star" : /^GetSpeciesName$/i.test(tail) ? "species" : /^GetAllianceName$/i.test(tail) ? "alliance"
         : /^GetGovernmentName$/i.test(tail) ? "government" : "";
@@ -149,7 +149,7 @@ export function fillNames(s, opts) {
     .replace(/([^]*)([^]*)(\s?)([^]*)([^]*)/g, (_, n1, t1, gap, n2, t2) =>
       OPEN + n2 + SEP + (/^(?:(?:the|our|this|that|a|an|your|their)\b|这|那|我们)/i.test(t2) || t2.endsWith(t1) || t1.endsWith(t2) || t2.startsWith(t1) ? t2 : t1 + gap + t2) + CLOSE)
     // A possessive before a phrase that brings its own determiner ("our" + "the leader", after a merge): one determiner.
-    .replace(/\b(our|their|your|its|his|her|my)(\s+)([^]*)(?:the|that)\s+/gi, "$1$2$3")
+    .replace(/\b(the|our|their|your|its|his|her|my)(\s+)([^]*)(?:the|that)\s+/gi, "$1$2$3")
     // A name only called out to and left out takes its comma or exclamation mark with it ("…meet you, [X]." -> "…meet you.",
     // "[X], we have decided" -> "We have decided"); a sentence that now starts after a left-out name starts with a capital.
     .replace(/,\s*(?=\s*[.!?])/g, "")
