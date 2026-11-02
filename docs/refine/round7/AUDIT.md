@@ -568,3 +568,11 @@ Activity": it used the bare title where the continue cards use the map's curated
 title and, for those without one, the parting words (sameTitleHints, shared with nothing else). Seven of the ten have the same game text,
 so the words alone could not tell them apart: the labels do (10 distinct, desk and phone, both languages). zh "间谍首脑这位领袖": 间谍首脑
 joins the titles that carry a filled-in name. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2.
+
+Inspection round 17 (24 random stories, seed 17112027, 64 chapters; desk-en and phone-zh found nothing). Confirmed 1, in the opt-in guide:
+"6170 *The Final Gift*" read "The Final Gift The Final Gift" (origin_fear_of_the_dark): the id became a link titled with its chapter and
+the italic name after it was another element, which dropEcho (text only) never saw. linkGuide now folds an emphasized name that repeats
+its link into the link. 29 guides write an id then an emphasized name: 954 links, 0 echoes left in either language. Not defects: a map node
+at the card's edge (a window); the "Case 1" / "If: not Robot empire" badges before a variant line (the archive's way of showing the game's
+alternatives; they open the reading for that case); the guide's "aid request" before a linked title and a bracket that closes on the
+next line. Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1.

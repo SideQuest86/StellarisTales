@@ -221,5 +221,16 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
     }
     node.replaceWith(frag);
   }
+  // A name in italics or bold right after its link ("6170 *The Final Gift*") repeats the link's own title: the written name
+  // becomes the link, in the guide's own words, and is not said twice.
+  for (const b of root.querySelectorAll("button.guide-doc")) {
+    const glue = b.parentElement?.classList.contains("guide-glue") && b.parentElement.lastChild === b ? b.parentElement : null;
+    const gap = glue?.nextSibling;
+    const el = gap?.nodeType === 3 && !gap.nodeValue.trim() ? gap.nextSibling : gap;
+    if (el?.nodeType === 1 && /^(EM|I|STRONG|B)$/.test(el.tagName) && !el.children.length && sameName(el.textContent, b.textContent)) {
+      b.textContent = el.textContent;
+      el.remove();
+    }
+  }
   return linked;
 }
