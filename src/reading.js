@@ -105,7 +105,8 @@ export function resolveBody(doc, ctx) {
     // read in order, without the blanks.
     const blank = (t) => !(String(t?.zh || "").trim() || String(t?.en || "").trim());
     const listed = (t) => /^\s*[-•*·]\s/.test(t?.en || t?.zh || "");
-    const all = doc.texts || [];
+    // (a text that only repeats the title, a situation's name as its description, is not said twice)
+    const all = (doc.texts || []).filter((t) => !(doc.title && t?.zh === doc.title.zh && t?.en === doc.title.en));
     const paragraph = (t) => ({ parts: [{ text: t, status: true, when: null }] });
     if (all.length > 1 && !all.some(blank) && !all.some(listed)) {
       const seen = new Set();

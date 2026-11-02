@@ -705,7 +705,7 @@ function edgeFacts(e) {
   const chance = pct == null ? null : pct > 0 && pct < 0.5 ? "<1" : Math.round(pct);
   if (e.many) notes.push(T(`其中一篇（共 ${e.many} 篇）`, `one of ${e.many} chapters`));
   // (a stage's difficulty is the map's business: the card says "The encounter's next stage")
-  if (e.label) notes.push(prose(local(e.label)).replace(/\s*[（(](?:difficulty|难度)\s*\d+[)）]/gi, ""));
+  if (e.label) notes.push(prose(local(e.label)).replace(/\s*[（(](?:difficulty|难度)\s*\d+[)）]/gi, "").replace(/\s*>=\s*/g, " ≥ ").replace(/\s*<=\s*/g, " ≤ "));
   else if (e.kind === "random" && !e.group) notes.push(T("随机结果 · 基础概率", "Random outcome · base chance") + (e.modified ? T("，受条件调整", ", adjusted by conditions") : ""));
   else if (e.kind === "research") notes.push(T("研究完成后", "When the research completes"));
   else if (e.kind === "project") notes.push(T("项目结束后", "When the project ends"));

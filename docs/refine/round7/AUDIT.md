@@ -613,3 +613,11 @@ are left. Effects: "新增资源点「+3」" for d_minerals_3 (the game names su
 kinds now say the resource ("+3 Minerals"). Not defects: two first-contact endings with one title (their hints differ: "…These aliens are
 indeed a civilization made…" / "…It turns out that they are indeed a…"); a contract tracking card of one sentence (the game's own); the map's
 right edge (a window). Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1, 4, 3, 3.
+
+Inspection round 22 (24 random stories, seed 22112027, 66 chapters; desk-zh, phone-zh and phone-en found nothing). Confirmed 2 on desk-en.
+Three chapters' only text is their title (situations:fallen_empires_situation, voidworm_country_situation, star_crazy_chain): resolveBody
+leaves out a text equal to the title. Card captions written with ">=" / "<=" (74 in the story files) read "≥" / "≤" on the cards (the
+game's own text keeps its characters). Not defects: the map card in its flight; a "9%" chance figure on a card (its tooltip reads "Base
+chance about 9%"); one caption shared by several cards of one random group (each card's own condition). The v4.17.47 deploy check
+reported its marker missing because the marker was a test's words: the shipped file has the change, and the smoke passed 15/15.
+Rounds: confirmed 7, 6, 4, 1, 3, 4, 3, 1, 2, 1, 4, 5, 0, 4, 3, 2, 1, 1, 4, 3, 3, 2.

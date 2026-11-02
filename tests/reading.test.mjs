@@ -81,6 +81,12 @@ test("options: trigger hides, allow disables", () => {
   assert.deepEqual(evo.map((c) => c.key), ["x", "evo", "tech"]);
 });
 
+test("a text that only repeats the title is not said twice", () => {
+  const title = { zh: "失落帝国行为", en: "Fallen Empire Behavior" };
+  assert.equal(resolveBody({ title, texts: [title] }, {})[0].paragraphs.length, 0);
+  assert.equal(resolveBody({ title, texts: [title, { zh: "正文", en: "Text." }] }, {})[0].paragraphs.length, 1);
+});
+
 test("several texts without a body are alternatives, read one at a time", () => {
   const t = (en) => ({ zh: en, en });
   const storm = { texts: [t("Radiant storm."), t("Electric storm."), t("Radiant storm.")] };
