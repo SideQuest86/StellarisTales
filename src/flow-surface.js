@@ -455,7 +455,13 @@ export class FlowSurface {
   }
   /** Title of a chapter on the map: the curated label (it tells apart chapters that share an event name), else the heading. */
   docTitle(doc) {
-    return this.local(this.tree.labels?.[doc] || this.tree.docs.get(doc)?.title, doc) || t("reader.chapter");
+    const d = this.tree.docs.get(doc);
+    return this.local(this.tree.labels?.[doc] || d?.title, doc) || this.opening(d, doc) || t("reader.chapter");
+  }
+  /** A chapter the game gave no title opens with its own first words ("Chapter" twice on one map told the two apart by nothing). */
+  opening(d, doc) {
+    const s = this.local(d?.texts?.[0], doc).replace(/\s+/g, " ").trim(), max = this.language === "zh" ? 14 : 28;
+    return s.length > max ? s.slice(0, max).replace(/[\s，,。.;；:：、]+$/, "") + "…" : s;
   }
   /** The heading the reader shows for the chapter. */
   docHeading(doc) {

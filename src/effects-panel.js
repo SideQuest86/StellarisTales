@@ -284,6 +284,8 @@ function entryHtml(e, ctx, depth) {
     ? unadjusted(pick(e.label, lang).replace(/^(约\s*[\d.]+%|About [\d.]+%)\s*/, "")).replace(/^（(.*)）$|^\((.*)\)$/, (_, a, b) => a || b)
     : allAdjusted ? pick(e.label, lang).replace(/\s*[:：]$/, (c) => T("（概率受条件调整）", " (chances adjusted by conditions)") + c.trim())
     : unadjusted(depositName(e, pick(e.label, lang), lang)));
+  // (an outcome of a roll with nothing to show says so: a bare "50%" above the other 50%'s effect read as a missing line)
+  const nothing = chanceChip && !label && !isList(e.effects) ? esc(T("无其他效果", "No other effect")) : "";
   const note = e.note ? `<span class="fx-notetext">${esc(pick(e.note, lang))}</span>` : "";
   const cls = ["fx-item", `fx-${e.kind}`, e.kind === "tooltip" ? "is-game-text" : "", e.conditional || GROUPS.has(e.kind) ? "is-cond" : ""].filter(Boolean).join(" ");
   let kids = "";
@@ -299,7 +301,7 @@ function entryHtml(e, ctx, depth) {
     if (!inner && e.kind !== "scripted") return "";
   }
   const times = e.times > 1 ? `<span class="fx-times">×${e.times}</span>` : "";
-  return `<li class="${cls}"><span class="fx-line">${chips.join("")}<span class="fx-text">${label}</span>${times}${target}</span>${note}${stats}${kids}</li>`;
+  return `<li class="${cls}"><span class="fx-line">${chips.join("")}<span class="fx-text">${label || nothing}</span>${times}${target}</span>${note}${stats}${kids}</li>`;
 }
 
 function listHtml(list, ctx) {

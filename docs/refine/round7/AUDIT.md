@@ -753,3 +753,12 @@ every pair folded; repeated lines compared as read), the leviathan celebration g
 written name the link in "id name：" list leads (in Chinese the words before the colon are as often a description, "率先调查",
 as a name). Not defects: the origin telling tabs (they carry aria-pressed), the choice reply (a disclosure under its button).
 Deferred: the phone map's 60% start on very wide trees, the long first-contact effects panel (critters.45), choice arrows.
+
+Surface round 13 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, tablet and the language switches). Fixed: markdown.js (a half that opens with the end of a Chinese sentence is
+not English; mixed headings swap in the English page's both-languages view), flow-surface.js (docTitle falls back to the
+chapter's opening words), effects-panel.js (an empty roll outcome), anomaly-on-crashed-ship-cat guide (option letters). Not a
+defect: the moon-bump guide's "Dead Center" under Story outline (it is the opening; the three outcomes follow under Branches).
+Improvements not taken: grouping choices that share a condition, larger condition type, hiding conditions by default, the
+portrait-tablet reading width, a text label on the map's close button (it has one for screen readers), thumbnails on every
+card. Deferred: the long first-contact effects panels, leader-experience lines without a number.

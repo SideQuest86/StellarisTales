@@ -111,6 +111,8 @@ function splitOne(text) {
     // An English half is never glued to a Chinese character ("隐藏事件cstorms.10" is one Chinese phrase with an id in it), and
     // it does not run into Chinese at once ("…本身没有 DLC 检查）/ Horizon …": the boundary is the slash).
     if (!m[0] && /[㐀-鿿豈-﫿]/.test(s[m.index - 1])) continue;
+    // (nor does it open with the end of the Chinese sentence: "…不可选 b）。 9010 a and b …" split at "b")
+    if (/^\S{0,3}[）。，、；：！？」』]/.test(tail)) continue;
     // A few words that end in a Chinese stop finish the Chinese sentence, they are not English ("需要 Cosmic Storms DLC。").
     if (/[。！？]\s*$/.test(tail) && !m[0].includes("/") && tail.split(/\s+/).length <= 5) continue;
     // (a Chinese term quoted inside the English, 'The "天灾" event …', does not count)
@@ -419,8 +421,14 @@ export function guideElement(md, lang, labels) {
     const lead = el.firstElementChild;
     if (lang === "en" && /^(STRONG|B)$/.test(lead?.tagName) && lead.children.length === 2 && lead.children[0].dataset.lang === "zh") swap(lead.children[0], lead.children[1]);
   }
-  if (lang === "en")
+  if (lang === "en") {
     for (const zh of root.querySelectorAll(':scope > p[data-lang="zh"]')) { const en = zh.nextElementSibling; if (en?.matches('p[data-lang="en"]')) swap(zh, en); }
+    // (and a heading named in both: "How it starts 如何开始" over the English paragraphs)
+    for (const h of root.querySelectorAll("h3[data-mixed], h4[data-mixed], h5[data-mixed]")) {
+      const [x, y] = [...h.children].filter((c) => c.dataset.lang);
+      if (x?.dataset.lang === "zh" && y?.dataset.lang === "en") swap(x, y);
+    }
+  }
   // Body text in a language (headings and the review notes aside). A guide written only in the other language shows it on
   // this page too, instead of headings over nothing; the toggle is offered only when both languages have text.
   // (the metadata list under the title, "分类 Category：…", is not body text)
