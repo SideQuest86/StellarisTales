@@ -263,15 +263,20 @@ function entryHtml(e, ctx, depth) {
   const stats = isList(e.stats)
     ? `<ul class="fx-stats">${e.stats.map((s) => `<li>${esc(pick(s.label, lang))} <b>${esc(s.text)}</b></li>`).join("")}</ul>`
     : "";
-  // With the percent chip, "About 30% (adjusted by conditions)" keeps only what the chip does not say.
+  // With the percent chip, "About 30% (adjusted by conditions)" keeps only what the chip does not say. When every option of the
+  // roll is adjusted, the roll says it once ("One of these happens at random (chances adjusted by conditions):") and the options
+  // do not repeat it.
+  const allAdjusted = e.kind === "random_list" && isList(e.effects) && e.effects.length > 1 && e.effects.every((o) => o?.chance?.adjusted);
+  const unadjusted = (s) => (ctx.adjustedSaid ? s.replace(/\s*(?:（受条件调整）|\(adjusted by conditions\))$/, "") : s);
   const label = esc(chanceChip
-    ? pick(e.label, lang).replace(/^(约\s*[\d.]+%|About [\d.]+%)\s*/, "").replace(/^（(.*)）$|^\((.*)\)$/, (_, a, b) => a || b)
-    : depositName(e, pick(e.label, lang), lang));
+    ? unadjusted(pick(e.label, lang).replace(/^(约\s*[\d.]+%|About [\d.]+%)\s*/, "")).replace(/^（(.*)）$|^\((.*)\)$/, (_, a, b) => a || b)
+    : allAdjusted ? pick(e.label, lang).replace(/\s*[:：]$/, (c) => T("（概率受条件调整）", " (chances adjusted by conditions)") + c.trim())
+    : unadjusted(depositName(e, pick(e.label, lang), lang)));
   const note = e.note ? `<span class="fx-notetext">${esc(pick(e.note, lang))}</span>` : "";
   const cls = ["fx-item", `fx-${e.kind}`, e.kind === "tooltip" ? "is-game-text" : "", e.conditional || GROUPS.has(e.kind) ? "is-cond" : ""].filter(Boolean).join(" ");
   let kids = "";
   if (isList(e.effects)) {
-    const sub = e.hidden ? { ...ctx, inHidden: true } : ctx;
+    const sub = { ...ctx, ...(e.hidden ? { inHidden: true } : {}), adjustedSaid: allAdjusted || (ctx.adjustedSaid && e.kind !== "random_list") };
     const g = !ctx.whole && gist(e);
     // (inside "All branches" every branch shows as it is: nothing folds again)
     const inner = tidy(e.effects).map((c) => entryHtml(c, g ? { ...sub, whole: true } : sub, depth + 1)).join("");

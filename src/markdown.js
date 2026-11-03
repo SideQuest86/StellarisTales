@@ -181,6 +181,17 @@ function metaPair(value) {
   if (last && open === shut && !/[a-z]{3,}/.test(words(last[1]))) return withId(last[1].trim(), last[2].trim());
   return null;
 }
+// A line of the review notes labelled in both languages ("审阅 Reviewed：2026-10-12（c7b-society）", "来源 Sources：`…`", "已核对
+// Checked：…"): each page its own label and colon; the archive's batch tags are not the reader's. A value in one language stays
+// as written, on both pages.
+export function reviewLine(text) {
+  // (a date may follow the label without a colon: "审阅 Reviewed 2026-10-12（C6）")
+  const m = /^([㐀-鿿]{1,6})\s+([A-Z][A-Za-z]*(?: [A-Za-z]+){0,2})(?:\s*[：:]\s*|\s+(?=\d{4}-\d\d-\d\d))(.+)$/.exec(text);
+  if (!m) return null;
+  const v = m[3].replace(/\s*[（(](?:已审阅\s*reviewed|c\d+[a-z]?-[\w-]+|C\d{1,2})[）)]/gi, "").replace(/\s*·\s*已审阅(?:\s+Reviewed)?\s*$/i, "").trim();
+  const parts = splitMixed(v) || [v, v];
+  return [`${m[1]}：${parts[0]}`, `${m[2]}: ${parts[1]}`];
+}
 export function metaLine(text) {
   if (!/^分类\s*Category\s*[：:]/.test(text)) return null;
   const zh = [], en = [];
@@ -272,7 +283,9 @@ const REVIEW_HEADING = /^(审阅记录|审阅|Review notes?)(\s|$)/i;
 /** Render Markdown to HTML. Headings start at h3 (# -> h3 ... ### and deeper -> h5). opts.lang picks the language of the review summary. */
 export function renderMarkdown(md, opts = {}) {
   // (a space after a Chinese stop before more Chinese is a typing slip: "旗标被清除。 契约被取消")
-  const lines = String(md || "").replace(/\r\n?/g, "\n").replace(/([。！？；，、])[ \t]+(?=[㐀-鿿])/g, "$1").replace(/ -> /g, " → ").split("\n");
+  // (nor is a space between Chinese and a bold Chinese name: "开启事件链与项目 **平流层喷口计划**")
+  const lines = String(md || "").replace(/\r\n?/g, "\n").replace(/([。！？；，、])[ \t]+(?=[㐀-鿿])/g, "$1").replace(/ -> /g, " → ")
+    .replace(/([㐀-鿿])[ \t]+\*\*(?=[㐀-鿿])/g, "$1**").replace(/([㐀-鿿）」])\*\*[ \t]+(?=[㐀-鿿])/g, "$1**").split("\n");
   const main = [];
   const review = [];
   let out = main;
@@ -317,7 +330,7 @@ export function renderMarkdown(md, opts = {}) {
       const tag = ordered ? "ol" : "ul";
       // An item in one language is labelled like a paragraph (the other language's page hides it); "无后续。" showed on both.
       out.push(`<${tag}>${items.map((t) => {
-        const meta = metaLine(t);
+        const meta = metaLine(t) || (out === review ? reviewLine(t) : null);
         if (meta && meta[0] && meta[1]) return `<li data-mixed="1"><span lang="zh-CN" data-lang="zh">${inline(meta[0])}</span> <span lang="en" data-lang="en">${inline(meta[1])}</span></li>`;
         if (meta && (meta[0] || meta[1])) return `<li${langAttr(meta[0] || meta[1])}>${inline(meta[0] || meta[1])}</li>`;
         // A DLC named only in English ("DLC：Nomads", 148 guides) is a proper name: both pages show it, each with its colon.

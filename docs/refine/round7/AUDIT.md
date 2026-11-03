@@ -724,3 +724,12 @@ languages view); flow-surface.js (phone map top, chapter above in view); search 
 (the game's text), the dangling "待征服星系数量:" (a live count), the volume control hidden on portrait tablets (by design), the heirs
 chain's one chapter and the outcome rows (real links). Deferred: bare "If an earlier condition holds" rows (3,990), identical
 per-choice effects panels (21 chapters), "adjusted by conditions" on every option of a roll.
+
+Surface round 10 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, home/search/museum). Home, search and museum: no defects. Fixed: guide-links.js (apostrophe-insensitive echo),
+markdown.js (reviewLine: review-note labels per page, batch tags and shelf codes dropped; no space between Chinese and a bold
+Chinese name), effects-panel.js (adjusted chances said once per roll). Not ours: the trailing "=" in paragon.5021's Chinese
+choice and "!." in arkship.65 (the game's text); "Unless we have no interest in holding council with weaklings" (the game's
+tooltip for is_homicidal, negated correctly). By design: the event-chain overview card in event-colony-9950, deposits ×2, the
+Hidden chip. Not taken: arrows on choices that only expand (the choice opens its reply), a caption on one-chapter maps, a
+thumbnail instead of the search "Chapter" note.

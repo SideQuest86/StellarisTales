@@ -72,7 +72,9 @@ export function dropEcho(label, text) {
   // (and the label itself written out unquoted, as a whole word or phrase: "2735 真菌通讯 → 2745 真菌之辩护")
   const s = /^\s?/.exec(text)[0].length;
   // (in any case: "3055 blackmail" after a link titled "Blackmail")
-  return label && label.length > 1 && text.slice(s, s + label.length).toLowerCase() === label.toLowerCase() && !/^[\p{L}\p{N}]/u.test(text.slice(s + label.length)) ? text.slice(s + label.length) : text;
+  // (apostrophes either way: "The Kha’lanka" after a link titled "The Kha'lanka")
+  const same = (x) => x.toLowerCase().replace(/[’‘]/g, "'");
+  return label && label.length > 1 && same(text.slice(s, s + label.length)) === same(label) && !/^[\p{L}\p{N}]/u.test(text.slice(s + label.length)) ? text.slice(s + label.length) : text;
 }
 
 /** In a bold "id name" ("**2006 宗教狂热**", "**1011 碰撞 / 1012 损失舰船**") the guide names the document itself: the written

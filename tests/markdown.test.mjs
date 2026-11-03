@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { renderMarkdown, splitMixed, inline, detectLang, hasCJK, safeUrl, metaLine } from "../src/markdown.js";
+import { renderMarkdown, splitMixed, inline, detectLang, hasCJK, safeUrl, metaLine, reviewLine } from "../src/markdown.js";
 import { cleanEnglish, cleanChinese } from "../src/name-tooltip.js";
 
 test("block constructs", () => {
@@ -179,3 +179,12 @@ test("an English half that opens with an event number splits after the guides' s
   assert.doesNotMatch(h.slice(h.lastIndexOf('data-lang="en"')), /科研船/);
 });
 
+test("review notes: each page its own label, no batch tags; no space before a bold Chinese name", () => {
+  assert.deepEqual(reviewLine("审阅 Reviewed：2026-10-12（c7b-society）"), ["审阅：2026-10-12", "Reviewed: 2026-10-12"]);
+  assert.deepEqual(reviewLine("审阅 Review：2026-10-13（c3b-exploration）· 已审阅 Reviewed"), ["审阅：2026-10-13", "Review: 2026-10-13"]);
+  assert.deepEqual(reviewLine("审阅 Reviewed 2026-10-12（C6）"), ["审阅：2026-10-12", "Reviewed: 2026-10-12"]);
+  assert.deepEqual(reviewLine("已核对 Checked：类别与4170。"), ["已核对：类别与4170。", "Checked: 类别与4170。"]);
+  assert.equal(reviewLine("本文为人工审阅导读（评注）。"), null);
+  assert.match(renderMarkdown(["## 审阅记录 Review notes", "", "- 来源 Sources：`a.txt:1`"].join("\n"), { lang: "en" }), /data-lang="en">Sources: <code>a\.txt:1<\/code>/);
+  assert.match(renderMarkdown("开启事件链与项目 **平流层喷口计划**（1200 工程学）"), /项目<strong>平流层喷口计划<\/strong>/);
+});
