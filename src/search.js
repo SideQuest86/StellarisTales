@@ -434,7 +434,8 @@ export function contextSnippet(found, fields, groups, lang, title) {
 }
 
 export const TYPE_LABEL = {
-  title: ["标题", "Title"], text: ["正文", "Text"], choice: ["选项", "Choice"], name: ["名称", "Name"],
+  // (a "name" hit is a chapter's own title: "Name" beside it read like a form field)
+  title: ["标题", "Title"], text: ["正文", "Text"], choice: ["选项", "Choice"], name: ["章名", "Chapter"],
   effect: ["效果", "Effect"], specimen: ["标本", "Specimen"],
 };
 export const typeLabel = (type, lang) => TYPE_LABEL[type]?.[lang === "en" ? 1 : 0] || "";

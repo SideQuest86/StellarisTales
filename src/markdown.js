@@ -389,6 +389,25 @@ export function guideElement(md, lang, labels) {
     if (!next || next.matches("details.md-review") || (/^H[3-5]$/.test(next.tagName) && next.tagName <= h.tagName)) h.remove();
   }
   if (lang === "en") markCJK(root);
+  // Both languages shown (the toggle) read as two lines, the page's language first and the other one quieter (reader-extras.css):
+  // the two halves of a line written in both take that order (only one shows otherwise, so the order is free), and a plain label
+  // named in both languages goes into its own half ("Toxic Slime Catalyzation: …" under "毒性黏液催化：…", not "毒性黏液催化：
+  // Toxic Slime Catalyzation: …" over both texts). Paragraphs written one per language take the same order.
+  root.dataset.page = lang;
+  const swap = (a, b) => { const mark = document.createComment(""); b.replaceWith(mark); a.before(b); mark.replaceWith(a); };
+  for (const el of root.querySelectorAll("p[data-mixed], li[data-mixed]")) {
+    const kids = () => [...el.children].filter((c) => c.dataset.lang);
+    const k = kids();
+    if (k.length === 4 && k.map((c) => c.dataset.lang).join() === "zh,en,zh,en" && !k[0].children.length && !k[1].children.length) { k[2].prepend(k[0]); k[3].prepend(k[1]); }
+    const [x, y] = kids().slice(-2);
+    if (x?.dataset.lang !== "zh" || y?.dataset.lang !== "en") continue;
+    x.dataset.half = y.dataset.half = "";
+    if (lang === "en") swap(x, y);
+    const lead = el.firstElementChild;
+    if (lang === "en" && /^(STRONG|B)$/.test(lead?.tagName) && lead.children.length === 2 && lead.children[0].dataset.lang === "zh") swap(lead.children[0], lead.children[1]);
+  }
+  if (lang === "en")
+    for (const zh of root.querySelectorAll(':scope > p[data-lang="zh"]')) { const en = zh.nextElementSibling; if (en?.matches('p[data-lang="en"]')) swap(zh, en); }
   // Body text in a language (headings and the review notes aside). A guide written only in the other language shows it on
   // this page too, instead of headings over nothing; the toggle is offered only when both languages have text.
   // (the metadata list under the title, "分类 Category：…", is not body text)

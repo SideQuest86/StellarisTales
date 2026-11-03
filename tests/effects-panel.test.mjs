@@ -118,6 +118,13 @@ test("adjacent repeats: a tooltip's echo goes, the same effect twice reads x2, n
   assert.equal(tidyEffects([option, { ...option }, { ...option }]).length, 3);
   const dlc = { kind: "if", label: L("If: DLC"), effects: [{ kind: "if", label: L("If: DLC"), effects: [district] }] };
   assert.deepEqual(tidyEffects([dlc])[0].effects.map((e) => e.kind), ["planet"]);
+  // One effect under conditions that differ in a quoted name only: one condition naming them all (not before an "Otherwise").
+  const storm = (name, id) => ({ kind: "if", label: { zh: `如果：风暴类型为「${name}」`, en: `If: the storm type is "${name}"` }, effects: [{ kind: "project", label: L("Starts the Eye"), project: id }] });
+  const folded = tidyEffects([storm("Gravity", "a"), storm("Stardust", "b"), storm("Electric", "c")]);
+  assert.equal(folded.length, 1);
+  assert.equal(folded[0].label.en, 'If: the storm type is "Gravity", "Stardust" or "Electric"');
+  assert.equal(folded[0].label.zh, "如果：风暴类型为「Gravity」、「Stardust」或「Electric」");
+  assert.equal(tidyEffects([storm("Gravity", "a"), storm("Stardust", "b"), { kind: "else", label: L("Otherwise"), effects: [district] }]).length, 3);
 });
 
 test("a condition block whose deep branches end in the same few effects reads as its outcome, the branches behind a toggle", () => {

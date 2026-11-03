@@ -910,6 +910,10 @@ export class FlowSurface {
     // On the card and the phone's map, the current chapter's row (it and its siblings) fits the width when a smaller scale
     // allows (not below 60%): a wide row opened with its outer chapters cut at both edges ("-phase encounters • Any order").
     let mid = b.x;
+    // The chapter above (where the reader came from), skipping group nodes.
+    let pid = this.tree.nodes.get(id)?.parent;
+    while (pid && !this.tree.nodes.get(pid)?.doc) pid = this.tree.nodes.get(pid)?.parent;
+    const pb = pid && this.layout.nodes.get(pid);
     if (!this.expanded) {
       // (and the row below it, where the story goes next)
       const node = this.tree.nodes.get(id), parent = this.tree.nodes.get(node?.parent);
@@ -918,6 +922,12 @@ export class FlowSurface {
       const fits = (w - 32) / Math.max(1, right - left);
       if (fits < k) k = Math.max(Math.min(k, 0.6), fits);
       if ((right - left) * k <= w - 32) mid = (left + right) / 2;
+      else if (pb) {
+        // A row too wide even at 60%: the chapter and the one above it, when both fit (the outer chapter of a wide row
+        // opened with the chapter above cut at the edge)
+        const l = Math.min(b.x - b.w / 2, pb.x - pb.w / 2), r = Math.max(b.x + b.w / 2, pb.x + pb.w / 2);
+        if ((r - l) * k <= w - 32) mid = (l + r) / 2;
+      }
     }
     this.view.k = k;
     this.view.x = w / 2 - (mid - this.origin.x) * k;
@@ -926,12 +936,11 @@ export class FlowSurface {
     // (a story's first chapter on the phone's full-screen map sits near its top: nothing comes before it to show above)
     const high = topLevel && this.element.classList.contains("mobile-open");
     this.view.y = h * (high ? 0.14 : topLevel ? 0.3 : 0.56) - (b.y + b.h / 2 - this.origin.y) * k;
+    // (nor does the top of a short map float mid-screen there, above an empty band: it sits near the top too)
+    if (this.element.classList.contains("mobile-open")) this.view.y = Math.min(this.view.y, h * 0.14);
     // On the card, the chapter above (where the reader came from) shows whole when it fits, instead of with its first line
     // cut at the card's faded top edge; the current chapter stays clear of the bottom.
     if (!this.expanded) {
-      let pid = this.tree.nodes.get(id)?.parent;
-      while (pid && !this.tree.nodes.get(pid)?.doc) pid = this.tree.nodes.get(pid)?.parent;
-      const pb = pid && this.layout.nodes.get(pid);
       if (pb) {
         const top = this.toScreen(0, pb.y).y, bottom = this.toScreen(0, b.y + b.h).y;
         const dy = Math.min(28 - top, h - 12 - bottom);

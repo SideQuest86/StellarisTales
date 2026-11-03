@@ -229,6 +229,10 @@ def scope_label(key, ctx, root_scope):
         return L(f'{word[0]}{zhn}', f'{word[1]}{enn}')
     parts = re.split(r'[.]', k)
     if len(parts) > 1:
+        # (a chain that starts at our empire says nothing by naming it: "root.fromfrom" read "the source of the source of our
+        # empire"; another start stays, "the controller of this ship")
+        if (root_scope or 'country') == 'country':
+            parts = [p for p in parts if p not in ('root', 'this')] or parts
         labels = [scope_label(p, ctx, root_scope) for p in parts]
         labels = [l for l in labels if l]
         if labels:
@@ -302,6 +306,10 @@ def atom_label(n, ctx):
         scope = scope_label(k, ctx, 'country') or (L(*G.OBJECT) if (':' in k or '.' in k) else None)
         if scope:
             inner = cond_label([x for x in v if x['k'].lower() not in PARAM_ATOMS], ctx)
+            # (a scope checked only for something earlier names nothing a reader knows: "the star of the event source of the
+            # previous scope: (if an earlier condition holds)" is just "if an earlier condition holds")
+            if inner['en'].strip('()') == G.STORY[1]:
+                return inner
             r = L(f"{scope['zh']}：{inner['zh']}", f"{scope['en']}: {inner['en']}")
             if inner.get('detail'):
                 r['detail'] = inner['detail']
@@ -411,7 +419,8 @@ def cond_label(nodes, ctx, mode='and'):
             parts.append(not_label(inner))
         elif k == 'or' and isinstance(n['v'], list):
             inner = cond_label(n['v'], ctx, 'or')
-            parts.append(L('（' + inner['zh'] + '）', '(' + inner['en'] + ')'))
+            # (no brackets around the earlier-condition phrase alone)
+            parts.append(inner if inner['en'] == G.STORY[1] else L('（' + inner['zh'] + '）', '(' + inner['en'] + ')'))
         elif k in ('hidden_trigger', 'trigger', 'limit') and isinstance(n['v'], list):
             parts.append(cond_label(n['v'], ctx))
         elif isinstance(n['v'], list) and (k.startswith(('any_', 'count_')) or k in ('num_owned_planets',)):
@@ -815,9 +824,11 @@ def h_monthly_mult(n, ctx, st):
     lo = to_num(p['min'], ctx) if 'min' in p else None
     hi = to_num(p['max'], ctx) if 'max' in p else None
     lo_v = lo[1] if lo and lo[0] == 'num' else None
-    hi_v = hi[1] if hi and hi[0] == 'num' and hi[1] < 1e6 else None
+    # (an engine ceiling of 100000 bounds nothing a reader meets)
+    hi_v = hi[1] if hi and hi[0] == 'num' and hi[1] < 1e5 else None
     if lo_v is not None and hi_v is not None:
-        bounds_zh, bounds_en = f'（{lo_v:g} 至 {hi_v:g}）', f' ({lo_v:g} to {hi_v:g})'
+        # ("(350 to 10000)" read like a range of months: it bounds the amount gained)
+        bounds_zh, bounds_en = f'（至少 {lo_v:g}，至多 {hi_v:g}）', f' (at least {lo_v:,g}, at most {hi_v:,g})'
     elif lo_v is not None:
         bounds_zh, bounds_en = f'（至少 {lo_v:g}）', f' (at least {lo_v:g})'
     elif hi_v is not None:
@@ -976,6 +987,12 @@ def h_kill_pop(n, ctx, st):
 def h_create_pop(n, ctx, st):
     p = params_of(n) if isinstance(n['v'], list) else {}
     amt = to_num(p['size'], ctx) if 'size' in p else None
+    if amt and amt[0] == 'num' and amt[1] == 0:
+        # (an empty group the game then fills from another, resettle_pop_group: "New pops appear ×0" said nothing true)
+        moved = isinstance(n['v'], list) and any(x['k'] == 'effect' and isinstance(x['v'], list) and 'transfer_pop' in str(x['v']) for x in n['v'])
+        if moved:
+            return [entry('pop', L('部分人口迁入一个新的人口群体', 'Some pops move into a new pop group'), n, st)]
+        return [entry('pop', L('形成一个新的人口群体', 'A new pop group forms'), n, st, added=True)]
     txt = f' ×{amt[1]:g}' if amt and amt[0] == 'num' else ''
     return [entry('pop', L(f'新增人口{txt}', f'New pops appear{txt}'), n, st, added=True)]
 

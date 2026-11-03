@@ -163,8 +163,16 @@ test("describe names only what has a name and never invents a placeholder", () =
   assert.equal(describe([[flag("f1", false)]], "en"), "not earlier events");
   // A negated tooltip sentence is the game's own wording of the requirement: no "not" in front.
   assert.equal(describe([[named("t", "同一时间只能进行一项此类秘密事业。", "We can only run one such secret enterprise at a time.", false)]], "en"), "We can only run one such secret enterprise at a time.");
-  // A negated statement keeps its "not" (dropping it would invert the meaning), as one clause.
-  assert.equal(describe([[named("r", "我们已经雇佣过一位领袖。", "We have already recruited a leader from them.", false)]], "en"), "not we have already recruited a leader from them.");
+  // A negated statement keeps its negation (dropping it would invert the meaning), worded as a clause: "unless …" / 并非「…」.
+  assert.equal(describe([[named("r", "我们已经雇佣过一位领袖。", "We have already recruited a leader from them.", false)]], "en"), "unless we have already recruited a leader from them");
+  assert.equal(describe([[named("r", "我们已经雇佣过一位领袖。", "We have already recruited a leader from them.", false)]], "zh"), "并非「我们已经雇佣过一位领袖」");
+  assert.equal(describe([[named("t", "同一时间只能进行一项此类秘密事业。", "We can only run one such secret enterprise at a time.", false)]], "zh"), "同一时间只能进行一项此类秘密事业。");
+  // "not A or not B" is "not both A and B"
+  const gt = named("g", "基因剪裁", "Gene Tailoring", false), cf = named("k", "基础隐形场", "Basic Cloaking Fields", false), x3 = named("x", "丙", "C", false);
+  assert.equal(describe([[gt], [cf]], "en"), "not both Gene Tailoring and Basic Cloaking Fields");
+  assert.equal(describe([[gt], [cf]], "zh"), "并非同时具备基因剪裁和基础隐形场");
+  assert.equal(describe([[gt], [cf], [x3]], "en"), "not all of Gene Tailoring, Basic Cloaking Fields and C");
+  assert.equal(describe([[gt], [named("a", "甲", "A")]], "en"), "not Gene Tailoring or A"); // (one positive alternative: as it was)
   // A label the game marks as a failed requirement, or that opens with a negation, is the requirement already: no second "not".
   assert.equal(describe([[named("e", "£trigger_no£ 不能成为银河皇帝", "£trigger_no£ Cannot be the Galactic Emperor", false)]], "en"), "Cannot be the Galactic Emperor");
   assert.equal(describe([[named("e", "£trigger_no£ 不能成为银河皇帝", "£trigger_no£ Cannot be the Galactic Emperor", false)]], "zh"), "不能成为银河皇帝");
@@ -187,7 +195,7 @@ test("describe names only what has a name and never invents a placeholder", () =
 test("a condition and its own negation: absorbed, and an always-true one says nothing", () => {
   const atom = (key, zh, value = true) => ({ type: "other", key, label: { zh, en: key }, value });
   const W = atom("w", "宇宙天气模型"), notW = atom("w", "宇宙天气模型", false), notP = atom("p", "概率流", false);
-  assert.equal(describe([[notW], [W, notP]], "zh"), "非宇宙天气模型 或 非概率流");
+  assert.equal(describe([[notW], [W, notP]], "zh"), "并非同时具备宇宙天气模型和概率流"); // (not W or not P)
   const T = atom("t", "节约"), notT = atom("t", "节约", false), E = atom("e", "环保主义者"), A = atom("a", "田园绽放");
   assert.equal(describe([[T], [notT, E], [notT, A]], "zh"), "节约 或 环保主义者 或 田园绽放");
   assert.equal(describe([[W], [notW]], "zh"), "");

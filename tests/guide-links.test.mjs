@@ -43,6 +43,10 @@ test("a quoted name that the link already shows is not repeated", () => {
   assert.equal(dropEcho("The Horizon Signal", " The Horizon Signal, once per game"), ", once per game");
   assert.equal(dropEcho("真菌", " 真菌通讯 → "), " 真菌通讯 → ");
   assert.equal(dropEcho("Signal", " Signals fade"), " Signals fade");
+  // A quote closes with its own mark (a bracket inside is part of it), and a name written with the game's placeholder is the title.
+  assert.equal(dropEcho("天上正在下生物！", "「天上正在下（物种名）！」：牵引光束"), "：牵引光束");
+  assert.equal(dropEcho("战胜帝国", "（“战胜……”，败方臣服于帝国）"), "（“战胜……”，败方臣服于帝国）");
+  assert.equal(dropEcho("失去遗珍！", "“于……失去遗珍！”。"), "");
 });
 
 test("a bold 'id name' names its document: the written name is the link", () => {
@@ -76,6 +80,11 @@ test("an id right after the name it would show: the written name becomes the lin
   assert.equal(show(foldEchoes(["/ Spymaster Exposed (", link("The spymaster Exposed"), "): A carry on"])), "/ [Spymaster Exposed]: A carry on");
   assert.equal(show(foldEchoes(["the target was Exposed (", link("The spymaster Exposed"), ")"])), "the target was Exposed ([The spymaster Exposed])");
   assert.equal(show(foldEchoes(["see “Other” (", link("Reaching Into the Rift"), ")"])), "see “Other” ([Reaching Into the Rift])");
+  // Unbracketed: an id right after its whole title, or two or more of the title's words; never the marks before the name.
+  assert.equal(show(foldEchoes(["visits give Recovered Fragment ", link("Recovered Fragment"), ". Next"])), "visits give [Recovered Fragment]. Next");
+  assert.equal(show(foldEchoes(["shows Warriors Sighted ", link("Marauder Warriors Sighted"), " (x)"])), "shows [Warriors Sighted] (x)");
+  assert.equal(show(foldEchoes(["the tunnels (→ ", link("Tunnels"), ")"])), "the tunnels (→ [Tunnels])");
+  assert.equal(show(foldEchoes(["触发“发现[物种]战士”", link("发现掠夺者战士"), "（x）"])), "触发“[发现[物种]战士]”（x）");
 });
 
 test("text is preserved around links", () => {

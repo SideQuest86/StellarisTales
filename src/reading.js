@@ -272,19 +272,22 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3, always
     // have already recruited a leader …"; dropping it there would invert the meaning). A label the game marks as a failed
     // requirement (£trigger_no£) or that opens with a negation ("Cannot be the Galactic Emperor", "没有…") is already worded
     // as the requirement: a second "not" would invert it.
-    const sentence = bare && /[.。!！?？]$/.test(bare) && bare.split(/\s+/).length > 3;
+    // (a Chinese sentence has no spaces to count: six characters before its stop)
+    const sentence = bare && /[.。!！?？]$/.test(bare) && (bare.split(/\s+/).length > 3 || /[㐀-鿿]{6}/.test(bare));
     const constraint = (sentence && /\b(can only|only if|only one|must|cannot|can't|may only)\b|只能|必须|不能|仅限|才能/i.test(bare))
       || /^\s*£trigger_(?:no|yes)£/.test(String(name || "")) || /^(?:(?:cannot|can't|can not|no|not|never|must not|is not|does not|do not|has not|have not|are not)\b|不能|不可|不是|不得|没有|无法|无可|尚未|未(?!来|知|央))/i.test(bare);
-    // In English the "not" reads as one clause with a pronoun- or article-led statement ("not we have already …"); a title
-    // keeps its capitals ("not Your Ladder To The Sky").
-    if (!a.value && !constraint && lang === "en" && /^(?:We|Our|They|Their|It|Its|You|Your|The|This|That|These|There|A|An)\s+[a-z]/.test(text)) return word("非", "not ") + text[0].toLowerCase() + text.slice(1);
+    // A statement ("We already have the Salvager Insight modifier.") is not a name: "not we already have …" / "非我们已经拥有…"
+    // read as broken grammar. English says "unless we already have …", Chinese quotes the game's sentence after 并非 (除非 would
+    // read "only if"). A title keeps its capitals ("not Your Ladder To The Sky").
+    if (!a.value && !constraint && lang === "en" && /^(?:We|Our|They|Their|It|Its|You|Your|The|This|That|These|There|A|An)\s+[a-z]/.test(text)) return "unless " + text[0].toLowerCase() + text.slice(1).replace(/[.。]$/, "");
+    if (!a.value && !constraint && lang === "zh" && name && (/[。！？]$/.test(text) || /^(?:我们|我方|他们|它们|你们)/.test(text))) return `并非「${text.replace(/[。]$/, "")}」`;
     return (a.value || constraint || (!name && unnamedFlags.size > 1) ? "" : word("非", "not ")) + text;
   };
   const parts = [];
   for (const branch of dnf) {
     const atoms = branch.map(atomText).filter((v, i, all) => v && all.indexOf(v) === i);
     // (what holds first, what does not after: "线圈炮 · 非轨道炮", not "非轨道炮 · 线圈炮")
-    atoms.sort((x, y) => Number(/^(?:非|not )/.test(x)) - Number(/^(?:非|not )/.test(y)));
+    atoms.sort((x, y) => Number(/^(?:非|并非|not |unless )/.test(x)) - Number(/^(?:非|并非|not |unless )/.test(y)));
     if (!atoms.length) return fallback;
     parts.push(atoms);
   }
@@ -299,6 +302,16 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3, always
   }
   // "A · B or A" is just "A": an alternative that contains another one adds nothing; equal ones collapse.
   const kept = parts.filter((p, i) => !parts.some((q, j) => j !== i && q.every((v) => p.includes(v)) && (q.length < p.length || j < i)));
+  // "not A or not B" is "not both A and B" (it read as contradicting the options beside it: "Only when: not Gene Tailoring or not
+  // Basic Cloaking Fields").
+  const neg = (s) => /^(?:非(?!常)|not )/.test(s) && !/^not (?:both|all) /.test(s);
+  if (kept.length > 1 && kept.every((p) => p.length === 1 && neg(p[0]))) {
+    const ns = kept.map((p) => p[0].replace(/^(?:非|not )/, ""));
+    // (a long list is cut after five, with no "and" before the cut)
+    const list = ns.slice(0, ns.length > 6 ? 5 : 6), more = ns.length > list.length;
+    const and = (sep, last) => (more ? list.join(sep) + word("等", " …") : list.slice(0, -1).join(sep) + last + list[list.length - 1]);
+    return lang === "zh" ? `并非同时具备${and("、", "和")}` : list.length === 2 ? `not both ${list[0]} and ${list[1]}` : `not all of ${and(", ", " and ")}`;
+  }
   // (alternatives of several parts are bracketed, so "or" reads at the right level: "极端和平主义 或（非极端军国主义 · 非极端排外主义）")
   const branches = kept.map((p) => (kept.length > 1 && p.length > 1 ? word(`（${p.join(" · ")}）`, `(${p.join(" · ")})`) : p.join(" · ")));
   return branches.slice(0, max).join(word(" 或 ", " or ")).replace(/ 或 （/g, " 或（").replace(/） 或/g, "）或") + (branches.length > max ? word(" 等", " …") : "") || fallback;

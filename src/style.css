@@ -4250,9 +4250,8 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 
 /* Full-text search */
 .search-hit > span:nth-child(2) { overflow-wrap: anywhere; }
-/* Hit type ("Text", "Name", "Effect" …): a quiet label in the thumbnail column, so every row's title lines up
-   (the column and the gap are the story rows' own: 96 px + 16 px). */
-/* What a hit matched ("Name", "Text"): a quiet italic note in the margin, not a capitals tag. */
+/* What a hit matched ("Chapter", "Text", "Effect" …): a quiet italic note in the thumbnail column, not a capitals tag, so
+   every row's title lines up (the column and the gap are the story rows' own: 96 px + 16 px). */
 .hit-type {
   flex-shrink: 0;
   width: 96px;

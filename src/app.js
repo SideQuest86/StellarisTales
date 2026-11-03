@@ -96,6 +96,7 @@ function loadNames() {
   return namesLoading;
 }
 let nameContext = null; // the reading context of the doc being rendered (computed once per render)
+let guideState = null; // the reading guide's open state and view across a language switch (renderChapter)
 // Substitution rules live in src/name-fill.js (shared with the review tools in scripts/refine/).
 const fill = (s, depth = 0, nested = null) =>
   fillNames(s, { lang, chapterNames: chapter?.names, names, evaluate, ctx: nameContext || { profile, assumptions }, nested, depth });
@@ -111,19 +112,20 @@ function prose(s, keepMarks = false) {
 }
 // Plain text of another document's (or a specimen's) game text, worded with that document's own reviewed names
 // (search snippets): prose() uses the open chapter's names.
-function proseWith(s, chapterNames, titled = false) {
-  const filled = cleanRefs(fillNames(String(s || ""), { lang, chapterNames, names, evaluate, ctx: { profile, assumptions } }), lang)
+function proseWith(s, chapterNames, titled = false, l = lang) {
+  const filled = cleanRefs(fillNames(String(s || ""), { lang: l, chapterNames, names, evaluate, ctx: { profile, assumptions } }), l)
     .replace(/§./g, "").replace(/£([^£]+)£/g, "").replace(/<[^>]*>/g, "");
-  const text = titled ? titleCase(filled) : filled;
+  const text = titled ? titleCase(filled, l) : filled;
   return text.replace(/[^]*/g, "").replace(//g, "").replace(//g, "");
 }
 // A title outside the open chapter (captions, slates, lists, links): the game's names filled in with that story's or
-// chapter's own wording, not the open chapter's. A story's title uses its index entry's reviewed `names`.
-const titleWith = (title, chapterNames) => typeset(proseWith(local(title), chapterNames, true));
+// chapter's own wording, not the open chapter's. A story's title uses its index entry's reviewed `names`. (In another language l
+// when it has one: a guide's other-language half names its links in that language.)
+const titleWith = (title, chapterNames, l = lang) => typeset(title?.[l] ? proseWith(title[l], chapterNames, true, l) : proseWith(local(title), chapterNames, true));
 // An English title in title case keeps it where the game fills in a name ("This System Stripped of Galactic Market Headquarters",
 // "Drug Cartels Clash on This Planet"); a sentence-case title, or Chinese, is left as it is.
-function titleCase(s) {
-  return lang === "en" ? titleCaseNames(s) : s;
+function titleCase(s, l = lang) {
+  return l === "en" ? titleCaseNames(s) : s;
 }
 // The chapter's title in the other language, under the title: the game's names in that language's reviewed wording. Nothing when it
 // says nothing more: the same words, a name with no wording ("this name"), or a fragment where a name was left out ("WE, THE").
@@ -737,10 +739,11 @@ function edgeButton(e, facts = edgeFacts(e), groupDelay = "") {
   // (a caption that ends in the card's own title says it once: "阶段检定失败时随机：食物中毒" under 食物中毒)
   const title = e.titleOverride || titleFor(e.target, e.story);
   const notes = facts.notes.map((n) => (n.length > title.length && n.toLowerCase().endsWith(title.toLowerCase()) && /[：:·—–-]\s*$/.test(n.slice(0, -title.length)) ? n.slice(0, -title.length).replace(/\s*[：:·—–-]\s*$/, "") : n)).filter(Boolean);
-  const caption = [...notes, ...(facts.delay && facts.delay !== groupDelay ? [facts.delay] : [])].join(" · ");
+  // (the separator stays at the end of a line: "下一阶段 · 进入另一则故事 ·" / "约 30 天后", never a line opening with "·")
+  const caption = [...notes, ...(facts.delay && facts.delay !== groupDelay ? [facts.delay] : [])].join("\u00a0· ");
   const chance = facts.chance == null ? ""
     : `<i class="next-chance" title="${esc(T(`基础概率约 ${facts.chance}%`, `Base chance about ${facts.chance}%`) + (facts.modified ? T("，受条件调整", ", adjusted by conditions") : ""))}">${facts.chance}%</i>`;
-  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(title)}</span>${e.hint ? `<small>${esc(e.hint)}</small>` : ""}${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
+  return `<button class="next-chapter${art ? " has-art" : ""}${cross ? " cross" : ""}" data-chapter="${esc(e.target)}" data-story="${esc(e.story || dossier.story.id)}"${e.sets ? ` data-sets="${esc(e.sets.join(" "))}"` : ""}><span class="next-text"><span class="next-title">${esc(title)}</span>${e.otherTitle ? `<small class="next-of" data-of="${esc(e.target)}" hidden></small>` : ""}${e.hint ? `<small>${esc(e.hint)}</small>` : ""}${caption ? `<small>${esc(caption)}</small>` : ""}</span>${chance}${art}<b aria-hidden="true">${cross ? "↗" : "→"}</b></button>`;
 }
 // The edges that remain possible, one card per document, edges of one random group listed together.
 function edgeLists(edges) {
@@ -793,6 +796,9 @@ function listButtons(lists) {
   for (const group of alike.values()) {
     const words = group.map((e) => { const doc = docMap.get(e.target); return proseWith(local(doc.texts[0]), doc.names).replace(/\s+/g, " ").trim(); });
     if (group.length < 2 || words.every((w) => w === words[0])) continue;
+    // (cards whose own captions already tell them apart need no cut-off words: "风暴消散" for the slayer and for the others)
+    const caps = group.map((e) => (e.label ? prose(local(e.label)) : ""));
+    if (caps.every(Boolean) && new Set(caps).size === group.length) continue;
     partingWords(words, lang === "zh" ? 24 : 44).forEach((hint, i) => { group[i].hint = typeset(hint); });
   }
   // A card titled like the open chapter ("Echoes from the Deep" three chapters running) would read as a link to itself: it carries
@@ -803,6 +809,10 @@ function listButtons(lists) {
     const hint = sameTitleHints([here, e.target]).get(e.target);
     if (hint) e.hint = hint;
   }
+  // Cards into another story that share its name (its failure ending and its next stage, both "终末使者") name the chapter
+  // each one opens; that story's data comes after the render (otherChapterTitles).
+  for (const e of merged.flat())
+    if (!e.hint && !e.titleOverride && !e.many && e.story && e.story !== dossier.story.id && count.get(titleFor(e.target, e.story)) > 1) e.otherTitle = true;
   return merged.map((list) => {
     if (list.length === 1) return edgeButton(list[0]);
     // Exclusive outcomes: one lead line (the delay they all share says it once there), then a ledger of the possibilities.
@@ -971,12 +981,28 @@ function renderBody(r, ctx) {
     const prev = i ? String(parts[i - 1][0] || "") : "";
     return out + (i && /[^\s㐀-鿿　-〿＀-￯]$/.test(prev) && /^[A-Za-z"“‘'(]/.test(String(raw || "")) ? " " : "") + html;
   }, "");
-  const html = (passage?.paragraphs || []).map((para) => ({ ...para, parts: para.parts.filter((part) => !fallback(part)) })).filter((para) => para.parts.length).map((para) => `<section><p>${join(para.parts.map((part) => {
+  // Variants that read the same once the game's text is filled in (four empire types, one scripted text) are one, under all
+  // their conditions; when every variant of a paragraph reads the same, the text is said once with no condition (shroud.4500
+  // showed its opening four times over).
+  const variant = (part) => part.status === null && part.when;
+  const alike = (parts) => {
+    const out = [];
+    for (const part of parts) {
+      const same = variant(part) && out.find((q) => variant(q) && prose(local(q.text)) === prose(local(part.text)));
+      if (same) same.when = [...same.when, ...part.when];
+      else out.push(variant(part) ? { ...part } : part);
+    }
+    const left = out.filter(variant);
+    if (left.length === 1 && parts.filter(variant).length > 1) left[0].status = true;
+    return out;
+  };
+  const html = (passage?.paragraphs || []).map((para) => ({ ...para, parts: alike(para.parts.filter((part) => !fallback(part))) })).filter((para) => para.parts.length).map((para) => `<section><p>${join(para.parts.map((part) => {
     const text = paragraph(local(part.text));
     if (part.status !== null || !part.when) return [local(part.text), text];
     const named = said(part.when);
     const label = named ? T("若：", "If: ") + named : (unnamed++, T(`情形${cn[unnamed - 1] || unnamed}`, `Case ${unnamed}`));
-    const block = String(local(part.text) || "").length > 40 ? " variant-block" : "";
+    // (measured on the text as read: a scripted text is a short key until it is filled in)
+    const block = prose(local(part.text)).length > 40 ? " variant-block" : "";
     return [local(part.text), `<span class="variant-piece${block}"><button class="variant-condition" data-adopt='${esc(JSON.stringify(part.when))}' title="${esc(T("按此情形阅读", "Read with this condition"))}">${esc(label)}</button>${text}</span>`];
   }))}</p></section>`).join("");
   return { html, tabs, passage };
@@ -1141,14 +1167,16 @@ function renderChapter(preservePosition = false) {
     ? T(`以下选项均需要：${sharedNeed.text}`, `All of these require: ${sharedNeed.text}`)
     : sharedNeed.loose ? T(`以下选项大多需要：${sharedNeed.text}`, `Most of these require: ${sharedNeed.text}`)
     : T(`除标注外，以下选项均需要：${sharedNeed.text}`, `Unless marked, these require: ${sharedNeed.text}`))}</small>` : "");
+  // A condition that is one "unless …" stands as its own sentence ("Unless we already have …", not "Requires: unless …").
+  const unless = (s) => (/^unless /.test(s) && !/ · /.test(s) ? "U" + s.slice(1) : "");
   const choiceNote = (c, i) => {
     const notes = [];
     const when = whens[i], need = needs[i];
     if (sharedWhen.text && !sharedWhen.loose && !when) notes.push(T("始终出现", "Always shown"));
-    else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(T("仅在以下情形出现：", "Only when: ") + when);
+    else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(unless(when) || T("仅在以下情形出现：", "Only when: ") + when);
     if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (said(c.allow) ? T("：", ": ") + said(c.allow) : ""));
     else if (sharedNeed.text && !sharedNeed.loose && !need) notes.push(T("始终可选", "Always available"));
-    else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(/^(需要|Requires\b)/i.test(need) || /^[^，。：]{0,10}(需要|必须)/.test(need) ? need : T("需要：", "Requires: ") + need); // (the game's own label may already say it: "探测范围内需要一艘…")
+    else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(unless(need) || (/^(需要|Requires\b)/i.test(need) || /^[^，。：]{0,10}(需要|必须)/.test(need) ? need : T("需要：", "Requires: ") + need)); // (the game's own label may already say it: "探测范围内需要一艘…")
     return notes.length ? `<small class="choice-condition">${esc(notes.join(" · "))}</small>` : "";
   };
   const continuation = edgeButtons(nextEdges) + listButtons(shared);
@@ -1198,7 +1226,13 @@ function renderChapter(preservePosition = false) {
     notesBox.append(heading,download,text);
     notesBox.addEventListener('toggle',()=>{if(notesBox.open&&!notesBox.dataset.linked){notesBox.dataset.linked='1';linkGuideDocs(text,story,dossier.chapters);}});
     $('.chapter-document').append(notesBox);
+    // (the page's language switched with the guide open: it stays open, in the view it was in, so the reader keeps the place)
+    if (guideState) {
+      if (guideState.all && text.dataset.show !== "all") text.querySelector(".md-lang-toggle")?.click();
+      if (guideState.open) notesBox.open = true;
+    }
   }
+  guideState = null;
   $("#chapter-list").innerHTML = story.tree ? '' :
     `<div class="contents-title"><span>${esc(T("剧情脉络", "Story map"))}</span><button id="contents-close" aria-label="${esc(T("关闭剧情脉络", "Close story map"))}">×</button></div>` +
     storyMap(story, readable, r.id, visitedChapters, lang, mapProse, trail);
@@ -1260,6 +1294,13 @@ function renderChapter(preservePosition = false) {
       }
     }), { timeout: 1500 })), freshOpen ? 1100 : 350);
   openingReader = false;
+  for (const small of document.querySelectorAll(".chapter-document .next-of")) {
+    const button = small.closest("[data-story]");
+    loadStory(button.dataset.story).then((data) => later(() => {
+      const c = data?.chapters?.find((x) => x.id === small.dataset.of), name = c && titleWith(c.title, c.names);
+      if (name && name !== button.querySelector(".next-title")?.textContent) { small.textContent = name; small.hidden = false; }
+    })()).catch(() => {});
+  }
   if(chapter.dialogue?.textProfiles){
     const picker=document.createElement('label');picker.className='reading-picker';
     picker.innerHTML=`<span>${esc(T('此前的经历','Earlier events'))}</span><select aria-label="${esc(T('此前的经历','Earlier events'))}">${chapter.dialogue.textProfiles.map((profile,i)=>`<option value="${i}" ${i===dialogueTextProfile?'selected':''}>${esc(local(profile.label))}</option>`).join('')}</select>`;
@@ -1371,6 +1412,8 @@ function toggleContents(force) {
 }
 $("#chapter-toggle").onclick = () => toggleContents();
 function switchLanguage() {
+  const guide = $(".chapter-document .story-summary");
+  guideState = guide ? { open: guide.open, all: guide.querySelector(".md-guide")?.dataset.show === "all" } : null;
   lang = lang === "zh" ? "en" : "zh";
   remember("st-language", lang);
   document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
@@ -1810,8 +1853,8 @@ function storySpecimens(story) {
 // Guide ids -> chapter buttons (src/guide-links.js); ids of other stories resolve through records.json when it loads.
 function linkGuideDocs(root, story, chapters) {
   const run = () => linkGuide(root, {
-    storyId: story.id, chapters, title: (c) => titleWith(c?.title, c?.names),
-    other: (id) => { const sid = recordToStory?.[id]; const s = sid && sid !== story.id && storyById.get(sid); return s ? { story: sid, label: storyName(s) } : null; },
+    storyId: story.id, chapters, title: (c, l) => titleWith(c?.title, c?.names, l),
+    other: (id) => { const sid = recordToStory?.[id]; const s = sid && sid !== story.id && storyById.get(sid); return s ? { story: sid, label: (l) => titleWith(s.title, s.names, l) } : null; },
   });
   loadRecords().then(run, run);
 }

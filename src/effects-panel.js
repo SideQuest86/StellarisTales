@@ -31,9 +31,35 @@ const isList = (v) => Array.isArray(v) && v.length > 0;
 // blocks on the same condition, the same effect twice. The tooltip's echo goes, same-condition blocks become one, a repeated
 // effect reads "×2". (Random options are separate rolls and stay apart; nothing that differs is ever merged away.)
 const words = (l) => (l ? `${l.zh ?? ""}\u0001${l.en ?? ""}` : "");
+// Conditions that differ only in one quoted name ("the storm type is “Gravity Storm”" … eight times) as one, naming them all:
+// the common words around a quoted name, the names listed. null when they differ in anything else.
+function namedTogether(labels) {
+  const out = {};
+  for (const lang of ["zh", "en"]) {
+    const all = labels.map((l) => String(l?.[lang] ?? ""));
+    let pre = all[0].length, suf = all[0].length;
+    for (const s of all) {
+      let i = 0; while (i < pre && s[i] === all[0][i]) i++; pre = i;
+      let j = 0; while (j < suf && s[s.length - 1 - j] === all[0][all[0].length - 1 - j]) j++; suf = j;
+    }
+    // (back to the quote marks around the names; the names themselves are what differ)
+    const open = Math.max(...["\"", "“", "「"].map((q) => all[0].lastIndexOf(q, pre - 1)));
+    if (open < 0) return null;
+    const ends = all.map((s) => s.slice(open));
+    const close = ends.map((s) => s.search(/["”」](?=[^"”」]*$)/));
+    if (close.some((c) => c < 1) || ends.some((s, k) => s.length - close[k] - 1 > suf)) return null;
+    const names = ends.map((s, k) => s.slice(0, close[k] + 1)), tail = ends[0].slice(close[0] + 1);
+    if (ends.some((s, k) => s.slice(close[k] + 1) !== tail) || new Set(names).size < names.length) return null;
+    const list = lang === "zh" ? names.slice(0, -1).join("、") + "或" + names.at(-1) : names.slice(0, -1).join(", ") + " or " + names.at(-1);
+    out[lang] = all[0].slice(0, open) + list + tail;
+  }
+  return out;
+}
 function tidy(list) {
   const out = [];
-  for (let e of list || []) {
+  const src = list || [];
+  for (let n = 0; n < src.length; n++) {
+    let e = src[n];
     // A roll's options that do the same thing are one option, their chances added ("About 10% · An espionage asset is lost" ten
     // times); a roll whose every option does the same thing is not a roll: its effect simply happens.
     if (e && e.kind === "random_list" && isList(e.effects)) {
@@ -76,6 +102,13 @@ function tidy(list) {
       // (the game's own tooltip keeps its "Game text" mark over the details of the effect it describes)
       if (echo(prev, e)) { out[out.length - 1] = prev.kind === "tooltip" ? { ...e, kind: "tooltip" } : e; continue; }
       if (prev.kind === "if" && e.kind === "if") { out[out.length - 1] = { ...prev, effects: [...(prev.effects || []), ...(e.effects || [])] }; continue; }
+    }
+    // One effect under conditions that differ in a name only (one special project for each storm type) is said once, under
+    // one condition naming them all. (Not before an "Otherwise", which belongs to the last condition alone.)
+    const seen = (x) => JSON.stringify(x, (k, v) => (k === "source" || k === "project" || k === "times" ? undefined : v));
+    if (prev && e && prev.kind === "if" && e.kind === "if" && src[n + 1]?.kind !== "else" && prev.effects?.length === 1 && e.effects?.length === 1 && seen(prev.effects[0]) === seen(e.effects[0])) {
+      const alts = [...(prev.alts || [prev.label]), e.label], label = namedTogether(alts);
+      if (label) { out[out.length - 1] = { ...prev, label, alts }; continue; }
     }
     out.push(e);
   }

@@ -6,6 +6,7 @@ import {
   stat,
   rm,
   lstat,
+  readdir,
 } from "node:fs/promises";
 import { resolve, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -53,6 +54,23 @@ await cp("public", "dist", { recursive: true });
   const byDoc = JSON.parse(await readFile("dist/museum/by-doc.json", "utf8"));
   for (const entry of Object.values(byDoc)) for (const key of Object.keys(entry.names)) entry.names[key] = name(key, entry.names[key]);
   await writeFile("dist/museum/by-doc.json", JSON.stringify(byDoc));
+  // (and so do the gameplay-effects lines "Gains the “…” specimen": "this name Crystalose" was the raw name's fallback)
+  for (const f of await readdir("dist/effects")) {
+    const path = "dist/effects/" + f, text = await readFile(path, "utf8");
+    if (!text.includes('"kind":"specimen"') || !text.includes("[")) continue;
+    const data = JSON.parse(text);
+    let changed = false;
+    (function walk(o) {
+      if (!o || typeof o !== "object") return;
+      if (o.kind === "specimen" && o.specimen && o.label)
+        for (const l of ["zh", "en"]) {
+          const fixed = o.label[l]?.replace(/(「|")([^」"]*\[[^」"]*)(」|")/, (m, a, n, b) => a + specimenName(n, l, spec.get(o.specimen)?.placeholders) + b);
+          if (fixed && fixed !== o.label[l]) { o.label[l] = fixed; changed = true; }
+        }
+      for (const v of Object.values(o)) walk(v);
+    })(data);
+    if (changed) await writeFile(path, JSON.stringify(data));
+  }
 }
 // A story with no gameplay effects gets an empty file, so opening it requests nothing that fails.
 const { stories } = JSON.parse(await readFile("dist/stories/index.json", "utf8"));

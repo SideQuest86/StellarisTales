@@ -1,3 +1,21 @@
+v4.17.62 — 2026-11-02
+
+Surface round 9. Conditions read as sentences: a negated statement says "Unless we already have the Salvager Insight
+modifier" / 并非「我们已经拥有打捞者洞见修正」 (not "Requires: not we already have …"), and "not A or not B" reads "not both A and B"
+/ 并非同时具备A和B (113 condition lines). Gameplay effects: one effect under conditions that differ only in a name is said once
+("If: the storm type is “Gravity Storm”, “Stardust Storm” … or “Nexus Storm”", not eight times); a scope checked only for
+something earlier says just that; income bounds read "(at least 350, at most 10,000)"; an empty pop group filled by a transfer
+reads "Some pops move into a new pop group" (not "New pops appear ×0"); specimen names read as in the museum ("Crystalose", not
+"this name Crystalose"). Reading: variants that read the same once the game's text is filled in are said once (shroud.4500's
+opening showed four times); a scripted passage no longer carries a name's tooltip over its lines; cards into another story that
+share its name show the chapter each opens; look-alike cards with their own captions lose the cut-off words. Guides: a chapter id
+right after its own written title (or the title with the game's placeholder, or two or more of its words) shows that name once
+("View of Home", not "View of Home View of Home"; about 490 blocks); a bare id ending a sentence is linked; a quote with a
+bracket inside is matched whole ("天上正在下生物！！」" fixed); in the show-both-languages view each language's half has its own
+line, the page's language first and the other quieter, with links named in their half's language, and switching the page
+language keeps the guide open in its view. The phone's story map starts with the top of a short map near the top of the screen
+and keeps the chapter above in view; search marks a match on a chapter's title "Chapter" / "章名".
+
 v4.17.61 — 2026-11-02
 
 A condition whose alternatives check the same thing twice in one word (the uprising's empire and ours) reads simply: "Machine

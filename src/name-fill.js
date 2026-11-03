@@ -121,6 +121,9 @@ export function fillNames(s, opts) {
         if (text.endsWith(trail.slice(0, k))) { trail = trail.slice(k); break; }
       }
     }
+    // (a scripted text as long as a passage is the passage itself, not a name: annotated, the whole of it was underlined and its
+    // note covered the next lines on hover)
+    if (!own && names[tail] && (text.length > 60 || /\n/.test(text))) return lead + text + trail;
     return lead + wrap(text, n) + trail;
   })
     // The game picks he/she with a singular verb; the neutral "they" needs the plural form.

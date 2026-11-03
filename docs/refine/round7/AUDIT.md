@@ -712,3 +712,15 @@ Surface round 8 (2026-11-02; six inspectors on new samples). Fixed: absorption o
 scoped to the uprising's empire and one to ours), and a factored remainder that always holds leaves the shared part alone (6
 conditions; 4 tautologies hidden). Deferred: spacing of chapter names in a guide's both-languages view, Chinese DLC names, inline
 variant badges after a paragraph's last sentence (shroud.4500), guide links that share one title.
+
+Surface round 9 (2026-11-02; six inspectors: conditions, guides, effects, desktop English, phone Chinese, tablet and the
+language switches; seven verifiers). Fixed: negated statements and all-negated alternatives in conditions (reading.js; Chinese
+constraint sentences now detected without spaces); effects.py (story-only scopes, root of an empire chain, income bounds, empty
+pop groups), effects-panel.js (one effect under conditions differing in a quoted name), build.mjs (specimen names in effects);
+app.js (variants alike merged, cross-story cards named, look-alike captions, caption separators, guide state across a language
+switch); name-fill.js (long scripted texts unannotated); guide-links.js (matched quote pairs, placeholder names, unbracketed id
+after its title or its words, sentence-final bare ids, links in their half's language); markdown.js + reader-extras.css (both-
+languages view); flow-surface.js (phone map top, chapter above in view); search chip. Not ours: "Is NOT cloaked", "需要一个维修工坊."
+(the game's text), the dangling "待征服星系数量:" (a live count), the volume control hidden on portrait tablets (by design), the heirs
+chain's one chapter and the outcome rows (real links). Deferred: bare "If an earlier condition holds" rows (3,990), identical
+per-choice effects panels (21 chapters), "adjusted by conditions" on every option of a roll.

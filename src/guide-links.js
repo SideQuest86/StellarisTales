@@ -7,10 +7,12 @@
 // "<namespace>.<number>" is a document of this story.
 const UNIT_AFTER = /^\s*(%|％|天|日|月|年|个|次|点|倍|级|x\b|×|days?\b|months?\b|years?\b|turns?\b|times\b|of\b|\/\s*\d)/i;
 const UNIT_BEFORE = /(weight|权重|基础|base|\+|-|−|×|\/|第|year|年|v)\s*$/i;
-const TOKEN = /([A-Za-z_][\w-]*\.\d+)|(?<![\w.:/-])(\d{3,5})(?![\w.%-])/g;
+// (a bare id may end a sentence: "a tree reaching devastation 50 -> 3003." showed the number)
+const TOKEN = /([A-Za-z_][\w-]*\.\d+)|(?<![\w.:/-])(\d{3,5})(?![\w%-]|\.\w)/g;
 
 /** Splits text into strings and {id, raw[, story, label]} pieces. ids: document ids of this story; spaces: namespaces to try
- *  for bare numbers; other(id): a full id of another story -> {story, label} or null. */
+ *  for bare numbers; other(id): a full id of another story -> {story, label} or null (label: a string, or a function of the
+ *  language). */
 export function tokenize(text, ids, spaces, other = () => null) {
   const out = [];
   let last = 0;
@@ -49,8 +51,10 @@ export function trimGlueSpaces(parts) {
  *  Once the id reads as that title, the quote would repeat it: text right after a link loses a quoted name that the link's
  *  label already contains. Any other quote (a choice, a line of dialogue) stays. */
 export function dropEcho(label, text) {
-  // (a bracketed name too: "12155（奥伏戎的愤怒）")
-  const q = /^\s?["“「『（(]([^"”」』）)]{1,80})["”」』）)]/.exec(text);
+  // (a bracketed name too: "12155（奥伏戎的愤怒）"; each quote closes with its own mark, so a bracket inside one is part of the
+  // name: "「天上正在下（物种名）！」" lost "「天上正在下（物种名）" and left "！」")
+  const m = /^\s?(?:["“]([^"”]{1,80})["”]|「([^」]{1,80})」|『([^』]{1,80})』|[（(]([^）)]{1,80})[）)])/.exec(text);
+  const q = m && [m[0], m[1] ?? m[2] ?? m[3] ?? m[4]];
   if (q && sameName(q[1], label)) return text.slice(q[0].length);
   // (a quoted title that differs from the link's, the guide's older name for the same document: 'Spore Connection "Mycelium
   // Array"', '孢子连接「菌丝阵列」'; a title is short, without sentence punctuation, in title case in English: a quoted choice
@@ -60,8 +64,11 @@ export function dropEcho(label, text) {
   const han = (s) => /[㐀-鿿]/.test(s);
   // (and only after a link that reads as a title: a link left as its id, "distar.3040", is named by the quote)
   const titled = label && !/^(?:[\w-]+[.:])?\d+$/.test(label.trim());
-  const title = t && titled && han(t) === han(label) && t.length <= 32 && !/[。，！？.,!?;；：:]/.test(t) && (han(t) ? t.length >= 2 && t.length <= 10 : t.split(/\s+/).length >= 2 && (t.match(/[A-Za-z]{4,}/g) || []).every((w) => /^[A-Z]/.test(w)));
-  if (title) return text.slice(q[0].length);
+  // (a title may end with the mark the link's own title ends with: "天上正在下生物！")
+  const end = /[！？!?]$/.exec(t)?.[0], u = end && label.trim().endsWith(end) ? t.slice(0, -1) : t;
+  const title = u && titled && han(u) === han(label) && u.length <= 32 && !/[。，！？.,!?;；：:]/.test(u) && (han(u) ? u.length >= 2 && u.length <= 10 : u.split(/\s+/).length >= 2 && (u.match(/[A-Za-z]{4,}/g) || []).every((w) => /^[A-Z]/.test(w)));
+  // (the stop after the quote goes with it when the title ends in its own mark: "失去遗珍！。")
+  if (title) { const rest = text.slice(q[0].length); return /[！？!?]$/.test(label.trim()) && /^[。.](?![\d.])/.test(rest) ? rest.slice(1) : rest; }
   // (and the label itself written out unquoted, as a whole word or phrase: "2735 真菌通讯 → 2745 真菌之辩护")
   const s = /^\s?/.exec(text)[0].length;
   // (in any case: "3055 blackmail" after a link titled "Blackmail")
@@ -95,6 +102,10 @@ function sameName(name, label) {
   const a = flat(name), b = flat(label);
   if (!a || !b) return false;
   if (a === b) return true;
+  // (a name the guide writes with the game's placeholder, "发现[物种]战士" / "天上正在下（物种名）！", is the title with a name filled in)
+  const holes = String(name).split(/\[[^\]]{1,40}\]|（[^）]{1,8}名?）/);
+  if (holes.length > 1 && holes.some((h) => flat(h).length >= 2))
+    return new RegExp(`^${holes.map(flat).join(".{1,16}")}$`, "u").test(b); // (flat() leaves letters and digits only: nothing to escape)
   return /[㐀-鿿]/.test(name) ? a.length >= 2 && b.includes(a) : words(label).includes(words(name));
 }
 // Start of the shortest end of `text` that spells `label` (spaces and punctuation aside), or -1; never from inside a Latin word.
@@ -138,7 +149,25 @@ export function foldEchoes(parts, prevText = () => "") {
       i = put(i, core.slice(0, q.index + 1), { ...p, text: q[2] }, q[3] + rest);
       continue;
     }
-    if (!open) continue;
+    if (!open) {
+      // (and an id right after its own whole title, unbracketed: "Recovered Fragment 1610." read "Recovered Fragment Recovered
+      // Fragment." once the id was linked)
+      // (the title ends the text, to its last mark: never "(→" taken in with the name before it)
+      const bare = before.replace(/\s+$/, ""), last = p.text.trim().slice(-1).toLowerCase();
+      const k = (bare.length < before.length || /[㐀-鿿]$/.test(bare)) && bare.slice(-1).toLowerCase() === last ? suffixOf(bare, p.text) : -1;
+      if (k >= 0 && flat(p.text).length >= 4) { i = put(i, bare.slice(0, k), { ...p, text: bare.slice(k) }, after); continue; }
+      // (or a shorter English name of two or more of the title's own words: "shows Warriors Sighted marauder.3" for "Marauder
+      // Warriors Sighted")
+      const tail = bare.length < before.length && /(?:[A-Z][\w'’-]*\s+){1,4}[A-Z][\w'’-]*$/.exec(bare);
+      if (tail) {
+        const ws = tail[0].split(/\s+/);
+        for (let n = ws.length; n >= 2; n--) {
+          const phrase = ws.slice(-n).join(" ");
+          if (sameName(phrase, p.text)) { i = put(i, bare.slice(0, bare.length - phrase.length), { ...p, text: phrase }, after); break; }
+        }
+      }
+      continue;
+    }
     if (!core.trim()) {
       if (sameName(prevText(p), p.text)) i = put(i, core, { ...p, lead: true }, rest);
       continue;
@@ -171,7 +200,8 @@ export function namespaces(ids) {
 
 /** Replaces document ids in the guide's text (outside the review section, links and code) with chapter buttons that the
  *  reader's [data-chapter] handler opens like a story-map node. other(id) resolves a full id of another story to
- *  {story, label} (or null). */
+ *  {story, label} (or null); title(chapter, lang) and a label function name a link in the language of the half it sits in
+ *  (the other-language view read "shows Warriors Sighted 发现掠夺者战士"). */
 export function linkGuide(root, { storyId, chapters, title, other = () => null }) {
   const ids = new Set(chapters.map((c) => c.id));
   const spaces = namespaces(ids);
@@ -183,8 +213,9 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
     if (n.parentElement?.closest("a, button, code, .md-review, summary")) continue;
     if (/\d/.test(n.nodeValue)) nodes.push(n);
   }
+  const half = (node) => node.parentElement?.closest("[data-lang]")?.dataset.lang;
   const work = nodes.map((node) => ({ node, labelled: trimGlueSpaces(tokenize(node.nodeValue, ids, spaces, other)).map((p) =>
-    typeof p === "string" || p.muted ? p : { ...p, text: (p.story ? p.label : title(byId.get(p.id))) || p.raw }) }));
+    typeof p === "string" || p.muted ? p : { ...p, text: (p.story ? (typeof p.label === "function" ? p.label(half(node)) : p.label) : title(byId.get(p.id), half(node))) || p.raw }) }));
   // Different chapters with one title in the same paragraph would all read alike ("The C.A.R.E Interactive Interface → The
   // C.A.R.E Interactive Interface → …", the steps of one anomaly): there the links keep the guide's own numbers, and their
   // tooltip names the title.
