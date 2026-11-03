@@ -157,7 +157,8 @@ export function fillNames(s, opts) {
     // invent the name, so the frame and its slot are left out together ("a scientist", "间谍首脑"). Display only —
     // the original text is kept in the data.
     .replace(new RegExp(`,?\\s+(?:by the name of|named)\\s+${SPAN}(,(?=\\s))?`, "g"), "")
-    .replace(new RegExp(`(?:名叫|名为|名字叫)${SPAN}的?`, "g"), "")
+    // (not the verb 命名为, "we named them …": "我们将他们命名为[X]。" read "我们将他们命。")
+    .replace(new RegExp(`(?<!命)(?:名叫|名为|名字叫)${SPAN}的?`, "g"), "")
     // A computed amount ("+[X]% research"): the phrase stands for the whole quantity, sign and % included.
     .replace(new RegExp(`[+\\-]?(${SPAN})\\s?%`, "g"), "$1")
     // Two substitutions side by side ("[Root.GetRulerTitle] [Root.GetRulerName]") name one person: a second phrase
@@ -172,6 +173,8 @@ export function fillNames(s, opts) {
     // A name only called out to and left out takes its comma or exclamation mark with it ("…meet you, [X]." -> "…meet you.",
     // "[X], we have decided" -> "We have decided"); a sentence that now starts after a left-out name starts with a capital.
     .replace(/,\s*(?=\s*[.!?])/g, "")
+    // (and in Chinese: "我们的人民可不是商品，[X]。" with the name left out read "商品，。")
+    .replace(new RegExp(`，(?=${OMIT}*[。！？])`, "g"), "")
     .replace(/\s+(?=[.,;:!?])/g, "")
     // (not inside a scripted name: that is a fragment of the sentence around it, "per 100 [telepaths]")
     .replace(/(^|[.!?]["”’']?\s+)[!,]?\s*([a-z]?)/g, (m, lead, c) => (depth ? m : lead + c.toUpperCase()))

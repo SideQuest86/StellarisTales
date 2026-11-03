@@ -798,3 +798,12 @@ markdown.js (a space after a Chinese stop before a full-width bracket or quote),
 search dialog's name (aria-labelledby="search-title"), the choice glyphs (aria-hidden), separate "DLC：" lines. Not taken:
 term tooltips out of the tab order (they are the keyboard's way to the note), a civics profile, fixed-height cards. Deferred:
 rift opening chapters that hold only a card, reviewed wording in the stranded-scientist anomaly ("– she –", "the clone").
+
+Surface round 18 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, tablet and the language switches). Fixed: name-fill.js ((?<!命) on the 名为 frame; a Chinese comma before a stop
+after a left-out name), app.js (trailing "=" after a stop; shared card captions with .cards-lead), reader-extras.css, the
+event-observation-2014 and espionage-support-crew-4 guides. Checked before release: a variable that shadowed the new caption map
+stopped vultaum's chapter from rendering in the local build; renamed. Not taken: grouping eleven ethos-gated choices behind a
+disclosure, tooltip placement above the word on touch, a wider reading column on portrait tablets, fitting the expanded map on
+open. Deferred: "If an earlier condition holds" and leader-experience rows, the Vultaum chain chapter that ends while its map
+shows the survey group, the Adakkaria guide's two translations of one name.

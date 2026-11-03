@@ -106,7 +106,9 @@ function prose(s, keepMarks = false) {
     .replace(/£([^£]+)£/g, "")
     .replace(/<[^>]*>/g, "")
     // (brackets that held only an icon or a computed count say nothing: "头等舱旅客（£pop£ [GetPassengerWorkforce]）")
-    .replace(/\s*[（(]\s*[）)]/g, "");
+    .replace(/\s*[（(]\s*[）)]/g, "")
+    // (a stray "=" after a sentence's stop in the game's text is a slip, not a word: "我国将对所有人开放。=")
+    .replace(/([。！？.!?])=+(?=\s*$)/g, "$1");
   // Display typesetting (src/typeset.js): curly quotes, dashes, ellipses; never the words. Search snippets use proseWith().
   return typeset(keepMarks ? text : text.replace(/\uE000[^\uE002]*\uE002/g, "").replace(/\uE001/g, ""));
 }
@@ -821,8 +823,18 @@ function listButtons(lists) {
   // each one opens; that story's data comes after the render (otherChapterTitles).
   for (const e of merged.flat())
     if (!e.hint && !e.titleOverride && !e.many && e.story && e.story !== dossier.story.id && count.get(titleFor(e.target, e.story)) > 1) e.otherTitle = true;
-  return merged.map((list) => {
-    if (list.length === 1) return edgeButton(list[0]);
+  // Three or more cards in a row with the same caption ("Appears on later surveys of the precursor region (any order)" under each
+  // of four "Signs: …") say it once, above them.
+  const caps = merged.map((list) => (list.length === 1 ? edgeFacts(list[0]) : null));
+  const capText = (f) => (f && !f.chance && !f.delay && f.notes.length ? f.notes.join(" · ") : "");
+  const capLead = new Map();
+  for (let i = 0; i < merged.length; ) {
+    let j = i;
+    while (j < merged.length && capText(caps[j]) && capText(caps[j]) === capText(caps[i])) j++;
+    if (j - i >= 3) { capLead.set(i, capText(caps[i])); for (let k = i; k < j; k++) caps[k] = { ...caps[k], notes: [], shared: true }; i = j; } else i++;
+  }
+  return merged.map((list, i) => {
+    if (list.length === 1) return (capLead.has(i) ? `<small class="cards-lead">${esc(capLead.get(i))}</small>` : "") + edgeButton(list[0], caps[i]?.shared ? caps[i] : undefined);
     // Exclusive outcomes: one lead line (the delay they all share says it once there), then a ledger of the possibilities.
     const facts = list.map(edgeFacts);
     const delay = facts[0].delay && facts.every((f) => f.delay === facts[0].delay) ? facts[0].delay : "";

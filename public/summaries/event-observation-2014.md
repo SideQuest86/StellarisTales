@@ -1,4 +1,5 @@
-# 科技发展：原始星球的进展 / Technological Development: Progress on a Pre-FTL Planet- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
+# 科技发展：原始星球的进展 / Technological Development: Progress on a Pre-FTL Planet
+- 分类 Category：文明纪事 Society (C7) · 观察站（前FTL观察）事件 pre-FTL observation event
 
 ## 如何开始 How it starts
 
@@ -6,7 +7,7 @@
 
 ## 剧情脉络 Story outline
 
-**科技发展：[pre_ftl_planet.GetName]的进展**：隐藏效果标记该国并给其科技情境 +384（相当于一次进度）；唯一选项仅作确认。/ Flags the country and changes its tech-progress situation by +384; the only option acknowledges.
+**科技发展：这颗星球的进展**：隐藏效果标记该国并给其科技情境 +384（相当于一次进度）；唯一选项仅作确认。/ Flags the country and changes its tech-progress situation by +384; the only option acknowledges.
 
 ## 分支与结局 Branches and outcomes
 

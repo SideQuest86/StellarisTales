@@ -32,7 +32,7 @@ html.reduced-motion .name-tip { transition: none; }
 /* Both languages shown: each half of a line written in both on a line of its own (the page's language first, guideElement), the
    other language quieter; a paragraph is not indented under the one before it. */
 .md-guide[data-show="all"] [data-half] { display: block; margin-inline-start: 0; }
-.md-guide[data-show="all"] [data-half] + [data-half] { margin-top: .2em; }
+.md-guide[data-show="all"] [data-half] + [data-half] { margin-top: .35em; }
 .md-guide :is(p, li, blockquote)[data-lang] + [data-lang] { margin-inline-start: 0; }
 .md-guide[data-show="all"][data-page="zh"] [data-lang="en"], .md-guide[data-show="all"][data-page="en"] [data-lang="zh"] { color: var(--dim, #86a29f); }
 /* (only between two halves that both show: beside a hidden half it indented the first line) */
