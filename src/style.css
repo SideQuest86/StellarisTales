@@ -2430,6 +2430,11 @@ html.reduced-motion .map-expanded .flow-surface-map {
   font-size: 16px;
   color: var(--ink-2);
 }
+/* (a narrow card, a window at large text sizes: the zoom figure gives way so the last control, "?", stays inside the card) */
+@media (min-width: 701px) and (max-width: 900px) {
+  #flow-surface:not(.map-expanded) .flow-controls small { display: none; }
+  #flow-surface:not(.map-expanded) .flow-controls button { width: 26px; }
+}
 .flow-controls small {
   min-width: 38px;
   padding: 0 4px;

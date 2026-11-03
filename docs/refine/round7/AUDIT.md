@@ -780,3 +780,13 @@ single-name alternatives; 42 conditions), search.js, style.css (led-in), effects
 the espionage-support-passenger-4 guide. Not taken: grouping runs of choices that share a condition, a civics control in the
 empire profile, a thumbnail for chapter rows, a table for tiered rewards. Still deferred: "[from.GetName]" in one espionage
 condition, end-of-story lines ("Nothing further is recorded" is the design), "If an earlier condition holds" rows.
+
+Surface round 16 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, small screens and 200% zoom). Fixed: reviewed placeholder wording (placeholderDocs) for ten chapters in ten stories
+(root.GetName "our empire" in the curators, artisan troupe and caravaneer conditions; from.GetName "target empire" in the five
+espionage operations), and story_tree.py now finds placeholders in condition labels (their $references$ expanded) so the
+reviewed wording reaches them; reading.js (statements opening with "The <Name>" negated as "unless …"; one ellipsis), guide-links.js
+(an id opening a range is not another story's link), markdown.js (<wbr> after "/" in paths), style.css (narrow map card toolbar),
+the event-subject-3001 guide (flag in code). Not defects: the "From …" chip (it truncates with an ellipsis by design), the
+category strip (it scrolls and fades). Deferred: the first-contact project shown under "If: robot" and again after (the data
+cannot tell an else-if chain from separate ifs), end-of-story links, a pinned banner strip on phones.

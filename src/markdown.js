@@ -30,7 +30,9 @@ export function inline(src) {
   const slots = [];
   const stash = (html) => `\u0000${slots.push(html) - 1}\u0000`;
   let s = String(src).replace(/\u0000/g, "");
-  s = s.replace(/`([^`]+)`/g, (_, c) => stash(`<code>${esc(c)}</code>`));
+  // (a script path may break after a slash, not inside a file name: "00_on_actions.t" / "xt:1140" on a narrow phone)
+  const paths = (h) => h.replace(/([\w.-]\/)(?=[\w.-])/g, "$1<wbr>");
+  s = s.replace(/`([^`]+)`/g, (_, c) => stash(`<code>${paths(esc(c))}</code>`));
   s = s.replace(/!\[[^\]]*\]\([^)]*\)/g, ""); // images dropped
   s = s.replace(/\[([^\]]+)\]\(((?:[^()\s]|\([^()\s]*\))+)(?:\s+"[^"]*")?\)/g, (_, label, url) => {
     const safe = safeUrl(url);
@@ -40,7 +42,7 @@ export function inline(src) {
   });
   s = s.replace(/<[^>]*>/g, ""); // raw HTML dropped
   // No typeset() here: the guides are set in the CJK-first sans stack, which draws curly quotes full-width ("empire’ s").
-  s = esc(s);
+  s = paths(esc(s));
   s = s.replace(/\*\*([^*]+)\*\*|__([^_]+)__/g, (_, a, b) => `<strong>${a ?? b}</strong>`);
   s = s.replace(/\*([^*\s][^*]*)\*|(?<![\w])_([^_\s][^_]*)_(?![\w])/g, (_, a, b) => `<em>${a ?? b}</em>`);
   // restore stashed fragments (links' labels get emphasis-free text, already escaped)

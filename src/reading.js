@@ -202,7 +202,9 @@ export function partingWords(texts, room) {
   const cut = (s, start) => {
     let end = Math.min(s.length, start + room);
     if (end < s.length && /\w/.test(s[end - 1]) && /\w/.test(s[end])) { const space = s.lastIndexOf(" ", end); if (space > start + room / 2) end = space; }
-    return `${start ? "…" : ""}${s.slice(start, end).trim()}${end < s.length ? "…" : ""}`;
+    // (a text that already ends in its own ellipsis keeps one: "The voice returns……")
+    const words = s.slice(start, end).trim(), own = /(?:…|\.\.\.)$/.test(words);
+    return `${start ? "…" : ""}${own ? words.replace(/(?:…+|\.\.\.)$/, "") : words}${end < s.length || own ? "…" : ""}`;
   };
   return texts.map((s, i) => {
     const from = Math.max(0, ...texts.map((o, j) => (j === i || o === s ? 0 : shared(s, o))));
@@ -279,7 +281,8 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3, always
     // A statement ("We already have the Salvager Insight modifier.") is not a name: "not we already have …" / "非我们已经拥有…"
     // read as broken grammar. English says "unless we already have …", Chinese quotes the game's sentence after 并非 (除非 would
     // read "only if"). A title keeps its capitals ("not Your Ladder To The Sky").
-    if (!a.value && !constraint && lang === "en" && /^(?:We|Our|They|Their|It|Its|You|Your|The|This|That|These|There|A|An)\s+[a-z]/.test(text)) return "unless " + text[0].toLowerCase() + text.slice(1).replace(/[.。]$/, "");
+    // (also with a name after the article, "The Curators are already improving our research capabilities.")
+    if (!a.value && !constraint && lang === "en" && (/^(?:We|Our|They|Their|It|Its|You|Your|The|This|That|These|There|A|An)\s+[a-z]/.test(text) || (sentence && /^(?:The|This|That|These|Our|Their|Your)\s+[A-Z]/.test(text)))) return "unless " + text[0].toLowerCase() + text.slice(1).replace(/[.。]$/, "");
     if (!a.value && !constraint && lang === "zh" && name && (/[。！？]$/.test(text) || /^(?:我们|我方|他们|它们|你们)/.test(text))) return `并非「${text.replace(/[。]$/, "")}」`;
     return (a.value || constraint || (!name && unnamedFlags.size > 1) ? "" : word("非", "not ")) + text;
   };

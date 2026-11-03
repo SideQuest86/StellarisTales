@@ -1097,6 +1097,11 @@ class Compiler:
                     strings = [c['title'], *c['texts'], *c['sections']]
                     for ch in c['choices']:
                         strings += [ch['label'], *ch['responses'], *ch['tooltips']]
+                        # (and the labels of its conditions, which the reader shows too, their $references$ expanded as the
+                        # written story will be: "$requires_enclave_opinion$" is "Opinion of the [root.GetName] is at least")
+                        for key in ('when', 'allow'):
+                            for branch in ch.get(key) or []:
+                                strings += [self.expand_refs(a['label']) for a in branch if isinstance(a, dict) and isinstance(a.get('label'), dict)]
                     used = {m for s in strings for lang in ('zh', 'en') for m in PLACEHOLDER.findall(s.get(lang, '') or '')}
                     names = self.reviewed_names(fragment, rid, c.get('names') or {}, used)
                     if names:

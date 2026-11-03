@@ -19,7 +19,8 @@ export function tokenize(text, ids, spaces, other = () => null) {
   for (const m of text.matchAll(TOKEN)) {
     let id = null, ext = null;
     if (m[1] && ids.has(m[1])) id = m[1];
-    else if (m[1] && (ext = other(m[1]))) id = m[1];
+    // (another story's id that opens a range, "story.1–8", is the range's first number, not that story: kept as written)
+    else if (m[1] && !/^[–—-]\d/.test(text.slice(m.index + m[0].length)) && (ext = other(m[1]))) id = m[1];
     else if (m[2]) {
       const before = text.slice(Math.max(0, m.index - 8), m.index), after = text.slice(m.index + m[0].length, m.index + m[0].length + 8);
       if (!UNIT_AFTER.test(after) && !UNIT_BEFORE.test(before)) id = spaces.map((ns) => `${ns}.${m[2]}`).find((c) => ids.has(c)) || null;

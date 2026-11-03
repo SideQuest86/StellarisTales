@@ -6,8 +6,8 @@
 
 - 宗主国每五年一次的随机脉冲 on_five_year_random_pulse_overlord（00_on_actions.txt:521-535）：无事200，11个事件链各10（subject.1、50、100、1001、1050、1100、2001、2050、2100、3001、3050）；每条链的隐藏派发事件检查冷却标志和条件。
   The overlord's five-year random pulse on_five_year_random_pulse_overlord (00_on_actions.txt:521-535): nothing 200, eleven chains at 10 each (subject.1, 50, 100, 1001, 1050, 1100, 2001, 2050, 2100, 3001, 3050); the hidden dispatcher of each chain checks cooldown flags and conditions.
-- 派发 subject.3001（隐藏）：宗主国非格式塔，有信仰主义、非格式塔的专精附庸，且双方在伦理上对立（排外、或各类“宗主国对立”）；冷却标志 cooldown_spiritualist_specialist_event_chain_1_*。
-  Hidden dispatcher subject.3001: a non-gestalt overlord with a spiritualist, non-gestalt specialist subject in ethical opposition (xenophobia or any of the "overlord opposing" tests); cooldown flags cooldown_spiritualist_specialist_event_chain_1_*.
+- 派发 subject.3001（隐藏）：宗主国非格式塔，有信仰主义、非格式塔的专精附庸，且双方在伦理上对立（排外、或各类“宗主国对立”）；冷却标志 `cooldown_spiritualist_specialist_event_chain_1_*`。
+  Hidden dispatcher subject.3001: a non-gestalt overlord with a spiritualist, non-gestalt specialist subject in ethical opposition (xenophobia or any of the "overlord opposing" tests); cooldown flags `cooldown_spiritualist_specialist_event_chain_1_*`.
 
 ## 剧情脉络 Story outline
 
