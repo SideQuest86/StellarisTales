@@ -1921,8 +1921,8 @@ details[open] > :is(.fx-sum, .story-summary > summary, details.review-note > sum
   margin-top: 0;
 }
 .variant-condition {
-  display: inline;
-  min-height: 0;
+  display: inline-block; /* (a tap target 24 px tall at least, not 22) */
+  min-height: 24px;
   margin: 0 6px 0 0;
   padding: 1px 7px;
   font: 500 11px/1.6 var(--sans);

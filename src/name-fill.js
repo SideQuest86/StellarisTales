@@ -116,6 +116,8 @@ export function fillNames(s, opts) {
       // (a sentence the game inserts right after a stop gets its space: "…to benefit.[X]" -> "…to benefit. Our people …")
       if (!lead && /[.!?]["”’']?$/.test(before) && /^["“]?[A-Z][a-z]/.test(text) && /\s/.test(text)) lead = " ";
       // (nor does a word the game fills in run into the word before it: "our first[GetStartingDrivePlural]-capable ship")
+      // (a reviewed "that planet" after the word "that" reads "that the planet", not "that that planet")
+      if (/\bthat\s+$/i.test(before) && /^that\s/i.test(text)) text = "the " + text.slice(5);
       // (a verb's ending the game fills in stays on its verb: "receive[s]")
       if (!lead && /[a-z]$/.test(before) && /^[A-Za-z]/.test(text) && !/^[a-z]{1,3}$/.test(text) && names[tail]) lead = " ";
       const start = !before.trim() || /[.!?…]["”’']?\s*$/.test(before) || /\n\s*["“]?$/.test(before);

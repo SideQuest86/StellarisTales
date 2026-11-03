@@ -814,3 +814,10 @@ phones), museum.js (scroll to the exhibit opened by address), museum.css (viewer
 English half). Not taken: quoting chapter names inside "、" lists, choice labels on per-choice effects panels, arrow keys for
 stories instead of shelves on the home page. Deferred, as before: leader-experience and "If an earlier condition holds" rows,
 "Nothing further is recorded" at story ends, cards that share a title in an exclusive group (their excerpts tell them apart).
+
+Surface round 20 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, small screens and 200% zoom). Fixed: effects_data.py (the jobs' own names harvested: job_<key> and _plural, no icon
+variants), effects.py (job_stat uses them; strata keep their names), name-fill.js ("that that"), reading.js (empty parting words),
+style.css (variant chip 24 px), the ancient-robot-world guide. Not taken: a note on numbered variant choices, English DLC names in
+Chinese guides (no reviewed names), the 60% phone map. Deferred, as before: "Starts a first-contact project" under an if and after
+it, per-covenant blocks in shroud.4046, dropped computed values in a situation's text.

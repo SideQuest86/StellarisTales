@@ -204,6 +204,7 @@ export function partingWords(texts, room) {
     if (end < s.length && /\w/.test(s[end - 1]) && /\w/.test(s[end])) { const space = s.lastIndexOf(" ", end); if (space > start + room / 2) end = space; }
     // (a text that already ends in its own ellipsis keeps one: "The voice returns……")
     const words = s.slice(start, end).trim(), own = /(?:…|\.\.\.)$/.test(words);
+    if (!words.replace(/[…\s.]/g, "")) return ""; // (nothing of its own left: no lone "…")
     return `${start ? "…" : ""}${own ? words.replace(/(?:…+|\.\.\.)$/, "") : words}${end < s.length || own ? "…" : ""}`;
   };
   return texts.map((s, i) => {

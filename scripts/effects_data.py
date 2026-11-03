@@ -177,6 +177,9 @@ def main():
         for k in (t, t.upper(), 'mod_' + t, 'MOD_' + t.upper(), 'policy_' + t):  # (a policy's name is policy_<key>)
             if k in keys and k not in out_loc and not k.endswith(('.desc', '.name', '.title')):  # story texts live in the story data
                 out_loc[k] = {'zh': expand(k, 'zh'), 'en': expand(k, 'en')}
+    for k in sorted(keys):  # the jobs' own names, which a job's output stat names by an icon placeholder
+        if re.fullmatch(r'job_[a-z_]+?(?:_plural)?', k) and not re.search(r'_(?:desc|tooltip|effect|name|title|icon)$', k) and k not in out_loc:
+            out_loc[k] = {'zh': expand(k, 'zh'), 'en': expand(k, 'en')}
     for k in sorted(keys):  # tooltips of custom_tooltip / game effect text are referenced with their own keys
         if k.startswith('origin_') and k not in out_loc and ('effects' in k or 'tooltip' in k):
             out_loc[k] = {'zh': expand(k, 'zh'), 'en': expand(k, 'en')}

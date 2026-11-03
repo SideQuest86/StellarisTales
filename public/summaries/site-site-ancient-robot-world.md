@@ -12,8 +12,8 @@ The system may be spawned when a game starts: hidden ancrel.12050 (on_game_start
 
 一颗从未有过生命、被数十亿机械无人机填满的行星，其周围一万多件圆筒状设备都指向银河各处——这是十二亿年前外来者留下的“监视银河”的观测站。先要在系统里面对“永恒守望者”的守卫舰队；挖掘的最后你可以黑进它，决定如何利用这套监控网络。
 
-1. [From.GetName]恒星系：首次进入系统且守望者舰队在场：“战斗警报！”
-2. [fromfrom.System.GetName]大捷：击毁守军后：“…大捷”，系统里几乎没有固体物质了
+1. 那个恒星系：首次进入系统且守望者舰队在场：“战斗警报！”
+2. 那个星系的大捷：击毁守军后：“…大捷”，系统里几乎没有固体物质了
 3. 攒动的人工生命：“观测终端”：行星从未有过生命，被机械无人机和整齐的人工结构覆盖
 4. 无人机调查：无人机无视一切接触，甚至会撞伤研究者；转而分析无人机的控制程序
 5. 恒星系探索：系统里一万多件圆筒设备在向银河各处发射信号
@@ -21,8 +21,8 @@ The system may be spawned when a game starts: hidden ancrel.12050 (on_game_start
 
 A lifeless planet crowded with billions of drones, ringed by over ten thousand cylinders pointed at the galaxy — an observation post left 1.2 billion years ago to spy on it. First its guard fleets must be faced; the dig ends with a hacked mainframe and a choice of how to use the surveillance network.
 
-1. The [From.GetName] System: entering the system for the first time with the Watchers' fleets present: Battlestations!
-2. Victory in [fromfrom.System.GetName]: after the defenders fall: Victory; almost no solid matter is left in the system
+1. The System: entering the system for the first time with the Watchers' fleets present: Battlestations!
+2. Victory in the System: after the defenders fall: Victory; almost no solid matter is left in the system
 3. Teeming with Artificial Life: Observation Terminal: a lifeless planet covered in drones and orderly artificial structures
 4. Investigating the Drones: drones ignore all contact and even injure researchers; the control programs become the focus
 5. Systemic Exploration: over ten thousand cylinders beam signals to points across the galaxy
@@ -30,7 +30,7 @@ A lifeless planet crowded with billions of drones, ringed by over ten thousand c
 
 ## 分支与结局 Branches and outcomes
 
-- 超级监察计算机 / The Surveillance Supercomputer：（Ultima Vigilis）：十二亿年前来客建立的观测站。五个选项：A（机器帝国）整合整颗星球为机械星球（80个人口、大型首都）；B 任其运转，监听其数据（在系统里恢复一个间谍球体巨型结构）；C 把无人机分发到己方殖民地（机械或机器人人口80）；D（唯心主义者）把它当成巨型合金矿（合金资源点）；E（非唯心主义者）把网络改造成一个机器智能附庸国“重新利用的监视网络”。A、C、D、E 各有50%概率在30天后触发 ancrel.12095 / (Ultima Vigilis): an observation post set up 1.2 billion years ago. Five options: A (machine empires) integrate the planet as a machine world (80 pops, a major capital); B let it run and siphon its readings (restores a spy-orb megastructure); C distribute drones to our colonies (80 machine or robot pops); D (spiritualists) treat it as an enormous alloy mine (an alloy deposit); E (non-spiritualists) turn the network into a machine-intelligence subject, "Repurposed Surveillance Network". A, C, D and E each have a 50% chance to fire ancrel.12095 thirty days later
+- 超级监察计算机（Ultima Vigilis）/ The Surveillance Supercomputer (Ultima Vigilis)：十二亿年前来客建立的观测站。五个选项：A（机器帝国）整合整颗星球为机械星球（80个人口、大型首都）；B 任其运转，监听其数据（在系统里恢复一个间谍球体巨型结构）；C 把无人机分发到己方殖民地（机械或机器人人口80）；D（唯心主义者）把它当成巨型合金矿（合金资源点）；E（非唯心主义者）把网络改造成一个机器智能附庸国“重新利用的监视网络”。A、C、D、E 各有50%概率在30天后触发 ancrel.12095 / (Ultima Vigilis): an observation post set up 1.2 billion years ago. Five options: A (machine empires) integrate the planet as a machine world (80 pops, a major capital); B let it run and siphon its readings (restores a spy-orb megastructure); C distribute drones to our colonies (80 machine or robot pops); D (spiritualists) treat it as an enormous alloy mine (an alloy deposit); E (non-spiritualists) turn the network into a machine-intelligence subject, "Repurposed Surveillance Network". A, C, D and E each have a 50% chance to fire ancrel.12095 thirty days later
 - 信号传输接入 / Incoming Transmission：“你们这些粗心的……”：被你切断信号的幕后观察者宣布要召来“害虫防治”。设置全局标志 endgame_crisis_early_start，所有其他玩家国家收到 ancrel.12100 / "You inconsiderate-": the watchers whose feed you cut announce "pest control". The global flag endgame_crisis_early_start is set and every other player-type empire receives ancrel.12100
 - 信号传输接入 / Incoming Transmission：其他帝国收到的同一条警告 / the same warning received by every other empire
 - 选项 B 不会触发危机；其他选项（A、C、D、E）的50%概率意味着约半数游戏会因此提前开启终局危机。 / Option B never triggers the crisis; for A, C, D and E the 50% roll means about half of such playthroughs start the endgame crisis early.

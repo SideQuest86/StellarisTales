@@ -872,9 +872,11 @@ def job_stat(ctx, key, lab):
             job, res = '_'.join(tokens[:i]), '_'.join(tokens[i:])
             break
     words = job.replace('_', ' ').title()
-    job_en = words if words.endswith('s') else words + 's'
-    # (a stratum has its game name in both languages; a job's Chinese name is not in the data)
-    job_zh = STRATA.get(job.removesuffix('s'), '该岗位')
+    # (the job's own name, from the game: "Technicians" / "技工"; a stratum's in both languages)
+    sing = job[:-1] if job.endswith('s') else job
+    jn = ctx.name(f'job_{sing}_plural') or ctx.name(f'job_{sing}') or ctx.name(f'job_{job}')
+    job_en = jn['en'] if jn else (words if words.endswith('s') else words + 's')
+    job_zh = STRATA.get(job.removesuffix('s')) or (jn['zh'] if jn else '该岗位')
 
     def fill(s, word, zh):
         s = re.sub(r'\[Get\w+\]', word, s)
