@@ -255,7 +255,16 @@ export function linkGuide(root, { storyId, chapters, title, other = () => null }
     let glue = null; // a link and the closing punctuation right after it stay on one line (no "，" at a line start)
     for (const p of parts) {
       if (typeof p === "string") {
-        const s = glue ? dropEcho(glue.textContent, p) : p;
+        let s = glue ? dropEcho(glue.textContent, p) : p;
+        // (a Chinese name written right after the link, near its title but not the same, "1320 分配争执" for "部门分配争议": the
+        // guide's own name is the link, said once, instead of "部门分配争议分配争执")
+        // (only in a list of names, "、"/"；"-separated: words that run on into the sentence, "在修复完成后", are not a name)
+        // (nor are words that open with a joining word, "的三个形态互斥", "同时展示…")
+        const near = glue && s === p && /^\s?(?!的|之|与|和|或|及|在|是|为|被|把|将|对|从|向|于|后|时|同时|并|且|再|又|也|则|就|即|以|而)([㐀-鿿]{3,8})(?=[、；）)]|$)/.exec(s);
+        if (near && [...near[1]].some((_, i, a) => i < a.length - 1 && glue.textContent.includes(a[i] + a[i + 1]))) {
+          glue.firstChild.textContent = near[1];
+          s = s.slice(near[0].length);
+        }
         const m = glue && /^[，。、；：！？）」』”’》〉…,.;:!?)]+/.exec(s);
         if (m) { glue.append(m[0]); glue.classList.add("tight"); frag.append(s.slice(m[0].length)); }
         else frag.append(s);

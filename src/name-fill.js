@@ -68,7 +68,7 @@ export function fillNames(s, opts) {
       //    adjective form before its noun ("the [Root.GetAdj] economy") and a name only called out to ("We are delighted to
       //    meet you, [X.GetSpeciesNamePlural].", "[Root.GetSpeciesName], we have decided …");
       //  - a plural reads "they" as a subject, "them" after a preposition, "people" after a determiner or quantifier.
-      const NOUNS = { planet: "the planet", capital: "the capital", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist", alliance: "the alliance", government: "the government" };
+      const NOUNS = { planet: "the planet", capital: "the capital", target: "the target", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist", alliance: "the alliance", government: "the government" };
       // (the scope's last word, also in camel case: "This.ContactCountry" -> "country")
       // (a numbered scope names its noun: "ratling_planet_2" -> "planet")
       const scope = ((key.split("|")[0].split(".").at(-2) || "").split(/_|(?<=[a-z])(?=[A-Z])/).filter((w) => !/^\d+$/.test(w)).at(-1) || "").toLowerCase();
@@ -103,7 +103,7 @@ export function fillNames(s, opts) {
       const plural = art?.trim() || det || detAdj || /\b(?:many|few|several|all|most|both|other|some)\s+$/i.test(before) ? "people"
         : new RegExp(`\\b(?:${PREP})\\s+$`, "i").test(before) ? "them" : "they";
       // (Chinese names the noun too, "不能有来自该帝国的领袖", not "来自这个名字的")
-      const ZH_NOUNS = { planet: "该星球", capital: "该首都", system: "该星系", leader: "该领袖", ruler: "该统治者", species: "该物种", country: "该帝国", empire: "该帝国", star: "该恒星", fleet: "该舰队", ship: "该舰船", scientist: "该科学家", alliance: "该联盟", government: "该政府" };
+      const ZH_NOUNS = { planet: "该星球", capital: "该首都", target: "该目标", system: "该星系", leader: "该领袖", ruler: "该统治者", species: "该物种", country: "该帝国", empire: "该帝国", star: "该恒星", fleet: "该舰队", ship: "该舰船", scientist: "该科学家", alliance: "该联盟", government: "该政府" };
       text = /Plural/.test(tail) ? T("他们", plural) : NOUNS[noun] && lang === "en" ? phrase : ZH_NOUNS[noun] && lang !== "en" && /Name$/.test(tail) ? ZH_NOUNS[noun] : /Name/.test(tail) ? T("这个名字", "this name") : T("……", "…");
       n = note(null, false);
     }

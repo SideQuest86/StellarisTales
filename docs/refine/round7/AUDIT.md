@@ -762,3 +762,13 @@ defect: the moon-bump guide's "Dead Center" under Story outline (it is the openi
 Improvements not taken: grouping choices that share a condition, larger condition type, hiding conditions by default, the
 portrait-tablet reading width, a text label on the map's close button (it has one for screen readers), thumbnails on every
 card. Deferred: the long first-contact effects panels, leader-experience lines without a number.
+
+Surface round 14 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, WebKit phone and desktop). WebKit: no layout differences from Chrome; one headless crash on a 3x phone load could
+not be reproduced in six retries. Fixed: search.js + style.css (specimen icon), app.js (shared-condition threshold 2/3; a
+requirement equal to the option's condition dropped), name-fill.js (target), effects-panel.js (situation kind label),
+guide-links.js (a near-name written after its link in a list of names becomes the link; only 3-8 Chinese characters ending at
+"、", "；", "）" or the text's end, not opening with a joining word; measured on every guide, 29 lines). Not defects: the
+collapsed Review notes block (a closed disclosure, not an empty heading), the profile toggle's tap target (its ::before extends it
+to about 47 px), cards that share a title but carry their own captions. Deferred: "[from.GetName]" in conditions (the event
+source can be an empire, a planet or a leader), colony.104's planet-class rolls, "If an earlier condition holds" rows.

@@ -564,6 +564,9 @@ export function createSearch(env) {
               const f = [];
               for (const [type, v] of [["name", s.name], ["text", s.short], ["text", s.details]]) for (const l of ["zh", "en"]) if (v?.[l]) f.push({ type, lang: l, text: own(v[l], s.placeholders) });
               found = bestSnippet(f, groups, lang);
+              // (the specimen's own picture in the picture column, its kind under it: story rows have their cover there)
+              const chip = el.querySelector(".hit-type");
+              if (chip && s.icon?.url && env.asset && !chip.querySelector("img")) chip.insertAdjacentHTML("afterbegin", `<img class="hit-icon" src="${env.esc(env.asset(s.icon.url))}" alt="" width="44" height="44" loading="lazy" decoding="async">`);
               // A name match would only repeat the title: show the specimen's short description instead.
               if (found?.type === "name") {
                 const short = own(s.short?.[lang] || s.short?.zh || s.short?.en || "", s.placeholders);

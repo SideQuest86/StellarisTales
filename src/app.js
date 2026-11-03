@@ -1196,7 +1196,8 @@ function renderChapter(preservePosition = false) {
     for (const w of list) if (w && w !== MARKED && w !== UNNAMED) count.set(w, (count.get(w) || 0) + 1);
     const [text, k] = [...count].sort((a, b) => b[1] - a[1])[0] || ["", 0];
     const n = list.length;
-    return k >= 3 && (k === n || (n >= 6 && n - k <= k / 4)) ? { text, all: k === n, loose: list.includes(UNNAMED) } : { text: "", all: false, loose: false };
+    // (two in three sharing it is enough: pirate.1 printed one condition under 8 of its 11 options)
+    return k >= 3 && (k === n || (n >= 6 && n - k <= k / 2)) ? { text, all: k === n, loose: list.includes(UNNAMED) } : { text: "", all: false, loose: false };
   };
   const whens = r.choices.map((c) => (!c.when ? "" : c.visible === null ? said(c.when) || UNNAMED : UNNAMED));
   const needs = r.choices.map((c) => (!c.allow ? "" : c.allowed === null ? said(c.allow) || UNNAMED : c.allowed === false ? MARKED : UNNAMED));
@@ -1217,6 +1218,9 @@ function renderChapter(preservePosition = false) {
     if (sharedWhen.text && !sharedWhen.loose && !when) notes.push(T("始终出现", "Always shown"));
     else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(unless(when) || T("仅在以下情形出现：", "Only when: ") + when);
     if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (said(c.allow) ? T("：", ": ") + said(c.allow) : ""));
+    // (a requirement that only repeats the option's own condition says nothing more: "Only when: Synthetic Fertility · Requires:
+    // Synthetic Fertility")
+    else if (need && need === when) {}
     else if (sharedNeed.text && !sharedNeed.loose && !need) notes.push(T("始终可选", "Always available"));
     // (the game's own label may already say it: "探测范围内需要一艘…", "在我们打开一处星界裂隙之前需要…", "We need at least 20 Opinion …")
     else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(unless(need) || (/^(需要|Requires\b|Must\b|(?:We|You) (?:need|must)\b)/i.test(need) || /\b(?:is|are) required\b/i.test(need) || /^[^，。：]{0,30}(需要|必须)/.test(need) ? need : T("需要：", "Requires: ") + need));
@@ -1546,7 +1550,7 @@ function pager(page, pages) {
   $("#search-next").disabled = page >= pages - 1;
 }
 const fullSearch = createSearch({
-  base: "", getLang: () => lang, T, esc, prose, proseWith, fetchJson: json,
+  base: "", getLang: () => lang, T, esc, prose, proseWith, fetchJson: json, asset,
   fetchBytes: async (p) => {
     const r = await fetch(asset(p));
     if (!r.ok) throw new Error("search shard");

@@ -257,7 +257,8 @@ function entryHtml(e, ctx, depth) {
     if (ctx.said.has(words)) return "";
     ctx.said.add(words);
   }
-  const kind = KIND[e.kind];
+  // (a situation's start, end or progress is a situation, not a special project: "Special project · The situation is ended")
+  const kind = e.kind === "project" && /情势|situation/i.test(`${e.label?.zh} ${e.label?.en}`) ? ["情势", "Situation"] : KIND[e.kind];
   const chips = [];
   // (no kind label when the line already opens with it: "Leader · Leader experience +200" said it twice)
   const kindWord = kind ? T(kind[0], kind[1]) : "";
