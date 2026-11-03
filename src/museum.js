@@ -44,7 +44,8 @@ export async function openMuseum({ asset, closeTo, focusKey, metKeys } = {}) {
   document.body.classList.add("museum-open");
   requestAnimationFrame(() => root.classList.add("open"));
   render();
-  if (focusKey) showExhibit(focusKey);
+  // (an exhibit come back to, Back from a story it linked to, is found in the list again, not left above the fold)
+  if (focusKey) { showExhibit(focusKey); root.querySelector(`.museum-exhibit[data-key="${focusKey}"]`)?.scrollIntoView({ block: "center" }); }
   else $(".museum-search", root).focus({ preventScroll: true });
 }
 

@@ -807,3 +807,10 @@ stopped vultaum's chapter from rendering in the local build; renamed. Not taken:
 disclosure, tooltip placement above the word on touch, a wider reading column on portrait tablets, fitting the expanded map on
 open. Deferred: "If an earlier condition holds" and leader-experience rows, the Vultaum chain chapter that ends while its map
 shows the survey group, the Adakkaria guide's two translations of one name.
+
+Surface round 19 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, home/search/museum regression). Fixed: app.js (note separator), search.js + style.css (hit-story / hit-count on
+phones), museum.js (scroll to the exhibit opened by address), museum.css (viewer inset above the tabs), markdown.js (reviewLine
+English half). Not taken: quoting chapter names inside "、" lists, choice labels on per-choice effects panels, arrow keys for
+stories instead of shelves on the home page. Deferred, as before: leader-experience and "If an earlier condition holds" rows,
+"Nothing further is recorded" at story ends, cards that share a title in an exclusive group (their excerpts tell them apart).

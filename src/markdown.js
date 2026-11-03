@@ -193,7 +193,7 @@ export function reviewLine(text) {
   const m = /^([㐀-鿿]{1,6})\s+([A-Z][A-Za-z]*(?: [A-Za-z]+){0,2})(?:\s*[：:]\s*|\s+(?=\d{4}-\d\d-\d\d))(.+)$/.exec(text);
   if (!m) return null;
   const v = m[3].replace(/\s*[（(](?:已审阅\s*reviewed|c\d+[a-z]?-[\w-]+|C\d{1,2})[）)]/gi, "").replace(/\s*·\s*已审阅(?:\s+Reviewed)?\s*$/i, "").trim();
-  const parts = splitMixed(v) || [v, v];
+  const parts = splitMixed(v) || [v, /[㐀-鿿]/.test(v) ? v : v.replace(/；\s*/g, "; ")];
   return [`${m[1]}：${parts[0]}`, `${m[2]}: ${parts[1]}`];
 }
 export function metaLine(text) {

@@ -4287,6 +4287,9 @@ html.reduced-motion .continuation.led .next-chapter { animation: none; }
 mark.search-mark { padding: 0; color: inherit; background: #68775a59; border-bottom: 1px solid var(--gold); border-radius: 1px; }
 @media (max-width: 700px) {
   .hit-type { width: 72px; } /* the thumbnails are 72 px wide here */
+  /* (a result's story name and its count of matches each take their own line: no "·" left at a line's end) */
+  .search-hit .hit-story, .search-story .hit-count { display: block; }
+  .search-hit .hit-story .sep, .search-story .hit-count .sep { display: none; }
 }
 @media (max-width: 480px) {
   .search-story { gap: 12px; }

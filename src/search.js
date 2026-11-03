@@ -535,13 +535,14 @@ export function createSearch(env) {
         if (r.kind === "story") {
           // A story row is a title match already; only other hit types carry a chip. The match count shows only when it
           // is not the story's whole length ("1 chapter · … · 1 chapter matches" said the same thing twice).
-          const more = r.count && r.count !== r.story.chapters ? `\u00a0· <span class="nw">${esc(T(`${r.count}篇相关`, `${r.count} ${r.count === 1 ? "chapter matches" : "chapters match"}`))}</span>` : "";
+          const more = r.count && r.count !== r.story.chapters ? `<span class="hit-count"><span class="sep">\u00a0· </span><span class="nw">${esc(T(`${r.count}篇相关`, `${r.count} ${r.count === 1 ? "chapter matches" : "chapters match"}`))}</span></span>` : "";
           return env.storyRow(r.story, "", more);
         }
         const title = (titles[r.doc] || "").trim();
         const type = r.kind === "specimen" ? "specimen" : r.hit.type;
         const go = r.kind === "specimen" ? museumHash(r.key) : hashFor(r.story.id, meta.ids[r.doc]);
-        const head = r.kind === "specimen" ? esc(title || r.key) : `${title ? esc(title) + " · " : ""}<span>${esc(env.storyTitle(r.story))}</span>`;
+        // (on a phone the story's name takes its own line: a "·" never ends one)
+        const head = r.kind === "specimen" ? esc(title || r.key) : `${title ? esc(title) : ""}<span class="hit-story">${title ? '<span class="sep"> · </span>' : ""}${esc(env.storyTitle(r.story))}</span>`;
         const more = r.count > 1 ? `<small class="hit-more">${esc(T(`另有${r.count - 1}篇`, `+${r.count - 1} more`))}</small>` : "";
         return `<button class="search-story search-hit" data-hash="${esc(go)}" data-row="${i}"><em class="hit-type" data-type="${esc(type)}">${esc(typeLabel(type, lang))}</em><span><b>${head}</b><small class="hit-snip"></small>${more}</span><i>↗</i></button>`;
       }).join("");

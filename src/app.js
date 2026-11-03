@@ -1240,7 +1240,8 @@ function renderChapter(preservePosition = false) {
     // (a condition cut after its first alternatives says the whole of it on hover)
     const cut = (s, w) => s && w && /(?: …| 等)$/.test(s) ? said(w, { max: 99 }) : "";
     const whole = [cut(when, c.when), cut(need, c.allow)].filter(Boolean).join(T("；", "; "));
-    return notes.length ? `<small class="choice-condition"${whole ? ` title="${esc(whole)}"` : ""}>${esc(notes.join(" · "))}</small>` : "";
+    // (notes of different kinds part with a semicolon: " · " inside a condition means "and", "Only when: not Robot empire · Unavailable")
+    return notes.length ? `<small class="choice-condition"${whole ? ` title="${esc(whole)}"` : ""}>${esc(notes.join(T("；", "; ")))}</small>` : "";
   };
   const continuation = edgeButtons(nextEdges) + listButtons(shared);
   const body = renderBody(r, ctx);
