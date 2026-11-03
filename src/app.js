@@ -1218,8 +1218,12 @@ function renderChapter(preservePosition = false) {
     else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(unless(when) || T("仅在以下情形出现：", "Only when: ") + when);
     if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (said(c.allow) ? T("：", ": ") + said(c.allow) : ""));
     else if (sharedNeed.text && !sharedNeed.loose && !need) notes.push(T("始终可选", "Always available"));
-    else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(unless(need) || (/^(需要|Requires\b)/i.test(need) || /^[^，。：]{0,10}(需要|必须)/.test(need) ? need : T("需要：", "Requires: ") + need)); // (the game's own label may already say it: "探测范围内需要一艘…")
-    return notes.length ? `<small class="choice-condition">${esc(notes.join(" · "))}</small>` : "";
+    // (the game's own label may already say it: "探测范围内需要一艘…", "在我们打开一处星界裂隙之前需要…", "We need at least 20 Opinion …")
+    else if (need && need !== UNNAMED && need !== MARKED && need !== sharedNeed.text) notes.push(unless(need) || (/^(需要|Requires\b|Must\b|(?:We|You) (?:need|must)\b)/i.test(need) || /\b(?:is|are) required\b/i.test(need) || /^[^，。：]{0,30}(需要|必须)/.test(need) ? need : T("需要：", "Requires: ") + need));
+    // (a condition cut after its first alternatives says the whole of it on hover)
+    const cut = (s, w) => s && w && /(?: …| 等)$/.test(s) ? said(w, { max: 99 }) : "";
+    const whole = [cut(when, c.when), cut(need, c.allow)].filter(Boolean).join(T("；", "; "));
+    return notes.length ? `<small class="choice-condition"${whole ? ` title="${esc(whole)}"` : ""}>${esc(notes.join(" · "))}</small>` : "";
   };
   const continuation = edgeButtons(nextEdges) + listButtons(shared);
   const body = renderBody(r, ctx);

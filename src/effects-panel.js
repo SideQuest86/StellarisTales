@@ -60,6 +60,15 @@ function tidy(list) {
   const src = list || [];
   for (let n = 0; n < src.length; n++) {
     let e = src[n];
+    // "If: there is a matching leader you employ: is the head of research" over "On those matching: is the head of research" (the
+    // game's any/every idiom, one check said twice) is one line: "On each matching leader you employ: is the head of research".
+    if (e?.kind === "if" && e.effects?.length === 1 && e.effects[0]?.label) {
+      const c = e.effects[0];
+      const pe = /^If: there is a matching ([^:]+): (.*)$/.exec(e.label?.en || ""), ce = /^On those matching: (.*)$/.exec(c.label.en || "");
+      const pz = /^如果：存在满足条件的([^：]+)：(.*)$/.exec(e.label?.zh || ""), cz = /^在满足条件的对象上：(.*)$/.exec(c.label.zh || "");
+      if (pe && ce && pe[2] === ce[1] && pz && cz && pz[2] === cz[1])
+        e = { ...c, label: { en: `On each matching ${pe[1]}: ${pe[2]}`, zh: `在每个满足条件的${pz[1]}上：${pz[2]}` } };
+    }
     // A roll's options that do the same thing are one option, their chances added ("About 10% · An espionage asset is lost" ten
     // times); a roll whose every option does the same thing is not a roll: its effect simply happens.
     if (e && e.kind === "random_list" && isList(e.effects)) {
@@ -91,7 +100,8 @@ function tidy(list) {
     }
     // The same effect twice in a row is two (two districts, two ships, a scripted effect's two buildings): one line marked
     // "×2". (Not for random options or condition blocks, where a repeat means something else.)
-    const bare = (x) => JSON.stringify(x, (k, v) => (k === "source" || k === "times" ? undefined : v));
+    // (as read: one special project per planet, "Study the Ketlings on [ratling_planet_2.GetName]" … five times, is one line ×5)
+    const bare = (x) => JSON.stringify(x, (k, v) => (k === "source" || k === "times" || k === "project" || k === "modifier" ? undefined : typeof v === "string" ? v.replace(/\[[^\]]+\]/g, "[]") : v));
     if (prev && e && !GROUPS.has(e.kind) && !isList(e.effects) && bare(prev) === bare(e)) { out[out.length - 1] = { ...prev, times: (prev.times || 1) + 1 }; continue; }
     if (prev && e && !prev.unhandled && !e.unhandled && words(prev.label) && words(prev.label) === words(e.label)) {
       const plain = (x) => !isList(x.effects) && !isList(x.stats) && !x.note && !x.duration && !x.chance;

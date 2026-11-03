@@ -117,7 +117,7 @@ test("names the archive cannot know: worded by what the getter names and where i
   assert.equal(f("The [offended_party.GetAdj] [offended_party.GetRulerTitle] expressed dismay"), "The ruler expressed dismay");
   assert.equal(f("what to make of [rock_fallen_empire.GetRealName]"), "what to make of that empire");
   // Chinese keeps its neutral wording
-  assert.equal(f("我们见到了[contact_empire.GetRulerName]。", "zh"), "我们见到了这个名字。");
+  assert.equal(f("我们见到了[contact_empire.GetRulerName]。", "zh"), "我们见到了该统治者。");
 });
 
 test("a specimen's name resolves a save-dependent name only where the title needs it", () => {

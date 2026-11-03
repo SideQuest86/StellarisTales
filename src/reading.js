@@ -316,7 +316,9 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3, always
   // Mind or not Gestalt Consciousness" does not)
   const ordered = kept.map((p, i) => [p, i]).sort((a, b) => Number(a[0].length === 1 && neg(a[0][0])) - Number(b[0].length === 1 && neg(b[0][0])) || a[1] - b[1]).map(([p]) => p);
   // (in English three or more "not"s in a row are one "none of": "none of Militarist, Fanatic Purifiers or Machine Intelligence")
-  const all = (p) => (lang === "en" && p.length >= 3 && p.every(neg) ? `none of ${p.slice(0, -1).map((s) => s.slice(4)).join(", ")} or ${p.at(-1).slice(4)}` : p.join(" · "));
+  // (a check that is a whole sentence ends with its own stop: the next follows it as a sentence, not after "。 ·")
+  const joined = (p) => p.reduce((s, x, i) => (!i ? x : /[。！？]$/.test(s) ? s + x : /[.!?]$/.test(s) ? `${s} ${x[0].toUpperCase()}${x.slice(1)}` : `${s} · ${x}`), "");
+  const all = (p) => (lang === "en" && p.length >= 3 && p.every(neg) ? `none of ${p.slice(0, -1).map((s) => s.slice(4)).join(", ")} or ${p.at(-1).slice(4)}` : joined(p));
   // (alternatives of several parts are bracketed, so "or" reads at the right level: "极端和平主义 或（非极端军国主义 · 非极端排外主义）")
   const branches = ordered.map((p) => (ordered.length > 1 && p.length > 1 ? word(`（${all(p)}）`, `(${all(p)})`) : all(p)));
   return branches.slice(0, max).join(word(" 或 ", " or ")).replace(/ 或 （/g, " 或（").replace(/） 或/g, "）或") + (branches.length > max ? word(" 等", " …") : "") || fallback;

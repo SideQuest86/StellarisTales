@@ -744,3 +744,12 @@ game's text); the guide id-to-title and glued-id observations (text read before 
 category strip at 200% zoom (it scrolls and fades at both edges), one history entry per reader (Back leaves the story).
 Deferred: "Opinion of this name" in two artisan-troupe conditions (whose name the game fills is unclear), wilderness and
 Voidfarers intros (screens in sequence with alternatives inside), card captions shared by every card of a list.
+
+Surface round 12 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, keyboard and screen reader). Fixed: museum.js (focus back to the closed exhibit after the fragment navigation of
+Back), name-fill.js (ZH_NOUNS for unknown names, numbered scopes, a space before a filled word after a letter unless it is a
+verb ending; capital), app.js (prefix rules, full condition in the title), reading.js (sentence joins), effects-panel.js (any/
+every pair folded; repeated lines compared as read), the leviathan celebration guide title. Tried and reverted: making the
+written name the link in "id name：" list leads (in Chinese the words before the colon are as often a description, "率先调查",
+as a name). Not defects: the origin telling tabs (they carry aria-pressed), the choice reply (a disclosure under its button).
+Deferred: the phone map's 60% start on very wide trees, the long first-contact effects panel (critters.45), choice arrows.

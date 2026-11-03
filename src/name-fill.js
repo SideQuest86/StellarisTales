@@ -68,9 +68,10 @@ export function fillNames(s, opts) {
       //    adjective form before its noun ("the [Root.GetAdj] economy") and a name only called out to ("We are delighted to
       //    meet you, [X.GetSpeciesNamePlural].", "[Root.GetSpeciesName], we have decided …");
       //  - a plural reads "they" as a subject, "them" after a preposition, "people" after a determiner or quantifier.
-      const NOUNS = { planet: "the planet", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist", alliance: "the alliance", government: "the government" };
+      const NOUNS = { planet: "the planet", capital: "the capital", system: "the system", leader: "the leader", ruler: "the ruler", species: "the species", country: "that empire", empire: "that empire", star: "the star", fleet: "the fleet", ship: "the ship", scientist: "the scientist", alliance: "the alliance", government: "the government" };
       // (the scope's last word, also in camel case: "This.ContactCountry" -> "country")
-      const scope = (key.split("|")[0].split(".").at(-2) || "").split(/_|(?<=[a-z])(?=[A-Z])/).at(-1).toLowerCase();
+      // (a numbered scope names its noun: "ratling_planet_2" -> "planet")
+      const scope = ((key.split("|")[0].split(".").at(-2) || "").split(/_|(?<=[a-z])(?=[A-Z])/).filter((w) => !/^\d+$/.test(w)).at(-1) || "").toLowerCase();
       const plain = /^Get(?:Full|Real)?Name$/i.test(tail);
       const noun = plain ? scope : /^GetRuler(?:Name|Title)$|^GetRegnalName$/i.test(tail) ? "ruler" : /^GetLeaderName$/i.test(tail) ? "leader"
         : /^GetStarName$/i.test(tail) ? "star" : /^GetSpeciesName$/i.test(tail) ? "species" : /^GetAllianceName$/i.test(tail) ? "alliance"
@@ -101,7 +102,9 @@ export function fillNames(s, opts) {
       const phrase = NOUNS[noun] ? (det ? NOUNS[noun].replace(/^(the|that)\s+/, "") : NOUNS[noun]) : "this name";
       const plural = art?.trim() || det || detAdj || /\b(?:many|few|several|all|most|both|other|some)\s+$/i.test(before) ? "people"
         : new RegExp(`\\b(?:${PREP})\\s+$`, "i").test(before) ? "them" : "they";
-      text = /Plural/.test(tail) ? T("他们", plural) : NOUNS[noun] && lang === "en" ? phrase : /Name/.test(tail) ? T("这个名字", "this name") : T("……", "…");
+      // (Chinese names the noun too, "不能有来自该帝国的领袖", not "来自这个名字的")
+      const ZH_NOUNS = { planet: "该星球", capital: "该首都", system: "该星系", leader: "该领袖", ruler: "该统治者", species: "该物种", country: "该帝国", empire: "该帝国", star: "该恒星", fleet: "该舰队", ship: "该舰船", scientist: "该科学家", alliance: "该联盟", government: "该政府" };
+      text = /Plural/.test(tail) ? T("他们", plural) : NOUNS[noun] && lang === "en" ? phrase : ZH_NOUNS[noun] && lang !== "en" && /Name$/.test(tail) ? ZH_NOUNS[noun] : /Name/.test(tail) ? T("这个名字", "this name") : T("……", "…");
       n = note(null, false);
     }
     let lead = art || "", trail = after || "";
@@ -112,6 +115,9 @@ export function fillNames(s, opts) {
       const before = whole.slice(0, offset);
       // (a sentence the game inserts right after a stop gets its space: "…to benefit.[X]" -> "…to benefit. Our people …")
       if (!lead && /[.!?]["”’']?$/.test(before) && /^["“]?[A-Z][a-z]/.test(text) && /\s/.test(text)) lead = " ";
+      // (nor does a word the game fills in run into the word before it: "our first[GetStartingDrivePlural]-capable ship")
+      // (a verb's ending the game fills in stays on its verb: "receive[s]")
+      if (!lead && /[a-z]$/.test(before) && /^[A-Za-z]/.test(text) && !/^[a-z]{1,3}$/.test(text) && names[tail]) lead = " ";
       const start = !before.trim() || /[.!?…]["”’']?\s*$/.test(before) || /\n\s*["“]?$/.test(before);
       if (!lead && /^[a-z]/.test(text) && start) text = text[0].toUpperCase() + text.slice(1);
       else if (lead && start && /^[a-z]/.test(lead)) lead = lead[0].toUpperCase() + lead.slice(1);

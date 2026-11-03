@@ -275,9 +275,16 @@ function openExhibit(key) {
 }
 function closeExhibit() {
   if (!state.open) return;
+  const key = state.open;
   hideExhibit();
-  if (history.state?.museumDetail) history.back(); // app.js: the address change finds the exhibit already closed
-  else if (location.hash.startsWith("#museum=")) history.replaceState(history.state, "", "#museum");
+  if (history.state?.museumDetail) {
+    // (stepping back to "#museum" is a fragment navigation: the browser moved focus to the page, and Escape then reached
+    // nothing; focus returns to the exhibit closed, which the caller focuses now as well)
+    addEventListener("popstate", () => requestAnimationFrame(() => {
+      if (isOpen() && !state.open) root.querySelector(`.museum-exhibit[data-key="${key}"]`)?.focus({ preventScroll: true });
+    }), { once: true });
+    history.back(); // app.js: the address change finds the exhibit already closed
+  } else if (location.hash.startsWith("#museum=")) history.replaceState(history.state, "", "#museum");
 }
 
 function onClick(e) {

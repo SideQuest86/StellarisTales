@@ -1,4 +1,4 @@
-# 巨兽庆典机遇 / Leviathan Celebration Opportunity（情境 Situation）
+# 巨兽庆典机遇（情境）/ Leviathan Celebration Opportunity (Situation)
 
 - 分类 Category：巨兽与城邦
 

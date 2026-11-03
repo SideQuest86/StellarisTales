@@ -1,3 +1,15 @@
+v4.17.65 — 2026-11-02
+
+Surface round 12. Keyboard: closing an exhibit with Escape returns focus to it, and a second Escape closes the museum (focus had
+dropped to the page and the museum stayed open). Names the game fills in from a save read in Chinese by what they are, as in
+English ("不能有来自该帝国的领袖", "研究该星球上的鼠人", not "这个名字"); a numbered scope names its noun ("ratling_planet_2" is
+"the planet"); a filled-in word no longer runs into the word before it ("our first subspace drives-capable ship"). Conditions:
+a game sentence that already says what is needed takes no "Requires:" / "需要：" ("在我们打开一处星界裂隙之前需要…", "Must not have
+…", "… is required"); sentences follow one another as sentences, not after "。 ·"; a condition cut after its first alternatives
+shows the whole on hover. Gameplay effects: the game's "if there is a matching X / on those matching X" pair is one line ("On
+each matching leader you employ: …", 579 places); the same effect line repeated reads once with ×N ("Study the Ketlings on the
+planet ×4"). The Leviathan Celebration guide's title splits by language.
+
 v4.17.64 — 2026-11-02
 
 Surface round 11. An origin's opening screens, which the game picks by the empire, read one at a time under tabs named for
