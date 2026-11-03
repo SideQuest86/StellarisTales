@@ -790,3 +790,11 @@ reviewed wording reaches them; reading.js (statements opening with "The <Name>" 
 the event-subject-3001 guide (flag in code). Not defects: the "From …" chip (it truncates with an ellipsis by design), the
 category strip (it scrolls and fades). Deferred: the first-contact project shown under "If: robot" and again after (the data
 cannot tell an else-if chain from separate ifs), end-of-story links, a pinned banner strip on phones.
+
+Surface round 17 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, keyboard and screen reader). Fixed: app.js (aria-live on replies; lead-on when the reply holds only effects),
+museum.js (focus fallback to #museum-open), style.css (canvas focus ring), effects-panel.js (counted / uncounted duplicate),
+markdown.js (a space after a Chinese stop before a full-width bracket or quote), the spectral-wraith guide. Not defects: the
+search dialog's name (aria-labelledby="search-title"), the choice glyphs (aria-hidden), separate "DLC：" lines. Not taken:
+term tooltips out of the tab order (they are the keyboard's way to the note), a civics profile, fixed-height cards. Deferred:
+rift opening chapters that hold only a card, reviewed wording in the stranded-scientist anomaly ("– she –", "the clone").

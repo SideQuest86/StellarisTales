@@ -72,7 +72,8 @@ export function closeMuseum() {
   document.body.classList.remove("museum-open");
   const done = () => { root.hidden = true; };
   reduced() ? done() : (hiding = setTimeout(done, 260));
-  opener?.focus?.({ preventScroll: true });
+  // (a museum opened by its address has no opener: focus goes to the museum's own button, not to the page)
+  (opener && opener !== document.body && opener.isConnected ? opener : document.querySelector("#museum-open"))?.focus?.({ preventScroll: true });
   onClose?.();
 }
 

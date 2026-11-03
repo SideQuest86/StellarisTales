@@ -1,6 +1,6 @@
 # 魑魅魍魉 / The Wraith
 
-- 分类 Category：巨兽与城邦 · DLC：利维坦 Leviathans
+- 分类 Category：巨兽与城邦 Leviathans & enclaves · DLC：利维坦 Leviathans
 
 ## 如何开始 How it starts
 勘测带标记的脉冲星行星：2010“光谱发条”，撤去标记并使行星“孕育幽魂”。

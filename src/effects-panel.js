@@ -103,6 +103,9 @@ function tidy(list) {
     // (as read: one special project per planet, "Study the Ketlings on [ratling_planet_2.GetName]" … five times, is one line ×5)
     const bare = (x) => JSON.stringify(x, (k, v) => (k === "source" || k === "times" || k === "project" || k === "modifier" ? undefined : typeof v === "string" ? v.replace(/\[[^\]]+\]/g, "[]") : v));
     if (prev && e && !GROUPS.has(e.kind) && !isList(e.effects) && bare(prev) === bare(e)) { out[out.length - 1] = { ...prev, times: (prev.times || 1) + 1 }; continue; }
+    // (the same effect said again without its count, "300 pops shift to the “Pacifist” ethic" then "Pops shift to the …", is said once)
+    const uncounted = (l) => String(l ?? "").replace(/^\d[\d,.]*\s*(?:个)?/, "").toLowerCase();
+    if (prev && e && prev.kind === e.kind && !isList(e.effects) && /^\d/.test(prev.label?.en || "") && !/^\d/.test(e.label?.en || "") && uncounted(prev.label?.en) === uncounted(e.label?.en) && uncounted(prev.label?.zh) === uncounted(e.label?.zh)) continue;
     if (prev && e && !prev.unhandled && !e.unhandled && words(prev.label) && words(prev.label) === words(e.label)) {
       const plain = (x) => !isList(x.effects) && !isList(x.stats) && !x.note && !x.duration && !x.chance;
       // A plain line repeating a neighbour of another kind (a game tooltip and the effect it describes) goes; two effects of

@@ -288,7 +288,7 @@ const REVIEW_HEADING = /^(审阅记录|审阅|Review notes?)(\s|$)/i;
 export function renderMarkdown(md, opts = {}) {
   // (a space after a Chinese stop before more Chinese is a typing slip: "旗标被清除。 契约被取消")
   // (nor is a space between Chinese and a bold Chinese name: "开启事件链与项目 **平流层喷口计划**")
-  const lines = String(md || "").replace(/\r\n?/g, "\n").replace(/([。！？；，、])[ \t]+(?=[㐀-鿿])/g, "$1").replace(/ -> /g, " → ")
+  const lines = String(md || "").replace(/\r\n?/g, "\n").replace(/([。！？；，、])[ \t]+(?=[㐀-鿿（「『“《])/g, "$1").replace(/ -> /g, " → ")
     .replace(/([㐀-鿿])[ \t]+\*\*(?=[㐀-鿿])/g, "$1**").replace(/([㐀-鿿）」])\*\*[ \t]+(?=[㐀-鿿])/g, "$1**").split("\n");
   const main = [];
   const review = [];

@@ -358,7 +358,9 @@ input {
   cursor: grabbing;
 }
 .scene canvas:focus-visible {
-  outline-offset: -4px;
+  /* (well inside the edges, where the archive's own controls sat over a ring drawn at -4px) */
+  outline: 2px solid var(--gold-2, #c9a866);
+  outline-offset: -12px;
 }
 #scene-fallback {
   position: absolute;
