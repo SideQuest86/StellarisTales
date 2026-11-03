@@ -188,8 +188,9 @@ test("describe names only what has a name and never invents a placeholder", () =
   // repeated and absorbed alternatives collapse ("A · B or A" is "A"); more than `max` alternatives end with "…"
   const a = named("a", "甲", "A"), b = named("b", "乙", "B"), c = named("c", "丙", "C"), d = named("d", "丁", "D");
   assert.equal(describe([[a, b], [a], [a]], "en"), "A");
-  assert.equal(describe([[a], [b], [c], [d]], "en"), "A or B or C …");
-  assert.equal(describe([[a], [b], [c], [d]], "zh"), "甲 或 乙 或 丙 等");
+  assert.equal(describe([[a], [b], [c], [d]], "en"), "A or B or C or D"); // (single names run to five)
+  assert.equal(describe([[a], [b], [c], [d]], "en", {}, { max: 2 }), "A or B …");
+  assert.equal(describe([[a], [b], [c], [d]], "zh", {}, { max: 2 }), "甲 或 乙 等");
 });
 
 test("a condition and its own negation: absorbed, and an always-true one says nothing", () => {

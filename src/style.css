@@ -4271,6 +4271,10 @@ html.reduced-motion .music-player.autoplay-blocked #play-pause { animation: none
 }
 .search-hit mark { padding: 0; color: var(--ink); background: #68775a66; border-bottom: 1px solid var(--gold); }
 /* The words a search result showed, marked once in the chapter it opens (app.js markSearch). */
+/* The cards a choice with no reply of its own leads to: marked for a moment as they come into view (app.js). */
+.continuation.led .next-chapter { animation: led-in 1.4s ease-out; }
+@keyframes led-in { from { box-shadow: 0 0 0 1px #c9a86699, 0 0 18px #c9a86633; } to { box-shadow: 0 0 0 1px transparent, 0 0 0 transparent; } }
+html.reduced-motion .continuation.led .next-chapter { animation: none; }
 mark.search-mark { padding: 0; color: inherit; background: #68775a59; border-bottom: 1px solid var(--gold); border-radius: 1px; }
 @media (max-width: 700px) {
   .hit-type { width: 72px; } /* the thumbnails are 72 px wide here */

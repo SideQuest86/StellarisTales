@@ -321,5 +321,7 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3, always
   const all = (p) => (lang === "en" && p.length >= 3 && p.every(neg) ? `none of ${p.slice(0, -1).map((s) => s.slice(4)).join(", ")} or ${p.at(-1).slice(4)}` : joined(p));
   // (alternatives of several parts are bracketed, so "or" reads at the right level: "极端和平主义 或（非极端军国主义 · 非极端排外主义）")
   const branches = ordered.map((p) => (ordered.length > 1 && p.length > 1 ? word(`（${all(p)}）`, `(${all(p)})`) : all(p)));
-  return branches.slice(0, max).join(word(" 或 ", " or ")).replace(/ 或 （/g, " 或（").replace(/） 或/g, "）或") + (branches.length > max ? word(" 等", " …") : "") || fallback;
+  // (alternatives that are single names may run to five before the list is cut: "Genetic or Cloning or Mutation Traditions …")
+  const cap = max === 3 && ordered.every((p) => p.length === 1) ? 5 : max;
+  return branches.slice(0, cap).join(word(" 或 ", " or ")).replace(/ 或 （/g, " 或（").replace(/） 或/g, "）或") + (branches.length > cap ? word(" 等", " …") : "") || fallback;
 }

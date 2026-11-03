@@ -772,3 +772,11 @@ guide-links.js (a near-name written after its link in a list of names becomes th
 collapsed Review notes block (a closed disclosure, not an empty heading), the profile toggle's tap target (its ::before extends it
 to about 47 px), cards that share a title but carry their own captions. Deferred: "[from.GetName]" in conditions (the event
 source can be an empire, a planet or a leader), colony.104's planet-class rolls, "If an earlier condition holds" rows.
+
+Surface round 15 (2026-11-02; six inspectors: conditions, guides, effects, desktop English, phone Chinese, home/search/museum
+regression). Home, search and museum: one defect (separator at a line start in search rows) and one improvement (Escape). Fixed:
+app.js (lead-on scroll for empty replies, shared-condition exceptions trimmed, search Escape, separators), reading.js (cap 5 for
+single-name alternatives; 42 conditions), search.js, style.css (led-in), effects.py (UNNAMED_PLAIN for complete_crisis_objective),
+the espionage-support-passenger-4 guide. Not taken: grouping runs of choices that share a condition, a civics control in the
+empire profile, a thumbnail for chapter rows, a table for tiered rewards. Still deferred: "[from.GetName]" in one espionage
+condition, end-of-story lines ("Nothing further is recorded" is the design), "If an earlier condition holds" rows.

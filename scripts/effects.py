@@ -1246,9 +1246,15 @@ def h_simple_obj(key):
         tok = token_phrase(o)
         if tok:
             return [entry(kind, L(zh_token(zh, tok['zh']), en_token(en, tok['en'])), n, st, object=o)]
+        # (an object the game does not name, "crisobj_create_volcanics", is not named by its key: "Completes a crisis objective")
+        if key in UNNAMED_PLAIN and not ctx.name(o, 'mod_' + o):
+            return [entry(kind, L(*UNNAMED_PLAIN[key]), n, st, object=o)]
         name = nm(ctx, o)
         return [entry(kind, L(zh.format(o=name['zh']), en.format(o=name['en'])), n, st, object=o)]
     return f
+
+
+UNNAMED_PLAIN = {'complete_crisis_objective': ('完成一项天灾目标', 'Completes a crisis objective')}
 
 
 def h_simple_plain(key):

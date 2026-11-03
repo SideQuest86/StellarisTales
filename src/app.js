@@ -1216,7 +1216,8 @@ function renderChapter(preservePosition = false) {
     const notes = [];
     const when = whens[i], need = needs[i];
     if (sharedWhen.text && !sharedWhen.loose && !when) notes.push(T("始终出现", "Always shown"));
-    else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(unless(when) || T("仅在以下情形出现：", "Only when: ") + when);
+    // (an exception says only what it adds to the shared condition: "not Storm Chasers", not "not Storm Chasers · (not both …)")
+    else if (when && when !== UNNAMED && when !== sharedWhen.text) notes.push(unless(when) || T("仅在以下情形出现：", "Only when: ") + (sharedWhen.text ? [` · (${sharedWhen.text})`, ` · （${sharedWhen.text}）`, ` · ${sharedWhen.text}`].reduce((s, x) => (s.endsWith(x) ? s.slice(0, -x.length) : s), when) : when));
     if (c.allowed === false) notes.push(T("不可选", "Unavailable") + (said(c.allow) ? T("：", ": ") + said(c.allow) : ""));
     // (a requirement that only repeats the option's own condition says nothing more: "Only when: Synthetic Fertility · Requires:
     // Synthetic Fertility")
@@ -1510,7 +1511,7 @@ function renderChrome() {
 // open of the dialog; if it cannot load, the dialog falls back to the title/excerpt filter below.
 function storyRowHtml(s, chip = "", extra = "") {
   const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${chip}${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} ·\u00a0${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
+  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${chip}${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))}\u00a0· ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
 }
 // A chapter opened from a search result marks the words the result showed, once, and brings the first visible one into
 // view (words in a reply that is still closed stay marked for when it opens).
@@ -1605,7 +1606,7 @@ function renderSearch() {
       .map(
         (s) => {
           const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} ·\u00a0${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
+          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))}\u00a0· ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
         },
       )
       .join("") || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;
@@ -1621,6 +1622,8 @@ $("#search-open").onclick = () => {
 $("#search-close").onclick = () => $("#search-dialog").close();
 // Keys in the dialog: Enter opens the first result; Up / Down walk the results (Up from the first returns to the field).
 $("#search-dialog").addEventListener("keydown", (e) => {
+  // (Escape leaves search at once: the search field's own first Escape only cleared the words)
+  if (e.key === "Escape" && !e.isComposing && e.target === $("#search-input") && e.target.value) { e.preventDefault(); $("#search-dialog").close(); return; }
   if (e.isComposing || !["Enter", "ArrowDown", "ArrowUp"].includes(e.key)) return;
   const rows = [...$("#search-results").querySelectorAll(".search-story")];
   const at = rows.indexOf(document.activeElement), field = e.target === $("#search-input");
@@ -1744,6 +1747,13 @@ document.addEventListener("click", (e) => {
     choice.closest(".choice").classList.toggle("chosen", open);
     // An opened reply that would end under the player (a phone) comes up into view, its option still on screen.
     if (open) requestAnimationFrame(() => {
+      // (a choice with no reply of its own leads on through the cards below it: they come into view, marked for a moment)
+      const goesOn = !panel.textContent.trim() && document.querySelector(".chapter-document .continuation");
+      if (goesOn) {
+        goesOn.scrollIntoView({ block: "nearest", behavior: reduced() ? "auto" : "smooth" });
+        goesOn.classList.remove("led"); void goesOn.offsetWidth; goesOn.classList.add("led");
+        return;
+      }
       const box = panel.getBoundingClientRect(), limit = ($("#music-player")?.getBoundingClientRect().top || innerHeight) - 16;
       const by = Math.min(box.bottom - limit, choice.getBoundingClientRect().top - 72);
       if (by > 0) $(".reader-panel").scrollBy({ top: by, behavior: reduced() ? "auto" : "smooth" });
