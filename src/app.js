@@ -107,6 +107,8 @@ function prose(s, keepMarks = false) {
     .replace(/<[^>]*>/g, "")
     // (brackets that held only an icon or a computed count say nothing: "头等舱旅客（£pop£ [GetPassengerWorkforce]）")
     .replace(/\s*[（(]\s*[）)]/g, "")
+    // (Markdown's bold marks in the game's text are not shown as asterisks: "**Access Signal**")
+    .replace(/\*\*([^*\n]+)\*\*/g, "$1")
     // (a stray "=" after a sentence's stop in the game's text is a slip, not a word: "我国将对所有人开放。=")
     .replace(/([。！？.!?])=+(?=\s*$)/g, "$1");
   // Display typesetting (src/typeset.js): curly quotes, dashes, ellipses; never the words. Search snippets use proseWith().

@@ -1,5 +1,5 @@
 # 谜题一角，转瞬即逝（被解体的云团）/ Pieces of an Ephemeral Puzzle (The Dismembered Cloud)
-- 分类 Category：society (federation joint operation) · DLC: Federations
+- 分类 Category：文明纪事 Society · 联邦联合行动 federation joint operation · DLC：Federations
 
 ## 如何开始 How it starts
 - 中文：隐藏飞船事件 `federations3.2000`：建成研究站时由 `on_building_research_station` 以 5/105 权重抽到，或由荒原飞地 `enclave.4150` 触发。要求：联邦类型为默认或研究型；联邦尚未完成、近期（7200天内）也没有进行过本事件；至少一名成员不在战争中且有 `tech_sensors_2`；没有成员正处于该事件链。触发后该飞船所属国成为协调国，给每个成员随机一种颜色标记（只影响2010的正文），在每个成员首都生成云团，并向每个成员发出 **2001**。

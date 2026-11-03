@@ -919,7 +919,8 @@ def modifier_stats(ctx, name, mult=None):
             continue
         pct = key.endswith('_mult') or key.endswith('_percent')
         v = num[1] * (mult if mult is not None else 1)
-        lab = tidy_stat(ctx, key, job_stat(ctx, key, ctx.stat(key)) or ctx.stat(key)) or hz(key, ('某项加成', 'a bonus'))
+        # (a stat the game does not name reads as a name in English, "Biological Logistic Growth Mult", not as a key)
+        lab = tidy_stat(ctx, key, job_stat(ctx, key, ctx.stat(key)) or ctx.stat(key)) or (lambda h: L(h['zh'], h['en'][:1].upper() + h['en'][1:] if h['en'] == h['en'].lower() and ' ' in h['en'] else h['en']))(hz(key, ('某项加成', 'a bonus')))
         stats.append({'stat': key, 'label': lab, 'value': v * (100 if pct else 1), 'unit': 'percent' if pct else 'flat',
                       'text': fmt(v, pct)})
     return stats
@@ -1427,7 +1428,7 @@ def _static_effects(nodes, ctx, st, n):
                 if num[0] != 'num':
                     continue
                 pct = y['k'].endswith(('_mult', '_percent'))
-                lab = ctx.stat(y['k']) or hz(y['k'], ('某项加成', 'a bonus'))
+                lab = tidy_stat(ctx, y['k'], ctx.stat(y['k'])) or (lambda h: L(h['zh'], h['en'][:1].upper() + h['en'][1:] if h['en'] == h['en'].lower() and ' ' in h['en'] else h['en']))(hz(y['k'], ('某项加成', 'a bonus')))
                 e = entry('modifier', L(f'{lab["zh"]} {fmt(num[1], pct)}', f'{lab["en"]} {fmt(num[1], pct)}'), y, st, stat=y['k'],
                           value=num[1] * (100 if pct else 1), unit='percent' if pct else 'flat', duration=None, whileActive=True)
                 if pot:

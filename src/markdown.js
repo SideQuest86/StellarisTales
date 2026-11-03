@@ -333,7 +333,9 @@ export function renderMarkdown(md, opts = {}) {
       }
       const tag = ordered ? "ol" : "ul";
       // An item in one language is labelled like a paragraph (the other language's page hides it); "无后续。" showed on both.
-      out.push(`<${tag}>${items.map((t) => {
+      out.push(`<${tag}>${items.map((item) => {
+        // (an item that names its language, "中文：…" / "English: …", is in that language: the label is not text)
+        const t = item.replace(/^(?:中文|Chinese)\s*[：:]\s*(?=\S)/, "").replace(/^English\s*[：:]\s*(?=\S)/, "");
         const meta = metaLine(t) || (out === review ? reviewLine(t) : null);
         if (meta && meta[0] && meta[1]) return `<li data-mixed="1"><span lang="zh-CN" data-lang="zh">${inline(meta[0])}</span> <span lang="en" data-lang="en">${inline(meta[1])}</span></li>`;
         if (meta && (meta[0] || meta[1])) return `<li${langAttr(meta[0] || meta[1])}>${inline(meta[0] || meta[1])}</li>`;

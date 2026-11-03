@@ -821,3 +821,10 @@ variants), effects.py (job_stat uses them; strata keep their names), name-fill.j
 style.css (variant chip 24 px), the ancient-robot-world guide. Not taken: a note on numbered variant choices, English DLC names in
 Chinese guides (no reviewed names), the 60% phone map. Deferred, as before: "Starts a first-contact project" under an if and after
 it, per-covenant blocks in shroud.4046, dropped computed values in a situation's text.
+
+Surface round 21 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, WebKit phone and desktop). Fixed: app.js (prose drops ** marks), markdown.js (list items' language labels),
+effects.py (unnamed stat fallback capitalised, tidy_stat on inline stats too), the federations3-2001 guide. Not taken: one prefix
+for "Only when" / "Requires" (they mean different things: shown / choosable), grouping choices by trait, hiding choices outside the
+selected telling. Deferred: the WebKit phone header that lets scrolled text show under its hairline (not reproduced in Chrome), a
+blank band under some expanded choices on phones, panels identical across all choices, end-of-story lines.
