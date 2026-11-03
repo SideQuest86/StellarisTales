@@ -781,7 +781,15 @@ function collapseCross(list) {
 function listButtons(lists) {
   // Cards that would share a title (two chapters both called "风暴校正") take the story map's curated label, written to tell
   // such chapters apart.
-  const merged = lists.map((group) => collapseCross(group).map((e) => ({ ...e })));
+  // Cards to chapters the game wrote out more than once, word for word (three identical "Conduct Fleet Maneuvers" projects), are
+  // one card: three looked like a choice that is not there.
+  const twins = new Set();
+  const merged = lists.map((group) => collapseCross(group).map((e) => ({ ...e }))).filter((list) => {
+    const e = list.length === 1 && list[0], d = e && docMap.get(e.target);
+    if (!d) return true;
+    const sig = JSON.stringify([e.story || "", local(d.title), local(d.texts?.[0]), d.image || "", e.kind, e.label || null, e.chance ?? null, e.delay || null, e.when || null, e.sets || null]);
+    return twins.has(sig) ? false : (twins.add(sig), true);
+  });
   const count = new Map();
   for (const e of merged.flat()) { const t = titleFor(e.target, e.story); count.set(t, (count.get(t) || 0) + 1); }
   const labels = dossier.story.nodeLabels || {};
@@ -944,6 +952,39 @@ function onProfileChange(target) {
 document.addEventListener("change", (e) => {
   if (e.target.closest(".profile-panel select")) onProfileChange(e.target);
 });
+// An origin's opening screens are alternatives the game picks by the empire (a megacorporation's, a hive's, a nomadic one's):
+// one telling at a time under tabs named for whom it is, the one for the reading profile first, not two or three near-identical
+// texts in a row. Screens read in sequence (an intro and an outro, two parts) stay as they are. null when not such a chapter.
+const INTRO_WORDS = {
+  REGULAR: ["通常", "Standard"], DEFAULT: ["通常", "Standard"], MEGACORP: ["企业政府", "Corporate"], CORPORATE: ["企业政府", "Corporate"],
+  HIVE: ["蜂巢思维", "Hive Mind"], MACHINE: ["机械智能", "Machine Intelligence"], MACH: ["机械智能", "Machine Intelligence"],
+  GESTALT: ["格式塔意识", "Gestalt Consciousness"], NOMADS: ["游牧", "Nomadic"], NOMADIC: ["游牧", "Nomadic"],
+  DEVOURING_SWARM: ["噬杀蜂群", "Devouring Swarm"], INDIVIDUALISTIC_MACHINE: ["个体主义机械", "Individualist Machines"],
+  LITHOID: ["石质生命", "Lithoid"], PLANT: ["植物", "Plantoid"], PLANTOID: ["植物", "Plantoid"], FUNGOID: ["真菌", "Fungoid"],
+  PEACEFUL: ["和平", "Peaceful"], SOL: ["太阳系", "Sol"],
+};
+const INTRO_PROFILE = { MEGACORP: "auth_corporate", CORPORATE: "auth_corporate", HIVE: "auth_hive_mind", MACHINE: "auth_machine_intelligence", MACH: "auth_machine_intelligence", GESTALT: "ethic_gestalt_consciousness" };
+let introIndex = null; // the opening screen picked (null: the one for the profile)
+function introTellings(c) {
+  const keys = c.introKeys;
+  if (!keys || keys.length !== c.sections?.length || keys.some((k) => /_(INTRO|OUTRO|PART_)/.test(k))) return null;
+  const tokens = keys.map((k) => k.split("_"));
+  let common = 0;
+  while (tokens.every((t) => t[common] !== undefined && t[common] === tokens[0][common])) common++;
+  const tails = tokens.map((t) => t.slice(common).join("_"));
+  // (a tail of known words: "HIVE_SOL" is Hive Mind · Sol)
+  const words = (tail) => {
+    if (!tail) return [["通常", "Standard"]];
+    if (INTRO_WORDS[tail]) return [INTRO_WORDS[tail]];
+    const parts = tail.split("_");
+    return parts.every((p) => INTRO_WORDS[p]) ? parts.map((p) => INTRO_WORDS[p]) : null;
+  };
+  const named = tails.map(words);
+  const labels = named.every(Boolean) ? named.map((w) => w.map((x) => T(x[0], x[1])).join(" · ")) : null;
+  const unique = labels && new Set(labels).size === labels.length ? labels : null;
+  const own = tails.findIndex((tail) => tail.split("_").some((p) => profile[INTRO_PROFILE[p]] === true));
+  return { labels: unique, start: own >= 0 ? own : 0 };
+}
 function renderBody(r, ctx) {
   // Reviewed V3 readings / dialogue text profiles keep their explicit passage selection.
   if (chapter.readings?.length || chapter.dialogue) return { html: r.texts.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join(""), tabs: "" };
@@ -958,7 +999,7 @@ function renderBody(r, ctx) {
     const n = passages.length;
     const conditions = passages.map((p) => said(namedOnly(p.when, lang, profileNames), { max: 2 }));
     const labels = passageTabs(conditions.map((c) => (c.length <= (lang === "zh" ? 16 : 32) ? c : "")), T("其他", "Other"))
-      ?.map((c) => (lang === "en" && c.startsWith("not ") ? "N" + c.slice(1) : c));
+      ?.map((c) => (lang === "en" && /^(?:not|none of|unless) /.test(c) ? c[0].toUpperCase() + c.slice(1) : c));
     const count = lang === "zh" ? ["", "", "两", "三", "四", "五", "六", "七", "八", "九"][n] || n : ["", "", "two", "three", "four", "five", "six", "seven", "eight", "nine"][n] || n;
     const telling = T(`${count}种说法之一`, `One of ${count} tellings`);
     // A picker's option is the text's first words; two that open alike show where they part instead.
@@ -1023,6 +1064,7 @@ function renderChapter(preservePosition = false) {
     dialogueProfile=0;
     dialogueTextProfile=0;
     passageIndex = 0;
+    introIndex = null;
     if(chapter.dialogue?.textProfiles){
       for(const step of [...trail].reverse()){
         const index=chapter.dialogue.textProfiles.findIndex(profile=>profile.after.includes(step.chapter));
@@ -1182,7 +1224,11 @@ function renderChapter(preservePosition = false) {
   const continuation = edgeButtons(nextEdges) + listButtons(shared);
   const body = renderBody(r, ctx);
   // (a section that only repeats the chapter's title, an astral rift's name, is not text: the Garden read "The Garden" twice)
-  const sections = r.sections.filter((t, i, a) => local(t) && local(t) !== local(r.title) && !r.texts.some((x) => local(x) === local(t)) && a.findIndex((v) => local(v) === local(t)) === i);
+  const intro = introTellings({ introKeys: chapter.introKeys, sections: r.sections });
+  const introAt = intro ? Math.min(introIndex ?? intro.start, r.sections.length - 1) : 0;
+  const sections = (intro ? [r.sections[introAt]] : r.sections).filter((t, i, a) => local(t) && local(t) !== local(r.title) && !r.texts.some((x) => local(x) === local(t)) && a.findIndex((v) => local(v) === local(t)) === i);
+  const introCount = intro ? (lang === "zh" ? ["", "", "两", "三", "四", "五", "六", "七", "八", "九"][r.sections.length] || r.sections.length : ["", "", "two", "three", "four", "five", "six", "seven", "eight", "nine"][r.sections.length] || r.sections.length) : 0;
+  const introTabs = intro ? `<div class="reading-tabs${intro.labels ? "" : " compact"}" role="group" aria-label="${esc(T(`${introCount}种说法之一`, `One of ${introCount} tellings`))}"><span class="reading-tabs-label" aria-hidden="true">${esc(T(`${introCount}种说法之一`, `One of ${introCount} tellings`))}</span>${r.sections.map((_, i) => `<button data-intro="${i}" aria-pressed="${i === introAt}"${intro.labels ? "" : ` aria-label="${esc(T(`第${i + 1}种说法`, `Telling ${i + 1}`))}"`}>${esc(intro.labels ? intro.labels[i] : String(i + 1))}</button>`).join("")}</div>` : "";
   // Reviewer commentary names engine ids and script lines: a closed, quiet <details> in the UI language (the label says what
   // it is, so the note's own "Review note:" prefix is dropped), engine ids in <code>.
   const reviewNote = (label, value, extra = "") =>
@@ -1203,7 +1249,7 @@ function renderChapter(preservePosition = false) {
   const optionText = optionHtml.map((h) => h.replace(/<[^>]*>/g, "").trim());
   const nth = optionText.map((t, i) => (optionText.filter((u) => u === t).length > 1 ? optionText.slice(0, i + 1).filter((u) => u === t).length : 0));
   $("#reading-content").innerHTML =
-    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}">${trail.length > 1 ? `<div class="reader-trail"><button id="reading-back">${esc(T("← 上一章", "← Previous chapter"))}</button>${fromChip()}<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button></div>` : ""}${caption ? `<div class="chapter-eyebrow"><span>${esc(caption)}</span></div>` : ""}<h1 id="reader-title" tabindex="-1">${esc(titleWith(r.title, chapter?.names) || (r.id === story.start && storyName(story)) || T("插曲", "Interlude"))}</h1>${profileSummary(/* [UI] other-language title as a quiet subtitle */ otherTitle(r.title) ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(otherTitle(r.title))}</p>` : "")}${readingTabs}${body.tabs}<div class="narrative">${body.html}${situation ? "" : sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div><section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>${sharedWhenNote}` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol" aria-hidden="true">◇</span><span>${optionHtml[i]}${nth[i] ? `<small class="choice-nth">${esc(T(`（${nth[i]}）`, ` (${nth[i]})`))}</small>` : ""}</span><b aria-hidden="true">→</b></button>${choiceNote(c, i)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${continuation ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${continuation}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div>${situationPanel}${notes}</article>`; // reviewer notes join the foot panels: the text runs straight into its choices
+    `${r.image ? `<div class="chapter-art${chapterChanged ? "" : " same-chapter"}"><img src="${asset(r.image)}"${/^art\//.test(r.image) ? ` srcset="${asset(r.image)} 1x, ${asset(r.image.replace(/^art\//, "art-hd/"))} 2x"` : ""} alt="" loading="lazy" decoding="async"/></div>` : ""}<article class="chapter-document" data-doc="${esc(r.id)}">${trail.length > 1 ? `<div class="reader-trail"><button id="reading-back">${esc(T("← 上一章", "← Previous chapter"))}</button>${fromChip()}<button id="reading-restart" class="reading-restart">${esc(T("重新开始", "Start over"))}</button></div>` : ""}${caption ? `<div class="chapter-eyebrow"><span>${esc(caption)}</span></div>` : ""}<h1 id="reader-title" tabindex="-1">${esc(titleWith(r.title, chapter?.names) || (r.id === story.start && storyName(story)) || T("插曲", "Interlude"))}</h1>${profileSummary(/* [UI] other-language title as a quiet subtitle */ otherTitle(r.title) ? `<p class="reader-subtitle" lang="${lang === "zh" ? "en" : "zh-CN"}">${esc(otherTitle(r.title))}</p>` : "")}${readingTabs}${body.tabs}${introTabs}<div class="narrative">${body.html}${situation ? "" : sections.map((t) => `<section><p>${paragraph(local(t))}</p></section>`).join("")}</div><section class="choices">${r.choices.length ? `<div class="section-heading"><span>${esc(T("你的选择", "Your choices"))}</span><i></i></div>${sharedWhenNote}` : ""}${r.choices.map((c, i) => `<div class="choice${c.allowed === false ? " unavailable" : ""}"><button class="choice-button" data-choice="${i}" data-choice-source="${c.index}" aria-expanded="false"${c.allowed === false ? ' aria-disabled="true"' : ""}><span class="choice-symbol" aria-hidden="true">◇</span><span>${optionHtml[i]}${nth[i] ? `<small class="choice-nth">${esc(T(`（${nth[i]}）`, ` (${nth[i]})`))}</small>` : ""}</span><b aria-hidden="true">→</b></button>${choiceNote(c, i)}<div class="choice-response" hidden>${responseFor(c)}</div></div>`).join("")}</section>${continuation ? `<section class="continuation"><div class="section-heading"><span>${esc(T("故事继续", "The story continues"))}</span><i></i></div>${continuation}</section>` : ""}${groupPanel}${alsoInHtml}<div class="chapter-end">${nextReading}<button class="chapter-directory-link">${esc(T("剧情脉络", "Story map"))}</button></div>${situationPanel}${notes}</article>`; // reviewer notes join the foot panels: the text runs straight into its choices
   for (const p of $("#reading-content").querySelectorAll(".narrative p"))
     if (/^[“‘]/.test(p.textContent) && !p.firstElementChild?.matches(".lead-line")) p.classList.add("q-open");
   showSpecimenLinks(r.id);
@@ -1338,6 +1384,12 @@ function renderChapter(preservePosition = false) {
     passageIndex = Math.max(0, at >= 0 ? at : after.findIndex((p) => JSON.stringify(p.when) === JSON.stringify(picked?.when)));
     renderChapter(true);
   };
+  for (const button of document.querySelectorAll("[data-intro]"))
+    button.onclick = () => {
+      introIndex = Number(button.dataset.intro);
+      renderChapter(true);
+      document.querySelector(`[data-intro="${introIndex}"]`)?.focus({ preventScroll: true });
+    };
   for (const button of document.querySelectorAll("[data-passage]"))
     button.onclick = () => {
       pickPassage(Number(button.dataset.passage));
@@ -1450,7 +1502,7 @@ function renderChrome() {
 // open of the dialog; if it cannot load, the dialog falls back to the title/excerpt filter below.
 function storyRowHtml(s, chip = "", extra = "") {
   const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${chip}${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
+  return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${chip}${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} ·\u00a0${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}${extra}</small></span><i>↗</i></button>`;
 }
 // A chapter opened from a search result marks the words the result showed, once, and brings the first visible one into
 // view (words in a reply that is still closed stay marked for when it opens).
@@ -1545,7 +1597,7 @@ function renderSearch() {
       .map(
         (s) => {
           const column = CATEGORIES.findIndex((c) => c[0] === s.category);
-          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} · ${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
+          return `<button class="search-story" data-open="${esc(s.id)}">${s.image ? `<img src="${asset(s.image)}" alt="" loading="lazy"/>` : '<span class="search-no-art">✧</span>'}<span><b>${esc(storyName(s))}</b><small>${esc(T(`${s.chapters}篇`, `${s.chapters} ${s.chapters === 1 ? "chapter" : "chapters"}`))} ·\u00a0${esc(column >= 0 ? categoryName(column) : T("银河故事", "Galactic story"))}</small></span><i>↗</i></button>`;
         },
       )
       .join("") || `<p class="empty">${esc(T("没有匹配结果。", "No matches."))}</p>`;

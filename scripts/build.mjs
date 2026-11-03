@@ -72,6 +72,24 @@ await cp("public", "dist", { recursive: true });
     if (changed) await writeFile(path, JSON.stringify(data));
   }
 }
+// An origin's opening screens (sections) are alternatives the game picks by the empire: their keys (data/origins.json, in
+// order) let the reader name each one (src/app.js introTellings).
+{
+  const data = JSON.parse(await readFile("dist/data/origins.json", "utf8"));
+  const origins = new Map((Array.isArray(data) ? data : data.origins || Object.values(data)).map((o) => [o.key || o.id, o]));
+  for (const f of await readdir("dist/stories")) {
+    if (!f.endsWith(".json") || f === "index.json") continue;
+    const path = "dist/stories/" + f, text = await readFile(path, "utf8");
+    if (!text.includes('"origin-intro:')) continue;
+    const story = JSON.parse(text);
+    let changed = false;
+    for (const c of story.chapters || []) {
+      const keys = c.id?.startsWith("origin-intro:") && origins.get(c.id.slice(13))?.introductions?.map((i) => i.key);
+      if (keys?.length > 1 && keys.length === c.sections?.length) { c.introKeys = keys; changed = true; }
+    }
+    if (changed) await writeFile(path, JSON.stringify(story));
+  }
+}
 // A story with no gameplay effects gets an empty file, so opening it requests nothing that fails.
 const { stories } = JSON.parse(await readFile("dist/stories/index.json", "utf8"));
 await mkdir("dist/effects", { recursive: true });

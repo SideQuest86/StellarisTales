@@ -312,7 +312,12 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3, always
     const and = (sep, last) => (more ? list.join(sep) + word("等", " …") : list.slice(0, -1).join(sep) + last + list[list.length - 1]);
     return lang === "zh" ? `并非同时具备${and("、", "和")}` : list.length === 2 ? `not both ${list[0]} and ${list[1]}` : `not all of ${and(", ", " and ")}`;
   }
+  // (what holds comes first among the alternatives too: "not Gestalt Consciousness or Hive Mind" read as "not either"; "Hive
+  // Mind or not Gestalt Consciousness" does not)
+  const ordered = kept.map((p, i) => [p, i]).sort((a, b) => Number(a[0].length === 1 && neg(a[0][0])) - Number(b[0].length === 1 && neg(b[0][0])) || a[1] - b[1]).map(([p]) => p);
+  // (in English three or more "not"s in a row are one "none of": "none of Militarist, Fanatic Purifiers or Machine Intelligence")
+  const all = (p) => (lang === "en" && p.length >= 3 && p.every(neg) ? `none of ${p.slice(0, -1).map((s) => s.slice(4)).join(", ")} or ${p.at(-1).slice(4)}` : p.join(" · "));
   // (alternatives of several parts are bracketed, so "or" reads at the right level: "极端和平主义 或（非极端军国主义 · 非极端排外主义）")
-  const branches = kept.map((p) => (kept.length > 1 && p.length > 1 ? word(`（${p.join(" · ")}）`, `(${p.join(" · ")})`) : p.join(" · ")));
+  const branches = ordered.map((p) => (ordered.length > 1 && p.length > 1 ? word(`（${all(p)}）`, `(${all(p)})`) : all(p)));
   return branches.slice(0, max).join(word(" 或 ", " or ")).replace(/ 或 （/g, " 或（").replace(/） 或/g, "）或") + (branches.length > max ? word(" 等", " …") : "") || fallback;
 }

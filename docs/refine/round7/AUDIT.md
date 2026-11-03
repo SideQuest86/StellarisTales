@@ -733,3 +733,14 @@ choice and "!." in arkship.65 (the game's text); "Unless we have no interest in 
 tooltip for is_homicidal, negated correctly). By design: the event-chain overview card in event-colony-9950, deposits ×2, the
 Hidden chip. Not taken: arrows on choices that only expand (the choice opens its reply), a caption on one-chapter maps, a
 thumbnail instead of the search "Chapter" note.
+
+Surface round 11 (2026-11-02; six inspectors: conditions, guides, effects, desktop English, phone Chinese, small screens and
+200% zoom; four verifiers). Fixed: app.js (introTellings over origin intro sections with keys from data/origins.json added at
+build; word-for-word identical cards merged; search-row separators; tab labels "None of" / "Unless"), reading.js (positive
+alternatives first; "none of" in English), effects-panel.js (withoutSaid recurses into condition blocks; if/else fold ignores
+modifier/via/definition ids; count includes a parent effect), effects.py (job_stat, tidy_stat, policy_<key> names),
+effects_data.py (policy names harvested: 35 keys added, nothing else changed). Not ours: "Actor must be independent" (the
+game's text); the guide id-to-title and glued-id observations (text read before the guide's links were made). By design: the
+category strip at 200% zoom (it scrolls and fades at both edges), one history entry per reader (Back leaves the story).
+Deferred: "Opinion of this name" in two artisan-troupe conditions (whose name the game fills is unclear), wilderness and
+Voidfarers intros (screens in sequence with alternatives inside), card captions shared by every card of a list.

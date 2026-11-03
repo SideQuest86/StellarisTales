@@ -172,7 +172,7 @@ test("describe names only what has a name and never invents a placeholder", () =
   assert.equal(describe([[gt], [cf]], "en"), "not both Gene Tailoring and Basic Cloaking Fields");
   assert.equal(describe([[gt], [cf]], "zh"), "并非同时具备基因剪裁和基础隐形场");
   assert.equal(describe([[gt], [cf], [x3]], "en"), "not all of Gene Tailoring, Basic Cloaking Fields and C");
-  assert.equal(describe([[gt], [named("a", "甲", "A")]], "en"), "not Gene Tailoring or A"); // (one positive alternative: as it was)
+  assert.equal(describe([[gt], [named("a", "甲", "A")]], "en"), "A or not Gene Tailoring"); // (what holds first)
   // A label the game marks as a failed requirement, or that opens with a negation, is the requirement already: no second "not".
   assert.equal(describe([[named("e", "£trigger_no£ 不能成为银河皇帝", "£trigger_no£ Cannot be the Galactic Emperor", false)]], "en"), "Cannot be the Galactic Emperor");
   assert.equal(describe([[named("e", "£trigger_no£ 不能成为银河皇帝", "£trigger_no£ Cannot be the Galactic Emperor", false)]], "zh"), "不能成为银河皇帝");

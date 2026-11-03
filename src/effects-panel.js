@@ -83,7 +83,8 @@ function tidy(list) {
     const prev = out[out.length - 1];
     // A condition whose both branches do the same thing is no condition: "If: … Expertise: Propulsion / Otherwise: Expertise:
     // Propulsion" is the effect.
-    const body = (x) => JSON.stringify(x.effects, (k, v) => (k === "source" ? undefined : v));
+    // (compared as read: the machine empires' "Frying Fauna" is another modifier with the same name)
+    const body = (x) => JSON.stringify(x.effects, (k, v) => (k === "source" || k === "modifier" || k === "via" || k === "definition" ? undefined : v));
     if (prev && e && prev.kind === "if" && e.kind === "else" && isList(prev.effects) && isList(e.effects) && body(prev) === body(e)) {
       out.splice(out.length - 1, 1, ...tidy(prev.effects));
       continue;
@@ -123,7 +124,8 @@ function leaves(list) {
     if (e.kind === "more" || e.unhandled) continue;
     const g = gist(e);
     if (g) n += g.length;
-    else if (e.effects && e.effects.length) n += leaves(e.effects);
+    // (an effect with effects of its own is a line too: "A new country appears" over its fleet and planet)
+    else if (e.effects && e.effects.length) n += leaves(e.effects) + (GROUPS.has(e.kind) ? 0 : 1);
     else if (!GROUPS.has(e.kind)) n += 1;
   }
   return n;
@@ -311,7 +313,14 @@ export function withoutSaid(list, said) {
   if (!Array.isArray(list) || !said?.length) return list;
   const words = (s) => String(s ?? "").replace(/£[^£]+£|§./g, "").replace(/\s+/g, " ").trim();
   const seen = new Set(said.map(words).filter(Boolean));
-  return list.filter((e) => !(e?.kind === "tooltip" && [e.label?.zh, e.label?.en].some((t) => seen.has(words(t)))));
+  // (also inside a condition: "If an earlier condition holds / Gain insight in a random Physics technology." under a reply that
+  // said it; a block left empty goes)
+  const strip = (l) => l.flatMap((e) => {
+    if (e?.kind === "tooltip" && [e.label?.zh, e.label?.en].some((t) => seen.has(words(t)))) return [];
+    if (e && GROUPS.has(e.kind) && isList(e.effects)) { const kids = strip(e.effects); return kids.length ? [{ ...e, effects: kids }] : []; }
+    return [e];
+  });
+  return strip(list);
 }
 
 export function renderEffects(effects, opts = {}) {

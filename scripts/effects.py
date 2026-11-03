@@ -848,6 +848,64 @@ def h_monthly_mult(n, ctx, st):
                   max=hi[1] if hi and hi[0] == 'num' else None, **extra)]
 
 
+JOB_STAT = re.compile(r'^(?:planet|station)_([a-z_]+?)_(produces|upkeep)_(add|mult)$')
+JOB_LABEL = re.compile(r'^(?:Resources )?(?:Produced|Upkeep) (?:per 100|from|for)\b|Pop Resource Output')
+JOB_RESOURCES = {'energy', 'minerals', 'food', 'alloys', 'consumer_goods', 'unity', 'influence', 'physics_research', 'society_research',
+                 'engineering_research', 'trade', 'exotic_gases', 'rare_crystals', 'volatile_motes', 'sr_zro', 'sr_dark_matter',
+                 'sr_living_metal', 'nanites', 'minor_artifacts', 'astral_threads'}
+STRATA = {'worker': '工人', 'specialist': '专家', 'ruler': '统治者', 'civilian': '平民'}
+
+
+def job_stat(ctx, key, lab):
+    """A job's output or upkeep: the game names the job with an icon placeholder and the resource with an icon in front ("Produced
+    per 100 [GetTechnicianSwapPluralWithIcon]"), which left "Produced per 100 they -3" next to "+3". The resource is named first
+    and the job by its key ("Energy Credits produced per 100 Technicians"; Chinese "该岗位每100人口产出的能量币", the game's job
+    names not being in the data)."""
+    m = JOB_STAT.match(key)
+    if not m or not lab or not JOB_LABEL.search(lab.get('en') or ''):
+        return None
+    # (the job, then the resource when the key ends in one: "gas_refiners" + "exotic_gases"; "test_subjects" is a job)
+    tokens = m[1].removeprefix('jobs_').removeprefix('sacred_path_').split('_')
+    job, res = '_'.join(tokens), None
+    for i in range(1, len(tokens)):
+        if '_'.join(tokens[i:]) in JOB_RESOURCES:
+            job, res = '_'.join(tokens[:i]), '_'.join(tokens[i:])
+            break
+    words = job.replace('_', ' ').title()
+    job_en = words if words.endswith('s') else words + 's'
+    # (a stratum has its game name in both languages; a job's Chinese name is not in the data)
+    job_zh = STRATA.get(job.removesuffix('s'), '该岗位')
+
+    def fill(s, word, zh):
+        s = re.sub(r'\[Get\w+\]', word, s)
+        s = re.sub(r'\[\w+\.GetIcon\]', '', s)
+        s = re.sub(r'\[(\w+)\.GetNamePlural\]', lambda g: STRATA.get(g[1], '该岗位') if zh else g[1].replace('_', ' ').title() + 's', s)
+        s = re.sub(r'[\s\u00a0]+', ' ', s).strip()
+        return re.sub(r'(?<=[\u3400-\u9fff]) (?=[\u3400-\u9fff])', '', s) if zh else s
+    en0, zh0 = lab.get('en') or '', lab.get('zh') or ''
+    en, zh = fill(en0, job_en, False), fill(zh0, job_zh, True)
+    if res:
+        rn = res_name(ctx, res)
+        en = f"{rn['en']} {en[:1].lower()}{en[1:]}"
+        zh = zh + rn['zh'] if zh.endswith('的') else f"{rn['zh']}：{zh}"
+    return None if (en, zh) == (en0, zh0) else L(zh, en)
+
+
+def tidy_stat(ctx, key, lab):
+    # A stat's name as read: a reference the game's text leaves unresolved ("$mod_country_physics_produces_mult$ from Observation
+    # Outposts", 158 lines) names the stat's resource, and the gap an icon left ("from  Jobs") closes.
+    if not lab:
+        return lab
+    res = next((r for r in sorted(JOB_RESOURCES, key=len, reverse=True) if f'_{r}_' in f'_{key}_'), None)
+    out = {}
+    for lang in ('zh', 'en'):
+        s = lab.get(lang) or ''
+        s = re.sub(r'\$(\w+)\$', lambda m: ((ctx.name(m[1]) or (res_name(ctx, res) if res else None)) or {}).get(lang, ''), s)
+        s = re.sub(r'[ \u00a0]{2,}', ' ', s).strip()
+        out[lang] = re.sub(r'(?<=[\u3400-\u9fff])[ \u00a0]+(?=[\u3400-\u9fff])', '', s) if lang == 'zh' else s
+    return L(out['zh'], out['en'])
+
+
 def modifier_stats(ctx, name, mult=None):
     m = ctx.modifiers.get(name)
     if not m:
@@ -859,7 +917,7 @@ def modifier_stats(ctx, name, mult=None):
             continue
         pct = key.endswith('_mult') or key.endswith('_percent')
         v = num[1] * (mult if mult is not None else 1)
-        lab = ctx.stat(key) or hz(key, ('某项加成', 'a bonus'))
+        lab = tidy_stat(ctx, key, job_stat(ctx, key, ctx.stat(key)) or ctx.stat(key)) or hz(key, ('某项加成', 'a bonus'))
         stats.append({'stat': key, 'label': lab, 'value': v * (100 if pct else 1), 'unit': 'percent' if pct else 'flat',
                       'text': fmt(v, pct)})
     return stats
@@ -1256,7 +1314,8 @@ def h_set_policy(n, ctx, st):
     pol, opt = p.get('policy'), p.get('option')
     if not isinstance(pol, str):
         return None
-    pn = nm(ctx, pol)
+    # (the game names a policy policy_<key>: "Orbital Surrender Acceptance", not "orbital bombardment accept surrender")
+    pn = ctx.name('policy_' + pol) or nm(ctx, pol)
     on = nm(ctx, opt) if isinstance(opt, str) else None
     return [entry('policy', L(f'政策「{pn["zh"]}」设为' + (f'「{on["zh"]}」' if on else '新选项'), f'Policy "{pn["en"]}" is set to ' + (f'"{on["en"]}"' if on else 'a new option')), n, st, policy=pol)]
 
