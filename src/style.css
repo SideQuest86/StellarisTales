@@ -2432,6 +2432,11 @@ html.reduced-motion .map-expanded .flow-surface-map {
   font-size: 16px;
   color: var(--ink-2);
 }
+/* (on a touch screen the map's controls and the reader's language switch are finger-sized) */
+@media (pointer: coarse) {
+  .flow-controls button { min-width: 40px; min-height: 40px; }
+  #reader-language { min-width: 44px; min-height: 44px; }
+}
 /* (a narrow card, a window at large text sizes: the zoom figure gives way so the last control, "?", stays inside the card) */
 @media (min-width: 701px) and (max-width: 900px) {
   #flow-surface:not(.map-expanded) .flow-controls small { display: none; }

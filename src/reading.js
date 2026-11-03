@@ -322,7 +322,14 @@ export function describe(dnf, lang, names = {}, { fallback = "", max = 3, always
   // (in English three or more "not"s in a row are one "none of": "none of Militarist, Fanatic Purifiers or Machine Intelligence")
   // (a check that is a whole sentence ends with its own stop: the next follows it as a sentence, not after "。 ·")
   const joined = (p) => p.reduce((s, x, i) => (!i ? x : /[。！？]$/.test(s) ? s + x : /[.!?]$/.test(s) ? `${s} ${x[0].toUpperCase()}${x.slice(1)}` : `${s} · ${x}`), "");
-  const all = (p) => (lang === "en" && p.length >= 3 && p.every(neg) ? `none of ${p.slice(0, -1).map((s) => s.slice(4)).join(", ")} or ${p.at(-1).slice(4)}` : joined(p));
+  // (three or more "not"s, after what holds: English "none of A, B or C", Chinese "非A、非B、非C" — not a run of " · " that read as one
+  // list with what holds, "线圈炮 · 非自由商人 · 非契约资产 · …")
+  const all = (p) => {
+    const negs = p.filter(neg), pos = p.filter((s) => !neg(s));
+    if (negs.length < 3 || pos.some((s) => /[。.!?！？]$/.test(s))) return joined(p);
+    const none = lang === "en" ? `none of ${negs.slice(0, -1).map((s) => s.slice(4)).join(", ")} or ${negs.at(-1).slice(4)}` : negs.join("、");
+    return pos.length ? `${joined(pos)} · ${none}` : none;
+  };
   // (alternatives of several parts are bracketed, so "or" reads at the right level: "极端和平主义 或（非极端军国主义 · 非极端排外主义）")
   const branches = ordered.map((p) => (ordered.length > 1 && p.length > 1 ? word(`（${all(p)}）`, `(${all(p)})`) : all(p)));
   // (alternatives that are single names may run to five before the list is cut: "Genetic or Cloning or Mutation Traditions …")

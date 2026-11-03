@@ -828,3 +828,10 @@ effects.py (unnamed stat fallback capitalised, tidy_stat on inline stats too), t
 for "Only when" / "Requires" (they mean different things: shown / choosable), grouping choices by trait, hiding choices outside the
 selected telling. Deferred: the WebKit phone header that lets scrolled text show under its hairline (not reproduced in Chrome), a
 blank band under some expanded choices on phones, panels identical across all choices, end-of-story lines.
+
+Surface round 22 (2026-11-02; six inspectors: conditions, guides with the other-language view, effects, desktop English,
+phone Chinese, tablet and the language switches). Fixed: reading.js (negation runs of three or more), style.css (pointer: coarse
+targets), the event-arkship-65 guide. Not defects: "532" resolving to a chapter that shares the story's title, the game's ">"
+choice label, the espionage tooltip under "Requires". Not taken: a wider portrait-tablet column, named tabs for numbered tellings
+(no readable condition), fewer card thumbnails. Deferred, as before: "If an earlier condition holds" rows, panels repeated
+across choices, Chinese DLC names, the phone map's opening frame on wide trees.
